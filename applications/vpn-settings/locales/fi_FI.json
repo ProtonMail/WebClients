@@ -55,6 +55,9 @@
       "Add domain": [
         "Lisää verkkotunnus"
       ],
+      "Add external address": [
+        "Lisää ulkoinen osoite"
+      ],
       "Add more ${ BRAND_NAME } Scribe seats": [
         "Lisää ${ BRAND_NAME } Scribe -lisenssejä"
       ],
@@ -827,7 +830,7 @@
         "Ulkoinen"
       ],
       "Inactive": [
-        "Pois käytöstä"
+        "Ei käytössä"
       ],
       "No E2EE mail": [
         "Ei PP-salattua postia"
@@ -931,8 +934,9 @@
       "Sorry, this offer is not available with your current plan.": [
         "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
       ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi.",
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi."
       ]
     },
     "bf2023: Offers": {
@@ -1067,7 +1071,7 @@
     },
     "BF2024: Footer": {
       "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Elinikäisellä ${ PASS_SHORT_APP_NAME } Plus -tarjouksella ei ole uudistushintaa, koska se on elinikäinen Pass Plus -käyttöoikeus."
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu Pass Plussan elinikäisestä käyttöoikeudesta."
       ],
       "Discounts are based on standard monthly pricing.": [
         "Alennukset perustuvat normaaliin kuukausihintaan."
@@ -1307,6 +1311,9 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "Total": [
+        "Summa"
       ],
       "Total for ${ n } month": [
         "Summa ${ n } kuukaudelle",
@@ -2313,6 +2320,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Vain ylläpitäjillä on käyttöoikeus, jos tämä poistetaan käytöstä."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Pidä elämäsi eri osat erillään ja postilaatikkosi järjestyksessä lisäosoitteiden avulla."
       ],
@@ -3556,6 +3566,12 @@
         "${ number } palvelin",
         "${ number } palvelinta"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uusimishinta ja -päivä pysyvät ennallaan."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
       ],
@@ -3678,6 +3694,9 @@
         "Lisätään ${ addedServerCount } yhdyskäytäväpalvelinta",
         "Lisätään ${ addedServerCount } yhdyskäytäväpalvelinta"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Ulkoisen sähköpostiosoitteen lisääminen poistaa päästä päähän -salauksen käytöstä kaikelta kyseisen ryhmän sähköpostiviestinnältä. Haluatko jatkaa?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Lisätään yhdyskäytäväpalvelinta: ${ serverNumber }/${ total }",
         "Lisätään yhdyskäytäväpalvelimia: ${ serverNumber }/${ total }"
@@ -3691,6 +3710,9 @@
       "Affected user is on row": [
         "Käyttäjä, jota tämä koskee, on rivillä",
         "Käyttäjät, joita tämä koskee, ovat riveillä"
+      ],
+      "All inactive members deleted": [
+        "Kaikki inaktiiviset jäsenet on poistettu"
       ],
       "All members have been added.": [
         "Kaikki jäsenet on lisätty."
@@ -3963,6 +3985,15 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Otettu käyttöön ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Sähköpostien päästä päähän -salaus ei ole käytössä tällä ryhmällä ulkoisten osoitteiden vuoksi."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "Sähköpostien päästä päähän -salaus ei ole käytössä tällä ryhmällä. Se voidaan ottaa käyttöön."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Sähköpostien päästä päähän -salaus on käytössä tällä ryhmällä."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Identiteetintarjoajaltasi (esim. https://idp.esimerkki.fi/sso/saml) saatu päätepisteen URL-osoite."
       ],
@@ -4148,9 +4179,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Asenna palvelinkohtainen määritystiedosto yhdistääksesi tiettyyn palvelimeen valitsemassasi maassa."
-      ],
-      "Internal user": [
-        "Sisäinen käyttäjä"
       ],
       "Internet connection lost": [
         "Internet-yhteys katkesi"
@@ -4427,16 +4455,13 @@
         "Vahvista maksusi vahvistusvälilehdellä."
       ],
       "Please check your file for errors, or contact customer support for more information.": [
-        "Tarkista tiedostosi virheiden varalta tai ota yhteyttä asiakaspalveluun saadaksesi lisätietoja."
+        "Tarkista tiedostosi virheiden varalta tai ota yhteyttä tukeen saadaksesi lisätietoja."
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Tarkista tiedostosi tai kokeile ${ csvTemplateButton }."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Syötä tilillesi kuuluva 12-sanainen palautuslauseke."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Huomioithan, että painettuasi \"Vahvista\"-painiketta, tilillesi jää ${ remainingCreditsFormatted } saldoa."
       ],
       "please open a support ticket": [
         "avaa tukipyyntö"
@@ -4461,6 +4486,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Edellyttää Plus- tai Visionary-tilausta"
+      ],
+      "Preference saved": [
+        "Asetus tallennettiin"
       ],
       "Preview": [
         "Esikatselu"
@@ -4709,14 +4737,20 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Tämä vahvistus voi kestää jopa tunnin. Älä poista TXT-tietuetta onnistuneen vahvistuksen jälkeen, koska sitä tarvitaan vahvistamaan, että omistat verkkotunnuksen myös jatkossa."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Tämä estää pääsyn käyttäjältä **${ email }**. Haluatko varmasti jatkaa?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Tämä poistaa käytöstä kaksivaiheisen todennuksen, mukaan lukien sekä todennussovelluksen että suojausavainmenetelmät."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tämän avulla voit maksaa ${ BRAND_NAME }-tilauksesi PayPalilla. Ohjaamme sinut PayPaliin uudessa selaimen välilehdessä. Jos käytät jotakin ponnahdusestoa, poista se käytöstä jatkaaksesi."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Tämä poistaa kaikki näihin käyttäjiin liitettyvät tiedot ja sähköpostiosoitteet pysyvästi."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
-        "Tämä poistaa kaikki käyttäjään liitetyt tiedot ja sähköpostiosoitteet pysyvästi."
+        "Tämä poistaa kaikki tähän käyttäjään liittyvät tiedot ja sähköpostiosoitteet pysyvästi."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Tämä poistaa tilisi ja kaikki sen tiedot pysyvästi. Et voi aktivoida tiliä uudelleen."
@@ -5101,6 +5135,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
       ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Säilytät elinikäisen käyttöoikeuden ${ PASS_APP_NAME } + SimpleLoginin premium-ominaisuuksiin, jos perut tilauksesi."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Menetät pääsyn ${ planTitle } -ominaisuuksiin tänä päivänä."
       ],
@@ -5121,6 +5158,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Sinun ${ BRAND_NAME } -salasanasi"
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } Plus -tilauksesi korvataan elinikäisellä ${ PASS_SHORT_APP_NAME }illa. Tilauksesi jäljellä oleva saldo lisätään tilillesi. Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } - ja ${ MAIL_APP_NAME } -tilisi on yhdistetty. Poistaaksesi ne molemmat, kirjaudu osoitteessa ${ loginLink } ja poista tilisi sieltä."
@@ -5230,7 +5270,7 @@
         "Kieltäydytty"
       ],
       "Paused": [
-        "Keskeytyi"
+        "Pysäytetty"
       ],
       "Pending": [
         "Odottaa"
@@ -5291,7 +5331,7 @@
         "Hyvitys"
       ],
       "Renewal": [
-        "Uudistus"
+        "Uusiminen"
       ],
       "Subscription": [
         "Tilaus"
@@ -6119,8 +6159,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Australian dollari"
+      ],
       "Brazilian real": [
         "Brasilian real"
+      ],
+      "British pound": [
+        "Englannin punta"
+      ],
+      "Canadian dollar": [
+        "Kanadan dollari"
       ],
       "Euro": [
         "euroa"
@@ -6277,6 +6326,9 @@
         "${ options } päivän tiedostojen versiohistoria",
         "${ options } päivän tiedostojen versiohistoria"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin elinikäisesti"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-alias",
         "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-aliasta"
@@ -6321,7 +6373,7 @@
         "24/7 tilin hallinnan tuki"
       ],
       "24/7 support": [
-        "24/7-asiakaspalvelu"
+        "24/7-tuki"
       ],
       "99.95% SLA": [
         "99.95 % SLA"
@@ -6334,6 +6386,9 @@
       ],
       "Administration Panel": [
         "Hallintapaneeli"
+      ],
+      "Advanced account protection": [
+        "Edistynyt tilin suojaus"
       ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Edistyneet aliastoiminnot (SimpleLoginin tarjoama)"
@@ -6367,6 +6422,9 @@
       ],
       "Available on all platforms": [
         "Saatavilla kaikilla alustoilla"
+      ],
+      "Breach alerts": [
+        "Tietomurtohälytykset"
       ],
       "Calendar sharing": [
         "Kalenterien jakaminen"
@@ -6511,7 +6569,7 @@
         "Salasanasuojatut sähköpostiviestit"
       ],
       "Phone support (20+ users)": [
-        "Puhelinasiakaspalvelu (20+ käyttäjää)"
+        "Puhelintuki (20+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -6912,6 +6970,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Luo jopa ${ n } sähköpostiosoitetta/aliasta, jotka voit määrittää perheenjäsenille ja käytä niitä verkkoidentiteeteillesi, kuten esim. MikkoOstaja@${ domain } ostostileille."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Omat verkkotunnukset aliaksille, lisäpostilaatikkoja, sähköpostien lähettäminen aliaksilla, ja paljon muuta"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Omia kiinteää IP-osoitetta käyttäviä palvelimia voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten"
       ],
@@ -6948,6 +7009,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Voit merkitä viestejä tunnisteilla helpottaaksesi niiden etsintää ja suodatusta."
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Elinikäinen käyttöoikeus ${ PASS_APP_NAME } + SimpleLoginin premium-ominaisuuksiin."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Kuten kansio, holvi on kätevä tapa järjestellä kohteitasi."
       ],
@@ -6958,7 +7022,7 @@
         "Hallitse tilaustasi ja mukauta tilaamaasi palvelukokonaisuutta. Hyväksytyt maksutavat ovat maksukortti, PayPal, kryptovaluutta ja pankkisiirto."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "Arkipäivisin ${ BRAND_NAME }in asiakaspalvelu vastaa pyyntöihin 24 tunnin kuluessa"
+        "Arkipäivisin ${ BRAND_NAME }in asiakastuki vastaa pyyntöihin 24 tunnin kuluessa"
       ],
       "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
         "Yksi VPN-yhteys mahdollistaa yhden laitteen ${ VPN_APP_NAME } VPN-yhteyden kerrallaan. Esimerkiksi puhelimen ja tietokoneen samanaikainen ${ VPN_APP_NAME } -käyttö vaatii kaksi VPN-yhteyttä."
@@ -6994,7 +7058,7 @@
         "Suojaa perhettäsi haitallisilta verkkosivustoilta ja käytä nopeita VPN-palvelimia suoratoistaaksesi suosikkisisältöäsi"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Suojaa todellinen sähköpostiosoitteesi paljastumiselta tai vuotamiselta aliaksilla (satunnaisesti luotu sähköpostiosoite, joka ohjaa sähköpostit pääpostilaatikkoosi)."
+        "Suojaa todellinen sähköpostiosoitteesi paljastumiselta tai vuotamiselta aliaksilla (satunnaisesti luotu sähköpostiosoite, joka välittää sähköpostit pääpostilaatikkoosi)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Tarjoaa korkeimman tason tilin suojauksen ja asiantuntijatuen"
@@ -7085,7 +7149,7 @@
     },
     "new_plans: Upsell attribute": {
       "24/7 support": [
-        "24/7-asiakaspalvelu"
+        "24/7-tuki"
       ],
       "Access advanced VPN features": [
         "Käyttöoikeus edistyneisiin VPN-ominaisuuksiin"
@@ -7156,11 +7220,20 @@
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME }-uutiskirje"
       ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME }in tarjoukset ja kampanjat"
+      ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } -tuotejulkaisut"
       ],
       "1 email per month": [
         "1 sähköposti kuukaudessa"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 sähköposti kuukaudessa. Saat tuoreimmat tietosuojauutiset ja tietoa ${ BRAND_NAME }-universumin tapahtumista."
+      ],
+      "1 email per quarter": [
+        "1 sähköposti neljännesvuodessa"
       ],
       "1-2 emails per month": [
         "1 - 2 sähköpostiä kuukaudessa"
@@ -7174,8 +7247,14 @@
       "Application notifications": [
         "Sovellusilmoitukset"
       ],
+      "Critical account notifications will still be delivered": [
+        "Kriittiset tili-ilmoitukset toimitetaan edelleen"
+      ],
       "Daily email notifications": [
         "Päivittäiset sähköposti-ilmoitukset"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Tämän käytöstä poistaminen estää ilmoitusten vastaanottamisen ${ BRAND_NAME } -sovelluksissa"
       ],
       "During your first month": [
         "Ensimmäisen kuukautesi ajan"
@@ -7185,6 +7264,12 @@
       ],
       "In-app notifications": [
         "Sovelluksensisäiset ilmoitukset"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Auta parantamaan ${ BRAND_NAME } -palveluita osallistumalla kyselyihin"
+      ],
+      "Product updates": [
+        "Tuotepäivitykset"
       ]
     },
     "Notification": {
@@ -7534,8 +7619,14 @@
         "${ n } käyttäjätili",
         "${ n } käyttäjätiliä"
       ],
+      "Activity log": [
+        "Tapahtumaloki"
+      ],
       "Admin panel to manage users and subscription": [
         "Ylläpitopaneeli käyttäjien ja tilauksen hallintaan"
+      ],
+      "Team policies": [
+        "Ryhmäkäytännöt"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7570,6 +7661,9 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Kaikki ylläpitäjät pääsevät käsiksi avaimeen."
+      ],
       "Are you sure you want to change your organization key?": [
         "Haluatko varmasti muuttaa organisaation avainta?"
       ],
@@ -7609,8 +7703,14 @@
       "The following administrators could not be restored.": [
         "Seuraavia ylläpitäjiä ei voitu palauttaa"
       ],
+      "The following administrators will get access to the organization key.": [
+        "Seuraavat ylläpitäjät voivat käsitellä organisaation avainta."
+      ],
       "The organization key must be activated first.": [
         "Organisaation avain on ensin aktivoitava."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Tämä lähettää uusimman organisaatioavaimen ylläpitäjille, jotka tällä hetkellä voi käyttää sitä."
       ],
       "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
         "Ei-yksityisten käyttäjätilien luominen ja niiden käyttö vaatii organisaatioavaimesi aktivoimista."
@@ -7628,7 +7728,7 @@
         "Emme voineet vahvistaa tämän identiteetin aitoutta."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
-        "Tämän lähettäjän osoiteavaimen turvallisuutta ei voitu varmistaa. Joskus lähettäjän tietojen päivittäminen voi viivästyä. Yritä myöhemmin uudelleen. Jos et luota tämän kutsun tai lähettäjän aitouteen, ota yhteyttä ${ BRAND_NAME } -asiakaspalveluun."
+        "Tämän lähettäjän osoiteavaimen turvallisuutta ei voitu varmistaa. Joskus lähettäjän tietojen päivittäminen voi viivästyä. Yritä myöhemmin uudelleen. Jos et luota tämän kutsun tai lähettäjän aitouteen, ota yhteyttä ${ BRAND_NAME } -tukeen."
       ],
       "We have verified the authenticity of this identity.": [
         "Olemme vahvistaneet tämän identiteetin aitouden."
@@ -7641,6 +7741,9 @@
       ],
       "You must privatize all users before generating a new organization key": [
         "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaation avaimen luontia"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Sinun tulee voida käsitellä organisaation avainta suorittaaksesi tämä toiminnon."
       ]
     },
     "Payment method option": {
@@ -7707,6 +7810,9 @@
       ],
       "Processing payment": [
         "Käsitellään maksua"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Uusitaan hintaan ${ price }, peruuta milloin tahansa."
       ],
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
@@ -7982,6 +8088,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } organisaatiosi ylläpitäjä tarvitsee oikeuden käyttää organisaation avainta.",
+        "${ n } organisaatiosi ylläpitäjää tarvitsee oikeudet käyttää organisaation avainta."
+      ],
       "Changing organization keys": [
         "Muuta organisaation avaimia"
       ],
@@ -8081,6 +8191,9 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Edellytys:** SCIM-provisioinnin käyttöönotto vaatii SAML-todennuksen määritystä."
       ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Edellytys:** käyttääksesi SCIM-provisiointia sinun on vahvistettava, että omistat verkkotunnuksen **${ domainName }**. Tämä vahvistus voi kestää tunnin."
+      ],
       "Enter the token into your identity provider": [
         "Syötä tunniste identiteetintarjoajaasi"
       ],
@@ -8093,6 +8206,12 @@
       "For security reasons, the token is hidden": [
         "Tunniste on tietoturvasyistä piilotettu"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Siirry identiteetin tarjoajaasi, kopioi ja liitä alla olevat tiedot, ja viimeistele SCIM-määritys ${ appName }:lle."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Siirry identiteetin tarjoajaasi, kopioi ja liitä alla oleva tunniste, ja ota SCIM uudelleen käyttöön ${ appName }:lle."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Jos olet kadottanut tai unohtanut SCIM-tunnisteen, voit luoda uuden, mutta ota huomioon, että identiteetintarjoajasi asetukset on päivitettävä."
       ],
@@ -8101,6 +8220,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Kun SCIM on poistettu käytöstä organisaatiollesi, **kaikki tunnistietojen toimittajasi automaattisesti tarjoamat SCIM-käyttäjät muutetaan SSO-käyttäjiksi**, ja voit hallita heitä suoraan ${ BRAND_NAME } -asetuksissa."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Yksinkertaistaa eri palveluiden välistä käyttäjähallintaa. Lisää, muokkaa ja poista käyttäjiä identiteetin tarjoajassasi, ja muutokset toteutetaan automaattisesti myös ${ appName } -organisaatiossasi."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM:n automaattinen valmistelu on pois käytöstä, kunnes syötät uuden SCIM-tunnisteen identiteetintarjoajasi asetuksiin."
@@ -8182,7 +8304,7 @@
         "aktiivinen"
       ],
       "inactive": [
-        "ei aktiivinen"
+        "ei käytössä"
       ],
       "pending": [
         "odottaa"
@@ -8693,9 +8815,20 @@
         "${ n } jäsen pyysi apuasi kirjautumisessa.",
         "${ n } jäsentä pyysi apuasi kirjautumisessa."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } käyttäjä on liittynyt organisaatioosi identiteetin tarjoajasi kautta. Tarkista tili nyt:",
+        "${ n } käyttäjää on liittynyt organisaatioosi identiteetin tarjoajasi kautta. Tarkista tilit nyt:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } käyttäjä ei ole aktiivinen. Voit turvallisesti poistaa tämän käyttäjän organisaatiostasi.",
+        "${ n } käyttäjää ei ole aktiivisena. Voit turvallisesti poistaa heidät organisaatiostasi."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } käyttäjä pyytää apuasi kirjautumaan heidän ${ BRAND_NAME }-tilillensä kertakirjautumisella.",
         "${ n } käyttäjää pyytää apuasi kirjautumaan heidän ${ BRAND_NAME }-tileillensä kertakirjautumisella."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**SSO-käyttäjät (identiteetin tarjoajaltasi) poistetaan**, ja sinun on luotava ne manuaalisesti lisätäksesi ne takaisin organisaatioosi."
       ],
       "Access denied": [
         "Pääsy evätty"
@@ -8739,6 +8872,10 @@
       "Contact your administrator if the problem persists.": [
         "Ota yhteyttä ylläpitäjääsi, jos ongelma jatkuu."
       ],
+      "Delete ${ n } inactive user?": [
+        "Poistetaanko ${ n } inaktiivinen käyttäjä?",
+        "Poistetaanko ${ n } inaktiivista käyttäjää?"
+      ],
       "Delete ${ n } user": [
         "Poista ${ n } käyttäjä",
         "Poista ${ n } käyttäjää"
@@ -8773,6 +8910,9 @@
       "Grant access to users?": [
         "Myönnetäänkö käyttäjille käyttöoikeus?"
       ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Jos sinut lukitaan ulos ${ BRAND_NAME } -tililtäsi, varasalasanasi sallii sinun kirjautua sisään ja palauttaa tietosi."
+      ],
       "Invalid confirmation code": [
         "Virheellinen vahvistuskoodi"
       ],
@@ -8787,6 +8927,9 @@
       ],
       "New backup password": [
         "Uusi varasalasana"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Ei-SSO-käyttäjät (manuaalisesti luodut, ei identiteetin tarjoajaltasi) voivat edelleen kirjautua organisaatioosi."
       ],
       "Once single sign-on is disabled for your organization:": [
         "Kun kertakirjautuminen on poistettu käytöstä organisaatioltasi:"
@@ -8845,7 +8988,7 @@
         "Aktiivinen"
       ],
       "Inactive": [
-        "Ei-aktiivinen"
+        "Ei käytössä"
       ],
       "Pending activation": [
         "Odottaa aktivointia"
@@ -9082,6 +9225,11 @@
         "Tilaus alennetaan laskutusjakson päättyessä."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Elinikäinen"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Hintaan ${ totalPrice }"
@@ -9239,7 +9387,7 @@
         "Aktivistien auttaminen Hongkongissa"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
-        "Miten asiakaspalvelumme sai VPN-sovelluksemme suoraan ihmisten käsiin."
+        "Miten tukitiimimme sai VPN-sovelluksemme suoraan ihmisten käsiin."
       ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
         "Miten taistelimme vastaan, kun ${ BRAND_NAME } estettiin aggressiivisessa kampanjassa."
@@ -9388,7 +9536,7 @@
         "sekä 15 muuta premium-ominaisuutta"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
+        "Automaattinen sähköpostivälitys ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Tietomurtohälytykset ${ strongArgument }"
@@ -9635,6 +9783,12 @@
       "Creating config file for ${ serverName }": [
         "Luodaan määritystiedostoa palvelimelle ${ serverName }"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Ryhmän sähköpostien päästä päähän -salaus ei ole käytössä"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Ryhmän sähköpostien päästä päähän -salaus on käytössä"
+      ],
       "Preference updated": [
         "Asetus päivitetty"
       ],
@@ -9822,6 +9976,9 @@
       ],
       "Add domain": [
         "Lisää verkkotunnus"
+      ],
+      "Add external address?": [
+        "Lisätäänkö ulkoinen osoite?"
       ],
       "Add PayPal payment method": [
         "Lisää PayPal-maksutapa"
@@ -10572,6 +10729,12 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajoittamattoman määrän aliaksia, jakamisen, integroidun 2FA:n ja muuta."
       ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä, eikä mitään salattuja tietoja jaeta tälle käyttäjälle."
+      ],
       "Group membership paused": [
         "Ryhmän jäsenyys on pysäytetty"
       ],
@@ -10737,6 +10900,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Ylläpitäjät eivät pääse käsiksi yksityisten käyttäjien tietoihin"
+      ],
+      "Inactive": [
+        "Inaktiivinen"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Kutsu lähetetty, odotetaan kutsutun jäsenen vastausta"

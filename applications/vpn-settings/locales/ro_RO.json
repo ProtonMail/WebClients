@@ -55,6 +55,9 @@
       "Add domain": [
         "Adăugare domeniu"
       ],
+      "Add external address": [
+        "Adăugare adresă externă"
+      ],
       "Add more ${ BRAND_NAME } Scribe seats": [
         "Adăugare licențe de ${ BRAND_NAME } Scribe"
       ],
@@ -935,8 +938,10 @@
       "Sorry, this offer is not available with your current plan.": [
         "Această ofertă nu este disponibilă pentru planul curent."
       ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni."
       ]
     },
     "bf2023: Offers": {
@@ -1319,6 +1324,9 @@
         "un utilizator",
         "${ users } utilizatori",
         "${ users } de utilizatori"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total pentru o lună",
@@ -3593,6 +3601,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Oferta pe viață a ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }. Prețul și data de reînnoire a abonamentului ${ planTitle } rămân neschimbate."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
       ],
@@ -3722,6 +3733,9 @@
         "Se adaugă ${ addedServerCount } server poartă de acces",
         "Se adaugă ${ addedServerCount } servere poartă de acces",
         "Se adaugă ${ addedServerCount } de servere poartă de acces"
+      ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Adăugarea unei adrese de e-mail externe va dezactiva criptarea bilaterală pentru toate mesajele prin e-mail în cadrul acestui grup. Doriți să continuați?"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Se adaugă serverul poartă de acces: ${ serverNumber }/${ total }",
@@ -4017,6 +4031,15 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Activat de la ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Pentru acest grup este dezactivată criptarea bilaterală a mesajelor pe e-mail deoarece se utilizează o adresă externe."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "Pentru acest grup este dezactivată criptarea bilaterală a mesajelor pe e-mail. Aceasta poate fi activată."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Pentru acest grup este activată criptarea bilaterală a mesajelor pe e-mail."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Adresa URL a punctului final primită de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)."
       ],
@@ -4202,9 +4225,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instalați un fișier de configurare al serverului pentru a vă conecta la un server din țara aleasă."
-      ],
-      "Internal user": [
-        "Utilizator intern"
       ],
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
@@ -4495,9 +4515,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Vă rugăm să introduceți fraza de recuperare de 12 cuvinte asociată acestui cont."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "După apăsarea pe butonul de confirmare, contul va mai avea ${ remainingCreditsFormatted } (de) credite rămase."
       ],
       "please open a support ticket": [
         "deschideți un tichet de asistență"
@@ -5183,6 +5200,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
       ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Vă veți păstra accesul pe viață la funcțiile premium din ${ PASS_APP_NAME } + SimpleLogin dacă anulați abonamentul."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Veți pierde accesul la funcțiile planului ${ planTitle } la această dată."
       ],
@@ -5203,6 +5223,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Parola ${ BRAND_NAME }"
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Abonamentul ${ PASS_SHORT_APP_NAME } Plus va fi înlocuit cu ${ PASS_SHORT_APP_NAME } pe viață. Soldul rămas din abonament va fi restituit în cont. Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Conturile de ${ VPN_APP_NAME } și ${ MAIL_APP_NAME } sunt conectate. Pentru a le șterge pe ambele, conectați-vă la ${ loginLink } și ștergeți contul de acolo."
@@ -6209,8 +6232,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Dolar australian"
+      ],
       "Brazilian real": [
         "Real brazilian"
+      ],
+      "British pound": [
+        "Liră britanică"
+      ],
+      "Canadian dollar": [
+        "Dolar canadian"
       ],
       "Euro": [
         "Euro"
@@ -6383,6 +6415,9 @@
         "Istoric versiuni fișiere: ${ options } zile",
         "Istoric versiuni fișiere: ${ options } de zile"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin pe viață"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } cu ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } cu ${ n } aliasuri hide-my-email",
@@ -6442,6 +6477,12 @@
       "Administration Panel": [
         "Panou de administrare"
       ],
+      "Advanced account protection": [
+        "Protecție avansată a contului"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funcții avansate alias (furnizate de SimpleLogin)"
+      ],
       "Advanced network security": [
         "Securitate avansată a rețelei"
       ],
@@ -6471,6 +6512,9 @@
       ],
       "Available on all platforms": [
         "Disponibil în toate planurile"
+      ],
+      "Breach alerts": [
+        "Alerte breșe"
       ],
       "Calendar sharing": [
         "Partajare calendar"
@@ -7025,6 +7069,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domenii personale pentru aliasuri, conturi suplimentare, posibilitatea de a trimite mesaje de la aliasuri și multe altele"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului"
       ],
@@ -7060,6 +7107,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etichetele sunt etichete simple pe care le puteți adăuga la mesaje pentru a le face mai ușor de găsit sau de aplicat filtre."
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Acces pe viață la funcțiile premium ale ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Ca și un folder, un seif este un mod convenient de a vă organiza articolele."
@@ -7702,8 +7752,14 @@
         "${ n } conturi de utilizator",
         "${ n } de conturi de utilizator"
       ],
+      "Activity log": [
+        "Jurnal activitate"
+      ],
       "Admin panel to manage users and subscription": [
         "Panou de administrare pentru a gestiona utilizatorii și abonamentul"
+      ],
+      "Team policies": [
+        "Politicile echipei"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7887,6 +7943,9 @@
       ],
       "Processing payment": [
         "Se procesează plata"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Reînnoiți cu ${ price }, anulați oricând."
       ],
       "Select billing country to pay": [
         "Selectați țara de facturare pentru a plăti"
@@ -9351,6 +9410,11 @@
         "Abonamentul va fi retrogradat la sfârșitul perioadei de facturare."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Pe viață"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pentru ${ totalPrice }"
@@ -9910,6 +9974,12 @@
       "Creating config file for ${ serverName }": [
         "Se crează fișierul de configurare pentru ${ serverName }."
       ],
+      "Group end-to-end email encryption disabled": [
+        "Criptarea bilaterală a mesajelor din grup este dezactivată."
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Criptarea bilaterală a mesajelor din grup este activată."
+      ],
       "Preference updated": [
         "Preferințe actualizate"
       ],
@@ -10098,6 +10168,9 @@
       ],
       "Add domain": [
         "Adăugare domeniu"
+      ],
+      "Add external address?": [
+        "Adăugați o adresă externă?"
       ],
       "Add PayPal payment method": [
         "Adăugare PayPal ca metodă de plată"
@@ -10851,6 +10924,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup."
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup și nici o resursă criptată nu va fi partajată cu acest utilizator."
       ],
       "Group membership paused": [
         "Apartenența la grup a fost suspendată"

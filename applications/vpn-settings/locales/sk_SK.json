@@ -55,6 +55,9 @@
       "Add domain": [
         "Pridať doménu"
       ],
+      "Add external address": [
+        "Pridať externú adresu"
+      ],
       "Add more ${ BRAND_NAME } Scribe seats": [
         "Pridať viac slotov v ${ BRAND_NAME } Scribe"
       ],
@@ -939,8 +942,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
       ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiac.",
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiace.",
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov.",
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov."
       ]
     },
     "bf2023: Offers": {
@@ -1125,15 +1131,15 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou šifrovania end-to-end. Súčasťou sú 15 emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa online editor dokumentov, zálohu fotografií, históriu verzií, zdieľanie zašifrovaných súborov a ďalšie."
@@ -1301,7 +1307,7 @@
         "Ušetrite peniaze s ${ upsellPlanName }"
       ],
       "Secure personal and shared calendar": [
-        "Zabezpečený osobný a zdieľaný kalendár"
+        "Bezpečný osobný a zdieľaný kalendár"
       ],
       "Try ${ planName }": [
         "Vyskúšajte ${ planName }"
@@ -1319,6 +1325,9 @@
         "${ users } používatelia",
         "${ users } používateľov",
         "${ users } používateľov"
+      ],
+      "Total": [
+        "Celkom"
       ],
       "Total for ${ n } month": [
         "Celkom za ${ n } mesiac",
@@ -3609,6 +3618,12 @@
         "${ number } serverov",
         "${ number } serverov"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Doživotná služba ${ PASS_SHORT_APP_NAME } nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } doživotná služba nemá cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }. Cena a dátum obnovenia vášho predplatného ${ planTitle } zostávajú nezmenené."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
@@ -3746,6 +3761,9 @@
         "Pridávanie ${ addedServerCount } serverov brány",
         "Pridávanie ${ addedServerCount } serverov brány",
         "Pridávanie ${ addedServerCount } serverov brány"
+      ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Pridaním externej emailovej adresy sa vypne end-to-end šifrovanie pre všetku emailovú komunikáciu v rámci tejto skupiny. Chcete pokračovať?"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Pridávanie servera brány: ${ serverNumber } / ${ total }",
@@ -4047,6 +4065,15 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Zapnuté od ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "End-to-end šifrovanie emailov je pre túto skupinu vypnuté kvôli externým adresám."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "End-to-end šifrovanie emailov je pre túto skupinu vypnuté. Môže byť povolené."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Pre túto skupinu je povolené end-to-end šifrovanie emailov."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa koncového bodu získaná od poskytovateľa identity (napr. https://idp.example.com/sso/saml)."
       ],
@@ -4232,9 +4259,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Nainštalujte konfiguračný súbor serveru a pripojte sa ku konkrétnemu serveru v krajine podľa vašeho výberu."
-      ],
-      "Internal user": [
-        "Interný používateľ"
       ],
       "Internet connection lost": [
         "Strata internetového pripojenia"
@@ -4526,9 +4550,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Zadajte 12-slovnú frázu na obnovenie spojenú s vaším účtom, prosím."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú kredity vo výške ${ remainingCreditsFormatted }."
       ],
       "please open a support ticket": [
         "otvorte, prosím, žiadosť o technickú podporu"
@@ -5226,6 +5247,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Po prihlásení dôjde k presmerovaniu na ${ destination }."
       ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Ak zrušíte predplatné, zachováte si doživotný prístup k prémiovým funkciám ${ PASS_APP_NAME } + SimpleLogin."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "V tento deň stratíte prístup k funkciám ${ planTitle }."
       ],
@@ -5246,6 +5270,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Vaše heslo ${ BRAND_NAME }"
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Vaše predplatné ${ PASS_SHORT_APP_NAME } Plus bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na vaše konto. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Vaše účty ${ VPN_APP_NAME } a ${ MAIL_APP_NAME } sú prepojené. Ak chcete obidva odstrániť, prihláste sa na ${ loginLink } a odstráňte tam svoj účet."
@@ -6254,8 +6281,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Austrálsky dolár"
+      ],
       "Brazilian real": [
         "Brazílsky real"
+      ],
+      "British pound": [
+        "Britská libra"
+      ],
+      "Canadian dollar": [
+        "Kanadský dolár"
       ],
       "Euro": [
         "Euro"
@@ -6444,6 +6480,9 @@
         "${ options }-dňová história verzií súborov",
         "${ options }-dňová história verzií súborov"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin navždy"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } hide-my-email aliasom",
         "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi",
@@ -6504,6 +6543,12 @@
       "Administration Panel": [
         "Panel administrácie"
       ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Pokročilé funkcie aliasov (založené na SimpleLogin)"
+      ],
       "Advanced network security": [
         "Pokročilá bezpečnosť siete"
       ],
@@ -6533,6 +6578,9 @@
       ],
       "Available on all platforms": [
         "K dispozícii na všetkých platformách"
+      ],
+      "Breach alerts": [
+        "Upozornenia na narušenie"
       ],
       "Calendar sharing": [
         "Zdieľanie kalendára"
@@ -7096,6 +7144,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Vlastné domény pre aliasy, ďalšie poštové schránky, možnosť odosielať emaily z aliasov a ďalšie"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu"
       ],
@@ -7131,6 +7182,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Štítky sú jednoduché značky, ktoré môžete pridať do správ, aby ste ich ľahšie našli alebo na ne použili filtre"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Doživotný prístup k prémiovým funkciám ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Podobne ako priečinok, aj trezor je pohodlný spôsob organizácie položiek."
@@ -7759,16 +7813,22 @@
         "${ n } používateľských účtov",
         "${ n } používateľských účtov"
       ],
+      "Activity log": [
+        "Záznam aktivity"
+      ],
       "Admin panel to manage users and subscription": [
         "Panel správcu pre správu užívateľov a predplatného"
+      ],
+      "Team policies": [
+        "Tímové zásady"
       ]
     },
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
-        "Všetky prémiové funkcie. 6 používateľov. 1 jednoduché predplatné."
+        "Všetky prémiové funkcie. 6 používateľov. Jedno jednoduché predplatné."
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
-        "Účtované ročne za ${ yearlyPrice }. Ušetrite ${ yearlySavedPrice } s ${ passFamilyPlanName } (oproti 6 individuálnym predplatným ${ passPlusPlanName })."
+        "Účtované ročne za ${ yearlyPrice }. Ušetríte ${ yearlySavedPrice } s ${ passFamilyPlanName } (oproti 6 individuálnym predplatným ${ passPlusPlanName })."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Exkluzívna ponuka dostupná iba pre včasných podporovateľov ${ PASS_APP_NAME }."
@@ -7944,6 +8004,9 @@
       ],
       "Processing payment": [
         "Spracováva sa platba"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Obnovuje sa za ${ price }, zrušiť môžete kedykoľvek."
       ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"
@@ -9428,7 +9491,7 @@
         "Rozumiem"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
-        "Prihláste sa do Apple Store a potom vyberte ${ subscriptions }."
+        "Stačí sa prihlásiť do účtu v Apple App Store a vybrať ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Prihláste sa do Obchodu Play a potom stlačte ${ subscriptions }."
@@ -9449,6 +9512,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Na konci fakturačného cyklu sa predplatné zníži."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Doživotne"
       ]
     },
     "Subscription price": {
@@ -9584,7 +9652,7 @@
         "Komplexná ochrana súkromia a zabezpečenia"
       ],
       "Dark web monitoring": [
-        "Sledovanie Dark webu"
+        "Monitorovanie Dark webu"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Podpora desktopovej aplikácie a emailového klienta (cez IMAP)"
@@ -9713,7 +9781,7 @@
         "Neobmedzené súkromie pre dvoch"
       ],
       "Upload any new files": [
-        "Nahrajte nové súbory"
+        "Nahrávať nové súbory"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
         "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je užívateľské predplatné. Vaša podpora nám umožňuje zostať nezávislými, pokračovať v našom poslaní chrániť online súkromie a pomáhať aktivistom a organizáciám bojujúcim za slobodu."
@@ -10016,6 +10084,12 @@
       "Creating config file for ${ serverName }": [
         "Vytvorenie konfiguračného súboru pre ${ serverName }"
       ],
+      "Group end-to-end email encryption disabled": [
+        "End-to-end šifrovanie skupinových emailov deaktivované"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "End-to-end šifrovanie skupinových emailov povolené"
+      ],
       "Preference updated": [
         "Nastavenie uložené"
       ],
@@ -10205,6 +10279,9 @@
       ],
       "Add domain": [
         "Pridať doménu"
+      ],
+      "Add external address?": [
+        "Pridať externú adresu?"
       ],
       "Add PayPal payment method": [
         "Pridať PayPal platobnú metódu"
@@ -10963,6 +11040,12 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Externá adresa - deaktivuje end-to-end šifrovanie emailov pre túto skupinu"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Externá adresa - deaktivuje end-to-end šifrovanie emailov pre túto skupinu a s týmto používateľom nebudú zdieľané žiadne šifrované zdroje."
+      ],
       "Group membership paused": [
         "Členstvo v skupine pozastavené"
       ],
@@ -10981,7 +11064,7 @@
         "stabilná verzia"
       ],
       "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Táto verzia prehliadača TOR nie je podporovaná. Prosím, aktualizujte na najnovšiu ${ stableRelease }"
+        "Táto verzia TOR prehliadača nie je podporovaná. Prosím, aktualizujte na najnovšiu ${ stableRelease }"
       ]
     },
     "unprivatization": {

@@ -55,6 +55,9 @@
       "Add domain": [
         "Přidat doménu"
       ],
+      "Add external address": [
+        "Přidat externí adresu"
+      ],
       "Add more ${ BRAND_NAME } Scribe seats": [
         "Přidat další licence ${ BRAND_NAME } Scribe"
       ],
@@ -939,8 +942,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
       ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíc.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíce.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců."
       ]
     },
     "bf2023: Offers": {
@@ -3266,10 +3272,10 @@
         "Ověřte svou identitu pomocí fyzického bezpečnostního klíče U2F nebo FIDO2"
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "Dosáhli jste maximální délky bezpečnostního klíče ${ maxSecurityKeyLength }.",
-        "Dosáhli jste maximální délky bezpečnostních klíčů ${ maxSecurityKeyLength }.",
-        "Dosáhli jste maximální délky bezpečnostních klíčů ${ maxSecurityKeyLength }.",
-        "Dosáhli jste maximální délky bezpečnostních klíčů ${ maxSecurityKeyLength }."
+        "Dosáhli jste maximálního počtu ${ maxSecurityKeyLength } bezpečnostního klíče.",
+        "Dosáhli jste maximálního počtu ${ maxSecurityKeyLength } bezpečnostních klíčů.",
+        "Dosáhli jste maximálního počtu ${ maxSecurityKeyLength } bezpečnostních klíčů.",
+        "Dosáhli jste maximálního počtu ${ maxSecurityKeyLength } bezpečnostních klíčů."
       ],
       "Your two-factor authentication key is ready to use.": [
         "Váš dvoufázový ověřovací klíč je připraven k použití."
@@ -3765,6 +3771,9 @@
         "Přidávání ${ addedServerCount } serverů brány",
         "Přidávání ${ addedServerCount } serverů brány"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Přidáním externí e-mailové adresy se deaktivuje koncové šifrování pro veškerou e-mailovou komunikaci v rámci této skupiny. Chcete pokračovat?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Přidávání serveru brány: ${ serverNumber } / ${ total }",
         "Přidávání serverů brány: ${ serverNumber } / ${ total }",
@@ -4065,6 +4074,15 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Povoleno ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Pro tuto skupinu je koncové šifrování e-mailů deaktivováno kvůli použití externích adres."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "Pro tuto skupinu je koncové šifrování e-mailů deaktivováno. Lze povolit."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Pro tuto skupinu je povoleno koncové šifrování e-mailů."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa endpointu, kterou jste dostali od vašeho poskytovatele identity (např. https://idp.example.com/sso/saml)."
       ],
@@ -4250,9 +4268,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Nainstalujte konfigurační soubor serveru a připojte se ke konkrétnímu serveru dle vašeho výběru."
-      ],
-      "Internal user": [
-        "Interní uživatel"
       ],
       "Internet connection lost": [
         "Připojení k Internetu bylo ztraceno"
@@ -4547,9 +4562,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane ${ remainingCreditsFormatted } kreditů."
       ],
       "please open a support ticket": [
         "prosím odešlete požadavek na podporu"
@@ -5246,6 +5258,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po přihlášení budete přesměrováni na adresu ${ destination }."
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Pokud předplatné zrušíte, zachováte si doživotní přístup k prémiovým funkcím ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "K tomuto datu ztratíte přístup k funkcím ${ planTitle }."
@@ -6281,8 +6296,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Australský dolar"
+      ],
       "Brazilian real": [
         "Brazilský real"
+      ],
+      "British pound": [
+        "Britská libra"
+      ],
+      "Canadian dollar": [
+        "Kanadský dolar"
       ],
       "Euro": [
         "Euro"
@@ -6471,6 +6495,9 @@
         "${ options }denní historie verzí souborů",
         "${ options }denní historie verzí souborů"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin, doživotně"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } aliasem hide-my-email",
         "${ PASS_APP_NAME } se ${ n } aliasy hide-my-email",
@@ -6531,6 +6558,9 @@
       "Administration Panel": [
         "Panel správce"
       ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Pokročilé funkce aliasů (založeno na SimpleLogin)"
       ],
@@ -6563,6 +6593,9 @@
       ],
       "Available on all platforms": [
         "Dostupné na všech platformách"
+      ],
+      "Breach alerts": [
+        "Upozornění na úniky informací"
       ],
       "Calendar sharing": [
         "Sdílení kalendáře"
@@ -7164,6 +7197,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Jmenovky jsou jednoduché štítky, které můžete přidat ke zprávám aby se vám lépe hledaly a používaly filtry"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Doživotní přístup k prémiovým funkcím ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Podobně jako složka je trezor praktickým nástrojem k organizaci vašich položek"
@@ -8004,6 +8040,9 @@
       ],
       "Processing payment": [
         "Zpracovávání platby"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Obnovuje se za ${ price }, zrušit lze kdykoli."
       ],
       "Select billing country to pay": [
         "Vyberte zemi platby"
@@ -10081,6 +10120,12 @@
       "Creating config file for ${ serverName }": [
         "Vytvoření konfiguračního souboru pro ${ serverName }"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Koncové šifrování skupinových e-mailů deaktivováno"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Koncové šifrování skupinových e-mailů povoleno"
+      ],
       "Preference updated": [
         "Nastavení bylo uloženo"
       ],
@@ -10270,6 +10315,9 @@
       ],
       "Add domain": [
         "Přidat doménu"
+      ],
+      "Add external address?": [
+        "Přidat externí adresu?"
       ],
       "Add PayPal payment method": [
         "Přidat PayPal jako platební metodu"
@@ -11027,6 +11075,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Externí adresa - deaktivuje koncové šifrování e-mailů pro tuto skupinu"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Externí adresa - deaktivuje koncové šifrování e-mailů pro tuto skupinu a s tímto uživatelem nebudou sdíleny žádné šifrované zdroje"
       ],
       "Group membership paused": [
         "Členství ve skupině pozastaveno"

@@ -55,6 +55,12 @@
       "Add domain": [
         "ドメインを追加"
       ],
+      "Add external address": [
+        "他のアドレスを追加"
+      ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "${ BRAND_NAME }スクライブをもっと追加"
+      ],
       "Add PayPal": [
         "PayPal を追加"
       ],
@@ -63,6 +69,12 @@
       ],
       "Allow": [
         "許可"
+      ],
+      "Allow end-to-end encrypted mail for this group": [
+        "このグループにエンドツーエンド暗号化メールを許可"
+      ],
+      "Always allow sending": [
+        "送信はいつでも可能"
       ],
       "Apply": [
         "適用"
@@ -78,6 +90,9 @@
       ],
       "Back": [
         "戻る"
+      ],
+      "Back to sign-in": [
+        "サインインに戻る"
       ],
       "Block": [
         "ブロック"
@@ -184,6 +199,9 @@
       "Delete your account": [
         "アカウントを削除"
       ],
+      "Deny access": [
+        "アクセスを拒否"
+      ],
       "Details": [
         "詳細"
       ],
@@ -283,6 +301,9 @@
       "Forgot password?": [
         "パスワードを忘れた?"
       ],
+      "Forgot recovery method?": [
+        "回復手順を忘れましたか？"
+      ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } を入手"
       ],
@@ -348,6 +369,9 @@
       ],
       "Loading verification": [
         "認証を読み込み中"
+      ],
+      "Lost access to your 2FA device?": [
+        "2要素認証デバイスへのアクセスができませんか？"
       ],
       "Make admin": [
         "管理者として設定"
@@ -475,6 +499,9 @@
       "Restore": [
         "復元"
       ],
+      "Resume membership": [
+        "メンバーシップを再開する"
+      ],
       "Retry": [
         "再試行"
       ],
@@ -564,6 +591,9 @@
       ],
       "Show": [
         "表示"
+      ],
+      "Show all": [
+        "全て表示"
       ],
       "Show preview": [
         "プレビューを表示"
@@ -684,6 +714,9 @@
       ],
       "Verify domain": [
         "ドメインを検証"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "${ unverifiedSSODomain.DomainName }ドメインの認証"
       ],
       "View": [
         "表示"
@@ -840,6 +873,9 @@
       ],
       "Get the deal": [
         "割引をゲット"
+      ],
+      "Save even more with a 12-month plan": [
+        "12 か月プランでさらにお得"
       ]
     },
     "bf2023: Deal details": {
@@ -880,8 +916,8 @@
       "Sorry, this offer is not available with your current plan.": [
         "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
       ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "申し訳ありませんがこれらの要請は現在のあなたのプランでは許可されていません。${ cycle }ヶ月間のサブスクリプションで${ plan.Title }を${ discountPercentage }割引でご利用いただけます。"
       ]
     },
     "bf2023: Offers": {
@@ -2130,6 +2166,12 @@
       "Delete address?": [
         "アドレスの削除?"
       ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "一度削除すると、このアドレス${ address }は他の誰も使用することができなくなります。"
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "このアドレス${ address }を削除する場合、これ以上このアドレスでメールを送受信することに使えなくなることを覚えておいてください。"
+      ],
       "You can only delete 1 address per year.": [
         "削除できるアドレスは 1 年に 1 つだけです。"
       ]
@@ -2150,14 +2192,42 @@
         "削除"
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "このグループを本当に削除しますか？"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "${ displayGroupName }グループ(アドレス${ displayGroupAddressEmail })を削除した場合、そのアドレスを使ってメールの送受信はできなくなることにご注意ください。"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "未払いの請求"
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "もし無効にした場合、管理者のみがアクセスできます。"
+      ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "追加のアドレスを使用して、生活の異なる部分を分け、受信箱を整理しましょう。"
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
+      ]
+    },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "このアドレスを本当に無効にしますか？"
+      ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "このアドレス${ address }を無効にしたことにより、このアドレスでの送受信ははこれ以上できなくなり、連携された全ての${ BRAND_NAME }製品は無効になります。"
+      ],
+      "Disable address": [
+        "アドレスは無効"
+      ],
+      "Disable address?": [
+        "アドレスを無効にしますか？"
       ]
     },
     "Domain label": {
@@ -2297,6 +2367,11 @@
         "確認メールが ${ address } に送信されました"
       ]
     },
+    "Empty group name": {
+      "Unnamed": [
+        "不明"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
@@ -2319,11 +2394,17 @@
       "Code wrong or not valid anymore": [
         "コードが間違っているか有効なコードではありません"
       ],
+      "Couldn't load invoices. Please try again later.": [
+        "請求書が読み込めませんでした。後でもう一度お試しください。"
+      ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
       ],
       "Email address is invalid": [
         "メールアドレスが無効です"
+      ],
+      "Email address is not available": [
+        "メールアドレスは利用できません。"
       ],
       "Email is not valid": [
         "メールアドレスが無効です"
@@ -2457,6 +2538,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "複数のユーザーを管理するには、複数のユーザーを含むビジネスプランにアップグレードしてください。"
       ],
+      "Please upload a square logo": [
+        "正方形のロゴをアップロードしてください。"
+      ],
       "Please upload an xml file": [
         "XML ファイルをアップロードしてください"
       ],
@@ -2547,8 +2631,16 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
       ],
+      "You've assigned all of your servers.": [
+        "全てのサービスに割り当てられました。"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "あなたのアカウントあるいは組織には未払いの請求があります。すべての未払いの請求をお支払いください。"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "メールアドレスを入力してください"
       ]
     },
     "Error importing users": {
@@ -2621,6 +2713,9 @@
       "Got it": [
         "了解"
       ],
+      "Invite a user": [
+        "招待されたユーザー"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "既存の ${ BRAND_NAME } ユーザーを招待"
       ],
@@ -2678,6 +2773,9 @@
       "Manage user accounts": [
         "ユーザーアカウントを管理"
       ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "6ヶ月間で受け入れ可能な招待は ${ n } 件のみとなります。"
+      ],
       "Pending": [
         "保留中"
       ],
@@ -2702,6 +2800,12 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } から招待されています。 ${ viewInviteButton }"
       ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "過去6ヶ月間で受け入れ可能な招待 ${ n } 件の上限に達しました。"
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "過去 6 ヶ月間で受け入れ可能な招待 ${ n } 件の上限に達しました。追加のユーザーを招待できるようになった時に、ボタンはクリックできるようになります。"
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "複数のユーザーを追加する前にカスタムドメインを設定する必要があります。"
       ],
@@ -2716,14 +2820,32 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "ユーザーにつき1度の無料トライアル*。その後は通常料金が適用されます。"
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
+        "プランを離れた後、このユーザーは${ BRAND_NAME }の無料プランに移行されます。"
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "プランを離れた後、このユーザーは 30 日の無料トライアル付きの${ BRAND_NAME }無制限プラン*に移行されます。"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "デフォルトでは、ストレージの ${ formattedStorage } が管理者アカウントに割り当てられます。 割り当てられたストレージを管理して、後で追加のユーザーに分散することができます。"
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "ファミリー メンバーを作成および管理し、${ DRIVE_APP_NAME } と ${ MAIL_APP_NAME } の間で共有されるストレージ スペースをファミリー メンバーに割り当てます。"
       ],
+      "Create and manage family members.": [
+        "ファミリーメンバーの作成と管理"
+      ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "ユーザーがすでに ${ MAIL_APP_NAME } アドレスを持っている場合は、ここにアドレスを入力します。 それ以外の場合は、最初にアカウントを作成する必要があります。"
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "ユーザーがすでに${ BRAND_NAME }のアカウントを持っている場合、ここに入力してください。そうでない場合は最初にアカウントを作成する必要があります。"
+      ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "この招待はキャンセルされたので、ユーザーは${ organizationName }に参加することはできません。"
       ],
       "To create a new user, a configured custom domain is required.": [
         "新しいユーザーを作成するには、構成されたカスタム ドメインが必要です。"
@@ -2770,6 +2892,9 @@
       ],
       "An error occurred, please try again": [
         "エラーが発生しました。もう一度お試しください"
+      ],
+      "Family name updated": [
+        "家族の名前が更新されました"
       ],
       "Member updated": [
         "メンバーが更新されました"
@@ -2853,6 +2978,9 @@
     "fido2: Action": {
       "Delete key": [
         "キーを削除"
+      ],
+      "New security key": [
+        "新しいセキュリティーキー"
       ]
     },
     "fido2: Error": {
@@ -2906,6 +3034,9 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "物理的な U2F または FIDO2 セキュリティキーで認証します"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "セキュリティキーの最大数である ${ maxSecurityKeyLength } に達しました。"
+      ],
       "Your two-factor authentication key is ready to use.": [
         "2 要素認証キーが使用可能になりました。"
       ]
@@ -2933,6 +3064,9 @@
       ],
       "Security key registered": [
         "セキュリティキーが登録されました"
+      ],
+      "Security keys": [
+        "セキュリティーキー"
       ]
     },
     "file size format": {
@@ -3100,6 +3234,9 @@
       "Protection": [
         "保護"
       ],
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "大幅に節約して最高の${ VPN_APP_NAME }の取引を手に入れよう"
+      ],
       "Select your deal": [
         "取引を選択してください"
       ],
@@ -3199,6 +3336,9 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 低画質のプレビュー"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } は、ログインパスワードと 2 番目のパスワードの両方を置き換える単一のパスワードで使用することもできます。 単一のパスワードモードに切り替えるには、使用する単一のパスワードを入力し、保存をクリックします。"
+      ],
       "${ n } address": [
         "${ n } 件のアドレス"
       ],
@@ -3241,6 +3381,9 @@
       "${ vaultLink } deleted": [
         "${ vaultLink } が削除されました"
       ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink }はメールで共有されました"
+      ],
       "${ vaultLink } updated": [
         "${ vaultLink } が更新されました"
       ],
@@ -3262,11 +3405,20 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 件の ${ VPN_APP_NAME } 接続 (より多くのデバイスを VPN に接続可能)"
       ],
+      "2FA disabled": [
+        "2要素認証は無効"
+      ],
       "30-day money-back guarantee": [
         "30 日間返金保証"
       ],
       "30-day money-back guarantee.": [
         "30日間の返金保証。"
+      ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ protonSubdomain }は${ BRAND_NAME }によってホストされており、迅速にサブドメインの設定ができます。詳しくは${ learnMoreLink }"
+      ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "カスタムドメインはグループを作成するために必要です。カスタムドメインが設定されていない場合は、まず ${ linkToDomainPage } で設定してください。"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "名前をつけることで何に使用しているか判別しやすくなり、簡単に失効させたり期限を延長したりできます。"
@@ -3310,6 +3462,9 @@
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount } ゲートウェイ サーバーを追加しています"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "他のメールアドレスを追加すると、そのグループ内の全てのメールでエンドツーエンドの暗号化が無効になります。続行しますか？"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "ゲートウェイ サーバーの追加: ${ serverNumber } / ${ total }"
       ],
@@ -3318,6 +3473,15 @@
       ],
       "Admin account allocation": [
         "管理者アカウント割り当て"
+      ],
+      "Affected user is on row": [
+        "影響を受けたユーザーは行にいます。"
+      ],
+      "All inactive members deleted": [
+        "全ての非アクティブメンバーは削除されました"
+      ],
+      "All members have been added.": [
+        "全てのメンバーが追加されました。"
       ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
@@ -3343,6 +3507,9 @@
       "Amount due": [
         "支払額"
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "本当にグループの編集をキャンセルしてもいいですか？"
+      ],
       "Are you sure you want to discard your changes?": [
         "変更を破棄してよろしいですか?"
       ],
@@ -3357,6 +3524,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "ドメイン ${ boldDomain } を削除してもよろしいですか?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "ゲートウェイをセットアップするよう、組織の管理者に依頼してください。"
       ],
       "Attention required": [
         "注意が必要です"
@@ -3421,6 +3591,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Okta、Microsoft Azure、Google Identity Platform などの ID プロバイダーを通じて、組織の SAML 認証を構成します。これにより、組織全体で SAML が有効になります。"
       ],
+      "Connection data will be available in around 1 hour.": [
+        "接続データは約1 時間後に利用可能になります"
+      ],
       "Continue with ${ freeName }": [
         "${ freeName } で続行"
       ],
@@ -3478,11 +3651,20 @@
       "Dedicated servers": [
         "専用サーバー"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "専用IPアドレスを持つ専用サーバーをプライベートゲートウェイに追加することで、詳細なアクセス制御が可能になります。"
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "他の MX レコードを削除するか、他と比較して ${ MAIL_APP_NAME } の優先度が最も小さい値であることをご確認ください。"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ゲートウェイ サーバーを削除しています"
+      ],
+      "Disabled on ${ formattedDateAndTime }": [
+        "${ formattedDateAndTime }に無効"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "2段階認証を無効にすると、アカウントの安全性が低下します。必要に応じてのみ続行してください。"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy ロゴ"
@@ -3561,6 +3743,18 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "シングル サインオンを有効にして組織の安全を確保する"
+      ],
+      "Enabled on ${ formattedDateAndTime }": [
+        "${ formattedDateAndTime }に有効"
+      ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "このグループでは他のアドレスでのエンドツーエンドのメール暗号化は無効です。"
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "このグループでのエンドツーエンドのメール暗号化は無効です。有効にすることができます。"
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "このグループではエンドツーエンドのメール暗号化は有効です。"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "ID プロバイダーから受け取ったエンドポイント URL (例: https://idp.example.com/sso/saml)。"
@@ -3652,6 +3846,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "ID プロバイダーに移動し、${ appName } の SAML メタデータを取得し、ここにインポートします。"
       ],
+      "Group deleted": [
+        "グループは削除されました"
+      ],
       "here": [
         "こちら"
       ],
@@ -3669,6 +3866,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
+      ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "どこか別の場所でサインインしている場合は、${ signedInPasswordResetLink } を利用できるかもしれません。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
@@ -3751,8 +3951,68 @@
       "Invite deleted": [
         "招待が削除されました"
       ],
+      "Invite for new user deleted": [
+        "新しいユーザーへの招待が削除されました"
+      ],
+      "Invite for organization accepted": [
+        "組織への招待が承諾されました"
+      ],
+      "Invite for organization created": [
+        "組織への招待が作成されました"
+      ],
       "Invite rejected": [
         "招待が拒否されました"
+      ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "サーバーの国を変更するには10日かかるので、選択が正しいことを確認してください。"
+      ],
+      "Item autofilled in ${ vaultLink }": [
+        "${ vaultLink }のアイテムが自動入力されました"
+      ],
+      "Item autofilled in vault": [
+        "保管庫のアイテムが自動入力されました"
+      ],
+      "Item created in ${ vaultLink }": [
+        "${ vaultLink }にアイテムが作成されました"
+      ],
+      "Item created in vault": [
+        "保管庫にアイテムが作成されました"
+      ],
+      "Item deleted from ${ vaultLink }": [
+        "${ vaultLink }からアイテムが削除されました"
+      ],
+      "Item deleted from vault": [
+        "保管庫からアイテムが削除されました"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "${ vaultLink }のアイテムフラッグが変更されました"
+      ],
+      "Item flags changed in vault": [
+        "保管庫のアイテムフラグが変更されました"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "${ vaultLink }のアイテムが破棄されました"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "${ vaultLink }のアイテムが復元されました"
+      ],
+      "Item in vault trashed": [
+        "保管庫のアイテムは破棄されました"
+      ],
+      "Item in vault untrashed": [
+        "保管庫のアイテムは復元されました"
+      ],
+      "Item read in ${ vaultLink }": [
+        "${ vaultLink }のアイテムが読み込まれました"
+      ],
+      "Item read in vault": [
+        "保管庫のアイテムが読み込まれました"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "${ vaultLink }のアイテムが更新されました"
+      ],
+      "Item updated in vault": [
+        "保管庫のアイテムが更新されました"
       ],
       "JCB logo": [
         "JCB ロゴ"
@@ -3768,6 +4028,15 @@
       ],
       "Learn more": [
         "詳細"
+      ],
+      "Learn more about Gateways": [
+        "ゲートウェイについてもっと知る"
+      ],
+      "Learn more about single sign-on": [
+        "シングルサインオンについてももっと詳しく"
+      ],
+      "Let's get started by pressing the New group button above": [
+        "始めるには上の新しいグループボタンを押してください"
       ],
       "Link copied to clipboard": [
         "リンクがクリップボードにコピーされました"
@@ -3838,6 +4107,12 @@
       "Must start with a letter.": [
         "文字で始まること。"
       ],
+      "New user invited to organization": [
+        "新しいユーザーが組織に招待されました"
+      ],
+      "New VPN connection data will stop being collected and shown.": [
+        "新しいVPN接続データの収集と表示が停止されます"
+      ],
       "No addresses exist": [
         "アドレスが存在しません"
       ],
@@ -3868,6 +4143,12 @@
       "or ${ selectFileButton }": [
         "または ${ selectFileButton }"
       ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "または ${ availableAgainAfterDays } 日後に任意の国に割り当て可能"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "または ${ availableAgainAfterHours } 時間後に任意の国に割り当て可能"
+      ],
       "Or select a particular server:": [
         "または特定のサーバーを選択:"
       ],
@@ -3894,6 +4175,9 @@
       ],
       "Password copied to clipboard": [
         "クリップボードにコピーされたパスワード"
+      ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "パスワードは${ MIN_PASSWORD_LENGTH }文字かそれ以上である必要があります。"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
@@ -3931,6 +4215,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "アカウントに関連付けられた 12 語の回復用フレーズ入力してください。"
       ],
+      "please open a support ticket": [
+        "サポートチケットを開いてください"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "別の支払い方法で再度お試しいただくか、銀行へお問い合わせください。"
       ],
@@ -3948,6 +4235,9 @@
       ],
       "Plus or Visionary subscription required": [
         "PLUS または VISIONARY プランが必要です"
+      ],
+      "Preference saved": [
+        "設定は保存されました"
       ],
       "Preview": [
         "プレビュー"
@@ -4021,11 +4311,23 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "アカウント設定のために、2 要素認証デバイスでこのコードをスキャンしてしてください。${ switchButton }"
       ],
+      "SCIM integration disabled": [
+        "SCIM統合が無効"
+      ],
+      "SCIM token active": [
+        "SCIMトークンが有効"
+      ],
+      "Search by an email address to begin": [
+        "始める前にメールアドレスで検索"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを保護する"
       ],
       "Securing your account": [
         "アカウントを安全にしています"
+      ],
+      "Select recently used servers": [
+        "最近使用したサーバーを選択"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "メンバーに2FAでアカウントを保護するよう促すメールを送る。"
@@ -4129,6 +4431,9 @@
       "The format of your CSV file is incorrect.": [
         "CSV ファイルのフォーマットが間違っています。"
       ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "グループ機能は現在のあなたのサブスクリプションではサポートされていません。以前に作成されたグループは無効になり、削除することがしかできません。"
+      ],
       "The name will be visible to your users while they are signed in.": [
         "この名前は、ユーザーがサインインしている間表示されます。"
       ],
@@ -4162,11 +4467,26 @@
       "This file is too large to preview": [
         "このファイルは、非常に大きいためプレビューできません"
       ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "このメッセージはサポートチームに届きません、サービスに関する問題や、当社からのさらなる対応が必要な場合は、${ supportLink } をご利用ください。"
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "このユーザーは組織の経理責任を負っています。このユーザーを降格させた場合、あなたが経理責任を負います。"
       ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "この確認には最大で1時間かかる場合があります。確認が成功した後も、TXTレコードを削除しないでください。ドメインを所有し続けていることを確認するために必要です。"
+      ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "これは**${ email }**へのアクセスを拒否します。本当に続けますか？"
+      ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "これは2要素認証を無効にします、認証アプリとセキュリティーキーの手順を含みます。"
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "これにより、PayPal を使用して ${ BRAND_NAME } のサブスクリプションの支払いが可能になります。 新しいブラウザタブで PayPal にリダイレクトします。 使用している場合は ポップアップブロッカーを一旦無効にしてから続行してください。"
+      ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "これはデータとユーザーに関係するメールアドレス全てが永久に削除されます。"
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "データとこのユーザーに関連付けられているすべてのメールアドレスが永久的に削除されます。"
@@ -4174,11 +4494,17 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "この操作により、アカウントとすべてのデータが完全に削除されます。削除後に、このアカウントを再度有効化することはできません。"
       ],
+      "This will remove any enabled 2FA methods.": [
+        "これは有効になっている2要素認証を全て削除します"
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "これにより、${ boldDomainName } の SSO が削除されます。"
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "これにより、一時的なパスワードが置き換えられます。 今後、これを使用して ${ BRAND_NAME } アカウントにアクセスします。"
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "これは**${ email }**に新しい招待を送信します。"
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "すべての有効なセッションからサインアウトし、2 段階認証を無効にします。"
@@ -4188,6 +4514,9 @@
       ],
       "to ${ product } Business": [
         "${ product }ビジネスへ"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "ドメイン** ${ domainName }** が SAML SSO を使用できるようにするには、DNS プロバイダーで次の DNS TXT レコードをドメインに追加して、所有権を確認する必要があります。"
       ],
       "To cancel your subscription, please reach out to us.": [
         "サブスクリプションをキャンセルされる場合は、弊社までご連絡ください。"
@@ -4240,6 +4569,12 @@
       "Two-factor authentication enabled": [
         "2 要素認証が有効になりました"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "2つのパスワードモードには 2つのパスワードが必要です: 1つはアカウントにサインインするため、そしてもう1つはデータを複号化するためです。(高度)"
+      ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "2 パスワード モードでは、ログインとデータの復号化に別々のパスワードを使用します。 これは状況によっては小さなセキュリティ上の利点を提供しますが、ほとんどのユーザーにはワンパスワードモードをお勧めします。 2つのパスワードモードに切り替えるには、まずログインパスワードを設定し、次に2番目のパスワードを設定します。"
+      ],
       "Unable to check gateways monitoring current status.": [
         "ゲートウェイモニタリングの現在の状態を確認できません。"
       ],
@@ -4248,6 +4583,9 @@
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID プロバイダーによって生成される一意の ID。通常は、ID プロバイダーの名前を含む URL の形式になります (例: https://idp.example.com/XXXXX)。"
+      ],
+      "Unknown event type": [
+        "不明のイベントタイプ"
       ],
       "Unsaved changes": [
         "未保存の変更"
@@ -4270,6 +4608,9 @@
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "組織のロゴをアップロードしてブランド アイデンティティを強化し、ユーザーにパーソナライズされたエクスペリエンスを作成します。"
       ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "2要素認証を無効にするためには回復手順を使用してください。"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "負荷や所在地を考慮した最適なサーバーを使用: ${ formattedBestServerName }"
       ],
@@ -4285,6 +4626,9 @@
       "username": [
         "ユーザー名"
       ],
+      "Username": [
+        "ユーザーネーム"
+      ],
       "Users": [
         "ユーザー"
       ],
@@ -4293,6 +4637,9 @@
       ],
       "Vault deleted": [
         "保管庫が削除されました"
+      ],
+      "Vault shared with email": [
+        "保管庫はメールで共有されました"
       ],
       "Vault updated": [
         "保管庫が更新されました"
@@ -4354,6 +4701,9 @@
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "冗長性を確保するため、異なる場所に複数のサーバーを設置することをお勧めします。"
       ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "家族に通知し、2要素認証の使用を強制する前に、アカウントに2要素認証を設定するよう依頼することをおすすめします。"
+      ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "2FA の使用を強制する前に、組織のメンバーに通知し、アカウントに 2FA を設定するよう依頼することをお勧めします。"
       ],
@@ -4393,6 +4743,12 @@
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "現在の有料サブスクリプションをキャンセルすると、サブスクリプションの残高はアカウントクレジットとして返却され、${ BRAND_NAME } ${ PLANS.FREE } プランにダウングレードされます。"
       ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "キャンセルする場合、サブスクリプションは自動更新されませんが、サブスクリプション期間終了まではプランの恩恵を受けることができます。その後、${ BRAND_NAME }の無料プランにダウングレードされます。"
+      ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "ゲートウェイからサーバーを削除した時、10 日間の非アクティベーション期間に入ります。このサーバーは新しいゲートウェイに追加することができますが、国を変更することはできません。"
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
@@ -4410,6 +4766,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "暗号化された ${ BRAND_NAME } アドレスを使用すると、すべての ${ BRAND_NAME } サービスを使用できます"
+      ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "グループでは、指定されたグループの全ての人に迅速かつ簡単にメールを送ることができます。"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "有効化しない限り、新規ユーザーの作成、既存ユーザーへのメールアドレスの追加並びに、ユーザーのアカウントへのアクセスはできません。"
@@ -4431,6 +4790,12 @@
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "現在、${ ipAddresses } 個の利用可能な専用サーバーのうち ${ ipCount } 個を使用しています。"
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "現在、利用可能なユーザーライセンス${ maxMembers }のうち ${ usedMembers }を使用しており、利用可能なライティングアシスタントライセンス${ maxAI }のうち${ usedAI }を使用しています。"
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "現在、利用可能なユーザーライセンス${ maxMembers }のうち${ usedMembers }を使用中で、利用可能な文章作成支援ライセンス${ maxAI }は使用していません。"
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "現在、利用可能な ${ maxMembers } ユーザー ライセンスのうち ${ usedMembers } を使用しています。"
@@ -4459,6 +4824,12 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "以下の認証情報を使用すると、macOS 向け Tunnelblick や GNU/Linux 向け OpenVPN のようなサードパーティのオープンソースの VPN アプリで ${ VPN_APP_NAME } サーバーに接続できます。"
       ],
+      "You have ${ availableCount } new server available.": [
+        "新しく利用可能なサーバーが ${ availableCount } 台あります。"
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "最近使用したサーバーが ${ unassignedAvailableCount } 台利用可能です。これらのサーバーを別の国に割り当てるには、無効化が完了するまでお待ちいただく必要があります。"
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "試用版 ${ planTitle } のサブスクリプションが有効です。試用期間後にサブスクリプションを継続したい場合は、支払い方法を追加してください。"
       ],
@@ -4486,14 +4857,23 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal アカウントにクレジットカードまたは銀行口座を登録しておく必要があります。PayPal アカウントをお持ちでない場合はこちらのボタンをクリックしてください。"
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "招待を受けた後、ユーザーを管理者にすることができます。"
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "サインイン後、${ destination } にリダイレクトされます。"
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "サブスクリプションをキャンセルした場合も、${ PASS_APP_NAME } + シンプルログインプレミアムの機能にはずっとアクセスできます。"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
+      ],
+      "You won’t be able to reassign these servers to another country for 10 days.": [
+        "これらのサーバーを10日間他の国に再割り当てすることはできません。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
@@ -4549,6 +4929,9 @@
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
       ],
+      "You’ll be able to add these servers to another Gateway immediately.": [
+        "これらのサーバーはすぐに別のゲートウェイに追加できます。"
+      ],
       "Zoom meeting": [
         "Zoom ミーティング"
       ]
@@ -4594,6 +4977,11 @@
         "閲覧のみ"
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "無効なメールアドレス"
+      ]
+    },
     "invitation status": {
       "Declined": [
         "拒否"
@@ -4603,6 +4991,9 @@
       ],
       "Pending": [
         "保留中"
+      ],
+      "Sending invite...": [
+        "招待を送信中…"
       ]
     },
     "Invoice state display as badge": {
@@ -4650,6 +5041,9 @@
       "Other": [
         "その他"
       ],
+      "Product": [
+        "製品"
+      ],
       "Refund": [
         "返金"
       ],
@@ -4682,6 +5076,9 @@
       "Account storage": [
         "アカウントの容量"
       ],
+      "Add all organization members": [
+        "全ての組織メンバーを追加する"
+      ],
       "Add group member": [
         "グループメンバーを追加"
       ],
@@ -4709,6 +5106,9 @@
       "Allowed Domain": [
         "許可されたドメイン"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "組織内の全員がカレンダーの招待状にビデオ会議リンクをスムーズに追加できるようにします。"
+      ],
       "Amount": [
         "金額"
       ],
@@ -4723,6 +5123,9 @@
       ],
       "Authenticator app": [
         "認証アプリ"
+      ],
+      "Backup password": [
+        "バックアップパスワード"
       ],
       "Billing address": [
         "ご請求先住所"
@@ -4886,6 +5289,9 @@
       "Group address": [
         "グループアドレス"
       ],
+      "Group members": [
+        "グループのメンバー"
+      ],
       "Group name": [
         "グループ名"
       ],
@@ -5027,6 +5433,9 @@
       "Public certificate (X.509)": [
         "公開証明書 (X.509)"
       ],
+      "Purpose": [
+        "目的"
+      ],
       "Recovery email address": [
         "回復用メールアドレス"
       ],
@@ -5035,6 +5444,9 @@
       ],
       "Recovery phrase": [
         "回復用フレーズ"
+      ],
+      "Repeat backup password": [
+        "バックアップパスワードを再度入力"
       ],
       "Reply (ACS) URL": [
         "返信（ACS）URL"
@@ -5051,11 +5463,17 @@
       "Search": [
         "検索"
       ],
+      "Search by email": [
+        "メールアドレスで検索"
+      ],
       "Second password": [
         "セカンドパスワード"
       ],
       "Security code (${ codeName })": [
         "セキュリティコード (${ codeName })"
+      ],
+      "Show ${ n } administrator": [
+        "${ n }人の管理者を表示"
       ],
       "Single sign-on entity ID": [
         "シングル サインオン エンティティ ID"
@@ -5102,6 +5520,9 @@
       "Verification code": [
         "認証コード"
       ],
+      "Video conferencing with Zoom": [
+        "Zoomでのビデオ会議"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "今後の改善のため、アカウントを削除する理由をお聞かせください。"
       ],
@@ -5113,6 +5534,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "キャンセルまたはダウングレードの主な理由は何ですか？"
+      ],
+      "Who can send to this group address?": [
+        "誰がこのグループのアドレスに送信できますか？"
       ],
       "Why would you like to cancel?": [
         "なぜキャンセルしたいのですか？"
@@ -5188,6 +5612,9 @@
       "Add gift code": [
         "ギフトコードを追加"
       ],
+      "Add to your subscription": [
+        "サブスクリプションを追加"
+      ],
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
       ],
@@ -5232,6 +5659,12 @@
       ],
       "Pay invoice": [
         "請求の支払い"
+      ],
+      "PayPal without credit card": [
+        "クレジットカードなしでPaypal"
+      ],
+      "perform a password reset from your active session": [
+        "アクティブなセッションからパスワードリセットを実行する"
       ],
       "Privacy policy": [
         "プライバシーポリシー"
@@ -5399,11 +5832,26 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "オーストラリアドル"
+      ],
+      "Brazilian real": [
+        "ブラジルリアル"
+      ],
+      "British pound": [
+        "イギリスポンド"
+      ],
+      "Canadian dollar": [
+        "カナダドル"
+      ],
       "Euro": [
         "ユーロ"
       ],
       "Swiss franc": [
         "スイス・フラン"
+      ],
+      "US Dollar": [
+        "アメリカドル"
       ]
     },
     "Navigation": {
@@ -6252,6 +6700,77 @@
         "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app }と${ additionalApp }のプロダクトアップデート"
+      ],
+      "${ app } product updates": [
+        "${ app }のプロダクトアップデート"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "ビジネス向け${ BRAND_NAME }ニュースレター"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME }の重要なお知らせ"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME }ニュースレター"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME }のオファーとプロモーション"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME }プロダクトのお知らせ"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME }ユーザー調査"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME }ウェルカムメール"
+      ],
+      "1 email per month": [
+        "月に 1 通のメール"
+      ],
+      "1 email per quarter": [
+        "四半期に1 度のメール"
+      ],
+      "1-2 emails per month": [
+        "月に 1-2 通のメール"
+      ],
+      "2-4 emails per year": [
+        "年に 2-4 通のメール"
+      ],
+      "4-6 emails per year": [
+        "年に 4-6通のメール"
+      ],
+      "Application notifications": [
+        "アプリケーション通知"
+      ],
+      "Critical account notifications will still be delivered": [
+        "重要なアカウント通知は引き続き配信されます"
+      ],
+      "Daily email notifications": [
+        "毎日のメール通知"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "これを無効化すると${ BRAND_NAME }アプリケーションで通知を受け取る機能が削除されます"
+      ],
+      "During your first month": [
+        "最初の1か月の間"
+      ],
+      "Email subscriptions": [
+        "メール購読"
+      ],
+      "In-app notifications": [
+        "アプリ内通知"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "${ BRAND_NAME }サービス改善のための調査に参加する"
+      ],
+      "Product updates": [
+        "プロダクトアップデート"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } が無効になりました"
@@ -6265,14 +6784,23 @@
       "An external address cannot be default": [
         "外部のアドレスは既定にすることができません"
       ],
+      "Downloaded 2FA recovery codes": [
+        "2要素認証回復コードをダウンロードしました"
+      ],
       "Invalid code": [
         "無効なコード"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "無効な入力です。メールもしくはIPアドレスで検索してください。"
       ],
       "IP Address copied to clipboard": [
         "IP アドレスがクリップボードにコピーされました"
       ],
       "Key copied to the clipboard": [
         "キーがクリップボードにコピーされました"
+      ],
+      "Number of records exceeds the download limit of 10000": [
+        "レコードの数がダウンロード制限の10000件を超えています。"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認証情報を更新しました"
@@ -6291,6 +6819,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "二要素認証はもう必要ない"
+      ],
+      "Video conferencing settings have been updated": [
+        "ビデオ会議の設定はアップデートされました"
       ]
     },
     "Onboarding": {
@@ -6349,6 +6880,17 @@
       ],
       "The whole organization": [
         "組織全体"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "みんな"
+      ],
+      "Group members": [
+        "グループメンバー"
+      ],
+      "No one": [
+        "誰も"
       ]
     },
     "Organization capacity error": {
@@ -6415,6 +6957,9 @@
       ]
     },
     "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "組織のアイデンティティを設定するために、メールアドレス ${ email } を ${ verify } してください。"
+      ],
       "Current organization identity": [
         "現在の組織ID"
       ],
@@ -6635,8 +7180,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "データ回復方法を使用するか、別の管理者に連絡するか、組織キーをリセットして管理者権限を復元してください。"
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "このユーザー情報の確認は認証されませんでした。"
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "この送信者のアドレス キーの安全性を確認できませんでした。 送信者情報の更新に遅れが生じる場合がございます。 あとでもう一度試してみてください。 この招待状または送信者の有効性が信頼できない場合は、${ BRAND_NAME } カスタマー サポートにお問い合わせください。"
+      ],
+      "We have verified the authenticity of this identity.": [
+        "このユーザー情報の確認は認証されました。"
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "この送信者と招待状が本物であることを確認しました。"
@@ -6686,14 +7237,23 @@
       "Payment Processing": [
         "支払い処理中"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "続けるためにはダッシュボードに支払い方法を追加してください。"
+      ],
       "Processing payment": [
         "支払いの処理中"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ price } で自動的に更新されます。 いつでもキャンセルできます。"
       ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "トランザクションが正常に検出されました。トランザクションが完全に確認され次第、クレジットがあなたのアカウントに追加されます。"
+      ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "選択した支払い方法により${ amountToCharge }がチャージされます。"
       ]
     },
     "Payments.Error": {
@@ -6800,6 +7360,9 @@
       "Search for a user or address": [
         "ユーザーまたはアドレスを検索"
       ],
+      "Search for an email or IP address": [
+        "メールもしくはIPアドレスで検索"
+      ],
       "Search users": [
         "ユーザーを検索"
       ],
@@ -6817,6 +7380,15 @@
       ]
     },
     "placeholder": {
+      "Add a group name": [
+        "グループ名を追加"
+      ],
+      "e.g. distribution list for marketing team": [
+        "例えば、マーケティングチーム用の配布リスト"
+      ],
+      "e.g. marketing": [
+        "例えば、マーケテイング"
+      ],
       "Members": [
         "メンバー"
       ]
@@ -6926,6 +7498,9 @@
       "Changing organization password": [
         "組織のパスワードを変更しています"
       ],
+      "Creating or accessing non-private user accounts": [
+        "非プライベートユーザーアカウントの作成またはアクセス"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "パスワードの変更のために、組織の管理権限が制限されています。次の操作は許可されなくなりました。"
       ]
@@ -6947,13 +7522,31 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "サインインは正しく完了しませんでした。"
+      ],
       "Something went wrong": [
         "何か問題が発生しました"
       ]
     },
     "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "SSO構成のテスト中にエラーが発生しました。"
+      ],
       "Details": [
         "詳細"
+      ],
+      "Test in progress...": [
+        "テストが進行中です…"
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "このSAML構成をテストするためには、**${ domainName }**のユーザーのログイン認証情報を入力してください。"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "有効なSAMLレスポンスをアイデンティティプロバイダーから受信しました。SSOがあなたの組織で有効になっています。"
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "構成をテストして、SSOが正常に動作していることを確認しています。"
       ]
     },
     "saml: Label": {
@@ -6962,6 +7555,9 @@
       ]
     },
     "saml: Title": {
+      "It works!": [
+        "上手くいきました！"
+      ],
       "Test SAML configuration": [
         "SAML 構成をテスト"
       ],
@@ -6990,6 +7586,12 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**前提条件:** SCIM プロビジョニングを有効にするために SAML 認証を構成する必要があります。"
       ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**前提条件**： SCIMプロビジョニングを有効にするには、ドメイン **${ domainName }** の所有権を確認する必要があります。この確認には最大で1時間かかる場合があります。"
+      ],
+      "Enter the token into your identity provider": [
+        "トークンをアイデンティティプロバイダーに入力してください。"
+      ],
       "Enter URL and token into your identity provider": [
         "ID プロバイダーに URL とトークンを入力します"
       ],
@@ -6999,6 +7601,12 @@
       "For security reasons, the token is hidden": [
         "セキュリティ上の理由から、トークンは隠されています"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "アイデンティティプロバイダーへ行き、以下のデータをコピーアンドペーストして、${ appName }のSCIM構成を完了させてください。"
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "アイデンティティプロバイダーへ行き、以下のトークンをコピーアンドペーストして、${ appName }のSCIMを再度有効化してください。"
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "SCIM トークンを紛失または忘れた場合は、新しいトークンを生成できますが、ID プロバイダーの設定を更新する必要があることに注意してください。"
       ],
@@ -7007,6 +7615,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "組織で SCIM が無効になると、**アイデンティティ プロバイダーによって自動的に提供されたすべての SCIM ユーザーが SSO ユーザーに変換され**、${ BRAND_NAME } 設定内で直接管理できるようになります。"
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "ユーザー管理を異なるサービス間で簡素化します。アイデンティティプロバイダーでユーザーを追加、編集、削除すると、それらの変更は自動的に${ appName }組織に適用されます。"
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM 自動プロビジョニングは、新しい SCIM トークンを ID プロバイダーの設定に入力するまで無効になります。"
@@ -7278,6 +7889,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "パスワードリセットが利用可能になった際に、再度ご連絡いたします。"
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "リクエスト状況はいつでも設定の${ accountAndPasswordSectionLink }で確認できます。"
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "アカウントとパスワードのセクションで"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -7550,8 +8169,179 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress }は${ BRAND_NAME }アカウントにシングルサインオンでサインインするためにあなたの支援を要請しています。"
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n }人のメンバーはサインインするためにあなたの支援を要請しています。"
+      ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n }人のユーザーがあなたの組織にアイデンティティプロバイダーを通じて参加しました。今すぐアカウントを確認してください。"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n }人のユーザーが非アクティブです。組織からこのユーザーを安全に削除することができます。"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n }人のユーザーはシングルサインオンで${ BRAND_NAME }アカウントにサインインするためにあなたの支援を要請しています。"
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**SSOユーザー(あなたのアイデンティティプロバイダーによって提供される)は削除され**、再び組織に追加するためには手動で作成する必要があります。"
+      ],
+      "Access denied": [
+        "アクセスは拒否されました"
+      ],
+      "Access granted": [
+        "アクセスは承認されました"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "${ BRAND_NAME }組織に追加されました"
+      ],
+      "Approve or deny it now": [
+        "承認するか否認するか決めてください"
+      ],
+      "Approve the sign-in from another device": [
+        "他のデバイスからのサインインを承認する"
+      ],
+      "Ask administrator for help": [
+        "管理者に支援を要請する"
+      ],
+      "Ask your administrator for access?": [
+        "アクセス権を管理者に要求しますか？"
+      ],
+      "Backup password": [
+        "バックアップパスワード"
+      ],
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Change backup password": [
+        "バックアップパスワードを変更"
+      ],
+      "Confirm backup password": [
+        "バックアップパスワードを確認"
+      ],
+      "Confirmation code": [
+        "コード認証"
+      ],
+      "Contact administrator": [
+        "管理者に連絡"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "問題が解決しない場合は管理者に連絡をしてください。"
+      ],
+      "Delete ${ n } inactive user?": [
+        "${ n }人の非アクティブなユーザーを削除しますか？"
+      ],
+      "Delete ${ n } user": [
+        "${ n }人のユーザーを削除する"
+      ],
+      "Deny": [
+        "拒否"
+      ],
+      "Deny access": [
+        "アクセス拒否"
+      ],
+      "Devices available": [
+        "デバイスが利用可能"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "このユーザーに送った確認コードを入力してください。"
+      ],
+      "Enter your backup password": [
+        "バックアップパスワードを入力してください"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "セキュリティのため、全ての他のデバイスからサインアウトされました。アカウントにアクセスする前に、新しいバックアップパスワードを入力する必要があります。"
+      ],
+      "Grant": [
+        "承認"
+      ],
+      "Grant access": [
+        "アクセス承認"
+      ],
+      "Grant access to user?": [
+        "ユーザーへのアクセスを承認しますか？"
+      ],
+      "Grant access to users?": [
+        "ユーザーにアクセスを許可しますか？"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "${ BRAND_NAME }アカウントからロックアウトされた場合、バックアップパスワードでサインインし、データを復元できます。"
+      ],
+      "Invalid confirmation code": [
+        "無効な確認コード"
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "アカウントを完全に復元する唯一の方法です、必ず安全な場所に保管してください。"
+      ],
+      "Join ${ organizationName }": [
+        "${ organizationName }に参加"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "安全な場所に保存しておいてください。そうすれば、アイデンティティプロバイダーの認証情報へのアクセスを失った場合でも、アカウントに再びアクセスすることができます。"
+      ],
+      "New backup password": [
+        "新しいバックアップパスワード"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "SSOでないユーザー(手動で作成され、あなたのアイデンティティプロバイダーによって提供されていません)は組織に引き続きログインできます。"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "シングルサインオンが組織で無効になった場合"
+      ],
+      "Remove single sign-on": [
+        "シングルサインオンを削除"
+      ],
+      "Remove single sign-on for your organization?": [
+        "組織のシングルサインオンを削除しますか？"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "追加の保護層としてバックアップパスワードを設定してください。ロックアウトされた場合でもサインインできるようにするため、必ず安全な場所に保管してください。"
+      ],
+      "Set your backup password": [
+        "バックアップパスワードを設定してください"
+      ],
+      "Share the confirmation code with your administrator": [
+        "管理者に確認コードを共有してください"
+      ],
       "Sign in": [
         "サインイン"
+      ],
+      "Sign in to your organization": [
+        "組織にサインインする"
+      ],
+      "Sign out and in again to change your backup password": [
+        "サインアウトしてから再度サインインしてバックアップパスワードを変更してください"
+      ],
+      "Single sign-on removed": [
+        "シングルサインオンは削除されました"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "あなたのアイデンティティプロバイダからの認証情報は削除されます"
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "これにより、ユーザーは他のデバイスからサインアウトされ、新しいバックアップパスワードを作成する必要があります。"
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "これにより他のデバイスからサインアウトされ、新しいバックアップパスワードを作成する必要があります。"
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "**${ email }**にサインインを試みているのが本当にあなたであることを確認するために、確認コードを確認し、他のデバイスからリクエストを承認してください。"
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "サインインを試みているのが本当にあなたであることを確認するために、バックアップパスワードを入力してください。"
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "サインインを試みているのが本当にあなたであることを確認するために、確認コードを管理者 **${ adminEmail }** に共有し、**${ email }** のリクエストを承認してもらってください。"
+      ],
+      "Tried to sign in at": [
+        "サインインを試した場所"
+      ],
+      "Use backup password instead": [
+        "代わりにバックアップパスワードを使用する"
+      ],
+      "User details:": [
+        "ユーザー詳細："
       ]
     },
     "Storage": {
@@ -7640,6 +8430,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ maxAi }ユーザー向け${ BRAND_NAME } Scribe文章作成支援"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } の専用サーバー"
       ],
@@ -7678,6 +8471,9 @@
       ],
       "1 email address": [
         "1 件のメールアドレス"
+      ],
+      "1 email address per user": [
+        "ユーザーにつき 1 つのメールアドレス"
       ],
       "1 VPN connection": [
         "1 件の VPN 接続"
@@ -7730,14 +8526,35 @@
       "${ planMaxSpace } total storage": [
         "合計 ${ planMaxSpace } のストレージ"
       ],
+      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName }は全てのアプリとプレミアム機能へのアクセスを提供します。プライバシーは組み込まれているため、データと身元が安全であることを知りながら、安心して利用できます。"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName }は全てのアプリ、全ての機能、新機能への早期アクセス、そしてデータとセキュリティをコントロールするための全ての必要な機能を提供します。"
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName }は、基本を超えて、生産性を高め、整理整頓をし、受信トレイやメールのアイデンティティなどをよりコントロールできるようにサポートします。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName }はメールや添付ファイル、イベント、パスワード、ファイルのための${ planMaxSpace }のストレージを提供します。さらに年間でのストレージボーナスを受け取ることができます。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName }は、ファイルや写真のために${ planMaxSpace }のストレージを提供します。さらに、毎年のストレージボーナスを受け取る資格があります。"
+      ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "${ PROTON_SENTINEL_NAME } の高度なアカウント保護"
       ],
       "2 users": [
         "2 ユーザー"
       ],
+      "Add any new files": [
+        "新しいファイルを追加"
+      ],
       "Automatic email forwarding": [
         "自動メール転送"
+      ],
+      "Back up photos from your devices": [
+        "デバイスから写真をバックアップ"
       ],
       "Cancel subscription": [
         "サブスクリプションをキャンセル"
@@ -7745,14 +8562,23 @@
       "Cancel subscription?": [
         "サブスクリプションをキャンセルしますか?"
       ],
+      "Comprehensive privacy and security": [
+        "総合的なプライバシーとセキュリティ"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "デスクトップアプリとメールクライアントのサポート (IMAP 経由)"
+      ],
+      "Direct contribution to our mission": [
+        "私たちのミッションへの直接的な貢献"
       ],
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
       ],
       "Email productivity features": [
         "メールの生産性機能"
+      ],
+      "Extra storage and bonuses": [
+        "追加のストレージとボーナス"
       ],
       "Extra storage and users": [
         "追加のストレージとユーザー"
@@ -7766,17 +8592,26 @@
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
       ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "私たちのカスタマーサポートチームがどのようにしてVPNアプリを直接人々の手に届けたか。"
+      ],
       "Invited members will be removed from your organization": [
         "招待メンバーは組織から削除されます"
       ],
       "Keep ${ config.planName }": [
         "${ config.planName } を使い続ける"
       ],
+      "Keep subscription": [
+        "サブスクリプションを継続"
+      ],
       "Learn more": [
         "もっと詳しく知る"
       ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
+      ],
+      "Manage your calendar": [
+        "カレンダーを管理"
       ],
       "Online privacy, for your whole family": [
         "家族全員のオンラインプライバシー"
@@ -7793,11 +8628,26 @@
       "Reactivate": [
         "再アクティブ化"
       ],
+      "Reactivate to restore access to ${ planName } features.": [
+        "アクセスを再開して、${ planName } の機能を復元してください。"
+      ],
       "Read the story": [
         "ストーリーを読む"
       ],
+      "Receive new emails": [
+        "新しいメールを受信"
+      ],
+      "Send emails with attachments": [
+        "添付ファイルをメール送信"
+      ],
       "Subscription canceled": [
         "サブスクリプションがキャンセルされました"
+      ],
+      "Sync files on devices": [
+        "デバイス上の同期ファイル"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "ベストオブ${ BRAND_NAME }"
       ],
       "Unblocking internet access in Iran": [
         "イランでのインターネットアクセスのブロックを解除"
@@ -7814,8 +8664,14 @@
       "Watch the interview": [
         "インタビューを見る"
       ],
+      "What you give up when you cancel ${ planName }": [
+        "${ planName }をキャンセルすると失うもの"
+      ],
       "Yearly free storage bonuses": [
         "年間無料ストレージボーナス"
+      ],
+      "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
+        "${ boldedDate }までは現在のプランのすべての機能を引き続き利用できます。"
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
@@ -7887,6 +8743,9 @@
       "Administrator privileges restored": [
         "管理者権限が復元されました"
       ],
+      "Backup password updated": [
+        "バックアップパスワードの更新"
+      ],
       "Catch-all address updated": [
         "Catch-All アドレスが更新されました"
       ],
@@ -7944,6 +8803,12 @@
       "Organization activated": [
         "組織が有効になりました"
       ],
+      "Organization logo removed": [
+        "組織ロゴの削除"
+      ],
+      "Organization logo updated": [
+        "組織ロゴの更新"
+      ],
       "Organization name updated": [
         "組織名が更新されました"
       ],
@@ -7988,11 +8853,20 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "有効なリカバリーメールアドレスを入力した場合、数分以内にメールでユーザーネームを受信します。"
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "有効なリカバリーメールアドレスを入力した場合、数分以内にSMSでユーザーネームを受信します。"
       ]
     },
     "Success message": {
       "Domain deleted": [
         "ドメインを削除しました"
+      ],
+      "Invitation resent": [
+        "招待を再送信"
       ],
       "Sessions revoked": [
         "セッションが失効させられました"
@@ -8023,8 +8897,20 @@
       "Creating config file for ${ serverName }": [
         "${ serverName } の設定ファイルを作成しています"
       ],
+      "Group end-to-end email encryption disabled": [
+        "グループエンドツーエンドメール暗号化が無効"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "グループエンドツーエンドメール暗号化が有効"
+      ],
       "Preference updated": [
         "設定が更新されました"
+      ],
+      "Preferences updated": [
+        "設定が更新されました"
+      ],
+      "Resent invitation": [
+        "招待の再送信"
       ]
     },
     "Suffix": {
@@ -8098,6 +8984,9 @@
       "Event": [
         "イベント"
       ],
+      "Invitation email": [
+        "招待メール"
+      ],
       "List": [
         "リスト"
       ],
@@ -8128,6 +9017,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME }Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
@@ -8168,11 +9060,17 @@
       "Action": [
         "アクション"
       ],
+      "Actions": [
+        "アクション"
+      ],
       "Activate organization key": [
         "組織の鍵を有効化する"
       ],
       "Activate user": [
         "ユーザーをアクティブ化する"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "${ totalServerCount } 台のサーバーを追加しますか？"
       ],
       "Add address": [
         "アドレスを追加"
@@ -8183,8 +9081,14 @@
       "Add credits": [
         "クレジットを追加"
       ],
+      "Add dedicated servers": [
+        "専用サーバーを追加"
+      ],
       "Add domain": [
         "ドメインを追加"
+      ],
+      "Add external address?": [
+        "他のアドレスを追加しますか？"
       ],
       "Add PayPal payment method": [
         "PayPal 支払いの追加"
@@ -8215,6 +9119,9 @@
       ],
       "Amount due": [
         "支払い総額"
+      ],
+      "An address for each role": [
+        "それぞれの役割のアドレス"
       ],
       "Appearance": [
         "外観"
@@ -8266,6 +9173,9 @@
       ],
       "Change second password": [
         "セカンドパスワードを変更"
+      ],
+      "Click a value in the table to use it as filter": [
+        "フィルターとして使うにはテーブル内の値をクリックしてください"
       ],
       "Close": [
         "閉じる"
@@ -8357,6 +9267,12 @@
       "Delete user?": [
         "ユーザーを削除しますか？"
       ],
+      "Deny access to user?": [
+        "ユーザーのアクセスを拒否しますか？"
+      ],
+      "Device": [
+        "デバイス"
+      ],
       "Device connected!": [
         "デバイスが接続されました！"
       ],
@@ -8426,6 +9342,9 @@
       "Email subscriptions": [
         "メーリングリストの購読"
       ],
+      "Enable for all users": [
+        "全てのユーザーで有効化"
+      ],
       "Enter endpoints into your identity provider": [
         "ID プロバイダーにエンドポイントを入力します"
       ],
@@ -8450,8 +9369,20 @@
       "Find email or username": [
         "メールアドレスまたはユーザー名を探す"
       ],
+      "Forgot recovery method": [
+        "回復手順を忘れた"
+      ],
       "Gateway": [
         "ゲートウェイ"
+      ],
+      "Gateway monitor": [
+        "ゲートウェイモニター"
+      ],
+      "Gateway monitor disabled": [
+        "ゲートウェイモニター無効化"
+      ],
+      "Gateway monitor enabled": [
+        "ゲートウェイモニター有効化"
       ],
       "Gateways": [
         "ゲートウェイ"
@@ -8528,6 +9459,9 @@
       "Organization name": [
         "組織名"
       ],
+      "Origin": [
+        "原因"
+      ],
       "Password": [
         "パスワード"
       ],
@@ -8561,6 +9495,9 @@
       "Processing...": [
         "処理中..."
       ],
+      "QR Code": [
+        "QRコード"
+      ],
       "Recommended": [
         "おすすめ"
       ],
@@ -8572,6 +9509,9 @@
       ],
       "Remove domain": [
         "ドメインを削除する"
+      ],
+      "Remove server?": [
+        "サーバーを削除しますか？"
       ],
       "Remove single sign-on": [
         "シングルサインオンを削除"
@@ -8675,6 +9615,9 @@
       "Text": [
         "テキスト"
       ],
+      "There are no groups": [
+        "グループがありません"
+      ],
       "TV sign in": [
         "TV サインイン"
       ],
@@ -8689,6 +9632,9 @@
       ],
       "Type": [
         "種類"
+      ],
+      "Unlock your data": [
+        "データをアンロックする"
       ],
       "Upgrade your network protection with dedicated servers": [
         "専用サーバーでネットワークの保護を強化する"
@@ -8716,6 +9662,9 @@
       ],
       "Verifying your payment...": [
         "支払いを検証中..."
+      ],
+      "Video conferencing": [
+        "ビデオ会議"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "新しいメールアドレスに、変更手続きに関するご案内メールをお送りします。"
@@ -8797,6 +9746,12 @@
       ]
     },
     "Tooltip": {
+      "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
+        "管理者はユーザーのアカウントを管理することができ、他のユーザーに管理者権限を与えることができます。プライマリー管理者のみが組織のプランを変更できます。"
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "カレンダーの招待状にシームレスにビデオ会議のリンクを追加できるようにします。"
+      ],
       "An approximate location of the IP address": [
         "IPアドレスのおおよその位置"
       ],
@@ -8827,6 +9782,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "ギフトコードを購入もしくはサポートチームから受け取った場合、こちらに入力してください。"
       ],
+      "IP address (Internet Service Provider)": [
+        "IPアドレス(インターネットサービスプロバイダー)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "2FA を使用していないメンバーには、できるだけ早く有効にするよう求めるメールが届きます。"
       ],
@@ -8841,6 +9799,12 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "選択したテーマは、システムが「ライトモード」に設定されているときに有効になります。"
+      ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "これはパスワードのリセットやまだログインしていないユーザーが原因である可能性があります。"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "このメールアドレスはアカウント管理の操作を実行した際に組織メンバー全員に表示されます。"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "ユーザーがウェブアプリにサインインすると、${ BRAND_NAME } アイコンの代わりにロゴが表示されます。"
@@ -8864,6 +9828,24 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2FA などが含まれます。"
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"
+      ],
+      "Group membership paused": [
+        "グループのメンバーシップは一時停止されました"
+      ],
+      "Sending member invitation": [
+        "メンバー招待を送信中"
+      ],
+      "User declined invitation": [
+        "ユーザーが招待を拒否しました"
+      ],
+      "Waiting for user to accept the invitation": [
+        "ユーザーが招待を受けるのを待っています"
       ]
     },
     "Tor out of date": {
@@ -8872,11 +9854,71 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**保留中の管理者アクセス：**このユーザーに、任意の管理者がアカウントを管理できるようにするためのリクエストを送りました。"
+      ],
+      "Admins can't access the data of private users and can't reset their password.": [
+        "管理者はプライベートユーザーのデータにアクセスすることやパスワードをリセットすることはできません。"
+      ],
+      "Approve all": [
+        "全て同意"
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "ユーザーをプライベートにすると、そのデータやアカウントへのアクセスを取り戻す手助けができなくなります。"
+      ],
+      "Cancel request": [
+        "リクエストキャンセル"
+      ],
+      "Cancel request to access user data?": [
+        "ユーザーデータへのアクセス要求をキャンセルしますか？"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "この間に暗号化キーが更新されたため、${ n } ユーザーの管理者アクセス権を自動的に有効にできませんでした："
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "管理者アクセスを有効にできません：${ error }"
+      ],
+      "Enable manually": [
+        "手動で有効化"
+      ],
+      "Keep request": [
+        "リクエスト中"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "ユーザーが同意すると、アカウントへのアクセスを回復したり、データを管理したりするのを手助けできるようになります。"
+      ],
       "Organization key must be activated to request data access": [
         "データアクセスをリクエストするには、組織の鍵を有効にする必要があります"
       ],
+      "Private user": [
+        "プライベートユーザー"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "アカウント管理のリクエストが送信されました、ユーザーの承認待ちです"
+      ],
+      "Request user permission for data access": [
+        "データアクセスへの許可をユーザーにリクエストする"
+      ],
       "Revoke access": [
         "アクセスの失効"
+      ],
+      "Revoke administrator access?": [
+        "管理者のアクセスを取り消ししますか？"
+      ],
+      "Send request": [
+        "リクエスト送信済み"
+      ],
+      "The user must have an address to request data access": [
+        "ユーザーはデータアクセスを要求するためにアドレスが必要です。"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "これはユーザーのデータまたはパスワードリセットに対する管理者アクセスの保留中のリクエストをキャンセルします。"
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "このユーザーのアカウントの管理のための管理者権限を取り消しします。"
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "実行するには、データへアクセスするためにユーザーの許可を得るか、パスワードをリセットする必要があります。"
       ]
     },
     "upsell panel": {
@@ -8929,6 +9971,9 @@
       "Remember to share the user's sign in details with them.": [
         "ユーザーのサインイン情報を共有することを忘れないでください。"
       ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "これにより、新しい${ MAIL_APP_NAME }アドレスが作成されます。"
+      ],
       "User created": [
         "ユーザーが作成されました。"
       ],
@@ -8943,11 +9988,23 @@
       "2FA": [
         "2要素認証"
       ],
+      "Administrators can't access the data of private users": [
+        "管理者がプライベートユーザーのデータにアクセスすることはできません。"
+      ],
+      "Inactive": [
+        "非アクティブ"
+      ],
       "Invitation sent, awaiting reply from the invited member": [
         "招待が送信されました。招待メンバーからの返信待ちです。"
       ],
       "Invite sent": [
         "招待状を送信しました"
+      ],
+      "It's you": [
+        "あなたです"
+      ],
+      "Pending admin access": [
+        "管理者のアクセスが保留中"
       ],
       "Private": [
         "プライベート"
@@ -9038,6 +10095,9 @@
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "${ billingCycle } サブスクリプションで ${ discount } 割引をゲット"
       ],
+      "Get a first year of ${ plan } for free!": [
+        "1年間の${ plan }を無料でご利用いただけます！"
+      ],
       "monthly": [
         "毎月"
       ]
@@ -9057,8 +10117,20 @@
       "${ n } year": [
         "${ n }年"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "${ plan }に含まれています(最初の1年は無料！)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "${ plan }には1年間無料のプレミアムなパスワードマネージャが含まれています！"
+      ],
+      "Just ${ price }": [
+        "たった${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "${ upsellPlanName } をリスクなしでお試しください"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "${ a }と${ b }はバンドル"
       ],
       "Your ${ selected } plan": [
         "あなたの ${ selected } プラン"
