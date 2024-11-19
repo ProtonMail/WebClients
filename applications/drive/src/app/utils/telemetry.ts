@@ -11,7 +11,6 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import * as config from '../config';
-import { LAST_ACTIVE_PING } from '../store/_user/useActivePing';
 import { sendErrorReport } from './errorHandling';
 import { EnrichedError } from './errorHandling/EnrichedError';
 import { getLastActivePersistedUserSession } from './lastActivePersistedUserSession';
@@ -72,11 +71,6 @@ const sendTelemetryFeaturePerformance = (
     treatment: ExperimentGroup,
     additionalValues: PerformanceTelemetryAdditionalValues = {}
 ) => {
-    // TODO: https://jira.protontech.ch/browse/DD-7
-    // This is ugly and hacky, but it's a cheap way for the metric (without calling /users and without hooks)
-    // Proper back-end solution will be done as part of https://jira.protontech.ch/browse/DD-7
-    const loggedInRecently = localStorageWithExpiry.getData(LAST_ACTIVE_PING) ? 'true' : 'false';
-
     void sendTelemetryReport({
         api: api,
         measurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
@@ -86,7 +80,6 @@ const sendTelemetryFeaturePerformance = (
             ...additionalValues,
         },
         dimensions: {
-            isLoggedIn: window.location.pathname.startsWith('/urls') ? loggedInRecently : 'true',
             experimentGroup: treatment,
             featureName,
         },
@@ -228,11 +221,6 @@ export const countActionWithTelemetry = (action: Actions, count: number = 1) => 
         apiInstance.UID = persistedSession?.UID;
     }
 
-    // TODO: https://jira.protontech.ch/browse/DD-7
-    // This is ugly and hacky, but it's a cheap way for the metric (without calling /users and without hooks)
-    // Proper back-end solution will be done as part of https://jira.protontech.ch/browse/DD-7
-    const loggedInRecently = localStorageWithExpiry.getData(LAST_ACTIVE_PING) ? 'true' : 'false';
-
     return sendTelemetryReport({
         api: apiInstance,
         measurementGroup: TelemetryMeasurementGroups.driveWebActions,
@@ -241,7 +229,6 @@ export const countActionWithTelemetry = (action: Actions, count: number = 1) => 
             count,
         },
         dimensions: {
-            isLoggedIn: window.location.pathname.startsWith('/urls') ? loggedInRecently : 'true',
             name: action,
         },
     });
