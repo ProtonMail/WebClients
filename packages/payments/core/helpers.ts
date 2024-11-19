@@ -51,16 +51,27 @@ export function isRegionalCurrency(currency: Currency): boolean {
 }
 
 export function mapCountryToRegionalCurrency(countryCode: string): Currency | undefined {
-    switch (countryCode) {
-        case 'BR':
-            return 'BRL';
-        case 'GB':
-            return 'GBP';
-        case 'AU':
-            return 'AUD';
-        case 'CA':
-            return 'CAD';
+    const enableNewBatchCurrencies = false;
+
+    const newBatchCurrencies = new Set<Currency>(['GBP', 'AUD', 'CAD']);
+
+    const result = {
+        BR: 'BRL' as const,
+        GB: 'GBP' as const,
+        AU: 'AUD' as const,
+        CA: 'CAD' as const,
+    }[countryCode];
+
+    if (!result) {
+        return;
     }
+
+    const isNewBatchCurrency = newBatchCurrencies.has(result);
+    if (!isNewBatchCurrency) {
+        return result;
+    }
+
+    return enableNewBatchCurrencies ? result : undefined;
 }
 
 export function getFallbackCurrency(currency: Currency): Currency {
