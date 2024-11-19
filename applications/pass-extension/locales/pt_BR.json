@@ -552,6 +552,9 @@
       "Update": [
         "Atualizar"
       ],
+      "Update this login": [
+        "Atualizar esse início de sessão"
+      ],
       "Update vault": [
         "Atualizar cofre"
       ],
@@ -616,6 +619,9 @@
     "bf2024: Title": {
       "Black Friday": [
         "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Pague uma vez e obtenha o ${ lifetimeAccessJSX } para Pass Plus e SimpleLogin. Apenas por ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Economize até ${ discountJSX } no Pass Family. Apenas ${ relativePrice }/mês."
@@ -1086,9 +1092,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "A atualização \"${ payload.item.data.metadata.name } foi descartada"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } convites enviados com sucesso"
-      ],
       "${ count } time": [
         "${ count } vez",
         "${ count } vezes"
@@ -1252,6 +1255,9 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Escolha uma chave de acesso salva para iniciar sessão em ${ domain }"
+      ],
+      "Choose your preferred look and feel.": [
+        "Escolha sua aparência preferida."
       ],
       "Click the icon to open it anytime.": [
         "Clique no ícone para abri-lo a qualquer momento."
@@ -1432,9 +1438,6 @@
       "Invite successfully resent": [
         "Convite enviado com sucesso"
       ],
-      "Invite successfully sent": [
-        "Convite enviado"
-      ],
       "invites you to access items in": [
         "convida você a acessar itens em"
       ],
@@ -1490,6 +1493,9 @@
       "Loading...": [
         "Carregando..."
       ],
+      "Make it your own": [
+        "Deixe do seu jeito"
+      ],
       "me": [
         "eu"
       ],
@@ -1499,8 +1505,20 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Mais do que um gerenciador de senhas, o ${ PASS_APP_NAME } protege sua senha e seu endereço de e-mail pessoal através de aliases de email. Alimentado pela mesma tecnologia por trás do ${ MAIL_APP_NAME }, seus dados são criptografados de ponta a ponta e são acessíveis apenas por você."
       ],
+      "Move ${ count } item": [
+        "Mover ${ count } item",
+        "Mover ${ count } itens"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Movendo um item para outro cofre apagará seu histórico e todos os links seguros.",
+        "Mover itens para outro cofre apagará seu histórico e todos os links seguros."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Movendo um item para outro cofre apagará seu histórico.",
+        "Movendo item para outro cofre apagará seus históricos."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2669,6 +2687,9 @@
       "${ count } item": [
         "${ count } item",
         "${ count } itens"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Você selecionou ${ semiboldText } nesse cofre."
       ]
     },
     "Onboarding": {
@@ -2894,6 +2915,10 @@
       "Current version": [
         "Versão atual"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Excluir ${ deletedItemsCount } item?",
+        "Excluir ${ deletedItemsCount } itens?"
+      ],
       "Delete this item?": [
         "Excluir este item?"
       ],
@@ -2972,6 +2997,14 @@
       "Modified": [
         "Modificado"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Mover ${ count } item para o ${ vaultName }",
+        "Mover ${ count } itens para o ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Mover ${ trashedItemsCount } item para a lixeira?",
+        "Mover ${ trashedItemsCount } itens para a lixeira?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Mover todos os itens para \"${ vaultName }\"?"
       ],
@@ -2992,6 +3025,9 @@
       ],
       "Password": [
         "Senha"
+      ],
+      "Pending access confirmation": [
+        "Confirmação de acesso pendente"
       ],
       "Pending access to the shared data": [
         "Acesso pendente para compartilhar os dados."
@@ -3089,6 +3125,9 @@
       "Welcome to your new password manager!": [
         "Bem-vindo ao seu novo gerenciador de senhas!"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Sua assinatura do ${ planName } terminará em ${ endDate }"
+      ],
       "Your vault is empty": [
         "Seu cofre está vazio"
       ],
@@ -3137,6 +3176,14 @@
       ],
       "An error occurred while resuming your session": [
         "Ocorreu um erro ao retomar sua sessão"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Tem certeza de que deseja mover ${ trashedItemsCount } item para a lixeira?",
+        "Tem certeza de que deseja mover ${ trashedItemsCount } itens para a lixeira?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Você tem certeza de que deseja excluir permanentemente ${ deletedItemsCount } item?",
+        "Você tem certeza de que deseja excluir permanentemente ${ deletedItemsCount } itens?"
       ],
       "At least one email address is required": [
         "É obrigatório pelo menos um endereço de e-mail"
