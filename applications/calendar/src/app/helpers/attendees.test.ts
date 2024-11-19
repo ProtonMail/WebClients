@@ -71,6 +71,11 @@ describe('getOrganizerDisplayData()', () => {
         expect(title).toEqual("It's me <te_st.E-mail@proton.me>");
     });
 
+    test('Neither distinguishes dots, hyphens, underscores or capitalization, to return correct initials', () => {
+        const { initials } = getOrganizerDisplayData(organizer, isOrganizer, contactsEmailMap, displayNameEmailMap);
+        expect(initials).toEqual('IM');
+    });
+
     describe('when user is organiser', () => {
         const isOrganizer = true;
 
@@ -79,6 +84,7 @@ describe('getOrganizerDisplayData()', () => {
                 name: 'You',
                 title: testEmail,
                 contactID: 'expected',
+                initials: 'IM',
             });
         });
     });
