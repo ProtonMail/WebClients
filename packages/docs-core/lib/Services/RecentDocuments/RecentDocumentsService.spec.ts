@@ -1,4 +1,4 @@
-import { InternalEventBus } from '@proton/docs-shared'
+import { InternalEventBus, ServerTime } from '@proton/docs-shared'
 import { RecentDocumentsService } from './RecentDocumentsService'
 import type { DecryptedNode, DriveCompat } from '@proton/drive-store/lib'
 import { type RecentDocumentsSnapshotData } from './types'
@@ -88,7 +88,7 @@ describe('RecentDocumentsService', () => {
         name: 'name1',
         volumeId: 'volume1',
         linkId: 'link1',
-        lastViewed: 1,
+        lastViewed: new ServerTime(1),
         parentLinkId: 'parentLink1',
         createdBy: 'me@proton.ch',
       }

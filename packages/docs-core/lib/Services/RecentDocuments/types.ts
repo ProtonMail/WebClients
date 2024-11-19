@@ -1,8 +1,10 @@
+import type { ServerTime } from '@proton/docs-shared'
+
 export type RecentDocumentServiceState = 'not_fetched' | 'fetching' | 'resolving' | 'done'
 export type RecentDocument = {
   linkId: string
   shareId: string
-  lastViewed: number
+  lastViewed: ServerTime
 }
 
 export const RecentDocumentStateUpdatedEvent = 'RecentDocumentStateUpdated'
@@ -17,7 +19,7 @@ export type RecentDocumentsSnapshotData = {
   linkId: string
   parentLinkId?: string
   volumeId: string
-  lastViewed: number
+  lastViewed: ServerTime
   createdBy?: string
   location?: string[]
   isSharedWithMe?: boolean

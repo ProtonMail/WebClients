@@ -113,7 +113,7 @@ export const useRecentDocumentsValue = ({ searchText, filter }: { searchText?: s
   )
 
   const getDisplayDateForRecentDocument = useCallback(
-    (recentDocument: RecentDocumentsSnapshotData): string => dateFormatter.formatDate(recentDocument.lastViewed),
+    (recentDocument: RecentDocumentsSnapshotData): string => dateFormatter.formatDate(recentDocument.lastViewed.date),
     [],
   )
 

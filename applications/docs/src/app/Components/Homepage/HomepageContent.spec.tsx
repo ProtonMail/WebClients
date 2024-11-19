@@ -7,6 +7,7 @@ import { HomepageContent } from './HomepageContent'
 import { RecentDocumentsContext } from './useRecentDocuments'
 import ApplicationProvider from '../../Containers/ApplicationProvider'
 import type { LoggerInterface } from '@proton/utils/logs'
+import { ServerTime } from '@proton/docs-shared'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 
@@ -16,7 +17,7 @@ const MOCK_DATA = [
     linkId: 'link1',
     volumeId: 'volume1',
     location: ['location', 'Document1'],
-    lastViewed: 1,
+    lastViewed: new ServerTime(1),
     createdBy: 'Creator',
     parentLinkId: 'parentLink1',
   },
@@ -25,7 +26,7 @@ const MOCK_DATA = [
     linkId: 'link2',
     volumeId: 'volume1',
     location: ['location', 'Document1'],
-    lastViewed: 1,
+    lastViewed: new ServerTime(1),
     createdBy: 'Creator',
     parentLinkId: 'parentLink1',
   },
@@ -34,7 +35,7 @@ const MOCK_DATA = [
     linkId: 'link3',
     volumeId: 'volume1',
     location: ['location', 'Document1'],
-    lastViewed: 1,
+    lastViewed: new ServerTime(1),
     createdBy: 'Creator',
     parentLinkId: 'parentLink1',
   },
