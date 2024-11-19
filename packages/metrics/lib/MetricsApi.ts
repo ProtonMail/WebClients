@@ -53,6 +53,7 @@ class MetricsApi implements IMetricsApi {
         try {
             const response = await this._fetchWithTimeout(requestInfo, {
                 ...requestInit,
+                keepalive: true,
                 headers: {
                     ...requestInit?.headers,
                     'content-type': 'application/json',
