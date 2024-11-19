@@ -613,6 +613,9 @@
       "Black Friday": [
         "Black Friday"
       ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Pague uma vez e obtenha o ${ lifetimeAccessJSX } para Pass Plus e SimpleLogin. Apenas por ${ relativePrice }."
+      ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Economize até ${ discountJSX } no Pass Family. Apenas ${ relativePrice }/mês."
       ]
@@ -1114,9 +1117,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "A atualização \"${ payload.item.data.metadata.name } foi descartada"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } convites enviados com sucesso"
-      ],
       "${ count } time": [
         "${ count } vez",
         "${ count } vezes"
@@ -1268,6 +1268,9 @@
       ],
       "Change your password": [
         "Alterar sua senha"
+      ],
+      "Choose your preferred look and feel.": [
+        "Escolha sua aparência preferida."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirme sua senha adicional para prosseguir com a remoção."
@@ -1445,9 +1448,6 @@
       "Invite successfully resent": [
         "Convite enviado com sucesso"
       ],
-      "Invite successfully sent": [
-        "Convite enviado"
-      ],
       "invites you to access items in": [
         "convida você a acessar itens em"
       ],
@@ -1512,6 +1512,9 @@
       "Low Priority": [
         "Baixa prioridade"
       ],
+      "Make it your own": [
+        "Deixe do seu jeito"
+      ],
       "me": [
         "eu"
       ],
@@ -1527,8 +1530,20 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Mais do que um gerenciador de senhas, o ${ PASS_APP_NAME } protege sua senha e seu endereço de e-mail pessoal através de aliases de email. Alimentado pela mesma tecnologia por trás do ${ MAIL_APP_NAME }, seus dados são criptografados de ponta a ponta e são acessíveis apenas por você."
       ],
+      "Move ${ count } item": [
+        "Mover ${ count } item",
+        "Mover ${ count } itens"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Movendo um item para outro cofre apagará seu histórico e todos os links seguros.",
+        "Mover itens para outro cofre apagará seu histórico e todos os links seguros."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Movendo um item para outro cofre apagará seu histórico.",
+        "Movendo item para outro cofre apagará seus históricos."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2242,6 +2257,9 @@
       "Generic CSV": [
         "CSV genérico"
       ],
+      "Get Started": [
+        "Começar"
+      ],
       "Grant": [
         "Conceder"
       ],
@@ -2681,6 +2699,9 @@
       "${ count } item": [
         "${ count } item",
         "${ count } itens"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Você selecionou ${ semiboldText } nesse cofre."
       ]
     },
     "new_plans: feature": {
@@ -2961,6 +2982,10 @@
       "Dark Web Monitoring": [
         "Monitoramento da Dark Web"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Excluir ${ deletedItemsCount } item?",
+        "Excluir ${ deletedItemsCount } itens?"
+      ],
       "Delete this item?": [
         "Excluir este item?"
       ],
@@ -3042,6 +3067,14 @@
       "Modified": [
         "Modificado"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Mover ${ count } item para o ${ vaultName }",
+        "Mover ${ count } itens para o ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Mover ${ trashedItemsCount } item para a lixeira?",
+        "Mover ${ trashedItemsCount } itens para a lixeira?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Mover todos os itens para \"${ vaultName }\"?"
       ],
@@ -3077,6 +3110,9 @@
       ],
       "Pause monitoring?": [
         "Pausar monitoramento?"
+      ],
+      "Pending access confirmation": [
+        "Confirmação de acesso pendente"
       ],
       "Pending access to the shared data": [
         "Acesso pendente para compartilhar os dados."
@@ -3199,6 +3235,9 @@
       "What is the dark web?": [
         "O que é a dark web?"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Sua assinatura do ${ planName } terminará em ${ endDate }"
+      ],
       "Your exposed information": [
         "Sua informação exposta"
       ],
@@ -3247,6 +3286,14 @@
       ],
       "An error occurred while exporting your data": [
         "Ocorreu um erro ao exportar seus dados"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Tem certeza de que deseja mover ${ trashedItemsCount } item para a lixeira?",
+        "Tem certeza de que deseja mover ${ trashedItemsCount } itens para a lixeira?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Você tem certeza de que deseja excluir permanentemente ${ deletedItemsCount } item?",
+        "Você tem certeza de que deseja excluir permanentemente ${ deletedItemsCount } itens?"
       ],
       "At least one email address is required": [
         "É obrigatório pelo menos um endereço de e-mail"

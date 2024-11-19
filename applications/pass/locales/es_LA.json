@@ -621,7 +621,7 @@
         "Black Friday"
       ],
       "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Pague una vez y obtén ${ lifetimeAccessJSX } a Pass Plus y SimpleLogin. Solo por ${ relativePrice }."
+        "Pague una vez y obtenga ${ lifetimeAccessJSX } a Pass Plus y SimpleLogin. Solo por ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Ahorre hasta un ${ discountJSX } con Pass Family. Solo por ${ relativePrice }/mes."
@@ -756,7 +756,7 @@
         "No se pudieron determinar los destinatarios del recurso compartido"
       ],
       "Could not retrieve user invites for the \"${ vaultName }\" vault": [
-        "No se pudieron recuperar las invitaciones de usuario para labóveda «${ vaultName }»."
+        "No se pudieron recuperar las invitaciones de usuario para la bóveda «${ vaultName }»."
       ],
       "Could not validate addresses at the moment.": [
         "No se pudieron validar las direcciones por el momento."
@@ -1127,7 +1127,8 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
       ],
-      "${ count } invites successfully sent": [
+      "${ count } invite successfully sent": [
+        "${ count } invitación enviada",
         "${ count } invitaciones enviadas"
       ],
       "${ count } time": [
@@ -1466,9 +1467,6 @@
         "Invitación borrada"
       ],
       "Invite successfully resent": [
-        "La invitación fue enviada."
-      ],
-      "Invite successfully sent": [
         "La invitación fue enviada."
       ],
       "invites you to access items in": [
@@ -1979,7 +1977,7 @@
         "No se le notificará las vulneraciones de datos para esta dirección de correo electrónico."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
-        "Ya no tendrá acceso a la compartición, autenticación de 2 factores (2FA), tarjetas de débito o crédito y otras funciones avanzadas en ${ PASS_APP_NAME }."
+        "Ya no tendrá acceso a compartir, autenticación de dos factores (2FA), tarjetas de débito o crédito y otras funciones avanzadas en ${ PASS_APP_NAME }."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Usará este PIN para desbloquear ${ PASS_APP_NAME } automáticamente una vez que pase el tiempo de inactividad."
@@ -2292,6 +2290,9 @@
       ],
       "Generic CSV": [
         "CSV genérico"
+      ],
+      "Get Started": [
+        "Comenzar"
       ],
       "Grant": [
         "Conceder"
@@ -2732,7 +2733,7 @@
       ],
       "You can drag and drop the selected item to another vault": [
         "Puede arrastrar y soltar el elemento seleccionado en otra bóveda.",
-        "Puedes arrastrar y soltar los elementos seleccionados en otra bóveda."
+        "Puede arrastrar y soltar los elementos seleccionados en otra bóveda."
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Seleccionó ${ semiboldText } en esta bóveda."
@@ -3340,11 +3341,11 @@
         "¿En verdad desea mover ${ trashedItemsCount } elementos a la papelera?"
       ],
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "¿Está seguro de que quiere eliminar permanentemente ${ deletedItemsCount } elemento?",
-        "¿Está seguro de que quiere eliminar permanentemente ${ deletedItemsCount } elementos?"
+        "¿En verdad desea eliminar permanentemente ${ deletedItemsCount } elemento?",
+        "¿En verdad desea eliminar permanentemente ${ deletedItemsCount } elementos?"
       ],
       "Are you sure you want to permanently delete this item?": [
-        "¿Estás seguro de querer eliminar permanentemente este elemento?"
+        "¿En verdad desea eliminar permanentemente este elemento?"
       ],
       "At least one email address is required": [
         "Al menos se requiere una dirección de correo electrónico"

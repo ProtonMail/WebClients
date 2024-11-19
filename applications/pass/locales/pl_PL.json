@@ -106,6 +106,9 @@
       "Confirm access": [
         "Potwierdź dostęp"
       ],
+      "Confirm all": [
+        "Potwierdź wszystko"
+      ],
       "Continue": [
         "Kontynuuj"
       ],
@@ -142,6 +145,9 @@
       "Create identity": [
         "Utwórz tożsamość"
       ],
+      "Create item": [
+        "Utwórz element"
+      ],
       "Create login": [
         "Utwórz dane logowania"
       ],
@@ -171,6 +177,9 @@
       ],
       "Delete all": [
         "Usuń wszystko"
+      ],
+      "Delete it, I will never need it": [
+        "Usuń go. Nigdy nie będę go potrzebować"
       ],
       "Delete password": [
         "Usuń hasło"
@@ -382,6 +391,9 @@
       "Please retry": [
         "Spróbuj ponownie"
       ],
+      "Reactivate now": [
+        "Reaktywuj"
+      ],
       "Refresh the page": [
         "Odśwież stronę"
       ],
@@ -460,6 +472,9 @@
       "See members": [
         "Pokaż użytkowników"
       ],
+      "Select": [
+        "Wybierz"
+      ],
       "Send invite": [
         "Wyślij zaproszenie"
       ],
@@ -528,6 +543,12 @@
       ],
       "Try for free": [
         "Wypróbuj za darmo"
+      ],
+      "Understood, I will never need it": [
+        "Zrozumiałem. Nigdy nie będę go potrzebować",
+        "Zrozumiałem. Nigdy nie będę ich potrzebować",
+        "Zrozumiałem. Nigdy nie będę ich potrzebować",
+        "Zrozumiałem. Nigdy nie będę ich potrzebować"
       ],
       "Unlock": [
         "Odblokuj"
@@ -602,6 +623,9 @@
     "bf2024: Title": {
       "Black Friday": [
         "Czarny Piątek"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Zapłać raz i uzyskaj ${ lifetimeAccessJSX } do planu Pass Plus i usługi SimpleLogin. Tylko ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Zapisz do ${ discountJSX } na Pass Family. Tylko ${ relativePrice }/miesiąc."
@@ -738,6 +762,9 @@
       ],
       "Could not resolve share members": [
         "Nie można załadować użytkowników sejfu"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Nie można pobrać zaproszeń użytkowników do sejfu \"${ vaultName }\""
       ],
       "Could not validate addresses at the moment.": [
         "Nie można zweryfikować adresów."
@@ -1155,6 +1182,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } będzie wyświetlał ikonę stron przez anonimową proxy ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } będzie zgodny z motywem systemowym."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } obsługuje tylko importowanie danych logowania, notatek, kart płatniczych i tożsamości."
       ],
@@ -1284,6 +1314,9 @@
       "Change your password": [
         "Zmień hasło"
       ],
+      "Choose your preferred look and feel.": [
+        "Wybierz preferowany wygląd i styl."
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Potwierdź dodatkowe hasło, aby je usunąć."
       ],
@@ -1401,6 +1434,12 @@
       "Follow those steps to import your data with a generic CSV :": [
         "Wykonaj te kroki, aby zaimportować dane za pomocą ogólnego pliku CSV:"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Ze względów bezpieczeństwa, musisz potwierdzić dostęp do sejfu",
+        "Ze względów bezpieczeństwa, musisz potwierdzić dostęp do sejfów",
+        "Ze względów bezpieczeństwa, musisz potwierdzić dostęp do sejfów",
+        "Ze względów bezpieczeństwa, musisz potwierdzić dostęp do sejfów"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
       ],
@@ -1463,9 +1502,6 @@
       ],
       "Invite successfully resent": [
         "Zaproszenie zostało ponownie wysłane"
-      ],
-      "Invite successfully sent": [
-        "Zaproszenie zostało wysłane"
       ],
       "invites you to access items in": [
         "udostępnia Ci sejf"
@@ -1533,6 +1569,9 @@
       "Low Priority": [
         "Niski priorytet"
       ],
+      "Make it your own": [
+        "Stwórz własny"
+      ],
       "me": [
         "ja"
       ],
@@ -1548,8 +1587,26 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "To więcej niż menedżer haseł. ${ PASS_APP_NAME } chroni Twoje hasło i osobisty adres e-mail za pomocą aliasów. Dzięki tej samej technologii, która stoi za pocztą ${ MAIL_APP_NAME }, Twoje dane są zaszyfrowane end-to-end i są dostępne tylko dla Ciebie."
       ],
+      "Move ${ count } item": [
+        "Przenieś ${ count } element",
+        "Przenieś ${ count } elementy",
+        "Przenieś ${ count } elementów",
+        "Przenieś ${ count } elementów"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii i wszystkich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii i wszystkich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii i wszystkich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii i wszystkich linków."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii"
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -1682,6 +1739,12 @@
       ],
       "Please enter your current PIN code to continue": [
         "Wpisz kod PIN, aby kontynuować"
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Pamiętaj, że usuniętego aliasu nie można przywrócić. Czy chcesz, zamiast tego wyłączyć alias?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Pamiętaj, że usuniętego aliasu nie można przywrócić. Alias jest wyłączony i nie przekierowuje wiadomości do skrzynki odbiorczej."
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Ulepsz konto, aby uzyskać wcześniejszy dostęp do aplikacji internetowej ${ PASS_APP_NAME }"
@@ -1920,6 +1983,12 @@
       "You cannot change the mailboxes for this alias.": [
         "Nie możesz zmienić skrzynek pocztowych dla tego aliasu."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Masz ${ aliasCount } alias, który jest w SimpleLogin, ale nie jest widoczny w ${ PASS_APP_NAME }. Czy chcesz go zsynchronizować?",
+        "Masz ${ aliasCount } aliasy, które są w SimpleLogin, ale nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zsynchronizować?",
+        "Masz ${ aliasCount } aliasów, które są w SimpleLogin, ale nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zsynchronizować?",
+        "Masz ${ aliasCount } aliasów, które są w SimpleLogin, ale nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zsynchronizować?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Masz ${ daysRemaining } dzień, aby wypróbować funkcje premium.",
         "Masz ${ daysRemaining } dni, aby wypróbować funkcje premium.",
@@ -1958,6 +2027,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Nie będziesz powiadamiany o przyszłych wyciekach danych dla tego adresu e-mail."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Stracisz dostęp do udostępniania, uwierzytelniania dwustopniowego, kart płatniczych i innych zaawansowanych funkcji ${ PASS_APP_NAME }"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Będziesz używać tego kodu PIN, aby odblokować ${ PASS_APP_NAME } po automatycznej blokadzie aplikacji."
@@ -2615,6 +2687,12 @@
       "Today": [
         "Dzisiaj"
       ],
+      "Total imported items: ": [
+        "Zaimportowane elementy: "
+      ],
+      "Total items: ": [
+        "Elementy: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2719,6 +2797,15 @@
         "${ count } elementy",
         "${ count } elementów",
         "${ count } elementów"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Element możesz przeciągnąć i upuszczać w innym sejfie",
+        "Elementy możesz przeciągnąć i upuszczać w innym sejfie",
+        "Elementy możesz przeciągnąć i upuszczać w innym sejfie",
+        "Elementy możesz przeciągnąć i upuszczać w innym sejfie"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Zaznaczono ${ semiboldText } w sejfie."
       ]
     },
     "new_plans: feature": {
@@ -2891,8 +2978,14 @@
       "Sign-in rejected": [
         "Logowanie zostało odrzucone"
       ],
+      "Sign-in rejection failure": [
+        "Odrzucenie logowania nie powiodło się"
+      ],
       "Sign-in requested on another device. Was it you?": [
         "Potwierdź logowanie na innym urządzeniu. To nie Ty?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Potwierdź logowanie na innym urządzeniu. To nie Ty? "
       ],
       "Yes, it was me": [
         "Tak, to ja"
@@ -2998,8 +3091,14 @@
       "Dark Web Monitoring": [
         "Monitoring dark web"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Usunąć ${ deletedItemsCount } element?",
+        "Usunąć ${ deletedItemsCount } elementy?",
+        "Usunąć ${ deletedItemsCount } elementów?",
+        "Usunąć ${ deletedItemsCount } elementów?"
+      ],
       "Delete this item?": [
-        "Usunąć ten element?"
+        "Usunąć element?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Usunąć sejf \"${ vaultName }\"?"
@@ -3079,8 +3178,23 @@
       "Modified": [
         "Zmodyfikowano"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Przenieś ${ count } element do sejfu ${ vaultName }",
+        "Przenieś ${ count } elementy do sejfu ${ vaultName }",
+        "Przenieś ${ count } elementów do sejfu ${ vaultName }",
+        "Przenieś ${ count } elementów do sejfu ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Przenieść ${ trashedItemsCount } element do Kosza?",
+        "Przenieść ${ trashedItemsCount } elementy do Kosza?",
+        "Przenieść ${ trashedItemsCount } elementów do Kosza?",
+        "Przenieść ${ trashedItemsCount } elementów do Kosza?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Przenieść wszystkie elementy do sejfu \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "Przenieś element do sejfu \"${ vaultName }\""
       ],
       "No excluded items": [
         "Brak wykluczonych elementów"
@@ -3112,6 +3226,9 @@
       "Pause monitoring?": [
         "Wstrzymać monitoring?"
       ],
+      "Pending access confirmation": [
+        "Oczekiwanie na potwierdzenie dostępu"
+      ],
       "Pending access to the shared data": [
         "Oczekujący dostęp do udostępnionych danych"
       ],
@@ -3120,6 +3237,12 @@
       ],
       "Pinned (${ items.length })": [
         "Przypięte (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Pamiętaj, że raz usunięty alias nie może zostać przywrócony.",
+        "Pamiętaj, że raz usunięte aliasy nie mogą zostać przywrócone.",
+        "Pamiętaj, że raz usunięte aliasy nie mogą zostać przywrócone.",
+        "Pamiętaj, że raz usunięte aliasy nie mogą zostać przywrócone."
       ],
       "Recommended actions": [
         "Zalecane kroki"
@@ -3193,6 +3316,9 @@
       "Sync alias": [
         "Synchronizuj alias"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Synchronizuj aliasy z SimpleLogin"
+      ],
       "Transfer ownership": [
         "Zmień właściciela"
       ],
@@ -3232,6 +3358,9 @@
       "What is the dark web?": [
         "Co to jest dark web?"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Subskrypcja ${ planName } wygasa ${ endDate }"
+      ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
       ],
@@ -3240,6 +3369,12 @@
       ],
       "Your welcome gift": [
         "Twój prezent powitalny"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Zamierzasz trwale usunąć ${ aliasCount } alias.",
+        "Zamierzasz trwale usunąć ${ aliasCount } aliasy.",
+        "Zamierzasz trwale usunąć ${ aliasCount } aliasów.",
+        "Zamierzasz trwale usunąć ${ aliasCount } aliasów."
       ]
     },
     "Validation": {
@@ -3275,11 +3410,29 @@
       "A description of the problem is required": [
         "Opis problemu jest wymagany"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Aliasy w Koszu nadal będą przekierowywać wiadomości."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Wszystkie elementy zostaną trwale usunięte. Tej akcji nie można cofnąć."
       ],
       "An error occurred while exporting your data": [
         "Wystąpił błąd podczas eksportowania danych"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Czy na pewno chcesz przenieść ${ trashedItemsCount } element do Kosza?",
+        "Czy na pewno chcesz przenieść ${ trashedItemsCount } elementy do Kosza?",
+        "Czy na pewno chcesz przenieść ${ trashedItemsCount } elementów do Kosza?",
+        "Czy na pewno chcesz przenieść ${ trashedItemsCount } elementów do Kosza?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Czy na pewno chcesz trwale usunąć ${ deletedItemsCount } element?",
+        "Czy na pewno chcesz trwale usunąć ${ deletedItemsCount } elementy?",
+        "Czy na pewno chcesz trwale usunąć ${ deletedItemsCount } elementów?",
+        "Czy na pewno chcesz trwale usunąć ${ deletedItemsCount } elementów?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Czy na pewno chcesz trwale usunąć element?"
       ],
       "At least one email address is required": [
         "Co najmniej jeden adres e-mail jest wymagany"

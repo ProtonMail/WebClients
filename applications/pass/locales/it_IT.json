@@ -620,6 +620,9 @@
       "Black Friday": [
         "Black Friday"
       ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Paga una volta e ricevi ${ lifetimeAccessJSX } per Pass Plus e SimpleLogin. Solo ${ relativePrice }."
+      ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Risparmia fino a ${ discountJSX } su Pass Family. Solo ${ relativePrice }/mese."
       ]
@@ -751,6 +754,9 @@
       ],
       "Could not resolve share members": [
         "Impossibile recuperare i membri della condivisione"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Impossibile recuperare gli inviti degli utenti per la cassaforte \"${ vaultName }\"."
       ],
       "Could not validate addresses at the moment.": [
         "Impossibile verificare gli indirizzi al momento."
@@ -1121,9 +1127,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "L'aggiornamento \"${ payload.item.data.metadata.name }\" è stato rimosso"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } inviti spediti con successo"
-      ],
       "${ count } time": [
         "${ count } volta",
         "${ count } volte"
@@ -1461,9 +1464,6 @@
       ],
       "Invite successfully resent": [
         "Invito reinviato con successo"
-      ],
-      "Invite successfully sent": [
-        "Invito spedito con successo"
       ],
       "invites you to access items in": [
         "ti invita ad accedere agli elementi in"
@@ -1972,6 +1972,9 @@
       "You will no longer be notified of data breaches for this email address.": [
         "Non riceverai più notifiche sulle violazioni di dati per questo indirizzo email."
       ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Non avrai più accesso alla condivisione, alla 2FA, alla carta di credito e ad altre funzionalità avanzate in ${ PASS_APP_NAME }"
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Dovrai utilizzare questo PIN per sbloccare ${ PASS_APP_NAME } una volta che si sarà bloccato automaticamente dopo il periodo d'inattività."
       ],
@@ -2283,6 +2286,9 @@
       ],
       "Generic CSV": [
         "CSV generico"
+      ],
+      "Get Started": [
+        "Inizia ora"
       ],
       "Grant": [
         "Concedi"
@@ -3325,6 +3331,10 @@
       ],
       "An error occurred while exporting your data": [
         "Si è verificato un errore durante l'esportazione dei dati"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Sei sicuro di voler spostare ${ trashedItemsCount } elemento nel cestino?",
+        "Sei sicuro di voler spostare ${ trashedItemsCount } elementi nel cestino?"
       ],
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
         "Sei sicuro di voler eliminare definitivamente ${ deletedItemsCount } elemento?",

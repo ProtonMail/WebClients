@@ -1127,9 +1127,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } davetiye gönderildi"
-      ],
       "${ count } time": [
         "${ count } kez",
         "${ count } kez"
@@ -1467,9 +1464,6 @@
       ],
       "Invite successfully resent": [
         "Davet yeniden gönderildi"
-      ],
-      "Invite successfully sent": [
-        "Davet gönderildi"
       ],
       "invites you to access items in": [
         "sizi şu kasadaki ögelere erişmeye davet ediyor:"
@@ -2292,6 +2286,9 @@
       ],
       "Generic CSV": [
         "CSV dosyası"
+      ],
+      "Get Started": [
+        "Başlayalım"
       ],
       "Grant": [
         "İzin ver"

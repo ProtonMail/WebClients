@@ -1149,9 +1149,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizace \"${ payload.item.data.metadata.name }\" byla odmítnuta"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } pozvánek úspěšně odesláno"
-      ],
       "${ count } time": [
         "${ count } krát",
         "${ count } krát",
@@ -1186,7 +1183,7 @@
         "${ PASS_APP_NAME } zobrazí favicon položky prostřednictvím anonymizovaného obrázkového proxy serveru ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will follow your system theme.": [
-        "${ PASS_APP_NAME } se bude řídit tématem systému."
+        "${ PASS_APP_NAME } se bude řídit motivem vašeho systému."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky, platební karty a identity."
@@ -1505,9 +1502,6 @@
       ],
       "Invite successfully resent": [
         "Pozvánka byla úspěšně odeslána"
-      ],
-      "Invite successfully sent": [
-        "Pozvánka úspěšně odeslána"
       ],
       "invites you to access items in": [
         "vás zve k přístupu k položkám v"
@@ -2035,7 +2029,7 @@
         "Nebudete již upozorněni na úniky informací této e-mailové adresy."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
-        "Již nebudete mít přístup ke sdílení, dvoufázovému ověřování, kreditní kartě a dalším pokročilým funkcím. ${ PASS_APP_NAME }"
+        "Již nebudete mít přístup ke sdílení, dvoufázovému ověřování, platební kartě a dalším pokročilým funkcím ${ PASS_APP_NAME }"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tento PIN použijete k odemknutí ${ PASS_APP_NAME }, jakmile se po určité době nečinnosti automaticky zamkne."
@@ -2362,6 +2356,9 @@
       ],
       "Generic CSV": [
         "Obyčejný CSV"
+      ],
+      "Get Started": [
+        "Začínáme"
       ],
       "Grant": [
         "Udělit"

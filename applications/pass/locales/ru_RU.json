@@ -184,6 +184,9 @@
       "Deselect": [
         "Снять выделение"
       ],
+      "Disable alias": [
+        "Отключить псевдоним"
+      ],
       "Disable instead": [
         "Отключить вместо этого"
       ],
@@ -379,6 +382,9 @@
       "Please retry": [
         "Повторите попытку"
       ],
+      "Reactivate now": [
+        "Восстановить подписку"
+      ],
       "Refresh the page": [
         "Обновить страницу"
       ],
@@ -457,6 +463,9 @@
       "See members": [
         "Просмотреть участников"
       ],
+      "Select": [
+        "Выбрать"
+      ],
       "Send invite": [
         "Отправить приглашение"
       ],
@@ -504,6 +513,12 @@
       ],
       "Submitting report...": [
         "Отправка отчёта..."
+      ],
+      "Sync alias": [
+        "Синхронизировать псевдонимы",
+        "Синхронизировать псевдонимы",
+        "Синхронизировать псевдонимы",
+        "Синхронизировать псевдонимы"
       ],
       "Sync aliases": [
         "Синхронизировать псевдонимы"
@@ -567,6 +582,9 @@
       ],
       "Write us on Twitter": [
         "Написать нам в Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Вашего менеджера паролей здесь нет? Запросите его."
       ]
     },
     "bf2024: Deal": {
@@ -590,6 +608,9 @@
     "bf2024: Title": {
       "Black Friday": [
         "Черная пятница"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Заплатите один раз и получите ${ lifetimeAccessJSX } к Pass Plus и SimpleLogin. Всего ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Сэкономьте до ${ discountJSX } на Pass Family. Всего ${ relativePrice }/месяц."
@@ -1110,9 +1131,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Обновление \"${ payload.item.data.metadata.name }\" было отклонено"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } приглашения успешно отправлены"
-      ],
       "${ count } time": [
         "${ count } раз",
         "${ count } раза",
@@ -1178,6 +1196,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Для доступа к ${ PASS_APP_NAME } потребуется ваш отпечаток пальца или PIN-код устройства."
+      ],
+      "Add your custom email address to monitor:": [
+        "Добавьте свой пользовательский адрес электронной почты для мониторинга:"
       ],
       "Admin": [
         "Админ"
@@ -1271,6 +1292,9 @@
       ],
       "Change your password": [
         "Измените пароль"
+      ],
+      "Choose your preferred look and feel.": [
+        "Выбирайте предпочтительный внешний вид и настроение."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Подтвердите дополнительный пароль, чтобы продолжить его удаление."
@@ -1374,6 +1398,12 @@
       "Expires in ${ remainingTime }": [
         "Истекает через ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Дополнительный пароль успешно создан"
+      ],
+      "Extra password successfully removed": [
+        "Дополнительный пароль успешно удален"
+      ],
       "Fill in the CSV with your data": [
         "Заполните CSV данными"
       ],
@@ -1446,9 +1476,6 @@
       "Invite successfully resent": [
         "Приглашение успешно переотправлено"
       ],
-      "Invite successfully sent": [
-        "Приглашение успешно отправлено"
-      ],
       "invites you to access items in": [
         "приглашает вас получить доступ к элементам в"
       ],
@@ -1515,6 +1542,9 @@
       "Low Priority": [
         "Низкий приоритет"
       ],
+      "Make it your own": [
+        "Сделайте всё по-своему"
+      ],
       "me": [
         "я"
       ],
@@ -1526,6 +1556,15 @@
       ],
       "Monitoring settings successfully updated": [
         "Настройки мониторинга успешно обновлены"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Более чем просто менеджер паролей, ${ PASS_APP_NAME } защищает ваш пароль и ваш личный адрес электронной почты с помощью псевдонимов электронной почты. Работая на технологии, лежащей в основе ${ MAIL_APP_NAME }, ваши данные защищены конечным шифрованием и доступны только вам."
+      ],
+      "Move ${ count } item": [
+        "Переместить ${ count } элемент",
+        "Переместить ${ count } элемента",
+        "Переместить ${ count } элементов",
+        "Переместить ${ count } элементов"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
@@ -1568,6 +1607,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Для онлайн-доступа к ${ PASS_APP_NAME } потребуется PIN-код. Вы выйдете из системы после 3 неудачных попыток."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Наши предупреждения приоритизируют безопасность. Если вы не узнаёте ничего из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
       ],
       "Owner": [
         "Владелец"
@@ -1830,11 +1872,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Улучшите сейчас, чтобы получить платне функции"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Перейдите на платный план, чтобы создать несколько хранилищ."
+      ],
       "Use vaults to share this item with others.": [
         "Используйте хранилища, чтобы поделиться этим элементом с другими."
       ],
       "User's access removed": [
         "Доступ пользователя удален"
+      ],
+      "User's access successfully updated": [
+        "Доступ пользователя обновлен"
       ],
       "username": [
         "имя пользователя"
@@ -2084,6 +2132,9 @@
       "Capital letters (A-Z)": [
         "Заглавные буквы (A-Z)"
       ],
+      "Capitalize": [
+        "Прописные"
+      ],
       "Card": [
         "Карта"
       ],
@@ -2243,6 +2294,9 @@
       "Generic CSV": [
         "Общий CSV"
       ],
+      "Get Started": [
+        "Начать"
+      ],
       "Grant": [
         "Предоставить"
       ],
@@ -2272,6 +2326,9 @@
       ],
       "Import passwords": [
         "Импортировать пароли"
+      ],
+      "Imported from: ": [
+        "Импортировано из: "
       ],
       "Imported on : ": [
         "Дата импорта : "
@@ -2570,6 +2627,12 @@
       "Today": [
         "Сегодня"
       ],
+      "Total imported items: ": [
+        "Всего импортировано элементов: "
+      ],
+      "Total items: ": [
+        "Всего элементов: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2674,6 +2737,9 @@
         "${ count } элемента",
         "${ count } элементов",
         "${ count } элементов"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Вы выбрали ${ semiboldText } в этом хранилище."
       ]
     },
     "new_plans: feature": {
@@ -2893,6 +2959,17 @@
         "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Автоматический"
+      ],
+      "Dark": [
+        "Тёмная"
+      ],
+      "Light": [
+        "Светлая"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } адресов"
@@ -2948,6 +3025,9 @@
       "Dark Web Monitoring": [
         "Мониторинг Темной паутины"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Удалить хранилище \"${ vaultName }\"?"
+      ],
       "Details": [
         "Информация"
       ],
@@ -3002,6 +3082,9 @@
       "Last modified": [
         "Дата последнего изменения"
       ],
+      "Leave vault?": [
+        "Покинуть хранилище?"
+      ],
       "Loading breaches...": [
         "Загрузка утечек..."
       ],
@@ -3022,6 +3105,9 @@
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Переместить все элементы в \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "Переместить элемент в \"${ vaultName }\""
       ],
       "No excluded items": [
         "Нет исключенных элементов"
@@ -3228,6 +3314,12 @@
       "Could not create vault \"${ vaultName }\"": [
         "Не могу создать хранилище \"${ vaultName }\""
       ],
+      "Could not send invitations to the following addresses:": [
+        "Не удалось отправить приглашения на следующие адреса:"
+      ],
+      "Delete alias": [
+        "Удалить псевдоним"
+      ],
       "Duplicate email addresses.": [
         "Дублирование адресов электронной почты."
       ],
@@ -3318,6 +3410,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Убедитесь, что расширение правильно установлено и включено."
       ],
+      "Please contact us to investigate the issue": [
+        "Пожалуйста, свяжитесь с нами для изучения проблемы"
+      ],
       "Please update the extension to its latest version": [
         "Обновите расширение до последней версии"
       ],
@@ -3395,6 +3490,9 @@
       ],
       "Your session was locked.": [
         "Ваш сеанс заблокирован."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Вы не можете создавать больше хранилищ, чем разрешает ваша подписка."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше первое хранилище. Для импорта в несколько хранилищ обновите подписку."
