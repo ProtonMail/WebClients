@@ -6,7 +6,7 @@ import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { categoriesThunk, mailSettingsThunk } from '@proton/mail';
 import { TelemetryMailHeartbeatEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 import {
     AUTO_DELETE_SPAM_AND_TRASH_DAYS,
     COMPOSER_MODE,
@@ -19,10 +19,11 @@ import {
     VIEW_LAYOUT,
     VIEW_MODE,
 } from '@proton/shared/lib/mail/mailSettings';
+import { PROTON_DEFAULT_THEME_SETTINGS, PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 
 import {
     formatBooleanForHeartbeat,
-    getDefaultDimensions,
+    getThemeMode,
     saveHeartbeatTimestamp,
     shouldSendHeartBeat,
 } from './heartbeatHelper';
@@ -63,12 +64,19 @@ export const mailSettingsHeartbeatListener = (startListening: AppStartListening)
             const folders = categories.filter((category) => category.Type === LABEL_TYPE.MESSAGE_FOLDER);
             const labels = categories.filter((category) => category.Type === LABEL_TYPE.MESSAGE_LABEL);
 
-            void sendTelemetryReport({
+            const { DarkTheme, LightTheme, Mode } = userSettings.Theme || PROTON_DEFAULT_THEME_SETTINGS;
+
+            void sendTelemetryReportWithBaseDimensions({
+                user,
+                subscription,
+                userSettings,
                 api: listenerApi.extra.api,
                 measurementGroup: TelemetryMeasurementGroups.settingsHeartBeat,
                 event: TelemetryMailHeartbeatEvents.mail_heartbeat,
                 dimensions: {
-                    ...getDefaultDimensions({ user, userSettings, subscription }),
+                    light_theme_name: PROTON_THEMES_MAP[LightTheme].label,
+                    dark_theme_name: PROTON_THEMES_MAP[DarkTheme].label,
+                    theme_mode: getThemeMode(Mode),
                     sign: formatBooleanForHeartbeat(mailSettings.Sign),
                     key_transparency: formatBooleanForHeartbeat(mailSettings.KT),
                     shortcuts: formatBooleanForHeartbeat(mailSettings.Shortcuts),
