@@ -601,7 +601,7 @@ const MailboxContainer = ({
                     <ErrorBoundary>
                         <section
                             className={clsx([
-                                'view-column-detail flex flex-column flex-1 flex-nowrap relative',
+                                'view-column-detail flex flex-column flex-1 *:min-size-auto flex-nowrap relative',
                                 !showContentPanel && 'hidden',
                                 showContentView ? 'overflow-hidden' : 'overflow-auto',
                             ])}
