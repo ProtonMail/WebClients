@@ -2486,7 +2486,7 @@
         "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
+        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -4367,7 +4367,7 @@
         "Le contact a été ajouté au groupe ${ contactGroupName }."
       ],
       "Contact unassigned from group ${ contactGroupName }": [
-        "Le contact a été retiré du groupe ${ contactGroupName }."
+        "Le contact a été retiré du groupe « ${ contactGroupName } »."
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuer à utiliser ${ DRIVE_APP_NAME } et déverrouiller le disque plus tard"
@@ -4967,8 +4967,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Notez que ce processus peut prendre un certain temps selon la taille de votre carnet d'adresses."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Après avoir cliqué sur le bouton Confirmer, il restera ${ remainingCreditsFormatted } crédits sur votre compte."
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédit restant.",
+        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédits restants."
       ],
       "Please open the document to view it.": [
         "Veuillez ouvrir le document pour l'afficher."
@@ -6282,7 +6283,7 @@
         "Cela supprimera définitivement tous les fichiers dans votre disque verrouillé."
       ],
       "Thomas": [
-        "Andréa"
+        "Jean"
       ],
       "Title": [
         "Titre"
@@ -7950,7 +7951,7 @@
         "Cet élément n'a pas été retiré de votre liste.",
         "Certains éléments n'ont pas été retirés de votre liste."
       ],
-      "This item was succefully removed from your list": [
+      "This item was successfully removed from your list": [
         "Cet élément a été retiré de votre liste.",
         "Tous les éléments ont été retirés de votre liste."
       ],
@@ -9125,7 +9126,7 @@
         "Connectez-vous à votre organisation."
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "Vous allez être redirigé vers votre service d'authentification unique tiers."
+        "Vous allez être redirigé vers votre service tiers d'authentification unique."
       ]
     },
     "State": {
@@ -9553,7 +9554,7 @@
         "Les utilisateurs ne pourront plus envoyer de messages."
       ],
       "Users won’t be able to upload files on their devices": [
-        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils."
+        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils"
       ],
       "Version history": [
         "Historique des versions"
