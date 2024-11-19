@@ -1055,7 +1055,8 @@ describe('payments core helpers', () => {
             ).toEqual(expected);
         });
 
-        it('should not duplicated regional currencies', () => {
+        // todo: enable this test once more regional currencies are available
+        it.skip('should not duplicated regional currencies', () => {
             const status = {
                 CountryCode: 'GB',
                 VendorStates: {} as any,
