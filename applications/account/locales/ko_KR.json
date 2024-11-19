@@ -70,10 +70,10 @@
       "Accept": [
         "수락"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -114,6 +114,9 @@
       ],
       "Add email address": [
         "이메일 주소 추가"
+      ],
+      "Add external address": [
+        "외부 주소 추가"
       ],
       "Add filter": [
         "필터 추가"
@@ -559,6 +562,9 @@
       "Get in touch": [
         "연락하기"
       ],
+      "Get limited-time offer": [
+        "기간 한정 할인 받기"
+      ],
       "Get more": [
         "더 많이 얻기"
       ],
@@ -808,11 +814,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "refresh the page": [
-        "페이지 새로고침"
-      ],
       "Refresh the page": [
         "페이지 새로 고침"
+      ],
+      "refresh the page": [
+        "페이지 새로고침"
       ],
       "Reject": [
         "거절"
@@ -1601,6 +1607,14 @@
         "연말 할인 선택"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "죄송하지만 이 제안은 현재 플랜으로 받을 수 없습니다. 하지만 ${ plan.Title }(을)를 ${ cycle }개월간 구독하면 ${ discountPercentage } 할인을 받을 수 있습니다."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 스토리지 (다른 플랜 보다 두 배 많음)"
@@ -1622,14 +1636,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } 플랜은 제한된 시간에만 적용됩니다."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
       ]
     },
     "bf2023: Offers": {
@@ -6636,7 +6642,7 @@
         "${ numberOfNonPrivateKeys } 업로드된 파일은 유효한 개인 키가 아닙니다. 확인하고 다시 시도해주세요."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
+        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
@@ -6826,6 +6832,9 @@
       ],
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount }개 게이트웨이 서버 생성 중"
+      ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "외부 이메일 주소를 추가하면 저 그룹에서 모든 이메일 통신의 종단간 암호화가 비활성화 됩니다. 정말로 진행하시겠습니까?"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "게이트웨이 서버 생성 중: ${ serverNumber } / ${ total }"
@@ -7184,10 +7193,10 @@
       "Data locked": [
         "데이터 잠김"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -7336,6 +7345,15 @@
       ],
       "Encryption setting updated": [
         "암호화 설정 업데이트됨"
+      ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "외부 주소로 인해 이 그룹에서 이메일 종단간 암호화가 비활성화 되어있습니다."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "이 그룹에서 이메일 종단간 암호화가 비활성화 되어있습니다. 활성화될 수 있습니다."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "이 그룹에 이메일 종단간 암호화가 활성회 되어있습니다."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
@@ -7625,9 +7643,6 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "선택한 국가의 특정 서버에 연결하려면 서버 구성 파일을 설치하세요."
       ],
-      "Internal user": [
-        "내부 사용자"
-      ],
       "Internet connection lost": [
         "인터넷 연결 없음"
       ],
@@ -7825,6 +7840,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "계정의 비밀번호를 잊어버렸을 때 다시 계정에 로그인 할 수 있도록 ${ addARecoveryMethod }를 하시기 바랍니다."
+      ],
+      "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
+        "${ DOCS_APP_NAME }의 이메일 알림 설정을 관리하세요."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "2단계 인증 기기에 본 정보를 직접 입력하여 계정을 설정하세요. ${ switchButton }"
@@ -8071,9 +8089,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "이 필터 (${ nameDeleted }) 삭제 시 트리거되는 모든 자동화된 작업이 중단됩니다."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "확인 버튼을 누르면 계정에는 ${ remainingCreditsFormatted } 크레딧이 남게됩니다."
       ],
       "please open a support ticket": [
         "지원 티켓을 만들어 주세요"
@@ -8789,10 +8804,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
       "Users": [
@@ -9160,6 +9175,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "구독을 취소하더라도 ${ PASS_APP_NAME }과 SimpleLogin의 프리미엄 기능에 평생 접근할 수 있습니다."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "해당 날짜부터 ${ planTitle }용 기능에 접근할 수 없게 됩니다."
@@ -11214,6 +11232,9 @@
       "for your first month": [
         "첫 달 동안"
       ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "${ planTitle }를 ${ discountedPriceElement }으로 만나다"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "2024년 04월 02일에 만료되는 기간 한정 특가입니다."
       ]
@@ -11368,8 +11389,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "호주 달러"
+      ],
       "Brazilian real": [
         "브라질 헤알"
+      ],
+      "British pound": [
+        "영국 파운드"
+      ],
+      "Canadian dollar": [
+        "캐나다 달러"
       ],
       "Euro": [
         "유로"
@@ -11581,6 +11611,32 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "${ price }로 시작하세요."
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "무료로 계속하기"
@@ -11608,32 +11664,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "${ price }로 시작하세요."
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
       ]
     },
     "new_plans: feature": {
@@ -11690,6 +11720,9 @@
       ],
       "${ options }-day file version history": [
         "${ options }일 파일 버전 기록"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin 평생 이용권"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ n }개의 hide-my-email 별칭이 포함된 ${ PASS_APP_NAME }"
@@ -11748,6 +11781,9 @@
       "Administration Panel": [
         "관리 패널"
       ],
+      "Advanced account protection": [
+        "향상된 계정 보호"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "고급 별칭 기능 (SimpleLogin 제공)"
       ],
@@ -11783,6 +11819,9 @@
       ],
       "Available on all platforms": [
         "모든 플랫폼에서 지원"
+      ],
+      "Breach alerts": [
+        "정보 유출 경고"
       ],
       "Calendar sharing": [
         "일정 공유"
@@ -12293,6 +12332,20 @@
         "${ planName } 플랜을 선택하셨습니다"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price }에 Mail Plus를 구독하세요"
+      ],
+      "Starting from ${ price }": [
+        "${ price }부터 시작"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -12311,20 +12364,6 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "${ price }에 Mail Plus를 구독하세요"
-      ],
-      "Starting from ${ price }": [
-        "${ price }부터 시작"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -12414,6 +12453,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "라벨은 메시지를 찾기 쉽게하거나 필터를 적용하기 위해 추가 할 수 있는 간단한 태그입니다"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "${ PASS_APP_NAME } + SimpleLogin 프리미엄 기능에 평생 접근"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "금고는 폴더처럼 항목들을 쉽게 분류할 수 있습니다"
@@ -13815,6 +13857,9 @@
       ],
       "Processing payment": [
         "결제 처리 중"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "${ price }에 갱신되며 언제나 취소할 수 있습니다."
       ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"
@@ -16539,6 +16584,12 @@
       "Filter removed": [
         "필터 삭제됨"
       ],
+      "Group end-to-end email encryption disabled": [
+        "그룹 이메일 종단간 암호화 비활성화됨"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "그룹 이메일 종단간 암호화 활성화됨"
+      ],
       "Preference updated": [
         "환경설정 업데이트 완료"
       ],
@@ -16805,6 +16856,9 @@
       "Add domain": [
         "도메인 추가"
       ],
+      "Add external address?": [
+        "외부 주소를 추가할까요?"
+      ],
       "Add filter": [
         "필터 추가"
       ],
@@ -16904,11 +16958,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -17200,6 +17254,9 @@
       ],
       "Email encryption keys": [
         "이메일 암호화 키"
+      ],
+      "Email notifications": [
+        "메일 알림"
       ],
       "Email privacy": [
         "이메일 프라이버시"
@@ -18231,6 +18288,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "외부 주소 - 이 그룹의 모든 이메일 종단간 암호화를 비활성화 합니다"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "외부 주소 - 이 그룹의 모든 이메일 종단간 안호화를 비활성화 하고 해당 사용자와 모든 암호화된 자료를 공유하지 않습니다"
       ],
       "Group membership paused": [
         "그룹 구성 권한 중단됨"
