@@ -18,6 +18,7 @@ interface Props extends ModalOwnProps {
     hasWalletPaidPlans: boolean;
     user: UserModel;
     openSubscriptionModal: OpenSubscriptionModalCallback;
+    resetQuoteByProvider: () => void;
 }
 
 const percentageServiceFeeFreeUser = 4;
@@ -30,6 +31,7 @@ export const AztecoPaymentDetailsModal = ({
     hasWalletPaidPlans,
     user,
     openSubscriptionModal,
+    resetQuoteByProvider,
     ...modalProps
 }: Props) => {
     const serviceFeePercentage = hasWalletPaidPlans ? percentageServiceFeePaidUser : percentageServiceFeeFreeUser;
@@ -119,6 +121,7 @@ export const AztecoPaymentDetailsModal = ({
                                         disablePlanSelection: true,
                                         plan: PLANS.VISIONARY,
                                         onSubscribed: () => {
+                                            resetQuoteByProvider();
                                             modalProps.onClose?.();
                                         },
                                         metrics: {

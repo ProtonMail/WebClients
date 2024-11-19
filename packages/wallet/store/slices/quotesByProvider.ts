@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAction, createSlice } from '@reduxjs/toolkit';
 
 import type { ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account';
@@ -77,13 +77,15 @@ const modelThunk = createAsyncModelThunk<Model, QuotesByProviderState, WalletThu
     }
 );
 
+export const resetQuotesByProvider = createAction(`${name}/reset`);
+
 const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        handleAsyncModel(builder, modelThunk);
+        handleAsyncModel(builder, modelThunk).addCase(resetQuotesByProvider, () => initialState);
     },
 });
 
