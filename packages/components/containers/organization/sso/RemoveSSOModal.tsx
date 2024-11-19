@@ -14,6 +14,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { removeSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import type { SSO } from '@proton/shared/lib/interfaces';
 import errorImg from '@proton/styles/assets/img/errors/error-generic-triangle.svg';
+import { useFlag } from '@proton/unleash';
 
 interface Props extends ModalProps {
     sso: SSO;
@@ -24,6 +25,7 @@ const RemoveSSOModal = ({ sso, onClose, ...rest }: Props) => {
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
+    const isGlobalSSOEnabled = useFlag('GlobalSSO');
 
     const removeSSO = async () => {
         await api(removeSAMLConfig(sso.ID));
@@ -42,22 +44,26 @@ const RemoveSSOModal = ({ sso, onClose, ...rest }: Props) => {
         <ModalTwo onClose={onClose} size="small" {...rest}>
             <ModalTwoHeader title={c('sso').t`Remove single sign-on for your organization?`} />
             <ModalTwoContent>
-                <div className="text-center my-8">
+                <div className="text-center mb-6">
                     <img className="m-auto w-custom" style={{ '--w-custom': '6rem' }} src={errorImg} alt="" />
                 </div>
-                <p className="m-0 text-bold">{c('sso')
-                    .t`The credentials from your Identity Provider will be deleted.`}</p>
-                <p className="my-4">{c('sso').t`Once single sign-on is disabled for your organization:`}</p>
-                <ul className="mt-0">
-                    <li>
+                <div className="mb-2 text-bold">{c('sso').t`Your SSO configuration will be deleted.`}</div>
+                <div className="mb-2">{c('sso').t`Once single sign-on is disabled for your organization:`}</div>
+                <ul className="m-0">
+                    <li className="mb-2">
                         {getBoldFormattedText(
-                            c('sso')
-                                .t`**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.`
+                            isGlobalSSOEnabled
+                                ? c('sso')
+                                      .t`**SSO users will be detached from your identity provider** and converted to non-SSO users.`
+                                : c('sso')
+                                      .t`**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.`
                         )}
                     </li>
                     <li>
-                        {c('sso')
-                            .t`Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.`}
+                        {isGlobalSSOEnabled
+                            ? c('sso').t`You will have to create new users manually to add them to your organization.`
+                            : c('sso')
+                                  .t`Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.`}
                     </li>
                 </ul>
             </ModalTwoContent>
