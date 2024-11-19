@@ -47,6 +47,12 @@ describe("filter sensitve data", () => {
             "GET https://calendar.proton.me/api/calendar/v1/__EMAIL_PROTON__/busy-schedule?Start=1234&End=12783&Type=0&Timezone=Europe%2FNarnia 200 HTTP/1.1 200 OK",
         );
     });
+    it("replaces email domains", () => {
+        expectFilterSensitiveString(
+            "[2024-11-19 09:43:54.034] [verbose] (net/mail)     GET https://mail.proton.me/api/kt/v1/epochs/3017/proof?Identifier=%40gmail.com&Revision=1 200 HTTP/1.1 200",
+            "[2024-11-19 09:43:54.034] [verbose] (net/mail) GET https://mail.proton.me/api/kt/v1/epochs/3017/proof?Identifier=__EMAIL_NONPROTON__&Revision=1 200 HTTP/1.1 200",
+        );
+    });
     it("does not replace time related data", () => {
         expectFilterSensitiveString(
             "https://calendar.proton.me/api/calendar/v1/some-calendar-id/events?Start=1728770400&End=1729375199&Timezone=Europe%2FNarnia&PageSize=100&Type=1&Page=0&MetaDataOnly=1 200 HTTP/1.1 200",
@@ -103,11 +109,25 @@ describe("filter sensitve data", () => {
         );
     });
     it("works with windows paths", () => {
-        getPathMock.mockImplementation(() => "c:\\Users\\myuser\\proton-clients\\electron\\electron.exe");
+        getPathMock.mockImplementation(() => "c:\\Users\\myuser");
 
         expectFilterSensitiveString(
             `App start is mac: true is windows: false islinux: false version: 1.3.0 params [ ${app.getPath("home")}\\proton-clients\\electron\\electron.exe ]`,
-            "App start is mac: true is windows: false islinux: false version: 1.3.0 params [ /__HOME_NONASCII_18f6fe10c8813681718b6a998fa139ffd9891955__/proton-clients/electron/electron.exe ]",
+            "App start is mac: true is windows: false islinux: false version: 1.3.0 params [ /__HOME_ASCII_31d885743576198201e85d27db5525e13819608e__/proton-clients/electron/electron.exe ]",
+        );
+
+        getPathMock.mockImplementation(() => "C:\\Users\\Nice Human");
+
+        expectFilterSensitiveString(
+            `[2024-11-19 10:08:49.760] [info]  (calendar)     loadURL from file:///${encodeURI(app.getPath("home"))}/AppData/Local/proton_mail/app-1.3.1/resources/loading.html?message=Loading%20Proton%20Calendar%E2%80%A6&theme=dark to https://calendar.proton.me/u/0/`,
+            "[2024-11-19 10:08:49.760] [info] (calendar) loadURL from file:////__HOME_ASCII_e698c2b73ce60bbf090ba91febe82dba74758b2e__/AppData/Local/proton_mail/app-1.3.1/resources/loading.html?message=Loading%20Proton%20Calendar%E2%80%A6&theme=dark to https://calendar.proton.me/u/0/",
+        );
+
+        getPathMock.mockImplementation(() => "C:\\Users\\Mr. Moustache 🥸");
+
+        expectFilterSensitiveString(
+            `[2024-11-19 10:08:49.760] [info]  (calendar)     loadURL from file:///${encodeURI(app.getPath("home"))}/AppData/Local/proton_mail/app-1.3.1/resources/loading.html?message=Loading%20Proton%20Calendar%E2%80%A6&theme=dark to https://calendar.proton.me/u/0/`,
+            "[2024-11-19 10:08:49.760] [info] (calendar) loadURL from file:////__HOME_NONASCII_8889dffe3531b138c1c6dad2f4fba23da5f8765c__/AppData/Local/proton_mail/app-1.3.1/resources/loading.html?message=Loading%20Proton%20Calendar%E2%80%A6&theme=dark to https://calendar.proton.me/u/0/",
         );
     });
 });
