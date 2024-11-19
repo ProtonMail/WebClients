@@ -123,6 +123,7 @@ const PopoverEventContent = ({
         name: organizerName,
         title: organizerTitle,
         contactID: organizerContactID,
+        initials: organizerInitials,
     } = getOrganizerDisplayData(
         organizer,
         model.isOrganizer && !isSubscribedCalendar,
@@ -314,7 +315,7 @@ const PopoverEventContent = ({
                             <Participant
                                 className="is-organizer"
                                 title={organizerTitle}
-                                initials={getInitials(organizerName)}
+                                initials={organizerInitials}
                                 icon={organizerPartstatIcon}
                                 name={organizerName}
                                 tooltip={organizerTitle}
