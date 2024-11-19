@@ -1060,10 +1060,10 @@
       "Select ${ planTitle }": [
         "Seleccione ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar todo"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar todo"
       ],
       "Select all messages": [
@@ -1761,7 +1761,7 @@
         "Los descuentos se basan en los precios mensuales estándar."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si compra Pass Family o Unlimited, su suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
+        "Si compra Pass Family o Unlimited, su suscripción se renovará automáticamente con el precio reducido y la duración estándar al final del ciclo de facturación."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "La suscripción se renovará automáticamente con la misma tarifa estándar con descuento y duración al término del ciclo de facturación."
@@ -5926,7 +5926,7 @@
         "${ PASS_APP_NAME } proporciona una forma sencilla de crear inicios de sesión en sitios de terceros no confiables donde no desea exponer la dirección de correo electrónico real."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "L'oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de su suscripción ${ planTitle } se mantienen sin cambios."
@@ -6531,6 +6531,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear la cuenta, solicite una invitación y responderemos dentro de un día hábil."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Si cree que hemos cometido un error, ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si cancela, la suscripción de ${ planTitle } no se renovará cuando expire el ${ expiryDate }."
       ],
@@ -6599,8 +6602,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -6869,8 +6871,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tome en cuenta que este proceso puede tardar algún tiempo dependiendo del tamaño de su libreta de direcciones."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Tome en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Tome en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ creditsRemaining } crédito restante.",
+        "Tome en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
       "Please open the document to view it.": [
         "Abra el documento para verlo."
@@ -7468,6 +7471,12 @@
       "We couldn’t process your payment.": [
         "No pudimos procesar el pago."
       ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Hemos detectado la creación de varias cuentas gratuitas, lo que infringe nuestros ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Ofrecemos planes diseñados para usuarios como usted, que necesitan más de una dirección de correo electrónico.\nPara eliminar las restricciones, puede mejorar a un plan de pago."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Necesitamos autenticar su método de pago con el banco."
       ],
@@ -7690,7 +7699,7 @@
         "La cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en el buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando la cuenta, pague cualquier factura pendiente."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Su suscripción ${ PASS_SHORT_APP_NAME } Plus será reemplazada por ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restante de su suscripción se añadirá a tu cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+        "Su suscripción de${ PASS_SHORT_APP_NAME } Plus será reemplazada por ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restante de su suscripción se añadirá a su cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "La cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
@@ -9339,6 +9348,9 @@
         "Historial de ${ options } día de las versiones de los archivos",
         "Historial de ${ options } días de las versiones de los archivos"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Acceso de por vida a las funciones ${ PASS_APP_NAME } y SimpleLogin"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email"
@@ -9953,6 +9965,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Las etiquetas son muy fáciles de añadir a los mensajes y le permiten encontrarlos fácilmente o aplicarles filtros"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Acceso de por vida a las funciones premium de ${ PASS_APP_NAME } y SimpleLogin."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Como una carpeta, una bóveda es una manera conveniente de organizar sus elementos."
       ],
@@ -10325,7 +10340,7 @@
         "Protección contra rastreadores"
       ],
       "Replay introduction": [
-        "Volver a ver la introducción"
+        "Repetir la introducción"
       ],
       "Skip": [
         "Omitir"
@@ -10578,7 +10593,7 @@
         "Seleccione primero su estado de facturación"
       ],
       "Renews at ${ price }, cancel anytime.": [
-        "Se renueva por ${ price } y cancele cuando quieras."
+        "Se renueva por ${ price }, cancele cuando desee."
       ],
       "Select billing country to pay": [
         "Seleccione el país de facturación para pagar"
@@ -12691,7 +12706,7 @@
         "Ya existe un filtro con este nombre"
       ],
       "Account locked": [
-        "Se bloqueó la cuenta."
+        "Cuenta bloqueada"
       ],
       "Account recovery": [
         "Recuperación de cuenta"
