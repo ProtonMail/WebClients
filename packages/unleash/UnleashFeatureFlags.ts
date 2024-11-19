@@ -85,8 +85,6 @@ enum DriveFeatureFlag {
     DriveShareURLBookmarking = 'DriveShareURLBookmarking',
     DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
     DriveWebShareURLSignupModal = 'DriveWebShareURLSignupModal',
-    // New onboarding
-    DriveWebOnboardingV2 = 'DriveWebOnboardingV2',
     // Temp
     DriveDecryptionErrorDebugging = 'DriveDecryptionErrorDebugging',
     // B2B
