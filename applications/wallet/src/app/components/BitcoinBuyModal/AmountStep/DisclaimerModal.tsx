@@ -141,6 +141,7 @@ export const DisclaimerModal = ({ provider, onConfirm, onClose, loading, ...moda
             ]}
             actions={[
                 <Checkbox
+                    checked={hasReadAndAgree}
                     onClick={() => {
                         setHasReadAndAgree((prev) => !prev);
                     }}
