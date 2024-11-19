@@ -507,6 +507,9 @@
       "Reset to default": [
         "Varsayılana sıfırla"
       ],
+      "Restore version": [
+        "Sürümü geri yükle"
+      ],
       "Retry": [
         "Yeniden dene"
       ],
@@ -4342,9 +4345,6 @@
       "No version history available": [
         "Herhangi bir sürüm geçmişi kaydı yok"
       ],
-      "No version history batches available": [
-        "Herhangi bir sürüm geçmişi kaydı yok"
-      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Yüklenen anahtarların hiçbiri şifreleme için geçerli değil. Bu adrese ileti gönderebilmek için lütfen geçerli bir anahtar yükleyin ya da \"E-postalar şifrelensin\" seçeneğini kapatın."
       ],
@@ -4426,9 +4426,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bu işlemin kişi listenizin boyutuna bağlı olarak uzun sürebileceğini unutmayın."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Onayla düğmesine tıkladığınız zaman hesabınızda ${ remainingCreditsFormatted } kredi kalacağını lütfen unutmayın."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Bir grup oluşturmak için lütfen bir ad ve bir e-posta adresi belirtin."
@@ -5972,6 +5969,9 @@
         "${ options } günlük dosya sürümü geçmişi",
         "${ options } günlük dosya sürümü geçmişi"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin Lifetime"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı",
         "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı"
@@ -6027,6 +6027,9 @@
       "Administration Panel": [
         "Yönetim panosu"
       ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Gelişmiş takma ad özellikleri (SimpleLogin tarafından sağlanır)"
       ],
@@ -6056,6 +6059,9 @@
       ],
       "Available on all platforms": [
         "Tüm platformlarda kullanılabilir"
+      ],
+      "Breach alerts": [
+        "Verilerin ele geçilrilmesi uyarıları"
       ],
       "Calendar sharing": [
         "Takvim paylaşımı"
@@ -6579,6 +6585,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "${ PASS_APP_NAME } + SimpleLogin ücretli özelliklerine ömür boyu erişim."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
@@ -7125,6 +7134,9 @@
       ],
       "Please select your billing state first.": [
         "Lütfen önce faturanın kesileceği ili seçin."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "${ price } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Select billing country to pay": [
         "Ödeme için fatura ülkesini seçin"
