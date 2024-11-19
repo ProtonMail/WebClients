@@ -6,7 +6,7 @@ import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/d
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import type { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
-import type { CYCLE } from '@proton/shared/lib/constants';
+import type { APP_NAMES, CYCLE } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
@@ -26,7 +26,13 @@ interface Props {
     submitText?: ReactNode;
     title?: ReactNode;
     footerText?: ReactNode;
+    /**
+     * Can be used to prevent the modal from being opened in the drawer
+     */
+    preventInApp?: boolean;
 }
+
+const appsWithInApp = new Set<APP_NAMES>([APPS.PROTONMAIL, APPS.PROTONACCOUNT, APPS.PROTONCALENDAR]);
 
 // Return config properties to inject in the subscription modal
 const useUpsellConfig = ({
@@ -39,6 +45,7 @@ const useUpsellConfig = ({
     footerText,
     title,
     onSubscribed,
+    preventInApp = false,
 }: Props): Partial<UpsellModalProps> & Required<Pick<UpsellModalProps, 'upgradePath'>> => {
     const [user] = useUser();
     const [subscription] = useSubscription();
@@ -47,10 +54,9 @@ const useUpsellConfig = ({
     const inboxUpsellFlowEnabled = useFlag('InboxUpsellFlow');
     const { APP_NAME } = useConfig();
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
-    const hasInAppPayments =
-        APP_NAME === APPS.PROTONACCOUNT || APP_NAME === APPS.PROTONMAIL || hasInboxDesktopInAppPayments;
+    const hasInAppPayments = appsWithInApp.has(APP_NAME) || hasInboxDesktopInAppPayments;
 
-    if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef) {
+    if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef && !preventInApp) {
         const subscriptionCallBackProps = getUpsellSubscriptionModalConfig({
             coupon,
             cycle,
