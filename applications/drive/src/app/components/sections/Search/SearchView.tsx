@@ -6,7 +6,7 @@ import { c, msgid } from 'ttag';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 // TODO: handle with container
-import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useSearchView } from '../../../store';
 import { extractSearchParameters } from '../../../store/_search/utils';
 import { FileBrowserStateProvider } from '../../FileBrowser';

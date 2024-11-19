@@ -5,7 +5,7 @@ import type { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 
-import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { useFolderView } from '../../../store';
 import DriveBreadcrumbs from '../../DriveBreadcrumbs';

@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import useActiveShare from '../../../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
 import { useFileDrop } from '../../../../hooks/drive/useFileDrop';
 import { useFileUploadInput, useFolderUploadInput } from '../../../../store/_uploads/useUploadInput';
 import { Actions, countActionWithTelemetry } from '../../../../utils/telemetry';

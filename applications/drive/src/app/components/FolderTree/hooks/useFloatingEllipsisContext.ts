@@ -8,7 +8,7 @@ export interface FloatingEllipsisContextValue {
     getDimensions: () => FloatingEllipsisContainerDimensions;
 }
 
-export interface FloatingEllipsisContainerDimensions {
+interface FloatingEllipsisContainerDimensions {
     scrollWidth: number;
     scrollLeft: number;
 }
@@ -58,5 +58,3 @@ export const useFloatingEllipsisContext = ({
 
     return context;
 };
-
-export default useFloatingEllipsisContext;

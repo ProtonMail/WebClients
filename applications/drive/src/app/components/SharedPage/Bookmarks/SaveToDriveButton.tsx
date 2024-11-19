@@ -19,7 +19,7 @@ import {
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useSignupFlowModal } from '../../modals/SignupFlowModal/SignupFlowModal';
 
-export interface Props {
+interface Props {
     onClick: () => Promise<void>;
     alreadyBookmarked: boolean;
     className?: string;

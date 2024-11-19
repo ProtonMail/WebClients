@@ -32,7 +32,7 @@ import { RedirectionReason, drivePublicRedirectionReasonKey } from '../../../hoo
 import { Actions, countActionWithTelemetry, traceTelemetry } from '../../../utils/telemetry';
 import { deleteStoredUrlPassword, saveUrlPasswordForRedirection } from '../../../utils/url/password';
 
-export interface Props {
+interface Props {
     customPassword?: string;
 }
 export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Props & ModalStateProps) => {

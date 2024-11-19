@@ -58,7 +58,7 @@ export type DownloadEventCallbacks = {
     onFinish?: () => void;
 };
 
-export type DownloadBaseCallbacks = {
+type DownloadBaseCallbacks = {
     getChildren: GetChildrenCallback;
     getBlocks: GetBlocksCallback;
     getKeys: GetKeysCallback;
@@ -86,9 +86,9 @@ export type OnSignatureIssueCallback = (
     link: LinkDownload,
     signatureIssues: SignatureIssues
 ) => Promise<void>;
-export type OnScanIssueCallback = (abortSignal: AbortSignal, err: any, response?: ScanResultItem) => Promise<void>;
+type OnScanIssueCallback = (abortSignal: AbortSignal, err: any, response?: ScanResultItem) => Promise<void>;
 export type OnContainsDocumentCallback = (abortSignal: AbortSignal) => Promise<void>;
-export type OnErrorCallback = (err: Error) => void;
+type OnErrorCallback = (err: Error) => void;
 
 export type ChildrenLinkMeta = Pick<
     DecryptedLink,
@@ -124,22 +124,9 @@ export type InitDownloadCallback = (
     log: LogCallback,
     options?: { virusScan?: boolean }
 ) => DownloadControls;
-export type DownloadSignatureIssueModal = React.FunctionComponent<DownloadSignatureIssueModalProps>;
-
-interface DownloadSignatureIssueModalProps {
-    isFile: boolean;
-    name: string;
-    downloadName: string;
-    signatureAddress?: string;
-    signatureIssues: SignatureIssues;
-    apply: (strategy: TransferSignatureIssueStrategy, all: boolean) => void;
-    cancelAll: () => void;
-}
 
 export enum TransferSignatureIssueStrategy {
     Abort = 'abort',
     Continue = 'continue',
     // Following strategies are not used yet.
-    DeleteFile = 'delete',
-    ResignFile = 'resign',
 }

@@ -4,7 +4,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { fetchDesktopVersion } from '@proton/shared/lib/apps/desktopVersions';
 
 import { appPlatforms } from '../../utils/appPlatforms';
-import useDesktopDownloads from './useDesktopDownloads';
+import { useDesktopDownloads } from './useDesktopDownloads';
 
 jest.mock('@proton/shared/lib/apps/desktopVersions');
 const mockFetchDesktopVersion = jest.mocked(fetchDesktopVersion);
