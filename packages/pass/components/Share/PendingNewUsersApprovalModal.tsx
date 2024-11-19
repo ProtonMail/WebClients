@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components/index';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { PendingNewUsersForShare } from '@proton/pass/components/Share/PendingNewUsersForShare';
+import { useNavigatorOnline } from '@proton/pass/hooks/useNavigatorOnline';
 import { newUserInvitePromoteIntent } from '@proton/pass/store/actions';
 import { selectVaultsWithNewUserInvites } from '@proton/pass/store/selectors';
 import { NewUserInviteState, type ShareId } from '@proton/pass/types';
@@ -15,6 +16,7 @@ export const PendingNewUsersApprovalModal: FC = () => {
     const dispatch = useDispatch();
     const didPrompt = useRef(false); /* Modal should prompt only once */
     const [{ open, onClose }, setModal] = useModalState({ onClose: () => (didPrompt.current = true) });
+    const isOnline = useNavigatorOnline();
 
     const vaultsWithInvitesReady = useSelector(selectVaultsWithNewUserInvites);
     const [vaultsReady, setVaultsReady] = useState<ShareId[]>([]);
@@ -39,8 +41,8 @@ export const PendingNewUsersApprovalModal: FC = () => {
     );
 
     useEffect(() => {
-        if (!didPrompt.current) setModal(vaultsWithInvitesReady.length > 0);
-    }, [vaultsWithInvitesReady]);
+        if (!didPrompt.current) setModal(isOnline && vaultsWithInvitesReady.length > 0);
+    }, [vaultsWithInvitesReady, isOnline]);
 
     return (
         open && (
