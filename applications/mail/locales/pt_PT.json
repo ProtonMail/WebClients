@@ -1039,11 +1039,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select All": [
-        "Selecionar tudo"
-      ],
       "Select all": [
         "Seleccionar tudo"
+      ],
+      "Select All": [
+        "Selecionar tudo"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -1522,10 +1522,13 @@
     },
     "Assistant option": {
       "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
-        "Os dados permanecem no dispositivo para proteger sua privacidade. Requer um download e hardware compatível."
+        "Os dados permanecem no dispositivo para proteger a sua privacidade. Requer um descarregamento e hardware compatível."
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
-        "Nenhum registro é mantido para proteger sua privacidade. Processamento mais rápido."
+        "Nenhum registo é mantido para proteger a sua privacidade. Processamento mais rápido."
+      ],
+      "Run on device": [
+        "Executar no dispositivo"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Executado de forma segura nos servidores ${ BRAND_NAME }"
@@ -1713,6 +1716,9 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "por ${ durationDeal }"
+      ],
+      "forever": [
+        "para sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }. "
@@ -2141,6 +2147,9 @@
       "${ users } user": [
         "${ users } utilizador",
         "${ users } utilizadores"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total por ${ n } mês",
@@ -2726,6 +2735,9 @@
       "Dominican Republic": [
         "República Dominicana"
       ],
+      "East Timor": [
+        "Timor Leste"
+      ],
       "Ecuador": [
         "Equador"
       ],
@@ -3194,6 +3206,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard e Jan Mayen"
       ],
+      "Swaziland": [
+        "Suazilândia"
+      ],
       "Sweden": [
         "Suécia"
       ],
@@ -3593,6 +3608,11 @@
         "Ajude-nos a melhorar"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Remover o desconto"
+      ]
+    },
     "Download attachments": {
       "Download all": [
         "Transferir tudo"
@@ -3606,9 +3626,17 @@
         "Apoio ao cliente prioritário"
       ]
     },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB de armazenamento"
+      ],
+      "2 users": [
+        "2 utilizadores"
+      ]
+    },
     "duoplan2024: SubTitle": {
       "Double your storage": [
-        "Duplicar o seu armazenamento"
+        "Duplique o seu armazenamento"
       ]
     },
     "Email body for description (description part)": {
@@ -4629,6 +4657,9 @@
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
       ],
+      "Manage addresses": [
+        "Gerir endereços"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Lamentamos, mas não é possível mudar de plano neste momento."
       ],
@@ -4996,8 +5027,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Uma encriptação tão robusta, que somente você e os seus destinatários podem ler os e-mails."
       ],
+      "Finish setup": [
+        "Finalizar a configuração"
+      ],
       "For your eyes only": [
         "Só para si"
+      ],
+      "Get more storage": [
+        "Obter mais espaço de armazenamento"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obter a aplicação móvel do ${ MAIL_APP_NAME }"
@@ -5072,6 +5109,17 @@
       ],
       "Sign in with Google": [
         "Iniciar sessão com o Google"
+      ]
+    },
+    "Google Meet": {
+      "Less details": [
+        "Menos informações"
+      ],
+      "Meeting host:": [
+        "Organizador da reunião:"
+      ],
+      "More details": [
+        "Mais informações"
       ]
     },
     "Group": {
@@ -6212,6 +6260,9 @@
       "Initializing…": [
         "A inicializar…"
       ],
+      "Insert image": [
+        "Inserir imagem"
+      ],
       "Insert link": [
         "Inserir hiperligação"
       ],
@@ -6475,9 +6526,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Tenha em atenção que, ao clicar no botão Confirmar, a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "Please open the document to view it.": [
         "Por favor, abra o documento para o visualizar."
@@ -7343,7 +7391,7 @@
         "O seu telefone só será utilizado para esta verificação única."
       ],
       "Your private writing assistant": [
-        "Seu assistente de escrita privado"
+        "O seu assistente de escrita privado"
       ]
     },
     "info": {
@@ -7630,6 +7678,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Tente mais tarde.)"
       ],
+      "/month": [
+        "/mês"
+      ],
       "Actions": [
         "Acções"
       ],
@@ -7668,6 +7719,9 @@
       ],
       "And": [
         "E"
+      ],
+      "Anderson": [
+        "Ferreira"
       ],
       "ANY": [
         "QUALQUER"
@@ -7884,6 +7938,9 @@
       ],
       "I understand the risk": [
         "Eu compreendo o risco."
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "SE"
@@ -8109,6 +8166,9 @@
       ],
       "Then": [
         "Então"
+      ],
+      "Thomas": [
+        "Andrea"
       ],
       "Time": [
         "Tempo"
@@ -8876,6 +8936,9 @@
       "1 user": [
         "1 utilizador"
       ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
@@ -8908,6 +8971,9 @@
       ],
       "Available on all platforms": [
         "Disponível em todas as plataformas"
+      ],
+      "Breach alerts": [
+        "Alertas de violação"
       ],
       "Calendar sharing": [
         "Partilha de calendário"
@@ -8953,6 +9019,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Suporte a clientes de e-mail (por IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupos de e-mails"
       ],
       "Enables HIPAA compliance": [
         "Permite a conformidade com a HIPAA"
@@ -9018,6 +9087,9 @@
       "Password health": [
         "Estado da palavras-passe"
       ],
+      "Password manager": [
+        "Gestor de palavras-passe"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
       ],
@@ -9075,6 +9147,9 @@
       ],
       "Support for up to 2 users": [
         "Suporte para até 2 usuários"
+      ],
+      "TOR over VPN": [
+        "TOR sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticação em dois fatores"
@@ -9484,6 +9559,17 @@
         "Para que a importação funcione, deverá selecionar todos os items solicitados como é mostrado no GIF."
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Finanças"
+      ],
+      "Shopping": [
+        "Compras"
+      ],
+      "Social media": [
+        "Redes sociais"
+      ]
+    },
     "Onboarding modal": {
       "Automatically forward emails": [
         "Encaminhar e-mails automaticamente"
@@ -9496,6 +9582,15 @@
       ],
       "For your eyes only": [
         "Só para si"
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Let's get started": [
+        "Vamos então começar"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
       ],
       "Next": [
         "Seguinte"
@@ -9619,6 +9714,9 @@
       "${ n } user account": [
         "${ n } conta de utilizador",
         "${ n } contas de utilizador"
+      ],
+      "Activity log": [
+        "Registo de atividades"
       ]
     },
     "passwordless": {
@@ -9630,11 +9728,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transferência bancária"
+      ],
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utilizar o nome da empresa"
+      ],
+      "Use personal name": [
+        "Utilizar um nome pessoal"
       ]
     },
     "Payments": {
@@ -10053,6 +10162,11 @@
         "(abrirá ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Ver os eventos"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } e ${ remainingCount } outras potenciais fugas detetadas. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
@@ -10387,6 +10501,11 @@
         "Assinar"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Mais rápido na aplicação"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "Adiar a mensagem"
@@ -10508,6 +10627,9 @@
       "/ month": [
         "/ mês"
       ],
+      "/month": [
+        "/mês"
+      ],
       "1 year": [
         "1 ano"
       ],
@@ -10609,6 +10731,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Pode agora agendar as suas mensagens a serem enviadas mais tarde"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Iniciar sessão"
       ]
     },
     "Status": {
@@ -10759,6 +10886,11 @@
         "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Acesso vitalício"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
@@ -10797,6 +10929,9 @@
       "${ planNumberOfUsers } user": [
         "${ planNumberOfUsers } utilizador",
         "${ planNumberOfUsers } utilizadores"
+      ],
+      "2 users": [
+        "2 utilizadores"
       ],
       "Add any new files": [
         "Adicionar qualquer novo ficheiro"
@@ -11382,6 +11517,9 @@
       "A filter with this name already exists": [
         "Já existe um filtro com este nome"
       ],
+      "Account locked": [
+        "A conta foi bloqueada."
+      ],
       "Account recovery": [
         "Recuperação de conta"
       ],
@@ -11834,7 +11972,7 @@
         "Necessita de mais aliases?"
       ],
       "Need more labels or folders?": [
-        "Precisa de mais rótulos ou pastas?"
+        "Precisa de mais etiquetas ou pastas?"
       ],
       "Network error": [
         "Erro de rede"
@@ -12297,6 +12435,16 @@
         "Bitcoin via e-mail"
       ]
     },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Acessar à aplicação Wallet"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema com a carteira"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
         "${ BRAND_NAME } irá fundir todas as pastas com o mesmo nome. Para evitar isto, altere os nomes antes da importação."
@@ -12645,6 +12793,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Meeting ID:": [
+        "ID da reunião:"
+      ],
+      "Passcode:": [
+        "Código de acesso:"
       ]
     }
   }

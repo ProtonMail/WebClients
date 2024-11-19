@@ -504,6 +504,9 @@
       "Reset to default": [
         "Atur ulang ke awal"
       ],
+      "Restore version": [
+        "Pulihkan versi"
+      ],
       "Retry": [
         "Coba lagi"
       ],
@@ -1144,6 +1147,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total untuk ${ n } bulan"
@@ -3988,7 +3994,7 @@
         "Kunci duplikat diperbarui"
       ],
       "Each code can only be used once": [
-        "Masing-masing kode hanya dapat digunakan sekali"
+        "Masing-masing kode hanya dapat digunakan satu kali"
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -4239,6 +4245,9 @@
       "Monitor accounts": [
         "Monitor akun"
       ],
+      "Most recent": [
+        "Terkini"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
       ],
@@ -4268,9 +4277,6 @@
       ],
       "No version history available": [
         "Tidak ada riwayat versi yang tersedia"
-      ],
-      "No version history batches available": [
-        "Tidak ada kumpulan riwayat versi yang tersedia"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Tidak ada kunci yang valid untuk enkripsi dari daftar kunci yang diunggah. Untuk dapat mengirim pesan ke alamat ini, silakan unggah kunci yang valid atau nonaktifkan pengaturan \"Enkripsi email\"."
@@ -4304,6 +4310,12 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
+      ],
+      "Owned by me": [
+        "Milik saya"
+      ],
+      "Owned by others": [
+        "Dimiliki oleh pengguna lain"
       ],
       "Owner": [
         "Pemilik"
@@ -4346,9 +4358,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo yang tersisa pada akun Anda akan menjadi ${ remainingCreditsFormatted }."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Mohon sediakan nama dan alamat email untuk membuat grup."
@@ -5972,6 +5981,12 @@
       "Administration Panel": [
         "Panel Administrasi"
       ],
+      "Advanced account protection": [
+        "Perlindungan akun tingkat lanjut"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Fitur alias bertingkat lanjut (diberdayakan oleh SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Seluruh produk dan fitur ${ BRAND_NAME }"
       ],
@@ -6304,7 +6319,7 @@
         "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
       ],
       "Snooze messages and get reminded when you want": [
-        "Tunda pesan dan ingatkan saat Anda mau"
+        "Tunda pesan dan dapatkan peringatan di waktu yang Anda inginkan"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }"
@@ -6510,6 +6525,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Label merupakan penanda yang dapat Anda sematkan kepada pesan tertentu agar mereka dapat dicari atau difilter dengan mudah"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Akses seumur hidup ke ${ PASS_APP_NAME } + berbagai fitur premium SimpleLogin"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Layaknya folder, brankas merupakan cara yang praktis untuk mengelola item Anda"
@@ -6938,8 +6956,14 @@
       "${ n } user account": [
         "${ n } akun pengguna"
       ],
+      "Activity log": [
+        "Log aktivitas"
+      ],
       "Admin panel to manage users and subscription": [
         "Panel admin untuk mengelola pengguna dan langganan"
+      ],
+      "Team policies": [
+        "Kebijakan tim"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7034,6 +7058,9 @@
       ],
       "Please select your billing state first.": [
         "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Terbarui dengan harga ${ price }, batalkan kapan saja."
       ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
@@ -7932,6 +7959,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Langganan akan diturunkan pada akhir siklus tagihan."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Seumur hidup"
       ]
     },
     "Subscription price": {

@@ -178,6 +178,9 @@
       "Delete all": [
         "Eliminar-ho tot"
       ],
+      "Delete it, I will never need it": [
+        "Suprimeix-lo. No ho necessitaré mai."
+      ],
       "Delete password": [
         "Elimina la contrasenya"
       ],
@@ -212,13 +215,13 @@
         "Edita la caixa forta"
       ],
       "Enable Dark Web Monitoring": [
-        "Activa la supervisió del web fosc"
+        "Activa el monitoratge del web fosc"
       ],
       "Entire vault": [
         "Caixa forta sencera"
       ],
       "Exclude from monitoring": [
-        "Exclou de la supervisió"
+        "Exclou del monitoratge"
       ],
       "Export": [
         "Exporta"
@@ -275,7 +278,7 @@
         "S'està important"
       ],
       "Include in monitoring": [
-        "Inclou en la supervisió"
+        "Inclou en el monitoratge"
       ],
       "Install extension": [
         "Instal·la l'extensió"
@@ -374,7 +377,7 @@
         "Pass Monitor"
       ],
       "Pause monitoring": [
-        "Posar en pausa la supervisió"
+        "Posa en pausa el monitoratge"
       ],
       "Pin item": [
         "Ancora l'element"
@@ -437,7 +440,7 @@
         "Restringeix el nombre de visualitzacions"
       ],
       "Resume monitoring": [
-        "Reprendre la supervisió"
+        "Reprèn el monitoratge"
       ],
       "Retry": [
         "Reintenta"
@@ -647,7 +650,7 @@
         "Creeu contrasenyes úniques"
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "La supervisió del web fosc està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
+        "El monitoratge del web fosc està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Rebi una notificació si s'han filtrat el seu correu electrònic, contrasenya o altres dades personals."
@@ -662,10 +665,10 @@
         "Configureu A2F per a més seguretat"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
-        "Comenceu a supervisar les filtracions de dades relacionades amb els comptes creats amb la vostra adreça de correu electrònic i amb els vostres àlies de hide-my-email."
+        "Comenceu a monitoritzar les filtracions de dades relacionades amb els comptes creats amb la vostra adreça de correu electrònic i amb els vostres àlies de hide-my-email."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
-        "El web fosc és una part amagada d'Internet on es pot comprar i vendre informació personal robada, com ara les identitats."
+        "El web fosc és una part amagada d'internet on es pot comprar i vendre informació personal robada, com ara les identitats."
       ],
       "These items remain at risk": [
         "Aquests elements continuen en risc"
@@ -680,7 +683,7 @@
         "Desbloquegeu característiques de seguretat avançades i registres detallats per a protegir la vostra presència en línia."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Amb la supervisió de ${ PASS_SHORT_APP_NAME }, avanceu-vos a les amenaces amb alertes instantànies si les vostres credencials es veuen compromeses. Desbloquegeu les característiques de seguretat avançades i els registres detallats per a salvaguardar la vostra presència en línia."
+        "Amb el monitoratge de ${ PASS_SHORT_APP_NAME }, avanceu-vos a les amenaces amb alertes instantànies si les vostres credencials es veuen compromeses. Desbloquegeu les característiques de seguretat avançades i els registres detallats per a salvaguardar la vostra presència en línia."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Les vostres adreces de correu electrònic s'han filtrat en almenys 1 infracció de dades."
@@ -695,6 +698,9 @@
       ],
       "Alias options could not be resolved": [
         "Les opcions d'àlies no s'han pogut resoldre."
+      ],
+      "An error occurred while resuming your session": [
+        "S'ha produït un error en reprendre la vostra sessió."
       ],
       "Authentication error": [
         "Error d'autenticació"
@@ -777,7 +783,7 @@
         "No s'ha pogut afegir l'adreça de correu electrònic"
       ],
       "Failed to delete email address from monitoring": [
-        "No s'ha pogut suprimir l'adreça de correu electrònic de la supervisió"
+        "No s'ha pogut suprimir l'adreça de correu electrònic del monitoratge"
       ],
       "Failed to delete selected items": [
         "No s'han pogut suprimir els elements seleccionats"
@@ -828,7 +834,7 @@
         "No s'ha pogut desancorar l'element."
       ],
       "Failed to update monitoring settings": [
-        "No s'han pogut actualitzar les preferències de supervisió"
+        "No s'han pogut actualitzar les preferències de monitoratge"
       ],
       "Failed to verify email address": [
         "No s'ha pogut verificar l'adreça de correu electrònic"
@@ -840,7 +846,7 @@
         "No s'ha pogut actualitzar l'indicador del monitor de l'element"
       ],
       "Failed updating monitoring status for this email address": [
-        "No s'ha pogut actualitzar l'estat de supervisió d'aquesta adreça de correu electrònic"
+        "No s'ha pogut actualitzar l'estat de monitoratge d'aquesta adreça de correu electrònic"
       ],
       "File could not be parsed": [
         "No s'ha pogut analitzar el fitxer."
@@ -1015,7 +1021,7 @@
     },
     "Feature": {
       "Dark Web Monitoring": [
-        "Monitoratge de la web fosca"
+        "Monitoratge del web fosc"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrat"
@@ -1099,8 +1105,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "S'ha descartat l'actualització de \"${ payload.item.data.metadata.name }\""
       ],
-      "${ count } invites successfully sent": [
-        "S'han enviat ${ count } invitacions"
+      "${ count } invite successfully sent": [
+        "S'ha enviat ${ count } invitació.",
+        "S'han enviat ${ count } invitacions."
       ],
       "${ count } time": [
         "${ count } vegada",
@@ -1109,6 +1116,9 @@
       "${ count } view": [
         "${ count } vista",
         "${ count } vistes"
+      ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } vistes"
       ],
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -1128,10 +1138,10 @@
         "${ PASS_APP_NAME } us demanarà la contrasenya ${ BRAND_NAME } per a accedir a les dades fora de línia."
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
-        "${ PROTON_SENTINEL_NAME } s'ha desactivat correctament"
+        "S'ha desactivat ${ PROTON_SENTINEL_NAME }."
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
-        "${ PROTON_SENTINEL_NAME } s'ha activat correctament"
+        "S'ha activat ${ PROTON_SENTINEL_NAME }."
       ],
       "${ row.breachCount } breach detected": [
         "S'ha detectat ${ row.breachCount } infracció.",
@@ -1150,7 +1160,7 @@
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
       ],
       "Add your custom email address to monitor:": [
-        "Afegiu la vostra adreça electrònica personalitzada per supervisar:"
+        "Afegiu la vostra adreça electrònica personalitzada per monitoritzar:"
       ],
       "Admin": [
         "Administrador"
@@ -1171,7 +1181,7 @@
         "S'han esborrat tots els enllaços segurs inactius."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
-        "Tots els elements de «${ payload.content.name }» s'han mogut correctament"
+        "S'han mogut tots els elements de «${ payload.content.name }»."
       ],
       "All items successfully moved": [
         "S'han mogut tots els elements."
@@ -1189,7 +1199,7 @@
         "Esteu segur que voleu esborrar l'enllaç?"
       ],
       "Auto-lock successfully disabled.": [
-        "El bloqueig automàtic s'ha desactivat correctament."
+        "S'ha desactivat el bloqueig automàtic."
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Abans d'exportar les vostres dades en aquest format, obreu i desactiveu l'opció següent: Paràmetres de Safari -> General -> Obrir els fitxers segurs després de la descàrrega. Això evitarà que Safari extraguí el fitxer exportat de manera incorrecta."
@@ -1220,6 +1230,9 @@
       ],
       "Change your password": [
         "Canvieu la vostra contrasenya"
+      ],
+      "Choose your preferred look and feel.": [
+        "Trieu el vostre aspecte preferit."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmeu la vostra contrasenya addicional per procedir a la seva eliminació."
@@ -1273,13 +1286,13 @@
         "corrreu electrònic"
       ],
       "Email address successfully deleted from monitoring": [
-        "L'adreça de correu electrònic s'ha suprimit correctament de la supervisió"
+        "L'adreça de correu electrònic s'ha suprimit del monitoratge."
       ],
       "Email address successfully excluded from monitoring": [
-        "L'adreça de correu electrònic s'ha exclòs correctament de la supervisió"
+        "L'adreça de correu electrònic s'ha exclòs del monitoratge."
       ],
       "Email address successfully included in monitoring": [
-        "L'adreça de correu electrònic s'ha inclòs correctament a la supervisió"
+        "L'adreça de correu electrònic s'ha inclòs al monitoratge."
       ],
       "Emptying trash...": [
         "Buidant la paperera..."
@@ -1289,6 +1302,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Activeu el bloqueig automàtic per protegir les vostres dades"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Activant el bloqueig automàtic biomètric"
+      ],
+      "Enabling biometrics lock failed": [
+        "No s'ha pogut activar el bloqueig amb biometria."
       ],
       "Enabling offline mode...": [
         "S'està activant el mode fora de línia..."
@@ -1349,7 +1368,7 @@
         "Alta prioritat"
       ],
       "How does monitoring work?": [
-        "Com funciona la supervisió?"
+        "Com funciona el monitoratge?"
       ],
       "Import in progress:": [
         "Importació en curs:"
@@ -1391,9 +1410,6 @@
       "Invite successfully resent": [
         "S'ha reenviat la invitació."
       ],
-      "Invite successfully sent": [
-        "S'ha enviat la invitació."
-      ],
       "invites you to access items in": [
         "us convida a accedir a elements a"
       ],
@@ -1420,13 +1436,13 @@
         "S'ha restaurat l'element"
       ],
       "Item successfully excluded from monitoring": [
-        "S'ha exclòs l'element de la supervisió."
+        "S'ha exclòs l'element del monitoratge."
       ],
       "Item successfully included in monitoring": [
-        "Element inclòs correctament al seguiment"
+        "S'ha afegit l'element al monitoratge."
       ],
       "Item successfully moved": [
-        "L'element s'ha mogut correctament"
+        "S'ha mogut l'element."
       ],
       "Item successfully pinned": [
         "S'ha ancorat l'element."
@@ -1471,7 +1487,10 @@
         "Supervisar els comptes"
       ],
       "Monitoring settings successfully updated": [
-        "Les preferències de seguiment s'han actualitzat correctament"
+        "S'han actualitzat les preferències de seguiment."
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
       ],
       "Move ${ count } item": [
         "Mou ${ count } element",
@@ -1479,6 +1498,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà l'historial."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -1513,6 +1536,9 @@
       "Offline support successfully disabled": [
         "S'ha desactivat el mode fora de línia"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN. Se us tancarà la sessió després de 3 intents que no han funcionat."
+      ],
       "Owner": [
         "Propietari"
       ],
@@ -1526,7 +1552,7 @@
         "contrasenya"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "El bloqueig de la contrasenya s'ha registrat correctament. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }"
+        "S'ha registrat el bloqueig de la contrasenya. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }."
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana s'esborren automàticament de l'historial.",
@@ -1539,7 +1565,7 @@
         "S'estan suprimint permanentment els elements seleccionats"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "El codi PIN s'ha registrat correctament. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }"
+        "S'ha registrat el codi PIN. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }."
       ],
       "Pinning item...": [
         "Ancorant l'element..."
@@ -1556,8 +1582,20 @@
       "Please confirm your extra password": [
         "Confirmeu la vostra contrasenya addicional."
       ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Confirmeu la vostra contrasenya addicional per tal de bloquejar automàticament amb dades biomètriques."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Confirmeu la vostra contrasenya addicional per tal de bloquejar automàticament l'aplicació amb ella."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Confirmeu la vostra contrasenya addicional per actualitzar l'hora del bloqueig automàtic."
+      ],
       "Please confirm your password": [
         "Confirmeu la vostra contrasenya"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Confirmeu la vostra contrasenya per tal de bloquejar automàticament amb dades biomètriques."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Confirmeu la vostra contrasenya per tal de bloquejar automàticament amb la vostra contrasenya."
@@ -1628,14 +1666,17 @@
       "Select vault to share": [
         "Seleccioneu la caixa forta per compartir"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Seleccioneu on voleu que es desi les caixes fortes importades."
+      ],
       "Selected items permanently deleted": [
         "Els elements seleccionats s'han suprimit permanentment"
       ],
       "Selected items successfully moved to trash": [
-        "Els elements seleccionats s'han mogut correctament a la paperera"
+        "S'han mogut els elements seleccionats a la paperera."
       ],
       "Selected items successfully restored from trash": [
-        "Els elements seleccionats s'han restaurat correctament des de la paperera"
+        "S'han restaurat els elements seleccionats des de la paperera."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
@@ -1648,6 +1689,9 @@
       ],
       "Settings successfully updated": [
         "S'han actualitzat les preferències"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Compartiu els inicis de sessió i notes segures amb un màxim de 10 persones"
       ],
       "Sign in to your account": [
         "Inicieu sessió al compte"
@@ -1716,6 +1760,9 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Per migrar dades des d'un altre gestor de contrasenyes, aneu al gestor de contrasenyes, exporteu les dades i carregueu-les a ${ PASS_APP_NAME }. Un cop les dades s'hagin importat, suprimiu el fitxer exportat."
       ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Per revisar les dades importades, feu clic a la icona del ${ PASS_APP_NAME } de la barra d'eines del navegador."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
       ],
@@ -1749,6 +1796,9 @@
       "User's access removed": [
         "S'ha esborrat l'accés de l'usuari."
       ],
+      "User's access successfully updated": [
+        "S'ha actualitzat l'accés de l'usuari."
+      ],
       "username": [
         "nom d'usuari"
       ],
@@ -1773,6 +1823,10 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estem tenint problemes per sincronitzar les dades amb el vostre emmagatzematge local. Assegureu-vos que teniu prou espai al disc perquè ${ PASS_SHORT_APP_NAME } funcioni correctament."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareix en ${ PASS_APP_NAME }. Voleu importar-lo?",
+        "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareixen en ${ PASS_APP_NAME }. Voleu importar-los?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Hem enviat un codi de verificació a ${ email }. Si us plau, introdueixi'l a continuació:"
       ],
@@ -1784,6 +1838,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "No podeu canviar les bústies de correu per a aquest àlies."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Teniu ${ aliasCount } àlies en SimpleLogin però no apareix en ${ PASS_APP_NAME }. Voleu sincronitzar-lo?",
+        "Teniu ${ aliasCount } àlies en SimpleLogin però no apareixen en ${ PASS_APP_NAME }. Voleu sincronitzar-los?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Us queda ${ daysRemaining } dia per provar aquestes i altres característiques prèmium.",
@@ -2130,6 +2188,9 @@
       ],
       "Generic CSV": [
         "CSV genèric"
+      ],
+      "Get Started": [
+        "Comenceu"
       ],
       "Grant": [
         "Autoritza"
@@ -2564,6 +2625,9 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elements"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Heu seleccionat ${ semiboldText } en aquesta caixa forta."
       ]
     },
     "new_plans: feature": {
@@ -2830,7 +2894,11 @@
         "Correus electrònics personalitzats"
       ],
       "Dark Web Monitoring": [
-        "Monitoratge de la web fosca"
+        "Monitoratge del web fosc"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Voleu eliminar ${ deletedItemsCount } element?",
+        "Voleu eliminar ${ deletedItemsCount } elements?"
       ],
       "Delete this item?": [
         "Voleu eliminar aquest element?"
@@ -2913,6 +2981,20 @@
       "Modified": [
         "Modificació"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Mou ${ count } element a ${ vaultName }",
+        "Mou ${ count } elements a ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Voleu moure ${ trashedItemsCount } element a la paperera?",
+        "Voleu moure ${ trashedItemsCount } elements a la paperera?"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "Voleu moure tots els elements a «${ vaultName }»?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "Mou l'element a «${ vaultName }»"
+      ],
       "No excluded items": [
         "No hi ha elements exclosos"
       ],
@@ -2941,7 +3023,10 @@
         "Salut de les contrasenyes"
       ],
       "Pause monitoring?": [
-        "Posar en pausa la supervisió?"
+        "Voleu posar en pausa el monitoratge?"
+      ],
+      "Pending access confirmation": [
+        "Confirmació d'accés pendent"
       ],
       "Pending access to the shared data": [
         "Accés a les dades compartides pendent"
@@ -2974,7 +3059,7 @@
         "Vol restaurar aquesta versió?"
       ],
       "Resume monitoring?": [
-        "Cal reprendre la supervisió?"
+        "Cal reprendre el monitoratge?"
       ],
       "Reused ${ count } time": [
         "Reutilitzat ${ count } vegada",
@@ -3113,6 +3198,17 @@
       "An error occurred while exporting your data": [
         "S'ha produït un error en exportar les dades."
       ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Esteu segur que voleu moure ${ trashedItemsCount } element a la paperera?",
+        "Esteu segur que voleu moure ${ trashedItemsCount } elements a la paperera?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Segur que voleu eliminar ${ deletedItemsCount } element definitivament?",
+        "Segur que voleu eliminar ${ deletedItemsCount } elements definitivament?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Esteu segur que voleu suprimir permanentment aquest element?"
+      ],
       "At least one email address is required": [
         "Es requereix almenys una adreça de correu electrònic"
       ],
@@ -3217,7 +3313,10 @@
         "El fitxer d'exportació xifrat amb PGP requereix una contrasenya"
       ],
       "Please check that the extension is properly installed and enabled": [
-        "Comproveu que l'extensió estigui instal·lada i correctament activada"
+        "Comproveu que l'extensió estigui instal·lada i activada."
+      ],
+      "Please contact us to investigate the issue": [
+        "Poseu-vos en contacte amb nosaltres per investigar el problema"
       ],
       "Please update the extension to its latest version": [
         "Actualitzeu l'extensió a la seva darrera versió"

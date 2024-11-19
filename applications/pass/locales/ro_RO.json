@@ -106,6 +106,9 @@
       "Confirm access": [
         "Confirmare acces"
       ],
+      "Confirm all": [
+        "Confirmare tot"
+      ],
       "Continue": [
         "Continuare"
       ],
@@ -141,6 +144,9 @@
       ],
       "Create identity": [
         "Creare identitate"
+      ],
+      "Create item": [
+        "Creare articol"
       ],
       "Create login": [
         "Creare autentificare"
@@ -385,6 +391,9 @@
       "Please retry": [
         "Reîncercați"
       ],
+      "Reactivate now": [
+        "Reactivare"
+      ],
       "Refresh the page": [
         "Împrospătare pagină"
       ],
@@ -462,6 +471,9 @@
       ],
       "See members": [
         "Afișare membri"
+      ],
+      "Select": [
+        "Selectare"
       ],
       "Send invite": [
         "Trimitere invitație"
@@ -610,6 +622,9 @@
       "Black Friday": [
         "Vinerea Neagră"
       ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Plătiți o dată și primiți ${ lifetimeAccessJSX } la Pass Plus și SimpleLogin. Cu doar ${ relativePrice }."
+      ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Economisiți până la ${ discountJSX } cu Pass Family. Doar ${ relativePrice }/lună."
       ]
@@ -743,6 +758,9 @@
       ],
       "Could not resolve share members": [
         "Nu s-au putut determina membrii partajării."
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Nu s-au putut prelua invitațiile utilizatorului pentru seiful „${ vaultName }”."
       ],
       "Could not validate addresses at the moment.": [
         "Adresele nu s-au putut valida momentan."
@@ -1120,9 +1138,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualizarea pentru „${ payload.item.data.metadata.name }” a fost respinsă."
       ],
-      "${ count } invites successfully sent": [
-        "Invitații trimise: ${ count }"
-      ],
       "${ count } time": [
         "${ count } dată",
         "de ${ count } ori",
@@ -1151,6 +1166,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } va afișa fișierul favicon prin proxy-ul de imagini anonim ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } va folosi tema ca cea a sistemului."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } va importa doar date de conectare, notițe, carduri de plată și identități."
@@ -1280,6 +1298,9 @@
       "Change your password": [
         "Schimbare parolă"
       ],
+      "Choose your preferred look and feel.": [
+        "Alegeți stilul și aspectul preferat."
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmați parola suplimentară pentru a continua eliminarea sa."
       ],
@@ -1397,6 +1418,11 @@
       "Follow those steps to import your data with a generic CSV :": [
         "Urmați acești pași pentru a importa datele dintr-un fișier CSV generic:"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Din motive de securitate, trebuie să confirmați accesul la acest seif partajat.",
+        "Din motive de securitate, trebuie să confirmați accesul la aceste seifuri partajate.",
+        "Din motive de securitate, trebuie să confirmați accesul la aceste seifuri partajate."
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Din motive de securitate, accesul trebuie să vă fie confirmat."
       ],
@@ -1457,9 +1483,6 @@
       ],
       "Invite successfully resent": [
         "Invitația a fost retrimisă."
-      ],
-      "Invite successfully sent": [
-        "Invitația a fost trimisă."
       ],
       "invites you to access items in": [
         "vă invită să accesați articolele din"
@@ -1526,6 +1549,9 @@
       "Low Priority": [
         "Prioritate scăzută"
       ],
+      "Make it your own": [
+        "Personalizați aplicația"
+      ],
       "me": [
         "Eu"
       ],
@@ -1541,8 +1567,23 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Mai mult decât un manager de parole, ${ PASS_APP_NAME } vă protejează parolele și adresele de e-mail personale prin aliasuri de e-mail. Creat cu aceeași tehnologie folosită la ${ MAIL_APP_NAME }, datele vă sunt criptate bilateral și doar dvs. le puteți accesa."
       ],
+      "Move ${ count } item": [
+        "Mutare ${ count } articol.",
+        "Mutare ${ count } articole.",
+        "Mutare ${ count } de articole."
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge istoricul și toate legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge istoricul și toate legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge istoricul și toate legăturile web securizate."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Mutarea unui articol în alt seif îi va șterge istoricul.",
+        "Mutarea articolelor în alt seif le va șterge istoricul.",
+        "Mutarea articolelor în alt seif le va șterge istoricul."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -1958,6 +1999,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Nu veți mai primi notificări despre compromiterea datelor pentru această adresă de e-mail."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Nu veți mai avea acces la partajare, A2F, carduri de plată și alte funcții avansate în ${ PASS_APP_NAME }."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Veți folosi acest cod PIN pentru a debloca ${ PASS_APP_NAME } când se va autobloca după o perioadă de inactivitate."
@@ -2716,6 +2760,14 @@
         "${ count } element",
         "${ count } articole",
         "${ count } de articole"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Puteți trage și plasa articolul selectat în alt seif.",
+        "Puteți trage și plasa articolele selectate în alt seif.",
+        "Puteți trage și plasa articolele selectate în alt seif."
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Articole selectate în acest seif: ${ semiboldText }."
       ]
     },
     "new_plans: feature": {
@@ -2934,6 +2986,17 @@
         "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } de utilizatori."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automată"
+      ],
+      "Dark": [
+        "Neagră"
+      ],
+      "Light": [
+        "Albă"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adrese"
@@ -2988,6 +3051,14 @@
       ],
       "Dark Web Monitoring": [
         "Monitorizare pe internetul ascuns"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Ștergeți ${ deletedItemsCount } articol?",
+        "Ștergeți ${ deletedItemsCount } articole?",
+        "Ștergeți ${ deletedItemsCount } de articole?"
+      ],
+      "Delete this item?": [
+        "Ștergeți acest articol?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Ștergeți seiful „${ vaultName }”?"
@@ -3067,8 +3138,21 @@
       "Modified": [
         "Modificat"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Mutare ${ count } articol în ${ vaultName }",
+        "Mutare ${ count } articole în ${ vaultName }",
+        "Mutare ${ count } de articole în ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Mutați ${ trashedItemsCount } articol în gunoi?",
+        "Mutați ${ trashedItemsCount } articole în gunoi?",
+        "Mutați ${ trashedItemsCount } de articole în gunoi?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Mutați toate articolele în „${ vaultName }”?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "Mutare articol în „${ vaultName }”"
       ],
       "No excluded items": [
         "Nu sunt articole excluse"
@@ -3099,6 +3183,9 @@
       ],
       "Pause monitoring?": [
         "Suspendați monitorizarea?"
+      ],
+      "Pending access confirmation": [
+        "Se așteaptă confirmarea accesului"
       ],
       "Pending access to the shared data": [
         "În așteptarea accesului la datele partajate"
@@ -3227,6 +3314,9 @@
       "What is the dark web?": [
         "Ce este internetul ascuns?"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Abonamentul pentru ${ planName } se va încheia ${ endDate }"
+      ],
       "Your exposed information": [
         "Informațiile expuse"
       ],
@@ -3235,6 +3325,11 @@
       ],
       "Your welcome gift": [
         "Bucurați-vă de versiunea de încercare"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Urmează să ștergeți definitiv ${ aliasCount } alias.",
+        "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
+        "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
       ]
     },
     "Validation": {
@@ -3270,11 +3365,27 @@
       "A description of the problem is required": [
         "Este necesară o descriere a problemei."
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Aliasurile din gunoi vor continua să redirecționeze mesajele primite."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Toate articolele trimise în gunoi vor fi șterse definitiv. Nu puteți anula această acțiune."
       ],
       "An error occurred while exporting your data": [
         "A apărut o eroare în timpul exportării datelor."
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Sigur doriți să mutați ${ trashedItemsCount } articol în gunoi?",
+        "Sigur doriți să mutați ${ trashedItemsCount } articole în gunoi?",
+        "Sigur doriți să mutați ${ trashedItemsCount } de articole în gunoi?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Sigur doriți să ștergeți definitiv ${ deletedItemsCount } articol?",
+        "Sigur doriți să ștergeți definitiv ${ deletedItemsCount } articole?",
+        "Sigur doriți să ștergeți definitiv ${ deletedItemsCount } de articole?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Sigur doriți să ștergeți permanent acest articol?"
       ],
       "At least one email address is required": [
         "Este necesară cel puțin o adresă de e-mail."

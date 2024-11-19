@@ -1068,10 +1068,10 @@
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrat vše"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrat vše"
       ],
       "Select all messages": [
@@ -5382,7 +5382,7 @@
         "Zavřít"
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
-        "Vyplňte tento kontrolní seznam do ${ daysCount } a zdvojnásobte zdarma své úložiště."
+        "Pro zdvojnásobení svého úložného prostoru dokončete vše na tomto kontrolním seznamu během ${ daysCount }."
       ],
       "Congratulations, you completed all the steps!": [
         "Gratulujeme, dokončili jste všechny kroky!"
@@ -6751,6 +6751,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Pokud se domníváte, že jsme udělali chybu, prosím ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Pokud zrušíte vaše předplatné ${ planTitle }, nebude už obnoveno po vypršení jeho platnosti ${ expiryDate }."
       ],
@@ -6821,10 +6824,7 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7092,9 +7092,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane ${ remainingCreditsFormatted } kreditů."
       ],
       "Please open the document to view it.": [
         "Prosím, otevřete dokument pro jeho zobrazení."
@@ -7701,6 +7698,12 @@
       ],
       "We couldn’t process your payment.": [
         "Vaši platbu jsme nemohli zpracovat."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Zjistili jsme vytvoření více bezplatných účtů, což porušuje naše ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Nabízíme tarify navržené speciálně pro uživatele, jako jste vy, kteří potřebují více než jednu e-mailovou adresu.\nChcete-li odebrat omezení, můžete přejít na placený tarif."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Potřebujeme ověřit vaši platební metodu u vaší banky."
@@ -8318,6 +8321,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
+      ],
+      "/month": [
+        "/měsíčně"
       ],
       "Actions": [
         "Akce"
@@ -8979,6 +8985,9 @@
       "click here": [
         "klikněte zde"
       ],
+      "contact us": [
+        "kontaktujte nás"
+      ],
       "Create a calendar linked to an active email address.": [
         "Vytvořte kalendář spojený s aktivní e-mailovou adresou."
       ],
@@ -9092,6 +9101,9 @@
       ],
       "Terms": [
         "Podmínky"
+      ],
+      "terms of service": [
+        "podmínky použití"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Tento ICS soubor obsahuje více, než jednu událost. Prosím, stáhněte jej a importujte události do ${ CALENDAR_APP_NAME }"
@@ -9509,6 +9521,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Získat ${ planTitle }"
+      ],
       "Get started for ${ price }": [
         "Začněte za ${ price }"
       ],
@@ -9648,6 +9663,9 @@
         "${ options }denní historie verzí souborů",
         "${ options }denní historie verzí souborů"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin, doživotně"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } aliasem hide-my-email",
         "${ PASS_APP_NAME } se ${ n } aliasy hide-my-email",
@@ -9705,6 +9723,9 @@
       "Administration Panel": [
         "Panel správce"
       ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Pokročilé funkce aliasů (založeno na SimpleLogin)"
       ],
@@ -9734,6 +9755,9 @@
       ],
       "Available on all platforms": [
         "Dostupné na všech platformách"
+      ],
+      "Breach alerts": [
+        "Upozornění na úniky informací"
       ],
       "Calendar sharing": [
         "Sdílení kalendáře"
@@ -10274,6 +10298,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Jmenovky jsou jednoduché štítky, které můžete přidat ke zprávám aby se vám lépe hledaly a používaly filtry"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Doživotní přístup k prémiovým funkcím ${ PASS_APP_NAME } + SimpleLogin."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Podobně jako složka je trezor praktickým nástrojem k organizaci vašich položek"
       ],
@@ -10648,7 +10675,7 @@
         "Ochrana před sledováním"
       ],
       "Replay introduction": [
-        "Znovu projít úvodem"
+        "Znovu přehrát úvod"
       ],
       "Skip": [
         "Přeskočit"
@@ -10905,6 +10932,9 @@
       ],
       "Please select your billing state first.": [
         "Vyberte prosím nejprve váš stát platby."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Obnovuje se za ${ price }, zrušit lze kdykoli."
       ],
       "Select billing country to pay": [
         "Vyberte zemi platby"
@@ -13166,6 +13196,9 @@
       "A filter with this name already exists": [
         "Filtr s tímto názvem již existuje"
       ],
+      "Account locked": [
+        "Účet uzamčen"
+      ],
       "Account recovery": [
         "Obnovení účtu"
       ],
@@ -14606,7 +14639,7 @@
     },
     "Zoom Meeting": {
       "Join Zoom meeting": [
-        "Připojit ke schůzce Zoom"
+        "Připojit se ke schůzce Zoom"
       ],
       "Meeting ID:": [
         "ID schůzky:"

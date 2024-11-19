@@ -221,7 +221,7 @@
         "Cliquez ici."
       ],
       "Click to copy ${ defaultEmailAddress } to clipboard": [
-        "Cliquez pour copier ${ defaultEmailAddress } dans le presse-papiers."
+        "Cliquez pour copier ${ defaultEmailAddress } dans le presse-papiers"
       ],
       "Close": [
         "Fermer"
@@ -1060,10 +1060,10 @@
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Tout sélectionner"
       ],
-      "Select all": [
+      "Select All": [
         "Tout sélectionner"
       ],
       "Select all messages": [
@@ -3593,10 +3593,10 @@
         "Effacez automatiquement les e-mails déplacés dans la corbeille et le dossier Indésirables/spam de plus de 30 jours."
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
-        "Triez automatiquement vos messages entrants avant qu'ils n'arrivent dans votre boite de réception."
+        "Triez automatiquement vos messages entrants avant qu'ils n'arrivent dans votre boîte de réception."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
-        "Créez autant de labels et de dossiers dont vous avez besoin pour garder votre boite de réception organisée."
+        "Créez autant de labels et de dossiers dont vous avez besoin pour garder votre boîte de réception organisée."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Une fois le processus terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
@@ -3663,7 +3663,7 @@
         "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
+        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -3708,7 +3708,7 @@
         "Grâce aux groupes de contacts, vous pouvez envoyer des e-mails à toutes les personnes du groupe en un seul clic."
       ],
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
-        "Grâce à la mise en attente personnalisée, vous pouvez faire en sorte de ne plus voir certains messages et de les voir réapparaitre à un meilleur moment."
+        "Grâce à la mise en attente personnalisée, vous pouvez faire en sorte de ne plus voir certains messages et de les voir réapparaître à un meilleur moment."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
@@ -4014,10 +4014,10 @@
         "Une erreur s'est produite, nous vous invitons à réessayer."
       ],
       "Add at least one action": [
-        "Ajouter au moins une action"
+        "Ajoutez au moins une action"
       ],
       "Add at least one condition": [
-        "Ajouter au moins une condition"
+        "Ajoutez au moins une condition"
       ],
       "Address primary private key not found": [
         "La clé privée principale de l’adresse n’a pas été trouvée."
@@ -6093,7 +6093,7 @@
         "Tous les messages programmés ou en attente seront annulés."
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Tous les sous-dossiers seront également supprimés. Les messages conservés dans le dossier ${ nameDeleted } ne seront toutefois pas supprimés et pourront toujours être retrouvés dans le dossier Tous les messages."
+        "Tous les sous-dossiers seront également supprimés. Les messages conservés dans le dossier ${ nameDeleted } ne seront toutefois pas supprimés et pourront toujours être retrouvés dans le dossier « Tous les messages »."
       ],
       "Applying actions to conversations": [
         "Les actions sur les conversations sont en cours."
@@ -6240,7 +6240,7 @@
         "Le contact a été ajouté au groupe ${ contactGroupName }."
       ],
       "Contact unassigned from group ${ contactGroupName }": [
-        "Le contact a été retiré du groupe ${ contactGroupName }."
+        "Le contact a été retiré du groupe « ${ contactGroupName } »."
       ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
@@ -6417,7 +6417,7 @@
         "Les messages sont automatiquement signés."
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Les messages marqués avec le label ${ nameDeleted } ne seront pas effacés et pourront toujours être retrouvés dans leurs dossiers respectifs."
+        "Les messages marqués avec le label « ${ nameDeleted } » ne seront pas effacés et pourront toujours être retrouvés dans leurs dossiers respectifs."
       ],
       "embedded image": [
         "image intégrée",
@@ -6602,8 +6602,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -6872,8 +6871,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Notez que ce processus peut prendre un certain temps selon la taille de votre carnet d'adresses."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Après avoir cliqué sur le bouton Confirmer, il restera ${ remainingCreditsFormatted } crédits sur votre compte."
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédit restant.",
+        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédits restants."
       ],
       "Please open the document to view it.": [
         "Veuillez ouvrir le document pour l'afficher."
@@ -8548,7 +8548,7 @@
         "Alors"
       ],
       "Thomas": [
-        "Andréa"
+        "Jean"
       ],
       "Time": [
         "Heure"
@@ -10233,15 +10233,15 @@
         "Réseaux sociaux"
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Utilisez votre adresse ${ MAIL_APP_NAME } pour vous connecter aux services en ligne afin d'éviter d'être suivi et le profilage. Modifiez dès à présent votre e-mail pour les services que vous utilisez le plus. ${ learnMoreLink }"
+        "Utilisez votre adresse ${ MAIL_APP_NAME } pour vous connecter aux services en ligne afin d'éviter d'être suivi et profilé. Modifiez dès à présent votre e-mail pour les services que vous utilisez le plus. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
-        "${ advancedEncryptionTitle } : vous êtes sûr que seuls vous et les destinataires prévus pouvez accéder à vos e-mails."
+        "${ advancedEncryptionTitle } assure que seuls vous et les destinataires prévus pouvez accéder à vos e-mails."
       ],
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
-        "${ industryLeadingSpamProtectionTitle } : votre boîte de réception est protégée contre les e-mails frauduleux."
+        "${ industryLeadingSpamProtectionTitle } empêche les e-mails frauduleux éloignés d'atteindre votre boite e-mail."
       ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } : vous ne serez plus suivi sur internet."
@@ -11639,7 +11639,7 @@
         "Connectez-vous à votre organisation."
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "Vous allez être redirigé vers votre service d'authentification unique tiers."
+        "Vous allez être redirigé vers votre service tiers d'authentification unique."
       ]
     },
     "State": {
@@ -11660,7 +11660,7 @@
         "Saisissez votre adresse ${ MAIL_APP_NAME } comme nouvelle adresse, enregistrez-la, confirmez-la ou vérifiez les modifications."
       ],
       "In the account settings, look for the option to edit or change your email address ": [
-        "Dans les paramètres du compte, recherchez l'option pour modifier ou changer votre adresse e-mail."
+        "Dans les paramètres du compte, recherchez l'option pour modifier ou changer votre adresse e-mail. "
       ],
       "Select service to update": [
         "Sélectionnez le service à mettre à jour"
@@ -12095,7 +12095,7 @@
         "Les utilisateurs ne pourront plus envoyer de messages."
       ],
       "Users won’t be able to upload files on their devices": [
-        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils."
+        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils"
       ],
       "Version history": [
         "Historique des versions"

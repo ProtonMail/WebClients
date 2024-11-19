@@ -299,6 +299,9 @@
       "enable desktop notifications": [
         "activare notificări pe desktop"
       ],
+      "Expand video conferencing widget": [
+        "Extindere instrument pentru videoconferințe"
+      ],
       "Export": [
         "Exportare"
       ],
@@ -557,6 +560,9 @@
       "Remove this participant": [
         "Eliminare acest participant"
       ],
+      "Remove zoom meeting": [
+        "Înlăturare conferință Zoom"
+      ],
       "Report a problem": [
         "Raportare problemă"
       ],
@@ -724,9 +730,6 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Treceți la ${ BRAND_NAME } Unlimited"
-      ],
-      "Upgrade to Mail Plus": [
-        "Treceți la Mail Plus"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -1533,6 +1536,9 @@
         "un utilizator",
         "${ users } utilizatori",
         "${ users } de utilizatori"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total pentru o lună",
@@ -3142,14 +3148,14 @@
       "Event not found": [
         "Evenimentul nu a fost găsit."
       ],
+      "Failed to create meeting": [
+        "Crearea conferinței a eșuat"
+      ],
       "Failed to get event": [
         "Nu s-a putut obține evenimentul"
       ],
       "Failed to get original occurrence in series": [
         "Nu s-a putut obține apariția inițială în serie."
-      ],
-      "Failed to load oauth modal.": [
-        "Eșuare încărcare panou modal OAuth."
       ],
       "First name is too long": [
         "Prenumele este prea lung."
@@ -4052,6 +4058,9 @@
       "Less details": [
         "Mai puține detalii"
       ],
+      "Meeting host:": [
+        "Gazdă conferință:"
+      ],
       "Meeting link:": [
         "Legătură web întâlnire:"
       ],
@@ -4449,6 +4458,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Oferta pe viață a ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }. Prețul și data de reînnoire a abonamentului ${ planTitle } rămân neschimbate."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
@@ -5036,9 +5048,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "După apăsarea pe butonul de confirmare, contul va mai avea ${ remainingCreditsFormatted } (de) credite rămase."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Furnizați un nume și o adresă de e-mail pentru a crea un grup."
       ],
@@ -5088,6 +5097,11 @@
       ],
       "Removed participants will be notified.": [
         "Participanţii eliminaţi vor fi notificaţi."
+      ],
+      "Saving event...": [
+        "Se salvează evenimentul...",
+        "Se salvează evenimentele...",
+        "Se salvează evenimentele..."
       ],
       "Select a service provider to start": [
         "Selectați un furnizor de servicii pentru a începe"
@@ -5431,6 +5445,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Abonamentul ${ PASS_SHORT_APP_NAME } Plus va fi înlocuit cu ${ PASS_SHORT_APP_NAME } pe viață. Soldul rămas din abonament va fi restituit în cont. Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
@@ -6665,6 +6682,9 @@
         "Istoric versiuni fișiere: ${ options } zile",
         "Istoric versiuni fișiere: ${ options } de zile"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin pe viață"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } cu ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } cu ${ n } aliasuri hide-my-email",
@@ -6721,6 +6741,12 @@
       "Administration Panel": [
         "Panou de administrare"
       ],
+      "Advanced account protection": [
+        "Protecție avansată a contului"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funcții avansate alias (furnizate de SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Toate produsele și funcțiile ${ BRAND_NAME }"
       ],
@@ -6747,6 +6773,9 @@
       ],
       "Available on all platforms": [
         "Disponibil în toate planurile"
+      ],
+      "Breach alerts": [
+        "Alerte breșe"
       ],
       "Calendar sharing": [
         "Partajare calendar"
@@ -7240,6 +7269,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domenii personale pentru aliasuri, conturi suplimentare, posibilitatea de a trimite mesaje de la aliasuri și multe altele"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului"
       ],
@@ -7275,6 +7307,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etichetele sunt etichete simple pe care le puteți adăuga la mesaje pentru a le face mai ușor de găsit sau de aplicat filtre."
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Acces pe viață la funcțiile premium ale ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Ca și un folder, un seif este un mod convenient de a vă organiza articolele."
@@ -7476,6 +7511,12 @@
       ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
+      ],
+      "Meeting host copied to clipboard": [
+        "Gazda conferinței a fost copiată în memorie."
+      ],
+      "Meeting ID copied to clipboard": [
+        "ID-ul conferinței a fost copiat în memorie."
       ],
       "Passcode copied to clipboard": [
         "Codul de acces s-a copiat în memorie."
@@ -7814,8 +7855,14 @@
         "${ n } conturi de utilizator",
         "${ n } de conturi de utilizator"
       ],
+      "Activity log": [
+        "Jurnal activitate"
+      ],
       "Admin panel to manage users and subscription": [
         "Panou de administrare pentru a gestiona utilizatorii și abonamentul"
+      ],
+      "Team policies": [
+        "Politicile echipei"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7910,6 +7957,9 @@
       ],
       "Please select your billing state first.": [
         "Selectați statul de facturare mai întâi."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Reînnoiți cu ${ price }, anulați oricând."
       ],
       "Select billing country to pay": [
         "Selectați țara de facturare pentru a plăti"
@@ -8759,6 +8809,12 @@
       "Now you can see when participants are free to attend your meeting.": [
         "Acum puteți vedea când participanții sunt liberi pentru a participa la întâlniri."
       ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "Creați și adăugați fără probleme legături web pentru conferințe video la evenimentele create."
+      ],
+      "Video conferencing is here!": [
+        "Au sosit conferințele video!"
+      ],
       "You can now collapse the navigation bar.": [
         "Acum puteți restrânge bara de navigare."
       ]
@@ -8959,6 +9015,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Abonamentul va fi retrogradat la sfârșitul perioadei de facturare."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Pe viață"
       ]
     },
     "Subscription price": {
@@ -10752,8 +10813,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Alăturați-vă conferinței Zoom"
+      ],
       "Meeting ID:": [
         "ID întâlnire:"
+      ],
+      "Passcode:": [
+        "Cod de acces:"
       ]
     }
   }

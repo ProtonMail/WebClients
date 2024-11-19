@@ -55,6 +55,9 @@
       "Add domain": [
         "Lägg till domän"
       ],
+      "Add external address": [
+        "Lägg till extern adress"
+      ],
       "Add PayPal": [
         "Lägg till PayPal"
       ],
@@ -923,9 +926,6 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1077,6 +1077,9 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Fakturerad med ${ amount } en gång"
+      ],
       "for ${ durationDeal }": [
         "för ${ durationDeal }"
       ],
@@ -3551,6 +3554,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till ${ PASS_SHORT_APP_NAME }."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för livstidsåtkomst till ${ PASS_SHORT_APP_NAME }. Priset och datumet för förnyelse av din prenumeration på ${ planTitle } förblir oförändrade."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
       ],
@@ -3669,6 +3675,9 @@
       "Adding ${ addedServerCount } gateway server": [
         "Lägger till ${ addedServerCount } gatewayserver",
         "Lägger till ${ addedServerCount } gatewayservrar"
+      ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Att lägga till en extern e-postadress kommer inaktivera end-to-end-kryptering för all e-postkommunikation inom denna grupp. Vill du fortsätta?"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Lägger till gatewayserver: ${ serverNumber }/${ total }",
@@ -3958,6 +3967,15 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Aktiverad den ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "End-to-end-krypterad e-post är inaktiverat för denna grupp på grund av externa adresser."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "End-to-end-krypterad e-post är inaktiverat för denna grupp. Det kan aktiveras."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "End-to-end-krypterad e-post är aktiverat för denna grupp."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Ändpunkts-URL mottagen från din identitetsleverantör (t.ex. https://idp.example.com/sso/saml)."
       ],
@@ -4140,9 +4158,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installera en serverkonfigurationsfil för att ansluta till en specifik server i det land du väljer."
-      ],
-      "Internal user": [
-        "Intern användare"
       ],
       "Internet connection lost": [
         "Internetanslutning förlorades"
@@ -5072,6 +5087,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Du kommer att omdirigeras till ${ destination } efter inloggning."
       ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Du kommer behålla livstidsåtkomst till ${ PASS_APP_NAME } + SimpleLogin premiumfunktioner om du avbryter din prenumeration."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du kommer förlora åtkomst till ${ planTitle }-funktioner på detta datum."
       ],
@@ -5322,6 +5340,9 @@
       ],
       "Allowed Domain": [
         "Tillåten domän"
+      ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Tillåter alla i din organisation att sömlöst lägga till videokonferenslänkar till sina kalenderinbjudningar."
       ],
       "Amount": [
         "Belopp"
@@ -6087,8 +6108,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Australisk dollar"
+      ],
       "Brazilian real": [
         "Brasiliansk real"
+      ],
+      "British pound": [
+        "Brittiskt pund"
+      ],
+      "Canadian dollar": [
+        "Kanadensisk dollar"
       ],
       "Euro": [
         "Euro"
@@ -6245,6 +6275,9 @@
         "${ options }-dags filversionshistorik",
         "${ options }-dagars filversionshistorik"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin livstid"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias"
@@ -6300,6 +6333,9 @@
       "Administration Panel": [
         "Administrationspanel"
       ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Avancerade funktioner för alias (drivs av SimpleLogin)"
       ],
@@ -6332,6 +6368,9 @@
       ],
       "Available on all platforms": [
         "Tillgängligt på alla plattformar"
+      ],
+      "Breach alerts": [
+        "Intrångsvarningar"
       ],
       "Calendar sharing": [
         "Kalenderdelning"
@@ -6915,6 +6954,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter är enkla märken som du kan lägga till i meddelanden för att göra dem lättare att hitta eller att tillämpa filter på"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Livstidsåtkomst till premiumfunktioner för ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Liksom en mapp är ett valv ett bekvämt sätt att organisera dina objekt"
@@ -7546,6 +7588,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Administratörspanel för att hantera användare och prenumeration"
+      ],
+      "Team policies": [
+        "Policy för team"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7735,6 +7780,9 @@
       ],
       "Processing payment": [
         "Bearbetar betalning"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Förnyas med ${ price }, avbryt när som helst."
       ],
       "Select billing country to pay": [
         "Välj faktureringsland att betala"
@@ -8703,6 +8751,10 @@
         "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska kontot nu:",
         "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska deras konton nu:"
       ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } användare är inaktiv. Du kan säkert ta bort denna användare från din organisation.",
+        "${ n } användare är inaktiva. Du kan säkert ta bort dem från din organisation."
+      ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO-användare (tillhandahållna av din identitetsleverantör) kommer att tas bort** och du måste skapa dem manuellt för att lägga till dem i din organisation igen."
       ],
@@ -9361,6 +9413,9 @@
       "Upload any new files": [
         "Ladda upp alla nya filer"
       ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Användarprenumerationer är ${ BRAND_NAME }s enda inkomst. Ditt stöd håller oss oberoende, främjar vårt uppdrag för integritet online och hjälper aktivister och organisationer som kämpar för frihet."
+      ],
       "Users won’t be able to manage their calendars": [
         "Användare kommer inte att kunna hantera sina kalendrar"
       ],
@@ -9653,6 +9708,12 @@
       "Creating config file for ${ serverName }": [
         "Skapar konfigurationsfil för ${ serverName }"
       ],
+      "Group end-to-end email encryption disabled": [
+        "End-to-end-kryptering av e-post för grupp inaktiverat"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "End-to-end-kryptering av e-post för grupp aktiverat"
+      ],
       "Preference updated": [
         "Preferenser uppdaterade"
       ],
@@ -9840,6 +9901,9 @@
       ],
       "Add domain": [
         "Lägg till domän"
+      ],
+      "Add external address?": [
+        "Lägg till extern adress?"
       ],
       "Add PayPal payment method": [
         "Lägg till PayPal betalningsmetod"
@@ -10589,6 +10653,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp och inga krypterade resurser kommer att delas med denna användare."
       ],
       "Group membership paused": [
         "Gruppmedlemskap pausad"

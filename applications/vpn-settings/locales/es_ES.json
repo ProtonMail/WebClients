@@ -55,6 +55,9 @@
       "Add domain": [
         "Añadir dominio"
       ],
+      "Add external address": [
+        "Añadir una dirección externa"
+      ],
       "Add more ${ BRAND_NAME } Scribe seats": [
         "Agregar más asientos para ${ BRAND_NAME } Scribe"
       ],
@@ -931,8 +934,9 @@
       "Sorry, this offer is not available with your current plan.": [
         "Lo sentimos, esta oferta no está disponible con tu plan actual."
       ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Lo sentimos, esta oferta no está disponible con tu plan actual. Pero puedes obtener **${ discountPercentage } de ${ plan.Title }** al suscribirte durante **${ months }**."
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Lo sentimos, esta oferta no está disponible con tu plan actual. Pero puedes obtener ${ discountPercentage } de ${ plan.Title } al suscribirte durante ${ cycle } mes.",
+        "Lo sentimos, esta oferta no está disponible con tu plan actual. Pero puedes obtener ${ discountPercentage } de ${ plan.Title } al suscribirte durante ${ cycle } meses."
       ]
     },
     "bf2023: Offers": {
@@ -1029,7 +1033,7 @@
         "Autenticador 2FA integrado"
       ],
       "One-time payment, lifetime deal": [
-        "Un solo pago y una oferta de por vida"
+        "Un solo pago, una oferta de por vida"
       ],
       "Online document editor": [
         "Editor de documentos online"
@@ -1073,7 +1077,7 @@
         "Los descuentos se basan en la cuota estándar mensual."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si compras Pass Family o Unlimited, tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
+        "Si compras Pass Family o Unlimited, tu suscripción se renovará automáticamente al final del ciclo de facturación con el precio reducido y la duración normales."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
@@ -3234,7 +3238,7 @@
         "Verifica tu identidad con una llave física de seguridad U2F o FIDO2."
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "Has alcanzado el máximo ${ maxSecurityKeyLength } de tu llave de seguridad.",
+        "Has alcanzado el número máximo de ${ maxSecurityKeyLength } clave de seguridad.",
         "Has alcanzado el número máximo de ${ maxSecurityKeyLength } claves de seguridad."
       ],
       "Your two-factor authentication key is ready to use.": [
@@ -3693,6 +3697,9 @@
         "Añadiendo ${ addedServerCount } servidor de puerta de enlace",
         "Añadiendo ${ addedServerCount } servidores de puerta de enlace"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Al añadir una dirección de correo electrónico externa, se desactivará el cifrado de extremo a extremo para todas las comunicaciones por correo electrónico dentro de este grupo. ¿Deseas continuar?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Añadiendo servidor de puerta de enlace: ${ serverNumber } / ${ total }",
         "Añadiendo servidores de puerta de enlace: ${ serverNumber } / ${ total }"
@@ -3708,7 +3715,7 @@
         "Los usuarios afectados están en las filas."
       ],
       "All inactive members deleted": [
-        "Todos los miembros inactivos han sido eliminados"
+        "Se han eliminado todos los miembros inactivos."
       ],
       "All members have been added.": [
         "Se han agregado todos los miembros."
@@ -3981,6 +3988,15 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Activado el ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "El cifrado de extremo a extremo de correo electrónico está desactivado para este grupo debido a las direcciones externas."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "El cifrado de extremo a extremo de los correos electrónicos de grupo está desactivado para este grupo. Se puede activar."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "El cifrado de extremo a extremo de los correos electrónicos de grupo está activado para este grupo."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL del punto final recibida de tu proveedor de identidad (por ejemplo, https://idp.ejemplo.es/sso/saml)."
       ],
@@ -4166,9 +4182,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instala un archivo de configuración de servidor para conectarte a un servidor específico en el país de tu elección."
-      ],
-      "Internal user": [
-        "Usuario interno"
       ],
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
@@ -4453,8 +4466,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduce la frase de recuperación de 12 palabras asociada a tu cuenta."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Toma en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Por favor, ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } crédito restante.",
+        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
       "please open a support ticket": [
         "abre un tiquete de soporte."
@@ -5127,6 +5141,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Te redirigiremos a ${ destination } después de iniciar sesión."
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Mantendrás acceso de por vida a ${ PASS_APP_NAME } + funcionalidades prémium de SimpleLogin si cancelas tu suscripción."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perderás el acceso a las funciones de ${ planTitle } en esta fecha."
@@ -5810,7 +5827,7 @@
         "Código de verificación"
       ],
       "Video conferencing with Zoom": [
-        "Conferencia de vídeo con Zoom"
+        "Videoconferencia por Zoom"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos que te vayas. Explica por qué te vas para ayudarnos a mejorar."
@@ -6315,6 +6332,9 @@
       "${ options }-day file version history": [
         "Historial de ${ options } día de las versiones de los archivos",
         "Historial de ${ options } días de las versiones de los archivos"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Acceso de por vida a las funciones ${ PASS_APP_NAME } y SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
@@ -6996,6 +7016,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Las etiquetas son muy fáciles de añadir a los mensajes y te permiten encontrarlos fácilmente o aplicar filtros."
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Acceso de por vida a las funciones premium de ${ PASS_APP_NAME } y SimpleLogin."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Como una carpeta, una caja fuerte es una manera conveniente de organizar tus elementos."
       ],
@@ -7196,7 +7219,7 @@
         "Actualizaciones de producto para ${ app }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "Boletín de Business de ${ BRAND_NAME }"
+        "Boletín de ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } important announcements": [
         "Avisos importantes de ${ BRAND_NAME }"
@@ -7208,7 +7231,7 @@
         "Ofertas y promociones de ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
-        "Anuncios de productos de ${ BRAND_NAME }"
+        "Anuncios de producto de ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } user survey": [
         "Encuesta a los usuarios de ${ BRAND_NAME }"
@@ -7244,7 +7267,7 @@
         "Notificaciones diarias por correo electrónico"
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Deshabilitar esto eliminará la habilidad de recibir notificaciones en las aplicaciones de ${ BRAND_NAME }"
+        "Desactivarlo impedirá que recibas notificaciones de las aplicaciones de ${ BRAND_NAME }"
       ],
       "During your first month": [
         "Durante el primer mes"
@@ -8806,8 +8829,8 @@
         "los miembros de ${ n } solicitaron tu ayuda para iniciar sesión."
       ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } usuario se ha unido a tu organización a través de tu Proveedor de Identidad. Revisa la cuenta ahora:",
-        "${ n } usuarios se han unido a tu organización a través de tu Proveedor de Identidad. Revisa las cuentas ahora:"
+        "${ n } usuario se ha unido a tu organización a través de tu proveedor de identidad. Revisa la cuenta ahora:",
+        "${ n } usuarios se han unido a tu organización a través de tu proveedor de identidad. Revisa las cuentas ahora:"
       ],
       "${ n } user is inactive. You can safely remove this user from your organization.": [
         "${ n } usuario está inactivo. Puedes eliminarlo de forma segura de tu organización.",
@@ -9782,6 +9805,12 @@
       "Creating config file for ${ serverName }": [
         "Creando archivo de configuración para ${ serverName }"
       ],
+      "Group end-to-end email encryption disabled": [
+        "El cifrado de extremo a extremo de los correos electrónicos de grupo está desactivado."
+      ],
+      "Group end-to-end email encryption enabled": [
+        "El cifrado de extremo a extremo de los correos electrónicos de grupo está activado."
+      ],
       "Preference updated": [
         "Se ha actualizado la preferencia."
       ],
@@ -9969,6 +9998,9 @@
       ],
       "Add domain": [
         "Añadir dominio"
+      ],
+      "Add external address?": [
+        "¿Quieres añadir una dirección externa?"
       ],
       "Add PayPal payment method": [
         "Añadir PayPal como método de pago"
@@ -10718,6 +10750,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo."
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo y no se compartirá ningún recurso cifrado con este usuario."
       ],
       "Group membership paused": [
         "Se ha pausado la membresía del grupo."
