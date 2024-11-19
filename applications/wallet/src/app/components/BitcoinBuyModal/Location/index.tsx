@@ -27,6 +27,7 @@ export const Location = ({ onConfirm }: Props) => {
 
     const rampLink = <Href href="https://ramp.network">{c('bitcoin buy').t`Ramp Network`}</Href>;
     const banxaLink = <Href href="https://banxa.com">{c('bitcoin buy').t`Banxa`}</Href>;
+    const moonpayLink = <Href href="https://moonpay.com">{c('bitcoin buy').t`MoonPay`}</Href>;
     const binanceLink = <Href href="https://binance.com">{c('bitcoin buy').t`Binance`}</Href>;
     const coinbaseLink = <Href href="https://coinbase.com">{c('bitcoin buy').t`Coinbase`}</Href>;
     const krakenLink = <Href href="https://kraken.com">{c('bitcoin buy').t`Kraken`}</Href>;
@@ -43,7 +44,7 @@ export const Location = ({ onConfirm }: Props) => {
                 ) : (
                     <>
                         <p>{c('bitcoin buy')
-                            .jt`${WALLET_APP_NAME} has partnered with ${rampLink} and ${banxaLink}, two registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.`}</p>
+                            .jt`${WALLET_APP_NAME} has partnered with ${rampLink}, ${banxaLink} and ${moonpayLink}, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.`}</p>
                         <p>{c('bitcoin buy')
                             .t`Finally, you will complete the Buy process on the provider’s site and any purchased BTC will be sent to a BTC address generated from your wallet account.`}</p>
                         <p>{c('bitcoin buy')
