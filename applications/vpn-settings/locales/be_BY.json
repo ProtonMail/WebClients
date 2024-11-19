@@ -55,6 +55,9 @@
       "Add domain": [
         "Дадаць дамен"
       ],
+      "Add external address": [
+        "Дадаць знешні адрас"
+      ],
       "Add more ${ BRAND_NAME } Scribe seats": [
         "Дадаць больш ліцэнзій ${ BRAND_NAME } Scribe"
       ],
@@ -939,8 +942,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
       ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяц.",
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцы.",
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў.",
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў."
       ]
     },
     "bf2023: Offers": {
@@ -3760,6 +3766,9 @@
         "Даданне ${ addedServerCount } сервераў шлюза",
         "Даданне ${ addedServerCount } сервераў шлюза"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Дадаванне знешніх адрасоў электроннай пошты адключыць скразное шыфраванне для ўсіх зносін па электроннай пошце ў рамках групы. Вы сапраўды хочаце працягнуць?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Даданне сервера шлюза: ${ serverNumber } / ${ total }",
         "Даданне сервераў шлюза: ${ serverNumber } / ${ total }",
@@ -4060,6 +4069,15 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Уключана ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Скразное шыфраванне электроннай пошты адключана для гэтай групы па прычыне знешніх адрасоў."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "Скразное шыфраванне электроннай пошты адключана для гэтай групы. Яго можна ўключыць."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Скразное шыфраванне электроннай пошты ўключана для гэтай групы."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL-адрас канцавога пункта атрыманы ад вашага пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)."
       ],
@@ -4245,9 +4263,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Усталюйце файл канфігурацыі сервера для падключэння да вызначанага сервера ў краіне, якую вы выбралі."
-      ],
-      "Internal user": [
-        "Унутраны карыстальнік"
       ],
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
@@ -4539,9 +4554,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Увядзіце фразу аднаўлення з 12 слоў, якая звязана з вашым уліковым запісам."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца наступная колькасць крэдытаў: ${ remainingCreditsFormatted }."
       ],
       "please open a support ticket": [
         "адкрыйце запыт для службы падтрымкі"
@@ -5239,6 +5251,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Пасля ўваходу ў ${ destination } вы будзеце пералакіраваны"
       ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Вы захаваеце пажыццёвы доступ да прэміяльных функцый ${ PASS_APP_NAME } + SimpleLogin, калі скасуеце сваю падпіску."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Вы страціце доступ да ${ planTitle } функцыі пасля гэтай даты."
       ],
@@ -5261,7 +5276,7 @@
         "Ваш пароль ${ BRAND_NAME }"
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Ваша падпіска ${ PASS_SHORT_APP_NAME } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Астача балансу вашай падпіскі будзе дададзена на ваш рахунак. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
+        "Ваша падпіска ${ PASS_SHORT_APP_NAME } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Астатак балансу вашай падпіскі будзе дададзены на ваш рахунак. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Вашы ўліковыя запісы ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } звязаны паміж сабой. Каб выдаліць іх абодва, увайдзіце праз ${ loginLink } і там выдаліце свой уліковы запіс."
@@ -6270,8 +6285,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Аўстралійскі долар"
+      ],
       "Brazilian real": [
         "Бразільскі рэал"
+      ],
+      "British pound": [
+        "Брытанскі фунт"
+      ],
+      "Canadian dollar": [
+        "Канадскі долар"
       ],
       "Euro": [
         "Еўра"
@@ -6460,6 +6484,9 @@
         "${ options }-дзённая гісторыя змяненняў версіі файла",
         "${ options }-дзённая гісторыя змяненняў версіі файла"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Пажыццёвая прапанова ${ PASS_APP_NAME } + SimpleLogin"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімам",
         "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
@@ -6520,6 +6547,9 @@
       "Administration Panel": [
         "Панэль адміністратара"
       ],
+      "Advanced account protection": [
+        "Пашыраная абарона ўліковага запісу"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Пашыраныя функцыі псеўданіма (на платформе SimpleLogin)"
       ],
@@ -6552,6 +6582,9 @@
       ],
       "Available on all platforms": [
         "Даступна на ўсіх платформах"
+      ],
+      "Breach alerts": [
+        "Папярэджанні ўцечкі"
       ],
       "Calendar sharing": [
         "Абагулены каляндар"
@@ -7153,6 +7186,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Пажыццёвы доступ да прэміяльных функцый ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Як і папка, сховішча з'яўляецца зручным спосаб арганізацыі вашых элементаў"
@@ -7973,6 +8009,9 @@
       "Processing payment": [
         "Апрацоўка плацяжу"
       ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Падаўжаецца за ${ price }. Скасаваць можна ў любы час."
+      ],
       "Select billing country to pay": [
         "Выберыце краіну выстаўлення рахунку для аплаты"
       ],
@@ -8694,7 +8733,7 @@
     },
     "session_recovery:initiation:info": {
       "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
-        "У мэтах бяспекі, вам давядзецца чакаць **72 гадзіны** перад тым, як вы зможаце змяніць свой пароль."
+        "У мэтах бяспекі вам давядзецца чакаць **72 гадзіны** перад тым, як вы зможаце змяніць свой пароль."
       ],
       "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
         "Калі ў вас наладжаны **спосаб аднаўлення** паспрабуйце скарыстацца спачатку ім. Гэта дазволіць адразу змяніць ваш пароль."
@@ -9111,7 +9150,7 @@
         "Увядзіце свой рэзервовы пароль"
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
-        "Вы выйшлі з сістэмы на ўсіх вашых іншых актыўных прыладах у мэтах бяспекі. Вам неабходна будзе ўвесці новы рэзервовы пароль перад тым, як вы атрымаеце доступ да свайго ўліковага запісу."
+        "У мэтах бяспекі вы выйшлі з сістэмы на ўсіх вашых іншых актыўных прыладах. Вам неабходна будзе ўвесці новы рэзервовы пароль перад тым, як вы атрымаеце доступ да свайго ўліковага запісу."
       ],
       "Grant": [
         "Дазволіць"
@@ -10049,6 +10088,12 @@
       "Creating config file for ${ serverName }": [
         "Стварэнне файла канфігурацыі для ${ serverName }"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Групавое шыфраванне электроннай пошты адключана"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Групавое шыфраванне электроннай пошты ўключана"
+      ],
       "Preference updated": [
         "Параметры абноўлены"
       ],
@@ -10238,6 +10283,9 @@
       ],
       "Add domain": [
         "Дадаць дамен"
+      ],
+      "Add external address?": [
+        "Дадаць знешні адрас?"
       ],
       "Add PayPal payment method": [
         "Дадаць спосаб аплаты PayPal"
@@ -10995,6 +11043,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы і зашыфраваныя рэсурсы не будуць абагулены з гэтым карыстальнікам."
       ],
       "Group membership paused": [
         "Знаходжанне ў групе прыпынена"

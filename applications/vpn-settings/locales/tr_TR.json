@@ -55,6 +55,9 @@
       "Add domain": [
         "Etki alanı ekle"
       ],
+      "Add external address": [
+        "Dış e-posta adresi ekle"
+      ],
       "Add more ${ BRAND_NAME } Scribe seats": [
         "${ BRAND_NAME } Scribe koltuğu daha ekleyin"
       ],
@@ -931,8 +934,9 @@
       "Sorry, this offer is not available with your current plan.": [
         "Üzgünüz, bu teklif mevcut tarifeniz için geçerli değil."
       ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Üzgünüz, bu teklif mevcut tarifeniz için geçerli değil fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirim elde edebilirsiniz."
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz.",
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -3693,6 +3697,9 @@
         "${ addedServerCount } ağ geçidi sunucusu ekleniyor",
         "${ addedServerCount } ağ geçidi sunucusu ekleniyor"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Bir dış e-posta adresi eklendiğinde, o grup içindeki tüm e-posta yazışmaları için uçtan uca şifreleme kapatılır. İlerlemek istiyor musunuz?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Ağ geçidi sunucusu ekleniyor: ${ serverNumber } / ${ total }",
         "Ağ geçidi sunucusu ekleniyor: ${ serverNumber } / ${ total }"
@@ -3981,6 +3988,15 @@
       "Enabled on ${ formattedDateAndTime }": [
         "${ formattedDateAndTime } zamanında açıldı"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Dış e-posta adresleri nedeniyle bu grup için uçtan uca e-posta şifrelemesi kapatıldı."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "Bu grup için uçtan uca e-posta şifrelemesi kapalı. Açılabilir."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Bu grup için uçtan uca e-posta şifrelemesi açık."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)."
       ],
@@ -4166,9 +4182,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Seçtiğiniz ülkedeki belirli bir sunucuya bağlanmak için bir sunucu yapılandırma dosyası yükleyin."
-      ],
-      "Internal user": [
-        "İç kullanıcı"
       ],
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
@@ -4452,9 +4465,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Lütfen hesabınızın 12 sözcüklü kurtarma ifadesini yazın."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Onayla düğmesine tıkladığınız zaman hesabınızda ${ remainingCreditsFormatted } kredi kalacağını lütfen unutmayın."
       ],
       "please open a support ticket": [
         "lütfen bir destek kaydı açın"
@@ -5127,6 +5137,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Oturum açtıktan sonra ${ destination } sayfasına yönlendirileceksiniz."
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Aboneliğinizi iptal etseniz bile ücretli ${ PASS_APP_NAME } + SimpleLogin özelliklerine ömür boyu erişimeyi sürdürebilirsiniz."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Bu tarihte ${ planTitle } özelliklerine erişiminizi kaybedeceksiniz."
@@ -6149,8 +6162,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Avustralya doları"
+      ],
       "Brazilian real": [
         "Brezilya reali"
+      ],
+      "British pound": [
+        "İngiliz sterlini"
+      ],
+      "Canadian dollar": [
+        "Kanada doları"
       ],
       "Euro": [
         "Euro"
@@ -6307,6 +6329,9 @@
         "${ options } günlük dosya sürümü geçmişi",
         "${ options } günlük dosya sürümü geçmişi"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin Lifetime"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı",
         "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı"
@@ -6365,6 +6390,9 @@
       "Administration Panel": [
         "Yönetim panosu"
       ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Gelişmiş takma ad özellikleri (SimpleLogin tarafından sağlanır)"
       ],
@@ -6397,6 +6425,9 @@
       ],
       "Available on all platforms": [
         "Tüm platformlarda kullanılabilir"
+      ],
+      "Breach alerts": [
+        "Verilerin ele geçilrilmesi uyarıları"
       ],
       "Calendar sharing": [
         "Takvim paylaşımı"
@@ -6980,6 +7011,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "${ PASS_APP_NAME } + SimpleLogin ücretli özelliklerine ömür boyu erişim."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
@@ -7785,6 +7819,9 @@
       ],
       "Processing payment": [
         "Ödeme işleniyor"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "${ price } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Select billing country to pay": [
         "Ödeme için fatura ülkesini seçin"
@@ -9764,6 +9801,12 @@
       "Creating config file for ${ serverName }": [
         "${ serverName } için yapılandırma dosyası oluşturuluyor"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Grup uçtan uca e-posta şifrelemesi kapalı"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Grup uçtan uca e-posta şifrelemesi açık"
+      ],
       "Preference updated": [
         "Tercih güncellendi"
       ],
@@ -9951,6 +9994,9 @@
       ],
       "Add domain": [
         "Etki alanı ekle"
+      ],
+      "Add external address?": [
+        "Dış e-posta adresi eklensin mi?"
       ],
       "Add PayPal payment method": [
         "PayPal ödeme yöntemi ekle"
@@ -10700,6 +10746,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır ve şifrelenmiş kaynaklar bu kullanıcı ile paylaşılmaz."
       ],
       "Group membership paused": [
         "Grup üyeliği duraklatılmış"
