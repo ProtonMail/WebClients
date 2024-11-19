@@ -4,6 +4,7 @@ import { useUpsellConfig } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import zoomUpsellSvg from '@proton/styles/assets/img/illustrations/upsell-zoom-header.svg';
 
@@ -19,8 +20,14 @@ const ZoomUpsellModal = ({ modalProps }: Props) => {
         component: UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.ZOOM_MEETING,
     });
+
+    const isIframe = getIsIframe();
     const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+    const upsellConfig = useUpsellConfig({
+        upsellRef,
+        preventInApp: isIframe,
+        ...oneDollarConfig,
+    });
 
     return (
         <NewUpsellModal
