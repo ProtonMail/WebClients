@@ -268,9 +268,9 @@ const LoginContainer = ({
                                     onChangeAuthType={(authType) => {
                                         setAuthType(authType);
                                     }}
+                                    onPreSubmit={onPreSubmit}
                                     onSubmit={async (data) => {
                                         try {
-                                            await onPreSubmit?.();
                                             const validateFlow = createFlow();
                                             const result = await handleNextLogin({
                                                 api: silentApi,
