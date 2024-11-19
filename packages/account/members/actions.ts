@@ -5,18 +5,20 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
+    addSSOSamlMember,
     checkMemberAddressAvailability,
     createMemberAddress,
     createMember as createMemberConfig,
-    deleteMember,
+    deleteMember as deleteMemberConfig,
     deleteUnprivatizationRequest,
     getMember as getMemberConfig,
     privatizeMember as privatizeMemberConfig,
+    removeSSOSamlMember,
     requestUnprivatization as requestUnprivatizationConfig,
     updateAI,
     updateName,
     updateQuota,
-    updateRole,
+    updateRole as updateRoleConfig,
     updateVPN,
 } from '@proton/shared/lib/api/members';
 import {
@@ -62,6 +64,7 @@ import {
 import { userKeysThunk } from '../userKeys';
 import InvalidAddressesError from './errors/InvalidAddressesError';
 import UnavailableAddressesError from './errors/UnavailableAddressesError';
+import type { MembersState } from './index';
 import { MemberCreationValidationError, membersThunk, upsertMember } from './index';
 import validateAddUser from './validateAddUser';
 
@@ -83,7 +86,7 @@ export const deleteMembers = ({
         const failure: Member[] = [];
         for (const member of members) {
             const deleted = await extra
-                .api(deleteMember(member.ID))
+                .api(deleteMemberConfig(member.ID))
                 .then(() => true)
                 .catch(noop);
             if (deleted) {
@@ -117,7 +120,7 @@ export const setAdminRole = ({
         const organizationKey = await dispatch(organizationKeyThunk());
 
         if (!getIsPasswordless(organizationKey?.Key)) {
-            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
+            await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
             return;
         }
 
@@ -275,7 +278,7 @@ export const editMember = ({
             await dispatch(setAdminRole({ member, payload: memberKeyPacketPayload, api }));
         }
         if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
-            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+            await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
         }
         if (memberDiff.private !== undefined) {
             if (memberDiff.private === MEMBER_PRIVATE.UNREADABLE) {
@@ -585,7 +588,7 @@ export const createMember = ({
                     // Ignore, can't set non-private users admins on creation
                 }
             } else {
-                await api(updateRole(Member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
+                await api(updateRoleConfig(Member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
             }
         }
 
@@ -595,5 +598,40 @@ export const createMember = ({
             single ? dispatch(organizationThunk({ cache: CacheType.None })) : undefined,
         ]);
         dispatch(upsertMember({ member: updatedMember }));
+    };
+};
+
+export const deleteMember = ({
+    api,
+    member,
+}: {
+    member: Member;
+    api: Api;
+}): ThunkAction<Promise<void>, MembersState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        if (member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
+            await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+        }
+        await api(deleteMemberConfig(member.ID));
+        dispatch(upsertMember({ member, type: 'delete' }));
+    };
+};
+
+export const attachMemberSSO = ({
+    api,
+    member,
+    type,
+}: {
+    member: Member;
+    type?: 'detach' | 'attach';
+    api: Api;
+}): ThunkAction<Promise<void>, MembersState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        if (type === 'detach') {
+            await api(removeSSOSamlMember(member.ID));
+        } else {
+            await api(addSSOSamlMember(member.ID));
+        }
+        dispatch(upsertMember({ member: await getMember(api, member.ID) }));
     };
 };
