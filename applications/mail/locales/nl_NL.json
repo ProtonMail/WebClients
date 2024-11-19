@@ -1060,10 +1060,10 @@
       "Select ${ planTitle }": [
         "Selecteer ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Alles selecteren"
       ],
-      "Select all": [
+      "Select All": [
         "Alles selecteren"
       ],
       "Select all messages": [
@@ -3696,7 +3696,7 @@
         "Gebruik ${ MAIL_APP_NAME } om in te loggen bij online diensten, omdat we, in tegenstelling tot andere e-mailproviders, nooit uw gegevens zullen volgen en delen met derden."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
+        "Versleep de contactpersonen die u wilt samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "We hebben geen bekende trackers en tracking URL's in deze e-mail gevonden."
@@ -6262,7 +6262,7 @@
         "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die je wilt importeren."
+        "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die u wilt importeren."
       ],
       "Create a new contact group": [
         "Maak een nieuwe contactengroep"
@@ -6599,8 +6599,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -6868,9 +6867,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Houd er rekening mee dat, wanneer u op de knop Bevestigen klikt, uw account nog ${ remainingCreditsFormatted } credits over heeft."
       ],
       "Please open the document to view it.": [
         "Open het document om het te bekijken."
@@ -7468,6 +7464,9 @@
       "We couldn’t process your payment.": [
         "We konden uw betaling niet verwerken."
       ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "We hebben geconstateerd dat er meerdere gratis accounts zijn aangemaakt, wat in strijd is met onze ${ termsLink }."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "We moeten uw betalingsmethode authenticeren met uw bank."
       ],
@@ -7484,7 +7483,7 @@
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
       "We'll email you once import is complete.": [
-        "We sturen je een e-mail zodra de import voltooid is."
+        "We sturen u een e-mail zodra de import voltooid is."
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
@@ -7502,7 +7501,7 @@
         "Wanneer wilt u dat uw bericht automatisch wordt verwijderd uit de inbox van de ontvanger en uit uw map met Verzonden berichten?"
       ],
       "When do you want your message to self-destruct?": [
-        "Wanneer wil je dat uw bericht zichzelf vernietigt?"
+        "Wanneer wilt u dat uw bericht zichzelf vernietigt?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "Gebruik bij het geven van uw e-mailadres een unieke, wegwerpbare alias met Hide-my-email, in plaats van uw echte e-mailadres."
@@ -7517,7 +7516,7 @@
         "Wanneer u zich aanmeldt voor een nieuwsbrief, gebruik dan een alias in plaats van uw e-mailadres. Uw identiteit blijft verborgen, en u kunt de alias op elk moment uitschakelen."
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
-        "Wanneer u op reis bent of een openbaar wifinetwerk gebruikt, maak dan verbinding met ${ VPN_APP_NAME } om te voorkomen dat iemand je online activiteit kan volgen of je gegevens kan stelen. Het is gratis."
+        "Wanneer u op reis bent of een openbaar wifinetwerk gebruikt, maak dan verbinding met ${ VPN_APP_NAME } om te voorkomen dat iemand uw online activiteit kan volgen of uw gegevens kan stelen. Het is gratis."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
@@ -7661,7 +7660,7 @@
         "U selecteerde **${ elementsCount } gesprekken**."
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
-        "Je selecteert** ${ elementsCount }bericht**in${ location }",
+        "U selecteert** ${ elementsCount }bericht**in${ location }",
         "U selecteert**${ elementsCount }berichten**in${ location }"
       ],
       "You selected **${ elementsCount } message**.": [
@@ -7702,7 +7701,7 @@
         "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt. Verdere niet-betaling zal leiden tot het blokkeren van uw e-mails een deel-links. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
-        "Uw account zal worden bijgewerkt zodra de betaling is gewist."
+        "Uw account wordt bijgewerkt zodra de betaling is verwerkt."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Uw browser ondersteunt de schrijfassistent niet. Probeer het uit te voeren op servers."
@@ -7768,7 +7767,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Neem contact met ons op via ${ email } voor instructies over hoe we ons met contant geld kunnen betalen."
+        "Neem contact met ons op via ${ email } voor instructies hoe u ons met contant geld kunt betalen."
       ]
     },
     "Info on errors": {
@@ -8042,6 +8041,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
+      ],
+      "/month": [
+        "/maand"
       ],
       "Actions": [
         "Acties"
@@ -8702,6 +8704,9 @@
       ],
       "click here": [
         "klik hier"
+      ],
+      "contact us": [
+        "neem contact op"
       ],
       "Create a calendar linked to an active email address.": [
         "Maak en koppel een agenda aan een actief e-mailadres."
@@ -9378,6 +9383,9 @@
       ],
       "Administration Panel": [
         "Beheerderspaneel"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
       ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Geavanceerde alias functies (mogelijk gemaakt door SimpleLogin)"
@@ -13691,7 +13699,7 @@
         "Alleen alfanumerieke tekens, punten, koppeltekens en underscores zijn toegestaan"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet onmiddellijk kan worden bijgewerkt. We zullen uw account bijwerken zodra de betaling is gewist."
+        "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet direct kan worden geüpgraded. We zullen uw account bijwerken zodra de betaling verwerkt is."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."

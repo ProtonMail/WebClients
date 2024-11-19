@@ -1060,10 +1060,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
-      "Select All": [
+      "Select all": [
         "Tümünü seç"
       ],
-      "Select all": [
+      "Select All": [
         "Tümünü seç"
       ],
       "Select all messages": [
@@ -6531,6 +6531,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Bir yanlışlık olduğunu düşünüyorsanız lütfen ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
       ],
@@ -6599,8 +6602,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -6868,9 +6870,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bu işlemin kişi listenizin boyutuna bağlı olarak uzun sürebileceğini unutmayın."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Onayla düğmesine tıkladığınız zaman hesabınızda ${ remainingCreditsFormatted } kredi kalacağını lütfen unutmayın."
       ],
       "Please open the document to view it.": [
         "Görüntülemek için lütfen belgeyi açın."
@@ -7468,6 +7467,12 @@
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
       ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "${ termsLink } koşullarımıza aykırı olarak birden fazla ücretsiz hesap açıldığını farkettik."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Sizin gibi birkaç e-posta adresine gerek duyan kullanıcılar için özel tasarlanmış tarifelerimiz var.\nKısıtlamaları kaldırmak için ücretli bir tarifeye yükseltebilirsiniz."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Ödeme yönteminizi bankanızla doğrulamamız gerekiyor."
       ],
@@ -8042,6 +8047,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
+      ],
+      "/month": [
+        "/ay"
       ],
       "Actions": [
         "İşlemler"
@@ -8703,6 +8711,9 @@
       "click here": [
         "buraya tıklayın"
       ],
+      "contact us": [
+        "bizimle görüşün"
+      ],
       "Create a calendar linked to an active email address.": [
         "Etkin bir e-posta adresine bağlı bir takvim ekleyin."
       ],
@@ -8816,6 +8827,9 @@
       ],
       "Terms": [
         "Koşullar"
+      ],
+      "terms of service": [
+        "hizmet koşulları"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Bu ICS dosyasında birden fazla etkinlik var. Lütfen dosyayı indirin ve ${ CALENDAR_APP_NAME } içine aktarın"
@@ -9217,6 +9231,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
       ],
+      "Get ${ planTitle }": [
+        "${ planTitle } edinin"
+      ],
       "Get started for ${ price }": [
         "${ price } ile başlayın"
       ],
@@ -9324,6 +9341,9 @@
         "${ options } günlük dosya sürümü geçmişi",
         "${ options } günlük dosya sürümü geçmişi"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin Lifetime"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı",
         "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı"
@@ -9379,6 +9399,9 @@
       "Administration Panel": [
         "Yönetim panosu"
       ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Gelişmiş takma ad özellikleri (SimpleLogin tarafından sağlanır)"
       ],
@@ -9408,6 +9431,9 @@
       ],
       "Available on all platforms": [
         "Tüm platformlarda kullanılabilir"
+      ],
+      "Breach alerts": [
+        "Verilerin ele geçilrilmesi uyarıları"
       ],
       "Calendar sharing": [
         "Takvim paylaşımı"
@@ -9931,6 +9957,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "${ PASS_APP_NAME } + SimpleLogin ücretli özelliklerine ömür boyu erişim."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
@@ -10555,6 +10584,9 @@
       ],
       "Please select your billing state first.": [
         "Lütfen önce faturanın kesileceği ili seçin."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "${ price } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Select billing country to pay": [
         "Ödeme için fatura ülkesini seçin"
@@ -12665,6 +12697,9 @@
       ],
       "A filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
+      ],
+      "Account locked": [
+        "Hesap kilitlendi"
       ],
       "Account recovery": [
         "Hesap kurtarma"

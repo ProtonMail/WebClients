@@ -1056,11 +1056,11 @@
       "Select ${ planTitle }": [
         "${ planTitle } 선택"
       ],
-      "Select All": [
-        "모두 선택"
-      ],
       "Select all": [
         "전체 선택"
+      ],
+      "Select All": [
+        "모두 선택"
       ],
       "Select all messages": [
         "모든 메시지 선택"
@@ -5846,7 +5846,7 @@
         "${ PASS_APP_NAME }을 이용하면 신뢰할 수 없는 타사 사이트에서 자신이 주로 사용하는 이메일을 숨길때 사용할 수 있습니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
+        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
@@ -6421,6 +6421,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "오류라고 생각되신다면, ${ contactLink }해주세요."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
       ],
@@ -6756,9 +6759,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "이 과정은 주소록의 크기에 따라 시간이 좀 걸릴 수 있습니다."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "확인 버튼을 누르면 계정에는 ${ remainingCreditsFormatted } 크레딧이 남게됩니다."
       ],
       "Please open the document to view it.": [
         "문서를 확인하려면 열어주세요."
@@ -7351,6 +7351,12 @@
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
       ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "최근 회원님께서 ${ termsLink } 위반 사유에 해당되는 다중 무료 계정 생성을 감지했습니다."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Proton에는 하나 이상의 이메일 주소가 필요한 회원님과 같은 사용자를 위해 특별히 설계된 플랜이 이미 존재합니다.\n제한을 제거하려면, 유료 플랜으로 업그레이드하실 수 있습니다."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "은행의 결제 수단 인증이 필요합니다."
       ],
@@ -7904,6 +7910,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
+      ],
+      "/month": [
+        "/월간"
       ],
       "Actions": [
         "동작"
@@ -8565,6 +8574,9 @@
       "click here": [
         "여기를 클릭"
       ],
+      "contact us": [
+        "문의"
+      ],
       "Create a calendar linked to an active email address.": [
         "활성 이메일 주소에 연결된 캘린더를 만들어요."
       ],
@@ -8678,6 +8690,9 @@
       ],
       "Terms": [
         "조건"
+      ],
+      "terms of service": [
+        "서비스 이용약관"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "이 ICS 파일에는 둘 이상의 이벤트가 있어요. 다운로드하여 ${ CALENDAR_APP_NAME } 에서 이벤트를 가져오세요."
@@ -9071,6 +9086,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
       ],
+      "Get ${ planTitle }": [
+        "${ planTitle }로 계속하기"
+      ],
       "Get started for ${ price }": [
         "${ price }로 시작하세요."
       ],
@@ -9162,6 +9180,9 @@
       "${ options }-day file version history": [
         "${ options }일 파일 버전 기록"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin 평생 이용권"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ n }개의 hide-my-email이 포함된 ${ PASS_APP_NAME }"
       ],
@@ -9216,6 +9237,9 @@
       "Administration Panel": [
         "관리 패널"
       ],
+      "Advanced account protection": [
+        "향상된 계정 보호"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "고급 별칭 기능 (SimpleLogin 제공)"
       ],
@@ -9245,6 +9269,9 @@
       ],
       "Available on all platforms": [
         "모든 플랫폼에서 지원"
+      ],
+      "Breach alerts": [
+        "정보 유출 경고"
       ],
       "Calendar sharing": [
         "일정 공유"
@@ -9760,6 +9787,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "라벨은 메시지를 찾기 쉽게하거나 필터를 적용하기 위해 추가 할 수 있는 간단한 태그입니다"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "${ PASS_APP_NAME } + SimpleLogin 프리미엄 기능에 평생 접근"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "금고는 폴더처럼 항목들을 쉽게 분류할 수 있습니다"
@@ -10380,6 +10410,9 @@
       ],
       "Please select your billing state first.": [
         "결제 청구 주를 먼저 선택하세요"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "${ price }에 갱신되며 언제나 취소할 수 있습니다."
       ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"
@@ -12415,6 +12448,9 @@
       ],
       "A filter with this name already exists": [
         "중복된 필터 이름입니다."
+      ],
+      "Account locked": [
+        "계정 잠김"
       ],
       "Account recovery": [
         "계정 복구"
