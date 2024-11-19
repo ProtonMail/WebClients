@@ -139,11 +139,12 @@ export function Editor({
         <KeyboardShortcutsPlugin />
         {(systemMode === EditorSystemMode.Edit || systemMode === EditorSystemMode.PublicView) && (
           <Toolbar
-            hasEditAccess={role.canEdit()}
             clientInvoker={clientInvoker}
-            userMode={userMode}
-            onUserModeChange={onUserModeChange}
+            hasEditAccess={role.canEdit()}
             isEditorHidden={hidden}
+            onUserModeChange={onUserModeChange}
+            systemMode={systemMode}
+            userMode={userMode}
           />
         )}
         <RichTextPlugin
