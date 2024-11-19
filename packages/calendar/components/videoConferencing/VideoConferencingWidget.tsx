@@ -3,15 +3,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Copy,
-    Icon,
-    IconRow,
-} from '@proton/components';
+import { Collapsible, CollapsibleContent, CollapsibleHeader, Copy, Icon, IconRow } from '@proton/components';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcVideoCamera } from '@proton/icons';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -67,8 +59,8 @@ const EventDetailsRow = ({
     }
 
     return (
-        <button type="button" className="flex gap-1" onClick={handleClick}>
-            <p className="m-0">{prefix}</p>
+        <button type="button" className="flex text-ellipsis max-w-full" onClick={handleClick}>
+            <p className="m-0 mr-1">{prefix}</p>
             <p className="m-0 text-ellipsis color-weak max-w-full" title={suffix}>
                 {suffix}
             </p>
@@ -143,20 +135,16 @@ export const VideoConferencingWidget = ({ data, location, handleDelete }: Props)
                     <Collapsible className="mt-2" expandByDefault={isExpanded} externallyControlled>
                         <CollapsibleHeader
                             disableFullWidth
-                            suffix={
-                                <CollapsibleHeaderIconButton
-                                    size="small"
-                                    shape="ghost"
-                                    onClick={() => setIsExpanded((prev) => !prev)}
-                                >
-                                    <Icon name="chevron-down" />
-                                </CollapsibleHeaderIconButton>
-                            }
                             onClick={() => setIsExpanded((prev) => !prev)}
                             className="collapsible-header-hover-color"
                         >
-                            <button type="button" className="m-0" onClick={() => setIsExpanded((prev) => !prev)}>
+                            <button
+                                type="button"
+                                className="m-0 flex gap-1 text-sm color-weak"
+                                onClick={() => setIsExpanded((prev) => !prev)}
+                            >
                                 {isExpanded ? c('Google Meet').t`Less details` : c('Google Meet').t`More details`}
+                                <Icon name="chevron-down" className={isExpanded ? 'rotateX-180' : ''} />
                             </button>
                         </CollapsibleHeader>
                         <CollapsibleContent onClick={(e) => e.stopPropagation()}>
