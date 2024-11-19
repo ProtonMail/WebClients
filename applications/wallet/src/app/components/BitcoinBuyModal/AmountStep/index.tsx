@@ -140,6 +140,9 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
         // Quote
         loadingQuotes,
         selectedQuote,
+
+        // Reset redux store
+        resetQuoteByProvider,
     } = useAmountStep({ country: inputCountry, preselectedQuote });
 
     const [disclaimerModal, setDisclaimerModal] = useModalState();
@@ -420,6 +423,7 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                     hasWalletPaidPlans={currentPlan === PLANS.VISIONARY || currentPlan === PLANS.WALLET}
                     user={user}
                     openSubscriptionModal={openSubscriptionModal}
+                    resetQuoteByProvider={resetQuoteByProvider}
                     {...aztecoPaymentDetailsModal}
                 />
             )}
