@@ -728,9 +728,6 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Passa a ${ BRAND_NAME } Unlimited"
       ],
-      "Upgrade to Mail Plus": [
-        "Passa a Mail Plus"
-      ],
       "Upload picture": [
         "Carica immagine"
       ],
@@ -3123,14 +3120,14 @@
       "Event not found": [
         "Evento non trovato"
       ],
+      "Failed to create meeting": [
+        "Impossibile creare la riunione"
+      ],
       "Failed to get event": [
         "Recupero dell'evento non riuscito"
       ],
       "Failed to get original occurrence in series": [
         "Recupero dell'occorrenza originale nella serie non riuscito"
-      ],
-      "Failed to load oauth modal.": [
-        "Impossibile caricare la modalità Oauth."
       ],
       "First name is too long": [
         "Il nome è troppo lungo"
@@ -4975,9 +4972,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ remainingCreditsFormatted } crediti rimanenti."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Fornisci un nome e un indirizzo email per la creazione di un gruppo."
       ],
@@ -5026,6 +5020,10 @@
       ],
       "Removed participants will be notified.": [
         "I partecipanti rimossi saranno notificati."
+      ],
+      "Saving event...": [
+        "Salvataggio evento...",
+        "Salvataggio eventi..."
       ],
       "Select a service provider to start": [
         "Seleziona un fornitore di servizi per iniziare"
@@ -5367,6 +5365,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Il tuo abbonamento a ${ PASS_SHORT_APP_NAME } Plus verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
@@ -6575,6 +6576,9 @@
         "Cronologia delle versioni dei file per ${ options } giorno",
         "Cronologia delle versioni dei file per ${ options } giorni"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin a vita"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias Hide-my-email",
         "${ PASS_APP_NAME } con ${ n } alias Hide-my-email"
@@ -6630,6 +6634,9 @@
       "Administration Panel": [
         "Pannello di controllo"
       ],
+      "Advanced account protection": [
+        "Protezione avanzata dell'account"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Funzionalità alias avanzate (fornite da SimpleLogin)"
       ],
@@ -6659,6 +6666,9 @@
       ],
       "Available on all platforms": [
         "Disponibile su tutte le piattaforme"
+      ],
+      "Breach alerts": [
+        "Avvisi sulle violazioni di dati"
       ],
       "Calendar sharing": [
         "Condivisione del calendario"
@@ -7185,6 +7195,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Le etichette sono semplici tag che puoi aggiungere ai messaggi per renderli più facili da trovare o per applicare filtri"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Accesso illimitato a ${ PASS_APP_NAME } + funzionalità premium di SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Come una cartella, una cassaforte è un modo conveniente per organizzare i tuoi elementi"
@@ -7803,6 +7816,9 @@
       ],
       "Please select your billing state first.": [
         "Seleziona prima lo stato di fatturazione."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Rinnova a ${ price }, annulla in qualsiasi momento."
       ],
       "Select billing country to pay": [
         "Seleziona il paese di fatturazione per il pagamento"

@@ -728,9 +728,6 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited tarifesine yükseltin"
       ],
-      "Upgrade to Mail Plus": [
-        "Mail Plus tarifesine yükselt"
-      ],
       "Upload picture": [
         "Fotoğraf yükle"
       ],
@@ -3123,14 +3120,14 @@
       "Event not found": [
         "Etkinlik bulunamadı"
       ],
+      "Failed to create meeting": [
+        "Görüşme oluşturulamadı"
+      ],
       "Failed to get event": [
         "Etkinlik alınamadı"
       ],
       "Failed to get original occurrence in series": [
         "Dizideki özgün yinelenme alınamadı"
-      ],
-      "Failed to load oauth modal.": [
-        "Oauth penceresi yüklenemedi."
       ],
       "First name is too long": [
         "Ad çok uzun"
@@ -4975,9 +4972,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bu işlemin kişi listenizin boyutuna bağlı olarak uzun sürebileceğini unutmayın."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Onayla düğmesine tıkladığınız zaman hesabınızda ${ remainingCreditsFormatted } kredi kalacağını lütfen unutmayın."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Bir grup oluşturmak için lütfen bir ad ve bir e-posta adresi belirtin."
       ],
@@ -5026,6 +5020,10 @@
       ],
       "Removed participants will be notified.": [
         "Kaldırılan katılımcılara bildirim gönderilecek."
+      ],
+      "Saving event...": [
+        "Etkinlik kaydediliyor...",
+        "Etkinlikler kaydediliyor..."
       ],
       "Select a service provider to start": [
         "Başlamak için bir hizmet sağlayıcı seçin"
@@ -6575,6 +6573,9 @@
         "${ options } günlük dosya sürümü geçmişi",
         "${ options } günlük dosya sürümü geçmişi"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin Lifetime"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı",
         "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı"
@@ -6630,6 +6631,9 @@
       "Administration Panel": [
         "Yönetim panosu"
       ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Gelişmiş takma ad özellikleri (SimpleLogin tarafından sağlanır)"
       ],
@@ -6659,6 +6663,9 @@
       ],
       "Available on all platforms": [
         "Tüm platformlarda kullanılabilir"
+      ],
+      "Breach alerts": [
+        "Verilerin ele geçilrilmesi uyarıları"
       ],
       "Calendar sharing": [
         "Takvim paylaşımı"
@@ -7182,6 +7189,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "${ PASS_APP_NAME } + SimpleLogin ücretli özelliklerine ömür boyu erişim."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
@@ -7800,6 +7810,9 @@
       ],
       "Please select your billing state first.": [
         "Lütfen önce faturanın kesileceği ili seçin."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "${ price } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Select billing country to pay": [
         "Ödeme için fatura ülkesini seçin"

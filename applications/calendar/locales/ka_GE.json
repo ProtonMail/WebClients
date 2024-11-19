@@ -296,6 +296,9 @@
       "enable desktop notifications": [
         "სამუშაო მაგიდის გაფრთხილებების ჩართვა"
       ],
+      "Expand video conferencing widget": [
+        "ვიდეოკონფერენცის ვიჯეტის გადიდება"
+      ],
       "Export": [
         "გატანა"
       ],
@@ -554,6 +557,9 @@
       "Remove this participant": [
         "ამ მონაწილის წაშლა"
       ],
+      "Remove zoom meeting": [
+        "Zoom-ის შეხვედრის წაშლა"
+      ],
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
       ],
@@ -721,9 +727,6 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Unlimited-ზე"
-      ],
-      "Upgrade to Mail Plus": [
-        "აწევა Mail Plus-მდე"
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
@@ -1507,6 +1510,9 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Total": [
+        "ჯამი"
       ],
       "Total for ${ n } month": [
         "ჯამში ${ n } თვის",
@@ -3101,14 +3107,14 @@
       "Event not found": [
         "მოვლენა ნაპოვნი არაა"
       ],
+      "Failed to create meeting": [
+        "შეხვედრის შექმნა ჩავარდა"
+      ],
       "Failed to get event": [
         "მოვლენის მიღება ჩავარდა"
       ],
       "Failed to get original occurrence in series": [
         "საწყისი მოხდენის სერიებად მიღების შეცდომა"
-      ],
-      "Failed to load oauth modal.": [
-        "შეუძლებელია Oauth-ის მოდალის ჩატვირთვა."
       ],
       "First name is too long": [
         "სახელი ძალიან გრძელია"
@@ -3995,6 +4001,9 @@
       ],
       "Less details": [
         "ნაკლები დეტალი"
+      ],
+      "Meeting host:": [
+        "შეხვედრის მასპინძელი:"
       ],
       "Meeting link:": [
         "შეხვედრის ბმული:"
@@ -4944,9 +4953,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ remainingCreditsFormatted } კრედიტი იქნება დარჩენილი."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "ჯგუფის შესაქმნელად შეიყვანეთ სახელი და ელფოსტის მისამართი."
       ],
@@ -4995,6 +5001,10 @@
       ],
       "Removed participants will be notified.": [
         "წაშლილი მონაწილეები გაფრთხილებულ იქნებიან."
+      ],
+      "Saving event...": [
+        "მოვლენების შენახვა...",
+        "მოვლენების შენახვა..."
       ],
       "Select a service provider to start": [
         "დასაწყებად აირჩიეთ მომსახურების მომწოდებელი"
@@ -6541,6 +6551,9 @@
         "${ options }-დღიანი ფაილის ვერსიის ისტორია",
         "${ options }-დღიანი ფაილის ვერსიის ისტორია"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin სამუდამოდ"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით",
         "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით"
@@ -6596,6 +6609,12 @@
       "Administration Panel": [
         "ადმინისტრატორის პანელი"
       ],
+      "Advanced account protection": [
+        "დამატებითი ანგარიშის დაცვა"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "დამატებითი ფსევდონიმის ფუნქციები (SimpleLogin-ით)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "${ BRAND_NAME }-ის ყველა პროდუქტი და ფუნქცია"
       ],
@@ -6622,6 +6641,9 @@
       ],
       "Available on all platforms": [
         "ხელმისაწვდომია ყველა პლატფორმაზე"
+      ],
+      "Breach alerts": [
+        "გაჟონვის განგაშები"
       ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"
@@ -7340,6 +7362,12 @@
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"
       ],
+      "Meeting host copied to clipboard": [
+        "შეხვედრის მასპინძელი დაკოპირდა ბუფერში"
+      ],
+      "Meeting ID copied to clipboard": [
+        "შეხვედრის ID დაკოპირდა ბუფერში"
+      ],
       "Passcode copied to clipboard": [
         "წვდომის კოდი დაკოპირდა გაცვლის ბუფერში"
       ]
@@ -7649,8 +7677,14 @@
         "${ n } მომხმარებლის ანგარიში",
         "${ n } მომხმარებლის ანგარიში"
       ],
+      "Activity log": [
+        "აქტივობის ჟურნალი"
+      ],
       "Admin panel to manage users and subscription": [
         "ადმინის პანელ მომხმარებლებისა და გამოწერების სამართავად"
+      ],
+      "Team policies": [
+        "გუნდის პოლიტიკა"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7742,6 +7776,9 @@
       ],
       "Please select your billing state first.": [
         "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "განახლების დრო ${ price }. გააუქმეთ ნებისმიერ დროს."
       ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
@@ -8565,6 +8602,12 @@
       "Now you can see when participants are free to attend your meeting.": [
         "ახლა შეგიძლიათ, ნახოთ, როდის არიან მონაწილეები თავისუფალი თქვენს შეხვედრაზე დასასწრებად."
       ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "შეუმჩნევლად შექმენით და დაამატეთ ვიდეოშეხვედრების ბმულები თქვენს მოვლენებში."
+      ],
+      "Video conferencing is here!": [
+        "ვიდეოკონფერენციები უკვე აქაა!"
+      ],
       "You can now collapse the navigation bar.": [
         "შეგიძლიათ ჩამოშალოთ ნავიგაციის ზოლი."
       ]
@@ -8759,6 +8802,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "გამოწერის სატარიფო გეგმა ჩამოიწევა გადახდის ციკლის ბოლოს."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "სიცოცხლის დრო"
       ]
     },
     "Subscription price": {
@@ -10488,8 +10536,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Zoom-ის შეხვედრასთან მიერთება"
+      ],
       "Meeting ID:": [
         "შეხვედრის ID:"
+      ],
+      "Passcode:": [
+        "საკვანძო კოდი:"
       ]
     }
   }
