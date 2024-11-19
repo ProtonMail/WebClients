@@ -3,6 +3,12 @@ import Logger, { Hook, LogMessage, Transport } from "electron-log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { appSession } from "../session";
 import { isAbsolute } from "node:path";
+import { createHash } from "node:crypto";
+
+if (process.env.NODE_ENV === "test") {
+    Logger.transports.console.level = "error";
+    Logger.transports.file.level = false;
+}
 
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
@@ -27,7 +33,9 @@ const filterSensitiveLogData = (data: unknown[]): unknown[] => {
         const chunk = data[i];
 
         if (typeof chunk === "string") {
-            const splittedData = chunk.split(/(\s|\n)+/g).filter((str) => str.trim().length);
+            const splittedData = getFilteredHomePath(chunk)
+                .split(/(\s|\n)+/g)
+                .filter((str) => str.trim().length);
 
             if (splittedData.length > 1) {
                 data[i] = filterSensitiveLogData(splittedData).join(" ");
@@ -46,12 +54,33 @@ const isEmail = (str: string) => {
     return /^\S+@\S+\.\S+$/i.test(str);
 };
 
-const isTimeKey = (str: string) => {
-    return ["start", "end", "timezone"].includes(str.toLowerCase());
+const getFilteredEmail = (email: string) => {
+    const [, domain] = email.split("@");
+
+    if (["proton.ch", "proton.me", "protonmail.com", "pm.me"].includes(domain.toLowerCase())) {
+        return "__EMAIL_PROTON__";
+    }
+
+    return "__EMAIL_NONPROTON__";
+};
+
+const getFilteredHomePath = (somePath: string) => {
+    const normalizedPath = somePath.replaceAll("\\", "/");
+    const basePath = app.getPath("home").replaceAll("\\", "/");
+    const basePathRegExp = new RegExp(basePath, "gi");
+
+    if (!basePathRegExp.test(normalizedPath)) {
+        return somePath;
+    }
+
+    const hasNotASCII = /[^a-z0-9\s-_\\/]+/i.test(basePath);
+    const hash = createHash("sha1").update(basePath).digest("hex");
+    const replacement = hasNotASCII ? `/__HOME_NONASCII_${hash}__` : `/__HOME_ASCII_${hash}__`;
+    return normalizedPath.replaceAll(basePathRegExp, replacement);
 };
 
 const isIDKey = (str: string) => {
-    return ["state", "selector", "sk"].includes(str.toLowerCase());
+    return str.toLowerCase() === "sentry_key";
 };
 
 /** @see https://docs.sentry.io/security-legal-pii/scrubbing/server-side-scrubbing/ */
@@ -83,7 +112,7 @@ const filterSensitiveString = (data: string): string => {
         const pathList = url.pathname.split("/");
         for (let i = 0; i < pathList.length; i++) {
             if (isEmail(pathList[i])) {
-                pathList[i] = "__EMAIL__";
+                pathList[i] = getFilteredEmail(pathList[i]);
             } else {
                 for (const forbiddenRegexp of FORBIDDEN_REGEXP_LIST) {
                     if (forbiddenRegexp.test(pathList[i])) {
@@ -104,14 +133,14 @@ const filterSensitiveString = (data: string): string => {
         }
 
         if (url.protocol === "file:") {
-            url.pathname = url.pathname.replaceAll(app.getPath("home"), "__HOME__");
+            url.pathname = getFilteredHomePath(url.pathname);
         }
 
         filteredData = url.toString();
     }
 
     if (isAbsolute(filteredData)) {
-        filteredData = filteredData.replaceAll(app.getPath("home"), "__HOME__");
+        filteredData = getFilteredHomePath(filteredData);
     }
 
     return filteredData;
@@ -134,9 +163,7 @@ function filterSearchParams(params: URLSearchParams) {
         }
 
         if (isEmail(filteredValue)) {
-            params.set(key, "__EMAIL__");
-        } else if (isTimeKey(key)) {
-            params.set(key, "__TIME__");
+            params.set(key, getFilteredEmail(filteredValue));
         } else if (isIDKey(key)) {
             params.set(key, "__ID__");
         }
