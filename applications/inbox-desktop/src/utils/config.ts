@@ -28,8 +28,6 @@ export const getExtraResource = () => {
         "./assets/loading.html",
         "./assets/error-network.html",
         "../../packages/styles/assets/img/errors/error-network.svg",
-        "../../packages/styles/assets/img/loading-spinners/proton-spinner.svg",
-        "../../packages/styles/assets/img/loading-spinners/proton-spinner-negative.svg",
     ];
 
     switch (type()) {
