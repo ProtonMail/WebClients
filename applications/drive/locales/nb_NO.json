@@ -4967,9 +4967,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Legg merke til at denne oppgaven kan ta litt tid avhengig av størrelsen på adresseboken din."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Vær oppmerksom på at ved å klikke på knappen \"bekreft\", vil kontoen din ha ${ remainingCreditsFormatted } kreditter igjen."
-      ],
       "Please open the document to view it.": [
         "Åpne dokumentet for å se det."
       ],
@@ -6964,6 +6961,9 @@
         "${ options }-dag filversjonshistorikk",
         "${ options }-dager filversjonshistorikk"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin livstid"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-aliaser"
@@ -7019,6 +7019,9 @@
       "Administration Panel": [
         "Administrasjonspanel"
       ],
+      "Advanced account protection": [
+        "Avansert kontobeskyttelse"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Avanserte aliasfunksjoner (drevet av SimpleLogin)"
       ],
@@ -7048,6 +7051,9 @@
       ],
       "Available on all platforms": [
         "Tilgjengelig på alle plattformer"
+      ],
+      "Breach alerts": [
+        "Varsler om datainnbrudd"
       ],
       "Calendar sharing": [
         "Kalenderdeling"
@@ -7572,6 +7578,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter er enkle merker du kan legge til i meldinger for å gjøre dem enklere å finne eller bruke filtre på."
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Livstids tilgang til ${ PASS_APP_NAME } + SimpleLogin premium-funksjoner."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
       ],
@@ -7995,10 +8004,6 @@
         "Dette elementet ble ikke fjernet fra listen din",
         "Noen elementer kunne ikke fjernes fra listen din"
       ],
-      "This item was succefully removed from your list": [
-        "Dette elementet ble fjernet fra listen din",
-        "Alle elementer ble fjernet fra listen din"
-      ],
       "Trash failed to be emptied": [
         "Papirkurven kunne ikke tømmes"
       ],
@@ -8400,6 +8405,9 @@
       ],
       "Please select your billing state first.": [
         "Velg faktureringsstaten din først."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Fornyes til ${ price }, avbryt når som helst."
       ],
       "Select billing country to pay": [
         "Velg faktureringsland for å betale"
@@ -9697,7 +9705,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Lagre"
+        "Spar"
       ]
     },
     "Subscription status": {

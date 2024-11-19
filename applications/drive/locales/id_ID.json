@@ -1419,6 +1419,9 @@
       "${ users } user": [
         "${ users } pengguna"
       ],
+      "Total": [
+        "Total"
+      ],
       "Total for ${ n } month": [
         "Total untuk ${ n } bulan"
       ]
@@ -4433,7 +4436,7 @@
         "Kunci duplikat diperbarui"
       ],
       "Each code can only be used once": [
-        "Masing-masing kode hanya dapat digunakan sekali"
+        "Masing-masing kode hanya dapat digunakan satu kali"
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -4878,9 +4881,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo yang tersisa pada akun Anda akan menjadi ${ remainingCreditsFormatted }."
       ],
       "Please open the document to view it.": [
         "Silakan buka dokumen ini untuk melihat isinya."
@@ -6893,6 +6893,12 @@
       "Administration Panel": [
         "Panel Administrasi"
       ],
+      "Advanced account protection": [
+        "Perlindungan akun tingkat lanjut"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Fitur alias bertingkat lanjut (diberdayakan oleh SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Seluruh produk dan fitur ${ BRAND_NAME }"
       ],
@@ -7225,7 +7231,7 @@
         "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
       ],
       "Snooze messages and get reminded when you want": [
-        "Tunda pesan dan ingatkan saat Anda mau"
+        "Tunda pesan dan dapatkan peringatan di waktu yang Anda inginkan"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }"
@@ -7431,6 +7437,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Label merupakan penanda yang dapat Anda sematkan kepada pesan tertentu agar mereka dapat dicari atau difilter dengan mudah"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Akses seumur hidup ke ${ PASS_APP_NAME } + berbagai fitur premium SimpleLogin"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Layaknya folder, brankas merupakan cara yang praktis untuk mengelola item Anda"
@@ -7838,9 +7847,6 @@
       "This item was not removed from your list": [
         "Beberapa item gagal dihapus dari daftar Anda"
       ],
-      "This item was succefully removed from your list": [
-        "Semua item berhasil dihapus dari daftar Anda"
-      ],
       "Trash failed to be emptied": [
         "Gagal mengosongkan sampah"
       ],
@@ -8136,8 +8142,14 @@
       "${ n } user account": [
         "${ n } akun pengguna"
       ],
+      "Activity log": [
+        "Log aktivitas"
+      ],
       "Admin panel to manage users and subscription": [
         "Panel admin untuk mengelola pengguna dan langganan"
+      ],
+      "Team policies": [
+        "Kebijakan tim"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8232,6 +8244,9 @@
       ],
       "Please select your billing state first.": [
         "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Terbarui dengan harga ${ price }, batalkan kapan saja."
       ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
@@ -9159,6 +9174,11 @@
         "Langganan akan diturunkan pada akhir siklus tagihan."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Seumur hidup"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
@@ -9247,7 +9267,7 @@
         "Setelah langganan ${ planName } Anda berakhir, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Tim Anda akan mengalami gangguan dalam pekerjaan mereka karena pengguna tambahan tidak didukung pada paket gratis ini."
       ],
       "All you need for your business": [
-        "Semua yang Anda perlukan untuk bisnis Anda"
+        "Semua yang Anda butuhkan untuk bisnis Anda"
       ],
       "Any custom email domains will be disabled": [
         "Domain email khusus apa pun akan dinonaktifkan"
@@ -9301,7 +9321,7 @@
         "Bagaimana tim layanan dukungan kami menghadirkan aplikasi VPN kami secara langsung ke tangan masyarakat."
       ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
-        "Bagaimana kami melawan balik pada saat ${ BRAND_NAME } ditargetkan dalam kampanye yang agresif."
+        "Bagaimana kami melawan balik pada saat ${ BRAND_NAME } diblokir dalam kampanye yang agresif."
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Bagaimana kami mendukung para aktivis lokal ketika privasi dan kebebasan berbicara sedang diancam."
@@ -9328,7 +9348,7 @@
         "Batasan paket gratis"
       ],
       "Make your business stand out": [
-        "Buat bisnis Anda menonjol"
+        "Buat bisnis Anda terlihat menonjol"
       ],
       "Manage your calendar": [
         "Kelola kalender Anda"
@@ -9382,7 +9402,7 @@
         "Langganan pengguna merupakan sumber pemasukan ${ BRAND_NAME } satu-satunya. Dukungan Anda menjaga kami agar tetap independen, mendorong misi kami dalam mewujudkan privasi online, serta melindungi para aktivis dan organisasi yang berjuang demi kebebasan."
       ],
       "Users won’t be able to manage their calendars": [
-        "Pengguna tidak akan dapat mengelola kalendernya"
+        "Pengguna tidak akan dapat mengelola kalender mereka"
       ],
       "Users won’t be able to send emails": [
         "Pengguna tidak akan dapat mengirim email"
@@ -9415,7 +9435,7 @@
         "Anda masih memiliki ${ expiryDate } pada paket ${ planName } Anda. Kami akan menambahkan saldo yang senilai dengan waktu langganan yang tersisa ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batasan paket gratis sebelum membatalkan langganan. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "Paket ${ planName } Anda tidak hanya menjaga data dan komunikasi bisnis aman. Ini juga mendukung sasaran kepatuhan Anda, membuat bisnis Anda menonjol, dan membuat tim Anda selalu terhubung."
+        "Paket ${ planName } Anda tidak hanya menjaga keamanan data dan komunikasi bisnis Anda. Paket ini juga mendukung sasaran kepatuhan bisnis Anda, membuat bisnis Anda tampil menonjol, serta membuat tim Anda selalu terhubung."
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"

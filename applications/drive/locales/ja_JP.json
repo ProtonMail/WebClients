@@ -222,6 +222,9 @@
       "Create and copy alias": [
         "エイリアスを作成してコピー"
       ],
+      "Create free account": [
+        "無料アカウントを作成"
+      ],
       "Create link": [
         "リンクを作成"
       ],
@@ -345,6 +348,12 @@
       "Expand folder": [
         "フォルダーを展開"
       ],
+      "Explore on my own": [
+        "私自身の探索"
+      ],
+      "Explore while you wait": [
+        "待っている間に探索"
+      ],
       "Export": [
         "エクスポート"
       ],
@@ -381,11 +390,17 @@
       "Get verification code": [
         "認証コードを取得"
       ],
+      "Go back": [
+        "もどる"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME }へ移動"
       ],
       "Go to label": [
         "ラベルへ移動"
+      ],
+      "Go to my files": [
+        "ファイルに移動"
       ],
       "Go to panel ${ index }": [
         "パネル ${ index } に移動"
@@ -555,6 +570,9 @@
       "Open navigation": [
         "ナビゲーションを開く"
       ],
+      "Open scan and download info": [
+        "スキャンを開いて情報をダウンロード"
+      ],
       "Pause all": [
         "すべて一時停止"
       ],
@@ -617,6 +635,9 @@
       ],
       "Remove gift code": [
         "ギフトコードを削除"
+      ],
+      "Remove me": [
+        "削除"
       ],
       "Rename": [
         "名前を変更"
@@ -810,6 +831,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "もう一度保存してみてください。保存に失敗しました: ${ saveError }"
       ],
+      "Understood": [
+        "理解しました"
+      ],
       "Undo": [
         "取り消し"
       ],
@@ -974,6 +998,11 @@
       ],
       "Unsupported event": [
         "サポートされていない予定です"
+      ]
+    },
+    "Badge": {
+      "Invited": [
+        "招待済み"
       ]
     },
     "bf2023: Deal details": {
@@ -2385,6 +2414,9 @@
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } で開く"
+      ],
+      "Save for later": [
+        "あとで保存"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2566,6 +2598,18 @@
       ],
       "Error decrypting a computer": [
         "コンピュータの復号化エラー"
+      ],
+      "External accounts are not supported yet": [
+        "外部のアカウントはまだサポートされていません"
+      ],
+      "External invitations are not available yet.": [
+        "外部の招待はまだ有効になっていません。"
+      ],
+      "External invitations are temporarily disabled.": [
+        "外部の招待は一時的に無効です。"
+      ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "外部の招待は一時的に無効です。後ほど再度お試しください。"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "エラー「${ error }」のためファイル「${ item.name }」はアップロードできませんでした。"
@@ -2774,6 +2818,12 @@
       "The folder name is too long. Please choose a different name.": [
         "フォルダー名が長すぎます。別の名前を選択してください。"
       ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "招待はまだ完了していません。後ほど再度お試しください。"
+      ],
+      "The invitation doesn't exist anymore": [
+        "招待はもう存在しません。"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "このラベル名は無効です。別の名前を選択してください。"
       ],
@@ -2839,6 +2889,9 @@
       ],
       "Unknown payment token status": [
         "支払いトークンの状態が不明です。"
+      ],
+      "Upload for this folder is temporarily disabled": [
+        "このフォルダのアップロードは一時的に無効です"
       ],
       "Username must begin with a letter or digit": [
         "ユーザー名は英字か数字で始めなければいけません"
@@ -3709,6 +3762,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
+      "${ invitations.length } pending invitation": [
+        "保留中の招待が${ invitations.length }件"
+      ],
       "${ nbFile } encrypted file": [
         "${ nbFile } 暗号化ファイル。"
       ],
@@ -3859,6 +3915,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "選択したアイテムをごみ箱から完全に削除してよろしいですか？"
       ],
+      "Are you sure you want to proceed?": [
+        "本当に続行しますか？"
+      ],
       "Attention required": [
         "注意が必要です"
       ],
@@ -3903,6 +3962,9 @@
       ],
       "Change your password": [
         "パスワードを変更"
+      ],
+      "Check for malicious files": [
+        "悪意のあるファイルを確認"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "${ max } のうち ${ progress } の連絡先を確認しています..."
@@ -4060,6 +4122,9 @@
       "Downloading": [
         "ダウンロード中"
       ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "${ DRIVE_APP_NAME }からの${ DOCS_APP_NAME }ファイルのダウンロードは現在サポートされていません ー ダウンロードには含まれていません。"
+      ],
       "Downloading all encrypted files": [
         "すべての暗号化されたファイルをダウンロードする"
       ],
@@ -4092,6 +4157,9 @@
       ],
       "Emails are automatically signed": [
         "電子メールは自動的に署名されます"
+      ],
+      "Empty folder": [
+        "空のフォルダ"
       ],
       "Enabling drive search": [
         "ドライブ内検索をオンにしています"
@@ -4159,6 +4227,9 @@
       "File will not be updated": [
         "ファイルは更新されません"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "他のユーザーがあなたと共有したファイルやフォルダがここに表示されます。"
+      ],
       "Finalizing": [
         "完了処理中"
       ],
@@ -4182,6 +4253,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "最適な結果を得るには、ストリーミングやメモリ消費の大きな処理を避けるか、より小さな処理単位にアップロードを分割してください。"
+      ],
+      "Free 5GB encrypted storage to get started": [
+        "無料の5 GB暗号化ストレージで始めましょう"
       ],
       "from the version history?": [
         "を完全に削除してよろしいですか？"
@@ -4246,6 +4320,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
+      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "その間に、あなた自身の${ DRIVE_APP_NAME }アカウントにサインアップして、エンドツーエンドの暗号化でデータを保護し、安全に共有しましょう。"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
       ],
@@ -4293,6 +4370,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "エンドツーエンド暗号化でファイルをセキュアに保つ"
       ],
       "Key fingerprint": [
         "鍵のフィンガープリント"
@@ -4486,6 +4566,9 @@
       "Please enter the password to decrypt and view content.": [
         "復号およびファイルの閲覧には、パスワードが必要です。"
       ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "ダウンロードしたい場合は、代わりに${ DOCS_APP_NAME }アプリケーションから直接エクスポートしてください。"
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "これらのグループに割り当てられたアドレスは削除されませんので、ご注意ください。"
       ],
@@ -4588,6 +4671,9 @@
       "Report link": [
         "リンクを報告"
       ],
+      "Request access, or switch to an account with access.": [
+        "アクセスを要求するか、アクセス権のあるアカウントに切り替えてください。"
+      ],
       "Restore": [
         "復元"
       ],
@@ -4662,6 +4748,9 @@
       ],
       "Share files with links": [
         "リンクでファイルを共有"
+      ],
+      "Share via link settings": [
+        "リンク設定経由で共有"
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText }の共有リンク"
@@ -4741,6 +4830,9 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "まだ転送されていないファイルがあります。転送マネージャーを閉じるとすべての転送が中止されます。"
       ],
+      "There is nothing to see here": [
+        "ここには何もありません"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "この操作はリンクを削除し、すべてのユーザーがアクセスできなくなります。"
       ],
@@ -4812,6 +4904,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
+        "あなたの保護するために、${ DRIVE_APP_NAME }はプライバシーを保護しながらファイルをスキャンし、悪意のあるファイルをブロックします。ただし信頼できるソースからのみファイルをダウンロードすることをおすすめします。"
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "予定をインポートするには、まず ${ CALENDAR_APP_NAME } に予定のインポート先となるカレンダーを作成してください。"
@@ -4936,6 +5031,9 @@
       "Warning": [
         "警告"
       ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "おめでとうございます、ストレージが 5 GBに増えました！"
+      ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "技術的な問題が発生しています。新しい写真のアップロードは一時的に無効になっています。"
       ],
@@ -5008,6 +5106,9 @@
       "You already have a free account": [
         "すでに無料アカウントをお持ちですか？"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "共有アイテムから離れようとしています。所有者が再度共有するまで、このアイテムにアクセスできなくなります。"
+      ],
       "You are about to open another browser tab and visit:": [
         "別のタブで下記リンクを開こうとしています:"
       ],
@@ -5056,8 +5157,14 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal アカウントにクレジットカードまたは銀行口座を登録しておく必要があります。PayPal アカウントをお持ちでない場合はこちらのボタンをクリックしてください。"
       ],
+      "You need access": [
+        "アクセスが必要です"
+      ],
       "You will lose all unsaved changes.": [
         "保存されていない変更はすべて失なわれます。"
+      ],
+      "You will need to save it again from the public link page.": [
+        "公開リンクページから再度保存する必要があります。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
@@ -5533,6 +5640,9 @@
       "Location": [
         "場所"
       ],
+      "Log in or sign up ": [
+        "ログインもしくはサインアップ "
+      ],
       "Mail Server (IMAP)": [
         "メールサーバー (IMAP)"
       ],
@@ -5665,6 +5775,15 @@
       "Set recovery method": [
         "回復手段を設定"
       ],
+      "Share a file": [
+        "ファイルを共有"
+      ],
+      "Shared by": [
+        "から共有された"
+      ],
+      "Shared on": [
+        "に共有された"
+      ],
       "Show indexing progress of Encrypted Search": [
         "暗号化済みデータ検索のインデックス作成状況を表示"
       ],
@@ -5706,6 +5825,9 @@
       ],
       "Theme": [
         "テーマ"
+      ],
+      "This file is potentially infected": [
+        "このファイルは感染している恐れがあります"
       ],
       "This will permanently delete all files in your locked drive.": [
         "開くことのできないドライブ内のすべてのデータが削除されます。"
@@ -7014,6 +7136,9 @@
       "${ reason } has been enabled": [
         "${ reason } が有効になりました"
       ],
+      "Access updated and shared": [
+        "アクセスは更新され共有されました"
+      ],
       "All items will soon be permanently deleted from trash": [
         "すべてのアイテムはまもなくごみ箱から完全に削除されます"
       ],
@@ -7107,8 +7232,14 @@
       "The link to your item was deleted": [
         "アイテムのリンクを削除しました"
       ],
+      "This item was not removed from your list": [
+        "このアイテムはリストから削除されました"
+      ],
       "Trash failed to be emptied": [
         "ごみ箱を空にできませんでした"
+      ],
+      "You stopped sharing this item": [
+        "このアイテムの共有を停止しました"
       ],
       "Your old files will be deleted in 72 hours": [
         "古いファイルは72時間で削除されます"
@@ -7136,16 +7267,58 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "続ける"
+      ],
+      "Get started": [
+        "始めましょう"
+      ],
+      "Install and continue": [
+        "インストールして続ける"
+      ],
+      "Install later": [
+        "あとでインストール"
+      ],
+      "Invite members": [
+        "メンバーを招待"
+      ],
+      "Maybe later": [
+        "たぶんあとで"
+      ],
       "Next": [
         "次へ"
       ],
+      "Select theme": [
+        "テーマを選択"
+      ],
+      "Skip": [
+        "スキップ"
+      ],
+      "Skip for now": [
+        "今はスキップ"
+      ],
       "Start using ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } を使ってみる"
+      ],
+      "Try the app": [
+        "アプリを試す"
+      ],
+      "Upload file": [
+        "ファイルをアップロード"
+      ],
+      "Upload folder": [
+        "フォルダをアップロード"
       ]
     },
     "Onboarding Info": {
+      "Edit documents online": [
+        "オンラインでドキュメントを編集"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "${ DRIVE_APP_NAME } を使い始めると、ストレージが 5 GB にアップグレードされます！"
+      ],
+      "Securely share files and folders": [
+        "安全にファイルとフォルダを共有"
       ],
       "Set a recovery method": [
         "回復手段を設定"
@@ -7175,6 +7348,18 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "最終承認中"
+      ],
+      "Hang tight!": [
+        "もう少しお待ちください！"
+      ],
+      "Invite team members": [
+        "チームメンバーを招待"
+      ],
+      "Upload and protect your important files": [
+        "アップロードして重要なファイルを保護"
+      ],
       "Your welcome bonus": [
         "ウェルカムボーナス"
       ]
@@ -7504,6 +7689,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } からの公式メール"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "サインインは正しく完了しませんでした。"
       ]
     },
     "Security Center": {
@@ -7951,6 +8141,9 @@
     "sso": {
       "Sign in": [
         "サインイン"
+      ],
+      "Sign in to your organization": [
+        "組織にサインインする"
       ]
     },
     "Status": {
@@ -8101,17 +8294,44 @@
       "${ planMaxSpace } total storage": [
         "合計 ${ planMaxSpace } のストレージ"
       ],
+      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName }は全てのアプリとプレミアム機能へのアクセスを提供します。プライバシーは組み込まれているため、データと身元が安全であることを知りながら、安心して利用できます。"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName }は全てのアプリ、全ての機能、新機能への早期アクセス、そしてデータとセキュリティをコントロールするための全ての必要な機能を提供します。"
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName }は、基本を超えて、生産性を高め、整理整頓をし、受信トレイやメールのアイデンティティなどをよりコントロールできるようにサポートします。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName }はメールや添付ファイル、イベント、パスワード、ファイルのための${ planMaxSpace }のストレージを提供します。さらに年間でのストレージボーナスを受け取ることができます。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName }は、ファイルや写真のために${ planMaxSpace }のストレージを提供します。さらに、毎年のストレージボーナスを受け取る資格があります。"
+      ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "${ PROTON_SENTINEL_NAME } の高度なアカウント保護"
       ],
       "2 users": [
         "2 ユーザー"
       ],
+      "Add any new files": [
+        "新しいファイルを追加"
+      ],
       "Automatic email forwarding": [
         "自動メール転送"
       ],
+      "Back up photos from your devices": [
+        "デバイスから写真をバックアップ"
+      ],
+      "Comprehensive privacy and security": [
+        "総合的なプライバシーとセキュリティ"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "デスクトップアプリとメールクライアントのサポート (IMAP 経由)"
+      ],
+      "Direct contribution to our mission": [
+        "私たちのミッションへの直接的な貢献"
       ],
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
@@ -8119,11 +8339,17 @@
       "Email productivity features": [
         "メールの生産性機能"
       ],
+      "Extra storage and bonuses": [
+        "追加のストレージとボーナス"
+      ],
       "Extra storage and users": [
         "追加のストレージとユーザー"
       ],
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "私たちのカスタマーサポートチームがどのようにしてVPNアプリを直接人々の手に届けたか。"
       ],
       "Invited members will be removed from your organization": [
         "招待メンバーは組織から削除されます"
@@ -8133,6 +8359,9 @@
       ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
+      ],
+      "Manage your calendar": [
+        "カレンダーを管理"
       ],
       "Online privacy, for your whole family": [
         "家族全員のオンラインプライバシー"
@@ -8149,6 +8378,18 @@
       "Read the story": [
         "ストーリーを読む"
       ],
+      "Receive new emails": [
+        "新しいメールを受信"
+      ],
+      "Send emails with attachments": [
+        "添付ファイルをメール送信"
+      ],
+      "Sync files on devices": [
+        "デバイス上の同期ファイル"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "ベストオブ${ BRAND_NAME }"
+      ],
       "Unblocking internet access in Iran": [
         "イランでのインターネットアクセスのブロックを解除"
       ],
@@ -8163,6 +8404,9 @@
       ],
       "Watch the interview": [
         "インタビューを見る"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "${ planName }をキャンセルすると失うもの"
       ],
       "Yearly free storage bonuses": [
         "年間無料ストレージボーナス"
@@ -8486,6 +8730,9 @@
       "Are you sure you want to close the preview?": [
         "プレビューを閉じてよろしいですか?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "本当にリストからこのアイテムを削除しますか？"
+      ],
       "Billing cycle": [
         "支払い間隔"
       ],
@@ -8530,6 +8777,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "${ BRAND_NAME } ボーナスの損失を確認"
+      ],
+      "Confirmation required?": [
+        "確認が必要ですか？"
       ],
       "Contact Details": [
         "連絡先の詳細"
@@ -8720,6 +8970,9 @@
       "Item details": [
         "アイテムの詳細"
       ],
+      "Last edited by": [
+        "による最終編集"
+      ],
       "Link confirmation": [
         "リンクの確認"
       ],
@@ -8848,6 +9101,9 @@
       ],
       "Restore your files": [
         "ファイルを復元"
+      ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }にあとで保存"
       ],
       "Search results": [
         "検索結果"
@@ -8987,6 +9243,9 @@
       "What would you like to import?": [
         "何をインポートしたいですか?"
       ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "共有アイテムの招待を拒否しようとしています。拒否すると、所有者が再度共有するまでアクセスできなくなります。"
+      ],
       "You have inaccessible files": [
         "利用できないファイルがあります"
       ],
@@ -9004,6 +9263,9 @@
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
+      ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "ダウンロードには${ DOCS_APP_NAME }ファイルが含まれています"
       ],
       "Your exposed information": [
         "あなたの暴露された情報"
@@ -9032,6 +9294,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "この共有ファイルを${ DRIVE_APP_NAME }に追加して、後で簡単にアクセスできるようにしましょう。"
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」はこのユーザーに送信する際の書式が、自動選択される事を示しています。「プレーンテキスト」は、常にプレーンテキストに変換されてメッセージが送信されることを示します。"
       ],
@@ -9077,6 +9342,9 @@
       "Load image": [
         "画像を読み込む"
       ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "メッセージとファイル名は、メールに含まれる際にゼロアクセス暗号化で保存されます"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
       ],
@@ -9103,6 +9371,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛の電子メールをエンドツーエンド暗号化することができます"
+      ],
+      "We have sent them an invite to access the item.": [
+        "アイテムにアクセスするための招待を送りました。"
       ],
       "You do not have any contacts to export": [
         "エクスポートする連絡先がありません"

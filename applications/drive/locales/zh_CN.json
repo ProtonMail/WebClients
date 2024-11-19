@@ -957,6 +957,9 @@
       "${ price } per user": [
         "${ price } 每位用户"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } 个写作助手许可证"
+      ],
       "${ users } user": [
         "${ users } 位用户"
       ]
@@ -7303,6 +7306,9 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "安全保险库共享"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "安全保险库共享 (${ n } 个保险库) 和链接共享"
       ]
     },
     "passwordless": {

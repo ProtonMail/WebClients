@@ -810,6 +810,9 @@
       "Start setup": [
         "Приступить к настройке"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Начиная с ${ priceUnlimited }"
+      ],
       "Stay": [
         "Остаться"
       ],
@@ -830,6 +833,9 @@
       ],
       "Toggle Calendar app": [
         "Переключить на приложение Календарь"
+      ],
+      "Toggle Contacts app": [
+        "Переключить приложение \"Контакты\""
       ],
       "Toggle settings": [
         "Включить/выключить настройки"
@@ -872,6 +878,9 @@
       ],
       "Upgrade now": [
         "Улучшить сейчас"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Улучшить до ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Все равно загрузить"
@@ -1238,6 +1247,12 @@
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адресов электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адресов электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адрес электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адреса электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адресов электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адреса электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам доступны 15 адресов электронной почты, поддержка пользовательских доменов адреса электронной почты, помощник по написанию ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и не только."
       ],
@@ -1389,12 +1404,47 @@
         "Ваша подписка скоро закончится"
       ]
     },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } хранилище"
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Все приложения ${ BRAND_NAME } и платные функции"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Облачное хранилище и обмен большими файлами"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Облачное хранилище с шифрованием для фотографий и документов"
+      ],
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ],
+      "Save ${ upsellSavings }": [
+        "Сэкономьте ${ upsellSavings }"
+      ],
+      "Secure personal and shared calendar": [
+        "Безопасные личный и общий календари"
+      ],
+      "Try ${ planName }": [
+        "Попробуйте ${ planName }"
+      ],
+      "Ultra fast and private VPN": [
+        "Сверхбыстрый и конфиденциальный VPN"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } пользователь",
         "${ users } пользователя",
         "${ users } пользователей",
         "${ users } пользователей"
+      ],
+      "Total": [
+        "Итого"
       ],
       "Total for ${ n } month": [
         "Итого за ${ n } месяц",
@@ -2409,6 +2459,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
       ],
@@ -2445,6 +2498,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Чтобы убедиться в высшей безопасности вашего аккаунта, установите фразу для восстановления."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Для импорта через CSV- и VCF-файл убедитесь, что файл не превышает ${ MAX_IMPORT_FILE_SIZE_STRING } или ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, пожалуйста, разделите его на более мелкие файлы. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Чтобы импортировать контакты из Google или Outlook, ${ easySwitchLink }."
       ],
@@ -2453,6 +2509,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Перетаскивайте контакты, чтобы задавать им приоритет при объединении. Снимите галочку с контактов, которые вы не хотите объединять."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Используя группы контактов, вы можете отправлять письма всем членам группы одним щелчком."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можете импортировать события в формате iCal (ICS файл). Размер файла не должен быть более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_EVENTS_STRING } событий. Если ваш файл больше, разделите его на меньшие файлы."
@@ -2465,6 +2524,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ваш аккаунт и методы восстановления данных настроены."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
       ]
     },
     "description": {
@@ -3139,6 +3201,9 @@
       "You have reached the maximum number of calendars.": [
         "Вы достигли максимального количества календарей."
       ],
+      "You have reached the number of contacts limit for your account": [
+        "Вы достигли лимита контактов для вашего аккаунта"
+      ],
       "You must set a name": [
         "Вы должны задать имя"
       ],
@@ -3360,6 +3425,11 @@
         "Также вы можете обновить страницу или повторить попытку позже."
       ]
     },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Отображаемое название не может быть пустым"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Изображение не выбрано"
@@ -3484,6 +3554,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Пожизненные аккаунты не могут присоединяться к семейному тарифу."
       ],
+      "Manage addresses": [
+        "Управление адресами"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Владельцы тарифа с участниками не могут присоединиться к другому семейному тарифу."
       ],
@@ -3501,6 +3574,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Вы можете принять не более 3 приглашений за полгода. Если вам необходимо увеличить это число, обратитесь по ссылке: ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Вы не можете принять это приглашение со своим текущим планом."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас пригласили присоединиться к группе «${ bannerOrganization }». ${ viewInviteButton }"
@@ -3538,6 +3614,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Создайте семейный аккаунт и приглашайте пользователей"
+      ],
       "Set up your family": [
         "Создайте семейную группу"
       ],
@@ -4134,6 +4213,12 @@
         "${ nbFile } зашифрованных файлов...",
         "${ nbFile } зашифрованных файлов..."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "У пожизненного предложения ${ PASS_SHORT_APP_NAME } нет платы за продление, это однократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "У пожизненного предложения ${ PASS_SHORT_APP_NAME } нет платы за продление, это однократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }. Ваша стоимость и дата продления подписки ${ planTitle } остаются неизменными."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } приостановлен",
         "${ pausedCount } приостановлены",
@@ -4710,6 +4795,9 @@
       "How does encrypted search work?": [
         "Как работает зашифрованный поиск?"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
       ],
@@ -4751,6 +4839,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
+      ],
+      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "А пока зарегистрируйте свой собственный аккаунт ${ DRIVE_APP_NAME } для защиты данных с помощью сквозного шифрования и безопасного обмена ими."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
@@ -4965,6 +5056,9 @@
       "Organization size": [
         "Размер организации"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Наши предупреждения приоритизируют безопасность. Если вы не узнаёте ничего из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
+      ],
       "Owner": [
         "Владелец"
       ],
@@ -5015,9 +5109,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Пожалуйста, обратите внимание, что этот процесс может занять некоторое время в зависимости от размера вашей адресной книги."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Обратите внимание, что после нажатия на «Подтвердить» на вашем счету останется ${ remainingCreditsFormatted }."
       ],
       "Please open the document to view it.": [
         "Откройте документ для просмотра."
@@ -5577,6 +5668,9 @@
       "You are about to open another browser tab and visit:": [
         "Вы собираетесь открыть другую вкладку браузера и посетить:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Вы собираетесь открыть браузер по умолчанию и посетить:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
       ],
@@ -5666,6 +5760,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ваша подписка ${ PASS_SHORT_APP_NAME } Plus будет заменена на пожизненный ${ PASS_SHORT_APP_NAME } . Остаток средств вашей подписки будет добавлен в вашу учетную запись. ${ PASS_SHORT_APP_NAME } действует без платы за продление, это единократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш аккаунт имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
@@ -5864,6 +5961,9 @@
       "Address": [
         "Адрес"
       ],
+      "Anderson": [
+        "Андерсон"
+      ],
       "Anyone on the Internet with the link can view": [
         "Каждый, кто находится в Интернете и имеет ссылку, может посмотреть"
       ],
@@ -5950,6 +6050,9 @@
       ],
       "Comment": [
         "Комментарий"
+      ],
+      "Company name": [
+        "Название компании"
       ],
       "Confirm password": [
         "Подтвердить пароль"
@@ -6269,6 +6372,9 @@
       "Reveal password": [
         "Показать пароль"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Security code (${ codeName })": [
         "Код безопасности (${ codeName })"
       ],
@@ -6340,6 +6446,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Это окончательно удалит все ваши файлы в вашем закрытом хранилище."
+      ],
+      "Thomas": [
+        "Томас"
       ],
       "Title": [
         "Заголовок"
@@ -6706,6 +6815,9 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
+      "GZip Archive": [
+        "Сжатый архив GZip"
+      ],
       "HyperText Markup Language (HTML)": [
         "Язык гипертекстовой разметки (HTML)"
       ],
@@ -6723,6 +6835,9 @@
       ],
       "Java Archive (JAR)": [
         "Архив Java (JAR)"
+      ],
+      "JPEG image": [
+        "Изображение JPEG"
       ],
       "MP3 audio": [
         "Аудио MP3"
@@ -6759,6 +6874,9 @@
       ],
       "Opus audio": [
         "Аудио Opus"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "Архив RAR"
@@ -6861,8 +6979,14 @@
       "Get started for ${ price }": [
         "Начните с ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Начиная с ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Улучшить сейчас"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Улучшить до ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6991,6 +7115,9 @@
         "${ options }-дневный журнал версий файла",
         "${ options }-дневный журнал версий файла"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin пожизненно"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } с ${ n } псевдонимом hide-my-email",
         "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email",
@@ -7048,6 +7175,12 @@
       "Administration Panel": [
         "Панель администратора"
       ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Расширенные возможности псевдонимов (основанные на SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Все продукты и функции ${ BRAND_NAME }"
       ],
@@ -7074,6 +7207,9 @@
       ],
       "Available on all platforms": [
         "Доступно на всех платформах"
+      ],
+      "Breach alerts": [
+        "Оповещения об утечках"
       ],
       "Calendar sharing": [
         "Совместное использование календаря"
@@ -7294,6 +7430,9 @@
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
       ],
+      "TOR over VPN": [
+        "TOR через VPN"
+      ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
       ],
@@ -7501,6 +7640,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Оформите Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Начиная с ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7569,6 +7711,12 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Создайте до ${ n } адресов электронной почты или псевдонимов, которые можно назначить членам семьи. Используйте их для идентификации в Интернете, например JohnShopper@${ domain } для аккаунтов для покупок."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Пользовательские домены для псевдонимов, дополнительные почтовые ящики, возможность отправки писем с псевдонимов и многое другое"
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Защищает конфиденциальность VPN от угроз, передавая ваш интернет-трафик через несколько серверов"
       ],
@@ -7601,6 +7749,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Ярлыки - это простые метки, которые можно добавлять к сообщениям, чтобы облегчить их поиск или применить к ним фильтры"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Пожизненный доступ к ${ PASS_APP_NAME } + премиум-функции SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Как и папка, хранилище - это удобный способ упорядочить ваши объекты."
@@ -7664,6 +7815,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Сбрасывайте пароли и двухфакторную аутентификацию для пользователей"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Направляйте свой трафик через сеть Tor одним нажатием"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
@@ -8032,6 +8186,9 @@
       "The item was not added to your drive": [
         "Элемент не был добавлен в хранилище"
       ],
+      "The item was successfully added to your drive": [
+        "Элемент был успешно добавлен в хранилище"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Не удалось удалить ссылку на \"${ name }\""
       ],
@@ -8049,12 +8206,6 @@
         "Не вышло удалить некоторые элементы из списка.",
         "Не вышло удалить некоторые элементы из списка.",
         "Не вышло удалить некоторые элементы из списка."
-      ],
-      "This item was succefully removed from your list": [
-        "Элемент успешно удалён из списка.",
-        "Все элементы успешно удалены из списка.",
-        "Все элементы успешно удалены из списка.",
-        "Все элементы успешно удалены из списка."
       ],
       "Trash failed to be emptied": [
         "Не удалось очистить корзину"
@@ -8085,6 +8236,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Чтобы импорт сработал, необходимо выбрать все требуемые элементы, как показано в GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
       ]
     },
     "Onboarding": {
@@ -8358,8 +8514,14 @@
         "${ n } аккаунтов пользователей",
         "${ n } аккаунтов пользователей"
       ],
+      "Activity log": [
+        "Журнал действий"
+      ],
       "Admin panel to manage users and subscription": [
         "Панель администратора для управления пользователями и подпиской"
+      ],
+      "Team policies": [
+        "Политики команды"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8397,6 +8559,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Банковский перевод"
+      ],
       "Credit/debit card": [
         "Кредитная/дебетовая карта"
       ],
@@ -8444,6 +8609,9 @@
       "Please select your billing state first.": [
         "Сначала выберите государство для выставления счета."
       ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Затем стоимость подписки составит ${ price }. Отменить её можно в любое время."
+      ],
       "Select billing country to pay": [
         "Для оплаты, пожалуйста выберите страну"
       ],
@@ -8481,6 +8649,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша карта отклонена. Пожалуйста, попробуйте другую карту или свяжитесь с вашим банком для авторизации транзакции."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Подтверждая этот платеж, вы авторизуете ${ BRAND_NAME } и Stripe, наш поставщик платежных услуг, поручить вашему банку депонировать свой счет и банк соответствующим образом депонировать свой счет. Вы можете получить возврат средств в течение 8 недель со дня дебетования на основании Вашего договора с Вашим банком."
+      ],
+      "Street address, postal code, and city": [
+        "Адрес улицы, почтовый индекс и город"
       ]
     },
     "PGP key encryption warning": {
@@ -8745,6 +8921,9 @@
       "Try ${ PASS_APP_NAME }": [
         "Попробуйте ${ PASS_APP_NAME }"
       ],
+      "Used on Amazon for shopping, etc.": [
+        "Используется на Amazon для покупок и прочего"
+      ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Когда вас попросят указать адрес электронной почты, укажите вместо него этот псевдоним. Псевдонимы предоставляются с помощью ${ passLink }."
       ]
@@ -8900,7 +9079,7 @@
     },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
-        "Сброс пароля отменен"
+        "Сброс пароля отменён"
       ]
     },
     "session_recovery:cancellation:title": {
@@ -9231,8 +9410,14 @@
       ]
     },
     "sso": {
+      "Sign in": [
+        "Войти"
+      ],
       "Sign in to your organization": [
         "Войдите в свою организацию"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будете перенаправлены на вашего стороннего провайдера SSO."
       ]
     },
     "State": {
@@ -9429,6 +9614,11 @@
         "Подписка будет понижена в конце платежного периода."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Пожизненный"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
@@ -9473,6 +9663,9 @@
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } превосходит базовые параметры, чтобы помочь вам повысить продуктивность и организованность, а также управлять своим почтовым ящиком, личными данными электронной почты и многим другим."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } помогает вам убедиться, что каждый из членов вашей семьи и их данные защищены когда бы вы не находились в Интернете."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } предлагает ${ planMaxSpace } хранилища для ваших писем, вложений, событий, паролей и файлов. Вы также имеете право на ежегодные бонусы для хранения данных."
@@ -9608,6 +9801,9 @@
       ],
       "Learn more about our impact": [
         "Узнайте больше о нашем вкладе"
+      ],
+      "Limitations of the free plan:": [
+        "Ограничения бесплатного плана:"
       ],
       "Make your business stand out": [
         "Сделайте свой бизнес заметным"
@@ -10324,6 +10520,9 @@
       "Groups": [
         "Группы"
       ],
+      "High security for your account": [
+        "Высокая безопасность вашего аккаунта"
+      ],
       "Hm, we couldn't find that one": [
         "Похоже, мы не смогли найти эту страницу"
       ],
@@ -10407,6 +10606,9 @@
       ],
       "Number of items": [
         "Количество элементов"
+      ],
+      "One email, many recipients": [
+        "Одно письмо эл. почты, много получателей"
       ],
       "Open actions dropdown": [
         "Показать список доступных действий"
@@ -10847,6 +11049,11 @@
       ],
       "No ads": [
         "Без рекламы"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Доступ к серверам Secure Core, быстрая загрузка P2P/BitTorrent, Tor через VPN и многое другое."
       ]
     },
     "wallet_signup_2024: Info": {

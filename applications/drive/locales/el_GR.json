@@ -4967,9 +4967,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ remainingCreditsFormatted }."
-      ],
       "Please open the document to view it.": [
         "Παρακαλούμε ανοίξτε το έγγραφο για να το δείτε."
       ],
@@ -6907,6 +6904,9 @@
         "${ options }-ημέρα ιστορικό εκδόσεων αρχείου",
         "${ options }-ημέρες ιστορικό εκδόσεων αρχείου"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin εφ'όρου ζωής"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμο",
         "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμα"
@@ -6962,6 +6962,9 @@
       "Administration Panel": [
         "Πίνακας Διαχείρισης"
       ],
+      "Advanced account protection": [
+        "Προηγμένη προστασία λογαριασμού"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Προηγμένες λειτουργίες ψευδωνύμων (υποστηρίζεται από την SimpleLogin)"
       ],
@@ -6991,6 +6994,9 @@
       ],
       "Available on all platforms": [
         "Διαθέσιμο σε όλες τις πλατφόρμες"
+      ],
+      "Breach alerts": [
+        "Ειδοποιήσεις Παραβίασης"
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"
@@ -7515,6 +7521,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Οι ετικέτες είναι απλό κείμενο που μπορείτε να προσθέσετε στα μηνύματα για να διευκολύνετε την εύρεση ή την εφαρμογή φίλτρων"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Ισόβια πρόσβαση σε ${ PASS_APP_NAME } + premium χαρακτηριστικά SimpleLogin."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Όπως ένας φάκελος, μια θυρίδα αποθήκευσης είναι ένας βολικός τρόπος για να οργανώσετε τα στοιχεία σας"
       ],
@@ -7938,10 +7947,6 @@
         "Αυτό το στοιχείο δεν αφαιρέθηκε από τη λίστα σας",
         "Αυτά τα στοιχεία δεν αφαιρέθηκαν από τη λίστα σας"
       ],
-      "This item was succefully removed from your list": [
-        "Αυτό το στοιχείο αφαιρέθηκε με επιτυχία από τη λίστα σας",
-        "Όλα τα στοιχεία αφαιρέθηκαν επιτυχώς από τη λίστα σας"
-      ],
       "Trash failed to be emptied": [
         "Αποτυχία εκκαθάρισης Διαγραμμένων"
       ],
@@ -8343,6 +8348,9 @@
       ],
       "Please select your billing state first.": [
         "Παρακαλούμε επιλέξτε πρώτα την κατάσταση χρέωσής σας."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Ανανεώνει σε ${ price }, ακυρώστε ανά πάσα στιγμή."
       ],
       "Select billing country to pay": [
         "Επιλέξτε χώρα χρέωσης για πληρωμή"
