@@ -5125,9 +5125,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane ${ remainingCreditsFormatted } kreditů."
-      ],
       "Please open the document to view it.": [
         "Prosím, otevřete dokument pro jeho zobrazení."
       ],
@@ -7133,6 +7130,9 @@
         "${ options }denní historie verzí souborů",
         "${ options }denní historie verzí souborů"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin, doživotně"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } aliasem hide-my-email",
         "${ PASS_APP_NAME } se ${ n } aliasy hide-my-email",
@@ -7190,6 +7190,9 @@
       "Administration Panel": [
         "Panel správce"
       ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Pokročilé funkce aliasů (založeno na SimpleLogin)"
       ],
@@ -7219,6 +7222,9 @@
       ],
       "Available on all platforms": [
         "Dostupné na všech platformách"
+      ],
+      "Breach alerts": [
+        "Upozornění na úniky informací"
       ],
       "Calendar sharing": [
         "Sdílení kalendáře"
@@ -7759,6 +7765,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Jmenovky jsou jednoduché štítky, které můžete přidat ke zprávám aby se vám lépe hledaly a používaly filtry"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Doživotní přístup k prémiovým funkcím ${ PASS_APP_NAME } + SimpleLogin."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Podobně jako složka je trezor praktickým nástrojem k organizaci vašich položek"
       ],
@@ -8216,12 +8225,6 @@
         "Odebrání některých položek ze seznamu selhalo",
         "Odebrání některých položek ze seznamu selhalo"
       ],
-      "This item was succefully removed from your list": [
-        "Tato položka byla úspěšně odebrána z vašeho seznamu",
-        "Všechny položky byly úspěšně odebrány z vašeho seznamu",
-        "Všechny položky byly úspěšně odebrány z vašeho seznamu",
-        "Všechny položky byly úspěšně odebrány z vašeho seznamu"
-      ],
       "Trash failed to be emptied": [
         "Koš se nepodařilo vyprázdnit"
       ],
@@ -8631,6 +8634,9 @@
       ],
       "Please select your billing state first.": [
         "Vyberte prosím nejprve váš stát platby."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Obnovuje se za ${ price }, zrušit lze kdykoli."
       ],
       "Select billing country to pay": [
         "Vyberte zemi platby"

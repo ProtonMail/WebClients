@@ -4058,7 +4058,7 @@
         "${ nbFile } 암호화된 파일..."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
+        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
@@ -4887,9 +4887,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "이 과정은 주소록의 크기에 따라 시간이 좀 걸릴 수 있습니다."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "확인 버튼을 누르면 계정에는 ${ remainingCreditsFormatted } 크레딧이 남게됩니다."
       ],
       "Please open the document to view it.": [
         "문서를 확인하려면 열어주세요."
@@ -6794,6 +6791,9 @@
       "${ options }-day file version history": [
         "${ options }일 파일 버전 기록"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin 평생 이용권"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ n }개의 hide-my-email 별칭이 포함된 ${ PASS_APP_NAME }"
       ],
@@ -6848,6 +6848,9 @@
       "Administration Panel": [
         "관리 패널"
       ],
+      "Advanced account protection": [
+        "향상된 계정 보호"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "고급 별칭 기능 (SimpleLogin 제공)"
       ],
@@ -6877,6 +6880,9 @@
       ],
       "Available on all platforms": [
         "모든 플랫폼에서 지원"
+      ],
+      "Breach alerts": [
+        "정보 유출 경고"
       ],
       "Calendar sharing": [
         "일정 공유"
@@ -7393,6 +7399,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "라벨은 메시지를 찾기 쉽게하거나 필터를 적용하기 위해 추가 할 수 있는 간단한 태그입니다"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "${ PASS_APP_NAME } + SimpleLogin 프리미엄 기능에 평생 접근"
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "금고는 폴더처럼 항목들을 쉽게 분류할 수 있습니다"
       ],
@@ -7799,9 +7808,6 @@
       "This item was not removed from your list": [
         "이 항목이 목록에서 삭제되지 않았습니다."
       ],
-      "This item was succefully removed from your list": [
-        "항목이 성공적으로 목록에서 삭제되었습니다."
-      ],
       "Trash failed to be emptied": [
         "휴지통 비우기 실패"
       ],
@@ -7913,7 +7919,7 @@
         "온라인 문서 편집"
       ],
       "End-to-end encrypted storage for your files": [
-        "내 파일에 대한 종단간 암호화 스토리지"
+        "내 파일을 위한 종단간 암호화 스토리지"
       ],
       "Faster uploads for large or multiple files": [
         "크거나 다양한 파일을 위한 더 빠른 업로드"
@@ -8199,6 +8205,9 @@
       ],
       "Please select your billing state first.": [
         "결제 청구 주를 먼저 선택하세요"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "${ price }에 갱신되며 언제나 취소할 수 있습니다."
       ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"

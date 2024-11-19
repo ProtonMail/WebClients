@@ -576,6 +576,9 @@
       "Open navigation": [
         "Obre la navegació"
       ],
+      "Open scan and download info": [
+        "Obre l'escaneig i els detalls de la descàrrega"
+      ],
       "Pause all": [
         "Interromp-ho tot"
       ],
@@ -1119,7 +1122,7 @@
         "Protecció avançada del compte"
       ],
       "Dark Web Monitoring": [
-        "Supervisió de la web fosca"
+        "Monitoratge del web fosc"
       ],
       "Easily add or remove users": [
         "Afegiu o elimineu usuaris fàcilment"
@@ -1129,6 +1132,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de doble factor (2FA) integrat"
+      ],
+      "One-time payment, lifetime deal": [
+        "Un pagament únic, una oferta de per vida"
       ],
       "Online document editor": [
         "Editor de documents en línia"
@@ -1204,7 +1210,7 @@
         "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, monitoratge de la Dark Web i més."
+        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, monitoratge del web fosc i més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, assistent de redacció ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i més.",
@@ -1380,6 +1386,12 @@
       ],
       "Save ${ upsellSavings }": [
         "Estalvieu el ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Estalvieu diners amb ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Calendari personal i compartit segur"
       ],
       "Try ${ planName }": [
         "Proveu ${ planName }"
@@ -3101,6 +3113,9 @@
       "You have reached the maximum number of calendars.": [
         "Heu arribat al nombre màxim de calendaris."
       ],
+      "You have reached the number of contacts limit for your account": [
+        "Heu arribat al nombre límit de contactes per al vostre compte."
+      ],
       "You must set a name": [
         "Heu d'establir un nom"
       ],
@@ -4113,7 +4128,7 @@
         "Mida del compte"
       ],
       "Account successfully updated": [
-        "El compte s'ha actualitzat correctament"
+        "El compte s'ha actualitzat."
       ],
       "Additional options": [
         "Opcions addicionals"
@@ -4237,6 +4252,9 @@
       ],
       "Change your password": [
         "Canvieu la vostra contrasenya"
+      ],
+      "Check for malicious files": [
+        "Buscar fitxers maliciosos"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Comprovant contacte ${ progress } de ${ max }..."
@@ -4853,9 +4871,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tingueu en compte que aquest procés pot trigar una mica depenent de la mida de la vostra llibreta d'adreces."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Tingueu en compte que quan feu clic al botó «Confirmar», el vostre compte tindrà ${ remainingCreditsFormatted } crèdits restants."
-      ],
       "Please open the document to view it.": [
         "Obriu el document per visualitzar-lo."
       ],
@@ -5310,7 +5325,7 @@
         "S'ha restaurat la versió"
       ],
       "Version number successfully copied to clipboard": [
-        "El número de versió s'ha copiat correctament al porta-retalls"
+        "El número de versió s'ha copiat al porta-retalls."
       ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
@@ -6076,6 +6091,9 @@
       "Reveal password": [
         "Mostra la contrasenya"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
+      ],
       "Security code (${ codeName })": [
         "Codi de seguretat (${ codeName })"
       ],
@@ -6755,8 +6773,8 @@
         "${ n } missatges per dia"
       ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } ${ PASS_SHORT_APP_NAME } caixa forta compartida per usuari",
-        "${ n } ${ PASS_SHORT_APP_NAME } caixes fortes compartides per usuari"
+        "${ n } caixa forta de ${ PASS_SHORT_APP_NAME } compartida per usuari",
+        "${ n } caixes fortes de ${ PASS_SHORT_APP_NAME } compartides per usuari"
       ],
       "${ n } vault": [
         "${ n } caixa forta",
@@ -6769,6 +6787,9 @@
       "${ numberOfUsers } user": [
         "${ numberOfUsers } usuari",
         "Fins a ${ numberOfUsers } usuaris"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Accés de tota la vida a les funcions ${ PASS_APP_NAME } i SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
@@ -6825,6 +6846,9 @@
       "Administration Panel": [
         "Panell d'administració"
       ],
+      "Advanced account protection": [
+        "Protecció avançada dels comptes"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Tots els productes i funcions de ${ BRAND_NAME }"
       ],
@@ -6848,6 +6872,9 @@
       ],
       "Available on all platforms": [
         "Disponible a totes les plataformes"
+      ],
+      "Breach alerts": [
+        "Alertes d'infraccions"
       ],
       "Calendar sharing": [
         "Compartició de calendari"
@@ -7735,13 +7762,16 @@
         "No s'ha pogut carregar la carpeta arrel"
       ],
       "Share invitation accepted successfully": [
-        "S'ha acceptat la invitació per a compartir"
+        "S'ha acceptat la invitació per a compartir."
       ],
       "Share invitation declined": [
         "S'ha rebutjat la invitació per a compartir."
       ],
       "Subfolder failed to be loaded": [
         "No s'ha pogut carregar la subcarpeta."
+      ],
+      "The item was not added to your drive": [
+        "No s'ha afegit l'element al drive."
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "No s'ha pogut eliminar l'enllaç a \"${ name }\"."
@@ -7768,7 +7798,7 @@
         "No s'ha pogut desar la configuració"
       ],
       "Your settings have been changed successfully": [
-        "La configuració s'ha modificat correctament"
+        "La configuració s'ha modificat."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7841,6 +7871,15 @@
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Accediu als vostres fitxers allà on siguis"
+      ],
+      "Back up your photos and memories": [
+        "Feu una còpia de seguretat de les vostres fotos i memòries"
+      ],
+      "Backup your photos and memories": [
+        "Feu una còpia de seguretat de les vostres fotos i memòries"
+      ],
       "Choose your favorite theme": [
         "Trieu el vostre tema preferit"
       ],
@@ -7858,6 +7897,9 @@
       ],
       "Final approval pending": [
         "L'aprovació definitiva està pendent."
+      ],
+      "Free up hard drive space on your computer": [
+        "Allibereu espai al disc dur del vostre ordinador"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Comenceu a utilitzar ${ DRIVE_APP_NAME } i millorarem el vostre emmagatzematge a 5 GB!"
@@ -7885,6 +7927,9 @@
       ],
       "Secure your files": [
         "Assegureu els vostres fitxers"
+      ],
+      "Securely share files and folders": [
+        "Compartiu de manera segura els vostres fitxers i carpetes"
       ],
       "Set a recovery method": [
         "Configura un mètode de recuperació"
@@ -8005,9 +8050,15 @@
       ],
       "Activity log": [
         "Registre d'activitats"
+      ],
+      "Team policies": [
+        "Regles d'equip"
       ]
     },
     "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Totes les funcions premium. 6 usuaris. 1 subscripció fàcil."
+      ],
       "Get it for ${ monthlyPrice }": [
         "Obteniu-lo per ${ monthlyPrice }"
       ],
@@ -8081,6 +8132,9 @@
       ],
       "Please select billing state": [
         "Seleccioneu l'estat de facturació"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Es renova per ${ price } i ho podeu cancel·lar en qualsevol moment."
       ],
       "Select billing country to pay": [
         "Seleccioneu el país de facturació per pagar"
@@ -9139,7 +9193,7 @@
         "Privacitat i seguretat integrals"
       ],
       "Dark web monitoring": [
-        "Supervisió de la web fosca"
+        "Monitoratge del web fosc"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Aplicació d'escriptori i compatibilitat amb clients de correu electrònic (a través d'IMAP)"
@@ -9862,6 +9916,9 @@
       ],
       "Groups": [
         "Grups"
+      ],
+      "High security for your account": [
+        "Seguretat alta per al vostre compte"
       ],
       "Hm, we couldn't find that one": [
         "No hem pogut trobar aquest element."
