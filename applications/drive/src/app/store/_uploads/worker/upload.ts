@@ -5,7 +5,7 @@ import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
-import { serializeFormData } from '@proton/shared/lib/fetch/helpers';
+import { serializeFormData } from '@proton/shared/lib/fetch/serialize';
 
 import { APP_NAME, APP_VERSION } from '../../../config';
 import { MAX_RETRIES_BEFORE_FAIL, MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_JOBS } from '../constants';
