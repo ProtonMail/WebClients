@@ -301,13 +301,28 @@ const SingleSignupContainerV2 = ({
 
         const preVerifiedAddressToken = searchParams.get('preVerifiedAddressToken') || undefined;
 
-        if (getIsPassApp(toApp) && invitee && inviter) {
-            mode = SignupMode.Invite;
-            localID = -1;
-            invite = {
-                type: 'pass',
-                data: { inviter, invitee, preVerifiedAddressToken },
-            };
+        // pass from simplelogin
+        const slEmail = searchParams.get('slEmail');
+        const emailUnspecified = slEmail === 'unspecified';
+
+        if (getIsPassApp(toApp)) {
+            if (invitee && inviter) {
+                mode = SignupMode.Invite;
+                localID = -1;
+                invite = {
+                    type: 'pass',
+                    data: { inviter, invitee, preVerifiedAddressToken },
+                };
+            }
+
+            if (slEmail) {
+                mode = SignupMode.PassSimpleLogin;
+                localID = -1;
+                invite = {
+                    type: 'pass',
+                    data: { invitee: emailUnspecified ? '' : slEmail },
+                };
+            }
         }
 
         let signIn: SignupParameters2['signIn'] = 'standard';

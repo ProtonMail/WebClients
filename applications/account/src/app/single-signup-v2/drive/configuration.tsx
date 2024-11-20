@@ -352,6 +352,7 @@ export const getDriveConfiguration = ({
                         [SignupMode.Default]: benefitsTitle,
                         [SignupMode.Invite]: benefitsInviteTitle,
                         [SignupMode.MailReferral]: benefitsTitle,
+                        [SignupMode.PassSimpleLogin]: benefitsTitle,
                     }[mode]
                 }
             </div>
@@ -366,6 +367,7 @@ export const getDriveConfiguration = ({
             [SignupMode.Default]: audience === Audience.B2B ? b2bTitle : title,
             [SignupMode.Invite]: inviteTitle,
             [SignupMode.MailReferral]: title,
+            [SignupMode.PassSimpleLogin]: title,
         }[mode],
         audience,
         audiences: [
