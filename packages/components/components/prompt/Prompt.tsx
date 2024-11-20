@@ -18,7 +18,6 @@ const PromptTitle = ({ children }: { children: ReactNode }) => (
 
 export interface PromptProps extends Omit<ModalProps, 'children' | 'size' | 'title'> {
     disableCloseWhenClickOutside?: boolean;
-    allowClickPropagation?: boolean;
     title?: string | JSX.Element;
     subline?: string;
     footnote?: string | any[]; //need footnote to accept any[] for ttag with link as variable
