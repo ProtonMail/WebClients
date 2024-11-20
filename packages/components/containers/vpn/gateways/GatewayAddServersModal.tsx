@@ -98,6 +98,14 @@ const GatewayAddServersModal = ({
         });
     };
 
+    // Add checked locations in the model
+    const handleUpdateCheckedLocations = (updatedCheckedLocations: GatewayLocation[]) => {
+        setModel((prevModel) => ({
+            ...prevModel,
+            checkedLocations: updatedCheckedLocations,
+        }));
+    };
+
     return (
         <>
             <ModalTwo size="large" as={Form} onSubmit={handleSubmit} {...rest}>
@@ -116,6 +124,7 @@ const GatewayAddServersModal = ({
                                 deletedDedicatedIPs={deletedDedicatedIPs}
                                 countryOptions={countryOptions}
                                 model={model}
+                                onUpdateCheckedLocations={handleUpdateCheckedLocations}
                                 changeModel={changeModel}
                             />
                         </ModalTwoContent>
