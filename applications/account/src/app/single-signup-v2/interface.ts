@@ -132,6 +132,7 @@ export enum SignupMode {
     Default = 'default',
     Invite = 'invite',
     MailReferral = 'mailReferral',
+    PassSimpleLogin = 'passSimpleLogin',
 }
 
 export interface SignupDefaults {
