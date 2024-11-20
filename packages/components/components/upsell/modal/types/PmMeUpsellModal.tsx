@@ -5,28 +5,26 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellFeatureList from '@proton/components/components/upsell/modal/UpsellFeatureList';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
-import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import type { Optional } from '@proton/shared/lib/interfaces';
 import pmMeImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
 
 interface Props {
     modalProps: ModalStateProps;
-    upsellComponent?: UPSELL_COMPONENT;
+    upsellRefOptions: Optional<Parameters<typeof getUpsellRef>[0], 'feature'>;
 }
-const FiltersUpsellModal = ({ modalProps, upsellComponent }: Props) => {
+
+const PmMeUpsellModal = ({ modalProps, upsellRefOptions }: Props) => {
     const upsellRef = getUpsellRef({
-        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-        component: upsellComponent ?? UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.SHORT_ADDRESS,
-        isSettings: true,
+        ...upsellRefOptions,
     });
     const [user] = useUser();
     const activatePmUser = `${user.Name}@pm.me`;
 
-    const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+    const upsellConfig = useUpsellConfig({ upsellRef });
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
@@ -43,8 +41,10 @@ const FiltersUpsellModal = ({ modalProps, upsellComponent }: Props) => {
                                     .t`Upgrade to get ${activatePmUser} for a shorter, easy-to-remember email address in addition to your current one.`
                             }
                         </p>
-                        <p className="text-left">
-                            <strong className="block mb-2">{c('Description').t`Also included`}</strong>
+                        <p className="text-left my-0 mb-2">
+                            <strong>{c('Description').t`Also included`}</strong>
+                        </p>
+                        <div className="text-left">
                             <UpsellFeatureList
                                 hideInfo
                                 features={[
@@ -55,7 +55,7 @@ const FiltersUpsellModal = ({ modalProps, upsellComponent }: Props) => {
                                     'more-premium-features',
                                 ]}
                             />
-                        </p>
+                        </div>
                     </>
                 }
                 modalProps={modalProps}
@@ -78,4 +78,4 @@ const FiltersUpsellModal = ({ modalProps, upsellComponent }: Props) => {
     );
 };
 
-export default FiltersUpsellModal;
+export default PmMeUpsellModal;

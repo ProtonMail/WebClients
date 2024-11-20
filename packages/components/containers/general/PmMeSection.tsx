@@ -88,7 +88,16 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
                 </>
             )}
 
-            {renderUpsellModal && <PmMeUpsellModal modalProps={upsellModalProps} />}
+            {renderUpsellModal && (
+                <PmMeUpsellModal
+                    modalProps={upsellModalProps}
+                    upsellRefOptions={{
+                        app: 'upsell_mail-',
+                        component: 'modal-',
+                        isSettings: true,
+                    }}
+                />
+            )}
         </SettingsSection>
     );
 };

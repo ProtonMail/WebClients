@@ -842,6 +842,7 @@ export { default as useToggleDrawerApp } from './hooks/drawer/useToggleDrawerApp
 export { useDriveB2BPhotosEnabledSetting } from './hooks/drive/useDriveB2BPhotosEnabledSetting';
 export { useDrivePlan } from './hooks/drive/useDrivePlan';
 export { useRevisionRetentionDays } from './hooks/drive/useRevisionRetentionDays';
+export { default as useShortDomainAddress } from './hooks/mail/useShortDomainAddress';
 export { default as useIsSecurityCheckupAvailable } from './hooks/securityCheckup/useIsSecurityCheckupAvailable';
 export { default as useSecurityCheckup } from './hooks/securityCheckup/useSecurityCheckup';
 export { default as useActiveBreakpoint } from './hooks/useActiveBreakpoint';

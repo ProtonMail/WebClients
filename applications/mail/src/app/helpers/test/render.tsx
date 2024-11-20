@@ -22,6 +22,7 @@ import {
     SpotlightProvider,
 } from '@proton/components';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import PostSubscriptionModalProvider from '@proton/components/containers/payments/subscription/postSubscription/PostSubscriptionModalProvider';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -106,34 +107,37 @@ const TestProvider = ({ children, history }: Props) => {
                                 <CacheProvider cache={mockCache}>
                                     <QuickSettingsTestProvider>
                                         <SpotlightProvider>
-                                            <DrawerProvider>
-                                                <ModalsChildren />
-                                                <MailContentRefProvider mailContentRef={contentRef}>
-                                                    <ChecklistsProvider>
-                                                        <MailboxContainerContextProvider
-                                                            isResizing={false}
-                                                            containerRef={contentRef}
-                                                            elementID={undefined}
-                                                        >
-                                                            <ComposeProvider onCompose={onCompose}>
-                                                                <ComposerAssistantProvider>
-                                                                    <CheckAllRefProvider>
-                                                                        <Router history={history}>
-                                                                            <Route path={MAIN_ROUTE_PATH}>
-                                                                                <EncryptedSearchProvider>
-                                                                                    <LabelActionsContextProvider>
-                                                                                        {children}
-                                                                                    </LabelActionsContextProvider>
-                                                                                </EncryptedSearchProvider>
-                                                                            </Route>
-                                                                        </Router>
-                                                                    </CheckAllRefProvider>
-                                                                </ComposerAssistantProvider>
-                                                            </ComposeProvider>
-                                                        </MailboxContainerContextProvider>
-                                                    </ChecklistsProvider>
-                                                </MailContentRefProvider>
-                                            </DrawerProvider>
+                                            {/* <PostSubscriptionModalProvider> is instanciated inside <Subscription /> modal provider */}
+                                            <PostSubscriptionModalProvider>
+                                                <DrawerProvider>
+                                                    <ModalsChildren />
+                                                    <MailContentRefProvider mailContentRef={contentRef}>
+                                                        <ChecklistsProvider>
+                                                            <MailboxContainerContextProvider
+                                                                isResizing={false}
+                                                                containerRef={contentRef}
+                                                                elementID={undefined}
+                                                            >
+                                                                <ComposeProvider onCompose={onCompose}>
+                                                                    <ComposerAssistantProvider>
+                                                                        <CheckAllRefProvider>
+                                                                            <Router history={history}>
+                                                                                <Route path={MAIN_ROUTE_PATH}>
+                                                                                    <EncryptedSearchProvider>
+                                                                                        <LabelActionsContextProvider>
+                                                                                            {children}
+                                                                                        </LabelActionsContextProvider>
+                                                                                    </EncryptedSearchProvider>
+                                                                                </Route>
+                                                                            </Router>
+                                                                        </CheckAllRefProvider>
+                                                                    </ComposerAssistantProvider>
+                                                                </ComposeProvider>
+                                                            </MailboxContainerContextProvider>
+                                                        </ChecklistsProvider>
+                                                    </MailContentRefProvider>
+                                                </DrawerProvider>
+                                            </PostSubscriptionModalProvider>
                                         </SpotlightProvider>
                                     </QuickSettingsTestProvider>
                                 </CacheProvider>

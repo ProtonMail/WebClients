@@ -28,6 +28,7 @@ import InAppPurchaseModal from './InAppPurchaseModal';
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import SubscriptionContainer from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
+import PostSubscriptionModalProvider from './postSubscription/PostSubscriptionModalProvider';
 
 export interface OpenCallbackProps
     extends Pick<
@@ -197,7 +198,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     }
 
     return (
-        <>
+        <PostSubscriptionModalProvider>
             {subscriptionModal}
             <SubscriptionModalContext.Provider
                 value={[
@@ -218,7 +219,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
             >
                 {children}
             </SubscriptionModalContext.Provider>
-        </>
+        </PostSubscriptionModalProvider>
     );
 };
 
