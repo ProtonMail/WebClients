@@ -1,6 +1,6 @@
 import { WritableStream } from 'web-streams-polyfill';
 
-import { isEdge, isEdgeChromium, isIos, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isIos, isSafari } from '@proton/shared/lib/helpers/browser';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { PUBLIC_PATH } from '@proton/shared/lib/webpack.constants';
 
@@ -24,7 +24,7 @@ export const isUnsupported = () => {
         }
     }
     // Original
-    return !('serviceWorker' in navigator) || isSafari() || (isEdge() && !isEdgeChromium()) || isIos();
+    return !('serviceWorker' in navigator) || isSafari() || isIos();
 };
 
 // createDownloadIframe opens download URL created in service worker to

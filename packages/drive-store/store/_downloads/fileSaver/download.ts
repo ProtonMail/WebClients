@@ -1,6 +1,6 @@
 import { WritableStream } from 'web-streams-polyfill';
 
-import { isEdge, isEdgeChromium, isIos, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isIos, isSafari } from '@proton/shared/lib/helpers/browser';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { PUBLIC_PATH } from '@proton/shared/lib/webpack.constants';
 
@@ -15,8 +15,7 @@ let workerWakeupInterval: ReturnType<typeof setInterval>;
  * IOS - forces all browsers to use webkit, so same problems as safari in all browsers.
  * For them download is done in-memory using blob response.
  */
-export const isUnsupported = () =>
-    !('serviceWorker' in navigator) || isSafari() || (isEdge() && !isEdgeChromium()) || isIos();
+export const isUnsupported = () => !('serviceWorker' in navigator) || isSafari() || isIos();
 
 // createDownloadIframe opens download URL created in service worker to
 // initialize the download in the browser. The response has headers to
