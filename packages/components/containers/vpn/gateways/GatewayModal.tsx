@@ -175,6 +175,14 @@ const GatewayModal = ({
         }
     };
 
+    // Add checked locations in the model
+    const handleUpdateCheckedLocations = (updatedCheckedLocations: GatewayLocation[]) => {
+        setModel((prevModel) => ({
+            ...prevModel,
+            checkedLocations: updatedCheckedLocations,
+        }));
+    };
+
     return (
         <>
             <ModalTwo size={step === STEP.MEMBERS ? 'xlarge' : 'large'} as={Form} onSubmit={handleSubmit} {...rest}>
@@ -210,6 +218,7 @@ const GatewayModal = ({
                                     countryOptions={countryOptions}
                                     loading={loading}
                                     model={model}
+                                    onUpdateCheckedLocations={handleUpdateCheckedLocations}
                                     changeModel={changeModel}
                                 />
                             )}
