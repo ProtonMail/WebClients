@@ -156,7 +156,6 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                         <Route path={[SSO_PATHS.EXTERNAL_SSO_LOGIN, SSO_PATHS.EXTERNAL_SSO_REAUTH]}>
                                             <UnAuthenticated>
                                                 <ExternalSSOConsumer
-                                                    loader={loader}
                                                     onLogin={({ username, token, flow }) =>
                                                         history.replace(SSO_PATHS.LOGIN, {
                                                             authType: AuthType.ExternalSSO,
@@ -167,7 +166,9 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                             username,
                                                         })
                                                     }
-                                                />
+                                                >
+                                                    {loader}
+                                                </ExternalSSOConsumer>
                                             </UnAuthenticated>
                                         </Route>
                                         <Route path={SSO_PATHS.LOGIN}>

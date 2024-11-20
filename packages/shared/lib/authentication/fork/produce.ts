@@ -7,7 +7,6 @@ import type { OfflineKey } from '../../authentication/offlineKey';
 import type { APP_NAMES } from '../../constants';
 import { SSO_PATHS } from '../../constants';
 import { withUIDHeaders } from '../../fetch/headers';
-import { replaceUrl } from '../../helpers/browser';
 import { encodeBase64URL, uint8ArrayToString } from '../../helpers/encoding';
 import type { Api, User } from '../../interfaces';
 import { getForkEncryptedBlob } from './blob';
@@ -124,7 +123,7 @@ export const produceForkConsumption = (
     const search = searchParamsString ? `?${searchParamsString}` : '';
     const fragment = `#${fragmentSearchParams.toString()}`;
 
-    replaceUrl(getAppHref(`${SSO_PATHS.FORK}${search}${fragment}`, app));
+    return getAppHref(`${SSO_PATHS.FORK}${search}${fragment}`, app);
 };
 
 export interface ProduceForkParameters {

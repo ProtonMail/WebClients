@@ -1,7 +1,6 @@
 import type { OAuthForkResponse } from '../../api/oauth';
 import { postOAuthFork } from '../../api/oauth';
 import { withUIDHeaders } from '../../fetch/headers';
-import { replaceUrl } from '../../helpers/browser';
 import type { Api } from '../../interfaces';
 
 export interface OAuthProduceForkParameters {
@@ -28,5 +27,5 @@ export const produceOAuthFork = async ({ api, UID, oauthData: { oaSession, clien
         )
     );
 
-    return replaceUrl(RedirectUri);
+    return RedirectUri;
 };
