@@ -125,4 +125,5 @@ export enum FeatureCode {
     PassOnboardingSpotlights = 'PassOnboardingSpotlights',
     ProtonTipsSnoozeTime = 'ProtonTipsSnoozeTime',
     SeenLightLabellingFeatureModal = 'SeenLightLabellingFeatureModal',
+    PostSubscriptionShortDomainSpotlight = 'PostSubscriptionShortDomainSpotlight',
 }

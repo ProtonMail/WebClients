@@ -286,6 +286,7 @@ export const captureMessage = (...args: Parameters<typeof sentryCaptureMessage>)
 };
 
 type MailInitiative = 'drawer-security-center' | 'composer' | 'assistant' | 'mail-onboarding';
+type CommonInitiatives = 'post-subscription';
 export type SentryInitiative = MailInitiative;
 type CaptureExceptionArgs = Parameters<typeof captureException>;
 
@@ -294,7 +295,10 @@ type CaptureExceptionArgs = Parameters<typeof captureException>;
  * @param initiative
  * @param error
  */
-export const traceInitiativeError = (initiative: MailInitiative, error: CaptureExceptionArgs[0]) => {
+export const traceInitiativeError = (
+    initiative: MailInitiative | CommonInitiatives,
+    error: CaptureExceptionArgs[0]
+) => {
     if (!isLocalhost(window.location.host)) {
         captureException(error, {
             tags: {
