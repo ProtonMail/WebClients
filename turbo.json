@@ -35,7 +35,9 @@
             "dependsOn": ["@proton/i18n#build", "build:web"],
             "outputs": ["po/**"]
         },
-        "i18n:validate:context:web": {},
+        "i18n:validate:context:web": {
+            "inputs": ["po/**"]
+        },
         "check-types": {
             "dependsOn": ["transit"]
         },
