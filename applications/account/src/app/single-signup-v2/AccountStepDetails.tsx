@@ -209,6 +209,7 @@ interface Props {
     defaultEmail?: string;
     signupTypes: SignupType[];
     domains: string[];
+    emailDescription?: ReactNode;
 }
 
 const AccountStepDetails = ({
@@ -228,6 +229,7 @@ const AccountStepDetails = ({
     measure,
     passwordFields,
     defaultEmail,
+    emailDescription,
 }: Props) => {
     const [, setRerender] = useState<any>();
     const [signupType, setSignupType] = useState(signupTypes[0]);
@@ -808,6 +810,8 @@ const AccountStepDetails = ({
                             )}
                         </div>
                     </Challenge>
+
+                    {emailDescription && <div className="mb-4">{emailDescription}</div>}
 
                     {hasSwitchSignupType ? (
                         <div className={clsx('text-center', loading && 'hidden')}>

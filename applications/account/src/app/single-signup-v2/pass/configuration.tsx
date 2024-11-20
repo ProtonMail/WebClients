@@ -61,12 +61,15 @@ import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkSubsection from '../LetsTalkSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import {
+    getAliasesEmailProtectionBenefit,
     getBasedInSwitzerlandGDPRBenefit,
     getBenefits,
     getBundleVisionaryBenefits,
+    getDeviceSyncBenefit,
     getGenericFeatures,
     getJoinString,
     getTeamKnowsEncryptionBenefit,
+    getUnlimitedPasswordsBenefit,
     getWorksOnAllDevicesBenefit,
 } from '../configuration/helper';
 import type { SignupConfiguration } from '../interface';
@@ -319,22 +322,9 @@ export const getPassBenefits = (
     }
 
     return [
-        getWorksOnAllDevicesBenefit(),
-        getAliasesBenefit(),
-        {
-            key: 'secure-vault-sharing-free',
-            text: getSecureSharingTextEmpty(false),
-            icon: {
-                name: 'arrow-up-from-square' as const,
-            },
-        },
-        {
-            key: 'alerts-for-vulnerable-passwords',
-            text: c('pass_signup_2023: Info').t`Alerts for vulnerable passwords`,
-            icon: {
-                name: 'shield' as const,
-            },
-        },
+        getUnlimitedPasswordsBenefit(),
+        getDeviceSyncBenefit(),
+        getAliasesEmailProtectionBenefit(),
         getPasskeysBenefit(),
         getEncryptionBenefit(),
     ];
@@ -415,6 +405,7 @@ export const getPassConfiguration = ({
     const title = c('pass_signup_2023: Info').t`Encrypted password manager that also protects your identity`;
     const b2bTitle = c('pass_signup_2023: Info').t`Get the security and features your business needs`;
     const inviteTitle = c('pass_signup_2023: Info').t`You have been invited to join ${PASS_APP_NAME}`;
+    const simpleLoginTitle = c('pass_signup_2023: Info').t`Start using ${PASS_APP_NAME}`;
 
     const features = getGenericFeatures(isLargeViewport);
     const planTitle = plansMap?.[PLANS.PASS_PRO]?.Title || PLAN_NAMES[PLANS.PASS_PRO];
@@ -561,6 +552,7 @@ export const getPassConfiguration = ({
             [SignupMode.Default]: audience === Audience.B2B ? b2bTitle : title,
             [SignupMode.Invite]: inviteTitle,
             [SignupMode.MailReferral]: title,
+            [SignupMode.PassSimpleLogin]: simpleLoginTitle,
         }[mode],
         features,
         benefits,
@@ -584,7 +576,7 @@ export const getPassConfiguration = ({
         generateMnemonic: true,
         defaults: {
             plan: (() => {
-                if (mode === SignupMode.Invite) {
+                if (mode === SignupMode.Invite || mode === SignupMode.PassSimpleLogin) {
                     return PLANS.FREE;
                 }
                 if (audience === Audience.B2B) {

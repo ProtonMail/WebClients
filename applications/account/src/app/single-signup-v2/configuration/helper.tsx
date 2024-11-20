@@ -156,6 +156,36 @@ export const getEmailAliasesBenefit = (): BenefitItem => {
     };
 };
 
+export const getUnlimitedPasswordsBenefit = (): BenefitItem => {
+    return {
+        key: `unlimited-passwords`,
+        text: c('Signup: Info').t`Unlimited passwords`,
+        icon: {
+            name: 'key',
+        },
+    };
+};
+
+export const getDeviceSyncBenefit = (): BenefitItem => {
+    return {
+        key: `device-sync`,
+        text: c('Signup: Info').t`Device sync`,
+        icon: {
+            name: 'mobile',
+        },
+    };
+};
+
+export const getAliasesEmailProtectionBenefit = (): BenefitItem => {
+    return {
+        key: `aliases-email-protection`,
+        text: c('Signup: Info').t`10 aliases for email protection from breaches`,
+        icon: {
+            name: 'alias',
+        },
+    };
+};
+
 export const getAdvancedSecurityBenefit = (): BenefitItem => {
     return {
         key: `advanced-security`,

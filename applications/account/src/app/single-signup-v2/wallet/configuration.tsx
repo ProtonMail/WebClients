@@ -264,6 +264,7 @@ export const getWalletConfiguration = ({
                 </>
             ),
             [SignupMode.MailReferral]: title,
+            [SignupMode.PassSimpleLogin]: title,
         }[mode],
         features,
         benefits,
