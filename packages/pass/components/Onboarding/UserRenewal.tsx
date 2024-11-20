@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -16,6 +17,7 @@ import noop from '@proton/utils/noop';
 export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const { onLink } = usePassCore();
     const { SSO_URL } = usePassConfig();
+    const authStore = useAuthStore();
     const plan = useSelector(selectUserPlan);
     const planName = useSelector(selectPlanDisplayName);
 
@@ -24,7 +26,12 @@ export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const endDate = epochToDate(plan.SubscriptionEnd);
     const title = c('Title').t`Your ${planName} subscription will end on ${endDate}`;
 
-    const upgrade = () => onLink(`${SSO_URL}/pass/dashboard?source=banner#your-subscriptions`);
+    const localID = authStore?.getLocalID();
+
+    const upgrade = () =>
+        onLink(
+            `${SSO_URL}${localID !== undefined ? `/u/${localID}/` : '/'}pass/dashboard?source=banner#your-subscriptions`
+        );
 
     return (
         <div className="flex-1">
