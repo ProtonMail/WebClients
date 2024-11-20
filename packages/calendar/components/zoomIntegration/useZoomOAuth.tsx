@@ -32,7 +32,7 @@ export const useZoomOAuth = () => {
         dispatch(oauthTokenActions.updateTokens(tokens.Tokens));
     };
 
-    const triggerZoomOAuth = async (callback?: (oauthProps: OAuthProps) => void) => {
+    const triggerZoomOAuth = (callback?: (oauthProps: OAuthProps) => void) => {
         triggerOAuthPopup({
             provider: OAUTH_PROVIDER.ZOOM,
             scope: '',
