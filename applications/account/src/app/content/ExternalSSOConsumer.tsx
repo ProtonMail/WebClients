@@ -7,11 +7,11 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 interface Props {
-    loader: ReactNode;
+    children: ReactNode;
     onLogin: (data: { username?: string; token?: string; flow: ExternalSSOFlow }) => void;
 }
 
-const ExternalSSOConsumer = ({ loader, onLogin }: Props) => {
+const ExternalSSOConsumer = ({ children, onLogin }: Props) => {
     const [error, setError] = useState<{ message?: string } | null>(null);
 
     useEffect(() => {
@@ -47,7 +47,7 @@ const ExternalSSOConsumer = ({ loader, onLogin }: Props) => {
         return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
-    return <>{loader}</>;
+    return children;
 };
 
 export default ExternalSSOConsumer;
