@@ -2,7 +2,8 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import type { ModalOwnProps } from '@proton/components';
+import type { ModalOwnProps} from '@proton/components';
+import { useNotifications } from '@proton/components';
 import {
     Collapsible,
     CollapsibleContent,
@@ -44,6 +45,13 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, theme, ...modalPr
     } = useWalletPreferences(wallet, () => {
         modalProps.onClose?.();
     });
+
+    const { createNotification } = useNotifications();
+
+    const clearStorage = () => {
+        clearBrowserStorage();
+        createNotification({ text: c('Wallet Settings').t`Browser storage cleared. Please refresh the page` });
+    };
 
     return (
         <>
@@ -145,7 +153,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, theme, ...modalPr
                                     onClick={() => openWalletDeletionConfirmationModal()}
                                 >{c('Wallet preference').t`Delete wallet`}</Button>
 
-                                <Button fullWidth shape="ghost" color="weak" onClick={() => clearBrowserStorage()}>{c(
+                                <Button fullWidth shape="ghost" color="weak" onClick={() => clearStorage()}>{c(
                                     'Wallet preference'
                                 ).t`Clear browser storage`}</Button>
                             </div>
