@@ -1,18 +1,11 @@
 import type { ReactNode } from 'react';
 
+import { isBigIntSupported, isGoodPrngAvailable, isWebCryptoAvailable } from '@proton/crypto/lib/compatibilityChecks';
+
 export type CompatibilityItem = {
     name: string;
     valid: boolean;
     text: ReactNode;
-};
-
-const isGoodPrngAvailable = () => {
-    if (window.crypto && !!window.crypto.getRandomValues) {
-        return true;
-    }
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    return typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function';
 };
 
 const hasCookies = () => {
@@ -50,18 +43,6 @@ const hasReplaceAll = () => {
     }
 };
 
-const isBigIntSupported = () => {
-    try {
-        // The Palemoon browser v32.4.0.x supports BigInts but not increment/decrements;
-        // We check support for these operations to avoid unexpected errors in e.g. the KT VRF.
-        let check = BigInt('0x1'); // eslint-disable-line @typescript-eslint/no-unused-vars
-        check--; // eslint-disable-line @typescript-eslint/no-unused-vars
-        return true;
-    } catch {
-        return false;
-    }
-};
-
 // Locale is not loaded here so no translations
 export const getCompatibilityList = (compatibilities: CompatibilityItem[] = []): CompatibilityItem[] => {
     const isSSR = typeof window === 'undefined';
@@ -80,6 +61,11 @@ export const getCompatibilityList = (compatibilities: CompatibilityItem[] = []):
             name: 'Storage',
             valid: isSSR || hasLocalStorage(),
             text: 'Please enable localStorage in your browser.',
+        },
+        {
+            name: 'WebCrypto API',
+            valid: isSSR || isWebCryptoAvailable(),
+            text: 'Please update to a modern browser with support for the WebCrypto API.',
         },
         {
             name: 'PRNG',
