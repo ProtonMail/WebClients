@@ -1,7 +1,7 @@
 import { PASS_CHROME_URL, PASS_FIREFOX_URL } from '@proton/pass/constants';
 import { type MaybeNull } from '@proton/pass/types';
 import type { Browser } from '@proton/pass/types/browser';
-import { isBrave, isChrome, isEdge } from '@proton/shared/lib/helpers/browser';
+import { isBrave, isChrome, isEdgeChromium } from '@proton/shared/lib/helpers/browser';
 import { Clients } from '@proton/shared/lib/pass/constants';
 
 const global = globalThis as any;
@@ -19,7 +19,7 @@ export type SupportedExtensionClient = Clients.Chrome | Clients.Brave | Clients.
 export const getExtensionSupportedBrowser = (): MaybeNull<SupportedExtensionClient> => {
     if (isChrome()) return Clients.Chrome;
     if (isBrave()) return Clients.Brave;
-    if (isEdge()) return Clients.Edge;
+    if (isEdgeChromium()) return Clients.Edge;
     // TEMP disable FF if (isFirefox()) return Clients.Firefox;
     return null;
 };

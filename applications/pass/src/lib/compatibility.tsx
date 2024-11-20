@@ -6,7 +6,7 @@ import type { CompatibilityItem } from '@proton/components/containers/compatibil
 import { PASS_TROUBLESHOOT_URL } from '@proton/pass/constants';
 import { hasWASMSupport } from '@proton/pass/utils/dom/wasm';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { getBrowser, isEdge, isSafari } from '@proton/shared/lib/helpers/browser';
+import { getBrowser, isEdgeChromium, isSafari } from '@proton/shared/lib/helpers/browser';
 
 const getWhiteListMessage = (feature: string) => (
     <strong key="browser-warning">
@@ -16,7 +16,7 @@ const getWhiteListMessage = (feature: string) => (
 
 const getWASMMessage = (): ReactNode => {
     const detail = (() => {
-        if (isEdge()) return getWhiteListMessage('Enhanced Security');
+        if (isEdgeChromium()) return getWhiteListMessage('Enhanced Security');
         if (isSafari()) return getWhiteListMessage('Lockdown');
         return null;
     })();

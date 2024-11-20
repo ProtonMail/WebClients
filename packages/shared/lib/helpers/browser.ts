@@ -107,9 +107,7 @@ export const isSafari = () => ua.browser.name === 'Safari' || ua.browser.name ==
 export const isSafari11 = () => isSafari() && ua.browser.major === '11';
 export const isMinimumSafariVersion = (version: number) => isSafari() && Number(ua.browser.version) >= version;
 export const isSafariMobile = () => ua.browser.name === 'Mobile Safari';
-export const isIE11 = () => ua.browser.name === 'IE' && ua.browser.major === '11';
-export const isEdge = () => ua.browser.name === 'Edge';
-export const isEdgeChromium = () => isEdge() && ua.engine.name === 'Blink';
+export const isEdgeChromium = () => ua.browser.name === 'Edge' && ua.engine.name === 'Blink';
 export const isBrave = () => ua.browser.name === 'Brave';
 export const isFirefox = () => ua.browser.name === 'Firefox';
 export const isMaybeTorLessThan11 = () => {
@@ -181,22 +179,13 @@ export const redirectTo = (url = '') => replaceUrl(`${document.location.origin}$
  * Detect browser requiring direct action
  * Like opening a new tab
  */
-export const requireDirectAction = () => isSafari() || isFirefox() || isEdge();
+export const requireDirectAction = () => isSafari() || isFirefox() || isEdgeChromium();
 
 /**
  * Open an URL inside a new tab/window and remove the referrer
  * @links { https://mathiasbynens.github.io/rel-noopener/}
  */
 export const openNewTab = (url: string) => {
-    if (isIE11()) {
-        const otherWindow = window.open();
-        if (!otherWindow) {
-            return;
-        }
-        otherWindow.opener = null;
-        otherWindow.location.href = url;
-        return;
-    }
     const anchor = document.createElement('a');
 
     anchor.setAttribute('rel', 'noreferrer nofollow noopener');
