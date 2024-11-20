@@ -1,4 +1,5 @@
 import type { ChangeEvent } from 'react';
+import { useRef } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -31,6 +32,7 @@ interface Props {
     countryOptions: CountryOptions;
     loading?: boolean;
     model: GatewayDto;
+    onUpdateCheckedLocations: (checkedLocations: GatewayLocation[]) => void;
     changeModel: (diff: Partial<GatewayDto>) => void;
 }
 
@@ -44,8 +46,10 @@ export const GatewayCountrySelection = ({
     countryOptions,
     loading = false,
     model,
+    onUpdateCheckedLocations,
     changeModel,
 }: Props) => {
+    const recentlyUsedServersRef = useRef<GatewayLocation[]>([]);
     const remainingCount = ownedCount - usedCount;
     const availableCount = Math.max(0, remainingCount - addedCount - (deletedDedicatedIPs?.length || 0));
     const unassignedAvailableCount = deletedDedicatedIPs?.length || 0;
@@ -80,6 +84,21 @@ export const GatewayCountrySelection = ({
             changeModel({ location: mainLocation });
         }
 
+        const locationString = JSON.stringify(location);
+        if (event.target.checked) {
+            // Add/store location if it's not already present
+            if (!recentlyUsedServersRef.current.some((ip: GatewayLocation) => JSON.stringify(ip) === locationString)) {
+                recentlyUsedServersRef.current = [...recentlyUsedServersRef.current, location];
+            }
+        } else {
+            // Remove location if unchecked
+            recentlyUsedServersRef.current = recentlyUsedServersRef.current.filter(
+                (ip: GatewayLocation) => JSON.stringify(ip) !== locationString
+            );
+        }
+
+        onUpdateCheckedLocations(recentlyUsedServersRef.current);
+
         return changeModel({ unassignedIpQuantities });
     };
 
@@ -104,6 +123,11 @@ export const GatewayCountrySelection = ({
         }
 
         changeModel({ quantities });
+    };
+
+    // Helper function to check if a location from recently used servers is already checked
+    const isLocationChecked = (location: GatewayLocation) => {
+        return model?.checkedLocations?.some((ip) => JSON.stringify(ip) === JSON.stringify(location));
     };
 
     return singleServer ? (
@@ -156,6 +180,7 @@ export const GatewayCountrySelection = ({
                             <div>
                                 <Label>
                                     <Checkbox
+                                        checked={isLocationChecked(deletedDedicatedIp.Location)}
                                         onChange={(e) =>
                                             handleUnassigningLocationChecked(e, deletedDedicatedIp.Location)
                                         }
