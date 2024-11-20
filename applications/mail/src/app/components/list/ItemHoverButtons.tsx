@@ -13,6 +13,7 @@ import clsx from '@proton/utils/clsx';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { isMessage, isStarred as testIsStarred, isUnread as testIsUnread } from '../../helpers/elements';
+import { usePermanentDelete } from '../../hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useStar } from '../../hooks/actions/useStar';
@@ -44,6 +45,7 @@ const ItemHoverButtons = ({
 }: Props) => {
     const { markAs } = useMarkAs();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal } = useMoveToFolder();
+    const { handleDelete: permanentDelete, deleteSelectionModal } = usePermanentDelete(labelID);
     const star = useStar();
     const snoozedElement = useMailSelector(selectSnoozeElement);
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
@@ -85,6 +87,13 @@ const ItemHoverButtons = ({
         });
     };
 
+    const handlePermanentDelete = (event: MouseEvent) => {
+        event.stopPropagation();
+        event.preventDefault();
+        permanentDelete([element.ID]);
+        return false;
+    };
+
     const handleStar = (event: MouseEvent) => {
         event.stopPropagation();
 
@@ -123,18 +132,35 @@ const ItemHoverButtons = ({
                         <Icon name={unreadIcon} alt={unreadAlt} />
                     </Button>
                 </Tooltip>
-                <Tooltip title={c('Action').t`Move to trash`} tooltipClassName="pointer-events-none">
-                    <Button
-                        icon
-                        shape="ghost"
-                        size={size}
-                        className="color-inherit"
-                        onClick={handleTrash}
-                        disabled={labelID === TRASH}
-                    >
-                        <Icon name="trash" alt={c('Action').t`Move to trash`} />
-                    </Button>
-                </Tooltip>
+                {labelID === TRASH ? (
+                    <>
+                        <Tooltip title={c('Action').t`Delete permanently`} tooltipClassName="pointer-events-none">
+                            <Button
+                                onClick={handlePermanentDelete}
+                                icon
+                                shape="ghost"
+                                size={size}
+                                className="color-inherit"
+                            >
+                                <Icon name="cross-circle" alt={c('Action').t`Delete permanently`} />
+                            </Button>
+                        </Tooltip>
+                        {deleteSelectionModal}
+                    </>
+                ) : (
+                    <Tooltip title={c('Action').t`Move to trash`} tooltipClassName="pointer-events-none">
+                        <Button
+                            icon
+                            shape="ghost"
+                            size={size}
+                            className="color-inherit"
+                            onClick={handleTrash}
+                            disabled={labelID === TRASH}
+                        >
+                            <Icon name="trash" alt={c('Action').t`Move to trash`} />
+                        </Button>
+                    </Tooltip>
+                )}
                 <Tooltip title={c('Action').t`Move to archive`} tooltipClassName="pointer-events-none">
                     <Button
                         icon
