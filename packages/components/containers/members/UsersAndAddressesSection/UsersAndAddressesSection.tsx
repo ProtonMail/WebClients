@@ -67,7 +67,6 @@ import {
     getOrganizationKeyInfo,
     validateOrganizationKey,
 } from '@proton/shared/lib/organization/helper';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import Tooltip from '../../../components/tooltip/Tooltip';
@@ -95,7 +94,6 @@ import UserTableBadge from './UsersTableBadge';
 
 const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: MutableRefObject<boolean> }) => {
     const { APP_NAME } = useConfig();
-    const attachSSOEnabled = useFlag('AttachSSO');
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey] = useOrganizationKey();
     const getOrganizationKey = useGetOrganizationKey();
@@ -591,7 +589,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
                         const memberPermissions = getMemberPermissions({
                             ssoDomainsSet,
-                            attachSSOEnabled,
                             appName: APP_NAME,
                             user,
                             member,
