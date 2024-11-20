@@ -28,8 +28,8 @@ export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
 
     return (
         <div className="flex-1">
-            <strong className="block color-invert">{title}</strong>
-            <span className="block text-sm color-invert">
+            <strong className="block">{title}</strong>
+            <span className="block text-sm">
                 {c('Info')
                     .t`You will no longer have access to sharing, 2FA, credit card and other advanced features in ${PASS_APP_NAME}`}
             </span>
@@ -41,7 +41,6 @@ export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
                     size="small"
                     className="text-sm px-3"
                     onClick={pipe(onClose, upgrade)}
-                    style={{ backgroundColor: 'var(--interaction-norm-major-3)' }}
                 >
                     {c('Action').t`Reactivate now`}
                 </Button>
