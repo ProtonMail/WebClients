@@ -162,11 +162,15 @@ export const createIFrameService = (elements: PassElementsConfig) => {
                 })()
             );
 
-            if (theme === PassThemeOption.OS) {
-                const payload = matchDarkTheme().matches ? PassThemeOption.PassDark : PassThemeOption.PassLight;
-                state.apps.dropdown?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
-                state.apps.notification?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
-            }
+            const payload = (() => {
+                if (theme === PassThemeOption.OS) {
+                    return matchDarkTheme().matches ? PassThemeOption.PassDark : PassThemeOption.PassLight;
+                }
+                return theme;
+            })();
+
+            state.apps.dropdown?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
+            state.apps.notification?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
         },
     };
 
