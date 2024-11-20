@@ -25,6 +25,7 @@ import type {
     WalletChainDataByWalletId,
 } from '../../types';
 import { removeMasterPrefix } from '../../utils';
+import { clearChangeSet } from '../../utils/cache';
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number; error: string | null };
 
@@ -138,17 +139,21 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
                 // Get accounts created in wasm wallet
                 const wasmAccounts = WalletAccounts.reduce((acc: AccountChainDataByAccountId, account) => {
-                    const wasmAccount = wasmWallet.addAccount(account.ScriptType, account.DerivationPath);
-
-                    return {
-                        ...acc,
-                        [account.ID]: {
-                            account: wasmAccount,
-                            scriptType: account.ScriptType,
-                            derivationPath: account.DerivationPath,
-                            poolSize: account.PoolSize,
-                        },
-                    };
+                    try {
+                        const wasmAccount = wasmWallet.addAccount(account.ScriptType, account.DerivationPath);
+                        return {
+                            ...acc,
+                            [account.ID]: {
+                                account: wasmAccount,
+                                scriptType: account.ScriptType,
+                                derivationPath: account.DerivationPath,
+                                poolSize: account.PoolSize,
+                            },
+                        };
+                    } catch (e: any) {
+                        clearChangeSet(wasmWallet.getFingerprint());
+                        throw e;
+                    }
                 }, {});
 
                 return {
