@@ -14,7 +14,7 @@ import { useHasScroll } from 'proton-mail/hooks/useHasScroll';
 
 import { getAttachmentCounts } from '../../helpers/message/messages';
 import { useDownload, useDownloadAll } from '../../hooks/attachments/useDownload';
-import type { PendingUpload } from '../../hooks/composer/useAttachments';
+import { type PendingUpload, isDummyattachmentUpload } from '../../hooks/composer/useAttachments';
 import type { MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
 import AttachmentItem from './AttachmentItem';
 import type { AttachmentPreviewControls } from './AttachmentPreview';
@@ -271,7 +271,7 @@ const AttachmentList = ({
                     ))}
                     {pendingUploads?.map((pendingUpload) => (
                         <AttachmentItem
-                            key={pendingUpload.file.name}
+                            key={`${pendingUpload.file.name}-${isDummyattachmentUpload(pendingUpload) ? 'dummy' : 'real'}`}
                             pendingUpload={pendingUpload}
                             primaryAction={primaryAction}
                             secondaryAction={AttachmentAction.Remove}
