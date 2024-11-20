@@ -124,7 +124,7 @@ it('should display the number of available credits', () => {
             subscription: getSubscriptionState(subscription),
         },
     });
-    expect(getByTestId('avalaible-credits')).toHaveTextContent('119.88');
+    expect(getByTestId('available-credits')).toHaveTextContent('119.88');
 });
 
 it('should render 0 credits if the amount of credits is the same as upcoming subscription price', () => {
@@ -135,7 +135,7 @@ it('should render 0 credits if the amount of credits is the same as upcoming sub
             subscription: getSubscriptionState(subscription),
         },
     });
-    expect(getByTestId('avalaible-credits')).toHaveTextContent('0');
+    expect(getByTestId('available-credits')).toHaveTextContent('0');
 });
 
 it('should render positive amount of credits if there are more credits than upcoming subscription price', () => {
@@ -147,7 +147,7 @@ it('should render positive amount of credits if there are more credits than upco
             subscription: getSubscriptionState(subscription),
         },
     });
-    expect(getByTestId('avalaible-credits')).toHaveTextContent('10');
+    expect(getByTestId('available-credits')).toHaveTextContent('10');
 });
 
 it('should render 0 if the number of available credits is less than price of upcoming subscription', () => {
@@ -159,7 +159,7 @@ it('should render 0 if the number of available credits is less than price of upc
             subscription: getSubscriptionState(subscription),
         },
     });
-    expect(getByTestId('avalaible-credits')).toHaveTextContent('0');
+    expect(getByTestId('available-credits')).toHaveTextContent('0');
 });
 
 it('should render credits as-is if subscription is managed by Chargebee', () => {
@@ -174,7 +174,7 @@ it('should render credits as-is if subscription is managed by Chargebee', () => 
             subscription: getSubscriptionState(subscription),
         },
     });
-    expect(getByTestId('avalaible-credits')).toHaveTextContent('129.88');
+    expect(getByTestId('available-credits')).toHaveTextContent('129.88');
 });
 
 it('should display loader if subscription is not available', () => {
@@ -196,5 +196,5 @@ it('should take into account discount', () => {
             subscription: getSubscriptionState(subscription as any),
         },
     });
-    expect(getByTestId('avalaible-credits')).toHaveTextContent('19.88');
+    expect(getByTestId('available-credits')).toHaveTextContent('19.88');
 });
