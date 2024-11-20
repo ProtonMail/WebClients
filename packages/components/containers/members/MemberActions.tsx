@@ -60,7 +60,6 @@ export const MagicLinkMemberActions = ({
 
 export const getMemberPermissions = ({
     appName,
-    attachSSOEnabled,
     user,
     addresses,
     member,
@@ -70,7 +69,6 @@ export const getMemberPermissions = ({
     ssoDomainsSet,
 }: {
     ssoDomainsSet: ReturnType<typeof getSSODomainsSet>;
-    attachSSOEnabled: boolean;
     addresses: PartialMemberAddress[] | undefined;
     appName: APP_NAMES;
     user: UserModel;
@@ -121,20 +119,18 @@ export const getMemberPermissions = ({
     const isMemberSSO = Boolean(member.SSO);
     const canAddAddress = !isMemberSSO && addresses && addresses.length === 0;
 
-    const canDetachSSO = attachSSOEnabled && isMemberSSO;
-    const canAttachSSO =
-        attachSSOEnabled &&
-        Boolean(
-            ssoDomainsSet.size &&
-                !isMemberSSO &&
-                hasKeysSetup &&
-                isNonPrivate &&
-                addresses?.length &&
-                addresses.some((address) => {
-                    const [, domain] = getEmailParts(address.Email);
-                    return ssoDomainsSet.has(domain.toLowerCase());
-                })
-        );
+    const canDetachSSO = isMemberSSO && hasKeysSetup;
+    const canAttachSSO = Boolean(
+        ssoDomainsSet.size &&
+            !isMemberSSO &&
+            hasKeysSetup &&
+            isNonPrivate &&
+            addresses?.length &&
+            addresses.some((address) => {
+                const [, domain] = getEmailParts(address.Email);
+                return ssoDomainsSet.has(domain.toLowerCase());
+            })
+    );
 
     return {
         canAddAddress,
