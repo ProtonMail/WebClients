@@ -1,11 +1,28 @@
-import { describe, expect, test } from '@jest/globals';
-import { configureStore, createSlice } from '@reduxjs/toolkit';
-import { act, render, waitFor } from '@testing-library/react';
+import type { ReactNode } from 'react';
+import { Provider } from 'react-redux';
 
-import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
+import { describe, expect, test } from '@jest/globals';
+import { type Action, configureStore, createSlice } from '@reduxjs/toolkit';
+import { act, render, waitFor } from '@testing-library/react';
+import type { Store } from 'redux';
+
+import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import { createAsyncModelThunk, handleAsyncModel } from './creator';
-import { createHooks } from './hooks';
+import { ModelThunkDispatcher, createHooks } from './hooks';
+
+export interface ProtonStoreProviderProps<S = any, A extends Action = Action> {
+    store: Store<S, A>;
+    children: ReactNode;
+}
+
+const ProtonStoreProvider = ({ children, store }: ProtonStoreProviderProps) => {
+    return (
+        <Provider context={ProtonStoreContext} store={store}>
+            <ModelThunkDispatcher>{children}</ModelThunkDispatcher>
+        </Provider>
+    );
+};
 
 interface ModelState<T> {
     value: T | undefined;
