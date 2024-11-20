@@ -5,9 +5,9 @@ import { useUser } from '@proton/account/user/hooks';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import type { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { usePostSubscription } from '@proton/components/containers/payments/subscription/postSubscription/usePostSubscription';
 import useConfig from '@proton/components/hooks/useConfig';
-import type { APP_NAMES, CYCLE } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES, type CYCLE } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash';
@@ -51,6 +51,7 @@ const useUpsellConfig = ({
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const hasSubscriptionModal = openSubscriptionModal !== noop;
+    const postSubscriptionCallbackProps = usePostSubscription({ upsellRef });
     const inboxUpsellFlowEnabled = useFlag('InboxUpsellFlow');
     const { APP_NAME } = useConfig();
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
@@ -82,7 +83,11 @@ const useUpsellConfig = ({
                 // Open the subscription modal
                 openSubscriptionModal({
                     ...subscriptionCallBackProps,
-                    onSubscribed,
+                    ...postSubscriptionCallbackProps,
+                    onSubscribed() {
+                        onSubscribed?.();
+                        postSubscriptionCallbackProps?.onSubscribed?.();
+                    },
                 });
             },
         };

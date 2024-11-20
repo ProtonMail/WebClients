@@ -46,6 +46,11 @@ export interface SpotlightProps {
     size?: 'large';
     footer?: ReactNode;
     isAboveModal?: boolean;
+    /**
+     * In case you want to restrict to some placements
+     * It's suggested to have at least 3 placements
+     */
+    availablePlacements?: PopperPlacement[];
 }
 
 const Spotlight = ({
@@ -64,6 +69,7 @@ const Spotlight = ({
     size,
     footer,
     isAboveModal,
+    availablePlacements,
 }: PropsWithChildren<SpotlightProps>) => {
     const [uid] = useState(generateUID('spotlight'));
 
@@ -80,6 +86,7 @@ const Spotlight = ({
         },
         isOpen,
         originalPlacement,
+        availablePlacements,
     });
     const showSideRadius = shouldShowSideRadius(arrow['--arrow-offset'], placement, 8);
 
