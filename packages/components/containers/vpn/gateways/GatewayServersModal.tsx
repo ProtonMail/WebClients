@@ -201,7 +201,8 @@ const GatewayServersModal = ({
                     <Table className="my-2" responsive="cards">
                         <thead>
                             <tr>
-                                <TableCell key="country" type="header">{c('Header').t`Location`}</TableCell>
+                                <TableCell key="country" type="header" className="w-1/4">{c('Header')
+                                    .t`Location`}</TableCell>
                                 <TableCell key="server" type="header" className="w-1/10">
                                     {c('Header').t`Server`}
                                 </TableCell>
@@ -239,10 +240,22 @@ const GatewayServersModal = ({
                                             className="mb-1"
                                         />,
                                         getSuffix(logical.Name),
-                                        <span className="py-1 px-2 rounded text-uppercase bg-success">{
-                                            /** translator: status of the server: people can connect to it */
-                                            c('Server-Info').t`active`
-                                        }</span>,
+                                        deleted[logical.ID] ? (
+                                            new Cell(
+                                                (
+                                                    <span className="py-1 px-2 rounded text-uppercase bg-danger">{
+                                                        /** translator: status of the server: will be deleted when user click "Save" */
+                                                        c('Server-Info').t`to be deleted`
+                                                    }</span>
+                                                ),
+                                                1
+                                            )
+                                        ) : (
+                                            <span className="py-1 px-2 rounded text-uppercase bg-success">{
+                                                /** translator: status of the server: people can connect to it */
+                                                c('Server-Info').t`active`
+                                            }</span>
+                                        ),
                                         ...(showIP
                                             ? [
                                                   <>
@@ -321,10 +334,22 @@ const GatewayServersModal = ({
                                             className="mb-1"
                                         />,
                                         getSuffix(logical.Name),
-                                        <span className="py-1 px-2 rounded text-uppercase bg-info">{
-                                            /** translator: status of the server: people cannot yet use it */
-                                            c('Server-Info').t`pending`
-                                        }</span>,
+                                        deleted[logical.ID] ? (
+                                            new Cell(
+                                                (
+                                                    <span className="py-1 px-2 rounded text-uppercase bg-danger">{
+                                                        /** translator: status of the server: will be deleted when user click "Save" */
+                                                        c('Server-Info').t`to be deleted`
+                                                    }</span>
+                                                ),
+                                                1
+                                            )
+                                        ) : (
+                                            <span className="py-1 px-2 rounded text-uppercase bg-info">{
+                                                /** translator: status of the server: people cannot yet use it */
+                                                c('Server-Info').t`pending`
+                                            }</span>
+                                        ),
                                         ...(showIP ? ['-'] : []),
                                         ...(showLoad ? ['-'] : []),
                                         <Button icon size="small" key="delete" onClick={handleDelete(logical)}>
