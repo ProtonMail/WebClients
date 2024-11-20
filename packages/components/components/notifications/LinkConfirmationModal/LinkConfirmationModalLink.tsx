@@ -5,7 +5,6 @@ import Copy from '@proton/components/components/button/Copy';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { isEdge, isIE11 } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -19,7 +18,6 @@ interface Props {
 
 const LinkConfirmationModalLink = ({ link, isPunnyCoded, value, onToggle, isOutside = false }: Props) => {
     const { createNotification } = useNotifications();
-    const isMSBrowser = isEdge() || isIE11();
     const handleCopy = () => {
         createNotification({
             text: c('Notification').t`Link copied to clipboard`,
@@ -44,11 +42,8 @@ const LinkConfirmationModalLink = ({ link, isPunnyCoded, value, onToggle, isOuts
 
             {isPunnyCoded && (
                 <p className="my-2">
-                    {isMSBrowser
-                        ? c('Info')
-                              .t`This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.`
-                        : c('Info')
-                              .t`This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.`}
+                    {c('Info')
+                        .t`This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.`}
                     <Href
                         className="ml-1"
                         href={getKnowledgeBaseUrl('/homograph-attacks')}
