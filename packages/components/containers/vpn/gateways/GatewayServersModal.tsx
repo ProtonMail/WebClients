@@ -198,7 +198,7 @@ const GatewayServersModal = ({
             <ModalTwo size="xlarge" {...rest} as={Form} onSubmit={handleSubmit}>
                 <ModalTwoHeader title={c('Title').t`Edit servers`} />
                 <ModalTwoContent>
-                    <Table className="my-2">
+                    <Table className="my-2" responsive="cards">
                         <thead>
                             <tr>
                                 <TableCell key="country" type="header">{c('Header').t`Location`}</TableCell>
