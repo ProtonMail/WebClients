@@ -1,9 +1,4 @@
-import type * as H from 'history';
-
-import type { ProduceForkData } from '@proton/components/containers/app/SSOForkProducer';
-import { SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { DEFAULT_APP, getAppFromPathname } from '@proton/shared/lib/apps/slugHelper';
 import {
     getIsCalendarApp,
     getIsDocsApp,
@@ -13,22 +8,16 @@ import {
     getIsVPNApp,
     getIsWalletApp,
 } from '@proton/shared/lib/authentication/apps';
-import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
-import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import {
-    APPS,
-    SECURITY_CHECKUP_PATHS,
-    SETUP_ADDRESS_PATH,
-    SSO_PATHS,
-    VPN_TV_PATHS,
-} from '@proton/shared/lib/constants';
-import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import { getPathFromLocation, getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
+import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
 
 import { getLocaleMapping } from '../locales';
 import { getLocalePathPrefix } from '../useLocationWithoutLocale';
+import type { ProduceForkData } from './fork/interface';
+import { SSOType } from './fork/interface';
+import type { LocalRedirect } from './localRedirect';
 
 export const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
     const { path } = (() => {
@@ -69,7 +58,7 @@ export const getAppSwitcherUrl = (localePath: string) => {
 
 export const getSignupUrl = (
     localePath: string,
-    forkState: ProduceForkData | undefined,
+    forkState: ProduceForkData | undefined | null,
     app: APP_NAMES | undefined,
     productParam: ProductParam
 ) => {
@@ -124,12 +113,17 @@ export interface Paths {
     forgotUsername: string;
 }
 
-export const getPaths = (
-    maybeLocalePrefix: string,
-    forkState: ProduceForkData | undefined,
-    app: APP_NAMES | undefined,
-    productParam: ProductParam
-): Paths => {
+export const getPaths = ({
+    maybeLocalePrefix,
+    productParam,
+    app,
+    forkState,
+}: {
+    maybeLocalePrefix: string;
+    forkState: ProduceForkData | undefined | null;
+    app: APP_NAMES | undefined;
+    productParam: ProductParam;
+}): Paths => {
     const localePrefix = maybeLocalePrefix || getLocaleMapping(localeCode);
     const prefix = getLocalePathPrefix(localePrefix);
     return {
@@ -157,68 +151,18 @@ export const UNAUTHENTICATED_ROUTES = {
     TRIAL_ENDED: '/trial-ended',
 };
 
-const getCleanPath = (location: H.Location) => {
-    try {
-        const path = getPathFromLocation(location);
-        const url = new URL(path, window.location.origin);
-        url.searchParams.delete(ForkSearchParameters.LocalID);
-        return getPathFromLocation(url);
-    } catch {}
-};
-
-const getParsedContinueTo = (searchParams: URLSearchParams) => {
-    const continueTo = searchParams.get('continueTo') || '';
-    // Only allowing tv for now
-    if (VPN_TV_PATHS.includes(continueTo)) {
-        return {
-            path: continueTo,
-            app: APPS.PROTONVPN_SETTINGS,
-        };
-    }
-};
-
-export const getLocalRedirect = (location: H.Location) => {
-    const searchParams = new URLSearchParams(location.search);
-    const continueTo = getParsedContinueTo(searchParams);
-    if (continueTo) {
-        return {
-            path: continueTo.path,
-            app: continueTo.app,
-        };
-    }
-    // If trying to access a non-public location from this app, set up a local redirect
-    const localLocation = [...Object.values(SSO_PATHS), ...Object.values(UNAUTHENTICATED_ROUTES)].includes(
-        location.pathname
-    )
-        ? undefined
-        : location;
-    if (!localLocation) {
-        return;
-    }
-    const path = getCleanPath(location);
-    if (!path) {
-        return undefined;
-    }
-    // Special case to not add the slug...
-    if ([SETUP_ADDRESS_PATH, SECURITY_CHECKUP_PATHS.ROOT].some((p) => path.includes(p))) {
-        return {
-            path,
-            toApp: DEFAULT_APP,
-        };
-    }
-    const trimmedPathname = stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(location.pathname));
-    if (!trimmedPathname) {
-        return undefined;
-    }
-    const toApp = getAppFromPathname(trimmedPathname);
-    if (!toApp) {
-        return {
-            path,
-            toApp: undefined,
-        };
-    }
-    return {
-        path,
-        toApp,
-    };
+export const getPreAppIntent = ({
+    forkState,
+    localRedirect: maybeLocalRedirect,
+    queryAppIntent: maybeQueryAppIntent,
+}: {
+    localRedirect: LocalRedirect | undefined;
+    forkState: ProduceForkData | undefined | null;
+    queryAppIntent: APP_NAMES | undefined;
+}) => {
+    return (
+        (forkState?.type === SSOType.Proton && forkState.payload.forkParameters.app) ||
+        maybeLocalRedirect?.toApp ||
+        maybeQueryAppIntent
+    );
 };
