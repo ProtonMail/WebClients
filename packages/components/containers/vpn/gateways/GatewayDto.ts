@@ -7,4 +7,5 @@ export interface GatewayDto {
     unassignedIpQuantities: Record<string, number>;
     features: number;
     userIds: readonly string[];
+    checkedLocations?: object[];
 }
