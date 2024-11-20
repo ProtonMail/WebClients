@@ -5,21 +5,22 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { PassThemeCardList } from '@proton/pass/components/Settings/PassThemeCardList';
-import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectTheme } from '@proton/pass/store/selectors';
 
 /** This component can be deleted once the theme feature is no longer considered new
  * and we want to stop prompting this modal to users */
 export const ThemeOnboardingModal: FC = () => {
+    const core = usePassCore();
     const theme = useSelector(selectTheme);
     const [open, setOpen] = useState(!theme);
     const dispatch = useDispatch();
 
     const handleClose = () => {
-        if (!theme) dispatch(settingsEditIntent('theme', { theme: PASS_DEFAULT_THEME }, true));
+        if (!theme) dispatch(settingsEditIntent('theme', { theme: core.theme }, true));
         setOpen(false);
     };
 
