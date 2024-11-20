@@ -1035,8 +1035,10 @@ const InteractiveCalendarView = ({
             sendPreferencesMap: initialSendPrefsMap,
             noCheckSendPrefs,
         });
+
         // generate DTSTAMPs for the ICS
         const currentTimestamp = +serverTime();
+
         const cleanVeventWithDtstamp = cleanVevent
             ? withDtstamp(omit(cleanVevent, ['dtstamp']), currentTimestamp)
             : undefined;
@@ -1058,6 +1060,7 @@ const InteractiveCalendarView = ({
             onReplyError,
             onCancelError,
         });
+
         await sendIcsAction();
         return {
             veventComponent: cleanVevent,
@@ -1517,6 +1520,25 @@ const InteractiveCalendarView = ({
                 isEditSingleOccurrenceEnabled,
             });
 
+            // The Zoom integration needs to do a round trip with API to update Zoom events
+            // If a Zoom meeting is present, we do the sync before any Redux update
+            const hasZoomMeeting = !!temporaryEvent.tmpData.conferenceId && !!temporaryEvent.tmpData.conferenceUrl;
+            let syncRes: SyncMultipleApiResponse[] | undefined = undefined;
+            if (hasZoomMeeting) {
+                try {
+                    syncRes = await handleSyncActions(syncActions);
+                } catch (e: any) {
+                    // If the error is a video conference error, we open the oauth modal and try again
+                    if (e?.cause === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
+                        triggerZoomOAuth(async () => {
+                            syncRes = await handleSyncActions(syncActions);
+                        });
+                    } else {
+                        throw e;
+                    }
+                }
+            }
+
             if (hasReduxStore) {
                 if (isSingleEventUpdate) {
                     dispatch(eventsActions.markEventAsSaving({ uniqueId, isSaving: true }));
@@ -1543,11 +1565,14 @@ const InteractiveCalendarView = ({
 
             successNotification = texts;
             hasStartChanged = hasStartChangedProp;
+
             const [syncResponses, updatePartstatResponses, updatePersonalPartResponses] = await Promise.all([
-                handleSyncActions(syncActions),
+                // Use of a bang here since we know the value is assigned if hasZoomMeeting is true
+                hasZoomMeeting ? (syncRes ?? []) : handleSyncActions(syncActions),
                 handleUpdatePartstatActions(updatePartstatActions),
                 handleUpdatePersonalPartActions(updatePersonalPartActions),
             ]);
+
             const calendarsEventsCache = calendarsEventsCacheRef.current;
             if (calendarsEventsCache) {
                 upsertUpdateEventPartResponses(
@@ -1595,14 +1620,17 @@ const InteractiveCalendarView = ({
             if (notificationId) {
                 removeNotification(notificationId);
             }
-            handleCreateNotification(successNotification);
+            if (hasZoomMeeting && !syncRes) {
+                handleCreateNotification({ success: c('Success').t`Finish Zoom authentication to save event` });
+            } else {
+                handleCreateNotification(successNotification);
+            }
         } catch (e: any) {
             if (notificationId) {
                 removeNotification(notificationId);
             }
-            // If the error is a video conference error, we open the oauth modal and try again
+
             if (e?.cause === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
-                await triggerZoomOAuth(() => handleSaveEvent(temporaryEvent, inviteActions));
                 return;
             }
 
