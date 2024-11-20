@@ -22,6 +22,7 @@ import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
+import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import aliasesIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_aliases.svg';
@@ -164,22 +165,31 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
     const hasAtLeastOneChecked = Object.values(checkedItems).some(Boolean);
 
     const handleNext = () => {
-        for (const [key, value] of Object.entries(checkedItems)) {
-            if (key === 'aliases' && value) {
-                void createPmMeAddress();
-            }
-            if (key === 'autoDelete' && value) {
-                void api(updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE));
-            }
-            if (key === 'monitoring' && value) {
-                void api(enableBreachAlert());
-            }
+        const promises = [
+            sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.premium_features, {
+                feature_auto_delete: checkedItems.autoDelete ? 'yes' : 'no',
+                feature_dark_web_monitoring: checkedItems.monitoring ? 'yes' : 'no',
+                feature_short_domain: checkedItems.aliases ? 'yes' : 'no',
+            }),
+        ];
+
+        if (checkedItems.aliases) {
+            promises.push(createPmMeAddress());
+        }
+        if (checkedItems.autoDelete) {
+            promises.push(api(updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE)));
+        }
+        if (checkedItems.monitoring) {
+            promises.push(api(enableBreachAlert()));
         }
 
-        void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.premium_features, {
-            feature_auto_delete: checkedItems.autoDelete ? 'yes' : 'no',
-            feature_dark_web_monitoring: checkedItems.monitoring ? 'yes' : 'no',
-            feature_short_domain: checkedItems.aliases ? 'yes' : 'no',
+        void Promise.allSettled(promises).then((results) => {
+            for (const result of results) {
+                if (result.status === 'rejected') {
+                    console.error(result.reason);
+                    traceInitiativeError('mail-onboarding', result.reason);
+                }
+            }
         });
 
         onNext();
