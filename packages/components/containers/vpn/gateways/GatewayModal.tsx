@@ -39,7 +39,6 @@ interface Props extends ModalProps<typeof Form> {
     singleServer?: boolean;
     showCancelButton?: boolean;
     onSubmitDone: (server: GatewayModel) => Promise<void>;
-    onUpsell: () => void;
 }
 
 enum STEP {
@@ -56,7 +55,6 @@ const GatewayModal = ({
     users,
     countryOptions,
     onSubmitDone,
-    onUpsell,
     isEditing = false,
     singleServer = false,
     showCancelButton = false,
@@ -209,12 +207,7 @@ const GatewayModal = ({
                                     usedCount={usedCount}
                                     addedCount={addedCount}
                                     deletedDedicatedIPs={deletedDedicatedIPs}
-                                    needUpsell={needUpsell}
                                     countryOptions={countryOptions}
-                                    onUpsell={() => {
-                                        rest.onClose?.();
-                                        onUpsell();
-                                    }}
                                     loading={loading}
                                     model={model}
                                     changeModel={changeModel}
