@@ -45,7 +45,7 @@ const WalletHeader = ({
         [walletId, apiWalletsData]
     );
 
-    const { needPassphrase, wrongFingerprint } = useWalletPassphrase(wallet);
+    const { needPassphrase, wrongFingerprint, canUseWallet } = useWalletPassphrase(wallet);
 
     useEffect(() => {
         setPassphraseInputModal(needPassphrase);
@@ -92,15 +92,19 @@ const WalletHeader = ({
                                         <span className="block text-semibold mr-1">
                                             {needPassphrase
                                                 ? c('Wallet header').t`This wallet needs a passphrase to be used.`
-                                                : c('Wallet header').t`The passphrase is incorrect. Please try again.`}
+                                                : canUseWallet
+                                                  ? c('Wallet header').t`The passphrase is incorrect. Please try again.`
+                                                  : c('Wallet header')
+                                                        .t`We are having trouble opening your wallet. Please refresh the page or try again later.`}
                                         </span>
-
-                                        <CoreButton
-                                            shape="underline"
-                                            onClick={() => {
-                                                setPassphraseInputModal(true);
-                                            }}
-                                        >{c('Action').t`Input passphrase`}</CoreButton>
+                                        {canUseWallet && (
+                                            <CoreButton
+                                                shape="underline"
+                                                onClick={() => {
+                                                    setPassphraseInputModal(true);
+                                                }}
+                                            >{c('Action').t`Input passphrase`}</CoreButton>
+                                        )}
                                     </div>
                                 </TopBanner>
                             );
