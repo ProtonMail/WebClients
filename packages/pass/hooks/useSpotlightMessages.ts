@@ -157,6 +157,7 @@ export const useSpotlightMessages = () => {
                         component: UserRenewal,
                         id: 'user-renewal',
                         className: 'ui-red',
+                        weak: true,
                     },
                 ],
                 'type'
