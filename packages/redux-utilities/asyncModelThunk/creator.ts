@@ -1,12 +1,6 @@
-import {
-    type Action,
-    ActionReducerMapBuilder,
-    Draft,
-    ThunkDispatch,
-    createAction,
-    miniSerializeError,
-} from '@reduxjs/toolkit';
-import { ThunkAction } from 'redux-thunk';
+import type { ActionReducerMapBuilder, Draft, ThunkDispatch } from '@reduxjs/toolkit';
+import { type Action, createAction, miniSerializeError } from '@reduxjs/toolkit';
+import type { ThunkAction } from 'redux-thunk';
 
 import { getFetchedAt as getDefaultFetchedAt, getFetchedEphemeral } from './fetchedAt';
 import type { ReducerValue, ThunkOptions } from './interface';
