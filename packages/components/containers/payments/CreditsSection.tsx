@@ -103,7 +103,7 @@ const CreditsSection = () => {
             )}
             <div className="px-4 mb-4 flex justify-space-between">
                 <span className="text-bold" data-testid="unused-credits">{c('Credits').t`Available credits`}</span>
-                <span className="text-bold" data-testid="avalaible-credits">
+                <span className="text-bold" data-testid="available-credits">
                     {ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED && availableCredits > 0 ? (
                         <Price currency={Currency}>{availableCredits}</Price>
                     ) : (
