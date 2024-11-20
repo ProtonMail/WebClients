@@ -103,6 +103,7 @@ export const useSpotlightMessages = () => {
                             type: 'button',
                             onClick: getRatingURL ? () => onLink(getRatingURL()) : noop,
                         },
+                        weak: true,
                     },
                     {
                         type: SpotlightMessage.STORAGE_ISSUE,
