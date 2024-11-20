@@ -50,7 +50,7 @@ export const SpotlightContent: FC<SpotlightMessageDefinition> = (props) => {
         <div
             className={clsx(
                 props.className,
-                props.mode === 'default' && props.weak && 'weak',
+                props.weak && 'weak',
                 `pass-spotlight-content flex items-center gap-4 p-4 pr-6 rounded relative mt-2`
             )}
         >
