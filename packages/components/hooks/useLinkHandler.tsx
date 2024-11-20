@@ -34,27 +34,7 @@ const defaultOptions: UseLinkHandlerOptions = {
 };
 
 const getSrc = (target: Element) => {
-    const extract = () => {
-        try {
-            return { encoded: target.toString() || '', raw: target.getAttribute('href') || '' };
-        } catch (e: any) {
-            /*
-                Because for Edge/IE11
-                <a href="http://xn--rotonmail-4sg.com" rel="noreferrer nofollow noopener">Protonmail.com</a>
-                will crash --> Unspecified error. ¯\_(ツ)_/¯
-                Don't worry, target.href/getAttribute will crash too ¯\_(ツ)_/¯
-             */
-            const attr = Array.from(target.attributes).find((attr) => (attr || {}).name === 'href');
-            return { raw: attr?.nodeValue || '' };
-        }
-    };
-
-    // Because even the fallback can crash on IE11/Edge
-    try {
-        return extract();
-    } catch (e: any) {
-        return { raw: '' };
-    }
+    return { encoded: target.toString() || '', raw: target.getAttribute('href') || '' };
 };
 
 export const useLinkHandler: UseLinkHandler = (
@@ -83,12 +63,6 @@ export const useLinkHandler: UseLinkHandler = (
                     .t`This message may contain some links URL that cannot be properly opened by your current browser.`,
                 type: 'error',
             });
-        }
-
-        // IE11 and Edge random env bug... (╯°□°）╯︵ ┻━┻
-        if (!src) {
-            event.preventDefault();
-            return false;
         }
 
         // We only handle anchor that begins with `mailto:`
