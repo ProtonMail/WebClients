@@ -340,7 +340,6 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
                 await refreshList();
             },
-            onUpsell: getCustomizeSubscriptionOpener('dashboard'),
         });
 
     const editGatewayServers = (gateway: Gateway) => () =>
@@ -553,23 +552,20 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         </div>
                     )}
 
-                    <Table className="my-2">
+                    <Table className="my-2" responsive="cards">
                         <thead>
                             <tr>
-                                <TableCell key="name" type="header">{c('Header').t`Name`}</TableCell>
+                                <TableCell key="name" type="header" className="w-1/5">{c('Header').t`Name`}</TableCell>
                                 <TableCell key="status" type="header" className="w-1/10">
                                     {c('Header').t`Status`}
                                 </TableCell>
-                                <TableCell key="servers" type="header">{c('Header').t`Servers`}</TableCell>
+                                <TableCell key="servers" type="header" className="w-1/5">{c('Header')
+                                    .t`Servers`}</TableCell>
                                 {isAdmin && (
                                     <>
-                                        <TableCell key="members" type="header">{c('Header').t`Members`}</TableCell>
-                                        <TableCell
-                                            key="manage"
-                                            type="header"
-                                            className="w-custom"
-                                            style={{ '--w-custom': '12rem' }}
-                                        >
+                                        <TableCell key="members" type="header" className="w-1/5">{c('Header')
+                                            .t`Members`}</TableCell>
+                                        <TableCell key="manage" type="header" className="w-1/10">
                                             &nbsp;
                                         </TableCell>
                                     </>
