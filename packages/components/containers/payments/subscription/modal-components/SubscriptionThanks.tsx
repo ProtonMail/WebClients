@@ -39,7 +39,7 @@ const SubscriptionThanks = ({ paymentMethodType, onClose, loading, showDownloads
                     PAYMENT_METHOD_TYPES.BITCOIN,
                     PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
                 ].includes(paymentMethodType as any) ? (
-                    <p className="text-center mb-4">{c('Info')
+                    <p className="text-center mb-4" data-testid="successfull-update">{c('Info')
                         .t`Your account will be updated once the payment is cleared.`}</p>
                 ) : (
                     <p className="text-center mb-4 text-bold text-xl" data-testid="successfull-update">{c('Info')
