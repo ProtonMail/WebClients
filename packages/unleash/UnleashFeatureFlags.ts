@@ -51,7 +51,6 @@ enum AccountFlag {
     UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
     GlobalSSO = 'GlobalSSO',
-    AttachSSO = 'AttachSSO',
     EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
 }
 
