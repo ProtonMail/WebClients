@@ -8,7 +8,6 @@ import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransp
 import { useDispatch } from '@proton/redux-shared-store';
 import { type Member } from '@proton/shared/lib/interfaces';
 import { type ParsedUnprivatizationData } from '@proton/shared/lib/keys';
-import useFlag from '@proton/unleash/useFlag';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import TopBanner from '../../topBanners/TopBanner';
@@ -16,7 +15,6 @@ import MemberUnprivatizationModal from './MemberUnprivatizationModal';
 
 const UnprivatizationRequestTopBanner = () => {
     const dispatch = useDispatch();
-    const unprivatizeMemberEnabled = useFlag('UnprivatizeMember');
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const [data, setData] = useState<{
         member: Member;
@@ -39,12 +37,10 @@ const UnprivatizationRequestTopBanner = () => {
                 }
             }
         };
-        if (unprivatizeMemberEnabled) {
-            run();
-        }
+        run();
     }, []);
 
-    if (!data || !unprivatizeMemberEnabled) {
+    if (!data) {
         return null;
     }
 
