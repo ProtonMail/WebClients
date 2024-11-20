@@ -1,5 +1,4 @@
 import type { ChangeEvent } from 'react';
-import { useEffect } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -11,9 +10,7 @@ import Label from '@proton/components/components/label/Label';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useNow } from '@proton/components/hooks/useNow';
-import { MAX_IPS_ADDON } from '@proton/payments';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
@@ -32,9 +29,7 @@ interface Props {
     addedCount: number;
     deletedDedicatedIPs?: DeletedDedicatedIp[];
     countryOptions: CountryOptions;
-    onUpsell: () => void;
     loading?: boolean;
-    needUpsell: boolean;
     model: GatewayDto;
     changeModel: (diff: Partial<GatewayDto>) => void;
 }
@@ -47,19 +42,15 @@ export const GatewayCountrySelection = ({
     addedCount,
     deletedDedicatedIPs,
     countryOptions,
-    onUpsell,
     loading = false,
-    needUpsell,
     model,
     changeModel,
 }: Props) => {
     const remainingCount = ownedCount - usedCount;
     const availableCount = Math.max(0, remainingCount - addedCount - (deletedDedicatedIPs?.length || 0));
     const unassignedAvailableCount = deletedDedicatedIPs?.length || 0;
-    const totalCountExceeded = addedCount > remainingCount - (deletedDedicatedIPs?.length || 0);
-    const canBuyMore = ownedCount < MAX_IPS_ADDON;
+    const totalCountExceeded = addedCount >= remainingCount - (deletedDedicatedIPs?.length || 0);
     const now = useNow(10 * SECOND);
-    const { createNotification } = useNotifications();
 
     const handleUnassigningLocationChange = ({ value }: SelectChangeEvent<string>) =>
         changeModel({ location: getLocationFromId(value) });
@@ -115,28 +106,6 @@ export const GatewayCountrySelection = ({
         changeModel({ quantities });
     };
 
-    useEffect(() => {
-        if (needUpsell || totalCountExceeded) {
-            createNotification({
-                key: 'total-server-count-exceeded',
-                text: (
-                    <>
-                        <span>
-                            {c('Error').t`You've assigned all of your servers.`}
-                            {canBuyMore && (
-                                <b onClick={onUpsell} style={{ cursor: 'pointer' }}>
-                                    {' '}
-                                    {c('Action').t`Get more servers`}
-                                </b>
-                            )}
-                        </span>
-                    </>
-                ),
-                type: 'error',
-            });
-        }
-    });
-
     return singleServer ? (
         <Row>
             <Label htmlFor="domain">{c('Label').t`Country`}</Label>
@@ -156,43 +125,6 @@ export const GatewayCountrySelection = ({
         </Row>
     ) : (
         <>
-            <div>
-                <h4 className="text-bold mb-1">Add new servers</h4>
-                <p
-                    className="mb-5 color-weak"
-                    style={{ marginTop: 0, color: totalCountExceeded ? 'var(--signal-danger)' : '' }}
-                >
-                    {c('Info').ngettext(
-                        msgid`You have ${availableCount} new server available.`,
-                        `You have ${availableCount} new servers available.`,
-                        availableCount
-                    )}
-                </p>
-                <p></p>
-                {locations.map((location) => {
-                    const locationId = getLocationId(location);
-                    return (
-                        <div key={locationId} className="flex *:min-size-auto md:flex-nowrap items-center mb-4">
-                            <ButtonNumberInput
-                                id={locationId}
-                                value={model.quantities?.[locationId]}
-                                min={0}
-                                max={99}
-                                disabled={
-                                    loading ||
-                                    (totalCountExceeded &&
-                                        model.quantities !== undefined &&
-                                        !(locationId in model.quantities))
-                                }
-                                onChange={(newQuantity: number) => handleQuantityChange(newQuantity, locationId)}
-                                step={1}
-                                location={location}
-                                countryOptions={countryOptions}
-                            />
-                        </div>
-                    );
-                })}
-            </div>
             {unassignedAvailableCount !== 0 && (
                 <div>
                     <h4 className="text-bold mb-1" style={{ marginTop: 0 }}>
@@ -257,6 +189,45 @@ export const GatewayCountrySelection = ({
                     })}
                 </div>
             )}
+            <div>
+                <h4 className="text-bold mb-1">Add new servers</h4>
+                <p
+                    className="mb-5 color-weak"
+                    style={{ marginTop: 0, color: totalCountExceeded ? 'var(--signal-danger)' : '' }}
+                >
+                    {c('Info').ngettext(
+                        msgid`You have ${availableCount} new server available.`,
+                        `You have ${availableCount} new servers available.`,
+                        availableCount
+                    )}
+                </p>
+                <p></p>
+                {locations.map((location) => {
+                    const locationId = getLocationId(location);
+                    return (
+                        <div key={locationId} className="flex *:min-size-auto md:flex-nowrap items-center mb-1">
+                            <ButtonNumberInput
+                                id={locationId}
+                                value={model.quantities?.[locationId]}
+                                min={0}
+                                max={99}
+                                disabled={
+                                    loading ||
+                                    (totalCountExceeded &&
+                                        model.quantities !== undefined &&
+                                        !(locationId in model.quantities))
+                                }
+                                onChange={(newQuantity: number) => handleQuantityChange(newQuantity, locationId)}
+                                step={1}
+                                location={location}
+                                countryOptions={countryOptions}
+                                ownedCount={ownedCount}
+                                usedCount={usedCount}
+                            />
+                        </div>
+                    );
+                })}
+            </div>
             <div className="flex flex-nowrap mb-4 rounded p-2 bg-weak">
                 <Icon name="info-circle" className="shrink-0" />
                 <div className="ml-2">
