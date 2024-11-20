@@ -22,6 +22,8 @@ export const ButtonNumberInput = ({
     disabled = false,
     location,
     countryOptions,
+    ownedCount,
+    usedCount,
 }: {
     step?: number;
     id: string;
@@ -31,6 +33,8 @@ export const ButtonNumberInput = ({
     disabled?: boolean;
     location: GatewayLocation;
     countryOptions: CountryOptions;
+    ownedCount: number;
+    usedCount: number;
     onChange?: (newValue: number) => void;
 }) => {
     const [tmpValue, setTmpValue] = useState<number | undefined>(value);
@@ -41,10 +45,18 @@ export const ButtonNumberInput = ({
 
     const title = getLocationDisplayName(location, countryOptions);
 
-    const isDecDisabled = disabled || !getIsValidValue((tmpValue || 0) - step);
-    const isIncDisabled = disabled || !getIsValidValue((tmpValue || 0) + step);
+    const maxUsable = Math.min(max, ownedCount - usedCount);
+    const isDecDisabled = disabled || tmpValue === undefined || tmpValue <= min;
+    const isIncDisabled = disabled || tmpValue === undefined || tmpValue >= maxUsable;
 
     const isValidTmpValue = getIsValidValue(tmpValue);
+
+    const setTmpNum = (newValue: number) => {
+        if (newValue >= min && newValue <= maxUsable) {
+            setTmpValue(newValue);
+            onChange?.(newValue);
+        }
+    };
 
     return (
         <>
@@ -55,6 +67,7 @@ export const ButtonNumberInput = ({
                         setTmpValue(newValue);
                         onChange?.(newValue || 0);
                     }}
+                    disabled={disabled}
                     checked={(tmpValue || 0) > 0}
                 />{' '}
                 <CountryFlagAndName countryCode={location.Country} countryName={title} />
@@ -73,7 +86,7 @@ export const ButtonNumberInput = ({
                             return;
                         }
                         const newValue = tmpValue - step;
-                        setTmpValue?.(newValue);
+                        setTmpNum?.(newValue);
                         onChange?.(newValue);
                     }}
                 >
@@ -96,12 +109,12 @@ export const ButtonNumberInput = ({
                         }}
                         onChange={({ target: { value: newValue } }) => {
                             if (newValue === '') {
-                                setTmpValue?.(undefined);
+                                setTmpValue(undefined);
                                 return;
                             }
                             const newIntValue = parseInt(newValue, 10);
-                            setTmpValue?.(newIntValue);
-                            if (getIsValidValue(newIntValue)) {
+                            setTmpValue(newIntValue);
+                            if (newIntValue >= min && newIntValue <= maxUsable) {
                                 onChange?.(newIntValue);
                             }
                         }}
@@ -117,7 +130,7 @@ export const ButtonNumberInput = ({
                             return;
                         }
                         const newValue = tmpValue + step;
-                        setTmpValue?.(newValue);
+                        setTmpNum?.(newValue);
                         onChange?.(newValue);
                     }}
                 >

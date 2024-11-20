@@ -114,12 +114,7 @@ const GatewayAddServersModal = ({
                                 usedCount={usedCount}
                                 addedCount={addedCount}
                                 deletedDedicatedIPs={deletedDedicatedIPs}
-                                needUpsell={needUpsell}
                                 countryOptions={countryOptions}
-                                onUpsell={() => {
-                                    rest.onClose?.();
-                                    onUpsell();
-                                }}
                                 model={model}
                                 changeModel={changeModel}
                             />
