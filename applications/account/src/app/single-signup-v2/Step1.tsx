@@ -58,6 +58,7 @@ import type { Api, Cycle, SubscriptionPlan, User, VPNServersCountData } from '@p
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { isFree } from '@proton/shared/lib/user/helpers';
+import simpleLoginLogo from '@proton/styles/assets/img/illustrations/simplelogin-logo.svg';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -510,18 +511,30 @@ const Step1 = ({
         return handleChangeCurrency(newAvailableCurrency);
     };
 
-    const audienceTabs =
-        hasPlanSelector && location.pathname !== SSO_PATHS.BUSINESS_SIGNUP ? (
-            <AudienceTabs
-                audience={audience}
-                audiences={audiences}
-                onChangeAudience={async (newAudience) => {
-                    const newCurrency = await handleCurrencyChangeOnAudienceChange(newAudience.value);
-                    handleChangePlan({ [newAudience.defaultPlan]: 1 }, newAudience.defaultPlan, newCurrency);
-                    history.push(newAudience.locationDescriptor);
-                }}
-            />
-        ) : undefined;
+    const afterLogo = (() => {
+        if (mode === SignupMode.PassSimpleLogin) {
+            return (
+                <>
+                    <Vr className="h-custom mr-6 lg:mr-8 opacity-50 hidden md:flex" style={{ '--h-custom': '2rem' }} />
+                    <img className="mb-0.5" src={simpleLoginLogo} alt="SimpleLogin" />
+                </>
+            );
+        }
+        if (hasPlanSelector && location.pathname !== SSO_PATHS.BUSINESS_SIGNUP) {
+            return (
+                <AudienceTabs
+                    audience={audience}
+                    audiences={audiences}
+                    onChangeAudience={async (newAudience) => {
+                        const newCurrency = await handleCurrencyChangeOnAudienceChange(newAudience.value);
+                        handleChangePlan({ [newAudience.defaultPlan]: 1 }, newAudience.defaultPlan, newCurrency);
+                        history.push(newAudience.locationDescriptor);
+                    }}
+                />
+            );
+        }
+        return undefined;
+    })();
 
     const boxWidth = { '--max-w-custom': planCards[audience].length === 4 && hasPlanSelector ? '74rem' : '57rem' };
 
@@ -563,7 +576,7 @@ const Step1 = ({
 
     return (
         <Layout
-            afterLogo={audienceTabs}
+            afterLogo={afterLogo}
             logo={logo}
             footer={renewalNotice}
             hasDecoration
@@ -627,6 +640,18 @@ const Step1 = ({
                             </div>
                         );
                     };
+
+                    if (signupParameters.mode === SignupMode.PassSimpleLogin) {
+                        return (
+                            <div
+                                className="text-center text-lg mt-2 max-w-custom"
+                                style={{ '--max-w-custom': '40rem' }}
+                            >
+                                {c('Info')
+                                    .t`${PASS_APP_NAME} is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${BRAND_NAME}.`}
+                            </div>
+                        );
+                    }
 
                     if (signupParameters.invite?.type === 'pass') {
                         const inviterEmailJSX = <strong key="invite">{signupParameters.invite.data.inviter}</strong>;
@@ -933,7 +958,8 @@ const Step1 = ({
                             signupParameters.signIn &&
                             (signupParameters.mode !== SignupMode.Invite ||
                                 signupParameters.invite?.type === 'drive') &&
-                            signupParameters.mode !== SignupMode.MailReferral;
+                            signupParameters.mode !== SignupMode.MailReferral &&
+                            signupParameters.mode !== SignupMode.PassSimpleLogin;
 
                         return (
                             <>
@@ -986,11 +1012,17 @@ const Step1 = ({
                                                     ) {
                                                         return {
                                                             defaultEmail: invitation.data.invitee,
-                                                            emailReadOnly: true,
+                                                            emailReadOnly: invitation.data.invitee !== '',
                                                             signupTypes: [SignupType.Email],
                                                         };
                                                     }
                                                 })()}
+                                                {...(signupParameters.mode === SignupMode.PassSimpleLogin
+                                                    ? {
+                                                          emailDescription: c('Info')
+                                                              .t`By creating a ${PASS_APP_NAME} account with your SimpleLogin email, you can manage your aliases directly from ${PASS_APP_NAME}.`,
+                                                      }
+                                                    : {})}
                                                 domains={model.domains}
                                                 passwordFields={true}
                                                 model={model}

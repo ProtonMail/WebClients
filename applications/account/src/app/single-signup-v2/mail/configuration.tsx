@@ -325,6 +325,7 @@ export const getMailConfiguration = ({
             [SignupMode.Default]: audience === Audience.B2B ? b2bTitle : title,
             [SignupMode.Invite]: inviteTitle,
             [SignupMode.MailReferral]: title,
+            [SignupMode.PassSimpleLogin]: title,
         }[mode],
         features,
         benefits,
