@@ -58,11 +58,6 @@ export const getMailAppRoutes = ({
                 icon: 'envelope',
                 subsections: [
                     {
-                        text: c('Title').t`Short domain (@pm.me)`,
-                        id: 'pmme',
-                        available: getShowPmMeSection(user, addresses),
-                    },
-                    {
                         text: c('Title').t`General`,
                         id: 'general',
                     },
@@ -95,6 +90,11 @@ export const getMailAppRoutes = ({
                 to: '/identity-addresses',
                 icon: 'card-identity',
                 subsections: [
+                    {
+                        text: c('Title').t`Short domain (@pm.me)`,
+                        id: 'pmme',
+                        available: getShowPmMeSection(user, addresses),
+                    },
                     {
                         text: c('Title').t`Display name and signature`,
                         id: 'name-signature',
