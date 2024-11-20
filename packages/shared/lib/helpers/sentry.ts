@@ -280,7 +280,7 @@ export const captureMessage = (...args: Parameters<typeof sentryCaptureMessage>)
     }
 };
 
-type MailInitiative = 'drawer-security-center' | 'composer' | 'assistant';
+type MailInitiative = 'drawer-security-center' | 'composer' | 'assistant' | 'mail-onboarding';
 export type SentryInitiative = MailInitiative;
 type CaptureExceptionArgs = Parameters<typeof captureException>;
 
