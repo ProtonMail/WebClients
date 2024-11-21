@@ -2577,6 +2577,9 @@
       "Invalid expiration date": [
         "Ugyldig udløbsdato"
       ],
+      "Invalid IBAN": [
+        "Ugyldig IBAN"
+      ],
       "Invalid name": [
         "Ugyldigt navn"
       ],
@@ -2720,6 +2723,9 @@
       "The address might be misspelled": [
         "Adressen kan være stavet forkert"
       ],
+      "The amount due has changed. Please try again.": [
+        "Det skyldige beløb er ændret. Prøv venligst igen."
+      ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "Det dokument, du forsøger at konvertere, er for stort. Dette kan forekomme, hvis dokumentet har et stort antal billeder eller andre medier. Prøv igen med et mindre dokument."
       ],
@@ -2831,6 +2837,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nået det maksimale antal kalendere."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du har nået grænsen for antallet af kontakter på din konto"
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -3673,6 +3682,9 @@
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
       ],
@@ -4470,9 +4482,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browseren. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
@@ -5829,6 +5838,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruger",
+        "Op til ${ numberOfUsers } brugere"
       ],
       "${ options }-day file version history": [
         "${ options }-dags filversionshistorik",
@@ -7868,6 +7881,10 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadresse",
+        "${ planNumberOfEmails } e-mailadresser"
       ]
     },
     "Subscription renewal state": {
