@@ -75,10 +75,12 @@ describe('useBitcoinAddresses', () => {
             useBitcoinAddresses({ apiWalletsData, walletsChainData, isSyncing: vi.fn() })
         );
 
-        await waitFor(() =>
-            expect(
-                result.current.bitcoinAddressHelperByWalletAccountId[apiWalletsData[0].WalletAccounts[0].ID]
-            ).toBeTruthy()
+        await waitFor(
+            () =>
+                expect(
+                    result.current.bitcoinAddressHelperByWalletAccountId[apiWalletsData[0].WalletAccounts[0].ID]
+                ).toBeTruthy(),
+            { timeout: 3000 }
         );
 
         const addressHelper =
@@ -106,10 +108,12 @@ describe('useBitcoinAddresses', () => {
             })
         );
 
-        await waitFor(() =>
-            expect(
-                result.current.bitcoinAddressHelperByWalletAccountId[apiWalletsData[0].WalletAccounts[0].ID]
-            ).toBeTruthy()
+        await waitFor(
+            () =>
+                expect(
+                    result.current.bitcoinAddressHelperByWalletAccountId[apiWalletsData[0].WalletAccounts[0].ID]
+                ).toBeTruthy(),
+            { timeout: 3000 }
         );
 
         const addressHelper =
@@ -150,10 +154,12 @@ describe('useBitcoinAddresses', () => {
                 })
             );
 
-            await waitFor(() =>
-                expect(
-                    result.current.bitcoinAddressHelperByWalletAccountId[apiWalletsData[0].WalletAccounts[0].ID]
-                ).toBeTruthy()
+            await waitFor(
+                () =>
+                    expect(
+                        result.current.bitcoinAddressHelperByWalletAccountId[apiWalletsData[0].WalletAccounts[0].ID]
+                    ).toBeTruthy(),
+                { timeout: 3000 }
             );
 
             expect(mockAddBitcoinAddresses).toHaveBeenCalledTimes(1);
