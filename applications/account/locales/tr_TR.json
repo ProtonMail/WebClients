@@ -3581,9 +3581,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Gelen iletilerinizi gelen kutunuza ulaşmadan önce otomatik olarak sıralayın."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "${ BRAND_NAME } Mail Plus tarifesiyle kullanılabilir"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Tebrikler! En yüksek hediye sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız."
       ],
@@ -4891,10 +4888,7 @@
         "Bir ad belirtmelisiniz"
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "SMTP gönderim kodu oluşturmak için bir özel etki alanı adresiniz olması gerekir."
-      ],
-      "You've assigned all of your servers.": [
-        "Tüm sunucularınızı atadınız"
+        "SMTP gönderimi kodu oluşturmak için bir özel etki alanı adresiniz olması gerekir."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Yazılabilecek en fazla karakter sayısına ulaştınız. Lütfen iletinizi kısaltın."
@@ -8421,10 +8415,10 @@
         "SMTP gönderimi, 3. taraf hizmetlerin veya cihazların özel alan adı adresleriniz için ${ MAIL_APP_NAME } üzerinden e-posta göndermesine olanak tanır. Bu özellik yalnızca özel alan adlarına sahip iş kullanıcıları için ${ BRAND_NAME } tarafından kullanılabilir."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "SMTP gönderim özelliği, üçüncü taraf hizmetlerin veya aygıtların özel etki alanı adreslerinizle ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar. Erişim isteğinde bulunmak için lütfen kullanım durumlarınızı, hangi özel etki alanlarını kullanmak istediğinizi ve gerçekleşmesi beklenen saatlik ve günlük e-posta sayılarını açıklayan ${ createTicket }."
+        "SMTP gönderimi özelliği, üçüncü taraf hizmetlerin veya aygıtların özel etki alanı adreslerinizle ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar. Erişim isteğinde bulunmak için lütfen kullanım durumlarınızı, hangi özel etki alanlarını kullanmak istediğinizi ve gerçekleşmesi beklenen saatlik ve günlük e-posta sayılarını açıklayan ${ createTicket }."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "SMTP gönderim özelliği ile üçüncü taraf hizmetler ya da aygıtlar ${ MAIL_APP_NAME } üzerinden özel etki alanı adreslerinizle e-posta gönderebilir. Bu özelliği kullanmaya başlamak için yeni bir kod oluşturun."
+        "SMTP gönderimi özelliği ile üçüncü taraf hizmetler ya da aygıtlar ${ MAIL_APP_NAME } üzerinden özel etki alanı adreslerinizle e-posta gönderebilir. Bu özelliği kullanmaya başlamak için yeni bir kod oluşturun."
       ],
       "Some keys successfully reactivated": [
         "Bazı anahtarlar yeniden kullanıma alındı"
@@ -8618,9 +8612,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Edge tarayıcısı ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir tarayıcı kullanın."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
@@ -10009,7 +10000,7 @@
         "Birincil saat dilimi otomatik algılansın"
       ],
       "Auto-reply": [
-        "Otomatik yanıt"
+        "Otomatik yanıtlama"
       ],
       "Auto-unsubscribe": [
         "Otomatik abonelikten ayrılma"
@@ -10033,7 +10024,7 @@
         "Engellenen"
       ],
       "Block email tracking": [
-        "E-postanın izlenmesi engellensin"
+        "E-postaların izlenmesi engellensin"
       ],
       "Block malware only": [
         "Yalnızca kötü amaçlı yazılımlar engellensin"
@@ -10838,7 +10829,7 @@
         "Gitmenize üzüldük. Lütfen kendimizi geliştirmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
       ],
       "Week start": [
-        "Hafta başlangıcı"
+        "Haftanın ilk günü"
       ],
       "What happened?": [
         "Ne oldu?"
@@ -11933,7 +11924,7 @@
         "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
       ],
       "Auto-reply": [
-        "Otomatik yanıt"
+        "Otomatik yanıtlama"
       ],
       "Autofill credit cards (coming soon)": [
         "Otomatik kredi kartı doldurma (yakında)"
@@ -12161,10 +12152,10 @@
         "Kullanıcı olarak oturum açma"
       ],
       "SMTP submission": [
-        "SMTP gönderim"
+        "SMTP gönderimi"
       ],
       "SMTP submission for select organizations": [
-        "Seçilmiş kuruluşlar için SMTP gönderim"
+        "Seçilmiş kuruluşlar için SMTP gönderimi"
       ],
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
@@ -12653,9 +12644,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
@@ -12844,7 +12832,7 @@
         "Günlük e-posta bildirimleri"
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Bu seçenek kapatıldığında, ${ BRAND_NAME } uygulamalarının bildirim alma yeteneğini kaldırır"
+        "Bu seçenek kapatıldığında, ${ BRAND_NAME } uygulamalarının bildirim alma yeteneği kaldırılır"
       ],
       "During your first month": [
         "Ilk ayınız boyunca"
@@ -13540,9 +13528,6 @@
       ],
       "Alerts for compromised emails and vulnerable passwords": [
         "Ele geçirilmiş e-posta adresleri ve zayıf parolalar için uyarılar"
-      ],
-      "Alerts for vulnerable passwords": [
-        "Öngörülebilecek parolalar için uyarılar"
       ],
       "Aliases for email protection from breaches": [
         "E-posta adreslerinin ele geçirilmemesi için takma ad ile koruma"
@@ -14689,9 +14674,6 @@
       "Test in progress...": [
         "Sınama sürüyor..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Bu SAML yapılandırmasını sınamak için lütfen **${ domainName }** ile ilişkili bir kullanıcının oturum açma bilgilerini yazın"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Kimlik hizmeti sağlayıcınızdan geçerli bir SAML yanıtı aldık. Kuruluşunuz için tek oturum açma kullanıma alındı."
       ],
@@ -15183,6 +15165,12 @@
     "Setting": {
       "Enable Photos section": [
         "Fotoğraflar bölümünü aç"
+      ],
+      "Get updates about comments via email": [
+        "Yorum güncellemeleri e-posta ile bildirilsin"
+      ],
+      "Include document name in email notifications": [
+        "E-posta bildirimlerine belge adı eklensin"
       ]
     },
     "Settings description": {
@@ -15779,9 +15767,6 @@
       ],
       "Single sign-on removed": [
         "Tek oturum açma kaldırıldı"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Kimlik hizmeti sağlayıcınızdaki kimlik bilgileri silinecek."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Bu işlem kullanıcının diğer aygıtlardaki oturumlarını kapatacak ve yeni bir yedek parola oluşturmaları gerekecek."
@@ -16508,7 +16493,7 @@
         "Yönetici yetkileri geri yüklendi"
       ],
       "Auto-reply disabled": [
-        "Otomatik yanıt özelliği açıldı"
+        "Otomatik yanıtlama özelliği açıldı"
       ],
       "Auto-reply updated": [
         "Otomatik yanıt güncellendi"
@@ -17116,7 +17101,7 @@
         "Kimlik doğrulama güvenliği"
       ],
       "Auto-reply": [
-        "Otomatik yanıt"
+        "Otomatik yanıtlama"
       ],
       "Automatically sign outgoing messages?": [
         "Giden iletiler otomatik olarak imzalansın mı?"
@@ -17530,7 +17515,7 @@
         "İletme ve otomatik yanıtlama"
       ],
       "Forward emails": [
-        "E-postaları ilet"
+        "E-postaları iletme"
       ],
       "Gateway": [
         "Ağ geçidi"
@@ -17563,7 +17548,7 @@
         "Tüm sunuculara erişmek için ${ vpnPlus } edinin"
       ],
       "Get the apps": [
-        "Uygulamaları edinin"
+        "Uygulamaları indirme"
       ],
       "Gift": [
         "Hediye"
@@ -17627,7 +17612,7 @@
         "İletileri içe aktar"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "${ PRODUCT_NAMES.EASY_SWITCH } ile içe aktar"
+        "${ PRODUCT_NAMES.EASY_SWITCH } ile içe aktarma"
       ],
       "Increase your privacy with more addresses": [
         "Daha fazla adres kullanarak gizliliğinizi artırın"
@@ -17981,7 +17966,7 @@
         "Tek oturum açma"
       ],
       "SMTP submission": [
-        "SMTP gönderim"
+        "SMTP gönderimi"
       ],
       "Sort folders alphabetically": [
         "Klasörler alfabetik olarak sıralansın"
@@ -18534,9 +18519,6 @@
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Bu Tor Browser sürümü desteklenmiyor. Lütfen son ${ stableRelease } sürüme güncelleyin"
       ]
     },
     "unprivatization": {
@@ -18557,9 +18539,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "**${ orgName }** kuruluşunun bir yöneticisi (**${ adminEmail }**) hesabınıza yönetici erişimine izin vermenizi istiyor."
-      ],
-      "Approve all": [
-        "Tümünü onayla"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Kullanıcıyı gizli kullanıcıya dönüştürdüğünüzde, verilerine veya hesabına erişerek yardımcı olamayacaksınız."

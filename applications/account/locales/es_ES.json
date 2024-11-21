@@ -3581,8 +3581,8 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ordena automáticamente tus mensajes entrantes antes de que lleguen a tu bandeja de entrada."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "Disponible con ${ BRAND_NAME } Mail Plus"
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "Disponible con ${ MAIL_APP_NAME } Plus"
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "¡Felicidades! Has ganado el máximo de meses gratis de ${ rewardsLimit } de ${ plusPlanName }."
@@ -4759,7 +4759,7 @@
         "La dirección podría estar mal escrita."
       ],
       "The amount due has changed. Please try again.": [
-        "El importe a pagar ha cambiado. Por favor, inténtalo de nuevo."
+        "El importe a pagar ha cambiado. Inténtalo de nuevo."
       ],
       "The email addresses do not match": [
         "Las direcciones de correo electrónico no coinciden"
@@ -4892,9 +4892,6 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Necesitas una dirección de dominio personalizado para generar un token de envío SMTP."
-      ],
-      "You've assigned all of your servers.": [
-        "Has asignado todos tus servidores."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Has alcanzado el número máximo de caracteres. Acorta tu mensaje."
@@ -6695,6 +6692,9 @@
         "${ numberOfNonPrivateKeys } archivo cargado no es una clave privada válida. Verifícalo e inténtalo de nuevo.",
         "${ numberOfNonPrivateKeys } archivos cargados no son claves privadas válidas. Verifícalos e inténtalo de nuevo."
       ],
+      "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
+        "${ PASS_APP_NAME } es el administrador de contraseñas de próxima generación diseñado para facilitar el uso y la productividad. Es de código abierto y desarrollado conjuntamente por SimpleLogin y ${ BRAND_NAME }."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
@@ -7120,6 +7120,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulsa la identidad de marca de tu organización y crea una experiencia online más consistente para tus usuarios."
+      ],
+      "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
+        "Al crear una cuenta ${ PASS_APP_NAME } con tu correo electrónico SimpleLogin, puedes administrar tus alias directamente desde ${ PASS_APP_NAME }."
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Por defecto, los miembros de la organización solo pueden exportar cajas fuertes donde sean propietarios. Si esta opción está activada, no podrán exportar ningún dato."
@@ -8625,9 +8628,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si estás seguro de que el enlace es legítimo, utiliza un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Verifica que este es el enlace que quieres visitar o no lo abras."
@@ -11383,11 +11383,17 @@
       "Change password": [
         "Cambiar contraseña"
       ],
+      "Convert to SSO": [
+        "Pasar al SSO"
+      ],
       "Delete": [
         "Eliminar"
       ],
       "Delete and revoke invite": [
         "Eliminar y revocar la invitación"
+      ],
+      "Detach from SSO": [
+        "Desconectar del SSO"
       ],
       "Edit": [
         "Editar"
@@ -12660,8 +12666,8 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Cambia las contraseñas de los usuarios y restablece la autenticación de dos factores en sus cuentas."
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Asigna el tráfico de internet a la red TOR con un solo clic."
+      "Route your internet traffic through the Tor network with a single click": [
+        "Asigna el tráfico de internet a la red Tor con un solo clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Asegura tus archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, intercambio de archivos cifrado y más."
@@ -13548,9 +13554,6 @@
       "Alerts for compromised emails and vulnerable passwords": [
         "Alertas para contraseñas e emails vulnerables"
       ],
-      "Alerts for vulnerable passwords": [
-        "Alertas para contraseñas vulnerables"
-      ],
       "Aliases for email protection from breaches": [
         "Alias para proteger el correo electrónico de filtraciones"
       ],
@@ -13723,6 +13726,9 @@
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "¡Oferta especial de lanzamiento: obtén ${ title } por ${ price } para siempre!"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Comenzar con ${ PASS_APP_NAME }"
       ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "Soluciones a la medida para organizaciones más grandes con necesidades personalizadas."
@@ -14684,6 +14690,9 @@
       ],
       "Something went wrong": [
         "Se ha producido un error."
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "La dirección de correo electrónico **${ email }** ya existe como usuario de ${ BRAND_NAME }. Ingresa la dirección de correo electrónico de un usuario de tu proveedor de identidad."
       ]
     },
     "saml: Info": {
@@ -14693,11 +14702,11 @@
       "Details": [
         "Detalles"
       ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Ingresa la dirección de correo electrónico de un usuario proporcionada por tu proveedor de identidad para **${ domainName }**."
+      ],
       "Test in progress...": [
         "Prueba en progreso..."
-      ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Para probar esta configuración SAML, ingresa las credenciales de inicio de sesión de algún usuario asociado con **${ domainName }**"
       ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Hemos recibido una respuesta SAML válida de tu proveedor de identidad. SSO está activado para tu organización."
@@ -15335,6 +15344,9 @@
       ]
     },
     "Signup: Info": {
+      "10 aliases for email protection from breaches": [
+        "10 alias para proteger tus correos electrónicos de vulneraciones"
+      ],
       "Advanced security features": [
         "Características de seguridad avanzadas"
       ],
@@ -15352,6 +15364,9 @@
       ],
       "Calendar, password manager, file storage, and VPN included": [
         "Calendario, gestor de contraseñas, almacenamiento de archivos y VPN incluidos"
+      ],
+      "Device sync": [
+        "Sincronización de dispositivos"
       ],
       "Email aliases": [
         "Alias de correo"
@@ -15394,6 +15409,9 @@
       ],
       "The only email service with:": [
         "El único servicio de correo electrónico con:"
+      ],
+      "Unlimited passwords": [
+        "Número ilimitado de contraseñas"
       ],
       "Works on all devices": [
         "Funciona en todos los dispositivos"
@@ -15608,6 +15626,14 @@
         "el miembro de ${ n } solicitó tu ayuda para iniciar sesión.",
         "los miembros de ${ n } solicitaron tu ayuda para iniciar sesión."
       ],
+      "${ n } user converted to SSO": [
+        "Se ha pasado ${ n } usuario al SSO.",
+        "Se han pasado ${ n } usuarios al SSO."
+      ],
+      "${ n } user detached from SSO": [
+        "Se ha desconectado ${ n } usuario del SSO.",
+        "Se han desconectado ${ n } usuarios del SSO."
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } usuario se ha unido a tu organización a través de tu proveedor de identidad. Revisa la cuenta ahora:",
         "${ n } usuarios se han unido a tu organización a través de tu proveedor de identidad. Revisa las cuentas ahora:"
@@ -15622,6 +15648,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Los usuarios SSO (proporcionados por tu proveedor de identidades) serán eliminados** y tendrás que crearlos manualmente para añadirlos de nuevo a tu organización."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Los usuarios de SSO se desconectarán de tu proveedor de identidad** y pasarán a ser usuarios sin SSO."
       ],
       "Access denied": [
         "Acceso denegado"
@@ -15793,9 +15822,6 @@
       "Single sign-on removed": [
         "Se ha quitado el inicio de sesión único."
       ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Se eliminarán las credenciales del proveedor de identidad."
-      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Esto cerrará la sesión del usuario en sus otros dispositivos y tendrá que crear una nueva contraseña de respaldo."
       ],
@@ -15823,8 +15849,14 @@
       "Yes, it was me": [
         "Sí, fui yo."
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Tendrás que crear los nuevos usuarios manualmente para añadirlos a tu organización."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Se te redirigirá a tu proveedor de SSO de terceros."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Se eliminará tu configuración de SSO."
       ]
     },
     "sso: auth device state": {
@@ -18548,8 +18580,8 @@
       "stable release": [
         "versión estable"
       ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Esta versión del navegador TOR no es compatible. Actualiza a la última ${ stableRelease }."
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Esta versión del navegador Tor no es compatible. Actualiza a la última ${ stableRelease }."
       ]
     },
     "unprivatization": {
@@ -18571,9 +18603,6 @@
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Un administrador de la organización **${ orgName }** (**${ adminEmail }**) quiere activar el acceso de administrador para tu cuenta."
       ],
-      "Approve all": [
-        "Aprobar todo"
-      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Al hacer privado al usuario, no podrás ayudarle a recuperar el acceso a sus datos o cuenta."
       ],
@@ -18585,6 +18614,9 @@
       ],
       "Cancel request to access user data?": [
         "¿Cancelar la solicitud de acceso a los datos del usuario?"
+      ],
+      "Confirm all": [
+        "Confirmar todo"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "No se ha podido activar automáticamente el acceso de administrador para ${ n } usuario porque sus claves de cifrado han sido actualizadas mientras tanto.",

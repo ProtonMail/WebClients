@@ -3581,9 +3581,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Riordina automaticamente i tuoi messaggi in arrivo prima che raggiungano la tua casella di posta."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "Disponibile con ${ BRAND_NAME } Mail Plus"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Congratulazioni! Hai guadagnato il massimo di ${ rewardsLimit } mesi gratuiti di ${ plusPlanName }."
       ],
@@ -4892,9 +4889,6 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Devi avere un indirizzo di dominio personalizzato per poter generare un token di inoltro SMTP."
-      ],
-      "You've assigned all of your servers.": [
-        "Hai assegnato tutti i tuoi server."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Hai raggiunto il numero massimo di caratteri. Riduci la lunghezza del tuo messaggio."
@@ -8621,9 +8615,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Questo link conduce a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Questo link potrebbe essere un attacco omografico e non può essere aperto dal browser Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Questo link potrebbe essere un attacco omografo. Verifica che questo sia il link che desideri visitare o non aprirlo."
@@ -12662,9 +12653,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Reimposta le password degli utenti e l'autenticazione a due fattori sugli utenti"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Indirizza il tuo traffico internet tramite la rete TOR con un singolo click."
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ],
@@ -13570,9 +13558,6 @@
       ],
       "Alerts for compromised emails and vulnerable passwords": [
         "Avvisi per le email compromesse e le password vulnerabili"
-      ],
-      "Alerts for vulnerable passwords": [
-        "Avvisi per le password vulnerabili"
       ],
       "Aliases for email protection from breaches": [
         "Alias ​​per la protezione delle email dalle violazioni di dati"
@@ -14719,9 +14704,6 @@
       "Test in progress...": [
         "Test in corso..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Per testare questa configurazione SAML, inserisci le credenziali di accesso per un utente associato a **${ domainName }**"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Abbiamo ricevuto una risposta SAML valida dal tuo provider di identità. SSO è abilitato per la tua organizzazione."
       ],
@@ -15213,6 +15195,12 @@
     "Setting": {
       "Enable Photos section": [
         "Abilita la sezione Foto"
+      ],
+      "Get updates about comments via email": [
+        "Ricevi aggiornamenti riguardo i commenti via email"
+      ],
+      "Include document name in email notifications": [
+        "Includi il nome del documento nelle notifiche via email"
       ]
     },
     "Settings description": {
@@ -15809,9 +15797,6 @@
       ],
       "Single sign-on removed": [
         "Single sign-on rimosso"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Le credenziali del tuo fornitore di identità verranno eliminate."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Ciò disconnetterà l'utente dagli altri dispositivi e dovrà creare una nuova password di backup."
@@ -18564,9 +18549,6 @@
     "Tor out of date": {
       "stable release": [
         "versione stabile"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Questa versione di TOR Browser non è supportata. Aggiornala all'ultima ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -18587,9 +18569,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Un amministratore (**${ adminEmail }**) dell'organizzazione **${ orgName }** desidera abilitare l'accesso come amministratore per il tuo account."
-      ],
-      "Approve all": [
-        "Approva tutto"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Rendendo privato l'utente non potrai aiutarlo a riottenere l'accesso ai propri dati o al proprio account."
