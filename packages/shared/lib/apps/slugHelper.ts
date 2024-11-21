@@ -14,6 +14,7 @@ export const ALLOWED_APPS = [
     APPS.PROTONPASS,
     APPS.PROTONDOCS,
     APPS.PROTONWALLET,
+    APPS.PROTONLUMO,
 ];
 
 export const getSlugFromApp = (app: APP_NAMES) => APPS_CONFIGURATION[app].settingsSlug;
