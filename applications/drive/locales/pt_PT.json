@@ -86,7 +86,7 @@
         "São permitidos no máximo ${ maxContacts } contactos por grupo de contactos"
       ],
       "Attach screenshot(s)": [
-        "Anexar captura(s) de ecrã"
+        "Anexar capturas de ecrã"
       ],
       "Attention required": [
         "Requer atenção"
@@ -286,10 +286,10 @@
         "Descartar"
       ],
       "Done": [
-        "Concluído"
+        "Terminado"
       ],
       "Downgrade": [
-        "Conta com menos funcionalidades"
+        "Optar por um plano inferior"
       ],
       "Download": [
         "Transferir"
@@ -316,7 +316,7 @@
         "Editar"
       ],
       "Edit email address": [
-        "Editar o endereço de e-mail "
+        "Editar o endereço de e-mail"
       ],
       "Edit label": [
         "Editar etiqueta"
@@ -375,9 +375,6 @@
       "Get link": [
         "Obter ligação"
       ],
-      "Get started": [
-        "Começar"
-      ],
       "Get Started": [
         "Começar"
       ],
@@ -392,9 +389,6 @@
       ],
       "Go to my files": [
         "Ir para os meus ficheiros"
-      ],
-      "Go to panel ${ index }": [
-        "Ir para o painel ${ index }"
       ],
       "Go to parent": [
         "Ir para a pasta principal"
@@ -446,9 +440,6 @@
       ],
       "Increase": [
         "Aumentar"
-      ],
-      "Invite": [
-        "Convidar"
       ],
       "Keep my subscription": [
         "Manter a minha assinatura"
@@ -526,7 +517,7 @@
         "Mover para a pasta"
       ],
       "Move to trash": [
-        "Mover para o lixo"
+        "Mover para a lixeira"
       ],
       "New": [
         "Novo"
@@ -768,9 +759,6 @@
       "Sign out": [
         "Terminar sessão"
       ],
-      "Skip": [
-        "Ignorar"
-      ],
       "Skip verification": [
         "Saltar verificação"
       ],
@@ -782,9 +770,6 @@
       ],
       "Start recovering": [
         "Iniciar recuperação"
-      ],
-      "Start setup": [
-        "Iniciar a configuração"
       ],
       "Stay": [
         "Ficar"
@@ -854,9 +839,6 @@
       ],
       "Upload file": [
         "Enviar o ficheiro"
-      ],
-      "Upload files": [
-        "Carregar ficheiros"
       ],
       "Upload folder": [
         "Enviar a pasta"
@@ -3320,14 +3302,6 @@
         "Esta ação removerá todas as funcionalidades premium da ${ BRAND_NAME } para cada membro da família."
       ]
     },
-    "familyOffer_2023:Onboarding Proton": {
-      "Set up your family": [
-        "Organizar a sua família"
-      ],
-      "Set up your family account": [
-        "Definir a sua conta familiar"
-      ]
-    },
     "familyOffer_2023:Title": {
       "Delete family group?": [
         "Eliminar o grupo familiar?"
@@ -4221,7 +4195,7 @@
         "Cada código só pode ser utilizado uma vez"
       ],
       "Edit email address": [
-        "Editar endereço de e-mail"
+        "Editar o endereço de e-mail"
       ],
       "email": [
         "e-mail"
@@ -4902,9 +4876,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esta hiperligação leva a um website que pode tentar roubar a sua informação, como palavras-passe e números de cartão de crédito."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este link poderá ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se tiver certeza de que a hiperligação é legítima, abra-a com um navegador diferente."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Esta ligação pode ser um ataque homográfico. Verifique se esta é a ligação que deseja visitar, ou não a abra."
       ],
@@ -4994,7 +4965,7 @@
         "Lixeira"
       ],
       "Trash is empty": [
-        "O lixo está vazio"
+        "A lixeira está vazia."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente novas funcionalidades, atualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
@@ -5485,6 +5456,9 @@
       ],
       "Comment": [
         "Comentário"
+      ],
+      "Company name": [
+        "Nome da empresa"
       ],
       "Confirm password": [
         "Confirmar a palavra-passe"
@@ -6010,7 +5984,7 @@
         "fique mais seguro online"
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ],
       "What’s this?": [
         "O que é isto?"
@@ -6304,7 +6278,7 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "Eliminar conta"
+        "Apagar conta"
       ],
       "Downgrade account": [
         "Mudar para uma conta com menos funcionalidades"
@@ -6436,7 +6410,7 @@
         "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Auto-delete spam and trashed messages": [
-        "Eliminar automaticamente mensagens do Spam e do Lixo"
+        "Eliminar mensagens de spam e lixeira automaticamente"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -6779,7 +6753,7 @@
     },
     "new_plans: title": {
       "Delete account?": [
-        "Eliminar conta?"
+        "Apagar a conta?"
       ],
       "Downgrade account?": [
         "Mudar para uma conta com menos funcionalidades?"
@@ -7223,17 +7197,11 @@
       "Maybe later": [
         "Talvez mais tarde"
       ],
-      "Next": [
-        "Seguinte"
-      ],
       "Select theme": [
         "Selecione um tema"
       ],
       "Skip": [
         "Ignorar"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "Comece a utilizar o ${ DRIVE_APP_NAME }"
       ],
       "Upload file": [
         "Enviar um ficheiro"
@@ -7249,46 +7217,8 @@
       "Secure your files": [
         "Proteja os seus ficheiros"
       ],
-      "Set a recovery method": [
-        "Definir um método de recuperação"
-      ],
-      "Share a file": [
-        "Partilhar um ficheiro"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Basta concluir os seguintes passos dentro de ${ expiresInDays } dia:",
-        "Basta concluir os seguintes passos dentro de ${ expiresInDays } dias:"
-      ],
-      "Upload a file": [
-        "Enviar um ficheiro"
-      ],
       "Work together": [
         "Trabalhar em conjunto"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "O seu cofre em linha de confiança para os seus documentos vitais e as suas memórias preciosas."
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Defina a sua organização, vincule o seu nome de domínio e crie contas para garantir que todos os membros da sua organização estão protegidos."
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "Descubra todos os serviços de ${ BRAND_NAME }"
-      ],
-      "Pick a theme": [
-        "Escolher um tema"
-      ],
-      "Set up your organization": [
-        "Defina a sua organização"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Utilize o selecionador de aplicação no canto superior esquerdo para aceder a todos os serviços ${ BRAND_NAME }:${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }"
-      ]
-    },
-    "Onboarding Title": {
-      "Your welcome bonus": [
-        "O seu bónus de boas-vindas"
       ]
     },
     "Option": {
@@ -8802,7 +8732,7 @@
         "Descartar alterações?"
       ],
       "Downgrade account": [
-        "Mudar para uma conta com menos funcionalidades"
+        "Optar por um plano inferior"
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Mudar para ${ downgradedPlanName }?"
@@ -9152,7 +9082,7 @@
         "Tamanho total"
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ],
       "Type": [
         "Tipo"
