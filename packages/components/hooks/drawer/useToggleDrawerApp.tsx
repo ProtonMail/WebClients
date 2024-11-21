@@ -26,27 +26,38 @@ const useToggleDrawerApp = ({ appInView, setAppInView, iframeSrcMap, setIframeSr
     return (args: OpenDrawerArgs) => () => {
         const { app, path = '/' } = args;
         const isAppOpened = app === appInView;
+        const isIframeApp = getIsIframedDrawerApp(app);
 
-        setAppInView(isAppOpened ? undefined : app);
+        if (isIframeApp) {
+            if (isAppOpened) {
+                setAppInView(undefined);
+            } else if (isAppReachable) {
+                setAppInView(app);
 
-        // If we show again the child app that was cached, we post a message to it in case it needs to take some actions upon becoming visible again (like updating its state)
-        if (!isAppOpened) {
-            postMessageToIframe(
-                {
-                    type: DRAWER_EVENTS.SHOW,
-                },
-                app
-            );
-        }
+                // If we show again the child app that was cached, we post a message to it in case it needs to take some actions upon becoming visible again (like updating its state)
+                postMessageToIframe(
+                    {
+                        type: DRAWER_EVENTS.SHOW,
+                    },
+                    app
+                );
 
-        if (getIsIframedDrawerApp(app) && !iframeSrcMap[app] && isAppReachable) {
-            const localID = getLocalIDFromPathname(window.location.pathname);
-            const appHref = getAppHref(path, app, localID);
+                if (!iframeSrcMap[app] && isAppReachable) {
+                    const localID = getLocalIDFromPathname(window.location.pathname);
+                    const appHref = getAppHref(path, app, localID);
 
-            setIframeSrcMap((map) => ({
-                ...map,
-                [app]: addParentAppToUrl(appHref, currentApp),
-            }));
+                    setIframeSrcMap((map) => ({
+                        ...map,
+                        [app]: addParentAppToUrl(appHref, currentApp),
+                    }));
+                }
+            }
+        } else {
+            if (isAppOpened) {
+                setAppInView(undefined);
+            } else if (isAppReachable) {
+                setAppInView(app);
+            }
         }
     };
 };
