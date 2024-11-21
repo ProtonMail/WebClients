@@ -711,7 +711,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                     >
                         <UnAuthenticatedApiProvider>
                             <UnleashFlagProviderWrapper>
-                                <PaymentSwitcher loader={loader}>
+                                <PaymentSwitcher>
                                     <ForceRefreshContext.Provider value={refresh}>
                                         <Switch location={location}>
                                             <Route path={SSO_PATHS.JOIN_MAGIC_LINK}>
