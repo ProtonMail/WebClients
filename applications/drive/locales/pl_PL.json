@@ -357,12 +357,6 @@
       "Expand folder": [
         "Rozwiń folder"
       ],
-      "Explore on my own": [
-        "Odkryj sam"
-      ],
-      "Explore while you wait": [
-        "Odkryj podczas oczekiwania"
-      ],
       "Export": [
         "Eksportuj"
       ],
@@ -390,9 +384,6 @@
       "Get link": [
         "Uzyskaj link"
       ],
-      "Get started": [
-        "Rozpocznij"
-      ],
       "Get Started": [
         "Rozpocznij"
       ],
@@ -410,9 +401,6 @@
       ],
       "Go to my files": [
         "Przejdź do moich plików"
-      ],
-      "Go to panel ${ index }": [
-        "Przejdź do panelu ${ index }"
       ],
       "Go to parent": [
         "Przejdź do folderu nadrzędnego"
@@ -464,9 +452,6 @@
       ],
       "Increase": [
         "Zwiększ"
-      ],
-      "Invite": [
-        "Zaproś"
       ],
       "Keep my subscription": [
         "Zachowaj subskrypcję"
@@ -792,9 +777,6 @@
       "Sign out": [
         "Wyloguj"
       ],
-      "Skip": [
-        "Pomiń"
-      ],
       "Skip verification": [
         "Pomiń weryfikację"
       ],
@@ -806,9 +788,6 @@
       ],
       "Start recovering": [
         "Rozpocznij odzyskiwanie"
-      ],
-      "Start setup": [
-        "Rozpocznij konfigurację"
       ],
       "Starting from ${ priceUnlimited }": [
         "Od ${ priceUnlimited }"
@@ -887,9 +866,6 @@
       ],
       "Upload file": [
         "Prześlij plik"
-      ],
-      "Upload files": [
-        "Prześlij pliki"
       ],
       "Upload folder": [
         "Prześlij folder"
@@ -3628,17 +3604,6 @@
         "Spowoduje to usunięcie wszystkich funkcji premium każdego użytkownika rodziny ${ BRAND_NAME }."
       ]
     },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users": [
-        "Skonfiguruj konto rodzinne i zaproś użytkowników"
-      ],
-      "Set up your family": [
-        "Skonfiguruj konto rodzinne"
-      ],
-      "Set up your family account": [
-        "Skonfiguruj konto rodzinne"
-      ]
-    },
     "familyOffer_2023:Title": {
       "Delete family group?": [
         "Usunąć grupę rodzinną?"
@@ -4299,9 +4264,9 @@
       ],
       "${ updated } contact updated successfully.": [
         "Kontakt został zaktualizowany.",
-        "${ updated } kontakty zostały zaktualizowane.",
-        "${ updated } kontaktów zostało zaktualizowanych.",
-        "${ updated } kontaktów zostało zaktualizowanych."
+        "Zaktualizowano ${ updated } kontakty.",
+        "Zaktualizowano ${ updated } kontaktów.",
+        "Zaktualizowano ${ updated } kontaktów."
       ],
       "${ uploadName } already exists in this location.": [
         "Plik ${ uploadName } już istnieje w tej lokalizacji."
@@ -5418,9 +5383,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Edge. Upewnij się, że link, który chcesz odwiedzić, jest wiarygodny i otwórz go za pomocą innej przeglądarki."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
@@ -7885,9 +7847,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetowanie haseł i uwierzytelniania dwustopniowego użytkowników"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Przekieruj swój ruch internetowy przez sieć Tor za pomocą jednego kliknięcia"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
@@ -8059,9 +8018,9 @@
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "Element został trwale usunięty",
-        "${ numberOfItems } elementy zostały trwale usunięte",
-        "${ numberOfItems } elementów zostało trwale usuniętych",
-        "${ numberOfItems } elementów zostało trwale usuniętych"
+        "Usunięto trwale ${ numberOfItems } elementy",
+        "Usunięto trwale ${ numberOfItems } elementów",
+        "Usunięto trwale ${ numberOfItems } elementów"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Nie udało się trwale usunąć ${ numberOfItems } elementu",
@@ -8089,21 +8048,21 @@
       ],
       "${ numberOfItems } item moved to trash": [
         "Element został przeniesiony do Kosza",
-        "${ numberOfItems } elementy zostały przeniesione do Kosza",
-        "${ numberOfItems } elementów zostało przeniesionych do Kosza",
-        "${ numberOfItems } elementów zostało przeniesionych do Kosza"
+        "Przeniesiono do Kosza ${ numberOfItems } elementy",
+        "Przeniesiono do Kosza ${ numberOfItems } elementów",
+        "Przeniesiono do Kosza ${ numberOfItems } elementów"
       ],
       "${ numberOfItems } item restored from trash": [
         "Element został przywrócony z Kosza",
-        "${ numberOfItems } elementy zostały przywrócone z Kosza",
-        "${ numberOfItems } elementów zostało przywróconych z Kosza",
-        "${ numberOfItems } elementów zostało przywróconych z Kosza"
+        "Przywrócono z Kosza ${ numberOfItems } elementy",
+        "Przywrócono z Kosza ${ numberOfItems } elementów",
+        "Przywrócono z Kosza ${ numberOfItems } elementów"
       ],
       "${ numberOfItems } item successfully moved": [
         "Element został przeniesiony",
-        "${ numberOfItems } elementy zostały przeniesione",
-        "${ numberOfItems } elementów zostało przeniesionych",
-        "${ numberOfItems } elementów zostało przeniesionych"
+        "Przeniesiono ${ numberOfItems } elementy",
+        "Przeniesiono ${ numberOfItems } elementów",
+        "Przeniesiono ${ numberOfItems } elementów"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
         "Usunięcie ${ numberOfItems } linku do elementu nie powiodło się",
@@ -8339,9 +8298,6 @@
       "Maybe later": [
         "Może później"
       ],
-      "Next": [
-        "Dalej"
-      ],
       "Select theme": [
         "Wybierz motyw"
       ],
@@ -8350,9 +8306,6 @@
       ],
       "Skip for now": [
         "Pomiń"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "Zacznij korzystać z ${ DRIVE_APP_NAME }"
       ],
       "Try the app": [
         "Wypróbuj aplikację"
@@ -8404,9 +8357,6 @@
       "Free up hard drive space on your computer": [
         "Zwolnij miejsce na urządzeniu"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "Skorzystaj z dysku ${ DRIVE_APP_NAME }, a zwiększymy Twoją przestrzeń dyskową do 5 GB!"
-      ],
       "Get the desktop app": [
         "Pobierz aplikację desktopową"
       ],
@@ -8449,35 +8399,14 @@
       "Securely share files and folders": [
         "Bezpiecznie udostępniaj pliki i foldery"
       ],
-      "Securely store, manage, and share your business-critical files with confidence.": [
-        "Bezpiecznie przechowuj, zarządzaj i udostępniaj pliki o krytycznym znaczeniu dla biznesu."
-      ],
-      "Set a recovery method": [
-        "Ustaw metodę odzyskiwania"
-      ],
-      "Share a file": [
-        "Udostępnij plik"
-      ],
       "Share files & folders": [
         "Udostępniaj pliki i foldery"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Ukończ następujące kroki w ciągu najbliższego dnia:",
-        "Ukończ następujące kroki w ciągu najbliższych ${ expiresInDays } dni:",
-        "Ukończ następujące kroki w ciągu najbliższych ${ expiresInDays } dni:",
-        "Ukończ następujące kroki w ciągu najbliższych ${ expiresInDays } dni:"
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "Przechowuj i udostępniaj pliki w bezpieczny sposób. Rozpocznij od zabezpieczenia swoich najbardziej prywatnych plików, takich jak dokumenty tożsamości, umowy i osobiste zdjęcia."
       ],
       "Sync and access your files from anywhere": [
         "Synchronizuj i uzyskuj dostęp do plików z dowolnego miejsca"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Właściciel musi potwierdzić dostęp. Po zatwierdzeniu dostępu otrzymasz wiadomość."
-      ],
-      "Upload a file": [
-        "Prześlij plik"
       ],
       "Upload your first file": [
         "Prześlij pierwszy plik"
@@ -8487,46 +8416,6 @@
       ],
       "Work together": [
         "Współpracuj"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "Twój niezawodny sejf dla ważnych dokumentów i cennych wspomnień."
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Ustaw swoją organizację, połącz nazwę domeny i utwórz konta, aby zapewnić ochronę wszystkim użytkownikom organizacji."
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "Poznaj wszystkie usługi ${ BRAND_NAME }"
-      ],
-      "Pick a theme": [
-        "Wybierz motyw"
-      ],
-      "Set up your organization": [
-        "Skonfiguruj organizację"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do wszystkich usług ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "Możesz w ustawieniach zmienić motyw w dowolnym momencie."
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "Zatwierdzenie jest w toku"
-      ],
-      "Hang tight!": [
-        "Trzymaj się!"
-      ],
-      "Invite team members": [
-        "Zaproś użytkowników zespołu"
-      ],
-      "Upload and protect your important files": [
-        "Prześlij i chroń ważne pliki"
-      ],
-      "Your welcome bonus": [
-        "Twój bonus powitalny"
       ]
     },
     "Option": {
