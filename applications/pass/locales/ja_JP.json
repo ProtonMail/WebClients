@@ -172,6 +172,9 @@
       "Delete all": [
         "すべて削除"
       ],
+      "Delete it, I will never need it": [
+        "もう使わないので削除してください"
+      ],
       "Delete password": [
         "パスワードを削除"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "選択を解除"
+      ],
+      "Disable alias": [
+        "エイリアスを無効にする"
       ],
       "Disable instead": [
         "代わりに無効にする"
@@ -499,6 +505,9 @@
       "Submitting report...": [
         "レポートを送信中..."
       ],
+      "Sync alias": [
+        "エイリアスを同期"
+      ],
       "Sync aliases": [
         "エイリアスを同期する"
       ],
@@ -513,6 +522,9 @@
       ],
       "Try for free": [
         "無料で試す"
+      ],
+      "Understood, I will never need it": [
+        "はい、もう要りません"
       ],
       "Unlock": [
         "ロック解除"
@@ -869,7 +881,7 @@
         "現在、オフライン モードはご利用のプランでは利用できず、2 パスワード モードと互換性がありません。"
       ],
       "Passphrase is incorrect": [
-        "パスフレーズが間違っています"
+        "パスフレーズが無効です"
       ],
       "PIN codes do not match": [
         "PINコードが一致しません"
@@ -1491,6 +1503,9 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME } へのオンラインアクセスにはPINコードが必要です。3回の試行に失敗するとログアウトされます。"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "当社のアラートは安全性を優先しています。侵害された情報を認識できない場合は、このレポートを無視してください。"
+      ],
       "Owner": [
         "所有者"
       ],
@@ -1568,6 +1583,12 @@
       ],
       "Please enter your current PIN code to continue": [
         "続行するには、現在の PIN コードを入力してください"
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "削除したエイリアスは復元できません。エイリアスを無効にするほうがよろしいでしょうか？"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "削除したエイリアスは復元できません。このエイリアスは既に無効になっており、メールボックスにメールを転送することはできません。"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "${ PASS_APP_NAME } ウェブ アプリに早期アクセスできるようにアップグレードしてください"
@@ -1660,7 +1681,7 @@
         "保管庫を同期中…"
       ],
       "Thank you, the problem has been reported": [
-        "ありがとう、問題は報告されました"
+        "問題は報告されました　ありがとうございます"
       ],
       "The export will only contain vaults that you own.": [
         "エクスポートには、自分が所有するボールトのみが含まれます。"
@@ -1784,6 +1805,9 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "このエイリアスのメールボックスを変更することはできません。"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "SimpleLogin に存在し${ PASS_APP_NAME }に存在しないエイリアスが、${ aliasCount } 件あります。同期しますか？"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "これらおよびその他のプレミアム機能をお試しいただける期間は、残り ${ daysRemaining } 日間です。"
@@ -2706,6 +2730,29 @@
         "はい、私です"
       ]
     },
+    "sso: auth device state": {
+      "Active": [
+        "アクティブ"
+      ],
+      "Inactive": [
+        "非アクティブ"
+      ],
+      "Pending activation": [
+        "アクティベーションの保留中"
+      ],
+      "Pending admin activation": [
+        "管理者アクティベーションの保留中"
+      ],
+      "Rejected": [
+        "拒否"
+      ],
+      "Signed out": [
+        "サインアウトされました"
+      ],
+      "Unknown": [
+        "不明"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "エイリアスの同期が有効になりました。シンプルログインのエイリアスは同期に時間がかかることがあります"
@@ -2877,6 +2924,9 @@
       "Pinned (${ items.length })": [
         "ピン留め (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "削除したエイリアスは復元できませんので、ご注意ください。"
+      ],
       "Recommended actions": [
         "推奨されるアクション"
       ],
@@ -2945,6 +2995,9 @@
       ],
       "Sync alias": [
         "エイリアスを同期"
+      ],
+      "Sync your aliases from SimpleLogin": [
+        "SimpleLoginのエイリアスと同期"
       ],
       "Transfer ownership": [
         "所有権の移行"
@@ -3039,6 +3092,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "保管庫「${ vaultName }」を作成できませんでした"
+      ],
+      "Delete alias": [
+        "エイリアスを削除"
       ],
       "Duplicate email addresses.": [
         "メールアドレスが重複しています"
