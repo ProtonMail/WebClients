@@ -1001,7 +1001,7 @@
         "Poslat připomenutí e-mailem"
       ],
       "Send messages with @pm.me": [
-        "Odesílat zprávy s @pm.me"
+        "Odesílat zprávy z @pm.me"
       ],
       "Send my username": [
         "Poslat mé uživatelské jméno"
@@ -3613,9 +3613,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Automatické třídění příchozích zpráv předtím, než se dostanou do doručené pošty."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "K dispozici s ${ BRAND_NAME } Mail Plus"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Blahopřejeme! Získali jste maximálního počtu ${ rewardsLimit } měsíců zdarma ${ plusPlanName }."
       ],
@@ -4934,9 +4931,6 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Pro vygenerování tokenu pro SMTP odesílání je třeba mít vlastní doménovou adresu."
-      ],
-      "You've assigned all of your servers.": [
-        "Přiřadili jste všechny své servery."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Dosáhli jste maximálního počtu znaků. Zkraťte prosím svou zprávu."
@@ -8791,9 +8785,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o platební kartě."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tento odkaz může být homografickým útokem a prohlížeč Edge jej nemůže otevřít. Pokud jste si jisti, že je odkaz legitimní, použijte k jeho otevření jiný prohlížeč."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
@@ -12937,9 +12928,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetovat uživatelská hesla a resetovat dvoufázové ověření uživatelů"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Směrujte svůj internetový provoz skrze síť TOR jediným kliknutím"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ],
@@ -13863,9 +13851,6 @@
       ],
       "Alerts for compromised emails and vulnerable passwords": [
         "Upozornění na kompromitované e-maily a zranitelná hesla"
-      ],
-      "Alerts for vulnerable passwords": [
-        "Upozornění na zranitelná hesla"
       ],
       "Aliases for email protection from breaches": [
         "Aliasy pro ochranu e-mailu před úniky informací"
@@ -15024,9 +15009,6 @@
       "Test in progress...": [
         "Probíhá testování..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Chcete-li otestovat toto nastavení SAML, zadejte přihlašovací údaje uživatele přidruženého k **${ domainName }**"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Od vašeho poskytovatele identit jsme obdrželi platnou odpověď SAML. SSO je pro vaši organizaci povoleno."
       ],
@@ -15544,6 +15526,12 @@
     "Setting": {
       "Enable Photos section": [
         "Povolit sekci Fotografie"
+      ],
+      "Get updates about comments via email": [
+        "Dostávat e-mailem upozornění na komentáře"
+      ],
+      "Include document name in email notifications": [
+        "Zahrnout název dokumentu do e-mailových upozornění"
       ]
     },
     "Settings description": {
@@ -16166,9 +16154,6 @@
       ],
       "Single sign-on removed": [
         "Jednotné přihlášení zrušeno"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Přihlašovací údaje od vašeho poskytovatele identity budou smazány."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tím se uživatel odhlásí z ostatních zařízení a bude muset vytvořit nové záložní heslo."
@@ -18987,9 +18972,6 @@
     "Tor out of date": {
       "stable release": [
         "stabilní verze"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Tato verze prohlížeče TOR není podporována. Prosím aktualizujte na poslední ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -19010,9 +18992,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Správce organizace **${ orgName }** (**${ adminEmail }**) chce udělit vašemu účtu správcovský přístup."
-      ],
-      "Approve all": [
-        "Schválit vše"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Tím, že nastavíte uživatele jako soukromého, mu nebudete moci pomoci získat zpět přístup k jeho datům nebo účtu."

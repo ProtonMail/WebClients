@@ -1775,13 +1775,13 @@
     },
     "BF2024: Footer": {
       "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao Pass Plus."
+        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } Plus não tem preço de renovação, ou seja, é um pagamento único para acesso vitalício ao Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
         "Os descontos são baseados no preço mensal padrão."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Se comprar o Pass Family ou Unlimited ,sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
+        "Se você adquirir o Pass Family ou Unlimited, sua assinatura será renovada automaticamente pela taxa com desconto e duração padrão ao final de seu ciclo de faturamento."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
@@ -1826,8 +1826,8 @@
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, aliases ide-my-email ilimitados e muito mais.",
-        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, aliases ide-my-email ilimitados e muito mais."
+        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, aliases hide-my-email ilimitados e muito mais.",
+        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, aliases hide-my-email ilimitados e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
@@ -3584,9 +3584,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Classifique automaticamente as mensagens recebidas antes que elas cheguem à sua caixa de entrada."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "Disponível com o ${ BRAND_NAME } Mail Plus"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Parabéns! Você ganhou um máximo de ${ rewardsLimit } meses gratuitos de ${ plusPlanName }."
       ],
@@ -4882,7 +4879,7 @@
         "Você atingiu o número máximo de calendários."
       ],
       "You have reached the number of contacts limit for your account": [
-        "Você atingiu o número limite de contatos da sua conta"
+        "Você atingiu o limite de contatos para sua conta"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Você usou todos os endereços do seu plano. Faça o upgrade do seu plano para adicionar um novo endereço."
@@ -4895,9 +4892,6 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Você precisa ter um endereço de domínio personalizado para gerar um token de envio SMTP."
-      ],
-      "You've assigned all of your servers.": [
-        "Você atribuiu todos os seus servidores."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Você atingiu o número máximo de caracteres. Por favor, encurte sua mensagem."
@@ -6708,7 +6702,7 @@
         "${ numberOfNonPrivateKeys } arquivos enviados não são chaves privadas válidas. Verifique e tente novamente."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }. O preço e a data de renovação da sua assinatura ${ planTitle } permanecem inalterados."
@@ -6999,7 +6993,7 @@
         "e"
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Quaisquer subpastas também serão excluídas. No entanto, os e-mails armazenados nesta pasta ${ nameDeleted } não serão excluídos e podem ser encontrados na pasta Todos os e-mails."
+        "Quaisquer subpastas também serão excluídas. No entanto, os e-mails armazenados na pasta ${ nameDeleted } não serão excluídos e podem ser encontrados na pasta Todos os e-mails."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Qualquer um com este link pode ver todas as informações do evento do calendário, como título, localização ou participantes."
@@ -8088,7 +8082,7 @@
         "Outros usuários da sua organização verão seus horários ocupados. Nenhum detalhe do evento é compartilhado."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Os nossos alertas priorizam a segurança. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
+        "Nossos alertas priorizam a segurança. Se você não reconhecer nenhuma das informações violadas, você pode ignorar este relatório com segurança."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Arquivo de recuperação desatualizado. Atualize para garantir acesso aos seus dados"
@@ -8636,9 +8630,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este link pode ser um ataque homógrafo e não é possível abri-lo pelo navegador Edge. Se você tiver certeza de que o link é legítimo, use um navegador diferente para abri-lo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este link pode ser um ataque homográfico. Verifique se este é o link que você deseja visitar, caso contrário, não abra."
@@ -12680,9 +12671,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Redefina as senhas de usuários e redefina a autenticação de dois fatores para os usuários"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Envie todo o seu tráfego na internet por meio da rede TOR com um único clique"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com um armazenamento cloud criptografado. Inclui sincronização automática, compartilhamento de arquivo criptografado, e mais."
       ],
@@ -12863,6 +12851,9 @@
       ],
       "Application notifications": [
         "Notificações de aplicativos"
+      ],
+      "Critical account notifications will still be delivered": [
+        "As notificações críticas da conta ainda serão entregues"
       ],
       "Daily email notifications": [
         "Notificações diárias por e-mail"
@@ -13585,9 +13576,6 @@
       ],
       "Alerts for compromised emails and vulnerable passwords": [
         "Alertas de e-mails comprometidos e senhas vulneráveis"
-      ],
-      "Alerts for vulnerable passwords": [
-        "Alerta para senhas vulneráveis"
       ],
       "Aliases for email protection from breaches": [
         "Aliases para proteção de e-mail contra violações"
@@ -14740,9 +14728,6 @@
       "Test in progress...": [
         "Teste em andamento..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Para testar essa configuração SAML, insira as credenciais de início de sessão de um usuário associado a **${ domainName }**"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Recebemos uma resposta SAML válida do seu provedor de identidade. O SSO está ativado para a sua organização."
       ],
@@ -15421,6 +15406,9 @@
       "Protected by Swiss privacy laws": [
         "Protegido por leis de privacidade da Suíça"
       ],
+      "Self-custody — only you have access to your wallet keys": [
+        "Autocustódia - apenas você tem acesso às chaves de sua carteira"
+      ],
       "The only business solution that is:": [
         "A única solução comercial que existe:"
       ],
@@ -15827,9 +15815,6 @@
       ],
       "Single sign-on removed": [
         "Autenticação única removida"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "As credenciais do seu Provedor de Identidade serão excluídas."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Isso desconectará o usuário de seus outros dispositivos e ele terá que criar uma senha de backup novamente."
@@ -18356,6 +18341,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Troque automaticamente entre seus temas preferidos para dia e noite em sincronia com os modos dia e noite do seu sistema"
       ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "Clique aqui para aprender como criar uma assinatura personalizada com HTML."
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copie e cole este URL no campo URL ACS (Assertion Consumer Service) do seu provedor de identidade"
       ],
@@ -18591,12 +18579,12 @@
     "Tor out of date": {
       "stable release": [
         "versão estável"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Esta versão do navegador TOR não é suportada. Atualize-o para a última ${ stableRelease }."
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Acesso de administrador pendente:** Enviamos uma solicitação a esse usuário para permitir que qualquer administrador gerencie sua conta."
+      ],
       "Administrator access enabled": [
         "Acesso de administrador ativado"
       ],
@@ -18611,9 +18599,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Um administrador da organização **${ orgName }** (**${ adminEmail }**) deseja ativar o acesso de administrador para sua conta."
-      ],
-      "Approve all": [
-        "Aprovar todos"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Ao tornar o usuário privado, você não poderá ajudá-lo a recuperar o acesso aos seus dados ou conta."

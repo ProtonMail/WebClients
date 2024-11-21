@@ -3597,9 +3597,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortați automat mesajele primite înainte ca acestea să vă ajungă în contul de e-mail."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "Disponibil cu ${ BRAND_NAME } Mail Plus"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Felicitări! Ați câștigat maximul de ${ rewardsLimit } luni gratuite pentru ${ plusPlanName }."
       ],
@@ -4913,9 +4910,6 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Trebuie să aveți o adresă personală de domeniu pentru a genera un cod de acces pentru comunicațiile prin SMTP."
-      ],
-      "You've assigned all of your servers.": [
-        "V-ați alocat toate serverele disponibile."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Ați atins numărul maxim de caractere. Scurtați mesajul."
@@ -8707,9 +8701,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură web duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Această legătură web ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatorul Microsoft Edge. Dacă aveți certitudinea că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură web ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
       ],
@@ -12360,7 +12351,7 @@
         "Date de autentificare și note nelimitate"
       ],
       "Unlimited logins, notes and credit cards": [
-        "Date de autentificare, note și carduri de credit nelimitate"
+        "Date de autentificare, note și carduri de plată nelimitate"
       ],
       "Unlimited messages per day": [
         "Mesaje nelimitate pe zi"
@@ -12797,9 +12788,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetați parolele și autentificarea cu doi factori a utilizatorilor."
-      ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Redirecționați traficul din Internet prin rețeaua TOR cu un singur clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
@@ -13715,9 +13703,6 @@
       ],
       "Alerts for compromised emails and vulnerable passwords": [
         "Alerte pentru adrese de e-mail compromise și parole vulnerabile"
-      ],
-      "Alerts for vulnerable passwords": [
-        "Alerte pentru parole vulnerabile"
       ],
       "Aliases for email protection from breaches": [
         "Aliasuri pentru protecția adresei de e-mail împotriva divulgării"
@@ -14870,9 +14855,6 @@
       "Test in progress...": [
         "Testare în desfășurare..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Pentru a testa această configurație SAML, introduceți datele de conectare pentru un utilizator asociat cu **${ domainName }**"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Am primit un răspuns SAML valid de la furnizorul dvs. de identitate. SSO este activat pentru organizația proprie."
       ],
@@ -15377,6 +15359,12 @@
     "Setting": {
       "Enable Photos section": [
         "Activare secțiune „Fotografii”"
+      ],
+      "Get updates about comments via email": [
+        "Obținere actualizări despre comentarii prin e-mail"
+      ],
+      "Include document name in email notifications": [
+        "Includere nume document în notificările de pe e-mail"
       ]
     },
     "Settings description": {
@@ -15986,9 +15974,6 @@
       ],
       "Single sign-on removed": [
         "Conectarea prin autentificare unică a fost eliminată."
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Acreditările de la furnizorul de identitate personal vor fi șterse."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Aceasta va deconecta utilizatorul de pe alte dispozitive și va trebui să-și creeze o parolă de rezervă nouă."
@@ -18536,6 +18521,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."
       ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "Faceți clic aici pentru a afla cum să vă creați semnături personale cu HTML."
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copiați și inserați această adresă URL în câmpul URL ACS (Assertion Consumer Service) al furnizorului de identitate."
       ],
@@ -18771,9 +18759,6 @@
     "Tor out of date": {
       "stable release": [
         "versiune stabilă"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Această versiune a TOR Browser nu este suportată. Actualizați la cea mai recentă ${ stableRelease }."
       ]
     },
     "unprivatization": {
@@ -18794,9 +18779,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Un administrator al organizației **${ orgName }** (**${ adminEmail }**) dorește să activeze accesul de administrator pentru contul dvs."
-      ],
-      "Approve all": [
-        "Aproba toate"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Făcând utilizatorul privat, nu îl veți putea ajuta să-și recâștige accesul la date sau la cont."

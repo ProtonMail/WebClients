@@ -170,7 +170,7 @@
         "Aplicar às mensagens existentes"
       ],
       "Attach screenshot(s)": [
-        "Anexar captura(s) de ecrã"
+        "Anexar capturas de ecrã"
       ],
       "Authenticate": [
         "Autenticar"
@@ -410,10 +410,10 @@
         "Não mostrar novamente"
       ],
       "Done": [
-        "Concluído"
+        "Terminado"
       ],
       "Downgrade": [
-        "Conta com menos funcionalidades"
+        "Optar por um plano inferior"
       ],
       "Download": [
         "Transferir"
@@ -443,7 +443,7 @@
         "Editar o nome a mostrar"
       ],
       "Edit email address": [
-        "Editar o endereço de e-mail "
+        "Editar o endereço de e-mail"
       ],
       "Edit Gateway": [
         "Editar o gateway"
@@ -662,7 +662,7 @@
         "Deixar"
       ],
       "Leave group": [
-        "Deixar o grupo"
+        "Sair do grupo"
       ],
       "Let's talk": [
         "Vamos conversar"
@@ -1142,7 +1142,7 @@
         "Actualizar agora"
       ],
       "Upgrade to Business": [
-        "Faça um \"upgrade\" para Business"
+        "Melhore para Business"
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Atualize para ativar ${ PROTON_SENTINEL_NAME }"
@@ -1946,6 +1946,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Edição (ver, criar ou editar os detalhes do evento)"
+      ],
       "View (see all event details)": [
         "Visualizar (ver todos os detalhes do evento)"
       ]
@@ -3343,7 +3346,7 @@
     },
     "Description": {
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Elimine automaticamente o spam e as mensagens do lixo e desbloqueie mais funcionalidades premium ao atualizar."
+        "Elimine automaticamente o spam e as mensagens da lixeira e desbloqueie mais funcionalidades premium ao atualizar."
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Parabéns! Ganhou um máximo de ${ rewardsLimit } meses gratuitos de ${ plusPlanName }."
@@ -6652,7 +6655,7 @@
         "Acesso antecipado"
       ],
       "Edit email address": [
-        "Editar endereço de e-mail"
+        "Editar o endereço de e-mail"
       ],
       "Edit label": [
         "Editar etiqueta"
@@ -7731,9 +7734,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esta hiperligação leva a um website que pode tentar roubar a sua informação, como palavras-passe e números de cartão de crédito."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este link poderá ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se tiver certeza de que a hiperligação é legítima, abra-a com um navegador diferente."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Esta ligação pode ser um ataque homográfico. Verifique se esta é a ligação que deseja visitar, ou não a abra."
       ],
@@ -8591,7 +8591,7 @@
         "Ir para Com estrela"
       ],
       "Go to Trash": [
-        "Ir para Lixo"
+        "Ir para Lixeira"
       ],
       "Insert link": [
         "Inserir hiperligação"
@@ -8639,7 +8639,7 @@
         "Mover para spam"
       ],
       "Move to Trash": [
-        "Mover para o Lixo"
+        "Mover para a lixeira"
       ],
       "Move to...": [
         "Mover para..."
@@ -9006,6 +9006,9 @@
       ],
       "Colors": [
         "Cores"
+      ],
+      "Company name": [
+        "Nome da empresa"
       ],
       "Composer": [
         "Compositor"
@@ -10264,7 +10267,7 @@
         "Franco suíço"
       ],
       "US Dollar": [
-        "Dólar dos Estados Unidos"
+        "Dólar dos EUA"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -10495,7 +10498,7 @@
         "Continuar com o plano gratuito"
       ],
       "Delete account": [
-        "Eliminar conta"
+        "Apagar conta"
       ],
       "Downgrade account": [
         "Mudar para uma conta com menos funcionalidades"
@@ -10639,7 +10642,7 @@
         "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Auto-delete spam and trashed messages": [
-        "Eliminar automaticamente mensagens do Spam e do Lixo"
+        "Eliminar mensagens de spam e lixeira automaticamente"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -11089,7 +11092,7 @@
     },
     "new_plans: title": {
       "Delete account?": [
-        "Eliminar conta?"
+        "Apagar a conta?"
       ],
       "Downgrade account?": [
         "Mudar para uma conta com menos funcionalidades?"
@@ -11678,7 +11681,7 @@
         "Toda a organização"
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ],
       "UDP": [
         "UDP"
@@ -11687,6 +11690,9 @@
     "option": {
       "Group members": [
         "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
       ]
     },
     "Option delay send seconds": {
@@ -12098,6 +12104,9 @@
       ],
       "We have verified the authenticity of this identity.": [
         "Nós verificamos a autenticidade desta identidade."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Nós verificamos a autenticidade deste remetente e convite."
       ]
     },
     "Payment method option": {
@@ -13316,6 +13325,12 @@
       ]
     },
     "sso: auth device state": {
+      "Active": [
+        "Ativo"
+      ],
+      "Inactive": [
+        "Inativo"
+      ],
       "Signed out": [
         "Sessão terminada"
       ],
@@ -14332,7 +14347,7 @@
         "Limpar"
       ],
       "Clear out the junk": [
-        "Limpe o lixo"
+        "Limpar a lixeira"
       ],
       "Click a value in the table to use it as filter": [
         "Clique num valor da tabela para utilizá-lo como filtro"
@@ -14462,7 +14477,7 @@
         "Eliminar ${ value }"
       ],
       "Delete account": [
-        "Eliminar conta"
+        "Eliminar a conta"
       ],
       "Delete calendar": [
         "Eliminar um calendário"
@@ -14532,7 +14547,7 @@
         "Não mostrar novamente?"
       ],
       "Downgrade account": [
-        "Mudar para uma conta com menos funcionalidades"
+        "Optar por um plano inferior"
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Mudar para ${ downgradedPlanName }?"
@@ -14556,7 +14571,7 @@
         "Editar domínio"
       ],
       "Edit email address": [
-        "Editar endereço de e-mail"
+        "Editar o endereço de e-mail"
       ],
       "Edit filter": [
         "Editar filtro"
@@ -15074,7 +15089,7 @@
         "Definições"
       ],
       "Setup dedicated servers by upgrading to Business": [
-        "Configure servidores dedicados ao fazer “upgrade” para Business"
+        "Configure servidores dedicados ao melhorar para Business"
       ],
       "Short domain (@pm.me)": [
         "Domínio curto (@pm.me)"
@@ -15580,14 +15595,14 @@
       ]
     },
     "unprivatization": {
-      "Approve all": [
-        "Aprovar tudo"
-      ],
       "Cancel": [
         "Cancelar"
       ],
       "Cancel request": [
         "Cancelar o pedido"
+      ],
+      "Keep request": [
+        "Manter o pedido"
       ],
       "Private user": [
         "Utilizador privado"
@@ -15597,6 +15612,9 @@
       ],
       "Revoke access": [
         "Revogar o acesso"
+      ],
+      "Send request": [
+        "Enviar o pedido"
       ],
       "View request": [
         "Ver pedido"

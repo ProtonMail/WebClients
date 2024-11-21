@@ -351,12 +351,6 @@
       "Expand folder": [
         "Ordner ausklappen"
       ],
-      "Explore on my own": [
-        "Selbst erkunden"
-      ],
-      "Explore while you wait": [
-        "Erkunde, während du wartest"
-      ],
       "Export": [
         "Exportieren"
       ],
@@ -384,9 +378,6 @@
       "Get link": [
         "Link abrufen"
       ],
-      "Get started": [
-        "Erste Schritte"
-      ],
       "Get Started": [
         "Erste Schritte"
       ],
@@ -404,9 +395,6 @@
       ],
       "Go to my files": [
         "Zu meinen Dateien"
-      ],
-      "Go to panel ${ index }": [
-        "Seitenleiste ${ index } öffnen"
       ],
       "Go to parent": [
         "Zum übergeordneten"
@@ -458,9 +446,6 @@
       ],
       "Increase": [
         "Vergrößern"
-      ],
-      "Invite": [
-        "Einladen"
       ],
       "Keep my subscription": [
         "Behalte mein Abonnement"
@@ -786,9 +771,6 @@
       "Sign out": [
         "Abmelden"
       ],
-      "Skip": [
-        "Überspringen"
-      ],
       "Skip verification": [
         "Überprüfung überspringen"
       ],
@@ -800,9 +782,6 @@
       ],
       "Start recovering": [
         "Wiederherstellung starten"
-      ],
-      "Start setup": [
-        "Einrichtung starten"
       ],
       "Starting from ${ priceUnlimited }": [
         "Ab ${ priceUnlimited }"
@@ -881,9 +860,6 @@
       ],
       "Upload file": [
         "Datei hochladen"
-      ],
-      "Upload files": [
-        "Dateien hochladen"
       ],
       "Upload folder": [
         "Ordner hochladen"
@@ -1431,6 +1407,9 @@
       "${ users } user": [
         "${ users } Benutzer",
         "${ users } Benutzer"
+      ],
+      "Total": [
+        "Gesamt"
       ],
       "Total for ${ n } month": [
         "Gesamtbetrag für ${ n } Monat",
@@ -3577,17 +3556,6 @@
         "Dadurch werden alle Premiumfunktionen von ${ BRAND_NAME } für jedes Family-Mitglied entfernt."
       ]
     },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users": [
-        "Konfiguriere dein Family-Konto und lade andere Benutzer ein"
-      ],
-      "Set up your family": [
-        "Family einrichten"
-      ],
-      "Set up your family account": [
-        "Richte dein Family-Konto ein"
-      ]
-    },
     "familyOffer_2023:Title": {
       "Delete family group?": [
         "Family-Gruppe löschen?"
@@ -5250,9 +5218,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Dieser Link könnte eine homographischer Angriff sein und kann vom Edge Browser nicht geöffnet werden. Wenn du dir sicher bist, dass der Link seriös ist, nutze bitte einen anderen Browser zum Öffnen."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein. Bitte überprüfe, ob dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
@@ -7614,9 +7579,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Leite deinen Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
@@ -8031,9 +7993,6 @@
       "Maybe later": [
         "Vielleicht später"
       ],
-      "Next": [
-        "Weiter"
-      ],
       "Select theme": [
         "Farbschema auswählen"
       ],
@@ -8042,9 +8001,6 @@
       ],
       "Skip for now": [
         "Vorerst überspringen"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "Beginnen, ${ DRIVE_APP_NAME } zu verwenden"
       ],
       "Try the app": [
         "Probier die App"
@@ -8096,9 +8052,6 @@
       "Free up hard drive space on your computer": [
         "Gib Speicherplatz auf der Festplatte deines Computers frei"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "Fange an, ${ DRIVE_APP_NAME } zu nutzen und wir upgraden deinen kostenlosen Speicherplatz auf 5 GB!"
-      ],
       "Get the desktop app": [
         "Desktop-App herunterladen"
       ],
@@ -8141,33 +8094,14 @@
       "Securely share files and folders": [
         "Teile sicher Dateien und Ordner"
       ],
-      "Securely store, manage, and share your business-critical files with confidence.": [
-        "Speichere, verwalte und teile deine unternehmenskritischen Dateien zuversichtlich und sicher."
-      ],
-      "Set a recovery method": [
-        "Wiederherstellungsmethode festlegen"
-      ],
-      "Share a file": [
-        "Teile eine Datei"
-      ],
       "Share files & folders": [
         "Dateien & Ordner teilen"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Führe einfach die folgenden Schritte in ${ expiresInDays } Tag aus:",
-        "Führe einfach die folgenden Schritte in den nächsten ${ expiresInDays } Tagen aus:"
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "Speichere deine Dateien und gib sie auf sichere Weise weiter. Beginne mit der Sicherung deiner privatesten Dateien wie Ausweise, Verträge und persönliche Fotos."
       ],
       "Sync and access your files from anywhere": [
         "Synchronisierung und Zugriff auf deine Dateien von überall aus"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Der Besitzer muss den geteilten Zugang bestätigen. Sobald dies erledigt wurde, wirst du eine E-Mail erhalten."
-      ],
-      "Upload a file": [
-        "Datei hochladen"
       ],
       "Upload your first file": [
         "Lade deine erste Datei hoch"
@@ -8177,46 +8111,6 @@
       ],
       "Work together": [
         "Arbeite gemeinsam"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "Dein zuverlässiger Online-Tresor für wichtige Dokumente und wertvolle Erinnerungen."
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Konfiguriere deine Organisation, verknüpfe deinen Domainnamen und erstelle Konten, um sicherzustellen, dass alle Mitglieder deiner Organisation geschützt sind."
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "Entdecke alle ${ BRAND_NAME }-Dienste"
-      ],
-      "Pick a theme": [
-        "Wähle ein Design"
-      ],
-      "Set up your organization": [
-        "Organisation einrichten"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Verwende die App-Auswahl oben links, um auf alle ${ BRAND_NAME }-Dienste zuzugreifen: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "Du kannst dein Farbschema jederzeit in den Einstellungen ändern."
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "Endgültige Genehmigung in Bearbeitung"
-      ],
-      "Hang tight!": [
-        "Einen Moment bitte."
-      ],
-      "Invite team members": [
-        "Teammitglieder einladen"
-      ],
-      "Upload and protect your important files": [
-        "Deine wichtigen Dateien hochladen und schützen"
-      ],
-      "Your welcome bonus": [
-        "Dein Willkommensbonus"
       ]
     },
     "Option": {
@@ -8269,6 +8163,9 @@
       "${ n } user account": [
         "${ n } Benutzerkonto",
         "${ n } Benutzerkonten"
+      ],
+      "Activity log": [
+        "Ereignisprotokoll"
       ],
       "Admin panel to manage users and subscription": [
         "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
@@ -8366,6 +8263,9 @@
       ],
       "Please select your billing state first.": [
         "Bitte wähle zuerst deinen Rechnungsstaat aus."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Verlängert sich zu ${ price }, jederzeit kündbar."
       ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
@@ -9316,6 +9216,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Lebenslang"
       ]
     },
     "Subscription price": {

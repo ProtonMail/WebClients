@@ -1127,6 +1127,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } kutsu lähetettiin",
+        "${ count } kutsua lähetettiin"
+      ],
       "${ count } time": [
         "${ count } kerran",
         "${ count } kertaa"
@@ -1543,6 +1547,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Valvonnan asetukset päivitettiin"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "${ PASS_APP_NAME } on muutakin kuin pelkkä salasanahallinta, se voi salasanojesi lisäksi suojata sähköpostiosoitteesi sähköpostialiaksilla. Tietosi ovat päästä päähän -salattuja ${ MAIL_APP_NAME }in käyttämällä tekniikalla, ja vain sinä pääset niihin käsiksi."
       ],
       "Move ${ count } item": [
         "Siirrä ${ count } kohde",
@@ -2283,6 +2290,9 @@
       ],
       "Generic CSV": [
         "Geneerinen CSV"
+      ],
+      "Get Started": [
+        "Aloita"
       ],
       "Grant": [
         "Myönnä"
@@ -3138,6 +3148,9 @@
       ],
       "Pause monitoring?": [
         "Keskeytetäänkö valvonta?"
+      ],
+      "Pending access confirmation": [
+        "Odottaa pääsyn vahvistamista"
       ],
       "Pending access to the shared data": [
         "Odotetaan käyttöoikeutta jaettuihin tietoihin"

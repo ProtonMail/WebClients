@@ -345,12 +345,6 @@
       "Expand folder": [
         "展开文件夹"
       ],
-      "Explore on my own": [
-        "自行探索"
-      ],
-      "Explore while you wait": [
-        "等待时探索"
-      ],
       "Export": [
         "导出"
       ],
@@ -378,9 +372,6 @@
       "Get link": [
         "生成共享链接"
       ],
-      "Get started": [
-        "入门"
-      ],
       "Get Started": [
         "立即体验"
       ],
@@ -395,9 +386,6 @@
       ],
       "Go to my files": [
         "转到我的文件"
-      ],
-      "Go to panel ${ index }": [
-        "转到面板 ${ index }"
       ],
       "Go to parent": [
         "上级目录"
@@ -449,9 +437,6 @@
       ],
       "Increase": [
         "增加"
-      ],
-      "Invite": [
-        "邀请"
       ],
       "Later": [
         "稍后"
@@ -771,9 +756,6 @@
       "Sign out": [
         "退出"
       ],
-      "Skip": [
-        "跳过"
-      ],
       "Skip verification": [
         "跳过验证"
       ],
@@ -785,9 +767,6 @@
       ],
       "Start recovering": [
         "开始恢复"
-      ],
-      "Start setup": [
-        "开始设置"
       ],
       "Stay": [
         "留在此页"
@@ -856,9 +835,6 @@
         "仍然上传"
       ],
       "Upload file": [
-        "上传文件"
-      ],
-      "Upload files": [
         "上传文件"
       ],
       "Upload folder": [
@@ -3304,14 +3280,6 @@
         "这将永久删除与您的组织相关的所有子用户、账户和数据。"
       ]
     },
-    "familyOffer_2023:Onboarding Proton": {
-      "Set up your family": [
-        "设置你的家庭"
-      ],
-      "Set up your family account": [
-        "设置您的家庭账户"
-      ]
-    },
     "familyOffer_2023:Title": {
       "Delete organization?": [
         "删除机构?"
@@ -4863,9 +4831,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
@@ -7206,71 +7171,6 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "欢迎来到 ${ appName }"
-      ]
-    },
-    "Onboarding Action": {
-      "Next": [
-        "下一步"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "开始使用 ${ DRIVE_APP_NAME }"
-      ]
-    },
-    "Onboarding Info": {
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "开始使用 ${ DRIVE_APP_NAME }，我们将会把您的存储空间升级到 5 GB！"
-      ],
-      "Set a recovery method": [
-        "设置恢复方法"
-      ],
-      "Share a file": [
-        "共享文件"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "只需在接下来的 ${ expiresInDays } 天内完成以下任务："
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "存储文件并安全地共享。首先保护您最私密的文件，例如身份证、合同和个人照片。"
-      ],
-      "Upload a file": [
-        "上传文件"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "为您的重要文件和美好回忆而设的云端保险箱。"
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "配置您的机构信息、链接您的域名、创建账户以确保您机构的所有成员都受到保护。"
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "探索各类 ${ BRAND_NAME } 服务"
-      ],
-      "Pick a theme": [
-        "选择主题"
-      ],
-      "Set up your organization": [
-        "填写机构信息"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME }。"
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "您可以随时在设置中更换配色。"
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "正在进行最终审批"
-      ],
-      "Hang tight!": [
-        "别着急！"
-      ],
-      "Upload and protect your important files": [
-        "上传并保护您的重要文件"
-      ],
-      "Your welcome bonus": [
-        "您的欢迎奖励"
       ]
     },
     "Option": {

@@ -3567,9 +3567,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "თქვენი შემომავალი შეტყობინებების ავტომატური დალაგება მანამდე, სანამ ის თქვენს საფოსტო ყუთამდე მოაღწევს."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "ხელმისაწვდომია ${ BRAND_NAME } Mail Plus-თან ერთად"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "გილოცავთ! თქვენ ახლა ${ plusPlanName }-ის, მაქსიმუმ, ${ rewardsLimit } უფასო თვე გაქვთ."
       ],
@@ -4878,9 +4875,6 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "SMTP გადაცემის კოდის შესაქმნელად თქვენი დომენური მისამართის მითითითებაა საჭირო."
-      ],
-      "You've assigned all of your servers.": [
-        "თქვენ მიანიჭეთ ყველა თქვენი სერვერი."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "მიაღწიეთ სიმბოლოების მაქსიმალურ რაოდენობას. შეამოკლეთ შეტყობინება."
@@ -8586,9 +8580,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "ბმული მიდის ვებგვერდამდე, რომელმაც შეიძლება მოიპაროს თქვენი ისეთი ინფორმაცია, როგორიცაა პაროლები და საკრედიტო ბარათის დეტალები."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "ეს ბმული შეიძლება, ჰომოგრაფიულ შეტევას წარმოადგენდეს და არ შეიძლება, გაიხსნას Edge ბრაუზერში. თუ დარწმუნებული ბრძანდებით, რომ ბმული ლეგიტიმურია, გთხოვთ, გამოიყენოთ სხვა ბრაუზერი მის გასახსნელად."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "ეს ბმული შეიძლება ჰომოგრაფიულ შეტევას წარმოადგენდეს. შეამოწმეთ ბმული და დარწმუნდით, რომ ის უსაფრთხოა."
@@ -12603,9 +12594,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "მომხმარებლების პაროლებისა და 2FA-ის აღდგენა"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "გადაამისამართეთ თქვენი ინტერნეტ-ტრაფიკი Tor-ის ქსელში თაგუნას ერთადერთი წკაპუნით"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
       ],
@@ -13487,9 +13475,6 @@
       ],
       "Alerts for compromised emails and vulnerable passwords": [
         "განგაშები მოწყვლადი ელფოსტებისა და პაროლებისთვის"
-      ],
-      "Alerts for vulnerable passwords": [
-        "გაფრთხილებები მოწყვლადი პაროლების შესახებ"
       ],
       "Aliases for email protection from breaches": [
         "ფსევდონიმები ელფოსტის გაჟონვებისგან დასაცავად"
@@ -14630,9 +14615,6 @@
       "Test in progress...": [
         "მიმდინარეობს შემოწმება..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "ამ SAML-ისა კონფიგურაციის შესამოწმებლად შეიყვანეთ თქვენი ავტორიზაციის დეტალები მომხმარებლისთვის, რომელიც **${ domainName }**-სთანაა ასოცირებული"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "მიღებულია სწორი SAML პასუხი თქვენი იდენტიფიკატორების მომწოდებლისგან. SSO ჩართულია თქვენი ორგანიაციისთვის."
       ],
@@ -15706,9 +15688,6 @@
       ],
       "Single sign-on removed": [
         "SSO წაიშალა"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "წაიშლება ავტორიზაციის დეტალები თქვენი იდენტიფიკატორის მომწოდებლიდან."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "ეს გაიყვანს მომხმარებელს ყველა თავისი მოწყობილობიდან და ისინი იძულებული იქნებიან, ახალი მარქაფი პაროლი შექმნან."
@@ -18446,9 +18425,6 @@
     "Tor out of date": {
       "stable release": [
         "სტაბილური რელიზი"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Tor Browser-ის ეს ვერსია მხარდაუჭერელია. განაახლეთ უკანასკნელ ვერსიამდე: ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -18466,9 +18442,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "**${ orgName }** ორგანიზაციის ადმინს (**${ adminEmail }**) თქვენს ანგარიშზე ადმინის წვდომის ჩართვა სურს."
-      ],
-      "Approve all": [
-        "ყველას დამტკიცება"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "მომხმარებლის კონფიდენციალურად გამოცხადებით მათ თავის ანგარიშზე არსებულ მონაცემების აღდგენაში ვეღარ დაეხმარებით."

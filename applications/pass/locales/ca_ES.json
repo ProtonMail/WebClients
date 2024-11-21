@@ -536,6 +536,10 @@
       "Try for free": [
         "Proveu-lo gratuïtament"
       ],
+      "Understood, I will never need it": [
+        "Ho entenc i mai el necessitaré.",
+        "Ho entenc i mai els necessitaré."
+      ],
       "Unlock": [
         "Desbloquejar"
       ],
@@ -583,6 +587,9 @@
       ],
       "Write us on Twitter": [
         "Escriviu-nos a Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
       ]
     },
     "bf2024: Deal": {
@@ -695,6 +702,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No s'ha pogut analitzar el fitxer de ${ provider }. ${ errorDetail }"
+      ],
+      "[Error] an item could not be parsed": [
+        "[Error] no s'ha pogut analitzar un element."
       ],
       "Alias options could not be resolved": [
         "Les opcions d'àlies no s'han pogut resoldre."
@@ -1167,6 +1177,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Després d'importar correctament les dades, podeu suprimir el fitxer CSV que conté les contrasenyes per seguretat."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Àlies no sincronitzats (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Els àlies amb dominis personalitzats no se supervisen; afegeixi'ls com a correu electrònic personalitzat per al seguiment."
@@ -2779,6 +2792,9 @@
       "Approve or deny it now": [
         "Aprova o nega-ho ara"
       ],
+      "If you didn't make this request, cancel it now.": [
+        "Si no heu fet aquesta sol·licitud, cancel·leu-la ara."
+      ],
       "Invalid confirmation code": [
         "El codi de confirmació no és vàlid."
       ],
@@ -2796,6 +2812,9 @@
       ],
       "Sign-in rejection failure": [
         "No s'ha pogut rebutjar l'inic de sessió."
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "S'ha sol·licitat una connexió en un altre dispositiu. Heu estat vosaltres?"
       ],
       "Yes, it was me": [
         "Sí, era jo."

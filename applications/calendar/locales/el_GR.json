@@ -270,7 +270,7 @@
         "Λήψη"
       ],
       "Download now": [
-        "Λήψη"
+        "Λήψη τώρα"
       ],
       "Edit": [
         "Επεξεργασία"
@@ -309,7 +309,7 @@
         "Εξαγωγή Επαφών"
       ],
       "Forgot password?": [
-        "Ξέχασα τον κωδικό πρόσβασης?"
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
@@ -557,9 +557,6 @@
       "Remove this participant": [
         "Αφαίρεση αυτού του συμμετέχοντα"
       ],
-      "Remove zoom meeting": [
-        "Κατάργηση σύσκεψης Zoom"
-      ],
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
@@ -645,7 +642,7 @@
         "Εμφάνιση περισσοτέρων"
       ],
       "Show navigation bar": [
-        "Εμφάνιση γραμμής πλοήγησης"
+        "Εμφάνιση γραμμής περιήγησης"
       ],
       "Show side panel": [
         "Εμφάνιση πλαϊνού πλαισίου"
@@ -781,13 +778,13 @@
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Η δωρεάν δοκιμή της εφαρμογής σας για υπολογιστές λήγει 2 ημέρες. ${ upgradeButton }"
+        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει σε 2 ημέρες. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Η δωρεάν δοκιμή της εφαρμογής σας για υπολογιστές λήγει 5 ημέρες. ${ upgradeButton }"
+        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει σε 5 ημέρες. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Η δωρεάν δοκιμή της εφαρμογής σας για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+        "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -2136,7 +2133,7 @@
         "Μακάο"
       ],
       "Macedonia": [
-        "ΠΓΔ Μακεδονίας"
+        "Βόρεια Μακεδονία"
       ],
       "Madagascar": [
         "Μαδαγασκάρη"
@@ -4536,7 +4533,7 @@
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
       "Attention required": [
-        "Χρειάζεται προσοχή"
+        "Απαιτείται προσοχή"
       ],
       "Awaiting transaction": [
         "Εν αναμονή συναλλαγής"
@@ -5123,9 +5120,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας και δεν μπορεί να ανοίξει από το πρόγραμμα περιήγησης Edge. Εάν είστε βέβαιοι ότι ο σύνδεσμος είναι αυθεντικός, χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης για να το ανοίξετε."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
@@ -5795,7 +5789,7 @@
         "Τελευταίοι 3 μήνες μόνο"
       ],
       "Last month only": [
-        "Τελευταίο μήνα μόνο"
+        "Τελευταίος μήνας μόνο"
       ],
       "Last name": [
         "Επώνυμο"
@@ -6072,7 +6066,7 @@
         "Άλλα ημερολόγια"
       ],
       "Pay invoice": [
-        "Πληρωμή τιμολογίου"
+        "Εξόφληση τιμολογίου"
       ],
       "Reactivate now": [
         "Επανενεργοποίηση τώρα"
@@ -6314,7 +6308,7 @@
     },
     "Monthly recurring event, frequency (times)": {
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Κάθε ${ interval } μήνας ${ onDayString }, ${ timesString }",
+        "Κάθε ${ interval } μήνα ${ onDayString }, ${ timesString }",
         "Κάθε ${ interval } μήνες ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
@@ -6323,7 +6317,7 @@
     },
     "Monthly recurring event, frequency (until)": {
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Κάθε ${ interval } μήνας ${ onDayString }, ${ untilString }",
+        "Κάθε ${ interval } μήνα ${ onDayString }, ${ untilString }",
         "Κάθε ${ interval } μήνες ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
@@ -7256,9 +7250,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Επαναφέρετε τους κωδικούς πρόσβασης χρήστη και επαναφέρετε τον έλεγχο ταυτότητας δύο παραγόντων στους χρήστες"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Δρομολογήστε την κίνηση σας στο διαδίκτυο, μέσω του δικτύου TOR με ένα μόνο κλικ"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
@@ -7962,7 +7953,7 @@
         "Αναζήτηση βάσει ονόματος ή e-mail"
       ],
       "Search parent folder": [
-        "Αναζήτηση στο γονικό φάκελο"
+        "Αναζήτηση σε γονικό φάκελο"
       ],
       "Select": [
         "Επιλογή"
@@ -7998,7 +7989,7 @@
         "Επιλέξτε τον αριθμό διευθύνσεων IP που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον διεύθυνση IP κοστίζει ${ price }."
       ],
       "Should you need more than ${ maxIPs } IP, ": [
-        "Εάν χρειάζεστε περισσότερη από ${ maxIPs } διεύθυνση IP, ",
+        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διεύθυνση IP, ",
         "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διευθύνσεις IP, "
       ]
     },
@@ -8159,7 +8150,7 @@
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτου μέρους. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Η πρωτοποριακή μας λύση ασφάλειας με γνώμονα την τεχνητή νοημοσύνη, σχεδιασμένη για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους. ${ learnMoreLink }"
+        "Η πρωτοποριακή μας λύση ασφάλειας βασισμένη στην τεχνητή νοημοσύνη, σχεδιασμένη για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Το Sentinel είναι **ενεργό** και προστατεύει τον λογαριασμό σας."
@@ -8520,7 +8511,7 @@
     },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "Μεταβείτε στα προγράμματα συνδρομής"
+        "Μεταβείτε στα συνδρομητικά προγράμματα"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -8528,7 +8519,7 @@
     },
     "specialoffer: Offers": {
       "${ n } month": [
-        "${ n } μήνα",
+        "${ n } μήνας",
         "${ n } μήνες"
       ],
       "/ month": [
@@ -9352,7 +9343,7 @@
         "Οι προτιμήσεις αποθηκεύτηκαν"
       ],
       "Problem reported": [
-        "Αναφέρθηκε πρόβλημα"
+        "Η αναφορά του προβλήματος ολοκληρώθηκε"
       ],
       "Undo in progress": [
         "Αναίρεση σε εξέλιξη"
@@ -9508,7 +9499,7 @@
         "Ανάκτηση λογαριασμού"
       ],
       "Account security": [
-        "Διασφάλιση λογαριασμού"
+        "Προστασία λογαριασμού"
       ],
       "Add a custom logo": [
         "Προσθήκη προσαρμοσμένου λογότυπου"

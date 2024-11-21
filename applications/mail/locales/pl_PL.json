@@ -966,9 +966,6 @@
       "Remove this label": [
         "Usuń etykietę"
       ],
-      "Remove zoom meeting": [
-        "Usuń spotkanie Zoom"
-      ],
       "Replace": [
         "Zastąp"
       ],
@@ -6159,9 +6156,9 @@
       ],
       "${ updated } contact updated successfully.": [
         "Kontakt został zaktualizowany.",
-        "${ updated } kontakty zostały zaktualizowane.",
-        "${ updated } kontaktów zostało zaktualizowanych.",
-        "${ updated } kontaktów zostało zaktualizowanych."
+        "Zaktualizowano ${ updated } kontakty.",
+        "Zaktualizowano ${ updated } kontaktów.",
+        "Zaktualizowano ${ updated } kontaktów."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } członek)",
@@ -7446,9 +7443,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Edge. Upewnij się, że link, który chcesz odwiedzić, jest wiarygodny i otwórz go za pomocą innej przeglądarki."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
@@ -10361,9 +10355,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetowanie haseł i uwierzytelniania dwustopniowego użytkowników"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Przekieruj swój ruch internetowy przez sieć Tor za pomocą jednego kliknięcia"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
@@ -12631,20 +12622,20 @@
     "Success": {
       "${ count } conversation deleted": [
         "Wątek został usunięty",
-        "${ count } wątki zostały usunięte",
-        "${ count } wątków zostało usuniętych",
-        "${ count } wątków zostało usuniętych"
+        "Usunięto ${ count } wątki",
+        "Usunięto ${ count } wątków",
+        "Usunięto ${ count } wątków"
       ],
       "${ count } draft deleted": [
         "Szkic został usunięty",
-        "${ count } szkice zostały usunięte",
-        "${ count } szkiców zostało usuniętych",
-        "${ count } szkiców zostało usuniętych"
+        "Usunięto ${ count } szkice",
+        "Usunięto ${ count } szkiców",
+        "Usunięto ${ count } szkiców"
       ],
       "${ count } message deleted": [
         "Wiadomość została usunięta",
-        "${ count } wiadomości zostały usunięte",
-        "${ count } wiadomości zostało usuniętych",
+        "Usunięto ${ count } wiadomość",
+        "Usunięto ${ count } wiadomości",
         "${ count } wiadomości zostało usuniętych"
       ],
       "${ countMergeableContacts } contact look identical.": [
@@ -12685,9 +12676,9 @@
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "Wątek został przeniesiony do folderu ${ folderName }.",
-        "${ elementsCount } wątki zostały przeniesione do folderu ${ folderName }.",
-        "${ elementsCount } wątków zostało przeniesionych do folderu ${ folderName }.",
-        "${ elementsCount } wątków zostało przeniesionych do folderu ${ folderName }."
+        "Przeniesiono ${ elementsCount } wątki do folderu ${ folderName }.",
+        "Przeniesiono ${ elementsCount } wątków do folderu ${ folderName }.",
+        "Przeniesiono ${ elementsCount } wątków do folderu ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "Wątek został przeniesiony do Spamu, a nadawca został dodany do listy spamu.",
@@ -12697,9 +12688,9 @@
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "Wątek został usunięty z etykiety ${ labelName }.",
-        "${ elementsCount } wątki zostały usunięte z etykiety ${ labelName }.",
-        "${ elementsCount } wątków zostało usuniętych z etykiety ${ labelName }.",
-        "${ elementsCount } wątków zostało usuniętych z etykiety ${ labelName }."
+        "Usunięto ${ elementsCount } wątki z etykiety ${ labelName }.",
+        "Usunięto ${ elementsCount } wątków z etykiety ${ labelName }.",
+        "Usunięto ${ elementsCount } wątków z etykiety ${ labelName }."
       ],
       "${ elementsCount } conversation snoozed": [
         "Odłożono ${ elementsCount } wątek",
@@ -12744,10 +12735,10 @@
         "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ folderName }, a nadawca został usunięty z listy spamu."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
-        "Wiadomość została przeniesiona do folderu ${ folderName }.",
-        "${ elementsCount } wiadomości zostały przeniesione do folderu ${ folderName }.",
-        "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ folderName }.",
-        "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ folderName }."
+        "Przeniesiono ${ elementsCount } wiadomość do folderu ${ folderName }.",
+        "Przeniesiono ${ elementsCount } wiadomości do folderu ${ folderName }.",
+        "Przeniesiono ${ elementsCount } wiadomości do folderu ${ folderName }.",
+        "Przeniesiono ${ elementsCount } wiadomości do folderu ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
         "Wiadomość została przeniesiona do Spamu, a nadawca został dodany do listy spamu.",
@@ -12757,9 +12748,9 @@
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "Wiadomość została usunięta z etykiety ${ labelName }.",
-        "${ elementsCount } wiadomości zostały usunięte z etykiety ${ labelName }.",
-        "${ elementsCount } wiadomości zostało usuniętych z etykiety ${ labelName }.",
-        "${ elementsCount } wiadomości zostało usuniętych z etykiety ${ labelName }."
+        "Usunięto ${ elementsCount } wiadomości z etykiety ${ labelName }.",
+        "Usunięto ${ elementsCount } wiadomości z etykiety ${ labelName }.",
+        "Usunięto ${ elementsCount } wiadomości z etykiety ${ labelName }."
       ],
       "Address copied to clipboard": [
         "Adres został skopiowany do schowka"
@@ -13334,14 +13325,8 @@
       "Create contact": [
         "Utwórz kontakt"
       ],
-      "Create folder": [
-        "Utwórz folder"
-      ],
       "Create folder \"${ search }\"": [
         "Utwórz folder \"${ search }\""
-      ],
-      "Create label": [
-        "Utwórz etykietę"
       ],
       "Create label \"${ search }\"": [
         "Utwórz etykietę \"${ search }\""
@@ -14069,9 +14054,6 @@
     "Tor out of date": {
       "stable release": [
         "wersji stabilnej"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Ta wersja przeglądarki Tor nie jest obsługiwana. Zaktualizuj ją do najnowszej ${ stableRelease }"
       ]
     },
     "Update font modal": {
