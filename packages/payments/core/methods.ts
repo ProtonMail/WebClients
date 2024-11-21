@@ -350,7 +350,7 @@ export class PaymentMethods {
             this.amount >= MIN_BITCOIN_AMOUNT &&
             !this.isB2BPlan() &&
             !btcDisabledSpecialCases &&
-            notDelinquent
+            (notDelinquent || this.flow === 'credit')
         );
     }
 
