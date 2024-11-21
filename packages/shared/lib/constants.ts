@@ -322,6 +322,8 @@ export const SSO_PATHS = {
     DOCS_SIGN_IN: '/docs',
     WALLET_SIGNUP: '/wallet/signup',
     WALLET_SIGN_IN: '/wallet',
+    LUMO_SIGNUP: '/lumo/signup',
+    LUMO_SIGN_IN: '/lumo',
     SIGNUP: '/signup',
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
