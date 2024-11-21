@@ -76,7 +76,8 @@ export interface ShortPlan {
         | PLANS.DUO
         | PLANS.VPN_PRO
         | PLANS.VPN_BUSINESS
-        | PLANS.WALLET;
+        | PLANS.WALLET
+        | PLANS.LUMO;
     cta: string;
     features: PlanCardFeatureDefinition[];
 }
