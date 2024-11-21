@@ -187,11 +187,11 @@ export const getUpdatedDateTime = (
 };
 
 export const deleteConferenceData = (tmpData: EventModel) => {
-    if (tmpData.rest['x-pm-conference-id']) {
+    if (tmpData.rest?.['x-pm-conference-id']) {
         delete tmpData.rest['x-pm-conference-id'];
     }
 
-    if (tmpData.rest['x-pm-conference-url']) {
+    if (tmpData.rest?.['x-pm-conference-url']) {
         delete tmpData.rest['x-pm-conference-url'];
     }
 
