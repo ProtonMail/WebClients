@@ -54,6 +54,7 @@ enum AccountFlag {
     EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
     EduGainSSO = 'EduGainSSO',
     ChangePasswordStrengthIndicator = 'ChangePasswordStrengthIndicator',
+    LumoInProductSwitcher = 'LumoInProductSwitcher',
 }
 
 enum PaymentsFlag {
