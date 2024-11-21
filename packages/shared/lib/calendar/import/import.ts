@@ -4,7 +4,7 @@ import { CryptoProxy, serverTime } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
 import { TelemetryIcsSurgeryEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { sendMultipleTelemetryReports } from '@proton/shared/lib/helpers/metrics';
+import { sendMultipleTelemetryReports, sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import isTruthy from '@proton/utils/isTruthy';
 import truncate from '@proton/utils/truncate';
@@ -50,6 +50,7 @@ import {
 import { ImportFileError } from './ImportFileError';
 
 const icsHashesForImportTelemetry = new Set<string>();
+const icsFilesForIcsParsingTelemetry = new Set<string>();
 
 /**
  * Send telemetry event if we got some fails during import process, so that we know how common errors are, and which error users are facing
@@ -90,6 +91,22 @@ export const sendImportErrorTelemetryReport = async ({
     });
 
     icsHashesForImportTelemetry.add(hash);
+};
+
+export const sendTelemetryEventParsingError = (api: Api, error: IMPORT_ERROR_TYPE, filename: string | undefined) => {
+    if (!filename || icsFilesForIcsParsingTelemetry.has(filename)) {
+        return;
+    }
+
+    void sendTelemetryReport({
+        api,
+        measurementGroup: TelemetryMeasurementGroups.calendarIcsSurgery,
+        event: TelemetryIcsSurgeryEvents.ics_parsing,
+        dimensions: {
+            parsing_error: error,
+        },
+    });
+    icsFilesForIcsParsingTelemetry.add(filename);
 };
 
 export const parseIcs = async (ics: File) => {
