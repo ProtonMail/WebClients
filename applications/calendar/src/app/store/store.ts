@@ -1,15 +1,19 @@
 import type { TypedStartListening } from '@reduxjs/toolkit';
 import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
+import { getPersistedState } from '@proton/redux-shared-store/persist';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
 import { start } from './listener';
-import { rootReducer } from './rootReducer';
+import { type CalendarState, persistReducer, rootReducer } from './rootReducer';
 import { type CalendarThunkArguments, extraThunkArguments } from './thunk';
 
-export type CalendarState = ReturnType<typeof rootReducer>;
+export type { CalendarState };
 
-export const setupStore = ({ preloadedState }: { preloadedState?: Partial<CalendarState> } = {}) => {
+export const setupStore = ({
+    preloadedState,
+    persist,
+}: { preloadedState?: Partial<CalendarState>; persist?: Boolean } = {}) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
     const store = configureStore({
@@ -27,13 +31,16 @@ export const setupStore = ({ preloadedState }: { preloadedState?: Partial<Calend
     });
 
     const startListening = listenerMiddleware.startListening as AppStartListening;
-    start(startListening);
+    const getCalendarPersistedState = persist
+        ? (state: CalendarState) => getPersistedState(state, persistReducer)
+        : undefined;
+    start({ startListening, persistTransformer: getCalendarPersistedState });
 
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
         module.hot.accept('./listener', () => {
             listenerMiddleware.clearListeners();
-            start(startListening);
+            start({ startListening, persistTransformer: getCalendarPersistedState });
         });
     }
 
