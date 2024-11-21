@@ -1,6 +1,7 @@
 import type { IDBPDatabase } from 'idb';
 import { deleteDB, openDB } from 'idb';
 
+import { detectStorageCapabilities } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
 import { INDEXEDDB_VERSION, STORING_OUTCOME } from '../constants';
@@ -28,6 +29,12 @@ export const openESDB = async (userID: string) => {
     let esDB: IDBPDatabase<EncryptedSearchDB> | undefined;
     try {
         let dbExisted = true;
+        /** Perhaps in Lockdown mode, the browser does not support IndexedDB, so we need to check for that */
+        const { isAccessible, hasIndexedDB } = await detectStorageCapabilities();
+        if (!isAccessible || !hasIndexedDB) {
+            esSentryReport('openESDB: indexedDB not accessible', { isAccessible, hasIndexedDB });
+            return;
+        }
         esDB = await openDB<EncryptedSearchDB>(getDBName(userID), INDEXEDDB_VERSION, {
             upgrade() {
                 dbExisted = false;
