@@ -153,6 +153,7 @@ export enum PLANS {
     PASS_BUSINESS = 'passbiz2024',
     PASS_FAMILY = 'passfamily2024',
     PASS_LIFETIME = 'passlifetime2024',
+    LUMO = 'lumo2024',
 }
 
 export const AddonKey: Readonly<{
@@ -229,6 +230,7 @@ export const PLAN_NAMES: { [key in PLANS]: string } = {
     [PLANS.MAIL_BUSINESS]: 'Mail Professional',
     [PLANS.VPN]: 'VPN Plus',
     [PLANS.WALLET]: 'Wallet Plus',
+    [PLANS.LUMO]: 'Lumo Plus',
     [PLANS.BUNDLE]: 'Proton Unlimited',
     [PLANS.BUNDLE_PRO]: 'Proton Business Suite',
     [PLANS.BUNDLE_PRO_2024]: 'Proton Business Suite',
