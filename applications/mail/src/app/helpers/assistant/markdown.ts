@@ -3,8 +3,9 @@ import TurndownService from 'turndown';
 import { removeLineBreaks } from 'proton-mail/helpers/string';
 import {
     DEFAULT_TAGS_TO_DISABLE,
+    escapeBackslash,
     extractContentFromPtag,
-    prepareConversionToHTML,
+    getMarkdownParser,
 } from 'proton-mail/helpers/textToHtml';
 
 const turndownService = new TurndownService({
@@ -65,13 +66,21 @@ export const htmlToMarkdown = (dom: Document): string => {
     return markdownCleaned;
 };
 
+const prepareMdConversionToHTML = (content: string, tagsToDisable?: string[]) => {
+    // We don't want to treat backslash as a markdown escape since it removes backslashes. So escape all backslashes with a backslash.
+    const escaped = escapeBackslash(content);
+    const md = getMarkdownParser(tagsToDisable);
+
+    return md.render(escaped);
+};
+
 // Using the same config and steps than what we do in textToHTML.
 // This is formatting lists and other elements correctly, adding line separators etc...
 export const markdownToHTML = (markdownContent: string, keepLineBreaks = false): string => {
     // We also want to convert list, so we need to remove it from the tags to disable
     const TAGS_TO_DISABLE = [...DEFAULT_TAGS_TO_DISABLE].filter((tag) => tag !== 'list');
 
-    const html = prepareConversionToHTML(markdownContent, TAGS_TO_DISABLE);
+    const html = prepareMdConversionToHTML(markdownContent, TAGS_TO_DISABLE);
     // Need to remove line breaks, we already have <br/> tag to separate lines
     const htmlCleaned = keepLineBreaks ? html : removeLineBreaks(html);
     /**
