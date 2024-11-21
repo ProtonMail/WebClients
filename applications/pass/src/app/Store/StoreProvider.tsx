@@ -8,6 +8,7 @@ import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/Servi
 import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB, getDBCache, writeDBCache } from 'proton-pass-web/lib/database';
+import { getPersistedSessions } from 'proton-pass-web/lib/sessions';
 import { settings } from 'proton-pass-web/lib/settings';
 import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
@@ -29,7 +30,7 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import { clientBooted, clientOffline, clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
-import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
+import { settingsEditIntent, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { cacheGuard } from '@proton/pass/store/migrate';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { DESKTOP_SAGAS } from '@proton/pass/store/sagas/desktop';
@@ -37,6 +38,7 @@ import { WEB_SAGAS } from '@proton/pass/store/sagas/web';
 import { selectB2BOnboardingEnabled, selectFeatureFlag, selectLocale } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { semver } from '@proton/pass/utils/string/semver';
 import noop from '@proton/utils/noop';
 
@@ -161,6 +163,26 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
             sw?.off('action', handleAction);
         };
     }, []);
+
+    useEffect(() => {
+        /** If the user switched to a new account for the first time, initialize their settings theme
+         * to be the current theme (core.theme) which is also the last used account's theme. */
+        const setThemeIfMultiAccounts = async () => {
+            try {
+                if (getPersistedSessions().length > 1 && authStore.getLocalID() && clientReady(app.state.status)) {
+                    const settingsTheme = await settings
+                        .resolve(authStore.getLocalID())
+                        .then(prop('theme'))
+                        .catch(noop);
+                    if (settingsTheme === undefined) {
+                        store.dispatch(settingsEditIntent('theme', { theme: core.theme }, true));
+                    }
+                }
+            } catch {}
+        };
+
+        void setThemeIfMultiAccounts();
+    }, [authStore.getLocalID(), core.theme, app.state.status]);
 
     useVisibleEffect(
         (visible: boolean) => {
