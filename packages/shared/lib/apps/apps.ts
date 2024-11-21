@@ -39,6 +39,7 @@ export const getAvailableApps = (options: { user?: User; context: AppContext }) 
         APPS.PROTONVPN_SETTINGS,
         APPS.PROTONPASS,
         APPS.PROTONWALLET,
+        APPS.PROTONLUMO,
     ];
 
     return apps;
