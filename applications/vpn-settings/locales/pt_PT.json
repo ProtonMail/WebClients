@@ -74,7 +74,7 @@
         "Aplicar"
       ],
       "Attach screenshot(s)": [
-        "Anexar captura(s) de ecrã"
+        "Anexar capturas de ecrã"
       ],
       "Authenticate": [
         "Autenticar"
@@ -212,10 +212,10 @@
         "Nome do domínio"
       ],
       "Done": [
-        "Concluído"
+        "Terminado"
       ],
       "Downgrade": [
-        "Conta com menos funcionalidades"
+        "Optar por um plano inferior"
       ],
       "Download": [
         "Transferir"
@@ -236,7 +236,7 @@
         "Editar o nome a mostrar"
       ],
       "Edit email address": [
-        "Editar o endereço de e-mail "
+        "Editar o endereço de e-mail"
       ],
       "Edit Gateway": [
         "Editar o gateway"
@@ -650,7 +650,7 @@
         "Actualizar agora"
       ],
       "Upgrade to Business": [
-        "Faça um \"upgrade\" para Business"
+        "Melhore para Business"
       ],
       "Upgrade your plan": [
         "Atualize o seu plano"
@@ -3517,7 +3517,7 @@
         "Cada código só pode ser utilizado uma vez"
       ],
       "Edit email address": [
-        "Editar endereço de e-mail"
+        "Editar o endereço de e-mail"
       ],
       "email": [
         "e-mail"
@@ -4769,6 +4769,9 @@
       "Code is 6 digits without spaces": [
         "O código tem 6 dígitos sem espaços"
       ],
+      "Company name": [
+        "Nome da empresa"
+      ],
       "Config to connect to ${ serverName }": [
         "Configurar para conectar a ${ serverName }"
       ],
@@ -5379,7 +5382,7 @@
         "Franco suíço"
       ],
       "US Dollar": [
-        "Dólar dos Estados Unidos"
+        "Dólar dos EUA"
       ]
     },
     "Navigation": {
@@ -5429,7 +5432,7 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "Eliminar conta"
+        "Apagar conta"
       ],
       "Downgrade account": [
         "Mudar para uma conta com menos funcionalidades"
@@ -5567,7 +5570,7 @@
         "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Auto-delete spam and trashed messages": [
-        "Eliminar automaticamente mensagens do Spam e do Lixo"
+        "Eliminar mensagens de spam e lixeira automaticamente"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -5972,7 +5975,7 @@
     },
     "new_plans: title": {
       "Delete account?": [
-        "Eliminar conta?"
+        "Apagar a conta?"
       ],
       "Downgrade account?": [
         "Mudar para uma conta com menos funcionalidades?"
@@ -6301,6 +6304,9 @@
     "option": {
       "Group members": [
         "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
       ]
     },
     "Organization capacity error": {
@@ -6486,6 +6492,9 @@
       ],
       "We have verified the authenticity of this identity.": [
         "Nós verificamos a autenticidade desta identidade."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Nós verificamos a autenticidade deste remetente e convite."
       ]
     },
     "Payment method option": {
@@ -7381,6 +7390,12 @@
       ]
     },
     "sso: auth device state": {
+      "Active": [
+        "Ativo"
+      ],
+      "Inactive": [
+        "Inativo"
+      ],
       "Signed out": [
         "Sessão terminada"
       ],
@@ -8220,7 +8235,7 @@
         "Eliminar"
       ],
       "Delete account": [
-        "Eliminar conta"
+        "Eliminar a conta"
       ],
       "Delete group?": [
         "Apagar grupo?"
@@ -8257,7 +8272,7 @@
         "Nomes de domínio"
       ],
       "Downgrade account": [
-        "Mudar para uma conta com menos funcionalidades"
+        "Optar por um plano inferior"
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Mudar para ${ downgradedPlanName }?"
@@ -8278,7 +8293,7 @@
         "Editar domínio"
       ],
       "Edit email address": [
-        "Editar endereço de e-mail"
+        "Editar o endereço de e-mail"
       ],
       "Edit Gateway ${ currentName }": [
         "Editar Gateway ${ currentName }"
@@ -8528,7 +8543,7 @@
         "Definições"
       ],
       "Setup dedicated servers by upgrading to Business": [
-        "Configure servidores dedicados ao fazer “upgrade” para Business"
+        "Configure servidores dedicados ao melhorar para Business"
       ],
       "Sign in": [
         "Iniciar sessão"
@@ -8592,7 +8607,7 @@
         "Desbloquear os seus dados"
       ],
       "Upgrade your network protection with dedicated servers": [
-        "Faça \"upgrade\" à sua proteção da rede com servidores dedicados"
+        "Melhore a sua proteção da rede com servidores dedicados"
       ],
       "Upload CSV file to create multiple accounts": [
         "Envie um ficheiro CSV para criar múltiplas contas."
@@ -8750,17 +8765,20 @@
       ]
     },
     "unprivatization": {
-      "Approve all": [
-        "Aprovar tudo"
-      ],
       "Cancel request": [
         "Cancelar o pedido"
+      ],
+      "Keep request": [
+        "Manter o pedido"
       ],
       "Private user": [
         "Utilizador privado"
       ],
       "Revoke access": [
         "Revogar o acesso"
+      ],
+      "Send request": [
+        "Enviar o pedido"
       ]
     },
     "upsell panel": {

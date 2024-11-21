@@ -86,7 +86,7 @@
         "Ταυτοποίηση"
       ],
       "Authenticating": [
-        "Έλεγχος ταυτότητας"
+        "Ταυτοποίηση"
       ],
       "Back": [
         "Πίσω"
@@ -299,7 +299,7 @@
         "Προσάρμοση στο μέγεθος του παραθύρου"
       ],
       "Forgot password?": [
-        "Ξέχασα τον κωδικό πρόσβασης?"
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Forgot recovery method?": [
         "Ξεχάσατε τη μέθοδο ανάκτησης;"
@@ -611,7 +611,7 @@
         "Σύνδεση με κωδικό"
       ],
       "Sign in with SSO": [
-        "Συνδεθείτε με SSO"
+        "Σύνδεση με SSO"
       ],
       "Sign out": [
         "Αποσύνδεση"
@@ -1845,7 +1845,7 @@
         "Μακάο"
       ],
       "Macedonia": [
-        "ΠΓΔ Μακεδονίας"
+        "Βόρεια Μακεδονία"
       ],
       "Madagascar": [
         "Μαδαγασκάρη"
@@ -2801,9 +2801,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Έχετε χρησιμοποιήσει όλους τους χρήστες στο πρόγραμμά σας. Για προσθήκη νέου χρήστη, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
       ],
-      "You've assigned all of your servers.": [
-        "Έχετε αντιστοιχίσει όλους τους διακομιστές σας."
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ο λογαριασμός ή ο οργανισμός σας έχει μια εκπρόθεσμη οικονομική εκκρεμότητα. Παρακαλούμε πληρώστε όλες τις εκκρεμότητες."
       ]
@@ -2994,8 +2991,8 @@
         "Έχετε φτάσει το όριο των ${ n } αποδεκτών προσκλήσεων σε 6 μήνες."
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
-        "Έχετε φτάσει το όριο της ${ n } αποδεκτής πρόσκλησης σε 6 μήνες. Μπορείτε να κάνετε κλικ στο κουμπί όταν μπορείτε να προσκαλέσετε επιπλέον χρήστες.",
-        "Έχετε φτάσει το όριο των ${ n } αποδεκτών προσκλήσεων σε 6 μήνες. Μπορείτε να κάνετε κλικ στο κουμπί όταν μπορείτε να προσκαλέσετε επιπλέον χρήστες."
+        "Έχετε φτάσει το όριο της ${ n } αποδεκτής πρόσκλησης σε 6 μήνες. Θα μπορείτε να κάνετε κλικ στο κουμπί όταν θα μπορείτε να προσκαλέσετε επιπλέον χρήστες.",
+        "Έχετε φτάσει το όριο των ${ n } αποδεκτών προσκλήσεων σε 6 μήνες. Θα μπορείτε να κάνετε κλικ στο κουμπί όταν θα μπορείτε να προσκαλέσετε επιπλέον χρήστες."
       ],
       "You have successfully joined the family group": [
         "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
@@ -3238,8 +3235,8 @@
         "Επαληθεύστε την ταυτότητά σας με ένα φυσικό κλειδί ασφαλείας U2F ή FIDO2"
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "Έχετε συμπληρώσει το μέγιστο ${ maxSecurityKeyLength } κλειδί ασφαλείας.",
-        "Έχετε συμπληρώσει το μέγιστο ${ maxSecurityKeyLength } κλειδιών ασφαλείας."
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό του ${ maxSecurityKeyLength } κλειδιού ασφαλείας.",
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό των ${ maxSecurityKeyLength } κλειδιών ασφαλείας."
       ],
       "Your two-factor authentication key is ready to use.": [
         "Το κλειδί ελέγχου ταυτότητας δύο παραγόντων είναι έτοιμο για χρήση."
@@ -3712,7 +3709,7 @@
       ],
       "Affected user is on row": [
         "Ο χρήστης που επηρεάζεται βρίσκεται στη γραμμή",
-        "Οι χρήστες που επηρεάζεται βρίσκονται στις γραμμές"
+        "Οι χρήστες που επηρεάζονται βρίσκονται στις γραμμές"
       ],
       "All inactive members deleted": [
         "Όλα τα ανενεργά μέλη διαγράφηκαν"
@@ -3766,7 +3763,7 @@
         "Ζητήστε από τον διαχειριστή του οργανισμού σας να ρυθμίσει τις Πύλες."
       ],
       "Attention required": [
-        "Χρειάζεται προσοχή"
+        "Απαιτείται προσοχή"
       ],
       "Awaiting transaction": [
         "Εν αναμονή συναλλαγής"
@@ -4235,10 +4232,10 @@
         "Οι σημαίες στοιχείου άλλαξαν στην κρύπτη"
       ],
       "Item in ${ vaultLink } trashed": [
-        "Το Στοιχείο στο ${ vaultLink } απορρίφθηκε"
+        "Το Στοιχείο στην ${ vaultLink } απορρίφθηκε"
       ],
       "Item in ${ vaultLink } untrashed": [
-        "Στοιχείο στο ${ vaultLink } επαναφέρθηκε"
+        "Το Στοιχείο στην ${ vaultLink } επαναφέρθηκε"
       ],
       "Item in vault trashed": [
         "Το στοιχείο απορρίφθηκε από την κρύπτη"
@@ -4435,10 +4432,10 @@
         "ανά μήνα, χρεώνεται σε τιμή ${ price }"
       ],
       "per month, billed every 12 months": [
-        "ανά μήνα, χρεώνεται κάθε 12 μήνες"
+        "ανά μήνα, χρέωση κάθε 12 μήνες"
       ],
       "per month, billed every 24 months": [
-        "ανά μήνα, χρεώνεται κάθε 24 μήνες"
+        "ανά μήνα, χρέωση κάθε 24 μήνες"
       ],
       "Please add a password for the user on row": [
         "Παρακαλούμε προσθέστε ένα κωδικό πρόσβασης για το χρήστη στη σειρά",
@@ -4605,10 +4602,10 @@
         "Ρύθμιση του οργανισμού σας"
       ],
       "Shared ${ vaultLink } deleted": [
-        "Κοινόχρηστο ${ vaultLink } διαγράφηκε"
+        "Η κοινόχρηστη ${ vaultLink } διαγράφηκε"
       ],
       "Shared ${ vaultLink } updated": [
-        "Κοινόχρηστο ${ vaultLink } ενημερώθηκε"
+        "Η κοινόχρηστη ${ vaultLink } ενημερώθηκε"
       ],
       "Shared vault deleted": [
         "Διαγράφηκε η κοινοποιημένη κρύπτη"
@@ -4672,10 +4669,10 @@
         "Ευχαριστούμε που υποστηρίζετε την αποστολή μας να οικοδομήσουμε ένα καλύτερο διαδίκτυο όπου η ιδιωτικότητα και η ελευθερία έρχονται πρώτες."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
-        "Ο αριθμός λήψεων περιλαμβάνει τόσο τις πραγματικές λήψεις όσο και τις παρουσίες κατά την προεπισκόπηση αρχείων."
+        "Ο αριθμός λήψεων περιλαμβάνει τόσο τις πραγματικές λήψεις όσο και τις εμφανίσεις κατά την προεπισκόπηση αρχείων."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
-        "Τα κρυπτογραφημένα δεδομένα είναι ελαφρώς μεγαλύτερα λόγω της επιβάρυνσης της κρυπτογράφησης και των υπογραφών, που διασφαλίζουν την ασφάλεια των δεδομένων σας."
+        "Τα κρυπτογραφημένα δεδομένα είναι ελαφρώς μεγαλύτερα σε μέγεθος λόγω της επιβάρυνσης της κρυπτογράφησης και των υπογραφών, που διασφαλίζουν την προστασία των δεδομένων σας."
       ],
       "The following address is invalid.": [
         "Η ακόλουθη διεύθυνση είναι μη έγκυρη.",
@@ -5058,15 +5055,15 @@
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
         "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και ${ usedAI } από ${ maxAI } της διαθέσιμης άδειας βοηθού γραφής.",
-        "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και ${ usedAI } από ${ maxAI } των διαθέσιμων άδειων βοηθού γραφής."
+        "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και ${ usedAI } από ${ maxAI } των διαθέσιμων αδειών βοηθού γραφής."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
         "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και καμία από τη ${ maxAI } διαθέσιμη άδεια βοηθού γραφής σας.",
         "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και καμία από τις ${ maxAI } διαθέσιμες άδειες βοηθού γραφής σας."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
-        "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τη ${ maxMembers } διαθέσιμη άδεια χρήσης χρήστη.",
-        "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τις ${ maxMembers } διαθέσιμες άδειες χρήσης χρηστών."
+        "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τη ${ maxMembers } διαθέσιμη άδεια χρήσης.",
+        "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τις ${ maxMembers } διαθέσιμες άδειες χρήσης."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Είστε συνδεδεμένοι στον λογαριασμό ${ memberAddress }."
@@ -5102,7 +5099,7 @@
         "Έχετε ${ availableCount } νέους διαθέσιμους διακομιστές."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "Έχετε διαθέσιμους ${ unassignedAvailableCount } διακομιστές που χρησιμοποιήθηκαν πρόσφατα. Για να εκχωρήσετε αυτούς τους διακομιστές σε άλλη χώρα, θα πρέπει να περιμένετε μέχρι να ολοκληρωθεί η απενεργοποίηση.",
+        "Έχετε διαθέσιμο ${ unassignedAvailableCount } διακομιστή που χρησιμοποιήθηκε πρόσφατα. Για να εκχωρήσετε αυτόν τον διακομιστή σε άλλη χώρα, θα πρέπει να περιμένετε μέχρι να ολοκληρωθεί η απενεργοποίηση.",
         "Έχετε διαθέσιμους ${ unassignedAvailableCount } διακομιστές που χρησιμοποιήθηκαν πρόσφατα. Για να εκχωρήσετε αυτούς τους διακομιστές σε άλλη χώρα, θα πρέπει να περιμένετε μέχρι να ολοκληρωθεί η απενεργοποίηση."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
@@ -5960,7 +5957,7 @@
         "Μη ενεργοποιημένο"
       ],
       "Pay invoice": [
-        "Πληρωμή τιμολογίου"
+        "Εξόφληση τιμολογίου"
       ],
       "PayPal without credit card": [
         "PayPal χωρίς πιστωτική κάρτα"
@@ -7078,9 +7075,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Επαναφέρετε τους κωδικούς πρόσβασης χρήστη και επαναφέρετε τον έλεγχο ταυτότητας δύο παραγόντων στους χρήστες"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Δρομολογήστε την κίνηση σας στο διαδίκτυο, μέσω του δικτύου TOR με ένα μόνο κλικ"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
@@ -8007,7 +8001,7 @@
         "Επιλέξτε τον αριθμό διευθύνσεων IP που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον διεύθυνση IP κοστίζει ${ price }."
       ],
       "Should you need more than ${ maxIPs } IP, ": [
-        "Εάν χρειάζεστε περισσότερη από ${ maxIPs } διεύθυνση IP, ",
+        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διεύθυνση IP, ",
         "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διευθύνσεις IP, "
       ]
     },
@@ -8152,9 +8146,6 @@
       ],
       "Test in progress...": [
         "Δοκιμή σε εξέλιξη..."
-      ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Για να δοκιμάσετε αυτήν τη διαμόρφωση SAML, παρακαλούμε εισαγάγετε τα διαπιστευτήρια σύνδεσης για έναν χρήστη που σχετίζεται με το **${ domainName }**"
       ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Λάβαμε μια έγκυρη απάντηση SAML από τον πάροχο ταυτότητάς σας. Η SSO είναι ενεργοποιημένη για τον οργανισμό σας."
@@ -8708,7 +8699,7 @@
     },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "Μεταβείτε στα προγράμματα συνδρομής"
+        "Μεταβείτε στα συνδρομητικά προγράμματα"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -8716,7 +8707,7 @@
     },
     "specialoffer: Offers": {
       "${ n } month": [
-        "${ n } μήνα",
+        "${ n } μήνας",
         "${ n } μήνες"
       ],
       "/ month": [
@@ -8969,9 +8960,6 @@
       ],
       "Single sign-on removed": [
         "Η καθολική σύνδεση καταργήθηκε"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Τα διαπιστευτήρια από τον πάροχο ταυτότητάς σας θα διαγραφούν."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Αυτό θα αποσυνδέσει τον χρήστη από τις άλλες συσκευές του και θα πρέπει να δημιουργήσει έναν νέο εφεδρικό κωδικό πρόσβασης."
@@ -9732,7 +9720,7 @@
         "Η προτίμηση αποθηκεύτηκε"
       ],
       "Problem reported": [
-        "Αναφέρθηκε πρόβλημα"
+        "Η αναφορά του προβλήματος ολοκληρώθηκε"
       ],
       "SPF value copied to clipboard": [
         "Η τιμή SPF αντιγράφηκε στο πρόχειρο"
@@ -10766,9 +10754,6 @@
     "Tor out of date": {
       "stable release": [
         "ευσταθή έκδοση"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Αυτή η έκδοση του περιηγητή TOR δεν υποστηρίζεται. Παρακαλούμε ενημερώστε στην τελευταία ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10777,9 +10762,6 @@
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Οι διαχειριστές δεν μπορούν να έχουν πρόσβαση στα δεδομένα των ιδιωτών χρηστών και δεν μπορούν να επαναφέρουν τον κωδικό πρόσβασής τους."
-      ],
-      "Approve all": [
-        "Έγκριση όλων"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Κάνοντας τον χρήστη ιδιωτικό, δε θα μπορείτε να τον βοηθήσετε να ανακτήσει την πρόσβαση στα δεδομένα ή τον λογαριασμό του."

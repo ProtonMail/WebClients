@@ -361,6 +361,9 @@
       "Keep logo": [
         "ロゴを維持"
       ],
+      "Keep my subscription": [
+        "サブスクリプションを継続する"
+      ],
       "Let's talk": [
         "話をしよう"
       ],
@@ -546,6 +549,9 @@
       ],
       "Select ${ planTitle }": [
         "${ planTitle } を選択"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "支払間隔を選択${ billingText }"
       ],
       "Select country": [
         "国を選択"
@@ -760,6 +766,9 @@
       ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } ライティングアシスタントのシート"
       ],
       "${ users } user": [
         "${ users } のユーザー"
@@ -1012,6 +1021,9 @@
       "Integrated 2FA authenticator": [
         "統合された 2FA 認証システム"
       ],
+      "One-time payment, lifetime deal": [
+        "一度きりの支払いで、一生涯のアクセス"
+      ],
       "Online document editor": [
         "オンライン文書エディタ"
       ],
@@ -1047,8 +1059,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus生涯契約には更新価格はなく、　一回限りの支払いで Pass Plusに生涯アクセスできます。"
+      ],
       "Discounts are based on standard monthly pricing.": [
         "割引は標準の月額料金に基づいて計算されます。"
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Pass Family または Unlimited を購入した場合、サブスクリプションは請求サイクルの終了時に標準の割引料金と期間で自動的に更新されます。"
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "あなたのサブスクリプションは、支払い間隔の終了時に標準の割引価格と期間で自動的に更新されます。"
@@ -1065,8 +1083,14 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "一度に${ amount }が請求されます"
+      ],
       "for ${ durationDeal }": [
         "${ durationDeal } の場合"
+      ],
+      "forever": [
+        "永久"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renews after 1 month at ${ regularAmount }."
@@ -1084,6 +1108,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "${ addresses } メールアドレスを含む、エンドツーエンド暗号化によってメールや予定を安全に保つことができます。 カスタムメールドメインのサポート、${ BRAND_NAME } Scribe 書き込みアシスタント、無制限の hide-my-email エイリアスなどが含まれます。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "メールとスケジュールをエンドツーエンドの暗号化で保護します。${ addresses }のメールアドレス、カスタムメールドメインのサポート、無制限のide-my-emailエイリアスなどが含まれています。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more."
@@ -1222,9 +1249,35 @@
         "サブスクリプションを継続する"
       ]
     },
+    "Cancellation upsell": {
+      "Cancel and downgrade": [
+        "キャンセルしてダウングレード"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "エンドツーエンドで暗号化された電子メールとストレージを備えた基本的な無料プラン。プレミアム機能は含まれていません。"
+      ],
+      "Save ${ upsellSavings }": [
+        "${ upsellSavings }を節約"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "${ upsellPlanName }でお金を節約"
+      ],
+      "Try ${ planName }": [
+        "${ planName }をお試しください"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "${ upsellPlanName } をお試しいただき、すべてのプレミアム メール機能とカレンダー機能へのアクセスを維持してください。"
+      ],
+      "Ultra fast and private VPN": [
+        "非常に高速でプラベートなVPN"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } 人のユーザー"
+      ],
+      "Total": [
+        "合計"
       ],
       "Total for ${ n } month": [
         "合計 ${ n } か月"
@@ -2190,6 +2243,12 @@
       ],
       "Delete": [
         "削除"
+      ],
+      "Delete domain?": [
+        "ドメインを削除しますか？"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "このドメイン${ domainName }を削除した場合、関連している全てのメールアドレスが無効化されることにご注意ください。"
       ]
     },
     "Delete group prompt": {
@@ -2312,6 +2371,17 @@
         "改善にご協力ください"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "${ PASS_APP_NAME } 特別割引の喪失を確認"
+      ],
+      "Remove discount": [
+        "割引が削除"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "${ PLAN_NAMES[PLANS.PASS] } のサブスクリプションは、年間 ${ price } の特別価格でご利用いただけます。無料プランにダウングレードすると、将来再度アップグレードした場合でも、割引は永久に失われます。"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "拡張バージョン履歴"
@@ -2320,17 +2390,47 @@
         "優先サポート"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME }Duoを入手"
+      ],
+      "Get it for ${ price }": [
+        "${ price }で入手"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "2 年毎に${ amountBilled }で請求されます。割引は標準の月額料金に基づいています。"
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "${ amountBilled } で毎年請求されます。 ${ BRAND_NAME } 個の無制限の年間サブスクリプションを 2 つ購入するよりも ${ amountSave } を節約できます。"
+      ]
+    },
     "duoplan2024: Info": {
       "1 TB storage": [
         "1 TB のストレージ"
       ],
       "2 users": [
         "2 ユーザー"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "全ての${ BRAND_NAME }製品へのフルアクセス"
+      ],
+      "You save ${ amountSave }": [
+        "${ amountSave }節約"
       ]
     },
     "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "二人のための、${ BRAND_NAME }の全て"
+      ],
       "Double your storage": [
         "ストレージを 2 倍にしましょう"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "${ PLAN_NAMES[PLANS.DUO] }をご紹介 "
       ]
     },
     "Email spam notification": {
@@ -2466,6 +2566,9 @@
       "Invalid expiration date": [
         "無効な有効期限"
       ],
+      "Invalid IBAN": [
+        "IBANが無効"
+      ],
       "Invalid invitation link": [
         "無効な招待リンクです"
       ],
@@ -2565,6 +2668,9 @@
       "Tab closed": [
         "タブが閉じられました"
       ],
+      "The amount due has changed. Please try again.": [
+        "金額が変更されました。もう一度やり直してください。"
+      ],
       "The email addresses do not match": [
         "メールアドレスが一致しません"
       ],
@@ -2631,9 +2737,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
       ],
-      "You've assigned all of your servers.": [
-        "全てのサービスに割り当てられました。"
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "あなたのアカウントあるいは組織には未払いの請求があります。すべての未払いの請求をお支払いください。"
       ]
@@ -2678,6 +2781,9 @@
       ],
       "Something went wrong": [
         "不具合が発生しました"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME }や${ CALENDAR_APP_NAME }を使うには、Webバージョンに切り替えてください。"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
@@ -3302,6 +3408,9 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "ドメイン名登録事業者のコントロールパネルで、ドメインにこの記録を追加します。"
       ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } 件の提案が見つかりました。キーボードを使用してナビゲートしてください。"
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "矢印キーで提案を表示し、選択することができます。エンターキーで確定し、エスケープキーで提案を閉じることができます。"
       ]
@@ -3351,6 +3460,12 @@
       "${ number } server": [
         "${ number } 台のサーバー"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME }のLifetimeディールには更新料金はなく、一度の支払いで${ PASS_SHORT_APP_NAME }への生涯アクセスが可能です。"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME }のLifetimeディールは更新料金がなく、一度の支払いで${ PASS_SHORT_APP_NAME }への生涯アクセスが得られます。${ planTitle }のサブスクリプション更新料金と日付は変更されません。"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } には少なくとも 1 つの専用サーバー ${ serverPricePerMonth } が必要です"
       ],
@@ -3395,6 +3510,9 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 人のメンバー)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(一月 ${ serverPrice })"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**${ BRAND_NAME } アドレス**を取得すると、${ MAIL_SHORT_APP_NAME } や ${ CALENDAR_SHORT_APP_NAME } を含むすべての ${ BRAND_NAME_TWO } サービスを使用できます。"
@@ -3855,6 +3973,9 @@
       "High Priority": [
         "優先度：高"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "認証アサーションに署名するための ID プロバイダーの公開キー。 ID プロバイダーから証明書ハッシュをダウンロードまたはコピーする場所が必要です。証明書ハッシュをテキスト領域フィールドに貼り付けるだけです。"
       ],
@@ -4200,6 +4321,9 @@
       "Please add an email address for the user on row": [
         "追加ユーザーのメールアドレスを入力してください。"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "この文書に直接招待されるように所有者に依頼してください。"
+      ],
       "Please authenticate your card in the verification tab.": [
         "認証タブでカード認証をしてください。"
       ],
@@ -4217,6 +4341,9 @@
       ],
       "please open a support ticket": [
         "サポートチケットを開いてください"
+      ],
+      "Please open the document to view it.": [
+        "文書を表示するにはまず開いてください。"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "別の支払い方法で再度お試しいただくか、銀行へお問い合わせください。"
@@ -4250,6 +4377,9 @@
       ],
       "Preview for this file type is not supported": [
         "このファイル形式はサポートされておりません。"
+      ],
+      "Preview of documents is not yet supported.": [
+        "文書のプレビューはまだできません。"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "価格には、適用されるすべてのサイクルベースの割引と、お客様のアカウントに保存されている有効期限内のクーポンが含まれています。"
@@ -4388,6 +4518,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "サブスクリプションは ${ cycle } か月ごとに更新されます。"
       ],
       "Subscription auto-renews every month.": [
         "サブスクリプションは毎月自動更新されます。"
@@ -4818,6 +4951,9 @@
       "You can now access and manage the account as an administrator.": [
         "管理者としてのアカウントでアクセスし管理することが可能です。"
       ],
+      "You can now return to the application to continue": [
+        "アプリケーションに戻って続けましょう"
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "チャットインスタンスは同時に 1 つだけ開くことができます。新しく開く前に古い会話を閉じてください。"
       ],
@@ -4866,6 +5002,9 @@
       "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
         "サブスクリプションをキャンセルした場合も、${ PASS_APP_NAME } + シンプルログインプレミアムの機能にはずっとアクセスできます。"
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "この日付以降、${ planTitle } 機能にアクセスできなくなります。"
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
       ],
@@ -4883,6 +5022,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "あなたの ${ BRAND_NAME } パスワード"
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } Plus サブスクリプションは ${ PASS_SHORT_APP_NAME } Lifetime に置き換えられます。サブスクリプションの残高はあなたのアカウントに追加されます。${ PASS_SHORT_APP_NAME } Lifetime ディールには更新価格はなく、一度の支払いで ${ PASS_SHORT_APP_NAME } への生涯アクセスが得られます。"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } と ${ MAIL_APP_NAME } のアカウントはリンクしています。両アカウントを削除するには ${ loginLink } へログインしてアカウントを削除してください。"
@@ -5776,6 +5918,9 @@
       "Delete": [
         "削除"
       ],
+      "Delete and revoke invite": [
+        "削除し招待を無効化"
+      ],
       "Edit": [
         "編集"
       ],
@@ -5892,11 +6037,17 @@
       "Get started for ${ price }": [
         "${ price } で始めましょう"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }から始めましょう"
+      ],
       "Upgrade": [
         "アップグレード"
       ],
       "Upgrade now": [
         "今すぐアップグレード"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME }Plusへアップグレード"
       ]
     },
     "new_plans: action": {
@@ -5962,11 +6113,20 @@
       "${ n } message per day": [
         "1 日あたり ${ n } メッセージ"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        " 1人あたり${ n }の${ PASS_SHORT_APP_NAME }保管庫を共有"
+      ],
       "${ n } vault": [
         "${ n } 個の保管庫"
       ],
       "${ n } VPN connection": [
         "${ n } 件の VPN 接続"
+      ],
+      "${ numberOfUsers } user": [
+        "最大${ numberOfUsers }人のユーザー"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-日間のファイルバージョン履歴"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } と ${ n } hide-my-email エイリアス"
@@ -6016,6 +6176,9 @@
       "Administration Panel": [
         "管理パネル"
       ],
+      "Advanced account protection": [
+        "高度なアカウント保護"
+      ],
       "Advanced network security": [
         "高度なネットワークセキュリティ"
       ],
@@ -6039,6 +6202,9 @@
       ],
       "Available on all platforms": [
         "すべてのプラットフォームで利用可能"
+      ],
+      "Breach alerts": [
+        "侵害検出"
       ],
       "Calendar sharing": [
         "カレンダー共有"
@@ -6066,6 +6232,9 @@
       ],
       "Custom fields": [
         "カスタムフィールド"
+      ],
+      "Custom snooze time": [
+        "スヌーズ時間をカスタム"
       ],
       "Data breach monitoring": [
         "情報漏洩のモニタリング"
@@ -6193,6 +6362,9 @@
       "Router support": [
         "ルーター対応"
       ],
+      "Save time emailing": [
+        "メールの時間を節約"
+      ],
       "Schedule and snooze emails for any time": [
         "いつでもメールをスケジュールしてスヌーズする"
       ],
@@ -6282,6 +6454,9 @@
       ],
       "Up to ${ n } user": [
         "最大 ${ n } ユーザーまで"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "最大 ${ n } 人のユーザー(${ adminsText }、${ usersText })"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
@@ -6731,6 +6906,9 @@
       "1 email per month": [
         "月に 1 通のメール"
       ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "月に 1 通のメール。最新のプライバシーニュースと${ BRAND_NAME }の世界での最新情報をお届けします。"
+      ],
       "1 email per quarter": [
         "四半期に1 度のメール"
       ],
@@ -6822,6 +7000,11 @@
       ],
       "Video conferencing settings have been updated": [
         "ビデオ会議の設定はアップデートされました"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "現在選択されているファイル名が重複しているため、一部の画像はアップロードされませんでした。"
       ]
     },
     "Onboarding": {
@@ -7073,6 +7256,9 @@
       "Preparing your Recovery Kit": [
         "回復キットを準備中"
       ],
+      "Secure vault and link sharing": [
+        "安全な保管庫とリンク共有"
+      ],
       "Secure vault sharing": [
         "安全な保管庫共有"
       ],
@@ -7103,6 +7289,35 @@
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } 個のユーザーアカウント"
+      ],
+      "Activity log": [
+        "アクティビティログ"
+      ],
+      "Admin panel to manage users and subscription": [
+        "ユーザーとサブスクリプションを管理するための管理者パネル"
+      ],
+      "Team policies": [
+        "チームポリシー"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "すべてのプレミアム機能。ユーザー数は6人。 1 つの簡単なサブスクリプション。"
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "${ yearlyPrice } で毎年請求されます。 ${ passFamilyPlanName } で ${ yearlySavedPrice } を節約できます (個別の ${ passPlusPlanName } サブスクリプションを 6 つ購入する場合と比較)。"
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "${ PASS_APP_NAME } の早期サポーターのみが利用できる特別オファー。"
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "${ monthlyPrice }で入手"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "${ passFamilyPlanName }をご紹介"
+      ],
+      "Limited-time deal.": [
+        "期間限定"
       ]
     },
     "password_reset: info": {
@@ -7225,6 +7440,9 @@
       "Card number": [
         "カード番号"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "現在、サブスクリプションの自動更新は無効になっています。今すぐサブスクリプションを変更すると、自動更新が再び有効になります。"
+      ],
       "CVC": [
         "CVC (セキュリティコード)"
       ],
@@ -7234,14 +7452,29 @@
       "MM/YY": [
         "MM/YY (月/年)"
       ],
+      "More plans are available in other currencies": [
+        "他の通貨でも利用できるプランが増えています"
+      ],
       "Payment Processing": [
         "支払い処理中"
       ],
       "Please add a payment method in the dashboard to continue.": [
         "続けるためにはダッシュボードに支払い方法を追加してください。"
       ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "アドオンの数を減らすには、まずサブスクリプションを再アクティブ化してください。"
+      ],
+      "Please select your billing country first.": [
+        "最初に請求先の国を選択してください。"
+      ],
+      "Please select your billing state first.": [
+        "最初に請求先の州を選択してください。"
+      ],
       "Processing payment": [
         "支払いの処理中"
+      ],
+      "Select billing country to pay": [
+        "支払い請求先の国を選択してください"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ price } で自動的に更新されます。 いつでもキャンセルできます。"
@@ -7274,6 +7507,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "この支払いを確認することにより、${ BRAND_NAME }と当社の支払いサービスプロバイダーであるStripeに、あなたの銀行口座から引き落とすよう指示することを許可します。また、あなたの銀行はそれに応じて口座から引き落とします。銀行との契約条件に基づき、引き落とし日から8週間以内に返金を受けることができます。"
+      ],
+      "Street address, postal code, and city": [
+        "番地、郵便番号、市区町村名"
       ]
     },
     "Permission": {
@@ -7516,6 +7757,11 @@
         "ユーザー"
       ]
     },
+    "Safety review": {
+      "Review your account safety": [
+        "アカウントの安全性を確認してください"
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "キャンセル"
@@ -7538,9 +7784,6 @@
       ],
       "Test in progress...": [
         "テストが進行中です…"
-      ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "このSAML構成をテストするためには、**${ domainName }**のユーザーのログイン認証情報を入力してください。"
       ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "有効なSAMLレスポンスをアイデンティティプロバイダーから受信しました。SSOがあなたの組織で有効になっています。"
@@ -8044,6 +8287,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "${ appName1 } と ${ appName2 } プレミアム"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "プレミアム${ appName1 } & ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "プレミアム早期アクセス"
       ],
@@ -8316,9 +8562,6 @@
       "Single sign-on removed": [
         "シングルサインオンは削除されました"
       ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "あなたのアイデンティティプロバイダからの認証情報は削除されます"
-      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "これにより、ユーザーは他のデバイスからサインアウトされ、新しいバックアップパスワードを作成する必要があります。"
       ],
@@ -8342,6 +8585,29 @@
       ],
       "User details:": [
         "ユーザー詳細："
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "アクティブ"
+      ],
+      "Inactive": [
+        "非アクティブ"
+      ],
+      "Pending activation": [
+        "アクティベーションの保留中"
+      ],
+      "Pending admin activation": [
+        "管理者アクティベーションの保留中"
+      ],
+      "Rejected": [
+        "拒否"
+      ],
+      "Signed out": [
+        "サインアウトされました"
+      ],
+      "Unknown": [
+        "不明"
       ]
     },
     "Storage": {
@@ -8372,6 +8638,9 @@
       "${ app } storage": [
         "${ app } ストレージ"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage }は${ percentage }%使用中です"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "ダウングレードすると以下の特典が失われます。続行してよろしいですか?"
       ],
@@ -8381,8 +8650,14 @@
       "For all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービス向け"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "メールを送受信するには、容量を空けるか${ upgrade }"
+      ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "ファイルをアップロードまたは同期するには、容量を空けるか ${ upgrade } してください"
+      ],
+      "upgrade for more storage": [
+        "より大きな容量へアップグレード"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "残りの時間分のクレジットが ${ BRAND_NAME } アカウントに追加されます。"
@@ -8390,8 +8665,26 @@
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "お客様の**${ currentPlanName }**プランの有効期限は残り**${ daysRemaining }**日です。"
       ],
+      "Your ${ appStorage } is almost full": [
+        "${ appStorage }はほぼいっぱいです"
+      ],
+      "Your ${ appStorage } is full": [
+        "${ appStorage }はいっぱいです"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "${ storage }は${ percentage }%使用中です。${ cta }。"
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "${ storage }はいっぱいです。${ cta }。"
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "容量は${ percentage }%使用中です。${ cta }。"
+      ],
       "Your storage is full": [
         "ストレージがいっぱいです"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "容量はいっぱいです。${ cta }。"
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "${ gb } のストレージと優先サポートにアクセスできなくなります。"
@@ -8508,17 +8801,28 @@
         "お客様のプランはiOSアプリを使用して購入されました。そのため、プランの変更やお支払いの詳細を更新するには、Apple App Storeにアクセスする必要があります。"
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "一生涯"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } の場合"
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
+      ],
       "${ dayDiff } day left": [
         "残り ${ dayDiff } 日"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } を使用すると、ビジネス データが安全に保たれ、暗号化されたメールを誰にでも送信できるようになります。"
       ],
       "${ planMaxSpace } storage per user": [
         "1 ユーザーあたり ${ planMaxSpace } のストレージ"
@@ -8532,14 +8836,47 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName }は全てのアプリ、全ての機能、新機能への早期アクセス、そしてデータとセキュリティをコントロールするための全ての必要な機能を提供します。"
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } では、無制限のプライバシーと最大 2 人までの追加のストレージが提供されます。"
+      ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName } は、すべての ${ BRAND_NAME } アプリとそのプレミアム機能にアクセスすることで、チームの生産性を高め、仕事を整理するために必要なものを提供します。"
+      ],
+      "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planName } は、チームの生産性を高め、組織化し、受信箱やスケジュールなどを管理するために必要なものを提供します。"
+      ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName }は、基本を超えて、生産性を高め、整理整頓をし、受信トレイやメールのアイデンティティなどをよりコントロールできるようにサポートします。"
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } は、家族の各メンバーとそのデータがオンラインにあるときはいつでも確実に保護されるようにするのに役立ちます。"
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName }はメールや添付ファイル、イベント、パスワード、ファイルのための${ planMaxSpace }のストレージを提供します。さらに年間でのストレージボーナスを受け取ることができます。"
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName }は、ファイルや写真のために${ planMaxSpace }のストレージを提供します。さらに、毎年のストレージボーナスを受け取る資格があります。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } は、電子メール、添付ファイル、イベント、ファイル用にユーザーごとに ${ planMaxSpace }のストレージを提供します。年間ストレージ ボーナスも受け取ることができます。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } は、電子メール、添付ファイル、イベント、ファイル、パスワード用にユーザーごとに ${ planMaxSpace } のストレージを提供します。年間ストレージ ボーナスも受け取ることができます。"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars }個のユーザー毎のカレンダー"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }個の独自メールドメイン"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }個のメールアドレス"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails }個のユーザー毎のメールアドレス"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers }人のユーザー"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "${ PROTON_SENTINEL_NAME } の高度なアカウント保護"
@@ -8550,11 +8887,26 @@
       "Add any new files": [
         "新しいファイルを追加"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "${ planName } サブスクリプションの有効期限が切れると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。また、以前に付与されたストレージ ボーナスも失われます。"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "${ planName } サブスクリプションの有効期限が切れると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。無料プランでは追加ユーザーがサポートされていないため、チームの作業が中断されます。"
+      ],
+      "All you need for your business": [
+        "ビジネスに必要な全てのもの"
+      ],
+      "Any custom email domains will be disabled": [
+        "カスタムメールドメインはすべて無効になります"
+      ],
       "Automatic email forwarding": [
         "自動メール転送"
       ],
       "Back up photos from your devices": [
         "デバイスから写真をバックアップ"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "独自ドメインでプロフェッショナルなメール アドレスを使用して、信頼とブランド認知を構築します。"
       ],
       "Cancel subscription": [
         "サブスクリプションをキャンセル"
@@ -8562,8 +8914,14 @@
       "Cancel subscription?": [
         "サブスクリプションをキャンセルしますか?"
       ],
+      "Catch-all email address": [
+        "キャッチオールメールアドレス"
+      ],
       "Comprehensive privacy and security": [
         "総合的なプライバシーとセキュリティ"
+      ],
+      "Dark web monitoring": [
+        "ダークウェブモニタリング"
       ],
       "Desktop app and email client support (via IMAP)": [
         "デスクトップアプリとメールクライアントのサポート (IMAP 経由)"
@@ -8583,6 +8941,12 @@
       "Extra storage and users": [
         "追加のストレージとユーザー"
       ],
+      "Folders, labels and filters": [
+        "フォルダ、ラベル、ファイル"
+      ],
+      "Folders, labels, and custom filters": [
+        "フォルダ、ラベル、そしてカスタムフィルター"
+      ],
       "Got it": [
         "わかった"
       ],
@@ -8595,6 +8959,18 @@
       "How our customer support team got our VPN app directly into people's hands.": [
         "私たちのカスタマーサポートチームがどのようにしてVPNアプリを直接人々の手に届けたか。"
       ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "${ BRAND_NAME } が攻撃的なキャンペーンでブロックされたときにどのように反撃したか。"
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "プライバシーと言論の自由が脅かされたとき、私たちは地元の活動家をどのように支援したか。"
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "無料プランの制限を超えると、次のことができなくなります："
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "使用量が無料プランの制限を超えると、製品機能とデータへのアクセスが制限される可能性があります。"
+      ],
       "Invited members will be removed from your organization": [
         "招待メンバーは組織から削除されます"
       ],
@@ -8604,11 +8980,20 @@
       "Keep subscription": [
         "サブスクリプションを継続"
       ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "Web、iOS、Android、Windows、Mac、Linux用のアプリを使用して、外出先でもチームの安全を確保します。"
+      ],
       "Learn more": [
         "もっと詳しく知る"
       ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
+      ],
+      "Limitations of the free plan:": [
+        "無料プランの制限："
+      ],
+      "Make your business stand out": [
+        "ビジネスを目立たせる"
       ],
       "Manage your calendar": [
         "カレンダーを管理"
@@ -8637,11 +9022,20 @@
       "Receive new emails": [
         "新しいメールを受信"
       ],
+      "See your colleagues’ availability": [
+        "同僚の空き状況を確認する"
+      ],
       "Send emails with attachments": [
         "添付ファイルをメール送信"
       ],
+      "Stay secure and connected anywhere": [
+        "どこにいても安全な接続を維持"
+      ],
       "Subscription canceled": [
         "サブスクリプションがキャンセルされました"
+      ],
+      "Support your compliance objectives": [
+        "コンプライアンス目標を支援する"
       ],
       "Sync files on devices": [
         "デバイス上の同期ファイル"
@@ -8652,11 +9046,23 @@
       "Unblocking internet access in Iran": [
         "イランでのインターネットアクセスのブロックを解除"
       ],
+      "Unlimited privacy for two": [
+        "二人のための無制限のプライバシー"
+      ],
+      "Upload any new files": [
+        "新しいファイルをアップロードする"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "ユーザーのサブスクリプションが ${ BRAND_NAME } の唯一の収益です。皆様のご支援は私たちの独立性を維持し、オンライン プライバシーに対する私たちの使命を推進し、自由のために戦う活動家や組織を支援します。"
+      ],
       "Users won’t be able to manage their calendars": [
         "ユーザーは自分のカレンダーを管理できません"
       ],
       "Users won’t be able to send emails": [
         "ユーザーはメールを送信できません"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "ユーザーはデバイスからファイルをアップロードすることはできません"
       ],
       "Version history": [
         "バージョン履歴"
@@ -8667,11 +9073,26 @@
       "What you give up when you cancel ${ planName }": [
         "${ planName }をキャンセルすると失うもの"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "${ planName } をキャンセルすると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。また、以前に付与されたストレージ ボーナスも失われます。"
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "${ planName } をキャンセルすると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。無料プランでは追加ユーザーがサポートされていないため、チームの作業が中断されます。"
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "${ expiryDate }に${ planName }サブスクリプションが終了すると、${ BRAND_NAME }Freeにダウングレードされます。"
+      ],
       "Yearly free storage bonuses": [
         "年間無料ストレージボーナス"
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "${ boldedDate }までは現在のプランのすべての機能を引き続き利用できます。"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "${ planName } サブスクリプションには ${ expiryDate } がまだ残っています。残りの時間分のクレジットが ${ BRAND_NAME } アカウントに追加されます。キャンセルする前に、無料プランの制限を超えていないことを確認してください。${ learnMoreLink }"
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "${ planName } プランは、ビジネスデータと通信を安全に保つだけではありません。コンプライアンス目標をサポートし、ビジネスを目立たせ、チームの連携を保ちます。"
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
@@ -8681,17 +9102,41 @@
       "15 GB storage": [
         "15 GB のストレージ"
       ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
       "Desktop app": [
         "デスクトップアプリ"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
       "Short @pm.me email address": [
         "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
       ],
       "Upgrade": [
         "アップグレード"
       ],
       "Upgrade your productivity": [
         "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -8731,6 +9176,11 @@
       ],
       "Expiring": [
         "期限切れ"
+      ]
+    },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "組織のVPNセッションの詳細を閲覧"
       ]
     },
     "Success": {
@@ -9860,9 +10310,6 @@
       "Admins can't access the data of private users and can't reset their password.": [
         "管理者はプライベートユーザーのデータにアクセスすることやパスワードをリセットすることはできません。"
       ],
-      "Approve all": [
-        "全て同意"
-      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "ユーザーをプライベートにすると、そのデータやアカウントへのアクセスを取り戻す手助けができなくなります。"
       ],
@@ -9947,6 +10394,9 @@
       "Admin": [
         "管理者"
       ],
+      "An invitation will be sent to this email address.": [
+        "このメールアドレスに招待が送られます"
+      ],
       "Cancel": [
         "キャンセル"
       ],
@@ -9956,20 +10406,32 @@
       "Create password": [
         "パスワードを作成"
       ],
+      "Create password instead": [
+        "代わりにパスワードを作成"
+      ],
       "Create user": [
         "ユーザー作成"
       ],
       "Email": [
         "メール"
       ],
+      "Invitation email": [
+        "招待メール"
+      ],
       "Name": [
         "名前"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "新しい${ BRAND_NAME }メールアドレス"
       ],
       "Optional": [
         "オプション"
       ],
       "Remember to share the user's sign in details with them.": [
         "ユーザーのサインイン情報を共有することを忘れないでください。"
+      ],
+      "Send invite link via email instead": [
+        "代わりにメールで招待リンクを送る"
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "これにより、新しい${ MAIL_APP_NAME }アドレスが作成されます。"
@@ -10134,6 +10596,11 @@
       ],
       "Your ${ selected } plan": [
         "あなたの ${ selected } プラン"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Secure Core サーバーへのアクセス、高速 P2P/BitTorrent ダウンロード、Tor over VPN など。"
       ]
     },
     "wallet_signup_2024: Info": {

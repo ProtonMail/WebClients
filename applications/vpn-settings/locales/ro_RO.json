@@ -2812,9 +2812,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ați folosit toate numele de utilizator din plan. Treceți la un plan cu plată superior pentru a adăuga un utilizator nou."
       ],
-      "You've assigned all of your servers.": [
-        "V-ați alocat toate serverele disponibile."
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Contul sau organizația are o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
       ]
@@ -6787,7 +6784,7 @@
         "Date de autentificare și note nelimitate"
       ],
       "Unlimited logins, notes and credit cards": [
-        "Date de autentificare, note și carduri de credit nelimitate"
+        "Date de autentificare, note și carduri de plată nelimitate"
       ],
       "Unlimited messages per day": [
         "Mesaje nelimitate pe zi"
@@ -7173,9 +7170,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetați parolele și autentificarea cu doi factori a utilizatorilor."
-      ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Redirecționați traficul din Internet prin rețeaua TOR cu un singur clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
@@ -8280,9 +8274,6 @@
       "Test in progress...": [
         "Testare în desfășurare..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Pentru a testa această configurație SAML, introduceți datele de conectare pentru un utilizator asociat cu **${ domainName }**"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Am primit un răspuns SAML valid de la furnizorul dvs. de identitate. SSO este activat pentru organizația proprie."
       ],
@@ -9121,9 +9112,6 @@
       ],
       "Single sign-on removed": [
         "Conectarea prin autentificare unică a fost eliminată."
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Acreditările de la furnizorul de identitate personal vor fi șterse."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Aceasta va deconecta utilizatorul de pe alte dispozitive și va trebui să-și creeze o parolă de rezervă nouă."
@@ -10947,9 +10935,6 @@
     "Tor out of date": {
       "stable release": [
         "versiune stabilă"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Această versiune a TOR Browser nu este suportată. Actualizați la cea mai recentă ${ stableRelease }."
       ]
     },
     "unprivatization": {
@@ -10958,9 +10943,6 @@
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
-      ],
-      "Approve all": [
-        "Aproba toate"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Făcând utilizatorul privat, nu îl veți putea ajuta să-și recâștige accesul la date sau la cont."

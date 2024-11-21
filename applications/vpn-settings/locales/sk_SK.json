@@ -2814,9 +2814,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu používateľov vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať ďalšieho používateľa."
       ],
-      "You've assigned all of your servers.": [
-        "Priradili ste všetky svoje servery."
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Vo vašom účte alebo organizácii sú vedené faktúry po splatnosti. Zaplaťte prosím všetky neuhradené faktúry."
       ]
@@ -3263,10 +3260,10 @@
         "Overte svoju identitu fyzickým bezpečnostným kľúčom U2F alebo FIDO2"
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "Dosiahli ste maximálnu dĺžku bezpečnostného kľúča ${ maxSecurityKeyLength }.",
-        "Dosiahli ste maximálnu dĺžku bezpečnostných kľúčov ${ maxSecurityKeyLength }.",
-        "Dosiahli ste maximálnu dĺžku bezpečnostných kľúčov ${ maxSecurityKeyLength }.",
-        "Dosiahli ste maximálnu dĺžku bezpečnostných kľúčov ${ maxSecurityKeyLength }."
+        "Dosiahli ste maximálnu dĺžku ${ maxSecurityKeyLength } bezpečnostného kľúča.",
+        "Dosiahli ste maximálnu dĺžku ${ maxSecurityKeyLength } bezpečnostných kľúčov.",
+        "Dosiahli ste maximálnu dĺžku ${ maxSecurityKeyLength } bezpečnostných kľúčov.",
+        "Dosiahli ste maximálnu dĺžku ${ maxSecurityKeyLength } bezpečnostných kľúčov."
       ],
       "Your two-factor authentication key is ready to use.": [
         "Váš dvojstupňový overovací kľúč je pripravený na použitie."
@@ -3595,7 +3592,7 @@
         "${ fileName }: náhľad v nízkom rozlíšení"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahradí prihlasovacie aj druhé heslo. Ak chcete prepnúť do režimu jedného hesla, zadajte jediné heslo, ktoré chcete používať, a kliknite na tlačidlo Uložiť."
+        "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahradí prihlasovacie aj druhé heslo. Ak chcete aktivovať režim jedného hesla, zadajte jediné heslo, ktoré chcete používať, a kliknite na tlačidlo Uložiť."
       ],
       "${ n } address": [
         "${ n } adresa",
@@ -3661,7 +3658,7 @@
         "${ userFound } nájdených používateľov"
       ],
       "${ vaultLink } created": [
-        "Štítok ${ vaultLink } bol vytvorený"
+        "${ vaultLink } bol vytvorený"
       ],
       "${ vaultLink } deleted": [
         "${ vaultLink } bol vymazaný"
@@ -3670,7 +3667,7 @@
         "${ vaultLink } zdieľaný emailom"
       ],
       "${ vaultLink } updated": [
-        "Štítok ${ vaultLink } bol aktualizovaný"
+        "${ vaultLink } bol aktualizovaný"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Pre pripojenie na úrovni krajiny sa vyžaduje ${ vpnPlus }."
@@ -3814,7 +3811,7 @@
         "Čiastka k zaplateniu"
       ],
       "Are you sure you want to cancel editing the group?": [
-        "Skutočne chcete zrušiť úpravy skupiny?"
+        "Skutočne chcete zrušiť úpravu skupiny?"
       ],
       "Are you sure you want to discard your changes?": [
         "Naozaj chcete zahodiť všetky zmeny?"
@@ -3976,10 +3973,10 @@
         "Odstraňovanie ${ deletedServerCount } serverov brány"
       ],
       "Disabled on ${ formattedDateAndTime }": [
-        "Vypnuté od ${ formattedDateAndTime }"
+        "Deaktivované ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Vypnutím dvojfázového overovania bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
+        "Vypnutím dvojsupňového overovania bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -4063,16 +4060,16 @@
         "Povoľte jednotné prihlásenie, aby bola vaša organizácia v bezpečí"
       ],
       "Enabled on ${ formattedDateAndTime }": [
-        "Zapnuté od ${ formattedDateAndTime }"
+        "Aktivované ${ formattedDateAndTime }"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
-        "End-to-end šifrovanie emailov je pre túto skupinu vypnuté kvôli externým adresám."
+        "Pre túto skupinu je end-to-end šifrovanie emailov deaktivované kvôli externým adresám.."
       ],
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "End-to-end šifrovanie emailov je pre túto skupinu vypnuté. Môže byť povolené."
       ],
       "End-to-end email encryption is enabled for this group.": [
-        "Pre túto skupinu je povolené end-to-end šifrovanie emailov."
+        "Pre túto skupinu je end-to-end šifrovanie emailov aktivované."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa koncového bodu získaná od poskytovateľa identity (napr. https://idp.example.com/sso/saml)."
@@ -4288,13 +4285,13 @@
         "Zmena krajiny servera trvá 10 dní, preto sa uistite, že je váš výber správny."
       ],
       "Item autofilled in ${ vaultLink }": [
-        "Položka automaticky vyplnená v ${ vaultLink }"
+        "Položka automaticky vyplnená v trezore ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Položka v trezore automaticky vyplnená"
       ],
       "Item created in ${ vaultLink }": [
-        "Položka vytvorená v trezore ${ vaultLink }"
+        "Položka vytvorená v ${ vaultLink }"
       ],
       "Item created in vault": [
         "Položka v trezore vytvorená"
@@ -4324,13 +4321,13 @@
         "Položka v trezore vyňatá z koša"
       ],
       "Item read in ${ vaultLink }": [
-        "Položka prečítaná v ${ vaultLink }"
+        "Položka prečítaná v trezore ${ vaultLink }"
       ],
       "Item read in vault": [
         "Položka v trezore prečítaná"
       ],
       "Item updated in ${ vaultLink }": [
-        "Položka v trezore ${ vaultLink } bola aktualizovaná"
+        "Položka aktualizovaná v ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Položka v trezore aktualizovaná"
@@ -4930,7 +4927,7 @@
         "Režim dvoch hesiel vyžaduje dve heslá: jedno na prihlásenie do konta a druhé na dešifrovanie údajov. (Rozšírené)"
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
-        "Režim dvoch hesiel používa samostatné heslá na prihlásenie a dešifrovanie údajov. V niektorých situáciách to poskytuje menšiu bezpečnostnú výhodu, avšak väčšine používateľov odporúčame režim jedného hesla. Ak chcete prepnúť do režimu dvoch hesiel, najprv nastavte prihlasovacie heslo a potom nastavte druhé heslo."
+        "Režim dvoch hesiel používa samostatné heslá na prihlásenie a dešifrovanie údajov. V niektorých situáciách to poskytuje menšiu bezpečnostnú výhodu, avšak väčšine používateľov odporúčame režim jedného hesla. Ak chcete aktivovať režim dvoch hesiel, najprv nastavte prihlasovacie heslo a potom nastavte druhé heslo."
       ],
       "Unable to check gateways monitoring current status.": [
         "Nie je možné skontrolovať aktuálny stav monitorovania brán."
@@ -6493,7 +6490,7 @@
         "${ PASS_APP_NAME } s neobmedzeným počtom hide-my-email aliasov"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
-        "${ PROTON_SENTINEL_NAME } program"
+        "Program ${ PROTON_SENTINEL_NAME }"
       ],
       "${ size } attachment size": [
         "${ size } veľkosť prílohy"
@@ -7026,7 +7023,7 @@
         "Bezplatný štartovací účet, ktorý je navrhnutý tak, aby poskytol súkromie pre všetkých už v základnom nastavení."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Neobmedzené súkromie a viac úložného priestoru až pre 2 užívateľov."
+        "Neobmedzené súkromie a viac úložného priestoru až pre 2 používateľov."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak svoj účet odstránite, prídete o propagačnú cenu a tá už nebude k dispozícii po opätovnom vytvorení nového účtu."
@@ -7248,9 +7245,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Obnoviť heslá a dvojstupňové overenie používateľov"
-      ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Smerujte vašu internetovú prevádzku cez sieť TOR jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
@@ -7961,7 +7955,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "Krajina pre fakturáciu"
+        "Krajina fakturácie"
       ],
       "Card number": [
         "Číslo karty"
@@ -8343,9 +8337,6 @@
       ],
       "Test in progress...": [
         "Prebieha testovanie..."
-      ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Ak chcete otestovať toto nastavenie SAML, zadajte prihlasovacie údaje používateľa spojeného s **${ domainName }**."
       ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Od vášho poskytovateľa identity sme dostali platnú odpoveď SAML. SSO je pre vašu organizáciu povolené."
@@ -9050,16 +9041,16 @@
         "${ boldedMemberAddress } vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením."
       ],
       "${ n } member requested your help to sign in.": [
-        "${ n } člen vás požiadal o pomoc s prihlasovaním.",
-        "${ n } členovia vás požiadali o pomoc s prihlasovaním.",
-        "${ n } členov vás požiadalo o pomoc s prihlasovaním.",
-        "${ n } členov vás požiadalo o pomoc s prihlasovaním."
+        "${ n } člen vás požiadal o pomoc s prihlásením.",
+        "${ n } členovia vás požiadali o pomoc s prihlásením.",
+        "${ n } členov vás požiadalo o pomoc s prihlásením.",
+        "${ n } členov vás požiadalo o pomoc s prihlásením."
       ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } používateľ sa pripojil k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účet:",
         "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:",
-        "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:",
-        "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:"
+        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:",
+        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:"
       ],
       "${ n } user is inactive. You can safely remove this user from your organization.": [
         "${ n } používateľ je neaktívny. Tohto používateľa môžete bezpečne odstrániť z organizácie.",
@@ -9210,9 +9201,6 @@
       ],
       "Single sign-on removed": [
         "Jednotné prihlásenie bolo odstránené"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Prihlasovacie údaje od vášho poskytovateľa identity budú zmazané."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tým sa používateľ odhlási z ostatných zariadení a bude musieť vytvoriť nové záložné heslo."
@@ -9411,16 +9399,16 @@
         "${ n } VPN pripojení zdarma na používateľa"
       ],
       "${ n } high-speed VPN connection": [
-        "${ n } vysoko rýchlostné VPN pripojenie",
-        "${ n } vysoko rýchlostné VPN pripojenia",
-        "${ n } vysoko rýchlostných VPN pripojení",
-        "${ n } vysoko rýchlostných VPN pripojení"
+        "${ n } vysokorýchlostné VPN pripojenie",
+        "${ n } vysokorýchlostné VPN pripojenia",
+        "${ n } vysokorýchlostných VPN pripojení",
+        "${ n } vysokorýchlostných VPN pripojení"
       ],
       "${ n } high-speed VPN connection per user": [
-        "${ n } vysoko rýchlostné VPN pripojenie na používateľa",
-        "${ n } vysoko rýchlostné VPN pripojenia na používateľa",
-        "${ n } vysoko rýchlostných VPN pripojení na používateľa",
-        "${ n } vysoko rýchlostných VPN pripojení na používateľa"
+        "${ n } vysokorýchlostné VPN pripojenie na používateľa",
+        "${ n } vysokorýchlostné VPN pripojenia na používateľa",
+        "${ n } vysokorýchlostných VPN pripojení na používateľa",
+        "${ n } vysokorýchlostných VPN pripojení na používateľa"
       ],
       "${ n } VPN connection": [
         "${ n } VPN pripojenie",
@@ -10860,7 +10848,7 @@
         "Používatelia"
       ],
       "Users and addresses": [
-        "Uživatelia a adresy"
+        "Používatelia a adresy"
       ],
       "Verification failed": [
         "Overovanie zlyhalo"
@@ -11062,9 +11050,6 @@
     "Tor out of date": {
       "stable release": [
         "stabilná verzia"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Táto verzia TOR prehliadača nie je podporovaná. Prosím, aktualizujte na najnovšiu ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -11073,9 +11058,6 @@
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
-      ],
-      "Approve all": [
-        "Schváliť všetko"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Vytvorením súkromného používateľského účtu mu nebudete môcť pomôcť získať späť prístup k jeho údajom alebo účtu."

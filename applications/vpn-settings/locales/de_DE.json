@@ -55,6 +55,9 @@
       "Add domain": [
         "Domain hinzufügen"
       ],
+      "Add external address": [
+        "Externe Adresse hinzufügen"
+      ],
       "Add PayPal": [
         "Paypal hinzufügen"
       ],
@@ -591,6 +594,9 @@
       ],
       "Show": [
         "Anzeigen"
+      ],
+      "Show all": [
+        "Alle anzeigen"
       ],
       "Show preview": [
         "Vorschau anzeigen"
@@ -1301,6 +1307,9 @@
       "${ users } user": [
         "${ users } Benutzer",
         "${ users } Benutzer"
+      ],
+      "Total": [
+        "Gesamt"
       ],
       "Total for ${ n } month": [
         "Gesamtbetrag für ${ n } Monat",
@@ -2785,9 +2794,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
       ],
-      "You've assigned all of your servers.": [
-        "Du hast alle deine Server zugewiesen."
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Dein Konto oder deine Organisation enthält derzeit eine überfällige Rechnung. Bitte begleiche alle unbezahlten Rechnungen."
       ]
@@ -3685,6 +3691,9 @@
         "Betroffener Benutzer ist in Zeile",
         "Betroffene Benutzer sind in Zeilen"
       ],
+      "All inactive members deleted": [
+        "Alle inaktiven Mitglieder gelöscht"
+      ],
       "All members have been added.": [
         "Alle Mitglieder wurden hinzugefügt."
       ],
@@ -4445,6 +4454,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus‐ oder Visionary‐Abonnement benötigt"
+      ],
+      "Preference saved": [
+        "Einstellung gespeichert"
       ],
       "Preview": [
         "Vorschau"
@@ -5268,6 +5280,9 @@
       "Other": [
         "Weitere"
       ],
+      "Product": [
+        "Produkt"
+      ],
       "Refund": [
         "Erstattung"
       ],
@@ -5756,6 +5771,9 @@
       "Verification code": [
         "Verifizierungscode"
       ],
+      "Video conferencing with Zoom": [
+        "Videokonferenzen mit Zoom"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Wir bedauern es sehr, dass du ProtonMail nicht mehr nutzen möchtest. Bitte teile uns deine Gründe mit, damit wir uns verbessern können."
       ],
@@ -6093,8 +6111,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Australischer Dollar"
+      ],
       "Brazilian real": [
         "Brasilianischer Real"
+      ],
+      "British pound": [
+        "Britisches Pfund"
+      ],
+      "Canadian dollar": [
+        "Kanadischer Dollar"
       ],
       "Euro": [
         "Euro"
@@ -6982,9 +7009,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Leite deinen Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
@@ -7109,6 +7133,44 @@
       ],
       "Support for ${ n } custom email domains": [
         "Unterstützung für ${ n } benutzerdefinierte E-Mail-Domänen"
+      ]
+    },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Produktaktualisierungen zu ${ app } und ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "${ app }-Produktaktualisierungen"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business-Newsletter"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Wichtige Ankündigungen von ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } Newsletter"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } Angebote und Sonderaktionen"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME }-Produktankündigungen"
+      ],
+      "1 email per month": [
+        "1 E-Mail pro Monat"
+      ],
+      "1 email per quarter": [
+        "1 E-Mail pro Quartal"
+      ],
+      "1-2 emails per month": [
+        "1-2 E-Mails pro Monat"
+      ],
+      "2-4 emails per year": [
+        "2-4 E-Mails pro Jahr"
+      ],
+      "Daily email notifications": [
+        "Tägliche E-Mail-Benachrichtigungen"
       ]
     },
     "Notification": {
@@ -7458,6 +7520,9 @@
         "${ n } Benutzerkonto",
         "${ n } Benutzerkonten"
       ],
+      "Activity log": [
+        "Ereignisprotokoll"
+      ],
       "Admin panel to manage users and subscription": [
         "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
       ]
@@ -7643,6 +7708,9 @@
       ],
       "Processing payment": [
         "Zahlungsabwicklung"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Verlängert sich zu ${ price }, jederzeit kündbar."
       ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
@@ -7973,9 +8041,6 @@
       ],
       "Test in progress...": [
         "Test läift..."
-      ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Um diese SAML-Konfiguration zu testen, gib bitte die Anmeldedaten für einen Benutzer ein, der zu **${ domainName }** gehört."
       ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Wir haben eine gültige SAML-Antwort von deinem Identitätsanbieter erhalten. SSO ist für deine Organisation aktiviert."
@@ -8653,6 +8718,14 @@
       "Contact administrator": [
         "Administrator kontaktieren"
       ],
+      "Delete ${ n } inactive user?": [
+        "${ n } inaktiven Benutzer löschen?",
+        "${ n } inaktive Benutzer löschen?"
+      ],
+      "Delete ${ n } user": [
+        "${ n } Benutzer löschen",
+        "${ n } Benutzer löschen"
+      ],
       "Deny": [
         "Verweigern"
       ],
@@ -8694,9 +8767,6 @@
       ],
       "Single sign-on removed": [
         "Single Sign-on entfernt"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Die Zugangsdaten von deinem Identitätsanbieter werden gelöscht."
       ],
       "User details:": [
         "Benutzerdetails:"
@@ -8939,6 +9009,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Lebenslang"
       ]
     },
     "Subscription price": {
@@ -9682,6 +9757,9 @@
       "Add domain": [
         "Domain hinzufügen"
       ],
+      "Add external address?": [
+        "Externe Adresse hinzufügen?"
+      ],
       "Add PayPal payment method": [
         "PayPal als Zahlungsmethode hinzufügen"
       ],
@@ -10262,6 +10340,9 @@
       "Verifying your payment...": [
         "Deine Zahlung wird verifiziert..."
       ],
+      "Video conferencing": [
+        "Videokonferenzen"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Wir senden eine E-Mail an deine neue Adresse mit Anweisungen zum Abschluss der Änderung."
       ],
@@ -10444,17 +10525,11 @@
     "Tor out of date": {
       "stable release": [
         "stabile Version"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
       ]
     },
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Admins haben keinen Zugriff auf die Daten privater Nutzer und können deren Passwort nicht zurücksetzen."
-      ],
-      "Approve all": [
-        "Alle genehmigen"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Wenn du den Benutzer als privat einstufst, kannst du ihm nicht helfen, wieder Zugang zu seinen Daten oder seinem Konto zu erhalten."
@@ -10583,6 +10658,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Administratoren können nicht auf die Daten von privaten Benutzern zugreifen."
+      ],
+      "Inactive": [
+        "Inaktiv"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Einladung gesendet, warte auf Antwort des eingeladenen Mitglieds"
