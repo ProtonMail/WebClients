@@ -24,7 +24,7 @@ import {
 import type {
     Address,
     GroupMembershipReturn,
-    Organization,
+    OrganizationWithSettings,
     Subscription,
     UserModel,
 } from '@proton/shared/lib/interfaces';
@@ -49,6 +49,7 @@ export const getAccountAppRoutes = ({
     assistantKillSwitch,
     isUserGroupsMembershipFeatureEnabled,
     memberships,
+    isZoomIntegrationEnabled,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -58,12 +59,13 @@ export const getAccountAppRoutes = ({
     isSessionRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
     recoveryNotification?: ThemeColor;
-    organization?: Organization;
+    organization?: OrganizationWithSettings;
     isBreachesAccountDashboardEnabled: boolean;
     showThemeSelection: boolean;
     assistantKillSwitch: boolean;
     isUserGroupsMembershipFeatureEnabled: boolean;
     memberships: GroupMembershipReturn[] | undefined;
+    isZoomIntegrationEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type } = user;
     const credits = getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
@@ -90,6 +92,9 @@ export const getAccountAppRoutes = ({
         getHasStorageSplit(user) && !getHasVpnB2BPlan(subscription) && app !== APPS.PROTONVPN_SETTINGS;
 
     const showEasySwitchSection = !getIsExternalAccount(user) && app !== APPS.PROTONPASS && !isSSOUser;
+
+    const showVideoConferenceSection =
+        isZoomIntegrationEnabled && (organization?.Settings.VideoConferencingEnabled || !user.hasPaidMail);
 
     return <const>{
         available: true,
@@ -316,6 +321,11 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Security events`,
                         id: 'logs',
                         available: !isSSOUser,
+                    },
+                    {
+                        text: c('Title').t`Third-party apps and services`,
+                        id: 'third-party',
+                        available: showVideoConferenceSection,
                     },
                     {
                         text: c('Title').t`Privacy and data collection`,
