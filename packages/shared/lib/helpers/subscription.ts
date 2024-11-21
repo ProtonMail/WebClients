@@ -14,7 +14,13 @@ import {
 } from '@proton/payments';
 import { type FreeSubscription, isFreeSubscription } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getSupportedAddons, isIpAddon, isMemberAddon, isScribeAddon } from '@proton/shared/lib/helpers/addons';
+import {
+    getSupportedAddons,
+    isIpAddon,
+    isLumoAddon,
+    isMemberAddon,
+    isScribeAddon,
+} from '@proton/shared/lib/helpers/addons';
 
 import { APPS, type APP_NAMES, COUPON_CODES, CYCLE } from '../constants';
 import type {
@@ -860,6 +866,10 @@ export const getPlanMaxIPs = (plan: Plan) => {
     return 0;
 };
 
+export const getPlanMaxLumo = (plan: Plan) => {
+    return isLumoAddon(plan.Name) ? 1 : 0;
+};
+
 const getPlanMaxAIs = (plan: Plan) => {
     return isScribeAddon(plan.Name) ? 1 : 0;
 };
@@ -871,6 +881,8 @@ export const getMaxValue = (plan: Plan, key: MaxKeys): number => {
         result = getPlanMaxIPs(plan);
     } else if (key === 'MaxAI') {
         result = getPlanMaxAIs(plan);
+    } else if (key === 'MaxLumo') {
+        result = getPlanMaxLumo(plan);
     } else {
         result = plan[key];
     }

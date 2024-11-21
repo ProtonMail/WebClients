@@ -10,9 +10,9 @@ import {
     type PlanIDs,
 } from '@proton/payments';
 
-import { CYCLE, DEFAULT_CYCLE, VPN_PASS_PROMOTION_COUPONS } from '../constants';
+import { CYCLE, DEFAULT_CYCLE, LUMO_APP_NAME, VPN_PASS_PROMOTION_COUPONS } from '../constants';
 import type { Plan, PlansMap, Pricing, Subscription, SubscriptionCheckResponse } from '../interfaces';
-import { isDomainAddon, isIpAddon, isMemberAddon, isScribeAddon } from './addons';
+import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './addons';
 import { getPlanFromPlanIDs } from './planIDs';
 import {
     INCLUDED_IP_PRICING,
@@ -42,6 +42,8 @@ const getAddonQuantity = (addon: Plan, quantity: number) => {
         maxKey = 'MaxIPs';
     } else if (isScribeAddon(addon.Name)) {
         maxKey = 'MaxAI';
+    } else if (isLumoAddon(addon.Name)) {
+        maxKey = 'MaxLumo';
     }
 
     /**
@@ -83,6 +85,11 @@ export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number, planIDs:
         // translator: sentence is "1 writing assistant seat" or "2 writing assistant seats"
         return c('Addon').ngettext(msgid`${seats} writing assistant seat`, `${seats} writing assistant seats`, seats);
     }
+
+    if (isLumoAddon(addonName)) {
+        return LUMO_APP_NAME;
+    }
+
     return '';
 };
 

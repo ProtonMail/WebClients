@@ -316,6 +316,33 @@ describe('switchPlan', () => {
             [PLANS.BUNDLE_PRO_2024]: 1,
         });
     });
+
+    it('should transfer lumo addons', () => {
+        const planIDs = {
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 6,
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 7,
+        };
+        const planId = PLANS.MAIL_PRO;
+
+        const organization = {
+            UsedLumo: 0,
+        } as Organization;
+
+        expect(
+            switchPlan({
+                planIDs,
+                planID: planId,
+                plans: getLongTestPlans(),
+                organization,
+                user,
+            })
+        ).toEqual({
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 6,
+            [ADDON_NAMES.LUMO_MAIL_PRO]: 7,
+        });
+    });
 });
 
 describe('planIDsPositiveDifference', () => {

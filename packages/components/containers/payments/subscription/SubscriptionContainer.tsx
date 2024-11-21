@@ -1078,6 +1078,7 @@ const SubscriptionContainer = ({
                                         {hasPlanCustomizer && currentPlan && (
                                             <ProtonPlanCustomizer
                                                 scribeAddonEnabled={scribeEnabled.paymentsEnabled}
+                                                lumoAddonEnabled
                                                 loading={blockAccountSizeSelector}
                                                 currency={model.currency}
                                                 cycle={model.cycle}

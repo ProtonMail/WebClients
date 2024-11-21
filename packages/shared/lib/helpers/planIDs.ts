@@ -16,6 +16,7 @@ import {
     getSupportedB2BAddons,
     isDomainAddon,
     isIpAddon,
+    isLumoAddon,
     isMemberAddon,
     isScribeAddon,
 } from './addons';
@@ -30,6 +31,34 @@ import {
 } from './subscription';
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
+
+const getLumoWithEnoughSeats = ({
+    planIDs,
+    lumoAddon,
+    organization,
+    toPlan,
+}: {
+    planIDs: PlanIDs;
+    lumoAddon: Plan;
+    organization: Organization;
+    toPlan: Plan;
+}) => {
+    const diffAddons = (organization.MaxLumo || 0) - getMaxValue(toPlan, 'MaxLumo');
+
+    const lumoAddonsWithEnoughSeats =
+        diffAddons > 0 && getMaxValue(lumoAddon, 'MaxLumo')
+            ? Math.ceil(diffAddons / getMaxValue(lumoAddon, 'MaxLumo'))
+            : 0;
+
+    // let count all available lumo addons in the new planIDs selection
+    let lumoAddons = 0;
+    for (const addonName of Object.values(ADDON_NAMES)) {
+        if (isLumoAddon(addonName)) {
+            lumoAddons += planIDs[addonName] ?? 0;
+        }
+    }
+    return Math.max(lumoAddonsWithEnoughSeats, lumoAddons);
+};
 
 export const clearPlanIDs = (planIDs: PlanIDs): PlanIDs => {
     return Object.entries(planIDs).reduce<PlanIDs>((acc, [planName, quantity = 0]) => {
@@ -171,6 +200,14 @@ export const switchPlan = ({
                 }
 
                 newPlanIDs[addon] = Math.max(gptAddonsWithEnoughSeats, gptAddons);
+            }
+        }
+
+        if (isLumoAddon(addon) && plan && organization) {
+            const lumoAddon = plans.find(({ Name }) => Name === addon);
+
+            if (lumoAddon) {
+                newPlanIDs[addon] = getLumoWithEnoughSeats({ planIDs, lumoAddon, organization, toPlan: plan });
             }
         }
 

@@ -11,6 +11,7 @@ import {
     isDomainAddon,
     isDriveOrgSizeAddon,
     isIpAddon,
+    isLumoAddon,
     isMemberAddon,
     isOrgSizeAddon,
     isScribeAddon,
@@ -34,6 +35,7 @@ import { AccountSizeCustomiser } from './AccountSizeCustomiser';
 import { AdditionalOptionsCustomiser } from './AdditionalOptionsCustomiser';
 import { ButtonNumberInput } from './ButtonNumberInput';
 import { IPsNumberCustomiser } from './IPsNumberCustomiser';
+import LumoAddon from './LumoAddon';
 import type { DecreaseBlockedReason } from './helpers';
 
 export type CustomiserMode = 'signup' | undefined;
@@ -52,6 +54,7 @@ interface AddonCustomizerProps {
     supportedAddons: SupportedAddons;
     showAddonDescriptions: boolean;
     scribeAddonEnabled: boolean;
+    lumoAddonEnabled: boolean;
     audience?: Audience;
     mode: CustomiserMode;
 }
@@ -70,6 +73,7 @@ const AddonCustomizer = ({
     supportedAddons,
     showAddonDescriptions,
     scribeAddonEnabled,
+    lumoAddonEnabled,
     audience,
     mode,
 }: AddonCustomizerProps) => {
@@ -164,10 +168,11 @@ const AddonCustomizer = ({
     })();
 
     const selectedPlan = new SelectedPlan(planIDs, plansMap, cycle, currency);
-    // The total number of GPT addons can't be higher than the total number of members
-    const max = isScribeAddon(addonNameKey)
-        ? selectedPlan.getTotalMembers()
-        : AddonLimit[addonNameKey] * addonMultiplier;
+    // The total number of scribe or lumo addons can't be higher than the total number of members
+    const max =
+        isScribeAddon(addonNameKey) || isLumoAddon(addonNameKey)
+            ? selectedPlan.getTotalMembers()
+            : AddonLimit[addonNameKey] * addonMultiplier;
 
     const input = (
         <ButtonNumberInput
@@ -257,6 +262,24 @@ const AddonCustomizer = ({
         );
     }
 
+    if (isLumoAddon(addonNameKey) && lumoAddonEnabled) {
+        return (
+            <LumoAddon
+                key={`${addon.Name}-size`}
+                addon={addon}
+                input={input}
+                value={value}
+                maxUsers={max}
+                showDescription={showAddonDescriptions}
+                showTooltip={showUsersTooltip}
+                price={addonPriceInline}
+                onAddLumo={() => {
+                    onChangePlanIDs(setQuantity(planIDs, addon.Name, max));
+                }}
+            />
+        );
+    }
+
     return null;
 };
 
@@ -275,6 +298,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     allowedAddonTypes?: AddonGuard[];
     audience?: Audience;
     scribeAddonEnabled?: boolean;
+    lumoAddonEnabled?: boolean;
 }
 
 export const ProtonPlanCustomizer = ({
@@ -293,6 +317,7 @@ export const ProtonPlanCustomizer = ({
     allowedAddonTypes,
     audience,
     scribeAddonEnabled = false,
+    lumoAddonEnabled = false,
     ...rest
 }: Props) => {
     const supportedAddons = getSupportedAddons(planIDs);
@@ -322,6 +347,7 @@ export const ProtonPlanCustomizer = ({
                     <AddonCustomizer
                         key={addonName}
                         scribeAddonEnabled={scribeAddonEnabled}
+                        lumoAddonEnabled={lumoAddonEnabled}
                         addonName={addonName}
                         cycle={cycle}
                         currency={currency}
