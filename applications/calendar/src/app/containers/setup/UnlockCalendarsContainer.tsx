@@ -1,3 +1,4 @@
+import { useActiveBreakpoint } from '@proton/components/index';
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -19,6 +20,7 @@ const UnlockCalendarsContainer = ({
     drawerView,
     hasReactivatedCalendarsRef,
 }: Props) => {
+    const { viewportWidth } = useActiveBreakpoint();
     // Don't take into account subscribed calendars to decide whether to show a partial list of the calendars that need reset.
     // Although we do need to reset the calendar keys for those, they will be immediately re-synced so the users should not see them "locked"
     const numberOfPersonalCalendars = getPersonalCalendars(calendars).length;
@@ -35,7 +37,7 @@ const UnlockCalendarsContainer = ({
                 hasReactivatedCalendarsRef={hasReactivatedCalendarsRef}
                 onDone={onDone}
             />
-            <DummyCalendarContainerView drawerView={drawerView} />
+            <DummyCalendarContainerView drawerView={drawerView} isSmallViewport={viewportWidth['<=small']} />
         </>
     );
 };
