@@ -351,12 +351,6 @@
       "Expand folder": [
         "Klasörü genişlet"
       ],
-      "Explore on my own": [
-        "Kendi başıma keşfedeceğim"
-      ],
-      "Explore while you wait": [
-        "Beklerken keşfedin"
-      ],
       "Export": [
         "Dışa aktar"
       ],
@@ -384,9 +378,6 @@
       "Get link": [
         "Bağlantıyı al"
       ],
-      "Get started": [
-        "Başlayalım"
-      ],
       "Get Started": [
         "Başlayalım"
       ],
@@ -404,9 +395,6 @@
       ],
       "Go to my files": [
         "Dosyalarıma git"
-      ],
-      "Go to panel ${ index }": [
-        "${ index } panosuna git"
       ],
       "Go to parent": [
         "Üst klasöre git"
@@ -458,9 +446,6 @@
       ],
       "Increase": [
         "Artır"
-      ],
-      "Invite": [
-        "Davet et"
       ],
       "Keep my subscription": [
         "Aboneliğimi sürdür"
@@ -786,9 +771,6 @@
       "Sign out": [
         "Oturumu kapat"
       ],
-      "Skip": [
-        "Atla"
-      ],
       "Skip verification": [
         "Doğrulamayı atla"
       ],
@@ -800,9 +782,6 @@
       ],
       "Start recovering": [
         "Kurtarmayı başlat"
-      ],
-      "Start setup": [
-        "Kurulumu başlat"
       ],
       "Starting from ${ priceUnlimited }": [
         "${ priceUnlimited } tutarından başlayan fiyatlarla"
@@ -880,9 +859,6 @@
         "Yine de yükle"
       ],
       "Upload file": [
-        "Dosya yükle"
-      ],
-      "Upload files": [
         "Dosya yükle"
       ],
       "Upload folder": [
@@ -3580,17 +3556,6 @@
         "Bu işlem, her aile üyesi için tüm ${ BRAND_NAME } ücretli özelliklerini kaldıracak."
       ]
     },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users": [
-        "Aile hesabınızı yapılandırın ve kullanıcıları davet edin"
-      ],
-      "Set up your family": [
-        "Ailenizi oluşturun"
-      ],
-      "Set up your family account": [
-        "Aile hesabınızı oluşturun"
-      ]
-    },
     "familyOffer_2023:Title": {
       "Delete family group?": [
         "Aile grubu silinsin mi?"
@@ -5259,9 +5224,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Edge tarayıcısı ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir tarayıcı kullanın."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
@@ -6984,7 +6946,7 @@
         "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
       ],
       "Auto-reply": [
-        "Otomatik yanıt"
+        "Otomatik yanıtlama"
       ],
       "Autofill credit cards (coming soon)": [
         "Otomatik kredi kartı doldurma (yakında)"
@@ -7193,10 +7155,10 @@
         "Kullanıcı olarak oturum açma"
       ],
       "SMTP submission": [
-        "SMTP gönderim"
+        "SMTP gönderimi"
       ],
       "SMTP submission for select organizations": [
-        "Seçilmiş kuruluşlar için SMTP gönderim"
+        "Seçilmiş kuruluşlar için SMTP gönderimi"
       ],
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
@@ -7586,9 +7548,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
-      ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -8007,9 +7966,6 @@
       "Maybe later": [
         "Belki daha sonra"
       ],
-      "Next": [
-        "Sonraki"
-      ],
       "Select theme": [
         "Tema seçin"
       ],
@@ -8018,9 +7974,6 @@
       ],
       "Skip for now": [
         "Şimdi atla"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } kullanmaya başlayın"
       ],
       "Try the app": [
         "Uygulamayı deneyin"
@@ -8072,9 +8025,6 @@
       "Free up hard drive space on your computer": [
         "Bilgisayarınızın depolama alanını boşaltın"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "${ DRIVE_APP_NAME } kullanmaya başladığınızda ücretsiz depolama alanınızı 5 GB yapacağız!"
-      ],
       "Get the desktop app": [
         "Masaüstü uygulamasını edinin"
       ],
@@ -8117,33 +8067,14 @@
       "Securely share files and folders": [
         "Dosyaları ve klasörleri güvenli olarak paylaşın"
       ],
-      "Securely store, manage, and share your business-critical files with confidence.": [
-        "İş açısından kritik önemdeki dosyalarınızı güvenle saklayın, yönetin ve paylaşın."
-      ],
-      "Set a recovery method": [
-        "Bir kurtarma yöntemi ayarlayın"
-      ],
-      "Share a file": [
-        "Bir dosya paylaş"
-      ],
       "Share files & folders": [
         "Dosyaları ve klasörleri paylaşın"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Yalnızca gelecek ${ expiresInDays } günde şu işlemleri yapın:",
-        "Yalnızca gelecek ${ expiresInDays } günde şu işlemleri yapın:"
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "Dosyalarınızı saklayın ve güvenle paylaşın. Kimlikler, sözleşmeler ve kişisel fotoğraflar gibi en özel dosyalarınızın güvenliğini sağlayarak başlayın."
       ],
       "Sync and access your files from anywhere": [
         "Dosyalarınızı her yerden eşitleyin ve kullanın"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Sahibi paylaşım erişimi iznini onaylamalıdır. İşlem tamamlandığında bir e-posta alacaksınız."
-      ],
-      "Upload a file": [
-        "Bir dosya yükleyin"
       ],
       "Upload your first file": [
         "İlk dosyanızı yükleyin"
@@ -8153,46 +8084,6 @@
       ],
       "Work together": [
         "Birlikte çalışın"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "Yaşamsal belgelerinizin ve kıymetli anılarınızın güvende olduğu yer."
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar ekleyin."
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "Tüm ${ BRAND_NAME } hizmetlerini keşfedin"
-      ],
-      "Pick a theme": [
-        "Bir tema seçin"
-      ],
-      "Set up your organization": [
-        "Kuruluşunuzu ayarlayın"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Tüm ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "Temanızı istediğiniz zaman ayarlar bölümünden değiştirebilirsiniz."
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "Onay bekleniyor"
-      ],
-      "Hang tight!": [
-        "Sıkı durun!"
-      ],
-      "Invite team members": [
-        "Ekip üyelerini davet edin"
-      ],
-      "Upload and protect your important files": [
-        "Önemli dosyalarınızı yükleyin ve koruyun"
-      ],
-      "Your welcome bonus": [
-        "Karşılama hediyeniz"
       ]
     },
     "Option": {
