@@ -87,18 +87,21 @@ export async function initDownloadSW() {
             }
         )
         .then((registration) => {
-            /*
+            // We do not cache manifest for local server or this can cause HMR to infinite reload
+            if (!window.location.host.includes('proton.local')) {
+                /*
                 Upon sending cache_assets action we fetch all assets using the Service Worker
                 Diagram can be seen here using the mermaid diagram file applications/drive/src/app/store/_downloads/fileSaver/mermaid-cache-assets-diagram.json to be uploaded on https://mermaid.live/
             */
-            if (registration.active?.state === 'activated') {
-                registration.active.postMessage({ action: 'cache_assets' });
-            } else if (registration.installing) {
-                registration.installing.addEventListener('statechange', () => {
-                    if (registration.active?.state === 'activated') {
-                        registration.active.postMessage({ action: 'cache_assets' });
-                    }
-                });
+                if (registration.active?.state === 'activated') {
+                    registration.active.postMessage({ action: 'cache_assets' });
+                } else if (registration.installing) {
+                    registration.installing.addEventListener('statechange', () => {
+                        if (registration.active?.state === 'activated') {
+                            registration.active.postMessage({ action: 'cache_assets' });
+                        }
+                    });
+                }
             }
         });
 
