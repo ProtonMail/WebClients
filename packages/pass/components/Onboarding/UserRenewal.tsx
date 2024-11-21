@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -20,6 +21,7 @@ export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const authStore = useAuthStore();
     const plan = useSelector(selectUserPlan);
     const planName = useSelector(selectPlanDisplayName);
+    const online = useConnectivity();
 
     if (!(plan && plan.SubscriptionEnd)) return;
 
@@ -48,6 +50,7 @@ export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
                     size="small"
                     className="text-sm px-3"
                     onClick={pipe(onClose, upgrade)}
+                    disabled={!online}
                 >
                     {c('Action').t`Reactivate now`}
                 </Button>
