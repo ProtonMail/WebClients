@@ -17,14 +17,14 @@ export const DocsSuggestionsOnboardingModal = ({ onClose, ...props }: ModalProps
     return (
         <ModalTwo {...props} size="small">
             <ModalTwoContent>
-                <section className="flex justify-center">
+                <section className="flex justify-center px-6">
                     <img className="my-4" src={sharingOnboardingWelcome} alt={DOCS_APP_NAME} />
-                    <h1 className="text-2xl text-bold text-center">{c('Docs Info').t`Suggestion Mode is Here`}</h1>
-                    <p className="text-center color-weak mt-2 mb-5">{c('Docs Info')
-                        .t`Make edits without changing the original document. Collaborate seamlessly and work together more efficiently.`}</p>
+                    <h1 className="text-4xl text-bold text-center">{c('Docs Info').t`Suggestion mode is here`}</h1>
+                    <p className="text-center color-weak mt-4 mb-1">{c('Docs Info')
+                        .t`Collaborating just got easier. Now anyone can suggest edits without changing the document.`}</p>
                 </section>
             </ModalTwoContent>
-            <ModalTwoFooter className="flex gap-4">
+            <ModalTwoFooter className="flex gap-4 px-6">
                 <Button
                     className="mb-0"
                     size="large"
@@ -51,7 +51,7 @@ export const DocsSuggestionsOnboardingModal = ({ onClose, ...props }: ModalProps
                     }}
                     data-testid="drive-onboarding-dismiss"
                 >
-                    {c('Onboarding Action').t`Got it`}
+                    {c('Onboarding Action').t`Maybe Later`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>
