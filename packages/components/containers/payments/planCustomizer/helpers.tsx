@@ -16,19 +16,28 @@ export const getHasPlanCustomizer = ({ plansMap, planIDs }: { plansMap: PlansMap
     const hasPlanCustomizer = Boolean(
         currentPlan &&
             [
+                PLANS.MAIL,
                 PLANS.MAIL_PRO,
                 PLANS.MAIL_BUSINESS,
+                PLANS.DRIVE,
                 PLANS.DRIVE_PRO,
                 PLANS.DRIVE_BUSINESS,
+                PLANS.BUNDLE,
+                PLANS.FAMILY,
+                PLANS.DUO,
                 PLANS.BUNDLE_PRO,
                 PLANS.BUNDLE_PRO_2024,
                 PLANS.ENTERPRISE,
+                PLANS.VPN,
+                PLANS.VPN2024,
                 PLANS.VPN_PRO,
                 PLANS.VPN_BUSINESS,
+                PLANS.PASS,
                 PLANS.PASS_PRO,
                 PLANS.PASS_BUSINESS,
             ].includes(currentPlan.Name as PLANS)
     );
+
     return { currentPlan, hasPlanCustomizer };
 };
 
