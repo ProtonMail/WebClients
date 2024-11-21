@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Info, Label, Progress, Toggle, Tooltip, useModalState } from '@proton/components';
 import type { ESIndexingState } from '@proton/encrypted-search';
+import { useIndexedDBSupport } from '@proton/encrypted-search/lib/hooks/useIndexedDBSupport';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
@@ -35,6 +36,9 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
 
     const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
+    /* Perhaps in Lockdown mode, the browser does not support IndexedDB, so we need to check for that */
+    const { isSupported: isIndexedDBSupported, error } = useIndexedDBSupport();
+
     // Switches
     const showProgress = isEnablingContentSearch || isContentIndexingPaused || (contentIndexingDone && isRefreshing);
     const showSubTitleSection = contentIndexingDone && !isRefreshing && isDBLimited && !isEnablingEncryptedSearch;
@@ -55,6 +59,7 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
         // translator: the variable is a date, which is already localised
         <span className="color-weak mr-2">{c('Info').jt`For messages newer than ${oldestDate}`}</span>
     );
+
     let esToggleTooltip = c('Info').t`Activation in progress`;
     if (contentIndexingDone && !isEnablingContentSearch) {
         esToggleTooltip = esEnabled
@@ -66,13 +71,17 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
     const esActivationTooltip = c('Info').t`The local database is being prepared`;
     const esActivationLoading = isEnablingEncryptedSearch;
     const esActivationButton = (
-        <Button
-            onClick={() => setEnableESModalOpen(true)}
-            loading={esActivationLoading}
-            data-testid="encrypted-search:activate"
-        >
-            {esActivationLoading ? c('Action').t`Downloading` : c('Action').t`Enable`}
-        </Button>
+        <>
+            {error && <Info className="color-danger mr-2" title={error} />}
+            <Button
+                onClick={() => setEnableESModalOpen(true)}
+                loading={esActivationLoading}
+                disabled={!isIndexedDBSupported}
+                data-testid="encrypted-search:activate"
+            >
+                {esActivationLoading ? c('Action').t`Downloading` : c('Action').t`Enable`}
+            </Button>
+        </>
     );
 
     const esCTA = showToggle ? (
