@@ -72,8 +72,36 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const unsubscribeMethods = message.UnsubscribeMethods || {};
     const hasUnsubscribeMethods = useMemo(() => !!Object.keys(unsubscribeMethods).length, [unsubscribeMethods]);
     const isSimpleLoginAlias = hasSimpleLoginSender(message);
+    const descriptionText = useMemo(() => {
+        if (isSimpleLoginAlias) {
+            return c('Info').t`This message is from a SimpleLogin alias.`;
+        }
+        return c('Info').t`This message is from a mailing list.`;
+    }, [isSimpleLoginAlias]);
 
-    if (!hasUnsubscribeMethods || !address || isSimpleLoginAlias) {
+    const actionText = useMemo(() => {
+        if (isUnsubscribed(message)) {
+            if (isSimpleLoginAlias) {
+                return c('Status').t`Alias disabled`;
+            }
+            return c('Status').t`Unsubscribed`;
+        }
+
+        if (loading) {
+            if (isSimpleLoginAlias) {
+                return c('Action').t`Disabling alias`;
+            }
+            return c('Action').t`Unsubscribing`;
+        }
+
+        if (isSimpleLoginAlias) {
+            return c('Action').t`Disable alias`;
+        }
+
+        return c('Action').t`Unsubscribe`;
+    }, [loading, message]);
+
+    if (!hasUnsubscribeMethods || !address) {
         return null;
     }
 
@@ -241,11 +269,10 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                     className="mt-0.5 md:mt-custom ml-0.5 shrink-0"
                     style={{ '--md-mt-custom': '0.375rem' }}
                 />
-                <span className="px-1 flex flex-1 items-center">{c('Status')
-                    .t`This message is from a mailing list.`}</span>
+                <span className="px-1 flex flex-1 items-center">{descriptionText}</span>
             </div>
             <span className="shrink-0 items-start flex w-full md:w-auto pt-0.5">
-                <Tooltip title={c('Info').t`This message is from a mailing list.`}>
+                <Tooltip title={descriptionText}>
                     <Button
                         onClick={() => setUnsubscribeModalOpen(true)}
                         size="small"
@@ -256,11 +283,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                         data-testid="unsubscribe-banner"
                         disabled={loading || isUnsubscribed(message)}
                     >
-                        {isUnsubscribed(message)
-                            ? c('Status').t`Unsubscribed`
-                            : loading
-                              ? c('Action').t`Unsubscribing`
-                              : c('Action').t`Unsubscribe`}
+                        {actionText}
                     </Button>
                 </Tooltip>
             </span>
