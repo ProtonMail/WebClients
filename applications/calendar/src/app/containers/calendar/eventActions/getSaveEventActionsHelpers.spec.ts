@@ -210,6 +210,127 @@ describe('getUpdateSingleEditMergeVevent()', () => {
             attendee: [],
         });
     });
+
+    describe('Zoom integration tests', () => {
+        const conferenceID = {
+            value: 'conferenceId',
+            parameters: {
+                provider: '1',
+            },
+        };
+
+        it('should update zoom information if added in the single edit', () => {
+            const newVevent = {
+                ...baseVevent,
+                'x-pm-conference-id': conferenceID,
+            };
+
+            expect(getUpdateSingleEditMergeVevent(newVevent, baseVevent)).toEqual({
+                'x-pm-conference-id': conferenceID,
+            });
+        });
+
+        it('Should update the zoom information if new event is given', () => {
+            const newBaseEvent = {
+                ...baseVevent,
+                'x-pm-conference-id': {
+                    ...conferenceID,
+                    value: 'oldConferenceID',
+                },
+            };
+
+            const newVevent = {
+                ...baseVevent,
+                'x-pm-conference-id': {
+                    ...conferenceID,
+                    value: 'newConferenceId',
+                },
+            };
+
+            expect(getUpdateSingleEditMergeVevent(newVevent, newBaseEvent)).toEqual({
+                'x-pm-conference-id': {
+                    ...conferenceID,
+                    value: 'newConferenceId',
+                },
+            });
+        });
+
+        it('should not update zoom information if already present', () => {
+            const newBaseEvent = {
+                ...baseVevent,
+                'x-pm-conference-id': conferenceID,
+            };
+
+            const newVevent = {
+                ...baseVevent,
+                'x-pm-conference-id': conferenceID,
+            };
+
+            expect(getUpdateSingleEditMergeVevent(newVevent, newBaseEvent)).toEqual({});
+        });
+
+        it.each([
+            ['color', { color: { value: ACCENT_COLORS_MAP.fern.color } }],
+            ['summary', { summary: { value: 'new summary' } }],
+            ['location', { location: { value: 'THE beer garden' } }],
+        ])('should update event %s without updating Zoom informations', (_, value) => {
+            const newBaseEvent = {
+                ...baseVevent,
+                'x-pm-conference-id': conferenceID,
+            };
+
+            const newVevent = {
+                ...baseVevent,
+                ...value,
+                'x-pm-conference-id': conferenceID,
+            };
+
+            expect(getUpdateSingleEditMergeVevent(newVevent, newBaseEvent)).toEqual(value);
+        });
+
+        it('should work with multiple actions', () => {
+            let newBaseEvent: any = {
+                ...baseVevent,
+                'x-pm-conference-id': conferenceID,
+            };
+
+            const newVevent = {
+                ...baseVevent,
+            };
+
+            expect(getUpdateSingleEditMergeVevent(newVevent, newBaseEvent)).toEqual({});
+
+            newBaseEvent = newVevent;
+            const newVevent2 = {
+                ...baseVevent,
+                'x-pm-conference-id': {
+                    value: 'conferenceId2',
+                    parameters: {
+                        conferenceId: 'conferenceId2',
+                    },
+                },
+            };
+
+            expect(getUpdateSingleEditMergeVevent(newVevent2, newBaseEvent)).toEqual({
+                'x-pm-conference-id': {
+                    value: 'conferenceId2',
+                    parameters: {
+                        conferenceId: 'conferenceId2',
+                    },
+                },
+            });
+
+            newBaseEvent = newVevent2;
+            const newVevent3 = {
+                ...baseVevent,
+                color: { value: ACCENT_COLORS_MAP.fern.color },
+            };
+
+            expect(getUpdateSingleEditMergeVevent(newVevent3, newBaseEvent)).toEqual({
+                color: { value: ACCENT_COLORS_MAP.fern.color },
+            });
+        });
+    });
 });
 
 describe('getHasModifiedNotifications', () => {
