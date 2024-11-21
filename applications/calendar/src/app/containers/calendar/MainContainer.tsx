@@ -105,7 +105,7 @@ const MainContainer = () => {
     }
 
     if (!isDone && !isElectronMail) {
-        return <CalendarOnboardingContainer onDone={() => setWelcomeFlagsDone()} />;
+        return <CalendarOnboardingContainer onDone={() => setWelcomeFlagsDone()} drawerView={drawerView} />;
     }
 
     if (calendarsToUnlock.length) {
