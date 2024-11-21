@@ -26,7 +26,7 @@ export const ThemeOnboardingModal: FC = () => {
 
     return (
         open && (
-            <PassModal size="large" open onClose={handleClose} disableCloseOnEscape>
+            <PassModal size="large" open onClose={handleClose} enableCloseWhenClickOutside>
                 <ModalTwoHeader
                     title={c('Info').t`Make it your own`}
                     hasClose={false}
