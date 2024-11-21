@@ -59,7 +59,7 @@ export const DisclaimerModal = ({ provider, onConfirm, onClose, loading, ...moda
             );
 
             const support = (
-                <a key="email-link" href={`https://proton.me/support/contact`}>
+                <a key="email-link" target="_blank" href={`https://proton.me/support/contact?topic=Proton+Wallet`}>
                     {
                         // translator: Proton Wallet support
                         c('Gateway disclaimer').jt`${WALLET_APP_NAME} support`
