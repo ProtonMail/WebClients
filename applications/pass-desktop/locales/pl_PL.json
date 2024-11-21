@@ -1184,6 +1184,12 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizacja \"${ payload.item.data.metadata.name }\" została odrzucona"
       ],
+      "${ count } invite successfully sent": [
+        "Wysłano ${ count } zaproszenie",
+        "Wysłano ${ count } zaproszenia",
+        "Wysłano ${ count } zaproszeń",
+        "Wysłano ${ count } zaproszeń"
+      ],
       "${ count } time": [
         "${ count } raz",
         "${ count } razy",
@@ -2260,6 +2266,9 @@
       "Cards": [
         "Karty"
       ],
+      "Choose unlock method": [
+        "Wybierz metodę odblokowania"
+      ],
       "Choose your preferred look and feel.": [
         "Wybierz preferowany wygląd i styl."
       ],
@@ -2428,6 +2437,9 @@
       "Generic CSV": [
         "Ogólny plik CSV"
       ],
+      "Get Started": [
+        "Rozpocznij"
+      ],
       "Get the extension for your browser.": [
         "Pobierz rozszerzenie do przeglądarki"
       ],
@@ -2484,6 +2496,9 @@
       ],
       "Install and continue": [
         "Zainstaluj i kontynuuj"
+      ],
+      "Install extension": [
+        "Zainstaluj rozszerzenie"
       ],
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca 2FA"
@@ -2724,6 +2739,9 @@
       ],
       "Select your password manager": [
         "Wybierz menadżer haseł"
+      ],
+      "Select your theme": [
+        "Wybierz motyw"
       ],
       "Selected": [
         "Zaznaczone"

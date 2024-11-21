@@ -1184,6 +1184,12 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizácia \"${ payload.item.data.metadata.name }\" bola zamietnutá"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } pozvánka úspešne odoslaná",
+        "${ count } pozvánky úspešne odoslané",
+        "${ count } pozvánok úspešne odoslaných",
+        "${ count } pozvánok úspešne odoslaných"
+      ],
       "${ count } time": [
         "${ count } krát",
         "${ count } krát",
@@ -2260,6 +2266,9 @@
       "Cards": [
         "Karty"
       ],
+      "Choose unlock method": [
+        "Vyberte spôsob odomknutia"
+      ],
       "Choose your preferred look and feel.": [
         "Vyberte si svoj obľúbený vzhľad."
       ],
@@ -2428,6 +2437,9 @@
       "Generic CSV": [
         "Všeobecné CSV"
       ],
+      "Get Started": [
+        "Začíname"
+      ],
       "Get the extension for your browser.": [
         "Získajte rozšírenie pre svoj prehliadač."
       ],
@@ -2484,6 +2496,9 @@
       ],
       "Install and continue": [
         "Inštalovať a pokračovať"
+      ],
+      "Install extension": [
+        "Inštalovať rozšírenie"
       ],
       "Integrated 2FA authenticator": [
         "Integrovaný 2FA autentifikátor"
@@ -2724,6 +2739,9 @@
       ],
       "Select your password manager": [
         "Vyberte si vášho správcu hesiel"
+      ],
+      "Select your theme": [
+        "Vyberte vašu tému"
       ],
       "Selected": [
         "Vybrané"

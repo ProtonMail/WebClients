@@ -1162,6 +1162,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } kutsu lähetettiin",
+        "${ count } kutsua lähetettiin"
+      ],
       "${ count } time": [
         "${ count } kerran",
         "${ count } kertaa"
@@ -1575,6 +1579,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Valvonnan asetukset päivitettiin"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "${ PASS_APP_NAME } on muutakin kuin pelkkä salasanahallinta, se voi salasanojesi lisäksi suojata sähköpostiosoitteesi sähköpostialiaksilla. Tietosi ovat päästä päähän -salattuja ${ MAIL_APP_NAME }in käyttämällä tekniikalla, ja vain sinä pääset niihin käsiksi."
       ],
       "Move ${ count } item": [
         "Siirrä ${ count } kohde",
@@ -2187,11 +2194,17 @@
       "Cards": [
         "Kortit"
       ],
+      "Choose unlock method": [
+        "Valitse avaustapa"
+      ],
       "Choose your preferred look and feel.": [
         "Valitse haluamasi ulkoasu ja tunnelma."
       ],
       "City": [
         "Kaupunki"
+      ],
+      "Clear clipboard after": [
+        "Tyhjennä leikepöytä valitun ajan kuluttua:"
       ],
       "Code": [
         "Koodi"
@@ -2325,6 +2338,9 @@
       "Floor, apartment, building": [
         "Kerros, asunto, rakennus"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Turvallisuussyistä ${ PASS_SHORT_APP_NAME } lukitsee itsensä automaattisesti 10 minuutin käyttämättömyyden jälkeen."
+      ],
       "Forwards to": [
         "Ohjaa osoitteeseen"
       ],
@@ -2349,6 +2365,9 @@
       "Generic CSV": [
         "Geneerinen CSV"
       ],
+      "Get Started": [
+        "Aloita"
+      ],
       "Get the extension for your browser.": [
         "Hanki laajennus selaimeesi."
       ],
@@ -2363,6 +2382,9 @@
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliakset"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Miten ${ PASS_SHORT_APP_NAME }in lukitus avataan"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2402,6 +2424,9 @@
       ],
       "Install and continue": [
         "Asenna ja jatka"
+      ],
+      "Install extension": [
+        "Asenna laajennus"
       ],
       "Integrated 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
@@ -2643,6 +2668,9 @@
       "Select your password manager": [
         "Valitse salasanahallintasi"
       ],
+      "Select your theme": [
+        "Valitse teemasi"
+      ],
       "Selected": [
         "Valittu"
       ],
@@ -2742,6 +2770,9 @@
       ],
       "Unlock with": [
         "Lukituksen avaustapa"
+      ],
+      "Unlock with:": [
+        "Lukituksen avaustapa:"
       ],
       "Unnamed Credit Card": [
         "Nimetön maksukortti"
@@ -3268,6 +3299,9 @@
       ],
       "Pause monitoring?": [
         "Keskeytetäänkö valvonta?"
+      ],
+      "Pending access confirmation": [
+        "Odottaa pääsyn vahvistamista"
       ],
       "Pending access to the shared data": [
         "Odotetaan käyttöoikeutta jaettuihin tietoihin"

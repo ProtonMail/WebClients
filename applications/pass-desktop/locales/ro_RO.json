@@ -1173,6 +1173,11 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualizarea pentru „${ payload.item.data.metadata.name }” a fost respinsă."
       ],
+      "${ count } invite successfully sent": [
+        "Invitații trimise: ${ count }",
+        "Invitații trimise: ${ count }",
+        "Invitații trimise: ${ count }"
+      ],
       "${ count } time": [
         "${ count } dată",
         "de ${ count } ori",
@@ -2225,6 +2230,9 @@
       "Cards": [
         "Carduri"
       ],
+      "Choose unlock method": [
+        "Alegeți metoda de deblocare"
+      ],
       "Choose your preferred look and feel.": [
         "Alegeți stilul și aspectul preferat."
       ],
@@ -2393,6 +2401,9 @@
       "Generic CSV": [
         "CSV generic"
       ],
+      "Get Started": [
+        "Începeți"
+      ],
       "Get the extension for your browser.": [
         "Luați extensia pentru navigatorul web."
       ],
@@ -2449,6 +2460,9 @@
       ],
       "Install and continue": [
         "Instalare și continuare"
+      ],
+      "Install extension": [
+        "Instalare extensie"
       ],
       "Integrated 2FA authenticator": [
         "Autentificator A2F integrat"
@@ -2689,6 +2703,9 @@
       ],
       "Select your password manager": [
         "Selectare manager de parole"
+      ],
+      "Select your theme": [
+        "Selectați tema"
       ],
       "Selected": [
         "Selectat"
