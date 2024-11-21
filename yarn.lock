@@ -22332,6 +22332,8 @@ __metadata:
 "eslint-plugin-custom-rules@workspace:^, eslint-plugin-custom-rules@workspace:packages/eslint-plugin-custom-rules":
   version: 0.0.0-use.local
   resolution: "eslint-plugin-custom-rules@workspace:packages/eslint-plugin-custom-rules"
+  dependencies:
+    jest: "npm:^29.7.0"
   languageName: unknown
   linkType: soft
 
