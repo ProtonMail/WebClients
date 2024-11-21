@@ -7,7 +7,7 @@ import type { DropdownActionProps } from '@proton/components/components/dropdown
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
-import Price from '@proton/components/components/price/Price';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -39,8 +39,6 @@ import noop from '@proton/utils/noop';
 import type { BadgeType } from '../../components/badge/Badge';
 import { default as Badge } from '../../components/badge/Badge';
 import { subscriptionExpires } from './subscription/helpers';
-
-export const getMonths = (n: number) => c('Billing cycle').ngettext(msgid`${n} month`, `${n} months`, n);
 
 const SubscriptionsSection = () => {
     const [plansResult, loadingPlans] = usePlans();
@@ -101,7 +99,7 @@ const SubscriptionsSection = () => {
     // see PAY-2060 and PAY-2080
     const isUpcomingSubscriptionUnpaid = !!current && !!upcoming && current.Cycle === upcoming.Cycle;
 
-    const { renewPrice, renewalLength } = (() => {
+    const { renewAmount, renewCurrency, renewLength } = (() => {
         const latestPlanIDs = getPlanIDs(latestSubscription);
         if (
             getHas2023OfferCoupon(latestSubscription.CouponCode) &&
@@ -121,12 +119,9 @@ const SubscriptionsSection = () => {
             return {
                 // The API doesn't return the correct next cycle or RenewAmount for the VPN or VPN+Pass bundle plan since we don't have chargebee
                 // So we calculate it with the cycle discount here
-                renewPrice: (
-                    <Price key="renewal-price" currency={latestSubscription.Currency}>
-                        {latestCheckout.withDiscountPerCycle}
-                    </Price>
-                ),
-                renewalLength: getMonths(nextCycle),
+                renewAmount: latestCheckout.withDiscountPerCycle,
+                renewCurrency: latestSubscription.Currency,
+                renewLength: nextCycle,
             };
         }
 
@@ -138,40 +133,35 @@ const SubscriptionsSection = () => {
                 currency: latestSubscription.Currency,
             })!;
             return {
-                renewPrice: (
-                    <Price key="renewal-price" currency={latestSubscription.Currency}>
-                        {result.renewPrice}
-                    </Price>
-                ),
-                renewalLength: getMonths(result.renewalLength),
+                renewAmount: result.renewPrice,
+                renewCurrency: latestSubscription.Currency,
+                renewLength: result.renewalLength,
             };
         }
 
         if (isUpcomingSubscriptionUnpaid) {
             return {
-                renewPrice: (
-                    <Price key="renewal-price" currency={upcoming.Currency}>
-                        {upcoming.Amount}
-                    </Price>
-                ),
-                renewalLength: getMonths(upcoming.Cycle),
+                renewAmount: upcoming.Amount,
+                renewCurrency: upcoming.Currency,
+                renewLength: upcoming.Cycle,
             };
         }
 
         return {
-            renewPrice: (
-                <Price key="renewal-price" currency={latestSubscription.Currency}>
-                    {latestSubscription.RenewAmount}
-                </Price>
-            ),
-            renewalLength: getMonths(latestSubscription.Cycle),
+            renewAmount: latestSubscription.RenewAmount,
+            renewCurrency: latestSubscription.Currency,
+            renewLength: latestSubscription.Cycle,
         };
     })();
 
-    const renewalText = (
-        <span data-testid="renewalNotice">{c('Billing cycle')
-            .jt`Renews automatically at ${renewPrice}, for ${renewalLength}`}</span>
+    const renewPrice = getSimplePriceString(renewCurrency, renewAmount);
+    const renewalText = c('Billing cycle').ngettext(
+        msgid`Renews automatically at ${renewPrice}, for ${renewLength} month`,
+        `Renews automatically at ${renewPrice}, for ${renewLength} months`,
+        renewLength
     );
+
+    const renewalTextElement = <span data-testid="renewalNotice">{renewalText}</span>;
 
     const status = subscriptionExpiresSoon
         ? {
@@ -224,7 +214,7 @@ const SubscriptionsSection = () => {
                                 {subscriptionExpiresSoon ? (
                                     <DropdownActions size="small" list={reactivateAction} />
                                 ) : (
-                                    renewalText
+                                    renewalTextElement
                                 )}
                             </TableCell>
                         </TableRow>
