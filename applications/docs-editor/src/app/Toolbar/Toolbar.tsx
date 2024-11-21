@@ -648,7 +648,8 @@ export default function DocumentEditorToolbar({
     new Date('2024-11-22'),
   )
 
-  const shouldShowSuggestionTooltip = systemMode !== EditorSystemMode.PublicView && suggestionTooltipNotShownPreviously
+  const shouldShowSuggestionTooltip =
+    systemMode !== EditorSystemMode.PublicView && suggestionTooltipNotShownPreviously && !isMobile()
 
   const buttonsContainerRef = useRef<HTMLDivElement | null>(null)
   const [visibleButtons, setVisibleButtons] = useState<Record<string, boolean>>({})
