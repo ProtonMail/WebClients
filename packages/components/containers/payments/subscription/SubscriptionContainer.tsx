@@ -1077,7 +1077,7 @@ const SubscriptionContainer = ({
                                         </h2>
                                         {hasPlanCustomizer && currentPlan && (
                                             <ProtonPlanCustomizer
-                                                scribeEnabled={scribeEnabled.paymentsEnabled}
+                                                scribeAddonEnabled={scribeEnabled.paymentsEnabled}
                                                 loading={blockAccountSizeSelector}
                                                 currency={model.currency}
                                                 cycle={model.cycle}
