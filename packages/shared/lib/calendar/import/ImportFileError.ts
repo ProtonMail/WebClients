@@ -48,9 +48,17 @@ const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
     }
 };
 
+interface ImportFileErrorCause {
+    errorType: IMPORT_ERROR_TYPE;
+    filename: string | undefined;
+}
+
 export class ImportFileError extends Error {
+    cause: ImportFileErrorCause;
+
     constructor(errorType: IMPORT_ERROR_TYPE, filename?: string) {
         super(getErrorMessage(errorType, filename));
         Object.setPrototypeOf(this, ImportFileError.prototype);
+        this.cause = { errorType, filename };
     }
 }
