@@ -97,7 +97,7 @@
         "São permitidos no máximo ${ maxContacts } contactos por grupo de contactos"
       ],
       "Attach screenshot(s)": [
-        "Anexar captura(s) de ecrã"
+        "Anexar capturas de ecrã"
       ],
       "Attention required": [
         "Requer atenção"
@@ -261,10 +261,10 @@
         "Mostrar a barra de navegação"
       ],
       "Done": [
-        "Concluído"
+        "Terminado"
       ],
       "Downgrade": [
-        "Conta com menos funcionalidades"
+        "Optar por um plano inferior"
       ],
       "Download": [
         "Transferir"
@@ -276,7 +276,7 @@
         "Editar"
       ],
       "Edit email address": [
-        "Editar o endereço de e-mail "
+        "Editar o endereço de e-mail"
       ],
       "Edit label": [
         "Editar etiqueta"
@@ -713,6 +713,9 @@
       "Upgrade now": [
         "Actualizar agora"
       ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Melhorar para ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
       "Upload picture": [
         "Enviar imagem"
       ],
@@ -887,6 +890,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Se sair agora, perderá o seu evento."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Não feche este separador. Algumas solicitações ainda são processadas em segundo plano."
       ]
     },
     "Apps dropdown": {
@@ -1308,6 +1314,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Edição (ver, criar ou editar os detalhes do evento)"
+      ],
       "View (see all event details)": [
         "Visualizar (ver todos os detalhes do evento)"
       ]
@@ -2500,6 +2509,9 @@
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Organize melhor o seu dia, controle o seu tempo e priorize tarefas. Codifique o seu calendário com cores de eventos personalizadas."
       ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Codifique os eventos por cores para facilitar a organização do seu dia, controlar o seu tempo e priorizar tarefas."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Crie uma reunião Zoom e adicione detalhes de participação ao seu evento com um clique."
       ],
@@ -2929,11 +2941,17 @@
       "Event not found": [
         "Evento não encontrado"
       ],
+      "Failed to create meeting": [
+        "Erro na criação de la reunião"
+      ],
       "Failed to get event": [
         "Erro ao obter o evento"
       ],
       "Failed to get original occurrence in series": [
         "Erro ao obter a ocorrência original na série"
+      ],
+      "Failed to load OAuth modal.": [
+        "Erro ao carregar a janela OAuth"
       ],
       "First name is too long": [
         "O primeiro nome é demasiado longo"
@@ -4450,7 +4468,7 @@
         "Cada código só pode ser utilizado uma vez"
       ],
       "Edit email address": [
-        "Editar endereço de e-mail"
+        "Editar o endereço de e-mail"
       ],
       "email": [
         "e-mail"
@@ -4764,6 +4782,10 @@
       "Removed participants will be notified.": [
         "Os participantes removidos serão notificados."
       ],
+      "Saving event...": [
+        "A guardar o evento...",
+        "A guardar os eventos..."
+      ],
       "Select a service provider to start": [
         "Selecione um provedor de serviços para iniciar"
       ],
@@ -4862,9 +4884,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esta hiperligação leva a um website que pode tentar roubar a sua informação, como palavras-passe e números de cartão de crédito."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este link poderá ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se tiver certeza de que a hiperligação é legítima, abra-a com um navegador diferente."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Esta ligação pode ser um ataque homográfico. Verifique se esta é a ligação que deseja visitar, ou não a abra."
@@ -5371,6 +5390,9 @@
       ],
       "Colors": [
         "Cores"
+      ],
+      "Company name": [
+        "Nome da empresa"
       ],
       "Confirm password": [
         "Confirmar a palavra-passe"
@@ -6168,7 +6190,7 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "Eliminar conta"
+        "Apagar conta"
       ],
       "Downgrade account": [
         "Mudar para uma conta com menos funcionalidades"
@@ -6300,7 +6322,7 @@
         "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Auto-delete spam and trashed messages": [
-        "Eliminar automaticamente mensagens do Spam e do Lixo"
+        "Eliminar mensagens de spam e lixeira automaticamente"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -6643,7 +6665,7 @@
     },
     "new_plans: title": {
       "Delete account?": [
-        "Eliminar conta?"
+        "Apagar a conta?"
       ],
       "Downgrade account?": [
         "Mudar para uma conta com menos funcionalidades?"
@@ -7976,6 +7998,12 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Agora pode ver quando os participantes estão livres para participar na sua reunião."
+      ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "Crie e adicione facilmente ligações de videoconferência aos seus eventos."
+      ],
+      "Video conferencing is here!": [
+        "A videoconferência está aqui!"
       ]
     },
     "sso": {
@@ -8753,7 +8781,7 @@
         "Detalhes"
       ],
       "Downgrade account": [
-        "Mudar para uma conta com menos funcionalidades"
+        "Optar por um plano inferior"
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Mudar para ${ downgradedPlanName }?"
@@ -8811,6 +8839,9 @@
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Obter as aplicações do ${ appName[APP_NAME] }"
+      ],
+      "Get Zooming faster": [
+        "Obtenha Zoom mais rápido"
       ],
       "Gift": [
         "Presente"
@@ -9620,6 +9651,12 @@
     "Zoom integration": {
       "Add Zoom meeting": [
         "Adicionar uma reunião Zoom"
+      ],
+      "Adding conferencing details": [
+        "Adicionar informações sobre a conferência"
+      ],
+      "Loading Zoom configuration": [
+        "A carregar a configuração de Zoom"
       ]
     },
     "Zoom Meeting": {

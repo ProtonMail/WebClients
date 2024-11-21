@@ -3579,10 +3579,10 @@
         "Effacez automatiquement les e-mails déplacés dans la corbeille et le dossier Indésirables/spam de plus de 30 jours."
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
-        "Triez automatiquement vos messages entrants avant qu'ils n'arrivent dans votre boîte de réception."
+        "Triez automatiquement vos messages entrants avant qu'ils n'arrivent dans votre boite de réception."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "Disponible avec ${ BRAND_NAME } Mail Plus"
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "Disponible avec ${ MAIL_APP_NAME } Plus"
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Bravo ! Vous avez gagné le maximum de ${ rewardsLimit } mois gratuits de ${ plusPlanName }."
@@ -3624,7 +3624,7 @@
         "Configurez le transfert automatique pour rediriger les e-mails entrants vers une autre adresse e-mail."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }."
+        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -4892,9 +4892,6 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Vous devez disposer d'une adresse de domaine personnalisée pour générer un jeton de soumission SMTP."
-      ],
-      "You've assigned all of your servers.": [
-        "Vous avez attribué tous vos serveurs."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Vous avez atteint le nombre maximum de caractères. Vous devez raccourcir votre message."
@@ -6695,6 +6692,9 @@
         "${ numberOfNonPrivateKeys } fichier chargé n'est pas une clé privée valide. Nous vous invitons à vérifier et à réessayer.",
         "${ numberOfNonPrivateKeys } fichiers chargés ne sont pas des clés privées valides. Nous vous invitons à vérifier et à réessayer."
       ],
+      "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
+        "${ PASS_APP_NAME } est un gestionnaire de mots de passe de nouvelle génération, conçu pour allier simplicité d’utilisation et productivité. Il est open source et codéveloppé par SimpleLogin et ${ BRAND_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'offre à vie de ${ PASS_SHORT_APP_NAME } n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ],
@@ -7120,6 +7120,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
+      ],
+      "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
+        "En créant un compte ${ PASS_APP_NAME } avec votre e-mail SimpleLogin, vous pouvez gérer vos alias directement depuis ${ PASS_APP_NAME }."
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Par défaut, les membres de l'organisation peuvent uniquement exporter les coffres-forts dont ils sont les propriétaires. Si cette option est activée, ils ne pourront pas exporter les données."
@@ -8626,9 +8629,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte de paiement."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous n'avez aucun doute sur la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
       ],
@@ -9219,8 +9219,8 @@
         "Vous n’avez pas l'autorisation d’effectuer cette action"
       ],
       "You have ${ availableCount } new server available.": [
-        "Vous avez ${ availableCount } nouveau serveur dédié disponible.",
-        "Vous avez ${ availableCount } nouveaux serveurs dédiés disponibles."
+        "Vous avez ${ availableCount } nouveau serveur disponible.",
+        "Vous avez ${ availableCount } nouveaux serveurs disponibles."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
         "Vous avez ${ unassignedAvailableCount } serveur récemment utilisé disponible. Pour allouer ce serveur à un autre pays, vous devrez attendre que la désactivation soit terminée.",
@@ -10779,7 +10779,7 @@
         "Alors"
       ],
       "Thomas": [
-        "Jean"
+        "Camille"
       ],
       "Time format": [
         "Format de l'heure"
@@ -11383,11 +11383,17 @@
       "Change password": [
         "Changer le mot de passe"
       ],
+      "Convert to SSO": [
+        "Passer à l'authentification unique (SSO)"
+      ],
       "Delete": [
         "Supprimer"
       ],
       "Delete and revoke invite": [
         "Supprimer et révoquer l'invitation"
+      ],
+      "Detach from SSO": [
+        "Retirer de l'authentification unique (SSO)"
       ],
       "Edit": [
         "Modifier"
@@ -12660,8 +12666,8 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Réinitialisez les mots de passe des utilisateurs et leur authentification à deux facteurs."
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Envoyez l'ensemble de votre trafic Internet à travers le réseau TOR en un seul clic."
+      "Route your internet traffic through the Tor network with a single click": [
+        "Envoyez l'ensemble de votre trafic internet à travers le réseau Tor en un seul clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela inclut la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
@@ -12800,7 +12806,7 @@
         "Mises à jour des produits ${ app } et ${ additionalApp }"
       ],
       "${ app } product updates": [
-        "Nouveautés sur les produits ${ app }"
+        "Nouveautés sur le produit ${ app }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Newsletter ${ BRAND_NAME } for Business"
@@ -13548,9 +13554,6 @@
       "Alerts for compromised emails and vulnerable passwords": [
         "Alertes pour les e-mails compromis et les mots de passe vulnérables"
       ],
-      "Alerts for vulnerable passwords": [
-        "Alertes de mots de passe faibles"
-      ],
       "Aliases for email protection from breaches": [
         "Alias d'adresse e-mail pour se protéger des fuites de données"
       ],
@@ -13724,6 +13727,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Offre spéciale de lancement : profitez de ${ title } à ${ price }, à vie !"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Commencer à utiliser ${ PASS_APP_NAME }"
+      ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "Des solutions sur mesure pour les grandes entreprises ayant des besoins spécifiques."
       ],
@@ -13815,7 +13821,7 @@
         "Facturation annuelle à ${ yearlyPrice }. Économisez ${ yearlySavedPrice } avec ${ passFamilyPlanName } (en comparaison de 6 abonnements ${ passPlusPlanName })."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
-        "Offre exclusive uniquement pour les premiers utilisateurs de ${ PASS_APP_NAME } de la première heure qui ont apporté leur soutien."
+        "Offre exclusive uniquement pour les utilisateurs de ${ PASS_APP_NAME } de la première heure qui ont apporté leur soutien."
       ],
       "Get it for ${ monthlyPrice }": [
         "Disponible pour ${ monthlyPrice }"
@@ -14039,7 +14045,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte, et à votre banque de le débiter en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8  semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
+        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte, et à votre banque de le débiter en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8 semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
       ],
       "Street address, postal code, and city": [
         "Adresse, code postal et ville"
@@ -14684,6 +14690,9 @@
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "L'adresse e-mail **${ email }** existe déjà comme utilisateur ${ BRAND_NAME }. Nous vous invitons à saisir l'adresse e-mail d'un utilisateur de votre fournisseur d'identité."
       ]
     },
     "saml: Info": {
@@ -14693,11 +14702,11 @@
       "Details": [
         "Informations"
       ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Saisissez l'adresse e-mail d'un utilisateur fourni par votre fournisseur d'identité pour **${ domainName }**."
+      ],
       "Test in progress...": [
         "Test en cours..."
-      ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Pour tester cette configuration SAML, veuillez saisir les identifiants de connexion de l'utilisateur associé à **${ domainName }**."
       ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Nous avons reçu une réponse SAML valide de la part de votre fournisseur d'identité. L'authentification unique (SSO) est activée pour votre organisation."
@@ -15335,6 +15344,9 @@
       ]
     },
     "Signup: Info": {
+      "10 aliases for email protection from breaches": [
+        "10 alias pour protéger vos e-mails contre les fuites de données"
+      ],
       "Advanced security features": [
         "Fonctionnalités de sécurité avancées"
       ],
@@ -15352,6 +15364,9 @@
       ],
       "Calendar, password manager, file storage, and VPN included": [
         "Calendrier, gestionnaire de mot de passe, stockage de fichiers et VPN inclus"
+      ],
+      "Device sync": [
+        "Synchronisation des appareils"
       ],
       "Email aliases": [
         "Alias d'adresse e-mail"
@@ -15394,6 +15409,9 @@
       ],
       "The only email service with:": [
         "Le seul service de messagerie avec :"
+      ],
+      "Unlimited passwords": [
+        "Nombre illimité de mots de passe"
       ],
       "Works on all devices": [
         "Fonctionne sur tous les appareils"
@@ -15608,6 +15626,14 @@
         "${ n } membre a sollicité votre aide pour se connecter.",
         "${ n } membres ont sollicité votre aide pour se connecter."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } utilisateur est passé à l'authentification unique (SSO).",
+        "${ n } utilisateurs sont passés à l'authentification unique (SSO)."
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } utilisateur a été retiré de l'authentification unique (SSO).",
+        "${ n } utilisateurs ont été retirés de l'authentification unique (SSO)."
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } utilisateur a rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez vérifier son compte :",
         "${ n } utilisateurs ont rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez vérifier leurs comptes :"
@@ -15622,6 +15648,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Les utilisateurs d'authentification unique (SSO) fournis par votre fournisseur d'identité seront supprimés** et vous devrez les créer manuellement pour les réintégrer dans votre organisation."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Les utilisateurs d'authentification unique (SSO) seront retirés de votre fournisseur d’identité** et reviendront à un compte sans authentification unique (SSO)."
       ],
       "Access denied": [
         "L'accès a été refusé."
@@ -15793,9 +15822,6 @@
       "Single sign-on removed": [
         "L'authentification unique a été retirée."
       ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Les identifiants de votre fournisseur d'identité seront supprimés."
-      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Ceci déconnectera l'utilisateur de ses autres appareils et il devra créer un nouveau mot de passe de secours."
       ],
@@ -15823,8 +15849,14 @@
       "Yes, it was me": [
         "Oui, c'était moi."
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Vous devrez créer manuellement les nouveaux utilisateurs pour les ajouter à votre organisation."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Vous allez être redirigé vers votre service tiers d'authentification unique."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "La configuration de votre authentification unique (SSO) sera supprimée."
       ]
     },
     "sso: auth device state": {
@@ -16386,7 +16418,7 @@
         "Les utilisateurs ne pourront plus envoyer de messages."
       ],
       "Users won’t be able to upload files on their devices": [
-        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils"
+        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils."
       ],
       "Version history": [
         "Historique des versions"
@@ -17895,7 +17927,7 @@
         "Révoquer le certificat"
       ],
       "Same inbox, shorter email address": [
-        "La même boite de réception et une adresse e-mail plus courte"
+        "La même boite de réception, avec une adresse e-mail plus courte"
       ],
       "SAML authentication": [
         "Authentification SAML"
@@ -18548,8 +18580,8 @@
       "stable release": [
         "version stable"
       ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Cette version du navigateur TOR n'est pas prise en charge. Nous vous invitons à mettre à jour avec la dernière ${ stableRelease }"
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Cette version du navigateur Tor n'est pas prise en charge. Nous vous invitons à mettre à jour avec la dernière ${ stableRelease }."
       ]
     },
     "unprivatization": {
@@ -18571,9 +18603,6 @@
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Un administrateur de l'organisation **${ orgName }** (**${ adminEmail }**) souhaite activer l'accès administrateur pour votre compte."
       ],
-      "Approve all": [
-        "Tout approuver"
-      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "En rendant l'utilisateur privé, vous ne pourrez pas l'aider à retrouver l'accès à ses données ou à son compte."
       ],
@@ -18585,6 +18614,9 @@
       ],
       "Cancel request to access user data?": [
         "Voulez-vous annuler la demande d'accès aux données de l'utilisateur ?"
+      ],
+      "Confirm all": [
+        "Confirmer tout"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "L'accès administrateur n'a pas pu être activé pour ${ n } utilisateur car ses clés de chiffrement ont été entre-temps mises à jour :",

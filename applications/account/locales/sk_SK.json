@@ -3604,9 +3604,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Automatické triedenie prichádzajúcich správ pred ich doručením do schránky."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "K dispozicii s ${ BRAND_NAME } Mail Plus"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulujeme! Získali ste maximum ${ rewardsLimit } bezplatných mesiacov ${ plusPlanName }."
       ],
@@ -4926,9 +4923,6 @@
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Ak chcete vygenerovať token na odoslanie SMTP, musíte mať vlastnú adresu domény."
       ],
-      "You've assigned all of your servers.": [
-        "Priradili ste všetky svoje servery."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Dosiahli ste maximálny počet znakov. Skráťte svoju správu."
       ],
@@ -5744,10 +5738,10 @@
         "Overte svoju identitu fyzickým bezpečnostným kľúčom U2F alebo FIDO2"
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "Dosiahli ste maximálnu dĺžku bezpečnostného kľúča ${ maxSecurityKeyLength }.",
-        "Dosiahli ste maximálnu dĺžku bezpečnostných kľúčov ${ maxSecurityKeyLength }.",
-        "Dosiahli ste maximálnu dĺžku bezpečnostných kľúčov ${ maxSecurityKeyLength }.",
-        "Dosiahli ste maximálnu dĺžku bezpečnostných kľúčov ${ maxSecurityKeyLength }."
+        "Dosiahli ste maximálnu dĺžku ${ maxSecurityKeyLength } bezpečnostného kľúča.",
+        "Dosiahli ste maximálnu dĺžku ${ maxSecurityKeyLength } bezpečnostných kľúčov.",
+        "Dosiahli ste maximálnu dĺžku ${ maxSecurityKeyLength } bezpečnostných kľúčov.",
+        "Dosiahli ste maximálnu dĺžku ${ maxSecurityKeyLength } bezpečnostných kľúčov."
       ],
       "Your two-factor authentication key is ready to use.": [
         "Váš dvojstupňový overovací kľúč je pripravený na použitie."
@@ -6756,7 +6750,7 @@
         "${ inviterEmailJSX } s vami chce zdieľať údaje v ${ PASS_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahradí prihlasovacie aj druhé heslo. Ak chcete prepnúť do režimu jedného hesla, zadajte jediné heslo, ktoré chcete používať, a kliknite na tlačidlo Uložiť."
+        "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahradí prihlasovacie aj druhé heslo. Ak chcete aktivovať režim jedného hesla, zadajte jediné heslo, ktoré chcete používať, a kliknite na tlačidlo Uložiť."
       ],
       "${ n } address": [
         "${ n } adresa",
@@ -6861,7 +6855,7 @@
         "${ userFound } nájdených používateľov"
       ],
       "${ vaultLink } created": [
-        "Štítok ${ vaultLink } bol vytvorený"
+        "${ vaultLink } bol vytvorený"
       ],
       "${ vaultLink } deleted": [
         "${ vaultLink } bol vymazaný"
@@ -6870,7 +6864,7 @@
         "${ vaultLink } zdieľaný emailom"
       ],
       "${ vaultLink } updated": [
-        "Štítok ${ vaultLink } bol aktualizovaný"
+        "${ vaultLink } bol aktualizovaný"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Pre pripojenie na úrovni krajiny sa vyžaduje ${ vpnPlus }."
@@ -7038,7 +7032,7 @@
         "Zasiahnutí používatelia sú v riadkoch"
       ],
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "Po uzamknutí budú musieť členovia organizácie odomknúť ${ PASS_APP_NAME } pomocou svojho hesla alebo kódu PIN atď."
+        "Po uzamknutí budú musieť členovia organizácie odomknúť ${ PASS_APP_NAME } pomocou svojho hesla alebo PIN kódu, atď."
       ],
       "Align left": [
         "Zarovnať vľavo"
@@ -7125,7 +7119,7 @@
         "Nikto s týmto odkazom nebude schopný synchronizovať alebo získať budúce aktualizácie vášho kalendára. Pokiaľ k nemu chcete umožniť prístup, budete musieť vytvoriť nový odkaz."
       ],
       "Are you sure you want to cancel editing the group?": [
-        "Skutočne chcete zrušiť úpravy skupiny?"
+        "Skutočne chcete zrušiť úpravu skupiny?"
       ],
       "Are you sure you want to delete this calendar?": [
         "Ste si istí, že chcete tento kalendár zmazať?"
@@ -7428,10 +7422,10 @@
         "Deaktivovať obnovenie pomocou telefónneho čísla"
       ],
       "Disabled on ${ formattedDateAndTime }": [
-        "Vypnuté od ${ formattedDateAndTime }"
+        "Deaktivované ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Vypnutím dvojfázového overovania bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
+        "Vypnutím dvojsupňového overovania bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
       ],
       "Discount": [
         "Zľava"
@@ -7551,7 +7545,7 @@
         "Povoľte TLS alebo SSL na externej službe, ak je podporovaná."
       ],
       "Enabled on ${ formattedDateAndTime }": [
-        "Zapnuté od ${ formattedDateAndTime }"
+        "Aktivované ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Opätovným aktivovaním obnovovacej frázy bude vygenerovaná nová."
@@ -7560,13 +7554,13 @@
         "Nastavenie šifrovania bolo aktualizované"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
-        "End-to-end šifrovanie emailov je pre túto skupinu vypnuté kvôli externým adresám."
+        "Pre túto skupinu je end-to-end šifrovanie emailov deaktivované kvôli externým adresám.."
       ],
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "End-to-end šifrovanie emailov je pre túto skupinu vypnuté. Môže byť povolené."
       ],
       "End-to-end email encryption is enabled for this group.": [
-        "Pre túto skupinu je povolené end-to-end šifrovanie emailov."
+        "Pre túto skupinu je end-to-end šifrovanie emailov aktivované."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa koncového bodu získaná od poskytovateľa identity (napr. https://idp.example.com/sso/saml)."
@@ -7902,13 +7896,13 @@
         "Zmena krajiny servera trvá 10 dní, preto sa uistite, že je váš výber správny."
       ],
       "Item autofilled in ${ vaultLink }": [
-        "Položka automaticky vyplnená v ${ vaultLink }"
+        "Položka automaticky vyplnená v trezore ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Položka v trezore automaticky vyplnená"
       ],
       "Item created in ${ vaultLink }": [
-        "Položka vytvorená v trezore ${ vaultLink }"
+        "Položka vytvorená v ${ vaultLink }"
       ],
       "Item created in vault": [
         "Položka v trezore vytvorená"
@@ -7938,13 +7932,13 @@
         "Položka v trezore vyňatá z koša"
       ],
       "Item read in ${ vaultLink }": [
-        "Položka prečítaná v ${ vaultLink }"
+        "Položka prečítaná v trezore ${ vaultLink }"
       ],
       "Item read in vault": [
         "Položka v trezore prečítaná"
       ],
       "Item updated in ${ vaultLink }": [
-        "Položka v trezore ${ vaultLink } bola aktualizovaná"
+        "Položka aktualizovaná v ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Položka v trezore aktualizovaná"
@@ -8780,9 +8774,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vedie na webovú stránku, ktorá sa môže pokúsiť ukradnúť vaše informácie, ako sú heslá a údaje z platobnej karty."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tento odkaz môže byť homografickým útokom a prehliadač Edge ho nemôže otvoriť. Ak ste si istí, že odkaz je legitímny, použite na jeho otvorenie iný prehliadač."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz môže byť homografickým útokom. Preverte si, či je toto odkaz, ktorý chcete otvoriť, alebo ho ignorujte."
       ],
@@ -8952,7 +8943,7 @@
         "Režim dvoch hesiel vyžaduje dve heslá: jedno na prihlásenie do konta a druhé na dešifrovanie údajov. (Rozšírené)"
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
-        "Režim dvoch hesiel používa samostatné heslá na prihlásenie a dešifrovanie údajov. V niektorých situáciách to poskytuje menšiu bezpečnostnú výhodu, avšak väčšine používateľov odporúčame režim jedného hesla. Ak chcete prepnúť do režimu dvoch hesiel, najprv nastavte prihlasovacie heslo a potom nastavte druhé heslo."
+        "Režim dvoch hesiel používa samostatné heslá na prihlásenie a dešifrovanie údajov. V niektorých situáciách to poskytuje menšiu bezpečnostnú výhodu, avšak väčšine používateľov odporúčame režim jedného hesla. Ak chcete aktivovať režim dvoch hesiel, najprv nastavte prihlasovacie heslo a potom nastavte druhé heslo."
       ],
       "Unable to check gateways monitoring current status.": [
         "Nie je možné skontrolovať aktuálny stav monitorovania brán."
@@ -10205,7 +10196,7 @@
         "Automatická odpoveď"
       ],
       "Auto-unsubscribe": [
-        "Autom. zrušenie odberu"
+        "Automatické zrušenie odberu"
       ],
       "Awarded": [
         "Ocenený"
@@ -12106,7 +12097,7 @@
         "${ PASS_APP_NAME } s neobmedzeným počtom hide-my-email aliasov"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
-        "${ PROTON_SENTINEL_NAME } program"
+        "Program ${ PROTON_SENTINEL_NAME }"
       ],
       "${ size } attachment size": [
         "${ size } veľkosť prílohy"
@@ -12669,7 +12660,7 @@
         "Bezplatný štartovací účet, ktorý je navrhnutý tak, aby poskytol súkromie pre všetkých už v základnom nastavení."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Neobmedzené súkromie a viac úložného priestoru až pre 2 užívateľov."
+        "Neobmedzené súkromie a viac úložného priestoru až pre 2 používateľov."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak svoj účet odstránite, prídete o propagačnú cenu a tá už nebude k dispozícii po opätovnom vytvorení nového účtu."
@@ -12921,9 +12912,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Obnoviť heslá a dvojstupňové overenie používateľov"
-      ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Smerujte vašu internetovú prevádzku cez sieť TOR jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
@@ -13274,22 +13262,22 @@
         "v čase udalosti"
       ],
       "day before": [
-        "deň pred",
+        "deň vopred",
         "dni vopred",
-        "dní pred",
-        "dní pred"
+        "dní vopred",
+        "dní vopred"
       ],
       "hour before": [
-        "hodinu pred",
-        "hodiny pred",
-        "hodín pred",
-        "hodín pred"
+        "hodinu vopred",
+        "hodiny vopred",
+        "hodín vopred",
+        "hodín vopred"
       ],
       "minute before": [
-        "minútu pred",
+        "minútu vopred",
         "minúty vopred",
-        "minút pred",
-        "minút pred"
+        "minút vopred",
+        "minút vopred"
       ],
       "on the same day": [
         "v rovnaký deň"
@@ -13297,8 +13285,8 @@
       "week before": [
         "týždeň vopred",
         "týždne vopred",
-        "týždňov pred",
-        "týždňov pred"
+        "týždňov vopred",
+        "týždňov vopred"
       ]
     },
     "Oauth instructions": {
@@ -13828,9 +13816,6 @@
       "Alerts for compromised emails and vulnerable passwords": [
         "Upozornenia na kompromitované emaily a zraniteľné heslá"
       ],
-      "Alerts for vulnerable passwords": [
-        "Upozornenia na zraniteľné heslá"
-      ],
       "Aliases for email protection from breaches": [
         "Aliasy na ochranu emailu pred únikmi informácií"
       ],
@@ -14231,7 +14216,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "Krajina pre fakturáciu"
+        "Krajina fakturácie"
       ],
       "Card number": [
         "Číslo karty"
@@ -14988,9 +14973,6 @@
       "Test in progress...": [
         "Prebieha testovanie..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Ak chcete otestovať toto nastavenie SAML, zadajte prihlasovacie údaje používateľa spojeného s **${ domainName }**."
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Od vášho poskytovateľa identity sme dostali platnú odpoveď SAML. SSO je pre vašu organizáciu povolené."
       ],
@@ -15508,6 +15490,12 @@
     "Setting": {
       "Enable Photos section": [
         "Zapnúť sekciu Fotografie"
+      ],
+      "Get updates about comments via email": [
+        "Dostávajte aktualizácie o komentároch prostredníctvom emailu"
+      ],
+      "Include document name in email notifications": [
+        "Zahrnúť názov dokumentu do emailových notifikácií"
       ]
     },
     "Settings description": {
@@ -15931,16 +15919,16 @@
         "${ boldedMemberAddress } vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením."
       ],
       "${ n } member requested your help to sign in.": [
-        "${ n } člen vás požiadal o pomoc s prihlasovaním.",
-        "${ n } členovia vás požiadali o pomoc s prihlasovaním.",
-        "${ n } členov vás požiadalo o pomoc s prihlasovaním.",
-        "${ n } členov vás požiadalo o pomoc s prihlasovaním."
+        "${ n } člen vás požiadal o pomoc s prihlásením.",
+        "${ n } členovia vás požiadali o pomoc s prihlásením.",
+        "${ n } členov vás požiadalo o pomoc s prihlásením.",
+        "${ n } členov vás požiadalo o pomoc s prihlásením."
       ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } používateľ sa pripojil k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účet:",
         "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:",
-        "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:",
-        "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:"
+        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:",
+        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:"
       ],
       "${ n } user is inactive. You can safely remove this user from your organization.": [
         "${ n } používateľ je neaktívny. Tohto používateľa môžete bezpečne odstrániť z organizácie.",
@@ -16130,9 +16118,6 @@
       ],
       "Single sign-on removed": [
         "Jednotné prihlásenie bolo odstránené"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Prihlasovacie údaje od vášho poskytovateľa identity budú zmazané."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tým sa používateľ odhlási z ostatných zariadení a bude musieť vytvoriť nové záložné heslo."
@@ -16384,16 +16369,16 @@
         "${ n } VPN pripojení zdarma na používateľa"
       ],
       "${ n } high-speed VPN connection": [
-        "${ n } vysoko rýchlostné VPN pripojenie",
-        "${ n } vysoko rýchlostné VPN pripojenia",
-        "${ n } vysoko rýchlostných VPN pripojení",
-        "${ n } vysoko rýchlostných VPN pripojení"
+        "${ n } vysokorýchlostné VPN pripojenie",
+        "${ n } vysokorýchlostné VPN pripojenia",
+        "${ n } vysokorýchlostných VPN pripojení",
+        "${ n } vysokorýchlostných VPN pripojení"
       ],
       "${ n } high-speed VPN connection per user": [
-        "${ n } vysoko rýchlostné VPN pripojenie na používateľa",
-        "${ n } vysoko rýchlostné VPN pripojenia na používateľa",
-        "${ n } vysoko rýchlostných VPN pripojení na používateľa",
-        "${ n } vysoko rýchlostných VPN pripojení na používateľa"
+        "${ n } vysokorýchlostné VPN pripojenie na používateľa",
+        "${ n } vysokorýchlostné VPN pripojenia na používateľa",
+        "${ n } vysokorýchlostných VPN pripojení na používateľa",
+        "${ n } vysokorýchlostných VPN pripojení na používateľa"
       ],
       "${ n } VPN connection": [
         "${ n } VPN pripojenie",
@@ -18003,7 +17988,7 @@
         "Ako vybrať dobré logo"
       ],
       "How to refer a friend and get credits": [
-        "Ako odporučiť priateľa a získať kredity"
+        "Ako odporučiť priateľom a získať kredity"
       ],
       "Human verification": [
         "Overenie, že nie ste robot"
@@ -18243,7 +18228,7 @@
         "Súbor pre obnovenie"
       ],
       "Refer a friend": [
-        "Odporučiť priateľa"
+        "Odporučiť priateľovi"
       ],
       "Reject device?": [
         "Odmietnuť zariadenie?"
@@ -18501,7 +18486,7 @@
         "Používatelia"
       ],
       "Users and addresses": [
-        "Uživatelia a adresy"
+        "Používatelia a adresy"
       ],
       "Verification": [
         "Overenie"
@@ -18712,6 +18697,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automaticky prepínať medzi preferovanými motívmi počas dňa a noci, synchronizovane s motívmi vášho systému"
+      ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "Kliknutím sem sa dozviete, ako vytvoriť vlastný podpis pomocou HTML."
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Skopírujte a vložte túto URL do poľa ACS (Assertion Consumer Service) URL vášho poskytovateľa identity"
@@ -18948,9 +18936,6 @@
     "Tor out of date": {
       "stable release": [
         "stabilná verzia"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Táto verzia TOR prehliadača nie je podporovaná. Prosím, aktualizujte na najnovšiu ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -18971,9 +18956,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Správca organizácie **${ orgName }** (**${ adminEmail }**) chce povoliť prístup správcu pre vaše konto."
-      ],
-      "Approve all": [
-        "Schváliť všetko"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Vytvorením súkromného používateľského účtu mu nebudete môcť pomôcť získať späť prístup k jeho údajom alebo účtu."

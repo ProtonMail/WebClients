@@ -351,12 +351,6 @@
       "Expand folder": [
         "Map uitklappen"
       ],
-      "Explore on my own": [
-        "Zelf verkennen"
-      ],
-      "Explore while you wait": [
-        "Ontdek terwijl u wacht"
-      ],
       "Export": [
         "Exporteren"
       ],
@@ -384,9 +378,6 @@
       "Get link": [
         "Link krijgen"
       ],
-      "Get started": [
-        "Aan de slag"
-      ],
       "Get Started": [
         "Aan de slag"
       ],
@@ -404,9 +395,6 @@
       ],
       "Go to my files": [
         "Ga naar mijn bestanden"
-      ],
-      "Go to panel ${ index }": [
-        "Ga naar paneel ${ index }"
       ],
       "Go to parent": [
         "Ga naar bovenliggende"
@@ -458,9 +446,6 @@
       ],
       "Increase": [
         "Verhogen"
-      ],
-      "Invite": [
-        "Uitnodigen"
       ],
       "Keep my subscription": [
         "Mijn abonnement behouden"
@@ -786,9 +771,6 @@
       "Sign out": [
         "Uitloggen"
       ],
-      "Skip": [
-        "Overslaan"
-      ],
       "Skip verification": [
         "Verificatie overslaan"
       ],
@@ -800,9 +782,6 @@
       ],
       "Start recovering": [
         "Herstellen starten"
-      ],
-      "Start setup": [
-        "Installatie starten"
       ],
       "Starting from ${ priceUnlimited }": [
         "Vanaf ${ priceUnlimited }"
@@ -881,9 +860,6 @@
       ],
       "Upload file": [
         "Bestand uploaden"
-      ],
-      "Upload files": [
-        "Upload bestanden"
       ],
       "Upload folder": [
         "Map uploaden"
@@ -3580,17 +3556,6 @@
         "Hiermee worden alle premium functies van ${ BRAND_NAME } verwijderd voor elk gezinslid."
       ]
     },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users": [
-        "Configureer uw gezinsaccount en nodig gebruikers uit"
-      ],
-      "Set up your family": [
-        "Uw gezin configureren"
-      ],
-      "Set up your family account": [
-        "Uw gezinsaccount configureren"
-      ]
-    },
     "familyOffer_2023:Title": {
       "Delete family group?": [
         "Gezinsgroep verwijderen?"
@@ -5260,9 +5225,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Deze koppeling kan een homografie-aanval zijn en kan niet geopend worden in Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze koppeling kan een homografie-aanval zijn. Controleer eerst of de koppeling juist is, of open hem niet."
       ],
@@ -6904,6 +6866,9 @@
         "Bestandsversiegeschiedenis van ${ options } dag",
         "Bestandsversiegeschiedenis van ${ options } dagen"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + levenslang SimpleLogin"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
         "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
@@ -7515,6 +7480,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Labels zijn simpele tags die u kunt toevoegen aan berichten zodat u ze makkelijker kunt vinden of filteren"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Levenslang toegang tot ${ PASS_APP_NAME } + SimpleLogin premium functies."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Zoals een map, is een kluis een handige manier om uw items te organiseren"
       ],
@@ -7577,9 +7545,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
-      ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Routeer uw internetverkeer door het TOR-netwerk met een enkele klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
@@ -7998,9 +7963,6 @@
       "Maybe later": [
         "Misschien later"
       ],
-      "Next": [
-        "Volgende"
-      ],
       "Select theme": [
         "Selecteer thema"
       ],
@@ -8009,9 +7971,6 @@
       ],
       "Skip for now": [
         "Sla voorlopig over"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "Begin met ${ DRIVE_APP_NAME }"
       ],
       "Try the app": [
         "Probeer de app"
@@ -8063,9 +8022,6 @@
       "Free up hard drive space on your computer": [
         "Maak ruimte vrij op de harde schijf op uw computer"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "Ga aan de slag met ${ DRIVE_APP_NAME } en we zullen uw opslag upgraden naar 5 GB!"
-      ],
       "Get the desktop app": [
         "Download de desktop-app"
       ],
@@ -8108,33 +8064,14 @@
       "Securely share files and folders": [
         "Veilig bestanden en mappen delen"
       ],
-      "Securely store, manage, and share your business-critical files with confidence.": [
-        "Sla uw bedrijfskritische bestanden veilig op, beheer ze en deel ze met vertrouwen."
-      ],
-      "Set a recovery method": [
-        "Stel een herstelmethode in"
-      ],
-      "Share a file": [
-        "Een bestand delen"
-      ],
       "Share files & folders": [
         "Deel bestanden & mappen"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Vul eenvoudigweg het volgende vandaag nog in:",
-        "Vul eenvoudigweg het volgende binnen de ${ expiresInDays } dagen in:"
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "Sla bestanden op en deel ze veilig. Begin met het beveiligen van bestanden die voor u het meest privé zijn, zoals ID's, contracten en persoonlijke foto's."
       ],
       "Sync and access your files from anywhere": [
         "Synchroniseer en krijg overal toegang tot uw bestanden"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "De eigenaar moet de toegang tot delen goedkeuren. U ontvangt een e-mail zodra dit is gedaan."
-      ],
-      "Upload a file": [
-        "Upload een bestand"
       ],
       "Upload your first file": [
         "Upload uw eerste bestand"
@@ -8144,46 +8081,6 @@
       ],
       "Work together": [
         "Werk samen"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "Uw vertrouwde online kluis voor vitale documenten en te koesteren herinneringen."
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Configureer uw organisatie, koppel uw domeinnaam, en maak accounts aan om ervoor te zorgen dat alle leden van uw organisatie beveiligd zijn."
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "Ontdek alle ${ BRAND_NAME }-diensten"
-      ],
-      "Pick a theme": [
-        "Thema selecteren"
-      ],
-      "Set up your organization": [
-        "Stel uw organisatie in"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Gebruik de app-kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "U kunt uw thema altijd wijzigen in uw instellingen."
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "De laatste goedkeuring is bezig"
-      ],
-      "Hang tight!": [
-        "Hou vol!"
-      ],
-      "Invite team members": [
-        "Teamleden uitnodigen"
-      ],
-      "Upload and protect your important files": [
-        "Upload en bescherm uw belangrijke bestanden"
-      ],
-      "Your welcome bonus": [
-        "Uw welkomsbonus"
       ]
     },
     "Option": {
@@ -8339,6 +8236,9 @@
       ],
       "Please select your billing state first.": [
         "Selecteer eerst uw factureringsstaat."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Wordt verlengd voor ${ price }, altijd opzegbaar."
       ],
       "Select billing country to pay": [
         "Selecteer factureringsland om te betalen"

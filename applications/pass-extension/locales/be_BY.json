@@ -1124,6 +1124,12 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } запрашэнне паспяхова адпраўлена",
+        "${ count } запрашэнні паспяхова адпраўлены",
+        "${ count } запрашэнняў паспяхова адпраўлены",
+        "${ count } запрашэнняў паспяхова адпраўлены"
+      ],
       "${ count } time": [
         "${ count } раз",
         "${ count } разы",

@@ -351,12 +351,6 @@
       "Expand folder": [
         "Expandir pasta"
       ],
-      "Explore on my own": [
-        "Explorar por conta própria"
-      ],
-      "Explore while you wait": [
-        "Explore enquanto espera"
-      ],
       "Export": [
         "Exportar"
       ],
@@ -384,9 +378,6 @@
       "Get link": [
         "Obter link"
       ],
-      "Get started": [
-        "Começar"
-      ],
       "Get Started": [
         "Começar"
       ],
@@ -404,9 +395,6 @@
       ],
       "Go to my files": [
         "Ir para meus arquivos"
-      ],
-      "Go to panel ${ index }": [
-        "Ir para o painel ${ index }"
       ],
       "Go to parent": [
         "Ir para pasta principal"
@@ -458,9 +446,6 @@
       ],
       "Increase": [
         "Aumentar"
-      ],
-      "Invite": [
-        "Convidar"
       ],
       "Keep my subscription": [
         "Manter minha assinatura"
@@ -786,9 +771,6 @@
       "Sign out": [
         "Encerrar sessão"
       ],
-      "Skip": [
-        "Ignorar"
-      ],
       "Skip verification": [
         "Pular verificação"
       ],
@@ -800,9 +782,6 @@
       ],
       "Start recovering": [
         "Comece a recuperar"
-      ],
-      "Start setup": [
-        "Iniciar configuração"
       ],
       "Starting from ${ priceUnlimited }": [
         "Iniciando a partir de ${ priceUnlimited }"
@@ -881,9 +860,6 @@
       ],
       "Upload file": [
         "Enviar arquivo"
-      ],
-      "Upload files": [
-        "Enviar arquivos"
       ],
       "Upload folder": [
         "Enviar pasta"
@@ -1177,13 +1153,13 @@
     },
     "BF2024: Footer": {
       "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao Pass Plus."
+        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } Plus não tem preço de renovação, ou seja, é um pagamento único para acesso vitalício ao Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
         "Os descontos são baseados no preço mensal padrão."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Se comprar o Pass Family ou Unlimited ,sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
+        "Se você adquirir o Pass Family ou Unlimited, sua assinatura será renovada automaticamente pela taxa com desconto e duração padrão ao final de seu ciclo de faturamento."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
@@ -1228,8 +1204,8 @@
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, aliases ide-my-email ilimitados e muito mais.",
-        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, aliases ide-my-email ilimitados e muito mais."
+        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, aliases hide-my-email ilimitados e muito mais.",
+        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, aliases hide-my-email ilimitados e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
@@ -3176,7 +3152,7 @@
         "Você atingiu o número máximo de calendários."
       ],
       "You have reached the number of contacts limit for your account": [
-        "Você atingiu o número limite de contatos da sua conta"
+        "Você atingiu o limite de contatos para sua conta"
       ],
       "You must set a name": [
         "Você deve especificar um nome"
@@ -3581,17 +3557,6 @@
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
         "Esta ação removerá todos os recursos ${ BRAND_NAME } premium para cada membro da família."
-      ]
-    },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users": [
-        "Configure sua conta familiar e convide usuários"
-      ],
-      "Set up your family": [
-        "Configure sua família"
-      ],
-      "Set up your family account": [
-        "Configure sua conta familiar"
       ]
     },
     "familyOffer_2023:Title": {
@@ -4127,7 +4092,7 @@
         "${ nbFile } arquivos criptografados..."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }. O preço e a data de renovação da sua assinatura ${ planTitle } permanecem inalterados."
@@ -4926,7 +4891,7 @@
         "Tamanho da organização"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Os nossos alertas priorizam a segurança. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
+        "Nossos alertas priorizam a segurança. Se você não reconhecer nenhuma das informações violadas, você pode ignorar este relatório com segurança."
       ],
       "Owner": [
         "Proprietário"
@@ -5271,9 +5236,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este link pode ser um ataque homógrafo e não é possível abri-lo pelo navegador Edge. Se você tiver certeza de que o link é legítimo, use um navegador diferente para abri-lo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este link pode ser um ataque homográfico. Verifique se este é o link que você deseja visitar, caso contrário, não abra."
@@ -7608,9 +7570,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Redefina as senhas de usuários e redefina a autenticação de dois fatores para os usuários"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Envie todo o seu tráfego na internet por meio da rede TOR com um único clique"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com um armazenamento cloud criptografado. Inclui sincronização automática, compartilhamento de arquivo criptografado, e mais."
       ],
@@ -8028,9 +7987,6 @@
       "Maybe later": [
         "Talvez mais tarde"
       ],
-      "Next": [
-        "Próximo"
-      ],
       "Select theme": [
         "Selecionar tema"
       ],
@@ -8039,9 +7995,6 @@
       ],
       "Skip for now": [
         "Pular por enquanto"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "Começar a usar o ${ DRIVE_APP_NAME }"
       ],
       "Try the app": [
         "Experimente o aplicativo"
@@ -8093,9 +8046,6 @@
       "Free up hard drive space on your computer": [
         "Libere espaço no disco duro de seu computador"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "Comece a usar o ${ DRIVE_APP_NAME } e atualizaremos seu armazenamento para 5 GB!"
-      ],
       "Get the desktop app": [
         "Obter o aplicativo para computador"
       ],
@@ -8138,33 +8088,14 @@
       "Securely share files and folders": [
         "Compartilhe arquivos e pastas com segurança"
       ],
-      "Securely store, manage, and share your business-critical files with confidence.": [
-        "Armazene, gerencie e compartilhe seus arquivos de negócios essenciais de forma segura e confiável."
-      ],
-      "Set a recovery method": [
-        "Definir um método de recuperação"
-      ],
-      "Share a file": [
-        "Compartilhar um arquivo"
-      ],
       "Share files & folders": [
         "Compartilhar arquivos e pastas"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Basta preencher o seguinte dentro de ${ expiresInDays } dia:",
-        "Basta preencher o seguinte dentro de ${ expiresInDays } dias:"
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "Armazene seus arquivos e compartilhe-os com segurança. Comece protegendo seus arquivos mais privados, como identidades, contratos e fotos pessoais."
       ],
       "Sync and access your files from anywhere": [
         "Sincronize e acesse seus arquivos de qualquer lugar"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "O proprietário precisa confirmar o acesso de compartilhamento. Você receberá um e-mail quando isso for feito."
-      ],
-      "Upload a file": [
-        "Enviar um arquivo"
       ],
       "Upload your first file": [
         "Faça upload de seu primeiro arquivo"
@@ -8174,46 +8105,6 @@
       ],
       "Work together": [
         "Trabalhe em conjunto"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "Seu cofre online confiável para documentos vitais e memórias preciosas."
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Configure a sua organização, vincule seu nome de domínio e crie contas para garantir que todos os membros da sua organização estejam protegidos."
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "Descubra todos os serviços da ${ BRAND_NAME }"
-      ],
-      "Pick a theme": [
-        "Escolha um tema"
-      ],
-      "Set up your organization": [
-        "Configure a sua organização"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Use o seletor de aplicativos no canto superior esquerdo para acessar todos${ BRAND_NAME }Serviços:${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }e ${ PASS_SHORT_APP_NAME }"
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "Você poderá alterar seu tema a qualquer momento nas configurações."
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "Aprovação final em progresso"
-      ],
-      "Hang tight!": [
-        "Aguente firme!"
-      ],
-      "Invite team members": [
-        "Convidar membros da equipe"
-      ],
-      "Upload and protect your important files": [
-        "Envie e proteja seus arquivos importantes"
-      ],
-      "Your welcome bonus": [
-        "Seu bônus de boas-vindas"
       ]
     },
     "Option": {

@@ -3932,6 +3932,12 @@
       "A problem occurred, please try again.": [
         "Der opstod et problem. Prøv venligst igen."
       ],
+      "Add at least one action": [
+        "Tilføj mindst én handling"
+      ],
+      "Add at least one condition": [
+        "Tilføj mindst én betingelse"
+      ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
@@ -4109,6 +4115,9 @@
       "Invalid expiration time": [
         "Ugyldigt udløbstidspunkt"
       ],
+      "Invalid IBAN": [
+        "Ugyldig IBAN"
+      ],
       "Invalid name": [
         "Ugyldigt navn"
       ],
@@ -4270,6 +4279,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Afsendelse af vedhæftede filer er begrænset, indtil du overholder dine abonnementsgrænser eller opgraderer."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Afsendelse af vedhæftede filer er begrænset, så længe du overskrider dine abonnementsbegrænsninger, eller indtil du opgraderer dit abonnement."
+      ],
       "Signature not verified": [
         "Signatur ikke bekræftet"
       ],
@@ -4317,6 +4329,9 @@
       ],
       "Thanks for the feedback!": [
         "Tak for din feedback!"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Det skyldige beløb er ændret. Prøv venligst igen."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Vedhæftningen kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filen med et program som for eksempel GnuPG.",
@@ -4431,6 +4446,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nået det maksimale antal kalendere."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du har nået grænsen for antallet af kontakter på din konto"
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -5135,6 +5153,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } i Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } dag",
+        "${ remainingDaysCount } dage"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } dag tilbage",
+        "${ remainingDaysCount } dage tilbage"
+      ],
       "account logins": [
         "konto-logins"
       ],
@@ -5772,6 +5798,9 @@
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } giver en enkel måde at oprette adgang til upålidelige tredjepartssteder, hvor du ikke ønsker at afsløre din rigtige e-mailadresse."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
       ],
@@ -6359,6 +6388,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Hvis du mener vi har begået en fejl, bedes du ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
@@ -7040,9 +7072,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browseren. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
       ],
@@ -7280,6 +7309,9 @@
       ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Vi har abonnementer, der er designet specifikt til brugere som dig, der har brug for mere end én e-mailadresse.\nFor at fjerne begrænsninger, kan du opgradere til et betalt abonnement."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Vi skal have bekræftet din betalingsmetode hos din bank."
@@ -9107,6 +9139,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruger",
+        "Op til ${ numberOfUsers } brugere"
       ],
       "${ options }-day file version history": [
         "${ options }-dags filversionshistorik",
@@ -11469,6 +11505,22 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } tilbyder ${ planMaxSpace }-lagerplads pr. bruger til e-mails, vedhæftninger, begivenheder, filer og adgangskoder. Du er også berettiget til årlige lagerbonusser."
       ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalender pr. bruger",
+        "${ planNumberOfCalendars } kalendere pr. bruger"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadresse",
+        "${ planNumberOfEmails } e-mailadresser"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-mailadresse pr. bruger",
+        "${ planNumberOfEmails } e-mailadresser pr. bruger"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } bruger",
+        "${ planNumberOfUsers } brugere"
+      ],
       "2 users": [
         "2 brugere"
       ],
@@ -12333,14 +12385,8 @@
       "Create contact": [
         "Opret kontakt"
       ],
-      "Create folder": [
-        "Opret mappe"
-      ],
       "Create folder \"${ search }\"": [
         "Opret mappe \"${ search }\""
-      ],
-      "Create label": [
-        "Opret etiket"
       ],
       "Create label \"${ search }\"": [
         "Opret etiket \"${ search }\""

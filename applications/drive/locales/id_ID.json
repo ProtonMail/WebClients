@@ -348,12 +348,6 @@
       "Expand folder": [
         "Lebarkan folder"
       ],
-      "Explore on my own": [
-        "Jelajahi secara mandiri"
-      ],
-      "Explore while you wait": [
-        "Jelajahi selagi Anda menunggu"
-      ],
       "Export": [
         "Ekspor"
       ],
@@ -381,9 +375,6 @@
       "Get link": [
         "Dapatkan tautan"
       ],
-      "Get started": [
-        "Selesai"
-      ],
       "Get Started": [
         "Mulai"
       ],
@@ -401,9 +392,6 @@
       ],
       "Go to my files": [
         "Ke file saya"
-      ],
-      "Go to panel ${ index }": [
-        "Ke panel ${ index }"
       ],
       "Go to parent": [
         "Pergi ke induk"
@@ -455,9 +443,6 @@
       ],
       "Increase": [
         "Tingkatkan"
-      ],
-      "Invite": [
-        "Undang"
       ],
       "Keep my subscription": [
         "Pertahankan langganan saya"
@@ -733,7 +718,7 @@
         "Lihat caranya"
       ],
       "See plan features": [
-        "Lihat seluruh fitur paket"
+        "Lihat fitur paket"
       ],
       "See version history": [
         "Lihat riwayat versi"
@@ -783,9 +768,6 @@
       "Sign out": [
         "Keluar"
       ],
-      "Skip": [
-        "Lewati"
-      ],
       "Skip verification": [
         "Lewati verifikasi"
       ],
@@ -797,9 +779,6 @@
       ],
       "Start recovering": [
         "Mulai memulihkan"
-      ],
-      "Start setup": [
-        "Mulai penyetelan"
       ],
       "Starting from ${ priceUnlimited }": [
         "Mulai dari ${ priceUnlimited }"
@@ -877,9 +856,6 @@
         "Tetap unggah"
       ],
       "Upload file": [
-        "Unggah berkas"
-      ],
-      "Upload files": [
         "Unggah berkas"
       ],
       "Upload folder": [
@@ -1582,7 +1558,7 @@
         "Utama"
       ],
       "Mobile": [
-        "Mobile"
+        "Seluler"
       ],
       "Other": [
         "Lainnya"
@@ -2749,7 +2725,7 @@
         "Alias tidak valid"
       ],
       "Alias is required": [
-        "Alias tidak valid"
+        "Alias dibutuhkan"
       ],
       "Alias options could not be resolved": [
         "Opsi alias tidak dapat diuraikan"
@@ -2932,10 +2908,10 @@
         "Tanda tangan hilang"
       ],
       "Name is required": [
-        "Nama harus diisi"
+        "Nama dibutuhkan"
       ],
       "No calendars found to import": [
-        "Tidak ada kalender yang dapat diimpor"
+        "Tidak ada kalender yang ditemukan untuk diimpor"
       ],
       "No contacts found to import": [
         "Tidak ada kontak yang dapat diimpor"
@@ -3554,17 +3530,6 @@
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
         "Ini akan menghapus semua fitur ${ BRAND_NAME } premium untuk setiap anggota keluarga."
-      ]
-    },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users": [
-        "Atur akun keluarga Anda dan undang pengguna"
-      ],
-      "Set up your family": [
-        "Siapkan keluarga Anda"
-      ],
-      "Set up your family account": [
-        "Siapkan akun keluarga Anda"
       ]
     },
     "familyOffer_2023:Title": {
@@ -4910,7 +4875,7 @@
         "Silakan gunakan browser lain atau unduh berkas yang bersangkutan."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
+        "Silakan tunggu hingga perubahan Anda tersinkron dengan server."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Silakan tunggu selagi kami mencari kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
@@ -5172,9 +5137,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tautan ini mungkin merupakan serangan homograf dan tidak dapat dibuka oleh browser Edge. Apabila Anda yakin tautan tersebut absah, silakan gunakan browser lain untuk membukanya."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
@@ -5489,7 +5451,7 @@
         "Anda perlu akses"
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "Anda akan kehilangan akses fitur ${ planTitle } pada tanggal ini."
+        "Anda akan kehilangan akses ke berbagai fitur ${ planTitle } pada tanggal ini."
       ],
       "You will lose all unsaved changes.": [
         "Anda akan kehilangan seluruh perubahan yang belum disimpan."
@@ -5501,10 +5463,10 @@
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Anda telah mencapai batas jumlah alamat yang dapat ditetapkan ke grup kontak"
+        "Anda telah mencapai batas jumlah alamat dalam grup kontak:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
-        "Anda telah mencapai batas jumlah alamat yang dapat ditetapkan ke grup kontak"
+        "Anda telah mencapai batas jumlah alamat dalam grup kontak"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
@@ -7504,9 +7466,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Alihkan lalu lintas internet Anda melalui jaringan TOR dengan satu kali klik"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
@@ -7907,9 +7866,6 @@
       "Maybe later": [
         "Mungkin nanti"
       ],
-      "Next": [
-        "Selanjutnya"
-      ],
       "Select theme": [
         "Pilih tema"
       ],
@@ -7918,9 +7874,6 @@
       ],
       "Skip for now": [
         "Lewati untuk sementara"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "Mulai gunakan ${ DRIVE_APP_NAME }"
       ],
       "Try the app": [
         "Coba aplikasinya"
@@ -7972,9 +7925,6 @@
       "Free up hard drive space on your computer": [
         "Kosongkan ruang perangkat keras pada komputer Anda"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "Mulai gunakan ${ DRIVE_APP_NAME } dan kami akan meningkatkan ruang penyimpanan Anda ke 5 GB!"
-      ],
       "Get the desktop app": [
         "Dapatkan aplikasi desktop"
       ],
@@ -8017,32 +7967,14 @@
       "Securely share files and folders": [
         "Bagikan berkas dan folder secara aman"
       ],
-      "Securely store, manage, and share your business-critical files with confidence.": [
-        "Simpan, kelola, dan bagikan berkas bisnis penting Anda secara aman tanpa keraguan."
-      ],
-      "Set a recovery method": [
-        "Tentukan metode pemulihan"
-      ],
-      "Share a file": [
-        "Bagikan berkas"
-      ],
       "Share files & folders": [
         "Bagikan berkas & folder"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Anda hanya perlu menyelesaikan langkah-langkah berikut dalam ${ expiresInDays } hari ke depan:"
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "Simpan berkas Anda dan bagikan berkas ini secara aman. Mulailah dengan mengamankan berkas milik Anda yang paling pribadi, seperti KTP, kontrak, dan foto personal."
       ],
       "Sync and access your files from anywhere": [
         "Sinkronkan dan akses berkas Anda dari mana saja"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Pemilik perlu untuk mengonfirmasi akses berbagi. Anda akan memperoleh email setelah akses telah dikonfirmasi."
-      ],
-      "Upload a file": [
-        "Unggah berkas"
       ],
       "Upload your first file": [
         "Unggah berkas pertama Anda"
@@ -8052,46 +7984,6 @@
       ],
       "Work together": [
         "Bekerja bersama"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "Brankas online terpercaya untuk berbagai dokumen penting dan momen berharga Anda."
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Atur organisasi Anda, tautkan nama domain Anda, dan buat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "Telusuri seluruh layanan ${ BRAND_NAME }"
-      ],
-      "Pick a theme": [
-        "Pilih tema"
-      ],
-      "Set up your organization": [
-        "Siapkan organisasi Anda"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Gunakan pemilih aplikasi di kiri atas untuk mengakses layanan ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } dan ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "Anda akan dapat mengubah tema Anda kapan pun pada menu pengaturan."
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "Persetujuan akhir sedang berlangsung"
-      ],
-      "Hang tight!": [
-        "Bersiaplah!"
-      ],
-      "Invite team members": [
-        "Undang anggota tim"
-      ],
-      "Upload and protect your important files": [
-        "Unggah dan lindungi berkas penting Anda"
-      ],
-      "Your welcome bonus": [
-        "Hadiah selamat datang Anda"
       ]
     },
     "Option": {
@@ -8483,7 +8375,7 @@
         "Utama"
       ],
       "Mobile": [
-        "Mobile"
+        "Seluler"
       ],
       "Other": [
         "Lainnya"
@@ -8831,7 +8723,7 @@
         "6 pengguna"
       ],
       "All paid Mail and Calendar features": [
-        "Semua fitur Mail dan Calendar yang berbayar"
+        "Seluruh fitur Mail dan Calendar berbayar"
       ],
       "High speed VPN": [
         "VPN berkecepatan tinggi"

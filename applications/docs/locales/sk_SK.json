@@ -4701,9 +4701,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vedie na webovú stránku, ktorá sa môže pokúsiť ukradnúť vaše informácie, ako sú heslá a údaje z platobnej karty."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tento odkaz môže byť homografickým útokom a prehliadač Edge ho nemôže otvoriť. Ak ste si istí, že odkaz je legitímny, použite na jeho otvorenie iný prehliadač."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz môže byť homografickým útokom. Preverte si, či je toto odkaz, ktorý chcete otvoriť, alebo ho ignorujte."
       ],
@@ -6153,7 +6150,7 @@
         "${ PASS_APP_NAME } s neobmedzeným počtom hide-my-email aliasov"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
-        "${ PROTON_SENTINEL_NAME } program"
+        "Program ${ PROTON_SENTINEL_NAME }"
       ],
       "${ size } attachment size": [
         "${ size } veľkosť prílohy"
@@ -6653,7 +6650,7 @@
         "Bezplatný štartovací účet, ktorý je navrhnutý tak, aby poskytol súkromie pre všetkých už v základnom nastavení."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Neobmedzené súkromie a viac úložného priestoru až pre 2 užívateľov."
+        "Neobmedzené súkromie a viac úložného priestoru až pre 2 používateľov."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak svoj účet odstránite, prídete o propagačnú cenu a tá už nebude k dispozícii po opätovnom vytvorení nového účtu."
@@ -6840,9 +6837,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Obnoviť heslá a dvojstupňové overenie používateľov"
-      ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Smerujte vašu internetovú prevádzku cez sieť TOR jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
@@ -7318,7 +7312,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "Krajina pre fakturáciu"
+        "Krajina fakturácie"
       ],
       "Card number": [
         "Číslo karty"
@@ -8290,16 +8284,16 @@
         "${ n } VPN pripojení zdarma na používateľa"
       ],
       "${ n } high-speed VPN connection": [
-        "${ n } vysoko rýchlostné VPN pripojenie",
-        "${ n } vysoko rýchlostné VPN pripojenia",
-        "${ n } vysoko rýchlostných VPN pripojení",
-        "${ n } vysoko rýchlostných VPN pripojení"
+        "${ n } vysokorýchlostné VPN pripojenie",
+        "${ n } vysokorýchlostné VPN pripojenia",
+        "${ n } vysokorýchlostných VPN pripojení",
+        "${ n } vysokorýchlostných VPN pripojení"
       ],
       "${ n } high-speed VPN connection per user": [
-        "${ n } vysoko rýchlostné VPN pripojenie na používateľa",
-        "${ n } vysoko rýchlostné VPN pripojenia na používateľa",
-        "${ n } vysoko rýchlostných VPN pripojení na používateľa",
-        "${ n } vysoko rýchlostných VPN pripojení na používateľa"
+        "${ n } vysokorýchlostné VPN pripojenie na používateľa",
+        "${ n } vysokorýchlostné VPN pripojenia na používateľa",
+        "${ n } vysokorýchlostných VPN pripojení na používateľa",
+        "${ n } vysokorýchlostných VPN pripojení na používateľa"
       ],
       "${ n } VPN connection": [
         "${ n } VPN pripojenie",

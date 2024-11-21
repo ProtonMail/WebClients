@@ -3608,9 +3608,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Аўтаматычна сартуйце свае ўваходныя паведамленні перад тым, як яны трапяць у вашу паштовую скрыню."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "Даступна з ${ BRAND_NAME } Mail Plus"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Віншуем! Вы зарабілі максімальную колькасць з ${ rewardsLimit } бясплатных месяцаў тарыфнага плана ${ plusPlanName }."
       ],
@@ -4929,9 +4926,6 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Вам неабходна мець карыстальніцкі адрас дамена, каб згенерыраваць адпраўку токена SMTP."
-      ],
-      "You've assigned all of your servers.": [
-        "Вам прызначаны ўсе вашы серверы."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Вы дасягнулі максімальнай колькасці сімвалаў. Скараціце сваё паведамленне."
@@ -8783,9 +8777,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Гэта спасылка можа быць гамаграфічнай атакай і не можа быць адкрыта ў браўзеры Edge. Калі вы ўпэўнены, што спасылка з'яўляецца надзейнай, паспрабуйце адкрыць яе ў іншым браўзеры."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Гэта спасылка можа быць гамаграфічнай атакай. Праверце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
@@ -12926,9 +12917,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Скідайце паролі і двухфактарную аўтэнтыфікацыю карыстальнікаў"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Накіроўвайце свой трафік праз сетку TOR адным націскам"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
@@ -13831,9 +13819,6 @@
       ],
       "Alerts for compromised emails and vulnerable passwords": [
         "Папярэджанні для скампраметаваных лістоў і ўразлівых пароляў"
-      ],
-      "Alerts for vulnerable passwords": [
-        "Папярэджанні для ўразлівых пароляў"
       ],
       "Aliases for email protection from breaches": [
         "Псеўданімы для абароны электроннай пошты ад парушэнняў"
@@ -14992,9 +14977,6 @@
       "Test in progress...": [
         "Адбываецца тэсціраванне..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Увядзіце ўліковыя даныя ўваходу для карыстальніка, якія звязаны з **${ domainName }**. Дадзеныя дзеянні дазволяць пратэсціраваць гэту канфігурацыю SAML."
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Атрыманы правераны адказ SAML ад вашага пастаўшчыка пасведчанняў. SSO уключаны для вашай арганізацыі."
       ],
@@ -15512,6 +15494,12 @@
     "Setting": {
       "Enable Photos section": [
         "Уключыць раздзел Фатаграфіі"
+      ],
+      "Get updates about comments via email": [
+        "Атрымлівайце абнаўленні аб каментарыях па электроннай пошце"
+      ],
+      "Include document name in email notifications": [
+        "Уключаць назву дакумента ў апавяшчэнні па электроннай пошце"
       ]
     },
     "Settings description": {
@@ -16134,9 +16122,6 @@
       ],
       "Single sign-on removed": [
         "Адзіны ўваход выдалены"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Уліковыя даныя ад вашага пастаўшчыка пасведчанняў будуць выдалены."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Гэта дзеянне прывядзе да выхаду карыстальніка з яго іншых прылад, і яму давядзецца стварыць новы рэзервовы пароль."
@@ -18955,9 +18940,6 @@
     "Tor out of date": {
       "stable release": [
         "стабільны выпуск"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Гэта версія браўзера TOR не падтрымліваецца. Абнавіце праграму да апошняй ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -18978,9 +18960,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Адміністратар арганізацыі **${ orgName }** (**${ adminEmail }**) хоча ўключыць доступ адміністратара для вашага ўліковага запісу."
-      ],
-      "Approve all": [
-        "Ухваліць усе"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "У вас больш не будзе магчымасці дапамагаць карыстальніку аднавіць доступ да яго даных або ўліковага запісу, калі ён стане прыватным."

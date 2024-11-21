@@ -3379,9 +3379,6 @@
       ]
     },
     "Description": {
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "Elérhető ${ BRAND_NAME } Mail Plus előfizetéssel"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulálunk! Megszerezte a maximum ${ rewardsLimit } hónapnyi ingyenes ${ plusPlanName } elérést."
       ],
@@ -7964,9 +7961,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ez a hivatkozás egy hamisított címre mutató (homográf) támadásnak néz ki és az Edge-ben nem nyitható meg. Ha biztos benne, hogy megbízható, használjon egy másik böngészőt a megnyitáshoz."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ez a hivatkozás egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a címet kívánja-e megnyitni vagy ne nyissa meg."
       ],
@@ -12285,9 +12279,6 @@
       "Alerts for compromised emails and vulnerable passwords": [
         "Értesítések kiszivárgott e-mail címekről és sebezhető jelszavakról"
       ],
-      "Alerts for vulnerable passwords": [
-        "Értesítések a sebezhető jelszavakról"
-      ],
       "Aliases for email protection from breaches": [
         "E-mail álnév az e-mail cím védelmére a kiszivárgásoktól"
       ],
@@ -13650,6 +13641,12 @@
     "Setting": {
       "Enable Photos section": [
         "Fotók rész bekapcsolása"
+      ],
+      "Get updates about comments via email": [
+        "Frissítéseket kaphat a megjegyzésekről e-mailben"
+      ],
+      "Include document name in email notifications": [
+        "A dokumentum nevének feltüntetése az e-mail értesítésekben"
       ]
     },
     "Settings description": {
@@ -16408,9 +16405,6 @@
       ],
       "Administrator access rejected": [
         "Adminisztrátori hozzáférés elutasítva"
-      ],
-      "Approve all": [
-        "Összes jóváhagyása"
       ],
       "Cancel": [
         "Mégsem"

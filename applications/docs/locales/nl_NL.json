@@ -4584,9 +4584,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Deze koppeling kan een homografie-aanval zijn en kan niet geopend worden in Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze koppeling kan een homografie-aanval zijn. Controleer eerst of de koppeling juist is, of open hem niet."
       ],
@@ -5969,6 +5966,9 @@
         "Bestandsversiegeschiedenis van ${ options } dag",
         "Bestandsversiegeschiedenis van ${ options } dagen"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + levenslang SimpleLogin"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
         "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
@@ -6580,6 +6580,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Labels zijn simpele tags die u kunt toevoegen aan berichten zodat u ze makkelijker kunt vinden of filteren"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Levenslang toegang tot ${ PASS_APP_NAME } + SimpleLogin premium functies."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Zoals een map, is een kluis een handige manier om uw items te organiseren"
       ],
@@ -6642,9 +6645,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
-      ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Routeer uw internetverkeer door het TOR-netwerk met een enkele klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
@@ -7125,6 +7125,9 @@
       ],
       "Please select your billing state first.": [
         "Selecteer eerst uw factureringsstaat."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Wordt verlengd voor ${ price }, altijd opzegbaar."
       ],
       "Select billing country to pay": [
         "Selecteer factureringsland om te betalen"
