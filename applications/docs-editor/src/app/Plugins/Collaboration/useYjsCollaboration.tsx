@@ -1,4 +1,4 @@
-import type { Binding, ExcludedProperties, Provider } from '@lexical/yjs'
+import type { Binding, Provider } from '@lexical/yjs'
 import type { LexicalEditor } from 'lexical'
 
 import {
@@ -17,8 +17,6 @@ import { TranslatedResult, type EditorInitializationConfig } from '@proton/docs-
 import { initializeEditorAccordingToConfigIfRootIsEmpty } from './initializeEditor'
 import type { EditorLoadResult } from '../../EditorLoadResult'
 
-export type CursorsContainerRef = React.MutableRefObject<HTMLElement | null>
-
 /**
  * Original: https://github.com/facebook/lexical/blob/main/packages/lexical-react/src/shared/useYjsCollaboration.tsx
  */
@@ -29,21 +27,14 @@ export function useYjsCollaboration(
   docMap: Map<string, Doc>,
   name: string,
   color: string,
-  shouldBootstrap: boolean,
   onLoadResult: EditorLoadResult,
-  cursorsContainerRef?: CursorsContainerRef,
   editorInitializationConfig?: EditorInitializationConfig,
-  excludedProperties?: ExcludedProperties,
-  awarenessData?: object,
 ): [JSX.Element, Binding] {
   const [doc] = useState(() => docMap.get(id))
   const didPostReadyEvent = useRef(false)
   const didInitializeEditor = useRef(false)
 
-  const binding = useMemo(
-    () => createBinding(editor, provider, id, doc, docMap, excludedProperties),
-    [editor, provider, id, docMap, doc, excludedProperties],
-  )
+  const binding = useMemo(() => createBinding(editor, provider, id, doc, docMap), [editor, provider, id, docMap, doc])
 
   useEffect(() => {
     const { root } = binding
@@ -66,7 +57,7 @@ export function useYjsCollaboration(
       }
     }
 
-    initLocalState(provider, name, color, document.activeElement === editor.getRootElement(), awarenessData || {})
+    initLocalState(provider, name, color, document.activeElement === editor.getRootElement(), {})
 
     const onWindowResize = () => {
       syncCursorPositions(binding, provider)
@@ -117,19 +108,7 @@ export function useYjsCollaboration(
       removeListener()
       window.removeEventListener('resize', onWindowResize)
     }
-  }, [
-    binding,
-    color,
-    docMap,
-    editor,
-    id,
-    editorInitializationConfig,
-    name,
-    provider,
-    shouldBootstrap,
-    awarenessData,
-    onLoadResult,
-  ])
+  }, [binding, color, docMap, editor, id, editorInitializationConfig, name, provider, onLoadResult])
 
   const cursorsContainer = useMemo(() => {
     let rootElementContainer: HTMLElement | null = null
@@ -152,11 +131,8 @@ export function useYjsCollaboration(
       binding.cursorsContainer = element
     }
 
-    return createPortal(
-      <div className="Lexical__cursorsContainer" ref={ref} />,
-      (cursorsContainerRef && cursorsContainerRef.current) || document.body,
-    )
-  }, [binding, cursorsContainerRef, editor, provider])
+    return createPortal(<div className="Lexical__cursorsContainer" ref={ref} />, document.body)
+  }, [binding, editor, provider])
 
   return [cursorsContainer, binding]
 }

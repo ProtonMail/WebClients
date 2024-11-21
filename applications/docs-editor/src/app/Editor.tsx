@@ -51,6 +51,8 @@ import { FormattingPlugin } from './Plugins/FormattingPlugin'
 import { EditorUserMode } from './EditorUserMode'
 import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 import { BlockTypePlugin } from './Plugins/BlockTypePlugin'
+import type { LoggerInterface } from '@proton/utils/logs'
+import { YjsReadonlyPlugin } from './Plugins/YjsReadonly/YjsReadonlyPlugin'
 
 const TypingBotEnabled = false
 
@@ -72,6 +74,8 @@ type Props = {
   username: string
   isSuggestionsFeatureEnabled: boolean
   showTreeView: boolean
+  lexicalError?: Error
+  logger: LoggerInterface
 }
 
 export function Editor({
@@ -92,6 +96,8 @@ export function Editor({
   username,
   showTreeView,
   isSuggestionsFeatureEnabled,
+  lexicalError,
+  logger,
 }: Props) {
   const editorRef = useRef<LexicalEditor | null>(null)
 
@@ -102,6 +108,7 @@ export function Editor({
     },
     [passEditorRefToParent],
   )
+  const safeMode = lexicalError != null && systemMode === EditorSystemMode.Revision
 
   const yjsWebsockProvider = useMemo(() => {
     const baseProvider = (): Provider => {
@@ -202,13 +209,25 @@ export function Editor({
         <ProtonLinkPlugin />
         {hasMutationDisplay && <LinkInfoPlugin openLink={openLink} />}
         <TypingBotPlugin enabled={TypingBotEnabled} position={'beginning'} />
-        <CollaborationPlugin
-          id={documentId}
-          providerFactory={yjsWebsockProvider!}
-          shouldBootstrap={ShouldBootstrap}
-          onLoadResult={onEditorLoadResult}
-          editorInitializationConfig={editorInitializationConfig}
-        />
+        {systemMode !== EditorSystemMode.Revision && (
+          <CollaborationPlugin
+            id={documentId}
+            providerFactory={yjsWebsockProvider!}
+            shouldBootstrap={ShouldBootstrap}
+            onLoadResult={onEditorLoadResult}
+            editorInitializationConfig={editorInitializationConfig}
+          />
+        )}
+        {systemMode === EditorSystemMode.Revision && (
+          <YjsReadonlyPlugin
+            id={documentId}
+            providerFactory={yjsWebsockProvider!}
+            onLoadResult={onEditorLoadResult}
+            lexicalError={lexicalError}
+            logger={logger}
+            safeMode={safeMode}
+          />
+        )}
         <MergeSiblingListsPlugin />
         <CodeHighlightPlugin />
         <ImagesPlugin />
