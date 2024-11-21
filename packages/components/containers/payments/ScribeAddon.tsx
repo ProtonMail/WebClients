@@ -49,7 +49,7 @@ interface Props {
     showTooltip?: boolean;
     audience?: Audience;
     showScribeBanner?: boolean;
-    onShowScribeBanner: () => void;
+    onAddScribe: () => void;
     value: number;
 }
 
@@ -63,10 +63,10 @@ const ScribeAddon = ({
     showTooltip,
     audience,
     showScribeBanner,
-    onShowScribeBanner,
+    onAddScribe,
 }: Props) => {
     if (audience === Audience.B2B && showScribeBanner) {
-        return <ScribeB2BBanner price={price} onClick={onShowScribeBanner} />;
+        return <ScribeB2BBanner price={price} onClick={onAddScribe} />;
     }
 
     return (
