@@ -76,7 +76,6 @@ const PrivateApp = () => {
                                                             hasReadableMemberKeyActivation
                                                             hasMemberKeyMigration
                                                             hasPrivateMemberKeyGeneration
-                                                            loader={loader}
                                                         >
                                                             <state.MainContainer />
                                                         </StandardPrivateApp>
