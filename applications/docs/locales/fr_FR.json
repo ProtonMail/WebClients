@@ -507,6 +507,9 @@
       "Reset to default": [
         "Rétablir les valeurs par défaut"
       ],
+      "Restore as copy": [
+        "Restaurer en tant que copie"
+      ],
       "Restore version": [
         "Restaurer la version"
       ],
@@ -2215,7 +2218,7 @@
         "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }."
+        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -4483,6 +4486,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
+      "Restored version to": [
+        "La version a été restaurée à"
+      ],
       "Saving": [
         "Enregistrement"
       ],
@@ -4588,9 +4594,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte de paiement."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous n'avez aucun doute sur la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
       ],
@@ -4669,6 +4672,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
+      ],
+      "Undo successful": [
+        "L'annulation a abouti."
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Il n'est malheureusement pas possible de déchiffrer le fichier ou certaines de ses données."
@@ -5386,7 +5392,7 @@
         "Thème"
       ],
       "Thomas": [
-        "Jean"
+        "Camille"
       ],
       "Title": [
         "Titre"
@@ -6656,8 +6662,8 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Réinitialisez les mots de passe des utilisateurs et leur authentification à deux facteurs."
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Envoyez l'ensemble de votre trafic Internet à travers le réseau TOR en un seul clic."
+      "Route your internet traffic through the Tor network with a single click": [
+        "Envoyez l'ensemble de votre trafic internet à travers le réseau Tor en un seul clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela inclut la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
@@ -7054,7 +7060,7 @@
         "Facturation annuelle à ${ yearlyPrice }. Économisez ${ yearlySavedPrice } avec ${ passFamilyPlanName } (en comparaison de 6 abonnements ${ passPlusPlanName })."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
-        "Offre exclusive uniquement pour les premiers utilisateurs de ${ PASS_APP_NAME } de la première heure qui ont apporté leur soutien."
+        "Offre exclusive uniquement pour les utilisateurs de ${ PASS_APP_NAME } de la première heure qui ont apporté leur soutien."
       ],
       "Get it for ${ monthlyPrice }": [
         "Disponible pour ${ monthlyPrice }"
@@ -7183,7 +7189,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte, et à votre banque de le débiter en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8  semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
+        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte, et à votre banque de le débiter en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8 semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
       ],
       "Street address, postal code, and city": [
         "Adresse, code postal et ville"

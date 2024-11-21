@@ -507,6 +507,9 @@
       "Reset to default": [
         "Restableix els valors per defecte"
       ],
+      "Restore as copy": [
+        "Restaura com a còpia"
+      ],
       "Restore version": [
         "Restaura la versió"
       ],
@@ -1109,6 +1112,12 @@
       ],
       "Cancel and downgrade": [
         "Cancel·la i passa a un pla inferior"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Emmagatzematge al núvol i compartició dels vostres fitxers"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Emmagatzematge al núvol xifrat per a fotos i documents"
       ],
       "Encrypted password manager": [
         "Gestor de contrasenyes xifrat"
@@ -2266,6 +2275,9 @@
       ]
     },
     "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmeu la pèrdua del descompte especial de ${ PASS_APP_NAME }"
+      ],
       "Remove discount": [
         "Suprimeix el descompte"
       ]
@@ -2736,6 +2748,9 @@
       "The address might be misspelled": [
         "És possible que l'adreça estigui mal escrita."
       ],
+      "The amount due has changed. Please try again.": [
+        "L'import que cal pagar ha canviat. Torneu-ho a provar."
+      ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "El document que esteu intentant convertir és massa gran. Això pot passar si el document té un gran nombre d'imatges o altres mitjans. Torneu-ho a provar amb un document més petit."
       ],
@@ -3152,6 +3167,9 @@
       "${ BRAND_NAME } groups": [
         "Grups de ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Els comptes amb dominis personalitzats no poden unir-se a un pla familiar."
+      ],
       "customer support": [
         "atenció al client"
       ],
@@ -3163,6 +3181,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidat per: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Els comptes Lifetime no poden unir-se a un pla familiar."
       ],
       "Manage addresses": [
         "Gestiona les adreces"
@@ -3878,6 +3899,10 @@
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Crea un núvol segur per a ${ n } membre",
+        "Crea un núvol segur per a ${ n } membres"
+      ],
       "Create in": [
         "Crear a"
       ],
@@ -4063,6 +4088,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Per a obtenir els millors resultats, eviteu activitats d'estríming i que consumeixin molta memòria o dividiu la càrrega en lots més petits."
+      ],
+      "Free 5GB encrypted storage to get started": [
+        "Emmagatzematge xifrat gratuït de 5 GB per començar"
       ],
       "here": [
         "aquí"
@@ -4374,6 +4402,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
+      "Restored version to": [
+        "La versió s'ha restaurat a"
+      ],
       "Saving": [
         "S'està desant"
       ],
@@ -4479,9 +4510,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segur que aquest enllaç és legítim, feu servir un navegador diferent per a obrir-lo."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
       ],
@@ -4557,6 +4585,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
+      ],
+      "Undo successful": [
+        "S'ha desfet l'acció."
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Malauradament, sembla que el fitxer o algunes de les seves dades no es poden desxifrar."
@@ -4647,6 +4678,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Esteu a punt d'obrir una altra pestanya del navegador i visitar:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Esteu a punt d'obrir el vostre navegador predeterminat i visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
@@ -5848,6 +5882,10 @@
         "${ numberOfUsers } usuari",
         "Fins a ${ numberOfUsers } usuaris"
       ],
+      "${ options }-day file version history": [
+        "Historial de versions de fitxers d'${ options } dia",
+        "Historial de versions de fitxers d'${ options } dies"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Accés de tota la vida a les funcions ${ PASS_APP_NAME } i SimpleLogin"
       ],
@@ -5908,6 +5946,9 @@
       ],
       "Advanced account protection": [
         "Protecció avançada dels comptes"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funcions d'àlies avançades (impulsades per SimpleLogin)"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Tots els productes i funcions de ${ BRAND_NAME }"
@@ -6148,6 +6189,9 @@
       "Support for up to 2 users": [
         "Suport per a 2 usuaris"
       ],
+      "Sync and backup all your files across devices": [
+        "Sincronitzeu i feu una còpia de seguretat de tots els fitxers entre dispositius."
+      ],
       "TOR over VPN": [
         "TOR sobre VPN"
       ],
@@ -6329,6 +6373,9 @@
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per a dotar de privadesa a tothom de manera predeterminada."
       ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Privadesa il·limitada i més emmagatzematge per a fins a 2 persones."
+      ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si elimineu el vostre compte, perdreu el preu promocional i no estarà disponible si creeu un compte nou."
       ],
@@ -6419,6 +6466,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartiu fàcilment els vostres calendaris amb la família, els amics o els col·legues."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envieu un correu electrònic a tothom d'un grup amb una única adreça de correu electrònic."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Assegura que rebeu tots els correus electrònics enviats al vostre domini, fins i tot si l'adreça de correu electrònic no existeix, ha deixat d'existir o té un error ortogràfic"
@@ -6776,6 +6826,9 @@
       "Not enough space to upload ${ formattedTotal }": [
         "No hi ha prou espai per carregar ${ formattedTotal }"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Error en deixar de compartir aquest element"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "No s'ha pogut eliminar l'enllaç a \"${ name }\"."
       ],
@@ -6875,6 +6928,9 @@
       "Activity log": [
         "Registre d'activitats"
       ],
+      "Admin panel to manage users and subscription": [
+        "Panell d'administració per gestionar usuaris i subscripció"
+      ],
       "Team policies": [
         "Regles d'equip"
       ]
@@ -6945,6 +7001,9 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "More plans are available in other currencies": [
+        "Hi ha més plans disponibles en altres divises."
+      ],
       "Payment Processing": [
         "Processament de pagaments"
       ],
@@ -6956,6 +7015,12 @@
       ],
       "Please select billing state": [
         "Seleccioneu l'estat de facturació"
+      ],
+      "Please select your billing country first.": [
+        "Seleccioneu primer el vostre país per a la facturació."
+      ],
+      "Please select your billing state first.": [
+        "Seleccioneu primer el vostre estat per a la facturació."
       ],
       "Renews at ${ price }, cancel anytime.": [
         "Es renova per ${ price } i ho podeu cancel·lar en qualsevol moment."
@@ -7697,6 +7762,9 @@
       ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se us redirigirà al vostre proveïdor d'SSO de tercers."
       ]
     },
     "State": {
@@ -8447,6 +8515,9 @@
       "Link confirmation": [
         "Confirmació d'enllaç"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Feu una còpia al vostre ${ DRIVE_APP_NAME }"
+      ],
       "Manage secure link": [
         "Gestiona l'enllaç segur"
       ],
@@ -8539,6 +8610,9 @@
       ],
       "Request new code": [
         "Demana un codi nou"
+      ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Deseu-lo per a més tard a ${ DRIVE_APP_NAME }"
       ],
       "Security center": [
         "Centre de seguretat"
@@ -8827,6 +8901,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Una manera més segura i fàcil de mantenir i enviar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
