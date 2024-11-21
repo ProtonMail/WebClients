@@ -85,7 +85,6 @@ const App = () => {
                                                             hasMemberKeyMigration
                                                             hasPrivateMemberKeyGeneration
                                                             noModals
-                                                            loader={loader}
                                                         >
                                                             <state.MainContainer />
                                                         </StandardPrivateApp>

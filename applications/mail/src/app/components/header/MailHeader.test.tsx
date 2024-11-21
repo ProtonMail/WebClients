@@ -43,9 +43,9 @@ describe('MailHeader', () => {
 
     const setup = async () => {
         minimalCache();
-        addApiMock('payments/v4/plans', () => ({ Plans: [] }));
+        addApiMock('payments/v5/plans', () => ({ Plans: [] }));
         addApiMock('contacts/v4/contacts', () => ({ Contacts: [] }));
-        addApiMock('payments/v4/subscription/latest', () => ({}));
+        addApiMock('payments/v5/subscription/latest', () => ({}));
 
         props = getProps();
 

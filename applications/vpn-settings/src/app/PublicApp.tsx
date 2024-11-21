@@ -100,7 +100,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                     <PublicAppSetup>
                         <ForceRefreshContext.Provider value={refresh}>
                             <UnAuthenticated>
-                                <PaymentSwitcher loader={loader}>
+                                <PaymentSwitcher>
                                     <Switch location={location}>
                                         <Route path="/reset-password">
                                             <AccountResetPasswordContainer

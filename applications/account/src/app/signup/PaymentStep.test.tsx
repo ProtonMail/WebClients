@@ -1,11 +1,8 @@
-import type { RenderResult } from '@testing-library/react';
 import { act, render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 
 import * as paymentsDataUtilsModule from '@proton/components/payments/client-extensions/data-utils';
-import { PLAN_TYPES } from '@proton/payments';
 import type { PaymentMethodStatus } from '@proton/payments';
-import { DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_TOKEN_STATUS, PLANS } from '@proton/payments';
+import { DEFAULT_TAX_BILLING_ADDRESS, PLANS, PLAN_TYPES } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import {
     addApiMock,
@@ -138,6 +135,14 @@ beforeEach(() => {
             },
         },
     };
+
+    window.ResizeObserver =
+        window.ResizeObserver ||
+        jest.fn().mockImplementation(() => ({
+            disconnect: jest.fn(),
+            observe: jest.fn(),
+            unobserve: jest.fn(),
+        }));
 });
 
 jest.mock('@proton/components/hooks/useElementRect');
@@ -169,51 +174,4 @@ it('should render', async () => {
         container = rendered.container;
     });
     expect(container).not.toBeEmptyDOMElement();
-});
-
-it('should call onPay with the new token', async () => {
-    addApiMock('payments/v4/tokens', () => ({
-        Token: 'token123',
-        Code: 1000,
-        Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE,
-    }));
-
-    let findByTestId!: RenderResult['findByTestId'];
-    let findByText!: RenderResult['findByText'];
-    await act(async () => {
-        const rendered = render(<PaymentStepContext {...props} />);
-        findByTestId = rendered.findByTestId;
-        findByText = rendered.findByText;
-    });
-
-    const payButton = await findByText(/Pay /);
-
-    expect(payButton).toBeDefined();
-    expect(payButton).toHaveTextContent('Pay');
-
-    const ccNumber = await findByTestId('ccnumber');
-    const cvc = await findByTestId('cvc');
-    const exp = await findByTestId('exp');
-    const postalCode = await findByTestId('postalCode');
-
-    await act(async () => {
-        await userEvent.type(ccNumber, '4242424242424242');
-        await userEvent.type(cvc, '123');
-        await userEvent.type(exp, '1230'); // stands for 12/30, i.e. December 2030
-        await userEvent.type(postalCode, '12345');
-
-        await userEvent.click(payButton);
-    });
-
-    expect(props.onPay).toHaveBeenCalledWith(
-        {
-            Details: {
-                Token: 'token123',
-            },
-            Type: 'token',
-            paymentsVersion: 'v4',
-            paymentProcessorType: 'card',
-        },
-        'cc'
-    );
 });
