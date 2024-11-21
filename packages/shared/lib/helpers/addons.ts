@@ -3,6 +3,7 @@ import {
     DOMAIN_ADDON_PREFIX,
     type FreeSubscription,
     IP_ADDON_PREFIX,
+    LUMO_ADDON_PREFIX,
     MEMBER_ADDON_PREFIX,
     PLANS,
     type PlanIDs,
@@ -71,6 +72,10 @@ export const isIpAddon: AddonGuard = (addonOrName): boolean => {
     return isAddonType(addonOrName, IP_ADDON_PREFIX);
 };
 
+export const isLumoAddon: AddonGuard = (addonOrName): boolean => {
+    return isAddonType(addonOrName, LUMO_ADDON_PREFIX);
+};
+
 export const removeAddon = (originalPlanIDs: PlanIDs, addonGuard: AddonGuard): PlanIDs => {
     const planIDs: PlanIDs = { ...originalPlanIDs };
 
@@ -96,11 +101,18 @@ export const countAddonsByType = (planIDs: PlanIDs, addonGuard: AddonGuard): num
 };
 
 const {
+    // B2C
     MAIL,
     DRIVE,
+    PASS,
+    VPN,
+    VPN2024,
+    BUNDLE,
+    FAMILY,
+    DUO,
+    // B2B
     MAIL_BUSINESS,
     ENTERPRISE,
-    BUNDLE,
     BUNDLE_PRO,
     BUNDLE_PRO_2024,
     MAIL_PRO,
@@ -121,14 +133,37 @@ export function getSupportedB2CAddons(planIDs: PlanIDs): SupportedAddons {
 
     if (planIDs[MAIL]) {
         // supported[ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS] = true;
+        supported[ADDON_NAMES.LUMO_MAIL] = true;
     }
 
     if (planIDs[DRIVE]) {
         // supported[ADDON_NAMES.MEMBER_SCRIBE_DRIVEPLUS] = true;
+        supported[ADDON_NAMES.LUMO_DRIVE] = true;
+    }
+
+    if (planIDs[PASS]) {
+        supported[ADDON_NAMES.LUMO_PASS] = true;
+    }
+
+    if (planIDs[VPN]) {
+        supported[ADDON_NAMES.LUMO_VPN] = true;
+    }
+
+    if (planIDs[VPN2024]) {
+        supported[ADDON_NAMES.LUMO_VPN2024] = true;
     }
 
     if (planIDs[BUNDLE]) {
         // supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE] = true;
+        supported[ADDON_NAMES.LUMO_BUNDLE] = true;
+    }
+
+    if (planIDs[FAMILY]) {
+        supported[ADDON_NAMES.LUMO_FAMILY] = true;
+    }
+
+    if (planIDs[DUO]) {
+        supported[ADDON_NAMES.LUMO_DUO] = true;
     }
 
     return supported;
@@ -140,19 +175,23 @@ export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
     if (planIDs[MAIL_PRO]) {
         supported[ADDON_NAMES.MEMBER_MAIL_PRO] = true;
         supported[ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO] = true;
+        supported[ADDON_NAMES.LUMO_MAIL_PRO] = true;
     }
 
     if (planIDs[MAIL_BUSINESS]) {
         supported[ADDON_NAMES.MEMBER_MAIL_BUSINESS] = true;
         supported[ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS] = true;
+        supported[ADDON_NAMES.LUMO_MAIL_BUSINESS] = true;
     }
 
     if (planIDs[DRIVE_PRO]) {
         supported[ADDON_NAMES.MEMBER_DRIVE_PRO] = true;
+        supported[ADDON_NAMES.LUMO_DRIVE_PRO] = true;
     }
 
     if (planIDs[DRIVE_BUSINESS]) {
         supported[ADDON_NAMES.MEMBER_DRIVE_BUSINESS] = true;
+        supported[ADDON_NAMES.LUMO_DRIVE_BUSINESS] = true;
     }
 
     if (planIDs[BUNDLE_PRO]) {
@@ -160,6 +199,7 @@ export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
         supported[ADDON_NAMES.DOMAIN_BUNDLE_PRO] = true;
         supported[ADDON_NAMES.IP_BUNDLE_PRO] = true;
         supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO] = true;
+        supported[ADDON_NAMES.LUMO_BUNDLE_PRO] = true;
     }
 
     if (planIDs[BUNDLE_PRO_2024]) {
@@ -167,28 +207,34 @@ export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
         supported[ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024] = true;
         supported[ADDON_NAMES.IP_BUNDLE_PRO_2024] = true;
         supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024] = true;
+        supported[ADDON_NAMES.LUMO_BUNDLE_PRO_2024] = true;
     }
 
     if (planIDs[ENTERPRISE]) {
         supported[ADDON_NAMES.MEMBER_ENTERPRISE] = true;
         supported[ADDON_NAMES.DOMAIN_ENTERPRISE] = true;
+        supported[ADDON_NAMES.LUMO_ENTERPRISE] = true;
     }
 
     if (planIDs[VPN_PRO]) {
         supported[ADDON_NAMES.MEMBER_VPN_PRO] = true;
+        supported[ADDON_NAMES.LUMO_MAIL] = true;
     }
 
     if (planIDs[VPN_BUSINESS]) {
         supported[ADDON_NAMES.MEMBER_VPN_BUSINESS] = true;
         supported[ADDON_NAMES.IP_VPN_BUSINESS] = true;
+        supported[ADDON_NAMES.LUMO_VPN_PRO] = true;
     }
 
     if (planIDs[PASS_PRO]) {
         supported[ADDON_NAMES.MEMBER_PASS_PRO] = true;
+        supported[ADDON_NAMES.LUMO_PASS_PRO] = true;
     }
 
     if (planIDs[PASS_BUSINESS]) {
         supported[ADDON_NAMES.MEMBER_PASS_BUSINESS] = true;
+        supported[ADDON_NAMES.LUMO_PASS_BUSINESS] = true;
     }
 
     return supported;
