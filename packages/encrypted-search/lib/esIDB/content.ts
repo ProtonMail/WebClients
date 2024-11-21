@@ -20,7 +20,7 @@ export const readContentItem = async <ESItemContent>(userID: string, itemID: str
         return;
     }
 
-    return decryptFromDB<ESItemContent>(aesGcmCiphertext, indexKey);
+    return decryptFromDB<ESItemContent>(aesGcmCiphertext, indexKey, 'readContentItem');
 };
 
 /**

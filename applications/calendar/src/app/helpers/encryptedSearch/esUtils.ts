@@ -395,7 +395,8 @@ export const searchUndecryptedElements = async (
                 .map(async (encryptedMetadata) => {
                     const plaintextMetadata = await decryptFromDB<ESCalendarMetadata>(
                         encryptedMetadata.aesGcmCiphertext,
-                        indexKey
+                        indexKey,
+                        'searchUndecryptedElements'
                     );
 
                     return plaintextMetadata;

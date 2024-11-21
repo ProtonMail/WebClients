@@ -2,7 +2,7 @@ import { getIsOfflineError, getIsTimeoutError, isNotExistError } from '@proton/s
 import { METRICS_LOG, SECOND } from '@proton/shared/lib/constants';
 import { randomDelay, sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { ES_MAX_RETRIES, ES_TEMPORARY_ERRORS } from '../constants';
@@ -10,13 +10,31 @@ import { contentIndexingProgress, readNumMetadata, readSize } from '../esIDB';
 import type { ESIndexMetrics, ESSearchMetrics } from '../models';
 import { estimateIndexingDuration } from './esBuild';
 
+export const esErrorReport = (context: string, extra?: Record<string, unknown>) => {
+    traceError(extra?.error, {
+        extra: {
+            context,
+            ...extra,
+        },
+        tags: {
+            initiative: 'encrypted-search',
+            context,
+        },
+    });
+};
+
 /**
  * Helper to send ES-related sentry reports
  * @param errorMessage the error message that will appear in the title of the log
  * @param extra any other contextual information that will be attached to the log
  */
 export const esSentryReport = (errorMessage: string, extra?: any) => {
-    captureMessage(`[EncryptedSearch] ${errorMessage}`, { extra });
+    // if there is an error, use esErrorReport, otherwise use captureMessage
+    if (extra?.error != null) {
+        esErrorReport(errorMessage, extra);
+    } else {
+        captureMessage(`[EncryptedSearch] ${errorMessage}`, { extra });
+    }
 };
 
 /**
@@ -97,7 +115,7 @@ const sendESMetrics: SendESMetrics = async (api, Title, Data) =>
  * Send metrics about the indexing process (only for Mail)
  * TODO: move to Mail and convert into generic callback for useEncryptedSearch
  */
-export const sendIndexingMetricsForMail = async (api: Api, userID: string) => {
+export const sendIndexingMetricsForMail = async (api: Api, userID: string): Promise<void> => {
     const progressBlob = await contentIndexingProgress.read(userID);
     if (!progressBlob) {
         return;
