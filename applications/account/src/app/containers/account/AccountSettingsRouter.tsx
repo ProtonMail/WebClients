@@ -42,6 +42,7 @@ import {
     SettingsSectionWide,
     SubscriptionsSection,
     ThemesSection,
+    ThirdPartySection,
     TwoFactorSection,
     UsernameSection,
     YourPlanSection,
@@ -161,6 +162,7 @@ const AccountSettingsRouter = ({
                     <AuthDevicesSettings />
                     <SessionsSection />
                     <LogsSection />
+                    <ThirdPartySection />
                     <PrivacySection />
                 </PrivateMainSettingsArea>
             </Route>

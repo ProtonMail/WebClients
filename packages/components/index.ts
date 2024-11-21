@@ -20,10 +20,6 @@ export type { DataWithMatches } from './components/autocomplete/useAutocomplete'
 export { default as Badge } from './components/badge/Badge';
 export type { BadgeType } from './components/badge/Badge';
 export { default as BetaBadge } from './components/badge/BetaBadge';
-export {
-    default as DeprecatedBanner,
-    DeprecatedBannerBackgroundColor,
-} from './components/deprecatedBanner/DeprecatedBanner';
 export { default as Breadcrumb } from './components/breadcrumb/Breadcrumb';
 export { default as ButtonGroup } from './components/button/ButtonGroup';
 export { default as Copy } from './components/button/Copy';
@@ -69,6 +65,10 @@ export { default as Summary } from './components/container/Summary';
 export { default as ContextMenu } from './components/contextMenu/ContextMenu';
 export { default as ContextMenuButton } from './components/contextMenu/ContextMenuButton';
 export { default as ContextSeparator } from './components/contextMenu/ContextSeparator';
+export {
+    default as DeprecatedBanner,
+    DeprecatedBannerBackgroundColor,
+} from './components/deprecatedBanner/DeprecatedBanner';
 export { default as DownloadClientCard } from './components/downloadClientCard/DownloadClientCard';
 export { default as DragMoveContainer } from './components/dragMoveContainer/DragMoveContainer';
 export { default as DrawerApp } from './components/drawer/DrawerApp';
@@ -377,12 +377,12 @@ export { default as AliasPromotionSection } from './containers/addresses/AliasPr
 export { default as EditAddressModal } from './containers/addresses/EditAddressModal';
 export { default as IdentitySection } from './containers/addresses/IdentitySection';
 export { default as ApiContext } from './containers/api/apiContext';
+export { default as ApiModalsHVUpsell } from './containers/api/ApiModalsHVUpsell';
 export { default as ApiProvider } from './containers/api/ApiProvider';
 export { default as DelinquentModal } from './containers/api/DelinquentModal';
 export { default as HumanVerificationForm } from './containers/api/humanVerification/HumanVerificationForm';
 export type { HumanVerificationFormProps } from './containers/api/humanVerification/HumanVerificationForm';
 export { default as HumanVerificationModal } from './containers/api/humanVerification/HumanVerificationModal';
-export { default as ApiModalsHVUpsell } from './containers/api/ApiModalsHVUpsell';
 export { HumanVerificationSteps, type HumanVerificationResult } from './containers/api/humanVerification/interface';
 export type {
     VerificationDataResult,
@@ -496,13 +496,13 @@ export { InboxDesktopFreeTrialTopBanner } from './containers/desktop/freeTrial/I
 export { InboxDesktopAppSwitcher } from './containers/desktop/InboxDesktopAppSwitcher';
 export { InboxDesktopOutdatedAppTopBanner } from './containers/desktop/InboxDesktopOutdatedAppTopBanner';
 export { InboxDesktopSettingsSection } from './containers/desktop/InboxDesktopSettingsSection';
+export { CommentEmailSection } from './containers/docs/settings/CommentEmailSection';
 export { default as CatchAllSection } from './containers/domains/CatchAllSection';
 export { default as DomainModal } from './containers/domains/DomainModal';
 export { default as DomainsSection } from './containers/domains/DomainsSection';
 export { default as DrawerAppFooter } from './containers/drawer/DrawerAppFooter';
 export { default as DrawerAppHeader } from './containers/drawer/DrawerAppHeader';
 export { default as DrawerAppHeaderCustomTitle } from './containers/drawer/DrawerAppHeaderCustomTitle';
-export { CommentEmailSection } from './containers/docs/settings/CommentEmailSection';
 export { B2BPhotosSection } from './containers/drive/settings/B2BPhotosSection';
 export { FreeUpgradeBanner } from './containers/drive/settings/banner/FreeUpgradeBanner';
 export { RetentionDaysSection } from './containers/drive/settings/RetentionDaysSection';
@@ -811,6 +811,7 @@ export { default as ThemesSection } from './containers/themes/ThemesSection';
 export { default as ThemeSvg } from './containers/themes/ThemeSvg';
 export { default as useSyncIframeStyles } from './containers/themes/useSyncIframeStyles';
 export { default as useThemeQueryParameter } from './containers/themes/useThemeQueryParameter';
+export { ThirdPartySection } from './containers/thirdParty/ThirdPartySection';
 export { default as BadAppVersionBanner } from './containers/topBanners/BadAppVersionBanner';
 export { default as DelinquentTopBanner } from './containers/topBanners/DelinquentTopBanner';
 export { default as LockedStateTopBanner } from './containers/topBanners/LockedStateTopBanner';

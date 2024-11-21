@@ -4,7 +4,7 @@ import type {
     Address,
     Group,
     GroupMembershipReturn,
-    Organization,
+    OrganizationWithSettings,
     Subscription,
     UserModel,
 } from '@proton/shared/lib/interfaces';
@@ -24,7 +24,7 @@ interface Arguments {
     user: UserModel;
     addresses: Address[] | undefined;
     subscription: Subscription | undefined;
-    organization: Organization | undefined;
+    organization: OrganizationWithSettings | undefined;
     isReferralProgramEnabled: boolean;
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
@@ -88,6 +88,7 @@ export const getRoutes = ({
             assistantKillSwitch,
             isUserGroupsMembershipFeatureEnabled,
             memberships,
+            isZoomIntegrationEnabled,
         }),
         mail: getMailAppRoutes({
             app,
