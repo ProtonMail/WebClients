@@ -2823,9 +2823,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
       ],
-      "You've assigned all of your servers.": [
-        "Přiřadili jste všechny své servery."
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "U Vašeho účtu nebo organizace jsou vedeny faktury po splatnosti. Zaplaťte prosím všechny neuhrazené faktury."
       ]
@@ -7264,9 +7261,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetovat uživatelská hesla a resetovat dvoufázové ověření uživatelů"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Směrujte svůj internetový provoz skrze síť TOR jediným kliknutím"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ],
@@ -8380,9 +8374,6 @@
       "Test in progress...": [
         "Probíhá testování..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Chcete-li otestovat toto nastavení SAML, zadejte přihlašovací údaje uživatele přidruženého k **${ domainName }**"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Od vašeho poskytovatele identit jsme obdrželi platnou odpověď SAML. SSO je pro vaši organizaci povoleno."
       ],
@@ -9246,9 +9237,6 @@
       ],
       "Single sign-on removed": [
         "Jednotné přihlášení zrušeno"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Přihlašovací údaje od vašeho poskytovatele identity budou smazány."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tím se uživatel odhlásí z ostatních zařízení a bude muset vytvořit nové záložní heslo."
@@ -11098,9 +11086,6 @@
     "Tor out of date": {
       "stable release": [
         "stabilní verze"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Tato verze prohlížeče TOR není podporována. Prosím aktualizujte na poslední ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -11109,9 +11094,6 @@
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
-      ],
-      "Approve all": [
-        "Schválit vše"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Tím, že nastavíte uživatele jako soukromého, mu nebudete moci pomoci získat zpět přístup k jeho datům nebo účtu."

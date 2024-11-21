@@ -2801,9 +2801,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
       ],
-      "You've assigned all of your servers.": [
-        "U heeft al uw servers toegewezen."
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
       ]
@@ -6329,6 +6326,9 @@
         "Bestandsversiegeschiedenis van ${ options } dag",
         "Bestandsversiegeschiedenis van ${ options } dagen"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + levenslang SimpleLogin"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
         "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
@@ -7006,6 +7006,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Labels zijn simpele tags die u kunt toevoegen aan berichten zodat u ze makkelijker kunt vinden of filteren"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Levenslang toegang tot ${ PASS_APP_NAME } + SimpleLogin premium functies."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Zoals een map, is een kluis een handige manier om uw items te organiseren"
       ],
@@ -7068,9 +7071,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
-      ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Routeer uw internetverkeer door het TOR-netwerk met een enkele klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
@@ -7811,6 +7811,9 @@
       "Processing payment": [
         "Betaling wordt verwerkt"
       ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Wordt verlengd voor ${ price }, altijd opzegbaar."
+      ],
       "Select billing country to pay": [
         "Selecteer factureringsland om te betalen"
       ],
@@ -8140,9 +8143,6 @@
       ],
       "Test in progress...": [
         "Test wordt uitgevoerd..."
-      ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Om deze SAML-configuratie te testen, voert u de inloggegevens in voor een gebruiker geassocieerd met **${ domainName }**"
       ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "We hebben een geldige SAML-reactie ontvangen van uw identiteitsprovider. SSO is ingeschakeld voor uw organisatie."
@@ -8957,9 +8957,6 @@
       ],
       "Single sign-on removed": [
         "Single sign-on verwijderd"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "De referenties van uw Identity Provider worden verwijderd."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Dit zal de gebruiker uitloggen uit zijn andere apparaten en hij zal een nieuw back-upwachtwoord moeten maken."
@@ -10757,9 +10754,6 @@
     "Tor out of date": {
       "stable release": [
         "stabiele release"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Deze versie van TOR Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10768,9 +10762,6 @@
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
-      ],
-      "Approve all": [
-        "Alles goedkeuren"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Door de gebruiker privé te maken, zult u hem niet kunnen helpen om toegang te krijgen tot zijn gegevens of account."

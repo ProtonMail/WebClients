@@ -7147,9 +7147,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Сбрасывайте пароли и двухфакторную аутентификацию для пользователей"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Направляйте свой трафик через сеть Tor одним нажатием"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ],
@@ -8207,9 +8204,6 @@
       "Test in progress...": [
         "Выполняется проверка..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Чтобы проверить эту конфигурацию SAML, пожалуйста, введите учётные данные для пользователя, связанного с **${ domainName }**"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Мы получили действительный ответ SAML от вашего поставщика личных данных. SSO включен для вашей организации."
       ],
@@ -9062,9 +9056,6 @@
       ],
       "Single sign-on removed": [
         "SSO удалён"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Учетные данные поставщика идентификационных данных будут удалены."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Это отключит пользователя от других устройств, и ему придется создать новый пароль резервной копии."
@@ -10872,17 +10863,11 @@
     "Tor out of date": {
       "stable release": [
         "стабильная версия"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Эта версия браузера Tor не поддерживается. Пожалуйста, обновите до последней версии ${ stableRelease }"
       ]
     },
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
-      ],
-      "Approve all": [
-        "Одобрить все"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Сделав пользователя частным, вы не сможете помочь ему восстановить доступ к своим данным или аккаунту."

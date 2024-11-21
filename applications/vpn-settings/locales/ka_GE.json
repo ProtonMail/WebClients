@@ -2787,9 +2787,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ],
-      "You've assigned all of your servers.": [
-        "თქვენ მიანიჭეთ ყველა თქვენი სერვერი."
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "ანგარიშს ან ორგანიზაციას გადაცილებული ინვოისი აქვს. საჭიროა ყველა ინვოისის გადახდა."
       ]
@@ -7031,9 +7028,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "მომხმარებლების პაროლებისა და 2FA-ის აღდგენა"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "გადაამისამართეთ თქვენი ინტერნეტ-ტრაფიკი Tor-ის ქსელში თაგუნას ერთადერთი წკაპუნით"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
       ],
@@ -8097,9 +8091,6 @@
       "Test in progress...": [
         "მიმდინარეობს შემოწმება..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "ამ SAML-ისა კონფიგურაციის შესამოწმებლად შეიყვანეთ თქვენი ავტორიზაციის დეტალები მომხმარებლისთვის, რომელიც **${ domainName }**-სთანაა ასოცირებული"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "მიღებულია სწორი SAML პასუხი თქვენი იდენტიფიკატორების მომწოდებლისგან. SSO ჩართულია თქვენი ორგანიაციისთვის."
       ],
@@ -8899,9 +8890,6 @@
       ],
       "Single sign-on removed": [
         "SSO წაიშალა"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "წაიშლება ავტორიზაციის დეტალები თქვენი იდენტიფიკატორის მომწოდებლიდან."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "ეს გაიყვანს მომხმარებელს ყველა თავისი მოწყობილობიდან და ისინი იძულებული იქნებიან, ახალი მარქაფი პაროლი შექმნან."
@@ -10687,17 +10675,11 @@
     "Tor out of date": {
       "stable release": [
         "სტაბილური რელიზი"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Tor Browser-ის ეს ვერსია მხარდაუჭერელია. განაახლეთ უკანასკნელ ვერსიამდე: ${ stableRelease }"
       ]
     },
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
-      ],
-      "Approve all": [
-        "ყველას დამტკიცება"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "მომხმარებლის კონფიდენციალურად გამოცხადებით მათ თავის ანგარიშზე არსებულ მონაცემების აღდგენაში ვეღარ დაეხმარებით."

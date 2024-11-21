@@ -2818,9 +2818,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы дасягнулі максімальнай колькасці карыстальнікаў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новага карыстальніка."
       ],
-      "You've assigned all of your servers.": [
-        "Вам прызначаны ўсе вашы серверы."
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ваш уліковы запіс або арганізацыя мае пратэрмінаваны рахунак. Аплаціце ўсе неаплачаныя рахункі."
       ]
@@ -7253,9 +7250,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Скідайце паролі і двухфактарную аўтэнтыфікацыю карыстальнікаў"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Накіроўвайце свой трафік праз сетку TOR адным націскам"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
@@ -8348,9 +8342,6 @@
       "Test in progress...": [
         "Адбываецца тэсціраванне..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Увядзіце ўліковыя даныя ўваходу для карыстальніка, якія звязаны з **${ domainName }**. Дадзеныя дзеянні дазволяць пратэсціраваць гэту канфігурацыю SAML."
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Атрыманы правераны адказ SAML ад вашага пастаўшчыка пасведчанняў. SSO уключаны для вашай арганізацыі."
       ],
@@ -9214,9 +9205,6 @@
       ],
       "Single sign-on removed": [
         "Адзіны ўваход выдалены"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Уліковыя даныя ад вашага пастаўшчыка пасведчанняў будуць выдалены."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Гэта дзеянне прывядзе да выхаду карыстальніка з яго іншых прылад, і яму давядзецца стварыць новы рэзервовы пароль."
@@ -11066,9 +11054,6 @@
     "Tor out of date": {
       "stable release": [
         "стабільны выпуск"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Гэта версія браўзера TOR не падтрымліваецца. Абнавіце праграму да апошняй ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -11077,9 +11062,6 @@
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў, а таксама аднаўляць іх паролі."
-      ],
-      "Approve all": [
-        "Ухваліць усе"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "У вас больш не будзе магчымасці дапамагаць карыстальніку аднавіць доступ да яго даных або ўліковага запісу, калі ён стане прыватным."

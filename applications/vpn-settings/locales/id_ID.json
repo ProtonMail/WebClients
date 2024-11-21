@@ -545,7 +545,7 @@
         "Lihat caranya"
       ],
       "See plan features": [
-        "Lihat seluruh fitur paket"
+        "Lihat fitur paket"
       ],
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
@@ -2790,9 +2790,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
       ],
-      "You've assigned all of your servers.": [
-        "Anda telah menetapkan semua server Anda"
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Akun atau organisasi Anda memiliki tagihan yang tertunggak. Mohon lunasi seluruh tagihan yang belum dibayar."
       ]
@@ -4432,7 +4429,7 @@
         "Silakan verifikasi pembayaran pada tab baru yang terbuka."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
+        "Silakan tunggu hingga perubahan Anda tersinkron dengan server."
       ],
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
@@ -5077,7 +5074,7 @@
         "Anda akan tetap mempertahankan akses ke ${ PASS_APP_NAME } + berbagai fitur premium SimpleLogin untuk seumur hidup apabila Anda membatalkan langganan."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "Anda akan kehilangan akses fitur ${ planTitle } pada tanggal ini."
+        "Anda akan kehilangan akses ke berbagai fitur ${ planTitle } pada tanggal ini."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
@@ -6967,9 +6964,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Alihkan lalu lintas internet Anda melalui jaringan TOR dengan satu kali klik"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
@@ -8032,9 +8026,6 @@
       "Test in progress...": [
         "Pengujian sedang berlangsung..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Untuk menguji konfigurasi SAML ini, silakan masukkan kredensial entri masuk untuk pengguna yang terhubung dengan **${ domainName }**"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Kami menerima respon SAML yang valid dari penyedia identitas Anda. SSO untuk organisasi Anda sedang aktif."
       ],
@@ -8532,7 +8523,7 @@
         "6 pengguna"
       ],
       "All paid Mail and Calendar features": [
-        "Semua fitur Mail dan Calendar yang berbayar"
+        "Seluruh fitur Mail dan Calendar berbayar"
       ],
       "High speed VPN": [
         "VPN berkecepatan tinggi"
@@ -8823,9 +8814,6 @@
       ],
       "Single sign-on removed": [
         "Single sign-on dihapus"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Kredensial dari Penyedia Identitas Anda akan dihapus."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tindakan ini akan mengeluarkan pengguna yang bersangkutan dari perangkat lainnya yang mereka miliki, di mana mereka akan perlu untuk membuat kata sandi cadangan baru."
@@ -10582,9 +10570,6 @@
     "Tor out of date": {
       "stable release": [
         "versi rilisan stabil"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Versi TOR Browser ini sudah tidak lagi didukung. Silakan perbarui browser Anda ke ${ stableRelease } terbaru"
       ]
     },
     "unprivatization": {
@@ -10593,9 +10578,6 @@
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Admin tidak dapat mengakses data pengguna pribadi dan tidak dapat mengatur ulang kata sandinya."
-      ],
-      "Approve all": [
-        "Setujui semua"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Dengan membuat pengguna pribadi, Anda tidak akan dapat membantunya mendapatkan kembali akses data atau akun."
