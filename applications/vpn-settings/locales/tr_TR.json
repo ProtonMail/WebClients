@@ -2801,9 +2801,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
       ],
-      "You've assigned all of your servers.": [
-        "Tüm sunucularınızı atadınız"
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Hesabınızın ya da kuruluşunuzun ödenmemiş bir faturası var. Lütfen süresi geçmiş tüm faturaları ödeyin."
       ]
@@ -6415,7 +6412,7 @@
         "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
       ],
       "Auto-reply": [
-        "Otomatik yanıt"
+        "Otomatik yanıtlama"
       ],
       "Autofill credit cards (coming soon)": [
         "Otomatik kredi kartı doldurma (yakında)"
@@ -6640,10 +6637,10 @@
         "Kullanıcı olarak oturum açma"
       ],
       "SMTP submission": [
-        "SMTP gönderim"
+        "SMTP gönderimi"
       ],
       "SMTP submission for select organizations": [
-        "Seçilmiş kuruluşlar için SMTP gönderim"
+        "Seçilmiş kuruluşlar için SMTP gönderimi"
       ],
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
@@ -7078,9 +7075,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
@@ -7263,7 +7257,7 @@
         "Günlük e-posta bildirimleri"
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Bu seçenek kapatıldığında, ${ BRAND_NAME } uygulamalarının bildirim alma yeteneğini kaldırır"
+        "Bu seçenek kapatıldığında, ${ BRAND_NAME } uygulamalarının bildirim alma yeteneği kaldırılır"
       ],
       "During your first month": [
         "Ilk ayınız boyunca"
@@ -8153,9 +8147,6 @@
       "Test in progress...": [
         "Sınama sürüyor..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Bu SAML yapılandırmasını sınamak için lütfen **${ domainName }** ile ilişkili bir kullanıcının oturum açma bilgilerini yazın"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Kimlik hizmeti sağlayıcınızdan geçerli bir SAML yanıtı aldık. Kuruluşunuz için tek oturum açma kullanıma alındı."
       ],
@@ -8969,9 +8960,6 @@
       ],
       "Single sign-on removed": [
         "Tek oturum açma kaldırıldı"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Kimlik hizmeti sağlayıcınızdaki kimlik bilgileri silinecek."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Bu işlem kullanıcının diğer aygıtlardaki oturumlarını kapatacak ve yeni bir yedek parola oluşturmaları gerekecek."
@@ -10769,9 +10757,6 @@
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Bu Tor Browser sürümü desteklenmiyor. Lütfen son ${ stableRelease } sürüme güncelleyin"
       ]
     },
     "unprivatization": {
@@ -10780,9 +10765,6 @@
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
-      ],
-      "Approve all": [
-        "Tümünü onayla"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Kullanıcıyı gizli kullanıcıya dönüştürdüğünüzde, verilerine veya hesabına erişerek yardımcı olamayacaksınız."
