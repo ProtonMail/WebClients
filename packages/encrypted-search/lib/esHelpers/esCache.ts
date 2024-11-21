@@ -65,8 +65,10 @@ export const cacheIDB = async <ESItemMetadata, ESItemContent>(
                 const encryptedContent = content[index];
 
                 const [plaintextMetadata, plaintextContent] = await Promise.all([
-                    decryptFromDB<ESItemMetadata>(encryptedMetadata.aesGcmCiphertext, indexKey),
-                    !!encryptedContent ? decryptFromDB<ESItemContent>(encryptedContent, indexKey) : undefined,
+                    decryptFromDB<ESItemMetadata>(encryptedMetadata.aesGcmCiphertext, indexKey, 'cacheIDB'),
+                    !!encryptedContent
+                        ? decryptFromDB<ESItemContent>(encryptedContent, indexKey, 'cacheIDB')
+                        : undefined,
                 ]);
 
                 return { ID: encryptedMetadata.ID, metadata: plaintextMetadata, content: plaintextContent };
