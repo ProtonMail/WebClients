@@ -12,6 +12,7 @@ import {
   useNotifications,
   NotificationButton,
   NOTIFICATION_DEFAULT_EXPIRATION_TIME,
+  useConfirmActionModal,
 } from '@proton/components'
 import type { NativeVersionHistory } from '@proton/docs-core'
 import type { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
@@ -39,6 +40,8 @@ function HistoryViewerModalContent({
   const [editorInvoker, setEditorInvoker] = useState<EditorInvoker | undefined>()
   const application = useApplication()
   const { createNotification, hideNotification } = useNotifications()
+
+  const [confirmModal, showConfirmModal] = useConfirmActionModal()
 
   const [isRestoring, withRestoring] = useLoading()
   const [isRestoringAsCopy, withRestoringAsCopy] = useLoading()
@@ -116,14 +119,29 @@ function HistoryViewerModalContent({
       }
 
       if (restoreType === RestoreType.Replace) {
-        const editorStateBeforeReplacing = await application.privateDocController.getEditorJSON()
-        const lexicalState = await editorInvoker.getCurrentEditorState()
-        if (!lexicalState || !editorStateBeforeReplacing) {
-          return
-        }
-        await application.privateDocController.restoreRevisionByReplacing(lexicalState)
-        onClose()
-        showSuccessfullRestoreNotification(editorStateBeforeReplacing)
+        return new Promise<void>((resolve) => {
+          showConfirmModal({
+            title: c('Action').t`Restore this version?`,
+            submitText: c('Action').t`Restore`,
+            className: 'restore-revision-modal',
+            canUndo: true,
+            message: c('Info')
+              .t`Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.`,
+            onCancel: resolve,
+            onSubmit: async () => {
+              const editorStateBeforeReplacing = await application.privateDocController.getEditorJSON()
+              const lexicalState = await editorInvoker.getCurrentEditorState()
+              if (!lexicalState || !editorStateBeforeReplacing) {
+                resolve()
+                return
+              }
+              await application.privateDocController.restoreRevisionByReplacing(lexicalState)
+              onClose()
+              showSuccessfullRestoreNotification(editorStateBeforeReplacing)
+              resolve()
+            },
+          })
+        })
       } else {
         const yjsState = await editorInvoker.getDocumentState()
         if (!yjsState) {
@@ -132,7 +150,7 @@ function HistoryViewerModalContent({
         await application.privateDocController.restoreRevisionAsCopy(yjsState)
       }
     },
-    [application.privateDocController, editorInvoker, onClose, showSuccessfullRestoreNotification],
+    [application.privateDocController, editorInvoker, onClose, showSuccessfullRestoreNotification, showConfirmModal],
   )
 
   if (!versionHistory.batches.length) {
@@ -145,6 +163,7 @@ function HistoryViewerModalContent({
 
   return (
     <div className="grid h-full grid-cols-[2fr,_minmax(18.75rem,_auto)]">
+      {confirmModal}
       {/* Left column */}
       <div className="flex flex-col">
         <div className="flex items-center gap-3 px-3 py-2.5">
@@ -195,25 +214,25 @@ function HistoryViewerModalContent({
           <div className="mt-auto flex flex-col items-stretch justify-end px-5 pb-3 pt-5">
             <Button
               className="mb-2 w-full"
-              data-testid="restore-revision-by-replace"
-              color="norm"
-              loading={isRestoring}
-              onClick={() => {
-                void withRestoring(onRestore(RestoreType.Replace))
-              }}
-            >
-              {c('Action').t`Restore version`}
-            </Button>
-
-            <Button
-              className="w-full"
               data-testid="restore-revision-by-copy"
+              color="norm"
               loading={isRestoringAsCopy}
               onClick={() => {
                 void withRestoringAsCopy(onRestore(RestoreType.AsCopy))
               }}
             >
-              {c('Action').t`Restore as copy`}
+              {c('Action').t`Make a copy`}
+            </Button>
+
+            <Button
+              className="w-full"
+              data-testid="restore-revision-by-replace"
+              loading={isRestoring}
+              onClick={() => {
+                void withRestoring(onRestore(RestoreType.Replace))
+              }}
+            >
+              {c('Action').t`Restore this version`}
             </Button>
           </div>
         )}
