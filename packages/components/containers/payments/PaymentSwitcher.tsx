@@ -1,17 +1,12 @@
-import type { MutableRefObject, ReactNode } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import type { MutableRefObject, PropsWithChildren } from 'react';
+import { useRef, useState } from 'react';
 
 import { useGetUser } from '@proton/account/user/hooks';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import type { CalledKillSwitchString } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import {
-    PaymentSwitcherContext,
-    useChargebeeContext,
-} from '@proton/components/payments/client-extensions/useChargebeeContext';
-import { setPaymentsVersion } from '@proton/shared/lib/api/payments';
+import { PaymentSwitcherContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { APPS } from '@proton/shared/lib/constants';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 import type { User } from '@proton/shared/lib/interfaces';
@@ -89,17 +84,6 @@ export async function isChargebeeEnabled(
         };
     }
 
-    // signups
-    if (isAccountLite) {
-        return {
-            result: ChargebeeEnabled.INHOUSE_FORCED,
-            reason: 'account lite',
-            params: {
-                isAccountLite,
-            },
-        };
-    }
-
     return {
         result: ChargebeeEnabled.CHARGEBEE_FORCED,
         reason: 'fallback',
@@ -125,73 +109,9 @@ export const useIsChargebeeEnabledWithoutParams = () => {
     return () => isChargebeeEnabled(UID, getUser);
 };
 
-/**
- * Important: DO NOT use in your components. Most likely, you need useChargebeeEnabledCache.
- */
-export const useChargebeeFeature = () => {
-    const getUser = useGetUser();
-    const { UID } = useAuthentication();
-    const [chargebeeFeatureLoaded, setLoaded] = useState(false);
-    const [chargebeeEnabled, setChargebeeEnabled] = useState(ChargebeeEnabled.INHOUSE_FORCED);
-    const { APP_NAME } = useConfig();
-    const isAccountLite = APP_NAME === APPS.PROTONACCOUNTLITE;
-
-    useEffect(() => {
-        async function run() {
-            const chargebeeEnabled = await isChargebeeEnabled(UID, getUser, isAccountLite);
-            setChargebeeEnabled(chargebeeEnabled.result);
-            setLoaded(true);
-        }
-
-        void run();
-    }, [UID]);
-
-    return {
-        chargebeeEnabled,
-        chargebeeFeatureLoaded,
-    };
-};
-
-interface Props {
-    loader: ReactNode;
-    children: ReactNode;
-}
-
-const InnerPaymentSwitcher = ({ loader, children }: Props) => {
-    const { chargebeeEnabled, chargebeeFeatureLoaded } = useChargebeeFeature();
-    const [loaded, setLoaded] = useState(false);
-    const chargebeeContext = useChargebeeContext();
-
-    useEffect(() => {
-        async function run() {
-            if (!chargebeeFeatureLoaded) {
-                return;
-            }
-
-            const isAllowed = chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_ALLOWED;
-            const isForced = chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
-
-            if ((isAllowed || isForced) && chargebeeContext) {
-                chargebeeContext.enableChargebeeRef.current = chargebeeEnabled;
-            }
-
-            if (isForced) {
-                setPaymentsVersion('v5');
-            }
-
-            await wait(0);
-            setLoaded(true);
-        }
-
-        void run();
-    }, [chargebeeFeatureLoaded, chargebeeEnabled]);
-
-    return <>{loaded ? children : loader}</>;
-};
-
-const PaymentSwitcher = (props: Props) => {
+const PaymentSwitcher = ({ children }: PropsWithChildren) => {
     const enableChargebeeRef: MutableRefObject<ChargebeeEnabled> = useRef<ChargebeeEnabled>(
-        ChargebeeEnabled.INHOUSE_FORCED
+        ChargebeeEnabled.CHARGEBEE_FORCED
     );
     const [calledKillSwitch, setCalledKillSwitch] = useState<CalledKillSwitchString>('not-called');
 
@@ -201,11 +121,7 @@ const PaymentSwitcher = (props: Props) => {
         setCalledKillSwitch,
     };
 
-    return (
-        <PaymentSwitcherContext.Provider value={chargebeeContext}>
-            <InnerPaymentSwitcher {...props} />
-        </PaymentSwitcherContext.Provider>
-    );
+    return <PaymentSwitcherContext.Provider value={chargebeeContext}>{children}</PaymentSwitcherContext.Provider>;
 };
 
 export default PaymentSwitcher;

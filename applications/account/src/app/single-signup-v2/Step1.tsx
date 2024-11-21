@@ -198,7 +198,7 @@ const Step1 = ({
 
     const availableCurrencies = getAvailableCurrencies({
         status: model.paymentMethodStatusExtended,
-        plans: getAccessiblePlans(planCards, audience, model.plans),
+        plans: getAccessiblePlans({ planCards, audience, plans: model.plans }),
         user: model.session?.user,
         subscription: model.session?.subscription,
         paramCurrency: signupParameters.currency,
@@ -495,7 +495,7 @@ const Step1 = ({
             }
         }
 
-        const newAudiencePlans = getAccessiblePlans(planCards, newAudience, model.plans);
+        const newAudiencePlans = getAccessiblePlans({ planCards, audience: newAudience, plans: model.plans });
 
         const newAudienceHasPlansWithSelectedCurrency =
             newAudiencePlans.map((plan) => model.subscriptionDataCycleMapping[plan.Name]).filter(isTruthy).length > 0;

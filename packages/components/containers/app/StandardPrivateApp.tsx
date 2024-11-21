@@ -22,7 +22,6 @@ interface Props {
     hasPrivateMemberKeyGeneration?: boolean;
     hasReadableMemberKeyActivation?: boolean;
     hasMemberKeyMigration?: boolean;
-    loader: ReactNode;
 }
 
 const StandardPrivateApp = ({
@@ -31,7 +30,6 @@ const StandardPrivateApp = ({
     hasMemberKeyMigration,
     hasReadableMemberKeyActivation,
     noModals,
-    loader,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const { isElectronDisabled } = useIsInboxElectronApp();
@@ -41,7 +39,7 @@ const StandardPrivateApp = ({
     }
 
     return (
-        <PaymentSwitcher loader={loader}>
+        <PaymentSwitcher>
             <KeyTransparencyManager appName={APP_NAME}>
                 <SessionRecoveryLocalStorageManager>
                     <EventNotices />

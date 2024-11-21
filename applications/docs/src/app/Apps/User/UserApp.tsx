@@ -109,7 +109,6 @@ const UserApp = () => {
                             hasReadableMemberKeyActivation
                             hasMemberKeyMigration
                             hasPrivateMemberKeyGeneration
-                            loader={loader}
                           >
                             <state.MainContainer />
                           </StandardPrivateApp>

@@ -96,7 +96,6 @@ const App = () => {
                                                         hasMemberKeyMigration
                                                         hasPrivateMemberKeyGeneration
                                                         noModals
-                                                        loader={loader}
                                                     >
                                                         <UserSettingsProvider
                                                             initialUser={state.initialUser}

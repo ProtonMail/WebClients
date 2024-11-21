@@ -108,7 +108,6 @@ const AppInner = () => {
                                             hasReadableMemberKeyActivation
                                             hasMemberKeyMigration
                                             hasPrivateMemberKeyGeneration
-                                            loader={loader}
                                         >
                                             <SubscriptionModalProvider app={config.APP_NAME}>
                                                 <state.MainContainer />
