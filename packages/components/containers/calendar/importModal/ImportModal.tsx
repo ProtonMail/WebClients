@@ -147,7 +147,6 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                             if (error instanceof ImportFileError) {
                                 void sendTelemetryEventParsingError(api, error.cause.errorType, error.cause.filename);
                             }
-                            console.error(error);
                             throw error;
                         }),
                     ]);
