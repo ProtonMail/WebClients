@@ -17,6 +17,7 @@ import { WalletAccountSelector } from '../WalletAccountSelector';
 import type { QuoteWithProvider } from './AmountStep';
 import { AmountStep } from './AmountStep';
 import { BitcoinBuyConfirmModal } from './BitcoinBuyConfirmModal';
+import { BitcoinBuyInProgressModal } from './BitcoinBuyInProgressModal';
 import { Checkout } from './Checkout';
 import { Location } from './Location';
 
@@ -44,7 +45,7 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
     const [quote, setQuote] = useState<QuoteWithProvider>();
     const [clientSecret, setClientSecret] = useState<string | null>(null);
 
-    const [openedModal, setOpenedModal] = useState<'buy' | 'confirm'>('buy');
+    const [openedModal, setOpenedModal] = useState<'buy' | 'confirm' | 'in-progress'>('buy');
 
     const defaultWalletAccount = first(wallet.WalletAccounts);
     const defaultSelected: [ApiWalletWithPassphraseInput, WasmApiWalletAccount | undefined] = [
@@ -170,6 +171,14 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
                                                     setOpenedModal('confirm');
                                                 }}
                                                 onBack={() => {
+                                                    if (
+                                                        quote.PaymentMethod === 'BankTransfer' &&
+                                                        quote.provider === 'Azteco'
+                                                    ) {
+                                                        reset();
+                                                        setOpenedModal('in-progress');
+                                                        return;
+                                                    }
                                                     setStepKey(StepKey.Amount);
                                                 }}
                                             />
@@ -186,6 +195,14 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
 
             <BitcoinBuyConfirmModal
                 open={Boolean(modal.open && openedModal === 'confirm')}
+                onDone={handleClose}
+                onBuyMoreBitcoin={() => {
+                    setOpenedModal('buy');
+                }}
+            />
+
+            <BitcoinBuyInProgressModal
+                open={Boolean(modal.open && openedModal === 'in-progress')}
                 onDone={handleClose}
                 onBuyMoreBitcoin={() => {
                     setOpenedModal('buy');
