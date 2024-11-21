@@ -40,7 +40,7 @@ import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
 import type { PaymentProcessorType } from '../react-extensions/interface';
 import type { ThemeCode, ThemeLike } from './helpers';
 import { getThemeCode } from './helpers';
-import { useChargebeeEnabledCache, useChargebeeUserStatusTracker } from './useChargebeeContext';
+import { useChargebeeEnabledCache } from './useChargebeeContext';
 import { useChargebeeKillSwitch } from './useChargebeeKillSwitch';
 import { wrapMethods } from './useMethods';
 import { usePaymentsTelemetry } from './usePaymentsTelemetry';
@@ -169,7 +169,6 @@ export const usePaymentFacade = ({
     const isChargebeeEnabled: () => ChargebeeEnabled = () => chargebeeEnabledOverride ?? chargebeeEnabledCache();
 
     const { chargebeeKillSwitch, forceEnableChargebee } = useChargebeeKillSwitch();
-    useChargebeeUserStatusTracker();
 
     const telemetry = usePaymentsTelemetry({
         apiOverride: api,

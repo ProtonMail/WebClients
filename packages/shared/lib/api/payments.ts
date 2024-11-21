@@ -33,7 +33,7 @@ import { getPlanNameFromIDs, isLifetimePlanSelected } from '../helpers/planIDs';
 import type { Api, Cycle, FreePlanDefault, Renew, Subscription } from '../interfaces';
 
 export type PaymentsVersion = 'v4' | 'v5';
-let paymentsVersion: PaymentsVersion = 'v4';
+let paymentsVersion: PaymentsVersion = 'v5';
 
 export function setPaymentsVersion(version: PaymentsVersion) {
     paymentsVersion = version;

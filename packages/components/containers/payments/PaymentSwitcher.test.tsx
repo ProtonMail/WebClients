@@ -40,11 +40,9 @@ describe('isChargebeeEnabled', () => {
         const { result } = await isChargebeeEnabled('UID', mockGetUser, true);
         expect(result).toEqual(ChargebeeEnabled.INHOUSE_FORCED);
     });
-
-    // todo: should it be CHARGEBEE_FORCED?
-    it('returns INHOUSE_FORCED when user is not logged in and isAccountLite is true', async () => {
+    it('returns CHARGEBEE_FORCED when user is not logged in and isAccountLite is true', async () => {
         const { result } = await isChargebeeEnabled(undefined, mockGetUser, true);
-        expect(result).toEqual(ChargebeeEnabled.INHOUSE_FORCED);
+        expect(result).toEqual(ChargebeeEnabled.CHARGEBEE_FORCED);
     });
 
     it('returns CHARGEBEE_FORCED when user is CHARGEBEE_FORCED and the app is AccountLite', async () => {

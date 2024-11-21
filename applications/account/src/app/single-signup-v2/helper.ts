@@ -10,6 +10,7 @@ import {
     FREE_SUBSCRIPTION,
     PLANS,
     type PlanIDs,
+    isStringPLAN,
 } from '@proton/payments';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
@@ -751,16 +752,27 @@ export const getSubscriptionMapping = ({
     return subscriptionMapping;
 };
 
-export const getAccessiblePlans = (
-    planCards: SignupConfiguration['planCards'],
-    audience: Audience,
-    plans: Plan[]
-): StrictPlan[] => {
+interface GetAccessiblePlansParams {
+    planCards: SignupConfiguration['planCards'];
+    audience: Audience;
+    plans: Plan[];
+    paramPlanName?: string;
+}
+
+export const getAccessiblePlans = ({
+    planCards,
+    audience,
+    plans,
+    paramPlanName,
+}: GetAccessiblePlansParams): StrictPlan[] => {
     if (audience !== Audience.B2C && audience !== Audience.B2B) {
         return [];
     }
 
-    const accessiblePlanNames = planCards[audience].map(({ plan }) => plan) as PLANS[];
+    const accessiblePlanNames = planCards[audience].map(({ plan }) => plan);
+    if (paramPlanName && isStringPLAN(paramPlanName)) {
+        accessiblePlanNames.push(paramPlanName);
+    }
 
     return plans.filter(({ Name }) => accessiblePlanNames.includes(Name as PLANS)) as StrictPlan[];
 };
