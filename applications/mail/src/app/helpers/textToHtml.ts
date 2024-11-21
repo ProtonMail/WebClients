@@ -15,7 +15,7 @@ const OPTIONS = {
 
 export const DEFAULT_TAGS_TO_DISABLE = ['lheading', 'heading', 'list', 'code', 'fence', 'hr'];
 
-const getMD = (tagsToDisable = DEFAULT_TAGS_TO_DISABLE) => {
+export const getMarkdownParser = (tagsToDisable = DEFAULT_TAGS_TO_DISABLE) => {
     return markdownit('default', OPTIONS).disable([...tagsToDisable]);
 };
 
@@ -81,16 +81,16 @@ const removeNewLinePlaceholder = (html: string, placeholder: string) => html.rep
 /**
  * Escapes backslashes from the input text with another backslash.
  */
-const escapeBackslash = (text = '') => text.replace(/\\/g, '\\\\');
+export const escapeBackslash = (text = '') => text.replace(/\\/g, '\\\\');
 
-export const prepareConversionToHTML = (content: string, tagsToDisable?: string[]) => {
+const prepareConversionToHTML = (content: string) => {
     // We want empty new lines to behave as if they were not empty (this is non-standard markdown behaviour)
     // It's more logical though for users that don't know about markdown.
     const placeholder = generatePlaceHolder(content);
     // We don't want to treat backslash as a markdown escape since it removes backslashes. So escape all backslashes with a backslash.
     const withPlaceholder = addNewLinePlaceholders(escapeBackslash(content), placeholder);
-    const md = getMD(tagsToDisable);
-    const rendered = md.render(withPlaceholder);
+    const markdownParser = getMarkdownParser();
+    const rendered = markdownParser.render(withPlaceholder);
     return removeNewLinePlaceholder(rendered, placeholder);
 };
 
