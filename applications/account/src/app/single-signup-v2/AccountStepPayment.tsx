@@ -333,6 +333,7 @@ const AccountStepPayment = ({
                                 planIDs={planIDs}
                                 onChangePlanIDs={(planIDs) => handleOptimistic({ planIDs })}
                                 audience={isB2BPlan ? Audience.B2B : Audience.B2C}
+                                scribeAddonEnabled
                             />
                             <div className="mt-6 mb-6">
                                 <hr />

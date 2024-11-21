@@ -51,7 +51,7 @@ interface AddonCustomizerProps {
     latestSubscription?: Subscription;
     supportedAddons: SupportedAddons;
     showAddonDescriptions: boolean;
-    scribeAddonEnabled?: boolean;
+    scribeAddonEnabled: boolean;
     audience?: Audience;
     mode: CustomiserMode;
 }
@@ -246,7 +246,7 @@ const AddonCustomizer = ({
                 value={value}
                 maxUsers={max}
                 showScribeBanner={showScribeBanner}
-                onShowScribeBanner={() => {
+                onAddScribe={() => {
                     setShowScribeBanner(false);
                     onChangePlanIDs(setQuantity(planIDs, addon.Name, max));
                 }}
@@ -274,7 +274,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     latestSubscription?: Subscription;
     allowedAddonTypes?: AddonGuard[];
     audience?: Audience;
-    scribeEnabled?: boolean;
+    scribeAddonEnabled?: boolean;
 }
 
 export const ProtonPlanCustomizer = ({
@@ -292,7 +292,7 @@ export const ProtonPlanCustomizer = ({
     latestSubscription,
     allowedAddonTypes,
     audience,
-    scribeEnabled = true,
+    scribeAddonEnabled = false,
     ...rest
 }: Props) => {
     const supportedAddons = getSupportedAddons(planIDs);
@@ -321,7 +321,7 @@ export const ProtonPlanCustomizer = ({
                 return (
                     <AddonCustomizer
                         key={addonName}
-                        scribeAddonEnabled={scribeEnabled}
+                        scribeAddonEnabled={scribeAddonEnabled}
                         addonName={addonName}
                         cycle={cycle}
                         currency={currency}
