@@ -1296,6 +1296,33 @@ describe('Chargebee Bitcoin', () => {
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
     });
+
+    it('should display bitcoin if user is delinquent and the flow is credit', () => {
+        const flow: PaymentMethodFlows = 'credit';
+
+        const user = buildUser({
+            Delinquent: UNPAID_STATE.AVAILABLE,
+        });
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            disableNewPaymentMethods: false,
+            billingAddress: undefinedBillingAddress,
+            enableSepa: enableSepaTrue,
+            user,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
+    });
 });
 
 describe('Bitcoin', () => {
