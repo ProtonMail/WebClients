@@ -8,6 +8,7 @@ import SpeechBubblePenIcon from '../../Icons/SpeechBubblePenIcon'
 import { useApplication } from '../../ApplicationProvider'
 import { TOGGLE_SUGGESTION_MODE_COMMAND } from '../Suggestions/Commands'
 import clsx from '@proton/utils/clsx'
+import { useActiveBreakpoint } from '@proton/components'
 
 export function FloatingQuickActions({
   anchorKey,
@@ -21,6 +22,7 @@ export function FloatingQuickActions({
   const { isSuggestionMode, isSuggestionsFeatureEnabled } = useApplication()
 
   const boxRef = useRef<HTMLDivElement>(null)
+  const { viewportWidth } = useActiveBreakpoint()
 
   const updatePosition = useCallback(() => {
     const boxElem = boxRef.current
@@ -29,13 +31,22 @@ export function FloatingQuickActions({
     const anchorElement = editor.getElementByKey(anchorKey)
 
     if (boxElem !== null && rootElement !== null && anchorElement !== null && rootElementParent) {
-      const { right } = rootElement.getBoundingClientRect()
+      const { width } = rootElement.getBoundingClientRect()
+      const rootStyle = getComputedStyle(rootElement)
+      const rightPadding = parseFloat(rootStyle.paddingRight)
+      const left = width - rightPadding
       const { top } = anchorElement.getBoundingClientRect()
       const { top: rootTop } = rootElementParent.getBoundingClientRect()
-      boxElem.style.left = `${right + 10}px`
+      if (viewportWidth['<=small']) {
+        boxElem.style.left = ''
+        boxElem.style.right = '5px'
+      } else {
+        boxElem.style.left = `${left + 10}px`
+        boxElem.style.right = ''
+      }
       boxElem.style.top = `${top - rootTop + rootElementParent.scrollTop}px`
     }
-  }, [anchorKey, editor])
+  }, [anchorKey, editor, viewportWidth])
 
   useEffect(() => {
     window.addEventListener('resize', updatePosition)
