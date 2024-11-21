@@ -178,6 +178,9 @@
       "Delete all": [
         "Excluir tudo"
       ],
+      "Delete it, I will never need it": [
+        "Exclua-o, eu nunca vou precisar dele"
+      ],
       "Delete password": [
         "Excluir senha"
       ],
@@ -547,6 +550,10 @@
       ],
       "Try for free": [
         "Experimente gratuitamente"
+      ],
+      "Understood, I will never need it": [
+        "Entendido, eu nunca vou precisar dele",
+        "Entendido, eu nunca vou precisar deles"
       ],
       "Unlock": [
         "Desbloquear"
@@ -1623,7 +1630,7 @@
         "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN. Você será desconectado após 3 tentativas fracassadas."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Os nossos alertas priorizam a segurança. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
+        "Nossos alertas priorizam a segurança. Se você não reconhecer nenhuma das informações violadas, você pode ignorar este relatório com segurança."
       ],
       "Owner": [
         "Proprietário"
@@ -1712,6 +1719,12 @@
       ],
       "Please enter your current PIN code to continue": [
         "Insira o seu código PIN atual para continuar"
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Por favor, note que, uma vez excluído, o alias não pode ser restaurado. Talvez você queira desabilitar o alias em vez disso?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Por favor, note que, uma vez excluído, o alias não pode ser restaurado. O alias já está desativado e não encaminhará e-mails para sua caixa de entrada"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Faça upgrade para ter acesso antecipado ao aplicativo web do ${ PASS_APP_NAME }"
@@ -1948,6 +1961,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Você não pode alterar as caixas de entrada para este alias."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Você tem ${ aliasCount } alias que está presente no SimpleLogin, mas ausente em ${ PASS_APP_NAME }. Deseja sincronizá-lo?",
+        "Você tem ${ aliasCount } aliases que estão presentes no SimpleLogin, mas ausentes em ${ PASS_APP_NAME }. Deseja sincronizá-los?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Você tem ${ daysRemaining } dia restante para experimentar esses e outros recursos premium.",
@@ -3237,6 +3254,10 @@
       ],
       "Pinned (${ items.length })": [
         "Fixado(${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Por favor, note que, uma vez excluído, o alias não pode ser restaurado.",
+        "Por favor, note que, uma vez excluídos, os aliases não podem ser restaurados."
       ],
       "Recommended actions": [
         "Ações recomendadas"
