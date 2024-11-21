@@ -22,7 +22,7 @@ export const readMetadataItem = async <ESItemMetadata>(userID: string, itemID: s
         return;
     }
 
-    return decryptFromDB<ESItemMetadata>(encryptedMetadataItem.aesGcmCiphertext, indexKey);
+    return decryptFromDB<ESItemMetadata>(encryptedMetadataItem.aesGcmCiphertext, indexKey, 'readMetadataItem');
 };
 
 /**

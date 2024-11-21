@@ -13,6 +13,8 @@ import type {
     GetUserKeys,
     InternalESCallbacks,
 } from '../models';
+import { ESDecryptionError, ESParseError } from '../models/errors';
+import { esSentryReport } from './esAPI';
 import { getIndexKey } from './esBuild';
 import { cacheIDB, getOldestCachedTimepoint } from './esCache';
 import { normalizeString, replaceApostrophes, replaceQuotes } from './esUtils';
@@ -111,17 +113,40 @@ export const applySearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
  */
 export const decryptFromDB = async <Plaintext>(
     aesGcmCiphertext: AesGcmCiphertext,
-    indexKey: CryptoKey
+    indexKey: CryptoKey,
+    source: 'uncachedSearch' | 'cacheIDB' | 'readMetadataItem' | 'readContentItem' | 'searchUndecryptedElements'
 ): Promise<Plaintext> => {
-    const textDecoder = new TextDecoder();
+    try {
+        const textDecoder = new TextDecoder();
 
-    const decryptedMessage: ArrayBuffer = await crypto.subtle.decrypt(
-        { iv: aesGcmCiphertext.iv, name: AesKeyGenParams.name },
-        indexKey,
-        aesGcmCiphertext.ciphertext
-    );
+        const decryptedMessage: ArrayBuffer = await crypto.subtle.decrypt(
+            { iv: aesGcmCiphertext.iv, name: AesKeyGenParams.name },
+            indexKey,
+            aesGcmCiphertext.ciphertext
+        );
 
-    return JSON.parse(textDecoder.decode(new Uint8Array(decryptedMessage)));
+        const decodedText = textDecoder.decode(new Uint8Array(decryptedMessage));
+
+        try {
+            return JSON.parse(decodedText);
+        } catch (error) {
+            const parseError = new ESParseError('Failed to parse decrypted data', error as Error);
+            esSentryReport(`${parseError.message}: decryptFromDB`, {
+                source,
+                length: decodedText.length,
+                error: parseError,
+            });
+            throw parseError;
+        }
+    } catch (error) {
+        if (error instanceof ESParseError) {
+            throw error;
+        }
+
+        const decryptError = new ESDecryptionError('Failed to decrypt data', error as Error);
+        esSentryReport(`${decryptError.message}: decryptFromDB`, { source, error: decryptError });
+        throw decryptError;
+    }
 };
 
 /**
@@ -170,8 +195,10 @@ export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchPara
 
                 const encryptedContent = content[index];
                 const [plaintextMetadata, plaintextContent] = await Promise.all([
-                    decryptFromDB<ESItemMetadata>(encryptedMetadata.aesGcmCiphertext, indexKey),
-                    !!encryptedContent ? decryptFromDB<ESItemContent>(encryptedContent, indexKey) : undefined,
+                    decryptFromDB<ESItemMetadata>(encryptedMetadata.aesGcmCiphertext, indexKey, 'uncachedSearch'),
+                    !!encryptedContent
+                        ? decryptFromDB<ESItemContent>(encryptedContent, indexKey, 'uncachedSearch')
+                        : undefined,
                 ]);
 
                 return { metadata: plaintextMetadata, content: plaintextContent };
