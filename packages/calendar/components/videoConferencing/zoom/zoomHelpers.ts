@@ -1,7 +1,12 @@
 import { type BaseMeetingUrls, SEPARATOR_PROTON_EVENTS, VIDEO_CONF_SERVICES } from '../constants';
 
+// Regular regex expecting a Zoom URL https://us05web.zoom.us/j/...
 const ZOOM_REGEX_LOCATION =
     /(?:https?:\/\/)?(?:[a-zA-Z0-9.-]+)\.zoom\.us\/j\/([a-zA-Z0-9]+)(?:\?pwd=([a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)?))?/;
+
+// Regular regex expecting a Zoom URL https://zoom.us/j/...
+const ZOOM_SIMPLER_REGEX_LOCATION =
+    /(?:https?:\/\/)zoom\.us\/j\/([a-zA-Z0-9]+)(?:\?pwd=([a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)?))?/;
 
 const ZOOM_REGEX_PASSCODE = /passcode: (\w+)/;
 const ZOOM_REGEX_JOINING_INSTRUCTIONS =
@@ -21,6 +26,18 @@ export const getZoomDataFromLocation = (location: string): BaseMeetingUrls => {
 
 export const getZoomFromDescription = (description: string): BaseMeetingUrls => {
     const match = description.match(ZOOM_REGEX_LOCATION);
+
+    if (!match) {
+        const matchSimpler = description.match(ZOOM_SIMPLER_REGEX_LOCATION);
+
+        return {
+            service: VIDEO_CONF_SERVICES.ZOOM,
+            meetingUrl: matchSimpler?.[0],
+            meetingId: matchSimpler?.[1],
+            password: description.match(ZOOM_REGEX_PASSCODE)?.[1].trim(),
+            joiningInstructions: description.match(ZOOM_REGEX_JOINING_INSTRUCTIONS)?.[1].trim(),
+        };
+    }
 
     return {
         service: VIDEO_CONF_SERVICES.ZOOM,
