@@ -97,4 +97,26 @@ describe('PaymentMethodsSection', () => {
         const { container } = render(<PaymentMethodsSectionContext />);
         expect(container).not.toHaveTextContent('Add PayPal');
     });
+
+    it('should NOT show the paypal button only if there is already paypal payment', () => {
+        jest.mocked(usePaymentMethods).mockReturnValue([
+            [
+                {
+                    Order: 1,
+                    ID: 'id123',
+                    Type: PAYMENT_METHOD_TYPES.PAYPAL,
+                    Details: {
+                        BillingAgreementID: 'BillingAgreementID123',
+                        PayerID: 'PayerID123',
+                        Payer: 'Arthur Morgan',
+                    },
+                    External: MethodStorage.EXTERNAL,
+                },
+            ],
+            false,
+        ]);
+
+        const { container } = render(<PaymentMethodsSectionContext />);
+        expect(container).not.toHaveTextContent('Add PayPal');
+    });
 });

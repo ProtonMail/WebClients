@@ -16,7 +16,13 @@ import useMozillaCheck from '@proton/components/hooks/useMozillaCheck';
 import { useChargebeeEnabledCache } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import useLoading from '@proton/hooks/useLoading';
-import { MethodStorage, PAYMENT_METHOD_TYPES, isOnSessionMigration, isSplittedUser } from '@proton/payments';
+import {
+    MethodStorage,
+    PAYMENT_METHOD_TYPES,
+    type SavedPaymentMethod,
+    isOnSessionMigration,
+    isSplittedUser,
+} from '@proton/payments';
 import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
@@ -70,15 +76,12 @@ const PaymentMethodsSection = () => {
         (isOnSessionMigration(user.ChargebeeUser, subscription?.BillingPlatform) &&
             !isSplittedUser(user.ChargebeeUser, user.ChargebeeUserExists, subscription?.BillingPlatform));
 
-    const canAddPaypalV4 =
-        !paymentMethods.some(
-            (method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL && method.External === MethodStorage.INTERNAL
-        ) && canAddV4;
+    const paypalPredicate = (method: SavedPaymentMethod) =>
+        method.Type === PAYMENT_METHOD_TYPES.PAYPAL &&
+        (method.External === MethodStorage.INTERNAL || method.External === MethodStorage.EXTERNAL);
 
-    const canAddPaypalV5 =
-        !paymentMethods.some(
-            (method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL && method.External === MethodStorage.EXTERNAL
-        ) && !canAddV4;
+    const canAddPaypalV4 = !paymentMethods.some(paypalPredicate) && canAddV4;
+    const canAddPaypalV5 = !paymentMethods.some(paypalPredicate) && !canAddV4;
 
     const loadAddedMethod = () => {
         void withPollingEvents(pollPaymentMethodsCreate());

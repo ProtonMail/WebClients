@@ -28,7 +28,6 @@ import { INVOICE_OWNER, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { useChargebeeUserStatusTracker } from '../../payments/client-extensions/useChargebeeContext';
 import InvoiceActions from './InvoiceActions';
 import InvoiceAmount from './InvoiceAmount';
 import InvoiceState from './InvoiceState';
@@ -124,11 +123,6 @@ const InvoiceGroup = ({ invoices, loading, error, page, requestInvoices }: Invoi
 
 const InvoicesSection = () => {
     const [user] = useUser();
-
-    // There are cases when we don't have the tracker in the current context.
-    // For example, if user upgrades to CB in one tab and has the second tab open, then the invoices request
-    // will go to v4 instead of v5 leading to an error. This hook tracks chargebee for the invoices section.
-    useChargebeeUserStatusTracker();
 
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);

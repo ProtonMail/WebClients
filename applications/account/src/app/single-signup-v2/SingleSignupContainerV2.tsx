@@ -697,7 +697,12 @@ const SingleSignupContainerV2 = ({
 
             const currency = getPreferredCurrency({
                 status: paymentMethodStatus,
-                plans: getAccessiblePlans(planCards, audience, plans),
+                plans: getAccessiblePlans({
+                    planCards,
+                    audience,
+                    plans,
+                    paramPlanName: signupParameters.preSelectedPlan,
+                }),
                 paramCurrency: signupParameters.currency,
                 paramPlanName: signupParameters.preSelectedPlan,
                 user: resumedSession?.User ? formatUser(resumedSession?.User) : undefined,

@@ -470,7 +470,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
 
 const SubscribeAccountWithProviders = (props: Props) => {
     return (
-        <PaymentSwitcher loader={props.loader}>
+        <PaymentSwitcher>
             <SubscribeAccount {...props} />
         </PaymentSwitcher>
     );

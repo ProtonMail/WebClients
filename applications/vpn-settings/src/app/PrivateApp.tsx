@@ -63,7 +63,7 @@ const PrivateApp = ({ store, locales }: Props) => {
         <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                 <ErrorBoundary big component={<StandardErrorPage big />}>
-                    <StandardPrivateApp loader={loader}>
+                    <StandardPrivateApp>
                         <AccountSpotlightsProvider>
                             <state.MainContainer />
                         </AccountSpotlightsProvider>
