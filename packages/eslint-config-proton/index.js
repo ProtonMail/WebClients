@@ -200,6 +200,7 @@ module.exports = {
         'custom-rules/deprecate-sizing-classes': 'warn',
         'custom-rules/deprecate-classes': 'warn',
         'custom-rules/no-template-in-translator-context': 'error',
+        'custom-rules/validate-ttag': 'error',
         '@typescript-eslint/consistent-type-imports': 'error',
         'lodash/import-scope': [2, 'method'],
     },

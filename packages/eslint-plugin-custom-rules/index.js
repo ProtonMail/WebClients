@@ -5,5 +5,6 @@ module.exports = {
         'deprecate-sizing-classes': require('./deprecate-sizing-classes'),
         'deprecate-classes': require('./deprecate-classes'),
         'no-template-in-translator-context': require('./no-template-in-translator-context'),
+        'validate-ttag': require('./validate-ttag'),
     },
 };
