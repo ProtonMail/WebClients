@@ -1124,6 +1124,12 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizacja \"${ payload.item.data.metadata.name }\" została odrzucona"
       ],
+      "${ count } invite successfully sent": [
+        "Wysłano ${ count } zaproszenie",
+        "Wysłano ${ count } zaproszenia",
+        "Wysłano ${ count } zaproszeń",
+        "Wysłano ${ count } zaproszeń"
+      ],
       "${ count } time": [
         "${ count } raz",
         "${ count } razy",

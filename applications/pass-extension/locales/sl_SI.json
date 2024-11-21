@@ -2431,12 +2431,22 @@
         "Napišite svojo opombo"
       ]
     },
+    "sso": {
+      "Invalid confirmation code": [
+        "Neveljavna potrditvena koda"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnika.",
         "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnika.",
         "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnikov.",
         "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnikov."
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "Temna"
       ]
     },
     "Title": {
@@ -2553,6 +2563,9 @@
       ],
       "Pinned (${ items.length })": [
         "Pripeto (${ items.length })"
+      ],
+      "Reject device?": [
+        "Zavrni napravo?"
       ],
       "Remove extra password": [
         "Odstranite dodatno geslo"

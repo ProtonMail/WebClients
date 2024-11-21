@@ -164,6 +164,9 @@
       "Delete all": [
         "すべて削除"
       ],
+      "Delete it, I will never need it": [
+        "もう使わないので削除してください"
+      ],
       "Delete password": [
         "パスワードを削除"
       ],
@@ -175,6 +178,9 @@
       ],
       "Deselect": [
         "選択を解除"
+      ],
+      "Disable alias": [
+        "エイリアスを無効にする"
       ],
       "Disable autosave on this website": [
         "ウェブサイトでの自動保存を無効化"
@@ -223,6 +229,9 @@
       ],
       "Feedback & Help": [
         "フィードバックとヘルプ"
+      ],
+      "Fill in": [
+        "入力"
       ],
       "Fill password": [
         "パスワードを入力"
@@ -500,6 +509,9 @@
       "Submitting report...": [
         "レポートを送信中..."
       ],
+      "Sync alias": [
+        "エイリアスを同期"
+      ],
       "Sync aliases": [
         "エイリアスを同期する"
       ],
@@ -512,6 +524,9 @@
       "Try again": [
         "再試行"
       ],
+      "Understood, I will never need it": [
+        "はい、もう要りません"
+      ],
       "Unlock": [
         "ロック解除"
       ],
@@ -520,6 +535,9 @@
       ],
       "Update": [
         "更新"
+      ],
+      "Update this login": [
+        "ログインを更新"
       ],
       "Update vault": [
         "保管庫を 更新"
@@ -840,7 +858,7 @@
         "ネットワークエラーが発生しました"
       ],
       "Passphrase is incorrect": [
-        "パスフレーズが間違っています"
+        "パスフレーズが無効です"
       ],
       "PIN codes do not match": [
         "PINコードが一致しません"
@@ -891,10 +909,13 @@
         "インポートしようとしているファイルは空です。"
       ],
       "The URL is in the list": [
-        "URLはリストにあります\n"
+        "URLがリストにあります"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "セキュアリンクの削除中にエラーが発生しました。数分後にもう一度お試しください。"
+      ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "この問題は、 ${ PASS_SHORT_APP_NAME }を長時間使用しなかった後、またはSafariの履歴を消去した後に発生することがあります。"
       ],
       "Too many failed attempts. Please sign in again.": [
         "失敗が多すぎます。もう一度サインインしてください。"
@@ -952,6 +973,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "現在オフラインです。 ${ PASS_SHORT_APP_NAME }のロックを解除するためにネットワークに接続してください。"
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME }を起動する際にブラウザの問題が生じています。"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "あなたのPIN コードは他のクライアント${ PASS_APP_NAME }にって削除されました"
@@ -1433,6 +1457,9 @@
       "Never": [
         "なし"
       ],
+      "No identity item found": [
+        "アイデンティティの情報なし"
+      ],
       "No login found": [
         "ログインが見つかりません"
       ],
@@ -1535,6 +1562,12 @@
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } の使用を開始するには追加パスワードを入力してください。"
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "削除したエイリアスは復元できません。エイリアスを無効にするほうがよろしいでしょうか？"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "削除したエイリアスは復元できません。このエイリアスは既に無効になっており、メールボックスにメールを転送することはできません。"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "${ PASS_APP_NAME } ウェブ アプリに早期アクセスできるようにアップグレードしてください"
       ],
@@ -1635,7 +1668,7 @@
         "保管庫を同期中…"
       ],
       "Thank you, the problem has been reported": [
-        "ありがとう、問題は報告されました"
+        "問題は報告されました　ありがとうございます"
       ],
       "The export will only contain vaults that you own.": [
         "エクスポートには、自分が所有するボールトのみが含まれます。"
@@ -1763,6 +1796,9 @@
       "You cannot change the mailboxes for this alias.": [
         "このエイリアスのメールボックスを変更することはできません。"
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "SimpleLogin に存在し${ PASS_APP_NAME }に存在しないエイリアスが、${ aliasCount } 件あります。同期しますか？"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "これらおよびその他のプレミアム機能をお試しいただける期間は、残り ${ daysRemaining } 日間です。"
       ],
@@ -1855,6 +1891,9 @@
       "24 hours": [
         "24 時間"
       ],
+      "2FA autofill": [
+        "2 要素認証 (2FA) 自動入力"
+      ],
       "2FA secret key (TOTP)": [
         "2FA 秘密鍵 (TOTP)"
       ],
@@ -1941,6 +1980,9 @@
       ],
       "Birthdate": [
         "生年月日"
+      ],
+      "Browser settings": [
+        "ブラウザの設定"
       ],
       "Capital letters (A-Z)": [
         "大文字のアルファベット (A ～ Z)"
@@ -2116,6 +2158,9 @@
       "Identity": [
         "ユーザー情報"
       ],
+      "Identity autofill": [
+        "アイデンティティ情報自動入力"
+      ],
       "Import": [
         "インポート"
       ],
@@ -2178,6 +2223,9 @@
       ],
       "Login": [
         "ログイン"
+      ],
+      "Login autofill": [
+        "ログイン情報自動入力"
       ],
       "Logins": [
         "ログイン"
@@ -2443,8 +2491,14 @@
       "Update": [
         "更新"
       ],
+      "Use ${ PASS_APP_NAME } as your browser's default password manager": [
+        "${ PASS_APP_NAME }をブラウザの既定のパスワードマネージャーに設定"
+      ],
       "Username": [
         "ユーザー名"
+      ],
+      "Username/email": [
+        "ユーザー名/メールアドレス"
       ],
       "Vault ID": [
         "保管庫 ID"
@@ -2484,6 +2538,9 @@
       ],
       "You are about to create": [
         "作成されるメールアドレス"
+      ],
+      "Your browser will stop using its built-in password manager.": [
+        "内蔵のパスワードマネージャーの使用は中止されます。"
       ],
       "ZIP or Postal code": [
         "郵便番号"
@@ -2640,6 +2697,29 @@
         "はい、私です"
       ]
     },
+    "sso: auth device state": {
+      "Active": [
+        "アクティブ"
+      ],
+      "Inactive": [
+        "非アクティブ"
+      ],
+      "Pending activation": [
+        "アクティベーションの保留中"
+      ],
+      "Pending admin activation": [
+        "管理者アクティベーションの保留中"
+      ],
+      "Rejected": [
+        "拒否"
+      ],
+      "Signed out": [
+        "サインアウトされました"
+      ],
+      "Unknown": [
+        "不明"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "エイリアスの同期が有効になりました。シンプルログインのエイリアスは同期に時間がかかることがあります"
@@ -2769,6 +2849,9 @@
       "Pinned (${ items.length })": [
         "ピン留め (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "削除したエイリアスは復元できませんので、ご注意ください。"
+      ],
       "Reject device?": [
         "デバイスを拒否しますか？"
       ],
@@ -2810,6 +2893,9 @@
       ],
       "Sync alias": [
         "エイリアスを同期"
+      ],
+      "Sync your aliases from SimpleLogin": [
+        "SimpleLoginのエイリアスと同期"
       ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をインストールしていただきありがとうございます"
@@ -2904,6 +2990,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "保管庫「${ vaultName }」を作成できませんでした"
+      ],
+      "Delete alias": [
+        "エイリアスを削除"
       ],
       "Duplicate email addresses.": [
         "メールアドレスが重複しています"

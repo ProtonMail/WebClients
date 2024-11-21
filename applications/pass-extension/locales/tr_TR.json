@@ -1102,6 +1102,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } davet gönderildi",
+        "${ count } davet gönderildi"
+      ],
       "${ count } time": [
         "${ count } kez",
         "${ count } kez"

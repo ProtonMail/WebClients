@@ -1124,6 +1124,12 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizácia \"${ payload.item.data.metadata.name }\" bola zamietnutá"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } pozvánka úspešne odoslaná",
+        "${ count } pozvánky úspešne odoslané",
+        "${ count } pozvánok úspešne odoslaných",
+        "${ count } pozvánok úspešne odoslaných"
+      ],
       "${ count } time": [
         "${ count } krát",
         "${ count } krát",

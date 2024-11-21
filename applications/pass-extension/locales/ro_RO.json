@@ -1113,6 +1113,11 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualizarea pentru „${ payload.item.data.metadata.name }” a fost respinsă."
       ],
+      "${ count } invite successfully sent": [
+        "Invitații trimise: ${ count }",
+        "Invitații trimise: ${ count }",
+        "Invitații trimise: ${ count }"
+      ],
       "${ count } time": [
         "${ count } dată",
         "de ${ count } ori",

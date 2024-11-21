@@ -1124,6 +1124,12 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizace \"${ payload.item.data.metadata.name }\" byla odmítnuta"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } pozvánka úspěšně odeslána",
+        "${ count } pozvánky úspěšně odeslány",
+        "${ count } pozvánek úspěšně odesláno",
+        "${ count } pozvánek úspěšně odesláno"
+      ],
       "${ count } time": [
         "${ count } krát",
         "${ count } krát",
@@ -3393,7 +3399,7 @@
         "Žádná položka v koši neodpovídá"
       ],
       "No items matching": [
-        "Žadné položky se neshodují"
+        "Žadné položky neodpovídají"
       ],
       "No password manager selected": [
         "Není vybrán žádný správce hesel"
