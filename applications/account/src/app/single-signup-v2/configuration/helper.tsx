@@ -226,20 +226,30 @@ export const getFamilyDuoBenefits = (): BenefitItem[] => {
     ];
 };
 
-export const getGenericFeatures = (isLargeViewport: boolean, audience?: Audience) => {
-    const e2e = {
-        key: 'e2e',
-        left: <Icon size={6} className="color-primary" name="lock" />,
-        text: c('pass_signup_2023: Feature').t`End-to-end encrypted`,
-    };
+export const getSwissFeature = ({ fullText }: { fullText: boolean }) => ({
+    key: 'swiss',
+    left: <img width="24" alt="" src={swissFlag} className="rounded-sm" />,
+    text: fullText
+        ? c('pass_signup_2023: Feature').t`Protected by Swiss privacy laws`
+        : c('pass_signup_2023: Feature').t`Swiss based`,
+});
 
-    const swiss = {
-        key: 'swiss',
-        left: <img width="24" alt="" src={swissFlag} className="rounded-sm" />,
-        text: isLargeViewport
-            ? c('pass_signup_2023: Feature').t`Protected by Swiss privacy laws`
-            : c('pass_signup_2023: Feature').t`Swiss based`,
-    };
+export const getEncryptedFeature = ({ e2ee }: { e2ee: boolean }) => ({
+    key: 'e2e',
+    left: <Icon size={6} className="color-primary" name="lock" />,
+    text: e2ee ? c('pass_signup_2023: Feature').t`End-to-end encrypted` : c('signup: Feature').t`Encrypted`,
+});
+
+export const getNoLogsFeature = () => ({
+    key: 'no-logs',
+    left: <Icon size={6} className="color-primary" name="eye-slash" />,
+    text: c('signup: Feature').t`Strict no-logs policy`,
+});
+
+export const getGenericFeatures = (isLargeViewport: boolean, audience?: Audience) => {
+    const e2ee = getEncryptedFeature({ e2ee: true });
+
+    const swiss = getSwissFeature({ fullText: isLargeViewport });
 
     const openSource = {
         key: 'open-source',
@@ -253,7 +263,7 @@ export const getGenericFeatures = (isLargeViewport: boolean, audience?: Audience
         text: c('signup_2024: Feature').t`GDPR and HIPAA compliant`,
     };
 
-    const audienceSpecificFeatures = audience === Audience.B2B ? [e2e, swiss, gdpr] : [e2e, openSource, swiss];
+    const audienceSpecificFeatures = audience === Audience.B2B ? [e2ee, swiss, gdpr] : [e2ee, openSource, swiss];
 
     return audienceSpecificFeatures;
 };
