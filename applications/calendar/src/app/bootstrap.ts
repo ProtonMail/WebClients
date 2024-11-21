@@ -9,6 +9,7 @@ import {
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import {
     calendarSettingsThunk,
     calendarsThunk,
@@ -33,6 +34,7 @@ import noop from '@proton/utils/noop';
 
 import { embeddedDrawerAppInfos } from './helpers/drawer';
 import locales from './locales';
+import { type CalendarState } from './store/rootReducer';
 import { extendStore, setupStore } from './store/store';
 
 const getAppContainer = () =>
@@ -91,11 +93,23 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
+        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, unleashClient, history });
 
-        const store = setupStore();
+        await unleashPromise;
+        let persistedState = await getDecryptedPersistedState<Partial<CalendarState>>({
+            authentication,
+            user,
+        });
+
+        const persistedStateEnabled = unleashClient.isEnabled('PersistedState');
+        if (persistedState?.state && !persistedStateEnabled) {
+            persistedState = undefined;
+        }
+
+        const store = setupStore({ preloadedState: persistedState?.state, persist: persistedStateEnabled });
         const dispatch = store.dispatch;
 
         if (user) {
@@ -136,10 +150,8 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const userPromise = loadUser();
         const preloadPromise = loadPreload();
         const evPromise = bootstrap.eventManager({ api: silentApi });
-        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
         loadPreloadButIgnored();
 
-        await unleashPromise;
         // Needs unleash to be loaded.
         await bootstrap.loadCrypto({ appName, unleashClient });
         const [MainContainer, userData, eventManager] = await Promise.all([
