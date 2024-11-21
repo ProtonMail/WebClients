@@ -8,6 +8,7 @@ import {
     paymentMethodsReducer,
     samlReducer,
 } from '@proton/account';
+import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
 import {
     calendarSettingsReducer,
     calendarsBootstrapReducer,
@@ -33,6 +34,7 @@ export const rootReducer = combineReducers({
     ...allowAddressDeletionReducer,
     ...authDevicesReducer,
     ...memberAuthDevicesReducer,
+    ...oauthTokenReducer,
 });
 
 export type AccountState = ReturnType<typeof rootReducer>;
