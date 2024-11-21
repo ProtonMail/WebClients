@@ -2790,9 +2790,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "현재 요금제에서 사용 가능한 모든 사용자를 사용했습니다. 새 사용자를 추가하려면 요금제를 업그레이드해 주세요."
       ],
-      "You've assigned all of your servers.": [
-        "가능한 모든 서버를 할당했습니다."
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "사용자의 계정 및 조직에 연체된 요금이 존재합니다. 연체된 요금을 지불해 주세요."
       ]
@@ -6994,9 +6991,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "사용자 암호 및 2단계 인증 재설정"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "한 번의 클릭으로 Tor 네트워크로 인터넷 트래픽을 라우팅하세요"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ],
@@ -8080,9 +8074,6 @@
       "Test in progress...": [
         "테스트 진행 중..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "SAML 구성을 테스트하려면, **${ domainName }**와(과) 연관된 사용자의 로그인 자격 증명을 입력하세요."
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "신원 제공자로 부터 유효한 SAML 응답을 수신받았습니다. SSO가 사용자 조직에서 활성화 되었습니다."
       ],
@@ -8871,9 +8862,6 @@
       ],
       "Single sign-on removed": [
         "싱글 사인온 (Sso) 제거됨"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "ID 제공자가 제공한 크리덴셜 정보가 삭제됩니다."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "이 작업은 이 기기를 제외한 모든 기기에서 로그아웃되며 새 백업 비밀번호를 생성해야 합니다."
@@ -10642,9 +10630,6 @@
     "Tor out of date": {
       "stable release": [
         "안정 배포판"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "이 버전의 Tor 브라우저가 지원되지 않습니다. 최신 ${ stableRelease } 으로 업데이트 해주세요"
       ]
     },
     "unprivatization": {
@@ -10653,9 +10638,6 @@
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "관리자가 비공개 사용자의 데이터 접근이 불가하며 비밀번호 또한 재설정이 불가합니다."
-      ],
-      "Approve all": [
-        "모두 승인"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "사용자를 비공개로 전환하면 해당 사용자가 데이터나 계정에 접근할 수 없을 때 도울 수 없게 됩니다."

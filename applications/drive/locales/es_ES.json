@@ -351,12 +351,6 @@
       "Expand folder": [
         "Expandir carpeta"
       ],
-      "Explore on my own": [
-        "Explorar por mi cuenta"
-      ],
-      "Explore while you wait": [
-        "Explora mientras esperas"
-      ],
       "Export": [
         "Exportar"
       ],
@@ -384,9 +378,6 @@
       "Get link": [
         "Obtener enlace"
       ],
-      "Get started": [
-        "Comenzar"
-      ],
       "Get Started": [
         "Comenzar"
       ],
@@ -404,9 +395,6 @@
       ],
       "Go to my files": [
         "Ir a mis archivos"
-      ],
-      "Go to panel ${ index }": [
-        "Ir al panel ${ index }"
       ],
       "Go to parent": [
         "Ir al nivel superior"
@@ -458,9 +446,6 @@
       ],
       "Increase": [
         "Aumentar"
-      ],
-      "Invite": [
-        "Invitar"
       ],
       "Keep my subscription": [
         "Mantener mi suscripción"
@@ -786,9 +771,6 @@
       "Sign out": [
         "Cerrar sesión"
       ],
-      "Skip": [
-        "Omitir"
-      ],
       "Skip verification": [
         "Omitir verificación"
       ],
@@ -800,9 +782,6 @@
       ],
       "Start recovering": [
         "Comenzar a recuperar"
-      ],
-      "Start setup": [
-        "Iniciar la configuración"
       ],
       "Starting from ${ priceUnlimited }": [
         "A partir de ${ priceUnlimited }"
@@ -881,9 +860,6 @@
       ],
       "Upload file": [
         "Cargar archivo"
-      ],
-      "Upload files": [
-        "Cargar archivos"
       ],
       "Upload folder": [
         "Cargar carpeta"
@@ -2529,6 +2505,14 @@
         "Se han detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
       ]
     },
+    "Docs Info": {
+      "Make edits without changing the original document. Collaborate seamlessly and work together more efficiently.": [
+        "Realiza modificaciones sin cambiar el documento original. Colabora sin problemas y trabaja en equipo de manera más eficiente."
+      ],
+      "Suggestion Mode is Here": [
+        "El modo de sugerencia ya está disponible"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Errores o problemas de calidad"
@@ -3070,7 +3054,7 @@
         "La dirección podría estar mal escrita."
       ],
       "The amount due has changed. Please try again.": [
-        "El importe a pagar ha cambiado. Por favor, inténtalo de nuevo."
+        "El importe a pagar ha cambiado. Inténtalo de nuevo."
       ],
       "The email addresses do not match": [
         "Las direcciones de correo electrónico no coinciden"
@@ -3578,17 +3562,6 @@
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
         "Los miembros de la familia perderán el acceso a las funciones premium de ${ BRAND_NAME }."
-      ]
-    },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users": [
-        "Configura tu cuenta familiar e invita a usuarios"
-      ],
-      "Set up your family": [
-        "Configura tu familia"
-      ],
-      "Set up your family account": [
-        "Configurar cuenta familiar"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5263,9 +5236,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si estás seguro de que el enlace es legítimo, utiliza un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Verifica que este es el enlace que quieres visitar o no lo abras."
@@ -7594,8 +7564,8 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Cambia las contraseñas de los usuarios y restablece la autenticación de dos factores en sus cuentas."
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Asigna el tráfico de internet a la red TOR con un solo clic."
+      "Route your internet traffic through the Tor network with a single click": [
+        "Asigna el tráfico de internet a la red Tor con un solo clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Asegura tus archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, intercambio de archivos cifrado y más."
@@ -8003,8 +7973,14 @@
       "Continue": [
         "Continuar"
       ],
+      "Create a document": [
+        "Crear un documento"
+      ],
       "Get started": [
         "Empezamos"
+      ],
+      "Got it": [
+        "Entiendo"
       ],
       "Install and continue": [
         "Instala y continua"
@@ -8018,9 +7994,6 @@
       "Maybe later": [
         "Quizás más tarde"
       ],
-      "Next": [
-        "Siguiente"
-      ],
       "Select theme": [
         "Selecciona un tema"
       ],
@@ -8029,9 +8002,6 @@
       ],
       "Skip for now": [
         "Omite por ahora"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "Comienza a utilizar ${ DRIVE_APP_NAME }"
       ],
       "Try the app": [
         "Prueba la aplicación"
@@ -8083,9 +8053,6 @@
       "Free up hard drive space on your computer": [
         "Libera espacio en el disco duro de tu ordenador"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "¡Comienza usar ${ DRIVE_APP_NAME } y mejoraremos tu almacenamiento a 5 GB!"
-      ],
       "Get the desktop app": [
         "Obtén la aplicación de escritorio"
       ],
@@ -8128,33 +8095,14 @@
       "Securely share files and folders": [
         "Comparte archivos y carpetas sin riesgos"
       ],
-      "Securely store, manage, and share your business-critical files with confidence.": [
-        "Almacena, gestiona y comparte de forma segura tus archivos críticos para el negocio con confianza."
-      ],
-      "Set a recovery method": [
-        "Establecer un método de recuperación"
-      ],
-      "Share a file": [
-        "Compartir un archivo"
-      ],
       "Share files & folders": [
         "Comparte archivos y carpetas"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Completa simplemente las siguientes acciones dentro de ${ expiresInDays } día:",
-        "Completa simplemente las siguientes acciones dentro de ${ expiresInDays } días:"
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "Guarda tus archivos y compártelos de forma segura. Empieza asegurando tus archivos más privados como identificaciones, contratos y fotos personales."
       ],
       "Sync and access your files from anywhere": [
         "Sincroniza y accede a tus archivos dondequiera que estés"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "El propietario necesita confirmar el acceso a compartir. Recibirás un correo en cuanto lo haga."
-      ],
-      "Upload a file": [
-        "Cargar un archivo"
       ],
       "Upload your first file": [
         "Carga tu primer archivo"
@@ -8164,46 +8112,6 @@
       ],
       "Work together": [
         "Trabaja en equipo"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "Tu caja fuerte online de confianza para documentos vitales y recuerdos valiosos."
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Configura tu organización, vincula tu nombre de dominio y crea cuentas para asegurarte de que todos los miembros de tu organización estén protegidos."
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "Descubre todos los servicios de ${ BRAND_NAME }"
-      ],
-      "Pick a theme": [
-        "Elige un tema"
-      ],
-      "Set up your organization": [
-        "Configura tu organización"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Utiliza el selector de aplicaciones en la esquina superior izquierda para acceder a todos los servicios de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "Podrás cambiar tu tema en cualquier momento los ajustes."
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "Aprobación final en progreso"
-      ],
-      "Hang tight!": [
-        "Espera un momento."
-      ],
-      "Invite team members": [
-        "Invita a miembros del equipo"
-      ],
-      "Upload and protect your important files": [
-        "Carga y protege tus archivos importantes."
-      ],
-      "Your welcome bonus": [
-        "Tu bono de bienvenida"
       ]
     },
     "Option": {

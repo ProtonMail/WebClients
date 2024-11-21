@@ -1162,6 +1162,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "L'aggiornamento \"${ payload.item.data.metadata.name }\" è stato rimosso"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } invito spedito con successo",
+        "${ count } inviti spediti con successo"
+      ],
       "${ count } time": [
         "${ count } volta",
         "${ count } volte"

@@ -351,12 +351,6 @@
       "Expand folder": [
         "Agrandir le dossier"
       ],
-      "Explore on my own": [
-        "Découvrir par moi-même"
-      ],
-      "Explore while you wait": [
-        "Découvrez l'application en attendant."
-      ],
       "Export": [
         "Exporter"
       ],
@@ -384,9 +378,6 @@
       "Get link": [
         "Obtenir le lien"
       ],
-      "Get started": [
-        "Commencer"
-      ],
       "Get Started": [
         "Commencer"
       ],
@@ -404,9 +395,6 @@
       ],
       "Go to my files": [
         "Accéder à mes fichiers"
-      ],
-      "Go to panel ${ index }": [
-        "Aller au panneau ${ index }"
       ],
       "Go to parent": [
         "Revenir au dossier principal"
@@ -458,9 +446,6 @@
       ],
       "Increase": [
         "Augmenter"
-      ],
-      "Invite": [
-        "Inviter"
       ],
       "Keep my subscription": [
         "Conserver mon abonnement"
@@ -786,9 +771,6 @@
       "Sign out": [
         "Se déconnecter"
       ],
-      "Skip": [
-        "Ignorer"
-      ],
       "Skip verification": [
         "Ignorer la vérification"
       ],
@@ -800,9 +782,6 @@
       ],
       "Start recovering": [
         "Commencer la récupération"
-      ],
-      "Start setup": [
-        "Démarrer la configuration"
       ],
       "Starting from ${ priceUnlimited }": [
         "À partir de ${ priceUnlimited }"
@@ -881,9 +860,6 @@
       ],
       "Upload file": [
         "Importer un fichier"
-      ],
-      "Upload files": [
-        "Charger des fichiers"
       ],
       "Upload folder": [
         "Importer un dossier"
@@ -2486,7 +2462,7 @@
         "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }."
+        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -2527,6 +2503,14 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Nous avons détecté les champs suivants dans le fichier CSV que vous avez chargé. Vérifiez ceux que vous voulez importer."
+      ]
+    },
+    "Docs Info": {
+      "Make edits without changing the original document. Collaborate seamlessly and work together more efficiently.": [
+        "Apportez des modifications sans changer le document d'origine. Collaborez de manière fluide et travaillez ensemble plus efficacement."
+      ],
+      "Suggestion Mode is Here": [
+        "Le mode de suggestion est disponible."
       ]
     },
     "Downgrade account reason": {
@@ -3578,17 +3562,6 @@
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
         "Cela retirera toutes les fonctionnalités premium de ${ BRAND_NAME } pour chaque membre de la famille."
-      ]
-    },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users": [
-        "Configurez votre compte familial et invitez des utilisateurs."
-      ],
-      "Set up your family": [
-        "Configurez votre famille"
-      ],
-      "Set up your family account": [
-        "Créez votre compte familial"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5264,9 +5237,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte de paiement."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous n'avez aucun doute sur la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
       ],
@@ -6283,7 +6253,7 @@
         "Cela supprimera définitivement tous les fichiers dans votre disque verrouillé."
       ],
       "Thomas": [
-        "Jean"
+        "Camille"
       ],
       "Title": [
         "Titre"
@@ -7591,8 +7561,8 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Réinitialisez les mots de passe des utilisateurs et leur authentification à deux facteurs."
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Envoyez l'ensemble de votre trafic Internet à travers le réseau TOR en un seul clic."
+      "Route your internet traffic through the Tor network with a single click": [
+        "Envoyez l'ensemble de votre trafic internet à travers le réseau Tor en un seul clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela inclut la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
@@ -8000,8 +7970,14 @@
       "Continue": [
         "Continuer"
       ],
+      "Create a document": [
+        "Créer un document"
+      ],
       "Get started": [
         "Lancez-vous !"
+      ],
+      "Got it": [
+        "J'ai compris"
       ],
       "Install and continue": [
         "Installer et continuer"
@@ -8015,9 +7991,6 @@
       "Maybe later": [
         "Peut-être plus tard"
       ],
-      "Next": [
-        "Suivant"
-      ],
       "Select theme": [
         "Sélectionnez un thème"
       ],
@@ -8026,9 +7999,6 @@
       ],
       "Skip for now": [
         "Ignorer pour le moment"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "Commencer à utiliser ${ DRIVE_APP_NAME }"
       ],
       "Try the app": [
         "Essayez l'application"
@@ -8080,9 +8050,6 @@
       "Free up hard drive space on your computer": [
         "Libérez de l'espace sur le disque dur de votre ordinateur"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "Commencez à utiliser ${ DRIVE_APP_NAME } et nous augmenterons votre espace de stockage pour atteindre 5 Go !"
-      ],
       "Get the desktop app": [
         "Téléchargez l'application de bureau"
       ],
@@ -8125,33 +8092,14 @@
       "Securely share files and folders": [
         "Partagez en toute sécurité vos fichiers et dossiers"
       ],
-      "Securely store, manage, and share your business-critical files with confidence.": [
-        "Stockez, gérez et partagez en toute sécurité et confidentialité les fichiers essentiels à vos activités."
-      ],
-      "Set a recovery method": [
-        "Définir une méthode de récupération"
-      ],
-      "Share a file": [
-        "Partager un fichier"
-      ],
       "Share files & folders": [
         "Partager des fichiers et des dossiers"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Il suffit de faire les actions suivantes d'ici ${ expiresInDays } jour :",
-        "Il suffit de faire les actions suivantes d'ici ${ expiresInDays } jours :"
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "Stockez vos fichiers et partagez-les en toute sécurité. Commencez par sécuriser vos fichiers les plus confidentiels, comme vos pièces d'identité, vos contrats et vos photos personnelles."
       ],
       "Sync and access your files from anywhere": [
         "Synchronisez et accédez à vos fichiers depuis n'importe où"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Le propriétaire doit confirmer l'accès au partage. Vous recevrez un e-mail une fois que ce sera fait."
-      ],
-      "Upload a file": [
-        "Importer un fichier"
       ],
       "Upload your first file": [
         "Importez votre premier fichier"
@@ -8161,46 +8109,6 @@
       ],
       "Work together": [
         "Travaillez en équipe"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "Votre coffre-fort en ligne digne de confiance pour les documents importants et les précieux souvenirs."
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Configurez votre organisation, associez votre nom de domaine et créez des comptes pour garantir la protection de tous les membres de votre organisation."
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "Découvrez tous les services ${ BRAND_NAME }"
-      ],
-      "Pick a theme": [
-        "Choisissez un thème"
-      ],
-      "Set up your organization": [
-        "Configurez votre organisation"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Utilisez le sélecteur d'applications en haut à gauche pour accéder à tous les services ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "Vous pouvez changer de thème dans vos paramètres quand vous le voulez."
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "Approbation finale en cours"
-      ],
-      "Hang tight!": [
-        "Patientez un instant."
-      ],
-      "Invite team members": [
-        "Inviter les membres de l'équipe"
-      ],
-      "Upload and protect your important files": [
-        "Importez et protégez vos fichiers importants"
-      ],
-      "Your welcome bonus": [
-        "Votre bonus de bienvenue"
       ]
     },
     "Option": {
@@ -8272,7 +8180,7 @@
         "Facturation annuelle à ${ yearlyPrice }. Économisez ${ yearlySavedPrice } avec ${ passFamilyPlanName } (en comparaison de 6 abonnements ${ passPlusPlanName })."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
-        "Offre exclusive uniquement pour les premiers utilisateurs de ${ PASS_APP_NAME } de la première heure qui ont apporté leur soutien."
+        "Offre exclusive uniquement pour les utilisateurs de ${ PASS_APP_NAME } de la première heure qui ont apporté leur soutien."
       ],
       "Get it for ${ monthlyPrice }": [
         "Disponible pour ${ monthlyPrice }"
@@ -8401,7 +8309,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte, et à votre banque de le débiter en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8  semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
+        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte, et à votre banque de le débiter en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8 semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
       ],
       "Street address, postal code, and city": [
         "Adresse, code postal et ville"
@@ -9554,7 +9462,7 @@
         "Les utilisateurs ne pourront plus envoyer de messages."
       ],
       "Users won’t be able to upload files on their devices": [
-        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils"
+        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils."
       ],
       "Version history": [
         "Historique des versions"

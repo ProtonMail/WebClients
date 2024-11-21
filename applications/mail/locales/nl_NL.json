@@ -958,9 +958,6 @@
       "Remove this label": [
         "Label verwijderen"
       ],
-      "Remove zoom meeting": [
-        "Zoomvergadering verwijderen"
-      ],
       "Replace": [
         "Vervangen"
       ],
@@ -7217,9 +7214,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Deze koppeling kan een homografie-aanval zijn en kan niet geopend worden in Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze koppeling kan een homografie-aanval zijn. Controleer eerst of de koppeling juist is, of open hem niet."
       ],
@@ -7466,6 +7460,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "We hebben geconstateerd dat er meerdere gratis accounts zijn aangemaakt, wat in strijd is met onze ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "We hebben abonnementen die speciaal zijn ontworpen voor gebruikers zoals u die meer dan één e-mailadres nodig hebben.\nOm de beperkingen op te heffen, kunt u upgraden naar een betaald abonnement."
       ],
       "We need to authenticate your payment method with your bank.": [
         "We moeten uw betalingsmethode authenticeren met uw bank."
@@ -8822,6 +8819,9 @@
       "Terms": [
         "Voorwaarden"
       ],
+      "terms of service": [
+        "servicevoorwaarden"
+      ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Dit ICS-bestand bevat meer dan één afspraak. Download het en importeer de afspraken in ${ CALENDAR_APP_NAME }"
       ],
@@ -9222,6 +9222,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Neem ${ planTitle }"
+      ],
       "Get started for ${ price }": [
         "Begin voor ${ price }"
       ],
@@ -9328,6 +9331,9 @@
       "${ options }-day file version history": [
         "Bestandsversiegeschiedenis van ${ options } dag",
         "Bestandsversiegeschiedenis van ${ options } dagen"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + levenslang SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
@@ -9940,6 +9946,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Labels zijn simpele tags die u kunt toevoegen aan berichten zodat u ze makkelijker kunt vinden of filteren"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Levenslang toegang tot ${ PASS_APP_NAME } + SimpleLogin premium functies."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Zoals een map, is een kluis een handige manier om uw items te organiseren"
       ],
@@ -10002,9 +10011,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
-      ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Routeer uw internetverkeer door het TOR-netwerk met een enkele klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
@@ -10563,6 +10569,9 @@
       ],
       "Please select your billing state first.": [
         "Selecteer eerst uw factureringsstaat."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Wordt verlengd voor ${ price }, altijd opzegbaar."
       ],
       "Select billing country to pay": [
         "Selecteer factureringsland om te betalen"
@@ -12813,14 +12822,8 @@
       "Create contact": [
         "Contact aanmaken"
       ],
-      "Create folder": [
-        "Map maken"
-      ],
       "Create folder \"${ search }\"": [
         "Map \"${ search }\" aanmaken"
-      ],
-      "Create label": [
-        "Label maken"
       ],
       "Create label \"${ search }\"": [
         "Label \"${ search }\" aanmaken"
@@ -13532,9 +13535,6 @@
     "Tor out of date": {
       "stable release": [
         "stabiele release"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Deze versie van TOR Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
       ]
     },
     "Update font modal": {

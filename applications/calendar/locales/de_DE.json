@@ -1515,6 +1515,9 @@
         "${ users } Benutzer",
         "${ users } Benutzer"
       ],
+      "Total": [
+        "Gesamt"
+      ],
       "Total for ${ n } month": [
         "Gesamtbetrag für ${ n } Monat",
         "Gesamtbetrag für ${ n } Monate"
@@ -3110,6 +3113,9 @@
       ],
       "Event not found": [
         "Termin nicht gefunden"
+      ],
+      "Failed to create meeting": [
+        "Fehler beim Erstellen des Meetings."
       ],
       "Failed to get event": [
         "Fehler beim Abrufen des Termins."
@@ -5102,9 +5108,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Dieser Link könnte eine homographischer Angriff sein und kann vom Edge Browser nicht geöffnet werden. Wenn du dir sicher bist, dass der Link seriös ist, nutze bitte einen anderen Browser zum Öffnen."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein. Bitte überprüfe, ob dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
@@ -7214,9 +7217,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Leite deinen Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
@@ -7350,6 +7350,12 @@
       ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
+      ],
+      "Meeting host copied to clipboard": [
+        "Meeting-Host in die Zwischenablage kopiert."
+      ],
+      "Meeting ID copied to clipboard": [
+        "Meeting-ID in die Zwischenablage kopiert."
       ],
       "Passcode copied to clipboard": [
         "Passcode in die Zwischenablage kopiert."
@@ -7660,6 +7666,9 @@
         "${ n } Benutzerkonto",
         "${ n } Benutzerkonten"
       ],
+      "Activity log": [
+        "Ereignisprotokoll"
+      ],
       "Admin panel to manage users and subscription": [
         "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
       ]
@@ -7756,6 +7765,9 @@
       ],
       "Please select your billing state first.": [
         "Bitte wähle zuerst deinen Rechnungsstaat aus."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Verlängert sich zu ${ price }, jederzeit kündbar."
       ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
@@ -8582,6 +8594,9 @@
       "Now you can see when participants are free to attend your meeting.": [
         "Jetzt kannst du sehen, wann die Teilnehmer verfügbar sind, um an deiner Besprechung teilzunehmen."
       ],
+      "Video conferencing is here!": [
+        "Videokonferenzen sind da!"
+      ],
       "You can now collapse the navigation bar.": [
         "Du kannst nun die Navigationsleiste ausblenden."
       ]
@@ -8773,6 +8788,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Lebenslang"
       ]
     },
     "Subscription price": {
@@ -10505,8 +10525,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Zoom-Meeting beitreten"
+      ],
       "Meeting ID:": [
         "Meeting-ID:"
+      ],
+      "Passcode:": [
+        "Passcode:"
       ]
     }
   }

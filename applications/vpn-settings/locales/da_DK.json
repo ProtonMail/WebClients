@@ -2527,6 +2527,9 @@
       "Invalid expiration date": [
         "Ugyldig udløbsdato"
       ],
+      "Invalid IBAN": [
+        "Ugyldig IBAN"
+      ],
       "Invalid invitation link": [
         "Ugyldigt invitationslink"
       ],
@@ -2622,6 +2625,9 @@
       ],
       "Tab closed": [
         "Fane lukket"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Det skyldige beløb er ændret. Prøv venligst igen."
       ],
       "The email addresses do not match": [
         "E-Mailadresserne stemmer ikke overens"
@@ -3414,6 +3420,9 @@
       "${ number } server": [
         "${ number } server",
         "${ number } servere"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
@@ -6006,6 +6015,10 @@
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruger",
+        "Op til ${ numberOfUsers } brugere"
+      ],
       "${ options }-day file version history": [
         "${ options }-dags filversionshistorik",
         "${ options }-dags filversionshistorik"
@@ -7649,9 +7662,6 @@
       "Test in progress...": [
         "Test i gang..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "For at teste denne SAML-konfiguration skal du indtaste loginoplysningerne for en bruger tilknyttet **${ domainName }**"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Vi har modtaget et gyldigt SAML-svar fra din identitetsudbyder. SSO er aktiveret for din organisation."
       ],
@@ -8556,6 +8566,22 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } tilbyder ${ planMaxSpace }-lagerplads pr. bruger til e-mails, vedhæftninger, begivenheder, filer og adgangskoder. Du er også berettiget til årlige lagerbonusser."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalender pr. bruger",
+        "${ planNumberOfCalendars } kalendere pr. bruger"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadresse",
+        "${ planNumberOfEmails } e-mailadresser"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-mailadresse pr. bruger",
+        "${ planNumberOfEmails } e-mailadresser pr. bruger"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } bruger",
+        "${ planNumberOfUsers } brugere"
       ],
       "2 users": [
         "2 brugere"

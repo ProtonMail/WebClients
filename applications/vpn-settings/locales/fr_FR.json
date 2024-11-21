@@ -2801,9 +2801,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tous les utilisateurs de votre abonnement sont utilisés. Nous vous invitons à mettre à jour votre abonnement pour ajouter un nouvel utilisateur."
       ],
-      "You've assigned all of your servers.": [
-        "Vous avez attribué tous vos serveurs."
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Votre compte ou organisation a une facture en retard. Nous vous invitons à régler les factures impayées."
       ]
@@ -5102,8 +5099,8 @@
         "Vous pouvez utiliser les identifiants suivants pour vous connecter à un serveur ${ VPN_APP_NAME } en utilisant une application VPN open source tierce, comme Tunnelblick pour macOS ou OpenVPN pour GNU/Linux."
       ],
       "You have ${ availableCount } new server available.": [
-        "Vous avez ${ availableCount } nouveau serveur dédié disponible.",
-        "Vous avez ${ availableCount } nouveaux serveurs dédiés disponibles."
+        "Vous avez ${ availableCount } nouveau serveur disponible.",
+        "Vous avez ${ availableCount } nouveaux serveurs disponibles."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
         "Vous avez ${ unassignedAvailableCount } serveur récemment utilisé disponible. Pour allouer ce serveur à un autre pays, vous devrez attendre que la désactivation soit terminée.",
@@ -5800,7 +5797,7 @@
         "Informations système"
       ],
       "Thomas": [
-        "Jean"
+        "Camille"
       ],
       "Two-password mode": [
         "Mode deux mots de passe"
@@ -6104,11 +6101,17 @@
       "Change password": [
         "Changer le mot de passe"
       ],
+      "Convert to SSO": [
+        "Passer à l'authentification unique (SSO)"
+      ],
       "Delete": [
         "Supprimer"
       ],
       "Delete and revoke invite": [
         "Supprimer et révoquer l'invitation"
+      ],
+      "Detach from SSO": [
+        "Retirer de l'authentification unique (SSO)"
       ],
       "Edit": [
         "Modifier"
@@ -7082,8 +7085,8 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Réinitialisez les mots de passe des utilisateurs et leur authentification à deux facteurs."
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Envoyez l'ensemble de votre trafic Internet à travers le réseau TOR en un seul clic."
+      "Route your internet traffic through the Tor network with a single click": [
+        "Envoyez l'ensemble de votre trafic internet à travers le réseau Tor en un seul clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela inclut la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
@@ -7216,7 +7219,7 @@
         "Mises à jour des produits ${ app } et ${ additionalApp }"
       ],
       "${ app } product updates": [
-        "Nouveautés sur les produits ${ app }"
+        "Nouveautés sur le produit ${ app }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Newsletter ${ BRAND_NAME } for Business"
@@ -7650,7 +7653,7 @@
         "Facturation annuelle à ${ yearlyPrice }. Économisez ${ yearlySavedPrice } avec ${ passFamilyPlanName } (en comparaison de 6 abonnements ${ passPlusPlanName })."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
-        "Offre exclusive uniquement pour les premiers utilisateurs de ${ PASS_APP_NAME } de la première heure qui ont apporté leur soutien."
+        "Offre exclusive uniquement pour les utilisateurs de ${ PASS_APP_NAME } de la première heure qui ont apporté leur soutien."
       ],
       "Get it for ${ monthlyPrice }": [
         "Disponible pour ${ monthlyPrice }"
@@ -7874,7 +7877,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte, et à votre banque de le débiter en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8  semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
+        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte, et à votre banque de le débiter en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8 semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
       ],
       "Street address, postal code, and city": [
         "Adresse, code postal et ville"
@@ -8145,6 +8148,9 @@
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "L'adresse e-mail **${ email }** existe déjà comme utilisateur ${ BRAND_NAME }. Nous vous invitons à saisir l'adresse e-mail d'un utilisateur de votre fournisseur d'identité."
       ]
     },
     "saml: Info": {
@@ -8154,11 +8160,11 @@
       "Details": [
         "Informations"
       ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Saisissez l'adresse e-mail d'un utilisateur fourni par votre fournisseur d'identité pour **${ domainName }**."
+      ],
       "Test in progress...": [
         "Test en cours..."
-      ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Pour tester cette configuration SAML, veuillez saisir les identifiants de connexion de l'utilisateur associé à **${ domainName }**."
       ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Nous avons reçu une réponse SAML valide de la part de votre fournisseur d'identité. L'authentification unique (SSO) est activée pour votre organisation."
@@ -8828,6 +8834,14 @@
         "${ n } membre a sollicité votre aide pour se connecter.",
         "${ n } membres ont sollicité votre aide pour se connecter."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } utilisateur est passé à l'authentification unique (SSO).",
+        "${ n } utilisateurs sont passés à l'authentification unique (SSO)."
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } utilisateur a été retiré de l'authentification unique (SSO).",
+        "${ n } utilisateurs ont été retirés de l'authentification unique (SSO)."
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } utilisateur a rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez vérifier son compte :",
         "${ n } utilisateurs ont rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez vérifier leurs comptes :"
@@ -8842,6 +8856,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Les utilisateurs d'authentification unique (SSO) fournis par votre fournisseur d'identité seront supprimés** et vous devrez les créer manuellement pour les réintégrer dans votre organisation."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Les utilisateurs d'authentification unique (SSO) seront retirés de votre fournisseur d’identité** et reviendront à un compte sans authentification unique (SSO)."
       ],
       "Access denied": [
         "L'accès a été refusé."
@@ -8974,9 +8991,6 @@
       "Single sign-on removed": [
         "L'authentification unique a été retirée."
       ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Les identifiants de votre fournisseur d'identité seront supprimés."
-      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Ceci déconnectera l'utilisateur de ses autres appareils et il devra créer un nouveau mot de passe de secours."
       ],
@@ -9001,8 +9015,14 @@
       "User details:": [
         "Informations sur l’utilisateur :"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Vous devrez créer manuellement les nouveaux utilisateurs pour les ajouter à votre organisation."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Vous allez être redirigé vers votre service tiers d'authentification unique."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "La configuration de votre authentification unique (SSO) sera supprimée."
       ]
     },
     "sso: auth device state": {
@@ -9514,7 +9534,7 @@
         "Les utilisateurs ne pourront plus envoyer de messages."
       ],
       "Users won’t be able to upload files on their devices": [
-        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils"
+        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils."
       ],
       "Version history": [
         "Historique des versions"
@@ -10774,8 +10794,8 @@
       "stable release": [
         "version stable"
       ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Cette version du navigateur TOR n'est pas prise en charge. Nous vous invitons à mettre à jour avec la dernière ${ stableRelease }"
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Cette version du navigateur Tor n'est pas prise en charge. Nous vous invitons à mettre à jour avec la dernière ${ stableRelease }."
       ]
     },
     "unprivatization": {
@@ -10785,9 +10805,6 @@
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
       ],
-      "Approve all": [
-        "Tout approuver"
-      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "En rendant l'utilisateur privé, vous ne pourrez pas l'aider à retrouver l'accès à ses données ou à son compte."
       ],
@@ -10796,6 +10813,9 @@
       ],
       "Cancel request to access user data?": [
         "Voulez-vous annuler la demande d'accès aux données de l'utilisateur ?"
+      ],
+      "Confirm all": [
+        "Confirmer tout"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "L'accès administrateur n'a pas pu être activé pour ${ n } utilisateur car ses clés de chiffrement ont été entre-temps mises à jour :",

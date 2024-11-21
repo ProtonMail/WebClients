@@ -958,7 +958,7 @@
       "Remove this label": [
         "Esborra aquesta etiqueta"
       ],
-      "Remove zoom meeting": [
+      "Remove Zoom meeting": [
         "Elimina la reunió de Zoom"
       ],
       "Replace": [
@@ -1558,6 +1558,9 @@
       ],
       "Fast and secure. No logs are kept.": [
         "Ràpid i segur. No es guarden registres."
+      ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "No es guarda cap registre per protegir la vostra privadesa. Processament més ràpid."
       ],
       "Run on ${ BRAND_NAME } servers": [
         "Executa als servidors de ${ BRAND_NAME }"
@@ -2220,6 +2223,12 @@
       ],
       "Cancel and downgrade": [
         "Cancel·la i passa a un pla inferior"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Emmagatzematge al núvol i compartició dels vostres fitxers"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Emmagatzematge al núvol xifrat per a fotos i documents"
       ],
       "Encrypted password manager": [
         "Gestor de contrasenyes xifrat"
@@ -3715,6 +3724,9 @@
       ]
     },
     "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmeu la pèrdua del descompte especial de ${ PASS_APP_NAME }"
+      ],
       "Remove discount": [
         "Suprimeix el descompte"
       ]
@@ -4310,6 +4322,9 @@
       "Thanks for the feedback!": [
         "Gràcies pel vostre comentari."
       ],
+      "The amount due has changed. Please try again.": [
+        "L'import que cal pagar ha canviat. Torneu-ho a provar."
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "No s'ha pogut desxifrar el fitxer adjunt.\nSi teniu la clau privada corresponent, encara podreu desxifrar\nel fitxer amb un programa com GnuPG.",
         "No s'ha pogut desxifrar els fitxers adjunts.\nSi teniu la clau privada corresponent, encara podreu desxifrar\nels fitxers amb un programa com GnuPG."
@@ -4777,6 +4792,9 @@
       "${ BRAND_NAME } groups": [
         "Grups de ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Els comptes amb dominis personalitzats no poden unir-se a un pla familiar."
+      ],
       "customer support": [
         "atenció al client"
       ],
@@ -4788,6 +4806,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidat per: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Els comptes Lifetime no poden unir-se a un pla familiar."
       ],
       "Manage addresses": [
         "Gestiona les adreces"
@@ -4845,6 +4866,9 @@
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "Configureu el compte familiar i convideu usuaris"
+      ],
+      "Invite members and get everything up and running.": [
+        "Inviteu a altres membres i comenceu de manera immediata."
       ],
       "Set up your family": [
         "Configureu la vostra família"
@@ -6130,6 +6154,10 @@
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Crea un núvol segur per a ${ n } membre",
+        "Crea un núvol segur per a ${ n } membres"
+      ],
       "Create in": [
         "Crear a"
       ],
@@ -6389,6 +6417,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Si creieu que hem comès un error, ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si ho cancel·leu, la subscripció ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
@@ -7067,9 +7098,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segur que aquest enllaç és legítim, feu servir un navegador diferent per a obrir-lo."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
       ],
@@ -7382,6 +7410,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Esteu a punt d'obrir una altra pestanya del navegador i visitar:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Esteu a punt d'obrir el vostre navegador predeterminat i visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
@@ -9169,6 +9200,10 @@
         "${ numberOfUsers } usuari",
         "Fins a ${ numberOfUsers } usuaris"
       ],
+      "${ options }-day file version history": [
+        "Historial de versions de fitxers d'${ options } dia",
+        "Historial de versions de fitxers d'${ options } dies"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Accés de tota la vida a les funcions ${ PASS_APP_NAME } i SimpleLogin"
       ],
@@ -9229,6 +9264,9 @@
       ],
       "Advanced account protection": [
         "Protecció avançada dels comptes"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funcions d'àlies avançades (impulsades per SimpleLogin)"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Tots els productes i funcions de ${ BRAND_NAME }"
@@ -9469,6 +9507,9 @@
       "Support for up to 2 users": [
         "Suport per a 2 usuaris"
       ],
+      "Sync and backup all your files across devices": [
+        "Sincronitzeu i feu una còpia de seguretat de tots els fitxers entre dispositius."
+      ],
       "TOR over VPN": [
         "TOR sobre VPN"
       ],
@@ -9650,6 +9691,9 @@
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per a dotar de privadesa a tothom de manera predeterminada."
       ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Privadesa il·limitada i més emmagatzematge per a fins a 2 persones."
+      ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si elimineu el vostre compte, perdreu el preu promocional i no estarà disponible si creeu un compte nou."
       ],
@@ -9740,6 +9784,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartiu fàcilment els vostres calendaris amb la família, els amics o els col·legues."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envieu un correu electrònic a tothom d'un grup amb una única adreça de correu electrònic."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Assegura que rebeu tots els correus electrònics enviats al vostre domini, fins i tot si l'adreça de correu electrònic no existeix, ha deixat d'existir o té un error ortogràfic"
@@ -10008,6 +10055,9 @@
       "Finance": [
         "Finances"
       ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "He mogut els meus inicis de sessió a ${ BRAND_NAME }"
+      ],
       "Privacy for all your online accounts": [
         "Privadesa per a tots els vostres comptes en línia"
       ],
@@ -10043,6 +10093,9 @@
       "Block unsavory senders": [
         "Bloqueja els remitents no desitjats"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Esborreu els correus electrònics suprimits i de correu brossa després de 30 dies."
+      ],
       "Congratulations on choosing privacy": [
         "Felicitats per triar la privacitat"
       ],
@@ -10067,6 +10120,9 @@
       "Forward Gmail messages to your inbox.": [
         "Reenvieu els missatges de Gmail a la vostra safata d'entrada."
       ],
+      "Get notified if your password is compromised.": [
+        "Rebeu una notificació si la vostra contrasenya està compromesa."
+      ],
       "Get the desktop app": [
         "Obteniu l'aplicació d'escriptori"
       ],
@@ -10086,7 +10142,7 @@
         "Potser després"
       ],
       "More ways to experience ${ MAIL_APP_NAME }": [
-        "Altres maneres de gaudir de ${ MAIL_APP_NAME }"
+        "Altres maneres d'experimentar ${ MAIL_APP_NAME }"
       ],
       "Next": [
         "Següent"
@@ -10244,6 +10300,9 @@
       "Activity log": [
         "Registre d'activitats"
       ],
+      "Admin panel to manage users and subscription": [
+        "Panell d'administració per gestionar usuaris i subscripció"
+      ],
       "Team policies": [
         "Regles d'equip"
       ]
@@ -10314,6 +10373,9 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "More plans are available in other currencies": [
+        "Hi ha més plans disponibles en altres divises."
+      ],
       "Payment Processing": [
         "Processament de pagaments"
       ],
@@ -10325,6 +10387,12 @@
       ],
       "Please select billing state": [
         "Seleccioneu l'estat de facturació"
+      ],
+      "Please select your billing country first.": [
+        "Seleccioneu primer el vostre país per a la facturació."
+      ],
+      "Please select your billing state first.": [
+        "Seleccioneu primer el vostre estat per a la facturació."
       ],
       "Renews at ${ price }, cancel anytime.": [
         "Es renova per ${ price } i ho podeu cancel·lar en qualsevol moment."
@@ -10511,6 +10579,24 @@
       ],
       "Subject": [
         "Assumpte"
+      ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Digueu a l'assistent d'escriptura què ha d'escriure. Exemple: «Anuncia els pròxims esdeveniments en un butlletí»"
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Digueu a l'assistent d'escriptura què ha d'escriure. Exemple: «Cancel·la la meva subscripció al gimnàs»"
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Digueu a l'assistent d'escriptura què ha d'escriure. Exemple: «Convida la Montse a la meva festa»"
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Digueu a l'assistent d'escriptura què ha d'escriure. Exemple: «Dona les gràcies al meu company de feina per l'ajuda en un projecte»"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Digueu a l'assistent d'escriptura què ha d'escriure. Exemple: «Escriu una carta de presentació per a una pràctica»"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Digueu a l'assistent d'escriptura què ha d'escriure. Exemple: «Escriu un correu electrònic de seguiment a un client»"
       ],
       "Text": [
         "Text"
@@ -11340,6 +11426,9 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Per defecte, ara es carreguen les imatges i es bloca el seguiment per part de l'emissor. Això es pot canviar a ${ settingsLink }."
       ],
+      "You can now collapse the navigation bar.": [
+        "Ara podeu replegar la barra de navegació."
+      ],
       "You can now schedule your messages to be sent later": [
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"
       ]
@@ -11350,6 +11439,9 @@
       ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se us redirigirà al vostre proveïdor d'SSO de tercers."
       ]
     },
     "State": {
@@ -11709,6 +11801,9 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Com vam donar suport als activistes locals quan la privacitat i la llibertat d'expressió es van veure amenaçades."
       ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Si supereu els límits del pla gratuït, no podreu:"
+      ],
       "Invited members will be removed from your organization": [
         "Els membres convidats seran eliminats de l'organització"
       ],
@@ -11780,6 +11875,9 @@
       ],
       "Users won’t be able to send emails": [
         "Els usuaris no podran enviar correus electrònics"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "Els usuaris no podran carregar fitxers als seus dispositius."
       ],
       "Version history": [
         "Historial de versions"
@@ -12525,14 +12623,8 @@
       "Create contact": [
         "Crea un contacte"
       ],
-      "Create folder": [
-        "Crear carpeta"
-      ],
       "Create folder \"${ search }\"": [
         "Crea una carpeta \"${ search }\""
-      ],
-      "Create label": [
-        "Crear etiqueta"
       ],
       "Create label \"${ search }\"": [
         "Crea una etiqueta \"${ search }\""
@@ -12699,7 +12791,7 @@
         "Grups"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
-        "Amagueu el vostre correu electrònic amb ${ PASS_APP_NAME }"
+        "Amagueu el correu electrònic amb ${ PASS_APP_NAME }"
       ],
       "High security for your account": [
         "Seguretat alta per al vostre compte"
@@ -13244,9 +13336,6 @@
     "Tor out of date": {
       "stable release": [
         "versió estable"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Aquesta versió del Navegador TOR no està suportada. Actualitzeu a la darrera ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13336,6 +13425,11 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Accedeix a l'aplicació Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Una manera més segura i fàcil de mantenir i enviar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

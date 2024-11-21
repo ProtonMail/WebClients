@@ -3565,9 +3565,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "받은 편지함에 도착하기 전에 수신 메시지를 자동으로 정렬합니다."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "${ BRAND_NAME } Mail Plus에서 사용 가능"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "축하합니다! ${ plusPlanName }의 최대 ${ rewardsLimit }월이 무료로 적립되었습니다."
       ],
@@ -4871,9 +4868,6 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "SMTP 제출 토큰을 생성하려면 사용자 지정 도메인 주소가 있어야 합니다."
-      ],
-      "You've assigned all of your servers.": [
-        "가능한 모든 서버를 할당했습니다."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "최대 메시지 글자수 도달. 메시지의 글자 수를 줄여보세요."
@@ -8536,9 +8530,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "이 링크는 호모그래프 공격일 수 있으므로 Edge 브라우저로 열 수 없습니다. 정상적인 링크가 확실하다면 다른 브라우저를 사용하여 링크를 열어 주세요."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "이 링크는 호모그래프(homograph) 공격 일 수 있습니다. 방문하려는 링크가 정확한지 확인하거나 열지 마세요."
@@ -12520,9 +12511,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "사용자 암호 및 2단계 인증 재설정"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "한 번의 클릭으로 Tor 네트워크로 인터넷 트래픽을 라우팅하세요"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ],
@@ -13419,9 +13407,6 @@
       ],
       "Alerts for compromised emails and vulnerable passwords": [
         "노출된 이메일과 취약한 비밀번호에 대한 경고"
-      ],
-      "Alerts for vulnerable passwords": [
-        "취약한 비밀번호에 대한 경고"
       ],
       "Aliases for email protection from breaches": [
         "데이터 침해로부터 이메일을 지키는 별칭"
@@ -14562,9 +14547,6 @@
       "Test in progress...": [
         "테스트 진행 중..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "SAML 구성을 테스트하려면, **${ domainName }**와(과) 연관된 사용자의 로그인 자격 증명을 입력하세요."
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "신원 제공자로 부터 유효한 SAML 응답을 수신받았습니다. SSO가 사용자 조직에서 활성화 되었습니다."
       ],
@@ -15623,9 +15605,6 @@
       ],
       "Single sign-on removed": [
         "싱글 사인온 (Sso) 제거됨"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "ID 제공자가 제공한 크리덴셜 정보가 삭제됩니다."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "이 작업은 이 기기를 제외한 모든 기기에서 로그아웃되며 새 백업 비밀번호를 생성해야 합니다."
@@ -18339,9 +18318,6 @@
     "Tor out of date": {
       "stable release": [
         "안정 배포판"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "이 버전의 Tor 브라우저가 지원되지 않습니다. 최신 ${ stableRelease } 으로 업데이트 해주세요"
       ]
     },
     "unprivatization": {
@@ -18362,9 +18338,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "**${ orgName }** 조직의 관리자(**${ adminEmail }**)가 당신의 계정에 대한 관리자 권한을 얻고 싶어합니다."
-      ],
-      "Approve all": [
-        "모두 승인"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "사용자를 비공개로 전환하면 해당 사용자가 데이터나 계정에 접근할 수 없을 때 도울 수 없게 됩니다."

@@ -2801,9 +2801,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brukt alle brukerne i planen din. Vennligst oppgrader planen din for å legge til en ny bruker."
       ],
-      "You've assigned all of your servers.": [
-        "Du har tilordnet alle tjenerne dine."
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisasjon har en forfalt faktura. Vennligst betal alle ubetalte fakturaer."
       ]
@@ -7084,9 +7081,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Tilbakestill brukerpassord og tilbakestill tofaktorautentisering på brukere"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Rute internettrafikken din gjennom TOR-nettverket med et enkelt klikk"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
       ],
@@ -8180,9 +8174,6 @@
       "Test in progress...": [
         "Test pågår..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "For å teste denne SAML-konfigurasjonen, skriv inn påloggingsinformasjonen for en bruker tilknyttet **${ domainName }**"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Vi mottok et gyldig SAML-svar fra identitetsleverandøren din. SSO er aktivert for organisasjonen din."
       ],
@@ -8996,9 +8987,6 @@
       ],
       "Single sign-on removed": [
         "Enkel pålogging fjernet"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Legitimasjonen fra identitetsleverandøren din blir slettet."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Dette vil logge brukeren ut av de andre enhetene sine, og vedkommende må opprette et nytt reservepassord."
@@ -10793,9 +10781,6 @@
     "Tor out of date": {
       "stable release": [
         "stabil utgivelse"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Denne versjonen av TOR-nettleser støttes ikke. Oppdater til seneste ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10804,9 +10789,6 @@
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
-      ],
-      "Approve all": [
-        "Godkjenn alle"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Ved å gjøre brukeren privat vil du ikke kunne hjelpe dem med å få tilgang til dataene eller kontoen sin igjen."

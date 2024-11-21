@@ -351,12 +351,6 @@
       "Expand folder": [
         "საქაღალდის ჩამოშლა"
       ],
-      "Explore on my own": [
-        "თვითონ ვიპოვი"
-      ],
-      "Explore while you wait": [
-        "დაათვალიერეთ, სანამ ელოდებით"
-      ],
       "Export": [
         "გატანა"
       ],
@@ -384,9 +378,6 @@
       "Get link": [
         "ბმულის მიღება"
       ],
-      "Get started": [
-        "დაიწყეთ"
-      ],
       "Get Started": [
         "დაიწყეთ"
       ],
@@ -404,9 +395,6 @@
       ],
       "Go to my files": [
         "ჩემს ფაილებზე გადასვლა"
-      ],
-      "Go to panel ${ index }": [
-        "${ index }-ე პანელზე გადასვლა"
       ],
       "Go to parent": [
         "მშობელზე გადასვლა"
@@ -458,9 +446,6 @@
       ],
       "Increase": [
         "გაგრძელება"
-      ],
-      "Invite": [
-        "მოწვევა"
       ],
       "Keep my subscription": [
         "ჩემი გამოწერის შენარჩუნება"
@@ -786,9 +771,6 @@
       "Sign out": [
         "გასვლა"
       ],
-      "Skip": [
-        "გამოტოვება"
-      ],
       "Skip verification": [
         "შემოწმების გამოტოვება"
       ],
@@ -800,9 +782,6 @@
       ],
       "Start recovering": [
         "აღდგენის დაწყება"
-      ],
-      "Start setup": [
-        "მორგების დაწყება"
       ],
       "Starting from ${ priceUnlimited }": [
         "${ priceUnlimited }-დან"
@@ -881,9 +860,6 @@
       ],
       "Upload file": [
         "ფაილის ატვირთვა"
-      ],
-      "Upload files": [
-        "ფაილების ატვირთვა"
       ],
       "Upload folder": [
         "საქაღალდის ატვირთვა"
@@ -3567,17 +3543,6 @@
         "ეს ოჯახის ყველა წევრს ${ BRAND_NAME }-ის ყველა ფასიან ფუნქციას გაუუქმებს."
       ]
     },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users": [
-        "მოირგეთ თქვენი საოჯახო ანგარიში და მოიწვიეთ მომხმარებლები"
-      ],
-      "Set up your family": [
-        "მოირგეთ თქვენი ოჯახი"
-      ],
-      "Set up your family account": [
-        "მოირგეთ თქვენი საოჯახო ანგარიში"
-      ]
-    },
     "familyOffer_2023:Title": {
       "Delete family group?": [
         "წავშალო საოჯახო ჯგუფი?"
@@ -5240,9 +5205,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "ბმული მიდის ვებგვერდამდე, რომელმაც შეიძლება მოიპაროს თქვენი ისეთი ინფორმაცია, როგორიცაა პაროლები და საკრედიტო ბარათის დეტალები."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "ეს ბმული შეიძლება, ჰომოგრაფიულ შეტევას წარმოადგენდეს და არ შეიძლება, გაიხსნას Edge ბრაუზერში. თუ დარწმუნებული ბრძანდებით, რომ ბმული ლეგიტიმურია, გთხოვთ, გამოიყენოთ სხვა ბრაუზერი მის გასახსნელად."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "ეს ბმული შეიძლება ჰომოგრაფიულ შეტევას წარმოადგენდეს. შეამოწმეთ ბმული და დარწმუნდით, რომ ის უსაფრთხოა."
@@ -7556,9 +7518,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "მომხმარებლების პაროლებისა და 2FA-ის აღდგენა"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "გადაამისამართეთ თქვენი ინტერნეტ-ტრაფიკი Tor-ის ქსელში თაგუნას ერთადერთი წკაპუნით"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
       ],
@@ -7976,9 +7935,6 @@
       "Maybe later": [
         "მოგვიანებით"
       ],
-      "Next": [
-        "შემდეგი"
-      ],
       "Select theme": [
         "აირჩიეთ თემა"
       ],
@@ -7987,9 +7943,6 @@
       ],
       "Skip for now": [
         "გამოტოვება"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }-ის გამოყენების დაწყება"
       ],
       "Try the app": [
         "აპის ცდა"
@@ -8041,9 +7994,6 @@
       "Free up hard drive space on your computer": [
         "გაათავისუფლეთ ადგილი თქვენს კომპიუტერში"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "დაიწყეთ ${ DRIVE_APP_NAME }-ის გამოყენება და ჩვენ თქვენს საცავს 5გბ-მდე ავწევთ!"
-      ],
       "Get the desktop app": [
         "მიიღეთ კომპიუტერის აპი"
       ],
@@ -8086,33 +8036,14 @@
       "Securely share files and folders": [
         "ფაილებისა და საქაღალდეების უსაფრთხო გაზიარება"
       ],
-      "Securely store, manage, and share your business-critical files with confidence.": [
-        "დარწმუნებული ბრძანდებოდეთ, რომ თქვენს ბიზნესთან დაკავშირებულ ფაილებს უსაფრთხოდ შეინახავთ, მართავთ და აზიარებთ."
-      ],
-      "Set a recovery method": [
-        "აღდგენის მეთოდის დაყენება"
-      ],
-      "Share a file": [
-        "ფაილის გაზიარება"
-      ],
       "Share files & folders": [
         "გააზიარეთ ფაილები და საქაღალდეები"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "უბრალოდ, შეავსეთ ის შემდეგ ${ expiresInDays } დღეში:",
-        "უბრალოდ, შეავსეთ ის შემდეგ ${ expiresInDays } დღეში:"
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "შეინახეთ თქვენი ფაილები და გააზიარეთ ისინი უსაფრთხოდ. დაიწყეთ თქვენი ისეთი კონფიდენციალური ფაილების დაცვით, როგორიცაა ID-ები, კონტაქტები და პირადი სურათები."
       ],
       "Sync and access your files from anywhere": [
         "სინქრონიზაცია და წვდომა თქვენს ფაილებთან ნებისმიერი ადგილიდან"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "საჭიროა, მფლობელმა დაადასტუროს გაზიარებულზე წვდომა. როცა ეს მოხდება, ელფოსტას მიიღებთ."
-      ],
-      "Upload a file": [
-        "ფაილის ატვირთვა"
       ],
       "Upload your first file": [
         "ატვირთეთ თქვენი პირველი ფაილი"
@@ -8122,46 +8053,6 @@
       ],
       "Work together": [
         "იმუშავეთ ერთად"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "თქენი სანდო ონლაინ საცავი სასიცოცხლოდ მნიშვნელოვანი დოკუმენტებისა და ძვირფასი მოგონებებისთვის."
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "მოირგეთ თქვენი ორგანიზაცია, მიაბით თქვენი დომენური სახელი და შექმენით ანგარშები, რომ დარწმუნდეთ, რომ თქვენი ორგანიზაციის ყველა წევრი დაცულია."
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "აღმოაჩინეთ ${ BRAND_NAME }-ის ყველა სერვისი"
-      ],
-      "Pick a theme": [
-        "აირჩიეთ თემა"
-      ],
-      "Set up your organization": [
-        "ორგანიზაციის მორგება"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "გამოიყენეთ აპის ამრჩევი ზედა მარცხენა კუთხეში ${ BRAND_NAME }-ის ყველა სერვისთან წვდომისთვის: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "თქვენი თემის შეცვლა ნებისმიერ დროს შეგიძლიათ მორგების ფანჯარაში."
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "საბოლოო დასტურის მოლოდინი"
-      ],
-      "Hang tight!": [
-        "კარგად მოეჭიდე!"
-      ],
-      "Invite team members": [
-        "მოიწვიეთ გუნდის წევრები"
-      ],
-      "Upload and protect your important files": [
-        "ატვირთეთ და დაიცავით თქვენი მნიშვნელოვანი ფაილები"
-      ],
-      "Your welcome bonus": [
-        "თქვენი მობრძანების საჩუქარი"
       ]
     },
     "Option": {

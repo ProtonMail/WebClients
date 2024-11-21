@@ -131,7 +131,7 @@
         "São permitidos no máximo ${ maxContacts } contactos por grupo de contactos"
       ],
       "Attach screenshot(s)": [
-        "Anexar captura(s) de ecrã"
+        "Anexar capturas de ecrã"
       ],
       "Attachment": [
         "Anexo"
@@ -382,10 +382,10 @@
         "Mostrar a barra de navegação"
       ],
       "Done": [
-        "Concluído"
+        "Terminado"
       ],
       "Downgrade": [
-        "Conta com menos funcionalidades"
+        "Optar por um plano inferior"
       ],
       "Download": [
         "Transferir"
@@ -409,7 +409,7 @@
         "Editar rascunho"
       ],
       "Edit email address": [
-        "Editar o endereço de e-mail "
+        "Editar o endereço de e-mail"
       ],
       "Edit encryption": [
         "Editar a encriptação"
@@ -761,7 +761,7 @@
         "Mover tudo para o arquivo"
       ],
       "Move all to trash": [
-        "Mover tudo para o lixo"
+        "Mover tudo para a lixeira"
       ],
       "move emails to": [
         "mover os e-mails para"
@@ -785,7 +785,7 @@
         "Mover para a pasta de spam e cancelar subscrição"
       ],
       "Move to trash": [
-        "Mover para o lixo"
+        "Mover para a lixeira"
       ],
       "Move to...": [
         "Mover para..."
@@ -3430,7 +3430,7 @@
         "A A2F acrescenta uma camada de segurança adicional, impedindo o acesso não autorizado."
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Elimine automaticamente o spam e as mensagens do lixo e desbloqueie mais funcionalidades premium ao atualizar."
+        "Elimine automaticamente o spam e as mensagens da lixeira e desbloqueie mais funcionalidades premium ao atualizar."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "A desencriptar os contactos... Isto pode demorar alguns minutos. Quando o processo estiver concluído, poderá transferir o ficheiro com todos os seus contactos exportados."
@@ -5797,7 +5797,7 @@
         "Tem a certeza que deseja mover todas as mensagens deste local para o Arquivo?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Tem a certeza de que pretende mover todas as mensagens desta localização para o lixo?"
+        "Tem a certeza de que pretende mover todas as mensagens desta localização para a lixeira?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Tem a certeza de que pretende eliminar permanentemente esta ${ count } conversa?",
@@ -5827,7 +5827,7 @@
         "Atenção Requerida"
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Eliminar automaticamente as mensagens que se encontram no lixo e no spam há mais de 30 dias."
+        "Eliminar automaticamente as mensagens que se encontram na lixeira e no spam há mais de 30 dias."
       ],
       "Awaiting transaction": [
         "A aguardar transação"
@@ -6052,7 +6052,7 @@
         "Cada código só pode ser utilizado uma vez"
       ],
       "Edit email address": [
-        "Editar endereço de e-mail"
+        "Editar o endereço de e-mail"
       ],
       "Edit encryption": [
         "Editar a encriptação"
@@ -6249,7 +6249,7 @@
         "No passo seguinte, poderá efetuar um depósito utilizando um endereço Bitcoin."
       ],
       "Include Spam/Trash.": [
-        "Incluir Spam/Lixo."
+        "Incluir Spam/Lixeira."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Inclua seu prompt e a resposta para nos ajudar a melhorar a precisão."
@@ -6288,7 +6288,7 @@
         "Mantenha os seus dados de início de sessão e de cartão de crédito seguros, mas sempre à mão, adicionando-os ao ${ PASS_APP_NAME }. É gratuito e está incluído na sua conta ${ BRAND_NAME }."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
-        "Mantenha a sua caixa de correio arrumada, eliminando automaticamente o lixo e o spam que lá se encontram há mais de 30 dias."
+        "Mantenha a sua caixa de correio arrumada, eliminando automaticamente a lixeira e o spam que lá se encontram há mais de 30 dias."
       ],
       "Key fingerprint": [
         "Impressão digital da chave"
@@ -6393,7 +6393,7 @@
         "A mensagem será enviada amanhã às ${ formattedTime }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
-        "As mensagens que estiverem no lixo e no spam há mais de 30 dias serão automaticamente eliminadas."
+        "As mensagens que estiverem na lixeira e no spam há mais de 30 dias serão automaticamente eliminadas."
       ],
       "MM/YY": [
         "MM/AA"
@@ -6846,13 +6846,13 @@
         "Esta conversa contém uma mensagem agendada. O envio desta mensagem será cancelado."
       ],
       "This conversation contains non-trashed messages.": [
-        "Esta conversa contém mensagens que não estão no lixo."
+        "Esta conversa contém mensagens que não estão na lixeira."
       ],
       "This conversation contains one or more expiring messages": [
         "Esta conversa contém uma ou mais mensagens com expiração."
       ],
       "This conversation contains trashed messages.": [
-        "Esta conversa contém mensagens do lixo."
+        "Esta conversa contém mensagens da lixeira."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Esta conversação será marcada como spam. Gostaria também de remover a subscrição a futuros e-mails?",
@@ -6872,9 +6872,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esta hiperligação leva a um website que pode tentar roubar a sua informação, como palavras-passe e números de cartão de crédito."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este link poderá ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se tiver certeza de que a hiperligação é legítima, abra-a com um navegador diferente."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Esta ligação pode ser um ataque homográfico. Verifique se esta é a ligação que deseja visitar, ou não a abra."
@@ -7025,40 +7022,40 @@
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
       ],
       "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
-        "Atualize para ${ MAIL_APP_NAME } Plus para desbloquear"
+        "Melhore para ${ MAIL_APP_NAME } Plus para desbloquear"
       ],
       "Upgrade to add more addresses to your account.": [
-        "Faça o upgrade para poder adicionar mais endereços à sua conta."
+        "Melhore para poder adicionar mais endereços à sua conta."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "Faça o upgrade para poder criar mais pastas, filtros e endereços."
+        "Melhore para poder criar mais pastas, filtros e endereços."
       ],
       "Upgrade to level up your privacy.": [
-        "Faça o upgrade para aumentar o nível da sua privacidade."
+        "Melhore para aumentar o nível da sua privacidade."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "Faça o upgrade para poder enviar e-mail de endereços @pm.me."
+        "Melhore para poder enviar e-mail de endereços @pm.me."
       ],
       "Upgrade to send emails from your custom email domain.": [
-        "Faça o upgrade para poder enviar e-mails do seu domínio de e-mail personalizado."
+        "Melhore para poder enviar e-mails do seu domínio de e-mail personalizado."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Faça o upgrade para poder enviar e-mails para grupos de contactos facilmente."
+        "Melhore para poder enviar e-mails para grupos de contactos facilmente."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Faça o upgrade para apoiar uma Internet que coloca a privacidade em primeiro lugar."
+        "Melhore para apoiar uma Internet que coloca a privacidade em primeiro lugar."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Faça o upgrade para apoiar a nossa missão de disponibilizar privacidade para todos."
+        "Melhore para apoiar a nossa missão de disponibilizar privacidade para todos."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Faça o upgrade para apoiar a privacidade e obter mais recursos."
+        "Melhore para apoiar a privacidade e obter mais recursos."
       ],
       "Upgrade to unlock premium features.": [
-        "Faça o upgrade para desbloquear recursos premium."
+        "Melhore para desbloquear recursos premium."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
-        "Faça o upgrade para poder usar ${ MAIL_APP_NAME } com Apple Mail, Outlook ou Thunderbird."
+        "Melhore para poder usar ${ MAIL_APP_NAME } com Apple Mail, Outlook ou Thunderbird."
       ],
       "Upgrade to use auto-reply when you're away.": [
         "Actualize para utilizar a resposta automática quando estiver ausente."
@@ -7533,7 +7530,7 @@
         "Ir para Com estrela"
       ],
       "Go to Trash": [
-        "Ir para Lixo"
+        "Ir para Lixeira"
       ],
       "Insert link": [
         "Inserir hiperligação"
@@ -7581,7 +7578,7 @@
         "Mover para spam"
       ],
       "Move to Trash": [
-        "Mover para o Lixo"
+        "Mover para a lixeira"
       ],
       "Move to...": [
         "Mover para..."
@@ -7806,6 +7803,9 @@
       ],
       "Colors": [
         "Cores"
+      ],
+      "Company name": [
+        "Nome da empresa"
       ],
       "Composer": [
         "Compositor"
@@ -8453,7 +8453,7 @@
         "Este ficheiro ICS contém mais do que um evento. Transfira-o e importe os eventos em ${ CALENDAR_APP_NAME }"
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ],
       "What’s this?": [
         "O que é isto?"
@@ -8826,7 +8826,7 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "Eliminar conta"
+        "Apagar conta"
       ],
       "Downgrade account": [
         "Mudar para uma conta com menos funcionalidades"
@@ -8958,7 +8958,7 @@
         "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Auto-delete spam and trashed messages": [
-        "Eliminar automaticamente mensagens do Spam e do Lixo"
+        "Eliminar mensagens de spam e lixeira automaticamente"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -9301,7 +9301,7 @@
     },
     "new_plans: title": {
       "Delete account?": [
-        "Eliminar conta?"
+        "Apagar a conta?"
       ],
       "Downgrade account?": [
         "Mudar para uma conta com menos funcionalidades?"
@@ -9571,6 +9571,9 @@
       ]
     },
     "Onboarding modal": {
+      "App Store": [
+        "App Store"
+      ],
       "Automatically forward emails": [
         "Encaminhar e-mails automaticamente"
       ],
@@ -11618,7 +11621,7 @@
         "Alterar a palavra-passe"
       ],
       "Clear out the junk": [
-        "Limpe o lixo"
+        "Limpar a lixeira"
       ],
       "Clearing data": [
         "A limpar os dados"
@@ -11656,14 +11659,8 @@
       "Create contact": [
         "Criar contacto"
       ],
-      "Create folder": [
-        "Criar pasta"
-      ],
       "Create folder \"${ search }\"": [
         "Criar pasta \"${ search }\""
-      ],
-      "Create label": [
-        "Criar etiqueta"
       ],
       "Create label \"${ search }\"": [
         "Criar etiqueta \"${ search }\""
@@ -11746,7 +11743,7 @@
         "Não dê oportunidade ao spam"
       ],
       "Downgrade account": [
-        "Mudar para uma conta com menos funcionalidades"
+        "Optar por um plano inferior"
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Mudar para ${ downgradedPlanName }?"
@@ -11945,7 +11942,7 @@
         "Mover todas as mensagens para o Arquivo"
       ],
       "Move all messages to trash": [
-        "Mover todas as mensagens para o lixo"
+        "Mover todas as mensagens para a lixeira"
       ],
       "Move to": [
         "Mover para"
@@ -11960,7 +11957,7 @@
         "Mover para spam"
       ],
       "Move to trash": [
-        "Mover para o lixo"
+        "Mover para a lixeira"
       ],
       "Moving a scheduled message": [
         "A mover uma mensagem agendada"
@@ -12182,7 +12179,7 @@
         "Para"
       ],
       "Trash": [
-        "Lixo"
+        "Lixeira"
       ],
       "Trust new key?": [
         "Confiar em nova chave?",

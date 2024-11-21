@@ -351,12 +351,6 @@
       "Expand folder": [
         "Udvid mappe"
       ],
-      "Explore on my own": [
-        "Udforsk på egen hånd"
-      ],
-      "Explore while you wait": [
-        "Udforsk, mens du venter"
-      ],
       "Export": [
         "Eksportér"
       ],
@@ -384,9 +378,6 @@
       "Get link": [
         "Få link"
       ],
-      "Get started": [
-        "Kom godt i gang"
-      ],
       "Get Started": [
         "Kom i gang"
       ],
@@ -404,9 +395,6 @@
       ],
       "Go to my files": [
         "Gå til mine filer"
-      ],
-      "Go to panel ${ index }": [
-        "Gå til panel ${ index }"
       ],
       "Go to parent": [
         "Gå til overordnet"
@@ -458,9 +446,6 @@
       ],
       "Increase": [
         "Forøg"
-      ],
-      "Invite": [
-        "Invitér"
       ],
       "Keep my subscription": [
         "Bevar mit abonnement"
@@ -786,9 +771,6 @@
       "Sign out": [
         "Log ud"
       ],
-      "Skip": [
-        "Spring over"
-      ],
       "Skip verification": [
         "Spring e-mail-verifikation over"
       ],
@@ -800,9 +782,6 @@
       ],
       "Start recovering": [
         "Start gendannelse"
-      ],
-      "Start setup": [
-        "Start opsætning"
       ],
       "Starting from ${ priceUnlimited }": [
         "Fra ${ priceUnlimited }"
@@ -878,9 +857,6 @@
       ],
       "Upload file": [
         "Upload fil"
-      ],
-      "Upload files": [
-        "Upload filer"
       ],
       "Upload folder": [
         "Upload mappe"
@@ -2839,6 +2815,9 @@
       "Invalid expiration date": [
         "Ugyldig udløbsdato"
       ],
+      "Invalid IBAN": [
+        "Ugyldig IBAN"
+      ],
       "Invalid name": [
         "Ugyldigt navn"
       ],
@@ -2991,6 +2970,9 @@
       "The address might be misspelled": [
         "Adressen kan være stavet forkert"
       ],
+      "The amount due has changed. Please try again.": [
+        "Det skyldige beløb er ændret. Prøv venligst igen."
+      ],
       "The email addresses do not match": [
         "E-Mailadresserne stemmer ikke overens"
       ],
@@ -3090,6 +3072,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nået det maksimale antal kalendere."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du har nået grænsen for antallet af kontakter på din konto"
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -3483,14 +3468,6 @@
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
         "Dette fjerner alle ${ BRAND_NAME } premium-funktioner for alle familiemedlemmer."
-      ]
-    },
-    "familyOffer_2023:Onboarding Proton": {
-      "Set up your family": [
-        "Opret din familie"
-      ],
-      "Set up your family account": [
-        "Konfigurer din familie-konto"
       ]
     },
     "familyOffer_2023:Title": {
@@ -4015,6 +3992,9 @@
       "${ nbFile } encrypted file...": [
         "${ nbFile } krypteret fil...",
         "${ nbFile } krypterede filer..."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } sat på pause",
@@ -5146,9 +5126,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browseren. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
@@ -6765,6 +6742,10 @@
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruger",
+        "Op til ${ numberOfUsers } brugere"
+      ],
       "${ options }-day file version history": [
         "${ options }-dags filversionshistorik",
         "${ options }-dags filversionshistorik"
@@ -7831,9 +7812,6 @@
       "Maybe later": [
         "Måske senere"
       ],
-      "Next": [
-        "Næste"
-      ],
       "Select theme": [
         "Vælg tema"
       ],
@@ -7842,9 +7820,6 @@
       ],
       "Skip for now": [
         "Spring over for nu"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "Begynd at bruge ${ DRIVE_APP_NAME }"
       ],
       "Try the app": [
         "Prøv appen"
@@ -7896,9 +7871,6 @@
       "Free up hard drive space on your computer": [
         "Frigør plads på harddisken på din computer"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "Kom godt i gang med at bruge ${ DRIVE_APP_NAME } og vi vil opgradere din drev lagerplads til 5 GB!"
-      ],
       "Get the desktop app": [
         "Få desktop-appen."
       ],
@@ -7941,33 +7913,14 @@
       "Securely share files and folders": [
         "Del filer og mapper på sikker vis"
       ],
-      "Securely store, manage, and share your business-critical files with confidence.": [
-        "Opbevar, håndter og del dine erhvervskritiske filer på en sikker måde."
-      ],
-      "Set a recovery method": [
-        "Indstil en gendannelsesmetode"
-      ],
-      "Share a file": [
-        "Del en fil"
-      ],
       "Share files & folders": [
         "Delte mapper & filer"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Du skal blot udføre følgende i løbet af den næste ${ expiresInDays } dag:",
-        "Du skal blot udføre følgende i løbet af de næste ${ expiresInDays } dage:"
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "Opbevar dine filer og del dem sikkert. Kom i gang med at sikre dine mest private filer, f.eks. id-kort, kontrakter og personlige fotos."
       ],
       "Sync and access your files from anywhere": [
         "Synkronisér og tilgå dine filer hvorsomhelst"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Ejeren skal bekræfte adgang til deling. Du får en mail, så snart det er gjort."
-      ],
-      "Upload a file": [
-        "Upload en fil"
       ],
       "Upload your first file": [
         "Upload din første fil"
@@ -7977,46 +7930,6 @@
       ],
       "Work together": [
         "Arbejd sammen"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "Din pålidelige online boks til vigtige dokumenter og dyrebare minder."
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Konfigurer din organisation, link dit domænenavn og opret konti for at sikre, at alle medlemmer af din organisation er beskyttet."
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "Udforsk alle ${ BRAND_NAME }-tjenester"
-      ],
-      "Pick a theme": [
-        "Vælg et tema"
-      ],
-      "Set up your organization": [
-        "Konfigurer din organisation"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Brug app-vælgeren øverst til venstre for at få adgang til alle ${ BRAND_NAME }-tjenester: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "Du kan til enhver tid ændre dit tema i dine indstillinger."
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "Slutgodkendelse i gang"
-      ],
-      "Hang tight!": [
-        "Hæng på!"
-      ],
-      "Invite team members": [
-        "Inviter teammedlemmer"
-      ],
-      "Upload and protect your important files": [
-        "Upload og beskyt dine vigtige filer"
-      ],
-      "Your welcome bonus": [
-        "Din velkomstbonus"
       ]
     },
     "Option": {
@@ -9108,6 +9021,22 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } tilbyder ${ planMaxSpace }-lagerplads pr. bruger til e-mails, vedhæftninger, begivenheder, filer og adgangskoder. Du er også berettiget til årlige lagerbonusser."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalender pr. bruger",
+        "${ planNumberOfCalendars } kalendere pr. bruger"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadresse",
+        "${ planNumberOfEmails } e-mailadresser"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-mailadresse pr. bruger",
+        "${ planNumberOfEmails } e-mailadresser pr. bruger"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } bruger",
+        "${ planNumberOfUsers } brugere"
       ],
       "2 users": [
         "2 brugere"

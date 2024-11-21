@@ -348,12 +348,6 @@
       "Expand folder": [
         "展開資料夾"
       ],
-      "Explore on my own": [
-        "自行探索"
-      ],
-      "Explore while you wait": [
-        "於等待時探索"
-      ],
       "Export": [
         "匯出"
       ],
@@ -381,9 +375,6 @@
       "Get link": [
         "取得連結"
       ],
-      "Get started": [
-        "開始使用"
-      ],
       "Get Started": [
         "入門指南"
       ],
@@ -401,9 +392,6 @@
       ],
       "Go to my files": [
         "到我的檔案"
-      ],
-      "Go to panel ${ index }": [
-        "前往面板 ${ index }"
       ],
       "Go to parent": [
         "前往上一層"
@@ -455,9 +443,6 @@
       ],
       "Increase": [
         "加"
-      ],
-      "Invite": [
-        "邀請"
       ],
       "Keep my subscription": [
         "保持訂閱"
@@ -783,9 +768,6 @@
       "Sign out": [
         "登出"
       ],
-      "Skip": [
-        "略過"
-      ],
       "Skip verification": [
         "略過驗證"
       ],
@@ -797,9 +779,6 @@
       ],
       "Start recovering": [
         "開始恢復"
-      ],
-      "Start setup": [
-        "開始設定"
       ],
       "Starting from ${ priceUnlimited }": [
         "${ priceUnlimited }起"
@@ -877,9 +856,6 @@
         "仍要上載"
       ],
       "Upload file": [
-        "上載檔案"
-      ],
-      "Upload files": [
         "上載檔案"
       ],
       "Upload folder": [
@@ -3509,17 +3485,6 @@
         "這將會為每一家庭成員移除所有 ${ BRAND_NAME } 尊享功能。"
       ]
     },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users": [
-        "設定您家庭帳號和邀請使用者"
-      ],
-      "Set up your family": [
-        "設定您的家庭"
-      ],
-      "Set up your family account": [
-        "設定您的家庭帳號"
-      ]
-    },
     "familyOffer_2023:Title": {
       "Delete family group?": [
         "要刪除家庭群組嗎？"
@@ -5104,9 +5069,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向的網站可能試圖竊取您的資訊，例如密碼或信用卡細節 。"
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "此連結可能為域名釣魚攻擊，且無法以 Edge 瀏覽器開啟。若您確定這是正常的連結，請使用其他瀏覽器開啟。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義字攻擊，請核對此連結是否是您想要造訪的連結，否則請不要開啟。"
@@ -7687,9 +7649,6 @@
       "Maybe later": [
         "稍後再說"
       ],
-      "Next": [
-        "下一步"
-      ],
       "Select theme": [
         "選擇主題"
       ],
@@ -7698,9 +7657,6 @@
       ],
       "Skip for now": [
         "暫時跳過"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "開始使用 ${ DRIVE_APP_NAME }"
       ],
       "Try the app": [
         "適用此應用程式"
@@ -7746,9 +7702,6 @@
       "Final approval pending": [
         "正在審核許可"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "開始使用 ${ DRIVE_APP_NAME }，我們會將您儲存空間升級至 5GB！"
-      ],
       "Get the desktop app": [
         "取得桌面應用程式"
       ],
@@ -7776,23 +7729,11 @@
       "Securely share files and folders": [
         "安全保護共享檔案和資料夾"
       ],
-      "Set a recovery method": [
-        "設定備援方法"
-      ],
-      "Share a file": [
-        "分享個檔案"
-      ],
       "Share files & folders": [
         "共享檔案&資料夾"
       ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "只要在接下來的 ${ expiresInDays } 天完成以下任務："
-      ],
       "Sync and access your files from anywhere": [
         "於任何地方同步及存取您的檔案"
-      ],
-      "Upload a file": [
-        "上載檔案"
       ],
       "Upload your first file": [
         "上傳您的第一個檔案"
@@ -7802,46 +7743,6 @@
       ],
       "Work together": [
         "同心協力"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "值得您信賴的線上保存庫，讓您安放重要文件和珍貴回憶。"
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "設置您的組織、連結您的網域名稱，並創建各個帳號以確保您的組織中所有成員均得到保護。"
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "探索所有 ${ BRAND_NAME } 服務"
-      ],
-      "Pick a theme": [
-        "選擇主題"
-      ],
-      "Set up your organization": [
-        "設定您的組織"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "使用左上角的應用程式選取器，所有 ${ BRAND_NAME } 服務供您差遣：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }和${ PASS_SHORT_APP_NAME }。"
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "您可於設定隨時變更布景主題。"
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "最後審核正在進行"
-      ],
-      "Hang tight!": [
-        "準備好!"
-      ],
-      "Invite team members": [
-        "邀請團隊成員"
-      ],
-      "Upload and protect your important files": [
-        "上傳和保護您的匯入檔案"
-      ],
-      "Your welcome bonus": [
-        "您的歡迎獎勵"
       ]
     },
     "Option": {

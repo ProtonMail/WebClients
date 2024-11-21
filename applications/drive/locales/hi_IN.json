@@ -335,12 +335,6 @@
       "Expand folder": [
         "ज़्यादा"
       ],
-      "Explore on my own": [
-        "स्वयं अन्वेषण करें"
-      ],
-      "Explore while you wait": [
-        "प्रतीक्षा करते समय अन्वेषण करें"
-      ],
       "Export": [
         "निर्यात करें"
       ],
@@ -368,9 +362,6 @@
       "Get link": [
         "लिंक प्राप्त करें"
       ],
-      "Get started": [
-        "शुरू करें"
-      ],
       "Get Started": [
         "शुरू करें"
       ],
@@ -382,9 +373,6 @@
       ],
       "Go to my files": [
         "'मेरे फाइल' में जाएं"
-      ],
-      "Go to panel ${ index }": [
-        "${ index } पैनल पे जाएं"
       ],
       "Go to parent": [
         "मुख्य पे जाएं"
@@ -430,9 +418,6 @@
       ],
       "Increase": [
         "बढ़ाएं"
-      ],
-      "Invite": [
-        "न्योता भेजें"
       ],
       "Later": [
         "बाद में"
@@ -749,9 +734,6 @@
       "Sign out": [
         "साइनआउट करें"
       ],
-      "Skip": [
-        "छोड़ें"
-      ],
       "Skip verification": [
         "सत्यापन छोड़ें"
       ],
@@ -763,9 +745,6 @@
       ],
       "Start recovering": [
         "पुनर्प्राप्ति शुरू करें"
-      ],
-      "Start setup": [
-        "सेट करें"
       ],
       "Stay": [
         "रुकें"
@@ -832,9 +811,6 @@
       ],
       "Upload file": [
         "फाइल अपलोड करें"
-      ],
-      "Upload files": [
-        "फाइलें अपलोड करें"
       ],
       "Upload folder": [
         "फोल्डर अपलोड करें"
@@ -3077,14 +3053,6 @@
         "यह आपके संगठन से जुड़े सभी उप-उपयोगकर्ताओं, खातों और डेटा को स्थायी रूप से हटा देगा।"
       ]
     },
-    "familyOffer_2023:Onboarding Proton": {
-      "Set up your family": [
-        "अपना परिवार सेट करें"
-      ],
-      "Set up your family account": [
-        "अपना परिवार खाता सेट करें"
-      ]
-    },
     "familyOffer_2023:Title": {
       "Delete family group?": [
         "परिवार ग्रुप मिटाएं?"
@@ -4631,9 +4599,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "यह लिंक एक ऐसी वेबसाइट की ओर ले जाता है जो पासवर्ड और क्रेडिट कार्ड विवरण जैसी आपकी जानकारी चुराने का प्रयास कर सकती है।"
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "यह लिंक एक होमोग्राफ हमला हो सकता है और Edge ब्राउज़र द्वारा खोला नहीं जा सकता। यदि आप निश्चित हैं कि लिंक वैध है, तो कृपया इसे खोलने के लिए किसी दुसरा ब्राउज़र का उपयोग करें।"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "यह लिंक एक होमोग्राफ हमला हो सकता है। कृपया सत्यापित करें कि यह वह लिंक है जो आप यात्रा करना चाहते हैं, या इसे न खोलें।"
@@ -6846,72 +6811,6 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "${ appName } में आपका स्वागत है"
-      ]
-    },
-    "Onboarding Action": {
-      "Next": [
-        "अगला"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } इस्तेमाल करें"
-      ]
-    },
-    "Onboarding Info": {
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "${ DRIVE_APP_NAME } का उपयोग शुरू करें और हम आपके स्टोरेज को 5 GB तक बढ़ा देंगे!"
-      ],
-      "Set a recovery method": [
-        "रिकवरी तरीका सेट करें"
-      ],
-      "Share a file": [
-        "फ़ाइल साझा करें"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "बस इसे अगले ${ expiresInDays } दिन में खत्म कर देना:",
-        "बस इसे अगले ${ expiresInDays } दिन में खत्म कर देना:"
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "फाइलें संग्रहीत करें और सुरक्षित रूप से शेयर करें। सबसे निजी फाइलों, जैसे आईडी, अनुबंध और व्यक्तिगत फोटो को सुरक्षित करके आरंभ करें।"
-      ],
-      "Upload a file": [
-        "फाइल अपलोड करें"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "आपका भरोसेमंद ऑनलाइन तिजोरी ज़रूरी कागज़ातो और अमुल्य यादों के लिए।"
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "अपने संगठन को कॉन्फ़िगर करें, अपना डोमेन नाम लिंक करें, और यह सुनिश्चित करने के लिए खाते बनाएं कि आपके संगठन के सभी सदस्य सुरक्षित हैं।"
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "सारे ${ BRAND_NAME } सेवा देखे"
-      ],
-      "Pick a theme": [
-        "थीम चुनें"
-      ],
-      "Set up your organization": [
-        "अपना संगठन स्थापित करें"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "${ BRAND_NAME } की सभी सेवाओं तक पहुंचने के लिए ऊपर बाईं ओर ऐप चयनकर्ता का उपयोग करें: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } और ${ PASS_SHORT_APP_NAME }।"
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "आप किसी भी समय अपनी सेटिंग्स में जाकर अपनी थीम बदल सकते हैं।"
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "अंतिम स्वीकृति प्रगति पर है"
-      ],
-      "Hang tight!": [
-        "प्रतीक्षा करें"
-      ],
-      "Upload and protect your important files": [
-        "महत्वपूर्ण फाइलें अपलोड करें और सुरक्षित रखें"
-      ],
-      "Your welcome bonus": [
-        "आपका स्वागत बोनस"
       ]
     },
     "Option": {

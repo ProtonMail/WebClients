@@ -313,7 +313,7 @@
         "Λήψη αρχείων καταγραφής"
       ],
       "Drive Locked": [
-        "Αρχειοθήκη Κλειδωμένη"
+        "Δίσκος κλειδωμένος"
       ],
       "Edit": [
         "Επεξεργασία"
@@ -351,12 +351,6 @@
       "Expand folder": [
         "Ανάπτυξη φακέλου"
       ],
-      "Explore on my own": [
-        "Εξερεύνηση μόνος μου"
-      ],
-      "Explore while you wait": [
-        "Εξερευνήστε ενώ περιμένετε"
-      ],
       "Export": [
         "Εξαγωγή"
       ],
@@ -370,7 +364,7 @@
         "Προσάρμοση στο μέγεθος του παραθύρου"
       ],
       "Forgot password?": [
-        "Ξέχασα τον κωδικό πρόσβασης?"
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
@@ -383,9 +377,6 @@
       ],
       "Get link": [
         "Λάβετε σύνδεσμο"
-      ],
-      "Get started": [
-        "Ας ξεκινήσουμε"
       ],
       "Get Started": [
         "Ξεκινήστε"
@@ -404,9 +395,6 @@
       ],
       "Go to my files": [
         "Μετάβαση στα αρχεία μου"
-      ],
-      "Go to panel ${ index }": [
-        "Μετάβαση στο πλαίσιο ${ index }"
       ],
       "Go to parent": [
         "Μετάβαση στον γονέα"
@@ -458,9 +446,6 @@
       ],
       "Increase": [
         "Αύξηση"
-      ],
-      "Invite": [
-        "Πρόσκληση"
       ],
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
@@ -786,9 +771,6 @@
       "Sign out": [
         "Αποσύνδεση"
       ],
-      "Skip": [
-        "Παράλειψη"
-      ],
       "Skip verification": [
         "Παράλειψη επαλήθευσης"
       ],
@@ -800,9 +782,6 @@
       ],
       "Start recovering": [
         "Έναρξη ανάκτησης"
-      ],
-      "Start setup": [
-        "Εκκίνησης ρύθμισης"
       ],
       "Starting from ${ priceUnlimited }": [
         "Ξεκινώντας από ${ priceUnlimited }"
@@ -881,9 +860,6 @@
       ],
       "Upload file": [
         "Ανέβασμα αρχείου"
-      ],
-      "Upload files": [
-        "Ανέβασμα αρχείων"
       ],
       "Upload folder": [
         "Ανέβασμα φακέλου"
@@ -2042,7 +2018,7 @@
         "Μακάο"
       ],
       "Macedonia": [
-        "ΠΓΔ Μακεδονίας"
+        "Βόρεια Μακεδονία"
       ],
       "Madagascar": [
         "Μαδαγασκάρη"
@@ -3580,17 +3556,6 @@
         "Αυτό θα καταργήσει όλες τις premium δυνατότητες του ${ BRAND_NAME } για κάθε μέλος της οικογένειας σας."
       ]
     },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users": [
-        "Ρυθμίστε τις παραμέτρους του οικογενειακού λογαριασμού σας και προσκαλέστε χρήστες"
-      ],
-      "Set up your family": [
-        "Ρύθμιση της οικογένειάς σας"
-      ],
-      "Set up your family account": [
-        "Ρυθμίστε τον οικογενειακό λογαριασμό σας"
-      ]
-    },
     "familyOffer_2023:Title": {
       "Delete family group?": [
         "Διαγραφή ομάδας οικογένειας;"
@@ -4156,7 +4121,7 @@
         "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
       ],
       "${ skippedCount } skipped": [
-        "${ skippedCount } παραλείφθηκαν",
+        "${ skippedCount } παραλείφθηκε",
         "${ skippedCount } παραλείφθηκαν"
       ],
       "${ speed }/s": [
@@ -4259,10 +4224,10 @@
         "Και αποκτήστε πρόσβαση σε αυτό από οπουδήποτε"
       ],
       "Anyone with this link can access your file.": [
-        "Οποιοσδήποτε έχει αυτόν τον σύνδεσμο μπορεί να προσπελάσει το αρχείο σας."
+        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να προσπελάσει το αρχείο σας."
       ],
       "Anyone with this link can access your folder.": [
-        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση στο φάκελο."
+        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση στον φάκελό σας."
       ],
       "Are you sure you want to discard your changes?": [
         "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
@@ -4271,7 +4236,7 @@
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά όλα τα στοιχεία από τα Διαγραμμένα;"
+        "Θέλετε σίγουρα να διαγράψετε οριστικά όλα τα στοιχεία από τα Διαγραμμένα;"
       ],
       "Are you sure you want to permanently delete": [
         "Θέλετε σίγουρα να διαγράψετε μόνιμα το"
@@ -4280,13 +4245,13 @@
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά το \"${ itemName }\" από τα Διαγραμμένα;"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά τα επιλεγμένα στοιχεία από τα Διαγραμμένα;"
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τα επιλεγμένα στοιχεία από τα Διαγραμμένα;"
       ],
       "Are you sure you want to proceed?": [
         "Είστε βέβαιοι ότι θέλετε να συνεχίσετε;"
       ],
       "Attention required": [
-        "Χρειάζεται προσοχή"
+        "Απαιτείται προσοχή"
       ],
       "Available": [
         "Διαθέσιμα"
@@ -4298,7 +4263,7 @@
         "Υπόλοιπο από την προηγούμενη συνδρομή σας"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Επειδή το ${ DRIVE_APP_NAME } είναι διατερματικά κρυπτογραφημένο, δεν μπορούμε να αποκρυπτογραφήσουμε και να προσπελάσουμε τα αρχεία σας για λογαριασμό σας. Για να ξεκλειδώσετε την αρχειοθήκη σας μετά από επαναφορά κωδικού πρόσβασης, πρέπει να έχετε ένα από τα εξής:"
+        "Επειδή το ${ DRIVE_APP_NAME } είναι διατερματικά κρυπτογραφημένο, δεν μπορούμε να αποκρυπτογραφήσουμε και να προσπελάσουμε τα αρχεία σας για λογαριασμό σας. Για να ξεκλειδώσετε τον δίσκο σας μετά από επαναφορά κωδικού πρόσβασης, πρέπει να έχετε ένα από τα εξής:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
@@ -4370,7 +4335,7 @@
         "Η επαφή αφαιρέθηκε από την ομάδα ${ contactGroupName }"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Συνέχιση χρήσης ${ DRIVE_APP_NAME } και ξεκλείδωμα αρχειοθήκης αργότερα."
+        "Συνέχιση χρήσης ${ DRIVE_APP_NAME } και ξεκλείδωμα δίσκου αργότερα."
       ],
       "Copy the link to clipboard": [
         "Αντιγραφή του συνδέσμου στο πρόχειρο"
@@ -4438,8 +4403,8 @@
         "Αφοσιωμένοι διακομιστές"
       ],
       "Delete locked drive": [
-        "Διαγραφή κλειδωμένης αρχειοθήκης",
-        "Διαγραφή κλειδωμένων αρχειοθηκών"
+        "Διαγραφή κλειδωμένου δίσκου",
+        "Διαγραφή κλειδωμένων δίσκων"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο ανέβηκε διασφαλισμένα από ${ emailAddress }."
@@ -4587,7 +4552,7 @@
         "Αποτυχία δημιουργίας ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
       ],
       "Failed to generate a secure link. Try again later": [
-        "Αποτυχία παραγωγής ασφαλούς συνδέσμου. Παρακαλούμε δοκιμάστε ξανά αργότερα"
+        "Αποτυχία δημιουργίας ασφαλούς συνδέσμου. Παρακαλούμε δοκιμάστε ξανά αργότερα"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Αποτυχία ανοίγματος ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
@@ -4608,7 +4573,7 @@
         "Τα αρχεία και οι φάκελοι που έχουν μοιραστεί μαζί σας άλλοι χρήστες θα εμφανίζονται εδώ"
       ],
       "Finalizing": [
-        "Οριστικοποιείται"
+        "Γίνεται οριστικοποίηση"
       ],
       "finance": [
         "οικονομικά"
@@ -4892,7 +4857,7 @@
         "από"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "Μια κρυπτογραφημένη αρχειοθήκη σας είναι κλειδωμένη, πιθανότατα λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης."
+        "Ένας από τις κρυπτογραφημένους δίσκους σας είναι κλειδωμένος, πιθανότατα λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
@@ -4905,7 +4870,7 @@
         "Μόνο τα άτομα που έχουν τον σύνδεσμο και τον κωδικό πρόσβασης μπορούν να προσπελάσουν αυτό το αρχείο."
       ],
       "Only the people with the link and the password can access this folder.": [
-        "Μόνο άτομα που κατέχουν τον σύνδεσμο και το συνθηματικό έχουν πρόσβαση σε αυτό το φάκελο."
+        "Μόνο άτομα που έχουν τον σύνδεσμο και το συνθηματικό έχουν πρόσβαση σε αυτό το φάκελο."
       ],
       "Or use the \"+ New\" button": [
         "Ή χρησιμοποιήστε το \"+ Νέο\" κουμπί"
@@ -4932,7 +4897,7 @@
         "Άτομα με πρόσβαση"
       ],
       "Permanently delete all files in your locked drive": [
-        "Οριστική διαγραφή όλων των αρχείων στην κλειδωμένη αρχειοθήκη σας"
+        "Οριστική διαγραφή όλων των αρχείων στον κλειδωμένο δίσκο σας"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline είναι μόνο συμβατό με μορφοποίηση Απλού Κειμένου."
@@ -5056,7 +5021,7 @@
         "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
       ],
       "Recovery process might take some time.": [
-        "Η διαδικασία ανάκτησης ίσως πάρει κάποια ώρα."
+        "Η διαδικασία ανάκτησης ίσως διαρκέσει λίγη ώρα."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
@@ -5080,7 +5045,7 @@
         "Επαναφορά Φωτογραφιών"
       ],
       "Restored files ${ formattedDate }": [
-        "Επαναφορά αρχείων ${ formattedDate }"
+        "Επαναφερθέντα αρχεία ${ formattedDate }"
       ],
       "Restoring Photos... Please keep the tab open": [
         "Επαναφορά Φωτογραφιών... Κρατήστε την καρτέλα ανοιχτή"
@@ -5095,7 +5060,7 @@
         "Πρόβλημα σάρωσης"
       ],
       "Search cannot be enabled in this browser": [
-        "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
+        "Η αναζήτηση δεν είναι δυνατό να ενεργοποιηθεί σε αυτόν τον περιηγητή"
       ],
       "Search Enabled": [
         "Αναζήτηση Ενεργοποιημένη"
@@ -5213,10 +5178,10 @@
         "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
-        "Ο αριθμός λήψεων περιλαμβάνει τόσο τις πραγματικές λήψεις όσο και τις παρουσίες κατά την προεπισκόπηση αρχείων."
+        "Ο αριθμός λήψεων περιλαμβάνει τόσο τις πραγματικές λήψεις όσο και τις εμφανίσεις κατά την προεπισκόπηση αρχείων."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
-        "Τα κρυπτογραφημένα δεδομένα είναι ελαφρώς μεγαλύτερα λόγω της επιβάρυνσης της κρυπτογράφησης και των υπογραφών, που διασφαλίζουν την ασφάλεια των δεδομένων σας."
+        "Τα κρυπτογραφημένα δεδομένα είναι ελαφρώς μεγαλύτερα σε μέγεθος λόγω της επιβάρυνσης της κρυπτογράφησης και των υπογραφών, που διασφαλίζουν την προστασία των δεδομένων σας."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Οι εκτεθειμένες πληροφορίες διέρρευσαν από μια υπηρεσία τρίτου μέρους. Οι πληροφορίες του λογαριασμού σας ${ BRAND_NAME } παραμένουν ασφαλείς και κρυπτογραφημένες. ${ learnMoreLink }"
@@ -5259,9 +5224,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας και δεν μπορεί να ανοίξει από το πρόγραμμα περιήγησης Edge. Εάν είστε βέβαιοι ότι ο σύνδεσμος είναι αυθεντικός, χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης για να το ανοίξετε."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
@@ -5340,16 +5302,16 @@
         "Σύνολο συνδέσεων VPN"
       ],
       "Transfer canceled for file \"${ name }\"": [
-        "Ακύρωση μεταφοράς για το αρχείο \"${ name }\""
+        "Ακυρώθηκε η μεταφορά του αρχείου \"${ name }\""
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        "Ακύρωση μεταφοράς για τον φάκελο \"${ name }\""
+        "Η μεταφορά του φακέλου \"${ name }\" ακυρώθηκε"
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        "Παράλειψη μεταφοράς για το αρχείο \"${ file.name }\""
+        "Η μεταφορά του αρχείου \"${ file.name }\" παραλείφθηκε"
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        "Παράλειψη μεταφοράς για τον φάκελο \"${ folderName }\""
+        "Η μεταφορά του φακέλου \"${ folderName }\" παραλείφθηκε"
       ],
       "Trash": [
         "Διαγραμμένα"
@@ -5376,7 +5338,7 @@
         "Άγνωστο σφάλμα"
       ],
       "Unlock drive to recover files": [
-        "Ξεκλείδωμα αρχειοθήκης προς ανάκτηση αρχείων"
+        "Ξεκλειδώστε τον δίσκο για να ανακτήσετε αρχεία"
       ],
       "Unsaved changes": [
         "Μη αποθηκευμένες αλλαγές"
@@ -5397,7 +5359,7 @@
         "Ανέβηκε"
       ],
       "Uploading": [
-        "Ανέβασμα"
+        "Γίνεται μεταφόρτωση"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Το ανέβασμα εκατοντάδων αρχείων με τη μία ενδέχεται να μειώσει τις επιδόσεις."
@@ -5496,7 +5458,7 @@
         "Θα θέλατε να λάβετε νέο κωδικό επαλήθευσης;"
       ],
       "Would you like to restore your files?": [
-        "Θα θέλατε επαναφορά των αρχείων σας;"
+        "Θα θέλατε να επαναφέρετε τα αρχεία σας;"
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
@@ -5558,7 +5520,7 @@
         "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "Σας απομένουν ${ expiresInDays } ημέρα για να διεκδικήσετε το μπόνους καλωσορίσματος 3 GB και ",
+        "Σας απομένει ${ expiresInDays } ημέρα για να διεκδικήσετε το μπόνους καλωσορίσματος 3 GB και ",
         "Σας απομένουν ${ expiresInDays } ημέρες για να διεκδικήσετε το μπόνους καλωσορίσματος 3 GB και "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
@@ -6075,7 +6037,7 @@
         "Τελευταίοι 3 μήνες μόνο"
       ],
       "Last month only": [
-        "Τελευταίο μήνα μόνο"
+        "Τελευταίος μήνας μόνο"
       ],
       "Last name": [
         "Επώνυμο"
@@ -6276,7 +6238,7 @@
         "Αυτό το αρχείο ενδέχεται να έχει προσβληθεί"
       ],
       "This will permanently delete all files in your locked drive.": [
-        "Αυτό θα διαγράψει οριστικά όλα τα αρχεία στην κλειδωμένη αρχειοθήκη σας."
+        "Αυτό θα διαγράψει οριστικά όλα τα αρχεία στον κλειδωμένο δίσκο σας."
       ],
       "Thomas": [
         "Thomas"
@@ -6294,10 +6256,10 @@
         "Τύπος"
       ],
       "Unlock drive": [
-        "Ξεκλείδωμα αρχειοθήκης"
+        "Ξεκλείδωμα δίσκου"
       ],
       "Unlock drive (recommended)": [
-        "Ξεκλείδωμα αρχειοθήκης (συστήνεται)"
+        "Ξεκλείδωμα δίσκου (συστήνεται)"
       ],
       "Unlock later": [
         "Ξεκλείδωμα αργότερα"
@@ -6408,7 +6370,7 @@
         "Μάθετε περισσότερα"
       ],
       "Pay invoice": [
-        "Πληρωμή τιμολογίου"
+        "Εξόφληση τιμολογίου"
       ],
       "Photos": [
         "Φωτογραφίες"
@@ -7587,9 +7549,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Επαναφέρετε τους κωδικούς πρόσβασης χρήστη και επαναφέρετε τον έλεγχο ταυτότητας δύο παραγόντων στους χρήστες"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Δρομολογήστε την κίνηση σας στο διαδίκτυο, μέσω του δικτύου TOR με ένα μόνο κλικ"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
@@ -8007,9 +7966,6 @@
       "Maybe later": [
         "Ίσως αργότερα"
       ],
-      "Next": [
-        "Επόμενο"
-      ],
       "Select theme": [
         "Επιλογή θέματος"
       ],
@@ -8018,9 +7974,6 @@
       ],
       "Skip for now": [
         "Αγνοήστε για τώρα"
-      ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "Έναρξη χρήσης του ${ DRIVE_APP_NAME }"
       ],
       "Try the app": [
         "Δοκιμάστε την εφαρμογή"
@@ -8072,9 +8025,6 @@
       "Free up hard drive space on your computer": [
         "Ελευθερώστε χώρο στον σκληρό δίσκο του υπολογιστή σας"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "Αρχίστε να χρησιμοποιείτε το ${ DRIVE_APP_NAME } και θα αναβαθμίστε τον αποθηκευτικό χώρο σας σε 5 GB!"
-      ],
       "Get the desktop app": [
         "Λήψη της εφαρμογής για υπολογιστές"
       ],
@@ -8117,33 +8067,14 @@
       "Securely share files and folders": [
         "Ασφαλής κοινή χρήση αρχείων και φακέλων"
       ],
-      "Securely store, manage, and share your business-critical files with confidence.": [
-        "Αποθηκεύστε, διαχειριστείτε και μοιραστείτε με ασφάλεια τα κρίσιμα αρχεία της επιχείρησής σας με σιγουριά."
-      ],
-      "Set a recovery method": [
-        "Ορίστε μέθοδο ανάκτησης"
-      ],
-      "Share a file": [
-        "Κοινοποίηση αρχείου"
-      ],
       "Share files & folders": [
         "Κοινή χρήση αρχείων και φακέλων"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Απλά ολοκληρώστε τα ακόλουθα στην επόμενη ${ expiresInDays } ημέρα:",
-        "Απλά ολοκληρώστε τα ακόλουθα στις επόμενες ${ expiresInDays } ημέρες:"
-      ],
-      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "Αποθηκεύστε τα αρχεία σας και μοιραστείτε τα με ασφάλεια. Ξεκινήστε ασφαλίζοντας τα πιο ιδιωτικά αρχεία σας, όπως ταυτότητες, συμβόλαια και προσωπικές φωτογραφίες."
       ],
       "Sync and access your files from anywhere": [
         "Συγχρονίστε και αποκτήστε πρόσβαση στα αρχεία σας από οπουδήποτε"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Ο κάτοχος πρέπει να επιβεβαιώσει την πρόσβαση κοινής χρήσης. Θα λάβετε ένα μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί."
-      ],
-      "Upload a file": [
-        "Φόρτωση αρχείου"
       ],
       "Upload your first file": [
         "Ανεβάστε το πρώτο σας αρχείο"
@@ -8153,46 +8084,6 @@
       ],
       "Work together": [
         "Συνεργαστείτε"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "Το αξιόπιστο διαδικτυακό θησαυροφυλάκιο σας για ζωτικά έγγραφα και πολύτιμες αναμνήσεις."
-      ]
-    },
-    "Onboarding Proton": {
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Ρυθμίστε τις παραμέτρους του οργανισμού σας, συνδέστε το όνομα τομέα σας και δημιουργήστε λογαριασμούς για να διασφαλίσετε ότι όλα τα μέλη του οργανισμού σας προστατεύονται."
-      ],
-      "Discover all ${ BRAND_NAME } services": [
-        "Ανακαλύψτε όλες τις υπηρεσίες του ${ BRAND_NAME }"
-      ],
-      "Pick a theme": [
-        "Επιλέξτε ένα θέμα"
-      ],
-      "Set up your organization": [
-        "Ρυθμίστε τον οργανισμό σας"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Χρησιμοποιήστε τον επιλογέα εφαρμογών επάνω αριστερά για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You will be able to change your theme any time in your settings.": [
-        "Θα μπορείτε να αλλάξετε το θέμα σας ανά πάσα στιγμή στις ρυθμίσεις σας."
-      ]
-    },
-    "Onboarding Title": {
-      "Final approval in progress": [
-        "Τελική έγκριση σε εξέλιξη"
-      ],
-      "Hang tight!": [
-        "Κρεμάστε σφιχτά!"
-      ],
-      "Invite team members": [
-        "Πρόσκληση μελών ομάδας"
-      ],
-      "Upload and protect your important files": [
-        "Ανεβάστε και προστατέψτε τα σημαντικά αρχεία σας"
-      ],
-      "Your welcome bonus": [
-        "Το μπόνους καλωσορίσματος σας"
       ]
     },
     "Option": {
@@ -8497,7 +8388,7 @@
         "Αναζήτηση βάσει ονόματος ή e-mail"
       ],
       "Search parent folder": [
-        "Αναζήτηση στο γονικό φάκελο"
+        "Αναζήτηση σε γονικό φάκελο"
       ],
       "Select": [
         "Επιλογή"
@@ -8531,7 +8422,7 @@
         "Επιλέξτε τον αριθμό διευθύνσεων IP που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον διεύθυνση IP κοστίζει ${ price }."
       ],
       "Should you need more than ${ maxIPs } IP, ": [
-        "Εάν χρειάζεστε περισσότερη από ${ maxIPs } διεύθυνση IP, ",
+        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διεύθυνση IP, ",
         "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διευθύνσεις IP, "
       ]
     },
@@ -8687,7 +8578,7 @@
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτου μέρους. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Η πρωτοποριακή μας λύση ασφάλειας με γνώμονα την τεχνητή νοημοσύνη, σχεδιασμένη για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους. ${ learnMoreLink }"
+        "Η πρωτοποριακή μας λύση ασφάλειας βασισμένη στην τεχνητή νοημοσύνη, σχεδιασμένη για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Το Sentinel είναι **ενεργό** και προστατεύει τον λογαριασμό σας."
@@ -8993,7 +8884,7 @@
     },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "Μεταβείτε στα προγράμματα συνδρομής"
+        "Μεταβείτε στα συνδρομητικά προγράμματα"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -9001,7 +8892,7 @@
     },
     "specialoffer: Offers": {
       "${ n } month": [
-        "${ n } μήνα",
+        "${ n } μήνας",
         "${ n } μήνες"
       ],
       "/ month": [
@@ -9107,7 +8998,7 @@
         "Προσκαλέστε φίλους στο ${ BRAND_NAME }"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
-        "Τώρα είναι δυνατή η αναζήτηση στην Αρχειοθήκη, εύκολα και διατηρώντας τη διασφάλιση των δεδομένων σας."
+        "Τώρα είναι δυνατή η αναζήτηση στον δίσκο εύκολα και διατηρώντας τη διασφάλιση των δεδομένων σας."
       ]
     },
     "sso": {
@@ -9731,7 +9622,7 @@
         "Οι προτιμήσεις αποθηκεύτηκαν"
       ],
       "Problem reported": [
-        "Αναφέρθηκε πρόβλημα"
+        "Η αναφορά του προβλήματος ολοκληρώθηκε"
       ],
       "Recovery has started": [
         "Η ανάκτηση έχει ξεκινήσει"
@@ -9906,7 +9797,7 @@
         "Ανάκτηση λογαριασμού"
       ],
       "Account security": [
-        "Διασφάλιση λογαριασμού"
+        "Προστασία λογαριασμού"
       ],
       "Active": [
         "Ενεργά"

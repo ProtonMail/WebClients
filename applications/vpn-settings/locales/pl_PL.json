@@ -2823,9 +2823,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
       ],
-      "You've assigned all of your servers.": [
-        "Przypisano wszystkie serwery."
-      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Twoje konto lub organizacja posiada obecnie zaległe faktury. Ureguluj wszystkie zobowiązania."
       ]
@@ -7255,9 +7252,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetowanie haseł i uwierzytelniania dwustopniowego użytkowników"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Przekieruj swój ruch internetowy przez sieć Tor za pomocą jednego kliknięcia"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
@@ -8347,9 +8341,6 @@
       "Test in progress...": [
         "Testowanie jest w toku..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Wpisz dane logowania użytkownika powiązanego z domeną **${ domainName }**, aby przetestować konfigurację SAML"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Otrzymaliśmy prawidłową odpowiedź SAML od dostawcy tożsamości. Logowanie SSO zostało włączone dla Twojej organizacji."
       ],
@@ -9213,9 +9204,6 @@
       ],
       "Single sign-on removed": [
         "Logowanie SSO zostało usunięte"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Dane logowania od dostawcy tożsamości zostaną usunięte."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Spowoduje to wylogowanie użytkownika z innych urządzeń i konieczność utworzenia nowego hasła zapasowego."
@@ -11065,9 +11053,6 @@
     "Tor out of date": {
       "stable release": [
         "wersji stabilnej"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Ta wersja przeglądarki Tor nie jest obsługiwana. Zaktualizuj ją do najnowszej ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -11076,9 +11061,6 @@
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorzy nie mają dostępu do danych prywatnych użytkowników i nie mogą zresetować ich haseł."
-      ],
-      "Approve all": [
-        "Zatwierdź wszystkie"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Ustawiając użytkownika jako prywatnego, nie będziesz w stanie pomóc mu odzyskać dostępu do jego danych lub konta."
