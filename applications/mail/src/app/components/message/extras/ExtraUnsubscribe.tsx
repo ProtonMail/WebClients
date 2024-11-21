@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -58,18 +60,20 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const sendMessage = useSendMessage();
     const [loading, withLoading] = useLoading();
     const onCompose = useOnCompose();
-    const toAddress = getOriginalTo(message);
-    const address = addresses?.find(
-        ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(toAddress)
+    const toAddress = useMemo(() => getOriginalTo(message), [message]);
+    const canonicalToAddress = useMemo(() => canonicalizeInternalEmail(toAddress), [toAddress]);
+    const address = useMemo(
+        () => addresses?.find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalToAddress),
+        [addresses, canonicalToAddress]
     );
-
-    const unsubscribeMethods = message.UnsubscribeMethods || {};
-
     const [unsubscribeModalProps, setUnsubscribeModalOpen, renderUnsubscribeModal] = useModalState();
     const [unsubscribedModalProps, setUnsubscribedModalOpen, renderUnsubscribedModal] = useModalState();
     const [passAliasesModalProps, setPassAliasesModalOpen, renderPassAliasesModal] = useModalState();
+    const unsubscribeMethods = message.UnsubscribeMethods || {};
+    const hasUnsubscribeMethods = useMemo(() => !!Object.keys(unsubscribeMethods).length, [unsubscribeMethods]);
+    const isSimpleLoginAlias = hasSimpleLoginSender(message);
 
-    if (!Object.keys(unsubscribeMethods).length || !address) {
+    if (!hasUnsubscribeMethods || !address || isSimpleLoginAlias) {
         return null;
     }
 
