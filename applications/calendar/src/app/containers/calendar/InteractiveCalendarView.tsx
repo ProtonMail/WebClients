@@ -14,6 +14,10 @@ import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import { VIDEO_CONF_API_ERROR_CODES } from '@proton/calendar/components/videoConferencing/constants';
 import {
+    VideoConferenceZoomIntegration,
+    useVideoConfTelemetry,
+} from '@proton/calendar/components/videoConferencing/useVideoConfTelemetry';
+import {
     Dropzone,
     ImportModal,
     useApi,
@@ -350,6 +354,7 @@ const InteractiveCalendarView = ({
     const cancelClosePopoverRef = useRef(false);
 
     const { triggerZoomOAuth } = useZoomOAuth();
+    const { sendEventVideoConferenceZoomIntegration } = useVideoConfTelemetry();
 
     const { modalsMap, closeModal, updateModal } = useModalsMap<ModalsMap>({
         createEventModal: { isOpen: false },
@@ -1530,6 +1535,10 @@ const InteractiveCalendarView = ({
                 } catch (e: any) {
                     // If the error is a video conference error, we open the oauth modal and try again
                     if (e?.cause === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
+                        sendEventVideoConferenceZoomIntegration(
+                            VideoConferenceZoomIntegration.create_zoom_meeting_failed,
+                            `${VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR}-intaractiveCalendar`
+                        );
                         triggerZoomOAuth(async () => {
                             syncRes = await handleSyncActions(syncActions);
                         });
