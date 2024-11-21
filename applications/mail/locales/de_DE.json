@@ -2275,6 +2275,9 @@
         "${ users } Benutzer",
         "${ users } Benutzer"
       ],
+      "Total": [
+        "Gesamt"
+      ],
       "Total for ${ n } month": [
         "Gesamtbetrag für ${ n } Monat",
         "Gesamtbetrag für ${ n } Monate"
@@ -5303,8 +5306,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Eine so starke Verschlüsselung, dass nur du und die beabsichtigten Empfänger deine E-Mails einsehen können."
       ],
+      "Finish setup": [
+        "Einrichtung abschließen"
+      ],
       "For your eyes only": [
         "Nur für dich"
+      ],
+      "Get more storage": [
+        "Mehr Speicherplatz erhalten"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Hol dir die Mobile-App von ${ MAIL_APP_NAME }"
@@ -6501,6 +6510,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Wenn du glaubst, dass wir einen Fehler gemacht haben, wende dich bitte an ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
       ],
@@ -7186,9 +7198,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Dieser Link könnte eine homographischer Angriff sein und kann vom Edge Browser nicht geöffnet werden. Wenn du dir sicher bist, dass der Link seriös ist, nutze bitte einen anderen Browser zum Öffnen."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein. Bitte überprüfe, ob dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
@@ -8012,6 +8021,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
       ],
+      "/month": [
+        "/Monat"
+      ],
       "Actions": [
         "Aktionen"
       ],
@@ -8672,6 +8684,9 @@
       "click here": [
         "hier klicken"
       ],
+      "contact us": [
+        "kontaktiere uns"
+      ],
       "Create a calendar linked to an active email address.": [
         "Erstelle einen Kalender, der mit einer aktiven E-Mail-Adresse verknüpft ist."
       ],
@@ -8785,6 +8800,9 @@
       ],
       "Terms": [
         "AGB"
+      ],
+      "terms of service": [
+        "Nutzungsbedingungen"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Diese ICS-Datei enthält mehr als einen Termin. Bitte lade sie herunter und importiere die Termine in ${ CALENDAR_APP_NAME }."
@@ -9185,6 +9203,9 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "${ planTitle } holen"
       ],
       "Get started for ${ price }": [
         "Starte für ${ price }"
@@ -9958,9 +9979,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Leite deinen Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
@@ -10100,6 +10118,12 @@
       ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
+      ],
+      "Meeting host copied to clipboard": [
+        "Meeting-Host in die Zwischenablage kopiert."
+      ],
+      "Meeting ID copied to clipboard": [
+        "Meeting-ID in die Zwischenablage kopiert."
       ],
       "Passcode copied to clipboard": [
         "Passcode in die Zwischenablage kopiert."
@@ -10260,6 +10284,9 @@
       "Protection from trackers": [
         "Schutz vor Trackern"
       ],
+      "Replay introduction": [
+        "Einführung erneut durchlaufen"
+      ],
       "Skip": [
         "Überspringen"
       ],
@@ -10407,6 +10434,9 @@
         "${ n } Benutzerkonto",
         "${ n } Benutzerkonten"
       ],
+      "Activity log": [
+        "Ereignisprotokoll"
+      ],
       "Admin panel to manage users and subscription": [
         "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
       ]
@@ -10503,6 +10533,9 @@
       ],
       "Please select your billing state first.": [
         "Bitte wähle zuerst deinen Rechnungsstaat aus."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Verlängert sich zu ${ price }, jederzeit kündbar."
       ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
@@ -11764,6 +11797,11 @@
         "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Lebenslang"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Für ${ totalPrice }"
@@ -12606,6 +12644,9 @@
       "A filter with this name already exists": [
         "Ein Filter mit diesem Namen existiert bereits."
       ],
+      "Account locked": [
+        "Konto gesperrt"
+      ],
       "Account recovery": [
         "Kontowiederherstellung"
       ],
@@ -12745,14 +12786,8 @@
       "Create contact": [
         "Kontakt erstellen"
       ],
-      "Create folder": [
-        "Ordner erstellen"
-      ],
       "Create folder \"${ search }\"": [
         "Ordner „${ search }“ erstellen"
-      ],
-      "Create label": [
-        "Kategorie erstellen"
       ],
       "Create label \"${ search }\"": [
         "Kategorie „${ search }“ erstellen"
@@ -13464,9 +13499,6 @@
     "Tor out of date": {
       "stable release": [
         "stabile Version"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13943,8 +13975,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Zoom-Meeting beitreten"
+      ],
       "Meeting ID:": [
         "Meeting-ID:"
+      ],
+      "Passcode:": [
+        "Passcode:"
       ]
     }
   }

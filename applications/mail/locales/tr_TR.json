@@ -152,7 +152,7 @@
         "Engelle"
       ],
       "Block email tracking": [
-        "E-postanın izlenmesi engellensin"
+        "E-postaların izlenmesi engellensin"
       ],
       "Block messages from this sender": [
         "Bu göndericiden gelen iletileri engelle"
@@ -957,9 +957,6 @@
       ],
       "Remove this label": [
         "Bu etiketi sil"
-      ],
-      "Remove zoom meeting": [
-        "Zoom görüşmesini kaldır"
       ],
       "Replace": [
         "Değiştir"
@@ -7220,9 +7217,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Edge tarayıcısı ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir tarayıcı kullanın."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
       ],
@@ -9421,7 +9415,7 @@
         "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
       ],
       "Auto-reply": [
-        "Otomatik yanıt"
+        "Otomatik yanıtlama"
       ],
       "Autofill credit cards (coming soon)": [
         "Otomatik kredi kartı doldurma (yakında)"
@@ -9630,10 +9624,10 @@
         "Kullanıcı olarak oturum açma"
       ],
       "SMTP submission": [
-        "SMTP gönderim"
+        "SMTP gönderimi"
       ],
       "SMTP submission for select organizations": [
-        "Seçilmiş kuruluşlar için SMTP gönderim"
+        "Seçilmiş kuruluşlar için SMTP gönderimi"
       ],
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
@@ -10023,9 +10017,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
-      ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -12840,14 +12831,8 @@
       "Create contact": [
         "Kişi ekle"
       ],
-      "Create folder": [
-        "Klasör ekle"
-      ],
       "Create folder \"${ search }\"": [
         "\"${ search }\" klasörü ekle"
-      ],
-      "Create label": [
-        "Etiket ekle"
       ],
       "Create label \"${ search }\"": [
         "\"${ search }\" etiketi ekle"
@@ -13559,9 +13544,6 @@
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Bu Tor Browser sürümü desteklenmiyor. Lütfen son ${ stableRelease } sürüme güncelleyin"
       ]
     },
     "Update font modal": {

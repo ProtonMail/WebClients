@@ -954,9 +954,6 @@
       "Remove this label": [
         "Hapus label ini"
       ],
-      "Remove zoom meeting": [
-        "Hapus pertemuan Zoom"
-      ],
       "Replace": [
         "Ubah"
       ],
@@ -1051,7 +1048,7 @@
         "Lihat caranya"
       ],
       "See plan features": [
-        "Lihat seluruh fitur paket"
+        "Lihat fitur paket"
       ],
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
@@ -2642,7 +2639,7 @@
         "Utama"
       ],
       "Mobile": [
-        "Mobile"
+        "Seluler"
       ],
       "Other": [
         "Lainnya"
@@ -4005,7 +4002,7 @@
         "Alias tidak valid"
       ],
       "Alias is required": [
-        "Alias tidak valid"
+        "Alias dibutuhkan"
       ],
       "Alias options could not be resolved": [
         "Opsi alias tidak dapat diuraikan"
@@ -4218,7 +4215,7 @@
         "Tanda tangan hilang"
       ],
       "Name is required": [
-        "Nama harus diisi"
+        "Nama dibutuhkan"
       ],
       "Network error: Please check your connection and try again.": [
         "Kesalahan jaringan: Mohon periksa koneksi internet Anda dan coba lagi."
@@ -4227,7 +4224,7 @@
         "Tidak ada alamat dengan kunci yang tersedia untuk dapat menulis pesan"
       ],
       "No calendars found to import": [
-        "Tidak ada kalender yang dapat diimpor"
+        "Tidak ada kalender yang ditemukan untuk diimpor"
       ],
       "No contacts found to import": [
         "Tidak ada kontak yang dapat diimpor"
@@ -4377,7 +4374,7 @@
         "Tab ditutup"
       ],
       "Text is too long to refine": [
-        "Teks terlalu panjang untuk disempurnakan"
+        "Teks terlalu panjang untuk dapat disempurnakan"
       ],
       "Thanks for the feedback!": [
         "Terima kasih atas masukannya!"
@@ -5277,7 +5274,7 @@
         "Dapatkan lebih banyak ruang penyimpanan"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
-        "Dapatkan aplikasi mobile ${ MAIL_APP_NAME }"
+        "Dapatkan aplikasi seluler ${ MAIL_APP_NAME }"
       ],
       "Get the ${ strongText } on Android or iOS": [
         "Dapatkan ${ strongText } di Android dan iOS"
@@ -5319,7 +5316,7 @@
         "Atur ${ strongText } dari Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
-        "Masuk ke aplikasi mobile untuk menuntaskan langkah ini"
+        "Masuk ke aplikasi seluler untuk menuntaskan langkah ini"
       ],
       "Storage unlocked": [
         "Ruang penyimpanan tambahan terbuka"
@@ -5331,7 +5328,7 @@
         "Perbarui login Anda"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
-        "Dengan perangkat seluler Anda, pindai kode QR berikut atau kunjungi app store iOS atau Android."
+        "Dengan perangkat seluler Anda, pindai kode QR berikut atau kunjungi toko aplikasi iOS atau Android."
       ],
       "We stop advertisers and data collectors from profiling you.": [
         "Kami menghentikan para pengiklan dan pengumpul data untuk dapat memprofil Anda."
@@ -6356,7 +6353,7 @@
         "berkas terlampir"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filter dapat diterapkan pada seluruh pesan yang ada, termasuk pesan yang masuk dan terkirim. Masing-masing filter harus mengandung setidaknya nama, kondisi, dan tindakan."
+        "Filter dapat diterapkan pada seluruh email, termasuk email yang masuk dan terkirim. Masing-masing filter harus mengandung setidaknya nama, kondisi, dan tindakan."
       ],
       "finance": [
         "keuangan"
@@ -6782,7 +6779,7 @@
         "Silakan gunakan browser lain atau unduh berkas yang bersangkutan."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
+        "Silakan tunggu hingga perubahan Anda tersinkron dengan server."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Silakan tunggu selagi kami mencari kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
@@ -7089,9 +7086,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tautan ini mungkin merupakan serangan homograf dan tidak dapat dibuka oleh browser Edge. Apabila Anda yakin tautan tersebut absah, silakan gunakan browser lain untuk membukanya."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
@@ -7529,7 +7523,7 @@
         "Anda memilih **${ elementsCount } pesan**,"
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "Anda akan kehilangan akses fitur ${ planTitle } pada tanggal ini."
+        "Anda akan kehilangan akses ke berbagai fitur ${ planTitle } pada tanggal ini."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
@@ -7538,10 +7532,10 @@
         "Anda menulis “${ attachmentsFoundKeyword }”, namun Anda tidak melampirkan berkas apa pun. Apakah Anda yakin untuk tetap mengirim pesan ini?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Anda telah mencapai batas jumlah alamat yang dapat ditetapkan ke grup kontak"
+        "Anda telah mencapai batas jumlah alamat dalam grup kontak:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
-        "Anda telah mencapai batas jumlah alamat yang dapat ditetapkan ke grup kontak"
+        "Anda telah mencapai batas jumlah alamat dalam grup kontak"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
@@ -7695,7 +7689,7 @@
     },
     "Keyboard shortcut name": {
       "Add encryption": [
-        "Tambahkan enkripsi"
+        "Tambah enkripsi"
       ],
       "Add expiration time": [
         "Tambahkan waktu kedaluwarsa"
@@ -7892,6 +7886,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
+      ],
+      "/month": [
+        "/bulan"
       ],
       "Actions": [
         "Tindakan"
@@ -8552,6 +8549,9 @@
       ],
       "click here": [
         "klik di sini"
+      ],
+      "contact us": [
+        "hubungi kami"
       ],
       "Create a calendar linked to an active email address.": [
         "Buat kalender yang ditautkan pada alamat email yang aktif."
@@ -9818,9 +9818,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Alihkan lalu lintas internet Anda melalui jaringan TOR dengan satu kali klik"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
@@ -10661,7 +10658,7 @@
         "Utama"
       ],
       "Mobile": [
-        "Mobile"
+        "Seluler"
       ],
       "Other": [
         "Lainnya"
@@ -11223,7 +11220,7 @@
         "6 pengguna"
       ],
       "All paid Mail and Calendar features": [
-        "Semua fitur Mail dan Calendar yang berbayar"
+        "Seluruh fitur Mail dan Calendar berbayar"
       ],
       "High speed VPN": [
         "VPN berkecepatan tinggi"
@@ -12548,14 +12545,8 @@
       "Create contact": [
         "Buat kontak"
       ],
-      "Create folder": [
-        "Buat map"
-      ],
       "Create folder \"${ search }\"": [
         "Buat folder \"${ search }\""
-      ],
-      "Create label": [
-        "Buat label"
       ],
       "Create label \"${ search }\"": [
         "Buat label \"${ search }\""
@@ -13259,9 +13250,6 @@
     "Tor out of date": {
       "stable release": [
         "versi rilisan stabil"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Versi TOR Browser ini sudah tidak lagi didukung. Silakan perbarui browser Anda ke ${ stableRelease } terbaru"
       ]
     },
     "Update font modal": {
