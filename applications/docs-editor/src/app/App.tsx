@@ -49,6 +49,7 @@ export function App({ systemMode }: Props) {
     systemMode,
   })
 
+  const [editorError, setEditorError] = useState<Error | undefined>(undefined)
   const [editorHidden, setEditorHidden] = useState(true)
   const [editingLocked, setEditingLocked] = useState(true)
   const [userMode, setUserMode] = useState<EditorUserMode>(
@@ -356,7 +357,7 @@ export function App({ systemMode }: Props) {
     (error: Error) => {
       /** Report a UI displayable error */
       const message = c('Error')
-        .t`An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.`
+        .t`An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.`
       void bridge
         .getClientInvoker()
         .reportUserInterfaceError(new Error(message), { irrecoverable: false, lockEditor: true })
@@ -365,6 +366,8 @@ export function App({ systemMode }: Props) {
       reportErrorToSentry(error)
 
       application.logger.error('A lexical error occurred', error)
+
+      setEditorError(error)
     },
     [application.logger, bridge],
   )
@@ -419,6 +422,8 @@ export function App({ systemMode }: Props) {
               editorInitializationConfig={editorConfig.current.editorInitializationConfig}
               hidden={editorHidden}
               isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
+              lexicalError={editorError}
+              logger={application.logger}
               onEditorError={onEditorError}
               onEditorLoadResult={onEditorLoadResult}
               onUserModeChange={onUserModeChange}
