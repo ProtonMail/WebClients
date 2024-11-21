@@ -80,6 +80,7 @@ export enum TelemetryIcsSurgeryEvents {
     import = 'import',
     import_publish = 'import_publish',
     invitation = 'invitation',
+    ics_parsing = 'ics_parsing',
 }
 
 export enum TelemetryAccountSignupBasicEvents {
