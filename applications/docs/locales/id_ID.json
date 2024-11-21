@@ -529,7 +529,7 @@
         "Lihat caranya"
       ],
       "See plan features": [
-        "Lihat seluruh fitur paket"
+        "Lihat fitur paket"
       ],
       "See version history": [
         "Lihat riwayat versi"
@@ -1311,7 +1311,7 @@
         "Utama"
       ],
       "Mobile": [
-        "Mobile"
+        "Seluler"
       ],
       "Other": [
         "Lainnya"
@@ -2475,7 +2475,7 @@
         "Alias tidak valid"
       ],
       "Alias is required": [
-        "Alias tidak valid"
+        "Alias dibutuhkan"
       ],
       "Alias options could not be resolved": [
         "Opsi alias tidak dapat diuraikan"
@@ -2664,10 +2664,10 @@
         "Tanda tangan hilang"
       ],
       "Name is required": [
-        "Nama harus diisi"
+        "Nama dibutuhkan"
       ],
       "No calendars found to import": [
-        "Tidak ada kalender yang dapat diimpor"
+        "Tidak ada kalender yang ditemukan untuk diimpor"
       ],
       "No contacts found to import": [
         "Tidak ada kontak yang dapat diimpor"
@@ -4515,9 +4515,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tautan ini mungkin merupakan serangan homograf dan tidak dapat dibuka oleh browser Edge. Apabila Anda yakin tautan tersebut absah, silakan gunakan browser lain untuk membukanya."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
       ],
@@ -4741,7 +4738,7 @@
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memiliki kartu yang terhubung, silakan klik tombol di bawah ini."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "Anda akan kehilangan akses fitur ${ planTitle } pada tanggal ini."
+        "Anda akan kehilangan akses ke berbagai fitur ${ planTitle } pada tanggal ini."
       ],
       "You will lose all unsaved changes.": [
         "Anda akan kehilangan semua perubahan yang belum disimpan."
@@ -4750,10 +4747,10 @@
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Anda telah mencapai batas jumlah alamat yang dapat ditetapkan ke grup kontak"
+        "Anda telah mencapai batas jumlah alamat dalam grup kontak:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
-        "Anda telah mencapai batas jumlah alamat yang dapat ditetapkan ke grup kontak"
+        "Anda telah mencapai batas jumlah alamat dalam grup kontak"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
@@ -6592,9 +6589,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Alihkan lalu lintas internet Anda melalui jaringan TOR dengan satu kali klik"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
@@ -7282,7 +7276,7 @@
         "Utama"
       ],
       "Mobile": [
-        "Mobile"
+        "Seluler"
       ],
       "Other": [
         "Lainnya"
@@ -7630,7 +7624,7 @@
         "6 pengguna"
       ],
       "All paid Mail and Calendar features": [
-        "Semua fitur Mail dan Calendar yang berbayar"
+        "Seluruh fitur Mail dan Calendar berbayar"
       ],
       "High speed VPN": [
         "VPN berkecepatan tinggi"

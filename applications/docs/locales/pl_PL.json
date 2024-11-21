@@ -3890,9 +3890,9 @@
       ],
       "${ updated } contact updated successfully.": [
         "Kontakt został zaktualizowany.",
-        "${ updated } kontakty zostały zaktualizowane.",
-        "${ updated } kontaktów zostało zaktualizowanych.",
-        "${ updated } kontaktów zostało zaktualizowanych."
+        "Zaktualizowano ${ updated } kontakty.",
+        "Zaktualizowano ${ updated } kontaktów.",
+        "Zaktualizowano ${ updated } kontaktów."
       ],
       "${ uploadName } already exists in this location.": [
         "Plik ${ uploadName } już istnieje w tej lokalizacji."
@@ -4688,9 +4688,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Edge. Upewnij się, że link, który chcesz odwiedzić, jest wiarygodny i otwórz go za pomocą innej przeglądarki."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
@@ -6883,9 +6880,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetowanie haseł i uwierzytelniania dwustopniowego użytkowników"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Przekieruj swój ruch internetowy przez sieć Tor za pomocą jednego kliknięcia"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
@@ -7057,9 +7051,9 @@
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "Element został trwale usunięty",
-        "${ numberOfItems } elementy zostały trwale usunięte",
-        "${ numberOfItems } elementów zostało trwale usuniętych",
-        "${ numberOfItems } elementów zostało trwale usuniętych"
+        "Usunięto trwale ${ numberOfItems } elementy",
+        "Usunięto trwale ${ numberOfItems } elementów",
+        "Usunięto trwale ${ numberOfItems } elementów"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Nie udało się trwale usunąć ${ numberOfItems } elementu",
@@ -7087,21 +7081,21 @@
       ],
       "${ numberOfItems } item moved to trash": [
         "Element został przeniesiony do Kosza",
-        "${ numberOfItems } elementy zostały przeniesione do Kosza",
-        "${ numberOfItems } elementów zostało przeniesionych do Kosza",
-        "${ numberOfItems } elementów zostało przeniesionych do Kosza"
+        "Przeniesiono do Kosza ${ numberOfItems } elementy",
+        "Przeniesiono do Kosza ${ numberOfItems } elementów",
+        "Przeniesiono do Kosza ${ numberOfItems } elementów"
       ],
       "${ numberOfItems } item restored from trash": [
         "Element został przywrócony z Kosza",
-        "${ numberOfItems } elementy zostały przywrócone z Kosza",
-        "${ numberOfItems } elementów zostało przywróconych z Kosza",
-        "${ numberOfItems } elementów zostało przywróconych z Kosza"
+        "Przywrócono z Kosza ${ numberOfItems } elementy",
+        "Przywrócono z Kosza ${ numberOfItems } elementów",
+        "Przywrócono z Kosza ${ numberOfItems } elementów"
       ],
       "${ numberOfItems } item successfully moved": [
         "Element został przeniesiony",
-        "${ numberOfItems } elementy zostały przeniesione",
-        "${ numberOfItems } elementów zostało przeniesionych",
-        "${ numberOfItems } elementów zostało przeniesionych"
+        "Przeniesiono ${ numberOfItems } elementy",
+        "Przeniesiono ${ numberOfItems } elementów",
+        "Przeniesiono ${ numberOfItems } elementów"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
         "Usunięcie ${ numberOfItems } linku do elementu nie powiodło się",
