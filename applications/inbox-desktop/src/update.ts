@@ -1,14 +1,15 @@
-import { autoUpdater, app } from "electron";
+import { autoUpdater, app, dialog } from "electron";
 import { updateElectronApp, UpdateSourceType } from "update-electron-app";
 import pkg from "../package.json";
 import { getPlatform } from "./utils/helpers";
 import { getSettings } from "./store/settingsStore";
 import { verifyDownloadCertificate } from "./utils/keyPinning";
 import { updateLogger } from "./utils/log";
-import { RELEASE_CATEGORIES, DESKTOP_PLATFORMS } from "@proton/shared/lib/constants";
+import { RELEASE_CATEGORIES, DESKTOP_PLATFORMS, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { DesktopVersion, VersionFile, VersionFileSchema } from "@proton/shared/lib/desktop/DesktopVersion";
 import { semver } from "./utils/external/packages/pass/utils/string/semver";
 import { updateSession } from "./utils/session";
+import { c } from "ttag";
 
 export type LocalDesktopVersion = {
     Version: DesktopVersion["Version"];
@@ -27,8 +28,28 @@ export let cachedLatestVersion: DesktopVersion | null = null;
 export function initializeUpdateChecks() {
     updateLogger.info("Initialization of update checks.");
 
-    autoUpdater.on("update-downloaded", () => {
+    autoUpdater.on("update-downloaded", async () => {
         updateDownloaded = true;
+        updateLogger.info("Update downloaded, showing prompt.");
+
+        // Replaces update-electron-app dialog message with a custom one
+        // https://github.com/electron/update-electron-app/blob/f5e1f6d9944809c75129b74d82fcd76cc9e325b2/src/index.ts#L165-L176
+
+        const { t } = c("Update prompt");
+        const { response } = await dialog.showMessageBox({
+            type: "info",
+            buttons: [t`Restart`, t`Later`],
+            title: t`${MAIL_APP_NAME} update`,
+            message: "",
+            detail: t`A new version of ${MAIL_APP_NAME} has been downloaded. Restart the application to apply the updates.`,
+        });
+
+        if (response === 0) {
+            updateLogger.info("Restarting to apply update.");
+            autoUpdater.quitAndInstall();
+        } else {
+            updateLogger.info("Skipping restart, update will be applied later.");
+        }
     });
 
     autoUpdater.on("before-quit-for-update", () => {
@@ -83,6 +104,7 @@ async function checkForValidUpdates() {
         },
         updateInterval: "5 min", // minimal
         logger: updateLogger,
+        notifyUser: false,
     });
 }
 
