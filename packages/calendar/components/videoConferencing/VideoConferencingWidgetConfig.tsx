@@ -63,7 +63,9 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
             const data = getZoomFromDescription(description);
             sendTelemetryReport(VideoConferenceSource.google_zoom_desc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
-        } else if (description.includes('meet.google.com')) {
+        }
+
+        if (description.includes('meet.google.com')) {
             const data = getGoogleMeetDataFromDescription(description);
             sendTelemetryReport(VideoConferenceSource.google_google_meet_desc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
@@ -72,15 +74,29 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
 
     // Event containing a location field with a supported video conferencing link
     if (location) {
+        if (location.includes('zoom.us')) {
+            const data = getZoomDataFromLocation(location);
+            sendTelemetryReport(VideoConferenceSource.google_zoom_loc);
+            return <VideoConferencingWidget location={widgetLocation} data={data} />;
+        }
+
         if (location.includes('meet.google.com')) {
             const data = getGoogleMeetDataFromLocation(location);
             sendTelemetryReport(VideoConferenceSource.google_google_meet_loc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
         }
+    }
 
-        if (location.includes('zoom.us')) {
-            const data = getZoomDataFromLocation(location);
-            sendTelemetryReport(VideoConferenceSource.google_zoom_loc);
+    if (description) {
+        if (description.includes('zoom.us')) {
+            const data = getZoomFromDescription(description);
+            sendTelemetryReport(VideoConferenceSource.zoom_desc);
+            return <VideoConferencingWidget location={widgetLocation} data={data} />;
+        }
+
+        if (description.includes('meet.google.com')) {
+            const data = getGoogleMeetDataFromDescription(description);
+            sendTelemetryReport(VideoConferenceSource.google_meet_desc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
         }
     }
