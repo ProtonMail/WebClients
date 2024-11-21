@@ -1,5 +1,11 @@
 {
     "name": "eslint-plugin-custom-rules",
     "version": "1.0.0",
-    "main": "index.js"
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0"
+    }
 }
