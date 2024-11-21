@@ -38,6 +38,7 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
         height,
         minWidth: MINIMUM_WIDTH,
         minHeight: MINIMUM_HEIGHT,
+        autoHideMenuBar: true,
         ...getOSSpecificConfig(),
         webPreferences: {
             devTools: true,

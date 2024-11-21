@@ -1,4 +1,4 @@
-import { BrowserView, BrowserWindow, Event, Input, Rectangle, WebContents, app, nativeTheme } from "electron";
+import { BrowserView, BrowserWindow, Event, Rectangle, WebContents, app, nativeTheme } from "electron";
 import { debounce } from "lodash";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, updateSettings } from "../../store/settingsStore";
@@ -143,22 +143,6 @@ const createViews = () => {
 
     if (isWindows) {
         mainWindow!.setMenuBarVisibility(false);
-
-        const handleBeforeInput = (_event: unknown, input: Input) => {
-            if (input.key === "Alt" && input.type === "keyDown") {
-                mainWindow!.setMenuBarVisibility(!mainWindow!.isMenuBarVisible());
-
-                for (const [viewID, view] of Object.entries(browserViewMap)) {
-                    if (view && viewID) {
-                        updateViewBounds(view, viewID as ViewID);
-                    }
-                }
-            }
-        };
-
-        browserViewMap.mail.webContents.on("before-input-event", handleBeforeInput);
-        browserViewMap.calendar.webContents.on("before-input-event", handleBeforeInput);
-        browserViewMap.account.webContents.on("before-input-event", handleBeforeInput);
     }
 
     browserViewMap.mail.webContents.on("before-input-event", handleBeforeInput);
