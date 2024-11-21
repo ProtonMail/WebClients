@@ -3581,9 +3581,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorter innkommende meldinger automatisk før de når innboksen din."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "Tilgjengelig med ${ BRAND_NAME } Mail Plus"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulerer! Du har tjent maksimalt ${ rewardsLimit } gratis måneder med ${ plusPlanName }."
       ],
@@ -4892,9 +4889,6 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Du trenger å ha en egendefinert domeneadresse for å generere et SMTP-innsendingstoken."
-      ],
-      "You've assigned all of your servers.": [
-        "Du har tilordnet alle tjenerne dine."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Du har nådd det maksimale tegntallet. Forkort meldingen."
@@ -8621,9 +8615,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denne koblingen fører til et nettsted som kanskje prøver å stjele informasjonen din, for eksempel passord og kredittkortdetaljer."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Denne koblingen kan være et homografangrep og kan ikke åpnes av Edge-nettleseren. Hvis du er sikker på at koblingen er legitim, kan du bruke en annen nettleser for å åpne den."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Denne koblingen kan være et homografangrep. Kontroller at dette er koblingen du ønsker å besøke, eller la være å åpne den."
@@ -12659,9 +12650,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Tilbakestill brukerpassord og tilbakestill tofaktorautentisering på brukere"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Rute internettrafikken din gjennom TOR-nettverket med et enkelt klikk"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
       ],
@@ -13567,9 +13555,6 @@
       ],
       "Alerts for compromised emails and vulnerable passwords": [
         "Varsler for kompromitterte e-poster og sårbare passord"
-      ],
-      "Alerts for vulnerable passwords": [
-        "Varsler for sårbare passord"
       ],
       "Aliases for email protection from breaches": [
         "Aliaser for e-postbeskyttelse mot brudd"
@@ -14716,9 +14701,6 @@
       "Test in progress...": [
         "Test pågår..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "For å teste denne SAML-konfigurasjonen, skriv inn påloggingsinformasjonen for en bruker tilknyttet **${ domainName }**"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Vi mottok et gyldig SAML-svar fra identitetsleverandøren din. SSO er aktivert for organisasjonen din."
       ],
@@ -15210,6 +15192,12 @@
     "Setting": {
       "Enable Photos section": [
         "Aktiver fotoseksjon"
+      ],
+      "Get updates about comments via email": [
+        "Få oppdateringer om kommentarer via e-post"
+      ],
+      "Include document name in email notifications": [
+        "Inkluder dokumentnavn i e-postvarsler"
       ]
     },
     "Settings description": {
@@ -15806,9 +15794,6 @@
       ],
       "Single sign-on removed": [
         "Enkel pålogging fjernet"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Legitimasjonen fra identitetsleverandøren din blir slettet."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Dette vil logge brukeren ut av de andre enhetene sine, og vedkommende må opprette et nytt reservepassord."
@@ -18558,9 +18543,6 @@
     "Tor out of date": {
       "stable release": [
         "stabil utgivelse"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Denne versjonen av TOR-nettleser støttes ikke. Oppdater til seneste ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -18581,9 +18563,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "En administrator for **${ orgName }**-organisasjonen (**${ adminEmail }**) ønsker å aktivere administratortilgang for kontoen din."
-      ],
-      "Approve all": [
-        "Godkjenn alle"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Ved å gjøre brukeren privat vil du ikke kunne hjelpe dem med å få tilgang til dataene eller kontoen sin igjen."

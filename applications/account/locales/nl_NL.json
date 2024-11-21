@@ -3581,9 +3581,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorteer automatisch inkomende berichten voordat ze uw inbox bereiken."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "Beschikbaar met ${ BRAND_NAME } Mail Plus"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maanden ${ plusPlanName } verdiend."
       ],
@@ -4892,9 +4889,6 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "U hebt een eigen e-mailadres nodig om een SMTP-zendtoken te kunnen genereren."
-      ],
-      "You've assigned all of your servers.": [
-        "U heeft al uw servers toegewezen."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "U heeft het maximaal aantal tekens bereikt. Maak uw bericht korter."
@@ -8616,9 +8610,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Deze koppeling kan een homografie-aanval zijn en kan niet geopend worden in Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze koppeling kan een homografie-aanval zijn. Controleer eerst of de koppeling juist is, of open hem niet."
       ],
@@ -11841,6 +11832,9 @@
         "Bestandsversiegeschiedenis van ${ options } dag",
         "Bestandsversiegeschiedenis van ${ options } dagen"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + levenslang SimpleLogin"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
         "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
@@ -12578,6 +12572,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Labels zijn simpele tags die u kunt toevoegen aan berichten zodat u ze makkelijker kunt vinden of filteren"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Levenslang toegang tot ${ PASS_APP_NAME } + SimpleLogin premium functies."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Zoals een map, is een kluis een handige manier om uw items te organiseren"
       ],
@@ -12640,9 +12637,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
-      ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Routeer uw internetverkeer door het TOR-netwerk met een enkele klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
@@ -13529,9 +13523,6 @@
       "Alerts for compromised emails and vulnerable passwords": [
         "Waarschuwingen voor aangetaste e-mailadressen en kwetsbare wachtwoorden"
       ],
-      "Alerts for vulnerable passwords": [
-        "Waarschuwingen voor kwetsbare wachtwoorden"
-      ],
       "Aliases for email protection from breaches": [
         "Aliassen voor e-mailbescherming tegen inbreuken"
       ],
@@ -13969,6 +13960,9 @@
       ],
       "Processing payment": [
         "Betaling wordt verwerkt"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Wordt verlengd voor ${ price }, altijd opzegbaar."
       ],
       "Select billing country to pay": [
         "Selecteer factureringsland om te betalen"
@@ -14674,9 +14668,6 @@
       "Test in progress...": [
         "Test wordt uitgevoerd..."
       ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Om deze SAML-configuratie te testen, voert u de inloggegevens in voor een gebruiker geassocieerd met **${ domainName }**"
-      ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "We hebben een geldige SAML-reactie ontvangen van uw identiteitsprovider. SSO is ingeschakeld voor uw organisatie."
       ],
@@ -15168,6 +15159,9 @@
     "Setting": {
       "Enable Photos section": [
         "Foto's sectie inschakelen"
+      ],
+      "Include document name in email notifications": [
+        "Documentnaam opnemen in e-mailnotificaties"
       ]
     },
     "Settings description": {
@@ -15764,9 +15758,6 @@
       ],
       "Single sign-on removed": [
         "Single sign-on verwijderd"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "De referenties van uw Identity Provider worden verwijderd."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Dit zal de gebruiker uitloggen uit zijn andere apparaten en hij zal een nieuw back-upwachtwoord moeten maken."
@@ -18513,9 +18504,6 @@
     "Tor out of date": {
       "stable release": [
         "stabiele release"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Deze versie van TOR Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -18536,9 +18524,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Een beheerder van de **${ orgName }** organisatie (**${ adminEmail }**) wil administrateur toegang voor uw account mogelijk maken."
-      ],
-      "Approve all": [
-        "Alles goedkeuren"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Door de gebruiker privé te maken, zult u hem niet kunnen helpen om toegang te krijgen tot zijn gegevens of account."
