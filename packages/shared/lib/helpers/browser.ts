@@ -207,4 +207,32 @@ export const getHasWebAuthnSupport = () => {
     }
 };
 
+export async function detectStorageCapabilities() {
+    // Check for IndexedDB API
+    const hasIndexedDB = 'indexedDB' in window;
+
+    // Attempt to open a test database
+    const testDB = async () => {
+        try {
+            const request = indexedDB.open('_test');
+            await new Promise((resolve, reject) => {
+                request.onerror = () => reject(request.error);
+                request.onsuccess = () => {
+                    request.result.close();
+                    indexedDB.deleteDatabase('_test');
+                    resolve(true);
+                };
+            });
+            return true;
+        } catch (e) {
+            return false;
+        }
+    };
+
+    return {
+        hasIndexedDB,
+        isAccessible: await testDB(),
+    };
+}
+
 export const browserAPI = (globalThis as any)?.browser ?? (globalThis as any)?.chrome;
