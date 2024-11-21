@@ -537,6 +537,10 @@
       "Try again": [
         "Proveu de nou"
       ],
+      "Understood, I will never need it": [
+        "Ho entenc i mai el necessitaré.",
+        "Ho entenc i mai els necessitaré."
+      ],
       "Unlock": [
         "Desbloquejar"
       ],
@@ -590,6 +594,9 @@
       ],
       "Write us on Twitter": [
         "Escriviu-nos a Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
       ]
     },
     "bf2024: Deal": {
@@ -666,6 +673,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No s'ha pogut analitzar el fitxer de ${ provider }. ${ errorDetail }"
+      ],
+      "[Error] an item could not be parsed": [
+        "[Error] no s'ha pogut analitzar un element."
       ],
       "Alias options could not be resolved": [
         "Les opcions d'àlies no s'han pogut resoldre."
@@ -1155,6 +1165,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Després d'importar correctament les dades, podeu suprimir el fitxer CSV que conté les contrasenyes per seguretat."
       ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Àlies no sincronitzats (${ aliasCount })"
+      ],
       "All breaches for this address were resolved": [
         "S'han resolt totes les infraccions d'aquesta adreça"
       ],
@@ -1598,6 +1611,12 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "Ompliu automàticament i ràpidament els vostres tokens 2FA."
+      ],
+      "Quickly autofill your identities.": [
+        "Ompliu les vostres identitats automàticament i ràpidament."
       ],
       "Quickly autofill your saved credentials.": [
         "Emplena automàticament i ràpidament les vostres credencials desades"
@@ -2718,6 +2737,9 @@
       "Approve or deny it now": [
         "Aprova o nega-ho ara"
       ],
+      "If you didn't make this request, cancel it now.": [
+        "Si no heu fet aquesta sol·licitud, cancel·leu-la ara."
+      ],
       "Invalid confirmation code": [
         "El codi de confirmació no és vàlid."
       ],
@@ -2735,6 +2757,9 @@
       ],
       "Sign-in rejection failure": [
         "No s'ha pogut rebutjar l'inic de sessió."
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "S'ha sol·licitat una connexió en un altre dispositiu. Heu estat vosaltres?"
       ],
       "Yes, it was me": [
         "Sí, era jo."
