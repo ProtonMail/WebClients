@@ -115,6 +115,9 @@
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
       ],
+      "Add external address": [
+        "Externe Adresse hinzufügen"
+      ],
       "Add filter": [
         "Filter hinzufügen"
       ],
@@ -1029,6 +1032,9 @@
       ],
       "Show": [
         "Anzeigen"
+      ],
+      "Show all": [
+        "Alle anzeigen"
       ],
       "Show less": [
         "Weniger anzeigen"
@@ -2223,6 +2229,9 @@
       "${ users } user": [
         "${ users } Benutzer",
         "${ users } Benutzer"
+      ],
+      "Total": [
+        "Gesamt"
       ],
       "Total for ${ n } month": [
         "Gesamtbetrag für ${ n } Monat",
@@ -3562,9 +3571,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortiere deine eingehenden Nachrichten automatisch, bevor sie deinen Posteingang erreichen."
       ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "Verfügbar mit ${ BRAND_NAME } Mail Plus"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Herzlichen Glückwunsch! Du hast das Maximum von ${ rewardsLimit } kostenlosen Monaten von ${ plusPlanName } verdient."
       ],
@@ -4873,9 +4879,6 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Du benötigst eine benutzerdefinierte Domain, um einen SMTP-Übermittlungstoken zu generieren."
-      ],
-      "You've assigned all of your servers.": [
-        "Du hast alle deine Server zugewiesen."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Du hast die maximale Anzahl an Zeichen erreicht. Bitte kürze deine Nachricht."
@@ -6899,6 +6902,9 @@
         "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
       ],
+      "All inactive members deleted": [
+        "Alle inaktiven Mitglieder gelöscht"
+      ],
       "All keys successfully reactivated": [
         "Alle Schlüssel wurden erfolgreich wiederhergestellt"
       ],
@@ -8148,6 +8154,9 @@
       "Plus or Visionary subscription required": [
         "Plus‐ oder Visionary‐Abonnement benötigt"
       ],
+      "Preference saved": [
+        "Einstellung gespeichert"
+      ],
       "Preview": [
         "Vorschau"
       ],
@@ -8559,9 +8568,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Dieser Link könnte eine homographischer Angriff sein und kann vom Edge Browser nicht geöffnet werden. Wenn du dir sicher bist, dass der Link seriös ist, nutze bitte einen anderen Browser zum Öffnen."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein. Bitte überprüfe, ob dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
@@ -9462,6 +9468,9 @@
       ],
       "Other": [
         "Weitere"
+      ],
+      "Product": [
+        "Produkt"
       ],
       "Refund": [
         "Erstattung"
@@ -10744,6 +10753,9 @@
       "Verify keys with Key Transparency": [
         "Schlüssel mit Key Transparency verifizieren"
       ],
+      "Video conferencing with Zoom": [
+        "Videokonferenzen mit Zoom"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Wir bedauern es sehr, dass du ProtonMail nicht mehr nutzen möchtest. Bitte teile uns deine Gründe mit, damit wir uns verbessern können."
       ],
@@ -11244,6 +11256,9 @@
       "for your first month": [
         "im ersten Monat"
       ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Hol dir ${ planTitle } für ${ discountedPriceElement }"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "Befristetes Angebot, gültig bis zum 2. April 2024"
       ]
@@ -11400,8 +11415,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Australischer Dollar"
+      ],
       "Brazilian real": [
         "Brasilianischer Real"
+      ],
+      "British pound": [
+        "Britisches Pfund"
+      ],
+      "Canadian dollar": [
+        "Kanadischer Dollar"
       ],
       "Euro": [
         "Euro"
@@ -12533,9 +12557,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Leite deinen Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
@@ -12663,6 +12684,44 @@
       ],
       "Support for ${ n } custom email domains": [
         "Unterstützung für ${ n } benutzerdefinierte E-Mail-Domänen"
+      ]
+    },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Produktaktualisierungen zu ${ app } und ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "${ app }-Produktaktualisierungen"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business-Newsletter"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Wichtige Ankündigungen von ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } Newsletter"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } Angebote und Sonderaktionen"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME }-Produktankündigungen"
+      ],
+      "1 email per month": [
+        "1 E-Mail pro Monat"
+      ],
+      "1 email per quarter": [
+        "1 E-Mail pro Quartal"
+      ],
+      "1-2 emails per month": [
+        "1-2 E-Mails pro Monat"
+      ],
+      "2-4 emails per year": [
+        "2-4 E-Mails pro Jahr"
+      ],
+      "Daily email notifications": [
+        "Tägliche E-Mail-Benachrichtigungen"
       ]
     },
     "Notification": {
@@ -13344,9 +13403,6 @@
       "Alerts for compromised emails and vulnerable passwords": [
         "Alarmierung bei kompromittierten E-Mails und anfälligen Passwörtern"
       ],
-      "Alerts for vulnerable passwords": [
-        "Warnmeldungen für gefährdete Passwörter"
-      ],
       "Aliases for email protection from breaches": [
         "Aliasse zum Schutz vor E-Mail-Datenlecks"
       ],
@@ -13584,6 +13640,9 @@
         "${ n } Benutzerkonto",
         "${ n } Benutzerkonten"
       ],
+      "Activity log": [
+        "Ereignisprotokoll"
+      ],
       "Admin panel to manage users and subscription": [
         "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
       ],
@@ -13592,6 +13651,9 @@
       ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Erweiterte Alias-Funktionen (unterstützt durch SimpleLogin)"
+      ],
+      "One-time payment, lifetime deal": [
+        "Einmalige Zahlung, lebenslanges Angebot"
       ]
     },
     "PassFamilyPlan2024": {
@@ -13775,6 +13837,9 @@
       ],
       "Processing payment": [
         "Zahlungsabwicklung"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Verlängert sich zu ${ price }, jederzeit kündbar."
       ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
@@ -14479,9 +14544,6 @@
       ],
       "Test in progress...": [
         "Test läift..."
-      ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Um diese SAML-Konfiguration zu testen, gib bitte die Anmeldedaten für einen Benutzer ein, der zu **${ domainName }** gehört."
       ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Wir haben eine gültige SAML-Antwort von deinem Identitätsanbieter erhalten. SSO ist für deine Organisation aktiviert."
@@ -15400,6 +15462,14 @@
       "Current device": [
         "Aktuelles Gerät"
       ],
+      "Delete ${ n } inactive user?": [
+        "${ n } inaktiven Benutzer löschen?",
+        "${ n } inaktive Benutzer löschen?"
+      ],
+      "Delete ${ n } user": [
+        "${ n } Benutzer löschen",
+        "${ n } Benutzer löschen"
+      ],
       "Deny": [
         "Verweigern"
       ],
@@ -15465,9 +15535,6 @@
       ],
       "Single sign-on removed": [
         "Single Sign-on entfernt"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Die Zugangsdaten von deinem Identitätsanbieter werden gelöscht."
       ],
       "User details:": [
         "Benutzerdetails:"
@@ -15763,6 +15830,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Lebenslang"
       ]
     },
     "Subscription price": {
@@ -16691,6 +16763,9 @@
       "Add domain": [
         "Domain hinzufügen"
       ],
+      "Add external address?": [
+        "Externe Adresse hinzufügen?"
+      ],
       "Add filter": [
         "Filter hinzufügen"
       ],
@@ -17089,6 +17164,9 @@
       "Email encryption keys": [
         "Verschlüsselungsschlüssel der E-Mail"
       ],
+      "Email notifications": [
+        "E-Mail-Benachrichtigungen"
+      ],
       "Email privacy": [
         "E-Mail-Datenschutz"
       ],
@@ -17357,6 +17435,9 @@
       ],
       "No recovery method": [
         "Keine Wiederherstellungsmethode"
+      ],
+      "Notifications": [
+        "Benachrichtigungen"
       ],
       "Open": [
         "Offen"
@@ -17742,6 +17823,9 @@
       ],
       "Version history": [
         "Versionsverlauf"
+      ],
+      "Video conferencing": [
+        "Videokonferenzen"
       ],
       "VPN apps": [
         "VPN-Apps"
@@ -18161,9 +18245,6 @@
     "Tor out of date": {
       "stable release": [
         "stabile Version"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -18181,9 +18262,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Ein Administrator der Organisation **${ orgName }** (**${ adminEmail }**) möchte den Administratorzugriff für dein Konto aktivieren."
-      ],
-      "Approve all": [
-        "Alle genehmigen"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Wenn du den Benutzer als privat einstufst, kannst du ihm nicht helfen, wieder Zugang zu seinen Daten oder seinem Konto zu erhalten."
@@ -18368,6 +18446,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Administratoren können nicht auf die Daten von privaten Benutzern zugreifen."
+      ],
+      "Inactive": [
+        "Inaktiv"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Einladung gesendet, warte auf Antwort des eingeladenen Mitglieds"

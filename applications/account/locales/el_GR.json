@@ -182,7 +182,7 @@
         "Ταυτοποίηση"
       ],
       "Authenticating": [
-        "Έλεγχος ταυτότητας"
+        "Ταυτοποίηση"
       ],
       "Back": [
         "Πίσω"
@@ -533,7 +533,7 @@
         "Γραμματοσειρά"
       ],
       "Forgot password?": [
-        "Ξέχασα τον κωδικό πρόσβασης?"
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Forgot recovery method?": [
         "Ξεχάσατε τη μέθοδο ανάκτησης;"
@@ -542,7 +542,7 @@
         "Δημιουργία"
       ],
       "Generate key": [
-        "Παραγωγή κλειδιού"
+        "Δημιουργία κλειδιού"
       ],
       "Generate new recovery phrase": [
         "Παραγωγή νέας φράσης ανάκτησης"
@@ -1058,7 +1058,7 @@
         "Σύνδεση με κωδικό"
       ],
       "Sign in with SSO": [
-        "Συνδεθείτε με SSO"
+        "Σύνδεση με SSO"
       ],
       "Sign out": [
         "Αποσύνδεση"
@@ -1103,7 +1103,7 @@
         "Διακοπή χρήσης καθολικής σύνδεσης"
       ],
       "Strikethrough": [
-        "Διαγραμμισμένο Κείμενο"
+        "Διακριτή διαγραφή"
       ],
       "Submit": [
         "Υποβολή"
@@ -1175,7 +1175,7 @@
         "Αναβαθμίστε για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade to view all": [
-        "Αναβάθμιση για προβολή όλων"
+        "Αναβαθμίστε για προβολή όλων"
       ],
       "Upgrade your plan": [
         "Αναβαθμίστε το πρόγραμμά σας"
@@ -2066,16 +2066,16 @@
         "Κοινοποίηση ημερολογίου"
       ],
       "Share with ${ BRAND_NAME } users": [
-        "Κοινοποίηση με ${ BRAND_NAME } χρήστες"
+        "Κοινοποίηση σε ${ BRAND_NAME } χρήστες"
       ],
       "Share with anyone": [
-        "Κοινοποίηση με οποιονδήποτε"
+        "Κοινή χρήση με οποιονδήποτε"
       ]
     },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Προβολή ${ remainingItems } παραπάνω",
-        "Προβολή ${ remainingItems } παραπάνω"
+        "Προβολή ${ remainingItems } περισσότερων"
       ]
     },
     "Calendar share permission label": {
@@ -2305,7 +2305,7 @@
         "κυανό-μπλε γαλάζιο"
       ],
       "dandelion": [
-        "ραδίκι"
+        "ταραξάκος"
       ],
       "dark cerulean": [
         "σκούρος ουρανός"
@@ -2314,7 +2314,7 @@
         "μπλε μεσονυκτίου"
       ],
       "dim gray": [
-        "αχνό γκρι"
+        "ανοιχτό γκρι"
       ],
       "enzian": [
         "βαθύ μπλέ"
@@ -2383,7 +2383,7 @@
         "περσικό κόκκινο"
       ],
       "philippine gray": [
-        "γκρί των φιλιππίνων"
+        "γκρι των φιλιππίνων"
       ],
       "philippine silver": [
         "ασημί των φιλιππίνων"
@@ -3014,7 +3014,7 @@
         "Μακάο"
       ],
       "Macedonia": [
-        "ΠΓΔ Μακεδονίας"
+        "Βόρεια Μακεδονία"
       ],
       "Madagascar": [
         "Μαδαγασκάρη"
@@ -3580,9 +3580,6 @@
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ταξινομήστε αυτόματα τα εισερχόμενα μηνύματά σας πριν φτάσουν στα εισερχόμενά σας."
-      ],
-      "Available with ${ BRAND_NAME } Mail Plus": [
-        "Διατίθεται με το ${ BRAND_NAME } Mail Plus"
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Συγχαρητήρια! Κερδίσατε το μέγιστο των ${ rewardsLimit } δωρεάν μηνών ${ plusPlanName }."
@@ -4893,9 +4890,6 @@
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Πρέπει να έχετε μια προσαρμοσμένη διεύθυνση τομέα για να δημιουργήσετε ένα διακριτικό υποβολής SMTP."
       ],
-      "You've assigned all of your servers.": [
-        "Έχετε αντιστοιχίσει όλους τους διακομιστές σας."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό χαρακτήρων. Παρακαλούμε συντομεύστε το μήνυμά σας."
       ],
@@ -5242,8 +5236,8 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } εκδήλωση εξάγεται",
-        "${ totalProcessed }/${ totalToProcess } εκδηλώσεις εξάγονται"
+        "${ totalProcessed }/${ totalToProcess } εκδήλωση εξάχθηκε",
+        "${ totalProcessed }/${ totalToProcess } εκδηλώσεις εξάχθηκαν"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Το ημερολόγιο εξήχθη με επιτυχία. Τώρα μπορείτε να αποθηκεύσετε το αρχείο ICS."
@@ -5445,8 +5439,8 @@
         "Έχετε φτάσει το όριο των ${ n } αποδεκτών προσκλήσεων σε 6 μήνες."
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
-        "Έχετε φτάσει το όριο της ${ n } αποδεκτής πρόσκλησης σε 6 μήνες. Μπορείτε να κάνετε κλικ στο κουμπί όταν μπορείτε να προσκαλέσετε επιπλέον χρήστες.",
-        "Έχετε φτάσει το όριο των ${ n } αποδεκτών προσκλήσεων σε 6 μήνες. Μπορείτε να κάνετε κλικ στο κουμπί όταν μπορείτε να προσκαλέσετε επιπλέον χρήστες."
+        "Έχετε φτάσει το όριο της ${ n } αποδεκτής πρόσκλησης σε 6 μήνες. Θα μπορείτε να κάνετε κλικ στο κουμπί όταν θα μπορείτε να προσκαλέσετε επιπλέον χρήστες.",
+        "Έχετε φτάσει το όριο των ${ n } αποδεκτών προσκλήσεων σε 6 μήνες. Θα μπορείτε να κάνετε κλικ στο κουμπί όταν θα μπορείτε να προσκαλέσετε επιπλέον χρήστες."
       ],
       "You have successfully joined the family group": [
         "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
@@ -5695,8 +5689,8 @@
         "Επαληθεύστε την ταυτότητά σας με ένα φυσικό κλειδί ασφαλείας U2F ή FIDO2"
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "Έχετε συμπληρώσει το μέγιστο ${ maxSecurityKeyLength } κλειδί ασφαλείας.",
-        "Έχετε συμπληρώσει το μέγιστο ${ maxSecurityKeyLength } κλειδιών ασφαλείας."
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό του ${ maxSecurityKeyLength } κλειδιού ασφαλείας.",
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό των ${ maxSecurityKeyLength } κλειδιών ασφαλείας."
       ],
       "Your two-factor authentication key is ready to use.": [
         "Το κλειδί ελέγχου ταυτότητας δύο παραγόντων είναι έτοιμο για χρήση."
@@ -6912,7 +6906,7 @@
       ],
       "Affected user is on row": [
         "Ο χρήστης που επηρεάζεται βρίσκεται στη γραμμή",
-        "Οι χρήστες που επηρεάζεται βρίσκονται στις γραμμές"
+        "Οι χρήστες που επηρεάζονται βρίσκονται στις γραμμές"
       ],
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Αφού κλειδωθούν, τα μέλη του οργανισμού θα πρέπει να ξεκλειδώσουν το ${ PASS_APP_NAME } με τον κωδικό πρόσβασης ή το PIN τους κ.λπ."
@@ -7047,7 +7041,7 @@
         "Ζητήστε από τον διαχειριστή του οργανισμού σας να ρυθμίσει τις Πύλες."
       ],
       "Attention required": [
-        "Χρειάζεται προσοχή"
+        "Απαιτείται προσοχή"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Η αυτόματη απάντηση είναι ενεργή κάθε μήνα μεταξύ της επιλεγμένης ώρας έναρξης και λήξης."
@@ -7783,10 +7777,10 @@
         "Οι σημαίες στοιχείου άλλαξαν στην κρύπτη"
       ],
       "Item in ${ vaultLink } trashed": [
-        "Το Στοιχείο στο ${ vaultLink } απορρίφθηκε"
+        "Το Στοιχείο στην ${ vaultLink } απορρίφθηκε"
       ],
       "Item in ${ vaultLink } untrashed": [
-        "Στοιχείο στο ${ vaultLink } επαναφέρθηκε"
+        "Το Στοιχείο στην ${ vaultLink } επαναφέρθηκε"
       ],
       "Item in vault trashed": [
         "Το στοιχείο απορρίφθηκε από την κρύπτη"
@@ -8122,10 +8116,10 @@
         "ανά μήνα, χρεώνεται σε τιμή ${ price }"
       ],
       "per month, billed every 12 months": [
-        "ανά μήνα, χρεώνεται κάθε 12 μήνες"
+        "ανά μήνα, χρέωση κάθε 12 μήνες"
       ],
       "per month, billed every 24 months": [
-        "ανά μήνα, χρεώνεται κάθε 24 μήνες"
+        "ανά μήνα, χρέωση κάθε 24 μήνες"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Οι πελάτες PGP είναι πιο πιθανό να ανιχνεύουν αυτόματα τα κλειδιά PGP εάν έχουν υπογραφεί τα εξερχόμενα μηνύματα."
@@ -8391,10 +8385,10 @@
         "Οι ρυθμίσεις ενημερώθηκαν"
       ],
       "Shared ${ vaultLink } deleted": [
-        "Κοινόχρηστο ${ vaultLink } διαγράφηκε"
+        "Η κοινόχρηστη ${ vaultLink } διαγράφηκε"
       ],
       "Shared ${ vaultLink } updated": [
-        "Κοινόχρηστο ${ vaultLink } ενημερώθηκε"
+        "Η κοινόχρηστη ${ vaultLink } ενημερώθηκε"
       ],
       "Shared vault deleted": [
         "Διαγράφηκε η κοινοποιημένη κρύπτη"
@@ -8518,13 +8512,13 @@
         "Ο σκοτεινός ιστός είναι ένα κρυφό μέρος του διαδικτύου όπου κλεμμένες προσωπικές πληροφορίες, όπως ταυτότητες, μπορούν να αγοραστούν και να πωληθούν."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
-        "Ο αριθμός λήψεων περιλαμβάνει τόσο τις πραγματικές λήψεις όσο και τις παρουσίες κατά την προεπισκόπηση αρχείων."
+        "Ο αριθμός λήψεων περιλαμβάνει τόσο τις πραγματικές λήψεις όσο και τις εμφανίσεις κατά την προεπισκόπηση αρχείων."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Ο σύνδεσμος επαλήθευσης ηλεκτρονικού ταχυδρομείου έχει λήξει. Συνδεθείτε για να στείλετε ξανά έναν σύνδεσμο επαλήθευσης."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
-        "Τα κρυπτογραφημένα δεδομένα είναι ελαφρώς μεγαλύτερα λόγω της επιβάρυνσης της κρυπτογράφησης και των υπογραφών, που διασφαλίζουν την ασφάλεια των δεδομένων σας."
+        "Τα κρυπτογραφημένα δεδομένα είναι ελαφρώς μεγαλύτερα σε μέγεθος λόγω της επιβάρυνσης της κρυπτογράφησης και των υπογραφών, που διασφαλίζουν την προστασία των δεδομένων σας."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Οι εκτεθειμένες πληροφορίες διέρρευσαν από μια υπηρεσία τρίτου μέρους. Οι πληροφορίες του λογαριασμού σας ${ BRAND_NAME } παραμένουν ασφαλείς και κρυπτογραφημένες. ${ learnMoreLink }"
@@ -8618,9 +8612,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
-      ],
-      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας και δεν μπορεί να ανοίξει από το πρόγραμμα περιήγησης Edge. Εάν είστε βέβαιοι ότι ο σύνδεσμος είναι αυθεντικός, χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης για να το ανοίξετε."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
@@ -9123,15 +9114,15 @@
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
         "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και ${ usedAI } από ${ maxAI } της διαθέσιμης άδειας βοηθού γραφής.",
-        "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και ${ usedAI } από ${ maxAI } των διαθέσιμων άδειων βοηθού γραφής."
+        "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και ${ usedAI } από ${ maxAI } των διαθέσιμων αδειών βοηθού γραφής."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
         "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και καμία από τη ${ maxAI } διαθέσιμη άδεια βοηθού γραφής σας.",
         "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και καμία από τις ${ maxAI } διαθέσιμες άδειες βοηθού γραφής σας."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
-        "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τη ${ maxMembers } διαθέσιμη άδεια χρήσης χρήστη.",
-        "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τις ${ maxMembers } διαθέσιμες άδειες χρήσης χρηστών."
+        "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τη ${ maxMembers } διαθέσιμη άδεια χρήσης.",
+        "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τις ${ maxMembers } διαθέσιμες άδειες χρήσης."
       ],
       "You are not currently in any groups and there are no pending invitations": [
         "Προς το παρόν δεν ανήκετε σε ομάδες και δεν υπάρχουν προσκλήσεις σε εκκρεμότητα"
@@ -9216,7 +9207,7 @@
         "Έχετε ${ availableCount } νέους διαθέσιμους διακομιστές."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "Έχετε διαθέσιμους ${ unassignedAvailableCount } διακομιστές που χρησιμοποιήθηκαν πρόσφατα. Για να εκχωρήσετε αυτούς τους διακομιστές σε άλλη χώρα, θα πρέπει να περιμένετε μέχρι να ολοκληρωθεί η απενεργοποίηση.",
+        "Έχετε διαθέσιμο ${ unassignedAvailableCount } διακομιστή που χρησιμοποιήθηκε πρόσφατα. Για να εκχωρήσετε αυτόν τον διακομιστή σε άλλη χώρα, θα πρέπει να περιμένετε μέχρι να ολοκληρωθεί η απενεργοποίηση.",
         "Έχετε διαθέσιμους ${ unassignedAvailableCount } διακομιστές που χρησιμοποιήθηκαν πρόσφατα. Για να εκχωρήσετε αυτούς τους διακομιστές σε άλλη χώρα, θα πρέπει να περιμένετε μέχρι να ολοκληρωθεί η απενεργοποίηση."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
@@ -9682,10 +9673,10 @@
         "Φόρτωση απομακρυσμένου περιεχομένου"
       ],
       "Mark as read": [
-        "Σήμανση ως διαβασμένο"
+        "Σήμανση ως αναγνωσμένο"
       ],
       "Mark as unread": [
-        "Σήμανση ως μη διαβασμένο"
+        "Σήμανση ως μη αναγνωσμένο"
       ],
       "Minimize / maximize composer": [
         "Ελαχιστοποίηση / μεγιστοποίηση συντάκτη"
@@ -10429,7 +10420,7 @@
         "Τελευταίοι 3 μήνες μόνο"
       ],
       "Last month only": [
-        "Τελευταίο μήνα μόνο"
+        "Τελευταίος μήνας μόνο"
       ],
       "Last name": [
         "Επώνυμο"
@@ -10955,7 +10946,7 @@
         "Μεγιστοποιημένο"
       ],
       "Normal": [
-        "Κανονικό"
+        "Κανονική"
       ]
     },
     "Label to change density": {
@@ -11115,7 +11106,7 @@
         "Μη ενεργοποιημένο"
       ],
       "Pay invoice": [
-        "Πληρωμή τιμολογίου"
+        "Εξόφληση τιμολογίου"
       ],
       "PayPal without credit card": [
         "PayPal χωρίς πιστωτική κάρτα"
@@ -11356,7 +11347,7 @@
     },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Μπορείτε να δημιουργήσετε μόνο ${ MAX_LINKS_PER_CALENDAR } σύνδεσμο ανά ημερολόγιο. Για τη δημιουργία νέου συνδέσμου σε αυτό το ημερολόγιο, διαγράψτε τον παρακάτω.",
+        "Μπορείτε να δημιουργήσετε μόνο ${ MAX_LINKS_PER_CALENDAR } σύνδεσμο ανά ημερολόγιο. Για τη δημιουργία νέου συνδέσμου σε αυτό το ημερολόγιο, διαγράψτε έναν από την παρακάτω λίστα.",
         "Μπορείτε να δημιουργήσετε έως ${ MAX_LINKS_PER_CALENDAR } συνδέσμους ανά ημερολόγιο. Για τη δημιουργία νέου συνδέσμου σε αυτό το ημερολόγιο, διαγράψτε έναν από την παρακάτω λίστα."
       ]
     },
@@ -11526,7 +11517,7 @@
     },
     "Monthly recurring event, frequency (times)": {
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Κάθε ${ interval } μήνας ${ onDayString }, ${ timesString }",
+        "Κάθε ${ interval } μήνα ${ onDayString }, ${ timesString }",
         "Κάθε ${ interval } μήνες ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
@@ -11535,7 +11526,7 @@
     },
     "Monthly recurring event, frequency (until)": {
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Κάθε ${ interval } μήνας ${ onDayString }, ${ untilString }",
+        "Κάθε ${ interval } μήνα ${ onDayString }, ${ untilString }",
         "Κάθε ${ interval } μήνες ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
@@ -12653,9 +12644,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Επαναφέρετε τους κωδικούς πρόσβασης χρήστη και επαναφέρετε τον έλεγχο ταυτότητας δύο παραγόντων στους χρήστες"
       ],
-      "Route your internet traffic through the TOR network with a single click": [
-        "Δρομολογήστε την κίνηση σας στο διαδίκτυο, μέσω του δικτύου TOR με ένα μόνο κλικ"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
@@ -13192,7 +13180,7 @@
         "Χωρίς δικαίωμα"
       ],
       "Normal": [
-        "Κανονικό"
+        "Κανονική"
       ],
       "Off": [
         "Ανενεργό"
@@ -13540,9 +13528,6 @@
       ],
       "Alerts for compromised emails and vulnerable passwords": [
         "Ειδοποιήσεις για παραβιασμένα μηνύματα ηλεκτρονικού ταχυδρομείου και ευάλωτους κωδικούς πρόσβασης"
-      ],
-      "Alerts for vulnerable passwords": [
-        "Ειδοποιήσεις για ευάλωτους κωδικούς πρόσβασης"
       ],
       "Aliases for email protection from breaches": [
         "Ψευδώνυμα για προστασία ηλεκτρονικού ταχυδρομείου από παραβιάσεις"
@@ -14163,7 +14148,7 @@
         "Αναζήτηση διεύθυνσης ηλεκτρονικού ταχυδρομείου ή IP"
       ],
       "Search parent folder": [
-        "Αναζήτηση στο γονικό φάκελο"
+        "Αναζήτηση σε γονικό φάκελο"
       ],
       "Search users": [
         "Αναζήτηση χρηστών"
@@ -14215,7 +14200,7 @@
         "Επιλέξτε τον αριθμό διευθύνσεων IP που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον διεύθυνση IP κοστίζει ${ price }."
       ],
       "Should you need more than ${ maxIPs } IP, ": [
-        "Εάν χρειάζεστε περισσότερη από ${ maxIPs } διεύθυνση IP, ",
+        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διεύθυνση IP, ",
         "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διευθύνσεις IP, "
       ]
     },
@@ -14688,9 +14673,6 @@
       ],
       "Test in progress...": [
         "Δοκιμή σε εξέλιξη..."
-      ],
-      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Για να δοκιμάσετε αυτήν τη διαμόρφωση SAML, παρακαλούμε εισαγάγετε τα διαπιστευτήρια σύνδεσης για έναν χρήστη που σχετίζεται με το **${ domainName }**"
       ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Λάβαμε μια έγκυρη απάντηση SAML από τον πάροχο ταυτότητάς σας. Η SSO είναι ενεργοποιημένη για τον οργανισμό σας."
@@ -15183,6 +15165,12 @@
     "Setting": {
       "Enable Photos section": [
         "Ενεργοποίηση ενότητας Φωτογραφίες"
+      ],
+      "Get updates about comments via email": [
+        "Λάβετε ενημερώσεις σχετικά με σχόλια μέσω ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Include document name in email notifications": [
+        "Συμπερίληψη ονόματος εγγράφου στις ειδοποιήσεις ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Settings description": {
@@ -15479,7 +15467,7 @@
     },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "Μεταβείτε στα προγράμματα συνδρομής"
+        "Μεταβείτε στα συνδρομητικά προγράμματα"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -15487,7 +15475,7 @@
     },
     "specialoffer: Offers": {
       "${ n } month": [
-        "${ n } μήνα",
+        "${ n } μήνας",
         "${ n } μήνες"
       ],
       "/ month": [
@@ -15779,9 +15767,6 @@
       ],
       "Single sign-on removed": [
         "Η καθολική σύνδεση καταργήθηκε"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Τα διαπιστευτήρια από τον πάροχο ταυτότητάς σας θα διαγραφούν."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Αυτό θα αποσυνδέσει τον χρήστη από τις άλλες συσκευές του και θα πρέπει να δημιουργήσει έναν νέο εφεδρικό κωδικό πρόσβασης."
@@ -16646,7 +16631,7 @@
         "Δημιουργήθηκε Premium διεύθυνση"
       ],
       "Problem reported": [
-        "Αναφέρθηκε πρόβλημα"
+        "Η αναφορά του προβλήματος ολοκληρώθηκε"
       ],
       "Resuming import": [
         "Γίνεται συνέχιση εισαγωγής"
@@ -18531,9 +18516,6 @@
     "Tor out of date": {
       "stable release": [
         "ευσταθή έκδοση"
-      ],
-      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Αυτή η έκδοση του περιηγητή TOR δεν υποστηρίζεται. Παρακαλούμε ενημερώστε στην τελευταία ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -18554,9 +18536,6 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Ένας διαχειριστής του οργανισμού **${ orgName }** (**${ adminEmail }**) θέλει να ενεργοποιήσει την πρόσβαση διαχειριστή για τον λογαριασμό σας."
-      ],
-      "Approve all": [
-        "Έγκριση όλων"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Κάνοντας τον χρήστη ιδιωτικό, δε θα μπορείτε να τον βοηθήσετε να ανακτήσει την πρόσβαση στα δεδομένα ή τον λογαριασμό του."
