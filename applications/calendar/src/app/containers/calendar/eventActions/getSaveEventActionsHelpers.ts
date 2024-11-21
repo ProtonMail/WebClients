@@ -237,6 +237,14 @@ export const getHasModifiedNotifications = (
 export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
     const result: Partial<VcalVeventComponent> = {};
 
+    const { addedOrganizer, removedOrganizer, hasModifiedOrganizer } = getOrganizerDiff(newVevent, oldVevent);
+    if (hasModifiedOrganizer || removedOrganizer) {
+        // should not happen
+        throw new Error('Organizer modification detected');
+    }
+
+    const { addedAttendees, removedAttendees, hasModifiedRole } = getAttendeesDiff(newVevent, oldVevent);
+
     if (getSupportedStringValue(newVevent.summary) !== getSupportedStringValue(oldVevent.summary)) {
         result.summary = newVevent.summary || { value: '' };
     }
@@ -246,15 +254,9 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
     if (getSupportedStringValue(newVevent.description) !== getSupportedStringValue(oldVevent.description)) {
         result.description = newVevent.description || { value: '' };
     }
-    const { addedOrganizer, removedOrganizer, hasModifiedOrganizer } = getOrganizerDiff(newVevent, oldVevent);
-    if (hasModifiedOrganizer || removedOrganizer) {
-        // should not happen
-        throw new Error('Organizer modification detected');
-    }
     if (addedOrganizer) {
         result.organizer = newVevent.organizer;
     }
-    const { addedAttendees, removedAttendees, hasModifiedRole } = getAttendeesDiff(newVevent, oldVevent);
     if (addedAttendees?.length || removedAttendees?.length || hasModifiedRole) {
         result.attendee = newVevent.attendee || [];
     }
@@ -264,6 +266,7 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
     if (getIsAllDay(newVevent) === getIsAllDay(oldVevent) && getHasModifiedNotifications(newVevent, oldVevent)) {
         result.components = newVevent.components;
     }
+
     if (getPropertyTzid(newVevent.dtstart) !== getPropertyTzid(oldVevent.dtstart)) {
         result.dtstart = newVevent.dtstart;
     }
@@ -271,11 +274,17 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
         result.dtend = newVevent.dtend;
     }
 
-    if (newVevent['x-pm-conference-id'] !== oldVevent['x-pm-conference-id']) {
+    if (
+        getSupportedStringValue(newVevent['x-pm-conference-id']) !==
+        getSupportedStringValue(oldVevent['x-pm-conference-id'])
+    ) {
         result['x-pm-conference-id'] = newVevent['x-pm-conference-id'];
     }
 
-    if (newVevent['x-pm-conference-url'] !== oldVevent['x-pm-conference-url']) {
+    if (
+        getSupportedStringValue(newVevent['x-pm-conference-url']) !==
+        getSupportedStringValue(oldVevent['x-pm-conference-url'])
+    ) {
         result['x-pm-conference-url'] = newVevent['x-pm-conference-url'];
     }
 
