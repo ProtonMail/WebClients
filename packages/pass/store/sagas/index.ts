@@ -45,6 +45,7 @@ import itemRestore from './items/item-restore.saga';
 import itemTrash from './items/item-trash.saga';
 import itemUnpin from './items/item-unpin.saga';
 import itemSetFlags from './items/item.set-flags.saga';
+import notificationSagas from './notifications/notifications.sagas';
 import getOrganizationSettings from './organization/organization-settings.saga';
 import secureLinkSagas from './secure-links/secure-links.sagas';
 import shareAccessSagas from './shares/share-access.saga';
@@ -67,6 +68,7 @@ const COMMON_SAGAS = [
     ...aliasManagementSagas,
     ...aliasSyncSagas,
     ...customDomainsSagas,
+    ...notificationSagas,
     ...secureLinkSagas,
     ...ssoSagas,
     ...shareAccessSagas,

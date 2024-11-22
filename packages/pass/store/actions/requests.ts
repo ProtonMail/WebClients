@@ -54,3 +54,5 @@ export const newUserInviteRemoveRequest = withKey(`new-user-invite::remove`);
 export const userAccessRequest = withKey(`user::access`);
 export const userFeaturesRequest = withKey(`user::features`);
 export const reportBugRequest = withKey(`report::bug`);
+
+export const getInAppNotificationsRequest = () => 'in-app-notification::get';
