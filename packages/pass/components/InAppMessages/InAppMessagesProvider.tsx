@@ -2,10 +2,9 @@ import type { FC, PropsWithChildren } from 'react';
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getInAppNotifications, updateInAppNotificationState } from '@proton/pass/store/actions';
-import { getInAppNotificationsRequest, updateInAppNotificationStateRequest } from '@proton/pass/store/actions/requests';
 import { selectNextNotification } from '@proton/pass/store/selectors';
 import { InAppNotificationDisplayType, type InAppNotificationState } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -36,10 +35,8 @@ export const InAppMessagesProvider: FC<PropsWithChildren> = ({ children }) => {
     const interval = useRef<NodeJS.Timeout>();
     const inAppMessagesEnabled = useFeatureFlag(PassFeature.PassInAppMessages);
     const notification = useSelector(selectNextNotification);
-    const getNotification = useRequest(getInAppNotifications, { initialRequestId: getInAppNotificationsRequest() });
-    const updateNotificationStateRequest = useRequest(updateInAppNotificationState, {
-        initialRequestId: updateInAppNotificationStateRequest(),
-    });
+    const getNotification = useRequest(getInAppNotifications);
+    const updateNotificationStateRequest = useRequest(updateInAppNotificationState);
 
     const NotificationComponent = getNotificationComponent(notification?.content.displayType);
 
