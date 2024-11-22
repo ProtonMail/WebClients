@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import Icon from '@proton/components/components/icon/Icon';
-import Logo from '@proton/components/components/logo/Logo';
+import { Icon, Logo } from '@proton/components';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import envelope from '@proton/styles/assets/img/illustrations/envelope.svg';
 import gmailLogo from '@proton/styles/assets/img/illustrations/gmail-logo.svg';

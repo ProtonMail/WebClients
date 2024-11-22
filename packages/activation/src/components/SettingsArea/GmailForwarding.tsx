@@ -1,7 +1,8 @@
 import { useUser } from '@proton/account/user/hooks';
-import { CheckListGmailForward, GmailSyncModal, useModalState } from '@proton/components';
+import { CheckListGmailForward, useModalState } from '@proton/components';
 
 import { EASY_SWITCH_SOURCES } from '../../interface';
+import GmailSyncModal from '../Modals/GmailSyncModal/GmailSyncModal';
 
 const GmailForwarding = () => {
     const [syncModalProps, setSyncModalProps, renderSyncModal] = useModalState();
