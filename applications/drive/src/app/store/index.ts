@@ -1,5 +1,5 @@
 export { DriveProvider, PublicDriveProvider } from './DriveProvider';
-export { useActions, useSharedWithMeActions, useInvitationsActions } from './_actions';
+export { useActions, usePublicActions, useSharedWithMeActions, useInvitationsActions } from './_actions';
 
 export { usePublicAuth } from './_api';
 export { useActivePing, useGetPublicKeysForEmail, usePublicSessionUser } from './_user';

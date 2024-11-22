@@ -95,7 +95,10 @@ export function usePublicLinksListingProvider() {
         linkId: string,
         showNotification = true
     ): Promise<void> => {
-        // undefined means keep the sorting used the last time = lets reuse what we loaded so far.
+        // Reset the fetch meta for this linkId to force refetching
+        const tokenState = getTokenFetchState(token);
+        tokenState[linkId] = {};
+
         const sorting = undefined;
         return loadFullListing(() =>
             fetchPublicChildrenNextPage(abortSignal, token, linkId, sorting, showNotification)
