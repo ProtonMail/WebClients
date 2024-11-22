@@ -14,7 +14,7 @@ const { READ, WRITE, ADMIN, SUPER_ADMIN } = DRIVE_PERMISSIONS;
 
 export enum SHARE_URL_PERMISSIONS {
     VIEWER = READ,
-    EDITOR = EXEC + WRITE + READ, //TODO: Remove this when this ticket is done: DRVBE-868
+    EDITOR = WRITE + READ,
 }
 
 export enum SHARE_MEMBER_PERMISSIONS {

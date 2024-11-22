@@ -1,8 +1,6 @@
 import { useCallback, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
-import type { SHARE_URL_PERMISSIONS} from '@proton/shared/lib/drive/permissions';
-import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import clsx from '@proton/utils/clsx';
 
@@ -28,7 +26,7 @@ import './FileBrowser.scss';
 interface Props {
     folderName: string;
     items: PublicLink[];
-    permissions: SHARE_URL_PERMISSIONS;
+    canWrite: boolean;
     onItemOpen: (item: DecryptedLink) => void;
     openInDocs?: (linkId: string) => void;
     isLoading?: boolean;
@@ -44,7 +42,7 @@ export default function SharedFileBrowser({
     setSorting,
     onItemOpen,
     openInDocs,
-    permissions,
+    canWrite,
 }: Props) {
     const { viewportWidth } = useActiveBreakpoint();
     const thumbnails = useThumbnailsDownload();
@@ -93,7 +91,7 @@ export default function SharedFileBrowser({
                 <EmptyPlaceholder />
             ) : (
                 <>
-                    {getCanWrite(permissions) && (
+                    {canWrite && (
                         <DrivePublicContextMenu
                             isActiveLinkReadOnly={false}
                             shareId={token}
