@@ -37,9 +37,7 @@ import { CommentThreadType } from '@proton/docs-shared'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import type { MetricService } from '../Metrics/MetricService'
 import { TelemetryDocsEvents } from '@proton/shared/lib/api/telemetry'
-import type { UnleashClient } from '@proton/unleash'
-
-const DocsEnableNotificationsOnNewCommentFeatureFlag = 'DocsEnableNotificationsOnNewComment'
+import type { DocumentPropertiesStateInterface } from '../State/DocumentPropertiesStateInterface'
 
 /**
  * Controls comments for a single document.
@@ -68,8 +66,8 @@ export class CommentController implements CommentControllerInterface, InternalEv
     private _createComment: CreateComment,
     private _loadThreads: LoadThreads,
     private _handleRealtimeEvent: HandleRealtimeCommentsEvent,
+    private sharedState: DocumentPropertiesStateInterface,
     private getLatestDocumentName: () => string,
-    unleashClient: UnleashClient,
     public readonly eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
   ) {
@@ -77,12 +75,8 @@ export class CommentController implements CommentControllerInterface, InternalEv
     eventBus.addEventHandler(this, DocControllerEvent.RealtimeCommentMessageReceived)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady)
 
-    if (unleashClient.isReady()) {
-      this.shouldSendDocumentName = unleashClient.isEnabled(DocsEnableNotificationsOnNewCommentFeatureFlag)
-    }
-
-    unleashClient.on('update', () => {
-      this.shouldSendDocumentName = unleashClient.isEnabled(DocsEnableNotificationsOnNewCommentFeatureFlag)
+    this.sharedState.subscribe((state) => {
+      this.shouldSendDocumentName = state.emailTitleEnabled ?? false
     })
   }
 

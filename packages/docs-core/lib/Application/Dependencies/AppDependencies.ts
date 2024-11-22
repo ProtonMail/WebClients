@@ -41,6 +41,7 @@ import { GetNode } from '../../UseCase/GetNode'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { PublicDocLoader } from '../../Services/DocumentLoader/PublicDocLoader'
 import type { UnleashClient } from '@proton/unleash'
+import type { DocumentPropertiesStateInterface } from '../../Services/State/DocumentPropertiesStateInterface'
 
 export class AppDependencies extends DependencyContainer {
   constructor(
@@ -48,8 +49,9 @@ export class AppDependencies extends DependencyContainer {
     imageProxyParams: ImageProxyParams | undefined,
     publicContextHeaders: HttpHeaders | undefined,
     compatWrapper: DriveCompatWrapper,
+    sharedState: DocumentPropertiesStateInterface,
     appVersion: string,
-    unleashClient: UnleashClient,
+    _unleashClient: UnleashClient,
   ) {
     super()
 
@@ -240,7 +242,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         this.get<GetNode>(App_TYPES.GetNode),
         this.get<ExportAndDownload>(App_TYPES.ExportAndDownload),
-        unleashClient,
+        sharedState,
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<LoggerInterface>(App_TYPES.Logger),
       )

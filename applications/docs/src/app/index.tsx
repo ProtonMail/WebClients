@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client'
 
 import '@proton/polyfill'
 
-import UserApp from './Apps/User/UserApp'
+import UserApp from './Apps/User/UserProtonApp'
 import PublicApp from './Apps/Public/PublicApp'
 import './style'
 
