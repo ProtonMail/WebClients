@@ -1,14 +1,15 @@
-import React from 'react';
 import type { ComponentPropsWithoutRef, ReactElement } from 'react';
+import React from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import type { ButtonLikeOwnProps, ButtonLikeShape } from '@proton/atoms';
-import type { HrefProps } from '@proton/atoms';
+import type { ButtonLikeOwnProps, ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors/types';
 import { IcCross, IcExclamationTriangleFilled, IcInfoCircle } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
+
+import { Button } from '../Button/Button';
+import type { HrefProps } from '../Href/Href';
 
 import './Banner.scss';
 
