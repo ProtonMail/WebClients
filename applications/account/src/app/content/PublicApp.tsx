@@ -559,13 +559,14 @@ const BasePublicApp = () => {
                                                     ]}
                                                 >
                                                     <SingleSignupSwitchContainer
+                                                        initialSessionsLength={initialSessionsLength}
                                                         hasBFCoupon={hasBFCoupon}
                                                         maybePreAppIntent={maybePreAppIntent}
                                                         initialSearchParams={initialSearchParams}
                                                         paths={paths}
                                                         metaTags={getSignupMeta(maybePreAppIntent)}
                                                         activeSessions={activeSessions}
-                                                        loader={loader}
+                                                        onGetActiveSessions={handleGetActiveSessions}
                                                         productParam={productParam}
                                                         clientType={clientType}
                                                         toApp={maybePreAppIntent}

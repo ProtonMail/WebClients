@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -25,7 +24,6 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { FullPlansMap, PaymentMethodFlows, PaymentsApi } from '@proton/payments';
 import {
@@ -45,18 +43,21 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { normalizeProduct } from '@proton/shared/lib/apps/product';
 import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import type {
+    GetActiveSessionsResult,
     LocalSessionPersisted,
     ResumedSessionResult,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, CYCLE, REFERRER_CODE_MAIL_TRIAL, SSO_PATHS } from '@proton/shared/lib/constants';
+import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CYCLE, SSO_PATHS } from '@proton/shared/lib/constants';
+import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { getPlanFromPlanIDs, getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { Cycle } from '@proton/shared/lib/interfaces';
+import type { Api, Cycle } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -78,7 +79,7 @@ import type {
     SubscriptionData,
     UserCacheResult,
 } from '../signup/interfaces';
-import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
+import { getPlanIDsFromParams } from '../signup/searchParams';
 import { handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
@@ -90,8 +91,7 @@ import type { Step1Rref } from './Step1';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import SwitchModal from './SwitchModal';
-import { getDriveConfiguration } from './drive/configuration';
-import { getGenericConfiguration } from './generic/configuration';
+import { cachedPlans, cachedPlansMap } from './defaultPlans';
 import {
     getAccessiblePlans,
     getFreeSubscriptionData,
@@ -103,7 +103,6 @@ import {
 } from './helper';
 import type { PlanParameters, SignupModelV2, SignupParameters2, Upsell } from './interface';
 import { SignupMode, Steps, UpsellTypes } from './interface';
-import { getMailConfiguration } from './mail/configuration';
 import type { TelemetryMeasurementData } from './measure';
 import { getPaymentMethodsAvailable, getPlanNameFromSession, getSignupTelemetryData } from './measure';
 import AccessModal from './modals/AccessModal';
@@ -111,8 +110,8 @@ import SubUserModal from './modals/SubUserModal';
 import UnlockModal from './modals/UnlockModal';
 import UpsellModal from './modals/UpsellModal';
 import VisionaryUpsellModal from './modals/VisionaryUpsellModal';
-import { getPassConfiguration } from './pass/configuration';
-import { getWalletConfiguration } from './wallet/configuration';
+import { getSignupConfiguration } from './signupConfiguration';
+import { getSignupParameters } from './signupParameters';
 
 const getRecoveryKit = async () => {
     // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
@@ -180,11 +179,11 @@ export const defaultSignupModel: SignupModelV2 = {
     cache: undefined,
     optimistic: {},
     vpnServersCountData: defaultVPNServersCountData,
+    loadingDependencies: true,
 };
 
 interface Props {
     initialSearchParams?: URLSearchParams;
-    loader: ReactNode;
     onLogin: OnLoginCallback;
     productParam: ProductParam;
     toApp?: APP_NAMES;
@@ -192,10 +191,12 @@ interface Props {
     onBack?: () => void;
     clientType: CLIENT_TYPES;
     activeSessions?: LocalSessionPersisted[];
+    onGetActiveSessions?: () => Promise<GetActiveSessionsResult>;
     fork: boolean;
     metaTags: MetaTags;
     paths: Paths;
     onPreSubmit?: () => Promise<void>;
+    initialSessionsLength: boolean;
 }
 
 let ranPreload = false;
@@ -207,11 +208,12 @@ const SingleSignupContainerV2 = ({
     fork,
     toApp,
     activeSessions,
-    loader,
+    onGetActiveSessions,
     onLogin,
     productParam,
     clientType,
     onPreSubmit,
+    initialSessionsLength,
 }: Props) => {
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
@@ -237,15 +239,7 @@ const SingleSignupContainerV2 = ({
     const isMailRefer = isMailReferAFriendSignup(location);
     useMetaTags(isMailRefer ? mailReferPage() : isMailTrial ? mailTrialPage() : metaTags);
 
-    const [model, setModel] = useState<SignupModelV2>(defaultSignupModel);
     const step1Ref = useRef<Step1Rref | undefined>(undefined);
-
-    const setModelDiff = useCallback((diff: Partial<SignupModelV2>) => {
-        return setModel((model) => ({
-            ...model,
-            ...diff,
-        }));
-    }, []);
 
     // Override the app to always be mail in trial or refer-a-friend signup
     if (isMailTrial || isMailRefer) {
@@ -261,11 +255,7 @@ const SingleSignupContainerV2 = ({
     const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
         flow: 'signup-pass',
     });
-    const UID = model.session?.UID;
-    const normalApi = UID ? getUIDApi(UID, unauthApi) : unauthApi;
-    const silentApi = getSilentApi(normalApi);
     const [error, setError] = useState<any>();
-    const vpnServersCountData = model.vpnServersCountData;
     const handleError = useErrorHandler();
     const [tmpLoginEmail, setTmpLoginEmail] = useState('');
     const [switchModalProps, setSwitchModal, renderSwitchModal] = useModalState();
@@ -278,207 +268,76 @@ const SingleSignupContainerV2 = ({
     const [subUserModalProps, setSubUserModal, renderSubUserModal] = useModalState();
     const [accessModalProps, setHasAccessModal, renderAccessModal] = useModalState();
 
-    const [loadingDependencies, withLoadingDependencies] = useLoading(true);
-
     const [signupParameters, setSignupParameters] = useState((): SignupParameters2 => {
-        const searchParams = new URLSearchParams(location.search);
-        if (toApp !== APPS.PROTONWALLET && !visionarySignupEnabled && searchParams.get('plan') === PLANS.VISIONARY) {
-            searchParams.delete('plan');
-        }
-        const result = getSignupSearchParams(location.pathname, searchParams);
-        if (!result.email && initialSearchParams) {
-            result.email = initialSearchParams.get('email') || result.email;
-        }
-
-        let localID = Number(searchParams.get('u') || undefined);
-        let mode = SignupMode.Default;
-
-        // pass new user invite
-        const inviter = searchParams.get('inviter');
-        const invitee = searchParams.get('invitee') || searchParams.get('invited');
-        let invite: SignupParameters2['invite'] = undefined;
-
-        const preVerifiedAddressToken = searchParams.get('preVerifiedAddressToken') || undefined;
-
-        // pass from simplelogin
-        const slEmail = searchParams.get('slEmail');
-        const emailUnspecified = slEmail === 'unspecified';
-
-        if (getIsPassApp(toApp)) {
-            if (invitee && inviter) {
-                mode = SignupMode.Invite;
-                localID = -1;
-                invite = {
-                    type: 'pass',
-                    data: { inviter, invitee, preVerifiedAddressToken },
-                };
-            }
-
-            if (slEmail) {
-                mode = SignupMode.PassSimpleLogin;
-                localID = -1;
-                invite = {
-                    type: 'pass',
-                    data: { invitee: emailUnspecified ? '' : slEmail },
-                };
-            }
-        }
-
-        let signIn: SignupParameters2['signIn'] = 'standard';
-
-        if (isMailTrial) {
-            result.referrer = REFERRER_CODE_MAIL_TRIAL;
-        }
-
-        const externalInvitationID = searchParams.get('externalInvitationID');
-        const email = result.email;
-        if (toApp === APPS.PROTONDRIVE && externalInvitationID && email && preVerifiedAddressToken) {
-            mode = SignupMode.Invite;
-            localID = -1;
-            invite = {
-                type: 'drive',
-                data: { invitee: email, externalInvitationID, preVerifiedAddressToken },
-            };
-            result.preSelectedPlan = PLANS.FREE;
-        }
-
-        if (toApp === APPS.PROTONWALLET && email && preVerifiedAddressToken) {
-            mode = SignupMode.Invite;
-            localID = -1;
-            invite = {
-                type: 'wallet',
-                data: { invitee: email, preVerifiedAddressToken },
-            };
-            result.preSelectedPlan = PLANS.FREE;
-        } else if (
-            toApp === APPS.PROTONWALLET &&
-            // If it's not visionary or wallet, force free selection
-            !new Set([PLANS.VISIONARY, PLANS.WALLET]).has(result.preSelectedPlan as any)
-        ) {
-            // TODO: WalletEA
-            result.preSelectedPlan = PLANS.FREE;
-        }
-
-        if (result.referrer) {
-            mode = SignupMode.MailReferral;
-            localID = -1;
-            result.cycle = CYCLE.MONTHLY;
-            result.hideFreePlan = false;
-
-            invite = {
-                type: 'mail',
-                data: {
-                    referrer: result.referrer,
-                    invite: result.invite,
-                },
-            };
-        }
-
-        if (location.state?.invite) {
-            mode = SignupMode.Default;
-            localID = -1;
-            result.hideFreePlan = false;
-            invite = {
-                type: 'generic',
-                data: {
-                    selector: location.state.invite.selector,
-                    token: location.state.invite.token,
-                },
-            };
-        }
-
-        return {
-            ...result,
-            localID: Number.isInteger(localID) ? localID : undefined,
-            signIn,
-            mode,
-            invite,
-        };
+        return getSignupParameters({ toApp, location, visionarySignupEnabled, initialSearchParams, isMailTrial });
     });
 
     const theme = getPublicTheme(toApp, audience, viewportWidth, signupParameters);
 
-    const signupConfiguration = (() => {
-        const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
-        const plan = getPlanFromPlanIDs(model.plansMap, planIDs) || FREE_PLAN;
+    const [model, setModel] = useState<SignupModelV2>(() => {
+        // Add free plan
+        const plans = cachedPlans;
+        const plansMap = cachedPlansMap;
+        const currency = 'CHF';
+        const cycle = signupParameters.cycle || DEFAULT_CYCLE;
 
-        if (toApp === APPS.PROTONDRIVE || toApp === APPS.PROTONDOCS) {
-            return getDriveConfiguration({
-                audience,
-                freePlan: model.freePlan,
-                mode: signupParameters.mode,
-                plan,
-                plansMap: model.plansMap,
-                isLargeViewport: viewportWidth['>=large'],
-                hideFreePlan: signupParameters.hideFreePlan,
-                toApp,
-            });
-        }
-        if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
-            return getMailConfiguration({
-                audience,
-                mode: signupParameters.mode,
-                plan,
-                planParameters: model.planParameters,
-                plansMap: model.plansMap,
-                isLargeViewport: viewportWidth['>=large'],
-                vpnServersCountData,
-                hideFreePlan: signupParameters.hideFreePlan,
-                freePlan: model.freePlan,
-            });
-        }
-        if (getIsPassApp(toApp)) {
-            const currentPlanName = model.session?.organization?.PlanName;
-            const showPassFamily = currentPlanName === PLANS.PASS || currentPlanName === undefined;
-
-            return getPassConfiguration({
-                showPassFamily,
-                audience,
-                isLargeViewport: viewportWidth['>=large'],
-                vpnServersCountData,
-                hideFreePlan: signupParameters.hideFreePlan,
-                mode: signupParameters.mode,
-                isPaidPassVPNBundle: !!planIDs[PLANS.VPN_PASS_BUNDLE],
-                isPaidPass: [
-                    PLANS.VISIONARY,
-                    PLANS.FAMILY,
-                    PLANS.BUNDLE,
-                    PLANS.BUNDLE_PRO,
-                    PLANS.BUNDLE_PRO_2024,
-                    PLANS.VPN_PASS_BUNDLE,
-                    PLANS.PASS,
-                    PLANS.PASS_BUSINESS,
-                    PLANS.PASS_PRO,
-                    PLANS.PASS_FAMILY,
-                    PLANS.PASS_LIFETIME,
-                ].some((plan) => planIDs[plan]),
-                plan,
-            });
-        }
-        if (toApp === APPS.PROTONWALLET) {
-            return getWalletConfiguration({
-                audience,
-                plan,
-                signedIn: Boolean(model.session),
-                isLargeViewport: viewportWidth['>=large'],
-                vpnServersCountData,
-                hideFreePlan: signupParameters.hideFreePlan,
-                mode: signupParameters.mode,
-            });
-        }
-        return getGenericConfiguration({
-            theme,
+        const signupConfiguration = getSignupConfiguration({
+            toApp,
             audience,
-            mode: signupParameters.mode,
-            plan,
-            freePlan: model.freePlan,
-            planParameters: model.planParameters,
-            plansMap: model.plansMap,
-            isLargeViewport: viewportWidth['>=large'],
-            vpnServersCountData,
-            hideFreePlan: signupParameters.hideFreePlan,
+            signupParameters,
+            viewportWidth,
+            theme,
+            model: defaultSignupModel,
+            vpnServersCountData: defaultSignupModel.vpnServersCountData,
         });
-    })();
+
+        const planParameters = getPlanIDsFromParams(plans, 'CHF', signupParameters, signupConfiguration.defaults);
+        const planIDs = planParameters.planIDs;
+
+        const subscriptionData: SubscriptionData = {
+            currency,
+            cycle,
+            planIDs,
+            billingAddress: {
+                CountryCode: '',
+                State: '',
+            },
+            checkResult: {
+                ...getOptimisticCheckResult({ planIDs, plansMap, cycle, currency }),
+                Currency: currency,
+                PeriodEnd: 0,
+            },
+        };
+
+        return {
+            ...defaultSignupModel,
+            plans,
+            plansMap,
+            planParameters,
+            subscriptionData,
+        };
+    });
+    const setModelDiff = useCallback((diff: Partial<SignupModelV2>) => {
+        return setModel((model) => ({
+            ...model,
+            ...diff,
+        }));
+    }, []);
+
+    const UID = model.session?.resumedSessionResult.UID;
+    const normalApi = UID ? getUIDApi(UID, unauthApi) : unauthApi;
+    const vpnServersCountData = model.vpnServersCountData;
+    const silentApi = getSilentApi(normalApi);
+
+    const signupConfiguration = getSignupConfiguration({
+        toApp,
+        audience,
+        signupParameters,
+        viewportWidth,
+        theme,
+        model,
+        vpnServersCountData,
+    });
     const {
         planCards,
         product,
@@ -640,7 +499,9 @@ const SingleSignupContainerV2 = ({
         const plansMap = getPlansMap(model.plans, newCurrency, false);
 
         // if there is session, then use auth api, if there is no, then use unauth
-        const silentApi = getSilentApi(model.session ? getUIDApi(model.session.UID, unauthApi) : unauthApi);
+        const silentApi = getSilentApi(
+            model.session ? getUIDApi(model.session.resumedSessionResult.UID, unauthApi) : unauthApi
+        );
         const paymentsApi = getPaymentsApi(silentApi);
 
         const subscriptionDataCycleMapping = await getSubscriptionDataCycleMapping(
@@ -658,37 +519,69 @@ const SingleSignupContainerV2 = ({
     };
 
     useEffect(() => {
-        const fetchDependencies = async () => {
-            await startUnAuthFlow().catch(noop);
+        const getSessionsData = async (
+            api: Api
+        ): Promise<{
+            sessions: LocalSessionPersisted[];
+            session: ResumedSessionResult | undefined;
+        }> => {
+            if (signupParameters.localID === -1) {
+                return {
+                    sessions: [],
+                    session: undefined,
+                };
+            }
 
-            const maybeSession = (() => {
-                if (signupParameters.localID === -1 || !activeSessions?.length) {
-                    return undefined;
+            let { sessions, session } = await (async () => {
+                if (activeSessions?.length) {
+                    return {
+                        sessions: activeSessions,
+                        session: undefined,
+                    };
                 }
-                return (
-                    activeSessions.find((session) => session.persisted.localID === signupParameters.localID) ||
-                    activeSessions[0]
-                );
+
+                const activeSessionsResult = await onGetActiveSessions?.();
+                if (activeSessionsResult) {
+                    return {
+                        sessions: activeSessionsResult.sessions,
+                        session: activeSessionsResult.session,
+                    };
+                }
+
+                return {
+                    sessions: [],
+                    session: undefined,
+                };
             })();
 
-            let silentApi = getSilentApi(unauthApi);
-            let resumedSession: ResumedSessionResult | undefined;
-            if (maybeSession?.persisted.UID) {
-                // Try to resume the session first so that in case it's expired, the rest of the flow is fine.
-                resumedSession = await resumeSession({
-                    api: silentApi,
-                    localID: maybeSession?.persisted.localID,
+            if (!session && sessions.length) {
+                const firstSession = sessions[0];
+                session = await resumeSession({
+                    api,
+                    localID: firstSession.persisted.localID,
                 }).catch(noop);
-                if (resumedSession) {
-                    silentApi = getUIDApi(resumedSession.UID, silentApi);
-                }
             }
 
+            return {
+                sessions,
+                session,
+            };
+        };
+
+        const fetchDependencies = async () => {
+            await startUnAuthFlow().catch(noop);
+            let silentApi = getSilentApi(unauthApi);
+
+            const sessionsData = await getSessionsData(silentApi);
+            const resumedSession = sessionsData.session;
+
             let chargebeeEnabled = undefined;
-            if (resumedSession?.UID && resumedSession?.User) {
-                const user: User = resumedSession.User;
-                chargebeeEnabled = await isChargebeeEnabled(resumedSession?.UID, async () => user);
+            if (resumedSession) {
+                silentApi = getUIDApi(resumedSession.UID, silentApi);
+                const user = resumedSession.User;
+                chargebeeEnabled = await isChargebeeEnabled(resumedSession.UID, async () => user);
             }
+
             const paymentsApi = getPaymentsApi(silentApi, chargebeeEnabled?.result);
 
             const { plans, freePlan } = await getPlans({ api: silentApi });
@@ -763,14 +656,7 @@ const SingleSignupContainerV2 = ({
             let session: SessionData | undefined;
             if (resumedSession) {
                 session = {
-                    user: resumedSession.User,
-                    UID: resumedSession.UID,
-                    keyPassword: resumedSession.keyPassword,
-                    localID: resumedSession.LocalID,
-                    persistent: resumedSession.persistent,
-                    trusted: resumedSession.trusted,
-                    clientKey: resumedSession.clientKey,
-                    offlineKey: resumedSession.offlineKey,
+                    resumedSessionResult: resumedSession,
                     ...userInfo,
                 };
             }
@@ -808,9 +694,10 @@ const SingleSignupContainerV2 = ({
                 subscriptionData,
                 cache: undefined,
                 source: signupParameters.source,
+                loadingDependencies: false,
             });
 
-            if (session?.user) {
+            if (session?.resumedSessionResult.User) {
                 triggerModals({
                     planParameters,
                     session,
@@ -843,23 +730,21 @@ const SingleSignupContainerV2 = ({
             });
         };
 
-        void withLoadingDependencies(
-            fetchDependencies()
-                .then(() => {
-                    metrics.core_single_signup_fetchDependencies_total.increment({
-                        status: 'success',
-                    });
-                })
-                .catch((error) => {
-                    setError(error);
+        void fetchDependencies()
+            .then(() => {
+                metrics.core_single_signup_fetchDependencies_total.increment({
+                    status: 'success',
+                });
+            })
+            .catch((error) => {
+                setError(error);
 
-                    observeApiError(error, (status) =>
-                        metrics.core_single_signup_fetchDependencies_total.increment({
-                            status,
-                        })
-                    );
-                })
-        );
+                observeApiError(error, (status) =>
+                    metrics.core_single_signup_fetchDependencies_total.increment({
+                        status,
+                    })
+                );
+            });
 
         return () => {};
     }, []);
@@ -993,14 +878,7 @@ const SingleSignupContainerV2 = ({
             });
 
             const session: SessionData = {
-                user,
-                UID: authSession.UID,
-                localID: authSession.LocalID,
-                keyPassword: authSession.keyPassword,
-                trusted: authSession.trusted,
-                persistent: authSession.persistent,
-                clientKey: authSession.clientKey,
-                offlineKey: authSession.offlineKey,
+                resumedSessionResult: authSession,
                 ...userInfo,
             };
 
@@ -1053,10 +931,9 @@ const SingleSignupContainerV2 = ({
     }
 
     const canGenerateMnemonic = (() => {
-        const user = model.session?.user;
+        const user = model.session;
         if (user) {
             return false;
-            //return generateMnemonic && isPrivate(user) && user.Keys.length > 0 && getCanReactiveMnemonic(user);
         }
         return generateMnemonic;
     })();
@@ -1066,15 +943,8 @@ const SingleSignupContainerV2 = ({
     const handleLoginUser = async (cache: UserCacheResult) => {
         try {
             await onLogin({
-                UID: cache.session.UID,
-                keyPassword: cache.session.keyPassword,
+                ...cache.session.resumedSessionResult,
                 flow: 'login',
-                LocalID: cache.session.localID,
-                User: cache.session.user,
-                trusted: cache.session.trusted,
-                persistent: cache.session.persistent,
-                clientKey: cache.session.clientKey,
-                offlineKey: cache.session.offlineKey,
             });
 
             metrics.core_single_signup_complete_total.increment({
@@ -1173,26 +1043,27 @@ const SingleSignupContainerV2 = ({
             if (!canGenerateMnemonic || !setupMnemonic.generate) {
                 return;
             }
-            const user = cache.session.user;
+            const user = cache.session.resumedSessionResult.User;
             const emailAddress = user.Email || user.Name || '';
             const mnemonicData = await handleSetupMnemonic({
                 api: silentApi,
                 setupMnemonic,
                 user,
-                keyPassword: cache.session.keyPassword,
+                keyPassword: cache.session.resumedSessionResult.keyPassword,
                 emailAddress,
             });
             return mnemonicData;
         };
 
         const run = async () => {
+            const isAuthenticated = !!model.session?.resumedSessionResult.UID;
             await handleSubscribeUser(
                 silentApi,
                 cache.subscriptionData,
                 undefined,
                 productParam,
-                getReportPaymentSuccess(cache.subscriptionData, !!model.session?.UID),
-                getReportPaymentFailure(cache.subscriptionData, !!model.session?.UID)
+                getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
+                getReportPaymentFailure(cache.subscriptionData, isAuthenticated)
             );
 
             if (cache.setupData) {
@@ -1216,6 +1087,7 @@ const SingleSignupContainerV2 = ({
 
     const handleSetupNewUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
         const setupMnemonic = await getMnemonicSetup();
+        const isAuthenticated = !!model.session?.resumedSessionResult.UID;
 
         const [result] = await Promise.all([
             handleSetupUser({
@@ -1223,8 +1095,8 @@ const SingleSignupContainerV2 = ({
                 api: silentApi,
                 ignoreVPN: true,
                 setupMnemonic,
-                reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, !!model.session?.UID),
-                reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, !!model.session?.UID),
+                reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
+                reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
             }),
             wait(3500),
         ]);
@@ -1252,7 +1124,7 @@ const SingleSignupContainerV2 = ({
             )}
             {renderSwitchModal && (
                 <SwitchModal
-                    user={model.session?.user}
+                    user={model.session?.resumedSessionResult.User}
                     sessions={activeSessions}
                     {...switchModalProps}
                     onSwitchSession={async (props) => {
@@ -1261,7 +1133,6 @@ const SingleSignupContainerV2 = ({
                     }}
                 />
             )}
-            {loadingDependencies && <>{loader}</>}
             {renderUnlockModal && (
                 <UnlockModal
                     {...unlockModalProps}
@@ -1354,17 +1225,20 @@ const SingleSignupContainerV2 = ({
             <UnAuthenticated theme={theme.type}>
                 {model.step === Steps.Account && (
                     <Step1
+                        initialSessionsLength={initialSessionsLength}
                         signupConfiguration={signupConfiguration}
                         activeSessions={activeSessions}
                         signupParameters={signupParameters}
                         relativePrice={relativePrice}
                         step1Ref={step1Ref}
-                        className={loadingDependencies ? 'visibility-hidden' : undefined}
                         isLargeViewport={viewportWidth['>=large']}
                         api={normalApi}
                         measure={measure}
                         currentPlan={model.upsell.currentPlan}
                         onOpenSwitch={() => {
+                            if (model.loadingDependencies) {
+                                return;
+                            }
                             setSwitchModal(true);
                         }}
                         onOpenLogin={(options) => {
@@ -1498,7 +1372,7 @@ const SingleSignupContainerV2 = ({
                             steps={(() => {
                                 const hasPlans = hasPlanIDs(model.subscriptionData.planIDs);
                                 const hasPayment = hasPlans && model.subscriptionData.checkResult.AmountDue > 0;
-                                const hasSession = !!model.session?.user;
+                                const hasSession = !!model.session?.resumedSessionResult.User;
 
                                 const list = [
                                     hasPayment && c('pass_signup_2023: Info').t`Verifying your payment`,
