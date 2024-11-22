@@ -16,7 +16,7 @@ import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
-import { useFileUploadInput, useFolderUploadInput, useFolderView } from '../../../../store';
+import { useActions, useFileUploadInput, useFolderUploadInput, useFolderView } from '../../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../../store/_documents';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { CreateDocumentButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
@@ -33,6 +33,7 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
     const isDesktop = !getDevice()?.type;
 
     const { activeFolder } = useActiveShare();
+    const { createFolder } = useActions();
     const folderView = useFolderView(activeFolder);
     const isEditor = useMemo(() => getCanWrite(folderView.permissions), [folderView.permissions]);
     const {
@@ -76,7 +77,9 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
                     <UploadFileButton onClick={fileClick} />
                     {isDesktop && <UploadFolderButton onClick={folderClick} />}
                     <hr className="my-2" />
-                    <CreateNewFolderButton onClick={() => showCreateFolderModal({})} />
+                    <CreateNewFolderButton
+                        onClick={() => showCreateFolderModal({ folder: activeFolder, createFolder })}
+                    />
                     {isDocsEnabled && (
                         <CreateDocumentButton
                             onClick={() => {
