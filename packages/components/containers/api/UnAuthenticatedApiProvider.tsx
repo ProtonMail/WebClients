@@ -24,6 +24,11 @@ const UnAuthenticatedApiProvider = ({ children }: Props) => {
     });
 
     useEffect(() => {
+        challengeRefLogin.current
+            ?.getChallenge()
+            .catch(noop)
+            .then((data) => setChallenge(data))
+            .catch(noop);
         setup().catch((e) => {
             setError(e);
         });
@@ -35,21 +40,7 @@ const UnAuthenticatedApiProvider = ({ children }: Props) => {
 
     return (
         <ApiContext.Provider value={apiCallback}>
-            <Challenge
-                className="h-0 absolute"
-                empty
-                tabIndex={-1}
-                challengeRef={challengeRefLogin}
-                name="unauth"
-                type={0}
-                onSuccess={async () => {
-                    const challenge = await challengeRefLogin.current?.getChallenge().catch(noop);
-                    setChallenge(challenge);
-                }}
-                onError={() => {
-                    setChallenge(undefined);
-                }}
-            />
+            <Challenge empty tabIndex={-1} challengeRef={challengeRefLogin} name="unauth" type={0} />
             {children}
         </ApiContext.Provider>
     );

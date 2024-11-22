@@ -8,7 +8,6 @@ import { Button, Href, InlineLinkButton } from '@proton/atoms';
 import type { ChallengeRef, ChallengeResult } from '@proton/components';
 import {
     Challenge,
-    ChallengeError,
     Checkbox,
     Icon,
     Info,
@@ -43,7 +42,6 @@ import noop from '@proton/utils/noop';
 import type { Paths } from '../content/helper';
 import SupportDropdown from '../public/SupportDropdown';
 import { defaultPersistentKey } from '../public/helper';
-import Loader from '../signup/Loader';
 import SignupButton from './SignupButton';
 
 export interface LoginFormRef {
@@ -113,8 +111,6 @@ const LoginForm = ({
 
     const usernameRef = useRef<HTMLInputElement>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
-    const [challengeLoading, setChallengeLoading] = useState(true);
-    const [challengeError, setChallengeError] = useState(false);
     const [externalSSOState, setExternalSSOState] = useState<
         | {
               challengeResult: ChallengeResult;
@@ -125,20 +121,11 @@ const LoginForm = ({
     >(undefined);
     const onceRef = useRef(false);
 
-    const loading = Boolean(challengeLoading);
-
     useImperativeHandle(loginFormRef, () => ({
         getIsLoading: () => {
-            return Boolean(loading || submitting || externalSSOState);
+            return Boolean(submitting || externalSSOState);
         },
     }));
-
-    useEffect(() => {
-        if (loading) {
-            return;
-        }
-        usernameRef.current?.focus();
-    }, [loading]);
 
     const { validator, onFormSubmit } = useFormErrors();
 
@@ -311,7 +298,6 @@ const LoginForm = ({
     useEffect(() => {
         if (
             submitting ||
-            loading ||
             !externalSSO.options ||
             !externalSSO.options.token ||
             authType !== AuthType.ExternalSSO ||
@@ -327,7 +313,7 @@ const LoginForm = ({
                 payload: undefined,
             })
         ).catch(noop);
-    }, [loading]);
+    }, []);
 
     const abortExternalSSO = () => {
         externalSSOState?.abortController.abort();
@@ -346,20 +332,10 @@ const LoginForm = ({
         };
     }, []);
 
-    if (challengeError) {
-        return <ChallengeError />;
-    }
-
     return (
         <>
-            {loading && (
-                <div className="text-center absolute inset-center">
-                    <Loader />
-                </div>
-            )}
             <form
                 name="loginForm"
-                className={loading ? 'visibility-hidden' : undefined}
                 onSubmit={(event) => {
                     event.preventDefault();
                     setErrorMsg(null);
@@ -378,24 +354,11 @@ const LoginForm = ({
                 }}
                 method="post"
             >
-                <Challenge
-                    className="h-0 absolute"
-                    empty
-                    tabIndex={-1}
-                    challengeRef={challengeRefLogin}
-                    type={0}
-                    name="login"
-                    onSuccess={() => {
-                        setChallengeLoading(false);
-                    }}
-                    onError={() => {
-                        setChallengeLoading(false);
-                        setChallengeError(true);
-                    }}
-                />
+                <Challenge empty tabIndex={-1} challengeRef={challengeRefLogin} type={0} name="login" />
                 <InputFieldTwo
                     id="username"
                     bigger
+                    autoFocus
                     label={authType === AuthType.ExternalSSO ? c('Label').t`Email` : c('Label').t`Email or username`}
                     error={validator([requiredValidator(username)]) || !!errorMsg}
                     disableChange={submitting}
