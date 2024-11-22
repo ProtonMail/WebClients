@@ -15,6 +15,7 @@ export const getNotifications = async (): Promise<MaybeNull<InAppNotifications>>
             startTime: notification.StartTime,
             endTime: notification.EndTime ?? null,
             state: notification.State,
+            priority: notification.Priority,
             content: {
                 imageUrl: notification.Content.ImageUrl ?? null,
                 displayType: notification.Content.DisplayType,
