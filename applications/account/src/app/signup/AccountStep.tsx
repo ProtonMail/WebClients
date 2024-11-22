@@ -246,6 +246,8 @@ const AccountStep = ({
                     handleSubmit();
                 }
             }}
+            readOnly={disableChange}
+            disableReadOnlyField={disableChange}
         />
     );
 

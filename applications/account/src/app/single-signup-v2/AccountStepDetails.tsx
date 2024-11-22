@@ -682,7 +682,6 @@ const AccountStepDetails = ({
                                         }
                                     })()}
                                     disabled={emailDisabled}
-                                    readOnly={emailReadOnly}
                                     dense={dense ? !emailError : undefined}
                                     rootClassName={dense ? (!emailError ? 'pb-2' : undefined) : undefined}
                                     value={details.email}
@@ -699,6 +698,14 @@ const AccountStepDetails = ({
                                             setInputsStateDiff({ email: { focus: true } });
                                         }
                                     }}
+                                    {...(() => {
+                                        if (emailReadOnly) {
+                                            return { readOnly: emailReadOnly };
+                                        }
+                                        if (disableChangeForChallenge) {
+                                            return { readOnly: true, disableReadOnlyField: true };
+                                        }
+                                    })()}
                                 />
                             )}
 
@@ -803,6 +810,8 @@ const AccountStepDetails = ({
                                             setInputsStateDiff({ username: { focus: true } });
                                         }
                                     }}
+                                    readOnly={disableChangeForChallenge}
+                                    disableReadOnlyField={disableChangeForChallenge}
                                 />
                             )}
                         </div>

@@ -43,6 +43,7 @@ export interface InputFieldOwnProps {
     inputContainerClassName?: string;
     'data-testid'?: string;
     readOnly?: boolean;
+    disableReadOnlyField?: boolean;
 }
 
 export type InputFieldProps<E extends ElementType> = PolymorphicPropsWithRef<InputFieldOwnProps, E>;
@@ -71,7 +72,8 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         suffix,
         as,
         'data-testid': dataTestId,
-        readOnly = false,
+        readOnly,
+        disableReadOnlyField,
         ...rest
     }: InputFieldProps<E>,
     ref: ForwardedRef<Element>
@@ -91,7 +93,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
             Boolean(error) && errorClassName,
             Boolean(warning) && !error && 'field-two--warning',
             bigger && 'field-two--bigger',
-            readOnly && 'field-two--readonly',
+            readOnly && !disableReadOnlyField && 'field-two--readonly',
             rootClassName,
         ]),
         labelContainer: clsx([
