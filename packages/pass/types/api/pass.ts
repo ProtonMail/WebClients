@@ -182,7 +182,7 @@ export type ItemsToTrashRequest = {
 
 export type ItemsToSoftDeleteRequest = {
     /** ItemIDs with their current revision. At most 100 items. */
-    Items: ItemIDRevision2[];
+    Items: ItemIDRevision[];
     /** Skip checking that the items are in the trash. Allows to delete directly */
     SkipTrash?: boolean | null;
 };
@@ -719,7 +719,7 @@ export type ItemLatestKeyResponse = {
 
 export type ItemGetKeysResponse = {
     /** Keys */
-    Keys: ItemKeyResponse[];
+    Keys: EncodedItemKeyRotation[];
     /** Total number of keys */
     Total: number;
 };
@@ -1015,19 +1015,19 @@ export type ItemIDRevision = {
     Revision: number;
 };
 
-export type ItemIDRevision2 = {
-    /** ItemID */
-    ItemID: string;
-    /** Current revision for the item */
-    Revision: number;
-};
-
 export type ItemMarkAsReadRequest = { ItemID: EncryptedId; Timestamp: number };
 
 export type ItemHistoryRequest = {
     /** Revision id for this entry */
     Revision: number;
     Item: ItemCreateRequest;
+};
+
+export type EncodedItemKeyRotation = {
+    /** Rotation for this key */
+    KeyRotation: number;
+    /** Base64 encoded key */
+    Key: string;
 };
 
 export type EncodedKeyRotationItemKey = {
@@ -1054,9 +1054,9 @@ export type EncryptedKeyWithRotation = {
 };
 
 export enum InAppNotificationState {
-    undefined_0 = 0,
-    undefined_1 = 1,
-    undefined_2 = 2,
+    UNREAD = 0,
+    READ = 1,
+    DISMISSED = 2,
 }
 
 export type Id = string;
@@ -1201,13 +1201,6 @@ export type ItemRevisionResponse = {
     ModifyTime: number;
     /** Creation time of this revision */
     RevisionTime: number;
-};
-
-export type ItemKeyResponse = {
-    /** Rotation for this key */
-    KeyRotation: number;
-    /** Base64 encoded key */
-    Key: string;
 };
 
 export type PendingShareKeyGetResponse = {
@@ -1420,7 +1413,7 @@ export type InAppNotificationContent = {
     /** Theme of the notification */
     Theme?: string | null;
     /** CTA of the notification */
-    Cta?: undefined | null;
+    Cta?: InAppNotificationCta;
 };
 
 export enum PlanType {
@@ -1439,8 +1432,8 @@ export type BreachCountry = {
 };
 
 export enum InAppNotificationDisplayType {
-    undefined_0 = 0,
-    undefined_1 = 1,
+    BANNER = 0,
+    MODAL = 1,
 }
 
 export type InAppNotificationCta = {
