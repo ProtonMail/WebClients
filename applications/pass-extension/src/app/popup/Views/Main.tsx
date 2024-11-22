@@ -7,13 +7,13 @@ import { usePopupStateEffects } from 'proton-pass-extension/lib/hooks/usePopupSt
 
 import { useNotifications } from '@proton/components';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { InAppMessagesProvider } from '@proton/pass/components/InAppMessages/InAppMessagesProvider';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
 import { Items } from '@proton/pass/components/Item/Items';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
-import { PassNotificationProvider } from '@proton/pass/components/Notifications/PassNotificationProvider';
 import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
 import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
@@ -78,7 +78,7 @@ export const Main: FC = () => {
                     <ItemActionsProvider>
                         <InviteProvider>
                             <PasswordProvider>
-                                <PassNotificationProvider>
+                                <InAppMessagesProvider>
                                     <SpotlightProvider>
                                         {lockSetup ? (
                                             <LockOnboarding onCancel={() => logout({ soft: true })} />
@@ -86,7 +86,7 @@ export const Main: FC = () => {
                                             <MainSwitch />
                                         )}
                                     </SpotlightProvider>
-                                </PassNotificationProvider>
+                                </InAppMessagesProvider>
                             </PasswordProvider>
                         </InviteProvider>
                     </ItemActionsProvider>

@@ -12,6 +12,7 @@ import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvi
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
+import { InAppMessagesProvider } from '@proton/pass/components/InAppMessages/InAppMessagesProvider';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
@@ -19,7 +20,6 @@ import { Items } from '@proton/pass/components/Item/Items';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
-import { PassNotificationProvider } from '@proton/pass/components/Notifications/PassNotificationProvider';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
 import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
@@ -142,13 +142,13 @@ export const Main: FC = () => {
                         <InviteProvider>
                             <VaultActionsProvider>
                                 <PasswordProvider>
-                                    <PassNotificationProvider>
-                                        <SpotlightProvider>
+                                    <SpotlightProvider>
+                                        <InAppMessagesProvider>
                                             <OnboardingProvider>
                                                 {lockSetup ? <LockOnboarding onCancel={logout} /> : <MainSwitch />}
                                             </OnboardingProvider>
-                                        </SpotlightProvider>
-                                    </PassNotificationProvider>
+                                        </InAppMessagesProvider>
+                                    </SpotlightProvider>
                                 </PasswordProvider>
                             </VaultActionsProvider>
                         </InviteProvider>
