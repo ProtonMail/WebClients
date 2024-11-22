@@ -7,6 +7,7 @@ import {
 } from "@proton/shared/lib/desktop/desktopTypes";
 import Logger from "electron-log";
 import * as Sentry from "@sentry/electron/renderer";
+import { disableMouseNavigation } from "@proton/shared/lib/desktop/disableMouseNavigation";
 
 const preloadLogger = Logger.scope("preload");
 
@@ -67,3 +68,5 @@ function addHostUpdateListener(eventType: IPCInboxHostUpdateMessageType, callbac
         },
     };
 }
+
+disableMouseNavigation();
