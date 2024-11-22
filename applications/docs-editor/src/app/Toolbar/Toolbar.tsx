@@ -1359,6 +1359,14 @@ export default function DocumentEditorToolbar({
                     {c('Action').t`Insert table`}
                   </DropdownMenuButton>
                 </ToolbarTooltip>
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  disabled={!isEditable}
+                  onClick={insertComment}
+                >
+                  <AddCommentIcon className="h-4 w-4 fill-current" />
+                  {c('Action').t`Insert comment`}
+                </DropdownMenuButton>
                 <hr className="my-1" />
               </>
             )}
