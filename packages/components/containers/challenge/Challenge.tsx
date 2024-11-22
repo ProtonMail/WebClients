@@ -12,8 +12,8 @@ interface Props extends Omit<ChallengeProps, 'src' | 'onError' | 'onSuccess'> {
     type: number;
     name: string;
     iframeClassName?: string;
-    onSuccess: (challengeLog: ChallengeLog[]) => void;
-    onError: (challengeLog: ChallengeLog[]) => void;
+    onSuccess?: (challengeLog: ChallengeLog[]) => void;
+    onError?: (challengeLog: ChallengeLog[]) => void;
 }
 
 const Challenge = ({
@@ -57,7 +57,7 @@ const Challenge = ({
             key={errorRetry}
             src={challengeSrc}
             errorTimeout={errorTimeout}
-            className={iframeClassName ? iframeClassName : 'w-full'}
+            className={iframeClassName}
             bodyClassName={bodyClassName}
             style={style}
             onSuccess={() => {

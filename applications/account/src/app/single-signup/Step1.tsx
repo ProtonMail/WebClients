@@ -371,8 +371,6 @@ const Step1 = ({
     hideFreePlan,
     upsellImg,
     measure,
-    onChallengeError,
-    onChallengeLoaded,
     className,
     loading,
     currencyUrlParam,
@@ -398,14 +396,11 @@ const Step1 = ({
     hideFreePlan: boolean;
     upsellImg: ReactElement;
     measure: Measure;
-    onChallengeError: () => void;
-    onChallengeLoaded: () => void;
     className?: string;
     loading: boolean;
     currencyUrlParam?: Currency;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
-    const [loadingChallenge, setLoadingChallenge] = useState(false);
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
     const { getPaymentsApi } = usePaymentsApi();
@@ -1261,17 +1256,8 @@ const Step1 = ({
                                         passwordFields={false}
                                         model={model}
                                         measure={measure}
-                                        loading={loadingChallenge}
                                         api={silentApi}
                                         accountStepDetailsRef={accountDetailsRef}
-                                        onChallengeError={() => {
-                                            setLoadingChallenge(false);
-                                            onChallengeError();
-                                        }}
-                                        onChallengeLoaded={() => {
-                                            setLoadingChallenge(false);
-                                            onChallengeLoaded();
-                                        }}
                                         disableChange={loadingSignup}
                                         onSubmit={
                                             hasSelectedFree

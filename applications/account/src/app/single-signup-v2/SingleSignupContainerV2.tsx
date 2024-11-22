@@ -279,7 +279,6 @@ const SingleSignupContainerV2 = ({
     const [accessModalProps, setHasAccessModal, renderAccessModal] = useModalState();
 
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
-    const [loadingChallenge, setLoadingChallenge] = useState(true);
 
     const [signupParameters, setSignupParameters] = useState((): SignupParameters2 => {
         const searchParams = new URLSearchParams(location.search);
@@ -812,8 +811,6 @@ const SingleSignupContainerV2 = ({
             });
 
             if (session?.user) {
-                setLoadingChallenge(false);
-
                 triggerModals({
                     planParameters,
                     session,
@@ -1264,7 +1261,7 @@ const SingleSignupContainerV2 = ({
                     }}
                 />
             )}
-            {(loadingDependencies || loadingChallenge) && <>{loader}</>}
+            {loadingDependencies && <>{loader}</>}
             {renderUnlockModal && (
                 <UnlockModal
                     {...unlockModalProps}
@@ -1362,7 +1359,7 @@ const SingleSignupContainerV2 = ({
                         signupParameters={signupParameters}
                         relativePrice={relativePrice}
                         step1Ref={step1Ref}
-                        className={loadingDependencies || loadingChallenge ? 'visibility-hidden' : undefined}
+                        className={loadingDependencies ? 'visibility-hidden' : undefined}
                         isLargeViewport={viewportWidth['>=large']}
                         api={normalApi}
                         measure={measure}
@@ -1383,16 +1380,6 @@ const SingleSignupContainerV2 = ({
                         setModel={setModel}
                         onSignOut={handleSignOut}
                         onChangeCurrency={changeCurrency}
-                        onChallengeError={() => {
-                            // Ignore errors that were caused when there's a user and it's not being signed out
-                            if (model.session?.user && !accountRef.current.signingOut) {
-                                return;
-                            }
-                            setError(new Error('Challenge error'));
-                        }}
-                        onChallengeLoaded={() => {
-                            setLoadingChallenge(false);
-                        }}
                         onComplete={async (data) => {
                             if (data.type === 'existing') {
                                 const { subscriptionData } = data;

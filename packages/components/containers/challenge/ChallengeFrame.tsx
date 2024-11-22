@@ -2,14 +2,13 @@ import type { DetailedHTMLProps, IframeHTMLAttributes, MutableRefObject, ReactNo
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { ICONS_ID } from '@proton/icons/constants';
+import clsx from '@proton/utils/clsx';
 
-import { THEME_ID } from '../themes/ThemeProvider';
 import { getStyleSrcUrls, getStyleSrcsData, handleEvent } from './challengeHelper';
 import type { ChallengeLog, ChallengeLogType, ChallengeRef, ChallengeResult } from './interface';
 
 export const ERROR_TIMEOUT_MS = 15000;
-export const CHALLENGE_TIMEOUT_MS = 9000;
+export const CHALLENGE_TIMEOUT_MS = ERROR_TIMEOUT_MS + 9000;
 
 type Stage = 'initialize' | 'initialized' | 'load' | 'loaded' | 'error';
 
@@ -18,6 +17,8 @@ export interface Props
     challengeRef: MutableRefObject<ChallengeRef | undefined>;
     children?: ReactNode;
     src: string;
+    getThemeData?: () => string | undefined;
+    getIconsData?: () => string | undefined;
     className?: string;
     empty?: boolean;
     bodyClassName?: string;
@@ -39,15 +40,18 @@ const ChallengeFrame = ({
     bodyClassName = '',
     challengeRef,
     src,
+    getIconsData,
+    getThemeData,
     hasSizeObserver,
     errorTimeout = ERROR_TIMEOUT_MS,
     challengeTimeout = CHALLENGE_TIMEOUT_MS,
     ...rest
 }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isRendered, setIsRendered] = useState(false);
     const renderDivRef = useRef<HTMLDivElement>(null);
     const breakpoints = useActiveBreakpoint();
+    const [iframeHeight, setIframeHeight] = useState(0);
 
     const targetOrigin = useMemo(() => {
         return new URL(src).origin;
@@ -55,6 +59,8 @@ const ChallengeFrame = ({
 
     useLayoutEffect(() => {
         let isMounted = true;
+        let mutationObserver: MutationObserver | undefined;
+        let domHandle: ReturnType<typeof setTimeout>;
 
         let stage: Stage = 'initialize';
         const setStage = (newStage: Stage) => {
@@ -98,14 +104,78 @@ const ChallengeFrame = ({
             handleError();
         }, errorTimeout);
 
-        let challengeResolve: (data: { [key: string]: string }) => void;
+        let challengeResolve: ((data: { [key: string]: string }) => void) | undefined;
+        let challengeReject: ((error: any) => void) | undefined;
+
+        const startDOMUpdates = () => {
+            const contentWindow = iframeRef.current?.contentWindow;
+            const renderDivEl = renderDivRef.current!;
+
+            if (!contentWindow || empty) {
+                return;
+            }
+
+            const sendUpdate = () => {
+                contentWindow.postMessage(
+                    {
+                        type: 'html',
+                        payload: `<div class='${breakpoints.activeBreakpoint}'>${renderDivEl.innerHTML}</div>`,
+                    },
+                    targetOrigin
+                );
+            };
+
+            mutationObserver = new MutationObserver(() => {
+                sendUpdate();
+            });
+
+            mutationObserver.observe(renderDivEl, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+            });
+
+            const rect = renderDivEl.getBoundingClientRect();
+            setIframeHeight(rect.height);
+            sendUpdate();
+        };
+
+        const requestChallenge = () => {
+            const iframe = iframeRef.current;
+            const contentWindow = iframe?.contentWindow;
+            if (!contentWindow) {
+                return;
+            }
+            contentWindow.postMessage(
+                {
+                    type: 'env.loaded',
+                    data: {
+                        targetOrigin: window.location.origin,
+                    },
+                },
+                targetOrigin
+            );
+            contentWindow.postMessage(
+                {
+                    type: 'submit.broadcast',
+                },
+                targetOrigin
+            );
+        };
 
         const handleLoaded = () => {
             if (!isMounted) {
                 return;
             }
-            setIsLoaded(true);
-            onSuccess?.();
+            startDOMUpdates();
+            // Small timeout to ensure the iframe has received the html
+            domHandle = setTimeout(() => {
+                onSuccess?.();
+                setIsRendered(true);
+            }, 33);
+            if (challengeResolve) {
+                requestChallenge();
+            }
         };
 
         const stylesPromise = empty ? Promise.resolve('') : getStyleSrcsData(getStyleSrcUrls());
@@ -145,22 +215,17 @@ const ChallengeFrame = ({
                             handleError();
                         }, errorTimeout);
 
-                        const themeNodeData = empty ? '' : (document.querySelector(`#${THEME_ID}`)?.innerHTML ?? '');
-                        const iconsNodeData = empty ? '' : (document.querySelector(`#${ICONS_ID}`)?.innerHTML ?? '');
+                        const themeNodeData = empty ? '' : getThemeData?.();
+                        const iconsNodeData = empty ? '' : getIconsData?.();
 
                         setStage('load');
-                        addLog(
-                            'Sending data',
-                            [themeNodeData, styles, iconsNodeData].map((x) => x.slice(0, 30)).join(' - '),
-                            'step'
-                        );
 
                         contentWindow.postMessage(
                             {
                                 type: 'load',
                                 payload: {
-                                    iconsRoot: `${iconsNodeData}`,
-                                    stylesRoot: `${styles}\n${themeNodeData}`,
+                                    iconsRoot: iconsNodeData || '',
+                                    stylesRoot: `${styles}\n${themeNodeData || ''}`,
                                     hasSizeObserver,
                                     bodyClassName,
                                 },
@@ -190,18 +255,19 @@ const ChallengeFrame = ({
             }
 
             if (eventDataType === 'rect' && stage === 'loaded' && eventDataPayload?.height !== undefined) {
-                iframe.classList.add('h-custom');
-                iframe.style.setProperty('--h-custom', `${eventDataPayload.height}px`);
+                setIframeHeight(eventDataPayload.height);
             }
 
             if (eventDataType === 'child.message.data' && stage === 'loaded') {
                 const messageData = eventData.data;
-                if (!messageData) {
+                if (!messageData || !challengeResolve) {
                     return;
                 }
-                challengeResolve?.({
+                challengeResolve({
                     [messageData.id]: messageData.fingerprint,
                 });
+                challengeReject = undefined;
+                challengeResolve = undefined;
             }
         };
 
@@ -222,27 +288,15 @@ const ChallengeFrame = ({
                 );
             },
             getChallenge: () => {
+                if (challengeReject) {
+                    challengeReject(new Error('Challenge abandoned'));
+                }
                 return new Promise<ChallengeResult | undefined>((resolve, reject) => {
-                    const contentWindow = iframeRef.current?.contentWindow;
-                    if (!contentWindow || stage !== 'loaded') {
-                        return reject(new Error('No iframe available'));
-                    }
                     challengeResolve = resolve;
-                    contentWindow.postMessage(
-                        {
-                            type: 'env.loaded',
-                            data: {
-                                targetOrigin: window.location.origin,
-                            },
-                        },
-                        targetOrigin
-                    );
-                    contentWindow.postMessage(
-                        {
-                            type: 'submit.broadcast',
-                        },
-                        targetOrigin
-                    );
+                    challengeReject = reject;
+                    if (stage === 'loaded') {
+                        requestChallenge();
+                    }
                     errorTimeoutHandle = window.setTimeout(() => {
                         reject(new Error('Challenge timeout'));
                     }, challengeTimeout);
@@ -256,39 +310,43 @@ const ChallengeFrame = ({
         return () => {
             window.removeEventListener('message', cb);
             clearTimeout(errorTimeoutHandle);
+            clearTimeout(domHandle);
             isMounted = false;
+            mutationObserver?.disconnect();
+            challengeReject?.(new Error('Challenge unmounted'));
         };
     }, []);
 
-    useLayoutEffect(() => {
-        const contentWindow = iframeRef.current?.contentWindow;
-        const renderDivEl = renderDivRef.current;
-        const iframe = iframeRef.current;
-        if (iframe && renderDivEl && (!hasSizeObserver || !isLoaded)) {
-            const rect = renderDivEl.getBoundingClientRect();
-            iframe.classList.add('h-custom');
-            iframe.style.setProperty('--h-custom', `${rect.height}px`);
-        }
-        if (!renderDivEl || !contentWindow || !isLoaded) {
-            return;
-        }
-        contentWindow.postMessage(
-            {
-                type: 'html',
-                payload: `<div class='${breakpoints.activeBreakpoint}'>${renderDivEl.innerHTML}</div>`,
-            },
-            targetOrigin
-        );
-    }, [isLoaded, breakpoints.activeBreakpoint, children, iframeRef.current, renderDivRef.current]);
+    const hiddenProps = {
+        style: {
+            '--left-custom': '-1000px',
+            '--top-custom': '-1000px',
+        },
+        ['aria-hidden']: true,
+        className: 'absolute top-custom left-custom',
+    };
+
+    const divProps =
+        isRendered || empty
+            ? {
+                  ...hiddenProps,
+                  className: `${hiddenProps.className} visibility-hidden`,
+              }
+            : undefined;
+
+    const iframeProps = empty
+        ? hiddenProps
+        : {
+              // We don't render the iframe off-screen to prevent fouc
+              className: clsx(className, 'h-custom', !isRendered && 'absolute visibility-hidden'),
+              style: {
+                  ['--h-custom']: `${iframeHeight}px`,
+              },
+          };
 
     return (
         <>
-            <div
-                ref={renderDivRef}
-                style={{ position: 'absolute', '--left-custom': '-1000px', '--top-custom': '-1000px' }}
-                aria-hidden="true"
-                className="visibility-hidden top-custom left-custom"
-            >
+            <div ref={renderDivRef} {...divProps}>
                 {children}
             </div>
             <iframe
@@ -296,8 +354,8 @@ const ChallengeFrame = ({
                 src={src}
                 ref={iframeRef}
                 title={title}
-                className={className}
                 sandbox="allow-scripts allow-same-origin allow-popups"
+                {...iframeProps}
             />
         </>
     );
