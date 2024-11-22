@@ -30,8 +30,10 @@ export type InAppNotification = {
     content: MessageContent;
 };
 
-export type UserInAppNotifications = {
+export type InAppNotifications = {
     notifications: InAppNotification[];
     total: number;
     lastId: MaybeNull<string>;
 };
+
+export type UpdateInAppNotificationDTO = Pick<InAppNotification, 'id' | 'state'>;

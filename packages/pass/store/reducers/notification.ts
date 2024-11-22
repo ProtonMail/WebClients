@@ -1,11 +1,12 @@
 import type { Reducer } from 'redux';
 
-import { getInAppNotifications } from '@proton/pass/store/actions';
-import type { UserInAppNotifications } from '@proton/pass/types/data/notification';
+import { getInAppNotifications, updateInAppNotificationState } from '@proton/pass/store/actions';
+import type { InAppNotifications } from '@proton/pass/types/data/notification';
 import { partialMerge } from '@proton/pass/utils/object/merge';
+import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
-export type NotificationReducerState = UserInAppNotifications & {
+export type NotificationReducerState = InAppNotifications & {
     nextDisplayTime: number;
 };
 
@@ -18,17 +19,24 @@ const getInitialState = (): NotificationReducerState => ({
 
 const reducer: Reducer<NotificationReducerState> = (state = getInitialState(), action) => {
     if (getInAppNotifications.success.match(action)) {
-        const userNotification = action.payload;
+        const notifications = action.payload;
 
-        if (!userNotification) return state;
+        if (!notifications) return state;
 
-        return partialMerge(state, userNotification);
+        return partialMerge(state, notifications);
     }
 
-    // TODO: When dismissing/reading the notification, update the nextDisplayTime + 30 mins
-    // "nextDisplayTime" manages the display timing for notifications on the client side.
-    // If there are two or more notifications, we should enforce a 30-minute interval between displays.
-    //return partialMerge(state, { ...userNotification, nextDisplayTime: state.nextDisplayTime ?? getEpoch() + UNIX_MINUTE * 30 });
+    if (updateInAppNotificationState.success.match(action)) {
+        const { id, state: notificationState } = action.payload;
+
+        const notifications = state.notifications.map((notification) =>
+            notification.id === id ? { ...notification, state: notificationState } : notification
+        );
+
+        // "nextDisplayTime" manages the display timing for notifications on the client side.
+        // If there are two or more notifications, we should enforce a 30-minute interval between displays.
+        return partialMerge(state, { notifications, nextDisplayTime: getEpoch() + UNIX_MINUTE * 30 });
+    }
 
     return state;
 };
