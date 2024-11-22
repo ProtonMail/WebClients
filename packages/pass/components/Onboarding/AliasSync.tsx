@@ -9,7 +9,7 @@ import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/Spo
 import { AliasSyncIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
 import { selectUserData } from '@proton/pass/store/selectors';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 export const AliasSync: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
@@ -26,6 +26,10 @@ export const AliasSync: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
                         `You have ${aliasCount} aliases that are present in SimpleLogin but missing in ${PASS_APP_NAME}. Would you like to sync them?`,
                         aliasCount
                     )}
+                    <span className="block text-sm">
+                        {c('Warning')
+                            .t`Once synced, deleting aliases in ${PASS_SHORT_APP_NAME} will also delete them in SimpleLogin.`}
+                    </span>
                 </span>
                 <div className="mt-2">
                     <Button
