@@ -6,14 +6,16 @@ import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useApi, useKTVerifier, useNotifications } from '@proton/components';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { mockUseFeature } from '@proton/testing/lib/mockUseFeature';
 import useFlag from '@proton/unleash/useFlag';
 
+import useKTVerifier from '../keyTransparency/useKTVerifier';
 import AddressesWithUser from './AddressesWithUser';
 
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));

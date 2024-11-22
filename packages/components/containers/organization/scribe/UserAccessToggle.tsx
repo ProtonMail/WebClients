@@ -1,18 +1,17 @@
 import { c } from 'ttag';
 
-import {
-    SettingsLayout,
-    SettingsLayoutLeft,
-    SettingsLayoutRight,
-    Toggle,
-    useApi,
-    useEventManager,
-    useNotifications,
-    useToggle,
-} from '@proton/components';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useToggle from '@proton/components/hooks/useToggle';
 import useLoading from '@proton/hooks/useLoading';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
+
+import SettingsLayout from '../../account/SettingsLayout';
+import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../../account/SettingsLayoutRight';
 
 interface Props {
     organization?: OrganizationWithSettings;
