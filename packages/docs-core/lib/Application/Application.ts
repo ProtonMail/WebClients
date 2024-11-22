@@ -19,15 +19,19 @@ import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 import type { UnleashClient } from '@proton/unleash'
 import type { AnyDocControllerInterface } from '../Controller/Document/AnyDocControllerInterface'
 import type { DocControllerInterface } from '../Controller/Document/DocControllerInterface'
+import { DocumentPropertiesState } from '../Services/State/DocumentPropertiesState'
 
 declare const window: CustomWindow
 
 export class Application implements ApplicationInterface {
+  public readonly sharedState = new DocumentPropertiesState()
+
   private readonly deps = new AppDependencies(
     this.protonApi,
     this.imageProxyParams,
     this.publicContextHeaders,
     this.compatWrapper,
+    this.sharedState,
     this.appVersion,
     this.unleashClient,
   )
