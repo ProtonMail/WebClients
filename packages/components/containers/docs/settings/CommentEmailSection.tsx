@@ -4,23 +4,17 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import { useDocsEmailNotificationsEnabled } from '@proton/components/hooks/docs/useDocsEmailNotificationsEnabled';
-
-import { useDocsEmailTitleEnabledSetting } from '../../../hooks/docs/useDocsEmailTitleEnabledSetting';
+import { useDocsNotificationsSettings } from '@proton/components/hooks/docs/useDocsNotificationsSettings';
 
 export const CommentEmailSection = () => {
     const {
-        emailTitleEnabled,
-        isLoading: isEmailTitleLoading,
-        isSubmitting: isEmailTitleSubmitting,
-        handleChange: handleEmailTitleChange,
-    } = useDocsEmailTitleEnabledSetting();
-    const {
         emailNotificationsEnabled,
-        isLoading: isEmailNotificationsLoading,
-        isSubmitting: isEmailNotificationsSubmitting,
-        handleChange: handleEmailNotificationsChange,
-    } = useDocsEmailNotificationsEnabled();
+        emailTitleEnabled,
+        isLoading,
+        isSubmitting,
+        changeDocumentTitleEnabledValue,
+        changeEmailNotificationsEnabledValue,
+    } = useDocsNotificationsSettings();
 
     return (
         <>
@@ -33,11 +27,11 @@ export const CommentEmailSection = () => {
                 <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="emails-enabled-toggle"
-                        disabled={isEmailNotificationsLoading}
-                        checked={emailNotificationsEnabled}
-                        loading={isEmailNotificationsSubmitting}
+                        disabled={isLoading}
+                        checked={emailNotificationsEnabled ?? false}
+                        loading={isSubmitting}
                         onChange={({ target }) => {
-                            void handleEmailNotificationsChange(target.checked);
+                            void changeEmailNotificationsEnabledValue(target.checked);
                         }}
                     />
                 </SettingsLayoutRight>
@@ -52,11 +46,11 @@ export const CommentEmailSection = () => {
                 <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="document-name-toggle"
-                        disabled={isEmailTitleLoading}
-                        checked={emailTitleEnabled}
-                        loading={isEmailTitleSubmitting}
+                        disabled={isLoading}
+                        checked={emailTitleEnabled ?? false}
+                        loading={isSubmitting}
                         onChange={({ target }) => {
-                            void handleEmailTitleChange(target.checked);
+                            void changeDocumentTitleEnabledValue(target.checked);
                         }}
                     />
                 </SettingsLayoutRight>
