@@ -708,8 +708,14 @@ export const getHasUpdatedInviteData = ({
     }
     const hasUpdatedDateTimes = hasModifiedDateTimes ?? getHasModifiedDateTimes(newVevent, oldVevent);
 
-    const keys: VcalComponentKeys[] = ['summary', 'description', 'location'];
-    const hasUpdatedTitleDescriptionOrLocation = keys.some((key) => {
+    const keys: VcalComponentKeys[] = [
+        'summary',
+        'description',
+        'location',
+        'x-pm-conference-id',
+        'x-pm-conference-url',
+    ];
+    const hasUpdatedNonBreakingKey = keys.some((key) => {
         const newValue = getSupportedStringValue(newVevent[key] as VcalStringProperty);
         const oldValue = getSupportedStringValue(oldVevent[key] as VcalStringProperty);
 
@@ -723,7 +729,7 @@ export const getHasUpdatedInviteData = ({
     });
 
     const hasUpdatedRrule = hasModifiedRrule ?? !getIsRruleEqual(newVevent.rrule, oldVevent.rrule);
-    return hasUpdatedDateTimes || hasUpdatedTitleDescriptionOrLocation || hasUpdatedRrule;
+    return hasUpdatedDateTimes || hasUpdatedNonBreakingKey || hasUpdatedRrule;
 };
 
 export const getInviteVeventWithUpdatedParstats = (
