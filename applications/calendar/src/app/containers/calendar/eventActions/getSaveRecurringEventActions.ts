@@ -57,6 +57,7 @@ import {
     getUpdateMergeVeventWithoutMaybeNotifications,
     getUpdateSingleEditMergeVevent,
     getUpdatedMainSeriesMergeEvent,
+    handleConferenceDataInMergedVeventIfNeeded,
 } from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getAddedAttendeesPublicKeysMap } from './inviteActions';
@@ -429,6 +430,9 @@ const getSaveRecurringEventActions = async ({
                   }),
               }
             : newVeventComponent;
+
+        handleConferenceDataInMergedVeventIfNeeded(mergedNewRecurrentVevent);
+
         const newRecurrentVevent = updateAllRecurrence({
             component: mergedNewRecurrentVevent,
             originalComponent: originalVeventComponent,
@@ -588,6 +592,9 @@ const getSaveRecurringEventActions = async ({
                             ...veventComponent,
                             ...updateSingleEditMergeVevent,
                         };
+
+                        handleConferenceDataInMergedVeventIfNeeded(updatedSingleEditVevent);
+
                         let addedAttendeesSingleEditPublicKeysMap;
                         let updatedSingleEditInviteActions = {
                             ...updatedInviteActions,
@@ -711,6 +718,9 @@ const getSaveRecurringEventActions = async ({
                         ...veventComponent,
                         ...updateSingleEditMergeVevent,
                     };
+
+                    handleConferenceDataInMergedVeventIfNeeded(updatedSingleEditVevent);
+
                     const updateSingleEditOperation = getUpdateSyncOperation({
                         veventComponent: updatedSingleEditVevent,
                         calendarEvent: event,
