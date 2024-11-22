@@ -1,10 +1,10 @@
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import type { ItemKey, ItemKeyResponse, VaultKey } from '@proton/pass/types';
+import type { EncodedItemKeyRotation, ItemKey, VaultKey } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 type OpenItemKeyProcessParams = {
-    encryptedItemKey: ItemKeyResponse;
+    encryptedItemKey: EncodedItemKeyRotation;
     vaultKey: VaultKey;
 };
 
