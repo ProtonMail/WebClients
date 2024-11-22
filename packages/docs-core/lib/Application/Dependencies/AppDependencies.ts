@@ -256,6 +256,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<LoggerInterface>(App_TYPES.Logger),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<MetricService>(App_TYPES.MetricService),
+        sharedState,
         appVersion,
       )
     })

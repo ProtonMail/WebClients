@@ -7,7 +7,7 @@ import type { GetRealtimeUrlAndToken } from '../../UseCase/CreateRealtimeValetTo
 import type { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { WebsocketService } from './WebsocketService'
-import type { InternalEventBusInterface, WebsocketConnectionInterface } from '@proton/docs-shared'
+import type { InternalEventBusInterface, RealtimeUrlAndToken, WebsocketConnectionInterface } from '@proton/docs-shared'
 import { BroadcastSource } from '@proton/docs-shared'
 import { Result } from '../../Domain/Result/Result'
 import type { EncryptionMetadata } from '../../Types/EncryptionMetadata'
@@ -17,6 +17,7 @@ import { type UpdateDebouncer } from './Debouncer/UpdateDebouncer'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto'
 import type { MetricService } from '../Metrics/MetricService'
+import type { DocumentPropertiesStateInterface } from '../State/DocumentPropertiesStateInterface'
 
 const mockOnReadyContentPayload = new TextEncoder().encode(
   JSON.stringify({ connectionId: '12345678', clientUpgradeRecommended: true, clientUpgradeRequired: true }),
@@ -33,6 +34,7 @@ describe('WebsocketService', () => {
   let document: NodeMeta
   let keys: DocumentKeys
   let metricService: MetricService
+  let sharedState: DocumentPropertiesStateInterface
 
   const createService = async (mode: DocumentDebounceMode) => {
     if (service) {
@@ -65,6 +67,11 @@ describe('WebsocketService', () => {
       error: jest.fn(),
     } as unknown as jest.Mocked<LoggerInterface>
 
+    sharedState = {
+      subscribe: jest.fn(),
+      setProperty: jest.fn(),
+    } as unknown as jest.Mocked<DocumentPropertiesStateInterface>
+
     service = new WebsocketService(
       {} as jest.Mocked<GetRealtimeUrlAndToken>,
       encryptMessage,
@@ -74,6 +81,7 @@ describe('WebsocketService', () => {
       logger,
       eventBus,
       metricService,
+      sharedState,
       '0.0.0.0',
     )
 
@@ -470,6 +478,18 @@ describe('WebsocketService', () => {
           error: expect.any(String),
         },
       })
+    })
+  })
+
+  describe('handleRetrievedValetTokenResult', () => {
+    it('should set currentDocumentEmailDocTitleEnabled', () => {
+      service.handleRetrievedValetTokenResult({
+        preferences: {
+          includeDocumentNameInEmails: true,
+        },
+      } as RealtimeUrlAndToken)
+
+      expect(sharedState.setProperty).toHaveBeenCalledWith('currentDocumentEmailDocTitleEnabled', true)
     })
   })
 })

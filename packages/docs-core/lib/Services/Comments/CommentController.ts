@@ -53,7 +53,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
     this.logger,
   )
 
-  private shouldSendDocumentName = false
+  shouldSendDocumentName = false
 
   constructor(
     private readonly document: NodeMeta,
@@ -76,7 +76,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
     eventBus.addEventHandler(this, WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady)
 
     this.sharedState.subscribe((state) => {
-      this.shouldSendDocumentName = state.emailTitleEnabled ?? false
+      this.shouldSendDocumentName = state.currentDocumentEmailDocTitleEnabled ?? false
     })
   }
 
