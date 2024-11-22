@@ -4,6 +4,7 @@ export enum PassFeature {
     PassAccountSwitchV1 = 'PassAccountSwitchV1',
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
     PassFamilyPlanPromo2024 = 'PassFamilyPlanPromo2024',
+    PassInAppMessages = 'PassInAppMessagesV1',
     PassKillSSO = 'PassKillSSO',
     PassSimpleLoginAliasesSync = 'PassSimpleLoginAliasesSync',
     PassWebInternalAlpha = 'PassWebInternalAlpha',
