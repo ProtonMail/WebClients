@@ -1,8 +1,9 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import { Button, Href } from '@proton/atoms/index';
 import { IcEye } from '@proton/icons';
 
+import { Button } from '../Button/Button';
+import Href from '../Href/Href';
 import Banner from './Banner';
 
 describe('<Banner />', () => {
