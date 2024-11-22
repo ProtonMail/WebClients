@@ -1,4 +1,4 @@
-export * from 'pmcrypto-v6-canary/lib/bigInteger';
+export * from 'pmcrypto/lib/bigInteger';
 
 /**
  * Get this value as an exact Number (max 53 bits)

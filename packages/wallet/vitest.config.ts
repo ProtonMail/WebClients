@@ -13,4 +13,7 @@ export default defineConfig({
         reporters: ['basic'],
         setupFiles: './vitest.setup.ts',
     },
+    resolve: {
+        conditions: ['browser'],
+    },
 });
