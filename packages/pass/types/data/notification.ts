@@ -27,6 +27,7 @@ export type InAppNotification = {
     endTime: MaybeNull<number>;
     state: InAppNotificationState;
     content: MessageContent;
+    priority: number;
 };
 
 export type InAppNotifications = {
