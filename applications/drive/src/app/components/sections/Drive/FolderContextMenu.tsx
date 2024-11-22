@@ -6,7 +6,7 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
-import { useDriveSharingFlags, useFileUploadInput, useFolderUploadInput } from '../../../store';
+import { useActions, useDriveSharingFlags, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
@@ -42,6 +42,7 @@ export function FolderContextMenu({
     const isEditEnabled = useIsEditEnabled();
 
     const { activeFolder } = useActiveShare();
+    const { createFolder } = useActions();
     const {
         inputRef: fileInput,
         handleClick: fileClick,
@@ -83,7 +84,10 @@ export function FolderContextMenu({
             {linkSharingModal}
             <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
                 {!isActiveLinkReadOnly && (
-                    <CreateNewFolderButton close={close} action={() => showCreateFolderModal({})} />
+                    <CreateNewFolderButton
+                        close={close}
+                        action={() => showCreateFolderModal({ folder: activeFolder, createFolder })}
+                    />
                 )}
                 {isDocsEnabled && !isActiveLinkReadOnly && (
                     <CreateNewDocumentButton

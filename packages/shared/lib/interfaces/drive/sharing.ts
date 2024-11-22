@@ -68,6 +68,7 @@ export interface SharedURLInfo {
     MIMEType: string;
     Name: string;
     NodeKey: string;
+    NodeHashKey: string | null;
     NodePassphrase: string;
     Permissions: SHARE_URL_PERMISSIONS;
     ShareKey: string;
