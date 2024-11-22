@@ -5,7 +5,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, Href, InlineLinkButton, Vr } from '@proton/atoms';
-import type { IconName } from '@proton/components';
+import type { IconName} from '@proton/components';
+import { SkeletonLoader } from '@proton/components';
 import {
     CurrencySelector,
     CycleSelector,
@@ -54,7 +55,7 @@ import {
     switchPlan,
 } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2024OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
-import type { Api, Cycle, SubscriptionPlan, User, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Api, Cycle, SubscriptionPlan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { isFree } from '@proton/shared/lib/user/helpers';
@@ -117,6 +118,7 @@ const Step1 = ({
         audience,
         audiences,
     },
+    initialSessionsLength,
     signupParameters,
     currentPlan,
     onComplete,
@@ -134,6 +136,7 @@ const Step1 = ({
     mode,
     onChangeCurrency,
 }: {
+    initialSessionsLength: boolean;
     signupConfiguration: SignupConfiguration;
     signupParameters: SignupParameters2;
     relativePrice: string | undefined;
@@ -194,7 +197,7 @@ const Step1 = ({
     const availableCurrencies = getAvailableCurrencies({
         status: model.paymentMethodStatusExtended,
         plans: getAccessiblePlans({ planCards, audience, plans: model.plans }),
-        user: model.session?.user,
+        user: model.session?.resumedSessionResult.User,
         subscription: model.session?.subscription,
         paramCurrency: signupParameters.currency,
     });
@@ -220,11 +223,10 @@ const Step1 = ({
 
     const getSilentPaymentApi = async () => {
         let chargebeeEnabled = undefined;
-        if (model.session?.UID && model.session?.user) {
-            const user: User = model.session.user;
-            chargebeeEnabled = await isChargebeeEnabled(model.session.UID, async () => user);
+        if (model.session?.resumedSessionResult) {
+            const user = model.session.resumedSessionResult.User;
+            chargebeeEnabled = await isChargebeeEnabled(model.session.resumedSessionResult.UID, async () => user);
         }
-
         return getPaymentsApi(silentApi, chargebeeEnabled?.result);
     };
 
@@ -331,6 +333,9 @@ const Step1 = ({
     };
 
     const handleChangeCurrency = async (currency: Currency): Promise<Currency> => {
+        if (model.loadingDependencies) {
+            return options.currency;
+        }
         void measure({ event: TelemetryAccountSignupEvents.currencySelect, dimensions: { currency } });
 
         const newPlansMap = await onChangeCurrency(currency);
@@ -346,11 +351,17 @@ const Step1 = ({
     };
 
     const handleChangeCycle = (cycle: Cycle) => {
+        if (model.loadingDependencies) {
+            return;
+        }
         measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
         return handleOptimistic({ cycle });
     };
 
     const handleChangePlan = (planIDs: PlanIDs, planName: PLANS, currencyOverride?: Currency) => {
+        if (model.loadingDependencies) {
+            return;
+        }
         measure({ event: TelemetryAccountSignupEvents.planSelect, dimensions: { plan: planName } });
 
         const currency = currencyOverride ?? getPlanFromPlanIDs(model.plansMap, planIDs)?.Currency;
@@ -368,7 +379,7 @@ const Step1 = ({
                 planID: planName,
                 organization: model.session.organization,
                 plans: model.plans,
-                user: model.session.user,
+                user: model.session.resumedSessionResult.User,
             });
 
             checkOptions.planIDs = switchedPlanIds;
@@ -381,8 +392,14 @@ const Step1 = ({
         scrollIntoPayment: () => accountStepPaymentRef.current?.scrollIntoView(),
     }));
 
+    const disableInitialFormSubmit = model.loadingDependencies;
+
     const handleCompletion = async (subscriptionData: SubscriptionData, type?: 'signup-token') => {
-        if (model.session?.user) {
+        if (disableInitialFormSubmit) {
+            return;
+        }
+
+        if (model.session?.resumedSessionResult.User) {
             return onComplete({ subscriptionData, type: 'existing' });
         }
 
@@ -535,7 +552,7 @@ const Step1 = ({
 
     const currencySelector =
         // Paid users can't change the currency. Only new and free existing users can change it.
-        !model.session?.user || isFree(model.session.user) ? (
+        !model.session?.resumedSessionResult.User || isFree(model.session.resumedSessionResult.User) ? (
             <CurrencySelector
                 currencies={availableCurrencies}
                 mode="select-two"
@@ -627,6 +644,10 @@ const Step1 = ({
                     </div>
                 )}
                 {(() => {
+                    if (model.loadingDependencies) {
+                        return;
+                    }
+
                     const wrap = (iconName: IconName | null, textLaunchOffer: ReactNode) => {
                         return (
                             <div className="signup-v2-offer-banner py-2 px-4 rounded-lg md:text-lg inline-flex flex-nowrap mt-4">
@@ -847,6 +868,7 @@ const Step1 = ({
                                             onSelectedClick={() => {
                                                 accountDetailsRef.current?.scrollInto('email');
                                             }}
+                                            loading={model.loadingDependencies}
                                         />
                                     ) : null;
                                 })()}
@@ -871,7 +893,12 @@ const Step1 = ({
                 )}
                 <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
                     {(() => {
-                        const hasBenefits = !model.session?.user;
+                        const user = model?.session?.resumedSessionResult.User;
+                        const hasUserStepOptimistic = model.loadingDependencies && initialSessionsLength;
+                        const hasUserStep = (user && !loadingSignout) || hasUserStepOptimistic;
+
+                        const hasBenefits = !hasUserStep;
+
                         const step2Summary = (
                             <RightSummary
                                 variant={isDarkBg ? 'gradientBorder' : 'gradient'}
@@ -892,13 +919,11 @@ const Step1 = ({
                             </InlineLinkButton>
                         );
 
-                        const user = model?.session?.user;
-
                         const willShowStep2 = !hasSelectedFree;
                         const willHaveSingleStep = step === 1 && !willShowStep2;
                         const accountStep = willHaveSingleStep ? undefined : step++;
 
-                        if (user && !loadingSignout) {
+                        if (hasUserStep) {
                             return (
                                 <>
                                     <BoxHeader
@@ -909,16 +934,36 @@ const Step1 = ({
                                     <BoxContent>
                                         <div className="flex justify-space-between gap-10 lg:gap-20">
                                             <div className="flex-1 w-0">
-                                                <AccountSwitcherItem
-                                                    user={user}
-                                                    right={
-                                                        (activeSessions?.length || 0) > 1 ? (
-                                                            <Button color="norm" onClick={onOpenSwitch} shape="ghost">
-                                                                {c('Action').t`Switch account`}
-                                                            </Button>
-                                                        ) : undefined
+                                                {(() => {
+                                                    if (hasUserStepOptimistic) {
+                                                        return (
+                                                            <SkeletonLoader
+                                                                width="100%"
+                                                                className="h-custom"
+                                                                style={{ '--h-custom': '4.5rem' }}
+                                                                index={1}
+                                                            />
+                                                        );
                                                     }
-                                                />
+                                                    if (user) {
+                                                        return (
+                                                            <AccountSwitcherItem
+                                                                user={user}
+                                                                right={
+                                                                    (activeSessions?.length || 0) > 1 ? (
+                                                                        <Button
+                                                                            color="norm"
+                                                                            onClick={onOpenSwitch}
+                                                                            shape="ghost"
+                                                                        >
+                                                                            {c('Action').t`Switch account`}
+                                                                        </Button>
+                                                                    ) : undefined
+                                                                }
+                                                            />
+                                                        );
+                                                    }
+                                                })()}
                                                 {hasSelectedFree && (
                                                     <Button
                                                         color="norm"
@@ -934,7 +979,13 @@ const Step1 = ({
                                                         {cta}
                                                     </Button>
                                                 )}
-                                                <div className={clsx('text-center', hasSelectedFree ? 'mt-4' : 'mt-6')}>
+                                                <div
+                                                    className={clsx(
+                                                        'text-center',
+                                                        hasSelectedFree ? 'mt-4' : 'mt-6',
+                                                        hasUserStepOptimistic && 'visibility-hidden'
+                                                    )}
+                                                >
                                                     {
                                                         // translator: Full sentence "Or create a new account"
                                                         c('pass_signup_2023: Action').jt`Or ${createANewAccount}`
@@ -1128,6 +1179,9 @@ const Step1 = ({
                                                                                     key="signin"
                                                                                     className="link link-focus text-nowrap"
                                                                                     onClick={() => {
+                                                                                        if (disableInitialFormSubmit) {
+                                                                                            return;
+                                                                                        }
                                                                                         onOpenLogin({
                                                                                             email: details.email.trim(),
                                                                                             location: 'step2',
@@ -1143,6 +1197,9 @@ const Step1 = ({
                                                                                     key="switch"
                                                                                     className="link link-focus text-nowrap"
                                                                                     onClick={() => {
+                                                                                        if (disableInitialFormSubmit) {
+                                                                                            return;
+                                                                                        }
                                                                                         onOpenSwitch();
                                                                                     }}
                                                                                 >
@@ -1186,7 +1243,11 @@ const Step1 = ({
                                 measure={measure}
                                 cta={cta}
                                 terms={termsAndConditions}
-                                key={model.session?.UID || 'free'}
+                                key={
+                                    model.loadingDependencies
+                                        ? 'init'
+                                        : model.session?.resumedSessionResult.UID || 'free'
+                                }
                                 defaultMethod={model.session?.defaultPaymentMethod}
                                 accountStepPaymentRef={accountStepPaymentRef}
                                 api={normalApi}

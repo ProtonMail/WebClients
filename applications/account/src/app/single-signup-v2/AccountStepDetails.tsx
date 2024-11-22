@@ -246,7 +246,8 @@ const AccountStepDetails = ({
     const [maybeDomain, setDomain] = useState('');
     const theme = usePublicTheme();
 
-    const domain = maybeDomain || domains?.[0];
+    const safeDomain = domains?.includes(maybeDomain) ? maybeDomain : '';
+    const domain = safeDomain || domains?.[0];
 
     const [details, setDetails] = useState<AccountDetails>(getDefaultInputs({}));
     const [states, setStates] = useState<AccountDetailsInputState>(getDefaultInputStates(details));
@@ -715,7 +716,6 @@ const AccountStepDetails = ({
                                     id="username"
                                     label={c('Signup label').t`Username`}
                                     error={usernameError}
-                                    autoFocus
                                     inputClassName="email-input-field"
                                     suffix={(() => {
                                         const asyncState = (() => {

@@ -571,14 +571,16 @@ export const getSessionDataFromSignup = (cache: SignupCacheResult): SessionData 
         throw new Error('Missing setup data');
     }
     return {
-        UID: setupData.authResponse.UID,
-        user: setupData.user,
-        localID: setupData.authResponse.LocalID,
-        clientKey: setupData.clientKey,
-        offlineKey: setupData.offlineKey,
-        keyPassword: setupData.keyPassword,
-        persistent: cache.persistent,
-        trusted: cache.trusted,
+        resumedSessionResult: {
+            UID: setupData.authResponse.UID,
+            User: setupData.user,
+            LocalID: setupData.authResponse.LocalID,
+            clientKey: setupData.clientKey,
+            offlineKey: setupData.offlineKey,
+            keyPassword: setupData.keyPassword,
+            persistent: cache.persistent,
+            trusted: cache.trusted,
+        },
         subscription: undefined,
         organization: undefined,
         paymentMethods: [],

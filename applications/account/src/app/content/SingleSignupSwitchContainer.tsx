@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import type { OnLoginCallback } from '@proton/components';
@@ -22,18 +21,19 @@ interface Props {
     maybePreAppIntent: APP_NAMES | undefined;
     searchParams: URLSearchParams;
     initialSearchParams?: URLSearchParams;
-    loader: ReactNode;
     onLogin: OnLoginCallback;
     productParam: ProductParam;
     toApp?: APP_NAMES;
     toAppName?: string;
     clientType: CLIENT_TYPES;
     activeSessions?: LocalSessionPersisted[];
+    onGetActiveSessions?: Parameters<typeof SingleSignupContainerV2>[0]['onGetActiveSessions'];
     fork: boolean;
     metaTags: MetaTags;
     paths: Paths;
     onBack?: () => void;
     onPreSubmit?: () => Promise<void>;
+    initialSessionsLength: boolean;
 }
 
 // Always enabled for these apps
@@ -50,17 +50,18 @@ const SingleSignupSwitchContainer = ({
     maybePreAppIntent,
     searchParams,
     initialSearchParams,
-    loader,
     onLogin,
     productParam,
     toAppName,
     clientType,
     activeSessions,
+    onGetActiveSessions,
     fork,
     metaTags,
     paths,
     onBack,
     onPreSubmit,
+    initialSessionsLength,
 }: Props) => {
     const location = useLocation();
 
@@ -79,7 +80,7 @@ const SingleSignupSwitchContainer = ({
                 paths={paths}
                 metaTags={metaTags}
                 activeSessions={activeSessions}
-                loader={loader}
+                onGetActiveSessions={onGetActiveSessions}
                 productParam={productParam}
                 clientType={clientType}
                 toApp={maybePreAppIntent}
@@ -88,6 +89,7 @@ const SingleSignupSwitchContainer = ({
                 fork={fork}
                 onBack={onBack}
                 onPreSubmit={onPreSubmit}
+                initialSessionsLength={initialSessionsLength}
             />
         );
     }
