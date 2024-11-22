@@ -58,6 +58,7 @@ const {
     PASS_FAMILY,
     PASS_BUSINESS,
     PASS_LIFETIME,
+    LUMO,
 } = PLANS;
 
 const { MEMBER_SCRIBE_MAIL_BUSINESS, MEMBER_SCRIBE_MAIL_PRO, MEMBER_SCRIBE_BUNDLE_PRO, MEMBER_SCRIBE_BUNDLE_PRO_2024 } =
@@ -143,6 +144,7 @@ export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(
 export const hasDriveBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_BUSINESS);
 export const hasPass = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS);
 export const hasWallet = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, WALLET);
+export const hasLumo = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, LUMO);
 export const hasEnterprise = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, ENTERPRISE);
 export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE);
 export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE_PRO);
