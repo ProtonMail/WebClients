@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
-import { createContext, useContext } from 'react';
+import { useContext } from 'react';
 
 import type { ThemeColor } from '@proton/colors/types';
+import { QuickSettingsRemindersContext } from '@proton/components/containers/drawer/MailQuickSettingsReminderContext';
 import MailQuickSettingsReminderContextProvider from '@proton/components/containers/drawer/MailQuickSettingsReminderContextProvider';
 import useConfig from '@proton/components/hooks/useConfig';
 import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
@@ -15,10 +16,6 @@ import isTruthy from '@proton/utils/isTruthy';
  * The  role of this context is keep track of these values correctly across the application,
  * because the value might change after a user action within the drawer, involving a change on the setting button
  */
-export const QuickSettingsRemindersContext = createContext<{
-    reminders: ThemeColor[];
-} | null>(null);
-
 export default function useQuickSettingsReminders() {
     const quickSettingsNotificationContext = useContext(QuickSettingsRemindersContext);
 
@@ -38,9 +35,6 @@ export const QuickSettingsRemindersProvider = ({ children }: { children: ReactNo
 
     const reminders: ThemeColor[] = [recoveryNotification?.color].filter(isTruthy);
 
-    /**
-     * Need to create a different context per app if some reminders are app specific
-     */
     if (APP_NAME === APPS.PROTONMAIL) {
         return (
             <MailQuickSettingsReminderContextProvider defaultReminders={reminders}>
