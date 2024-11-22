@@ -21,6 +21,7 @@ import {
     getIsPassB2BPlan,
     getIsSentinelPlan,
     hasDriveBusiness,
+    hasLumo,
     hasPass,
     hasPassFamily,
     hasVPN,
@@ -297,6 +298,44 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         );
     };
 
+    const getLumo = () => {
+        const items: Item[] = [
+            {
+                text: c('collider_2025: feature').t`Unlimited questions every day`,
+                included: true,
+            },
+            {
+                text: c('collider_2025: feature').t`Unlimited chat history`,
+                included: true,
+            },
+            {
+                text: c('collider_2025: feature')
+                    .t`Handles complex conversations (supports input equivalent of 40 pages of text)`,
+                included: true,
+            },
+
+            {
+                text: c('collider_2025: feature').t`Favorite conversations`,
+                included: true,
+            },
+            {
+                text: c('collider_2025: feature').t`Priority access (get top priority, even during busy times)`,
+                included: true,
+            },
+            {
+                text: c('collider_2025: feature').t`Priority support`,
+                included: true,
+            },
+        ];
+
+        return (
+            <StripedList alternate={alternate}>
+                {storageItem}
+                <SubscriptionItems user={user} items={items} />
+            </StripedList>
+        );
+    };
+
     const getDriveAppB2B = () => {
         const items: (Item | false)[] = [
             !!userText &&
@@ -462,6 +501,9 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                 }
                 if (hasWallet(subscription)) {
                     return getWalletAppWalletPlus();
+                }
+                if (hasLumo(subscription)) {
+                    return getLumo();
                 }
                 if (hasDriveBusiness(subscription)) {
                     return getDriveAppB2B();
