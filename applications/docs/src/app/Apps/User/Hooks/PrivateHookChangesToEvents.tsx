@@ -20,11 +20,11 @@ export function usePrivateHooksToEvents({ state }: { state: DocumentPropertiesSt
   const { emailTitleEnabled, emailNotificationsEnabled } = useDocsNotifications()
 
   useEffect(() => {
-    state.notifyChanged('emailTitleEnabled', emailTitleEnabled ?? false)
+    state.setProperty('userAccountEmailDocTitleEnabled', emailTitleEnabled ?? false)
   }, [emailTitleEnabled, state])
 
   useEffect(() => {
-    state.notifyChanged('emailNotificationsEnabled', emailNotificationsEnabled ?? false)
+    state.setProperty('userAccountEmailNotificationsEnabled', emailNotificationsEnabled ?? false)
   }, [emailNotificationsEnabled, state])
 
   return null
