@@ -1,90 +1,27 @@
-import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { CircleLoader } from '@proton/atoms'
-import { useApi, useAuthentication, useConfig } from '@proton/components'
 import type { FileToDocConversionResult } from '@proton/docs-core'
-import { Application, getPlatformFriendlyDateForFileName } from '@proton/docs-core'
+import { getPlatformFriendlyDateForFileName } from '@proton/docs-core'
 import type { EditorInitializationConfig, FileToDocPendingConversion } from '@proton/docs-shared'
 import type { DocumentAction, DriveCompat, NodeMeta } from '@proton/drive-store'
-import { useDriveCompat } from '@proton/drive-store'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { c } from 'ttag'
 
 import { SharedLayout } from '../SharedLayout'
 import { DocumentConverter } from '../../Components/DocumentConverter'
 import { DocumentViewer } from '../../Components/DocumentViewer'
-import { useLandingPageFeatureFlag } from '../../Components/Homepage/useLandingPageFeatureFlag'
 import { WordCountContextProvider } from '../../Components/WordCount/WordCountProvider'
-import { APP_VERSION } from '../../config'
-import ApplicationProvider, { useApplication } from '../../Containers/ApplicationProvider'
+import { useApplication } from '../../Containers/ApplicationProvider'
 import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
 import { useUser } from '@proton/account/user/hooks'
 import UserProvider from '../../Containers/ContextProvider'
 import { PublicDocumentCopier } from '../../Components/PublicDocumentCopier'
-import { useUnleashClient } from '@proton/unleash'
 import { getUrlPassword } from '@proton/drive-store/utils/url/password'
+import { useEmailOptInModal } from '../../Components/Modals/EmailOptInModal/EmailOptInModal'
+import { useDocsNotifications } from '../../Containers/DocsNotificationsProvider'
 
-const HomepageRoute = lazy(() => import('../../Components/Homepage/HomepageRoute'))
-
-function UserApplicationContent() {
-  const api = useApi()
-  const driveCompat = useDriveCompat()
-  const { API_URL } = useConfig()
-  const { UID } = useAuthentication()
-  const isLandingPageEnabled = useLandingPageFeatureFlag()
-
-  const unleashClient = useUnleashClient()
-
-  const application = useMemo(() => {
-    return new Application(
-      api,
-      undefined,
-      {
-        apiUrl: API_URL,
-        uid: UID,
-      },
-      { userCompat: driveCompat },
-      APP_VERSION,
-      unleashClient,
-    )
-    // Ensure only one application instance is created
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  return (
-    <ApplicationProvider application={application}>
-      <Switch>
-        <Route path={'/doc'}>
-          <DocsRoute driveCompat={driveCompat} />
-        </Route>
-        <Route path={['/most-recent', '/owned-by-me', '/owned-by-others']}>
-          {isLandingPageEnabled ? (
-            <Suspense>
-              <HomepageRoute />
-            </Suspense>
-          ) : (
-            <Redirect to="/doc" />
-          )}
-        </Route>
-        <Route
-          path="*"
-          render={(props) => {
-            const isOpenDocumentLink = props.location.search.includes('mode=open')
-            return isLandingPageEnabled && !isOpenDocumentLink ? (
-              <Redirect to="/most-recent" />
-            ) : (
-              <Redirect to={{ pathname: '/doc', search: props.location.search }} />
-            )
-          }}
-        />
-      </Switch>
-      {driveCompat.modals}
-    </ApplicationProvider>
-  )
-}
-
-function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
+export default function SingleDocumentRoute({ driveCompat }: { driveCompat: DriveCompat }) {
   void import('../../tailwind.scss')
   const application = useApplication()
 
@@ -96,7 +33,6 @@ function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
   const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
   const [didCreateNewDocument, setDidCreateNewDocument] = useState<boolean>(false)
   const [contentToInject, setContentToInject] = useState<FileToDocPendingConversion | undefined>(undefined)
-
   const [isAppReady, setIsAppReady] = useState(false)
 
   useEffect(() => {
@@ -179,7 +115,15 @@ function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
       setActionMode('download')
       updateParameters(openAction.volumeId, openAction.linkId)
     }
-  }, [createNewDocInRoot, isAppReady, isCreatingNewDocument, openAction, updateParameters])
+  }, [
+    application.logger,
+    createNewDocInRoot,
+    isAppReady,
+    isCreatingNewDocument,
+    navigateToAction,
+    openAction,
+    updateParameters,
+  ])
 
   const onConversionSuccess = useCallback(
     (result: FileToDocConversionResult) => {
@@ -240,6 +184,20 @@ function Content({
   getNodeContents: DriveCompat['getNodeContents']
   editorInitializationConfig?: EditorInitializationConfig
 }) {
+  const [emailOptInModal, openEmailOptInModal] = useEmailOptInModal()
+
+  const { emailTitleEnabled, emailNotificationsEnabled, isReady: isNotificationsReady } = useDocsNotifications()
+
+  useEffect(() => {
+    if (!isNotificationsReady) {
+      return
+    }
+
+    if (emailTitleEnabled === null || emailNotificationsEnabled === null) {
+      openEmailOptInModal({})
+    }
+  }, [emailTitleEnabled, emailNotificationsEnabled, openEmailOptInModal, isNotificationsReady])
+
   if (isCreatingNewDocument) {
     return (
       <div className="flex-column flex h-full w-full items-center justify-center gap-4">
@@ -284,9 +242,14 @@ function Content({
     return <DocumentConverter onSuccess={onConversionSuccess} getNodeContents={getNodeContents} lookup={nodeMeta} />
   } else {
     return (
-      <DocumentViewer editorInitializationConfig={editorInitializationConfig} nodeMeta={nodeMeta} action={actionMode} />
+      <>
+        {emailOptInModal}
+        <DocumentViewer
+          editorInitializationConfig={editorInitializationConfig}
+          nodeMeta={nodeMeta}
+          action={actionMode}
+        />
+      </>
     )
   }
 }
-
-export default UserApplicationContent
