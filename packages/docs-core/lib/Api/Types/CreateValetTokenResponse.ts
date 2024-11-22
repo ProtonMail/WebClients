@@ -3,5 +3,11 @@ export type CreateValetTokenResponse = {
   ValetToken: {
     Token: string
     RtsApiUrl: string
+    Preferences: [
+      {
+        Name: 'IncludeDocumentName'
+        Value: boolean
+      },
+    ]
   }
 }
