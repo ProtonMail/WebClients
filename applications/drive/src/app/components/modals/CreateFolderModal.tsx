@@ -18,18 +18,16 @@ import {
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
-import { useActiveShare } from '../../hooks/drive/useActiveShare';
-import { formatLinkName, useActions, validateLinkNameField } from '../../store';
+import { formatLinkName, validateLinkNameField } from '../../store';
 
 interface Props {
     onClose?: () => void;
     onCreateDone?: (folderId: string) => void;
-    folder?: { shareId: string; linkId: string };
+    folder: { shareId: string; linkId: string };
+    createFolder: (abortSignal: AbortSignal, shareId: string, parentLinkId: string, name: string) => Promise<string>;
 }
 
-const CreateFolderModal = ({ onClose, folder, onCreateDone, ...modalProps }: Props & ModalStateProps) => {
-    const { activeFolder } = useActiveShare();
-    const { createFolder } = useActions();
+const CreateFolderModal = ({ createFolder, onClose, folder, onCreateDone, ...modalProps }: Props & ModalStateProps) => {
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
@@ -52,7 +50,7 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...modalProps }: Pro
         const formattedName = formatLinkName(folderName);
         setFolderName(formattedName);
 
-        const parentFolder = folder || activeFolder;
+        const parentFolder = folder;
         if (!parentFolder) {
             return;
         }

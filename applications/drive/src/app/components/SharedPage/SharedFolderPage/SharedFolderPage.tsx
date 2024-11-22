@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { FilePreview, NavigationControl } from '@proton/components';
-import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import { type SHARE_URL_PERMISSIONS, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { DecryptedLink } from '../../../store';
@@ -13,6 +13,7 @@ import { usePublicFileView } from '../../../store/_views/useFileView';
 import type { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
 import { FileBrowserStateProvider } from '../../FileBrowser';
+import { EditActions } from '../EditActions/EditActions';
 import Breadcrumbs from '../Layout/Breadcrumbs';
 import HeaderSecureLabel from '../Layout/HeaderSecureLabel';
 import HeaderSize from '../Layout/HeaderSize';
@@ -221,6 +222,8 @@ export default function SharedFolder({
         [fileBrowserItems]
     );
 
+    const canWrite = useMemo(() => getCanWrite(permissions), [permissions]);
+
     return (
         <FileBrowserStateProvider itemIds={fileBrowserItems.map(({ linkId }) => linkId)}>
             <SharedPageLayout
@@ -268,10 +271,12 @@ export default function SharedFolder({
                         openInDocs={openInDocs}
                     />
                 )}
+
+                {canWrite && <EditActions token={token} linkId={linkId} />}
                 <SharedPageTransferManager rootItem={rootLink} />
                 <SharedFileBrowser
                     {...folderView}
-                    permissions={permissions}
+                    canWrite={canWrite}
                     onItemOpen={onItemOpen}
                     openInDocs={openInDocs}
                     items={fileBrowserItems}

@@ -20,7 +20,7 @@ interface Props {
 }
 
 const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: Props) => {
-    const { moveLinks } = useActions();
+    const { moveLinks, createFolder } = useActions();
     const {
         rootItems,
         expand,
@@ -71,6 +71,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: P
                 expand(targetLinkId);
                 setSelectedFolder(newFolderId);
             },
+            createFolder,
         });
     };
 
