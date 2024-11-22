@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { GmailSyncModalAnimation, SignInWithGoogle } from '@proton/activation';
 import { SYNC_G_OAUTH_SCOPES, SYNC_SUCCESS_NOTIFICATION } from '@proton/activation/src/constants';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { OAuthProps } from '@proton/activation/src/interface';
@@ -9,12 +10,10 @@ import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button, Href } from '@proton/atoms';
 import {
-    GmailSyncModalAnimation,
     OnboardingContent,
     OnboardingModal,
     OnboardingStep,
     type OnboardingStepRenderCallback,
-    SignInWithGoogle,
     useActiveBreakpoint,
 } from '@proton/components';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';

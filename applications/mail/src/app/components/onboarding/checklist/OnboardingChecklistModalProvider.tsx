@@ -1,8 +1,8 @@
-import React, { type ReactNode, createContext, useContext } from 'react';
+import { type ReactNode, createContext, useContext } from 'react';
 
-import { EasySwitchProvider } from '@proton/activation/index';
+import { EasySwitchProvider, GmailSyncModal } from '@proton/activation';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
-import { GmailSyncModal, useModalState } from '@proton/components/index';
+import { useModalState } from '@proton/components';
 
 import AccountsLoginModal from './modals/AccountsLoginModal';
 import MobileAppModal from './modals/MobileAppModal';
