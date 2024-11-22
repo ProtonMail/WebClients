@@ -106,6 +106,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassSimpleLoginAliasesSync]: false,
     [PassFeature.PassWebInternalAlpha]: false,
     [PassFeature.PassWebOfflineMode]: false,
+    [PassFeature.PassInAppMessages]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension

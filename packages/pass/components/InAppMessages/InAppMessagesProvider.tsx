@@ -3,10 +3,12 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef } fr
 import { useSelector } from 'react-redux';
 
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { getInAppNotifications, updateInAppNotificationState } from '@proton/pass/store/actions';
 import { getInAppNotificationsRequest, updateInAppNotificationStateRequest } from '@proton/pass/store/actions/requests';
 import { selectNextNotification } from '@proton/pass/store/selectors';
 import { InAppNotificationDisplayType, type InAppNotificationState } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { epochToMs } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
@@ -32,6 +34,7 @@ const getNotificationComponent = (displayType?: InAppNotificationDisplayType) =>
 
 export const InAppMessagesProvider: FC<PropsWithChildren> = ({ children }) => {
     const interval = useRef<NodeJS.Timeout>();
+    const inAppMessagesEnabled = useFeatureFlag(PassFeature.PassInAppMessages);
     const notification = useSelector(selectNextNotification);
     const getNotification = useRequest(getInAppNotifications, { initialRequestId: getInAppNotificationsRequest() });
     const updateNotificationStateRequest = useRequest(updateInAppNotificationState, {
@@ -48,14 +51,14 @@ export const InAppMessagesProvider: FC<PropsWithChildren> = ({ children }) => {
     const ctx = useMemo<InAppMessagesContextValue>(() => ({ changeNotificationState }), []);
 
     useEffect(() => {
-        interval.current = setInterval(getNotification.dispatch, epochToMs(UNIX_HOUR * 2));
+        if (inAppMessagesEnabled) interval.current = setInterval(getNotification.dispatch, epochToMs(UNIX_HOUR * 2));
         return () => clearInterval(interval.current);
     }, []);
 
     return (
         <InAppMessagesContext.Provider value={ctx}>
             {children}
-            {!updateNotificationStateRequest.loading && <NotificationComponent />}
+            {inAppMessagesEnabled && !updateNotificationStateRequest.loading && <NotificationComponent />}
         </InAppMessagesContext.Provider>
     );
 };
