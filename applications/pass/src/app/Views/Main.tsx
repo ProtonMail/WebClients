@@ -19,6 +19,7 @@ import { Items } from '@proton/pass/components/Item/Items';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
+import { PassNotificationProvider } from '@proton/pass/components/Notifications/PassNotificationProvider';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
 import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
@@ -141,11 +142,13 @@ export const Main: FC = () => {
                         <InviteProvider>
                             <VaultActionsProvider>
                                 <PasswordProvider>
-                                    <SpotlightProvider>
-                                        <OnboardingProvider>
-                                            {lockSetup ? <LockOnboarding onCancel={logout} /> : <MainSwitch />}
-                                        </OnboardingProvider>
-                                    </SpotlightProvider>
+                                    <PassNotificationProvider>
+                                        <SpotlightProvider>
+                                            <OnboardingProvider>
+                                                {lockSetup ? <LockOnboarding onCancel={logout} /> : <MainSwitch />}
+                                            </OnboardingProvider>
+                                        </SpotlightProvider>
+                                    </PassNotificationProvider>
                                 </PasswordProvider>
                             </VaultActionsProvider>
                         </InviteProvider>
