@@ -12,6 +12,8 @@ import { selectNextNotification } from '@proton/pass/store/selectors';
 import { InAppNotificationCtaType } from '@proton/pass/types';
 import { NotificationState } from '@proton/pass/types/data/notification';
 
+import './Modal.scss';
+
 export const Modal: FC = () => {
     const { changeNotificationState } = useInAppMessages();
     const { onLink } = usePassCore();
@@ -32,7 +34,11 @@ export const Modal: FC = () => {
                 subline={
                     <div className="flex items-center justify-center gap-5 mt-2">
                         {notification.content.imageUrl && (
-                            <img className="mt-2 w-full rounded-lg" src={notification.content.imageUrl} alt="" />
+                            <img
+                                className="image-border mt-2 w-full rounded-lg"
+                                src={notification.content.imageUrl}
+                                alt=""
+                            />
                         )}
                         <span className="text-ellipsis text-weak">{notification.content.message}</span>
                     </div>
