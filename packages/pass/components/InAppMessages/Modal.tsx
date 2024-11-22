@@ -9,8 +9,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useInAppMessages } from '@proton/pass/components/InAppMessages/InAppMessagesProvider';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { selectNextNotification } from '@proton/pass/store/selectors';
-import { InAppNotificationCtaType } from '@proton/pass/types';
-import { NotificationState } from '@proton/pass/types/data/notification';
+import { InAppNotificationCtaType, InAppNotificationState } from '@proton/pass/types';
 
 import './Modal.scss';
 
@@ -23,7 +22,7 @@ export const Modal: FC = () => {
         onLink(notification.content.cta!.ref, {
             replace: notification.content.cta!.type === InAppNotificationCtaType.internal_navigation,
         });
-        changeNotificationState(notification.id, NotificationState.READ);
+        changeNotificationState(notification.id, InAppNotificationState.READ);
     };
 
     return (
@@ -61,7 +60,7 @@ export const Modal: FC = () => {
                     color="weak"
                     shape="solid"
                     size="large"
-                    onClick={() => changeNotificationState(notification.id, NotificationState.DISMISSED)}
+                    onClick={() => changeNotificationState(notification.id, InAppNotificationState.DISMISSED)}
                 >
                     {c('Action').t`Not now`}
                 </Button>
