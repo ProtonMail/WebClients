@@ -13,7 +13,6 @@
         "test:ci": "jest --runInBand --ci"
     },
     "dependencies": {
-        "@openpgp/noble-hashes": "^1.3.3",
         "@proton/crypto": "workspace:^",
         "bcryptjs": "^2.4.3"
     },

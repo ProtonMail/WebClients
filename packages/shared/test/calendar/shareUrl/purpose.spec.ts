@@ -1,6 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
 import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
-import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
 
 import { generateEncryptedPurpose } from '../../../lib/calendar/sharing/shareUrl/shareUrl';
 import { DecryptableKey } from '../../keys/keys.data';
@@ -28,9 +27,6 @@ const generateUcsString = (n: number) => {
 };
 
 describe('getEncryptedPurpose', () => {
-    beforeAll(() => initRandomMock());
-    afterAll(() => disableRandomMock());
-
     it('Generates an encrypted purpose within the API bounds', async () => {
         const calendarKey = await CryptoProxy.importPrivateKey({
             armoredKey: DecryptableKey.PrivateKey,

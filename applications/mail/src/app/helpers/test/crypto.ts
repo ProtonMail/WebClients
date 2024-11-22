@@ -151,14 +151,10 @@ export const decryptSessionKey = async (keyPacket: string, privateKeys: PrivateK
  * Load Crypto API outside of web workers, for testing purposes.
  */
 export async function setupCryptoProxyForTesting() {
-    const useV6Canary = Math.random() < 0.5;
     // dynamic import to avoid loading the library unless required
-    const { Api: CryptoApi } = useV6Canary
-        ? await import('@proton/crypto/lib/worker/api_v6_canary')
-        : await import('@proton/crypto/lib/worker/api');
+    const { Api: CryptoApi } = await import('@proton/crypto/lib/worker/api');
     CryptoApi.init();
     CryptoProxy.setEndpoint(
-        // @ts-ignore the v6 canary is effectively compatible
         new CryptoApi(),
         (endpoint) => endpoint.clearKeyStore()
     );
