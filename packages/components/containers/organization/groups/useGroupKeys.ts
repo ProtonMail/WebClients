@@ -2,7 +2,6 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { useKTVerifier } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';
@@ -12,6 +11,8 @@ import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';
 import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { addAddressKeysProcess } from '@proton/shared/lib/keys';
 import { getDecryptedGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
+
+import useKTVerifier from '../../keyTransparency/useKTVerifier';
 
 const keyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
 

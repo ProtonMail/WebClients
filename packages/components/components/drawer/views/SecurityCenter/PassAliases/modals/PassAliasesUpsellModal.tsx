@@ -2,8 +2,10 @@ import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import type { ModalStateProps } from '@proton/components';
-import { NewUpsellModal, Price, UpsellModal } from '@proton/components';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import Price from '@proton/components/components/price/Price';
+import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { type Currency, PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     APP_UPSELL_REF_PATH,

@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import type { IconName } from '@proton/components';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import { getDarkWebMonitoringText } from '@proton/components/containers/payments/features/mail';
 import { PLANS } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

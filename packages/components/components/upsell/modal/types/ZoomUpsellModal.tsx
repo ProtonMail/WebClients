@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useUpsellConfig } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import {
@@ -13,6 +12,7 @@ import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import zoomUpsellSvg from '@proton/styles/assets/img/illustrations/upsell-zoom-header.svg';
 
+import useUpsellConfig from '../../useUpsellConfig';
 import NewUpsellModal from '../NewUpsellModal';
 
 interface Props {

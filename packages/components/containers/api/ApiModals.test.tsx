@@ -5,10 +5,10 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import type { ModalOwnProps } from '@proton/components';
-import { ConfigProvider, NotificationsProvider } from '@proton/components';
 import type { ApiEvent, ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 
+import type { ModalOwnProps } from '../..';
+import { ConfigProvider, NotificationsProvider } from '../..';
 import type { AuthModalProps } from '../password/AuthModal';
 import ApiModals from './ApiModals';
 import type { HumanVerificationModalProps } from './humanVerification/HumanVerificationModal';
