@@ -289,6 +289,7 @@ export const createAuthService = ({
             }
 
             authStore.setSession(session);
+            // NOTE: ideally we should sync after a successful login on fork
             await authSwitch.sync({ revalidate: false });
         },
 
