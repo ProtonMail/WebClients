@@ -7,9 +7,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api as CryptoApi, ApiInterface as CryptoApiInterface } from './api';
 import { mainThreadTransferHandlers } from './transferHandlers';
 
-export interface WorkerInitOptions {
-    v6Canary?: boolean;
-}
+export interface WorkerInitOptions {}
 
 export interface WorkerPoolInitOptions {
     poolSize?: number;
@@ -55,26 +53,19 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
     let workerPool: Remote<CryptoApi>[] | null = null;
     let i = -1;
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const initWorker = async (openpgpConfigOptions: WorkerInitOptions) => {
         // Webpack static analyser is not especially powerful at detecting web workers that require bundling,
         // see: https://github.com/webpack/webpack.js.org/issues/4898#issuecomment-823073304.
         // Harcoding the path here is the easiet way to get the worker to be bundled properly.
         const RemoteApi = wrap<typeof CryptoApi>(
-            openpgpConfigOptions.v6Canary
-                ? new Worker(
-                      new URL(
-                          /* webpackChunkName: "crypto-worker-v6-canary" */
-                          './worker_v6_canary.ts',
-                          import.meta.url
-                      )
-                  )
-                : new Worker(
-                      new URL(
-                          /* webpackChunkName: "crypto-worker" */
-                          './worker.ts',
-                          import.meta.url
-                      )
-                  )
+            new Worker(
+                new URL(
+                    /* webpackChunkName: "crypto-worker" */
+                    './worker.ts',
+                    import.meta.url
+                )
+            )
         );
 
         const worker = await new RemoteApi();

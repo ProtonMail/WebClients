@@ -171,7 +171,7 @@ describe('calendar encryption', () => {
             })
         ).toEqual({
             SharedKeyPacket:
-                'wV4DatuD4HBmK9ESAQdAh5aMHBZCvQYA9q2Gm4j5LJYj0N/ETwHe/+Icmt09yl8w81ByP+wHwvShTNdKZNv7ziSuGkYloQ9Y2hReRQR0Vdacz4LtBa2T3H17aBbI/rBs',
+                'wV4DatuD4HBmK9ESAQdAj0DFrbaPJWJK5bIU6nZ6bslNgp09e14a0bpvPiE4KF8wdqsR0TEq277tzM/3EFZt1WA+Ilhvxxmb1sGmMolw+GKQchfX/QwQfOPETEFk+flr',
             SharedEventContent: [
                 {
                     Type: 2,
@@ -190,7 +190,7 @@ describe('calendar encryption', () => {
                 },
             ],
             CalendarKeyPacket:
-                'wV4DatuD4HBmK9ESAQdAh5aMHBZCvQYA9q2Gm4j5LJYj0N/ETwHe/+Icmt09yl8w81ByP+wHwvShTNdKZNv7ziSuGkYloQ9Y2hReRQR0Vdacz4LtBa2T3H17aBbI/rBs',
+                'wV4DatuD4HBmK9ESAQdAj0DFrbaPJWJK5bIU6nZ6bslNgp09e14a0bpvPiE4KF8wdqsR0TEq277tzM/3EFZt1WA+Ilhvxxmb1sGmMolw+GKQchfX/QwQfOPETEFk+flr',
             CalendarEventContent: [
                 {
                     Type: 3,
@@ -230,7 +230,7 @@ describe('calendar encryption', () => {
             })
         ).toEqual({
             SharedKeyPacket:
-                'wV4DatuD4HBmK9ESAQdAh5aMHBZCvQYA9q2Gm4j5LJYj0N/ETwHe/+Icmt09yl8w81ByP+wHwvShTNdKZNv7ziSuGkYloQ9Y2hReRQR0Vdacz4LtBa2T3H17aBbI/rBs',
+                'wV4DatuD4HBmK9ESAQdAj0DFrbaPJWJK5bIU6nZ6bslNgp09e14a0bpvPiE4KF8wdqsR0TEq277tzM/3EFZt1WA+Ilhvxxmb1sGmMolw+GKQchfX/QwQfOPETEFk+flr',
             SharedEventContent: [
                 {
                     Type: 2,
@@ -249,7 +249,7 @@ describe('calendar encryption', () => {
                 },
             ],
             CalendarKeyPacket:
-                'wV4DatuD4HBmK9ESAQdAh5aMHBZCvQYA9q2Gm4j5LJYj0N/ETwHe/+Icmt09yl8w81ByP+wHwvShTNdKZNv7ziSuGkYloQ9Y2hReRQR0Vdacz4LtBa2T3H17aBbI/rBs',
+                'wV4DatuD4HBmK9ESAQdAj0DFrbaPJWJK5bIU6nZ6bslNgp09e14a0bpvPiE4KF8wdqsR0TEq277tzM/3EFZt1WA+Ilhvxxmb1sGmMolw+GKQchfX/QwQfOPETEFk+flr',
             CalendarEventContent: [
                 {
                     Type: 3,

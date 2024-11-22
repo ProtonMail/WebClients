@@ -9,7 +9,6 @@ enum CommonFeatureFlag {
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',
     KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
     CryptoDisableUndecryptableKeys = 'CryptoDisableUndecryptableKeys',
-    CryptoCanaryOpenPGPjsV6 = 'CryptoCanaryOpenPGPjsV6',
     BreachesSecurityCenter = 'BreachesSecurityCenter',
     InboxUpsellFlow = 'InboxUpsellFlow',
     ABTestInboxUpsellStep = 'ABTestInboxUpsellStep',

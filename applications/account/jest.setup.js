@@ -38,6 +38,3 @@ window.SVGElement.prototype.getBBox = jest.fn().mockReturnValue({ width: 0 });
 // could fail seconds later when the metrics batch is sent via fetch.
 // The metrics package has its own test coverage, so we don't need to test it here.
 jest.mock('@proton/metrics');
-
-// Globally mock pass bridge provider to avoid Cannot find module '@openpgp/noble-hashes/esm/biginteger/interface'
-jest.mock('@proton/pass/lib/bridge/PassBridgeProvider.tsx', () => ({ __esModule: true }));

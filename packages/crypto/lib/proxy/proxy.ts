@@ -2,7 +2,7 @@ import {
     DEFAULT_KEY_GENERATION_OFFSET,
     DEFAULT_SIGNATURE_VERIFICATION_OFFSET,
     VERIFICATION_STATUS,
-} from 'pmcrypto-v6-canary/lib/constants';
+} from 'pmcrypto/lib/constants';
 
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
