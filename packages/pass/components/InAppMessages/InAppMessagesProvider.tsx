@@ -6,8 +6,7 @@ import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { getInAppNotifications, updateInAppNotificationState } from '@proton/pass/store/actions';
 import { getInAppNotificationsRequest, updateInAppNotificationStateRequest } from '@proton/pass/store/actions/requests';
 import { selectNextNotification } from '@proton/pass/store/selectors';
-import { InAppNotificationDisplayType } from '@proton/pass/types';
-import type { NotificationState } from '@proton/pass/types/data/notification';
+import { InAppNotificationDisplayType, type InAppNotificationState } from '@proton/pass/types';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { epochToMs } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
@@ -17,7 +16,7 @@ import { Modal } from './Modal';
 
 type InAppMessagesContextValue = {
     /** Changes the message state from Unread to Read or Dismissed */
-    changeNotificationState: (messageId: string, state: NotificationState) => void;
+    changeNotificationState: (messageId: string, state: InAppNotificationState) => void;
 };
 
 const InAppMessagesContext = createContext<InAppMessagesContextValue>({
@@ -42,7 +41,7 @@ export const InAppMessagesProvider: FC<PropsWithChildren> = ({ children }) => {
     const NotificationComponent = getNotificationComponent(notification?.content.displayType);
 
     const changeNotificationState = useCallback(
-        (id: string, state: NotificationState) => updateNotificationStateRequest.dispatch({ id, state }),
+        (id: string, state: InAppNotificationState) => updateNotificationStateRequest.dispatch({ id, state }),
         []
     );
 

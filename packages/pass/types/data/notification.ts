@@ -1,10 +1,9 @@
-import type { InAppNotificationCtaType, InAppNotificationDisplayType, MaybeNull } from '@proton/pass/types';
-
-export enum NotificationState {
-    UNREAD = 0,
-    READ = 1,
-    DISMISSED = 2,
-}
+import type {
+    InAppNotificationCtaType,
+    InAppNotificationDisplayType,
+    InAppNotificationState,
+    MaybeNull,
+} from '@proton/pass/types';
 
 type MessageCTA = {
     text: string;
@@ -26,7 +25,7 @@ export type InAppNotification = {
     notificationKey: string;
     startTime: number;
     endTime: MaybeNull<number>;
-    state: NotificationState;
+    state: InAppNotificationState;
     content: MessageContent;
 };
 
