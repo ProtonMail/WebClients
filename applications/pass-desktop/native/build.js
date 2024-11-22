@@ -7,7 +7,7 @@ const targets = (() => {
         case 'darwin':
             return ['x86_64-apple-darwin', 'aarch64-apple-darwin'];
         case 'linux':
-            return ['x86_64-unknown-linux-musl'];
+            return ['x86_64-unknown-linux-musl', 'x86_64-unknown-linux-gnu'];
     }
 })();
 
