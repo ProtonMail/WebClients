@@ -24,7 +24,7 @@ import type { LoadCommit } from '../../UseCase/LoadCommit'
 import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { DocsApi } from '../../Api/DocsApi'
 import type { MetricService } from '../Metrics/MetricService'
-import type { UnleashClient } from '@proton/unleash'
+import type { DocumentPropertiesStateInterface } from '../State/DocumentPropertiesStateInterface'
 
 export type StatusObserver = {
   onSuccess: (orchestrator: EditorOrchestratorInterface) => void
@@ -56,7 +56,7 @@ export class DocLoader implements DocLoaderInterface {
     private getDocumentMeta: GetDocumentMeta,
     private getNode: GetNode,
     private exportAndDownload: ExportAndDownload,
-    private unleashClient: UnleashClient,
+    private sharedState: DocumentPropertiesStateInterface,
     private eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
   ) {}
@@ -113,8 +113,8 @@ export class DocLoader implements DocLoaderInterface {
       this.createComment,
       this.loadThreads,
       this.handleRealtimeCommentsEvent,
+      this.sharedState,
       getLatestDocumentName,
-      this.unleashClient,
       this.eventBus,
       this.logger,
     )

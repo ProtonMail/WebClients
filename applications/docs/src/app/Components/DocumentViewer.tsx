@@ -57,7 +57,6 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   const [hasSignatureIssues, setHasSignatureIssues] = useState(false)
 
   const [publicSplashModal, openPublicSplashModal] = useWelcomeSplashModal()
-
   const [genericAlertModal, showGenericAlertModal] = useGenericAlertModal()
 
   const [editorFrame, setEditorFrame] = useState<HTMLIFrameElement | null>(null)
