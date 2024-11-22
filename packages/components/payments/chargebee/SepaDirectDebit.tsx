@@ -4,7 +4,8 @@ import { electronicFormatIBAN, isValidIBAN } from 'ibantools';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
-import { InputFieldTwo, Label } from '@proton/components';
+import Label from '@proton/components/components/label/Label';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
 import CountriesDropdown from '@proton/components/containers/payments/CountriesDropdown';
 import { extractIBAN } from '@proton/payments';

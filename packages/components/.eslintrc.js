@@ -9,6 +9,12 @@ module.exports = {
         'react/button-has-type': ['warn'],
         'react/forbid-prop-types': ['warn'],
         'react/no-array-index-key': ['warn'],
+        'import/no-internal-modules': [
+            'error',
+            {
+                forbid: ['@proton/components', '@proton/components/index'],
+            },
+        ],
     },
     ignorePatterns: ['.eslintrc.js'],
     overrides: [

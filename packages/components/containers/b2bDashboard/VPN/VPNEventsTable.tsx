@@ -4,7 +4,8 @@ import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms';
-import { Icon, SortingTableHeader } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import { SortingTableHeader } from '@proton/components/components/table/SortingTableHeader';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableRow from '@proton/components/components/table/TableRow';
