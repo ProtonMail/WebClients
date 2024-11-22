@@ -35,7 +35,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecovery';
+import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecoveryState';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode, useFeature } from '@proton/features';
 import { type PLANS, PLAN_NAMES } from '@proton/payments';

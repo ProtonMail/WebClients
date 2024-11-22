@@ -14,6 +14,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import useAuthentication from './useAuthentication';
 import useConfig from './useConfig';
+import { useSessionRecoveryState } from './useSessionRecoveryState';
 
 export const useIsSessionRecoveryInitiatedByCurrentSession = () => {
     const [user] = useUser();
@@ -24,16 +25,6 @@ export const useIsSessionRecoveryInitiatedByCurrentSession = () => {
     }
 
     return user.AccountRecovery.UID === authentication.getUID();
-};
-
-export const useSessionRecoveryState = () => {
-    const [user] = useUser();
-
-    if (!user?.AccountRecovery) {
-        return SessionRecoveryState.NONE;
-    }
-
-    return user.AccountRecovery.State;
 };
 
 export const useIsSessionRecoveryEnabled = () => {

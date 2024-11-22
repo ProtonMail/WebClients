@@ -3,10 +3,8 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import {
-    useSessionRecoveryGracePeriodHoursRemaining,
-    useSessionRecoveryState,
-} from '@proton/components/hooks/useSessionRecovery';
+import { useSessionRecoveryGracePeriodHoursRemaining } from '@proton/components/hooks/useSessionRecovery';
+import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecoveryState';
 import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
 
 const GracePeriodText = () => {
