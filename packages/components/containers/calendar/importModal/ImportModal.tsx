@@ -23,6 +23,7 @@ import {
     getSupportedEventsOrErrors,
     parseIcs,
     sendImportErrorTelemetryReport,
+    sendTelemetryEventParsingError,
     splitErrors,
     splitHiddenErrors,
 } from '@proton/shared/lib/calendar/import/import';
@@ -136,10 +137,20 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                     const canImportEventColor = isColorPerEventEnabled && hasPaidMail;
 
                     setModel({ ...model, loading: true });
+
                     const [
                         { PrimaryTimezone: primaryTimezone },
                         { components, prodId, calscale, xWrTimezone, method, hashedIcs },
-                    ] = await Promise.all([getCalendarUserSettings(), parseIcs(fileAttached)]);
+                    ] = await Promise.all([
+                        getCalendarUserSettings(),
+                        parseIcs(fileAttached).catch((error) => {
+                            if (error instanceof ImportFileError) {
+                                void sendTelemetryEventParsingError(api, error.cause.errorType, error.cause.filename);
+                            }
+                            throw error;
+                        }),
+                    ]);
+
                     const { errors, rest: parsed } = splitErrors(
                         await getSupportedEventsOrErrors({
                             components,
