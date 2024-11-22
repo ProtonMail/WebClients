@@ -8,8 +8,7 @@ import { Icon } from '@proton/components/index';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useInAppMessages } from '@proton/pass/components/InAppMessages/InAppMessagesProvider';
 import { selectNextNotification } from '@proton/pass/store/selectors';
-import { InAppNotificationCtaType } from '@proton/pass/types';
-import { NotificationState } from '@proton/pass/types/data/notification';
+import { InAppNotificationCtaType, InAppNotificationState } from '@proton/pass/types';
 
 export const Banner: FC = () => {
     const { changeNotificationState } = useInAppMessages();
@@ -21,7 +20,7 @@ export const Banner: FC = () => {
         onLink(notification.content.cta!.ref, {
             replace: notification.content.cta!.type === InAppNotificationCtaType.internal_navigation,
         });
-        changeNotificationState(notification.id, NotificationState.READ);
+        changeNotificationState(notification.id, InAppNotificationState.READ);
     };
 
     return (
@@ -43,7 +42,7 @@ export const Banner: FC = () => {
                 size="small"
                 color="weak"
                 shape="ghost"
-                onClick={() => changeNotificationState(notification.id, NotificationState.DISMISSED)}
+                onClick={() => changeNotificationState(notification.id, InAppNotificationState.DISMISSED)}
                 icon
                 pill
             >
