@@ -10,10 +10,12 @@ describe('DocumentPropertiesState', () => {
   describe('initial state', () => {
     it('should initialize with default values', () => {
       const state = documentPropertiesState.getState()
-      expect(state).toEqual({
-        emailTitleEnabled: false,
-        emailNotificationsEnabled: false,
-      })
+      expect(state).toEqual(
+        expect.objectContaining({
+          userAccountEmailDocTitleEnabled: false,
+          userAccountEmailNotificationsEnabled: false,
+        }),
+      )
     })
   })
 
@@ -23,10 +25,12 @@ describe('DocumentPropertiesState', () => {
       documentPropertiesState.subscribe(callback)
 
       expect(callback).toHaveBeenCalledTimes(1)
-      expect(callback).toHaveBeenCalledWith({
-        emailTitleEnabled: false,
-        emailNotificationsEnabled: false,
-      })
+      expect(callback).toHaveBeenCalledWith(
+        expect.objectContaining({
+          userAccountEmailDocTitleEnabled: false,
+          userAccountEmailNotificationsEnabled: false,
+        }),
+      )
     })
 
     it('should return unsubscribe function', () => {
@@ -43,7 +47,7 @@ describe('DocumentPropertiesState', () => {
       callback.mockClear()
 
       unsubscribe()
-      documentPropertiesState.notifyChanged('emailTitleEnabled', true)
+      documentPropertiesState.setProperty('userAccountEmailDocTitleEnabled', true)
 
       expect(callback).not.toHaveBeenCalled()
     })
@@ -58,7 +62,7 @@ describe('DocumentPropertiesState', () => {
       callback1.mockClear()
       callback2.mockClear()
 
-      documentPropertiesState.notifyChanged('emailTitleEnabled', true)
+      documentPropertiesState.setProperty('userAccountEmailDocTitleEnabled', true)
 
       expect(callback1).toHaveBeenCalledTimes(1)
       expect(callback2).toHaveBeenCalledTimes(1)
@@ -72,31 +76,35 @@ describe('DocumentPropertiesState', () => {
 
       callback.mockClear()
 
-      documentPropertiesState.notifyChanged('emailTitleEnabled', true)
+      documentPropertiesState.setProperty('userAccountEmailDocTitleEnabled', true)
 
-      expect(callback).toHaveBeenCalledWith({
-        emailTitleEnabled: true,
-        emailNotificationsEnabled: false,
-      })
+      expect(callback).toHaveBeenCalledWith(
+        expect.objectContaining({
+          userAccountEmailDocTitleEnabled: true,
+          userAccountEmailNotificationsEnabled: false,
+        }),
+      )
     })
 
     it('should not modify previous state objects', () => {
       const previousState = documentPropertiesState.getState()
-      documentPropertiesState.notifyChanged('emailTitleEnabled', true)
+      documentPropertiesState.setProperty('userAccountEmailDocTitleEnabled', true)
 
-      expect(previousState.emailTitleEnabled).toBe(false)
+      expect(previousState.userAccountEmailDocTitleEnabled).toBe(false)
     })
   })
 
   describe('getState', () => {
     it('should return current state', () => {
-      documentPropertiesState.notifyChanged('emailTitleEnabled', true)
-      documentPropertiesState.notifyChanged('emailNotificationsEnabled', true)
+      documentPropertiesState.setProperty('userAccountEmailDocTitleEnabled', true)
+      documentPropertiesState.setProperty('userAccountEmailNotificationsEnabled', true)
 
-      expect(documentPropertiesState.getState()).toEqual({
-        emailTitleEnabled: true,
-        emailNotificationsEnabled: true,
-      })
+      expect(documentPropertiesState.getState()).toEqual(
+        expect.objectContaining({
+          userAccountEmailDocTitleEnabled: true,
+          userAccountEmailNotificationsEnabled: true,
+        }),
+      )
     })
 
     it('should return new object instance each time', () => {

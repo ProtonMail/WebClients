@@ -1,8 +1,9 @@
 export type DocumentPropertyName = keyof DocumentPropertyValues
 
 export interface DocumentPropertyValues {
-  emailTitleEnabled: boolean
-  emailNotificationsEnabled: boolean
+  userAccountEmailDocTitleEnabled: boolean
+  userAccountEmailNotificationsEnabled: boolean
+  currentDocumentEmailDocTitleEnabled: boolean
 }
 
 /**
@@ -13,6 +14,6 @@ export interface DocumentPropertyValues {
  */
 export interface DocumentPropertiesStateInterface {
   subscribe: (callback: (state: DocumentPropertyValues) => void) => () => void
-  notifyChanged: <T extends DocumentPropertyName>(property: T, value: DocumentPropertyValues[T]) => void
+  setProperty: <T extends DocumentPropertyName>(property: T, value: DocumentPropertyValues[T]) => void
   getState: () => DocumentPropertyValues
 }
