@@ -7,8 +7,13 @@ import {
     deriveKey,
     encryptData,
     encryptDataWith16ByteIV,
+    generateAndImportKey,
     generateKey,
+    generateWrappingKey,
     importKey,
+    importWrappingKey,
+    unwrapKey,
+    wrapKey,
 } from '../../lib/subtle/aesGcm';
 import { stringToUtf8Array } from '../../lib/utils';
 
@@ -83,6 +88,26 @@ describe('Subtle - AES-GCM helpers', () => {
         const data = stringToUtf8Array('hello world');
         const encrypted = await encryptData(key, data, context);
         const decrypted = await decryptData(key, encrypted, context);
+
+        expect(decrypted).to.deep.equal(data);
+    });
+
+    it('generateWrappingKey - key has expected size', async () => {
+        const keyBytes = generateWrappingKey();
+        expect(keyBytes).to.have.length(32);
+    });
+
+    it('generateWrappingKey/wrapKey/unwrapKey/encryptData/decryptData - unwrapped key can be used as-is', async () => {
+        const data = stringToUtf8Array('hello world');
+        const encryptionKey = await generateAndImportKey();
+        const encrypted = await encryptData(encryptionKey, data);
+
+        const wrappingKeyBytes = generateWrappingKey();
+        const wrappingKey = await importWrappingKey(wrappingKeyBytes);
+        const wrappedKeyBytes = await wrapKey(encryptionKey, wrappingKey);
+        const unwrappedEncryptionKey = await unwrapKey(wrappedKeyBytes, wrappingKey);
+
+        const decrypted = await decryptData(unwrappedEncryptionKey, encrypted);
 
         expect(decrypted).to.deep.equal(data);
     });
