@@ -568,9 +568,6 @@ export { default as ToggleAssistant } from './containers/general/ToggleAssistant
 export { default as ToggleAssistantContainer } from './containers/general/ToggleAssistant/ToggleAssistantContainer';
 export { default as ToggleAssistantEnvironment } from './containers/general/ToggleAssistant/ToggleAssistantEnvironment';
 export { default as WeekStartSection } from './containers/general/WeekStartSection';
-export { default as GmailSyncModal } from './containers/gmailSyncModal/GmailSyncModal';
-export { default as GmailSyncModalAnimation } from './containers/gmailSyncModal/GmailSyncModalAnimation';
-export { default as SignInWithGoogle } from './containers/gmailSyncModal/SignInWithGoogle';
 export { default as PrivateHeader } from './containers/heading/PrivateHeader';
 export { default as TopNavbarListItemFeedbackButton } from './containers/heading/TopNavbarListItemFeedbackButton';
 export { default as UserDropdown } from './containers/heading/UserDropdown';

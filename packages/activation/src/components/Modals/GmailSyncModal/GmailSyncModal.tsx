@@ -8,10 +8,8 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 
 import GmailSyncModalAnimation from './GmailSyncModalAnimation';
 import SignInWithGoogle from './SignInWithGoogle';
@@ -71,8 +69,8 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, source, reduceHeig
 
     return (
         <ModalTwo size="xlarge" fullscreenOnMobile {...rest} onClose={handleClose}>
-            <ModalHeader />
-            <ModalContent className="m-8 mt-0 flex flex-row items-center flex-nowrap gap-7">
+            <ModalTwoHeader />
+            <ModalTwoContent className="m-8 mt-0 flex flex-row items-center flex-nowrap gap-7">
                 <div className="flex flex-column flex-1 gap-7">
                     <h1 className="text-break text-4xl">
                         <strong>{c('Gmail forwarding').t`Automatically forward`}</strong>
@@ -99,7 +97,7 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, source, reduceHeig
                 <div className="hidden lg:block w-6/10">
                     <GmailSyncModalAnimation reduceHeight={reduceHeight} />
                 </div>
-            </ModalContent>
+            </ModalTwoContent>
         </ModalTwo>
     );
 };
