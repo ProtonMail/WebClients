@@ -56,14 +56,7 @@ export const SERVICES: { [key: string]: APP_NAMES } = {
 };
 
 export interface SessionData {
-    UID: string;
-    localID: number;
-    user: User;
-    keyPassword?: string;
-    persistent: boolean;
-    trusted: boolean;
-    clientKey: string;
-    offlineKey: OfflineKey | undefined;
+    resumedSessionResult: AuthSession;
     paymentMethods: SavedPaymentMethod[] | undefined;
     defaultPaymentMethod: PAYMENT_METHOD_TYPES | undefined;
     subscription: Subscription | undefined;
