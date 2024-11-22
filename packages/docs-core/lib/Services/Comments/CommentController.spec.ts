@@ -1,7 +1,7 @@
 import { CommentController } from './CommentController'
 import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import type { LoggerInterface } from '@proton/utils/logs'
-import type { InternalEventBusInterface } from '@proton/docs-shared'
+import { Result, type InternalEventBusInterface } from '@proton/docs-shared'
 
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
@@ -14,6 +14,7 @@ import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCo
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import type { MetricService } from '../Metrics/MetricService'
 import type { DocumentPropertiesStateInterface } from '../State/DocumentPropertiesStateInterface'
+import { DocumentPropertiesState } from '../State/DocumentPropertiesState'
 
 describe('CommentController', () => {
   let controller: CommentController
@@ -30,7 +31,7 @@ describe('CommentController', () => {
   let document: NodeMeta
   let keys: DocumentKeys
   let handleRealtimeCommentsEvent: HandleRealtimeCommentsEvent
-
+  let sharedState: DocumentPropertiesStateInterface
   beforeEach(() => {
     document = { linkId: 'link-id-123', volumeId: 'volume-id-456' } as NodeMeta
 
@@ -40,7 +41,9 @@ describe('CommentController', () => {
       userOwnAddress: 'foo',
     }
 
-    websocketService = {} as unknown as jest.Mocked<WebsocketServiceInterface>
+    websocketService = {
+      sendEventMessage: jest.fn(),
+    } as unknown as jest.Mocked<WebsocketServiceInterface>
 
     api = {} as unknown as jest.Mocked<DocsApi>
 
@@ -59,7 +62,11 @@ describe('CommentController', () => {
     } as unknown as jest.Mocked<EncryptComment>
 
     createThread = {
-      execute: jest.fn(),
+      execute: jest.fn().mockReturnValue(
+        Result.ok({
+          asPayload: jest.fn(),
+        }),
+      ),
     } as unknown as jest.Mocked<CreateThread>
 
     createComment = {
@@ -74,13 +81,14 @@ describe('CommentController', () => {
       execute: jest.fn(),
     } as unknown as jest.Mocked<HandleRealtimeCommentsEvent>
 
-    const metricService = {} as unknown as jest.Mocked<MetricService>
+    const metricService = {
+      reportSuggestionsTelemetry: jest.fn(),
+      reportSuggestionCreated: jest.fn(),
+    } as unknown as jest.Mocked<MetricService>
 
-    const sharedState = {
-      subscribe: jest.fn(),
-    } as unknown as jest.Mocked<DocumentPropertiesStateInterface>
+    sharedState = new DocumentPropertiesState()
 
-    const getLatestDocumentName = jest.fn()
+    const getLatestDocumentName = jest.fn().mockReturnValue('document-name')
 
     controller = new CommentController(
       document,
@@ -109,5 +117,71 @@ describe('CommentController', () => {
     })
 
     expect(controller.fetchAllComments).toHaveBeenCalled()
+  })
+
+  describe('shouldSendDocumentName', () => {
+    it('should be false when currentDocumentEmailDocTitleEnabled is false', () => {
+      sharedState.setProperty('currentDocumentEmailDocTitleEnabled', false)
+
+      expect(controller.shouldSendDocumentName).toBe(false)
+    })
+
+    it('should be true when currentDocumentEmailDocTitleEnabled is true', () => {
+      sharedState.setProperty('currentDocumentEmailDocTitleEnabled', true)
+
+      expect(controller.shouldSendDocumentName).toBe(true)
+    })
+  })
+
+  describe('createCommentThread', () => {
+    it('should send the document name when currentDocumentEmailDocTitleEnabled is true', async () => {
+      sharedState.setProperty('currentDocumentEmailDocTitleEnabled', true)
+
+      await controller.createCommentThread('comment-content')
+
+      expect(createThread.execute).toHaveBeenCalledWith(
+        expect.objectContaining({
+          decryptedDocumentName: 'document-name',
+        }),
+      )
+    })
+
+    it('should not send the document name when currentDocumentEmailDocTitleEnabled is false', async () => {
+      sharedState.setProperty('currentDocumentEmailDocTitleEnabled', false)
+
+      await controller.createCommentThread('comment-content')
+
+      expect(createThread.execute).toHaveBeenCalledWith(
+        expect.not.objectContaining({
+          decryptedDocumentName: 'document-name',
+        }),
+      )
+    })
+  })
+
+  describe('createSuggestionThread', () => {
+    it('should send the document name when currentDocumentEmailDocTitleEnabled is true', async () => {
+      sharedState.setProperty('currentDocumentEmailDocTitleEnabled', true)
+
+      await controller.createSuggestionThread('suggestion-id', 'comment-content', 'replace')
+
+      expect(createThread.execute).toHaveBeenCalledWith(
+        expect.objectContaining({
+          decryptedDocumentName: 'document-name',
+        }),
+      )
+    })
+
+    it('should not send the document name when currentDocumentEmailDocTitleEnabled is false', async () => {
+      sharedState.setProperty('currentDocumentEmailDocTitleEnabled', false)
+
+      await controller.createSuggestionThread('suggestion-id', 'comment-content', 'replace')
+
+      expect(createThread.execute).toHaveBeenCalledWith(
+        expect.not.objectContaining({
+          decryptedDocumentName: 'document-name',
+        }),
+      )
+    })
   })
 })

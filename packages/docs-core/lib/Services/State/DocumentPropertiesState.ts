@@ -6,8 +6,9 @@ import type {
 
 export class DocumentPropertiesState implements DocumentPropertiesStateInterface {
   private values: DocumentPropertyValues = {
-    emailTitleEnabled: false,
-    emailNotificationsEnabled: false,
+    userAccountEmailDocTitleEnabled: false,
+    userAccountEmailNotificationsEnabled: false,
+    currentDocumentEmailDocTitleEnabled: false,
   }
 
   private subscribers: Set<(state: DocumentPropertyValues) => void> = new Set()
@@ -26,7 +27,7 @@ export class DocumentPropertiesState implements DocumentPropertiesStateInterface
     this.subscribers.forEach((callback) => callback(state))
   }
 
-  notifyChanged<T extends DocumentPropertyName>(property: T, value: DocumentPropertyValues[T]) {
+  setProperty<T extends DocumentPropertyName>(property: T, value: DocumentPropertyValues[T]) {
     this.values[property] = value
     this.notify()
   }

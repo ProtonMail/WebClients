@@ -16,6 +16,9 @@ export class GetRealtimeUrlAndToken {
 
     return ApiResult.ok({
       token: value.Token,
+      preferences: {
+        includeDocumentNameInEmails: value.Preferences.find((p) => p.Name === 'IncludeDocumentName')?.Value ?? false,
+      },
     })
   }
 }

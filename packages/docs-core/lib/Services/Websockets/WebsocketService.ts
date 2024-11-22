@@ -4,7 +4,12 @@ import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import type { EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
-import type { InternalEventBusInterface, WebsocketConnectionInterface, WebsocketCallbacks } from '@proton/docs-shared'
+import type {
+  InternalEventBusInterface,
+  WebsocketConnectionInterface,
+  WebsocketCallbacks,
+  RealtimeUrlAndToken,
+} from '@proton/docs-shared'
 import { BroadcastSource, ProcessedIncomingRealtimeEventMessage, assertUnreachableAndLog } from '@proton/docs-shared'
 import type { GetRealtimeUrlAndToken } from '../../UseCase/CreateRealtimeValetToken'
 import type { WebsocketServiceInterface } from './WebsocketServiceInterface'
@@ -43,6 +48,7 @@ import { UpdateDebouncerEventType } from './Debouncer/UpdateDebouncerEventType'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { MetricService } from '../Metrics/MetricService'
+import type { DocumentPropertiesStateInterface } from '../State/DocumentPropertiesStateInterface'
 
 type LinkID = string
 
@@ -57,6 +63,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     private logger: LoggerInterface,
     private eventBus: InternalEventBusInterface,
     private metricService: MetricService,
+    private sharedState: DocumentPropertiesStateInterface,
     private appVersion: string,
   ) {
     window.addEventListener('beforeunload', this.handleWindowUnload)
@@ -188,6 +195,11 @@ export class WebsocketService implements WebsocketServiceInterface {
 
       getUrlAndToken: async () => {
         const result = await this._createRealtimeValetToken.execute(document, options.commitId())
+
+        if (!result.isFailed()) {
+          this.handleRetrievedValetTokenResult(result.getValue())
+        }
+
         return result
       },
     }
@@ -215,6 +227,10 @@ export class WebsocketService implements WebsocketServiceInterface {
     }
 
     return connection
+  }
+
+  handleRetrievedValetTokenResult(result: RealtimeUrlAndToken): void {
+    this.sharedState.setProperty('currentDocumentEmailDocTitleEnabled', result.preferences.includeDocumentNameInEmails)
   }
 
   isConnectionReadyPayload(obj: any): obj is ConnectionReadyPayload {
