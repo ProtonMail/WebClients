@@ -20,6 +20,7 @@ import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/ca
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { logger } from '@proton/pass/utils/logger';
 import { partialMerge } from '@proton/pass/utils/object/merge';
+import identity from '@proton/utils/identity';
 
 /** `allowFailure` defines how we should treat cache decryption errors.
  * If `true` they will be by-passed - else you can pass a custom error
@@ -36,7 +37,7 @@ export type HydrationResult = { fromCache: boolean; version?: string };
  * boolean flag indicating wether hydration happened from cache or not. */
 export function* hydrate(
     config: HydrateCacheOptions,
-    { getCache, getAuthStore, getSettings }: RootSagaOptions
+    { getCache, getAuthStore, getSettings, onBeforeHydrate }: RootSagaOptions
 ): Generator<any, HydrationResult> {
     try {
         const authStore = getAuthStore();
@@ -105,7 +106,7 @@ export function* hydrate(
          * cases, wait for network online in order to resume session */
         if (keyPassword) yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot, clear: true });
 
-        yield put(stateHydrate(state));
+        yield put(stateHydrate((onBeforeHydrate ?? identity)(state)));
 
         return {
             fromCache: cache?.state !== undefined && cache?.snapshot !== undefined,
