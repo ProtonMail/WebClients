@@ -61,6 +61,9 @@ export interface RootSagaOptions {
      * flag indicates if the boot failure should result in a cache wipe */
     onBoot?: (result: PassBootResult) => void;
 
+    /** Optional callback to mutate state before initial hydration */
+    onBeforeHydrate?: (state: State) => State;
+
     /** Callback used when account locale is updated */
     onLocaleUpdated?: (locale: string) => void;
 

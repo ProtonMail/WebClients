@@ -103,6 +103,7 @@ export const useSpotlightMessages = () => {
                             type: 'button',
                             onClick: getRatingURL ? () => onLink(getRatingURL()) : noop,
                         },
+                        weak: true,
                     },
                     {
                         type: SpotlightMessage.STORAGE_ISSUE,
@@ -157,6 +158,7 @@ export const useSpotlightMessages = () => {
                         component: UserRenewal,
                         id: 'user-renewal',
                         className: 'ui-red',
+                        weak: true,
                     },
                 ],
                 'type'

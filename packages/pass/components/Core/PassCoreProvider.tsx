@@ -98,7 +98,7 @@ export type PassCoreContextValue = {
 
 export type PassCoreProviderProps = Omit<PassCoreContextValue, 'locale' | 'theme' | 'setTheme'> & { wasm?: boolean };
 
-const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
+export const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
 
 /** The `PassCoreProvider` must be made available on all pass
  * clients : it provides implementations for processes that are

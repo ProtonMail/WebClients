@@ -44,25 +44,33 @@ export const SpotlightContent: FC<SpotlightMessageDefinition> = (props) => {
         props.onClose?.();
     }, [props]);
 
+    const canClose = props.type !== SpotlightMessage.NOOP || props.onClose;
+
     return (
         <div
             className={clsx(
                 props.className,
-                props.mode === 'default' && props.weak && 'weak',
+                props.weak && 'weak',
                 `pass-spotlight-content flex items-center gap-4 p-4 pr-6 rounded relative mt-2`
             )}
         >
-            <Button
-                icon
-                pill
-                shape="ghost"
-                color="weak"
-                size="small"
-                className="absolute top-0 right-0"
-                onClick={onClose}
-            >
-                <Icon name="cross-circle-filled" color="var(--interaction-norm-contrast)" alt={c('Action').t`Close`} />
-            </Button>
+            {canClose && (
+                <Button
+                    icon
+                    pill
+                    shape="ghost"
+                    color="weak"
+                    size="small"
+                    className="absolute top-0 right-0"
+                    onClick={onClose}
+                >
+                    <Icon
+                        name="cross-circle-filled"
+                        color="var(--interaction-norm-contrast)"
+                        alt={c('Action').t`Close`}
+                    />
+                </Button>
+            )}
 
             {(() => {
                 switch (props.mode) {
