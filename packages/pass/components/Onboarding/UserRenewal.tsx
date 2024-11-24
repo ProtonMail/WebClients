@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -16,20 +18,27 @@ import noop from '@proton/utils/noop';
 export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const { onLink } = usePassCore();
     const { SSO_URL } = usePassConfig();
+    const authStore = useAuthStore();
     const plan = useSelector(selectUserPlan);
     const planName = useSelector(selectPlanDisplayName);
+    const online = useConnectivity();
 
     if (!(plan && plan.SubscriptionEnd)) return;
 
     const endDate = epochToDate(plan.SubscriptionEnd);
     const title = c('Title').t`Your ${planName} subscription will end on ${endDate}`;
 
-    const upgrade = () => onLink(`${SSO_URL}/pass/dashboard?source=banner#your-subscriptions`);
+    const localID = authStore?.getLocalID();
+
+    const upgrade = () =>
+        onLink(
+            `${SSO_URL}${localID !== undefined ? `/u/${localID}/` : '/'}pass/dashboard?source=banner#your-subscriptions`
+        );
 
     return (
         <div className="flex-1">
-            <strong className="block color-invert">{title}</strong>
-            <span className="block text-sm color-invert">
+            <strong className="block">{title}</strong>
+            <span className="block text-sm">
                 {c('Info')
                     .t`You will no longer have access to sharing, 2FA, credit card and other advanced features in ${PASS_APP_NAME}`}
             </span>
@@ -41,7 +50,7 @@ export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
                     size="small"
                     className="text-sm px-3"
                     onClick={pipe(onClose, upgrade)}
-                    style={{ backgroundColor: 'var(--interaction-norm-major-3)' }}
+                    disabled={!online}
                 >
                     {c('Action').t`Reactivate now`}
                 </Button>
