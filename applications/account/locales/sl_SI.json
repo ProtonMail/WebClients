@@ -250,6 +250,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Potrdite odpiranje povezave ${ linkToShow }"
       ],
+      "Connect": [
+        "Poveži"
+      ],
       "Contact support": [
         "Kontakt za podporo"
       ],
@@ -799,11 +802,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "Refresh the page": [
-        "Osveži stran"
-      ],
       "refresh the page": [
         "Osvežite stran"
+      ],
+      "Refresh the page": [
+        "Osveži stran"
       ],
       "Reject": [
         "Zavrni"
@@ -1583,11 +1586,6 @@
         "Izberite ponudbo ob koncu leta"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB prostora za shranjevanje (dvakrat več kot kateri koli drug paket)"
@@ -1611,24 +1609,17 @@
         "Paket ${ plan } je nazaj samo za omejen čas."
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30-dnevno jamstvo z vračilom denarja"
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mesec",
-        "${ n } meseca",
-        "${ n } mesece",
-        "${ n } mesecev"
-      ],
-      "the first month": [
-        "prvi mesec"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Izredno znižana cena ${ discountedPrice } velja za ${ discountedMonths }. Potem se bo samodejno podaljšala z znižano ceno ${ nextPrice } za ${ nextMonths }. Naročnino lahko kadarkoli prekinete."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Izredno znižana cena ${ discountedPrice } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ nextPrice }. Naročnino lahko kadarkoli prekinete."
       ]
@@ -1796,17 +1787,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } mesec",
-        "${ n } meseca",
-        "${ n } mesece",
-        "${ n } mesecev"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Se podaljša samodejno za ${ renewPrice } za ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -7038,11 +7018,11 @@
       "Data locked": [
         "Podatki so zaklenjeni."
       ],
-      "dedicated servers": [
-        "namenske strežnike"
-      ],
       "Dedicated servers": [
         "Namenski strežniki"
+      ],
+      "dedicated servers": [
+        "namenske strežnike"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Izbrišite druge zapise MX ali poskrbite, da je prioriteta ${ MAIL_APP_NAME } najnižja številka."
@@ -8439,11 +8419,11 @@
       "User activated": [
         "Uporabnik je aktiviran."
       ],
-      "username": [
-        "uporabniško ime"
-      ],
       "Username": [
         "Uporabniško ime"
+      ],
+      "username": [
+        "uporabniško ime"
       ],
       "Users": [
         "Uporabniki"
@@ -11149,23 +11129,6 @@
         "Srednja hitrost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Raziščite vse pakete ${ BRAND_NAME }."
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Nadaljujte z brezplačnim paketom"
@@ -11193,6 +11156,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadgradi na ${ upsellPlanHumanSize }."
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Raziščite vse pakete ${ BRAND_NAME }."
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
       ]
     },
     "new_plans: feature": {
@@ -11852,17 +11832,6 @@
         "Izbrali ste: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Preizkus ${ shortPlan.title }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
-      ],
-      "Your account's usage": [
-        "Uporaba vašega računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -11881,6 +11850,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Omogočite premijske funkcije z nadgradnjo računa"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Preizkus ${ shortPlan.title }"
+      ],
+      "Starting from ${ price }": [
+        "Od ${ price }"
+      ],
+      "Your account's usage": [
+        "Uporaba vašega računa"
       ]
     },
     "new_plans: tooltip": {
@@ -13193,15 +13173,6 @@
       ],
       "Select billing country to pay": [
         "Izberite državo za izstavitev računa za plačilo"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Posebej znižana cena ${ priceWithDiscount } velja za prve ${ months }. Kupon velja za ${ couponRedemptions } obnovitve. Nato se samodejno podaljša po ${ price } za obdobje ${ months } mesecev. Naročnino lahko kadarkoli prekličete."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Posebej znižana cena ${ priceWithDiscount } velja za prvih ${ months }. Po tem se samodejno podaljša za ${ price } za ${ months }. Naročnino lahko kadarkoli prekličete."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Izredno znižana cena ${ priceWithDiscount } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ price }. Naročnino lahko kadarkoli prekinete."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakcija je uspešno zaznana. Dobroimetje bo dodano vašemu računu, ko bo transakcija v celoti potrjena."
@@ -15816,10 +15787,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [

@@ -253,6 +253,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "確認開啟連結 ${ linkToShow }"
       ],
+      "Connect": [
+        "連線"
+      ],
       "Contact sales": [
         "聯繫銷售"
       ],
@@ -811,10 +814,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
       "Reject": [
@@ -1580,11 +1583,6 @@
         "選擇你的年終優惠"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6TB 的儲存空間 (比其他方案多兩倍)"
@@ -1602,21 +1600,17 @@
         "此${ plan }方案為時間限定"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 天體驗不滿意退款服務"
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n }月"
-      ],
-      "the first month": [
-        "第一個月"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "${ discountedPrice } 特殊折扣將套用於前 ${ discountedMonths } 。其後將於每月自動以 ${ nextPrice } 續約 ${ nextMonths } 。您可以在任何時候取消。"
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "${ discountedPrice } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ nextPrice } 續約。您可以在任何時候取消。"
       ]
@@ -1793,14 +1787,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "儲存空間於 ${ BRAND_NAME } 所有服務中共享。"
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n }個月"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "自動以 ${ renewPrice } 續訂，繳費長度為 ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -6847,10 +6833,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -8266,10 +8252,10 @@
       "User activated": [
         "使用者已啟用"
       ],
-      "username": [
+      "Username": [
         "使用者名稱"
       ],
-      "Username": [
+      "username": [
         "使用者名稱"
       ],
       "Users": [
@@ -10867,32 +10853,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Get started for ${ price }": [
-        "使用${ price }取得"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "從${ priceMailPlus }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "升級至${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "繼續使用免費方案"
@@ -10920,6 +10880,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Get started for ${ price }": [
+        "使用${ price }取得"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "從${ priceMailPlus }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "升級至${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -11555,20 +11541,6 @@
         "您選擇的方案：${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "使用${ price }取得Mail Plus"
-      ],
-      "Starting from ${ price }": [
-        "從${ price }起"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -11587,6 +11559,20 @@
       ],
       "Unlock premium features by upgrading": [
         "透過升級來解鎖高級功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "使用${ price }取得Mail Plus"
+      ],
+      "Starting from ${ price }": [
+        "從${ price }起"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -12751,17 +12737,8 @@
       "Processing payment": [
         "正在處理付款"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "更新價 ${ price }，任何時間都可取消."
-      ],
       "Select billing country to pay": [
         "選取繳款國家以付款"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "享受特惠折扣 ${ priceWithDiscount } ${ months } 個月。而後將以每 ${ months } 月 ${ price } 的價格自動續約。您可以在任何時候取消訂閱。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ price } 續約。您可以在任何時候取消。"
       ],
       "Timeout exceeded": [
         "已經逾時"
@@ -15133,10 +15110,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [

@@ -256,6 +256,12 @@
       "Confirm opening of link ${ linkToShow }": [
         "Пацвердзіць адкрыццё спасылкі ${ linkToShow }"
       ],
+      "Connect": [
+        "Падключыцца"
+      ],
+      "Connected": [
+        "Падключана"
+      ],
       "Contact sales": [
         "Звязацца з камерцыйным аддзелам"
       ],
@@ -814,11 +820,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "Refresh the page": [
-        "Абнавіць старонку"
-      ],
       "refresh the page": [
         "абнавіць старонку"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
       ],
       "Reject": [
         "Адхіліць"
@@ -1619,17 +1625,6 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяц.",
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцы.",
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў.",
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1653,24 +1648,23 @@
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяц.",
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцы.",
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў.",
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён"
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } месяц",
-        "першыя ${ n } месяцы",
-        "першыя ${ n } месяцаў",
-        "першыя ${ n } месяцаў"
-      ],
-      "the first month": [
-        "першы месяц"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за ${ discountedMonths }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне са зніжаным коштам у памеры ${ nextPrice } за ${ nextMonths }. Скасаваць можна ў любы момант."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ nextPrice } за кожны месяц. Скасаваць можна ў любы момант."
       ]
@@ -1857,14 +1851,11 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяцы",
-        "${ n } месяцаў",
-        "${ n } месяцаў"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Аўтаматычнае абнаўленне па кошце ${ renewPrice } за перыяд часу ${ renewalLength }"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяц",
+        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяцы",
+        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяцаў",
+        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяцаў"
       ]
     },
     "Billing cycle option": {
@@ -3608,8 +3599,14 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Аўтаматычна сартуйце свае ўваходныя паведамленні перад тым, як яны трапяць у вашу паштовую скрыню."
       ],
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "Даступна з ${ MAIL_APP_NAME } Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Віншуем! Вы зарабілі максімальную колькасць з ${ rewardsLimit } бясплатных месяцаў тарыфнага плана ${ plusPlanName }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Стварыце сустрэчу Zoom і дадайце падрабязнасці аб далучэнні да падзеі адным націскам."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Стварайце любую колькасць метак або папак, каб падтрымліваць парадак у сваёй паштовай скрыні."
@@ -6783,6 +6780,9 @@
         "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз.",
         "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз."
       ],
+      "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
+        "${ PASS_APP_NAME } - гэта менеджар пароляў наступнага пакалення, які распрацаваны для лёгкага выкарыстання і прадукцыйнасці. Адкрыты зыходны код, сумесная распрацоўка SimpleLogin і ${ BRAND_NAME }."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
       ],
@@ -7245,6 +7245,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Палепшыце ідэнтычнасць вашай арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
       ],
+      "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
+        "Ствараючы уліковы запіс ${ PASS_APP_NAME } з дапамогай вашай электроннай пошты SimpleLogin, вы можаце кіраваць сваімі псеўданімамі наўпрост з ${ PASS_APP_NAME }."
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Прадвызначана, удзельнікі арганізацыі могуць экспартаваць толькі тыя сховішчы, якімі яны валодаюць. Калі гэты параметр уключаны, то магчымасці экспартаваць даныя ў іх не будзе."
       ],
@@ -7398,11 +7401,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -8059,7 +8062,7 @@
         "Пераканайцеся, што ў вас ${ addARecoveryMethod }, каб вы не страцілі доступ да свайго ўліковага запісу, калі забудзеце пароль."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
-        "Кіраванне вашымі параметрамі апавяшчэннямі па электроннай пошце для ${ DOCS_APP_NAME }"
+        "Кіраванне вашымі параметрамі апавяшчэнняў па электроннай пошце для ${ DOCS_APP_NAME }"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Для налады свайго ўліковага запісу ўвядзіце гэту інфармацыю ўручную ў сваю прыладу двухфактарнай аўтэнтыфікацыі. ${ switchButton }."
@@ -9042,11 +9045,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "username": [
-        "імя карыстальніка"
-      ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "username": [
+        "імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -11582,11 +11585,17 @@
       "Change password": [
         "Змяніць пароль"
       ],
+      "Convert to SSO": [
+        "Пераўтварыць у SSO"
+      ],
       "Delete": [
         "Выдаліць"
       ],
       "Delete and revoke invite": [
         "Выдаліць і адклікаць запрашэнне"
+      ],
+      "Detach from SSO": [
+        "Адлучыць ад SSO"
       ],
       "Edit": [
         "Рэдагаваць"
@@ -11930,32 +11939,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Пачніце з коштам у памеры ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Пачатковы кошт ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -11983,6 +11966,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Пачніце з коштам у памеры ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Пачатковы кошт ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12726,20 +12735,6 @@
         "Выбраны тарыфны план: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Атрымайце Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Пачатковы кошт ${ price }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -12758,6 +12753,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -13997,6 +14006,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Спецыяльная акцыя да запуску прадукту: Атрымайце ${ title } за ${ price } назаўсёды!"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Пачаць выкарыстоўваць ${ PASS_APP_NAME }"
+      ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі пажаданнямі."
       ],
@@ -14264,20 +14276,8 @@
       "Processing payment": [
         "Апрацоўка плацяжу"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Падаўжаецца за ${ price }. Скасаваць можна ў любы час."
-      ],
       "Select billing country to pay": [
         "Выберыце краіну выстаўлення рахунку для аплаты"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months } месяцы. Скасаваць можна ў любы момант."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months }. Скасаваць можна ў любы момант."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за кожны месяц. Скасаваць можна ў любы момант."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Трансакцыя паспяхова выяўлена. Крэдыты будуць дададзены на ваш рахунак пасля таго, як яна будзе цалкам пацверджана."
@@ -14965,6 +14965,9 @@
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Адрас электроннай пошты **${ email }** ужо існуе як карыстальнік ${ BRAND_NAME }. Увядзіце адрас электроннай пошты карыстальніка ад вашага пастаўшчыка пасведчанняў."
       ]
     },
     "saml: Info": {
@@ -14973,6 +14976,9 @@
       ],
       "Details": [
         "Падрабязнасці"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Увядзіце адрас электроннай пошты карыстальніка, які забяспечаны вашым пастаўшчыком паседчанняў для **${ domainName }**"
       ],
       "Test in progress...": [
         "Адбываецца тэсціраванне..."
@@ -15155,6 +15161,14 @@
       ],
       "to be created": [
         "будзе створаны"
+      ],
+      "to be deleted": [
+        "будзе выдалены"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Дазваляе дадаваць відэаканферэнцыю Zoom у любыя падзеі вашага календара"
       ]
     },
     "session_recovery:available:action": {
@@ -15496,7 +15510,7 @@
         "Уключыць раздзел Фатаграфіі"
       ],
       "Get updates about comments via email": [
-        "Атрымлівайце абнаўленні аб каментарыях па электроннай пошце"
+        "Атрымлівайце абнаўленні аб каментарыях праз электронную пошту"
       ],
       "Include document name in email notifications": [
         "Уключаць назву дакумента ў апавяшчэнні па электроннай пошце"
@@ -15641,6 +15655,9 @@
       ]
     },
     "Signup: Info": {
+      "10 aliases for email protection from breaches": [
+        "10 псеўданімаў для абароны электроннай пошты ад парушэнняў"
+      ],
       "Advanced security features": [
         "Пашыраныя функцыі бяспекі"
       ],
@@ -15658,6 +15675,9 @@
       ],
       "Calendar, password manager, file storage, and VPN included": [
         "Уключае каляндар, менеджар пароляў, файлавае сховішча і VPN"
+      ],
+      "Device sync": [
+        "Сінхранізаваць прыладу"
       ],
       "Email aliases": [
         "Псеўданімы электроннай пошты"
@@ -15700,6 +15720,9 @@
       ],
       "The only email service with:": [
         "Адзіны сэрвіс электроннай пошты з:"
+      ],
+      "Unlimited passwords": [
+        "Неабмежаваная колькасць пароляў"
       ],
       "Works on all devices": [
         "Працуе на ўсіх прыладах"
@@ -15928,6 +15951,18 @@
         "${ n } удзельнікаў запыталі вашу дапамогу з уваходам.",
         "${ n } удзельнікаў запыталі вашу дапамогу з уваходам."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } карыстальнік пераўтвораны ў SSO",
+        "${ n } карыстальнікі пераўтвораны ў SSO",
+        "${ n } карыстальнікаў пераўтвораны ў SSO",
+        "${ n } карыстальнікаў пераўтвораны ў SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } карыстальнік адлучаны ад SSO",
+        "${ n } карыстальнікі адлучаны ад SSO",
+        "${ n } карыстальнікаў адлучаны ад SSO",
+        "${ n } карыстальнікаў адлучаны ад SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } карыстальнік далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Праверце яго ўліковы запіс:",
         "${ n } карыстальнікі далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Праверце іх уліковыя запісы:",
@@ -15948,6 +15983,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Карыстальнікі SSO (дзе пастаўшчыком пасведчанняў з'яўляецеся вы) будуць выдалены** і вам неабходна будзе стварыць іх уручную, каб дадаць іх назад у вашу арганізацыю."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Карыстальнік SSO будзе адлучаны ад вашага пастаўшчыка пасведчанняў** і пераўтвораны ў карыстальніка, які не належыць да SSO."
       ],
       "Access denied": [
         "У доступе адмоўлена"
@@ -16150,8 +16188,14 @@
       "Yes, it was me": [
         "Так, гэта быў я."
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Вам давядзецца стварыць новых карыстальнікаў уручную, каб дадаць іх у вашу арганізацыю."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Ваша канфігурацыя SSO будзе выдалена."
       ]
     },
     "sso: auth device state": {
@@ -17541,10 +17585,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -17600,6 +17644,9 @@
       ],
       "Connect ${ name }": [
         "Падключыць ${ name }"
+      ],
+      "Connection status": [
+        "Статус падключэння"
       ],
       "Contact us": [
         "Звязацца з намі"
@@ -17967,6 +18014,9 @@
       "Get the apps": [
         "Атрымаць праграмы"
       ],
+      "Get Zooming faster": [
+        "Паскорыць Zoom"
+      ],
       "Gift": [
         "Падарунак"
       ],
@@ -18330,6 +18380,9 @@
       "Send new invite?": [
         "Адправіць новае запрашэнне?"
       ],
+      "Service": [
+        "Сэрвіс"
+      ],
       "Session management": [
         "Кіраванне сеансамі"
       ],
@@ -18443,6 +18496,9 @@
       ],
       "There are no groups": [
         "Няма ніводнай групы"
+      ],
+      "Third-party apps and services": [
+        "Староннія праграмы і сэрвісы"
       ],
       "This field cannot be empty": [
         "Гэта поле не можа быць пустым"
@@ -18972,6 +19028,9 @@
       ],
       "Cancel request to access user data?": [
         "Скасаваць запыт на доступ да даных карыстальніка?"
+      ],
+      "Confirm all": [
+        "Пацвердзіць усе"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальніка, бо яго/іх ключы шыфравання ў гэты час былі абноўлены:",
