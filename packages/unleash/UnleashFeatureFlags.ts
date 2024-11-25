@@ -55,6 +55,7 @@ enum AccountFlag {
     EduGainSSO = 'EduGainSSO',
     ChangePasswordStrengthIndicator = 'ChangePasswordStrengthIndicator',
     LumoInProductSwitcher = 'LumoInProductSwitcher',
+    LumoAddonAvailable = 'LumoAddonAvailable',
 }
 
 enum PaymentsFlag {
