@@ -803,11 +803,6 @@
         "Mohou prohlížet nebo upravovat váš kalendář"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Opětovně aktivovat"
-      ]
-    },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
         "Sdílet s uživateli ${ BRAND_NAME }"
@@ -980,18 +975,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } měsíc",
-        "první ${ n } měsíce",
-        "prvních ${ n } měsíců",
-        "prvních ${ n } měsíců"
-      ],
-      "the first month": [
-        "první měsíc"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Speciální zvýhodněná cena ${ discountedPrice } platí po dobu ${ discountedMonths }. Poté se tarif automaticky obnoví za zvýhodněnou cenu ${ nextPrice } na ${ nextMonths }. Službu můžete kdykoliv zrušit."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ discountedPrice } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ nextPrice }. Službu můžete kdykoli zrušit."
       ]
@@ -1175,17 +1158,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } měsíc",
-        "${ n } měsíce",
-        "${ n } měsíců",
-        "${ n } měsíců"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatické obnovení za ${ renewPrice }, na ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2662,6 +2634,11 @@
         "Faktura po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
@@ -2749,11 +2726,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5603,11 +5575,6 @@
         "Klikněte pro podrobnosti"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Vypršení platnosti můžete zabránit opětovnou aktivací předplatného"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } vybraná složka",
@@ -7307,14 +7274,6 @@
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Získejte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -7327,6 +7286,14 @@
       ],
       "Switch plans?": [
         "Změnit tarif?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Získejte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -8099,20 +8066,8 @@
       "Please select your billing state first.": [
         "Vyberte prosím nejprve váš stát platby."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Obnovuje se za ${ price }, zrušit lze kdykoli."
-      ],
       "Select billing country to pay": [
         "Vyberte zemi platby"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Kupón je platný pro ${ couponRedemptions } obnovení. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ price }. Službu můžete kdykoli zrušit."
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
@@ -9544,14 +9499,6 @@
         "Ušetříte"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Aktivní"
-      ],
-      "Expiring": [
-        "Vypršení platnosti"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt se shoduje.",
@@ -10390,17 +10337,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Vyberte číslo"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Datum ukončení"
-      ],
-      "Plan": [
-        "Tarif"
-      ],
-      "Status": [
-        "Stav"
       ]
     },
     "Title; create calendar modal": {

@@ -302,6 +302,9 @@
       "enable desktop notifications": [
         "povoliť notifikácie na pracovnej ploche"
       ],
+      "Expand video conferencing widget": [
+        "Rozšírenie widgetu pre videokonferencie"
+      ],
       "Export": [
         "Exportovať"
       ],
@@ -800,11 +803,6 @@
         "Môžu prezerať alebo upravovať váš kalendár"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Znovu aktivovať"
-      ]
-    },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
         "Zdieľať s používateľmi ${ BRAND_NAME }"
@@ -977,18 +975,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mesiac",
-        "prvé ${ n } mesiace",
-        "prvých ${ n } mesiacov",
-        "prvých ${ n } mesiacov"
-      ],
-      "the first month": [
-        "prvý mesiac"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ discountedPrice } platí na ${ discountedMonths }. Potom sa automaticky obnoví za zvýhodnenú cenu ${ nextPrice } na ${ nextMonths }. Službu môžete kedykoľvek zrušiť."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ discountedPrice } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ nextPrice }. Službu môžete kedykoľvek zrušiť."
       ]
@@ -1163,17 +1149,6 @@
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Špeciálne navrhnutý NetShield chráni vaše zariadenia a zrýchľuje vaše prehliadanie tým, že blokuje reklamy, sledovače a malvér."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } mesiac",
-        "${ n } mesiace",
-        "${ n } mesiacov",
-        "${ n } mesiacov"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2650,6 +2625,11 @@
         "Faktúra po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
@@ -2737,11 +2717,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3160,6 +3135,9 @@
       ],
       "Event not found": [
         "Udalosť nenájdená"
+      ],
+      "Failed to create meeting": [
+        "Stretnutie sa nepodarilo vytvoriť"
       ],
       "Failed to get event": [
         "Nepodarilo sa získať udalosť"
@@ -4082,6 +4060,9 @@
       ],
       "Less details": [
         "Menej detailov"
+      ],
+      "Meeting host:": [
+        "Poskytovateľ schôdzky:"
       ],
       "Meeting link:": [
         "Odkaz na schôdzku:"
@@ -5583,11 +5564,6 @@
     "Info on errors": {
       "Click for details": [
         "Kliknite pre podrobnosti"
-      ]
-    },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Vypršaniu platnosti môžete zabrániť opätovnou aktiváciou predplatného"
       ]
     },
     "Info: partial": {
@@ -7289,14 +7265,6 @@
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Získajte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -7309,6 +7277,14 @@
       ],
       "Switch plans?": [
         "Zmeniť plán?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Získajte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7603,6 +7579,9 @@
       ],
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
+      ],
+      "Meeting host copied to clipboard": [
+        "Poskytovateľ schôdzky skopírovaný do schránky"
       ],
       "Meeting ID copied to clipboard": [
         "ID schôdzky skopírované do schránky"
@@ -8075,20 +8054,8 @@
       "Please select your billing state first.": [
         "Najprv vyberte fakturačný štát, prosím."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Obnovuje sa za ${ price }, zrušiť môžete kedykoľvek."
-      ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ months }. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ price } na ${ months }. Službu môžete kedykoľvek zrušiť."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ months }. Potom sa každý mesiac automaticky obnoví za ${ price } na ${ months }. Službu môžete kedykoľvek zrušiť."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ price }. Službu môžete kedykoľvek zrušiť."
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
@@ -8949,6 +8916,12 @@
       "Now you can see when participants are free to attend your meeting.": [
         "Teraz môžete zistiť, kedy sa účastníci môžu zúčastniť na vašom mítingu."
       ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "Vytvárajte a pridávajte do udalostí odkazy na videokonferencie s ľahkosťou."
+      ],
+      "Video conferencing is here!": [
+        "Videokonferencie sú tu!"
+      ],
       "You can now collapse the navigation bar.": [
         "Teraz môžete zbaliť navigačný panel."
       ]
@@ -9512,14 +9485,6 @@
     "Subscription saving": {
       "Save": [
         "Ušetríte"
-      ]
-    },
-    "Subscription status": {
-      "Active": [
-        "Aktívne"
-      ],
-      "Expiring": [
-        "Vypršanie platnosti"
       ]
     },
     "Success": {
@@ -10362,17 +10327,6 @@
         "Vyberte číslo"
       ]
     },
-    "Title subscription": {
-      "End date": [
-        "Dátum ukončenia"
-      ],
-      "Plan": [
-        "Plán"
-      ],
-      "Status": [
-        "Stav"
-      ]
-    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Vytvoriť kalendár"
@@ -11014,6 +10968,9 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Pripojte sa k stretnutiu na Zoome"
+      ],
       "Meeting ID:": [
         "ID schôdzky:"
       ],
