@@ -33,6 +33,8 @@ const insertInMenu = ({ menu, key, otherOsEntries, macEntries, allOSEntries }: M
 };
 
 export const setApplicationMenu = () => {
+    const quitMenuProps: MenuProps["submenu"] = isMac ? [] : [{ role: "quit" }];
+
     const temp: MenuProps[] = [
         {
             label: c("Menu").t`File`,
@@ -48,9 +50,7 @@ export const setApplicationMenu = () => {
                     type: "normal",
                     click: () => shell.openPath(app.getPath("logs")),
                 },
-                {
-                    role: "quit",
-                },
+                ...quitMenuProps,
             ],
         },
         {
