@@ -117,6 +117,7 @@ import type { WebCoreVpnSingleSignupStep4Setup2Total } from './types/web_core_vp
 import type { WebCoreVpnSingleSignupStep4SetupTotal } from './types/web_core_vpn_single_signup_step4_setup_total_v1.schema';
 import type { HttpsProtonMeWebCoreWebvitalsTotalV1SchemaJson } from './types/web_core_webvitals_total_v1.schema';
 import type { WebCryptoKeyTransparencyErrorsTotal } from './types/web_crypto_keytransparency_errors_total_v1.schema';
+import type { HttpsProtonMeWebDriveDownloadMechanismSuccessRateTotalV1SchemaJson } from './types/web_drive_download_mechanism_success_rate_total_v1.schema';
 import type { HttpsProtonMeWebDrivePerformanceAveragetimeperitemHistogramV1SchemaJson } from './types/web_drive_performance_averagetimeperitem_histogram_v1.schema';
 import type { HttpsProtonMeWebDrivePerformanceClicktobootstrappedHistogramV1SchemaJson } from './types/web_drive_performance_clicktobootstrapped_histogram_v1.schema';
 import type { HttpsProtonMeWebDrivePerformanceClicktofirstitemrenderedHistogramV1SchemaJson } from './types/web_drive_performance_clicktofirstitemrendered_histogram_v1.schema';
@@ -127,6 +128,7 @@ import type { HttpsProtonMeWebDrivePerformanceDomcontentloadedHistogramV1SchemaJ
 import type { HttpsProtonMeWebDrivePerformanceLoadHistogramV1SchemaJson } from './types/web_drive_performance_load_histogram_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson } from './types/web_drive_public_share_load_error_total_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson } from './types/web_drive_public_share_load_success_total_v1.schema';
+import type { EmailContentRenderTime } from './types/web_mail_performance_email_content_render_time_histogram_v1.schema';
 import type { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_subscription_steps_total_v1.schema';
 import type { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
@@ -347,6 +349,8 @@ class Metrics extends MetricsBase {
 
     public crypto_keytransparency_errors_total: Counter<WebCryptoKeyTransparencyErrorsTotal>;
 
+    public drive_download_mechanism_success_rate_total: Counter<HttpsProtonMeWebDriveDownloadMechanismSuccessRateTotalV1SchemaJson>;
+
     public drive_performance_averagetimeperitem_histogram: Histogram<HttpsProtonMeWebDrivePerformanceAveragetimeperitemHistogramV1SchemaJson>;
 
     public drive_performance_clicktobootstrapped_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktobootstrappedHistogramV1SchemaJson>;
@@ -366,6 +370,8 @@ class Metrics extends MetricsBase {
     public drive_public_share_load_error_total: Counter<HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson>;
 
     public drive_public_share_load_success_total: Counter<HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson>;
+
+    public mail_performance_email_content_render_time_histogram: Histogram<EmailContentRenderTime>;
 
     public payments_subscription_steps_total: Counter<WebPaymentsSubscriptionStepsTotal>;
 
@@ -947,6 +953,12 @@ class Metrics extends MetricsBase {
             this.requestService
         );
 
+        this.drive_download_mechanism_success_rate_total =
+            new Counter<HttpsProtonMeWebDriveDownloadMechanismSuccessRateTotalV1SchemaJson>(
+                { name: 'web_drive_download_mechanism_success_rate_total', version: 1 },
+                this.requestService
+            );
+
         this.drive_performance_averagetimeperitem_histogram =
             new Histogram<HttpsProtonMeWebDrivePerformanceAveragetimeperitemHistogramV1SchemaJson>(
                 { name: 'web_drive_performance_averagetimeperitem_histogram', version: 1 },
@@ -1006,6 +1018,11 @@ class Metrics extends MetricsBase {
                 { name: 'web_drive_public_share_load_success_total', version: 1 },
                 this.requestService
             );
+
+        this.mail_performance_email_content_render_time_histogram = new Histogram<EmailContentRenderTime>(
+            { name: 'web_mail_performance_email_content_render_time_histogram', version: 1 },
+            this.requestService
+        );
 
         this.payments_subscription_steps_total = new Counter<WebPaymentsSubscriptionStepsTotal>(
             { name: 'web_payments_subscription_steps_total', version: 1 },
