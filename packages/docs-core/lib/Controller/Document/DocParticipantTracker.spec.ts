@@ -1,41 +1,46 @@
-import type { InternalEventBusInterface } from '@proton/docs-shared'
 import type { UserState } from '@lexical/yjs'
-import { DocParticipantTracker, ParticipantTrackerEvent } from './DocParticipantTracker'
+import { DocParticipantTracker } from './DocParticipantTracker'
+import type { DocumentState } from '../../State/DocumentState'
 
 describe('DocParticipantTracker', () => {
   let tracker: DocParticipantTracker
+  let mockSharedState: jest.Mocked<DocumentState>
 
   beforeEach(() => {
-    tracker = new DocParticipantTracker({
-      publish: jest.fn(),
-    } as unknown as InternalEventBusInterface)
+    mockSharedState = {
+      getProperty: jest.fn(),
+      setProperty: jest.fn(),
+    } as unknown as jest.Mocked<DocumentState>
+
+    tracker = new DocParticipantTracker(mockSharedState)
   })
 
   describe('updateParticipantsFromUserStates', () => {
-    it('should update the totalParticipants and publish an event if the limit is reached', () => {
+    it('should update shared state if the limit is reached', () => {
+      mockSharedState.getProperty.mockReturnValue(false)
       const states = new Array(10).fill({}) as UserState[]
 
       tracker.updateParticipantsFromUserStates(states)
 
-      expect(tracker.isParticipantLimitReached()).toBe(true)
-      expect(tracker.eventBus.publish).toHaveBeenCalledWith({
-        type: ParticipantTrackerEvent.DocumentLimitBreached,
-        payload: undefined,
-      })
+      expect(mockSharedState.setProperty).toHaveBeenCalledWith('realtimeIsParticipantLimitReached', true)
     })
 
-    it('should update the totalParticipants and publish an event if the limit is unbreached', () => {
-      tracker.updateParticipantsFromUserStates(new Array(10).fill({}) as UserState[])
+    it('should update shared state if the limit is unbreached', () => {
+      mockSharedState.getProperty.mockReturnValue(true)
+      const states = new Array(9).fill({}) as UserState[]
 
-      tracker.eventBus.publish = jest.fn()
+      tracker.updateParticipantsFromUserStates(states)
 
-      tracker.updateParticipantsFromUserStates(new Array(9).fill({}) as UserState[])
+      expect(mockSharedState.setProperty).toHaveBeenCalledWith('realtimeIsParticipantLimitReached', false)
+    })
 
-      expect(tracker.isParticipantLimitReached()).toBe(false)
-      expect(tracker.eventBus.publish).toHaveBeenCalledWith({
-        type: ParticipantTrackerEvent.DocumentLimitUnbreached,
-        payload: undefined,
-      })
+    it('should not update shared state if the limit status has not changed', () => {
+      mockSharedState.getProperty.mockReturnValue(true)
+      const states = new Array(10).fill({}) as UserState[]
+
+      tracker.updateParticipantsFromUserStates(states)
+
+      expect(mockSharedState.setProperty).not.toHaveBeenCalled()
     })
   })
 })

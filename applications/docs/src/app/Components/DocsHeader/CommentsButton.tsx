@@ -1,13 +1,13 @@
 import { Button } from '@proton/atoms'
 import { Icon } from '@proton/components'
-import type { DocControllerInterface } from '@proton/docs-core'
 import { useEffect, useState } from 'react'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import type { CommentsChangedData } from '@proton/docs-shared'
 import { CommentsEvent } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
+import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
 
-export function CommentsButton({ controller }: { controller: DocControllerInterface }) {
+export function CommentsButton({ editorController }: { editorController: EditorControllerInterface }) {
   const application = useApplication()
   const [hasUnread, setHasUnread] = useState(false)
 
@@ -23,7 +23,7 @@ export function CommentsButton({ controller }: { controller: DocControllerInterf
       shape="ghost"
       data-testid="comments-button"
       className="flex items-center justify-center gap-2 text-sm"
-      onClick={() => controller.showCommentsPanel()}
+      onClick={() => editorController.showCommentsPanel()}
     >
       <div
         className={clsx(

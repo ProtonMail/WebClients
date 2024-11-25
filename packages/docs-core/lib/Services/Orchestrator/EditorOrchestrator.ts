@@ -4,9 +4,7 @@ import type {
   CommentControllerInterface,
   ClientRequiresEditorMethods,
   RtsMessagePayload,
-  DocumentMetaInterface,
   BroadcastSource,
-  DocumentRole,
   DataTypesThatDocumentCanBeExportedAs,
   InternalEventBusInterface,
   SuggestionSummaryType,
@@ -20,6 +18,8 @@ import type { DocsApi } from '../../Api/DocsApi'
 import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { PublicDocControllerInterface } from '../../Controller/Document/PublicDocControllerInterface'
 import { isPrivateDocController } from '../../Controller/Document/isPrivateDocController'
+import type { EditorControllerInterface } from '../../Controller/Document/EditorController'
+import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 
 /**
  * Exposes a unified interface for interacting with a document to the editor bridge,
@@ -31,10 +31,16 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     private readonly docs: DocControllerInterface | PublicDocControllerInterface,
     private readonly docsApi: DocsApi,
     private readonly eventBus: InternalEventBusInterface,
+    private readonly editor: EditorControllerInterface,
+    private readonly documentState: DocumentState | PublicDocumentState,
   ) {}
 
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
-    return this.docs.exportAndDownload(format)
+    if (!this.editor) {
+      throw new Error('Editor not initialized')
+    }
+
+    return this.editor.exportAndDownload(format)
   }
 
   get username(): string {
@@ -49,14 +55,6 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.docs.userAddress
   }
 
-  get docMeta(): DocumentMetaInterface {
-    return this.docs.getSureDocument()
-  }
-
-  get role(): DocumentRole {
-    return this.docs.role
-  }
-
   editorReportingError(error: string, extraInfo: { irrecoverable?: boolean; lockEditor?: boolean }): void {
     PostApplicationError(this.eventBus, {
       translatedError: error,
@@ -64,26 +62,29 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     })
 
     if (extraInfo.lockEditor) {
-      if (isPrivateDocController(this.docs)) {
-        this.docs.editorIsRequestingToLockAfterRenderingIssue()
-      }
+      this.documentState.setProperty('editorHasRenderingIssue', true)
     }
   }
 
   async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, updateSource: BroadcastSource): Promise<void> {
-    if (!isPrivateDocController(this.docs)) {
-      throw new Error('Attempting to use function only available to private doc controller')
-    }
-
-    return this.docs.editorRequestsPropagationOfUpdate(message, updateSource)
+    this.documentState.emitEvent({
+      name: 'EditorRequestsPropagationOfUpdate',
+      payload: {
+        message,
+        debugSource: updateSource,
+      },
+    })
   }
 
   async editorReportingEvent(event: EditorEvent, data: EditorEventData[EditorEvent]): Promise<void> {
-    return this.docs.editorReportingEvent(event, data)
+    this.eventBus.publish({
+      type: event,
+      payload: data,
+    })
   }
 
   public provideEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void {
-    void this.docs.editorIsReadyToReceiveInvocations(editorInvoker)
+    this.editor.receiveEditor(editorInvoker)
   }
 
   getTypersExcludingSelf(threadId: string): string[] {
