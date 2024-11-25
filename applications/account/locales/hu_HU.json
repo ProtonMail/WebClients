@@ -247,6 +247,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Hivatkozás megnyitásának jóváhagyása: ${ linkToShow }"
       ],
+      "Connect": [
+        "Csatlakozás"
+      ],
       "Contact sales": [
         "Vegye fel a kapcsolatot értékesítőinkkel"
       ],
@@ -778,11 +781,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "Refresh the page": [
-        "Oldal frissítése"
-      ],
       "refresh the page": [
         "frissítse az oldalt"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
       ],
       "Reject": [
         "Elutasítás"
@@ -1518,11 +1521,6 @@
         "Válassza ki az Új évi ajánlatát"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Sajnáljuk, de ez az ajánlat nem elérhető az ön előfizetésével."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB tárhely (2x több mint bármelyik másik előfizetésben)"
@@ -1546,18 +1544,14 @@
         "A ${ plan } csomag visszatért egy korlátozott ideig"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Sajnáljuk, de ez az ajánlat nem elérhető az ön előfizetésével."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 napos pénzvisszatérítési garancia"
-      ]
-    },
-    "bf2023: renew": {
-      "${ n } month": [
-        "${ n } hónap",
-        "az első ${ n } hónapban"
-      ],
-      "the first month": [
-        "az első hónapban"
       ]
     },
     "bf2023: Title": {
@@ -1718,15 +1712,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "A tárhelye meg van osztva minden ${ BRAND_NAME } alkalmazás között."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } hónap",
-        "${ n } hónap"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatikusan megújul, ${ renewPrice } áron, ${ renewalLength } periódussal"
       ]
     },
     "Billing cycle option": {
@@ -3381,6 +3366,9 @@
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulálunk! Megszerezte a maximum ${ rewardsLimit } hónapnyi ingyenes ${ plusPlanName } elérést."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Hozzon létre egy Zoom értekezletet, és egyetlen kattintással adja hozzá a csatlakozási adatokat az eseményhez."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "A funkciók eléréshez engedélyezze a ${ PROTON_SENTINEL_NAME } funkciót"
@@ -8201,11 +8189,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "username": [
-        "felhasználónév"
-      ],
       "Username": [
         "Felhasználónév"
+      ],
+      "username": [
+        "felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -10804,23 +10792,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -10848,6 +10819,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -11433,14 +11421,6 @@
         "A választott csomagja: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -11459,6 +11439,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -15152,10 +15140,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -15514,6 +15502,9 @@
       ],
       "Get the apps": [
         "Alkalmazások letöltése"
+      ],
+      "Get Zooming faster": [
+        "Gyorsabb Zoomolás"
       ],
       "Gift": [
         "Ajándék"

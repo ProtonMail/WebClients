@@ -256,6 +256,12 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmar apertura del enlace ${ linkToShow }"
       ],
+      "Connect": [
+        "Conectar"
+      ],
+      "Connected": [
+        "Conectado"
+      ],
       "Contact sales": [
         "Contactar a ventas"
       ],
@@ -814,11 +820,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "Refresh the page": [
-        "Refrescar la página"
-      ],
       "refresh the page": [
         "refresque la página"
+      ],
+      "Refresh the page": [
+        "Refrescar la página"
       ],
       "Reject": [
         "Rechazar"
@@ -1167,6 +1173,9 @@
       ],
       "Upgrade now": [
         "Actualizar ahora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Mejore a ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Mejorar a Business"
@@ -1611,15 +1620,6 @@
         "Seleccione la oferta de fin de año"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Lo sentimos, esta oferta no está disponible con el plan actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Lo sentimos, esta oferta no está disponible con su plan actual. Pero puede obtener ${ discountPercentage } de ${ plan.Title } al suscribirse durante ${ cycle } mes.",
-        "Lo sentimos, esta oferta no está disponible con su plan actual. Pero puede obtener ${ discountPercentage } de ${ plan.Title } al suscribirse durante ${ cycle } meses."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de almacenamiento (el doble que cualquier otro plan)"
@@ -1643,21 +1643,23 @@
         "El plan ${ plan } está de nuevo disponible por tiempo limitado."
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Lo sentimos, esta oferta no está disponible con el plan actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Lo sentimos, esta oferta no está disponible con su plan actual. Pero puede obtener ${ discountPercentage } de ${ plan.Title } al suscribirse durante ${ cycle } mes.",
+        "Lo sentimos, esta oferta no está disponible con su plan actual. Pero puede obtener ${ discountPercentage } de ${ plan.Title } al suscribirse durante ${ cycle } meses."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garantía de reembolso durante 30 días"
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mes",
-        "los primeros ${ n } meses"
-      ],
-      "the first month": [
-        "el primer mes"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "La oferta especial de ${ discountedPrice } es válida durante ${ discountedMonths }. Una vez transcurrido ese plazo, se renovará automáticamente al precio rebajado de ${ nextPrice } durante ${ nextMonths }. Podrá cancelarla en cualquier momento."
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "La oferta especial de ${ discountedPrice } es válida durante los primeros ${ cycle } meses. Una vez transcurrido ese plazo, se renovará automáticamente al precio rebajado de ${ nextPrice } durante ${ renewalLength } meses. Puede cancelarla en cualquier momento."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "La oferta especial de ${ discountedPrice } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ nextPrice } cada mes. Puede cancelarla en cualquier momento."
@@ -1846,12 +1848,9 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } meses"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Se renueva automáticamente por ${ renewPrice } durante ${ renewalLength }."
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Se renueva automáticamente por ${ renewPrice } durante ${ renewLength } mes.",
+        "Se renueva automáticamente por ${ renewPrice } durante ${ renewLength } meses."
       ]
     },
     "Billing cycle option": {
@@ -3587,6 +3586,9 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "¡Felicitaciones! Ha ganado el máximo de ${ rewardsLimit } meses gratuitos de ${ plusPlanName }."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Cree una reunión de Zoom y añada detalles de ingreso a su evento con un solo clic."
+      ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Cree tantas etiquetas o carpetas como necesite para mantener ordenado su buzón."
       ],
@@ -4490,6 +4492,9 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Error al obtener las sesiones activas, ${ refresh } o intente nuevo más tarde."
+      ],
+      "Failed to load OAuth modal.": [
+        "Error al cargar la ventana OAuth"
       ],
       "Failed to process the logo": [
         "Error al procesar el logo"
@@ -7122,7 +7127,7 @@
         "Impulse la identidad de marca de su organización y cree una experiencia en línea más consistente para sus usuarios."
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
-        "Al crear una cuenta ${ PASS_APP_NAME } con su correo electrónico SimpleLogin, puede administrar sus alias directamente desde ${ PASS_APP_NAME }."
+        "Al crear una cuenta ${ PASS_APP_NAME } con su correo electrónico de SimpleLogin, puede administrar sus alias directamente desde ${ PASS_APP_NAME }."
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Por defecto, los miembros de la organización solo pueden exportar bóvedas donde sean propietarios. Si esta opción está activada, no podrán exportar ningún dato."
@@ -7271,11 +7276,11 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -8893,11 +8898,11 @@
       "User activated": [
         "El usuario fue activado."
       ],
-      "username": [
-        "nombre de usuario"
-      ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "username": [
+        "nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -11731,32 +11736,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Empiece por ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "A partir de ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Seguir con el plan gratuito"
@@ -11784,6 +11763,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Actualizar a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Empiece por ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "A partir de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12477,20 +12482,6 @@
         "El plan seleccionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Obtenga Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -12509,6 +12500,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquee funciones premium al actualizar"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Obtenga Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -13995,20 +14000,23 @@
       "Processing payment": [
         "Procesando el pago"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Se renueva por ${ price }, cancele cuando desee."
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Se renueva por ${ renewPrice }, cancele cuando desee."
       ],
       "Select billing country to pay": [
         "Seleccione el país de facturación para pagar"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puede cancelarla en cualquier momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante los primeros ${ subscriptionLength } meses. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Puede cancelarla en cualquier momento."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. Después se renovará automáticamente al precio de ${ price } cada ${ months }. Puede cancelarla en cualquier momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante los primeros ${ subscriptionLength } meses. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ renewPrice } durante ${ subscriptionLengthCopy } meses. Puede cancelarla en cualquier momento."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ price } cada mes. Puede cancelarla en cualquier momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ renewPrice } por ${ subscriptionLength } mes. Puede cancelarla en cualquier momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ renewPrice } cada mes. Puede cancelarla en cualquier momento."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "La transacción se detectó. Los créditos se añadirán a la cuenta una vez que se confirme la transacción por completo."
@@ -14886,6 +14894,14 @@
       ],
       "to be created": [
         "por crear"
+      ],
+      "to be deleted": [
+        "a eliminar"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Le permite agregar una videoconferencia de Zoom a cualquiera de sus eventos del calendario"
       ]
     },
     "session_recovery:available:action": {
@@ -17190,10 +17206,10 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -17249,6 +17265,9 @@
       ],
       "Connect ${ name }": [
         "Conectar ${ name }"
+      ],
+      "Connection status": [
+        "Estado de la conexión"
       ],
       "Contact us": [
         "Contáctenos"
@@ -17609,6 +17628,9 @@
       ],
       "Get the apps": [
         "Obtener las aplicaciones"
+      ],
+      "Get Zooming faster": [
+        "Obtener Zoom más rápido"
       ],
       "Gift": [
         "Regalía"
@@ -17971,6 +17993,9 @@
       "Send new invite?": [
         "¿Enviar invitación nueva?"
       ],
+      "Service": [
+        "Servicio"
+      ],
       "Session management": [
         "Gestión de sesiones"
       ],
@@ -18082,6 +18107,9 @@
       ],
       "There are no groups": [
         "No hay grupos"
+      ],
+      "Third-party apps and services": [
+        "Aplicaciones y servicios de terceros"
       ],
       "This field cannot be empty": [
         "Este campo no puede estar vacío"
