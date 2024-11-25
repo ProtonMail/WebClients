@@ -96,12 +96,18 @@ export const handleIPCCalls = () => {
                 clearStorage(true, 500);
                 resetBadge();
                 break;
-            case "oauthPopupOpened":
-                global.oauthProcess = payload === "oauthPopupStarted";
+            case "oauthPopupOpened": {
+                const enabled = payload === "oauthPopupStarted";
+                global.oauthProcess = enabled;
+                ipcLogger.debug("oauthProcess", enabled ? "enabled" : "disabled");
                 break;
-            case "subscriptionModalOpened":
-                global.subscriptionProcess = payload === "subscriptionModalStarted";
+            }
+            case "subscriptionModalOpened": {
+                const enabled = payload === "subscriptionModalStarted";
+                global.subscriptionProcess = enabled;
+                ipcLogger.debug("subscriptionProcess", enabled ? "enabled" : "disabled");
                 break;
+            }
             case "openExternal":
                 shell.openExternal(payload);
                 break;
