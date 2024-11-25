@@ -507,8 +507,11 @@
       "Reset to default": [
         "Återställ till standard"
       ],
-      "Restore version": [
-        "Återställ version"
+      "Restore": [
+        "Återställ"
+      ],
+      "Restore this version": [
+        "Återställ denna version"
       ],
       "Retry": [
         "Försök igen"
@@ -689,11 +692,6 @@
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Återaktivera"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } eller ${ importContact }."
@@ -792,16 +790,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } månad",
-        "första ${ n } månaderna"
-      ],
-      "the first month": [
-        "första månaden"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Det speciellt rabatterade priset på ${ discountedPrice } är giltigt för ${ discountedMonths }. Sedan förnyas det automatiskt till det rabatterade priset med ${ nextPrice } för ${ nextMonths }. Du kan avbryta när som helst."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Det speciellt rabatterade priset på ${ discountedPrice } är giltigt under den första månaden. Sedan förnyas det automatiskt med ${ nextPrice } varje månad. Du kan avbryta när som helst."
       ]
@@ -971,15 +959,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } månad",
-        "${ n } månader"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Förnyas automatiskt för ${ renewPrice }, i ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -4493,6 +4472,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfigurering av PGP låter dig skicka end-to-end-krypterad e-post till någon som inte använder ${ BRAND_NAME }, men har en PGP-kompatibel tjänst."
       ],
+      "Settings update failed": [
+        "Misslyckades uppdatera inställningar"
+      ],
+      "Settings updated": [
+        "Inställningar uppdaterade"
+      ],
       "Share via link settings": [
         "Dela via länkinställningar"
       ],
@@ -4882,11 +4867,6 @@
     "Info on errors": {
       "Click for details": [
         "Klicka för detaljer"
-      ]
-    },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Du kan förhindra utgången genom att återaktivera prenumerationen"
       ]
     },
     "Info: partial": {
@@ -7176,17 +7156,8 @@
       "Please select your billing state first.": [
         "Välj din delstat för fakturering först."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Förnyas med ${ price }, avbryt när som helst."
-      ],
       "Select billing country to pay": [
         "Välj faktureringsland att betala"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ months }. Sedan kommer det förnyas automatiskt med ${ price } för ${ months }. Du kan avbryta när som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt den första månaden. Sedan kommer det förnyas automatiskt med ${ price } varje månad. Du kan avbryta när som helst."
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
@@ -8204,14 +8175,6 @@
         "Spara"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Aktiv"
-      ],
-      "Expiring": [
-        "Löper ut"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt ser identisk ut.",
@@ -8886,17 +8849,6 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Slutdatum"
-      ],
-      "Plan": [
-        "Paket"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {
