@@ -28,7 +28,7 @@ export class MenuBarMonitor {
     }
 
     private onWindowShow() {
-        setInterval(() => {
+        this.intervalId = setInterval(() => {
             if (this.browserWindow.isDestroyed()) {
                 this.onWindowHide();
                 return;
