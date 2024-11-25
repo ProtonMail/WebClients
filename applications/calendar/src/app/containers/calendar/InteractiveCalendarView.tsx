@@ -44,7 +44,7 @@ import {
     updatePersonalEventPart,
 } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
-import { toApiPartstat } from '@proton/shared/lib/calendar/attendees';
+import { NO_CANONICAL_EMAIL_ERROR, toApiPartstat } from '@proton/shared/lib/calendar/attendees';
 import {
     getIsCalendarDisabled,
     getIsCalendarProbablyActive,
@@ -78,6 +78,7 @@ import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/sha
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { type Address } from '@proton/shared/lib/interfaces';
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
@@ -1656,6 +1657,11 @@ const InteractiveCalendarView = ({
                 if (hasReduxStore && isChangePartstat && selfEmail && oldPartstat) {
                     dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: oldPartstat }));
                 }
+
+                if (e.message === NO_CANONICAL_EMAIL_ERROR) {
+                    traceError(e, { tags: { calendar: 'error-no-canonical-email' } });
+                }
+
                 createNotification({ text: getNonEmptyErrorMessage(e), type: 'error' });
             }
         } finally {

@@ -21,6 +21,8 @@ import type { RequireSome, SimpleMap } from '../interfaces/utils';
 import { ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from './constants';
 import { getAttendeeHasToken, getAttendeePartstat, getAttendeesHaveToken } from './vcalHelper';
 
+export const NO_CANONICAL_EMAIL_ERROR = 'No canonical email provided';
+
 export const generateAttendeeToken = async (normalizedEmail: string, uid: string) => {
     const uidEmail = `${uid}${normalizedEmail}`;
     const byteArray = binaryStringToArray(uidEmail);
@@ -216,7 +218,7 @@ export const withPmAttendees = async (
             }
             const canonicalEmail = canonicalEmailMap[emailAddress];
             if (!canonicalEmail && !ignoreErrors) {
-                throw new Error('No canonical email provided');
+                throw new Error(NO_CANONICAL_EMAIL_ERROR);
             }
             // If the participant has an invalid email and we ignore errors, we fall back to the provided email address
             const token = await generateAttendeeToken(canonicalEmail || emailAddress, uid.value);
