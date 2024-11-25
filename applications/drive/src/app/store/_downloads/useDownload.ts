@@ -189,11 +189,11 @@ export default function useDownload() {
                 },
                 onError: (error: Error) => {
                     if (error) {
-                        report(link.shareId, TransferState.Error, error);
+                        report(link.shareId, TransferState.Error, link.size, error);
                     }
                 },
                 onFinish: () => {
-                    report(link.shareId, TransferState.Done);
+                    report(link.shareId, TransferState.Done, link.size);
                 },
             },
             api
