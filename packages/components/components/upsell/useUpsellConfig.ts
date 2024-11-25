@@ -51,7 +51,7 @@ const useUpsellConfig = ({
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const hasSubscriptionModal = openSubscriptionModal !== noop;
-    const postSubscriptionCallbackProps = usePostSubscription({ upsellRef });
+    const postSubscriptionCallbackProps = usePostSubscription({ upsellRef, onSubscribed });
     const inboxUpsellFlowEnabled = useFlag('InboxUpsellFlow');
     const { APP_NAME } = useConfig();
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
@@ -84,10 +84,7 @@ const useUpsellConfig = ({
                 openSubscriptionModal({
                     ...subscriptionCallBackProps,
                     ...postSubscriptionCallbackProps,
-                    onSubscribed() {
-                        onSubscribed?.();
-                        postSubscriptionCallbackProps?.onSubscribed?.();
-                    },
+                    onSubscribed,
                 });
             },
         };

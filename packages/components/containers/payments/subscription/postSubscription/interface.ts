@@ -1,9 +1,14 @@
-export type PostSubscriptionModalName = 'mail-short-domain';
+import type { ReactNode } from 'react';
+
+import type { SUBSCRIPTION_STEPS } from '../constants';
+
+export type PostSubscriptionFlowName = 'mail-short-domain';
 
 export interface PostSubscriptionModalComponentProps {
     onClose: () => void;
+    step: SUBSCRIPTION_STEPS;
 }
 
 export type PostSubscriptionModalConfig = {
-    component: (props: PostSubscriptionModalComponentProps) => JSX.Element;
+    modal: (props: PostSubscriptionModalComponentProps) => ReactNode;
 };
