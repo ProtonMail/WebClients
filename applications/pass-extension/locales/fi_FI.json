@@ -602,7 +602,7 @@
         "Kirjoita meille Twitterissä"
       ],
       "Your password manager is not here? Request it.": [
-        "Eikö salasanahallintaasi ole listattu? Pyydä sen lisäystä."
+        "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
       ]
     },
     "bf2024: Deal": {
@@ -664,7 +664,7 @@
         "Pimeän verkon valvonta sisältyy maksullisiin tilauksiin. Hanki se heti käyttöösi päivitämällä tilauksesi."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "Listaus verkkotunnuksista, joilla joitakin automaattisia ${ PASS_SHORT_APP_NAME }-toimintoja (automaattitäyttö, automaattiehdotus, automaattitallennus) ei suoriteta.${ infoText }"
+        "Listaus verkkotunnuksista, joilla joitakin automaattisia ${ PASS_SHORT_APP_NAME }-toimintoja (automaattitäyttö, automaattiehdotus, automaattitallennus) ei suoriteta. ${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Tämä tili on vaarassa. Käy vaihtamassa salasanasi palvelun tiliasetuksista."
@@ -2101,7 +2101,7 @@
         "Lukitse automaattisesti"
       ],
       "Autofill": [
-        "Automaattitäytä"
+        "Automaattitäyttö"
       ],
       "Autofill 2FA": [
         "Automaattitäytä vahvistuskoodi"
@@ -2708,7 +2708,7 @@
         "Luot aliasta"
       ],
       "Your browser will stop using its built-in password manager.": [
-        "Selaimesi lopettaa käyttämästä sen sisäänrakennettua salasanojen hallintaa"
+        "Selaimesi lopettaa sisäänrakennetun salasanahallintansa käyttämisen."
       ],
       "ZIP or Postal code": [
         "Postinumero"
@@ -3108,7 +3108,7 @@
         "Aseta lisäsalasana"
       ],
       "Set up 2FA for more security": [
-        "Tehosta suojausta määrittämällä kaksivaiheinen tunnistautuminen"
+        "Vahvista suojausta määrittämällä 2FA"
       ],
       "Share with": [
         "Jaa henkilöille"
@@ -3311,7 +3311,7 @@
         "Salasanahallintaa ei ole valittu"
       ],
       "No results": [
-        "Ei tuloksia"
+        "Tuloksia ei löytynyt"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Vain aakkosnumeeriset merkit, pisteet, väli- ja alaviivat sallitaan."

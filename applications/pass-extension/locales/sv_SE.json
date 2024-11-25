@@ -1099,6 +1099,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Uppdatering ”${ payload.item.data.metadata.name }” avfärdades"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } inbjudan skickad",
+        "${ count } inbjudningar skickat"
+      ],
       "${ count } time": [
         "${ count } gång",
         "${ count } gånger"
