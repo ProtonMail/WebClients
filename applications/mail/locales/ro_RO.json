@@ -375,6 +375,9 @@
       "Details": [
         "Detalii"
       ],
+      "Disable alias": [
+        "Dezactivare alias"
+      ],
       "Discard": [
         "Renunțare"
       ],
@@ -1423,11 +1426,6 @@
         "Căutare mesaje"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Reactivare"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } sau ${ importContact }."
@@ -1640,17 +1638,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } lună",
-        "primele ${ n } luni",
-        "primele ${ n } de luni"
-      ],
-      "the first month": [
-        "prima lună"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Prețul special redus de ${ discountedPrice } este valabil pentru ${ discountedMonths }. Apoi va fi reînnoit automat la prețul redus de ${ nextPrice } pentru ${ nextMonths }. Puteți anula oricând."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ discountedPrice } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ nextPrice } în fiecare lună. Puteți anula oricând."
       ]
@@ -1832,16 +1819,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } lună",
-        "${ n } luni",
-        "${ n } de luni"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewalLength }."
       ]
     },
     "Billing cycle option": {
@@ -7907,11 +7884,6 @@
         "Apăsați pentru detalii"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Puteți preîntâmpina expirarea prin reactivarea abonamentului."
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "Foldere selectate: ${ selectedFoldersCount }",
@@ -10750,20 +10722,8 @@
       "Please select your billing state first.": [
         "Selectați statul de facturare mai întâi."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Reînnoiți cu ${ price }, anulați oricând."
-      ],
       "Select billing country to pay": [
         "Selectați țara de facturare pentru a plăti"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ price } timp de ${ months } luni. Puteți anula oricând."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Apoi va fi reînnoit automat cu ${ price } timp de ${ months } luni. Puteți anula oricând."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ price } în fiecare lună. Puteți anula oricând."
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
@@ -11838,9 +11798,6 @@
       ]
     },
     "Status": {
-      "This message is from a mailing list.": [
-        "Acest mesaj este de la o listă de corespondență."
-      ],
       "Unsubscribed": [
         "Dezabonat"
       ]
@@ -12400,14 +12357,6 @@
     "Subscription saving": {
       "Save": [
         "Salvare"
-      ]
-    },
-    "Subscription status": {
-      "Active": [
-        "Activ"
-      ],
-      "Expiring": [
-        "Expiră"
       ]
     },
     "Success": {
@@ -13693,17 +13642,6 @@
       ],
       "Your free trial has ended": [
         "Perioada de probare gratuită a expirat"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Data sfârșit"
-      ],
-      "Plan": [
-        "Plan"
-      ],
-      "Status": [
-        "Stare"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1410,11 +1410,6 @@
         "搜尋訊息"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "重新啟用"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } 或 ${ importContact }。"
@@ -1613,15 +1608,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n }月"
-      ],
-      "the first month": [
-        "第一個月"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "${ discountedPrice } 特殊折扣將套用於前 ${ discountedMonths } 。其後將於每月自動以 ${ nextPrice } 續約 ${ nextMonths } 。您可以在任何時候取消。"
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "${ discountedPrice } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ nextPrice } 續約。您可以在任何時候取消。"
       ]
@@ -1793,14 +1779,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "儲存空間於 ${ BRAND_NAME } 所有服務中共享。"
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n }個月"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "自動以 ${ renewPrice } 續訂，繳費長度為 ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -7530,11 +7508,6 @@
         "點擊以查看詳細資料"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "重新訂購以免授權到期"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "已選取 ${ selectedFoldersCount } 個資料夾"
@@ -10170,17 +10143,8 @@
       "Please select your billing state first.": [
         "請先選擇您的計費狀態。"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "更新價 ${ price }，任何時間都可取消."
-      ],
       "Select billing country to pay": [
         "選取繳款國家以付款"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "享受特惠折扣 ${ priceWithDiscount } ${ months } 個月。而後將以每 ${ months } 月 ${ price } 的價格自動續約。您可以在任何時候取消訂閱。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ price } 續約。您可以在任何時候取消。"
       ],
       "Timeout exceeded": [
         "已經逾時"
@@ -11172,9 +11136,6 @@
       ]
     },
     "Status": {
-      "This message is from a mailing list.": [
-        "此訊息是大量傳送清單的郵件。"
-      ],
       "Unsubscribed": [
         "已取消訂閱"
       ]
@@ -11618,14 +11579,6 @@
     "Subscription saving": {
       "Save": [
         "省下"
-      ]
-    },
-    "Subscription status": {
-      "Active": [
-        "使用中"
-      ],
-      "Expiring": [
-        "到期"
       ]
     },
     "Success": {
@@ -12822,17 +12775,6 @@
       ],
       "Your free trial has ended": [
         "您的免費試用已結束"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "結束日期"
-      ],
-      "Plan": [
-        "方案"
-      ],
-      "Status": [
-        "狀態"
       ]
     },
     "Today icon tooltip in mini calendar": {
