@@ -2,32 +2,29 @@ import type { LoggerInterface } from '@proton/utils/logs'
 import type { InternalEventBusInterface } from '@proton/docs-shared'
 import { EditorOrchestrator } from '../Orchestrator/EditorOrchestrator'
 import type { LoadDocument } from '../../UseCase/LoadDocument'
-import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import type { PublicDriveCompat, PublicNodeMeta } from '@proton/drive-store'
 import type { DocLoaderInterface } from './DocLoaderInterface'
 import type { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorInterface'
-import type { LoadCommit } from '../../UseCase/LoadCommit'
 import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { DocsApi } from '../../Api/DocsApi'
 import type { PublicDocControllerInterface } from '../../Controller/Document/PublicDocControllerInterface'
 import { PublicDocController } from '../../Controller/Document/PublicDocController'
+import type { EditorControllerInterface } from '../../Controller/Document/EditorController'
+import { EditorController } from '../../Controller/Document/EditorController'
+import { DocumentState, PublicDocumentState } from '../../State/DocumentState'
+import type { DocLoaderStatusObserver } from './StatusObserver'
 
-export type StatusObserver = {
-  onSuccess: (orchestrator: EditorOrchestratorInterface) => void
-  onError: (error: string) => void
-}
-
-export class PublicDocLoader implements DocLoaderInterface {
+export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState, PublicDocControllerInterface> {
   private publicDocController?: PublicDocControllerInterface
+  private editorController?: EditorControllerInterface
   private orchestrator?: EditorOrchestratorInterface
-  private readonly statusObservers: StatusObserver[] = []
+  private documentState?: PublicDocumentState
+  private readonly statusObservers: DocLoaderStatusObserver<PublicDocumentState, PublicDocControllerInterface>[] = []
 
   constructor(
     private driveCompat: PublicDriveCompat,
     private docsApi: DocsApi,
     private loadDocument: LoadDocument,
-    private loadCommit: LoadCommit,
-    private getDocumentMeta: GetDocumentMeta,
     private exportAndDownload: ExportAndDownload,
     private eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
@@ -42,26 +39,37 @@ export class PublicDocLoader implements DocLoaderInterface {
       throw new Error('[PublicDocLoader] docController already initialized')
     }
 
-    this.publicDocController = new PublicDocController(
-      nodeMeta,
-      this.loadDocument,
-      this.loadCommit,
-      this.getDocumentMeta,
-      this.exportAndDownload,
-      this.eventBus,
-      this.logger,
-    )
-
-    const result = await this.publicDocController.initialize()
-
-    if (result.isFailed()) {
+    const loadResult = await this.loadDocument.executePublic(nodeMeta)
+    if (loadResult.isFailed()) {
+      this.logger.error('Failed to load document', loadResult.getError())
       this.statusObservers.forEach((observer) => {
-        observer.onError(result.getError())
+        observer.onError(loadResult.getError())
       })
       return
     }
 
-    const { entitlements, meta } = result.getValue()
+    const { entitlements, meta, node, decryptedCommit } = loadResult.getValue()
+    this.logger.info(`Loaded document meta with last commit id ${meta.latestCommitId()}`)
+
+    const documentState = new PublicDocumentState({
+      ...DocumentState.defaults,
+      realtimeEnabled: false,
+      documentMeta: meta,
+      userRole: entitlements.role,
+      decryptedNode: node,
+      entitlements,
+      documentName: meta.name,
+      currentCommitId: meta.latestCommitId(),
+      baseCommit: decryptedCommit,
+      documentTrashState: node.trashed ? 'trashed' : 'not_trashed',
+    })
+    this.documentState = documentState
+
+    const editorController = new EditorController(this.logger, this.exportAndDownload, this.documentState)
+    this.editorController = editorController
+
+    const publicDocController = new PublicDocController(nodeMeta, this.eventBus, this.logger)
+    this.publicDocController = publicDocController
 
     if (entitlements.role.isPublicViewerWithAccess()) {
       this.logger.info('Redirecting to authed document')
@@ -69,28 +77,39 @@ export class PublicDocLoader implements DocLoaderInterface {
       return
     }
 
-    this.orchestrator = new EditorOrchestrator(undefined, this.publicDocController, this.docsApi, this.eventBus)
+    this.orchestrator = new EditorOrchestrator(
+      undefined,
+      this.publicDocController,
+      this.docsApi,
+      this.eventBus,
+      this.editorController,
+      this.documentState,
+    )
 
     this.statusObservers.forEach((observer) => {
       if (this.orchestrator) {
-        observer.onSuccess(this.orchestrator)
+        observer.onSuccess({
+          orchestrator: this.orchestrator,
+          documentState: documentState,
+          docController: publicDocController,
+          editorController: editorController,
+        })
       }
     })
   }
 
-  public getDocController(): PublicDocControllerInterface {
-    if (!this.publicDocController) {
-      throw new Error('DocController not ready')
-    }
-
-    return this.publicDocController
-  }
-
-  public addStatusObserver(observer: StatusObserver): () => void {
+  public addStatusObserver(
+    observer: DocLoaderStatusObserver<PublicDocumentState, PublicDocControllerInterface>,
+  ): () => void {
     this.statusObservers.push(observer)
 
-    if (this.orchestrator) {
-      observer.onSuccess(this.orchestrator)
+    if (this.orchestrator && this.documentState && this.publicDocController && this.editorController) {
+      observer.onSuccess({
+        orchestrator: this.orchestrator,
+        documentState: this.documentState,
+        docController: this.publicDocController,
+        editorController: this.editorController,
+      })
     }
 
     return () => {

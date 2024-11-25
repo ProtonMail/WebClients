@@ -5,20 +5,34 @@ import { ModalTwo, ModalTwoContent, ModalTwoFooter, PrimaryButton, useModalTwoSt
 import { useState } from 'react'
 import { DOCS_APP_NAME, DOCS_SHORT_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { usePublicDocumentCopying } from '../Hooks/usePublicDocumentCopying'
-import { useApplication } from '../../../Containers/ApplicationProvider'
 import { useDocsContext } from '../../../Containers/ContextProvider'
 import { Button } from '@proton/atoms/index'
 import EncryptedBanner from '@proton/styles/assets/img/docs/encrypted-bg.png'
+import type { PublicDocumentState } from '@proton/docs-core/lib/State/DocumentState'
+import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
 
-type Props = {}
+type Props = {
+  editorController: EditorControllerInterface
+  documentState: PublicDocumentState
+}
 
 /**
  * A modal displayed to users when they try to interact with a public document, such as clicking the toolbar
  */
-export default function WelcomeSplashModal({ onClose, open, ...modalProps }: Props & ModalStateProps) {
-  const application = useApplication()
+export default function WelcomeSplashModal({
+  onClose,
+  open,
+  editorController,
+  documentState,
+  ...modalProps
+}: Props & ModalStateProps) {
   const { surePublicContext } = useDocsContext()
-  const { createCopy } = usePublicDocumentCopying({ context: surePublicContext, controller: application.docController })
+
+  const { createCopy } = usePublicDocumentCopying({
+    context: surePublicContext,
+    editorController,
+    documentState,
+  })
 
   const [isOpen, setIsOpen] = useState(open)
 

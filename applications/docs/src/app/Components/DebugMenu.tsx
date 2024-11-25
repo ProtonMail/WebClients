@@ -5,23 +5,33 @@ import { useEffect, useState } from 'react'
 import { useApplication } from '../Containers/ApplicationProvider'
 import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller/Document/AnyDocControllerInterface'
 import { isPrivateDocController } from '@proton/docs-core/lib/Controller/Document/isPrivateDocController'
+import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
+import type { DocumentState, PublicDocumentState } from '@proton/docs-core'
 
 export const useDebug = () => {
   const [debug] = useLocalState(false, DOCS_DEBUG_KEY)
   return Boolean(debug)
 }
 
-const DebugMenu = ({ docController }: { docController: AnyDocControllerInterface }) => {
+const DebugMenu = ({
+  docController,
+  editorController,
+  documentState,
+}: {
+  docController: AnyDocControllerInterface
+  editorController: EditorControllerInterface
+  documentState: DocumentState | PublicDocumentState
+}) => {
   const application = useApplication()
 
   const [isOpen, setIsOpen] = useState(false)
   const [clientId, setClientId] = useState<string | null>()
 
   useEffect(() => {
-    void docController.getDocumentClientId().then((id) => {
+    void editorController.getDocumentClientId().then((id) => {
       setClientId(`${id}`)
     })
-  }, [docController])
+  }, [editorController])
 
   const commitToRTS = async () => {
     if (isPrivateDocController(docController)) {
@@ -37,18 +47,24 @@ const DebugMenu = ({ docController }: { docController: AnyDocControllerInterface
 
   const closeConnection = async () => {
     if (isPrivateDocController(docController)) {
-      void application.websocketService.closeConnection({ linkId: docController.getSureDocument().nodeMeta.linkId })
+      const meta = documentState.getProperty('documentMeta')
+      if (meta) {
+        void application.websocketService.closeConnection({ linkId: meta.nodeMeta.linkId })
+      }
     }
   }
 
   const createInitialCommit = async () => {
     if (isPrivateDocController(docController)) {
-      void docController.createInitialCommit()
+      const editorState = await editorController.getDocumentState()
+      if (editorState) {
+        void docController.createInitialCommit(editorState)
+      }
     }
   }
 
   const copyEditorJSON = async () => {
-    const json = await docController.getEditorJSON()
+    const json = await editorController.getEditorJSON()
     if (!json) {
       return
     }
@@ -58,7 +74,7 @@ const DebugMenu = ({ docController }: { docController: AnyDocControllerInterface
   }
 
   const toggleDebugTreeView = () => {
-    void docController.toggleDebugTreeView()
+    void editorController.toggleDebugTreeView()
   }
 
   if (!isOpen) {

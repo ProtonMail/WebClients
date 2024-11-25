@@ -15,6 +15,8 @@ import { isPrivateDocController } from '@proton/docs-core/lib/Controller/Documen
 import PopoverPill from '../PopoverPill'
 import { useDocsContext } from '../../Containers/ContextProvider'
 import { HeaderPublicOptions } from '../../Apps/Public/Header/HeaderPublicOptions'
+import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
+import type { DocumentState, PublicDocumentState } from '@proton/docs-core'
 
 const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   const application = useApplication()
@@ -23,17 +25,22 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   const { publicContext } = useDocsContext()
 
   const [controller, setController] = useState<AnyDocControllerInterface | null>(null)
+  const [editorController, setEditorController] = useState<EditorControllerInterface | null>(null)
+  const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
+
   useEffect(() => {
-    return application.docLoader.addStatusObserver({
-      onSuccess: () => {
+    return application.getDocLoader().addStatusObserver({
+      onSuccess: (result) => {
         setIsReady(true)
-        setController(application.docLoader.getDocController())
+        setController(result.docController)
+        setEditorController(result.editorController)
+        setDocumentState(result.documentState)
       },
       onError: traceError,
     })
-  }, [application.docLoader])
+  }, [application])
 
-  if (application.isRunningInNativeMobileWeb || !isReady || !controller) {
+  if (application.isRunningInNativeMobileWeb || !isReady || !controller || !editorController || !documentState) {
     return null
   }
 
@@ -41,9 +48,14 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
     <div className="flex items-center px-4 py-2" data-testid="docs-header">
       {/* Left */}
       <div className="flex flex-1 items-center">
-        <DocumentTitleDropdown action={action} controller={controller} />
+        <DocumentTitleDropdown
+          action={action}
+          docController={controller}
+          editorController={editorController}
+          documentState={documentState}
+        />
         <div className="w-2" />
-        <ConnectionStatus />
+        <ConnectionStatus documentState={documentState} />
       </div>
 
       {/* Middle */}
@@ -52,12 +64,15 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
       {/* Right */}
       <div className="flex flex-1 items-center justify-end">
         {publicContext ? (
-          <HeaderPublicOptions controller={controller} />
+          <HeaderPublicOptions
+            editorController={editorController}
+            documentState={documentState as PublicDocumentState}
+          />
         ) : (
           <>
             <DocumentActiveUsers className="mr-2 hidden md:flex" />
 
-            {isPrivateDocController(controller) && controller.role.isAdmin() && (
+            {isPrivateDocController(controller) && documentState.getProperty('userRole').isAdmin() && (
               <Button
                 shape="ghost"
                 className="flex items-center gap-2 text-sm"
@@ -69,8 +84,8 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
               </Button>
             )}
 
-            {isPrivateDocController(controller) && controller?.role.canComment() && (
-              <CommentsButton controller={controller} />
+            {isPrivateDocController(controller) && documentState.getProperty('userRole').canComment() && (
+              <CommentsButton editorController={editorController} />
             )}
 
             <div className="w-4" />
@@ -86,6 +101,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
 const ViewOnlyPill = () => {
   return (
     <PopoverPill
+      // eslint-disable-next-line custom-rules/deprecate-classes
       alignment="center"
       title={
         <div className="flex gap-2" data-testid="changes-info-e2e-encrypted">

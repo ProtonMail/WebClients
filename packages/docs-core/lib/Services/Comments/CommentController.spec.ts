@@ -1,5 +1,4 @@
 import { CommentController } from './CommentController'
-import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { Result, type InternalEventBusInterface } from '@proton/docs-shared'
 
@@ -13,8 +12,9 @@ import type { LoadThreads } from '../../UseCase/LoadThreads'
 import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import type { MetricService } from '../Metrics/MetricService'
-import type { DocumentPropertiesStateInterface } from '../State/DocumentPropertiesStateInterface'
-import { DocumentPropertiesState } from '../State/DocumentPropertiesState'
+import type { DocumentStateValues } from '../../State/DocumentState'
+import { DocumentState } from '../../State/DocumentState'
+import { UserState } from '../../State/UserState'
 
 describe('CommentController', () => {
   let controller: CommentController
@@ -28,19 +28,11 @@ describe('CommentController', () => {
   let eventBus: InternalEventBusInterface
   let api: DocsApi
   let logger: LoggerInterface
-  let document: NodeMeta
-  let keys: DocumentKeys
   let handleRealtimeCommentsEvent: HandleRealtimeCommentsEvent
-  let sharedState: DocumentPropertiesStateInterface
+  let documentState: DocumentState
+  let userState: UserState
+
   beforeEach(() => {
-    document = { linkId: 'link-id-123', volumeId: 'volume-id-456' } as NodeMeta
-
-    keys = {
-      documentContentKey: 'key-123' as unknown as SessionKey,
-      userAddressPrivateKey: 'private-key-123' as unknown as PrivateKeyReference,
-      userOwnAddress: 'foo',
-    }
-
     websocketService = {
       sendEventMessage: jest.fn(),
     } as unknown as jest.Mocked<WebsocketServiceInterface>
@@ -86,13 +78,24 @@ describe('CommentController', () => {
       reportSuggestionCreated: jest.fn(),
     } as unknown as jest.Mocked<MetricService>
 
-    sharedState = new DocumentPropertiesState()
+    documentState = new DocumentState({
+      ...DocumentState.defaults,
+      documentName: 'document-name',
+      documentMeta: { nodeMeta: { linkId: 'link-id-123', volumeId: 'volume-id-456' } },
+      entitlements: {
+        keys: {
+          documentContentKey: 'key-123' as unknown as SessionKey,
+          userAddressPrivateKey: 'private-key-123' as unknown as PrivateKeyReference,
+          userOwnAddress: 'foo',
+        },
+      },
+    } as DocumentStateValues)
 
-    const getLatestDocumentName = jest.fn().mockReturnValue('document-name')
+    userState = new UserState()
 
     controller = new CommentController(
-      document,
-      keys,
+      userState,
+      documentState,
       websocketService,
       metricService,
       api,
@@ -101,8 +104,6 @@ describe('CommentController', () => {
       createComment,
       loadThreads,
       handleRealtimeCommentsEvent,
-      sharedState,
-      getLatestDocumentName,
       eventBus,
       logger,
     )
@@ -121,13 +122,13 @@ describe('CommentController', () => {
 
   describe('shouldSendDocumentName', () => {
     it('should be false when currentDocumentEmailDocTitleEnabled is false', () => {
-      sharedState.setProperty('currentDocumentEmailDocTitleEnabled', false)
+      userState.setProperty('currentDocumentEmailDocTitleEnabled', false)
 
       expect(controller.shouldSendDocumentName).toBe(false)
     })
 
     it('should be true when currentDocumentEmailDocTitleEnabled is true', () => {
-      sharedState.setProperty('currentDocumentEmailDocTitleEnabled', true)
+      userState.setProperty('currentDocumentEmailDocTitleEnabled', true)
 
       expect(controller.shouldSendDocumentName).toBe(true)
     })
@@ -135,7 +136,7 @@ describe('CommentController', () => {
 
   describe('createCommentThread', () => {
     it('should send the document name when currentDocumentEmailDocTitleEnabled is true', async () => {
-      sharedState.setProperty('currentDocumentEmailDocTitleEnabled', true)
+      userState.setProperty('currentDocumentEmailDocTitleEnabled', true)
 
       await controller.createCommentThread('comment-content')
 
@@ -147,7 +148,7 @@ describe('CommentController', () => {
     })
 
     it('should not send the document name when currentDocumentEmailDocTitleEnabled is false', async () => {
-      sharedState.setProperty('currentDocumentEmailDocTitleEnabled', false)
+      userState.setProperty('currentDocumentEmailDocTitleEnabled', false)
 
       await controller.createCommentThread('comment-content')
 
@@ -161,7 +162,7 @@ describe('CommentController', () => {
 
   describe('createSuggestionThread', () => {
     it('should send the document name when currentDocumentEmailDocTitleEnabled is true', async () => {
-      sharedState.setProperty('currentDocumentEmailDocTitleEnabled', true)
+      userState.setProperty('currentDocumentEmailDocTitleEnabled', true)
 
       await controller.createSuggestionThread('suggestion-id', 'comment-content', 'replace')
 
@@ -173,7 +174,7 @@ describe('CommentController', () => {
     })
 
     it('should not send the document name when currentDocumentEmailDocTitleEnabled is false', async () => {
-      sharedState.setProperty('currentDocumentEmailDocTitleEnabled', false)
+      userState.setProperty('currentDocumentEmailDocTitleEnabled', false)
 
       await controller.createSuggestionThread('suggestion-id', 'comment-content', 'replace')
 

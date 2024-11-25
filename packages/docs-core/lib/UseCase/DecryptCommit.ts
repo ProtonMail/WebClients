@@ -5,7 +5,7 @@ import { Result } from '../Domain/Result/Result'
 import type { DecryptedMessage } from '@proton/docs-shared'
 import { DecryptedCommit } from '../Models/DecryptedCommit'
 import metrics from '@proton/metrics'
-import type { SessionKey } from 'packages/crypto/lib'
+import type { SessionKey } from '@proton/crypto/lib'
 
 type DecryptCommitDTO = {
   commit: Commit

@@ -4,7 +4,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics'
 import type { Api } from '@proton/shared/lib/interfaces'
 import type { TelemetryDocsEvents } from '@proton/shared/lib/api/telemetry'
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry'
-import type { SuggestionSummaryType } from 'packages/docs-shared/lib/SuggestionType'
+import type { SuggestionSummaryType } from '@proton/docs-shared/lib/SuggestionType'
 import { ConnectionCloseMetrics } from '../../Realtime/ConnectionCloseMetrics'
 import type { ConnectionCloseReason } from '@proton/docs-proto'
 
