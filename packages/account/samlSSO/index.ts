@@ -1,17 +1,20 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getSAMLConfigs, getSAMLStaticInfo, getSCIMInfo } from '@proton/shared/lib/api/samlSSO';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import { Organization, SSO, User } from '@proton/shared/lib/interfaces';
+import type { Organization, SSO, User } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
-import { OrganizationState, organizationThunk } from '../organization';
-import { UserState, userThunk } from '../user';
+import type { OrganizationState} from '../organization';
+import { organizationThunk } from '../organization';
+import type { UserState} from '../user';
+import { userThunk } from '../user';
 
 const name = 'sso' as const;
 

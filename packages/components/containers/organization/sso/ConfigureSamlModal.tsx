@@ -126,7 +126,12 @@ const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }:
             return {
                 onSubmit: () => setStep(STEP.SAML_METADATA),
                 title: c('Title').t`Enter endpoints into your identity provider`,
-                content: <IdentityProviderEndpointsContent issuerID={issuerID} callbackURL={callbackURL} />,
+                content: (
+                    <IdentityProviderEndpointsContent
+                        issuerID={issuerID}
+                        callbackURL={callbackURL}
+                    />
+                ),
                 footer: (
                     <>
                         <div />
