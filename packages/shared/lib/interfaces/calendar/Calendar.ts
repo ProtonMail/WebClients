@@ -120,6 +120,6 @@ export interface VideoConferenceMeetingCreation {
     VideoConference: {
         ID: string;
         URL: string;
-        Password: string;
+        Password?: string;
     };
 }
