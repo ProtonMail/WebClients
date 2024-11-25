@@ -240,6 +240,8 @@
 			&:hover,
 			&:focus,
 			&:active {
+				--text-weak: var(--selection-text-color);
+
 				background-color: var(--selection-background-color);
 				color: var(--selection-text-color);
 				pointer-events: none;
