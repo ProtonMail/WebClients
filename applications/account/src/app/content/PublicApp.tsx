@@ -1,4 +1,4 @@
-import { type ReactNode, useCallback, useEffect, useState } from 'react';
+import { type ReactNode, useCallback, useState } from 'react';
 import { BrowserRouter, Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
 import type * as H from 'history';
@@ -165,6 +165,9 @@ const loginPaths = [
 
 const ephemeralLoginPaths = [SSO_PATHS.APP_SWITCHER, SSO_PATHS.REAUTH];
 
+// Optimistically calculate if the account switcher should be visible
+const initialSessionsLength = Boolean(getPersistedSessions().length);
+
 const BasePublicApp = () => {
     const api = useApi();
     const history = useHistory();
@@ -174,13 +177,8 @@ const BasePublicApp = () => {
     const refresh = useCallback(() => setState((i) => i + 1), []);
     const [forkState, setForkState] = useState<ProduceForkData | null>(null);
     const [activeSessions, setActiveSessions] = useState<LocalSessionPersisted[]>();
-    const [maybeHasActiveSessions, setMaybeHasActiveSessions] = useState(false);
+    const [maybeHasActiveSessions] = useState(initialSessionsLength);
     const [locationState, setLocationState] = useState<null | LoginLocationState>(null);
-
-    useEffect(() => {
-        // Optimistically calculate if the account switcher should be visible
-        setMaybeHasActiveSessions(getPersistedSessions().length > 0);
-    }, []);
 
     const searchParams = new URLSearchParams(location.search);
 
@@ -201,9 +199,10 @@ const BasePublicApp = () => {
 
     const [hasInitialSessionBlockingLoading, setHasInitialSessionBlockingLoading] = useState(() => {
         return (
-            maybeLocalRedirect ||
-            location.pathname === '/' ||
-            [...loginPaths, ...ephemeralLoginPaths].some((pathname) => location.pathname === pathname)
+            maybeHasActiveSessions &&
+            (maybeLocalRedirect ||
+                location.pathname === '/' ||
+                [...loginPaths, ...ephemeralLoginPaths].some((pathname) => location.pathname === pathname))
         );
     });
 
