@@ -17,15 +17,19 @@ import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Domain, SSO } from '@proton/shared/lib/interfaces';
+import type { Domain, EdugainAffiliations, SSO } from '@proton/shared/lib/interfaces';
+import { IDP_TYPE } from '@proton/shared/lib/interfaces';
 
 import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';
+import { EdugainAffiliationLabels } from './SsoPage';
 
 interface SSOInfo {
     url: string;
     entity: string;
     certificate: string;
+    type: IDP_TYPE;
+    edugainAffiliations: EdugainAffiliations[];
 }
 
 interface Props extends IdentityProviderEndpointsContentProps {
@@ -45,6 +49,8 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
         url: sso.SSOURL,
         entity: sso.SSOEntityID,
         certificate: sso.Certificate,
+        type: sso.Type,
+        edugainAffiliations: sso.EdugainAffiliations,
     };
 
     const [ssoDiff, setSsoDiff] = useState<Partial<SSOInfo>>({});
@@ -68,6 +74,14 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
     const url = ssoDiff.url ?? ssoInfo.url;
     const entity = ssoDiff.entity ?? ssoInfo.entity;
     const certificate = ssoDiff.certificate ?? ssoInfo.certificate;
+
+    const isEdugain = sso.Type === IDP_TYPE.EDUGAIN;
+
+    const edugainAffiliations = ssoDiff.edugainAffiliations ?? ssoInfo.edugainAffiliations;
+
+    const edugainAffiliationsValue = edugainAffiliations
+        .map((option) => EdugainAffiliationLabels[option as EdugainAffiliations])
+        .join(', ');
 
     useEffect(() => {
         void metrics.core_sso_saml_info_page_load_total.increment({});
@@ -100,6 +114,45 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
             });
         }
     };
+
+    if (isEdugain) {
+        return (
+            <>
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <label htmlFor="ssoEntityID" className="text-semibold flex items-center gap-2">
+                            <span>{c('Label').t`Entity ID`}</span>
+                            <Info title={c('Tooltip').t`Display name for the entity in the eduGAIN database`} />
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="w-full">
+                        <InputFieldTwo id="ssoEntityID" value={entity} readOnly />
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <label htmlFor="ssoUserAffiliations" className="text-semibold flex items-center gap-2">
+                            <span>{c('Label').t`User affiliations`}</span>
+                            <Info
+                                title={c('Tooltip')
+                                    .t`Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO`}
+                            />
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="w-full">
+                        <InputFieldTwo id="ssoUserAffiliations" value={edugainAffiliationsValue} readOnly />
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+
+                <div className="flex gap-4">
+                    <Button color="norm" shape="outline" onClick={onImportSaml}>{c('Action')
+                        .t`Change configuration`}</Button>
+                    <Button color="norm" shape="outline" onClick={onTestSaml}>{c('Action')
+                        .t`Test SAML configuration`}</Button>
+                </div>
+            </>
+        );
+    }
 
     return (
         <form
@@ -203,8 +256,10 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
             </SettingsLayout>
 
             <div className="flex gap-4">
-                <Button onClick={onImportSaml}>{c('Action').t`Import new SAML metadata`}</Button>
-                <Button onClick={onTestSaml}>{c('Action').t`Test SAML configuration`}</Button>
+                <Button color="norm" shape="outline" onClick={onImportSaml}>{c('Action')
+                    .t`Import new SAML metadata`}</Button>
+                <Button color="norm" shape="outline" onClick={onTestSaml}>{c('Action')
+                    .t`Test SAML configuration`}</Button>
                 <Button color="norm" disabled={!isFormDirty} loading={submitting} type="submit">
                     {c('Action').t`Save SAML configuration`}
                 </Button>
