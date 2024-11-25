@@ -1,14 +1,16 @@
 import { BrowserWindow } from "electron";
+import EventEmitter from "node:events";
 
 export class MenuBarMonitor {
     private static INTERVAL_DELAY = 100;
+    private static EMITTER_EVENT = "menu-bar-visibility-changed";
 
     private menuBarVisible = false;
     private emitter;
     private intervalId: ReturnType<typeof setInterval> | undefined;
 
     constructor(private browserWindow: BrowserWindow) {
-        this.emitter = new Emitter();
+        this.emitter = new EventEmitter({ captureRejections: true });
 
         browserWindow.addListener("hide", this.onWindowHide.bind(this));
         browserWindow.addListener("show", this.onWindowShow.bind(this));
@@ -20,7 +22,13 @@ export class MenuBarMonitor {
     }
 
     onVisibilityChange(callback: () => void) {
-        return this.emitter.addListener(callback);
+        const handler = this.emitter.addListener(MenuBarMonitor.EMITTER_EVENT, callback);
+
+        return {
+            removeListener() {
+                handler.removeListener(MenuBarMonitor.EMITTER_EVENT, callback);
+            },
+        };
     }
 
     private onWindowHide() {
@@ -37,33 +45,8 @@ export class MenuBarMonitor {
             const menuBarVisible = this.browserWindow.isMenuBarVisible();
             if (menuBarVisible !== this.menuBarVisible) {
                 this.menuBarVisible = menuBarVisible;
-                this.emitter.trigger();
+                this.emitter.emit(MenuBarMonitor.EMITTER_EVENT);
             }
         }, MenuBarMonitor.INTERVAL_DELAY);
-    }
-}
-
-class Emitter {
-    private listenerMap = new Map<number, () => void>();
-    private nextListenerId = 0;
-
-    addListener(callback: () => void) {
-        const listenerId = this.nextListenerId++;
-        this.listenerMap.set(listenerId, callback);
-        return {
-            removeListener: () => {
-                this.listenerMap.delete(listenerId);
-            },
-        };
-    }
-
-    trigger() {
-        for (const listener of this.listenerMap.values()) {
-            try {
-                listener();
-            } catch (_error) {
-                // no-op
-            }
-        }
     }
 }
