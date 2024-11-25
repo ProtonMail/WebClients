@@ -110,7 +110,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                 ...rest
             } = subscriptionProps.current;
 
-            if (hasInboxDesktopInAppPayments) {
+            if (hasInboxDesktopInAppPayments && modalState.open) {
                 invokeInboxDesktopIPC({ type: 'subscriptionModalOpened', payload: 'subscriptionModalStarted' });
             }
 
