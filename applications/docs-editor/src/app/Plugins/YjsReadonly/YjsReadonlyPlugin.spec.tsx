@@ -1,6 +1,7 @@
 import * as ReactTestUtils from '../../Utils/react-test-utils'
-import { createEditorClient, EditorClient } from '../TestUtils/EditorClient'
-import { RtsMessagePayload } from 'packages/docs-shared/lib/Doc/RtsMessagePayload'
+import type { EditorClient } from '../TestUtils/EditorClient'
+import { createEditorClient } from '../TestUtils/EditorClient'
+import type { RtsMessagePayload } from '@proton/docs-shared/lib/Doc/RtsMessagePayload'
 
 function corruptBytes(bytes: Uint8Array, corruptionRate = 0.1): Uint8Array {
   const corrupted = new Uint8Array(bytes)
@@ -59,11 +60,11 @@ describe('YjsReadonlyPlugin', () => {
     test('ensure edits can be played back', async () => {
       const { exampleEdits, exampleState } = await getExampleEdits()
 
-      for (const edit of exampleEdits) {
-        await ReactTestUtils.act(async () => {
+      await ReactTestUtils.act(async () => {
+        for (const edit of exampleEdits) {
           client1.state.receiveMessage(edit)
-        })
-      }
+        }
+      })
 
       expect(client1.getStateAsJson()).toBe(exampleState)
     })

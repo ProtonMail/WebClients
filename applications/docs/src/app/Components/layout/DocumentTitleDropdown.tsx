@@ -18,8 +18,8 @@ import {
   useAuthentication,
   usePopperAnchor,
 } from '@proton/components'
-import type { DocControllerEventPayloads } from '@proton/docs-core'
-import { DocControllerEvent, PostApplicationError } from '@proton/docs-core'
+import type { DocumentState, PublicDocumentState } from '@proton/docs-core'
+import { isDocumentState, PostApplicationError } from '@proton/docs-core'
 import { type DocTrashState, isWordCountSupported } from '@proton/docs-shared'
 import type { DocumentAction } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
@@ -35,12 +35,17 @@ import { useFloatingWordCount } from '../WordCount/useFloatingWordCount'
 import { useWordCount } from '../WordCount/useWordCount'
 import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller/Document/AnyDocControllerInterface'
 import { isPrivateDocController } from '@proton/docs-core/lib/Controller/Document/isPrivateDocController'
+import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
 
 const DocumentTitleDropdown = ({
-  controller,
+  docController,
+  editorController,
+  documentState,
   action,
 }: {
-  controller: AnyDocControllerInterface | null
+  docController: AnyDocControllerInterface
+  editorController: EditorControllerInterface
+  documentState: DocumentState | PublicDocumentState
   action?: DocumentAction['mode']
 }) => {
   const application = useApplication()
@@ -48,10 +53,10 @@ const DocumentTitleDropdown = ({
   const { getLocalID } = useAuthentication()
   const wordCountInfoCollection = useWordCount()
   const { floatingUIIsEnabled, setFloatingUIIsEnabled } = useFloatingWordCount()
-  const [title, setTitle] = useState<string | undefined>()
+  const [title, setTitle] = useState<string | undefined>(documentState.getProperty('documentName'))
   const [isDuplicating, setIsDuplicating] = useState<boolean>(false)
   const [trashState, setTrashState] = useState<DocTrashState | undefined>(
-    controller && isPrivateDocController(controller) ? controller.getTrashState() : undefined,
+    documentState.getProperty('documentTrashState'),
   )
   const [isMakingNewDocument, setIsMakingNewDocument] = useState<boolean>(false)
   const [isExportingPDF, setIsExportingPDF] = useState<boolean>(false)
@@ -66,7 +71,7 @@ const DocumentTitleDropdown = ({
   useAppTitle(title)
 
   const confirmRename = useCallback(() => {
-    if (!controller || !isPrivateDocController(controller)) {
+    if (!isPrivateDocController(docController)) {
       throw new Error('Primary controller not found')
     }
 
@@ -76,7 +81,7 @@ const DocumentTitleDropdown = ({
       setIsRenaming(false)
 
       if (oldName !== newName) {
-        void controller.renameDocument(newName).then((result) => {
+        void docController.renameDocument(newName).then((result) => {
           if (result.isFailed()) {
             PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
             setTitle(oldName)
@@ -87,11 +92,11 @@ const DocumentTitleDropdown = ({
     } else {
       setIsRenaming(false)
     }
-  }, [application.eventBus, controller, renameInputValue, title])
+  }, [application.eventBus, docController, renameInputValue, title])
 
   const onDuplicate = useCallback(
-    (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (!controller || !isPrivateDocController(controller)) {
+    async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      if (!isPrivateDocController(docController)) {
         throw new Error('Primary controller not found')
       }
 
@@ -100,48 +105,47 @@ const DocumentTitleDropdown = ({
 
       setIsDuplicating(true)
 
-      void controller.duplicateDocument().finally(() => {
+      const editorState = await editorController?.exportData('yjs')
+      if (editorState) {
+        void docController.duplicateDocument(editorState).finally(() => {
+          setIsDuplicating(false)
+        })
+      } else {
         setIsDuplicating(false)
-      })
+      }
     },
-    [controller],
+    [docController, editorController],
   )
 
   const onExportPDF = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (!controller) {
-        throw new Error('Primary controller not found')
-      }
-
       event.preventDefault()
       event.stopPropagation()
 
       setIsExportingPDF(true)
 
-      void controller.exportAndDownload('pdf').finally(() => {
+      void editorController.exportAndDownload('pdf').finally(() => {
         setIsExportingPDF(false)
       })
     },
-    [controller],
+    [editorController],
   )
 
   useEffect(() => {
     return mergeRegister(
-      application.eventBus.addEventCallback<DocControllerEventPayloads['DidLoadDocumentTitle']>((payload) => {
-        setTitle(payload.title)
-      }, DocControllerEvent.DidLoadDocumentTitle),
-      application.eventBus.addEventCallback(() => {
-        if (!controller || !isPrivateDocController(controller)) {
-          return
-        }
-        setTrashState(controller.getTrashState())
-      }, DocControllerEvent.DocumentTrashStateUpdated),
+      documentState.subscribeToProperty('documentName', (title) => {
+        setTitle(title)
+      }),
+
+      documentState.subscribeToProperty('documentTrashState', (trashState) => {
+        setTrashState(trashState)
+      }),
     )
-  }, [application.eventBus, controller])
+  }, [documentState, docController])
 
   const onNewDocument = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (!controller || !isPrivateDocController(controller)) {
+      if (!isPrivateDocController(docController)) {
         return
       }
 
@@ -150,30 +154,22 @@ const DocumentTitleDropdown = ({
 
       setIsMakingNewDocument(true)
 
-      void controller?.createNewDocument().finally(() => {
+      void docController?.createNewDocument().finally(() => {
         setIsMakingNewDocument(false)
       })
     },
-    [controller],
+    [docController],
   )
 
   useEffect(() => {
-    if (!controller) {
-      return
+    if (action === 'history' && isPrivateDocController(docController)) {
+      showHistoryModal({
+        versionHistory: docController.getVersionHistory(),
+        editorController,
+        docController,
+      })
     }
-
-    setTitle(controller.getSureDocument().name)
-
-    if (isPrivateDocController(controller)) {
-      setTrashState(controller.getTrashState())
-
-      if (action === 'history') {
-        showHistoryModal({
-          versionHistory: controller.getVersionHistory(),
-        })
-      }
-    }
-  }, [controller, action, showHistoryModal])
+  }, [docController, action, showHistoryModal, editorController])
 
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
   const focusInputOnMount = useCallback((input: HTMLInputElement | null) => {
@@ -245,7 +241,7 @@ const DocumentTitleDropdown = ({
         }}
       >
         <DropdownMenu className="text-sm">
-          {controller?.role.canEdit() && (
+          {documentState.getProperty('userRole').canEdit() && (
             <DropdownMenuButton
               className="flex items-center text-left"
               onClick={() => setIsRenaming((renaming) => !renaming)}
@@ -286,11 +282,13 @@ const DocumentTitleDropdown = ({
             <DropdownMenuButton
               className="flex items-center text-left"
               onClick={() => {
-                if (!controller || !isPrivateDocController(controller)) {
+                if (!isPrivateDocController(docController)) {
                   return
                 }
                 showHistoryModal({
-                  versionHistory: controller.getVersionHistory(),
+                  versionHistory: docController.getVersionHistory(),
+                  editorController,
+                  docController,
                 })
               }}
               data-testid="dropdown-versioning"
@@ -371,7 +369,7 @@ const DocumentTitleDropdown = ({
               </DropdownMenu>
             </SimpleDropdown>
           )}
-          {controller && controller?.role.isAdmin() && (
+          {documentState.getProperty('userRole').isAdmin() && (
             <DropdownMenuButton
               disabled={trashState === 'trashing' || trashState === 'trashed'}
               data-testid="dropdown-trash"
@@ -379,11 +377,11 @@ const DocumentTitleDropdown = ({
                 event.preventDefault()
                 event.stopPropagation()
 
-                if (!isPrivateDocController(controller)) {
+                if (!isPrivateDocController(docController)) {
                   return
                 }
 
-                void controller.trashDocument().finally(() => {
+                void docController.trashDocument().finally(() => {
                   close()
                 })
               }}
@@ -396,89 +394,85 @@ const DocumentTitleDropdown = ({
           )}
           <hr className="my-1 min-h-px" />
 
-          {controller && (
-            <DropdownMenuButton
-              className="flex items-center text-left"
-              onClick={() => {
-                void controller.printAsPDF()
-              }}
-              data-testid="dropdown-print"
-            >
-              <Icon name="printer" className="color-weak mr-2" />
-              {c('Action').t`Print`}
-            </DropdownMenuButton>
-          )}
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            onClick={() => {
+              void editorController.printAsPDF()
+            }}
+            data-testid="dropdown-print"
+          >
+            <Icon name="printer" className="color-weak mr-2" />
+            {c('Action').t`Print`}
+          </DropdownMenuButton>
 
-          {controller && (
-            <SimpleDropdown
-              as={DropdownMenuButton}
-              className="flex items-center text-left"
-              data-testid="dropdown-download"
-              content={
-                <>
-                  <Icon name="arrow-down-to-square" className="color-weak mr-2" />
-                  {c('Action').t`Download`}
-                  <Icon name="chevron-right-filled" className="ml-auto" />
-                </>
-              }
-              hasCaret={false}
-              onClick={(event: MouseEvent) => {
-                event.preventDefault()
-                event.stopPropagation()
-              }}
-              originalPlacement="right-start"
-              contentProps={{
-                offset: 0,
-              }}
-            >
-              <DropdownMenu className="text-sm">
-                <DropdownMenuButton
-                  className="flex items-center text-left"
-                  onClick={() => {
-                    void controller.exportAndDownload('docx')
-                  }}
-                  data-testid="download-docx"
-                >
-                  {c('Action').t`Microsoft Word (.docx)`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                  className="flex items-center text-left"
-                  onClick={() => {
-                    void controller.exportAndDownload('html')
-                  }}
-                  data-testid="download-html"
-                >
-                  {c('Action').t`Web page (.html)`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                  className="flex items-center text-left"
-                  onClick={() => {
-                    void controller.exportAndDownload('txt')
-                  }}
-                  data-testid="download-txt"
-                >
-                  {c('Action').t`Plain Text (.txt)`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                  className="flex items-center text-left"
-                  onClick={() => {
-                    void controller.exportAndDownload('md')
-                  }}
-                  data-testid="download-md"
-                >
-                  {c('Action').t`Markdown (.md)`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                  className="flex items-center text-left"
-                  onClick={onExportPDF}
-                  data-testid="download-pdf"
-                >
-                  {c('Action').t`PDF (.pdf)`}
-                  {isExportingPDF && <CircleLoader size="small" className="ml-auto" />}
-                </DropdownMenuButton>
-              </DropdownMenu>
-            </SimpleDropdown>
-          )}
+          <SimpleDropdown
+            as={DropdownMenuButton}
+            className="flex items-center text-left"
+            data-testid="dropdown-download"
+            content={
+              <>
+                <Icon name="arrow-down-to-square" className="color-weak mr-2" />
+                {c('Action').t`Download`}
+                <Icon name="chevron-right-filled" className="ml-auto" />
+              </>
+            }
+            hasCaret={false}
+            onClick={(event: MouseEvent) => {
+              event.preventDefault()
+              event.stopPropagation()
+            }}
+            originalPlacement="right-start"
+            contentProps={{
+              offset: 0,
+            }}
+          >
+            <DropdownMenu className="text-sm">
+              <DropdownMenuButton
+                className="flex items-center text-left"
+                onClick={() => {
+                  void editorController.exportAndDownload('docx')
+                }}
+                data-testid="download-docx"
+              >
+                {c('Action').t`Microsoft Word (.docx)`}
+              </DropdownMenuButton>
+              <DropdownMenuButton
+                className="flex items-center text-left"
+                onClick={() => {
+                  void editorController.exportAndDownload('html')
+                }}
+                data-testid="download-html"
+              >
+                {c('Action').t`Web page (.html)`}
+              </DropdownMenuButton>
+              <DropdownMenuButton
+                className="flex items-center text-left"
+                onClick={() => {
+                  void editorController.exportAndDownload('txt')
+                }}
+                data-testid="download-txt"
+              >
+                {c('Action').t`Plain Text (.txt)`}
+              </DropdownMenuButton>
+              <DropdownMenuButton
+                className="flex items-center text-left"
+                onClick={() => {
+                  void editorController.exportAndDownload('md')
+                }}
+                data-testid="download-md"
+              >
+                {c('Action').t`Markdown (.md)`}
+              </DropdownMenuButton>
+              <DropdownMenuButton
+                className="flex items-center text-left"
+                onClick={onExportPDF}
+                data-testid="download-pdf"
+              >
+                {c('Action').t`PDF (.pdf)`}
+                {isExportingPDF && <CircleLoader size="small" className="ml-auto" />}
+              </DropdownMenuButton>
+            </DropdownMenu>
+          </SimpleDropdown>
 
           <hr className="my-1 min-h-px" />
 
@@ -526,12 +520,12 @@ const DocumentTitleDropdown = ({
       </Dropdown>
 
       {historyModal}
-      {controller && isPrivateDocController(controller) && (
+      {docController && isPrivateDocController(docController) && isDocumentState(documentState) && (
         <TrashedDocumentModal
           documentTitle={title}
           onOpenProtonDrive={() => openProtonDrive('/', '_self')}
-          controller={controller}
-          trashedState={trashState}
+          controller={docController}
+          documentState={documentState}
         />
       )}
     </>

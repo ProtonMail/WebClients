@@ -48,7 +48,7 @@ import { UpdateDebouncerEventType } from './Debouncer/UpdateDebouncerEventType'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { MetricService } from '../Metrics/MetricService'
-import type { DocumentPropertiesStateInterface } from '../State/DocumentPropertiesStateInterface'
+import type { UserState } from '../../State/UserState'
 
 type LinkID = string
 
@@ -57,13 +57,13 @@ export class WebsocketService implements WebsocketServiceInterface {
   readonly ledger: AckLedgerInterface = new AckLedger(this.logger, this.handleLedgerStatusChangeCallback.bind(this))
 
   constructor(
+    private userState: UserState,
     private _createRealtimeValetToken: GetRealtimeUrlAndToken,
     private _encryptMessage: EncryptMessage,
     private _decryptMessage: DecryptMessage,
     private logger: LoggerInterface,
     private eventBus: InternalEventBusInterface,
     private metricService: MetricService,
-    private sharedState: DocumentPropertiesStateInterface,
     private appVersion: string,
   ) {
     window.addEventListener('beforeunload', this.handleWindowUnload)
@@ -230,7 +230,7 @@ export class WebsocketService implements WebsocketServiceInterface {
   }
 
   handleRetrievedValetTokenResult(result: RealtimeUrlAndToken): void {
-    this.sharedState.setProperty('currentDocumentEmailDocTitleEnabled', result.preferences.includeDocumentNameInEmails)
+    this.userState.setProperty('currentDocumentEmailDocTitleEnabled', result.preferences.includeDocumentNameInEmails)
   }
 
   isConnectionReadyPayload(obj: any): obj is ConnectionReadyPayload {
@@ -307,6 +307,15 @@ export class WebsocketService implements WebsocketServiceInterface {
 
   getConnectionRecord(linkId: LinkID): DocumentConnectionRecord | undefined {
     return this.connections[linkId]
+  }
+
+  isConnected(document: NodeMeta): boolean {
+    const record = this.getConnectionRecord(document.linkId)
+    if (!record) {
+      return false
+    }
+
+    return record.connection.isConnected()
   }
 
   async reconnectToDocumentWithoutDelay(document: NodeMeta): Promise<void> {

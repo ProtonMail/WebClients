@@ -1,4 +1,4 @@
-import type { RecentDocumentsSnapshotData } from 'packages/docs-core'
+import type { RecentDocumentsSnapshotData } from '@proton/docs-core'
 import { c } from 'ttag'
 
 import { Avatar, Button } from '@proton/atoms'

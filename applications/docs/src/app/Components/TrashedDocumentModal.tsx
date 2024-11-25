@@ -1,25 +1,25 @@
-import type { DocControllerInterface } from 'packages/docs-core'
+import type { DocControllerInterface, DocumentState } from '@proton/docs-core'
 import { c } from 'ttag'
 
 import { Button, CircleLoader } from '@proton/atoms'
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components'
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
-import type { DocTrashState } from 'packages/docs-shared'
 
 type TrashedDocumentModalProps = {
   controller: DocControllerInterface
-  trashedState?: DocTrashState
+  documentState: DocumentState
   documentTitle: string
   onOpenProtonDrive: () => void
 }
 
 export function TrashedDocumentModal({
-  trashedState,
+  documentState,
   documentTitle,
   onOpenProtonDrive,
   controller,
 }: TrashedDocumentModalProps) {
   const { didTrashDocInCurrentSession } = controller
+  const trashedState = documentState.getProperty('documentTrashState')
 
   return (
     <ModalTwo className="!rounded-t-xl" open={trashedState === 'trashed'}>
@@ -34,7 +34,7 @@ export function TrashedDocumentModal({
           : c('Info').t`"${documentTitle}" is in trash and will stay there until you delete it permanently.`}
       </ModalTwoContent>
       <ModalTwoFooter>
-        {controller && controller.role.isAdmin() && (
+        {documentState.getProperty('userRole').isAdmin() && (
           <>
             {didTrashDocInCurrentSession ? (
               <>
