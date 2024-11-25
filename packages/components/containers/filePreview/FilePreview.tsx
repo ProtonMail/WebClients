@@ -1,5 +1,5 @@
 import type { ReactNode, Ref } from 'react';
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import { Suspense, forwardRef, lazy, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,6 +11,7 @@ import busy from '@proton/shared/lib/busy';
 import { isMinimumSafariVersion, isSafari } from '@proton/shared/lib/helpers/browser';
 import {
     isAudio,
+    isCompatibleCBZ,
     isPDF,
     isProtonDocument,
     isSupportedImage,
@@ -35,6 +36,9 @@ import SignatureIssue from './SignatureIssue';
 import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import VideoPreview from './VideoPreview';
+
+// Lazy Loaded since it includes jszip and it's a rare file type (not common)
+const ComicBookPreview = lazy(() => import(/* webpackChunkName: "comic-book-preview" */ './ComicBookPreview'));
 
 interface Props {
     isMetaLoading?: boolean;
@@ -138,6 +142,20 @@ export const FilePreviewContent = ({
                         onOpenInDocs={onOpenInDocs}
                     />
                 </div>
+            );
+        }
+
+        // Certain comic books are actually mimetype 'application/x-cbr' yet extension is .cbz
+        // We can only unzip .cbz extension (cbr is rar and proprietary)
+        if (contents && mimeType && fileName && isCompatibleCBZ(mimeType, fileName)) {
+            return (
+                <Suspense fallback={<PreviewLoader />}>
+                    <ComicBookPreview
+                        contents={contents}
+                        mimeType={mimeType}
+                        isPublic={typeof isPublic !== 'undefined' ? isPublic : true}
+                    />
+                </Suspense>
             );
         }
 

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { FilePreview, NavigationControl } from '@proton/components';
+import { FilePreview, NavigationControl, useActiveBreakpoint } from '@proton/components';
 import { type SHARE_URL_PERMISSIONS, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
@@ -17,6 +17,7 @@ import { EditActions } from '../EditActions/EditActions';
 import Breadcrumbs from '../Layout/Breadcrumbs';
 import HeaderSecureLabel from '../Layout/HeaderSecureLabel';
 import HeaderSize from '../Layout/HeaderSize';
+import ReportAbuseButton from '../Layout/ReportAbuseButton';
 import SharedPageFooter from '../Layout/SharedPageFooter';
 import SharedPageHeader from '../Layout/SharedPageHeader';
 import SharedPageLayout from '../Layout/SharedPageLayout';
@@ -114,6 +115,7 @@ export default function SharedFolder({
     const [fileBrowserItems, setFileBrowserItems] = useState<PublicLink[]>([]);
     const [displayedLink, setDiplayedLink] = useState<DecryptedLink | undefined>();
     const [previewDisplayed, setPreviewDisplayed] = useState(false);
+    const { viewportWidth } = useActiveBreakpoint();
 
     const onItemOpen = (item: DecryptedLink) => {
         if (isProtonDocument(item.mimeType) && openInDocs) {
@@ -281,6 +283,7 @@ export default function SharedFolder({
                     openInDocs={openInDocs}
                     items={fileBrowserItems}
                 />
+                {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={rootLink} />}
             </SharedPageLayout>
         </FileBrowserStateProvider>
     );

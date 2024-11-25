@@ -7,12 +7,7 @@ import { usePublicShare } from '../../../store';
 import { useReportAbuseModal } from '../../modals/ReportAbuseModal/ReportAbuseModal';
 import type { LinkInfo } from '../../modals/ReportAbuseModal/types';
 
-interface Props {
-    linkInfo: LinkInfo;
-    className?: string;
-}
-
-export default function ReportAbuseButton({ linkInfo, className }: Props) {
+export default function ReportAbuseButton({ linkInfo }: { linkInfo: LinkInfo }) {
     const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
     const { submitAbuseReport } = usePublicShare();
 
@@ -24,7 +19,7 @@ export default function ReportAbuseButton({ linkInfo, className }: Props) {
                     size="medium"
                     color="weak"
                     data-testid="report-abuse-button"
-                    className={className}
+                    className="ml-2 mb-2 fixed left-0 bottom-0"
                     icon
                     onClick={() => showReportAbuseModal({ linkInfo, onSubmit: submitAbuseReport })}
                 >
