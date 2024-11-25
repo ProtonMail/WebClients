@@ -11,9 +11,6 @@
     "background": {
         "service_worker": "background.js"
     },
-    "content_security_policy": {
-        "extension_pages": "object-src 'self';"
-    },
     "content_scripts": [
         {
             "matches": ["https://*/*", "http://*/*"],
