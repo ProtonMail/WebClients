@@ -17,7 +17,7 @@ import { type UpdateDebouncer } from './Debouncer/UpdateDebouncer'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto'
 import type { MetricService } from '../Metrics/MetricService'
-import type { DocumentPropertiesStateInterface } from '../State/DocumentPropertiesStateInterface'
+import { UserState } from '../../State/UserState'
 
 const mockOnReadyContentPayload = new TextEncoder().encode(
   JSON.stringify({ connectionId: '12345678', clientUpgradeRecommended: true, clientUpgradeRequired: true }),
@@ -34,7 +34,7 @@ describe('WebsocketService', () => {
   let document: NodeMeta
   let keys: DocumentKeys
   let metricService: MetricService
-  let sharedState: DocumentPropertiesStateInterface
+  let userState: UserState
 
   const createService = async (mode: DocumentDebounceMode) => {
     if (service) {
@@ -44,6 +44,8 @@ describe('WebsocketService', () => {
     if (debouncer) {
       debouncer.destroy()
     }
+
+    userState = new UserState()
 
     document = { linkId: 'link-id-123', volumeId: 'volume-id-456' } as NodeMeta
 
@@ -67,12 +69,8 @@ describe('WebsocketService', () => {
       error: jest.fn(),
     } as unknown as jest.Mocked<LoggerInterface>
 
-    sharedState = {
-      subscribe: jest.fn(),
-      setProperty: jest.fn(),
-    } as unknown as jest.Mocked<DocumentPropertiesStateInterface>
-
     service = new WebsocketService(
+      userState,
       {} as jest.Mocked<GetRealtimeUrlAndToken>,
       encryptMessage,
       {
@@ -81,7 +79,6 @@ describe('WebsocketService', () => {
       logger,
       eventBus,
       metricService,
-      sharedState,
       '0.0.0.0',
     )
 
@@ -483,13 +480,15 @@ describe('WebsocketService', () => {
 
   describe('handleRetrievedValetTokenResult', () => {
     it('should set currentDocumentEmailDocTitleEnabled', () => {
+      userState.setProperty = jest.fn()
+
       service.handleRetrievedValetTokenResult({
         preferences: {
           includeDocumentNameInEmails: true,
         },
       } as RealtimeUrlAndToken)
 
-      expect(sharedState.setProperty).toHaveBeenCalledWith('currentDocumentEmailDocTitleEnabled', true)
+      expect(userState.setProperty).toHaveBeenCalledWith('currentDocumentEmailDocTitleEnabled', true)
     })
   })
 })

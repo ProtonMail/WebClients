@@ -14,15 +14,15 @@ import {
   NOTIFICATION_DEFAULT_EXPIRATION_TIME,
   useConfirmActionModal,
 } from '@proton/components'
-import type { NativeVersionHistory } from '@proton/docs-core'
+import type { DocControllerInterface, NativeVersionHistory } from '@proton/docs-core'
 import type { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
 import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
 import HistoryTimeline from './HistoryTimeline'
-import { useApplication } from '../../Containers/ApplicationProvider'
 import { SingleRevisionViewer } from './SingleRevisionViewer'
 import { useLoading } from '@proton/hooks/index'
 import { type SerializedEditorState } from 'lexical'
+import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
 
 enum RestoreType {
   Replace = 'replace',
@@ -32,13 +32,16 @@ enum RestoreType {
 function HistoryViewerModalContent({
   versionHistory,
   onClose,
+  editorController,
+  docController,
 }: {
   versionHistory: NativeVersionHistory
   onClose: () => void
+  editorController: EditorControllerInterface
+  docController: DocControllerInterface
 }) {
   const [selectedBatchIndex, setSelectedBatchIndex] = useState(() => versionHistory.batches.length - 1)
   const [editorInvoker, setEditorInvoker] = useState<EditorInvoker | undefined>()
-  const application = useApplication()
   const { createNotification, hideNotification } = useNotifications()
 
   const [confirmModal, showConfirmModal] = useConfirmActionModal()
@@ -91,7 +94,7 @@ function HistoryViewerModalContent({
               onClick={() => {
                 hideNotification(notificationId)
                 void withRestoring(
-                  application.privateDocController
+                  editorController
                     .restoreRevisionByReplacing(editorStateBeforeReplacing)
                     .then(showSuccessfulUndoNotification),
                 )
@@ -107,7 +110,7 @@ function HistoryViewerModalContent({
       createNotification,
       hideNotification,
       withRestoring,
-      application.privateDocController,
+      editorController,
       showSuccessfulUndoNotification,
     ],
   )
@@ -129,13 +132,13 @@ function HistoryViewerModalContent({
               .t`Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.`,
             onCancel: resolve,
             onSubmit: async () => {
-              const editorStateBeforeReplacing = await application.privateDocController.getEditorJSON()
+              const editorStateBeforeReplacing = await editorController.getEditorJSON()
               const lexicalState = await editorInvoker.getCurrentEditorState()
               if (!lexicalState || !editorStateBeforeReplacing) {
                 resolve()
                 return
               }
-              await application.privateDocController.restoreRevisionByReplacing(lexicalState)
+              await editorController.restoreRevisionByReplacing(lexicalState)
               onClose()
               showSuccessfullRestoreNotification(editorStateBeforeReplacing)
               resolve()
@@ -147,10 +150,10 @@ function HistoryViewerModalContent({
         if (!yjsState) {
           return
         }
-        await application.privateDocController.restoreRevisionAsCopy(yjsState)
+        await docController.restoreRevisionAsCopy(yjsState)
       }
     },
-    [application.privateDocController, editorInvoker, onClose, showSuccessfullRestoreNotification, showConfirmModal],
+    [editorInvoker, showConfirmModal, editorController, docController, onClose, showSuccessfullRestoreNotification],
   )
 
   if (!versionHistory.batches.length) {
@@ -243,9 +246,17 @@ function HistoryViewerModalContent({
 
 interface HistoryViewerModalProps extends ModalStateProps {
   versionHistory: NativeVersionHistory | undefined
+  editorController: EditorControllerInterface
+  docController: DocControllerInterface
 }
 
-function HistoryViewerModal({ versionHistory, onClose, ...rest }: HistoryViewerModalProps) {
+function HistoryViewerModal({
+  versionHistory,
+  onClose,
+  editorController,
+  docController,
+  ...rest
+}: HistoryViewerModalProps) {
   const isVersionHistoryAvailable = !!versionHistory
   return (
     <ModalTwo
@@ -257,7 +268,12 @@ function HistoryViewerModal({ versionHistory, onClose, ...rest }: HistoryViewerM
       {...rest}
     >
       {versionHistory ? (
-        <HistoryViewerModalContent versionHistory={versionHistory} onClose={onClose} />
+        <HistoryViewerModalContent
+          versionHistory={versionHistory}
+          onClose={onClose}
+          editorController={editorController}
+          docController={docController}
+        />
       ) : (
         <>
           <ModalTwoHeader title="Document history" />

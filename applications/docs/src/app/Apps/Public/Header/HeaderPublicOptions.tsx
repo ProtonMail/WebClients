@@ -1,7 +1,6 @@
 import { useCallback } from 'react'
 import { ButtonLike } from '@proton/atoms'
 import { c } from 'ttag'
-import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller/Document/AnyDocControllerInterface'
 import { useDocsContext } from '../../../Containers/ContextProvider'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
 import { SaveToDriveButton } from './SaveToDriveButton'
@@ -13,15 +12,27 @@ import { useDocsUrlBar } from '../../../Containers/useDocsUrlBar'
 import { RedirectAction } from '@proton/drive-store/store/_documents'
 import { useApplication } from '../../../Containers/ApplicationProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
+import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
+import type { PublicDocumentState } from '@proton/docs-core'
 
-export const HeaderPublicOptions = ({ controller }: { controller: AnyDocControllerInterface }) => {
+export const HeaderPublicOptions = ({
+  editorController,
+  documentState,
+}: {
+  editorController: EditorControllerInterface
+  documentState: PublicDocumentState
+}) => {
   const { surePublicContext } = useDocsContext()
   const { removeActionFromUrl } = useDocsUrlBar()
   const application = useApplication()
 
   const { customPassword, token, urlPassword } = surePublicContext.compat
   const { addBookmark, isAlreadyBookmarked, isLoading } = useDocsBookmarks({ token, urlPassword, customPassword })
-  const { createCopy } = usePublicDocumentCopying({ context: surePublicContext, controller })
+  const { createCopy } = usePublicDocumentCopying({
+    context: surePublicContext,
+    editorController,
+    documentState,
+  })
   const { user, openParams } = surePublicContext
 
   const saveForLater = useCallback(async () => {

@@ -4,9 +4,7 @@ import type {
   CommentThreadInterface,
   ClientRequiresEditorMethods,
   RtsMessagePayload,
-  DocumentMetaInterface,
   BroadcastSource,
-  DocumentRole,
   DataTypesThatDocumentCanBeExportedAs,
   SuggestionSummaryType,
   EditorEvent,
@@ -15,8 +13,6 @@ import type {
 
 export interface EditorOrchestratorInterface {
   username: string
-  docMeta: DocumentMetaInterface
-  role: DocumentRole
 
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   provideEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void

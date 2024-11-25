@@ -7,12 +7,15 @@ import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/
 import { rawPermissionToRole } from '../Types/DocumentEntitlements'
 import type { GetNode } from './GetNode'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
+import type { LoadCommit } from './LoadCommit'
+import type { LoggerInterface } from '@proton/utils/logs'
+import type { DecryptedCommit } from '../Models/DecryptedCommit'
 
 type LoadDocumentResult<E extends DocumentEntitlements | PublicDocumentEntitlements> = {
   entitlements: E
   meta: DocumentMetaInterface
   node: DecryptedNode
-  lastCommitId?: string
+  decryptedCommit?: DecryptedCommit
 }
 
 /**
@@ -23,6 +26,8 @@ export class LoadDocument {
     private compatWrapper: DriveCompatWrapper,
     private getDocumentMeta: GetDocumentMeta,
     private getNode: GetNode,
+    private loadCommit: LoadCommit,
+    private logger: LoggerInterface,
   ) {}
 
   async executePrivate(nodeMeta: NodeMeta): Promise<Result<LoadDocumentResult<DocumentEntitlements>>> {
@@ -72,7 +77,24 @@ export class LoadDocument {
         role: permissionsResult ? rawPermissionToRole(permissionsResult) : new DocumentRole('PublicViewer'),
       }
 
-      return Result.ok({ entitlements, meta: decryptedMeta, node: node, lastCommitId: decryptedMeta.latestCommitId() })
+      const latestCommitId = serverBasedMeta.latestCommitId()
+      let decryptedCommit: DecryptedCommit | undefined
+
+      if (latestCommitId) {
+        const decryptResult = await this.loadCommit.execute(
+          nodeMeta,
+          latestCommitId,
+          entitlements.keys.documentContentKey,
+        )
+        if (decryptResult.isFailed()) {
+          return Result.fail(decryptResult.getError())
+        }
+
+        decryptedCommit = decryptResult.getValue()
+        this.logger.info(`Downloaded and decrypted commit with ${decryptedCommit?.numberOfUpdates()} updates`)
+      }
+
+      return Result.ok({ entitlements, meta: decryptedMeta, node: node, decryptedCommit })
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to load document')
     }
@@ -129,7 +151,24 @@ export class LoadDocument {
         role: new DocumentRole(doesHaveAccessToDoc ? 'PublicViewerWithAccess' : 'PublicViewer'),
       }
 
-      return Result.ok({ entitlements, meta: decryptedMeta, node: node, lastCommitId: decryptedMeta.latestCommitId() })
+      const latestCommitId = serverBasedMeta.latestCommitId()
+      let decryptedCommit: DecryptedCommit | undefined
+
+      if (latestCommitId) {
+        const decryptResult = await this.loadCommit.execute(
+          nodeMeta,
+          latestCommitId,
+          entitlements.keys.documentContentKey,
+        )
+        if (decryptResult.isFailed()) {
+          return Result.fail(decryptResult.getError())
+        }
+
+        decryptedCommit = decryptResult.getValue()
+        this.logger.info(`Downloaded and decrypted commit with ${decryptedCommit?.numberOfUpdates()} updates`)
+      }
+
+      return Result.ok({ entitlements, meta: decryptedMeta, node: node, decryptedCommit })
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to load document')
     }

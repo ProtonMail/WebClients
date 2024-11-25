@@ -1,8 +1,8 @@
 import { Icon } from '@proton/components'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { ParticipantTrackerEvent, WebsocketConnectionEvent } from '@proton/docs-core'
+import type { DocumentState, PublicDocumentState } from '@proton/docs-core'
+import { WebsocketConnectionEvent } from '@proton/docs-core'
 import { useApplication } from '../../Containers/ApplicationProvider'
-import { mergeRegister } from '@lexical/utils'
 import { c } from 'ttag'
 import CloudSlashIcon from '../../Icons/CloudSlashIcon'
 import ArrowsRotate from '../../Icons/ArrowsRotate'
@@ -23,7 +23,7 @@ const MIN_TIME_TO_WAIT_BETWEEN_RETRIES = 15_000
  */
 const DURATION_BEFORE_CONNECTING_STATUS_SHOWN = 1_000
 
-export const ConnectionStatus = () => {
+export const ConnectionStatus = ({ documentState }: { documentState: DocumentState | PublicDocumentState }) => {
   const application = useApplication()
   const [isUserLimitReached, setIsUserLimitReached] = useState(false)
   const [lastSaveRetryTime, setLastSaveRetryTime] = useState(0)
@@ -60,16 +60,10 @@ export const ConnectionStatus = () => {
   }, [status.state])
 
   useEffect(() => {
-    return mergeRegister(
-      application.eventBus.addEventCallback(() => {
-        setIsUserLimitReached(true)
-      }, ParticipantTrackerEvent.DocumentLimitBreached),
-
-      application.eventBus.addEventCallback(() => {
-        setIsUserLimitReached(false)
-      }, ParticipantTrackerEvent.DocumentLimitUnbreached),
-    )
-  }, [application.eventBus])
+    return documentState.subscribeToProperty('realtimeIsParticipantLimitReached', (value) => {
+      setIsUserLimitReached(value)
+    })
+  }, [documentState])
 
   const disconnectReasonMessage = status.disconnectReason ? status.disconnectReason.props.message : ''
 

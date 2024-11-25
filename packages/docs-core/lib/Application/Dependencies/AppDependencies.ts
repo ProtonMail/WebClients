@@ -41,7 +41,7 @@ import { GetNode } from '../../UseCase/GetNode'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { PublicDocLoader } from '../../Services/DocumentLoader/PublicDocLoader'
 import type { UnleashClient } from '@proton/unleash'
-import type { DocumentPropertiesStateInterface } from '../../Services/State/DocumentPropertiesStateInterface'
+import type { UserState } from '../../State/UserState'
 
 export class AppDependencies extends DependencyContainer {
   constructor(
@@ -49,7 +49,7 @@ export class AppDependencies extends DependencyContainer {
     imageProxyParams: ImageProxyParams | undefined,
     publicContextHeaders: HttpHeaders | undefined,
     compatWrapper: DriveCompatWrapper,
-    sharedState: DocumentPropertiesStateInterface,
+    userState: UserState,
     appVersion: string,
     _unleashClient: UnleashClient,
   ) {
@@ -151,6 +151,8 @@ export class AppDependencies extends DependencyContainer {
         compatWrapper,
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         this.get<GetNode>(App_TYPES.GetNode),
+        this.get<LoadCommit>(App_TYPES.LoadCommit),
+        this.get<LoggerInterface>(App_TYPES.Logger),
       )
     })
 
@@ -211,8 +213,6 @@ export class AppDependencies extends DependencyContainer {
         compatWrapper.publicCompat,
         this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<LoadDocument>(App_TYPES.LoadDocument),
-        this.get<LoadCommit>(App_TYPES.LoadCommit),
-        this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         this.get<ExportAndDownload>(App_TYPES.ExportAndDownload),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<LoggerInterface>(App_TYPES.Logger),
@@ -224,6 +224,7 @@ export class AppDependencies extends DependencyContainer {
         throw new Error('User compat not available')
       }
       return new DocLoader(
+        userState,
         this.get<WebsocketService>(App_TYPES.WebsocketService),
         compatWrapper.userCompat,
         this.get<MetricService>(App_TYPES.MetricService),
@@ -240,9 +241,8 @@ export class AppDependencies extends DependencyContainer {
         this.get<DuplicateDocument>(App_TYPES.DuplicateDocument),
         this.get<CreateNewDocument>(App_TYPES.CreateNewDocument),
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
-        this.get<GetNode>(App_TYPES.GetNode),
         this.get<ExportAndDownload>(App_TYPES.ExportAndDownload),
-        sharedState,
+        this.get<GetNode>(App_TYPES.GetNode),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<LoggerInterface>(App_TYPES.Logger),
       )
@@ -250,13 +250,13 @@ export class AppDependencies extends DependencyContainer {
 
     this.bind(App_TYPES.WebsocketService, () => {
       return new WebsocketService(
+        userState,
         this.get<GetRealtimeUrlAndToken>(App_TYPES.CreateRealtimeValetToken),
         this.get<EncryptMessage>(App_TYPES.EncryptMessage),
         this.get<DecryptMessage>(App_TYPES.DecryptMessage),
         this.get<LoggerInterface>(App_TYPES.Logger),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<MetricService>(App_TYPES.MetricService),
-        sharedState,
         appVersion,
       )
     })

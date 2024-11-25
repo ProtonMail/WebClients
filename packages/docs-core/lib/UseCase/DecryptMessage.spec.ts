@@ -4,7 +4,7 @@ import type { EncryptionContext } from '../Services/Encryption/EncryptionContext
 import type { DecryptMessageDTO } from './DecryptMessage'
 import { DecryptMessage } from './DecryptMessage'
 import type { DocumentUpdate } from '@proton/docs-proto'
-import type { SessionKey } from 'packages/crypto/lib'
+import type { SessionKey } from '@proton/crypto/lib'
 
 describe('DecryptMessage', () => {
   let decryptMessage: DecryptMessage

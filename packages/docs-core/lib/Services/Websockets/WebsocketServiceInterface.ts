@@ -8,6 +8,7 @@ export interface WebsocketServiceInterface {
     keys: DocumentKeys,
     options: { commitId: () => string | undefined },
   ): WebsocketConnectionInterface
+  isConnected(document: NodeMeta): boolean
 
   sendDocumentUpdateMessage(
     document: NodeMeta,
