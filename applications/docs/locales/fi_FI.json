@@ -9,7 +9,7 @@
         "Välitys alkaa pian ja uudet viestit saapuvat postilaatikkoosi."
       ],
       "Mail forward stopped": [
-        "Postin edelleenlähetys pysäytettiin"
+        "Sähköpostin ohjaus pysäytettiin"
       ]
     },
     "Account Settings - Info": {
@@ -507,8 +507,11 @@
       "Reset to default": [
         "Palauta oletukset"
       ],
-      "Restore version": [
-        "Palauta versio"
+      "Restore": [
+        "Palauta"
+      ],
+      "Restore this version": [
+        "Palauta tämä versio"
       ],
       "Retry": [
         "Yritä uudelleen"
@@ -689,11 +692,6 @@
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Aktivoi uudelleen"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } tai ${ importContact }."
@@ -796,16 +794,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } kuukaudeksi",
-        "ensimmäisten ${ n } kuukauden ajan"
-      ],
-      "the first month": [
-        "ensimmäinen kuukausi"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "${ discountedPrice } erityishinta on voimassa ${ discountedMonths }, jonka jälkeen tilaus jatkuu automaattisesti seuraavat ${ nextMonths } alennettulla ${ nextPrice } hinnalla. Voit peruuttaa milloin tahansa."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Erityishinta ${ discountedPrice } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ nextPrice } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ]
@@ -985,15 +973,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } kuukaudeksi",
-        "${ n } kuukaudeksi"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Uusiutuu automaattisesti ${ renewalLength } hintaan ${ renewPrice } ."
       ]
     },
     "Billing cycle option": {
@@ -2236,7 +2215,7 @@
         "Voit merkitä yhteystiedot, joita et haluat yhdistää tai säilyttää, poistettaviksi. Poisto suoritetaan vasta Yhdistä-painiketta painettaessa."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Tilisi ja tietojesi palautusmenetelmät on määritetty ja kaksivaiheinen tunnistautuminen on käytössä."
+        "Tilisi ja tietojesi palautustavat on määritetty ja kaksivaiheinen tunnistautuminen on käytössä."
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautustavat on asetettu."
@@ -2558,12 +2537,12 @@
         "Muuttunutta holvia ei voitu avata"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Poista vähintään ${ calendarsToFixCount } kalenterin valinta",
-        "Poista vähintään ${ calendarsToFixCount } kalenterin valinnat"
+        "Poista ainakin ${ calendarsToFixCount } kalenterivalinta",
+        "Poista ainakin ${ calendarsToFixCount } kalenterivalintaa"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Poista ainakin ${ calendarsToFixCount } kalenterin valinta tai",
-        "Poista ainakin ${ calendarsToFixCount } kalenterin valinnat tai"
+        "Poista ainakin ${ calendarsToFixCount } kalenterivalinta tai",
+        "Poista ainakin ${ calendarsToFixCount } kalenterivalintaa tai"
       ],
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
@@ -4340,7 +4319,7 @@
         "Ei viimeaikaisia dokumentteja"
       ],
       "No results found": [
-        "Ei tuloksia"
+        "Tuloksia ei löytynyt"
       ],
       "No version history available": [
         "Versiohistoriaa ei ole käytettävissä"
@@ -4505,6 +4484,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP:n määritys mahdollistaa päästä päähän -salatut viestit ${ BRAND_NAME }in ulkopuolisen, PGP-yhteensopivaa palvelua käyttävän käyttäjän kanssa."
+      ],
+      "Settings update failed": [
+        "Asetusmuutos epäonnistui"
+      ],
+      "Settings updated": [
+        "Asetukset on muutettu"
       ],
       "Share via link settings": [
         "Jakolinkin asetukset"
@@ -4900,11 +4885,6 @@
         "Painamalla lisätietoja"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Voit estää päättymisen aktivoimalla tilauksen uudelleen."
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } kansio valittu",
@@ -5094,7 +5074,7 @@
         "Kortoisitko meille, mikä palveluntarjoaja?"
       ],
       "Could you please specify which streaming service?": [
-        "Tarkentaisitko, mikä suoratoistopalvelu?"
+        "Tarkentaisitko mikä suoratoistopalvelu?"
       ],
       "Could you please specify?": [
         "Tarkentaisitko?"
@@ -6928,7 +6908,7 @@
         "Tila ei riitä ${ formattedTotal } tiedoston tallennukseen"
       ],
       "Stopping the sharing of this item has failed": [
-        "Tämän kohteen jakamisen lopettaminen epäonnistui"
+        "Kohteen jakamisen lopetus epäonnistui"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Kohteen \"${ name }\" linkin poisto epäonnistui"
@@ -7058,16 +7038,16 @@
     },
     "passwordless": {
       "Organization key does not exist.": [
-        "Organisaation avainta ei ole olemassa."
+        "Organisaatioavainta ei ole olemassa."
       ],
       "Permission denied, administrator privileges have been restricted.": [
-        "Lupa evätty, ylläpito-oikeuksia on rajoitettu."
+        "Lupa evätty, hallintaoikeuksia on rajoitettu."
       ],
       "The organization key must be activated first.": [
-        "Organisaation avain on ensin aktivoitava."
+        "Organisaatioavain on ensin aktivoitava."
       ],
       "You need access to the organization key to perform this operation.": [
-        "Sinun tulee voida käsitellä organisaation avainta suorittaaksesi tämä toiminnon."
+        "Sinulla on oltava oikeus käyttää organisaatioavainta suorittaaksesi tämä toiminnon."
       ]
     },
     "Payment method option": {
@@ -7129,20 +7109,8 @@
       "Please select your billing state first.": [
         "Valitse laskutusosavaltiosi ensin."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Uusitaan hintaan ${ price }, peruuta milloin tahansa."
-      ],
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ price } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
@@ -7598,14 +7566,14 @@
         "${ gracePeriodHoursRemaining } tuntia lisää"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
-        "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
+        "Jos et pyytänyt salasanasi nollausta, peru tämä pyyntö nyt."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
         "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "Odotamme 72 tuntia ennen pyyntöjen hyväksymistä, jotta voimme varmistaa, että se olet todella sinä, joka yrittää palauttaa salasanasi. Aikaa jäljellä, kunnes voit vaihtaa salasanasi: ${ boldTimeLeft }. ${ viewRequest }"
+        "Odotamme 72 tuntia ennen pyyntöjen hyväksymistä varmistaaksemme juuri sinun pyytäneen nollausta. Voit vaihtaa salasanasi kun on kulunut ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Vastaanotimme salasanan nollauspyynnön osoitteelle ${ boldEmail }."
@@ -7638,7 +7606,7 @@
         "${ passwordReset } on nyt käytössä."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Jos kirjaudut ulos ennen kuin olet nollannut salasanasi, voit menettää tilisi käyttöoikeuden."
+        "Jos kirjaudut ulos ennen kuin olet asettanut uuden salasanan, voit menettää pääsyn tilillesi."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
         "Jos kirjaudut ulos nollaamatta salasanaasi, voit menettää pääsyn tilillesi."
@@ -8158,14 +8126,6 @@
     "Subscription saving": {
       "Save": [
         "Säästä"
-      ]
-    },
-    "Subscription status": {
-      "Active": [
-        "Aktiivinen"
-      ],
-      "Expiring": [
-        "Päättyy"
       ]
     },
     "Success": {
@@ -8842,17 +8802,6 @@
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Päättymispäivä"
-      ],
-      "Plan": [
-        "Tilaus"
-      ],
-      "Status": [
-        "Tila"
       ]
     },
     "Today icon tooltip in mini calendar": {

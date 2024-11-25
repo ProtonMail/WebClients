@@ -507,8 +507,11 @@
       "Reset to default": [
         "Reimposta al valore predefinito"
       ],
-      "Restore version": [
-        "Ripristina la versione"
+      "Restore": [
+        "Ripristina"
+      ],
+      "Restore this version": [
+        "Ripristina questa versione"
       ],
       "Retry": [
         "Riprova"
@@ -689,11 +692,6 @@
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Riattiva"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } o ${ importContact }."
@@ -796,16 +794,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mese",
-        "i primi ${ n } mesi"
-      ],
-      "the first month": [
-        "il primo mese"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ discountedPrice }, è valida per ${ discountedMonths }. Il piano si rinnoverà poi automaticamente al prezzo agevolato di ${ nextPrice } per ${ nextMonths }. Puoi annullare in qualsiasi momento."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ discountedPrice }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ nextPrice } al mese. Puoi annullare in qualsiasi momento."
       ]
@@ -985,15 +973,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } mese",
-        "${ n } mesi"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Si rinnova automaticamente a ${ renewPrice } per ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -4506,6 +4485,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configurazione di PGP consente di inviare email crittografate end-to-end con un utente non-${ BRAND_NAME } che utilizza un servizio compatibile PGP."
       ],
+      "Settings update failed": [
+        "Aggiornamento delle impostazioni non riuscito"
+      ],
+      "Settings updated": [
+        "Impostazioni aggiornate"
+      ],
       "Share via link settings": [
         "Impostazioni per la condivisione via link"
       ],
@@ -4898,11 +4883,6 @@
     "Info on errors": {
       "Click for details": [
         "Clicca per maggiori dettagli"
-      ]
-    },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Puoi prevenire la scadenza riattivando l'abbonamento"
       ]
     },
     "Info: partial": {
@@ -7183,20 +7163,8 @@
       "Please select your billing state first.": [
         "Seleziona prima lo stato di fatturazione."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Rinnova a ${ price }, annulla in qualsiasi momento."
-      ],
       "Select billing country to pay": [
         "Seleziona il paese di fatturazione per il pagamento"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ months }. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ price } ogni ${ months }. Puoi annullare in qualsiasi momento."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ months }. Il piano si rinnoverà poi automaticamente a ${ price } ogni ${ months }. Puoi annullare in qualsiasi momento."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ price } al mese. Puoi annullare in qualsiasi momento."
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
@@ -8214,14 +8182,6 @@
         "Risparmia"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Attivo"
-      ],
-      "Expiring": [
-        "Scadenza"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contatto sembra identico.",
@@ -8896,17 +8856,6 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Data di fine"
-      ],
-      "Plan": [
-        "Piano"
-      ],
-      "Status": [
-        "Stato"
       ]
     },
     "Today icon tooltip in mini calendar": {

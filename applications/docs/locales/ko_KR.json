@@ -504,8 +504,11 @@
       "Reset to default": [
         "기본값으로 재설정"
       ],
-      "Restore version": [
-        "버전 복원"
+      "Restore": [
+        "복원"
+      ],
+      "Restore this version": [
+        "이 버전으로 복구"
       ],
       "Retry": [
         "재시도"
@@ -685,11 +688,6 @@
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "재활성화"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } 혹은 ${ importContact }"
@@ -788,15 +786,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n }개월"
-      ],
-      "the first month": [
-        "첫 달"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "이 특별 할인가 (${ discountedPrice })는 ${ discountedMonths }에 한합니다. 그 이후로는 ${ nextMonths } 동안 ${ nextPrice }(으)로 갱신됩니다. 언제든지 취소 가능합니다."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "이 특별 할인가 (${ discountedPrice })는 첫 달에 한합니다. 자동으로 다음 달 부터는 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
       ]
@@ -974,14 +963,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n }개월"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "${ renewalLength } 이후에 ${ renewPrice }로 자동 갱신됨"
       ]
     },
     "Billing cycle option": {
@@ -4443,6 +4424,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP를 설정하면 ${ BRAND_NAME }을 사용하지 않는 PGP 호환 서비스를 사용하는 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
       ],
+      "Settings update failed": [
+        "설정 업데이트 실패"
+      ],
+      "Settings updated": [
+        "설정 업데이트 완료"
+      ],
       "Share via link settings": [
         "링크로 공유 설정"
       ],
@@ -4832,11 +4819,6 @@
     "Info on errors": {
       "Click for details": [
         "자세한 내용을 보려면 클릭하세요"
-      ]
-    },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "구독을 다시 활성화하여 만료를 방지할 수 있습니다."
       ]
     },
     "Info: partial": {
@@ -7014,20 +6996,8 @@
       "Please select your billing state first.": [
         "결제 청구 주를 먼저 선택하세요"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "${ price }에 갱신되며 언제나 취소할 수 있습니다."
-      ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 ${ months }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ price }로 ${ months }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 ${ months }개월간 적용됩니다. 이후 매월 ${ price }로 ${ months }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ price }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
@@ -8015,14 +7985,6 @@
         "절약되는 가격:"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "활성화"
-      ],
-      "Expiring": [
-        "만료"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts }개 연락처가 동일한 것 같습니다."
@@ -8683,17 +8645,6 @@
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "종료일"
-      ],
-      "Plan": [
-        "플랜"
-      ],
-      "Status": [
-        "상태"
       ]
     },
     "Today icon tooltip in mini calendar": {
