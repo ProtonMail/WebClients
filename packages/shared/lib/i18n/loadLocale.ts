@@ -8,6 +8,10 @@ import dateFnLocales, { getDateFnLocale } from './dateFnLocales';
 import { getClosestLocaleMatch, getLangAttribute, getLanguageCode } from './helper';
 import { setDateLocales, setLocales } from './index';
 
+export const willLoadLocale = (localeCode: string) => {
+    return localeCode !== DEFAULT_LOCALE;
+};
+
 export const loadLocale = async (localeCode: string, locales: TtagLocaleMap) => {
     const languageCode = getLanguageCode(localeCode);
 
