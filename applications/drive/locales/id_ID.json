@@ -193,7 +193,7 @@
         "Lanjut transfer"
       ],
       "Continue with Google": [
-        "Lanjutkan dengan Google"
+        "Lanjut dengan Google"
       ],
       "Continue with Outlook": [
         "Lanjut dengan Outlook"
@@ -916,11 +916,6 @@
         "Perkecil"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Aktifkan kembali"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } atau ${ importContact }."
@@ -1024,15 +1019,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "dalam ${ n } bulan pertama"
-      ],
-      "the first month": [
-        "bulan pertama"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Harga ${ discountedPrice } yang didiskon masih valid untuk ${ discountedMonths }. Lalu akan diperbarui secara otomatis dengan harga ${ nextPrice } untuk ${ nextMonths }. Anda dapat membatalkan kapan pun."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Harga ${ discountedPrice } yang didiskon masih valid untuk bulan pertama. Lalu akan diperbarui secara otomatis dengan harga ${ nextPrice } setiap bulan. Anda dapat membatalkan kapan pun."
       ]
@@ -1177,7 +1163,7 @@
         "selamanya"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "Diperbarui setelah 1 bulan dengan ${ regularAmount }."
+        "Diperbarui setelah 1 bulan dengan harga ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
@@ -1210,14 +1196,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } bulan"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Diperbarui secara otomatis seharga ${ renewPrice }, selama ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -3465,7 +3443,7 @@
         "Paket keluarga saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Jika Anda menerima undangan, kami akan mengalihkan Anda dari paket saat ini dan mengkredit akun Anda dengan sisa saldo."
+        "Apabila Anda menerima undangan ini, kami akan memindahkan Anda dari paket saat ini dan menagih akun Anda dengan saldo mana pun yang tersisa."
       ],
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
@@ -5553,11 +5531,6 @@
         "Klik untuk rincian"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Anda dapat mencegah paket Anda kedaluwarsa dengan mengaktifkan kembali langganan"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } folder dipilih"
@@ -7156,7 +7129,7 @@
         "Hingga ${ n } pengguna"
       ],
       "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Sampai dengan ${ n } pengguna (${ adminsText }, ${ usersText })"
+        "Hingga ${ n } pengguna (${ adminsText }, ${ usersText })"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Ruang penyimpanan hingga ${ totalStorageSize }"
@@ -7437,7 +7410,7 @@
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Layanan dukungan telepon tersedia dari tim Layanan Dukungan Pelanggan ${ BRAND_NAME } saat jam kantor Eropa, untuk pelanggan dengan 20 pengguna atau lebih"
+        "Dukungan telepon tersedia dari tim Layanan Dukungan ${ BRAND_NAME } pada jam kerja yang berlaku di Eropa, khusus untuk pelanggan dengan 20 atau lebih pengguna"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Mencegah pesan untuk dapat diakses oleh ${ BRAND_NAME } atau pihak ketiga. Pesan Anda hanya akan dibaca oleh penerima dan Anda sendiri."
@@ -8137,20 +8110,8 @@
       "Please select your billing state first.": [
         "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Terbarui dengan harga ${ price }, batalkan kapan saja."
-      ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Harga diskon spesial ${ priceWithDiscount } berlaku untuk ${ months } pertama. Voucer berlaku untuk pembaruan ${ couponRedemptions }. Setelahnya, langganan akan secara otomatis diperbarui seharga ${ price } untuk ${ months } bulan. Kamu bisa membatalkan langganan kapan saja."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Harga diskon spesial ${ priceWithDiscount } berlaku untuk ${ months } pertama. Setelahnya, langganan akan secara otomatis diperbarui seharga ${ price } untuk ${ months } bulan. Kamu bisa membatalkan langganan kapan saja."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Harga diskon khusus ${ priceWithDiscount } berlaku valid untuk bulan pertama. Setelahnya, langganan Anda akan diperbarui secara otomatis pada harga ${ price } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
@@ -8807,10 +8768,10 @@
         "Dapatkan penawaran ini"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Diperbarui setelah 1 tahun dengan harga diskon ${ discountedAmount } daripada ${ regularAmount } (diskon ${ discount }%)"
+        "Diperbarui setelah 1 tahun dengan harga diskon ${ discountedAmount } alih-alih ${ regularAmount } (diskon ${ discount }%)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Diperbarui setelah 2 tahun dengan harga diskon ${ discountedAmount } daripada ${ regularAmount } (diskon ${ discount }%)"
+        "Diperbarui setelah 2 tahun dengan harga diskon ${ discountedAmount } alih-alih ${ regularAmount } (diskon ${ discount }%)"
       ],
       "Save ${ discount }%": [
         "Hemat ${ discount }%"
@@ -9403,14 +9364,6 @@
     "Subscription saving": {
       "Save": [
         "Hemat"
-      ]
-    },
-    "Subscription status": {
-      "Active": [
-        "Aktif"
-      ],
-      "Expiring": [
-        "Segera berakhir"
       ]
     },
     "Success": {
@@ -10244,17 +10197,6 @@
       ],
       "You’ve got 5 GB of storage": [
         "Anda mendapatkan ruang penyimpanan 5 GB"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Tanggal berakhir"
-      ],
-      "Plan": [
-        "Paket"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -928,11 +928,6 @@
         "Паменшыць"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Актываваць паўторна"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } або ${ importContact }."
@@ -1048,18 +1043,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } месяц",
-        "першыя ${ n } месяцы",
-        "першыя ${ n } месяцаў",
-        "першыя ${ n } месяцаў"
-      ],
-      "the first month": [
-        "першы месяц"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за ${ discountedMonths }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне са зніжаным коштам у памеры ${ nextPrice } за ${ nextMonths }. Скасаваць можна ў любы момант."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ nextPrice } за кожны месяц. Скасаваць можна ў любы момант."
       ]
@@ -1238,17 +1221,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяцы",
-        "${ n } месяцаў",
-        "${ n } месяцаў"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Аўтаматычнае абнаўленне па кошце ${ renewPrice } за перыяд часу ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -5815,11 +5787,6 @@
         "Націсніце, каб даведацца падрабязнасці"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Вы можаце прадухіліць завяршэнне дзеяння падпіскі паўторна актываваўшы яе"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "Выбрана ${ selectedFoldersCount } папка",
@@ -8570,20 +8537,8 @@
       "Please select your billing state first.": [
         "Спачатку выберыце ваш штат выстаўлення рахунку."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Падаўжаецца за ${ price }. Скасаваць можна ў любы час."
-      ],
       "Select billing country to pay": [
         "Выберыце краіну выстаўлення рахунку для аплаты"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months } месяцы. Скасаваць можна ў любы момант."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months }. Скасаваць можна ў любы момант."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за кожны месяц. Скасаваць можна ў любы момант."
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
@@ -9940,14 +9895,6 @@
         "Захаваць"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Актыўна"
-      ],
-      "Expiring": [
-        "Тэрмін дзеяння"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } кантакт выглядае ідэнтычна.",
@@ -10839,17 +10786,6 @@
       ],
       "You’ve got 5 GB of storage": [
         "Вы атрымалі 5 ГБ сховішча"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Дата завяршэння"
-      ],
-      "Plan": [
-        "Тарыфны план"
-      ],
-      "Status": [
-        "Статус"
       ]
     },
     "Today icon tooltip in mini calendar": {
