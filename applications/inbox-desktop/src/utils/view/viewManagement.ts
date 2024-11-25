@@ -20,6 +20,7 @@ import { join } from "node:path";
 import { c } from "ttag";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
+import { MenuBarMonitor } from "./MenuBarMonitor";
 
 type ViewID = keyof URLConfig;
 
@@ -77,20 +78,8 @@ export const viewCreationAppStartup = async () => {
     mainWindow.on("maximize", debouncedSaveWindowBounds);
     mainWindow.on("unmaximize", debouncedSaveWindowBounds);
 
-    const updateViewsBounds = () => {
-        for (const [viewID, view] of Object.entries(browserViewMap)) {
-            if (view && viewID) {
-                updateViewBounds(view, viewID as ViewID);
-            }
-        }
-    };
-
-    mainWindow.on("maximize", updateViewsBounds);
-    mainWindow.on("unmaximize", updateViewsBounds);
-
-    // We need to delay the update until the next tick, otherwise
-    // mainWindow.isFullScreen() value is not correctly updated.
-    const debouncedUpdateViewsBounds = debounce(() => updateViewsBounds(), 0);
+    mainWindow.on("maximize", debouncedUpdateViewsBounds);
+    mainWindow.on("unmaximize", debouncedUpdateViewsBounds);
     mainWindow.on("enter-full-screen", debouncedUpdateViewsBounds);
     mainWindow.on("leave-full-screen", debouncedUpdateViewsBounds);
 
@@ -164,6 +153,9 @@ const createBrowserWindow = () => {
 
     setApplicationMenu();
 
+    const menuBarMonitor = new MenuBarMonitor(mainWindow);
+    menuBarMonitor.onVisibilityChange(debouncedUpdateViewsBounds);
+
     mainWindow.webContents.session.setCertificateVerifyProc((request, callback) => {
         const callbackValue = checkKeys(request);
         callback(callbackValue);
@@ -210,6 +202,18 @@ function updateViewBounds(view: BrowserView | undefined, viewID: ViewID | null =
     viewLogger(viewID).verbose("updating view bounds", JSON.stringify(updatedBounds));
     view.setBounds(updatedBounds);
 }
+
+/**
+ * We need to delay the update until the next tick, otherwise
+ * some window props will not be updated.
+ */
+const debouncedUpdateViewsBounds = debounce(() => {
+    for (const [viewID, view] of Object.entries(browserViewMap)) {
+        if (view && viewID) {
+            updateViewBounds(view, viewID as ViewID);
+        }
+    }
+}, 0);
 
 async function updateLocalID(urlString: string) {
     if (!isHostAllowed(urlString) || isAccountSwitch(urlString)) {
