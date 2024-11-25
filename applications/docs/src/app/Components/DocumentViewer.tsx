@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type {
   DocsClientSquashVerificationObjectionMadePayload,
+  DocumentState,
   EditorOrchestratorInterface,
   GeneralUserDisplayableErrorOccurredPayload,
+  PublicDocumentState,
   WebsocketConnectionEventPayloads,
 } from '@proton/docs-core'
 import {
@@ -36,6 +38,8 @@ import { useGetUserSettings } from '@proton/account/userSettings/hooks'
 import WordCountOverlay from './WordCount/WordCountOverlay'
 import { useSuggestionsFeatureFlag } from '../Hooks/useSuggestionsFeatureFlag'
 import { useWelcomeSplashModal } from '../Apps/Public/WelcomeSplashModal/WelcomeSplashModal'
+import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller/Document/AnyDocControllerInterface'
+import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
 
 type Props = {
   nodeMeta: NodeMeta | PublicNodeMeta
@@ -51,6 +55,10 @@ type Error = {
 export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }: Props) {
   const application = useApplication()
   const { getLocalID } = useAuthentication()
+
+  const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
+  const [docController, setDocController] = useState<AnyDocControllerInterface | null>(null)
+  const [editorController, setEditorController] = useState<EditorControllerInterface | null>(null)
 
   const [signatureFailedModal, openSignatureFailedModal] = useSignatureCheckFailedModal()
   const isSignatureFailedModalOpen = useRef(false)
@@ -91,14 +99,14 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
       return
     }
 
-    if (docOrchestrator?.role.isPublicViewer()) {
+    if (documentState?.getProperty('userRole').isPublicViewer()) {
       return
     }
 
     void getUserSettings().then((settings) => {
       void bridge.editorInvoker.loadUserSettings(settings)
     })
-  }, [bridge, getUserSettings, docOrchestrator])
+  }, [bridge, getUserSettings, documentState])
 
   useEffect(() => {
     if (!bridge) {
@@ -111,16 +119,16 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   }, [application.eventBus, bridge])
 
   useEffect(() => {
-    return application.eventBus.addEventCallback(() => {
+    return documentState?.subscribeToProperty('documentName', (title) => {
       setDidLoadTitle(true)
-    }, DocControllerEvent.DidLoadDocumentTitle)
-  }, [application.eventBus])
+    })
+  }, [documentState])
 
   useEffect(() => {
-    return application.eventBus.addEventCallback(() => {
+    return documentState?.subscribeToEvent('EditorIsReadyToBeShown', () => {
       setDidLoadEditorContent(true)
-    }, DocControllerEvent.DidLoadInitialEditorContent)
-  }, [application.eventBus])
+    })
+  }, [documentState])
 
   useEffect(() => {
     return application.eventBus.addEventCallback(() => {
@@ -130,11 +138,11 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
 
   useEffect(() => {
     return application.eventBus.addEventCallback(() => {
-      if (isPublicViewer) {
-        openPublicSplashModal({})
+      if (isPublicViewer && editorController && documentState) {
+        openPublicSplashModal({ editorController, documentState: documentState as PublicDocumentState })
       }
     }, EditorEvent.ToolbarClicked)
-  }, [application.eventBus, isPublicViewer, openPublicSplashModal])
+  }, [application.eventBus, isPublicViewer, openPublicSplashModal, editorController, documentState])
 
   useEffect(() => {
     return application.eventBus.addEventCallback(() => {
@@ -249,20 +257,29 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
         return
       }
 
+      if (!documentState) {
+        throw new Error('Document state not yet available')
+      }
+
       application.logger.info('Creating bridge from client to editor')
 
       const clientToEditorBridge = new ClientToEditorBridge(editorFrame, orchestrator, application.eventBus)
 
       setBridge(clientToEditorBridge)
 
+      const docMeta = documentState?.getProperty('documentMeta')
+      if (!docMeta) {
+        throw new Error('Document meta not yet available')
+      }
+
       void clientToEditorBridge.editorInvoker.initializeEditor(
-        orchestrator.docMeta.uniqueIdentifier,
+        docMeta.uniqueIdentifier,
         orchestrator.username,
-        orchestrator.role.roleType,
+        documentState.getProperty('userRole').roleType,
         editorInitializationConfig,
       )
     },
-    [application.logger, application.eventBus, editorInitializationConfig, bridge],
+    [bridge, application.logger, application.eventBus, documentState, editorInitializationConfig],
   )
 
   const onFrameReady = useCallback(
@@ -279,9 +296,12 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
       return
     }
 
-    const disposer = application.docLoader.addStatusObserver({
-      onSuccess: (orchestrator) => {
-        setDocOrchestrator(orchestrator)
+    const disposer = application.getDocLoader().addStatusObserver({
+      onSuccess: (result) => {
+        setDocumentState(result.documentState)
+        setDocOrchestrator(result.orchestrator)
+        setDocController(result.docController)
+        setEditorController(result.editorController)
         setReady(true)
       },
       onError: (errorMessage) => {
@@ -293,11 +313,11 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
     if (!initializing) {
       setInitializing(true)
 
-      void application.docLoader.initialize(nodeMeta)
+      void application.getDocLoader().initialize(nodeMeta)
     }
 
     return disposer
-  }, [application.docLoader, application.metrics, docOrchestrator, initializing, nodeMeta])
+  }, [application, docOrchestrator, initializing, nodeMeta])
 
   useEffect(() => {
     if (docOrchestrator && editorFrame && !bridge) {
@@ -329,12 +349,18 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
 
   return (
     <div className="relative h-full w-full">
-      {ready && debug && <DebugMenu docController={application.docLoader.getDocController()} />}
+      {ready && debug && docController && editorController && documentState && (
+        <DebugMenu docController={docController} editorController={editorController} documentState={documentState} />
+      )}
+
       {ready && <WordCountOverlay />}
-      {!docOrchestrator && (
-        <div className="bg-norm flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center gap-4">
-          <CircleLoader size="large" />
-          <div className="text-center">{c('Info').t`Loading document...`}</div>
+
+      {(!documentState || !docController || !editorController) && (
+        <div className="relative h-full w-full">
+          <div className="bg-norm flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center gap-4">
+            <CircleLoader size="large" />
+            <div className="text-center">{c('Info').t`Loading document...`}</div>
+          </div>
         </div>
       )}
 
@@ -343,6 +369,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
         onFrameReady={onFrameReady}
         systemMode={isPublicViewer ? EditorSystemMode.PublicView : EditorSystemMode.Edit}
       />
+
       {publicSplashModal}
       {signatureFailedModal}
       {genericAlertModal}

@@ -2,30 +2,33 @@ import { useOpenDocument } from '@proton/drive-store/store/_documents'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { getNewWindow } from '@proton/shared/lib/helpers/window'
-import type { AnyDocControllerInterface } from 'packages/docs-core/lib/Controller/Document/AnyDocControllerInterface'
 import { useCallback } from 'react'
 import type { PublicContextType } from '../../../Containers/ContextProvider'
 import {
   type PublicDocumentPostMessageDataForCopying,
   PublicDocumentPostMessageEvent,
 } from './PublicDocumentPostMessageEvents'
+import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
+import type { PublicDocumentState } from '@proton/docs-core'
 
 export const usePublicDocumentCopying = ({
   context,
-  controller,
+  editorController,
+  documentState,
 }: {
   context: PublicContextType
-  controller: AnyDocControllerInterface
+  editorController: EditorControllerInterface
+  documentState: PublicDocumentState
 }) => {
   const { openDocumentWindow } = useOpenDocument()
   const { user } = context
 
   const handleCopierReady = useCallback(
     async (childWindow: Window) => {
-      const editorData = await controller.exportData('yjs')
+      const editorData = await editorController.exportData('yjs')
       const messageData: PublicDocumentPostMessageDataForCopying = {
         yjsData: editorData,
-        name: controller.getSureDocument().name,
+        name: documentState.getProperty('documentName'),
       }
       childWindow.postMessage(
         {
@@ -35,7 +38,7 @@ export const usePublicDocumentCopying = ({
         getAppHref('/', APPS.PROTONDOCS),
       )
     },
-    [controller],
+    [editorController, documentState],
   )
 
   const handleCopierMessage = useCallback(

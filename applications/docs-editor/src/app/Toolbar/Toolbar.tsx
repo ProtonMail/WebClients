@@ -1472,7 +1472,7 @@ export default function DocumentEditorToolbar({
                       icon={<Icon name="pencil" size={4} />}
                       label={c('Info').t`Editing`}
                       description={c('Description').t`Edit document directly`}
-                      data-testid="edit-dropdown-button"
+                      data-testid={`edit-dropdown-button${isPreviewModeToolbar ? '-preview' : ''}`}
                     />
                     {canShowSuggestionsButton && (
                       <InteractionDropdownButton
@@ -1483,7 +1483,7 @@ export default function DocumentEditorToolbar({
                         onClick={() => {
                           onUserModeChange(EditorUserMode.Suggest)
                         }}
-                        data-testid="suggest-dropdown-button"
+                        data-testid={`suggest-dropdown-button${isPreviewModeToolbar ? '-preview' : ''}`}
                         disabled={isMobile()}
                       />
                     )}
@@ -1497,7 +1497,7 @@ export default function DocumentEditorToolbar({
                   onClick={() => {
                     onUserModeChange(EditorUserMode.Preview)
                   }}
-                  data-testid="view-dropdown-button"
+                  data-testid={`view-dropdown-button${isPreviewModeToolbar ? '-preview' : ''}`}
                 />
               </DropdownMenu>
             </SimpleDropdown>

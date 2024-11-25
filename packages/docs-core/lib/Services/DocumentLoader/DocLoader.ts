@@ -21,23 +21,28 @@ import type { DocControllerInterface } from '../../Controller/Document/DocContro
 import { CommentController } from '../Comments/CommentController'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import type { LoadCommit } from '../../UseCase/LoadCommit'
-import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { DocsApi } from '../../Api/DocsApi'
 import type { MetricService } from '../Metrics/MetricService'
-import type { DocumentPropertiesStateInterface } from '../State/DocumentPropertiesStateInterface'
+import metrics from '@proton/metrics'
+import { metricsBucketNumberForUpdateCount } from '../../Util/bucketNumberForUpdateCount'
+import type { EditorControllerInterface } from '../../Controller/Document/EditorController'
+import { EditorController } from '../../Controller/Document/EditorController'
+import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
+import { RealtimeController } from '../../Controller/Realtime/RealtimeController'
+import { DocumentState } from '../../State/DocumentState'
+import type { UserState } from '../../State/UserState'
+import type { DocLoaderStatusObserver } from './StatusObserver'
 
-export type StatusObserver = {
-  onSuccess: (orchestrator: EditorOrchestratorInterface) => void
-  onError: (error: string) => void
-}
-
-export class DocLoader implements DocLoaderInterface {
+export class DocLoader implements DocLoaderInterface<DocumentState, DocControllerInterface> {
   private docController?: DocControllerInterface
+  private editorController?: EditorControllerInterface
   private commentsController?: CommentControllerInterface
   private orchestrator?: EditorOrchestratorInterface
-  private readonly statusObservers: StatusObserver[] = []
+  private documentState?: DocumentState
+  private readonly statusObservers: DocLoaderStatusObserver<DocumentState, DocControllerInterface>[] = []
 
   constructor(
+    private userState: UserState,
     private websocketSerivce: WebsocketServiceInterface,
     private driveCompat: DriveCompat,
     private metricService: MetricService,
@@ -54,9 +59,8 @@ export class DocLoader implements DocLoaderInterface {
     private duplicateDocument: DuplicateDocument,
     private createNewDocument: CreateNewDocument,
     private getDocumentMeta: GetDocumentMeta,
-    private getNode: GetNode,
     private exportAndDownload: ExportAndDownload,
-    private sharedState: DocumentPropertiesStateInterface,
+    private getNode: GetNode,
     private eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
   ) {}
@@ -70,41 +74,58 @@ export class DocLoader implements DocLoaderInterface {
       throw new Error('[DocLoader] docController already initialized')
     }
 
+    const startTime = Date.now()
+
+    const loadResult = await this.loadDocument.executePrivate(nodeMeta)
+    if (loadResult.isFailed()) {
+      this.logger.error('Failed to load document', loadResult.getError())
+      this.statusObservers.forEach((observer) => {
+        observer.onError(loadResult.getError())
+      })
+      return
+    }
+
+    const { entitlements, meta, node, decryptedCommit } = loadResult.getValue()
+    this.logger.info(`Loaded document meta with last commit id ${meta.latestCommitId()}`)
+
+    const documentState = new DocumentState({
+      ...DocumentState.defaults,
+      documentMeta: meta,
+      userRole: entitlements.role,
+      decryptedNode: node,
+      entitlements,
+      documentName: meta.name,
+      currentCommitId: meta.latestCommitId(),
+      baseCommit: decryptedCommit,
+      documentTrashState: node.trashed ? 'trashed' : 'not_trashed',
+    })
+    this.documentState = documentState
+
+    const editorController = new EditorController(this.logger, this.exportAndDownload, documentState)
+    this.editorController = editorController
+
     const controller = new DocController(
-      nodeMeta,
+      documentState,
       this.driveCompat,
       this.squashDoc,
       this.createInitialCommit,
-      this.loadDocument,
       this.loadCommit,
       this.duplicateDocument,
       this.createNewDocument,
       this.getDocumentMeta,
-      this.exportAndDownload,
       this.getNode,
-      this.websocketSerivce,
       this.eventBus,
       this.logger,
     )
 
     this.docController = controller
 
-    const result = await this.docController.initialize()
-
-    if (result.isFailed()) {
-      this.statusObservers.forEach((observer) => {
-        observer.onError(result.getError())
-      })
-      return
-    }
-
-    const { entitlements } = result.getValue()
-
-    const getLatestDocumentName = () => controller.getSureDocument().name
+    const realtime = new RealtimeController(this.websocketSerivce, this.eventBus, documentState, this.logger)
+    realtime.initializeConnection(entitlements)
 
     this.commentsController = new CommentController(
-      nodeMeta,
-      entitlements.keys,
+      this.userState,
+      documentState,
       this.websocketSerivce,
       this.metricService,
       this.docsApi,
@@ -113,36 +134,52 @@ export class DocLoader implements DocLoaderInterface {
       this.createComment,
       this.loadThreads,
       this.handleRealtimeCommentsEvent,
-      this.sharedState,
-      getLatestDocumentName,
       this.eventBus,
       this.logger,
     )
 
-    this.commentsController.fetchAllComments()
-
-    this.orchestrator = new EditorOrchestrator(this.commentsController, this.docController, this.docsApi, this.eventBus)
+    this.orchestrator = new EditorOrchestrator(
+      this.commentsController,
+      this.docController,
+      this.docsApi,
+      this.eventBus,
+      this.editorController,
+      documentState,
+    )
 
     this.statusObservers.forEach((observer) => {
       if (this.orchestrator) {
-        observer.onSuccess(this.orchestrator)
+        observer.onSuccess({
+          orchestrator: this.orchestrator,
+          documentState,
+          docController: controller,
+          editorController: editorController,
+        })
       }
+    })
+
+    this.commentsController.fetchAllComments()
+
+    const endTime = Date.now()
+    const timeToLoadInSeconds = (endTime - startTime) / 1000
+    metrics.docs_time_load_document_histogram.observe({
+      Labels: {
+        updates: metricsBucketNumberForUpdateCount(decryptedCommit?.numberOfUpdates() ?? 0),
+      },
+      Value: timeToLoadInSeconds,
     })
   }
 
-  public getDocController(): DocControllerInterface {
-    if (!this.docController) {
-      throw new Error('DocController not ready')
-    }
-
-    return this.docController
-  }
-
-  public addStatusObserver(observer: StatusObserver): () => void {
+  public addStatusObserver(observer: DocLoaderStatusObserver<DocumentState, DocControllerInterface>): () => void {
     this.statusObservers.push(observer)
 
-    if (this.orchestrator) {
-      observer.onSuccess(this.orchestrator)
+    if (this.orchestrator && this.docController && this.editorController && this.documentState) {
+      observer.onSuccess({
+        orchestrator: this.orchestrator,
+        documentState: this.documentState,
+        docController: this.docController,
+        editorController: this.editorController,
+      })
     }
 
     return () => {

@@ -17,21 +17,22 @@ import type { PublicDocLoader } from '../Services/DocumentLoader/PublicDocLoader
 import type { HttpHeaders } from '../Api/DocsApi'
 import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 import type { UnleashClient } from '@proton/unleash'
+import { UserState } from '../State/UserState'
+import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
+import type { PublicDocControllerInterface } from '../Controller/Document/PublicDocControllerInterface'
 import type { AnyDocControllerInterface } from '../Controller/Document/AnyDocControllerInterface'
-import type { DocControllerInterface } from '../Controller/Document/DocControllerInterface'
-import { DocumentPropertiesState } from '../Services/State/DocumentPropertiesState'
 
 declare const window: CustomWindow
 
 export class Application implements ApplicationInterface {
-  public readonly sharedState = new DocumentPropertiesState()
+  public readonly userState = new UserState()
 
   private readonly deps = new AppDependencies(
     this.protonApi,
     this.imageProxyParams,
     this.publicContextHeaders,
     this.compatWrapper,
-    this.sharedState,
+    this.userState,
     this.appVersion,
     this.unleashClient,
   )
@@ -51,7 +52,13 @@ export class Application implements ApplicationInterface {
     this.logger.info('Destroying application')
 
     this.websocketService.destroy()
-    this.docLoader.destroy()
+
+    if (!this.compatWrapper.publicCompat) {
+      this.privateDocLoader.destroy()
+    } else {
+      this.publicDocLoader.destroy()
+    }
+
     this.eventBus.deinit()
   }
 
@@ -67,24 +74,28 @@ export class Application implements ApplicationInterface {
     return this.deps.get<LoggerInterface>(App_TYPES.Logger)
   }
 
-  public get docController(): AnyDocControllerInterface {
-    return this.docLoader.getDocController()
-  }
-
-  public get privateDocController(): DocControllerInterface {
+  public getDocLoader(): DocLoaderInterface<DocumentState | PublicDocumentState, AnyDocControllerInterface> {
     if (this.compatWrapper.publicCompat) {
-      throw new Error('Attempting to access private doc controller in public mode')
-    }
-
-    return this.docController as DocControllerInterface
-  }
-
-  public get docLoader(): DocLoaderInterface {
-    if (this.compatWrapper.publicCompat) {
-      return this.deps.get<PublicDocLoader>(App_TYPES.PublicDocLoader)
+      return this.publicDocLoader
     } else {
-      return this.deps.get<DocLoader>(App_TYPES.DocLoader)
+      return this.privateDocLoader
     }
+  }
+
+  private get publicDocLoader(): DocLoaderInterface<PublicDocumentState, PublicDocControllerInterface> {
+    if (!this.compatWrapper.publicCompat) {
+      throw new Error('Public mode is not supported in private mode')
+    }
+
+    return this.deps.get<PublicDocLoader>(App_TYPES.PublicDocLoader)
+  }
+
+  private get privateDocLoader(): DocLoaderInterface<DocumentState, AnyDocControllerInterface> {
+    if (this.compatWrapper.publicCompat) {
+      throw new Error('Private mode is not supported in public mode')
+    }
+
+    return this.deps.get<DocLoader>(App_TYPES.DocLoader)
   }
 
   public get isPublicMode(): boolean {

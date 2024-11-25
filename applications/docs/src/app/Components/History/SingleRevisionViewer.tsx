@@ -1,5 +1,6 @@
 import type { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
-import { type YjsState, EditorSystemMode, InternalEventBus } from '@proton/docs-shared'
+import type { YjsState } from '@proton/docs-shared'
+import { EditorSystemMode, InternalEventBus } from '@proton/docs-shared'
 import { EditorFrame } from '../EditorFrame'
 import { useCallback } from 'react'
 import { ClientToEditorBridge } from '@proton/docs-core/lib/Bridge/ClientToEditorBridge'

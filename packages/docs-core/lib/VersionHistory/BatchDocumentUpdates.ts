@@ -14,8 +14,10 @@ export class BatchDocumentUpdates implements SyncUseCaseInterface<VersionHistory
     if (!updates.length) {
       return Result.ok([])
     }
+
     const numberOfBatches = Math.round(updates.length / batchThreshold)
     const batches: VersionHistoryBatch[] = []
+
     for (let batchIndex = 0; batchIndex <= numberOfBatches; batchIndex++) {
       const start = batchIndex * batchThreshold
       const nextIndex = batchIndex + 1
