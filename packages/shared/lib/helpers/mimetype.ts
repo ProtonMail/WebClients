@@ -129,7 +129,9 @@ export const isPDF = (mimeType: string) =>
     mimeType === SupportedMimeTypes.pdf ||
     // Some e-mail clients will use this legacy value
     mimeType === 'application/x-pdf';
-
+export const isComicBook = (mimeType: string) => mimeType === 'application/x-cbz' || mimeType === 'application/x-cbr';
+export const isCompatibleCBZ = (mimeType: string, filename: string) =>
+    isComicBook(mimeType) && filename.endsWith('cbz'); // browser mime type detection is not great for CBZ (sometimes flagged as 'application/x-cbr') so we need to also check end of file name
 /**
  * A helper function to determine if a mimetype can be converted by Proton Docs.
  */

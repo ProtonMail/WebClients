@@ -3,7 +3,14 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { Header, MainLogo, UnAuthenticated, UnAuthenticatedAppsDropdown, useConfig } from '@proton/components';
+import {
+    Header,
+    MainLogo,
+    UnAuthenticated,
+    UnAuthenticatedAppsDropdown,
+    useActiveBreakpoint,
+    useConfig,
+} from '@proton/components';
 import Footer from '@proton/components/components/footer/Footer';
 import { getAppHref, getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -24,6 +31,7 @@ interface Props {
 
 export default function SharedPageLayout({ FooterComponent, children, className, partialView }: Props) {
     const { APP_NAME } = useConfig();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const { user, localID } = usePublicSessionUser();
 
@@ -77,13 +85,15 @@ export default function SharedPageLayout({ FooterComponent, children, className,
                 )}
                 <main
                     className={clsx(
-                        'shared-page-layout-container w-full flex flex-nowrap flex-column md:flex-row flex-1 px-4',
+                        'shared-page-layout-container w-full flex flex-nowrap flex-column md:flex-row flex-1 h-auto px-4',
                         partialView ? 'md:px-5' : 'md:px-10'
                     )}
                 >
-                    <div className="flex-1 mb-4 md:mb-0 flex flex-column flex-nowrap">{children}</div>
+                    <div className="flex-1 flex flex-column flex-nowrap">{children}</div>
                 </main>
-                <Footer className="justify-space-between items-center p-0 mt-6 md:mt-0">{FooterComponent}</Footer>
+                {viewportWidth['<=small'] && typeof FooterComponent !== 'undefined' && (
+                    <Footer className="justify-space-between items-center p-0">{FooterComponent}</Footer>
+                )}
             </div>
         </UnAuthenticated>
     );
