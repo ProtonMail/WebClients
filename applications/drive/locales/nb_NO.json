@@ -920,11 +920,6 @@
         "Zoom ut"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Aktiver på nytt"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } eller ${ importContact }."
@@ -1032,16 +1027,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } måned",
-        "de første ${ n } månedene"
-      ],
-      "the first month": [
-        "den første måneden"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ discountedPrice } er gyldig for ${ discountedMonths }. Da blir den automatisk fornyet til den rabatterte prisen på ${ nextPrice } for ${ nextMonths }. Du kan avbryte når som helst."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ discountedPrice } er gyldig den første måneden. Da blir den automatisk fornyet til ${ nextPrice } hver måned. Du kan avbryte når som helst."
       ]
@@ -1221,15 +1206,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } måned",
-        "${ n } måneder"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Fornyes automatisk for ${ renewPrice }, for ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2775,7 +2751,7 @@
         "Kan ikke eksportere denne kontakten"
       ],
       "Checkout expired, please try again": [
-        "Utsjekkingen utløpt, vennligst prøv igjen"
+        "Utsjekkingen utløpt. Prøv igjen."
       ],
       "Contact could not be saved": [
         "Kontakten kunne ikke lagres."
@@ -5648,11 +5624,6 @@
         "Klikk for detaljer"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Du kan forhindre utløp ved å aktivere abonnementet på nytt"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mappe valgt",
@@ -7878,7 +7849,7 @@
         "Kunne ikke laste inn invitasjonsdetaljer"
       ],
       "Failed to move, please try again": [
-        "Kunne ikke flytte, vennligst prøv igjen."
+        "Kunne ikke flytte. Prøv igjen."
       ],
       "Failed to open document": [
         "Kunne ikke åpne dokumentet"
@@ -8297,20 +8268,8 @@
       "Please select your billing state first.": [
         "Velg faktureringsstaten din først."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Fornyes til ${ price }, avbryt når som helst."
-      ],
       "Select billing country to pay": [
         "Velg faktureringsland for å betale"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ months }. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Da vil den automatisk bli fornyet til ${ price } for ${ months } måneder. Du kan avbryte når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ months }. Da vil den automatisk bli fornyet til ${ price } for ${ months }. Du kan avbryte når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ price } hver måned. Du kan avbryte når som helst."
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
@@ -8333,10 +8292,10 @@
         "Noe gikk galt. Prøv på nytt senere."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Vi kan ikke godkjenne betalingsmåten din. Vennligst velg en annen betalingsmåte, eller prøv på nytt."
+        "Vi kan ikke godkjenne betalingsmåten din. Velg en annen betalingsmåte, eller prøv på nytt."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Kortet ditt ble avslått. Vennligst forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+        "Kortet ditt ble avslått. Forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
       ]
     },
     "Payments.Sepa": {
@@ -9599,14 +9558,6 @@
         "Spar"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Aktiv"
-      ],
-      "Expiring": [
-        "Utløper"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt ser identisk ut.",
@@ -10460,17 +10411,6 @@
         "Du har fått 5 GB lagringsplass"
       ]
     },
-    "Title subscription": {
-      "End date": [
-        "Sluttdato"
-      ],
-      "Plan": [
-        "Plan"
-      ],
-      "Status": [
-        "Status"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "I dag"
@@ -10706,7 +10646,7 @@
         "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Vennligst legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."
+        "Legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."
