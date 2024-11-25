@@ -304,7 +304,14 @@ const SubscriptionCheckout = ({
                     data-testid="proration-value"
                 />
             )}
-            {credit !== 0 && <CheckoutRow title={c('Title').t`Credits`} amount={credit} currency={currency} />}
+            {credit !== 0 && (
+                <CheckoutRow
+                    title={c('Title').t`Credits`}
+                    amount={credit}
+                    currency={currency}
+                    data-testid="credits-value"
+                />
+            )}
             {giftValue > 0 && <CheckoutRow title={c('Title').t`Gift`} amount={-giftValue} currency={currency} />}
             {(isScheduledSubscription || isAddonDowngrade) && (
                 <StartDateCheckoutRow nextSubscriptionStart={subscription.PeriodEnd} />
