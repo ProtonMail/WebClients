@@ -11,7 +11,17 @@ import { streamToBuffer } from '../../../utils/stream';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { isTransferCancelError } from '../../../utils/transfer';
 import type { LogCallback } from '../interface';
-import { initDownloadSW, openDownloadStream } from './download';
+import { initDownloadSW, isUnsupported, openDownloadStream } from './download';
+
+export const selectMechanismForDownload = (size?: number) => {
+    if (size && size < MEMORY_DOWNLOAD_LIMIT) {
+        return 'memory';
+    }
+    if (isUnsupported()) {
+        return 'memory_fallback';
+    }
+    return 'sw';
+};
 
 // FileSaver provides functionality to start download to file. This class does
 // not deal with API or anything else. Files which fit the memory (see
@@ -100,7 +110,8 @@ class FileSaver {
         if (this.swFailReason) {
             log(`Service worker fail reason: ${this.swFailReason}`);
         }
-        if (meta.size && meta.size < MEMORY_DOWNLOAD_LIMIT) {
+        const mechanism = selectMechanismForDownload(meta.size);
+        if (mechanism === 'memory' || mechanism === 'memory_fallback') {
             return this.saveViaBuffer(stream, meta, log);
         }
         return this.saveViaDownload(stream, meta, log);
