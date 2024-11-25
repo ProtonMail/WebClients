@@ -256,6 +256,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmați deschiderea legăturii web ${ linkToShow }"
       ],
+      "Connect": [
+        "Conectare"
+      ],
       "Contact sales": [
         "Contactare serviciu comercial"
       ],
@@ -814,11 +817,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "Refresh the page": [
-        "Împrospătare pagină"
-      ],
       "refresh the page": [
         "Împrospătați pagina"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
       ],
       "Reject": [
         "Respingere"
@@ -1615,16 +1618,6 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1648,23 +1641,22 @@
         "Planul ${ plan } a revenit pentru o perioadă limitată"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garanție de returnare a banilor de 30 de zile"
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } lună",
-        "primele ${ n } luni",
-        "primele ${ n } de luni"
-      ],
-      "the first month": [
-        "prima lună"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Prețul special redus de ${ discountedPrice } este valabil pentru ${ discountedMonths }. Apoi va fi reînnoit automat la prețul redus de ${ nextPrice } pentru ${ nextMonths }. Puteți anula oricând."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ discountedPrice } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ nextPrice } în fiecare lună. Puteți anula oricând."
       ]
@@ -1851,16 +1843,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } lună",
-        "${ n } luni",
-        "${ n } de luni"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewalLength }."
       ]
     },
     "Billing cycle option": {
@@ -3597,8 +3579,14 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortați automat mesajele primite înainte ca acestea să vă ajungă în contul de e-mail."
       ],
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "Disponibil cu ${ MAIL_APP_NAME } Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Felicitări! Ați câștigat maximul de ${ rewardsLimit } luni gratuite pentru ${ plusPlanName }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Creați o întâlnire pe Zoom și adăugați detaliile de conectare la evenimentul dvs. cu un singur clic."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Creați câte etichete sau foldere aveți nevoie pentru a vă menține contul ordonat."
@@ -6737,6 +6725,9 @@
         "${ numberOfNonPrivateKeys } fișiere încărcate nu sunt chei private valide. Verificați și reîncercați.",
         "${ numberOfNonPrivateKeys } de fișiere încărcate nu sunt chei private valide. Verificați și reîncercați."
       ],
+      "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
+        "${ PASS_APP_NAME } este managerul de parole de generație următoare conceput pentru ușurință în utilizare și productivitate. Cu sursa publică, realizat de către SimpleLogin și ${ BRAND_NAME }."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
@@ -7181,6 +7172,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
       ],
+      "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
+        "Prin crearea unui cont ${ PASS_APP_NAME } cu adresa de e-mail SimpleLogin, vă puteți gestiona aliasurile direct din ${ PASS_APP_NAME }."
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "În mod implicit, membrii organizației pot exporta doar seifurile care le aparțin. Dacă această opțiune este activată, aceștia nu vor putea exporta date."
       ],
@@ -7331,11 +7325,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -8965,11 +8959,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "username": [
-        "utilizator"
-      ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -11483,11 +11477,17 @@
       "Change password": [
         "Schimbare parolă"
       ],
+      "Convert to SSO": [
+        "Convertire la autentificare unică (SSO)"
+      ],
       "Delete": [
         "Ștergere"
       ],
       "Delete and revoke invite": [
         "Anulare și ștergere invitație"
+      ],
+      "Detach from SSO": [
+        "Detașare de la autentificare unică (SSO)"
       ],
       "Edit": [
         "Editare"
@@ -11828,32 +11828,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Începeți cu ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Începând de la ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -11881,6 +11855,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Începeți cu ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Începând de la ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12599,20 +12599,6 @@
         "Planul selectat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Începând de la ${ price }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -12631,6 +12617,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Începând de la ${ price }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -13879,6 +13879,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Ofertă specială de lansare: Obțineți ${ title } cu ${ price } pentru totdeauna!"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Începeți să utilizați ${ PASS_APP_NAME }"
+      ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "Soluții personalizate pentru organizații mai mari cu nevoi proprii."
       ],
@@ -14145,20 +14148,8 @@
       "Processing payment": [
         "Se procesează plata"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Reînnoiți cu ${ price }, anulați oricând."
-      ],
       "Select billing country to pay": [
         "Selectați țara de facturare pentru a plăti"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ price } timp de ${ months } luni. Puteți anula oricând."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Apoi va fi reînnoit automat cu ${ price } timp de ${ months } luni. Puteți anula oricând."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ price } în fiecare lună. Puteți anula oricând."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Tranzacția a fost detectată cu succes. Creditele vor fi adăugate în contul personal după ce tranzacția este pe deplin confirmată."
@@ -14843,6 +14834,9 @@
       ],
       "Something went wrong": [
         "Ceva nu a mers bine."
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Adresa de e-mail **${ email }** există deja ca utilizator ${ BRAND_NAME }. Introduceți adresa de e-mail a unui utilizator de la furnizorul de identitate."
       ]
     },
     "saml: Info": {
@@ -14851,6 +14845,9 @@
       ],
       "Details": [
         "Detalii"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Introduceți adresa de e-mail a unui utilizator oferită de furnizorul de identitate pentru **${ domainName }**."
       ],
       "Test in progress...": [
         "Testare în desfășurare..."
@@ -15033,6 +15030,9 @@
       ],
       "to be created": [
         "va fi creat"
+      ],
+      "to be deleted": [
+        "va fi șters"
       ]
     },
     "session_recovery:available:action": {
@@ -15505,6 +15505,9 @@
       ]
     },
     "Signup: Info": {
+      "10 aliases for email protection from breaches": [
+        "10 aliasuri pentru protecția adresei de e-mail împotriva divulgării"
+      ],
       "Advanced security features": [
         "Funcții avansate de securitate"
       ],
@@ -15522,6 +15525,9 @@
       ],
       "Calendar, password manager, file storage, and VPN included": [
         "Calendar, manager de parole, stocare fișiere și VPN incluse"
+      ],
+      "Device sync": [
+        "Sincronizare dispozitiv"
       ],
       "Email aliases": [
         "Aliasuri e-mail"
@@ -15564,6 +15570,9 @@
       ],
       "The only email service with:": [
         "Singurul serviciu de e-mail cu:"
+      ],
+      "Unlimited passwords": [
+        "Parole nelimitate"
       ],
       "Works on all devices": [
         "Funcționează pe toate dispozitivele"
@@ -15785,6 +15794,16 @@
         "${ n } membri vă solicită ajutorul pentru a se conecta.",
         "${ n } de membri vă solicită ajutorul pentru a se conecta."
       ],
+      "${ n } user converted to SSO": [
+        "Utilizatori convertiți la autentificarea unică (SSO): ${ n }",
+        "Utilizatori convertiți la autentificarea unică (SSO): ${ n }",
+        "Utilizatori convertiți la autentificarea unică (SSO): ${ n }"
+      ],
+      "${ n } user detached from SSO": [
+        "Utilizatori detașați de la autentificarea unică (SSO): ${ n }",
+        "Utilizatori detașați de la autentificarea unică (SSO): ${ n }",
+        "Utilizatori detașați de la autentificarea unică (SSO): ${ n }"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "S-a alăturat organizației ${ n } utilizator prin furnizorul de identitate. Revizuiți-i contul acum:",
         "S-au alăturat organizației ${ n } utilizatori prin furnizorul de identitate. Revizuiți-le contul acum:",
@@ -15802,6 +15821,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Utilizatorii cu autentificare unică (SSO) (furnizați de către furnizorul de identitate) vor fi șterși** și va trebui să-i creați manual pentru a-i adăuga înapoi la organizație."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Utilizatorii autentificăii unice (SSO) vor fi detașați de furnizorul de identitate** și convertiți în utilizatori cu autentificare clasică."
       ],
       "Access denied": [
         "Acces respins"
@@ -16002,8 +16024,14 @@
       "Yes, it was me": [
         "Da, eu am fost"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Va trebui să creați utilizatorii manual pentru a-i adăuga în organizație."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
       ]
     },
     "sso: auth device state": {
@@ -17365,10 +17393,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -17787,6 +17815,9 @@
       ],
       "Get the apps": [
         "Luați aplicațiile"
+      ],
+      "Get Zooming faster": [
+        "Accesați mai rapid Zoom"
       ],
       "Gift": [
         "Cadou"
@@ -18791,6 +18822,9 @@
       ],
       "Cancel request to access user data?": [
         "Anulați solicitarea de acces la datele utilizatorului?"
+      ],
+      "Confirm all": [
+        "Confirmare toate"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Nu s-a putut activa automat accesul de administrator pentru ${ n } utilizator, deoarece cheile sale de criptare au fost actualizate între timp:",

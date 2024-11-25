@@ -45,10 +45,10 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } και εντοπίστηκαν ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+        "Εντοπίστηκαν ${ name } και ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } και εντοπίστηκε 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+        "Εντοπίστηκαν ${ name } και 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
@@ -140,7 +140,7 @@
         "Προσθήκη αριθμού τηλεφώνου"
       ],
       "Add public holidays": [
-        "Προσθήκη αργιών"
+        "Προσθήκη επίσημων αργιών"
       ],
       "Add sieve filter": [
         "Προσθήκη φίλτρου sieve"
@@ -255,6 +255,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Επιβεβαίωση ανοίγματος συνδέσμου ${ linkToShow }"
+      ],
+      "Connect": [
+        "Σύνδεση"
+      ],
+      "Connected": [
+        "Συνδεδεμένο"
       ],
       "Contact sales": [
         "Επικοινωνία με το Τμήμα Πωλήσεων"
@@ -814,11 +820,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "Refresh the page": [
-        "Ανανέωση της σελίδας"
-      ],
       "refresh the page": [
         "ανανέωσε τη σελίδα"
+      ],
+      "Refresh the page": [
+        "Ανανέωση της σελίδας"
       ],
       "Reject": [
         "Απόρριψη"
@@ -863,7 +869,7 @@
         "Αναφορά προβλήματος"
       ],
       "Request a call": [
-        "Ζητήστε Τηλεφωνική Επικοινωνία"
+        "Ζητήστε τηλεφωνική επικοινωνία"
       ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
@@ -956,7 +962,7 @@
         "Εμφάνιση DNS TXT εγγραφής"
       ],
       "See how": [
-        "Δείτε πως"
+        "Δείτε πώς"
       ],
       "See plan features": [
         "Προβολή δυνατοτήτων προγράμματος"
@@ -1046,7 +1052,7 @@
         "Εμφάνιση λιγότερων"
       ],
       "Show more": [
-        "Εμφάνιση περισσοτέρων"
+        "Εμφάνιση περισσότερων"
       ],
       "Show preview": [
         "Εμφάνιση προεπισκόπησης"
@@ -1588,7 +1594,7 @@
         "6 χρήστες"
       ],
       "Premium Password Manager": [
-        "Premium Διαχειριστής Κωδικών Πρόσβασης"
+        "Premium εφαρμογή Διαχείρισης Κωδικών Πρόσβασης"
       ]
     },
     "bf2023: header": {
@@ -1609,15 +1615,6 @@
       ],
       "Select your End of Year offer": [
         "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνα.",
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνες."
       ]
     },
     "bf2023: Info": {
@@ -1643,22 +1640,21 @@
         "Το πλάνο ${ plan } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνα.",
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνες."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών"
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } μήνα",
-        "τους πρώτους ${ n } μήνες"
-      ],
-      "the first month": [
-        "τον πρώτο μήνα"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή ${ discountedPrice } ισχύει για ${ discountedMonths }. Στη συνέχεια, θα ανανεωθεί αυτόματα στη μειωμένη τιμή ${ nextPrice } για ${ nextMonths }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή ${ discountedPrice } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεώνεται αυτόματα σε ${ nextPrice } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ]
@@ -1846,12 +1842,9 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } μήνα",
-        "${ n } μήνες"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Ανανεώνεται αυτόματα για ${ renewPrice }, για ${ renewalLength }"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewLength } μήνα",
+        "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewLength } μήνες"
       ]
     },
     "Billing cycle option": {
@@ -1977,7 +1970,7 @@
         "Συνεχίστε να χρησιμοποιείτε ${ planTitle }"
       ],
       "Continue your subscription": [
-        "Συνέχιση της συνδρομής σας"
+        "Συνεχίστε τη συνδρομή σας"
       ],
       "Copy": [
         "Αντιγραφή"
@@ -2038,12 +2031,12 @@
     },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
-        "Μπορείτε να αλλάξετε ή να αφαιρέσετε δικαιώματα οποιαδήποτε στιγμή."
+        "Μπορείτε να αλλάξετε ή να ανακαλέσετε άδειες οποιαδήποτε στιγμή."
       ]
     },
     "Calendar permissions label": {
       "Permissions": [
-        "Δικαιώματα"
+        "Άδειες"
       ]
     },
     "Calendar self sharing error": {
@@ -2118,7 +2111,7 @@
         "Δεν συγχρονίστηκαν"
       ],
       "Syncing": [
-        "Συχρονισμός"
+        "Γίνεται συχρονισμός"
       ]
     },
     "Calendar subscription not synced error": {
@@ -2152,13 +2145,13 @@
     },
     "Calendar subscription not synced error; long version": {
       "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Η σύνδεση ημερολογίου δεν είναι προσβάσιμη εκτός του οικοσυστήματος της υπηρεσίας παροχής ημερολογίου."
+        "Ο σύνδεσμος του ημερολογίου δεν είναι προσβάσιμος εκτός του οικοσυστήματος της υπηρεσίας παροχής ημερολογίου."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Η σύνδεση ημερολογίου δεν είναι προσωρινά προσβάσιμη. Βεβαιωθείτε ότι ο σύνδεσμος από τον πάροχό ημερολογίου εξακολουθεί να ισχύει."
+        "Ο σύνδεσμος του ημερολογίου είναι προσωρινά μη προσβάσιμος. Βεβαιωθείτε ότι ο σύνδεσμος από τον πάροχο ημερολογίου εξακολουθεί να ισχύει."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Έχουν περάσει περισσότερες από 12 ώρες από την τελευταία ενημέρωση — ${ CALENDAR_APP_NAME } θα προσπαθήσει να ενημερώσει το ημερολόγιο σε λίγες ώρες."
+        "Έχουν περάσει περισσότερες από 12 ώρες από την τελευταία ενημέρωση — το ${ CALENDAR_APP_NAME } θα προσπαθήσει να ενημερώσει το ημερολόγιο σε λίγες ώρες."
       ]
     },
     "Calendar table settings button tooltip": {
@@ -2404,7 +2397,7 @@
         "δαμάσκηνο"
       ],
       "purple": [
-        "μοβ"
+        "μωβ"
       ],
       "reef": [
         "ύφαλος"
@@ -2603,7 +2596,7 @@
         "Ανδόρα"
       ],
       "Angola": [
-        "Αγκόλα"
+        "Ανγκόλα"
       ],
       "Anguilla": [
         "Ανγκουίλα"
@@ -3581,8 +3574,14 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ταξινομήστε αυτόματα τα εισερχόμενα μηνύματά σας πριν φτάσουν στα εισερχόμενά σας."
       ],
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "Διατίθεται με το ${ MAIL_APP_NAME } Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Συγχαρητήρια! Κερδίσατε το μέγιστο των ${ rewardsLimit } δωρεάν μηνών ${ plusPlanName }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Δημιουργήστε μια σύσκεψη Zoom και προσθέστε λεπτομέρειες συμμετοχής στην εκδήλωσή σας με ένα κλικ."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Δημιουργήστε όσες ετικέτες ή φακέλους χρειάζεστε για να διατηρήσετε τα εισερχόμενά σας τακτοποιημένα."
@@ -3937,7 +3936,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
-        "Η ${ eventTitle } ακυρώθηκε."
+        "Το ${ eventTitle } ακυρώθηκε."
       ],
       "All events in this series were updated.": [
         "Όλες οι εκδηλώσεις αυτής της σειράς ενημερώθηκαν."
@@ -3949,7 +3948,7 @@
         "Αυτή η εμφάνιση εκδήλωσης ακυρώθηκε."
       ],
       "This event occurrence was updated.": [
-        "Αυτή η εμφάνιση εκδήλωσης ενημερώθηκε."
+        "Αυτό το συμβάν ενημερώθηκε."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
         "Αυτή η εμφάνιση εκδήλωσης ενημερώθηκε. Δείτε τι άλλαξε:\n\n${ updateEventDetailsText }"
@@ -3961,7 +3960,7 @@
         "Αυτή η εκδήλωση ενημερώθηκε. Δείτε τι άλλαξε:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Σας προσκαλούμε στη ${ eventTitle }.\n\n${ eventDetailsText }"
+        "Σας προσκαλούμε στο ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4361,10 +4360,10 @@
     },
     "Error": {
       "${ BRAND_NAME } can't connect to your external account": [
-        "${ BRAND_NAME } δεν είναι δυνατή η σύνδεση στον εξωτερικό λογαριασμό σας"
+        "Το ${ BRAND_NAME } δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
+        "${ errorMessage }. Μπορείτε επίσης να ελέγξετε την ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Μηνύματα και σύνθεση > Σύντομος τομέας (pm.me)"
@@ -4415,7 +4414,7 @@
         "Αδυναμία εύρεσης ημερολογίου"
       ],
       "Calendar limit reached": [
-        "Εξάντληση ορίου ημερολογίων"
+        "Φτάσατε το μέγιστο όριο ημερολογίων"
       ],
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
@@ -4607,7 +4606,7 @@
         "Δεν βρέθηκαν μηνύματα προς εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Κανένα εξωτερικό κλειδί που ανακτάται για το χρήστη δεν είναι έγκυρο για την αποστολή"
+        "Κανένα ανακτημένο εξωτερικό κλειδί για το χρήστη δεν είναι έγκυρο για την αποστολή"
       ],
       "No image selected": [
         "Δεν επιλέχθηκε εικόνα"
@@ -4616,7 +4615,7 @@
         "Δεν βρέθηκε έγκυρη διεύθυνση"
       ],
       "Not a ${ BRAND_NAME } account": [
-        "Δεν είναι ${ BRAND_NAME } λογαριασμός"
+        "Δεν είναι λογαριασμός ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
@@ -4713,8 +4712,8 @@
         "Η διαδικασία ματαιώθηκε"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Αφαιρέθηκε διπλότυπος παραλήπτης: ${ joinedRecipients }",
-        "Διαγράφτηκαν οι εξής διπλότυποι παραλήπτες: ${ joinedRecipients }"
+        "Αφαιρέθηκε ο διπλότυπος παραλήπτης: ${ joinedRecipients }",
+        "Αφαιρέθηκαν οι εξής διπλότυποι παραλήπτες: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
@@ -4753,7 +4752,7 @@
         "Κλειστή καρτέλα"
       ],
       "The address might be misspelled": [
-        "Η διεύθυνση μπορεί να είναι κακογραμμένη"
+        "Η διεύθυνση μπορεί να έχει ορθογραφικά λάθη"
       ],
       "The amount due has changed. Please try again.": [
         "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
@@ -4928,7 +4927,7 @@
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Το αρχείο ${ formattedFilename } περιέχει περισσότερο από ${ MAX_IMPORT_EVENTS } γεγονός.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονός.",
         "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονότα."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -5022,7 +5021,7 @@
         "Μη έγκυρη εκδήλωση"
       ],
       "Journal entry": [
-        "Καταχώρηση χρονικού"
+        "Καταχώρηση χρονολογίου"
       ],
       "Malformed all-day event": [
         "Δύσμορφη ολοήμερη εκδήλωση"
@@ -5049,10 +5048,10 @@
         "Ειδοποίηση εκτός ορίων"
       ],
       "Original recurring event could not be found": [
-        "Δε βρέθηκε η αρχική επαναλαμβανόμενη εκδήλωση"
+        "Δεν βρέθηκε η αρχική επαναλαμβανόμενη εκδήλωση"
       ],
       "Recurring event has no occurrences": [
-        "Η επαναλαμβανόμενη εκδήλωση δεν έχει διοργανώσεις"
+        "Η επαναλαμβανόμενη εκδήλωση δεν έχει συμβάντα"
       ],
       "Recurring rule not supported": [
         "Ο επαναλαμβανόμενος κανόνας δεν υποστηρίζεται"
@@ -5205,7 +5204,7 @@
         "Δεν ήταν δυνατή η ενημέρωση της εκδήλωσης στο ημερολόγιό σας. Δεν εστάλη απάντηση"
       ],
       "Unexpected error": [
-        "Απροσδόκητο σφάλμα"
+        "Μη αναμενόμενο σφάλμα"
       ],
       "Unsupported invitation": [
         "Μη υποστηριζόμενη πρόσκληση"
@@ -5226,7 +5225,7 @@
         "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Η απάντησή σας στάλθηκε, αλλά η εκδήλωση δεν μπόρεσε να ενημερωθεί στο ημερολόγιό σας."
+        "Η απάντησή σας στάλθηκε, αλλά η εκδήλωση δεν ήταν δυνατό να ενημερωθεί στο ημερολόγιό σας."
       ]
     },
     "Event title": {
@@ -5887,7 +5886,7 @@
     },
     "Font Face Default": {
       "Default": [
-        "Προεπιλεγμένο"
+        "Προεπιλογή"
       ]
     },
     "Font face option": {
@@ -6650,7 +6649,7 @@
         "${ current } από ${ total }"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "Το ${ DRIVE_APP_NAME } δε θα διατηρεί πλέον προηγούμενες εκδόσεις των αρχείων σας."
+        "Το ${ DRIVE_APP_NAME } δεν θα διατηρεί πλέον προηγούμενες εκδόσεις των αρχείων σας."
       ],
       "${ emailAddress } is invalid": [
         "Η ${ emailAddress } είναι μη έγκυρη"
@@ -6662,7 +6661,7 @@
         "${ fileName }: προεπισκόπηση χαμηλής ανάλυσης"
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
-        "${ inviterEmailJSX } θέλει να μοιραστεί δεδομένα μαζί σας στο ${ PASS_APP_NAME }"
+        "Ο ${ inviterEmailJSX } θέλει να μοιραστεί δεδομένα μαζί σας στο ${ PASS_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης που αντικαθιστά τόσο τον κωδικό σύνδεσης όσο και τον δεύτερο κωδικό πρόσβασης. Για να μεταβείτε στη λειτουργία ενός κωδικού πρόσβασης, πληκτρολογήστε τον μοναδικό κωδικό πρόσβασης που θέλετε να χρησιμοποιήσετε και κάντε κλικ στην επιλογή Αποθήκευση."
@@ -6686,11 +6685,14 @@
         "${ numberOfNonPrivateKeys } ανεβασμένο αρχείο δεν είναι έγκυρο ιδιωτικό κλειδί. Παρακαλούμε επαληθεύστε και δοκιμάστε ξανά.",
         "${ numberOfNonPrivateKeys } ανεβασμένα αρχεία δεν είναι έγκυρα ιδιωτικά κλειδιά. Παρακαλούμε επαληθεύστε και δοκιμάστε ξανά."
       ],
+      "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
+        "Το ${ PASS_APP_NAME } είναι η νέας γενιάς εφαρμογή διαχείρισης κωδικών πρόσβασης, σχεδιασμένη με γνώμονα την ευκολία χρήσης και την παραγωγικότητα. Ανοικτού κώδικα, προϊόν συνεργασίας SimpleLogin και ${ BRAND_NAME }."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Η προσφορά διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
+        "Η προσφορά εφ' όρου ζωής για το ${ PASS_SHORT_APP_NAME } δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }. Η τιμή και η ημερομηνία ανανέωσης της συνδρομής ${ planTitle } σας παραμένουν αμετάβλητες."
+        "Η προσφορά ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }. Η τιμή και η ημερομηνία ανανέωσης της συνδρομής ${ planTitle } σας παραμένουν αμετάβλητες."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
@@ -6744,16 +6746,16 @@
         "${ userFound } χρήστες βρέθηκαν"
       ],
       "${ vaultLink } created": [
-        "${ vaultLink } δημιουργήθηκε"
+        "Η κρύπτη ${ vaultLink } δημιουργήθηκε"
       ],
       "${ vaultLink } deleted": [
-        "${ vaultLink } διαγράφηκε"
+        "Η κρύπτη ${ vaultLink } διαγράφηκε"
       ],
       "${ vaultLink } shared with email": [
-        "Η ${ vaultLink } κοινοποιήθηκε μέσω ηλεκτρονικού ταχυδρομείου"
+        "Η ${ vaultLink } κοινοποιήθηκε μέσω ηλ. ταχυδρομείου"
       ],
       "${ vaultLink } updated": [
-        "${ vaultLink } ενημερώθηκε"
+        "Η κρύπτη ${ vaultLink } ενημερώθηκε"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } απαιτείται για σύνδεση επιπέδου Χώρας."
@@ -6778,7 +6780,7 @@
         "* Δεν απαιτείται πιστωτική κάρτα."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "**Αποκτήστε μία ${ BRAND_NAME } διεύθυνση** για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες συμπεριλαμβανομένου του ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
+        "**Αποκτήστε μία ${ BRAND_NAME } διεύθυνση** για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες συμπεριλαμβανομένων των ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
@@ -6797,7 +6799,7 @@
         "2. Έπειτα δοκιμάστε ${ planName }"
       ],
       "2FA disabled": [
-        "Επαλήθευση 2 βημάτων ανενεργή (2FA)"
+        "Επαλήθευση 2 παραγόντων ανενεργή (2FA)"
       ],
       "3. You earn credits": [
         "3. Κερδίζετε πιστώσεις"
@@ -6909,7 +6911,7 @@
         "Οι χρήστες που επηρεάζονται βρίσκονται στις γραμμές"
       ],
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "Αφού κλειδωθούν, τα μέλη του οργανισμού θα πρέπει να ξεκλειδώσουν το ${ PASS_APP_NAME } με τον κωδικό πρόσβασης ή το PIN τους κ.λπ."
+        "Μετά το κλείδωμα, τα μέλη του οργανισμού θα πρέπει να ξεκλειδώσουν το ${ PASS_APP_NAME } με τον κωδικό πρόσβασης ή το PIN τους κλπ."
       ],
       "Align left": [
         "Στοίχιση αριστερά"
@@ -6978,7 +6980,7 @@
         "και"
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Τυχόν υποφάκελοι θα διαγραφούν επίσης. Ωστόσο, τα μηνύματα ηλεκτρονικού ταχυδρομείου που είναι αποθηκευμένα σε αυτόν τον φάκελο ${ nameDeleted } δε θα διαγραφούν και μπορούν να βρεθούν στο φάκελο Όλα τα Mηνύματα."
+        "Τυχόν υποφάκελοι θα διαγραφούν επίσης. Ωστόσο, τα μηνύματα ηλεκτρονικού ταχυδρομείου που είναι αποθηκευμένα σε αυτόν τον φάκελο ${ nameDeleted } δεν θα διαγραφούν και μπορούν να βρεθούν στο φάκελο Όλα τα Mηνύματα."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να δει όλες τις λεπτομέρειες των εκδηλώσεων σε αυτό το ημερολόγιο, όπως τον τίτλο, την τοποθεσία και τους συμμετέχοντες."
@@ -6999,16 +7001,16 @@
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το ημερολόγιο; Όλες οι διευθύνσεις με τις οποίες μοιραστήκατε αυτό το ημερολόγιο θα χάσουν την πρόσβαση σε αυτό."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το ημερολόγιο; Όλες οι εκδηλώσεις σε αυτό θα διαγραφούν."
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το ημερολόγιο; Όλες οι εκδηλώσεις που περιέχει θα διαγραφούν."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το ημερολόγιο; Μπορείτε να προσθέσετε ξανά το εορτολόγιο αργότερα."
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το ημερολόγιο; Μπορείτε να προσθέσετε ξανά το ημερολόγιο αργότερα."
       ],
       "Are you sure you want to delete this filter?": [
         "Θέλετε σίγουρα να διαγράψετε αυτό το φίλτρο;"
       ],
       "Are you sure you want to delete this folder?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν το φάκελο;"
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν τον φάκελο;"
       ],
       "Are you sure you want to delete this label?": [
         "Θέλετε σίγουρα να διαγράψετε αυτήν την ετικέτα;"
@@ -7044,19 +7046,19 @@
         "Απαιτείται προσοχή"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
-        "Η αυτόματη απάντηση είναι ενεργή κάθε μήνα μεταξύ της επιλεγμένης ώρας έναρξης και λήξης."
+        "Η αυτόματη απάντηση είναι ενεργή κάθε μήνα από την ώρα έναρξης έως την ώρα λήξης."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
-        "Η αυτόματη απάντηση είναι ενεργή κάθε ευδομάδα μεταξύ της επιλεγμένης ώρας έναρξης και λήξης."
+        "Η αυτόματη απάντηση είναι ενεργή κάθε εβδομάδα μεταξύ της επιλεγμένης ώρας έναρξης και λήξης."
       ],
       "Auto-reply is active from the start time to the end time.": [
-        "Η αυτόματη απάντηση είναι ενεργή μεταξύ της ώρας έναρξης και λήξης."
+        "Η αυτόματη απάντηση είναι ενεργή από την ώρα έναρξης έως την ώρα λήξης."
       ],
       "Auto-reply is active until you turn it off.": [
-        "Η αυτόματη απάντηση είναι ενεργή μέχρι να την αποενεργοποιήσετε."
+        "Η αυτόματη απάντηση είναι ενεργή μέχρι να την απενεργοποιήσετε."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Η αυτόματη απάντηση είναι πάντα ενεργή τις ημέρες της εβδομάδας που επιλέγετε, μεταξύ των επιλεγμένων ωρών."
+        "Η αυτόματη απάντηση είναι πάντα ενεργή τις ημέρες της εβδομάδας που επιλέγετε, εντός των επιλεγμένων ωρών."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Διαθέσιμο σε macOS, Windows και Linux."
@@ -7071,7 +7073,7 @@
         "Υπόλοιπο από την προηγούμενη συνδρομή σας"
       ],
       "Based on your time zone": [
-        "Βασισμένο στη ζώνη ώρας σας"
+        "Βασίζεται στη ζώνη ώρας σας"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
@@ -7101,19 +7103,22 @@
         "Beta (Δοκιμαστική)"
       ],
       "Billed at ${ price }": [
-        "Χρεώνεται σε τιμή ${ price }"
+        "Χρεώνεται ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        "Αποκλείει στους αποστολείς τη γνώση του αν και πότε ανοίξατε ένα μήνυμα."
+        "Αποκρύπτει από τους αποστολείς αν και πότε ανοίξατε ένα μήνυμα."
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Ενισχύστε την ταυτότητα επωνυμίας του οργανισμού σας και δημιουργήστε μια πιο συνεπή εμπειρία στο διαδίκτυο για τους χρήστες σας."
       ],
+      "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
+        "Δημιουργώντας έναν λογαριασμό ${ PASS_APP_NAME } με το SimpleLogin email σας, μπορείτε να διαχειρίζεστε τα ψευδώνυμά σας απευθείας μέσα από το ${ PASS_APP_NAME }."
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Από προεπιλογή, τα μέλη του οργανισμού μπορούν να εξάγουν θυρίδες αποθήκευσης μόνο όπου είναι οι κάτοχοι. Εάν αυτή η επιλογή είναι ενεργοποιημένη, δε θα μπορούν να εξάγουν δεδομένα"
+        "Από προεπιλογή, τα μέλη του οργανισμού μπορούν να εξάγουν μόνο θυρίδες αποθήκευσης των οποίων είναι κάτοχοι. Εάν αυτή η επιλογή είναι ενεργοποιημένη, δεν θα μπορούν να εξάγουν δεδομένα"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
@@ -7122,10 +7127,10 @@
         "Φεύγοντας τώρα, οι αλλαγές ενδέχεται να μην αποθηκευτούν"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
-        "Κοινοποιώντας όλες τις λεπτομέρειες των εκδηλώσεων αυτού του ημερολογίου, αποδέχεστε να παραχωρήσετε στη ${ BRAND_NAME } πρόσβαση στις κρυπτογραφημένες πληροφορίες του ημερολογίου."
+        "Κοινοποιώντας όλες τις λεπτομέρειες των εκδηλώσεων αυτού του ημερολογίου, αποδέχεστε να παραχωρήσετε στην ${ BRAND_NAME } πρόσβαση στις κρυπτογραφημένες πληροφορίες του ημερολογίου."
       ],
       "Cancel anytime": [
-        "Ακύρωσε οποιαδήποτε στιγμή"
+        "Ακυρώστε ανά πάσα στιγμή"
       ],
       "Can’t access your recovery email?": [
         "Δεν μπορείτε να αποκτήσετε πρόσβαση στο email ανάκτησης;"
@@ -7198,8 +7203,8 @@
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, μια χρονική έκταση για αυτήν την εισαγωγή, και τις ετικέτες που θα θέλατε να εισάγετε."
       ],
       "Create a secure cloud for ${ n } member": [
-        "Δημιουργήστε ένα ασφαλές cloud για ${ n } μέλος",
-        "Δημιουργήστε ένα ασφαλές cloud για ${ n } μέλη"
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλος",
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλη"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Δημιουργήστε και διαχειριστείτε τους δευτερεύοντες λογαριασμούς και αντιστοιχίστε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου στον προσαρμοσμένο τομέα σας."
@@ -7208,7 +7213,7 @@
         "Δημιουργήστε διευθύνσεις για άλλα άτομα, διαχειριστείτε το ${ MAIL_APP_NAME } για μια επιχείρηση, σχολείο ή ομάδα. Ξεκινήστε προσθέτοντας το όνομα και τον ιδιαίτερο τομέα του οργανισμού σας (π.χ. @yourcompany.com). "
       ],
       "Create in": [
-        "Δημιουργία εντός"
+        "Δημιουργία σε"
       ],
       "Create your first Gateway": [
         "Δημιουργήστε την πρώτη Πύλη σας"
@@ -7259,14 +7264,14 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
+      "Dedicated servers": [
+        "Αποκλειστικοί διακομιστές"
+      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
       ],
-      "Dedicated servers": [
-        "Αφοσιωμένοι διακομιστές"
-      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
-        "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
+        "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να επιτρέψουν βελτιστοποιημένο έλεγχο πρόσβασης."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Διαγράψτε κάθε άλλη εγγραφή MX ή βεβαιωθείτε ότι η Προτεραιότητα του ${ MAIL_APP_NAME } είναι ο μικρότερος αριθμός."
@@ -7285,7 +7290,7 @@
         "Απενεργοποιήστε την ανάκτηση μέσω αριθμού τηλεφώνου"
       ],
       "Disabled on ${ formattedDateAndTime }": [
-        "Απενεργοποιημένη στις ${ formattedDateAndTime }"
+        "Απενεργοποιήθηκε στις ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Η απενεργοποίηση του ελέγχου ταυτότητας δύο παραγόντων θα κάνει τον λογαριασμό σας λιγότερο ασφαλή. Προχωρήστε μόνο εάν είναι απολύτως απαραίτητο."
@@ -7391,7 +7396,7 @@
         "Η προτίμηση email αποθηκεύτηκε"
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου με ετικέτα ${ nameDeleted } δε θα διαγραφούν και μπορούν ακόμα να βρεθούν στον αντίστοιχο φάκελο."
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου με ετικέτα ${ nameDeleted } δεν θα διαγραφούν και μπορούν ακόμα να βρεθούν στον αντίστοιχο φάκελο."
       ],
       "Enable email notifications": [
         "Ενεργοποίηση ειδοποιήσεων email"
@@ -7406,7 +7411,7 @@
         "Ενεργοποίηση TLS ή SSL στην εξωτερική υπηρεσία, εφόσον υποστηρίζεται."
       ],
       "Enabled on ${ formattedDateAndTime }": [
-        "Ενεργοποιημένη στις ${ formattedDateAndTime }"
+        "Ενεργοποιήθηκε στις ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Η ενεργοποίηση ξανά της ανάκτησης μέσω φράσης θα παράξει μια νέα φράση ανάκτησης."
@@ -7415,13 +7420,13 @@
         "Η ρύθμιση κρυπτογράφησης ενημερώθηκε"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
-        "Η κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο είναι απενεργοποιημένη για αυτήν την ομάδα λόγω εξωτερικών διευθύνσεων."
+        "Η διατερματική κρυπτογράφηση ηλεκτρονικού ταχυδρομείου είναι απενεργοποιημένη για αυτήν την ομάδα λόγω εξωτερικών διευθύνσεων."
       ],
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
-        "Η κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο είναι απενεργοποιημένη για αυτήν την ομάδα. Μπορεί να ενεργοποιηθεί."
+        "Η διατερματική κρυπτογράφηση ηλεκτρονικού ταχυδρομείου είναι απενεργοποιημένη για αυτήν την ομάδα. Μπορεί να ενεργοποιηθεί."
       ],
       "End-to-end email encryption is enabled for this group.": [
-        "Η κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο είναι ενεργοποιημένη για αυτήν την ομάδα."
+        "Η διατερματική κρυπτογράφηση ηλεκτρονικού ταχυδρομείου είναι ενεργοποιημένη για αυτήν την ομάδα."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Διεύθυνση URL τελικού σημείου που λάβατε από τον πάροχο ταυτότητάς σας (π.χ. https://idp.example.com/sso/saml)."
@@ -7475,7 +7480,7 @@
         "Εισαγάγετε τη φράση ανάκτησης για να αλλάξετε τον κωδικό πρόσβασής σας τώρα."
       ],
       "Event invitations and responses will be sent in this language.": [
-        "Οι προσκλήσεις συμβάντων και τα απαντήσεις θα αποσταλλούν σε αυτή τη γλώσσα."
+        "Οι προσκλήσεις συμβάντων και οι απαντήσεις θα στέλνονται σε αυτήν τη γλώσσα."
       ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Τα συμβάντα περιλαμβάνουν προσπάθειες ελέγχου ταυτότητας για όλες τις υπηρεσίες ${ BRAND_NAME } που χρησιμοποιούν τα ${ BRAND_NAME_TWO } διαπιστευτήριά σας."
@@ -7493,7 +7498,7 @@
         "Αποτυχία ανάκτησης αρχείων καταγραφής."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Γρήγορη και συγκεντρωμένη. Ηλεκτρονικό ταχυδρομείο και ημερολόγιο, απευθείας στην επιφάνεια εργασίας σας."
+        "Γρήγορη και επικεντρωμένη. Ηλεκτρονικό ταχυδρομείο και ημερολόγιο, απευθείας στην επιφάνεια εργασίας σας."
       ],
       "Fill in user details": [
         "Συμπληρώστε τα στοιχεία χρήστη"
@@ -7505,13 +7510,13 @@
         "οικονομικά"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "Για ένα ιστορικό εκδόσεων 10 ετών, επικοινωνήστε με την ομάδα πωλήσεών μας."
+        "Για ιστορικό εκδόσεων 10 ετών, επικοινωνήστε με την ομάδα πωλήσεών μας."
       ],
       "for choosing ${ product }": [
         "για την επιλογή ${ product }"
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
-        "Για μέλη οργανισμών που χρησιμοποιούν καθολική σύνδεση (SAML SSO)"
+        "Για μέλη οργανισμών που χρησιμοποιούν ενιαία πρόσβαση (SAML SSO)"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Για χρήστες που μεταβαίνουν σε ${ MAIL_APP_NAME } από άλλη υπηρεσία ηλεκτρονικού ταχυδρομείου, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις ηλεκτρονικού ταχυδρομείου πριν αλλάξετε την εγγραφή MX για να διασφαλίσετε την ομαλή μετάβαση."
@@ -7541,16 +7546,16 @@
         "Απόκτηση ${ upsellPlanName }"
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
-        "Αποκτήστε πρόσβαση με τη δημιουργία ενός λογαριασμού ${ BRAND_NAME } και αποδοχή της πρόσκλησης."
+        "Αποκτήστε πρόσβαση με τη δημιουργία ενός λογαριασμού ${ BRAND_NAME } και με αποδοχή της πρόσκλησης."
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα προσωπικά δεδομένα έχουν διαρρεύσει. ${ learnMoreLinkNoBreach }"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "Δώστε στο διακριτικό ένα περιγραφικό όνομα, όπως την υπηρεσία με την οποία σκοπεύετε να το χρησιμοποιήσετε και επιλέξτε μία από τις ενεργές προσαρμοσμένες διευθύνσεις τομέα σας. Μόνο αυτή η διεύθυνση θα μπορεί να στέλνει μηνύματα ηλεκτρονικού ταχυδρομείου με αυτό το διακριτικό."
+        "Δώστε στο διακριτικό ένα περιγραφικό όνομα, όπως την υπηρεσία με την οποία σκοπεύετε να το χρησιμοποιήσετε και επιλέξτε μία από τις ενεργές προσαρμοσμένες διευθύνσεις τομέα σας. Μόνο αυτή η διεύθυνση θα μπορεί να στέλνει μηνύματα ηλ. ταχυδρομείου με αυτό το διακριτικό."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "Δώστε το δημόσιο κλειδί σας στους φίλους σας ή δημοσιεύστε το στο δίκτυο, ώστε όλοι να μπορούν να σας στέλνουν διατερματικά κρυπτογραφημένα μηνύματα!"
+        "Δώστε το δημόσιο κλειδί σας στους φίλους σας ή δημοσιεύστε το στο διαδίκτυο, ώστε όλοι να μπορούν να σας στέλνουν διατερματικά κρυπτογραφημένα μηνύματα!"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Μεταβείτε στον πάροχο ταυτότητάς σας, λάβετε τα μεταδεδομένα SAML για το ${ appName } και εισαγάγετε τα εδώ."
@@ -7637,7 +7642,7 @@
         "Εάν επιθυμείτε να συνδυάσετε αυτόν τον λογαριασμό με έναν άλλο, ΜΗΝ τον διαγράψετε."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
-        "Αν αντιμετωπίζετε προβλήματα, είμαστε εδώ για να σας βοηθήσουμε. ${ boldPhoneCall } ή ${ boldZoomMeeting } με έναν από τους ειδικούς υποστήριξής μας ή ανοίξτε ένα ${ boldLiveChat } για υποστήριξη συνομιλίας."
+        "Αν αντιμετωπίζετε προβλήματα, είμαστε εδώ για να σας βοηθήσουμε. ${ boldPhoneCall } ή ${ boldZoomMeeting } με έναν από τους ειδικούς υποστήριξής μας ή ανοίξτε ένα ${ boldLiveChat } για υποστήριξη με ζωντανή συνομιλία."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Αν αντιμετωπίζετε προβλήματα, είμαστε εδώ για να σας βοηθήσουμε. ${ boldPhoneCall } ή ${ boldZoomMeeting } με έναν από τους ειδικούς υποστήριξής μας."
@@ -7734,7 +7739,7 @@
         "Η πρόσκληση για τον νέο χρήστη διαγράφηκε"
       ],
       "Invite for organization accepted": [
-        "Η πρόσκληση για τον οργανισμό αποδέχτηκε"
+        "Η πρόσκληση για τον οργανισμό έγινε αποδεκτή"
       ],
       "Invite for organization created": [
         "Η πρόσκληση για τον οργανισμό δημιουργήθηκε"
@@ -7771,10 +7776,10 @@
         "Το στοιχείο διαγράφηκε από την κρύπτη"
       ],
       "Item flags changed in ${ vaultLink }": [
-        "Οι σημαίες στοιχείου άλλαξαν στην ${ vaultLink }"
+        "Οι σημάνσεις στοιχείου άλλαξαν στην ${ vaultLink }"
       ],
       "Item flags changed in vault": [
-        "Οι σημαίες στοιχείου άλλαξαν στην κρύπτη"
+        "Οι σημάνσεις στοιχείου άλλαξαν στην κρύπτη"
       ],
       "Item in ${ vaultLink } trashed": [
         "Το Στοιχείο στην ${ vaultLink } απορρίφθηκε"
@@ -7849,7 +7854,7 @@
         "μάθετε περισσότερα για τη γλώσσα προγραμματισμού Sieve"
       ],
       "Learn more about single sign-on": [
-        "Μάθετε περισσότερα σχετικά με την καθολική σύνδεση"
+        "Μάθετε περισσότερα σχετικά με την ενιαία πρόσβαση"
       ],
       "Left to Right": [
         "Αριστερά προς τα δεξιά"
@@ -7876,7 +7881,7 @@
         "Τύπος σύνδεσης"
       ],
       "Live chat": [
-        "Ζωντανή Συνομιλία"
+        "Ζωντανή συνομιλία"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Το φορτωμένο περιεχόμενο προστατεύεται από τον διακομιστή μεσολάβησης όταν είναι ενεργοποιημένη η προστασία ιχνηλάτη."
@@ -7966,10 +7971,10 @@
         "Νέο"
       ],
       "New user invited to organization": [
-        "Ο νέος χρήστης προσκλήθηκε στον οργανισμό"
+        "Νέος χρήστης προσκλήθηκε στον οργανισμό"
       ],
       "New VPN connection data will stop being collected and shown.": [
-        "Τα νέα δεδομένα σύνδεσης VPN θα σταματήσουν να συλλέγονται και να εμφανίζονται."
+        "Τα δεδομένα νέων συνδέσεων VPN θα πάψουν να συλλέγονται και να εμφανίζονται."
       ],
       "No account keys exist": [
         "Δεν υπάρχουν κλειδιά λογαριασμού"
@@ -8113,7 +8118,7 @@
         "ανά μήνα"
       ],
       "per month, billed at ${ price }": [
-        "ανά μήνα, χρεώνεται σε τιμή ${ price }"
+        "ανά μήνα, χρεώνεται ${ price }"
       ],
       "per month, billed every 12 months": [
         "ανά μήνα, χρέωση κάθε 12 μήνες"
@@ -8122,7 +8127,7 @@
         "ανά μήνα, χρέωση κάθε 24 μήνες"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "Οι πελάτες PGP είναι πιο πιθανό να ανιχνεύουν αυτόματα τα κλειδιά PGP εάν έχουν υπογραφεί τα εξερχόμενα μηνύματα."
+        "Οι πελάτες PGP είναι πιο πιθανό να ανιχνεύουν αυτόματα τα κλειδιά PGP εάν τα εξερχόμενα μηνύματα είναι υπογεγραμμένα."
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
@@ -8292,7 +8297,7 @@
         "Ο σύνδεσμος αναφοράς έληξε"
       ],
       "Request a phone call": [
-        "Ζητήστε Τηλεφωνική Επικοινωνία"
+        "Ζητήστε τηλεφωνική επικοινωνία"
       ],
       "Resend verification email": [
         "Επανάληψη αποστολής μηνύματος επαλήθευσης"
@@ -8319,7 +8324,7 @@
         "Φυλάξτε τον κωδικό πρόσβασής σας σε ασφαλές μέρος. Κάντε κλικ στο εικονίδιο για επιβεβαίωση της ορθής πληκτρολόγησης του κωδικού σας."
       ],
       "Saving your password": [
-        "Ο κωδικός πρόσβασης σας αποθηκεύεται"
+        "Ο κωδικός πρόσβασής σας αποθηκεύεται"
       ],
       "Scan QR code instead": [
         "Εναλλακτικά, σαρώστε τον κωδικό QR"
@@ -8352,7 +8357,7 @@
         "Επιλέξτε τι θέλετε να εισάγετε."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο σχέδιό σας."
+        "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Στείλτε email για να ενθαρρύνετε τα μέλη σας να προστατεύσουν τους λογαριασμούς τους με το 2FA."
@@ -8376,10 +8381,10 @@
         "Ορισμός φράσης ανάκτησης"
       ],
       "Setting up your organization": [
-        "Ρύθμιση του οργανισμού σας"
+        "Γίνεται ρύθμιση του οργανισμού σας"
       ],
       "Settings update failed": [
-        "Αποτυχία ρύθμισης ενημερώσεων"
+        "Αποτυχία ενημέρωσης ρυθμίσεων"
       ],
       "Settings updated": [
         "Οι ρυθμίσεις ενημερώθηκαν"
@@ -8397,7 +8402,7 @@
         "Ενημερώθηκε η κοινοποιημένη κρύπτη"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
-        "Εμφανίστε την εικόνα κάθε αποστολέα στη λίστα μηνυμάτων. Τα αρχικά του αποστολέα θα εμφανίζονται εάν μια φωτογραφία δεν είναι διαθέσιμη."
+        "Να εμφανίζεται η εικόνα κάθε αποστολέα στη λίστα μηνυμάτων. Τα αρχικά του αποστολέα θα εμφανίζονται εάν μια φωτογραφία δεν είναι διαθέσιμη."
       ],
       "Show original message": [
         "Εμφάνιση αρχικού μηνύματος"
@@ -8548,7 +8553,7 @@
         "Η δυνατότητα ομάδων δεν υποστηρίζεται στην τρέχουσα συνδρομή σας. Οι ομάδες που δημιουργήθηκαν προηγουμένως είναι απενεργοποιημένες και μπορούν να διαγραφούν μόνο."
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
-        "Ο σύνδεσμος αναφοράς ότι δε δημιουργήσατε ${ BRAND_NAME } Λογαριασμό έχει λήξει. Παρακαλούμε επικοινωνήστε με την ομάδα υποστήριξής μας για να επιλύσετε αυτό το ζήτημα."
+        "Ο σύνδεσμος για την αναφορά ότι δε δημιουργήσατε ${ BRAND_NAME } Λογαριασμό έχει λήξει. Παρακαλούμε επικοινωνήστε με την ομάδα υποστήριξής μας για να επιλύσετε αυτό το ζήτημα."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
@@ -8590,10 +8595,10 @@
         "Αυτό το αρχείο είναι πολύ μεγάλο για προεπισκόπηση"
       ],
       "This invitation link has expired. Please contact your administrator to request access.": [
-        "Αυτή η σύνδεση πρόσκλησης έχει λήξει. Παρακαλούμε επικοινωνήστε με το διαχειριστή σας για να ζητήσετε πρόσβαση."
+        "Αυτή η σύνδεση πρόσκλησης έχει λήξει. Παρακαλούμε επικοινωνήστε με τον διαχειριστή σας για να ζητήσετε πρόσβαση."
       ],
       "This invitation link has expired. We just sent you a new link.": [
-        "Αυτή η σύνδεση πρόσκλησης έχει λήξει. Μόλις σας στείλαμε έναν νέο σύνδεσμο."
+        "Αυτή η σύνδεση πρόσκλησης έχει λήξει. Μόλις σας στείλαμε ένα νέο σύνδεσμο."
       ],
       "This invitation link is already used. Please sign in directly instead.": [
         "Αυτός ο σύνδεσμος πρόσκλησης έχει ήδη χρησιμοποιηθεί. Παρακαλούμε συνδεθείτε απευθείας."
@@ -8623,7 +8628,7 @@
         "Αυτός ο σύνδεσμος προσφοράς έχει λήξει."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
-        "Αυτό το διακριτικό δε θα είναι διαθέσιμο αφού κλείσετε αυτό το παράθυρο και δε θα πρέπει να το μοιραστείτε με κανέναν."
+        "Αυτό το διακριτικό δεν θα είναι διαθέσιμο όταν κλείσετε αυτό το παράθυρο και δεν θα πρέπει να το μοιραστείτε με κανέναν."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Αυτός ο σύνδεσμος κατάργησης εγγραφής έχει λήξει. Ανοίξτε ένα πιο πρόσφατο μήνυμα ηλεκτρονικού ταχυδρομείου από αυτήν τη λίστα αλληλογραφίας."
@@ -8644,13 +8649,13 @@
         "Αυτό θα αρνηθεί την πρόσβαση στο **${ email }**. Είστε σίγουροι ότι θέλετε να συνεχίσετε;"
       ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
-        "Αυτό θα απενεργοποιήσει τον έλεγχο ταυτότητας δύο παραγόντων, συμπεριλαμβανομένων τόσο της εφαρμογής ελέγχου ταυτότητας όσο και των μεθόδων κλειδιού ασφαλείας."
+        "Αυτό θα απενεργοποιήσει τον έλεγχο ταυτότητας δύο παραγόντων, συμπεριλαμβανομένων τόσο της εφαρμογής ελέγχου ταυτότητας όσο και των κλειδιών ασφαλείας."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Αυτό θα απενεργοποιήσει την τρέχουσα φράση σας ανάκτησης. Δεν θα μπορείτε να τη χρησιμοποιήσετε για πρόσβαση στον λογαριασμό σας ή αποκρυπτογράφηση των δεδομένων σας."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        "Αυτό θα κατεβάσει ένα αρχείο με περιεχόμενο το ιδιωτικό σας κλειδί. Προστατέψτε το αρχείο, κρυπτογραφώντας το με κωδικό πρόσβασης."
+        "Αυτό θα κατεβάσει ένα αρχείο με το ιδιωτικό σας κλειδί. Προστατέψτε το αρχείο, κρυπτογραφώντας το με κωδικό πρόσβασης."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Αυτό θα επιτρέψει στο PayPal να χρησιμοποιηθεί για να πληρώσει τη συνδρομή σας στο ${ BRAND_NAME }. Θα σας ανακατευθύνουμε στο PayPal σε μια νέα καρτέλα προγράμματος περιήγησης. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
@@ -8722,7 +8727,7 @@
         "Για να εξασφαλίσετε συνεχή πρόσβαση στον λογαριασμό σας, ορίστε μια μέθοδο ανάκτησης λογαριασμού"
       ],
       "To ensure highest possible security of your account": [
-        "Για να διασφαλίσουμε την υψηλότερη δυνατή ασφάλεια του λογαριασμού σας"
+        "Για να εξασφαλίσουμε την υψηλότερη δυνατή ασφάλεια του λογαριασμού σας"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Για να διασφαλίσετε ότι δε θα χάσετε σημαντικά δεδομένα, το ${ DRIVE_APP_NAME } αποθηκεύει παλαιότερες εκδόσεις των αρχείων σας καθώς εσείς και οι συνεργάτες σας κάνετε αλλαγές. Επιλέξτε πόσο καιρό το ${ BRAND_NAME } θα πρέπει να διατηρεί τις προηγούμενες εκδόσεις."
@@ -8782,7 +8787,7 @@
         "Η λειτουργία δύο κωδικών πρόσβασης απαιτεί δύο κωδικούς πρόσβασης: έναν για να συνδεθείτε στον λογαριασμό σας και έναν για να αποκρυπτογραφήσετε τα δεδομένα σας. (Για προχωρημένους)"
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
-        "Η λειτουργία δύο κωδικών πρόσβασης χρησιμοποιεί ξεχωριστούς κωδικούς πρόσβασης για σύνδεση και αποκρυπτογράφηση δεδομένων. Αυτό παρέχει ένα μικρό πλεονέκτημα ασφαλείας σε ορισμένες περιπτώσεις, ωστόσο συνιστούμε τη λειτουργία ενός κωδικού πρόσβασης για τους περισσότερους χρήστες. Για να μεταβείτε σε λειτουργία δύο κωδικών πρόσβασης, ορίστε πρώτα έναν κωδικό πρόσβασης σύνδεσης και, στη συνέχεια, ορίστε έναν δεύτερο κωδικό πρόσβασης."
+        "Η λειτουργία δύο κωδικών πρόσβασης χρησιμοποιεί ξεχωριστούς κωδικούς πρόσβασης για σύνδεση και αποκρυπτογράφηση δεδομένων. Αυτό παρέχει ένα μικρό πλεονέκτημα ασφαλείας σε ορισμένες περιπτώσεις, ωστόσο προτείνουμε τη λειτουργία ενός κωδικού πρόσβασης για τους περισσότερους χρήστες. Για να μεταβείτε σε λειτουργία δύο κωδικών πρόσβασης, ορίστε πρώτα έναν κωδικό πρόσβασης σύνδεσης και, στη συνέχεια, ορίστε έναν δεύτερο κωδικό πρόσβασης."
       ],
       "Unable to check gateways monitoring current status.": [
         "Δεν είναι δυνατός ο έλεγχος των πυλών παρακολούθησης της τρέχουσας κατάστασης."
@@ -8818,10 +8823,10 @@
         "Μη υποστηριζόμενο αρχείο"
       ],
       "Unverified": [
-        "Ανεπιβεβαίωτος"
+        "Μη επαληθευμένος"
       ],
       "Unverified email address.": [
-        "Μην επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+        "Μη επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
       "Update recovery file": [
         "Ενημέρωση αρχείου ανάκτησης"
@@ -8848,7 +8853,7 @@
         "Ανεβάστε το ολοκληρωμένο CSV αρχείο σας για να δημιουργήσετε λογαριασμούς"
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
-        "Ανεβάστε το λογότυπο του οργανισμού σας για να ενισχύσετε την ταυτότητα της επωνυμίας σας και να δημιουργήσετε μια εξατομικευμένη εμπειρία για τους χρήστες σας."
+        "Ανεβάστε το λογότυπο του οργανισμού σας για να ενισχύσετε την εταιρική σας ταυτότητα και να δημιουργήσετε μια εξατομικευμένη εμπειρία για τους χρήστες σας."
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Το ανεβασμένο αρχείο δεν είναι ένα έγκυρο ιδιωτικό κλειδί. Παρακαλούμε επαληθεύστε και δοκιμάστε ξανά."
@@ -8872,16 +8877,16 @@
         "Χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια όταν συνδέεστε σε διακομιστές ${ VPN_APP_NAME } χωρίς εφαρμογή. Παραδείγματα περιπτώσεων χρήσης περιλαμβάνουν: Tunnelblick σε macOS, OpenVPN σε GNU/Linux."
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
-        "Χρησιμοποιήστε την επιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου ως όνομα χρήστη SMTP στην εξωτερική υπηρεσία και το διακριτικό που δημιουργείται ως κωδικό πρόσβασης SMTP."
+        "Χρησιμοποιήστε την επιλεγμένη διεύθυνση ηλ. ταχυδρομείου ως όνομα χρήστη SMTP στην εξωτερική υπηρεσία και το διακριτικό που δημιουργείται ως κωδικό πρόσβασης SMTP."
       ],
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "username": [
-        "όνομα χρήστη"
-      ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "username": [
+        "όνομα χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -8896,7 +8901,7 @@
         "Η κρύπτη είτε διαγράφηκε είτε απαιτεί δικαιώματα πρόσβασης"
       ],
       "Vault shared with email": [
-        "Η κρύπτη έχει κοινοποιηθεί με ηλεκτρονικό ταχυδρομείο"
+        "Η κρύπτη βρίσκεται σε κοινή χρήση"
       ],
       "Vault updated": [
         "Η κρύπτη ενημερώθηκε"
@@ -8917,7 +8922,7 @@
         "Επαλήθευση τομέα"
       ],
       "Verify email address": [
-        "Επαλήθευση διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+        "Επαληθεύστε τη διεύθυνση ηλ. ταχυδρομείου"
       ],
       "Verify phone number": [
         "Επαληθεύστε τον αριθμό τηλεφώνου"
@@ -8965,7 +8970,7 @@
         "Δημιουργήσαμε έναν ισχυρό κωδικό πρόσβασης για εσάς"
       ],
       "We just sent you a new link.": [
-        "Μόλις σας στείλαμε έναν νέο σύνδεσμο."
+        "Μόλις σας στείλαμε ένα νέο σύνδεσμο."
       ],
       "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
         "Παρακολουθούμε τον σκοτεινό ιστό για περιπτώσεις όπου τα προσωπικά σας στοιχεία (όπως μια διεύθυνση ηλεκτρονικού ταχυδρομείου ή ένας κωδικός πρόσβασης που χρησιμοποιείται σε ιστότοπο τρίτου μέρους) διαρρέουν ή παραβιάζονται."
@@ -8977,7 +8982,7 @@
         "Πρέπει να επαληθεύσουμε την πληρωμή σας με την τράπεζά σας."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
-        "Συνιστούμε να έχετε τουλάχιστον 2 διακομιστές για να παρέχετε εφεδρεία."
+        "Συνιστούμε να έχετε τουλάχιστον 2 διακομιστές για να υπάρχει εφεδρεία."
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Συνιστούμε να έχετε πολλούς διακομιστές σε διαφορετικές τοποθεσίες για να παρέχετε πλεονασμό."
@@ -9040,7 +9045,7 @@
         "Όταν ενεργοποιείτε το SAML για ${ appName } στην υπηρεσία παροχής ταυτότητας, ενδέχεται να σας ζητηθεί να χρησιμοποιήσετε τη διεύθυνση URL επιστροφής κλήσης (ACS) και το αναγνωριστικό εκδότη. Απλώς αντιγράψτε-επικολλήστε τα παρακάτω δεδομένα στα πεδία της υπηρεσίας παροχής ταυτότητάς σας."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Εφόσον οι ειδοποιήσεις είναι ενεργοποιημένες, όταν έχετε νέα μηνύματα στον λογαριασμό σας ${ MAIL_APP_NAME } θα στέλνουμε μια ειδοποίηση στη διεύθυνσή σας ανάκτησης."
+        "Εφόσον οι ειδοποιήσεις είναι ενεργοποιημένες, όταν έχετε νέα μηνύματα στο λογαριασμό σας ${ MAIL_APP_NAME }, θα στέλνουμε μια ειδοποίηση στη διεύθυνση ανάκτησης."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Όταν εγγραφούν σε ένα πρόγραμμα, θα λάβετε πιστώσεις για χρήση στη συνδρομή σας."
@@ -9052,7 +9057,7 @@
         "Όταν ακυρώσετε, η συνδρομή σας δε θα ανανεωθεί, αλλά θα εξακολουθείτε να απολαμβάνετε προνόμια προγράμματος μέχρι το τέλος της περιόδου συνδρομής. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Όταν κάνετε κλικ σε έναν σύνδεσμο, αυτή η λειτουργία εναντίον του ηλεκτρονικού «ψαρέματος» (phishing) θα σας ζητά να επιβεβαιώσετε τη διεύθυνση URL της ιστοσελίδας."
+        "Όταν κάνετε κλικ σε έναν σύνδεσμο, αυτή η λειτουργία κατά του ηλεκτρονικού «ψαρέματος» θα σας ζητά να επιβεβαιώσετε τη διεύθυνση URL της ιστοσελίδας."
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Όταν καταργείτε έναν διακομιστή από μια πύλη, εισέρχεται σε περίοδο απενεργοποίησης 10 ημερών. Αυτός ο διακομιστής μπορεί να προστεθεί σε μια νέα πύλη, αλλά η χώρα του δεν μπορεί να αλλάξει."
@@ -9152,7 +9157,7 @@
         "Μπορείτε να ενεργοποιήσετε τα αρχεία καταγραφής ελέγχου ταυτότητας για να δείτε πότε γίνεται πρόσβαση στον λογαριασμό σας και από ποια IP. Θα καταγράψουμε τη διεύθυνση IP που έχει πρόσβαση στον λογαριασμό και την ώρα, καθώς και τις αποτυχημένες προσπάθειες."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
-        "Μπορείτε να ενεργοποιήσετε την ενότητα Φωτογραφίες από τη διεπαφή χρησιμοποιώντας την παρακάτω εναλλαγή"
+        "Μπορείτε να ενεργοποιήσετε την ενότητα Φωτογραφίες από τη διεπαφή με τον παρακάτω διακόπτη."
       ],
       "You can import one data type at a time.": [
         "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
@@ -9169,7 +9174,7 @@
         "Τώρα μπορείτε να έχετε πρόσβαση και να διαχειριστείτε τον λογαριασμό ως διαχειριστής."
       ],
       "You can now close this tab.": [
-        "Τώρα μπορείτε να κλείσετε αυτή την καρτέλα."
+        "Τώρα μπορείτε να κλείσετε αυτήν την καρτέλα."
       ],
       "You can now close this window.": [
         "Τώρα μπορείτε να κλείσετε αυτό το παράθυρο."
@@ -9181,7 +9186,7 @@
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Μπορείτε να χρησιμοποιήσετε το ${ MAIL_APP_NAME } με οποιονδήποτε επιτραπέζιο πελάτη ταχυδρομείου υποστηρίζει IMAP/SMTP, συμπεριλαμβανομένων των Outlook, Apple Mail και Thunderbird."
+        "Μπορείτε να χρησιμοποιήσετε το ${ MAIL_APP_NAME } με οποιαδήποτε εφαρμογή ηλ. ταχυδρομείου υποστηρίζει IMAP/SMTP, συμπεριλαμβανομένων των Outlook, Apple Mail και Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Για σύνδεση σε διακομιστή ${ VPN_APP_NAME } με χρήση εφαρμογής VPN ανοικτού κώδικα τρίτων, όπως το Tunnelblick για macOS ή το OpenVPN για GNU/Linux, μπορείτε να χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια."
@@ -9244,13 +9249,13 @@
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal. Εάν αυτό δεν υπάρχει στον λογαριασμό σας PayPal, παρακαλούμε πιέστε το παρακάτω κουμπί."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
-        "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας από αρχείο ICS."
+        "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισάγετε τις εκδηλώσεις σας από αρχείο ICS."
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
-        "Θα πρέπει να εξάγετε αντίγραφο ασφαλείας αυτού του κλειδιού, για ενδεχόμενη ανάγκη σας ανάκτησης δεδομένων που κρυπτογράφησε."
+        "Θα πρέπει να εξάγετε αντίγραφο ασφαλείας αυτού του κλειδιού, για ενδεχόμενη ανάγκη ανάκτησης των δεδομένων που κρυπτογράφησε."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "Χρειάζεται ακόμα να απαντήσετε στις προσκλήσεις για να βλέπει ο διοργανωτής τις απαντήσεις σας."
+        "Χρειάζεται και τώρα να απαντάτε στις προσκλήσεις για να βλέπει ο διοργανωτής τις απαντήσεις σας."
       ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "Θα μπορείτε να προβιβάσετε τον χρήστη σε διαχειριστή μόλις αποδεχτεί την πρόσκληση."
@@ -9262,13 +9267,13 @@
         "Θα διατηρήσετε ισόβια πρόσβαση σε premium λειτουργίες ${ PASS_APP_NAME } + SimpleLogin εάν ακυρώσετε τη συνδρομή σας."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "Θα χάσετε την πρόσβαση στις και λειτουργίες του ${ planTitle } αυτήν την ημέρα."
+        "Θα χάσετε την πρόσβαση στις δυνατότητες του ${ planTitle } αυτήν την ημέρα."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Θα χρειαστείτε μια διεύθυνση ${ BRAND_NAME } για να χρησιμοποιήσετε ${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
-        "ΔΕ θα μπορείτε να αποκρυπτογραφήσετε μηνύματα, αρχεία και άλλα δεδομένα κρυπτογραφημένα με αυτό το κλειδί. Όλα τα δεδομένα που έχουν υπογραφεί με αυτό το κλειδί δε θα επαληθεύονται πλέον από τις ${ BRAND_NAME } εφαρμογές."
+        "ΔΕΝ θα μπορείτε να αποκρυπτογραφήσετε μηνύματα, αρχεία και άλλα δεδομένα κρυπτογραφημένα με αυτό το κλειδί. Όλα τα δεδομένα που έχουν υπογραφεί με αυτό το κλειδί δεν θα επαληθεύονται πλέον από τις ${ BRAND_NAME } εφαρμογές."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
@@ -9280,7 +9285,7 @@
         "Δε θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα ληφθέντα αρχεία ανάκτησης."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
-        "Δεν θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα ληφθέντα αρχεία ανάκτησης. Αυτό θα απενεργοποιήσει επίσης την ανάκτηση βάσει συσκευής."
+        "Δεν θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα αρχεία ανάκτησης που λάβατε. Αυτό θα απενεργοποιήσει επίσης την ανάκτηση βάσει συσκευής."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ο ${ BRAND_NAME } Λογαριασμός συσχετίζεται με ${ externalEmailAddress }."
@@ -9295,7 +9300,7 @@
         "Ο ${ BRAND_NAME } κωδικός πρόσβασής σας"
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Η συνδρομή σας ${ PASS_SHORT_APP_NAME } Plus θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } διάρκειας ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
+        "Η συνδρομή σας ${ PASS_SHORT_APP_NAME } Plus θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Οι λογαριασμοί σας ${ VPN_APP_NAME } και ${ MAIL_APP_NAME } συνδέονται. Για να διαγράψετε και τους δύο, παρακαλούμε συνδεθείτε στο ${ loginLink } και διαγράψτε τον εκεί λογαριασμό σας."
@@ -9350,7 +9355,7 @@
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
-        "Ο οργανισμός σας χρησιμοποιεί καθολική σύνδεση (SSO). Πατήστε Σύνδεση για να συνεχίσετε με τον πάροχο SSO σας."
+        "Ο οργανισμός σας χρησιμοποιεί ενιαία πρόσβαση (SSO). Πατήστε Σύνδεση για να συνεχίσετε με τον πάροχο SSO σας."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Τα ηλ. μηνύματα της εταιρείας σας προστατεύονται με διατερματική κρυπτογράφηση, χρησιμοποιώντας το κλειδί του οργανισμού. Αυτό το δακτυλικό αποτύπωμα μπορεί να χρησιμοποιηθεί για να επαληθεύσει ότι όλοι οι διαχειριστές στον λογαριασμό σας έχουν το ίδιο κλειδί."
@@ -9380,7 +9385,7 @@
         "Θα μπορείτε να προσθέσετε αυτούς τους διακομιστές σε άλλη πύλη αμέσως."
       ],
       "Zoom meeting": [
-        "Συνάντηση Zoom"
+        "Τηλεδιάσκεψη Zoom"
       ]
     },
     "info": {
@@ -9452,7 +9457,7 @@
     },
     "Info; access rights for shared calendar": {
       "View only": [
-        "Ανάγνωση μόνο"
+        "Μόνο για ανάγνωση"
       ]
     },
     "Infog": {
@@ -9673,10 +9678,10 @@
         "Φόρτωση απομακρυσμένου περιεχομένου"
       ],
       "Mark as read": [
-        "Σήμανση ως αναγνωσμένο"
+        "Σήμανση ως διαβασμένο"
       ],
       "Mark as unread": [
-        "Σήμανση ως μη αναγνωσμένο"
+        "Σήμανση ως μη διαβασμένο"
       ],
       "Minimize / maximize composer": [
         "Ελαχιστοποίηση / μεγιστοποίηση συντάκτη"
@@ -9976,7 +9981,7 @@
         "Assertion Consumer Service URL"
       ],
       "Attach public key": [
-        "Επισυνάψτε το δημόσιο κλειδί"
+        "Επισύναψη δημόσιου κλειδιού"
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
@@ -10697,7 +10702,7 @@
         "Εμφάνιση αριθμών εβδομάδων"
       ],
       "Sign external messages": [
-        "Υπογράψτε εξωτερικά μηνύματα"
+        "Υπογραφή εξωτερικών μηνυμάτων"
       ],
       "Signature": [
         "Υπογραφή"
@@ -10873,7 +10878,7 @@
         "Τηλεφωνικός αριθμός ανάκτησης"
       ],
       "Recovery phrase": [
-        "Φράση αποκατάστασης"
+        "Φράση ανάκτησης"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10883,7 +10888,7 @@
     },
     "Label (end date/advanced search)": {
       "To": [
-        "Προς"
+        "Έως"
       ]
     },
     "Label for adding a new custom domain": {
@@ -11011,7 +11016,7 @@
         "Για να προσθέσετε ένα νέο ημερολόγιο, καταργήστε ένα άλλο ημερολόγιο ή αναβαθμίστε το πρόγραμμα ${ BRAND_NAME } σε πρόγραμμα επί πληρωμή ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Έχετε συμπληρώσει τον μέγιστο αριθμό ημερολογίων που είναι διαθέσιμα στο σχέδιό σας."
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
       ]
     },
     "Link": {
@@ -11031,7 +11036,7 @@
         "Εφαρμογές και προεκτάσεις"
       ],
       "Calendars": [
-        "Ημερολόγιο"
+        "Ημερολόγια"
       ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
@@ -11367,11 +11372,17 @@
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
       ],
+      "Convert to SSO": [
+        "Μετατροπή σε SSO"
+      ],
       "Delete": [
         "Διαγραφή"
       ],
       "Delete and revoke invite": [
         "Διαγραφή και ανάκληση πρόσκλησης"
+      ],
+      "Detach from SSO": [
+        "Αποσύνδεση από SSO"
       ],
       "Edit": [
         "Επεξεργασία"
@@ -11457,7 +11468,7 @@
         "Επεξεργασία ημερολογίου"
       ],
       "Get a country's official public holidays calendar.": [
-        "Αποκτήστε το επίσημο ημερολόγιο αργιών μιας χώρας."
+        "Αποκτήστε το ημερολόγιο επίσημων αργιών μιας χώρας."
       ],
       "How to import calendars from another service": [
         "Πώς να εισάγετε ημερολόγια από μια άλλη υπηρεσία"
@@ -11508,7 +11519,7 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Κάθε ${ interval } μήνας ${ onDayString }",
+        "Κάθε ${ interval } μήνα ${ onDayString }",
         "Κάθε ${ interval } μήνες ${ onDayString }"
       ],
       "Monthly ${ onDayString }": [
@@ -11709,32 +11720,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Ξεκινήστε με ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Ξεκινώντας από ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Συνέχεια με Δωρεάν"
@@ -11762,6 +11747,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Ξεκινήστε με ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Ξεκινώντας από ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12381,7 +12392,7 @@
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
       ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
-        "Ορίστε αυτόματες απαντήσεις για να ενημερώσετε τους αποστολείς ότι βρίσκεστε εκτός γραφείου ή δεν μπορείτε να απαντήσετε."
+        "Ορίστε αυτόματες απαντήσεις για να ενημερώσετε τους αποστολείς ότι βρίσκεστε εκτός γραφείου ή ότι δεν μπορείτε να απαντήσετε."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Εξατομικευμένες λύσεις για μεγαλύτερους οργανισμούς με συγκεκριμένες ανάγκες ασφάλειας"
@@ -12455,20 +12466,6 @@
         "Το επιλεγμένο σας πρόγραμμα: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Αποκτήστε το Mail Plus για ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ξεκινώντας από ${ price }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -12487,6 +12484,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Ξεκλειδώστε premium χαρακτηριστικά με αναβάθμιση"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Αποκτήστε το Mail Plus για ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ξεκινώντας από ${ price }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -12707,13 +12718,13 @@
     },
     "new_plans: upgrade": {
       "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
-        "Περιλαμβάνεται με ${ BRAND_NAME } για Business, ${ familyPlanName } και ${ mailProPlanName }."
+        "Περιλαμβάνεται στα ${ BRAND_NAME } για Business, ${ familyPlanName } και ${ mailProPlanName }."
       ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Περιλαμβάνεται στα ${ plus }, ${ bundle } και ${ BRAND_NAME } για Επιχειρήσεις."
       ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "Περιλαμβάνεται με πολλαπλούς χρήστες ${ BRAND_NAME } για επιχειρηματικά σχέδια."
+        "Περιλαμβάνεται με πολλαπλούς χρήστες ${ BRAND_NAME } για επιχειρηματικά πακέτα."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12778,10 +12789,10 @@
         "${ allCategoryTitlesExceptTheLastOne } και ${ lastCategoryTitle }"
       ],
       "${ app } and ${ additionalApp } product updates": [
-        "${ app } και ${ additionalApp } ενημερώσεις προϊόντων"
+        "Ενημερώσεις προϊόντων ${ app } και ${ additionalApp }"
       ],
       "${ app } product updates": [
-        "${ app } ενημερώσεις προϊόντων"
+        "Ενημερώσεις προϊόντος ${ app }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Ενημερωτικό δελτίο ${ BRAND_NAME } για επιχειρήσεις"
@@ -12793,13 +12804,13 @@
         "Ενημερωτικό δελτίο ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } offers and promotions": [
-        "Προσφορές και προωθήσεις της ${ BRAND_NAME }"
+        "Προσφορές και προωθήσεις του ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
         "Ανακοινώσεις προϊόντων ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } έρευνα χρηστών"
+        "Έρευνα χρηστών ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } welcome emails": [
         "Μηνύματα καλωσορίσματος ${ BRAND_NAME }"
@@ -12847,7 +12858,7 @@
         "Συμμετοχή σε έρευνες για τη βελτίωση των υπηρεσιών ${ BRAND_NAME }"
       ],
       "Product updates": [
-        "Ενημερώσεις προϊόντων"
+        "Ενημερώσεις προϊόντος"
       ]
     },
     "Notification": {
@@ -12960,10 +12971,10 @@
     },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
-        "Η πρόσκληση στο ημερολόγιο απορρίφθηκε"
+        "Η πρόσκληση ημερολογίου απορρίφθηκε"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
-        "Γραφτήκατε στο ${ calendarName } (${ senderEmail })"
+        "Εγγραφήκατε στο ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification success": {
@@ -12986,7 +12997,7 @@
     },
     "Notification when": {
       "at time of event": [
-        "στιγμή της εκδήλωσης"
+        "την ώρα της εκδήλωσης"
       ],
       "day before": [
         "ημέρα πριν",
@@ -13702,6 +13713,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Ειδική προσφορά έναρξης: Αποκτήστε ${ title } για ${ price } για πάντα!"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Αρχίστε να χρησιμοποιείτε το ${ PASS_APP_NAME }"
+      ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "Προσαρμοσμένες λύσεις για μεγαλύτερους οργανισμούς με προσαρμοσμένες ανάγκες."
       ],
@@ -13967,20 +13981,8 @@
       "Processing payment": [
         "Επεξεργασία πληρωμής"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Ανανεώνει σε ${ price }, ακυρώστε ανά πάσα στιγμή."
-      ],
       "Select billing country to pay": [
         "Επιλέξτε χώρα χρέωσης για πληρωμή"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Το κουπόνι ισχύει για ανανεώσεις ${ couponRedemptions }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεώνεται αυτόματα σε ${ price } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Η συναλλαγή εντοπίζεται με επιτυχία. Οι πιστώσεις θα προστεθούν στον λογαριασμό σας μόλις επιβεβαιωθεί πλήρως η συναλλαγή."
@@ -14662,6 +14664,9 @@
       ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Η διεύθυνση **${ email }** υπάρχει ήδη ως χρήστης ${ BRAND_NAME }. Παρακαλούμε εισάγετε μια διεύθυνση ηλεκτρονικού ταχυδρομείου χρήστη από την υπηρεσία ταυτοποίησής σας."
       ]
     },
     "saml: Info": {
@@ -14670,6 +14675,9 @@
       ],
       "Details": [
         "Λεπτομέρειες"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Εισάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου χρήστη που παρέχεται από την υπηρεσία ταυτοποίησής σας για **${ domainName }**"
       ],
       "Test in progress...": [
         "Δοκιμή σε εξέλιξη..."
@@ -14852,6 +14860,14 @@
       ],
       "to be created": [
         "προς δημιουργία"
+      ],
+      "to be deleted": [
+        "προς διαγραφή"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Σας επιτρέπει να προσθέσετε μια τηλεδιάσκεψη Zoom σε οποιαδήποτε εκδήλωση ημερολογίου"
       ]
     },
     "session_recovery:available:action": {
@@ -14895,12 +14911,12 @@
         "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
-        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρα",
-        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρες"
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inDays } ημέρα",
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inDays } ημέρες"
       ],
       "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρα",
-        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρες"
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inHours } ώρα",
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inHours } ώρες"
       ],
       "This permission expires soon": [
         "Αυτό το δικαίωμα λήγει σύντομα"
@@ -15239,7 +15255,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Προσθέστε τους ${ BRAND_NAME } λογαριασμούς με τους οποίους επιθυμείτε να μοιράσετε το ημερολόγιο ${ calendarName }. Θα σταλθεί αυτόματα πρόσκληση."
+        "Προσθέστε τους λογαριασμούς ${ BRAND_NAME } με τους οποίους επιθυμείτε να μοιραστείτε το ημερολόγιο ${ calendarName }. Θα σταλθεί αυτόματη πρόσκληση."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -15310,6 +15326,9 @@
       ]
     },
     "Signup: Info": {
+      "10 aliases for email protection from breaches": [
+        "10 ψευδώνυμα για προστασία του ηλεκτρονικού ταχυδρομείου από παραβιάσεις"
+      ],
       "Advanced security features": [
         "Προηγμένες λειτουργίες ασφάλειας"
       ],
@@ -15327,6 +15346,9 @@
       ],
       "Calendar, password manager, file storage, and VPN included": [
         "Περιλαμβάνονται ημερολόγιο, διαχειριστής κωδικών πρόσβασης, αποθήκευση αρχείων και VPN"
+      ],
+      "Device sync": [
+        "Συγχρονισμός συσκευής"
       ],
       "Email aliases": [
         "Ψευδώνυμα ηλεκτρονικού ταχυδρομείου"
@@ -15369,6 +15391,9 @@
       ],
       "The only email service with:": [
         "Η μόνη υπηρεσία ηλεκτρονικού ταχυδρομείου με:"
+      ],
+      "Unlimited passwords": [
+        "Απεριόριστοι κωδικοί πρόσβασης"
       ],
       "Works on all devices": [
         "Λειτουργεί σε όλες τις συσκευές"
@@ -15454,7 +15479,7 @@
         "Ασφαλής αποθήκευση στο cloud"
       ],
       "Secure streaming": [
-        "Διασφαλισμένη μετάδοση"
+        "Ασφαλές streaming"
       ],
       "Support online privacy": [
         "Υποστήριξη ηλεκτρονικού απορρήτου"
@@ -15583,6 +15608,14 @@
         "${ n } μέλος ζήτησε τη βοήθειά σας για να συνδεθεί.",
         "${ n } μέλη ζήτησαν τη βοήθειά σας για να συνδεθούν."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } χρήστης έκανε μετατροπή σε SSO",
+        "${ n } χρήστες έκαναν μετατροπή σε SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } χρήστης αποσυνδέθηκε από SSO",
+        "${ n } χρήστες αποσυνδέθηκαν από SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } χρήστης έχει ενταχθεί στον οργανισμό σας μέσω της Υπηρεσίας Παροχής Ταυτότητάς σας. Ελέγξτε τον λογαριασμό του τώρα:",
         "${ n } χρήστες έχουν ενταχθεί στον οργανισμό σας μέσω της Υπηρεσίας Παροχής Ταυτότητάς σας. Ελέγξτε τους λογαριασμούς τους τώρα:"
@@ -15597,6 +15630,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Οι χρήστες SSO (που παρέχονται από την υπηρεσία παροχής ταυτότητάς σας) θα διαγραφούν** και θα πρέπει να τους δημιουργήσετε με μη αυτόματο τρόπο για να τους προσθέσετε ξανά στον οργανισμό σας."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Οι χρήστες SSO θα αποσυνδεθούν από την υπηρεσία ταυτοποίησής σας** και θα μετατραπούν σε μη-SSO χρήστες."
       ],
       "Access denied": [
         "Δεν επιτρέπεται η πρόσβαση"
@@ -15795,8 +15831,14 @@
       "Yes, it was me": [
         "Ναι, ήμουν εγώ"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Για να προσθέσετε νέους χρήστες στον οργανισμό σας, θα πρέπει να τους δημιουργήσετε χειροκίνητα."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Η διαμόρφωση SSO θα διαγραφεί."
       ]
     },
     "sso: auth device state": {
@@ -15867,7 +15909,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } αποθηκευτικού χώρου"
+        "Αποθηκευτικός χώρος ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% γεμάτος"
@@ -15931,7 +15973,7 @@
         "Ο αποθηκευτικός σας χώρος είναι ${ percentage }% γεμάτος. ${ cta }."
       ],
       "Your storage is full": [
-        "Ο αποθηκευτικός σας χώρος είναι πλήρης"
+        "Ο αποθηκευτικός σας χώρος είναι γεμάτος"
       ],
       "Your storage is full. ${ cta }.": [
         "Ο αποθηκευτικός σας χώρος είναι γεμάτος. ${ cta }."
@@ -15954,7 +15996,7 @@
         "URL Ημερολογίου"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "Για να εγγραφείτε σε ένα εξωτερικό ή δημόσιο ημερολόγιο και τις ενημερώσεις του, εισαγάγετε τη διεύθυνση URL. Μια έκδοση μόνο για ανάγνωση του ημερολογίου θα προστεθεί στα ´Άλλα ημερολόγιά σας.\n${ kbLink }"
+        "Για να εγγραφείτε σε ένα εξωτερικό ή δημόσιο ημερολόγιο και τις ενημερώσεις του, εισάγετε τη διεύθυνση URL. Μια έκδοση μόνο-για-ανάγνωση του ημερολογίου θα προστεθεί στα ´Άλλα ημερολόγια.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -16502,7 +16544,7 @@
         "Ο εφεδρικός κωδικός πρόσβασης ενημερώθηκε"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "Το ημερολόγιο προστέθηκε. Ίσως περάσουν μερικά λεπτά για συγχρονισμό."
+        "Το ημερολόγιο προστέθηκε. Ίσως περάσουν μερικά λεπτά για να συγχρονιστούν οι αλλαγές."
       ],
       "Calendar created": [
         "Το ημερολόγιο δημιουργήθηκε"
@@ -16682,7 +16724,7 @@
         "Η ρύθμιση του βοηθού γραφής ενημερώθηκε"
       ],
       "You have successfully canceled your subscription.": [
-        "Ακυρώσατε με επιτυχία τη συνδρομή σας."
+        "Ακυρώσατε επιτυχώς τη συνδρομή σας."
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
@@ -16888,7 +16930,7 @@
     },
     "TableRow": {
       "No SMTP tokens found": [
-        "Δε βρέθηκαν διακριτικά SMTP"
+        "Δεν βρέθηκαν διακριτικά SMTP"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -17008,7 +17050,7 @@
         "Προσθήκη διεύθυνσης"
       ],
       "Add another notification to remind you of this event": [
-        "Προσθέστε μια άλλη ειδοποίηση για να σας υπενθυμίσει αυτή την εκδήλωση"
+        "Προσθέστε μια άλλη ειδοποίηση για να σας υπενθυμίσει αυτήν την εκδήλωση"
       ],
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
@@ -17026,7 +17068,7 @@
         "Προσθήκη domain"
       ],
       "Add external address?": [
-        "Προσθήκη εξωτερικής διεύθυνσης ηλεκτρονικού ταχυδρομείου;"
+        "Προσθήκη εξωτερικής διεύθυνσης;"
       ],
       "Add filter": [
         "Προσθήκη φίλτρου"
@@ -17113,7 +17155,7 @@
         "Αποκλεισμός ιχνηλατών και κακόβουλου λογισμικού"
       ],
       "Bridge for ${ platform }": [
-        "Bridge για ${ platform }"
+        "Γέφυρα για ${ platform }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Ακύρωση συνδρομής ${ MAIL_SHORT_APP_NAME }"
@@ -17127,10 +17169,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -17186,6 +17228,9 @@
       ],
       "Connect ${ name }": [
         "Σύνδεση ${ name }"
+      ],
+      "Connection status": [
+        "Κατάσταση σύνδεσης"
       ],
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
@@ -17276,7 +17321,7 @@
         "Ανάκτηση δεδομένων"
       ],
       "Date": [
-        "Ραντεβού"
+        "Ημερομηνία"
       ],
       "Day theme": [
         "Ανοιχτό θέμα"
@@ -17325,7 +17370,7 @@
         "Διαγραφή ιστορικού εκδόσεων;"
       ],
       "Deny access to user?": [
-        "Αρνηθείτε την πρόσβαση στο χρήστη;"
+        "Άρνηση πρόσβασης στο χρήστη;"
       ],
       "Description": [
         "Περιγραφή"
@@ -17385,7 +17430,7 @@
         "Επεξεργασία domain"
       ],
       "Edit email address": [
-        "Επεξεργασία διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+        "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
       ],
       "Edit filter": [
         "Επεξεργασία φίλτρου"
@@ -17547,6 +17592,9 @@
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
       ],
+      "Get Zooming faster": [
+        "Αρχίστε να Ζουμάρετε πιο γρήγορα"
+      ],
       "Gift": [
         "Δώρο"
       ],
@@ -17563,7 +17611,7 @@
         "Ομάδες"
       ],
       "History": [
-        "Ιστορία"
+        "Ιστορικό"
       ],
       "How does it work?": [
         "Πώς λειτουργεί;"
@@ -17738,7 +17786,7 @@
         "Ρυθμίσεις επαναφοράς κωδικού πρόσβασης"
       ],
       "Passwords made easy": [
-        "Εύκολοι κωδικοί πρόσβασης"
+        "Οι κωδικοί πρόσβασης γίνονται εύκολοι"
       ],
       "Pay invoice": [
         "Πληρωμή τιμολογίου"
@@ -17759,7 +17807,7 @@
         "Εξατομίκευση του υποσέλιδου ηλεκτρονικού ταχυδρομείου"
       ],
       "Personalize your email footer": [
-        "Εξατομίκευση του υποσέλιδου των μηνυμάτων σας"
+        "Εξατομικεύστε το υποσέλιδο των μηνυμάτων σας"
       ],
       "Phone": [
         "Τηλέφωνο"
@@ -17786,10 +17834,10 @@
         "Προφίλ"
       ],
       "QR Code": [
-        "QR Κωδικός"
+        "Κωδικός QR"
       ],
       "Ready, set, forward": [
-        "Έτοιμοι, έτοιμοι, προωθήστε"
+        "Λάβετε θέσεις, έτοιμοι, προωθήστε"
       ],
       "Recommended": [
         "Προτεινόμενο"
@@ -17846,7 +17894,7 @@
         "Αίτηση νέου κωδικού"
       ],
       "Request sent": [
-        "Το Αίτημα εστάλη"
+        "Το αίτημα εστάλη"
       ],
       "Reset password": [
         "Επαναφορά κωδικού πρόσβασης"
@@ -17894,10 +17942,10 @@
         "Επιλογή ομάδας επαφών"
       ],
       "Select the time to send this notification": [
-        "Επιλέξτε την ώρα αποστολής αυτής της ειδοποίησης"
+        "Επιλέξτε τι ώρα θα σταλεί αυτή η ειδοποίηση"
       ],
       "Select the way to send this notification": [
-        "Επιλέξτε τον τρόπο αποστολής αυτής της ειδοποίησης"
+        "Επιλέξτε πώς θα σταλεί αυτή η ειδοποίηση"
       ],
       "Select when you want this notification to be sent": [
         "Επιλέξτε πότε θέλετε να σταλεί αυτή η ειδοποίηση"
@@ -17907,6 +17955,9 @@
       ],
       "Send new invite?": [
         "Αποστολή νέας πρόσκλησης;"
+      ],
+      "Service": [
+        "Υπηρεσία"
       ],
       "Session management": [
         "Διαχείριση συνεδρίας"
@@ -17921,7 +17972,7 @@
         "Ορίστε το όνομα του οργανισμού"
       ],
       "Set up a recovery method": [
-        "Ορισμός μεθόδου ανάκτησης"
+        "Ορίστε μέθοδο ανάκτησης"
       ],
       "Set up forwarding": [
         "Ρύθμιση προώθησης"
@@ -18020,6 +18071,9 @@
       "There are no groups": [
         "Δεν υπάρχουν ομάδες"
       ],
+      "Third-party apps and services": [
+        "Εφαρμογές και υπηρεσίες τρίτων"
+      ],
       "This field cannot be empty": [
         "Αυτό το πεδίο δεν μπορεί να είναι κενό"
       ],
@@ -18057,7 +18111,7 @@
         "Ανεβάστε αρχείο CSV για να δημιουργήσετε πολλούς λογαριασμούς"
       ],
       "Upload your organization’s logo": [
-        "Αποστολή του λογότυπου του οργανισμού σας"
+        "Ανεβάστε το λογότυπο του οργανισμού σας"
       ],
       "User": [
         "Χρήστης"
@@ -18099,7 +18153,7 @@
         "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
-        "Θα στείλουμε ένα μήνυμα ηλεκτρονικού ταχυδρομείου στη νέα σας διεύθυνση με οδηγίες για την ολοκλήρωση της αλλαγής."
+        "Θα στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου στη νέα σας διεύθυνση με οδηγίες για την ολοκλήρωση της αλλαγής."
       ],
       "What is an alias?": [
         "Τι είναι το ψευδώνυμο;"
@@ -18117,7 +18171,7 @@
         "Δεν έχετε ανοιχτές ειδοποιήσεις"
       ],
       "You have no resolved alerts": [
-        "Δεν έχετε επιλύσει ειδοποιήσεις"
+        "Δεν έχετε επιλυμένες ειδοποιήσεις"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"
@@ -18549,6 +18603,9 @@
       "Cancel request to access user data?": [
         "Ακύρωση αιτήματος πρόσβασης στα δεδομένα χρήστη;"
       ],
+      "Confirm all": [
+        "Επιβεβαίωση όλων"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Δεν ήταν δυνατή η αυτόματη ενεργοποίηση της πρόσβασης διαχειριστή για τον ${ n } χρήστη, επειδή τα κλειδιά κρυπτογράφησης έχουν ενημερωθεί στο μεταξύ:",
         "Δεν ήταν δυνατή η αυτόματη ενεργοποίηση της πρόσβασης διαχειριστή για τους ${ n } χρήστες, επειδή τα κλειδιά κρυπτογράφησης έχουν ενημερωθεί στο μεταξύ:"
@@ -18975,7 +19032,7 @@
         "${ WALLET_APP_NAME } είναι σε Πρώιμη Πρόσβαση. Μπορείτε να κατεβάσετε την εφαρμογή iOS μέσω του Apple TestFlight και την εφαρμογή Android μέσω της Ανοιχτής Δοκιμής Google."
       ],
       "Coming soon": [
-        "Έρχεται σύντομα"
+        "Προσεχώς"
       ]
     },
     "wallet_signup_2024:Navigation": {
@@ -19229,7 +19286,7 @@
     "Weekly recurring event, frequency (until)": {
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ untilString }"
+        "Κάθε ${ interval } εβδομάδες την ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ untilString }",
@@ -19325,7 +19382,7 @@
     },
     "Yearly recurring event, frequency (times)": {
       "Every ${ interval } year, ${ timesString }": [
-        "Κάθε ${ interval } χρόνο, ${ timesString }",
+        "Κάθε ${ interval } έτος, ${ timesString }",
         "Κάθε ${ interval } χρόνια, ${ timesString }"
       ],
       "Yearly, ${ timesString }": [
@@ -19334,7 +19391,7 @@
     },
     "Yearly recurring event, frequency (until)": {
       "Every ${ interval } year, ${ untilString }": [
-        "Κάθε ${ interval } χρόνο, ${ untilString }",
+        "Κάθε ${ interval } έτος, ${ untilString }",
         "Κάθε ${ interval } χρόνια, ${ untilString }"
       ],
       "Yearly, ${ untilString }": [

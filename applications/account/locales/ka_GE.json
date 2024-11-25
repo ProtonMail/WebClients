@@ -256,6 +256,12 @@
       "Confirm opening of link ${ linkToShow }": [
         "დაადასტურეთ ბმულის გახსნა ${ linkToShow }"
       ],
+      "Connect": [
+        "დაკავშირება"
+      ],
+      "Connected": [
+        "დაკავშირებულია"
+      ],
       "Contact sales": [
         "გაყიდვებთან კავშირი"
       ],
@@ -814,10 +820,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
       "Reject": [
@@ -1611,11 +1617,6 @@
         "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ტბ საცავი (2-ჯერ მეტი, ვიდრე ნებისმიერი სხვა ტარიფი)"
@@ -1639,22 +1640,17 @@
         "ტარიფი ${ plan } მოკლე დროით დაგვიბრუნდა"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 დღიანი გარანტირებული ფულის დაბრუნება"
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } თვე",
-        "პირველი ${ n } თვე"
-      ],
-      "the first month": [
-        "პირველი თვე"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "საგანგებოდ დაკლებული ფასი ${ discountedPrice } ხელმისაწვდომია კიდევ ${ discountedMonths }. ამის შემდეგ ის ავტომატურად განახლდება დაკლებულ ფასზე ${ nextPrice } ${ nextMonths }-თვის. გაუქმება ყოველთვის შეგიძლიათ."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ discountedPrice }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ nextPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ]
@@ -1773,6 +1769,9 @@
       "Discounts are based on standard monthly pricing.": [
         "ფასდაკლებები თვეში ერთხელ გადახდის ფასებს ეყრდნობა."
       ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "თუ შეიძენთ Pass Family-ის ან Unlimited-ს, გამოწერა გადახდის ციკლის ბოლოს სტანდარტული ფასდაკლების ტარიფით და ხანგრძლივობით განახლდება."
+      ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "თქვენი გამოწერა გადახდის ციკლის ბოლოს სტანდარტული ფასდაკლების ტარიფით და ხანგრძლივობით განახლდება."
       ]
@@ -1832,12 +1831,9 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } თვე",
-        "${ n } თვე"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "განახლდება ${ renewPrice }-ით, ${ renewalLength } განმავლობაში"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "განახლდება ${ renewPrice }-ით, ${ renewLength } თვის განმავლობაში",
+        "განახლდება ${ renewPrice }-ით, ${ renewLength } თვის განმავლობაში"
       ]
     },
     "Billing cycle option": {
@@ -3567,8 +3563,14 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "თქვენი შემომავალი შეტყობინებების ავტომატური დალაგება მანამდე, სანამ ის თქვენს საფოსტო ყუთამდე მოაღწევს."
       ],
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "ხელმისაწვდომია ${ MAIL_APP_NAME } Plus-თან ერთად"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "გილოცავთ! თქვენ ახლა ${ plusPlanName }-ის, მაქსიმუმ, ${ rewardsLimit } უფასო თვე გაქვთ."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "შექმენით Zoom-ის შეხვედრა და დაამატეთ შესვლის დეტალები თქვენს მოვლენას ერთი წკაპით."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "შექმენით იმდენი ჭდე და საქაღალდე, რამდენიც საჭიროა და იქონიეთ თქვენი საფოსტო ყუთი სუფთად."
@@ -7236,11 +7238,11 @@
       "Data locked": [
         "მონაცემები დაბლოკილია"
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
@@ -7390,6 +7392,9 @@
       ],
       "Encryption setting updated": [
         "დაშიფვრის პარამეტრები განახლდა"
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "გამჭოლი ელფოსტოს დაშიფვრა გამორთულია ამ ჯგუფისთვის. მისი ჩართვა შესაძლებელია."
       ],
       "End-to-end email encryption is enabled for this group.": [
         "გამჭოლი ელფოსტოს დაშიფვრა ჩართულია ამ ჯგუფისთვის."
@@ -7881,6 +7886,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "დარწმუნდით, რომ თქვენ ${ addARecoveryMethod } იმისათვის, რომ, თუ პაროლი დაგავიწყდათ, თქვენს ანგარიშში შესვლა მაინც შეძლოთ."
+      ],
+      "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
+        "მართეთ თქვენი ელფოსტის გაფრთხილებების პარამეტრები ${ DOCS_APP_NAME }-სთვის"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "ანგარიშის მოსარგებად ეს ინფორმაცია 2FA მოწყობილობაში ხელით შეიყვანეთ. ${ switchButton }."
@@ -8845,10 +8853,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -11326,11 +11334,17 @@
       "Change password": [
         "პაროლის შეცვლა"
       ],
+      "Convert to SSO": [
+        "SSO-ში გადაყვანა"
+      ],
       "Delete": [
         "წაშლა"
       ],
       "Delete and revoke invite": [
         "მოწვევის წაშლა და გაუქმება"
+      ],
+      "Detach from SSO": [
+        "SSO-დან მოხსნა"
       ],
       "Edit": [
         "ჩასწორება"
@@ -11668,32 +11682,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Get started for ${ price }": [
-        "დაწყება ${ price }-დან"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "უფასოთი გაგრძელება"
@@ -11721,6 +11709,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Get started for ${ price }": [
+        "დაწყება ${ price }-დან"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
       ]
     },
     "new_plans: feature": {
@@ -12414,20 +12428,6 @@
         "გადახდის არჩეული ტარიფი: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "მიიღეთ Mail Plus ფასით ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "${ price }-დან"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -12446,6 +12446,20 @@
       ],
       "Unlock premium features by upgrading": [
         "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "მიიღეთ Mail Plus ფასით ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "${ price }-დან"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -13649,6 +13663,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "პროდუქტის გაშვების სპეციალური აქცია: მიიღეთ ${ title } ${ price }-ად სამუდამოდ!"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ის გამოყენების დაწყება"
+      ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "ინდივიდუალური გადაწყვეტილებები დიდი ორგანიზაციებისთვის სპეციფიკური მოთხოვნებით."
       ],
@@ -13911,20 +13928,8 @@
       "Processing payment": [
         "გადახდის დამუშავება"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "განახლების დრო ${ price }. გააუქმეთ ნებისმიერ დროს."
-      ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "${ priceWithDiscount }-ის სპეციალური ფასდაკლება სწორია პირველი ${ months } თვე. კუპონი ვარგისია ${ couponRedemptions } განახლებისთვის. შემდეგ ის ავტომატურად გადავა ${ price }-ზე ${ months } თვით. გაუქმება ყოველთვის შეგიძლიათ"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ ${ months } თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ price } ${ months } თვით. გაუქმება ყოველთვის შეგიძლიათ."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ price } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "ტრანზაქცია წარამატებითაა აღმოჩენილი. კრედიტები დაემატება თქვენს ანგარიშს, როცა ტრანზაქცია ბოლომდე დადასტურდება."
@@ -14793,6 +14798,9 @@
       ],
       "to be created": [
         "შეიქმნება"
+      ],
+      "to be deleted": [
+        "წასაშლელად"
       ]
     },
     "session_recovery:available:action": {
@@ -15106,6 +15114,12 @@
     "Setting": {
       "Enable Photos section": [
         "ფოტოების სექციის ჩართვა"
+      ],
+      "Get updates about comments via email": [
+        "კომენტარის განახლებების ელფოსტით მიღება"
+      ],
+      "Include document name in email notifications": [
+        "დოკუმენტის სახელის ჩასმა ელფოსტის გაფრთხილებებში"
       ]
     },
     "Settings description": {
@@ -15245,6 +15259,9 @@
       ]
     },
     "Signup: Info": {
+      "10 aliases for email protection from breaches": [
+        "10 ფსევდონიმი ელფოსტის გაჟონვებისგან დასაცავად"
+      ],
       "Advanced security features": [
         "დამატებითი უსაფრთხოების ფუნქციები"
       ],
@@ -15262,6 +15279,9 @@
       ],
       "Calendar, password manager, file storage, and VPN included": [
         "შეიცავს კალენდარს, პაროლების მმართველს, ფაილის საცავს და VPN-ს"
+      ],
+      "Device sync": [
+        "მოწყობილობის სინქრონიზაცია"
       ],
       "Email aliases": [
         "ელფოსტის ფსევდონიმები"
@@ -15304,6 +15324,9 @@
       ],
       "The only email service with:": [
         "ერთად-ერთი ელფოსტის სერვისი, რომელსაც აქვს:"
+      ],
+      "Unlimited passwords": [
+        "შეუზღუდავი პაროლები"
       ],
       "Works on all devices": [
         "მუშაობს ყველა მოწყობილობაზე"
@@ -15518,6 +15541,14 @@
         "${ n } წევრმა ითხოვა თქვენი დახმარება შესვლის შესახებ.",
         "${ n } წევრმა ითხოვა თქვენი დახმარება შესვლის შესახებ."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } მომხმარებელი გადაყვანილია SSO-ზე",
+        "${ n } მომხმარებელი გადაყვანილია SSO-ზე"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } მომხმარებელი მოხსნილია SSO-დან",
+        "${ n } მომხმარებელი მოხსნილია SSO-დან"
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ.",
         "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ."
@@ -15715,6 +15746,9 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "თქვენი SSO-ის კონფიგურაცია წაიშლება."
       ]
     },
     "sso: auth device state": {
@@ -17045,10 +17079,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -17104,6 +17138,9 @@
       ],
       "Connect ${ name }": [
         "${ name }-სთან დაკავშირება"
+      ],
+      "Connection status": [
+        "შეერთების სტატუსი"
       ],
       "Contact us": [
         "დაგვიკავშირდით"
@@ -17464,6 +17501,9 @@
       ],
       "Get the apps": [
         "აპების გადმოწერა"
+      ],
+      "Get Zooming faster": [
+        "Zoom-ის გასწრაფება"
       ],
       "Gift": [
         "საჩუქარი"
@@ -17826,6 +17866,9 @@
       "Send new invite?": [
         "გავაგზავნო ახალი მოწვევა?"
       ],
+      "Service": [
+        "სერვისი"
+      ],
       "Session management": [
         "სესიების მართვა"
       ],
@@ -17937,6 +17980,9 @@
       ],
       "There are no groups": [
         "ჯგუფები არ არსებობს"
+      ],
+      "Third-party apps and services": [
+        "მესამე პირების აპები და სერვისები"
       ],
       "This field cannot be empty": [
         "ეს ველი ცარიელი ვერ იქნება"
@@ -18196,6 +18242,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "ავტომატურად გადაერთეთ რჩეულ თემებს შორის დღისა და ღამისთვის თქვენი სისტემის დღისა და ღამის რეჟიმებთან ერთად"
       ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "დააწკაპუნეთ აქ, რომ გაიგოთ, როგორ შექმნათ თქვენი ხელმოწერა HTML-ში."
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკაციის მომწოდებლის ACS ბმულის ველში"
       ],
@@ -18454,6 +18503,9 @@
       ],
       "Cancel request to access user data?": [
         "გავაუქმო მოთხოვნა მომხმარებლის მონაცემებთან წვდომაზე?"
+      ],
+      "Confirm all": [
+        "ყველას დადასტურება"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "ავტომატურად ვერ ჩავრთე ადმინისტრატორის წვდომა ${ n } მომხმარებელზე, რადგან ამავე დროს შეიცვლა მათი დაშიფვრის გასაღებებები:",
