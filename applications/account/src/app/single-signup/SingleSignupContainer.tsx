@@ -107,7 +107,6 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
     useMetaTags(metaTags);
 
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
-    const [loadingChallenge, setLoadingChallenge] = useState(true);
 
     const getSearchParams = () => {
         return new URLSearchParams(location.search);
@@ -529,7 +528,7 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
         await onLogin(session);
     };
 
-    const loading = loadingDependencies || loadingChallenge;
+    const loading = loadingDependencies;
 
     return (
         <>
@@ -556,12 +555,6 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
                         setModel={setModel}
                         measure={measure}
                         currencyUrlParam={signupParameters.currency}
-                        onChallengeError={() => {
-                            setError(new Error('Challenge error'));
-                        }}
-                        onChallengeLoaded={() => {
-                            setLoadingChallenge(false);
-                        }}
                         onComplete={async (data) => {
                             const { accountData, subscriptionData } = data;
                             const accountType =

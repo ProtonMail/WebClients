@@ -81,7 +81,13 @@ import SignupSupportDropdown from './SignupSupportDropdown';
 import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import { getSignupApplication, getSubscriptionPrices, isMailReferAFriendSignup, isMailTrialSignup } from './helper';
+import {
+    getOptimisticDomains,
+    getSignupApplication,
+    getSubscriptionPrices,
+    isMailReferAFriendSignup,
+    isMailTrialSignup,
+} from './helper';
 import type { InviteData, SignupActionResponse, SignupCacheResult, SignupModel, SubscriptionData } from './interfaces';
 import { SignupSteps, SignupType } from './interfaces';
 import type { TelemetryMeasurementData } from './measure';
@@ -183,7 +189,7 @@ const SignupContainer = ({
     const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
         flow: 'signup',
     });
-    const [loading, withLoading] = useLoading();
+    const [loadingDependencies, withLoadingDependencies] = useLoading(true);
     const [[previousSteps, step], setStep] = useState<[SignupSteps[], SignupSteps]>([
         [],
         SignupSteps.AccountCreationUsername,
@@ -195,7 +201,13 @@ const SignupContainer = ({
 
     const [persistent] = useLocalState(false, defaultPersistentKey);
 
-    const [model, setModel] = useState<SignupModel>(DEFAULT_SIGNUP_MODEL);
+    const [model, setModel] = useState<SignupModel>(() => {
+        const optimisticDomains = getOptimisticDomains();
+        return {
+            ...DEFAULT_SIGNUP_MODEL,
+            domains: optimisticDomains,
+        };
+    });
 
     const createFlow = useFlowRef();
 
@@ -335,7 +347,7 @@ const SignupContainer = ({
             });
         };
 
-        void withLoading(
+        void withLoadingDependencies(
             fetchDependencies().catch(() => {
                 setStep([[], NoSignup]);
             })
@@ -627,9 +639,6 @@ const SignupContainer = ({
                         return c('Title').t`Create your ${BRAND_NAME} Account`;
                     })()}
                     subTitle={(() => {
-                        if (loading) {
-                            return '';
-                        }
                         if (isReferral) {
                             return c('Title').t`Secure email based in Switzerland`;
                         }
@@ -727,7 +736,7 @@ const SignupContainer = ({
                         }
                     }}
                     hasChallenge={!accountData?.payload || !Object.keys(accountData.payload).length}
-                    loading={loading}
+                    loadingDependencies={loadingDependencies}
                 />
             )}
             {step === HumanVerification && (

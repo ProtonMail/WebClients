@@ -126,8 +126,6 @@ const Step1 = ({
     vpnServersCountData,
     onOpenLogin,
     onOpenSwitch,
-    onChallengeLoaded,
-    onChallengeError,
     className,
     onSignOut,
     step1Ref,
@@ -155,8 +153,6 @@ const Step1 = ({
               }
     ) => void;
     onSignOut: () => Promise<void>;
-    onChallengeLoaded: () => void;
-    onChallengeError: () => void;
     model: SignupModelV2;
     setModel: Dispatch<SetStateAction<SignupModelV2>>;
     currentPlan: SubscriptionPlan | undefined;
@@ -184,7 +180,6 @@ const Step1 = ({
     const [upsellDriveTrialModal, setUpsellDriveTrialModal, renderUpsellDriveTrialModal] = useModalState();
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingSignout, withLoadingSignout] = useLoading();
-    const [loadingChallenge, setLoadingChallenge] = useState(false);
     const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const accountStepPaymentRef = useRef<AccountStepPaymentRef>();
@@ -890,7 +885,6 @@ const Step1 = ({
                             <InlineLinkButton
                                 key="create-a-new-account"
                                 onClick={() => {
-                                    setLoadingChallenge(true);
                                     withLoadingSignout(onSignOut()).catch(noop);
                                 }}
                             >
@@ -1027,17 +1021,8 @@ const Step1 = ({
                                                 passwordFields={true}
                                                 model={model}
                                                 measure={measure}
-                                                loading={loadingChallenge || loadingSignout}
                                                 api={silentApi}
                                                 accountStepDetailsRef={accountDetailsRef}
-                                                onChallengeError={() => {
-                                                    setLoadingChallenge(false);
-                                                    onChallengeError();
-                                                }}
-                                                onChallengeLoaded={() => {
-                                                    setLoadingChallenge(false);
-                                                    onChallengeLoaded();
-                                                }}
                                                 disableChange={loadingSignup}
                                                 onSubmit={
                                                     hasSelectedFree

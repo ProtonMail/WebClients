@@ -1,4 +1,4 @@
-import svg from '@proton/styles/assets/img/icons/email-sprite-icons.svg';
+import svg from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
 
 import { locateHead } from '../../../helpers/message/messageHead';
 import type { MessageState } from '../../../store/messages/messagesTypes';
