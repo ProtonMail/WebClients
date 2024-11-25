@@ -51,6 +51,7 @@ enum AccountFlag {
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
     GlobalSSO = 'GlobalSSO',
     EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
+    EduGainSSO = 'EduGainSSO',
 }
 
 enum PaymentsFlag {
