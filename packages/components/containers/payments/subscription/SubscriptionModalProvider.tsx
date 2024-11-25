@@ -10,7 +10,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useModalState, { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -28,7 +28,6 @@ import InAppPurchaseModal from './InAppPurchaseModal';
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import SubscriptionContainer from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
-import PostSubscriptionModalProvider from './postSubscription/PostSubscriptionModalProvider';
 
 export interface OpenCallbackProps
     extends Pick<
@@ -57,6 +56,7 @@ export interface OpenCallbackProps
     onClose?: () => void;
     disableCloseOnEscape?: boolean;
     fullscreen?: boolean;
+    renderCustomStepModal?: (step: SUBSCRIPTION_STEPS, modalProps: ModalStateProps) => ReactNode;
 }
 
 export type OpenSubscriptionModalCallback = (props: OpenCallbackProps) => void;
@@ -108,6 +108,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                 onUnsubscribed,
                 mode,
                 currency,
+                renderCustomStepModal,
                 ...rest
             } = subscriptionProps.current;
 
@@ -166,30 +167,34 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                     {...rest}
                     render={({ onSubmit, title, content, footer, step }) => {
                         return (
-                            <ModalTwo
-                                blurBackdrop={blurBackdrop}
-                                className={clsx([
-                                    subscriptionModalClassName,
-                                    [SUBSCRIPTION_STEPS.PLAN_SELECTION, SUBSCRIPTION_STEPS.CHECKOUT].includes(step) &&
-                                        'subscription-modal--fixed-height',
-                                    [SUBSCRIPTION_STEPS.PLAN_SELECTION].includes(step) &&
-                                        'subscription-modal--large-width',
-                                    [SUBSCRIPTION_STEPS.CHECKOUT].includes(step) && 'subscription-modal--medium-width',
-                                ])}
-                                rootClassName={rootClassName}
-                                data-testid="plansModal"
-                                {...modalState}
-                                onClose={handleClose}
-                                disableCloseOnEscape={disableCloseOnEscape}
-                                fullscreen={fullscreen}
-                                as="form"
-                                size="large"
-                                onSubmit={onSubmit}
-                            >
-                                <ModalTwoHeader title={title} hasClose={hasClose} />
-                                <ModalTwoContent>{content}</ModalTwoContent>
-                                {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
-                            </ModalTwo>
+                            renderCustomStepModal?.(step, modalState) || (
+                                <ModalTwo
+                                    blurBackdrop={blurBackdrop}
+                                    className={clsx([
+                                        subscriptionModalClassName,
+                                        [SUBSCRIPTION_STEPS.PLAN_SELECTION, SUBSCRIPTION_STEPS.CHECKOUT].includes(
+                                            step
+                                        ) && 'subscription-modal--fixed-height',
+                                        [SUBSCRIPTION_STEPS.PLAN_SELECTION].includes(step) &&
+                                            'subscription-modal--large-width',
+                                        [SUBSCRIPTION_STEPS.CHECKOUT].includes(step) &&
+                                            'subscription-modal--medium-width',
+                                    ])}
+                                    rootClassName={rootClassName}
+                                    data-testid="plansModal"
+                                    {...modalState}
+                                    onClose={handleClose}
+                                    disableCloseOnEscape={disableCloseOnEscape}
+                                    fullscreen={fullscreen}
+                                    as="form"
+                                    size="large"
+                                    onSubmit={onSubmit}
+                                >
+                                    <ModalTwoHeader title={title} hasClose={hasClose} />
+                                    <ModalTwoContent>{content}</ModalTwoContent>
+                                    {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
+                                </ModalTwo>
+                            )
                         );
                     }}
                 />
@@ -198,7 +203,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     }
 
     return (
-        <PostSubscriptionModalProvider>
+        <>
             {subscriptionModal}
             <SubscriptionModalContext.Provider
                 value={[
@@ -219,7 +224,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
             >
                 {children}
             </SubscriptionModalContext.Provider>
-        </PostSubscriptionModalProvider>
+        </>
     );
 };
 
