@@ -724,11 +724,6 @@
         "वो कैलेंडर देख या बदल सकते है"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "पुनः सक्रिय करें"
-      ]
-    },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
         "${ BRAND_NAME } यूज़र के साथ शेयर करें"
@@ -877,16 +872,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } महीना",
-        "पहले ${ n } महीने"
-      ],
-      "the first month": [
-        "पहला महीना"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "${ discountedPrice } की विशेष रियायती कीमत ${ discountedMonths } के लिए मान्य है। फिर इसे ${ nextMonths } के लिए ${ nextPrice } की रियायती कीमत पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "${ discountedPrice } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ nextPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
@@ -1042,12 +1027,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "स्टोरेज स्पेस सभी ${ BRAND_NAME } सेवाओं में साझा किया गया है।"
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } महीना",
-        "${ n } महीने"
       ]
     },
     "Billing cycle option": {
@@ -6602,9 +6581,6 @@
       ],
       "MM/YY": [
         "महीना/साल"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ price } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
     },
     "Payments.Error": {
@@ -7403,11 +7379,6 @@
         "सेव करें"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "सक्रिय"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } संपर्क एक जैसा है।",
@@ -8143,17 +8114,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "एक नंबर चुनें"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "समाप्त होने की तारीख"
-      ],
-      "Plan": [
-        "प्लान"
-      ],
-      "Status": [
-        "स्थिति"
       ]
     },
     "Title; create calendar modal": {
