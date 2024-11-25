@@ -8,6 +8,7 @@ import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import type { Cycle } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
@@ -56,4 +57,12 @@ export const getSignupApplication = (APP_NAME: APP_NAMES) => {
     }
 
     return 'proton-account';
+};
+
+export const getOptimisticDomains = () => {
+    let secondLevelDomain = getSecondLevelDomain(window.location.hostname);
+    if (secondLevelDomain.endsWith('.onion') || secondLevelDomain.includes('protonvpn')) {
+        secondLevelDomain = 'proton.me';
+    }
+    return [secondLevelDomain, 'protonmail.com'];
 };
