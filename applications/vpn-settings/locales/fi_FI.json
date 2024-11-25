@@ -29,13 +29,13 @@
         "${ BRAND_NAME }-kauppa"
       ],
       "Activate": [
-        "Ota käyttöön"
+        "Aktivoi"
       ],
       "activate": [
-        "ota käyttöön"
+        "aktivoi"
       ],
       "Activate organization key": [
-        "Aktivoi organisaation avain"
+        "Aktivoi organisaatioavain"
       ],
       "Add": [
         "Lisää"
@@ -494,7 +494,7 @@
         "Nollaa kirjautumistiedot"
       ],
       "Reset keys": [
-        "Tyhjennä avaimet"
+        "Nollaa avaimet"
       ],
       "Reset password": [
         "Nollaa salasana"
@@ -748,7 +748,7 @@
     },
     "Action subscription": {
       "Reactivate": [
-        "Aktivoi uudelleen"
+        "Uudelleenaktivoi"
       ]
     },
     "Addon": {
@@ -945,16 +945,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } kuukaudeksi",
-        "ensimmäisten ${ n } kuukauden ajan"
-      ],
-      "the first month": [
-        "ensimmäinen kuukausi"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "${ discountedPrice } erityishinta on voimassa ${ discountedMonths }, jonka jälkeen tilaus jatkuu automaattisesti seuraavat ${ nextMonths } alennettulla ${ nextPrice } hinnalla. Voit peruuttaa milloin tahansa."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Erityishinta ${ discountedPrice } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ nextPrice } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ]
@@ -1142,12 +1132,9 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } kuukaudeksi",
-        "${ n } kuukaudeksi"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Uusiutuu automaattisesti ${ renewalLength } hintaan ${ renewPrice } ."
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Uusiutuu automaattisesti ${ renewLength } kuukaudeksi hintaan ${ renewPrice }",
+        "Uusiutuu automaattisesti ${ renewLength } kuukaudeksi hintaan ${ renewPrice }"
       ]
     },
     "Billing cycle option": {
@@ -2652,7 +2639,7 @@
         "Virheellinen numero"
       ],
       "Organization key is not decrypted": [
-        "Organisaation avaimen salausta ei ole purettu"
+        "Organisaatioavaimen salausta ei ole purettu"
       ],
       "Organization key must be activated to create invited users": [
         "Organisaatioavain on aktivoitava kutsuttujen käyttäjien luomiseksi"
@@ -2760,7 +2747,7 @@
         "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
-        "Ei-yksityisten käyttäjätilien luominen ja niiden käyttö vaatii ylläpitäjänoikeuksiesi palauttamista."
+        "Luodaksesi ei-yksityisiä käyttäjätilejä sinun on palautettava hallintaoikeutesi."
       ],
       "Try again later": [
         "Kokeile myöhemmin uudelleen"
@@ -3437,7 +3424,7 @@
         "Nimi"
       ],
       "Organization key fingerprint": [
-        "Organisaation avaimen sormenjälki"
+        "Organisaatioavaimen tunniste"
       ],
       "Protection": [
         "Suojaus"
@@ -3881,11 +3868,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Mukauta ${ BRAND_NAME }-sovellusten ulkoasua."
       ],
-      "dedicated servers": [
-        "omia palvelimia"
-      ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "dedicated servers": [
+        "omia palvelimia"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Omia kiinteää IP-osoitetta käyttäviä palvelimia voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -4016,7 +4003,7 @@
         "Syötä osoitteeseen ${ email } lähetetty koodi. Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
-        "Syötä organisaation salasana palauttaaksesi ylläpito-oikeudet. ${ learnMore }"
+        "Palauta hallintaoikeudet syöttämällä organisaation salasana. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Syötä kohteeseen ${ destinationText } lähetetty vahvistuskoodi."
@@ -4100,7 +4087,7 @@
         "Identiteetintarjoajan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Identiteetintarjoajallasi pitäisi olla paikka, josta voit kopioida tai ladata varmenteen tiivisteen. Liitä lataamasi tai kopioimasi varmenteen tiiviste tekstikenttään."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
-        "Jos toinen ylläpitäjä on vaihtanut salasanan, sinun on pyydettävä heitä toimittamaan organisaation uusi salasana."
+        "Jos toinen ylläpitäjä on vaihtanut salasanan, sinun on pyydettävä organisaation uusi salasana heiltä."
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Jos se ei sovi sinulle, hyvitämme sen."
@@ -4352,7 +4339,7 @@
         "Uusi käyttäjä kutsuttiin organisaatioon"
       ],
       "New VPN connection data will stop being collected and shown.": [
-        "Uusien VPN-yhteystietojen kerääminen ja näyttäminen lopetetaan."
+        "Jatkossa VPN-yhteyksistä ei enää kerätä tietoja, eikä niitä näytetä."
       ],
       "No addresses exist": [
         "Osoitteita ei ole"
@@ -4367,7 +4354,7 @@
         "Maksua ei nyt vaadita."
       ],
       "No results found": [
-        "Ei tuloksia"
+        "Tuloksia ei löytynyt"
       ],
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
@@ -4884,11 +4871,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "username": [
-        "käyttäjätunnus"
-      ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -5118,7 +5105,7 @@
         "Sinut voidaan ohjata pankkisi verkkosivuille."
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
-        "Sinun on aktivoitava organisaation yksityinen avain ylläpitäjän ilmoittamalla organisaation vara-avaimen salasanalla."
+        "Sinun on aktivoitava organisaatiosi yksityinen avain organisaatiosi ylläpidon ilmoittamalla organisaation vara-avaimen salasanalla."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Kaikki laajemmat ${ MAIL_APP_NAME } -määritykset, kuten käyttäjät, osoitteet ja omat verkkotunnukset on poistettava käytöstä tai poistettava ennen tilauksen alennusta."
@@ -5196,7 +5183,7 @@
         "Organisaatiosi käyttää kertakirjautumista (SSO). Jatka SSO-palveluntarjoajan kautta painamalla \"Kirjaudu sisään\"."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
-        "Organisaatiosi sähköpostit on suojattu päästä päähän -salauksella käyttäen organisaation avainta. Tällä sormenjäljellä voidaan vahvistaa, että kaikilla tilisi ylläpitäjillä on sama avain."
+        "Organisaatiosi sähköpostit on organisaatioavainta käyttäen suojattu päästä päähän -salauksella. Tällä tunnisteella voidaan vahvistaa tilisi kaikilla ylläpitäjien käyttävän samaa avainta."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Maksutietosi on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
@@ -5498,7 +5485,7 @@
         "Kortoisitko meille, mikä palveluntarjoaja?"
       ],
       "Could you please specify which streaming service?": [
-        "Tarkentaisitko, mikä suoratoistopalvelu?"
+        "Tarkentaisitko mikä suoratoistopalvelu?"
       ],
       "Could you please specify?": [
         "Tarkentaisitko?"
@@ -5744,7 +5731,7 @@
         "Vastaus URL (ACS)"
       ],
       "Require 2FA for administrators": [
-        "Vaadi 2FA ylläpitäjiltä"
+        "Pakota ylläpitäjille kaksivaiheinen tunnistautuminen"
       ],
       "Require 2FA for everyone": [
         "Vaadi 2FA kaikilta"
@@ -5930,7 +5917,7 @@
         "Luo tili"
       ],
       "Don't have access to your 2FA?": [
-        "Eikö sinulla ole pääsyä 2FA:han?"
+        "Etkö voi käyttää kaksivaiheista tunnitautumistasi?"
       ],
       "Forgot password?": [
         "Unohditko salasanasi?"
@@ -6097,11 +6084,17 @@
       "Change password": [
         "Vaihda salasana"
       ],
+      "Convert to SSO": [
+        "Muunna SSO:ksi"
+      ],
       "Delete": [
         "Poista"
       ],
       "Delete and revoke invite": [
         "Poista ja mitätöi kutsu"
+      ],
+      "Detach from SSO": [
+        "Erota SSO:sta"
       ],
       "Edit": [
         "Muokkaa"
@@ -7668,31 +7661,31 @@
         "Kaikki ylläpitäjät pääsevät käsiksi avaimeen."
       ],
       "Are you sure you want to change your organization key?": [
-        "Haluatko varmasti muuttaa organisaation avainta?"
+        "Haluatko varmasti vaihtaa organisaatioavaimen?"
       ],
       "Change organization key": [
-        "Muuta organisaation avainta"
+        "Vaida organisaatioavain"
       ],
       "Non-private users can be promoted to admin when they have setup keys": [
         "Ei-yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun heillä on asetusavaimet"
       ],
       "Organization key activated": [
-        "Organisaation avain aktivoitiin"
+        "Organisaatioavain aktivoitiin"
       ],
       "Organization key does not exist.": [
-        "Organisaation avainta ei ole olemassa."
+        "Organisaatioavainta ei ole olemassa."
       ],
       "Organization key must be activated to give admin privileges": [
-        "Organisaation avain on aktivoitava, jotta voit antaa ylläpitäjän oikeudet"
+        "Organisaatioavain on aktivoitava hallintaoikeuksien myöntämiseksi"
       ],
       "Organization key restored": [
-        "Organisaation avain palautettiin"
+        "Organisaatioavain palautettiin"
       ],
       "Organization key updated": [
-        "Organisaation avain päivitettiin"
+        "Organisaatioavain vaihdettiin"
       ],
       "Permission denied, administrator privileges have been restricted.": [
-        "Lupa evätty, ylläpito-oikeuksia on rajoitettu."
+        "Lupa evätty, hallintaoikeuksia on rajoitettu."
       ],
       "Please ensure they have an enabled address and invite them separately later.": [
         "Varmista, että heidän osoitteensa on otettu käyttöön ja kutsu heidät myöhemmin erikseen."
@@ -7701,31 +7694,31 @@
         "Yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun he ovat kirjautuneet sisään ensimmäisen kerran"
       ],
       "Reset organization key": [
-        "Nollaa organisaation avain"
+        "Nollaa organisaatioavain"
       ],
       "The following administrators could not be restored.": [
         "Seuraavia ylläpitäjiä ei voitu palauttaa"
       ],
       "The following administrators will get access to the organization key.": [
-        "Seuraavat ylläpitäjät voivat käsitellä organisaation avainta."
+        "Seuraavat ylläpitäjät saavat organisaatioavaimen käyttöoikeuden."
       ],
       "The organization key must be activated first.": [
-        "Organisaation avain on ensin aktivoitava."
+        "Organisaatioavain on ensin aktivoitava."
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
-        "Tämä lähettää uusimman organisaatioavaimen ylläpitäjille, jotka tällä hetkellä voi käyttää sitä."
+        "Tämä lähettää uusimman organisaatioavaimen ylläpitäjille, joilla ei tällä hetkellä ole sen käyttöoikeutta."
       ],
       "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
-        "Ei-yksityisten käyttäjätilien luominen ja niiden käyttö vaatii organisaatioavaimesi aktivoimista."
+        "Luodaksesi ei-yksityisiä käyttäjätilejä ja hallitaksesi heidän tilejään, sinun on aktivoitava organisaatioavaimesi."
       ],
       "To enable administrator rights on your account, activate the organization key.": [
-        "Ota tilisi ylläpitäjän oikeudet käyttöön aktivoimalla organisaatioavain."
+        "Aktivoidaksesi hallintaoikeudet tilillesi, aktivoi organisaatioavain."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Käytä palautustapaa tai nollaa organisaation avain ylläpitäjän oikeuksien palauttamiseksi."
+        "Palauta hallintaoikeudet tietojen palautustavalla tai nollaamalla organisaatioavain."
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Käytä palautustapaa, ota yhteyttä toiseen ylläpitäjään tai nollaa organisaation avain ylläpitäjän oikeuksien palauttamiseksi."
+        "Palauta hallintaoikeudet tietojen palautustavalla, olemalla yhteydessä toiseen ylläpitäjään tai nollaamalla organisaatioavain."
       ],
       "We couldn't verify the authenticity of this identity.": [
         "Emme voineet vahvistaa tämän identiteetin aitoutta."
@@ -7740,13 +7733,13 @@
         "Olemme vahvistaneet tämän lähettäjän ja kutsun aitouden."
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
-        "Olet organisaation **${ organizationName }** järjestelmänvalvoja. Nimityksen teki"
+        "Sinulle on myönnetty organisaation **${ organizationName }** hallintaoikeudet. Oikeudet myönsi"
       ],
       "You must privatize all users before generating a new organization key": [
-        "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaation avaimen luontia"
+        "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaatioavaimen luontia"
       ],
       "You need access to the organization key to perform this operation.": [
-        "Sinun tulee voida käsitellä organisaation avainta suorittaaksesi tämä toiminnon."
+        "Sinulla on oltava oikeus käyttää organisaatioavainta suorittaaksesi tämä toiminnon."
       ]
     },
     "Payment method option": {
@@ -7814,20 +7807,8 @@
       "Processing payment": [
         "Käsitellään maksua"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Uusitaan hintaan ${ price }, peruuta milloin tahansa."
-      ],
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ price } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Siirto on havaittu. Krediitit lisätään tilillesi, kun siirto on täysin vahvistettu."
@@ -8092,11 +8073,11 @@
     },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
-        "${ n } organisaatiosi ylläpitäjä tarvitsee oikeuden käyttää organisaation avainta.",
-        "${ n } organisaatiosi ylläpitäjää tarvitsee oikeudet käyttää organisaation avainta."
+        "${ n } organisaatiosi ylläpitäjä tarvitsee oikeuden käyttää organisaatioavainta.",
+        "${ n } organisaatiosi ylläpitäjää tarvitsee oikeudet käyttää organisaatioavainta."
       ],
       "Changing organization keys": [
-        "Muuta organisaation avaimia"
+        "Organisaatioavainten vaihtaminen"
       ],
       "Changing organization password": [
         "Organisaation salasanan vaihtaminen"
@@ -8105,7 +8086,7 @@
         "Ei-yksityisten käyttäjätilien luominen ja käyttäminen"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
-        "Ylläpito-oikeuksiasi organisaatiossa on rajoitettu salasanan vaihdon seurauksena. Seuraavia toimintoja ei enää sallita:"
+        "Hallintaoikeuksiasi organisaatiossa on rajoitettu salasanan vaihdon seurauksena, eikä seuraavia toimintoja enää sallita:"
       ]
     },
     "Role": {
@@ -8135,6 +8116,9 @@
       ],
       "Something went wrong": [
         "Jokin meni pieleen"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Sähköpostiosoite **${ email }** on jo olemassa ${ BRAND_NAME }-käyttäjänä. Syötä käyttäjän sähköpostiosoite identiteetintarjoajastasi."
       ]
     },
     "saml: Info": {
@@ -8143,6 +8127,9 @@
       ],
       "Details": [
         "Lisätiedot"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Syötä identiteetintarjoajasi verkkotunnukselle **${ domainName }** tarjoaman käyttäjän sähköpostiosoite"
       ],
       "Test in progress...": [
         "Testi on käynnissä..."
@@ -8311,6 +8298,9 @@
       ],
       "to be created": [
         "luodaan"
+      ],
+      "to be deleted": [
+        "poistettava"
       ]
     },
     "session_recovery:available:action": {
@@ -8345,7 +8335,7 @@
         "Etkö tehnyt pyyntöä itse?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
+        "Jos et pyytänyt salasanasi nollausta, peru pyyntö nyt."
       ],
       "Password reset request approved (${ user.Email }).": [
         "Salasanan nollauspyyntö hyväksyttiin (${ user.Email })."
@@ -8461,10 +8451,10 @@
         "Etkö tehnyt pyyntöä itse?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
+        "Jos et pyytänyt salasanasi nollausta, peru pyyntö nyt."
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
-        "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
+        "Jos et pyytänyt salasanasi nollausta, peru tämä pyyntö nyt."
       ],
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Salasanan nollaus on käytettävissä ${ boldDate } alkaen. Tämä antaa sinulle aikaa perua kaikki valheelliset pyynnöt."
@@ -8474,7 +8464,7 @@
         "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "Odotamme 72 tuntia ennen pyyntöjen hyväksymistä, jotta voimme varmistaa, että se olet todella sinä, joka yrittää palauttaa salasanasi. Aikaa jäljellä, kunnes voit vaihtaa salasanasi: ${ boldTimeLeft }. ${ viewRequest }"
+        "Odotamme 72 tuntia ennen pyyntöjen hyväksymistä varmistaaksemme juuri sinun pyytäneen nollausta. Voit vaihtaa salasanasi kun on kulunut ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Vastaanotimme salasanan nollauspyynnön osoitteelle ${ boldEmail }."
@@ -8555,7 +8545,7 @@
         "${ passwordReset } on nyt käytössä."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Jos kirjaudut ulos ennen kuin olet nollannut salasanasi, voit menettää tilisi käyttöoikeuden."
+        "Jos kirjaudut ulos ennen kuin olet asettanut uuden salasanan, voit menettää pääsyn tilillesi."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
         "Jos kirjaudut ulos nollaamatta salasanaasi, voit menettää pääsyn tilillesi."
@@ -8815,6 +8805,14 @@
         "${ n } jäsen pyysi apuasi kirjautumisessa.",
         "${ n } jäsentä pyysi apuasi kirjautumisessa."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } käyttäjä muunnettu SSO:ksi",
+        "${ n } käyttäjää muunnettu SSO:ksi"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } käyttäjä erotettu SSO:sta",
+        "${ n } käyttäjää erotettu SSO:sta"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } käyttäjä on liittynyt organisaatioosi identiteetin tarjoajasi kautta. Tarkista tili nyt:",
         "${ n } käyttäjää on liittynyt organisaatioosi identiteetin tarjoajasi kautta. Tarkista tilit nyt:"
@@ -8829,6 +8827,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO-käyttäjät (identiteetin tarjoajaltasi) poistetaan**, ja sinun on luotava ne manuaalisesti lisätäksesi ne takaisin organisaatioosi."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO-käyttäjät erotetaan identiteetintarjoajastasi** ja muunnetaan ei-SSO-käyttäjiksi."
       ],
       "Access denied": [
         "Pääsy evätty"
@@ -8846,10 +8847,10 @@
         "Hyväksy kirjautuminen toiselta laitteelta"
       ],
       "Ask administrator for help": [
-        "Pyydä ylläpitäjältä apua"
+        "Pyydä apua ylläpidoltasi"
       ],
       "Ask your administrator for access?": [
-        "Pyydä ylläpitäjältä käyttöoikeutta?"
+        "Pyydetäänkö ylläpidolta käyttöoikeutta?"
       ],
       "Backup password": [
         "Varasalasana"
@@ -8870,7 +8871,7 @@
         "Ota yhteyttä ylläpitäjään"
       ],
       "Contact your administrator if the problem persists.": [
-        "Ota yhteyttä ylläpitäjääsi, jos ongelma jatkuu."
+        "Ole ongelman jatkuessa yhteydessä ylläpitoosi."
       ],
       "Delete ${ n } inactive user?": [
         "Poistetaanko ${ n } inaktiivinen käyttäjä?",
@@ -8947,7 +8948,7 @@
         "Määritä varasalasanasi"
       ],
       "Share the confirmation code with your administrator": [
-        "Jaa vahvistuskoodi ylläpitäjäsi kanssa"
+        "Jaa vahvistuskoodi ylläpidollesi"
       ],
       "Sign in": [
         "Kirjaudu sisään"
@@ -8974,7 +8975,7 @@
         "Varmistaaksemme, että sinä todella yrität kirjautua sisään, syötä varasalasanasi."
       ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
-        "Varmistaaksemme, että sinä todella yrität kirjautua sisään, jaa vahvistuskoodi ylläpitäjällesi **${ adminEmail }**, jotta he voivat hyväksyä pyynnön käyttäjältä **${ email }**."
+        "Varmistaaksemme juuri sinun pyrkivän kirjautumaan, jaa vahvistuskoodi ylläpitäjällesi **${ adminEmail }**, jotta he voivat hyväksyä pyynnön käyttäjältä **${ email }**."
       ],
       "Tried to sign in at": [
         "Yritti kirjautua sisään"
@@ -8985,8 +8986,14 @@
       "User details:": [
         "Käyttäjätiedot:"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Sinun on luotava uusia käyttäjiä manuaalisesti lisätäksesi niitä organisaatioosi."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Sinut ohjataan kolmannen osapuolen SSO- palveluntarjoajaan."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "SSO-määrityksesi poistetaan."
       ]
     },
     "sso: auth device state": {
@@ -9627,7 +9634,7 @@
         "Osoite lisättiin"
       ],
       "Administrator privileges restored": [
-        "Ylläpitäjän oikeudet palautettiin"
+        "Hallintaoikeudet palautettiin"
       ],
       "Backup password updated": [
         "Varasalasana vaihdettiin"
@@ -9959,7 +9966,7 @@
         "Toiminnot"
       ],
       "Activate organization key": [
-        "Aktivoi organisaation avain"
+        "Aktivoi organisaatioavain"
       ],
       "Activate user": [
         "Aktivoi käyttäjä"
@@ -10046,10 +10053,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -10356,7 +10363,7 @@
         "Organisaation suodattimet"
       ],
       "Organization key": [
-        "Organisaation avain"
+        "Organisaatioavain"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -10440,7 +10447,7 @@
         "Nollataanko salasana?"
       ],
       "Restore administrator privileges": [
-        "Palauta ylläpito-oikeudet"
+        "Palauta hallintaoikeudet"
       ],
       "Revoke certificate": [
         "Mitätöi varmenne"
@@ -10775,9 +10782,12 @@
       "Cancel request to access user data?": [
         "Poistetaanko käyttäjän tietojen käsittelyoikeuspyyntö?"
       ],
+      "Confirm all": [
+        "Vahvista kaikki"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "${ n } käyttäjän ylläpitäjän oikeuksia ei voitu ottaa automaattisesti käyttöön, koska heidän salausavaimensa on päivitetty sillä välin:",
-        "${ n } käyttäjän ylläpitäjän oikeuksia ei voitu ottaa automaattisesti käyttöön, koska heidän salausavaimensa on päivitetty sillä välin:"
+        "${ n } käyttäjän hallintaoikeuksia ei voitu aktivoida automaattisesti, koska heidän salausavaimensa ovat välillä muuttuneet:",
+        "${ n } käyttäjän hallintaoikeuksia ei voitu aktivoida automaattisesti, koska heidän salausavaimensa on välillä muuttunut:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Ylläpitäjän käyttöoikeuksia ei voitu myöntää: ${ error }"

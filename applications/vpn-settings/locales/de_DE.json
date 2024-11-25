@@ -938,16 +938,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } Monat",
-        "die ersten ${ n } Monate"
-      ],
-      "the first month": [
-        "den ersten Monat"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ discountedPrice } ist für ${ discountedMonths } gültig. Danach wird das Abonnement automatisch zum reduzierten Preis von ${ nextPrice } für ${ nextMonths } verlängert. Du kannst jederzeit kündigen."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ discountedPrice } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ nextPrice } verlängert. Du kannst jederzeit kündigen."
       ]
@@ -1132,15 +1122,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Der Speicherplatz wird von allen ${ BRAND_NAME }-Services gemeinsam genutzt."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } Monat",
-        "${ n } Monate"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Wird automatisch für ${ renewPrice } um ${ renewalLength } verlängert."
       ]
     },
     "Billing cycle option": {
@@ -3861,11 +3842,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Lösche alle anderen MX-Einträge oder stelle sicher, dass ${ MAIL_APP_NAME } die geringste Priorität hat."
@@ -4846,10 +4827,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
       "Users": [
@@ -7709,20 +7690,8 @@
       "Processing payment": [
         "Zahlungsabwicklung"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Verlängert sich zu ${ price }, jederzeit kündbar."
-      ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ months } gültig. Der Gutschein kann bei ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ price } während ${ months } verlängert. Du kannst jederzeit kündigen."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ months } gültig. Danach wird das Abonnement automatisch zum Preis von ${ price } während ${ months } verlängert. Du kannst jederzeit kündigen."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ price } verlängert. Du kannst jederzeit kündigen."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Die Transaktion wurde erfolgreich erkannt. Das Guthaben wird deinem Konto gutgeschrieben, sobald die Transaktion vollständig bestätigt ist."
@@ -9820,11 +9789,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"

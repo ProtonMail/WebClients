@@ -945,16 +945,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mês",
-        "os primeiros ${ n } meses"
-      ],
-      "the first month": [
-        "o primeiro mês"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "O preço com desconto especial de ${ discountedPrice } é válido por ${ discountedMonths }. Em seguida, ele será renovado automaticamente pelo preço com desconto de ${ nextPrice } por ${ nextMonths }. Você pode cancelar a qualquer momento."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ discountedPrice } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ nextPrice } todo mês. Você pode cancelar a qualquer momento."
       ]
@@ -1129,7 +1119,7 @@
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, aliases ide-my-email ilimitados e muito mais."
+        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, aliases hide-my-email ilimitados e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui editor de documento on-line, histórico de versões, compartilhamento de arquivo criptografado e muito mais."
@@ -1142,12 +1132,9 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } mês",
-        "${ n } meses"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Renovação automática por ${ renewPrice }, para ${ renewalLength }"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Renovação automática por ${ renewPrice }, durante ${ renewLength } mês",
+        "Renovação automática por ${ renewPrice }, durante ${ renewLength } messes"
       ]
     },
     "Billing cycle option": {
@@ -1277,7 +1264,7 @@
         "Todos os aplicativos e recursos premium da ${ BRAND_NAME }"
       ],
       "Cancel and downgrade": [
-        "Cancelar e passar a um plano inferior"
+        "Cancelar e fazer downgrade"
       ],
       "Cloud storage and sharing for large files": [
         "Armazenamento em nuvem e compartilhamento de arquivos grandes"
@@ -2443,7 +2430,7 @@
         "Tirar o desconto"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
-        "Sua assinatura ${ PLAN_NAMES[PLANS.PASS] } está com um preço especial de ${ price } por ano. Ao reduzi-la para um plano gratuito, você perderá o desconto de forma definitiva, mesmo que volte a fazer um upgrade no futuro."
+        "Sua assinatura ${ PLAN_NAMES[PLANS.PASS] } está com um preço especial de ${ price } por ano. Ao fazer downgrade para um plano Free, você perderá o desconto de forma definitiva, mesmo que faça upgrade novamente no futuro."
       ]
     },
     "driveplus2024: Deal details": {
@@ -3887,11 +3874,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize a aparência e o estilo das aplicações da ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a gateways privados para permitir o controle de acesso com ajuste fino."
@@ -4893,10 +4880,10 @@
       "User activated": [
         "Usuário ativado"
       ],
-      "username": [
+      "Username": [
         "Nome de usuário"
       ],
-      "Username": [
+      "username": [
         "Nome de usuário"
       ],
       "Users": [
@@ -6109,11 +6096,17 @@
       "Change password": [
         "Alterar senha"
       ],
+      "Convert to SSO": [
+        "Converter para SSO"
+      ],
       "Delete": [
         "Excluir"
       ],
       "Delete and revoke invite": [
         "Excluir e revogar convite"
+      ],
+      "Detach from SSO": [
+        "Remover do SSO"
       ],
       "Edit": [
         "Editar"
@@ -6403,7 +6396,7 @@
         "Proteção avançada de conta"
       ],
       "Advanced alias features (powered by SimpleLogin)": [
-        "Recursos avançados de alias (Com tecnologia do SimpleLogin)"
+        "Recursos avançados de alias (com tecnologia do SimpleLogin)"
       ],
       "Advanced network security": [
         "Segurança de rede avançada"
@@ -6986,7 +6979,7 @@
         "Crie até ${ n } endereços de e-mail ou aliases que você pode atribuir aos membros da sua família. Utilize-os como identidades digitais como, por exemplo, JoaoDasCompras@${ domain } para contas em e-commerce."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
-        "Domínios personalizados para aliases, caixas de correio adicionais, a capacidade de enviar e-mails de aliases e mais."
+        "Domínios personalizados para aliases, caixas de correio adicionais, capacidade de enviar e-mails de aliases e mais"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a gateways privados para permitir o controle de acesso com ajuste fino"
@@ -7046,7 +7039,7 @@
         "Opção para visualizar caixas de entrada de usuários não privados da mesma forma que o próprio usuário, incluindo a mensagem completa e os detalhes de contato"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Ferramenta de gerenciamento da organização que permite que os administradores adicionem e removam usuários, gerenciem seu acesso aos serviços ${ BRAND_NAME } e executem outras tarefas."
+        "Ferramenta de gerenciamento de organização que permite aos administradores adicionar e remover usuários, gerenciar seu acesso aos serviços do ${ BRAND_NAME } e executar outras tarefas."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "A confiabilidade de nossa infraestrutura garante o acesso à sua conta sempre que necessário."
@@ -7653,7 +7646,7 @@
         "Painel administrativo para gerenciar usuários e assinaturas"
       ],
       "Team policies": [
-        "Políticas da equipe"
+        "Políticas de equipe"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7844,20 +7837,8 @@
       "Processing payment": [
         "Processando pagamento"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Renova por ${ price }, cancele a qualquer momento."
-      ],
       "Select billing country to pay": [
         "Selecione o país de cobrança para pagar"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months } meses. Você pode cancelar a qualquer momento."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months } meses. Você pode cancelar a qualquer momento."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ price } todo mês. Você pode cancelar a qualquer momento."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "A transação foi detectada com sucesso. Os créditos serão adicionados à sua conta assim que a transação for totalmente confirmada."
@@ -7894,7 +7875,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Ao confirmar este pagamento, você autoriza a ${ BRAND_NAME } e Stripe, nosso provedor de serviços de pagamento, a instruir seu banco a debitar sua conta, e seu banco a debitar sua conta de acordo. Você pode obter um reembolso no prazo de 8 semanas a partir da data do débito, de acordo com as condições do seu contrato com o banco."
+        "Ao confirmar este pagamento, você autoriza a ${ BRAND_NAME } e Stripe, nosso provedor de serviços de pagamento, a instruir seu banco a debitar sua conta de acordo. Você pode obter um reembolso no prazo de 8 semanas a partir da data do débito, de acordo com as condições do seu contrato com o banco."
       ],
       "Street address, postal code, and city": [
         "Endereço da rua, CEP e cidade"
@@ -8165,6 +8146,9 @@
       ],
       "Something went wrong": [
         "Algo deu errado"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "O endereço de e-mail **${ email }** já existe como usuário da ${ BRAND_NAME }. Digite o endereço de e-mail de um usuário do seu provedor de identidade."
       ]
     },
     "saml: Info": {
@@ -8173,6 +8157,9 @@
       ],
       "Details": [
         "Detalhes"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Digite o endereço de e-mail de um usuário fornecido pelo seu provedor de identidade para **${ domainName }**"
       ],
       "Test in progress...": [
         "Teste em andamento..."
@@ -8341,6 +8328,9 @@
       ],
       "to be created": [
         "a ser criado"
+      ],
+      "to be deleted": [
+        "a ser excluído"
       ]
     },
     "session_recovery:available:action": {
@@ -8845,6 +8835,14 @@
         "${ n } membro solicitou sua ajuda para fazer login.",
         "${ n } membro solicitaram sua ajuda para fazer login."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } usuário convertido para SSO",
+        "${ n } usuários convertidos para SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } usuário removido do SSO",
+        "${ n } usuários removidos do SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } usuário entrou em sua organização através do seu Provedor de Identidade. Revise a conta dele agora:",
         "${ n } usuários entraram em sua organização através do seu Provedor de Identidade. Revise as contas deles agora:"
@@ -8859,6 +8857,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Os usuários SSO (fornecidos pelo seu Provedor de Identidade) serão excluídos** e você terá que criá-los manualmente para adicioná-los novamente à sua organização."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Os usuários SSO serão removidos do seu provedor de identidade** e convertidos em usuários não-SSO."
       ],
       "Access denied": [
         "Acesso negado"
@@ -9015,8 +9016,14 @@
       "User details:": [
         "Detalhes do usuário"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Você terá que criar manualmente novos usuários para adicioná-los à sua organização."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Você será redirecionado para o seu provedor de SSO de terceiros."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Sua configuração de SSO será excluída."
       ]
     },
     "sso: auth device state": {
@@ -9310,7 +9317,7 @@
         "${ planName } vai além do básico para ajudar você a ter mais produtividade, organização e controle sobre sua caixa de entrada, identidade de e-mail e mais."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
-        "${ planName } ajuda você a garantir que cada um dos membros da sua família e os dados deles estejam protegidos sempre que estiverem on-line."
+        "${ planName } ajuda você a garantir que cada um dos membros da sua família - e os dados deles - estejam protegidos sempre que estiverem on-line."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } oferece ${ planMaxSpace } de armazenamento para os seus e-mails, anexos, eventos, senhas e arquivos. Você também tem direito a bônus anuais de armazenamento."
@@ -9429,7 +9436,7 @@
         "Como reagimos quando a ${ BRAND_NAME } foi bloqueada em uma campanha agressiva."
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
-        "Como apoiamos ativistas locais quando a privacidade e a liberdade de expressão foi ameaçada."
+        "Como apoiamos ativistas locais quando a privacidade e a liberdade de expressão foram ameaçadas."
       ],
       "If you exceed free plan limits, you won't be able to:": [
         "Se você exceder os limites do plano gratuito, não será possível:"
@@ -10076,11 +10083,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -10804,6 +10811,9 @@
       ],
       "Cancel request to access user data?": [
         "Cancelar solicitação para acessar dados do usuário?"
+      ],
+      "Confirm all": [
+        "Confirmar todos"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Não foi possível habilitar automaticamente o acesso de administrador para ${ n } usuário, porque as chaves de criptografia dele foram atualizadas nesse meio tempo:",

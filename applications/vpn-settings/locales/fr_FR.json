@@ -945,15 +945,8 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mois",
-        "les ${ n } premiers mois"
-      ],
-      "the first month": [
-        "le premier mois"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Le tarif réduit de ${ discountedPrice } est valable pendant ${ discountedMonths }. Ensuite, il sera automatiquement renouvelé au prix réduit de ${ nextPrice } pour ${ nextMonths }. Vous pouvez annuler quand vous le voulez."
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Le tarif réduit de ${ discountedPrice } est valable pendant les ${ cycle } premiers mois. Ensuite, il sera automatiquement renouvelé à ${ nextPrice } pour ${ renewalLength } mois. Vous pouvez annuler quand vous le voulez."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Le tarif exceptionnellement réduit de ${ discountedPrice } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ nextPrice } chaque mois. Vous pouvez annuler quand vous le voulez."
@@ -1142,12 +1135,9 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } mois",
-        "${ n } mois"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Renouvellement automatique au prix de ${ renewPrice }, pour ${ renewalLength }"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Renouvellement automatique au prix de ${ renewPrice } pour ${ renewLength } mois",
+        "Renouvellement automatique au prix de ${ renewPrice } pour ${ renewLength } mois"
       ]
     },
     "Billing cycle option": {
@@ -3881,11 +3871,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personnalisez le style des applications ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "serveurs dédiés"
-      ],
       "Dedicated servers": [
         "Serveurs dédiés"
+      ],
+      "dedicated servers": [
+        "serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -4888,11 +4878,11 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "username": [
-        "nom d'utilisateur"
-      ],
       "Username": [
         "Nom d'utilisateur"
+      ],
+      "username": [
+        "nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -7827,20 +7817,23 @@
       "Processing payment": [
         "Traitement du paiement"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Renouvellement au prix de ${ price } avec possibilité de résiliation à tout moment."
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Renouvellement au prix de ${ renewPrice } avec possibilité de résiliation à tout moment."
       ],
       "Select billing country to pay": [
         "Veuillez sélectionner l'état pour la facture à payer."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier ${ months }. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable les premiers ${ subscriptionLength } mois. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ renewPrice } pendant ${ subscriptionLengthCopy }. Vous pouvez annuler à tout moment."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant le premier ${ months }. Puis, il sera renouvelé automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les premiers ${ subscriptionLength } mois. Puis, il sera renouvelé automatiquement à ${ renewPrice } pendant ${ subscriptionLengthCopy } mois. Vous pouvez annuler à tout moment."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ price } par mois. Vous pouvez résilier l'abonnement à tout moment."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ renewPrice } pendant ${ subscriptionLength } mois. Vous pouvez annuler à tout moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ renewPrice } chaque mois. Vous pouvez annuler à tout moment."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "La transaction a été détectée. Les crédits seront ajoutés à votre compte une fois la transaction entièrement confirmée."
@@ -8211,7 +8204,7 @@
         "**Condition préalable :** l'authentification SAML doit être configurée pour activer l'allocation SCIM."
       ],
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Condition préalable :** Pour activer l'allocation SCIM, vous devez vérifier la propriété du domaine **${ domainName }**. Cette vérification peut prendre jusqu'à une heure."
+        "**Condition préalable :** pour activer l'allocation SCIM, vous devez vérifier la propriété du domaine **${ domainName }**. Cette vérification peut prendre jusqu'à une heure."
       ],
       "Enter the token into your identity provider": [
         "Saisissez le jeton dans votre fournisseur d'identité."
@@ -8330,6 +8323,9 @@
       ],
       "to be created": [
         "à créer"
+      ],
+      "to be deleted": [
+        "à supprimer"
       ]
     },
     "session_recovery:available:action": {
@@ -10082,10 +10078,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
       "Change login password": [

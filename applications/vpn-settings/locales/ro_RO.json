@@ -950,17 +950,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } lună",
-        "primele ${ n } luni",
-        "primele ${ n } de luni"
-      ],
-      "the first month": [
-        "prima lună"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Prețul special redus de ${ discountedPrice } este valabil pentru ${ discountedMonths }. Apoi va fi reînnoit automat la prețul redus de ${ nextPrice } pentru ${ nextMonths }. Puteți anula oricând."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ discountedPrice } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ nextPrice } în fiecare lună. Puteți anula oricând."
       ]
@@ -1147,16 +1136,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } lună",
-        "${ n } luni",
-        "${ n } de luni"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewalLength }."
       ]
     },
     "Billing cycle option": {
@@ -3922,11 +3901,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizați aspectul aplicației ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -4938,11 +4917,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "username": [
-        "utilizator"
-      ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -6167,11 +6146,17 @@
       "Change password": [
         "Schimbare parolă"
       ],
+      "Convert to SSO": [
+        "Convertire la autentificare unică (SSO)"
+      ],
       "Delete": [
         "Ștergere"
       ],
       "Delete and revoke invite": [
         "Anulare și ștergere invitație"
+      ],
+      "Detach from SSO": [
+        "Detașare de la autentificare unică (SSO)"
       ],
       "Edit": [
         "Editare"
@@ -7938,20 +7923,8 @@
       "Processing payment": [
         "Se procesează plata"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Reînnoiți cu ${ price }, anulați oricând."
-      ],
       "Select billing country to pay": [
         "Selectați țara de facturare pentru a plăti"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ price } timp de ${ months } luni. Puteți anula oricând."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Apoi va fi reînnoit automat cu ${ price } timp de ${ months } luni. Puteți anula oricând."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ price } în fiecare lună. Puteți anula oricând."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Tranzacția a fost detectată cu succes. Creditele vor fi adăugate în contul personal după ce tranzacția este pe deplin confirmată."
@@ -8262,6 +8235,9 @@
       ],
       "Something went wrong": [
         "Ceva nu a mers bine."
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Adresa de e-mail **${ email }** există deja ca utilizator ${ BRAND_NAME }. Introduceți adresa de e-mail a unui utilizator de la furnizorul de identitate."
       ]
     },
     "saml: Info": {
@@ -8270,6 +8246,9 @@
       ],
       "Details": [
         "Detalii"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Introduceți adresa de e-mail a unui utilizator oferită de furnizorul de identitate pentru **${ domainName }**."
       ],
       "Test in progress...": [
         "Testare în desfășurare..."
@@ -8438,6 +8417,9 @@
       ],
       "to be created": [
         "va fi creat"
+      ],
+      "to be deleted": [
+        "va fi șters"
       ]
     },
     "session_recovery:available:action": {
@@ -8962,6 +8944,16 @@
         "${ n } membri vă solicită ajutorul pentru a se conecta.",
         "${ n } de membri vă solicită ajutorul pentru a se conecta."
       ],
+      "${ n } user converted to SSO": [
+        "Utilizatori convertiți la autentificarea unică (SSO): ${ n }",
+        "Utilizatori convertiți la autentificarea unică (SSO): ${ n }",
+        "Utilizatori convertiți la autentificarea unică (SSO): ${ n }"
+      ],
+      "${ n } user detached from SSO": [
+        "Utilizatori detașați de la autentificarea unică (SSO): ${ n }",
+        "Utilizatori detașați de la autentificarea unică (SSO): ${ n }",
+        "Utilizatori detașați de la autentificarea unică (SSO): ${ n }"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "S-a alăturat organizației ${ n } utilizator prin furnizorul de identitate. Revizuiți-i contul acum:",
         "S-au alăturat organizației ${ n } utilizatori prin furnizorul de identitate. Revizuiți-le contul acum:",
@@ -8979,6 +8971,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Utilizatorii cu autentificare unică (SSO) (furnizați de către furnizorul de identitate) vor fi șterși** și va trebui să-i creați manual pentru a-i adăuga înapoi la organizație."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Utilizatorii autentificăii unice (SSO) vor fi detașați de furnizorul de identitate** și convertiți în utilizatori cu autentificare clasică."
       ],
       "Access denied": [
         "Acces respins"
@@ -9137,8 +9132,14 @@
       "User details:": [
         "Detalii utilizator:"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Va trebui să creați utilizatorii manual pentru a-i adăuga în organizație."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
       ]
     },
     "sso: auth device state": {
@@ -10220,10 +10221,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -10952,6 +10953,9 @@
       ],
       "Cancel request to access user data?": [
         "Anulați solicitarea de acces la datele utilizatorului?"
+      ],
+      "Confirm all": [
+        "Confirmare toate"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Nu s-a putut activa automat accesul de administrator pentru ${ n } utilizator, deoarece cheile sale de criptare au fost actualizate între timp:",
