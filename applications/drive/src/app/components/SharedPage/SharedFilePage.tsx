@@ -10,6 +10,7 @@ import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
 import HeaderSecureLabel from './Layout/HeaderSecureLabel';
 import HeaderSize from './Layout/HeaderSize';
+import ReportAbuseButton from './Layout/ReportAbuseButton';
 import SharedPageFooter from './Layout/SharedPageFooter';
 import SharedPageHeader from './Layout/SharedPageHeader';
 import SharedPageLayout from './Layout/SharedPageLayout';
@@ -90,6 +91,7 @@ export default function SharedFilePage({
                     isPublicDocsAvailable={isDocsPublicSharingEnabled}
                     onOpenInDocs={link && isDocument && openInDocs ? () => openInDocs(link.linkId) : undefined}
                 />
+                {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={link} />}
             </SharedPageLayout>
             <SharedPageTransferManager rootItem={link} />
         </FileBrowserStateProvider>
