@@ -31,6 +31,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { usePublicTheme } from '../containers/PublicThemeProvider';
+import challengeIconsSvg from '../signup/challenge-icons.source.svg';
+import { getThemeData } from '../signup/challenge-theme';
 import type { AccountData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
 import { getAccountDetailsFromEmail } from './accountDetails';
@@ -134,6 +136,14 @@ const getMeasurement = (diff: Partial<AccountDetailsInputState>) => {
         .filter(isTruthy);
 };
 
+const resetValueForChallenge = (setValue: (value: string) => void, value: string) => {
+    // If sanitisation happens, force re-render the input with a new value so that the values get removed in the iframe
+    flushSync(() => {
+        setValue(value + ' ');
+    });
+    setValue(value);
+};
+
 const joinUsernameDomain = (username: string, domain: string) => {
     return [username, '@', domain].join('');
 };
@@ -200,9 +210,6 @@ interface Props {
     onSubmit?: () => void;
     api: Api;
     model: SignupModelV2;
-    onChallengeLoaded: () => void;
-    onChallengeError: () => void;
-    loading: boolean;
     measure: BaseMeasure<InteractCreateEvents | UserCheckoutEvents | AvailableExternalEvents>;
     passwordFields: boolean;
     footer: (data: { emailAlreadyUsed: boolean; details: AccountDetails; email: string }) => ReactNode;
@@ -215,7 +222,6 @@ interface Props {
 const AccountStepDetails = ({
     signupTypes,
     domains,
-    loading,
     accountStepDetailsRef,
     disableChange,
     emailDisabled,
@@ -224,8 +230,6 @@ const AccountStepDetails = ({
     api,
     model,
     onSubmit,
-    onChallengeLoaded,
-    onChallengeError,
     measure,
     passwordFields,
     defaultEmail,
@@ -235,10 +239,11 @@ const AccountStepDetails = ({
     const [signupType, setSignupType] = useState(signupTypes[0]);
     const anchorRef = useRef<HTMLButtonElement | null>(null);
     const challengeRefEmail = useRef<ChallengeRef>();
+    const [loadingChallenge, setLoadingChallenge] = useState(true);
     const formInputRef = useRef<HTMLFormElement>(null);
     const inputValuesRef = useRef({ email: false, username: false });
     const domainOptions = domains.map((DomainName) => ({ text: DomainName, value: DomainName }));
-    const [maybeDomain, setDomain] = useState(domains?.[0] || ''); // This is set while domains are loading
+    const [maybeDomain, setDomain] = useState('');
     const theme = usePublicTheme();
 
     const domain = maybeDomain || domains?.[0];
@@ -484,10 +489,7 @@ const AccountStepDetails = ({
 
         // If sanitisation happens, force re-render the input with a new value so that the values get removed in the iframe
         if (sanitizedValue !== value) {
-            flushSync(() => {
-                setInputsDiff({ username: `${value} ` });
-            });
-            setInputsDiff({ username: sanitizedValue });
+            resetValueForChallenge((username) => setInputsDiff({ username }), sanitizedValue);
         }
 
         handleUsernameError(sanitizedValue.trim(), domain, setUsernameAsyncValidationState);
@@ -609,15 +611,11 @@ const AccountStepDetails = ({
         emailAsyncValidationState.error &&
         getApiError(emailAsyncValidationState.error)?.code === API_CUSTOM_ERROR_CODES.ALREADY_USED;
 
+    const disableChangeForChallenge = disableChange || loadingChallenge;
+
     return (
         <>
-            {loading && (
-                <div className="text-center absolute inset-center">
-                    <CircleLoader size="medium" />
-                </div>
-            )}
             <form
-                className={loading ? 'visibility-hidden' : undefined}
                 ref={formInputRef}
                 name="account-form"
                 onSubmit={async (event) => {
@@ -638,6 +636,8 @@ const AccountStepDetails = ({
                 </div>
                 <div className={`${inputsWrapper} mb-4`}>
                     <Challenge
+                        getThemeData={getThemeData}
+                        getIconsData={() => challengeIconsSvg}
                         bodyClassName="color-norm bg-transparent px-2"
                         iframeClassName="challenge-width-increase"
                         challengeRef={challengeRefEmail}
@@ -646,11 +646,10 @@ const AccountStepDetails = ({
                         title={c('Signup label').t`Email address`}
                         name="email"
                         onSuccess={() => {
-                            onChallengeLoaded();
+                            setLoadingChallenge(false);
                         }}
                         onError={() => {
-                            onChallengeLoaded();
-                            onChallengeError();
+                            setLoadingChallenge(false);
                         }}
                     >
                         <div className={clsx(inputsWrapper, theme.dark && 'ui-prominent', 'bg-transparent')}>
@@ -682,9 +681,7 @@ const AccountStepDetails = ({
                                             return <CircleLoader size="small" />;
                                         }
                                     })()}
-                                    disableChange={disableChange}
                                     disabled={emailDisabled}
-                                    readOnly={emailReadOnly}
                                     dense={dense ? !emailError : undefined}
                                     rootClassName={dense ? (!emailError ? 'pb-2' : undefined) : undefined}
                                     value={details.email}
@@ -701,6 +698,14 @@ const AccountStepDetails = ({
                                             setInputsStateDiff({ email: { focus: true } });
                                         }
                                     }}
+                                    {...(() => {
+                                        if (emailReadOnly) {
+                                            return { readOnly: emailReadOnly };
+                                        }
+                                        if (disableChangeForChallenge) {
+                                            return { readOnly: true, disableReadOnlyField: true };
+                                        }
+                                    })()}
                                 />
                             )}
 
@@ -787,7 +792,6 @@ const AccountStepDetails = ({
                                             </>
                                         );
                                     })()}
-                                    disableChange={disableChange}
                                     dense={dense ? !usernameError : undefined}
                                     rootClassName={dense ? (!usernameError ? 'pb-2' : undefined) : undefined}
                                     value={details.username}
@@ -806,6 +810,8 @@ const AccountStepDetails = ({
                                             setInputsStateDiff({ username: { focus: true } });
                                         }
                                     }}
+                                    readOnly={disableChangeForChallenge}
+                                    disableReadOnlyField={disableChangeForChallenge}
                                 />
                             )}
                         </div>
@@ -814,7 +820,7 @@ const AccountStepDetails = ({
                     {emailDescription && <div className="mb-4">{emailDescription}</div>}
 
                     {hasSwitchSignupType ? (
-                        <div className={clsx('text-center', loading && 'hidden')}>
+                        <div className="text-center">
                             <InlineLinkButton
                                 id="existing-email-button"
                                 onClick={() => {

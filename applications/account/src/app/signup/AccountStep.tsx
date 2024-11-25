@@ -9,7 +9,6 @@ import { Button, InlineLinkButton } from '@proton/atoms';
 import type { ChallengeRef, ChallengeResult } from '@proton/components';
 import {
     Challenge,
-    ChallengeError,
     DropdownSizeUnit,
     Info,
     InputFieldTwo,
@@ -35,14 +34,14 @@ import {
     usernameLengthValidator,
     usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import { getAccountDetailsFromEmail } from '../single-signup-v2/accountDetails';
-import Loader from './Loader';
+import challengeIconsSvg from './challenge-icons.source.svg';
+import { getThemeData } from './challenge-theme';
 import { getSignupApplication } from './helper';
 import { SignupType } from './interfaces';
 import { getTerms } from './terms';
@@ -71,9 +70,17 @@ export interface AccountStepProps {
         domain: string;
         payload: ChallengeResult;
     }) => Promise<void>;
-    loading?: boolean;
+    loadingDependencies?: boolean;
     loginUrl: string;
 }
+
+const resetValueForChallenge = (setValue: (value: string) => void, value: string) => {
+    // If sanitisation happens, force re-render the input with a new value so that the values get removed in the iframe
+    flushSync(() => {
+        setValue(value + ' ');
+    });
+    setValue(value);
+};
 
 const AccountStep = ({
     onBack,
@@ -87,7 +94,7 @@ const AccountStep = ({
     onSubmit,
     hasChallenge = true,
     domains,
-    loading: loadingDependencies,
+    loadingDependencies,
     loginUrl,
 }: AccountStepProps) => {
     const { APP_NAME } = useConfig();
@@ -95,13 +102,12 @@ const AccountStep = ({
     const anchorRef = useRef<HTMLButtonElement | null>(null);
     const [loading, withLoading] = useLoading();
     const [, setRerender] = useState<any>();
-    const [challengeLoading, setChallengeLoading] = useState(hasChallenge);
-    const [challengeError, setChallengeError] = useState(false);
+    const [loadingChallenge, setLoadingChallenge] = useState(hasChallenge);
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [maybeDomain, setDomain] = useState(domains?.[0] || ''); // This is set while domains are loading
+    const [maybeDomain, setDomain] = useState('');
     const [passwordInputFocused, setPasswordInputFocused] = useState(false);
 
     const trimmedEmail = email.trim();
@@ -109,7 +115,8 @@ const AccountStep = ({
 
     const domainOptions = domains.map((DomainName) => ({ text: DomainName, value: DomainName }));
 
-    const isLoadingView = challengeLoading || loadingDependencies;
+    const isLoadingView = loadingDependencies;
+    const disableChange = loading || loadingChallenge;
 
     const { validator, onFormSubmit } = useFormErrors();
 
@@ -127,8 +134,10 @@ const AccountStep = ({
         });
     };
 
+    const disableInitialFormSubmit = loadingDependencies || loadingChallenge;
+
     const handleSubmit = () => {
-        if (loading || !onFormSubmit()) {
+        if (loading || !onFormSubmit() || disableInitialFormSubmit) {
             return;
         }
         withLoading(run()).catch(noop);
@@ -152,16 +161,6 @@ const AccountStep = ({
             setEmail(defaultEmail);
         }
     }, [defaultEmail, domains]);
-
-    useEffect(() => {
-        if (isLoadingView) {
-            return;
-        }
-        // Special focus management for challenge
-        setTimeout(() => {
-            challengeRefLogin.current?.focus('#email');
-        }, 0);
-    }, [signupType, isLoadingView]);
 
     /**
      * Signup page load count metric
@@ -195,8 +194,6 @@ const AccountStep = ({
                       ]
                     : [requiredValidator(trimmedEmail), emailValidator(trimmedEmail)]
             )}
-            disableChange={loading}
-            autoFocus
             inputClassName={hasChallenge ? 'email-input-field' : undefined}
             suffix={(() => {
                 if (signupType === SignupType.Email) {
@@ -236,12 +233,8 @@ const AccountStep = ({
                     return (value: string) => {
                         const sanitizedValue = value.replaceAll('@', '');
                         setUsername(sanitizedValue);
-                        // If sanitisation happens, force re-render the input with a new value so that the values get removed in the iframe
                         if (sanitizedValue !== value) {
-                            flushSync(() => {
-                                setUsername(sanitizedValue + ' ');
-                            });
-                            setUsername(sanitizedValue);
+                            resetValueForChallenge(setUsername, sanitizedValue);
                         }
                     };
                 }
@@ -253,12 +246,10 @@ const AccountStep = ({
                     handleSubmit();
                 }
             }}
+            readOnly={disableChange}
+            disableReadOnlyField={disableChange}
         />
     );
-
-    if (challengeError) {
-        return <ChallengeError />;
-    }
 
     const signIn = (
         <Link key="signin" className="link link-focus text-nowrap" to={loginUrl}>
@@ -268,30 +259,10 @@ const AccountStep = ({
 
     return (
         <Main>
-            <Header
-                title={title}
-                subTitle={
-                    isLoadingView ? (
-                        /**
-                         * Take up required space whilst loading
-                         * and prevent a layout shift in most cases.
-                         */
-                        <>&#x200b;</>
-                    ) : (
-                        subTitle
-                    )
-                }
-                onBack={onBack}
-            />
+            <Header title={title} subTitle={subTitle} onBack={onBack} />
             <Content>
-                {isLoadingView && (
-                    <div className="text-center absolute inset-center">
-                        <Loader />
-                    </div>
-                )}
                 <form
                     name="accountForm"
-                    className={isLoadingView ? 'visibility-hidden' : undefined}
                     onSubmit={(e) => {
                         e.preventDefault();
                         return handleSubmit();
@@ -327,18 +298,20 @@ const AccountStep = ({
                     />
                     {hasChallenge ? (
                         <Challenge
+                            getThemeData={getThemeData}
+                            getIconsData={() => challengeIconsSvg}
                             bodyClassName="color-norm bg-norm px-2"
                             iframeClassName="challenge-width-increase"
                             challengeRef={challengeRefLogin}
                             type={0}
-                            title={emailLabel}
+                            title={c('Signup label').t`Email address`}
                             name="username"
                             onSuccess={() => {
-                                setChallengeLoading(false);
+                                setLoadingChallenge(false);
+                                challengeRefLogin.current?.focus('#email');
                             }}
                             onError={() => {
-                                setChallengeLoading(false);
-                                setChallengeError(true);
+                                setLoadingChallenge(false);
                             }}
                         >
                             {innerChallenge}
@@ -347,7 +320,7 @@ const AccountStep = ({
                         innerChallenge
                     )}
                     {signupTypes.includes(SignupType.Email) && signupTypes.length > 1 ? (
-                        <div className={clsx('text-center mb-4', isLoadingView && 'hidden')}>
+                        <div className="text-center mb-4">
                             <InlineLinkButton
                                 id="existing-email-button"
                                 onClick={() => {
@@ -389,7 +362,7 @@ const AccountStep = ({
                         assistiveText={passwordInputFocused && getMinPasswordLengthMessage()}
                         error={validator([requiredValidator(password), passwordLengthValidator(password)])}
                         bigger
-                        disableChange={loading}
+                        disableChange={disableChange}
                         autoComplete="new-password"
                         value={password}
                         onValue={setPassword}
@@ -408,13 +381,32 @@ const AccountStep = ({
                             confirmPasswordValidator(confirmPassword, password),
                         ])}
                         bigger
-                        disableChange={loading}
+                        disableChange={disableChange}
                         autoComplete="new-password"
                         value={confirmPassword}
                         onValue={setConfirmPassword}
                         rootClassName="mt-2"
                     />
-                    <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
+                    <Button
+                        {...(() => {
+                            if (loading) {
+                                return { loading };
+                            }
+                            if (disableInitialFormSubmit) {
+                                return {
+                                    disabled: true,
+                                    // This prop is used to make disabled state not layout shift too much
+                                    // It's kind of a hack
+                                    'aria-busy': true,
+                                };
+                            }
+                        })()}
+                        size="large"
+                        color="norm"
+                        type="submit"
+                        fullWidth
+                        className="mt-6"
+                    >
                         {c('Action').t`Create account`}
                     </Button>
 
