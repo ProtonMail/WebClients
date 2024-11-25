@@ -16,12 +16,12 @@ export default function EmailOptInModal({ onClose, open, ...modalProps }: Props 
   const [isLoading, withLoading] = useLoading()
   const [isOpen, setIsOpen] = useState(open)
 
-  const [enableNotifications, setEnableNotifications] = useState(emailNotificationsEnabled ?? false)
-  const [includeDocName, setIncludeDocName] = useState(emailTitleEnabled ?? false)
+  const [notificationsSwitchEnabled, setNotificationsSwitchEnabled] = useState(emailNotificationsEnabled ?? true)
+  const [docNameSwitchEnabled, setDocNameSwitchEnabled] = useState(emailTitleEnabled ?? true)
 
   useEffect(() => {
-    setEnableNotifications(emailNotificationsEnabled ?? false)
-    setIncludeDocName(emailTitleEnabled ?? false)
+    setNotificationsSwitchEnabled(emailNotificationsEnabled ?? true)
+    setDocNameSwitchEnabled(emailTitleEnabled ?? true)
   }, [emailNotificationsEnabled, emailTitleEnabled])
 
   const close = () => {
@@ -35,8 +35,8 @@ export default function EmailOptInModal({ onClose, open, ...modalProps }: Props 
   const handleSavePreferences = async () => {
     try {
       await updateNotificationSettings({
-        notificationsEnabled: enableNotifications,
-        includeTitleEnabled: includeDocName,
+        notificationsEnabled: notificationsSwitchEnabled,
+        includeTitleEnabled: docNameSwitchEnabled,
       })
       close()
     } catch (error) {
@@ -69,8 +69,8 @@ export default function EmailOptInModal({ onClose, open, ...modalProps }: Props 
               <Toggle
                 id="enable-notifications"
                 data-testid="enable-notifications"
-                checked={enableNotifications}
-                onChange={({ target: { checked } }) => setEnableNotifications(checked)}
+                checked={notificationsSwitchEnabled}
+                onChange={({ target: { checked } }) => setNotificationsSwitchEnabled(checked)}
               />
             </div>
             <div className="flex items-center justify-between">
@@ -78,8 +78,8 @@ export default function EmailOptInModal({ onClose, open, ...modalProps }: Props 
               <Toggle
                 id="include-doc-name"
                 data-testid="include-doc-name"
-                checked={includeDocName}
-                onChange={({ target: { checked } }) => setIncludeDocName(checked)}
+                checked={docNameSwitchEnabled}
+                onChange={({ target: { checked } }) => setDocNameSwitchEnabled(checked)}
               />
             </div>
           </div>
