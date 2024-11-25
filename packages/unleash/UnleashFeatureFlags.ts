@@ -57,6 +57,7 @@ enum AccountFlag {
 enum PaymentsFlag {
     AllowDowncycling = 'AllowDowncycling',
     SepaPayments = 'SepaPayments',
+    IpAddonDowngrade = 'IpAddonDowngrade',
 }
 
 enum CalendarFeatureFlag {
