@@ -955,18 +955,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } miesiąc",
-        "${ n } miesiące",
-        "${ n } miesięcy",
-        "pierwszych ${ n } miesięcy"
-      ],
-      "the first month": [
-        "pierwszy miesiąc"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Specjalnie obniżona cena wynosząca ${ discountedPrice } obowiązuje przez ${ discountedMonths }. Następnie będzie miało miejsce automatyczne odnowienie i cena wyniesie ${ nextPrice } przez ${ nextMonths }. Można anulować w dowolnym momencie."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Specjalnie obniżona cena wynosząca ${ discountedPrice } obowiązuje przez pierwszy miesiąc. Następnie będzie miało miejsce automatyczne odnowienie i cena wyniesie ${ nextPrice } w każdym miesiącu. Można anulować w dowolnym momencie."
       ]
@@ -1158,14 +1146,11 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } miesiąc",
-        "${ n } miesiące",
-        "${ n } miesięcy",
-        "${ n } miesiąca"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatyczne odnowienie za ${ renewalLength } w kwocie ${ renewPrice }"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Automatyczne odnowienie co ${ renewLength } miesiąc w kwocie ${ renewPrice }",
+        "Automatyczne odnowienie co ${ renewLength } miesiące w kwocie ${ renewPrice }",
+        "Automatyczne odnowienie co ${ renewLength } miesięcy w kwocie ${ renewPrice }",
+        "Automatyczne odnowienie co ${ renewLength } miesięcy w kwocie ${ renewPrice }"
       ]
     },
     "Billing cycle option": {
@@ -3963,11 +3948,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
@@ -4740,6 +4725,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
       ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Subskrypcja automatycznie odnawiana w okresach ${ cycle }-miesięcznych."
+      ],
       "Subscription auto-renews every month.": [
         "Subskrypcja odnowi się automatycznie co miesięc."
       ],
@@ -4983,11 +4971,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "username": [
-        "nazwa użytkownika"
-      ],
       "Username": [
         "Nazwa użytkownika"
+      ],
+      "username": [
+        "nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -6222,11 +6210,17 @@
       "Change password": [
         "Zmień hasło"
       ],
+      "Convert to SSO": [
+        "Przekonwertuj do logowania SSO"
+      ],
       "Delete": [
         "Usuń"
       ],
       "Delete and revoke invite": [
         "Usuń i unieważnij zaproszenie"
+      ],
+      "Detach from SSO": [
+        "Odłącz z logowania SSO"
       ],
       "Edit": [
         "Edytuj"
@@ -8005,17 +7999,8 @@
       "Processing payment": [
         "Przetwarzanie płatności"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Odnowienie za ${ price }. Anuluj w dowolnym momencie."
-      ],
       "Select billing country to pay": [
         "Wybierz kraj"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ price } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakcja została wykryta. Środki zostaną dodane do konta po pełnym potwierdzeniu transakcji."
@@ -8329,6 +8314,9 @@
       ],
       "Something went wrong": [
         "Coś poszło nie tak"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Adres e-mail **${ email }** już istnieje jako użytkownik ${ BRAND_NAME }. Wpisz adres e-mail użytkownika od dostawcy tożsamości."
       ]
     },
     "saml: Info": {
@@ -8337,6 +8325,9 @@
       ],
       "Details": [
         "Szczegóły"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Wpisz adres e-mail użytkownika ustawiony przez dostawcę tożsamości dla domeny **${ domainName }**"
       ],
       "Test in progress...": [
         "Testowanie jest w toku..."
@@ -8505,6 +8496,9 @@
       ],
       "to be created": [
         "do utworzenia"
+      ],
+      "to be deleted": [
+        "do usunięcia"
       ]
     },
     "session_recovery:available:action": {
@@ -9049,6 +9043,18 @@
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się.",
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się."
       ],
+      "${ n } user converted to SSO": [
+        "Przekonwertowano ${ n } użytkownika do logowania SSO",
+        "Przekonwertowano ${ n } użytkowników do logowania SSO",
+        "Przekonwertowano ${ n } użytkowników do logowania SSO",
+        "Przekonwertowano ${ n } użytkowników do logowania SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "Odłączono ${ n } użytkownika z logowania SSO",
+        "Odłączono ${ n } użytkowników z logowania SSO",
+        "Odłączono ${ n } użytkowników z logowania SSO",
+        "Odłączono ${ n } użytkowników z logowania SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } użytkownik dołączył do organizacji przy pomocy dostawcy tożsamości. Sprawdź konto:",
         "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Sprawdź konta:",
@@ -9069,6 +9075,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Użytkownicy SSO (od dostawcy tożsamości) zostaną usunięci** i konieczne będzie ich ręcznie utworzenie w celu dodania ich z powrotem do organizacji."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Użytkownicy SSO zostaną odłączeni od dostawcy tożsamości** i przekonwertowani na użytkowników bez logowania SSO."
       ],
       "Access denied": [
         "Odmowa dostępu"
@@ -9229,8 +9238,14 @@
       "User details:": [
         "Szczegóły użytkownika:"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Konieczne będzie ręcznie utworzenie nowych użytkowników i dodanie ich do organizacji."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Nastąpi przekierowanie do zewnętrznego dostawcy SSO."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Konfiguracja SSO zostanie usunięta."
       ]
     },
     "sso: auth device state": {
@@ -10334,10 +10349,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -11070,6 +11085,9 @@
       ],
       "Cancel request to access user data?": [
         "Anulować żądanie dostępu do danych użytkownika?"
+      ],
+      "Confirm all": [
+        "Potwierdź wszystko"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkownika, ponieważ jego klucze szyfrowania zostały w międzyczasie zaktualizowane:",

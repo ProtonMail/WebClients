@@ -920,16 +920,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } måned",
-        "de første ${ n } måneder"
-      ],
-      "the first month": [
-        "den første måned"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Den ekstraordinære rabatpris på ${ discountedPrice } gælder i ${ discountedMonths }. Derefter vil den automatisk blive fornyet til rabatprisen på ${ nextPrice } i ${ nextMonths }. Du kan til enhver tid annullere."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Den særligt nedsatte pris på ${ discountedPrice } gælder den første måned. Derefter vil den automatisk blive fornyet for ${ nextPrice } hver måned. Du kan til enhver tid opsige."
       ]
@@ -1097,15 +1087,6 @@
         "Lagerplads er delt mellem alle ${ BRAND_NAME }-tjenester."
       ]
     },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } måned",
-        "${ n } måneder"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Fornyes automatisk til ${ renewPrice } i ${ renewalLength }."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 måned"
@@ -1223,6 +1204,9 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
+      ],
+      "Total": [
+        "I alt"
       ],
       "Total for ${ n } month": [
         "I alt for ${ n } måned",
@@ -3718,11 +3702,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
@@ -7355,15 +7339,6 @@
       "Select billing country to pay": [
         "Vælg faktureringsland for at betale"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ months }. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ price } i ${ months } måneder. Du kan annullere når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ months }. Derefter fornys den automatisk til ${ price } i ${ months }. Du kan annullere når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første måned. Derefter vil den automatisk blive fornyet til ${ price } hver måned. Du kan annullere når som helst."
-      ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transaktionen er registreret korrekt. Beløbet bliver overført til din konto, når transaktionen er blevet bekræftet."
       ],
@@ -9231,11 +9206,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
