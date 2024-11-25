@@ -26,6 +26,7 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import type { Audience, Cycle, Plan, Subscription } from '@proton/shared/lib/interfaces';
 import { Renew } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import ScribeAddon from '../ScribeAddon';
@@ -72,6 +73,8 @@ const AddonCustomizer = ({
     audience,
     mode,
 }: AddonCustomizerProps) => {
+    const ipAddonDowngrade = useFlag('IpAddonDowngrade');
+
     const addon = plansMap[addonName];
     const [showScribeBanner, setShowScribeBanner] = useState(mode === 'signup');
 
@@ -124,13 +127,8 @@ const AddonCustomizer = ({
         // The system can't process /check if user wants to schedule another modification.
         // So we need to prevent user from doing that.
         const isForbiddenScheduledModification = latestSubscription?.Renew === Renew.Disabled;
-        if (!isForbiddenScheduledModification) {
-            return value;
-        }
-
         const minAddonNumberIfModificationFordidden = subscriptionPlan.getTotalByMaxKey(addonMaxKey);
-
-        if (minAddonNumberIfModificationFordidden > value) {
+        if (isForbiddenScheduledModification && minAddonNumberIfModificationFordidden > value) {
             decreaseBlockedReasons.push('forbidden-modification');
             return minAddonNumberIfModificationFordidden;
         }
@@ -139,7 +137,7 @@ const AddonCustomizer = ({
     };
 
     const displayMin = (() => {
-        // Minimum is 0 for the AI assistant addon .
+        // Minimum is 0 for the AI assistant addon.
         // If seats are already assigned, they will be removed at the end of the
         // billing cycle.
         // Crucial for multi-account plans that do not have multi users enabled.
@@ -151,6 +149,8 @@ const AddonCustomizer = ({
         // Existing users of VPN Business can't downgrade the number of IP addons, it must be done by contacting
         // customer support.
         if (
+            // This feature flag enables self-service downgrading of IP addons
+            !ipAddonDowngrade &&
             isIpAddon(addonNameKey) &&
             (hasVpnBusiness(latestSubscription) ||
                 hasBundlePro(latestSubscription) ||
