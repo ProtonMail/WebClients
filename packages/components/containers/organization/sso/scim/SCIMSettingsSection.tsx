@@ -34,13 +34,12 @@ import SetupSCIMModal from './SetupSCIMModal';
 
 interface Props {
     domain?: Domain;
-    onConfigureSaml: () => void;
     onShowVerifyDomain: () => void;
     hasSsoConfig: boolean;
     scimInfo: NonNullable<SamlState['sso']['value']>['scimInfo'];
 }
 
-const PreReq = ({ data, action }: { data: ReactNode; action: ReactNode }) => {
+const PreReq = ({ data, action }: { data: ReactNode; action?: ReactNode }) => {
     return (
         <div className="rounded border bg-weak p-4 flex justify-space-between gap-2 items-center lg:flex-nowrap">
             <div className="flex gap-2 items-start flex-nowrap">
@@ -57,7 +56,7 @@ const getDescriptionString = (appName: string) => {
         .t`Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${appName} organization.`;
 };
 
-const SCIMSettingsSection = ({ domain, onConfigureSaml, onShowVerifyDomain, hasSsoConfig, scimInfo }: Props) => {
+const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInfo }: Props) => {
     const api = useApi();
     const dispatch = baseUseDispatch<ThunkDispatch<SamlState, ProtonThunkArguments, Action>>();
     const { createNotification } = useNotifications();
@@ -87,17 +86,6 @@ const SCIMSettingsSection = ({ domain, onConfigureSaml, onShowVerifyDomain, hasS
                                         c('scim: Info')
                                             .t`**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.`
                                     )}
-                                    action={
-                                        <Button
-                                            color="weak"
-                                            shape="solid"
-                                            size="small"
-                                            className="shrink-0"
-                                            onClick={onConfigureSaml}
-                                        >
-                                            {c('Action').t`Configure SAML`}
-                                        </Button>
-                                    }
                                 />
                             );
                         }

@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
@@ -5,10 +7,12 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
@@ -24,9 +28,13 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { planSupportsSSO } from '@proton/shared/lib/helpers/subscription';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
+import { EdugainAffiliations, IDP_TYPE } from '@proton/shared/lib/interfaces';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
+import useFlag from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
 import SubSettingsSection from '../../layout/SubSettingsSection';
+import ConfigureSamlEdugainModal from './ConfigureSamlEdugainModal';
 import ConfigureSamlModal from './ConfigureSamlModal';
 import DomainVerificationState from './DomainVerificationState';
 import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
@@ -36,25 +44,45 @@ import SSOInfoForm from './SSOInfoForm';
 import SetupSSODomainModal from './SetupSSODomainModal';
 import TXTRecordModal from './TXTRecordModal';
 import SCIMSettingsSection from './scim/SCIMSettingsSection';
+import SelectIDPSection from './scim/SelectIDPSection';
 
 const getSsoConfigForDomain = (ssoConfigs: SSO[], domain: Domain) => {
     return ssoConfigs.find(({ DomainID }) => DomainID === domain.ID);
+};
+
+// Affiliations won't be translated for now
+export const EdugainAffiliationLabels: Record<EdugainAffiliations, string> = {
+    [EdugainAffiliations.STUDENT]: 'Student',
+    [EdugainAffiliations.FACULTY]: 'Faculty',
+    [EdugainAffiliations.STAFF]: 'Staff',
+    [EdugainAffiliations.ALUM]: 'Alum',
+    [EdugainAffiliations.AFFILIATE]: 'Affiliate',
+    [EdugainAffiliations.EMPLOYEE]: 'Employee',
+    [EdugainAffiliations.LIBRARY_WALK_IN]: 'Library Walk-In',
 };
 
 const ConfigureSamlContent = ({
     domain,
     ssoConfigs,
     configureSamlModalProps,
+    configureSamlEdugainModalProps,
     setConfigureSamlModalOpen,
+    setConfigureSamlEdugainModalOpen,
     renderConfigureSamlModal,
+    renderConfigureSamlEdugainModal,
     identityProviderEndpointsContentProps,
+    isEduGainSSOEnabled,
 }: {
     domain: Domain;
     ssoConfigs: SSO[];
     configureSamlModalProps: ModalStateProps;
+    configureSamlEdugainModalProps: ModalStateProps;
     setConfigureSamlModalOpen: (newValue: boolean) => void;
+    setConfigureSamlEdugainModalOpen: (newValue: boolean) => void;
     renderConfigureSamlModal: boolean | undefined;
+    renderConfigureSamlEdugainModal: boolean | undefined;
     identityProviderEndpointsContentProps: IdentityProviderEndpointsContentProps;
+    isEduGainSSOEnabled: boolean;
 }) => {
     const [removeSSODomainProps, setRemoveSSODomainOpen, renderRemoveSSODomain] = useModalState();
     const [testSamlConfigurationProps, setTestSamlConfigurationOpen, renderTestSamlConfiguration] = useModalState();
@@ -70,6 +98,14 @@ const ConfigureSamlContent = ({
                     {...identityProviderEndpointsContentProps}
                 />
             )}
+            {renderConfigureSamlEdugainModal && (
+                <ConfigureSamlEdugainModal
+                    domain={domain}
+                    SSOEntityID={ssoConfigForDomain?.SSOEntityID}
+                    ExistingEdugainAffiliations={ssoConfigForDomain?.EdugainAffiliations}
+                    {...configureSamlEdugainModalProps}
+                />
+            )}
             {renderTestSamlConfiguration && <TestSamlModal domain={domain} {...testSamlConfigurationProps} />}
             <SettingsLayout>
                 <SettingsLayoutLeft>
@@ -80,45 +116,75 @@ const ConfigureSamlContent = ({
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="w-full max-w-custom" style={{ '--max-w-custom': '25rem' }}>
+                <SettingsLayoutRight
+                    className={clsx('w-full flex flex-nowrap items-start gap-2', !ssoConfigForDomain && 'max-w-custom')}
+                    style={{ '--max-w-custom': '25rem' }}
+                >
                     <InputFieldTwo
                         id="domainName"
                         value={domain.DomainName}
                         readOnly
                         assistiveText={<DomainVerificationState domain={domain} />}
                     />
+                    {!ssoConfigForDomain && (
+                        <>
+                            {renderRemoveSSODomain && <RemoveSSODomain domain={domain} {...removeSSODomainProps} />}
+                            <Tooltip title={c('Action').t`Remove domain`}>
+                                <Button
+                                    color="danger"
+                                    shape="ghost"
+                                    title={c('Action').t`Remove domain`}
+                                    icon
+                                    onClick={() => {
+                                        setRemoveSSODomainOpen(true);
+                                    }}
+                                >
+                                    <Icon name="cross-big" alt="" />
+                                </Button>
+                            </Tooltip>
+                        </>
+                    )}
                 </SettingsLayoutRight>
             </SettingsLayout>
             {ssoConfigForDomain ? (
                 <SSOInfoForm
                     domain={domain}
                     sso={ssoConfigForDomain}
-                    onImportSaml={() => setConfigureSamlModalOpen(true)}
+                    onImportSaml={() => {
+                        if (ssoConfigForDomain.Type === IDP_TYPE.EDUGAIN) {
+                            setConfigureSamlEdugainModalOpen(true);
+                        } else {
+                            setConfigureSamlModalOpen(true);
+                        }
+                    }}
                     onTestSaml={() => setTestSamlConfigurationOpen(true)}
                     {...identityProviderEndpointsContentProps}
                 />
             ) : (
-                <div className="flex gap-4">
-                    <Button
-                        color="norm"
-                        onClick={() => {
-                            setConfigureSamlModalOpen(true);
-                        }}
-                    >
-                        {c('Action').t`Configure SAML`}
-                    </Button>
+                <>
+                    {isEduGainSSOEnabled && (
+                        <SelectIDPSection
+                            onClick={(IDPType) => {
+                                if (IDPType === IDP_TYPE.EDUGAIN) {
+                                    setConfigureSamlEdugainModalOpen(true);
+                                } else {
+                                    setConfigureSamlModalOpen(true);
+                                }
+                            }}
+                        />
+                    )}
 
-                    {renderRemoveSSODomain && <RemoveSSODomain domain={domain} {...removeSSODomainProps} />}
-                    <Button
-                        color="danger"
-                        shape="outline"
-                        onClick={() => {
-                            setRemoveSSODomainOpen(true);
-                        }}
-                    >
-                        {c('Action').t`Remove domain`}
-                    </Button>
-                </div>
+                    {!isEduGainSSOEnabled && (
+                        <Button
+                            color="norm"
+                            onClick={() => {
+                                setConfigureSamlModalOpen(true);
+                            }}
+                        >
+                            {c('Action').t`Configure SAML`}
+                        </Button>
+                    )}
+                </>
             )}
         </>
     );
@@ -154,6 +220,12 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
     const [setupSSODomainModalProps, setSetupSSODomainModalOpen, renderSetupSSODomainModal] = useModalState();
     const [verifySSODOmainModalProps, setVerifySSODomainModalOpen, renderVerifySSODomainModal] = useModalState();
     const [configureSamlModalProps, setConfigureSamlModalOpen, renderConfigureSamlModal] = useModalState();
+    const [configureSamlEdugainModalProps, setConfigureSamlEdugainModalOpen, renderConfigureSamlEdugainModal] =
+        useModalState();
+
+    const [selectedIDPType, setSelectedIDPType] = useState<IDP_TYPE>(IDP_TYPE.DEFAULT);
+
+    const isEduGainSSOEnabled = useFlag('EduGainSSO');
 
     if (!customDomains || !samlSSO || !organization) {
         return <Loader />;
@@ -219,13 +291,19 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
     const hasSsoConfig = samlSSO.configs.length > 0;
     const domain = ssoDomains[0];
 
+    const ssoConfigIsEdugain = samlSSO.configs[0]?.Type === IDP_TYPE.EDUGAIN;
+
     return (
         <>
             {renderSetupSSODomainModal && (
                 <SetupSSODomainModal
                     onContinue={() => {
                         setupSSODomainModalProps.onClose();
-                        setConfigureSamlModalOpen(true);
+                        if (selectedIDPType === IDP_TYPE.EDUGAIN) {
+                            setConfigureSamlEdugainModalOpen(true);
+                        } else {
+                            setConfigureSamlModalOpen(true);
+                        }
                     }}
                     {...setupSSODomainModalProps}
                 />
@@ -249,41 +327,53 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                             domain={domain}
                             ssoConfigs={samlSSO.configs}
                             configureSamlModalProps={configureSamlModalProps}
+                            configureSamlEdugainModalProps={configureSamlEdugainModalProps}
                             setConfigureSamlModalOpen={setConfigureSamlModalOpen}
+                            setConfigureSamlEdugainModalOpen={setConfigureSamlEdugainModalOpen}
                             renderConfigureSamlModal={renderConfigureSamlModal}
+                            renderConfigureSamlEdugainModal={renderConfigureSamlEdugainModal}
                             identityProviderEndpointsContentProps={{
                                 issuerID: samlSSO.staticInfo.EntityID,
                                 callbackURL: samlSSO.staticInfo.CallbackURL,
                             }}
+                            isEduGainSSOEnabled={isEduGainSSOEnabled}
                         />
                     ) : (
-                        <Button
-                            color="norm"
-                            onClick={() => {
-                                setSetupSSODomainModalOpen(true);
-                            }}
-                        >
-                            {c('Action').t`Configure SAML`}
-                        </Button>
+                        <>
+                            {isEduGainSSOEnabled && (
+                                <SelectIDPSection
+                                    onClick={(IDP_TYPE) => {
+                                        setSelectedIDPType(IDP_TYPE);
+                                        setSetupSSODomainModalOpen(true);
+                                    }}
+                                />
+                            )}
+
+                            {!isEduGainSSOEnabled && (
+                                <Button
+                                    color="norm"
+                                    onClick={() => {
+                                        setSetupSSODomainModalOpen(true);
+                                    }}
+                                >
+                                    {c('Action').t`Configure SAML`}
+                                </Button>
+                            )}
+                        </>
                     )}
                 </SettingsSectionWide>
             </SubSettingsSection>
 
-            <SCIMSettingsSection
-                domain={domain}
-                hasSsoConfig={hasSsoConfig}
-                scimInfo={samlSSO.scimInfo}
-                onShowVerifyDomain={() => {
-                    setVerifySSODomainModalOpen(true);
-                }}
-                onConfigureSaml={() => {
-                    if (hasSsoDomain) {
-                        setConfigureSamlModalOpen(true);
-                    } else {
-                        setSetupSSODomainModalOpen(true);
-                    }
-                }}
-            />
+            {!ssoConfigIsEdugain && (
+                <SCIMSettingsSection
+                    domain={domain}
+                    hasSsoConfig={hasSsoConfig}
+                    scimInfo={samlSSO.scimInfo}
+                    onShowVerifyDomain={() => {
+                        setVerifySSODomainModalOpen(true);
+                    }}
+                />
+            )}
 
             {hasSsoDomain && hasSsoConfig && <RemoveSSOSettingsSection domain={domain} ssoConfigs={samlSSO.configs} />}
         </>
