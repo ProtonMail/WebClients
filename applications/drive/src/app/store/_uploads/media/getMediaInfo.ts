@@ -1,4 +1,5 @@
-import { isSVG, isSupportedImage, isVideo } from '@proton/shared/lib/helpers/mimetype';
+import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import { isCompatibleCBZ, isSVG, isSupportedImage, isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { imageCannotBeLoadedError, scaleImageFile } from './image';
@@ -9,14 +10,14 @@ import { getVideoInfo } from './video';
 
 interface ThumbnailGenerator {
     (
-        file: Blob,
+        file: File,
         thumbnailTypes: ThumbnailType[] | never,
         mimeType: string | never
     ): Promise<(Media & { thumbnails?: ThumbnailInfo[] }) | undefined>;
 }
 
 interface CheckerThumbnailCreatorPair {
-    checker: (mimeType: string) => boolean;
+    checker: (mimeType: string, name?: string) => boolean;
     creator: ThumbnailGenerator;
 }
 
@@ -28,7 +29,7 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
     { checker: isSVG, creator: scaleSvgFile },
     {
         checker: isSupportedImage,
-        creator: async (file: Blob, thumbnailTypes: ThumbnailType[], mimeType) =>
+        creator: async (file: File, thumbnailTypes: ThumbnailType[], mimeType) =>
             scaleImageFile({ file, thumbnailTypes, mimeType }).catch((err) => {
                 // Corrupted images cannot be loaded which we don't care about.
                 if (err === imageCannotBeLoadedError) {
@@ -37,11 +38,34 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
                 throw err;
             }),
     },
+    {
+        checker: (mimeType: string, name?: string) => isCompatibleCBZ(mimeType, name || ''),
+        creator: async (cbz: Blob, thumbnailTypes: ThumbnailType[]) => {
+            const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
+            const { cover, file } = await getCBZCover(cbz);
+
+            if (cover && file) {
+                return scaleImageFile({
+                    file,
+                    thumbnailTypes,
+                    mimeType: cover.endsWith('png') ? SupportedMimeTypes.png : SupportedMimeTypes.jpg,
+                }).catch((err) => {
+                    // Corrupted images cannot be loaded which we don't care about.
+                    if (err === imageCannotBeLoadedError) {
+                        return undefined;
+                    }
+                    throw err;
+                });
+            }
+
+            return Promise.resolve(undefined);
+        },
+    },
 ] as const;
 
-export const getMediaInfo = (mimeTypePromise: Promise<string>, file: Blob, isForPhotos: boolean) =>
+export const getMediaInfo = (mimeTypePromise: Promise<string>, file: File, isForPhotos: boolean) =>
     mimeTypePromise.then(async (mimeType) => {
-        const mediaInfo = CHECKER_CREATOR_LIST.find(({ checker }) => checker(mimeType))
+        const mediaInfo = CHECKER_CREATOR_LIST.find(({ checker }) => checker(mimeType, file.name))
             ?.creator(
                 file,
                 isForPhotos ? [ThumbnailType.PREVIEW, ThumbnailType.HD_PREVIEW] : [ThumbnailType.PREVIEW],

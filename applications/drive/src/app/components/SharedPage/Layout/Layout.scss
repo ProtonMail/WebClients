@@ -9,15 +9,6 @@
 		margin-inline: auto;
 		border-radius: var(--border-radius-lg);
 		min-block-size: rem(315); // To fit exactly 4 items on different screens before its expanded.
-		padding-block-end: 2em;
-
-		@include media('>small') {
-			padding-block-end: 3em;
-		}
-
-		@include media('>1230px') {
-			padding-block-end: 0;
-		}
 	}
 
 	&-encryption-block-text {
