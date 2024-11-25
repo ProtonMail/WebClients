@@ -788,11 +788,6 @@
         "他們可以檢視或編輯您的行事曆"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "重新啟用"
-      ]
-    },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
         "與 ${ BRAND_NAME } 使用者分享"
@@ -950,15 +945,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n }月"
-      ],
-      "the first month": [
-        "第一個月"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "${ discountedPrice } 特殊折扣將套用於前 ${ discountedMonths } 。其後將於每月自動以 ${ nextPrice } 續約 ${ nextMonths } 。您可以在任何時候取消。"
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "${ discountedPrice } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ nextPrice } 續約。您可以在任何時候取消。"
       ]
@@ -1130,14 +1116,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "儲存空間於 ${ BRAND_NAME } 所有服務中共享。"
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n }個月"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "自動以 ${ renewPrice } 續訂，繳費長度為 ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2581,6 +2559,11 @@
         "逾期帳單"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 匯入小幫手"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "雙重驗證可以增加一層安全保障，防止盜用。"
@@ -2653,11 +2636,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 匯入小幫手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5292,11 +5270,6 @@
         "點擊以查看詳細資料"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "重新訂購以免授權到期"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "已選取 ${ selectedFoldersCount } 個資料夾"
@@ -6855,14 +6828,6 @@
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "使用${ price }取得Mail Plus"
-      ],
-      "Starting from ${ price }": [
-        "從${ price }起"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -6875,6 +6840,14 @@
       ],
       "Switch plans?": [
         "切換方案？"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "使用${ price }取得Mail Plus"
+      ],
+      "Starting from ${ price }": [
+        "從${ price }起"
       ]
     },
     "new_plans: tooltip": {
@@ -7483,17 +7456,8 @@
       "Please select your billing state first.": [
         "請先選擇您的計費狀態。"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "更新價 ${ price }，任何時間都可取消."
-      ],
       "Select billing country to pay": [
         "選取繳款國家以付款"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "享受特惠折扣 ${ priceWithDiscount } ${ months } 個月。而後將以每 ${ months } 月 ${ price } 的價格自動續約。您可以在任何時候取消訂閱。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ price } 續約。您可以在任何時候取消。"
       ],
       "Timeout exceeded": [
         "已經逾時"
@@ -8700,14 +8664,6 @@
         "省下"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "使用中"
-      ],
-      "Expiring": [
-        "到期"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 個聯絡人似乎相同。"
@@ -9498,17 +9454,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "請選擇一個數字"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "結束日期"
-      ],
-      "Plan": [
-        "方案"
-      ],
-      "Status": [
-        "狀態"
       ]
     },
     "Title; create calendar modal": {

@@ -801,11 +801,6 @@
         "Ils peuvent consulter ou modifier votre calendrier."
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Réactiver"
-      ]
-    },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
         "Partager avec des personnes qui utilisent ${ BRAND_NAME }"
@@ -970,15 +965,8 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mois",
-        "les ${ n } premiers mois"
-      ],
-      "the first month": [
-        "le premier mois"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Le tarif réduit de ${ discountedPrice } est valable pendant ${ discountedMonths }. Ensuite, il sera automatiquement renouvelé au prix réduit de ${ nextPrice } pour ${ nextMonths }. Vous pouvez annuler quand vous le voulez."
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Le tarif réduit de ${ discountedPrice } est valable pendant les ${ cycle } premiers mois. Ensuite, il sera automatiquement renouvelé à ${ nextPrice } pour ${ renewalLength } mois. Vous pouvez annuler quand vous le voulez."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Le tarif exceptionnellement réduit de ${ discountedPrice } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ nextPrice } chaque mois. Vous pouvez annuler quand vous le voulez."
@@ -1159,15 +1147,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espace de stockage est partagé entre tous les services ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } mois",
-        "${ n } mois"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Renouvellement automatique au prix de ${ renewPrice }, pour ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2624,6 +2603,11 @@
         "Facture impayée"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
@@ -2711,11 +2695,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5456,11 +5435,6 @@
         "Cliquez pour plus de détails."
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "En réactivant l'abonnement, vous évitez son expiration."
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } dossier sélectionné",
@@ -7086,14 +7060,6 @@
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Profitez de Mail Plus pour ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "À partir de ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -7106,6 +7072,14 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Profitez de Mail Plus pour ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "À partir de ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7818,20 +7792,23 @@
       "Please select your billing state first.": [
         "Veuillez d'abord sélectionner votre état pour la facturation."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Renouvellement au prix de ${ price } avec possibilité de résiliation à tout moment."
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Renouvellement au prix de ${ renewPrice } avec possibilité de résiliation à tout moment."
       ],
       "Select billing country to pay": [
         "Veuillez sélectionner l'état pour la facture à payer."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier ${ months }. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable les premiers ${ subscriptionLength } mois. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ renewPrice } pendant ${ subscriptionLengthCopy }. Vous pouvez annuler à tout moment."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant le premier ${ months }. Puis, il sera renouvelé automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les premiers ${ subscriptionLength } mois. Puis, il sera renouvelé automatiquement à ${ renewPrice } pendant ${ subscriptionLengthCopy } mois. Vous pouvez annuler à tout moment."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ price } par mois. Vous pouvez résilier l'abonnement à tout moment."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ renewPrice } pendant ${ subscriptionLength } mois. Vous pouvez annuler à tout moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ renewPrice } chaque mois. Vous pouvez annuler à tout moment."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
@@ -9193,14 +9170,6 @@
         "Économisez"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Actif"
-      ],
-      "Expiring": [
-        "Expiré"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contact semble identique.",
@@ -9297,6 +9266,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "L'empreinte a été copiée dans le presse-papiers."
+      ],
+      "Finish Zoom authentication to save event": [
+        "Terminer l'authentification Zoom pour enregistrer l'événement"
       ],
       "Future events deleted": [
         "Les événements suivants ont été supprimés."
@@ -10011,17 +9983,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Sélectionner un numéro"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Date de fin"
-      ],
-      "Plan": [
-        "Abonnement"
-      ],
-      "Status": [
-        "Statut"
       ]
     },
     "Title; create calendar modal": {

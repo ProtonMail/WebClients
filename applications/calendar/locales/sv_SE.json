@@ -792,11 +792,6 @@
         "De kan visa eller redigera din kalender"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Återaktivera"
-      ]
-    },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
         "Dela med ${ BRAND_NAME }-användare"
@@ -957,16 +952,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } månad",
-        "första ${ n } månaderna"
-      ],
-      "the first month": [
-        "första månaden"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Det speciellt rabatterade priset på ${ discountedPrice } är giltigt för ${ discountedMonths }. Sedan förnyas det automatiskt till det rabatterade priset med ${ nextPrice } för ${ nextMonths }. Du kan avbryta när som helst."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Det speciellt rabatterade priset på ${ discountedPrice } är giltigt under den första månaden. Sedan förnyas det automatiskt med ${ nextPrice } varje månad. Du kan avbryta när som helst."
       ]
@@ -1136,15 +1121,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } månad",
-        "${ n } månader"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Förnyas automatiskt för ${ renewPrice }, i ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2600,6 +2576,11 @@
         "Försenad faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
@@ -2687,11 +2668,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5423,11 +5399,6 @@
         "Klicka för detaljer"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Du kan förhindra utgången genom att återaktivera prenumerationen"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mapp vald",
@@ -7053,17 +7024,6 @@
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Skaffa Mail Plus för ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Startar från ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7076,6 +7036,17 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7791,17 +7762,8 @@
       "Please select your billing state first.": [
         "Välj din delstat för fakturering först."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Förnyas med ${ price }, avbryt när som helst."
-      ],
       "Select billing country to pay": [
         "Välj faktureringsland att betala"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ months }. Sedan kommer det förnyas automatiskt med ${ price } för ${ months }. Du kan avbryta när som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt den första månaden. Sedan kommer det förnyas automatiskt med ${ price } varje månad. Du kan avbryta när som helst."
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
@@ -9157,14 +9119,6 @@
         "Spara"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Aktiv"
-      ],
-      "Expiring": [
-        "Löper ut"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt ser identisk ut.",
@@ -9972,17 +9926,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Välj ett nummer"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Slutdatum"
-      ],
-      "Plan": [
-        "Paket"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Title; create calendar modal": {
