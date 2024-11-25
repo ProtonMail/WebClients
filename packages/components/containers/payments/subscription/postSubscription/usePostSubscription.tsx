@@ -1,3 +1,4 @@
+import { useUser } from '@proton/account/user/hooks';
 import {
     APP_UPSELL_REF_PATH,
     MAIL_UPSELL_BANNER_LINK_ID_REF_PATH,
@@ -7,15 +8,16 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
 import type { OpenCallbackProps } from '../SubscriptionModalProvider';
-import { usePostSubscriptionModal } from './PostSubscriptionModalProvider';
-import type { PostSubscriptionModalName } from './interface';
+import { SUBSCRIPTION_STEPS } from '../constants';
+import PostSubscriptionModal from './PostSubscriptionConfirmationModal';
+import type { PostSubscriptionFlowName } from './interface';
 
-interface Props {
+interface Props extends Pick<OpenCallbackProps, 'onSubscribed'> {
     upsellRef?: string;
 }
 
 // Better to get upsell ref as key to avoid duplicate cases
-const UPSELL_REF_TO_MODAL: Record<string, PostSubscriptionModalName> = {
+const UPSELL_REF_TO_POST_SUBCRIPTION_FLOW: Record<string, PostSubscriptionFlowName> = {
     // Settings Mail Short Domain upsell CTA
     [getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
@@ -40,19 +42,32 @@ const UPSELL_REF_TO_MODAL: Record<string, PostSubscriptionModalName> = {
 
 export const usePostSubscription = ({
     upsellRef,
-}: Props): Pick<OpenCallbackProps, 'disableThanksStep' | 'onSubscribed'> | undefined => {
-    const { openPostSubscriptionModal } = usePostSubscriptionModal();
-    const modalName = upsellRef ? UPSELL_REF_TO_MODAL[upsellRef] : undefined;
+    onSubscribed,
+}: Props): Pick<OpenCallbackProps, 'disableThanksStep' | 'onSubscribed' | 'renderCustomStepModal'> | undefined => {
+    const flowName = upsellRef ? UPSELL_REF_TO_POST_SUBCRIPTION_FLOW[upsellRef] : undefined;
+    const [user] = useUser();
 
-    if (!modalName) {
+    if (!flowName || !user.isFree) {
         return;
     }
 
     const upsellModalProps: Exclude<ReturnType<typeof usePostSubscription>, undefined> = {
-        /** Disable the thanks step */
-        disableThanksStep: true,
-        onSubscribed: () => {
-            openPostSubscriptionModal(modalName);
+        // Force thanks step
+        disableThanksStep: false,
+        renderCustomStepModal: (step, modalProps) => {
+            if (flowName && [SUBSCRIPTION_STEPS.UPGRADE, SUBSCRIPTION_STEPS.THANKS].includes(step)) {
+                return (
+                    <PostSubscriptionModal
+                        {...modalProps}
+                        onClose={() => {
+                            modalProps.onClose?.();
+                            onSubscribed?.();
+                        }}
+                        step={step}
+                        name={flowName}
+                    />
+                );
+            }
         },
     };
 

@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Spotlight, useSpotlightShow } from '@proton/components';
-import { useMailShortDomainPostSubscriptionComposerSpotlight } from '@proton/components/containers/payments/subscription/postSubscription/modals/MailShortDomain';
+import useMailShortDomainPostSubscriptionSpotlight from '@proton/components/containers/payments/subscription/postSubscription/mail-short-domain/useMailShortDomainPostSubscriptionSpotlight';
 import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 
 const ComposerShortDomainSpotlight = ({ children }: Props) => {
     const [manualClose, setManualClose] = useState(false);
-    const shortDomainSpotlight = useMailShortDomainPostSubscriptionComposerSpotlight();
+    const shortDomainSpotlight = useMailShortDomainPostSubscriptionSpotlight();
     const canDisplaySpotlight = useMemo(() => {
         if (shortDomainSpotlight.loading) {
             return false;
