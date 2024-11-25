@@ -729,6 +729,9 @@
       "Could not resolve share members": [
         "Não é possível determinar os membros do compartilhamento"
       ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Não foi possível recuperar os convites do usuário para o cofre \"${ vaultName }\""
+      ],
       "Could not validate addresses at the moment.": [
         "Não foi possível validar endereços agora."
       ],
@@ -1099,6 +1102,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "A atualização \"${ payload.item.data.metadata.name } foi descartada"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } convite enviado com sucesso",
+        "${ count } convites enviados com sucesso"
+      ],
       "${ count } time": [
         "${ count } vez",
         "${ count } vezes"
@@ -1123,6 +1130,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "O ${ PASS_APP_NAME } exibirá o favicon do item através do proxy de imagem anonimizado da ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } seguirá o tema do seu sistema."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } importará somente inícios de sessão, notas, cartões de crédito e identidades."
@@ -1397,6 +1407,10 @@
       ],
       "For security reason, your access needs to be confirmed": [
         "Por motivos de segurança, é necessário confirmar seu acesso"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Por razões de segurança, você precisa confirmar o acesso a este cofre compartilhado",
+        "Por razões de segurança, você precisa confirmar o acesso a esses cofres compartilhados"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Por motivos de segurança, é necessário confirmar seu acesso"
@@ -1936,6 +1950,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Você será desconectado e precisará iniciar sessão novamente em todos os seus outros dispositivos."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Você não terá mais acesso a compartilhamento, A2F, cartão de crédito e outros recursos avançados no ${ PASS_APP_NAME }"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Você usará este PIN para desbloquear o ${ PASS_APP_NAME } quando ele bloquear automaticamente após um período de inatividade."
@@ -2705,6 +2722,10 @@
         "${ count } item",
         "${ count } itens"
       ],
+      "You can drag and drop the selected item to another vault": [
+        "Você pode arrastar e soltar o item selecionado para outro cofre",
+        "Você pode arrastar e soltar os itens selecionados para outro cofre"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "Você selecionou ${ semiboldText } nesse cofre."
       ]
@@ -2850,6 +2871,9 @@
       ],
       "Sign-in rejected": [
         "Início de sessão rejeitado"
+      ],
+      "Sign-in rejection failure": [
+        "Falha na rejeição de login"
       ],
       "Sign-in requested on another device. Was it you?": [
         "Solicitação de início de sessão em outro dispositivo. Foi você?"
@@ -3154,6 +3178,10 @@
       ],
       "Your welcome gift": [
         "Seu presente de boas-vindas"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
+        "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
       ]
     },
     "Validation": {
@@ -3189,6 +3217,9 @@
       "A description of the problem is required": [
         "Uma descrição do problema é necessária"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Os aliases na lixeira continuarão encaminhando e-mails."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Todos os itens na lixeira serão excluídos permanentemente. Não é possível desfazer esta ação."
       ],
@@ -3205,6 +3236,9 @@
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
         "Você tem certeza de que deseja excluir permanentemente ${ deletedItemsCount } item?",
         "Você tem certeza de que deseja excluir permanentemente ${ deletedItemsCount } itens?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Você tem certeza que deseja excluir permanentemente esse item?"
       ],
       "At least one email address is required": [
         "É obrigatório pelo menos um endereço de e-mail"

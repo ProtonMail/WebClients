@@ -1102,6 +1102,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" განახლება წაიშალა"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } მოსაწვევი წარმატებით გაიგზავნა",
+        "${ count } მოსაწვევი წარმატებით გაიგზავნა"
+      ],
       "${ count } time": [
         "${ count }-ჯერ",
         "${ count }-ჯერ"
@@ -1666,6 +1670,9 @@
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "დაიმახსოვრეთ, რომ ფსევდონიმის აღდგენა შეუქცევადია. შეიძლება, მისი, უბრალოდ გათიშვა გნებავთ?"
       ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "დაიმახსოვრეთ, რომ როცა წაშლით, ფსევდონიმს ვეღარ აღადგენთ. ფსევდონიმი უკვე გამორთულია და ელფოსტებს თქვენს საგოსტო ყუთში აღარ გადააგზავნის"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "ასწიეთ სატარიფო გეგმა ${ PASS_APP_NAME }-ის ვებაპთან ადრეული წვდომის მისაღებად"
       ],
@@ -1910,6 +1917,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "ამ ფსევდონიმისთვის საფოსტო ყუთებს ვერ შეცვლით."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი სინქრონიზაცია?",
+        "გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი სინქრონიზაცია?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "დაგრჩათ ${ daysRemaining } დღე, ეს და სხვა ფასიანი ფუნქციები სცადოთ.",
@@ -3207,6 +3218,14 @@
       ],
       "An error occurred while resuming your session": [
         "შეცდომა თქვენი სესიის გაგრძელებისას"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, ${ trashedItemsCount } ელემენტი ნაგვის ყუთში გადაიტანოთ?",
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, ${ trashedItemsCount } ელემენტი ნაგვის ყუთში გადაიტანოთ?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "დარწმუნებული ბრძანდებთ, რომ სამუდამოდ გნებავთ, წაშალოთ ${ deletedItemsCount } ელემენტი?",
+        "დარწმუნებული ბრძანდებთ, რომ სამუდამოდ გნებავთ, წაშალოთ ${ deletedItemsCount } ელემენტი?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "ნამდვილად გსურთ, სამუდამოდ წაიშალოს ეს ელემენტი?"
