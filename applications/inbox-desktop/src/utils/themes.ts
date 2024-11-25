@@ -5,9 +5,12 @@ import {
     DESKTOP_THEME_TYPES,
     electronAppTheme,
     isDesktopThemeType,
+    PROTON_THEMES_MAP,
     ThemeModeSetting,
     ThemeSetting,
+    ThemeTypes,
 } from "@proton/shared/lib/themes/themes";
+import { getMainWindow } from "./view/viewManagement";
 
 export const SERIALIZED_THEME_MODE = {
     [ThemeModeSetting.Auto]: "auto",
@@ -64,6 +67,15 @@ export function updateNativeTheme(theme: ThemeSetting) {
         }
     } else {
         nativeTheme.themeSource = SERIALIZED_THEME_MODE[theme.Mode];
+    }
+
+    const mainWindow = getMainWindow();
+    if (!mainWindow.isDestroyed()) {
+        const themeColors =
+            nativeTheme.themeSource === "light"
+                ? PROTON_THEMES_MAP[ThemeTypes.Snow]
+                : PROTON_THEMES_MAP[ThemeTypes.Carbon];
+        mainWindow.setBackgroundColor(themeColors.thumbColors.prominent);
     }
 }
 
