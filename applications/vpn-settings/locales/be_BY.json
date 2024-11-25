@@ -955,18 +955,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } месяц",
-        "першыя ${ n } месяцы",
-        "першыя ${ n } месяцаў",
-        "першыя ${ n } месяцаў"
-      ],
-      "the first month": [
-        "першы месяц"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за ${ discountedMonths }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне са зніжаным коштам у памеры ${ nextPrice } за ${ nextMonths }. Скасаваць можна ў любы момант."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ nextPrice } за кожны месяц. Скасаваць можна ў любы момант."
       ]
@@ -1153,14 +1141,11 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяцы",
-        "${ n } месяцаў",
-        "${ n } месяцаў"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Аўтаматычнае абнаўленне па кошце ${ renewPrice } за перыяд часу ${ renewalLength }"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяц",
+        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяцы",
+        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяцаў",
+        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяцаў"
       ]
     },
     "Billing cycle option": {
@@ -3958,11 +3943,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Наладзьце вонкавы выгляд праграм ${ BRAND_NAME }"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -4981,11 +4966,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "username": [
-        "імя карыстальніка"
-      ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "username": [
+        "імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -6220,11 +6205,17 @@
       "Change password": [
         "Змяніць пароль"
       ],
+      "Convert to SSO": [
+        "Пераўтварыць у SSO"
+      ],
       "Delete": [
         "Выдаліць"
       ],
       "Delete and revoke invite": [
         "Выдаліць і адклікаць запрашэнне"
+      ],
+      "Detach from SSO": [
+        "Адлучыць ад SSO"
       ],
       "Edit": [
         "Рэдагаваць"
@@ -8003,20 +7994,8 @@
       "Processing payment": [
         "Апрацоўка плацяжу"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Падаўжаецца за ${ price }. Скасаваць можна ў любы час."
-      ],
       "Select billing country to pay": [
         "Выберыце краіну выстаўлення рахунку для аплаты"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months } месяцы. Скасаваць можна ў любы момант."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months }. Скасаваць можна ў любы момант."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за кожны месяц. Скасаваць можна ў любы момант."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Трансакцыя паспяхова выяўлена. Крэдыты будуць дададзены на ваш рахунак пасля таго, як яна будзе цалкам пацверджана."
@@ -8330,6 +8309,9 @@
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Адрас электроннай пошты **${ email }** ужо існуе як карыстальнік ${ BRAND_NAME }. Увядзіце адрас электроннай пошты карыстальніка ад вашага пастаўшчыка пасведчанняў."
       ]
     },
     "saml: Info": {
@@ -8338,6 +8320,9 @@
       ],
       "Details": [
         "Падрабязнасці"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Увядзіце адрас электроннай пошты карыстальніка, які забяспечаны вашым пастаўшчыком паседчанняў для **${ domainName }**"
       ],
       "Test in progress...": [
         "Адбываецца тэсціраванне..."
@@ -8506,6 +8491,9 @@
       ],
       "to be created": [
         "будзе створаны"
+      ],
+      "to be deleted": [
+        "будзе выдалены"
       ]
     },
     "session_recovery:available:action": {
@@ -9050,6 +9038,18 @@
         "${ n } удзельнікаў запыталі вашу дапамогу з уваходам.",
         "${ n } удзельнікаў запыталі вашу дапамогу з уваходам."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } карыстальнік пераўтвораны ў SSO",
+        "${ n } карыстальнікі пераўтвораны ў SSO",
+        "${ n } карыстальнікаў пераўтвораны ў SSO",
+        "${ n } карыстальнікаў пераўтвораны ў SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } карыстальнік адлучаны ад SSO",
+        "${ n } карыстальнікі адлучаны ад SSO",
+        "${ n } карыстальнікаў адлучаны ад SSO",
+        "${ n } карыстальнікаў адлучаны ад SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } карыстальнік далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Праверце яго ўліковы запіс:",
         "${ n } карыстальнікі далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Праверце іх уліковыя запісы:",
@@ -9070,6 +9070,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Карыстальнікі SSO (дзе пастаўшчыком пасведчанняў з'яўляецеся вы) будуць выдалены** і вам неабходна будзе стварыць іх уручную, каб дадаць іх назад у вашу арганізацыю."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Карыстальнік SSO будзе адлучаны ад вашага пастаўшчыка пасведчанняў** і пераўтвораны ў карыстальніка, які не належыць да SSO."
       ],
       "Access denied": [
         "У доступе адмоўлена"
@@ -9230,8 +9233,14 @@
       "User details:": [
         "Падрабязнасці карыстальніка:"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Вам давядзецца стварыць новых карыстальнікаў уручную, каб дадаць іх у вашу арганізацыю."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Ваша канфігурацыя SSO будзе выдалена."
       ]
     },
     "sso: auth device state": {
@@ -10335,10 +10344,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -11071,6 +11080,9 @@
       ],
       "Cancel request to access user data?": [
         "Скасаваць запыт на доступ да даных карыстальніка?"
+      ],
+      "Confirm all": [
+        "Пацвердзіць усе"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальніка, бо яго/іх ключы шыфравання ў гэты час былі абноўлены:",

@@ -945,15 +945,8 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mes",
-        "los primeros ${ n } meses"
-      ],
-      "the first month": [
-        "el primer mes"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "La oferta especial de ${ discountedPrice } es válida durante ${ discountedMonths }. Una vez transcurrido ese plazo, se renovará automáticamente al precio rebajado de ${ nextPrice } durante ${ nextMonths }. Podrá cancelarla en cualquier momento."
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "La oferta especial de ${ discountedPrice } es válida durante los primeros ${ cycle } meses. Una vez transcurrido ese plazo, se renovará automáticamente al precio rebajado de ${ nextPrice } durante ${ renewalLength } meses. Puede cancelarla en cualquier momento."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "La oferta especial de ${ discountedPrice } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ nextPrice } cada mes. Puede cancelarla en cualquier momento."
@@ -1142,12 +1135,9 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } meses"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Se renueva automáticamente por ${ renewPrice } durante ${ renewalLength }."
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Se renueva automáticamente por ${ renewPrice } durante ${ renewLength } mes.",
+        "Se renueva automáticamente por ${ renewPrice } durante ${ renewLength } meses."
       ]
     },
     "Billing cycle option": {
@@ -3881,11 +3871,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalice el aspecto y sensación de las aplicaciones de ${ BRAND_NAME }"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -4888,11 +4878,11 @@
       "User activated": [
         "El usuario fue activado."
       ],
-      "username": [
-        "nombre de usuario"
-      ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "username": [
+        "nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -7827,20 +7817,23 @@
       "Processing payment": [
         "Procesando el pago"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Se renueva por ${ price }, cancele cuando desee."
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Se renueva por ${ renewPrice }, cancele cuando desee."
       ],
       "Select billing country to pay": [
         "Seleccione el país de facturación para pagar"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puede cancelarla en cualquier momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante los primeros ${ subscriptionLength } meses. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Puede cancelarla en cualquier momento."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. Después se renovará automáticamente al precio de ${ price } cada ${ months }. Puede cancelarla en cualquier momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante los primeros ${ subscriptionLength } meses. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ renewPrice } durante ${ subscriptionLengthCopy } meses. Puede cancelarla en cualquier momento."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ price } cada mes. Puede cancelarla en cualquier momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ renewPrice } por ${ subscriptionLength } mes. Puede cancelarla en cualquier momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ renewPrice } cada mes. Puede cancelarla en cualquier momento."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "La transacción se detectó. Los créditos se añadirán a la cuenta una vez que se confirme la transacción por completo."
@@ -8330,6 +8323,9 @@
       ],
       "to be created": [
         "por crear"
+      ],
+      "to be deleted": [
+        "a eliminar"
       ]
     },
     "session_recovery:available:action": {
@@ -10082,10 +10078,10 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [

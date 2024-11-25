@@ -928,18 +928,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mesec",
-        "${ n } meseca",
-        "${ n } mesece",
-        "${ n } mesecev"
-      ],
-      "the first month": [
-        "prvi mesec"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Izredno znižana cena ${ discountedPrice } velja za ${ discountedMonths }. Potem se bo samodejno podaljšala z znižano ceno ${ nextPrice } za ${ nextMonths }. Naročnino lahko kadarkoli prekinete."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Izredno znižana cena ${ discountedPrice } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ nextPrice }. Naročnino lahko kadarkoli prekinete."
       ]
@@ -1107,17 +1095,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } mesec",
-        "${ n } meseca",
-        "${ n } mesece",
-        "${ n } mesecev"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Se podaljša samodejno za ${ renewPrice } za ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -3752,11 +3729,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prilagodite prikaz aplikacij ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "namenske strežnike"
-      ],
       "Dedicated servers": [
         "Namenski strežniki"
+      ],
+      "dedicated servers": [
+        "namenske strežnike"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Izbrišite druge zapise MX ali poskrbite, da je prioriteta ${ MAIL_APP_NAME } najnižja številka."
@@ -4601,11 +4578,11 @@
       "User activated": [
         "Uporabnik je aktiviran."
       ],
-      "username": [
-        "uporabniško ime"
-      ],
       "Username": [
         "Uporabniško ime"
+      ],
+      "username": [
+        "uporabniško ime"
       ],
       "Users": [
         "Uporabniki"
@@ -7264,15 +7241,6 @@
       "Select billing country to pay": [
         "Izberite državo za izstavitev računa za plačilo"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Posebej znižana cena ${ priceWithDiscount } velja za prve ${ months }. Kupon velja za ${ couponRedemptions } obnovitve. Nato se samodejno podaljša po ${ price } za obdobje ${ months } mesecev. Naročnino lahko kadarkoli prekličete."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Posebej znižana cena ${ priceWithDiscount } velja za prvih ${ months }. Po tem se samodejno podaljša za ${ price } za ${ months }. Naročnino lahko kadarkoli prekličete."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Izredno znižana cena ${ priceWithDiscount } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ price }. Naročnino lahko kadarkoli prekinete."
-      ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakcija je uspešno zaznana. Dobroimetje bo dodano vašemu računu, ko bo transakcija v celoti potrjena."
       ],
@@ -9146,10 +9114,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [

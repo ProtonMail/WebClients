@@ -868,15 +868,6 @@
         "Garantia de devolução do seu dinheiro em até 30 dias"
       ]
     },
-    "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mês",
-        "os primeiros ${ n } meses"
-      ],
-      "the first month": [
-        "o primeiro mês"
-      ]
-    },
     "bf2023: Title": {
       "Offer unavailable": [
         "Oferta indisponível"
@@ -1038,12 +1029,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "O espaço de armazenamento é partilhado entre todos os serviços ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } mês",
-        "${ n } meses"
       ]
     },
     "Billing cycle option": {
@@ -3454,11 +3439,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize o aspeto e a sensação das aplicações ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimine quaisquer outros registos MX ou certifique-se que a prioridade do ${ MAIL_APP_NAME } é o número mais baixo."
@@ -4275,11 +4260,11 @@
       "User activated": [
         "O utilizador foi ativado."
       ],
-      "username": [
-        "nome de utilizador"
-      ],
       "Username": [
         "Nome de utilizador"
+      ],
+      "username": [
+        "nome de utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -8131,11 +8116,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"

@@ -955,18 +955,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } měsíc",
-        "první ${ n } měsíce",
-        "prvních ${ n } měsíců",
-        "prvních ${ n } měsíců"
-      ],
-      "the first month": [
-        "první měsíc"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Speciální zvýhodněná cena ${ discountedPrice } platí po dobu ${ discountedMonths }. Poté se tarif automaticky obnoví za zvýhodněnou cenu ${ nextPrice } na ${ nextMonths }. Službu můžete kdykoliv zrušit."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ discountedPrice } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ nextPrice }. Službu můžete kdykoli zrušit."
       ]
@@ -1158,14 +1146,11 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } měsíc",
-        "${ n } měsíce",
-        "${ n } měsíců",
-        "${ n } měsíců"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatické obnovení za ${ renewPrice }, na ${ renewalLength }"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíc",
+        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíce",
+        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíců",
+        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíců"
       ]
     },
     "Billing cycle option": {
@@ -3963,11 +3948,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Přizpůsobte si vzhled aplikací ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -4989,11 +4974,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "username": [
-        "uživatelské jméno"
-      ],
       "Username": [
         "Uživatelské jméno"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -6231,11 +6216,17 @@
       "Change password": [
         "Změnit heslo"
       ],
+      "Convert to SSO": [
+        "Převést na SSO"
+      ],
       "Delete": [
         "Odstranit"
       ],
       "Delete and revoke invite": [
         "Smazat a zrušit pozvánku"
+      ],
+      "Detach from SSO": [
+        "Odpojit od SSO"
       ],
       "Edit": [
         "Upravit"
@@ -8035,20 +8026,8 @@
       "Processing payment": [
         "Zpracovávání platby"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Obnovuje se za ${ price }, zrušit lze kdykoli."
-      ],
       "Select billing country to pay": [
         "Vyberte zemi platby"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Kupón je platný pro ${ couponRedemptions } obnovení. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ price }. Službu můžete kdykoli zrušit."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakce byla úspěšně rozpoznána. Kredity budou připsány na váš účet po úplném potvrzení transakce."
@@ -8362,6 +8341,9 @@
       ],
       "Something went wrong": [
         "Něco se pokazilo"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "E-mailová adresa **${ email }** již existuje jako uživatel ${ BRAND_NAME }. Zadejte prosím e-mailovou adresu uživatele od vašeho poskytovatele identit."
       ]
     },
     "saml: Info": {
@@ -8370,6 +8352,9 @@
       ],
       "Details": [
         "Detaily"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Zadejte e-mailovou adresu uživatele poskytnutou poskytovatelem identit pro **${ domainName }**"
       ],
       "Test in progress...": [
         "Probíhá testování..."
@@ -8538,6 +8523,9 @@
       ],
       "to be created": [
         "které mají být vytvořeny"
+      ],
+      "to be deleted": [
+        "bude smazán"
       ]
     },
     "session_recovery:available:action": {
@@ -9082,6 +9070,18 @@
         "${ n } členů vás požádalo o pomoc s přihlášením.",
         "${ n } členů vás požádalo o pomoc s přihlášením."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } uživatel převeden na SSO",
+        "${ n } uživatelé převedeni na SSO",
+        "${ n } uživatelů převedeno na SSO",
+        "${ n } uživatelů převedeno na SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } uživatel odpojen od SSO",
+        "${ n } uživatelé odpojeni od SSO",
+        "${ n } uživatelů odpojeno od SSO",
+        "${ n } uživatelů odpojeno od SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } uživatel se připojil k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účet:",
         "${ n } uživatelé se připojili k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:",
@@ -9102,6 +9102,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO uživatelé (poskytovaní poskytovatelem identit) budou smazáni** a budete je muset vytvořit ručně, abyste je mohli přidat zpět do organizace."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO uživatelé budou odpojeni od vašeho poskytovatele identit** a převedeni na uživatele, kteří nejsou součástí SSO."
       ],
       "Access denied": [
         "Přístup zamítnut"
@@ -9262,8 +9265,14 @@
       "User details:": [
         "Podrobnosti o uživateli:"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Nové uživatele budete muset vytvořit ručně a přidat je do organizace."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Budete přesměrováni na poskytovatele SSO třetí strany."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Vaše nastavení SSO bude smazáno."
       ]
     },
     "sso: auth device state": {
@@ -10367,10 +10376,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -11103,6 +11112,9 @@
       ],
       "Cancel request to access user data?": [
         "Zrušit žádost o přístup k datům uživatele?"
+      ],
+      "Confirm all": [
+        "Potvrdit vše"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatele, protože jeho šifrovací klíč byl mezitím aktualizován:",

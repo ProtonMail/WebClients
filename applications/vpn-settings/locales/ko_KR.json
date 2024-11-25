@@ -940,15 +940,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n }개월"
-      ],
-      "the first month": [
-        "첫 달"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "이 특별 할인가 (${ discountedPrice })는 ${ discountedMonths }에 한합니다. 그 이후로는 ${ nextMonths } 동안 ${ nextPrice }(으)로 갱신됩니다. 언제든지 취소 가능합니다."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "이 특별 할인가 (${ discountedPrice })는 첫 달에 한합니다. 자동으로 다음 달 부터는 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
       ]
@@ -1134,11 +1125,8 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n }개월"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "${ renewalLength } 이후에 ${ renewPrice }로 자동 갱신됨"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "${ renewLength }개월간 자동으로 ${ renewPrice }에 갱신"
       ]
     },
     "Billing cycle option": {
@@ -3840,10 +3828,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } 애플리케이션의 설정을 커스터마이징해 보세요."
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -4836,10 +4824,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
       "Users": [
@@ -6039,11 +6027,17 @@
       "Change password": [
         "비밀번호 변경"
       ],
+      "Convert to SSO": [
+        "SSO로 전환"
+      ],
       "Delete": [
         "삭제"
       ],
       "Delete and revoke invite": [
         "초대를 삭제하고 취소하기"
+      ],
+      "Detach from SSO": [
+        "SSO로부터 연결 해제"
       ],
       "Edit": [
         "수정"
@@ -7744,20 +7738,8 @@
       "Processing payment": [
         "결제 처리 중"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "${ price }에 갱신되며 언제나 취소할 수 있습니다."
-      ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 ${ months }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ price }로 ${ months }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 ${ months }개월간 적용됩니다. 이후 매월 ${ price }로 ${ months }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ price }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "거래가 성공적으로 감지되었습니다. 거래가 완전히 확인되면 크레딧이 추가됩니다."
@@ -8062,6 +8044,9 @@
       ],
       "Something went wrong": [
         "문제가 발생했습니다"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "이메일 주소 **${ email }**이(가) 이미 ${ BRAND_NAME } 사용자로서 존재합니다. 신원 제공자로부터 사용자의 이메일 주소를 입력해 주세요."
       ]
     },
     "saml: Info": {
@@ -8070,6 +8055,9 @@
       ],
       "Details": [
         "세부 사항"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "신원 제공자로부터 **${ domainName }**에 대해 제공한 사용자의 이메일 주소를 입력하십시오."
       ],
       "Test in progress...": [
         "테스트 진행 중..."
@@ -8238,6 +8226,9 @@
       ],
       "to be created": [
         "생성"
+      ],
+      "to be deleted": [
+        "삭제 예정"
       ]
     },
     "session_recovery:available:action": {
@@ -8722,6 +8713,12 @@
       "${ n } member requested your help to sign in.": [
         "${ n }명의 멤버가 로그인하는데 도움을 요청했습니다."
       ],
+      "${ n } user converted to SSO": [
+        "${ n }명의 사용자가 SSO로 전환되었습니다."
+      ],
+      "${ n } user detached from SSO": [
+        "${ n }명 SSO연결 해제됨"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n }명의 사용자가 신원 제공자를 통해 나의 조직에 들어왔습니다. 계정을 검토하세요:"
       ],
@@ -8733,6 +8730,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**(나의 신원 제공자로 부터 제공된) SSO 사용자가 삭제되며** 내 조직에 항목을 추가하기 위해 수동 추가해야 합니다."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO 사용자는 신원 제공자로 부터 분리되며** 비SSO 사용자로 전환됩니다."
       ],
       "Access denied": [
         "접근 거부됨"
@@ -8887,8 +8887,14 @@
       "User details:": [
         "사용자 세부 정보:"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "조직에 해당 사용자들을 추가하기 위해 수동으로 새 사용자를 추가해야합니다."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "서드 파티 SSO 제공자로 리다이렉트됩니다."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "SSO 구성 또한 삭제됩니다."
       ]
     },
     "sso: auth device state": {
@@ -9923,11 +9929,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -10647,6 +10653,9 @@
       ],
       "Cancel request to access user data?": [
         "사용자 데이터 접근 요청을 취소합니까?"
+      ],
+      "Confirm all": [
+        "일괄 허가"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "${ n }명 사용자에 대한 관리자 접근 자동 활성화가 불가능합니다. 해당 사용자들의 암호화 키가 다음 도중에 업데이트되었습니다:"
