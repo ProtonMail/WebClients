@@ -22,6 +22,7 @@ import { setInstallSourceReported, getInstallSource } from "../store/installInfo
 import { getESUserChoice, setESUserChoice } from "../store/userSettingsStore";
 import { checkDefaultMailto, getDefaultMailto, setDefaultMailtoTelemetryReported } from "../utils/protocol/default";
 import { getAllAppVersions, storeAppVersion } from "../utils/appVersions";
+import metrics from "../utils/metrics";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -158,6 +159,14 @@ export const handleIPCCalls = () => {
                 break;
             case "triggerCrash":
                 throw new Error("Crash bandicoot");
+            case "metricsListenerChanged":
+                if (payload === "ready") {
+                    metrics.listenerReady();
+                }
+                if (payload === "removed") {
+                    metrics.listenerRemoved();
+                }
+                break;
             default:
                 ipcLogger.error(`unknown message type: ${type}`);
                 break;
