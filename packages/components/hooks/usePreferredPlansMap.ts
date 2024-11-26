@@ -2,19 +2,14 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import {
-    type Currency,
-    type FullPlansMap,
-    type GetPreferredCurrencyParams,
-    getPlansMap as getPlansMapInner,
-} from '@proton/payments';
+import { type Currency, type FullPlansMap, getPlansMap as getPlansMapInner } from '@proton/payments';
 
-import { useCurrencies } from '../payments/client-extensions/useCurrencies';
+import { type GetPreferredCurrencyParamsHook, useCurrencies } from '../payments/client-extensions/useCurrencies';
 
 type PreferredPlansMapHook = {
     plansMapLoading: boolean;
     plansMap: FullPlansMap;
-    getPlansMap: (overrides?: GetPreferredCurrencyParams) => {
+    getPlansMap: (overrides?: GetPreferredCurrencyParamsHook) => {
         plansMap: FullPlansMap;
         preferredCurrency: Currency;
     };
@@ -28,7 +23,7 @@ export const usePreferredPlansMap = (currencyFallback?: boolean): PreferredPlans
     const [user] = useUser();
     const { getPreferredCurrency } = useCurrencies();
 
-    const getPlansMap = (overrides: GetPreferredCurrencyParams = {}) => {
+    const getPlansMap = (overrides: GetPreferredCurrencyParamsHook = {}) => {
         const preferredCurrency = getPreferredCurrency({
             ...overrides,
             user,
