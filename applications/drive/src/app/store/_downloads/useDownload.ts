@@ -109,16 +109,17 @@ export default function useDownload() {
         if (!sessionKey) {
             throw new Error('Session key missing on file link');
         }
-        if (!revisionSignatureAddress) {
-            throw new Error('Signature address missing on file link');
-        }
 
-        const addressPublicKeys = await getVerificationKey(revisionSignatureAddress);
+        const isAnonymous = !revisionSignatureAddress;
+
+        const addressPublicKeys = !isAnonymous ? await getVerificationKey(revisionSignatureAddress) : undefined;
+
         return [
             {
                 privateKey: privateKey,
                 sessionKeys: sessionKey,
                 addressPublicKeys,
+                isAnonymous,
             },
             link.signatureIssues,
         ];

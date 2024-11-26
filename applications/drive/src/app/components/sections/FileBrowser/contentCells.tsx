@@ -44,7 +44,12 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
                     className="file-browser-list-item--icon mr-2"
                 />
             )}
-            <SignatureIcon signatureIssues={item.signatureIssues} isFile={item.isFile} className="mr-2 shrink-0" />
+            <SignatureIcon
+                signatureIssues={item.signatureIssues}
+                isAnonymous={!item.activeRevision?.signatureAddress && !item.signatureAddress}
+                isFile={item.isFile}
+                className="mr-2 shrink-0"
+            />
             <NameCellBase name={item.name} />
         </TableCell>
     );

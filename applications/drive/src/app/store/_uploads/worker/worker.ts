@@ -34,7 +34,7 @@ const uploadWorker = new UploadWorker(self, { generateKeys, start, createdBlocks
 const pauser = new Pauser();
 const buffer = new UploadWorkerBuffer();
 
-async function generateKeys(addressPrivateKey: PrivateKeyReference, parentPrivateKey: PrivateKeyReference) {
+async function generateKeys(addressPrivateKey: PrivateKeyReference | undefined, parentPrivateKey: PrivateKeyReference) {
     uploadWorker.postLog(`Generating keys`);
     try {
         const {
@@ -91,7 +91,7 @@ async function start(
         media?: Media;
         thumbnails?: ThumbnailInfo[];
     },
-    addressPrivateKey: PrivateKeyReference,
+    addressPrivateKey: PrivateKeyReference | undefined,
     addressEmail: string,
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
@@ -144,7 +144,7 @@ async function start(
         }
 
         const [signature, exifInfo] = await Promise.all([
-            signMessage(fileHash, [addressPrivateKey]),
+            signMessage(fileHash, [addressPrivateKey || privateKey]), // privateKey is NodeKey, fallback is for public anonymous upload
             isForPhotos ? getExifInfo(file, mimeType) : undefined,
         ]);
         const photoDimensions = exifInfo ? getPhotoDimensions(exifInfo) : {};
@@ -173,7 +173,7 @@ async function start(
                     ...(exifInfo ? getPhotoExtendedAttributes(exifInfo) : {}),
                 },
                 privateKey,
-                addressPrivateKey
+                addressPrivateKey || privateKey
             ),
         ]);
 

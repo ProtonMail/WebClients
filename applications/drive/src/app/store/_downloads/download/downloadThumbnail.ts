@@ -2,8 +2,7 @@
 import { readToEnd, toStream } from '@openpgp/web-stream-tools';
 import type { ReadableStream } from 'web-streams-polyfill';
 
-import type { VERIFICATION_STATUS } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, type VERIFICATION_STATUS } from '@proton/crypto';
 
 import { streamToBuffer } from '../../../utils/stream';
 import type { DecryptFileKeys } from '../interface';
@@ -38,7 +37,11 @@ async function decryptThumbnail(
                 verificationKeys: addressPublicKeys,
                 format: 'binary',
             });
-            return { data, verified };
+
+            return {
+                data,
+                verified,
+            };
         }
     );
 

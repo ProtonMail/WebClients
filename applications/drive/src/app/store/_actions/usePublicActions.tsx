@@ -2,8 +2,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 
-import { usePublicLinksListing } from '../_links';
-import usePublicLinkActions from '../_links/usePublicLinkActions';
+import { usePublicLinkActions, usePublicLinksListing } from '../_links';
 import { useErrorHandler } from '../_utils';
 
 /**
