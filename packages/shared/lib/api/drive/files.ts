@@ -1,5 +1,10 @@
 import { UPLOAD_TIMEOUT } from '../../drive/constants';
-import type { CreateDriveFile, Thumbnail, UpdateFileRevision } from '../../interfaces/drive/file';
+import type {
+    CreateDriveFile,
+    PublicCreateDriveFile,
+    Thumbnail,
+    UpdateFileRevision,
+} from '../../interfaces/drive/file';
 
 export const queryCreateFile = (shareId: string, data: CreateDriveFile) => {
     return {
@@ -152,5 +157,70 @@ export const queryRestoreFileRevision = (shareId: string, linkId: string, revisi
     return {
         method: 'post',
         url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}/restore`,
+    };
+};
+
+/** Public **/
+export const queryPublicCreateFile = (token: string, data: PublicCreateDriveFile) => {
+    return {
+        method: 'post',
+        timeout: UPLOAD_TIMEOUT,
+        url: `drive/urls/${token}/files`,
+        silence: true,
+        data,
+    };
+};
+
+export const queryPublicRequestUpload = (
+    token: string,
+    data: {
+        BlockList: {
+            Hash: string;
+            EncSignature: string;
+            Size: number;
+            Index: number;
+            Verifier: {
+                Token: string;
+            };
+        }[];
+        ThumbnailList?: Omit<Thumbnail, 'ThumbnailID'>[];
+        AddressID: string;
+        LinkID: string;
+        RevisionID: string;
+        Thumbnail?: number;
+        ThumbnailHash?: string;
+        ThumbnailSize?: number;
+    }
+) => {
+    return {
+        method: 'post',
+        url: `drive/urls/${token}/blocks`,
+        data,
+    };
+};
+
+/**
+ * This route should never be called without also instanciating a verifier.
+ * See the file uploader in the Drive app.
+ */
+export const queryPublicVerificationData = (token: string, linkId: string, revisionId: string) => {
+    return {
+        method: 'get',
+        url: `drive/urls/${token}/links/${linkId}/revisions/${revisionId}/verification`,
+        silence: true,
+    };
+};
+
+export const queryPublicUpdateFileRevision = (
+    token: string,
+    linkID: string,
+    revisionId: string,
+    data: UpdateFileRevision
+) => {
+    return {
+        method: 'put',
+        timeout: UPLOAD_TIMEOUT,
+        url: `drive/urls/${token}/files/${linkID}/revisions/${revisionId}`,
+        data,
     };
 };

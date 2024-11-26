@@ -8,7 +8,7 @@ import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
-import type { EncryptedLink, LinkShareUrl, useFolderView } from '../../../store';
+import type { EncryptedLink, LinkShareUrl, SignatureIssues, useFolderView } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
@@ -42,7 +42,7 @@ export interface DriveItem extends FileBrowserBaseItem {
     fileModifyTime: number;
     name: string;
     shareUrl?: LinkShareUrl;
-    signatureIssues?: any;
+    signatureIssues?: SignatureIssues;
     signatureAddress?: string;
     size: number;
     trashed: number | null;

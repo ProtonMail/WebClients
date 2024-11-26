@@ -13,6 +13,7 @@ import { usePublicFileView } from '../../../store/_views/useFileView';
 import type { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
 import { FileBrowserStateProvider } from '../../FileBrowser';
+import TransferManager from '../../TransferManager/TransferManager';
 import { EditActions } from '../EditActions/EditActions';
 import Breadcrumbs from '../Layout/Breadcrumbs';
 import HeaderSecureLabel from '../Layout/HeaderSecureLabel';
@@ -21,7 +22,6 @@ import ReportAbuseButton from '../Layout/ReportAbuseButton';
 import SharedPageFooter from '../Layout/SharedPageFooter';
 import SharedPageHeader from '../Layout/SharedPageHeader';
 import SharedPageLayout from '../Layout/SharedPageLayout';
-import SharedPageTransferManager from '../TransferModal/SharedPageTransferManager';
 import type { PublicLink } from '../interface';
 import SharedFileBrowser from './FileBrowser';
 
@@ -275,7 +275,12 @@ export default function SharedFolder({
                 )}
 
                 {canWrite && <EditActions token={token} linkId={linkId} />}
-                <SharedPageTransferManager rootItem={rootLink} />
+                <div
+                    className="fixed bottom-0 right-0 z-up w-full items-end max-w-custom"
+                    style={{ '--max-w-custom': '50em' }}
+                >
+                    <TransferManager />
+                </div>
                 <SharedFileBrowser
                     {...folderView}
                     canWrite={canWrite}

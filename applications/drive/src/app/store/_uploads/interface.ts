@@ -23,7 +23,7 @@ export interface UploadFolderControls {
 
 export interface UploadCallbacks {
     initialize: (abortSignal: AbortSignal) => Promise<{
-        addressPrivateKey: PrivateKeyReference;
+        addressPrivateKey: PrivateKeyReference | undefined;
         parentPrivateKey: PrivateKeyReference;
     }>;
     getVerificationData: (abortSignal: AbortSignal) => Promise<VerificationData>;
@@ -57,7 +57,7 @@ type InitializedFileMeta = {
     privateKey: PrivateKeyReference;
     sessionKey: SessionKey;
     parentHashKey: Uint8Array;
-    address: {
+    address?: {
         privateKey: PrivateKeyReference;
         email: string;
     };

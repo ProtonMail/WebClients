@@ -7,7 +7,7 @@ import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
-import type { EncryptedLink, LinkShareUrl } from '../../../store';
+import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
 import type { useTrashView } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
@@ -32,7 +32,8 @@ export interface TrashItem extends FileBrowserBaseItem {
     fileModifyTime: number;
     name: string;
     shareUrl?: LinkShareUrl;
-    signatureIssues?: any;
+    signatureIssues?: SignatureIssues;
+    signatureAddress?: string;
     size: number;
     trashed: number | null;
     parentLinkId: string;
