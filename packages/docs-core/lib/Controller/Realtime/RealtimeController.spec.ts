@@ -704,14 +704,14 @@ describe('RealtimeController', () => {
 
       controller.handleRealtimeConnectionReady()
 
-      expect(spy).not.toHaveBeenCalled()
+      expect(spy).not.toHaveBeenCalledWith('realtimeReadyToBroadcast', true)
     })
   })
 
   describe('beginInitialConnectionTimer', () => {
     it('should set timer and call timeout callback after delay', () => {
       controller.beginInitialConnectionTimer()
-      documentState.emitEvent = jest.fn()
+      documentState.setProperty = jest.fn()
 
       expect(controller.initialConnectionTimer).toBeDefined()
 
@@ -720,10 +720,7 @@ describe('RealtimeController', () => {
       expect(controller.logger.warn).toHaveBeenCalledWith(
         'Initial connection with RTS cannot seem to be formed in a reasonable time',
       )
-      expect(documentState.emitEvent).toHaveBeenCalledWith({
-        name: 'RealtimeInitialConnectionTimedOut',
-        payload: undefined,
-      })
+      expect(documentState.setProperty).toHaveBeenCalledWith('realtimeConnectionTimedOut', true)
     })
   })
 
