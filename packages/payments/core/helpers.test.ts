@@ -28,6 +28,7 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     paramCurrency: currency,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(currency);
         });
@@ -42,6 +43,7 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     paramCurrency: 'BRL',
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('BRL');
         });
@@ -56,6 +58,7 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     paramCurrency: 'BRL',
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('EUR');
         });
@@ -80,6 +83,7 @@ describe('payments core helpers', () => {
                         status,
                         paramCurrency: Currency,
                         user,
+                        enableNewBatchCurrencies: true,
                     })
                 ).toEqual(Currency);
             }
@@ -108,6 +112,7 @@ describe('payments core helpers', () => {
                         paramCurrency: Currency,
                         user,
                         subscription,
+                        enableNewBatchCurrencies: true,
                     })
                 ).toEqual(Currency);
             }
@@ -132,6 +137,7 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('BRL');
         });
@@ -152,6 +158,7 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('USD');
         });
@@ -172,6 +179,7 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(DEFAULT_CURRENCY);
         });
@@ -195,6 +203,7 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('USD');
         });
@@ -213,6 +222,7 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     subscription,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('USD');
         });
@@ -241,6 +251,7 @@ describe('payments core helpers', () => {
                     status,
                     plans,
                     subscription,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('JPY');
         });
@@ -260,6 +271,7 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     user,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('USD');
         });
@@ -279,6 +291,7 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     user,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('BRL');
         });
@@ -299,6 +312,7 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     user,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('USD');
         });
@@ -319,6 +333,7 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     user,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('BRL');
         });
@@ -348,6 +363,7 @@ describe('payments core helpers', () => {
                     status,
                     plans,
                     user,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('JPY');
         });
@@ -361,12 +377,12 @@ describe('payments core helpers', () => {
             expect(
                 getPreferredCurrency({
                     status,
-
                     user: {
                         Currency: 'USD',
                         ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED,
                         isPaid: true,
                     } as UserModel,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('USD');
         });
@@ -393,6 +409,7 @@ describe('payments core helpers', () => {
                     status,
                     plans,
                     paramPlanName: PLANS.VPN_BUSINESS,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('USD');
         });
@@ -421,6 +438,7 @@ describe('payments core helpers', () => {
                     paramPlanName: PLANS.VPN_BUSINESS,
 
                     paramCurrency: 'BRL',
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('USD');
         });
@@ -481,6 +499,7 @@ describe('payments core helpers', () => {
                     user,
                     plans,
                     paramPlanName,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('EUR');
         });
@@ -517,6 +536,7 @@ describe('payments core helpers', () => {
                     plans,
                     subscription,
                     status,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual('CHF');
         });
@@ -532,6 +552,7 @@ describe('payments core helpers', () => {
             expect(
                 getAvailableCurrencies({
                     status,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -552,6 +573,7 @@ describe('payments core helpers', () => {
                 getAvailableCurrencies({
                     status,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF']);
         });
@@ -572,6 +594,7 @@ describe('payments core helpers', () => {
                 getAvailableCurrencies({
                     status,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -590,6 +613,7 @@ describe('payments core helpers', () => {
                 getAvailableCurrencies({
                     status,
                     user,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -615,6 +639,7 @@ describe('payments core helpers', () => {
                     status,
                     user,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF']);
         });
@@ -640,6 +665,7 @@ describe('payments core helpers', () => {
                     status,
                     user,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -658,6 +684,7 @@ describe('payments core helpers', () => {
                 getAvailableCurrencies({
                     status,
                     subscription,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -683,6 +710,7 @@ describe('payments core helpers', () => {
                     status,
                     subscription,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF']);
         });
@@ -708,6 +736,7 @@ describe('payments core helpers', () => {
                     status,
                     subscription,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -726,6 +755,7 @@ describe('payments core helpers', () => {
                 getAvailableCurrencies({
                     status,
                     user,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL', 'ARS']);
         });
@@ -746,8 +776,8 @@ describe('payments core helpers', () => {
                     getAvailableCurrencies({
                         status,
                         user,
-
                         paramCurrency: mainCurrencyParam,
+                        enableNewBatchCurrencies: true,
                     })
                 ).toEqual(['USD', 'EUR', 'CHF']);
             }
@@ -768,6 +798,7 @@ describe('payments core helpers', () => {
                         Currency: 'ARS' as any,
                         ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED,
                     } as User,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual([]);
         });
@@ -781,6 +812,7 @@ describe('payments core helpers', () => {
             expect(
                 getSupportedRegionalCurrencies({
                     status,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['BRL']);
         });
@@ -799,6 +831,7 @@ describe('payments core helpers', () => {
                 getSupportedRegionalCurrencies({
                     status,
                     user,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['BRL']);
         });
@@ -817,6 +850,7 @@ describe('payments core helpers', () => {
                 getSupportedRegionalCurrencies({
                     status,
                     subscription,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['BRL']);
         });
@@ -837,6 +871,7 @@ describe('payments core helpers', () => {
                 getSupportedRegionalCurrencies({
                     status,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['BRL']);
         });
@@ -857,6 +892,7 @@ describe('payments core helpers', () => {
                 getSupportedRegionalCurrencies({
                     status,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual([]);
         });
@@ -877,6 +913,7 @@ describe('payments core helpers', () => {
                 getSupportedRegionalCurrencies({
                     status,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual([]);
         });
@@ -1051,12 +1088,12 @@ describe('payments core helpers', () => {
                     user,
                     subscription,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(expected);
         });
 
-        // todo: enable this test once more regional currencies are available
-        it.skip('should not duplicated regional currencies', () => {
+        it('should not duplicated regional currencies', () => {
             const status = {
                 CountryCode: 'GB',
                 VendorStates: {} as any,
@@ -1094,6 +1131,7 @@ describe('payments core helpers', () => {
                     user,
                     subscription,
                     plans,
+                    enableNewBatchCurrencies: true,
                 })
             ).toEqual(['GBP', 'BRL']);
         });
