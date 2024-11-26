@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { CircleLoader } from '@proton/atoms/index';
+
 import UnsupportedPreview from './UnsupportedPreview';
 
 interface Props {
@@ -36,7 +38,7 @@ const AudioPreview = ({ contents, mimeType, onDownload }: Props) => {
     return (
         <div className="flex w-full h-full">
             <div className="m-auto w-1/2">
-                <audio className="w-full" onError={handleBrokenAudio} src={url} controls />
+                {url ? <audio className="w-full" onError={handleBrokenAudio} src={url} controls /> : <CircleLoader />}
             </div>
         </div>
     );
