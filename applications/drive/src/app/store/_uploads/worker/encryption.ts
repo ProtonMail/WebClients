@@ -21,7 +21,7 @@ type LogCallback = (message: string) => void;
  */
 export async function* generateEncryptedBlocks(
     file: File,
-    addressPrivateKey: PrivateKeyReference,
+    addressPrivateKey: PrivateKeyReference | undefined,
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
     notifyVerificationError: (retryHelped: boolean) => void,
@@ -58,7 +58,7 @@ export async function* generateEncryptedBlocks(
  */
 export async function* generateThumbnailEncryptedBlocks(
     thumbnails: ThumbnailInfo[] | undefined,
-    addressPrivateKey: PrivateKeyReference,
+    addressPrivateKey: PrivateKeyReference | undefined,
     sessionKey: SessionKey,
     log: LogCallback
 ): AsyncGenerator<ThumbnailEncryptedBlock> {
@@ -77,7 +77,7 @@ export async function* generateThumbnailEncryptedBlocks(
 
 async function encryptThumbnail(
     index: number,
-    addressPrivateKey: PrivateKeyReference,
+    addressPrivateKey: PrivateKeyReference | undefined,
     sessionKey: SessionKey,
     thumbnail: ThumbnailInfo
 ): Promise<ThumbnailEncryptedBlock> {
@@ -103,7 +103,7 @@ async function encryptThumbnail(
 async function encryptBlock(
     index: number,
     chunk: Uint8Array,
-    addressPrivateKey: PrivateKeyReference,
+    addressPrivateKey: PrivateKeyReference | undefined,
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
     verifyBlock: Verifier,
@@ -112,13 +112,16 @@ async function encryptBlock(
 ): Promise<EncryptedBlock> {
     const tryEncrypt = async (retryCount: number): Promise<EncryptedBlock> => {
         log(`Encrypting block ${index}`);
+
         // Generate the encrypted block
         const { message: encryptedData, signature } = await CryptoProxy.encryptMessage({
             binaryData: chunk,
             sessionKey,
             signingKeys: addressPrivateKey,
             format: 'binary',
-            detached: true,
+            // signingKeys is not optional in case detached is specified.
+            // If no addressPrivateKey, it will not be embedded anyway.
+            detached: !!addressPrivateKey,
         });
 
         // IMPORTANT!
@@ -129,7 +132,6 @@ async function encryptBlock(
         // which would create an incorrect digest that would look "correct" to the server.
         const hash = (await generateContentHash(encryptedData)).BlockHash;
         let verificationToken;
-
         try {
             verificationToken = await verifyBlock(encryptedData);
         } catch (e) {
@@ -150,7 +152,17 @@ async function encryptBlock(
             notifyVerificationError(true);
         }
 
-        // Encrypt the block signature after verification
+        if (!signature) {
+            return {
+                index,
+                originalSize: chunk.length,
+                encryptedData,
+                hash,
+                signature: '', // Simplify the typing to not mess up with the normal upload
+                verificationToken,
+            };
+        }
+
         const { message: encryptedSignature } = await CryptoProxy.encryptMessage({
             binaryData: signature,
             sessionKey,

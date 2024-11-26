@@ -10,6 +10,7 @@ export { default as useLink } from './useLink';
 export { default as useLinks } from './useLinks';
 export { default as useLinkActions } from './useLinkActions';
 export { default as useLinksActions } from './useLinksActions';
+export { usePublicLinkActions } from './usePublicLinkActions';
 export { useLinksListing, usePublicLinksListing } from './useLinksListing';
 export { useLinksQueue } from './useLinksQueue';
 

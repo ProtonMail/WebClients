@@ -112,3 +112,18 @@ export interface ScanResultItem {
     Error?: string;
     Safe: boolean;
 }
+
+/** Public **/
+export interface PublicCreateDriveFile {
+    Name: string;
+    Hash: string;
+    ParentLinkID: string;
+    NodePassphrase: string;
+    NodePassphraseSignature: string;
+    SignatureEmail?: string;
+    NodeKey: string;
+    MIMEType: string;
+    ContentKeyPacket: string;
+    ContentKeyPacketSignature?: string;
+    ClientUID?: string;
+}

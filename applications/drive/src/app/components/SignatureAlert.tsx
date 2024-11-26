@@ -5,6 +5,7 @@ import { VERIFICATION_STATUS } from '@proton/crypto';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import type { SignatureIssueLocation, SignatureIssues } from '../store';
+import { hasValidAnonymousSignature } from './hasValidAnonymousSignature';
 
 type Props = {
     loading: boolean;
@@ -20,6 +21,7 @@ type Props = {
 export default function SignatureAlert({
     loading,
     signatureIssues,
+    signatureAddress,
     signatureNetworkError,
     corruptedLink,
     className,
@@ -50,9 +52,12 @@ export default function SignatureAlert({
         );
     }
 
+    const validAnonymousSignature =
+        !!signatureIssues && !signatureAddress && hasValidAnonymousSignature(signatureIssues);
+
     return (
-        <Alert type={signatureIssues ? 'error' : 'success'} className={className}>
-            <SignatureAlertBody signatureIssues={signatureIssues} {...props} />
+        <Alert type={signatureIssues && !validAnonymousSignature ? 'error' : 'success'} className={className}>
+            <SignatureAlertBody signatureIssues={signatureIssues} signatureAddress={signatureAddress} {...props} />
         </Alert>
     );
 }
@@ -73,7 +78,7 @@ export function SignatureAlertBody({ signatureIssues, signatureAddress, isFile, 
 
     const emailAddress = (
         <strong className="text-break" key="signatureAddress" data-testid="signature-address">
-            {signatureAddress}
+            {signatureAddress || c('Info').t`an anonymous user`}
         </strong>
     );
 
@@ -83,6 +88,18 @@ export function SignatureAlertBody({ signatureIssues, signatureAddress, isFile, 
                 {isFile
                     ? c('Info').jt`Digital signature verified. This file was securely uploaded by ${emailAddress}.`
                     : c('Info').jt`Digital signature verified. This folder was securely uploaded by ${emailAddress}.`}
+            </>
+        );
+    }
+
+    if (!signatureAddress && hasValidAnonymousSignature(signatureIssues)) {
+        return (
+            <>
+                {isFile
+                    ? c('Info')
+                          .jt`The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.`
+                    : c('Info')
+                          .jt`The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.`}
             </>
         );
     }

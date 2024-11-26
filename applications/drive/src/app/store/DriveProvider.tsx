@@ -13,6 +13,7 @@ import { PhotosProvider } from './_photos';
 import { SearchProvider } from './_search';
 import { SharesProvider } from './_shares';
 import { UploadProvider } from './_uploads';
+import { PublicUploadProvider } from './_uploads/UploadProvider/UploadProvider';
 import { VolumesProvider } from './_volumes';
 
 interface DriveProviderProps {
@@ -55,7 +56,9 @@ export function PublicDriveProvider({ children }: PublicDriveProviderProps) {
                 <VolumesProvider>
                     <SharesProvider>
                         <PublicLinksProvider>
-                            <PublicDownloadsProvider>{children}</PublicDownloadsProvider>
+                            <PublicUploadProvider>
+                                <PublicDownloadsProvider>{children}</PublicDownloadsProvider>
+                            </PublicUploadProvider>
                         </PublicLinksProvider>
                     </SharesProvider>
                 </VolumesProvider>

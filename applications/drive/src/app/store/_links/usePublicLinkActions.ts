@@ -1,11 +1,15 @@
 import { usePreventLeave } from '@proton/components';
 import { queryPublicCreateFolder } from '@proton/shared/lib/api/drive/folder';
+import { queryPublicDeleteChildrenLinks } from '@proton/shared/lib/api/drive/link';
+import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import {
     encryptName,
     generateLookupHash,
     generateNodeHashKey,
     generateNodeKeys,
 } from '@proton/shared/lib/keys/driveKeys';
+import chunk from '@proton/utils/chunk';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
@@ -19,7 +23,7 @@ import { validateLinkName } from './validation';
 /**
  * useLinkActions provides actions for manipulating with individual link.
  */
-export default function usePublicLinkActions() {
+export function usePublicLinkActions() {
     const { preventLeave } = usePreventLeave();
     const { request: publicDebouncedRequest } = usePublicSession();
     const events = useDriveEventManager();
@@ -123,7 +127,56 @@ export default function usePublicLinkActions() {
         return Folder.ID;
     };
 
+    /**
+     * batchHelper makes easier to do any action with many links in several
+     * batches to make sure API can handle it (to not send thousands of links
+     * in one request), all run in parallel (up to a reasonable limit).
+     */
+    const batchHelper = async <T>(
+        abortSignal: AbortSignal,
+        shareId: string,
+        linkIds: string[],
+        query: (batchLinkIds: string[], shareId: string) => any,
+        maxParallelRequests = MAX_THREADS_PER_REQUEST
+    ) => {
+        const responses: { batchLinkIds: string[]; response: T }[] = [];
+        const successes: string[] = [];
+        const failures: { [linkId: string]: any } = {};
+
+        const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
+
+        const queue = batches.map(
+            (batchLinkIds) => () =>
+                publicDebouncedRequest<T>(query(batchLinkIds, shareId), abortSignal)
+                    .then((response) => {
+                        responses.push({ batchLinkIds, response });
+                        batchLinkIds.forEach((linkId) => successes.push(linkId));
+                    })
+                    .catch((error) => {
+                        batchLinkIds.forEach((linkId) => (failures[linkId] = error));
+                    })
+        );
+        await preventLeave(runInQueue(queue, maxParallelRequests));
+        return {
+            responses,
+            successes,
+            failures,
+        };
+    };
+
+    const deleteChildrenLinks = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        parentLinkId: string,
+        linkIds: string[]
+    ) => {
+        return batchHelper(abortSignal, shareId, linkIds, (batchLinkIds) =>
+            queryPublicDeleteChildrenLinks(shareId, parentLinkId, batchLinkIds)
+        );
+    };
+
     return {
         createFolder,
+        deleteChildrenLinks,
     };
 }

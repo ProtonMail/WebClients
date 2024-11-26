@@ -2,8 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { useNotifications } from '@proton/components/index';
 
-import { usePublicLinksListing } from '../_links';
-import usePublicLinkActions from '../_links/usePublicLinkActions';
+import { usePublicLinkActions, usePublicLinksListing } from '../_links';
 import { useErrorHandler } from '../_utils';
 import { usePublicActions } from './usePublicActions';
 
@@ -22,8 +21,10 @@ jest.mock('../_links/usePublicLinkActions');
 
 const mockNewFolderName = 'New Folder';
 const mockCreateFolder = jest.fn().mockResolvedValue(mockNewFolderName);
+const mockDeleteChildrenLink = jest.fn();
 jest.mocked(usePublicLinkActions).mockImplementation(() => ({
     createFolder: mockCreateFolder,
+    deleteChildrenLinks: mockDeleteChildrenLink,
 }));
 
 const mockLoadChildren = jest.fn().mockResolvedValue(undefined);
