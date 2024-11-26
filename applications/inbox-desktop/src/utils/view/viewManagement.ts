@@ -16,6 +16,7 @@ import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
 import { getAppURL, URLConfig } from "../../store/urlStore";
+import metrics from "../metrics";
 import { join } from "node:path";
 import { c } from "ttag";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
@@ -335,6 +336,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
         const handleLoadError = (_event: Event, errorCode: number, errorDescription: string) => {
             if (!IGNORED_NET_ERROR_CODES.includes(errorCode)) {
                 viewLogger(viewID).error("did-fail-load", url, errorCode, errorDescription);
+                metrics.recordFailToLoadView();
                 showNetworkErrorPage(viewID);
             }
             cleanup();

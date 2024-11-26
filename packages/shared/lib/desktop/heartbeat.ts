@@ -11,6 +11,7 @@ import type { DefaultProtocol } from './DefaultProtocol';
 import type { IPCInboxHostUpdateListenerRemover } from './desktopTypes';
 import {
     addIPCHostUpdateListener,
+    emptyListener,
     getInboxDesktopInfo,
     hasInboxDesktopFeature,
     invokeInboxDesktopIPC,
@@ -83,7 +84,7 @@ export function useInboxDesktopHeartbeat() {
     useEffect(() => {
         const defaultMailtoChecked: IPCInboxHostUpdateListenerRemover = hasInboxDesktopFeature('MailtoTelemetry')
             ? addIPCHostUpdateListener('defaultMailtoChecked', (payload) => sendMailtoTelemetry(api, payload))
-            : { removeListener: () => {} };
+            : emptyListener;
 
         checkMailtoTelemetryIsNeeded();
         const intervalFunction = setInterval(() => {
