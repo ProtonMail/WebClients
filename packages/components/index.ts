@@ -408,7 +408,6 @@ export { default as LoaderPage } from './containers/app/LoaderPage';
 export { default as LocationErrorBoundary } from './containers/app/LocationErrorBoundary';
 export { default as PrivateAppContainer } from './containers/app/PrivateAppContainer';
 export { default as ProtonApp } from './containers/app/ProtonApp';
-export { default as SSOForkProducer } from './containers/app/SSOForkProducer';
 export { default as StandardErrorPage } from './containers/app/StandardErrorPage';
 export { default as StandardLoadErrorPage } from './containers/app/StandardLoadErrorPage';
 export { default as StandardPrivateApp } from './containers/app/StandardPrivateApp';

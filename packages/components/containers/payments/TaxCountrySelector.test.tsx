@@ -1,7 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { renderHook } from '@testing-library/react-hooks';
+
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
 
 import type { TaxCountrySelectorProps } from './TaxCountrySelector';
 import TaxCountrySelector from './TaxCountrySelector';
+import { useTaxCountry } from './TaxCountrySelector';
 
 const setSelectedCountry = jest.fn();
 const setFederalStateCode = jest.fn();
@@ -133,4 +137,102 @@ it('clicking the collapsed element should switch to uncollapsed state and open t
     expect(screen.getByText('Algeria')).toBeInTheDocument();
     expect(screen.getByText('Andorra')).toBeInTheDocument();
     expect(screen.getByText('Angola')).toBeInTheDocument();
+});
+
+describe('useTaxCountry hook', () => {
+    it('should initialize with statusExtended values when provided', () => {
+        const { result } = renderHook(() =>
+            useTaxCountry({
+                statusExtended: {
+                    CountryCode: 'US',
+                    State: 'CA',
+                },
+            })
+        );
+
+        expect(result.current.selectedCountryCode).toBe('US');
+        expect(result.current.federalStateCode).toBe('CA');
+    });
+
+    it('should initialize with default values when statusExtended is not provided', () => {
+        const { result } = renderHook(() => useTaxCountry({}));
+
+        expect(result.current.selectedCountryCode).toBe(DEFAULT_TAX_BILLING_ADDRESS.CountryCode);
+        expect(result.current.federalStateCode).toBe(null);
+    });
+
+    it('should update billing address when statusExtended changes', () => {
+        const { result, rerender } = renderHook((props) => useTaxCountry(props), {
+            initialProps: {
+                statusExtended: {
+                    CountryCode: 'US',
+                    State: 'CA',
+                },
+            },
+        });
+
+        // Initial values
+        expect(result.current.selectedCountryCode).toBe('US');
+        expect(result.current.federalStateCode).toBe('CA');
+
+        // Update props
+        rerender({
+            statusExtended: {
+                CountryCode: 'CA',
+                State: 'ON',
+            },
+        });
+
+        // Values should be updated
+        expect(result.current.selectedCountryCode).toBe('CA');
+        expect(result.current.federalStateCode).toBe('ON');
+    });
+
+    it('should not update billing address if statusExtended values are the same', () => {
+        const onBillingAddressChange = jest.fn();
+        const { rerender } = renderHook((props) => useTaxCountry(props), {
+            initialProps: {
+                statusExtended: {
+                    CountryCode: 'US',
+                    State: 'CA',
+                },
+                onBillingAddressChange,
+            },
+        });
+
+        // Re-render with same values
+        rerender({
+            statusExtended: {
+                CountryCode: 'US',
+                State: 'CA',
+            },
+            onBillingAddressChange,
+        });
+
+        // onBillingAddressChange should only be called once during initial render
+        expect(onBillingAddressChange).toHaveBeenCalledTimes(1);
+    });
+
+    it('should call onBillingAddressChange when billing address updates', () => {
+        const onBillingAddressChange = jest.fn();
+        const { result, rerender } = renderHook(() =>
+            useTaxCountry({
+                onBillingAddressChange,
+                statusExtended: {
+                    CountryCode: 'US',
+                    State: 'AL',
+                },
+            })
+        );
+
+        // Manually update country
+        result.current.setSelectedCountry('CA');
+
+        rerender();
+
+        expect(onBillingAddressChange).toHaveBeenLastCalledWith({
+            CountryCode: 'CA',
+            State: 'AB', // First state in Canada's list
+        });
+    });
 });

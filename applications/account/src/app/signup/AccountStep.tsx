@@ -397,7 +397,7 @@ const AccountStep = ({
                                     disabled: true,
                                     // This prop is used to make disabled state not layout shift too much
                                     // It's kind of a hack
-                                    'aria-busy': true,
+                                    noDisabledStyles: true,
                                 };
                             }
                         })()}

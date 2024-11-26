@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -124,14 +124,26 @@ export const useTaxCountry = (props: HookProps): HookResult => {
         ? ({
               CountryCode: props.statusExtended.CountryCode,
               State: props.statusExtended.State,
-          } as BillingAddress)
+          } satisfies BillingAddress)
         : DEFAULT_TAX_BILLING_ADDRESS;
 
     const [taxBillingAddress, setTaxBillingAddress] = useState<BillingAddress>(billingAddress);
+    const previousBillingAddressRef = useRef(billingAddress);
 
     useEffect(() => {
         props.onBillingAddressChange?.(taxBillingAddress);
     }, [taxBillingAddress]);
+
+    useEffect(() => {
+        const previousValue = previousBillingAddressRef.current;
+        const statusChanged =
+            previousValue?.CountryCode !== billingAddress.CountryCode || previousValue?.State !== billingAddress.State;
+
+        if (statusChanged) {
+            setTaxBillingAddress(billingAddress);
+            previousBillingAddressRef.current = billingAddress;
+        }
+    }, [billingAddress.CountryCode, billingAddress.State]);
 
     const selectedCountryCode = taxBillingAddress.CountryCode;
     const federalStateCode = taxBillingAddress.State ?? null;
