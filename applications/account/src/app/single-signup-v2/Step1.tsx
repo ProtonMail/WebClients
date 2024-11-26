@@ -948,6 +948,7 @@ const Step1 = ({
                                                     if (user) {
                                                         return (
                                                             <AccountSwitcherItem
+                                                                data-testid="account-switcher-item"
                                                                 user={user}
                                                                 right={
                                                                     (activeSessions?.length || 0) > 1 ? (
