@@ -16,6 +16,7 @@ import { ModalHeaderWithStepper } from '../ModalHeaderWithStepper';
 import { WalletAccountSelector } from '../WalletAccountSelector';
 import type { QuoteWithProvider } from './AmountStep';
 import { AmountStep } from './AmountStep';
+import { BitcoinBuyAztecoConfirmModal } from './BitcoinBuyAztecoConfirmModal';
 import { BitcoinBuyConfirmModal } from './BitcoinBuyConfirmModal';
 import { BitcoinBuyInProgressModal } from './BitcoinBuyInProgressModal';
 import { Checkout } from './Checkout';
@@ -45,7 +46,7 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
     const [quote, setQuote] = useState<QuoteWithProvider>();
     const [clientSecret, setClientSecret] = useState<string | null>(null);
 
-    const [openedModal, setOpenedModal] = useState<'buy' | 'confirm' | 'in-progress'>('buy');
+    const [openedModal, setOpenedModal] = useState<'buy' | 'confirm' | 'confirm-azteco' | 'in-progress'>('buy');
 
     const defaultWalletAccount = first(wallet.WalletAccounts);
     const defaultSelected: [ApiWalletWithPassphraseInput, WasmApiWalletAccount | undefined] = [
@@ -94,25 +95,27 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
                     />
                 }
             >
-                {!bitcoinAddressHelper?.receiveBitcoinAddress ? (
-                    <Loader />
-                ) : (
-                    <>
-                        <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
-                            <div className="sticky top-0 w-full">
-                                <WalletAccountSelector
-                                    disabled={stepKey === StepKey.Onramp}
-                                    value={selectedWalletAccount}
-                                    onSelect={(selected) => {
-                                        setSelectedWalletAccount(selected);
-                                    }}
-                                    options={toWalletAccountSelectorOptions(apiWalletsData ?? [])}
-                                />
-                            </div>
-                        </div>
+                <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
+                    <div className="sticky top-0 w-full">
+                        {bitcoinAddressHelper?.receiveBitcoinAddress && (
+                            <WalletAccountSelector
+                                disabled={stepKey === StepKey.Onramp}
+                                value={selectedWalletAccount}
+                                onSelect={(selected) => {
+                                    setSelectedWalletAccount(selected);
+                                }}
+                                options={toWalletAccountSelectorOptions(apiWalletsData ?? [])}
+                            />
+                        )}
+                    </div>
+                </div>
 
-                        <div>
-                            <div className="wallet-fullscreen-modal-main">
+                <div>
+                    <div className="wallet-fullscreen-modal-main">
+                        {!bitcoinAddressHelper?.receiveBitcoinAddress ? (
+                            <Loader />
+                        ) : (
+                            <>
                                 {stepKey === StepKey.Location && (
                                     <Location
                                         onConfirm={(country) => {
@@ -168,7 +171,9 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
                                                 clientSecret={clientSecret}
                                                 onPurchaseComplete={() => {
                                                     reset();
-                                                    setOpenedModal('confirm');
+                                                    setOpenedModal(
+                                                        quote.provider === 'Azteco' ? 'confirm-azteco' : 'confirm'
+                                                    );
                                                 }}
                                                 onBack={() => {
                                                     if (
@@ -184,17 +189,25 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
                                             />
                                         );
                                     })()}
-                            </div>
-                        </div>
+                            </>
+                        )}
+                    </div>
+                </div>
 
-                        {/* empty div for grid centering */}
-                        <div className="wallet-fullscreen-modal-right" />
-                    </>
-                )}
+                {/* empty div for grid centering */}
+                <div className="wallet-fullscreen-modal-right" />
             </FullscreenModal>
 
             <BitcoinBuyConfirmModal
                 open={Boolean(modal.open && openedModal === 'confirm')}
+                onDone={handleClose}
+                onBuyMoreBitcoin={() => {
+                    setOpenedModal('buy');
+                }}
+            />
+
+            <BitcoinBuyAztecoConfirmModal
+                open={Boolean(modal.open && openedModal === 'confirm-azteco')}
                 onDone={handleClose}
                 onBuyMoreBitcoin={() => {
                     setOpenedModal('buy');
