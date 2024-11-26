@@ -16,6 +16,7 @@ import { ModalHeaderWithStepper } from '../ModalHeaderWithStepper';
 import { WalletAccountSelector } from '../WalletAccountSelector';
 import type { QuoteWithProvider } from './AmountStep';
 import { AmountStep } from './AmountStep';
+import { BitcoinBuyAztecoConfirmModal } from './BitcoinBuyAztecoConfirmModal';
 import { BitcoinBuyConfirmModal } from './BitcoinBuyConfirmModal';
 import { BitcoinBuyInProgressModal } from './BitcoinBuyInProgressModal';
 import { Checkout } from './Checkout';
@@ -45,7 +46,7 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
     const [quote, setQuote] = useState<QuoteWithProvider>();
     const [clientSecret, setClientSecret] = useState<string | null>(null);
 
-    const [openedModal, setOpenedModal] = useState<'buy' | 'confirm' | 'in-progress'>('buy');
+    const [openedModal, setOpenedModal] = useState<'buy' | 'confirm' | 'confirm-azteco' | 'in-progress'>('buy');
 
     const defaultWalletAccount = first(wallet.WalletAccounts);
     const defaultSelected: [ApiWalletWithPassphraseInput, WasmApiWalletAccount | undefined] = [
@@ -168,7 +169,9 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
                                                 clientSecret={clientSecret}
                                                 onPurchaseComplete={() => {
                                                     reset();
-                                                    setOpenedModal('confirm');
+                                                    setOpenedModal(
+                                                        quote.provider === 'Azteco' ? 'confirm-azteco' : 'confirm'
+                                                    );
                                                 }}
                                                 onBack={() => {
                                                     if (
@@ -195,6 +198,14 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
 
             <BitcoinBuyConfirmModal
                 open={Boolean(modal.open && openedModal === 'confirm')}
+                onDone={handleClose}
+                onBuyMoreBitcoin={() => {
+                    setOpenedModal('buy');
+                }}
+            />
+
+            <BitcoinBuyAztecoConfirmModal
+                open={Boolean(modal.open && openedModal === 'confirm-azteco')}
                 onDone={handleClose}
                 onBuyMoreBitcoin={() => {
                     setOpenedModal('buy');
