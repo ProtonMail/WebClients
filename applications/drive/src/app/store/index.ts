@@ -13,6 +13,7 @@ export {
     useLockedVolume,
     useShareUrl,
     useDriveSharingFlags,
+    useDrivePublicSharingFlags,
     useContextShareHandler,
 } from './_shares';
 export { useUpload, useFileUploadInput, useFolderUploadInput, mimeTypeFromFile } from './_uploads';
