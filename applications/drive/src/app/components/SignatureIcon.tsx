@@ -2,14 +2,18 @@ import { c } from 'ttag';
 
 import { Icon, Tooltip } from '@proton/components';
 
+import { type SignatureIssues } from '../store';
+import { hasValidAnonymousSignature } from './hasValidAnonymousSignature';
+
 interface Props {
-    signatureIssues?: any;
+    signatureIssues?: SignatureIssues;
     isFile: boolean;
+    isAnonymous?: boolean;
     className?: string;
 }
 
-export default function SignatureIcon({ isFile, signatureIssues, className }: Props) {
-    if (!signatureIssues) {
+export default function SignatureIcon({ isFile, isAnonymous = false, signatureIssues, className }: Props) {
+    if (!signatureIssues || (isAnonymous && hasValidAnonymousSignature(signatureIssues))) {
         return null;
     }
 
