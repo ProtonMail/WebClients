@@ -305,10 +305,12 @@ export function useLinkInner(
                 : getSharePrivateKey(abortSignal, shareId);
             const [parentPrivateKey, addressPublicKey] = await Promise.all([
                 parentPrivateKeyPromise,
-                getVerificationKey(encryptedLink.signatureAddress),
+                encryptedLink.signatureAddress ? getVerificationKey(encryptedLink.signatureAddress) : [],
             ]);
 
             try {
+                // Fallback to parent NodeKey in case if we don't have addressPublicKey (Anonymous upload)
+                const publicKeys = encryptedLink.signatureAddress ? addressPublicKey : [parentPrivateKey];
                 const {
                     decryptedPassphrase,
                     sessionKey: passphraseSessionKey,
@@ -317,7 +319,7 @@ export function useLinkInner(
                     armoredPassphrase: encryptedLink.nodePassphrase,
                     armoredSignature: encryptedLink.nodePassphraseSignature,
                     privateKeys: [parentPrivateKey],
-                    publicKeys: addressPublicKey,
+                    publicKeys,
                     validateSignature: false,
                 });
 
@@ -532,9 +534,11 @@ export function useLinkInner(
                             const privateKey = !encryptedLink.parentLinkId
                                 ? await getSharePrivateKey(abortSignal, shareId)
                                 : await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId);
-                            const publicKey = await getVerificationKey(
-                                encryptedLink.nameSignatureAddress || encryptedLink.signatureAddress
-                            );
+                            const signatureAddress =
+                                encryptedLink.nameSignatureAddress || encryptedLink.signatureAddress;
+                            const publicKey = signatureAddress
+                                ? await getVerificationKey(signatureAddress)
+                                : privateKey;
                             const { data, verified } = await decryptSigned({
                                 armoredMessage: encryptedLink.name,
                                 privateKey,
@@ -558,6 +562,12 @@ export function useLinkInner(
                 const revision = !!revisionId
                     ? await getLinkRevision(abortSignal, { shareId, linkId: encryptedLink.linkId, revisionId })
                     : undefined;
+                // Files have signature address on the revision.
+                // Folders have signature address on the link itself.
+                const signatureAddress =
+                    revision?.signatureAddress ||
+                    encryptedLink.activeRevision?.signatureAddress ||
+                    encryptedLink.signatureAddress;
                 const xattrPromise = !encryptedLink.xAttr
                     ? {
                           fileModifyTime: encryptedLink.metaDataModifyTime,
@@ -572,13 +582,8 @@ export function useLinkInner(
                               decryptExtendedAttributes(
                                   encryptedLink.xAttr,
                                   privateKey,
-                                  // Files have signature address on the revision.
-                                  // Folders have signature address on the link itself.
-                                  await getVerificationKey(
-                                      revision?.signatureAddress ||
-                                          encryptedLink.activeRevision?.signatureAddress ||
-                                          encryptedLink.signatureAddress
-                                  )
+
+                                  signatureAddress ? await getVerificationKey(signatureAddress) : privateKey
                               )
                           )
                           .then(({ xattrs, verified }) => ({

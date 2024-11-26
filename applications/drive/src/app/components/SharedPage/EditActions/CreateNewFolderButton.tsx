@@ -27,7 +27,10 @@ export const CreateNewFolderButton = ({ token, linkId }: Props) => {
                         createFolder,
                     })
                 }
-                className="flex flex-column py-3"
+                className="flex flex-column py-3 w-custom"
+                style={{
+                    '--w-custom': '8.25rem',
+                }}
                 size="medium"
             >
                 <Icon name="folder" size={4} className="mb-4" />
