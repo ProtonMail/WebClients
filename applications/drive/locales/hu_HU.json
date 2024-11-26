@@ -890,11 +890,6 @@
         "Távolítás"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Újraaktiválás"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } vagy ${ importContact }."
@@ -985,15 +980,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 napos pénzvisszatérítési garancia"
-      ]
-    },
-    "bf2023: renew": {
-      "${ n } month": [
-        "${ n } hónap",
-        "az első ${ n } hónapban"
-      ],
-      "the first month": [
-        "az első hónapban"
       ]
     },
     "bf2023: Tooltip": {
@@ -1149,15 +1135,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "A tárhelye meg van osztva minden ${ BRAND_NAME } alkalmazás között."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } hónap",
-        "${ n } hónap"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatikusan megújul, ${ renewPrice } áron, ${ renewalLength } periódussal"
       ]
     },
     "Billing cycle option": {
@@ -8255,14 +8232,6 @@
         "Megtakarítás"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Aktív"
-      ],
-      "Expiring": [
-        "Lejár"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } névjegy azonosnak tűnik.",
@@ -9077,17 +9046,6 @@
       ],
       "You’ve got 5 GB of storage": [
         "Kapott 5 GB tárhelyet"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Befejező dátum"
-      ],
-      "Plan": [
-        "Csomag"
-      ],
-      "Status": [
-        "Állapot"
       ]
     },
     "Today icon tooltip in mini calendar": {

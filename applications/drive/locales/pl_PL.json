@@ -928,11 +928,6 @@
         "Pomniejsz"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Reaktywuj"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } lub ${ importContact }."
@@ -1048,18 +1043,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } miesiąc",
-        "${ n } miesiące",
-        "${ n } miesięcy",
-        "pierwszych ${ n } miesięcy"
-      ],
-      "the first month": [
-        "pierwszy miesiąc"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ discountedPrice } ważna przez ${ discountedMonths }. Odnowienie nastąpi w cenie ${ nextPrice } za ${ nextMonths }. Możesz anulować w dowolnym momencie."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ nextPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ]
@@ -1243,17 +1226,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi usługami ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } miesiąc",
-        "${ n } miesiące",
-        "${ n } miesięcy",
-        "${ n } miesiąca"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatyczne odnowienie za ${ renewalLength } w kwocie ${ renewPrice }"
       ]
     },
     "Billing cycle option": {
@@ -5321,6 +5293,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
       ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Subskrypcja automatycznie odnawiana w okresach ${ cycle }-miesięcznych."
+      ],
       "Subscription auto-renews every month.": [
         "Subskrypcja odnowi się automatycznie co miesięc."
       ],
@@ -5815,11 +5790,6 @@
     "Info on errors": {
       "Click for details": [
         "Kliknij po szczegóły"
-      ]
-    },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Możesz zapobiec wygaśnięciu subskrypcji, reaktywując ją ponownie"
       ]
     },
     "Info: partial": {
@@ -8048,15 +8018,15 @@
       ],
       "${ numberOfItems } item moved to trash": [
         "Element został przeniesiony do Kosza",
-        "Przeniesiono do Kosza ${ numberOfItems } elementy",
-        "Przeniesiono do Kosza ${ numberOfItems } elementów",
-        "Przeniesiono do Kosza ${ numberOfItems } elementów"
+        "Przeniesiono ${ numberOfItems } elementy do Kosza",
+        "Przeniesiono ${ numberOfItems } elementów do Kosza",
+        "Przeniesiono ${ numberOfItems } elementów do Kosza"
       ],
       "${ numberOfItems } item restored from trash": [
         "Element został przywrócony z Kosza",
-        "Przywrócono z Kosza ${ numberOfItems } elementy",
-        "Przywrócono z Kosza ${ numberOfItems } elementów",
-        "Przywrócono z Kosza ${ numberOfItems } elementów"
+        "Przywrócono ${ numberOfItems } elementy z Kosza",
+        "Przywrócono ${ numberOfItems } elementów z Kosza",
+        "Przywrócono ${ numberOfItems } elementów z Kosza"
       ],
       "${ numberOfItems } item successfully moved": [
         "Element został przeniesiony",
@@ -8578,17 +8548,8 @@
       "Please select your billing state first.": [
         "Najpierw wybierz stan rozliczeniowy"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Odnowienie za ${ price }. Anuluj w dowolnym momencie."
-      ],
       "Select billing country to pay": [
         "Wybierz kraj"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ price } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
@@ -9945,14 +9906,6 @@
         "Zaoszczędź"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Aktywna"
-      ],
-      "Expiring": [
-        "Wygasająca"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt wygląda identycznie.",
@@ -10844,17 +10797,6 @@
       ],
       "You’ve got 5 GB of storage": [
         "Masz 5 GB przestrzeni dyskowej"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Data zakończenia"
-      ],
-      "Plan": [
-        "Plan"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -945,16 +945,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } ay",
-        "ilk ${ n } ay"
-      ],
-      "the first month": [
-        "ilk ay"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Özel olarak indirimli fiyat olan ${ discountedPrice } ${ discountedMonths } için geçerlidir. Daha sonra indirimli fiyat olan ${ nextPrice } üzerinden ${ nextMonths } için otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Özel olarak indirimli fiyat olan ${ discountedPrice } ilk ay için geçerlidir. Daha sonra aylık ${ nextPrice } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ]
@@ -1142,12 +1132,9 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } ay",
-        "${ n } ay"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "${ renewPrice } tutar ile ${ renewalLength } süre için faturalanır"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir",
+        "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir"
       ]
     },
     "Billing cycle option": {
@@ -3881,11 +3868,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -4884,11 +4871,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "username": [
-        "kullanıcı adı"
-      ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -6097,11 +6084,17 @@
       "Change password": [
         "Parolayı değiştir"
       ],
+      "Convert to SSO": [
+        "Tek oturum açmaya ekle"
+      ],
       "Delete": [
         "Sil"
       ],
       "Delete and revoke invite": [
         "Daveti sil ve iptal et"
+      ],
+      "Detach from SSO": [
+        "Tek oturum açmadan çıkar"
       ],
       "Edit": [
         "Düzenle"
@@ -7814,20 +7807,8 @@
       "Processing payment": [
         "Ödeme işleniyor"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "${ price } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
       "Select billing country to pay": [
         "Ödeme için fatura ülkesini seçin"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ price } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "İşlem bulundu. İşlem tam olarak onaylandığında krediler hesabınıza eklenecek."
@@ -8135,6 +8116,9 @@
       ],
       "Something went wrong": [
         "Bir sorun çıktı"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "**${ email }** e-posta adresi zaten bir ${ BRAND_NAME } kullanıcısı olarak var. Lütfen kimlik hizmeti sağlayıcınızda bulunan bir kullanıcının e-posta adresini yazın."
       ]
     },
     "saml: Info": {
@@ -8143,6 +8127,9 @@
       ],
       "Details": [
         "Ayrıntılar"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "**${ domainName }** için kimlik hizmeti sağlayıcınızda bulunan bir kullanıcının e-posta adresini yazın"
       ],
       "Test in progress...": [
         "Sınama sürüyor..."
@@ -8311,6 +8298,9 @@
       ],
       "to be created": [
         "oluşturulacak"
+      ],
+      "to be deleted": [
+        "silinecek"
       ]
     },
     "session_recovery:available:action": {
@@ -8815,6 +8805,14 @@
         "${ n } üye oturum açmak için yardımınızı istedi.",
         "${ n } üye oturum açmak için yardımınızı istedi."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } kullanıcıya tek oturum açma eklendi",
+        "${ n } kullanıcıya tek oturum açma eklendi"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } kullanıcı tek oturum açmadan çıkarıldı",
+        "${ n } kullanıcı tek oturum açmadan çıkarıldı"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesabı gözden geçirin:",
         "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları gözden geçirin:"
@@ -8829,6 +8827,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Tek oturum açma kullanıcıları (kimlik hizmeti sağlayıcınızdan gelen) silinecek** ve bunları kuruluşunuza yeniden eklemek için el ile oluşturmanız gerekecek."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Tek oturum açma kullanıcıları kimlik hizmeti sağlayıcınızdan çıkarılacak** ve tek oturum açma kullanmayan kullanıcılara dönüştürülecek."
       ],
       "Access denied": [
         "Erişim izni verilmedi"
@@ -8985,8 +8986,14 @@
       "User details:": [
         "Kullanıcı bilgileri:"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Kuruluşunuza eklemek istediğiniz yeni kullanıcıları el ile oluşturmanız gerekecek."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Tek oturum açma yapılandırmanız silinecek"
       ]
     },
     "sso: auth device state": {
@@ -10046,10 +10053,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -10774,6 +10781,9 @@
       ],
       "Cancel request to access user data?": [
         "Kullanıcı verilerine erişme isteği iptal edilsin mi?"
+      ],
+      "Confirm all": [
+        "Tümünü onayla"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Aradan geçen zamanda şifreleme anahtarları güncellenmiş olduğundan ${ n } kullanıcıya otomatik olarak yönetici yetkisi verilemedi:",

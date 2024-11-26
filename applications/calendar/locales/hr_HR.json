@@ -592,11 +592,6 @@
         "Da, prisustvovati ću"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Ponovo aktiviraj"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } ili ${ importContact }."
@@ -701,13 +696,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Povrat novca do 30 dana"
-      ]
-    },
-    "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
       ]
     },
     "BF2024: Action (top button in header)": {
@@ -862,16 +850,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za pohranu dijeli se između svih ${ BRAND_NAME } usluga."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatski se obnavlja za ${ renewPrice }, na${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -5182,11 +5160,6 @@
         "Spremi"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Aktivno"
-      ]
-    },
     "Success": {
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Uklonjenim sudionicima poslat će se e-poruka o otkazivanju za sve događaje u ovom nizu."
@@ -5801,17 +5774,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Odaberite broj"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Datum završetka"
-      ],
-      "Plan": [
-        "Plan"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Title; create calendar modal": {

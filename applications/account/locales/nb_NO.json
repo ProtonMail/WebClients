@@ -256,6 +256,12 @@
       "Confirm opening of link ${ linkToShow }": [
         "Bekreft åpning av kobling ${ linkToShow }"
       ],
+      "Connect": [
+        "Koble til"
+      ],
+      "Connected": [
+        "Tilkoblet"
+      ],
       "Contact sales": [
         "Ta kontakt med salg"
       ],
@@ -814,11 +820,11 @@
       "Refresh status": [
         "Oppdater status"
       ],
-      "Refresh the page": [
-        "Oppdater siden"
-      ],
       "refresh the page": [
         "oppdater siden"
+      ],
+      "Refresh the page": [
+        "Oppdater siden"
       ],
       "Reject": [
         "Avvis"
@@ -1611,15 +1617,6 @@
         "Velg ditt slutten av året-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måned.",
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måneder."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsplass (2x mer enn noe annen plan)"
@@ -1643,22 +1640,21 @@
         "Planen ${ plan } er bare tilbake i en begrenset periode"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måned.",
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måneder."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30-dagers pengene-tilbake-garanti"
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } måned",
-        "de første ${ n } månedene"
-      ],
-      "the first month": [
-        "den første måneden"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ discountedPrice } er gyldig for ${ discountedMonths }. Da blir den automatisk fornyet til den rabatterte prisen på ${ nextPrice } for ${ nextMonths }. Du kan avbryte når som helst."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ discountedPrice } er gyldig den første måneden. Da blir den automatisk fornyet til ${ nextPrice } hver måned. Du kan avbryte når som helst."
       ]
@@ -1846,12 +1842,9 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } måned",
-        "${ n } måneder"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Fornyes automatisk for ${ renewPrice }, for ${ renewalLength }"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Fornyes automatisk til ${ renewPrice }, for ${ renewLength } måned",
+        "Fornyes automatisk til ${ renewPrice }, for ${ renewLength } måneder"
       ]
     },
     "Billing cycle option": {
@@ -3422,7 +3415,7 @@
         "Det ser ut til at filen mangler overskriften '${ options.fieldName }'."
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
-        "Vi oppdaget feil i flere rader under importen, vennligst se over CSV-filen."
+        "Vi oppdaget feil i flere rader under importen, se over CSV-filen."
       ]
     },
     "cta": {
@@ -3522,7 +3515,7 @@
         "Når den er slettet, kan ikke denne adressen, ${ address }, brukes igjen av noen andre."
       ],
       "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
-        "Vennligst ha i minnet at hvis du sletter denne adressen, ${ address }, vil du ikke lenger være i stand til å sende eller motta e-poster ved hjelp av denne adressen."
+        "Ha i minnet at hvis du sletter ${ address }, vil du ikke lenger være i stand til å sende eller motta e-poster ved hjelp av denne adressen."
       ],
       "You can only delete 1 address per year.": [
         "Du kan bare slette 1 adresse per år."
@@ -3555,7 +3548,7 @@
         "Slette domenet?"
       ],
       "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
-        "Vennligst vær oppmerksom på dersom du sletter dette domenet, ${ domainName }, vil alle adresser forbundet med det bli deaktivert."
+        "Vær oppmerksom på at dersom du sletter domenet ${ domainName }, vil alle adresser forbundet med det bli deaktivert."
       ]
     },
     "Delete group prompt": {
@@ -3581,8 +3574,14 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorter innkommende meldinger automatisk før de når innboksen din."
       ],
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "Tilgjengelig med ${ MAIL_APP_NAME } Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulerer! Du har tjent maksimalt ${ rewardsLimit } gratis måneder med ${ plusPlanName }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Opprett et Zoom-møte og legg til deltakelsesdetaljer til hendelsen din med ett klikk."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Opprett så mange etiketter eller mapper du trenger for å holde innboksen ryddig."
@@ -4152,7 +4151,7 @@
     },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
-        "Villkår ufullstendig, vennligst legg til et token"
+        "Villkår ufullstendig, legg til et token"
       ],
       "Token already exists": [
         "Tokenet finnes allerede"
@@ -4160,7 +4159,7 @@
     },
     "email_forwarding_2023: Error message, recovery": {
       "Please try opening the link again.": [
-        "Vennligst prøv å åpne koblingen på nytt."
+        "Prøv å åpne koblingen på nytt."
       ]
     },
     "email_forwarding_2023: Forwarding tooltip": {
@@ -4216,7 +4215,7 @@
         "Ingen utgående videresendingsregler"
       ],
       "Please update your forwarding keys": [
-        "Vennligst oppdater videresendingsnøklene dine"
+        "Oppdater videresendingsnøklene dine"
       ],
       "The forwardee rejected the forwarding request": [
         "Mottakeren av videresendingen avslo videresendingsforespørselen"
@@ -4388,7 +4387,7 @@
         "Aliasalternativene kunne ikke løses"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "All lagringsplass er tildelt. Vennligst reduser lagringsplass tildelt andre brukere."
+        "All lagringsplass er tildelt. Reduser lagringsplass tildelt andre brukere."
       ],
       "Already a member of this calendar": [
         "Allerede medlem av denne kalenderen"
@@ -4406,10 +4405,10 @@
         "Autentiseringsfeil"
       ],
       "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
-        "Automatisk svarmelding overskrider den tillatte lengden. Vennligst forkort den slik at den passer innenfor grensen."
+        "Automatisk svarmelding overskrider den tillatte lengden. Forkort den slik at den passer innenfor grensen."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Automatiske svar er en betalt funksjon. Vennligst oppgrader til en betalt konto for å bruke denne funksjonen."
+        "Automatiske svar er en betalt funksjon. Oppgrader til en betalt konto for å bruke denne funksjonen."
       ],
       "Calendar cannot be found": [
         "Kalender ikke funnet"
@@ -4418,7 +4417,7 @@
         "Kalendergrensen nådd"
       ],
       "Checkout expired, please try again": [
-        "Utsjekkingen utløpt, vennligst prøv igjen"
+        "Utsjekkingen utløpt. Prøv igjen."
       ],
       "Code wrong or not valid anymore": [
         "Koden er feil eller ikke gyldig lenger"
@@ -4442,7 +4441,7 @@
         "Kunne ikke lagre preferanse"
       ],
       "Couldn't load invoices. Please try again later.": [
-        "Kunne ikke laste inn fakturaer. Vennligst prøv igjen senere."
+        "Kunne ikke laste inn fakturaer. Prøv igjen senere."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Fjern valget fra minst ${ calendarsToFixCount } kalender",
@@ -4486,7 +4485,7 @@
         "Utløpt"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        "Kunne ikke finne aktive økter. Vennligst ${ refresh } eller prøv igjen senere."
+        "Kunne ikke finne aktive økter. ${ refresh } eller prøv igjen senere."
       ],
       "Failed to process the logo": [
         "Kunne ikke behandle logoen"
@@ -4519,13 +4518,13 @@
         "Feil filtype. Last opp en fil i PNG- eller JPEG-format."
       ],
       "Incorrect login credentials. Please try again.": [
-        "Feil påloggingsinformasjon. Vennligst prøv på nytt."
+        "Feil påloggingsinformasjon. Prøv på nytt."
       ],
       "Incorrect password": [
         "Feil passord"
       ],
       "Incorrect second password. Please try again.": [
-        "Feil andre passord. Vennligst prøv på nytt."
+        "Feil andre passord. Prøv på nytt."
       ],
       "Incorrect username": [
         "Uriktig brukernavn"
@@ -4649,7 +4648,7 @@
         "Betalingsprosess støttes ikke"
       ],
       "Payments are currently not available, please try again later": [
-        "Betalinger er for øyeblikket ikke tilgjengelige, vennligst prøv igjen senere."
+        "Betalinger er for øyeblikket ikke tilgjengelige. Prøv igjen senere."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Vennligst konfigurer et egendefinert domene før du legger til adresser."
@@ -4658,29 +4657,29 @@
         "Vennligst konfigurer et egendefinert domene før du legger til nye brukere til din organisasjon."
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "Vennligst aktiver støtte for flere brukere før du legger brukere til din organisasjon."
+        "Aktiver støtte for flere brukere før du legger brukere til din organisasjon."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs den uthevede konflikten for å fortsette.",
         "Løs de uthevede konfliktene for å fortsette."
       ],
       "Please generate keys before you try to change your password": [
-        "Vennligst generer nøkler før du prøver å endre passordet"
+        "Generer nøkler før du prøver å endre passordet."
       ],
       "Please set a recovery email first": [
-        "Vennligst angi en gjenopprettings-e-post først"
+        "Angi en gjenopprettings-e-post først"
       ],
       "Please set a recovery phone number first": [
-        "Vennligst angi et gjenopprettingstelefonnummer først"
+        "Angi et gjenopprettingstelefonnummer først"
       ],
       "Please set a recovery/notification email first": [
-        "Vennligst angi en gjenopprettings-/varslings-e-post først"
+        "Angi en gjenopprettings-/varslings-e-post først"
       ],
       "Please try again in a few moments.": [
         "Prøv igjen om noen øyeblikk."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Vennligst oppgrader til en forretningsplan med mer enn 1 bruker for å få støtte for flere brukere"
+        "Oppgrader til en forretningsplan med mer enn 1 bruker for å få støtte for flere brukere"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Vennligst oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
@@ -4720,7 +4719,7 @@
         "Forespørselen ble tidsavbrutt"
       ],
       "Session expired. Please refresh the page.": [
-        "Økten er utløpt. Vennligst last inn siden på nytt."
+        "Økten er utløpt. Last inn siden på nytt."
       ],
       "Signature not verified": [
         "Signatur ikke bekreftet"
@@ -4774,10 +4773,10 @@
         "Mappenavnet er for langt. Velg et annet navn."
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
-        "Nøklene i din gjenopprettelsesfil kan ikke valideres. Vennligst ta kontakt med brukerstøtte."
+        "Nøklene i din gjenopprettelsesfil kan ikke valideres. Ta kontakt med brukerstøtte."
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "Nøklene i gjenopprettelsesfilene dine kan ikke valideres. Vennligst last opp induviduelt for mer informasjon."
+        "Nøklene i gjenopprettelsesfilene dine kan ikke valideres. Last opp induviduelt for mer informasjon."
       ],
       "The label name is invalid. Please choose a different name.": [
         "Etikettnavnet er ikke gyldig. Velg et annet navn."
@@ -4795,7 +4794,7 @@
         "Avsendernøkkelen er ikke gyldig"
       ],
       "The session has expired. Please sign in again.": [
-        "Økten er utløpt. Vennligst logg på nytt."
+        "Økten er utløpt. Logg på nytt."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det er for mange mapper i din eksterne konto. Tilpass importen for å slette noen mapper."
@@ -4843,10 +4842,10 @@
         "Ukjent betalingstoken status"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Opplastet fil er ikke en gyldig privat nøkkel. Vennligst verifiser og prøv på nytt."
+        "Opplastet fil er ikke en gyldig privat nøkkel. Verifiser og prøv på nytt."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        "Opplastede filer er ikke gyldige private nøkler. Vennligst verifiser og prøv på nytt."
+        "Opplastede filer er ikke gyldige private nøkler. Verifiser og prøv på nytt."
       ],
       "Username must begin with a letter or digit": [
         "Brukernavn må begynne med en bokstav eller ett tall"
@@ -4879,10 +4878,10 @@
         "Du har nådd grensen for antall kontakter for kontoen din"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Du har brukt alle adressene i planen din. Vennligst oppgrader planen din for å legge til en ny adresse."
+        "Du har brukt alle adressene i planen. Oppgrader planen din for å legge til en ny adresse."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Du har brukt alle brukerne i planen din. Vennligst oppgrader planen din for å legge til en ny bruker."
+        "Du har brukt alle brukerne i planen din. Oppgrader planen din for å legge til en ny bruker."
       ],
       "You must set a name": [
         "Du må angi et navn"
@@ -5138,7 +5137,7 @@
         "Kontakt ${ BRAND_NAME }"
       ],
       "Please ${ signIn } to resend a recovery email verification request.": [
-        "Vennligst ${ signIn } for å sende en forespørsel om bekreftelse av gjenopprettings-e-post på nytt."
+        "${ signIn } for å sende en forespørsel om bekreftelse av gjenopprettings-e-post på nytt."
       ],
       "sign in": [
         "logg på"
@@ -5155,7 +5154,7 @@
     },
     "Error message, unsubscribe": {
       "Please ${ signIn } to update your email subscription preferences.": [
-        "Vennligst ${ signIn } for å oppdatere preferansene for e-postabonnementet"
+        "${ signIn } for å oppdatere preferansene for e-postabonnementet."
       ],
       "sign in": [
         "logg på"
@@ -5270,13 +5269,13 @@
         "Tilbakestilling av passord - flere hendelser kan ikke dekrypteres"
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "Vennligst ikke lukk fanen før eksportprosessen er fullført."
+        "Ikke lukk fanen før eksportprosessen er fullført."
       ],
       "Some of your events could not be exported.": [
         "Noen av dine hendelser kunne ikke eksporteres."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Internettilkoblingen ble avbrutt, noe som førte til at eksportprosessen mislyktes. Vennligst forsøk igjen."
+        "Internettilkoblingen ble avbrutt, noe som førte til at eksportprosessen mislyktes. Forsøk igjen."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Du kan lagre en ICS-fil med hendelsene som ble eksportert."
@@ -5542,7 +5541,7 @@
         "${ member.Name } er fjernet fra ${ organizationName }"
       ],
       "An error occurred, please try again": [
-        "En feil oppstod, vennligst prøv igjen"
+        "En feil oppstod. Prøv igjen."
       ],
       "Family name updated": [
         "Familienavn oppdatert"
@@ -5639,13 +5638,13 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Vennligst deaktiver 2FA via sikkerhetsnøkkelen før deaktivering av TOTP"
+        "Deaktiver 2FA via sikkerhetsnøkkelen før deaktivering av TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Noe gikk galt da du registrerte sikkerhetsnøkkelen din. Vennligst forsøk igjen."
+        "Noe gikk galt da du registrerte sikkerhetsnøkkelen din. Forsøk igjen."
       ]
     },
     "fido2: Info": {
@@ -6070,7 +6069,7 @@
     },
     "group_invite_2024: Error message, recovery": {
       "Please try opening the link again.": [
-        "Vennligst prøv å åpne koblingen på nytt."
+        "Prøv å åpne koblingen på nytt."
       ]
     },
     "group_invite_2024: Info": {
@@ -6686,6 +6685,9 @@
         "${ numberOfNonPrivateKeys } opplastet fil er ikke en gyldig privat nøkkel. Verifiser og prøv på nytt.",
         "${ numberOfNonPrivateKeys } opplastede filer er ikke gyldige private nøkler. Verifiser og prøv på nytt."
       ],
+      "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
+        "${ PASS_APP_NAME } er neste generasjons passordbehandling designet for brukervennlighet og produktivitet. Åpen kildekode, med-utviklet av SimpleLogin og ${ BRAND_NAME }."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Livsvarig avtale for ${ PASS_SHORT_APP_NAME } har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til ${ PASS_SHORT_APP_NAME }."
       ],
@@ -7112,6 +7114,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk organisasjonens merkeidentitet og skap en mer konsekvent nettopplevelse for brukerne."
       ],
+      "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
+        "Ved å opprette en ${ PASS_APP_NAME }-konto med SimpleLogin-e-posten din, kan du administrere aliasene dine direkte fra ${ PASS_APP_NAME }."
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Som standard kan organisasjonsmedlemmer bare eksportere hvelv der de er eiere. Hvis dette alternativet er aktivert, kan de ikke eksportere noe data"
       ],
@@ -7259,11 +7264,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerte tjenere"
-      ],
       "Dedicated servers": [
         "Dedikerte tjenere"
+      ],
+      "dedicated servers": [
+        "dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
@@ -8880,11 +8885,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "username": [
-        "brukernavn"
-      ],
       "Username": [
         "Brukernavn"
+      ],
+      "username": [
+        "brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -9555,7 +9560,7 @@
         "Generer nøkkel"
       ],
       "Generating key failed. Please try again later.": [
-        "Generering av nøkkel mislyktes. Vennligst prøv igjen senere."
+        "Generering av nøkkel mislyktes. Prøv igjen senere."
       ],
       "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
         "Hvis du genererer en ny nøkkel fordi du tror at den eksisterende nøkkelen din har blitt kompromittert, merker du den som kompromittert etter at du har generert denne nøkkelen."
@@ -11373,11 +11378,17 @@
       "Change password": [
         "Endre passord"
       ],
+      "Convert to SSO": [
+        "Konverter til SSO"
+      ],
       "Delete": [
         "Slett"
       ],
       "Delete and revoke invite": [
         "Slett og tilbakekall invitasjon"
+      ],
+      "Detach from SSO": [
+        "Koble fra SSO"
       ],
       "Edit": [
         "Rediger"
@@ -11715,32 +11726,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Starter fra ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsett med Free"
@@ -11768,6 +11753,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Starter fra ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12461,20 +12472,6 @@
         "Planen du har valgt: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Starter fra ${ price }"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -12493,6 +12490,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås opp premiumfunksjoner ved å oppgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -13729,6 +13740,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Spesielt oppstartstilbud: få ${ title } for ${ price } for alltid!"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Begynn å bruke ${ PASS_APP_NAME }"
+      ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "Skreddersydde løsninger for større organisasjoner med spesifikke sikkerhetsbehov."
       ],
@@ -13757,7 +13771,7 @@
         "Din ${ discount }% Black Friday-rabatt er anvendt"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
-        "Organisasjonen din har tilgang til ${ free }. Hvis du ønsker å få tilgang til ${ appName }-premiumfunksjoner, vennligst spør organisasjonsadministratoren om å oppgradere."
+        "Organisasjonen din har tilgang til ${ free }. Hvis du ønsker å få tilgang til ${ appName }-premiumfunksjoner, spør organisasjonsadministratoren om å oppgradere."
       ]
     },
     "pass_signup_2023: Title": {
@@ -13875,7 +13889,7 @@
         "Tillatelse nektet, administratorrettigheter er begrenset."
       ],
       "Please ensure they have an enabled address and invite them separately later.": [
-        "Vennligst sørg for at de har en aktivert adresse, og inviter dem separat senere."
+        "Sørg for at de har en aktivert adresse, og inviter dem separat senere."
       ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Private brukere kan bli forfremmet til administrator når de har logget på for første gang."
@@ -13974,7 +13988,7 @@
         "Betalingsbehandling"
       ],
       "Please add a payment method in the dashboard to continue.": [
-        "Vennligst legg til en betalingsmåte i kontrollpanelet for å fortsette."
+        "Legg til en betalingsmåte i kontrollpanelet for å fortsette."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Vennligst aktiver abonnementet på nytt først for å redusere antall tillegg."
@@ -13994,20 +14008,8 @@
       "Processing payment": [
         "Behandler betaling"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Fornyes til ${ price }, avbryt når som helst."
-      ],
       "Select billing country to pay": [
         "Velg faktureringsland for å betale"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ months }. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Da vil den automatisk bli fornyet til ${ price } for ${ months } måneder. Du kan avbryte når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ months }. Da vil den automatisk bli fornyet til ${ price } for ${ months }. Du kan avbryte når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ price } hver måned. Du kan avbryte når som helst."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transaksjonen er oppdaget. Kredittene vil bli lagt til kontoen din når transaksjonen er fullstendig bekreftet."
@@ -14036,10 +14038,10 @@
         "Noe gikk galt. Prøv på nytt senere."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Vi kan ikke godkjenne betalingsmåten din. Vennligst velg en annen betalingsmåte, eller prøv på nytt."
+        "Vi kan ikke godkjenne betalingsmåten din. Velg en annen betalingsmåte, eller prøv på nytt."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Kortet ditt ble avslått. Vennligst forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+        "Kortet ditt ble avslått. Forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
       ]
     },
     "Payments.Sepa": {
@@ -14689,6 +14691,9 @@
       ],
       "Something went wrong": [
         "Noe gikk galt"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "E-postadressen **${ email }** finnes allerede som en ${ BRAND_NAME }-bruker. Skriv inn e-postadressen til en bruker fra identitetsleverandøren din."
       ]
     },
     "saml: Info": {
@@ -14697,6 +14702,9 @@
       ],
       "Details": [
         "Detaljer"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Skriv inn e-postadressen til en bruker oppgitt av identitetsleverandøren din for **${ domainName }**"
       ],
       "Test in progress...": [
         "Test pågår..."
@@ -14879,6 +14887,14 @@
       ],
       "to be created": [
         "skal opprettes"
+      ],
+      "to be deleted": [
+        "skal slettes"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Lar deg legge til en Zoom-videokonferanse til alle kalenderhendelsene dine"
       ]
     },
     "session_recovery:available:action": {
@@ -14913,7 +14929,7 @@
         "Kom du ikke med denne forespørselen?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Hvis du ikke ba om å tilbakestille passordet ditt, vennligst avbryt forespørselen nå."
+        "Hvis du ikke ba om å tilbakestille passordet ditt, avbryt forespørselen nå."
       ],
       "Password reset request approved (${ user.Email }).": [
         "Forespørsel om tilbakestilling av passord godkjent (${ user.Email })."
@@ -15047,7 +15063,7 @@
         "Kom du ikke med denne forespørselen?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Hvis du ikke ba om å tilbakestille passordet ditt, vennligst avbryt forespørselen nå."
+        "Hvis du ikke ba om å tilbakestille passordet ditt, avbryt forespørselen nå."
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Hvis du ikke har bedt om å tilbakestille passordet ditt, avbryt denne forespørselen nå."
@@ -15337,6 +15353,9 @@
       ]
     },
     "Signup: Info": {
+      "10 aliases for email protection from breaches": [
+        "10 aliaser for e-postbeskyttelse mot brudd"
+      ],
       "Advanced security features": [
         "Avanserte sikkerhetsfunksjoner"
       ],
@@ -15354,6 +15373,9 @@
       ],
       "Calendar, password manager, file storage, and VPN included": [
         "Kalender, passordbehandling, fillagring og VPN inkludert"
+      ],
+      "Device sync": [
+        "Enhetssynkronisering"
       ],
       "Email aliases": [
         "E-postaliaser"
@@ -15396,6 +15418,9 @@
       ],
       "The only email service with:": [
         "Den eneste e-posttjenesten med:"
+      ],
+      "Unlimited passwords": [
+        "Ubegrenset antall passord"
       ],
       "Works on all devices": [
         "Fungerer på alle enheter"
@@ -15610,6 +15635,14 @@
         "${ n } medlem ba om din hjelp til å logge på.",
         "${ n } medlemmer ba om din hjelp til å logge på."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } bruker konverterte til SSO",
+        "${ n } brukere konverterte til SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } bruker løsrevet fra SSO",
+        "${ n } brukere løsrevet fra SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } bruker har blitt med i organisasjonen via identitetsleverandøren din. Gjennomgå kontoen nå:",
         "${ n } brukere har blitt med i organisasjonen via identitetsleverandøren din. Gjennomgå kontoene deres nå:"
@@ -15624,6 +15657,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO-brukere (levert av identitetsleverandøren) slettes**, og du må opprette dem manuelt for å legge dem til i organisasjonen igjen."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO-brukere vil bli løsrevet fra identitetsleverandøren din** og konvertert til ikke-SSO-brukere."
       ],
       "Access denied": [
         "Tilgang nektet"
@@ -15822,8 +15858,14 @@
       "Yes, it was me": [
         "Ja, det var meg"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Du må opprette nye brukere manuelt for å legge dem til i organisasjonen din."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du blir omdirigert til din tredjeparts SSO-leverandør."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "SSO-konfigurasjonen din vil bli slettet."
       ]
     },
     "sso: auth device state": {
@@ -17154,10 +17196,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -17213,6 +17255,9 @@
       ],
       "Connect ${ name }": [
         "Koble til ${ name }"
+      ],
+      "Connection status": [
+        "Tilkoblingsstatus"
       ],
       "Contact us": [
         "Kontakt oss"
@@ -17573,6 +17618,9 @@
       ],
       "Get the apps": [
         "Skaff deg appene"
+      ],
+      "Get Zooming faster": [
+        "Skaff deg Zoom raskere"
       ],
       "Gift": [
         "Gave"
@@ -17935,6 +17983,9 @@
       "Send new invite?": [
         "Sende ny invitasjon?"
       ],
+      "Service": [
+        "Tjeneste"
+      ],
       "Session management": [
         "Administrasjon av økter"
       ],
@@ -18046,6 +18097,9 @@
       ],
       "There are no groups": [
         "Det er ingen grupper"
+      ],
+      "Third-party apps and services": [
+        "Tredjeparts apper og tjenester"
       ],
       "This field cannot be empty": [
         "Feltet kan ikke stå tomt"
@@ -18459,7 +18513,7 @@
         "Bekreftet e-postadresse"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Vi oppdaget et problem med DNS-konfigurasjonen din. Vennligst sørg for at dine poster samsvarer med instruksjonene nedenfor. Hvis problemet vedvarer, vil vi bli nødt til å skru DKIM-signering av."
+        "Vi oppdaget et problem med DNS-konfigurasjonen din. Sørg for at dine poster samsvarer med instruksjonene nedenfor. Hvis problemet vedvarer, vil vi bli nødt til å skru DKIM-signering av."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi sluttet å logge på DKIM på grunn av problemer med DNS-konfigurasjonen. Følg instruksjonene nedenfor for å gjenoppta signering."
@@ -18575,6 +18629,9 @@
       ],
       "Cancel request to access user data?": [
         "Avbryte forespørsel om tilgang til brukerdata?"
+      ],
+      "Confirm all": [
+        "Bekreft alle"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Kunne ikke automatisk aktivere administratortilgang for ${ n } bruker, fordi krypteringsnøklene deres har blitt oppdatert i mellomtiden:",
@@ -19079,16 +19136,16 @@
         "Dersom du avbryter denne importen, vil du ikke kunne gjenoppta den. ${ BRAND_NAME } lagret all fremgangen på kontoen din. Avbryte likevel?"
       ],
       "Please add at least one recipient.": [
-        "Vennligst legg til minst én mottaker."
+        "Legg til minst én mottaker."
       ],
       "Please check that the extension is properly installed and enabled": [
-        "Vennligst kontroller at utvidelsen er riktig installert og aktivert"
+        "Kontroller at utvidelsen er riktig installert og aktivert"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Vennligst legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."
+        "Legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."
       ],
       "Please update the extension to its latest version": [
-        "Vennligst oppdater utvidelsen til siste versjon"
+        "Oppdater utvidelsen til siste versjon"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."
@@ -19115,7 +19172,7 @@
         "Vi kan ikke bekrefte e-posttjeneren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Vi oppdaget et problem med DNS-konfigurasjonen din. Vennligst sørg for at dine poster samsvarer med instruksjonene nedenfor. Hvis problemet vedvarer, vil vi bli nødt til å skru DKIM-signering av."
+        "Vi oppdaget et problem med DNS-konfigurasjonen din. Sørg for at dine poster samsvarer med instruksjonene nedenfor. Hvis problemet vedvarer, vil vi bli nødt til å skru DKIM-signering av."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Du må ${ activateLink } organisasjonsnøkkelen før du kan legge til en e-postadresse til et ikke-privat medlem."

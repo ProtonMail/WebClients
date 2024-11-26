@@ -768,11 +768,6 @@
         "Megtekinthetik vagy szerkeszthetik az ön naptárát"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Újraaktiválás"
-      ]
-    },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
         "Megosztás ${ BRAND_NAME } felhasználókkal"
@@ -917,15 +912,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 napos pénzvisszatérítési garancia"
-      ]
-    },
-    "bf2023: renew": {
-      "${ n } month": [
-        "${ n } hónap",
-        "az első ${ n } hónapban"
-      ],
-      "the first month": [
-        "az első hónapban"
       ]
     },
     "bf2023: Tooltip": {
@@ -1081,15 +1067,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "A tárhelye meg van osztva minden ${ BRAND_NAME } alkalmazás között."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } hónap",
-        "${ n } hónap"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatikusan megújul, ${ renewPrice } áron, ${ renewalLength } periódussal"
       ]
     },
     "Billing cycle option": {
@@ -2481,6 +2458,11 @@
         "Lejárt számla"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "használja az Easy Switch importálási asszisztenst"
+      ]
+    },
     "Description": {
       "Availability unknown": [
         "Elérhetőség ismeretlen"
@@ -2523,11 +2505,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Amelyekből egyiket sem szeretné megtartani, azokat törlésre jelölheti. A törlés az egyesítés gomb megnyomása után fog megtörténni"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "használja az Easy Switch importálási asszisztenst"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -8203,14 +8180,6 @@
         "Megtakarítás"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Aktív"
-      ],
-      "Expiring": [
-        "Lejár"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } névjegy azonosnak tűnik.",
@@ -9000,17 +8969,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Válasszon egy számot"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Befejező dátum"
-      ],
-      "Plan": [
-        "Csomag"
-      ],
-      "Status": [
-        "Állapot"
       ]
     },
     "Title; create calendar modal": {

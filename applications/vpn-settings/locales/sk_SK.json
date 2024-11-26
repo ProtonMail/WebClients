@@ -374,7 +374,7 @@
         "Načítavanie overenia"
       ],
       "Lost access to your 2FA device?": [
-        "Stratili ste prístup k svojmu zariadeniu 2FA?"
+        "Stratili ste prístup k 2FA zariadeniu ?"
       ],
       "Make admin": [
         "Urobiť správcom"
@@ -955,18 +955,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mesiac",
-        "prvé ${ n } mesiace",
-        "prvých ${ n } mesiacov",
-        "prvých ${ n } mesiacov"
-      ],
-      "the first month": [
-        "prvý mesiac"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ discountedPrice } platí na ${ discountedMonths }. Potom sa automaticky obnoví za zvýhodnenú cenu ${ nextPrice } na ${ nextMonths }. Službu môžete kedykoľvek zrušiť."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ discountedPrice } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ nextPrice }. Službu môžete kedykoľvek zrušiť."
       ]
@@ -1149,14 +1137,11 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } mesiac",
-        "${ n } mesiace",
-        "${ n } mesiacov",
-        "${ n } mesiacov"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewalLength }"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiac",
+        "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiace",
+        "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiacov",
+        "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiacov"
       ]
     },
     "Billing cycle option": {
@@ -3954,11 +3939,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prispôsobte si vzhľad a štýl aplikácií ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -3976,7 +3961,7 @@
         "Deaktivované ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Vypnutím dvojsupňového overovania bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
+        "Vypnutím dvojstupňového overenia bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -4977,11 +4962,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "username": [
-        "používateľské meno"
-      ],
       "Username": [
         "Používateľské meno"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -6216,11 +6201,17 @@
       "Change password": [
         "Zmeniť heslo"
       ],
+      "Convert to SSO": [
+        "Previesť na SSO"
+      ],
       "Delete": [
         "Odstrániť"
       ],
       "Delete and revoke invite": [
         "Vymazať a zrušiť pozvánku"
+      ],
+      "Detach from SSO": [
+        "Odpojiť od SSO"
       ],
       "Edit": [
         "Upraviť"
@@ -7999,20 +7990,8 @@
       "Processing payment": [
         "Spracováva sa platba"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Obnovuje sa za ${ price }, zrušiť môžete kedykoľvek."
-      ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ months }. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ price } na ${ months }. Službu môžete kedykoľvek zrušiť."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ months }. Potom sa každý mesiac automaticky obnoví za ${ price } na ${ months }. Službu môžete kedykoľvek zrušiť."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ price }. Službu môžete kedykoľvek zrušiť."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakcia bola úspešne rozpoznaná. Kredity budú pripísané na váš účet po úplnom potvrdení transakcie."
@@ -8326,6 +8305,9 @@
       ],
       "Something went wrong": [
         "Niečo sa pokazilo"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Emailová adresa **${ email }** už existuje ako používateľ ${ BRAND_NAME }. Zadajte emailovú adresu používateľa od vášho poskytovateľa identity, prosím."
       ]
     },
     "saml: Info": {
@@ -8334,6 +8316,9 @@
       ],
       "Details": [
         "Podrobnosti"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Zadajte emailovú adresu používateľa, ktorú poskytol váš poskytovateľ identity pre **${ domainName }**"
       ],
       "Test in progress...": [
         "Prebieha testovanie..."
@@ -8502,6 +8487,9 @@
       ],
       "to be created": [
         "bude vytvorený"
+      ],
+      "to be deleted": [
+        "vymaže sa"
       ]
     },
     "session_recovery:available:action": {
@@ -9046,6 +9034,18 @@
         "${ n } členov vás požiadalo o pomoc s prihlásením.",
         "${ n } členov vás požiadalo o pomoc s prihlásením."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } používateľ prevedený na SSO",
+        "${ n } používatelia prevedení na SSO",
+        "${ n } používateľov prevedených na SSO",
+        "${ n } používateľov prevedených na SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } používateľ odpojený od SSO",
+        "${ n } používatelia odpojení od SSO",
+        "${ n } používateľov odpojených od SSO",
+        "${ n } používateľov odpojených od SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } používateľ sa pripojil k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účet:",
         "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:",
@@ -9066,6 +9066,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO užívatelia (poskytovaní poskytovateľom identít) budú zmazaní** a budete ich musieť vytvoriť ručne, aby ste ich mohli pridať späť do organizácie."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO používatelia budú odpojení od vášho poskytovateľa identity** a prevedení na používateľov bez SSO."
       ],
       "Access denied": [
         "Prístup zamietnutý"
@@ -9226,8 +9229,14 @@
       "User details:": [
         "Podrobnosti o používateľovi:"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Ak chcete pridať nových používateľov do svojej organizácie, budete ich musieť vytvoriť ručne."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Presmerujeme vás na poskytovateľa SSO tretej strany."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Vaše nastavenie SSO bude vymazané."
       ]
     },
     "sso: auth device state": {
@@ -10331,10 +10340,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -11067,6 +11076,9 @@
       ],
       "Cancel request to access user data?": [
         "Zrušiť žiadosť na prístup k dátam používateľa?"
+      ],
+      "Confirm all": [
+        "Potvrdiť všetko"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Nepodarilo sa automaticky povoliť prístup správcu pre ${ n } používateľa, pretože jeho šifrovacie kľúče boli medzitým aktualizované:",

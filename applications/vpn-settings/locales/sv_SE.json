@@ -934,16 +934,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } månad",
-        "första ${ n } månaderna"
-      ],
-      "the first month": [
-        "första månaden"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Det speciellt rabatterade priset på ${ discountedPrice } är giltigt för ${ discountedMonths }. Sedan förnyas det automatiskt till det rabatterade priset med ${ nextPrice } för ${ nextMonths }. Du kan avbryta när som helst."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Det speciellt rabatterade priset på ${ discountedPrice } är giltigt under den första månaden. Sedan förnyas det automatiskt med ${ nextPrice } varje månad. Du kan avbryta när som helst."
       ]
@@ -1118,15 +1108,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } månad",
-        "${ n } månader"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Förnyas automatiskt för ${ renewPrice }, i ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -3860,11 +3841,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -4848,11 +4829,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "username": [
-        "användarnamn"
-      ],
       "Username": [
         "Användarnamn"
+      ],
+      "username": [
+        "användarnamn"
       ],
       "Users": [
         "Användare"
@@ -6043,11 +6024,17 @@
       "Change password": [
         "Ändra lösenord"
       ],
+      "Convert to SSO": [
+        "Konvertera till SSO"
+      ],
       "Delete": [
         "Ta bort"
       ],
       "Delete and revoke invite": [
         "Ta bort och återkalla inbjudan"
+      ],
+      "Detach from SSO": [
+        "Koppla bort från SSO"
       ],
       "Edit": [
         "Redigera"
@@ -7778,17 +7765,8 @@
       "Processing payment": [
         "Bearbetar betalning"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Förnyas med ${ price }, avbryt när som helst."
-      ],
       "Select billing country to pay": [
         "Välj faktureringsland att betala"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ months }. Sedan kommer det förnyas automatiskt med ${ price } för ${ months }. Du kan avbryta när som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt den första månaden. Sedan kommer det förnyas automatiskt med ${ price } varje månad. Du kan avbryta när som helst."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transaktionen har upptäckts. Krediterna kommer att läggas till ditt konto när transaktionen är fullständigt bekräftad."
@@ -8096,6 +8074,9 @@
       ],
       "Something went wrong": [
         "Något gick fel"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "E-postadressen **${ email }** finns redan som en ${ BRAND_NAME }-användare. Ange e-postadressen av en användare från din identitetsleverantör."
       ]
     },
     "saml: Info": {
@@ -8104,6 +8085,9 @@
       ],
       "Details": [
         "Detaljer"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Ange e-postadressen till en användare tillhandahållen av din identitetsleverantör för **${ domainName }**"
       ],
       "Test in progress...": [
         "Test pågår …"
@@ -8741,6 +8725,10 @@
         "${ n } medlem begärde din hjälp att logga in.",
         "${ n } medlemmar begärde din hjälp att logga in."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } användare konverterad till SSO",
+        "${ n } användare konverterade till SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska kontot nu:",
         "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska deras konton nu:"
@@ -8751,6 +8739,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO-användare (tillhandahållna av din identitetsleverantör) kommer att tas bort** och du måste skapa dem manuellt för att lägga till dem i din organisation igen."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO-användare kommer att kopplas bort från din identitetsleverantör** och konverteras till icke SSO-användare."
       ],
       "Access denied": [
         "Åtkomst nekad"
@@ -8904,8 +8895,14 @@
       "User details:": [
         "Användardetaljer:"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Du måste skapa nya användare manuellt för att lägga till dem till din organisation."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Din SSO-konfiguration kommer att tas bort."
       ]
     },
     "sso: auth device state": {
@@ -9959,10 +9956,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -10687,6 +10684,9 @@
       ],
       "Cancel request to access user data?": [
         "Avbryt begäran om åtkomst till användardata?"
+      ],
+      "Confirm all": [
+        "Bekräfta alla"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Kunde inte aktivera administratörsåtkomst automatiskt för ${ n } användare eftersom deras krypteringsnycklar har uppdaterats under tiden:",

@@ -507,8 +507,11 @@
       "Reset to default": [
         "ნაგულისხმებზე დაბრუნება"
       ],
-      "Restore version": [
-        "ვერსიის აღდგენა"
+      "Restore": [
+        "აღდგენა"
+      ],
+      "Restore this version": [
+        "ამ ვერსიის აღდგენა"
       ],
       "Retry": [
         "თავიდან"
@@ -689,11 +692,6 @@
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "რეაქტივაცია"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } ან ${ importContact }."
@@ -796,16 +794,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } თვე",
-        "პირველი ${ n } თვე"
-      ],
-      "the first month": [
-        "პირველი თვე"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "საგანგებოდ დაკლებული ფასი ${ discountedPrice } ხელმისაწვდომია კიდევ ${ discountedMonths }. ამის შემდეგ ის ავტომატურად განახლდება დაკლებულ ფასზე ${ nextPrice } ${ nextMonths }-თვის. გაუქმება ყოველთვის შეგიძლიათ."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ discountedPrice }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ nextPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ]
@@ -919,6 +907,9 @@
       "Discounts are based on standard monthly pricing.": [
         "ფასდაკლებები თვეში ერთხელ გადახდის ფასებს ეყრდნობა."
       ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "თუ შეიძენთ Pass Family-ის ან Unlimited-ს, გამოწერა გადახდის ციკლის ბოლოს სტანდარტული ფასდაკლების ტარიფით და ხანგრძლივობით განახლდება."
+      ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "თქვენი გამოწერა გადახდის ციკლის ბოლოს სტანდარტული ფასდაკლების ტარიფით და ხანგრძლივობით განახლდება."
       ]
@@ -975,15 +966,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } თვე",
-        "${ n } თვე"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "განახლდება ${ renewPrice }-ით, ${ renewalLength } განმავლობაში"
       ]
     },
     "Billing cycle option": {
@@ -4484,6 +4466,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP-ის აწყობა საშუალებას მოგცემთ, გააგზავნოთ დაშიფრული ელფოსტები არა${ BRAND_NAME }-ის მომხმარებლებთან, რომლებიც ასევე იყენებენ PGP-სთან თავსებად სერვისს."
       ],
+      "Settings update failed": [
+        "პარამეტრების განახლება ჩავარდა"
+      ],
+      "Settings updated": [
+        "პარამეტრები განახლებულია"
+      ],
       "Share via link settings": [
         "ბმულით გაზიარების მორგება"
       ],
@@ -4873,11 +4861,6 @@
     "Info on errors": {
       "Click for details": [
         "დეტალებისთვის დააწკაპუნეთ აქ"
-      ]
-    },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "ვადის გასვლა გამოწერის თავიდან აქტივაციით შეგიძლიათ, აიცილოთ"
       ]
     },
     "Info: partial": {
@@ -7092,20 +7075,8 @@
       "Please select your billing state first.": [
         "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "განახლების დრო ${ price }. გააუქმეთ ნებისმიერ დროს."
-      ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "${ priceWithDiscount }-ის სპეციალური ფასდაკლება სწორია პირველი ${ months } თვე. კუპონი ვარგისია ${ couponRedemptions } განახლებისთვის. შემდეგ ის ავტომატურად გადავა ${ price }-ზე ${ months } თვით. გაუქმება ყოველთვის შეგიძლიათ"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ ${ months } თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ price } ${ months } თვით. გაუქმება ყოველთვის შეგიძლიათ."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ price } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
@@ -8120,14 +8091,6 @@
         "დაზოგვა"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "აქტიური"
-      ],
-      "Expiring": [
-        "ვადა გასდის"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } ერთნაირია.",
@@ -8802,17 +8765,6 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "დასასრულის დრო"
-      ],
-      "Plan": [
-        "ტარიფი"
-      ],
-      "Status": [
-        "სტატუსი"
       ]
     },
     "Today icon tooltip in mini calendar": {

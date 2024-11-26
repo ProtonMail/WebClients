@@ -14,10 +14,10 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } και εντοπίστηκαν ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+        "Εντοπίστηκαν ${ name } και ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } και εντοπίστηκε 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+        "Εντοπίστηκαν ${ name } και 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
@@ -104,7 +104,7 @@
         "Ακύρωση όλων των λήψεων"
       ],
       "Cancel all uploads": [
-        "Ακύρωση κάθε ανεβάσματος"
+        "Ακύρωση όλων των μεταφορτώσεων"
       ],
       "Cancel download": [
         "Ακύρωση λήψης"
@@ -490,7 +490,7 @@
         "Αναφορά προβλήματος"
       ],
       "Request a call": [
-        "Ζητήστε Τηλεφωνική Επικοινωνία"
+        "Ζητήστε τηλεφωνική επικοινωνία"
       ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
@@ -507,8 +507,11 @@
       "Reset to default": [
         "Επαναφορά των προεπιλογών"
       ],
-      "Restore version": [
-        "Επαναφορά έκδοσης"
+      "Restore": [
+        "Επαναφορά"
+      ],
+      "Restore this version": [
+        "Επαναφορά αυτής της έκδοσης"
       ],
       "Retry": [
         "Δοκιμάστε ξανά"
@@ -529,7 +532,7 @@
         "Αναζήτηση εγγράφων"
       ],
       "See how": [
-        "Δείτε πως"
+        "Δείτε πώς"
       ],
       "See plan features": [
         "Προβολή δυνατοτήτων προγράμματος"
@@ -685,13 +688,8 @@
         "λέξεις από"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερη από ${ maxAttachments } επαφή",
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
-      ]
-    },
-    "Action subscription": {
-      "Reactivate": [
-        "Επανενεργοποίηση"
       ]
     },
     "Actions message": {
@@ -787,7 +785,7 @@
         "6 χρήστες"
       ],
       "Premium Password Manager": [
-        "Premium Διαχειριστής Κωδικών Πρόσβασης"
+        "Premium εφαρμογή Διαχείρισης Κωδικών Πρόσβασης"
       ]
     },
     "bf2023: Offers": {
@@ -796,16 +794,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } μήνα",
-        "τους πρώτους ${ n } μήνες"
-      ],
-      "the first month": [
-        "τον πρώτο μήνα"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή ${ discountedPrice } ισχύει για ${ discountedMonths }. Στη συνέχεια, θα ανανεωθεί αυτόματα στη μειωμένη τιμή ${ nextPrice } για ${ nextMonths }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή ${ discountedPrice } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεώνεται αυτόματα σε ${ nextPrice } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ]
@@ -987,15 +975,6 @@
         "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
       ]
     },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } μήνα",
-        "${ n } μήνες"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Ανανεώνεται αυτόματα για ${ renewPrice }, για ${ renewalLength }"
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 μήνας"
@@ -1106,7 +1085,7 @@
         "Συνεχίστε να χρησιμοποιείτε ${ planTitle }"
       ],
       "Continue your subscription": [
-        "Συνέχιση της συνδρομής σας"
+        "Συνεχίστε τη συνδρομή σας"
       ]
     },
     "Cancellation upsell": {
@@ -1221,7 +1200,7 @@
         "δαμάσκηνο"
       ],
       "purple": [
-        "μοβ"
+        "μωβ"
       ],
       "reef": [
         "ύφαλος"
@@ -1264,7 +1243,7 @@
         "Email"
       ],
       "Enter a display name or nickname": [
-        "Εισαγάγετε ένα εμφανιζόμενο όνομα ή ψευδώνυμο"
+        "Εισάγετε ένα εμφανιζόμενο όνομα ή ψευδώνυμο"
       ],
       "First name": [
         "Όνομα"
@@ -1360,7 +1339,7 @@
         "Ανδόρα"
       ],
       "Angola": [
-        "Αγκόλα"
+        "Ανγκόλα"
       ],
       "Anguilla": [
         "Ανγκουίλα"
@@ -2384,7 +2363,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
-        "Η ${ eventTitle } ακυρώθηκε."
+        "Το ${ eventTitle } ακυρώθηκε."
       ],
       "All events in this series were updated.": [
         "Όλες οι εκδηλώσεις αυτής της σειράς ενημερώθηκαν."
@@ -2396,7 +2375,7 @@
         "Αυτή η εμφάνιση εκδήλωσης ακυρώθηκε."
       ],
       "This event occurrence was updated.": [
-        "Αυτή η εμφάνιση εκδήλωσης ενημερώθηκε."
+        "Αυτό το συμβάν ενημερώθηκε."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
         "Αυτή η εμφάνιση εκδήλωσης ενημερώθηκε. Δείτε τι άλλαξε:\n\n${ updateEventDetailsText }"
@@ -2408,7 +2387,7 @@
         "Αυτή η εκδήλωση ενημερώθηκε. Δείτε τι άλλαξε:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Σας προσκαλούμε στη ${ eventTitle }.\n\n${ eventDetailsText }"
+        "Σας προσκαλούμε στο ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2465,16 +2444,16 @@
     },
     "Error": {
       "\"${ name }\" already exists": [
-        "\"${ name }\" υπάρχει ήδη"
+        "Το όνομα \"${ name }\" υπάρχει ήδη"
       ],
       "${ BRAND_NAME } can't connect to your external account": [
-        "${ BRAND_NAME } δεν είναι δυνατή η σύνδεση στον εξωτερικό λογαριασμό σας"
+        "Το ${ BRAND_NAME } δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας"
       ],
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
-        "Η ${ DRIVE_APP_NAME } έχει ενημερωθεί. Παρακαλούμε ανανεώστε τη σελίδα."
+        "Το ${ DRIVE_APP_NAME } έχει ενημερωθεί. Παρακαλούμε ανανεώστε τη σελίδα."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
+        "${ errorMessage }. Μπορείτε επίσης να ελέγξετε την ${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
@@ -2498,7 +2477,7 @@
         "Τα ψευδώνυμα δεν μπορούν να φορτωθούν"
       ],
       "Already a member of this share": [
-        "Είναι ήδη μέλος στην παρόν κοινοποίηση"
+        "Είναι ήδη μέλος στην παρούσα κοινοποίηση"
       ],
       "Amount above the maximum.": [
         "Ποσό μεγαλύτερο από το μέγιστο επιτρεπόμενο."
@@ -2534,7 +2513,7 @@
         "Σφάλμα ταυτοποίησης."
       ],
       "Calendar limit reached": [
-        "Εξάντληση ορίου ημερολογίων"
+        "Φτάσατε το μέγιστο όριο ημερολογίων"
       ],
       "Cannot export this contact": [
         "Δεν είναι δυνατή η εξαγωγή αυτής της επαφής"
@@ -2593,7 +2572,7 @@
         "Οι εξωτερικές προσκλήσεις είναι προσωρινά απενεργοποιημένες"
       ],
       "External invitations are temporarily disabled. Please try again later": [
-        "Οι εξωτερικές προσκλήσεις απενεργοποιούνται προσωρινά. Παρακαλούμε προσπαθήστε ξανά αργότερα"
+        "Οι εξωτερικές προσκλήσεις είναι προσωρινά απενεργοποιημένες. Παρακαλούμε προσπαθήστε ξανά αργότερα"
       ],
       "Failed to rename document. Please try again later.": [
         "Αποτυχία μετονομασίας εγγράφου. Παρακαλούμε προσπαθήστε ξανά αργότερα."
@@ -2790,7 +2769,7 @@
         "Κλειστή καρτέλα"
       ],
       "The address might be misspelled": [
-        "Η διεύθυνση μπορεί να είναι κακογραμμένη"
+        "Η διεύθυνση μπορεί να έχει ορθογραφικά λάθη"
       ],
       "The amount due has changed. Please try again.": [
         "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
@@ -2832,10 +2811,10 @@
         "Η νέα αναθεώρηση του πρωτότυπου αρχείου δεν έχει μεταφορτωθεί ακόμα, παρακαλούμε δοκιμάστε αργότερα"
       ],
       "The original file has missing active revision": [
-        "Το πρωτότυπο αρχείο έχει ελλιπή ενεργή αναθεώρηση"
+        "Το πρωτότυπο αρχείο δεν διαθέτει ενεργή αναθεώρηση"
       ],
       "The original file has missing hash key": [
-        "Το πρωτότυπο αρχείο δεν έχει κλειδί κατακερματισμού"
+        "Το πρωτότυπο αρχείο δεν έχει κλειδί hash"
       ],
       "The original file has missing session key": [
         "Το πρωτότυπο αρχείο δεν έχει κλειδί συνεδρίας"
@@ -2844,7 +2823,7 @@
         "Το πρωτότυπο αρχείο δεν έχει ανέβει ακόμα, παρακαλούμε δοκιμάστε ξανά αργότερα"
       ],
       "The original folder not found": [
-        "Ο αρχικός φάκελος δε βρέθηκε"
+        "Ο αρχικός φάκελος δεν βρέθηκε"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Υπερβολικός αριθμός φακέλων στον εξωτερικό λογαριασμό σας. Παρακαλούμε προσαρμόστε την εισαγωγή, προς διαγραφή μερικών φακέλων."
@@ -2886,7 +2865,7 @@
         "Η ενημέρωση είναι πολύ μεγάλη"
       ],
       "Upload for this folder is temporarily disabled": [
-        "Η αποστολή για αυτόν το φάκελο είναι προσωρινά απενεργοποιημένη"
+        "Η μεταφόρτωση για αυτόν τον φάκελο είναι προσωρινά απενεργοποιημένη"
       ],
       "Username must begin with a letter or digit": [
         "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
@@ -2934,7 +2913,7 @@
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Το αρχείο ${ formattedFilename } περιέχει περισσότερο από ${ MAX_IMPORT_EVENTS } γεγονός.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονός.",
         "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονότα."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -3028,7 +3007,7 @@
         "Μη έγκυρη εκδήλωση"
       ],
       "Journal entry": [
-        "Καταχώρηση χρονικού"
+        "Καταχώρηση χρονολογίου"
       ],
       "Malformed all-day event": [
         "Δύσμορφη ολοήμερη εκδήλωση"
@@ -3055,10 +3034,10 @@
         "Ειδοποίηση εκτός ορίων"
       ],
       "Original recurring event could not be found": [
-        "Δε βρέθηκε η αρχική επαναλαμβανόμενη εκδήλωση"
+        "Δεν βρέθηκε η αρχική επαναλαμβανόμενη εκδήλωση"
       ],
       "Recurring event has no occurrences": [
-        "Η επαναλαμβανόμενη εκδήλωση δεν έχει διοργανώσεις"
+        "Η επαναλαμβανόμενη εκδήλωση δεν έχει συμβάντα"
       ],
       "Recurring rule not supported": [
         "Ο επαναλαμβανόμενος κανόνας δεν υποστηρίζεται"
@@ -3141,7 +3120,7 @@
         "Δεν ήταν δυνατή η ενημέρωση της εκδήλωσης στο ημερολόγιό σας. Δεν εστάλη απάντηση"
       ],
       "Unexpected error": [
-        "Απροσδόκητο σφάλμα"
+        "Μη αναμενόμενο σφάλμα"
       ],
       "Unsupported invitation": [
         "Μη υποστηριζόμενη πρόσκληση"
@@ -3162,7 +3141,7 @@
         "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Η απάντησή σας στάλθηκε, αλλά η εκδήλωση δεν μπόρεσε να ενημερωθεί στο ημερολόγιό σας."
+        "Η απάντησή σας στάλθηκε, αλλά η εκδήλωση δεν ήταν δυνατό να ενημερωθεί στο ημερολόγιό σας."
       ]
     },
     "Event title": {
@@ -3742,7 +3721,7 @@
         "${ contactEmailsLength } Μέλη"
       ],
       "${ contactName } contains multiple email addresses.": [
-        "${ contactName } περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+        "Η επαφή ${ contactName } περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } επαφή βρέθηκε",
@@ -3763,10 +3742,10 @@
         "${ groupCounts } ομάδες βρέθηκαν"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Η προσφορά διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
+        "Η προσφορά εφ' όρου ζωής για το ${ PASS_SHORT_APP_NAME } δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }. Η τιμή και η ημερομηνία ανανέωσης της συνδρομής ${ planTitle } σας παραμένουν αμετάβλητες."
+        "Η προσφορά ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }. Η τιμή και η ημερομηνία ανανέωσης της συνδρομής ${ planTitle } σας παραμένουν αμετάβλητες."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
@@ -3803,7 +3782,7 @@
         "${ updated } επαφές ενημερώθηκαν επιτυχώς."
       ],
       "${ uploadName } already exists in this location.": [
-        "Το όνομα ${ uploadName } υπάρχει ήδη σε αυτήν την τοποθεσία."
+        "Το ${ uploadName } υπάρχει ήδη σε αυτήν την τοποθεσία."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } μέλος)",
@@ -3823,10 +3802,10 @@
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών."
       ],
       "A number will be added to the filename": [
-        "Το όνομα του αρχείου θα επεκταθεί με έναν αριθμό"
+        "Στο όνομα του αρχείου θα προστεθεί ένας αριθμός"
       ],
       "A number will be added to the folder name": [
-        "Το όνομα του φακέλου θα επεκταθεί με έναν αριθμό"
+        "Στο όνομα του φακέλου θα προστεθεί ένας αριθμός"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
@@ -3913,7 +3892,7 @@
         "Πλαϊνό πλαίσιο ημερολογίου"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να καθαρίσετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και στη διαδικασία να απορρίψετε την ειδοποίηση."
+        "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να διαγράψετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και κατά τη διάρκεια της διαδικασίας να απορρίψετε την ειδοποίηση."
       ],
       "Change your password": [
         "Αλλάξτε τον κωδικό πρόσβασής σας"
@@ -3968,11 +3947,11 @@
         "Δημιουργία νέας ομάδας επαφών"
       ],
       "Create a secure cloud for ${ n } member": [
-        "Δημιουργήστε ένα ασφαλές cloud για ${ n } μέλος",
-        "Δημιουργήστε ένα ασφαλές cloud για ${ n } μέλη"
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλος",
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλη"
       ],
       "Create in": [
-        "Δημιουργία εντός"
+        "Δημιουργία σε"
       ],
       "Create public link": [
         "Δημιουργία δημόσιου συνδέσμου"
@@ -4005,13 +3984,13 @@
         "Προσαρμοσμένοι τομείς"
       ],
       "Dedicated servers": [
-        "Αφοσιωμένοι διακομιστές"
+        "Αποκλειστικοί διακομιστές"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο ανέβηκε διασφαλισμένα από ${ emailAddress }."
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο μεταφορτώθηκε διασφαλισμένα από ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Η ψηφιακή υπογραφή επαληθεύτηκε. Ο φάκελος ανέβηκε διασφαλισμένα από ${ emailAddress }."
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Ο φάκελος μεταφορτώθηκε διασφαλισμένα από ${ emailAddress }."
       ],
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
@@ -4047,7 +4026,7 @@
         "Κατεβάστε την αγαπημένη σας εφαρμογή σήμερα και πάρτε την ιδιωτικότητα σας όπου κι αν πάτε."
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Η λήψη αρχείων ${ DOCS_APP_NAME } από το ${ DRIVE_APP_NAME } δεν υποστηρίζεται προς το παρόν — αυτά δε θα συμπεριληφθούν στη λήψη σας."
+        "Η λήψη αρχείων ${ DOCS_APP_NAME } από το ${ DRIVE_APP_NAME } δεν υποστηρίζεται προς το παρόν — αυτά δεν θα συμπεριληφθούν στη λήψη σας."
       ],
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
@@ -4131,10 +4110,10 @@
         "Το αρχείο \"${ name }\" διαγράφηκε κατά τη λήψη"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } ανέβηκε από ${ emailAddress }."
+        "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } μεταφορτώθηκε από ${ emailAddress }."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος ανέβασε το ${ fileName }."
+        "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος μεταφόρτωσε το ${ fileName }."
       ],
       "File will not be updated": [
         "Το αρχείο δεν θα ενημερωθεί"
@@ -4146,19 +4125,19 @@
         "Ο φάκελος \"${ link.name }\" διαγράφηκε κατά τη λήψη"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Ο φάκελος στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι ο ${ fileName } ανέβηκε από ${ emailAddress }."
+        "Ο φάκελος στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι ο ${ fileName } μεταφορτώθηκε από ${ emailAddress }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Ο φάκελος στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος ανέβασε τον ${ fileName }."
+        "Ο φάκελος στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος μεταφόρτωσε το ${ fileName }."
       ],
       "Folder will not be uploaded": [
-        "Ο φάκελος δεν θα ανεβεί"
+        "Ο φάκελος δεν θα μεταφορτωθεί"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Για καλύτερα αποτελέσματα, αποφύγετε ροή ή εντατικές σε μνήμη δραστηριότητες ή χωρίστε τη μεταφόρτωση σε μικρότερες παρτίδες."
+        "Για καλύτερα αποτελέσματα, αποφύγετε ροή ή απαιτητικές σε μνήμη δραστηριότητες ή χωρίστε τη μεταφόρτωση σε μικρότερες παρτίδες."
       ],
       "Free 5GB encrypted storage to get started": [
-        "Δωρεάν κρυπτογραφημένη αποθήκευση 5GB για να ξεκινήσετε"
+        "Δωρεάν κρυπτογραφημένος χώρος 5GB για να ξεκινήσετε"
       ],
       "here": [
         "εδώ"
@@ -4346,7 +4325,7 @@
         "Δεν υπάρχει διαθέσιμο ιστορικό εκδόσεων"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Κανένα από τα κλειδιά που ανεβάσατε είναι έγκυρα για κρυπτογράφηση. Για να μπορείτε να στέλνετε μηνύματα σε αυτήν τη διεύθυνση, παρακαλούμε να ανεβάσετε ένα έγκυρο κλειδί ή να απενεργοποιήσετε την \"Κρυπτογράφηση μηνυμάτων\"."
+        "Κανένα από τα κλειδιά που ανεβάσατε δεν είναι έγκυρα για κρυπτογράφηση. Για να μπορείτε να στέλνετε μηνύματα σε αυτήν τη διεύθυνση, παρακαλούμε να ανεβάσετε ένα έγκυρο κλειδί ή να απενεργοποιήσετε την \"Κρυπτογράφηση μηνυμάτων\"."
       ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
@@ -4422,7 +4401,7 @@
         "Παρακαλούμε λάβετε υπόψη ότι οι διευθύνσεις που έχουν εκχωρηθεί σε αυτές τις ομάδες ΔΕΝ θα διαγραφούν."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Παρακαλούμε σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕ θα διαγραφούν."
+        "Παρακαλούμε σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕΝ θα διαγραφούν."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
@@ -4495,7 +4474,7 @@
         "Επιλέξτε τι θέλετε να εισάγετε."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο σχέδιό σας."
+        "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -4505,6 +4484,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Η ρύθμιση PGP επιτρέπει την αποστολή διατερματικά κρυπτογραφημένων μηνυμάτων προς χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
+      ],
+      "Settings update failed": [
+        "Αποτυχία ενημέρωσης ρυθμίσεων"
+      ],
+      "Settings updated": [
+        "Οι ρυθμίσεις ενημερώθηκαν"
       ],
       "Share via link settings": [
         "Κοινοποίηση μέσω ρυθμίσεων συνδέσμου"
@@ -4561,7 +4546,7 @@
         "Τα ακόλουθα μπορεί να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "Ο κάτοχος αυτής της διεύθυνσης έχει απενεργοποιήσει την κρυπτογράφηση από άκρο σε άκρο. Για να είναι δυνατή η αποστολή κρυπτογραφημένων μηνυμάτων ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει να ενεργοποιήσει ξανά την κρυπτογράφηση από άκρο σε άκρο."
+        "Ο κάτοχος αυτής της διεύθυνσης έχει απενεργοποιήσει την διατερματική κρυπτογράφηση. Για να είναι δυνατή η αποστολή κρυπτογραφημένων μηνυμάτων ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει να ενεργοποιήσει ξανά την διατερματική κρυπτογράφηση."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Η διαδικασία επαλήθευσης θα ανοίξει μια νέα καρτέλα του προγράμματος περιήγησης. Απενεργοποιήστε τυχόν ενεργά προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
@@ -4588,7 +4573,7 @@
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Αυτός ο σύνδεσμος δεν μπορεί να τροποποιηθεί, επειδή δημιουργήθηκε σε παρωχημένη έκδοση του Drive. Για να αλλάξετε τη σύνδεση, διαγράψτε τον και δημιουργήστε έναν νέο."
+        "Αυτός ο σύνδεσμος δεν μπορεί να τροποποιηθεί, επειδή δημιουργήθηκε σε παρωχημένη έκδοση του Drive. Για να αλλάξετε τις ρυθμίσεις, διαγράψτε τον και δημιουργήστε έναν νέο."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Αυτός ο σύνδεσμος θα απενεργοποιηθεί μόνιμα. Κανείς με αυτόν τον σύνδεσμο δε θα έχει πρόσβαση στο αρχείο. Για επαναδιαμοιρασμό του αρχείου, θα χρειαστείτε έναν νέο σύνδεσμο."
@@ -4603,8 +4588,8 @@
         "Αυτό το δημόσιο έγγραφο ενδέχεται να μην υπάρχει ή να μην έχετε δικαίωμα προβολής του. Μπορείτε να δοκιμάσετε να φορτώσετε ξανά τη σελίδα για να δείτε εάν το πρόβλημα παραμένει."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Αυτό θα διαγράψει τον σύνδεσμο και θα καταργήσει την πρόσβαση στο αρχείο ή φάκελο σας για οποιονδήποτε με τον σύνδεσμο.",
-        "Αυτό θα διαγράψει τους συνδέσμους και θα καταργήσει την πρόσβαση στα αρχεία ή φακέλους σας για οποιονδήποτε με τους συνδέσμους."
+        "Αυτό θα διαγράψει τον σύνδεσμο και θα καταργήσει την πρόσβαση στο αρχείο ή φάκελο σας για οποιονδήποτε διαθέτει τον σύνδεσμο.",
+        "Αυτό θα διαγράψει τους συνδέσμους και θα καταργήσει την πρόσβαση στα αρχεία ή φακέλους σας για οποιονδήποτε διαθέτει τους συνδέσμους."
       ],
       "This will replace the existing file with the folder": [
         "Αυτό θα αντικαταστήσει το υπάρχον αρχείο με το φάκελο"
@@ -4631,7 +4616,7 @@
         "Για να υπογράψουμε εκ νέου τις επαφές σας, πρέπει να ελέγξουμε κάθε επαφή με τη λίστα των κλειδιών κρυπτογράφησης που είναι διαθέσιμα στο λογαριασμό σας. Αν δεν βρεθεί αντιστοιχία, η επαφή σας θα επανσυνδεθεί με το πρωτεύον κλειδί κρυπτογράφησης."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Για να ανακτήσετε τα δεδομένα σας, πρέπει να ενεργοποιήσετε ξανά το κλειδί λογαριασμού που χρησιμοποιήθηκε τη στιγμή της δημιουργίας των δεδομένων. Αυτό θα απαιτήσει από εσάς να θυμηθείτε τον κωδικό πρόσβασης που χρησιμοποιείται όταν δημιουργήθηκε το κλειδί."
+        "Για να ανακτήσετε τα δεδομένα σας, πρέπει να ενεργοποιήσετε ξανά το κλειδί λογαριασμού που χρησιμοποιήθηκε τη στιγμή της δημιουργίας των δεδομένων. Αυτό θα απαιτήσει από εσάς να θυμηθείτε τον κωδικό πρόσβασης που χρησιμοποιήθηκε όταν δημιουργήθηκε το κλειδί."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Για να χρησιμοποιήσετε την Επαλήθευση διεύθυνσης, πρέπει να χαρακτηρίσετε Αξιόπιστα ένα ή περισσότερα διαθέσιμα δημόσια κλειδιά, συμπεριλαμβανομένου αυτού που θέλετε να χρησιμοποιήσετε για αποστολή. Αυτό αποτρέπει την απομίμηση των κρυπτογραφημένων κλειδιών."
@@ -4697,10 +4682,10 @@
         "Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } ανέβηκε από ${ emailAddress }."
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } μεταφορτώθηκε από ${ emailAddress }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
-        "Δεν μπορέσαμε να επαληθεύσουμε ποιος ανέβασε το ${ fileName }."
+        "Δεν μπορέσαμε να επαληθεύσουμε ποιος μεταφόρτωσε το ${ fileName }."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Πρέπει να επαληθεύσουμε τον τρόπο πληρωμής σας με την τράπεζά σας."
@@ -4810,7 +4795,7 @@
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal. Εάν αυτό δεν υπάρχει στον λογαριασμό σας PayPal, παρακαλούμε πιέστε το παρακάτω κουμπί."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "Θα χάσετε την πρόσβαση στις και λειτουργίες του ${ planTitle } αυτήν την ημέρα."
+        "Θα χάσετε την πρόσβαση στις δυνατότητες του ${ planTitle } αυτήν την ημέρα."
       ],
       "You will lose all unsaved changes.": [
         "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
@@ -4831,7 +4816,7 @@
         "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Δεν μπορείτε πλέον να λάβετε μηνύματα στα εισερχόμενα σας. Οι σύνδεσμοι στο Drive έχουν απενεργοποιηθεί, και δεν μπορείτε να ανεβάσετε νέα αρχεία. Για να συνεχίσετε τις υπηρεσίες του λογαριασμού σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Η συνδρομή σας ${ PASS_SHORT_APP_NAME } Plus θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } διάρκειας ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
+        "Η συνδρομή σας ${ PASS_SHORT_APP_NAME } Plus θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
@@ -4852,7 +4837,7 @@
         "Οι αλλαγές σας απέτυχαν να συγχρονιστούν. Το Drive θα προσπαθήσει αυτόματα να αποθηκεύσει τις αλλαγές. Παρακαλούμε μην κλείσετε την ιστοσελίδα."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Το τρέχον πρόγραμμα περιήγησής σας δεν υποστηρίζει τη λήψη μεγάλων αρχείων λόγω της μη διαθεσιμότητας service workers. Η λήψη μεγάλων αρχείων ενδέχεται να παγώσει ή να αφήσει το πρόγραμμα περιήγησης να μην αποκρίνεται. Χρησιμοποιήστε τις πιο πρόσφατες εκδόσεις ενός ${ recommendedBrowser } και προσπαθήστε ξανά."
+        "Το τρέχον πρόγραμμα περιήγησής σας δεν υποστηρίζει τη λήψη μεγάλων αρχείων λόγω της μη διαθεσιμότητας service workers. Η λήψη μεγάλων αρχείων ενδέχεται να παγώσει ή να κάνει το πρόγραμμα περιήγησης να μην αποκρίνεται. Χρησιμοποιήστε τις πιο πρόσφατες εκδόσεις του ${ recommendedBrowser } και προσπαθήστε ξανά."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
@@ -4900,11 +4885,6 @@
         "Κάντε κλικ για λεπτομέρειες"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Μπορείτε να αποτρέψετε τη λήξη ενεργοποιώντας ξανά τη συνδρομή"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } επιλεγμένος φάκελος",
@@ -4917,7 +4897,7 @@
     },
     "Info; access rights for shared calendar": {
       "View only": [
-        "Ανάγνωση μόνο"
+        "Μόνο για ανάγνωση"
       ]
     },
     "Infog": {
@@ -5007,10 +4987,10 @@
         "Κωδικός πρόσβασης εφαρμογής"
       ],
       "Apply to all duplicated files": [
-        "Εφαρμογή σε όλα τα ομώνυμα αρχεία"
+        "Εφαρμογή σε όλα τα διπλότυπα αρχεία"
       ],
       "Apply to all duplicated folders": [
-        "Εφαρμογή σε όλους τους ομώνυμους φακέλους"
+        "Εφαρμογή σε όλους τους διπλότυπους φακέλους"
       ],
       "Apply to all unverified items": [
         "Εφαρμογή σε όλα τα μη επαληθευμένα στοιχεία"
@@ -5217,7 +5197,7 @@
         "Κρατήστε και τα δύο αρχεία"
       ],
       "Keep both folders": [
-        "Κρατήστε τους δύο φακέλους"
+        "Κρατήστε και τους δύο φακέλους"
       ],
       "Label messages as": [
         "Επισήμανση μηνυμάτων ως"
@@ -5462,7 +5442,7 @@
         "Για να προσθέσετε ένα νέο ημερολόγιο, καταργήστε ένα άλλο ημερολόγιο ή αναβαθμίστε το πρόγραμμα ${ BRAND_NAME } σε πρόγραμμα επί πληρωμή ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Έχετε συμπληρώσει τον μέγιστο αριθμό ημερολογίων που είναι διαθέσιμα στο σχέδιό σας."
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
       ]
     },
     "Link": {
@@ -5705,7 +5685,7 @@
         "HyperText Markup Language (HTML)"
       ],
       "Hypertext Preprocessor (Personal Home Page)": [
-        "Προεπεξεργαστής υπερκειμένου (Προσωπική Αρχική Σελίδα)"
+        "Προεπεξεργαστής Yπερκειμένου (Προσωπική Αρχική Σελίδα)"
       ],
       "iCalendar format": [
         "μορφή iCalendar"
@@ -5732,7 +5712,7 @@
         "Βίντεο MPEG"
       ],
       "MS Embedded OpenType fonts": [
-        "MS Embedded OpenType γραμματοσυρές"
+        "MS Embedded OpenType γραμματοσειρές"
       ],
       "Musical Instrument Digital Interface (MIDI)": [
         "Musical Instrument Digital Interface (MIDI)"
@@ -6772,13 +6752,13 @@
         "Το \"${ name }\" δημιουργήθηκε επιτυχώς"
       ],
       "\"${ name }\" deleted permanently from trash": [
-        "Το \"${ name }\" εξαλείφθηκε οριστικά από τα Διαγραμμένα"
+        "Το \"${ name }\" διαγράφηκε οριστικά από τα Διαγραμμένα"
       ],
       "\"${ name }\" failed to be created": [
         "Αποτυχία δημιουργίας του \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        "Αποτυχία οριστικής εξάλειψης του \"${ name }\" από τα Διαγραμμένα"
+        "Αποτυχία οριστικής διαγραφής του \"${ name }\" από τα Διαγραμμένα"
       ],
       "\"${ name }\" failed to be moved": [
         "Αποτυχία μετακίνησης του \"${ name }\""
@@ -6790,7 +6770,7 @@
         "Αποτυχία επαναφοράς του \"${ name }\" από τα Διαγραμμένα"
       ],
       "\"${ name }\" failed to be saved": [
-        "\"${ name }\" απέτυχε να αποθηκευτεί"
+        "Το \"${ name }\" απέτυχε να αποθηκευτεί"
       ],
       "\"${ name }\" moved to trash": [
         "Το \"${ name }\" μετακινήθηκε στα Διαγραμμένα"
@@ -6799,7 +6779,7 @@
         "Το \"${ name }\" επαναφέρθηκε από τα Διαγραμμένα"
       ],
       "\"${ name }\" saved successfully": [
-        "\"${ name }\" αποθηκεύτηκε με επιτυχία"
+        "Το \"${ name }\" αποθηκεύτηκε με επιτυχία"
       ],
       "\"${ name }\" successfully moved": [
         "Επιτυχής μετακίνηση του \"${ name }\""
@@ -6864,7 +6844,7 @@
         "Η πρόσβαση για το μέλος καταργήθηκε"
       ],
       "Access updated": [
-        "Η διεύθυνση ενημερώθηκε"
+        "Η πρόσβαση ενημερώθηκε"
       ],
       "Access updated and shared": [
         "Η πρόσβαση ενημερώθηκε και κοινοποιήθηκε"
@@ -6876,7 +6856,7 @@
         "Αποτυχία φόρτωσης συνδέσμου"
       ],
       "Cannot load next page": [
-        "Η επόμενη σελίδα απέτυχε να φορτώσει"
+        "Η επόμενη σελίδα απέτυχε να φορτωθεί"
       ],
       "Contact group created": [
         "Η ομάδα επαφών δημιουργήθηκε"
@@ -6885,13 +6865,13 @@
         "Η ομάδα επαφών ενημερώθηκε"
       ],
       "Device failed to be removed": [
-        "Αποτυχία διαγραφής συσκευής"
+        "Αποτυχία αφαίρεσης συσκευής"
       ],
       "Device failed to be renamed": [
-        "Αποτυχία μετονόμασης συσκευής"
+        "Αποτυχία μετονομασίας συσκευής"
       ],
       "Device removed": [
-        "Η συσκευή διαγράφηκε"
+        "Η συσκευή αφαιρέθηκε"
       ],
       "Device renamed": [
         "Η συσκευή μετονομάστηκε"
@@ -6906,14 +6886,14 @@
         "Αποτυχία λήψης αρχείων: ${ err }"
       ],
       "Failed to upload files: ${ err }": [
-        "Αποτυχία ανεβάσματος αρχείων: ${ err }"
+        "Αποτυχία μεταφόρτωσης αρχείων: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Το αρχείο ή ο φάκελος \"${ filename }\" και ${ count } άλλο ήδη μεταφορτώνονται",
         "Το αρχείο ή ο φάκελος \"${ filename }\" και ${ count } άλλα ήδη μεταφορτώνονται"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "Το αρχείο ή ο φάκελος \"${ filename }\" ήδη μεταφορτώνονται"
+        "Το αρχείο ή ο φάκελος \"${ filename }\" ήδη μεταφορτώνεται"
       ],
       "File or folder is missing a name": [
         "Το αρχείο ή ο φάκελος στερείται ονόματος"
@@ -6931,13 +6911,13 @@
         "Η διακοπή της κοινοποίησης αυτού του στοιχείου απέτυχε"
       ],
       "The link to \"${ name }\" failed to be deleted": [
-        "Αποτυχία διαγραφής συνδέσμου προς το \"${ name }\""
+        "Αποτυχία διαγραφής συνδέσμου για \"${ name }\""
       ],
       "The link to \"${ name }\" was deleted": [
         "Ο σύνδεσμος προς το \"${ name }\" διαγράφηκε"
       ],
       "The link to your item failed to be deleted": [
-        "Αποτυχία διαγραφής του σύνδεσμου προς το στοιχείο σας"
+        "Αποτυχία διαγραφής του συνδέσμου για το στοιχείο σας"
       ],
       "The link to your item was deleted": [
         "Ο σύνδεσμος προς το στοιχείο σας διαγράφηκε"
@@ -6946,7 +6926,7 @@
         "Αποτυχία εκκαθάρισης Διαγραμμένων"
       ],
       "You stopped sharing this item": [
-        "Σταματήσατε την κοινοποίηση αυτού του στοιχείου"
+        "Διακόψατε την κοινή χρήση αυτού του στοιχείου"
       ],
       "Your settings failed to be saved": [
         "Αποτυχία αποθήκευσης των ρυθμίσεών σας"
@@ -7129,20 +7109,8 @@
       "Please select your billing state first.": [
         "Παρακαλούμε επιλέξτε πρώτα την κατάσταση χρέωσής σας."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Ανανεώνει σε ${ price }, ακυρώστε ανά πάσα στιγμή."
-      ],
       "Select billing country to pay": [
         "Επιλέξτε χώρα χρέωσης για πληρωμή"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Το κουπόνι ισχύει για ανανεώσεις ${ couponRedemptions }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεώνεται αυτόματα σε ${ price } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
@@ -7449,7 +7417,7 @@
         "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
-        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτου μέρους. ${ learnMoreLink }"
+        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Η πρωτοποριακή μας λύση ασφάλειας βασισμένη στην τεχνητή νοημοσύνη, σχεδιασμένη για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους. ${ learnMoreLink }"
@@ -7503,12 +7471,12 @@
         "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
-        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρα",
-        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρες"
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inDays } ημέρα",
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inDays } ημέρες"
       ],
       "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρα",
-        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρες"
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inHours } ώρα",
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inHours } ώρες"
       ],
       "This permission expires soon": [
         "Αυτό το δικαίωμα λήγει σύντομα"
@@ -7745,7 +7713,7 @@
         "Ασφαλής αποθήκευση στο cloud"
       ],
       "Secure streaming": [
-        "Διασφαλισμένη μετάδοση"
+        "Ασφαλές streaming"
       ],
       "Support online privacy": [
         "Υποστήριξη ηλεκτρονικού απορρήτου"
@@ -7890,7 +7858,7 @@
     },
     "Status": {
       "Accepted": [
-        "Αποδέχτηκε"
+        "Έγινε αποδοχή"
       ],
       "Pending": [
         "Σε εκκρεμότητα"
@@ -7922,7 +7890,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } αποθηκευτικού χώρου"
+        "Αποθηκευτικός χώρος ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% γεμάτος"
@@ -7968,7 +7936,7 @@
         "Ο αποθηκευτικός σας χώρος είναι ${ percentage }% γεμάτος. ${ cta }."
       ],
       "Your storage is full": [
-        "Ο αποθηκευτικός σας χώρος είναι πλήρης"
+        "Ο αποθηκευτικός σας χώρος είναι γεμάτος"
       ],
       "Your storage is full. ${ cta }.": [
         "Ο αποθηκευτικός σας χώρος είναι γεμάτος. ${ cta }."
@@ -8160,14 +8128,6 @@
         "Αποθήκευση"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Ενεργά"
-      ],
-      "Expiring": [
-        "Λήγει"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } επαφή φαίνεται πανομοιότυπη.",
@@ -8218,7 +8178,7 @@
         "Η πρόσκληση απορρίφθηκε"
       ],
       "Last modified aliases stored in your oldest vault": [
-        "Τελευταία τροποποιημένα ψευδώνυμα που είναι αποθηκευμένα στην παλαιότερη κρύπτη"
+        "Πιο πρόσφατα τροποποιημένα ψευδώνυμα της παλαιότερης κρύπτης σας"
       ],
       "Payment method added": [
         "Προστέθηκε τρόπος πληρωμής"
@@ -8251,7 +8211,7 @@
         "Επιτυχία επαλήθευσης"
       ],
       "You have successfully canceled your subscription.": [
-        "Ακυρώσατε με επιτυχία τη συνδρομή σας."
+        "Ακυρώσατε επιτυχώς τη συνδρομή σας."
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
@@ -8393,7 +8353,7 @@
         "Ανάκτηση λογαριασμού"
       ],
       "Account security": [
-        "Προστασία λογαριασμού"
+        "Ασφάλεια λογαριασμού"
       ],
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
@@ -8496,7 +8456,7 @@
         "Ανάκτηση δεδομένων"
       ],
       "Date": [
-        "Ραντεβού"
+        "Ημερομηνία"
       ],
       "Day theme": [
         "Ανοιχτό θέμα"
@@ -8540,7 +8500,7 @@
         "Υποβάθμιση σε ${ downgradedPlanName }?"
       ],
       "Download ${ date }": [
-        "Κατεβάστε ${ date }"
+        "Κάντε λήψη ${ date }"
       ],
       "Download unverified file?": [
         "Λήψη μη επαληθευμένου αρχείου;"
@@ -8784,7 +8744,7 @@
         "Διακοπή κοινής χρήσης"
       ],
       "Stop sharing with everyone?": [
-        "Διακοπή κοινοποίησης σε όλους;"
+        "Διακοπή κοινοποίησης με όλους;"
       ],
       "Stop sharing?": [
         "Διακοπή κοινής χρήσης;"
@@ -8842,17 +8802,6 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Ημερομηνία Λήξης"
-      ],
-      "Plan": [
-        "Πρόγραμμα"
-      ],
-      "Status": [
-        "Κατάσταση"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8961,7 +8910,7 @@
         "Το όνομα δεν πρέπει να υπερβαίνει τους ${ MAX_NAME_LENGTH } χαρακτήρες"
       ],
       "Name must not be empty": [
-        "Το όνομα δεν πρέπει να είναι άδειο"
+        "Το όνομα δεν πρέπει να είναι κενό"
       ]
     },
     "Video control": {
