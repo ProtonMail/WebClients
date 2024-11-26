@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/components';
@@ -11,9 +13,7 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 import { SHARE_EXTERNAL_INVITATION_STATE } from '@proton/shared/lib/drive/constants';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-
-import { useDriveSharingFlags } from '../../../../store';
+import { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 export const MenuItem = ({
     iconName,
@@ -22,12 +22,12 @@ export const MenuItem = ({
     onClick,
 }: {
     iconName?: IconName;
-    label: string;
+    label: ReactNode;
     isSelected?: boolean;
     onClick: () => void;
 }) => (
-    <DropdownMenuButton className="text-left flex justify-space-between items-center" onClick={onClick}>
-        <span className="flex items-center mr-14">
+    <DropdownMenuButton className="text-left flex justify-space-between items-center flex-nowrap" onClick={onClick}>
+        <span className="flex items-center flex-nowrap mr-14">
             {iconName && <Icon name={iconName} className="mr-2" />}
             {label}
         </span>
@@ -36,10 +36,11 @@ export const MenuItem = ({
 );
 
 export const permissionsOptions = [SHARE_MEMBER_PERMISSIONS.VIEWER, SHARE_MEMBER_PERMISSIONS.EDITOR];
+export const shareUrlPermissionsOptions = [SHARE_URL_PERMISSIONS.VIEWER, SHARE_URL_PERMISSIONS.EDITOR];
 
 interface Props {
-    selectedPermissions: SHARE_MEMBER_PERMISSIONS;
-    onChangePermissions: (permissions: SHARE_MEMBER_PERMISSIONS) => void;
+    selectedPermissions: number;
+    onChangePermissions: (permissions: number) => void;
     onRemoveAccess?: () => void;
     onCopyShareInviteLink?: () => void;
     onResendInvitationEmail?: () => void;
@@ -47,9 +48,10 @@ interface Props {
     isLoading?: boolean;
     disabled?: boolean;
     autocompleteOptions?: boolean;
+    publicSharingOptions?: boolean;
 }
 
-export const MemberDropdownMenu = ({
+export const PermissionsDropdownMenu = ({
     disabled,
     selectedPermissions,
     onChangePermissions,
@@ -59,8 +61,8 @@ export const MemberDropdownMenu = ({
     externalInvitationState,
     isLoading = false,
     autocompleteOptions = false,
+    publicSharingOptions = false,
 }: Props) => {
-    const { isDirectSharingDisabled } = useDriveSharingFlags();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const externalInvitationStateLabels: { [key in SHARE_EXTERNAL_INVITATION_STATE]: string } = {
@@ -83,9 +85,26 @@ export const MemberDropdownMenu = ({
         [SHARE_MEMBER_PERMISSIONS.EDITOR]: c('Label').t`Make editor`,
     };
 
+    const publicSharingPermissionsLabels = {
+        [SHARE_MEMBER_PERMISSIONS.VIEWER]: (
+            <div className="flex flex-column">
+                {c('Label').t`Can view`}
+                <span className="color-weak">{c('Label description').t`View and download`}</span>
+            </div>
+        ),
+        [SHARE_MEMBER_PERMISSIONS.EDITOR]: (
+            <div className="flex flex-column">
+                {c('Label').t`Can edit`}
+                <span className="color-weak text-nowrap">{c('Label description').t`Organise, add and edit files`}</span>
+            </div>
+        ),
+    };
+
     const getPermissionsOptionLabel = (permissions: number) => {
         if (autocompleteOptions) {
             return memberPermissionsLabels[permissions];
+        } else if (publicSharingPermissionsLabels) {
+            return publicSharingPermissionsLabels[permissions];
         } else if (permissions === selectedPermissions) {
             return externalInvitationState
                 ? `${memberPermissionsLabels[permissions]} (${externalInvitationStateLabels[externalInvitationState]})`
@@ -105,7 +124,7 @@ export const MemberDropdownMenu = ({
                 }
             >
                 <DropdownButton
-                    disabled={isDirectSharingDisabled || disabled} // Kill switch that disable member management
+                    disabled={disabled}
                     className="self-center"
                     ref={anchorRef}
                     isOpen={isOpen}
@@ -122,7 +141,7 @@ export const MemberDropdownMenu = ({
             </Tooltip>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
-                    {permissionsOptions.map((permissions) => {
+                    {(publicSharingOptions ? shareUrlPermissionsOptions : permissionsOptions).map((permissions) => {
                         const label = getPermissionsOptionLabel(permissions);
                         return (
                             <MenuItem
