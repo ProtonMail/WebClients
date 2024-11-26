@@ -95,25 +95,27 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
                     />
                 }
             >
-                {!bitcoinAddressHelper?.receiveBitcoinAddress ? (
-                    <Loader />
-                ) : (
-                    <>
-                        <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
-                            <div className="sticky top-0 w-full">
-                                <WalletAccountSelector
-                                    disabled={stepKey === StepKey.Onramp}
-                                    value={selectedWalletAccount}
-                                    onSelect={(selected) => {
-                                        setSelectedWalletAccount(selected);
-                                    }}
-                                    options={toWalletAccountSelectorOptions(apiWalletsData ?? [])}
-                                />
-                            </div>
-                        </div>
+                <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
+                    <div className="sticky top-0 w-full">
+                        {bitcoinAddressHelper?.receiveBitcoinAddress && (
+                            <WalletAccountSelector
+                                disabled={stepKey === StepKey.Onramp}
+                                value={selectedWalletAccount}
+                                onSelect={(selected) => {
+                                    setSelectedWalletAccount(selected);
+                                }}
+                                options={toWalletAccountSelectorOptions(apiWalletsData ?? [])}
+                            />
+                        )}
+                    </div>
+                </div>
 
-                        <div>
-                            <div className="wallet-fullscreen-modal-main">
+                <div>
+                    <div className="wallet-fullscreen-modal-main">
+                        {!bitcoinAddressHelper?.receiveBitcoinAddress ? (
+                            <Loader />
+                        ) : (
+                            <>
                                 {stepKey === StepKey.Location && (
                                     <Location
                                         onConfirm={(country) => {
@@ -187,13 +189,13 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
                                             />
                                         );
                                     })()}
-                            </div>
-                        </div>
+                            </>
+                        )}
+                    </div>
+                </div>
 
-                        {/* empty div for grid centering */}
-                        <div className="wallet-fullscreen-modal-right" />
-                    </>
-                )}
+                {/* empty div for grid centering */}
+                <div className="wallet-fullscreen-modal-right" />
             </FullscreenModal>
 
             <BitcoinBuyConfirmModal
