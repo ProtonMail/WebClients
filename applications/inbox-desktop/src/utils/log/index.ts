@@ -4,6 +4,7 @@ import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { appSession } from "../session";
 import { isAbsolute } from "node:path";
 import { createHash } from "node:crypto";
+import metrics from "../metrics";
 
 if (process.env.NODE_ENV === "test") {
     Logger.transports.console.level = "error";
@@ -179,8 +180,8 @@ function filterSearchParams(params: URLSearchParams) {
 export function initializeLog() {
     Logger.initialize({ preload: true });
     Logger.transports.file.maxSize = 5 * 1024 * 1024; // 3MB
-
     Logger.hooks.push(filterSensitiveLogMessage);
+    Logger.transports.metrics = metrics.logTransporter;
 }
 
 export async function connectNetLogger(
