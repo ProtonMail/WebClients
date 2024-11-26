@@ -83,7 +83,8 @@ const AccountStepPaymentSummary = ({
         />
     );
 
-    const loading = loadingPaymentDetails || model.loadingDependencies;
+    const initialLoading = model.loadingDependencies;
+    const loading = loadingPaymentDetails || initialLoading;
     const loaderNode = <SkeletonLoader width="4em" index={0} />;
 
     return (
@@ -92,12 +93,12 @@ const AccountStepPaymentSummary = ({
                 cycle={options.cycle}
                 summaryPlan={summaryPlan}
                 price={
-                    model.loadingDependencies
+                    initialLoading
                         ? loaderNode
                         : getSimplePriceString(options.currency, currentCheckout.withDiscountPerMonth)
                 }
                 regularPrice={
-                    model.loadingDependencies
+                    initialLoading
                         ? loaderNode
                         : getSimplePriceString(options.currency, currentCheckout.withoutDiscountPerMonth)
                 }
@@ -108,13 +109,13 @@ const AccountStepPaymentSummary = ({
                         currency={options.currency}
                     />
                 }
-                discount={model.loadingDependencies ? 0 : currentCheckout.discountPercent}
+                discount={initialLoading ? 0 : currentCheckout.discountPercent}
                 checkout={currentCheckout}
                 mode={isB2BPlan ? 'addons' : undefined}
             >
                 {showTaxCountry && (
                     <WrappedTaxCountrySelector
-                        className="mb-2"
+                        className={clsx(initialLoading && 'visibility-hidden', 'mb-2')}
                         onBillingAddressChange={onBillingAddressChange}
                         statusExtended={
                             // If we are in signup-token mode, then it means that user created an account by clicking "Continue with bitcoin"
