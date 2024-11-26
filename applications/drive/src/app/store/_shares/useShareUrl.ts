@@ -419,12 +419,13 @@ export default function useShareUrl() {
             shareUrlId: string;
             flags: number;
             keyInfo: SharedURLSessionKeyPayload;
+            permissions?: SHARE_URL_PERMISSIONS;
         },
         newDuration?: number | null,
         newPassword?: string
     ) => {
-        const { shareId, shareUrlId, flags, keyInfo } = shareUrlInfo;
-        let fieldsToUpdate: Partial<UpdateSharedURL> = {};
+        const { shareId, shareUrlId, flags, keyInfo, permissions } = shareUrlInfo;
+        let fieldsToUpdate: Partial<UpdateSharedURL> = { permissions };
 
         if (newDuration !== undefined) {
             fieldsToUpdate = { expirationDuration: newDuration };
@@ -598,6 +599,7 @@ export default function useShareUrl() {
                 shareUrlId: string;
                 flags: number;
                 keyInfo: SharedURLSessionKeyPayload;
+                permissions?: SHARE_URL_PERMISSIONS;
             },
             newDuration?: number | null,
             newPassword?: string
