@@ -416,6 +416,7 @@ export const useMethods = (
         paymentMethodsRef.current.subscription = subscription;
         if (paymentMethodStatusExtended) {
             paymentMethodsRef.current.statusExtended = paymentMethodStatusExtended;
+            setStatus(paymentMethodStatusExtended);
         }
         updateMethods();
     }, [

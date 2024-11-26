@@ -98,7 +98,7 @@ export const ChargebeeCreditCardWrapper = ({
         if (initialCountryCode) {
             chargebeeCard.setCountryCode(initialCountryCode);
         }
-    }, []);
+    }, [initialCountryCode]);
 
     return (
         <div ref={formWrapperRef}>
