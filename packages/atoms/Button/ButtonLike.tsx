@@ -5,8 +5,9 @@ import type { ThemeColorUnion } from '@proton/colors';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
-import './ButtonLike.scss';
 import CircleLoader from '../CircleLoader/CircleLoader';
+
+import './ButtonLike.scss';
 
 export type ButtonLikeShape = 'solid' | 'outline' | 'ghost' | 'underline';
 
@@ -63,6 +64,10 @@ export interface ButtonLikeOwnProps {
      * Locator for e2e tests.
      */
     'data-testid'?: string;
+    /**
+     * If the disabled styles should disabled
+     */
+    noDisabledStyles?: boolean;
 }
 
 export type ButtonLikeProps<E extends ElementType> = PolymorphicPropsWithRef<ButtonLikeOwnProps, E>;
@@ -86,6 +91,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         selected = false,
         as,
         'data-testid': dataTestId,
+        noDisabledStyles,
         ...restProps
     }: ButtonLikeProps<E>,
     ref: ForwardedRef<Element>
@@ -107,6 +113,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         `button-${size}`,
         `button-${shape}-${color}`,
         Element !== 'button' && 'inline-block text-center',
+        noDisabledStyles && `no-disabled-styles`,
         className
     );
 

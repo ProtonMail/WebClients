@@ -4,9 +4,13 @@ import { DEFAULT_LOCALE } from '../constants';
 import type { TtagLocaleMap } from '../interfaces/Locale';
 import type { Options } from './dateFnLocale';
 import { getDateFnLocaleWithLongFormat, getDateFnLocaleWithSettings } from './dateFnLocale';
-import dateFnLocales from './dateFnLocales';
+import dateFnLocales, { getDateFnLocale } from './dateFnLocales';
 import { getClosestLocaleMatch, getLangAttribute, getLanguageCode } from './helper';
 import { setDateLocales, setLocales } from './index';
+
+export const willLoadLocale = (localeCode: string) => {
+    return localeCode !== DEFAULT_LOCALE;
+};
 
 export const loadLocale = async (localeCode: string, locales: TtagLocaleMap) => {
     const languageCode = getLanguageCode(localeCode);
@@ -35,8 +39,8 @@ export const loadDateLocale = async (localeCode: string, browserLocaleCode?: str
     const closestLocaleCode = getClosestLocaleMatch(localeCode, dateFnLocales) || DEFAULT_LOCALE;
     const closestBrowserLocaleCode = getClosestLocaleMatch(browserLocaleCode, dateFnLocales) || DEFAULT_LOCALE;
     const [dateFnLocale, browserDateFnLocale] = await Promise.all([
-        dateFnLocales[closestLocaleCode](),
-        dateFnLocales[closestBrowserLocaleCode](),
+        getDateFnLocale(closestLocaleCode),
+        getDateFnLocale(closestBrowserLocaleCode),
     ]);
     const mergedDateLocale = getDateFnLocaleWithLongFormat(dateFnLocale, browserDateFnLocale);
     const updatedDateFnLocale = getDateFnLocaleWithSettings(mergedDateLocale, options);

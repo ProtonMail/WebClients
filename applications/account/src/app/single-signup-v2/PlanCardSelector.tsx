@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Icon, SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
@@ -119,6 +119,7 @@ const PlanCardViewSlot = ({
     dark,
     onSelect,
     maxWidth = false,
+    loading,
 }: {
     highlightPrice?: boolean;
     selected?: boolean;
@@ -136,6 +137,7 @@ const PlanCardViewSlot = ({
     dark?: boolean;
     onSelect?: () => void;
     maxWidth?: boolean;
+    loading?: boolean;
 }) => {
     const wrapper = (children: ReactNode) => {
         const className = clsx(
@@ -146,7 +148,13 @@ const PlanCardViewSlot = ({
 
         if (onSelect) {
             return (
-                <button type="button" className={className} onClick={onSelect} aria-pressed={selected}>
+                <button
+                    type="button"
+                    className={className}
+                    onClick={onSelect}
+                    aria-pressed={selected}
+                    disabled={loading}
+                >
                     {children}
                 </button>
             );
@@ -168,6 +176,7 @@ const PlanCardViewSlot = ({
             )}
             style={maxWidth ? { '--max-w-custom': '20rem' } : undefined}
         >
+            {loading && <span className="sr-only">{c('Info').t`Loading`}</span>}
             {wrapper(
                 <>
                     {headerText ? (
@@ -210,26 +219,32 @@ const PlanCardViewSlot = ({
                                     id={`${id}-price`}
                                     className={clsx(
                                         !discount && 'items-baseline',
-                                        'flex gap-2 items-center justify-start'
+                                        'flex gap-2 items-center justify-start',
+                                        'card-plan-price-row'
                                     )}
                                 >
-                                    <span
-                                        className={clsx(
-                                            highlightPrice && !dark && 'color-primary',
-                                            'text-bold card-plan-price'
+                                    <span className="text-bold card-plan-price">
+                                        {loading ? (
+                                            <SkeletonLoader width="4em" index={0} />
+                                        ) : (
+                                            <span className={clsx(highlightPrice && !dark && 'color-primary')}>
+                                                {price}
+                                            </span>
                                         )}
-                                    >
-                                        {price}
                                     </span>
                                     <div className={clsx(!!discount && 'flex flex-column justify-center', 'text-left')}>
-                                        {discount}
+                                        {loading ? null : discount}
                                     </div>
                                 </div>
 
                                 <div className="text-sm">
-                                    <div className="color-weak" id={`${id}-billed`}>
-                                        {billedText}
-                                    </div>
+                                    {loading ? (
+                                        <SkeletonLoader width="8em" index={1} />
+                                    ) : (
+                                        <span className="color-weak" id={`${id}-billed`}>
+                                            {billedText}
+                                        </span>
+                                    )}
                                 </div>
                             </div>
 
@@ -277,6 +292,7 @@ export const PlanCardSelector = ({
     onSelectedClick,
     planCards,
     dark,
+    loading,
 }: {
     subscriptionDataCycleMapping: SubscriptionDataCycleMapping;
     audience?: Audience;
@@ -288,6 +304,7 @@ export const PlanCardSelector = ({
     dark?: boolean;
     onSelect: (planIDs: PlanIDs, plan: PLANS) => void;
     onSelectedClick?: () => void;
+    loading?: boolean;
 }) => {
     const planCount = planCards.length;
 
@@ -387,6 +404,7 @@ export const PlanCardSelector = ({
                         dark={dark}
                         subsection={planCard.subsection}
                         maxWidth={planCount > 2}
+                        loading={loading}
                     />
                 );
             })}

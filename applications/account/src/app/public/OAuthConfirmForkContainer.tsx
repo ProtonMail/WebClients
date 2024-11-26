@@ -11,13 +11,13 @@ import Main from './Main';
 import Text from './Text';
 
 interface Props {
-    name: string;
+    name?: string;
     image?: string;
     onConfirm: () => Promise<void>;
     onCancel: () => void;
 }
 
-const OAuthConfirmForkContainer = ({ name, image, onConfirm, onCancel }: Props) => {
+const OAuthConfirmForkContainer = ({ name = '', image, onConfirm, onCancel }: Props) => {
     const [loading, withLoading] = useLoading();
     const children = (
         <Main>

@@ -8,7 +8,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
 import { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
 import useConfig from '@proton/components/hooks/useConfig';
-import { SepaDirectDebit } from '@proton/components/payments/chargebee/SepaDirectDebit';
+import { type DirectDebitProps, SepaDirectDebit } from '@proton/components/payments/chargebee/SepaDirectDebit';
 import type { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
@@ -32,7 +32,12 @@ import { isBilledUser } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import type { CbIframeHandles } from '../../payments/chargebee/ChargebeeIframe';
-import { ChargebeeCreditCardWrapper, ChargebeeSavedCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
+import {
+    type ChargebeeCardWrapperProps,
+    ChargebeeCreditCardWrapper,
+    type ChargebeePaypalWrapperProps,
+    ChargebeeSavedCardWrapper,
+} from '../../payments/chargebee/ChargebeeWrapper';
 import Alert3DS from './Alert3ds';
 import Cash from './Cash';
 import CreditCard from './CreditCard';
@@ -91,6 +96,7 @@ export interface NoApiProps extends Props {
     isChargebeeEnabled: () => ChargebeeEnabled;
     billingAddressStatus?: BillingAddressStatus;
     formErrors?: FormErrorsHook;
+    onChargebeeInitialized?: () => void;
 }
 
 export const PaymentsNoApi = ({
@@ -135,6 +141,7 @@ export const PaymentsNoApi = ({
     billingAddressStatus = BILLING_ADDRESS_VALID,
     paymentStatus,
     formErrors,
+    onChargebeeInitialized,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -199,11 +206,15 @@ export const PaymentsNoApi = ({
         type === 'signup-v2-upgrade'
     );
 
-    const sharedCbProps = {
+    const sharedCbProps: Pick<
+        ChargebeeCardWrapperProps & ChargebeePaypalWrapperProps & DirectDebitProps,
+        'iframeHandles' | 'chargebeePaypal' | 'chargebeeCard' | 'directDebit' | 'onInitialized'
+    > = {
         iframeHandles,
         chargebeeCard,
         chargebeePaypal,
         directDebit,
+        onInitialized: onChargebeeInitialized,
     };
 
     const savedMethod = savedMethodInternal ?? savedMethodExternal;

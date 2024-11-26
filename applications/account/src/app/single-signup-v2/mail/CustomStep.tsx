@@ -212,7 +212,7 @@ const CustomStep = ({
                             if (model.cache?.type === 'user') {
                                 return {
                                     pathname: '/multi-user-support',
-                                    localID: model.cache.session.localID,
+                                    localID: model.cache.session.resumedSessionResult.LocalID,
                                 };
                             } else if (model.cache?.type === 'signup') {
                                 return {

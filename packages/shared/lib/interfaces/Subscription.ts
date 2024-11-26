@@ -57,6 +57,7 @@ export interface Plan {
     PeriodEnd: CycleMapping<number>;
     State: number;
     Offers: Offer[];
+    Vendors?: any;
 }
 
 export interface StrictPlan extends Plan {

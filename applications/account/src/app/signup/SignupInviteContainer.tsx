@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { StandardLoadErrorPage, useApi, useErrorHandler, useNotifications } from '@proton/components';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { checkInvitation } from '@proton/shared/lib/api/invites';
 import type { CLIENT_TYPES } from '@proton/shared/lib/constants';
 
@@ -23,7 +24,6 @@ const SignupInviteContainer = ({ loader, onInvalid, onValid, clientType }: Props
     const { token, selector } = useParams<{ token: string; selector: string }>();
     const [error, setError] = useState<{ message?: string } | null>(null);
     const normalApi = useApi();
-    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
 
     useEffect(() => {
@@ -37,6 +37,7 @@ const SignupInviteContainer = ({ loader, onInvalid, onValid, clientType }: Props
         }
 
         const run = async () => {
+            const silentApi = getSilentApi(normalApi);
             const { Valid } = await silentApi<{ Valid: 1 | 0 }>(
                 checkInvitation({
                     Selector: selector,
