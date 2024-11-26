@@ -2,25 +2,61 @@ import type { IDBPDatabase } from 'idb';
 
 import noop from '@proton/utils/noop';
 
+import { esErrorReport } from '../esHelpers';
 import type { ConfigKeys, ConfigValues, EncryptedSearchDB, RetryObject } from '../models';
+import {
+    ESDbTableNotFound,
+    ESInvalidAccessError,
+    ESInvalidStateError,
+    ESTransactionError,
+    ESTransactionInactiveError,
+} from '../models/errors';
 import { openESDB, safelyWriteToIDBAbsolutely } from './indexedDB';
 
 /**
  * Initialize the config object store in IDB
  */
-export const initializeConfig = async (userID: string, indexKey: string) => {
-    const esDB = await openESDB(userID);
-    if (!esDB || !esDB.objectStoreNames.contains('config')) {
-        return;
-    }
+export const initializeConfig = async (userID: string, encryptedIndexKey: string) => {
+    let esDB;
+    try {
+        esDB = await openESDB(userID);
+        if (!esDB) {
+            throw new ESDbTableNotFound('ES Database not found: database esDB does not exist');
+        }
+        if (!esDB.objectStoreNames.contains('config')) {
+            throw new ESDbTableNotFound('ES Database not found: config table missing in database');
+        }
 
-    const tx = esDB.transaction('config', 'readwrite');
-    void tx.store.put(indexKey, 'indexKey');
-    void tx.store.put(0, 'size');
-    void tx.store.put(false, 'enabled');
-    void tx.store.put(false, 'limited');
-    await tx.done;
-    esDB.close();
+        const tx = esDB.transaction('config', 'readwrite');
+        await Promise.all([
+            tx.store.put(encryptedIndexKey, 'indexKey'),
+            tx.store.put(0, 'size'),
+            tx.store.put(false, 'enabled'),
+            tx.store.put(false, 'limited'),
+        ]);
+        await tx.done;
+        esDB.close();
+    } catch (error: any) {
+        esDB?.close();
+        if (error instanceof ESDbTableNotFound) {
+            esErrorReport(error.message, { context: 'initializeConfig', error });
+            throw error;
+        }
+
+        let txnError: ESTransactionError;
+        if (error.name === 'TransactionInactiveError') {
+            txnError = new ESTransactionInactiveError('ES Database Transaction Inactive', error);
+        } else if (error.name === 'InvalidStateError') {
+            txnError = new ESInvalidStateError('ES Database in Invalid State', error);
+        } else if (error.name === 'InvalidAccessError') {
+            txnError = new ESInvalidAccessError('ES Database Invalid Access Mode', error);
+        } else {
+            txnError = new ESTransactionError(`ES Database Transaction Error: ${error.message}`, error);
+        }
+
+        esErrorReport(txnError.message, { error: txnError, context: 'initializeConfig' });
+        throw txnError;
+    }
 };
 
 /**
