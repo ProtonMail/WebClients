@@ -1,0 +1,22 @@
+import { c } from 'ttag';
+
+import { SkeletonLoader } from '@proton/components';
+
+const SkeletonPaymentsForm = () => {
+    return (
+        <div>
+            <div className="flex flex-column gap-6 mt-8">
+                <SkeletonLoader width="100%" className="h-custom" style={{ '--h-custom': '4em' }} index={0} />
+
+                <div className="flex gap-4 flex-nowrap">
+                    <SkeletonLoader width="100%" className="h-custom" style={{ '--h-custom': '4em' }} index={1} />
+                    <SkeletonLoader width="100%" className="h-custom" style={{ '--h-custom': '4em' }} index={1} />
+                </div>
+            </div>
+
+            <span className="sr-only">{c('Info').t`Loading`}</span>
+        </div>
+    );
+};
+
+export default SkeletonPaymentsForm;

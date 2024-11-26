@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -53,11 +52,10 @@ const getDefaultState = (defaults: ReturnType<typeof getDefaults>): AuthExtensio
     app: undefined,
 });
 
-const AuthExtension = () => {
-    const location = useLocation<AuthExtensionState | undefined>();
+const AuthExtension = ({ state }: { state: AuthExtensionState }) => {
     const defaults = getDefaults();
-    const { type, payload, app } = location.state ?? getDefaultState(defaults);
-    const errorDetail = location.state?.type === 'error' && location.state.error;
+    const { type, payload, app } = state ?? getDefaultState(defaults);
+    const errorDetail = state?.type === 'error' && state.error;
     const logo = getExtensionAssets(app)?.[type];
 
     useEffect(() => {

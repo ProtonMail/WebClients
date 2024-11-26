@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { CircleLoader, Input } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Label from '@proton/components/components/label/Label';
+import SkeletonPaymentsForm from '@proton/components/containers/payments/SkeletonPaymentsForm';
 import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoints';
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
@@ -97,18 +98,19 @@ export const ChargebeeCreditCardWrapper = ({
         if (initialCountryCode) {
             chargebeeCard.setCountryCode(initialCountryCode);
         }
-    }, []);
+    }, [initialCountryCode]);
 
     return (
         <div ref={formWrapperRef}>
             {!initialized && (
-                <div className="flex justify-center">
-                    <CircleLoader size="medium" />
+                <div className="mb-8">
+                    <SkeletonPaymentsForm />
                 </div>
             )}
-            <div className={clsx('flex flex-column', !initialized && 'visibility-hidden')}>
-                <Label className="field-two-label field-two-label-container flex pt-3">{c('Label')
-                    .t`Card details`}</Label>
+            <div className={clsx('flex flex-column', !initialized && 'visibility-hidden absolute')}>
+                <Label className="field-two-label field-two-label-container flex pt-3">
+                    {c('Label').t`Card details`}
+                </Label>
                 <ChargebeeIframe
                     type="card"
                     onInitialized={() => {

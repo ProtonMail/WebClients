@@ -319,16 +319,8 @@ export const eventManager = async ({
     return eventManager;
 };
 
-export const loadCrypto = ({
-    appName,
-    unleashClient,
-}: {
-    unleashClient: UnleashClient | undefined;
-    appName: APP_NAMES;
-}) => {
-    return loadCryptoWorker(
-        getCryptoWorkerOptions(appName, {})
-    );
+export const loadCrypto = ({ appName }: { unleashClient: UnleashClient | undefined; appName: APP_NAMES }) => {
+    return loadCryptoWorker(getCryptoWorkerOptions(appName, {}));
 };
 
 export const loadLocales = ({ locales, userSettings }: { locales: TtagLocaleMap; userSettings: UserSettings }) => {
@@ -450,12 +442,11 @@ export const wrap = async <T>(
     return wrapUnloadError<T>(run());
 };
 
-export const loadLocalesPublicApp = ({
+export const getLocaleCodePublicApp = ({
     locales,
     pathLocale,
     searchParams,
 }: {
-    app: APP_NAMES;
     locales: TtagLocaleMap;
     pathLocale: string;
     searchParams: URLSearchParams;
@@ -466,6 +457,18 @@ export const loadLocalesPublicApp = ({
     const localeCode =
         getClosestLocaleMatch(pathLocale || languageParams || languageCookie || '', locales) ||
         getClosestLocaleCode(browserLocale, locales);
+    return { localeCode, browserLocale };
+};
+
+export const loadLocalesPublicApp = ({
+    localeCode,
+    browserLocale,
+    locales,
+}: {
+    localeCode: string;
+    browserLocale: string;
+    locales: TtagLocaleMap;
+}) => {
     return Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)]);
 };
 
@@ -480,8 +483,14 @@ export const publicApp = ({
     pathLocale: string;
     searchParams: URLSearchParams;
 }) => {
+    const { localeCode, browserLocale } = getLocaleCodePublicApp({
+        locales,
+        searchParams,
+        pathLocale,
+    });
+
     return Promise.all([
         loadCrypto({ appName: app, unleashClient: undefined }),
-        loadLocalesPublicApp({ locales, pathLocale, searchParams, app }),
+        loadLocalesPublicApp({ locales, localeCode, browserLocale }),
     ]);
 };

@@ -209,6 +209,7 @@ export const useMethods = (
         pendingUser?: User;
         pendingPlanIDs?: PlanIDs;
         pendingSubscription?: Subscription;
+        pendingStatusExtended?: PaymentMethodStatusExtended;
     }>();
 
     const [loading, setLoading] = useState(true);
@@ -296,6 +297,7 @@ export const useMethods = (
                     pendingUser,
                     pendingPlanIDs,
                     pendingSubscription,
+                    pendingStatusExtended,
                 } = pendingDataRef.current;
                 pendingDataRef.current = undefined;
 
@@ -357,6 +359,10 @@ export const useMethods = (
                 if (pendingSubscription !== undefined) {
                     paymentMethodsRef.current.subscription = pendingSubscription;
                 }
+
+                if (pendingStatusExtended !== undefined) {
+                    paymentMethodsRef.current.statusExtended = pendingStatusExtended;
+                }
             }
 
             setStatus(paymentMethodsRef.current.statusExtended);
@@ -389,6 +395,7 @@ export const useMethods = (
                 pendingUser: user,
                 pendingPlanIDs: planIDs,
                 pendingSubscription: subscription,
+                pendingStatusExtended: paymentMethodStatusExtended,
             };
             return;
         }
@@ -407,6 +414,10 @@ export const useMethods = (
         paymentMethodsRef.current.user = user;
         paymentMethodsRef.current.planIDs = planIDs;
         paymentMethodsRef.current.subscription = subscription;
+        if (paymentMethodStatusExtended) {
+            paymentMethodsRef.current.statusExtended = paymentMethodStatusExtended;
+            setStatus(paymentMethodStatusExtended);
+        }
         updateMethods();
     }, [
         amount,
