@@ -19,6 +19,7 @@ import { selectDefaultVault } from './shares';
 
 export const selectUserState = ({ user }: State) => user;
 export const selectUser = ({ user: { user } }: State) => user;
+export const selectIsSSO = ({ user: { user } }: State) => Boolean(user?.Flags.sso);
 export const selectUserPlan = ({ user: { plan } }: State) => plan;
 export const selectUserSettings = ({ user: { userSettings } }: State) => userSettings;
 export const selectUserData = ({ user: { userData } }: State) => userData;
