@@ -58,6 +58,7 @@ enum PaymentsFlag {
     AllowDowncycling = 'AllowDowncycling',
     SepaPayments = 'SepaPayments',
     IpAddonDowngrade = 'IpAddonDowngrade',
+    RegionalCurrenciesBatch2 = 'RegionalCurrenciesBatch2',
 }
 
 enum CalendarFeatureFlag {

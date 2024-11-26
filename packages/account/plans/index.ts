@@ -8,6 +8,7 @@ import {
     getAvailableCurrencies,
     isRegionalCurrency,
 } from '@proton/payments';
+import { NEW_BATCH_CURRENCIES_FEATURE_FLAG } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     cacheHelper,
@@ -76,10 +77,22 @@ const thunk = ({
                 user ? dispatch(subscriptionThunk()) : undefined,
             ]);
 
+            // In public app, we don't have unleash client in extraArgument, so we default to true.
+            // It's safe to do so because other components that need a list of the displayed currencies have access to
+            // Unleash and they will disable regional currencies if they are not supposed to be available.
+            // The only downside of such approach is that signup pages will do the second GET plans request to obtain
+            // "missing" plans for the regional currency. And then the rest of the UI will ignore this information
+            // if the feature flag is actually disabled.
+            const enableNewBatchCurrencies =
+                !!extraArgument.unleashClient && !!NEW_BATCH_CURRENCIES_FEATURE_FLAG
+                    ? extraArgument.unleashClient.isEnabled(NEW_BATCH_CURRENCIES_FEATURE_FLAG)
+                    : true;
+
             const availableCurrencies = getAvailableCurrencies({
                 status,
                 user,
                 subscription,
+                enableNewBatchCurrencies,
             });
 
             return availableCurrencies.filter((currency) => isRegionalCurrency(currency));
