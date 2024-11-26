@@ -9,6 +9,7 @@ import Counter from './lib/Counter';
 import Histogram from './lib/Histogram';
 import MetricsBase from './lib/MetricsBase';
 import type IMetricsRequestService from './lib/types/IMetricsRequestService';
+import type { HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson } from './types/desktop_inbox_heartbeat_total_v1.schema';
 import type { HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson } from './types/docs_aborted_squashes_total_v1.schema';
 import type { HttpsProtonMeDocsAlertModalTotalV1SchemaJson } from './types/docs_alert_modal_total_v1.schema';
 import type { HttpsProtonMeDocsCommentsDownloadErrorTotalV1SchemaJson } from './types/docs_comments_download_error_total_v1.schema';
@@ -133,6 +134,8 @@ import type { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_sub
 import type { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
 class Metrics extends MetricsBase {
+    public desktop_inbox_heartbeat_total: Counter<HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson>;
+
     public docs_aborted_squashes_total: Counter<HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson>;
 
     public docs_alert_modal_total: Counter<HttpsProtonMeDocsAlertModalTotalV1SchemaJson>;
@@ -379,6 +382,11 @@ class Metrics extends MetricsBase {
 
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
+
+        this.desktop_inbox_heartbeat_total = new Counter<HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson>(
+            { name: 'desktop_inbox_heartbeat_total', version: 1 },
+            this.requestService
+        );
 
         this.docs_aborted_squashes_total = new Counter<HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson>(
             { name: 'docs_aborted_squashes_total', version: 1 },
