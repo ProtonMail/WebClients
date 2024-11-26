@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/index';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import {
     type OnBillingAddressChange,
@@ -83,13 +83,24 @@ const AccountStepPaymentSummary = ({
         />
     );
 
+    const loading = loadingPaymentDetails || model.loadingDependencies;
+    const loaderNode = <SkeletonLoader width="4em" index={0} />;
+
     return (
         <RightSummary variant="border" className="mx-auto md:mx-0 rounded-xl">
             <RightPlanSummary
                 cycle={options.cycle}
                 summaryPlan={summaryPlan}
-                price={getSimplePriceString(options.currency, currentCheckout.withDiscountPerMonth)}
-                regularPrice={getSimplePriceString(options.currency, currentCheckout.withoutDiscountPerMonth)}
+                price={
+                    model.loadingDependencies
+                        ? loaderNode
+                        : getSimplePriceString(options.currency, currentCheckout.withDiscountPerMonth)
+                }
+                regularPrice={
+                    model.loadingDependencies
+                        ? loaderNode
+                        : getSimplePriceString(options.currency, currentCheckout.withoutDiscountPerMonth)
+                }
                 addons={
                     <RightPlanSummaryAddons
                         cycle={options.cycle}
@@ -97,7 +108,7 @@ const AccountStepPaymentSummary = ({
                         currency={options.currency}
                     />
                 }
-                discount={currentCheckout.discountPercent}
+                discount={model.loadingDependencies ? 0 : currentCheckout.discountPercent}
                 checkout={currentCheckout}
                 mode={isB2BPlan ? 'addons' : undefined}
             >
@@ -125,8 +136,8 @@ const AccountStepPaymentSummary = ({
                                 left: <span>{getTotalBillingText(options.cycle, currentCheckout.planIDs)}</span>,
                                 right: isBFOffer ? (
                                     <>
-                                        {loadingPaymentDetails ? (
-                                            <CircleLoader />
+                                        {loading ? (
+                                            loaderNode
                                         ) : (
                                             <>
                                                 <Price currency={subscriptionData.currency}>
@@ -202,9 +213,9 @@ const AccountStepPaymentSummary = ({
                                                     return null;
                                                 }
 
-                                                if (loadingPaymentDetails) {
+                                                if (loading) {
                                                     if (loader) {
-                                                        return <CircleLoader />;
+                                                        return loaderNode;
                                                     }
                                                     return null;
                                                 }
@@ -223,8 +234,8 @@ const AccountStepPaymentSummary = ({
                             <div className="flex justify-space-between text-bold text-rg">
                                 <span className="">{c('Label').t`Amount due`}</span>
                                 <span>
-                                    {loadingPaymentDetails ? (
-                                        <CircleLoader />
+                                    {loading ? (
+                                        loaderNode
                                     ) : (
                                         <>
                                             <Price currency={subscriptionData.currency}>
@@ -238,6 +249,7 @@ const AccountStepPaymentSummary = ({
                             {isTaxInclusive(options.checkResult) && taxInclusiveText}
                         </>
                     )}
+                    {loading && <span className="sr-only">{c('Info').t`Loading`}</span>}
                 </div>
             </RightPlanSummary>
         </RightSummary>
