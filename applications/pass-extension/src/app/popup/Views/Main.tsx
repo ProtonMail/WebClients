@@ -13,11 +13,12 @@ import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsPro
 import { Items } from '@proton/pass/components/Item/Items';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
+import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
-import { selectLockSetupRequired } from '@proton/pass/store/selectors';
+import { selectIsSSO, selectLockSetupRequired } from '@proton/pass/store/selectors';
 
 import { Header } from './Header/Header';
 
@@ -25,6 +26,7 @@ import './Main.scss';
 
 const MainSwitch: FC = () => {
     const sub = (basePath: string, path: string) => `${basePath}/${path}`;
+    const isSSO = useSelector(selectIsSSO);
 
     return (
         <Route>
@@ -44,6 +46,7 @@ const MainSwitch: FC = () => {
                             </Switch>
                         )}
                         <ThemeOnboardingModal />
+                        {isSSO && <OnboardingSSO />}
                     </div>
                 </main>
             )}
