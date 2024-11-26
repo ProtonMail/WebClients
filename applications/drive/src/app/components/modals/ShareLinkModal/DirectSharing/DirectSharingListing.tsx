@@ -13,9 +13,14 @@ import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import type { ShareExternalInvitation, ShareInvitation, ShareMember } from '../../../../store';
+import {
+    type ShareExternalInvitation,
+    type ShareInvitation,
+    type ShareMember,
+    useDriveSharingFlags,
+} from '../../../../store';
+import { PermissionsDropdownMenu } from '../PermissionsDropdownMenu';
 import { DirectSharingListInvitation } from './DirectSharingListInvitation';
-import { MemberDropdownMenu } from './MemberDropdownMenu';
 
 interface Props {
     volumeId?: string;
@@ -35,6 +40,7 @@ interface Props {
     onExternalInvitationRemove: (externalInvitationId: string) => Promise<void>;
     onResendInvitationEmail: (invitationId: string) => Promise<void>;
     onResendExternalInvitationEmail: (externaInvitationId: string) => Promise<void>;
+    viewOnly: boolean;
 }
 
 const getContactNameAndEmail = (email: string, contactEmails?: ContactEmail[]) => {
@@ -65,6 +71,7 @@ const MemberItem = ({
     onPermissionsChange: (member: ShareMember, permission: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
     onMemberRemove: (member: ShareMember) => Promise<void>;
 }) => {
+    const { isDirectSharingDisabled } = useDriveSharingFlags();
     const [isLoading, withIsLoading] = useLoading(false);
     const { memberId, permissions } = member;
     const handlePermissionChange = (value: SHARE_MEMBER_PERMISSIONS) =>
@@ -87,7 +94,8 @@ const MemberItem = ({
                     {contactName && <span className="color-weak">{contactEmail}</span>}
                 </p>
             </div>
-            <MemberDropdownMenu
+            <PermissionsDropdownMenu
+                disabled={isDirectSharingDisabled}
                 isLoading={isLoading}
                 selectedPermissions={permissions}
                 onChangePermissions={handlePermissionChange}
@@ -112,6 +120,7 @@ export const DirectSharingListing = ({
     onExternalInvitationPermissionsChange,
     onResendInvitationEmail,
     onResendExternalInvitationEmail,
+    viewOnly,
 }: Props) => {
     const [user] = useUser();
     const [contactEmails] = useContactEmails();
@@ -159,6 +168,7 @@ export const DirectSharingListing = ({
                     );
                     return (
                         <DirectSharingListInvitation
+                            viewOnly={viewOnly}
                             key={externalInvitation.externalInvitationId}
                             invitationId={externalInvitation.externalInvitationId}
                             volumeId={volumeId}
@@ -181,6 +191,7 @@ export const DirectSharingListing = ({
                     );
                     return (
                         <DirectSharingListInvitation
+                            viewOnly={viewOnly}
                             key={invitation.invitationId}
                             invitationId={invitation.invitationId}
                             volumeId={volumeId}

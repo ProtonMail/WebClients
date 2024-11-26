@@ -79,6 +79,9 @@ enum DriveFeatureFlag {
     DriveSharingDevelopment = 'DriveSharingDevelopment',
     DriveExternalInvitationsDisabled = 'DriveSharingExternalInvitationsDisabled',
     DriveExternalInvitations = 'DriveSharingExternalInvitations',
+    // Public sharing edit mode
+    DrivePublicShareEditMode = 'DrivePublicShareEditMode',
+    DrivePublicShareEditModeDisabled = 'DrivePublicShareEditModeDisabled',
     // Download
     DriveDownloadScan = 'DriveDownloadScan',
     DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
