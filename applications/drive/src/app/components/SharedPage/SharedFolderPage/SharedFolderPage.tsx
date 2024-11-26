@@ -22,6 +22,7 @@ import ReportAbuseButton from '../Layout/ReportAbuseButton';
 import SharedPageFooter from '../Layout/SharedPageFooter';
 import SharedPageHeader from '../Layout/SharedPageHeader';
 import SharedPageLayout from '../Layout/SharedPageLayout';
+import SharedPageTransferManager from '../TransferModal/SharedPageTransferManager';
 import type { PublicLink } from '../interface';
 import SharedFileBrowser from './FileBrowser';
 
@@ -275,12 +276,16 @@ export default function SharedFolder({
                 )}
 
                 {canWrite && <EditActions token={token} linkId={linkId} />}
-                <div
-                    className="fixed bottom-0 right-0 z-up w-full items-end max-w-custom"
-                    style={{ '--max-w-custom': '50em' }}
-                >
-                    <TransferManager />
-                </div>
+                {canWrite ? (
+                    <div
+                        className="fixed bottom-0 right-0 z-up w-full items-end max-w-custom"
+                        style={{ '--max-w-custom': '50em' }}
+                    >
+                        <TransferManager />
+                    </div>
+                ) : (
+                    <SharedPageTransferManager rootItem={rootLink} />
+                )}
                 <SharedFileBrowser
                     {...folderView}
                     canWrite={canWrite}
