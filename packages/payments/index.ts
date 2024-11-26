@@ -53,6 +53,7 @@ export {
     type EnsureTokenChargeableTranslations,
 } from './core/ensureTokenChargeable';
 export {
+    NEW_BATCH_CURRENCIES_FEATURE_FLAG,
     extendStatus,
     getAvailableCurrencies,
     getCurrencyRate,
