@@ -15,16 +15,16 @@ interface Props extends ModalOwnProps {
     onDone: () => void;
 }
 
-const support = (
-    <Href key="support-link" href="https://proton.me/support/contact?topic=Proton+Wallet">
-        {
-            // translator: Proton Wallet support
-            c('Gateway disclaimer').jt`${WALLET_APP_NAME} support`
-        }
-    </Href>
-);
+export const BitcoinBuyAztecoConfirmModal = ({ onBuyMoreBitcoin, open, onDone }: Props) => {
+    const support = (
+        <Href key="support-link" href="https://proton.me/support/contact?topic=Proton+Wallet">
+            {
+                // translator: Proton Wallet support
+                c('Gateway disclaimer').jt`${WALLET_APP_NAME} support`
+            }
+        </Href>
+    );
 
-export const BitcoinBuyInProgressModal = ({ onBuyMoreBitcoin, open, onDone }: Props) => {
     return (
         <Prompt
             open={open}
@@ -48,7 +48,7 @@ export const BitcoinBuyInProgressModal = ({ onBuyMoreBitcoin, open, onDone }: Pr
                     onClick={() => {
                         onBuyMoreBitcoin();
                     }}
-                >{c('Buy in progress').t`Buy more bitcoin`}</Button>,
+                >{c('Buy confirm').t`Buy more bitcoin`}</Button>,
             ]}
         >
             <div className="flex flex-column items-center">
@@ -60,20 +60,15 @@ export const BitcoinBuyInProgressModal = ({ onBuyMoreBitcoin, open, onDone }: Pr
                 />
 
                 <h1 className="text-bold text-break text-3xl mt-3 mb-4 text-center">
-                    {c('Buy in progress').t`Purchase in progress`}
+                    {c('Buy confirm').t`Purchase finished`}
                 </h1>
 
                 <ModalParagraph>
-                    <p>
-                        {c('Buy in progress').jt`
-                    Thank you for your purchase attempt for an Azteco voucher.
-                    As soon as we receive your payment, we will create and redeem the voucher based on BTC price at that time.
-                    Then Azteco will send the BTC to your wallet.`}
-                    </p>
-                    <p>
-                        {c('Buy in progress')
-                            .jt`For any issues with the purchasing process, please contact ${support}.`}
-                    </p>
+                    <p>{c('Buy confirm').jt`
+                    Thank you for purchasing an Azteco voucher.
+                    We will now redeem your voucher and Azteco will send the BTC to your wallet.
+                    We will also send you an email with the purchase details.`}</p>
+                    <p>{c('Buy confirm').jt`For any issues with the purchasing process, please contact ${support}.`}</p>
                 </ModalParagraph>
             </div>
         </Prompt>
