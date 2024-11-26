@@ -206,7 +206,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
   beginInitialConnectionTimer(): void {
     this.initialConnectionTimer = setTimeout(() => {
       this.logger.warn('Initial connection with RTS cannot seem to be formed in a reasonable time')
-      this.documentState.emitEvent({ name: 'RealtimeInitialConnectionTimedOut', payload: undefined })
+      this.documentState.setProperty('realtimeConnectionTimedOut', true)
     }, MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR)
   }
 
@@ -226,6 +226,8 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
       clearTimeout(this.initialSyncTimer)
       this.initialSyncTimer = null
     }
+
+    this.documentState.setProperty('realtimeConnectionTimedOut', false)
 
     if (this.documentState.getProperty('realtimeReadyToBroadcast')) {
       return
