@@ -22,10 +22,10 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } και εντοπίστηκαν ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+        "Εντοπίστηκαν ${ name } και ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } και εντοπίστηκε 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+        "Εντοπίστηκαν ${ name } και 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
@@ -84,7 +84,7 @@
         "Προσθήκη αριθμού τηλεφώνου"
       ],
       "Add public holidays": [
-        "Προσθήκη αργιών"
+        "Προσθήκη επίσημων αργιών"
       ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
@@ -414,10 +414,10 @@
         "Αναμονή για επαλήθευση"
       ],
       "Make this participant optional": [
-        "Κάντε αυτό το συμμετέχοντα προαιρετικό"
+        "Κάντε αυτόν τον συμμετέχοντα προαιρετικό"
       ],
       "Make this participant required": [
-        "Να απαιτηθεί αυτός ο συμμετέχων"
+        "Κάντε αυτόν τον συμμετέχοντα απαραίτητο"
       ],
       "Manage addresses": [
         "Διαχείριση διευθύνσεων"
@@ -462,7 +462,7 @@
         "Επόμενο"
       ],
       "Next day": [
-        "Επόμενη ημέρα"
+        "Επόμενη μέρα"
       ],
       "Next month": [
         "Επόμενος μήνας"
@@ -513,7 +513,7 @@
         "Προηγούμενο"
       ],
       "Previous day": [
-        "Προηγούμενη ημέρα"
+        "Προηγούμενη μέρα"
       ],
       "Previous month": [
         "Προηγούμενος μήνας"
@@ -522,7 +522,7 @@
         "Προηγούμενη εβδομάδα"
       ],
       "Previous year": [
-        "Προηγούμενη ημέρα"
+        "Προηγούμενο έτος"
       ],
       "Quit": [
         "Έξοδος"
@@ -555,13 +555,13 @@
         "Αφαίρεση ειδοποίησης"
       ],
       "Remove this participant": [
-        "Αφαίρεση αυτού του συμμετέχοντα"
+        "Αφαιρέστε αυτόν τον συμμετέχοντα"
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
       "Request a call": [
-        "Ζητήστε Τηλεφωνική Επικοινωνία"
+        "Ζητήστε τηλεφωνική επικοινωνία"
       ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
@@ -591,7 +591,7 @@
         "Αναζήτηση χωρών"
       ],
       "See how": [
-        "Δείτε πως"
+        "Δείτε πώς"
       ],
       "See plan features": [
         "Προβολή δυνατοτήτων προγράμματος"
@@ -639,10 +639,10 @@
         "Εμφάνιση λιγότερων"
       ],
       "Show more": [
-        "Εμφάνιση περισσοτέρων"
+        "Εμφάνιση περισσότερων"
       ],
       "Show navigation bar": [
-        "Εμφάνιση γραμμής περιήγησης"
+        "Προβολή γραμμής περιήγησης"
       ],
       "Show side panel": [
         "Εμφάνιση πλαϊνού πλαισίου"
@@ -774,7 +774,7 @@
         "Ναι, θα παρευρεθώ"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερη από ${ maxAttachments } επαφή",
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
@@ -789,15 +789,10 @@
     },
     "Action subline": {
       "Anyone with the link can view your calendar": [
-        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση στο ημερολόγιο σας"
+        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση στο ημερολόγιό σας"
       ],
       "They can view or edit your calendar": [
         "Μπορούν να δουν ή να επεξεργαστούν το ημερολόγιό σας"
-      ]
-    },
-    "Action subscription": {
-      "Reactivate": [
-        "Επανενεργοποίηση"
       ]
     },
     "Action title": {
@@ -854,25 +849,25 @@
     },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
-        "${ title } ξεκίνησε στις ${ formattedHour }"
+        "Το ${ title } ξεκίνησε στις ${ formattedHour }"
       ],
       "${ title } started on ${ formattedDate }": [
-        "${ title } ξεκίνησε στις ${ formattedDate }"
+        "Το ${ title } ξεκίνησε στις ${ formattedDate }"
       ],
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } ξεκίνησε στις ${ formattedDate } στις ${ formattedHour }"
+        "Το ${ title } ξεκίνησε την ${ formattedDate } στις ${ formattedHour }"
       ],
       "${ title } started yesterday": [
-        "${ title } ξεκίνησε χθες"
+        "Το ${ title } ξεκίνησε χθες"
       ],
       "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } ξεκίνησε χθες στις ${ formattedHour }"
+        "Το ${ title } ξεκίνησε χθες στις ${ formattedHour }"
       ],
       "${ title } starts at ${ formattedHour }": [
         "Το ${ title } ξεκινά στις ${ formattedHour }"
       ],
       "${ title } starts now": [
-        "${ title } ξεκινά τώρα"
+        "Το ${ title } ξεκινά τώρα"
       ],
       "${ title } starts on ${ formattedDate }": [
         "Το ${ title } ξεκινά την ${ formattedDate }"
@@ -881,7 +876,7 @@
         "Το ${ title } ξεκινά την ${ formattedDate } στις ${ formattedHour }"
       ],
       "${ title } starts today": [
-        "${ title } ξεκινά σήμερα"
+        "Το ${ title } ξεκινά σήμερα"
       ],
       "${ title } starts tomorrow": [
         "Το ${ title } ξεκινά αύριο"
@@ -898,7 +893,7 @@
         "Φεύγοντας τώρα, κάποιες εκδηλώσεις μπορεί να μην εισαχθούν"
       ],
       "By leaving now, you will lose your event.": [
-        "Φεύγοντας τώρα, θα χάσετε την εκδήλωση σας."
+        "Φεύγοντας τώρα, θα χάσετε την εκδήλωσή σας."
       ],
       "Please do not close this tab. Some requests are still being processed in the background.": [
         "Παρακαλούμε μην κλείσετε αυτήν την καρτέλα. Ορισμένα αιτήματα εξακολουθούν να υποβάλλονται σε επεξεργασία στο παρασκήνιο."
@@ -955,7 +950,7 @@
         "6 χρήστες"
       ],
       "Premium Password Manager": [
-        "Premium Διαχειριστής Κωδικών Πρόσβασης"
+        "Premium εφαρμογή Διαχείρισης Κωδικών Πρόσβασης"
       ]
     },
     "bf2023: Offers": {
@@ -964,16 +959,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } μήνα",
-        "τους πρώτους ${ n } μήνες"
-      ],
-      "the first month": [
-        "τον πρώτο μήνα"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή ${ discountedPrice } ισχύει για ${ discountedMonths }. Στη συνέχεια, θα ανανεωθεί αυτόματα στη μειωμένη τιμή ${ nextPrice } για ${ nextMonths }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή ${ discountedPrice } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεώνεται αυτόματα σε ${ nextPrice } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ]
@@ -1155,15 +1140,6 @@
         "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
       ]
     },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } μήνα",
-        "${ n } μήνες"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Ανανεώνεται αυτόματα για ${ renewPrice }, για ${ renewalLength }"
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 μήνας"
@@ -1274,7 +1250,7 @@
         "Συνεχίστε να χρησιμοποιείτε ${ planTitle }"
       ],
       "Continue your subscription": [
-        "Συνέχιση της συνδρομής σας"
+        "Συνεχίστε τη συνδρομή σας"
       ]
     },
     "Calendar access select label": {
@@ -1289,16 +1265,16 @@
     },
     "Calendar invite info": {
       "${ name } accepted the invitation": [
-        "${ name } αποδέχθηκε την πρόσκληση"
+        "Ο ${ name } αποδέχθηκε την πρόσκληση"
       ],
       "${ name } declined the invitation": [
-        "${ name } απέρριψε την πρόσκληση"
+        "Ο ${ name } απέρριψε την πρόσκληση"
       ],
       "${ name } hasn't answered the invitation yet": [
-        "${ name } δεν έχει απαντήσει στην πρόσκληση ακόμα"
+        "Ο ${ name } δεν έχει απαντήσει στην πρόσκληση ακόμα"
       ],
       "${ name } tentatively accepted the invitation": [
-        "${ name } προσωρινά αποδέχθηκε την πρόσκληση"
+        "Ο ${ name } αποδέχθηκε προσωρινά την πρόσκληση"
       ],
       "This event has been canceled": [
         "Αυτή η εκδήλωση έχει ακυρωθεί"
@@ -1323,12 +1299,12 @@
     },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
-        "Μπορείτε να αλλάξετε ή να αφαιρέσετε δικαιώματα οποιαδήποτε στιγμή."
+        "Μπορείτε να αλλάξετε ή να ανακαλέσετε άδειες οποιαδήποτε στιγμή."
       ]
     },
     "Calendar permissions label": {
       "Permissions": [
-        "Δικαιώματα"
+        "Άδειες"
       ]
     },
     "Calendar self sharing error": {
@@ -1347,15 +1323,15 @@
         "Δεν είναι δυνατή η δημιουργία περισσότερων συνδέσμων ημερολογίου"
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
-        "Δεν είναι δυνατή η κοινωποίηση αυτού του ημερολογίου με περισσότερους χρήστες ${ BRAND_NAME }"
+        "Δεν είναι δυνατή η κοινοποίηση αυτού του ημερολογίου με περισσότερους χρήστες ${ BRAND_NAME }"
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
-        "Έχετε φτάσει το όριο του ${ MAX_CALENDAR_MEMBERS } μέλους για το παρόν ημερολόγιο. Για να μοιράσετε αυτό το ημερολόγιο με άλλους ${ BRAND_NAME } λογαριασμούς, θα χρειαστεί να διαγράψετε κάποια μέλη.",
-        "Έχετε φτάσει το όριο των ${ MAX_CALENDAR_MEMBERS } μελών για το παρόν ημερολόγιο. Για να μοιράσετε αυτό το ημερολόγιο με άλλους ${ BRAND_NAME } λογαριασμούς, θα χρειαστεί να διαγράψετε κάποια μέλη."
+        "Έχετε φτάσει το όριο του ${ MAX_CALENDAR_MEMBERS } μέλους για το παρόν ημερολόγιο. Για να μοιράσετε αυτό το ημερολόγιο με άλλους ${ BRAND_NAME } λογαριασμούς, θα χρειαστεί να αφαιρέσετε κάποια μέλη.",
+        "Έχετε φτάσει το όριο των ${ MAX_CALENDAR_MEMBERS } μελών για το παρόν ημερολόγιο. Για να μοιράσετε αυτό το ημερολόγιο με άλλους ${ BRAND_NAME } λογαριασμούς, θα χρειαστεί να αφαιρέσετε κάποια μέλη."
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
-        "Έχετε φτάσει το μέγιστο του συνδέσμου ${ MAX_LINKS_PER_CALENDAR } για αυτό το ημερολόγιο.\nΓια να δημιουργήσετε μια νέα σύνδεση σε αυτό το ημερολόγιο, διαγράψτε ένα υπάρχοντα.",
-        "Έχετε φτάσει το μέγιστο συνδέσμων ${ MAX_LINKS_PER_CALENDAR } για αυτό το ημερολόγιο.\nΓια να δημιουργήσετε μια νέα σύνδεση σε αυτό το ημερολόγιο, διαγράψτε ένα υπάρχοντα."
+        "Έχετε φτάσει το μέγιστο του ${ MAX_LINKS_PER_CALENDAR } συνδέσμου για αυτό το ημερολόγιο.\nΓια να δημιουργήσετε ένα νέο σύνδεσμο σε αυτό το ημερολόγιο, διαγράψτε ένα υπάρχοντα.",
+        "Έχετε φτάσει το μέγιστο ${ MAX_LINKS_PER_CALENDAR } συνδέσμων για αυτό το ημερολόγιο.\nΓια να δημιουργήσετε ένα νέο σύνδεσμο σε αυτό το ημερολόγιο, διαγράψτε ένα υπάρχοντα."
       ]
     },
     "Calendar sharing access option label": {
@@ -1384,7 +1360,7 @@
         "Δεν συγχρονίστηκαν"
       ],
       "Syncing": [
-        "Συχρονισμός"
+        "Γίνεται συχρονισμός"
       ]
     },
     "Calendar subscription not synced error": {
@@ -1418,13 +1394,13 @@
     },
     "Calendar subscription not synced error; long version": {
       "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Η σύνδεση ημερολογίου δεν είναι προσβάσιμη εκτός του οικοσυστήματος της υπηρεσίας παροχής ημερολογίου."
+        "Ο σύνδεσμος του ημερολογίου δεν είναι προσβάσιμος εκτός του οικοσυστήματος της υπηρεσίας παροχής ημερολογίου."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Η σύνδεση ημερολογίου δεν είναι προσωρινά προσβάσιμη. Βεβαιωθείτε ότι ο σύνδεσμος από τον πάροχό ημερολογίου εξακολουθεί να ισχύει."
+        "Ο σύνδεσμος του ημερολογίου είναι προσωρινά μη προσβάσιμος. Βεβαιωθείτε ότι ο σύνδεσμος από τον πάροχο ημερολογίου εξακολουθεί να ισχύει."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Έχουν περάσει περισσότερες από 12 ώρες από την τελευταία ενημέρωση — ${ CALENDAR_APP_NAME } θα προσπαθήσει να ενημερώσει το ημερολόγιο σε λίγες ώρες."
+        "Έχουν περάσει περισσότερες από 12 ώρες από την τελευταία ενημέρωση — το ${ CALENDAR_APP_NAME } θα προσπαθήσει να ενημερώσει το ημερολόγιο σε λίγες ώρες."
       ]
     },
     "Calendar view": {
@@ -1446,7 +1422,7 @@
         "Αλλαγή χρονικού εύρους"
       ],
       "Change time range to": [
-        "Αλλαγή χρονικής έκτασης σε"
+        "Αλλαγή χρονικού εύρους σε"
       ]
     },
     "Calendar view; more events collapsed": {
@@ -1583,7 +1559,7 @@
         "δαμάσκηνο"
       ],
       "purple": [
-        "μοβ"
+        "μωβ"
       ],
       "reef": [
         "ύφαλος"
@@ -1626,7 +1602,7 @@
         "Email"
       ],
       "Enter a display name or nickname": [
-        "Εισαγάγετε ένα εμφανιζόμενο όνομα ή ψευδώνυμο"
+        "Εισάγετε ένα εμφανιζόμενο όνομα ή ψευδώνυμο"
       ],
       "First name": [
         "Όνομα"
@@ -1722,7 +1698,7 @@
         "Ανδόρα"
       ],
       "Angola": [
-        "Αγκόλα"
+        "Ανγκόλα"
       ],
       "Anguilla": [
         "Ανγκουίλα"
@@ -2618,6 +2594,11 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα παρακολούθηση ύποπτης δραστηριότητας — συμπεριλαμβανομένης της κλιμάκωσης σε ειδικούς ασφαλείας."
@@ -2626,7 +2607,7 @@
         "Το 2FA προσθέτει ένα επιπλέον επίπεδο ασφαλείας, αποτρέποντας τη μη εξουσιοδοτημένη πρόσβαση."
       ],
       "Availability unknown": [
-        "'Αγνωστη διαθεσιμότητα"
+        "'Άγνωστη διαθεσιμότητα"
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Οργανώστε καλύτερα την ημέρα σας, παρακολουθήστε το χρόνο σας και ιεραρχήστε τις εργασίες. Κωδικοποιήστε χρωματικά το ημερολόγιό σας με προσαρμοσμένα χρώματα εκδηλώσεων."
@@ -2705,11 +2686,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2887,7 +2863,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
-        "Η ${ eventTitle } ακυρώθηκε."
+        "Το ${ eventTitle } ακυρώθηκε."
       ],
       "All events in this series were updated.": [
         "Όλες οι εκδηλώσεις αυτής της σειράς ενημερώθηκαν."
@@ -2899,7 +2875,7 @@
         "Αυτή η εμφάνιση εκδήλωσης ακυρώθηκε."
       ],
       "This event occurrence was updated.": [
-        "Αυτή η εμφάνιση εκδήλωσης ενημερώθηκε."
+        "Αυτό το συμβάν ενημερώθηκε."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
         "Αυτή η εμφάνιση εκδήλωσης ενημερώθηκε. Δείτε τι άλλαξε:\n\n${ updateEventDetailsText }"
@@ -2911,7 +2887,7 @@
         "Αυτή η εκδήλωση ενημερώθηκε. Δείτε τι άλλαξε:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Σας προσκαλούμε στη ${ eventTitle }.\n\n${ eventDetailsText }"
+        "Σας προσκαλούμε στο ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2968,26 +2944,26 @@
     },
     "Error": {
       "${ BRAND_NAME } can't connect to your external account": [
-        "${ BRAND_NAME } δεν είναι δυνατή η σύνδεση στον εξωτερικό λογαριασμό σας"
+        "Το ${ BRAND_NAME } δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
+        "${ errorMessage }. Μπορείτε επίσης να ελέγξετε την ${ statusPageLink }"
       ],
       "${ list } doesn't have a valid email address": [
-        "${ list } δεν έχει έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "Ο ${ list } δεν έχει έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "Ορισμένες επαφές δεν έχουν έγκυρες διευθύνσεις ηλεκτρονικού ταχυδρομείου: ${ list }"
       ],
       "${ list } doesn't have an email address": [
-        "${ list } δεν έχει μια διεύθυνση ηλεκτρονικού ταχυδρομείου",
-        "Καποιες επαφές δεν έχουν διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ list }"
+        "Ο ${ list } δεν έχει διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "Κάποιες επαφές δεν έχουν διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ list }"
       ],
       "${ list } has invalid emails": [
-        "${ list } έχει μη έγκυρα μηνύματα ηλεκτρονικού ταχυδρομείου",
+        "Ο ${ list } έχει μη έγκυρα μηνύματα ηλεκτρονικού ταχυδρομείου",
         "Ορισμένες ομάδες έχουν μη έγκυρα μηνύματα ηλεκτρονικού ταχυδρομείου: ${ list }"
       ],
       "${ list } has no contacts": [
-        "${ list } δεν έχει επαφές",
-        "Κάποιες ομάδες δεν έχουν επαφές: : ${ list }"
+        "Ο ${ list } δεν έχει επαφές",
+        "Κάποιες ομάδες δεν έχουν επαφές: ${ list }"
       ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
@@ -3038,10 +3014,10 @@
         "Σφάλμα ταυτοποίησης."
       ],
       "Calendar limit reached": [
-        "Εξάντληση ορίου ημερολογίων"
+        "Φτάσατε το μέγιστο όριο ημερολογίων"
       ],
       "Cancellation failed to be sent": [
-        "Ακύρωση απέτυχε να σταλεί"
+        "Η ακύρωση απέτυχε να σταλεί"
       ],
       "Cannot export this contact": [
         "Δεν είναι δυνατή η εξαγωγή αυτής της επαφής"
@@ -3074,7 +3050,7 @@
         "Δεν ήταν δυνατό το άνοιγμα της ενημερωμένης κρύπτης"
       ],
       "Decryption error: Decryption of this event's content failed.": [
-        "Σφάλμα αποκρυπτογράφησης: Αποτυχία αποκρυπτογράφησης του περιεχομένου εκδήλωσης."
+        "Σφάλμα αποκρυπτογράφησης: Αποτυχία αποκρυπτογράφησης του περιεχομένου της εκδήλωσης."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
@@ -3097,10 +3073,10 @@
         "Η διεύθυνση email δεν είναι έγκυρη"
       ],
       "Ends on date cannot be empty": [
-        "Η λήξη της ημερομηνίας δεν μπορεί να είναι κενή"
+        "Η ημερομηνία λήξης δεν μπορεί να είναι κενή"
       ],
       "Ends on date must be after start time": [
-        "Η λήξη της ημερομηνίας πρέπει να είναι μετά την ώρα έναρξης"
+        "Η ημερομηνία λήξης πρέπει να είναι μετά την ώρα έναρξης"
       ],
       "Enter 6 digits": [
         "Εισάγετε 6 ψηφία"
@@ -3115,7 +3091,7 @@
         "Σφάλμα: ${ errorMessage }"
       ],
       "Event not found": [
-        "Η εκδήλωση δε βρέθηκε"
+        "Η εκδήλωση δεν βρέθηκε"
       ],
       "Failed to create meeting": [
         "Αποτυχία δημιουργίας εκδήλωσης"
@@ -3124,7 +3100,7 @@
         "Αποτυχία λήψης εκδήλωσης"
       ],
       "Failed to get original occurrence in series": [
-        "Αποτυχία λήψης αρχικού περιστατικού στη σειρά"
+        "Αποτυχία λήψης αρχικού γεγονότος στη σειρά"
       ],
       "First name is too long": [
         "Το όνομα είναι πολύ μεγάλο"
@@ -3148,7 +3124,7 @@
         "Ο προβλεπόμενος παραλήπτης δεν υποστηρίζει την κοινή χρήση ημερολογίου"
       ],
       "Interval cannot be empty": [
-        "Το περιεχόμενο δεν μπορεί να είναι άδειο"
+        "Το μεσοδιάστημα δεν μπορεί να είναι κενό"
       ],
       "Invalid ${ name } code": [
         "Μη έγκυρο ${ name } κωδικός"
@@ -3190,7 +3166,7 @@
         "Είναι δυνατή η δημιουργία εκδηλώσεων μόνο μεταξύ ${ minDateString } - ${ maxDateString }"
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
-        "Είναι δυνατή μόνο η μετακίνηση εκδηλώσεων, μεταξύ ${ minDateString } - ${ maxDateString }"
+        "Είναι δυνατή η μετακίνηση εκδηλώσεων μόνο μεταξύ ${ minDateString } - ${ maxDateString }"
       ],
       "Item content cannot exceed 40KB": [
         "Το περιεχόμενο του στοιχείου δεν μπορεί να υπερβαίνει τα 40KB"
@@ -3227,19 +3203,19 @@
         "Δεν βρέθηκαν μηνύματα προς εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Κανένα εξωτερικό κλειδί που ανακτάται για το χρήστη δεν είναι έγκυρο για την αποστολή"
+        "Κανένα ανακτημένο εξωτερικό κλειδί για το χρήστη δεν είναι έγκυρο για την αποστολή"
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
       ],
       "Not a ${ BRAND_NAME } account": [
-        "Δεν είναι ${ BRAND_NAME } λογαριασμός"
+        "Δεν είναι λογαριασμός ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
       ],
       "Number of occurrences cannot be empty": [
-        "Ο αριθμός περιστατικών δεν μπορεί να είναι κενός"
+        "Ο αριθμός επαναλήψεων δεν μπορεί να είναι κενός"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Μία από τις επαφές δεν έχει διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }",
@@ -3299,8 +3275,8 @@
         "Η διαδικασία ματαιώθηκε"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Αφαιρέθηκε διπλότυπος παραλήπτης: ${ joinedRecipients }",
-        "Διαγράφτηκαν οι εξής διπλότυποι παραλήπτες: ${ joinedRecipients }"
+        "Αφαιρέθηκε ο διπλότυπος παραλήπτης: ${ joinedRecipients }",
+        "Αφαιρέθηκαν οι εξής διπλότυποι παραλήπτες: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
@@ -3345,7 +3321,7 @@
         "Κλειστή καρτέλα"
       ],
       "The address might be misspelled": [
-        "Η διεύθυνση μπορεί να είναι κακογραμμένη"
+        "Η διεύθυνση μπορεί να έχει ορθογραφικά λάθη"
       ],
       "The amount due has changed. Please try again.": [
         "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
@@ -3469,7 +3445,7 @@
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Το αρχείο ${ formattedFilename } περιέχει περισσότερο από ${ MAX_IMPORT_EVENTS } γεγονός.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονός.",
         "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονότα."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -3563,7 +3539,7 @@
         "Μη έγκυρη εκδήλωση"
       ],
       "Journal entry": [
-        "Καταχώρηση χρονικού"
+        "Καταχώρηση χρονολογίου"
       ],
       "Malformed all-day event": [
         "Δύσμορφη ολοήμερη εκδήλωση"
@@ -3590,10 +3566,10 @@
         "Ειδοποίηση εκτός ορίων"
       ],
       "Original recurring event could not be found": [
-        "Δε βρέθηκε η αρχική επαναλαμβανόμενη εκδήλωση"
+        "Δεν βρέθηκε η αρχική επαναλαμβανόμενη εκδήλωση"
       ],
       "Recurring event has no occurrences": [
-        "Η επαναλαμβανόμενη εκδήλωση δεν έχει διοργανώσεις"
+        "Η επαναλαμβανόμενη εκδήλωση δεν έχει συμβάντα"
       ],
       "Recurring rule not supported": [
         "Ο επαναλαμβανόμενος κανόνας δεν υποστηρίζεται"
@@ -3649,7 +3625,7 @@
         "Όταν είναι ενεργοποιημένος ο επιπλέον κωδικός πρόσβασης, η διαχείριση ψευδωνύμων μπορεί να γίνει μόνο στο ${ PASS_APP_NAME }."
       ],
       "You need an active personal calendar to import events": [
-        "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας"
+        "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε εκδηλώσεις"
       ]
     },
     "Error notification": {
@@ -3715,7 +3691,7 @@
         "Δεν ήταν δυνατή η ενημέρωση της εκδήλωσης στο ημερολόγιό σας. Δεν εστάλη απάντηση"
       ],
       "Unexpected error": [
-        "Απροσδόκητο σφάλμα"
+        "Μη αναμενόμενο σφάλμα"
       ],
       "Unsupported invitation": [
         "Μη υποστηριζόμενη πρόσκληση"
@@ -3736,7 +3712,7 @@
         "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Η απάντησή σας στάλθηκε, αλλά η εκδήλωση δεν μπόρεσε να ενημερωθεί στο ημερολόγιό σας."
+        "Η απάντησή σας στάλθηκε, αλλά η εκδήλωση δεν ήταν δυνατό να ενημερωθεί στο ημερολόγιό σας."
       ]
     },
     "Event popover close button": {
@@ -4377,7 +4353,7 @@
         "${ contactEmailsLength } Μέλη"
       ],
       "${ contactName } contains multiple email addresses.": [
-        "${ contactName } περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+        "Η επαφή ${ contactName } περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } επαφή βρέθηκε",
@@ -4395,10 +4371,10 @@
         "${ groupCounts } ομάδες βρέθηκαν"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Η προσφορά διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
+        "Η προσφορά εφ' όρου ζωής για το ${ PASS_SHORT_APP_NAME } δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }. Η τιμή και η ημερομηνία ανανέωσης της συνδρομής ${ planTitle } σας παραμένουν αμετάβλητες."
+        "Η προσφορά ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }. Η τιμή και η ημερομηνία ανανέωσης της συνδρομής ${ planTitle } σας παραμένουν αμετάβλητες."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
@@ -4452,13 +4428,13 @@
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών."
       ],
       "A cancellation email will be sent to removed participants.": [
-        "Ένα email ακύρωσης θα αποσταλεί σε αφαιρεμένους συμμετέχοντες."
+        "Ένα email ακύρωσης θα σταλεί στους συμμετέχοντες που αφαιρούνται."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "Ένα email ακύρωσης θα σταλεί στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε όλες τις εκδηλώσεις σε αυτή τη σειρά;"
+        "Ένα email ακύρωσης θα σταλεί στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε όλες τις εκδηλώσεις σε αυτήν τη σειρά;"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "Ένα email ακύρωσης θα σταλεί στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε αυτό το γεγονός;"
+        "Ένα email ακύρωσης θα σταλεί στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε αυτήν την εκδήλωση;"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
@@ -4512,7 +4488,7 @@
         "Ποσό χαμηλότερο από το ελάχιστο. (${ amount })."
       ],
       "An invitation will be sent to added participants.": [
-        "Μια πρόσκληση θα σταλεί στους πρόσθετους συμμετέχοντες."
+        "Μια πρόσκληση θα σταλεί στους προστιθέμενους συμμετέχοντες."
       ],
       "An invitation will be sent to all participants. Which event would you like to update?": [
         "Θα σταλεί πρόσκληση σε όλους τους συμμετέχοντες. Ποια εκδήλωση θα θέλατε να ενημερώσετε;"
@@ -4542,7 +4518,7 @@
         "Υπόλοιπο από την προηγούμενη συνδρομή σας"
       ],
       "Based on your time zone": [
-        "Βασισμένο στη ζώνη ώρας σας"
+        "Βασίζεται στη ζώνη ώρας σας"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
@@ -4557,7 +4533,7 @@
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
-        "Κοινοποιώντας όλες τις λεπτομέρειες των εκδηλώσεων αυτού του ημερολογίου, αποδέχεστε να παραχωρήσετε στη ${ BRAND_NAME } πρόσβαση στις κρυπτογραφημένες πληροφορίες του ημερολογίου."
+        "Κοινοποιώντας όλες τις λεπτομέρειες των εκδηλώσεων αυτού του ημερολογίου, αποδέχεστε να παραχωρήσετε στην ${ BRAND_NAME } πρόσβαση στις κρυπτογραφημένες πληροφορίες του ημερολογίου."
       ],
       "Calendar side panel": [
         "Πλαϊνό πλαίσιο ημερολογίου"
@@ -4566,7 +4542,7 @@
         "Δεν μπορείτε να βρείτε τις εκδηλώσεις που αναζητάτε; Ορισμένες εκδηλώσεις σε κρυφά ημερολόγια ταιριάζουν με την αναζήτηση σας. Για να δείτε αυτά τα αποτελέσματα, ενεργοποιήστε την ορατότητα για ${ hiddenWithItemsCalendarList }."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να καθαρίσετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και στη διαδικασία να απορρίψετε την ειδοποίηση."
+        "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να διαγράψετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και κατά τη διάρκεια της διαδικασίας να απορρίψετε την ειδοποίηση."
       ],
       "Change your password": [
         "Αλλάξτε τον κωδικό πρόσβασής σας"
@@ -4618,11 +4594,11 @@
         "Δημιουργία νέας ομάδας επαφών"
       ],
       "Create a secure cloud for ${ n } member": [
-        "Δημιουργήστε ένα ασφαλές cloud για ${ n } μέλος",
-        "Δημιουργήστε ένα ασφαλές cloud για ${ n } μέλη"
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλος",
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλη"
       ],
       "Create in": [
-        "Δημιουργία εντός"
+        "Δημιουργία σε"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πρόγραμμα"
@@ -4655,7 +4631,7 @@
         "Καθημερινά"
       ],
       "Dedicated servers": [
-        "Αφοσιωμένοι διακομιστές"
+        "Αποκλειστικοί διακομιστές"
       ],
       "Deleting event...": [
         "Διαγραφή εκδήλωσης...",
@@ -4729,19 +4705,19 @@
         "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτά"
       ],
       "Estimated time remaining: Less than a minute": [
-        "Εκτιμώμενος απομένων χρόνος: Κάτω του λεπτού"
+        "Εκτιμώμενος χρόνος που απομένει: Λιγότερο από 1 λεπτό"
       ],
       "Estimating time remaining...": [
-        "Εκτίμηση απομένοντος χρόνου..."
+        "Εκτίμηση χρόνου που απομένει..."
       ],
       "Existent and added participants will be notified.": [
-        "Οι υπάρχοντες και πρόσθετοι συμμετέχοντες θα ειδοποιηθούν."
+        "Οι υπάρχοντες και προστιθέμενοι συμμετέχοντες θα ειδοποιηθούν."
       ],
       "Existent and removed participants will be notified.": [
         "Οι υπάρχοντες και αφαιρεθέντες συμμετέχοντες θα ειδοποιηθούν."
       ],
       "Existent, added and removed participants will be notified.": [
-        "Θα ειδοποιούνται οι συμμετέχοντες, οι οποίοι έχουν προστεθεί και αφαιρεθεί."
+        "Θα ειδοποιηθούν οι συμμετέχοντες που έχουν προστεθεί και αφαιρεθεί."
       ],
       "Expired": [
         "Ληγμένο"
@@ -4871,7 +4847,7 @@
         "Χαμηλή προτεραιότητα"
       ],
       "Manage your calendars": [
-        "Διαχείριση των ημερολογίων σας"
+        "Διαχειριστείτε τα ημερολόγιά σας"
       ],
       "Mastercard SecureCode logo": [
         "λογότυπο Mastercard SecureCode"
@@ -4916,7 +4892,7 @@
         "Κανένας από τους συμμετέχοντες δεν μπορεί να ενημερωθεί για τις αλλαγές σας:"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Κανένα από τα κλειδιά που ανεβάσατε είναι έγκυρα για κρυπτογράφηση. Για να μπορείτε να στέλνετε μηνύματα σε αυτήν τη διεύθυνση, παρακαλούμε να ανεβάσετε ένα έγκυρο κλειδί ή να απενεργοποιήσετε την \"Κρυπτογράφηση μηνυμάτων\"."
+        "Κανένα από τα κλειδιά που ανεβάσατε δεν είναι έγκυρα για κρυπτογράφηση. Για να μπορείτε να στέλνετε μηνύματα σε αυτήν τη διεύθυνση, παρακαλούμε να ανεβάσετε ένα έγκυρο κλειδί ή να απενεργοποιήσετε την \"Κρυπτογράφηση μηνυμάτων\"."
       ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
@@ -4964,7 +4940,7 @@
         "Παρακαλούμε λάβετε υπόψη ότι οι διευθύνσεις που έχουν εκχωρηθεί σε αυτές τις ομάδες ΔΕΝ θα διαγραφούν."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Παρακαλούμε σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕ θα διαγραφούν."
+        "Παρακαλούμε σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕΝ θα διαγραφούν."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
@@ -5032,7 +5008,7 @@
         "Επιλέξτε τι θέλετε να εισάγετε."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο σχέδιό σας."
+        "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -5047,7 +5023,7 @@
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        "Μερικές από τις απαντήσεις σας σε περιστατικά που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα χαθούν."
+        "Μερικές από τις απαντήσεις σας σε γεγονότα που ενημερώθηκαν προηγουμένως από τον διοργανωτή, θα χαθούν."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
@@ -5083,22 +5059,22 @@
         "Δεν ήταν δυνατή η ειδοποίηση του διοργανωτή ότι αλλάξατε την απάντησή σας:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        "Ο διοργανωτής έχει ενημερώσει μερικές από τις εκδηλώσεις αυτής της σειράς. Η αλλαγή του ημερολογίου δεν υποστηρίζεται ακόμα για αυτόν τον τύπο επαναλαμβανόμενων εκδηλώσεων."
+        "Ο διοργανωτής έχει ενημερώσει μερικές από τις εκδηλώσεις αυτής της σειράς. Η αλλαγή του ημερολογίου δεν υποστηρίζεται ακόμη για αυτόν τον τύπο επαναλαμβανόμενων εκδηλώσεων."
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
         "Ο διοργανωτής αυτής της εκδήλωσης θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση. Θα θέλατε να διαγράψετε αυτό το γεγονός;"
       ],
       "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Ο διοργανωτής αυτού του συμβάντος δε θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε μηνύματα από τη διεύθυνση που έχετε προσκαλέσει. Θέλετε να διαγράψετε αυτή την εκδήλωση ούτως ή άλλως;"
+        "Ο διοργανωτής αυτού του συμβάντος δεν θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε μηνύματα από τη διεύθυνση στην οποία λάβατε την πρόσκληση. Θέλετε να διαγράψετε αυτήν την εκδήλωση ούτως ή άλλως;"
       ],
       "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
         "Ο διοργανωτής αυτής της σειράς εκδηλώσεων θα ειδοποιηθεί ότι θα απορρίψετε την πρόσκληση. Θα θέλατε να διαγράψετε όλες τις εκδηλώσεις σε αυτή τη σειρά;"
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "Ο διοργανωτής αυτής της σειράς εκδηλώσεων δε θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε μήνυμα από τη διεύθυνση που έχετε προσκαλέσει. Θα θέλατε να διαγράψετε ούτως ή άλλως όλες τις εκδηλώσεις αυτής της σειράς;"
+        "Ο διοργανωτής αυτής της σειράς εκδηλώσεων δεν θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε μήνυμα από τη διεύθυνση στην οποία λάβατε την πρόσκληση. Θα θέλατε να διαγράψετε ούτως ή άλλως όλες τις εκδηλώσεις αυτής της σειράς;"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "Ο κάτοχος αυτής της διεύθυνσης έχει απενεργοποιήσει την κρυπτογράφηση από άκρο σε άκρο. Για να είναι δυνατή η αποστολή κρυπτογραφημένων μηνυμάτων ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει να ενεργοποιήσει ξανά την κρυπτογράφηση από άκρο σε άκρο."
+        "Ο κάτοχος αυτής της διεύθυνσης έχει απενεργοποιήσει την διατερματική κρυπτογράφηση. Για να είναι δυνατή η αποστολή κρυπτογραφημένων μηνυμάτων ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει να ενεργοποιήσει ξανά την διατερματική κρυπτογράφηση."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Η διαδικασία επαλήθευσης θα ανοίξει μια νέα καρτέλα του προγράμματος περιήγησης. Απενεργοποιήστε τυχόν ενεργά προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
@@ -5107,16 +5083,16 @@
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "Αυτή η εκδήλωση έχει ενημερωθεί από τον διοργανωτή. Θα θέλατε να αλλάξετε την απάντησή σας μόνο για αυτή την εμφάνιση σε αυτή τη σειρά;"
+        "Αυτή η εκδήλωση έχει ενημερωθεί από τον διοργανωτή. Θα θέλατε να αλλάξετε την απάντησή σας μόνο για αυτό το γεγονός σε αυτή τη σειρά;"
       ],
       "This event has been updated by the organizer. Would you like to delete this event?": [
-        "Αυτή η εκδήλωση έχει ενημερωθεί από τον διοργανωτή. Θα θέλατε να διαγράψετε αυτή την εκδήλωση;"
+        "Αυτή η εκδήλωση έχει ενημερωθεί από τον διοργανωτή. Θα θέλατε να διαγράψετε αυτήν την εκδήλωση;"
       ],
       "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Αυτή η εκδήλωση έχει ενημερωθεί. Ο διοργανωτής θα ειδοποιηθεί ότι θα αρνηθείτε την πρόσκληση. Θα θέλατε να διαγράψετε αυτή την εκδήλωση;"
+        "Αυτή η εκδήλωση έχει ενημερωθεί. Ο διοργανωτής θα ειδοποιηθεί ότι αρνείστε την πρόσκληση. Θα θέλατε να διαγράψετε αυτήν την εκδήλωση;"
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Η εκδήλωση έχει ενημερωθεί. Ο διοργανωτής δε θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε μήνυμα από τη διεύθυνση που έχετε προσκαλέσει. Θέλετε να διαγράψετε αυτή την εκδήλωση ούτως ή άλλως;"
+        "Η εκδήλωση έχει ενημερωθεί. Ο διοργανωτής δεν θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε μήνυμα από τη διεύθυνση στην οποία λάβατε την πρόσκληση. Θέλετε να διαγράψετε αυτήν την εκδήλωση ούτως ή άλλως;"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
@@ -5137,7 +5113,7 @@
         "Για να υπογράψουμε εκ νέου τις επαφές σας, πρέπει να ελέγξουμε κάθε επαφή με τη λίστα των κλειδιών κρυπτογράφησης που είναι διαθέσιμα στο λογαριασμό σας. Αν δεν βρεθεί αντιστοιχία, η επαφή σας θα επανσυνδεθεί με το πρωτεύον κλειδί κρυπτογράφησης."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Για να ανακτήσετε τα δεδομένα σας, πρέπει να ενεργοποιήσετε ξανά το κλειδί λογαριασμού που χρησιμοποιήθηκε τη στιγμή της δημιουργίας των δεδομένων. Αυτό θα απαιτήσει από εσάς να θυμηθείτε τον κωδικό πρόσβασης που χρησιμοποιείται όταν δημιουργήθηκε το κλειδί."
+        "Για να ανακτήσετε τα δεδομένα σας, πρέπει να ενεργοποιήσετε ξανά το κλειδί λογαριασμού που χρησιμοποιήθηκε τη στιγμή της δημιουργίας των δεδομένων. Αυτό θα απαιτήσει από εσάς να θυμηθείτε τον κωδικό πρόσβασης που χρησιμοποιήθηκε όταν δημιουργήθηκε το κλειδί."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Για να χρησιμοποιήσετε την Επαλήθευση διεύθυνσης, πρέπει να χαρακτηρίσετε Αξιόπιστα ένα ή περισσότερα διαθέσιμα δημόσια κλειδιά, συμπεριλαμβανομένου αυτού που θέλετε να χρησιμοποιήσετε για αποστολή. Αυτό αποτρέπει την απομίμηση των κρυπτογραφημένων κλειδιών."
@@ -5221,13 +5197,13 @@
         "Ποια εκδήλωση θα θέλατε να ενημερώσετε;"
       ],
       "Would you like to change your answer for all the events in this series?": [
-        "Θα θέλατε να αλλάξετε την απάντηση σας για όλες τις εκδηλώσεις σε αυτή τη σειρά;"
+        "Θα θέλατε να αλλάξετε την απάντησή σας για όλες τις εκδηλώσεις σε αυτή τη σειρά;"
       ],
       "Would you like to continue anyway?": [
         "Θα θέλατε να συνεχίσετε ούτως ή άλλως;"
       ],
       "Would you like to delete all the events in this series?": [
-        "Θα θέλατε να διαγράψετε όλες τις εκδηλώσεις σε αυτή τη σειρά;"
+        "Θα θέλατε να διαγράψετε όλες τις εκδηλώσεις αυτής της σειράς;"
       ],
       "Would you like to delete the event anyway?": [
         "Θα θέλατε να διαγράψετε την εκδήλωση ούτως ή άλλως;"
@@ -5245,7 +5221,7 @@
         "Θα θέλατε να ενημερώσετε όλες τις εκδηλώσεις σε αυτή τη σειρά;"
       ],
       "Would you like to update this event?": [
-        "Θα θέλατε να ενημερώσετε αυτή την εκδήλωση;"
+        "Θα θέλατε να ενημερώσετε αυτήν την εκδήλωση;"
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
@@ -5257,7 +5233,7 @@
         "Έχετε ήδη έναν δωρεάν λογαριασμό"
       ],
       "You already joined this calendar": [
-        "Έχετε ήδη εγγραφτεί σε αυτό το ημερολόγιο"
+        "Έχετε ήδη εγγραφεί σε αυτό το ημερολόγιο"
       ],
       "You are about to open another browser tab and visit:": [
         "Πρόκειται να ανοίξετε μια άλλη καρτέλα προγράμματος περιήγησης και να επισκεφτείτε:"
@@ -5307,7 +5283,7 @@
         "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Δεν απαιτείται πληρωμή αυτήν τη στιγμή. Η συνδρομή σας θα ανανεωθεί αυτόματα στο τέλος της δοκιμαστικής περιόδου."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Έχετε επανενεργοποιήσει τα κλειδιά και οι εκδηλώσεις που συνδέονται με τα ακόλουθα ημερολόγια μπορούν τώρα να αποκρυπτογραφηθούν."
+        "Έχετε επανενεργοποιήσει τα κλειδιά σας και οι εκδηλώσεις που συνδέονται με τα ακόλουθα ημερολόγια μπορούν τώρα να αποκρυπτογραφηθούν."
       ],
       "You may be redirected to your bank’s website.": [
         "Ενδέχεται να ανακατευθυνθείτε στον ιστότοπο της τράπεζάς σας."
@@ -5319,10 +5295,10 @@
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal. Εάν αυτό δεν υπάρχει στον λογαριασμό σας PayPal, παρακαλούμε πιέστε το παρακάτω κουμπί."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
-        "Έχετε προηγουμένως απορρίψει αυτήν την πρόσκληση. Παρακαλούμε ρωτήστε τον κάτοχο για μια νέα πρόσκληση"
+        "Προηγουμένως απορρίψατε αυτήν την πρόσκληση. Παρακαλούμε ζητήστε μια νέα πρόσκληση από τον κάτοχο"
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "Θα χάσετε την πρόσβαση στις και λειτουργίες του ${ planTitle } αυτήν την ημέρα."
+        "Θα χάσετε την πρόσβαση στις δυνατότητες του ${ planTitle } αυτήν την ημέρα."
       ],
       "You will lose all unsaved changes.": [
         "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
@@ -5337,16 +5313,16 @@
         "Θα ενημερώσετε όλες τις εκδηλώσεις αυτής της σειράς. Μια πρόσκληση θα σταλεί στους συμμετέχοντες της εκδήλωσης."
       ],
       "You will update all the events in this series. Existent and added participants will be notified.": [
-        "Θα ενημερώσετε όλες τις εκδηλώσεις αυτής της σειράς. Θα ειδοποιηθούν οι υπάρχοντες και πρόσθετοι συμμετέχοντες."
+        "Θα ενημερώσετε όλες τις εκδηλώσεις αυτής της σειράς. Θα ειδοποιηθούν οι υπάρχοντες και οι πρόσθετοι συμμετέχοντες."
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Θα ενημερώσετε όλες τις εκδηλώσεις αυτής της σειράς. Θα ειδοποιηθούν οι υπάρχοντες και καταργημένοι συμμετέχοντες."
+        "Θα ενημερώσετε όλες τις εκδηλώσεις αυτής της σειράς. Θα ειδοποιηθούν οι υπάρχοντες και αφαιρεθέντες συμμετέχοντες."
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "Θα ενημερώσετε όλες τις εκδηλώσεις σε αυτήν τη σειρά. Θα ειδοποιηθούν οι συμμετέχοντες, θα προστεθούν και θα αφαιρεθούν."
+        "Θα ενημερώσετε όλες τις εκδηλώσεις σε αυτήν τη σειρά. Θα ειδοποιηθούν οι συμμετέχοντες που προϋπήρχαν, καθώς και αυτοί που θα προστεθούν και θα αφαιρεθούν."
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
-        "Θα ενημερώσετε όλες τις εκδηλώσεις σε αυτή τη σειρά. Θα ειδοποιηθούν οι αποσυρθέντες συμμετέχοντες."
+        "Θα ενημερώσετε όλες τις εκδηλώσεις αυτής της σειράς. Θα ειδοποιηθούν οι συμμετέχοντες που αφαιρέθηκαν."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στις ομάδες επαφών:"
@@ -5361,7 +5337,7 @@
         "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Δεν μπορείτε πλέον να λάβετε μηνύματα στα εισερχόμενα σας. Οι σύνδεσμοι στο Drive έχουν απενεργοποιηθεί, και δεν μπορείτε να ανεβάσετε νέα αρχεία. Για να συνεχίσετε τις υπηρεσίες του λογαριασμού σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Η συνδρομή σας ${ PASS_SHORT_APP_NAME } Plus θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } διάρκειας ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
+        "Η συνδρομή σας ${ PASS_SHORT_APP_NAME } Plus θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
@@ -5376,7 +5352,7 @@
         "Ο λογαριασμός σας θα ενημερωθεί μόλις γίνει εκκαθάριση της πληρωμής."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Η διεύθυνση σας είναι απενεργοποιημένη. Δεν μπορείτε να στείλετε email ακύρωσης στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε όλες τις εκδηλώσεις σε αυτή τη σειρά ούτως ή άλλως;"
+        "Η διεύθυνσή σας είναι απενεργοποιημένη. Δεν μπορείτε να στείλετε email ακύρωσης στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε όλες τις εκδηλώσεις σε αυτήν τη σειρά ούτως ή άλλως;"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "Η διεύθυνση σας είναι απενεργοποιημένη. Δεν μπορείτε να στείλετε email ακύρωσης στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε αυτό το γεγονός ούτως ή άλλως;"
@@ -5415,7 +5391,7 @@
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Η ζώνη ώρας του συστήματός σας φαίνεται να έχει αλλάξει σε ${ timezone }. Θέλετε να ενημερώσετε τις προτιμήσεις ζώνης ώρας;"
+        "Η ζώνη ώρας του συστήματός σας φαίνεται ότι έχει αλλάξει σε ${ timezone }. Θέλετε να ενημερώσετε τις προτιμήσεις ζώνης ώρας;"
       ]
     },
     "info": {
@@ -5425,7 +5401,7 @@
     },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
-        "Μπορείτε είτε να ενημερώσετε το ερώτημα αναζήτησης ή να κλείσετε την αναζήτηση για να επιστρέψετε στις προβολές ημερολογίου"
+        "Μπορείτε είτε να ενημερώσετε το ερώτημα αναζήτησης είτε να κλείσετε την αναζήτηση για να επιστρέψετε στις προβολές ημερολογίου"
       ]
     },
     "Info for cash payment method": {
@@ -5435,17 +5411,12 @@
     },
     "Info message": {
       "No results found": [
-        "Δε βρέθηκαν αποτελέσματα"
+        "Δεν βρέθηκαν αποτελέσματα"
       ]
     },
     "Info on errors": {
       "Click for details": [
         "Κάντε κλικ για λεπτομέρειες"
-      ]
-    },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Μπορείτε να αποτρέψετε τη λήξη ενεργοποιώντας ξανά τη συνδρομή"
       ]
     },
     "Info: partial": {
@@ -5460,15 +5431,15 @@
     },
     "Info; access rights for shared calendar": {
       "View only": [
-        "Ανάγνωση μόνο"
+        "Μόνο για ανάγνωση"
       ]
     },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
-        "Κάποια από τα ημερολόγιά σας δε θα εμφανίζουν λεπτομέρειες για εκδηλώσεις που δημιουργήθηκαν προηγουμένως."
+        "Κάποια από τα ημερολόγιά σας δεν θα εμφανίζουν λεπτομέρειες για εκδηλώσεις που δημιουργήθηκαν προηγουμένως."
       ],
       "Your calendars will not show details of previously created events.": [
-        "Τα ημερολόγιά σας δε θα εμφανίζουν λεπτομέρειες για εκδηλώσεις που δημιουργήθηκαν προηγουμένως."
+        "Τα ημερολόγιά σας δεν θα εμφανίζουν λεπτομέρειες για εκδηλώσεις που δημιουργήθηκαν προηγουμένως."
       ]
     },
     "Info; reset calendar keys modal; part 2": {
@@ -5498,7 +5469,7 @@
     },
     "Information about why calendar event cannot be saved": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
-        "Το πολύ ${ maxAttendees } συμμετέχοντας επιτρέπεται ανά πρόσκληση",
+        "Το πολύ ${ maxAttendees } συμμετέχων επιτρέπεται ανά πρόσκληση",
         "Το πολύ ${ maxAttendees } συμμετέχοντες επιτρέπονται ανά πρόσκληση"
       ],
       "Creating invites in a shared calendar is not allowed": [
@@ -5564,7 +5535,7 @@
         "Διεύθυνση"
       ],
       "All day": [
-        "Όλη την ημέρα"
+        "Ολοήμερο"
       ],
       "All-day event notifications": [
         "Ειδοποιήσεις ολοήμερων εκδηλώσεων"
@@ -5714,7 +5685,7 @@
         "Κρυπτογραφημένα E-mails"
       ],
       "Ends": [
-        "Λήξη"
+        "Τελειώνει"
       ],
       "Event duration": [
         "Διάρκεια εκδήλωσης"
@@ -5901,7 +5872,7 @@
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Γενεύη"
       ],
       "Secondary": [
-        "Δευτερεύων"
+        "Δευτερεύον"
       ],
       "Secondary time zone": [
         "Δευτερεύουσα ζώνη ώρας"
@@ -6037,7 +6008,7 @@
         "Για να προσθέσετε ένα νέο ημερολόγιο, καταργήστε ένα άλλο ημερολόγιο ή αναβαθμίστε το πρόγραμμα ${ BRAND_NAME } σε πρόγραμμα επί πληρωμή ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Έχετε συμπληρώσει τον μέγιστο αριθμό ημερολογίων που είναι διαθέσιμα στο σχέδιό σας."
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
       ]
     },
     "Link": {
@@ -6045,7 +6016,7 @@
         "Προσθήκη κωδικού δώρου"
       ],
       "Calendars": [
-        "Ημερολόγιο"
+        "Ημερολόγια"
       ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
@@ -6060,7 +6031,7 @@
         "Μάθετε περισσότερα"
       ],
       "My calendars": [
-        "Τα ημερολόγια μου"
+        "Τα ημερολόγιά μου"
       ],
       "Other calendars": [
         "Άλλα ημερολόγια"
@@ -6243,7 +6214,7 @@
     },
     "Modal for received invitation to share calendar; text": {
       "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
-        "${ calendarOwnerDisplayName } κοινοποίησε το ημερολόγιο του ${ boldCalendarName } με εσάς."
+        "Ο ${ calendarOwnerDisplayName } μοιράστηκε το ημερολόγιο ${ boldCalendarName } με εσάς."
       ]
     },
     "Modal for received invitation to share calendar; Title": {
@@ -6251,7 +6222,7 @@
         "Εγγραφή στο ημερολόγιο"
       ],
       "Unable to join more calendars": [
-        "Δεν είναι δυνατή η εγγραφή σε περισσότερα ημερόλογια"
+        "Δεν είναι δυνατή η εγγραφή σε περισσότερα ημερολόγια"
       ]
     },
     "Modal title": {
@@ -6265,7 +6236,7 @@
         "Επεξεργασία ημερολογίου"
       ],
       "Get a country's official public holidays calendar.": [
-        "Αποκτήστε το επίσημο ημερολόγιο αργιών μιας χώρας."
+        "Αποκτήστε το ημερολόγιο επίσημων αργιών μιας χώρας."
       ],
       "How to import calendars from another service": [
         "Πώς να εισάγετε ημερολόγια από μια άλλη υπηρεσία"
@@ -6299,7 +6270,7 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Κάθε ${ interval } μήνας ${ onDayString }",
+        "Κάθε ${ interval } μήνα ${ onDayString }",
         "Κάθε ${ interval } μήνες ${ onDayString }"
       ],
       "Monthly ${ onDayString }": [
@@ -7073,14 +7044,6 @@
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Αποκτήστε το Mail Plus για ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ξεκινώντας από ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -7093,6 +7056,14 @@
       ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Αποκτήστε το Mail Plus για ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ξεκινώντας από ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7418,10 +7389,10 @@
     },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
-        "Η πρόσκληση στο ημερολόγιο απορρίφθηκε"
+        "Η πρόσκληση ημερολογίου απορρίφθηκε"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
-        "Γραφτήκατε στο ${ calendarName } (${ senderEmail })"
+        "Εγγραφήκατε στο ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification suffix": {
@@ -7444,7 +7415,7 @@
     },
     "Notification when": {
       "at time of event": [
-        "στιγμή της εκδήλωσης"
+        "την ώρα της εκδήλωσης"
       ],
       "day before": [
         "ημέρα πριν",
@@ -7469,11 +7440,11 @@
     "Notifications": {
       "${ value } day after": [
         "${ value } μέρα μετά",
-        "${ value } ημέρες μετά"
+        "${ value } μέρες μετά"
       ],
       "${ value } day after at ${ time }": [
         "${ value } μέρα μετά από ${ time }",
-        "${ value } ημέρες μετά από ${ time }"
+        "${ value } μέρες μετά από ${ time }"
       ],
       "${ value } day before": [
         "${ value } ημέρα πριν",
@@ -7481,7 +7452,7 @@
       ],
       "${ value } day before at ${ time }": [
         "${ value } μέρα πριν στις ${ time }",
-        "${ value } ημέρες πριν στις ${ time }"
+        "${ value } μέρες πριν στις ${ time }"
       ],
       "${ value } hour after": [
         "${ value } ώρα μετά",
@@ -7532,10 +7503,10 @@
         "${ value } εβδομάδες πριν από ${ time }"
       ],
       "At time of event": [
-        "Στιγμή της εκδήλωσης"
+        "Την ώρα της εκδήλωσης"
       ],
       "On the same day at ${ time }": [
-        "Την ίδια μέρα στις ${ time }"
+        "Την ίδια ημέρα στις ${ time }"
       ],
       "Unknown": [
         "Άγνωστο"
@@ -7569,7 +7540,7 @@
         "Επόμενο"
       ],
       "Start using ${ appName }": [
-        "Έναρξη χρήσης του ${ appName }"
+        "Αρχίστε να χρησιμοποιείτε το ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -7641,7 +7612,7 @@
         "Δεν υπάρχει γονικός φάκελος"
       ],
       "This and future events": [
-        "Αυτό και οι μελλοντικές εκδηλώσεις"
+        "Αυτή και οι μελλοντικές εκδηλώσεις"
       ],
       "This event": [
         "Αυτή η εκδήλωση"
@@ -7802,20 +7773,8 @@
       "Please select your billing state first.": [
         "Παρακαλούμε επιλέξτε πρώτα την κατάσταση χρέωσής σας."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Ανανεώνει σε ${ price }, ακυρώστε ανά πάσα στιγμή."
-      ],
       "Select billing country to pay": [
         "Επιλέξτε χώρα χρέωσης για πληρωμή"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Το κουπόνι ισχύει για ανανεώσεις ${ couponRedemptions }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεώνεται αυτόματα σε ${ price } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
@@ -8147,7 +8106,7 @@
         "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
-        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτου μέρους. ${ learnMoreLink }"
+        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Η πρωτοποριακή μας λύση ασφάλειας βασισμένη στην τεχνητή νοημοσύνη, σχεδιασμένη για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους. ${ learnMoreLink }"
@@ -8204,12 +8163,12 @@
         "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
-        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρα",
-        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρες"
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inDays } ημέρα",
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inDays } ημέρες"
       ],
       "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρα",
-        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρες"
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inHours } ώρα",
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inHours } ώρες"
       ],
       "This permission expires soon": [
         "Αυτό το δικαίωμα λήγει σύντομα"
@@ -8376,7 +8335,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Προσθέστε τους ${ BRAND_NAME } λογαριασμούς με τους οποίους επιθυμείτε να μοιράσετε το ημερολόγιο ${ calendarName }. Θα σταλθεί αυτόματα πρόσκληση."
+        "Προσθέστε τους λογαριασμούς ${ BRAND_NAME } με τους οποίους επιθυμείτε να μοιραστείτε το ημερολόγιο ${ calendarName }. Θα σταλθεί αυτόματη πρόσκληση."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -8498,7 +8457,7 @@
         "Ασφαλής αποθήκευση στο cloud"
       ],
       "Secure streaming": [
-        "Διασφαλισμένη μετάδοση"
+        "Ασφαλές streaming"
       ],
       "Support online privacy": [
         "Υποστήριξη ηλεκτρονικού απορρήτου"
@@ -8628,7 +8587,7 @@
         "Δεν υπάρχουν άλλες διενέξεις προγραμματισμού"
       ],
       "Now you can see when participants are free to attend your meeting.": [
-        "Τώρα μπορείτε να δείτε πότε οι συμμετέχοντες είναι ελεύθεροι να παρακολουθήσουν τη συνάντησή σας."
+        "Τώρα μπορείτε να δείτε πότε οι συμμετέχοντες είναι διαθέσιμοι να παρευρεθούν στη συνάντησή σας."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Δημιουργήστε και προσθέστε απρόσκοπτα συνδέσμους βιντεοσυσκέψεων στις εκδηλώσεις σας."
@@ -8682,7 +8641,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } αποθηκευτικού χώρου"
+        "Αποθηκευτικός χώρος ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% γεμάτος"
@@ -8728,7 +8687,7 @@
         "Ο αποθηκευτικός σας χώρος είναι ${ percentage }% γεμάτος. ${ cta }."
       ],
       "Your storage is full": [
-        "Ο αποθηκευτικός σας χώρος είναι πλήρης"
+        "Ο αποθηκευτικός σας χώρος είναι γεμάτος"
       ],
       "Your storage is full. ${ cta }.": [
         "Ο αποθηκευτικός σας χώρος είναι γεμάτος. ${ cta }."
@@ -8751,7 +8710,7 @@
         "URL Ημερολογίου"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "Για να εγγραφείτε σε ένα εξωτερικό ή δημόσιο ημερολόγιο και τις ενημερώσεις του, εισαγάγετε τη διεύθυνση URL. Μια έκδοση μόνο για ανάγνωση του ημερολογίου θα προστεθεί στα ´Άλλα ημερολόγιά σας.\n${ kbLink }"
+        "Για να εγγραφείτε σε ένα εξωτερικό ή δημόσιο ημερολόγιο και τις ενημερώσεις του, εισάγετε τη διεύθυνση URL. Μια έκδοση μόνο-για-ανάγνωση του ημερολογίου θα προστεθεί στα ´Άλλα ημερολόγια.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -9177,21 +9136,13 @@
         "Αποθήκευση"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Ενεργά"
-      ],
-      "Expiring": [
-        "Λήγει"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } επαφή φαίνεται πανομοιότυπη.",
         "${ countMergeableContacts } επαφές φαίνονται πανομοιότυπες."
       ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
-        "Ένα email ακύρωσης θα αποσταλεί στους καταργημένους συμμετέχοντες για όλες τις εκδηλώσεις αυτής της σειράς."
+        "Ένα email ακύρωσης θα σταλεί στους συμμετέχοντες που αφαιρέθηκαν από όλες τις εκδηλώσεις αυτής της σειράς."
       ],
       "Address copied to clipboard": [
         "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
@@ -9218,7 +9169,7 @@
         "Η απάντηση στάλθηκε και η εκδήλωση διαγράφηκε"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "Το ημερολόγιο προστέθηκε. Ίσως περάσουν μερικά λεπτά για συγχρονισμό."
+        "Το ημερολόγιο προστέθηκε. Ίσως περάσουν μερικά λεπτά για να συγχρονιστούν οι αλλαγές."
       ],
       "Calendar created": [
         "Το ημερολόγιο δημιουργήθηκε"
@@ -9236,13 +9187,13 @@
         "Η ακύρωση στάλθηκε και όλες οι εκδηλώσεις διαγράφηκαν"
       ],
       "Cancellation sent and event deleted": [
-        "Ακύρωση στάλθηκε και η εκδήλωση διαγράφηκε"
+        "Η ακύρωση στάλθηκε και η εκδήλωση διαγράφηκε"
       ],
       "Cancellation sent and participants removed": [
-        "Ακύρωση στάλθηκε και οι συμμετέχοντες αφαιρέθηκαν"
+        "Η ακύρωση στάλθηκε και οι συμμετέχοντες αφαιρέθηκαν"
       ],
       "Cancellation sent and participants removed from all events": [
-        "Η ακύρωση εστάλη και οι συμμετέχοντες αφαιρέθηκαν από όλες τις εκδηλώσεις"
+        "Η ακύρωση στάλθηκε και οι συμμετέχοντες αφαιρέθηκαν από όλες τις εκδηλώσεις"
       ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
@@ -9298,19 +9249,19 @@
         "Η πρόσκληση στάλθηκε και ενημερώθηκαν όλες οι εκδηλώσεις"
       ],
       "Invitation sent and event created": [
-        "Η πρόσκληση στάλθηκε και δημιουργήθηκε εκδήλωση"
+        "Η πρόσκληση στάλθηκε και η εκδήλωση δημιουργήθηκε"
       ],
       "Invitation sent and events created": [
-        "Η πρόσκληση στάλθηκε και δημιουργήθηκαν εκδηλώσεις"
+        "Η πρόσκληση στάλθηκε και οι εκδηλώσεις δημιουργήθηκαν"
       ],
       "Invitation sent and participants added": [
-        "Η πρόσκληση εστάλη και οι συμμετέχοντες προστέθηκαν"
+        "Η πρόσκληση στάλθηκε και οι συμμετέχοντες προστέθηκαν"
       ],
       "Invitation sent and participants added to all events": [
-        "Η πρόσκληση εστάλη και οι συμμετέχοντες προστέθηκαν σε όλες τις εκδηλώσεις"
+        "Η πρόσκληση στάλθηκε και οι συμμετέχοντες προστέθηκαν σε όλες τις εκδηλώσεις"
       ],
       "Last modified aliases stored in your oldest vault": [
-        "Τελευταία τροποποιημένα ψευδώνυμα που είναι αποθηκευμένα στην παλαιότερη κρύπτη"
+        "Πιο πρόσφατα τροποποιημένα ψευδώνυμα της παλαιότερης κρύπτης σας"
       ],
       "Participants notified and all events updated": [
         "Οι συμμετέχοντες ειδοποιήθηκαν και ενημερώθηκαν όλες οι εκδηλώσεις"
@@ -9319,7 +9270,7 @@
         "Οι συμμετέχοντες ειδοποιήθηκαν και οι αλλαγές αποθηκεύτηκαν"
       ],
       "Participants notified and event updated": [
-        "Οι συμμετέχοντες ειδοποιήθηκαν και η εκδήλωση ενημερώθηκαν"
+        "Οι συμμετέχοντες ειδοποιήθηκαν και η εκδήλωση ενημερώθηκε"
       ],
       "Participation status updated": [
         "Η κατάσταση συμμετοχής ενημερώθηκε"
@@ -9352,7 +9303,7 @@
         "Επιτυχία επαλήθευσης"
       ],
       "You have successfully canceled your subscription.": [
-        "Ακυρώσατε με επιτυχία τη συνδρομή σας."
+        "Ακυρώσατε επιτυχώς τη συνδρομή σας."
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
@@ -9499,13 +9450,13 @@
         "Ανάκτηση λογαριασμού"
       ],
       "Account security": [
-        "Προστασία λογαριασμού"
+        "Ασφάλεια λογαριασμού"
       ],
       "Add a custom logo": [
         "Προσθήκη προσαρμοσμένου λογότυπου"
       ],
       "Add another notification to remind you of this event": [
-        "Προσθέστε μια άλλη ειδοποίηση για να σας υπενθυμίσει αυτή την εκδήλωση"
+        "Προσθέστε μια άλλη ειδοποίηση για να σας υπενθυμίσει αυτήν την εκδήλωση"
       ],
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
@@ -9557,7 +9508,7 @@
         "Ημερολόγιο"
       ],
       "Calendar alarm": [
-        "Ημερολόγιο alarm"
+        "Ειδοποίηση ημερολογίου"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Ακύρωση συνδρομής ${ MAIL_SHORT_APP_NAME }"
@@ -9667,7 +9618,7 @@
         "Υποβάθμιση σε ${ downgradedPlanName }?"
       ],
       "Drop to upload": [
-        "Αφήστε το εδώ για να ανεβεί"
+        "Αποθέστε εδώ για ανέβασμα"
       ],
       "Edit contact": [
         "Επεξεργασία επαφής"
@@ -9706,10 +9657,10 @@
         "Σφάλμα"
       ],
       "Event is happening all day": [
-        "Η εκδήλωση παίρνει μέρος καθ' όλη την ημέρα"
+        "Η εκδήλωση είναι ολοήμερη"
       ],
       "Event is happening on defined time slot": [
-        "Η εκδήλωση παίρνει μέρος σε καθορισμένο χρονικό διάστημα"
+        "Η εκδήλωση λαμβάνει μέρος σε καθορισμένο χρονικό διάστημα"
       ],
       "Exporting contacts": [
         "Γίνεται εξαγωγή επαφών"
@@ -9893,19 +9844,19 @@
         "Επιλέξτε την τελευταία ημερομηνία της εκδήλωσης"
       ],
       "Select the time to send this notification": [
-        "Επιλέξτε την ώρα αποστολής αυτής της ειδοποίησης"
+        "Επιλέξτε τι ώρα θα σταλεί αυτή η ειδοποίηση"
       ],
       "Select the time zone for the event end time": [
-        "Επιλέξτε τη ζώνη ώρας, για την ώρα λήξης της εκδήλωσης"
+        "Επιλέξτε τη ζώνη ώρας για την ώρα λήξης της εκδήλωσης"
       ],
       "Select the time zone for the event start time": [
         "Επιλέξτε τη ζώνη ώρας για την ώρα έναρξης εκδήλωσης"
       ],
       "Select the way to send this notification": [
-        "Επιλέξτε τον τρόπο αποστολής αυτής της ειδοποίησης"
+        "Επιλέξτε πώς θα σταλεί αυτή η ειδοποίηση"
       ],
       "Select when this event will stop happening": [
-        "Επιλέξτε πότε θα σταματήσει να συμβαίνει αυτή η εκδήλωση"
+        "Επιλέξτε πότε θα σταματήσει να λαμβάνει χώρα αυτή η εκδήλωση"
       ],
       "Select when you want this notification to be sent": [
         "Επιλέξτε πότε θέλετε να σταλεί αυτή η ειδοποίηση"
@@ -9997,17 +9948,6 @@
         "Επιλέξτε έναν αριθμό"
       ]
     },
-    "Title subscription": {
-      "End date": [
-        "Ημερομηνία Λήξης"
-      ],
-      "Plan": [
-        "Πρόγραμμα"
-      ],
-      "Status": [
-        "Κατάσταση"
-      ]
-    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Δημιουργία ημερολογίου"
@@ -10031,7 +9971,7 @@
         "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"
       ],
       "Change start date to unselect": [
-        "Αλλαγή ημερομηνίας έναρξης για κατάργηση επιλογής"
+        "Αλλάξτε ημερομηνία έναρξης για κατάργηση επιλογής"
       ],
       "Customize import to reduce the number of folders": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των φακέλων"
@@ -10307,7 +10247,7 @@
         "Για να αποκτήσετε πρόσβαση σε αυτό το κοινόχρηστο ημερολόγιο, ενεργοποιήστε αυτήν τη διεύθυνση ή ζητήστε από το ${ boldCalendarOwnerEmail } να στείλει μια πρόσκληση σε μια ενεργή διεύθυνση."
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
-        "Δεν μπορείτε να συμμετάσχετε σε αυτό το ημερολόγιο επειδή η διεύθυνση ηλεκτρονικού ταχυδρομείου που έχετε προσκληθεί (${ boldInvitedAddress }) είναι απενεργοποιημένη."
+        "Δεν μπορείτε να συμμετάσχετε σε αυτό το ημερολόγιο επειδή η διεύθυνση ηλεκτρονικού ταχυδρομείου στην οποία λάβατε πρόσκληση (${ boldInvitedAddress }) είναι απενεργοποιημένη."
       ]
     },
     "Weekly recurring event, frequency": {
@@ -10443,7 +10383,7 @@
     "Weekly recurring event, frequency (until)": {
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ untilString }"
+        "Κάθε ${ interval } εβδομάδες την ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ untilString }",
@@ -10539,7 +10479,7 @@
     },
     "Yearly recurring event, frequency (times)": {
       "Every ${ interval } year, ${ timesString }": [
-        "Κάθε ${ interval } χρόνο, ${ timesString }",
+        "Κάθε ${ interval } έτος, ${ timesString }",
         "Κάθε ${ interval } χρόνια, ${ timesString }"
       ],
       "Yearly, ${ timesString }": [
@@ -10548,7 +10488,7 @@
     },
     "Yearly recurring event, frequency (until)": {
       "Every ${ interval } year, ${ untilString }": [
-        "Κάθε ${ interval } χρόνο, ${ untilString }",
+        "Κάθε ${ interval } έτος, ${ untilString }",
         "Κάθε ${ interval } χρόνια, ${ untilString }"
       ],
       "Yearly, ${ untilString }": [
@@ -10557,13 +10497,13 @@
     },
     "Zoom integration": {
       "Add Zoom meeting": [
-        "Προσθήκη συνεδρίασης Zoom"
+        "Προσθήκη τηλεδιάσκεψης Zoom"
       ],
       "Adding conferencing details": [
         "Προσθήκη λεπτομερειών διάσκεψης"
       ],
       "Loading Zoom configuration": [
-        "Φόρτωση παραμέτρων Zoom"
+        "Γίνεται φόρτωση παραμέτρων Zoom"
       ]
     },
     "Zoom Meeting": {

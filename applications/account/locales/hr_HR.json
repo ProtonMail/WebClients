@@ -154,6 +154,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Potvrdite otvaranje hiperveze ${ linkToShow }"
       ],
+      "Connect": [
+        "Poveži"
+      ],
       "Contact support": [
         "Kontaktiraj podršku"
       ],
@@ -553,11 +556,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
       ],
       "Reject": [
         "Odbiti"
@@ -1036,13 +1039,6 @@
         "Povrat novca do 30 dana"
       ]
     },
-    "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ]
-    },
     "BF2024: Action (top button in header)": {
       "Black Friday": [
         "Black Friday"
@@ -1195,16 +1191,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za pohranu dijeli se između svih ${ BRAND_NAME } usluga."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatski se obnavlja za ${ renewPrice }, na${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -6258,14 +6244,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -6278,6 +6256,14 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -6465,11 +6451,6 @@
         "Za početak odaberite ime za prikaz. To je ono što će ljudi vidjeti kada pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku."
       ]
     },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "Korištenje računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -6479,6 +6460,11 @@
       ],
       "Unlock premium features by upgrading": [
         "Otključajte vrhunske značajke nadogradnjom"
+      ]
+    },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "Korištenje računa"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8039,10 +8025,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [

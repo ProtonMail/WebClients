@@ -806,11 +806,6 @@
         "Они могут просматривать или изменять ваш календарь"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Возобновить"
-      ]
-    },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
         "Поделиться с пользователями ${ BRAND_NAME }"
@@ -983,18 +978,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "первый ${ n } месяц",
-        "первые ${ n } месяца",
-        "первые ${ n } месяцев",
-        "первые ${ n } месяца"
-      ],
-      "the first month": [
-        "первый месяц"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Специальная цена в ${ discountedPrice } действует ${ discountedMonths }. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } на ${ nextMonths }. Отменить подписку можно в любой момент."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Специальная цена в ${ discountedPrice } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } каждый месяц. Отменить подписку можно в любой момент."
       ]
@@ -1178,17 +1161,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Обновляется автоматически за ${ renewPrice } на ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2650,6 +2622,11 @@
         "Просроченный счёт"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2734,11 +2711,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5582,11 +5554,6 @@
         "Нажмите, чтобы узнать подробности"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Вы можете предотвратить истечение срока действия, повторно активировав подписку"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } папка выбрана",
@@ -7286,14 +7253,6 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Оформите Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Начиная с ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -7306,6 +7265,14 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Начиная с ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -8064,20 +8031,8 @@
       "Please select your billing state first.": [
         "Сначала выберите государство для выставления счета."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Затем стоимость подписки составит ${ price }. Отменить её можно в любое время."
-      ],
       "Select billing country to pay": [
         "Для оплаты, пожалуйста выберите страну"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Купон действителен при продлении на ${ couponRedemptions }. Затем он будет автоматически продлен по цене ${ price } на ${ months } месяцев. Вы можете отменить его в любое время."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Затем она будет автоматически продлена по цене ${ price } на ${ months }. Вы можете отменить подписку в любое время."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Специальная цена в ${ priceWithDiscount } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ price } каждый месяц. Отменить подписку можно в любой момент."
       ],
       "Timeout exceeded": [
         "Превышено время ожидания"
@@ -9495,14 +9450,6 @@
         "Сэкономьте"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Активна"
-      ],
-      "Expiring": [
-        "Истекающий"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } контакт выглядит одинаково.",
@@ -10341,17 +10288,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Выберите количество"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Дата окончания"
-      ],
-      "Plan": [
-        "Тариф"
-      ],
-      "Status": [
-        "Статус"
       ]
     },
     "Title; create calendar modal": {

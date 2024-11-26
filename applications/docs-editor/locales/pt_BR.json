@@ -418,9 +418,6 @@
       ]
     },
     "Error": {
-      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
-        "Ocorreu um erro durante o carregamento do documento. Para prevenir a corrupção do documento, o editor foi bloqueado. Recarregue a página e tente novamente."
-      ],
       "Failed to export document.": [
         "Falha ao exportar o documento."
       ],
@@ -672,6 +669,11 @@
       ],
       "Language not supported": [
         "Idioma não suportado"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Não há suporte para fazer sugestões dentro de blocos de código"
       ]
     }
   }

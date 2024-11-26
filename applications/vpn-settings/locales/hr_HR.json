@@ -613,13 +613,6 @@
         "Povrat novca do 30 dana"
       ]
     },
-    "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ]
-    },
     "BF2024: Action (top button in header)": {
       "Black Friday": [
         "Black Friday"
@@ -772,16 +765,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za pohranu dijeli se između svih ${ BRAND_NAME } usluga."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatski se obnavlja za ${ renewPrice }, na${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -4486,10 +4469,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [

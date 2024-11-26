@@ -495,8 +495,11 @@
       "Reset to default": [
         "Відновити типові"
       ],
-      "Restore version": [
-        "Відновити версію"
+      "Restore": [
+        "Відновити"
+      ],
+      "Restore this version": [
+        "Відновити цю версію"
       ],
       "Retry": [
         "Повторити спробу"
@@ -655,11 +658,6 @@
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Повторна активація"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } або ${ importContact }."
@@ -770,18 +768,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } місяць",
-        "перші ${ n } місяці",
-        "перші ${ n } місяців",
-        "перших ${ n } місяців"
-      ],
-      "the first month": [
-        "перший місяць"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Спеціальна знижена ціна ${ discountedPrice } діє ${ discountedMonths }. Після цього автоматично поновлюватиметься за зниженою ціною ${ nextPrice } на ${ nextMonths }. Ви можете скасувати коли завгодно."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Спеціальна знижена ціна ${ discountedPrice } діє протягом першого місяця. Після цього автоматично поновлюватиметься за ціною ${ nextPrice } щомісяця. Ви можете скасувати коли завгодно."
       ]
@@ -910,6 +896,9 @@
       "for ${ durationDeal }": [
         "для ${ durationDeal }"
       ],
+      "forever": [
+        "назавжди"
+      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Автоматично продовжується через 1 місяць за ${ regularAmount }."
       ]
@@ -944,17 +933,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Простір сховища є спільним для всіх сервісів ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } місяць",
-        "${ n } місяці",
-        "${ n } місяців",
-        "${ n } місяців"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Поновлюється автоматично за ціною ${ renewPrice }, на період ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -1076,6 +1054,9 @@
         "${ users } користувачі",
         "${ users } користувачів",
         "${ users } користувача"
+      ],
+      "Total": [
+        "Усього"
       ],
       "Total for ${ n } month": [
         "Всього за ${ n } місяць",
@@ -2216,8 +2197,16 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 ТБ сховища"
+      ],
       "2 users": [
         "2 користувачі"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "Double your storage": [
+        "Подвоїти обсяг свого сховища"
       ]
     },
     "Email body for description (description part)": {
@@ -4316,6 +4305,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
       ],
+      "Settings update failed": [
+        "Не вдалося оновити налаштування"
+      ],
+      "Settings updated": [
+        "Налаштування оновлено"
+      ],
       "Share via link settings": [
         "Налаштування посилання для спільного доступу"
       ],
@@ -4698,11 +4693,6 @@
         "Натисніть для подробиць"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Ви можете запобігти закінченню терміну дії, відновивши передплату"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "Вибрано ${ selectedFoldersCount } теку",
@@ -4983,6 +4973,9 @@
       ],
       "I understand the risk": [
         "Я розумію ризик"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Ignore": [
         "Ігнорувати"
@@ -5776,6 +5769,9 @@
       "1 user": [
         "1 користувач"
       ],
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
       "24/7 account management support": [
         "Цілодобова підтримка щодо керування обліковими записами"
       ],
@@ -5988,6 +5984,9 @@
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
+      ],
+      "TOR over VPN": [
+        "Tor через VPN"
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
@@ -6702,6 +6701,11 @@
         "Безпечний спільний доступ до ${ n } сховищ та обмін посиланнями"
       ]
     },
+    "pass_signup_2024: Info": {
+      "Activity log": [
+        "Журнал активності"
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "Ключа організації не існує."
@@ -6742,15 +6746,6 @@
       ],
       "Payment Processing": [
         "Обробка платежу"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Спеціальна знижена ціна ${ priceWithDiscount } діє протягом перших ${ months }. Купон дійсний для поновлення ${ couponRedemptions }. Після цього автоматично поновлюватиметься за ціною ${ price } на ${ months } місяців. Ви можете скасувати коли завгодно."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Спеціальна знижена ціна ${ priceWithDiscount } діє протягом перших ${ months }. Після цього автоматично поновлюватиметься за ціною ${ price } на ${ months }. Ви можете скасувати коли завгодно."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Спеціальна знижена ціна ${ priceWithDiscount } діє протягом першого місяця. Після цього автоматично поновлюватиметься за ціною ${ price } щомісяця. Ви можете скасувати коли завгодно."
       ],
       "Timeout exceeded": [
         "Перевищено час очікування"
@@ -7486,6 +7481,11 @@
         "Запросіть друзів до ${ BRAND_NAME }"
       ]
     },
+    "sso": {
+      "Sign in": [
+        "Увійти"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Скасування передплати. Будь ласка, зачекайте"
@@ -7749,14 +7749,6 @@
     "Subscription saving": {
       "Save": [
         "Зберегти"
-      ]
-    },
-    "Subscription status": {
-      "Active": [
-        "Активний"
-      ],
-      "Expiring": [
-        "Термін дії"
       ]
     },
     "Success": {
@@ -8440,17 +8432,6 @@
       ],
       "Your exposed information": [
         "Ваша викрита інформація"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Дата завершення"
-      ],
-      "Plan": [
-        "Тарифний план"
-      ],
-      "Status": [
-        "Стан"
       ]
     },
     "Today icon tooltip in mini calendar": {

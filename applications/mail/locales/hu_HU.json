@@ -1304,11 +1304,6 @@
         "Üzenetek keresése"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Újraaktiválás"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } vagy ${ importContact }."
@@ -1482,15 +1477,6 @@
         "30 napos pénzvisszatérítési garancia"
       ]
     },
-    "bf2023: renew": {
-      "${ n } month": [
-        "${ n } hónap",
-        "az első ${ n } hónapban"
-      ],
-      "the first month": [
-        "az első hónapban"
-      ]
-    },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Tartalmazza 1 saját e-mail domain név támogatását, 10 e-mail címet, 10 hide-my-email álnevet, naptármegosztást és egyebeket."
@@ -1644,15 +1630,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "A tárhelye meg van osztva minden ${ BRAND_NAME } alkalmazás között."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } hónap",
-        "${ n } hónap"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatikusan megújul, ${ renewPrice } áron, ${ renewalLength } periódussal"
       ]
     },
     "Billing cycle option": {
@@ -10342,9 +10319,6 @@
       ]
     },
     "Status": {
-      "This message is from a mailing list.": [
-        "Ez az üzenet levelezési listáról érkezett."
-      ],
       "Unsubscribed": [
         "Leiratkozás kész"
       ]
@@ -10668,14 +10642,6 @@
     "Subscription saving": {
       "Save": [
         "Megtakarítás"
-      ]
-    },
-    "Subscription status": {
-      "Active": [
-        "Aktív"
-      ],
-      "Expiring": [
-        "Lejár"
       ]
     },
     "Success": {
@@ -11825,17 +11791,6 @@
       ],
       "Your free trial has ended": [
         "Az ön ingyenes próbaidőszaka végett ért"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Befejező dátum"
-      ],
-      "Plan": [
-        "Csomag"
-      ],
-      "Status": [
-        "Állapot"
       ]
     },
     "Today icon tooltip in mini calendar": {

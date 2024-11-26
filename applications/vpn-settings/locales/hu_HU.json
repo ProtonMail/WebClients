@@ -863,15 +863,6 @@
         "30 napos pénzvisszatérítési garancia"
       ]
     },
-    "bf2023: renew": {
-      "${ n } month": [
-        "${ n } hónap",
-        "az első ${ n } hónapban"
-      ],
-      "the first month": [
-        "az első hónapban"
-      ]
-    },
     "bf2023: Title": {
       "Offer unavailable": [
         "Az ajánlat nem elérhető"
@@ -1030,15 +1021,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "A tárhelye meg van osztva minden ${ BRAND_NAME } alkalmazás között."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } hónap",
-        "${ n } hónap"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatikusan megújul, ${ renewPrice } áron, ${ renewalLength } periódussal"
       ]
     },
     "Billing cycle option": {
@@ -4359,11 +4341,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "username": [
-        "felhasználónév"
-      ],
       "Username": [
         "Felhasználónév"
+      ],
+      "username": [
+        "felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -8353,10 +8335,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [

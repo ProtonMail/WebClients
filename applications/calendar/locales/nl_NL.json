@@ -795,11 +795,6 @@
         "Ze kunnen uw agenda inzien of wijzigen"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Opnieuw activeren"
-      ]
-    },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
         "Deel met ${ BRAND_NAME }-gebruikers"
@@ -964,16 +959,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } maand",
-        "de eerste ${ n } maanden"
-      ],
-      "the first month": [
-        "de eerste maand"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ discountedPrice } is ${ discountedMonths } maanden geldig. Daarna wordt uw abonnement automatisch vernieuwd tegen de gereduceerde prijs van ${ nextPrice } voor ${ nextMonths }. U kunt opzeggen wanneer u wilt."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ discountedPrice } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ nextPrice } per maand. U kunt opzeggen wanneer u wilt."
       ]
@@ -1153,15 +1138,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Hernieuwt automatisch aan ${ renewPrice }, voor ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2618,6 +2594,11 @@
         "Onbetaalde factuur"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2705,11 +2686,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5440,11 +5416,6 @@
         "Klik voor details"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "U kunt het vervallen voorkomen door uw abonnement opnieuw te activeren"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } map geselecteerd",
@@ -7067,14 +7038,6 @@
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Krijg Mail Plus voor ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Vanaf ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -7087,6 +7050,14 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Krijg Mail Plus voor ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Vanaf ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7796,20 +7767,8 @@
       "Please select your billing state first.": [
         "Selecteer eerst uw factureringsstaat."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Wordt verlengd voor ${ price }, altijd opzegbaar."
-      ],
       "Select billing country to pay": [
         "Selecteer factureringsland om te betalen"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ months }. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna zal deze automatisch vernieuwd worden voor ${ price } voor ${ months } maanden. U kunt op ieder moment annuleren."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ months } maanden. Daarna wordt uw abonnement automatisch vernieuwd voor ${ price } voor ${ months } maanden. U kunt opzeggen wanneer u wilt."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ price } per maand. U kunt opzeggen wanneer u wilt."
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
@@ -9171,14 +9130,6 @@
         "Bespaar"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Actief"
-      ],
-      "Expiring": [
-        "Verlopen"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contact ziet er identiek uit.",
@@ -9989,17 +9940,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Kies een nummer"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Einddatum"
-      ],
-      "Plan": [
-        "Abonnement"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Title; create calendar modal": {

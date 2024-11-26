@@ -917,11 +917,6 @@
         "Zoom ud"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Genaktiver"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } eller ${ importContact }."
@@ -1029,16 +1024,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } måned",
-        "de første ${ n } måneder"
-      ],
-      "the first month": [
-        "den første måned"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Den ekstraordinære rabatpris på ${ discountedPrice } gælder i ${ discountedMonths }. Derefter vil den automatisk blive fornyet til rabatprisen på ${ nextPrice } i ${ nextMonths }. Du kan til enhver tid annullere."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Den særligt nedsatte pris på ${ discountedPrice } gælder den første måned. Derefter vil den automatisk blive fornyet for ${ nextPrice } hver måned. Du kan til enhver tid opsige."
       ]
@@ -1201,15 +1186,6 @@
         "Lagerplads er delt mellem alle ${ BRAND_NAME }-tjenester."
       ]
     },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } måned",
-        "${ n } måneder"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Fornyes automatisk til ${ renewPrice } i ${ renewalLength }."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 måned"
@@ -1338,6 +1314,9 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
+      ],
+      "Total": [
+        "I alt"
       ],
       "Total for ${ n } month": [
         "I alt for ${ n } måned",
@@ -5547,11 +5526,6 @@
         "Klik for detaljer"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Du kan forhindre udløb ved at genaktivere abonnementet."
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mappe valgt",
@@ -8049,15 +8023,6 @@
       "Select billing country to pay": [
         "Vælg faktureringsland for at betale"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ months }. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ price } i ${ months } måneder. Du kan annullere når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ months }. Derefter fornys den automatisk til ${ price } i ${ months }. Du kan annullere når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første måned. Derefter vil den automatisk blive fornyet til ${ price } hver måned. Du kan annullere når som helst."
-      ],
       "Timeout exceeded": [
         "Timeout overskredet"
       ],
@@ -9261,14 +9226,6 @@
         "Spar"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Aktiv"
-      ],
-      "Expiring": [
-        "Udløber"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt ser identisk ud.",
@@ -10120,17 +10077,6 @@
       ],
       "You’ve got 5 GB of storage": [
         "Du har 5 GB lagerplads"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Slutdato"
-      ],
-      "Plan": [
-        "Abonnement"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

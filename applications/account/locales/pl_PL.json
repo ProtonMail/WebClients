@@ -256,6 +256,12 @@
       "Confirm opening of link ${ linkToShow }": [
         "Potwierdź otwieranie linku ${ linkToShow }"
       ],
+      "Connect": [
+        "Połącz"
+      ],
+      "Connected": [
+        "Połączono"
+      ],
       "Contact sales": [
         "Skontaktuj się z zespołem sprzedaży"
       ],
@@ -814,10 +820,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
       "Reject": [
@@ -1619,17 +1625,6 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąc.",
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiące.",
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesięcy.",
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąca."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1653,24 +1648,23 @@
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąc.",
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiące.",
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesięcy.",
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąca."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30-dniowa gwarancja zwrotu pieniędzy"
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } miesiąc",
-        "${ n } miesiące",
-        "${ n } miesięcy",
-        "pierwszych ${ n } miesięcy"
-      ],
-      "the first month": [
-        "pierwszy miesiąc"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ discountedPrice } ważna przez ${ discountedMonths }. Odnowienie nastąpi w cenie ${ nextPrice } za ${ nextMonths }. Możesz anulować w dowolnym momencie."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ nextPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ]
@@ -1862,14 +1856,11 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } miesiąc",
-        "${ n } miesiące",
-        "${ n } miesięcy",
-        "${ n } miesiąca"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatyczne odnowienie za ${ renewalLength } w kwocie ${ renewPrice }"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Automatyczne odnowienie co ${ renewLength } miesiąc w kwocie ${ renewPrice }",
+        "Automatyczne odnowienie co ${ renewLength } miesiące w kwocie ${ renewPrice }",
+        "Automatyczne odnowienie co ${ renewLength } miesięcy w kwocie ${ renewPrice }",
+        "Automatyczne odnowienie co ${ renewLength } miesięcy w kwocie ${ renewPrice }"
       ]
     },
     "Billing cycle option": {
@@ -3613,8 +3604,14 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Automatycznie sortuj przychodzące wiadomości, zanim dotrą do skrzynki odbiorczej."
       ],
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "Funkcja dostępna w planie ${ MAIL_APP_NAME } Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulacje! Przyznano maksymalną liczbę ${ rewardsLimit } darmowych miesięcy planu ${ plusPlanName }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Utwórz spotkanie Zoom i dodaj jego szczegóły do wydarzenia za pomocą jednego kliknięcia."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Utwórz tyle etykiet lub folderów, ile potrzebujesz, aby utrzymać porządek w skrzynce odbiorczej."
@@ -6788,6 +6785,9 @@
         "${ numberOfNonPrivateKeys } przesłanych plików nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie.",
         "${ numberOfNonPrivateKeys } przesłanych plików nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie."
       ],
+      "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
+        "${ PASS_APP_NAME } to menedżer haseł nowej generacji zaprojektowany z myślą o łatwości użytkowania i produktywności. Otwarty kod źródłowy, współtworzony przez SimpleLogin i ${ BRAND_NAME }."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
       ],
@@ -7250,6 +7250,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zwiększ rozpoznawalność marki."
       ],
+      "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
+        "Tworząc konto ${ PASS_APP_NAME } z adresem SimpleLogin, możesz zarządzać aliasami bezpośrednio w ${ PASS_APP_NAME }."
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Domyślnie użytkownicy organizacji mogą eksportować tylko swoje sejfy. Po włączeniu tej opcji, użytkownicy nie będą mogli eksportować żadnych danych"
       ],
@@ -7403,11 +7406,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
@@ -8621,6 +8624,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
       ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Subskrypcja automatycznie odnawiana w okresach ${ cycle }-miesięcznych."
+      ],
       "Subscription auto-renews every month.": [
         "Subskrypcja odnowi się automatycznie co miesięc."
       ],
@@ -9044,11 +9050,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "username": [
-        "nazwa użytkownika"
-      ],
       "Username": [
         "Nazwa użytkownika"
+      ],
+      "username": [
+        "nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -11584,11 +11590,17 @@
       "Change password": [
         "Zmień hasło"
       ],
+      "Convert to SSO": [
+        "Przekonwertuj do logowania SSO"
+      ],
       "Delete": [
         "Usuń"
       ],
       "Delete and revoke invite": [
         "Usuń i unieważnij zaproszenie"
+      ],
+      "Detach from SSO": [
+        "Odłącz z logowania SSO"
       ],
       "Edit": [
         "Edytuj"
@@ -11932,32 +11944,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Od ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -11985,6 +11971,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Od ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12728,20 +12740,6 @@
         "Wybrany plan: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -12760,6 +12758,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Wybierz plan Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Od ${ price }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -13999,6 +14011,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Oferta specjalna na start: Uzyskaj ${ title } za ${ price } na zawsze!"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Zacznij korzystać z ${ PASS_APP_NAME }"
+      ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "Indywidualne rozwiązania dla większych organizacji o niestandardowych potrzebach"
       ],
@@ -14266,17 +14281,8 @@
       "Processing payment": [
         "Przetwarzanie płatności"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Odnowienie za ${ price }. Anuluj w dowolnym momencie."
-      ],
       "Select billing country to pay": [
         "Wybierz kraj"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ price } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakcja została wykryta. Środki zostaną dodane do konta po pełnym potwierdzeniu transakcji."
@@ -14964,6 +14970,9 @@
       ],
       "Something went wrong": [
         "Coś poszło nie tak"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Adres e-mail **${ email }** już istnieje jako użytkownik ${ BRAND_NAME }. Wpisz adres e-mail użytkownika od dostawcy tożsamości."
       ]
     },
     "saml: Info": {
@@ -14972,6 +14981,9 @@
       ],
       "Details": [
         "Szczegóły"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Wpisz adres e-mail użytkownika ustawiony przez dostawcę tożsamości dla domeny **${ domainName }**"
       ],
       "Test in progress...": [
         "Testowanie jest w toku..."
@@ -15154,6 +15166,14 @@
       ],
       "to be created": [
         "do utworzenia"
+      ],
+      "to be deleted": [
+        "do usunięcia"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Umożliwia dodanie wideokonferencji Zoom do wydarzenia w kalendarzu"
       ]
     },
     "session_recovery:available:action": {
@@ -15640,6 +15660,9 @@
       ]
     },
     "Signup: Info": {
+      "10 aliases for email protection from breaches": [
+        "10 aliasów do ochrony adresów e-mail przed wyciekami"
+      ],
       "Advanced security features": [
         "Zaawansowane funkcje bezpieczeństwa"
       ],
@@ -15657,6 +15680,9 @@
       ],
       "Calendar, password manager, file storage, and VPN included": [
         "Kalendarz, menedżer haseł, przestrzeń dyskowa i VPN w zestawie"
+      ],
+      "Device sync": [
+        "Synchronizacja urządzenia"
       ],
       "Email aliases": [
         "Aliasy"
@@ -15699,6 +15725,9 @@
       ],
       "The only email service with:": [
         "Benefity poczty e-mail:"
+      ],
+      "Unlimited passwords": [
+        "Nieograniczona liczba haseł"
       ],
       "Works on all devices": [
         "Działa na wszystkich urządzeniach"
@@ -15927,6 +15956,18 @@
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się.",
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się."
       ],
+      "${ n } user converted to SSO": [
+        "Przekonwertowano ${ n } użytkownika do logowania SSO",
+        "Przekonwertowano ${ n } użytkowników do logowania SSO",
+        "Przekonwertowano ${ n } użytkowników do logowania SSO",
+        "Przekonwertowano ${ n } użytkowników do logowania SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "Odłączono ${ n } użytkownika z logowania SSO",
+        "Odłączono ${ n } użytkowników z logowania SSO",
+        "Odłączono ${ n } użytkowników z logowania SSO",
+        "Odłączono ${ n } użytkowników z logowania SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } użytkownik dołączył do organizacji przy pomocy dostawcy tożsamości. Sprawdź konto:",
         "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Sprawdź konta:",
@@ -15947,6 +15988,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Użytkownicy SSO (od dostawcy tożsamości) zostaną usunięci** i konieczne będzie ich ręcznie utworzenie w celu dodania ich z powrotem do organizacji."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Użytkownicy SSO zostaną odłączeni od dostawcy tożsamości** i przekonwertowani na użytkowników bez logowania SSO."
       ],
       "Access denied": [
         "Odmowa dostępu"
@@ -16149,8 +16193,14 @@
       "Yes, it was me": [
         "Tak, to ja"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Konieczne będzie ręcznie utworzenie nowych użytkowników i dodanie ich do organizacji."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Nastąpi przekierowanie do zewnętrznego dostawcy SSO."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Konfiguracja SSO zostanie usunięta."
       ]
     },
     "sso: auth device state": {
@@ -17540,10 +17590,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -17599,6 +17649,9 @@
       ],
       "Connect ${ name }": [
         "Połącz ${ name }"
+      ],
+      "Connection status": [
+        "Status połączenia"
       ],
       "Contact us": [
         "Skontaktuj się z nami"
@@ -17966,6 +18019,9 @@
       "Get the apps": [
         "Pobierz aplikacje"
       ],
+      "Get Zooming faster": [
+        "Szybsze spotkania na Zoom"
+      ],
       "Gift": [
         "Prezent"
       ],
@@ -18329,6 +18385,9 @@
       "Send new invite?": [
         "Wysłać nowe zaproszenie?"
       ],
+      "Service": [
+        "Usługa"
+      ],
       "Session management": [
         "Zarządzanie sesją"
       ],
@@ -18442,6 +18501,9 @@
       ],
       "There are no groups": [
         "Brak grup"
+      ],
+      "Third-party apps and services": [
+        "Aplikacje i usługi stron trzecich"
       ],
       "This field cannot be empty": [
         "Pole nie może być puste"
@@ -18971,6 +19033,9 @@
       ],
       "Cancel request to access user data?": [
         "Anulować żądanie dostępu do danych użytkownika?"
+      ],
+      "Confirm all": [
+        "Potwierdź wszystko"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkownika, ponieważ jego klucze szyfrowania zostały w międzyczasie zaktualizowane:",
