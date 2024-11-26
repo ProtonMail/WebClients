@@ -98,7 +98,7 @@ const ImagePreview = ({
     const containerRef = useRef<HTMLDivElement>(null);
     const containerBounds = useElementRect(containerRef);
 
-    const [imageData, setImageData] = useState({ src: '' });
+    const [imageSrc, setImageSrc] = useState<string>();
     const [error, setError] = useState(false);
     const [imageScale, setImageScale] = useState(0);
     const [isHiResImageRendered, setIsHiResImageRendered] = useState(false);
@@ -165,7 +165,7 @@ const ImagePreview = ({
         }
 
         if (!contents) {
-            setImageData({ src: '' });
+            setImageSrc('');
             return;
         }
 
@@ -173,9 +173,7 @@ const ImagePreview = ({
         const blob = new Blob(data, { type: mimeType });
         const srcUrl = URL.createObjectURL(blob);
 
-        setImageData({
-            src: srcUrl,
-        });
+        setImageSrc(srcUrl);
 
         // Load image before rendering
         const buffer = new Image();
@@ -208,26 +206,30 @@ const ImagePreview = ({
                         }}
                     >
                         {!isLoading && (
-                            <div
-                                className={clsx('file-preview-image file-preview-image-full-size')}
-                                style={{
-                                    ...imageStyles,
-                                    background: 'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%)',
-                                    backgroundSize: '40px 40px',
-                                    transform: 'scale(0.99)',
-                                }}
-                            />
-                        )}
-                        {!isLoading && !!imageData.src && (
-                            <img
-                                ref={imageHiResRef}
-                                onLoad={handleFullImageLoaded}
-                                onError={handleBrokenImage}
-                                className={clsx(['file-preview-image file-preview-image-full-size'])}
-                                style={imageStyles}
-                                src={imageData.src}
-                                alt={c('Info').t`${fileName}: full-size image`}
-                            />
+                            <>
+                                <div
+                                    className={clsx('file-preview-image file-preview-image-full-size')}
+                                    style={{
+                                        ...imageStyles,
+                                        background: 'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%)',
+                                        backgroundSize: '40px 40px',
+                                        transform: 'scale(0.99)',
+                                    }}
+                                />
+                                {imageSrc ? (
+                                    <img
+                                        ref={imageHiResRef}
+                                        onLoad={handleFullImageLoaded}
+                                        onError={handleBrokenImage}
+                                        className={clsx(['file-preview-image file-preview-image-full-size'])}
+                                        style={imageStyles}
+                                        src={imageSrc}
+                                        alt={c('Info').t`${fileName}: full-size image`}
+                                    />
+                                ) : (
+                                    <CircleLoader />
+                                )}
+                            </>
                         )}
                         {!isLowResImageHidden && placeholderSrc && (
                             <img
