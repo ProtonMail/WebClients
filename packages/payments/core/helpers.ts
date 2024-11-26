@@ -5,6 +5,7 @@ import {
     type User,
     type UserModel,
 } from '@proton/shared/lib/interfaces';
+import { type FeatureFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DEFAULT_TAX_BILLING_ADDRESS } from './billing-address';
@@ -50,11 +51,15 @@ export function isRegionalCurrency(currency: Currency): boolean {
     return !isMainCurrency(currency);
 }
 
-export function mapCountryToRegionalCurrency(countryCode: string): Currency | undefined {
-    const enableNewBatchCurrencies = false;
+// undefined is reserved for the case when we don't plan a new batch of regional currencies for the time being.
+export const NEW_BATCH_CURRENCIES_FEATURE_FLAG: FeatureFlag | undefined = 'RegionalCurrenciesBatch2';
 
-    const newBatchCurrencies = new Set<Currency>(['GBP', 'AUD', 'CAD']);
+const newBatchCurrencies = new Set<Currency>(['GBP', 'AUD', 'CAD']);
 
+export function mapCountryToRegionalCurrency(
+    countryCode: string,
+    enableNewBatchCurrencies: boolean
+): Currency | undefined {
     const result = {
         BR: 'BRL' as const,
         GB: 'GBP' as const,
@@ -88,18 +93,22 @@ export function getSupportedRegionalCurrencies({
     selectedPlanName,
     user,
     subscription,
+    enableNewBatchCurrencies,
 }: {
     status?: PaymentMethodStatusExtended;
     plans?: Plan[];
     selectedPlanName?: PLANS | ADDON_NAMES;
     user?: User;
     subscription?: Subscription | FreeSubscription;
+    enableNewBatchCurrencies: boolean;
 }): Currency[] {
     if (user?.ChargebeeUser === ChargebeeEnabled.INHOUSE_FORCED) {
         return [];
     }
 
-    const statusCurrency = !!status ? mapCountryToRegionalCurrency(status.CountryCode) : undefined;
+    const statusCurrency = !!status
+        ? mapCountryToRegionalCurrency(status.CountryCode, enableNewBatchCurrencies)
+        : undefined;
 
     const currencies = [statusCurrency, subscription?.Currency, user?.Currency]
         .filter(isTruthy)
@@ -125,6 +134,7 @@ export function getPreferredCurrency({
     user,
     subscription,
     selectedPlan,
+    enableNewBatchCurrencies,
 }: {
     status?: PaymentMethodStatusExtended;
     plans?: Plan[];
@@ -133,10 +143,11 @@ export function getPreferredCurrency({
     paramPlanName?: string;
     user?: UserModel;
     subscription?: Subscription | FreeSubscription;
+    enableNewBatchCurrencies: boolean;
 }): Currency {
     const statusCurrency =
         status && user?.ChargebeeUser !== ChargebeeEnabled.INHOUSE_FORCED
-            ? mapCountryToRegionalCurrency(status.CountryCode)
+            ? mapCountryToRegionalCurrency(status.CountryCode, enableNewBatchCurrencies)
             : undefined;
 
     const userCurrency =
@@ -201,6 +212,7 @@ export function getAvailableCurrencies({
     plans,
     selectedPlanName,
     paramCurrency,
+    enableNewBatchCurrencies,
 }: {
     status?: PaymentMethodStatusExtended;
     user?: User;
@@ -208,6 +220,7 @@ export function getAvailableCurrencies({
     plans?: Plan[];
     selectedPlanName?: PLANS | ADDON_NAMES;
     paramCurrency?: Currency;
+    enableNewBatchCurrencies: boolean;
 }): readonly Currency[] {
     if (paramCurrency && isMainCurrency(paramCurrency)) {
         return mainCurrencies;
@@ -219,6 +232,7 @@ export function getAvailableCurrencies({
         selectedPlanName,
         user,
         subscription,
+        enableNewBatchCurrencies,
     });
 
     return [...mainCurrencies, ...regionalCurrencies];
