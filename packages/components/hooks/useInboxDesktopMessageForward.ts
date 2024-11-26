@@ -9,7 +9,7 @@ export function useInboxDesktopMessageForward() {
             return;
         }
 
-        const listener = addIPCHostUpdateListener('captureMessage', (payload) => {
+        const captureMessageListener = addIPCHostUpdateListener('captureMessage', (payload) => {
             captureMessage(payload.message, {
                 level: payload.level,
                 tags: payload.tags,
@@ -17,6 +17,8 @@ export function useInboxDesktopMessageForward() {
             });
         });
 
-        return listener.removeListener;
+        return () => {
+            captureMessageListener.removeListener();
+        };
     }, []);
 }
