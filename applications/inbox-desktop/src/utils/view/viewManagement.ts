@@ -185,7 +185,8 @@ function updateViewBounds(view: BrowserView | undefined, viewID: ViewID | null =
             verticalMargin = 39 + menuBarHeight;
         }
     } else if (isLinux) {
-        verticalMargin = mainWindow.isFullScreen() ? 0 : 24;
+        const menuBarHeight = mainWindow.isMenuBarVisible() ? 25 : 0;
+        verticalMargin = menuBarHeight;
     }
 
     const updatedBounds: Rectangle = {
