@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { CircleLoader } from '@proton/atoms/index';
+
 import UnsupportedPreview from './UnsupportedPreview';
 
 interface Props {
@@ -38,13 +40,16 @@ const VideoPreview = ({ contents, mimeType, onDownload }: Props) => {
     return (
         <div className="flex w-full h-full justify-center items-center pb-8 md:pb-12">
             {/* eslint-disable-next-line */}
-            <video
-                ref={videoRef}
-                onError={handleBrokenVideo}
-                src={url}
-                className="max-w-full max-h-full object-contain"
-                controls
-            />
+            {url ? (<video
+                    ref={videoRef}
+                    onError={handleBrokenVideo}
+                    src={url}
+                    className="max-w-full max-h-full object-contain"
+                    controls
+                />
+            ) : (
+                <CircleLoader />
+            )}
         </div>
     );
 };
