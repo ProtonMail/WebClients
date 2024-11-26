@@ -194,6 +194,9 @@
       "Disable instead": [
         "Desactiva en lloc"
       ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Desactiveu aquest àlies per deixar de rebre correus electrònics enviats a aquest àlies"
+      ],
       "Discard": [
         "Descarta"
       ],
@@ -217,6 +220,9 @@
       ],
       "Edit vault": [
         "Edita la caixa forta"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Activeu aquest àlies per rebre correus electrònics enviats a aquest àlies"
       ],
       "Entire vault": [
         "Caixa forta sencera"
@@ -677,6 +683,9 @@
       "[Error] an item could not be parsed": [
         "[Error] no s'ha pogut analitzar un element."
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "L'àlies no s'ha pogut actualitzar en aquest moment. Proveu de nou més tard."
+      ],
       "Alias options could not be resolved": [
         "Les opcions d'àlies no s'han pogut resoldre."
       ],
@@ -719,6 +728,9 @@
       ],
       "Could not resolve share members": [
         "No es poden definir els membres de la compartició."
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "No s'han pogut recuperar les invitacions d'usuari per a la caixa forta «${ vaultName }»."
       ],
       "Could not validate addresses at the moment.": [
         "No s'han pogut validar les adreces en aquest moment."
@@ -940,6 +952,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "S'ha produït un error en eliminar l'enllaç segur. Torneu a provar-ho en uns minuts."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Això pot passar després de molt de temps sense utilitzar ${ PASS_SHORT_APP_NAME } o esborrar l'historial de Safari."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Massa intents erronis. Torneu a iniciar la sessió."
       ],
@@ -999,6 +1014,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Actualment esteu fora de línia. Repreneu la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "El vostre navegador té problemes per activar ${ PASS_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
@@ -1113,6 +1131,12 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrarà la icona de web de l'element a través del proxy d'imatges anònim ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } aplicarà el mateix tema que el vostre sistema."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } només importarà inicis de sessió, notes, targetes de crèdit i identitats."
+      ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } us avisarà tan bon punt s'autocompletin les contrasenyes generades."
       ],
@@ -1156,6 +1180,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Per accedir a ${ PASS_APP_NAME } caldrà la vostra empremta digital o el codi PIN del dispositiu."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Accediu a les vostres contrasenyes sobre la marxa amb les nostres aplicacions mòbils."
       ],
@@ -1164,6 +1191,21 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Després d'importar correctament les dades, podeu suprimir el fitxer CSV que conté les contrasenyes per seguretat."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Les funcions de gestió d'àlies de SimpleLogin arribaran aviat!"
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "L'àlies s'ha desactivat. Ja no rebreu correus electrònics enviats a ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "L'àlies s'ha activat. Ara podeu rebre correus electrònics enviats a ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "La sincronització d'àlies entre els vostres comptes de ${ BRAND_NAME } i SimpleLogin està activa."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Els àlies a la paperera continuaran reenviant correus electrònics. Si voleu deixar de rebre correus electrònics en aquesta adreça, desactiveu-la."
       ],
       "Aliases out of sync (${ aliasCount })": [
         "Àlies no sincronitzats (${ aliasCount })"
@@ -1195,11 +1237,20 @@
       "Auto-lock successfully disabled.": [
         "S'ha desactivat el bloqueig automàtic."
       ],
+      "Automatically copy the generated password to the clipboard": [
+        "Copia automàticament la contrasenya generada al porta-retalls"
+      ],
       "Autosaved on ${ url }": [
         "S'ha desat automàticament en ${ url }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Abans d'exportar les vostres dades en aquest format, obreu i desactiveu l'opció següent: Paràmetres de Safari -> General -> Obrir els fitxers segurs després de la descàrrega. Això evitarà que Safari extraguí el fitxer exportat de manera incorrecta."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "S'ha registrat el bloqueig amb dades biomètriques. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }."
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Les dades biomètriques es desactivaran i caldrà tornar-les a activar."
       ],
       "Built in 2FA authenticator": [
         "Autenticador 2FA integrat"
@@ -1357,6 +1408,10 @@
       "For security reason, your access needs to be confirmed": [
         "Per motius de seguretat, cal confirmar el vostre accés"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Per motius de seguretat, heu de confirmar l'accés a aquesta caixa forta compartida",
+        "Per motius de seguretat, heu de confirmar l'accés a aquestes caixes fortes compartides."
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Per motius de seguretat, cal confirmar l'accés"
       ],
@@ -1478,12 +1533,19 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial i tots els enllaços segurs.",
+        "Si moveu elements a una altra caixa forta, se n'esborrarà l'historial i tots els enllaços segurs."
+      ],
       "Moving an item to another vault will erase its history.": [
         "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial.",
         "Si moveu els elements a una altra caixa forta, se n'esborrarà l'historial."
       ],
       "Moving items": [
         "S'estan movent elements"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Si moveu elements a una altra caixa forta, se n'esborrarà l'historial i tots els enllaços segurs."
       ],
       "Moving items to another vault will erase their history.": [
         "Si moveu els elements a una altra caixa forta, se n'esborrarà l'historial."
@@ -1567,6 +1629,12 @@
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Confirmeu la vostra contrasenya addicional per tal de bloquejar automàticament l'aplicació amb ella."
       ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirmeu la contrasenya addicional per a exportar les dades de ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Confirmeu la vostra contrasenya addicional per desregistrar el vostre bloqueig."
+      ],
       "Please confirm your extra password in order to update the auto-lock time.": [
         "Confirmeu la vostra contrasenya addicional per actualitzar l'hora del bloqueig automàtic."
       ],
@@ -1602,6 +1670,12 @@
       ],
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Introduïu la vostra contrasenya extra per començar a utilitzar ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Tingueu en compte que, un cop suprimit, l'àlies no es pot restaurar. Potser voleu desactivar l'àlies?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Un cop suprimit, l'àlies no es pot restaurar. L'àlies ja està desactivat i no reenviarà correus electrònics a la vostra bústia de correu"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Actualitzeu per a tenir accés anticipat a l'aplicació web ${ PASS_APP_NAME }"
@@ -1736,6 +1810,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Aquesta exportació no es xifrarà i qualsevol persona amb accés al fitxer exportat podrà veure les contrasenyes. Per seguretat, elimineu-lo un cop hàgiu acabat d'utilitzar-lo."
       ],
+      "This option is currently not available on your device.": [
+        "Aquesta opció no està disponible actualment al vostre dispositiu."
+      ],
       "This setting is disabled on the organization level": [
         "Aquesta opció està desactivada en l'àmbit d'organització"
       ],
@@ -1751,6 +1828,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Per revisar les dades importades, feu clic a la icona del ${ PASS_APP_NAME } de la barra d'eines del navegador."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Proveu de tornar a carregar o reinstal·lar l'extensió i assegureu-vos que el vostre navegador i ${ PASS_SHORT_APP_NAME } estiguin actualitzats."
+      ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
       ],
@@ -1762,6 +1842,9 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Desbloquegeu ${ PASS_APP_NAME } amb el vostre codi PIN per desar aquesta clau d'accés"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Desbloqueja ${ PASS_SHORT_APP_NAME } amb dades biomètriques"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya de ${ BRAND_NAME }."
@@ -1786,6 +1869,9 @@
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Milloreu el vostre pla ara per a desbloquejar característiques prèmium"
+      ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Milloreu a un pla de pagament per crear diverses caixes fortes."
       ],
       "Use vaults to share this item with others.": [
         "Utilitzeu les caixes fortes per a compartir aquest element amb altres."
@@ -1820,6 +1906,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareix en ${ PASS_APP_NAME }. Voleu importar-lo?",
         "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareixen en ${ PASS_APP_NAME }. Voleu importar-los?"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Quan creeu o editeu un inici de sessió a ${ PASS_APP_NAME }, l'entrada «nom d'usuari» sempre serà visible."
       ],
       "You are about to create:": [
         "Esteu a punt de crear:"
@@ -1859,6 +1948,9 @@
       "You will be logged out and need to log in again on all of your other devices.": [
         "Se us tancarà la sessió i haureu de tornar a iniciar sessió en tots els vostres altres dispositius."
       ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Ja no tindreu accés a compartir, 2FA, targeta de crèdit i altres funcions avançades a ${ PASS_APP_NAME }"
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Utilitzareu aquest PIN per a desbloquejar ${ PASS_APP_NAME } un cop es bloquegi automàticament després d'un període d'inactivitat."
       ],
@@ -1876,6 +1968,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
       ]
     },
     "Label": {
@@ -2443,6 +2538,9 @@
       "Select preferred language": [
         "Trieu la llengua preferida"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Seleccioneu la caixa forta on s'importaran els àlies de SimpleLogin"
+      ],
       "Select your password manager": [
         "Seleccioneu el gestor de contrasenyes"
       ],
@@ -2558,6 +2656,9 @@
       "Update": [
         "Actualitza"
       ],
+      "Use ${ PASS_APP_NAME } as your browser's default password manager": [
+        "Utilitza ${ PASS_APP_NAME } com a gestor de contrasenyes predeterminat del vostre navegador"
+      ],
       "Username": [
         "Nom d'usuari"
       ],
@@ -2603,6 +2704,9 @@
       "You are about to create": [
         "Esteu a punt de crear"
       ],
+      "Your browser will stop using its built-in password manager.": [
+        "El vostre navegador deixarà d'utilitzar el seu gestor de contrasenyes integrat."
+      ],
       "ZIP or Postal code": [
         "Codi postal"
       ]
@@ -2611,6 +2715,10 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elements"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Podeu arrossegar i deixar anar l'element seleccionat a una altra caixa forta.",
+        "Podeu arrossegar i deixar anar els elements seleccionats a una altra caixa forta."
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Heu seleccionat ${ semiboldText } en aquesta caixa forta."
@@ -2737,6 +2845,9 @@
       "Approve or deny it now": [
         "Aprova o nega-ho ara"
       ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Introduïu el codi de confirmació enviat a l'altre dispositiu."
+      ],
       "If you didn't make this request, cancel it now.": [
         "Si no heu fet aquesta sol·licitud, cancel·leu-la ara."
       ],
@@ -2760,6 +2871,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "S'ha sol·licitat una connexió en un altre dispositiu. Heu estat vosaltres?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "S'ha sol·licitat una connexió en un altre dispositiu. Heu estat vosaltres? "
       ],
       "Yes, it was me": [
         "Sí, era jo."
@@ -2789,6 +2903,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "La sincronització d'àlies s'ha activat. Els àlies de SimpleLogin poden trigar una mica a sincronitzar-se"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Les caixes fortes no poden contenir més d'${ vault.targetMaxMembers } usuari.",
         "Les caixes fortes no poden contenir més de ${ vault.targetMaxMembers } usuaris."
@@ -2959,6 +3076,10 @@
       "Pinned (${ items.length })": [
         "Ancorat (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Recordeu que un cop eliminat, l'àlies no es pot recuperar.",
+        "Recordeu que un cop eliminats, els àlies no es poden recuperar."
+      ],
       "Reject device?": [
         "Voleu rebutjar el dispositiu?"
       ],
@@ -3043,11 +3164,18 @@
       "Welcome to your new password manager!": [
         "Us donem la benvinguda al vostre nou gestor de contrasenyes!"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "La vostra subscripció a ${ planName } finalitzarà el ${ endDate }."
+      ],
       "Your vault is empty": [
         "La caixa forta està buida"
       ],
       "Your welcome gift": [
         "El vostre regal de benvinguda"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
+        "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
       ]
     },
     "Validation": {
@@ -3082,6 +3210,9 @@
       ],
       "A description of the problem is required": [
         "Es requereix una descripció del problema"
+      ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Els àlies a la paperera continuaran redirigint els correus electrònics."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tots els elements de la paperera s'eliminaran permanentment. No podeu desfer aquesta acció."
@@ -3211,6 +3342,9 @@
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "El prefix de l'àlies no pot tenir més de 40 caràcters"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Aquest àlies «${ aliasEmail }» s'utilitza actualment a l'inici de sessió «${ relatedLoginName }»."
       ],
       "Title is required": [
         "El títol és obligatori"

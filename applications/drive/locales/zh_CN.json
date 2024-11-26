@@ -895,11 +895,6 @@
         "缩小"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "重新激活"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } 或者 ${ importContact }"
@@ -998,15 +993,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "前 ${ n } 个月"
-      ],
-      "the first month": [
-        "首月"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "特别折扣价 ${ discountedPrice } 将持续 ${ discountedMonths } ，之后将以每月 ${ nextPrice } 的价格自动续订 ${ nextMonths }，您可随时取消。"
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "特别折扣价 ${ discountedPrice } 仅首月有效，之后将以每月 ${ nextPrice } 的价格自动续订，您可随时取消。"
       ]
@@ -1056,7 +1042,7 @@
         "6 位用户"
       ],
       "8500+ servers across 110+ countries": [
-        "8500+ servers across 110+ countries"
+        "110+ 个国家，8500+ 台服务器"
       ],
       "Ad-blocker and malware protection": [
         "广告拦截及恶意软件防护"
@@ -1089,7 +1075,7 @@
         "私人照片备份"
       ],
       "Protect 10 devices at a time": [
-        "Protect 10 devices at a time"
+        "可同时保护 10 台设备"
       ],
       "Secure file storage & sharing": [
         "安全文件存储与共享"
@@ -1123,7 +1109,7 @@
     },
     "BF2024: Info": {
       "Most popular": [
-        "常用"
+        "人气最高"
       ]
     },
     "BF2024: info": {
@@ -1133,27 +1119,27 @@
     },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
-        "总计${ durationDeal }"
+        "开通 ${ durationDeal }"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "Renews after 1 month at ${ regularAmount }."
+        "次月起按 ${ regularAmount } 续费。"
       ]
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
+        "突破网络封锁，保护线上隐私，最多可通过 10 台设备连接全球逾 110 个国家超过 8500 台服务器，畅享全球流媒体服务，拦截恶意软件和广告，还有 VPN 加速器等更多功能等您体验。"
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "随时随地畅享 Netflix、Disney+、Prime Video 等精彩内容。"
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more."
+        "在您的所有设备上安全登录，并且支持无限量的 hide-my-email 邮箱别名、文件共享、集成双重验证、暗网数据泄露监控等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术守护您的邮件安全。支持 ${ addresses } 个邮箱地址、自有域名、${ BRAND_NAME } Scribe 写作助手、无限量的 hide-my-email 别名等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more."
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术守护您的邮件安全。支持自定义域名、15 个邮箱地址、无限量的 hide-my-email 别名等更多高级功能。"
@@ -1166,14 +1152,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "所有 ${ BRAND_NAME } 服务共用同一存储空间。"
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } 个月"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "将以 ${ renewPrice } 的价格自动续期 ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -5232,11 +5210,6 @@
         "点击查看详情"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "您可以重新激活，避免等级失效"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "已选择 ${ selectedFoldersCount } 个文件夹"
@@ -7267,9 +7240,6 @@
       "Select billing country to pay": [
         "选择要支付的账单国家"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "特别折扣价 ${ priceWithDiscount } 仅首月有效，之后将以每月 ${ price } 的价格自动续订，您可随时取消。"
-      ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "我们正在处理您的付款信息。请等待付款完成后再更改您的计划或更新您的付款详细信息。感谢您的耐心等待。"
       ]
@@ -8191,14 +8161,6 @@
         "节省"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "已激活"
-      ],
-      "Expiring": [
-        "即将到期"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 位联系人信息似乎完全相同。"
@@ -9003,17 +8965,6 @@
       ],
       "You’ve got 5 GB of storage": [
         "您已获得 5 GB 存储空间"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "结束日期"
-      ],
-      "Plan": [
-        "等级"
-      ],
-      "Status": [
-        "状态"
       ]
     },
     "Today icon tooltip in mini calendar": {

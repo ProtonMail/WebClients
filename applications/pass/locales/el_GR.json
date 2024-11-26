@@ -6,10 +6,10 @@
   "contexts": {
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } και εντοπίστηκαν ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+        "Εντοπίστηκαν ${ name } και ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } και εντοπίστηκε 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+        "Εντοπίστηκαν ${ name } και 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
@@ -1875,7 +1875,7 @@
         "Ξεκαρφίτσωμα στοιχείου..."
       ],
       "Unverified": [
-        "Ανεπιβεβαίωτος"
+        "Μη επαληθευμένος"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Αναβαθμίστε τώρα για να ξεκλειδώσετε Premium χαρακτηριστικά"
@@ -3061,7 +3061,7 @@
         "Hide-my-email ψευδώνυμα"
       ],
       "History": [
-        "Ιστορία"
+        "Ιστορικό"
       ],
       "Import - ${ date }": [
         "Εισαγωγή - ${ date }"
@@ -3114,7 +3114,7 @@
         "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχεία;"
       ],
       "Move all items to \"${ vaultName }\"?": [
-        "Μετακίνηση όλων των στοιχείων στο \"${ vaultName }\";"
+        "Μετακίνηση όλων των στοιχείων σε \"${ vaultName }\";"
       ],
       "Move item to \"${ vaultName }\"": [
         "Μετακίνηση στοιχείου στο \"${ vaultName }\""

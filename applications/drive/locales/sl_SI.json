@@ -913,11 +913,6 @@
         "Pomanjšaj"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Ponovno aktiviraj"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } ali ${ importContact }."
@@ -1027,18 +1022,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mesec",
-        "${ n } meseca",
-        "${ n } mesece",
-        "${ n } mesecev"
-      ],
-      "the first month": [
-        "prvi mesec"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Izredno znižana cena ${ discountedPrice } velja za ${ discountedMonths }. Potem se bo samodejno podaljšala z znižano ceno ${ nextPrice } za ${ nextMonths }. Naročnino lahko kadarkoli prekinete."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Izredno znižana cena ${ discountedPrice } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ nextPrice }. Naročnino lahko kadarkoli prekinete."
       ]
@@ -1201,17 +1184,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } mesec",
-        "${ n } meseca",
-        "${ n } mesece",
-        "${ n } mesecev"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Se podaljša samodejno za ${ renewPrice } za ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -5590,11 +5562,6 @@
         "Kliknite za podrobnosti"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Potek lahko preprečite s ponovnim aktiviranjem naročnine."
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } izbrana mapa",
@@ -7969,15 +7936,6 @@
       "Select billing country to pay": [
         "Izberite državo za izstavitev računa za plačilo"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Posebej znižana cena ${ priceWithDiscount } velja za prve ${ months }. Kupon velja za ${ couponRedemptions } obnovitve. Nato se samodejno podaljša po ${ price } za obdobje ${ months } mesecev. Naročnino lahko kadarkoli prekličete."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Posebej znižana cena ${ priceWithDiscount } velja za prvih ${ months }. Po tem se samodejno podaljša za ${ price } za ${ months }. Naročnino lahko kadarkoli prekličete."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Izredno znižana cena ${ priceWithDiscount } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ price }. Naročnino lahko kadarkoli prekinete."
-      ],
       "Timeout exceeded": [
         "Časovna omejitev je presežena"
       ]
@@ -9178,14 +9136,6 @@
         "Shrani"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Aktivno"
-      ],
-      "Expiring": [
-        "Iztekajoče"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } stik je videti identičen.",
@@ -10044,17 +9994,6 @@
       ],
       "You’ve got 5 GB of storage": [
         "Pridobili ste pet GB prostora za shranjevanje."
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Končni datum"
-      ],
-      "Plan": [
-        "Paket"
-      ],
-      "Status": [
-        "Stanje"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -256,6 +256,12 @@
       "Confirm opening of link ${ linkToShow }": [
         "Potvrďte otvorenie odkazu ${ linkToShow }"
       ],
+      "Connect": [
+        "Pripojiť"
+      ],
+      "Connected": [
+        "Pripojené"
+      ],
       "Contact sales": [
         "Kontaktovať obchodný tím"
       ],
@@ -689,7 +695,7 @@
         "Načítavanie overenia"
       ],
       "Lost access to your 2FA device?": [
-        "Stratili ste prístup k svojmu zariadeniu 2FA?"
+        "Stratili ste prístup k 2FA zariadeniu ?"
       ],
       "Make admin": [
         "Urobiť správcom"
@@ -814,11 +820,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "Refresh the page": [
-        "Obnoviť stránku"
-      ],
       "refresh the page": [
         "obnoviť stránku"
+      ],
+      "Refresh the page": [
+        "Obnoviť stránku"
       ],
       "Reject": [
         "Odmietnuť"
@@ -1619,17 +1625,6 @@
         "Vyberte si svoju koncoročnú ponuku"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiac.",
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiace.",
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov.",
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Úložisko s kapacitou 6 TB (2x viac ako akýkoľvek iný plán)"
@@ -1653,24 +1648,23 @@
         "Plán ${ plan } je späť len na obmedzený čas"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiac.",
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiace.",
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov.",
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30-dňová záruka vrátenia peňazí"
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mesiac",
-        "prvé ${ n } mesiace",
-        "prvých ${ n } mesiacov",
-        "prvých ${ n } mesiacov"
-      ],
-      "the first month": [
-        "prvý mesiac"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ discountedPrice } platí na ${ discountedMonths }. Potom sa automaticky obnoví za zvýhodnenú cenu ${ nextPrice } na ${ nextMonths }. Službu môžete kedykoľvek zrušiť."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ discountedPrice } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ nextPrice }. Službu môžete kedykoľvek zrušiť."
       ]
@@ -1853,14 +1847,11 @@
       ]
     },
     "Billing cycle": {
-      "${ n } month": [
-        "${ n } mesiac",
-        "${ n } mesiace",
-        "${ n } mesiacov",
-        "${ n } mesiacov"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewalLength }"
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiac",
+        "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiace",
+        "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiacov",
+        "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiacov"
       ]
     },
     "Billing cycle option": {
@@ -3604,8 +3595,14 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Automatické triedenie prichádzajúcich správ pred ich doručením do schránky."
       ],
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "K dispozicii s ${ MAIL_APP_NAME } Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulujeme! Získali ste maximum ${ rewardsLimit } bezplatných mesiacov ${ plusPlanName }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Vytvorte Zoom stretnutie a jedným kliknutím pridajte podrobnosti o pripojení k udalosti."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Vytvorte si toľko štítkov alebo priečinkov, koľko potrebujete na udržanie poriadku v doručenej pošte."
@@ -6779,6 +6776,9 @@
         "${ numberOfNonPrivateKeys } nahratých súborov nie sú platné súkromné kľúče. Skontrolujte a skúste to znovu.",
         "${ numberOfNonPrivateKeys } nahratých súborov nie sú platné súkromné kľúče. Skontrolujte a skúste to znovu."
       ],
+      "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
+        "${ PASS_APP_NAME } je správca hesiel novej generácie navrhnutý pre jednoduché používanie a produktivitu. Otvorený zdrojový kód, spoločne vyvinutý spoločnosťami SimpleLogin a ${ BRAND_NAME }."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotná služba ${ PASS_SHORT_APP_NAME } nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }"
       ],
@@ -7241,6 +7241,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Posilnite identitu značky vašej organizácie a vytvorte konzistentnejší online zážitok pre vašich používateľov."
       ],
+      "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
+        "Vytvorením ${ PASS_APP_NAME } účtu so svojím SimpleLogin emailom môžete spravovať svoje aliasy priamo z ${ PASS_APP_NAME }."
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "V predvolenom nastavení môžu členovia organizácie exportovať len tie trezory, ktorých sú vlastníkmi. Ak je táto možnosť zapnutá, nebudú môcť exportovať žiadne údaje"
       ],
@@ -7394,11 +7397,11 @@
       "Data locked": [
         "Dáta uzamknuté"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -7425,7 +7428,7 @@
         "Deaktivované ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Vypnutím dvojsupňového overovania bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
+        "Vypnutím dvojstupňového overenia bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
       ],
       "Discount": [
         "Zľava"
@@ -9038,11 +9041,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "username": [
-        "používateľské meno"
-      ],
       "Username": [
         "Používateľské meno"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -11578,11 +11581,17 @@
       "Change password": [
         "Zmeniť heslo"
       ],
+      "Convert to SSO": [
+        "Previesť na SSO"
+      ],
       "Delete": [
         "Odstrániť"
       ],
       "Delete and revoke invite": [
         "Vymazať a zrušiť pozvánku"
+      ],
+      "Detach from SSO": [
+        "Odpojiť od SSO"
       ],
       "Edit": [
         "Upraviť"
@@ -11926,32 +11935,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Začnite za ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovať s bezplatným tarifom"
@@ -11979,6 +11962,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Začnite za ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12722,20 +12731,6 @@
         "Váš zvolený plán: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Získajte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -12754,6 +12749,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Odomknite prémiové funkcie navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Získajte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -13993,6 +14002,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Špeciálna uvádzacia ponuka: Získajte ${ title } za ${ price } navždy!"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Začnite používať ${ PASS_APP_NAME }"
+      ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "Riešenia šité na mieru pre väčšie organizácie s vlastnými potrebami."
       ],
@@ -14260,20 +14272,8 @@
       "Processing payment": [
         "Spracováva sa platba"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Obnovuje sa za ${ price }, zrušiť môžete kedykoľvek."
-      ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ months }. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ price } na ${ months }. Službu môžete kedykoľvek zrušiť."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ months }. Potom sa každý mesiac automaticky obnoví za ${ price } na ${ months }. Službu môžete kedykoľvek zrušiť."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ price }. Službu môžete kedykoľvek zrušiť."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakcia bola úspešne rozpoznaná. Kredity budú pripísané na váš účet po úplnom potvrdení transakcie."
@@ -14961,6 +14961,9 @@
       ],
       "Something went wrong": [
         "Niečo sa pokazilo"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Emailová adresa **${ email }** už existuje ako používateľ ${ BRAND_NAME }. Zadajte emailovú adresu používateľa od vášho poskytovateľa identity, prosím."
       ]
     },
     "saml: Info": {
@@ -14969,6 +14972,9 @@
       ],
       "Details": [
         "Podrobnosti"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Zadajte emailovú adresu používateľa, ktorú poskytol váš poskytovateľ identity pre **${ domainName }**"
       ],
       "Test in progress...": [
         "Prebieha testovanie..."
@@ -15151,6 +15157,14 @@
       ],
       "to be created": [
         "bude vytvorený"
+      ],
+      "to be deleted": [
+        "vymaže sa"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Umožňuje pridať videokonferenciu Zoom k akejkoľvek udalosti v kalendári"
       ]
     },
     "session_recovery:available:action": {
@@ -15637,6 +15651,9 @@
       ]
     },
     "Signup: Info": {
+      "10 aliases for email protection from breaches": [
+        "10 aliasov na ochranu emailu pred únikmi informácií"
+      ],
       "Advanced security features": [
         "Pokročilé bezpečnostné funkcie"
       ],
@@ -15654,6 +15671,9 @@
       ],
       "Calendar, password manager, file storage, and VPN included": [
         "Obsahuje kalendár, správcu hesiel, úložisko súborov a VPN"
+      ],
+      "Device sync": [
+        "Synchronizácia zariadenia"
       ],
       "Email aliases": [
         "Emailové aliasy"
@@ -15696,6 +15716,9 @@
       ],
       "The only email service with:": [
         "Jediná emailová služba s:"
+      ],
+      "Unlimited passwords": [
+        "Neobmedzené heslá"
       ],
       "Works on all devices": [
         "Funguje na všetkých zariadeniach"
@@ -15924,6 +15947,18 @@
         "${ n } členov vás požiadalo o pomoc s prihlásením.",
         "${ n } členov vás požiadalo o pomoc s prihlásením."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } používateľ prevedený na SSO",
+        "${ n } používatelia prevedení na SSO",
+        "${ n } používateľov prevedených na SSO",
+        "${ n } používateľov prevedených na SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } používateľ odpojený od SSO",
+        "${ n } používatelia odpojení od SSO",
+        "${ n } používateľov odpojených od SSO",
+        "${ n } používateľov odpojených od SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } používateľ sa pripojil k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účet:",
         "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:",
@@ -15944,6 +15979,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO užívatelia (poskytovaní poskytovateľom identít) budú zmazaní** a budete ich musieť vytvoriť ručne, aby ste ich mohli pridať späť do organizácie."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO používatelia budú odpojení od vášho poskytovateľa identity** a prevedení na používateľov bez SSO."
       ],
       "Access denied": [
         "Prístup zamietnutý"
@@ -16146,8 +16184,14 @@
       "Yes, it was me": [
         "Áno, ide o moju žiadosť"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Ak chcete pridať nových používateľov do svojej organizácie, budete ich musieť vytvoriť ručne."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Presmerujeme vás na poskytovateľa SSO tretej strany."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Vaše nastavenie SSO bude vymazané."
       ]
     },
     "sso: auth device state": {
@@ -17537,10 +17581,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -17596,6 +17640,9 @@
       ],
       "Connect ${ name }": [
         "Pripojiť ${ name }"
+      ],
+      "Connection status": [
+        "Stav pripojenia"
       ],
       "Contact us": [
         "Kontaktujte nás"
@@ -17963,6 +18010,9 @@
       "Get the apps": [
         "Získajte aplikácie"
       ],
+      "Get Zooming faster": [
+        "Zoomujte rýchlejšie"
+      ],
       "Gift": [
         "Dar"
       ],
@@ -18326,6 +18376,9 @@
       "Send new invite?": [
         "Odoslať novú pozvánku?"
       ],
+      "Service": [
+        "Služba"
+      ],
       "Session management": [
         "Správca relácií"
       ],
@@ -18439,6 +18492,9 @@
       ],
       "There are no groups": [
         "Nie sú tu žiadne skupiny"
+      ],
+      "Third-party apps and services": [
+        "Aplikácie a služby tretích strán"
       ],
       "This field cannot be empty": [
         "Toto pole nemôže byť prázdne"
@@ -18968,6 +19024,9 @@
       ],
       "Cancel request to access user data?": [
         "Zrušiť žiadosť na prístup k dátam používateľa?"
+      ],
+      "Confirm all": [
+        "Potvrdiť všetko"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Nepodarilo sa automaticky povoliť prístup správcu pre ${ n } používateľa, pretože jeho šifrovacie kľúče boli medzitým aktualizované:",

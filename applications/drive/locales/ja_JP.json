@@ -916,11 +916,6 @@
         "縮小"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "再アクティブ化"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact }または${ importContact }。"
@@ -1019,15 +1014,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } か月"
-      ],
-      "the first month": [
-        "最初の月"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "${ discountedPrice } の特別割引価格は、${ discountedMonths } の間有効です。 その後、${ nextMonths } の ${ nextPrice } の割引価格で自動的に更新されます。 いつでもキャンセルできます。"
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "特別割引価格 ${ discountedPrice } は最初の 1 か月間有効です。 その後、毎月 ${ nextPrice } で自動的に更新されます。 いつでもキャンセルできます。"
       ]
@@ -1207,14 +1193,6 @@
         "ストレージ容量はすべての ${ BRAND_NAME } サービスで共有されています。"
       ]
     },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } 月"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "${ renewPrice }、${ renewalLength } で自動的に更新されます"
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 か月"
@@ -1326,6 +1304,17 @@
       ],
       "Continue your subscription": [
         "サブスクリプションを継続する"
+      ]
+    },
+    "Cancellation reminder": {
+      "Reactivate by ${ formattedEndDate } to keep these features:": [
+        "これらの機能を継続するには、${ formattedEndDate }までに再開してください："
+      ],
+      "Reactivate subscription": [
+        "サブスクリプションを再開"
+      ],
+      "Your subscription is ending soon": [
+        "サブスクリプションはまもなく終了します"
       ]
     },
     "Cancellation upsell": {
@@ -1636,6 +1625,9 @@
       "British Indian Ocean Territory": [
         "イギリス領インド洋地域"
       ],
+      "British Virgin Islands": [
+        "イギリス領バージン諸島"
+      ],
       "Brunei Darussalam": [
         "ブルネイ・ダルサラーム"
       ],
@@ -1690,6 +1682,9 @@
       "Congo": [
         "コンゴ"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "コンゴ(民主共和国)"
+      ],
       "Congo, Democratic Republic of the": [
         "コンゴ民主共和国"
       ],
@@ -1728,6 +1723,9 @@
       ],
       "Dominican Republic": [
         "ドミニカ共和国"
+      ],
+      "East Timor": [
+        "東ティモール"
       ],
       "Ecuador": [
         "エクアドル"
@@ -1938,6 +1936,9 @@
       ],
       "Libya": [
         "リビア"
+      ],
+      "Libyan Arab Jamahiriya": [
+        "リビア・アラブ社会主義人民ジャマーヒリーヤ国"
       ],
       "Liechtenstein": [
         "リヒテンシュタイン"
@@ -2206,6 +2207,9 @@
       "Svalbard and Jan Mayen": [
         "スヴァールバル諸島およびヤンマイエン島"
       ],
+      "Swaziland": [
+        "エスワティニ"
+      ],
       "Sweden": [
         "スウェーデン"
       ],
@@ -2225,6 +2229,9 @@
         "タジキスタン"
       ],
       "Tanzania": [
+        "タンザニア"
+      ],
+      "Tanzania, United Republic of": [
         "タンザニア"
       ],
       "Thailand": [
@@ -2415,6 +2422,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "アカウントとデータの回復手段が設定されています。"
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
       ]
     },
     "description": {
@@ -3388,8 +3398,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } グループ"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "カスタムドメインのアカウントはファミリープランに加入することはできません。"
+      ],
       "customer support": [
         "カスタマーサポート"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "招待を受けると、あなたの現在のプランは変更され、残高があればあなたのアカウントクレジットに追加されます。"
@@ -3403,11 +3419,17 @@
       "Manage addresses": [
         "アドレスの管理"
       ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "メンバー付きプランの所有者は、別のファミリープランに参加することはできません。"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "申し訳ありませんが、現在あなたのプランは変更できません。"
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "割り当てられたストレージ: ${ assignedStorage }"
+      ],
+      "The subscription will be billed to the primary admin of this plan.": [
+        "サブスクリプションはこのプランのプライマリー管理者に請求されます。"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } に招待されました"
@@ -3415,8 +3437,20 @@
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "六ヶ月の間に受けられる招待は最大で３つまでです。例外措置が必要な場合は ${ supportLink } にお問い合わせください。"
       ],
+      "You cannot accept this invitation with your current plan.": [
+        "現在のプランではこの招待を受けることができません。"
+      ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } から招待されています。 ${ viewInviteButton }"
+      ],
+      "You have successfully joined the family group": [
+        "ファミリーグループへの参加に成功しました"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "未納の請求書があります。ファミリープランに参加する前にお支払いください。"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "${ BRAND_NAME }アカウントをこのファミリー プランにリンクして、${ brandOrAppName }の全てのプレミアム機能を一緒にお楽しみください。"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "あなたのアカウントはこのプランで利用可能なメールアドレスの上限を超えています。${ addressSettingsLink }"
@@ -5471,11 +5505,6 @@
         "クリックして詳細を確認"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "サブスクリプションを再度有効にすることで、有効期限切れを防ぐことができます。"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } 件のフォルダーを選択済み"
@@ -5487,6 +5516,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "閲覧のみ"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
       ]
     },
     "Item": {
@@ -5568,6 +5602,9 @@
       ],
       "Address": [
         "メールアドレス"
+      ],
+      "Anderson": [
+        "アンダーソン"
       ],
       "Anyone on the Internet with the link can view": [
         "このリンクを知っていれば、インターネット上の誰でも閲覧できます"
@@ -5806,6 +5843,9 @@
       "I understand the risk": [
         "リスクを承知しました"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "Import all messages": [
         "すべてのメッセージをインポート"
       ],
@@ -6043,6 +6083,9 @@
       "This will permanently delete all files in your locked drive.": [
         "開くことのできないドライブ内のすべてのデータが削除されます。"
       ],
+      "Thomas": [
+        "トーマス"
+      ],
       "Title": [
         "タイトル"
       ],
@@ -6223,6 +6266,30 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "詳細"
+      ],
+      "upgrade for more storage": [
+        "より大きなストレージへアップグレード"
+      ],
+      "Upgrade to restore full access": [
+        "フルアクセスの復元のためにアップグレード"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "${ driveStorage }はいっぱいです。ファイルをアップロードしたり同期したりするには容量を空けるか${ cta }。"
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "${ mailStorage }はいっぱいです。メールを送受信するには容量を空けるか${ cta }。"
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "アカウントは削除のリスクに晒されています。データ損失を避けるには、管理者にアップグレードを要求してください。${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "ストレージがいっぱいです。メールを送受信するには容量を空けるか${ cta }。"
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "ストレージがいっぱいです。ファイルをアップロードしたり同期したりするには容量を空けるか${ cta }。"
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "サブスクリプションが終了しました。${ cta }そしてデータの喪失を防ぎましょう。"
       ]
     },
     "Log preference": {
@@ -6621,6 +6688,9 @@
       "${ options }-day file version history": [
         "${ options }-日間のファイルバージョン履歴"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin 一生涯"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } と ${ n } hide-my-email エイリアス"
       ],
@@ -6635,6 +6705,12 @@
       ],
       "${ size } storage": [
         "${ size } のストレージ"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - ${ DRIVE_APP_NAME }のための"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - 全ての${ BRAND_NAME }サービスのための"
       ],
       "1 TB secure storage": [
         "1 TBの安全なストレージ"
@@ -6719,6 +6795,9 @@
       ],
       "Custom snooze time": [
         "スヌーズ時間をカスタム"
+      ],
+      "Custom workspace branding": [
+        "カスタムワークスペースブランディング"
       ],
       "Data breach monitoring": [
         "情報漏洩のモニタリング"
@@ -6986,11 +7065,20 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "すべての ${ BRAND_NAME } アプリとそのプレミアム機能"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "ビジネス全体を保護する全ての${ BRAND_NAME }ビジネスアプリとプレミアム機能。"
+      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "包括的なプライバシーとセキュリティを提供する、すべての ${ BRAND_NAME } サービスが利用できるプランです。"
       ],
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "暗号化済みのメールとカレンダーで始めましょう"
+      ],
+      "Enhanced security and premium features for teams.": [
+        "チーム向けの強化されたセキュリティとプレミアム機能。"
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "無制限のユーザーに対する必須の保護と安全なコラボレーション."
@@ -7013,6 +7101,12 @@
       "Popular": [
         "最も人気"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "ビジネスの機密情報を保護して安全に共同作業"
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "家族を守るために、6 人のユーザー向けに${ PASS_SHORT_APP_NAME } Plusのすべてのプレミアム機能をご利用ください。"
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "すべての ${ BRAND_NAME } サービスを組み合わせて、ご家族のプライバシーを保護します。"
       ],
@@ -7033,6 +7127,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "2 人までの無制限のプライバシーとより大きなストレージ"
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "現在ご利用中のプランがキャンペーン価格でご利用いただけます。アカウントを削除すると、キャンペーン価格は適用されなくなります。"
@@ -7063,6 +7160,9 @@
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: エンドツーエンドの暗号化でスケジュールを保護します。 カスタム カレンダー、カレンダー共有などのサポートが含まれます。"
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }：暗号化されたクラウドストレージでファイルを保護。自動同期、暗号化ファイル共有などを含みます。"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: エンドツーエンド暗号化でメールを保護します。 カスタム電子メール ドメイン、15 個の電子メール アドレス、無制限の hide-my-email エイリアスなどのサポートが含まれます。"
@@ -7106,6 +7206,12 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "最大 ${ n } 個の電子メール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します。\n例: ショッピングアカウントのJohnShopper@${ domain }。"
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "エイリアスのカスタムドメイン、追加のメールボックス、エイリアスからメールを送信する機能など"
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "専用サーバーと専用IPアドレスをプライベートゲートウェイに追加することで、詳細なアクセス制御が可能になります"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "複数のサーバーを経由してインターネットトラフィックを送受信することで、高度なプライバシー上の脅威からあなたを保護します"
       ],
@@ -7114,6 +7220,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "家族、友人、同僚とカレンダーを簡単に共有できます。"
+      ],
+      "Email everyone in a group with a single email address": [
+        "一つのメールアドレスでグループ全員にメール"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "メールアドレスが存在しない、存在しなくなった、入力ミスがあった場合などでも、あなたのドメイン宛に送信されたすべてのメールを受信できます"
@@ -7124,6 +7233,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP サポートは ${ MAIL_APP_NAME } Bridge を経由したデスクトップアプリ (Outlook、メール (Apple)、Thunderbird) のみに制限されます。クラウドベースの IMAP 統合は現在サポートされていません。"
       ],
+      "Increase or reallocate storage for a user": [
+        "ユーザーのストレージを増加、または再割り当て"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "暗号化されたカレンダーで、自分自身や家族の予定を非公開にすることができます。"
       ],
@@ -7132,6 +7244,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "ラベルはメッセージを簡単に探したり、フィルターを適用できるようにするシンプルなタグです"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "${ PASS_APP_NAME } + SimpleLoginプレミアム機能への一生涯アクセス"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "フォルダーと同様に、保管庫はアイテムを整理するのに便利な方法です"
@@ -7151,6 +7266,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "完全なメッセージと連絡先の詳細を含む、非プライベート ユーザーの受信箱をユーザーと同じように表示するオプション"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "管理者がユーザーの追加と削除、${ BRAND_NAME }サービスへのアクセスの管理、その他のタスクを実行できる組織管理ツール。"
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "当社の堅牢なインフラストラクチャにより、必要なときにアカウントにアクセスできるようになります。"
       ],
@@ -7163,6 +7281,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "ロゴ、画像、ソーシャルメディアアイコン、連絡先詳細へのリンクなどを使用して電子メールの署名をパーソナライズします"
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "ユーザーが 20 名以上のお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME }カスタマー サポート チームから電話サポートを利用可能"
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } または第三者によるメッセージへのアクセスを防ぎます。 メッセージを読める方は送信者と対象の受信者しかありません。"
       ],
@@ -7171,6 +7292,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "有害な Web サイトから家族を守り、高速 VPN サーバーにアクセスしてお気に入りのコンテンツをストリーミングしましょう"
+      ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "エイリアス(メールをメインの受信トレイに転送するランダムに生成されたメール アドレス)を使用して、実際のメール アドレスが開示または漏洩しないように保護します。"
       ],
       "Provides the highest level of account security protection and specialist support": [
         "最高レベルのアカウントセキュリティ保護と専門家サポートを提供します。"
@@ -7190,8 +7314,14 @@
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "誰にでも(${ PASS_APP_NAME }を使っていない人にも)個人のアイテムを安全に共有"
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "電話番号、住所、誕生日、個人的なメモなどの連絡先の詳細を安全に保存します。 ゼロアクセス暗号化により、${ BRAND_NAME } であってもアクセスできなくなります。"
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "会議の参加者の空き状況を確認し、会議のスケジュール設定の時間を節約する"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "必要な数の連絡先グループを作成することで、大規模なグループにメールを迅速かつ簡単に送信できます (グループあたり最大 100 件の連絡先)。"
@@ -7219,6 +7349,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent などのファイル共有プロトコルに対応します"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "ビジネスのロゴをアップロードして、${ BRAND_NAME }のウェブアプリでのチーム体験をカスタマイズします"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "独自ドメインのメールアドレス (例: you@yourname.com) を使う"
@@ -7838,9 +7971,6 @@
       "Select billing country to pay": [
         "支払い請求先の国を選択してください"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ price } で自動的に更新されます。 いつでもキャンセルできます。"
-      ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
       ]
@@ -7979,8 +8109,14 @@
       "Select a reason": [
         "理由を選択"
       ],
+      "Select state": [
+        "状態の選択"
+      ],
       "Set date": [
         "日付を設定"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "${ BRAND_NAME }をより良くするためには何が必要だと思うか共有してください。"
       ],
       "Start typing an email address": [
         "電子メールアドレスを入力"
@@ -8118,6 +8254,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をお試しください"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Amazonでの買い物などに利用。"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"
@@ -8441,6 +8580,9 @@
       "/ month": [
         "/ 月"
       ],
+      "/month": [
+        "/ 月"
+      ],
       "1 year": [
         "1 年"
       ],
@@ -8547,6 +8689,11 @@
       ],
       "Sign in to your organization": [
         "組織にサインインする"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "サブスクリプションをキャンセルしています。お待ちください。"
       ]
     },
     "Status": {
@@ -9054,14 +9201,6 @@
         "割引率:"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "有効"
-      ],
-      "Expiring": [
-        "期限切れ"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 連絡先は同じようです"
@@ -9129,6 +9268,9 @@
       "Preferences saved": [
         "設定が保存されました"
       ],
+      "Problem reported": [
+        "問題が報告されました"
+      ],
       "Recovery has started": [
         "復元を開始しました"
       ],
@@ -9143,6 +9285,9 @@
       ],
       "Verification successful": [
         "検証に成功しました"
+      ],
+      "You have successfully canceled your subscription.": [
+        "サブスクリプションが正常にキャンセルされました。"
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
@@ -9159,6 +9304,9 @@
     "Suffix for price": {
       "per month": [
         "毎月"
+      ],
+      "per user per month": [
+        "ユーザー毎月額"
       ]
     },
     "summer2023: Tooltip": {
@@ -9290,6 +9438,9 @@
       ],
       "Active": [
         "転送中"
+      ],
+      "Add a custom logo": [
+        "カスタムロゴを追加"
       ],
       "Add contact group name": [
         "連絡先グループの名前を追加"
@@ -9501,6 +9652,9 @@
       "Enable drive search": [
         "ドライブ検索を有効にする"
       ],
+      "Enter 2FA code": [
+        "2要素認証コードを入力"
+      ],
       "Enter your password": [
         "パスワードを入力"
       ],
@@ -9617,6 +9771,9 @@
       ],
       "Number of items": [
         "アイテム数"
+      ],
+      "One email, many recipients": [
+        "一つのメールで、複数の宛先"
       ],
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
@@ -9852,6 +10009,9 @@
       "You have no folders yet": [
         "フォルダーがありません"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName }のフリートライアルは${ textDate }に終了します"
+      ],
       "Your 3 GB bonus": [
         "3 GB のボーナス"
       ],
@@ -9872,17 +10032,6 @@
       ],
       "You’ve got 5 GB of storage": [
         "5 GB のストレージを手に入れました"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "終了日"
-      ],
-      "Plan": [
-        "プラン"
-      ],
-      "Status": [
-        "ステータス"
       ]
     },
     "Today icon tooltip in mini calendar": {

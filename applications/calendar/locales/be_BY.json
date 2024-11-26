@@ -803,11 +803,6 @@
         "Яны змогуць праглядаць або рэдагаваць ваш каляндар"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Актываваць паўторна"
-      ]
-    },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
         "Абагуліць з карыстальнікамі ${ BRAND_NAME }"
@@ -980,18 +975,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } месяц",
-        "першыя ${ n } месяцы",
-        "першыя ${ n } месяцаў",
-        "першыя ${ n } месяцаў"
-      ],
-      "the first month": [
-        "першы месяц"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за ${ discountedMonths }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне са зніжаным коштам у памеры ${ nextPrice } за ${ nextMonths }. Скасаваць можна ў любы момант."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ nextPrice } за кожны месяц. Скасаваць можна ў любы момант."
       ]
@@ -1170,17 +1153,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяцы",
-        "${ n } месяцаў",
-        "${ n } месяцаў"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Аўтаматычнае абнаўленне па кошце ${ renewPrice } за перыяд часу ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2657,6 +2629,11 @@
         "Пратэрмінаваны рахунак"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скарыстайцеся памочнікам імпартавання Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
@@ -2744,11 +2721,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5598,11 +5570,6 @@
         "Націсніце, каб даведацца падрабязнасці"
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Вы можаце прадухіліць завяршэнне дзеяння падпіскі паўторна актываваўшы яе"
-      ]
-    },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
         "Выбрана ${ selectedFoldersCount } папка",
@@ -7302,14 +7269,6 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Атрымайце Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Пачатковы кошт ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -7322,6 +7281,14 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -8091,20 +8058,8 @@
       "Please select your billing state first.": [
         "Спачатку выберыце ваш штат выстаўлення рахунку."
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Падаўжаецца за ${ price }. Скасаваць можна ў любы час."
-      ],
       "Select billing country to pay": [
         "Выберыце краіну выстаўлення рахунку для аплаты"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months } месяцы. Скасаваць можна ў любы момант."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months }. Скасаваць можна ў любы момант."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за кожны месяц. Скасаваць можна ў любы момант."
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
@@ -9536,14 +9491,6 @@
         "Захаваць"
       ]
     },
-    "Subscription status": {
-      "Active": [
-        "Актыўна"
-      ],
-      "Expiring": [
-        "Тэрмін дзеяння"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } кантакт выглядае ідэнтычна.",
@@ -10382,17 +10329,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Выберыце лічбу"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Дата завяршэння"
-      ],
-      "Plan": [
-        "Тарыфны план"
-      ],
-      "Status": [
-        "Статус"
       ]
     },
     "Title; create calendar modal": {

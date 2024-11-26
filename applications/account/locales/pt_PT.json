@@ -247,6 +247,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmar a abertura da hiperligação ${ linkToShow }"
       ],
+      "Connect": [
+        "Conectar"
+      ],
       "Contact sales": [
         "Contacto de vendas"
       ],
@@ -796,11 +799,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar a página"
-      ],
       "refresh the page": [
         "actualizar a página"
+      ],
+      "Refresh the page": [
+        "Actualizar a página"
       ],
       "Reject": [
         "Rejeitar"
@@ -1140,6 +1143,9 @@
       ],
       "Upgrade now": [
         "Actualizar agora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Melhorar para ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Melhore para Business"
@@ -1538,15 +1544,6 @@
         "Garantia de devolução do seu dinheiro em até 30 dias"
       ]
     },
-    "bf2023: renew": {
-      "${ n } month": [
-        "${ n } mês",
-        "os primeiros ${ n } meses"
-      ],
-      "the first month": [
-        "o primeiro mês"
-      ]
-    },
     "bf2023: Title": {
       "Offer unavailable": [
         "Oferta indisponível"
@@ -1708,12 +1705,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "O espaço de armazenamento é partilhado entre todos os serviços ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } mês",
-        "${ n } meses"
       ]
     },
     "Billing cycle option": {
@@ -3351,6 +3342,9 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Parabéns! Ganhou um máximo de ${ rewardsLimit } meses gratuitos de ${ plusPlanName }."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Crie uma reunião Zoom e adicione detalhes de participação ao seu evento com um clique."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ative ${ PROTON_SENTINEL_NAME } para aceder a estas funcionalidades"
       ],
@@ -4072,6 +4066,9 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Erro ao obter sessões ativas. ${ refresh } ou tente novamente mais tarde."
+      ],
+      "Failed to load OAuth modal.": [
+        "Erro ao carregar a janela OAuth"
       ],
       "Failed to process the logo": [
         "Erro ao processar o logo"
@@ -6574,11 +6571,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimine quaisquer outros registos MX ou certifique-se que a prioridade do ${ MAIL_APP_NAME } é o número mais baixo."
@@ -7941,11 +7938,11 @@
       "User activated": [
         "O utilizador foi ativado."
       ],
-      "username": [
-        "nome de utilizador"
-      ],
       "Username": [
         "Nome de utilizador"
+      ],
+      "username": [
+        "nome de utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -10473,26 +10470,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -10520,6 +10497,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -11082,14 +11079,6 @@
         "O seu plano selecionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Apagar a conta?"
@@ -11108,6 +11097,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -14316,11 +14313,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -14711,6 +14708,9 @@
       ],
       "Get the apps": [
         "Obter as aplicações"
+      ],
+      "Get Zooming faster": [
+        "Obtenha Zoom mais rápido"
       ],
       "Gift": [
         "Presente"

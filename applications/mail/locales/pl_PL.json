@@ -378,6 +378,9 @@
       "Details": [
         "Szczegóły"
       ],
+      "Disable alias": [
+        "Wyłącz alias"
+      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -1428,11 +1431,6 @@
         "Szukaj wiadomości"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Reaktywuj"
-      ]
-    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } lub ${ importContact }."
@@ -1649,18 +1647,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } miesiąc",
-        "${ n } miesiące",
-        "${ n } miesięcy",
-        "pierwszych ${ n } miesięcy"
-      ],
-      "the first month": [
-        "pierwszy miesiąc"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ discountedPrice } ważna przez ${ discountedMonths }. Odnowienie nastąpi w cenie ${ nextPrice } za ${ nextMonths }. Możesz anulować w dowolnym momencie."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ nextPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ]
@@ -1844,17 +1830,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi usługami ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } miesiąc",
-        "${ n } miesiące",
-        "${ n } miesięcy",
-        "${ n } miesiąca"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Automatyczne odnowienie za ${ renewalLength } w kwocie ${ renewPrice }"
       ]
     },
     "Billing cycle option": {
@@ -7327,6 +7302,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
       ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Subskrypcja automatycznie odnawiana w okresach ${ cycle }-miesięcznych."
+      ],
       "Subscription auto-renews every month.": [
         "Subskrypcja odnowi się automatycznie co miesięc."
       ],
@@ -8034,11 +8012,6 @@
     "Info on errors": {
       "Click for details": [
         "Kliknij po szczegóły"
-      ]
-    },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Możesz zapobiec wygaśnięciu subskrypcji, reaktywując ją ponownie"
       ]
     },
     "Info: partial": {
@@ -10663,7 +10636,7 @@
         "Ochrona przed elementami śledzącymi"
       ],
       "Replay introduction": [
-        "Wprowadzenie do powtórki"
+        "Powtórz samouczek"
       ],
       "Skip": [
         "Pomiń"
@@ -10921,17 +10894,8 @@
       "Please select your billing state first.": [
         "Najpierw wybierz stan rozliczeniowy"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Odnowienie za ${ price }. Anuluj w dowolnym momencie."
-      ],
       "Select billing country to pay": [
         "Wybierz kraj"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ price } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
@@ -12035,9 +11999,6 @@
       ]
     },
     "Status": {
-      "This message is from a mailing list.": [
-        "Ta wiadomość pochodzi z listy mailingowej."
-      ],
       "Unsubscribed": [
         "Subskrypcja została anulowana"
       ]
@@ -12609,14 +12570,6 @@
     "Subscription saving": {
       "Save": [
         "Zaoszczędź"
-      ]
-    },
-    "Subscription status": {
-      "Active": [
-        "Aktywna"
-      ],
-      "Expiring": [
-        "Wygasająca"
       ]
     },
     "Success": {
@@ -13945,17 +13898,6 @@
       ],
       "Your free trial has ended": [
         "Darmowa wersja próbna zakończyła się"
-      ]
-    },
-    "Title subscription": {
-      "End date": [
-        "Data zakończenia"
-      ],
-      "Plan": [
-        "Plan"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

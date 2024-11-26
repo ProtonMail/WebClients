@@ -946,18 +946,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "первый ${ n } месяц",
-        "первые ${ n } месяца",
-        "первые ${ n } месяцев",
-        "первые ${ n } месяца"
-      ],
-      "the first month": [
-        "первый месяц"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Специальная цена в ${ discountedPrice } действует ${ discountedMonths }. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } на ${ nextMonths }. Отменить подписку можно в любой момент."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Специальная цена в ${ discountedPrice } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } каждый месяц. Отменить подписку можно в любой момент."
       ]
@@ -1146,17 +1134,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Обновляется автоматически за ${ renewPrice } на ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -3921,11 +3898,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Настройте внешний вид ${ BRAND_NAME } приложений."
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
@@ -4908,11 +4885,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "username": [
-        "имя пользователя"
-      ],
       "Username": [
         "Имя пользователя"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -7871,20 +7848,8 @@
       "Processing payment": [
         "Обработка платежа"
       ],
-      "Renews at ${ price }, cancel anytime.": [
-        "Затем стоимость подписки составит ${ price }. Отменить её можно в любое время."
-      ],
       "Select billing country to pay": [
         "Для оплаты, пожалуйста выберите страну"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Купон действителен при продлении на ${ couponRedemptions }. Затем он будет автоматически продлен по цене ${ price } на ${ months } месяцев. Вы можете отменить его в любое время."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Затем она будет автоматически продлена по цене ${ price } на ${ months }. Вы можете отменить подписку в любое время."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Специальная цена в ${ priceWithDiscount } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ price } каждый месяц. Отменить подписку можно в любой момент."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Транзакция успешно распознана. Остаток на счету будут добавлен на ваш счет как только транзакция будет полностью подтверждена."
@@ -10153,10 +10118,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
