@@ -78,23 +78,62 @@ describe('EditorController', () => {
       expect(() => controller.showEditorForTheFirstTime()).toThrow('Editor invoker not initialized')
     })
 
-    it('should not show editor if realtime is enabled but not ready to broadcast', () => {
-      sharedState.setProperty('realtimeEnabled', true)
+    it('should show editor when realtime is disabled', () => {
+      sharedState.setProperty('realtimeEnabled', false)
       sharedState.setProperty('realtimeReadyToBroadcast', false)
-
-      controller.showEditorForTheFirstTime()
-
-      expect(editorInvoker.showEditor).not.toHaveBeenCalled()
-    })
-
-    it('should show editor and perform opening ceremony', () => {
-      sharedState.setProperty('realtimeEnabled', true)
-      sharedState.setProperty('realtimeReadyToBroadcast', true)
+      sharedState.setProperty('realtimeConnectionTimedOut', false)
 
       controller.showEditorForTheFirstTime()
 
       expect(editorInvoker.showEditor).toHaveBeenCalled()
       expect(editorInvoker.performOpeningCeremony).toHaveBeenCalled()
+    })
+
+    it('should show editor when realtime is ready to broadcast', () => {
+      sharedState.setProperty('realtimeEnabled', true)
+      sharedState.setProperty('realtimeReadyToBroadcast', true)
+      sharedState.setProperty('realtimeConnectionTimedOut', false)
+
+      controller.showEditorForTheFirstTime()
+
+      expect(editorInvoker.showEditor).toHaveBeenCalled()
+      expect(editorInvoker.performOpeningCeremony).toHaveBeenCalled()
+    })
+
+    it('should show editor when realtime connection has timed out', () => {
+      sharedState.setProperty('realtimeEnabled', true)
+      sharedState.setProperty('realtimeReadyToBroadcast', false)
+      sharedState.setProperty('realtimeConnectionTimedOut', true)
+
+      controller.showEditorForTheFirstTime()
+
+      expect(editorInvoker.showEditor).toHaveBeenCalled()
+      expect(editorInvoker.performOpeningCeremony).toHaveBeenCalled()
+    })
+
+    it('should not show editor when realtime is enabled but not ready and not timed out', () => {
+      sharedState.setProperty('realtimeEnabled', true)
+      sharedState.setProperty('realtimeReadyToBroadcast', false)
+      sharedState.setProperty('realtimeConnectionTimedOut', false)
+
+      controller.showEditorForTheFirstTime()
+
+      expect(editorInvoker.showEditor).not.toHaveBeenCalled()
+      expect(editorInvoker.performOpeningCeremony).not.toHaveBeenCalled()
+    })
+
+    it('should emit EditorIsReadyToBeShown event when editor is shown', () => {
+      sharedState.setProperty('realtimeEnabled', false)
+      sharedState.setProperty('realtimeReadyToBroadcast', false)
+      sharedState.setProperty('realtimeConnectionTimedOut', false)
+      sharedState.emitEvent = jest.fn()
+
+      controller.showEditorForTheFirstTime()
+
+      expect(sharedState.emitEvent).toHaveBeenCalledWith({
+        name: 'EditorIsReadyToBeShown',
+        payload: undefined,
+      })
     })
   })
 
@@ -582,7 +621,7 @@ describe('EditorController', () => {
 
       controller.showEditorForTheFirstTime()
 
-      expect(logger.info).toHaveBeenCalledWith('Showing editor and allowing editing')
+      expect(logger.info).toHaveBeenCalledWith('Showing editor for the first time')
     })
   })
 

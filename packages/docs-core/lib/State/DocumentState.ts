@@ -15,10 +15,6 @@ import type { DecryptedNode } from '@proton/drive-store/lib'
 
 export type DocumentEvent =
   | {
-      name: 'RealtimeInitialConnectionTimedOut'
-      payload: undefined
-    }
-  | {
       name: 'RealtimeConnectionClosed'
       payload: ConnectionCloseReason
     }
@@ -95,6 +91,8 @@ export interface DocumentStateValues {
   realtimeEnabled: boolean
   /** Is set to true after the connection connects AND the server informs us its ready to receive updates */
   realtimeReadyToBroadcast: boolean
+  /** Is set to true if we are unable to form a connection with the RTS server in a reasonable time */
+  realtimeConnectionTimedOut: boolean
   realtimeStatus: 'connected' | 'connecting' | 'disconnected'
   realtimeIsExperiencingErroredSync: boolean
   realtimeIsLockedDueToSizeContraint: boolean
@@ -110,6 +108,7 @@ const DefaultValues: Pick<
   | 'editorHasRenderingIssue'
   | 'realtimeEnabled'
   | 'realtimeReadyToBroadcast'
+  | 'realtimeConnectionTimedOut'
   | 'realtimeStatus'
   | 'realtimeIsExperiencingErroredSync'
   | 'realtimeIsLockedDueToSizeContraint'
@@ -122,7 +121,7 @@ const DefaultValues: Pick<
   editorReady: false,
   editorHasRenderingIssue: false,
   realtimeEnabled: true,
-
+  realtimeConnectionTimedOut: false,
   realtimeReadyToBroadcast: false,
   realtimeStatus: 'disconnected',
   realtimeIsExperiencingErroredSync: false,
