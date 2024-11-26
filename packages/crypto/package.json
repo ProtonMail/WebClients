@@ -13,7 +13,7 @@
         "test:ci": "yarn test"
     },
     "dependencies": {
-        "comlink": "^4.4.1",
+        "comlink": "^4.4.2",
         "pmcrypto": "npm:@protontech/pmcrypto@^8.0.1"
     },
     "devDependencies": {
@@ -32,9 +32,9 @@
         "karma-webkit-launcher": "^2.6.0",
         "karma-webpack": "^5.0.1",
         "playwright": "^1.49.0",
-        "prettier": "^3.3.3",
+        "prettier": "^3.4.1",
         "ts-loader": "^9.5.1",
-        "typescript": "^5.6.3",
+        "typescript": "^5.7.2",
         "webpack": "^5.96.1",
         "webpack-cli": "^5.1.4"
     }
