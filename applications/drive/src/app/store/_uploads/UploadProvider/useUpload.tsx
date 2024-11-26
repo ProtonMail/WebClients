@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { useGetUser, useUser } from '@proton/account/user/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
 import { useEventManager, useNotifications, useOnline, usePreventLeave } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
@@ -14,6 +14,7 @@ import { TransferCancel, TransferState } from '../../../components/TransferManag
 import type { FileThresholdModalType } from '../../../components/modals/FileThresholdModal';
 import { useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
 import { sendErrorReport } from '../../../utils/errorHandling';
+import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import {
     isPhotosDisabledUploadError,
     isTransferCancelError,
@@ -23,13 +24,17 @@ import {
     isTransferRetry,
     isTransferSkipError,
 } from '../../../utils/transfer';
+import { type LogCallback } from '../../_downloads';
 import { useDirectSharingInfo } from '../../_shares/useDirectSharingInfo';
 import { useTransferLog } from '../../_transfer';
+import { useIsPaid } from '../../_user';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
-import type { UploadFileItem, UploadFileList } from '../interface';
+import type { UploadFileControls, UploadFileItem, UploadFileList, UploadFolderControls } from '../interface';
 import type { UploadModalContainer } from './UploadModalContainer';
 import type { UploadProviderState } from './UploadProviderState';
-import type { UpdateFilter } from './interface';
+import type { ConflictStrategyHandler, UpdateFilter } from './interface';
+import usePublicUploadFile from './usePublicUploadFile';
+import usePublicUploadFolder from './usePublicUploadFolder';
 import useUploadConflict from './useUploadConflict';
 import useUploadControl from './useUploadControl';
 import useUploadFile from './useUploadFile';
@@ -37,16 +42,38 @@ import useUploadFolder from './useUploadFolder';
 import useUploadMetrics, { getFailedUploadMetadata } from './useUploadMetrics';
 import useUploadQueue, { convertFilterToFunction } from './useUploadQueue';
 
-export default function useUpload(): [UploadProviderState, UploadModalContainer] {
+type InitFileUpload = (
+    token: string,
+    parentLinkId: string,
+    file: File,
+    getFileConflictStrategy: ConflictStrategyHandler,
+    log: LogCallback,
+    isForPhotos?: boolean
+) => UploadFileControls;
+
+type InitFolderUpload = (
+    shareId: string,
+    parentId: string,
+    folderName: string,
+    modificationTime: Date | undefined,
+    getFolderConflictStrategy: ConflictStrategyHandler,
+    log: LogCallback
+) => UploadFolderControls;
+
+function useBaseUpload(
+    initFileUpload: InitFileUpload,
+    initFolderUpload: InitFolderUpload,
+    call?: () => Promise<void>
+): [UploadProviderState, UploadModalContainer] {
     const onlineStatus = useOnline();
     const getUser = useGetUser();
-    const [user] = useUser();
-    const { call } = useEventManager();
+    const isPaidUser = useIsPaid();
+    const isPublicContext = getIsPublicContext();
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
     const { isSharedWithMe: getIsSharedWithMe } = useDirectSharingInfo();
 
-    const metrics = useUploadMetrics(user.isPaid);
+    const metrics = useUploadMetrics(isPaidUser);
     const { log, downloadLogs, clearLogs } = useTransferLog('upload');
     const queue = useUploadQueue((id, message) => log(id, `queue: ${message}`));
     const control = useUploadControl(queue.fileUploads, queue.updateWithCallback, queue.remove, queue.clear);
@@ -57,8 +84,6 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
         queue.updateWithData,
         control.cancelUploads
     );
-    const { initFileUpload } = useUploadFile();
-    const { initFolderUpload } = useUploadFolder();
 
     const [fileThresholdModal, showFileThresholdModal] = useFileThresholdModal();
 
@@ -69,7 +94,14 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
 
     const checkHasEnoughSpace = async (totalFileListSize: number) => {
         const remaining = control.calculateRemainingUploadBytes();
-        await call(); // Process events to get updated UsedSpace.
+        // No event on public page
+        if (call) {
+            await call(); // Process events to get updated UsedSpace.
+        }
+        // Return true
+        if (isPublicContext) {
+            return true;
+        }
         const user = await getUser();
         const space = getAppSpace(getSpace(user), APPS.PROTONDRIVE);
         const hasEnoughSpace = space.maxSpace > space.usedSpace + remaining + totalFileListSize;
@@ -98,7 +130,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
     ) => {
         const total = getTotalFileList(list);
         // We check if item is upload into a shared with me share as we don't check for space on external volumes
-        const isSharedWithMe = await getIsSharedWithMe(new AbortController().signal, shareId);
+        const isSharedWithMe = !isPublicContext && (await getIsSharedWithMe(new AbortController().signal, shareId));
         const hasEnoughSpace = isSharedWithMe || (await checkHasEnoughSpace(total));
         if (!hasEnoughSpace) {
             showNotEnoughSpaceNotification(total);
@@ -228,7 +260,9 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
             nextFileUpload.parentId,
             nextFileUpload.file,
             getFileConflictHandler(nextFileUpload.id),
-            (message: string) => log(nextFileUpload.id, `fileUploader: ${message}`),
+            (message: string) => {
+                log(nextFileUpload.id, `fileUploader: ${message}`);
+            },
             nextFileUpload.isForPhotos
         );
         control.add(nextFileUpload.id, controls);
@@ -326,4 +360,19 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
             conflictModal,
         },
     ];
+}
+
+export function usePublicUpload(): [UploadProviderState, UploadModalContainer] {
+    const { initPublicFileUpload } = usePublicUploadFile();
+    const { initPublicFolderUpload } = usePublicUploadFolder();
+    const useUploadReturn = useBaseUpload(initPublicFileUpload, initPublicFolderUpload);
+    return useUploadReturn;
+}
+
+export function useUpload(): [UploadProviderState, UploadModalContainer] {
+    const { initFileUpload } = useUploadFile();
+    const { initFolderUpload } = useUploadFolder();
+    const { call } = useEventManager();
+    const useUploadReturn = useBaseUpload(initFileUpload, initFolderUpload, call);
+    return useUploadReturn;
 }

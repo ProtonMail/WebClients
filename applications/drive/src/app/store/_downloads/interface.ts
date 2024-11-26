@@ -115,6 +115,7 @@ export type DecryptFileKeys = {
     privateKey: PrivateKeyReference;
     sessionKeys?: SessionKey;
     addressPublicKeys?: PublicKeyReference[];
+    isAnonymous?: boolean;
 };
 
 export type InitDownloadCallback = (

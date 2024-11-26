@@ -20,7 +20,7 @@ import type { Media, ThumbnailInfo } from './media';
 
 type GenerateKeysMessage = {
     command: 'generate_keys';
-    addressPrivateKey: Uint8Array;
+    addressPrivateKey: Uint8Array | undefined;
     parentPrivateKey: Uint8Array;
     serverTime: Date;
 };
@@ -32,7 +32,7 @@ type StartMessage = {
     isForPhotos: boolean;
     thumbnails?: ThumbnailInfo[];
     media?: Media;
-    addressPrivateKey: Uint8Array;
+    addressPrivateKey: Uint8Array | undefined;
     addressEmail: string;
     privateKey: Uint8Array;
     sessionKey: SessionKey;
@@ -71,7 +71,7 @@ type WorkerControllerEvent = {
  * web worker to messages from the main thread defined in WorkerControllerEvent.
  */
 interface WorkerHandlers {
-    generateKeys: (addressPrivateKey: PrivateKeyReference, parentPrivateKey: PrivateKeyReference) => void;
+    generateKeys: (addressPrivateKey: PrivateKeyReference | undefined, parentPrivateKey: PrivateKeyReference) => void;
     start: (
         file: File,
         {
@@ -85,7 +85,7 @@ interface WorkerHandlers {
             thumbnails?: ThumbnailInfo[];
             media?: Media;
         },
-        addressPrivateKey: PrivateKeyReference,
+        addressPrivateKey: PrivateKeyReference | undefined,
         addressEmail: string,
         privateKey: PrivateKeyReference,
         sessionKey: SessionKey,
@@ -241,11 +241,13 @@ export class UploadWorker {
 
                         // align serverTime in worker with the main thread (received from API)
                         updateServerTime(data.serverTime);
+                        const addressPrivateKey = data.addressPrivateKey
+                            ? await CryptoProxy.importPrivateKey({
+                                  binaryKey: data.addressPrivateKey,
+                                  passphrase: null,
+                              })
+                            : undefined;
 
-                        const addressPrivateKey = await CryptoProxy.importPrivateKey({
-                            binaryKey: data.addressPrivateKey,
-                            passphrase: null,
-                        });
                         const parentPrivateKey = await CryptoProxy.importPrivateKey({
                             binaryKey: data.parentPrivateKey,
                             passphrase: null,
@@ -257,10 +259,12 @@ export class UploadWorker {
                     break;
                 case 'start':
                     (async (data) => {
-                        const addressPrivateKey = await CryptoProxy.importPrivateKey({
-                            binaryKey: data.addressPrivateKey,
-                            passphrase: null,
-                        });
+                        const addressPrivateKey = data.addressPrivateKey
+                            ? await CryptoProxy.importPrivateKey({
+                                  binaryKey: data.addressPrivateKey,
+                                  passphrase: null,
+                              })
+                            : undefined;
                         const privateKey = await CryptoProxy.importPrivateKey({
                             binaryKey: data.privateKey,
                             passphrase: null,
@@ -578,14 +582,16 @@ export class UploadWorkerController {
         this.onCancel();
     }
 
-    async postGenerateKeys(addressPrivateKey: PrivateKeyReference, parentPrivateKey: PrivateKeyReference) {
+    async postGenerateKeys(addressPrivateKey: PrivateKeyReference | undefined, parentPrivateKey: PrivateKeyReference) {
         this.worker.postMessage({
             command: 'generate_keys',
-            addressPrivateKey: await CryptoProxy.exportPrivateKey({
-                privateKey: addressPrivateKey,
-                passphrase: null,
-                format: 'binary',
-            }),
+            addressPrivateKey: addressPrivateKey
+                ? await CryptoProxy.exportPrivateKey({
+                      privateKey: addressPrivateKey,
+                      passphrase: null,
+                      format: 'binary',
+                  })
+                : undefined,
             parentPrivateKey: await CryptoProxy.exportPrivateKey({
                 privateKey: parentPrivateKey,
                 passphrase: null,
@@ -608,7 +614,7 @@ export class UploadWorkerController {
             thumbnails?: ThumbnailInfo[];
             media?: Media;
         },
-        addressPrivateKey: PrivateKeyReference,
+        addressPrivateKey: PrivateKeyReference | undefined,
         addressEmail: string,
         privateKey: PrivateKeyReference,
         sessionKey: SessionKey,
@@ -622,11 +628,13 @@ export class UploadWorkerController {
             isForPhotos: isForPhotos,
             thumbnails,
             media,
-            addressPrivateKey: await CryptoProxy.exportPrivateKey({
-                privateKey: addressPrivateKey,
-                passphrase: null,
-                format: 'binary',
-            }),
+            addressPrivateKey: addressPrivateKey
+                ? await CryptoProxy.exportPrivateKey({
+                      privateKey: addressPrivateKey,
+                      passphrase: null,
+                      format: 'binary',
+                  })
+                : undefined,
             addressEmail,
             privateKey: await CryptoProxy.exportPrivateKey({
                 privateKey: privateKey,
