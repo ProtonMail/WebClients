@@ -5,7 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, Href, InlineLinkButton, Vr } from '@proton/atoms';
-import type { IconName} from '@proton/components';
+import type { IconName } from '@proton/components';
 import { SkeletonLoader } from '@proton/components';
 import {
     CurrencySelector,
@@ -1243,11 +1243,7 @@ const Step1 = ({
                                 measure={measure}
                                 cta={cta}
                                 terms={termsAndConditions}
-                                key={
-                                    model.loadingDependencies
-                                        ? 'init'
-                                        : model.session?.resumedSessionResult.UID || 'free'
-                                }
+                                key={model.session?.resumedSessionResult.UID || 'free'}
                                 defaultMethod={model.session?.defaultPaymentMethod}
                                 accountStepPaymentRef={accountStepPaymentRef}
                                 api={normalApi}

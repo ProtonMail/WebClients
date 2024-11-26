@@ -25,7 +25,7 @@ import { usePaymentsTelemetry } from '@proton/components/payments/client-extensi
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
-import type { FullPlansMap, PaymentMethodFlows, PaymentsApi } from '@proton/payments';
+import type { FullPlansMap, PaymentMethodFlows, PaymentMethodStatusExtended, PaymentsApi } from '@proton/payments';
 import {
     type Currency,
     DEFAULT_CURRENCY,
@@ -71,7 +71,7 @@ import mailReferPage from '../../pages/refer-a-friend';
 import mailTrialPage from '../../pages/trial';
 import { PublicThemeProvider, getPublicTheme } from '../containers/PublicThemeProvider';
 import type { Paths } from '../content/helper';
-import { isMailReferAFriendSignup, isMailTrialSignup } from '../signup/helper';
+import { getOptimisticDomains, isMailReferAFriendSignup, isMailTrialSignup } from '../signup/helper';
 import type {
     InviteData,
     SessionData,
@@ -309,8 +309,21 @@ const SingleSignupContainerV2 = ({
             },
         };
 
+        // If there's no sessions available, we optimistically enable Card and Paypal payment methods to true. This
+        // speeds up the chargebee iframe loading
+        const paymentMethodStatusExtended: PaymentMethodStatusExtended = {
+            ...defaultSignupModel.paymentMethodStatusExtended,
+            VendorStates: {
+                ...defaultSignupModel.paymentMethodStatusExtended.VendorStates,
+                Card: true,
+                Paypal: true,
+            },
+        };
+
         return {
             ...defaultSignupModel,
+            paymentMethodStatusExtended: paymentMethodStatusExtended,
+            domains: getOptimisticDomains(),
             plans,
             plansMap,
             planParameters,
