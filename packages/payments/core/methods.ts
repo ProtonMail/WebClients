@@ -85,6 +85,10 @@ export class PaymentMethods {
         return this._statusExtended;
     }
 
+    public set statusExtended(value: PaymentMethodStatusExtended) {
+        this._statusExtended = value;
+    }
+
     public paymentMethods: SavedPaymentMethod[];
 
     public chargebeeEnabled: ChargebeeEnabled;
