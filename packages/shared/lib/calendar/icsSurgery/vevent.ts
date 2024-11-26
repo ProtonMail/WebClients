@@ -598,18 +598,16 @@ export const getSupportedEvent = ({
             }
         }
 
-        // Zoom integration specific surgery
-        if (xConferenceId) {
-            // Needed to interpret non RFC-compliant Yahoo REPLY ics's
-            validated['x-pm-conference-id'] = { ...xConferenceId };
-        }
-        if (xConferenceUrl) {
-            // Needed to interpret non RFC-compliant Yahoo REPLY ics's
-            validated['x-pm-conference-url'] = { ...xConferenceUrl };
-        }
-
         // invite-specific surgery
         if (isInvitation) {
+            // Zoom integration specific surgery
+            if (xConferenceId) {
+                validated['x-pm-conference-id'] = { ...xConferenceId };
+            }
+            if (xConferenceUrl) {
+                validated['x-pm-conference-url'] = { ...xConferenceUrl };
+            }
+
             if (sharedSessionKey) {
                 validated['x-pm-session-key'] = { ...sharedSessionKey };
             }
