@@ -8,9 +8,10 @@ import { useUser } from '@proton/account/user/hooks';
 import Badge from '@proton/components/components/badge/Badge';
 import Info from '@proton/components/components/link/Info';
 import useConfig from '@proton/components/hooks/useConfig';
+import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { type MethodsHook } from '@proton/components/payments/react-extensions';
 import type { FullPlansMap, PaymentMethodStatusExtended, PlanIDs } from '@proton/payments';
-import { type Currency, PLANS, getAvailableCurrencies } from '@proton/payments';
+import { type Currency, PLANS } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
@@ -72,6 +73,7 @@ export const useAvailableCurrenciesForPlan = (plan: Plan | undefined, subscripti
     const [paymentStatus] = usePaymentStatus();
     const [plansResult] = usePlans();
     const plans: Plan[] = plansResult?.plans ?? [];
+    const { getAvailableCurrencies } = useCurrencies();
 
     return getAvailableCurrencies({
         status: paymentStatus,
