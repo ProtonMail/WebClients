@@ -1133,9 +1133,19 @@ const Step1 = ({
                                                             {hasSelectedFree && (
                                                                 <div className="mb-4">
                                                                     <Button
+                                                                        {...(() => {
+                                                                            if (loadingSignup || checkingTrial) {
+                                                                                return { loading: true };
+                                                                            }
+                                                                            if (disableInitialFormSubmit) {
+                                                                                return {
+                                                                                    disabled: true,
+                                                                                    noDisabledStyles: true,
+                                                                                };
+                                                                            }
+                                                                        })()}
                                                                         type="submit"
                                                                         size="large"
-                                                                        loading={loadingSignup || checkingTrial}
                                                                         color="norm"
                                                                         className="block mx-auto"
                                                                         pill
