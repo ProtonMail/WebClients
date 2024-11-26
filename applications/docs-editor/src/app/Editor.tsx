@@ -150,7 +150,10 @@ export function Editor({
       }}
     >
       {hidden && (
-        <div className="bg-norm absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4"></div>
+        <div
+          className="bg-norm absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4"
+          data-testid="editor-curtain"
+        ></div>
       )}
       <SafeLexicalComposer initialConfig={BuildInitialEditorConfig({ onError: onEditorError })}>
         <KeyboardShortcutsPlugin />
