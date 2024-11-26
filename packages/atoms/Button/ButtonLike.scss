@@ -82,7 +82,7 @@
 		pointer-events: none;
 		background-color: var(--button-hover-background-color, transparent);
 
-		&:not([aria-busy='true']) {
+		&:not([aria-busy='true'], .no-disabled-styles) {
 			border-color: transparent;
 			background-color: var(--interaction-weak, transparent);
 			color: var(--text-weak, inherit);
@@ -172,7 +172,7 @@
 	&.is-disabled {
 		pointer-events: none;
 
-		&:not([aria-busy='true']) {
+		&:not([aria-busy='true'], .no-disabled-styles) {
 			color: var(--text-weak, inherit);
 			opacity: 0.5;
 		}
