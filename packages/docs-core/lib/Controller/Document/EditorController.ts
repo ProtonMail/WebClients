@@ -39,7 +39,13 @@ export class EditorController implements EditorControllerInterface {
       }
     })
 
-    documentState.subscribeToProperty('baseCommit', (value) => {
+    documentState.subscribeToProperty('realtimeConnectionTimedOut', (value) => {
+      if (this.editorInvoker && value) {
+        this.showEditorForTheFirstTime()
+      }
+    })
+
+    documentState.subscribeToProperty('baseCommit', (_value) => {
       this.sendBaseCommitToEditor()
     })
 
@@ -124,14 +130,21 @@ export class EditorController implements EditorControllerInterface {
       throw new Error('Editor invoker not initialized')
     }
 
-    if (
-      this.documentState.getProperty('realtimeEnabled') &&
-      !this.documentState.getProperty('realtimeReadyToBroadcast')
-    ) {
+    const realtimeEnabled = this.documentState.getProperty('realtimeEnabled')
+    const realtimeReadyToBroadcast = this.documentState.getProperty('realtimeReadyToBroadcast')
+    const realtimeConnectionTimedOut = this.documentState.getProperty('realtimeConnectionTimedOut')
+    const realtimeIsDoneLoading = realtimeReadyToBroadcast || realtimeConnectionTimedOut
+
+    if (realtimeEnabled && !realtimeIsDoneLoading) {
+      this.logger.info('Not showing editor for the first time due to RTS status', {
+        realtimeEnabled,
+        realtimeReadyToBroadcast,
+        realtimeConnectionTimedOut,
+      })
       return
     }
 
-    this.logger.info('Showing editor and allowing editing')
+    this.logger.info('Showing editor for the first time')
 
     void this.editorInvoker.showEditor()
     void this.editorInvoker.performOpeningCeremony()
