@@ -1,7 +1,7 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { type DomainFormValues } from '@proton/pass/components/Settings/Aliases/DomainAddModal';
+import type { DomainFormValues } from '@proton/pass/types/forms';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { validateDomain } from '@proton/shared/lib/helpers/email';
 

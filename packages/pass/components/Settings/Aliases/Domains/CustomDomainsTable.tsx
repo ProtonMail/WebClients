@@ -1,33 +1,22 @@
 import { type FC } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Badge, Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from '@proton/components/index';
+import { Badge, Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { selectUserPlan } from '@proton/pass/store/selectors';
 import type { CustomDomainOutput } from '@proton/pass/types';
 
-type Props = {
-    domains: CustomDomainOutput[];
-    openModalDNS: (domain: CustomDomainOutput) => void;
-    openModalInfo: (domain: CustomDomainOutput) => void;
-    handleRemoveDomainClick: (domain: CustomDomainOutput) => void;
-};
+import { useAliasDomains } from './DomainsProvider';
 
 const getDomainStatusLabel = ({ OwnershipVerified, MxVerified }: CustomDomainOutput) => {
-    if (!OwnershipVerified) {
-        return c('Title').t`Unverified`;
-    }
-    if (!MxVerified) {
-        return c('Info').t`Unconfigured`;
-    }
+    if (!OwnershipVerified) return c('Title').t`Unverified`;
+    if (!MxVerified) return c('Info').t`Unconfigured`;
     return null;
 };
 
-export const DomainsTable: FC<Props> = ({ domains, handleRemoveDomainClick, openModalDNS, openModalInfo }) => {
-    const canManageAlias = useSelector(selectUserPlan)?.ManageAlias;
+export const CustomDomainsTable: FC = () => {
+    const { canManage, customDomains, setAction } = useAliasDomains();
 
     return (
         <>
@@ -41,7 +30,7 @@ export const DomainsTable: FC<Props> = ({ domains, handleRemoveDomainClick, open
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {domains.map((domain) => {
+                    {customDomains.map((domain) => {
                         const statusLabel = getDomainStatusLabel(domain);
                         return (
                             <TableRow key={domain.ID}>
@@ -58,19 +47,19 @@ export const DomainsTable: FC<Props> = ({ domains, handleRemoveDomainClick, open
                                             className="button-xs ui-purple"
                                             pill={false}
                                             originalPlacement="bottom-end"
-                                            disabled={!canManageAlias}
+                                            disabled={!canManage}
                                         >
                                             <DropdownMenuButton
                                                 label={c('Action').t`Check settings`}
-                                                onClick={() => openModalInfo(domain)}
+                                                onClick={() => setAction({ type: 'info', domainID: domain.ID })}
                                             />
                                             <DropdownMenuButton
                                                 label={c('Action').t`Check DNS`}
-                                                onClick={() => openModalDNS(domain)}
+                                                onClick={() => setAction({ type: 'dns', domainID: domain.ID })}
                                             />
                                             <DropdownMenuButton
                                                 label={c('Action').t`Delete`}
-                                                onClick={() => handleRemoveDomainClick(domain)}
+                                                onClick={() => setAction({ type: 'delete', domainID: domain.ID })}
                                             />
                                         </QuickActionsDropdown>
                                     </div>
