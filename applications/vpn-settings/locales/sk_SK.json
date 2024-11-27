@@ -106,6 +106,9 @@
       "Change": [
         "Zmeniť"
       ],
+      "Change configuration": [
+        "Zmeniť konfiguráciu"
+      ],
       "Change keys": [
         "Zmeniť kľúče"
       ],
@@ -400,6 +403,9 @@
       "Next month": [
         "Budúci mesiac"
       ],
+      "Next page": [
+        "Ďalšia strana"
+      ],
       "OK": [
         "OK"
       ],
@@ -435,6 +441,9 @@
       ],
       "Previous month": [
         "Predchádzajúci mesiac"
+      ],
+      "Previous page": [
+        "Predchádzajúca strana"
       ],
       "Recover data": [
         "Obnoviť dáta"
@@ -3771,6 +3780,9 @@
       "All members have been added.": [
         "Všetci členovia boli pridaní"
       ],
+      "All users": [
+        "Všetci používatelia"
+      ],
       "All your changes will be lost.": [
         "Všetky vaše zmeny budú stratené."
       ],
@@ -3882,6 +3894,12 @@
       "Connection data will be available in around 1 hour.": [
         "Údaje o pripojení budú k dispozícii približne o 1 hodinu."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Pokračujte pre povolenie **${ affiliationsText }** z **${ organizationValue.Name }** na pripojenie k vašej organizácii ${ BRAND_NAME }."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Pokračujte v pripojení **${ organizationValue.Name }** s vašou organizáciou ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Pokračovať ako ${ freeName }"
       ],
@@ -3939,11 +3957,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prispôsobte si vzhľad a štýl aplikácií ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -4028,6 +4046,9 @@
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
+      ],
+      "EduGain configuration saved": [
+        "Konfigurácia eduGain uložená"
       ],
       "email": [
         "email"
@@ -4356,6 +4377,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
       ],
+      "Loading eduGAIN data...": [
+        "Načítanie údajov eduGAIN..."
+      ],
       "Loading gateways monitoring current status.": [
         "Načítanie brán sledujúcich aktuálny stav."
       ],
@@ -4424,6 +4448,9 @@
       ],
       "No Gateways yet": [
         "Zatiaľ žiadne brány"
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Žiadne organizácie s povolenou funkciou **eduGAIN** pre ** ${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
@@ -4650,8 +4677,17 @@
       "Securing your account": [
         "Zabezpečujeme váš účet"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Vyberte organizáciu s povolenou funkciou **eduGAIN** pre **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Vyberte jednu alebo viacero používateľských príslušností"
+      ],
       "Select recently used servers": [
         "Výber nedávno použitých serverov"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Vyberte príslušnosť používateľov z **${ organizationValue.Name }** (${ organizationValue.EntityId }), ktorým chcete povoliť vstup do vašej organizácie ${ BRAND_NAME }:"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Posielajte emaily, aby ste povzbudili svojich členov k ochrane ich účtov pomocou 2FA."
@@ -4809,6 +4845,9 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Táto správa sa nedostane k tímu podpory, ak máte problém s našou službou alebo potrebujete ďalšie kroky z našej strany ${ supportLink }."
       ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Táto organizácia je povolená pomocou **eduGAIN** pre **${ domain.DomainName }**."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento užívateľ je aktuálne zodpovedný za platby vo vašej organizácii. Znížením úrovne tohto užívateľa sa stanete zodpovedným za platby vo vašej organizácii práve vy."
       ],
@@ -4962,11 +5001,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "Username": [
-        "Používateľské meno"
-      ],
       "username": [
         "používateľské meno"
+      ],
+      "Username": [
+        "Používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -5657,6 +5696,9 @@
       "Enter the code displayed on your TV": [
         "Zadajte kód zobrazený na vašej TV"
       ],
+      "Entity ID": [
+        "ID entity"
+      ],
       "Event": [
         "Udalosť"
       ],
@@ -5783,6 +5825,9 @@
       "Organization password": [
         "Heslo organizácie"
       ],
+      "Other": [
+        "Iné"
+      ],
       "Other amount": [
         "Iná suma"
       ],
@@ -5906,6 +5951,9 @@
       "User": [
         "Používateľ"
       ],
+      "User affiliations": [
+        "Príslušnosť používateľov"
+      ],
       "User's new password": [
         "Nové heslo používateľa"
       ],
@@ -6004,6 +6052,11 @@
     "Label, credit card": {
       "ZIP code": [
         "PSČ"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Na začiatok vyberte poskytovateľa identity"
       ]
     },
     "Link": {
@@ -10340,10 +10393,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -10363,6 +10416,9 @@
       ],
       "Change second password": [
         "Zmeniť druhé heslo"
+      ],
+      "Choose user affiliations": [
+        "Vyberte príslušnosť používateľa"
       ],
       "Click a value in the table to use it as filter": [
         "Kliknutím na hodnotu v tabuľke ju použijete ako filter."
@@ -10384,6 +10440,9 @@
       ],
       "Confirm phone number": [
         "Potvrdenie telefónneho čísla"
+      ],
+      "Connect organization": [
+        "Pripojiť organizáciu"
       ],
       "Contact us": [
         "Kontaktujte nás"
@@ -10978,6 +11037,9 @@
       "Device information such as operating system": [
         "Informácie o zariadení, ako je operačný systém"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Zobrazovaný názov entity v databáze eduGAIN"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adresa URL koncového bodu od poskytovateľa identity (napr. https://idp.example.com/sso/saml)"
       ],
@@ -10998,6 +11060,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Zadajte doménu, ktorá sa môže overovať pomocou SAML SSO"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Zadajte používateľov entity eduGAIN, ktorí sa môžu overovať pomocou SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nový cyklus predplatného začína ${ formattedTime }"

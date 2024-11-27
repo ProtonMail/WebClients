@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -205,6 +205,9 @@
       "Change": [
         "Schimbare"
       ],
+      "Change configuration": [
+        "Modificare configurație"
+      ],
       "Change keys": [
         "Modificare cheie"
       ],
@@ -258,6 +261,9 @@
       ],
       "Connect": [
         "Conectare"
+      ],
+      "Connected": [
+        "Conectat"
       ],
       "Contact sales": [
         "Contactare serviciu comercial"
@@ -748,6 +754,9 @@
       "Next month": [
         "Luna viitoare"
       ],
+      "Next page": [
+        "Pagina următoare"
+      ],
       "No": [
         "Nu"
       ],
@@ -795,6 +804,9 @@
       ],
       "Previous month": [
         "Luna trecută"
+      ],
+      "Previous page": [
+        "Pagina anterioară"
       ],
       "Quit": [
         "Ieșire"
@@ -1843,6 +1855,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
+      ]
+    },
+    "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewLength } lună.",
+        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewLength } luni.",
+        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewLength } de luni."
       ]
     },
     "Billing cycle option": {
@@ -6993,6 +7012,9 @@
       "All members have been added.": [
         "Au fost adăugați toți membrii."
       ],
+      "All users": [
+        "Toți utilizatorii"
+      ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
       ],
@@ -7223,6 +7245,12 @@
       "Connection data will be available in around 1 hour.": [
         "Datele de conectare vor fi disponibile peste aproximativ o oră."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Continuați să permiteți ca **${ affiliationsText }** din **${ organizationValue.Name }** să vi se alăture organizației din ${ BRAND_NAME }."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Continuați să conectați **${ organizationValue.Name }** cu organizația din ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Continuare cu ${ freeName }"
       ],
@@ -7442,6 +7470,9 @@
       ],
       "Edit link": [
         "Editare legătură web"
+      ],
+      "EduGain configuration saved": [
+        "Configurația eduGAIN s-a salvat."
       ],
       "email": [
         "e-mail"
@@ -7960,6 +7991,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de programări Calendly într-o filă nouă."
       ],
+      "Loading eduGAIN data...": [
+        "Se încarcă datele eduGain..."
+      ],
       "Loading gateways monitoring current status.": [
         "Se încarcă starea curentă de monitorizare a porților de acces."
       ],
@@ -8076,6 +8110,9 @@
       ],
       "No logs yet.": [
         "Încă nu sunt jurnale."
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Nu există organizații activate cu **eduGAIN** pentru **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Momentan nu este necesară nicio plată."
@@ -8423,8 +8460,17 @@
       "Select a service provider to start": [
         "Selectați un furnizor de servicii pentru a începe"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Selectați o organizație activată cu **eduGAIN** pentru **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Selectați una sau mai multe afilieri pentru utilizatori."
+      ],
       "Select recently used servers": [
         "Selectare servere recent utilizate"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Selectați afilierile utilizatorilor din **${ organizationValue.Name }** (${ organizationValue.EntityId }) pe care doriți să le permiteți în organizația proprie din ${ BRAND_NAME }:"
       ],
       "Select what you want to import.": [
         "Selectați ce doriți să importați."
@@ -8700,6 +8746,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Acest mesaj nu va ajunge la echipa de asistență. Dacă aveți o problemă cu serviciul nostru sau aveți nevoie de acțiuni suplimentare din partea noastră ${ supportLink }."
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Această organizație este activată cu **eduGAIN** pentru **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Această legătură web spre promoție a expirat."
@@ -10388,6 +10437,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduceți parola pentru cheia cu amprenta: ${ fingerprintCode }"
       ],
+      "Entity ID": [
+        "ID entitate"
+      ],
       "Event": [
         "Eveniment"
       ],
@@ -10649,6 +10701,9 @@
       "Organization password": [
         "Parolă organizație"
       ],
+      "Other": [
+        "Alt motiv"
+      ],
       "Other amount": [
         "Altă sumă"
       ],
@@ -10903,6 +10958,9 @@
       "User": [
         "Utilizator"
       ],
+      "User affiliations": [
+        "Afilieri utilizator"
+      ],
       "User's new password": [
         "Parolă nouă utilizator"
       ],
@@ -11103,6 +11161,11 @@
       ],
       "To: ${ to }": [
         "Către: ${ to }"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Selectați un furnizor de identitate pentru a începe"
       ]
     },
     "Limit of calendars reached": {
@@ -15035,6 +15098,11 @@
         "va fi șters"
       ]
     },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Vă permite să adăugați o conferință video Zoom oricărui eveniment din calendar."
+      ]
+    },
     "session_recovery:available:action": {
       "Cancel password reset": [
         "Anulare resetare parolă"
@@ -17420,6 +17488,9 @@
       "Choose an account": [
         "Alegeţi un cont"
       ],
+      "Choose user affiliations": [
+        "Alegeți afilierea utilizatorilor"
+      ],
       "Clear": [
         "Golire"
       ],
@@ -17452,6 +17523,12 @@
       ],
       "Connect ${ name }": [
         "Conectare ${ name }"
+      ],
+      "Connect organization": [
+        "Conectare organizație"
+      ],
+      "Connection status": [
+        "Stare conexiune"
       ],
       "Contact us": [
         "Contactați-ne"
@@ -18181,6 +18258,9 @@
       "Send new invite?": [
         "Trimiteți o invitație nouă?"
       ],
+      "Service": [
+        "Serviciu"
+      ],
       "Session management": [
         "Gestionare sesiuni"
       ],
@@ -18293,6 +18373,9 @@
       ],
       "There are no groups": [
         "Nu există grupuri"
+      ],
+      "Third-party apps and services": [
+        "Aplicații și servicii terțe"
       ],
       "This field cannot be empty": [
         "Acest câmp nu poate fi gol."
@@ -18573,6 +18656,9 @@
       "Device information such as operating system": [
         "Informații despre dispozitiv cum ar fi sistemul de operare."
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Numele afișat pentru entitatea din baza de date eduGAIN"
+      ],
       "Each imported email will have this label": [
         "Fiecare e-mail importat va avea această etichetă."
       ],
@@ -18641,6 +18727,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Specificați domeniul căruia i se permite autentificarea cu SAML SSO"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Specificați utilizatorii entității eduGAIN cărora li se permite să se autentifice cu autentificare unică SAML SSO."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."

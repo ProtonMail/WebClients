@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -205,6 +205,9 @@
       "Change": [
         "Wijzigen"
       ],
+      "Change configuration": [
+        "Configuratie wijzigen"
+      ],
       "Change keys": [
         "Wijzig sleutels"
       ],
@@ -258,6 +261,9 @@
       ],
       "Connect": [
         "Verbinden"
+      ],
+      "Connected": [
+        "Verbonden"
       ],
       "Contact sales": [
         "Contact opnemen met Sales"
@@ -748,6 +754,9 @@
       "Next month": [
         "Volgende maand"
       ],
+      "Next page": [
+        "Volgende pagina"
+      ],
       "No": [
         "Nee"
       ],
@@ -795,6 +804,9 @@
       ],
       "Previous month": [
         "Vorige maand"
+      ],
+      "Previous page": [
+        "Vorige pagina"
       ],
       "Quit": [
         "Afsluiten"
@@ -1836,6 +1848,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
+      ]
+    },
+    "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Vernieuwt automatisch op ${ renewPrice }, voor ${ renewLength } maand",
+        "Vernieuwt automatisch op ${ renewPrice }voor ${ renewLength } maanden"
       ]
     },
     "Billing cycle option": {
@@ -3564,6 +3582,9 @@
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorteer automatisch inkomende berichten voordat ze uw inbox bereiken."
+      ],
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "Beschikbaar met ${ MAIL_APP_NAME } Plus"
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maanden ${ plusPlanName } verdiend."
@@ -6673,6 +6694,9 @@
         "${ numberOfNonPrivateKeys } geüploade bestand is geen geldige geheime sleutel. Controleer het en probeer het opnieuw.",
         "${ numberOfNonPrivateKeys } geüploade bestanden zijn geen geldige geheime sleutels. Controleer het en probeer het opnieuw."
       ],
+      "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
+        "${ PASS_APP_NAME } is de volgende generatie wachtwoordmanager ontworpen voor gebruiksgemak en productiviteit. Open source, co-ontwikkeld door SimpleLogin en ${ BRAND_NAME }."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
@@ -6921,6 +6945,9 @@
       "All members have been added.": [
         "Alle leden zijn toegevoegd."
       ],
+      "All users": [
+        "Alle gebruikers"
+      ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
       ],
@@ -7099,6 +7126,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Boost de merkidentiteit van uw organisatie en creëer een consistentere online ervaring voor uw gebruikers."
       ],
+      "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
+        "Door een ${ PASS_APP_NAME }-account te maken met uw SimpleLogin e-mailadres, kunt u uw aliassen direct vanuit ${ PASS_APP_NAME } beheren."
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Standaard kunnen organisatieleden alleen kluizen exporteren waarvan ze de eigenaar zijn. Als deze optie is ingeschakeld, zullen ze geen gegevens kunnen exporteren"
       ],
@@ -7146,6 +7176,12 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Verbindingsgegevens zullen beschikbaar zijn in ongeveer 1 uur."
+      ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Ga door met toestaan van **${ affiliationsText }** van **${ organizationValue.Name }** om deel te nemen aan uw ${ BRAND_NAME } organisatie."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Blijf verbinden **${ organizationValue.Name }** met uw ${ BRAND_NAME } organisatie."
       ],
       "Continue with ${ freeName }": [
         "Ga verder met ${ freeName }"
@@ -7361,6 +7397,9 @@
       ],
       "Edit link": [
         "Link bewerken"
+      ],
+      "EduGain configuration saved": [
+        "EduGain configuratie opgeslagen"
       ],
       "email": [
         "e-mail"
@@ -7877,6 +7916,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
       ],
+      "Loading eduGAIN data...": [
+        "eduGAIN gegevens laden..."
+      ],
       "Loading gateways monitoring current status.": [
         "Laden van gateways die huidige status monitoren."
       ],
@@ -7897,6 +7939,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Zorg ervoor dat u ${ addARecoveryMethod }, zodat u terug toegang kunt krijgen tot uw account wanneer u uw wachtwoord vergeten bent."
+      ],
+      "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
+        "Beheer uw e-mailvoorkeuren voor ${ DOCS_APP_NAME }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Vul deze informatie handmatig in op uw tweestapsverificatieapparaat om uw account te configureren. ${ switchButton }."
@@ -7990,6 +8035,9 @@
       ],
       "No logs yet.": [
         "Nog geen logbestanden."
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Geen organisaties ingeschakeld met **eduGAIN** voor **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
@@ -8329,8 +8377,17 @@
       "Select a service provider to start": [
         "Selecteer een dienstverlener om te beginnen"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Selecteer een organisatie ingeschakeld met **eduGAIN** voor **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Selecteer één of meerdere gebruikers affiliaties"
+      ],
       "Select recently used servers": [
         "Selecteer recent gebruikte servers"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Selecteer de gebruikers affiliaties van **${ organizationValue.Name }** (${ organizationValue.EntityId }) die u wilt toestaan voor uw ${ BRAND_NAME } organisatie:"
       ],
       "Select what you want to import.": [
         "Selecteer wat u wilt importeren."
@@ -8602,6 +8659,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Dit bericht zal het supportteam niet bereiken. Als u een probleem heeft met onze dienst of als er vanuit onze kant actie ondernomen moet worden ${ supportLink }."
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Deze organisatie is ingeschakeld met **eduGAIN** voor **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Deze promotielink is verlopen."
@@ -10274,6 +10334,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Voer het wachtwoord in voor de sleutel met vingerafdruk: ${ fingerprintCode }"
       ],
+      "Entity ID": [
+        "Entiteit ID"
+      ],
       "Event": [
         "Afspraak"
       ],
@@ -10535,6 +10598,9 @@
       "Organization password": [
         "Organisatiewachtwoord"
       ],
+      "Other": [
+        "Overig"
+      ],
       "Other amount": [
         "Ander bedrag"
       ],
@@ -10788,6 +10854,9 @@
       "User": [
         "Gebruiker"
       ],
+      "User affiliations": [
+        "Gebruiker affiliaties"
+      ],
       "User's new password": [
         "Nieuw wachtwoord van gebruiker"
       ],
@@ -10985,6 +11054,11 @@
       ],
       "To: ${ to }": [
         "Aan: ${ to }"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Selecteer een identiteitsprovider om te beginnen"
       ]
     },
     "Limit of calendars reached": {
@@ -11351,11 +11425,17 @@
       "Change password": [
         "Wachtwoord wijzigen"
       ],
+      "Convert to SSO": [
+        "Converteren naar SSO"
+      ],
       "Delete": [
         "Verwijderen"
       ],
       "Delete and revoke invite": [
         "Uitnodiging verwijderen en intrekken"
+      ],
+      "Detach from SSO": [
+        "Loskoppelen van SSO"
       ],
       "Edit": [
         "Bewerken"
@@ -11918,6 +11998,9 @@
       ],
       "Available on all platforms": [
         "Beschikbaar op alle platformen"
+      ],
+      "Breach alerts": [
+        "Breach waarschuwingen"
       ],
       "Calendar sharing": [
         "Agenda-delen"
@@ -13683,6 +13766,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Uitzonderlijke introductiepromotie: krijg levenslang ${ title } aan ${ price }!"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Begin met ${ PASS_APP_NAME }"
+      ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "Op maat gemaakte oplossingen voor grote organisaties met eigen, aangepaste, wensen."
       ],
@@ -14631,6 +14717,9 @@
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Het e-mailadres **${ email }** bestaat al als een ${ BRAND_NAME } gebruiker. Voer het e-mailadres in van een gebruiker van uw identiteitsprovider."
       ]
     },
     "saml: Info": {
@@ -14639,6 +14728,9 @@
       ],
       "Details": [
         "Details"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Voer het e-mailadres in van een gebruiker van uw identiteitsprovider voor **${ domainName }**"
       ],
       "Test in progress...": [
         "Test wordt uitgevoerd..."
@@ -14821,6 +14913,14 @@
       ],
       "to be created": [
         "aan te maken"
+      ],
+      "to be deleted": [
+        "om te worden verwijderd"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Maakt het mogelijk om een videoconferentie aan een van uw agenda-afspraken toe te voegen"
       ]
     },
     "session_recovery:available:action": {
@@ -15135,6 +15235,9 @@
       "Enable Photos section": [
         "Foto's sectie inschakelen"
       ],
+      "Get updates about comments via email": [
+        "Ontvang updates over reacties via e-mail"
+      ],
       "Include document name in email notifications": [
         "Documentnaam opnemen in e-mailnotificaties"
       ]
@@ -15276,6 +15379,9 @@
       ]
     },
     "Signup: Info": {
+      "10 aliases for email protection from breaches": [
+        "10 aliassen voor e-mailbescherming tegen inbreuken"
+      ],
       "Advanced security features": [
         "Geavanceerde beveiligingsfuncties"
       ],
@@ -15293,6 +15399,9 @@
       ],
       "Calendar, password manager, file storage, and VPN included": [
         "Agenda, wachtwoordmanager, bestandsopslag en VPN inbegrepen"
+      ],
+      "Device sync": [
+        "Apparaat synchronisatie"
       ],
       "Email aliases": [
         "E-mailaliassen"
@@ -15335,6 +15444,9 @@
       ],
       "The only email service with:": [
         "De enige e-mailservice met:"
+      ],
+      "Unlimited passwords": [
+        "Onbeperkte wachtwoorden"
       ],
       "Works on all devices": [
         "Werkt op alle apparaten"
@@ -15549,6 +15661,14 @@
         "${ n } lid heeft uw hulp gevraagd om in te loggen.",
         "${ n } leden hebben uw hulp gevraagd om in te loggen."
       ],
+      "${ n } user converted to SSO": [
+        "${ n } gebruiker geconverteerd naar SSO",
+        "${ n } gebruikers geconverteerd naar SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } gebruiker losgekoppeld van SSO",
+        "${ n } gebruikers losgekoppeld van SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } gebruiker heeft zich aangesloten bij uw organisatie via uw Identity Provider. Controleer het account nu:",
         "${ n } gebruikers hebben zich aangesloten bij uw organisatie via uw Identity Provider. Controleer hun accounts nu:"
@@ -15563,6 +15683,9 @@
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO-gebruikers (aangeboden door uw Identity Provider) worden verwijderd** en u moet ze handmatig aanmaken om ze weer toe te voegen aan uw organisatie."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO-gebruikers worden losgekoppeld van uw identiteitsprovider** en omgezet naar niet-SSO-gebruikers."
       ],
       "Access denied": [
         "Toegang geweigerd"
@@ -15761,8 +15884,14 @@
       "Yes, it was me": [
         "Ja, dat was ik"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "U moet handmatig nieuwe gebruikers aanmaken om ze toe te voegen aan uw organisatie."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "U wordt doorgestuurd naar uw derde partij SSO-provider."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Uw SSO-configuratie wordt verwijderd."
       ]
     },
     "sso: auth device state": {
@@ -17123,6 +17252,9 @@
       "Choose an account": [
         "Een account selecteren"
       ],
+      "Choose user affiliations": [
+        "Gebruikersaffiliaties kiezen"
+      ],
       "Clear": [
         "Wissen"
       ],
@@ -17155,6 +17287,12 @@
       ],
       "Connect ${ name }": [
         "Verbind ${ name }"
+      ],
+      "Connect organization": [
+        "Connecteer organisatie"
+      ],
+      "Connection status": [
+        "Verbindingsstatus"
       ],
       "Contact us": [
         "Contacteer ons"
@@ -17394,6 +17532,9 @@
       ],
       "Email encryption keys": [
         "E-mail encryptiesleutels"
+      ],
+      "Email notifications": [
+        "E-mailnotificaties"
       ],
       "Email privacy": [
         "E-mail privacy"
@@ -17877,6 +18018,9 @@
       "Send new invite?": [
         "Nieuwe uitnodiging versturen?"
       ],
+      "Service": [
+        "Dienst"
+      ],
       "Session management": [
         "Sessiebeheer"
       ],
@@ -17988,6 +18132,9 @@
       ],
       "There are no groups": [
         "Er zijn geen groepen"
+      ],
+      "Third-party apps and services": [
+        "Apps en services van derden"
       ],
       "This field cannot be empty": [
         "Dit veld mag niet leeg zijn"
@@ -18247,6 +18394,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisch wisselen tussen uw favoriete thema's voor dag en nacht met de dag- en nachtmodus van uw systeem"
       ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "Klik hier voor meer informatie over het maken van een aangepaste handtekening met HTML."
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopieer en plak deze URL in de ACS (Assertion Consumer Service) URL-veld van uw identiteitsprovider"
       ],
@@ -18264,6 +18414,9 @@
       ],
       "Device information such as operating system": [
         "Toestelinformatie zoals operating system"
+      ],
+      "Display name for the entity in the eduGAIN database": [
+        "Weergavenaam voor de entiteit in de eduGAIN database"
       ],
       "Each imported email will have this label": [
         "Elke geïmporteerde e-mail heeft dit label"
@@ -18333,6 +18486,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Specificeer de gebruikers van de eduGAIN entiteit die zijn toegestaan om te verifiëren met SAML SSO"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
@@ -18514,6 +18670,9 @@
       ],
       "Cancel request to access user data?": [
         "Verzoek voor toegang tot gebruikersgegevens annuleren?"
+      ],
+      "Confirm all": [
+        "Alles bevestigen"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Kon de beheerderstoegang voor ${ n } -gebruiker niet automatisch inschakelen, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:",

@@ -1116,6 +1116,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Pembaruan \"${ payload.item.data.metadata.name }\" telah diabaikan"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } undangan berhasil terkirim"
+      ],
       "${ count } time": [
         "${ count } kali"
       ],

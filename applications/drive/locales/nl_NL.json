@@ -543,6 +543,9 @@
       "Next month": [
         "Volgende maand"
       ],
+      "Next page": [
+        "Volgende pagina"
+      ],
       "Not now": [
         "Niet nu"
       ],
@@ -590,6 +593,9 @@
       ],
       "Previous month": [
         "Vorige maand"
+      ],
+      "Previous page": [
+        "Vorige pagina"
       ],
       "Quit": [
         "Afsluiten"
@@ -854,6 +860,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Upgrade naar ${ BRAND_NAME } Unlimited"
+      ],
+      "Upload": [
+        "Uploaden"
       ],
       "Upload anyway": [
         "Toch uploaden"
@@ -2397,6 +2406,11 @@
         "Onbetaalde factuur"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2466,11 +2480,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6928,6 +6937,9 @@
       "Available on all platforms": [
         "Beschikbaar op alle platformen"
       ],
+      "Breach alerts": [
+        "Breach waarschuwingen"
+      ],
       "Calendar sharing": [
         "Agenda-delen"
       ],
@@ -7340,14 +7352,6 @@
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Krijg Mail Plus voor ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Vanaf ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -7360,6 +7364,14 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Krijg Mail Plus voor ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Vanaf ${ price }"
       ]
     },
     "new_plans: tooltip": {

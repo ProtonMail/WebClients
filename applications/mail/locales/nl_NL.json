@@ -6507,6 +6507,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Als u denkt dat we een fout hebben gemaakt, gelieve ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
       ],
@@ -9197,7 +9200,7 @@
         "Downgrade naar ${ downgradedPlanName }"
       ],
       "Get ${ planTitle }": [
-        "Kies ${ planTitle }"
+        "Neem ${ planTitle }"
       ],
       "Get started for ${ price }": [
         "Begin voor ${ price }"
@@ -9396,6 +9399,9 @@
       ],
       "Available on all platforms": [
         "Beschikbaar op alle platformen"
+      ],
+      "Breach alerts": [
+        "Breach waarschuwingen"
       ],
       "Calendar sharing": [
         "Agenda-delen"
@@ -9809,14 +9815,6 @@
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Krijg Mail Plus voor ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Vanaf ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -9829,6 +9827,14 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Krijg Mail Plus voor ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Vanaf ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -12633,6 +12639,9 @@
       ],
       "A filter with this name already exists": [
         "Er bestaat al een filter met deze naam"
+      ],
+      "Account locked": [
+        "Account vergrendeld"
       ],
       "Account recovery": [
         "Accountherstel"
