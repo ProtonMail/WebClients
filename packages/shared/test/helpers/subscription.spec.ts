@@ -216,21 +216,21 @@ describe('hasSomeAddOn', () => {
     it('Should test a single add-on Name', () => {
         subscription = {
             ...subscription,
-            Plans: [...subscription.Plans, { ...defaultPlan, Name: ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, Quantity: 1 }],
+            Plans: [...subscription.Plans, { ...defaultPlan, Name: ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO, Quantity: 1 }],
         };
 
-        const result = hasSomeAddonOrPlan(subscription, ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS);
+        const result = hasSomeAddonOrPlan(subscription, ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO);
         expect(result).toEqual(true);
     });
 
     it('Should test a list of add-on Name', () => {
         subscription = {
             ...subscription,
-            Plans: [...subscription.Plans, { ...defaultPlan, Name: ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, Quantity: 1 }],
+            Plans: [...subscription.Plans, { ...defaultPlan, Name: ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO, Quantity: 1 }],
         };
 
         const result = hasSomeAddonOrPlan(subscription, [
-            ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS,
+            ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO,
             ADDON_NAMES.MEMBER_DRIVE_PRO,
         ]);
         expect(result).toEqual(true);
@@ -239,7 +239,7 @@ describe('hasSomeAddOn', () => {
     it('Should test a list of add-on Name with no match', () => {
         subscription = {
             ...subscription,
-            Plans: [...subscription.Plans, { ...defaultPlan, Name: ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, Quantity: 1 }],
+            Plans: [...subscription.Plans, { ...defaultPlan, Name: ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO, Quantity: 1 }],
         };
 
         const result = hasSomeAddonOrPlan(subscription, [ADDON_NAMES.MEMBER_DRIVE_PRO, ADDON_NAMES.MEMBER_VPN_PRO]);
