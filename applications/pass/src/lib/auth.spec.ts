@@ -1,12 +1,11 @@
 import type { History } from 'history';
 import type { ServiceWorkerClient } from 'proton-pass-web/app/ServiceWorker/client/client';
 
-import type { AppStateContextValue } from '@proton/pass/components/Core/AppStateProvider';
+import { type AppStateContextValue, getInitialAppState } from '@proton/pass/components/Core/AppStateProvider';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { exposeApi } from '@proton/pass/lib/api/api';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import type { AppState } from '@proton/pass/types';
 import createStore from '@proton/shared/lib/helpers/store';
 
 import * as auth from './auth';
@@ -19,7 +18,6 @@ jest.mock('proton-pass-web/lib/settings', () => ({ settings: { clear: jest.fn() 
 
 describe('AuthService', () => {
     let authService: AuthService;
-    let appState: AppState;
     let history: History<any>;
     let sw: ServiceWorkerClient;
     let app: AppStateContextValue;
@@ -48,7 +46,7 @@ describe('AuthService', () => {
 
     beforeEach(() => {
         authStore.clear();
-        app = { reset, setAuthorized, setBooted, setLocalID, setState, setStatus, setUID, state: appState };
+        app = { reset, setAuthorized, setBooted, setLocalID, setState, setStatus, setUID, state: getInitialAppState() };
         history = { replace: jest.fn(), location: { pathname: '/', search: '', state: null, hash: '' } } as any;
         sw = { on: jest.fn(), off: jest.fn() } as any;
 

@@ -85,7 +85,9 @@ function createNotificationManager(
                 ALLOWED_TAGS: ['b', 'a', 'i', 'em', 'strong', 'br', 'p', 'span'],
             });
             const containsHTML =
-                sanitizedElement?.childNodes && Array.from(sanitizedElement.childNodes).some(isElement);
+                sanitizedElement instanceof Element &&
+                sanitizedElement?.childNodes &&
+                Array.from(sanitizedElement.childNodes).some(isElement);
             if (containsHTML) {
                 sanitizedElement.querySelectorAll('a').forEach((node) => {
                     if (node.tagName === 'A') {

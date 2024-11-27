@@ -15,20 +15,20 @@ describe('Import Proton Pass ZIP', () => {
     beforeAll(async () => {
         const data = await fs.promises.readFile(__dirname + '/mocks/protonpass.zip');
         payload = await readProtonPassZIP({
-            data,
+            data: data.buffer as ArrayBuffer,
             userId: 'SWgOUidqAHPDfImlbYvpp__YSOK3YXRAtOckIo_0qmVNjzqVAOWNS2d60OOR15Cv4RTLBCTVaSa43-036nseXg==',
             currentAliases: [],
         });
 
         payloadExcludingCurrentAliases = await readProtonPassZIP({
-            data,
+            data: data.buffer as ArrayBuffer,
             userId: 'SWgOUidqAHPDfImlbYvpp__YSOK3YXRAtOckIo_0qmVNjzqVAOWNS2d60OOR15Cv4RTLBCTVaSa43-036nseXg==',
             currentAliases,
         });
 
         const oldFormatData = await fs.promises.readFile(__dirname + '/mocks/protonpass_1.17.zip');
         oldFormatPayload = await readProtonPassZIP({
-            data: oldFormatData,
+            data: oldFormatData.buffer as ArrayBuffer,
             userId: '5sxjHzI4mlMVq7-ysH-4YxgbEXsNTUlqmVmosbQKL_NgKXe_E0MroEgbKxH2wHTXXtLS3qr1JR_15SWL5kTVOQ==',
             currentAliases: [],
         });
