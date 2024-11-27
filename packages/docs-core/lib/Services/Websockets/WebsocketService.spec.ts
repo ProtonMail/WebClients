@@ -16,7 +16,7 @@ import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/Websocke
 import { type UpdateDebouncer } from './Debouncer/UpdateDebouncer'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto'
-import type { MetricService } from '../Metrics/MetricService'
+import { MetricService } from '../Metrics/MetricService'
 import { UserState } from '../../State/UserState'
 
 const mockOnReadyContentPayload = new TextEncoder().encode(
@@ -46,6 +46,7 @@ describe('WebsocketService', () => {
     }
 
     userState = new UserState()
+    metricService = new MetricService(jest.fn())
 
     document = { linkId: 'link-id-123', volumeId: 'volume-id-456' } as NodeMeta
 
