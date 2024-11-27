@@ -209,8 +209,8 @@ describe('useTaxCountry hook', () => {
             onBillingAddressChange,
         });
 
-        // onBillingAddressChange should only be called once during initial render
-        expect(onBillingAddressChange).toHaveBeenCalledTimes(1);
+        // onBillingAddressChange should not be called during initial render if the values are the same
+        expect(onBillingAddressChange).toHaveBeenCalledTimes(0);
     });
 
     it('should call onBillingAddressChange when billing address updates', () => {
