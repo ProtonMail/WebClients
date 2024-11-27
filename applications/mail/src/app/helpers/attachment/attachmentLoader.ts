@@ -3,6 +3,7 @@ import { CryptoProxy } from '@proton/crypto';
 import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 import { getAttachment } from '@proton/shared/lib/api/attachments';
 import { getEOAttachment } from '@proton/shared/lib/api/eo';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -87,6 +88,14 @@ export const getDecryptedAttachment = async (
             sessionKeys: [sessionKey],
         });
     } catch (error: any) {
+        traceError(error, {
+            extra: {
+                isEncryptedOutside: isOutside,
+            },
+            tags: {
+                initiative: 'attachment-decryption-error',
+            },
+        });
         const blob = mergeUint8Arrays([
             binaryStringToArray(decodeBase64(attachment.KeyPackets) || ''),
             new Uint8Array(encryptedBinary),
