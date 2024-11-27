@@ -8,7 +8,7 @@ const store = new Store<{ settings: SettingsStore }>({
     configFileMode: 0o600,
 });
 
-interface SettingsStore {
+export interface SettingsStore {
     spellChecker: boolean;
     overrideError: boolean;
     theme?: Partial<ThemeSetting>;

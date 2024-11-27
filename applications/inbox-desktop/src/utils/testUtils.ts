@@ -1,5 +1,6 @@
 import Store from "electron-store";
 import { WindowBounds } from "../store/boundsStore";
+import { SettingsStore } from "../store/settingsStore";
 
 interface Singleton<T> {
     INSTANCE: T;
@@ -35,6 +36,6 @@ function getSingleton<T extends Record<string, unknown>>(getInstance: () => T) {
 }
 
 export const MockedStore = Store as unknown as Singleton<{
-    get: jest.MockedFn<() => WindowBounds>;
+    get: jest.MockedFn<() => SettingsStore | WindowBounds>;
     set: () => void;
 }>;
