@@ -5,7 +5,6 @@ export enum ProgressBarStatus {
     Disabled = 'disabled',
     Running = 'running',
     Success = 'success',
-    Warning = 'warning',
     Error = 'error',
 }
 

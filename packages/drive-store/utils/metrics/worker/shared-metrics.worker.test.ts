@@ -102,10 +102,10 @@ describe('MetricSharedWorker', () => {
         expect(userInfo?.get('plan')).toBe(plan);
     });
 
-    test('disconnect() should remove user information', () => {
+    test('disconnect() should remove user information', async () => {
         const connectionId = 'test-connection';
         worker.setLocalUser(connectionId, 'test-uid', 'paid');
-        worker.disconnect(connectionId);
+        await worker.disconnect(connectionId);
 
         expect(worker._getUsers().has(connectionId)).toBeFalsy();
     });

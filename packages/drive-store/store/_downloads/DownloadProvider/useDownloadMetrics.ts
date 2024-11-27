@@ -11,7 +11,7 @@ import {
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
-import { isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
+import { isAbortError, isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
 import { is4xx, is5xx, isCryptoEnrichedError } from '../../../utils/errorHandling/apiErrors';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
@@ -21,6 +21,7 @@ import { MetricSharePublicType } from '../../../utils/type/MetricTypes';
 import { DownloadErrorCategory } from '../../../utils/type/MetricTypes';
 import useSharesState from '../../_shares/useSharesState';
 import { getShareType } from '../../_uploads/UploadProvider/useUploadMetrics';
+import { selectMechanismForDownload } from '../fileSaver/fileSaver';
 import type { Download } from './interface';
 
 const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes
@@ -73,11 +74,25 @@ export const useDownloadMetrics = (
         });
     };
 
-    const logSuccessRate = (shareType: MetricShareTypeWithPublic, state: TransferState, retry: boolean) => {
+    const logSuccessRate = (
+        shareType: MetricShareTypeWithPublic,
+        state: TransferState,
+        retry: boolean,
+        size?: number
+    ) => {
+        // Drive generic metric
         metrics.drive_download_success_rate_total.increment({
             status: state === TransferState.Done ? 'success' : 'failure',
             retry: retry ? 'true' : 'false',
             shareType,
+        });
+
+        // Web only metric
+        const mechanism = selectMechanismForDownload(size);
+        metrics.drive_download_mechanism_success_rate_total.increment({
+            status: state === TransferState.Done ? 'success' : 'failure',
+            retry: retry ? 'true' : 'false',
+            mechanism,
         });
     };
 
@@ -96,11 +111,9 @@ export const useDownloadMetrics = (
 
     const logDownloadMetrics = (
         shareType: MetricShareTypeWithPublic,
-        state: TransferState,
-        retry: boolean,
-        error?: Error
+        { state, retries, error, meta }: Pick<Download, 'state' | 'retries' | 'error' | 'meta'>
     ) => {
-        logSuccessRate(shareType, state, retry);
+        logSuccessRate(shareType, state, Boolean(retries), meta.size);
         // These 2 states are final Error states
         const isError = [TransferState.Error, TransferState.NetworkError].includes(state);
         if (isError) {
@@ -114,13 +127,16 @@ export const useDownloadMetrics = (
      */
     const observe = (downloads: Download[]) => {
         for (const download of downloads) {
+            if (isAbortError(download.error)) {
+                continue;
+            }
             // shareType is infered from the download rootShareId (each links are LinkDownload type)
             const shareType = getShareIdType(download.links[0]?.shareId);
             const key = getKey(download.id, download.retries || 0);
             // These 3 states are final (we omit skipped and cancelled)
             if ([TransferState.Done, TransferState.Error, TransferState.NetworkError].includes(download.state)) {
                 if (!processed.has(key)) {
-                    logDownloadMetrics(shareType, download.state, Boolean(download.retries), download.error);
+                    logDownloadMetrics(shareType, download);
                     setProcessed((prev) => new Set(prev.add(key)));
                 }
             }
@@ -130,9 +146,22 @@ export const useDownloadMetrics = (
     /*
      * For non-stateful downloads (Preview)
      */
-    const report = (shareId: string, state: TransferState.Done | TransferState.Error, error?: Error) => {
+    const report = (shareId: string, state: TransferState.Done | TransferState.Error, size: number, error?: Error) => {
+        if (isAbortError(error)) {
+            return;
+        }
+
         const shareType = getShareIdType(shareId);
-        logDownloadMetrics(shareType, state, false, error);
+        logDownloadMetrics(shareType, {
+            state,
+            retries: 0,
+            meta: {
+                filename: '',
+                mimeType: '',
+                size,
+            },
+            error,
+        });
     };
 
     return {

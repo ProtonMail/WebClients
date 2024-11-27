@@ -10,6 +10,7 @@ import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRendered
 import {
     type EncryptedLink,
     type ExtendedInvitationDetails,
+    type SignatureIssues,
     useBookmarksActions,
     type useSharedWithMeView,
     useThumbnailsDownload,
@@ -41,7 +42,7 @@ export interface SharedWithMeItem extends FileBrowserBaseItem {
     isFile: boolean;
     mimeType: string;
     name: string;
-    signatureIssues?: any;
+    signatureIssues?: SignatureIssues;
     signatureAddress?: string;
     size: number;
     trashed: number | null;

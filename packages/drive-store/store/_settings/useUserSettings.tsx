@@ -11,6 +11,7 @@ import type {
     UserSettings,
     UserSettingsResponse,
 } from '@proton/shared/lib/interfaces/drive/userSettings';
+import useFlag from '@proton/unleash/useFlag';
 
 import type { UserSortParams } from './sorting';
 import { getSetting, parseSetting } from './sorting';
@@ -35,6 +36,7 @@ export function UserSettingsProvider({
     initialDriveUserSettings: UserSettingsResponse;
 }) {
     const api = useApi();
+    const driveB2BPhotosUpload = useFlag('DriveB2BPhotosUpload');
 
     const [userSettings, setUserSettings] = useState<UserSettings>(() => {
         const { UserSettings, Defaults } = initialDriveUserSettings;
@@ -94,7 +96,7 @@ export function UserSettingsProvider({
         sort,
         layout: userSettings.Layout,
         revisionRetentionDays: userSettings.RevisionRetentionDays,
-        b2bPhotosEnabled: userSettings.B2BPhotosEnabled,
+        b2bPhotosEnabled: !driveB2BPhotosUpload || (driveB2BPhotosUpload && userSettings.B2BPhotosEnabled),
         changeSort,
         changeLayout,
         changeB2BPhotosEnabled,

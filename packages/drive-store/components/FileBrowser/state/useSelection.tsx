@@ -5,12 +5,6 @@ import type { SelectionState } from '../hooks/useSelectionControls';
 import { useSelectionControls } from '../hooks/useSelectionControls';
 import type { BrowserItemId } from '../interface';
 
-export interface Item<T = any> {
-    id: BrowserItemId;
-    data: T;
-    disabled?: boolean;
-}
-
 interface SelectionFunctions {
     selectedItemIds: BrowserItemId[];
     toggleSelectItem: (id: BrowserItemId) => void;
