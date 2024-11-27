@@ -20,14 +20,9 @@
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "es2022",
-    "outDir": "./dist",
+    "target": "esnext",
+    "outDir": "./dist"
   },
-  "include": [
-    "lib/**/*",
-    "bin/**/*",
-    "index.ts",
-    "tsconfig.json",
-  ],
-  "exclude": ["**/*.spec.ts", "dist"],
+  "include": ["lib/**/*", "bin/**/*", "index.ts", "tsconfig.json"],
+  "exclude": ["**/*.spec.ts", "dist"]
 }
