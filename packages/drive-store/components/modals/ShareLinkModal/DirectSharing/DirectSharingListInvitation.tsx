@@ -12,7 +12,7 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
-import { MemberDropdownMenu } from './MemberDropdownMenu';
+import { PermissionsDropdownMenu } from '../PermissionsDropdownMenu';
 
 interface Props {
     invitationId: string;
@@ -25,6 +25,7 @@ interface Props {
     onInvitationRemove: (invitationId: string) => Promise<void>;
     onInvitationPermissionsChange: (invitationId: string, permissions: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
     onResendInvitationEmail: (invitationId: string) => Promise<void>;
+    viewOnly: boolean;
 }
 
 export const DirectSharingListInvitation = ({
@@ -38,6 +39,7 @@ export const DirectSharingListInvitation = ({
     onInvitationRemove,
     onInvitationPermissionsChange,
     onResendInvitationEmail,
+    viewOnly,
 }: Props) => {
     const [isLoading, withIsLoading] = useLoading(false);
     const { createNotification } = useNotifications();
@@ -70,7 +72,8 @@ export const DirectSharingListInvitation = ({
                     {contactName ? <span className="color-weak">{contactEmail}</span> : null}
                 </p>
             </div>
-            <MemberDropdownMenu
+            <PermissionsDropdownMenu
+                disabled={viewOnly}
                 isLoading={isLoading}
                 externalInvitationState={externalInvitationState}
                 onChangePermissions={handleInvitationPermissionsChange}

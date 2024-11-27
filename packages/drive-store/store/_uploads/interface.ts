@@ -1,19 +1,6 @@
-import type React from 'react';
-
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
 import type { ThumbnailType } from './media';
-
-export type UploadConflictModal = React.FunctionComponent<UploadConflictModalProps>;
-
-export interface UploadConflictModalProps {
-    name: string;
-    isFolder?: boolean;
-    originalIsDraft?: boolean;
-    originalIsFolder?: boolean;
-    apply: (strategy: TransferConflictStrategy, all: boolean) => void;
-    cancelAll: () => void;
-}
 
 export interface UploadFileControls {
     start: (progressCallbacks?: UploadFileProgressCallbacks) => Promise<void>;
@@ -36,7 +23,7 @@ export interface UploadFolderControls {
 
 export interface UploadCallbacks {
     initialize: (abortSignal: AbortSignal) => Promise<{
-        addressPrivateKey: PrivateKeyReference;
+        addressPrivateKey: PrivateKeyReference | undefined;
         parentPrivateKey: PrivateKeyReference;
     }>;
     getVerificationData: (abortSignal: AbortSignal) => Promise<VerificationData>;
@@ -65,12 +52,12 @@ export type FileKeys = {
     sessionKey: SessionKey;
 };
 
-export type InitializedFileMeta = {
+type InitializedFileMeta = {
     fileName: string;
     privateKey: PrivateKeyReference;
     sessionKey: SessionKey;
     parentHashKey: Uint8Array;
-    address: {
+    address?: {
         privateKey: PrivateKeyReference;
         email: string;
     };
@@ -122,17 +109,6 @@ export type Link = {
     index: number;
     token: string;
     url: string;
-};
-
-export type BlockTokenHash = {
-    index: number;
-    token: string;
-    hash: Uint8Array;
-};
-
-export type BlockToken = {
-    index: number;
-    token: string;
 };
 
 export type PhotoUpload = {

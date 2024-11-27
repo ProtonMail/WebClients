@@ -6,7 +6,7 @@ import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
-import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useDriveSharingFlags, useInvitationsActions } from '../../../store';
 import { formatAccessCount } from '../../../utils/formatters';
 import { Cells } from '../../FileBrowser';
@@ -44,7 +44,12 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
                     className="file-browser-list-item--icon mr-2"
                 />
             )}
-            <SignatureIcon signatureIssues={item.signatureIssues} isFile={item.isFile} className="mr-2 shrink-0" />
+            <SignatureIcon
+                signatureIssues={item.signatureIssues}
+                isAnonymous={!item.activeRevision?.signatureAddress && !item.signatureAddress}
+                isFile={item.isFile}
+                className="mr-2 shrink-0"
+            />
             <NameCellBase name={item.name} />
         </TableCell>
     );

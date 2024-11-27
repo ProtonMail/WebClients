@@ -20,6 +20,10 @@ export function isIgnoredError(error: any) {
     return !error || IGNORED_ERRORS.includes(error.name);
 }
 
+export function isAbortError(error: any) {
+    return error && (error.name === 'AbortError' || error.name === 'TransferCancel');
+}
+
 /**
  * logErrors logs error to console if its not ignored error.
  */
@@ -56,7 +60,7 @@ export function sendErrorReport(error: Error | EnrichedError | unknown, addition
 
     const context = Object.assign({}, isEnrichedError(error) ? error.context || {} : {}, additionalContext || {});
 
-    if (isProduction(window.location.host)) {
+    if (typeof window !== 'undefined' && isProduction(window.location.host)) {
         const cookieTag = getCookie('Tag') || 'prod';
         if (cookieTag) {
             if (context.tags) {
