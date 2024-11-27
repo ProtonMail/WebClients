@@ -5197,6 +5197,12 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } di Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } hari"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } hari lagi"
+      ],
       "account logins": [
         "login akun"
       ],
@@ -5301,6 +5307,9 @@
       ],
       "Storage unlocked": [
         "Ruang penyimpanan tambahan terbuka"
+      ],
+      "Tasks to complete count": [
+        "Jumlah tugas untuk diselesaikan"
       ],
       "This feature is currently unavailable": [
         "Fitur saat ini belum tersedia"
@@ -5813,6 +5822,12 @@
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } menyediakan cara yang sederhana untuk membuat entri masuk di situs pihak ketiga yang tidak dipercayai di mana Anda tidak ingin mengekspos alamat email Anda yang asli."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }. Harga dan tanggal pembaruan langganan ${ planTitle } Anda tidak akan berubah."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
@@ -7524,6 +7539,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Langganan ${ PASS_SHORT_APP_NAME } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
       ],
@@ -8643,6 +8661,9 @@
       "Terms": [
         "Ketentuan layanan"
       ],
+      "terms of service": [
+        "ketentuan layanan"
+      ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Berkas ICS ini mengandung lebih dari satu acara. Silakan unduh dan impor acara di ${ CALENDAR_APP_NAME }"
       ],
@@ -9129,6 +9150,9 @@
       "${ options }-day file version history": [
         "Riwayat versi berkas ${ options } hari"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin untuk seumur hidup"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } dengan ${ n } alias hide-my-email"
       ],
@@ -9215,6 +9239,9 @@
       ],
       "Available on all platforms": [
         "Tersedia di semua platform"
+      ],
+      "Breach alerts": [
+        "Peringatan pembobolan"
       ],
       "Calendar sharing": [
         "Berbagi kalender"
@@ -9621,14 +9648,6 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Mulai dari ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -9641,6 +9660,14 @@
       ],
       "Switch plans?": [
         "Ganti paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -9691,6 +9718,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Buat hingga ${ n } alamat/alias email yang dapat Anda tentukan kepada para anggota keluarga. Gunakan alamat/alias ini untuk identitas online-nya masing-masing, mis. JohnShopper@${ domain } untuk akun berbelanja."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domain khusus untuk alias, kotak surat tambahan, kemampuan untuk mengirimkan email dari alias, dan masih banyak lagi"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -10097,6 +10127,9 @@
       ],
       "Protection from trackers": [
         "Perlindungan pelacak"
+      ],
+      "Replay introduction": [
+        "Ulangi pengenalan"
       ],
       "Skip": [
         "Lewati"
@@ -12359,6 +12392,9 @@
       ],
       "A filter with this name already exists": [
         "Filter dengan nama ini sudah ada"
+      ],
+      "Account locked": [
+        "Akun terkunci"
       ],
       "Account recovery": [
         "Pemulihan akun"
