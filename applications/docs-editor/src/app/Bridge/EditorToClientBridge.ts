@@ -68,10 +68,15 @@ export class EditorToClientBridge {
       throw new Error(`Request handler not set; attempting to invoke ${message.functionName}`)
     }
 
-    const func = this.requestHandler[message.functionName].bind(this.requestHandler)
+    const funcInstance = this.requestHandler[message.functionName]
+    if (!funcInstance) {
+      throw new Error(`Function instance for ${message.functionName} not found`)
+    }
+
+    const bindedFunction = funcInstance.bind(this.requestHandler)
 
     // @ts-ignore
-    const returnValue = await func(...message.args)
+    const returnValue = await bindedFunction(...message.args)
 
     const reply: EditorToClientReplyMessage = {
       messageId: message.messageId,

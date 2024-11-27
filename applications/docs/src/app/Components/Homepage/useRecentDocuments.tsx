@@ -50,7 +50,7 @@ export const getDisplayName = (recentDocument: RecentDocumentsSnapshotData, cont
     return c('Info').t`Me`
   }
 
-  const foundContact = contactEmails?.find((contactEmail) => contactEmail.Email)
+  const foundContact = contactEmails?.find((contactEmail) => contactEmail.Email === recentDocument.createdBy)
 
   if (foundContact) {
     return foundContact.Name ? foundContact.Name : foundContact.Email
