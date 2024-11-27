@@ -25,7 +25,7 @@ function CommentsPanel({
 
   return (
     <div
-      className="z-30 flex flex-col flex-nowrap overflow-hidden border-l border-[--border-weak] bg-[--background-weak] [grid-column:2] [grid-row:2] print:hidden"
+      className="z-30 mr-2 mt-4 flex flex-col flex-nowrap overflow-hidden rounded-t-md border-x border-t border-[--border-weak] bg-[--background-weak] [grid-column:2] [grid-row:2] print:hidden"
       data-testid="comments-main-section"
     >
       <div className="flex flex-shrink-0 items-center justify-between gap-2 px-4 py-2.5">
