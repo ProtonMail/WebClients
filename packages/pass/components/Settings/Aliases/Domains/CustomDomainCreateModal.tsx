@@ -7,24 +7,19 @@ import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
+import { useAliasDomains } from '@proton/pass/components/Settings/Aliases/Domains/DomainsProvider';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { validateAliasDomain } from '@proton/pass/lib/validation/domain';
 import { createCustomDomain } from '@proton/pass/store/actions';
-import type { CustomDomainOutput } from '@proton/pass/types';
+import type { DomainFormValues } from '@proton/pass/types';
 
 export const FORM_ID = 'custom-domain-add';
 
-export type DomainFormValues = {
-    domain: string;
-};
+export type Props = { onClose: () => void };
 
-export type ConfirmationModalProps = {
-    onClose: () => void;
-    onSubmit: (customDomain: CustomDomainOutput) => void;
-};
-
-export const DomainAddModal = ({ onClose, onSubmit }: ConfirmationModalProps) => {
-    const { loading, dispatch } = useRequest(createCustomDomain, { onSuccess: onSubmit });
+export const CustomDomainCreateModal = ({ onClose }: Props) => {
+    const { onCreate } = useAliasDomains();
+    const { loading, dispatch } = useRequest(createCustomDomain, { onSuccess: onCreate });
 
     const form = useFormik<DomainFormValues>({
         initialValues: { domain: '' },

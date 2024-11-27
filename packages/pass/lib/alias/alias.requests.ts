@@ -346,7 +346,7 @@ export const deleteCustomDomainApi = async (domainID: number) =>
     api({
         url: `pass/v1/user/alias/custom_domain/${domainID}`,
         method: 'delete',
-    }).then(() => true);
+    }).then(() => domainID);
 
 export const getCustomDomainSettingsApi = async (domainID: number) =>
     (
