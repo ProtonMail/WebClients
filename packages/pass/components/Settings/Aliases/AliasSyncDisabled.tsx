@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { AliasSyncModal } from '@proton/pass/components/Settings/AliasSyncModal';
+import { AliasSyncModal } from '@proton/pass/components/Settings/Aliases/AliasSyncModal';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { aliasSyncStatus } from '@proton/pass/store/actions';
