@@ -8,7 +8,7 @@ import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/
 
 import type { ShareInvitee } from '../../../../store';
 import { useDriveSharingFlags, useGetPublicKeysForEmail } from '../../../../store';
-import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
+import { ShareInviteeValidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
 
 /**
  * useShareInvitees hook is used to manage a list of user that we want to add to a drive share.
@@ -86,7 +86,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
                 if (!validateEmailAddress(address)) {
                     acc.badInvitees.set(address, {
                         ...newRecipient,
-                        error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.INVALID_EMAIL),
+                        error: new ShareInviteeValidationError(VALIDATION_ERROR_TYPES.INVALID_EMAIL),
                     });
                     return acc;
                 }
@@ -94,7 +94,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
                 if (canonicalizeExistingEmails.includes(canonicalizedAddress)) {
                     acc.badInvitees.set(address, {
                         ...newRecipient,
-                        error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.EXISTING_MEMBER),
+                        error: new ShareInviteeValidationError(VALIDATION_ERROR_TYPES.EXISTING_MEMBER),
                     });
                 } else if (
                     [...canonicalizeCurrentEmails, ...acc.addedCanonicalizedAddresses].includes(canonicalizedAddress)
@@ -125,7 +125,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
                     copy.set(email, {
                         ...filteredInvitee,
                         error: disabledExternalInvite
-                            ? new ShareInviteeValdidationError(
+                            ? new ShareInviteeValidationError(
                                   isSharingExternalInviteDisabled
                                       ? VALIDATION_ERROR_TYPES.EXTERNAL_INVITE_DISABLED
                                       : VALIDATION_ERROR_TYPES.EXTERNAL_INVITE_NOT_AVAILABLE

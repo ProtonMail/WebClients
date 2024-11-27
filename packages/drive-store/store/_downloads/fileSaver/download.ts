@@ -15,7 +15,17 @@ let workerWakeupInterval: ReturnType<typeof setInterval>;
  * IOS - forces all browsers to use webkit, so same problems as safari in all browsers.
  * For them download is done in-memory using blob response.
  */
-export const isUnsupported = () => !('serviceWorker' in navigator) || isSafari() || isIos();
+export const isUnsupported = () => {
+    /* TODO: To be removed after test DRVWEB-4375 */
+    if (typeof window !== 'undefined') {
+        const isSWForSafariEnabled = 'isSWForSafariEnabled' in window && window.isSWForSafariEnabled;
+        if (isSWForSafariEnabled) {
+            return !('serviceWorker' in navigator);
+        }
+    }
+    // Original
+    return !('serviceWorker' in navigator) || isSafari() || isIos();
+};
 
 // createDownloadIframe opens download URL created in service worker to
 // initialize the download in the browser. The response has headers to
@@ -68,13 +78,32 @@ export async function initDownloadSW() {
         throw new Error('Saving file via download is unsupported by this browser');
     }
 
-    await navigator.serviceWorker.register(
-        /* webpackChunkName: "downloadSW" */
-        new URL('./downloadSW', import.meta.url),
-        {
-            scope: `/${stripLeadingAndTrailingSlash(PUBLIC_PATH)}`,
-        }
-    );
+    await navigator.serviceWorker
+        .register(
+            /* webpackChunkName: "downloadSW" */
+            new URL('./downloadSW', import.meta.url),
+            {
+                scope: `/${stripLeadingAndTrailingSlash(PUBLIC_PATH)}`,
+            }
+        )
+        .then((registration) => {
+            // We do not cache manifest for local server or this can cause HMR to infinite reload
+            if (!window.location.host.includes('proton.local')) {
+                /*
+                Upon sending cache_assets action we fetch all assets using the Service Worker
+                Diagram can be seen here using the mermaid diagram file applications/drive/src/app/store/_downloads/fileSaver/mermaid-cache-assets-diagram.json to be uploaded on https://mermaid.live/
+            */
+                if (registration.active?.state === 'activated') {
+                    registration.active.postMessage({ action: 'cache_assets' });
+                } else if (registration.installing) {
+                    registration.installing.addEventListener('statechange', () => {
+                        if (registration.active?.state === 'activated') {
+                            registration.active.postMessage({ action: 'cache_assets' });
+                        }
+                    });
+                }
+            }
+        });
 
     serviceWorkerKeepAlive();
 }

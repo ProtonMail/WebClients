@@ -9,7 +9,7 @@ import useDragAndDrop from '../hooks/useDragAndDrop';
 import useFileBrowserItem from '../hooks/useFileBrowserItem';
 import type { DragMoveControls, FileBrowserBaseItem } from '../interface';
 
-export interface ListItemProps<T extends FileBrowserBaseItem> {
+interface ListItemProps<T extends FileBrowserBaseItem> {
     Cells: React.FC<{ item: any }>[];
     item: T;
     style?: React.CSSProperties;

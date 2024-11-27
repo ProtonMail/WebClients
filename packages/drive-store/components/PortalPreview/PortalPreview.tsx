@@ -53,7 +53,12 @@ const PortalPreview = (
         }
 
         return (
-            <SignatureIcon isFile={link.isFile} signatureIssues={link.signatureIssues} className="ml-2 color-danger" />
+            <SignatureIcon
+                isFile={link.isFile}
+                signatureIssues={link.signatureIssues}
+                isAnonymous={!link.activeRevision?.signatureAddress && !link.signatureAddress}
+                className="ml-2 color-danger"
+            />
         );
     }, [link]);
 
