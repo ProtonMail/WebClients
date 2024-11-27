@@ -36,7 +36,6 @@ import { useLoading } from '@proton/hooks';
 import { useAssistant } from '@proton/llm/lib';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
-import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
@@ -48,14 +47,11 @@ import { AI_ASSISTANT_ACCESS, KeyTransparencyActivation } from '@proton/shared/l
 import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
-import OnboardingChecklistModal from 'proton-mail/components/header/OnboardingChecklistModal';
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useCanReplayOnboarding } from 'proton-mail/hooks/useCanReplayOnboarding';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
 import MailDefaultHandlerModal from '../header/MailDefaultHandlerModal';
-import { useMailOnboardingTelemetry } from '../onboarding/useMailOnboardingTelemetry';
 
 const { OFF, UNSET, SERVER_ONLY } = AI_ASSISTANT_ACCESS;
 
@@ -86,9 +82,6 @@ const MailQuickSettings = () => {
     const { ktActivation } = useKeyTransparencyContext();
     const showKT = ktActivation === KeyTransparencyActivation.SHOW_UI;
 
-    // TODO remove once the extended checklist storage split is
-    const { isChecklistFinished, canDisplayChecklist } = useGetStartedChecklist();
-
     const [loadingViewLayout, withLoadingViewLayout] = useLoading();
     const [loadingDensity, withLoadingDensity] = useLoading();
     const [loadingComposerSize, withLoadingComposerSize] = useLoading();
@@ -97,8 +90,6 @@ const MailQuickSettings = () => {
     const [mailDefaultHandlerProps, setDefaultHandlerModalOpen] = useModalState();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
     const [keyTransparencyDetailsModalProps, setKeyTransparencyDetailsModalOpen] = useModalState();
-    const [onboardingChecklistProps, setOnboardingChecklistProps] = useModalState();
-    const [sendChecklistTelemetryEvent] = useMailOnboardingTelemetry();
 
     const viewLayoutOptions: QuickSettingsSelectOption[] = [
         {
@@ -383,22 +374,6 @@ const MailQuickSettings = () => {
             <DefaultQuickSettings inAppReminders={mailReminders} />
 
             <QuickSettingsButtonSection>
-                {canDisplayChecklist && (
-                    <QuickSettingsButton
-                        onClick={() => {
-                            setOnboardingChecklistProps(true);
-                            void sendChecklistTelemetryEvent(TelemetryMailOnboardingEvents.clicked_checklist_setting, {
-                                is_checklist_completed: isChecklistFinished ? 'yes' : 'no',
-                            });
-                        }}
-                        data-testid="mail-quick-settings:started-checklist-button"
-                    >
-                        {isChecklistFinished
-                            ? c('Get started checklist instructions').t`Open checklist`
-                            : c('Get started checklist instructions').t`Open checklist and get free storage`}
-                    </QuickSettingsButton>
-                )}
-
                 {!isElectronMail && (isFirefox() || isChromiumBased()) && (
                     <QuickSettingsButton
                         onClick={() => setDefaultHandlerModalOpen(true)}
@@ -432,7 +407,6 @@ const MailQuickSettings = () => {
             <ClearBrowserDataModal {...clearBrowserDataProps} />
             <MailShortcutsModal {...mailShortcutsProps} />
             <KeyTransparencyDetailsModal {...keyTransparencyDetailsModalProps} />
-            <OnboardingChecklistModal {...onboardingChecklistProps} />
         </DrawerAppScrollContainer>
     );
 };
