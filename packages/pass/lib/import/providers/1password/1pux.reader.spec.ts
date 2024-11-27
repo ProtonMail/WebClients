@@ -9,12 +9,12 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { read1Password1PuxData } from './1pux.reader';
 
 describe('Import 1password 1pux', () => {
-    let sourceData: ArrayBuffer;
+    let sourceData: Buffer;
     let payload: ImportPayload;
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/1password.1pux');
-        payload = await read1Password1PuxData({ data: sourceData });
+        payload = await read1Password1PuxData({ data: sourceData.buffer as ArrayBuffer });
         payload.vaults = payload.vaults.slice(1); // Remove "Personal" empty vault
     });
 
