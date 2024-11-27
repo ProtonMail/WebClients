@@ -43,7 +43,7 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.editor.exportAndDownload(format)
   }
 
-  get username(): string {
+  get userAddress(): string {
     if (!isPrivateDocController(this.docs)) {
       return 'Public Viewer'
     }

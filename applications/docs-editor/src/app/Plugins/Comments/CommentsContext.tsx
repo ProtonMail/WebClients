@@ -5,7 +5,7 @@ import type { UserState } from '@lexical/yjs'
 import type { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 
 type CommentsContextValue = {
-  username: string
+  userAddress: string
   controller: EditorRequiresClientMethods
   removeMarkNode: (id: string) => void
   activeIDs: string[]

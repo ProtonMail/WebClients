@@ -108,4 +108,53 @@ describe('BasePropertiesState', () => {
       expect(callback2).toHaveBeenCalledTimes(1)
     })
   })
+
+  describe('subscribeToAnyProperty', () => {
+    it('should call subscriber immediately with all properties', () => {
+      const callback = jest.fn()
+      state.subscribeToAnyProperty(callback)
+
+      expect(callback).toHaveBeenCalledTimes(Object.keys(DEFAULT_VALUES).length)
+      expect(callback).toHaveBeenCalledWith('stringProp', '')
+      expect(callback).toHaveBeenCalledWith('numberProp', 0)
+      expect(callback).toHaveBeenCalledWith('boolProp', false)
+    })
+
+    it('should notify subscriber when any property changes', () => {
+      const callback = jest.fn()
+      state.subscribeToAnyProperty(callback)
+      callback.mockClear()
+
+      state.setProperty('stringProp', 'new value')
+
+      expect(callback).toHaveBeenCalledTimes(1)
+      expect(callback).toHaveBeenCalledWith('stringProp', 'new value')
+    })
+
+    it('should not call subscriber after unsubscribe', () => {
+      const callback = jest.fn()
+      const unsubscribe = state.subscribeToAnyProperty(callback)
+      callback.mockClear()
+
+      unsubscribe()
+      state.setProperty('numberProp', 42)
+
+      expect(callback).not.toHaveBeenCalled()
+    })
+
+    it('should handle multiple any property subscribers', () => {
+      const callback1 = jest.fn()
+      const callback2 = jest.fn()
+
+      state.subscribeToAnyProperty(callback1)
+      state.subscribeToAnyProperty(callback2)
+      callback1.mockClear()
+      callback2.mockClear()
+
+      state.setProperty('boolProp', true)
+
+      expect(callback1).toHaveBeenCalledTimes(1)
+      expect(callback2).toHaveBeenCalledTimes(1)
+    })
+  })
 })

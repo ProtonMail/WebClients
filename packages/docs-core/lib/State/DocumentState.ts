@@ -1,14 +1,13 @@
-import { BasePropertiesState } from './BasePropertiesState'
-
 import type { ConnectionCloseReason } from '@proton/docs-proto'
+import { BasePropertiesState } from '@proton/docs-shared'
 import type {
+  DocumentRole,
   BroadcastSource,
   DecryptedMessage,
   DocTrashState,
   DocumentMetaInterface,
   RtsMessagePayload,
 } from '@proton/docs-shared'
-import type { DocumentRole } from '@proton/docs-shared'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { DecryptedNode } from '@proton/drive-store/lib'

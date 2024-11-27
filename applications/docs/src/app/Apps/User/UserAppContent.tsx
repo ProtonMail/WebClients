@@ -10,7 +10,6 @@ import { APP_VERSION } from '../../config'
 import ApplicationProvider from '../../Containers/ApplicationProvider'
 import { useUnleashClient } from '@proton/unleash'
 import { DocsNotificationsProvider } from '../../Containers/DocsNotificationsProvider'
-import { PrivateHookChangesToEvents } from './Hooks/PrivateHookChangesToEvents'
 
 const HomepageRoute = lazy(() => import('../../Components/Homepage/HomepageRoute'))
 const SingleDocumentRoute = lazy(() => import('./SingleDocumentRoute'))
@@ -43,7 +42,6 @@ function UserAppContent() {
   return (
     <ApplicationProvider application={application}>
       <DocsNotificationsProvider>
-        <PrivateHookChangesToEvents />
         <Switch>
           <Route path={'/doc'}>
             <SingleDocumentRoute driveCompat={driveCompat} />

@@ -12,7 +12,7 @@ import type {
 } from '@proton/docs-shared'
 
 export interface EditorOrchestratorInterface {
-  username: string
+  userAddress: string
 
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   provideEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void
