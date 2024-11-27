@@ -24,7 +24,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { EdugainAffiliations } from '@proton/shared/lib/interfaces';
 
-import { EdugainAffiliationLabels } from './SsoPage';
+import { EdugainAffiliationLabels } from './constants';
 
 enum STEP {
     ORGANIZATION,
