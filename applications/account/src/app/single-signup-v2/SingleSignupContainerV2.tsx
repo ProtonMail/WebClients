@@ -161,6 +161,7 @@ export const defaultSignupModel: SignupModelV2 = {
             Bitcoin: false,
         },
         CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
+        State: DEFAULT_TAX_BILLING_ADDRESS.State,
     },
     humanVerificationMethods: [],
     humanVerificationToken: '',
