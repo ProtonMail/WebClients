@@ -53,8 +53,8 @@ export const getSettings = (): SettingsStore => {
         }
 
         if (saveDefaults) {
-            settingsLogger.info("Some default values were missing, saving settings.");
-            updateSettings(settings);
+            settingsLogger.info("Some default values were missing, saving settings", JSON.stringify(settings));
+            store.set("settings", settings);
         }
 
         return settings;
