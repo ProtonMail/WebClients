@@ -1,7 +1,7 @@
 import DOMPurify from 'dompurify';
 
-const addRelNoopenerAndTargetBlank = (node: Element) => {
-    if (node.tagName === 'A') {
+const addRelNoopenerAndTargetBlank = (node: Node) => {
+    if (node instanceof Element && node.tagName === 'A') {
         node.setAttribute('rel', 'noopener noreferrer');
         node.setAttribute('target', '_blank');
     }
