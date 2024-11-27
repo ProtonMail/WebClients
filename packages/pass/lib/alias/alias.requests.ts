@@ -28,6 +28,7 @@ import type {
     ItemRevisionContentsResponse,
     MailboxDefaultDTO,
     MailboxDeleteDTO,
+    MaybeNull,
     RandomPrefixDTO,
     SlSyncStatusOutput,
     UniqueItem,
@@ -285,7 +286,7 @@ export const syncAliasSLNote = ({ shareId, itemId }: UniqueItem, Note: string) =
         data: { Note },
     });
 
-export const setDefaultAliasDomainApi = async (domain: string) =>
+export const setDefaultAliasDomainApi = async (domain: MaybeNull<string>) =>
     (
         await api({
             url: 'pass/v1/user/alias/settings/default_alias_domain',
