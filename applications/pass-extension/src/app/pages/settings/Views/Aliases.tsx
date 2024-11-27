@@ -1,11 +1,9 @@
 import { type FC } from 'react';
 
-import { AliasSyncToggle } from '@proton/pass/components/Settings/AliasSyncToggle';
-import { AliasMailboxes } from '@proton/pass/components/Settings/Aliases/Mailboxes/AliasMailboxes';
+import { Aliases as AliasesCore } from '@proton/pass/components/Settings/Aliases';
 
 export const Aliases: FC = () => (
     <>
-        <AliasMailboxes />
-        <AliasSyncToggle />
+        <AliasesCore />
     </>
 );
