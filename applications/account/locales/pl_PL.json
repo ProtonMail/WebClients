@@ -70,11 +70,11 @@
       "Accept": [
         "Akceptuj"
       ],
-      "activate": [
-        "aktywować"
-      ],
       "Activate": [
         "Aktywuj"
+      ],
+      "activate": [
+        "aktywować"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -204,6 +204,9 @@
       ],
       "Change": [
         "Zmień"
+      ],
+      "Change configuration": [
+        "Zmień konfigurację"
       ],
       "Change keys": [
         "Zmień klucze"
@@ -751,6 +754,9 @@
       "Next month": [
         "Następny miesiąc"
       ],
+      "Next page": [
+        "Następna strona"
+      ],
       "No": [
         "Nie"
       ],
@@ -798,6 +804,9 @@
       ],
       "Previous month": [
         "Poprzedni miesiąc"
+      ],
+      "Previous page": [
+        "Poprzednia strona"
       ],
       "Quit": [
         "Zakończ"
@@ -7070,6 +7079,9 @@
       "All members have been added.": [
         "Wszyscy użytkownicy zostali dodani."
       ],
+      "All users": [
+        "wszystkim użytkownikom"
+      ],
       "All your changes will be lost.": [
         "Wszystkie zmiany zostaną utracone."
       ],
@@ -7301,6 +7313,12 @@
       "Connection data will be available in around 1 hour.": [
         "Dane o połączeniu będą dostępne za około godzinę."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Zezwalaj **${ affiliationsText }** z organizacji **${ organizationValue.Name }** na dołączenie do organizacji ${ BRAND_NAME }."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Kontynuuj łączenie organizacji **${ organizationValue.Name }** z organizacją ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Kontynuuj z planem ${ freeName }"
       ],
@@ -7525,6 +7543,9 @@
       ],
       "Edit link": [
         "Edytuj link"
+      ],
+      "EduGain configuration saved": [
+        "Konfiguracja eduGAIN została zapisana"
       ],
       "email": [
         "adres e-mail"
@@ -8045,6 +8066,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Ładowanie kalendarza. Poczekaj chwilę. W nowej karcie otworzy się usługa Calendly."
       ],
+      "Loading eduGAIN data...": [
+        "Ładowanie danych eduGAIN..."
+      ],
       "Loading gateways monitoring current status.": [
         "Ładowanie bram monitorujących obecny status."
       ],
@@ -8161,6 +8185,9 @@
       ],
       "No logs yet.": [
         "Logi są puste."
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Brak organizacji z włączoną funkcją **eduGAIN** dla domeny **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Płatność nie jest wymagana."
@@ -8510,8 +8537,17 @@
       "Select a service provider to start": [
         "Aby rozpocząć, wybierz dostawcę usługi"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Wybierz organizację z włączoną funkcją **eduGAIN** dla domeny **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Wybierz jednego lub wielu powiązanych użytkowników"
+      ],
       "Select recently used servers": [
         "Wybierz ostatnio używane serwery"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Wybierz powiązanego użytkownika z organizacji **${ organizationValue.Name }** (${ organizationValue.EntityId }), którego chcesz dopuścić do organizacji ${ BRAND_NAME }:"
       ],
       "Select what you want to import.": [
         "Wybierz, co chcesz zaimportować."
@@ -8791,6 +8827,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Wiadomość nie zostanie dostarczona do pomocy technicznej. Jeśli masz problem z naszą usługą lub potrzebujesz dalszej pomocy, ${ supportLink }."
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Organizację z włączoną funkcją **eduGAIN** dla domeny **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Link promocji wygasł."
@@ -10495,6 +10534,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Wpisz hasło dla klucza z odciskiem: ${ fingerprintCode }"
       ],
+      "Entity ID": [
+        "Identyfikator jednostki"
+      ],
       "Event": [
         "Zdarzenie"
       ],
@@ -10756,6 +10798,9 @@
       "Organization password": [
         "Hasło organizacji"
       ],
+      "Other": [
+        "Inny"
+      ],
       "Other amount": [
         "Inna kwota"
       ],
@@ -11011,6 +11056,9 @@
       "User": [
         "Użytkownik"
       ],
+      "User affiliations": [
+        "Powiązany użytkownik"
+      ],
       "User's new password": [
         "Nowe hasło użytkownika"
       ],
@@ -11208,6 +11256,11 @@
       ],
       "To: ${ to }": [
         "Do: ${ to }"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Wybierz dostawcę tożsamości, aby rozpocząć"
       ]
     },
     "Limit of calendars reached": {
@@ -17617,6 +17670,9 @@
       "Choose an account": [
         "Wybierz konto"
       ],
+      "Choose user affiliations": [
+        "Wybierz powiązanego użytkownika"
+      ],
       "Clear": [
         "Wyczyść"
       ],
@@ -17649,6 +17705,9 @@
       ],
       "Connect ${ name }": [
         "Połącz ${ name }"
+      ],
+      "Connect organization": [
+        "Połącz organizację"
       ],
       "Connection status": [
         "Status połączenia"
@@ -18784,6 +18843,9 @@
       "Device information such as operating system": [
         "Informacje o urządzeniu jak system operacyjny"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Nazwa wyświetlana w bazie danych eduGAIN"
+      ],
       "Each imported email will have this label": [
         "Każda zaimportowana wiadomość będzie posiadała tę etykietę"
       ],
@@ -18852,6 +18914,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Wybierz dozwoloną domenę dla logowania SSO (SAML)."
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Określ użytkowników eduGAIN, którzy mogą uwierzytelniać się za pomocą logowania SSO (SAML)"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Podfoldery systemowe będą widoczne jako oddzielne foldery w poczcie ${ MAIL_APP_NAME }"
