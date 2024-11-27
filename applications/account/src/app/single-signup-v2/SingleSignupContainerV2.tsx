@@ -654,7 +654,10 @@ const SingleSignupContainerV2 = ({
                         currency,
                         cycle,
                         coupon,
-                        billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+                        billingAddress: {
+                            CountryCode: paymentMethodStatus.CountryCode,
+                            State: paymentMethodStatus.State,
+                        },
                     },
                     toApp: product,
                 }),

@@ -24,14 +24,7 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
-import {
-    type BillingAddress,
-    type Currency,
-    DEFAULT_TAX_BILLING_ADDRESS,
-    PLANS,
-    type PlanIDs,
-    getPlansMap,
-} from '@proton/payments';
+import { type BillingAddress, type Currency, PLANS, type PlanIDs, getPlansMap } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -317,7 +310,10 @@ const SignupContainer = ({
                 plan: PLANS.FREE,
             });
             const cycle = signupParameters.cycle || DEFAULT_CYCLE;
-            const billingAddress = DEFAULT_TAX_BILLING_ADDRESS;
+            const billingAddress: BillingAddress = {
+                CountryCode: paymentStatus.CountryCode,
+                State: paymentStatus.State,
+            };
             const coupon = signupParameters.coupon;
 
             const subscriptionData = await getSubscriptionData(paymentsSilentApi, {
