@@ -97,6 +97,7 @@ export const useDecryptPublicShareLink = () => {
             hasThumbnail: shareUrlInfo.ThumbnailURLInfo !== undefined,
             isShared: false,
             nodeKey: shareUrlInfo.NodeKey,
+            nodeHashKey: shareUrlInfo.NodeHashKey ?? undefined,
             nodePassphrase: shareUrlInfo.NodePassphrase,
             contentKeyPacket: shareUrlInfo.ContentKeyPacket,
             rootShareId: token,

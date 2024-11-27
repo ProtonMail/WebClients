@@ -19,7 +19,7 @@ import {
 
 import { TransferConflictStrategy } from '../../store/_uploads/interface';
 
-export interface ConflictModalProps {
+interface ConflictModalProps {
     name: string;
     isFolder?: boolean;
     originalIsDraft?: boolean;

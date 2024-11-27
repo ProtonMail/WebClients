@@ -71,17 +71,7 @@ export interface Download {
     scanIssueError?: Error;
 }
 
-export interface PartialDownload extends Download {
-    partOf: string;
-}
-
 export type Transfer = Upload | Download;
-
-export interface ThumbnailMeta {
-    modifyTime: number;
-}
-
-export type API = (query: any) => any;
 
 export interface TransferHistoryStats {
     active: boolean;

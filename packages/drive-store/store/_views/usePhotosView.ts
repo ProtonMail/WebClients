@@ -219,5 +219,3 @@ export const usePhotosView = () => {
         isLoading,
     };
 };
-
-export default usePhotosView;

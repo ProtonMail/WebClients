@@ -4,16 +4,6 @@ import type { IconName } from '@proton/components';
 
 import type { Download, TransferType, Upload } from './transfer';
 
-export interface DownloadProps {
-    transfer: Download;
-    type: TransferType.Download;
-}
-
-export interface UploadProps {
-    transfer: Upload;
-    type: TransferType.Upload;
-}
-
 export interface TransferProps<T extends TransferType> {
     transfer: T extends TransferType.Download ? Download : Upload;
     type: T;

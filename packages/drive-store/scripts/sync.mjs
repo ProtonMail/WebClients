@@ -7,6 +7,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+let logLevel = 'info';
+
 // Function to copy files from source to target
 async function copyFiles(source, target) {
     try {
@@ -29,7 +31,9 @@ async function copyFiles(source, target) {
                     await copyFiles(sourcePath, targetPath);
                 } else if (entry.isFile()) {
                     await fs.copyFile(sourcePath, targetPath);
-                    console.log(`Copied file from ${sourcePath} to ${targetPath}`);
+                    if (logLevel === 'debug') {
+                        console.log(`Copied file from ${sourcePath} to ${targetPath}`);
+                    }
                 }
             } catch {
                 console.log(`Skipping non-existent target: ${targetPath}`);
@@ -87,9 +91,17 @@ async function ensureDirectoryExists(targetPath) {
 }
 
 // Function to copy imported and exported files recursively
-async function copyImportedExportedFiles(sourceFilePath, sourceDir, targetDir, visited = new Set()) {
+async function copyImportedExportedFiles(sourceFilePath, sourceDir, targetDir, visited = new Set(), importStack = []) {
     if (visited.has(sourceFilePath)) return;
     visited.add(sourceFilePath);
+
+    // Check for circular imports
+    if (importStack.includes(sourceFilePath)) {
+        console.error(`Circular import detected: ${importStack.join(' -> ')} -> ${sourceFilePath}`);
+        return;
+    }
+
+    importStack.push(sourceFilePath);
 
     const localPaths = await parseImportsAndExports(sourceFilePath);
 
@@ -106,14 +118,18 @@ async function copyImportedExportedFiles(sourceFilePath, sourceDir, targetDir, v
         try {
             await ensureDirectoryExists(targetImportPath); // Ensure the target directory exists
             await fs.copyFile(sourceImportPath, targetImportPath);
-            console.log(`Copied imported/exported file from ${sourceImportPath} to ${targetImportPath}`);
+            if (logLevel === 'debug') {
+                console.log(`Copied imported/exported file from ${sourceImportPath} to ${targetImportPath}`);
+            }
 
             // Recursively handle the imported/exported file
-            await copyImportedExportedFiles(sourceImportPath, sourceDir, targetDir, visited);
+            await copyImportedExportedFiles(sourceImportPath, sourceDir, targetDir, visited, importStack);
         } catch (error) {
             console.error(`Failed to copy imported/exported file: ${sourceImportPath}`, error);
         }
     }
+
+    importStack.pop();
 }
 
 async function syncDirectories() {
@@ -122,6 +138,7 @@ async function syncDirectories() {
         const config = JSON.parse(await fs.readFile(configPath, 'utf8'));
         const baseDir = path.resolve(config.base);
         const originalDir = path.resolve(config.original);
+        logLevel = config.logLevel || 'info';
 
         for (let dir of config.directories) {
             const targetPath = path.join(baseDir, dir);

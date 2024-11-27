@@ -58,5 +58,3 @@ export const useDesktopDownloads = () => {
         downloads,
     };
 };
-
-export default useDesktopDownloads;

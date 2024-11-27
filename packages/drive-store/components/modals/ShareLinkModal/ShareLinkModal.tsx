@@ -19,7 +19,8 @@ import {
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 import type { ShareMember } from '../../../store';
-import { useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
+import { useDrivePublicSharingFlags, useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
+import { useIsPaid } from '../../../store/_user';
 import ModalContentLoader from '../ModalContentLoader';
 import { DirectSharingAutocomplete, DirectSharingListing, useShareInvitees } from './DirectSharing';
 import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
@@ -42,6 +43,8 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         deleteLink,
         stopSharing,
         sharedLink,
+        permissions: sharedLinkPermissions,
+        updatePermissions: updateSharedLinkPermissions,
         hasSharedLink,
         errorMessage,
         loadingMessage,
@@ -78,6 +81,8 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
     } = useShareMemberView(rootShareId, linkId);
 
     const { isDirectSharingDisabled } = useDriveSharingFlags();
+    const { isPublicEditModeEnabled } = useDrivePublicSharingFlags();
+    const isPaid = useIsPaid();
 
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
 
@@ -204,6 +209,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                     <>
                         <ModalTwoContent className="mb-5">
                             <DirectSharingListing
+                                viewOnly={isDirectSharingDisabled}
                                 volumeId={volumeId}
                                 linkId={linkId}
                                 isLoading={isLoading}
@@ -225,9 +231,13 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                 <hr className="mb-0.5 min-h-px" />
                                 <ModalTwoFooter>
                                     <PublicSharing
+                                        // TODO: Implement Upgrade to drive plus modal in case user is free user
+                                        viewOnly={!isPublicEditModeEnabled || !isPaid}
                                         createSharedLink={createSharedLink}
                                         isLoading={isShareWithAnyoneLoading}
                                         publicSharedLink={sharedLink}
+                                        publicSharedLinkPermissions={sharedLinkPermissions}
+                                        onChangePermissions={updateSharedLinkPermissions}
                                         deleteSharedLink={handleDeleteLink}
                                     />
                                 </ModalTwoFooter>
