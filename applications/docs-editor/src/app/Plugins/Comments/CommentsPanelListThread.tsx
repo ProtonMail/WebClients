@@ -13,7 +13,7 @@ import { useCommentsContext } from './CommentsContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $getNodeByKey, $getSelection, $isRangeSelection } from 'lexical'
 
-export function CommentsPanelListThread({ thread }: { thread: CommentThreadInterface }) {
+export function CommentsPanelListThread({ thread, className }: { thread: CommentThreadInterface; className?: string }) {
   const [editor] = useLexicalComposerContext()
   const { controller, getMarkNodes, activeIDs } = useCommentsContext()
 
@@ -105,10 +105,11 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
           const rootRect = rootElement.getBoundingClientRect()
           const shouldScroll = markRect.bottom < rootRect.top || markRect.top > rootRect.bottom
           if (shouldScroll) {
+            const shouldSmoothScroll = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
             markNodeElement.scrollIntoView({
               // eslint-disable-next-line custom-rules/deprecate-classes
               block: 'center',
-              behavior: 'smooth',
+              behavior: shouldSmoothScroll ? 'smooth' : 'instant',
             })
           }
         }
@@ -137,10 +138,11 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
     if (!(target instanceof Element)) {
       return
     }
-    const isClickingButton = !!target.closest('button')
-    if (isClickingButton) {
+    const shouldKeepSelectionInEditorAndNotScroll = !!target.closest('button, .comment-composer')
+    if (shouldKeepSelectionInEditorAndNotScroll) {
       event.preventDefault()
       event.stopPropagation()
+      return
     }
 
     scrollEditorToThreadLocation()
@@ -208,12 +210,13 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
       ref={setElement}
       data-thread-mark-id={markID}
       onClick={handleClickThread}
+      data-active={isActive ? true : undefined}
       className={clsx(
         'group/thread border-weak bg-norm mb-3.5 list-none overflow-hidden rounded-lg border transition-transform duration-[25ms] last:mb-0 focus:outline-none',
-        isActive || isHovering
-          ? 'shadow-raised relative translate-x-[-5px] hover:bg-[--optional-background-lowered]'
-          : '',
+        isActive || isHovering ? 'shadow-raised relative' : '',
+        !isActive && 'hover:bg-[--optional-background-lowered]',
         thread.isPlaceholder || isDeleting ? 'pointer-events-none opacity-50' : '',
+        className,
       )}
       data-testid={isActive ? 'floating-thread-list-non-section' : 'floating-thread-list-section'}
     >
@@ -249,7 +252,12 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
         ))}
       </ul>
       {canShowReplyBox && (
-        <div className="my-3 hidden px-3.5 group-focus-within/thread:block group-has-[.options-open]/thread:block">
+        <div
+          className={clsx(
+            'my-3 px-3.5',
+            isActive ? '' : 'hidden group-focus-within/thread:block group-has-[.options-open]/thread:block',
+          )}
+        >
           <CommentsComposer
             className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={c('Placeholder').t`Reply...`}
