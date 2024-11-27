@@ -26,18 +26,19 @@ export const DefaultDomainSelect: FC<Props> = ({ className }) => {
     const spotlight = useSpotlight();
 
     const handleChange = (value: MaybeNull<string>) => {
-        if (value !== null) {
-            const isPremiumDomain = aliasDomains?.find((domain) => domain.Domain === value)?.IsPremium;
-            if (isPremiumDomain && !canManage) {
-                return spotlight.setUpselling({
-                    type: 'pass-plus',
-                    upsellRef: UpsellRef.SETTING,
-                });
-            }
-
-            setDefault.dispatch(value);
+        const isPremiumDomain = aliasDomains?.find((domain) => domain.Domain === value)?.IsPremium;
+        if (isPremiumDomain && !canManage) {
+            return spotlight.setUpselling({
+                type: 'pass-plus',
+                upsellRef: UpsellRef.SETTING,
+            });
         }
+
+        setDefault.dispatch(value);
     };
+
+    // translator: Label for selecting a default domain, singular only
+    const notSelectedLabel = c('Label').t`Not selected`;
 
     return (
         <SelectTwo<MaybeNull<string>>
@@ -47,23 +48,28 @@ export const DefaultDomainSelect: FC<Props> = ({ className }) => {
             loading={loading || setDefault.loading}
             className={className}
         >
-            {aliasDomains.map((domain) => (
-                <Option
-                    value={domain.Domain}
-                    title={domain.Domain}
-                    key={domain.Domain}
-                    className="flex justify-space-between items-center flex-nowrap"
-                >
-                    <span>
-                        {domain.Domain} {getDomainLabel(domain)}
-                    </span>
-                    {!canManage && domain.IsPremium && domain.Domain !== defaultAliasDomain && (
-                        <span className="">
-                            <PassPlusPromotionButton />
+            {[
+                ...aliasDomains.map((domain) => (
+                    <Option
+                        value={domain.Domain}
+                        title={domain.Domain}
+                        key={domain.Domain}
+                        className="flex justify-space-between items-center flex-nowrap"
+                    >
+                        <span>
+                            {domain.Domain} {getDomainLabel(domain)}
                         </span>
-                    )}
-                </Option>
-            ))}
+                        {!canManage && domain.IsPremium && domain.Domain !== defaultAliasDomain && (
+                            <span className="">
+                                <PassPlusPromotionButton />
+                            </span>
+                        )}
+                    </Option>
+                )),
+                <Option value={null} title={notSelectedLabel} key="not-selected">
+                    {notSelectedLabel}
+                </Option>,
+            ]}
         </SelectTwo>
     );
 };

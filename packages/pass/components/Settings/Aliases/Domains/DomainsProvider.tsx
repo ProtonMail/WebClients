@@ -10,7 +10,6 @@ import { getAliasDomains, getCustomDomains } from '@proton/pass/store/actions';
 import { selectCanManageAlias } from '@proton/pass/store/selectors';
 import type {
     CustomDomainValidationOutput,
-    Maybe,
     UserAliasDomainOutput,
     UserAliasSettingsGetOutput,
 } from '@proton/pass/types';
@@ -36,7 +35,7 @@ export interface AliasDomainsContextValue {
     aliasDomains: UserAliasDomainOutput[];
     canManage: boolean;
     customDomains: CustomDomain[];
-    defaultAliasDomain: Maybe<string>;
+    defaultAliasDomain: MaybeNull<string>;
     loading: boolean;
     onCreate: (domain: CustomDomainOutput) => void;
     onDelete: (domainID: number) => void;
@@ -76,7 +75,7 @@ export const AliasDomainsProvider: FC<PropsWithChildren> = ({ children }) => {
             aliasDomains,
             canManage,
             customDomains: Object.values(customDomains),
-            defaultAliasDomain: aliasDomains.find(({ IsDefault }) => IsDefault)?.Domain,
+            defaultAliasDomain: aliasDomains.find(({ IsDefault }) => IsDefault)?.Domain ?? null,
             loading,
             onCreate: (domain) => {
                 setCustomDomains((domains) => fullMerge(domains, { [domain.ID]: domain }));
