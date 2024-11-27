@@ -468,7 +468,7 @@ export default function usePublicUploadFile() {
                             BlockList: fileBlocks.map((block) => ({
                                 Index: block.index,
                                 Hash: uint8ArrayToBase64String(block.hash),
-                                EncSignature: block.signature,
+                                EncSignature: !!block.signature ? block.signature : undefined,
                                 Size: block.size,
                                 Verifier: {
                                     Token: uint8ArrayToBase64String(block.verificationToken),
