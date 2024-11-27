@@ -52,7 +52,7 @@ export function CommentsComposer({
     <div
       ref={composerRef}
       className={clsx(
-        'relative flex flex-wrap gap-1 rounded-lg px-2 py-1 text-sm',
+        'comment-composer relative flex flex-wrap gap-1 rounded-lg px-2 py-1 text-sm',
         hasNewLines ? 'flex-column' : 'items-center justify-between',
         className,
       )}
