@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
@@ -49,10 +50,13 @@ export const useMailShortDomainPostSubscriptionComposerSpotlight = () => {
 const MailShortDomainPostSubscriptionModal = ({ onClose }: PostSubscriptionModalComponentProps) => {
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
+    const location = useLocation();
     const { shortDomainAddress, createShortDomainAddress, loadingDependencies } = useShortDomainAddress();
     const getAddresses = useGetAddresses();
     const goToSettings = useSettingsLink();
     const composerSpotlight = useMailShortDomainPostSubscriptionComposerSpotlight();
+
+    const isIdentityAndAddressPage = location.pathname.includes('/identity-addresses');
 
     // translator complete sentence: This is now your <>default email address<> for sending new messages.
     const defaultEmailAddress = <b key="default-email-adress">{c('Info').t`default email address`}</b>;
@@ -142,12 +146,14 @@ const MailShortDomainPostSubscriptionModal = ({ onClose }: PostSubscriptionModal
                             loading={loadingDependencies || loading}
                             onClick={onClose}
                         >{c('Button').t`Continue`}</Button>
-                        <Button
-                            fullWidth
-                            onClick={() => {
-                                goToSettings('/identity-addresses', APPS.PROTONMAIL);
-                            }}
-                        >{c('Button').t`Change email address settings`}</Button>
+                        {!isIdentityAndAddressPage && (
+                            <Button
+                                fullWidth
+                                onClick={() => {
+                                    goToSettings('/identity-addresses', APPS.PROTONMAIL);
+                                }}
+                            >{c('Button').t`Change email address settings`}</Button>
+                        )}
                     </div>
                 </ModalTwoContent>
             </div>
