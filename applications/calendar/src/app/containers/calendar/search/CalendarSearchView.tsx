@@ -156,15 +156,15 @@ const CalendarSearchView = ({
         });
     };
 
-    useCalendarsEventsReader({
-        calendarEvents: calendarViewEvents,
+    const { setCalendarEvents } = useCalendarsEventsReader({
         calendarsEventsCacheRef,
-        rerender: noop,
-        getOpenedMailEvents,
-        onEventRead: loadPopoverContent,
         forceDecryption: true,
+        getOpenedMailEvents,
         metadataOnly: false,
+        onEventRead: loadPopoverContent,
+        rerender: noop,
     });
+    useEffect(() => setCalendarEvents(calendarViewEvents), [calendarViewEvents]);
 
     const { setOpenedSearchItem } = useCalendarSearch();
     // visualItems are sorted by StartTime, so we can paginate them directly without sorting them again
