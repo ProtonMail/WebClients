@@ -176,7 +176,7 @@ export const queryPublicRequestUpload = (
     data: {
         BlockList: {
             Hash: string;
-            EncSignature: string;
+            EncSignature?: string;
             Size: number;
             Index: number;
             Verifier: {
