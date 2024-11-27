@@ -2,11 +2,10 @@ import { type KeyboardEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader, Href } from '@proton/atoms/index';
-import { InputFieldTwo, Toggle } from '@proton/components/index';
+import { Button, CircleLoader, Href } from '@proton/atoms';
+import { InputFieldTwo, Toggle } from '@proton/components';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { DomainMailboxesSelector } from '@proton/pass/components/Settings/Aliases/DomainMailboxesSelector';
-import { type CustomDomainInfo } from '@proton/pass/components/Settings/Aliases/Domains';
+import { DomainMailboxesSelector } from '@proton/pass/components/Settings/Aliases/Mailboxes/AliasMailboxesSelect';
 import { SIMPLELOGIN_DOMAIN_SETTINGS_URL } from '@proton/pass/constants';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import {
@@ -16,15 +15,17 @@ import {
     updateCustomDomainMailboxes,
     updateRandomPrefix,
 } from '@proton/pass/store/actions';
-import type { CustomDomainOutput, CustomDomainSettingsOutput, MaybeNull } from '@proton/pass/types';
+import type { CustomDomainSettingsOutput, MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
-type Props = {
-    domain: CustomDomainOutput;
-    onUpdate?: (domain: CustomDomainInfo) => void;
-};
+import { useCustomDomain } from './DomainsProvider';
 
-export const DomainDetailsInfo = ({ domain }: Props) => {
+type Props = { domainID: number };
+
+export const DomainDetailsInfo = ({ domainID }: Props) => {
+    const domain = useCustomDomain(domainID);
+    const isDomainVerified = domain?.OwnershipVerified;
+
     const [domainSettings, setDomainSettings] = useState<MaybeNull<CustomDomainSettingsOutput>>(null);
     const [selectedMailboxIDs, setSelectedMailboxIDs] = useState<number[]>([]);
     const [displayName, setDisplayName] = useState('');
@@ -34,21 +35,11 @@ export const DomainDetailsInfo = ({ domain }: Props) => {
     const updateDisplayName = useRequest(updateCustomDomainDisplayName, { onSuccess: setDomainSettings });
     const toggleRandomPrefix = useRequest(updateRandomPrefix, { onSuccess: setDomainSettings });
 
-    const handleToggleCatchAll = (enabled: boolean) => {
-        toggleCatchAll.dispatch({ domainID: domain.ID, catchAll: enabled });
-    };
-
-    const handleUpdateMailboxes = () => {
-        updateMailboxes.dispatch({ domainID: domain.ID, mailboxIDs: selectedMailboxIDs });
-    };
-
-    const handleSubmitDisplayName = () => {
-        updateDisplayName.dispatch({ domainID: domain.ID, name: displayName });
-    };
-
-    const handleToggleRandomPrefixClick = (enabled: boolean) => {
-        toggleRandomPrefix.dispatch({ domainID: domain.ID, randomPrefix: enabled });
-    };
+    const handleToggleCatchAll = (catchAll: boolean) => toggleCatchAll.dispatch({ domainID, catchAll });
+    const handleUpdateMailboxes = () => updateMailboxes.dispatch({ domainID, mailboxIDs: selectedMailboxIDs });
+    const handleSubmitDisplayName = () => updateDisplayName.dispatch({ domainID, name: displayName });
+    const handleToggleRandomPrefixClick = (randomPrefix: boolean) =>
+        toggleRandomPrefix.dispatch({ domainID, randomPrefix });
 
     const getDomainSettings = useRequest(getCustomDomainSettings, {
         onSuccess: (data) => {
@@ -59,12 +50,10 @@ export const DomainDetailsInfo = ({ domain }: Props) => {
         onFailure: () => setDomainSettings(null),
     });
 
-    const isDomainVerified = domain.OwnershipVerified;
-
     useEffect(() => {
-        // BE won't return domain settings if domain is not verified
-        if (isDomainVerified) getDomainSettings.dispatch(domain.ID);
-    }, [domain.ID]);
+        /* BE won't return domain settings if domain is not verified */
+        if (domain?.OwnershipVerified) getDomainSettings.dispatch(domain.ID);
+    }, [domain]);
 
     const mailboxesSelectorUntouched =
         selectedMailboxIDs.length === (domainSettings?.Mailboxes?.length ?? 0) &&
@@ -79,8 +68,10 @@ export const DomainDetailsInfo = ({ domain }: Props) => {
         </Href>
     );
 
+    const domainDisplay = domain?.Domain ?? c('Info').t`your domain`;
+
     const emailBold = (
-        <span className="text-bold" key="domain-details-email">{c('Email').t`anything@${domain.Domain}`}</span>
+        <span className="text-bold" key="domain-details-email">{c('Email').t`anything@${domainDisplay}`}</span>
     );
     const automaticallyBold = (
         <span className="text-bold" key="domain-details-automatically">{c('Info').t`automatically`}</span>
@@ -140,7 +131,7 @@ export const DomainDetailsInfo = ({ domain }: Props) => {
 
             <h5 className="text-bold mb-3">{c('Title').t`Default Display Name`}</h5>
             <div>{c('Info')
-                .t`Default display name for aliases created with ${domain.Domain} unless overwritten by the alias display name.`}</div>
+                .t`Default display name for aliases created with ${domainDisplay} unless overwritten by the alias display name.`}</div>
 
             <div className="flex gap-3 mt-2">
                 <div>

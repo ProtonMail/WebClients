@@ -314,14 +314,14 @@ export const verifyCustomDomain = requestActionsFactory<number, CustomDomainVali
     },
 });
 
-export const deleteCustomDomain = requestActionsFactory<number, Boolean>('alias::custom-domain::delete')({
+export const deleteCustomDomain = requestActionsFactory<number, number>('alias::custom-domain::delete')({
     key: intKey,
     success: {
-        prepare: () =>
+        prepare: (payload) =>
             withNotification({
                 type: 'success',
                 text: c('Success').t`Domain successfully deleted`,
-            })({ payload: {} }),
+            })({ payload }),
     },
     failure: {
         prepare: (error, payload) =>
