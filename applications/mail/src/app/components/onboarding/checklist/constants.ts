@@ -186,7 +186,7 @@ export const ONLINE_SERVICES: Record<OnlineServicesKey, OnlineService> = {
     },
     ebay: {
         key: 'ebay',
-        name: 'Ebay',
+        name: 'eBay',
         url: 'https://signin.ebay.com/ws/eBayISAPI.dll?SignIn&ru=https://accountsettings.ebay.com/uas',
         img: ebay,
         mostPopular: true,
@@ -242,7 +242,7 @@ export const ONLINE_SERVICES: Record<OnlineServicesKey, OnlineService> = {
     },
     paypal: {
         key: 'paypal',
-        name: 'Paypal',
+        name: 'PayPal',
         url: 'https://www.paypal.com/myaccount/settings/',
         img: paypal,
         mostPopular: true,
@@ -283,7 +283,7 @@ export const ONLINE_SERVICES: Record<OnlineServicesKey, OnlineService> = {
     },
     'american-express': {
         key: 'american-express',
-        name: 'American express',
+        name: 'American Express',
         url: 'https://www.americanexpress.com/en-us/account/login',
         img: americanExpress,
         country: 'US',
@@ -315,7 +315,7 @@ export const ONLINE_SERVICES: Record<OnlineServicesKey, OnlineService> = {
     },
     'credit-karma': {
         key: 'credit-karma',
-        name: 'Credit karma',
+        name: 'Credit Karma',
         url: 'https://www.creditkarma.com/auth/logon',
         img: creditKarma,
         country: 'US',
@@ -459,7 +459,7 @@ export const ONLINE_SERVICES: Record<OnlineServicesKey, OnlineService> = {
     },
     bestbuy: {
         key: 'bestbuy',
-        name: 'Bestbuy',
+        name: 'Best Buy',
         url: 'https://www.bestbuy.com/identity/global/signin',
         img: bestBuy,
         country: 'US',
@@ -475,7 +475,7 @@ export const ONLINE_SERVICES: Record<OnlineServicesKey, OnlineService> = {
     },
     instacart: {
         key: 'instacart',
-        name: 'instacart',
+        name: 'Instacart',
         url: 'https://www.instacart.com/login',
         img: instacart,
         country: 'US',
@@ -491,7 +491,7 @@ export const ONLINE_SERVICES: Record<OnlineServicesKey, OnlineService> = {
     },
     'disney-plus': {
         key: 'disney-plus',
-        name: 'Disney plus',
+        name: 'Disney+',
         url: 'https://www.disneyplus.com/oauth',
         img: disneyPlus,
         category: 'ENTERTAINMENT',
@@ -528,7 +528,7 @@ export const ONLINE_SERVICES: Record<OnlineServicesKey, OnlineService> = {
     },
     mcdonalds: {
         key: 'mcdonalds',
-        name: 'Mcdonalds',
+        name: "McDonald's",
         url: 'https://www.mcdonalds.com/us/en-us/my-account.html',
         img: mcdonalds,
         country: 'US',
@@ -621,7 +621,7 @@ export const ONLINE_SERVICES: Record<OnlineServicesKey, OnlineService> = {
     },
     att: {
         key: 'att',
-        name: 'ATT',
+        name: 'AT&T',
         url: 'https://www.att.com/my/',
         img: att,
         country: 'US',
@@ -629,7 +629,7 @@ export const ONLINE_SERVICES: Record<OnlineServicesKey, OnlineService> = {
     },
     't-mobile': {
         key: 't-mobile',
-        name: 'T-mobile',
+        name: 'T-Mobile',
         url: 'https://account.t-mobile.com/',
         img: tMobile,
         country: 'US',
