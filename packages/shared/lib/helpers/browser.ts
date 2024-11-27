@@ -207,7 +207,7 @@ export const getHasWebAuthnSupport = () => {
     }
 };
 
-export async function detectStorageCapabilities() {
+export async function detectStorageCapabilities(): Promise<{ isAccessible: boolean; hasIndexedDB: boolean }> {
     // Check for IndexedDB API
     const hasIndexedDB = 'indexedDB' in window;
 
