@@ -543,6 +543,9 @@
       "Next month": [
         "Nästa månad"
       ],
+      "Next page": [
+        "Nästa sida"
+      ],
       "Not now": [
         "Inte nu"
       ],
@@ -590,6 +593,9 @@
       ],
       "Previous month": [
         "Föregående månad"
+      ],
+      "Previous page": [
+        "Föregående sida"
       ],
       "Quit": [
         "Avsluta"
@@ -851,6 +857,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Uppgradera till ${ BRAND_NAME } Unlimited"
+      ],
+      "Upload": [
+        "Ladda upp"
       ],
       "Upload anyway": [
         "Ladda upp ändå"
@@ -2383,6 +2392,11 @@
         "Försenad faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
@@ -2452,11 +2466,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7377,17 +7386,6 @@
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Skaffa Mail Plus för ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Startar från ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7400,6 +7398,17 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
