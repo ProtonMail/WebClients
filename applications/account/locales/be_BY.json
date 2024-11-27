@@ -70,11 +70,11 @@
       "Accept": [
         "Прыняць"
       ],
-      "activate": [
-        "актываваць"
-      ],
       "Activate": [
         "Актываваць"
+      ],
+      "activate": [
+        "актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -204,6 +204,9 @@
       ],
       "Change": [
         "Змяніць"
+      ],
+      "Change configuration": [
+        "Змяніць канфігурацыю"
       ],
       "Change keys": [
         "Змяніць ключы"
@@ -751,6 +754,9 @@
       "Next month": [
         "Наступны месяц"
       ],
+      "Next page": [
+        "Наступная старонка"
+      ],
       "No": [
         "Не"
       ],
@@ -798,6 +804,9 @@
       ],
       "Previous month": [
         "Папярэдні месяц"
+      ],
+      "Previous page": [
+        "Папярэдняя старонка"
       ],
       "Quit": [
         "Выйсці"
@@ -7065,6 +7074,9 @@
       "All members have been added.": [
         "Усе ўдзельнікі былі дададзены."
       ],
+      "All users": [
+        "Усе карыстальнікі"
+      ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
       ],
@@ -7296,6 +7308,12 @@
       "Connection data will be available in around 1 hour.": [
         "Даныя аб падключэнні будуць даступны прыблізна праз 1 гадзіну."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Працягнуць дазвол **${ affiliationsText }** з **${ organizationValue.Name }** для далучэння да вашай арганізацыі ${ BRAND_NAME }."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Працягнуць падключэнне да **${ organizationValue.Name }** з вашай арганізацыяй ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Працягнуць з ${ freeName }"
       ],
@@ -7520,6 +7538,9 @@
       ],
       "Edit link": [
         "Рэдагаваць спасылку"
+      ],
+      "EduGain configuration saved": [
+        "Канфігурацыя eduGAIN захавана"
       ],
       "email": [
         "электронная пошта"
@@ -8040,6 +8061,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
+      "Loading eduGAIN data...": [
+        "Загрузка даных eduGAIN..."
+      ],
       "Loading gateways monitoring current status.": [
         "Бягучы статус назірання загрузкі за шлюзамі."
       ],
@@ -8156,6 +8180,9 @@
       ],
       "No logs yet.": [
         "Журналаў пакуль няма."
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Адсутнічаюць арганізацыі з уключаным **eduGAIN** для **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Зараз аплата не патрабуецца."
@@ -8505,8 +8532,17 @@
       "Select a service provider to start": [
         "Выберыце пастаўшчыка паслуг, каб пачаць"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Выберыце арганізацыю з уключаным **eduGAIN** для **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Выберыце адну або некалькі прыналежнасцей карыстальніка"
+      ],
       "Select recently used servers": [
         "Выберыце нядаўна выкарыстаныя серверы"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Выберыце прыналежнасці карыстальніка з **${ organizationValue.Name }** (${ organizationValue.EntityId }), якому вы хочаце дазволіць ўвайсці ў сваю арганізацыю ${ BRAND_NAME }:"
       ],
       "Select what you want to import.": [
         "Выберыце, што вы хочаце імпартаваць."
@@ -8620,7 +8656,7 @@
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Падпіска будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцаў."
+        "Падпіска будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцы(-аў)."
       ],
       "Subscription auto-renews every month.": [
         "Падпіска будзе аўтаматычна падаўжацца кожны месяц."
@@ -8786,6 +8822,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Гэта паведамленне не трапіць у службу падтрымкі, калі ў вас праблемы з нашым сэрвісам або неабходны нейкія дзеянні з нашага боку ${ supportLink }"
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "У гэтай арганізацыі ўключаны **eduGAIN** для **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Спасылка гэтай рэкламнай акцыі пратэрмінавана."
@@ -10490,6 +10529,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Увядзіце пароль для ключа з адбіткам: ${ fingerprintCode }"
       ],
+      "Entity ID": [
+        "Ідэнтыфікатар аб'екта"
+      ],
       "Event": [
         "Падзея"
       ],
@@ -10751,6 +10793,9 @@
       "Organization password": [
         "Пароль арганізацыі"
       ],
+      "Other": [
+        "Іншае"
+      ],
       "Other amount": [
         "Іншая сума"
       ],
@@ -11006,6 +11051,9 @@
       "User": [
         "Карыстальнік"
       ],
+      "User affiliations": [
+        "Прыналежнасці карыстальніка"
+      ],
       "User's new password": [
         "Новы пароль карыстальніка"
       ],
@@ -11203,6 +11251,11 @@
       ],
       "To: ${ to }": [
         "Каму: ${ to }"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Выберыце пастаўшчыка пасведчанняў, каб пачаць"
       ]
     },
     "Limit of calendars reached": {
@@ -14780,7 +14833,7 @@
         "Ваш камплект аднаўлення дазволіць вам увайсці і аднавіць даныя, калі вы не маеце доступу да свайго ўліковага запісу ${ BRAND_NAME },"
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Калі вы страціце свае ўліковыя даныя для ўваходу і вам неабходна будзе скінуць уліковы запіс, то **абавязкова** ў вас павінен быць як **метад аднаўлення даных, так і метад аднаўлення ўліковага запісу**. У адваротным выпадку без іх вы не зможаце атрымаць доступ да сваіх паведамленняў, файлаў кантактаў або пароляў."
+        "Калі вы страціце свае ўліковыя даныя для ўваходу і вам неабходна будзе скінуць уліковы запіс, то ў вас **абавязкова** павінен быць як **метад аднаўлення даных, так і метад аднаўлення ўліковага запісу**. У адваротным выпадку без іх вы не зможаце атрымаць доступ да сваіх паведамленняў, файлаў кантактаў або пароляў."
       ],
       "Invalid code": [
         "Памылковы код"
@@ -17385,7 +17438,7 @@
         "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe памочнік у напісанні"
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
@@ -17612,6 +17665,9 @@
       "Choose an account": [
         "Выберыце ўліковы запіс"
       ],
+      "Choose user affiliations": [
+        "Выбар прыналежнасцей карыстальніка"
+      ],
       "Clear": [
         "Ачысціць"
       ],
@@ -17644,6 +17700,9 @@
       ],
       "Connect ${ name }": [
         "Падключыць ${ name }"
+      ],
+      "Connect organization": [
+        "Падключэнне арганізацыі"
       ],
       "Connection status": [
         "Статус падключэння"
@@ -18779,6 +18838,9 @@
       "Device information such as operating system": [
         "Звесткі пра прыладу, такія як аперацыйная сістэма"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Бачнае імя для аб'екта ў базе даных eduGAIN"
+      ],
       "Each imported email will have this label": [
         "Кожны імпартаваны ліст будзе мець гэту метку"
       ],
@@ -18847,6 +18909,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Пазначыць дамен, які можна выкарыстоўваць для аўтэнтыфікацыі з SAML SSO"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Пазначце карыстальнікаў аб'екта eduGAIN, якім дазволена аўтэнтыфікацыя з дапамогай SAML SSO"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"

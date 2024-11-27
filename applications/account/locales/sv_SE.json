@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "activate": [
-        "aktivera"
-      ],
       "Activate": [
         "Aktivera"
+      ],
+      "activate": [
+        "aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -201,6 +201,9 @@
       ],
       "Change": [
         "Ändra"
+      ],
+      "Change configuration": [
+        "Ändra konfiguration"
       ],
       "Change keys": [
         "Ändra nycklar"
@@ -748,6 +751,9 @@
       "Next month": [
         "Nästa månad"
       ],
+      "Next page": [
+        "Nästa sida"
+      ],
       "No": [
         "Nej"
       ],
@@ -795,6 +801,9 @@
       ],
       "Previous month": [
         "Föregående månad"
+      ],
+      "Previous page": [
+        "Föregående sida"
       ],
       "Quit": [
         "Avsluta"
@@ -6899,6 +6908,9 @@
       "All members have been added.": [
         "Alla medlemmar har lagts till."
       ],
+      "All users": [
+        "Alla användare"
+      ],
       "All your changes will be lost.": [
         "Alla dina ändringar kommer att gå förlorade."
       ],
@@ -7339,6 +7351,9 @@
       ],
       "Edit link": [
         "Redigera länk"
+      ],
+      "EduGain configuration saved": [
+        "EduGain-konfiguration sparad"
       ],
       "email": [
         "e-post"
@@ -7834,6 +7849,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laddar kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
       ],
+      "Loading eduGAIN data...": [
+        "Laddar eduGAIN-data …"
+      ],
       "Loading gateways monitoring current status.": [
         "Laddar nuvarande övervakningsstatus av gateways."
       ],
@@ -7950,6 +7968,9 @@
       ],
       "No logs yet.": [
         "Inga loggar än."
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Inga organisationer aktiverade med **eduGAIN** för **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
@@ -8292,6 +8313,9 @@
       "Select a service provider to start": [
         "Välj en tjänsteleverantör för att starta"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Välj en organisation aktiverad med **eduGAIN** för **${ domain.DomainName }**."
+      ],
       "Select recently used servers": [
         "Välj nyligen använda servrar"
       ],
@@ -8565,6 +8589,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Detta meddelande når inte supportteamet, om du har ett problem med vår tjänst eller behöver ytterligare åtgärder från vår sida ${ supportLink }."
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Organisationen är aktiverad med **eduGAIN** för **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Denna kampanjlänk har löpt ut."
@@ -10468,6 +10495,9 @@
       "Organization password": [
         "Organisationens lösenord"
       ],
+      "Other": [
+        "Annat"
+      ],
       "Other amount": [
         "Annat belopp"
       ],
@@ -10918,6 +10948,11 @@
       ],
       "To: ${ to }": [
         "Till: ${ to }"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Välj en identitetsleverantör att starta"
       ]
     },
     "Limit of calendars reached": {
@@ -17099,6 +17134,9 @@
       "Connect ${ name }": [
         "Anslut ${ name }"
       ],
+      "Connect organization": [
+        "Anslut organisation"
+      ],
       "Connection status": [
         "Anslutningsstatus"
       ],
@@ -17461,6 +17499,9 @@
       ],
       "Get the apps": [
         "Skaffa appen"
+      ],
+      "Get Zooming faster": [
+        "Kom snabbare till Zoom"
       ],
       "Gift": [
         "Gåva"

@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "activate": [
-        "активувати"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "activate": [
+        "активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -715,6 +715,9 @@
       "Next month": [
         "Наступний місяць"
       ],
+      "Next page": [
+        "Наступна сторінка"
+      ],
       "No": [
         "Ні"
       ],
@@ -762,6 +765,9 @@
       ],
       "Previous month": [
         "Минулий місяць"
+      ],
+      "Previous page": [
+        "Попередня сторінка"
       ],
       "Quit": [
         "Вийти"
@@ -1757,6 +1763,12 @@
         "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються ${ addresses } адреси електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше.",
         "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються ${ addresses } адреси електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше.",
         "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються ${ addresses } адреси електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Захистіть свою пошту та розклад за допомогою наскрізного шифрування. Включає ${ addresses } поштову адресу, підтримку власних поштових доменів, необмежену кількість псевдонімів hide-my-email та багато іншого.",
+        "Захистіть свою пошту та розклад за допомогою наскрізного шифрування. Включає ${ addresses } поштові адреси, підтримку власних поштових доменів, необмежену кількість псевдонімів hide-my-email та багато іншого.",
+        "Захистіть свою пошту та розклад за допомогою наскрізного шифрування. Включає ${ addresses } поштових адрес, підтримку власних поштових доменів, необмежену кількість псевдонімів hide-my-email та багато іншого.",
+        "Захистіть свою пошту та розклад за допомогою наскрізного шифрування. Включає ${ addresses } поштових адрес, підтримку власних поштових доменів, необмежену кількість псевдонімів hide-my-email та багато іншого."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються 15 адрес електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше."
@@ -4140,6 +4152,12 @@
       "Account does not exist": [
         "Облікового запису не існує"
       ],
+      "Add at least one action": [
+        "Додайте хоча б одну дію"
+      ],
+      "Add at least one condition": [
+        "Додайте хоча б одну умову"
+      ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
@@ -4310,6 +4328,9 @@
       ],
       "Invalid expiration date": [
         "Недійсний термін дії картки"
+      ],
+      "Invalid IBAN": [
+        "Невірний IBAN"
       ],
       "Invalid invitation link": [
         "Недійсне запрошувальне посилання"
@@ -4515,6 +4536,9 @@
       "The address might be misspelled": [
         "Ймовірно, адреса неправильна"
       ],
+      "The amount due has changed. Please try again.": [
+        "Сума до оплати змінилася. Спробуйте ще раз."
+      ],
       "The email addresses do not match": [
         "Електронні адреси відрізняються"
       ],
@@ -4631,6 +4655,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Ви досягли максимальної кількості календарів."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Ви досягли ліміту кількості контактів для вашого облікового запису"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ви вже використали усі адреси з вашого тарифного плану. Для додавання нової адреси необхідно покращити тарифний план."
@@ -5925,6 +5952,12 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Додайте цей запис на панелі керування реєстратора доменних імен свого домену"
       ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Знайдено ${ itemsCount } пропозицію. Використовуйте клавіатуру для навігації.",
+        "Знайдено ${ itemsCount } пропозиції. Використовуйте клавіатуру для навігації.",
+        "Знайдено ${ itemsCount } пропозицій. Використовуйте клавіатуру для навігації.",
+        "Знайдено ${ itemsCount } пропозицій. Використовуйте клавіатуру для навігації."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
       ]
@@ -6465,6 +6498,9 @@
         "(${ memberCount } учасники)",
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } / місяць)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Фільтрувати, якщо виконуються ВСІ зазначені умови)"
@@ -8662,6 +8698,9 @@
       "You are about to open another browser tab and visit:": [
         "Ви збираєтесь відкрити іншу вкладку браузера й відвідати:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Ви хочете відкрити типовий браузер і відвідати:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Наразі ви ввійшли як ${ user.Name } (${ user.Email })."
       ],
@@ -8808,6 +8847,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Після входу ви будете перенаправлені на ${ destination }."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Ви втратите доступ до ${ planTitle } функцій після цієї дати."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
@@ -10063,6 +10105,9 @@
       "Organization password": [
         "Пароль організації"
       ],
+      "Other": [
+        "Інше"
+      ],
       "Other amount": [
         "Інша сума"
       ],
@@ -11301,6 +11346,12 @@
         "${ n } повідомлень на добу",
         "${ n } повідомлення на добу"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } поділене сховище ${ PASS_SHORT_APP_NAME } на користувача",
+        "${ n } поділені сховища ${ PASS_SHORT_APP_NAME } на користувача",
+        "${ n } поділених сховищ ${ PASS_SHORT_APP_NAME } на користувача",
+        "${ n } поділених сховищ ${ PASS_SHORT_APP_NAME } на користувача"
+      ],
       "${ n } vault": [
         "${ n } сховище",
         "${ n } сховища",
@@ -11312,6 +11363,18 @@
         "${ n } VPN-з'єднання",
         "${ n } VPN-з'єднань",
         "${ n } VPN-з'єднань"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } користувач",
+        "До ${ numberOfUsers } користувачів",
+        "До ${ numberOfUsers } користувачів",
+        "До ${ numberOfUsers } користувачів"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-денний журнал версії файлу",
+        "${ options }-денний журнал версії файлу",
+        "${ options }-денний журнал версії файлу",
+        "${ options }-денний журнал версії файлу"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } псевдонімом hide-my-email",
@@ -11643,6 +11706,12 @@
         "До ${ n } користувачів",
         "До ${ n } користувачів"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "До ${ n } користувача (${ adminsText }, ${ usersText })",
+        "До ${ n } користувачів (${ adminsText }, ${ usersText })",
+        "До ${ n } користувачів (${ adminsText }, ${ usersText })",
+        "До ${ n } користувачів (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } сховища"
       ],
@@ -11663,6 +11732,20 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Ми скануємо \"Темну мережу\", щоб перевірити, чи не було витоку ваших адрес або псевдонімів ${ BRAND_NAME }, і негайно сповіщаємо вас, якщо щось знайдемо."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } адміністратор",
+        "${ admins } адміністратори",
+        "${ admins } адміністраторів",
+        "${ admins } адміністраторів"
+      ],
+      "${ users } user": [
+        "${ users } користувач",
+        "${ users } користувачі",
+        "${ users } користувачів",
+        "${ users } користувачів"
       ]
     },
     "new_plans: feature info": {
@@ -13021,6 +13104,12 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } обліковий запис користувача",
+        "${ n } облікові записи користувачів",
+        "${ n } облікових записів користувачів",
+        "${ n } облікових записів користувачів"
+      ],
       "Activity log": [
         "Журнал активності"
       ]
@@ -14779,6 +14868,36 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } пропонує ${ planMaxSpace } сховища для ваших файлів і фотографій. Ви також маєте право на щорічні бонуси за зберігання."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } календар на користувача",
+        "${ planNumberOfCalendars } календарі на користувача",
+        "${ planNumberOfCalendars } календарів на користувача",
+        "${ planNumberOfCalendars } календарів на користувача"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } власний поштовий домен",
+        "${ planNumberOfDomains } власні поштові домени",
+        "${ planNumberOfDomains } власних поштових доменів",
+        "${ planNumberOfDomains } власних поштових доменів"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } поштова адреса",
+        "${ planNumberOfEmails } поштові адреси",
+        "${ planNumberOfEmails } поштових адрес",
+        "${ planNumberOfEmails } поштових адрес"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } поштова адреса на користувача",
+        "${ planNumberOfEmails } поштові адреси на користувача",
+        "${ planNumberOfEmails } поштових адрес на користувача",
+        "${ planNumberOfEmails } поштових адрес на користувача"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } користувач",
+        "${ planNumberOfUsers } користувачі",
+        "${ planNumberOfUsers } користувачів",
+        "${ planNumberOfUsers } користувачів"
       ],
       "2 users": [
         "2 користувачі"
