@@ -18,6 +18,7 @@ import type { DecryptedLink, SignatureIssues } from '../_links';
 import { useLink, useLinksListing } from '../_links';
 import { ThumbnailType } from '../_uploads/media';
 import { waitFor } from '../_utils';
+import useDownloadDecryptionIssue from './DownloadProvider/useDownloadDecryptionIssue';
 import { useDownloadMetrics } from './DownloadProvider/useDownloadMetrics';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
@@ -44,6 +45,7 @@ export default function useDownload() {
     const { getLink, getLinkPrivateKey, getLinkSessionKey, setSignatureIssues } = useLink();
     const { loadChildren, getCachedChildren } = useLinksListing();
     const { report } = useDownloadMetrics('preview');
+    const { handleDecryptionIssue } = useDownloadDecryptionIssue();
 
     const api = useApi();
 
@@ -247,6 +249,9 @@ export default function useDownload() {
                         }
                         await setSignatureIssues(abortSignal, shareId, linkId, signatureIssues);
                         resolve(signatureIssues);
+                    },
+                    onDecryptionIssue: (link: LinkDownload) => {
+                        handleDecryptionIssue(link);
                     },
                 },
                 () => {} // We do not support logging for thumnbails just yet.
