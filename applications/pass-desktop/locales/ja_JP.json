@@ -2357,7 +2357,7 @@
         "個人番号カード"
       ],
       "ID Card number": [
-        "IDカード番号"
+        "個人番号"
       ],
       "Identities": [
         "ユーザー情報"
@@ -3539,6 +3539,9 @@
       ],
       "Offline": [
         "オフライン"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "同期が完了すると、${ PASS_SHORT_APP_NAME }から削除されたエイリアスは、SimpleLoginからも削除されます。"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "英数字、ドット、ハイフン、アンダースコアのみが使用できます"
