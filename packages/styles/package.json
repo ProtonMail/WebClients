@@ -19,11 +19,11 @@
         "lint:svg": "./tasks/lint-svg.sh"
     },
     "dependencies": {
-        "inter-ui": "^4.0.2"
+        "inter-ui": "^4.1.0"
     },
     "devDependencies": {
         "include-media": "^2.0.0",
-        "prettier": "^3.3.3",
+        "prettier": "^3.4.1",
         "sass": "1.79.5",
         "stylelint": "^15.11.0",
         "stylelint-config-prettier-scss": "^1.0.0",

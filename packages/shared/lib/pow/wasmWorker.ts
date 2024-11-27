@@ -6,7 +6,7 @@ interface WasmApi {
             };
             solve: () => number;
             memory: {
-                buffer: Uint8Array;
+                buffer: ArrayBuffer;
             };
         };
     };
