@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { createContext, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -29,19 +29,23 @@ export interface AliasMailboxesContextValue {
     onVerify: (mailbox: UserMailboxOutput) => void;
     onDelete: (mailboxID: number) => void;
     onSetDefault: (mailboxID: number) => void;
+    getMailboxes: () => void;
 }
 
 export type AliasMailboxAction =
-    | { type: 'add' }
+    | { type: 'create' }
     | { type: 'verify'; mailboxID: number; sentAt: number }
     | { type: 'delete'; mailboxID: number };
 
 export const AliasMailboxesContext = createContext<MaybeNull<AliasMailboxesContextValue>>(null);
 export const useAliasMailboxes = createUseContext(AliasMailboxesContext);
 
-export const AliasMailboxesProvider: FC<{ children: (ctx: AliasMailboxesContextValue) => ReactNode }> = ({
-    children,
-}) => {
+export const useMailbox = (mailboxID: number) => {
+    const { mailboxes } = useAliasMailboxes();
+    return useMemo(() => mailboxes.find((mailbox) => mailbox.MailboxID === mailboxID), [mailboxID, mailboxes]);
+};
+
+export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
     const spotlight = useSpotlight();
     const canManage = useSelector(selectCanManageAlias);
     const [action, setAction] = useState<MaybeNull<AliasMailboxAction>>(null);
@@ -58,9 +62,9 @@ export const AliasMailboxesProvider: FC<{ children: (ctx: AliasMailboxesContextV
             mailboxes: Object.values(mailboxes),
             setAction: (action) => {
                 switch (action.type) {
-                    case 'add':
+                    case 'create':
                         if (!canManage) spotlight.setUpselling({ type: 'pass-plus', upsellRef: UpsellRef.SETTING });
-                        else setAction({ type: 'add' });
+                        else setAction({ type: 'create' });
                     default:
                         setAction(action);
                 }
@@ -78,6 +82,7 @@ export const AliasMailboxesProvider: FC<{ children: (ctx: AliasMailboxesContextV
                         IsDefault: !(mailbox.IsDefault || mailbox.MailboxID !== mailboxID),
                     }))
                 ),
+            getMailboxes: sync.dispatch,
         }),
         [action, canManage, mailboxes, sync.loading]
     );
@@ -86,10 +91,10 @@ export const AliasMailboxesProvider: FC<{ children: (ctx: AliasMailboxesContextV
 
     return (
         <AliasMailboxesContext.Provider value={context}>
-            {children(context)}
+            {children}
             {(() => {
                 switch (action?.type) {
-                    case 'add':
+                    case 'create':
                         return <AliasMailboxCreateModal onClose={resetAction} />;
                     case 'delete':
                         return <AliasMailboxDeleteModal onClose={resetAction} mailboxID={action.mailboxID} />;

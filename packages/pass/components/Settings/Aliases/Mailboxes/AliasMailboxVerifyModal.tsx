@@ -1,4 +1,4 @@
-import { type FC, useEffect, useMemo } from 'react';
+import { type FC, useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,13 +14,13 @@ import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { resendVerifyMailbox, validateMailbox } from '@proton/pass/store/actions';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
-import { useAliasMailboxes } from './AliasMailboxesProvider';
+import { useAliasMailboxes, useMailbox } from './AliasMailboxesProvider';
 
 type Props = { onClose: () => void; mailboxID: number; sentAt: number };
 
 export const MailboxVerifyModal: FC<Props> = ({ onClose, mailboxID, sentAt }) => {
-    const { mailboxes, onDelete, onVerify } = useAliasMailboxes();
-    const mailbox = useMemo(() => mailboxes.find((mailbox) => mailbox.MailboxID === mailboxID), [mailboxID, mailboxes]);
+    const { onDelete, onVerify } = useAliasMailboxes();
+    const mailbox = useMailbox(mailboxID);
 
     const [remaining, countdown] = useCountdown(getInitialCountdown(sentAt));
     const { createNotification } = useNotifications();

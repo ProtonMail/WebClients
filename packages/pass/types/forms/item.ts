@@ -26,6 +26,8 @@ export type AliasFormValues = {
     mailboxes: AliasMailbox[];
 };
 
+export type DomainFormValues = { domain: string };
+
 export type AliasContactValues = { name: string };
 export type AliasCreateContactValues = { email: string };
 export type NewAliasFormValues = BaseItemValues & AliasFormValues;
