@@ -131,16 +131,13 @@ export const useTaxCountry = (props: HookProps): HookResult => {
     const previousBillingAddressRef = useRef(billingAddress);
 
     useEffect(() => {
-        props.onBillingAddressChange?.(taxBillingAddress);
-    }, [taxBillingAddress]);
-
-    useEffect(() => {
         const previousValue = previousBillingAddressRef.current;
         const statusChanged =
             previousValue?.CountryCode !== billingAddress.CountryCode || previousValue?.State !== billingAddress.State;
 
         if (statusChanged) {
             setTaxBillingAddress(billingAddress);
+            props.onBillingAddressChange?.(billingAddress);
             previousBillingAddressRef.current = billingAddress;
         }
     }, [billingAddress.CountryCode, billingAddress.State]);
@@ -150,18 +147,21 @@ export const useTaxCountry = (props: HookProps): HookResult => {
 
     const setSelectedCountry = (CountryCode: string) => {
         const State = countriesWithStates.includes(CountryCode) ? getStateList(CountryCode)[0].stateCode : null;
-
-        setTaxBillingAddress({
+        const newValue = {
             CountryCode,
             State,
-        });
+        };
+        setTaxBillingAddress(newValue);
+        props.onBillingAddressChange?.(newValue);
     };
 
     const setFederalStateCode = (federalStateCode: string) => {
-        setTaxBillingAddress((prev) => ({
-            ...prev,
+        const newValue = {
+            CountryCode: taxBillingAddress.CountryCode,
             State: federalStateCode,
-        }));
+        };
+        setTaxBillingAddress(newValue);
+        props.onBillingAddressChange?.(newValue);
     };
 
     return {
