@@ -53,6 +53,7 @@ const DummyCalendarContainerView = ({ drawerView, isSmallViewport }: Props) => {
             addresses={[]}
             calendars={[]}
             calendarUserSettings={calendarUserSettings}
+            prefetchCalendarEvents={noop}
         >
             <TimeGrid
                 tzid={tzid}
