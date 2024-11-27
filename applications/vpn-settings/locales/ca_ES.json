@@ -106,6 +106,9 @@
       "Change": [
         "Canvia"
       ],
+      "Change configuration": [
+        "Canvia la configuració"
+      ],
       "Change keys": [
         "Canvia les claus"
       ],
@@ -400,6 +403,9 @@
       "Next month": [
         "Mes següent"
       ],
+      "Next page": [
+        "Pàgina següent"
+      ],
       "OK": [
         "D'acord"
       ],
@@ -435,6 +441,9 @@
       ],
       "Previous month": [
         "Mes anterior"
+      ],
+      "Previous page": [
+        "Pàgina anterior"
       ],
       "Recover data": [
         "Recuperar dades"
@@ -933,6 +942,10 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
         "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Aquesta oferta no està disponible amb el vostre pla actual. Però podeu obtenir un ${ discountPercentage } de descompte en ${ plan.Title } quan us subscriviu per ${ cycle } mes.",
+        "Aquesta oferta no està disponible amb el vostre pla actual. Però podeu obtenir un ${ discountPercentage } de descompte en ${ plan.Title } quan us subscriviu per ${ cycle } mesos."
       ]
     },
     "bf2023: Offers": {
@@ -2293,6 +2306,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Està segur que vol suprimir aquest grup?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Si suprimiu el grup ${ displayGroupName } (amb l'adreça ${ displayGroupAddressEmail }), ja no podreu rebre correus electrònics amb la seva adreça."
       ]
     },
     "Delinquent modal title": {
@@ -2303,6 +2319,9 @@
     "Description": {
       "If disabled, only admins will have access.": [
         "Si està desactivat, només els administradors tenen accés."
+      ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Separeu les diferents parts de la vostra vida i organitzeu la vostra safata d'entrada amb adreces addicionals."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separeu diferents aspectes de la vostra vida amb diverses adreces de correu electrònic i desbloquegeu més característiques prèmium quan milloreu el vostre pla."
@@ -2998,6 +3017,9 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Després de deixar el pla, aquest usuari es traslladarà a un pla de ${ BRAND_NAME } Free."
       ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Després de deixar el pla, aquest usuari es traslladarà a un pla ${ BRAND_NAME } Unlimited amb una prova gratuïta de 30 dies.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "De manera predeterminada, assignem ${ formattedStorage } d'emmagatzematge al compte d'administrador. Podeu gestionar l'emmagatzematge assignat per distribuir-lo entre usuaris addicionals més endavant."
       ],
@@ -3009,6 +3031,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Si l'usuari ja té una adreça ${ MAIL_APP_NAME }, introduïu-la aquí. En cas contrari, primer haurà de crear un compte."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Si l'usuari ja té una adreça amb ${ BRAND_NAME }, introduïu-la aquí. En cas contrari, primer haurà de crear un compte."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "La invitació es cancel·larà i l'usuari no es podrà unir a ${ organizationName }."
@@ -3613,6 +3638,12 @@
       "30-day money-back guarantee.": [
         "30 dies de garantia de reemborsament."
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ BRAND_NAME } allotja un ${ protonSubdomain } que us permet configurar ràpidament un subdomini. ${ learnMoreLink }"
+      ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Es requereix un domini personalitzat per crear grups. Si no teniu un domini personalitzat configurat, feu-ho primer a ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nom que us ajudarà a identificar on l'utilitzeu perquè pugueu revocar-lo o ampliar-lo fàcilment més tard."
       ],
@@ -3657,6 +3688,9 @@
         "S'està afegint ${ addedServerCount } servidor de passarel·la",
         "S'estan afegint ${ addedServerCount } servidors de passarel·la"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Si afegiu una adreça de correu electrònic externa, es desactivarà el xifratge d'extrem a extrem per a totes les comunicacions de correu electrònic dins d'aquest grup. Voleu continuar?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "S'està afegint un servidor de passarel·la: ${ serverNumber } / ${ total }",
         "S'estan afegint servidors de passarel·la: ${ serverNumber } / ${ total }"
@@ -3676,6 +3710,9 @@
       ],
       "All members have been added.": [
         "S'han afegit tots els membres."
+      ],
+      "All users": [
+        "Tots els usuaris"
       ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
@@ -3788,6 +3825,12 @@
       "Connection data will be available in around 1 hour.": [
         "Les dades de connexió estaran disponibles en aproximadament 1 hora."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Continueu permetent que **${ affiliationsText }** de **${ organizationValue.Name }** s'uneixi a la vostra organització ${ BRAND_NAME }."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Continueu connectant **${ organizationValue.Name }** amb la vostra organització ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Continua amb ${ freeName }"
       ],
@@ -3841,11 +3884,14 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
+      "dedicated servers": [
+        "servidors dedicats"
+      ],
       "Dedicated servers": [
         "Servidors dedicats"
       ],
-      "dedicated servers": [
-        "servidors dedicats"
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Servidors dedicats amb adreces IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimineu qualsevol altre registre MX o assegureu-vos que la prioritat de ${ MAIL_APP_NAME } és el número més baix."
@@ -3856,6 +3902,9 @@
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Desactivació el ${ formattedDateAndTime }"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Si desactiveu l'autenticació de dos factors, el vostre compte serà menys segur. Només procediu si és absolutament necessari."
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
@@ -3920,6 +3969,9 @@
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
+      ],
+      "EduGain configuration saved": [
+        "S'ha desat la configuració d'EduGain."
       ],
       "email": [
         "corrreu electrònic"
@@ -4158,6 +4210,9 @@
       "Invite rejected": [
         "S'ha rebutjat la invitació"
       ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "Es triguen 10 dies a canviar el país d'un servidor. Assegureu-vos que la vostra selecció sigui correcta."
+      ],
       "Item autofilled in ${ vaultLink }": [
         "S'ha emplenat automàticament l'element a ${ vaultLink }"
       ],
@@ -4245,6 +4300,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "S'està carregant el calendari, espereu. Se us redirigirà a la nostra plataforma de planificació Calendly en una pestanya nova."
       ],
+      "Loading eduGAIN data...": [
+        "S'estan carregant les dades d'eduGAIN..."
+      ],
       "Loading gateways monitoring current status.": [
         "Carregant les portes d'enllaç que monitoritzen l'estat actual"
       ],
@@ -4313,6 +4371,9 @@
       ],
       "No Gateways yet": [
         "Encara no hi ha passarel·les."
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "No hi ha cap organització activada amb **eduGAIN** per a **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "En aquest moment no cal pagar cap pagament."
@@ -4535,8 +4596,17 @@
       "Securing your account": [
         "S'està protegint el compte"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Seleccioneu una organització activada amb **eduGAIN** per a **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Seleccioneu una o diverses afiliacions per l'usuari."
+      ],
       "Select recently used servers": [
         "Selecciona els servidors utilitzats recentment"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Seleccioneu les afiliacions de l'usuari de **${ organizationValue.Name }** (${ organizationValue.EntityId }) que voleu permetre a la vostra organització ${ BRAND_NAME }:"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envieu correus electrònics per animar els vostres membres a protegir els seus comptes amb l'A2F."
@@ -4647,6 +4717,9 @@
       "The format of your CSV file is incorrect.": [
         "El format del fitxer CSV és incorrecte."
       ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "La funció de grups no és compatible amb la vostra subscripció actual. Els grups creats anteriorment estan desactivats i només es poden suprimir."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "El nom serà visible per als vostres usuaris quan estiguin connectats."
       ],
@@ -4683,6 +4756,9 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Aquest missatge no arribarà a l'equip de suport. Si teniu un problema amb el nostre servei o necessiteu més assistència per part nostra, ${ supportLink }"
       ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Aquesta organització està activada amb **eduGAIN** per a **${ domain.DomainName }**."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Actualment, aquest usuari és responsable dels pagaments de la vostra organització. Degradant aquest membre, sereu responsable dels pagaments de la vostra organització."
       ],
@@ -4692,8 +4768,14 @@
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Això denegarà l'accés a **${ email }**. Esteu segur que voleu continuar?"
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Això desactivarà l'autenticació de dos factors, tant l'aplicació d'autenticació com els mètodes de clau de seguretat."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Això permetrà que PayPal s'utilitzi per pagar la vostra subscripció a ${ BRAND_NAME }. Us redirigirem a PayPal en una pestanya nova del navegador. Si utilitzeu bloquejadors de finestres emergents, desactiveu-los per a continuar."
+      ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Això suprimirà permanentment les dades i totes les adreces de correu electrònic associades a aquests usuaris."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Això suprimirà permanentment les dades i totes les adreces de correu electrònic associades a aquest usuari."
@@ -4830,11 +4912,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "Username": [
-        "Nom d'usuari"
-      ],
       "username": [
         "nom d'usuari"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -4908,6 +4990,9 @@
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Recomanem tenir múltiples servidors en diferents ubicacions per a proporcionar redundància."
       ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Recomanem que notifiqueu als membres de la família i els demaneu que estableixin l'autenticació de dos factors (A2F) per als seus comptes abans de fer-ne complir l'ús."
+      ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomanem que notifiqueu als membres de l'organització i els demaneu que estableixin l'autenticació de dos factors (A2F) per als seus comptes abans de fer-ne complir l'ús."
       ],
@@ -4950,6 +5035,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quan cancel·leu, la vostra subscripció no es renovarà, però encara podreu gaudir dels avantatges del pla fins al final del període de subscripció. Després d'això, passarà al pla gratuït de ${ BRAND_NAME }."
       ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Quan elimineu un servidor d'una passarel·la, entra en un període de desactivació de 10 dies. Aquest servidor es pot afegir a una nova passarel·la, però no es pot canviar el seu país."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
       ],
@@ -4967,6 +5055,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Amb una adreça xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"
+      ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Amb els grups, podeu enviar correus electrònics de manera ràpida i senzilla a totes les persones d'un grup determinat."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
@@ -5035,6 +5126,10 @@
         "Teniu ${ availableCount } nou servidor disponible.",
         "Teniu ${ availableCount } nous servidores disponibles."
       ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Teniu ${ unassignedAvailableCount } servidor disponible utilitzat recentment. Per assignar aquest servidor a un altre país, haureu d'esperar fins que es completi la desactivació.",
+        "Teniu ${ unassignedAvailableCount } servidors disponibles utilitzats recentment. Per assignar aquests servidors a un altre país, haureu d'esperar fins que es completi la desactivació."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Teniu una subscripció de prova de ${ planTitle }. Si voleu continuar amb la subscripció després del període de prova, afegiu un mètode de pagament."
       ],
@@ -5067,6 +5162,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Se us redirigirà a ${ destination } després d'iniciar la sessió."
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Si cancel·leu la subscripció, mantindreu l'accés de per vida a les funcions prèmium de ${ PASS_APP_NAME } i SimpleLogin."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perdreu accés a funcions de ${ planTitle } en aquesta data."
@@ -5322,6 +5420,9 @@
       "Allowed Domain": [
         "Domini permès"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Permet que tots els membres de la vostra organització afegeixin sense problemes enllaços de videoconferència a les invitacions del seu calendari."
+      ],
       "Amount": [
         "Quantitat"
       ],
@@ -5484,6 +5585,9 @@
       "Enter the code displayed on your TV": [
         "Introduïu el codi que es mostra al televisor"
       ],
+      "Entity ID": [
+        "Identificador de l'entitat"
+      ],
       "Event": [
         "Esdeveniment"
       ],
@@ -5610,6 +5714,9 @@
       "Organization password": [
         "Contrasenya d'organització"
       ],
+      "Other": [
+        "Altres"
+      ],
       "Other amount": [
         "Una altra quantitat"
       ],
@@ -5731,6 +5838,9 @@
       "User": [
         "Usuari"
       ],
+      "User affiliations": [
+        "Afiliacions de l'usuari"
+      ],
       "User's new password": [
         "Nova contrasenya d’usuari"
       ],
@@ -5829,6 +5939,11 @@
     "Label, credit card": {
       "ZIP code": [
         "Codi postal"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Seleccioneu un proveïdor de identitat per començar"
       ]
     },
     "Link": {
@@ -7192,6 +7307,9 @@
       "Daily email notifications": [
         "Notificacions diàries per correu electrònic"
       ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "En desactivar-ho, s'eliminarà la possibilitat de rebre notificacions a les aplicacions de ${ BRAND_NAME }."
+      ],
       "During your first month": [
         "Durant el vostre primer mes"
       ],
@@ -7765,6 +7883,9 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
       ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "La transacció s'ha detectat. Els crèdits s'afegiran al vostre compte un cop la transacció estigui completament confirmada."
+      ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
       ],
@@ -8068,6 +8189,9 @@
       ],
       "Something went wrong": [
         "Alguna cosa ha anat malament."
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "L'adreça de correu electrònic **${ email }** ja existeix com a usuari de ${ BRAND_NAME }. Introduïu l'adreça de correu electrònic d'un usuari del vostre proveïdor d'identitat."
       ]
     },
     "saml: Info": {
@@ -8077,8 +8201,14 @@
       "Details": [
         "Detalls"
       ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Introduïu l'adreça electrònica d'un usuari proporcionada pel vostre proveïdor d'identitat per a **${ domainName }**."
+      ],
       "Test in progress...": [
         "Prova en curs..."
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Hem rebut una resposta SAML vàlida del vostre proveïdor d'identitat. L'inici de sessió únic (SSO) està activat per a la vostra organització."
       ],
       "We’re testing your configuration to ensure SSO is working.": [
         "Estem provant la configuració per assegurar-nos que l'autenticació única (SSO) funciona."
@@ -8121,6 +8251,9 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Prerequisit:** Cal configurar l'autenticació SAML per a activar el subministrament SCIM."
       ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Prerequisit:** Per a activar el subministrament SCIM, heu de verificar la propietat del domini **${ domainName }**. Aquesta verificació pot trigar fins a una hora."
+      ],
       "Enter the token into your identity provider": [
         "Introduïu el token al vostre proveïdor d'identitat."
       ],
@@ -8133,6 +8266,12 @@
       "For security reasons, the token is hidden": [
         "Per raons de seguretat, el testimoni està amagat"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Aneu al vostre proveïdor d'identitat, copieu i enganxeu les dades següents i acabeu de configurar l'SCIM per a ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Aneu al vostre proveïdor d'identitat, copieu i enganxeu el token que apareix a continuació i torneu a activar l'SCIM per a ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Si heu perdut o oblidat el testimoni d'SCIM, en podeu generar un de nou, però tingueu en compte que caldrà actualitzar les preferències del vostre proveïdor d'identitat."
       ],
@@ -8141,6 +8280,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Quan SCIM estigui desactivat per a la vostra organització, **tots els usuaris d'SCIM proporcionats automàticament pel vostre proveïdor d'identitat es convertiran en usuaris d'SSO** i podreu gestionar-los directament des de les preferències de ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Se simplifica la gestió d'usuaris en diferents serveis. Afegiu, editeu i esborreu usuaris del vostre proveïdor d'identitat i aquests canvis s'aplicaran automàticament a la vostra organització de ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "El subministrament automàtic d'SCIM es desactivarà fins que introduïu el nou testimoni d'SCIM a la configuració del vostre proveïdor d'identitat."
@@ -8435,6 +8577,9 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Ens posarem en contacte de nou quan hi hagi disponible el restabliment de contrasenya."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Podeu comprovar l'estat de la vostra sol·licitud en qualsevol moment ${ accountAndPasswordSectionLink } de les preferències."
       ]
     },
     "session_recovery:initiation:link": {
@@ -8726,6 +8871,9 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } demana la vostra ajuda per iniciar la sessió al seu compte ${ BRAND_NAME } amb un inici de sessió únic."
+      ],
       "${ n } member requested your help to sign in.": [
         "${ n } membre ha sol·licitat la vostra ajuda per connectar-se.",
         "${ n } membres han sol·licitat la vostra ajuda per connectar-se."
@@ -8738,9 +8886,23 @@
         "S'ha desconnectat ${ n } usuari de l'inici de sessió únic (SSO).",
         "S'han desconnectat ${ n } usuaris de l'inici de sessió únic (SSO)."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } usuari s'ha unit a la vostra organització mitjançant el vostre proveïdor d'identitat. Reviseu el compte ara:",
+        "${ n } usuaris s'han unit a la vostra organització mitjançant el vostre proveïdor d'identitat. Reviseu els seus comptes ara:"
+      ],
       "${ n } user is inactive. You can safely remove this user from your organization.": [
         "${ n } usuari està inactiu. Podeu suprimir aquest usuari de la vostra organització amb seguretat.",
         "${ n } usuaris estan inactius. Podeu eliminar-los de la vostra organització amb seguretat."
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } usuari demana la vostra ajuda per iniciar la sessió al seu compte ${ BRAND_NAME } amb un inici de sessió únic.",
+        "${ n } usuaris demanen la vostra ajuda per iniciar la sessió al seu compte ${ BRAND_NAME } amb un inici de sessió únic."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**Els usuaris amb Inici de sessió únic (SSO) - proporcionats pel vostre proveïdor d'identitat - se suprimiran** i els haureu de crear manualment per tornar-los a afegir a la vostra organització."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Els usuaris amb 'inici de sessió únic (SSO) es desvincularan del vostre proveïdor d'identitat** i es convertiran en usuaris sense inici de sessió únic (SSO)."
       ],
       "Access denied": [
         "S'ha denegat l'accés."
@@ -8807,6 +8969,9 @@
       "Enter your backup password": [
         "Introduïu la vostra contrasenya de recuperació"
       ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Per la vostra seguretat, heu tancat la sessió de tots els vostres dispositius actius. Abans d'accedir al vostre compte, haureu d'introduir una nova contrasenya de recuperació."
+      ],
       "Grant": [
         "Autoritza"
       ],
@@ -8819,14 +8984,26 @@
       "Grant access to users?": [
         "Donar accés als usuaris?"
       ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Si se us bloqueja el vostre compte ${ BRAND_NAME }, la vostra contrasenya de recuperació us permetrà iniciar la sessió i recuperar les vostres dades."
+      ],
       "Invalid confirmation code": [
         "El codi de confirmació no és vàlid."
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "És l'única forma de recuperar completament el vostre compte. Per tant, assegureu-vos de guardar-lo en un lloc segur."
       ],
       "Join ${ organizationName }": [
         "Uniu-vos a ${ organizationName }"
       ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Assegureu-vos de desar-lo en un lloc segur perquè pugueu tornar al vostre compte si perdeu l'accés a les credencials del vostre proveïdor d'identitat."
+      ],
       "New backup password": [
         "Nova contrasenya de recuperació"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Els usuaris que no utilitzen un Inici de sessió únic (SSO) - creats manualment, no proporcionats pel vostre proveïdor d'identitat - encara poden iniciar sessió a la vostra organització."
       ],
       "Once single sign-on is disabled for your organization:": [
         "Un cop desactivat l'inici de sessió únic per a la vostra organització:"
@@ -8836,6 +9013,9 @@
       ],
       "Remove single sign-on for your organization?": [
         "Voleu esborrar l'inici de sessió únic de la vostra organització?"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Establiu una contrasenya de seguretat per afegir una capa addicional de protecció. Us permetrà iniciar la sessió si us bloquegeu, així que assegureu-vos de mantenir-lo en un lloc segur."
       ],
       "Set your backup password": [
         "Configureu la vostra contrasenya de recuperació"
@@ -8855,8 +9035,20 @@
       "Single sign-on removed": [
         "S'ha esborrat l'inici de sessió únic."
       ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Això tancarà la sessió de l'usuari dels seus altres dispositius i haurà de crear una nova contrasenya de recuperació."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Això us tancarà la sessió dels vostres altres dispositius i haureu de crear una nova contrasenya de recuperació."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Per assegurar-vos que realment intenteu iniciar la sessió a **${ email }**, reviseu el codi de confirmació i aproveu la sol·licitud des d'un altre dispositiu."
+      ],
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "Per assegurar-vos que realment esteu intentant iniciar la sessió, introduïu la vostra contrasenya de recuperació."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Per assegurar-vos que realment esteu intentant iniciar la sessió, compartiu el codi de confirmació amb el vostre administrador **${ adminEmail }** perquè pugui aprovar la sol·licitud de **${ email }**."
       ],
       "Tried to sign in at": [
         "He intentat iniciar sessió a"
@@ -9409,6 +9601,9 @@
       "Yearly free storage bonuses": [
         "Bonificacions anuals d'emmagatzematge gratuïtes"
       ],
+      "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
+        "Podeu continuar gaudint de tots els avantatges del vostre pla actual fins a ${ boldedDate }."
+      ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "Encara teniu ${ expiryDate } a la vostra subscripció ${ planName }. Afegirem els crèdits del temps restant al vostre compte de ${ BRAND_NAME }. Assegureu-vos que no supereu els límits del pla gratuït abans de cancel·lar-la. ${ learnMoreLink }"
       ],
@@ -9630,6 +9825,12 @@
       ],
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Rebreu el vostre nom d'usuari per correu electrònic en un minut si heu introduït una adreça de correu electrònic de recuperació vàlida."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Rebreu el vostre nom d'usuari per SMS en un minut si heu introduït un número de telèfon de recuperació vàlid."
       ]
     },
     "Success message": {
@@ -9925,10 +10126,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -9948,6 +10149,9 @@
       ],
       "Change second password": [
         "Canvia la segona contrasenya"
+      ],
+      "Choose user affiliations": [
+        "Trieu les afiliacions de l'usuari"
       ],
       "Click a value in the table to use it as filter": [
         "Feu clic a un valor de la taula per utilitzar-lo com a filtre."
@@ -9969,6 +10173,9 @@
       ],
       "Confirm phone number": [
         "Confirmeu el número de telèfon"
+      ],
+      "Connect organization": [
+        "Connecta l'organització"
       ],
       "Contact us": [
         "Contacteu amb nosaltres"
@@ -10531,6 +10738,9 @@
       ]
     },
     "Tooltip": {
+      "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
+        "Els administradors poden gestionar els comptes d'usuari i donar privilegis d'administrador a altres usuaris. Només l'administrador principal pot editar el pla de l'organització."
+      ],
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Permet afegir sense problemes enllaços de videoconferència a les invitacions del vostre calendari."
       ],
@@ -10552,6 +10762,9 @@
       "Device information such as operating system": [
         "Informació del dispositiu com ara el sistema operatiu"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Nom a mostrar de l'entitat a la base de dades eduGAIN"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.cat/sso/saml)"
       ],
@@ -10572,6 +10785,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Especifiqueu el domini que es pot autenticar amb autenticació SSO basada en SAML."
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Especifiqueu els usuaris de l'entitat d'eduGAIN que tenen permís per autenticar-se amb un inici de sessió únic (SSO) SAML."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nou cicle de subscripció comença el ${ formattedTime }"
@@ -10614,6 +10830,9 @@
       "External address - disables end-to-end email encryption for this group": [
         "Adreça externa: desactiva el xifratge d'extrem a extrem de correu electrònic per a aquest grup."
       ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Adreça externa: desactiva el xifratge d'extrem a extrem de correu electrònic per a aquest grup i no es compartirà cap recurs xifrat amb aquest usuari."
+      ],
       "Group membership paused": [
         "S'ha pausat la subscripció del grup."
       ],
@@ -10636,8 +10855,14 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Accés d'administrador pendent:** Vam enviar una sol·licitud a aquest usuari per permetre a qualsevol administrador gestionar el seu compte."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Si feu que l'usuari sigui privat, no podreu ajudar-lo a recuperar l'accés a les seves dades o compte."
       ],
       "Cancel request": [
         "Cancel·la la sol·licitud"
@@ -10648,6 +10873,10 @@
       "Confirm all": [
         "Confirma tot"
       ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "No s'ha pogut activar automàticament l'accés d'administrador per ${ n } usuari perquè les seves claus de xifratge s'han actualitzat mentrestant:",
+        "No s'ha pogut activar automàticament l'accés d'administrador per ${ n } usuaris perquè les seves claus de xifratge s'han actualitzat mentrestant:"
+      ],
       "Could not enable administrator access: ${ error }": [
         "S'ha produït un error en activar l'accés de l'administrador: ${ error }"
       ],
@@ -10656,6 +10885,9 @@
       ],
       "Keep request": [
         "Manté la sol·licitud"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Un cop l'usuari doni el consentiment, podreu ajudar-lo a recuperar l'accés al compte o gestionar les seves dades."
       ],
       "Organization key must be activated to request data access": [
         "La clau d'organització ha d'estar activada per sol·licitar accés a les dades."
@@ -10681,8 +10913,14 @@
       "The user must have an address to request data access": [
         "L'usuari ha de tenir una adreça per sol·licitar l'accés a les dades."
       ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Això cancel·larà la sol·licitud pendent d'accés de l'administrador a les dades de l'usuari o al restabliment de la contrasenya."
+      ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Això revocarà el permís d'administrador per gestionar el compte d'aquest usuari."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Per continuar, haureu de sol·licitar el permís de l'usuari per accedir a les seves dades o restablir la contrasenya."
       ]
     },
     "upsell panel": {
