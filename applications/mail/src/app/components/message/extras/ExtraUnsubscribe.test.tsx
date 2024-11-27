@@ -23,11 +23,33 @@ loudRejection();
 
 jest.mock('@proton/shared/lib/helpers/browser', () => ({
     ua: { ua: 'UserAgent' },
+    detectStorageCapabilities: jest.fn(() =>
+        Promise.resolve({
+            isAccessible: true,
+            hasIndexedDB: true,
+        })
+    ),
     isMac: jest.fn(() => false),
     openNewTab: jest.fn(),
     isMobile: jest.fn(),
     isFirefoxLessThan55: jest.fn(),
     getIsIframe: jest.fn(() => false),
+}));
+
+// Mock idb library
+jest.mock('idb', () => ({
+    openDB: jest.fn(() =>
+        Promise.resolve({
+            close: jest.fn(),
+            createObjectStore: jest.fn(),
+            transaction: jest.fn(),
+            objectStore: jest.fn(),
+            put: jest.fn(),
+            get: jest.fn(),
+            delete: jest.fn(),
+        })
+    ),
+    deleteDB: jest.fn(() => Promise.resolve()),
 }));
 
 describe('Unsubscribe banner', () => {
