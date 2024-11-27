@@ -32,6 +32,7 @@ import type {
     ItemRevision,
     MailboxDefaultDTO,
     MailboxDeleteDTO,
+    MaybeNull,
     RandomPrefixDTO,
     SelectedItem,
     ShareId,
@@ -244,10 +245,10 @@ export const setDefaultMailbox = requestActionsFactory<MailboxDefaultDTO, UserAl
 
 export const getAliasDomains = requestActionsFactory<void, UserAliasDomainOutput[]>('alias::domains')();
 
-export const setDefaultAliasDomain = requestActionsFactory<string, UserAliasSettingsGetOutput>(
+export const setDefaultAliasDomain = requestActionsFactory<MaybeNull<string>, UserAliasSettingsGetOutput>(
     'alias::domain::set-default'
 )({
-    key: identity,
+    key: (domain) => domain ?? 'not-selected',
     success: {
         prepare: (payload) =>
             withNotification({
