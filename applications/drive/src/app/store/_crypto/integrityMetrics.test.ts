@@ -152,6 +152,37 @@ describe('IntegrityMetrics::', () => {
         });
     });
 
+    describe('contentDecryptionError', () => {
+        it('reports decryption error as content entity', () => {
+            integrityMetrics.contentDecryptionError('nodeId1', 'main', { isPaid: false, createTime: 0 });
+            expect(mockMetricsDecryptionErrors).toHaveBeenCalledWith({
+                entity: 'content',
+                shareType: 'main',
+                fromBefore2024: 'unknown',
+            });
+        });
+
+        it('reports decryption error as content entity', () => {
+            integrityMetrics.contentDecryptionError('nodeId1', 'main', { isPaid: false, createTime: 1732702046 });
+            expect(mockMetricsDecryptionErrors).toHaveBeenCalledWith({
+                entity: 'content',
+                shareType: 'main',
+                fromBefore2024: 'no',
+            });
+        });
+
+        it('reports decryption error as content entity and do not duplicate', () => {
+            integrityMetrics.contentDecryptionError('nodeId1', 'main', { isPaid: false, createTime: 1732702046 });
+            integrityMetrics.contentDecryptionError('nodeId1', 'main', { isPaid: false, createTime: 1732702046 });
+            expect(mockMetricsDecryptionErrors).toHaveBeenCalledTimes(1);
+            expect(mockMetricsDecryptionErrors).toHaveBeenCalledWith({
+                entity: 'content',
+                shareType: 'main',
+                fromBefore2024: 'no',
+            });
+        });
+    });
+
     describe('nodeBlockVerificationError', () => {
         it('reports each incident', () => {
             integrityMetrics.nodeBlockVerificationError('main', 1234, { isPaid: false, retryHelped: true });

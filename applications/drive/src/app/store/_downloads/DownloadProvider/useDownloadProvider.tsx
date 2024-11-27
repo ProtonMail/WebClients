@@ -25,6 +25,7 @@ import type { InitDownloadCallback, LinkDownload } from '../interface';
 import type { UpdateFilter } from './interface';
 import useDownloadContainsDocument from './useDownloadContainsDocument';
 import useDownloadControl from './useDownloadControl';
+import useDownloadDecryptionIssue from './useDownloadDecryptionIssue';
 import { useDownloadMetrics } from './useDownloadMetrics';
 import useDownloadQueue from './useDownloadQueue';
 import useDownloadScanIssue from './useDownloadScanIssue';
@@ -48,7 +49,7 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
     );
     const { handleScanIssue } = useDownloadScanIssue(queue.updateWithData, control.cancelDownloads);
     const { handleContainsDocument, containsDocumentModal } = useDownloadContainsDocument(control.cancelDownloads);
-
+    const { handleDecryptionIssue } = useDownloadDecryptionIssue();
     /**
      * download should be considered as main entry point for download files
      * in Drive app. It does all necessary checks, such as checking if the
@@ -150,6 +151,10 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                 ) => {
                     log(nextDownload.id, `signature issue: ${JSON.stringify(signatureIssues)}`);
                     await handleSignatureIssue(abortSignal, nextDownload, link, signatureIssues);
+                },
+                onDecryptionIssue: (link: LinkDownload, error: unknown) => {
+                    log(nextDownload.id, `decryption issue: ${error instanceof Error ? error.message : String(error)}`);
+                    handleDecryptionIssue(link);
                 },
                 onContainsDocument: async (abortSignal: AbortSignal) => {
                     await handleContainsDocument(abortSignal, nextDownload);

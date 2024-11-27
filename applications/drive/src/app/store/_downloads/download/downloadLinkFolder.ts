@@ -175,6 +175,7 @@ export class FolderTreeLoader {
                 fileModifyTime: link.fileModifyTime,
                 signatureAddress: link.signatureAddress,
                 signatureIssues: link.signatureIssues,
+                createTime: link.createTime,
             })),
         ];
 

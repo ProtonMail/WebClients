@@ -11,19 +11,8 @@
 export interface EmailContentRenderTime {
   Value: number;
   Labels: {
-    location:
-      | "Inbox"
-      | "Drafts"
-      | "Sent"
-      | "Starred"
-      | "Archive"
-      | "Spam"
-      | "Trash"
-      | "All Mail"
-      | "Snoozed"
-      | "Scheduled"
-      | "Custom Folder"
-      | "Custom Label";
+    location: "0" | "1" | "2" | "3" | "4" | "5" | "10" | "6" | "7" | "8" | "9" | "12" | "15" | "16" | "custom";
     pageSize: "50" | "100" | "200";
+    cached: "true" | "false";
   };
 }

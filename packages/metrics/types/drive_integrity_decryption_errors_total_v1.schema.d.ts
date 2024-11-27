@@ -10,7 +10,7 @@
  */
 export interface HttpsProtonMeDriveIntegrityDecryptionErrorsTotalV1SchemaJson {
   Labels: {
-    entity: "share" | "node";
+    entity: "share" | "node" | "content";
     shareType: "main" | "device" | "photo" | "shared" | "shared_public";
     fromBefore2024: "yes" | "no" | "unknown";
   };

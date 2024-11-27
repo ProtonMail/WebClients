@@ -12,14 +12,14 @@ export interface LinkDownload {
     isFile: boolean;
     shareId: string;
     linkId: string;
-
     name: string;
     mimeType: string;
     size: number;
+
+    createTime?: number;
     revisionId?: string;
     signatureAddress?: string;
     signatureIssues?: SignatureIssues;
-
     buffer?: Uint8Array[];
 }
 
@@ -44,6 +44,8 @@ export type DownloadEventCallbacks = {
     // It can be used to ask user the issue and allow the user to abort
     // the download, or ignore the problem and continue.
     onSignatureIssue?: OnSignatureIssueCallback;
+    // Called when decryption of content fails.
+    onDecryptionIssue?: OnDecryptionIssueCallback;
     // Called when error happened.
     // The transfer is cancelled.
     onError?: OnErrorCallback;
@@ -86,13 +88,22 @@ export type OnSignatureIssueCallback = (
     link: LinkDownload,
     signatureIssues: SignatureIssues
 ) => Promise<void>;
+export type OnDecryptionIssueCallback = (link: LinkDownload, error: unknown) => void;
 type OnScanIssueCallback = (abortSignal: AbortSignal, err: any, response?: ScanResultItem) => Promise<void>;
 export type OnContainsDocumentCallback = (abortSignal: AbortSignal) => Promise<void>;
 type OnErrorCallback = (err: Error) => void;
 
 export type ChildrenLinkMeta = Pick<
     DecryptedLink,
-    'isFile' | 'linkId' | 'name' | 'mimeType' | 'size' | 'fileModifyTime' | 'signatureAddress' | 'signatureIssues'
+    | 'isFile'
+    | 'linkId'
+    | 'name'
+    | 'mimeType'
+    | 'size'
+    | 'fileModifyTime'
+    | 'signatureAddress'
+    | 'signatureIssues'
+    | 'createTime'
 >;
 export type GetChildrenCallback = (
     abortSignal: AbortSignal,

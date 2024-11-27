@@ -63,6 +63,10 @@ export default function initDownload(
                 heartbeat.pauseTimeout();
                 return callbacks.onSignatureIssue?.(...args);
             },
+            onDecryptionIssue: (...args) => {
+                heartbeat.pauseTimeout();
+                return callbacks.onDecryptionIssue?.(...args);
+            },
             onError: (err) => {
                 callbacks.onError?.(err);
                 gotErr = err;

@@ -10,6 +10,7 @@ const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes,
 // Share type string used in metrics context, do not confuse with ShareType enum.
 type ShareTypeString = 'main' | 'device' | 'photo' | 'shared';
 type ShareTypeStringWithPublic = ShareTypeString | 'shared_public';
+type EntityType = 'share' | 'node' | 'content';
 export type VerificationKey = 'ShareAddress' | 'NameSignatureEmail' | 'SignatureEmail' | 'NodeKey' | 'other';
 
 type OptionsDecryptionError = {
@@ -55,8 +56,15 @@ export class IntegrityMetrics {
         this.reportDecryptionError('node', shareType, options);
     }
 
+    contentDecryptionError(nodeId: string, shareType: ShareTypeString, options: OptionsDecryptionError) {
+        if (this.checkNodeIdAlreadyReported(nodeId)) {
+            return;
+        }
+        this.reportDecryptionError('content', shareType, options);
+    }
+
     private reportDecryptionError(
-        entity: 'share' | 'node',
+        entity: EntityType,
         shareType: ShareTypeStringWithPublic,
         options: OptionsDecryptionError
     ) {
