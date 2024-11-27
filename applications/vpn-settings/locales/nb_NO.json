@@ -106,6 +106,9 @@
       "Change": [
         "Endre"
       ],
+      "Change configuration": [
+        "Endre konfigurasjon"
+      ],
       "Change keys": [
         "Endre nøkler"
       ],
@@ -400,6 +403,9 @@
       "Next month": [
         "Neste måned"
       ],
+      "Next page": [
+        "Neste side"
+      ],
       "OK": [
         "OK"
       ],
@@ -435,6 +441,9 @@
       ],
       "Previous month": [
         "Forrige måned"
+      ],
+      "Previous page": [
+        "Forrige side"
       ],
       "Recover data": [
         "Gjenopprett data"
@@ -3704,6 +3713,9 @@
       "All members have been added.": [
         "Alle medlemmer er lagt til."
       ],
+      "All users": [
+        "Alle brukere"
+      ],
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
       ],
@@ -3815,6 +3827,12 @@
       "Connection data will be available in around 1 hour.": [
         "Tilkoblingsdata vil være tilgjengelig om ca. 1 time."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Fortsett for å tillate **${ affiliationsText }** fra **${ organizationValue.Name }** til å bli med i ${ BRAND_NAME }-organisasjonen din."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Fortsett for å koble **${ organizationValue.Name }** med ${ BRAND_NAME }-organisasjonen din."
+      ],
       "Continue with ${ freeName }": [
         "Fortsett med ${ freeName }"
       ],
@@ -3868,11 +3886,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpass utseendet og følelsen av ${ BRAND_NAME }-applikasjonene."
       ],
-      "Dedicated servers": [
-        "Dedikerte tjenere"
-      ],
       "dedicated servers": [
         "dedikerte tjenere"
+      ],
+      "Dedicated servers": [
+        "Dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
@@ -3953,6 +3971,9 @@
       ],
       "Edit email address": [
         "Rediger e-postadresse"
+      ],
+      "EduGain configuration saved": [
+        "eduGAIN-konfigurasjon lagret"
       ],
       "email": [
         "e-post"
@@ -4281,6 +4302,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laster inn kalender, vennligst vent. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
       ],
+      "Loading eduGAIN data...": [
+        "Laster eduGAIN-data..."
+      ],
       "Loading gateways monitoring current status.": [
         "Laster porttjenere som overvåker gjeldende status."
       ],
@@ -4349,6 +4373,9 @@
       ],
       "No Gateways yet": [
         "Ingen porttjenere enda"
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Ingen organisasjoner aktivert med **eduGAIN** for **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Ingen betaling kreves på dette tidspunktet."
@@ -4570,8 +4597,17 @@
       "Securing your account": [
         "Sikrer kontoen din"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Velg en organisasjon aktivert med **eduGAIN** for **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Velg én eller flere brukertilknytninger"
+      ],
       "Select recently used servers": [
         "Velg nylig brukte tjenere"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Velg brukertilknytningene fra **${ organizationValue.Name }** (${ organizationValue.EntityId }) som du vil tillate inn i ${ BRAND_NAME }-organisasjonen din:"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Send e-poster for å oppmuntre dine medlemmer til å beskytte deres kontoer med 2FA."
@@ -4720,6 +4756,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Denne meldingen kommer ikke til brukerstøtteteamet, hvis du har et problem med tjenesten vår eller trenger ytterligere tiltak fra vår side ${ supportLink }."
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Denne organisasjonen er aktivert med **eduGAIN** for **${ domain.DomainName }**."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne brukeren er for øyeblikket ansvarlig for betalinger i organisasjonen din. Ved å degradere dette medlemmet, vil du bli ansvarlig for betalinger i organisasjonen din."
@@ -4874,11 +4913,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "Username": [
-        "Brukernavn"
-      ],
       "username": [
         "brukernavn"
+      ],
+      "Username": [
+        "Brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -5547,6 +5586,9 @@
       "Enter the code displayed on your TV": [
         "Tast inn koden som vises på TV-en"
       ],
+      "Entity ID": [
+        "Enhets-ID"
+      ],
       "Event": [
         "Hendelse"
       ],
@@ -5673,6 +5715,9 @@
       "Organization password": [
         "Organisasjonspassord"
       ],
+      "Other": [
+        "Annet"
+      ],
       "Other amount": [
         "Annet beløp"
       ],
@@ -5794,6 +5839,9 @@
       "User": [
         "Bruker"
       ],
+      "User affiliations": [
+        "Brukertilknytninger"
+      ],
       "User's new password": [
         "Brukerens nye passord"
       ],
@@ -5895,6 +5943,11 @@
     "Label, credit card": {
       "ZIP code": [
         "Postnummer"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Velg en identitetsleverandør for å starte"
       ]
     },
     "Link": {
@@ -10077,10 +10130,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -10100,6 +10153,9 @@
       ],
       "Change second password": [
         "Endre andre passord"
+      ],
+      "Choose user affiliations": [
+        "Velg brukertilknytninger"
       ],
       "Click a value in the table to use it as filter": [
         "Klikk på en verdi i tabellen for å bruke den som filter"
@@ -10121,6 +10177,9 @@
       ],
       "Confirm phone number": [
         "Bekreft telefonnummer"
+      ],
+      "Connect organization": [
+        "Koble organisasjon"
       ],
       "Contact us": [
         "Kontakt oss"
@@ -10707,6 +10766,9 @@
       "Device information such as operating system": [
         "Enhetsinformasjon slik som operativsystem"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Visningsnavn for enheten i eduGAIN-databasen"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-adresse for endepunkt fra identitetsleverandøren (f.eks. https://idp.eksempel.com/sso/saml)."
       ],
@@ -10727,6 +10789,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Spesifiser domenet som har tillatelse til å autentisere med SAML SSO"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Angi brukerne av eduGAIN-enheten som har tillatelse til å autentisere med SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementssyklusen starter ${ formattedTime }"
