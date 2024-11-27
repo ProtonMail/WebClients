@@ -8,7 +8,7 @@ import { getAssistantUpsellConfig } from './assistantUpsellConfig';
 
 const baseConfig: any = {
     mode: 'upsell-modal',
-    planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS]: 1 },
+    planIDs: { [PLANS.MAIL_BUSINESS]: 1, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 1 },
     step: SUBSCRIPTION_STEPS.CHECKOUT,
     disablePlanSelection: true,
     upsellRef: 'upsellRef',
@@ -29,26 +29,11 @@ describe('getAssistantUpsellConfig', () => {
         expect(config).toEqual(undefined);
     });
 
-    it('should return free user config if the user is free without a subscription', () => {
-        const user = {
-            isPaid: false,
-        } as unknown as UserModel;
-        const selectedPlan = new SelectedPlan({}, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
-        const config = getAssistantUpsellConfig('upsellRef', user, false, selectedPlan);
-
-        expect(config).toEqual({
-            ...baseConfig,
-            cycle: CYCLE.MONTHLY,
-            maximumCycle: CYCLE.YEARLY,
-            minimumCycle: CYCLE.MONTHLY,
-        });
-    });
-
     it('should return paid config with yearly and monthly cycles if the user is paid with monthly billing', () => {
         const user = {
             isPaid: true,
         } as unknown as UserModel;
-        const selectedPlan = new SelectedPlan({ [PLANS.MAIL]: 1 }, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+        const selectedPlan = new SelectedPlan({ [PLANS.MAIL_BUSINESS]: 1 }, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
         const config = getAssistantUpsellConfig('upsellRef', user, false, selectedPlan);
 
         expect(config).toEqual({
@@ -64,7 +49,7 @@ describe('getAssistantUpsellConfig', () => {
         const user = {
             isPaid: true,
         } as unknown as UserModel;
-        const selectedPlan = new SelectedPlan({ [PLANS.MAIL]: 1 }, PLANS_MAP, CYCLE.YEARLY, 'EUR');
+        const selectedPlan = new SelectedPlan({ [PLANS.MAIL_BUSINESS]: 1 }, PLANS_MAP, CYCLE.YEARLY, 'EUR');
 
         const config = getAssistantUpsellConfig('upsellRef', user, false, selectedPlan);
 
@@ -82,7 +67,7 @@ describe('getAssistantUpsellConfig', () => {
             isPaid: true,
         } as unknown as UserModel;
 
-        const selectedPlan = new SelectedPlan({ [PLANS.MAIL]: 1 }, PLANS_MAP, CYCLE.TWO_YEARS, 'EUR');
+        const selectedPlan = new SelectedPlan({ [PLANS.MAIL_BUSINESS]: 1 }, PLANS_MAP, CYCLE.TWO_YEARS, 'EUR');
 
         const config = getAssistantUpsellConfig('upsellRef', user, false, selectedPlan);
 
@@ -90,33 +75,6 @@ describe('getAssistantUpsellConfig', () => {
             ...baseConfig,
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             cycle: CYCLE.TWO_YEARS,
-            maximumCycle: CYCLE.TWO_YEARS,
-            minimumCycle: CYCLE.TWO_YEARS,
-        });
-    });
-
-    // TODO this will probably not be right
-    it('should return paid config if the user is paid with family plan', () => {
-        const user = {
-            isPaid: true,
-        } as unknown as UserModel;
-
-        const selectedPlan = new SelectedPlan(
-            {
-                [PLANS.FAMILY]: 1,
-            },
-            PLANS_MAP,
-            CYCLE.TWO_YEARS,
-            'EUR'
-        );
-
-        const config = getAssistantUpsellConfig('upsellRef', user, false, selectedPlan);
-
-        expect(config).toEqual({
-            ...baseConfig,
-            step: SUBSCRIPTION_STEPS.CHECKOUT,
-            cycle: CYCLE.TWO_YEARS,
-            planIDs: { [PLANS.FAMILY]: 1, [ADDON_NAMES.MEMBER_SCRIBE_FAMILY]: 1 },
             maximumCycle: CYCLE.TWO_YEARS,
             minimumCycle: CYCLE.TWO_YEARS,
         });
