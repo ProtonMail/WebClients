@@ -4,7 +4,7 @@ const Pbkdf2PRFKeySize = 32;
 const Pbkdf2ChallengeSize = 3 * Pbkdf2PRFKeySize + 32 + 4;
 const Pbkdf2OutputSize = 32;
 const sha256Size = 32;
-function areBuffersEqual(buf1: ArrayBuffer, buf2: ArrayBuffer): boolean {
+function areBuffersEqual(buf1: ArrayBuffer, buf2: Uint8Array<ArrayBuffer>): boolean {
     if (buf1.byteLength !== buf2.byteLength) {
         return false;
     }

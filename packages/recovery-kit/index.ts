@@ -156,11 +156,11 @@ export async function generatePDFKit({
         },
     ];
 
-    const pdf = await generate({
+    const pdf = (await generate({
         template: getTemplate(emptyTemplate),
         inputs,
         options: { font: await getFont() },
-    });
+    })) as Uint8Array<ArrayBuffer>; // TODO: Improve this type
 
     return pdf;
 }
