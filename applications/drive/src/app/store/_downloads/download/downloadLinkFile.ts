@@ -60,27 +60,32 @@ export default function initDownloadLinkFile(
         const binaryMessage = await readToEnd<Uint8Array>(stream);
         const hash = (await generateContentHash(binaryMessage)).BlockHash;
 
-        const { data, verified } = await markErrorAsCrypto<{ data: Uint8Array; verified: VERIFICATION_STATUS }>(
-            async () => {
-                const { data, verified } = await CryptoProxy.decryptMessage({
-                    binaryMessage,
-                    binarySignature: decryptedSignature,
-                    sessionKeys: keys.sessionKeys,
-                    verificationKeys: keys.addressPublicKeys,
-                    format: 'binary',
-                });
-                return { data, verified };
+        try {
+            const { data, verified } = await markErrorAsCrypto<{ data: Uint8Array; verified: VERIFICATION_STATUS }>(
+                async () => {
+                    const { data, verified } = await CryptoProxy.decryptMessage({
+                        binaryMessage,
+                        binarySignature: decryptedSignature,
+                        sessionKeys: keys.sessionKeys,
+                        verificationKeys: keys.addressPublicKeys,
+                        format: 'binary',
+                    });
+                    return { data, verified };
+                }
+            );
+
+            if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                await callbacks.onSignatureIssue?.(abortSignal, link, { blocks: verified });
             }
-        );
 
-        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-            await callbacks.onSignatureIssue?.(abortSignal, link, { blocks: verified });
+            return {
+                hash,
+                data: toStream(data) as ReadableStream<Uint8Array>,
+            };
+        } catch (e: unknown) {
+            await callbacks.onDecryptionIssue?.(link, e);
+            throw e;
         }
-
-        return {
-            hash,
-            data: toStream(data) as ReadableStream<Uint8Array>,
-        };
     };
 
     const checkManifestSignature = async (abortSignal: AbortSignal, hash: Uint8Array, signature: string) => {
