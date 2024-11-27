@@ -19,18 +19,20 @@ const sanitize = (msg: string) => {
         ALLOWED_ATTR: ['href'],
     });
 
-    sanitizedElement.querySelectorAll('a').forEach((node) => {
-        if (node.tagName === 'A') {
-            node.setAttribute('rel', 'noopener noreferrer');
-            node.setAttribute('target', '_blank');
-        }
-    });
+    if (sanitizedElement instanceof Element) {
+        sanitizedElement.querySelectorAll('a').forEach((node) => {
+            if (node.tagName === 'A') {
+                node.setAttribute('rel', 'noopener noreferrer');
+                node.setAttribute('target', '_blank');
+            }
+        });
+    }
 
     return sanitizedElement;
 };
 
-const containsHTML = (el?: Node) => {
-    return el?.childNodes && Array.from(el.childNodes).some(isElement);
+const containsHTML = (el?: Node): el is Element => {
+    return Boolean(el?.childNodes && Array.from(el.childNodes).some(isElement));
 };
 
 const purifyMessage = (msg: string) => {
