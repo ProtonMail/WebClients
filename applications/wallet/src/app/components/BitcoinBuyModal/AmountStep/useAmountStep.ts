@@ -23,6 +23,7 @@ import {
     useGetQuotesByProvider,
 } from '@proton/wallet/store';
 
+import { BUY_BITCOIN_DEFAULT_AMOUNT } from '../../../constants/amount';
 import { useDebounceEffect } from '../../../utils/hooks/useDebouncedEffect';
 import { getGatewayNameByGatewayProvider } from '../../../utils/onramp';
 
@@ -33,8 +34,6 @@ interface Props {
     country: WasmApiCountry;
     preselectedQuote?: QuoteWithProvider;
 }
-
-const DEFAULT_AMOUNT = 100;
 
 export const useAmountStep = ({ country: inputCountry, preselectedQuote }: Props) => {
     const [selectedCountry, setSelectedCountry] = useState<WasmApiCountry>(inputCountry);
@@ -59,7 +58,7 @@ export const useAmountStep = ({ country: inputCountry, preselectedQuote }: Props
         [selectedPaymentMethod, selectedPaymentProvider, sortedQuotes]
     );
 
-    const [amount, setAmount] = useState(DEFAULT_AMOUNT);
+    const [amount, setAmount] = useState(BUY_BITCOIN_DEFAULT_AMOUNT);
 
     const [countriesByProviders, loadingCountries] = useCountriesByProvider();
     const [fiatCurrenciesByProvider, loadingCurrencies] = useFiatCurrenciesByProvider();
@@ -119,8 +118,15 @@ export const useAmountStep = ({ country: inputCountry, preselectedQuote }: Props
                         ...quote,
                     }))
                 )
-                .sort((quoteA, quoteB) => (quoteA.BitcoinAmount < quoteB.BitcoinAmount ? 1 : -1));
-
+                .sort((quoteA, quoteB) => {
+                    if (quoteA.provider === 'Azteco' && quoteB.provider !== 'Azteco') {
+                        return -1;
+                    }
+                    if (quoteA.provider !== 'Azteco' && quoteB.provider === 'Azteco') {
+                        return 1;
+                    }
+                    return quoteA.BitcoinAmount <= quoteB.BitcoinAmount ? 1 : -1;
+                });
             if (sortedQuotes.length) {
                 setSortedQuotes(sortedQuotes);
 
