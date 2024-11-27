@@ -53,6 +53,7 @@ import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 import { BlockTypePlugin } from './Plugins/BlockTypePlugin'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { YjsReadonlyPlugin } from './Plugins/YjsReadonly/YjsReadonlyPlugin'
+import { useSyncedState } from './Hooks/useSyncedState'
 
 const TypingBotEnabled = false
 
@@ -71,7 +72,7 @@ type Props = {
   onEditorLoadResult: EditorLoadResult
   onUserModeChange: (mode: EditorUserMode) => void
   setEditorRef: (instance: LexicalEditor | null) => void
-  username: string
+  userAddress: string
   isSuggestionsFeatureEnabled: boolean
   showTreeView: boolean
   lexicalError?: Error
@@ -93,13 +94,15 @@ export function Editor({
   systemMode,
   onUserModeChange,
   setEditorRef: passEditorRefToParent,
-  username,
+  userAddress,
   showTreeView,
   isSuggestionsFeatureEnabled,
   lexicalError,
   logger,
 }: Props) {
   const editorRef = useRef<LexicalEditor | null>(null)
+
+  const { userName } = useSyncedState()
 
   const setEditorRef = useCallback(
     (instance: LexicalEditor | null) => {
@@ -133,8 +136,8 @@ export function Editor({
   )
 
   const color = useMemo(() => {
-    return getAccentColorForUsername(username)
-  }, [username])
+    return getAccentColorForUsername(userName)
+  }, [userName])
 
   const isSuggestionMode = userMode === EditorUserMode.Suggest
   const hasMutationDisplay = systemMode === EditorSystemMode.Edit && userMode !== EditorUserMode.Preview
@@ -143,7 +146,7 @@ export function Editor({
     <CollaborationContext.Provider
       value={{
         yjsDocMap: docMap,
-        name: username,
+        name: userName,
         color,
         clientID: 0,
         isCollabActive: false,
@@ -247,7 +250,9 @@ export function Editor({
         />
         {showTreeView && <TreeViewPlugin />}
         <MarkNodesProvider>
-          {systemMode !== EditorSystemMode.Revision && <CommentPlugin controller={clientInvoker} username={username} />}
+          {systemMode !== EditorSystemMode.Revision && (
+            <CommentPlugin controller={clientInvoker} userAddress={userAddress} />
+          )}
           {isSuggestionsFeatureEnabled && (
             <SuggestionModePlugin
               isSuggestionMode={isSuggestionMode}

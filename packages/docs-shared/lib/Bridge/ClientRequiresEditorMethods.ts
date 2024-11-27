@@ -5,6 +5,7 @@ import type { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType
 import type { SerializedEditorState } from 'lexical'
 import type { UserSettings } from '@proton/shared/lib/interfaces'
 import type { YjsState } from '../YjsState'
+import type { SyncedEditorStateValues } from '../State/SyncedEditorState'
 
 export interface ClientRequiresEditorMethods {
   receiveMessage(message: RtsMessagePayload): Promise<void>
@@ -24,7 +25,7 @@ export interface ClientRequiresEditorMethods {
   showCommentsPanel(): Promise<void>
   initializeEditor(
     documentId: string,
-    username: string,
+    userAddress: string,
     role: DocumentRoleType,
     editorInitializationConfig?: EditorInitializationConfig,
   ): Promise<void>
@@ -41,4 +42,9 @@ export interface ClientRequiresEditorMethods {
   loadUserSettings(settings: UserSettings): Promise<void>
   toggleDebugTreeView(): Promise<void>
   handleIsSuggestionsFeatureEnabled(enabled: boolean): Promise<void>
+
+  syncProperty(
+    property: keyof SyncedEditorStateValues,
+    value: SyncedEditorStateValues[keyof SyncedEditorStateValues],
+  ): Promise<void>
 }

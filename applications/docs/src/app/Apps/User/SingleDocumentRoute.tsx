@@ -20,6 +20,7 @@ import { PublicDocumentCopier } from '../../Components/PublicDocumentCopier'
 import { getUrlPassword } from '@proton/drive-store/utils/url/password'
 import { useEmailOptInModal } from '../../Components/Modals/EmailOptInModal/EmailOptInModal'
 import { useDocsNotifications } from '../../Containers/DocsNotificationsProvider'
+import { PrivateHookChangesToEvents } from './Hooks/PrivateHookChangesToEvents'
 
 export default function SingleDocumentRoute({ driveCompat }: { driveCompat: DriveCompat }) {
   void import('../../tailwind.scss')
@@ -155,6 +156,7 @@ export default function SingleDocumentRoute({ driveCompat }: { driveCompat: Driv
     <WordCountContextProvider>
       <UserProvider publicContext={undefined} privateContext={{ user, compat: driveCompat }}>
         <SharedLayout action={actionMode}>
+          <PrivateHookChangesToEvents />
           <Content
             onConversionSuccess={onConversionSuccess}
             openAction={openAction}
