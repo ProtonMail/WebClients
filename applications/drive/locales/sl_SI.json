@@ -546,6 +546,9 @@
       "Next month": [
         "Naslednji mesec"
       ],
+      "Next page": [
+        "Naslednja stran"
+      ],
       "Not now": [
         "Ne zdaj"
       ],
@@ -590,6 +593,9 @@
       ],
       "Previous month": [
         "Prejšnji mesec"
+      ],
+      "Previous page": [
+        "Prejšnja stran"
       ],
       "Quit": [
         "Zapusti"
@@ -845,6 +851,9 @@
       ],
       "Upgrade now": [
         "Nadgradi zdaj"
+      ],
+      "Upload": [
+        "Naloži"
       ],
       "Upload anyway": [
         "Vseeno naloži"
@@ -2358,6 +2367,11 @@
         "Zapadel račun"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "uporabite pomočnika za uvoz Easy Switch"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA doda dodatno varnostno plast, ki preprečuje nepooblaščen dostop."
@@ -2409,11 +2423,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "uporabite pomočnika za uvoz Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7241,11 +7250,6 @@
         "Uživate v promocijski ceni na vašem trenutnem paketu. Če boste zmanjšali svoj paket, boste izgubili promocijsko ceno in ta ne bo na voljo, če se poskusite ponovno naročiti."
       ]
     },
-    "new_plans: Title": {
-      "Starting from ${ price }": [
-        "Od ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -7258,6 +7262,11 @@
       ],
       "Switch plans?": [
         "Zamenjaj paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "Starting from ${ price }": [
+        "Od ${ price }"
       ]
     },
     "new_plans: tooltip": {

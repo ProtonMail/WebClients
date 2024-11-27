@@ -549,6 +549,9 @@
       "Next month": [
         "Следующий месяц"
       ],
+      "Next page": [
+        "Следующая страница"
+      ],
       "Not now": [
         "Не сейчас"
       ],
@@ -596,6 +599,9 @@
       ],
       "Previous month": [
         "Предыдущий месяц"
+      ],
+      "Previous page": [
+        "Предыдущая страница"
       ],
       "Quit": [
         "Выход"
@@ -860,6 +866,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Улучшить до ${ BRAND_NAME } Unlimited"
+      ],
+      "Upload": [
+        "Загрузить"
       ],
       "Upload anyway": [
         "Все равно загрузить"
@@ -2406,6 +2415,11 @@
         "Просроченный счёт"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2475,11 +2489,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7566,14 +7575,6 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Оформите Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Начиная с ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -7586,6 +7587,14 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Начиная с ${ price }"
       ]
     },
     "new_plans: tooltip": {

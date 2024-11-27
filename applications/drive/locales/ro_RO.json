@@ -546,6 +546,9 @@
       "Next month": [
         "Luna viitoare"
       ],
+      "Next page": [
+        "Pagina următoare"
+      ],
       "Not now": [
         "Nu acum"
       ],
@@ -593,6 +596,9 @@
       ],
       "Previous month": [
         "Luna trecută"
+      ],
+      "Previous page": [
+        "Pagina anterioară"
       ],
       "Quit": [
         "Ieșire"
@@ -857,6 +863,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Treceți la ${ BRAND_NAME } Unlimited"
+      ],
+      "Upload": [
+        "Încărcare"
       ],
       "Upload anyway": [
         "Încărcare așa"
@@ -2409,6 +2418,11 @@
         "Factură restantă"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "folosiți asistentul de importare Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul printr-o monitorizare dedicată 24/7 a activităților suspecte, inclusiv intervenția specialiștilor în securitate."
@@ -2478,11 +2492,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "folosiți asistentul de importare Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7462,14 +7471,6 @@
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Începând de la ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -7482,6 +7483,14 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Începând de la ${ price }"
       ]
     },
     "new_plans: tooltip": {
