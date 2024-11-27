@@ -45,11 +45,13 @@ export const openESDB = async (userID: string) => {
         }
     } catch (error: any) {
         esDB?.close();
+        esSentryReport('openESDB: failed to open DB', { error });
         // Flags are removed from local storage in case this code
         // is called due to an update from an outdated version of IDB
         removeESFlags(userID);
         await deleteESDB(userID);
-        return;
+        // let the caller handle the error
+        throw error;
     }
     return esDB;
 };
