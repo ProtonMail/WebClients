@@ -22,7 +22,7 @@ export type DriveEvent = {
     originShareId?: string;
 };
 
-export type DriveEventData = {
+type DriveEventData = {
     externalInvitationSignup?: string;
 };
 

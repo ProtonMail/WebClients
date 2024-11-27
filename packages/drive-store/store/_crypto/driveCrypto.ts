@@ -10,12 +10,6 @@ import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import type { ShareWithKey } from '../_shares';
 
-export interface PrimaryAddressKey {
-    privateKey: PrivateKeyReference;
-    publicKey: PublicKeyReference | undefined;
-    address: Address;
-}
-
 // Special case for drive to allow users with just an external address
 export const getActiveAddresses = (addresses: Address[]): Address[] => {
     return addresses.filter(({ Status }) => Status === ADDRESS_STATUS.STATUS_ENABLED);

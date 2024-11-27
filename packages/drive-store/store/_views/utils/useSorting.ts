@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useMultiSortedList } from '@proton/components';
-import type { SortConfig } from '@proton/components/hooks/useSortedList';
+import { type SortConfig, useMultiSortedList } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { logError } from '../../../utils/errorHandling';

@@ -18,6 +18,7 @@ import type { DecryptedLink, SignatureIssues } from '../_links';
 import { useLink, useLinksListing } from '../_links';
 import { ThumbnailType } from '../_uploads/media';
 import { waitFor } from '../_utils';
+import useDownloadDecryptionIssue from './DownloadProvider/useDownloadDecryptionIssue';
 import { useDownloadMetrics } from './DownloadProvider/useDownloadMetrics';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
@@ -44,6 +45,7 @@ export default function useDownload() {
     const { getLink, getLinkPrivateKey, getLinkSessionKey, setSignatureIssues } = useLink();
     const { loadChildren, getCachedChildren } = useLinksListing();
     const { report } = useDownloadMetrics('preview');
+    const { handleDecryptionIssue } = useDownloadDecryptionIssue();
 
     const api = useApi();
 
@@ -109,16 +111,17 @@ export default function useDownload() {
         if (!sessionKey) {
             throw new Error('Session key missing on file link');
         }
-        if (!revisionSignatureAddress) {
-            throw new Error('Signature address missing on file link');
-        }
 
-        const addressPublicKeys = await getVerificationKey(revisionSignatureAddress);
+        const isAnonymous = !revisionSignatureAddress;
+
+        const addressPublicKeys = !isAnonymous ? await getVerificationKey(revisionSignatureAddress) : undefined;
+
         return [
             {
                 privateKey: privateKey,
                 sessionKeys: sessionKey,
                 addressPublicKeys,
+                isAnonymous,
             },
             link.signatureIssues,
         ];
@@ -189,11 +192,11 @@ export default function useDownload() {
                 },
                 onError: (error: Error) => {
                     if (error) {
-                        report(link.shareId, TransferState.Error, error);
+                        report(link.shareId, TransferState.Error, link.size, error);
                     }
                 },
                 onFinish: () => {
-                    report(link.shareId, TransferState.Done);
+                    report(link.shareId, TransferState.Done, link.size);
                 },
             },
             api
@@ -246,6 +249,9 @@ export default function useDownload() {
                         }
                         await setSignatureIssues(abortSignal, shareId, linkId, signatureIssues);
                         resolve(signatureIssues);
+                    },
+                    onDecryptionIssue: (link: LinkDownload) => {
+                        handleDecryptionIssue(link);
                     },
                 },
                 () => {} // We do not support logging for thumnbails just yet.

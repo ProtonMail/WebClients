@@ -235,7 +235,8 @@ export class MetricSharedWorker implements MetricSharedWorkerInterface {
         });
     };
 
-    public disconnect = (connectionId: string) => {
+    public disconnect = async (connectionId: string) => {
+        await this.reports();
         users.delete(connectionId);
     };
 

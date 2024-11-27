@@ -9,7 +9,7 @@ import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 import { useBookmarks } from '../_bookmarks/useBookmarks';
 import { usePublicSessionUser } from '../_user';
 
-export interface Props {
+interface Props {
     customPassword?: string;
 }
 

@@ -22,7 +22,7 @@ interface Props<T> {
     isMultiSelectionDisabled?: boolean;
 }
 
-export enum HeaderCellsPresets {
+enum HeaderCellsPresets {
     Checkbox,
     Placeholder,
 }

@@ -1,5 +1,5 @@
 export { DriveProvider, PublicDriveProvider } from './DriveProvider';
-export { useActions, useSharedWithMeActions, useInvitationsActions } from './_actions';
+export { useActions, usePublicActions, useSharedWithMeActions, useInvitationsActions } from './_actions';
 
 export { usePublicAuth } from './_api';
 export { useActivePing, useGetPublicKeysForEmail, usePublicSessionUser } from './_user';
@@ -13,6 +13,7 @@ export {
     useLockedVolume,
     useShareUrl,
     useDriveSharingFlags,
+    useDrivePublicSharingFlags,
     useContextShareHandler,
 } from './_shares';
 export { useUpload, useFileUploadInput, useFolderUploadInput, mimeTypeFromFile } from './_uploads';
@@ -29,5 +30,4 @@ export * from './_views';
 export { useSearchLibrary } from './_search';
 export { usePhotos, usePhotosRecovery, isDecryptedLink } from './_photos';
 export * from './_photos/interface';
-export { useDriveShareURLBookmarkingFeatureFlag, useBookmarksActions } from './_bookmarks';
-export * from './_bookmarks/interface';
+export { useBookmarksActions } from './_bookmarks';

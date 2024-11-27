@@ -8,9 +8,9 @@ import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import clsx from '@proton/utils/clsx';
 
-import type { ShareInvitee } from '../../../../store';
+import { type ShareInvitee } from '../../../../store';
+import { PermissionsDropdownMenu } from '../PermissionsDropdownMenu';
 import { DirectSharingAddressesInputItem } from './DirectSharingAddressesInputItem';
-import { MemberDropdownMenu } from './MemberDropdownMenu';
 import { getGroupsWithContactsMap } from './helpers/getGroupsWithContactsMap';
 import { inviteesToRecipients, recipientsToInvitees } from './helpers/transformers';
 
@@ -96,7 +96,7 @@ export const DirectSharingAutocomplete = ({
                     className={clsx(['multi-select-container', !!count && 'px-2 py-0.5'])}
                 />
                 <div className="absolute inset-y-center right-0">
-                    <MemberDropdownMenu
+                    <PermissionsDropdownMenu
                         disabled={disabled}
                         selectedPermissions={selectedPermissions}
                         onChangePermissions={onChangePermissions}

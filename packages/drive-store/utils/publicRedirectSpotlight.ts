@@ -6,7 +6,7 @@
 // - "shown": Spotlight has been shown for this user
 
 export const PUBLIC_SHARE_REDIRECT_SPOTLIGHT_KEY = 'public-share-redirect-spotlight';
-export enum PublicShareRedirectSpotlightStatus {
+enum PublicShareRedirectSpotlightStatus {
     Pending = 'pending',
     Shown = 'shown',
 }

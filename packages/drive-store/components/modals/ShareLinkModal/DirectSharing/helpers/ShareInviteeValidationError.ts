@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import type { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
-
 export enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL,
     EXTERNAL_INVITE_DISABLED,
@@ -10,6 +8,7 @@ export enum VALIDATION_ERROR_TYPES {
     EXISTING_MEMBER,
     NOT_INTERNAL_ACCOUNT,
 }
+
 const {
     INVALID_EMAIL,
     EXTERNAL_INVITE_DISABLED,
@@ -41,15 +40,13 @@ const getValidationErrorMessage = (type: VALIDATION_ERROR_TYPES) => {
     return c('Error').t`Validation error`;
 };
 
-export class ShareInviteeValdidationError extends Error {
+export class ShareInviteeValidationError extends Error {
     type: VALIDATION_ERROR_TYPES;
 
     constructor(type: VALIDATION_ERROR_TYPES) {
         const message = getValidationErrorMessage(type);
         super(message);
         this.type = type;
-        Object.setPrototypeOf(this, ShareInviteeValdidationError.prototype);
+        Object.setPrototypeOf(this, ShareInviteeValidationError.prototype);
     }
 }
-
-export type RecipientError = ShareInviteeValdidationError | EncryptionPreferencesError;

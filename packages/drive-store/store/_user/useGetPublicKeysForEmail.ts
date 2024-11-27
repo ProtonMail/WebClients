@@ -24,7 +24,7 @@ export const useGetPublicKeysForEmail = () => {
         if (cached) {
             return cached;
         }
-        return debouncedRequest<{ Address: { Keys: Key[] } }>(
+        return debouncedRequest<{ Address: { Keys: Key[] }; Unverified?: { Keys: Key[] } }>(
             {
                 ...getAllPublicKeys({
                     Email: email,
@@ -37,10 +37,12 @@ export const useGetPublicKeysForEmail = () => {
             },
             abortSignal
         )
-            .then(({ Address }) => {
-                const keysMap = Address.Keys.map((key) => key.PublicKey);
-                cache.set(email, keysMap);
-                return keysMap;
+            .then(({ Address, Unverified }) => {
+                const publicKeys = (Address.Keys.length === 0 && Unverified ? Unverified.Keys : Address.Keys).map(
+                    (key) => key.PublicKey
+                );
+                cache.set(email, publicKeys);
+                return publicKeys;
             })
             .catch((error) => {
                 if (

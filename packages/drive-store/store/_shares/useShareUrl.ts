@@ -16,6 +16,7 @@ import {
     RESPONSE_CODE,
     SHARE_GENERATED_PASSWORD_LENGTH,
 } from '@proton/shared/lib/drive/constants';
+import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import {
     base64StringToUint8Array,
     stringToUint8Array,
@@ -239,7 +240,7 @@ export default function useShareUrl() {
             debouncedRequest<{ ShareURL: ShareURLPayload }>(
                 queryCreateSharedLink(linkShareId, {
                     Flags: SharedURLFlags.GeneratedPasswordIncluded,
-                    Permissions: 4,
+                    Permissions: SHARE_URL_PERMISSIONS.VIEWER,
                     MaxAccesses: DEFAULT_SHARE_MAX_ACCESSES,
                     CreatorEmail,
                     ExpirationDuration: null,
@@ -418,12 +419,13 @@ export default function useShareUrl() {
             shareUrlId: string;
             flags: number;
             keyInfo: SharedURLSessionKeyPayload;
+            permissions?: SHARE_URL_PERMISSIONS;
         },
         newDuration?: number | null,
         newPassword?: string
     ) => {
-        const { shareId, shareUrlId, flags, keyInfo } = shareUrlInfo;
-        let fieldsToUpdate: Partial<UpdateSharedURL> = {};
+        const { shareId, shareUrlId, flags, keyInfo, permissions } = shareUrlInfo;
+        let fieldsToUpdate: Partial<UpdateSharedURL> = { permissions };
 
         if (newDuration !== undefined) {
             fieldsToUpdate = { expirationDuration: newDuration };
@@ -597,6 +599,7 @@ export default function useShareUrl() {
                 shareUrlId: string;
                 flags: number;
                 keyInfo: SharedURLSessionKeyPayload;
+                permissions?: SHARE_URL_PERMISSIONS;
             },
             newDuration?: number | null,
             newPassword?: string
