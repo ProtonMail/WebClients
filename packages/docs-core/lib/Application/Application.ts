@@ -4,7 +4,7 @@ import { AppDependencies } from './Dependencies/AppDependencies'
 import type { CreateEmptyDocumentForConversion } from '../UseCase/CreateEmptyDocumentForConversion'
 import type { DocLoader } from '../Services/DocumentLoader/DocLoader'
 import type { DocLoaderInterface } from '../Services/DocumentLoader/DocLoaderInterface'
-import type { InternalEventBusInterface } from '@proton/docs-shared'
+import { SyncedEditorState, type InternalEventBusInterface } from '@proton/docs-shared'
 import type { ApplicationInterface } from './ApplicationInterface'
 import type { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -26,6 +26,7 @@ declare const window: CustomWindow
 
 export class Application implements ApplicationInterface {
   public readonly userState = new UserState()
+  public readonly syncedEditorState = new SyncedEditorState()
 
   private readonly deps = new AppDependencies(
     this.protonApi,

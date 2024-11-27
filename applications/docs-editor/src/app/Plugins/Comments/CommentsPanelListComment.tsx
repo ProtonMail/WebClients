@@ -16,6 +16,8 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { ACCEPT_SUGGESTION_COMMAND, REJECT_SUGGESTION_COMMAND } from '../Suggestions/Commands'
 import { useSuggestionCommentContent } from './useSuggestionCommentContent'
 import { generateSuggestionSummary } from '../Suggestions/generateSuggestionSummary'
+import { useContactEmails } from '../../Hooks/useContactEmails'
+import { useSyncedState } from '../../Hooks/useSyncedState'
 
 export function CommentsPanelListComment({
   comment,
@@ -33,19 +35,18 @@ export function CommentsPanelListComment({
   const [editor] = useLexicalComposerContext()
 
   const { application, isSuggestionsFeatureEnabled } = useApplication()
+  const { userName } = useSyncedState()
+  const { displayNameForEmail } = useContactEmails()
 
-  const { username, controller, markNodeMap, removeMarkNode, awarenessStates, showConfirmModal } = useCommentsContext()
+  const { userAddress, controller, markNodeMap, removeMarkNode, awarenessStates, showConfirmModal } =
+    useCommentsContext()
 
   const [isDeleting, setIsDeleting] = useState(false)
-
   const [isEditing, setIsEditing] = useState(false)
-
   const [isOptionsMenuOpen, setIsOptionsMenuOpen] = useState(false)
 
   const isSuggestionComment = isFirstComment && isSuggestionThread
-
   const suggestionID = isSuggestionComment ? thread.markID : null
-
   const suggestionContent = useSuggestionCommentContent(comment, thread, suggestionID, editor)
 
   const acceptSuggestion: MouseEventHandler = (event) => {
@@ -121,14 +122,12 @@ export function CommentsPanelListComment({
     })
   }
 
-  const isAuthorCurrentUser = comment.author === username
+  const isAuthorCurrentUser = comment.author === userAddress
   const canEdit = application.getRole().canEdit()
-
-  const name = comment.author
-
-  const color = awarenessStates.find((state) => state.name === comment.author)?.color
-
   const isThreadActive = thread.state === CommentThreadState.Active
+
+  const authorDisplayName = isAuthorCurrentUser ? userName : displayNameForEmail(comment.author)
+  const color = awarenessStates.find((state) => state.name === comment.author)?.color
 
   const showEditButton = (!isFirstComment || isThreadActive) && isAuthorCurrentUser && !isSuggestionComment
   const showResolveButton = isFirstComment && isThreadActive
@@ -159,13 +158,17 @@ export function CommentsPanelListComment({
         data-testid="thread-comments-list"
       >
         <div className="mb-1.5 flex flex-nowrap items-center gap-1.5">
-          <UserAvatar name={comment.author} color={color ? { hsl: color } : undefined} className="mr-1 flex-shrink-0" />
+          <UserAvatar
+            name={displayNameForEmail(comment.author)}
+            color={color ? { hsl: color } : undefined}
+            className="mr-1 flex-shrink-0"
+          />
           <div className="mr-auto flex flex-col overflow-hidden">
             <span
               className="mb-px w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold"
               data-testid="comment-author"
             >
-              {name}
+              {authorDisplayName}
             </span>
             <span className="select-none text-xs opacity-50" data-testid="comment-creation-time">
               <CommentTime createTime={comment.createTime} languageCode={application.languageCode} />

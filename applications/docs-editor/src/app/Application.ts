@@ -1,10 +1,12 @@
 import type { DocumentRoleType } from '@proton/docs-shared'
-import { DocumentRole, InternalEventBus } from '@proton/docs-shared'
+import { DocumentRole, InternalEventBus, SyncedEditorState } from '@proton/docs-shared'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { Logger } from '@proton/utils/logs'
 
 export class Application {
   public readonly eventBus = new InternalEventBus()
+  /** Synced editor state. Synced from parent from to keep properties in sync. */
+  public readonly syncedState = new SyncedEditorState()
   private role: DocumentRole = new DocumentRole('Viewer')
   public readonly logger: LoggerInterface
   public languageCode: Intl.LocalesArgument = 'en'

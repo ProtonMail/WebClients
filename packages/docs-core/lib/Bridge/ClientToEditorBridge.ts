@@ -5,6 +5,7 @@ import type {
   ClientToEditorReplyMessage,
   EditorRequiresClientMethods,
   InternalEventBusInterface,
+  SyncedEditorState,
 } from '@proton/docs-shared'
 import { EditorBridgeMessageType, BridgeOriginProvider, DOCS_EDITOR_DEBUG_KEY } from '@proton/docs-shared'
 import { EditorInvoker } from './EditorInvoker'
@@ -21,8 +22,13 @@ export class ClientToEditorBridge {
     private editorFrame: HTMLIFrameElement,
     private readonly editorController: EditorOrchestratorInterface,
     private readonly eventBus: InternalEventBusInterface,
+    private readonly syncedEditorState?: SyncedEditorState,
   ) {
     this.editorRequestHandler = new EditorToClientRequestHandler(this.editorFrame, this.editorController, this.eventBus)
+
+    this.syncedEditorState?.subscribeToAnyProperty((property, value) => {
+      void this.editorInvoker.syncProperty(property, value)
+    })
 
     window.addEventListener('message', (event) => {
       if (event.source !== this.editorFrame.contentWindow) {
