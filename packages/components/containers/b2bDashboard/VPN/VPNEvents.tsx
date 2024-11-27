@@ -5,9 +5,9 @@ import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Pagination, usePaginationAsync } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { Pagination, usePaginationAsync } from '@proton/components/components/pagination';
 import TimeIntl from '@proton/components/components/time/TimeIntl';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';

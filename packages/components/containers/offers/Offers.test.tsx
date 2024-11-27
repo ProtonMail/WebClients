@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { TopNavbarUpsell } from '@proton/components';
+import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
 import type { FeatureCode } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, Loader } from '@proton/components/index';
+import Icon from '@proton/components/components/icon/Icon';
+import Loader from '@proton/components/components/loader/Loader';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Address, Group, GroupMember } from '@proton/shared/lib/interfaces';

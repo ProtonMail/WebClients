@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { NewUpsellModal } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
