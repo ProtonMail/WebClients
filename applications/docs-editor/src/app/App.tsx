@@ -119,6 +119,10 @@ export function App({ systemMode }: Props) {
     }
 
     const requestHandler: ClientRequiresEditorMethods = {
+      async syncProperty(property, value) {
+        void application.syncedState.setProperty(property, value)
+      },
+
       async receiveMessage(message: RtsMessagePayload) {
         void docState.receiveMessage(message)
       },
@@ -221,19 +225,24 @@ export function App({ systemMode }: Props) {
         setEditingLocked(locked)
       },
 
-      async initializeEditor(documentId: string, username: string, role: DocumentRoleType, editorInitializationConfig) {
+      async initializeEditor(
+        documentId: string,
+        userAddress: string,
+        role: DocumentRoleType,
+        editorInitializationConfig,
+      ) {
         docMap.set(documentId, docState.getDoc())
         application.setRole(role)
 
         application.logger.info('Initialized editor with role', role, 'config', editorInitializationConfig)
 
         if (editorInitializationConfig) {
-          setEditorConfig({ documentId, username, editorInitializationConfig: editorInitializationConfig })
+          setEditorConfig({ documentId, userAddress, editorInitializationConfig: editorInitializationConfig })
           if (editorInitializationConfig.mode === 'conversion') {
             docState.setIsInConversionFromOtherFormat()
           }
         } else {
-          setEditorConfig({ documentId, username })
+          setEditorConfig({ documentId, userAddress: userAddress })
         }
       },
 
@@ -432,7 +441,7 @@ export function App({ systemMode }: Props) {
               showTreeView={showTreeView}
               systemMode={systemMode}
               userMode={userMode}
-              username={editorConfig.current.username}
+              userAddress={editorConfig.current.userAddress}
             />
           </div>
           <NotificationsChildren />

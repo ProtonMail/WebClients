@@ -1,4 +1,4 @@
-import { BasePropertiesState } from './BasePropertiesState'
+import { BasePropertiesState } from '@proton/docs-shared'
 
 export type UserEvent = { name: string; payload: unknown }
 

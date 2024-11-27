@@ -31,10 +31,10 @@ import { createDOMRange } from '@lexical/selection'
 
 export default function CommentPlugin({
   controller,
-  username,
+  userAddress,
 }: {
   controller: EditorRequiresClientMethods
-  username: string
+  userAddress: string
 }): JSX.Element {
   const { application } = useApplication()
   const [editor] = useLexicalComposerContext()
@@ -316,7 +316,7 @@ export default function CommentPlugin({
   return (
     <CommentsProvider
       value={{
-        username,
+        userAddress,
         controller,
         removeMarkNode,
         activeIDs,

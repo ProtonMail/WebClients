@@ -263,7 +263,12 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
 
       application.logger.info('Creating bridge from client to editor')
 
-      const clientToEditorBridge = new ClientToEditorBridge(editorFrame, orchestrator, application.eventBus)
+      const clientToEditorBridge = new ClientToEditorBridge(
+        editorFrame,
+        orchestrator,
+        application.eventBus,
+        application.syncedEditorState,
+      )
 
       setBridge(clientToEditorBridge)
 
@@ -274,12 +279,19 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
 
       void clientToEditorBridge.editorInvoker.initializeEditor(
         docMeta.uniqueIdentifier,
-        orchestrator.username,
+        orchestrator.userAddress,
         documentState.getProperty('userRole').roleType,
         editorInitializationConfig,
       )
     },
-    [bridge, application.logger, application.eventBus, documentState, editorInitializationConfig],
+    [
+      bridge,
+      documentState,
+      application.logger,
+      application.eventBus,
+      application.syncedEditorState,
+      editorInitializationConfig,
+    ],
   )
 
   const onFrameReady = useCallback(

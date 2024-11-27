@@ -16,7 +16,7 @@ import { reportErrorToSentry } from './Utils/errorMessage'
 export type EditorConfig = {
   editorInitializationConfig?: EditorInitializationConfig
   documentId: string
-  username: string
+  userAddress: string
 }
 
 export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
@@ -31,7 +31,7 @@ export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
     systemMode === EditorSystemMode.Revision || systemMode === EditorSystemMode.PublicView
       ? {
           documentId: viewOnlyDocumentId,
-          username: '',
+          userAddress: '',
         }
       : null,
   )
