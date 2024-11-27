@@ -3,12 +3,14 @@ import { c } from 'ttag';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike, Href } from '@proton/atoms';
-import { NewUpsellModal, Price, SettingsLink } from '@proton/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import Price from '@proton/components/components/price/Price';
+import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import useApi from '@proton/components/hooks/useApi';
 import { type Currency, PLANS } from '@proton/payments';
 import {

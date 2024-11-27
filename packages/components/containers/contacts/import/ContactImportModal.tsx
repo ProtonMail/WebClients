@@ -5,23 +5,13 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
+import { getInitialState } from './initialstate';
 import ContactImportAttaching from './steps/ContactImportAttaching';
 import ContactImportCsv from './steps/ContactImportCsv';
 import ContactImportGroups from './steps/ContactImportGroups';
 import ContactImportSummary from './steps/ContactImportSummary';
 import ContactImportWarning from './steps/ContactImportWarning';
 import ContactImporting from './steps/ContactImporting';
-
-export const getInitialState = (): ImportContactsModel => ({
-    step: IMPORT_STEPS.ATTACHING,
-    parsedVcardContacts: [],
-    importedContacts: [],
-    totalEncrypted: 0,
-    totalImported: 0,
-    errors: [],
-    categories: [],
-    loading: false,
-});
 
 interface Props extends ModalProps {}
 

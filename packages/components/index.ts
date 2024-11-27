@@ -905,11 +905,11 @@ export {
     useIsSessionRecoveryInitiationAvailable,
     useSessionRecoveryGracePeriodHoursRemaining,
     useSessionRecoveryInsecureTimeRemaining,
-    useSessionRecoveryState,
     useShouldNotifyPasswordResetAvailable,
     useShouldNotifySessionRecoveryCancelled,
     useShouldNotifySessionRecoveryInProgress,
 } from './hooks/useSessionRecovery';
+export { useSessionRecoveryState } from './hooks/useSessionRecoveryState';
 export { default as useShowThemeSelection } from './hooks/useShowThemeSelection';
 export { useMultiSortedList, default as useSortedList, useSortedListAsync } from './hooks/useSortedList';
 export type { SortConfig } from './hooks/useSortedList';
