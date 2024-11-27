@@ -1841,6 +1841,9 @@
       "This version will be added to the history as the newest version.": [
         "Aquesta versió s'afegirà a l'historial com a versió més nova."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Això rebutjarà el dispositiu **${ name }** que va intentar iniciar la sessió al vostre compte ${ BRAND_NAME } el **${ date }**."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Per migrar dades des d'un altre gestor de contrasenyes, aneu al gestor de contrasenyes, exporteu les dades i carregueu-les a ${ PASS_APP_NAME }. Un cop les dades s'hagin importat, suprimiu el fitxer exportat."
       ],
@@ -3434,6 +3437,9 @@
       ],
       "Offline": [
         "Fora de línia"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Un cop sincronitzats, suprimir els àlies a ${ PASS_SHORT_APP_NAME } també els suprimirà a SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Només es permeten caràcters alfanumèrics, punts, guions i guions baixos"
