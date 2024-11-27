@@ -31,6 +31,7 @@ describe('filterItems', () => {
     ]
     expect(filterItems(items, undefined, 'owned-by-me')).toEqual([items[0], items[1]])
   })
+
   test('if filter is set to "owned-by-others" will return items that are shared with the user', () => {
     const items: RecentDocumentsSnapshotData[] = [
       {
@@ -56,6 +57,7 @@ describe('filterItems', () => {
     ]
     expect(filterItems(items, undefined, 'owned-by-others')).toEqual([items[2]])
   })
+
   test('if filter is not populated return all items', () => {
     const items: RecentDocumentsSnapshotData[] = [
       {
@@ -81,6 +83,7 @@ describe('filterItems', () => {
     ]
     expect(filterItems(items, undefined, undefined)).toEqual(items)
   })
+
   test('filter items starting with search term', () => {
     const items: RecentDocumentsSnapshotData[] = [
       {
@@ -106,6 +109,7 @@ describe('filterItems', () => {
     ]
     expect(filterItems(items, 'name', undefined)).toEqual([items[1], items[2]])
   })
+
   test('filter items ending with search term', () => {
     const items: RecentDocumentsSnapshotData[] = [
       {
@@ -170,6 +174,7 @@ describe('getDisplayName', () => {
     }
     expect(getDisplayName(recentDocument)).toBe('Me')
   })
+
   test('Will return the user if name is populated and the document is owned by the user', () => {
     const recentDocument = {
       name: 'doc 2',
@@ -193,6 +198,7 @@ describe('getDisplayName', () => {
     const contacts = [{ Name: 'Joe Bloggs', Email: 'joe@proton.ch' }] as unknown as ContactEmail[]
     expect(getDisplayName(recentDocument, contacts)).toBe('Joe Bloggs')
   })
+
   test('Will return the contact email if there is no name and the document is shared with the user', () => {
     const recentDocument = {
       name: 'doc 2',
@@ -204,5 +210,39 @@ describe('getDisplayName', () => {
     }
     const contacts = [{ Email: 'joe@proton.ch' }] as unknown as ContactEmail[]
     expect(getDisplayName(recentDocument, contacts)).toBe('joe@proton.ch')
+  })
+
+  test('Will return the createdBy email if no contact matches the createdBy field due to incorrect filtering', () => {
+    const recentDocument = {
+      name: 'doc 2',
+      linkId: 'link 1',
+      volumeId: 'volume 1',
+      lastViewed: new ServerTime(1),
+      isSharedWithMe: true,
+      createdBy: 'unknown@proton.ch',
+    }
+    const contacts = [
+      { Name: 'Joe Bloggs', Email: 'joe@proton.ch' },
+      { Name: 'Jane Doe', Email: 'jane@proton.ch' },
+    ] as unknown as ContactEmail[]
+
+    expect(getDisplayName(recentDocument, contacts)).toBe('unknown@proton.ch')
+  })
+
+  test('Will return the contact name if the contact matches the createdBy field', () => {
+    const recentDocument = {
+      name: 'doc 2',
+      linkId: 'link 1',
+      volumeId: 'volume 1',
+      lastViewed: new ServerTime(1),
+      isSharedWithMe: true,
+      createdBy: 'jane@proton.ch',
+    }
+    const contacts = [
+      { Name: 'Joe Bloggs', Email: 'joe@proton.ch' },
+      { Name: 'Jane Doe', Email: 'jane@proton.ch' },
+    ] as unknown as ContactEmail[]
+
+    expect(getDisplayName(recentDocument, contacts)).toBe('Jane Doe')
   })
 })

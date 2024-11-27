@@ -13,6 +13,7 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
   private subscribers: Set<(state: P) => void> = new Set()
   private propertySubscribers: Map<keyof P, Set<PropertyCallback<keyof P, P>>> = new Map()
   private eventSubscribers: Map<E['name'], Set<(payload: E['payload']) => void>> = new Map()
+  private anyPropertySubscribers: Set<(property: keyof P, value: P[keyof P]) => void> = new Set()
 
   constructor(defaultValues: P) {
     this.values = { ...defaultValues }
@@ -28,6 +29,22 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
 
     return () => {
       this.subscribers.delete(callback)
+    }
+  }
+
+  subscribeToAnyProperty(callback: (property: keyof P, value: P[keyof P]) => void): () => void {
+    this.anyPropertySubscribers.add(callback)
+
+    Object.entries(this.values).forEach(([property, value]) => {
+      try {
+        callback(property as keyof P, value as P[keyof P])
+      } catch (error) {
+        console.error(`Error in initial any property subscriber call for ${String(property)}:`, error)
+      }
+    })
+
+    return () => {
+      this.anyPropertySubscribers.delete(callback)
     }
   }
 
@@ -64,18 +81,25 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
     })
   }
 
-  private notifyPropertySubscribers<T extends keyof P>(
-    property: T,
-    value: P[T],
-    previousValue: P[T],
-  ) {
-    const subscribers = this.propertySubscribers.get(property)
-    if (subscribers) {
-      subscribers.forEach((callback) => {
+  private notifyPropertySubscribers<T extends keyof P>(property: T, value: P[T], previousValue: P[T]) {
+    const propertySubscribers = this.propertySubscribers.get(property)
+    if (propertySubscribers) {
+      propertySubscribers.forEach((callback) => {
         try {
           callback(value, previousValue)
         } catch (error) {
           console.error(`Error in property subscriber for ${String(property)}:`, error)
+        }
+      })
+    }
+
+    const anyPropertySubscribers = this.anyPropertySubscribers
+    if (anyPropertySubscribers) {
+      anyPropertySubscribers.forEach((callback) => {
+        try {
+          callback(property, value)
+        } catch (error) {
+          console.error(`Error in any property subscriber for ${String(property)}:`, error)
         }
       })
     }
@@ -110,10 +134,7 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
     }
   }
 
-  subscribeToEvent<T extends E['name']>(
-    event: T,
-    callback: (payload: EventPayloadMap<E>[T]) => void,
-  ): () => void {
+  subscribeToEvent<T extends E['name']>(event: T, callback: (payload: EventPayloadMap<E>[T]) => void): () => void {
     if (!this.eventSubscribers.has(event)) {
       this.eventSubscribers.set(event, new Set())
     }
@@ -129,4 +150,3 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
     }
   }
 }
-
