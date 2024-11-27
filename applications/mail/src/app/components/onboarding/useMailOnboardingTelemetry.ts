@@ -3,34 +3,20 @@ import { useCallback } from 'react';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useApi } from '@proton/components';
 import { PLANS } from '@proton/payments';
-import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { type TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
-import type { MailOnboardingVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 import { type OnlineServicesKey } from './checklist/constants';
-import useMailOnboardingVariant from './useMailOnboardingVariant';
 
 type SendTelemetryCallback = <TEvent extends TelemetryMailOnboardingEvents>(
     event: TEvent,
-    dimensionsParam: Omit<Extract<Options, { event: TEvent }>['dimensions'], 'variant' | 'plan'>
+    dimensionsParam: Omit<Extract<Options, { event: TEvent }>['dimensions'], 'plan' | 'variant'>
 ) => Promise<void>;
-
-const eventShouldNotBeSent = (variant: MailOnboardingVariant, event: TelemetryMailOnboardingEvents) => {
-    if (variant === 'none') {
-        // Those events are not sent when variant is `none`
-        return [
-            TelemetryMailOnboardingEvents.start_onboarding_modals,
-            TelemetryMailOnboardingEvents.finish_onboarding_modals,
-        ].includes(event);
-    }
-    return false;
-};
 
 export const useMailOnboardingTelemetry = (): [sendTelemetry: SendTelemetryCallback, loadingDeps: boolean] => {
     const api = useApi();
-    const { variant, isEnabled: isOnboardingVariantsFeatureEnabled } = useMailOnboardingVariant();
     const [organization, loadingOrg] = useOrganization();
     const userPlan = organization?.PlanName || PLANS.FREE;
 
@@ -40,10 +26,6 @@ export const useMailOnboardingTelemetry = (): [sendTelemetry: SendTelemetryCallb
             /** No need to send variant and plan in the dimensions they're fetched at hook instanciation level */
             dimensionsParam
         ) => {
-            if (!isOnboardingVariantsFeatureEnabled || eventShouldNotBeSent(variant, event)) {
-                return Promise.resolve();
-            }
-
             if (loadingOrg) {
                 captureMessage('useTelemetryOnboarding: Data is still loading, failled to send ' + event);
                 return Promise.resolve();
@@ -52,8 +34,8 @@ export const useMailOnboardingTelemetry = (): [sendTelemetry: SendTelemetryCallb
             const dimensions = {
                 ...dimensionsParam,
                 plan: userPlan,
-                variant,
-            };
+                variant: 'new',
+            } as const;
 
             return sendTelemetryReport({
                 api,
@@ -63,7 +45,7 @@ export const useMailOnboardingTelemetry = (): [sendTelemetry: SendTelemetryCallb
                 dimensions,
             });
         },
-        [variant, userPlan]
+        [userPlan]
     );
 
     return [sendTelemetry, loadingOrg];
@@ -128,7 +110,7 @@ type Options =
 
 type Dimensions = {
     plan: `${PLANS}`;
-    variant: MailOnboardingVariant;
+    variant: 'new';
     theme: `${ThemeTypes}`;
     is_default_theme: 'yes' | 'no';
     service: AllowedServices;
