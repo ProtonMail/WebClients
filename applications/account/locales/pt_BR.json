@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -204,6 +204,9 @@
       ],
       "Change": [
         "Alterar"
+      ],
+      "Change configuration": [
+        "Alterar configuração"
       ],
       "Change keys": [
         "Mudar chaves"
@@ -751,6 +754,9 @@
       "Next month": [
         "Próximo mês"
       ],
+      "Next page": [
+        "Próxima página"
+      ],
       "No": [
         "Não"
       ],
@@ -798,6 +804,9 @@
       ],
       "Previous month": [
         "Mês anterior"
+      ],
+      "Previous page": [
+        "Página anterior"
       ],
       "Quit": [
         "Sair"
@@ -6951,6 +6960,9 @@
       "All members have been added.": [
         "Todos os membros foram adicionados"
       ],
+      "All users": [
+        "Todos os usuários"
+      ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
       ],
@@ -10313,6 +10325,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Digite a senha da chave com impressão digital ${ fingerprintCode }"
       ],
+      "Entity ID": [
+        "ID da entidade"
+      ],
       "Event": [
         "Evento"
       ],
@@ -10573,6 +10588,9 @@
       ],
       "Organization password": [
         "Senha da organização"
+      ],
+      "Other": [
+        "Outros"
       ],
       "Other amount": [
         "Outra quantia"
@@ -17288,6 +17306,9 @@
       ],
       "Connect ${ name }": [
         "Conectar ${ name }"
+      ],
+      "Connect organization": [
+        "Conectar organização"
       ],
       "Connection status": [
         "Status da conexão"

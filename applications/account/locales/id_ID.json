@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "activate": [
-        "aktifkan"
-      ],
       "Activate": [
         "Aktifkan"
+      ],
+      "activate": [
+        "aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -204,6 +204,9 @@
       ],
       "Change": [
         "Ubah"
+      ],
+      "Change configuration": [
+        "Ubah konfigurasi"
       ],
       "Change keys": [
         "Ubah kunci"
@@ -751,6 +754,9 @@
       "Next month": [
         "Bulan selanjutnya"
       ],
+      "Next page": [
+        "Halaman selanjutnya"
+      ],
       "No": [
         "Tidak"
       ],
@@ -798,6 +804,9 @@
       ],
       "Previous month": [
         "Bulan sebelumnya"
+      ],
+      "Previous page": [
+        "Halaman sebelumnya"
       ],
       "Quit": [
         "Keluar"
@@ -6638,6 +6647,12 @@
       "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
         "${ PASS_APP_NAME } merupakan pengelola kata sandi generasi mendatang yang dirancang untuk kemudahan penggunaan dan produktivitas. Open-source, dikembangkan bersama oleh SimpleLogin dan ${ BRAND_NAME }."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }. Harga dan tanggal pembaruan langganan ${ planTitle } Anda tidak akan berubah."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
       ],
@@ -6862,6 +6877,9 @@
       ],
       "All members have been added.": [
         "Semua anggota telah ditambahkan."
+      ],
+      "All users": [
+        "Seluruh pengguna"
       ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang Anda buat akan hilang."
@@ -7300,6 +7318,9 @@
       ],
       "Edit link": [
         "Sunting tautan"
+      ],
+      "EduGain configuration saved": [
+        "Konfigurasi eduGAIN disimpan"
       ],
       "email": [
         "email"
@@ -7814,6 +7835,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Memuat kalender, mohon tunggu. Anda akan diarahkan menuju platform penjadwalan Calendly kami pada tab baru."
       ],
+      "Loading eduGAIN data...": [
+        "Memuat data eduGAIN..."
+      ],
       "Loading gateways monitoring current status.": [
         "Memuat status pemantauan gateway saat ini."
       ],
@@ -8070,7 +8094,7 @@
         "Silakan periksa berkas Anda atau gunakan ${ csvTemplateButton } kami."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "Harap masukkan frasa pemulihan (12 kata) yang terhubung dengan akun Anda."
+        "Silakan masukkan frasa pemulihan (12 kata) yang terhubung dengan akun Anda."
       ],
       "Please fill out this field.": [
         "Mohon isi kolom ini."
@@ -8190,7 +8214,7 @@
         "Frasa pemulihan tidak terhubung dengan kunci mana pun."
       ],
       "Recovery phrase is not associated with any outdated keys.": [
-        "Frasa pemulihan tidak terhubung dengan kunci mana pun yang telah kedaluwarsa."
+        "Frasa pemulihan tidak terhubung dengan kunci mana pun yang telah usang."
       ],
       "Referral link copied to your clipboard": [
         "Tautan rujukan disalin ke papan klip"
@@ -8264,8 +8288,14 @@
       "Select a service provider to start": [
         "Pilih layanan email yang Anda gunakan untuk memulai"
       ],
+      "Select one or multiple user affiliations": [
+        "Pilih satu atau lebih afiliasi pengguna"
+      ],
       "Select recently used servers": [
         "Pilih server yang baru digunakan"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Pilih afiliasi pengguna dari **${ organizationValue.Name }** (${ organizationValue.EntityId }) yang ingin Anda izinkan pada organisasi ${ BRAND_NAME } milik Anda."
       ],
       "Select what you want to import.": [
         "Pilih hal-hal apa saja yang ingin Anda impor."
@@ -9199,6 +9229,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Kata sandi ${ BRAND_NAME } Anda"
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Langganan ${ PASS_SHORT_APP_NAME } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Akun ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } Anda saling terhubung antar satu sama lain. Untuk menghapus keduanya, silakan masuk ke ${ loginLink } dan hapus akun Anda di sana."
@@ -10186,6 +10219,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Masukkan kata sandi untuk kunci dengan kode sidik jari berikut: ${ fingerprintCode }"
       ],
+      "Entity ID": [
+        "ID Entitas"
+      ],
       "Event": [
         "Peristiwa"
       ],
@@ -10447,6 +10483,9 @@
       "Organization password": [
         "Sandi organisasi"
       ],
+      "Other": [
+        "Lainnya"
+      ],
       "Other amount": [
         "Jumlah lain"
       ],
@@ -10699,6 +10738,9 @@
       "User": [
         "Pengguna"
       ],
+      "User affiliations": [
+        "Afiliasi pengguna"
+      ],
       "User's new password": [
         "Kata sandi baru pengguna"
       ],
@@ -10896,6 +10938,11 @@
       ],
       "To: ${ to }": [
         "Kepada: ${ to }"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Pilih penyedia identitas untuk memulai"
       ]
     },
     "Limit of calendars reached": {
@@ -11706,6 +11753,9 @@
       "${ options }-day file version history": [
         "Riwayat versi berkas ${ options } hari"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin untuk seumur hidup"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } dengan ${ n } alias hide-my-email"
       ],
@@ -11801,6 +11851,9 @@
       ],
       "Available on all platforms": [
         "Tersedia di semua platform"
+      ],
+      "Breach alerts": [
+        "Peringatan pembobolan"
       ],
       "Calendar sharing": [
         "Berbagi kalender"
@@ -12393,6 +12446,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Buat hingga ${ n } alamat/alias email yang dapat Anda tentukan kepada para anggota keluarga. Gunakan alamat/alias ini untuk identitas online-nya masing-masing, mis. JohnShopper@${ domain } untuk akun berbelanja."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domain khusus untuk alias, kotak surat tambahan, kemampuan untuk mengirimkan email dari alias, dan masih banyak lagi"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -14502,6 +14558,9 @@
       "Details": [
         "Rincian"
       ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Masukkan alamat email untuk pengguna yang disediakan oleh penyedia identitas Anda untuk **${ domainName }**"
+      ],
       "Test in progress...": [
         "Pengujian sedang berlangsung..."
       ],
@@ -15626,6 +15685,9 @@
       "Yes, it was me": [
         "Ya, itu saya"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Anda akan perlu untuk membuat pengguna baru secara manual untuk menambahkan pengguna ini ke organisasi Anda."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ],
@@ -16559,6 +16621,12 @@
       "Filter removed": [
         "Filter dihapus"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Enkripsi email end-to-end grup dinonaktifkan"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Enkripsi email end-to-end grup diaktifkan"
+      ],
       "Preference updated": [
         "Preferensi diperbarui"
       ],
@@ -16828,6 +16896,9 @@
       "Add domain": [
         "Tambah domain"
       ],
+      "Add external address?": [
+        "Tambah alamat eksternal?"
+      ],
       "Add filter": [
         "Tambah filter"
       ],
@@ -16954,6 +17025,9 @@
       "Choose an account": [
         "Pilih akun"
       ],
+      "Choose user affiliations": [
+        "Pilih afiliasi pengguna"
+      ],
       "Clear": [
         "Bersihkan"
       ],
@@ -16986,6 +17060,12 @@
       ],
       "Connect ${ name }": [
         "Hubungkan ${ name }"
+      ],
+      "Connect organization": [
+        "Sambungkan organisasi"
+      ],
+      "Connection status": [
+        "Status koneksi"
       ],
       "Contact us": [
         "Hubungi kami"
@@ -17707,6 +17787,9 @@
       "Send new invite?": [
         "Kirim undangan baru?"
       ],
+      "Service": [
+        "Layanan"
+      ],
       "Session management": [
         "Pengelolaan sesi"
       ],
@@ -18266,6 +18349,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Masuk dengan aman di semua perangkat Anda. Meliputi alias tak terbatas, berbagi, 2FA terintegrasi, dan masih banyak lagi."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini, dan tidak ada sumber daya terenkripsi yang akan dibagikan dengan pengguna ini."
       ],
       "Group membership paused": [
         "Keanggotaan grup dijeda"

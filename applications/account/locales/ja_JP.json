@@ -70,11 +70,11 @@
       "Accept": [
         "承認する"
       ],
-      "activate": [
-        "有効にする"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "有効にする"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -204,6 +204,9 @@
       ],
       "Change": [
         "変更"
+      ],
+      "Change configuration": [
+        "構成を変更"
       ],
       "Change keys": [
         "鍵を変更"
@@ -751,6 +754,9 @@
       "Next month": [
         "翌月"
       ],
+      "Next page": [
+        "次のページ"
+      ],
       "No": [
         "いいえ"
       ],
@@ -798,6 +804,9 @@
       ],
       "Previous month": [
         "前月"
+      ],
+      "Previous page": [
+        "前のページ"
       ],
       "Quit": [
         "終了"
@@ -1498,6 +1507,9 @@
       "Buy now": [
         "今すぐ購入"
       ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "メールの生産性を新しいレベルに。${ BRAND_NAME }Scribeがメールの作成、返信、校正をお手伝いします。"
+      ],
       "Trial expires on ${ formattedDate }": [
         "トライアルは${ formattedDate }に終了"
       ],
@@ -2170,8 +2182,29 @@
       ]
     },
     "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB }容量"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace }メール容量"
+      ],
+      "Advanced account protection": [
+        "高度なアカウント保護"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "すべての${ BRAND_NAME }アプリとプレミアム機能"
+      ],
       "Cancel and downgrade": [
         "キャンセルしてダウングレード"
+      ],
+      "Cloud storage and sharing for large files": [
+        "大きなファイルのためのクラウドストレージと共有"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "写真や文書のための暗号化されたクラウドストレージ"
+      ],
+      "Encrypted password manager": [
+        "暗号化されたパスワードマネージャー"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
         "エンドツーエンドで暗号化された電子メールとストレージを備えた基本的な無料プラン。プレミアム機能は含まれていません。"
@@ -2181,6 +2214,9 @@
       ],
       "Save money with ${ upsellPlanName }": [
         "${ upsellPlanName }でお金を節約"
+      ],
+      "Secure personal and shared calendar": [
+        "安全な個人向け及び共有のカレンダー"
       ],
       "Try ${ planName }": [
         "${ planName }をお試しください"
@@ -3713,11 +3749,17 @@
       "I found a VPN with better features": [
         "より優れた機能を持つ VPN を見つけた"
       ],
+      "I have not managed to connect": [
+        "接続することができませんでした"
+      ],
       "I only needed a VPN short-term": [
         "VPN が短期間のみ必要だった"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "別の ${ BRAND_NAME } アカウントを使っている"
+      ],
+      "It doesn't do what I need": [
+        "必要としていることをしてくれない"
       ],
       "Missing feature(s)": [
         "機能が不足している"
@@ -6836,6 +6878,9 @@
       "All members have been added.": [
         "全てのメンバーが追加されました。"
       ],
+      "All users": [
+        "全てのユーザー"
+      ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
       ],
@@ -7064,6 +7109,12 @@
       "Connection data will be available in around 1 hour.": [
         "接続データは約1 時間後に利用可能になります"
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "続けて **${ organizationValue.Name }**からの**${ affiliationsText }**を ${ BRAND_NAME } 組織に参加させます。"
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "**${ organizationValue.Name }**を ${ BRAND_NAME } 組織と引き続き接続してください。"
+      ],
       "Continue with ${ freeName }": [
         "${ freeName } で続行"
       ],
@@ -7273,6 +7324,9 @@
       ],
       "Edit link": [
         "リンクを編集"
+      ],
+      "EduGain configuration saved": [
+        "EduGAIN構成が保存されました"
       ],
       "email": [
         "メール"
@@ -7787,6 +7841,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "カレンダーを読み込み中です。お待ちください。スケジューリングプラットフォームの Calendly へ新しいタブでリダイレクトされます。"
       ],
+      "Loading eduGAIN data...": [
+        "EduGAINデータを読み込み中…"
+      ],
       "Loading gateways monitoring current status.": [
         "ゲートウェイモニタリングの現在の状態を読み込んでいます。"
       ],
@@ -7903,6 +7960,9 @@
       ],
       "No logs yet.": [
         "ログがありません。"
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "**${ domain.DomainName }**で**eduGAIN**が有効になっている組織はありません。"
       ],
       "No payment is required at this time.": [
         "現時点での支払いは必要ありません。"
@@ -8237,8 +8297,17 @@
       "Select a service provider to start": [
         "サービスプロバイダーを選択して開始"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "組織を選択して、**${ domain.DomainName }**用に**eduGAIN**を有効にします。"
+      ],
+      "Select one or multiple user affiliations": [
+        "一人または複数のユーザーの所属を選択してください"
+      ],
       "Select recently used servers": [
         "最近使用したサーバーを選択"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "${ BRAND_NAME }組織に許可したい**${ organizationValue.Name }** (${ organizationValue.EntityId })からユーザーの所属を選択してください："
       ],
       "Select what you want to import.": [
         "インポートしたいものを選択してください。"
@@ -8506,6 +8575,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "このメッセージはサポートチームに届きません、サービスに関する問題や、当社からのさらなる対応が必要な場合は、${ supportLink } をご利用ください。"
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "この組織は、**${ domain.DomainName }**に対して** eduGAIN**を使用しています。"
       ],
       "This promotion link has expired.": [
         "このプロモーションリンクは有効期限が切れています。"
@@ -10162,6 +10234,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "フィンガープリント ${ fingerprintCode } を持つキーのパスワードを入力してください"
       ],
+      "Entity ID": [
+        "エンティティID"
+      ],
       "Event": [
         "イベント"
       ],
@@ -10423,6 +10498,9 @@
       "Organization password": [
         "組織のパスワード"
       ],
+      "Other": [
+        "その他"
+      ],
       "Other amount": [
         "その他の金額"
       ],
@@ -10524,6 +10602,9 @@
       ],
       "Reveal password": [
         "パスワードを表示する"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "ジュネーブ、1228 Plan-les-Ouates、Route de la Galaise 32"
       ],
       "Search": [
         "検索"
@@ -10671,6 +10752,9 @@
       ],
       "User": [
         "ユーザー"
+      ],
+      "User affiliations": [
+        "ユーザーの所属"
       ],
       "User's new password": [
         "ユーザーの新しいパスワード"
@@ -10869,6 +10953,11 @@
       ],
       "To: ${ to }": [
         "宛先: ${ to }"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "始めるにはアイデンティティプロバイダを選択"
       ]
     },
     "Limit of calendars reached": {
@@ -11697,6 +11786,9 @@
       "${ size } attachment size": [
         "${ size } の添付ファイル"
       ],
+      "${ size } of secure storage per user": [
+        "ユーザー毎${ size }の安全なストレージ"
+      ],
       "${ size } storage": [
         "${ size } のストレージ"
       ],
@@ -11742,6 +11834,9 @@
       "Advanced account protection": [
         "高度なアカウント保護"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "高度なエイリアス機能(Simple Loginによるサポート)"
+      ],
       "Advanced network security": [
         "高度なネットワークセキュリティ"
       ],
@@ -11750,6 +11845,12 @@
       ],
       "All ${ BRAND_NAME } services": [
         "全ての${ BRAND_NAME }サービス"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "すべての基本的な${ BRAND_NAME }サービス(${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "すべてのプレミアム${ BRAND_NAME }サービス。一つの簡単なサブスクリプションで。"
       ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
@@ -11784,11 +11885,17 @@
       "Centralized settings and billings": [
         "設定と請求の一元化"
       ],
+      "Collaborate and share large files": [
+        "大きなファイルの共同作業と共有"
+      ],
       "Contact groups": [
         "連絡先グループ"
       ],
       "Contact groups management": [
         "連絡先グループ管理"
+      ],
+      "Custom and secure business email": [
+        "カスタマイズと安全なビジネスメール"
       ],
       "Custom domains for email aliases": [
         "エイリアス用カスタムドメイン"
@@ -11892,6 +11999,9 @@
       "No-logs policy": [
         "ノーログポリシー"
       ],
+      "Online document editor": [
+        "オンライン文書エディタ"
+      ],
       "Organize items with multiple vaults": [
         "複数の保管庫でアイテムを管理"
       ],
@@ -11928,6 +12038,12 @@
       "Quickly craft replies": [
         "素早く返信を作成"
       ],
+      "Recover previous file versions": [
+        "以前のファイルバージョンを復元"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "アカウントのセキュリティを定期的にチェックします。弱いパスワードや再利用されたパスワードがある場合は、更新が必要であることをお知らせします。"
+      ],
       "Require 2FA for organization": [
         "組織には 2FA が必要です"
       ],
@@ -11949,11 +12065,20 @@
       "Secure Core servers": [
         "Secure Core サーバー"
       ],
+      "Secure link sharing": [
+        "セキュアリンク共有"
+      ],
+      "See team's availability": [
+        "チームの空き状況を確認"
+      ],
       "Send & receive invitations": [
         "招待を送受信"
       ],
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ か国のサーバー"
+      ],
+      "Share files with no size limit": [
+        "サイズ制限のないファイル共有"
       ],
       "Sign in as user": [
         "ユーザーとしてサインイン"
@@ -11982,8 +12107,14 @@
       "Support for up to 2 users": [
         "最大2ユーザーのサポート"
       ],
+      "Sync and backup all your files across devices": [
+        "デバイス間のすべてのファイルを同期とバックアップ"
+      ],
       "Tailored to your needs": [
         "必要に応じた"
+      ],
+      "TOR over VPN": [
+        "VPNを通じたTOR"
       ],
       "Two-factor authentication": [
         "2 要素認証"
@@ -12012,8 +12143,14 @@
       "Unlimited logins and notes": [
         "無制限のログインとメモ"
       ],
+      "Unlimited logins, notes and credit cards": [
+        "無制限のログイン、メモ、そしてクレジットカード"
+      ],
       "Unlimited messages per day": [
         "送信数制限なし"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "ユーザー毎の${ PASS_SHORT_APP_NAME }保管庫の無制限共有"
       ],
       "Unlimited shared vaults with access permissions": [
         "アクセス権限のある無制限の共有コンテナー"
@@ -12271,6 +12408,9 @@
       ],
       "Get Mail Plus for ${ price }": [
         "${ price }で Mail Plus を入手する"
+      ],
+      "Starting from ${ price }": [
+        "${ price }から始めましょう"
       ],
       "Your account's usage": [
         "アカウントの使用率"
@@ -12696,6 +12836,9 @@
       "Too many recent API requests": [
         "最近 API 要求が多すぎます"
       ],
+      "Trial started": [
+        "トライアルが始まりました"
+      ],
       "Two-factor authentication has been enforced for administrators": [
         "管理者には二要素認証が強制されています"
       ],
@@ -12793,6 +12936,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "インポートするには、GIF にあるように要求されたすべてのアイテムを選択します。"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "${ BRAND_NAME } がアクセスできるものを選択してください：あなたのメールメッセージと設定を表示、連絡先の表示とダウンロード、Google カレンダーからアクセスするすべての予定表の表示とダウンロード。"
       ]
     },
     "Onboarding": {
@@ -13691,6 +13839,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "請求先の国"
+      ],
       "Card number": [
         "カード番号"
       ],
@@ -13718,6 +13869,12 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンの数を減らすには、まずサブスクリプションを再アクティブ化してください。"
       ],
+      "Please select billing country": [
+        "請求先の国を選択してください"
+      ],
+      "Please select billing state": [
+        "請求先の州を選択してください"
+      ],
       "Please select your billing country first.": [
         "最初に請求先の国を選択してください。"
       ],
@@ -13735,6 +13892,9 @@
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "請求書の支払いを処理しています。プランの変更や支払い情報の更新を行う前に、支払いが完了するまでお待ちください。ご理解とご協力をありがとうございます。"
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "選択した支払い方法により${ amountToCharge }がチャージされます。"
@@ -14642,6 +14802,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "パスワードのリセットを要求していない場合、要求をキャンセルしてください。"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "パスワードリセットのリクエストが承認されました。(${ user.Email })"
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "サインインしているデバイス (パスワード変更の要求がされたデバイス)に移動して、パスワードを変更してください。"
       ],
@@ -14651,8 +14814,14 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "この許可はあと${ timeRemaining.inHours }時間で期限切れになります。"
       ],
+      "This permission expires soon": [
+        "この許可はすぐに取り消されます"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "${ boldEmail }アカウントのパスワードを今すぐ変更できます。"
       ],
       "You can now reset your password": [
         "現在、パスワードをリセットできます"
@@ -15537,6 +15706,9 @@
       "You will have to create new users manually to add them to your organization.": [
         "組織にユーザーを追加するためには、手動で新しいユーザーを作成する必要があります。"
       ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "サードパーティのSSOプロバイダにリダイレクトされます"
+      ],
       "Your SSO configuration will be deleted.": [
         "SSO構成が削除されます"
       ]
@@ -15794,6 +15966,9 @@
       "Got it": [
         "了承"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Apple App Storeアカウントにサインインして、${ subscriptions }を選んでください。"
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Play ストア アカウントにサインインして、${ subscriptions } を押すだけです。"
       ],
@@ -15808,6 +15983,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "お客様のプランはiOSアプリを使用して購入されました。そのため、プランの変更やお支払いの詳細を更新するには、Apple App Storeにアクセスする必要があります。"
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "サブスクリプションは請求サイクルの終了時にダウングレードされます。"
       ]
     },
     "Subscription length": {
@@ -15870,7 +16050,7 @@
         "${ planName } は、電子メール、添付ファイル、イベント、ファイル用にユーザーごとに ${ planMaxSpace }のストレージを提供します。年間ストレージ ボーナスも受け取ることができます。"
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
-        "${ planName } は、電子メール、添付ファイル、イベント、ファイル、パスワード用にユーザーごとに ${ planMaxSpace } のストレージを提供します。年間ストレージ ボーナスも受け取ることができます。"
+        "${ planName } は、電子メール、添付ファイル、イベント、ファイル、パスワード用にユーザーごとに ${ planMaxSpace } のストレージを提供します。年間ストレージ ボーナスも受け取ることができます"
       ],
       "${ planNumberOfCalendars } calendar per user": [
         "${ planNumberOfCalendars }個のユーザー毎のカレンダー"
@@ -16863,6 +17043,9 @@
       "Choose an account": [
         "アカウントの選択"
       ],
+      "Choose user affiliations": [
+        "ユーザーの所属を選ぶ"
+      ],
       "Clear": [
         "消去"
       ],
@@ -16895,6 +17078,9 @@
       ],
       "Connect ${ name }": [
         "${ name } に接続"
+      ],
+      "Connect organization": [
+        "組織を接続"
       ],
       "Connection status": [
         "接続状況"
@@ -18012,6 +18198,9 @@
       "Device information such as operating system": [
         "オペレーティングシステムなどのデバイス情報"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "EduGAINデータベース内のエンティティの表示名"
+      ],
       "Each imported email will have this label": [
         "インポートされたメールすべてにこのラベルがついています"
       ],
@@ -18080,6 +18269,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "SAML SSO での認証を許可するドメインを指定する。"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "EduGAINエンティティのユーザーのうち、SAML SSOで認証することが許可されているユーザーを指定してください"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
