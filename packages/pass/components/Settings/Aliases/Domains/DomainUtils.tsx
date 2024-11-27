@@ -2,26 +2,34 @@ import { type ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/index';
-import { Alert, Icon } from '@proton/components/index';
+import { Href } from '@proton/atoms';
+import { Alert } from '@proton/components';
 import proxyScreenshot from '@proton/pass/assets/alias/proxy-screenshot.png';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { DomainDetailsDNSSection } from '@proton/pass/components/Settings/Aliases/DomainDetailsDNSSection';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { verifyCustomDomain } from '@proton/pass/store/actions';
-import type { CustomDomainOutput, CustomDomainValidationOutput } from '@proton/pass/types';
 
-const wikipediaLinkSPF = (
+import type { CustomDomain } from './DomainsProvider';
+
+export type CustomDomainDNSSection = {
+    disabled?: boolean;
+    errorMessages?: string[];
+    isVerified: boolean;
+    loading?: boolean;
+    title: string;
+    content: ReactNode;
+};
+
+const WIKIPEDIA_LINK_SPF = (
     <Href href="https://wikipedia.org/wiki/Sender_Policy_Framework" key="wikipedia-spf">
         (Wikipedia↗)
     </Href>
 );
-const wikipediaLinkDKIM = (
+const WIKIPEDIA_LINK_DKIM = (
     <Href href="https://wikipedia.org/wiki/DomainKeys_Identified_Mail" key="wikipedia-dkim">
         (Wikipedia↗)
     </Href>
 );
-const wikipediaLinkDMARC = (
+
+const WIKIPEDIA_LINK_DMARC = (
     <Href href="https://wikipedia.org/wiki/DMARC" key="wikipedia-dmarc">
         (Wikipedia↗)
     </Href>
@@ -31,7 +39,7 @@ const getDomainValueMessage = (domain: ReactNode) =>
     c('Description')
         .jt`Some DNS registrar might require a full record path, in this case please use ${domain} as domain value instead.`;
 
-const getSections = (domain: CustomDomainOutput & Partial<CustomDomainValidationOutput>) => {
+export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] => {
     const domainPath = domain.Domain;
 
     const domainKey = (
@@ -118,7 +126,7 @@ const getSections = (domain: CustomDomainOutput & Partial<CustomDomainValidation
             content: (
                 <>
                     <div>{c('Description')
-                        .jt`SPF ${wikipediaLinkSPF} is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.`}</div>
+                        .jt`SPF ${WIKIPEDIA_LINK_SPF} is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.`}</div>
                     <div>{c('Description').t`Add the following TXT DNS record to your domain.`}</div>
                     <Card className="border my-3 flex flex-column gap-3">
                         <div>{
@@ -141,7 +149,7 @@ const getSections = (domain: CustomDomainOutput & Partial<CustomDomainValidation
             content: (
                 <>
                     <div>{c('Description')
-                        .jt`DKIM ${wikipediaLinkDKIM} is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.`}</div>
+                        .jt`DKIM ${WIKIPEDIA_LINK_DKIM} is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.`}</div>
                     <div>{c('Description').t`Add the following CNAME DNS records to your domain.`}</div>
                     <Card className="border my-3 flex flex-column gap-3">
                         <div>{c('Info').t`Record: CNAME`}</div>
@@ -190,7 +198,7 @@ const getSections = (domain: CustomDomainOutput & Partial<CustomDomainValidation
             content: (
                 <>
                     <div>{c('Description')
-                        .jt`DMARC ${wikipediaLinkDMARC} is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.`}</div>
+                        .jt`DMARC ${WIKIPEDIA_LINK_DMARC} is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.`}</div>
                     <div>{c('Description').t`Add the following TXT DNS record to your domain.`}</div>
                     <Card className="border my-3 flex flex-column gap-3">
                         <div>{c('Info').t`Record: TXT`}</div>
@@ -215,49 +223,4 @@ const getSections = (domain: CustomDomainOutput & Partial<CustomDomainValidation
             errorMessages: domain.DmarcErrors,
         },
     ];
-};
-
-type Props = {
-    domain: CustomDomainOutput;
-    onVerify: (domain: CustomDomainOutput) => void;
-};
-
-export const DomainDetailsDNS = ({ domain, onVerify }: Props) => {
-    const verify = useRequest(verifyCustomDomain, {
-        onSuccess: (data) => onVerify({ ...domain, ...data }),
-    });
-
-    const handleVerifyClick = () => {
-        verify.dispatch(domain.ID);
-    };
-
-    const sections = getSections(domain);
-
-    return (
-        <div className="pb-1">
-            <div>{c('Info').t`Please follow the steps below to set up your domain.`}</div>
-            <div className="mb-5">{c('Info').t`DNS changes could take up to 24 hours to update.`}</div>
-            {sections.map(({ title, content, isVerified, errorMessages }, index) => (
-                <div key={`domain-dns-section-${title}`}>
-                    <DomainDetailsDNSSection
-                        title={title}
-                        isVerified={isVerified}
-                        onVerify={handleVerifyClick}
-                        disabled={index === 0 ? false : !domain.OwnershipVerified}
-                        errorMessages={errorMessages}
-                        loading={verify.loading}
-                    >
-                        {content}
-                    </DomainDetailsDNSSection>
-                    {!domain.OwnershipVerified && index === 0 && (
-                        <Card className="my-5 p-1 flex flex-nowrap gap-2 text-sm" type="danger">
-                            <Icon name="info-circle-filled" size={4} className="shrink-0" />
-                            <span> {c('Error').t`A domain ownership must be verified first.`}</span>
-                        </Card>
-                    )}
-                    {index < sections.length - 1 && <hr />}
-                </div>
-            ))}
-        </div>
-    );
 };
