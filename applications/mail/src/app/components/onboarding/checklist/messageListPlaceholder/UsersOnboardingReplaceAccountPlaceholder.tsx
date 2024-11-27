@@ -22,7 +22,7 @@ import clsx from '@proton/utils/clsx';
 import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
-import { ONLINE_SERVICES, type OnlineServicesKey } from '../../../constants';
+import { ONLINE_SERVICES, type OnlineServicesKey } from '../constants';
 import UpdateMailAddressModal from './UpdateMailAddressModal';
 
 type Category = 'finance' | 'social-media' | 'shopping';
