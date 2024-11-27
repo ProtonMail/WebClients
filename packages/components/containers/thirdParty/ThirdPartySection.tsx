@@ -11,10 +11,7 @@ import TableRow from '@proton/components/components/table/TableRow';
 
 import SettingsSectionWide from '../account/SettingsSectionWide';
 import { ProviderAction, ProviderIcon, ProviderReason } from './ThirdPartyComponents';
-
-export enum SupportedProviders {
-    zoom = 'zoom',
-}
+import { SupportedProviders } from './interface';
 
 export const ThirdPartySection = () => {
     const [token, loading] = useOAuthToken();

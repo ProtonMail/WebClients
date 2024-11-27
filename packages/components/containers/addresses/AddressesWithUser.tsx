@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Href } from '@proton/atoms';
-import { NewUpsellModal, useUpsellConfig } from '@proton/components';
 import Alert from '@proton/components/components/alert/Alert';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
@@ -12,8 +11,10 @@ import OrderableTableBody from '@proton/components/components/orderableTable/Ord
 import OrderableTableHeader from '@proton/components/components/orderableTable/OrderableTableHeader';
 import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
+import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
+import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';

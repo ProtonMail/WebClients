@@ -16,6 +16,7 @@ import { PromotionBanner } from '@proton/components/containers/banner/PromotionB
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecoveryState';
 import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -42,7 +43,7 @@ import clsx from '@proton/utils/clsx';
 import { getVerificationSentText } from '../../containers/recovery/email/VerifyRecoveryEmailModal';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
-import { useIsSessionRecoveryAvailable, useSessionRecoveryState } from '../../hooks/useSessionRecovery';
+import { useIsSessionRecoveryAvailable } from '../../hooks/useSessionRecovery';
 import EditDisplayNameModal from './EditDisplayNameModal';
 import EditExternalAddressModal from './EditExternalAddressModal';
 import SettingsLayout from './SettingsLayout';

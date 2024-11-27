@@ -9,7 +9,7 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 import ZoomUpsellModal from '@proton/components/components/upsell/modal/types/ZoomUpsellModal';
 import ZoomLogo from '@proton/styles/assets/img/brand/zoom.svg';
 
-import { SupportedProviders } from './ThirdPartySection';
+import { SupportedProviders } from './interface';
 
 export const ProviderIcon = ({ provider }: { provider: SupportedProviders }) => {
     if (provider === SupportedProviders.zoom) {

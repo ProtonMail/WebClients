@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { addSubdomain } from '@proton/account/groups/actions';
 import { Button, Href } from '@proton/atoms';
-import { useFormErrors } from '@proton/components';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -12,6 +11,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';

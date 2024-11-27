@@ -28,7 +28,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { planSupportsSSO } from '@proton/shared/lib/helpers/subscription';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
-import { EdugainAffiliations, IDP_TYPE } from '@proton/shared/lib/interfaces';
+import { IDP_TYPE } from '@proton/shared/lib/interfaces';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -48,17 +48,6 @@ import SelectIDPSection from './scim/SelectIDPSection';
 
 const getSsoConfigForDomain = (ssoConfigs: SSO[], domain: Domain) => {
     return ssoConfigs.find(({ DomainID }) => DomainID === domain.ID);
-};
-
-// Affiliations won't be translated for now
-export const EdugainAffiliationLabels: Record<EdugainAffiliations, string> = {
-    [EdugainAffiliations.STUDENT]: 'Student',
-    [EdugainAffiliations.FACULTY]: 'Faculty',
-    [EdugainAffiliations.STAFF]: 'Staff',
-    [EdugainAffiliations.ALUM]: 'Alum',
-    [EdugainAffiliations.AFFILIATE]: 'Affiliate',
-    [EdugainAffiliations.EMPLOYEE]: 'Employee',
-    [EdugainAffiliations.LIBRARY_WALK_IN]: 'Library Walk-In',
 };
 
 const ConfigureSamlContent = ({

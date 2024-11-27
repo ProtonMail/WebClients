@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { NewUpsellModal, useUpsellConfig } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
+import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';

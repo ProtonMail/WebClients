@@ -8,6 +8,13 @@ module.exports = {
         tsconfigRootDir: __dirname,
         project: './tsconfig.json',
     },
-    rules: {},
+    rules: {
+        'import/no-internal-modules': [
+            'error',
+            {
+                forbid: ['@proton/atoms', '@proton/atoms/index'],
+            },
+        ],
+    },
     ignorePatterns: ['.eslintrc.js'],
 };

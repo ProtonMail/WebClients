@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
 import { Button, Pill } from '@proton/atoms';
-import type { IconName } from '@proton/components';
-import { Icon, Price, StripedItem, StripedList } from '@proton/components';
+import type { IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
+import Price from '@proton/components/components/price/Price';
+import StripedItem from '@proton/components/components/stripedList/StripedItem';
+import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { type Currency } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 

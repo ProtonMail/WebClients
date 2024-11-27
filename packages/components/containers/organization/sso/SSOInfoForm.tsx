@@ -22,7 +22,7 @@ import { IDP_TYPE } from '@proton/shared/lib/interfaces';
 
 import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';
-import { EdugainAffiliationLabels } from './SsoPage';
+import { EdugainAffiliationLabels } from './constants';
 
 interface SSOInfo {
     url: string;
