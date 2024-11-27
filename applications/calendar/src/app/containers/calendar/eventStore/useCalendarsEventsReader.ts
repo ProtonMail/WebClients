@@ -243,18 +243,9 @@ const setEventRecordPromise = ({
     return promise;
 };
 
-const useCalendarsEventsReader = ({
-    calendarEvents,
-    calendarsEventsCacheRef,
-    rerender,
-    getOpenedMailEvents,
-    metadataOnly,
-    onEventRead,
-    forceDecryption,
-}: {
-    calendarEvents: CalendarViewEvent[];
+interface CalendarsEventsReaderProps {
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
-    rerender: () => void;
+    forceDecryption?: boolean;
     getOpenedMailEvents: () => OpenedMailEvent[];
     metadataOnly: boolean;
     onEventRead?: (
@@ -265,14 +256,23 @@ const useCalendarsEventsReader = ({
             eventReadResult,
         }: { calendarViewEvent: CalendarViewEvent; eventReadResult: EventReadResult }
     ) => void;
-    forceDecryption?: boolean;
-}) => {
+    rerender: () => void;
+}
+
+const useCalendarsEventsReader = ({
+    calendarsEventsCacheRef,
+    rerender,
+    getOpenedMailEvents,
+    metadataOnly,
+    onEventRead,
+    forceDecryption,
+}: CalendarsEventsReaderProps) => {
     const isMounted = useIsMounted();
     const { contactEmailsMap } = useContactEmailsCache();
     const getCalendarEventRaw = useGetCalendarEventRaw(contactEmailsMap);
     const api = useApi();
-    const [loading, setLoading] = useState(false);
     const abortControllerRef = useRef<AbortController>();
+    const [calendarEvents, setCalendarEvents] = useState<CalendarViewEvent[]>([]);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -372,13 +372,11 @@ const useCalendarsEventsReader = ({
         );
 
         if (calendarEventPromises.length === 0) {
-            return setLoading(false);
+            return;
         }
 
-        setLoading(true);
         const done = () => {
             if (isMounted()) {
-                setLoading(false);
                 rerender();
             }
         };
@@ -403,7 +401,7 @@ const useCalendarsEventsReader = ({
         run().catch(done);
     }, [calendarEvents]);
 
-    return loading;
+    return { setCalendarEvents };
 };
 
 export default useCalendarsEventsReader;

@@ -12,6 +12,8 @@ interface Props {
     disabled?: boolean;
     view: VIEWS;
     onChange: (value: VIEWS) => void;
+    onFocus: () => void;
+    onMouseEnter: () => void;
 }
 const ViewSelector = ({ range, loading = false, disabled = false, view, onChange, ...rest }: Props) => {
     const options = [
