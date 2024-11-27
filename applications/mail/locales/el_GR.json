@@ -490,7 +490,7 @@
         "Φίλτρο σε..."
       ],
       "Fit to window": [
-        "Προσάρμοση στο μέγεθος του παραθύρου"
+        "Προσαρμογή στο παράθυρο"
       ],
       "Font": [
         "Γραμματοσειρά"
@@ -1193,7 +1193,7 @@
         "Έναρξη εισαγωγής"
       ],
       "Start setup": [
-        "Εκκίνησης ρύθμισης"
+        "Έναρξη ρύθμισης"
       ],
       "Starting from ${ priceUnlimited }": [
         "Ξεκινώντας από ${ priceUnlimited }"
@@ -1262,7 +1262,7 @@
         "Παρακαλώ προσπαθήστε να αποθηκεύσετε ξανά. Η αποθήκευση απέτυχε λόγω: ${ saveError }"
       ],
       "Unblock": [
-        "Κατάργηση από αποκλεισμό"
+        "Αναίρεση αποκλεισμού"
       ],
       "Underline": [
         "Υπογράμμιση"
@@ -1370,7 +1370,7 @@
         "Προβολή πλήκτρων"
       ],
       "View message details": [
-        "Προβολη λεπτομέρειες μηνύματος"
+        "Προβολή λεπτομερειών μηνύματος"
       ],
       "View recipients": [
         "Προβολή παραληπτών"
@@ -1791,8 +1791,8 @@
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } ηλεκτρονικές διευθύνσεις, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Ασφαλίστε τα email σας και προγραμματίστε με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
-        "Ασφαλίστε τα email σας και προγραμματίστε με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση . Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 ηλεκτρονικές διευθύνσεις, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
@@ -4128,7 +4128,7 @@
         "Σφάλμα κατά την αποστολή του μηνύματος. Το μήνυμα δεν έχει σταλεί."
       ],
       "Error while uploading attachments. Message is not sent.": [
-        "Σφάλμα κατά την ανάρτηση συνημμένων. Το μήνυμα δεν έχει σταλεί."
+        "Σφάλμα κατά τη μεταφόρτωση συνημμένων. Το μήνυμα δεν έχει σταλεί."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Αποτυχία κρυπτογράφησης του συννημένου. Παρακαλούμε δοκιμάστε ξανά."
@@ -5372,7 +5372,7 @@
         "Αυτόματη προώθηση"
       ],
       "Gmail messages to your inbox": [
-        "Μηνύματα Gmail στα εισερχόμενά σας"
+        "μηνυμάτων Gmail στα εισερχόμενά σας"
       ],
       "Sign in with Google": [
         "Σύνδεση μέσω Google"
@@ -5763,7 +5763,7 @@
         "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
+        "Το ${ appName } χρειάζεται την άδειά σας για ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "Το ${ BRAND_NAME } Scribe σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου γρήγορα και ξεκούραστα."
@@ -5810,8 +5810,8 @@
         "${ currentProgress } από ${ totalProgress }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
-        "${ elementsCount } συνομιλία θα φέρει την ετικέτα ως:",
-        "${ elementsCount } συνομιλίες θα φέρουν την ετικέτα ως:"
+        "${ elementsCount } συνομιλία θα λάβει την ετικέτα:",
+        "${ elementsCount } συνομιλίες θα λάβουν την ετικέτα:"
       ],
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } συνομιλία θα σημανθεί ως διαβασμένη.",
@@ -5826,12 +5826,12 @@
         "${ elementsCount } συνομιλίες θα μετακινηθούν"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount } συνομιλία θα καταργηθεί από την ετικέτα από:",
-        "${ elementsCount } συνομιλίες θα καταργηθούν από την ετικέτα από:"
+        "${ elementsCount } συνομιλία θα χάσει την ετικέτα:",
+        "${ elementsCount } συνομιλίες θα χάσουν την ετικέτα:"
       ],
       "${ elementsCount } message will be labelled as:": [
-        "${ elementsCount } μήνυμα θα φέρει την ετικέτα ως:",
-        "${ elementsCount } μηνύματα θα φέρουν την ετικέτα ως:"
+        "${ elementsCount } μήνυμα θα λάβει την ετικέτα:",
+        "${ elementsCount } μηνύματα θα λάβουν την ετικέτα:"
       ],
       "${ elementsCount } message will be marked as read.": [
         "${ elementsCount } μήνυμα θα σημανθεί ως διαβασμένο.",
@@ -5846,8 +5846,8 @@
         "${ elementsCount } μηνύματα θα μετακινηθούν"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount } μήνυμα θα καταργηθεί από την ετικέτα από:",
-        "${ elementsCount } μηνύματα θα καταργηθούν από την ετικέτα από:"
+        "${ elementsCount } μήνυμα θα χάσει την ετικέτα:",
+        "${ elementsCount } μηνύματα θα χάσουν την ετικέτα:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } ενσωματωμένη εικόνα",
@@ -6084,7 +6084,7 @@
         "Θέλετε σίγουρα να διαγράψετε όλα τα μηνύματα με αυτή την ετικέτα;"
       ],
       "Are you sure you want to delete this folder?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν τον φάκελο;"
+        "Θέλετε σίγουρα να διαγράψετε αυτόν τον φάκελο;"
       ],
       "Are you sure you want to delete this label?": [
         "Θέλετε σίγουρα να διαγράψετε αυτήν την ετικέτα;"
@@ -6409,10 +6409,10 @@
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
+        "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Πληκτρολογείστε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
+        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
@@ -6839,7 +6839,7 @@
         "Παρακαλώ συμπληρώστε αυτό το πεδίο."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "Παρακαλούμε λάβετε υπόψη ότι οι διευθύνσεις που έχουν εκχωρηθεί σε αυτές τις ομάδες ΔΕΝ θα διαγραφούν."
+        "Παρακαλούμε λάβετε υπόψη ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτές τις ομάδες ΔΕΝ θα διαγραφούν."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Παρακαλούμε σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕΝ θα διαγραφούν."
@@ -6885,7 +6885,7 @@
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Παρακαλούμε να περιμένετε έως ότου οι αλλαγές σας συγχρονιστούν με τον διακομιστή."
+        "Παρακαλούμε περιμένετε έως ότου οι αλλαγές σας συγχρονιστούν με τον διακομιστή."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που μπορούν να επανυπογραφούν με το πρωτεύον κλειδί κρυπτογράφησης."
@@ -7030,7 +7030,7 @@
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
       "Session timed out": [
-        "Λήξη χρόνου συνεδρίας"
+        "Η συνεδρία έληξε"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ορίστε το ${ MAIL_APP_NAME } ως προεπιλεγμένη εφαρμογή αλληλογραφίας σε αυτόν τον περιηγητή. Το κλικ σε σύνδεσμο αλληλογραφίας θα ανοίγει αυτόματα το ${ MAIL_APP_NAME }."
@@ -7087,7 +7087,7 @@
         "Η συνδρομή ανανεώνεται αυτόματα κάθε μήνα."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Λήξη συνδρομής: Ενεργοποιήστε ξανά κατά ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
+        "Λήξη συνδρομής: Ενεργοποιήστε ξανά έως ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
@@ -7674,10 +7674,10 @@
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Ο λογαριασμός σας έχει περιορισμένες λειτουργίες, και όλες οι υπηρεσίες βρίσκονται σε φραγή έως ότου πραγματοποιηθεί η πληρωμή. ${ payInvoiceLink }"
+        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Ο λογαριασμός σας έχει περιοριστεί, και όλες οι υπηρεσίες βρίσκονται σε φραγή έως ότου πραγματοποιηθεί η πληρωμή. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο και τέθηκε σε περιορισμένη κατάσταση. Η συνεχής αποφυγή πληρωμών θα οδηγήσει σε φραγή εισερχόμενων μηνυμάτων και κοινοποίησης συνδέσμων. ${ payInvoiceLink }"
+        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο και τέθηκε σε περιορισμό. Η συνεχής αποφυγή πληρωμών θα οδηγήσει σε φραγή εισερχόμενων μηνυμάτων και κοινοποίησης συνδέσμων. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ο λογαριασμός σας θα ενημερωθεί μόλις γίνει εκκαθάριση της πληρωμής."
@@ -9065,7 +9065,7 @@
     },
     "Monthly recurring event, repeats on": {
       "on day ${ dayOfMonth }": [
-        "την ημέρα ${ dayOfMonth }"
+        "την ${ dayOfMonth }η ημέρα"
       ],
       "on the first Friday": [
         "κάθε πρώτη Παρασκευή"
@@ -9306,8 +9306,8 @@
         "Έως ${ numberOfUsers } χρήστες"
       ],
       "${ options }-day file version history": [
-        "${ options }-ημέρα ιστορικό εκδόσεων αρχείου",
-        "${ options }-ημέρες ιστορικό εκδόσεων αρχείου"
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin εφ'όρου ζωής"
@@ -9815,14 +9815,6 @@
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Αποκτήστε το Mail Plus για ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ξεκινώντας από ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -9835,6 +9827,14 @@
       ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Αποκτήστε το Mail Plus για ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ξεκινώντας από ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -11110,8 +11110,8 @@
         "Στάλθηκε από εσάς με διατερματική κρυπτογράφηση"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
-        "Σταλμένο από εσάς με διατερματική κρυπτογράφηση προς επαληθευμένο παραλήπτη",
-        "Σταλμένο από εσάς με διατερματική κρυπτογράφηση προς επαληθευμένους παραλήπτες"
+        "Στάλθηκε από εσάς με διατερματική κρυπτογράφηση προς επαληθευμένο παραλήπτη",
+        "Στάλθηκε από εσάς με διατερματική κρυπτογράφηση προς επαληθευμένους παραλήπτες"
       ],
       "Stored with zero-access encryption": [
         "Αποθηκεύτηκε με κρυπτογράφηση μηδενικής πρόσβασης"
@@ -11869,7 +11869,7 @@
         "${ planNumberOfCalendars } ημερολόγια ανά χρήστη"
       ],
       "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
         "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
       ],
       "${ planNumberOfEmails } email address": [
@@ -11877,8 +11877,8 @@
         "${ planNumberOfEmails } διευθύνσεις email"
       ],
       "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη",
-        "${ planNumberOfEmails } διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+        "${ planNumberOfEmails } διεύθυνση ηλ. ταχυδρομείου ανά χρήστη",
+        "${ planNumberOfEmails } διευθύνσεις ηλ. ταχυδρομείου ανά χρήστη"
       ],
       "${ planNumberOfUsers } user": [
         "${ planNumberOfUsers } χρήστης",
@@ -12316,7 +12316,7 @@
         "Το αποτύπωμα αντιγράφηκε στο πρόχειρο"
       ],
       "Import record deleted": [
-        "Η εισαγωγή εγγραφής διαγράφηκε"
+        "Η εγγραφή εισαγωγής διαγράφηκε"
       ],
       "Invitation rejected": [
         "Η πρόσκληση απορρίφθηκε"
@@ -13161,7 +13161,7 @@
         "Προηγούμενη συνομιλία"
       ],
       "Previous message": [
-        "Προηγούμενο Μήνυμα"
+        "Προηγούμενο μήνυμα"
       ],
       "Processing...": [
         "Γίνεται επεξεργασία..."
@@ -13618,7 +13618,7 @@
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτές τις ομάδες επαφών;"
+        "Θέλετε σίγουρα να διαγράψετε οριστικά αυτές τις ομάδες επαφών;"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την ομάδα επαφών;"

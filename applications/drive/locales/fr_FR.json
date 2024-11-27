@@ -546,6 +546,9 @@
       "Next month": [
         "Mois suivant"
       ],
+      "Next page": [
+        "Page suivante"
+      ],
       "Not now": [
         "Plus tard"
       ],
@@ -593,6 +596,9 @@
       ],
       "Previous month": [
         "Mois précédent"
+      ],
+      "Previous page": [
+        "Page précédente"
       ],
       "Quit": [
         "Quitter"
@@ -857,6 +863,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Je passe à ${ BRAND_NAME } Unlimited"
+      ],
+      "Upload": [
+        "Importer"
       ],
       "Upload anyway": [
         "Importer quand même"
@@ -2403,6 +2412,11 @@
         "Facture impayée"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
@@ -2472,11 +2486,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4204,6 +4213,9 @@
       "An active recovery file": [
         "Un fichier de récupération actif"
       ],
+      "an anonymous user": [
+        "un utilisateur anonyme"
+      ],
       "An issue occurred during the restore process.": [
         "Un problème est survenu pendant la restauration."
       ],
@@ -5171,6 +5183,12 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
       ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "La signature numérique a été partiellement vérifiée. Le fichier a été téléchargé à partir d'une page publique qui ne précise pas l'origine spécifique de l'utilisateur."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "La signature numérique a été partiellement vérifiée. Le dossier a été téléchargé à partir d'une page publique qui ne précise pas l'origine spécifique de l'utilisateur."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Le nombre de téléchargements comprend les téléchargements et les prévisualisations de fichiers."
       ],
@@ -5802,6 +5820,12 @@
       "Calendars": [
         "Calendriers"
       ],
+      "Can edit": [
+        "Modifier"
+      ],
+      "Can view": [
+        "Consulter"
+      ],
       "Cancel download": [
         "Annuler le téléchargement"
       ],
@@ -6282,6 +6306,14 @@
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Organisez, ajoutez et modifiez vos fichiers"
+      ],
+      "View and download": [
+        "Afficher et télécharger"
       ]
     },
     "Label for contact group color": {
@@ -7361,14 +7393,6 @@
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Profitez de Mail Plus pour ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "À partir de ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -7381,6 +7405,14 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Profitez de Mail Plus pour ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "À partir de ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7860,6 +7892,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "L'espace est insuffisant pour charger ${ formattedTotal }."
+      ],
+      "Public link access updated": [
+        "L'accès au lien public a été mis à jour."
+      ],
+      "Public link update access failed ": [
+        "L'accès à la mise à jour du lien public n'a pas abouti "
       ],
       "Root folder failed to be loaded": [
         "Le dossier racine n'a pas pu être chargé."

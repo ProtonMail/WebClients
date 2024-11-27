@@ -106,6 +106,9 @@
       "Change": [
         "Değiştir"
       ],
+      "Change configuration": [
+        "Yapılandırmayı değiştir"
+      ],
       "Change keys": [
         "Anahtarları değiştir"
       ],
@@ -400,6 +403,9 @@
       "Next month": [
         "Sonraki ay"
       ],
+      "Next page": [
+        "Sonraki sayfa"
+      ],
       "OK": [
         "Tamam"
       ],
@@ -435,6 +441,9 @@
       ],
       "Previous month": [
         "Önceki ay"
+      ],
+      "Previous page": [
+        "Önceki sayfa"
       ],
       "Recover data": [
         "Verileri kurtar"
@@ -3704,6 +3713,9 @@
       "All members have been added.": [
         "Tüm üyeler eklendi."
       ],
+      "All users": [
+        "Tüm Kullanıcılar"
+      ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
       ],
@@ -3815,6 +3827,12 @@
       "Connection data will be available in around 1 hour.": [
         "Bağlantı verileri yaklaşık 1 saat içinde hazır olacak."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "**${ organizationValue.Name }** kuruluşundaki **${ affiliationsText }** kullanıcısının ${ BRAND_NAME } kuruluşunuza katılmasına izin vermeyi sürdürün."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "${ BRAND_NAME } kuruluşunuzla **${ organizationValue.Name }** bağlantısı kurun."
+      ],
       "Continue with ${ freeName }": [
         "${ freeName } ile ilerle"
       ],
@@ -3868,11 +3886,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -3953,6 +3971,9 @@
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
+      ],
+      "EduGain configuration saved": [
+        "eduGain yapılandırması kaydedildi"
       ],
       "email": [
         "e-posta"
@@ -4281,6 +4302,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
       ],
+      "Loading eduGAIN data...": [
+        "eduGAIN verileri yükleniyor..."
+      ],
       "Loading gateways monitoring current status.": [
         "Ağ geçitlerinin güncel durumları yükleniyor."
       ],
@@ -4349,6 +4373,9 @@
       ],
       "No Gateways yet": [
         "Henüz bir ağ geçidi yok"
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "**${ domain.DomainName }** için **eduGAIN** kullanıma alınmış bir kuruluş yok."
       ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
@@ -4567,8 +4594,17 @@
       "Securing your account": [
         "Hesabınız korunuyor"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "**${ domain.DomainName }** için **eduGAIN** kullanıma alınmış bir kuruluş seçin."
+      ],
+      "Select one or multiple user affiliations": [
+        "Bir ya da birkaç kullanıcı ilişkisi seçin"
+      ],
       "Select recently used servers": [
         "Son kullanılan sunucuları seçin"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "${ BRAND_NAME } kuruluşunuza izin vermek istediğiniz kullanıcı ilişkilerini **${ organizationValue.Name }** (${ organizationValue.EntityId }) üzerinden seçin:"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Üyelerinize hesaplarını iki adımlı doğrulama ile korumaya özendiren e-postalar gönderin."
@@ -4717,6 +4753,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Hizmetimizle ilgili bir sorun yaşıyorsanız ya da tarafımızdan ek bir işlem yapılmasını istiyorsanız, bu ileti destek ekibimize ulaşmayacak ${ supportLink }."
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Bu kuruluşta **${ domain.DomainName }** için **eduGAIN** kullanıma alınmış."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Şu anda kuruluşunuzun ödemelerinden bu kullanıcı sorumludur. Bu kullanıcının yetki düzeyini düşürürseniz kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
@@ -4871,11 +4910,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "Username": [
-        "Kullanıcı adı"
-      ],
       "username": [
         "kullanıcı adı"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -5544,6 +5583,9 @@
       "Enter the code displayed on your TV": [
         "Televizyonunuzda görüntülenen kodu yazın"
       ],
+      "Entity ID": [
+        "Varlık kimliği"
+      ],
       "Event": [
         "Etkinlik"
       ],
@@ -5670,6 +5712,9 @@
       "Organization password": [
         "Kuruluş parolası"
       ],
+      "Other": [
+        "Diğer"
+      ],
       "Other amount": [
         "Diğer tutar"
       ],
@@ -5791,6 +5836,9 @@
       "User": [
         "Kullanıcı"
       ],
+      "User affiliations": [
+        "Kullanıcı ilişkileri"
+      ],
       "User's new password": [
         "Kullanıcının yeni parolası"
       ],
@@ -5889,6 +5937,11 @@
     "Label, credit card": {
       "ZIP code": [
         "Posta kodu"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Başlamak için bir kimlik hizmeti sağlayıcısı seçin"
       ]
     },
     "Link": {
@@ -10053,10 +10106,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -10076,6 +10129,9 @@
       ],
       "Change second password": [
         "İkinci parolayı değiştir"
+      ],
+      "Choose user affiliations": [
+        "Kullanıcı ilişkilerini seçin"
       ],
       "Click a value in the table to use it as filter": [
         "Tablodan süzmek istediğiniz değere tıklayın"
@@ -10097,6 +10153,9 @@
       ],
       "Confirm phone number": [
         "Telefon numarasını onaylayın"
+      ],
+      "Connect organization": [
+        "Kuruluş ile bağlantı kur"
       ],
       "Contact us": [
         "Bize ulaşın"
@@ -10683,6 +10742,9 @@
       "Device information such as operating system": [
         "İşletim sistemi gibi aygıt bilgileri"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Varlığın eduGAIN veri tabanında görüntülenecek adı"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)"
       ],
@@ -10703,6 +10765,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "SAML tek oturum açma ile kimlik doğrulamasına izin verilecek alanı belirtin"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "SAML tek oturum açma ile kimliklerini doğrulayabilecek eduGAIN varlığının kullanıcılarını belirtin"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"

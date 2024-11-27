@@ -1739,6 +1739,12 @@
         "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються ${ addresses } адреси електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше.",
         "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються ${ addresses } адреси електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Захистіть свою пошту та розклад за допомогою наскрізного шифрування. Включає ${ addresses } поштову адресу, підтримку власних поштових доменів, необмежену кількість псевдонімів hide-my-email та багато іншого.",
+        "Захистіть свою пошту та розклад за допомогою наскрізного шифрування. Включає ${ addresses } поштові адреси, підтримку власних поштових доменів, необмежену кількість псевдонімів hide-my-email та багато іншого.",
+        "Захистіть свою пошту та розклад за допомогою наскрізного шифрування. Включає ${ addresses } поштових адрес, підтримку власних поштових доменів, необмежену кількість псевдонімів hide-my-email та багато іншого.",
+        "Захистіть свою пошту та розклад за допомогою наскрізного шифрування. Включає ${ addresses } поштових адрес, підтримку власних поштових доменів, необмежену кількість псевдонімів hide-my-email та багато іншого."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються 15 адрес електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше."
       ],
@@ -3800,6 +3806,12 @@
       "A problem occurred, please try again.": [
         "Виникла проблема. Повторіть спробу."
       ],
+      "Add at least one action": [
+        "Додайте хоча б одну дію"
+      ],
+      "Add at least one condition": [
+        "Додайте хоча б одну умову"
+      ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
@@ -3983,6 +3995,9 @@
       "Invalid expiration time": [
         "Недійсний термін дії"
       ],
+      "Invalid IBAN": [
+        "Невірний IBAN"
+      ],
       "Invalid name": [
         "Неприпустиме ім'я"
       ],
@@ -4154,6 +4169,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Надсилання вкладених файлів обмежено, доки ви не досягнете лімітів плану або не оновите тарифний план."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Надсилання вкладень обмежено, поки ви перевищуєте ліміти тарифу або поки не покращите свій план."
+      ],
       "Signature not verified": [
         "Підпис не перевірено"
       ],
@@ -4201,6 +4219,9 @@
       ],
       "Thanks for the feedback!": [
         "Дякуємо за відгук!"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Сума до оплати змінилася. Спробуйте ще раз."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайл за допомогою програми, наприклад, GnuPG.",
@@ -4321,6 +4342,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Ви досягли максимальної кількості календарів."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Ви досягли ліміту кількості контактів для вашого облікового запису"
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
@@ -5023,6 +5047,18 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } у Play Маркеті"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } день",
+        "${ remainingDaysCount } дні",
+        "${ remainingDaysCount } днів",
+        "${ remainingDaysCount } днів"
+      ],
+      "${ remainingDaysCount } day left": [
+        "Залишився ${ remainingDaysCount } день",
+        "Залишилось ${ remainingDaysCount } дні",
+        "Залишилось ${ remainingDaysCount } днів",
+        "Залишилось ${ remainingDaysCount } днів"
+      ],
       "account logins": [
         "імена користувачів"
       ],
@@ -5199,6 +5235,12 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Знайдено ${ itemsCount } пропозицію. Використовуйте клавіатуру для навігації.",
+        "Знайдено ${ itemsCount } пропозиції. Використовуйте клавіатуру для навігації.",
+        "Знайдено ${ itemsCount } пропозицій. Використовуйте клавіатуру для навігації.",
+        "Знайдено ${ itemsCount } пропозицій. Використовуйте клавіатуру для навігації."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
       ]
@@ -5794,6 +5836,9 @@
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } / місяць)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Фільтрувати, якщо виконуються ВСІ зазначені умови)"
       ],
@@ -6357,6 +6402,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Якщо ви вважаєте, що ми зробили помилку, зв'яжіться з нами ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Якщо ви скасуєте передплату ${ planTitle }, її не буде поновлено після завершення ${ expiryDate }."
@@ -7279,6 +7327,12 @@
       "We couldn’t process your payment.": [
         "Не вдається обробити ваш платіж."
       ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Ми виявили створення декількох безплатних облікових записів, що порушує наші ${ termsLink }"
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "У нас є тарифи, розроблені спеціально для таких користувачів, як ви, яким потрібно більше однієї поштової адреси.\nЩоб зняти обмеження, ви можете перейти на платний план."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Потрібно підтвердити вказаний спосіб оплати у вашому банку."
       ],
@@ -7350,6 +7404,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Ви збираєтесь відкрити іншу вкладку браузера й відвідати:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Ви хочете відкрити типовий браузер і відвідати:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Наразі ви ввійшли як ${ user.Name } (${ user.Email })."
@@ -7503,6 +7560,9 @@
         "Ви вибрали **${ elementsCount } повідомлення**.",
         "Ви вибрали **${ elementsCount } повідомлень**.",
         "Ви вибрали **${ elementsCount } повідомлень**."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Ви втратите доступ до ${ planTitle } функцій після цієї дати."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
@@ -9148,6 +9208,12 @@
         "${ n } повідомлень на добу",
         "${ n } повідомлення на добу"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } поділене сховище ${ PASS_SHORT_APP_NAME } на користувача",
+        "${ n } поділені сховища ${ PASS_SHORT_APP_NAME } на користувача",
+        "${ n } поділених сховищ ${ PASS_SHORT_APP_NAME } на користувача",
+        "${ n } поділених сховищ ${ PASS_SHORT_APP_NAME } на користувача"
+      ],
       "${ n } vault": [
         "${ n } сховище",
         "${ n } сховища",
@@ -9159,6 +9225,18 @@
         "${ n } VPN-з'єднання",
         "${ n } VPN-з'єднань",
         "${ n } VPN-з'єднань"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } користувач",
+        "До ${ numberOfUsers } користувачів",
+        "До ${ numberOfUsers } користувачів",
+        "До ${ numberOfUsers } користувачів"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-денний журнал версії файлу",
+        "${ options }-денний журнал версії файлу",
+        "${ options }-денний журнал версії файлу",
+        "${ options }-денний журнал версії файлу"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } псевдонімом hide-my-email",
@@ -9451,6 +9529,12 @@
         "До ${ n } користувачів",
         "До ${ n } користувачів"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "До ${ n } користувача (${ adminsText }, ${ usersText })",
+        "До ${ n } користувачів (${ adminsText }, ${ usersText })",
+        "До ${ n } користувачів (${ adminsText }, ${ usersText })",
+        "До ${ n } користувачів (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } сховища"
       ],
@@ -9471,6 +9555,20 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Ми скануємо \"Темну мережу\", щоб перевірити, чи не було витоку ваших адрес або псевдонімів ${ BRAND_NAME }, і негайно сповіщаємо вас, якщо щось знайдемо."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } адміністратор",
+        "${ admins } адміністратори",
+        "${ admins } адміністраторів",
+        "${ admins } адміністраторів"
+      ],
+      "${ users } user": [
+        "${ users } користувач",
+        "${ users } користувачі",
+        "${ users } користувачів",
+        "${ users } користувачів"
       ]
     },
     "new_plans: feature info": {
@@ -10072,6 +10170,12 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } обліковий запис користувача",
+        "${ n } облікові записи користувачів",
+        "${ n } облікових записів користувачів",
+        "${ n } облікових записів користувачів"
+      ],
       "Activity log": [
         "Журнал активності"
       ]
@@ -11399,6 +11503,36 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } пропонує ${ planMaxSpace } сховища для ваших файлів і фотографій. Ви також маєте право на щорічні бонуси за зберігання."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } календар на користувача",
+        "${ planNumberOfCalendars } календарі на користувача",
+        "${ planNumberOfCalendars } календарів на користувача",
+        "${ planNumberOfCalendars } календарів на користувача"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } власний поштовий домен",
+        "${ planNumberOfDomains } власні поштові домени",
+        "${ planNumberOfDomains } власних поштових доменів",
+        "${ planNumberOfDomains } власних поштових доменів"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } поштова адреса",
+        "${ planNumberOfEmails } поштові адреси",
+        "${ planNumberOfEmails } поштових адрес",
+        "${ planNumberOfEmails } поштових адрес"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } поштова адреса на користувача",
+        "${ planNumberOfEmails } поштові адреси на користувача",
+        "${ planNumberOfEmails } поштових адрес на користувача",
+        "${ planNumberOfEmails } поштових адрес на користувача"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } користувач",
+        "${ planNumberOfUsers } користувачі",
+        "${ planNumberOfUsers } користувачів",
+        "${ planNumberOfUsers } користувачів"
       ],
       "2 users": [
         "2 користувачі"

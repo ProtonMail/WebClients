@@ -546,6 +546,9 @@
       "Next month": [
         "Mes següent"
       ],
+      "Next page": [
+        "Pàgina següent"
+      ],
       "Not now": [
         "Ara no"
       ],
@@ -593,6 +596,9 @@
       ],
       "Previous month": [
         "Mes anterior"
+      ],
+      "Previous page": [
+        "Pàgina anterior"
       ],
       "Quit": [
         "Surt"
@@ -857,6 +863,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Milloreu a ${ BRAND_NAME } Unlimited"
+      ],
+      "Upload": [
+        "Carrega"
       ],
       "Upload anyway": [
         "Carrega de totes maneres"
@@ -2398,6 +2407,11 @@
         "Factura vençuda"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa l'escalada a especialistes en seguretat."
@@ -2467,11 +2481,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4199,6 +4208,9 @@
       "An active recovery file": [
         "Un fitxer de recuperació actiu"
       ],
+      "an anonymous user": [
+        "un usuari anònim"
+      ],
       "An issue occurred during the restore process.": [
         "S'ha produït un error durant el procés de restauració."
       ],
@@ -5166,6 +5178,12 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
       ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "La signatura digital s'ha verificat parcialment. El fitxer s'ha carregat des d'una pàgina pública que no especifica un origen d'usuari específic."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "La signatura digital s'ha verificat parcialment. La carpeta s'ha carregat des d'una pàgina pública que no especifica un origen d'usuari específic."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "El recompte de descàrregues inclou tant les descàrregues reals com les instàncies en què els fitxers es previsualitzen."
       ],
@@ -5797,6 +5815,12 @@
       "Calendars": [
         "Calendaris"
       ],
+      "Can edit": [
+        "Edita"
+      ],
+      "Can view": [
+        "Mostra"
+      ],
       "Cancel download": [
         "Cancel·lar la descarregada"
       ],
@@ -6277,6 +6301,14 @@
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Organitzeu, afegiu i editeu fitxers"
+      ],
+      "View and download": [
+        "Mostra i descarrega"
       ]
     },
     "Label for contact group color": {
@@ -7356,14 +7388,6 @@
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Obtingueu el Mail Plus per ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Comenceu des de ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -7376,6 +7400,14 @@
       ],
       "Switch plans?": [
         "Voleu canviar de pla?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Obtingueu el Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Comenceu des de ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7855,6 +7887,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hi ha prou espai per carregar ${ formattedTotal }"
+      ],
+      "Public link access updated": [
+        "S'ha actualitzat l'accés a l'enllaç públic."
+      ],
+      "Public link update access failed ": [
+        "No s'ha pogut accedir a l'actualització de l'enllaç públic "
       ],
       "Root folder failed to be loaded": [
         "No s'ha pogut carregar la carpeta arrel"

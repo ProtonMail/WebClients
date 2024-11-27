@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -204,6 +204,9 @@
       ],
       "Change": [
         "შეცვლა"
+      ],
+      "Change configuration": [
+        "კონფიგურაციის შეცვლა"
       ],
       "Change keys": [
         "გასაღებების შეცვლა"
@@ -751,6 +754,9 @@
       "Next month": [
         "შემდეგი თვე"
       ],
+      "Next page": [
+        "შემდეგი გვერდი"
+      ],
       "No": [
         "არა"
       ],
@@ -798,6 +804,9 @@
       ],
       "Previous month": [
         "წინა თვე"
+      ],
+      "Previous page": [
+        "წინა გვერდი"
       ],
       "Quit": [
         "გასვლა"
@@ -6913,6 +6922,9 @@
       "All members have been added.": [
         "ყველა წევრი დამატებულია."
       ],
+      "All users": [
+        "ყველა მომხმარებელი"
+      ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
       ],
@@ -7353,6 +7365,9 @@
       ],
       "Edit link": [
         "ბმულის ჩასწორება"
+      ],
+      "EduGain configuration saved": [
+        "EduGain-ის კონფიგურაცია შენახულია"
       ],
       "email": [
         "ელფოსტა"
@@ -7865,6 +7880,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "მიმდინარეობს კალენდრის ჩატვირთვა. მოითმინეთ. გადაგამისამართებთ ჩვენს დაგეგმვის პლატფორმაზე Calendly ახალ ჩანართში."
+      ],
+      "Loading eduGAIN data...": [
+        "მიმდინარეობს eduGAIN-ის მონაცემების ჩატვირთვა..."
       ],
       "Loading gateways monitoring current status.": [
         "მიმდინარეობს კარიბჭეების მონიტორინგის მიმდინარე სტატუსის ჩატვირთვა."
@@ -10257,6 +10275,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "შეიყვანეთ იმ გასაღების პაროლი, რომლის ანაბეჭდია: ${ fingerprintCode }"
       ],
+      "Entity ID": [
+        "ობიექტის იდენტიფიკატორი"
+      ],
       "Event": [
         "მოვლენა"
       ],
@@ -10517,6 +10538,9 @@
       ],
       "Organization password": [
         "ორგანიზაციის პაროლი"
+      ],
+      "Other": [
+        "სხვა"
       ],
       "Other amount": [
         "სხვა რაოდენობა"
@@ -10968,6 +10992,11 @@
       ],
       "To: ${ to }": [
         "მიმღები: ${ to }"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "დასაწყებად აირჩიეთ იდენტიფიკატორის მომწოდებელი"
       ]
     },
     "Limit of calendars reached": {
@@ -12547,6 +12576,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "ჭდეები მარტივი ტეგებია, რომლებიც შეგიძლიათ, დაამატოთ შეტყობინებებს, რათა უფრო ადვილად იპოვოთ ისინი ან გამოიყენოთ ფილტრები"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "სამუდამო წვდომა ${ PASS_APP_NAME } + SimpleLogin-ის ფასიან ფუნქციებთან"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "საქაღალდის მსგავსად, საცავი თქვენი ელემენტების დალაგების მისაღები გზაა"
@@ -14801,6 +14833,11 @@
       ],
       "to be deleted": [
         "წასაშლელად"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "საშუალებას გაძლევთ, დაამატოთ Zoom-ის ვიდეოკონფერენცია თქვენი კალენდრის მოვლენებში"
       ]
     },
     "session_recovery:available:action": {
@@ -17139,6 +17176,9 @@
       "Connect ${ name }": [
         "${ name }-სთან დაკავშირება"
       ],
+      "Connect organization": [
+        "ორგანიზაციასთან მიერთება"
+      ],
       "Connection status": [
         "შეერთების სტატუსი"
       ],
@@ -18429,6 +18469,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "გარე მისამართი - გათიშავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის"
       ],
       "Group membership paused": [
         "ჯგუფის წევრობა შეჩერდა"

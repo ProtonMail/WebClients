@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -204,6 +204,9 @@
       ],
       "Change": [
         "Změnit"
+      ],
+      "Change configuration": [
+        "Změnit nastavení"
       ],
       "Change keys": [
         "Změnit klíče"
@@ -751,6 +754,9 @@
       "Next month": [
         "Další měsíc"
       ],
+      "Next page": [
+        "Další stránka"
+      ],
       "No": [
         "Ne"
       ],
@@ -798,6 +804,9 @@
       ],
       "Previous month": [
         "Předchozí měsíc"
+      ],
+      "Previous page": [
+        "Předchozí stránka"
       ],
       "Quit": [
         "Odejít"
@@ -7070,6 +7079,9 @@
       "All members have been added.": [
         "Všichni členové byli přidáni"
       ],
+      "All users": [
+        "Všichni uživatelé"
+      ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
       ],
@@ -7301,6 +7313,12 @@
       "Connection data will be available in around 1 hour.": [
         "Údaje o připojení budou k dispozici přibližně za 1 hodinu."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Pokračujte v povolení **${ affiliationsText }** z **${ organizationValue.Name }** k připojení k vaší organizaci ${ BRAND_NAME }."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Pokračujte v připojení **${ organizationValue.Name }** s vaší organizací ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Pokračovat jako ${ freeName }"
       ],
@@ -7525,6 +7543,9 @@
       ],
       "Edit link": [
         "Upravit odkaz"
+      ],
+      "EduGain configuration saved": [
+        "Nastavení eduGain uloženo"
       ],
       "email": [
         "e-mail"
@@ -8045,6 +8066,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Načítání kalendáře, prosím čekejte. Budete přesměrováni na naši plánovací platformu Calendly v nové záložce."
       ],
+      "Loading eduGAIN data...": [
+        "Načítání dat eduGAIN..."
+      ],
       "Loading gateways monitoring current status.": [
         "Načítání bran sledujících aktuální stav."
       ],
@@ -8161,6 +8185,9 @@
       ],
       "No logs yet.": [
         "Zatím žádné záznamy."
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Žádné organizace s povolenou funkcí **eduGAIN** pro **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
@@ -8513,8 +8540,17 @@
       "Select a service provider to start": [
         "Vyberte poskytovatele služeb a začněte"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Vyberte organizaci s povolenou funkcí **eduGAIN** pro **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Vyberte jednu nebo více příslušností uživatele"
+      ],
       "Select recently used servers": [
         "Výběr nedávno použitých serverů"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Vyberte příslušnost uživatelů z **${ organizationValue.Name }** (${ organizationValue.EntityId }), kterým chcete povolit vstup do vaší organizace ${ BRAND_NAME }:"
       ],
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
@@ -8794,6 +8830,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Tato zpráva se nedostane k týmu podpory, pokud máte problém s naší službou nebo potřebujete další kroky z naší strany ${ supportLink }."
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Tato organizace je povolena pomocí **eduGAIN** pro **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Tento odkaz na propagační akci vypršel."
@@ -10498,6 +10537,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Zadejte heslo pro klíč s otiskem: ${ fingerprintCode }"
       ],
+      "Entity ID": [
+        "ID subjektu"
+      ],
       "Event": [
         "Událost"
       ],
@@ -10759,6 +10801,9 @@
       "Organization password": [
         "Heslo organizace"
       ],
+      "Other": [
+        "Ostatní"
+      ],
       "Other amount": [
         "Jiná částka"
       ],
@@ -11014,6 +11059,9 @@
       "User": [
         "Uživatel"
       ],
+      "User affiliations": [
+        "Příslušnost uživatele"
+      ],
       "User's new password": [
         "Nové heslo uživatele"
       ],
@@ -11214,6 +11262,11 @@
       ],
       "To: ${ to }": [
         "Komu: ${ to }"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Začněte výběrem poskytovatele identity"
       ]
     },
     "Limit of calendars reached": {
@@ -17644,6 +17697,9 @@
       "Choose an account": [
         "Vybrat účet"
       ],
+      "Choose user affiliations": [
+        "Výběr příslušnosti uživatele"
+      ],
       "Clear": [
         "Vyčistit"
       ],
@@ -17676,6 +17732,9 @@
       ],
       "Connect ${ name }": [
         "Připojit ${ name }"
+      ],
+      "Connect organization": [
+        "Připojení organizace"
       ],
       "Connection status": [
         "Stav připojení"
@@ -18811,6 +18870,9 @@
       "Device information such as operating system": [
         "Informace o zařízení, jako je operační systém"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Zobrazované jméno subjektu v databázi eduGAIN"
+      ],
       "Each imported email will have this label": [
         "Každý importovaný e-mail bude mít tento štítek"
       ],
@@ -18879,6 +18941,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Určete doménu, která se smí ověřovat pomocí SAML SSO"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Zadejte uživatele subjektu eduGAIN, kteří se mohou ověřovat pomocí SAML SSO"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
