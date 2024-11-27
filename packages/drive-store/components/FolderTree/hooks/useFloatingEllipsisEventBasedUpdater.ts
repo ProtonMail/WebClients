@@ -45,5 +45,3 @@ export const useFloatingEllipsisEventBasedUpdater = ({
 
     return updateVisibility;
 };
-
-export default useFloatingEllipsisEventBasedUpdater;

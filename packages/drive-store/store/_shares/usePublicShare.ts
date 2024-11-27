@@ -35,6 +35,7 @@ export default function usePublicShare() {
         return {
             token: sessionInfo.token,
             link,
+            permissions: Token.Permissions,
         };
     };
 

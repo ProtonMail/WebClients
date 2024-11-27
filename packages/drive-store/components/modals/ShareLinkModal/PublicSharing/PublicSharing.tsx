@@ -4,17 +4,33 @@ import { c } from 'ttag';
 
 import { Avatar, Button, Input } from '@proton/atoms';
 import { Icon, Toggle, useNotifications } from '@proton/components';
+import useLoading from '@proton/hooks/useLoading';
+import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
+import { PermissionsDropdownMenu } from '../PermissionsDropdownMenu';
+
 interface Props {
     publicSharedLink: string;
+    publicSharedLinkPermissions: SHARE_URL_PERMISSIONS;
+    onChangePermissions: (permissions: number) => Promise<void>;
     createSharedLink: () => void;
     deleteSharedLink: () => void;
     isLoading: boolean;
+    viewOnly: boolean;
 }
-export const PublicSharing = ({ publicSharedLink, createSharedLink, deleteSharedLink, isLoading }: Props) => {
+export const PublicSharing = ({
+    publicSharedLink,
+    publicSharedLinkPermissions,
+    onChangePermissions,
+    createSharedLink,
+    deleteSharedLink,
+    isLoading,
+    viewOnly,
+}: Props) => {
     const contentRef = useRef<HTMLDivElement>(null);
+    const [isPermissionsLoading, withPermissionsLoading] = useLoading(false);
     const { createNotification } = useNotifications();
     const handleCopyURLClick = () => {
         if (contentRef.current) {
@@ -23,6 +39,10 @@ export const PublicSharing = ({ publicSharedLink, createSharedLink, deleteShared
                 text: c('Success').t`Secure link copied`,
             });
         }
+    };
+
+    const handleUpdatePermissions = (permissions: SHARE_URL_PERMISSIONS) => {
+        return withPermissionsLoading(() => onChangePermissions(permissions));
     };
 
     const handleToggle = () => {
@@ -50,7 +70,16 @@ export const PublicSharing = ({ publicSharedLink, createSharedLink, deleteShared
                             .t`Anyone on the Internet with the link can view`}</span>
                     </p>
                 </div>
-                <div className="hidden sm:block shrink-0">{c('Label').t`Viewer`}</div>
+                {viewOnly ? (
+                    <div className="hidden sm:block shrink-0">{c('Label').t`Viewer`}</div>
+                ) : (
+                    <PermissionsDropdownMenu
+                        isLoading={isPermissionsLoading}
+                        selectedPermissions={publicSharedLinkPermissions}
+                        onChangePermissions={handleUpdatePermissions}
+                        publicSharingOptions
+                    />
+                )}
             </div>
             {!!publicSharedLink ? (
                 <div className="w-full flex justify-space-between">

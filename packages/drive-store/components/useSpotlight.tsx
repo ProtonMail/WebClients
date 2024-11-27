@@ -1,8 +1,7 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
-import { useSpotlightShow } from '@proton/components';
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
+import { useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 import { FeatureCode } from '@proton/features';
 
 import type { DriveFolder } from '../hooks/drive/useActiveShare';

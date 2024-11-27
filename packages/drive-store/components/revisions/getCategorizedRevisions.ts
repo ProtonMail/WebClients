@@ -6,7 +6,7 @@ import isLastWeek from '@proton/utils/isLastWeek';
 
 import type { DriveFileRevision } from '../../store';
 
-export type RevisionCategory = { title: string; list: DriveFileRevision[] };
+type RevisionCategory = { title: string; list: DriveFileRevision[] };
 export type CategorizedRevisions = Map<string, RevisionCategory>;
 export function getCategorizedRevisions(
     revisions: DriveFileRevision[],

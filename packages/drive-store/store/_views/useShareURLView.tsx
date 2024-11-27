@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
+import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
@@ -222,6 +223,40 @@ export default function useShareURLView(shareId: string, linkId: string) {
         return updatedFields;
     };
 
+    const updatePermissions = async (permissions: SHARE_URL_PERMISSIONS) => {
+        if (!shareUrl) {
+            return;
+        }
+        const update = () => {
+            const abortController = new AbortController();
+            return updateShareUrl(abortController.signal, {
+                shareId: shareUrl.shareId,
+                shareUrlId: shareUrl.shareUrlId,
+                flags: shareUrl.flags,
+                keyInfo: shareUrlInfo.keyInfo,
+                permissions,
+            });
+        };
+
+        const updatedFields = await withSaving(update()).catch((error) => {
+            createNotification({
+                type: 'error',
+                text: c('Notification').t`Public link update access failed `,
+            });
+            throw error;
+        });
+        createNotification({
+            text: c('Notification').t`Public link access updated`,
+        });
+        setShareUrlInfo({
+            shareUrl: {
+                ...shareUrl,
+                ...updatedFields,
+            },
+            keyInfo: shareUrlInfo.keyInfo,
+        });
+    };
+
     // TODO: Remove this parameter when we will have share events
     const deleteLink = async (deleteIfEmptyCallback: ReturnType<typeof useShareMemberView>['deleteShareIfEmpty']) => {
         if (!link || !shareUrl) {
@@ -294,6 +329,8 @@ export default function useShareURLView(shareId: string, linkId: string) {
         initialExpiration,
         customPassword,
         sharedLink,
+        permissions: shareUrl?.permissions || SHARE_URL_PERMISSIONS.VIEWER,
+        updatePermissions,
         hasSharedLink: !!link?.shareUrl,
         isShareUrlLoading,
         loadingMessage,

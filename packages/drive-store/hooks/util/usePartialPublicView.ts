@@ -7,7 +7,7 @@ const cleanupUrl = () => {
     newUrlSearchParams.delete(partialPublicViewKey);
     const hash = window.location.hash;
     const newUrl = `${window.location.pathname}${newUrlSearchParams.toString() ? `?${newUrlSearchParams.toString()}` : ''}${hash}`;
-    window.history.pushState({}, '', newUrl);
+    window.history.replaceState({}, '', newUrl);
 };
 const getIsPartialPublicView = () => {
     const { search } = window.location;

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { useApi } from '@proton/components';
-import { useDriveShareURLBookmarkingFeatureFlag } from '@proton/drive-store/store/_bookmarks';
 import { useBookmarks } from '@proton/drive-store/store/_bookmarks/useBookmarks';
 import { usePublicSessionUser } from '@proton/drive-store/store/_user';
 import useLoading from '@proton/hooks/useLoading';
@@ -18,13 +17,12 @@ export const useDocsBookmarks = ({ token, urlPassword, customPassword }: Props) 
     const { listBookmarks, addBookmark } = useBookmarks();
     const [bookmarksTokens, setBookmarksTokens] = useState<Set<string>>(new Set());
     const [isLoading, withLoading] = useLoading(false);
-    const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
     const api = useApi();
 
     const { user, UID } = usePublicSessionUser();
 
     useEffect(() => {
-        if (!user || !isDriveShareUrlBookmarkingEnabled || !UID) {
+        if (!user || !UID) {
             return;
         }
 
@@ -39,7 +37,7 @@ export const useDocsBookmarks = ({ token, urlPassword, customPassword }: Props) 
             abortControler.abort();
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [user, isDriveShareUrlBookmarkingEnabled, UID]);
+    }, [user, UID]);
 
     const isAlreadyBookmarked = useMemo(() => {
         return bookmarksTokens.has(token);

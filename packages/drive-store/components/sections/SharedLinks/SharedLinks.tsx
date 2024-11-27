@@ -7,7 +7,7 @@ import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
-import type { EncryptedLink, LinkShareUrl, useSharedLinksView } from '../../../store';
+import type { EncryptedLink, LinkShareUrl, SignatureIssues, useSharedLinksView } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
@@ -31,7 +31,8 @@ export interface SharedLinkItem extends FileBrowserBaseItem {
     fileModifyTime: number;
     name: string;
     shareUrl?: LinkShareUrl;
-    signatureIssues?: any;
+    signatureIssues?: SignatureIssues;
+    signatureAddress?: string;
     size: number;
     trashed: number | null;
     parentLinkId: string;

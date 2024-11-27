@@ -89,5 +89,3 @@ export const useLinksQueue = ({ loadThumbnails }: Props = {}) => {
         addToQueue,
     };
 };
-
-export default useLinksQueue;

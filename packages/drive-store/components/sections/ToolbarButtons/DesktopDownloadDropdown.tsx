@@ -11,7 +11,7 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 
-import useDesktopDownloads from '../../../hooks/drive/useDesktopDownloads';
+import { useDesktopDownloads } from '../../../hooks/drive/useDesktopDownloads';
 
 interface Props {
     className?: string;
