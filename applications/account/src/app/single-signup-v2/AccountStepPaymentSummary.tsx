@@ -113,9 +113,9 @@ const AccountStepPaymentSummary = ({
                 checkout={currentCheckout}
                 mode={isB2BPlan ? 'addons' : undefined}
             >
-                {showTaxCountry && (
+                {!initialLoading && showTaxCountry && (
                     <WrappedTaxCountrySelector
-                        className={clsx(initialLoading && 'visibility-hidden', 'mb-2')}
+                        className="mb-2"
                         onBillingAddressChange={onBillingAddressChange}
                         statusExtended={
                             // If we are in signup-token mode, then it means that user created an account by clicking "Continue with bitcoin"
