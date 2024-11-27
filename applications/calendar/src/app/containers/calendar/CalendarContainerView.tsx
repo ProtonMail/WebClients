@@ -64,6 +64,7 @@ import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
+import { getMonthDateRange } from './eventStore/prefetching/getMonthDateRange';
 import getDateDiff from './getDateDiff';
 import { toUrlParams } from './getUrlHelper';
 import CalendarSearch from './search/CalendarSearch';
@@ -96,6 +97,7 @@ interface Props {
     onChangeView: (view: VIEWS) => void;
     onChangeDate: (date: Date) => void;
     onChangeDateRange: (date: Date, range: number, resetRange?: boolean) => void;
+    prefetchCalendarEvents: (range: [Date, Date]) => void;
     containerRef: HTMLDivElement | null;
     setContainerRef: Ref<HTMLDivElement>;
     onSearch: () => void;
@@ -128,6 +130,8 @@ const CalendarContainerView = ({
     onChangeView,
     onChangeDate,
     onChangeDateRange,
+
+    prefetchCalendarEvents,
 
     children,
     containerRef,
@@ -437,6 +441,10 @@ const CalendarContainerView = ({
         setIsSearching(true);
     };
 
+    const handleDateRangeFocus = () => {
+        prefetchCalendarEvents(getMonthDateRange(utcDate, weekStartsOn, tzid));
+    };
+
     const toolbar = (
         <CalendarToolbar
             date={noonDate}
@@ -463,6 +471,8 @@ const CalendarContainerView = ({
                         view={view}
                         range={range}
                         onChange={onChangeView}
+                        onFocus={handleDateRangeFocus}
+                        onMouseEnter={handleDateRangeFocus}
                     />
                 )
             }

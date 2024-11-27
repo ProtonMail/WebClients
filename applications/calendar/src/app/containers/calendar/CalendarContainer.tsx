@@ -74,7 +74,7 @@ const { DAY, WEEK, MONTH, SEARCH } = VIEWS;
 
 const getRange = (view: VIEWS, range: number) => {
     if (!range) {
-        return;
+        return range;
     }
     const max = Math.max(Math.min(range, 6), 1);
     if (view === WEEK) {
@@ -207,7 +207,7 @@ const CalendarContainer = ({
             if (startupModalState.hasModal === undefined || startupModalState.isOpen) {
                 return;
             }
-            let doNotShowAskTimezoneUpdateModal =
+            const doNotShowAskTimezoneUpdateModal =
                 !!shareCalendarInvitationRef.current ||
                 drawerView ||
                 !getAutoDetectPrimaryTimezone(calendarUserSettings);
@@ -232,6 +232,7 @@ const CalendarContainer = ({
                         setIsSharedCalendarInvitationModalOpen(true);
                     }
                 } catch (e) {
+                    // eslint-disable-next-line no-console
                     console.error(e);
                 }
             }
@@ -321,7 +322,7 @@ const CalendarContainer = ({
         }
     }, [view]);
 
-    const range = isSmallViewport ? undefined : getRange(view, customRange);
+    const range = isSmallViewport ? 0 : getRange(view, customRange);
     const weekStartsOn = getWeekStartsOn(userSettings);
     const displayWeekNumbers = getDisplayWeekNumbers(calendarUserSettings);
     const displaySecondaryTimezone = getDisplaySecondaryTimezone(calendarUserSettings);
@@ -392,15 +393,15 @@ const CalendarContainer = ({
     useAppTitle(calendarTitle);
 
     const [initializeCacheOnlyCalendarsIDs, setInitializeCacheOnlyCalendarsIDs] = useState<string[]>([]);
-    const [calendarsEvents, loadingEvents] = useCalendarsEvents(
-        visibleCalendars,
-        utcDateRangeInTimezone,
-        tzid,
+    const [calendarsEvents, loadingEvents, prefetchCalendarEvents] = useCalendarsEvents({
         calendarsEventsCacheRef,
         getOpenedMailEvents,
         initializeCacheOnlyCalendarsIDs,
-        () => setInitializeCacheOnlyCalendarsIDs([])
-    );
+        onCacheInitialized: () => setInitializeCacheOnlyCalendarsIDs([]),
+        requestedCalendars: visibleCalendars,
+        tzid,
+        utcDateRange: utcDateRangeInTimezone,
+    });
 
     const scrollToNow = useCallback(() => {
         setTimeout(() => {
@@ -499,6 +500,7 @@ const CalendarContainer = ({
             calendarUserSettings={calendarUserSettings}
             calendars={calendars}
             onCreateCalendarFromSidebar={(id: string) => setInitializeCacheOnlyCalendarsIDs([id])}
+            prefetchCalendarEvents={prefetchCalendarEvents}
             isLoading={isLoading}
             displayWeekNumbers={displayWeekNumbers}
             weekStartsOn={weekStartsOn}

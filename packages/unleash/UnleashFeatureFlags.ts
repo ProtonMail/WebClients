@@ -60,6 +60,7 @@ enum PaymentsFlag {
 }
 
 enum CalendarFeatureFlag {
+    CalendarEventsPrefetch = 'CalendarEventsPrefetch',
     EditSingleOccurrenceWeb = 'EditSingleOccurrenceWeb',
     VideoConferenceWidget = 'VideoConferenceWidget',
     CalendarRedux = 'CalendarRedux',
