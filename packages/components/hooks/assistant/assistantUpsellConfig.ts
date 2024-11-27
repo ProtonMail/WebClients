@@ -1,7 +1,7 @@
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import type { SelectedPlan } from '@proton/payments';
-import { ADDON_NAMES, PLANS, type PlanIDs, getScribeAddonNameByPlan } from '@proton/payments';
+import { type ADDON_NAMES, type PLANS, type PlanIDs, getScribeAddonNameByPlan } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { isScribeAddon, removeAddon } from '@proton/shared/lib/helpers/addons';
 import type { UserModel } from '@proton/shared/lib/interfaces';
@@ -11,22 +11,6 @@ const getUpgradeCycles = (currentCycle = CYCLE.MONTHLY) => ({
     minimumCycle: currentCycle,
     maximumCycle: currentCycle === CYCLE.MONTHLY ? CYCLE.YEARLY : currentCycle,
 });
-
-// Free users are uspell to Mail Plus with the add-on
-const freeUserUpsellConfig = (upsellRef: string): OpenCallbackProps => {
-    const cycles = getUpgradeCycles();
-    return {
-        mode: 'upsell-modal',
-        planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS]: 1 },
-        step: SUBSCRIPTION_STEPS.CHECKOUT,
-        disablePlanSelection: true,
-        upsellRef,
-        ...cycles,
-        metrics: {
-            source: 'upsells',
-        },
-    };
-};
 
 const paidSingleUserUpsellConfig = (
     upsellRef: string,
@@ -109,8 +93,7 @@ export const getAssistantUpsellConfig = (
         return paidSingleUserUpsellConfig(upsellRef, selectedPlan.name, addonName, selectedPlan.cycle);
     }
 
-    // Return the free user config if the user is not paid and don't have member in its organization
-    return freeUserUpsellConfig(upsellRef);
+    return undefined;
 };
 
 export const getAssistantDowngradeConfig = (

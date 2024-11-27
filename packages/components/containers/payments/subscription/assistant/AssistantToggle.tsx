@@ -14,14 +14,13 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import useAssistantUpsellConfig from '@proton/components/hooks/assistant/useAssistantUpsellConfig';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { hasPlanWithAIAssistantIncluded } from '@proton/shared/lib/helpers/subscription';
+import { hasAIAssistant, hasPlanWithAIAssistantIncluded } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
 import { getScribeUpsellLearnMore, getScribeUpsellText } from './helpers';
-import useAssistantToggle from './useAssistantToggle';
 
 const AssistantToggle = () => {
-    const [subscription] = useSubscription();
+    const [subscription, subscriptionLoading] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const [plans] = usePlans();
     const [organization] = useOrganization();
@@ -30,7 +29,7 @@ const AssistantToggle = () => {
     const composerAssistantEnabled = useAssistantFeatureEnabled();
     const planWithAIAssistantIncluded = hasPlanWithAIAssistantIncluded(subscription);
 
-    const { hasBoughtPlan, loading } = useAssistantToggle();
+    const hasBoughtPlan = hasAIAssistant(subscription);
     const { trialStatus, trialEndDate } = useAssistantSubscriptionStatus();
     const formattedDate = format(trialEndDate || new Date(), 'PP');
 
@@ -44,7 +43,7 @@ const AssistantToggle = () => {
 
     const isB2CUser = getIsB2CUserAbleToRunScribe(subscription, organization, member);
 
-    // Do  not show scribe banner to b2c users. The feature is available in Duo plan only for b2c, it's not an addon
+    // Do not show scribe banner to b2c users. The feature is available in Duo plan only for b2c, it's not an addon
     if (isB2CUser) {
         return null;
     }
@@ -60,7 +59,7 @@ const AssistantToggle = () => {
     }
 
     // Visionary users have the add-on for free, we hide this section if that's the case
-    if (loading || !assistantUpsellConfig || planWithAIAssistantIncluded) {
+    if (subscriptionLoading || !assistantUpsellConfig || planWithAIAssistantIncluded) {
         return null;
     }
 
