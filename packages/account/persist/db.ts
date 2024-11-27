@@ -7,7 +7,7 @@ const dbName = 'store' as const;
 const dbVersion = 4;
 
 interface StoredEncryptedCache {
-    state: ArrayBuffer;
+    state: Uint8Array<ArrayBuffer>;
     eventID: string;
     date: Date;
     appVersion: string;
@@ -19,7 +19,7 @@ export interface StoreDB extends DBSchema {
 }
 
 export type EncryptedCache = {
-    state: ArrayBuffer;
+    state: Uint8Array<ArrayBuffer>;
     appVersion: string;
     eventID: string;
 };

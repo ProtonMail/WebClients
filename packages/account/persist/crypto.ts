@@ -1,5 +1,5 @@
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { decryptData, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
+import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 
 import type { DecryptedCache, EncryptedCache } from './db';
@@ -9,7 +9,7 @@ export const getEncryptedCache = async ({ clientKey, state }: { clientKey: strin
     return encryptData(key, stringToUtf8Array(state), stringToUtf8Array('cache'));
 };
 
-const decrypt = async <T>(options: { data: ArrayBuffer; key: CryptoKey }): Promise<T | undefined> => {
+const decrypt = async <T>(options: { data: Uint8Array<ArrayBuffer>; key: CryptoKey }): Promise<T | undefined> => {
     if (!options.data) {
         return;
     }
