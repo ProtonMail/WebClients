@@ -83,6 +83,7 @@ function makeChildrenLinkMeta(linkId: string, size?: number): ChildrenLinkMeta {
         size: size || 0,
         signatureAddress: 'address',
         fileModifyTime: 1692962760,
+        createTime: 10,
     };
 }
 
