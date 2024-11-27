@@ -16,6 +16,7 @@ import {
     useEncryptedSearch,
     wrappedGetOldestInfo,
 } from '@proton/encrypted-search';
+import { useIndexedDBSupport } from '@proton/encrypted-search/lib/hooks/useIndexedDBSupport';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useGetMessageCounts } from '@proton/mail/counts/messageCounts';
 import { SECOND } from '@proton/shared/lib/constants';
@@ -58,6 +59,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const { isESEnabledInbox } = useISESEnabledElectron();
     const { feature: esAutomaticBackgroundIndexingFeature } = useFeature(FeatureCode.ESAutomaticBackgroundIndexing);
     const { isSearch, page } = parseSearchParams(history.location);
+    const { isSupported: isIDBSupported } = useIndexedDBSupport();
 
     const [addresses] = useAddresses();
 
@@ -239,8 +241,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     }, [isSearch]);
 
     useEffect(() => {
-        void initializeESMail();
-    }, []);
+        if (isIDBSupported) {
+            void initializeESMail();
+        }
+    }, [isIDBSupported]);
 
     const esFunctions = {
         ...esLibraryFunctions,
