@@ -1,79 +1,131 @@
+import type { MutableRefObject } from 'react';
 import { useEffect, useState } from 'react';
 
 import { useApi } from '@proton/components';
-import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import { fetchCalendarEvents } from './cache/fetchCalendarEvents';
 import getCalendarEventsCache from './cache/getCalendarEventsCache';
+import { getCalendarEvents } from './getCalendarEvents';
 import type { CalendarsEventsCache } from './interface';
+import useCalendarsEventsReader from './useCalendarsEventsReader';
+
+interface CalendarsEventsFetcherProps {
+    calendars: VisualCalendar[];
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
+    getOpenedMailEvents: () => OpenedMailEvent[];
+    initialDateRange: [Date, Date];
+    initializeCacheOnlyCalendarsIDs: string[];
+    onCacheInitialized: () => void;
+    tzid: string;
+}
 
 const useCalendarsEventsFetcher = ({
     calendars,
-    dateRange,
-    tzid,
-    calendarsEventsCache,
+    calendarsEventsCacheRef,
     initializeCacheOnlyCalendarsIDs,
+    initialDateRange,
     getOpenedMailEvents,
     onCacheInitialized,
-    metadataOnly,
-}: {
-    calendars: Calendar[];
-    dateRange: [Date, Date];
-    tzid: string;
-    calendarsEventsCache: CalendarsEventsCache;
-    getOpenedMailEvents: () => OpenedMailEvent[];
-    initializeCacheOnlyCalendarsIDs: string[];
-    onCacheInitialized: () => void;
-    metadataOnly?: boolean;
-}) => {
-    const [loading, setLoading] = useState(false);
+    tzid,
+}: CalendarsEventsFetcherProps) => {
+    const calendarsEventsCache = calendarsEventsCacheRef.current;
+    const [isLoading, setIsLoading] = useState(true);
     const api = useApi();
 
-    useEffect(() => {
-        const calendarFetchPromises = calendars
+    let isActive: boolean;
+
+    const done = () => {
+        if (isActive) {
+            setIsLoading(false);
+            // even if some promise is rejected, consider cache initialized
+            onCacheInitialized();
+        }
+    };
+
+    const isPrefetchEnabled = useFlag('CalendarEventsPrefetch');
+
+    const fetchEventsInDateRange = (range: [Date, Date]) =>
+        calendars
             .map(({ ID: calendarID }) => {
                 let calendarEventsCache = calendarsEventsCache.calendars[calendarID];
+
                 if (!calendarEventsCache) {
                     calendarEventsCache = getCalendarEventsCache();
                     calendarsEventsCache.calendars[calendarID] = calendarEventsCache;
                 }
+
                 return fetchCalendarEvents({
-                    calendarID,
-                    dateRange,
-                    tzid,
-                    calendarEventsCache,
-                    noFetch: initializeCacheOnlyCalendarsIDs.includes(calendarID),
-                    metadataOnly,
                     api,
+                    calendarEventsCache,
+                    calendarID,
+                    dateRange: range,
                     getOpenedMailEvents,
+                    metadataOnly: true,
+                    noFetch: initializeCacheOnlyCalendarsIDs.includes(calendarID),
+                    tzid,
                 });
             })
             .filter(isTruthy);
 
-        if (calendarFetchPromises.length === 0) {
-            return setLoading(false);
+    const { setCalendarEvents } = useCalendarsEventsReader({
+        calendarsEventsCacheRef,
+        getOpenedMailEvents,
+        metadataOnly: true,
+        rerender: () => {},
+    });
+
+    const prefetchCalendarEvents = async (range: [Date, Date]) => {
+        if (isPrefetchEnabled) {
+            const eventsFetchedInDateRange = fetchEventsInDateRange(range);
+
+            if (eventsFetchedInDateRange.length === 0) {
+                return;
+            }
+
+            // await Promise.all(eventsFetchedInDateRange).finally(done);
+            await Promise.all(fetchEventsInDateRange(range))
+                .then(() => {
+                    const events = getCalendarEvents({ calendars, calendarsEventsCacheRef, dateRange: range, tzid });
+                    setCalendarEvents(events);
+                })
+                .finally(done);
+        }
+    };
+
+    useEffect(() => {
+        const eventsFetchedInDateRange = fetchEventsInDateRange(initialDateRange);
+
+        if (eventsFetchedInDateRange.length === 0) {
+            setIsLoading(false);
+            return;
         }
 
-        let isActive = true;
-        setLoading(true);
+        isActive = true;
+        setIsLoading(true);
+
         const done = () => {
             if (isActive) {
-                setLoading(false);
+                setIsLoading(false);
                 // even if some promise is rejected, consider cache initialized
                 onCacheInitialized();
             }
         };
 
-        Promise.all(calendarFetchPromises).then(done, done);
+        void Promise.all(eventsFetchedInDateRange).finally(done);
 
         return () => {
             isActive = false;
         };
-    }, [calendars, dateRange]);
+    }, [calendars, initialDateRange]);
 
-    return loading;
+    return {
+        isLoading,
+        prefetchCalendarEvents,
+    };
 };
 
 export default useCalendarsEventsFetcher;
