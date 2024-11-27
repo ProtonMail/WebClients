@@ -15,6 +15,9 @@ type CommentsContextValue = {
   setThreadToFocus: (id: string | null) => void
   awarenessStates: UserState[]
   showConfirmModal: ReturnType<typeof useConfirmActionModal>[1]
+
+  commentInputPosition: number | undefined
+  cancelAddComment: () => void
 }
 
 const CommentsContext = createContext<CommentsContextValue | null>(null)
