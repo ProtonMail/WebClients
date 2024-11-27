@@ -10,6 +10,7 @@ import {
 import { type Currency, PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
 import { type CheckSubscriptionData, createTokenV4, subscribe } from '@proton/shared/lib/api/payments';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization, Plan, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -85,6 +86,8 @@ async function waitUntilChecked() {
     await waitFor(() => {
         expect(screen.getByTestId('container-subscription-amout-due')).toBeInTheDocument();
     });
+
+    await wait(0);
 }
 
 async function selectPaymentMethod(paymentMethodTypes: PAYMENT_METHOD_TYPES) {
