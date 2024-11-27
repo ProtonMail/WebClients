@@ -7997,6 +7997,9 @@
       "Colors": [
         "Farver"
       ],
+      "Company name": [
+        "Firmanavn"
+      ],
       "Composer": [
         "Skrivevindue"
       ],
@@ -9625,14 +9628,6 @@
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Fra ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -9645,6 +9640,14 @@
       ],
       "Switch plans?": [
         "Skift abonnement?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Fra ${ price }"
       ]
     },
     "new_plans: tooltip": {
