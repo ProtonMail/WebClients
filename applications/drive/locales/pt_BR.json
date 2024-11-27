@@ -543,6 +543,9 @@
       "Next month": [
         "Próximo mês"
       ],
+      "Next page": [
+        "Próxima página"
+      ],
       "Not now": [
         "Agora não"
       ],
@@ -590,6 +593,9 @@
       ],
       "Previous month": [
         "Mês anterior"
+      ],
+      "Previous page": [
+        "Página anterior"
       ],
       "Quit": [
         "Sair"
@@ -854,6 +860,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Faça upgrade para ${ BRAND_NAME } Unlimited"
+      ],
+      "Upload": [
+        "Enviar"
       ],
       "Upload anyway": [
         "Enviar assim mesmo"
@@ -2400,6 +2409,11 @@
         "Fatura vencida"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use o assistente de importação Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
@@ -2469,11 +2483,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7361,17 +7370,6 @@
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Obtenha Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -7384,6 +7382,17 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Obtenha Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {

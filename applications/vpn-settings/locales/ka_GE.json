@@ -106,6 +106,9 @@
       "Change": [
         "შეცვლა"
       ],
+      "Change configuration": [
+        "კონფიგურაციის შეცვლა"
+      ],
       "Change keys": [
         "გასაღებების შეცვლა"
       ],
@@ -400,6 +403,9 @@
       "Next month": [
         "შემდეგი თვე"
       ],
+      "Next page": [
+        "შემდეგი გვერდი"
+      ],
       "OK": [
         "დიახ"
       ],
@@ -435,6 +441,9 @@
       ],
       "Previous month": [
         "წინა თვე"
+      ],
+      "Previous page": [
+        "წინა გვერდი"
       ],
       "Recover data": [
         "მონაცემების აღდგენა"
@@ -3684,6 +3693,9 @@
       "All members have been added.": [
         "ყველა წევრი დამატებულია."
       ],
+      "All users": [
+        "ყველა მომხმარებელი"
+      ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
       ],
@@ -3848,11 +3860,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }-ის აპლიკაციების გარეგნობის მორგება."
       ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
-      ],
       "dedicated servers": [
         "გამოყოფილი სერვერი"
+      ],
+      "Dedicated servers": [
+        "გამოყოფილი სერვერები"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
@@ -3933,6 +3945,9 @@
       ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
+      ],
+      "EduGain configuration saved": [
+        "EduGain-ის კონფიგურაცია შენახულია"
       ],
       "email": [
         "ელფოსტა"
@@ -4257,6 +4272,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "მიმდინარეობს კალენდრის ჩატვირთვა. მოითმინეთ. გადაგამისამართებთ ჩვენს დაგეგმვის პლატფორმაზე Calendly ახალ ჩანართში."
+      ],
+      "Loading eduGAIN data...": [
+        "მიმდინარეობს eduGAIN-ის მონაცემების ჩატვირთვა..."
       ],
       "Loading gateways monitoring current status.": [
         "მიმდინარეობს კარიბჭეების მონიტორინგის მიმდინარე სტატუსის ჩატვირთვა."
@@ -4848,10 +4866,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -5512,6 +5530,9 @@
       "Enter the code displayed on your TV": [
         "შეიყვანეთ თქვენს TV-ზე ნაჩვენები კოდი"
       ],
+      "Entity ID": [
+        "ობიექტის იდენტიფიკატორი"
+      ],
       "Event": [
         "მოვლენა"
       ],
@@ -5637,6 +5658,9 @@
       ],
       "Organization password": [
         "ორგანიზაციის პაროლი"
+      ],
+      "Other": [
+        "სხვა"
       ],
       "Other amount": [
         "სხვა რაოდენობა"
@@ -5857,6 +5881,11 @@
     "Label, credit card": {
       "ZIP code": [
         "საფოსტო კოდი"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "დასაწყებად აირჩიეთ იდენტიფიკატორის მომწოდებელი"
       ]
     },
     "Link": {
@@ -6966,6 +6995,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "ჭდეები მარტივი ტეგებია, რომლებიც შეგიძლიათ, დაამატოთ შეტყობინებებს, რათა უფრო ადვილად იპოვოთ ისინი ან გამოიყენოთ ფილტრები"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "სამუდამო წვდომა ${ PASS_APP_NAME } + SimpleLogin-ის ფასიან ფუნქციებთან"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "საქაღალდის მსგავსად, საცავი თქვენი ელემენტების დალაგების მისაღები გზაა"
@@ -9971,10 +10003,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -10015,6 +10047,9 @@
       ],
       "Confirm phone number": [
         "დაადასტურეთ ტელეფონის ნომერი"
+      ],
+      "Connect organization": [
+        "ორგანიზაციასთან მიერთება"
       ],
       "Contact us": [
         "დაგვიკავშირდით"
@@ -10659,6 +10694,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "გარე მისამართი - გათიშავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის"
       ],
       "Group membership paused": [
         "ჯგუფის წევრობა შეჩერდა"

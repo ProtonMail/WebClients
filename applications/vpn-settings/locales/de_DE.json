@@ -103,6 +103,9 @@
       "Change": [
         "Ändern"
       ],
+      "Change configuration": [
+        "Konfiguration ändern"
+      ],
       "Change keys": [
         "Schlüssel ändern"
       ],
@@ -397,6 +400,9 @@
       "Next month": [
         "Nächster Monat"
       ],
+      "Next page": [
+        "Nächste Seite"
+      ],
       "OK": [
         "OK"
       ],
@@ -432,6 +438,9 @@
       ],
       "Previous month": [
         "Vorheriger Monat"
+      ],
+      "Previous page": [
+        "Vorherige Seite"
       ],
       "Recover data": [
         "Daten wiederherstellen"
@@ -3678,6 +3687,9 @@
       "All members have been added.": [
         "Alle Mitglieder wurden hinzugefügt."
       ],
+      "All users": [
+        "Alle Benutzer"
+      ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
       ],
@@ -3789,6 +3801,12 @@
       "Connection data will be available in around 1 hour.": [
         "Die Verbindungsdaten werden in etwa 1 Stunde verfügbar sein."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Erlaube **${ affiliationsText }** von **${ organizationValue.Name }** weiterhin, deiner ${ BRAND_NAME }-Organisation beizutreten."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Verbinde weiterhin **${ organizationValue.Name }** mit deiner ${ BRAND_NAME }-Organisation."
+      ],
       "Continue with ${ freeName }": [
         "Mit ${ freeName } fortfahren"
       ],
@@ -3842,11 +3860,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
       ],
-      "Dedicated servers": [
-        "Dezidierte Server"
-      ],
       "dedicated servers": [
         "dedizierte Server"
+      ],
+      "Dedicated servers": [
+        "Dezidierte Server"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Lösche alle anderen MX-Einträge oder stelle sicher, dass ${ MAIL_APP_NAME } die geringste Priorität hat."
@@ -3924,6 +3942,9 @@
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
+      ],
+      "EduGain configuration saved": [
+        "eduGAIN-Konfiguration gespeichert"
       ],
       "email": [
         "E-Mail"
@@ -4243,6 +4264,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
       ],
+      "Loading eduGAIN data...": [
+        "Laden der eduGAIN-Daten..."
+      ],
       "Loading gateways monitoring current status.": [
         "Der aktuelle Status der Gateway-Überwachung wird geladen."
       ],
@@ -4311,6 +4335,9 @@
       ],
       "No Gateways yet": [
         "Noch keine Gateways"
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Keine Organisationen mit **eduGAIN** für **${ domain.DomainName }** aktiviert."
       ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
@@ -4529,8 +4556,17 @@
       "Securing your account": [
         "Dein Konto wird abgesichert"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Wähle eine Organisation aus, die mit **eduGAIN** für **${ domain.DomainName }** aktiviert ist."
+      ],
+      "Select one or multiple user affiliations": [
+        "Wähle eine oder mehrere Benutzerzugehörigkeiten"
+      ],
       "Select recently used servers": [
         "Zuletzt verwendete Server auswählen"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Wähle die Benutzerzugehörigkeiten aus **${ organizationValue.Name }** (${ organizationValue.EntityId }), die du in deiner ${ BRAND_NAME }-Organisation zulassen möchtest:"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Versende E-Mails, um deine Mitglieder zu ermutigen, ihre Konten mit 2FA zu schützen."
@@ -4680,6 +4716,9 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Diese Nachricht wird das Support-Team nicht erreichen, wenn du ein Problem mit unserem Service hast oder weitere Maßnahmen von unserer Seite benötigst, ${ supportLink }."
       ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Diese Organisation ist mit **eduGAIN** für **${ domain.DomainName }** aktiviert."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Dieser Benutzer ist zurzeit für Zahlungen für deine Organisation zuständig. Wenn du den Benutzer zurückstufst, wirst du für die Zahlungen deiner Organisation zuständig."
       ],
@@ -4827,10 +4866,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
       "Users": [
@@ -5494,6 +5533,9 @@
       "Enter the code displayed on your TV": [
         "Gib den auf deinem Fernseher angezeigten Code ein"
       ],
+      "Entity ID": [
+        "Entitäts-ID"
+      ],
       "Event": [
         "Ereignis"
       ],
@@ -5620,6 +5662,9 @@
       "Organization password": [
         "Passwort der Organisation"
       ],
+      "Other": [
+        "Anderer Grund"
+      ],
       "Other amount": [
         "Anderer Betrag"
       ],
@@ -5737,6 +5782,9 @@
       "User": [
         "Benutzer"
       ],
+      "User affiliations": [
+        "Benutzerzugehörigkeiten"
+      ],
       "User's new password": [
         "Neues Passwort des Benutzers"
       ],
@@ -5835,6 +5883,11 @@
     "Label, credit card": {
       "ZIP code": [
         "Postleitzahl"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Wähle einen Identitätsanbieter, um anzufangen"
       ]
     },
     "Link": {
@@ -9789,11 +9842,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-all address": [
-        "Catch-all-Weiterleitungsadresse"
-      ],
       "Catch-All address": [
         "Catch-all-Adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-Weiterleitungsadresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -9812,6 +9865,9 @@
       ],
       "Change second password": [
         "Zusätzliches Passwort ändern"
+      ],
+      "Choose user affiliations": [
+        "Benutzerzugehörigkeit wählen"
       ],
       "Click a value in the table to use it as filter": [
         "Klicke auf einen Wert in der Tabelle, um diesen als Filter zu verwenden."
@@ -9833,6 +9889,9 @@
       ],
       "Confirm phone number": [
         "Telefonnummer bestätigen"
+      ],
+      "Connect organization": [
+        "Organisation verbinden"
       ],
       "Contact us": [
         "Kontaktiere uns"
@@ -10419,6 +10478,9 @@
       "Device information such as operating system": [
         "Geräteinformationen wie das Betriebssystem"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Anzeigename für die Entität in der eduGAIN-Datenbank"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Endpunkt-URL des Identitätsanbieters (z.B. https://idp.beispiel.com/sso/saml)"
       ],
@@ -10439,6 +10501,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Gib die Benutzer der eduGAIN-Entität an, die sich mit SAML SSO authentifizieren dürfen"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."

@@ -1151,6 +1151,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Pembaruan \"${ payload.item.data.metadata.name }\" telah diabaikan"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } undangan berhasil terkirim"
+      ],
       "${ count } time": [
         "${ count } kali"
       ],
@@ -2154,6 +2157,9 @@
       ],
       "Cards": [
         "Kartu"
+      ],
+      "Choose unlock method": [
+        "Pilih metode pembukaan"
       ],
       "Choose your preferred look and feel.": [
         "Tentukan tampilan dan nuansa yang Anda kehendaki."

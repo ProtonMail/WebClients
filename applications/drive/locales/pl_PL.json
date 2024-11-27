@@ -549,6 +549,9 @@
       "Next month": [
         "Następny miesiąc"
       ],
+      "Next page": [
+        "Następna strona"
+      ],
       "Not now": [
         "Nie teraz"
       ],
@@ -596,6 +599,9 @@
       ],
       "Previous month": [
         "Poprzedni miesiąc"
+      ],
+      "Previous page": [
+        "Poprzednia strona"
       ],
       "Quit": [
         "Zakończ"
@@ -860,6 +866,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Ulepsz plan do wersji ${ BRAND_NAME } Unlimited"
+      ],
+      "Upload": [
+        "Prześlij"
       ],
       "Upload anyway": [
         "Prześlij mimo to"
@@ -2421,6 +2430,11 @@
         "Zaległa faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2490,11 +2504,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7638,14 +7647,6 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -7658,6 +7659,14 @@
       ],
       "Switch plans?": [
         "Zmienić plany?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Wybierz plan Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Od ${ price }"
       ]
     },
     "new_plans: tooltip": {
