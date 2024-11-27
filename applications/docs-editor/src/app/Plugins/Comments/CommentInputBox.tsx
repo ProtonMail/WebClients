@@ -31,23 +31,17 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
         const anchor = selection.anchor
         const focus = selection.focus
         const range = createDOMRange(editor, anchor.getNode(), anchor.offset, focus.getNode(), focus.offset)
-        const boxElem = boxRef.current
         const rootElement = editor.getRootElement()
         const parentContainer = rootElement?.parentElement
-        if (range !== null && boxElem !== null && parentContainer) {
+        if (range !== null && parentContainer) {
           const parentScrollTop = parentContainer.scrollTop
-
           const parentRect = parentContainer.getBoundingClientRect()
 
-          const { top } = range.getBoundingClientRect()
           const selectionRects = createRectsFromDOMRange(editor, range)
-          boxElem.style.setProperty('--y', `${top + parentScrollTop - parentRect.top}px`)
-
           const selectionRectsLength = selectionRects.length
           const { container } = selectionState
           const elements: HTMLSpanElement[] = selectionState.elements
           const elementsLength = elements.length
-
           for (let i = 0; i < selectionRectsLength; i++) {
             const selectionRect = selectionRects[i]
             let elem: HTMLSpanElement = elements[i]
@@ -133,43 +127,29 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
 
   return (
     <div
-      className="relative print:hidden"
-      style={{
-        gridArea: '1 / 1',
-        width: 'var(--comments-width)',
-        justifySelf: 'end',
-      }}
+      className="bg-norm shadow-lifted border-norm relative rounded border text-sm print:hidden"
+      ref={boxRef}
+      data-testid="comments-floating-input"
     >
-      <div
-        className="bg-norm shadow-lifted border-norm absolute left-1/2 top-0 rounded border text-sm"
-        style={{
-          width: 'calc(100% - 2rem)',
-          '--y': 0,
-          transform: `translate3d(-50%, var(--y), 0)`,
-        }}
-        ref={boxRef}
-        data-testid="comments-floating-input"
-      >
-        <CommentsComposer
-          autoFocus
-          className="px-2.5 py-2"
-          placeholder={c('Placeholder').t`Add a comment...`}
-          onSubmit={onSubmit}
-          onCancel={cancelAddComment}
-          onTextContentChange={(textContent) => (textContentRef.current = textContent)}
-          buttons={(canSubmit, submitComment) => (
-            <ToolbarButton
-              className="bg-primary rounded-full p-1"
-              title={c('Action').t`Add comment`}
-              icon={<Icon name="arrow-up" size={3.5} />}
-              disabled={!canSubmit}
-              onClick={submitComment}
-              data-testid="comments-floating-send-button"
-            />
-          )}
-          data-testid="comments-floating-input-section"
-        />
-      </div>
+      <CommentsComposer
+        autoFocus
+        className="px-2.5 py-2"
+        placeholder={c('Placeholder').t`Add a comment...`}
+        onSubmit={onSubmit}
+        onCancel={cancelAddComment}
+        onTextContentChange={(textContent) => (textContentRef.current = textContent)}
+        buttons={(canSubmit, submitComment) => (
+          <ToolbarButton
+            className="bg-primary rounded-full p-1"
+            title={c('Action').t`Add comment`}
+            icon={<Icon name="arrow-up" size={3.5} />}
+            disabled={!canSubmit}
+            onClick={submitComment}
+            data-testid="comments-floating-send-button"
+          />
+        )}
+        data-testid="comments-floating-input-section"
+      />
     </div>
   )
 }
