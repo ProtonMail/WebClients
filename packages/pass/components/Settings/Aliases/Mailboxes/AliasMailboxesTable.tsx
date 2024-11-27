@@ -47,7 +47,7 @@ export const AliasMailboxesTable: FC = () => {
                     <TableRowLoading rows={1} cells={4} />
                 ) : (
                     mailboxes.map(({ MailboxID, Email, Verified, IsDefault, AliasCount }) => (
-                        <AliasMailboxLoading mailboxID={MailboxID}>
+                        <AliasMailboxLoading mailboxID={MailboxID} key={MailboxID}>
                             {(loading) => (
                                 <TableRow key={MailboxID} className={clsx(loading && 'pointer-events-none')}>
                                     <TableCell>
