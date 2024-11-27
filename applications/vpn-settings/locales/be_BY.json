@@ -106,6 +106,9 @@
       "Change": [
         "Змяніць"
       ],
+      "Change configuration": [
+        "Змяніць канфігурацыю"
+      ],
       "Change keys": [
         "Змяніць ключы"
       ],
@@ -400,6 +403,9 @@
       "Next month": [
         "Наступны месяц"
       ],
+      "Next page": [
+        "Наступная старонка"
+      ],
       "OK": [
         "Добра"
       ],
@@ -435,6 +441,9 @@
       ],
       "Previous month": [
         "Папярэдні месяц"
+      ],
+      "Previous page": [
+        "Папярэдняя старонка"
       ],
       "Recover data": [
         "Аднавіць даныя"
@@ -3775,6 +3784,9 @@
       "All members have been added.": [
         "Усе ўдзельнікі былі дададзены."
       ],
+      "All users": [
+        "Усе карыстальнікі"
+      ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
       ],
@@ -3886,6 +3898,12 @@
       "Connection data will be available in around 1 hour.": [
         "Даныя аб падключэнні будуць даступны прыблізна праз 1 гадзіну."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Працягнуць дазвол **${ affiliationsText }** з **${ organizationValue.Name }** для далучэння да вашай арганізацыі ${ BRAND_NAME }."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Працягнуць падключэнне да **${ organizationValue.Name }** з вашай арганізацыяй ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Працягнуць з ${ freeName }"
       ],
@@ -3943,11 +3961,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Наладзьце вонкавы выгляд праграм ${ BRAND_NAME }"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
-      ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -4032,6 +4050,9 @@
       ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
+      ],
+      "EduGain configuration saved": [
+        "Канфігурацыя eduGAIN захавана"
       ],
       "email": [
         "электронная пошта"
@@ -4360,6 +4381,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
+      "Loading eduGAIN data...": [
+        "Загрузка даных eduGAIN..."
+      ],
       "Loading gateways monitoring current status.": [
         "Бягучы статус назірання загрузкі за шлюзамі."
       ],
@@ -4428,6 +4452,9 @@
       ],
       "No Gateways yet": [
         "Шлюзы пакуль адсутнічаюць"
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Адсутнічаюць арганізацыі з уключаным **eduGAIN** для **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Зараз аплата не патрабуецца."
@@ -4654,8 +4681,17 @@
       "Securing your account": [
         "Абарона вашага ўліковага запісу"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Выберыце арганізацыю з уключаным **eduGAIN** для **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Выберыце адну або некалькі прыналежнасцей карыстальніка"
+      ],
       "Select recently used servers": [
         "Выберыце нядаўна выкарыстаныя серверы"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Выберыце прыналежнасці карыстальніка з **${ organizationValue.Name }** (${ organizationValue.EntityId }), якому вы хочаце дазволіць ўвайсці ў сваю арганізацыю ${ BRAND_NAME }:"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Адпраўляйце лісты, каб заахвоціць сваіх удзельнікаў абараняць свае ўліковыя запісы з дапамогай 2ФА."
@@ -4721,7 +4757,7 @@
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Падпіска будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцаў."
+        "Падпіска будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцы(-аў)."
       ],
       "Subscription auto-renews every month.": [
         "Падпіска будзе аўтаматычна падаўжацца кожны месяц."
@@ -4812,6 +4848,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Гэта паведамленне не трапіць у службу падтрымкі, калі ў вас праблемы з нашым сэрвісам або неабходны нейкія дзеянні з нашага боку ${ supportLink }"
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "У гэтай арганізацыі ўключаны **eduGAIN** для **${ domain.DomainName }**."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Гэты карыстальнік з'яўляецца адказным за плацяжы ў вашай арганізацыі. Паніжэнне правоў гэтага ўдзельніка прывядзе да таго, што за плацяжы арганізацыі будзеце адказваць вы."
@@ -4966,11 +5005,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "Username": [
-        "Імя карыстальніка"
-      ],
       "username": [
         "імя карыстальніка"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -5661,6 +5700,9 @@
       "Enter the code displayed on your TV": [
         "Увядзіце код, які вы бачыце на сваім тэлевізары"
       ],
+      "Entity ID": [
+        "Ідэнтыфікатар аб'екта"
+      ],
       "Event": [
         "Падзея"
       ],
@@ -5787,6 +5829,9 @@
       "Organization password": [
         "Пароль арганізацыі"
       ],
+      "Other": [
+        "Іншае"
+      ],
       "Other amount": [
         "Іншая сума"
       ],
@@ -5910,6 +5955,9 @@
       "User": [
         "Карыстальнік"
       ],
+      "User affiliations": [
+        "Прыналежнасці карыстальніка"
+      ],
       "User's new password": [
         "Новы пароль карыстальніка"
       ],
@@ -6008,6 +6056,11 @@
     "Label, credit card": {
       "ZIP code": [
         "Паштовы індэкс"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Выберыце пастаўшчыка пасведчанняў, каб пачаць"
       ]
     },
     "Link": {
@@ -10213,7 +10266,7 @@
         "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe памочнік у напісанні"
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
       "${ VPN_APP_NAME } clients": [
         "Кліенты ${ VPN_APP_NAME }"
@@ -10344,10 +10397,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -10367,6 +10420,9 @@
       ],
       "Change second password": [
         "Змяніць другі пароль"
+      ],
+      "Choose user affiliations": [
+        "Выбар прыналежнасцей карыстальніка"
       ],
       "Click a value in the table to use it as filter": [
         "Націсніце значэнне ў табліцы, каб выкарыстоўваць яго ў якасці фільтра."
@@ -10388,6 +10444,9 @@
       ],
       "Confirm phone number": [
         "Пацвердзіць нумар тэлефона"
+      ],
+      "Connect organization": [
+        "Падключэнне арганізацыі"
       ],
       "Contact us": [
         "Звязацца з намі"
@@ -10982,6 +11041,9 @@
       "Device information such as operating system": [
         "Звесткі пра прыладу, такія як аперацыйная сістэма"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Бачнае імя для аб'екта ў базе даных eduGAIN"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-адрас канцавога пункта ад пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)"
       ],
@@ -11002,6 +11064,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Пазначыць дамен, які можна выкарыстоўваць для аўтэнтыфікацыі з SAML SSO"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Пазначце карыстальнікаў аб'екта eduGAIN, якім дазволена аўтэнтыфікацыя з дапамогай SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новы перыяд аплаты пачнецца ў ${ formattedTime }"

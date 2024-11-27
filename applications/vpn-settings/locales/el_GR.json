@@ -106,6 +106,9 @@
       "Change": [
         "Αλλαγή"
       ],
+      "Change configuration": [
+        "Αλλαγή διαμόρφωσης"
+      ],
       "Change keys": [
         "Αλλαγή κλειδιών"
       ],
@@ -296,7 +299,7 @@
         "Επέκταση"
       ],
       "Fit to window": [
-        "Προσάρμοση στο μέγεθος του παραθύρου"
+        "Προσαρμογή στο παράθυρο"
       ],
       "Forgot password?": [
         "Ξεχάσατε τον κωδικό πρόσβασης;"
@@ -400,6 +403,9 @@
       "Next month": [
         "Επόμενος μήνας"
       ],
+      "Next page": [
+        "Επόμενη σελίδα"
+      ],
       "OK": [
         "ΟΚ"
       ],
@@ -435,6 +441,9 @@
       ],
       "Previous month": [
         "Προηγούμενος μήνας"
+      ],
+      "Previous page": [
+        "Προηγούμενη σελίδα"
       ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
@@ -1112,8 +1121,8 @@
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } ηλεκτρονικές διευθύνσεις, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Ασφαλίστε τα email σας και προγραμματίστε με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
-        "Ασφαλίστε τα email σας και προγραμματίστε με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση . Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 ηλεκτρονικές διευθύνσεις, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
@@ -2322,7 +2331,7 @@
     },
     "Disable address prompt": {
       "Are you sure you want to disable this address?": [
-        "Είστε βέβαιοι ότι θέλετε να απενεργοποιήσετε αυτή τη διεύθυνση;"
+        "Θέλετε σίγουρα να απενεργοποιήσετε αυτή τη διεύθυνση;"
       ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Απενεργοποιώντας αυτήν τη διεύθυνση ${ address }, δε θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε email χρησιμοποιώντας αυτήν τη διεύθυνση και όλα τα συνδεδεμένα προϊόντα ${ BRAND_NAME } θα απενεργοποιηθούν."
@@ -3518,7 +3527,7 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
+        "Το ${ appName } χρειάζεται την άδειά σας για ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Αν συνεχίσετε, θα χάσετε την πρόσβαση σε όλα τα τωρινά κρυπτογραφημένα δεδομένα εντός του λογαριασμού σας."
@@ -3704,6 +3713,9 @@
       "All members have been added.": [
         "Όλα τα μέλη έχουν προστεθεί."
       ],
+      "All users": [
+        "Όλοι οι χρήστες"
+      ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
       ],
@@ -3729,22 +3741,22 @@
         "Οφειλόμενο ποσό"
       ],
       "Are you sure you want to cancel editing the group?": [
-        "Είστε βέβαιοι ότι θέλετε να ακυρώσετε την επεξεργασία της ομάδας;"
+        "Θέλετε σίγουρα να ακυρώσετε την επεξεργασία της ομάδας;"
       ],
       "Are you sure you want to discard your changes?": [
         "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
-        "Είστε βέβαιοι ότι θέλετε να δώσετε δικαιώματα διαχειριστή σε αυτόν τον χρήστη;"
+        "Θέλετε σίγουρα να δώσετε δικαιώματα διαχειριστή σε αυτόν τον χρήστη;"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Θέλετε σίγουρα να αφαιρέσετε τα προνόμια διαχειριστή από αυτόν τον χρήστη;"
       ],
       "Are you sure you want to remove all members from this group?": [
-        "Είστε βέβαιοι ότι θέλετε να καταργήσετε όλα τα μέλη από αυτήν την ομάδα;"
+        "Θέλετε σίγουρα να καταργήσετε όλα τα μέλη από αυτήν την ομάδα;"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
-        "Είστε βέβαιοι ότι θέλετε να καταργήσετε τον τομέα ${ boldDomain };"
+        "Θέλετε σίγουρα να καταργήσετε τον τομέα ${ boldDomain };"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Ζητήστε από τον διαχειριστή του οργανισμού σας να ρυθμίσει τις Πύλες."
@@ -3815,6 +3827,12 @@
       "Connection data will be available in around 1 hour.": [
         "Τα δεδομένα σύνδεσης θα είναι διαθέσιμα σε περίπου 1 ώρα."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Συνεχίστε για να επιτρέψετε στο **${ affiliationsText }** από **${ organizationValue.Name }** να συμμετέχει στον οργανισμό σας ${ BRAND_NAME }."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Συνεχίστε για να συνδέσετε το **${ organizationValue.Name }** με τον οργανισμό σας ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Συνέχεια με το ${ freeName }"
       ],
@@ -3868,11 +3886,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Προσαρμόστε την εμφάνιση και την αίσθηση των ${ BRAND_NAME } εφαρμογών."
       ],
-      "Dedicated servers": [
-        "Αποκλειστικοί διακομιστές"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
+      ],
+      "Dedicated servers": [
+        "Αποκλειστικοί διακομιστές"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να επιτρέψουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -3954,6 +3972,9 @@
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
       ],
+      "EduGain configuration saved": [
+        "Αποθηκεύτηκε η διαμόρφωση EduGain"
+      ],
       "email": [
         "ηλεκτρονικό ταχυδρομείο"
       ],
@@ -4006,10 +4027,10 @@
         "Καταχωρίστε τον κωδικό οργανισμού για να επαναφέρετε τα προνόμια διαχειριστή. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
+        "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Πληκτρολογείστε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
+        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Εισάγετε τα στοιχεία του Λογαριασμού σας ${ BRAND_NAME }."
@@ -4281,6 +4302,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Φόρτωση ημερολογίου, παρακαλούμε περιμένετε. Θα μεταφερθείτε στην πλατφόρμα προγραμματισμού Calendly σε μια νέα καρτέλα."
       ],
+      "Loading eduGAIN data...": [
+        "Φόρτωση δεδομένων eduGAIN..."
+      ],
       "Loading gateways monitoring current status.": [
         "Φόρτωση πυλών παρακολούθησης της τρέχουσας κατάστασης."
       ],
@@ -4349,6 +4373,9 @@
       ],
       "No Gateways yet": [
         "Δεν υπάρχουν ακόμη πύλες"
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Δεν υπάρχουν οργανισμοί ενεργοποιημένοι με **eduGAIN** για το **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
@@ -4469,7 +4496,7 @@
         "Παρακαλώ επαληθεύστε τη πληρωμή που βρίσκεται στη νέα καρτέλα που έχει ανοιχτεί."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Παρακαλούμε να περιμένετε έως ότου οι αλλαγές σας συγχρονιστούν με τον διακομιστή."
+        "Παρακαλούμε περιμένετε έως ότου οι αλλαγές σας συγχρονιστούν με τον διακομιστή."
       ],
       "Plus or Visionary subscription required": [
         "Απαιτείται συνδρομή Plus ή Visionary"
@@ -4567,8 +4594,17 @@
       "Securing your account": [
         "Διασφάλιση του λογαριασμού σας"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Επιλέξτε έναν οργανισμό ενεργοποιημένο με **eduGAIN** για **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Επιλέξτε μία ή περισσότερες συνεργασίες χρηστών"
+      ],
       "Select recently used servers": [
         "Επιλέξτε από πρόσφατα χρησιμοποιημένους διακομιστές"
+      ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Επιλέξτε τις συνεργασίες χρηστών από **${ organizationValue.Name }** (${ organizationValue.EntityId }) που θέλετε να επιτρέψετε στον οργανισμό σας ${ BRAND_NAME }:"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Στείλτε email για να ενθαρρύνετε τα μέλη σας να προστατεύσουν τους λογαριασμούς τους με το 2FA."
@@ -4583,7 +4619,7 @@
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
       "Session timed out": [
-        "Λήξη χρόνου συνεδρίας"
+        "Η συνεδρία έληξε"
       ],
       "Setting up your organization": [
         "Γίνεται ρύθμιση του οργανισμού σας"
@@ -4638,7 +4674,7 @@
         "Η συνδρομή ανανεώνεται αυτόματα κάθε μήνα."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Λήξη συνδρομής: Ενεργοποιήστε ξανά κατά ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
+        "Λήξη συνδρομής: Ενεργοποιήστε ξανά έως ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
       ],
       "Summary": [
         "Περίληψη"
@@ -4717,6 +4753,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Αυτό το μήνυμα δε θα φτάσει στην ομάδα υποστήριξης, εάν έχετε κάποιο πρόβλημα με την υπηρεσία μας ή χρειάζεστε περαιτέρω ενέργειες από την πλευρά μας ${ supportLink }."
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Αυτός ο οργανισμός είναι ενεργοποιημένος με **eduGAIN** για **${ domain.DomainName }**."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Αυτός ο χρήστης είναι προς το παρόν υπεύθυνος για τις πληρωμές του οργανισμού σας. Με την υποβάθμιση αυτού του μέλους, θα είστε εσείς υπεύθυνοι για τις πληρωμές του οργανισμού σας."
@@ -4871,11 +4910,11 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "Username": [
-        "Όνομα Χρήστη"
-      ],
       "username": [
         "όνομα χρήστη"
+      ],
+      "Username": [
+        "Όνομα Χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -5156,10 +5195,10 @@
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Ο λογαριασμός σας έχει περιορισμένες λειτουργίες, και όλες οι υπηρεσίες βρίσκονται σε φραγή έως ότου πραγματοποιηθεί η πληρωμή. ${ payInvoiceLink }"
+        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Ο λογαριασμός σας έχει περιοριστεί, και όλες οι υπηρεσίες βρίσκονται σε φραγή έως ότου πραγματοποιηθεί η πληρωμή. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο και τέθηκε σε περιορισμένη κατάσταση. Η συνεχής αποφυγή πληρωμών θα οδηγήσει σε φραγή εισερχόμενων μηνυμάτων και κοινοποίησης συνδέσμων. ${ payInvoiceLink }"
+        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο και τέθηκε σε περιορισμό. Η συνεχής αποφυγή πληρωμών θα οδηγήσει σε φραγή εισερχόμενων μηνυμάτων και κοινοποίησης συνδέσμων. ${ payInvoiceLink }"
       ],
       "Your account was successfully updated with this promotion": [
         "Ο λογαριασμός σας ενημερώθηκε με επιτυχία με αυτήν την προσφορά"
@@ -5544,6 +5583,9 @@
       "Enter the code displayed on your TV": [
         "Εισάγετε τον κωδικό που εμφανίζεται στην τηλεόρασή σας"
       ],
+      "Entity ID": [
+        "ID οντότητας"
+      ],
       "Event": [
         "Εκδήλωση"
       ],
@@ -5670,6 +5712,9 @@
       "Organization password": [
         "Κωδικός πρόσβασης οργανισμού"
       ],
+      "Other": [
+        "Άλλο"
+      ],
       "Other amount": [
         "Άλλο ποσό"
       ],
@@ -5791,6 +5836,9 @@
       "User": [
         "Χρήστης"
       ],
+      "User affiliations": [
+        "Συνεργασίες χρηστών"
+      ],
       "User's new password": [
         "Νέος κωδικός πρόσβασης χρήστη"
       ],
@@ -5889,6 +5937,11 @@
     "Label, credit card": {
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Επιλέξτε μια υπηρεσία ταυτοποίησης για να ξεκινήσετε"
       ]
     },
     "Link": {
@@ -6316,8 +6369,8 @@
         "Έως ${ numberOfUsers } χρήστες"
       ],
       "${ options }-day file version history": [
-        "${ options }-ημέρα ιστορικό εκδόσεων αρχείου",
-        "${ options }-ημέρες ιστορικό εκδόσεων αρχείου"
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin εφ'όρου ζωής"
@@ -7661,7 +7714,7 @@
         "Όλοι οι διαχειριστές θα έχουν πρόσβαση στο κλειδί."
       ],
       "Are you sure you want to change your organization key?": [
-        "Είστε βέβαιοι ότι θέλετε να αλλάξετε το κλειδί του οργανισμού σας;"
+        "Θέλετε σίγουρα να αλλάξετε το κλειδί του οργανισμού σας;"
       ],
       "Change organization key": [
         "Αλλαγή κλειδιού οργανισμού"
@@ -9306,7 +9359,7 @@
         "${ planNumberOfCalendars } ημερολόγια ανά χρήστη"
       ],
       "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
         "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
       ],
       "${ planNumberOfEmails } email address": [
@@ -9314,8 +9367,8 @@
         "${ planNumberOfEmails } διευθύνσεις email"
       ],
       "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη",
-        "${ planNumberOfEmails } διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+        "${ planNumberOfEmails } διεύθυνση ηλ. ταχυδρομείου ανά χρήστη",
+        "${ planNumberOfEmails } διευθύνσεις ηλ. ταχυδρομείου ανά χρήστη"
       ],
       "${ planNumberOfUsers } user": [
         "${ planNumberOfUsers } χρήστης",
@@ -10050,10 +10103,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -10073,6 +10126,9 @@
       ],
       "Change second password": [
         "Αλλαγή δεύτερου κωδικού πρόσβασης"
+      ],
+      "Choose user affiliations": [
+        "Επιλέξτε συνεργασίες χρηστών"
       ],
       "Click a value in the table to use it as filter": [
         "Κάντε κλικ σε μια τιμή στον πίνακα για να τη χρησιμοποιήσετε σαν φίλτρο"
@@ -10094,6 +10150,9 @@
       ],
       "Confirm phone number": [
         "Επιβεβαίωση αριθμού τηλεφώνου"
+      ],
+      "Connect organization": [
+        "Σύνδεση οργανισμού"
       ],
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
@@ -10680,6 +10739,9 @@
       "Device information such as operating system": [
         "Πληροφορίες συσκευής, όπως λειτουργικό σύστημα"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Εμφανιζόμενο όνομα για την οντότητα στη βάση δεδομένων eduGAIN"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL τελικού σημείου από πάροχο ταυτότητας (π.χ. https://idp.example.com/sso/saml)"
       ],
@@ -10700,6 +10762,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Καθορίστε τον τομέα στον οποίο επιτρέπεται ο έλεγχος ταυτότητας με SAML SSO"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Καθορίστε τους χρήστες της οντότητας eduGAIN που επιτρέπεται να πραγματοποιούν έλεγχο ταυτότητας με SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Ο νέος κύκλος συνδρομής ξεκινά στις ${ formattedTime }"
