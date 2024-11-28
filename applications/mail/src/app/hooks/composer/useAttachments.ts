@@ -32,15 +32,32 @@ import { useGetMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
 import { usePromise } from '../usePromise';
 
-export interface PendingUpload {
+type AttachmentUpload = {
     file: File;
     upload: Upload<UploadResult>;
-}
+};
+
+type DummyAttachmentUpload = {
+    file: File;
+    isDummy: boolean;
+};
+
+export type PendingUpload = AttachmentUpload | DummyAttachmentUpload;
+
+const createDummyUpload = (file: File) => ({
+    file,
+    isDummy: true,
+});
+
+export const isDummyattachmentUpload = (attachmentUpload: PendingUpload): attachmentUpload is DummyAttachmentUpload =>
+    'isDummy' in attachmentUpload;
+export const isAttachmentUpload = (attachmentUpload: PendingUpload): attachmentUpload is AttachmentUpload =>
+    !isDummyattachmentUpload(attachmentUpload);
 
 interface UseAttachmentsParameters {
     message: MessageState;
     onChange: MessageChange;
-    onSaveNow: () => Promise<void>;
+    saveNow: (message: MessageState) => Promise<void>;
     editorActionsRef?: MutableRefObject<ExternalEditorActions | undefined>;
     onMessageAlreadySent: () => void;
 }
@@ -48,7 +65,7 @@ interface UseAttachmentsParameters {
 export const useAttachments = ({
     message,
     onChange,
-    onSaveNow,
+    saveNow,
     editorActionsRef,
     onMessageAlreadySent,
 }: UseAttachmentsParameters) => {
@@ -98,68 +115,74 @@ export const useAttachments = ({
         );
     };
 
-    const ensureMessageIsCreated = async () => {
-        await onSaveNow();
-        // Message from cache has data because we just saved it if not
-        return getMessage(localID) as MessageStateWithData;
-    };
-
     /**
      * Wait for upload to finish, modify the message, add to embedded images if needed
      */
-    const handleAddAttachmentEnd = useHandler(async (action: ATTACHMENT_DISPOSITION, pendingUpload: PendingUpload) => {
-        try {
-            const upload = await pendingUpload.upload.resultPromise;
+    const handleAddAttachmentEnd = useHandler(
+        async (action: ATTACHMENT_DISPOSITION, pendingUpload: AttachmentUpload) => {
+            try {
+                const upload = await pendingUpload.upload.resultPromise;
 
-            const data = new Uint8Array(await readFileAsBuffer(pendingUpload.file));
-            const filename = pendingUpload.file.name;
-            dispatch(
-                addAttachment({
-                    ID: upload?.attachment.ID || '',
-                    attachment: { data, verified: 1, filename, signatures: [] },
-                })
-            );
+                const data = new Uint8Array(await readFileAsBuffer(pendingUpload.file));
+                const filename = pendingUpload.file.name;
+                dispatch(
+                    addAttachment({
+                        ID: upload?.attachment.ID || '',
+                        attachment: { data, verified: 1, filename, signatures: [] },
+                    })
+                );
 
-            // Warning, that change function can be called multiple times, don't do any side effect in it
-            onChange((message: MessageState) => {
-                // New attachment list
-                const Attachments = [...getAttachments(message.data), upload.attachment];
-                const embeddedImages = getEmbeddedImages(message);
+                // Warning, that change function can be called multiple times, don't do any side effect in it
+                onChange((message: MessageState) => {
+                    // New attachment list
+                    const Attachments = [...getAttachments(message.data), upload.attachment];
+                    const embeddedImages = getEmbeddedImages(message);
+
+                    if (action === ATTACHMENT_DISPOSITION.INLINE) {
+                        embeddedImages.push(createEmbeddedImageFromUpload(upload.attachment));
+                    }
+
+                    const messageImages = updateImages(message.messageImages, undefined, undefined, embeddedImages);
+
+                    return { data: { Attachments }, messageImages };
+                });
 
                 if (action === ATTACHMENT_DISPOSITION.INLINE) {
-                    embeddedImages.push(createEmbeddedImageFromUpload(upload.attachment));
+                    editorActionsRef?.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
                 }
 
-                const messageImages = updateImages(message.messageImages, undefined, undefined, embeddedImages);
+                removePendingUpload(pendingUpload);
+            } catch (error: any) {
+                if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
+                    onMessageAlreadySent();
+                } else if (error?.message === STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error')
+                            .t`Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.`,
+                    });
+                }
 
-                return { data: { Attachments }, messageImages };
-            });
-
-            if (action === ATTACHMENT_DISPOSITION.INLINE) {
-                editorActionsRef?.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
+                removePendingUpload(pendingUpload, error);
             }
-
-            removePendingUpload(pendingUpload);
-        } catch (error: any) {
-            if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
-                onMessageAlreadySent();
-            } else if (error?.message === STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR) {
-                createNotification({
-                    type: 'error',
-                    text: c('Error')
-                        .t`Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.`,
-                });
-            }
-
-            removePendingUpload(pendingUpload, error);
         }
-    });
+    );
 
     /**
      * Start uploading a file, the choice between attachment or inline is done.
      */
     const handleAddAttachmentsUpload = useHandler(
         async (action: ATTACHMENT_DISPOSITION, files: File[] = pendingFiles || []) => {
+            // Prepare dummy upload const and methods
+            let hasDummyUploads: boolean = false;
+            const removeDummyUploads = () => {
+                if (hasDummyUploads) {
+                    const filteredUploads = getPendingUpload().filter((upload) => !isDummyattachmentUpload(upload));
+                    setPendingUploads(filteredUploads);
+                }
+            };
+
+            // Reset pending files state
             setPendingFiles(undefined);
 
             // Trigger upload state before ensureMessageIsCreated
@@ -168,20 +191,41 @@ export const useAttachments = ({
                 newUpload();
             }
 
-            const messageFromState = await ensureMessageIsCreated();
-            const messageKeys = await getMessageKeys(messageFromState.data);
+            // If message is not saved, save it
+            if (!message.data?.ID) {
+                // Just before save, insert dummy uploads
+                // this provides instant visual feedback to the user
+                addPendingUploads(files.map(createDummyUpload));
+                hasDummyUploads = true;
 
-            // Message already sent
+                // Then save message
+                await saveNow(message).catch((error) => {
+                    // Remove dummy uploads in case of message save error
+                    removeDummyUploads();
+                    throw error;
+                });
+            }
+
+            // Message has now an ID and `data` because we just saved it
+            const messageFromState = getMessage(localID) as MessageStateWithData;
+
+            // Do not start upload if message was already sent
             if (messageFromState.draftFlags?.isSentDraft) {
+                removeDummyUploads();
                 onMessageAlreadySent();
                 return;
             }
 
+            const messageKeys = await getMessageKeys(messageFromState.data);
+
+            // When last async call is done, we can remove dummy uploads and replace with the real ones
+            removeDummyUploads();
+
             const uploads = upload(files, messageFromState, messageKeys, action, auth.UID);
+            const pendingUploads = files.map<AttachmentUpload>((file, i) => ({ file, upload: uploads[i] }));
 
-            const pendingUploads = files.map((file, i) => ({ file, upload: uploads[i] }));
+            // Add real pending uploads
             addPendingUploads(pendingUploads);
-
             pendingUploads.forEach((pendingUpload) => handleAddAttachmentEnd(action, pendingUpload));
         }
     );
@@ -267,7 +311,9 @@ export const useAttachments = ({
      * Cancel pending upload
      */
     const handleRemoveUpload = async (pendingUpload: PendingUpload) => {
-        pendingUpload.upload.abort();
+        if (isAttachmentUpload(pendingUpload)) {
+            pendingUpload.upload.abort();
+        }
         void removePendingUpload(pendingUpload);
     };
 

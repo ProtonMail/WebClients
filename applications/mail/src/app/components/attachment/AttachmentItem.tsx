@@ -12,7 +12,7 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import type { PendingUpload } from '../../hooks/composer/useAttachments';
+import { type PendingUpload, isAttachmentUpload } from '../../hooks/composer/useAttachments';
 import type { AttachmentHandler } from './AttachmentList';
 import { AttachmentAction } from './AttachmentList';
 
@@ -68,7 +68,7 @@ const AttachmentItem = ({
     const isMounted = useIsMounted();
 
     useEffect(() => {
-        if (pendingUpload) {
+        if (pendingUpload && isAttachmentUpload(pendingUpload)) {
             pendingUpload.upload.addProgressListener((event) => {
                 if (isMounted()) {
                     setProgression(event.loaded / event.total);
