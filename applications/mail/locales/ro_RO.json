@@ -378,6 +378,9 @@
       "Disable alias": [
         "Dezactivare alias"
       ],
+      "Disabling alias": [
+        "Dezactivare alias"
+      ],
       "Discard": [
         "Renunțare"
       ],
@@ -964,6 +967,9 @@
       ],
       "Remove this label": [
         "Eliminare etichetă"
+      ],
+      "Remove Zoom meeting": [
+        "Eliminare conferință Zoom"
       ],
       "Replace": [
         "Înlocuire"
@@ -1638,6 +1644,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ discountedPrice } este valabil pentru primele ${ cycle } luni. Apoi va fi reînnoit automat la prețul redus de ${ nextPrice } pentru ${ renewalLength } luni. Puteți anula oricând."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ discountedPrice } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ nextPrice } în fiecare lună. Puteți anula oricând."
       ]
@@ -6956,6 +6965,11 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "După apăsarea pe butonul de confirmare, în cont va mai rămâne ${ creditsRemaining } credit.",
+        "După apăsarea pe butonul de confirmare, în cont vor mai rămâne ${ creditsRemaining } credite.",
+        "După apăsarea pe butonul de confirmare, în cont vor mai rămâne ${ creditsRemaining } de credite."
+      ],
       "Please open the document to view it.": [
         "Deschideți documentul pentru a-l vedea."
       ],
@@ -7176,6 +7190,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Ne pare rău, acest mesaj nu există sau a expirat deja."
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Capacitatea de stocare nu este acceptată în acest navigator web. Este nevoie de această funcție pentru a activa căutarea în conținutul mesajelor."
+      ],
       "Subject": [
         "Subiect"
       ],
@@ -7321,6 +7338,9 @@
       "This message is from a mailing list.": [
         "Acest mesaj este de la o listă de corespondență."
       ],
+      "This message is from a SimpleLogin alias.": [
+        "Acest mesaj este de la un alias SimpleLogin."
+      ],
       "This message is signed by a key that has not been trusted yet.": [
         "Acest mesaj este semnat cu o cheie care încă nu a fost aprobată."
       ],
@@ -7440,6 +7460,9 @@
       "Turn on to search the content of your messages": [
         "Activare căutarea în conținutul mesajelor."
       ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Nu se poate accesa capacitatea de stocare în acest navigator web. Este nevoie de această funcție pentru a activa căutarea în conținutul mesajelor."
+      ],
       "Unlock message": [
         "Deblocare mesaj"
       ],
@@ -7547,6 +7570,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Au fost blocați următorii agenți de publicitate și organizații să vadă când deschideți acest e-mail, ce dispozitiv utilizați și unde vă aflați."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Nu se poate activa căutarea conținutului mesajelor în acest navigator web."
       ],
       "We could not verify the sender's trusted keys.": [
         "Nu s-au putut verifica cheile de încredere ale expeditorului."
@@ -9982,6 +10008,14 @@
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Începând de la ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -9994,14 +10028,6 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Începând de la ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -10159,6 +10185,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetați parolele și autentificarea cu doi factori a utilizatorilor."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Redirecționați traficul din Internet prin rețeaua Tor cu un singur clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
@@ -10722,8 +10751,23 @@
       "Please select your billing state first.": [
         "Selectați statul de facturare mai întâi."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Reînnoiți cu ${ renewPrice }, anulați oricând."
+      ],
       "Select billing country to pay": [
         "Selectați țara de facturare pentru a plăti"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ subscriptionLength } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ renewPrice } pentru ${ subscriptionLengthCopy } luni. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru primele ${ subscriptionLength } luni. Apoi va fi reînnoit automat cu ${ renewPrice } pentru ${ subscriptionLengthCopy } luni. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru primele prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ renewPrice } pentru ${ subscriptionLength } lună. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPrice } în fiecare lună. Puteți anula oricând."
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
@@ -11798,6 +11842,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Alias dezactivat"
+      ],
       "Unsubscribed": [
         "Dezabonat"
       ]
@@ -13740,6 +13787,9 @@
     "Tor out of date": {
       "stable release": [
         "versiune stabilă"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Această versiune a navigatorului web Tor nu este suportată. Actualizați la cea mai recentă versiune ${ stableRelease }."
       ]
     },
     "Update font modal": {

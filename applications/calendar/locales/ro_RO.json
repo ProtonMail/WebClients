@@ -560,6 +560,9 @@
       "Remove this participant": [
         "Eliminare acest participant"
       ],
+      "Remove Zoom meeting": [
+        "Eliminare conferință Zoom"
+      ],
       "Report a problem": [
         "Raportare problemă"
       ],
@@ -727,6 +730,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Treceți la ${ BRAND_NAME } Unlimited"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -967,6 +973,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ discountedPrice } este valabil pentru primele ${ cycle } luni. Apoi va fi reînnoit automat la prețul redus de ${ nextPrice } pentru ${ renewalLength } luni. Puteți anula oricând."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ discountedPrice } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ nextPrice } în fiecare lună. Puteți anula oricând."
       ]
@@ -3128,6 +3137,9 @@
       "Failed to get original occurrence in series": [
         "Nu s-a putut obține apariția inițială în serie."
       ],
+      "Failed to load OAuth modal.": [
+        "Eșuare încărcare panou modal OAuth."
+      ],
       "First name is too long": [
         "Prenumele este prea lung."
       ],
@@ -5018,6 +5030,11 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "După apăsarea pe butonul de confirmare, în cont va mai rămâne ${ creditsRemaining } credit.",
+        "După apăsarea pe butonul de confirmare, în cont vor mai rămâne ${ creditsRemaining } credite.",
+        "După apăsarea pe butonul de confirmare, în cont vor mai rămâne ${ creditsRemaining } de credite."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Furnizați un nume și o adresă de e-mail pentru a crea un grup."
@@ -7337,6 +7354,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetați parolele și autentificarea cu doi factori a utilizatorilor."
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Redirecționați traficul din Internet prin rețeaua Tor cu un singur clic."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
       ],
@@ -7918,8 +7938,23 @@
       "Please select your billing state first.": [
         "Selectați statul de facturare mai întâi."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Reînnoiți cu ${ renewPrice }, anulați oricând."
+      ],
       "Select billing country to pay": [
         "Selectați țara de facturare pentru a plăti"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ subscriptionLength } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ renewPrice } pentru ${ subscriptionLengthCopy } luni. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru primele ${ subscriptionLength } luni. Apoi va fi reînnoit automat cu ${ renewPrice } pentru ${ subscriptionLengthCopy } luni. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru primele prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ renewPrice } pentru ${ subscriptionLength } lună. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPrice } în fiecare lună. Puteți anula oricând."
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
@@ -9415,6 +9450,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "Amprenta a fost copiată în memorie"
+      ],
+      "Finish Zoom authentication to save event": [
+        "Finalizați autentificarea în Zoom pentru a salva evenimentul"
       ],
       "Future events deleted": [
         "Evenimente viitoare șterse."

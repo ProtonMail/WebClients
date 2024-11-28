@@ -217,6 +217,9 @@
       "Create": [
         "Opprett"
       ],
+      "Create a folder": [
+        "Opprett en mappe"
+      ],
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
       ],
@@ -1036,6 +1039,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ discountedPrice } er gyldig de første ${ cycle } månedene. Deretter vil den automatisk bli fornyet til den rabatterte prisen på ${ nextPrice } for ${ renewalLength } måneder. Du kan avbryte når som helst."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ discountedPrice } er gyldig den første måneden. Da blir den automatisk fornyet til ${ nextPrice } hver måned. Du kan avbryte når som helst."
       ]
@@ -2488,6 +2494,14 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Vi har oppdaget følgende felt i CSV-filen du lastet opp. Merk av for de du ønsker å importere."
+      ]
+    },
+    "Docs Info": {
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "Å samarbeide ble akkurat enklere. Nå kan hvem som helst foreslå endringer uten å endre dokumentet."
+      ],
+      "Suggestion mode is here": [
+        "Forslagsmodus er her"
       ]
     },
     "Downgrade account reason": {
@@ -4199,6 +4213,9 @@
       "An active recovery file": [
         "En aktiv gjenopprettingsfil"
       ],
+      "an anonymous user": [
+        "en anonym bruker"
+      ],
       "An issue occurred during the restore process.": [
         "Det oppstod et problem under gjenopprettingsprosessen."
       ],
@@ -4917,6 +4934,10 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Legg merke til at denne oppgaven kan ta litt tid avhengig av størrelsen på adresseboken din."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Vær oppmerksom på at ved å klikke på Bekreft-knappen, vil kontoen din ha ${ creditsRemaining } kreditt igjen.",
+        "Vær oppmerksom på at ved å klikke på Bekreft-knappen, vil kontoen din ha ${ creditsRemaining } kreditter igjen."
+      ],
       "Please open the document to view it.": [
         "Åpne dokumentet for å se det."
       ],
@@ -5161,6 +5182,12 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Programmet trenger å dekryptere kontaktene dine lokalt før de kan bli eksportert. På slutten av prosessen vil en VCF-fil bli generert, og du vil kunne laste den ned."
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Den digitale signaturen er delvis verifisert. Filen ble lastet opp fra en offentlig side som ikke spesifiserer en bestemt brukeropprinnelse."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Den digitale signaturen er delvis verifisert. Mappen ble lastet opp fra en offentlig side som ikke spesifiserer en bestemt brukeropprinnelse."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Nedlastingsantallet inkluderer både faktiske nedlastinger og forekomster der filer forhåndsvises."
@@ -5793,6 +5820,12 @@
       "Calendars": [
         "Kalendere"
       ],
+      "Can edit": [
+        "Kan redigere"
+      ],
+      "Can view": [
+        "Kan se"
+      ],
       "Cancel download": [
         "Avbryt nedlasting"
       ],
@@ -6273,6 +6306,14 @@
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Organiser, legg til og rediger filer"
+      ],
+      "View and download": [
+        "Se og laste ned"
       ]
     },
     "Label for contact group color": {
@@ -7586,6 +7627,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Tilbakestill brukerpassord og tilbakestill tofaktorautentisering på brukere"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Rut din internetttrafikk gjennom Tor-nettverket med ett enkeltklikk."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
       ],
@@ -7906,6 +7950,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Ikke nok ledig plass til å laste opp ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "Offentlig koblingstilgang oppdatert"
+      ],
+      "Public link update access failed ": [
+        "Tilgang til oppdatering av offentlig kobling mislyktes "
+      ],
       "Root folder failed to be loaded": [
         "Rotmappen kunne ikke lastes inn"
       ],
@@ -7942,6 +7992,10 @@
       "This item was not removed from your list": [
         "Dette elementet ble ikke fjernet fra listen din",
         "Noen elementer kunne ikke fjernes fra listen din"
+      ],
+      "This item was successfully removed from your list": [
+        "Dette elementet ble fjernet fra listen din",
+        "Alle elementer ble fjernet fra listen din"
       ],
       "Trash failed to be emptied": [
         "Papirkurven kunne ikke tømmes"
@@ -7988,6 +8042,9 @@
       "Continue": [
         "Fortsett"
       ],
+      "Create a document": [
+        "Opprett et dokument"
+      ],
       "Get started": [
         "Kom i gang"
       ],
@@ -7999,6 +8056,9 @@
       ],
       "Invite members": [
         "Inviter medlemmer"
+      ],
+      "Maybe Later": [
+        "Kanskje senere"
       ],
       "Maybe later": [
         "Kanskje senere"
@@ -8277,8 +8337,23 @@
       "Please select your billing state first.": [
         "Velg faktureringsstaten din først."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Fornyes til ${ renewPrice }, avbryt når som helst."
+      ],
       "Select billing country to pay": [
         "Velg faktureringsland for å betale"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPrice } for ${ subscriptionLengthCopy } måneder. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene. Deretter vil den automatisk bli fornyet til ${ renewPrice } for ${ subscriptionLengthCopy } måneder. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPrice } for ${ subscriptionLength } måned. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPrice } hver måned. Du kan avbryte når som helst."
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"

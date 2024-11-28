@@ -217,6 +217,9 @@
       "Create": [
         "Luo"
       ],
+      "Create a folder": [
+        "Luo kansio"
+      ],
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
@@ -2490,6 +2493,11 @@
         "Lataamassasi CSV-tiedostossa havaittiin seuraavat kentät. Valitse ne, jotka haluat tuoda."
       ]
     },
+    "Docs Info": {
+      "Suggestion mode is here": [
+        "Ehdotustila on täällä"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Vikoja tai laatuongelmia"
@@ -4199,6 +4207,9 @@
       "An active recovery file": [
         "Aktiivinen palautustiedosto"
       ],
+      "an anonymous user": [
+        "anonyymi käyttäjä"
+      ],
       "An issue occurred during the restore process.": [
         "Ongelma palautusprosessissa."
       ],
@@ -5793,6 +5804,12 @@
       "Calendars": [
         "Kalenterit"
       ],
+      "Can edit": [
+        "Voi muokata"
+      ],
+      "Can view": [
+        "Voi tarkastella"
+      ],
       "Cancel download": [
         "Peru lataus"
       ],
@@ -6273,6 +6290,14 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Järjestele, lisää ja muokkaa tiedostoja"
+      ],
+      "View and download": [
+        "Tarkastele ja lataa"
       ]
     },
     "Label for contact group color": {
@@ -7592,7 +7617,7 @@
     },
     "new_plans: Upsell attribute": {
       "24/7 support": [
-        "24/7-tuki"
+        "24/7-asiakastuki"
       ],
       "Access advanced VPN features": [
         "Käyttöoikeus edistyneisiin VPN-ominaisuuksiin"
@@ -7886,6 +7911,10 @@
         "Tätä kohdetta ei poistettu listaltasi",
         "Joitakin kohteita ei voitu poistaa listaltasi"
       ],
+      "This item was successfully removed from your list": [
+        "Tämä kohde poistettiin listaltasi",
+        "Kaikki kohteet poistettiin listaltasi"
+      ],
       "Trash failed to be emptied": [
         "Roskakorin tyhjennys epäonnistui"
       ],
@@ -7931,6 +7960,9 @@
       "Continue": [
         "Jatka"
       ],
+      "Create a document": [
+        "Luo dokumentti"
+      ],
       "Get started": [
         "Aloita"
       ],
@@ -7942,6 +7974,9 @@
       ],
       "Invite members": [
         "Kutsu jäseniä"
+      ],
+      "Maybe Later": [
+        "Ehkä myöhemmin"
       ],
       "Maybe later": [
         "Ehkä myöhemmin"
@@ -8219,6 +8254,9 @@
       ],
       "Please select your billing state first.": [
         "Valitse laskutusosavaltiosi ensin."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Uusitaan hintaan ${ renewPrice }, peru milloin tahansa."
       ],
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"

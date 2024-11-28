@@ -381,6 +381,9 @@
       "Disable alias": [
         "Wyłącz alias"
       ],
+      "Disabling alias": [
+        "Wyłączanie aliasu"
+      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -968,6 +971,9 @@
       ],
       "Remove this label": [
         "Usuń etykietę"
+      ],
+      "Remove Zoom meeting": [
+        "Usuń spotkanie Zoom"
       ],
       "Replace": [
         "Zastąp"
@@ -7065,6 +7071,12 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Pamiętaj, że w zależności od rozmiaru książki adresowej, ten proces może zająć trochę czasu."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Po kliknięciu przycisku Potwierdź, na koncie pozostanie ${ creditsRemaining } środek.",
+        "Po kliknięciu przycisku Potwierdź na koncie pozostaną ${ creditsRemaining } środki.",
+        "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków.",
+        "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków."
+      ],
       "Please open the document to view it.": [
         "Otwórz dokument, aby go zobaczyć."
       ],
@@ -7433,6 +7445,9 @@
       ],
       "This message is from a mailing list.": [
         "Ta wiadomość pochodzi z listy mailingowej."
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "Ta wiadomość pochodzi z aliasu SimpleLogin."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Ta wiadomość jest podpisana przy pomocy klucza, który nie został jeszcze dodany do zaufanych."
@@ -10149,6 +10164,14 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Wybierz plan Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Od ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -10161,14 +10184,6 @@
       ],
       "Switch plans?": [
         "Zmienić plany?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -10893,6 +10908,9 @@
       ],
       "Please select your billing state first.": [
         "Najpierw wybierz stan rozliczeniowy"
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Odnowienie za ${ renewPrice }. Anuluj w dowolnym momencie."
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
@@ -11999,6 +12017,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Alias został wyłączony"
+      ],
       "Unsubscribed": [
         "Subskrypcja została anulowana"
       ]

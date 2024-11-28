@@ -408,6 +408,9 @@
       "Next month": [
         "Próximo mês"
       ],
+      "Next page": [
+        "Próxima página"
+      ],
       "No, thanks": [
         "Não, obrigado"
       ],
@@ -449,6 +452,9 @@
       ],
       "Previous month": [
         "Mês anterior"
+      ],
+      "Previous page": [
+        "Página anterior"
       ],
       "Print": [
         "Imprimir"
@@ -3780,6 +3786,10 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } contato selecionado",
         "${ selectedContactsLength }/${ contactsLength } contatos selecionados"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } selecionados",
+        "${ selectedCount } selecionados"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } pasta selecionada",
