@@ -557,6 +557,9 @@
       "Remove this participant": [
         "Fjern denne deltakeren"
       ],
+      "Remove Zoom meeting": [
+        "Fjern Zoom-møte"
+      ],
       "Report a problem": [
         "Rapporter et problem"
       ],
@@ -724,6 +727,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Oppgrader til ${ BRAND_NAME } Unlimited"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upload picture": [
         "Last opp bilde"
@@ -959,6 +965,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ discountedPrice } er gyldig de første ${ cycle } månedene. Deretter vil den automatisk bli fornyet til den rabatterte prisen på ${ nextPrice } for ${ renewalLength } måneder. Du kan avbryte når som helst."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ discountedPrice } er gyldig den første måneden. Da blir den automatisk fornyet til ${ nextPrice } hver måned. Du kan avbryte når som helst."
       ]
@@ -3102,6 +3111,9 @@
       "Failed to get original occurrence in series": [
         "Kunne ikke hente den originale forekomsten i serien"
       ],
+      "Failed to load OAuth modal.": [
+        "Kunne ikke laste inn oauth-modal."
+      ],
       "First name is too long": [
         "Fornavnet er for langt"
       ],
@@ -4944,6 +4956,10 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Legg merke til at denne oppgaven kan ta litt tid avhengig av størrelsen på adresseboken din."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Vær oppmerksom på at ved å klikke på Bekreft-knappen, vil kontoen din ha ${ creditsRemaining } kreditt igjen.",
+        "Vær oppmerksom på at ved å klikke på Bekreft-knappen, vil kontoen din ha ${ creditsRemaining } kreditter igjen."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Oppgi et navn og en e-postadresse for å opprette en gruppe."
@@ -7221,6 +7237,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Tilbakestill brukerpassord og tilbakestill tofaktorautentisering på brukere"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Rut din internetttrafikk gjennom Tor-nettverket med ett enkeltklikk."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
       ],
@@ -7773,8 +7792,23 @@
       "Please select your billing state first.": [
         "Velg faktureringsstaten din først."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Fornyes til ${ renewPrice }, avbryt når som helst."
+      ],
       "Select billing country to pay": [
         "Velg faktureringsland for å betale"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPrice } for ${ subscriptionLengthCopy } måneder. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene. Deretter vil den automatisk bli fornyet til ${ renewPrice } for ${ subscriptionLengthCopy } måneder. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPrice } for ${ subscriptionLength } måned. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPrice } hver måned. Du kan avbryte når som helst."
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
@@ -9232,6 +9266,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "Fingeravtrykk kopiert til utklippstavlen"
+      ],
+      "Finish Zoom authentication to save event": [
+        "Fullfør Zoom-autentisering for å lagre hendelsen"
       ],
       "Future events deleted": [
         "Framtidige hendelser slettet"

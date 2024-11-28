@@ -725,6 +725,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Päivitä ${ BRAND_NAME } Unlimitediin"
       ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
+      ],
       "Upload picture": [
         "Lataa kuva"
       ],
@@ -3101,6 +3104,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Ketjun alkuperäisen tapahtuman nouto epäonnistui"
+      ],
+      "Failed to load OAuth modal.": [
+        "OAuth-modaalin lataaminen epäonnistui"
       ],
       "First name is too long": [
         "Etunimi on liian pitkä"
@@ -7284,7 +7290,7 @@
     },
     "new_plans: Upsell attribute": {
       "24/7 support": [
-        "24/7-tuki"
+        "24/7-asiakastuki"
       ],
       "Access advanced VPN features": [
         "Käyttöoikeus edistyneisiin VPN-ominaisuuksiin"
@@ -7772,6 +7778,9 @@
       ],
       "Please select your billing state first.": [
         "Valitse laskutusosavaltiosi ensin."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Uusitaan hintaan ${ renewPrice }, peru milloin tahansa."
       ],
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"

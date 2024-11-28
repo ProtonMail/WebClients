@@ -563,6 +563,9 @@
       "Remove this participant": [
         "Odstranit tohoto účastníka"
       ],
+      "Remove Zoom meeting": [
+        "Odebrat chůzku Zoom"
+      ],
       "Report a problem": [
         "Nahlásit problém"
       ],
@@ -730,6 +733,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Navýšit na ${ BRAND_NAME } Unlimited"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -3154,6 +3160,9 @@
       "Failed to get original occurrence in series": [
         "Nepodařilo se získat původní výskyt v sérii"
       ],
+      "Failed to load OAuth modal.": [
+        "Nepodařilo se načíst modální okno OAuth."
+      ],
       "First name is too long": [
         "Křestní jméno je příliš dlouhé"
       ],
@@ -5092,6 +5101,12 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Pro vytvoření skupiny uveďte jméno a e-mailovou adresu."
@@ -7453,6 +7468,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetovat uživatelská hesla a resetovat dvoufázové ověření uživatelů"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Směrujte svůj internetový provoz skrze sít Tor jediným kliknutím"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ],
@@ -8066,8 +8084,14 @@
       "Please select your billing state first.": [
         "Vyberte prosím nejprve váš stát platby."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Obnovuje se za ${ renewPrice }, zrušit lze kdykoli."
+      ],
       "Select billing country to pay": [
         "Vyberte zemi platby"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
@@ -9601,6 +9625,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "Otisk zkopírován do schránky"
+      ],
+      "Finish Zoom authentication to save event": [
+        "Dokončení ověření Zoom pro uložení události"
       ],
       "Future events deleted": [
         "Budoucí události smazány"
