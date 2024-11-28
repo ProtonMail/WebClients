@@ -54,7 +54,7 @@ import {
 } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
-import { getPlanCardSubscriptionData, swapCurrency } from '../single-signup-v2/helper';
+import { getPlanCardSubscriptionData, getSubscriptionData, swapCurrency } from '../single-signup-v2/helper';
 import type { SignupDefaults, SubscriptionDataCycleMappingByCurrency } from '../single-signup-v2/interface';
 import { Steps } from '../single-signup-v2/interface';
 import { getPaymentMethodsAvailable, getSignupTelemetryData } from '../single-signup-v2/measure';
@@ -207,7 +207,7 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
         plans,
         preferredCurrency,
         subscriptionDataCycleMappingByCurrency,
-        billingAddress,
+        billingAddress: maybeBillingAddress,
         withModel = false,
     }: CheckPlansArgs) => {
         const vpnPlanName = PLANS.VPN2024;
@@ -234,6 +234,7 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
         const cycle = modelCycle || signupParameters.cycle || defaults.cycle;
 
         const isVpnPassPromotion = getIsVPNPassPromotion(coupon, selectedPlanCurrency);
+        const billingAddress = maybeBillingAddress ?? model.subscriptionData.billingAddress;
 
         const getSubscriptionDataCycleMapping = async () => {
             const originalCoupon = coupon;
@@ -246,7 +247,7 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
             const sharedOptions = {
                 plansMap,
                 paymentsApi,
-                billingAddress: billingAddress ?? model.subscriptionData.billingAddress,
+                billingAddress,
             };
 
             const subscriptionDataCycleMappingPromise = getPlanCardSubscriptionData({
@@ -310,19 +311,24 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
             return result;
         })();
 
-        const subscriptionData = (() => {
-            if (
-                cycle === CYCLE.YEARLY &&
-                isVpnPassPromotion &&
-                subscriptionDataCycleMapping[PLANS.VPN_PASS_BUNDLE]?.[cycle]
-            ) {
-                return subscriptionDataCycleMapping[PLANS.VPN_PASS_BUNDLE]?.[CYCLE.YEARLY];
+        let subscriptionData = (() => {
+            // If it's the vpn pass promotion we change the default selected plan to vpn pass bundle 12m
+            if (cycle === CYCLE.YEARLY && isVpnPassPromotion) {
+                return subscriptionDataCycleMapping[PLANS.VPN_PASS_BUNDLE]?.[cycle];
             }
-            return (
-                subscriptionDataCycleMapping[plan.Name as PLANS]?.[cycle] ||
-                subscriptionDataCycleMapping[vpnPlanName]?.[cycleData.upsellCycle]
-            );
+            return subscriptionDataCycleMapping[plan.Name as PLANS]?.[cycle];
         })();
+
+        if (!subscriptionData || subscriptionData.checkResult.optimistic) {
+            subscriptionData = await getSubscriptionData(paymentsApi, {
+                plansMap,
+                planIDs,
+                currency: selectedPlanCurrency,
+                cycle,
+                coupon,
+                billingAddress,
+            });
+        }
 
         const selectedPlan = getPlanFromPlanIDs(plansMap, subscriptionData?.planIDs) || FREE_PLAN;
 
