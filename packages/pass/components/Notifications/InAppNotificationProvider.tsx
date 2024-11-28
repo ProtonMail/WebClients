@@ -10,26 +10,26 @@ import { InAppNotificationDisplayType, type InAppNotificationState } from '@prot
 import { PassFeature } from '@proton/pass/types/api/features';
 import noop from '@proton/utils/noop';
 
-import { Banner } from './Banner';
-import { Modal } from './Modal';
+import { InAppNotificationBanner } from './InAppNotificationBanner';
+import { InAppNotificationModal } from './InAppNotificationModal';
 
-type InAppMessagesContextValue = {
+type InAppNotificationContextValue = {
     /** Changes the message state from Unread to Read or Dismissed */
     changeNotificationState: (messageId: string, state: InAppNotificationState) => void;
 };
 
-const InAppMessagesContext = createContext<InAppMessagesContextValue>({
+const InAppNotificationContext = createContext<InAppNotificationContextValue>({
     changeNotificationState: noop,
 });
 
 // Mapper function to prevent hot-reload pre-initialization errors
 const getNotificationComponent = (displayType?: InAppNotificationDisplayType) =>
     ({
-        [InAppNotificationDisplayType.BANNER]: Banner,
-        [InAppNotificationDisplayType.MODAL]: Modal,
+        [InAppNotificationDisplayType.BANNER]: InAppNotificationBanner,
+        [InAppNotificationDisplayType.MODAL]: InAppNotificationModal,
     })[displayType!] ?? noop;
 
-export const InAppMessagesProvider: FC<PropsWithChildren> = ({ children }) => {
+export const InAppNotificationProvider: FC<PropsWithChildren> = ({ children }) => {
     const inAppMessagesEnabled = useFeatureFlag(PassFeature.PassInAppMessages);
     const notification = useSelector(selectNextNotification);
     const updateNotificationStateRequest = useRequest(updateInAppNotificationState);
@@ -41,14 +41,14 @@ export const InAppMessagesProvider: FC<PropsWithChildren> = ({ children }) => {
         []
     );
 
-    const ctx = useMemo<InAppMessagesContextValue>(() => ({ changeNotificationState }), []);
+    const ctx = useMemo<InAppNotificationContextValue>(() => ({ changeNotificationState }), []);
 
     return (
-        <InAppMessagesContext.Provider value={ctx}>
+        <InAppNotificationContext.Provider value={ctx}>
             {children}
             {inAppMessagesEnabled && !updateNotificationStateRequest.loading && <NotificationComponent />}
-        </InAppMessagesContext.Provider>
+        </InAppNotificationContext.Provider>
     );
 };
 
-export const useInAppMessages = () => useContext(InAppMessagesContext);
+export const useInAppNotification = () => useContext(InAppNotificationContext);

@@ -23,13 +23,6 @@ const reducer: Reducer<NotificationReducerState> = (state = getInitialState(), a
 
         if (!notifications) return state;
 
-        // Order by priority and startTime
-        notifications.notifications.sort((n, n2) => {
-            const priorityOrder = n.priority - n2.priority;
-            if (priorityOrder !== 0) return priorityOrder;
-            return n.startTime - n2.startTime;
-        });
-
         return partialMerge(state, notifications);
     }
 

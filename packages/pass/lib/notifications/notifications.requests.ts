@@ -1,6 +1,7 @@
 import { api } from '@proton/pass/lib/api/api';
 import type { MaybeNull } from '@proton/pass/types';
 import type { InAppNotifications, UpdateInAppNotificationDTO } from '@proton/pass/types/data/notification';
+import { chainSort, sortOn } from '@proton/pass/utils/fp/sort';
 import noop from '@proton/utils/noop';
 
 export const getNotifications = async (): Promise<MaybeNull<InAppNotifications>> => {
@@ -30,7 +31,7 @@ export const getNotifications = async (): Promise<MaybeNull<InAppNotifications>>
                       }
                     : null,
             },
-        })),
+        })).sort(chainSort(sortOn('priority', 'DESC'), sortOn('startTime', 'ASC'))),
         lastId: Notifications.LastID ?? null,
         total: Notifications.Total,
     };
