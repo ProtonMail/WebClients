@@ -2,12 +2,14 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import {
+    LabelStack,
     OnboardingStep,
     type OnboardingStepRenderCallback,
     Toggle,
@@ -17,12 +19,15 @@ import {
     useEventManager,
     useKTVerifier,
 } from '@proton/components';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { orderAddress, setupAddress } from '@proton/shared/lib/api/addresses';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
-import { BRAND_NAME, DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, BRAND_NAME, DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import aliasesIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_aliases.svg';
@@ -71,10 +76,11 @@ const useGetFeatures = (shortDomain: string) => {
 
 interface FeatureItemProps extends Feature {
     checked: boolean;
+    isActivated: boolean;
     onToggle: (checked: boolean) => void;
 }
 
-const FeatureItem = ({ checked, description, icon, id, onToggle, title }: FeatureItemProps) => {
+const FeatureItem = ({ checked, description, icon, id, isActivated, onToggle, title }: FeatureItemProps) => {
     const { viewportWidth } = useActiveBreakpoint();
     const isSmallViewPort = viewportWidth['<=small'];
     const inputId = `onboarding-feature-${id}`;
@@ -88,12 +94,17 @@ const FeatureItem = ({ checked, description, icon, id, onToggle, title }: Featur
                 alt=""
             />
             <div className="flex-1 flex gap-0 user-select-none">
-                <label className="m-0 mb-1 text-weak text-cut block" htmlFor={inputId}>
+                <label className="m-0 mr-2 mb-1 text-weak text-cut block" htmlFor={inputId}>
                     <strong>{title}</strong>
                 </label>
+                {isActivated ? (
+                    <LabelStack className="text-uppercase self-start" labels={[{ color: '#1da583', name: 'active' }]} />
+                ) : null}
                 <p className="m-0 text-weak">{description}</p>
             </div>
-            <Toggle id={inputId} onChange={(event) => onToggle(event.target.checked)} checked={checked} />
+            {isActivated ? null : (
+                <Toggle id={inputId} onChange={(event) => onToggle(event.target.checked)} checked={checked} />
+            )}
         </div>
     );
 };
@@ -152,17 +163,38 @@ const usePmMeAddress = () => {
     };
 };
 
+const getIsAutoDeleteEnabled = (mailSettings: MailSettings | undefined) =>
+    Boolean(mailSettings?.AutoDeleteSpamAndTrashDays);
+
 const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
     const api = useApi();
     const { shortDomain, createPmMeAddress, loadingDependency } = usePmMeAddress();
     const features = useGetFeatures(shortDomain);
-    const [checkedItems, setCheckedItem] = useState<Record<FeatureID, boolean>>({
-        aliases: true,
-        autoDelete: true,
-        monitoring: true,
-    });
-    const hasAtLeastOneChecked = Object.values(checkedItems).some(Boolean);
+
+    const [addresses] = useAddresses();
+    const isAliasEnabled = Boolean(addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM));
+
+    const [mailSettings] = useMailSettings();
+    const isAutoDeleteEnabled = getIsAutoDeleteEnabled(mailSettings);
+
+    const [userSettings] = useUserSettings();
+    const isMonitoringEnabled = userSettings.BreachAlerts.Value === DARK_WEB_MONITORING_STATE.ENABLED;
+
+    const initialCheckedItems = {
+        aliases: isAliasEnabled,
+        autoDelete: isAutoDeleteEnabled,
+        monitoring: isMonitoringEnabled,
+    };
+
+    const hasAllItemsActivated = isAliasEnabled && isAutoDeleteEnabled && isMonitoringEnabled;
+
+    const [checkedItems, setCheckedItems] = useState<Record<FeatureID, boolean>>(initialCheckedItems);
+
+    const handleItemSelect = (id: FeatureID) => (isChecked: boolean) =>
+        setCheckedItems((prev) => ({ ...prev, [id]: isChecked }));
+
+    const hasNoItemsChecked = !Object.values(checkedItems).some(Boolean);
 
     const handleNext = () => {
         const promises = [
@@ -173,23 +205,23 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
             }),
         ];
 
-        if (checkedItems.aliases) {
+        if (checkedItems.aliases && !isAliasEnabled) {
             promises.push(createPmMeAddress());
         }
-        if (checkedItems.autoDelete) {
+        if (checkedItems.autoDelete && !isAutoDeleteEnabled) {
             promises.push(api(updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE)));
         }
-        if (checkedItems.monitoring) {
+        if (checkedItems.monitoring && !isMonitoringEnabled) {
             promises.push(api(enableBreachAlert()));
         }
 
         void Promise.allSettled(promises).then((results) => {
-            for (const result of results) {
+            results.forEach((result) => {
                 if (result.status === 'rejected') {
                     console.error(result.reason);
                     traceInitiativeError('mail-onboarding', result.reason);
                 }
-            }
+            });
         });
 
         onNext();
@@ -205,24 +237,23 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
                 <div className="flex flex-column gap-4">
                     {features.map(({ id, title, description, icon }) => (
                         <FeatureItem
-                            key={id}
-                            id={id}
-                            title={title}
+                            checked={checkedItems[id]}
                             description={description}
                             icon={icon}
-                            onToggle={(checked) => {
-                                setCheckedItem((prev) => ({ ...prev, [id]: checked }));
-                            }}
-                            checked={checkedItems[id]}
+                            id={id}
+                            isActivated={initialCheckedItems[id]}
+                            key={id}
+                            onToggle={handleItemSelect(id)}
+                            title={title}
                         />
                     ))}
                 </div>
             </NewOnboardingContent>
             <footer>
                 <Button size="large" fullWidth color="norm" onClick={handleNext} disabled={loadingDependency}>
-                    {hasAtLeastOneChecked
-                        ? c('Onboarding modal').t`Activate selected`
-                        : c('Onboarding modal').t`Start using ${BRAND_NAME}`}
+                    {hasAllItemsActivated || hasNoItemsChecked
+                        ? c('Onboarding modal').t`Start using ${BRAND_NAME}`
+                        : c('Onboarding modal').t`Activate selected`}
                 </Button>
             </footer>
         </OnboardingStep>
