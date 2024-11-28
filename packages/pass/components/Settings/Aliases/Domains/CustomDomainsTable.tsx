@@ -40,14 +40,16 @@ export const CustomDomainsTable: FC = () => {
                                     <TableCell>{domain.Domain}</TableCell>
                                     <TableCell>{domain.AliasCount}</TableCell>
                                     <TableCell>
-                                        {(() => {
-                                            if (domain.Domain === defaultAliasDomain) {
-                                                return <Badge type="primary">{c('Title').t`Default`}</Badge>;
-                                            }
+                                        <div className="flex justify-center">
+                                            {(() => {
+                                                if (domain.Domain === defaultAliasDomain) {
+                                                    return <Badge type="primary">{c('Title').t`Default`}</Badge>;
+                                                }
 
-                                            const statusLabel = getDomainStatusLabel(domain);
-                                            return statusLabel && <Badge type="light">{statusLabel}</Badge>;
-                                        })()}
+                                                const statusLabel = getDomainStatusLabel(domain);
+                                                return statusLabel && <Badge type="light">{statusLabel}</Badge>;
+                                            })()}
+                                        </div>
                                     </TableCell>
                                     <TableCell>
                                         <div className="flex justify-end">
