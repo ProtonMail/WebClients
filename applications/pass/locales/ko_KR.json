@@ -1117,7 +1117,7 @@
         "\"${ payload.item.data.metadata.name }\" 업데이트가 무시되었습니다."
       ],
       "${ count } invite successfully sent": [
-        "${ count }개 초대를 성공적으로 보냈습니다."
+        "초대 ${ count }개를 잘 보냈습니다"
       ],
       "${ count } time": [
         "${ count }번"
@@ -3245,7 +3245,7 @@
         "무료 체험을 즐겨보세요"
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
-        "${ aliasCount }개 별칭을 영구적으로 삭제하려고 합니다."
+        "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
       ]
     },
     "Validation": {
