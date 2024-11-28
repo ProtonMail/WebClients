@@ -615,15 +615,6 @@ export const useComposerContent = (args: EditorArgs) => {
         }
     };
 
-    /**
-     * Ensure the draft is saved before continue
-     */
-    const handleSaveNow = async () => {
-        if (!modelMessage.data?.ID) {
-            return saveNow(modelMessage);
-        }
-    };
-
     const {
         pendingFiles,
         pendingUploads,
@@ -637,7 +628,7 @@ export const useComposerContent = (args: EditorArgs) => {
     } = useAttachments({
         message: modelMessage,
         onChange: handleChange,
-        onSaveNow: handleSaveNow,
+        saveNow,
         editorActionsRef: isComposer ? args.editorRef : undefined,
         onMessageAlreadySent,
     });
