@@ -554,6 +554,9 @@
       "Remove this participant": [
         "この参加者を削除"
       ],
+      "Remove Zoom meeting": [
+        "Zoom会議を削除"
+      ],
       "Report a problem": [
         "問題を報告"
       ],
@@ -951,6 +954,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "${ discountedPrice }の特別な割引価格は最初の${ cycle }ヶ月のみ適用されます。そのあとは${ renewalLength }ヶ月${ nextPrice }の割引価格で自動更新されます。いつでもキャンセル可能です。"
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "特別割引価格 ${ discountedPrice } は最初の 1 か月間有効です。 その後、毎月 ${ nextPrice } で自動的に更新されます。 いつでもキャンセルできます。"
       ]
@@ -4871,6 +4877,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "確認ボタンをクリックすると、アカウントには ${ creditsRemaining } クレジットが残りますのでご注意ください。"
+      ],
       "Please provide a name and an email address for creating a group.": [
         "グループ作成のため、お名前とEメールアドレスをご記入ください。"
       ],
@@ -7105,6 +7114,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "ユーザーのパスワードとユーザーの 2 段階認証をリセットします"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "ワンクリックでインターネットトラフィックをTorネットワーク経由にルーティング"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ],
@@ -7628,8 +7640,23 @@
       "Please select your billing state first.": [
         "最初に請求先の州を選択してください。"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "${ renewPrice }で更新、いつでもキャンセル可能。"
+      ],
       "Select billing country to pay": [
         "支払い請求先の国を選択してください"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の${ subscriptionLength }ヶ月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは${ subscriptionLengthCopy }ヶ月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の${ subscriptionLength }ヶ月のみ適用されます。そのあとは${ subscriptionLengthCopy }ヶ月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは${ subscriptionLength }ヶ月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。そのあとは毎月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"

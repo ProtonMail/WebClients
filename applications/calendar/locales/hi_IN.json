@@ -634,6 +634,9 @@
       "Today": [
         "आज"
       ],
+      "Toggle Contacts app": [
+        "संपर्क ऐप बदलें"
+      ],
       "Trust": [
         "भरोसा करें"
       ],
@@ -669,6 +672,9 @@
       ],
       "Upgrade now": [
         "अभी अपग्रेड करें"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus पे अपग्रेड करें"
       ],
       "Upload picture": [
         "तस्वीर अपलोड करें"
@@ -2279,7 +2285,7 @@
         "कभी नहीं"
       ],
       "On date…": [
-        "इस दिन पे..."
+        "इस तारीख को…"
       ],
       "time": [
         "बार",
@@ -2474,6 +2480,21 @@
         "कैलेंडर जोड़ें"
       ]
     },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 यूज़र"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "Double your storage": [
+        "स्टोरेज दोगुना करें"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "ला रहे है ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "एक-जैसे इवेंट"
@@ -2504,6 +2525,9 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } रद्द कर दिया गया था।"
+      ],
       "All events in this series were updated.": [
         "इस श्रृंखला में सभी कार्यक्रमों को अपडेट किया गया था।"
       ],
@@ -2517,11 +2541,19 @@
     "Email body for invitation (date part)": {
       "TIME:\n${ formattedStart }": [
         "समय:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "समय:\n${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
       "Removed": [
         "हटाया गया"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "स्थान:\n${ eventLocation }"
       ]
     },
     "Email subject": {
@@ -2810,7 +2842,7 @@
         "कृपया पहले एक पता बनाएं।"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें.",
+        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें।",
         "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोधों को ठीक करें।"
       ],
       "Port is required": [
@@ -2984,7 +3016,7 @@
         "आपका फाइल ${ formattedFilename } अपलोड करते हुए कुछ गड़बड़ हो गई। सिर्फ ICS फाइल फॉर्मेट की अनुमति है।"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "आपकी फ़ाइल अपलोड करते समय एक त्रुटि हुई। कोई फ़ाइल नहीं चुनी गई है."
+        "आपकी फ़ाइल अपलोड करते समय एक त्रुटि हुई। कोई फ़ाइल नहीं चुनी गई है।"
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "एक अप्रत्याशित त्रुटि हुई। आयात फिर से शुरू होना चाहिए।"
@@ -3028,7 +3060,7 @@
         "आपकी फ़ाइल ${ formattedFilename } अपलोड करते समय एक त्रुटि हुई। कोई .csv या .vcf फ़ाइल चयनित नहीं है"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "आपकी फ़ाइल अपलोड करते समय एक त्रुटि हुई। कोई फ़ाइल नहीं चुनी गई है."
+        "आपकी फ़ाइल अपलोड करते समय एक त्रुटि हुई। कोई फ़ाइल नहीं चुनी गई है।"
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "आपकी फ़ाइल ${ formattedFilename } में ${ MAX_IMPORT_CONTACTS_STRING } से अधिक संपर्क हैं।"
@@ -3309,6 +3341,9 @@
       "Invited by: ${ inviteEmail }": [
         "इन्होने न्योता भेजा: ${ inviteEmail }"
       ],
+      "Manage addresses": [
+        "पते प्रबंधित करें"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "माफ करें, आप अभी प्लान नहीं बदल सकते।"
       ],
@@ -3470,6 +3505,9 @@
       ],
       "Search": [
         "खोजें"
+      ],
+      "Security Center": [
+        "सुरक्षा केंद्र"
       ]
     },
     "Hint": {
@@ -4053,6 +4091,9 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "आज ही अपना पसंदीदा ऐप डाउनलोड करें और आप जहां भी जाएं, अपने साथ गोपनीयता रखें।"
+      ],
+      "Drop file here to upload": [
+        "अपलोड करने के लिए फ़ाइल को यहाँ छोड़ें."
       ],
       "Duplicate key updated": [
         "डुप्लिकेट कुंजी अपडेट की गई"
@@ -4666,7 +4707,7 @@
         "संपर्क ग्रुप में, इससे ज़्यादा पते नहीं जोड़े जा सकते:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
-        "संपर्क ग्रुप में, इससे ज़्यादा पते नहीं जोड़े जा सकते."
+        "संपर्क ग्रुप में, इससे ज़्यादा पते नहीं जोड़े जा सकते।"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "आपका ${ BRAND_NAME } खाता वर्तमान में निलंबित है। 28 दिनों के बाद, ईमेल आपके इनबॉक्स में वितरित नहीं किए जाएंगे, आपके ड्राइव साझाकरण लिंक ब्लॉक कर दिए जाएंगे, और आप नई फ़ाइलें अपलोड नहीं कर पाएंगे। सामान्य सेवा फिर से शुरू करने के लिए, कृपया किसी अतिदेय चालान का भुगतान करें।"
@@ -4724,6 +4765,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "आपका सिस्टम समय क्षेत्र ${ timezone } में बदल गया है। अपने समय क्षेत्र पसंद को अपडेट करें?"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "रंग चुनें:"
       ]
     },
     "Info calendar search": {
@@ -5414,6 +5460,9 @@
     "mailtrial2024: Action": {
       "Get the deal": [
         "सौदा पाएं"
+      ],
+      "Special Offer": [
+        "खास ऑफर"
       ]
     },
     "Message": {
@@ -5672,6 +5721,9 @@
       ],
       "Upgrade now": [
         "अभी अपग्रेड करें"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus पे अपग्रेड करें"
       ]
     },
     "new_plans: action": {
@@ -5760,6 +5812,12 @@
       ],
       "1 user": [
         "1 यूज़र"
+      ],
+      "10 email addresses/aliases": [
+        "10 ईमेल पते/नकलीनाम"
+      ],
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
       ],
       "24/7 account management support": [
         "24/7 खाता प्रबंधन सहायता"
@@ -5891,8 +5949,14 @@
       "Organize items with multiple vaults": [
         "कई तिजोरी के साथ आइटम व्यवस्थित करें"
       ],
+      "Password manager": [
+        "पासवर्ड मैनेजर"
+      ],
       "Password-protected Emails": [
         "पासवर्ड-सुरक्षित ईमेल"
+      ],
+      "Phone support (20+ users)": [
+        "फोन मदद (20+ यूज़र)"
       ],
       "Priority email support": [
         "प्राथमिक ईमेल मदद"
@@ -5945,6 +6009,9 @@
       ],
       "Strict no-logs policy": [
         "सख्त लॉग-नहीं नीति"
+      ],
+      "TOR over VPN": [
+        "Tor पर VPN"
       ],
       "Two-factor authentication": [
         "दो तरीकों से प्रमाणीकरण"
@@ -6137,6 +6204,9 @@
         "${ n } तक ईमेल पते/उपनाम बनाएं जिन्हें आप परिवार के सदस्यों को निर्दिष्ट कर सकें। ऑनलाइन पहचान के लिए उनका उपयोग करें, उदाहरण के लिए, शॉपिंग खातों के लिए जॉनशॉपर@${ domain }।"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "कई सर्वरों से आपके इंटरनेट ट्रैफिक को गुज़ार के वीपीएन निजता के खतरों के खिलाफ आपकी रक्षा करता है।"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "कई सर्वरों से आपके इंटरनेट ट्रैफिक को गुज़ार के वीपीएन निजता के खतरों के खिलाफ आपकी रक्षा करता है।"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
@@ -6547,6 +6617,11 @@
         "सुरक्षित वॉल्ट साझाकरण"
       ]
     },
+    "pass_signup_2024: Info": {
+      "Activity log": [
+        "गतिविधि लॉग"
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "संगठन कुंजी मौजूद नहीं है।"
@@ -6589,6 +6664,9 @@
       ],
       "Invalid expiration date": [
         "अमान्य एक्सपायर तारीख"
+      ],
+      "Something went wrong. Please try again later.": [
+        "कुछ गलत हो गया है। कृपया दोबारा कोशिश करें।"
       ]
     },
     "PGP key encryption warning": {
@@ -7109,6 +7187,9 @@
       "/ month": [
         "/ महीने"
       ],
+      "/month": [
+        "/महीना"
+      ],
       "1 year": [
         "1 साल"
       ],
@@ -7190,6 +7271,11 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "अब आप देख सकते हैं कि प्रतिभागी आपकी मीटिंग में कब शामिल हो सकते हैं।"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "साइनइन करें"
       ]
     },
     "Storage": {
@@ -7306,8 +7392,14 @@
         "${ dayDiff } दिन बाकी",
         "${ dayDiff } दिन बाकी"
       ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } स्टोरेज हर यूज़र पे"
+      ],
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"
+      ],
+      "2 users": [
+        "2 यूज़र"
       ],
       "Automatic email forwarding": [
         "स्वचालित ईमेल फॉरवर्ड"
@@ -7341,6 +7433,9 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
       "Desktop app": [
         "डेस्कटॉप ऐप"
       ],
@@ -7993,6 +8088,9 @@
       "Save changes": [
         "परिवर्तन सहेजें"
       ],
+      "Security center": [
+        "सुरक्षा केंद्र"
+      ],
       "Select a day in the month": [
         "महीने में एक दिन चुनें"
       ],
@@ -8050,6 +8148,9 @@
       "Send invitation": [
         "आमंत्रण भेजें"
       ],
+      "Set recovery phrase": [
+        "पुनर्प्राप्ति वाक्यांश सेट करें"
+      ],
       "Settings": [
         "सेटिंग्स"
       ],
@@ -8092,6 +8193,9 @@
       "Warning: suspected fake website": [
         "चेतावनी: संदिग्ध फर्जी वेबसाइट"
       ],
+      "We're setting up calendar search": [
+        "हम कैलेंडर खोज को व्यवस्थित कर रहे हैं"
+      ],
       "We've locked some calendars to protect your data": [
         "आपका डाटा सुरक्षित रखने के लिए हमने आपके कुछ कैलेंडर लॉक कर दिए"
       ],
@@ -8103,6 +8207,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "आप प्रतिभागीयों को एक जैसे न्योते भेजे है"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "आपका ${ planName } ट्रायल ${ textDate } को खत्म होगा"
       ],
       "Your calendar link": [
         "आपका कैलेंडर लिंक"
