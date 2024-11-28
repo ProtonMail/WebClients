@@ -11,11 +11,12 @@ import { useAliasDomains, useCustomDomain } from './DomainsProvider';
 type Props = {
     domainID: number;
     tab: 'dns' | 'info';
-    onClose: () => void;
 };
 
-export const CustomDomainDetailsModal = ({ tab, domainID, onClose }: Props) => {
+export const CustomDomainDetailsModal = ({ tab, domainID }: Props) => {
     const { setAction } = useAliasDomains();
+    const onClose = () => setAction(null);
+
     const domain = useCustomDomain(domainID);
     const aliasCount = domain?.AliasCount ?? 0;
     const time = epochToRelativeDaysAgo(domain?.CreateTime ?? 0);

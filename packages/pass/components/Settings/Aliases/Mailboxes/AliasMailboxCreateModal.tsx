@@ -18,11 +18,11 @@ import { createMailbox } from '@proton/pass/store/actions';
 import { useAliasMailboxes } from './AliasMailboxesProvider';
 
 export const FORM_ID = 'custom-address-add';
-type Props = { onClose: () => void };
 
-export const AliasMailboxCreateModal: FC<Props> = ({ onClose }) => {
-    const { onCreate } = useAliasMailboxes();
+export const AliasMailboxCreateModal: FC = () => {
+    const { onCreate, setAction } = useAliasMailboxes();
     const create = useRequest(createMailbox, { onSuccess: onCreate });
+    const onClose = () => setAction(null);
 
     const form = useFormik<EmailFormValues>({
         initialValues: { email: '' },

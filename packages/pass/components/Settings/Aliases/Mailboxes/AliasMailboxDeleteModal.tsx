@@ -14,10 +14,11 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { useAliasMailboxes } from './AliasMailboxesProvider';
 
-type Props = { mailboxID: number; onClose: () => void };
+type Props = { mailboxID: number };
 
-export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID, onClose }) => {
-    const { mailboxes, onDelete } = useAliasMailboxes();
+export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID }) => {
+    const { mailboxes, onDelete, setAction } = useAliasMailboxes();
+    const onClose = () => setAction(null);
 
     const { mailbox, remaining } = useMemo(
         () => ({

@@ -16,10 +16,11 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { useAliasMailboxes, useMailbox } from './AliasMailboxesProvider';
 
-type Props = { onClose: () => void; mailboxID: number; sentAt: number };
+type Props = { mailboxID: number; sentAt: number };
 
-export const MailboxVerifyModal: FC<Props> = ({ onClose, mailboxID, sentAt }) => {
-    const { onDelete, onVerify } = useAliasMailboxes();
+export const MailboxVerifyModal: FC<Props> = ({ mailboxID, sentAt }) => {
+    const { onDelete, onVerify, setAction } = useAliasMailboxes();
+    const onClose = () => setAction(null);
     const mailbox = useMailbox(mailboxID);
 
     const [remaining, countdown] = useCountdown(getInitialCountdown(sentAt));
