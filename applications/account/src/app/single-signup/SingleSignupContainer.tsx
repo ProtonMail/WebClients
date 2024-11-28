@@ -21,7 +21,7 @@ import type { PaymentProcessorType } from '@proton/components/payments/react-ext
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
-import { CURRENCIES, type Currency, PLANS, getPlansMap, isMainCurrency } from '@proton/payments';
+import { type BillingAddress, CURRENCIES, type Currency, PLANS, getPlansMap, isMainCurrency } from '@proton/payments';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -54,7 +54,7 @@ import {
 } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
-import { getPlanCardSubscriptionData, swapCurrency } from '../single-signup-v2/helper';
+import { getPlanCardSubscriptionData, getSubscriptionData, swapCurrency } from '../single-signup-v2/helper';
 import type { SignupDefaults, SubscriptionDataCycleMappingByCurrency } from '../single-signup-v2/interface';
 import { Steps } from '../single-signup-v2/interface';
 import { getPaymentMethodsAvailable, getSignupTelemetryData } from '../single-signup-v2/measure';
@@ -83,6 +83,14 @@ interface Props {
     clientType: CLIENT_TYPES;
     metaTags: MetaTags;
     onPreSubmit?: () => Promise<void>;
+}
+
+interface CheckPlansArgs {
+    plans: Plan[];
+    preferredCurrency: Currency;
+    subscriptionDataCycleMappingByCurrency: SubscriptionDataCycleMappingByCurrency;
+    withModel?: boolean;
+    billingAddress?: BillingAddress;
 }
 
 const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLogin, productParam }: Props) => {
@@ -195,12 +203,13 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
         }
     })();
 
-    const checkPlans = async (
-        plans: Plan[],
-        preferredCurrency: Currency,
-        subscriptionDataCycleMappingByCurrency: SubscriptionDataCycleMappingByCurrency,
-        withModel = false
-    ) => {
+    const checkPlans = async ({
+        plans,
+        preferredCurrency,
+        subscriptionDataCycleMappingByCurrency,
+        billingAddress: maybeBillingAddress,
+        withModel = false,
+    }: CheckPlansArgs) => {
         const vpnPlanName = PLANS.VPN2024;
 
         let coupon = withModel ? model.subscriptionData.checkResult.Coupon?.Code : signupParameters.coupon;
@@ -225,6 +234,7 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
         const cycle = modelCycle || signupParameters.cycle || defaults.cycle;
 
         const isVpnPassPromotion = getIsVPNPassPromotion(coupon, selectedPlanCurrency);
+        const billingAddress = maybeBillingAddress ?? model.subscriptionData.billingAddress;
 
         const getSubscriptionDataCycleMapping = async () => {
             const originalCoupon = coupon;
@@ -237,7 +247,7 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
             const sharedOptions = {
                 plansMap,
                 paymentsApi,
-                billingAddress: model.subscriptionData.billingAddress,
+                billingAddress,
             };
 
             const subscriptionDataCycleMappingPromise = getPlanCardSubscriptionData({
@@ -301,19 +311,24 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
             return result;
         })();
 
-        const subscriptionData = (() => {
-            if (
-                cycle === CYCLE.YEARLY &&
-                isVpnPassPromotion &&
-                subscriptionDataCycleMapping[PLANS.VPN_PASS_BUNDLE]?.[cycle]
-            ) {
-                return subscriptionDataCycleMapping[PLANS.VPN_PASS_BUNDLE]?.[CYCLE.YEARLY];
+        let subscriptionData = (() => {
+            // If it's the vpn pass promotion we change the default selected plan to vpn pass bundle 12m
+            if (cycle === CYCLE.YEARLY && isVpnPassPromotion) {
+                return subscriptionDataCycleMapping[PLANS.VPN_PASS_BUNDLE]?.[cycle];
             }
-            return (
-                subscriptionDataCycleMapping[plan.Name as PLANS]?.[cycle] ||
-                subscriptionDataCycleMapping[vpnPlanName]?.[cycleData.upsellCycle]
-            );
+            return subscriptionDataCycleMapping[plan.Name as PLANS]?.[cycle];
         })();
+
+        if (!subscriptionData || subscriptionData.checkResult.optimistic) {
+            subscriptionData = await getSubscriptionData(paymentsApi, {
+                plansMap,
+                planIDs,
+                currency: selectedPlanCurrency,
+                cycle,
+                coupon,
+                billingAddress,
+            });
+        }
 
         const selectedPlan = getPlanFromPlanIDs(plansMap, subscriptionData?.planIDs) || FREE_PLAN;
 
@@ -356,7 +371,12 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
             coupon,
             selectedPlan,
             updatedSubscriptionDataCycleMappingByCurrency,
-        } = await checkPlans(plans, preferredCurrency, model.subscriptionDataCycleMappingByCurrency, true);
+        } = await checkPlans({
+            plans,
+            preferredCurrency,
+            subscriptionDataCycleMappingByCurrency: model.subscriptionDataCycleMappingByCurrency,
+            withModel: true,
+        });
 
         updateMode(preferredCurrency);
 
@@ -411,7 +431,15 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
                 coupon,
                 selectedPlan,
                 updatedSubscriptionDataCycleMappingByCurrency,
-            } = await checkPlans(plans, preferredCurrency, model.subscriptionDataCycleMappingByCurrency);
+            } = await checkPlans({
+                plans,
+                preferredCurrency,
+                subscriptionDataCycleMappingByCurrency: model.subscriptionDataCycleMappingByCurrency,
+                billingAddress: {
+                    CountryCode: paymentMethodStatusExtended.CountryCode,
+                    State: paymentMethodStatusExtended.State,
+                },
+            });
 
             setModelDiff({
                 domains,
