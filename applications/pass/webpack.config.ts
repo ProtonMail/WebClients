@@ -26,7 +26,7 @@ const CRITICAL_OFFLINE_ASSETS = [
 
     /* wasm */
     'wasm',
-    'node_modules_pmcrypto_node_modules_openpgp_dist_lightweight_argon2id_min_mjs',
+    'node_modules_openpgp_dist_lightweight_argon2id_min_mjs',
 ];
 
 const result = (env: any): webpack.Configuration => {
