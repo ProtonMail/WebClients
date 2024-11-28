@@ -408,6 +408,9 @@
       "Next month": [
         "Mois suivant"
       ],
+      "Next page": [
+        "Page suivante"
+      ],
       "No, thanks": [
         "Non merci"
       ],
@@ -449,6 +452,9 @@
       ],
       "Previous month": [
         "Mois précédent"
+      ],
+      "Previous page": [
+        "Page précédente"
       ],
       "Print": [
         "Imprimer"
@@ -3778,6 +3784,10 @@
         "Nombre de contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }",
         "Contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } sélectionné",
+        "${ selectedCount } sélectionnés"
+      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } dossier sélectionné",
         "${ selectedFoldersCountLocalized } dossiers sélectionnés"
@@ -3860,6 +3870,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum de (${ amount })."
+      ],
+      "an anonymous user": [
+        "un utilisateur anonyme"
       ],
       "and": [
         "et"
@@ -4564,6 +4577,12 @@
       "The Beginning": [
         "Début"
       ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "La signature numérique a été partiellement vérifiée. Le fichier a été téléchargé à partir d'une page publique qui ne précise pas l'origine spécifique de l'utilisateur."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "La signature numérique a été partiellement vérifiée. Le dossier a été téléchargé à partir d'une page publique qui ne précise pas l'origine spécifique de l'utilisateur."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent sécurisées et chiffrées. ${ learnMoreLink }"
       ],
@@ -4868,7 +4887,7 @@
         "Votre navigateur actuel ne permet pas le téléchargement de fichiers volumineux car certains agents de service (service workers) sont indisponibles. Ce type de téléchargement peut figer ou ralentir le navigateur. Utilisez la dernière version d'un ${ recommendedBrowser } et essayez à nouveau."
       ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
-        "Votre document actuel sera remplacé par cette version. Les commentaires et suggestions seront retirés du document mais resteront accessibles dans l'historique des commentaires."
+        "Votre document actuel sera remplacé par cette version. Les commentaires et suggestions seront retirés du document, mais resteront accessibles dans l'historique des commentaires."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
@@ -5061,6 +5080,12 @@
       ],
       "Calendars": [
         "Calendriers"
+      ],
+      "Can edit": [
+        "Peut modifier"
+      ],
+      "Can view": [
+        "Peut consulter"
       ],
       "Cancel download": [
         "Annuler le téléchargement"
@@ -5427,6 +5452,14 @@
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Organisez, ajoutez et modifiez vos fichiers"
+      ],
+      "View and download": [
+        "Afficher et télécharger"
       ]
     },
     "Label for contact group color": {
@@ -6293,7 +6326,7 @@
         "Synchronisez et sauvegardez tous vos fichiers entre plusieurs appareils."
       ],
       "TOR over VPN": [
-        "TOR via VPN"
+        "Tor via VPN"
       ],
       "Two-factor authentication": [
         "Authentification à deux facteurs"
@@ -6946,6 +6979,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "L'espace est insuffisant pour charger ${ formattedTotal }."
+      ],
+      "Public link access updated": [
+        "L'accès au lien public a été mis à jour."
+      ],
+      "Public link update access failed ": [
+        "L'accès à la mise à jour du lien public n'a pas abouti "
       ],
       "Stopping the sharing of this item has failed": [
         "L'arrêt du partage de cet élément n'a pas abouti."

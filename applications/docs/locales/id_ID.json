@@ -402,6 +402,9 @@
       "Next month": [
         "Bulan selanjutnya"
       ],
+      "Next page": [
+        "Halaman selanjutnya"
+      ],
       "No, thanks": [
         "Tidak, terima kasih"
       ],
@@ -443,6 +446,9 @@
       ],
       "Previous month": [
         "Bulan sebelumnya"
+      ],
+      "Previous page": [
+        "Halaman sebelumnya"
       ],
       "Print": [
         "Cetak"
@@ -3719,6 +3725,9 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } kontak dipilih"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } dipilih"
+      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } folder dipilih"
       ],
@@ -4963,6 +4972,12 @@
       ],
       "Calendars": [
         "Kalender"
+      ],
+      "Can edit": [
+        "Dapat menyunting"
+      ],
+      "Can view": [
+        "Dapat melihat"
       ],
       "Cancel download": [
         "Batalkan unduhan"

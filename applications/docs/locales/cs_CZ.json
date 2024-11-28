@@ -411,6 +411,9 @@
       "Next month": [
         "Další měsíc"
       ],
+      "Next page": [
+        "Další stránka"
+      ],
       "No, thanks": [
         "Ne, děkuji"
       ],
@@ -452,6 +455,9 @@
       ],
       "Previous month": [
         "Předchozí měsíc"
+      ],
+      "Previous page": [
+        "Předchozí stránka"
       ],
       "Print": [
         "Vytisknout"
@@ -3860,6 +3866,12 @@
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktů",
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktů"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } vybráno",
+        "${ selectedCount } vybrány",
+        "${ selectedCount } vybráno",
+        "${ selectedCount } vybráno"
+      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } složka vybrána",
         "${ selectedFoldersCountLocalized } vybrané složky",
@@ -3958,6 +3970,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Částka je nižší než minimální možná hodnota (${ amount })."
+      ],
+      "an anonymous user": [
+        "anonymní uživatel"
       ],
       "and": [
         "a"
@@ -4526,6 +4541,12 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }."
+      ],
       "Please provide a name and an email address for creating a group.": [
         "Pro vytvoření skupiny uveďte jméno a e-mailovou adresu."
       ],
@@ -4660,6 +4681,12 @@
       ],
       "The Beginning": [
         "Začátek"
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Digitální podpis byl částečně ověřen. Soubor byl nahrán z veřejné stránky, na které není uveden konkrétní původ uživatele."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Digitální podpis byl částečně ověřen. Složka byla nahrána z veřejné stránky, na které není uveden konkrétní původ uživatele."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Odhalené informace unikly ze služby třetí strany. Informace vašeho účtu ${ BRAND_NAME } zůstaly v bezpečí a šifrované. ${ learnMoreLink }"
@@ -5165,6 +5192,12 @@
       "Calendars": [
         "Kalendáře"
       ],
+      "Can edit": [
+        "Může upravovat"
+      ],
+      "Can view": [
+        "Může zobrazit"
+      ],
       "Cancel download": [
         "Zrušit stahování"
       ],
@@ -5524,6 +5557,14 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Organizace, přidávání a úpravova souborů"
+      ],
+      "View and download": [
+        "Zobrazit a stáhnout"
       ]
     },
     "Label for contact group color": {
@@ -6823,6 +6864,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetovat uživatelská hesla a resetovat dvoufázové ověření uživatelů"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Směrujte svůj internetový provoz skrze sít Tor jediným kliknutím"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ],
@@ -7127,6 +7171,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Není dostatek místa pro nahrání ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "Přístupu k veřejným odkazům aktualizován"
+      ],
+      "Public link update access failed ": [
+        "Přístup k aktualizaci veřejného odkazu selhal "
+      ],
       "Stopping the sharing of this item has failed": [
         "Ukončení sdílení této položky selhalo"
       ],
@@ -7335,8 +7385,14 @@
       "Please select your billing state first.": [
         "Vyberte prosím nejprve váš stát platby."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Obnovuje se za ${ renewPrice }, zrušit lze kdykoli."
+      ],
       "Select billing country to pay": [
         "Vyberte zemi platby"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"

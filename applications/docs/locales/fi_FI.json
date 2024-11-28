@@ -81,6 +81,9 @@
       "Apply": [
         "Toteuta"
       ],
+      "Ask me next time": [
+        "Kysy seuraavalla kerralla"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
@@ -405,6 +408,9 @@
       "Next month": [
         "Seuraava kuukausi"
       ],
+      "Next page": [
+        "Seuraava sivu"
+      ],
       "No, thanks": [
         "Ei kiitos"
       ],
@@ -446,6 +452,9 @@
       ],
       "Previous month": [
         "Edellinen kuukausi"
+      ],
+      "Previous page": [
+        "Edellinen sivu"
       ],
       "Print": [
         "Tulosta"
@@ -513,6 +522,9 @@
       "Restore this version": [
         "Palauta tämä versio"
       ],
+      "Restore this version?": [
+        "Palautetaanko tämä versio?"
+      ],
       "Retry": [
         "Yritä uudelleen"
       ],
@@ -521,6 +533,9 @@
       ],
       "Save changes": [
         "Tallenna muutokset"
+      ],
+      "Save preferences": [
+        "Tallenna asetukset"
       ],
       "Search": [
         "Hae"
@@ -3766,6 +3781,10 @@
         "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
         "${ selectedContactsLength }/${ contactsLength } yhteystietoa valittu"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } valittu",
+        "${ selectedCount } valittu"
+      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } kansio valittu",
         "${ selectedFoldersCountLocalized } kansiota valittu"
@@ -3848,6 +3867,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Summa on vähimmäismäärää pienempi (${ amount })."
+      ],
+      "an anonymous user": [
+        "anonyymi käyttäjä"
       ],
       "and": [
         "ja"
@@ -4458,6 +4480,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
       ],
+      "Restored version to": [
+        "Palautettu versioon"
+      ],
       "Saving": [
         "Tallennetaan"
       ],
@@ -4647,6 +4672,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
+      ],
+      "Undo successful": [
+        "Kumoaminen onnistui"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Valitettavasti näyttää siltä, että tiedoston tai joidenkin sen tietojen salausta ei voida purkaa."
@@ -5031,6 +5059,12 @@
       "Calendars": [
         "Kalenterit"
       ],
+      "Can edit": [
+        "Voi muokata"
+      ],
+      "Can view": [
+        "Voi tarkastella"
+      ],
       "Cancel download": [
         "Peru lataus"
       ],
@@ -5129,6 +5163,9 @@
       ],
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
+      ],
+      "Enable email notifications": [
+        "Ota sähköposti-ilmoitukset käyttöön"
       ],
       "Encrypt emails": [
         "Salaa viestit"
@@ -5390,6 +5427,14 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Järjestele, lisää ja muokkaa tiedostoja"
+      ],
+      "View and download": [
+        "Tarkastele ja lataa"
       ]
     },
     "Label for contact group color": {
@@ -6692,7 +6737,7 @@
     },
     "new_plans: Upsell attribute": {
       "24/7 support": [
-        "24/7-tuki"
+        "24/7-asiakastuki"
       ],
       "Access advanced VPN features": [
         "Käyttöoikeus edistyneisiin VPN-ominaisuuksiin"
@@ -7108,6 +7153,9 @@
       ],
       "Please select your billing state first.": [
         "Valitse laskutusosavaltiosi ensin."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Uusitaan hintaan ${ renewPrice }, peru milloin tahansa."
       ],
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
