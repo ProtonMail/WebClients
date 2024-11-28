@@ -102,7 +102,7 @@ export const getLoginResult = async ({
 }): Promise<LoginResult> => {
     const { loginPassword, clientKey, User: user, appIntent } = session;
 
-    invokeInboxDesktopIPC({ type: 'userLogin' });
+    invokeInboxDesktopIPC({ type: 'userLogin' }).catch(noop);
 
     const maybeToApp = appIntent?.app || maybePreAppIntent;
 

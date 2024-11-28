@@ -48,7 +48,7 @@ const LanguageSection = ({ locales = {} }: Props) => {
         await call();
         createNotification({ text: c('Success').t`Locale updated` });
         forceRefresh();
-        invokeInboxDesktopIPC({ type: 'updateLocale', payload: locale });
+        void invokeInboxDesktopIPC({ type: 'updateLocale', payload: locale });
     };
 
     const displayedValue = getClosestLocaleCode(userSettings?.Locale, locales);
