@@ -26,9 +26,6 @@ beforeEach(() => {
     };
 });
 
-const undefinedBillingAddress = undefined;
-const enableSepaTrue = true;
-
 describe('getNewMethods()', () => {
     it('should include card when card is available', () => {
         const methods = new PaymentMethods({
@@ -43,8 +40,8 @@ describe('getNewMethods()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(true);
@@ -65,8 +62,8 @@ describe('getNewMethods()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(false);
@@ -86,8 +83,8 @@ describe('getNewMethods()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(true);
@@ -106,8 +103,8 @@ describe('getNewMethods()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
@@ -138,8 +135,8 @@ describe('getNewMethods()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
@@ -158,8 +155,8 @@ describe('getNewMethods()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
@@ -180,8 +177,8 @@ describe('getNewMethods()', () => {
                 billingPlatform: undefined,
                 chargebeeUserExists: undefined,
                 disableNewPaymentMethods: false,
-                billingAddress: undefinedBillingAddress,
-                enableSepa: enableSepaTrue,
+                billingAddress: undefined,
+                enableSepa: true,
             });
 
             expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -201,8 +198,8 @@ describe('getNewMethods()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -221,8 +218,8 @@ describe('getNewMethods()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(true);
@@ -243,8 +240,8 @@ describe('getNewMethods()', () => {
                 billingPlatform: undefined,
                 chargebeeUserExists: undefined,
                 disableNewPaymentMethods: false,
-                billingAddress: undefinedBillingAddress,
-                enableSepa: enableSepaTrue,
+                billingAddress: undefined,
+                enableSepa: true,
             });
 
             expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
@@ -264,8 +261,8 @@ describe('getNewMethods()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(
@@ -289,8 +286,8 @@ describe('getNewMethods()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(
@@ -361,8 +358,8 @@ describe('getUsedMethods()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getUsedMethods().some((method) => method.type === 'paypal')).toBe(true);
@@ -432,8 +429,8 @@ describe('getAvailablePaymentMethods()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         const availableMethods = methods.getAvailablePaymentMethods();
@@ -509,8 +506,8 @@ describe('getLastUsedMethod()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         const lastUsedMethod = methods.getLastUsedMethod();
@@ -601,8 +598,8 @@ describe('getSavedMethodById()', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         const savedMethod = methods.getSavedMethodById('2');
@@ -787,8 +784,8 @@ describe('Cash', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(true);
@@ -810,8 +807,8 @@ describe('Cash', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
@@ -830,8 +827,8 @@ describe('Cash', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
@@ -852,8 +849,8 @@ describe('Cash', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
             planIDs: {
                 [PLANS.PASS_LIFETIME]: 1,
             },
@@ -877,8 +874,8 @@ describe('Cash', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
             planIDs: {
                 [PLANS.MAIL]: 1, // Using a different plan
             },
@@ -904,8 +901,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
@@ -927,8 +924,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
@@ -955,8 +952,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
@@ -977,8 +974,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
@@ -1001,8 +998,8 @@ describe('Chargebee Bitcoin', () => {
                 billingPlatform: undefined,
                 chargebeeUserExists: undefined,
                 disableNewPaymentMethods: false,
-                billingAddress: undefinedBillingAddress,
-                enableSepa: enableSepaTrue,
+                billingAddress: undefined,
+                enableSepa: true,
             });
 
             expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
@@ -1024,8 +1021,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
@@ -1049,8 +1046,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
@@ -1074,8 +1071,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
@@ -1096,8 +1093,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
             user: buildUser({
                 Credit: 100,
             }),
@@ -1124,8 +1121,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
             user: buildUser(),
             planIDs: {
                 [PLANS.PASS_LIFETIME]: 1,
@@ -1150,8 +1147,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
             user: buildUser(),
             planIDs: {
                 [PLANS.PASS_LIFETIME]: 1,
@@ -1179,8 +1176,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
             user: buildUser(),
             planIDs: {
                 [PLANS.PASS_LIFETIME]: 1,
@@ -1208,8 +1205,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
             user: buildUser(),
             planIDs: {
                 [PLANS.PASS_LIFETIME]: 1,
@@ -1235,8 +1232,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
             user: buildUser(),
             planIDs: {
                 [PLANS.MAIL]: 1,
@@ -1265,8 +1262,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
@@ -1290,8 +1287,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
@@ -1316,8 +1313,8 @@ describe('Chargebee Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
             user,
         });
 
@@ -1339,8 +1336,8 @@ describe('Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
@@ -1360,8 +1357,8 @@ describe('Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
@@ -1386,8 +1383,8 @@ describe('Bitcoin', () => {
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
@@ -1409,8 +1406,8 @@ describe('Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -1437,8 +1434,8 @@ describe('Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -1459,8 +1456,8 @@ describe('Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -1483,8 +1480,8 @@ describe('Bitcoin', () => {
                 billingPlatform: undefined,
                 chargebeeUserExists: undefined,
                 disableNewPaymentMethods: false,
-                billingAddress: undefinedBillingAddress,
-                enableSepa: enableSepaTrue,
+                billingAddress: undefined,
+                enableSepa: true,
             });
 
             expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -1509,8 +1506,8 @@ describe('Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -1534,8 +1531,8 @@ describe('Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
@@ -1559,8 +1556,8 @@ describe('Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -1584,8 +1581,8 @@ describe('Bitcoin', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
@@ -1608,8 +1605,8 @@ describe('Chargebee card', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(true);
@@ -1630,8 +1627,8 @@ describe('Chargebee card', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(false);
@@ -1655,8 +1652,8 @@ describe('Chargebee card', () => {
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(false);
@@ -1680,8 +1677,8 @@ describe('Chargebee card', () => {
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(true);
@@ -1704,8 +1701,8 @@ describe('Chargebee card', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(false);
@@ -1726,8 +1723,8 @@ describe('Chargebee card', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(true);
@@ -1748,8 +1745,8 @@ describe('Chargebee card', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(true);
@@ -1772,8 +1769,8 @@ describe('Chargebee PayPal', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(true);
@@ -1794,8 +1791,8 @@ describe('Chargebee PayPal', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
@@ -1821,8 +1818,8 @@ describe('Chargebee PayPal', () => {
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
@@ -1846,8 +1843,8 @@ describe('Chargebee PayPal', () => {
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(true);
@@ -1880,8 +1877,8 @@ describe('Chargebee PayPal', () => {
             billingPlatform: BillingPlatform.Chargebee,
             chargebeeUserExists: 1,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
@@ -1902,8 +1899,8 @@ describe('Chargebee PayPal', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
@@ -1924,8 +1921,8 @@ describe('Chargebee PayPal', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(true);
@@ -1947,8 +1944,8 @@ describe('Chargebee PayPal', () => {
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
-            billingAddress: undefinedBillingAddress,
-            enableSepa: enableSepaTrue,
+            billingAddress: undefined,
+            enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
@@ -1972,8 +1969,8 @@ it('should not have new payment methods if they are disabled', () => {
         billingPlatform: undefined,
         chargebeeUserExists: undefined,
         disableNewPaymentMethods: disableNewPaymentMethods,
-        billingAddress: undefinedBillingAddress,
-        enableSepa: enableSepaTrue,
+        billingAddress: undefined,
+        enableSepa: true,
     });
 
     expect(methods.getNewMethods().length).toBe(0);
@@ -1991,12 +1988,12 @@ describe('SEPA', () => {
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
-            selectedPlanName: undefined,
+            selectedPlanName: PLANS.MAIL_PRO,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
             billingAddress: { CountryCode: 'CH' },
-            enableSepa: enableSepaTrue,
+            enableSepa: true,
         });
 
         expect(
@@ -2015,12 +2012,12 @@ describe('SEPA', () => {
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
-            selectedPlanName: undefined,
+            selectedPlanName: PLANS.MAIL_PRO,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
             billingAddress: { CountryCode: 'CH' },
-            enableSepa: enableSepaTrue,
+            enableSepa: true,
         });
 
         expect(
@@ -2044,12 +2041,12 @@ describe('SEPA', () => {
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
-            selectedPlanName: undefined,
+            selectedPlanName: PLANS.MAIL_PRO,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
             billingAddress: { CountryCode: 'CH' },
-            enableSepa: enableSepaTrue,
+            enableSepa: true,
         });
 
         expect(
@@ -2068,12 +2065,12 @@ describe('SEPA', () => {
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
-            selectedPlanName: undefined,
+            selectedPlanName: PLANS.MAIL_PRO,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
             billingAddress: { CountryCode: 'US' },
-            enableSepa: enableSepaTrue,
+            enableSepa: true,
         });
 
         expect(
@@ -2094,12 +2091,60 @@ describe('SEPA', () => {
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
-            selectedPlanName: undefined,
+            selectedPlanName: PLANS.MAIL_PRO,
             billingPlatform: undefined,
             chargebeeUserExists: undefined,
             disableNewPaymentMethods: false,
             billingAddress: { CountryCode: 'CH' },
             enableSepa: enableSepaFalse,
+        });
+
+        expect(
+            methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)
+        ).toBe(false);
+    });
+
+    it('should not display SEPA if B2C plan is selected', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: PLANS.MAIL,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            disableNewPaymentMethods: false,
+            billingAddress: { CountryCode: 'CH' },
+            enableSepa: true,
+        });
+
+        expect(
+            methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)
+        ).toBe(false);
+    });
+
+    it('should not display SEPA if no plan is selected', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            disableNewPaymentMethods: false,
+            billingAddress: { CountryCode: 'CH' },
+            enableSepa: true,
         });
 
         expect(
