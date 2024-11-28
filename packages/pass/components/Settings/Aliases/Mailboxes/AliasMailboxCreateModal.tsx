@@ -21,8 +21,8 @@ export const FORM_ID = 'custom-address-add';
 type Props = { onClose: () => void };
 
 export const AliasMailboxCreateModal: FC<Props> = ({ onClose }) => {
-    const aliasMailboxes = useAliasMailboxes();
-    const create = useRequest(createMailbox, { onSuccess: aliasMailboxes.onCreate });
+    const { onCreate } = useAliasMailboxes();
+    const create = useRequest(createMailbox, { onSuccess: onCreate });
 
     const form = useFormik<EmailFormValues>({
         initialValues: { email: '' },
