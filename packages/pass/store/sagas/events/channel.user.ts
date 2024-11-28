@@ -3,7 +3,13 @@ import { all, fork, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
-import { getUserAccessIntent, getUserFeaturesIntent, syncIntent, userEvent } from '@proton/pass/store/actions';
+import {
+    getInAppNotifications,
+    getUserAccessIntent,
+    getUserFeaturesIntent,
+    syncIntent,
+    userEvent,
+} from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
@@ -77,11 +83,16 @@ function* onUserEvent(
     /* if the subscription/invoice changes, refetch the user Plan and check Organization */
     const revalidateUserAccess = event.Subscription || event.Invoices;
 
-    /* Synchronize user access, feature flags & organization whenever polling
-     * for core user events. These actions are throttled via `maxAge` metadata */
+    /* Synchronize whenever polling for core user events:
+     * · User access
+     * · Feature flags
+     * · Organization
+     * · In-app Notification
+     * These actions are throttled via `maxAge` metadata */
     yield put((revalidateUserAccess ? withRevalidate : identity)(getUserAccessIntent(userId)));
     yield put(getUserFeaturesIntent(userId));
     yield put(getOrganizationSettings.intent());
+    yield put(getInAppNotifications.intent());
 }
 
 export const createUserChannel = (api: Api, eventID: string) =>
