@@ -14,8 +14,7 @@ import chunk from '@proton/utils/chunk';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { usePublicSession } from '../_api';
-import { useDriveEventManager } from '../_events';
-import { useVolumesState } from '../_volumes';
+import { useDefaultShare, useShare } from '../_shares';
 import { encryptFolderExtendedAttributes } from './extendedAttributes';
 import useLink from './useLink';
 import { validateLinkName } from './validation';
@@ -25,14 +24,22 @@ import { validateLinkName } from './validation';
  */
 export function usePublicLinkActions() {
     const { preventLeave } = usePreventLeave();
-    const { request: publicDebouncedRequest } = usePublicSession();
-    const events = useDriveEventManager();
+    const { request: publicDebouncedRequest, user } = usePublicSession();
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
-    const volumeState = useVolumesState();
+    const { getShareCreatorKeys } = useShare();
+    const { getDefaultShare } = useDefaultShare();
+
+    const getAddressKeyInfo = async (abortSignal: AbortSignal) => {
+        if (!user) {
+            return undefined;
+        }
+        const defaultShare = await getDefaultShare();
+        return getShareCreatorKeys(abortSignal, defaultShare.shareId);
+    };
 
     const createFolder = async (
         abortSignal: AbortSignal,
-        shareId: string,
+        token: string,
         parentLinkId: string,
         name: string,
         modificationTime?: Date
@@ -43,10 +50,13 @@ export function usePublicLinkActions() {
             throw new ValidationError(error);
         }
 
-        const [parentPrivateKey, parentHashKey] = await Promise.all([
-            getLinkPrivateKey(abortSignal, shareId, parentLinkId),
-            getLinkHashKey(abortSignal, shareId, parentLinkId),
+        const [parentPrivateKey, parentHashKey, addressKeyInfo] = await Promise.all([
+            getLinkPrivateKey(abortSignal, token, parentLinkId),
+            getLinkHashKey(abortSignal, token, parentLinkId),
+            getAddressKeyInfo(abortSignal),
         ]);
+
+        const signingKeys = addressKeyInfo?.privateKey || parentPrivateKey;
 
         const [Hash, { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature }, encryptedName] =
             await Promise.all([
@@ -54,29 +64,29 @@ export function usePublicLinkActions() {
                     Promise.reject(
                         new EnrichedError('Failed to generate folder link lookup hash during folder creation', {
                             tags: {
-                                shareId,
+                                token,
                                 parentLinkId,
                             },
                             extra: { e },
                         })
                     )
                 ),
-                generateNodeKeys(parentPrivateKey, parentPrivateKey).catch((e) =>
+                generateNodeKeys(parentPrivateKey, signingKeys).catch((e) =>
                     Promise.reject(
                         new EnrichedError('Failed to generate folder link node keys during folder creation', {
                             tags: {
-                                shareId,
+                                token,
                                 parentLinkId,
                             },
                             extra: { e },
                         })
                     )
                 ),
-                encryptName(name, parentPrivateKey, parentPrivateKey).catch((e) =>
+                encryptName(name, parentPrivateKey, signingKeys).catch((e) =>
                     Promise.reject(
                         new EnrichedError('Failed to encrypt folder link name during folder creation', {
                             tags: {
-                                shareId,
+                                token,
                                 parentLinkId,
                             },
                             extra: { e },
@@ -92,7 +102,7 @@ export function usePublicLinkActions() {
             Promise.reject(
                 new EnrichedError('Failed to encrypt node hash key during folder creation', {
                     tags: {
-                        shareId,
+                        token,
                         parentLinkId,
                     },
                     extra: { e },
@@ -102,28 +112,28 @@ export function usePublicLinkActions() {
 
         const xattr = !modificationTime
             ? undefined
-            : await encryptFolderExtendedAttributes(modificationTime, privateKey, privateKey);
+            : await encryptFolderExtendedAttributes(
+                  modificationTime,
+                  privateKey,
+                  addressKeyInfo ? addressKeyInfo.privateKey : privateKey
+              );
 
         const { Folder } = await preventLeave(
             publicDebouncedRequest<{ Folder: { ID: string } }>(
-                queryPublicCreateFolder(shareId, {
+                queryPublicCreateFolder(token, {
                     Hash,
                     NodeHashKey,
                     Name: encryptedName,
                     NodeKey,
                     NodePassphrase,
                     NodePassphraseSignature,
-                    SignatureAddress: '', //TODO: Add possibility to pass Address
+                    SignatureEmail: addressKeyInfo?.address.Email,
                     ParentLinkID: parentLinkId,
                     XAttr: xattr,
                 })
             )
         );
 
-        const volumeId = volumeState.findVolumeId(shareId);
-        if (volumeId) {
-            await events.pollEvents.volumes(volumeId);
-        }
         return Folder.ID;
     };
 

@@ -34,7 +34,7 @@ interface FileProperties {
         CreateTime: number;
         Size: number;
         ManifestSignature: string;
-        SignatureAddress: string;
+        SignatureEmail: string;
         State: FileRevisionState;
         Thumbnail: number;
         ThumbnailURLInfo: {
