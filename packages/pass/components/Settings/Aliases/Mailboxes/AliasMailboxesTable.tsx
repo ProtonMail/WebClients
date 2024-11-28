@@ -49,20 +49,22 @@ export const AliasMailboxesTable: FC = () => {
                                     </TableCell>
                                     <TableCell>{AliasCount}</TableCell>
                                     <TableCell>
-                                        {IsDefault ? (
-                                            <Badge type="primary">{c('Title').t`Default`}</Badge>
-                                        ) : (
-                                            !Verified && (
-                                                <Button
-                                                    shape="ghost"
-                                                    style={{ padding: 0 }}
-                                                    onClick={() => handleVerifyClick(MailboxID)}
-                                                >
-                                                    <Badge type="light" className="m-0">{c('Info')
-                                                        .t`Unverified`}</Badge>
-                                                </Button>
-                                            )
-                                        )}
+                                        <div className="flex justify-center">
+                                            {IsDefault ? (
+                                                <Badge type="primary">{c('Title').t`Default`}</Badge>
+                                            ) : (
+                                                !Verified && (
+                                                    <Button
+                                                        shape="ghost"
+                                                        style={{ padding: 0 }}
+                                                        onClick={() => handleVerifyClick(MailboxID)}
+                                                    >
+                                                        <Badge type="light" className="m-0">{c('Info')
+                                                            .t`Unverified`}</Badge>
+                                                    </Button>
+                                                )
+                                            )}
+                                        </div>
                                     </TableCell>
                                     <TableCell>
                                         <div className="flex justify-end">
