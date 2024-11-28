@@ -313,6 +313,8 @@ export const SSO_PATHS = {
     REFER: '/refer-a-friend',
     TRIAL: '/trial',
     JOIN_MAGIC_LINK: '/join',
+    PORKBUN_SIGNUP: '/partner/porkbun/signup',
+    PORKBUN_SIGN_IN: '/partner/porkbun/login',
 } as const;
 export const SETUP_ADDRESS_PATH = '/setup-address';
 
