@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { getSepaAuthorizationText } from '@proton/components/payments/chargebee/SepaAuthorizationText';
-import { PAYMENT_METHOD_TYPES, type PayPalDetails, type SavedCardDetails } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, type PayPalDetails, type SavedCardDetails, type SepaDetails } from '@proton/payments';
 
 import PaymentMethodDetails from './PaymentMethodDetails';
 
@@ -27,6 +27,12 @@ describe('PaymentMethodDetails', () => {
         Payer: 'johndoe@example.com',
     };
 
+    const mockSepaDetails: SepaDetails = {
+        AccountName: 'John Doe',
+        Country: 'DE',
+        Last4: '1234',
+    };
+
     it('renders card details correctly', () => {
         render(<PaymentMethodDetails type={PAYMENT_METHOD_TYPES.CARD} details={mockCardDetails} />);
 
@@ -42,38 +48,69 @@ describe('PaymentMethodDetails', () => {
         expect(screen.getByText('johndoe@example.com')).toBeInTheDocument();
     });
 
-    it('renders SEPA details correctly', () => {
-        const mockSepaDetails = {
-            AccountName: 'John Doe',
-            Country: 'DE',
-            Last4: '1234',
-        };
+    describe('SEPA payment method', () => {
+        it('renders SEPA details correctly', () => {
+            render(
+                <PaymentMethodDetails
+                    type={PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT}
+                    details={mockSepaDetails}
+                />
+            );
 
-        render(
-            <PaymentMethodDetails type={PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT} details={mockSepaDetails} />
-        );
+            // Check account holder details
+            expect(screen.getByText('Account holder')).toBeInTheDocument();
+            expect(screen.getByText('John Doe')).toBeInTheDocument();
 
-        expect(screen.getByText(getSepaAuthorizationText())).toBeInTheDocument();
+            // Check IBAN details
+            expect(screen.getByText('IBAN')).toBeInTheDocument();
+            expect(screen.getByText('DE •••• 1234')).toBeInTheDocument();
 
-        // todo: other details
-        // todo: PAY-2548
-        // expect(screen.getByText('John Doe')).toBeInTheDocument();
-        // expect(screen.getByText('•••• 1234')).toBeInTheDocument();
-        // expect(screen.getByText('DE')).toBeInTheDocument();
-    });
+            // Check authorization text
+            expect(screen.getByText(getSepaAuthorizationText())).toBeInTheDocument();
+        });
 
-    it('renders SEPA authorization text for SEPA method', () => {
-        const mockSepaDetails = {
-            AccountName: 'John Doe',
-            Country: 'DE',
-            Last4: '1234',
-        };
+        it('renders authorization text even with invalid SEPA details', () => {
+            const invalidSepaDetails = {
+                // Missing required fields
+                AccountName: 'John Doe',
+            } as any;
 
-        render(
-            <PaymentMethodDetails type={PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT} details={mockSepaDetails} />
-        );
+            render(
+                <PaymentMethodDetails
+                    type={PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT}
+                    details={invalidSepaDetails}
+                />
+            );
 
-        expect(screen.getByText(/By confirming this payment, you authorize/)).toBeInTheDocument();
+            // Should still show authorization text
+            expect(screen.getByText(getSepaAuthorizationText())).toBeInTheDocument();
+
+            // Should not show the details section
+            expect(screen.queryByText('Account holder')).not.toBeInTheDocument();
+            expect(screen.queryByText('John Doe')).not.toBeInTheDocument();
+        });
+
+        it('renders authorization text even without SEPA details', () => {
+            render(
+                <PaymentMethodDetails
+                    type={PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT}
+                    details={undefined as any}
+                />
+            );
+
+            expect(screen.getByText(getSepaAuthorizationText())).toBeInTheDocument();
+        });
+
+        it('renders with data-testid for e2e testing', () => {
+            render(
+                <PaymentMethodDetails
+                    type={PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT}
+                    details={mockSepaDetails}
+                />
+            );
+
+            expect(screen.getByTestId('existing-sepa')).toBeInTheDocument();
+        });
     });
 
     it('does not render SEPA authorization text for non-SEPA methods', () => {

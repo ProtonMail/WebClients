@@ -49,7 +49,7 @@ const MethodCell = ({ method }: { method: SavedPaymentMethod }) => {
                     className="block lg:inline-block align-middle text-ellipsis max-w-full"
                     data-testid="sepa-details"
                 >
-                    {formattedSavedSepaDetails(method)}
+                    {formattedSavedSepaDetails(method.Details)}
                 </span>
             </>
         );

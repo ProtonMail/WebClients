@@ -166,6 +166,7 @@ export {
     isSavedPaymentMethodExternal,
     isSavedPaymentMethodInternal,
     isSavedPaymentMethodSepa,
+    isSepaDetails,
     isStringPLAN,
     isTokenPayment,
     isTokenPaymentMethod,
