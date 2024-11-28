@@ -829,11 +829,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "refresh the page": [
-        "페이지 새로고침"
-      ],
       "Refresh the page": [
         "페이지 새로 고침"
+      ],
+      "refresh the page": [
+        "페이지 새로고침"
       ],
       "Reject": [
         "거절"
@@ -1622,6 +1622,14 @@
         "연말 할인 선택"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "죄송하지만 이 제안은 현재 플랜으로 받을 수 없습니다. 하지만 ${ plan.Title }(을)를 ${ cycle }개월간 구독하면 ${ discountPercentage } 할인을 받을 수 있습니다."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 스토리지 (다른 플랜 보다 두 배 많음)"
@@ -1643,14 +1651,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } 플랜은 제한된 시간에만 적용됩니다."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "죄송하지만 이 제안은 현재 플랜으로 받을 수 없습니다. 하지만 ${ plan.Title }(을)를 ${ cycle }개월간 구독하면 ${ discountPercentage } 할인을 받을 수 있습니다."
       ]
     },
     "bf2023: Offers": {
@@ -7205,10 +7205,10 @@
       "Data locked": [
         "데이터 잠김"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -8102,6 +8102,9 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "이 필터 (${ nameDeleted }) 삭제 시 트리거되는 모든 자동화된 작업이 중단됩니다."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "확인 버튼을 누르시면 계정에는 ${ creditsRemaining } 크레딧이 남게 됩니다."
+      ],
       "please open a support ticket": [
         "지원 티켓을 만들어 주세요"
       ],
@@ -8813,10 +8816,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
       "Users": [
@@ -9186,7 +9189,7 @@
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
       ],
       "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
-        "구독을 취소하더라도 ${ PASS_APP_NAME }과 SimpleLogin의 프리미엄 기능에 평생 접근할 수 있습니다."
+        "구독을 취소하여도 ${ PASS_APP_NAME }과 SimpleLogin의 프리미엄 기능에 대한 평생 접근은 유지됩니다."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "해당 날짜부터 ${ planTitle }용 기능에 접근할 수 없게 됩니다."
@@ -10209,6 +10212,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "키의 지문 인식을 위해 비밀번호를 입력하세요: ${ fingerprintCode }"
+      ],
+      "Entity ID": [
+        "엔티티 ID"
       ],
       "Event": [
         "이벤트"
@@ -11629,6 +11635,32 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "${ price }로 시작하세요."
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "무료로 계속하기"
@@ -11656,32 +11688,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "${ price }로 시작하세요."
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
       ]
     },
     "new_plans: feature": {
@@ -12350,6 +12356,20 @@
         "${ planName } 플랜을 선택하셨습니다"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price }에 Mail Plus를 구독하세요"
+      ],
+      "Starting from ${ price }": [
+        "${ price }부터 시작"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -12368,20 +12388,6 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "${ price }에 Mail Plus를 구독하세요"
-      ],
-      "Starting from ${ price }": [
-        "${ price }부터 시작"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -15492,7 +15498,7 @@
         "**(나의 신원 제공자로 부터 제공된) SSO 사용자가 삭제되며** 내 조직에 항목을 추가하기 위해 수동 추가해야 합니다."
       ],
       "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
-        "**SSO 사용자는 신원 제공자로 부터 분리되며** 비SSO 사용자로 전환됩니다."
+        "**SSO 사용자가 귀하의 신원 제공자로부터 분리되고** 비 SSO 사용자로 전환될 것입니다."
       ],
       "Access denied": [
         "접근 거부됨"
@@ -15690,7 +15696,7 @@
         "네, 저였어요."
       ],
       "You will have to create new users manually to add them to your organization.": [
-        "조직에 해당 사용자들을 추가하기 위해 수동으로 새 사용자를 추가해야합니다."
+        "새 사용자를 귀하의 조직에 추가하려면 직접 생성하셔야 합니다."
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "서드 파티 SSO 제공자로 리다이렉트됩니다."
@@ -16999,11 +17005,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"

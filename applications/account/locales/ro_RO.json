@@ -829,11 +829,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ],
       "Reject": [
         "Respingere"
@@ -1182,6 +1182,9 @@
       ],
       "Upgrade now": [
         "Modificare"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Trecere la Business"
@@ -1630,6 +1633,16 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1653,22 +1666,15 @@
         "Planul ${ plan } a revenit pentru o perioadă limitată"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni."
-      ]
-    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garanție de returnare a banilor de 30 de zile"
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ discountedPrice } este valabil pentru primele ${ cycle } luni. Apoi va fi reînnoit automat la prețul redus de ${ nextPrice } pentru ${ renewalLength } luni. Puteți anula oricând."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ discountedPrice } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ nextPrice } în fiecare lună. Puteți anula oricând."
       ]
@@ -4513,6 +4519,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Nu s-a reușit obținerea unei sesiuni active. Vă rugăm să ${ refresh } sau reîncercați mai târziu."
       ],
+      "Failed to load OAuth modal.": [
+        "Eșuare încărcare panou modal OAuth."
+      ],
       "Failed to process the logo": [
         "Procesarea fișierului pentru logo a eșuat."
       ],
@@ -7353,11 +7362,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
-      ],
       "dedicated servers": [
         "servere dedicate"
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -8277,6 +8286,11 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Dacă ștergeți filtrul ${ nameDeleted } se va opri procesarea tuturor acțiunilor automate pe care le declanșează."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "După apăsarea pe butonul de confirmare, în cont va mai rămâne ${ creditsRemaining } credit.",
+        "După apăsarea pe butonul de confirmare, în cont vor mai rămâne ${ creditsRemaining } credite.",
+        "După apăsarea pe butonul de confirmare, în cont vor mai rămâne ${ creditsRemaining } de credite."
+      ],
       "please open a support ticket": [
         "deschideți un tichet de asistență"
       ],
@@ -9008,11 +9022,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "Username": [
-        "Nume de utilizator"
-      ],
       "username": [
         "utilizator"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -11891,6 +11905,32 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Începeți cu ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Începând de la ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -11918,32 +11958,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Începeți cu ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Începând de la ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12662,6 +12676,20 @@
         "Planul selectat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Începând de la ${ price }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -12680,20 +12708,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Începând de la ${ price }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -12851,6 +12865,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetați parolele și autentificarea cu doi factori a utilizatorilor."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Redirecționați traficul din Internet prin rețeaua Tor cu un singur clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
@@ -14211,8 +14228,23 @@
       "Processing payment": [
         "Se procesează plata"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Reînnoiți cu ${ renewPrice }, anulați oricând."
+      ],
       "Select billing country to pay": [
         "Selectați țara de facturare pentru a plăti"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ subscriptionLength } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ renewPrice } pentru ${ subscriptionLengthCopy } luni. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru primele ${ subscriptionLength } luni. Apoi va fi reînnoit automat cu ${ renewPrice } pentru ${ subscriptionLengthCopy } luni. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru primele prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ renewPrice } pentru ${ subscriptionLength } lună. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPrice } în fiecare lună. Puteți anula oricând."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Tranzacția a fost detectată cu succes. Creditele vor fi adăugate în contul personal după ce tranzacția este pe deplin confirmată."
@@ -17461,10 +17493,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -18879,6 +18911,9 @@
     "Tor out of date": {
       "stable release": [
         "versiune stabilă"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Această versiune a navigatorului web Tor nu este suportată. Actualizați la cea mai recentă versiune ${ stableRelease }."
       ]
     },
     "unprivatization": {

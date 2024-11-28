@@ -829,11 +829,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Reject": [
         "Odmítnout"
@@ -1182,6 +1182,9 @@
       ],
       "Upgrade now": [
         "Navýšit nyní"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Upgrade na Business"
@@ -1634,6 +1637,17 @@
         "Vyberte si nabídku na End of Year"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíc.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíce.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB úložiště (2x více než jakýkoli jiný tarif)"
@@ -1655,17 +1669,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Tarif ${ plan } je zpět pouze po omezenou dobu"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíc.",
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíce.",
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců.",
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců."
       ]
     },
     "bf2023: Offers": {
@@ -4529,6 +4532,9 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Nepodařilo se získat aktivní relace. Prosím ${ refresh } nebo to zkuste znovu později."
+      ],
+      "Failed to load OAuth modal.": [
+        "Nepodařilo se načíst modální okno OAuth."
       ],
       "Failed to process the logo": [
         "Logo se nepodařilo zpracovat"
@@ -7424,11 +7430,11 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -8357,6 +8363,12 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Vezměte prosím na vědomí, že pokud smažete filtr ${ nameDeleted }, přestaneme zpracovávat všechny automatické akce, které spouští."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }."
+      ],
       "please open a support ticket": [
         "prosím odešlete požadavek na podporu"
       ],
@@ -9092,11 +9104,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "Username": [
-        "Uživatelské jméno"
-      ],
       "username": [
         "uživatelské jméno"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -12003,6 +12015,32 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Začněte za ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovat s bezplatným tarifem"
@@ -12030,32 +12068,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Začněte za ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12799,6 +12811,20 @@
         "Váš vybraný tarif: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Získejte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -12817,20 +12843,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Získejte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -12989,6 +13001,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetovat uživatelská hesla a resetovat dvoufázové ověření uživatelů"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Směrujte svůj internetový provoz skrze sít Tor jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
@@ -14361,8 +14376,14 @@
       "Processing payment": [
         "Zpracovávání platby"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Obnovuje se za ${ renewPrice }, zrušit lze kdykoli."
+      ],
       "Select billing country to pay": [
         "Vyberte zemi platby"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakce byla úspěšně rozpoznána. Kredity budou připsány na váš účet po úplném potvrzení transakce."
@@ -17670,10 +17691,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -19093,6 +19114,9 @@
     "Tor out of date": {
       "stable release": [
         "stabilní verze"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tato verze prohlížeče Tor není podporována. Prosím aktualizujte na poslední ${ stableRelease }"
       ]
     },
     "unprivatization": {

@@ -829,11 +829,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ],
       "Reject": [
         "Адхіліць"
@@ -1182,6 +1182,9 @@
       ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Палепшыць да Business"
@@ -1634,6 +1637,17 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяц.",
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцы.",
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў.",
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1657,23 +1671,15 @@
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяц.",
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцы.",
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў.",
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў."
-      ]
-    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён"
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за першы ${ cycle } месяцы(-аў). Пасля гэтага будзе выканана аўтаматычнае падаўжэнне па зніжаным кошце ў памеры ${ nextPrice } за ${ renewalLength } месяцы(-аў). Скасаваць можна ў любы момант."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ nextPrice } за кожны месяц. Скасаваць можна ў любы момант."
       ]
@@ -4524,6 +4530,9 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не ўдалося атрымаць актыўныя сеансы. ${ refresh } або паспрабуйце яшчэ раз пазней."
+      ],
+      "Failed to load OAuth modal.": [
+        "Не ўдалося загрузіць акно OAuth."
       ],
       "Failed to process the logo": [
         "Не ўдалося апрацаваць лагатып"
@@ -7419,11 +7428,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
-      ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -8349,6 +8358,12 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Звярніце ўвагу, што калі вы выдаліце ​​фільтр ${ nameDeleted }, то мы больш не будзем апрацоўваць усе аўтаматычныя дзеянні, якія ён запускае."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдыт.",
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдыты.",
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдытаў.",
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдытаў."
+      ],
       "please open a support ticket": [
         "адкрыйце запыт для службы падтрымкі"
       ],
@@ -9084,11 +9099,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "Username": [
-        "Імя карыстальніка"
-      ],
       "username": [
         "імя карыстальніка"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -11992,6 +12007,32 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Пачніце з коштам у памеры ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Пачатковы кошт ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -12019,32 +12060,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Пачніце з коштам у памеры ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Пачатковы кошт ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12788,6 +12803,20 @@
         "Выбраны тарыфны план: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -12806,20 +12835,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Атрымайце Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Пачатковы кошт ${ price }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -12978,6 +12993,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Скідайце паролі і двухфактарную аўтэнтыфікацыю карыстальнікаў"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Накіроўвайце свой трафік праз сетку Tor адным націскам"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
@@ -14329,8 +14347,23 @@
       "Processing payment": [
         "Апрацоўка плацяжу"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Падаўжаецца за ${ renewPrice }. Скасаваць можна ў любы час."
+      ],
       "Select billing country to pay": [
         "Выберыце краіну выстаўлення рахунку для аплаты"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першыя ${ subscriptionLength } месяцы(-аў). Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за ${ subscriptionLengthCopy } месяцы(-аў). Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ subscriptionLength } месяцы(-аў). Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за ${ subscriptionLengthCopy } месяцы(-аў). Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за ${ subscriptionLength } месяцы(-аў). Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за кожны месяц. Скасаваць можна ў любы момант."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Трансакцыя паспяхова выяўлена. Крэдыты будуць дададзены на ваш рахунак пасля таго, як яна будзе цалкам пацверджана."
@@ -17638,10 +17671,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -19061,6 +19094,9 @@
     "Tor out of date": {
       "stable release": [
         "стабільны выпуск"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Гэта версія браўзера Tor не падтрымліваецца. Абнавіце праграму да апошняй версіі ${ stableRelease }"
       ]
     },
     "unprivatization": {
