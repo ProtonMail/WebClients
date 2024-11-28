@@ -94,7 +94,7 @@ export function* hydrate(
             const paid = isPaidPlan(plan);
             const hasOfflinePassword = authStore.hasOfflinePassword();
             const autoEnableOffline = settings.offlineEnabled === undefined && supported && paid && hasOfflinePassword;
-            settings.offlineEnabled = autoEnableOffline || settings.offlineEnabled;
+            settings.offlineEnabled = autoEnableOffline || (paid && settings.offlineEnabled);
         }
 
         const incoming = { user: userState, settings, organization };
