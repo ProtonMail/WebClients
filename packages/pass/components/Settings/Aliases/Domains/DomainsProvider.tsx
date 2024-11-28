@@ -60,8 +60,9 @@ export const AliasDomainsProvider: FC<PropsWithChildren> = ({ children }) => {
     const [aliasDomains, setAliasDomains] = useState<UserAliasDomainOutput[]>([]);
     const [action, setAction] = useState<MaybeNull<DomainAction>>(null);
 
-    const syncAliasDomains = useRequest(getAliasDomains, { onSuccess: setAliasDomains });
+    const syncAliasDomains = useRequest(getAliasDomains, { loading: true, onSuccess: setAliasDomains });
     const syncCustomDomains = useRequest(getCustomDomains, {
+        loading: true,
         onSuccess: (domains) => setCustomDomains(toMap(domains, 'ID')),
     });
 
