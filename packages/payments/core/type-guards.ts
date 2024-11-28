@@ -14,6 +14,7 @@ import type {
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
+    SepaDetails,
     TokenPayment,
     TokenPaymentMethod,
     V5PaymentToken,
@@ -120,3 +121,13 @@ export function isCheckWithAutomaticOptions(data: any): data is CheckWithAutomat
 }
 
 export const isStringPLAN = (value: string): value is PLANS => Object.values(PLANS).includes(value as PLANS);
+
+export function isSepaDetails(obj: any): obj is SepaDetails {
+    if (!obj) {
+        return false;
+    }
+
+    const props: (keyof SepaDetails)[] = ['AccountName', 'Country', 'Last4'];
+
+    return props.every((prop) => typeof obj[prop] === 'string');
+}
