@@ -375,6 +375,9 @@
       "Disable alias": [
         "Disabilita l'alias"
       ],
+      "Disabling alias": [
+        "Disabilitazione dell'alias"
+      ],
       "Discard": [
         "Scarta"
       ],
@@ -960,6 +963,9 @@
       ],
       "Remove this label": [
         "Rimuovi questa etichetta"
+      ],
+      "Remove Zoom meeting": [
+        "Rimuovi riunione Zoom"
       ],
       "Replace": [
         "Sostituisci"
@@ -6847,6 +6853,10 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } credito rimanente.",
+        "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
+      ],
       "Please open the document to view it.": [
         "Apri il documento per visualizzarlo."
       ],
@@ -7065,6 +7075,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Siamo spiacenti, questo messaggio non esiste o è già scaduto."
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Le funzionalità di archiviazione non sono supportate in questo browser, abbiamo bisogno di questo supporto per abilitare la ricerca del contenuto dei messaggi."
+      ],
       "Subject": [
         "Oggetto"
       ],
@@ -7208,6 +7221,9 @@
       "This message is from a mailing list.": [
         "Questo messaggio proviene da una mailing list."
       ],
+      "This message is from a SimpleLogin alias.": [
+        "Questo messaggio proviene da un alias SimpleLogin."
+      ],
       "This message is signed by a key that has not been trusted yet.": [
         "Questo messaggio è firmato da una chiave che non è ancora considerata attendibile."
       ],
@@ -7326,6 +7342,9 @@
       "Turn on to search the content of your messages": [
         "Attiva per cercare nel contenuto dei tuoi messaggi"
       ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Impossibile accedere alle funzionalità di archiviazione in questo browser, abbiamo bisogno di questo accesso per abilitare la ricerca del contenuto dei messaggi."
+      ],
       "Unlock message": [
         "Sblocca messaggio"
       ],
@@ -7433,6 +7452,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Abbiamo impedito ai seguenti inserzionisti e organizzazioni di vedere quando apri questa email, quale dispositivo stai utilizzando e dove ti trovi."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Non possiamo abilitare la ricerca del contenuto dei messaggi in questo browser."
       ],
       "We could not verify the sender's trusted keys.": [
         "Non abbiamo potuto verificare le chiavi attendibili del mittente."
@@ -9818,6 +9840,17 @@
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Ottieni Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partire da ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -9830,17 +9863,6 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Ottieni Mail Plus per ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partire da ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -9997,6 +10019,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Reimposta le password degli utenti e l'autenticazione a due fattori sugli utenti"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Indirizza il tuo traffico Internet attraverso la rete Tor con un solo click"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
@@ -10556,8 +10581,20 @@
       "Please select your billing state first.": [
         "Seleziona prima lo stato di fatturazione."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Rinnova a ${ renewPrice }, annulla in qualsiasi momento."
+      ],
       "Select billing country to pay": [
         "Seleziona il paese di fatturazione per il pagamento"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ subscriptionLength } mesi. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ renewPrice } ogni ${ subscriptionLengthCopy }. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ subscriptionLength } mesi. Il piano si rinnoverà poi automaticamente a ${ renewPrice } per ${ subscriptionLengthCopy } mesi. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ renewPrice } al mese. Puoi annullare in qualsiasi momento."
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
@@ -11603,6 +11640,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Alias ​​disabilitato"
+      ],
       "Unsubscribed": [
         "Iscrizione annullata"
       ]
@@ -13490,6 +13530,9 @@
     "Tor out of date": {
       "stable release": [
         "versione stabile"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Questa versione di Tor Browser non è supportata. Aggiornala all'ultima ${ stableRelease }"
       ]
     },
     "Update font modal": {
