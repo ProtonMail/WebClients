@@ -15,10 +15,10 @@ import type { DomainFormValues } from '@proton/pass/types';
 
 export const FORM_ID = 'custom-domain-add';
 
-export type Props = { onClose: () => void };
+export const CustomDomainCreateModal = () => {
+    const { onCreate, setAction } = useAliasDomains();
+    const onClose = () => setAction(null);
 
-export const CustomDomainCreateModal = ({ onClose }: Props) => {
-    const { onCreate } = useAliasDomains();
     const { loading, dispatch } = useRequest(createCustomDomain, { onSuccess: onCreate });
 
     const form = useFormik<DomainFormValues>({
