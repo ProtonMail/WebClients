@@ -217,6 +217,9 @@
       "Create": [
         "Δημιουργία"
       ],
+      "Create a folder": [
+        "Δημιουργία φακέλου"
+      ],
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
@@ -1036,6 +1039,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή των ${ discountedPrice } ισχύει για τους πρώτους ${ cycle } μήνες. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ nextPrice } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή ${ discountedPrice } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεώνεται αυτόματα σε ${ nextPrice } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ]
@@ -2490,6 +2496,14 @@
         "Έχουμε εντοπίσει τα ακόλουθα πεδία στο αρχείο CSV που μεταφορτώσατε. Επιλέξτε αυτά που θέλετε να εισάγετε."
       ]
     },
+    "Docs Info": {
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "Η συνεργασία μόλις έγινε ευκολότερη. Τώρα μπορείτε να προτείνετε αλλαγές χωρίς να τροποποιείτε το έγγραφο."
+      ],
+      "Suggestion mode is here": [
+        "Η λειτουργία προτάσεων είναι εδώ"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Σφάλματα ή ζητήματα ποιότητας"
@@ -2964,7 +2978,7 @@
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
       ],
       "Please provide either a first name, a last name or a display name": [
-        "Παρακαλούμε καταχωρίστε είτε όνομα, επώνυμο ή εμφανιζόμενο όνομα"
+        "Παρακαλούμε καταχωρήστε είτε όνομα, επώνυμο ή εμφανιζόμενο όνομα"
       ],
       "Port is required": [
         "Απαιτείται θύρα"
@@ -3157,7 +3171,7 @@
         "Παρουσιάστηκε σφάλμα κατά το ανέβασμα του αρχείου σας ${ formattedFilename }. Επιτρέπονται μόνο αρχεία μορφής ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
+        "Παρουσιάστηκε σφάλμα κατά τη μεταφόρτωση του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
@@ -3167,10 +3181,10 @@
         "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονότα."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
+        "Το αρχείο σας ${ formattedFilename } έχει μια μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "Το αρχείο σας ${ formattedFilename } δεν έχει κανένα συμβάν για εισαγωγή."
+        "Το αρχείο σας ${ formattedFilename } δεν έχει περιέχει κανένα συμβάν για εισαγωγή."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Το αρχείο σας ${ formattedFilename } είναι άδειο."
@@ -3195,27 +3209,27 @@
         "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Εσφαλμένη μορφή αρχείου."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Παρουσιάστηκε σφάλμα κατά τη μεταφόρτωση του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου σας ${ formattedFilename }. Δεν έχει επιλεγεί αρχείο .csv ή .vcf"
+        "Παρουσιάστηκε σφάλμα κατά τη μεταφόρτωση του αρχείου σας ${ formattedFilename }. Δεν έχει επιλεγεί αρχείο .csv ή .vcf"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
+        "Παρουσιάστηκε σφάλμα κατά τη μεταφόρτωση του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "Το αρχείο σας ${ formattedFilename } περιέχει περισσότερες από ${ MAX_IMPORT_CONTACTS_STRING } επαφές."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Το αρχείο σας ${ formattedFilename } δεν έχει επαφές προς εισαγωγή."
+        "Το αρχείο σας ${ formattedFilename } δεν περιέχει επαφές προς εισαγωγή."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "Το αρχείο σας ${ formattedFilename } είναι άδειο."
+        "Το αρχείο σας ${ formattedFilename } είναι κενό."
       ]
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        "Κακή μορφή. Αδυναμία ανάγνωσης στοιχείου."
+        "Λανθασμένη μορφή. Αδυναμία ανάγνωσης στοιχείου."
       ],
       "Calendar": [
         "Ημερολόγιο"
@@ -3230,13 +3244,13 @@
         "Προσαρμοσμένη ζώνη ώρας"
       ],
       "Edited event not supported": [
-        "Η επεξεργασμένη εκδήλωση δεν υποστηρίζεται"
+        "Η τροποποιημένη εκδήλωση δεν υποστηρίζεται"
       ],
       "Element": [
         "Στοιχείο"
       ],
       "Encryption failed": [
-        "Η κρυπτογράφηση απέτυχε"
+        "Αποτυχία κρυπτογράφησης"
       ],
       "End time out of bounds": [
         "Ώρα λήξης εκτός ορίων"
@@ -3263,7 +3277,7 @@
         "Δύσμορφη ολοήμερη εκδήλωση"
       ],
       "Malformed end time": [
-        "Λάθος χρόνος λήξης"
+        "Λανθασμένος χρόνος λήξης"
       ],
       "Malformed recurring event": [
         "Δύσμορφη επαναλαμβανόμενη εκδήλωση"
@@ -4181,7 +4195,7 @@
         "Όλες οι αλλαγές σας θα χαθούν."
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }",
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο της ${ MAX_CONTACTS_PER_USER }",
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }"
       ],
       "Also try looking in Trash.": [
@@ -4198,6 +4212,9 @@
       ],
       "An active recovery file": [
         "Ένα ενεργό αρχείο ανάκτησης"
+      ],
+      "an anonymous user": [
+        "ένας ανώνυμος χρήστης"
       ],
       "An issue occurred during the restore process.": [
         "Παρουσιάστηκε ένα πρόβλημα κατά τη διαδικασία επαναφοράς."
@@ -4257,7 +4274,7 @@
         "Κύκλος χρέωσης: ${ text }"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Ενισχύστε την ταυτότητα επωνυμίας του οργανισμού σας και δημιουργήστε μια πιο συνεπή εμπειρία στο διαδίκτυο για τους χρήστες σας."
+        "Ενισχύστε την εταιρική ταυτότητα του οργανισμού σας και δημιουργήστε μια πιο συνεπή εμπειρία στο διαδίκτυο για τους χρήστες σας."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
@@ -4333,10 +4350,10 @@
         "Δημιουργήστε ${ calendarsToBeCreatedCount } νέα ημερολόγια"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, μια χρονική έκταση για αυτήν την εισαγωγή, και τους φακέλους που θα θέλατε να εισάγετε."
+        "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, ένα χρονικό εύρος για αυτήν την εισαγωγή, και τους φακέλους που θα θέλατε να εισάγετε."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, μια χρονική έκταση για αυτήν την εισαγωγή, και τις ετικέτες που θα θέλατε να εισάγετε."
+        "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, ένα χρονικό εύρος για αυτήν την εισαγωγή, και τις ετικέτες που θα θέλατε να εισάγετε."
       ],
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
@@ -4770,7 +4787,7 @@
         "Μεσαία προτεραιότητα"
       ],
       "Merged": [
-        "Συγχωνευμένα"
+        "Συγχωνευμένο"
       ],
       "MM/YY": [
         "ΜΜ/ΧΧ"
@@ -4916,6 +4933,10 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }.",
+        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }."
       ],
       "Please open the document to view it.": [
         "Παρακαλούμε ανοίξτε το έγγραφο για να το δείτε."
@@ -5161,6 +5182,12 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Η ψηφιακή υπογραφή έχει επικυρωθεί μερικώς. Το αρχείο ανέβηκε από δημόσια σελίδα που δεν ξεκαθαρίζει την προέλευση χρήστη."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Η ψηφιακή υπογραφή έχει επικυρωθεί μερικώς. Ο φάκελος ανέβηκε από δημόσια σελίδα που δεν ξεκαθαρίζει την προέλευση χρήστη."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Ο αριθμός λήψεων περιλαμβάνει τόσο τις πραγματικές λήψεις όσο και τις εμφανίσεις κατά την προεπισκόπηση αρχείων."
@@ -5793,6 +5820,12 @@
       "Calendars": [
         "Ημερολόγια"
       ],
+      "Can edit": [
+        "Με δυνατότητα επεξεργασίας"
+      ],
+      "Can view": [
+        "Με δυνατότητα προβολής"
+      ],
       "Cancel download": [
         "Ακύρωση λήψης"
       ],
@@ -6273,6 +6306,14 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Οργανώστε, προσθέστε και επεξεργαστείτε αρχεία"
+      ],
+      "View and download": [
+        "Προβολή και λήψη"
       ]
     },
     "Label for contact group color": {
@@ -7529,6 +7570,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Επαναφέρετε τους κωδικούς πρόσβασης χρήστη και επαναφέρετε τον έλεγχο ταυτότητας δύο παραγόντων στους χρήστες"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Δρομολογήστε την κίνηση σας στο διαδίκτυο μέσω του δικτύου Tor, με ένα μόνο κλικ"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
@@ -7849,6 +7893,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Δεν υπάρχει αρκετός χώρος για αποστολή ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "Ενημερώθηκε η πρόσβαση σε δημόσιο σύνδεσμο"
+      ],
+      "Public link update access failed ": [
+        "Αποτυχία ενημέρωσης πρόσβασης σε δημόσιο σύνδεσμο "
+      ],
       "Root folder failed to be loaded": [
         "Απέτυχε η φόρτωση του ριζικού φακέλου"
       ],
@@ -7885,6 +7935,10 @@
       "This item was not removed from your list": [
         "Αυτό το στοιχείο δεν αφαιρέθηκε από τη λίστα σας",
         "Αυτά τα στοιχεία δεν αφαιρέθηκαν από τη λίστα σας"
+      ],
+      "This item was successfully removed from your list": [
+        "Το στοιχείο αφαιρέθηκε επιτυχώς από τη λίστα σας",
+        "Όλα τα στοιχεία αφαιρέθηκαν επιτυχώς από τη λίστα σας"
       ],
       "Trash failed to be emptied": [
         "Αποτυχία εκκαθάρισης Διαγραμμένων"
@@ -7931,6 +7985,9 @@
       "Continue": [
         "Συνέχεια"
       ],
+      "Create a document": [
+        "Δημιουργία εγγράφου"
+      ],
       "Get started": [
         "Ας ξεκινήσουμε"
       ],
@@ -7942,6 +7999,9 @@
       ],
       "Invite members": [
         "Προσκαλέστε μέλη"
+      ],
+      "Maybe Later": [
+        "Ίσως Αργότερα"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
@@ -8220,8 +8280,23 @@
       "Please select your billing state first.": [
         "Παρακαλούμε επιλέξτε πρώτα την κατάσταση χρέωσής σας."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Ανανεώνει σε ${ renewPrice }, ακυρώστε ανά πάσα στιγμή."
+      ],
       "Select billing country to pay": [
         "Επιλέξτε χώρα χρέωσης για πληρωμή"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τους πρώτους ${ subscriptionLength } μήνες. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPrice } για ${ subscriptionLengthCopy } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τους πρώτους ${ subscriptionLength } μήνες. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPrice } για ${ subscriptionLengthCopy } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPrice } για ${ subscriptionLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPrice } το μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
@@ -8815,7 +8890,7 @@
         "6 χρήστες"
       ],
       "All paid Mail and Calendar features": [
-        "Όλες οι δυνατότητες Αλληλογραφίας και Ημερολογίου επί πληρωμή"
+        "Όλες οι επί πληρωμή δυνατότητες Mail και Calendar"
       ],
       "High speed VPN": [
         "VPN υψηλής ταχύτητας"
@@ -9049,7 +9124,7 @@
         "Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }"
       ],
       "upgrade for more storage": [
-        "αναβάθμιση για περισσότερο χώρο αποθήκευσης"
+        "αναβαθμίστε για περισσότερο χώρο αποθήκευσης"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Θα προσθέσουμε τις πιστώσεις για τον υπόλοιπο χρόνο στον ${ BRAND_NAME } λογαριασμό σας."
