@@ -33,7 +33,7 @@ const SyncRowActions = ({ syncId }: Props) => {
     const { feature } = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
 
     const handleReconnectClick = () => {
-        triggerOAuthPopup({
+        void triggerOAuthPopup({
             provider: ImportProvider.GOOGLE,
             scope: SYNC_G_OAUTH_SCOPES.join(' '),
             callback: async (oAuthProps: OAuthProps) => {

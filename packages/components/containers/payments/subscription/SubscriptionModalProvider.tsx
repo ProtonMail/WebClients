@@ -111,12 +111,15 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
             } = subscriptionProps.current;
 
             if (hasInboxDesktopInAppPayments && modalState.open) {
-                invokeInboxDesktopIPC({ type: 'subscriptionModalOpened', payload: 'subscriptionModalStarted' });
+                void invokeInboxDesktopIPC({ type: 'subscriptionModalOpened', payload: 'subscriptionModalStarted' });
             }
 
             const handleClose = () => {
                 if (hasInboxDesktopInAppPayments) {
-                    invokeInboxDesktopIPC({ type: 'subscriptionModalOpened', payload: 'subscriptionModalFinished' });
+                    void invokeInboxDesktopIPC({
+                        type: 'subscriptionModalOpened',
+                        payload: 'subscriptionModalFinished',
+                    });
                 }
 
                 onClose?.();
