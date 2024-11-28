@@ -5,15 +5,13 @@ import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/index';
-import {
-    Copy,
-    Icon,
-    ModalTwoContent,
-    ModalTwoHeader,
-    useNotifications,
-    useSettingsLink,
-    useShortDomainAddress,
-} from '@proton/components';
+import Copy from '@proton/components/components/button/Copy';
+import Icon from '@proton/components/components/icon/Icon';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';

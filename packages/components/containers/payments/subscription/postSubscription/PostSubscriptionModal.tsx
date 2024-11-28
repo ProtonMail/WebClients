@@ -1,4 +1,4 @@
-import { ModalTwo } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 
 import type { PostSubscriptionModalName } from './interface';
