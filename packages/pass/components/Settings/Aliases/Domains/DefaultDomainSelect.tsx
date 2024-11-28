@@ -9,6 +9,7 @@ import { UpsellRef } from '@proton/pass/constants';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { setDefaultAliasDomain } from '@proton/pass/store/actions';
 import type { MaybeNull, UserAliasDomainOutput } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 
 import { useAliasDomains } from './DomainsProvider';
 
@@ -46,6 +47,7 @@ export const DefaultDomainSelect: FC<Props> = ({ className }) => {
             onValue={handleChange}
             value={defaultAliasDomain}
             loading={loading || setDefault.loading}
+            disabled={loading}
             className={className}
         >
             {[
@@ -66,10 +68,12 @@ export const DefaultDomainSelect: FC<Props> = ({ className }) => {
                         )}
                     </Option>
                 )),
-                <Option value={null} title={notSelectedLabel} key="not-selected">
-                    {notSelectedLabel}
-                </Option>,
-            ]}
+                !loading && (
+                    <Option value={null} title={notSelectedLabel} key="not-selected">
+                        {notSelectedLabel}
+                    </Option>
+                ),
+            ].filter(truthy)}
         </SelectTwo>
     );
 };
