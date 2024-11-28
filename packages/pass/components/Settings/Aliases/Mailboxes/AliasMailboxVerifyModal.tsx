@@ -1,8 +1,5 @@
 import { type FC, useEffect } from 'react';
 
-import { c } from 'ttag';
-
-import { useNotifications } from '@proton/components';
 import {
     EmailVerifyModal,
     SECONDS_BEFORE_RESEND,
@@ -16,7 +13,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { useAliasMailboxes, useMailbox } from './AliasMailboxesProvider';
 
-type Props = { mailboxID: number; sentAt: number };
+type Props = { mailboxID: number; sentAt?: number };
 
 export const MailboxVerifyModal: FC<Props> = ({ mailboxID, sentAt }) => {
     const { onDelete, onVerify, setAction } = useAliasMailboxes();
@@ -24,7 +21,6 @@ export const MailboxVerifyModal: FC<Props> = ({ mailboxID, sentAt }) => {
     const mailbox = useMailbox(mailboxID);
 
     const [remaining, countdown] = useCountdown(getInitialCountdown(sentAt));
-    const { createNotification } = useNotifications();
 
     const verify = useRequest(validateMailbox, {
         onSuccess: pipe(onVerify, onClose),
@@ -37,10 +33,7 @@ export const MailboxVerifyModal: FC<Props> = ({ mailboxID, sentAt }) => {
     });
 
     const resend = useRequest(resendVerifyMailbox, {
-        onSuccess: () => {
-            createNotification({ text: c('Info').t`Verification code sent.`, type: 'success' });
-            countdown.start(SECONDS_BEFORE_RESEND);
-        },
+        onSuccess: () => countdown.start(SECONDS_BEFORE_RESEND),
         onFailure: countdown.cancel,
     });
 
