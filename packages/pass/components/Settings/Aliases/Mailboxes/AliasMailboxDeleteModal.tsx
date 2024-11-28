@@ -2,8 +2,8 @@ import { type FC, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Alert, DropdownSizeUnit, Option, SelectTwo } from '@proton/components';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { DropdownSizeUnit, Option, SelectTwo } from '@proton/components/index';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
 import { useRequest } from '@proton/pass/hooks/useRequest';
@@ -57,10 +57,25 @@ export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID }) => {
             >
                 {mailbox.Verified ? (
                     <>
-                        <p>{c('Info').jt`All aliases using the mailbox ${emailJSX} will be also deleted.`}</p>
-                        <p>{c('Info').t`To keep receiving emails transfer these aliases to a different mailbox:`}</p>
-                        <div className="m-4">
-                            <InlineFieldBox label={c('Action').t`Transfer aliases`}>
+                        <p className="mb-2">{c('Info')
+                            .jt`All aliases using the mailbox ${emailJSX} will be also deleted.`}</p>
+                        <p className="mt-2">{c('Info')
+                            .t`To keep receiving emails transfer these aliases to a different mailbox:`}</p>
+
+                        <div className="my-6 mx-4">
+                            <InlineFieldBox
+                                label={
+                                    <div>
+                                        {c('Action').t`Transfer aliases`}
+                                        {!transferAliases && (
+                                            <Alert className="mt-2 text-sm" type="error">
+                                                {c('Warning')
+                                                    .t`Please note that once deleted, aliases can't be restored`}
+                                            </Alert>
+                                        )}
+                                    </div>
+                                }
+                            >
                                 <Toggle
                                     checked={transferAliases}
                                     disabled={removeMailbox.loading}
