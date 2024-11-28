@@ -124,7 +124,7 @@ describe('PaymentMethodsTable', () => {
 
         const sepaDetailsElement = screen.getByTestId('sepa-details');
         expect(sepaDetailsElement).toHaveTextContent(/IBAN DE .* 1234/);
-        expect(sepaDetailsElement.textContent).toMatch(formattedSavedSepaDetails(sepaMethod));
+        expect(sepaDetailsElement.textContent).toMatch(formattedSavedSepaDetails(sepaMethod.Details));
     });
 
     it('should display multiple payment methods', () => {
@@ -293,6 +293,6 @@ describe('PaymentMethodsTable', () => {
         expect(screen.getByTestId('sepa-payment-method')).toHaveTextContent('SEPA Direct Debit');
         const sepaDetailsElement = screen.getByTestId('sepa-details');
         expect(sepaDetailsElement).toHaveTextContent(/IBAN DE .* 5678/);
-        expect(sepaDetailsElement.textContent).toMatch(formattedSavedSepaDetails(sepaMethod));
+        expect(sepaDetailsElement.textContent).toMatch(formattedSavedSepaDetails(sepaMethod.Details));
     });
 });
