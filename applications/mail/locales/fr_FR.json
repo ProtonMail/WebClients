@@ -9644,7 +9644,7 @@
         "Synchronisez et sauvegardez tous vos fichiers entre plusieurs appareils."
       ],
       "TOR over VPN": [
-        "TOR via VPN"
+        "Tor via VPN"
       ],
       "Two-factor authentication": [
         "Authentification à deux facteurs"
@@ -9840,6 +9840,14 @@
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Profitez de Mail Plus pour ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "À partir de ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -9852,14 +9860,6 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Profitez de Mail Plus pour ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "À partir de ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -11641,7 +11641,7 @@
     },
     "Status": {
       "Alias disabled": [
-        "L'alias est desactivé."
+        "L'alias est désactivé."
       ],
       "Unsubscribed": [
         "Désabonné"

@@ -2180,6 +2180,47 @@
         "Dit abonnement udløber snart"
       ]
     },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } lagerplads"
+      ],
+      "Advanced account protection": [
+        "Avanceret kontobeskyttelse"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Alle ${ BRAND_NAME } apps og premium-funktioner"
+      ],
+      "Cancel and downgrade": [
+        "Annuller og nedgrader"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Sky-lagring og deling af store filer"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Krypteret sky-lagring til billeder og dokumenter"
+      ],
+      "Encrypted password manager": [
+        "Krypteret adgangskodeadministrator"
+      ],
+      "Save ${ upsellSavings }": [
+        "Gem ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Spar penge med ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Sikker personlig og delt kalender"
+      ],
+      "Try ${ planName }": [
+        "Prøv ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Prøv ${ upsellPlanName } og bevar adgangen til alle eksklusive e-mail- og kalenderfunktioner."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultra hurtig og privat VPN"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } bruger",
@@ -8522,6 +8563,9 @@
       "click here": [
         "klik her"
       ],
+      "contact us": [
+        "kontakt os"
+      ],
       "Create a calendar linked to an active email address.": [
         "Opret en kalender knyttet til en aktiv e-mailadresse."
       ],
@@ -8635,6 +8679,9 @@
       ],
       "Terms": [
         "Betingelser"
+      ],
+      "terms of service": [
+        "servicevilkår"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Denne ICS-fil indeholder mere end én begivenhed. Download den og importer begivenhederne i ${ CALENDAR_APP_NAME }"
@@ -9628,6 +9675,14 @@
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Fra ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -9640,14 +9695,6 @@
       ],
       "Switch plans?": [
         "Skift abonnement?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Fra ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -11240,6 +11287,14 @@
         "Du kan nu planlægge dine beskeder til senere afsendelse"
       ]
     },
+    "sso": {
+      "Sign in": [
+        "Log ind"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du bliver omdirigeret til din tredjeparts SSO-udbyder."
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Opsiger dit abonnement, vent venligst"
@@ -11411,6 +11466,9 @@
     "Subscription change warning": {
       "Got it": [
         "Forstået"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Bare log ind på din Apple App Store-konto, og vælg derefter ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Log ind på din Play Store-konto, og tryk på ${ subscriptions }."

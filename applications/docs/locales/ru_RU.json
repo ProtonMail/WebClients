@@ -405,6 +405,9 @@
       "Next month": [
         "Следующий месяц"
       ],
+      "Next page": [
+        "Следующая страница"
+      ],
       "No, thanks": [
         "Нет, спасибо"
       ],
@@ -446,6 +449,9 @@
       ],
       "Previous month": [
         "Предыдущий месяц"
+      ],
+      "Previous page": [
+        "Предыдущая страница"
       ],
       "Print": [
         "Печать"
@@ -3832,6 +3838,12 @@
         "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }",
         "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }",
         "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } выбран",
+        "${ selectedCount } выбран",
+        "${ selectedCount } выбран",
+        "${ selectedCount } выбран"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Выбрана ${ selectedFoldersCountLocalized } папка",

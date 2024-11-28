@@ -563,6 +563,9 @@
       "Remove this participant": [
         "Выдаліць гэтага ўдзельніка"
       ],
+      "Remove Zoom meeting": [
+        "Выдаліць сустрэчу Zoom"
+      ],
       "Report a problem": [
         "Паведаміць аб праблеме"
       ],
@@ -730,6 +733,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Палепшыць да ${ BRAND_NAME } Unlimited"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -975,6 +981,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за першы ${ cycle } месяцы(-аў). Пасля гэтага будзе выканана аўтаматычнае падаўжэнне па зніжаным кошце ў памеры ${ nextPrice } за ${ renewalLength } месяцы(-аў). Скасаваць можна ў любы момант."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ nextPrice } за кожны месяц. Скасаваць можна ў любы момант."
       ]
@@ -3149,6 +3158,9 @@
       "Failed to get original occurrence in series": [
         "Не ўдалося атрымаць арыгінальнае паўтарэнне ў серыі"
       ],
+      "Failed to load OAuth modal.": [
+        "Не ўдалося загрузіць акно OAuth."
+      ],
       "First name is too long": [
         "Занадта доўгае імя"
       ],
@@ -5087,6 +5099,12 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдыт.",
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдыты.",
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдытаў.",
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдытаў."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Забяспечце назву і адрас электроннай пошты для стварэння групы."
@@ -7448,6 +7466,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Скідайце паролі і двухфактарную аўтэнтыфікацыю карыстальнікаў"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Накіроўвайце свой трафік праз сетку Tor адным націскам"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
@@ -8058,8 +8079,23 @@
       "Please select your billing state first.": [
         "Спачатку выберыце ваш штат выстаўлення рахунку."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Падаўжаецца за ${ renewPrice }. Скасаваць можна ў любы час."
+      ],
       "Select billing country to pay": [
         "Выберыце краіну выстаўлення рахунку для аплаты"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першыя ${ subscriptionLength } месяцы(-аў). Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за ${ subscriptionLengthCopy } месяцы(-аў). Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ subscriptionLength } месяцы(-аў). Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за ${ subscriptionLengthCopy } месяцы(-аў). Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за ${ subscriptionLength } месяцы(-аў). Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за кожны месяц. Скасаваць можна ў любы момант."
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
@@ -9593,6 +9629,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "Адбітак скапіяваны ў буфер абмену"
+      ],
+      "Finish Zoom authentication to save event": [
+        "Завяршыць аўтэнтыфікацыю Zoom, каб захаваць падзею"
       ],
       "Future events deleted": [
         "Будучыя падзеі выдалены"

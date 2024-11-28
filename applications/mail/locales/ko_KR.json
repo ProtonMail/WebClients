@@ -372,6 +372,9 @@
       "Disable alias": [
         "별칭 비활성화"
       ],
+      "Disabling alias": [
+        "별칭 비활성화하기"
+      ],
       "Discard": [
         "저장 안함"
       ],
@@ -956,6 +959,9 @@
       ],
       "Remove this label": [
         "라벨 삭제"
+      ],
+      "Remove Zoom meeting": [
+        "Zoom 회의 제거하기"
       ],
       "Replace": [
         "바꾸기"
@@ -6738,6 +6744,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "이 과정은 주소록의 크기에 따라 시간이 좀 걸릴 수 있습니다."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "확인 버튼을 누르시면 계정에는 ${ creditsRemaining } 크레딧이 남게 됩니다."
+      ],
       "Please open the document to view it.": [
         "문서를 확인하려면 열어주세요."
       ],
@@ -6954,6 +6963,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "죄송합니다. 이 메시지가 존재하지 않거나 이미 만료되었습니다."
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "이 브라우저에서 브라우저 저장소를 지원하지 않습니다. 메시지 내용 검색을 사용하려면 기능의 지원이 필요합니다."
+      ],
       "Subject": [
         "제목"
       ],
@@ -7095,6 +7107,9 @@
       "This message is from a mailing list.": [
         "이 메시지는 메일링 리스트에서 온 것입니다."
       ],
+      "This message is from a SimpleLogin alias.": [
+        "이 메시지는 SimpleLogin 별칭 주소에서 온 것입니다."
+      ],
       "This message is signed by a key that has not been trusted yet.": [
         "이 메시지는 아직 신뢰되지 않은 키로 서명됩니다."
       ],
@@ -7212,6 +7227,9 @@
       "Turn on to search the content of your messages": [
         "사용자 메시지의 컨텐츠 검색을 활성화 하세요"
       ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "이 브라우저에서 브라우저 저장소에 접근할 수 없습니다. 메시지 내용 검색을 사용하려면 권한이 필요합니다."
+      ],
       "Unlock message": [
         "메시지 잠금 해제"
       ],
@@ -7319,6 +7337,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "다음 광고주 및 조직이 사용자가 이 이메일을 언제 여는지, 어떤 기기를 사용하는지, 어디에 있는지 확인할 수 없도록 차단했습니다."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "메시지 내용 검색을 이 브라우저에서 사용할 수 없습니다."
       ],
       "We could not verify the sender's trusted keys.": [
         "보낸 사람의 인증 키를 인증할 수 없습니다."
@@ -9648,6 +9669,14 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price }에 Mail Plus를 구독하세요"
+      ],
+      "Starting from ${ price }": [
+        "${ price }부터 시작"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -9660,14 +9689,6 @@
       ],
       "Switch plans?": [
         "요금제를 변경할까요?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price }에 Mail Plus를 구독하세요"
-      ],
-      "Starting from ${ price }": [
-        "${ price }부터 시작"
       ]
     },
     "new_plans: tooltip": {

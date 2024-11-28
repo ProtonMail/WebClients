@@ -411,6 +411,9 @@
       "Next month": [
         "Budúci mesiac"
       ],
+      "Next page": [
+        "Ďalšia strana"
+      ],
       "No, thanks": [
         "Nie, ďakujem"
       ],
@@ -452,6 +455,9 @@
       ],
       "Previous month": [
         "Predchádzajúci mesiac"
+      ],
+      "Previous page": [
+        "Predchádzajúca strana"
       ],
       "Print": [
         "Tlačiť"
@@ -3850,6 +3856,12 @@
         "${ selectedContactsLength }/${ contactsLength } vybrané kontakty",
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktov",
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktov"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } vybraný",
+        "${ selectedCount } vybrané",
+        "${ selectedCount } vybraných",
+        "${ selectedCount } vybraných"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } vybratá zložka",

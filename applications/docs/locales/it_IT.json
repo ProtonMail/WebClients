@@ -81,6 +81,9 @@
       "Apply": [
         "Applica"
       ],
+      "Ask me next time": [
+        "Chiedimelo la prossima volta"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "È consentito al massimo ${ maxContacts } contatto per ogni gruppo di contatti",
         "Sono consentiti al massimo ${ maxContacts } contatti per ogni gruppo di contatti"
@@ -405,6 +408,9 @@
       "Next month": [
         "Mese successivo"
       ],
+      "Next page": [
+        "Pagina successiva"
+      ],
       "No, thanks": [
         "No, grazie"
       ],
@@ -446,6 +452,9 @@
       ],
       "Previous month": [
         "Mese precedente"
+      ],
+      "Previous page": [
+        "Pagina precedente"
       ],
       "Print": [
         "Stampa"
@@ -513,6 +522,9 @@
       "Restore this version": [
         "Ripristina questa versione"
       ],
+      "Restore this version?": [
+        "Ripristina questa versione?"
+      ],
       "Retry": [
         "Riprova"
       ],
@@ -521,6 +533,9 @@
       ],
       "Save changes": [
         "Salva le modifiche"
+      ],
+      "Save preferences": [
+        "Salva preferenze"
       ],
       "Search": [
         "Cerca"
@@ -3766,6 +3781,10 @@
         "${ selectedContactsLength }/${ contactsLength } contatto selezionato",
         "${ selectedContactsLength }/${ contactsLength } contatti selezionati"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } selezionato",
+        "${ selectedCount } selezionati"
+      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } cartella selezionata",
         "${ selectedFoldersCountLocalized } cartelle selezionate"
@@ -3848,6 +3867,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Importo inferiore al minimo (${ amount })."
+      ],
+      "an anonymous user": [
+        "un utente anonimo"
       ],
       "and": [
         "e"
@@ -4139,6 +4161,12 @@
       "Free 5GB encrypted storage to get started": [
         "5 GB di spazio di archiviazione crittografato gratuito per iniziare"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Ricevi aggiornamenti via email per commenti e suggerimenti aggiunti ai tuoi documenti."
+      ],
+      "Get Notified About Comments": [
+        "Ricevi notifiche sui commenti"
+      ],
       "here": [
         "qui"
       ],
@@ -4406,6 +4434,10 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } credito rimanente.",
+        "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
+      ],
       "Please provide a name and an email address for creating a group.": [
         "Fornisci un nome e un indirizzo email per la creazione di un gruppo."
       ],
@@ -4457,6 +4489,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
+      ],
+      "Restored version to": [
+        "Versione ripristinata a"
       ],
       "Saving": [
         "Salvataggio"
@@ -4538,6 +4573,12 @@
       ],
       "The Beginning": [
         "L'inizio"
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "La firma digitale è stata parzialmente verificata. Il file è stato caricato da una pagina pubblica che non specifica un'origine utente specifica."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "La firma digitale è stata parzialmente verificata. La cartella è stata caricata da una pagina pubblica che non specifica un'origine utente specifica."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Le informazioni sono state rese pubbliche da un servizio di terze parti. Quelle relative al tuo account ${ BRAND_NAME } rimangono sicure e crittografate. ${ learnMoreLink }"
@@ -4647,6 +4688,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
+      ],
+      "Undo successful": [
+        "Annullamento riuscito"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Sfortunatamente, sembra che il file o alcuni dei suoi dati non possano essere decriptati."
@@ -4838,6 +4882,9 @@
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Il tuo browser attuale non supporta il download di file di grandi dimensioni a causa dell'indisponibilità degli operatori del servizio. Il download di file di grandi dimensioni potrebbe bloccarsi o lasciare che il browser non risponda. Utilizza le versioni più recenti di un ${ recommendedBrowser } e riprova."
+      ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "Il tuo documento attuale verrà sostituito con questa versione. Commenti e suggerimenti verranno rimossi dal documento ma rimarranno accessibili nella cronologia dei commenti."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account ${ BRAND_NAME }."
@@ -5034,6 +5081,12 @@
       "Calendars": [
         "Calendari"
       ],
+      "Can edit": [
+        "Può modificare"
+      ],
+      "Can view": [
+        "Può visualizzare"
+      ],
       "Cancel download": [
         "Annulla il download"
       ],
@@ -5133,6 +5186,9 @@
       "Emails (last month)": [
         "Email (ultimo mese)"
       ],
+      "Enable email notifications": [
+        "Attiva notifiche email"
+      ],
       "Encrypt emails": [
         "Email crittografate"
       ],
@@ -5189,6 +5245,9 @@
       ],
       "Import to:": [
         "Importa in:"
+      ],
+      "Include document name in notification": [
+        "Includi il nome del documento nella notifica"
       ],
       "Include message and file name in invite email": [
         "Includi il messaggio e il nome del file nell'email di invito"
@@ -5393,6 +5452,14 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Organizza, aggiungi e modifica file"
+      ],
+      "View and download": [
+        "Visualizza e scarica"
       ]
     },
     "Label for contact group color": {
@@ -6683,6 +6750,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Reimposta le password degli utenti e l'autenticazione a due fattori sugli utenti"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Indirizza il tuo traffico Internet attraverso la rete Tor con un solo click"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ],
@@ -6961,6 +7031,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Spazio insufficiente per caricare ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "Accesso al collegamento pubblico aggiornato"
+      ],
+      "Public link update access failed ": [
+        "Impossibile aggiornare l'accesso al collegamento pubblico "
+      ],
       "Stopping the sharing of this item has failed": [
         "L'interruzione della condivisione di questo elemento non è riuscita"
       ],
@@ -7163,8 +7239,20 @@
       "Please select your billing state first.": [
         "Seleziona prima lo stato di fatturazione."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Rinnova a ${ renewPrice }, annulla in qualsiasi momento."
+      ],
       "Select billing country to pay": [
         "Seleziona il paese di fatturazione per il pagamento"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ subscriptionLength } mesi. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ renewPrice } ogni ${ subscriptionLengthCopy }. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ subscriptionLength } mesi. Il piano si rinnoverà poi automaticamente a ${ renewPrice } per ${ subscriptionLengthCopy } mesi. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ renewPrice } al mese. Puoi annullare in qualsiasi momento."
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
