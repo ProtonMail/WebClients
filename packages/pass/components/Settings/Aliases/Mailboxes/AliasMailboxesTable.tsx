@@ -74,11 +74,11 @@ export const AliasMailboxesTable: FC = () => {
                                                 className="button-xs ui-purple"
                                                 pill={false}
                                                 originalPlacement="bottom-end"
-                                                disabled={loading || !canManage}
+                                                disabled={loading}
                                             >
                                                 {!IsDefault && (
                                                     <DropdownMenuButton
-                                                        disabled={!Verified || setDefault.loading}
+                                                        disabled={!canManage || !Verified || setDefault.loading}
                                                         label={c('Action').t`Make default`}
                                                         onClick={() =>
                                                             setDefault.dispatch({ defaultMailboxID: MailboxID })
@@ -90,6 +90,7 @@ export const AliasMailboxesTable: FC = () => {
                                                     <DropdownMenuButton
                                                         label={c('Action').t`Verify`}
                                                         onClick={() => handleVerifyClick(MailboxID)}
+                                                        disabled={!canManage}
                                                     />
                                                 )}
                                                 <DropdownMenuButton
