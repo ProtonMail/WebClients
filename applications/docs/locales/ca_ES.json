@@ -408,6 +408,9 @@
       "Next month": [
         "Mes següent"
       ],
+      "Next page": [
+        "Pàgina següent"
+      ],
       "No, thanks": [
         "No, gràcies"
       ],
@@ -449,6 +452,9 @@
       ],
       "Previous month": [
         "Mes anterior"
+      ],
+      "Previous page": [
+        "Pàgina anterior"
       ],
       "Print": [
         "Imprimeix"
@@ -3773,6 +3779,10 @@
         "${ selectedContactsLength } contacte seleccionat de ${ contactsLength }",
         "${ selectedContactsLength } contactes seleccionats de ${ contactsLength }"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } seleccionat",
+        "${ selectedCount } seleccionats"
+      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } carpeta seleccionada",
         "${ selectedFoldersCountLocalized } carpetes seleccionades"
@@ -3855,6 +3865,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Import inferior al mínim (${ amount })."
+      ],
+      "an anonymous user": [
+        "un usuari anònim"
       ],
       "and": [
         "i"
@@ -4559,6 +4572,12 @@
       "The Beginning": [
         "Inici"
       ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "La signatura digital s'ha verificat parcialment. El fitxer s'ha carregat des d'una pàgina pública que no especifica un origen d'usuari específic."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "La signatura digital s'ha verificat parcialment. La carpeta s'ha carregat des d'una pàgina pública que no especifica un origen d'usuari específic."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
       ],
@@ -5057,6 +5076,12 @@
       "Calendars": [
         "Calendaris"
       ],
+      "Can edit": [
+        "Edita"
+      ],
+      "Can view": [
+        "Mostra"
+      ],
       "Cancel download": [
         "Cancel·lar la descarregada"
       ],
@@ -5422,6 +5447,14 @@
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Organitzeu, afegiu i editeu fitxers"
+      ],
+      "View and download": [
+        "Mostra i descarrega"
       ]
     },
     "Label for contact group color": {
@@ -6941,6 +6974,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hi ha prou espai per carregar ${ formattedTotal }"
+      ],
+      "Public link access updated": [
+        "S'ha actualitzat l'accés a l'enllaç públic."
+      ],
+      "Public link update access failed ": [
+        "No s'ha pogut accedir a l'actualització de l'enllaç públic "
       ],
       "Stopping the sharing of this item has failed": [
         "Error en deixar de compartir aquest element"

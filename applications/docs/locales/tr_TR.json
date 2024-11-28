@@ -405,6 +405,9 @@
       "Next month": [
         "Sonraki ay"
       ],
+      "Next page": [
+        "Sonraki sayfa"
+      ],
       "No, thanks": [
         "Hayır, teşekkürler"
       ],
@@ -446,6 +449,9 @@
       ],
       "Previous month": [
         "Önceki ay"
+      ],
+      "Previous page": [
+        "Önceki sayfa"
       ],
       "Print": [
         "Yazdır"
@@ -3765,6 +3771,10 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } kişi seçildi",
         "${ selectedContactsLength }/${ contactsLength } kişi seçildi"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } seçilmiş",
+        "${ selectedCount } seçilmiş"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } klasör seçildi",

@@ -81,6 +81,9 @@
       "Apply": [
         "Tillämpa"
       ],
+      "Ask me next time": [
+        "Fråga mig nästa gång"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Högst ${ maxContacts } kontakt tillåts per kontaktgrupp",
         "Högst ${ maxContacts } kontakter är tillåtna per kontaktgrupp"
@@ -405,6 +408,9 @@
       "Next month": [
         "Nästa månad"
       ],
+      "Next page": [
+        "Nästa sida"
+      ],
       "No, thanks": [
         "Nej tack"
       ],
@@ -446,6 +452,9 @@
       ],
       "Previous month": [
         "Föregående månad"
+      ],
+      "Previous page": [
+        "Föregående sida"
       ],
       "Print": [
         "Skriv ut"
@@ -513,6 +522,9 @@
       "Restore this version": [
         "Återställ denna version"
       ],
+      "Restore this version?": [
+        "Återställ denna version?"
+      ],
       "Retry": [
         "Försök igen"
       ],
@@ -521,6 +533,9 @@
       ],
       "Save changes": [
         "Spara ändringar"
+      ],
+      "Save preferences": [
+        "Spara preferenser"
       ],
       "Search": [
         "Sök"
@@ -3753,6 +3768,10 @@
         "${ selectedContactsLength }/${ contactsLength } kontakt vald",
         "${ selectedContactsLength }/${ contactsLength } kontakter valda"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } vald",
+        "${ selectedCount } valda"
+      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mapp vald",
         "${ selectedFoldersCountLocalized } mappar valda"
@@ -3835,6 +3854,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Belopp under minimum (${ amount })."
+      ],
+      "an anonymous user": [
+        "en anonym användare"
       ],
       "and": [
         "och"
@@ -4125,6 +4147,12 @@
       ],
       "Free 5GB encrypted storage to get started": [
         "Gratis 5 GB krypterat lagringsutrymme för att komma igång"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Skaffa e-postuppdateringar för kommentarer och förslag som läggs till dina dokument."
+      ],
+      "Get Notified About Comments": [
+        "Bli aviserad om kommentarer"
       ],
       "here": [
         "här"
@@ -4445,6 +4473,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
+      "Restored version to": [
+        "Återställ version till"
+      ],
       "Saving": [
         "Sparar"
       ],
@@ -4525,6 +4556,12 @@
       ],
       "The Beginning": [
         "Början"
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Den digitala signaturen har delvis verifierats. Filen laddades upp från en offentlig sida som inte anger ett specifikt användarursprung."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Den digitala signaturen har delvis verifierats. Mappen laddades upp från en offentlig sida som inte anger ett specifikt användarursprung."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
@@ -4634,6 +4671,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
+      ],
+      "Undo successful": [
+        "Ångra lyckades"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Tyvärr verkar det som om filen eller en del av dess data inte kan dekrypteras."
@@ -4822,6 +4862,9 @@
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Din nuvarande webbläsare stöder inte nedladdning av stora filer på grund av otillgänglighet för servicearbete. Nedladdning av stora filer kan frysa eller göra att webbläsaren inte svarar. Använd de senaste versionerna av en ${ recommendedBrowser } och försök igen."
+      ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "Ditt nuvarande dokument kommer att ersättas med denna version. Kommentarer och förslag kommer att tas bort från dokumentet men förblir åtkomliga i kommentarshistoriken."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
@@ -5021,6 +5064,12 @@
       "Calendars": [
         "Kalendrar"
       ],
+      "Can edit": [
+        "Kan redigera"
+      ],
+      "Can view": [
+        "Kan visa"
+      ],
       "Cancel download": [
         "Avbryt nedladdning"
       ],
@@ -5120,6 +5169,9 @@
       "Emails (last month)": [
         "E-post (senaste månaden)"
       ],
+      "Enable email notifications": [
+        "Aktivera e-postaviseringar"
+      ],
       "Encrypt emails": [
         "Kryptera e-post"
       ],
@@ -5176,6 +5228,9 @@
       ],
       "Import to:": [
         "Importera till:"
+      ],
+      "Include document name in notification": [
+        "Inkludera dokumentnamn i avisering"
       ],
       "Include message and file name in invite email": [
         "Inkludera meddelande och filnamn i e-postinbjudan"
@@ -5380,6 +5435,14 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Organisera, lägga till och redigera filer"
+      ],
+      "View and download": [
+        "Visa och ladda ner"
       ]
     },
     "Label for contact group color": {
@@ -6672,6 +6735,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Återställ användarlösenord och återställ tvåfaktorsautentisering för användare"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Dirigera din internettrafik genom Tor-nätverket med ett enda klick"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."

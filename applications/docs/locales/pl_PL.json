@@ -405,6 +405,9 @@
       "Next month": [
         "Następny miesiąc"
       ],
+      "Next page": [
+        "Następna strona"
+      ],
       "No, thanks": [
         "Nie, dziękuję"
       ],
@@ -446,6 +449,9 @@
       ],
       "Previous month": [
         "Poprzedni miesiąc"
+      ],
+      "Previous page": [
+        "Poprzednia strona"
       ],
       "Print": [
         "Drukuj"
@@ -3848,6 +3854,12 @@
         "Zaznaczone kontakty: ${ selectedContactsLength }/${ contactsLength }",
         "Zaznaczone kontakty: ${ selectedContactsLength }/${ contactsLength }"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } zaznaczony",
+        "${ selectedCount } zaznaczone",
+        "${ selectedCount } zaznaczonych",
+        "${ selectedCount } zaznaczonych"
+      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } zaznaczony folder",
         "${ selectedFoldersCountLocalized } zaznaczone foldery",
@@ -4508,6 +4520,12 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Pamiętaj, że w zależności od rozmiaru książki adresowej, ten proces może zająć trochę czasu."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Po kliknięciu przycisku Potwierdź, na koncie pozostanie ${ creditsRemaining } środek.",
+        "Po kliknięciu przycisku Potwierdź na koncie pozostaną ${ creditsRemaining } środki.",
+        "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków.",
+        "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków."
+      ],
       "Please provide a name and an email address for creating a group.": [
         "Wpisz nazwę i adres e-mail, aby utworzyć grupę."
       ],
@@ -5143,6 +5161,12 @@
       ],
       "Calendars": [
         "Kalendarze"
+      ],
+      "Can edit": [
+        "Edycja"
+      ],
+      "Can view": [
+        "Odczyt"
       ],
       "Cancel download": [
         "Anuluj pobieranie"
@@ -7370,6 +7394,9 @@
       ],
       "Please select your billing state first.": [
         "Najpierw wybierz stan rozliczeniowy"
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Odnowienie za ${ renewPrice }. Anuluj w dowolnym momencie."
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
