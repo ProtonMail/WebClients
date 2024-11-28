@@ -6,19 +6,19 @@ import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
 export const freeTrialUpgradeClick = (upsellRef: string) => {
-    invokeInboxDesktopIPC({
+    void invokeInboxDesktopIPC({
         type: 'openExternal',
         payload: getAppHref(addUpsellPath(getUpgradePath({}), upsellRef), APPS.PROTONACCOUNT),
     });
 };
 
 export const upgradeButtonClick = (cycle: CYCLE, plan?: PLANS) => {
-    invokeInboxDesktopIPC({
+    void invokeInboxDesktopIPC({
         type: 'openExternal',
         payload: getAppHref(`/dashboard?plan=${plan}&cycle=${cycle}&step=1`, APPS.PROTONACCOUNT),
     });
 };
 
 export const openLinkInBrowser = (url: string) => {
-    invokeInboxDesktopIPC({ type: 'openExternal', payload: url });
+    void invokeInboxDesktopIPC({ type: 'openExternal', payload: url });
 };

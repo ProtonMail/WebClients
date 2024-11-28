@@ -34,7 +34,7 @@ const DownloadDropdown = ({ app }: { app: DesktopVersion }) => {
 
     const handleClick = () => {
         if (isElectronMail) {
-            invokeInboxDesktopIPC({ type: 'openExternal', payload: value });
+            void invokeInboxDesktopIPC({ type: 'openExternal', payload: value });
         } else {
             window.open(value, '_self');
         }
@@ -58,7 +58,7 @@ const DownloadDropdown = ({ app }: { app: DesktopVersion }) => {
 const DownloadButton = ({ link }: { link?: string }) => {
     if (isElectronMail && link) {
         const handleClick = () => {
-            invokeInboxDesktopIPC({ type: 'openExternal', payload: link });
+            void invokeInboxDesktopIPC({ type: 'openExternal', payload: link });
         };
 
         return <Button color="norm" onClick={handleClick} fullWidth>{c('Action').t`Download`}</Button>;
