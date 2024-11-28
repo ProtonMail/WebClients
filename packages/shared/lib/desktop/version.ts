@@ -11,7 +11,7 @@ export const storeAppVersion = (name: APP_NAMES, version: string) => {
     if (!hasInboxDesktopFeature('StoreVersion')) {
         return;
     }
-    invokeInboxDesktopIPC({ type: 'storeAppVersion', payload: { name, version } });
+    void invokeInboxDesktopIPC({ type: 'storeAppVersion', payload: { name, version } });
 };
 
 export const getAllAppVersions = (): string => {

@@ -9,11 +9,11 @@ import { API_CUSTOM_ERROR_CODES } from '../errors';
 
 export const endOfTrialIPCCall = () => {
     if (hasInboxDesktopFeature('MultiAccount')) {
-        invokeInboxDesktopIPC({
+        void invokeInboxDesktopIPC({
             type: 'trialEnd',
         });
     } else {
-        invokeInboxDesktopIPC({
+        void invokeInboxDesktopIPC({
             type: 'trialEnd',
             payload: 'trialEnded',
         });
@@ -22,7 +22,7 @@ export const endOfTrialIPCCall = () => {
 
 export const resetEndOfTrialIPCCall = () => {
     if (!hasInboxDesktopFeature('MultiAccount')) {
-        invokeInboxDesktopIPC({
+        void invokeInboxDesktopIPC({
             type: 'trialEnd',
             payload: 'resetTrialEnded',
         });
