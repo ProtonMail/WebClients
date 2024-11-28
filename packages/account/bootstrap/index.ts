@@ -61,6 +61,7 @@ import { EVENTS, UnleashClient } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import { getCryptoWorkerOptions } from './cryptoWorkerOptions';
+import { getLastUsedLocalID, setLastUsedLocalID } from './lastUsedLocalID';
 
 class InvalidSessionError extends Error {
     public extra: ExtraSessionForkData = {};
@@ -149,6 +150,7 @@ export const loadSession = async ({
 }): Promise<SessionPayloadData> => {
     if (authentication.ready) {
         api.UID = authentication.UID;
+        setLastUsedLocalID(authentication.localID);
 
         return {
             session: undefined,
@@ -156,7 +158,7 @@ export const loadSession = async ({
         };
     }
 
-    const localID = getLocalIDFromPathname(pathname);
+    let localID = getLocalIDFromPathname(pathname);
 
     api.UID = undefined;
 
@@ -174,6 +176,7 @@ export const loadSession = async ({
                 if (result) {
                     authentication.login(result.session);
                     api.UID = authentication.UID;
+                    setLastUsedLocalID(authentication.localID);
 
                     return {
                         session: result.session,
@@ -182,12 +185,20 @@ export const loadSession = async ({
                     };
                 }
             }
-            throw new InvalidSessionError('Missing localID', extra);
+
+            // Having a previously persisted localID potentially avoids a redirect to account.
+            const lastUsedLocaleId = getLastUsedLocalID();
+            if (lastUsedLocaleId >= 0) {
+                localID = lastUsedLocaleId;
+            } else {
+                throw new InvalidSessionError('Missing localID', extra);
+            }
         }
 
         const result = await resumeSession({ api, localID });
         authentication.login(result);
         api.UID = authentication.UID;
+        setLastUsedLocalID(authentication.localID);
 
         return {
             session: result,
