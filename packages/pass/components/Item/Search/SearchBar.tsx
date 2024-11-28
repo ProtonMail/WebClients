@@ -29,7 +29,7 @@ const SearchBarRaw: FC<Props> = ({ disabled, initial, trash }) => {
     const { onTelemetry } = usePassCore();
     const { filters, setFilters, matchTrash } = useNavigation();
 
-    const [search, setSearch] = useState<string>(initial ?? '');
+    const [search, setSearch] = useState<string>((filters.search || initial) ?? '');
     const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
 
     const inputRef = useRef<HTMLInputElement>(null);
@@ -71,7 +71,6 @@ const SearchBarRaw: FC<Props> = ({ disabled, initial, trash }) => {
 
     useEffect(handleFocus, []);
     useEffect(() => setFilters({ search: debouncedSearch }), [debouncedSearch]);
-    useEffect(() => setSearch((value) => filters.search || value), [filters.search]);
     useSearchShortcut(handleFocus);
 
     return (
