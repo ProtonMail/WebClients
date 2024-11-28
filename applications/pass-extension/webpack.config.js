@@ -37,7 +37,7 @@ if (!SUPPORTED_TARGETS.includes(BUILD_TARGET)) {
 const CONFIG = fs.readFileSync('./src/app/config.ts', 'utf-8').replaceAll(/(export const |;)/gm, '');
 const MANIFEST_KEYS = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'manifest-keys.json'), 'utf8'));
 const PUBLIC_KEY = BUILD_TARGET === 'chrome' ? MANIFEST_KEYS?.[MANIFEST_KEY] : null;
-const ARGON2_CHUNK_NAME = 'node_modules_pmcrypto_node_modules_openpgp_dist_lightweight_argon2id_min_mjs';
+const ARGON2_CHUNK_NAME = 'node_modules_openpgp_dist_lightweight_argon2id_min_mjs';
 
 console.log(`ENV = ${ENV}`);
 console.log(`RELEASE = ${RELEASE}`);
