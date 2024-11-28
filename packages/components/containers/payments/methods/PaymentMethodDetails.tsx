@@ -3,9 +3,10 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { SepaAuthorizationText } from '@proton/components/payments/chargebee/SepaAuthorizationText';
+import { formattedShortSavedSepaDetails } from '@proton/components/payments/client-extensions';
 import { getBankSvg } from '@proton/components/payments/client-extensions/credit-card-type';
 import type { PayPalDetails, SavedCardDetails, SepaDetails } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, isPaypalDetails, isSavedCardDetails } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, isPaypalDetails, isSavedCardDetails, isSepaDetails } from '@proton/payments';
 
 import Bordered from '../../../components/container/Bordered';
 import useSvgGraphicsBbox from '../../../hooks/useSvgGraphicsBbox';
@@ -92,6 +93,34 @@ const PaymentMethodDetailsPaypal = ({ details }: { details: PayPalDetails }) => 
     );
 };
 
+const PaymentMethodDetailsSepa = ({ details }: { details: SavedCardDetails | PayPalDetails | SepaDetails }) => {
+    // no matter what the shape of the details, we MUST display the authorization text. This is a protective measure
+    // in case if isSepaDetails fails in the future.
+    if (!isSepaDetails(details)) {
+        return <SepaAuthorizationText />;
+    }
+
+    return (
+        <>
+            <Bordered className="p-7 rounded" data-testid="existing-sepa">
+                <div className="flex flex-wrap">
+                    <div className="flex-1 mr-4">
+                        <span className="block mb-2 opacity-40">{c('Label').t`Account holder`}</span>
+                        <span className="text-xl my-0 inline-block text-ellipsis max-w-full">
+                            {details.AccountName}
+                        </span>
+                    </div>
+                    <div className="text-right shrink-0">
+                        <span className="block mb-2 opacity-40">{c('Label').t`IBAN`}</span>
+                        <span className="text-xl my-0">{formattedShortSavedSepaDetails(details)}</span>
+                    </div>
+                </div>
+            </Bordered>
+            <SepaAuthorizationText />
+        </>
+    );
+};
+
 interface Props {
     type:
         | PAYMENT_METHOD_TYPES.CARD
@@ -120,7 +149,7 @@ const PaymentMethodDetails = ({ type, details }: Props) => {
     }
 
     if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
-        return <SepaAuthorizationText />;
+        return <PaymentMethodDetailsSepa details={details} />;
     }
 
     return null;
