@@ -405,6 +405,9 @@
       "Next month": [
         "Volgende maand"
       ],
+      "Next page": [
+        "Volgende pagina"
+      ],
       "No, thanks": [
         "Nee, bedankt"
       ],
@@ -446,6 +449,9 @@
       ],
       "Previous month": [
         "Vorige maand"
+      ],
+      "Previous page": [
+        "Vorige pagina"
       ],
       "Print": [
         "Afdrukken"
@@ -3765,6 +3771,10 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } contact geselecteerd",
         "${ selectedContactsLength }/${ contactsLength } contacten geselecteerd"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } geselecteerd",
+        "${ selectedCount } geselecteerd"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } map geselecteerd",
