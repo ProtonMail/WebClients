@@ -9648,6 +9648,14 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -9660,14 +9668,6 @@
       ],
       "Switch plans?": [
         "Ganti paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Mulai dari ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -11396,6 +11396,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Alias dinonaktifkan"
+      ],
       "Unsubscribed": [
         "Langganan dihentikan"
       ]

@@ -381,6 +381,9 @@
       "Disable alias": [
         "Адключыць псеўданім"
       ],
+      "Disabling alias": [
+        "Адключэнне псеўданіма"
+      ],
       "Discard": [
         "Адхіліць"
       ],
@@ -968,6 +971,9 @@
       ],
       "Remove this label": [
         "Выдаліць гэту метку"
+      ],
+      "Remove Zoom meeting": [
+        "Выдаліць сустрэчу Zoom"
       ],
       "Replace": [
         "Замяніць"
@@ -1647,6 +1653,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за першы ${ cycle } месяцы(-аў). Пасля гэтага будзе выканана аўтаматычнае падаўжэнне па зніжаным кошце ў памеры ${ nextPrice } за ${ renewalLength } месяцы(-аў). Скасаваць можна ў любы момант."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ discountedPrice } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ nextPrice } за кожны месяц. Скасаваць можна ў любы момант."
       ]
@@ -7060,6 +7069,12 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдыт.",
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдыты.",
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдытаў.",
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдытаў."
+      ],
       "Please open the document to view it.": [
         "Адкрыйце дакумент, каб паглядзець яго."
       ],
@@ -7282,6 +7297,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Прабачце, але гэтага паведамлення не існуе або яно пратэрмінаванае."
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Магчымасці сховішча не падтрымліваюцца ў гэтым браўзеры. Гэта падтрымка неабходна, каб уключыць пошук па змесціве."
+      ],
       "Subject": [
         "Тэма"
       ],
@@ -7429,6 +7447,9 @@
       "This message is from a mailing list.": [
         "Гэта паведамленне са спіса рассылкі."
       ],
+      "This message is from a SimpleLogin alias.": [
+        "Гэта паведамленне з псеўданіма SimpleLogin."
+      ],
       "This message is signed by a key that has not been trusted yet.": [
         "Гэта паведамленне падпісана ключом, які яшчэ не быў давераным."
       ],
@@ -7549,6 +7570,9 @@
       "Turn on to search the content of your messages": [
         "Уключыце, каб шукаць змесціва вашых паведамленняў"
       ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Немагчыма атрымаць доступ да магчымасцяў сховішча ў гэтым браўзеры. Гэта падтрымка неабходна, каб уключыць пошук па змесціве."
+      ],
       "Unlock message": [
         "Разблакіраваць паведамленне"
       ],
@@ -7565,7 +7589,7 @@
         "Файл не падтрымліваецца"
       ],
       "Updating message content search...": [
-        "Абнаўленне пошуку змесціва паведамлення..."
+        "Абнаўленне пошуку па змесціве паведамлення..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
@@ -7656,6 +7680,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Мы заблакіравалі наступным рэкламадаўцам і арганізацыям магчымасць бачыць, калі вы адкрывалі гэты ліст, якой прыладай вы карысталіся, а таксама дзе вы знаходзіцеся."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Немагчыма ўключыць пошук па змесціве паведамлення ў гэтым браўзеры."
       ],
       "We could not verify the sender's trusted keys.": [
         "Мы не змаглі праверыць давераныя ключы адпраўніка."
@@ -10144,6 +10171,14 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -10156,14 +10191,6 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Атрымайце Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Пачатковы кошт ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -10322,6 +10349,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Скідайце паролі і двухфактарную аўтэнтыфікацыю карыстальнікаў"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Накіроўвайце свой трафік праз сетку Tor адным націскам"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
@@ -10889,8 +10919,23 @@
       "Please select your billing state first.": [
         "Спачатку выберыце ваш штат выстаўлення рахунку."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Падаўжаецца за ${ renewPrice }. Скасаваць можна ў любы час."
+      ],
       "Select billing country to pay": [
         "Выберыце краіну выстаўлення рахунку для аплаты"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першыя ${ subscriptionLength } месяцы(-аў). Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за ${ subscriptionLengthCopy } месяцы(-аў). Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ subscriptionLength } месяцы(-аў). Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за ${ subscriptionLengthCopy } месяцы(-аў). Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за ${ subscriptionLength } месяцы(-аў). Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за кожны месяц. Скасаваць можна ў любы момант."
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
@@ -11994,6 +12039,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Псеўданім адключаны"
+      ],
       "Unsubscribed": [
         "Падпіска скасавана"
       ]
@@ -13406,7 +13454,7 @@
         "Уключыць 2ФА"
       ],
       "Enable message content search": [
-        "Уключыць пошук змесціва паведамлення"
+        "Уключыць пошук па змесціве паведамлення"
       ],
       "Enter 2FA code": [
         "Увядзіце код 2ФА"
@@ -13991,6 +14039,9 @@
     "Tor out of date": {
       "stable release": [
         "стабільны выпуск"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Гэта версія браўзера Tor не падтрымліваецца. Абнавіце праграму да апошняй версіі ${ stableRelease }"
       ]
     },
     "Update font modal": {
