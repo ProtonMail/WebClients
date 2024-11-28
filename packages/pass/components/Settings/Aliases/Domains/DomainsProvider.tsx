@@ -41,7 +41,7 @@ export interface AliasDomainsContextValue {
     onDelete: (domainID: number) => void;
     onVerify: (domainID: number, validation: CustomDomainValidationOutput) => void;
     onSetDefault: (data: UserAliasSettingsGetOutput) => void;
-    setAction: (action: DomainAction) => void;
+    setAction: (action: MaybeNull<DomainAction>) => void;
 }
 
 export const AliasDomainsContext = createContext<MaybeNull<AliasDomainsContextValue>>(null);
@@ -59,10 +59,8 @@ export const AliasDomainsProvider: FC<PropsWithChildren> = ({ children }) => {
     const [customDomains, setCustomDomains] = useState<Record<number, CustomDomainOutput>>({});
     const [aliasDomains, setAliasDomains] = useState<UserAliasDomainOutput[]>([]);
     const [action, setAction] = useState<MaybeNull<DomainAction>>(null);
-    const resetAction = () => setAction(null);
 
     const syncAliasDomains = useRequest(getAliasDomains, { onSuccess: setAliasDomains });
-
     const syncCustomDomains = useRequest(getCustomDomains, {
         onSuccess: (domains) => setCustomDomains(toMap(domains, 'ID')),
     });
@@ -96,7 +94,7 @@ export const AliasDomainsProvider: FC<PropsWithChildren> = ({ children }) => {
                     })
                 ),
             setAction: (action) => {
-                switch (action.type) {
+                switch (action?.type) {
                     case 'create':
                         if (!canManage) spotlight.setUpselling({ type: 'pass-plus', upsellRef: UpsellRef.SETTING });
                         else setAction({ type: 'create' });
@@ -119,18 +117,12 @@ export const AliasDomainsProvider: FC<PropsWithChildren> = ({ children }) => {
             {(() => {
                 switch (action?.type) {
                     case 'create':
-                        return <CustomDomainCreateModal onClose={resetAction} />;
+                        return <CustomDomainCreateModal />;
                     case 'delete':
-                        return <CustomDomainDeleteModal domainID={action.domainID} onClose={resetAction} />;
+                        return <CustomDomainDeleteModal domainID={action.domainID} />;
                     case 'info':
                     case 'dns':
-                        return (
-                            <CustomDomainDetailsModal
-                                tab={action.type}
-                                domainID={action.domainID}
-                                onClose={resetAction}
-                            />
-                        );
+                        return <CustomDomainDetailsModal tab={action.type} domainID={action.domainID} />;
                     default:
                         return null;
                 }

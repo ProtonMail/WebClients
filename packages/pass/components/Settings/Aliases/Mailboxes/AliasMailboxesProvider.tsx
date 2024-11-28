@@ -24,7 +24,7 @@ export interface AliasMailboxesContextValue {
     loading: boolean;
     canManage: boolean;
     mailboxes: UserMailboxOutput[];
-    setAction: (action: AliasMailboxAction) => void;
+    setAction: (action: MaybeNull<AliasMailboxAction>) => void;
     onCreate: (contact: UserMailboxOutput) => void;
     onVerify: (mailbox: UserMailboxOutput) => void;
     onDelete: (mailboxID: number) => void;
@@ -49,7 +49,6 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
     const spotlight = useSpotlight();
     const canManage = useSelector(selectCanManageAlias);
     const [action, setAction] = useState<MaybeNull<AliasMailboxAction>>(null);
-    const resetAction = () => setAction(null);
 
     const [mailboxes, setMailboxes] = useState<Record<number, UserMailboxOutput>>({});
     const sync = useRequest(getMailboxes, { onSuccess: (mailboxes) => setMailboxes(toMap(mailboxes, 'MailboxID')) });
@@ -61,7 +60,7 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
             loading: sync.loading,
             mailboxes: Object.values(mailboxes),
             setAction: (action) => {
-                switch (action.type) {
+                switch (action?.type) {
                     case 'create':
                         if (!canManage) spotlight.setUpselling({ type: 'pass-plus', upsellRef: UpsellRef.SETTING });
                         else setAction({ type: 'create' });
@@ -95,17 +94,11 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
             {(() => {
                 switch (action?.type) {
                     case 'create':
-                        return <AliasMailboxCreateModal onClose={resetAction} />;
+                        return <AliasMailboxCreateModal />;
                     case 'delete':
-                        return <AliasMailboxDeleteModal onClose={resetAction} mailboxID={action.mailboxID} />;
+                        return <AliasMailboxDeleteModal mailboxID={action.mailboxID} />;
                     case 'verify':
-                        return (
-                            <MailboxVerifyModal
-                                onClose={resetAction}
-                                mailboxID={action.mailboxID}
-                                sentAt={action.sentAt}
-                            />
-                        );
+                        return <MailboxVerifyModal mailboxID={action.mailboxID} sentAt={action.sentAt} />;
                 }
             })()}
         </AliasMailboxesContext.Provider>
