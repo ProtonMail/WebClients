@@ -119,9 +119,11 @@ export function RevisionDetailsModal({
                 <DetailsRow label={c('Title').t`Name`}>
                     <FileNameDisplay text={name} />
                 </DetailsRow>
-                <DetailsRow label={c('Title').t`Uploaded by`}>
-                    <span className="text-pre">{revision.signatureEmail}</span>
-                </DetailsRow>
+                {revision.signatureEmail && (
+                    <DetailsRow label={c('Title').t`Uploaded by`}>
+                        <span className="text-pre">{revision.signatureEmail}</span>
+                    </DetailsRow>
+                )}
                 <DetailsRow label={c('Title').t`Uploaded`}>
                     <TimeCell time={revision.createTime} />
                 </DetailsRow>
@@ -217,7 +219,7 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                     loading={isSignatureIssuesLoading}
                     signatureIssues={signatureIssues}
                     signatureNetworkError={signatureNetworkError}
-                    signatureAddress={link.signatureAddress}
+                    signatureAddress={link.activeRevision?.signatureAddress || link.signatureAddress}
                     corruptedLink={link.corruptedLink}
                     isFile={link.isFile}
                     name={link.name}
@@ -226,13 +228,14 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                 <DetailsRow label={c('Title').t`Name`}>
                     <FileNameDisplay text={link.name} />
                 </DetailsRow>
-                {isSharedWithMeLink ? (
+                {isSharedWithMeLink && (
                     <DetailsRow label={c('Title').t`Location`}>
                         <FileNameDisplay text={`/${c('Info').t`Shared with me`}`} />
                     </DetailsRow>
-                ) : (
+                )}
+                {link.signatureAddress && (
                     <DetailsRow label={c('Title').t`Uploaded by`}>
-                        <UserNameCell />
+                        <UserNameCell signatureEmail={link.signatureAddress} />
                     </DetailsRow>
                 )}
                 {link.parentLinkId && !isSharedWithMeLink && (

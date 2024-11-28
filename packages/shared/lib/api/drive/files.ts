@@ -184,7 +184,7 @@ export const queryPublicRequestUpload = (
             };
         }[];
         ThumbnailList?: Omit<Thumbnail, 'ThumbnailID'>[];
-        AddressID: string;
+        SignatureEmail?: string;
         LinkID: string;
         RevisionID: string;
         Thumbnail?: number;
@@ -215,7 +215,9 @@ export const queryPublicUpdateFileRevision = (
     token: string,
     linkID: string,
     revisionId: string,
-    data: UpdateFileRevision
+    data: Omit<UpdateFileRevision, 'SignatureAddress'> & {
+        SignatureEmail?: string;
+    }
 ) => {
     return {
         method: 'put',
