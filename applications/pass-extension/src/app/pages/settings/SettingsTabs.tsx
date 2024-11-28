@@ -14,6 +14,7 @@ import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnl
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { OrganizationProvider, useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { Import } from '@proton/pass/components/Settings/Import';
+import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
@@ -100,53 +101,59 @@ export const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
             <OrganizationProvider>
                 <PasswordUnlockProvider>
                     <PinUnlockProvider>
-                        <div className="mb-8">
-                            <div className="flex w-full justify-space-between items-start">
-                                <div className="flex items-start">
-                                    <Avatar className="mr-2 mt-1">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
-                                    <span>
-                                        <span className="block text-semibold text-ellipsis">{user?.DisplayName}</span>
-                                        <span className="block text-sm text-ellipsis">{user?.Email}</span>
-                                        <span className="block color-weak text-sm text-italic">{planDisplayName}</span>
-                                    </span>
-                                </div>
-                                <div className="flex items-end flex-column">
-                                    {!isPaidPlan(passPlan) && (
-                                        <>
-                                            <span className="block mb-1">
-                                                {planDisplayName}
-                                                <span className="color-weak text-italic text-sm">
-                                                    {' '}
-                                                    {trialDaysLeft &&
-                                                        `(${c('Info').ngettext(
-                                                            msgid`${trialDaysLeft} day left`,
-                                                            `${trialDaysLeft} days left`,
-                                                            trialDaysLeft
-                                                        )})`}
-                                                </span>
+                        <SpotlightProvider>
+                            <div className="mb-8">
+                                <div className="flex w-full justify-space-between items-start">
+                                    <div className="flex items-start">
+                                        <Avatar className="mr-2 mt-1">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
+                                        <span>
+                                            <span className="block text-semibold text-ellipsis">
+                                                {user?.DisplayName}
                                             </span>
-                                            <UpgradeButton inline upsellRef={UpsellRef.SETTING} />
-                                        </>
-                                    )}
+                                            <span className="block text-sm text-ellipsis">{user?.Email}</span>
+                                            <span className="block color-weak text-sm text-italic">
+                                                {planDisplayName}
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div className="flex items-end flex-column">
+                                        {!isPaidPlan(passPlan) && (
+                                            <>
+                                                <span className="block mb-1">
+                                                    {planDisplayName}
+                                                    <span className="color-weak text-italic text-sm">
+                                                        {' '}
+                                                        {trialDaysLeft &&
+                                                            `(${c('Info').ngettext(
+                                                                msgid`${trialDaysLeft} day left`,
+                                                                `${trialDaysLeft} days left`,
+                                                                trialDaysLeft
+                                                            )})`}
+                                                    </span>
+                                                </span>
+                                                <UpgradeButton inline upsellRef={UpsellRef.SETTING} />
+                                            </>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <Tabs
-                            className="w-full"
-                            contentClassName="p-0"
-                            navContainerClassName="mb-6"
-                            onChange={handleOnChange}
-                            tabs={tabs}
-                            value={activeTab}
-                        />
+                            <Tabs
+                                className="w-full"
+                                contentClassName="p-0"
+                                navContainerClassName="mb-6"
+                                onChange={handleOnChange}
+                                tabs={tabs}
+                                value={activeTab}
+                            />
 
-                        <div className="mt-auto">
-                            <hr />
-                            <span className="block text-sm color-weak text-center">
-                                {PASS_APP_NAME} v{APP_VERSION}
-                            </span>
-                        </div>
+                            <div className="mt-auto">
+                                <hr />
+                                <span className="block text-sm color-weak text-center">
+                                    {PASS_APP_NAME} v{APP_VERSION}
+                                </span>
+                            </div>
+                        </SpotlightProvider>
                     </PinUnlockProvider>
                 </PasswordUnlockProvider>
             </OrganizationProvider>
