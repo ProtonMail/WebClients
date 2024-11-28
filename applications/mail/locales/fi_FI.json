@@ -7434,6 +7434,9 @@
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Estimme seuraavia mainostajia ja organisaatioita näkemästä, milloin avaat tämän sähköpostin, mitä laitetta käytät ja missä olet."
       ],
+      "We cannot enable message content search in this browser.": [
+        "Emme voi ottaa käyttöön viestin sisältöhakua tässä selaimessa."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Lähettäjän luotettuja avaimia ei voitu vahvistaa."
       ],
@@ -9815,6 +9818,14 @@
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Alkaen ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -9827,14 +9838,6 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hanki Mail Plus hintaan ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Alkaen ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -10055,7 +10058,7 @@
     },
     "new_plans: Upsell attribute": {
       "24/7 support": [
-        "24/7-tuki"
+        "24/7-asiakastuki"
       ],
       "Access advanced VPN features": [
         "Käyttöoikeus edistyneisiin VPN-ominaisuuksiin"
@@ -10549,6 +10552,9 @@
       ],
       "Please select your billing state first.": [
         "Valitse laskutusosavaltiosi ensin."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Uusitaan hintaan ${ renewPrice }, peru milloin tahansa."
       ],
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
@@ -11597,6 +11603,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Alias pois käytöstä"
+      ],
       "Unsubscribed": [
         "Tilaus on lopetettu"
       ]
@@ -13484,6 +13493,9 @@
     "Tor out of date": {
       "stable release": [
         "vakaaseen versioon"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tätä Tor-selaimen versiota ei tueta. Päivitä viimeisimpään ${ stableRelease }"
       ]
     },
     "Update font modal": {
