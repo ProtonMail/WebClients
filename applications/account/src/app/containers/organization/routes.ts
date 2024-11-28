@@ -67,10 +67,12 @@ export const getOrganizationAppRoutes = ({
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
-    const hasVpnB2BPlanWithEventLogging = hasVpnBusiness(subscription); //only vpnbiz2023 has Connection Events feature
+    //vpnbiz2023, bundlepro2022, bundlepro2024 have the Connection Events feature
+    const hasPlanWithEventLogging =
+        hasVpnBusiness(subscription) || hasBundlePro(subscription) || hasBundlePro2024(subscription);
     const canShowB2BConnectionEvents =
         canDisplayB2BLogsVPN &&
-        hasVpnB2BPlanWithEventLogging &&
+        hasPlanWithEventLogging &&
         app === APPS.PROTONVPN_SETTINGS &&
         canHaveOrganization &&
         (hasOrganizationKey || hasOrganization);
