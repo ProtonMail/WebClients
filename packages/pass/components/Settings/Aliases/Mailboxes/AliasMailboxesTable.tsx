@@ -10,26 +10,17 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLoading';
 import { AliasMailboxLoading } from '@proton/pass/components/Settings/Aliases/Mailboxes/AliasMailboxLoading';
 import { useRequest } from '@proton/pass/hooks/useRequest';
-import { resendVerifyMailbox, setDefaultMailbox } from '@proton/pass/store/actions';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { setDefaultMailbox } from '@proton/pass/store/actions';
 import clsx from '@proton/utils/clsx';
 
 import { useAliasMailboxes } from './AliasMailboxesProvider';
 
 export const AliasMailboxesTable: FC = () => {
     const { canManage, mailboxes, loading, onSetDefault, setAction } = useAliasMailboxes();
+    const handleVerifyClick = (mailboxID: number) => setAction({ type: 'verify', mailboxID });
 
     const setDefault = useRequest(setDefaultMailbox, {
         onSuccess: ({ DefaultMailboxID }) => onSetDefault(DefaultMailboxID),
-    });
-
-    const resend = useRequest(resendVerifyMailbox, {
-        onSuccess: ({ MailboxID }) =>
-            setAction({
-                type: 'verify',
-                mailboxID: MailboxID,
-                sentAt: getEpoch(),
-            }),
     });
 
     return (
@@ -65,8 +56,7 @@ export const AliasMailboxesTable: FC = () => {
                                                 <Button
                                                     shape="ghost"
                                                     style={{ padding: 0 }}
-                                                    disabled={resend.loading}
-                                                    onClick={() => resend.dispatch(MailboxID)}
+                                                    onClick={() => handleVerifyClick(MailboxID)}
                                                 >
                                                     <Badge type="light" className="m-0">{c('Info')
                                                         .t`Unverified`}</Badge>
@@ -99,8 +89,7 @@ export const AliasMailboxesTable: FC = () => {
                                                 {!Verified && (
                                                     <DropdownMenuButton
                                                         label={c('Action').t`Verify`}
-                                                        disabled={resend.loading}
-                                                        onClick={() => resend.dispatch(MailboxID)}
+                                                        onClick={() => handleVerifyClick(MailboxID)}
                                                     />
                                                 )}
                                                 <DropdownMenuButton
