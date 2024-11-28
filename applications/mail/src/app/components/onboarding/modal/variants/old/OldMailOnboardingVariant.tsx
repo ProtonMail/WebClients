@@ -47,7 +47,7 @@ const OldMailOnboardingModal = (props: MailOnboardingProps) => {
     const handleGoogleSync = (onNext: () => void) => {
         void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.enable_gmail_forwarding, {});
 
-        triggerOAuthPopup({
+        void triggerOAuthPopup({
             provider: ImportProvider.GOOGLE,
             scope: SYNC_G_OAUTH_SCOPES.join(' '),
             callback: async (oAuthProps: OAuthProps) => {
