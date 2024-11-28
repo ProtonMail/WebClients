@@ -34,7 +34,7 @@ export interface AliasMailboxesContextValue {
 
 export type AliasMailboxAction =
     | { type: 'create' }
-    | { type: 'verify'; mailboxID: number; sentAt: number }
+    | { type: 'verify'; mailboxID: number; sentAt?: number }
     | { type: 'delete'; mailboxID: number };
 
 export const AliasMailboxesContext = createContext<MaybeNull<AliasMailboxesContextValue>>(null);
