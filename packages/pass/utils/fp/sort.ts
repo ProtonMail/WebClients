@@ -10,6 +10,11 @@ export const sortOn =
     (a: T, b: T): number =>
         order === 'DESC' ? compare(b[key], a[key]) : compare(a[key], b[key]);
 
+export const liftSort =
+    <T, V>(compare: (a: T, b: T) => number, map: (a: V) => T): ((a: V, b: V) => number) =>
+    (a, b) =>
+        compare(map(a), map(b));
+
 export const chainSort =
     <T>(...comparators: ((a: T, b: T) => number)[]) =>
     (a: T, b: T): number =>
