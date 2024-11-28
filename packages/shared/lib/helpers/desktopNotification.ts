@@ -56,7 +56,7 @@ export const create = async (title = '', params = {}, electronNotification?: Ele
         return;
     }
     if (isElectronMail && electronNotification) {
-        invokeInboxDesktopIPC({ type: 'showNotification', payload: electronNotification });
+        void invokeInboxDesktopIPC({ type: 'showNotification', payload: electronNotification });
     } else {
         return Push.create(title, params);
     }

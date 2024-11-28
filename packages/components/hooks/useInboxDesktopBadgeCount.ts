@@ -40,7 +40,7 @@ const useInboxDesktopBadgeCount = () => {
             payload = 0;
         }
 
-        invokeInboxDesktopIPC({
+        void invokeInboxDesktopIPC({
             type: 'updateNotification',
             payload,
         });

@@ -56,7 +56,7 @@ const useEarlyAccess = () => {
 
     useEffect(() => {
         if (hasInboxDesktopFeature('EarlyAccess')) {
-            invokeInboxDesktopIPC({ type: 'earlyAccess', payload: targetEnvironment });
+            void invokeInboxDesktopIPC({ type: 'earlyAccess', payload: targetEnvironment });
         }
     }, [targetEnvironment]);
 

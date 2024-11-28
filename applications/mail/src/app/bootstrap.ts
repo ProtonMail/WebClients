@@ -20,7 +20,8 @@ import { getEvents } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
-import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
+import { handleInboxDesktopIPCPostMessages } from '@proton/shared/lib/desktop/ipcHelpers';
+import { getIsIframe, isChromiumBased } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
@@ -56,7 +57,12 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
     if (isElectronMail) {
         listenFreeTrialSessionExpiration(appName, authentication, api);
+
+        if (!getIsIframe()) {
+            handleInboxDesktopIPCPostMessages();
+        }
     }
+
     startLogoutListener();
 
     const run = async () => {

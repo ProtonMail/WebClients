@@ -320,7 +320,7 @@ const ThemeProvider = ({ children, appName }: Props) => {
 
     useEffect(() => {
         if (appName && isElectronOnSupportedApps(appName) && hasInboxDesktopFeature('ThemeSelection')) {
-            invokeInboxDesktopIPC({ type: 'setTheme', payload: themeSetting });
+            void invokeInboxDesktopIPC({ type: 'setTheme', payload: themeSetting });
         }
     }, [themeSetting]);
 

@@ -56,7 +56,7 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
     // We need to investigage Outlook b2b oAuth modal params
     const consentExperiment = useFlag('EasySwitchConsentExperiment');
 
-    const triggerOAuthPopup = ({
+    const triggerOAuthPopup = async ({
         provider,
         scope,
         loginHint,
@@ -78,7 +78,7 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
         const uid = generateProtonWebUID();
         stateId.current = uid;
 
-        invokeInboxDesktopIPC({ type: 'oauthPopupOpened', payload: 'oauthPopupStarted' });
+        await invokeInboxDesktopIPC({ type: 'oauthPopupOpened', payload: 'oauthPopupStarted' });
 
         const authWindow = window.open(
             `${authorizationUrl}&state=${uid}`,
@@ -96,9 +96,9 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
                 communicate with this component via `window.postMessage()`
                 We can then move the following logic to a `onmessage` listener
             */
-            interval = window.setInterval(() => {
+            interval = window.setInterval(async () => {
                 if (authWindow.closed) {
-                    invokeInboxDesktopIPC({ type: 'oauthPopupOpened', payload: 'oauthPopupFinished' });
+                    await invokeInboxDesktopIPC({ type: 'oauthPopupOpened', payload: 'oauthPopupFinished' });
                     window.clearInterval(interval);
                     return;
                 }

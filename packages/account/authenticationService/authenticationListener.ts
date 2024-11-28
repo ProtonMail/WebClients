@@ -18,7 +18,7 @@ export const authenticationListener = (startListening: SharedStartListening<Stat
                 listenerApi.extra.eventManager.stop();
                 await listenerApi.extra.api({ ...revoke(), silence: true });
             } finally {
-                invokeInboxDesktopIPC({ type: 'userLogout' });
+                void invokeInboxDesktopIPC({ type: 'userLogout' });
 
                 handleLogout({
                     appName: listenerApi.extra.config.APP_NAME,
