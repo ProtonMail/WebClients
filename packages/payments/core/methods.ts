@@ -318,7 +318,9 @@ export class PaymentMethods {
 
         const cbUser = this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
 
-        return flowSupportsDirectDebit && billingCountrySupportsSEPA && cbUser && !this.isBF2024Offer();
+        return (
+            flowSupportsDirectDebit && billingCountrySupportsSEPA && cbUser && !this.isBF2024Offer() && this.isB2BPlan()
+        );
     }
 
     private isBitcoinAvailable(): boolean {

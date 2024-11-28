@@ -160,7 +160,7 @@ describe('SubscriptionContainer', () => {
 
     it.skip('should not create payment token if the amount is 0', async () => {
         props.step = SUBSCRIPTION_STEPS.CHECKOUT;
-        props.planIDs = { mail2022: 1 };
+        props.planIDs = { [PLANS.MAIL]: 1 };
 
         const { container } = renderWithProviders(<ContextSubscriptionContainer {...props} />);
 
@@ -197,7 +197,7 @@ describe('SubscriptionContainer', () => {
 
     it('should handle currency change', async () => {
         props.step = SUBSCRIPTION_STEPS.CHECKOUT;
-        props.planIDs = { mail2022: 1 };
+        props.planIDs = { [PLANS.MAIL]: 1 };
         props.currency = 'CHF';
 
         await initialize(props);
@@ -211,7 +211,7 @@ describe('SubscriptionContainer', () => {
 
     it('should select EUR when SEPA is selected', async () => {
         props.step = SUBSCRIPTION_STEPS.CHECKOUT;
-        props.planIDs = { mail2022: 1 };
+        props.planIDs = { [PLANS.MAIL_PRO]: 1 };
         props.currency = 'CHF';
 
         await initialize(props);
