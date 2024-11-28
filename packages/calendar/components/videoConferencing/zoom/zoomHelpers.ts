@@ -61,14 +61,14 @@ export const addZoomInfoToDescription = ({
     meetingId?: string;
     description?: string;
 }): string => {
-    const hasZoomInfo = meetingId && meedingURL && password;
+    const hasZoomInfo = meetingId && meedingURL;
     if (!hasZoomInfo) {
         return description;
     }
 
     const zoomDetails = `
 ${SEPARATOR_PROTON_EVENTS}
-Join Zoom Meeting: ${meedingURL} (ID: ${meetingId}, passcode: ${password})
+Join Zoom Meeting: ${meedingURL} (ID: ${meetingId}${password ? `, passcode: ${password}` : ''})
 
 ${host ? `Meeting host: ${host}` : ''}
 ${SEPARATOR_PROTON_EVENTS}`;
