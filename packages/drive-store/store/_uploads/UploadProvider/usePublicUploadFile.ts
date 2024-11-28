@@ -30,7 +30,7 @@ import { usePublicSession } from '../../_api';
 import { integrityMetrics } from '../../_crypto';
 import { useLink, usePublicLinkActions, usePublicLinksListing, validateLinkName } from '../../_links';
 import type { ShareTypeString } from '../../_shares';
-import { getShareTypeString, useShare } from '../../_shares';
+import { getShareTypeString, useDefaultShare, useShare } from '../../_shares';
 import { useIsPaid } from '../../_user';
 import { MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import { initUploadFileWorker } from '../initUploadFileWorker';
@@ -64,13 +64,17 @@ interface FileRevision {
 
 export default function usePublicUploadFile() {
     const isPaidUser = useIsPaid();
-    const { request: publicDebouncedRequest } = usePublicSession();
+    const { request: publicDebouncedRequest, user } = usePublicSession();
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
     const { deleteChildrenLinks } = usePublicLinkActions();
     const { getShare } = useShare();
     const { findHash } = usePublicUploadHelper();
     const publicLinksListing = usePublicLinksListing();
+
+    const { getShareCreatorKeys } = useShare();
+
+    const { getDefaultShare } = useDefaultShare();
 
     const request = <T>(args: object, abortSignal?: AbortSignal) => {
         return publicDebouncedRequest<T>(
@@ -90,6 +94,19 @@ export default function usePublicUploadFile() {
         log: LogCallback,
         isForPhotos: boolean = false
     ): UploadFileControls => {
+        let shareKeysCache: Awaited<ReturnType<typeof getShareCreatorKeys>>;
+        const getShareKeys = async (abortSignal: AbortSignal) => {
+            // Not logged-in user
+            if (!user) {
+                return undefined;
+            }
+            if (!shareKeysCache) {
+                const defaultShare = await getDefaultShare();
+                shareKeysCache = await getShareCreatorKeys(abortSignal, defaultShare.shareId);
+            }
+
+            return shareKeysCache;
+        };
         const createFile = async (
             abortSignal: AbortSignal,
             filename: string,
@@ -103,10 +120,12 @@ export default function usePublicUploadFile() {
                 throw new ValidationError(error);
             }
 
-            const parentPrivateKey = await getLinkPrivateKey(abortSignal, token, parentLinkId);
-
+            const [addressKeyInfo, parentPrivateKey] = await Promise.all([
+                getShareKeys(abortSignal),
+                getLinkPrivateKey(abortSignal, token, parentLinkId),
+            ]);
             // We use the parent node key for Name
-            const Name = await encryptName(filename, parentPrivateKey, parentPrivateKey);
+            const Name = await encryptName(filename, parentPrivateKey, addressKeyInfo?.privateKey || parentPrivateKey);
 
             checkSignal(abortSignal, filename);
 
@@ -126,8 +145,7 @@ export default function usePublicUploadFile() {
                         NodePassphrase: keys.nodePassphrase,
                         NodePassphraseSignature: keys.nodePassphraseSignature,
                         ParentLinkID: parentLinkId,
-                        // TODO: Add email if present
-                        // SignatureEmail: addressKeyInfo.address.Email,
+                        SignatureEmail: addressKeyInfo?.address.Email,
                         ClientUID: clientUid,
                     })
                 ).catch((err) => {
@@ -391,16 +409,20 @@ export default function usePublicUploadFile() {
             {
                 initialize: async (abortSignal: AbortSignal) => {
                     log(`Loading parent keys`);
-                    const parentPrivateKey = await getLinkPrivateKey(abortSignal, token, parentLinkId);
+                    const [addressKeyInfo, parentPrivateKey] = await Promise.all([
+                        getShareKeys(abortSignal),
+                        getLinkPrivateKey(abortSignal, token, parentLinkId),
+                    ]);
                     return {
-                        addressPrivateKey: undefined,
+                        addressPrivateKey: addressKeyInfo?.privateKey,
                         parentPrivateKey,
                     };
                 },
                 createFileRevision: async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => {
                     createdFileRevisionPromise = selectFileRevisionCreation(abortSignal, mimeType, keys);
-                    const [createdFileRevision, parentHashKey] = await Promise.all([
+                    const [createdFileRevision, addressKeyInfo, parentHashKey] = await Promise.all([
                         createdFileRevisionPromise,
+                        getShareKeys(abortSignal),
                         getLinkHashKey(abortSignal, token, parentLinkId),
                     ]);
                     checkSignal(abortSignal, createdFileRevision.filename);
@@ -411,6 +433,12 @@ export default function usePublicUploadFile() {
                         privateKey: createdFileRevision.privateKey,
                         sessionKey: createdFileRevision.sessionKey,
                         parentHashKey,
+                        address: addressKeyInfo
+                            ? {
+                                  privateKey: addressKeyInfo.privateKey,
+                                  email: addressKeyInfo.address.Email,
+                              }
+                            : undefined,
                     };
                 },
                 getVerificationData: async (abortSignal: AbortSignal) => {
@@ -463,6 +491,7 @@ export default function usePublicUploadFile() {
                             thumbnailBlocks?.length || 0
                         } thumbnail blocks`
                     );
+                    const addressKeyInfo = await getShareKeys(abortSignal);
                     const { UploadLinks, ThumbnailLinks } = await request<RequestUploadResult>(
                         queryPublicRequestUpload(token, {
                             BlockList: fileBlocks.map((block) => ({
@@ -474,7 +503,7 @@ export default function usePublicUploadFile() {
                                     Token: uint8ArrayToBase64String(block.verificationToken),
                                 },
                             })),
-                            AddressID: '',
+                            SignatureEmail: addressKeyInfo?.address.Email,
                             LinkID: createdFileRevision.fileID,
                             RevisionID: createdFileRevision.revisionID,
                             ThumbnailList: thumbnailBlocks?.map((block) => ({
@@ -508,7 +537,12 @@ export default function usePublicUploadFile() {
                 },
                 finalize: queuedFunction(
                     'upload_finalize',
-                    async (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => {
+                    async (
+                        signature: string,
+                        signatureEmail: string | undefined,
+                        xattr: string,
+                        photo?: PhotoUpload
+                    ) => {
                         const createdFileRevision = await createdFileRevisionPromise;
                         if (!createdFileRevision) {
                             throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
@@ -527,7 +561,7 @@ export default function usePublicUploadFile() {
                                 createdFileRevision.revisionID,
                                 {
                                     ManifestSignature: signature,
-                                    SignatureAddress: signatureAddress,
+                                    SignatureEmail: !!signatureEmail ? signatureEmail : undefined,
                                     XAttr: xattr,
                                     Photo: photo
                                         ? {

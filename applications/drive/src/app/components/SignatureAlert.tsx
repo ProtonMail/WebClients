@@ -57,7 +57,12 @@ export default function SignatureAlert({
 
     return (
         <Alert type={signatureIssues && !validAnonymousSignature ? 'error' : 'success'} className={className}>
-            <SignatureAlertBody signatureIssues={signatureIssues} signatureAddress={signatureAddress} {...props} />
+            <SignatureAlertBody
+                signatureIssues={signatureIssues}
+                signatureAddress={signatureAddress}
+                validAnonymousSignature={validAnonymousSignature}
+                {...props}
+            />
         </Alert>
     );
 }
@@ -67,9 +72,16 @@ type PropsBody = {
     signatureAddress: string | undefined;
     isFile: boolean;
     name: string;
+    validAnonymousSignature?: boolean;
 };
 
-export function SignatureAlertBody({ signatureIssues, signatureAddress, isFile, name }: PropsBody) {
+export function SignatureAlertBody({
+    signatureIssues,
+    signatureAddress,
+    validAnonymousSignature,
+    isFile,
+    name,
+}: PropsBody) {
     const fileName = (
         <strong className="text-break" key="fileName">
             {name}
@@ -92,7 +104,10 @@ export function SignatureAlertBody({ signatureIssues, signatureAddress, isFile, 
         );
     }
 
-    if (!signatureAddress && hasValidAnonymousSignature(signatureIssues)) {
+    if (
+        !signatureAddress &&
+        (validAnonymousSignature === undefined ? hasValidAnonymousSignature(signatureIssues) : validAnonymousSignature)
+    ) {
         return (
             <>
                 {isFile
