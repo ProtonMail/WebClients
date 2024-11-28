@@ -59,15 +59,16 @@ export const CustomDomainsTable: FC = () => {
                                                 className="button-xs ui-purple"
                                                 pill={false}
                                                 originalPlacement="bottom-end"
-                                                disabled={!canManage}
                                             >
                                                 <DropdownMenuButton
                                                     label={c('Action').t`Check settings`}
                                                     onClick={() => setAction({ type: 'info', domainID: domain.ID })}
+                                                    disabled={!canManage}
                                                 />
                                                 <DropdownMenuButton
                                                     label={c('Action').t`Check DNS`}
                                                     onClick={() => setAction({ type: 'dns', domainID: domain.ID })}
+                                                    disabled={!canManage}
                                                 />
                                                 <DropdownMenuButton
                                                     label={c('Action').t`Delete`}
