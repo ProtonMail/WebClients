@@ -381,6 +381,9 @@
       "Disable alias": [
         "Deaktivovat alias"
       ],
+      "Disabling alias": [
+        "Deaktivovat alias"
+      ],
       "Discard": [
         "Zahodit"
       ],
@@ -968,6 +971,9 @@
       ],
       "Remove this label": [
         "Odebrat štítek"
+      ],
+      "Remove Zoom meeting": [
+        "Odebrat chůzku Zoom"
       ],
       "Replace": [
         "Nahradit"
@@ -7065,6 +7071,12 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }."
+      ],
       "Please open the document to view it.": [
         "Prosím, otevřete dokument pro jeho zobrazení."
       ],
@@ -7287,6 +7299,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Je nám líto, tato zpráva neexistuje, nebo jí již vypršela platnost."
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Možnosti ukládání nejsou v tomto prohlížeči podporovány. Tuto podporu potřebujeme, abychom mohli prohledávat obsah zpráv."
+      ],
       "Subject": [
         "Předmět"
       ],
@@ -7434,6 +7449,9 @@
       "This message is from a mailing list.": [
         "Zpráva pochází z e-mailového seznamu."
       ],
+      "This message is from a SimpleLogin alias.": [
+        "Tato zpráva pochází z aliasu SimpleLogin."
+      ],
       "This message is signed by a key that has not been trusted yet.": [
         "Tato zpráva je podepsána klíčem, který nebyl dosud označen jako důvěryhodný."
       ],
@@ -7554,6 +7572,9 @@
       "Turn on to search the content of your messages": [
         "Zapněte pro možnost vyhledávat v obsahu vašich zpráv"
       ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "V tomto prohlížeči nelze přistupovat k možnostem úložiště. Tento přístup potřebujeme, abychom mohli prohledávat obsah zpráv."
+      ],
       "Unlock message": [
         "Odemknout zprávu"
       ],
@@ -7661,6 +7682,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Následujícím inzerentům a organizacím jsme zabránili, aby při otevření tohoto e-mailu viděli, jaké zařízení používáte a kde se nacházíte."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "V tomto prohlížeči nelze povolit vyhledávání obsahu zpráv."
       ],
       "We could not verify the sender's trusted keys.": [
         "Nemohli jsme ověřit důvěrné klíče odesílatele."
@@ -10149,6 +10173,14 @@
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Získejte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -10161,14 +10193,6 @@
       ],
       "Switch plans?": [
         "Změnit tarif?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Získejte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -10327,6 +10351,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetovat uživatelská hesla a resetovat dvoufázové ověření uživatelů"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Směrujte svůj internetový provoz skrze sít Tor jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
@@ -10894,8 +10921,14 @@
       "Please select your billing state first.": [
         "Vyberte prosím nejprve váš stát platby."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Obnovuje se za ${ renewPrice }, zrušit lze kdykoli."
+      ],
       "Select billing country to pay": [
         "Vyberte zemi platby"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
@@ -11999,6 +12032,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Alias deaktivován"
+      ],
       "Unsubscribed": [
         "Odběr byl odhlášen"
       ]
@@ -13996,6 +14032,9 @@
     "Tor out of date": {
       "stable release": [
         "stabilní verze"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tato verze prohlížeče Tor není podporována. Prosím aktualizujte na poslední ${ stableRelease }"
       ]
     },
     "Update font modal": {

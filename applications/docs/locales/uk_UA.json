@@ -396,6 +396,9 @@
       "Next month": [
         "Наступний місяць"
       ],
+      "Next page": [
+        "Наступна сторінка"
+      ],
       "No, thanks": [
         "Ні, дякую"
       ],
@@ -434,6 +437,9 @@
       ],
       "Previous month": [
         "Минулий місяць"
+      ],
+      "Previous page": [
+        "Попередня сторінка"
       ],
       "Print": [
         "Друкувати"
@@ -3641,6 +3647,12 @@
         "Вибрано ${ selectedContactsLength } контакти з ${ contactsLength }",
         "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }",
         "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }"
+      ],
+      "${ selectedCount } selected": [
+        "вибрано ${ selectedCount }",
+        "вибрано ${ selectedCount }",
+        "вибрано ${ selectedCount }",
+        "вибрано ${ selectedCount }"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Вибрано ${ selectedFoldersCountLocalized } теку",

@@ -402,6 +402,9 @@
       "Next month": [
         "다음 달"
       ],
+      "Next page": [
+        "다음 페이지"
+      ],
       "No, thanks": [
         "아니요, 괜찮아요"
       ],
@@ -443,6 +446,9 @@
       ],
       "Previous month": [
         "지난 달"
+      ],
+      "Previous page": [
+        "이전 페이지"
       ],
       "Print": [
         "인쇄"
@@ -3719,6 +3725,9 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } 연락처 선택됨"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount }개 선택됨"
+      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized }개 폴더 선택함"
       ],
@@ -4345,6 +4354,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "이 과정은 주소록의 크기에 따라 시간이 좀 걸릴 수 있습니다."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "확인 버튼을 누르시면 계정에는 ${ creditsRemaining } 크레딧이 남게 됩니다."
       ],
       "Please provide a name and an email address for creating a group.": [
         "그룹을 생성하기 위해서 이름과 이메일 주소를 입력해주세요."

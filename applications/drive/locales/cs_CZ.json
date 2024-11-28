@@ -219,6 +219,9 @@
       "Create": [
         "Vytvořit"
       ],
+      "Create a folder": [
+        "Vytvořit složku"
+      ],
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
@@ -2514,6 +2517,14 @@
         "Ve vámi nahraném souboru CSV jsme zjistili následující pole. Zaškrtněte ta, která chcete importovat."
       ]
     },
+    "Docs Info": {
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "Spolupráce je teď jednodušší. Nyní může kdokoli navrhovat úpravy, aniž by musel měnit dokument."
+      ],
+      "Suggestion mode is here": [
+        "Režim navrhování je zde"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Chyby nebo problém s kvalitou"
@@ -4339,6 +4350,9 @@
       "An active recovery file": [
         "Aktivní soubor pro obnovení"
       ],
+      "an anonymous user": [
+        "anonymní uživatel"
+      ],
       "An issue occurred during the restore process.": [
         "Během procesu obnovy došlo k chybě."
       ],
@@ -5071,6 +5085,12 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }."
+      ],
       "Please open the document to view it.": [
         "Prosím, otevřete dokument pro jeho zobrazení."
       ],
@@ -5319,6 +5339,12 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Digitální podpis byl částečně ověřen. Soubor byl nahrán z veřejné stránky, na které není uveden konkrétní původ uživatele."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Digitální podpis byl částečně ověřen. Složka byla nahrána z veřejné stránky, na které není uveden konkrétní původ uživatele."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Počet stahování zahrnuje jak skutečná stažení, tak případy, kdy jsou soubory zobrazeny v náhledu."
@@ -5971,6 +5997,12 @@
       "Calendars": [
         "Kalendáře"
       ],
+      "Can edit": [
+        "Může upravovat"
+      ],
+      "Can view": [
+        "Může zobrazit"
+      ],
       "Cancel download": [
         "Zrušit stahování"
       ],
@@ -6453,6 +6485,14 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Organizace, přidávání a úpravova souborů"
+      ],
+      "View and download": [
+        "Zobrazit a stáhnout"
       ]
     },
     "Label for contact group color": {
@@ -7769,6 +7809,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetovat uživatelská hesla a resetovat dvoufázové ověření uživatelů"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Směrujte svůj internetový provoz skrze sít Tor jediným kliknutím"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ],
@@ -8121,6 +8164,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Není dostatek místa pro nahrání ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "Přístupu k veřejným odkazům aktualizován"
+      ],
+      "Public link update access failed ": [
+        "Přístup k aktualizaci veřejného odkazu selhal "
+      ],
       "Root folder failed to be loaded": [
         "Kořenovou složku se nepodařilo načíst"
       ],
@@ -8159,6 +8208,12 @@
         "Odebrání některých položek ze seznamu selhalo",
         "Odebrání některých položek ze seznamu selhalo",
         "Odebrání některých položek ze seznamu selhalo"
+      ],
+      "This item was successfully removed from your list": [
+        "Tato položka byla úspěšně odebrána z vašeho seznamu",
+        "Všechny položky byly úspěšně odebrány z vašeho seznamu",
+        "Všechny položky byly úspěšně odebrány z vašeho seznamu",
+        "Všechny položky byly úspěšně odebrány z vašeho seznamu"
       ],
       "Trash failed to be emptied": [
         "Koš se nepodařilo vyprázdnit"
@@ -8205,6 +8260,9 @@
       "Continue": [
         "Pokračovat"
       ],
+      "Create a document": [
+        "Vytvořit dokument"
+      ],
       "Get started": [
         "Začínáme"
       ],
@@ -8216,6 +8274,9 @@
       ],
       "Invite members": [
         "Pozvat členy"
+      ],
+      "Maybe Later": [
+        "Možná později"
       ],
       "Maybe later": [
         "Možná později"
@@ -8500,8 +8561,14 @@
       "Please select your billing state first.": [
         "Vyberte prosím nejprve váš stát platby."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Obnovuje se za ${ renewPrice }, zrušit lze kdykoli."
+      ],
       "Select billing country to pay": [
         "Vyberte zemi platby"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"

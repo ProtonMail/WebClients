@@ -375,6 +375,9 @@
       "Disable alias": [
         "Deaktiver alias"
       ],
+      "Disabling alias": [
+        "Deaktiverer alias"
+      ],
       "Discard": [
         "Forkast"
       ],
@@ -960,6 +963,9 @@
       ],
       "Remove this label": [
         "Fjern denne etiketten"
+      ],
+      "Remove Zoom meeting": [
+        "Fjern Zoom-møte"
       ],
       "Replace": [
         "Erstatt"
@@ -1629,6 +1635,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ discountedPrice } er gyldig de første ${ cycle } månedene. Deretter vil den automatisk bli fornyet til den rabatterte prisen på ${ nextPrice } for ${ renewalLength } måneder. Du kan avbryte når som helst."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ discountedPrice } er gyldig den første måneden. Da blir den automatisk fornyet til ${ nextPrice } hver måned. Du kan avbryte når som helst."
       ]
@@ -6847,6 +6856,10 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Legg merke til at denne oppgaven kan ta litt tid avhengig av størrelsen på adresseboken din."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Vær oppmerksom på at ved å klikke på Bekreft-knappen, vil kontoen din ha ${ creditsRemaining } kreditt igjen.",
+        "Vær oppmerksom på at ved å klikke på Bekreft-knappen, vil kontoen din ha ${ creditsRemaining } kreditter igjen."
+      ],
       "Please open the document to view it.": [
         "Åpne dokumentet for å se det."
       ],
@@ -7065,6 +7078,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne meldingen finnes ikke eller har løpt ut."
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Lagringsfunksjoner støttes ikke i denne nettleseren, vi trenger denne støtten for å aktivere søk etter meldingsinnhold."
+      ],
       "Subject": [
         "Emne"
       ],
@@ -7208,6 +7224,9 @@
       "This message is from a mailing list.": [
         "Denne meldingen er fra en e-postliste."
       ],
+      "This message is from a SimpleLogin alias.": [
+        "Denne meldingen er fra et SimpleLogin-alias."
+      ],
       "This message is signed by a key that has not been trusted yet.": [
         "Denne meldingen er signert av en nøkkel som ikke er klarert enda."
       ],
@@ -7326,6 +7345,9 @@
       "Turn on to search the content of your messages": [
         "Slå på for å søke etter innhold i meldingene dine"
       ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Kan ikke få tilgang til lagringsfunksjoner i denne nettleseren, vi trenger denne tilgangen for å aktivere søk etter meldingsinnhold."
+      ],
       "Unlock message": [
         "Lås opp melding"
       ],
@@ -7433,6 +7455,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Vi har blokkert følgende annonsører og organisasjoner fra å se når du åpner denne e-postadressen, hvilken enhet du bruker, og hvor du befinner deg."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Vi kan ikke aktivere søk etter meldingsinnhold i denne nettleseren."
       ],
       "We could not verify the sender's trusted keys.": [
         "Vi kunne ikke bekrefte avsenderens klarerte nøkler."
@@ -9815,6 +9840,14 @@
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -9827,14 +9860,6 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Starter fra ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -9991,6 +10016,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Tilbakestill brukerpassord og tilbakestill tofaktorautentisering på brukere"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Rut din internetttrafikk gjennom Tor-nettverket med ett enkeltklikk."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
@@ -10550,8 +10578,23 @@
       "Please select your billing state first.": [
         "Velg faktureringsstaten din først."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Fornyes til ${ renewPrice }, avbryt når som helst."
+      ],
       "Select billing country to pay": [
         "Velg faktureringsland for å betale"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPrice } for ${ subscriptionLengthCopy } måneder. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene. Deretter vil den automatisk bli fornyet til ${ renewPrice } for ${ subscriptionLengthCopy } måneder. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPrice } for ${ subscriptionLength } måned. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPrice } hver måned. Du kan avbryte når som helst."
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
@@ -11597,6 +11640,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Alias deaktivert"
+      ],
       "Unsubscribed": [
         "Avsluttet abonnement"
       ]
@@ -13484,6 +13530,9 @@
     "Tor out of date": {
       "stable release": [
         "stabil utgivelse"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denne versjonen av Tor-nettleser støttes ikke. Oppdater til seneste ${ stableRelease }"
       ]
     },
     "Update font modal": {

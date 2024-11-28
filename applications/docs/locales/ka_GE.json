@@ -405,6 +405,9 @@
       "Next month": [
         "შემდეგი თვე"
       ],
+      "Next page": [
+        "შემდეგი გვერდი"
+      ],
       "No, thanks": [
         "არა, მადლობა"
       ],
@@ -446,6 +449,9 @@
       ],
       "Previous month": [
         "წინა თვე"
+      ],
+      "Previous page": [
+        "წინა გვერდი"
       ],
       "Print": [
         "დაბეჭდვა"
@@ -3746,6 +3752,10 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი",
         "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი"
+      ],
+      "${ selectedCount } selected": [
+        "მონიშნულია ${ selectedCount }",
+        "მონიშნულია ${ selectedCount }"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე",

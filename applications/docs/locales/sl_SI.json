@@ -411,6 +411,9 @@
       "Next month": [
         "Naslednji mesec"
       ],
+      "Next page": [
+        "Naslednja stran"
+      ],
       "No, thanks": [
         "Ne, hvala"
       ],
@@ -452,6 +455,9 @@
       ],
       "Previous month": [
         "Prejšnji mesec"
+      ],
+      "Previous page": [
+        "Prejšnja stran"
       ],
       "Print": [
         "Natisni"
@@ -3713,6 +3719,12 @@
         "${ selectedContactsLength }/${ contactsLength } izbrana stika",
         "${ selectedContactsLength }/${ contactsLength } izbrani stiki",
         "${ selectedContactsLength }/${ contactsLength } izbranih stikov"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } izbrano",
+        "${ selectedCount } izbrani",
+        "${ selectedCount } izbrane",
+        "${ selectedCount } izbranih"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } izbrana mapa",

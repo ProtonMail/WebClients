@@ -411,6 +411,9 @@
       "Next month": [
         "Mes siguiente"
       ],
+      "Next page": [
+        "Página siguiente"
+      ],
       "No, thanks": [
         "No, gracias"
       ],
@@ -452,6 +455,9 @@
       ],
       "Previous month": [
         "Mes anterior"
+      ],
+      "Previous page": [
+        "Página anterior"
       ],
       "Print": [
         "Imprimir"
@@ -3781,6 +3787,10 @@
         "${ selectedContactsLength }/${ contactsLength } contacto seleccionado",
         "${ selectedContactsLength }/${ contactsLength } contactos seleccionados"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } seleccionado",
+        "${ selectedCount } seleccionados"
+      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } carpeta seleccionada",
         "${ selectedFoldersCountLocalized } carpeta seleccionada"
@@ -3863,6 +3873,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Cantidad inferior al mínimo (${ amount })."
+      ],
+      "an anonymous user": [
+        "un usuario anónimo"
       ],
       "and": [
         "y"
@@ -4155,7 +4168,7 @@
         "5 GB de almacenamiento cifrado gratuito para comenzar"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Reciba actualizaciones por correo electrónico sobre comentarios y sugerencias agregados a sus documentos."
+        "Reciba actualizaciones por correo electrónico sobre comentarios y sugerencias añadidos a sus documentos."
       ],
       "Get Notified About Comments": [
         "Recibir notificaciones sobre los comentarios"
@@ -4484,7 +4497,7 @@
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
       "Restored version to": [
-        "La versión está restaurada a"
+        "Versión restaurada a"
       ],
       "Saving": [
         "Guardando"
@@ -4566,6 +4579,12 @@
       ],
       "The Beginning": [
         "Inicio"
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "La firma digital ha sido parcialmente verificada. Se ha cargado el archivo desde una página pública que no especifica el origen de un usuario en particular."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "La firma digital ha sido parcialmente verificada. Se ha cargado la carpeta desde una página pública que no especifica el origen de un usuario en particular."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de la cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
@@ -5068,6 +5087,12 @@
       "Calendars": [
         "Calendarios"
       ],
+      "Can edit": [
+        "Editar"
+      ],
+      "Can view": [
+        "Leer"
+      ],
       "Cancel download": [
         "Cancelar descarga"
       ],
@@ -5433,6 +5458,14 @@
       ],
       "Your password (admin)": [
         "La contraseña (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Organice, añada y edite archivos"
+      ],
+      "View and download": [
+        "Ver y descargar"
       ]
     },
     "Label for contact group color": {
@@ -7009,6 +7042,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hay espacio suficiente para cargar ${ formattedTotal }"
+      ],
+      "Public link access updated": [
+        "Se actualizó el acceso al enlace público."
+      ],
+      "Public link update access failed ": [
+        "Error al acceder a la actualización del enlace público "
       ],
       "Stopping the sharing of this item has failed": [
         "Error al dejar de compartir este elemento"

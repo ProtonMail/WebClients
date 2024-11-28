@@ -216,6 +216,9 @@
       "Create": [
         "作成"
       ],
+      "Create a folder": [
+        "フォルダを作成"
+      ],
       "Create a new contact group": [
         "新規連絡先グループを作成"
       ],
@@ -1028,6 +1031,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "${ discountedPrice }の特別な割引価格は最初の${ cycle }ヶ月のみ適用されます。そのあとは${ renewalLength }ヶ月${ nextPrice }の割引価格で自動更新されます。いつでもキャンセル可能です。"
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "特別割引価格 ${ discountedPrice } は最初の 1 か月間有効です。 その後、毎月 ${ nextPrice } で自動的に更新されます。 いつでもキャンセルできます。"
       ]
@@ -2476,6 +2482,14 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートされたいものを選択してください。"
+      ]
+    },
+    "Docs Info": {
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "共同作業がより簡単に。文書を変更することなく、誰でも提案の編集が可能。"
+      ],
+      "Suggestion mode is here": [
+        "提案モードはこちら"
       ]
     },
     "Downgrade account reason": {
@@ -4129,6 +4143,9 @@
       "An active recovery file": [
         "復元ファイル"
       ],
+      "an anonymous user": [
+        "匿名のユーザー"
+      ],
       "An issue occurred during the restore process.": [
         "復元プロセス中に問題が発生しました。"
       ],
@@ -4840,6 +4857,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "確認ボタンをクリックすると、アカウントには ${ creditsRemaining } クレジットが残りますのでご注意ください。"
+      ],
       "Please open the document to view it.": [
         "文書を表示するにはまず開いてください。"
       ],
@@ -5082,6 +5102,12 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "アプリケーションは、エクスポートする前に連絡先をローカルで復号する必要があります。プロセスの終了時に、VCF ファイルが生成され、ダウンロードすることができます。"
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "デジタル署名は部分的に検証されました。ファイルは特定のユーザーの出所を指定していない公開ページからアップロードされました。"
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "デジタル署名は部分的に検証されました。フォルダは特定のユーザーの出所を指定していない公開ページからアップロードされました。"
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "ダウンロード数には、実際のダウンロードとファイルがプレビューされた場合の両方が含まれます。"
@@ -5704,6 +5730,12 @@
       "Calendars": [
         "カレンダー"
       ],
+      "Can edit": [
+        "編集可能"
+      ],
+      "Can view": [
+        "閲覧可能"
+      ],
       "Cancel download": [
         "ダウンロードをキャンセル"
       ],
@@ -6183,6 +6215,14 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "ファイルの整理、追加、編集"
+      ],
+      "View and download": [
+        "閲覧とダウンロード"
       ]
     },
     "Label for contact group color": {
@@ -7409,6 +7449,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "ユーザーのパスワードとユーザーの 2 段階認証をリセットします"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "ワンクリックでインターネットトラフィックをTorネットワーク経由にルーティング"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ],
@@ -7713,6 +7756,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal }をアップロードする容量がありません"
       ],
+      "Public link access updated": [
+        "公開リンクのアクセスが更新されました"
+      ],
+      "Public link update access failed ": [
+        "公開リンクの更新アクセスに失敗しました "
+      ],
       "Root folder failed to be loaded": [
         "ルートフォルダーの読み込みに失敗しました"
       ],
@@ -7748,6 +7797,9 @@
       ],
       "This item was not removed from your list": [
         "このアイテムはリストから削除されました"
+      ],
+      "This item was successfully removed from your list": [
+        "このアイテムはリストから正しく削除されました"
       ],
       "Trash failed to be emptied": [
         "ごみ箱を空にできませんでした"
@@ -7794,6 +7846,9 @@
       "Continue": [
         "続ける"
       ],
+      "Create a document": [
+        "文書を作成"
+      ],
       "Get started": [
         "始めましょう"
       ],
@@ -7805,6 +7860,9 @@
       ],
       "Invite members": [
         "メンバーを招待"
+      ],
+      "Maybe Later": [
+        "たぶんあとで"
       ],
       "Maybe later": [
         "たぶんあとで"
@@ -8080,8 +8138,23 @@
       "Please select your billing state first.": [
         "最初に請求先の州を選択してください。"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "${ renewPrice }で更新、いつでもキャンセル可能。"
+      ],
       "Select billing country to pay": [
         "支払い請求先の国を選択してください"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の${ subscriptionLength }ヶ月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは${ subscriptionLengthCopy }ヶ月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の${ subscriptionLength }ヶ月のみ適用されます。そのあとは${ subscriptionLengthCopy }ヶ月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは${ subscriptionLength }ヶ月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。そのあとは毎月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"

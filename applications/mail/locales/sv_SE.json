@@ -372,6 +372,9 @@
       "Disable alias": [
         "Inaktivera alias"
       ],
+      "Disabling alias": [
+        "Inaktiverar alias"
+      ],
       "Discard": [
         "Avfärda"
       ],
@@ -960,6 +963,9 @@
       ],
       "Remove this label": [
         "Ta bort denna etikett"
+      ],
+      "Remove Zoom meeting": [
+        "Ta bort Zoom-möte"
       ],
       "Replace": [
         "Ersätt"
@@ -7181,6 +7187,9 @@
       "This message is from a mailing list.": [
         "Detta meddelande är från en e-postlista."
       ],
+      "This message is from a SimpleLogin alias.": [
+        "Detta meddelande kommer från ett SimpleLogin-alias."
+      ],
       "This message is signed by a key that has not been trusted yet.": [
         "Detta meddelande är signerat med en nyckel som inte är betrodd ännu."
       ],
@@ -9782,6 +9791,17 @@
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -9794,17 +9814,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Skaffa Mail Plus för ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Startar från ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -9961,6 +9970,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Återställ användarlösenord och återställ tvåfaktorsautentisering för användare"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Dirigera din internettrafik genom Tor-nätverket med ett enda klick"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
@@ -11570,6 +11582,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Alias inaktiverad"
+      ],
       "Unsubscribed": [
         "Prenumeration avslutad"
       ]
@@ -13451,6 +13466,9 @@
     "Tor out of date": {
       "stable release": [
         "stabil utgåva"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denna version av Tor-webbläsaren stöds inte. Uppdatera till senaste ${ stableRelease }"
       ]
     },
     "Update font modal": {
