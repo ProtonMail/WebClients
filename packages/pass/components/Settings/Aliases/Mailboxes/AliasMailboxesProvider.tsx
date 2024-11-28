@@ -51,7 +51,11 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
     const [action, setAction] = useState<MaybeNull<AliasMailboxAction>>(null);
 
     const [mailboxes, setMailboxes] = useState<Record<number, UserMailboxOutput>>({});
-    const sync = useRequest(getMailboxes, { onSuccess: (mailboxes) => setMailboxes(toMap(mailboxes, 'MailboxID')) });
+
+    const sync = useRequest(getMailboxes, {
+        loading: true,
+        onSuccess: (mailboxes) => setMailboxes(toMap(mailboxes, 'MailboxID')),
+    });
 
     const context = useMemo<AliasMailboxesContextValue>(
         () => ({
