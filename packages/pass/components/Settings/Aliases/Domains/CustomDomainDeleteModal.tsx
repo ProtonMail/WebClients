@@ -9,10 +9,12 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { useAliasDomains, useCustomDomain } from './DomainsProvider';
 
-type Props = { domainID: number; onClose: () => void };
+type Props = { domainID: number };
 
-export const CustomDomainDeleteModal: FC<Props> = ({ domainID, onClose }) => {
-    const { onDelete } = useAliasDomains();
+export const CustomDomainDeleteModal: FC<Props> = ({ domainID }) => {
+    const { onDelete, setAction } = useAliasDomains();
+    const onClose = () => setAction(null);
+
     const domain = useCustomDomain(domainID);
     const deleteDomain = useRequest(deleteCustomDomain, { onSuccess: pipe(onDelete, onClose) });
 
