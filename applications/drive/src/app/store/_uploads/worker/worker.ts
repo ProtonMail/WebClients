@@ -11,7 +11,7 @@ import {
     sign as signMessage,
 } from '@proton/shared/lib/keys/driveKeys';
 
-import { encryptFileExtendedAttributes } from '../../_links';
+import { encryptFileExtendedAttributes } from '../../_links/extendedAttributes';
 import {
     getCaptureDateTime,
     getExifInfo,
