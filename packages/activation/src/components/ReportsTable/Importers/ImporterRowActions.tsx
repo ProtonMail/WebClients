@@ -56,7 +56,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
     const handleReconnectOAuth = async (ImporterID: string) => {
         const scopes = getScopeFromProvider(importProvider, products);
 
-        triggerOAuthPopup({
+        await triggerOAuthPopup({
             provider: importProvider,
             loginHint: account,
             scope: scopes.join(' '),
