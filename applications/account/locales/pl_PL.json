@@ -829,10 +829,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Reject": [
@@ -1182,6 +1182,9 @@
       ],
       "Upgrade now": [
         "Ulepsz teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Ulepsz do planu Business"
@@ -1634,6 +1637,17 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąc.",
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiące.",
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesięcy.",
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąca."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1655,17 +1669,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąc.",
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiące.",
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesięcy.",
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąca."
       ]
     },
     "bf2023: Offers": {
@@ -7424,11 +7427,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
@@ -8354,6 +8357,12 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Pamiętaj, że po usunięciu filtra ${ nameDeleted } nie będziemy wykonywać jego automatycznych akcji."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Po kliknięciu przycisku Potwierdź, na koncie pozostanie ${ creditsRemaining } środek.",
+        "Po kliknięciu przycisku Potwierdź na koncie pozostaną ${ creditsRemaining } środki.",
+        "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków.",
+        "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków."
+      ],
       "please open a support ticket": [
         "wyślij zgłoszenie"
       ],
@@ -9089,11 +9098,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "Username": [
-        "Nazwa użytkownika"
-      ],
       "username": [
         "nazwa użytkownika"
+      ],
+      "Username": [
+        "Nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -11997,6 +12006,32 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Od ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -12024,32 +12059,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Od ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12793,6 +12802,20 @@
         "Wybrany plan: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Wybierz plan Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Od ${ price }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -12811,20 +12834,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -14333,6 +14342,9 @@
       ],
       "Processing payment": [
         "Przetwarzanie płatności"
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Odnowienie za ${ renewPrice }. Anuluj w dowolnym momencie."
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
@@ -17643,10 +17655,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
       "Change login password": [
