@@ -68,6 +68,7 @@ import GroupMembershipsContainer from '../public/GroupMembershipsContainer';
 import InboxDesktopFreeTrialEnded from '../public/InboxDesktopFreeTrialEnded';
 import JoinMagicLinkContainer from '../public/JoinMagicLinkContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
+import { PartnerLogin, PartnerSignup } from '../public/Partner/index';
 import ReAuthContainer from '../public/ReAuthContainer';
 import RemoveEmailContainer from '../public/RemoveEmailContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
@@ -340,6 +341,7 @@ const BasePublicApp = () => {
     );
 
     const hasBackToSwitch = activeSessions === undefined ? maybeHasActiveSessions : activeSessions.length >= 1;
+    const isPartnerEnabled = false;
 
     return (
         <>
@@ -599,6 +601,13 @@ const BasePublicApp = () => {
                                                         onPreSubmit={handlePreSubmit}
                                                     />
                                                 </Route>
+                                                {isPartnerEnabled && (
+                                                    <Route path={[SSO_PATHS.PORKBUN_SIGNUP]}>
+                                                        <UnAuthenticated>
+                                                            <PartnerSignup initialSearchParams={initialSearchParams} />
+                                                        </UnAuthenticated>
+                                                    </Route>
+                                                )}
                                                 <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
                                                     <UnAuthenticated>
                                                         <SignupInviteContainer
@@ -685,6 +694,13 @@ const BasePublicApp = () => {
                                                                     window.location.pathname = SSO_PATHS.SWITCH;
                                                                 }}
                                                             />
+                                                        </UnAuthenticated>
+                                                    </Route>
+                                                )}
+                                                {isPartnerEnabled && (
+                                                    <Route path={SSO_PATHS.PORKBUN_SIGN_IN}>
+                                                        <UnAuthenticated>
+                                                            <PartnerLogin initialSearchParams={initialSearchParams} />
                                                         </UnAuthenticated>
                                                     </Route>
                                                 )}
