@@ -29,6 +29,7 @@ import { useMessage } from '../../hooks/message/useMessage';
 import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
 import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
+import { useMailECRTMetric } from '../../metrics/useMailECRTMetric';
 import type { Element } from '../../models/element';
 import type { MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 import QuickReplyContainer from '../composer/quickReply/QuickReplyContainer';
@@ -106,6 +107,8 @@ const MessageView = (
     const [sourceMode, setSourceMode] = useState(false);
 
     const elementRef = useRef<HTMLElement>(null);
+
+    const { stopECRTMetric } = useMailECRTMetric();
 
     const { ktActivation } = useKeyTransparencyContext();
 
@@ -460,6 +463,9 @@ const MessageView = (
                         onMessageReady={onMessageReady}
                         onFocusIframe={handleFocus('IFRAME')}
                         hasQuickReply={canShowQuickReply}
+                        onIframeReady={() => {
+                            stopECRTMetric(conversationMode ? message.data?.ConversationID : message.data?.ID);
+                        }}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}
                     {canShowQuickReply && (

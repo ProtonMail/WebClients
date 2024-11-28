@@ -35,6 +35,7 @@ import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
 import useInboxDesktopElementId from 'proton-mail/hooks/useInboxDesktopElementId';
 import useMailtoHash from 'proton-mail/hooks/useMailtoHash';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { useMailECRTMetric } from 'proton-mail/metrics/useMailECRTMetric';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import ConversationView from '../../components/conversation/ConversationView';
@@ -179,6 +180,8 @@ const MailboxContainer = ({
         [history, labelID]
     );
 
+    const { startECRTMetric } = useMailECRTMetric();
+
     const onCompose = useOnCompose();
 
     useMailboxPageTitle(labelID, location);
@@ -261,6 +264,8 @@ const MailboxContainer = ({
 
     const handleElement = useCallback(
         (elementID: string | undefined, preventComposer = false) => {
+            startECRTMetric(labelID, elementID);
+
             const fetchElementThenCompose = async () => {
                 // Using the getter to prevent having elements in dependency of the callback
                 const [element] = getElementsFromIDs([elementID || '']);
