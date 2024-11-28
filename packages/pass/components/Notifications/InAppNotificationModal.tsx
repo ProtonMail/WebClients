@@ -6,15 +6,15 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { ModalTwoFooter, ModalTwoHeader } from '@proton/components/index';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useInAppMessages } from '@proton/pass/components/InAppMessages/InAppMessagesProvider';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
+import { useInAppNotification } from '@proton/pass/components/Notifications/InAppNotificationProvider';
 import { selectNextNotification } from '@proton/pass/store/selectors';
 import { InAppNotificationCtaType, InAppNotificationState } from '@proton/pass/types';
 
-import './Modal.scss';
+import './InAppNotificationModal.scss';
 
-export const Modal: FC = () => {
-    const { changeNotificationState } = useInAppMessages();
+export const InAppNotificationModal: FC = () => {
+    const { changeNotificationState } = useInAppNotification();
     const { onLink } = usePassCore();
     const notification = useSelector(selectNextNotification)!;
 
