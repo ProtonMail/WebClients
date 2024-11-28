@@ -149,8 +149,15 @@ const modelToDescriptionProperties = ({
     conferenceUrl,
     conferenceHost,
 }: Partial<EventModel>) => {
+    const hasZoom = !!(conferenceUrl && conferenceId);
+
+    // Return an empty object if there is no description and no Zoom meeting
+    if (!description && !hasZoom) {
+        return {};
+    }
+
     // Return the description if there is no Zoom meeting
-    if (!conferenceUrl && !conferenceId && !conferencePassword) {
+    if (description && !hasZoom) {
         const cleanedDescription = removeZoomInfoFromDescription(description ?? '');
         return { description: { value: cleanedDescription?.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION) } };
     }
