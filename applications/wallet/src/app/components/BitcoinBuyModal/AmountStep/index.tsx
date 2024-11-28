@@ -28,6 +28,7 @@ import { useWalletApiClients } from '@proton/wallet';
 import type { CoreSearchableSelectProps } from '../../../atoms';
 import { Button, Input, SearchableSelect, Select } from '../../../atoms';
 import { CurrencySelect } from '../../../atoms/CurrencySelect';
+import { BUY_BITCOIN_DEFAULT_AMOUNT } from '../../../constants/amount';
 import { countDecimal, formatNumberForDisplay } from '../../../utils';
 import { AztecoPaymentDetailsModal } from './AztecoPaymentDetailsModal';
 import { DisclaimerModal } from './DisclaimerModal';
@@ -101,8 +102,6 @@ const getContentForPaymentMethod = (paymentMethod: WasmPaymentMethod): { text: s
             return null;
     }
 };
-
-const DEFAULT_AMOUNT = 1000;
 
 export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote, btcAddress }: Props) => {
     const [loadingConfirm, withLoadingConfirm] = useLoading();
@@ -217,9 +216,9 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                                             setSelectedCurrency(currency.Symbol as WasmFiatCurrencySymbol);
                                             const amount = Number(currency.MinimumAmount);
                                             setAmount(
-                                                Number.isFinite(amount) && Number(amount) !== 0
+                                                Number.isFinite(amount) && Number(amount) > BUY_BITCOIN_DEFAULT_AMOUNT
                                                     ? amount
-                                                    : DEFAULT_AMOUNT
+                                                    : BUY_BITCOIN_DEFAULT_AMOUNT
                                             );
                                         }}
                                     />
