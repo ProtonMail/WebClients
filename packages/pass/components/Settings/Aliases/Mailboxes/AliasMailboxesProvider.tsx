@@ -76,6 +76,7 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
             onCreate: (mailbox) => {
                 setMailboxes((mailboxes) => fullMerge(mailboxes, { [mailbox.MailboxID]: mailbox }));
                 if (!mailbox.Verified) setAction({ type: 'verify', mailboxID: mailbox.MailboxID, sentAt: getEpoch() });
+                else setAction(null);
             },
             onVerify: (mailbox) => setMailboxes(fullMerge(mailboxes, { [mailbox.MailboxID]: mailbox })),
             onDelete: (mailboxID) => setMailboxes((mailboxes) => objectDelete(mailboxes, mailboxID)),
