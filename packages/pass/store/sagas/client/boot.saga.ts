@@ -12,7 +12,6 @@ import {
     cacheRequest,
     draftsGarbageCollect,
     getBreaches,
-    getInAppNotifications,
     getUserAccessIntent,
     getUserFeaturesIntent,
     getUserSettings,
@@ -71,7 +70,6 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         if (online) {
             yield put(startEventPolling());
             yield put(withRevalidate(getBreaches.intent()));
-            yield put(withRevalidate(getInAppNotifications.intent()));
             yield put(withRevalidate(aliasSyncStatus.intent()));
             yield put(withRevalidate(secureLinksGet.intent()));
             yield put(getAuthDevices.intent());
