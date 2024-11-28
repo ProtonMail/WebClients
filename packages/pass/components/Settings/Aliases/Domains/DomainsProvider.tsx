@@ -98,6 +98,7 @@ export const AliasDomainsProvider: FC<PropsWithChildren> = ({ children }) => {
                     case 'create':
                         if (!canManage) spotlight.setUpselling({ type: 'pass-plus', upsellRef: UpsellRef.SETTING });
                         else setAction({ type: 'create' });
+                        break;
                     default:
                         setAction(action);
                 }
