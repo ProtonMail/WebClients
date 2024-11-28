@@ -3800,6 +3800,12 @@
       "Connection data will be available in around 1 hour.": [
         "Anslutningsdata kommer vara tillgänglig om cirka 1 timme."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Fortsätt för att tillåta **${ affiliationsText }** från **${ organizationValue.Name }** att gå med i din ${ BRAND_NAME }-organisation."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Fortsätt för att ansluta **${ organizationValue.Name }** med din ${ BRAND_NAME }-organisation."
+      ],
       "Continue with ${ freeName }": [
         "Fortsätt med ${ freeName }"
       ],
@@ -7039,6 +7045,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Återställ användarlösenord och återställ tvåfaktorsautentisering för användare"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Dirigera din internettrafik genom Tor-nätverket med ett enda klick"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
@@ -10705,6 +10714,9 @@
     "Tor out of date": {
       "stable release": [
         "stabil utgåva"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denna version av Tor-webbläsaren stöds inte. Uppdatera till senaste ${ stableRelease }"
       ]
     },
     "unprivatization": {
