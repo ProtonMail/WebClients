@@ -26,7 +26,12 @@ export const queryCreateFolder = (shareID: string, data: CreateNewFolder) => ({
 });
 
 /** Public **/
-export const queryPublicCreateFolder = (token: string, data: CreateNewFolder) => ({
+export const queryPublicCreateFolder = (
+    token: string,
+    data: Omit<CreateNewFolder, 'SignatureAddress'> & {
+        SignatureEmail?: string;
+    }
+) => ({
     method: 'post',
     url: `drive/urls/${token}/folders`,
     data,
