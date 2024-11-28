@@ -119,6 +119,7 @@ enum MailFeatureFlag {
     ProtonTips = 'ProtonTips',
     MailOnboarding = 'MailOnboarding',
     ReplayOnboardingModal = 'ReplayOnboardingModal',
+    MailMetrics = 'MailMetrics',
 }
 
 enum AdminFeatureFlag {
