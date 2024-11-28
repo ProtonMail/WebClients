@@ -217,6 +217,9 @@
       "Create": [
         "Skapa"
       ],
+      "Create a folder": [
+        "Skapa en mapp"
+      ],
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
       ],
@@ -2476,6 +2479,11 @@
         "Vi har upptäckt följande fält i CSV-filen du laddade upp. Markera de du vill importera."
       ]
     },
+    "Docs Info": {
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "Samarbete har precis blivit lättare. Nu kan vem som helst föreslå redigeringar utan att ändra dokumentet."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Buggar eller kvalitetsproblem"
@@ -4182,6 +4190,9 @@
       "An active recovery file": [
         "En aktiv återställningsfil"
       ],
+      "an anonymous user": [
+        "en anonym användare"
+      ],
       "An issue occurred during the restore process.": [
         "Ett problem uppstod under återställningsprocessen."
       ],
@@ -5142,6 +5153,12 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Applikationen måste dekryptera dina kontakter lokalt innan de kan exporteras. I slutet av processen kommer en VCF-fil att genereras och du kommer att kunna ladda ner den."
       ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Den digitala signaturen har delvis verifierats. Filen laddades upp från en offentlig sida som inte anger ett specifikt användarursprung."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Den digitala signaturen har delvis verifierats. Mappen laddades upp från en offentlig sida som inte anger ett specifikt användarursprung."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antalet nedladdningar inkluderar både faktiska nedladdningar och tillfällen när filer förhandsgranskas."
       ],
@@ -5776,6 +5793,12 @@
       "Calendars": [
         "Kalendrar"
       ],
+      "Can edit": [
+        "Kan redigera"
+      ],
+      "Can view": [
+        "Kan visa"
+      ],
       "Cancel download": [
         "Avbryt nedladdning"
       ],
@@ -6256,6 +6279,14 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Organisera, lägga till och redigera filer"
+      ],
+      "View and download": [
+        "Visa och ladda ner"
       ]
     },
     "Label for contact group color": {
@@ -7566,6 +7597,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Återställ användarlösenord och återställ tvåfaktorsautentisering för användare"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Dirigera din internettrafik genom Tor-nätverket med ett enda klick"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ],
@@ -7920,6 +7954,10 @@
         "Detta objekt togs inte bort från din lista",
         "Några objekt misslyckades att tas bort från din lista"
       ],
+      "This item was successfully removed from your list": [
+        "Detta objekt togs bort från din lista",
+        "Alla objekt togs bort från din lista"
+      ],
       "Trash failed to be emptied": [
         "Misslyckades att tömma papperskorg"
       ],
@@ -7965,6 +8003,9 @@
       "Continue": [
         "Fortsätt"
       ],
+      "Create a document": [
+        "Skapa ett dokument"
+      ],
       "Get started": [
         "Kom igång"
       ],
@@ -7976,6 +8017,9 @@
       ],
       "Invite members": [
         "Bjud in medlemmar"
+      ],
+      "Maybe Later": [
+        "Kanske senare"
       ],
       "Maybe later": [
         "Kanske senare"
