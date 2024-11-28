@@ -6,12 +6,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components/index';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useInAppMessages } from '@proton/pass/components/InAppMessages/InAppMessagesProvider';
+import { useInAppNotification } from '@proton/pass/components/Notifications/InAppNotificationProvider';
 import { selectNextNotification } from '@proton/pass/store/selectors';
 import { InAppNotificationCtaType, InAppNotificationState } from '@proton/pass/types';
 
-export const Banner: FC = () => {
-    const { changeNotificationState } = useInAppMessages();
+export const InAppNotificationBanner: FC = () => {
+    const { changeNotificationState } = useInAppNotification();
     const { onLink } = usePassCore();
     const notification = useSelector(selectNextNotification)!;
     const position = EXTENSION_BUILD ? { '--top-custom': '100px' } : { '--bottom-custom': '100px' };
