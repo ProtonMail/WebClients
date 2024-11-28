@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { type IconName } from '@proton/components/components/icon/Icon';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import type { AvailablePaymentMethod, PaymentMethodFlows, SavedPaymentMethod } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, type PaymentMethodSepa, isSignupFlow } from '@proton/payments';
+import type { AvailablePaymentMethod, PaymentMethodFlows, SavedPaymentMethod, SepaDetails } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, isSignupFlow } from '@proton/payments';
 
 import type { MethodsHook, Props } from '../react-extensions/useMethods';
 import { useMethods as _useMethods } from '../react-extensions/useMethods';
@@ -52,13 +52,17 @@ const getIcon = (paymentMethod: SavedPaymentMethod): IconName | undefined => {
     }
 };
 
-export function formattedSavedSepaDetails(method: PaymentMethodSepa): string {
-    const NBSP_HTML = '\u00A0';
-    const {
-        Details: { Country, Last4 },
-    } = method;
+const NBSP_HTML = '\u00A0';
 
-    return c('Info').t`IBAN${NBSP_HTML}${Country}${NBSP_HTML}••••${NBSP_HTML}${Last4}`;
+export function formattedShortSavedSepaDetails(details: SepaDetails): string {
+    const { Country, Last4 } = details;
+
+    return `${Country}${NBSP_HTML}••••${NBSP_HTML}${Last4}`;
+}
+
+export function formattedSavedSepaDetails(details: SepaDetails): string {
+    const iban = formattedShortSavedSepaDetails(details);
+    return `IBAN${NBSP_HTML}${iban}`;
 }
 
 const getMethod = (paymentMethod: SavedPaymentMethod): string => {
@@ -73,7 +77,7 @@ const getMethod = (paymentMethod: SavedPaymentMethod): string => {
         case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
             return `PayPal - ${paymentMethod.Details.PayerID}`;
         case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
-            return `Bank transfer - ${formattedSavedSepaDetails(paymentMethod)}`;
+            return `Bank transfer - ${formattedSavedSepaDetails(paymentMethod.Details)}`;
         default:
             return '';
     }
