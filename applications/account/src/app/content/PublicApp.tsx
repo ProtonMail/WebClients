@@ -304,15 +304,6 @@ const BasePublicApp = () => {
         return handleLoginResult(result);
     };
 
-    const updateActiveSessions = (updatedActiveSessions?: LocalSessionPersisted[]) => {
-        if (!updatedActiveSessions?.length) {
-            setActiveSessions([]);
-            history.push(paths.login);
-            return;
-        }
-        setActiveSessions(updatedActiveSessions || []);
-    };
-
     const handleAddAccount = () => {
         history.push(paths.login);
     };
@@ -534,10 +525,10 @@ const BasePublicApp = () => {
                                                             initialSessionsLength={initialSessionsLength}
                                                             onGetActiveSessions={handleGetActiveSessions}
                                                             activeSessions={activeSessions}
+                                                            onActiveSessions={setActiveSessions}
                                                             toApp={maybePreAppIntent}
                                                             toAppName={toAppName}
                                                             onLogin={handleLogin}
-                                                            updateActiveSessions={updateActiveSessions}
                                                             onAddAccount={handleAddAccount}
                                                             onEmptySessions={() => {
                                                                 history.replace(paths.login);
