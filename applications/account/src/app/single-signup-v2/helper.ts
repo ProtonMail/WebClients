@@ -426,6 +426,7 @@ export const getUserInfo = async ({
     signupParameters,
     upsellPlanCard,
     toApp,
+    availableCycles,
 }: {
     api: Api;
     paymentsApi: PaymentsApi;
@@ -438,6 +439,7 @@ export const getUserInfo = async ({
     planParameters: PlanParameters;
     signupParameters: SignupParameters2;
     toApp: APP_NAMES;
+    availableCycles: CYCLE[];
 }): Promise<{
     paymentMethods: SavedPaymentMethod[];
     subscription: Subscription | undefined;
@@ -524,11 +526,20 @@ export const getUserInfo = async ({
         state.access = false;
     }
 
+    const cycle = (() => {
+        const preferredCycle = signupParameters.cycle || subscription.Cycle || options.cycle;
+
+        if (availableCycles.includes(preferredCycle)) {
+            return preferredCycle;
+        }
+
+        return Math.max(...availableCycles);
+    })();
+
     const subscriptionData = await (() => {
         const optionsWithSubscriptionDefaults = {
             ...options,
-            // TODO: make this more generic
-            cycle: signupParameters.cycle || subscription.Cycle || options.cycle,
+            cycle,
             currency: options.currency,
             coupon: subscription.CouponCode || options.coupon,
         };
