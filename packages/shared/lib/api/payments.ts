@@ -68,10 +68,10 @@ export const getSubscription = (forceVersion?: PaymentsVersion) => ({
 });
 
 export interface FeedbackDowngradeData {
-    Reason?: string;
-    Feedback?: string;
-    ReasonDetails?: string;
-    Context?: 'vpn' | 'mail';
+    Reason: string;
+    Feedback: string;
+    ReasonDetails: string;
+    Context: 'vpn' | 'mail';
 }
 
 export const deleteSubscription = (data: FeedbackDowngradeData, version: PaymentsVersion) => ({
