@@ -1,4 +1,6 @@
-.image-border {
-	border: 1px solid transparent;
-	background: linear-gradient(to right, #704cff, #ffca8a) border-box;
+.in-app-notification {
+	&--image-border {
+		border: 1px solid transparent;
+		background: linear-gradient(to right, #704cff, #ffca8a) border-box;
+	}
 }
