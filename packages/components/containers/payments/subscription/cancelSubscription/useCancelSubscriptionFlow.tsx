@@ -13,7 +13,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { type PLANS, isFreeSubscription, isSplittedUser, onSessionMigrationPaymentsVersion } from '@proton/payments';
-import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
+import type { FeedbackDowngradeData, PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
@@ -39,7 +39,7 @@ import MemberDowngradeModal from '../../MemberDowngradeModal';
 import PassLaunchOfferDowngradeModal from '../../PassLaunchOfferDowngradeModal';
 import { getShortPlan } from '../../features/plan';
 import CalendarDowngradeModal from '../CalendarDowngradeModal';
-import type { FeedbackDowngradeData, FeedbackDowngradeResult } from '../FeedbackDowngradeModal';
+import type { FeedbackDowngradeResult } from '../FeedbackDowngradeModal';
 import FeedbackDowngradeModal, { isKeepSubscription } from '../FeedbackDowngradeModal';
 import type { HighlightPlanDowngradeModalOwnProps } from '../HighlightPlanDowngradeModal';
 import HighlightPlanDowngradeModal, { planSupportsCancellationDowngradeModal } from '../HighlightPlanDowngradeModal';
@@ -197,7 +197,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     );
 
     interface CancellationProps {
-        feedback?: FeedbackDowngradeResult;
+        feedback?: FeedbackDowngradeData;
         paymentsVersionOverride: PaymentsVersion | undefined;
     }
 
@@ -208,10 +208,12 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             let { feedback } = cancellationProps;
 
             if (!feedback) {
-                feedback = await showFeedbackDowngradeModal();
-                if (isKeepSubscription(feedback)) {
+                const downgradeFeedback = await showFeedbackDowngradeModal();
+                if (isKeepSubscription(downgradeFeedback)) {
                     return SUBSCRIPTION_KEPT;
                 }
+
+                feedback = downgradeFeedback;
             }
 
             cancelNotificationId = createNotification({
@@ -224,7 +226,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                 changeRenewState(
                     {
                         RenewalState: Renew.Disabled,
-                        CancellationFeedback: feedback as FeedbackDowngradeData,
+                        CancellationFeedback: feedback,
                     },
                     cancellationProps.paymentsVersionOverride ?? onSessionMigrationPaymentsVersion(user, subscription)
                 )
