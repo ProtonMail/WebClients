@@ -109,6 +109,9 @@
       "Get verification code": [
         "Получить код подтверждения"
       ],
+      "Go to settings": [
+        "Перейти в настройки"
+      ],
       "Got it": [
         "Понятно"
       ],
@@ -117,6 +120,9 @@
       ],
       "Increase": [
         "Увеличить"
+      ],
+      "Input passphrase": [
+        "Введите кодовую фразу"
       ],
       "Keep my subscription": [
         "Сохранить подписку"
@@ -247,6 +253,9 @@
       "Update recovery phrase": [
         "Обновить фразу для восстановления"
       ],
+      "Upgrade": [
+        "Улучшить"
+      ],
       "Upgrade now": [
         "Улучшить сейчас"
       ],
@@ -279,11 +288,6 @@
       ],
       "What do I get?": [
         "Что я получу?"
-      ]
-    },
-    "Action subscription": {
-      "Reactivate": [
-        "Возобновить"
       ]
     },
     "Addon": {
@@ -321,6 +325,50 @@
         "${ users } пользователей"
       ]
     },
+    "Address list": {
+      "Activate Bitcoin via Email": [
+        "Активировать Bitcoin по эл. почте"
+      ],
+      "Address copied": [
+        "Адрес скопирован"
+      ],
+      "Bitcoin via Email ${ availableAddresses }": [
+        "Bitcoin по эл. почте ${ availableAddresses }"
+      ],
+      "Change address": [
+        "Адрес изменения"
+      ],
+      "Given out": [
+        "Выдано"
+      ],
+      "Index": [
+        "Список"
+      ],
+      "Not used": [
+        "Не используется"
+      ],
+      "Page ${ pageNumber }": [
+        "Страница ${ pageNumber }"
+      ],
+      "Receive address": [
+        "Адрес получения"
+      ],
+      "Status": [
+        "Состояние"
+      ],
+      "Sync": [
+        "Синхронизация"
+      ],
+      "Toggle keychain": [
+        "Переключить набор ключей"
+      ],
+      "Used (${ transactionsCount })": [
+        "Выполнено (${ transactionsCount })"
+      ],
+      "Value": [
+        "Значение"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Приложения ${ BRAND_NAME }"
@@ -331,102 +379,174 @@
         "Поднимите производительность электронной почты на новый уровень. Пусть ${ BRAND_NAME } Scribe поможет вам в написании, ответах и корректировке писем."
       ]
     },
+    "Balance": {
+      "Loading balance": [
+        "Загрузка баланса"
+      ]
+    },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } хранилища"
-      ],
       "1 user": [
         "1 пользователь"
       ],
       "3 TB": [
         "3 ТБ"
       ],
-      "3,000+ servers across 65+ countries": [
-        "Свыше 3000 серверов более чем в 65 странах"
-      ],
       "6 users": [
         "6 пользователей"
-      ],
-      "Access content worldwide": [
-        "Доступ к контенту по всему миру"
-      ],
-      "Ad-blocker and malware protection": [
-        "Блокировщик рекламы и защита от вредоносных программ"
-      ],
-      "Extended version history": [
-        "Подробная история версий"
-      ],
-      "High speed streaming": [
-        "Высокоскоростной стриминг"
       ],
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "первый ${ n } месяц",
-        "первые ${ n } месяца",
-        "первые ${ n } месяцев",
-        "первые ${ n } месяца"
-      ],
-      "the first month": [
-        "первый месяц"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Специальная цена в ${ discountedPrice } действует ${ discountedMonths }. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } на ${ nextMonths }. Отменить подписку можно в любой момент."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Специальная цена в ${ discountedPrice } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } каждый месяц. Отменить подписку можно в любой момент."
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Мы предлагаем свыше 3000 серверов более чем в 65 странах, высокую скорость VPN-подключения, доступ к стриминговым платформам со всего мира, защиту от вирусов, блокировщик рекламы, быстрое скачивание через BitTorrent и многое другое."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } хранилища"
+      ],
+      "1 TB total": [
+        "1 ТБ всего"
+      ],
+      "1 user": [
+        "1 пользователь"
+      ],
+      "1 user account": [
+        "1 аккаунт пользователя"
+      ],
+      "10 email addresses": [
+        "10 адресов электронной почты"
+      ],
+      "2 users": [
+        "2 пользователя"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 user accounts": [
+        "6 аккаунтов пользователей"
+      ],
+      "6 users": [
+        "6 пользователей"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Более 8500 серверов в 110 странах"
+      ],
+      "Ad-blocker and malware protection": [
+        "Блокировщик рекламы и защита от вредоносных программ"
+      ],
+      "Admin panel to manage your family": [
+        "Панель администратора для управления вашей семьей"
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
+      ],
+      "Dark Web Monitoring": [
+        "Мониторинг даркнета"
+      ],
+      "Easily add or remove users": [
+        "Легко добавлять или удалять участников"
+      ],
+      "High speed streaming": [
+        "Высокоскоростной стриминг"
+      ],
+      "Integrated 2FA authenticator": [
+        "Интегрированная двухфакторная аутентификация"
+      ],
+      "One-time payment, lifetime deal": [
+        "Единовременная оплата, пожизненное предложение"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Password health alerts": [
+        "Оповещения о надёжности пароля"
+      ],
+      "Private photo backup": [
+        "Конфиденциальное резервное копирование фото"
+      ],
+      "Protect 10 devices at a time": [
+        "Защитите 10 устройств за раз"
+      ],
+      "Secure file storage & sharing": [
+        "Безопасное хранение и обмен файлами"
+      ],
+      "Secure vault and link sharing": [
+        "Защищённое хранилище и обмен ссылками"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество псевдонимов hide-my-email"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Неограниченное количество имён пользователей, заметок и кредитных карт"
+      ],
+      "Use your own email domain": [
+        "Используйте свой собственный домен электронной почты"
+      ],
+      "Version history": [
+        "История версий"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Оплата ${ amount } единовременно"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Продлится через 1 месяц по цене ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Мы предлагаем свыше 8500 серверов более чем в 110 странах, 10 устройств, высокоскоростной стриминг, блокировщик рекламы и защиту от вредоносных программ, VPN Accelerator и многое другое."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
       ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Обходите локальные блокировки Интернета и цензуру с помощью нашей глобальной сети серверов."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Защитите свои входы на всех ваших устройствах. Включает неограниченное количество псевдонимов hide-my-email, обмен файлами, встроенную двухфакторную аутентификацию, мониторинг даркнета и многое другое."
       ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку ${ domains } пользовательского почтового домена, ${ addresses } адреса электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
-        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
-        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
-        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое."
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адреса электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адресов электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адресов электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адрес электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адреса электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адресов электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адреса электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое."
       ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам доступны 15 адресов электронной почты, поддержка пользовательских доменов адреса электронной почты, помощник по написанию ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и не только."
       ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, 15 адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместный доступ к календарю и не только."
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Защитите свои электронные письма и расписание сквозным шифрованием. Вам доступны 15 адресов электронной почты, поддержка пользовательских доменов адресов электронной почты, неограниченное количество псевдонимов hide-my-email и многое другое."
       ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает онлайн-редактор документов, резервное копирование фотографий, историю версий, зашифрованный обмен файлами и многое другое."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Специально разработанная функция NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
       ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Храните до 200 версий каждого файла сроком до 10 лет."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Обновляется автоматически за ${ renewPrice } на ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -450,9 +570,6 @@
       ]
     },
     "bitcoin buy": {
-      "${ WALLET_APP_NAME } has partnered with ${ rampLink } and ${ banxaLink }, two registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
-        "${ WALLET_APP_NAME } заключил партнёрство с ${ rampLink } и ${ banxaLink }, двумя зарегистрированными услугами криптоактивов, для облегчения покупки BTC. Введите ваш регион, чтобы увидеть доступных провайдеров и способы оплаты."
-      ],
       "Amount": [
         "Сумма"
       ],
@@ -474,6 +591,9 @@
       "Continue": [
         "Продолжить"
       ],
+      "Continue with ${ providerName }": [
+        "Продолжить с ${ providerName }"
+      ],
       "Credit card": [
         "Кредитная карта"
       ],
@@ -489,11 +609,17 @@
       "Pay with": [
         "Оплатить с помощью"
       ],
+      "Payment details": [
+        "Информация платежа"
+      ],
       "Recipients": [
         "Получатели"
       ],
       "Review": [
         "Просмотреть"
+      ],
+      "See details": [
+        "Посмотреть информацию"
       ],
       "Send": [
         "Отправить"
@@ -514,6 +640,9 @@
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
         "${ quote.provider } — оплата"
+      ],
+      "The selected currency is not supported in your country or the requested amount is too low": [
+        "Выбранная валюта не поддерживается в вашей стране или запрашиваемая сумма слишком мала"
       ]
     },
     "Bitcoin Script Type": {
@@ -544,6 +673,12 @@
     "Bitcoin send": {
       "Add recipient": [
         "Добавить получателя"
+      ],
+      "Invitation could not be sent to recipient. Please check details and try again.": [
+        "Приглашение не удалось отправить получателю. Проверьте информацию и попробуйте снова."
+      ],
+      "Invitation could not be sent. Please check details and try again.": [
+        "Приглашение не удалось отправить. Проверьте информацию и попробуйте снова."
       ],
       "Invitation sent": [
         "Приглашение отправлено"
@@ -669,12 +804,47 @@
         "Проблема с доступом к сайту"
       ]
     },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } хранилище"
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Все приложения ${ BRAND_NAME } и платные функции"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Облачное хранилище и обмен большими файлами"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Облачное хранилище с шифрованием для фотографий и документов"
+      ],
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ],
+      "Save ${ upsellSavings }": [
+        "Сэкономьте ${ upsellSavings }"
+      ],
+      "Secure personal and shared calendar": [
+        "Безопасные личный и общий календари"
+      ],
+      "Try ${ planName }": [
+        "Попробуйте ${ planName }"
+      ],
+      "Ultra fast and private VPN": [
+        "Сверхбыстрый и конфиденциальный VPN"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } пользователь",
         "${ users } пользователя",
         "${ users } пользователей",
         "${ users } пользователей"
+      ],
+      "Total": [
+        "Итого"
       ],
       "Total for ${ n } month": [
         "Итого за ${ n } месяц",
@@ -1699,33 +1869,6 @@
         "Приоритетная поддержка"
       ]
     },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Платные функции ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ PASS_SHORT_APP_NAME }"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Включает историю версий в ${ DRIVE_SHORT_APP_NAME }, доступ к тысячам высокоскоростных ${ VPN_SHORT_APP_NAME } серверам, совместное использование в ${ PASS_SHORT_APP_NAME } и другое"
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 ТБ"
-      ],
-      "6 users": [
-        "6 пользователей"
-      ],
-      "Early access to new apps and features": [
-        "Early access to new apps and features"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Ранний доступ к приложению ${ MAIL_APP_NAME } для настольных компьютеров"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Платные функции ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_APP_NAME }"
-      ]
-    },
     "Error": {
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
@@ -1772,6 +1915,9 @@
       "Invalid expiration date": [
         "Недействительный срок действия"
       ],
+      "Invalid IBAN": [
+        "Неверный IBAN"
+      ],
       "Invalid postal code": [
         "Недействительный почтовый индекс"
       ],
@@ -1807,6 +1953,9 @@
       ],
       "Tab closed": [
         "Вкладка закрыта"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Сумма оплаты изменилась. Пожалуйста, попробуйте еще раз."
       ],
       "The email addresses do not match": [
         "Адреса электронной почты не совпадают"
@@ -2041,6 +2190,9 @@
       ],
       "Not now": [
         "Не сейчас"
+      ],
+      "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
+        "Вы теперь покидаете ${ WALLET_APP_NAME } для ${ providerName } (${ websiteLink }).\nУслуги, связанные с оплатами по картам, банковскими переводами и любыми другими фиатными транзакциями, предоставляются ${ providerName },\nотдельной сторонней платформой. Продолжая и получая услуги от ${ providerName },\nвы подтверждаете, что прочитали и согласны с Условиями обслуживания ${ providerName } (${ termOfUseLink })\nи Политикой конфиденциальности и использования файлов cookie (${ privacyAndCookiesPolicyLink }).\nПо любым вопросам, связанным с услугами ${ providerName }, свяжитесь с ${ providerName } по адресу ${ supportEmailLink }"
       ]
     },
     "Group": {
@@ -2078,6 +2230,12 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помощник по написанию ${ BRAND_NAME } Scribe"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "У пожизненного предложения ${ PASS_SHORT_APP_NAME } нет платы за продление, это однократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "У пожизненного предложения ${ PASS_SHORT_APP_NAME } нет платы за продление, это однократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }. Ваша стоимость и дата продления подписки ${ planTitle } остаются неизменными."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
       ],
@@ -2090,8 +2248,8 @@
         "(${ memberCount } участников)",
         "(${ memberCount } участника)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /месяц)"
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } в месяц)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонусного пространства"
@@ -2288,9 +2446,6 @@
       "Please authenticate your payment in the verification tab.": [
         "Пожалуйста, подтвердите платёж во вкладке проверки."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Обратите внимание, что после нажатия на «Подтвердить» на вашем счету останется ${ remainingCreditsFormatted }."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Пожалуйста, попробуйте другой способ оплаты или свяжитесь с вашим банком."
       ],
@@ -2438,6 +2593,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
       ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ваша подписка ${ PASS_SHORT_APP_NAME } Plus будет заменена на пожизненный ${ PASS_SHORT_APP_NAME } . Остаток средств вашей подписки будет добавлен в вашу учетную запись. ${ PASS_SHORT_APP_NAME } действует без платы за продление, это единократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш аккаунт будет обновлен, когда платеж будет проверен."
       ],
@@ -2454,11 +2612,6 @@
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
         "Пожалуйста, свяжитесь с нами по ${ email } для получения инструкций по оплате наличными."
-      ]
-    },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Вы можете предотвратить истечение срока действия, повторно активировав подписку"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -2480,6 +2633,12 @@
         "${ n } месяца",
         "${ n } месяцев",
         "${ n } месяцев"
+      ],
+      "Address": [
+        "Адрес"
+      ],
+      "Anderson": [
+        "Андерсон"
       ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
@@ -2523,6 +2682,9 @@
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
       ],
+      "Company name": [
+        "Название компании"
+      ],
       "Copy": [
         "Копировать"
       ],
@@ -2550,6 +2712,9 @@
       "Do you have any suggestions for our team?": [
         "Есть ли у вас какие-либо предложения для нашей команды?"
       ],
+      "Email": [
+        "Электронная почта"
+      ],
       "Email address": [
         "Адрес эл. почты"
       ],
@@ -2559,8 +2724,17 @@
       "Expires": [
         "Срок действия"
       ],
+      "First name": [
+        "Имя"
+      ],
       "Hide password": [
         "Скрыть пароль"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Last name": [
+        "Фамилия"
       ],
       "Main": [
         "Главная"
@@ -2601,6 +2775,9 @@
       "Reveal password": [
         "Показать пароль"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Security code (${ codeName })": [
         "Код безопасности (${ codeName })"
       ],
@@ -2612,6 +2789,9 @@
       ],
       "System information": [
         "Сведения о системе"
+      ],
+      "Thomas": [
+        "Томас"
       ],
       "VAT": [
         "НДС"
@@ -2660,32 +2840,34 @@
         "Что это такое?"
       ]
     },
+    "Loader": {
+      "Loading": [
+        "Загрузка"
+      ],
+      "Loading data": [
+        "Загрузка данных"
+      ],
+      "Loading message": [
+        "Загрузка сообщения"
+      ],
+      "Loading send from label": [
+        "Загрузка отправленного с меткой"
+      ]
+    },
+    "Loading": {
+      "Amount": [
+        "Сумма"
+      ],
+      "Secondary amount": [
+        "Дополнительная сумма"
+      ]
+    },
     "mail_signup_2024: Info": {
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Добавить помощника по написанию ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "за ${ price }"
-      ]
-    },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Приложение ${ MAIL_APP_NAME } для ПК"
-      ],
-      "10 email addresses": [
-        "10 адресов электронной почты"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Автоудаление спама и сообщений в корзине"
-      ],
-      "Custom schedule send and snooze times": [
-        "Пользовательское планирование и откладывание писем на любое время"
-      ],
-      "Support for 1 custom email domain": [
-        "Поддержка 1 пользовательского домена электронной почты"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Неограниченное количество папок, ярлыков и фильтров"
       ]
     },
     "new_plans": {
@@ -2697,6 +2879,11 @@
       ],
       "Medium VPN speed": [
         "Средняя скорость VPN"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
       ]
     },
     "new_plans: action": {
@@ -2720,11 +2907,6 @@
       ],
       "Switch plan": [
         "Сменить тариф"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -2806,12 +2988,6 @@
         "${ n } общих хранилищ ${ PASS_SHORT_APP_NAME } для каждого пользователя",
         "${ n } общих хранилищ ${ PASS_SHORT_APP_NAME } для каждого пользователя"
       ],
-      "${ n } user": [
-        "${ n } пользователь",
-        "До ${ n } пользователей",
-        "До ${ n } пользователей",
-        "До ${ n } пользователей"
-      ],
       "${ n } vault": [
         "${ n } хранилище",
         "${ n } хранилища",
@@ -2824,11 +3000,20 @@
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } пользователь",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей"
+      ],
       "${ options }-day file version history": [
         "${ options }-дневный журнал версий файла",
         "${ options }-дневный журнал версий файла",
         "${ options }-дневный журнал версий файла",
         "${ options }-дневный журнал версий файла"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin пожизненно"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } с ${ n } псевдонимом hide-my-email",
@@ -2877,6 +3062,9 @@
       ],
       "Administration Panel": [
         "Панель администратора"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Расширенные возможности псевдонимов (основанные на SimpleLogin)"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Все основные сервисы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -3061,6 +3249,9 @@
       "Secure Core servers": [
         "Серверы Secure Core"
       ],
+      "Secure link sharing": [
+        "Защищенный совместный доступ к ссылкам"
+      ],
       "See team's availability": [
         "Посмотреть доступность команды"
       ],
@@ -3091,8 +3282,8 @@
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
       ],
-      "Tor over VPN": [
-        "Tor через VPN"
+      "TOR over VPN": [
+        "TOR через VPN"
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
@@ -3148,6 +3339,12 @@
         "До ${ n } пользователей",
         "До ${ n } пользователей"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "До ${ n } пользователя (${ adminsText }, ${ usersText })",
+        "До ${ n } пользователей (${ adminsText }, ${ usersText })",
+        "До ${ n } пользователей (${ adminsText }, ${ usersText })",
+        "До ${ n } пользователей (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
       ],
@@ -3168,6 +3365,20 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Мы сканируем Темную паутину на предмет утечки ваших адресов или псевдонимов ${ BRAND_NAME } и немедленно оповещаем вас, если что-то находим."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins }администратор",
+        "${ admins }администратора",
+        "${ admins }администраторов",
+        "${ admins }администраторов"
+      ],
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
       ]
     },
     "new_plans: heading": {
@@ -3229,6 +3440,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Защитите конфиденциальную деловую информацию и сотрудничайте безопасно."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Защитите свою семью, используя все платные функции ${ PASS_SHORT_APP_NAME } Plus для 6 пользователей."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Защитите конфиденциальность вашей семьи с помощью комплекса услуг ${ BRAND_NAME }."
@@ -3327,7 +3541,10 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Создайте до ${ n } адресов электронной почты или псевдонимов, которые можно назначить членам семьи. Используйте их для идентификации в Интернете, например JohnShopper@${ domain } для аккаунтов для покупок."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Пользовательские домены для псевдонимов, дополнительные почтовые ящики, возможность отправки писем с псевдонимов и многое другое"
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
@@ -3363,6 +3580,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Ярлыки - это простые метки, которые можно добавлять к сообщениям, чтобы облегчить их поиск или применить к ним фильтры"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Пожизненный доступ к ${ PASS_APP_NAME } + премиум-функции SimpleLogin."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Как и папка, хранилище - это удобный способ упорядочить ваши объекты."
       ],
@@ -3381,8 +3601,8 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Возможность просмотра публичных папок входящих сообщений пользователей, как это делает сам пользователь, включая полную информацию о сообщениях и контактах"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Инструмент управления для организаций, с помощью которого администраторы могут добавлять и удалять пользователей, выделять место в хранилище, настраивать домены и выполнять другие задачи"
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Инструмент управления организацией, позволяющий администраторам добавлять и удалять пользователей, управлять их доступом к службам ${ BRAND_NAME } и выполнять другие задачи."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надежная инфраструктура гарантирует, что вы сможете получить доступ к своему аккаунту, когда вам это необходимо"
@@ -3426,11 +3646,11 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Сбрасывайте пароли и двухфакторную аутентификацию для пользователей"
       ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Направляйте свой трафик через сеть Tor одним нажатием"
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Защищенно делитесь отдельными элементами со всеми (даже если они не используют ${ PASS_APP_NAME })."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Защищенное хранение данных контактов, таких как номер телефона, адрес, день рождения и личные заметки. Шифрование с нулевым доступом гарантирует, что даже ${ BRAND_NAME } не сможет получить к ним доступ."
@@ -3519,10 +3739,10 @@
         "Центральная панель управления"
       ],
       "Create up to ${ n } calendar": [
-        "Создайте до ${ n } календаря",
         "Создайте до ${ n } календарей",
-        "Создайте до ${ n } календарей",
-        "Создайте до ${ n } календарей"
+        "Создать до ${ n } календарей",
+        "Создать до ${ n } календарей",
+        "Создать до ${ n } календарей"
       ],
       "Dedicated Account manager": [
         "Выделенный менеджер аккаунтов"
@@ -3571,6 +3791,23 @@
         "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам"
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } аккаунт пользователя",
+        "${ n } аккаунта пользователей",
+        "${ n } аккаунтов пользователей",
+        "${ n } аккаунтов пользователей"
+      ],
+      "Activity log": [
+        "Журнал действий"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Панель администратора для управления пользователями и подпиской"
+      ],
+      "Team policies": [
+        "Политики команды"
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "Ключ организации не существует."
@@ -3586,6 +3823,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Банковский перевод"
+      ],
       "Credit/debit card": [
         "Кредитная/дебетовая карта"
       ],
@@ -3636,15 +3876,6 @@
       "Select billing country to pay": [
         "Для оплаты, пожалуйста выберите страну"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Купон действителен при продлении на ${ couponRedemptions }. Затем он будет автоматически продлен по цене ${ price } на ${ months } месяцев. Вы можете отменить его в любое время."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Затем она будет автоматически продлена по цене ${ price } на ${ months }. Вы можете отменить подписку в любое время."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Специальная цена в ${ priceWithDiscount } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ price } каждый месяц. Отменить подписку можно в любой момент."
-      ],
       "Timeout exceeded": [
         "Превышено время ожидания"
       ],
@@ -3670,6 +3901,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша карта отклонена. Пожалуйста, попробуйте другую карту или свяжитесь с вашим банком для авторизации транзакции."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Подтверждая этот платеж, вы авторизуете ${ BRAND_NAME } и Stripe, наш поставщик платежных услуг, поручить вашему банку депонировать свой счет и банк соответствующим образом депонировать свой счет. Вы можете получить возврат средств в течение 8 недель со дня дебетования на основании Вашего договора с Вашим банком."
+      ],
+      "Street address, postal code, and city": [
+        "Адрес улицы, почтовый индекс и город"
       ]
     },
     "Placeholder": {
@@ -3849,9 +4088,6 @@
       "6 users": [
         "6 пользователей"
       ],
-      "64 countries": [
-        "64 страны"
-      ],
       "All paid Mail and Calendar features": [
         "Все платные функции Mail и Calendar"
       ],
@@ -3954,9 +4190,6 @@
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вредоносных программ и другие преимущества."
       ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Наслаждайтесь контентом на стриминговых платформах, таких как Netflix, Disney+ и Amazon Prime Video, из любой точки мира."
-      ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Все наших платные сервисы с максимальными лимитами: 100 адресов электронной почты, поддержка 10 своих доменов и неограниченного числа псевдонимов hide-my-email, совместный доступ к календарю, зашифрованное облачное хранилище и обмен файлами, и другое."
       ],
@@ -3979,6 +4212,17 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Пригласите друзей в ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Войти"
+      ],
+      "Sign in to your organization": [
+        "Войдите в свою организацию"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будете перенаправлены на вашего стороннего провайдера SSO."
       ]
     },
     "State": {
@@ -4113,9 +4357,6 @@
       "Got it": [
         "Понятно"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Просто войдите в свой аккаунт Apple App Store, а затем нажмите ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Просто войдите в свой аккаунт Play Маркет, а затем нажмите ${ subscriptions }."
       ],
@@ -4137,14 +4378,37 @@
         "Подписка будет понижена в конце платежного периода."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Пожизненный"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Объем хранилища на пользователя: ${ planMaxSpace }"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } пользовательский домен электронной почты",
+        "${ planNumberOfDomains } пользовательских домена электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрес электронной почты",
+        "${ planNumberOfEmails } адреса электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты"
+      ],
+      "Folders, labels, and custom filters": [
+        "Папки, ярлыки и пользовательские фильтры"
       ]
     },
     "Subscription renewal state": {
@@ -4176,14 +4440,6 @@
     "Subscription saving": {
       "Save": [
         "Сэкономьте"
-      ]
-    },
-    "Subscription status": {
-      "Active": [
-        "Активна"
-      ],
-      "Expiring": [
-        "Истекающий"
       ]
     },
     "Success": {
@@ -4314,6 +4570,9 @@
       "Gift": [
         "Подарок"
       ],
+      "Go to settings and recovery keys": [
+        "Перейдите к настройкам и восстановите ключи"
+      ],
       "Human verification": [
         "Проверка пользователя"
       ],
@@ -4366,17 +4625,6 @@
         "Кошелёк"
       ]
     },
-    "Title subscription": {
-      "End date": [
-        "Дата окончания"
-      ],
-      "Plan": [
-        "Тариф"
-      ],
-      "Status": [
-        "Статус"
-      ]
-    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
@@ -4424,7 +4672,7 @@
       "Transaction sender could not be updated": [
         "Не удалось обновить отправителя транзакции"
       ],
-      "Transaction sender has been updated succesfully": [
+      "Transaction sender has been updated successfully": [
         "Отправитель транзакции был успешно обновлён"
       ],
       "Unknown sender": [
@@ -4491,11 +4739,14 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Доступ к защищенным основным серверам, быстрая загрузка P2P/BitTorrent, Tor через VPN и многое другое."
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Доступ к серверам Secure Core, быстрая загрузка P2P/BitTorrent, Tor через VPN и многое другое."
       ]
     },
     "Wallet": {
+      "An error occurred whilst syncing your wallet. Please try again.": [
+        "Произошла ошибка при синхронизации кошелька. Попробуйте еще раз."
+      ],
       "Close": [
         "Закрыть"
       ],
@@ -4508,11 +4759,14 @@
       "Explore other ${ BRAND_NAME } products": [
         "Изучите другие продукты ${ BRAND_NAME }"
       ],
+      "Syncing new data": [
+        "Синхронизация новых данных"
+      ],
       "Upgrade to Visionary": [
         "Улучшить до Visionary"
       ],
-      "WebAssembly must be enabled to use ${ WALLET_APP_NAME }": [
-        "WebAssembly должна быть включена для использования ${ WALLET_APP_NAME }"
+      "Your browser or device software does not support ${ WALLET_APP_NAME }. Please update your browser or device. Alternatively, you can use one of our mobile apps.": [
+        "Ваш браузер или программное обеспечение устройства не поддерживает ${ WALLET_APP_NAME }. Обновите браузер или устройство. В качестве альтернативы вы можете использовать одно из наших мобильных приложений."
       ]
     },
     "Wallet Account": {
@@ -4539,6 +4793,9 @@
       ],
       "Custom index": [
         "Пользовательский индекс"
+      ],
+      "Error adding account to wallet. Please try again.": [
+        "Ошибка при добавлении аккаунта в кошелек. Попробуйте снова."
       ],
       "If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.": [
         "Если вы хотите получать Биткойн через электронную почту с несколькими адресами электронной почты, вам нужно создать аккаунт в кошельке для каждого адреса электронной почты."
@@ -4604,9 +4861,17 @@
         "Отправить"
       ]
     },
+    "wallet dashboard": {
+      "You need to have a positive bitcoin balance with sufficient funds to transact": [
+        "У вас должен быть положительный баланс биткойна с достаточными средствами для проведения транзакций"
+      ]
+    },
     "Wallet deletion": {
       "Are you sure you want to delete \"${ wallet.Wallet.Name }\"": [
         "Вы уверены, что хотите удалить «${ wallet.Wallet.Name }»"
+      ],
+      "Are you sure you want to delete this wallet": [
+        "Вы уверены, что хотите удалить этот кошелёк"
       ]
     },
     "Wallet discover": {
@@ -4646,6 +4911,18 @@
     "Wallet header": {
       "Secure your wallet": [
         "Защитите кошелёк"
+      ],
+      "The passphrase is incorrect. Please try again.": [
+        "Кодовая фраза неверна. Попробуйте снова."
+      ],
+      "This wallet needs a passphrase to be used.": [
+        "Этот кошелек требует кодовую фразу для использования."
+      ],
+      "View change addresses": [
+        "Просмотр адресов изменений"
+      ],
+      "View receive addresses": [
+        "Просмотр адресов получения"
       ]
     },
     "Wallet import": {
@@ -4739,6 +5016,9 @@
       ],
       "My wallet passphrase": [
         "Кодовая фраза для моего кошелька"
+      ],
+      "To use this wallet, you need to input the passphrase": [
+        "Чтобы использовать этот кошелек, вам нужно ввести кодовую фразу"
       ],
       "Wallet passphrase": [
         "Кодовая фраза для кошелька"
@@ -4876,6 +5156,9 @@
       "${ price } available": [
         "${ price } доступно"
       ],
+      "10+ hours": [
+        "10+ часов"
+      ],
       "Add a message": [
         "Добавить сообщение"
       ],
@@ -4894,6 +5177,12 @@
       "Bitcoin address signature could not be verified": [
         "Не удалось проверить подпись Bitcoin-адреса"
       ],
+      "Boost transaction priority": [
+        "Увеличить приоритет транзакции"
+      ],
+      "By increasing the fee, you can prioritize your transaction, helping it get confirmed faster during busy network times.": [
+        "Увеличив плату, вы можете приоритизировать вашу транзакцию, помогая ей быстрее подтверждаться в периоды высокой загруженности сети."
+      ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "Невозможно использовать QRCode-сканер. Пожалуйста, проверьте совместимость браузера"
       ],
@@ -4903,8 +5192,17 @@
       "Confirm and send": [
         "Подтвердить и отправить"
       ],
+      "Confirmation speed: ${ label }": [
+        "Скорость подтверждения: ${ label }"
+      ],
       "Could not create PSBT": [
         "Не удалось создать PSBT"
+      ],
+      "Could not speed up transaction. Please sync your wallet and try again": [
+        "Не удалось ускорить транзакцию. Синхронизируйте свой кошелёк и попробуйте снова"
+      ],
+      "Current fee": [
+        "Текущая плата"
       ],
       "Edit": [
         "Изменить"
@@ -4912,11 +5210,20 @@
       "Edit recipients": [
         "Изменить получателей"
       ],
+      "Fast": [
+        "Высокая"
+      ],
       "High priority": [
         "Высокий приоритет"
       ],
       "How much are you sending?": [
         "Сколько вы отправляете?"
+      ],
+      "Increase fee and resend": [
+        "Увеличить плату и повторно отправить"
+      ],
+      "Low": [
+        "Низкая"
       ],
       "Low priority": [
         "Низкий приоритет"
@@ -4933,11 +5240,20 @@
       "Network fees": [
         "Комиссия сети"
       ],
+      "New network fee": [
+        "Новая комиссия сети"
+      ],
+      "Normal": [
+        "Обычная"
+      ],
       "One of recipient's amount is below minimum value": [
         "Одна из сумм получателя ниже минимального значения"
       ],
       "Please grant camera permission to use QRCode scanner": [
         "Пожалуйста, предоставьте разрешение на использование камеры для QRCode-сканера"
+      ],
+      "Please setup an email address in your account settings in order to send messages": [
+        "Укажите адрес электронной почты в настройках аккаунта для отправки сообщений"
       ],
       "Recent recipients": [
         "Недавние получатели"
@@ -4963,6 +5279,9 @@
       "The transaction could not be sent. Please try again later": [
         "Не удалось отправить транзакцию. Попробуйте позже"
       ],
+      "Transaction was successfully boosted": [
+        "Транзакция ускорена"
+      ],
       "Transaction was successfully sent": [
         "Транзакция была успешно отправлена"
       ],
@@ -4986,11 +5305,14 @@
       ],
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
         "Транзакция передана в сеть Bitcoin. Для её подтверждения сетью может потребоваться около часа."
+      ],
+      "~${ minutes } minutes": [
+        "~${ minutes } мин"
       ]
     },
     "Wallet Send": {
-      "Could not broadcast transaction": [
-        "Не удалось передать транзакцию"
+      "Could not broadcast transaction. Please sync your wallet and try again": [
+        "Не удалось транслировать транзакцию. Синхронизируйте свой кошелёк и попробуйте снова"
       ],
       "Could not sign transaction": [
         "Не удалось подписать транзакцию"
@@ -5006,6 +5328,9 @@
       "Account was deleted": [
         "Счёт был удалён"
       ],
+      "An error occurred while modifying with your Bitcoin via Email address. Please check details and try again.": [
+        "Произошла ошибка при изменении адреса вашей электронной почты для Bitcoin. Проверьте информацию и попробуйте еще раз."
+      ],
       "Bitcoin via Email": [
         "Bitcoin по эл. почте"
       ],
@@ -5018,6 +5343,12 @@
       "Create new email address": [
         "Создать новый адрес эл. почты"
       ],
+      "Email address could not be added. Please try again.": [
+        "Адрес электронной почты не удалось добавить. Попробуйте еще раз."
+      ],
+      "Email address could not be removed. Please try again.": [
+        "Адрес электронной почты не удалось удалить. Попробуйте еще раз."
+      ],
       "Email address has been added": [
         "Адрес эл. почты добавлен"
       ],
@@ -5027,11 +5358,17 @@
       "Email address has been replaced": [
         "Адрес эл. почты сменён"
       ],
+      "Fiat currency could not be updated. Please try again.": [
+        "Фиатная валюта не удалось обновить. Попробуйте еще раз."
+      ],
       "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
         "Свяжите адрес электронной почты с этой учётной записью кошелька, чтобы другие пользователи ${ WALLET_APP_NAME } могли легко отправлять вам биткойны."
       ],
       "New fiat currency applied": [
         "Применена новая официальная валюта"
+      ],
+      "Preferred bitcoin unit could not be changed. Please try again.": [
+        "Предпочитаемую единицу биткойна не удалось изменить. Попробуйте еще раз."
       ],
       "Preferred bitcoin unit was changed": [
         "Предпочитаемая единица bitcoin изменена"
@@ -5042,8 +5379,20 @@
       "Select this address": [
         "Выбрать этот адрес"
       ],
+      "Wallet account could not be deleted. Please try again.": [
+        "Кошелек не удалось удалить. Попробуйте еще раз."
+      ],
+      "Wallet account name could not be changed. Please try again.": [
+        "Имя аккаунта кошелька не удалось изменить. Попробуйте еще раз."
+      ],
+      "Wallet could not be deleted. Please try again.": [
+        "Кошелек не удалось удалить. Попробуйте еще раз."
+      ],
       "Wallet name changed": [
         "Название кошелька изменено"
+      ],
+      "Wallet name could not be changed. Please try again.": [
+        "Имя кошелька не удалось изменить. Попробуйте еще раз."
       ],
       "Wallet was deleted": [
         "Кошелёк был удалён"
@@ -5076,11 +5425,20 @@
       "Create new wallet": [
         "Создать новый кошелек"
       ],
-      "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. However, you can recover the wallet later if you have its seed phrase.": [
-        "Удаление этого кошелька удалит все его данные с серверов ${ BRAND_NAME }. Однако вы сможете восстановить кошелек позже, если у вас есть его мнемоническая фраза."
+      "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover the wallet at a later stage using the seed phrase.": [
+        "Удаление этого кошелька удалит все его данные с серверов ${ BRAND_NAME }. Вы сможете восстановить кошелёк позже, используя мнемоническую фразу."
+      ],
+      "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover the wallet by reactivating the keys used during wallet creation in your account.": [
+        "Удаление этого кошелька удалит все его данные с серверов ${ BRAND_NAME }. Вы сможете восстановить кошелёк, активировав ключи, использованные при создании кошелька в вашем аккаунте."
       ],
       "Done": [
         "Готово"
+      ],
+      "Email address could not be linked to wallet account. Please try again.": [
+        "Адрес электронной почты не удалось привязать к аккаунту кошелька. Попробуйте снова."
+      ],
+      "Error creating your wallet account. Please try again.": [
+        "Ошибка при создании вашего аккаунта кошелька. Попробуйте снова."
       ],
       "Give a name to this wallet": [
         "Назовите этот кошелёк"
@@ -5115,8 +5473,8 @@
       "Pick a default currency so we can display the value of your Bitcoin transactions using the latest market data at transaction time.": [
         "Выберите валюту по умолчанию, чтобы мы могли отображать значение ваших Bitcoin-транзакций с использованием самых последних рыночных данных на момент транзакции."
       ],
-      "Please transfer them to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. However, you can recover the wallet later if you have its seed phrase.": [
-        "Пожалуйста, перенесите их в другой кошелек перед удалением. Удаление этого кошелька удалит все его данные с серверов ${ BRAND_NAME }. Тем не менее, вы сможете восстановить кошелек позже, если у вас есть его мнемоническая фраза."
+      "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
+        "Перенесите ваши биткойны в другой кошелёк перед удалением. Удаление этого кошелька удалит все его данные с серверов ${ BRAND_NAME }. Вы сможете восстановить этот кошелёк позже, используя мнемоническую фразу."
       ],
       "Seed phrase (12-24 words)": [
         "Мнемоническая фраза (12–24 слова)"
@@ -5133,11 +5491,20 @@
       "View wallet seed phrase": [
         "Просмотреть мнемоническую фразу"
       ],
+      "Wallet could not be created. Please try again.": [
+        "Кошелек не удалось создать. Попробуйте снова."
+      ],
       "Wallet seed phrase": [
         "Мнемоническая фраза для кошелька"
       ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "Мнемоническая фраза кошелька кодирует закрытый ключ, который контролирует ваши цифровые активы."
+      ],
+      "Wallet seed phrase is incorrect. Please check this and try again.": [
+        "Фраза для восстановления кошелька неверна. Проверьте её и попробуйте снова."
+      ],
+      "Wallet seed phrase length is invalid. This should be between 12 to 24 words.": [
+        "Длина фразы для восстановления кошелька недопустима. Она должна содержать от 12 до 24 слов."
       ],
       "Wallet setup": [
         "Настройка кошелька"
@@ -5147,9 +5514,6 @@
       ],
       "What's a wallet seed phrase?": [
         "Что такое мнемоническая фраза?"
-      ],
-      "What’s a wallet passphrase?": [
-        "Что такое кодовая фраза для кошелька?"
       ],
       "You can use the seed phrase to import your wallet on any wallet app.": [
         "Вы можете использовать мнемоническую фразу, чтобы импортировать свой кошелёк в любое приложение кошелька."
@@ -5191,6 +5555,9 @@
       ]
     },
     "Wallet terms and conditions": {
+      "Error with Terms and Conditions acceptance. Please try again.": [
+        "Ошибка с принятием Условий и положений. Попробуйте снова."
+      ],
       "Terms and conditions were accepted": [
         "Условия были приняты"
       ]
@@ -5228,6 +5595,9 @@
       "Bitcoin via Email": [
         "Bitcoin по эл. почте"
       ],
+      "Boost priority": [
+        "Увеличить приоритет"
+      ],
       "Buy": [
         "Купить"
       ],
@@ -5249,11 +5619,17 @@
       "Loading": [
         "Загрузка"
       ],
+      "Loading balance": [
+        "Загрузка баланса"
+      ],
       "Message to recipient": [
         "Сообщение получателю"
       ],
       "Network fee": [
         "Комиссия сети"
+      ],
+      "Note": [
+        "Заметка"
       ],
       "Note to self": [
         "Заметка для себя"
@@ -5294,6 +5670,9 @@
       "View more": [
         "Показать больше"
       ],
+      "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
+        "В настоящее время мы испытываем трудности с расчётом сетевой платы. Повторите попытку позже. Если проблема сохраняется, свяжитесь с нашей службой поддержки для получения помощи."
+      ],
       "You received": [
         "Вы получили"
       ],
@@ -5309,7 +5688,15 @@
         "Метка транзакции успешно обновлена"
       ]
     },
+    "Wallet Transaction List": {
+      "Page ${ pageNumber }": [
+        "Страница ${ pageNumber }"
+      ]
+    },
     "Wallet transactions": {
+      "Addresses": [
+        "Адреса"
+      ],
       "Transactions": [
         "Транзакции"
       ]
@@ -5323,6 +5710,9 @@
       ],
       "Sync": [
         "Синхронизировать"
+      ],
+      "Syncing in progress. Please wait": [
+        "Выполняется синхронизация. Подождите"
       ]
     },
     "Wallet upgrade": {
