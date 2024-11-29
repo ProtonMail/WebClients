@@ -19,8 +19,6 @@ import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 import type { UnleashClient } from '@proton/unleash'
 import { UserState } from '../State/UserState'
 import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
-import type { PublicDocControllerInterface } from '../Controller/Document/PublicDocControllerInterface'
-import type { AnyDocControllerInterface } from '../Controller/Document/AnyDocControllerInterface'
 
 declare const window: CustomWindow
 
@@ -36,17 +34,22 @@ export class Application implements ApplicationInterface {
     this.userState,
     this.appVersion,
     this.unleashClient,
+    this.syncedEditorState,
   )
 
   constructor(
     private protonApi: Api,
     private publicContextHeaders: HttpHeaders | undefined,
     private imageProxyParams: ImageProxyParams | undefined,
-    public readonly compatWrapper: DriveCompatWrapper,
+    public compatWrapper: DriveCompatWrapper,
     private appVersion: string,
     private unleashClient: UnleashClient,
   ) {
     this.deps.get<MetricService>(App_TYPES.MetricService).initialize()
+  }
+
+  public updateCompatWrapper(compatWrapper: DriveCompatWrapper) {
+    this.compatWrapper = compatWrapper
   }
 
   destroy(): void {
@@ -75,7 +78,7 @@ export class Application implements ApplicationInterface {
     return this.deps.get<LoggerInterface>(App_TYPES.Logger)
   }
 
-  public getDocLoader(): DocLoaderInterface<DocumentState | PublicDocumentState, AnyDocControllerInterface> {
+  public getDocLoader(): DocLoaderInterface<DocumentState | PublicDocumentState> {
     if (this.compatWrapper.publicCompat) {
       return this.publicDocLoader
     } else {
@@ -83,7 +86,7 @@ export class Application implements ApplicationInterface {
     }
   }
 
-  private get publicDocLoader(): DocLoaderInterface<PublicDocumentState, PublicDocControllerInterface> {
+  private get publicDocLoader(): DocLoaderInterface<PublicDocumentState> {
     if (!this.compatWrapper.publicCompat) {
       throw new Error('Public mode is not supported in private mode')
     }
@@ -91,7 +94,7 @@ export class Application implements ApplicationInterface {
     return this.deps.get<PublicDocLoader>(App_TYPES.PublicDocLoader)
   }
 
-  private get privateDocLoader(): DocLoaderInterface<DocumentState, AnyDocControllerInterface> {
+  private get privateDocLoader(): DocLoaderInterface<DocumentState> {
     if (this.compatWrapper.publicCompat) {
       throw new Error('Private mode is not supported in public mode')
     }
@@ -99,6 +102,9 @@ export class Application implements ApplicationInterface {
     return this.deps.get<DocLoader>(App_TYPES.DocLoader)
   }
 
+  /**
+   * Whether we are in a public document context, either as a public viewer or as a public editor.
+   */
   public get isPublicMode(): boolean {
     return !!this.compatWrapper.publicCompat
   }

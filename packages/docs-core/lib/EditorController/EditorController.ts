@@ -4,9 +4,9 @@ import {
   type ClientRequiresEditorMethods,
   type DataTypesThatDocumentCanBeExportedAs,
 } from '@proton/docs-shared'
-import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
+import type { ExportAndDownload } from '../UseCase/ExportAndDownload'
 import type { SerializedEditorState } from 'lexical'
-import type { DocumentState, DocumentStateValues, PublicDocumentState } from '../../State/DocumentState'
+import type { DocumentState, DocumentStateValues, PublicDocumentState } from '../State/DocumentState'
 import metrics from '@proton/metrics'
 import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from '@proton/metrics/types/docs_readonly_mode_documents_total_v1.schema'
 import { EventTypeEnum } from '@proton/docs-proto'
@@ -153,6 +153,8 @@ export class EditorController implements EditorControllerInterface {
       name: 'EditorIsReadyToBeShown',
       payload: undefined,
     })
+
+    this.reloadEditingLockedState()
   }
 
   changeLockedState(shouldLock: boolean): void {

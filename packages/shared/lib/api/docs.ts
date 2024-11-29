@@ -171,7 +171,22 @@ export const createRealtimeValetToken = (volumeId: string, linkId: string, commi
     },
 });
 
+export const createRealtimeValetTokenByToken = (
+    token: string,
+    linkId: string,
+    headers: { [key: string]: string },
+    commitId?: string
+) => ({
+    method: 'post',
+    url: `docs/urls/${token}/documents/${linkId}/tokens`,
+    silence: true,
+    headers,
+    data: {
+        LastCommitID: commitId ?? null,
+    },
+});
+
 export const fetchRecentDocuments = () => ({
     method: 'get',
     url: 'docs/recent',
-})
+});

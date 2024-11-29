@@ -5,7 +5,7 @@ import { CreateDocumentUpdateArray } from './CreateDocumentUpdateArray'
 
 export function CreateDocumentUpdateMessage(dto: {
   content: Uint8Array
-  authorAddress: string
+  authorAddress: string | undefined
   timestamp: number
   version: DocumentUpdateVersion
   uuid: string

@@ -18,14 +18,13 @@ import {
   useAuthentication,
   usePopperAnchor,
 } from '@proton/components'
-import type { DocumentState, PublicDocumentState } from '@proton/docs-core'
+import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
 import { isDocumentState, PostApplicationError } from '@proton/docs-core'
 import { type DocTrashState, isWordCountSupported } from '@proton/docs-shared'
 import type { DocumentAction } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getStaticURL } from '@proton/shared/lib/helpers/url'
-
 import { useApplication } from '../../Containers/ApplicationProvider'
 import WordCountIcon from '../../Icons/WordCountIcon'
 import { AutoGrowingInput } from '../AutoGrowingInput'
@@ -33,17 +32,15 @@ import { useHistoryViewerModal } from '../History/HistoryViewer'
 import { TrashedDocumentModal } from '../TrashedDocumentModal'
 import { useFloatingWordCount } from '../WordCount/useFloatingWordCount'
 import { useWordCount } from '../WordCount/useWordCount'
-import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller/Document/AnyDocControllerInterface'
-import { isPrivateDocController } from '@proton/docs-core/lib/Controller/Document/isPrivateDocController'
-import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
+import type { EditorControllerInterface } from '@proton/docs-core'
 
 const DocumentTitleDropdown = ({
-  docController,
+  authenticatedController,
   editorController,
   documentState,
   action,
 }: {
-  docController: AnyDocControllerInterface
+  authenticatedController: AuthenticatedDocControllerInterface | undefined
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
   action?: DocumentAction['mode']
@@ -71,8 +68,8 @@ const DocumentTitleDropdown = ({
   useAppTitle(title)
 
   const confirmRename = useCallback(() => {
-    if (!isPrivateDocController(docController)) {
-      throw new Error('Primary controller not found')
+    if (!authenticatedController) {
+      throw new Error('Attempting to rename document in a public context')
     }
 
     const oldName = title
@@ -81,7 +78,7 @@ const DocumentTitleDropdown = ({
       setIsRenaming(false)
 
       if (oldName !== newName) {
-        void docController.renameDocument(newName).then((result) => {
+        void authenticatedController.renameDocument(newName).then((result) => {
           if (result.isFailed()) {
             PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
             setTitle(oldName)
@@ -92,12 +89,12 @@ const DocumentTitleDropdown = ({
     } else {
       setIsRenaming(false)
     }
-  }, [application.eventBus, docController, renameInputValue, title])
+  }, [application.eventBus, authenticatedController, renameInputValue, title])
 
   const onDuplicate = useCallback(
     async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (!isPrivateDocController(docController)) {
-        throw new Error('Primary controller not found')
+      if (!authenticatedController) {
+        throw new Error('Attempting to duplicate document in a public context')
       }
 
       event.preventDefault()
@@ -107,14 +104,14 @@ const DocumentTitleDropdown = ({
 
       const editorState = await editorController?.exportData('yjs')
       if (editorState) {
-        void docController.duplicateDocument(editorState).finally(() => {
+        void authenticatedController.duplicateDocument(editorState).finally(() => {
           setIsDuplicating(false)
         })
       } else {
         setIsDuplicating(false)
       }
     },
-    [docController, editorController],
+    [authenticatedController, editorController],
   )
 
   const onExportPDF = useCallback(
@@ -141,35 +138,35 @@ const DocumentTitleDropdown = ({
         setTrashState(trashState)
       }),
     )
-  }, [documentState, docController])
+  }, [documentState, authenticatedController])
 
   const onNewDocument = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (!isPrivateDocController(docController)) {
-        return
-      }
-
       event.preventDefault()
       event.stopPropagation()
 
       setIsMakingNewDocument(true)
 
-      void docController?.createNewDocument().finally(() => {
+      void authenticatedController?.createNewDocument().finally(() => {
         setIsMakingNewDocument(false)
       })
     },
-    [docController],
+    [authenticatedController],
   )
 
   useEffect(() => {
-    if (action === 'history' && isPrivateDocController(docController)) {
+    if (action === 'history') {
+      if (!authenticatedController) {
+        throw new Error('Attempting to view version history in a public context')
+      }
+
       showHistoryModal({
-        versionHistory: docController.getVersionHistory(),
+        versionHistory: authenticatedController.getVersionHistory(),
         editorController,
-        docController,
+        docController: authenticatedController,
       })
     }
-  }, [docController, action, showHistoryModal, editorController])
+  }, [authenticatedController, action, showHistoryModal, editorController])
 
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
   const focusInputOnMount = useCallback((input: HTMLInputElement | null) => {
@@ -241,7 +238,7 @@ const DocumentTitleDropdown = ({
         }}
       >
         <DropdownMenu className="text-sm">
-          {documentState.getProperty('userRole').canEdit() && (
+          {authenticatedController && documentState.getProperty('userRole').canEdit() && (
             <DropdownMenuButton
               className="flex items-center text-left"
               onClick={() => setIsRenaming((renaming) => !renaming)}
@@ -282,13 +279,14 @@ const DocumentTitleDropdown = ({
             <DropdownMenuButton
               className="flex items-center text-left"
               onClick={() => {
-                if (!isPrivateDocController(docController)) {
-                  return
+                if (!authenticatedController) {
+                  throw new Error('Attempting to view version history in a public context')
                 }
+
                 showHistoryModal({
-                  versionHistory: docController.getVersionHistory(),
+                  versionHistory: authenticatedController.getVersionHistory(),
                   editorController,
-                  docController,
+                  docController: authenticatedController,
                 })
               }}
               data-testid="dropdown-versioning"
@@ -374,14 +372,14 @@ const DocumentTitleDropdown = ({
               disabled={trashState === 'trashing' || trashState === 'trashed'}
               data-testid="dropdown-trash"
               onClick={(event) => {
+                if (!authenticatedController) {
+                  throw new Error('Attempting to trash document in a public context')
+                }
+
                 event.preventDefault()
                 event.stopPropagation()
 
-                if (!isPrivateDocController(docController)) {
-                  return
-                }
-
-                void docController.trashDocument().finally(() => {
+                void authenticatedController.trashDocument().finally(() => {
                   close()
                 })
               }}
@@ -520,11 +518,11 @@ const DocumentTitleDropdown = ({
       </Dropdown>
 
       {historyModal}
-      {docController && isPrivateDocController(docController) && isDocumentState(documentState) && (
+      {authenticatedController && isDocumentState(documentState) && (
         <TrashedDocumentModal
           documentTitle={title}
           onOpenProtonDrive={() => openProtonDrive('/', '_self')}
-          controller={docController}
+          controller={authenticatedController}
           documentState={documentState}
         />
       )}

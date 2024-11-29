@@ -1,54 +1,43 @@
 import { c } from 'ttag'
-import type { SquashDocument } from '../../UseCase/SquashDocument'
-import type { DuplicateDocument } from '../../UseCase/DuplicateDocument'
-import type { CreateNewDocument } from '../../UseCase/CreateNewDocument'
+import type { SquashDocument } from '../UseCase/SquashDocument'
+import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
+import type { CreateNewDocument } from '../UseCase/CreateNewDocument'
 import type { DriveCompat } from '@proton/drive-store'
-import type { InternalEventBusInterface, DocsAwarenessStateChangeData, YjsState } from '@proton/docs-shared'
-import { DocAwarenessEvent, getErrorString } from '@proton/docs-shared'
-import { ConnectionCloseReason } from '@proton/docs-proto'
-import type { DocControllerInterface } from './DocControllerInterface'
-import type { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
-import type { UserState } from '@lexical/yjs'
-import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
-import type { VersionHistoryUpdate } from '../../VersionHistory'
-import { NativeVersionHistory } from '../../VersionHistory'
-import type { DocControllerEventPayloads } from './DocControllerEvent'
-import { DocControllerEvent } from './DocControllerEvent'
+import type { InternalEventBusInterface, YjsState } from '@proton/docs-shared'
+import type { AuthenticatedDocControllerInterface } from './AuthenticatedDocControllerInterface'
+import type { SeedInitialCommit } from '../UseCase/SeedInitialCommit'
+import type { VersionHistoryUpdate } from '../VersionHistory'
+import { NativeVersionHistory } from '../VersionHistory'
+import { DocControllerEvent } from './AuthenticatedDocControllerEvent'
 
-import type { DocsClientSquashVerificationObjectionMadePayload } from '../../Application/ApplicationEvent'
-import { ApplicationEvent, PostApplicationError } from '../../Application/ApplicationEvent'
-import type { SquashVerificationObjectionCallback } from '../../Types/SquashVerificationObjection'
-import type { LoadCommit } from '../../UseCase/LoadCommit'
-import { TranslatedResult } from '../../Domain/Result/TranslatedResult'
-import { Result } from '../../Domain/Result/Result'
-import { getPlatformFriendlyDateForFileName } from '../../Util/PlatformFriendlyFileNameDate'
-import { DocParticipantTracker } from './DocParticipantTracker'
-import { MAX_DOC_SIZE } from '../../Models/Constants'
-import type { GetNode } from '../../UseCase/GetNode'
-import type { DocumentState } from '../../State/DocumentState'
+import type { DocsClientSquashVerificationObjectionMadePayload } from '../Application/ApplicationEvent'
+import { ApplicationEvent, PostApplicationError } from '../Application/ApplicationEvent'
+import type { SquashVerificationObjectionCallback } from '../Types/SquashVerificationObjection'
+import { TranslatedResult } from '../Domain/Result/TranslatedResult'
+import type { Result } from '../Domain/Result/Result'
+import { getPlatformFriendlyDateForFileName } from '../Util/PlatformFriendlyFileNameDate'
+import { MAX_DOC_SIZE } from '../Models/Constants'
+import type { GetNode } from '../UseCase/GetNode'
+import { isDocumentState, type DocumentState, type PublicDocumentState } from '../State/DocumentState'
 import type { LoggerInterface } from '@proton/utils/logs'
+import { getErrorString } from '../Util/GetErrorString'
 
 /**
- * Controls the lifecycle of a single document.
+ * Controls the lifecycle of a single document for an authenticated user.
  */
-export class DocController implements DocControllerInterface {
-  isRefetchingStaleCommit = false
+export class AuthenticatedDocController implements AuthenticatedDocControllerInterface {
   isDestroyed = false
   didTrashDocInCurrentSession = false
+  /** Used for history tracking in Version History */
   receivedOrSentDUs: VersionHistoryUpdate[] = []
 
-  public userAddress = this.documentState.getProperty('entitlements').keys.userOwnAddress
-  readonly participantTracker = new DocParticipantTracker(this.documentState)
-
   constructor(
-    private readonly documentState: DocumentState,
+    private readonly documentState: DocumentState | PublicDocumentState,
     private driveCompat: DriveCompat,
     private _squashDocument: SquashDocument,
     readonly _createInitialCommit: SeedInitialCommit,
-    readonly _loadCommit: LoadCommit,
     private _duplicateDocument: DuplicateDocument,
     private _createNewDocument: CreateNewDocument,
-    readonly _getDocumentMeta: GetDocumentMeta,
     readonly _getNode: GetNode,
     readonly eventBus: InternalEventBusInterface,
     readonly logger: LoggerInterface,
@@ -88,109 +77,9 @@ export class DocController implements DocControllerInterface {
       }
     })
 
-    this.documentState.subscribeToEvent('RealtimeConnectionClosed', (payload) => {
-      this.handleRealtimeDisconnection(payload)
-    })
-
-    this.documentState.subscribeToEvent('RealtimeFailedToGetToken', (payload) => {
-      this.handleRealtimeFailedToGetToken(payload)
-    })
-
     this.documentState.subscribeToEvent('RealtimeReceivedDocumentUpdate', (payload) => {
       this.receivedOrSentDUs.push(payload)
     })
-
-    this.documentState.subscribeToEvent('RealtimeNewCommitIdReceived', (payload) => {
-      this.documentState.setProperty('currentCommitId', payload)
-    })
-
-    this.documentState.subscribeToEvent('RealtimeReceivedCommentMessage', (payload) => {
-      this.eventBus.publish({
-        type: DocControllerEvent.RealtimeCommentMessageReceived,
-        payload: <DocControllerEventPayloads[DocControllerEvent.RealtimeCommentMessageReceived]>{
-          message: payload,
-        },
-      })
-    })
-  }
-
-  handleRealtimeDisconnection(reason: ConnectionCloseReason): void {
-    if (reason.props.code === ConnectionCloseReason.CODES.STALE_COMMIT_ID) {
-      void this.refetchCommitDueToStaleContents('rts-disconnect')
-    }
-  }
-
-  /**
-   * The client was unable to get a token from the Docs API because the Commit ID the client had did not match
-   * what the server was expecting.
-   */
-  handleRealtimeFailedToGetToken(reason: 'due-to-commit-id-out-of-sync'): void {
-    if (reason === 'due-to-commit-id-out-of-sync') {
-      void this.refetchCommitDueToStaleContents('token-fail')
-    }
-  }
-
-  /**
-   * If the RTS rejects or drops our connection due to our commit ID not being what it has, we will refetch the document
-   * and its binary from the main API and update our content.
-   */
-  async refetchCommitDueToStaleContents(source: 'token-fail' | 'rts-disconnect') {
-    if (this.isRefetchingStaleCommit) {
-      this.logger.info('Attempting to refetch stale commit but refetch already in progress')
-      return
-    }
-
-    this.isRefetchingStaleCommit = true
-
-    this.logger.info('Refetching document due to stale commit ID from source', source)
-
-    const fail = (error: string) => {
-      this.isRefetchingStaleCommit = false
-
-      this.logger.error(error)
-
-      this.eventBus.publish({
-        type: DocControllerEvent.UnableToResolveCommitIdConflict,
-        payload: undefined,
-      })
-    }
-
-    const nodeMeta = this.documentState.getProperty('documentMeta').nodeMeta
-
-    const result = await this._getDocumentMeta.execute(nodeMeta)
-    if (result.isFailed()) {
-      fail(`Failed to reload document meta: ${result.getError()}`)
-
-      return
-    }
-
-    const latestCommitId = result.getValue().latestCommitId()
-
-    if (!latestCommitId || latestCommitId === this.documentState.getProperty('currentCommitId')) {
-      fail(!latestCommitId ? 'Reloaded commit but commit id was null' : 'Reloaded commit id is the same as current')
-
-      return
-    }
-
-    const entitlements = this.documentState.getProperty('entitlements')
-
-    const decryptResult = await this._loadCommit.execute(nodeMeta, latestCommitId, entitlements.keys.documentContentKey)
-    if (decryptResult.isFailed()) {
-      fail(`Failed to reload or decrypt commit: ${decryptResult.getError()}`)
-
-      return Result.fail(decryptResult.getError())
-    }
-
-    const decryptedCommit = decryptResult.getValue()
-
-    this.logger.info(
-      `Reownloaded and decrypted commit id ${decryptedCommit.commitId} with ${decryptedCommit?.numberOfUpdates()} updates`,
-    )
-
-    this.documentState.setProperty('baseCommit', decryptedCommit)
-    this.documentState.setProperty('currentCommitId', decryptedCommit.commitId)
-
-    this.isRefetchingStaleCommit = false
   }
 
   public getVersionHistory(): NativeVersionHistory | undefined {
@@ -252,8 +141,6 @@ export class DocController implements DocControllerInterface {
     const result = await this.createInitialCommit(content)
 
     if (result.isFailed()) {
-      this.logger.error('Failed to seed document', result.getError())
-
       PostApplicationError(this.eventBus, {
         translatedError: c('Error').t`An error occurred while attempting to convert the document. Please try again.`,
         irrecoverable: true,
@@ -269,6 +156,10 @@ export class DocController implements DocControllerInterface {
   }
 
   public async debugSendCommitCommandToRTS(): Promise<void> {
+    if (!isDocumentState(this.documentState)) {
+      return
+    }
+
     this.documentState.emitEvent({
       name: 'DebugMenuRequestingCommitWithRTS',
       payload: this.documentState.getProperty('entitlements'),
@@ -276,6 +167,10 @@ export class DocController implements DocControllerInterface {
   }
 
   public async createInitialCommit(content: Uint8Array): Promise<Result<unknown>> {
+    if (!isDocumentState(this.documentState)) {
+      throw new Error('Cannot perform createInitialCommit as a public user')
+    }
+
     const result = await this._createInitialCommit.execute(
       this.documentState.getProperty('documentMeta').nodeMeta,
       content,
@@ -283,7 +178,7 @@ export class DocController implements DocControllerInterface {
     )
 
     if (result.isFailed()) {
-      this.logger.error('Failed to create initial commit', result.getError())
+      this.logger.error('Failed to seed document', result.getError())
     } else {
       const resultValue = result.getValue()
       this.documentState.setProperty('currentCommitId', resultValue.commitId)
@@ -293,11 +188,17 @@ export class DocController implements DocControllerInterface {
   }
 
   public async squashDocument(): Promise<void> {
+    if (!isDocumentState(this.documentState)) {
+      throw new Error('Cannot perform squashDocument as a public user')
+    }
+
     const baseCommit = this.documentState.getProperty('baseCommit')
     if (!baseCommit) {
       this.logger.info('No initial commit to squash')
       return
     }
+
+    this.logger.info('Squashing document')
 
     const handleVerificationObjection: SquashVerificationObjectionCallback = async () => {
       this.eventBus.publish({
@@ -312,9 +213,6 @@ export class DocController implements DocControllerInterface {
         }, ApplicationEvent.SquashVerificationObjectionDecisionMade)
       })
     }
-
-    this.logger.info('Squashing document')
-
     const result = await this._squashDocument.execute({
       docMeta: this.documentState.getProperty('documentMeta'),
       commitId: baseCommit.commitId,
@@ -464,17 +362,6 @@ export class DocController implements DocControllerInterface {
 
   public openDocumentSharingModal(): void {
     void this.driveCompat.openDocumentSharingModal(this.documentState.getProperty('documentMeta').nodeMeta)
-  }
-
-  async handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
-    this.participantTracker.updateParticipantsFromUserStates(states)
-
-    this.eventBus.publish<DocsAwarenessStateChangeData>({
-      type: DocAwarenessEvent.AwarenessStateChange,
-      payload: {
-        states,
-      },
-    })
   }
 
   deinit() {}
