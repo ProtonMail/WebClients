@@ -11,7 +11,7 @@ import type { SignupParameters2 } from '../single-signup-v2/interface';
 
 export interface PublicTheme {
     type?: ThemeTypes;
-    background?: 'bf' | 'b2b';
+    background?: 'bf' | 'b2b' | 'lumo';
     intent: APP_NAMES | undefined;
     dark: boolean;
     card: {
@@ -72,6 +72,22 @@ export const getPublicTheme = (
             background: 'b2b',
             intent: toApp,
             dark: true,
+            card: {
+                className: viewportWidth.xsmall ? 'ui-prominent' : defaultValue.card.className,
+            },
+            layout: {
+                className: 'ui-prominent',
+            },
+        };
+    }
+
+    if (toApp === APPS.PROTONLUMO) {
+        return {
+            ...defaultValue,
+            type: ThemeTypes.Storefront,
+            dark: true,
+            background: 'lumo',
+            intent: toApp,
             card: {
                 className: viewportWidth.xsmall ? 'ui-prominent' : defaultValue.card.className,
             },
