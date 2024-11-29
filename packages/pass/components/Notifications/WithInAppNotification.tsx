@@ -6,7 +6,8 @@ import { useRequest } from '@proton/pass/hooks/useRequest';
 import { updateInAppNotificationState } from '@proton/pass/store/actions';
 import { selectNextNotification } from '@proton/pass/store/selectors';
 import { InAppNotificationCtaType, InAppNotificationState } from '@proton/pass/types';
-import { InAppNotification } from '@proton/pass/types/data/notification';
+import type { InAppNotification } from '@proton/pass/types/data/notification';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 type InAppNotificationProps<P extends object> = P & {
     /** Changes the message state from Unread to Read or Dismissed */
@@ -21,7 +22,7 @@ export const withInAppNotification = <P extends object>(Component: ComponentType
     const WrappedComponent: FC<P> = (props) => {
         const { onLink } = usePassCore();
         const updateNotificationStateRequest = useRequest(updateInAppNotificationState);
-        const notification = useSelector(selectNextNotification)!;
+        const notification = useSelector(selectNextNotification(getEpoch()))!;
 
         const changeNotificationState = (id: string, state: InAppNotificationState) =>
             updateNotificationStateRequest.dispatch({ id, state });
