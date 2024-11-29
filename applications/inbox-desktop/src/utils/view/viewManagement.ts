@@ -64,14 +64,6 @@ export const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED];
 export const viewCreationAppStartup = async () => {
     mainWindow = createBrowserWindow();
     createViews();
-    await showLoadingPage(viewTitleMap.mail);
-
-    // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
-    const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
-
-    setTimeout(() => {
-        showView("mail");
-    }, delay);
 
     const debouncedSaveWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);
     mainWindow.on("move", debouncedSaveWindowBounds);
@@ -100,10 +92,19 @@ export const viewCreationAppStartup = async () => {
     });
 
     if (getWindowBounds().maximized) {
-        mainWindow.maximize();
+        mainWindow!.maximize();
     }
 
-    return mainWindow;
+    // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
+    const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
+    await new Promise((resolve) => setTimeout(resolve, delay));
+
+    const mailto = readAndClearMailtoArgs();
+
+    loadURL("mail", getAppURL().mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
+        showView("mail");
+        mainWindow!.show();
+    });
 };
 
 const createView = (viewID: ViewID) => {
@@ -142,11 +143,6 @@ const createViews = () => {
     browserViewMap.mail.setAutoResize({ width: true, height: true });
     browserViewMap.calendar.setAutoResize({ width: true, height: true });
     browserViewMap.account.setAutoResize({ width: true, height: true });
-
-    const mailto = readAndClearMailtoArgs();
-    loadURL("mail", getAppURL().mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
-        updateViewBounds(browserViewMap.mail, "mail");
-    });
 };
 
 const createBrowserWindow = () => {

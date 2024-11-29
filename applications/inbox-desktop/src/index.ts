@@ -129,7 +129,7 @@ import metrics from "./utils/metrics";
         }
 
         if (!getMainWindow()) {
-            return viewCreationAppStartup();
+            viewCreationAppStartup();
         }
     });
 
