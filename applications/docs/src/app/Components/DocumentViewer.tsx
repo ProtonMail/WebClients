@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type {
+  AuthenticatedDocControllerInterface,
   DocsClientSquashVerificationObjectionMadePayload,
   DocumentState,
   EditorOrchestratorInterface,
@@ -38,8 +39,7 @@ import { useGetUserSettings } from '@proton/account/userSettings/hooks'
 import WordCountOverlay from './WordCount/WordCountOverlay'
 import { useSuggestionsFeatureFlag } from '../Hooks/useSuggestionsFeatureFlag'
 import { useWelcomeSplashModal } from '../Apps/Public/WelcomeSplashModal/WelcomeSplashModal'
-import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller/Document/AnyDocControllerInterface'
-import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
+import type { EditorControllerInterface } from '@proton/docs-core'
 
 type Props = {
   nodeMeta: NodeMeta | PublicNodeMeta
@@ -57,7 +57,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   const { getLocalID } = useAuthentication()
 
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
-  const [docController, setDocController] = useState<AnyDocControllerInterface | null>(null)
+  const [docController, setDocController] = useState<AuthenticatedDocControllerInterface | undefined>(undefined)
   const [editorController, setEditorController] = useState<EditorControllerInterface | null>(null)
 
   const [signatureFailedModal, openSignatureFailedModal] = useSignatureCheckFailedModal()
@@ -78,7 +78,13 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   const debug = useDebug()
   const getUserSettings = useGetUserSettings()
 
-  const isPublicViewer = application.isPublicMode
+  const isPublicViewer = useMemo(() => documentState?.getProperty('userRole').isPublicViewer(), [documentState])
+  /**
+   * The editor is not allowed to change its url or systemMode after initial mount.
+   * In public mode, we don't know whether the user has edit permissions until we fetch the node.
+   * In private mode, we know the user's role immediately so don't have to wait for the userRole property to settle.
+   */
+  const renderEditor = !application.isPublicMode ? true : isPublicViewer != undefined
 
   const { isSuggestionsEnabled } = useSuggestionsFeatureFlag()
   useEffect(() => {
@@ -99,7 +105,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
       return
     }
 
-    if (documentState?.getProperty('userRole').isPublicViewer()) {
+    if (documentState?.getProperty('userRole').isPublicViewerOrEditor()) {
       return
     }
 
@@ -367,7 +373,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
 
       {ready && <WordCountOverlay />}
 
-      {(!documentState || !docController || !editorController) && (
+      {(!documentState || !editorController) && (
         <div className="relative h-full w-full">
           <div className="bg-norm flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center gap-4">
             <CircleLoader size="large" />
@@ -376,11 +382,13 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
         </div>
       )}
 
-      <EditorFrame
-        key="docs-editor-iframe"
-        onFrameReady={onFrameReady}
-        systemMode={isPublicViewer ? EditorSystemMode.PublicView : EditorSystemMode.Edit}
-      />
+      {renderEditor && (
+        <EditorFrame
+          key="docs-editor-iframe"
+          onFrameReady={onFrameReady}
+          systemMode={isPublicViewer ? EditorSystemMode.PublicView : EditorSystemMode.Edit}
+        />
+      )}
 
       {publicSplashModal}
       {signatureFailedModal}

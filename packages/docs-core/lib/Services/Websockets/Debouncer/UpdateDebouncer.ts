@@ -1,4 +1,4 @@
-import type { NodeMeta } from '@proton/drive-store'
+import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { mergeUpdates } from 'yjs'
 import { DocumentDebounceMode } from './DocumentDebounceMode'
@@ -35,7 +35,7 @@ export class UpdateDebouncer {
   isReadyToFlush = false
 
   constructor(
-    public readonly document: NodeMeta,
+    public readonly document: NodeMeta | PublicNodeMeta,
     private logger: LoggerInterface,
     private onEvent: (event: UpdateDebouncerEventPayload) => void,
   ) {}

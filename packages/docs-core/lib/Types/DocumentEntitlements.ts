@@ -8,9 +8,19 @@ export type DocumentEntitlements = {
   role: DocumentRole
 }
 
+export type PublicDocumentKeys = Pick<DocumentKeys, 'documentContentKey'>
+
 export type PublicDocumentEntitlements = {
-  keys: Pick<DocumentKeys, 'documentContentKey'>
+  keys: PublicDocumentKeys
   role: DocumentRole
+}
+
+export function isPublicDocumentKeys(keys: DocumentKeys | PublicDocumentKeys): keys is PublicDocumentKeys {
+  return !('userAddressPrivateKey' in keys)
+}
+
+export function isPrivateDocumentKeys(keys: DocumentKeys | PublicDocumentKeys): keys is DocumentKeys {
+  return 'userAddressPrivateKey' in keys
 }
 
 export function rawPermissionToRole(permission: SHARE_MEMBER_PERMISSIONS): DocumentRole {

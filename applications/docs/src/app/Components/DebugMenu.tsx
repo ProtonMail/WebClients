@@ -3,10 +3,8 @@ import { Icon, useLocalState } from '@proton/components'
 import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
 import { useEffect, useState } from 'react'
 import { useApplication } from '../Containers/ApplicationProvider'
-import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller/Document/AnyDocControllerInterface'
-import { isPrivateDocController } from '@proton/docs-core/lib/Controller/Document/isPrivateDocController'
-import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
-import type { DocumentState, PublicDocumentState } from '@proton/docs-core'
+import type { EditorControllerInterface } from '@proton/docs-core'
+import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
 
 export const useDebug = () => {
   const [debug] = useLocalState(false, DOCS_DEBUG_KEY)
@@ -18,7 +16,7 @@ const DebugMenu = ({
   editorController,
   documentState,
 }: {
-  docController: AnyDocControllerInterface
+  docController: AuthenticatedDocControllerInterface
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
 }) => {
@@ -34,32 +32,24 @@ const DebugMenu = ({
   }, [editorController])
 
   const commitToRTS = async () => {
-    if (isPrivateDocController(docController)) {
-      void docController.debugSendCommitCommandToRTS()
-    }
+    void docController.debugSendCommitCommandToRTS()
   }
 
   const squashDocument = async () => {
-    if (isPrivateDocController(docController)) {
-      void docController.squashDocument()
-    }
+    void docController.squashDocument()
   }
 
   const closeConnection = async () => {
-    if (isPrivateDocController(docController)) {
-      const meta = documentState.getProperty('documentMeta')
-      if (meta) {
-        void application.websocketService.closeConnection({ linkId: meta.nodeMeta.linkId })
-      }
+    const meta = documentState.getProperty('documentMeta')
+    if (meta) {
+      void application.websocketService.closeConnection({ linkId: meta.nodeMeta.linkId })
     }
   }
 
   const createInitialCommit = async () => {
-    if (isPrivateDocController(docController)) {
-      const editorState = await editorController.getDocumentState()
-      if (editorState) {
-        void docController.createInitialCommit(editorState)
-      }
+    const editorState = await editorController.getDocumentState()
+    if (editorState) {
+      void docController.createInitialCommit(editorState)
     }
   }
 

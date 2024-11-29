@@ -1,4 +1,4 @@
-import { Suspense, lazy, useMemo } from 'react'
+import { Suspense, lazy, useEffect, useMemo } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 
 import { useApi, useAuthentication, useConfig } from '@proton/components'
@@ -38,6 +38,10 @@ function UserAppContent() {
     // Ensure only one application instance is created
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(() => {
+    application.updateCompatWrapper({ userCompat: driveCompat })
+  }, [driveCompat])
 
   return (
     <ApplicationProvider application={application}>

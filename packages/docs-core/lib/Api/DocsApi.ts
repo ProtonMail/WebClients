@@ -6,6 +6,7 @@ import {
   changeSuggestionThreadState,
   createDocument,
   createRealtimeValetToken,
+  createRealtimeValetTokenByToken,
   createThreadInDocument,
   deleteCommentInThreadInDocument,
   deleteThreadInDocument,
@@ -221,14 +222,25 @@ export class DocsApi {
     }
   }
 
-  async createRealtimeValetToken(lookup: NodeMeta, commitId?: string): Promise<ApiResult<CreateValetTokenResponse>> {
+  async createRealtimeValetToken(
+    lookup: NodeMeta | PublicNodeMeta,
+    commitId?: string,
+  ): Promise<ApiResult<CreateValetTokenResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
 
+    if (isPublicNodeMeta(lookup) && !this.publicContextHeaders) {
+      throw new Error('Public context headers not set')
+    }
+
     try {
       this.inflight++
-      const response = await this.protonApi(createRealtimeValetToken(lookup.volumeId, lookup.linkId, commitId))
+      const response = await this.protonApi(
+        isPublicNodeMeta(lookup)
+          ? createRealtimeValetTokenByToken(lookup.token, lookup.linkId, this.publicContextHeaders!, commitId)
+          : createRealtimeValetToken(lookup.volumeId, lookup.linkId, commitId),
+      )
       return ApiResult.ok(response)
     } catch (error) {
       const errorCode = getApiError(error).code

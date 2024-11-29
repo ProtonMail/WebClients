@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { SessionKey } from 'packages/crypto/lib';
 
 import { querySharedURLMetadata, querySharedURLPath } from '@proton/shared/lib/api/drive/sharing';
+import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type { LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
 
 import { linkMetaToEncryptedLink, usePublicSession } from '../../store/_api';
@@ -24,8 +25,14 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
     const abortSignal = useAbortSignal([]);
 
     const cache = useRef(new Map<string, DecryptedLink>());
-    const [rootLink, setRootLink] = useState<DecryptedLink>();
+    const [decryptedLink, setDecryptedLink] = useState<DecryptedLink>();
+    const decryptedNode = useMemo(
+        () => (decryptedLink ? decryptedLinkToNode(decryptedLink) : undefined),
+        [decryptedLink]
+    );
+
     const [token, setToken] = useState<string>('');
+    const [permissions, setPermissions] = useState<SHARE_URL_PERMISSIONS>();
 
     const { loadPublicShare } = usePublicShare();
     const { request } = usePublicSession();
@@ -35,9 +42,9 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
     const [didLoadChildren, setDidLoadChildren] = useState(false);
     const [didPreloadNode, setDidPreloadNode] = useState(false);
 
-    const loadRootLink = useCallback(async () => {
-        const { link, token } = await loadPublicShare(abortSignal);
-        return { link, token };
+    const loadShare = useCallback(async () => {
+        const { link, token, permissions } = await loadPublicShare(abortSignal);
+        return { link, token, permissions };
     }, [loadPublicShare, abortSignal]);
 
     const loadChildren = useCallback(
@@ -73,48 +80,49 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
     }, []);
 
     useEffect(() => {
-        if (linkId && rootLink) {
-            void preloadNode({ linkId, token }, rootLink).then(() => {
+        if (linkId && decryptedLink) {
+            void preloadNode({ linkId, token }, decryptedLink).then(() => {
                 setDidPreloadNode(true);
             });
         }
-    }, [linkId, rootLink, preloadNode, token]);
+    }, [linkId, decryptedLink, preloadNode, token]);
 
     useEffect(() => {
-        if (rootLink || !isDocsTokenReady) {
+        if (decryptedLink || !isDocsTokenReady) {
             return;
         }
 
-        void loadRootLink()
-            .then(({ link, token }) => {
+        void loadShare()
+            .then(({ link, token, permissions }) => {
                 cache.current.set(getCacheKey(link), link);
-                setRootLink(link);
+                setDecryptedLink(link);
                 setToken(token);
+                setPermissions(permissions);
             })
             .catch(console.error);
-    }, [loadRootLink, rootLink, loadChildren, isDocsTokenReady]);
+    }, [loadShare, decryptedLink, loadChildren, isDocsTokenReady]);
 
     useEffect(() => {
-        if (didLoadChildren || !rootLink) {
+        if (didLoadChildren || !decryptedLink) {
             return;
         }
 
-        if (rootLink.isFile) {
+        if (decryptedLink.isFile) {
             setDidLoadChildren(true);
             return;
         }
 
-        if (rootLink && token) {
-            void loadChildren(rootLink)
+        if (decryptedLink && token) {
+            void loadChildren(decryptedLink)
                 .then(() => {
                     setDidLoadChildren(true);
                 })
                 .catch(console.error);
         }
-    }, [didLoadChildren, loadChildren, rootLink, token]);
+    }, [didLoadChildren, loadChildren, decryptedLink, token]);
 
     const getNode = async (nodeMeta: PublicNodeMeta): Promise<DecryptedNode> => {
-        if (!didLoadChildren || !rootLink || !token) {
+        if (!didLoadChildren || !decryptedLink || !token) {
             throw new Error('Attempting to get node before children have loaded');
         }
 
@@ -184,6 +192,8 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
     return {
         getNode,
         getNodeContentKey,
+        decryptedNode,
+        permissions,
         performInitialSetup: loadChildren,
         didCompleteInitialSetup: didLoadChildren && didPreloadNode,
     };

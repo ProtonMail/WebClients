@@ -3,30 +3,31 @@ import { APPS } from '@proton/shared/lib/constants'
 import DocumentTitleDropdown from '../layout/DocumentTitleDropdown'
 import { DocumentActiveUsers } from '../DocumentActiveUsers'
 import { ConnectionStatus } from '../layout/ConnectionStatus'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { Button } from '@proton/atoms'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { CommentsButton } from './CommentsButton'
 import { c } from 'ttag'
 import type { DocumentAction } from '@proton/drive-store'
-import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller/Document/AnyDocControllerInterface'
-import { isPrivateDocController } from '@proton/docs-core/lib/Controller/Document/isPrivateDocController'
 import PopoverPill from '../PopoverPill'
 import { useDocsContext } from '../../Containers/ContextProvider'
 import { HeaderPublicOptions } from '../../Apps/Public/Header/HeaderPublicOptions'
-import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
-import type { DocumentState, PublicDocumentState } from '@proton/docs-core'
+import type { EditorControllerInterface } from '@proton/docs-core'
+import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
 
 const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   const application = useApplication()
+
   const [isReady, setIsReady] = useState(false)
 
   const { publicContext } = useDocsContext()
 
-  const [controller, setController] = useState<AnyDocControllerInterface | null>(null)
+  const [controller, setController] = useState<AuthenticatedDocControllerInterface | undefined>(undefined)
   const [editorController, setEditorController] = useState<EditorControllerInterface | null>(null)
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
+
+  const role = useMemo(() => documentState?.getProperty('userRole'), [documentState])
 
   useEffect(() => {
     return application.getDocLoader().addStatusObserver({
@@ -40,7 +41,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
     })
   }, [application])
 
-  if (application.isRunningInNativeMobileWeb || !isReady || !controller || !editorController || !documentState) {
+  if (application.isRunningInNativeMobileWeb || !isReady || !editorController || !documentState) {
     return null
   }
 
@@ -50,7 +51,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
       <div className="flex flex-1 items-center">
         <DocumentTitleDropdown
           action={action}
-          docController={controller}
+          authenticatedController={controller}
           editorController={editorController}
           documentState={documentState}
         />
@@ -59,7 +60,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
       </div>
 
       {/* Middle */}
-      <div className="flex-none">{publicContext && <ViewOnlyPill />}</div>
+      <div className="flex-none">{role?.isPublicViewer() && <ViewOnlyPill />}</div>
 
       {/* Right */}
       <div className="flex flex-1 items-center justify-end">
@@ -72,19 +73,19 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
           <>
             <DocumentActiveUsers className="mr-2 hidden md:flex" />
 
-            {isPrivateDocController(controller) && documentState.getProperty('userRole').isAdmin() && (
+            {documentState.getProperty('userRole').isAdmin() && (
               <Button
                 shape="ghost"
                 className="flex items-center gap-2 text-sm"
                 data-testid="share-button"
-                onClick={() => controller.openDocumentSharingModal()}
+                onClick={() => controller?.openDocumentSharingModal()}
               >
                 <Icon name="user-plus" />
                 {c('Action').t`Share`}
               </Button>
             )}
 
-            {isPrivateDocController(controller) && documentState.getProperty('userRole').canComment() && (
+            {documentState.getProperty('userRole').canComment() && (
               <CommentsButton editorController={editorController} />
             )}
 

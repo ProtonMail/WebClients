@@ -4,11 +4,11 @@ import { DocumentRole } from '@proton/docs-shared'
 import type { ConnectionCloseReason } from '@proton/docs-proto'
 import { EventType, EventTypeEnum } from '@proton/docs-proto'
 import metrics from '@proton/metrics'
-import type { DocumentStateValues } from '../../State/DocumentState'
-import { DocumentState } from '../../State/DocumentState'
+import type { DocumentStateValues } from '../State/DocumentState'
+import { DocumentState } from '../State/DocumentState'
 import type { ClientRequiresEditorMethods, DecryptedMessage } from '@proton/docs-shared'
 import type { SerializedEditorState } from 'lexical'
-import type { DecryptedCommit } from '../../Models/DecryptedCommit'
+import type { DecryptedCommit } from '../Models/DecryptedCommit'
 
 jest.mock('@proton/metrics', () => ({
   docs_readonly_mode_documents_total: {
@@ -134,6 +134,17 @@ describe('EditorController', () => {
         name: 'EditorIsReadyToBeShown',
         payload: undefined,
       })
+    })
+
+    it('should reload editing locked state when editor is shown', () => {
+      sharedState.setProperty('realtimeEnabled', true)
+      sharedState.setProperty('realtimeReadyToBroadcast', true)
+
+      controller.reloadEditingLockedState = jest.fn()
+
+      controller.showEditorForTheFirstTime()
+
+      expect(controller.reloadEditingLockedState).toHaveBeenCalled()
     })
   })
 
