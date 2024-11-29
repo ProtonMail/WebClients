@@ -1,4 +1,4 @@
-import type { DocControllerInterface, DocumentState } from '@proton/docs-core'
+import type { AuthenticatedDocControllerInterface, DocumentState } from '@proton/docs-core'
 import { c } from 'ttag'
 
 import { Button, CircleLoader } from '@proton/atoms'
@@ -6,7 +6,7 @@ import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@prot
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
 
 type TrashedDocumentModalProps = {
-  controller: DocControllerInterface
+  controller: AuthenticatedDocControllerInterface
   documentState: DocumentState
   documentTitle: string
   onOpenProtonDrive: () => void

@@ -1,7 +1,7 @@
 import type { WordCountInfoCollection } from '@proton/docs-shared'
 import { createContext, useEffect, useState, type ReactNode } from 'react'
 import { useApplication } from '../../Containers/ApplicationProvider'
-import { WordCountEvent } from '@proton/docs-core/lib/Bridge/WordCountEvent'
+import { WordCountEvent } from '@proton/docs-core'
 
 type WordCountContextShape = {
   wordCountInfoCollection: WordCountInfoCollection

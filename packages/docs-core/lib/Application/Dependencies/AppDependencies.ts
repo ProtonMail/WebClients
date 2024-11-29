@@ -7,7 +7,7 @@ import { DocsApi } from '../../Api/DocsApi'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { DocLoader } from '../../Services/DocumentLoader/DocLoader'
-import type { InternalEventBusInterface } from '@proton/docs-shared'
+import type { InternalEventBusInterface, SyncedEditorState } from '@proton/docs-shared'
 import { InternalEventBus } from '@proton/docs-shared'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { Api } from '@proton/shared/lib/interfaces'
@@ -51,7 +51,8 @@ export class AppDependencies extends DependencyContainer {
     compatWrapper: DriveCompatWrapper,
     userState: UserState,
     appVersion: string,
-    _unleashClient: UnleashClient,
+    unleashClient: UnleashClient,
+    syncedEditorState: SyncedEditorState,
   ) {
     super()
 
@@ -211,11 +212,16 @@ export class AppDependencies extends DependencyContainer {
 
       return new PublicDocLoader(
         compatWrapper.publicCompat,
+        this.get<WebsocketService>(App_TYPES.WebsocketService),
         this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<LoadDocument>(App_TYPES.LoadDocument),
         this.get<ExportAndDownload>(App_TYPES.ExportAndDownload),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
+        this.get<LoadCommit>(App_TYPES.LoadCommit),
+        this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         this.get<LoggerInterface>(App_TYPES.Logger),
+        unleashClient,
+        syncedEditorState,
       )
     })
 

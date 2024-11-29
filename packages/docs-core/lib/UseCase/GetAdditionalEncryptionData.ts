@@ -1,11 +1,22 @@
 export function GetAssociatedEncryptionDataForRealtimeMessage(metadata: {
   version: number
-  authorAddress: string
+  authorAddress: string | undefined
   timestamp: number
 }): string {
-  return `${metadata.version}.${metadata.authorAddress}.${metadata.timestamp}`
+  if (metadata.authorAddress) {
+    return `${metadata.version}.${metadata.authorAddress}.${metadata.timestamp}`
+  }
+
+  return `${metadata.version}.${metadata.timestamp}`
 }
 
-export function GetAssociatedEncryptionDataForComment(metadata: { authorAddress: string; markId: string }): string {
-  return `${metadata.authorAddress}.${metadata.markId}`
+export function GetAssociatedEncryptionDataForComment(metadata: {
+  authorAddress: string | undefined
+  markId: string
+}): string {
+  if (metadata.authorAddress) {
+    return `${metadata.authorAddress}.${metadata.markId}`
+  }
+
+  return metadata.markId
 }

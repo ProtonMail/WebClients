@@ -11,11 +11,11 @@ import type {
   RtsMessagePayload,
   WebsocketConnectionInterface,
 } from '@proton/docs-shared'
-import { DecryptedMessage } from '@proton/docs-shared'
+import { DecryptedMessage, Result } from '@proton/docs-shared'
 import { BroadcastSource, DocumentRole } from '@proton/docs-shared'
 import type { DecryptedNode, NodeMeta } from '@proton/drive-store'
-import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../../Models/Constants'
-import type { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
+import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../Models/Constants'
+import type { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
 import {
   MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR,
   MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT,
@@ -24,13 +24,16 @@ import {
 import type { LoggerInterface } from '@proton/utils/logs'
 import { ProcessedIncomingRealtimeEventMessage } from '@proton/docs-shared'
 import { ConnectionCloseReason, EventTypeEnum } from '@proton/docs-proto'
-import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
-import type { AckLedgerInterface } from '../../Services/Websockets/AckLedger/AckLedgerInterface'
-import type { DocumentStateValues } from '../../State/DocumentState'
-import { DocumentState } from '../../State/DocumentState'
-import { DocSizeTracker } from '../Document/SizeTracker'
-import type { DecryptedCommit } from '../../Models/DecryptedCommit'
-import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
+import type { AckLedgerInterface } from '../Services/Websockets/AckLedger/AckLedgerInterface'
+import type { DocumentStateValues } from '../State/DocumentState'
+import { DocumentState } from '../State/DocumentState'
+import { DocSizeTracker } from '../SizeTracker/SizeTracker'
+import type { DecryptedCommit } from '../Models/DecryptedCommit'
+import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import { DocControllerEvent } from '../AuthenticatedDocController/AuthenticatedDocControllerEvent'
+import type { GetDocumentMeta } from '../UseCase/GetDocumentMeta'
+import type { LoadCommit } from '../UseCase/LoadCommit'
 
 describe('RealtimeController', () => {
   let controller: RealtimeController
@@ -75,7 +78,29 @@ describe('RealtimeController', () => {
       publish: jest.fn(),
     } as unknown as jest.Mocked<InternalEventBusInterface>
 
-    controller = new RealtimeController(websocketService, eventBus, documentState, logger)
+    controller = new RealtimeController(
+      websocketService,
+      eventBus,
+      documentState,
+      {
+        execute: jest.fn().mockReturnValue(
+          Result.ok({
+            numberOfUpdates: jest.fn(),
+            squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array(0)),
+            needsSquash: jest.fn().mockReturnValue(false),
+            byteSize: 0,
+          }),
+        ),
+      } as unknown as jest.Mocked<LoadCommit>,
+      {
+        execute: jest.fn().mockReturnValue(
+          Result.ok({
+            latestCommitId: jest.fn().mockReturnValue('123'),
+          }),
+        ),
+      } as unknown as jest.Mocked<GetDocumentMeta>,
+      logger,
+    )
 
     documentState.setProperty('editorReady', true)
   })
@@ -386,14 +411,11 @@ describe('RealtimeController', () => {
         content: new TextEncoder().encode(JSON.stringify({ commitId })),
       })
 
-      documentState.emitEvent = jest.fn()
+      documentState.setProperty = jest.fn()
 
       await controller.handleRealtimeServerEvent([event])
 
-      expect(documentState.emitEvent).toHaveBeenCalledWith({
-        name: 'RealtimeNewCommitIdReceived',
-        payload: commitId,
-      })
+      expect(documentState.setProperty).toHaveBeenCalledWith('currentCommitId', commitId)
     })
 
     it('should handle ClientHasSentACommentMessage event', async () => {
@@ -403,13 +425,15 @@ describe('RealtimeController', () => {
         content,
       })
 
-      documentState.emitEvent = jest.fn()
+      eventBus.publish = jest.fn()
 
       await controller.handleRealtimeServerEvent([event])
 
-      expect(documentState.emitEvent).toHaveBeenCalledWith({
-        name: 'RealtimeReceivedCommentMessage',
-        payload: content,
+      expect(eventBus.publish).toHaveBeenCalledWith({
+        type: DocControllerEvent.RealtimeCommentMessageReceived,
+        payload: {
+          message: content,
+        },
       })
     })
 
@@ -503,8 +527,9 @@ describe('RealtimeController', () => {
       const mockEntitlements = { keys: {} } as DocumentEntitlements
       const mockCurrentCommitId = 'commit-123'
       documentState.setProperty('currentCommitId', mockCurrentCommitId)
+      documentState.setProperty('entitlements', mockEntitlements)
 
-      controller.initializeConnection(mockEntitlements)
+      controller.initializeConnection()
 
       expect(websocketService.createConnection).toHaveBeenCalledWith(
         expect.any(Object),
@@ -527,8 +552,9 @@ describe('RealtimeController', () => {
 
       websocketService.createConnection.mockReturnValue(mockConnection)
       const entitlements = { keys: {} } as DocumentEntitlements
+      documentState.setProperty('entitlements', entitlements)
 
-      const returnedConnection = controller.initializeConnection(entitlements)
+      const returnedConnection = controller.initializeConnection()
       expect(returnedConnection).toBe(mockConnection)
 
       // Wait for promise rejection to be handled
@@ -544,9 +570,10 @@ describe('RealtimeController', () => {
 
       websocketService.createConnection.mockReturnValue(mockConnection)
       const entitlements = { keys: {} } as DocumentEntitlements
+      documentState.setProperty('entitlements', entitlements)
 
       const spy = jest.spyOn(controller, 'beginInitialConnectionTimer')
-      const returnedConnection = controller.initializeConnection(entitlements)
+      const returnedConnection = controller.initializeConnection()
 
       expect(returnedConnection).toBe(mockConnection)
       expect(spy).toHaveBeenCalled()
@@ -560,9 +587,10 @@ describe('RealtimeController', () => {
 
       websocketService.createConnection.mockReturnValue(mockConnection)
       const entitlements = { keys: {} } as DocumentEntitlements
+      documentState.setProperty('entitlements', entitlements)
 
       controller.abortWebsocketConnectionAttempt = true
-      controller.initializeConnection(entitlements)
+      controller.initializeConnection()
 
       // Get and test the abort callback
       const abortCallback = mockConnect.mock.calls[0][0]
@@ -961,22 +989,6 @@ describe('RealtimeController', () => {
       expect(spy).toHaveBeenCalledWith(payload)
     })
 
-    it('should emit RealtimeFailedToGetToken event when receiving FailedToGetTokenCommitIdOutOfSync', async () => {
-      const emitEventSpy = jest.spyOn(documentState, 'emitEvent')
-
-      const event: InternalEventInterface<unknown> = {
-        type: WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync,
-        payload: undefined,
-      }
-
-      await controller.handleEvent(event)
-
-      expect(emitEventSpy).toHaveBeenCalledWith({
-        name: 'RealtimeFailedToGetToken',
-        payload: 'due-to-commit-id-out-of-sync',
-      })
-    })
-
     it('should return early for unhandled event types', async () => {
       const emitEventSpy = jest.spyOn(documentState, 'emitEvent')
 
@@ -988,6 +1000,19 @@ describe('RealtimeController', () => {
       await controller.handleEvent(event)
 
       expect(emitEventSpy).not.toHaveBeenCalled()
+    })
+
+    it('should refetch commit', async () => {
+      controller.refetchCommitDueToStaleContents = jest.fn()
+
+      const event: InternalEventInterface<unknown> = {
+        type: WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync,
+        payload: undefined,
+      }
+
+      await controller.handleEvent(event)
+
+      expect(controller.refetchCommitDueToStaleContents).toHaveBeenCalled()
     })
   })
 
@@ -1007,6 +1032,69 @@ describe('RealtimeController', () => {
       controller.handleWebsocketConnectedEvent()
 
       expect(clearTimeoutSpy).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('handle realtime disconnection', () => {
+    it('should refetch commit if disconnect reason is stale commit id', () => {
+      controller.refetchCommitDueToStaleContents = jest.fn()
+
+      controller.handleWebsocketDisconnectedEvent({
+        serverReason: ConnectionCloseReason.create({ code: ConnectionCloseReason.CODES.STALE_COMMIT_ID }),
+        document: {} as NodeMeta,
+      })
+
+      expect(controller.refetchCommitDueToStaleContents).toHaveBeenCalled()
+    })
+  })
+
+  describe('refetchCommitDueToStaleContents', () => {
+    it('should post UnableToResolveCommitIdConflict error if unable to resolve', async () => {
+      controller.logger.error = jest.fn()
+      eventBus.publish = jest.fn()
+
+      controller._loadCommit.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
+      controller._getDocumentMeta.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
+
+      await controller.refetchCommitDueToStaleContents('rts-disconnect')
+
+      expect(eventBus.publish).toHaveBeenCalledWith({
+        type: DocControllerEvent.UnableToResolveCommitIdConflict,
+        payload: undefined,
+      })
+    })
+
+    it('should not reprocess if already processing', async () => {
+      controller._loadCommit.execute = jest.fn().mockReturnValue(
+        Result.ok({
+          numberOfUpdates: jest.fn(),
+          squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
+          needsSquash: jest.fn().mockReturnValue(false),
+        }),
+      )
+      controller._getDocumentMeta.execute = jest.fn().mockReturnValue(Result.ok({}))
+
+      controller.isRefetchingStaleCommit = true
+
+      await controller.refetchCommitDueToStaleContents('rts-disconnect')
+
+      expect(controller._loadCommit.execute).not.toHaveBeenCalled()
+    })
+
+    it('should re-set the initial commit if commit is successfully resolved', async () => {
+      controller._loadCommit.execute = jest.fn().mockReturnValue(
+        Result.ok({
+          numberOfUpdates: jest.fn().mockReturnValue(0),
+          needsSquash: jest.fn().mockReturnValue(false),
+          squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
+        }),
+      )
+
+      documentState.setProperty = jest.fn()
+
+      await controller.refetchCommitDueToStaleContents('rts-disconnect')
+
+      expect(documentState.setProperty).toHaveBeenCalledWith('baseCommit', expect.anything())
     })
   })
 })

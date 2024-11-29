@@ -61,6 +61,27 @@ export class EncryptionService<C extends EncryptionContext> {
     }
   }
 
+  public async encryptAnonymousData(
+    data: Uint8Array,
+    associatedData: string,
+    sessionKey: SessionKey,
+  ): Promise<Result<Uint8Array>> {
+    try {
+      const contextString = this.getContext(associatedData)
+      const contextBytes = stringToUtf8Array(contextString)
+      const contentToEncrypt = new SignedPlaintextContent({
+        content: data,
+      })
+
+      const hkdfSalt = crypto.getRandomValues(new Uint8Array(HKDF_SALT_SIZE))
+      const key = await deriveGcmKey(sessionKey, hkdfSalt, contextBytes)
+      const ciphertext = await gcmEncryptWith16ByteIV(key, contentToEncrypt.serializeBinary(), contextBytes)
+      return Result.ok(mergeUint8Arrays([hkdfSalt, ciphertext]))
+    } catch (error) {
+      return Result.fail(`Failed to sign and encrypt data ${error}`)
+    }
+  }
+
   public async decryptData(
     encryptedData: Uint8Array,
     associatedData: string,

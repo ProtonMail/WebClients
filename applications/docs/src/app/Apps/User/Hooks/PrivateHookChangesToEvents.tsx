@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDocsNotifications } from '../../../Containers/DocsNotificationsProvider'
 import { useApplication } from '../../../Containers/ApplicationProvider'
-import type { UserState } from '@proton/docs-core/lib/State/UserState'
+import type { UserState } from '@proton/docs-core'
 import type { SyncedEditorState } from '@proton/docs-shared'
 import { useContactEmails } from '@proton/mail/contactEmails/hooks'
 import { useUser } from '@proton/account/user/hooks'
