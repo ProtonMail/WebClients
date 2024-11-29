@@ -11,13 +11,20 @@ import { upsellFeatures } from './constants';
 interface UpsellFeatureListProps {
     className?: string;
     features: UpsellFeatureName[];
-    iconSize: IconSize;
     hideInfo?: boolean;
-    plan?: Plan;
+    iconSize?: IconSize;
     odd?: boolean;
+    plan?: Plan;
 }
 
-const UpsellFeatureList = ({ className, features, iconSize, hideInfo, plan, odd = false }: UpsellFeatureListProps) => {
+const UpsellFeatureList = ({
+    className,
+    features,
+    iconSize = 5,
+    hideInfo,
+    plan,
+    odd = false,
+}: UpsellFeatureListProps) => {
     return (
         <ul className={clsx('m-0 unstyled', odd && 'odd:bg-weak', className)}>
             {features.map((featureName) => {
