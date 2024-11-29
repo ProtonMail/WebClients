@@ -3,26 +3,20 @@ import { useEffect } from 'react';
 import { differenceInDays, getUnixTime } from 'date-fns';
 
 import { useApi } from '@proton/components';
-import { TelemetryMailDefaultMailto, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api } from '@proton/shared/lib/interfaces';
 
-import type { DefaultProtocol } from './DefaultProtocol';
 import type { IPCInboxHostUpdateListenerRemover } from './desktopTypes';
+import { addIPCHostUpdateListener, emptyListener, hasInboxDesktopFeature } from './ipcHelpers';
 import {
-    addIPCHostUpdateListener,
-    emptyListener,
-    getInboxDesktopInfo,
-    hasInboxDesktopFeature,
-    invokeInboxDesktopIPC,
-} from './ipcHelpers';
+    checkDailyStats,
+    checkDefaultMailto,
+    getDailyStats,
+    getDefaultMailto,
+    sendDailyTelemetry,
+    sendMailtoTelemetry,
+} from './telemetry';
 
 const HOUR_INTERVAL = 3600000;
 
-const getDefaultMailto = () => getInboxDesktopInfo('defaultMailto');
-const checkDefaultMailto = () => invokeInboxDesktopIPC({ type: 'checkDefaultMailtoAndSignal' });
-const defaultMailtoTelemetryReported = (timestamp: number) =>
-    invokeInboxDesktopIPC({ type: 'defaultMailtoTelemetryReported', payload: timestamp });
 const getUnixTimeNow = () => {
     return getUnixTime(new Date());
 };
@@ -33,7 +27,7 @@ const isAtLeastDayAgo = (lastUnixTime: number) => {
     return differenceInDays(nowMs, lastMs) > 0;
 };
 
-function checkMailtoTelemetryIsNeeded() {
+const checkMailtoTelemetryIsNeeded = () => {
     if (!hasInboxDesktopFeature('MailtoTelemetry')) {
         return;
     }
@@ -44,59 +38,54 @@ function checkMailtoTelemetryIsNeeded() {
     }
 
     void checkDefaultMailto();
-}
-
-type MailtoDimensions = {
-    isDefault: 'true' | 'false' | 'unknown';
-    changeSinceLast: 'yes_to_no' | 'no_to_yes' | 'no_change';
 };
 
-function sendMailtoTelemetry(api: Api, data: DefaultProtocol) {
-    const dimensions: MailtoDimensions = {
-        isDefault: 'unknown',
-        changeSinceLast: 'no_change',
-    };
-
-    if (data.wasChecked) {
-        dimensions.isDefault = data.isDefault ? 'true' : 'false';
-
-        if (data.lastReport.wasDefault && !data.isDefault) {
-            dimensions.changeSinceLast = 'yes_to_no';
-        }
-        if (!data.lastReport.wasDefault && data.isDefault) {
-            dimensions.changeSinceLast = 'no_to_yes';
-        }
+const checkDailyStatIsNeeded = () => {
+    if (!hasInboxDesktopFeature('StatsTelemetry')) {
+        return;
     }
 
-    void sendTelemetryReport({
-        api,
-        measurementGroup: TelemetryMeasurementGroups.mailDesktopDefaultMailto,
-        event: TelemetryMailDefaultMailto.mailto_heartbeat,
-        dimensions,
-    });
+    const data = getDailyStats();
+    if (!isAtLeastDayAgo(data.lastReport)) {
+        return;
+    }
 
-    void defaultMailtoTelemetryReported(getUnixTimeNow());
-}
+    void checkDailyStats();
+};
 
-export function useInboxDesktopHeartbeat() {
+// useInboxDesktopHeartbeat is for sending desktop app statistics once per day.
+export const useInboxDesktopHeartbeat = () => {
     const api = useApi();
 
     useEffect(() => {
+        // This won't be needed eventually. During transition we don't want to
+        // use default mailto telemetry, so we disable the flag in electron.
         const defaultMailtoChecked: IPCInboxHostUpdateListenerRemover = hasInboxDesktopFeature('MailtoTelemetry')
-            ? addIPCHostUpdateListener('defaultMailtoChecked', (payload) => sendMailtoTelemetry(api, payload))
+            ? addIPCHostUpdateListener('defaultMailtoChecked', (payload) =>
+                  sendMailtoTelemetry(api, payload, getUnixTimeNow())
+              )
             : emptyListener;
 
+        const statsTelemetryChecked: IPCInboxHostUpdateListenerRemover = hasInboxDesktopFeature('StatsTelemetry')
+            ? addIPCHostUpdateListener('dailyStatsChecked', (payload) =>
+                  sendDailyTelemetry(api, payload, getUnixTimeNow())
+              )
+            : emptyListener;
+
+        checkDailyStatIsNeeded();
         checkMailtoTelemetryIsNeeded();
         const intervalFunction = setInterval(() => {
+            checkDailyStatIsNeeded();
             checkMailtoTelemetryIsNeeded();
         }, HOUR_INTERVAL);
 
         return () => {
+            statsTelemetryChecked.removeListener();
             defaultMailtoChecked.removeListener();
             clearInterval(intervalFunction);
         };
     }, [api]);
-}
+};
 
 export const getUnixTimeNowTestOnly = getUnixTimeNow;
 export const isAtLeastDayAgoTestOnly = isAtLeastDayAgo;
