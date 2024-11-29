@@ -4,11 +4,10 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader, InlineLinkButton, Scroll } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
+import { SkeletonLoader } from '@proton/components';
 import {
-    Alert,
     ConfirmSignOutModal,
     Icon,
-    Loader,
     Prompt,
     startUnAuthFlow,
     useApi,
@@ -20,15 +19,19 @@ import { useLoading } from '@proton/hooks';
 import { revoke } from '@proton/shared/lib/api/auth';
 import type { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { ForkSearchParameters, getEmailSessionForkSearchParameter } from '@proton/shared/lib/authentication/fork';
-import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { getActiveSessions, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
+import type {
+    GetActiveSessionsResult,
+    LocalSessionPersisted,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getHasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -45,7 +48,9 @@ interface Props {
     toApp?: APP_NAMES;
     toAppName?: string;
     activeSessions?: LocalSessionPersisted[];
+    onGetActiveSessions: () => Promise<GetActiveSessionsResult>;
     updateActiveSessions: (updatedActiveSessions?: LocalSessionPersisted[]) => void;
+    initialSessionsLength: number;
     onAddAccount: () => void;
     onEmptySessions: () => void;
     metaTags: MetaTags;
@@ -68,7 +73,9 @@ const SwitchAccountContainer = ({
     metaTags,
     toApp,
     toAppName,
+    initialSessionsLength,
     onLogin,
+    onGetActiveSessions,
     activeSessions,
     onAddAccount,
     updateActiveSessions,
@@ -96,15 +103,7 @@ const SwitchAccountContainer = ({
 
     useEffect(() => {
         if (!activeSessions) {
-            const run = async () => {
-                const searchParams = new URLSearchParams(window.location.search);
-                const { sessions } = await getActiveSessions({
-                    api: silentApi,
-                    email: getEmailSessionForkSearchParameter(searchParams),
-                });
-                updateActiveSessions(sessions);
-            };
-            void withLoading(run().catch(() => setError(true)));
+            void withLoading(onGetActiveSessions().catch(() => setError(true)));
         } else if (!activeSessions.length) {
             onEmptySessions();
         }
@@ -188,17 +187,31 @@ const SwitchAccountContainer = ({
             );
 
             return (
-                <Alert className="mb-3" type="error">
+                <div>
                     {
                         // translator: Full sentence is "Failed to get active sessions. Please refresh the page or try again later."
                         c('Error').jt`Failed to get active sessions. Please ${refresh} or try again later.`
                     }
-                </Alert>
+                </div>
             );
         }
 
         if (loading) {
-            return <Loader />;
+            return (
+                <div className="flex flex-column gap-2">
+                    {new Array(clamp(initialSessionsLength, 1, 4)).fill(0).map((_, idx) => {
+                        return (
+                            <SkeletonLoader
+                                key={idx}
+                                width="100%"
+                                className="h-custom"
+                                style={{ '--h-custom': '6em' }}
+                                index={0}
+                            />
+                        );
+                    })}
+                </div>
+            );
         }
 
         if (!activeSessions?.length) {
