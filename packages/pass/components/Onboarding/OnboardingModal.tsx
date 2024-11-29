@@ -61,20 +61,16 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
 
             <ModalTwoContent>
                 {/* height accommodates largest content without layout shifts */}
-                <div className="h-custom flex items-center" style={{ '--h-custom': '23rem' }}>
-                    <div className="flex flex-column w-full">
-                        <div className="flex items-center gap-6 text-left w-full">
-                            <div className="flex-1">
-                                <p className="text-uppercase text-sm text-bold m-0 mb-3 pass-onboarding-modal--group">
-                                    {currentStep.group}
-                                </p>
-                                <p className="text-4xl text-bold m-0 mb-3">{currentStep.title}</p>
-                                <p className="text-weak text-pre-wrap m-0">{currentStep.description}</p>
-                            </div>
-
-                            <div className="flex-1">{currentStep.component}</div>
-                        </div>
+                <div className="h-custom flex items-center gap-6 text-left w-full" style={{ '--h-custom': '23rem' }}>
+                    <div className="flex-1">
+                        <p className="text-uppercase text-sm text-bold m-0 mb-3 pass-onboarding-modal--group">
+                            {currentStep.group}
+                        </p>
+                        <p className="text-4xl text-bold m-0 mb-3">{currentStep.title}</p>
+                        <p className="text-weak text-pre-wrap m-0">{currentStep.description}</p>
                     </div>
+
+                    <div className="flex-1">{currentStep.component}</div>
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter className="mt-0">
