@@ -21,6 +21,7 @@ import { getUrlPassword } from '@proton/drive-store/utils/url/password'
 import { useEmailOptInModal } from '../../Components/Modals/EmailOptInModal/EmailOptInModal'
 import { useDocsNotifications } from '../../Containers/DocsNotificationsProvider'
 import { PrivateHookChangesToEvents } from './Hooks/PrivateHookChangesToEvents'
+import { useFlag } from '@proton/unleash'
 
 export default function SingleDocumentRoute({ driveCompat }: { driveCompat: DriveCompat }) {
   void import('../../tailwind.scss')
@@ -187,18 +188,19 @@ function Content({
   editorInitializationConfig?: EditorInitializationConfig
 }) {
   const [emailOptInModal, openEmailOptInModal] = useEmailOptInModal()
+  const emailFeatureEnabled = useFlag('DocsEnableNotificationsOnNewComment')
 
   const { emailTitleEnabled, emailNotificationsEnabled, isReady: isNotificationsReady } = useDocsNotifications()
 
   useEffect(() => {
-    if (!isNotificationsReady) {
+    if (!isNotificationsReady || !emailFeatureEnabled) {
       return
     }
 
     if (emailTitleEnabled === null || emailNotificationsEnabled === null) {
       openEmailOptInModal({})
     }
-  }, [emailTitleEnabled, emailNotificationsEnabled, openEmailOptInModal, isNotificationsReady])
+  }, [emailTitleEnabled, emailNotificationsEnabled, openEmailOptInModal, isNotificationsReady, emailFeatureEnabled])
 
   if (isCreatingNewDocument) {
     return (
