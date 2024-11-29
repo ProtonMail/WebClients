@@ -660,6 +660,7 @@ const SingleSignupContainerV2 = ({
                         },
                     },
                     toApp: product,
+                    availableCycles: signupConfiguration.cycles,
                 }),
                 getSubscriptionDataCycleMapping(
                     paymentsApi,
@@ -829,6 +830,7 @@ const SingleSignupContainerV2 = ({
                 plansMap: model.plansMap,
                 upsellPlanCard,
                 toApp: product,
+                availableCycles: signupConfiguration.cycles,
             });
 
             const statusPromise = paymentsApi.statusExtendedAutomatic();
@@ -892,6 +894,7 @@ const SingleSignupContainerV2 = ({
                     billingAddress: model.subscriptionData.billingAddress,
                 },
                 toApp: product,
+                availableCycles: signupConfiguration.cycles,
             });
 
             const session: SessionData = {
