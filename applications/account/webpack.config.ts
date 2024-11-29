@@ -37,9 +37,6 @@ const getTemplateParameters = (
     };
 };
 
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
-const smp = new SpeedMeasurePlugin();
-
 const result = async (env: any): Promise<webpack.Configuration> => {
     const pagePromise = getPages();
 
@@ -195,7 +192,6 @@ const result = async (env: any): Promise<webpack.Configuration> => {
         })
     );
 
-    plugins.push(smp);
     return config;
 };
 
