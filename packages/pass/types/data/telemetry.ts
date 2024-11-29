@@ -1,5 +1,6 @@
 import type { ImportProvider } from '@proton/pass/lib/import/types';
-import type { PassPlanResponse } from '@proton/pass/types';
+import type { InAppNotification, PassPlanResponse } from '@proton/pass/types';
+import type { TelemetryInAppNotificationStatus } from '@proton/pass/types/data/notification';
 
 export type TelemetryPlatform = 'browser' | 'any';
 
@@ -31,6 +32,9 @@ export enum TelemetryEventName {
     PassMonitorItemDetailFromMissing2FA = 'pass_monitor.item_detail_from_missing_2fa',
     PassMonitorItemDetailFromReusedPassword = 'pass_monitor.item_detail_from_reused_password',
     PassMonitorItemDetailFromWeakPassword = 'pass_monitor.item_detail_from_weak_password',
+    PassNotificationChangeStatus = 'pass_notification.change_notification_status',
+    PassNotificationCTAClick = 'pass_notification.notification_cta_click',
+    PassNotificationDisplay = 'pass_notifications.display_notification',
     PassSettingsDisplayUsername = 'pass_settings.display_username',
     SearchClick = 'search.click',
     SearchTriggered = 'search.triggered',
@@ -58,6 +62,8 @@ export type BaseTelemetryEvent<T extends TelemetryEventName, V = {}, D = {}> = {
 type ImportValues = { item_count: number; vaults: number };
 type ImportDimensions = { source: ImportProvider };
 type ItemDimensions = { type: TelemetryItemType };
+type NotificationDimensions = { notificationKey: InAppNotification['NotificationKey'] };
+type NotificationChangeDimensions = NotificationDimensions & { notificationStatus: TelemetryInAppNotificationStatus };
 type AutofillDimensions = { location: 'source' | 'app' };
 type SettingValues = { checked: boolean };
 type ErrorResumingSessionDimensions = { extensionBrowser: string; extensionReloadRequired: boolean };
@@ -90,6 +96,9 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromMissing2FA>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromReusedPassword>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromWeakPassword>
+    | BaseTelemetryEvent<TelemetryEventName.PassNotificationChangeStatus, {}, NotificationChangeDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.PassNotificationCTAClick, {}, NotificationDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.PassNotificationDisplay, {}, NotificationDimensions>
     | BaseTelemetryEvent<TelemetryEventName.PassSettingsDisplayUsername, SettingValues>
     | BaseTelemetryEvent<TelemetryEventName.SearchClick>
     | BaseTelemetryEvent<TelemetryEventName.SearchTriggered>
