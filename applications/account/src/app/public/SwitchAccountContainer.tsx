@@ -48,8 +48,8 @@ interface Props {
     toApp?: APP_NAMES;
     toAppName?: string;
     activeSessions?: LocalSessionPersisted[];
+    onActiveSessions: (updatedActiveSessions: LocalSessionPersisted[]) => void;
     onGetActiveSessions: () => Promise<GetActiveSessionsResult>;
-    updateActiveSessions: (updatedActiveSessions?: LocalSessionPersisted[]) => void;
     initialSessionsLength: number;
     onAddAccount: () => void;
     onEmptySessions: () => void;
@@ -78,7 +78,7 @@ const SwitchAccountContainer = ({
     onGetActiveSessions,
     activeSessions,
     onAddAccount,
-    updateActiveSessions,
+    onActiveSessions,
     onEmptySessions,
 }: Props) => {
     const normalApi = useApi();
@@ -104,10 +104,14 @@ const SwitchAccountContainer = ({
     useEffect(() => {
         if (!activeSessions) {
             void withLoading(onGetActiveSessions().catch(() => setError(true)));
-        } else if (!activeSessions.length) {
-            onEmptySessions();
         }
     }, []);
+
+    useEffect(() => {
+        if (Array.isArray(activeSessions) && !activeSessions.length) {
+            onEmptySessions();
+        }
+    }, [activeSessions]);
 
     const clearSession = (session: PersistedSessionWithLocalID, clearDeviceRecovery: boolean) => {
         removePersistedSession(session.localID, session.UID).catch(noop);
@@ -122,7 +126,7 @@ const SwitchAccountContainer = ({
         const updatedActiveSessions = (activeSessions || [])?.filter(
             (session) => !removeSet.has(session.remote.LocalID)
         );
-        updateActiveSessions(updatedActiveSessions);
+        onActiveSessions(updatedActiveSessions);
     };
 
     const handleSignOut = (sessions: LocalSessionPersisted[], clearDeviceRecovery: boolean) => {
