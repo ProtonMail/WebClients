@@ -167,7 +167,8 @@ const loginPaths = [
 const ephemeralLoginPaths = [SSO_PATHS.APP_SWITCHER, SSO_PATHS.REAUTH];
 
 // Optimistically calculate if the account switcher should be visible
-const initialSessionsLength = Boolean(getPersistedSessions().length);
+const initialSessionsLength = getPersistedSessions().length;
+const initialSessionsLengthBool = Boolean(getPersistedSessions().length);
 
 const BasePublicApp = () => {
     const api = useApi();
@@ -178,7 +179,7 @@ const BasePublicApp = () => {
     const refresh = useCallback(() => setState((i) => i + 1), []);
     const [forkState, setForkState] = useState<ProduceForkData | null>(null);
     const [activeSessions, setActiveSessions] = useState<LocalSessionPersisted[]>();
-    const [maybeHasActiveSessions] = useState(initialSessionsLength);
+    const [maybeHasActiveSessions] = useState(initialSessionsLengthBool);
     const [locationState, setLocationState] = useState<null | LoginLocationState>(null);
 
     const searchParams = new URLSearchParams(location.search);
@@ -530,6 +531,8 @@ const BasePublicApp = () => {
                                                     <UnAuthenticated>
                                                         <SwitchAccountContainer
                                                             metaTags={getLoginMeta(maybePreAppIntent)}
+                                                            initialSessionsLength={initialSessionsLength}
+                                                            onGetActiveSessions={handleGetActiveSessions}
                                                             activeSessions={activeSessions}
                                                             toApp={maybePreAppIntent}
                                                             toAppName={toAppName}
@@ -561,7 +564,7 @@ const BasePublicApp = () => {
                                                     ]}
                                                 >
                                                     <SingleSignupSwitchContainer
-                                                        initialSessionsLength={initialSessionsLength}
+                                                        initialSessionsLength={initialSessionsLengthBool}
                                                         hasBFCoupon={hasBFCoupon}
                                                         maybePreAppIntent={maybePreAppIntent}
                                                         initialSearchParams={initialSearchParams}
