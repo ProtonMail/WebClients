@@ -9,7 +9,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import DWMUpsellModal from '@proton/components/components/upsell/modal/types/DWMUpsellModal';
 import BreachModal from '@proton/components/containers/credentialLeak/BreachModal';
 import {
     BREACH_API_ERROR,
@@ -31,13 +31,7 @@ import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 import { getBreaches, updateBreachState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
-import {
-    APP_UPSELL_REF_PATH,
-    DARK_WEB_MONITORING_NAME,
-    MAIL_UPSELL_PATHS,
-    UPSELL_COMPONENT,
-} from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { DARK_WEB_MONITORING_NAME, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import ProtonSentinelPlusLogo from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
 import { useFlag } from '@proton/unleash';
@@ -73,6 +67,7 @@ const BreachAlertsSecurityCenter = () => {
     // upsellCount is the Count returned from reponse that represents the number of breaches a free user has
     const [upsellCount, setUpsellCount] = useState<number | null>(null);
     const breachAlertModal = useModalStateObject();
+    const dwmUpsellModal = useModalStateObject();
 
     const shouldRefreshFlag = baseUseSelector(selectShouldBreachAlertsRefresh);
     const unreadBreachesCount = baseUseSelector(selectUnreadBreachesCount);
@@ -135,19 +130,6 @@ const BreachAlertsSecurityCenter = () => {
         }
     };
 
-    const upsellRef = getUpsellRef({
-        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-        component: UPSELL_COMPONENT.MODAL,
-        feature: MAIL_UPSELL_PATHS.BREACH_ALERTS,
-    });
-    const { onUpgrade } = useUpsellConfig({
-        upsellRef,
-        onSubscribed: () => {
-            void enableBreachAlerts();
-            return;
-        },
-    });
-
     const markAsOpened = async (breach: FetchedBreaches) => {
         try {
             await api(
@@ -160,10 +142,6 @@ const BreachAlertsSecurityCenter = () => {
         } catch (e) {
             handleError(e);
         }
-    };
-
-    const handleToggleOpenSubscriptionModal = () => {
-        onUpgrade?.();
     };
 
     const openBreachModal = () => {
@@ -204,7 +182,7 @@ const BreachAlertsSecurityCenter = () => {
                     if (!isPaid) {
                         return (
                             <FreeUserBreachToggle
-                                onToggleBreaches={handleToggleOpenSubscriptionModal}
+                                onToggleBreaches={() => dwmUpsellModal.openModal(true)}
                                 hasBreach={upsellCount ? upsellCount > 0 : false}
                                 sample={sample}
                                 count={upsellCount}
@@ -295,6 +273,13 @@ const BreachAlertsSecurityCenter = () => {
                             actions.resolve(data);
                         }
                     }}
+                />
+            )}
+            {dwmUpsellModal.render && (
+                <DWMUpsellModal
+                    modalProps={dwmUpsellModal.modalProps}
+                    upsellComponent={UPSELL_COMPONENT.TOGGLE}
+                    onUpgrade={() => enableBreachAlerts()}
                 />
             )}
         </>
