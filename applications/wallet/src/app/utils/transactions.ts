@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type {
     WasmApiWalletAccount,
     WasmBlockchainClient,
+    WasmEmailIntegrationData,
     WasmNetwork,
     WasmPsbt,
     WasmTransactionDetails,
@@ -19,6 +20,7 @@ import {
     type TransactionData,
     type WalletChainDataByWalletId,
     encryptPgp,
+    encryptTransactionMessage,
     encryptWalletDataWithWalletKey,
 } from '@proton/wallet';
 
@@ -188,10 +190,11 @@ export interface BroadcastData
     // BvE data
     message?: {
         content: string;
-        encryptionKeys: PublicKeyReference[];
+        recipients: { email: string; key: PublicKeyReference }[];
     };
     senderAddress?: {
         ID: string;
+        email: string;
         key: DecryptedAddressKey;
     };
     recipients?: SimpleMap<string>;
@@ -233,16 +236,28 @@ export const signAndBroadcastPsbt = async ({
         ? await encryptWalletDataWithWalletKey([noteToSelf], apiWalletData.WalletKey.DecryptedKey).catch(() => [null])
         : [null];
 
-    const getEncryptedBody = async (senderAddressKey: DecryptedAddressKey) => ({
-        body: message?.content
-            ? await encryptPgp(
-                  message.content,
-                  [senderAddressKey.publicKey, ...message.encryptionKeys],
-                  // We don't wanna sign the message if the send is anonymous
-                  isAnonymousSend ? [] : [senderAddressKey.privateKey]
-              ).catch(() => null)
-            : null,
-    });
+    const getEncryptedMessageData = async (senderAddress: {
+        email: string;
+        key: DecryptedAddressKey;
+    }): Promise<Pick<WasmEmailIntegrationData, 'body' | 'message'>> => {
+        // We don't wanna sign the message if the send is anonymous
+        const signingKeys = isAnonymousSend ? [] : [senderAddress.key.privateKey];
+
+        return message?.content
+            ? {
+                  body: await encryptPgp(
+                      message.content,
+                      [senderAddress.key.publicKey, ...compact(message.recipients.map((m) => m.key))],
+                      signingKeys
+                  ).catch(() => null),
+                  message: await encryptTransactionMessage(
+                      message.content,
+                      [{ email: senderAddress.email, key: senderAddress.key.publicKey }, ...message.recipients],
+                      signingKeys
+                  ).catch(() => null),
+              }
+            : { body: null, message: null };
+    };
 
     const transactionData = {
         label: encryptedNoteToSelf,
@@ -259,7 +274,7 @@ export const signAndBroadcastPsbt = async ({
               recipients: (recipients as Record<string, string>) || null,
               is_anonymous: isAnonymousSend ? 1 : 0,
               address_id: senderAddress.ID,
-              ...(await getEncryptedBody(senderAddress.key)),
+              ...(await getEncryptedMessageData(senderAddress)),
           }
         : undefined;
 
