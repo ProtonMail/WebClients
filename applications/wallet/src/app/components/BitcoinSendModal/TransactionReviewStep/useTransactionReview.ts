@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import compact from 'lodash/compact';
 import { c } from 'ttag';
 
-import { useAddressesKeys, useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
 import { useNotifications } from '@proton/components';
 import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
@@ -14,7 +14,6 @@ import { usePsbt } from '../../../hooks/usePsbt';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import type { BtcAddressMap } from '../useEmailAndBtcAddressesMaps';
 
-// Anonymous sender address is discriminated by the absence of a Key field
 export const getAnonymousSenderAddress = () => ({
     Email: c('Wallet send').t`Anonymous sender`,
     ID: ANONYMOUS_SENDER_ADDRESS_ID,
@@ -47,9 +46,7 @@ export const useTransactionReview = ({
     const txBuilderRecipients = txBuilder.getRecipients();
     const { createNotification } = useNotifications();
 
-    const [senderAddress, setSenderAddress] = useState<{ ID: string; key?: DecryptedAddressKey }>();
-
-    const getAddressKeys = useGetAddressKeys();
+    const [senderAddress, setSenderAddress] = useState<{ ID: string; email: string; key?: DecryptedAddressKey }>();
 
     const [message, setMessage] = useState('');
     const [noteToSelf, setNoteToSelf] = useState('');
@@ -77,16 +74,23 @@ export const useTransactionReview = ({
 
     const onSelectAddress = useCallback(
         async (senderAddressId?: string) => {
-            const isAnonymousSend = senderAddress?.ID === ANONYMOUS_SENDER_ADDRESS_ID;
-
             if (senderAddressId) {
-                const addressKeys = isAnonymousSend ? [] : await getAddressKeys(senderAddressId);
-                setSenderAddress({ ID: senderAddressId, key: addressKeys.at(0) });
+                // If address is not found, we use anonymous sender address
+                const address = addresses?.find((a) => a.address.ID === senderAddressId) ?? {
+                    address: getAnonymousSenderAddress(),
+                    keys: undefined,
+                };
+
+                setSenderAddress({
+                    ID: address.address.ID,
+                    email: address.address.Email,
+                    key: address.keys?.at(0),
+                });
             } else {
                 setSenderAddress(undefined);
             }
         },
-        [getAddressKeys, senderAddress?.ID]
+        [addresses]
     );
 
     useEffect(() => {
@@ -108,13 +112,14 @@ export const useTransactionReview = ({
 
     // When user picked anonymous sender, we want to use the fallback address instead of selected one
     const finalSenderAddress = useMemo(() => {
-        const { ID, key } = senderAddress ?? {};
+        const { ID, email, key } = senderAddress ?? {};
 
         // Anonymous sender won't have key
-        if (ID && key) {
+        if (ID && key && email) {
             return {
                 ID,
                 key,
+                email,
             };
         }
 
@@ -140,7 +145,16 @@ export const useTransactionReview = ({
                           recipients: emailAddressByBtcAddress,
                           message: {
                               content: message,
-                              encryptionKeys: compact(recipientsAddresses.map((r) => r.addressKey)),
+                              recipients: compact(
+                                  recipientsAddresses.map((recipient) =>
+                                      recipient.addressKey
+                                          ? {
+                                                email: recipient.recipient.Address,
+                                                key: recipient.addressKey,
+                                            }
+                                          : null
+                                  )
+                              ),
                           },
                       }
                     : {}),

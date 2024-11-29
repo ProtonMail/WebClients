@@ -6,12 +6,13 @@ export const usePrimaryAddressKey = () => {
     const [addresses] = useAddressesKeys();
 
     const primaryAddress = useMemo(() => {
-        const primaryAddressId = addresses?.at(0)?.address.ID;
+        const primaryAddress = addresses?.at(0)?.address;
         const primaryAddressKey = addresses?.at(0)?.keys.at(0);
 
-        if (primaryAddressId && primaryAddressKey) {
+        if (primaryAddress && primaryAddressKey) {
             return {
-                ID: primaryAddressId,
+                ID: primaryAddress.ID,
+                email: primaryAddress.Email,
                 key: primaryAddressKey,
             };
         }
