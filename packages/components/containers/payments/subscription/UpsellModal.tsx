@@ -12,13 +12,6 @@ import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetr
 import { UpsellModalPanel } from './panels/UpsellModalPanel';
 import { useUpsellModal } from './useUpsellModal';
 
-export interface FeedbackDowngradeData {
-    Reason?: string;
-    Feedback?: string;
-    ReasonDetails?: string;
-    Context?: 'vpn' | 'mail';
-}
-
 export type KeepSubscription = {
     status: 'kept';
 };

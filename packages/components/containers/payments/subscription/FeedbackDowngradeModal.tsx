@@ -17,6 +17,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useConfig from '@proton/components/hooks/useConfig';
+import { type FeedbackDowngradeData } from '@proton/shared/lib/api/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -61,13 +62,6 @@ const {
     NOT_WILLING_TO_SHARE,
     OTHER,
 } = SUBSCRIPTION_CANCELLATION_REASONS;
-
-export interface FeedbackDowngradeData {
-    Reason?: string;
-    Feedback?: string;
-    ReasonDetails?: string;
-    Context?: 'vpn' | 'mail';
-}
 
 export type KeepSubscription = {
     status: 'kept';
@@ -176,7 +170,7 @@ const FeedbackDowngradeModal = ({
 
     const sharedReasonDetailsProps = {
         value: model.ReasonDetails,
-        onValue: (value: string) => setModel({ ...model, ReasonDetails: value }),
+        onValue: (value: string) => setModel((model) => ({ ...model, ReasonDetails: value })),
     };
     const reasonDetails: ReasonDetail[] = [
         {
@@ -274,7 +268,7 @@ const FeedbackDowngradeModal = ({
                     id="reason"
                     autoFocus
                     value={model.Reason}
-                    onValue={(value: unknown) => setModel({ ...model, Reason: value as string })}
+                    onValue={(value: unknown) => setModel((model) => ({ ...model, Reason: value as string }))}
                     error={validator([requiredValidator(model.Reason)])}
                 >
                     {options}
@@ -296,7 +290,7 @@ const FeedbackDowngradeModal = ({
                     hint={c('Label').t`Optional`}
                     placeholder={c('Placeholder').t`Share what you think could make ${BRAND_NAME} better`}
                     value={model.Feedback}
-                    onValue={(value: string) => setModel({ ...model, Feedback: value })}
+                    onValue={(value: string) => setModel((model) => ({ ...model, Feedback: value }))}
                 />
             </ModalContent>
             <ModalFooter>
