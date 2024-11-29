@@ -1,25 +1,21 @@
-import { ConnectionCloseReason } from '@proton/docs-proto'
 import type { DocumentMetaInterface, InternalEventBusInterface } from '@proton/docs-shared'
 import { DocumentRole } from '@proton/docs-shared'
 import type { DecryptedNode, DriveCompat, NodeMeta } from '@proton/drive-store'
 import type { LoggerInterface } from '@proton/utils/logs'
-import { Result } from '../../Domain/Result/Result'
-import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
-import type { CreateNewDocument } from '../../UseCase/CreateNewDocument'
-import type { DuplicateDocument } from '../../UseCase/DuplicateDocument'
-import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
-import type { LoadCommit } from '../../UseCase/LoadCommit'
-import type { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
-import type { SquashDocument } from '../../UseCase/SquashDocument'
-import { DocController } from './DocController'
-import { DocControllerEvent } from './DocControllerEvent'
-import { DocumentMeta } from '../../Models/DocumentMeta'
-import type { GetNode } from '../../UseCase/GetNode'
-import type { DocumentStateValues } from '../../State/DocumentState'
-import { DocumentState } from '../../State/DocumentState'
+import { Result } from '../Domain/Result/Result'
+import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
+import type { CreateNewDocument } from '../UseCase/CreateNewDocument'
+import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
+import type { SeedInitialCommit } from '../UseCase/SeedInitialCommit'
+import type { SquashDocument } from '../UseCase/SquashDocument'
+import { AuthenticatedDocController } from './AuthenticatedDocController'
+import { DocumentMeta } from '../Models/DocumentMeta'
+import type { GetNode } from '../UseCase/GetNode'
+import type { DocumentStateValues } from '../State/DocumentState'
+import { DocumentState } from '../State/DocumentState'
 
-describe('DocController', () => {
-  let controller: DocController
+describe('AuthenticatedDocController', () => {
+  let controller: AuthenticatedDocController
   let driveCompat = {
     getNode: jest.fn(),
     trashDocument: jest.fn(),
@@ -39,30 +35,13 @@ describe('DocController', () => {
       decryptedNode: {} as DecryptedNode,
     } as DocumentStateValues)
 
-    controller = new DocController(
+    controller = new AuthenticatedDocController(
       documentState,
       driveCompat as unknown as jest.Mocked<DriveCompat>,
       {} as jest.Mocked<SquashDocument>,
       {} as jest.Mocked<SeedInitialCommit>,
-      {
-        execute: jest.fn().mockReturnValue(
-          Result.ok({
-            numberOfUpdates: jest.fn(),
-            squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array(0)),
-            needsSquash: jest.fn().mockReturnValue(false),
-            byteSize: 0,
-          }),
-        ),
-      } as unknown as jest.Mocked<LoadCommit>,
       {} as jest.Mocked<DuplicateDocument>,
       {} as jest.Mocked<CreateNewDocument>,
-      {
-        execute: jest.fn().mockReturnValue(
-          Result.ok({
-            latestCommitId: jest.fn().mockReturnValue('123'),
-          }),
-        ),
-      } as unknown as jest.Mocked<GetDocumentMeta>,
       {
         execute: jest.fn().mockReturnValue(Result.ok({})),
       } as unknown as jest.Mocked<GetNode>,
@@ -77,77 +56,6 @@ describe('DocController', () => {
         error: console.error,
       } as unknown as jest.Mocked<LoggerInterface>,
     )
-  })
-
-  describe('handle realtime disconnection', () => {
-    it('should refetch commit if disconnect reason is stale commit id', () => {
-      controller.refetchCommitDueToStaleContents = jest.fn()
-
-      controller.handleRealtimeDisconnection(
-        ConnectionCloseReason.create({ code: ConnectionCloseReason.CODES.STALE_COMMIT_ID }),
-      )
-
-      expect(controller.refetchCommitDueToStaleContents).toHaveBeenCalled()
-    })
-  })
-
-  describe('handleCommitIdOutOfSyncEvent', () => {
-    it('should refetch commit', () => {
-      controller.refetchCommitDueToStaleContents = jest.fn()
-
-      controller.handleRealtimeFailedToGetToken('due-to-commit-id-out-of-sync')
-
-      expect(controller.refetchCommitDueToStaleContents).toHaveBeenCalled()
-    })
-  })
-
-  describe('refetchCommitDueToStaleContents', () => {
-    it('should post UnableToResolveCommitIdConflict error if unable to resolve', async () => {
-      controller.logger.error = jest.fn()
-
-      controller._loadCommit.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
-      controller._getDocumentMeta.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
-
-      await controller.refetchCommitDueToStaleContents('rts-disconnect')
-
-      expect(controller.eventBus.publish).toHaveBeenCalledWith({
-        type: DocControllerEvent.UnableToResolveCommitIdConflict,
-        payload: undefined,
-      })
-    })
-
-    it('should not reprocess if already processing', async () => {
-      controller._loadCommit.execute = jest.fn().mockReturnValue(
-        Result.ok({
-          numberOfUpdates: jest.fn(),
-          squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
-          needsSquash: jest.fn().mockReturnValue(false),
-        }),
-      )
-      controller._getDocumentMeta.execute = jest.fn().mockReturnValue(Result.ok({}))
-
-      controller.isRefetchingStaleCommit = true
-
-      await controller.refetchCommitDueToStaleContents('rts-disconnect')
-
-      expect(controller._loadCommit.execute).not.toHaveBeenCalled()
-    })
-
-    it('should re-set the initial commit if commit is successfully resolved', async () => {
-      controller._loadCommit.execute = jest.fn().mockReturnValue(
-        Result.ok({
-          numberOfUpdates: jest.fn().mockReturnValue(0),
-          needsSquash: jest.fn().mockReturnValue(false),
-          squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
-        }),
-      )
-
-      documentState.setProperty = jest.fn()
-
-      await controller.refetchCommitDueToStaleContents('rts-disconnect')
-
-      expect(documentState.setProperty).toHaveBeenCalledWith('baseCommit', expect.anything())
-    })
   })
 
   describe('handleEditorProvidingInitialConversionContent', () => {

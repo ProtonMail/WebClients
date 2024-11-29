@@ -1,3 +1,4 @@
+import { getCanWrite } from '@proton/shared/lib/drive/permissions'
 import { Result } from '../Domain/Result/Result'
 import { DocumentRole, type DocumentMetaInterface } from '@proton/docs-shared'
 import type { NodeMeta, PublicNodeMeta, DecryptedNode } from '@proton/drive-store'
@@ -100,14 +101,23 @@ export class LoadDocument {
     }
   }
 
-  async executePublic(nodeMeta: PublicNodeMeta): Promise<Result<LoadDocumentResult<PublicDocumentEntitlements>>> {
+  async executePublic(
+    nodeMeta: PublicNodeMeta,
+    publicEditingEnabled: boolean,
+  ): Promise<Result<LoadDocumentResult<PublicDocumentEntitlements>>> {
     if (!this.compatWrapper.publicCompat) {
       return Result.fail('Public drive compat not found')
     }
 
+    const decryptedNode = this.compatWrapper.publicCompat.decryptedNode
+    const permissions = this.compatWrapper.publicCompat.permissions
+
+    if (!decryptedNode || !permissions) {
+      return Result.fail('Decrypted node or permissions not yet loaded')
+    }
+
     try {
-      const [nodeResult, keysResult, fetchResult] = await Promise.all([
-        this.getNode.execute(nodeMeta),
+      const [keysResult, fetchResult] = await Promise.all([
         this.compatWrapper.publicCompat.getDocumentKeys(nodeMeta).catch((error) => {
           throw new Error(`Failed to load public keys: ${error}`)
         }),
@@ -125,8 +135,7 @@ export class LoadDocument {
         return Result.fail('Document meta not found')
       }
 
-      const node = nodeResult.getValue().node
-      const decryptedMeta = serverBasedMeta.copyWithNewValues({ name: node.name })
+      const decryptedMeta = serverBasedMeta.copyWithNewValues({ name: decryptedNode.name })
 
       if (!keysResult) {
         return Result.fail('Unable to load all necessary data')
@@ -146,9 +155,19 @@ export class LoadDocument {
 
       const doesHaveAccessToDoc = !authenticatedMetaAttempt.isFailed()
 
+      const role = (() => {
+        if (publicEditingEnabled && getCanWrite(permissions)) {
+          return new DocumentRole('PublicEditor')
+        }
+        if (doesHaveAccessToDoc) {
+          return new DocumentRole('PublicViewerWithAccess')
+        }
+        return new DocumentRole('PublicViewer')
+      })()
+
       const entitlements: PublicDocumentEntitlements = {
         keys: keysResult,
-        role: new DocumentRole(doesHaveAccessToDoc ? 'PublicViewerWithAccess' : 'PublicViewer'),
+        role,
       }
 
       const latestCommitId = serverBasedMeta.latestCommitId()
@@ -168,7 +187,7 @@ export class LoadDocument {
         this.logger.info(`Downloaded and decrypted commit with ${decryptedCommit?.numberOfUpdates()} updates`)
       }
 
-      return Result.ok({ entitlements, meta: decryptedMeta, node: node, decryptedCommit })
+      return Result.ok({ entitlements, meta: decryptedMeta, node: decryptedNode, decryptedCommit })
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to load document')
     }

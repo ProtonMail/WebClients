@@ -1,34 +1,39 @@
-import type {
-  CommentInterface,
-  CommentThreadInterface,
-  CommentControllerInterface,
-  ClientRequiresEditorMethods,
-  RtsMessagePayload,
-  BroadcastSource,
-  DataTypesThatDocumentCanBeExportedAs,
-  InternalEventBusInterface,
-  SuggestionSummaryType,
-  EditorEventData,
-  EditorEvent,
+import {
+  type CommentInterface,
+  type CommentThreadInterface,
+  type CommentControllerInterface,
+  type ClientRequiresEditorMethods,
+  type RtsMessagePayload,
+  type BroadcastSource,
+  type DataTypesThatDocumentCanBeExportedAs,
+  type InternalEventBusInterface,
+  type SuggestionSummaryType,
+  type EditorEventData,
+  type EditorEvent,
+  type DocsAwarenessStateChangeData,
+  DocAwarenessEvent,
 } from '@proton/docs-shared'
 import type { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
-import type { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
 import type { UserState } from '@lexical/yjs'
 import type { DocsApi } from '../../Api/DocsApi'
 import { PostApplicationError } from '../../Application/ApplicationEvent'
-import type { PublicDocControllerInterface } from '../../Controller/Document/PublicDocControllerInterface'
-import { isPrivateDocController } from '../../Controller/Document/isPrivateDocController'
-import type { EditorControllerInterface } from '../../Controller/Document/EditorController'
-import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
+import type { EditorControllerInterface } from '../../EditorController/EditorController'
+import { isDocumentState, type DocumentState, type PublicDocumentState } from '../../State/DocumentState'
+import { DocParticipantTracker } from '../../ParticipantTracker/DocParticipantTracker'
 
 /**
  * Exposes a unified interface for interacting with a document to the editor bridge,
  * without exposing access to the direct services/controllers.
  */
 export class EditorOrchestrator implements EditorOrchestratorInterface {
+  readonly participantTracker = new DocParticipantTracker(this.documentState)
+
+  public userAddress = isDocumentState(this.documentState)
+    ? this.documentState.getProperty('entitlements').keys.userOwnAddress
+    : 'anonymous-proton@docs.proton.me'
+
   constructor(
     private readonly comments: CommentControllerInterface | undefined,
-    private readonly docs: DocControllerInterface | PublicDocControllerInterface,
     private readonly docsApi: DocsApi,
     private readonly eventBus: InternalEventBusInterface,
     private readonly editor: EditorControllerInterface,
@@ -41,18 +46,6 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     }
 
     return this.editor.exportAndDownload(format)
-  }
-
-  get userAddress(): string {
-    if (!isPrivateDocController(this.docs)) {
-      return 'Public Viewer'
-    }
-
-    if (!this.docs.userAddress) {
-      throw new Error('User address not yet available')
-    }
-
-    return this.docs.userAddress
   }
 
   editorReportingError(error: string, extraInfo: { irrecoverable?: boolean; lockEditor?: boolean }): void {
@@ -223,12 +216,15 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.comments.deleteThread(id)
   }
 
-  handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
-    if (!isPrivateDocController(this.docs)) {
-      throw new Error('Attempting to use function only available to private doc controller')
-    }
+  async handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
+    this.participantTracker.updateParticipantsFromUserStates(states)
 
-    return this.docs.handleAwarenessStateUpdate(states)
+    this.eventBus.publish<DocsAwarenessStateChangeData>({
+      type: DocAwarenessEvent.AwarenessStateChange,
+      payload: {
+        states,
+      },
+    })
   }
 
   async fetchExternalImageAsBase64(url: string): Promise<string | undefined> {

@@ -1,6 +1,6 @@
 import type { GetNode } from './../../UseCase/GetNode'
 import type { LoggerInterface } from '@proton/utils/logs'
-import { DocController } from '../../Controller/Document/DocController'
+import { AuthenticatedDocController } from '../../AuthenticatedDocController/AuthenticatedDocController'
 import type { SquashDocument } from '../../UseCase/SquashDocument'
 import type { InternalEventBusInterface, CommentControllerInterface } from '@proton/docs-shared'
 import type { EncryptComment } from '../../UseCase/EncryptComment'
@@ -17,7 +17,7 @@ import type { CreateThread } from '../../UseCase/CreateThread'
 import type { LoadThreads } from '../../UseCase/LoadThreads'
 import type { DocLoaderInterface } from './DocLoaderInterface'
 import type { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorInterface'
-import type { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
+import type { AuthenticatedDocControllerInterface } from '../../AuthenticatedDocController/AuthenticatedDocControllerInterface'
 import { CommentController } from '../Comments/CommentController'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import type { LoadCommit } from '../../UseCase/LoadCommit'
@@ -25,21 +25,21 @@ import type { DocsApi } from '../../Api/DocsApi'
 import type { MetricService } from '../Metrics/MetricService'
 import metrics from '@proton/metrics'
 import { metricsBucketNumberForUpdateCount } from '../../Util/bucketNumberForUpdateCount'
-import type { EditorControllerInterface } from '../../Controller/Document/EditorController'
-import { EditorController } from '../../Controller/Document/EditorController'
+import type { EditorControllerInterface } from '../../EditorController/EditorController'
+import { EditorController } from '../../EditorController/EditorController'
 import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
-import { RealtimeController } from '../../Controller/Realtime/RealtimeController'
+import { RealtimeController } from '../../RealtimeController/RealtimeController'
 import { DocumentState } from '../../State/DocumentState'
 import type { UserState } from '../../State/UserState'
 import type { DocLoaderStatusObserver } from './StatusObserver'
 
-export class DocLoader implements DocLoaderInterface<DocumentState, DocControllerInterface> {
-  private docController?: DocControllerInterface
+export class DocLoader implements DocLoaderInterface<DocumentState> {
+  private docController?: AuthenticatedDocControllerInterface
   private editorController?: EditorControllerInterface
   private commentsController?: CommentControllerInterface
   private orchestrator?: EditorOrchestratorInterface
   private documentState?: DocumentState
-  private readonly statusObservers: DocLoaderStatusObserver<DocumentState, DocControllerInterface>[] = []
+  private readonly statusObservers: DocLoaderStatusObserver<DocumentState>[] = []
 
   constructor(
     private userState: UserState,
@@ -104,15 +104,13 @@ export class DocLoader implements DocLoaderInterface<DocumentState, DocControlle
     const editorController = new EditorController(this.logger, this.exportAndDownload, documentState)
     this.editorController = editorController
 
-    const controller = new DocController(
+    const controller = new AuthenticatedDocController(
       documentState,
       this.driveCompat,
       this.squashDoc,
       this.createInitialCommit,
-      this.loadCommit,
       this.duplicateDocument,
       this.createNewDocument,
-      this.getDocumentMeta,
       this.getNode,
       this.eventBus,
       this.logger,
@@ -120,8 +118,15 @@ export class DocLoader implements DocLoaderInterface<DocumentState, DocControlle
 
     this.docController = controller
 
-    const realtime = new RealtimeController(this.websocketSerivce, this.eventBus, documentState, this.logger)
-    realtime.initializeConnection(entitlements)
+    const realtime = new RealtimeController(
+      this.websocketSerivce,
+      this.eventBus,
+      documentState,
+      this.loadCommit,
+      this.getDocumentMeta,
+      this.logger,
+    )
+    realtime.initializeConnection()
 
     this.commentsController = new CommentController(
       this.userState,
@@ -140,7 +145,6 @@ export class DocLoader implements DocLoaderInterface<DocumentState, DocControlle
 
     this.orchestrator = new EditorOrchestrator(
       this.commentsController,
-      this.docController,
       this.docsApi,
       this.eventBus,
       this.editorController,
@@ -170,7 +174,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState, DocControlle
     })
   }
 
-  public addStatusObserver(observer: DocLoaderStatusObserver<DocumentState, DocControllerInterface>): () => void {
+  public addStatusObserver(observer: DocLoaderStatusObserver<DocumentState>): () => void {
     this.statusObservers.push(observer)
 
     if (this.orchestrator && this.docController && this.editorController && this.documentState) {

@@ -8,8 +8,8 @@ import { usePublicDocumentCopying } from '../Hooks/usePublicDocumentCopying'
 import { useDocsContext } from '../../../Containers/ContextProvider'
 import { Button } from '@proton/atoms/index'
 import EncryptedBanner from '@proton/styles/assets/img/docs/encrypted-bg.png'
-import type { PublicDocumentState } from '@proton/docs-core/lib/State/DocumentState'
-import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
+import type { PublicDocumentState } from '@proton/docs-core'
+import type { EditorControllerInterface } from '@proton/docs-core'
 
 type Props = {
   editorController: EditorControllerInterface

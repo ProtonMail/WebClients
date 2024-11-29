@@ -1,4 +1,4 @@
-import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../../Models/Constants'
+import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../Models/Constants'
 
 export class DocSizeTracker {
   private currentSize = 0

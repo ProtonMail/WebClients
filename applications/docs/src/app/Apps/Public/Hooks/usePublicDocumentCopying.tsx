@@ -8,7 +8,7 @@ import {
   type PublicDocumentPostMessageDataForCopying,
   PublicDocumentPostMessageEvent,
 } from './PublicDocumentPostMessageEvents'
-import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
+import type { EditorControllerInterface } from '@proton/docs-core'
 import type { PublicDocumentState } from '@proton/docs-core'
 
 export const usePublicDocumentCopying = ({

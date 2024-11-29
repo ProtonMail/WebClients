@@ -3,7 +3,7 @@ import { useApplication } from '../Containers/ApplicationProvider'
 import { mergeRegister } from '@lexical/utils'
 import type { WebsocketConnectionEventPayloads, WebsocketConnectionEventStatusChange } from '@proton/docs-core'
 import { WebsocketConnectionEvent } from '@proton/docs-core'
-import type { NodeMeta } from '@proton/drive-store'
+import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import { areNodeMetasEqual } from '@proton/drive-store/lib/interface'
 import type { ConnectionCloseReason } from '@proton/docs-proto'
 
@@ -21,7 +21,7 @@ type WebsocketStatus = {
  */
 const MINIMUM_DURATION_SAVING_MUST_BE_SHOWN = 1000
 
-export function useWebSocketStatus(document?: NodeMeta) {
+export function useWebSocketStatus(document?: NodeMeta | PublicNodeMeta) {
   const application = useApplication()
 
   const [currentStatus, setCurrentStatus] = useState<WebsocketStatus>({})
