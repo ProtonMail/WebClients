@@ -35,7 +35,8 @@ export type UpsellFeatureName =
     | 'storage-by-plan'
     | 'breach-alerts'
     | 'password-health'
-    | 'account-protection';
+    | 'account-protection'
+    | 'more-premium-features';
 
 const domain = 'proton.me';
 // Dirty fix because we cannot add twice the same variable in a string with ttag
@@ -168,5 +169,9 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature | UpsellFea
     'account-protection': {
         icon: 'user',
         getText: () => c('new_plans: feature').t`Advanced account protection`,
+    },
+    'more-premium-features': {
+        icon: 'checkmark',
+        getText: () => c('new_plans: feature').t`10 more premium features`,
     },
 };
