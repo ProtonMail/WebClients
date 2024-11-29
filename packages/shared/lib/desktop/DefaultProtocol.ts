@@ -2,6 +2,11 @@ import { z } from 'zod';
 
 const zUnixTime = z.number();
 
+export const zIsDefaultProtocol = z.enum(['true', 'false', 'unknown']);
+export type IsDefaultProtocolReport = z.infer<typeof zIsDefaultProtocol>;
+export const zDefaultProtocolChanged = z.enum(['yes_to_no', 'no_to_yes', 'no_change']);
+export type IsDefaultProtocolChangedReport = z.infer<typeof zDefaultProtocolChanged>;
+
 const zDefaultProtocolActual = z.object({
     isDefault: z.boolean(),
     wasChecked: z.boolean(),

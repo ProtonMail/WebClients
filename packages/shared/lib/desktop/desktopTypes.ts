@@ -4,6 +4,7 @@ import type { HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson } from '@proto
 import type { Environment } from '@proton/shared/lib/interfaces';
 
 import type { ColorScheme, ThemeSetting } from '../themes/themes';
+import { type DailyStatsStored, zDailyStatsReport } from './DailyStats';
 import { type DefaultProtocol, zDefaultProtocol } from './DefaultProtocol';
 import type { AppVersion, DesktopVersion } from './DesktopVersion';
 
@@ -30,14 +31,16 @@ export type IPCInboxDesktopFeature =
     | 'ESUserChoice'
     | 'FullTheme'
     | 'StoreVersion'
-    | 'HeartbeatMetrics';
+    | 'HeartbeatMetrics'
+    | 'StatsTelemetry';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
     | { type: 'installSource'; result: string | null }
     | { type: 'defaultMailto'; result: DefaultProtocol }
     | { type: 'colorScheme'; result: ColorScheme }
-    | { type: 'getAllAppVersions'; result: string };
+    | { type: 'getAllAppVersions'; result: string }
+    | { type: 'dailyStats'; result: DailyStatsStored };
 export type IPCInboxGetUserInfoMessage = { type: 'esUserChoice'; result: ESUserChoice };
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
@@ -54,14 +57,16 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'setTheme'; payload: ThemeSetting }
     | { type: 'earlyAccess'; payload: Environment | undefined }
     | { type: 'checkDefaultMailtoAndSignal'; payload?: undefined }
+    | { type: 'checkDailyStatsAndSignal'; payload?: undefined }
     | { type: 'defaultMailtoTelemetryReported'; payload: number }
+    | { type: 'dailyStatsReported'; payload: number }
     | { type: 'setESUserChoice'; payload: { userID: string; userChoice: boolean } }
     | { type: 'storeAppVersion'; payload: AppVersion }
     | { type: 'triggerCrash'; payload?: undefined }
     | { type: 'metricsListenerChanged'; payload: 'ready' | 'removed' };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
-export const IPCInboxHostUpdateMessageSchema = z.union([
+export const IPCInboxHostUpdateMessageSchema = z.discriminatedUnion('type', [
     z.object({
         type: z.literal('captureMessage'),
         payload: z.object({
@@ -74,6 +79,10 @@ export const IPCInboxHostUpdateMessageSchema = z.union([
     z.object({
         type: z.literal('defaultMailtoChecked'),
         payload: zDefaultProtocol,
+    }),
+    z.object({
+        type: z.literal('dailyStatsChecked'),
+        payload: zDailyStatsReport,
     }),
     z.object({
         type: z.literal('sentHeartbeatMetrics'),
