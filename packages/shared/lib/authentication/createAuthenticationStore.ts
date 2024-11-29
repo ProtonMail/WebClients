@@ -1,10 +1,8 @@
 import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
 import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 
-import { SSO_PATHS } from '../constants';
-import { stripLeadingAndTrailingSlash } from '../helpers/string';
 import { appMode } from '../webpack.constants';
-import { getBasename, getLocalIDFromPathname, stripLocalBasenameFromPathname } from './pathnameHelper';
+import { getBasename, getLocalIDFromPathname, getParsedPathWithoutLocalIDBasename } from './pathnameHelper';
 import { getPersistedSession } from './persistedSessionStorage';
 
 const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
@@ -14,23 +12,6 @@ const PERSIST_SESSION_KEY = 'proton:persistSession';
 const TRUST_SESSION_KEY = 'proton:trustSession';
 const CLIENT_KEY_KEY = 'proton:clientKey';
 const OFFLINE_KEY_KEY = 'proton:offlineKey';
-
-const getIsSSOPath = (pathname: string) => {
-    const strippedPathname = `/${stripLeadingAndTrailingSlash(pathname)}`;
-    return Object.values(SSO_PATHS).some((path) => strippedPathname.startsWith(path));
-};
-
-export const getParsedPathWithoutLocalIDBasename = (url: string) => {
-    try {
-        const { pathname, hash, search } = new URL(url, window.location.origin);
-        if (getIsSSOPath(pathname)) {
-            return '';
-        }
-        return `${stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(pathname))}${search}${hash}`;
-    } catch (e: any) {
-        return '';
-    }
-};
 
 const getPath = (basename: string | undefined, oldUrl: string, requestedPath?: string) => {
     return [
@@ -60,10 +41,6 @@ const getInitialState = (mode: 'sso' | 'standalone', oldUID?: string, oldLocalID
         };
     }
     const { pathname } = window.location;
-    if (getIsSSOPath(pathname)) {
-        // Special routes which should never be logged in
-        return defaultAuthData;
-    }
     const localID = getLocalIDFromPathname(pathname);
     if (localID === undefined) {
         return defaultAuthData;
