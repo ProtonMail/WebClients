@@ -43,3 +43,12 @@ export const stripLocalBasenameFromPathname = (pathname: string): string => {
 
     return `/${strippedPathname}`;
 };
+
+export const getParsedPathWithoutLocalIDBasename = (url: string) => {
+    try {
+        const { pathname, hash, search } = new URL(url, window.location.origin);
+        return `${stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(pathname))}${search}${hash}`;
+    } catch (e: any) {
+        return '';
+    }
+};
