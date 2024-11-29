@@ -7460,7 +7460,7 @@ __metadata:
     cross-fetch: "npm:^4.0.0"
     date-fns: "npm:^2.30.0"
     docx-preview: "npm:^0.3.3"
-    dompurify: "npm:^3.2.1"
+    dompurify: "npm:^3.2.2"
     emoji-mart: "npm:^5.1.0"
     eslint: "npm:^8.57.1"
     formik: "npm:^2.4.6"
@@ -7678,7 +7678,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
-    "@types/jasmine": "npm:^5.1.4"
+    "@types/jasmine": "npm:^5.1.5"
     eslint: "npm:^8.57.1"
     eslint-plugin-jasmine: "npm:^4.2.2"
     idb: "npm:^8.0.0"
@@ -7804,7 +7804,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@types/jasmine": "npm:^5.1.4"
+    "@types/jasmine": "npm:^5.1.5"
     "@types/pkijs": "npm:0.0.14"
     eslint: "npm:^8.57.1"
     eslint-plugin-jasmine: "npm:^4.2.2"
@@ -8140,7 +8140,7 @@ __metadata:
     "@scure/base": "npm:^1.2.1"
     "@sentry/browser": "npm:^7.120.0"
     "@types/dompurify": "npm:^3.2.0"
-    "@types/jasmine": "npm:^5.1.4"
+    "@types/jasmine": "npm:^5.1.5"
     "@types/karma-junit-reporter": "npm:^2.0.4"
     "@types/node": "npm:^22.10.1"
     "@types/papaparse": "npm:^5.3.15"
@@ -8148,7 +8148,7 @@ __metadata:
     "@types/webpack-env": "npm:^1.18.5"
     "@webgpu/types": "npm:^0.1.51"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.2.1"
+    dompurify: "npm:^3.2.2"
     eslint: "npm:^8.57.1"
     eslint-plugin-jasmine: "npm:^4.2.2"
     file-saver: "npm:^2.0.5"
@@ -12066,10 +12066,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jasmine@npm:^5.1.4":
-  version: 5.1.4
-  resolution: "@types/jasmine@npm:5.1.4"
-  checksum: 10c0/4b8d27182e62f5003db1f1f174a810ace704e411cbfd0bc41edbaacf307246aec1f9bd20812846700198fc881268834ffde1d5301f819b1ba7caac9662534ceb
+"@types/jasmine@npm:^5.1.5":
+  version: 5.1.5
+  resolution: "@types/jasmine@npm:5.1.5"
+  checksum: 10c0/904a2a6bfe7478478ec73d502708dc4b4cc46fa554c459cee3e0be01efda96fba7d26ef8bec2f246d9163cc517407b135acabcf6f076c11aa514ed9b79bc67e5
   languageName: node
   linkType: hard
 
@@ -20781,15 +20781,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:*, dompurify@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "dompurify@npm:3.2.1"
+"dompurify@npm:*, dompurify@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "dompurify@npm:3.2.2"
   dependencies:
     "@types/trusted-types": "npm:^2.0.7"
   dependenciesMeta:
     "@types/trusted-types":
       optional: true
-  checksum: 10c0/c40c441813071ebdc06f843dce6f22109d30f14525e710c8b117ef54430358617d4e7910a26fc09b387aa5890d1f510b242b605b0282ed1fb7a4d5104c75e223
+  checksum: 10c0/04fa1509a75c6c1dfc1f00c579253bd4781e291836176578927f5cb683dc904175c4fb71f9c40438b0b4b13fc306f79922d220200f3bd01eabe12727588afd1f
   languageName: node
   linkType: hard
 
@@ -21100,16 +21100,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:33.2.0":
-  version: 33.2.0
-  resolution: "electron@npm:33.2.0"
+"electron@npm:33.2.1":
+  version: 33.2.1
+  resolution: "electron@npm:33.2.1"
   dependencies:
     "@electron/get": "npm:^2.0.0"
     "@types/node": "npm:^20.9.0"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: 10c0/ad013bcc4fe65f6e0f40b77387452966347d4fb54acc8d8d7b0310244f73511a7ac87e03e1097970f83b94bcafc44e0b98a4c603daa9c95e11931d7c020ff155
+  checksum: 10c0/25111ab9b48bf95a24b916292c8d4f4d05309b12823d5e942636f377a8033c9c47d466f686895bfe4619b80d222470a439d9b0227516740c8e19fa14991b880b
   languageName: node
   linkType: hard
 
@@ -25503,14 +25503,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:^15.11.6":
-  version: 15.11.6
-  resolution: "happy-dom@npm:15.11.6"
+"happy-dom@npm:^15.11.7":
+  version: 15.11.7
+  resolution: "happy-dom@npm:15.11.7"
   dependencies:
     entities: "npm:^4.5.0"
     webidl-conversions: "npm:^7.0.0"
     whatwg-mimetype: "npm:^3.0.0"
-  checksum: 10c0/28c484c570ddbe84202c0c9e1b0da982a92e398976eacfa07ae837e4c4684bfd6e7755b9f1c629c3319cdac4fb2484550fe4527570f03cf5d753575edf553d19
+  checksum: 10c0/22b08cac20192b08edf2e9c857ceeda8333a3301c4b5965a9550787b00db60d6d107c726390bd45a35305cd12ab086abd656bf957a408be0fcdc9fcd389f1973
   languageName: node
   linkType: hard
 
@@ -35583,7 +35583,7 @@ __metadata:
     babel-plugin-transform-require-context: "npm:^0.1.1"
     cross-env: "npm:^7.0.3"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.2.1"
+    dompurify: "npm:^3.2.2"
     eslint: "npm:^8.57.1"
     eslint-plugin-testing-library: "npm:^6.5.0"
     jest: "npm:^29.7.0"
@@ -35959,7 +35959,7 @@ __metadata:
     babel-plugin-transform-require-context: "npm:^0.1.1"
     cross-env: "npm:^7.0.3"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.2.1"
+    dompurify: "npm:^3.2.2"
     eslint: "npm:^8.57.1"
     eslint-config-airbnb-typescript: "npm:^18.0.0"
     eslint-config-prettier: "npm:^9.1.0"
@@ -36008,7 +36008,7 @@ __metadata:
     "@proton/pack": "workspace:^"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^7.0.3"
-    electron: "npm:33.2.0"
+    electron: "npm:33.2.1"
     electron-log: "npm:^5.2.3"
     electron-store: "npm:^8.2.0"
     eslint: "npm:^8.57.1"
@@ -36225,7 +36225,7 @@ __metadata:
     chart.js: "npm:^4.4.6"
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.57.1"
-    happy-dom: "npm:^15.11.6"
+    happy-dom: "npm:^15.11.7"
     jsqr: "npm:^1.4.0"
     lodash: "npm:^4.17.21"
     path-browserify: "npm:^1.0.1"
@@ -39088,7 +39088,7 @@ __metadata:
     sort-package-json: "npm:^2.12.0"
     stylelint-config-standard-scss: "npm:^10.0.0"
     stylelint-use-logical-spec: "npm:^5.0.1"
-    turbo: "npm:^2.3.2"
+    turbo: "npm:^2.3.3"
     typescript: "npm:^5.7.2"
   languageName: unknown
   linkType: soft
@@ -42712,58 +42712,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo-darwin-64@npm:2.3.2":
-  version: 2.3.2
-  resolution: "turbo-darwin-64@npm:2.3.2"
+"turbo-darwin-64@npm:2.3.3":
+  version: 2.3.3
+  resolution: "turbo-darwin-64@npm:2.3.3"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-darwin-arm64@npm:2.3.2":
-  version: 2.3.2
-  resolution: "turbo-darwin-arm64@npm:2.3.2"
+"turbo-darwin-arm64@npm:2.3.3":
+  version: 2.3.3
+  resolution: "turbo-darwin-arm64@npm:2.3.3"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-64@npm:2.3.2":
-  version: 2.3.2
-  resolution: "turbo-linux-64@npm:2.3.2"
+"turbo-linux-64@npm:2.3.3":
+  version: 2.3.3
+  resolution: "turbo-linux-64@npm:2.3.3"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm64@npm:2.3.2":
-  version: 2.3.2
-  resolution: "turbo-linux-arm64@npm:2.3.2"
+"turbo-linux-arm64@npm:2.3.3":
+  version: 2.3.3
+  resolution: "turbo-linux-arm64@npm:2.3.3"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-windows-64@npm:2.3.2":
-  version: 2.3.2
-  resolution: "turbo-windows-64@npm:2.3.2"
+"turbo-windows-64@npm:2.3.3":
+  version: 2.3.3
+  resolution: "turbo-windows-64@npm:2.3.3"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-windows-arm64@npm:2.3.2":
-  version: 2.3.2
-  resolution: "turbo-windows-arm64@npm:2.3.2"
+"turbo-windows-arm64@npm:2.3.3":
+  version: 2.3.3
+  resolution: "turbo-windows-arm64@npm:2.3.3"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo@npm:^2.3.2":
-  version: 2.3.2
-  resolution: "turbo@npm:2.3.2"
+"turbo@npm:^2.3.3":
+  version: 2.3.3
+  resolution: "turbo@npm:2.3.3"
   dependencies:
-    turbo-darwin-64: "npm:2.3.2"
-    turbo-darwin-arm64: "npm:2.3.2"
-    turbo-linux-64: "npm:2.3.2"
-    turbo-linux-arm64: "npm:2.3.2"
-    turbo-windows-64: "npm:2.3.2"
-    turbo-windows-arm64: "npm:2.3.2"
+    turbo-darwin-64: "npm:2.3.3"
+    turbo-darwin-arm64: "npm:2.3.3"
+    turbo-linux-64: "npm:2.3.3"
+    turbo-linux-arm64: "npm:2.3.3"
+    turbo-windows-64: "npm:2.3.3"
+    turbo-windows-arm64: "npm:2.3.3"
   dependenciesMeta:
     turbo-darwin-64:
       optional: true
@@ -42779,7 +42779,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: 10c0/bfcafa2bcdc50f25c82fb1e6b0db2e821bcbb1f40ff5adb6f7f1f94d71392802f267fe51b1cab93c2bd280c3fd05d520bfe273a49c8e3bf6ed7bd3491bdcae2d
+  checksum: 10c0/9aab52fb868a2b6246f41fe2343dec56c70252a9cb7729a3ea183458cfa728c1445d1b98882dd43542f0ffd46524e8ba7776fe0925e31a86904b113222778fa5
   languageName: node
   linkType: hard
 
