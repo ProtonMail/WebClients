@@ -1,31 +1,17 @@
 import type { FC } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { ModalTwoFooter, ModalTwoHeader } from '@proton/components/index';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useInAppNotification } from '@proton/pass/components/Notifications/InAppNotificationProvider';
-import { selectNextNotification } from '@proton/pass/store/selectors';
-import { InAppNotificationCtaType, InAppNotificationState } from '@proton/pass/types';
+import { withInAppNotification } from '@proton/pass/components/Notifications/WithInAppNotification';
+import { InAppNotificationState } from '@proton/pass/types';
 
 import './InAppNotificationModal.scss';
 
-export const InAppNotificationModal: FC = () => {
-    const { changeNotificationState } = useInAppNotification();
-    const { onLink } = usePassCore();
-    const notification = useSelector(selectNextNotification)!;
-
-    const navigateToUrl = () => {
-        onLink(notification.content.cta!.ref, {
-            replace: notification.content.cta!.type === InAppNotificationCtaType.internal_navigation,
-        });
-        changeNotificationState(notification.id, InAppNotificationState.READ);
-    };
-
-    return (
+export const InAppNotificationModal: FC = withInAppNotification(
+    ({ changeNotificationState, navigateToUrl, notification }) => (
         <PassModal size="small" open>
             <ModalTwoHeader
                 hasClose={false}
@@ -34,7 +20,7 @@ export const InAppNotificationModal: FC = () => {
                     <div className="flex items-center justify-center gap-5 mt-2">
                         {notification.content.imageUrl && (
                             <img
-                                className="image-border mt-2 w-full rounded-lg"
+                                className="in-app-notification--image-border mt-2 w-full rounded-lg"
                                 src={notification.content.imageUrl}
                                 alt=""
                             />
@@ -66,5 +52,5 @@ export const InAppNotificationModal: FC = () => {
                 </Button>
             </ModalTwoFooter>
         </PassModal>
-    );
-};
+    )
+);
