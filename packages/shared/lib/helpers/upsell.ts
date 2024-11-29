@@ -43,7 +43,8 @@ export type SourceEventUpsell =
     | 'BUTTON_SENTINEL'
     | 'BUTTON_SCRIBE'
     | 'BUTTON_ZOOM'
-    | 'STATE_ACCOUNT_LOCKED';
+    | 'STATE_ACCOUNT_LOCKED'
+    | 'BUTTON_DWM';
 
 export const sendRequestUpsellModalReport = ({
     api,

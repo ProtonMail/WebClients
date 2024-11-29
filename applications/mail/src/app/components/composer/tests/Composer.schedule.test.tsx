@@ -11,6 +11,7 @@ import { enUS } from 'date-fns/locale';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
+import { mockPlansApi } from '@proton/components/hooks/helpers/test';
 import { FeatureCode } from '@proton/features';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -99,6 +100,7 @@ describe('Composer scheduled messages', () => {
     beforeEach(() => {
         clearAll();
         addApiMock('core/v4/features/SpotlightScheduledSend/value', jest.fn, 'put');
+        mockPlansApi();
     });
     afterEach(() => {
         jest.useRealTimers();

@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import {
     AutoDeleteUpsellModal,
+    DWMUpsellModal,
     EditLabelModal,
     LabelsUpsellModal,
     PmMeUpsellModal,
-    ProtonSentinelUpsellModal,
     useApi,
     useEventManager,
     useModalStateObject,
@@ -60,9 +60,9 @@ const useTipConfig = ({ actionType }: Props) => {
     const labelsUpsellModal = useModalStateObject();
     const createLabelModal = useModalStateObject();
     const autoDeleteUpsellModal = useModalStateObject();
-    const protonSentinelUpsellModal = useModalStateObject();
     const increasePrivacyUpsellModal = useModalStateObject();
     const pmMeUpsellModal = useModalStateObject();
+    const dwmUpsellModal = useModalStateObject();
 
     const renderFolderModals = () => {
         return (
@@ -144,25 +144,22 @@ const useTipConfig = ({ actionType }: Props) => {
         );
     };
 
-    const renderProtonSentialModal = () => {
-        return (
-            <>
-                {protonSentinelUpsellModal.render && (
-                    <ProtonSentinelUpsellModal
-                        modalProps={protonSentinelUpsellModal.modalProps}
-                        upsellComponent={UPSELL_COMPONENT.TIP}
-                    />
-                )}
-            </>
-        );
-    };
-
     const renderPmMeUpsellModal = () => {
         return (
             <>
                 {authModal}
                 {pmMeUpsellModal.render && (
                     <PmMeUpsellModal modalProps={pmMeUpsellModal.modalProps} upsellComponent={UPSELL_COMPONENT.TIP} />
+                )}
+            </>
+        );
+    };
+
+    const renderDWMUpsellModal = () => {
+        return (
+            <>
+                {dwmUpsellModal.render && (
+                    <DWMUpsellModal modalProps={dwmUpsellModal.modalProps} upsellComponent={UPSELL_COMPONENT.TIP} />
                 )}
             </>
         );
@@ -181,7 +178,7 @@ const useTipConfig = ({ actionType }: Props) => {
             case TipActionType.CreateEmailAddress:
                 return renderIncreasePrivacyModal();
             case TipActionType.EnableDarkWebMonitoring:
-                return renderProtonSentialModal();
+                return renderDWMUpsellModal();
             default:
                 return undefined;
         }
@@ -277,7 +274,7 @@ const useTipConfig = ({ actionType }: Props) => {
                 break;
             case TipActionType.EnableDarkWebMonitoring:
                 if (!isUserEligible) {
-                    protonSentinelUpsellModal.openModal(true);
+                    dwmUpsellModal.openModal(true);
                 }
                 break;
             default:

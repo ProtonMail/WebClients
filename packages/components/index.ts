@@ -326,6 +326,7 @@ export type { UpsellFeature as UpsellFeatures } from './components/upsell/modal/
 export { default as NewUpsellModal } from './components/upsell/modal/NewUpsellModal';
 export { default as AutoDeleteUpsellModal } from './components/upsell/modal/types/AutoDeleteUpsellModal';
 export { default as ComposerAssistantB2BUpsellModal } from './components/upsell/modal/types/ComposerAssistantB2BUpsellModal';
+export { default as DWMUpsellModal } from './components/upsell/modal/types/DWMUpsellModal';
 export { default as FiltersUpsellModal } from './components/upsell/modal/types/FiltersUpsellModal';
 export { default as LabelsUpsellModal } from './components/upsell/modal/types/LabelsUpsellModal';
 export { default as PmMeUpsellModal } from './components/upsell/modal/types/PmMeUpsellModal';

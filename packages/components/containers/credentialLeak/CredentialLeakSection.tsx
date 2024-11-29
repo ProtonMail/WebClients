@@ -9,14 +9,13 @@ import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import DWMUpsellModal from '@proton/components/components/upsell/modal/types/DWMUpsellModal';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import GenericError from '@proton/components/containers/error/GenericError';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -29,10 +28,8 @@ import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
     DARK_WEB_MONITORING_NAME,
-    MAIL_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
     DARK_WEB_MONITORING_ELIGIBILITY_STATE,
@@ -70,7 +67,6 @@ const CredentialLeakSection = () => {
     const [toggleLoading, withToggleLoading] = useLoading();
     const [actionLoading, withActionLoading] = useLoading();
     const [emailToggleLoading, withEmailToggleLoading] = useLoading();
-    const [openSubscriptionModal] = useSubscriptionModal();
     const api = useApi();
     const [user] = useUser();
     const [{ BreachAlerts }] = useUserSettings();
@@ -86,6 +82,7 @@ const CredentialLeakSection = () => {
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [sample, setSample] = useState<SampleBreach | null>(null);
     const [hasBeenInteractedWith, setHasBeenInteractedWith] = useState<boolean>(false);
+    const dwmUpsellModal = useModalStateObject();
 
     // TODO: change nums to constants
     const [hasAlertsEnabled, setHasAlertsEnabled] = useState<boolean>(
@@ -96,10 +93,6 @@ const CredentialLeakSection = () => {
         BreachAlerts.EmailNotifications === DARK_WEB_MONITORING_EMAILS_STATE.ENABLED
     );
     const isPaidUser = user.isPaid;
-
-    const metrics = {
-        source: 'upsells',
-    } as const;
 
     useEffect(() => {
         const fetchLeakData = async () => {
@@ -216,26 +209,6 @@ const CredentialLeakSection = () => {
         }
     };
 
-    // need upsellRef to differentiate between breach alert upsells in account and inbox
-    const upsellRef = getUpsellRef({
-        app: APP_UPSELL_REF_PATH.ACCOUNT_UPSELL_REF_PATH,
-        component: UPSELL_COMPONENT.TOGGLE,
-        feature: MAIL_UPSELL_PATHS.BREACH_ALERTS,
-    });
-
-    const handleUpgrade = () => {
-        openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics,
-            mode: 'upsell-modal',
-            upsellRef,
-            onSubscribed: () => {
-                handleEnableBreachAlertToggle(true);
-                return;
-            },
-        });
-    };
-
     useEffect(() => {
         if (viewingBreach === firstBreach && isFirstItemUnread && hasBeenInteractedWith) {
             markAsOpenBreach();
@@ -334,7 +307,7 @@ const CredentialLeakSection = () => {
                                                 id="data-breach-toggle"
                                                 disabled={false}
                                                 checked={false}
-                                                onClick={handleUpgrade}
+                                                onClick={() => dwmUpsellModal.openModal(true)}
                                             />
                                         </SettingsLayoutRight>
                                     </SettingsLayout>
@@ -437,6 +410,14 @@ const CredentialLeakSection = () => {
                             actions.resolve(viewingBreach);
                         }
                     }}
+                />
+            )}
+            {dwmUpsellModal.render && (
+                <DWMUpsellModal
+                    modalProps={dwmUpsellModal.modalProps}
+                    upsellApp={APP_UPSELL_REF_PATH.ACCOUNT_UPSELL_REF_PATH}
+                    upsellComponent={UPSELL_COMPONENT.TOGGLE}
+                    onUpgrade={() => handleEnableBreachAlertToggle(true)}
                 />
             )}
         </>
