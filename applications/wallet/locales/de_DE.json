@@ -109,6 +109,9 @@
       "Get verification code": [
         "Bestätigungscode abrufen"
       ],
+      "Go to settings": [
+        "Einstellungen öffnen"
+      ],
       "Got it": [
         "Verstanden"
       ],
@@ -117,6 +120,9 @@
       ],
       "Increase": [
         "Vergrößern"
+      ],
+      "Input passphrase": [
+        "Passphrase eingeben"
       ],
       "Keep my subscription": [
         "Behalte mein Abonnement"
@@ -247,6 +253,9 @@
       "Update recovery phrase": [
         "Wiederherstellungsphrase aktualisieren"
       ],
+      "Upgrade": [
+        "Wechseln"
+      ],
       "Upgrade now": [
         "Jetzt upgraden"
       ],
@@ -281,11 +290,6 @@
         "Was bekomme ich dafür?"
       ]
     },
-    "Action subscription": {
-      "Reactivate": [
-        "Reaktivieren"
-      ]
-    },
     "Addon": {
       "${ domains } additional custom domain": [
         "${ domains } zusätzliche eigene Domain",
@@ -313,6 +317,50 @@
         "${ users } Benutzer"
       ]
     },
+    "Address list": {
+      "Activate Bitcoin via Email": [
+        "Aktiviere Bitcoin via E-Mail"
+      ],
+      "Address copied": [
+        "Adresse kopiert"
+      ],
+      "Bitcoin via Email ${ availableAddresses }": [
+        "Bitcoin via E-Mail ${ availableAddresses }"
+      ],
+      "Change address": [
+        "Änderungsadresse"
+      ],
+      "Given out": [
+        "Ausgegeben"
+      ],
+      "Index": [
+        "Index"
+      ],
+      "Not used": [
+        "Nicht genutzt"
+      ],
+      "Page ${ pageNumber }": [
+        "Seite ${ pageNumber }"
+      ],
+      "Receive address": [
+        "Empfangsadresse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Sync": [
+        "Synchronisieren"
+      ],
+      "Toggle keychain": [
+        "Schlüsselbund ein-/ausschalten"
+      ],
+      "Used (${ transactionsCount })": [
+        "(${ transactionsCount }) genutzt"
+      ],
+      "Value": [
+        "Wert"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-Anwendungen"
@@ -329,95 +377,164 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } Speicherplatz"
-      ],
       "1 user": [
         "1 Benutzer"
       ],
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "Mehr als 3.000 Server in über 65 Ländern"
-      ],
       "6 users": [
         "6 Benutzer"
-      ],
-      "Access content worldwide": [
-        "Weltweit auf Inhalte zugreifen"
-      ],
-      "Ad-blocker and malware protection": [
-        "Werbeblocker & Malware-Schutz"
-      ],
-      "Extended version history": [
-        "Erweiterter Versionsverlauf"
-      ],
-      "High speed streaming": [
-        "Hochgeschwindigkeits-Streaming"
       ],
       "Premium Password Manager": [
         "Premium-Passwortmanager"
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } Monat",
-        "die ersten ${ n } Monate"
-      ],
-      "the first month": [
-        "den ersten Monat"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ discountedPrice } ist für ${ discountedMonths } gültig. Danach wird das Abonnement automatisch zum reduzierten Preis von ${ nextPrice } für ${ nextMonths } verlängert. Du kannst jederzeit kündigen."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ discountedPrice } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ nextPrice } verlängert. Du kannst jederzeit kündigen."
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Greife auf blockierte Inhalte zu und surfe privat. Umfasst mehr als 3.000 Server in über 65 Ländern, höchste VPN-Geschwindigkeiten, Zugriff auf weltweite Streaming-Dienste, Malware- und Werbeblocker, schnelle BitTorrent-Downloads und mehr."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-Desktop App"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } Speicherplatz"
+      ],
+      "1 TB total": [
+        "1 TB Speicherplatz"
+      ],
+      "1 user": [
+        "1 Benutzer"
+      ],
+      "1 user account": [
+        "1 Benutzerkonto"
+      ],
+      "10 email addresses": [
+        "10 E-Mail-Adressen"
+      ],
+      "2 users": [
+        "2 Benutzer"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 Benutzerkonten"
+      ],
+      "6 users": [
+        "6 Benutzer"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Mehr als 8500 Server in 110 Ländern"
+      ],
+      "Ad-blocker and malware protection": [
+        "Werbeblocker und Malware-Schutz"
+      ],
+      "Admin panel to manage your family": [
+        "Administrationskonsole zur Verwaltung deiner Familie"
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
+      ],
+      "Easily add or remove users": [
+        "Benutzer einfach hinzufügen oder entfernen"
+      ],
+      "High speed streaming": [
+        "Hochgeschwindigkeits-Streaming"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
+      ],
+      "One-time payment, lifetime deal": [
+        "Einmalige Zahlung, lebenslanges Angebot"
+      ],
+      "Online document editor": [
+        "Editor für Onlinedokumente"
+      ],
+      "Password health alerts": [
+        "Warnungen zur Passwortsicherheit"
+      ],
+      "Private photo backup": [
+        "Private Fotosicherung"
+      ],
+      "Protect 10 devices at a time": [
+        "Schütze 10 Geräte gleichzeitig"
+      ],
+      "Secure file storage & sharing": [
+        "Sichere Dateispeicherung und -freigabe"
+      ],
+      "Secure vault and link sharing": [
+        "Sichere Tresor- und Linkfreigabe"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Unbegrenzte Hide-my-email-Aliasse"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Unbegrenzte Logins, Notizen, Kreditkarten"
+      ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ],
+      "Version history": [
+        "Versionsverlauf"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Zum Preis von ${ amount } einmal"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Verlängert sich nach 1 Monat zum ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Greife auf blockierte Inhalte zu und surfe privat. Umfasst mehr als 8.500 Server in über 110 Ländern, 10 Geräte, Hochgeschwindigkeits-Streaming, Werbeblocker und Malware-Schutz, VPN Accelerator und mehr."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
       ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Umgehe lokale Internetsperren und Zensuren mit unserem globalen Servernetz."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Hide-my-email-Aliasse, Freigabe, integrierter 2FA, Dark Web-Überwachung und mehr."
       ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für ${ domains } eigene E-Mail-Domains, ${ addresses } E-Mail-Adressen, unbegrenzte hide-my-email-Aliasse, Kalenderfreigabe und mehr.",
-        "Beinhaltet Unterstützung für ${ domains } eigene E-Mail-Domains, ${ addresses } E-Mail-Adressen, unbegrenzte hide-my-email-Aliasse, Kalenderfreigabe und mehr."
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
+        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr.",
+        "Sichere deine E-Mails und Termine mit Ende-zu-Ende-Verschlüsselung. Inklusive ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliasse und mehr."
       ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet Unterstützung für benutzerdefinierte E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Sichere deine E-Mails und deinen Zeitplan mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliase und mehr."
       ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Editor für Onlinedokumente, Fotosicherung, Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Das speziell entwickelte NetShield schützt deine Geräte und beschleunigt das Surfen durch das Blockieren von Werbung, Trackern und Malware."
       ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Der Speicherplatz wird von allen ${ BRAND_NAME }-Apps gemeinsam genutzt."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Speichere bis zu 200 Versionen jeder Datei für einen Zeitraum von bis zu 10 Jahren."
-      ]
-    },
-    "Billing cycle": {
-      "${ n } month": [
-        "${ n } Monat",
-        "${ n } Monate"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Wird automatisch für ${ renewPrice } um ${ renewalLength } verlängert."
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Der Speicherplatz wird von allen ${ BRAND_NAME }-Services gemeinsam genutzt."
       ]
     },
     "Billing cycle option": {
@@ -441,11 +558,17 @@
       ]
     },
     "bitcoin buy": {
-      "${ WALLET_APP_NAME } has partnered with ${ rampLink } and ${ banxaLink }, two registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
-        "${ WALLET_APP_NAME } ist eine Partnerschaft mit ${ rampLink } und ${ banxaLink }, zwei registrierten Krypto-Asset-Dienstleistern, eingegangen, um den Kauf von BTC zu erleichtern. Bitte gib deine Region ein, um die verfügbaren Anbieter und Zahlungsmethoden zu sehen."
+      "1% bank transfer fee": [
+        "1 % Überweisungsgebühr"
+      ],
+      "4% credit card fee": [
+        "4 % Kreditkartengebühr"
       ],
       "Amount": [
         "Betrag"
+      ],
+      "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
+        "Als zahlender Benutzer sparst du ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } an Azteco-Servicegebühr!"
       ],
       "Bank transfer": [
         "Banküberweisung"
@@ -456,8 +579,14 @@
       "Binance": [
         "Binance"
       ],
+      "BTC network fee": [
+        "BTC Netgebühr"
+      ],
       "Buy": [
         "Kaufen"
+      ],
+      "Buy Azteco vouchers": [
+        "Azteco-Gutscheine kaufen"
       ],
       "Choose a country": [
         "Wähle ein Land"
@@ -470,6 +599,9 @@
       ],
       "Continue": [
         "Fortfahren"
+      ],
+      "Continue with ${ providerName }": [
+        "Mit ${ providerName } fortfahren"
       ],
       "Credit card": [
         "Kreditkarte"
@@ -489,17 +621,32 @@
       "Pay with": [
         "Bezahlen mit"
       ],
+      "Payment details": [
+        "Zahlungsdetails"
+      ],
+      "Please enter your region to see the available BTC providers and payment methods. Any purchased BTC will be sent to a BTC address of this wallet account.": [
+        "Bitte gib deine Region ein, um die verfügbaren BTC-Anbieter und Zahlungsmethoden anzuzeigen. Alle gekauften BTC werden an eine BTC-Adresse dieses Wallet-Kontos gesendet."
+      ],
       "Recipients": [
         "Empfänger"
       ],
       "Review": [
         "Überprüfen"
       ],
+      "See details": [
+        "Siehe Details"
+      ],
       "Send": [
         "Senden"
       ],
+      "This quote is valid for the next 5 minutes": [
+        "Dieses Angebot ist für die nächsten 5 Minuten gültig"
+      ],
       "You can also buy BTC on exchanges like ${ binanceLink }, ${ coinbaseLink }, or ${ krakenLink } and then send the BTC to your Receive address.": [
         "Du kannst auch BTC an Börsen wie ${ binanceLink }, ${ coinbaseLink } oder ${ krakenLink } kaufen und die dann BTC an deine Empfangsadresse senden."
+      ],
+      "You got 25% off": [
+        "Du hast 25 % Rabatt"
       ],
       "You pay": [
         "Du zahlst"
@@ -514,6 +661,9 @@
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
         "${ quote.provider } Kasse"
+      ],
+      "The selected currency is not supported in your country or the requested amount is too low": [
+        "Die ausgewählte Währung wird in deinem Land nicht unterstützt oder der angeforderte Betrag ist zu niedrig"
       ]
     },
     "Bitcoin Script Type": {
@@ -547,6 +697,12 @@
     "Bitcoin send": {
       "Add recipient": [
         "Empfänger hinzufügen"
+      ],
+      "Invitation could not be sent to recipient. Please check details and try again.": [
+        "Einladung konnte nicht an den Empfänger gesendet werden. Bitte überprüfe die Details und versuche es erneut."
+      ],
+      "Invitation could not be sent. Please check details and try again.": [
+        "Einladung konnte nicht gesendet werden. Bitte überprüfe die Details und versuche es erneut."
       ],
       "Invitation sent": [
         "Einladung gesendet"
@@ -672,10 +828,74 @@
         "Zugriffsproblem auf eine Website"
       ]
     },
+    "Buy confirm": {
+      "Buy more bitcoin": [
+        "Mehr Bitcoin kaufen"
+      ],
+      "For any issues with the purchasing process, please contact the partner’s support team.": [
+        "Bei Problemen mit dem Kaufvorgang wende dich bitte an das Support-Team des Partners."
+      ],
+      "Purchase completed": [
+        "Kauf erledigt"
+      ],
+      "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
+        "Vielen Dank für deinen Kaufversuch bei unserem Partner.\nDu kannst den Status deiner Bestellung über die Bestätigungs-E-Mail verfolgen, die du von unserem Partner erhalten haben.\nSollte die Transaktion fehlschlagen, kannst du es erneut versuchen oder einen anderen Partner wählen."
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } Speicherplatz"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } E-Mail-Speicherplatz"
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Alle ${ BRAND_NAME } Anwendungen und Premiumfunktionen"
+      ],
+      "Cancel and downgrade": [
+        "Abbrechen und Herabstufen"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Cloud-Speicher und Freigabe großer Dateien"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Verschlüsselter Cloud-Speicher für Fotos und Dokumente"
+      ],
+      "Encrypted password manager": [
+        "Verschlüsselter Passwortmanager"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Unsere grundlegende, kostenlose Version mit Ende-zu-Ende-verschlüsselter E-Mail und Speicherplatz. Keine Premiumfunktionen enthalten."
+      ],
+      "Save ${ upsellSavings }": [
+        "Spare ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Spare Geld mit ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Sicherer persönlicher und geteilter Kalender"
+      ],
+      "Try ${ planName }": [
+        "${ planName } ausprobieren"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Teste ${ upsellPlanName } und behalte den Zugang zu allen Premium-E-Mail- und Kalenderfunktionen."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultraschnelles und privates VPN"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } Benutzer",
         "${ users } Benutzer"
+      ],
+      "Total": [
+        "Gesamt"
       ],
       "Total for ${ n } month": [
         "Gesamtbetrag für ${ n } Monat",
@@ -1698,33 +1918,6 @@
         "Priorisierter Support"
       ]
     },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Alle kostenpflichtigen ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME } Funktionen"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Enthält Versionshistorie in ${ DRIVE_SHORT_APP_NAME }, Zugriff auf Tausende von Hochgeschwindigkeits-Servern von ${ VPN_SHORT_APP_NAME }, Teilen in ${ PASS_SHORT_APP_NAME } und mehr."
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 Benutzer"
-      ],
-      "Early access to new apps and features": [
-        "Früher Zugang zu neuen Anwendungen und Funktionen"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Früher Zugang zur ${ MAIL_APP_NAME } Desktop App"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Alle kostenpflichtigen ${ MAIL_SHORT_APP_NAME }- und ${ CALENDAR_APP_NAME }-Funktionen"
-      ]
-    },
     "Error": {
       "Amount above the maximum.": [
         "Höchstbetrag überschritten"
@@ -1771,6 +1964,9 @@
       "Invalid expiration date": [
         "Ungültiges Ablaufdatum"
       ],
+      "Invalid IBAN": [
+        "Ungültige IBAN"
+      ],
       "Invalid postal code": [
         "Ungültige Postleitzahl"
       ],
@@ -1806,6 +2002,9 @@
       ],
       "Tab closed": [
         "Tab geschlossen"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Der fällige Betrag hat sich geändert. Bitte versuche es erneut."
       ],
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
@@ -2023,11 +2222,20 @@
       "Disclaimer": [
         "Haftungsausschluss"
       ],
+      "Done": [
+        "Fertig"
+      ],
       "I have read and agree to the disclaimer": [
         "Ich habe den Haftungsausschluss gelesen und akzeptiere ihn"
       ],
       "Not now": [
-        "Jetzt nicht"
+        "Nicht jetzt"
+      ],
+      "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
+        "Du verlässt jetzt ${ WALLET_APP_NAME } für ${ providerName } (${ websiteLink }).\nDienstleistungen im Zusammenhang mit Kartenzahlungen, Banküberweisungen und anderen Geldtransaktionen werden von ${ providerName },\neiner separaten Plattform eines Drittanbieters, erbracht. Indem du fortfährst und Dienstleistungen von ${ providerName } beziehst,\nbestätigst du, die Allgemeinen Geschäftsbedingungen (${ termOfUseLink }) von ${ providerName } gelesen und akzeptiert sowie der Datenschutz- und Cookie-Richtlinie (${ privacyAndCookiesPolicyLink }) zugestimmt zu haben.\nBei Fragen zu den Dienstleistungen von ${ providerName } kontaktiere bitte ${ providerName } unter ${ supportEmailLink }"
+      ],
+      "You will now buy an Azteco bitcoin voucher with ${ WALLET_APP_NAME }. This works similar to a gift card and is one of the easiest and most private way to obtain BTC.": [
+        "Du kaufst jetzt einen Azteco-Bitcoin-Gutschein mit ${ WALLET_APP_NAME }. Dieser funktioniert ähnlich wie eine Geschenkkarte und ist eine der einfachsten und privatesten Möglichkeiten, BTC zu erhalten."
       ]
     },
     "Group": {
@@ -2075,7 +2283,7 @@
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
       ],
-      "(${ serverPrice } /month)": [
+      "(${ serverPrice }/month)": [
         "(${ serverPrice }/Monat)"
       ],
       "+${ bonusSpace } bonus storage": [
@@ -2269,9 +2477,6 @@
       "Please authenticate your payment in the verification tab.": [
         "Bitte authentifiziere deine Zahlung im Verifikationstab."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ remainingCreditsFormatted } Guthaben auf deinem Konto verbleiben."
-      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
       ],
@@ -2433,11 +2638,6 @@
         "Bitte kontaktiere uns unter ${ email } für Anweisungen, wie du unsere Rechnung mit Bargeld begleichen kannst."
       ]
     },
-    "Info subscription": {
-      "You can prevent expiry by reactivating the subscription": [
-        "Du kannst das Ablaufen verhindern, indem du das Abonnement reaktivierst."
-      ]
-    },
     "Info; access rights for shared calendar": {
       "View only": [
         "Nur anzeigen"
@@ -2455,6 +2655,12 @@
       "${ n } month": [
         "${ n } Monat",
         "${ n } Monate"
+      ],
+      "Address": [
+        "Anschrift"
+      ],
+      "Anderson": [
+        "Anderson"
       ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
@@ -2498,6 +2704,9 @@
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
       ],
+      "Company name": [
+        "Unternehmensname"
+      ],
       "Copy": [
         "Kopieren"
       ],
@@ -2525,6 +2734,9 @@
       "Do you have any suggestions for our team?": [
         "Hast du irgendwelche Vorschläge für unser Team?"
       ],
+      "Email": [
+        "E-Mail-Adresse"
+      ],
       "Email address": [
         "E‐Mail‐Adresse"
       ],
@@ -2534,8 +2746,17 @@
       "Expires": [
         "Gültig bis"
       ],
+      "First name": [
+        "Vorname"
+      ],
       "Hide password": [
         "Passwort verbergen"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Last name": [
+        "Nachname"
       ],
       "Main": [
         "Primär"
@@ -2576,6 +2797,9 @@
       "Reveal password": [
         "Passwort anzeigen"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32,\n1228 Plan-les-Ouates\nGenf, Schweiz"
+      ],
       "Security code (${ codeName })": [
         "Sicherheitscode (${ codeName })"
       ],
@@ -2587,6 +2811,9 @@
       ],
       "System information": [
         "Systeminformationen"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "VAT": [
         "MwSt."
@@ -2637,18 +2864,24 @@
     },
     "Loader": {
       "Loading": [
-        "Wird geladen"
+        "Laden"
       ],
       "Loading data": [
         "Daten werden geladen"
       ],
       "Loading message": [
         "Nachricht wird geladen"
+      ],
+      "Loading send from label": [
+        "Senden-von-Kategorie wird geladen"
       ]
     },
     "Loading": {
       "Amount": [
         "Betrag"
+      ],
+      "Secondary amount": [
+        "Sekundärer Betrag"
       ]
     },
     "mail_signup_2024: Info": {
@@ -2657,26 +2890,6 @@
       ],
       "for ${ price }": [
         "für ${ price }"
-      ]
-    },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-Desktop App"
-      ],
-      "10 email addresses": [
-        "10 E-Mail-Adressen"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Spam und Papierkorb automatisch löschen"
-      ],
-      "Custom schedule send and snooze times": [
-        "Benutzerdefinierter Plan für Sende- und Zurückstellungszeiten"
-      ],
-      "Support for 1 custom email domain": [
-        "Unterstützung für eine eigene E-Mail-Domain"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
       ]
     },
     "new_plans": {
@@ -2688,6 +2901,11 @@
       ],
       "Medium VPN speed": [
         "Mittlere VPN-Geschwindigkeit"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
       ]
     },
     "new_plans: action": {
@@ -2711,11 +2929,6 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -2773,10 +2986,6 @@
         "${ n } geteilter ${ PASS_SHORT_APP_NAME } Tresor pro Benutzer",
         "${ n } geteilte ${ PASS_SHORT_APP_NAME } Tresore pro Benutzer"
       ],
-      "${ n } user": [
-        "${ n } Benutzer",
-        "Bis zu ${ n } Benutzer"
-      ],
       "${ n } vault": [
         "${ n } Tresor",
         "${ n } Tresore"
@@ -2784,6 +2993,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } Benutzer",
+        "Bis zu ${ numberOfUsers } Benutzer"
       ],
       "${ options }-day file version history": [
         "Dateiversionsverlauf für ${ options } Tag",
@@ -3014,6 +3227,9 @@
       "Secure Core servers": [
         "Secure Core-Server"
       ],
+      "Secure link sharing": [
+        "Sicheres Teilen von Links"
+      ],
       "See team's availability": [
         "Verfügbarkeit des Teams anzeigen"
       ],
@@ -3044,7 +3260,7 @@
       "Sync and backup all your files across devices": [
         "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
       ],
-      "Tor over VPN": [
+      "TOR over VPN": [
         "Tor über VPN"
       ],
       "Two-factor authentication": [
@@ -3099,6 +3315,10 @@
         "Bis zu ${ n } Benutzer",
         "Bis zu ${ n } Benutzer"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Bis zu ${ n } Benutzer (${ adminsText }, ${ usersText })",
+        "Bis zu ${ n } Benutzer (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Bis zu ${ totalStorageSize } Speicherplatz"
       ],
@@ -3117,6 +3337,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } Admin",
+        "${ admins } Admins"
+      ],
+      "${ users } user": [
+        "${ users } Benutzer",
+        "${ users } Benutzer"
       ]
     },
     "new_plans: heading": {
@@ -3178,6 +3408,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Schütze sensible Geschäftsinformationen und arbeite sicher zusammen."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Schütze deine Familie mit allen Premium-Funktionen von ${ PASS_SHORT_APP_NAME } Plus für 6 Benutzer."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Schütze die Privatsphäre deiner Familie durch die Kombination aller ${ BRAND_NAME }-Dienste."
@@ -3274,8 +3507,8 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Erstelle bis zu ${ n } E-Mail-Adressen/-Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxEinkauf@${ domain } für Einkaufskonten."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internet-Verkehr über mehrere Server geleitet wird."
@@ -3285,6 +3518,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Teile deine Kalender ganz einfach mit Verwandten, Freunden oder Kollegen"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Sende E-Mails an alle Mitglieder einer Gruppe mit einer einzigen E-Mail-Adresse"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Mit dieser Funktion stellst du sicher, dass du alle an deine Domain gesendeten E-Mails erhältst, auch wenn die E-Mail-Adresse nicht oder nicht mehr existiert oder einen Tippfehler enthält."
@@ -3325,8 +3561,8 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Ein Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und wieder entfernen, Speicherplatz zuweisen, Domains konfigurieren und andere Aufgaben ausführen können."
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und entfernen, ihren Zugriff auf ${ BRAND_NAME }-Dienste verwalten und andere Aufgaben durchführen können."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Unsere robuste Infrastruktur ermöglicht dir den Zugriff auf dein Konto, wann immer nötig."
@@ -3370,11 +3606,11 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
       ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Leite deinen Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
-      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Sicheres Teilen von einzelnen Einträgen mit anderen (selbst wenn sie ${ PASS_APP_NAME } nicht nutzen)"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Speichere die Daten deiner Kontakte wie Telefonnummer, Adresse, Geburtstag und persönliche Notizen sicher. Dank Zero-Access-Verschlüsselung kann nicht einmal ${ BRAND_NAME } auf diese Informationen zugreifen."
@@ -3509,6 +3745,18 @@
         "Sichere Tresorfreigabe (${ n } Tresore) und Linkfreigabe"
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } Benutzerkonto",
+        "${ n } Benutzerkonten"
+      ],
+      "Activity log": [
+        "Ereignisprotokoll"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "Organisation-Schlüssel ist nicht vorhanden."
@@ -3524,11 +3772,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Banküberweisung"
+      ],
       "Credit/debit card": [
         "Kredit-/Debitkarte"
       ],
       "New credit/debit card": [
         "Neue Kredit-/Debitkarte"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Unternehmensname verwenden"
+      ],
+      "Use personal name": [
+        "Persönlichen Namen verwenden"
       ]
     },
     "Payments": {
@@ -3550,6 +3809,9 @@
       "MM/YY": [
         "MM/JJ"
       ],
+      "More plans are available in other currencies": [
+        "Weitere Pläne sind in anderen Währungen verfügbar"
+      ],
       "Payment Processing": [
         "Zahlungsabwicklung"
       ],
@@ -3570,15 +3832,6 @@
       ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ months } gültig. Der Gutschein kann bei ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ price } während ${ months } verlängert. Du kannst jederzeit kündigen."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ months } gültig. Danach wird das Abonnement automatisch zum Preis von ${ price } während ${ months } verlängert. Du kannst jederzeit kündigen."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ price } verlängert. Du kannst jederzeit kündigen."
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
@@ -3605,6 +3858,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Deine Karte wurde abgelehnt. Bitte versuche es mit einer anderen Karte oder wende dich an deine Bank, um die Belastung zu autorisieren."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Indem du diese Zahlung bestätigst, ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, dein Konto zu belasten, und deine Bank, dein Konto entsprechend zu belasten. Du kannst innerhalb von 8 Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen, sofern du mit deiner Bank eine entsprechende Vereinbarung getroffen hast."
+      ],
+      "Street address, postal code, and city": [
+        "Straße, Postleitzahl und Ort"
       ]
     },
     "Placeholder": {
@@ -3711,6 +3972,11 @@
         "Überprüfe deine Kontosicherheit"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Die Anmeldung wurde nicht erfolgreich abgeschlossen."
+      ]
+    },
     "Select search results": {
       "Check your spelling or select a country from the list.": [
         "Überprüfe die Schreibweise oder wähle ein Land aus der Liste aus."
@@ -3775,9 +4041,6 @@
       ],
       "6 users": [
         "6 Benutzer"
-      ],
-      "64 countries": [
-        "64 Länder"
       ],
       "All paid Mail and Calendar features": [
         "Alle kostenpflichtigen Mail- und Calendar-Funktionen"
@@ -3879,9 +4142,6 @@
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 1700 Server in über 60 Ländern, höchste VPN-Geschwindigkeiten, 10 VPN-Verbindungen, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
       ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+ und Prime Video."
-      ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alle unsere Premium-Services mit ihren höchsten Limits: 100 E-Mail-Adressen, Unterstützung für 10 eigene Domains, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe, verschlüsselter Cloud-Speicher und Dateifreigabe, und vieles mehr."
       ],
@@ -3904,6 +4164,14 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Anmelden"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du wirst zu deinem SSO-Anbieter weitergeleitet."
       ]
     },
     "State": {
@@ -4026,8 +4294,8 @@
       "Got it": [
         "Verstanden"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Melde dich einfach in deinem Apple App Store Konto an und klicke auf ${ subscriptions }."
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Melde dich einfach bei deinem Apple App Store-Konto an und wähle dann ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Melde dich einfach in deinem Play Store Konto an und klicke auf ${ subscriptions }."
@@ -4050,14 +4318,33 @@
         "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Lebenslang"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Für ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } Speicherplatz pro Benutzer"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigene E-Mail-Domain",
+        "${ planNumberOfDomains } eigene E-Mail-Domains"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } E-Mail-Adresse",
+        "${ planNumberOfEmails } E-Mail-Adressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Ordner, Kategorien und benutzerdefinierte Filter"
       ]
     },
     "Subscription renewal state": {
@@ -4089,14 +4376,6 @@
     "Subscription saving": {
       "Save": [
         "Spare"
-      ]
-    },
-    "Subscription status": {
-      "Active": [
-        "Aktiv"
-      ],
-      "Expiring": [
-        "Verfallend"
       ]
     },
     "Success": {
@@ -4227,6 +4506,9 @@
       "Gift": [
         "Geschenk"
       ],
+      "Go to settings and recovery keys": [
+        "Gehe zu Einstellungen und Wiederherstellungsschlüsseln"
+      ],
       "Human verification": [
         "Menschliche Verifizierung"
       ],
@@ -4279,17 +4561,6 @@
         "Wallet"
       ]
     },
-    "Title subscription": {
-      "End date": [
-        "Enddatum"
-      ],
-      "Plan": [
-        "Abonnement"
-      ],
-      "Status": [
-        "Status"
-      ]
-    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
@@ -4337,8 +4608,8 @@
       "Transaction sender could not be updated": [
         "Der Absender der Transaktion konnte nicht aktualisiert werden."
       ],
-      "Transaction sender has been updated succesfully": [
-        "Der Absender der Transaktion wurde erfolgreich aktualisiert."
+      "Transaction sender has been updated successfully": [
+        "Der Absender der Transaktion wurde erfolgreich aktualisiert"
       ],
       "Unknown sender": [
         "Unbekannter Absender"
@@ -4390,11 +4661,14 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN und mehr."
       ]
     },
     "Wallet": {
+      "An error occurred whilst syncing your wallet. Please try again.": [
+        "Beim Synchronisieren deiner Wallet ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      ],
       "Close": [
         "Schließen"
       ],
@@ -4402,7 +4676,7 @@
         "Fortfahren"
       ],
       "Could not fetch wallets data": [
-        "Fehler beim Abrufen der Walletdaten."
+        "Wallet-Daten konnten nicht abgerufen werden."
       ],
       "Explore other ${ BRAND_NAME } products": [
         "Entdecke weitere ${ BRAND_NAME }-Produkte"
@@ -4413,8 +4687,8 @@
       "Upgrade to Visionary": [
         "Auf Visionary upgraden"
       ],
-      "WebAssembly must be enabled to use ${ WALLET_APP_NAME }": [
-        "WebAssembly muss für die Verwendung von ${ WALLET_APP_NAME } aktiviert sein."
+      "Your browser or device software does not support ${ WALLET_APP_NAME }. Please update your browser or device. Alternatively, you can use one of our mobile apps.": [
+        "Dein Browser oder deine Gerätesoftware unterstützt ${ WALLET_APP_NAME } nicht. Bitte aktualisiere deinen Browser oder dein Gerät. Alternativ kannst du eine unserer mobilen Apps nutzen."
       ]
     },
     "Wallet Account": {
@@ -4441,6 +4715,9 @@
       ],
       "Custom index": [
         "Benutzerdefinierter Index"
+      ],
+      "Error adding account to wallet. Please try again.": [
+        "Fehler beim Hinzufügen des Kontos zur Wallet. Bitte versuche es erneut."
       ],
       "If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.": [
         "Wenn du Bitcoin per E-Mail mit mehreren E-Mail-Adressen empfangen möchtest, dann musst du für jede E-Mail-Adresse ein Wallet-Konto erstellen."
@@ -4506,9 +4783,17 @@
         "Senden"
       ]
     },
+    "wallet dashboard": {
+      "You need to have a positive bitcoin balance with sufficient funds to transact": [
+        "Du musst einen positiven Bitcoin-Kontostand mit ausreichendem Guthaben haben, um Transaktionen durchzuführen."
+      ]
+    },
     "Wallet deletion": {
       "Are you sure you want to delete \"${ wallet.Wallet.Name }\"": [
         "Möchtest du „${ wallet.Wallet.Name }“ wirklich löschen?"
+      ],
+      "Are you sure you want to delete this wallet": [
+        "Möchtest du dieses Wallet wirklich löschen?"
       ]
     },
     "Wallet discover": {
@@ -4548,6 +4833,18 @@
     "Wallet header": {
       "Secure your wallet": [
         "Schütze deine Wallet"
+      ],
+      "The passphrase is incorrect. Please try again.": [
+        "Die Passphrase ist ungültig. Bitte versuche es erneut."
+      ],
+      "This wallet needs a passphrase to be used.": [
+        "Diese Wallet benötigt eine Passphrase, um verwendet zu werden."
+      ],
+      "View change addresses": [
+        "Änderungsadressen anzeigen"
+      ],
+      "View receive addresses": [
+        "Empfangsadressen anzeigen"
       ]
     },
     "Wallet import": {
@@ -4641,7 +4938,7 @@
         "Meine Wallet-Passphrase"
       ],
       "To use this wallet, you need to input the passphrase": [
-        "Um diese Wallet zu verwenden, musst du die Passphrase eingeben"
+        "Damit du dieses Wallet nutzen kannst, musst du die Passphrase eingeben"
       ],
       "Wallet passphrase": [
         "Wallet-Passphrase"
@@ -4694,10 +4991,10 @@
         "E-Mail-Adresse ist ungültig"
       ],
       "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, we recommend using this primary BTC account without enabling Receive Bitcoin via Email and transacting with your other BTC accounts with Receive Bitcoin via Email enabled. This will improve your blockchain privacy by keeping BTC in this account separate from any BTC that you receive automatically.": [
-        "Für die meisten Menschen spielt das keine Rolle, da sie BTC von vertrauenswürdigen Personen erhalten. Wenn du dir darüber Sorgen machst, empfehlen wir, dieses Haupt-BTC-Konto zu verwenden, ohne den Empfang von Bitcoin per E-Mail zu aktivieren, und mit deinen anderen BTC-Konten zu transagieren, bei denen der Empfang von Bitcoin per E-Mail aktiviert ist. Das verbessert deine Blockchain-Privatsphäre, indem es die BTC in diesem Konto von den BTC trennt, die du automatisch erhältst."
+        "Für die meisten Menschen spielt das keine Rolle, da sie BTC von vertrauenswürdigen Personen empfangen. Wenn du dir deswegen jedoch Sorgen machst, empfehlen wir, dieses BTC-Hauptkonto zu verwenden, ohne den Empfang von Bitcoin via E-Mail zu aktivieren, und Transaktionen mit deinen anderen BTC-Konten durchzuführen, für die der Empfang von Bitcoin via E-Mail aktiviert ist. Dies verbessert deine Blockchain-Privatsphäre, da die BTC in diesem Konto von den BTC trennt werden, die du automatisch empfängst."
       ],
       "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, you can create a new BTC account so that the new BTC you receive is separated from your existing BTC.": [
-        "Für die meisten Menschen spielt das keine Rolle, da sie BTC von vertrauenswürdigen Personen erhalten. Wenn du dir darüber Sorgen machst, kannst du ein neues BTC-Konto erstellen, sodass die neuen BTC, die du erhältst, von deinen bestehenden BTC getrennt sind."
+        "Für die meisten Menschen spielt das keine Rolle, da sie BTC von vertrauenswürdigen Personen empfangen. Wenn du dir deswegen jedoch Sorgen machst, kannst du ein neues BTC-Konto erstellen, sodass die neuen BTC, die du empfängst, von deinen vorhandenen BTC getrennt sind."
       ],
       "My super account": [
         "Mein Super-Konto"
@@ -4712,7 +5009,7 @@
         "Nicht jetzt"
       ],
       "The Bitcoin blockchain is public, meaning every transaction is publicly visible. However, Bitcoin addresses are pseudonymous, meaning the sender and recipient identities are generally unknown.": [
-        "Die Bitcoin-Blockchain ist öffentlich, was bedeutet, dass jede Transaktion öffentlich sichtbar ist. Allerdings sind Bitcoin-Adressen pseudonym, was bedeutet, dass die Identität des Absenders und des Empfängers in der Regel unbekannt ist."
+        "Die Bitcoin-Blockchain ist öffentlich, was bedeutet, dass jede Transaktion öffentlich sichtbar ist. Allerdings sind Bitcoin-Adressen Pseudonyme, d. h. die Identitäten von Absender und Empfänger sind in der Regel unbekannt."
       ],
       "View more": [
         "Mehr anzeigen"
@@ -4724,7 +5021,7 @@
         "Wallet-Einstellungen"
       ],
       "When you receive Bitcoin via Email, the sender knows one of your Bitcoin addresses as well as your email. Due to Bitcoin's public blockchain, it is theoretically possible for a malicious sender to discover the existence of other BTC that you have if you send BTC from this account.": [
-        "Wenn du Bitcoin per E-Mail empfängst, kennt der Absender eine deiner Bitcoin-Adressen sowie deine E-Mail. Aufgrund der öffentlichen Bitcoin-Blockchain ist es theoretisch möglich, dass ein böswilliger Absender die Existenz anderer BTC, die du hast, entdeckt, wenn du BTC von diesem Konto sendest."
+        "Wenn du Bitcoin via E-Mail empfängst, kennt der Absender eine deiner Bitcoin-Adressen sowie deine E-Mail-Adresse. Aufgrund der öffentlichen Bitcoin-Blockchain ist es theoretisch möglich, dass ein böswilliger Absender die Existenz anderer BTC in deinem Besitz entdeckt, wenn du BTC von diesem Konto sendest."
       ]
     },
     "Wallet preferences": {
@@ -4735,10 +5032,10 @@
         "Standardwährung"
       ],
       "For better privacy, we recommend ${ walletAccountCreation } for receiving Bitcoin via Email. ${ learnMore }.": [
-        "Für bessere Privatsphäre, empfehlen wir ${ walletAccountCreation } für das Empfangen von Bitcoins via E-Mail. ${ learnMore }."
+        "Für bessere Privatsphäre empfehlen wir, ${ walletAccountCreation }, um Bitcoins via E-Mail zu empfangen. ${ learnMore }."
       ],
       "Learn more": [
-        "Erfahre mehr"
+        "Mehr erfahren"
       ],
       "Local currency": [
         "Landeswährung"
@@ -4779,6 +5076,9 @@
       "${ price } available": [
         "${ price } verfügbar"
       ],
+      "10+ hours": [
+        "10+ Stunden"
+      ],
       "Add a message": [
         "Nachricht hinzufügen"
       ],
@@ -4797,6 +5097,12 @@
       "Bitcoin address signature could not be verified": [
         "Signatur der Bitcoin-Adresse konnte nicht bestätigt werden"
       ],
+      "Boost transaction priority": [
+        "Priorität der Transaktion erhöhen"
+      ],
+      "By increasing the fee, you can prioritize your transaction, helping it get confirmed faster during busy network times.": [
+        "Durch Erhöhung der Gebühr kannst du deine Transaktion priorisieren, damit sie in Zeiten mit hoher Netzwerkauslastung schneller bestätigt wird."
+      ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "QR-Code-Scanner kann nicht verwendet werden. Bitte überprüfe die Browser-Kompatibilität."
       ],
@@ -4806,8 +5112,17 @@
       "Confirm and send": [
         "Bestätigen und senden"
       ],
+      "Confirmation speed: ${ label }": [
+        "Bestätigungsgeschwindigkeit: ${ label }"
+      ],
       "Could not create PSBT": [
         "PSBT konnte nicht erstellt werden"
+      ],
+      "Could not speed up transaction. Please sync your wallet and try again": [
+        "Die Transaktion konnte nicht beschleunigt werden. Bitte synchronisiere dein Wallet und versuche es erneut"
+      ],
+      "Current fee": [
+        "Aktuelle Gebühr"
       ],
       "Edit": [
         "Bearbeiten"
@@ -4816,7 +5131,7 @@
         "Empfänger bearbeiten"
       ],
       "Fast": [
-        "Schnelle"
+        "Schnell"
       ],
       "High priority": [
         "Hohe Priorität"
@@ -4824,8 +5139,11 @@
       "How much are you sending?": [
         "Wie viel sendest du?"
       ],
+      "Increase fee and resend": [
+        "Gebühr erhöhen und erneut senden"
+      ],
       "Low": [
-        "Niedrige"
+        "Niedrig"
       ],
       "Low priority": [
         "Niedrige Priorität"
@@ -4842,14 +5160,20 @@
       "Network fees": [
         "Netzwerkgebühren"
       ],
+      "New network fee": [
+        "Neue Netzwerkgebühr"
+      ],
       "Normal": [
-        "Standard"
+        "Normal"
       ],
       "One of recipient's amount is below minimum value": [
         "Der Betrag eines Empfängers liegt unter dem Mindestwert."
       ],
       "Please grant camera permission to use QRCode scanner": [
         "Bitte erteile der Kamera die Erlaubnis, den QR-Code-Scanner zu benutzen."
+      ],
+      "Please setup an email address in your account settings in order to send messages": [
+        "Bitte richte eine E-Mail-Adresse in deinen Kontoeinstellungen ein, um Nachrichten zu senden"
       ],
       "Recent recipients": [
         "Letzte Empfänger"
@@ -4874,6 +5198,9 @@
       ],
       "The transaction could not be sent. Please try again later": [
         "Die Transaktion konnte nicht gesendet werden. Bitte versuche es später erneut"
+      ],
+      "Transaction was successfully boosted": [
+        "Die Transaktion wurde erfolgreich beschleunigt."
       ],
       "Transaction was successfully sent": [
         "Transaktion erfolgreich gesendet."
@@ -4904,8 +5231,8 @@
       ]
     },
     "Wallet Send": {
-      "Could not broadcast transaction": [
-        "Transaktion konnte nicht übertragen werden"
+      "Could not broadcast transaction. Please sync your wallet and try again": [
+        "Die Transaktion konnte nicht übertragen werden. Bitte synchronisiere dein Wallet und versuche es erneut"
       ],
       "Could not sign transaction": [
         "Transaktion konnte nicht signiert werden"
@@ -4921,17 +5248,26 @@
       "Account was deleted": [
         "Konto wurde gelöscht"
       ],
+      "An error occurred while modifying with your Bitcoin via Email address. Please check details and try again.": [
+        "Beim Ändern deiner Bitcoin via E-Mail-Adresse ist ein Fehler aufgetreten. Bitte überprüfe die Details und versuche es erneut."
+      ],
       "Bitcoin via Email": [
         "Bitcoin per E-Mail"
       ],
       "Could not fill the pool after email address addition": [
-        "Nachdem die E-Mail-Adresse hinzugefügt wurde, konnte der Pool nicht gefüllt werden"
+        "Nachdem die E-Mail-Adresse hinzugefügt wurde, konnte der Pool nicht gefüllt werden."
       ],
       "Could not fill the pool after email address replacement": [
         "Nachdem die E-Mail-Adresse ersetzt wurde, konnte der Pool nicht gefüllt werden"
       ],
       "Create new email address": [
         "Neue E-Mail-Adresse erstellen"
+      ],
+      "Email address could not be added. Please try again.": [
+        "Die E-Mail-Adresse konnte nicht hinzugefügt werden. Bitte versuche es erneut."
+      ],
+      "Email address could not be removed. Please try again.": [
+        "Die E-Mail-Adresse konnte nicht entfernt werden. Bitte versuche es erneut."
       ],
       "Email address has been added": [
         "E-Mail-Adresse wurde hinzugefügt"
@@ -4942,11 +5278,17 @@
       "Email address has been replaced": [
         "E-Mail-Adresse wurde ersetzt"
       ],
+      "Fiat currency could not be updated. Please try again.": [
+        "Die Fiat-Währung konnte nicht aktualisiert werden. Bitte versuche es erneut."
+      ],
       "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
         "Verknüpfe eine E-Mail mit diesem Wallet-Konto, damit andere ${ WALLET_APP_NAME }-Nutzer dir leicht Bitcoin an deine E-Mail senden können."
       ],
       "New fiat currency applied": [
         "Neue Fiat-Währung angewendet"
+      ],
+      "Preferred bitcoin unit could not be changed. Please try again.": [
+        "Die bevorzugte Bitcoin-Einheit konnte nicht geändert werden. Bitte versuche es erneut."
       ],
       "Preferred bitcoin unit was changed": [
         "Bevorzugte Bitcoin-Einheit wurde geändert"
@@ -4957,8 +5299,20 @@
       "Select this address": [
         "Diese Adresse auswählen"
       ],
+      "Wallet account could not be deleted. Please try again.": [
+        "Das Wallet-Konto konnte nicht gelöscht werden. Bitte versuche es erneut."
+      ],
+      "Wallet account name could not be changed. Please try again.": [
+        "Der Name des Wallet-Kontos konnte nicht geändert werden. Bitte versuche es erneut."
+      ],
+      "Wallet could not be deleted. Please try again.": [
+        "Wallet konnte nicht gelöscht werden. Bitte versuche es erneut."
+      ],
       "Wallet name changed": [
         "Wallet-Namen geändert"
+      ],
+      "Wallet name could not be changed. Please try again.": [
+        "Der Wallet-Name konnte nicht geändert werden. Bitte versuche es erneut."
       ],
       "Wallet was deleted": [
         "Wallet wurde gelöscht"
@@ -4991,11 +5345,20 @@
       "Create new wallet": [
         "Neues Wallet erstellen"
       ],
-      "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. However, you can recover the wallet later if you have its seed phrase.": [
-        "Das Löschen dieses Wallets entfernt alle seine Daten von den Servern von ${ BRAND_NAME }. Du kannst das Wallet jedoch später wiederherstellen, wenn du die Seed-Phrase hast."
+      "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover the wallet at a later stage using the seed phrase.": [
+        "Beim Löschen dieses Wallets werden alle zugehörigen Daten von den Servern von ${ BRAND_NAME } entfernt. Du kannst das Wallet später mit der Seed-Phrase wiederherstellen."
+      ],
+      "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover the wallet by reactivating the keys used during wallet creation in your account.": [
+        "Beim Löschen dieses Wallets werden alle zugehörigen Daten von den Servern von ${ BRAND_NAME } entfernt. Du kannst das Wallet wiederherstellen, indem du die bei der Wallet-Erstellung verwendeten Schlüssel in deinem Konto reaktivierst."
       ],
       "Done": [
         "Fertig"
+      ],
+      "Email address could not be linked to wallet account. Please try again.": [
+        "Die E-Mail-Adresse konnte nicht mit dem Wallet-Konto verknüpft werden. Bitte versuche es erneut."
+      ],
+      "Error creating your wallet account. Please try again.": [
+        "Fehler beim Erstellen deines Wallet-Kontos. Bitte versuche es erneut."
       ],
       "Give a name to this wallet": [
         "Gib dieser Wallet einen Namen"
@@ -5030,8 +5393,8 @@
       "Pick a default currency so we can display the value of your Bitcoin transactions using the latest market data at transaction time.": [
         "Wähle eine Standardwährung, damit wir den Wert deiner Bitcoin-Transaktionen anhand der neuesten Marktdaten zum Zeitpunkt der Transaktion anzeigen können."
       ],
-      "Please transfer them to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. However, you can recover the wallet later if you have its seed phrase.": [
-        "Bitte übertrage sie auf ein anderes Wallet, bevor du es löschst. Das Löschen dieses Wallets entfernt alle seine Daten von den Servern von ${ BRAND_NAME }. Du kannst das Wallet jedoch später wiederherstellen, wenn du die Seed-Phrase hast."
+      "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
+        "Bitte übertrage deine Bitcoins auf ein anderes Wallet, bevor du es löschst. Beim Löschen dieses Wallets werden alle zugehörigen Daten von den Servern von ${ BRAND_NAME } entfernt. Du kannst dieses Wallet später mit der Seed-Phrase wiederherstellen."
       ],
       "Seed phrase (12-24 words)": [
         "Seed-Phrase (12–24 Wörter)"
@@ -5048,11 +5411,20 @@
       "View wallet seed phrase": [
         "Wallet-Seed-Phrase anzeigen"
       ],
+      "Wallet could not be created. Please try again.": [
+        "Wallet konnte nicht erstellt werden. Bitte versuche es erneut."
+      ],
       "Wallet seed phrase": [
         "Wallet-Seed-Phrase"
       ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "Die Seed-Phrase des Wallets kodiert den privaten Schlüssel, der deine digitalen Assets kontrolliert."
+      ],
+      "Wallet seed phrase is incorrect. Please check this and try again.": [
+        "Die Wallet-Seed-Phrase ist ungültig. Bitte überprüfe dies und versuche es erneut."
+      ],
+      "Wallet seed phrase length is invalid. This should be between 12 to 24 words.": [
+        "Die Länge der Wallet-Seed-Phrase ist ungültig. Sie muss zwischen 12 und 24 Wörtern liegen."
       ],
       "Wallet setup": [
         "Wallet-Einrichtung"
@@ -5062,9 +5434,6 @@
       ],
       "What's a wallet seed phrase?": [
         "Was ist eine Wallet-Seed-Phrase?"
-      ],
-      "What’s a wallet passphrase?": [
-        "Was ist eine Wallet-Passphrase?"
       ],
       "You can use the seed phrase to import your wallet on any wallet app.": [
         "Du kannst die Seed-Phrase verwenden, um dein Wallet in jeder Wallet-App zu importieren."
@@ -5106,6 +5475,9 @@
       ]
     },
     "Wallet terms and conditions": {
+      "Error with Terms and Conditions acceptance. Please try again.": [
+        "Fehler beim Annehmen der allgemeinen Geschäftsbedingungen. Bitte versuche es erneut."
+      ],
       "Terms and conditions were accepted": [
         "Allgemeine Geschäftsbedingungen wurden akzeptiert."
       ]
@@ -5118,7 +5490,7 @@
         "Um den Verlust von Vermögenswerten durch das Vergessen deines Passworts oder anderer Zugriffsprobleme zu vermeiden, sichere deine ${ BRAND_NAME }-Wiederherstellungsphrase und die Seed-Phrase deines Wallets."
       ],
       "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
-        "Wir haben zwei BTC-Konten für dich erstellt. Ein Hauptkonto und ein zweites Konto, um Bitcoin per E-Mail (an ${ emailEl }) von anderen ${ WALLET_APP_NAME }-Benutzern zu empfangen."
+        "Wir haben zwei BTC-Konten für dich erstellt. Ein Hauptkonto und ein zweites Konto, um Bitcoin via E-Mail (an ${ emailEl }) von anderen ${ WALLET_APP_NAME }-Benutzern zu empfangen."
       ]
     },
     "Wallet transaction": {
@@ -5141,7 +5513,10 @@
         "Anonymer Absender"
       ],
       "Bitcoin via Email": [
-        "Bitcoin per E-Mail"
+        "Bitcoin via E-Mail"
+      ],
+      "Boost priority": [
+        "Priorität erhöhen"
       ],
       "Buy": [
         "Kaufen"
@@ -5215,6 +5590,9 @@
       "View more": [
         "Mehr anzeigen"
       ],
+      "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
+        "Aktuell gibt es Probleme mit der Berechnung der Netzwerkgebühren. Bitte versuche es später noch einmal. Wenn das Problem weiterhin besteht, kontaktiere bitte unser Support-Team."
+      ],
       "You received": [
         "Du hast empfangen:"
       ],
@@ -5236,6 +5614,9 @@
       ]
     },
     "Wallet transactions": {
+      "Addresses": [
+        "Adressen"
+      ],
       "Transactions": [
         "Transaktionen"
       ]
@@ -5249,6 +5630,9 @@
       ],
       "Sync": [
         "Synchronisieren"
+      ],
+      "Syncing in progress. Please wait": [
+        "Synchronisierung läuft. Bitte warten"
       ]
     },
     "Wallet upgrade": {
