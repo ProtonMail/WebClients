@@ -2,8 +2,11 @@ import type { ReactElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Plan } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { contactHref } from './helpers';
@@ -21,6 +24,8 @@ export const IPsNumberCustomiser = ({
     input: ReactElement;
     showDescription?: boolean;
 }) => {
+    const isIpAddonDowngradeEnabled = useFlag('IpAddonDowngrade');
+
     const title = c('Info').t`Dedicated servers`;
 
     const select = c('plan customizer, ips')
@@ -48,7 +53,7 @@ export const IPsNumberCustomiser = ({
                     </div>
                 </>
             )}
-            <div className="flex *:min-size-auto md:flex-nowrap items-center mb-4">
+            <div className="flex *:min-size-auto md:flex-nowrap items-center mb-0">
                 <label
                     htmlFor={addon.Name}
                     className="w-full md:w-auto flex-1 plan-customiser-addon-label text-bold pr-2"
@@ -58,6 +63,9 @@ export const IPsNumberCustomiser = ({
                 </label>
                 {input}
             </div>
+            {isIpAddonDowngradeEnabled && (
+                <Href href={getKnowledgeBaseUrl('/add-vpn-servers-organization')}>{c('Link').t`Learn more`}</Href>
+            )}
         </div>
     );
 };
