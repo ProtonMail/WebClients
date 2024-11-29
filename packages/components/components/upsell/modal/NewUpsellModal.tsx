@@ -27,7 +27,7 @@ export interface NewUpsellModalProps {
     ['data-testid']?: string;
     modalProps: ModalStateProps;
     titleModal: ReactNode;
-    description: string;
+    description: ReactNode;
     upgradePath?: string;
     illustration: string;
     onClose?: () => void;
@@ -130,7 +130,11 @@ const NewUpsellModal = ({
             <div className="modal-two-content-container">
                 <ModalTwoContent className="my-8 text-center">
                     <h1 className="text-lg text-bold">{titleModal}</h1>
-                    <p className="mt-2 mb-6 text-wrap-balance color-weak">{description}</p>
+                    {typeof description === 'string' ? (
+                        <p className="mt-2 mb-6 text-wrap-balance color-weak">{description}</p>
+                    ) : (
+                        <div className="mt-2 mb-6">{description}</div>
+                    )}
                     <div>{upgradeButton}</div>
                     <p className="mt-2 text-sm color-weak">{footerTextModal}</p>
                 </ModalTwoContent>
