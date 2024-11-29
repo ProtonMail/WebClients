@@ -5,6 +5,7 @@ import { withFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { selectNextNotification } from '@proton/pass/store/selectors';
 import { InAppNotificationDisplayType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
 import { InAppNotificationBanner } from './InAppNotificationBanner';
@@ -18,7 +19,7 @@ const getNotificationComponent = (displayType?: InAppNotificationDisplayType) =>
     })[displayType!] ?? noop;
 
 export const InAppNotifications: FC = withFeatureFlag(() => {
-    const notification = useSelector(selectNextNotification);
+    const notification = useSelector(selectNextNotification(getEpoch()));
     const NotificationComponent = getNotificationComponent(notification?.content.displayType);
     return <NotificationComponent />;
 }, PassFeature.PassInAppMessages);

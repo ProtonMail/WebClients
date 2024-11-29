@@ -4,21 +4,16 @@ import type { NotificationReducerState } from '@proton/pass/store/reducers/notif
 import type { State } from '@proton/pass/store/types';
 import { InAppNotificationState, type Maybe } from '@proton/pass/types';
 import { type InAppNotification } from '@proton/pass/types/data/notification';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 export const selectNotificationState = ({ notification }: State): NotificationReducerState => notification;
 
-export const selectNextNotification = createSelector(
-    [selectNotificationState],
-    ({ notifications, nextDisplayTime }): Maybe<InAppNotification> => {
-        const now = getEpoch();
+export const selectNextNotification = (timeFrom: number) =>
+    createSelector([selectNotificationState], ({ notifications, nextDisplayTime }): Maybe<InAppNotification> => {
+        if (nextDisplayTime > timeFrom) return;
 
-        if (nextDisplayTime > now) return;
-
-        // Date should be greater than startTime and less than endTime (if defined)
+        // timeFrom should be greater than startTime and less than endTime (if defined)
         return notifications.find(
             ({ startTime, endTime, state }) =>
-                state === InAppNotificationState.UNREAD && now > startTime && (!endTime || now < endTime)
+                state === InAppNotificationState.UNREAD && timeFrom > startTime && (!endTime || timeFrom < endTime)
         );
-    }
-);
+    });
