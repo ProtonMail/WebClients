@@ -14,7 +14,11 @@ describe('EncryptMessage', () => {
 
   const update = new Uint8Array()
   const metadata = { version: 1, authorAddress: 'author@example.com', timestamp: 1234567890 }
-  const keys = {} as DocumentKeys
+  const keys = {
+    userAddressPrivateKey: {},
+    documentContentKey: {},
+    userOwnAddress: 'user@example.com',
+  } as unknown as DocumentKeys
 
   beforeEach(() => {
     encryptionService = {

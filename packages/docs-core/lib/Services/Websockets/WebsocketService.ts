@@ -1,7 +1,7 @@
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils'
-import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
+import type { DocumentKeys, NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
-import type { EncryptionMetadata } from '../../Types/EncryptionMetadata'
+import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
 import type {
@@ -49,6 +49,7 @@ import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { MetricService } from '../Metrics/MetricService'
 import type { UserState } from '../../State/UserState'
+import { isPrivateDocumentKeys, type PublicDocumentKeys } from '../../Types/DocumentEntitlements'
 
 type LinkID = string
 
@@ -117,8 +118,8 @@ export class WebsocketService implements WebsocketServiceInterface {
   }
 
   createConnection(
-    document: NodeMeta,
-    keys: DocumentKeys,
+    document: NodeMeta | PublicNodeMeta,
+    keys: DocumentKeys | PublicDocumentKeys,
     options: { commitId: () => string | undefined },
   ): WebsocketConnectionInterface {
     this.logger.info(`Creating connection for document ${document.linkId}`)
@@ -277,7 +278,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     }
   }
 
-  retryFailedDocumentUpdatesForDoc(document: NodeMeta): void {
+  retryFailedDocumentUpdatesForDoc(document: NodeMeta | PublicNodeMeta): void {
     const record = this.getConnectionRecord(document.linkId)
     if (!record) {
       throw new Error('Connection not found')
@@ -334,7 +335,10 @@ export class WebsocketService implements WebsocketServiceInterface {
     await record.connection.connect()
   }
 
-  async handleDocumentUpdateDebouncerFlush(document: NodeMeta, mergedUpdate: Uint8Array): Promise<void> {
+  async handleDocumentUpdateDebouncerFlush(
+    document: NodeMeta | PublicNodeMeta,
+    mergedUpdate: Uint8Array,
+  ): Promise<void> {
     const record = this.getConnectionRecord(document.linkId)
     if (!record) {
       throw new Error('Connection not found')
@@ -342,8 +346,8 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const { keys, connection } = record
 
-    const metadata: EncryptionMetadata = {
-      authorAddress: keys.userOwnAddress,
+    const metadata: EncryptionMetadata | AnonymousEncryptionMetadata = {
+      authorAddress: isPrivateDocumentKeys(keys) ? keys.userOwnAddress : undefined,
       timestamp: Date.now(),
       version: DocumentUpdateVersion.V1,
     }
@@ -419,8 +423,8 @@ export class WebsocketService implements WebsocketServiceInterface {
       return
     }
 
-    const metadata: EncryptionMetadata = {
-      authorAddress: keys.userOwnAddress,
+    const metadata: EncryptionMetadata | AnonymousEncryptionMetadata = {
+      authorAddress: isPrivateDocumentKeys(keys) ? keys.userOwnAddress : undefined,
       timestamp: Date.now(),
       version: ClientEventVersion.V1,
     }
@@ -444,9 +448,9 @@ export class WebsocketService implements WebsocketServiceInterface {
 
   async encryptMessage(
     content: Uint8Array,
-    metadata: EncryptionMetadata,
-    document: NodeMeta,
-    keys: DocumentKeys,
+    metadata: EncryptionMetadata | AnonymousEncryptionMetadata,
+    document: NodeMeta | PublicNodeMeta,
+    keys: DocumentKeys | PublicDocumentKeys,
     source: BroadcastSource,
   ): Promise<Uint8Array> {
     const result = await this._encryptMessage.execute(content, metadata, keys)
@@ -482,7 +486,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     return new Uint8Array(result.getValue())
   }
 
-  async handleConnectionMessage(document: NodeMeta, data: Uint8Array): Promise<void> {
+  async handleConnectionMessage(document: NodeMeta | PublicNodeMeta, data: Uint8Array): Promise<void> {
     const record = this.getConnectionRecord(document.linkId)
     if (!record) {
       throw new Error('Connection not found')
@@ -527,7 +531,9 @@ export class WebsocketService implements WebsocketServiceInterface {
     const { keys, debouncer, document } = record
 
     for (const update of message.updates.documentUpdates) {
-      if (update.authorAddress !== keys.userOwnAddress) {
+      const isReceivedUpdateFromOtherUser = isPrivateDocumentKeys(keys) && update.authorAddress !== keys.userOwnAddress
+      const isReceivedUpdateFromAnonymousUser = isPrivateDocumentKeys(keys) && !update.authorAddress
+      if (isReceivedUpdateFromOtherUser || isReceivedUpdateFromAnonymousUser) {
         this.switchToRealtimeMode(debouncer, 'receiving DU from other user')
       }
 

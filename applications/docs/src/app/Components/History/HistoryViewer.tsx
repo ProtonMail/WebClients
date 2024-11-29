@@ -14,15 +14,15 @@ import {
   NOTIFICATION_DEFAULT_EXPIRATION_TIME,
   useConfirmActionModal,
 } from '@proton/components'
-import type { DocControllerInterface, NativeVersionHistory } from '@proton/docs-core'
-import type { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
+import type { AuthenticatedDocControllerInterface, NativeVersionHistory } from '@proton/docs-core'
+import type { EditorInvoker } from '@proton/docs-core'
 import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
 import HistoryTimeline from './HistoryTimeline'
 import { SingleRevisionViewer } from './SingleRevisionViewer'
 import { useLoading } from '@proton/hooks/index'
 import { type SerializedEditorState } from 'lexical'
-import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
+import type { EditorControllerInterface } from '@proton/docs-core'
 
 enum RestoreType {
   Replace = 'replace',
@@ -38,7 +38,7 @@ function HistoryViewerModalContent({
   versionHistory: NativeVersionHistory
   onClose: () => void
   editorController: EditorControllerInterface
-  docController: DocControllerInterface
+  docController: AuthenticatedDocControllerInterface
 }) {
   const [selectedBatchIndex, setSelectedBatchIndex] = useState(() => versionHistory.batches.length - 1)
   const [editorInvoker, setEditorInvoker] = useState<EditorInvoker | undefined>()
@@ -247,7 +247,7 @@ function HistoryViewerModalContent({
 interface HistoryViewerModalProps extends ModalStateProps {
   versionHistory: NativeVersionHistory | undefined
   editorController: EditorControllerInterface
-  docController: DocControllerInterface
+  docController: AuthenticatedDocControllerInterface
 }
 
 function HistoryViewerModal({

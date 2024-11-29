@@ -102,6 +102,7 @@ enum DocsFeatureFlag {
     DriveDocs = 'DriveDocs',
     DriveDocsDisabled = 'DriveDocsDisabled',
     DocsAppSwitcher = 'DocsAppSwitcher',
+    DocsPublicEditing = 'DocsPublicEditing',
     // Comments
     DocsEnableNotificationsOnNewComment = 'DocsEnableNotificationsOnNewComment',
     // Landing page

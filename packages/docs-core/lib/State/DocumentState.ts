@@ -22,10 +22,6 @@ export type DocumentEvent =
       payload: undefined
     }
   | {
-      name: 'RealtimeFailedToGetToken'
-      payload: 'due-to-commit-id-out-of-sync'
-    }
-  | {
       name: 'RealtimeAttemptingToSendUpdateThatIsTooLarge'
       payload: undefined
     }
@@ -36,14 +32,6 @@ export type DocumentEvent =
   | {
       name: 'RealtimeRequestingClientToBroadcastItsState'
       payload: undefined
-    }
-  | {
-      name: 'RealtimeNewCommitIdReceived'
-      payload: string
-    }
-  | {
-      name: 'RealtimeReceivedCommentMessage'
-      payload: Uint8Array
     }
   | {
       name: 'RealtimeReceivedOtherClientPresenceState'

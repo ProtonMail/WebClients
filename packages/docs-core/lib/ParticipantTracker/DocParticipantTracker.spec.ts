@@ -1,6 +1,6 @@
 import type { UserState } from '@lexical/yjs'
 import { DocParticipantTracker } from './DocParticipantTracker'
-import type { DocumentState } from '../../State/DocumentState'
+import type { DocumentState } from '../State/DocumentState'
 
 describe('DocParticipantTracker', () => {
   let tracker: DocParticipantTracker

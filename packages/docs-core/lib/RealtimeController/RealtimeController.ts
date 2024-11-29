@@ -4,24 +4,29 @@ import {
   assertUnreachableAndLog,
   DecryptedMessage,
   ProcessedIncomingRealtimeEventMessage,
+  Result,
   type BroadcastSource,
   type InternalEventBusInterface,
   type InternalEventHandlerInterface,
   type InternalEventInterface,
   type RtsMessagePayload,
 } from '@proton/docs-shared'
-import type { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
-import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
-import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
-import type { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import type { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
+import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
+import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import type { WebsocketConnectionEventPayloads } from '../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { ConnectionCloseReason, EventTypeEnum } from '@proton/docs-proto'
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
-import { DocSizeTracker } from '../Document/SizeTracker'
-import { PostApplicationError } from '../../Application/ApplicationEvent'
+import { DocSizeTracker } from '../SizeTracker/SizeTracker'
+import { PostApplicationError } from '../Application/ApplicationEvent'
 import type { RealtimeControllerInterface } from './RealtimeControllerInterface'
-import type { DocumentState } from '../../State/DocumentState'
+import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import type { LoggerInterface } from '@proton/utils/logs'
 import metrics from '@proton/metrics'
+import type { DocControllerEventPayloads } from '../AuthenticatedDocController/AuthenticatedDocControllerEvent'
+import { DocControllerEvent } from '../AuthenticatedDocController/AuthenticatedDocControllerEvent'
+import type { GetDocumentMeta } from '../UseCase/GetDocumentMeta'
+import type { LoadCommit } from '../UseCase/LoadCommit'
 
 /**
  * @TODO DRVDOC-802
@@ -39,13 +44,16 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
   isDestroyed = false
   abortWebsocketConnectionAttempt = false
   sizeTracker: DocSizeTracker = new DocSizeTracker()
+  isRefetchingStaleCommit = false
 
   readonly updatesReceivedWhileParentNotReady: (DecryptedMessage | ProcessedIncomingRealtimeEventMessage)[] = []
 
   constructor(
     readonly websocketService: WebsocketServiceInterface,
     private readonly eventBus: InternalEventBusInterface,
-    readonly documentState: DocumentState,
+    readonly documentState: DocumentState | PublicDocumentState,
+    readonly _loadCommit: LoadCommit,
+    readonly _getDocumentMeta: GetDocumentMeta,
     readonly logger: LoggerInterface,
   ) {
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connecting)
@@ -185,7 +193,11 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
         event.payload as WebsocketConnectionEventPayloads[WebsocketConnectionEvent.AckStatusChange],
       )
     } else if (event.type === WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync) {
-      this.documentState.emitEvent({ name: 'RealtimeFailedToGetToken', payload: 'due-to-commit-id-out-of-sync' })
+      /**
+       * The client was unable to get a token from the Docs API because the Commit ID the client had did not match
+       * what the server was expecting.
+       */
+      void this.refetchCommitDueToStaleContents('token-fail')
     } else {
       return
     }
@@ -261,6 +273,10 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
 
     this.documentState.emitEvent({ name: 'RealtimeConnectionClosed', payload: reason })
 
+    if (reason.props.code === ConnectionCloseReason.CODES.STALE_COMMIT_ID) {
+      void this.refetchCommitDueToStaleContents('rts-disconnect')
+    }
+
     if (reason.props.code === ConnectionCloseReason.CODES.TRAFFIC_ABUSE_MAX_DU_SIZE) {
       metrics.docs_document_updates_save_error_total.increment({
         type: 'document_too_big',
@@ -284,7 +300,9 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     this.documentState.setProperty('realtimeIsExperiencingErroredSync', event.ledger.hasErroredMessages())
   }
 
-  initializeConnection(entitlements: DocumentEntitlements): WebsocketConnectionInterface {
+  initializeConnection(): WebsocketConnectionInterface {
+    const entitlements = this.documentState.getProperty('entitlements')
+
     const connection = this.websocketService.createConnection(
       this.documentState.getProperty('documentMeta').nodeMeta,
       entitlements.keys,
@@ -363,10 +381,15 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
         case EventTypeEnum.ServerIsInformingClientThatTheDocumentCommitHasBeenUpdated:
           const decodedContent = utf8ArrayToString(event.props.content)
           const parsedMessage = JSON.parse(decodedContent)
-          this.documentState.emitEvent({ name: 'RealtimeNewCommitIdReceived', payload: parsedMessage.commitId })
+          this.documentState.setProperty('currentCommitId', parsedMessage.commitId)
           break
         case EventTypeEnum.ClientHasSentACommentMessage: {
-          this.documentState.emitEvent({ name: 'RealtimeReceivedCommentMessage', payload: event.props.content })
+          this.eventBus.publish({
+            type: DocControllerEvent.RealtimeCommentMessageReceived,
+            payload: <DocControllerEventPayloads[DocControllerEvent.RealtimeCommentMessageReceived]>{
+              message: event.props.content,
+            },
+          })
 
           break
         }
@@ -389,5 +412,68 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
           assertUnreachableAndLog(event.props)
       }
     }
+  }
+
+  /**
+   * If the RTS rejects or drops our connection due to our commit ID not being what it has, we will refetch the document
+   * and its binary from the main API and update our content.
+   */
+  async refetchCommitDueToStaleContents(source: 'token-fail' | 'rts-disconnect') {
+    if (this.isRefetchingStaleCommit) {
+      this.logger.info('Attempting to refetch stale commit but refetch already in progress')
+      return
+    }
+
+    this.isRefetchingStaleCommit = true
+
+    this.logger.info('Refetching document due to stale commit ID from source', source)
+
+    const fail = (error: string) => {
+      this.isRefetchingStaleCommit = false
+
+      this.logger.error(error)
+
+      this.eventBus.publish({
+        type: DocControllerEvent.UnableToResolveCommitIdConflict,
+        payload: undefined,
+      })
+    }
+
+    const nodeMeta = this.documentState.getProperty('documentMeta').nodeMeta
+
+    const result = await this._getDocumentMeta.execute(nodeMeta)
+    if (result.isFailed()) {
+      fail(`Failed to reload document meta: ${result.getError()}`)
+
+      return
+    }
+
+    const latestCommitId = result.getValue().latestCommitId()
+
+    if (!latestCommitId || latestCommitId === this.documentState.getProperty('currentCommitId')) {
+      fail(!latestCommitId ? 'Reloaded commit but commit id was null' : 'Reloaded commit id is the same as current')
+
+      return
+    }
+
+    const entitlements = this.documentState.getProperty('entitlements')
+
+    const decryptResult = await this._loadCommit.execute(nodeMeta, latestCommitId, entitlements.keys.documentContentKey)
+    if (decryptResult.isFailed()) {
+      fail(`Failed to reload or decrypt commit: ${decryptResult.getError()}`)
+
+      return Result.fail(decryptResult.getError())
+    }
+
+    const decryptedCommit = decryptResult.getValue()
+
+    this.logger.info(
+      `Reownloaded and decrypted commit id ${decryptedCommit.commitId} with ${decryptedCommit?.numberOfUpdates()} updates`,
+    )
+
+    this.documentState.setProperty('baseCommit', decryptedCommit)
+    this.documentState.setProperty('currentCommitId', decryptedCommit.commitId)
+
+    this.isRefetchingStaleCommit = false
   }
 }

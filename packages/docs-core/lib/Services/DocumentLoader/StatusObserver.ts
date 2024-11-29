@@ -1,17 +1,13 @@
-import type { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
-import type { EditorControllerInterface } from '../../Controller/Document/EditorController'
-import type { PublicDocControllerInterface } from '../../Controller/Document/PublicDocControllerInterface'
+import type { AuthenticatedDocControllerInterface } from '../../AuthenticatedDocController/AuthenticatedDocControllerInterface'
+import type { EditorControllerInterface } from '../../EditorController/EditorController'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 import type { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorInterface'
 
-export type DocLoaderStatusObserver<
-  S extends DocumentState | PublicDocumentState,
-  D extends DocControllerInterface | PublicDocControllerInterface,
-> = {
+export type DocLoaderStatusObserver<S extends DocumentState | PublicDocumentState> = {
   onSuccess: (result: {
     orchestrator: EditorOrchestratorInterface
     documentState: S
-    docController: D
+    docController?: AuthenticatedDocControllerInterface
     editorController: EditorControllerInterface
   }) => void
   onError: (error: string) => void

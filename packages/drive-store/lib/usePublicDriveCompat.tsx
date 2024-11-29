@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext } from 'react';
 
+import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+
 import { useDriveDocsFeatureFlag, useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
 import { type DocumentKeys } from './_documents';
 import { usePublicNode } from './_nodes';
@@ -78,6 +80,16 @@ export interface PublicDriveCompat {
      * Gets the authentication headers for `useApi()`
      */
     getPublicAuthHeaders: () => { [key: string]: string };
+
+    /**
+     * The decrypted node.
+     */
+    decryptedNode: DecryptedNode | undefined;
+
+    /**
+     * The permissions of the public link.
+     */
+    permissions: SHARE_URL_PERMISSIONS | undefined;
 }
 
 export const usePublicDriveCompatValue = (): PublicDriveCompat => {
@@ -97,7 +109,10 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         linkId,
     } = usePublicDocsToken();
 
-    const { getNode, getNodeContentKey, didCompleteInitialSetup } = usePublicNode({ isDocsTokenReady, linkId });
+    const { getNode, getNodeContentKey, didCompleteInitialSetup, decryptedNode, permissions } = usePublicNode({
+        isDocsTokenReady,
+        linkId,
+    });
     const { openDocumentWindow } = useOpenDocument();
 
     const redirectToAuthedDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open', window: window });
@@ -119,6 +134,8 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         }),
         getNode,
         getPublicAuthHeaders,
+        decryptedNode,
+        permissions,
     };
 };
 
