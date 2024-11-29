@@ -6,7 +6,8 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiExchangeRate } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms';
-import { Tooltip } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
+import { VERIFICATION_STATUS } from '@proton/crypto';
 import { SECOND } from '@proton/shared/lib/constants';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
 import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
@@ -143,7 +144,14 @@ export const SenderOrRecipientDataListItem = ({ tx, loading }: TxDataListItemPro
                 (message || loading) && (
                     <Skeleton loading={loading} placeholder={<div>{c('Loader').t`Loading message`}</div>}>
                         <Tooltip title={message}>
-                            <div className="color-weak block text-ellipsis">{message}</div>
+                            <div className="color-weak block text-ellipsis">
+                                {tx?.apiData?.verifiedBody === VERIFICATION_STATUS.SIGNED_AND_INVALID && (
+                                    <Tooltip title="Signature is invalid">
+                                        <Icon name="exclamation-circle" className="color-warning shrink-0" />
+                                    </Tooltip>
+                                )}{' '}
+                                {message}
+                            </div>
                         </Tooltip>
                     </Skeleton>
                 )

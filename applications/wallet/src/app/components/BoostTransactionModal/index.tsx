@@ -125,9 +125,16 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
         }
 
         const recipients = transaction.apiData.ToList;
-        const recipientsEncryptionKeys = compact(
+        const messageRecipients = compact(
             await Promise.all(
-                Object.values(recipients).map((recipient) => recipient && getRecipientVerifiedAddressKey(recipient))
+                Object.values(recipients).map(async (recipient) => {
+                    if (!recipient) {
+                        return null;
+                    }
+
+                    const key = await getRecipientVerifiedAddressKey(recipient);
+                    return key ? { email: recipient, key } : null;
+                })
             )
         );
 
@@ -139,7 +146,7 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
         const senderAddressKey = senderAddress && (await getAddressKeys(senderAddress.ID)).at(0);
 
         const message = transaction.apiData?.Body
-            ? { content: transaction.apiData.Body, encryptionKeys: [...recipientsEncryptionKeys] }
+            ? { content: transaction.apiData.Body, recipients: messageRecipients }
             : undefined;
 
         try {
@@ -158,7 +165,9 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
                 exchangeRateId: transaction.apiData?.ExchangeRate?.ID,
                 noteToSelf: transaction.apiData?.Label ?? undefined,
 
-                senderAddress: senderAddressKey ? { ID: senderAddress.ID, key: senderAddressKey } : undefined,
+                senderAddress: senderAddressKey
+                    ? { ID: senderAddress.ID, email: senderAddress.Email, key: senderAddressKey }
+                    : undefined,
                 message,
                 recipients,
                 isAnonymousSend: transaction.apiData.Type === 'ProtonToProtonSend' && !transaction.apiData.Sender,
