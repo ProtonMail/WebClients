@@ -40,7 +40,7 @@ const parseSender = (sender: string): string | SenderObject => {
 /**
  * Decrypt transaction data. If addressKeys is not provided, we won't try to decrypt Body, Sender and ToList.
  *
- * Additionnally, TransactionID decryption might fail if Tx was created by a third party (using address keys)
+ * Additionally, TransactionID decryption might fail if Tx was created by a third party (using address keys)
  */
 export const decryptTransactionData = async (
     apiTransaction: WasmApiWalletTransaction,
@@ -52,9 +52,9 @@ export const decryptTransactionData = async (
 
     const [decryptedLabel = ''] = await decryptWalletData([apiTransaction.Label], walletKey).catch(() => []);
 
-    const TransactionID = await decryptTextData(apiTransaction.TransactionID, keys);
+    const { data: TransactionID } = await decryptTextData(apiTransaction.TransactionID, keys);
     // Sender is encrypted with addressKey in BitcoinViaEmail but with userKey when manually set (unknown sender)
-    const Sender = apiTransaction.Sender && (await decryptTextData(apiTransaction.Sender, keys));
+    const Sender = apiTransaction.Sender && (await decryptTextData(apiTransaction.Sender, keys)).data;
     const parsedSender = Sender && parseSender(Sender);
 
     const apiTransactionB = {
@@ -63,14 +63,17 @@ export const decryptTransactionData = async (
         TransactionID,
         Sender: parsedSender,
         ToList: {},
+        verifiedBody: null,
     };
 
     if (!addressKeys) {
         return apiTransactionB;
     }
 
-    const Body = apiTransaction.Body && (await decryptTextData(apiTransaction.Body, addressKeys));
-    const SerialisedToList = apiTransaction.ToList && (await decryptTextData(apiTransaction.ToList, addressKeys));
+    const { data: Body, verified: verifiedBody } = apiTransaction.Body
+        ? await decryptTextData(apiTransaction.Body, addressKeys)
+        : { data: null, verified: null };
+    const SerialisedToList = apiTransaction.ToList && (await decryptTextData(apiTransaction.ToList, addressKeys)).data;
 
     const ToList = parsedRecipientList(SerialisedToList);
 
@@ -78,6 +81,7 @@ export const decryptTransactionData = async (
         ...apiTransactionB,
         Body,
         ToList,
+        verifiedBody,
     };
 };
 
