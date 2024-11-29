@@ -26,7 +26,6 @@ import {
     getReturnUrlParameter,
     removeHashParameters,
 } from '@proton/shared/lib/authentication/fork';
-import type { ForkState } from '@proton/shared/lib/authentication/fork/forkState';
 import { getParsedCurrentUrl } from '@proton/shared/lib/authentication/fork/forkState';
 import type { ExtraSessionForkData } from '@proton/shared/lib/authentication/interface';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
@@ -45,6 +44,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import sentry, { setSentryEnabled, setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
+import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
@@ -134,7 +134,7 @@ export const init = ({
 export interface SessionPayloadData {
     session: ResumedSessionResult | undefined;
     basename: string | undefined;
-    forkState?: ForkState;
+    url?: string;
 }
 
 export const loadSession = async ({
@@ -181,14 +181,16 @@ export const loadSession = async ({
                     return {
                         session: result.session,
                         basename: authentication.basename,
-                        forkState: result.forkState,
+                        url: result.forkState.url,
                     };
                 }
             }
 
             // Having a previously persisted localID potentially avoids a redirect to account.
             const lastUsedLocaleId = getLastUsedLocalID();
-            if (lastUsedLocaleId >= 0) {
+            // If specifying an email address, ignore the last used local id. We don't know if that local id maps
+            // to the email since we don't store all addresses.
+            if (!extra.email && lastUsedLocaleId >= 0) {
                 localID = lastUsedLocaleId;
             } else {
                 throw new InvalidSessionError('Missing localID', extra);
@@ -199,10 +201,12 @@ export const loadSession = async ({
         authentication.login(result);
         api.UID = authentication.UID;
         setLastUsedLocalID(authentication.localID);
+        const currentUrl = `/${getParsedPathWithoutLocalIDBasename(getPathFromLocation(window.location))}`;
 
         return {
             session: result,
             basename: authentication.basename,
+            url: currentUrl,
         };
     } catch (e: any) {
         if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
@@ -258,7 +262,7 @@ export const loadDrawerSession = async ({
 };
 
 export const createHistory = ({
-    sessionResult: { basename, forkState },
+    sessionResult: { basename, url },
     pathname,
 }: {
     sessionResult: SessionPayloadData;
@@ -266,7 +270,7 @@ export const createHistory = ({
 }) => {
     const history = createBrowserHistory({ basename });
 
-    const path = forkState?.url ? getParsedCurrentUrl(forkState.url) : '';
+    const path = url ? getParsedCurrentUrl(url) : '';
 
     if (path || (basename && !pathname.startsWith(basename))) {
         const safePath = `/${getParsedPathWithoutLocalIDBasename(path || '')}`;
