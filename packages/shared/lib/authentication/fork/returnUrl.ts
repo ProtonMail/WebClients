@@ -1,4 +1,4 @@
-import { getParsedPathWithoutLocalIDBasename } from '../createAuthenticationStore';
+import { getParsedPathWithoutLocalIDBasename } from '../pathnameHelper';
 import { returnUrlContextKey, returnUrlKey } from './constants';
 
 export const getReturnUrlParameter = (searchParams: URLSearchParams) => {
