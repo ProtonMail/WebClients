@@ -26,13 +26,13 @@ export type EncryptedWalletPart = Partial<
 >;
 
 export const decryptTextData = async (armoredMessage: string, keys: PrivateKeyReference[]) => {
-    const { data } = await CryptoProxy.decryptMessage({
+    const { data, verified } = await CryptoProxy.decryptMessage({
         armoredMessage,
         decryptionKeys: keys,
         verificationKeys: keys,
     });
 
-    return data;
+    return { data, verified };
 };
 
 type DecryptReturnType<T extends 'binary' | 'utf8'> = T extends 'binary' ? Uint8Array : string;
@@ -79,6 +79,40 @@ export const encryptPgp = async <T extends string | Uint8Array>(
     }
 
     return message;
+};
+
+export const encryptTransactionMessage = async (
+    message: string,
+    encryptionKeys: { email: string; key: PublicKeyReference }[],
+    signingKeys?: PrivateKeyReference[]
+) => {
+    const sessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: encryptionKeys.map(({ key }) => key) });
+
+    const { message: encrypted } = await CryptoProxy.encryptMessage({
+        textData: message,
+        sessionKey,
+        signingKeys,
+        format: 'binary',
+    });
+
+    const emailAndKeys = await Promise.all(
+        encryptionKeys.map(async ({ email, key }) => {
+            const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
+                ...sessionKey,
+                encryptionKeys: key,
+                format: 'binary',
+            });
+
+            return { email, key: uint8ArrayToBase64String(encryptedSessionKey) };
+        })
+    );
+
+    const keyPackets = emailAndKeys.reduce(
+        (acc, emailAndKey) => ({ ...acc, [emailAndKey.email]: emailAndKey.key }),
+        {}
+    );
+
+    return { data_packet: uint8ArrayToBase64String(encrypted), key_packets: keyPackets };
 };
 
 export const signData = async <T extends string | Uint8Array>(
