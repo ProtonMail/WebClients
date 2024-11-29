@@ -14,9 +14,7 @@ import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proto
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
-import createAuthenticationStore, {
-    getParsedPathWithoutLocalIDBasename,
-} from '@proton/shared/lib/authentication/createAuthenticationStore';
+import createAuthenticationStore from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
@@ -29,7 +27,10 @@ import {
 import { getParsedCurrentUrl } from '@proton/shared/lib/authentication/fork/forkState';
 import type { ExtraSessionForkData } from '@proton/shared/lib/authentication/interface';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
-import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import {
+    getLocalIDFromPathname,
+    getParsedPathWithoutLocalIDBasename,
+} from '@proton/shared/lib/authentication/pathnameHelper';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
