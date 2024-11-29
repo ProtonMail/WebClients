@@ -23,6 +23,7 @@ import { getESUserChoice, setESUserChoice } from "../store/userSettingsStore";
 import { checkDefaultMailto, getDefaultMailto, setDefaultMailtoTelemetryReported } from "../utils/protocol/default";
 import { getAllAppVersions, storeAppVersion } from "../utils/appVersions";
 import metrics from "../utils/metrics";
+import telemetry from "../utils/telemetry";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -62,6 +63,10 @@ export const handleIPCCalls = () => {
                 event.returnValue = getDefaultMailto();
                 break;
             }
+            case "dailyStats": {
+                event.returnValue = telemetry.getDailyStats();
+                break;
+            }
             case "colorScheme":
                 event.returnValue = getColorScheme();
                 break;
@@ -88,10 +93,12 @@ export const handleIPCCalls = () => {
                 break;
             case "userLogin":
                 resetHiddenViews();
+                telemetry.userLogin();
                 break;
             case "userLogout":
                 resetHiddenViews();
                 resetBadge();
+                telemetry.userLogout();
                 break;
             case "clearAppData":
                 clearStorage(true, 500);
@@ -148,6 +155,20 @@ export const handleIPCCalls = () => {
             }
             case "defaultMailtoTelemetryReported": {
                 setDefaultMailtoTelemetryReported(payload);
+                break;
+            }
+            case "checkDailyStatsAndSignal": {
+                telemetry.checkDailyStats();
+                const dailyStatsReport = telemetry.getDailyStatsReport();
+
+                getMailView()?.webContents?.send("hostUpdate", {
+                    type: "dailyStatsChecked",
+                    payload: dailyStatsReport,
+                });
+                break;
+            }
+            case "dailyStatsReported": {
+                telemetry.dailyStatsReported(payload);
                 break;
             }
             case "setESUserChoice": {

@@ -25,6 +25,7 @@ export enum TelemetryMeasurementGroups {
     mailProtonTips = 'mail.web.proton_tips',
     mailPostSubscriptionEvents = 'any.web.post_subscription_events',
     mailDesktopDefaultMailto = 'mail.desktop.default_mailto',
+    mailDesktopDailyStats = 'mail.desktop.daily_stats',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     paymentsFlow = 'payments.flow',
@@ -181,8 +182,9 @@ export enum TelemetryMailHeartbeatEvents {
     mail_heartbeat = 'mail_heartbeat',
 }
 
-export enum TelemetryMailDefaultMailto {
+export enum TelemetryInboxDestkopEvents {
     mailto_heartbeat = 'mailto_heartbeat',
+    daily_stats_heartbeat = 'daily_stats_heartbeat',
 }
 
 export enum TelemetryChangelog {
@@ -265,7 +267,7 @@ export type TelemetryEvents =
     | TelemetryMailHeartbeatEvents
     | TelemetrySmartBannerEvents
     | TelemetryDesktopEvents
-    | TelemetryMailDefaultMailto
+    | TelemetryInboxDestkopEvents
     | TelemetryDocsEvents
     | TelemetryCalendarVideoConferencing
     | TelemetryMailPostSubscriptionEvents;
