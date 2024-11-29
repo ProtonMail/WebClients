@@ -37,3 +37,5 @@ export type InAppNotifications = {
 };
 
 export type UpdateInAppNotificationDTO = Pick<InAppNotification, 'id' | 'state'>;
+
+export type TelemetryInAppNotificationStatus = 'read' | 'unread' | 'dismissed';
