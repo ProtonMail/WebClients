@@ -5,7 +5,7 @@ import { useApplication } from '../../Containers/ApplicationProvider'
 import type { CommentsChangedData } from '@proton/docs-shared'
 import { CommentsEvent } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
-import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
+import type { EditorControllerInterface } from '@proton/docs-core'
 
 export function CommentsButton({ editorController }: { editorController: EditorControllerInterface }) {
   const application = useApplication()

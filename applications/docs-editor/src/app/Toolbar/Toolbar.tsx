@@ -87,7 +87,7 @@ import SpeechBubblePenIcon from '../Icons/SpeechBubblePenIcon'
 import { SpotlightIllustration } from '../Icons/SpotlightIllustration'
 import { InteractionDropdownButton } from './InteractionDropdownButton'
 import { useApplication } from '../ApplicationProvider'
-import type { CustomWindow } from '@proton/docs-core/lib/Application/Window'
+import type { CustomWindow } from '@proton/docs-core'
 
 const stepFontSize = (currentFontSize: string, step: number): string => {
   const currentFontIndex = FontSizes.indexOf(parseFloat(currentFontSize))

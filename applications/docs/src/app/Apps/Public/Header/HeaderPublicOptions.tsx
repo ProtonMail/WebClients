@@ -12,7 +12,7 @@ import { useDocsUrlBar } from '../../../Containers/useDocsUrlBar'
 import { RedirectAction } from '@proton/drive-store/store/_documents'
 import { useApplication } from '../../../Containers/ApplicationProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
-import type { EditorControllerInterface } from '@proton/docs-core/lib/Controller/Document/EditorController'
+import type { EditorControllerInterface } from '@proton/docs-core'
 import type { PublicDocumentState } from '@proton/docs-core'
 
 export const HeaderPublicOptions = ({

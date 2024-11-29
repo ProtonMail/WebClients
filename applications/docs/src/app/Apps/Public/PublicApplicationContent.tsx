@@ -42,6 +42,10 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  useEffect(() => {
+    application.updateCompatWrapper({ publicCompat: publicDriveCompat })
+  }, [publicDriveCompat])
+
   const [isAppReady, setIsAppReady] = useState(false)
 
   useEffect(() => {

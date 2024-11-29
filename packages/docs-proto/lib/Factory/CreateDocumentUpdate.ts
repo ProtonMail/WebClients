@@ -3,7 +3,7 @@ import type { DocumentUpdateVersion } from '../Version'
 
 export function CreateDocumentUpdate(dto: {
   content: Uint8Array
-  authorAddress: string
+  authorAddress: string | undefined
   timestamp: number
   version: DocumentUpdateVersion
   uuid: string

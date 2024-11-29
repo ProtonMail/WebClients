@@ -65,10 +65,9 @@ describe('DocumentState', () => {
       const callback = jest.fn()
       documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', callback)
 
-      const payload = 'due-to-commit-id-out-of-sync'
       documentPropertiesState.emitEvent({
-        name: 'RealtimeFailedToGetToken',
-        payload,
+        name: 'RealtimeFailedToConnect',
+        payload: undefined,
       })
 
       expect(callback).not.toHaveBeenCalled() // Different event type
@@ -81,10 +80,9 @@ describe('DocumentState', () => {
       documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', callback1)
       documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', callback2)
 
-      const payload = 'due-to-commit-id-out-of-sync' as const
       documentPropertiesState.emitEvent({
-        name: 'RealtimeFailedToGetToken',
-        payload,
+        name: 'RealtimeFailedToConnect',
+        payload: undefined,
       })
 
       expect(callback1).not.toHaveBeenCalled()
@@ -115,22 +113,6 @@ describe('DocumentState', () => {
       })
 
       expect(callback).toHaveBeenCalledWith(payload)
-    })
-
-    it('should handle multiple event types for same subscriber', () => {
-      const callback = jest.fn()
-      documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', callback)
-      documentPropertiesState.subscribeToEvent('RealtimeFailedToGetToken', callback)
-
-      const payload1 = { reason: 'test' } as unknown as ConnectionCloseReason
-      const payload2 = 'due-to-commit-id-out-of-sync' as const
-
-      documentPropertiesState.emitEvent({ name: 'RealtimeConnectionClosed', payload: payload1 })
-      documentPropertiesState.emitEvent({ name: 'RealtimeFailedToGetToken', payload: payload2 })
-
-      expect(callback).toHaveBeenCalledTimes(2)
-      expect(callback).toHaveBeenNthCalledWith(1, payload1)
-      expect(callback).toHaveBeenNthCalledWith(2, payload2)
     })
   })
 

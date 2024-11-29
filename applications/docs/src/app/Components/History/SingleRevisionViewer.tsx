@@ -1,9 +1,9 @@
-import type { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
+import type { EditorInvoker } from '@proton/docs-core'
 import type { YjsState } from '@proton/docs-shared'
 import { EditorSystemMode, InternalEventBus } from '@proton/docs-shared'
 import { EditorFrame } from '../EditorFrame'
 import { useCallback } from 'react'
-import { ClientToEditorBridge } from '@proton/docs-core/lib/Bridge/ClientToEditorBridge'
+import { ClientToEditorBridge } from '@proton/docs-core'
 import type { EditorOrchestratorInterface } from '@proton/docs-core'
 
 export function SingleRevisionViewer({
