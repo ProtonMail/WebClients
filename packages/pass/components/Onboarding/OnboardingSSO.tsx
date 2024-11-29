@@ -38,30 +38,24 @@ export const OnboardingSSO = () => {
                 />
 
                 <ModalTwoContent>
-                    <div className="flex items-center">
-                        <div className="flex flex-column w-full">
-                            <div className="flex items-center gap-6 text-left w-full">
-                                <div className="flex-1">
-                                    <div className="pass-onboarding-modal--lock">
-                                        <p className="text-bold mt-0">{c('Label').t`Unlock with:`}</p>
-                                        <OnboardingLockSetup
-                                            label={{
-                                                [LockMode.PASSWORD]: (
-                                                    <>
-                                                        <span className="mr-2">{c('Label')
-                                                            .t`Authentication again with your backup password`}</span>
-                                                        {isPasswordSelected && (
-                                                            <span className="color-weak text-sm align-end">
-                                                                ({c('Info').t`Currently selected`})
-                                                            </span>
-                                                        )}
-                                                    </>
-                                                ),
-                                            }}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="flex items-center gap-6 text-left w-full">
+                        <div className="pass-onboarding-modal--lock">
+                            <p className="text-bold mt-0">{c('Label').t`Unlock with:`}</p>
+                            <OnboardingLockSetup
+                                label={{
+                                    [LockMode.PASSWORD]: (
+                                        <>
+                                            <span className="mr-2">{c('Label')
+                                                .t`Authentication again with your backup password`}</span>
+                                            {isPasswordSelected && (
+                                                <span className="color-weak text-sm align-end">
+                                                    ({c('Info').t`Currently selected`})
+                                                </span>
+                                            )}
+                                        </>
+                                    ),
+                                }}
+                            />
                         </div>
                     </div>
                 </ModalTwoContent>
