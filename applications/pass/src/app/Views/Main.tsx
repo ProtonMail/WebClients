@@ -19,7 +19,7 @@ import { Items } from '@proton/pass/components/Item/Items';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
-import { InAppNotificationProvider } from '@proton/pass/components/Notifications/InAppNotificationProvider';
+import { InAppNotifications } from '@proton/pass/components/Notifications/InAppNotifications';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
 import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
@@ -118,6 +118,7 @@ const MainSwitch: FC = () => {
                                             )}
                                         </>
                                     )}
+                                    <InAppNotifications />
                                 </div>
                             </div>
                         </main>
@@ -143,11 +144,9 @@ export const Main: FC = () => {
                             <VaultActionsProvider>
                                 <PasswordProvider>
                                     <SpotlightProvider>
-                                        <InAppNotificationProvider>
-                                            <OnboardingProvider>
-                                                {lockSetup ? <LockOnboarding onCancel={logout} /> : <MainSwitch />}
-                                            </OnboardingProvider>
-                                        </InAppNotificationProvider>
+                                        <OnboardingProvider>
+                                            {lockSetup ? <LockOnboarding onCancel={logout} /> : <MainSwitch />}
+                                        </OnboardingProvider>
                                     </SpotlightProvider>
                                 </PasswordProvider>
                             </VaultActionsProvider>
