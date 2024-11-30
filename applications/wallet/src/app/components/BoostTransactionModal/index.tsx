@@ -220,7 +220,7 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
                 <h1 className={clsx('text-semibold text-break text-3xl')}>{c('Wallet send')
                     .t`Boost transaction priority`}</h1>
                 <p className="text-center color-weak m-0">{c('Wallet send')
-                    .t`By increasing the fee, you can prioritize your transaction, helping it get confirmed faster during busy network times.`}</p>
+                    .t`By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.`}</p>
 
                 <div className="w-full flex flex-column gap-2">
                     <div className="w-full flex flex-row justify-space-between items-center">
@@ -287,7 +287,7 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
                     onClick={() => {
                         void withLoading(handleConfirmBoost());
                     }}
-                >{c('Wallet send').t`Increase fee and resend`}</Button>
+                >{c('Wallet send').t`Boost transaction`}</Button>
             </div>
         </Modal>
     );
