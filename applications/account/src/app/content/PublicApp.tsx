@@ -341,19 +341,6 @@ const BasePublicApp = () => {
             <NotificationsChildren />
             <ModalsChildren />
             <Switch>
-                {hasInitialSessionBlockingLoading && (
-                    <Route path="*">
-                        <AccountEffect
-                            onEffect={async () => {
-                                const activeSessionsResult = await handleGetActiveSessions();
-                                const result = await handleActiveSessions(activeSessionsResult, undefined);
-                                setHasInitialSessionBlockingLoading(result === completeResult);
-                            }}
-                        >
-                            {loader}
-                        </AccountEffect>
-                    </Route>
-                )}
                 <Route path={SSO_PATHS.OAUTH_AUTHORIZE}>
                     <AccountEffect
                         onEffect={async () => {
@@ -481,6 +468,19 @@ const BasePublicApp = () => {
                         <CallScheduledPage />
                     </UnAuthenticated>
                 </Route>
+                {hasInitialSessionBlockingLoading && (
+                    <Route path="*">
+                        <AccountEffect
+                            onEffect={async () => {
+                                const activeSessionsResult = await handleGetActiveSessions();
+                                const result = await handleActiveSessions(activeSessionsResult, undefined);
+                                setHasInitialSessionBlockingLoading(result === completeResult);
+                            }}
+                        >
+                            {loader}
+                        </AccountEffect>
+                    </Route>
+                )}
                 <Route path="*">
                     <UnAuthenticatedApiProvider>
                         <UnleashFlagProviderWrapper>
