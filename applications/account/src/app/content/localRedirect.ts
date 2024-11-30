@@ -50,15 +50,18 @@ export const getLocalRedirect = (location: H.Location): LocalRedirect | undefine
             toApp: continueTo.app,
         };
     }
-    // If trying to access a non-public location from this app, set up a local redirect
-    const localLocation = [...Object.values(SSO_PATHS), ...Object.values(UNAUTHENTICATED_ROUTES)].includes(
-        location.pathname
-    )
-        ? undefined
-        : location;
-    if (!localLocation) {
+    const isSSOPathname = Object.values<string>(SSO_PATHS).includes(location.pathname);
+    if (isSSOPathname) {
         return;
     }
+    // TODO: Make this better and remove the SSO_PATHS.INVITE special condition due to it containing several paths
+    const isUnauthenticatedPathname = [...Object.values<string>(UNAUTHENTICATED_ROUTES), SSO_PATHS.INVITE].some(
+        (route) => location.pathname.startsWith(route)
+    );
+    if (isUnauthenticatedPathname) {
+        return;
+    }
+    // If trying to access a non-public location from this app, set up a local redirect
     const path = getCleanPath(location);
     if (!path) {
         return undefined;
