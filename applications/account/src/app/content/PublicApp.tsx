@@ -202,7 +202,7 @@ const BasePublicApp = () => {
     const [hasInitialSessionBlockingLoading, setHasInitialSessionBlockingLoading] = useState(() => {
         return (
             maybeHasActiveSessions &&
-            (maybeLocalRedirect ||
+            ((maybeLocalRedirect && maybeLocalRedirect.type !== 'post-login') ||
                 location.pathname === '/' ||
                 [...loginPaths, ...ephemeralLoginPaths].some((pathname) => location.pathname === pathname))
         );

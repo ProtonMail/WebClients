@@ -335,6 +335,7 @@ const MainContainer = () => {
         return <Redirect to={`${SETUP_ADDRESS_PATH}?to=${app}&to-type=settings&to-path=${toPath}`} />;
     }
 
+    // Special case to render outside of the main container
     if (app === APPS.PROTONVPN_SETTINGS && VPN_TV_PATHS.some((path) => `/${appSlug}${path}` === location.pathname)) {
         return <TVContainer />;
     }
