@@ -21,6 +21,7 @@ export interface DayGridResult {
 }
 export interface EventsStyleResult {
     idx: number;
+    dayIdx: number;
     type: 'event' | 'more';
     style: CSSProperties;
 }
@@ -36,26 +37,19 @@ const useDayGridEventLayout = (
 ) => {
     // To make more events accessible with keyboard in the correct order,
     // we need to sort events and more events to put more events at their correct place.
-    // Since we are building an event row, we need to regroup all events that have the same left position.
     const getSortedEventsAndMoreDays = (events: EventsStyleResult[], moreEvents: EventsStyleResult[]) => {
-        const sortedEvents: EventsStyleResult[] = [];
-
-        events.forEach((event, index) => {
-            const eventLeftPos = event.style['--left-custom'] as string;
-            sortedEvents.push(event);
-
-            // If the event is the last event from the array with this position,
-            // we can insert potential more events that have the same position right after the last event element
-            const isLastEventWithSamePosition =
-                index === events.length - 1 || events[index + 1]?.style['--left-custom'] !== eventLeftPos;
-            const moreWithSameLeftPosition = moreEvents.find((item) => item.style['--left-custom'] === eventLeftPos);
-
-            if (isLastEventWithSamePosition && moreWithSameLeftPosition) {
-                sortedEvents.push(moreWithSameLeftPosition);
+        return [...events, ...moreEvents].sort((a, b) => {
+            if (a.dayIdx !== b.dayIdx) {
+                return a.dayIdx - b.dayIdx;
             }
-        });
 
-        return sortedEvents;
+            // Sort by type
+            if (a.type === b.type) {
+                return 0;
+            }
+            // 'event' items on the same day appear before 'more' item
+            return a.type === 'event' ? -1 : 1;
+        });
     };
 
     return useMemo(() => {
@@ -110,6 +104,7 @@ const useDayGridEventLayout = (
 
                 acc.push({
                     idx: i,
+                    dayIdx: eventsInRow[i].start,
                     type: 'event',
                     style: {
                         '--top-custom': `${(top * dayEventHeight) / 16}rem`,
@@ -128,6 +123,7 @@ const useDayGridEventLayout = (
                 }
                 acc.push({
                     idx: +dayIndex,
+                    dayIdx: +dayIndex,
                     type: 'more',
                     style: {
                         '--top-custom': `${(numberOfRows * dayEventHeight) / 16}rem`,
