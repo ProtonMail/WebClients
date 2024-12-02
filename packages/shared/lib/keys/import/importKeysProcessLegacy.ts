@@ -20,6 +20,7 @@ export interface ImportKeysProcessLegacyArguments {
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
+// handles import with non-migrated keys
 const importKeysProcessLegacy = async ({
     api,
     keyImportRecords,
@@ -30,11 +31,11 @@ const importKeysProcessLegacy = async ({
     keyTransparencyVerify,
 }: ImportKeysProcessLegacyArguments) => {
     const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
-    const inactiveKeys = await getInactiveKeys(address.Keys, activeKeys);
+    const inactiveKeys = await getInactiveKeys(address.Keys, activeKeys.v4); // v6 keys not present for non-migrated users
 
     const [keysToReactivate, keysToImport, existingKeys] = getFilteredImportRecords(
         keyImportRecords,
-        activeKeys,
+        activeKeys.v4,
         inactiveKeys
     );
 
@@ -47,6 +48,9 @@ const importKeysProcessLegacy = async ({
     for (const keyImportRecord of keysToImport) {
         try {
             const { privateKey } = keyImportRecord;
+            if (!privateKey.isPrivateKeyV4()) {
+                throw new Error('v6 keys not supported with non-migrated keys');
+            }
             const privateKeyArmored = await CryptoProxy.exportPrivateKey({
                 privateKey,
                 passphrase: keyPassword,
@@ -54,10 +58,10 @@ const importKeysProcessLegacy = async ({
 
             const newActiveKey = await getActiveKeyObject(privateKey, {
                 ID: 'tmp',
-                primary: getPrimaryFlag(mutableActiveKeys),
+                primary: getPrimaryFlag(mutableActiveKeys.v4),
                 flags: getDefaultKeyFlags(address),
             });
-            const updatedActiveKeys = getNormalizedActiveKeys(address, [...mutableActiveKeys, newActiveKey]);
+            const updatedActiveKeys = getNormalizedActiveKeys(address, { v4: [...mutableActiveKeys.v4, newActiveKey] , v6: [] });
             const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
                 updatedActiveKeys,
                 address,
@@ -92,7 +96,7 @@ const importKeysProcessLegacy = async ({
         addressesKeys: [
             {
                 address,
-                keys: mutableActiveKeys,
+                keys: mutableActiveKeys.v4,
             },
         ],
         keyReactivationRecords: [

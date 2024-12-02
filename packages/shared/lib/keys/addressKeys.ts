@@ -302,20 +302,21 @@ export const getEncryptedArmoredAddressKey = async (
     return CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase: newKeyPassword });
 };
 
-export interface GenerateAddressKeyArguments {
+export interface GenerateAddressKeyArguments<C extends KeyGenConfig | KeyGenConfigV6> {
     email: string;
     name?: string;
     passphrase: string;
-    keyGenConfig?: KeyGenConfig | KeyGenConfigV6;
+    keyGenConfig?: C;
 }
 
-export const generateAddressKey = async ({
+// TODOOOOO instead of type inference, create separate generateAddressKeyV6 helper?
+export const generateAddressKey = async <C extends KeyGenConfig | KeyGenConfigV6>({
     email,
     name = email,
     passphrase,
-    keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
-}: GenerateAddressKeyArguments) => {
-    const privateKey = await CryptoProxy.generateKey({
+    keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE] as C,
+}: GenerateAddressKeyArguments<C>) => {
+    const privateKey = await CryptoProxy.generateKey<C['config']>({
         userIDs: [{ name, email }],
         ...keyGenConfig,
     });

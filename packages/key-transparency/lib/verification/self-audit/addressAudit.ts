@@ -1,4 +1,4 @@
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PrivateKeyReferenceV4 } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -148,8 +148,10 @@ const successOrWarning = (email: string, sklAudits: SKLAuditResult[], signatureW
  * Some SKL will fail verification because
  * they were signed with a time in the future.
  * In this case we resign them.
+ * NB: only SKL with v4 keys were generated in the future
+
  */
-const checkAndFixSKLInTheFuture = async (address: Address, primaryAddressKey: PrivateKeyReference, api: Api) => {
+const checkAndFixSKLInTheFuture = async (address: Address, primaryAddressKey: PrivateKeyReferenceV4, api: Api) => {
     const { Email, ID, SignedKeyList } = address;
     const { Revision, Data, Signature } = SignedKeyList!;
     if (Revision === 1) {
@@ -160,7 +162,7 @@ const checkAndFixSKLInTheFuture = async (address: Address, primaryAddressKey: Pr
             new Date(0xffffffff * 1000) // max date in the future
         );
         if (signatureIsInTheFuture) {
-            const newSignature = await getSignedKeyListSignature(Data, primaryAddressKey);
+            const newSignature = await getSignedKeyListSignature(Data, [primaryAddressKey]);
             await updateSignedKeyListSignature(ID, Revision, newSignature, api);
             return;
         }
@@ -320,15 +322,22 @@ const auditAddressImplementation = async ({
             return throwKTError('Audited SKL doesnt match the input SKL', { email, inputSKL });
         }
         if (audit.status !== SKLAuditStatus.ExistentVerified) {
-            const primaryAddressKey = addressKeys[0].privateKey;
-            await checkAndFixSKLInTheFuture(address, primaryAddressKey, api);
+            // only SKL with v4 keys were generated in the future
+            const primaryAddressKeyV4 = addressKeys[0].privateKey;
+            if (!primaryAddressKeyV4.isPrivateKeyV4()) {
+                throw new Error('Unexpected v6 key')
+            }
+            await checkAndFixSKLInTheFuture(address, primaryAddressKeyV4, api);
             signatureWasInTheFuture = true;
         }
     } else {
         const verified = await verifySKLSignature(addressVerificationKeys, inputSKL.Data, inputSKL.Signature);
         if (verified === null) {
-            const primaryAddressKey = addressKeys[0].privateKey;
-            await checkAndFixSKLInTheFuture(address, primaryAddressKey, api);
+            const primaryAddressKeyV4 = addressKeys[0].privateKey;
+            if (!primaryAddressKeyV4.isPrivateKeyV4()) {
+                throw new Error('Unexpected v6 key');
+            }
+            await checkAndFixSKLInTheFuture(address, primaryAddressKeyV4, api);
             signatureWasInTheFuture = true;
         }
         const expectedMinEpochID = inputSKL.MinEpochID ?? inputSKL.ExpectedMinEpochID;

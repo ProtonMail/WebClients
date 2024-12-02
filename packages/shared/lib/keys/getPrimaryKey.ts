@@ -1,36 +1,19 @@
-import isTruthy from '@proton/utils/isTruthy';
+import type { PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
 
-import type { ActiveKey, KeyPair } from '../interfaces';
+import type { ActiveAddressKeysByVersion, KeyPair } from '../interfaces';
 
 export const getPrimaryKey = <T extends KeyPair>(keys: T[] = []): T | undefined => {
     return keys[0];
 };
 
-type PrimaryAddressKeysWithVersions = { v6?: ActiveKey; v4: ActiveKey } | { v4: undefined; v6: undefined };
-/**
- * Users who have generated a v6 address key might have two primary keys instead of one.
- * This is because a v6 address key can only be marked as primary alongside a v4 key,
- * for compatibility reasons with Proton apps that do not support encrypting to v6 keys.
- * @param keys - address keys to filter
- * @returns primary address keys
- */
-export const getPrimaryAddressKeysWithVersions = (keys: ActiveKey[] = []): PrimaryAddressKeysWithVersions => {
-    const primaryKeys = keys.filter(({ primary }) => !!primary);
-    if (primaryKeys.length > 2) {
-        // sanity check
+export type PrimaryAddressKeys = [PrivateKeyReferenceV4] | [PrivateKeyReferenceV4, PrivateKeyReferenceV6];
+export const getPrimaryAddressKeysForSigningByVersion = (keys: ActiveAddressKeysByVersion): PrimaryAddressKeys => {
+    const v4PrimaryKeys = keys.v4.filter(({ primary }) => !!primary);
+    const v6PrimaryKeys = keys.v6.filter(({ primary }) => !!primary);
+    if (v4PrimaryKeys.length === 0 || v4PrimaryKeys.length > 1 || v6PrimaryKeys.length > 1) {
         throw new Error('Unexpected number of primary keys');
-    } else {
-        // the API takes care of always returning the v6 primary key first, if it exists
-        const [v4Key, v6Key] = primaryKeys;
-        if ((v4Key && v4Key.privateKey.getVersion() !== 4) || (v6Key && v6Key.privateKey.getVersion() !== 6)) {
-            throw new Error('Unexpected primary key versions');
-        }
-        return { v4: v4Key, v6: v6Key };
     }
-};
-
-// TODO move elsewhere?
-export const getPrimaryAddressKeysForSigning = (keys: ActiveKey[] = []): ActiveKey[] => {
-    const { v4, v6 } = getPrimaryAddressKeysWithVersions(keys);
-    return [v4, v6].filter(isTruthy);
+    return v6PrimaryKeys.length > 0
+        ? [v4PrimaryKeys[0].privateKey, v6PrimaryKeys[0].privateKey]
+        : [v4PrimaryKeys[0].privateKey];
 };

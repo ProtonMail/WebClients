@@ -10,13 +10,19 @@ import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReferenceV4 } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import { deleteGroupMember } from '@proton/shared/lib/api/groups';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { createAddressKeyRouteV2, replaceAddressTokens } from '@proton/shared/lib/api/keys';
-import type { ActiveKey, Address, Api, GroupMembership, KeyTransparencyVerify } from '@proton/shared/lib/interfaces';
+import type {
+    ActiveAddressKeysByVersion,
+    Address,
+    Api,
+    GroupMembership,
+    KeyTransparencyVerify,
+} from '@proton/shared/lib/interfaces';
 import {
     decryptMemberToken,
     getAddressKeyToken,
@@ -33,9 +39,9 @@ import useVerifyOutboundPublicKeys from '../../keyTransparency/useVerifyOutbound
 
 interface ForwardingAddressKeyParameters {
     api: Api;
-    privateKey: PrivateKeyReference;
+    privateKey: PrivateKeyReferenceV4;
     address: Address;
-    activeKeys: ActiveKey[];
+    activeKeys: ActiveAddressKeysByVersion;
     privateKeyArmored: string;
     signature: string;
     encryptedToken: string;
@@ -59,7 +65,7 @@ const generateGroupMemberAddressKey = async ({
         primary: 0,
         flags: getDefaultKeyFlags(address),
     });
-    const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey]);
+    const updatedActiveKeys = getNormalizedActiveKeys(address, { v4: [newActiveKey], v6: [] }); // larabr: TODOOOOOOO this logic looks wrong, fix original code?
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         activeKeys,
         address,
@@ -162,10 +168,10 @@ const useGroupActions = () => {
                     splitAddressKeys.privateKeys,
                     publicKeys
                 );
-                let privateKey = await CryptoProxy.importPrivateKey({
+                let privateKey = (await CryptoProxy.importPrivateKey({
                     armoredKey: forwardingKey.PrivateKey,
                     passphrase: decryptedToken,
-                });
+                })) as PrivateKeyReferenceV4; // v6 keys do not support forwarding yet
                 const extractedEmail = getEmailFromKey(privateKey);
 
                 // The forwardee email address can change before the user has accepted the forwarding
@@ -177,7 +183,7 @@ const useGroupActions = () => {
                         privateKey,
                     });
                     await CryptoProxy.clearKey({ key: privateKey });
-                    privateKey = updatedPrivateKey;
+                    privateKey = updatedPrivateKey as PrivateKeyReferenceV4;
                 }
 
                 const armoredPrivateKey = await CryptoProxy.exportPrivateKey({

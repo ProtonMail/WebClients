@@ -1,4 +1,4 @@
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
@@ -6,20 +6,26 @@ import { getApiError } from '../../api/helpers/apiErrorHelper';
 import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
 import { HTTP_STATUS_CODE } from '../../constants';
 import type {
-    ActiveKey,
-    Address,
-    Api,
-    DecryptedKey,
-    KeyTransparencyVerify,
-    Address as tsAddress,
-    User as tsUser,
+    ActiveAddressKeysByVersion,
+    ActiveKeyWithVersion} from '../../interfaces';
+import {
+    type ActiveKey,
+    type Address,
+    type Api,
+    type DecryptedKey,
+    type KeyTransparencyVerify,
+    isActiveKeyV6,
+    type Address as tsAddress,
+    type User as tsUser,
 } from '../../interfaces';
 import type { SimpleMap } from '../../interfaces/utils';
 import { generateAddressKeyTokens } from '../addressKeys';
 import {
     getActiveKeyObject,
     getActiveKeys,
+    getActiveUserKeys,
     getNormalizedActiveKeys,
+    getNormalizedActiveUserKeys,
     getPrimaryFlag,
     getReactivatedKeyFlag,
 } from '../getActiveKeys';
@@ -35,7 +41,7 @@ interface ReactivateUserKeysArguments {
     api: Api;
     addresses: Address[];
     user: tsUser;
-    activeKeys: ActiveKey[];
+    activeKeys: ActiveKey[]; // user keys do not need to be differentiated by key version
     onReactivation: OnKeyReactivationCallback;
     keysToReactivate: KeyReactivationData[];
     keyPassword: string;
@@ -79,12 +85,15 @@ export const reactivateUserKeys = async ({
                 privateKey: reactivatedKey,
                 passphrase: keyPassword,
             });
-            const newActiveKey = await getActiveKeyObject(reactivatedKey, {
-                ID,
-                primary: getPrimaryFlag(mutableActiveKeys),
-                flags: getDefaultKeyFlags(undefined),
-            });
-            const updatedActiveKeys = getNormalizedActiveKeys(undefined, [...mutableActiveKeys, newActiveKey]);
+            const newActiveKey = await getActiveKeyObject(
+                reactivatedKey as PrivateKeyReferenceV4 | PrivateKeyReferenceV6,
+                {
+                    ID,
+                    primary: getPrimaryFlag(mutableActiveKeys),
+                    flags: getDefaultKeyFlags(undefined),
+                }
+            );
+            const updatedActiveKeys = getNormalizedActiveUserKeys(undefined, [...mutableActiveKeys, newActiveKey]);
 
             const reactivatedAddressKeysResult = await getReactivatedAddressesKeys({
                 addresses,
@@ -166,7 +175,7 @@ export const reactivateUserKeys = async ({
 interface ReactivateAddressKeysV2Arguments {
     api: Api;
     address: Address;
-    activeKeys: ActiveKey[];
+    activeKeys: ActiveAddressKeysByVersion;
     userKey: PrivateKeyReference;
     onReactivation: OnKeyReactivationCallback;
     keysToReactivate: KeyReactivationData[];
@@ -199,12 +208,19 @@ export const reactivateAddressKeysV2 = async ({
                 privateKey: reactivatedKey,
                 passphrase: token,
             });
-            const newActiveKey = await getActiveKeyObject(reactivatedKey, {
-                ID,
-                primary: getPrimaryFlag(mutableActiveKeys),
-                flags: getReactivatedKeyFlag(address, Flags),
-            });
-            const updatedActiveKeys = getNormalizedActiveKeys(address, [...mutableActiveKeys, newActiveKey]);
+            const newActiveKey = (await getActiveKeyObject(
+                reactivatedKey as PrivateKeyReferenceV4 | PrivateKeyReferenceV6,
+                {
+                    ID,
+                    // We do not automatically set a v6 key as primary, because it will fail if forwarding is enabled for the address
+                    primary: reactivatedKey.isPrivateKeyV6() ? 0 : getPrimaryFlag(mutableActiveKeys.v4),
+                    flags: getReactivatedKeyFlag(address, Flags),
+                }
+            )) as ActiveKeyWithVersion;
+            const toNormalize = isActiveKeyV6(newActiveKey)
+                ? { v4: mutableActiveKeys.v4, v6: [...mutableActiveKeys.v6, newActiveKey] }
+                : { v4: [...mutableActiveKeys.v4, newActiveKey], v6: mutableActiveKeys.v6 };
+            const updatedActiveKeys = getNormalizedActiveKeys(address, toNormalize);
             const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
                 updatedActiveKeys,
                 address,
@@ -297,7 +313,7 @@ const reactivateKeysProcessV2 = async ({
     let allReactivatedAddressKeysMap: SimpleMap<boolean> = {};
     if (userRecord) {
         try {
-            const activeUserKeys = await getActiveKeys(undefined, null, user.Keys, userKeys);
+            const activeUserKeys = await getActiveUserKeys(user.Keys, userKeys);
             const userKeysReactivationResult = await reactivateUserKeys({
                 api,
                 user,

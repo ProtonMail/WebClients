@@ -1,7 +1,16 @@
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
 
-import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
-import type { Address, AddressKeyPayloadV2, KeyGenConfig, PreAuthKTVerify } from '../interfaces';
+import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
+import type {
+    ActiveAddressKeysByVersion,
+    ActiveKey} from '../interfaces';
+import {
+    type Address,
+    type AddressKeyPayloadV2,
+    type KeyGenConfig,
+    type PreAuthKTVerify,
+    isActiveKeyV6,
+} from '../interfaces';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
 import { getActiveKeyObject, getNormalizedActiveKeys } from './getActiveKeys';
 import { getDefaultKeyFlags } from './keyFlags';
@@ -22,12 +31,14 @@ export interface ResetAddressKeysPayload {
 export const getResetAddressesKeysV2 = async ({
     addresses = [],
     passphrase = '',
-    keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
+    supportV6Keys,
+    keyGenConfigForV4Keys = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
     preAuthKTVerify,
 }: {
     addresses: Address[];
     passphrase: string;
-    keyGenConfig?: KeyGenConfig;
+    supportV6Keys: boolean;
+    keyGenConfigForV4Keys?: KeyGenConfig; // no option v6
     preAuthKTVerify: PreAuthKTVerify;
 }): Promise<ResetAddressKeysPayload | { [P in keyof ResetAddressKeysPayload]: undefined }> => {
     if (!addresses.length) {
@@ -40,52 +51,66 @@ export const getResetAddressesKeysV2 = async ({
     }
     const { privateKey: userKey, privateKeyArmored: userKeyPayload } = await generateUserKey({
         passphrase,
-        keyGenConfig,
+        keyGenConfig: supportV6Keys ? KEYGEN_CONFIGS[KEYGEN_TYPES.PQC] : keyGenConfigForV4Keys,
     });
 
     const keyTransparencyVerify = preAuthKTVerify([
         { ID: userKey.getKeyID(), privateKey: userKey, publicKey: userKey },
     ]);
 
-    const addressKeysPayloadWithOnSKLPublish = await Promise.all(
+    const addressKeysPayloadWithOnSKLPublishWithMaybeV6 = await Promise.all(
         addresses.map(async (address) => {
             const { ID: AddressID, Email } = address;
 
-            const { token, encryptedToken, signature } = await generateAddressKeyTokens(userKey);
+            const generate = async (v6Key: boolean, activeKeys: ActiveAddressKeysByVersion) => {
+                const { token, encryptedToken, signature } = await generateAddressKeyTokens(userKey);
 
-            const { privateKey, privateKeyArmored } = await generateAddressKey({
-                email: Email,
-                passphrase: token,
-                keyGenConfig,
-            });
+                const { privateKey, privateKeyArmored } = await generateAddressKey({
+                    email: Email,
+                    passphrase: token,
+                    keyGenConfig: v6Key ? KEYGEN_CONFIGS[KEYGEN_TYPES.PQC] : keyGenConfigForV4Keys,
+                });
 
-            const newPrimaryKey = await getActiveKeyObject(privateKey, {
-                ID: 'tmp',
-                primary: 1,
-                flags: getDefaultKeyFlags(address),
-            });
+                const newPrimaryKey = (await getActiveKeyObject(privateKey, {
+                    ID: 'tmp',
+                    primary: 1,
+                    flags: getDefaultKeyFlags(address),
+                })) as ActiveKey<PrivateKeyReferenceV4> | ActiveKey<PrivateKeyReferenceV6>;
 
-            const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
-                getNormalizedActiveKeys(address, [newPrimaryKey]),
-                address,
-                keyTransparencyVerify
-            );
-            return {
-                addressKey: {
-                    privateKey,
-                    addressID: AddressID,
-                },
-                addressKeyPayload: {
-                    AddressID,
-                    PrivateKey: privateKeyArmored,
-                    SignedKeyList: signedKeyList,
-                    Token: encryptedToken,
-                    Signature: signature,
-                },
-                onSKLPublishSuccess,
+                const toNormalize = isActiveKeyV6(newPrimaryKey)
+                    ? { v4: activeKeys.v4, v6: [newPrimaryKey, ...activeKeys.v6] }
+                    : { v4: [newPrimaryKey, ...activeKeys.v4], v6: activeKeys.v6 };
+
+                const newActiveKeys = getNormalizedActiveKeys(address, toNormalize);
+                const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+                    newActiveKeys,
+                    address,
+                    keyTransparencyVerify
+                );
+
+                return {
+                    newActiveKeys,
+                    addressKey: {
+                        privateKey,
+                        addressID: AddressID,
+                    },
+                    addressKeyPayload: {
+                        AddressID,
+                        PrivateKey: privateKeyArmored,
+                        SignedKeyList: signedKeyList,
+                        Token: encryptedToken,
+                        Signature: signature,
+                    },
+                    onSKLPublishSuccess,
+                };
             };
+
+            const v4KeyData = await generate(false, { v4: [], v6: [] });
+            return supportV6Keys ? [v4KeyData, await generate(true, v4KeyData.newActiveKeys)] : [v4KeyData];
         })
     );
+
+    const addressKeysPayloadWithOnSKLPublish = addressKeysPayloadWithOnSKLPublishWithMaybeV6.flat();
     const addressKeysPayload = addressKeysPayloadWithOnSKLPublish.map(({ addressKeyPayload }) => addressKeyPayload);
     const privateKeys = {
         userKey,

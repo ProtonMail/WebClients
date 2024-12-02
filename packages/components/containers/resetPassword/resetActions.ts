@@ -62,7 +62,7 @@ export const handleNewPassword = async ({
     if (!resetResponse || !token) {
         throw new Error('Missing response');
     }
-    const { Addresses: addresses } = resetResponse;
+    const { Addresses: addresses, SupportPgpV6Keys } = resetResponse;
 
     const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation);
 
@@ -71,6 +71,7 @@ export const handleNewPassword = async ({
         addresses,
         passphrase,
         preAuthKTVerify,
+        supportV6Keys: SupportPgpV6Keys === 1
     });
 
     await srpVerify({
