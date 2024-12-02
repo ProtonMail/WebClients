@@ -27,7 +27,7 @@ export interface AliasMailboxesContextValue {
     setAction: (action: MaybeNull<AliasMailboxAction>) => void;
     onCreate: (contact: UserMailboxOutput) => void;
     onVerify: (mailbox: UserMailboxOutput) => void;
-    onDelete: (mailboxID: number) => void;
+    onDelete: (mailboxID: number, transferAliases?: boolean) => void;
     onSetDefault: (mailboxID: number) => void;
     getMailboxes: () => void;
 }
@@ -79,7 +79,11 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
                 else setAction(null);
             },
             onVerify: (mailbox) => setMailboxes(fullMerge(mailboxes, { [mailbox.MailboxID]: mailbox })),
-            onDelete: (mailboxID) => setMailboxes((mailboxes) => objectDelete(mailboxes, mailboxID)),
+            onDelete: (mailboxID, transferAliases) => {
+                setMailboxes((mailboxes) => objectDelete(mailboxes, mailboxID));
+                // call API with delay to get updated alias count, without >2s delay BE may still return old result
+                if (transferAliases) setTimeout(sync.dispatch, 3000);
+            },
             onSetDefault: (mailboxID) =>
                 setMailboxes((mailboxes) =>
                     objectMap(mailboxes, (_, mailbox) => ({
