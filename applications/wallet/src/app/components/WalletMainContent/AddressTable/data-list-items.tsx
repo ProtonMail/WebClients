@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import type { WasmAddressDetails, WasmApiWalletAccount, WasmApiWalletBitcoinAddress } from '@proton/andromeda';
-import { WasmKeychainKind } from '@proton/andromeda';
+import type { WasmAddressDetails, WasmApiWalletAccount } from '@proton/andromeda';
 import { Copy, useNotifications } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 import { useUserWalletSettings, useWalletAccountExchangeRate } from '@proton/wallet/store';
 
@@ -37,6 +38,11 @@ export const AddressDataListItem = ({
                 <Skeleton loading={loading}>
                     <div className={clsx('block text-ellipsis text-monospace', highlighted && 'color-primary')}>
                         {address ? `${address.address}` : 'bc1qplaceholderplaceholderplaceholder'}
+                        {highlighted && (
+                            <Tooltip title={c('Info').t`This address is used to receive Bitcoin via Email`}>
+                                <Icon name="brand-bitcoin" className="ml-2 color-hint" />
+                            </Tooltip>
+                        )}
                     </div>
                 </Skeleton>
             }
@@ -79,49 +85,21 @@ export const AddressBalanceDataListItem = ({
 
 export const AddressStatusDataListItem = ({
     address,
-    lastUsedIndex,
     loading,
-    addressPool,
-    keychain,
 }: {
-    keychain?: WasmKeychainKind;
-    lastUsedIndex?: number;
     address?: WasmAddressDetails;
     loading?: boolean;
-    addressPool?: WasmApiWalletBitcoinAddress[];
 }) => {
-    const poolAddress = addressPool?.find((poolAddress) => poolAddress.BitcoinAddress === address?.address);
-
     return (
         <DataListItem
             bottomNode={
                 <Skeleton loading={loading}>
                     {(() => {
-                        if (!!poolAddress) {
-                            if (poolAddress.Fetched) {
-                                return <div className="flex items-center">{c('Address list').t`Given out`}</div>;
-                            }
-
-                            return <div className="flex items-center">Bitcoin via Email</div>;
-                        }
-
                         if (address) {
                             const transactionsCount = address.transactions.length;
 
                             if (transactionsCount > 0) {
-                                return (
-                                    <div className="flex items-center">{c('Address list')
-                                        .t`Used (${transactionsCount})`}</div>
-                                );
-                            }
-
-                            if (
-                                // Addresses from internal keychain cannot be given out
-                                keychain !== WasmKeychainKind.Internal &&
-                                lastUsedIndex &&
-                                address.index < lastUsedIndex
-                            ) {
-                                return <div className="flex items-center">{c('Address list').t`Given out`}</div>;
+                                return <div className="flex items-center">{c('Address list').t`Used`}</div>;
                             }
                         }
 
