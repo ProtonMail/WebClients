@@ -145,7 +145,10 @@ export { PaypalPaymentProcessor } from './core/payment-processors/paypalPayment'
 export { SavedChargebeePaymentProcessor } from './core/payment-processors/savedChargebeePayment';
 export { SavedPaymentProcessor } from './core/payment-processors/savedPayment';
 export { extractIBAN } from './core/sepa';
-export { getScribeAddonNameByPlan } from './core/subscription/helpers';
+export {
+    getScribeAddonNameByPlan,
+    getSubscriptionPlanTitle as getSubscriptionPlanTitleAndName,
+} from './core/subscription/helpers';
 export type { FullPlansMap } from './core/subscription/interface';
 export {
     getAvailableCycles,

@@ -13,7 +13,7 @@ import {
     getNormalCycleFromCustomCycle,
     getPlanIDs,
     hasCancellablePlan,
-    hasLifetime,
+    hasLifetimeCoupon,
     hasSomeAddonOrPlan,
     isManagedExternally,
     isTrial,
@@ -92,7 +92,7 @@ describe('hasLifetime', () => {
             CouponCode: COUPON_CODES.LIFETIME,
         };
 
-        expect(hasLifetime(subscription)).toBe(true);
+        expect(hasLifetimeCoupon(subscription)).toBe(true);
     });
 
     it('should not have LIFETIME', () => {
@@ -101,7 +101,7 @@ describe('hasLifetime', () => {
             CouponCode: 'PANDA',
         };
 
-        expect(hasLifetime(subscription)).toBe(false);
+        expect(hasLifetimeCoupon(subscription)).toBe(false);
     });
 });
 
