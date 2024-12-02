@@ -9,6 +9,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
@@ -46,6 +47,8 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
     };
 
     const betaToggleId = 'toggle-early-access';
+    const showSyncThemeSelection = !isElectronApp && settings.Mode === ThemeModeSetting.Auto;
+    const showManualThemeSelection = settings.Mode !== ThemeModeSetting.Auto;
 
     return (
         <>
@@ -91,7 +94,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                             ellipsisOnText={false}
                         />
                     }
-                    {settings.Mode === ThemeModeSetting.Auto ? (
+                    {showSyncThemeSelection && (
                         <div className="flex *:min-size-auto flex-column gap-4 mt-1">
                             <ThemeSyncModeDropdown
                                 mode="light"
@@ -116,7 +119,8 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                 className="flex-none"
                             />
                         </div>
-                    ) : (
+                    )}
+                    {showManualThemeSelection && (
                         <ThemeCards
                             list={themes}
                             themeIdentifier={information.theme}
