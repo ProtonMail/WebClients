@@ -107,6 +107,7 @@ export interface Member {
     MaxSpace: number;
     MaxVPN: number;
     NumAI: number;
+    NumLumo: number;
     Name: string;
     UsedSpace: number;
     Self: number;

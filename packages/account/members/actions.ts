@@ -16,6 +16,7 @@ import {
     removeSSOSamlMember,
     requestUnprivatization as requestUnprivatizationConfig,
     updateAI,
+    updateLumo,
     updateName,
     updateQuota,
     updateRole as updateRoleConfig,
@@ -220,6 +221,7 @@ interface CreateMemberPayload {
     password: string;
     role: MEMBER_ROLE | null;
     numAI: boolean;
+    lumo: boolean;
 }
 
 // This resets the VPN connections of the admin to the default value, since this gets reset by the API when changing subscriptions etc
@@ -273,6 +275,9 @@ export const editMember = ({
         }
         if (memberDiff.numAI !== undefined) {
             await api(updateAI(member.ID, memberDiff.numAI ? 1 : 0));
+        }
+        if (memberDiff.lumo !== undefined) {
+            await api(updateLumo(member.ID, memberDiff.lumo ? 1 : 0));
         }
         if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
             await dispatch(setAdminRole({ member, payload: memberKeyPacketPayload, api }));
@@ -493,6 +498,7 @@ export const createMember = ({
             MaxSpace: +model.storage,
             MaxVPN: model.vpn ? VPN_CONNECTIONS : 0,
             MaxAI: model.numAI ? 1 : 0,
+            MaxLumo: model.lumo ? 1 : 0,
         };
 
         if (model.mode === CreateMemberMode.Invitation) {
