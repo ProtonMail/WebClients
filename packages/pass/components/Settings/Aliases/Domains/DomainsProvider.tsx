@@ -88,12 +88,31 @@ export const AliasDomainsProvider: FC<PropsWithChildren> = ({ children }) => {
                         IsDefault: DefaultAliasDomain === domain.Domain,
                     }))
                 ),
-            onVerify: (domainID, validation) =>
+            onVerify: (domainID, validation) => {
                 setCustomDomains((domains) =>
                     partialMerge(domains, {
                         [domainID]: validation,
                     })
-                ),
+                );
+                // When a custom domain is verified, add it to the alias domains
+                if (validation.MxVerified) {
+                    setAliasDomains((aliasDomains) => {
+                        const verifiedDomainName = customDomains[domainID].Domain;
+                        const alreadyPresent = aliasDomains.some((domain) => domain.Domain === verifiedDomainName);
+                        if (alreadyPresent) return aliasDomains;
+
+                        const aliasDomain = {
+                            Domain: verifiedDomainName,
+                            IsCustom: true,
+                            IsPremium: false,
+                            MXVerified: true,
+                            IsDefault: false,
+                        };
+
+                        return [...aliasDomains, aliasDomain];
+                    });
+                }
+            },
             setAction: (action) => {
                 switch (action?.type) {
                     case 'create':
