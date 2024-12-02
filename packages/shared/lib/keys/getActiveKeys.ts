@@ -4,10 +4,10 @@ import { CryptoProxy } from '@proton/crypto';
 import { ADDRESS_TYPE, KEY_FLAG } from '../constants';
 import { clearBit } from '../helpers/bitset';
 import {
-    type ActiveAddressKeysByVersion,
     type ActiveKey,
     type ActiveKeyWithVersion,
     type Address,
+    type ActiveAddressKeysByVersion,
     type DecryptedKey,
     type Key,
     type SignedKeyList,
@@ -44,8 +44,7 @@ export const getActiveKeyObject = async <
     } as ActiveKey<PrivateKeyReferenceWithVersion>;
 };
 
-// larabr: TODO rename getActiveAddressKeys
-export const getActiveKeys = async (
+export const getActiveAddressKeys = async (
     address: Address | undefined,
     signedKeyList: SignedKeyList | null | undefined,
     keys: Key[],
@@ -131,7 +130,7 @@ export const getActiveUserKeys = async (keys: Key[], decryptedKeys: DecryptedKey
  * @return normalized active keys where the first entry for each version is the primary key,
  * if it exists.
  */
-export const getNormalizedActiveKeys = (address: Address | undefined, keys: ActiveAddressKeysByVersion) => {
+export const getNormalizedActiveAddressKeys = (address: Address | undefined, keys: ActiveAddressKeysByVersion) => {
     const normalize = <V extends ActiveKeyWithVersion>(result: V, index: number): V => ({
         ...result,
         flags: address?.Type === ADDRESS_TYPE.TYPE_EXTERNAL ? setExternalFlags(result.flags) : result.flags,

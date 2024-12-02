@@ -27,7 +27,11 @@ import {
     getSignedKeyListWithDeferredPublish,
     splitKeys,
 } from '@proton/shared/lib/keys';
-import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import {
+    getActiveAddressKeys,
+    getActiveKeyObject,
+    getNormalizedActiveAddressKeys,
+} from '@proton/shared/lib/keys/getActiveKeys';
 import { fromSieveTree, toSieveTree } from '@proton/sieve';
 import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/src/interface';
 import generateUID from '@proton/utils/generateUID';
@@ -131,7 +135,7 @@ export const generateForwardingAddressKey = async ({
         primary: 0,
         flags: getDefaultKeyFlags(address),
     });
-    const updatedActiveKeys = getNormalizedActiveKeys(address, { v4: [newActiveKey], v6: [] }); /// larabr: TODO original code is wrong
+    const updatedActiveKeys = getNormalizedActiveAddressKeys(address, { v4: [newActiveKey], v6: [] });
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         activeKeys,
         address,
@@ -323,7 +327,7 @@ export const acceptIncomingForwarding = async ({
         forwarderAddressKeys.map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))
     );
 
-    let activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, forwardeeAddressKeys);
+    let activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, forwardeeAddressKeys);
 
     for (const forwardingKey of forward.ForwardingKeys || []) {
         const decryptedToken = await decryptMemberToken(

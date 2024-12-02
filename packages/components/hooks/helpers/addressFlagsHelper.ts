@@ -1,9 +1,15 @@
 import { getNewKeyFlags } from '@proton/components/containers/keys/shared/flags';
 import { FlagAction } from '@proton/components/containers/keys/shared/interface';
 import { updateAddressFlags } from '@proton/shared/lib/api/members';
-import type { ActiveKeyWithVersion, Address, Api, DecryptedAddressKey, KeyTransparencyVerify } from '@proton/shared/lib/interfaces';
+import type {
+    ActiveKeyWithVersion,
+    Address,
+    Api,
+    DecryptedAddressKey,
+    KeyTransparencyVerify,
+} from '@proton/shared/lib/interfaces';
 import { getSignedKeyListWithDeferredPublish } from '@proton/shared/lib/keys';
-import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
 export const setAddressFlags = async ({
     encryptionDisabled,
@@ -31,7 +37,7 @@ export const setAddressFlags = async ({
 
     const { keys } = addressWithKeys;
 
-    const activeKeys = await getActiveKeys(address, currentSignedKeyList, currentKeys, keys);
+    const activeKeys = await getActiveAddressKeys(address, currentSignedKeyList, currentKeys, keys);
 
     const setFlags = <V extends ActiveKeyWithVersion>(activeKey: V) => ({
         ...activeKey,
@@ -43,10 +49,10 @@ export const setAddressFlags = async ({
             expectSignatureDisabled ? FlagAction.DISABLE_EXPECT_SIGNED : FlagAction.ENABLE_EXPECT_SIGNED
         ),
     });
-    const newActiveKeys = getNormalizedActiveKeys(
-        address,
-        { v4: activeKeys.v4.map(setFlags), v6: activeKeys.v6.map(setFlags) }
-    );
+    const newActiveKeys = getNormalizedActiveAddressKeys(address, {
+        v4: activeKeys.v4.map(setFlags),
+        v6: activeKeys.v6.map(setFlags),
+    });
     const [newSignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         newActiveKeys,
         address,
