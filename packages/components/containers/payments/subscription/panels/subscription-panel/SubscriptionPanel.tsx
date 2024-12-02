@@ -5,7 +5,7 @@ import Price from '@proton/components/components/price/Price';
 import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { getSubscriptionPlanTitleAndName } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -20,7 +20,6 @@ import {
     getIsB2BAudienceFromSubscription,
     getIsPassB2BPlan,
     getIsSentinelPlan,
-    getPrimaryPlan,
     hasDriveBusiness,
     hasPass,
     hasPassFamily,
@@ -33,7 +32,6 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { type Organization, type SubscriptionModel, type VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
@@ -88,28 +86,8 @@ interface Props {
     upsells: Upsell[];
 }
 
-function extractSubscriptionData(user: UserModel, subscription?: SubscriptionModel) {
-    const primaryPlan = (() => {
-        if (user.isPaid) {
-            return getPrimaryPlan(subscription) ?? FREE_PLAN;
-        } else if (user.hasPassLifetime) {
-            return {
-                Title: PLAN_NAMES[PLANS.PASS_LIFETIME],
-                Name: PLANS.PASS_LIFETIME,
-            };
-        } else if (user.isFree) {
-            return FREE_PLAN;
-        }
-    })();
-
-    return {
-        planTitle: primaryPlan?.Title,
-        planName: primaryPlan?.Name,
-    };
-}
-
 const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, addresses, upsells }: Props) => {
-    const { planTitle, planName } = extractSubscriptionData(user, subscription);
+    const { planTitle, planName } = getSubscriptionPlanTitleAndName(user, subscription);
     const isPassB2bPlan = getIsPassB2BPlan(planName);
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
