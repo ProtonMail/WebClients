@@ -11,7 +11,7 @@ import { DefaultDomainSelect } from './DefaultDomainSelect';
 import { useAliasDomains } from './DomainsProvider';
 
 export const AliasDomains: FC = () => {
-    const { canManage, setAction } = useAliasDomains();
+    const { customDomains, canManage, setAction } = useAliasDomains();
 
     return (
         <SettingsPanel title={c('Label').t`Domains`} className="flex-1" contentClassname="pt-4 pb-2">
@@ -25,7 +25,7 @@ export const AliasDomains: FC = () => {
                 {c('Action').t`Add custom domain`}
                 {!canManage && <PassPlusIcon className="ml-2" />}
             </Button>
-            <CustomDomainsTable />
+            {customDomains && customDomains.length > 0 && <CustomDomainsTable />}
         </SettingsPanel>
     );
 };
