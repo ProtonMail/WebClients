@@ -54,6 +54,7 @@ export const getMockedWasmAccount = (mocked?: Partial<WasmAccount>): WasmAccount
         insertUnconfirmedTransaction: vi.fn(),
         clearStore: vi.fn(),
         bumpTransactionsFees: vi.fn(),
+        getAddress: vi.fn(),
         getAddresses: vi.fn(),
         ...mocked,
     };
