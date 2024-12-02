@@ -51,8 +51,10 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       commentType,
     )
 
+    const localID = GenerateUUID()
+
     const localThread = new CommentThread(
-      GenerateUUID(),
+      localID,
       ServerTime.now(),
       ServerTime.now(),
       markID,
@@ -60,6 +62,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       true,
       CommentThreadState.Active,
       dto.type,
+      localID,
     )
 
     dto.commentsState.addThread(localThread)
@@ -142,6 +145,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       false,
       response.CommentThread.State,
       response.CommentThread.Type,
+      localID,
     )
 
     dto.commentsState.replacePlaceholderThread(localThread.id, thread)
