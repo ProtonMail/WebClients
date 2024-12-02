@@ -113,7 +113,7 @@ export const hasSomeAddonOrPlan = (
     return (subscription?.Plans || []).some(({ Name }) => Name === addonName);
 };
 
-export const hasLifetime = (subscription: Subscription | undefined) => {
+export const hasLifetimeCoupon = (subscription: Subscription | FreeSubscription | undefined) => {
     return subscription?.CouponCode === COUPON_CODES.LIFETIME;
 };
 
