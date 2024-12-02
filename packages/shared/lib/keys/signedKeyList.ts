@@ -14,7 +14,7 @@ import type {
     SignedKeyListItem,
 } from '../interfaces';
 import type { SimpleMap } from '../interfaces/utils';
-import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
+import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import type { PrimaryAddressKeys} from './getPrimaryKey';
 import { getPrimaryAddressKeysForSigningByVersion } from './getPrimaryKey';
 
@@ -131,9 +131,9 @@ export const createSignedKeyListForMigration = async ({
         // Only create a new signed key list if the address does not have one already
         // or the signed key list is obsolete.
         await keyMigrationKTVerifier({ email: address.Email, signedKeyList: address.SignedKeyList, api });
-        const activeKeys = getNormalizedActiveKeys(
+        const activeKeys = getNormalizedActiveAddressKeys(
             address,
-            await getActiveKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)
+            await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)
         );
         if (activeKeys.v4.length > 0) {
             // v4 keys always presents, no need to check for v6 ones

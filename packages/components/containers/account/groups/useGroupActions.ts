@@ -33,7 +33,11 @@ import {
     getSignedKeyListWithDeferredPublish,
     splitKeys,
 } from '@proton/shared/lib/keys';
-import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import {
+    getActiveAddressKeys,
+    getActiveKeyObject,
+    getNormalizedActiveAddressKeys,
+} from '@proton/shared/lib/keys/getActiveKeys';
 
 import useVerifyOutboundPublicKeys from '../../keyTransparency/useVerifyOutboundPublicKeys';
 
@@ -65,7 +69,7 @@ const generateGroupMemberAddressKey = async ({
         primary: 0,
         flags: getDefaultKeyFlags(address),
     });
-    const updatedActiveKeys = getNormalizedActiveKeys(address, { v4: [newActiveKey], v6: [] }); // larabr: TODOOOOOOO this logic looks wrong, fix original code?
+    const updatedActiveKeys = getNormalizedActiveAddressKeys(address, { v4: [newActiveKey], v6: [] });
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         activeKeys,
         address,
@@ -160,7 +164,7 @@ const useGroupActions = () => {
                 forwarderAddressKeys.map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))
             );
 
-            let activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
+            let activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, addressKeys);
 
             for (const forwardingKey of [membership.Keys]) {
                 const decryptedToken = await decryptMemberToken(

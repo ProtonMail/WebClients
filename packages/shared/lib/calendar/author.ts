@@ -11,7 +11,7 @@ import type { CalendarEvent, CalendarEventData } from '../interfaces/calendar';
 import type { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
 import type { SimpleMap } from '../interfaces/utils';
 import { getKeyHasFlagsToVerify } from '../keys';
-import { getActiveKeys } from '../keys/getActiveKeys';
+import { getActiveAddressKeys } from '../keys/getActiveKeys';
 import { CALENDAR_CARD_TYPE } from './constants';
 
 const { SIGNED, ENCRYPTED_AND_SIGNED } = CALENDAR_CARD_TYPE;
@@ -62,19 +62,20 @@ export const getAuthorPublicKeysMap = async ({
         const ownAddress = normalizedAddresses.find(({ normalizedEmailAddress }) => normalizedEmailAddress === author);
         if (ownAddress) {
             const decryptedKeys = await getAddressKeys(ownAddress.ID);
-            const addressKeys = await getActiveKeys(
+            const addressKeys = await getActiveAddressKeys(
                 ownAddress,
                 ownAddress.SignedKeyList,
                 ownAddress.Keys,
                 decryptedKeys
             );
-            const filterVerificationKeys = <V extends ActiveKeyWithVersion>(decryptedKey: V) => getKeyHasFlagsToVerify(decryptedKey.flags);
+            const filterVerificationKeys = <V extends ActiveKeyWithVersion>(decryptedKey: V) =>
+                getKeyHasFlagsToVerify(decryptedKey.flags);
 
             const verificationKeys = {
                 v4: addressKeys.v4.filter(filterVerificationKeys).map((key) => key.publicKey),
-                v6: addressKeys.v6.filter(filterVerificationKeys).map((key) => key.publicKey)
-            }
-            publicKeysMap[author] = [...verificationKeys.v4, ...verificationKeys.v6]
+                v6: addressKeys.v6.filter(filterVerificationKeys).map((key) => key.publicKey),
+            };
+            publicKeysMap[author] = [...verificationKeys.v4, ...verificationKeys.v6];
         } else {
             try {
                 const { verifyingKeys } = await getVerificationPreferences({ email: author, contactEmailsMap });

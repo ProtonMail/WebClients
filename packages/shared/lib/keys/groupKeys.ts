@@ -21,7 +21,7 @@ import {
     getDecryptedAddressKey,
     getNewAddressKeyTokenFromOrgKey,
 } from './addressKeys';
-import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
+import { getActiveAddressKeys, getActiveKeyObject, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 
 type AddressKey = RequireSome<Key, 'Flags' | 'Signature' | 'AddressForwardingID'>;
@@ -53,9 +53,12 @@ export const createGroupAddressKey = async ({
         flags: getDefaultKeyFlags(address),
     });
 
-    const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, []); // v6 keys should not be present for groups
+    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, []); // v6 keys should not be present for groups
 
-    const updatedActiveKeys = getNormalizedActiveKeys(address, { v4: [newActiveKey, ...activeKeys.v4.map(removePrimary)], v6: activeKeys.v6 });
+    const updatedActiveKeys = getNormalizedActiveAddressKeys(address, {
+        v4: [newActiveKey, ...activeKeys.v4.map(removePrimary)],
+        v6: activeKeys.v6,
+    });
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
         address,

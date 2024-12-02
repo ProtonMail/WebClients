@@ -3,7 +3,12 @@ import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { createAddressKeyRoute } from '../../api/keys';
 import type { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../../interfaces';
-import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from '../getActiveKeys';
+import {
+    getActiveAddressKeys,
+    getActiveKeyObject,
+    getNormalizedActiveAddressKeys,
+    getPrimaryFlag,
+} from '../getActiveKeys';
 import { getInactiveKeys } from '../getInactiveKeys';
 import reactivateKeysProcessLegacy from '../reactivation/reactivateKeysProcessLegacy';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
@@ -30,7 +35,7 @@ const importKeysProcessLegacy = async ({
     addressKeys,
     keyTransparencyVerify,
 }: ImportKeysProcessLegacyArguments) => {
-    const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
+    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, addressKeys);
     const inactiveKeys = await getInactiveKeys(address.Keys, activeKeys.v4); // v6 keys not present for non-migrated users
 
     const [keysToReactivate, keysToImport, existingKeys] = getFilteredImportRecords(
@@ -61,7 +66,10 @@ const importKeysProcessLegacy = async ({
                 primary: getPrimaryFlag(mutableActiveKeys.v4),
                 flags: getDefaultKeyFlags(address),
             });
-            const updatedActiveKeys = getNormalizedActiveKeys(address, { v4: [...mutableActiveKeys.v4, newActiveKey] , v6: [] });
+            const updatedActiveKeys = getNormalizedActiveAddressKeys(address, {
+                v4: [...mutableActiveKeys.v4, newActiveKey],
+                v6: [],
+            });
             const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
                 updatedActiveKeys,
                 address,

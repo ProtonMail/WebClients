@@ -1,6 +1,6 @@
 import type { UploadMissingSKL } from '@proton/shared/lib/interfaces';
 import { getSignedKeyList } from '@proton/shared/lib/keys';
-import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
 import { fetchProof, updateSignedKeyList } from '../../helpers/apiHelpers';
 import { throwKTError } from '../../helpers/utils';
@@ -11,9 +11,9 @@ export const uploadMissingSKL: UploadMissingSKL = async ({ userContext, address,
     const proof = await fetchProof(epoch.EpochID, address.Email, 1, api);
     await verifyProofOfAbsenceForAllRevision(proof, address.Email, epoch.TreeHash);
     const decryptedKeys = await userContext.getAddressKeys(address.ID);
-    const activeKeys = getNormalizedActiveKeys(
+    const activeKeys = getNormalizedActiveAddressKeys(
         address,
-        await getActiveKeys(address, null, address.Keys, decryptedKeys)
+        await getActiveAddressKeys(address, null, address.Keys, decryptedKeys)
     );
     const skl = await getSignedKeyList(activeKeys, address, async () => {});
     const { Revision, ExpectedMinEpochID } = await updateSignedKeyList(api, address.ID, skl);

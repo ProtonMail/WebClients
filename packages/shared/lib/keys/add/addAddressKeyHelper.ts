@@ -1,8 +1,7 @@
 import { createAddressKeyRoute, createAddressKeyRouteV2 } from '../../api/keys';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../../constants';
-import type {
-    ActiveKeyWithVersion} from '../../interfaces';
 import {
+    type ActiveKeyWithVersion,
     type ActiveAddressKeysByVersion,
     type ActiveKey,
     type Address,
@@ -14,7 +13,7 @@ import {
     isActiveKeyV6,
 } from '../../interfaces';
 import { generateAddressKey, getNewAddressKeyToken } from '../addressKeys';
-import { getActiveKeyObject, getNormalizedActiveKeys } from '../getActiveKeys';
+import { getActiveKeyObject, getNormalizedActiveAddressKeys } from '../getActiveKeys';
 import { getDefaultKeyFlags } from '../keyFlags';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 
@@ -58,7 +57,7 @@ export const createAddressKeyLegacy = async ({
         flags: getDefaultKeyFlags(address),
     });
     // no v6 keys allowed with non-migrated keys
-    const updatedActiveKeys = getNormalizedActiveKeys(address, {
+    const updatedActiveKeys = getNormalizedActiveAddressKeys(address, {
         v4: [newActiveKey, ...activeKeys.v4.map(removePrimary)],
         v6: [],
     });
@@ -122,7 +121,7 @@ export const createAddressKeyV2 = async ({
         ? { v4: [...activeKeys.v4], v6: [newActiveKey, ...activeKeys.v6.map(removePrimary)] }
         : { v4: [newActiveKey, ...activeKeys.v4.map(removePrimary)], v6: [...activeKeys.v6] };
 
-    const updatedActiveKeys = getNormalizedActiveKeys(address, toNormalize);
+    const updatedActiveKeys = getNormalizedActiveAddressKeys(address, toNormalize);
 
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
