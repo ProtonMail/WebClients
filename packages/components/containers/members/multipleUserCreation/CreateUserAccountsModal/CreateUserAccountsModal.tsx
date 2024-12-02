@@ -328,6 +328,7 @@ const CreateUserAccountsModal = ({
                             invitationEmail: user.invitationEmail || '',
                             role: MEMBER_ROLE.ORGANIZATION_MEMBER,
                             numAI: false,
+                            lumo: false,
                             vpn: user.vpnAccess,
                         },
                         verifiedDomains,

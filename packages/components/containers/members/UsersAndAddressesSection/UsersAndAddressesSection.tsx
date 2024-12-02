@@ -138,8 +138,9 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const showAddressesSection = !hasExternalMemberCapableB2BPlan && hasMaxAddresses;
     const showFeaturesColumn = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan;
 
-    const { MaxAI = 0, UsedAI = 0 } = organization || {};
+    const { MaxAI = 0, UsedAI = 0, MaxLumo = 0, UsedLumo = 0 } = organization || {};
     const aiSeatsRemaining = MaxAI > UsedAI;
+    const lumoSeatsRemaining = MaxLumo > UsedLumo;
 
     const isOrgAFamilyPlan = getOrganizationDenomination(organization) === 'familyGroup';
     const hasDuoPlan = hasDuo(subscription);
@@ -436,6 +437,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         optionalName={hasExternalMemberCapableB2BPlan}
                         members={members}
                         aiSeatsRemaining={aiSeatsRemaining}
+                        lumoSeatsRemaining={lumoSeatsRemaining}
                         allowStorageConfiguration={allowStorageConfiguration}
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
@@ -458,6 +460,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                     <SubUserEditModal
                         member={tmpMember}
                         aiSeatsRemaining={aiSeatsRemaining}
+                        lumoSeatsRemaining={lumoSeatsRemaining}
                         allowStorageConfiguration={allowStorageConfiguration}
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
@@ -477,6 +480,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         member={tmpMember}
                         organization={organization}
                         aiSeatsRemaining={aiSeatsRemaining}
+                        lumoSeatsRemaining={lumoSeatsRemaining}
                         allowAIAssistantConfiguration={allowAIAssistantConfiguration}
                         allowStorageConfiguration={allowStorageConfiguration}
                         {...userInviteOrEditModalProps}
@@ -493,6 +497,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         members={members}
                         organization={organization}
                         aiSeatsRemaining={aiSeatsRemaining}
+                        lumoSeatsRemaining={lumoSeatsRemaining}
                         verifiedDomains={verifiedMailDomains}
                         allowAIAssistantConfiguration={allowAIAssistantConfiguration}
                         onInviteUser={handleInviteUser}

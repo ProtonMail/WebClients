@@ -129,7 +129,7 @@ export const getOrganizationAppRoutes = ({
             : true;
 
     return {
-        available: canHaveOrganization && app !== APPS.PROTONWALLET && app !== APPS.PROTONLUMO,
+        available: canHaveOrganization && app !== APPS.PROTONWALLET,
         header: sectionTitle,
         routes: {
             videoConf: <SectionConfig>{
