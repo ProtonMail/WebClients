@@ -41,15 +41,15 @@ export const AliasMailboxesTable: FC = () => {
                         <AliasMailboxLoading mailboxID={MailboxID} key={MailboxID}>
                             {(loading) => (
                                 <TableRow key={MailboxID} className={clsx(loading && 'pointer-events-none')}>
-                                    <TableCell>
+                                    <TableCell label={c('Title').t`Mailbox`}>
                                         <div className="flex items-center gap-2 flex-nowrap">
                                             <span className="block text-ellipsis">{Email}</span>
                                             {loading && <CircleLoader size="tiny" className="shrink-0" />}
                                         </div>
                                     </TableCell>
-                                    <TableCell>{AliasCount}</TableCell>
+                                    <TableCell label={c('Title').t`Aliases`}>{AliasCount}</TableCell>
                                     <TableCell>
-                                        <div className="flex justify-center">
+                                        <div className="flex justify-start lg:justify-center">
                                             {IsDefault ? (
                                                 <Badge type="primary">{c('Title').t`Default`}</Badge>
                                             ) : (
