@@ -12,7 +12,7 @@ import type { ApiKeysConfig, PinnedKeysConfig, SelfSend } from '@proton/shared/l
 import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
 import type { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import { getKeyHasFlagsToEncrypt } from '@proton/shared/lib/keys';
-import { getActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import { getActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getContactPublicKeyModel, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 import extractEncryptionPreferences from '@proton/shared/lib/mail/encryptionPreferences';
@@ -54,7 +54,14 @@ const useGetEncryptionPreferences = () => {
             if (selfAddress) {
                 // we do not trust the public keys in ownAddress (they will be deprecated in the API response soon anyway)
                 const selfAddressKeys = await getAddressKeys(selfAddress.ID);
-                const primaryAddressKey = (await getActiveKeys(selfAddress, selfAddress.SignedKeyList, selfAddress.Keys, selfAddressKeys)).v4[0];
+                const primaryAddressKey = (
+                    await getActiveAddressKeys(
+                        selfAddress,
+                        selfAddress.SignedKeyList,
+                        selfAddress.Keys,
+                        selfAddressKeys
+                    )
+                ).v4[0];
                 const selfPublicKey = primaryAddressKey?.publicKey;
                 const canEncrypt = selfPublicKey ? await getKeyEncryptionCapableStatus(selfPublicKey) : undefined;
                 const canSend = canEncrypt && getKeyHasFlagsToEncrypt(primaryAddressKey.flags);

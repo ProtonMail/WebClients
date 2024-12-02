@@ -22,7 +22,12 @@ import type {
 } from '../interfaces';
 import { srpVerify } from '../srp';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
-import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from './getActiveKeys';
+import {
+    getActiveAddressKeys,
+    getActiveKeyObject,
+    getNormalizedActiveAddressKeys,
+    getPrimaryFlag,
+} from './getActiveKeys';
 import { generateKeySaltAndPassphrase } from './keys';
 import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';
 import { generateMemberAddressKey } from './organizationKeys';
@@ -91,7 +96,7 @@ export const setupMemberKeyV2 = async ({
                 primary: 1,
                 flags: getDefaultKeyFlags(address),
             });
-            const updatedActiveKeys = getNormalizedActiveKeys(address, { v4: [newActiveKey], v6: [] });
+            const updatedActiveKeys = getNormalizedActiveAddressKeys(address, { v4: [newActiveKey], v6: [] });
             const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
                 updatedActiveKeys,
                 address,
@@ -211,7 +216,7 @@ export const createMemberAddressKeysLegacy = async ({
             keyGenConfig,
         });
 
-    const activeKeys = await getActiveKeys(
+    const activeKeys = await getActiveAddressKeys(
         memberAddress,
         memberAddress.SignedKeyList,
         memberAddress.Keys,
@@ -222,7 +227,10 @@ export const createMemberAddressKeysLegacy = async ({
         primary: getPrimaryFlag(activeKeys.v4),
         flags: getDefaultKeyFlags(memberAddress),
     });
-    const updatedActiveKeys = getNormalizedActiveKeys(memberAddress, { v4: [...activeKeys.v4, newActiveKey], v6: [] });
+    const updatedActiveKeys = getNormalizedActiveAddressKeys(memberAddress, {
+        v4: [...activeKeys.v4, newActiveKey],
+        v6: [],
+    });
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
         memberAddress,
@@ -283,7 +291,7 @@ export const createMemberAddressKeysV2 = async ({
         keyGenConfig,
     });
 
-    const activeKeys = await getActiveKeys(
+    const activeKeys = await getActiveAddressKeys(
         memberAddress,
         memberAddress.SignedKeyList,
         memberAddress.Keys,
@@ -294,7 +302,10 @@ export const createMemberAddressKeysV2 = async ({
         primary: getPrimaryFlag(activeKeys.v4),
         flags: getDefaultKeyFlags(memberAddress),
     });
-    const updatedActiveKeys = getNormalizedActiveKeys(memberAddress, { v4: [...activeKeys.v4, newActiveKey], v6: [] });
+    const updatedActiveKeys = getNormalizedActiveAddressKeys(memberAddress, {
+        v4: [...activeKeys.v4, newActiveKey],
+        v6: [],
+    });
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
         memberAddress,

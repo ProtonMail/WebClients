@@ -12,7 +12,7 @@ import {
     isActiveKeyV6,
 } from '../interfaces';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
-import { getActiveKeyObject, getNormalizedActiveKeys } from './getActiveKeys';
+import { getActiveKeyObject, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { getDefaultKeyFlags } from './keyFlags';
 import type { OnSKLPublishSuccess } from './signedKeyList';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
@@ -81,7 +81,7 @@ export const getResetAddressesKeysV2 = async ({
                     ? { v4: activeKeys.v4, v6: [newPrimaryKey, ...activeKeys.v6] }
                     : { v4: [newPrimaryKey, ...activeKeys.v4], v6: activeKeys.v6 };
 
-                const newActiveKeys = getNormalizedActiveKeys(address, toNormalize);
+                const newActiveKeys = getNormalizedActiveAddressKeys(address, toNormalize);
                 const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
                     newActiveKeys,
                     address,

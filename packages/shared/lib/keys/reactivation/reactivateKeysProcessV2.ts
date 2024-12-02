@@ -6,8 +6,9 @@ import { getApiError } from '../../api/helpers/apiErrorHelper';
 import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
 import { HTTP_STATUS_CODE } from '../../constants';
 import type {
-    ActiveAddressKeysByVersion,
-    ActiveKeyWithVersion} from '../../interfaces';
+    ActiveKeyWithVersion,
+    ActiveAddressKeysByVersion
+} from '../../interfaces';
 import {
     type ActiveKey,
     type Address,
@@ -21,10 +22,10 @@ import {
 import type { SimpleMap } from '../../interfaces/utils';
 import { generateAddressKeyTokens } from '../addressKeys';
 import {
+    getActiveAddressKeys,
     getActiveKeyObject,
-    getActiveKeys,
     getActiveUserKeys,
-    getNormalizedActiveKeys,
+    getNormalizedActiveAddressKeys,
     getNormalizedActiveUserKeys,
     getPrimaryFlag,
     getReactivatedKeyFlag,
@@ -220,7 +221,7 @@ export const reactivateAddressKeysV2 = async ({
             const toNormalize = isActiveKeyV6(newActiveKey)
                 ? { v4: mutableActiveKeys.v4, v6: [...mutableActiveKeys.v6, newActiveKey] }
                 : { v4: [...mutableActiveKeys.v4, newActiveKey], v6: mutableActiveKeys.v6 };
-            const updatedActiveKeys = getNormalizedActiveKeys(address, toNormalize);
+            const updatedActiveKeys = getNormalizedActiveAddressKeys(address, toNormalize);
             const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
                 updatedActiveKeys,
                 address,
@@ -357,7 +358,12 @@ const reactivateKeysProcessV2 = async ({
             }
 
             const addressKeys = await getDecryptedAddressKeysHelper(address.Keys, user, userKeys, '');
-            const activeAddressKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
+            const activeAddressKeys = await getActiveAddressKeys(
+                address,
+                address.SignedKeyList,
+                address.Keys,
+                addressKeys
+            );
 
             await reactivateAddressKeysV2({
                 api,
