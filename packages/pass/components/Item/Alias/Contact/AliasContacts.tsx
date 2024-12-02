@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Icon, useModalState } from '@proton/components';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { AliasContactsProvider } from '@proton/pass/components/Item/Alias/Contact/AliasContactsProvider';
 import type { SelectedItem } from '@proton/pass/types';
@@ -11,6 +12,7 @@ import { AliasContactsView } from './AliasContactsView';
 
 export const AliasContacts: FC<SelectedItem> = ({ shareId, itemId }) => {
     const [viewContacts, openViewContactSidebar] = useModalState();
+    const online = useConnectivity();
 
     return (
         <AliasContactsProvider shareId={shareId} itemId={itemId}>
@@ -20,6 +22,7 @@ export const AliasContacts: FC<SelectedItem> = ({ shareId, itemId }) => {
                 onClick={() => openViewContactSidebar(true)}
                 value={c('Label').t`Contacts`}
                 label=""
+                disabled={!online}
             />
             {viewContacts.open && <AliasContactsView onClose={viewContacts.onClose} />}
         </AliasContactsProvider>
