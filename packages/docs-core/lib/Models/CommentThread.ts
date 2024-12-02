@@ -18,6 +18,7 @@ export class CommentThread implements CommentThreadInterface {
     public isPlaceholder: boolean,
     public state: CommentThreadState,
     public type: CommentThreadType,
+    public localID: string,
   ) {}
 
   public asPayload(): CommentThreadPayload {
@@ -43,6 +44,7 @@ export class CommentThread implements CommentThreadInterface {
       payload.isPlaceholder,
       payload.state,
       payload.type,
+      payload.id,
     )
   }
 }

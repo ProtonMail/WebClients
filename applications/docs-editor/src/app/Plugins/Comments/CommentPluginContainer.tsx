@@ -1,4 +1,4 @@
-import type { NodeKey } from 'lexical'
+import type { NodeKey, RangeSelection } from 'lexical'
 import {
   $createCommentThreadMarkNode,
   $isCommentThreadMarkNode,
@@ -27,7 +27,6 @@ import { useLatestAwarenessStates } from '../../Utils/useLatestAwarenessStates'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { useMarkNodesContext } from '../MarkNodesContext'
 import { useConfirmActionModal } from '@proton/components'
-import { createDOMRange } from '@lexical/selection'
 
 export default function CommentPlugin({
   controller,
@@ -55,14 +54,14 @@ export default function CommentPlugin({
 
   const { markNodeMap, activeIDs, activeAnchorKey } = useMarkNodesContext()
 
-  const [commentInputPosition, setCommentInputPosition] = useState<number | undefined>()
+  const [commentInputSelection, setCommentInputSelection] = useState<RangeSelection | undefined>()
   const [showCommentsPanel, setShowCommentsPanel] = useState(false)
 
   const [threadToFocus, setThreadToFocus] = useState<string | null>(null)
 
   useEffect(() => {
     if (!isEditorEditable) {
-      setCommentInputPosition(undefined)
+      setCommentInputSelection(undefined)
     }
   }, [isEditorEditable])
 
@@ -74,7 +73,7 @@ export default function CommentPlugin({
         selection.dirty = true
       }
     })
-    setCommentInputPosition(undefined)
+    setCommentInputSelection(undefined)
   }, [editor])
 
   useEffect(() => {
@@ -144,12 +143,7 @@ export default function CommentPlugin({
           if (!$isRangeSelection(selection)) {
             return true
           }
-          const anchor = selection.anchor
-          const focus = selection.focus
-          const range = createDOMRange(editor, anchor.getNode(), anchor.offset, focus.getNode(), focus.offset)
-          if (range) {
-            setCommentInputPosition(range.getBoundingClientRect().top)
-          }
+          setCommentInputSelection(selection.clone())
           return true
         },
         COMMAND_PRIORITY_EDITOR,
@@ -158,7 +152,7 @@ export default function CommentPlugin({
         SHOW_ALL_COMMENTS_COMMAND,
         () => {
           setShowCommentsPanel((show) => !show)
-          setCommentInputPosition(undefined)
+          setCommentInputSelection(undefined)
           return true
         },
         COMMAND_PRIORITY_EDITOR,
@@ -326,21 +320,21 @@ export default function CommentPlugin({
         awarenessStates,
         getMarkNodes,
         showConfirmModal,
-        commentInputPosition,
+        commentInputSelection,
         cancelAddComment,
       }}
     >
       {confirmModal}
       {activeAnchorKey !== null &&
         activeAnchorKey !== undefined &&
-        commentInputPosition === undefined &&
+        commentInputSelection === undefined &&
         isEditorEditable &&
         createPortal(
           <FloatingQuickActions anchorKey={activeAnchorKey} editor={editor} onAddComment={onAddComment} />,
           containerElement || document.body,
         )}
       {showCommentsPanel && <CommentsPanel threads={threads} setShowComments={setShowCommentsPanel} />}
-      {(activeThreads.length > 0 || commentInputPosition !== undefined) &&
+      {(activeThreads.length > 0 || commentInputSelection !== undefined) &&
         !showCommentsPanel &&
         createPortal(<ContextualComments activeThreads={activeThreads} />, containerElement || document.body)}
     </CommentsProvider>

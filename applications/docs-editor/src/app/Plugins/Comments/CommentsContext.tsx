@@ -1,6 +1,6 @@
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { createContext, useContext } from 'react'
-import type { LexicalNode, NodeKey } from 'lexical'
+import type { LexicalNode, NodeKey, RangeSelection } from 'lexical'
 import type { UserState } from '@lexical/yjs'
 import type { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 
@@ -16,7 +16,7 @@ type CommentsContextValue = {
   awarenessStates: UserState[]
   showConfirmModal: ReturnType<typeof useConfirmActionModal>[1]
 
-  commentInputPosition: number | undefined
+  commentInputSelection: RangeSelection | undefined
   cancelAddComment: () => void
 }
 
