@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
@@ -8,7 +8,8 @@ import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getMailboxes } from '@proton/pass/store/actions';
 import { selectCanManageAlias } from '@proton/pass/store/selectors';
-import type { MaybeNull, UserMailboxOutput } from '@proton/pass/types';
+import type { Maybe, MaybeNull, UserMailboxOutput } from '@proton/pass/types';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { objectMap } from '@proton/pass/utils/object/map';
 import { fullMerge } from '@proton/pass/utils/object/merge';
@@ -27,7 +28,7 @@ export interface AliasMailboxesContextValue {
     setAction: (action: MaybeNull<AliasMailboxAction>) => void;
     onCreate: (contact: UserMailboxOutput) => void;
     onVerify: (mailbox: UserMailboxOutput) => void;
-    onDelete: (mailboxID: number) => void;
+    onDelete: (mailboxID: number, transferAliases?: boolean) => void;
     onSetDefault: (mailboxID: number) => void;
     getMailboxes: () => void;
 }
@@ -49,6 +50,7 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
     const spotlight = useSpotlight();
     const canManage = useSelector(selectCanManageAlias);
     const [action, setAction] = useState<MaybeNull<AliasMailboxAction>>(null);
+    const timeout = useRef<Maybe<NodeJS.Timeout>>();
 
     const [mailboxes, setMailboxes] = useState<Record<number, UserMailboxOutput>>({});
 
@@ -79,7 +81,17 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
                 else setAction(null);
             },
             onVerify: (mailbox) => setMailboxes(fullMerge(mailboxes, { [mailbox.MailboxID]: mailbox })),
-            onDelete: (mailboxID) => setMailboxes((mailboxes) => objectDelete(mailboxes, mailboxID)),
+            onDelete: (mailboxID, transferAliases) => {
+                setMailboxes((mailboxes) => objectDelete(mailboxes, mailboxID));
+                // call API with delay to get updated alias count, without >2s delay BE may still return old result
+                if (transferAliases) {
+                    clearTimeout(timeout.current);
+                    timeout.current = setTimeout(
+                        pipe(sync.revalidate, () => (timeout.current = undefined)),
+                        3_000
+                    );
+                }
+            },
             onSetDefault: (mailboxID) =>
                 setMailboxes((mailboxes) =>
                     objectMap(mailboxes, (_, mailbox) => ({
@@ -92,7 +104,10 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
         [action, canManage, mailboxes, sync.loading]
     );
 
-    useEffect(sync.dispatch, []);
+    useEffect(() => {
+        sync.dispatch();
+        return clearTimeout(timeout.current);
+    }, []);
 
     return (
         <AliasMailboxesContext.Provider value={context}>
