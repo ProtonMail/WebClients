@@ -19,6 +19,8 @@ const getDomainStatusLabel = ({ OwnershipVerified, MxVerified }: CustomDomainOut
 export const CustomDomainsTable: FC = () => {
     const { canManage, customDomains, setAction, defaultAliasDomain, loading } = useAliasDomains();
 
+    if (!loading && customDomains.length === 0) return null;
+
     return (
         <>
             <Table responsive="cards" hasActions borderWeak>
