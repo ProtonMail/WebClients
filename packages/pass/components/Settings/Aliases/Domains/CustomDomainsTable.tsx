@@ -39,10 +39,10 @@ export const CustomDomainsTable: FC = () => {
                         customDomains.map((domain) => {
                             return (
                                 <TableRow key={domain.ID}>
-                                    <TableCell>{domain.Domain}</TableCell>
-                                    <TableCell>{domain.AliasCount}</TableCell>
+                                    <TableCell label={c('Title').t`Domain`}>{domain.Domain}</TableCell>
+                                    <TableCell label={c('Title').t`Aliases`}>{domain.AliasCount}</TableCell>
                                     <TableCell>
-                                        <div className="flex justify-center">
+                                        <div className="flex justify-start lg:justify-center">
                                             {(() => {
                                                 if (domain.Domain === defaultAliasDomain) {
                                                     return <Badge type="primary">{c('Title').t`Default`}</Badge>;
