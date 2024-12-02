@@ -11,7 +11,7 @@ import { useBitcoinBlockchainContext } from '../../../contexts';
 import { useBlockchainClient } from '../../../hooks/useBlockchainClient';
 import { useEmailIntegration } from '../../../hooks/useEmailIntegration';
 import { useLocalPagination } from '../../../hooks/useLocalPagination';
-import { getAccountWithChainDataFromManyWallets } from '../../../utils';
+import { getAccountWithChainDataFromManyWallets, isUndefined } from '../../../utils';
 
 export const useAddressTable = ({
     wallet,
@@ -20,8 +20,10 @@ export const useAddressTable = ({
     wallet: IWasmApiWalletData;
     walletAccount: WasmApiWalletAccount;
 }) => {
+    const [addressSearch, setAddressSearch] = useState('');
     const [addresses, setAddresses] = useState<WasmAddressDetailsData[]>([]);
-    const { walletsChainData, apiWalletsData } = useBitcoinBlockchainContext();
+
+    const { walletsChainData, apiWalletsData, network } = useBitcoinBlockchainContext();
     const blockchainClient = useBlockchainClient();
     const [loading, withLoading] = useLoading();
     const [keychain, setKeychain] = useState(WasmKeychainKind.External);
@@ -48,17 +50,40 @@ export const useAddressTable = ({
             );
 
             if (account) {
-                void withLoading(
-                    account.account
+                const run = async () => {
+                    if (addressSearch && !isUndefined(network)) {
+                        const address = await account.account
+                            .getAddress(network, addressSearch, blockchainClient, force_sync)
+                            .catch(noop);
+
+                        if (address) {
+                            return setAddresses([address]);
+                        }
+                    }
+
+                    const addresses = await account.account
                         .getAddresses(pagination, blockchainClient, keychain, force_sync)
-                        .then((addresses) => {
-                            setAddresses(addresses[0]);
-                        })
-                        .catch(noop)
-                );
+                        .catch(noop);
+
+                    if (addresses) {
+                        setAddresses(addresses[0]);
+                    }
+                };
+
+                void withLoading(run());
             }
         },
-        [blockchainClient, currentPage, wallet.Wallet.ID, walletAccount.ID, walletsChainData, keychain, withLoading]
+        [
+            currentPage,
+            walletsChainData,
+            wallet.Wallet.ID,
+            walletAccount.ID,
+            withLoading,
+            addressSearch,
+            network,
+            blockchainClient,
+            keychain,
+        ]
     );
 
     useEffect(() => {
@@ -76,6 +101,9 @@ export const useAddressTable = ({
 
         keychain,
         toggleKeychain,
+
+        setAddressSearch,
+        addressSearch,
 
         addresses,
         loading,

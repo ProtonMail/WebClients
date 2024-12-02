@@ -34,6 +34,11 @@ interface Props {
 const getDummyLoadingColumns = (keychain: WasmKeychainKind): DataColumn<null>[] => {
     return compact([
         {
+            id: 'action',
+            colSpan: '5rem',
+            data: () => <CopyAddressDataListItem loading />,
+        },
+        {
             header: <div>{c('Address list').t`Index`}</div>,
             id: 'index',
             colSpan: '5rem',
@@ -63,11 +68,6 @@ const getDummyLoadingColumns = (keychain: WasmKeychainKind): DataColumn<null>[] 
             id: 'status',
             colSpan: '8rem',
             data: () => <AddressStatusDataListItem loading />,
-        },
-        {
-            id: 'action',
-            colSpan: '5rem',
-            data: () => <CopyAddressDataListItem loading />,
         },
     ]);
 };
@@ -111,6 +111,12 @@ export const AddressTable = ({
         address: WasmAddressDetailsData;
     }>[] = compact([
         {
+            id: 'action',
+            colSpan: '5rem',
+            className: 'flex flex-column items-center',
+            data: (row) => <CopyAddressDataListItem address={row.address.Data} />,
+        },
+        {
             header: <div>{c('Address list').t`Index`}</div>,
             id: 'index',
             colSpan: '5rem',
@@ -146,20 +152,7 @@ export const AddressTable = ({
             header: <div>{c('Address list').t`Status`}</div>,
             id: 'status',
             colSpan: '8rem',
-            data: (row) => (
-                <AddressStatusDataListItem
-                    keychain={keychain}
-                    lastUsedIndex={apiAccount.LastUsedIndex}
-                    address={row.address.Data}
-                    addressPool={bitcoinAddressPool}
-                />
-            ),
-        },
-        {
-            id: 'action',
-            colSpan: '5rem',
-            className: 'flex flex-column items-center',
-            data: (row) => <CopyAddressDataListItem address={row.address.Data} />,
+            data: (row) => <AddressStatusDataListItem address={row.address.Data} />,
         },
     ]);
 
