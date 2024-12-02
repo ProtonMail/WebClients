@@ -8,8 +8,8 @@ import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
@@ -47,7 +47,9 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
     };
 
     const betaToggleId = 'toggle-early-access';
-    const showSyncThemeSelection = !isElectronApp && settings.Mode === ThemeModeSetting.Auto;
+    const showSyncThemeSelection = hasInboxDesktopFeature('RestrictedThemeSelection')
+        ? false
+        : settings.Mode === ThemeModeSetting.Auto;
     const showManualThemeSelection = settings.Mode !== ThemeModeSetting.Auto;
 
     return (
