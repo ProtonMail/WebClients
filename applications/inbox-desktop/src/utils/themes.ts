@@ -70,7 +70,7 @@ export function updateNativeTheme(theme: ThemeSetting) {
         const themeColors = nativeTheme.shouldUseDarkColors
             ? PROTON_THEMES_MAP[ThemeTypes.Carbon]
             : PROTON_THEMES_MAP[ThemeTypes.Snow];
-        mainWindow.setBackgroundColor(themeColors.thumbColors.prominent);
+        mainWindow.setBackgroundColor(themeColors.themeColorMeta);
     }
 }
 
