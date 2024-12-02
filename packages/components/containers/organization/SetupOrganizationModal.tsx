@@ -165,8 +165,8 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     }
                     // NOTE: By default the admin gets allocated all of the VPN connections. Here we artificially set the admin to the default value
                     // So that other users can get connections allocated.
-                    if (hasPaidVpn) {
-                        await silentApi(updateVPN(selfMemberID, VPN_CONNECTIONS));
+                    if (hasPaidVpn && selfMember.MaxVPN !== VPN_CONNECTIONS) {
+                        await silentApi(updateVPN(selfMemberID, VPN_CONNECTIONS)).catch(noop);
                     }
                     await silentApi(updateOrganizationName(model.name));
 
