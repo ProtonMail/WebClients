@@ -55,12 +55,13 @@ const useGetVerificationPreferences = () => {
                 .find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalEmail);
             if (selfAddress) {
                 const selfAddressKeys = await getAddressKeys(selfAddress.ID);
-                const activeAddressKeys = await getActiveKeys(
+                const activeAddressKeysByVersion = await getActiveKeys(
                     selfAddress,
                     selfAddress.SignedKeyList,
                     selfAddress.Keys,
                     selfAddressKeys
                 );
+                const activeAddressKeys = [...activeAddressKeysByVersion.v6, ...activeAddressKeysByVersion.v4];
                 const activePublicKeys = activeAddressKeys.map(({ publicKey }) => publicKey);
                 const compromisedFingerprints = new Set(
                     activeAddressKeys

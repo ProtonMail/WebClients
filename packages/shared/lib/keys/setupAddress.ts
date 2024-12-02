@@ -8,7 +8,7 @@ import { getRequiresAddress, getRequiresProtonAddress } from '@proton/shared/lib
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { ADDRESS_TYPE, PRODUCT_BIT } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getEmailParts, removePlusAliasLocalPart } from '@proton/shared/lib/helpers/email';
 import { isPrivate } from '@proton/shared/lib/user/helpers';
@@ -204,21 +204,33 @@ export const handleCreateAddressAndKey = async ({
     ]);
     const [address] = await handleSetupUsernameAndAddress({ api, username, user, domain });
     const userKeys = await getDecryptedUserKeysHelper(user, passphrase);
+    const hasV6UserKeys = userKeys.filter((key) => key.privateKey.isPrivateKeyV6());
     const keyTransparencyVerify = preAuthKTVerify(userKeys);
     if (getHasMigratedAddressKeys(addresses)) {
-        await createAddressKeyV2({
+        const [, updatedActiveKeys] = await createAddressKeyV2({
             api,
             userKeys,
             address,
-            activeKeys: [],
+            activeKeys: { v4: [], v6: [] },
             keyTransparencyVerify,
         });
+        
+        if (hasV6UserKeys) { // also generate a v6 address key
+            await createAddressKeyV2({
+                api,
+                userKeys,
+                address,
+                activeKeys: updatedActiveKeys,
+                keyTransparencyVerify,
+                keyGenConfig: KEYGEN_CONFIGS[KEYGEN_TYPES.PQC]
+            });
+        }
     } else {
         await createAddressKeyLegacy({
             api,
             passphrase: passphrase,
             address,
-            activeKeys: [],
+            activeKeys: { v4: [], v6: [] },
             keyTransparencyVerify,
         });
     }

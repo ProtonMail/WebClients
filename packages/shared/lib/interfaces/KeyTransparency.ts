@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 import type { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
@@ -8,6 +8,7 @@ import type { ProcessedApiKey } from './EncryptionPreferences';
 import type { DecryptedAddressKey, DecryptedKey, KeyPair } from './Key';
 import type { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
 import type { User } from './User';
+import type { PrimaryAddressKeys } from '../keys';
 
 export enum IGNORE_KT {
     NORMAL,
@@ -128,8 +129,8 @@ export type ResetSelfAudit = (user: User, keyPassword: string, addressesBeforeRe
 
 export interface ResignSKLWithPrimaryKeyArguments {
     address: Address;
-    newPrimaryKey: PrivateKeyReference;
-    formerPrimaryKey: PublicKeyReference;
+    newPrimaryKeys: PrimaryAddressKeys;
+    formerPrimaryKeys: PrimaryAddressKeys;
     userKeys: DecryptedKey[];
 }
 

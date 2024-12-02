@@ -23,6 +23,8 @@ const KeyReferenceSerializer = {
         // store values directly, convert back to function when deserialising
         ...keyReference,
         isPrivate: keyReference.isPrivate(),
+        isPrivateKeyV4: keyReference.isPrivateKeyV4(),
+        isPrivateKeyV6: keyReference.isPrivateKeyV6(),
         getVersion: keyReference.getVersion(),
         getFingerprint: keyReference.getFingerprint(),
         getKeyID: keyReference.getKeyID(),
@@ -43,6 +45,8 @@ const KeyReferenceSerializer = {
         ({
             ...serialized,
             isPrivate: () => serialized.isPrivate,
+            isPrivateKeyV4: () => serialized.isPrivateKeyV4,
+            isPrivateKeyV6: () => serialized.isPrivateKeyV6,
             getVersion: () => serialized.getVersion,
             getFingerprint: () => serialized.getFingerprint,
             getKeyID: () => serialized.getKeyID,

@@ -46,7 +46,7 @@ interface SetupMemberKeySharedArguments {
     memberAddresses: tsAddress[];
     password: string;
     organizationKey: PrivateKeyReference;
-    keyGenConfig: KeyGenConfig;
+    keyGenConfig: KeyGenConfig; // pqc: TODO no v6 support
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
@@ -91,7 +91,7 @@ export const setupMemberKeyV2 = async ({
                 primary: 1,
                 flags: getDefaultKeyFlags(address),
             });
-            const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey]);
+            const updatedActiveKeys = getNormalizedActiveKeys(address, { v4: [newActiveKey], v6: [] });
             const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
                 updatedActiveKeys,
                 address,
@@ -219,10 +219,10 @@ export const createMemberAddressKeysLegacy = async ({
     );
     const newActiveKey = await getActiveKeyObject(privateKey, {
         ID: 'tmp',
-        primary: getPrimaryFlag(activeKeys),
+        primary: getPrimaryFlag(activeKeys.v4),
         flags: getDefaultKeyFlags(memberAddress),
     });
-    const updatedActiveKeys = getNormalizedActiveKeys(memberAddress, [...activeKeys, newActiveKey]);
+    const updatedActiveKeys = getNormalizedActiveKeys(memberAddress, { v4: [...activeKeys.v4, newActiveKey], v6: [] });
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
         memberAddress,
@@ -291,10 +291,10 @@ export const createMemberAddressKeysV2 = async ({
     );
     const newActiveKey = await getActiveKeyObject(addressPrivateKey, {
         ID: 'tmp',
-        primary: getPrimaryFlag(activeKeys),
+        primary: getPrimaryFlag(activeKeys.v4),
         flags: getDefaultKeyFlags(memberAddress),
     });
-    const updatedActiveKeys = getNormalizedActiveKeys(memberAddress, [...activeKeys, newActiveKey]);
+    const updatedActiveKeys = getNormalizedActiveKeys(memberAddress, { v4: [...activeKeys.v4, newActiveKey], v6: [] });
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
         memberAddress,

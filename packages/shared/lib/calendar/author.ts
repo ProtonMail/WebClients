@@ -6,7 +6,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import { canonicalizeInternalEmail } from '../helpers/email';
-import type { Address } from '../interfaces';
+import type { ActiveKeyWithVersion, Address } from '../interfaces';
 import type { CalendarEvent, CalendarEventData } from '../interfaces/calendar';
 import type { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
 import type { SimpleMap } from '../interfaces/utils';
@@ -68,11 +68,13 @@ export const getAuthorPublicKeysMap = async ({
                 ownAddress.Keys,
                 decryptedKeys
             );
-            publicKeysMap[author] = addressKeys
-                .filter((decryptedKey) => {
-                    return getKeyHasFlagsToVerify(decryptedKey.flags);
-                })
-                .map((key) => key.publicKey);
+            const filterVerificationKeys = <V extends ActiveKeyWithVersion>(decryptedKey: V) => getKeyHasFlagsToVerify(decryptedKey.flags);
+
+            const verificationKeys = {
+                v4: addressKeys.v4.filter(filterVerificationKeys).map((key) => key.publicKey),
+                v6: addressKeys.v6.filter(filterVerificationKeys).map((key) => key.publicKey)
+            }
+            publicKeysMap[author] = [...verificationKeys.v4, ...verificationKeys.v6]
         } else {
             try {
                 const { verifyingKeys } = await getVerificationPreferences({ email: author, contactEmailsMap });

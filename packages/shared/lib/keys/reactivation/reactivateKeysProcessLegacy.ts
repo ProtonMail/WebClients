@@ -1,8 +1,8 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { reactivateKeyRoute } from '../../api/keys';
-import type { Address, Api, DecryptedKey, Key, KeyTransparencyVerify } from '../../interfaces';
+import { ActiveKeyWithVersion, isActiveKeyV6, type Address, type Api, type DecryptedKey, type Key, type KeyTransparencyVerify } from '../../interfaces';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from '../getActiveKeys';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 import type { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
@@ -47,12 +47,16 @@ export const reactivateKeysProcess = async ({
                 privateKey: reactivatedKey,
                 passphrase: keyPassword,
             });
-            const newActiveKey = await getActiveKeyObject(reactivatedKey, {
+            const newActiveKey = await getActiveKeyObject(reactivatedKey as PrivateKeyReferenceV4 | PrivateKeyReferenceV6, {
                 ID,
-                primary: getPrimaryFlag(mutableActiveKeys),
+                // We do not mark the v6 as primary by default, because it will fail if forwarding is enabled
+                primary: reactivatedKey.isPrivateKeyV6() ? 0 : getPrimaryFlag(mutableActiveKeys.v4),
                 flags: getDefaultKeyFlags(address),
-            });
-            const updatedActiveKeys = getNormalizedActiveKeys(address, [...mutableActiveKeys, newActiveKey]);
+            }) as ActiveKeyWithVersion;
+            const toNormalize = isActiveKeyV6(newActiveKey) ?
+                { v4: [...mutableActiveKeys.v4], v6: [...mutableActiveKeys.v6, newActiveKey] } :
+                { v4: [...mutableActiveKeys.v4, newActiveKey], v6: [...mutableActiveKeys.v6] };
+            const updatedActiveKeys = getNormalizedActiveKeys(address, toNormalize);
             const [SignedKeyList, onSKLPublishSuccess] = address
                 ? await getSignedKeyListWithDeferredPublish(updatedActiveKeys, address, keyTransparencyVerify)
                 : [undefined, undefined];

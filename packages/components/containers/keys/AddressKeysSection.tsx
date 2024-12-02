@@ -24,6 +24,7 @@ import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
 import {
     addAddressKeysProcess,
     deleteAddressKey,
+    getPrimaryAddressKeysForSigningByVersion,
     importKeysProcess,
     reactivateKeysProcess,
     setAddressKeyFlags,
@@ -100,12 +101,12 @@ const AddressKeysSection = () => {
 
         try {
             setLoadingKeyID(ID);
-            const [newPrimaryKey] = await setPrimaryAddressKey(api, Address, addressKeys, ID, keyTransparencyVerify);
+            const [, newActiveKeys, formerActiveKeys] = await setPrimaryAddressKey(api, Address, addressKeys, ID, keyTransparencyVerify);
             await Promise.all([
                 resignSKLWithPrimaryKey({
                     address: Address,
-                    newPrimaryKey: newPrimaryKey.privateKey,
-                    formerPrimaryKey: addressKeys[0].publicKey,
+                    newPrimaryKeys: getPrimaryAddressKeysForSigningByVersion(newActiveKeys),
+                    formerPrimaryKeys: getPrimaryAddressKeysForSigningByVersion(formerActiveKeys),
                     userKeys,
                 }),
                 keyTransparencyCommit(userKeys),
@@ -207,7 +208,7 @@ const AddressKeysSection = () => {
         }
         try {
             stop();
-            const [newKey] = await addAddressKeysProcess({
+            const [newKey, updatedActiveKeys, formerActiveKeys] = await addAddressKeysProcess({
                 api,
                 userKeys,
                 keyGenConfig,
@@ -220,8 +221,8 @@ const AddressKeysSection = () => {
             await Promise.all([
                 resignSKLWithPrimaryKey({
                     address: Address,
-                    newPrimaryKey: newKey.privateKey,
-                    formerPrimaryKey: addressKeys[0].publicKey,
+                    newPrimaryKeys: getPrimaryAddressKeysForSigningByVersion(updatedActiveKeys),
+                    formerPrimaryKeys: getPrimaryAddressKeysForSigningByVersion(formerActiveKeys),
                     userKeys,
                 }),
                 keyTransparencyCommit(userKeys),
