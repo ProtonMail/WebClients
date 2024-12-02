@@ -11,6 +11,9 @@ import useCombinedRefs from '@proton/hooks/useCombinedRefs'
 import type { PositionedItem } from './Positioner'
 import { Positioner } from './Positioner'
 import { CommentInputBox } from './CommentInputBox'
+import type { RangeSelection } from 'lexical'
+import { $getNodeByKey, type LexicalNode } from 'lexical'
+import { getRangeSelectionRect } from '../../Utils/getSelectionRect'
 
 const RecalculateThreadPositionsEvent = 'RecalculateThreadPositions'
 const dispatchRecalculateEvent = () => {
@@ -89,7 +92,7 @@ function ThreadComponent({ thread, isViewportLarge }: { thread: CommentThreadInt
 
 export function ContextualComments({ activeThreads }: { activeThreads: CommentThreadInterface[] }) {
   const [editor] = useLexicalComposerContext()
-  const { markNodeMap, activeIDs, commentInputPosition, cancelAddComment } = useCommentsContext()
+  const { markNodeMap, activeIDs, commentInputSelection, cancelAddComment } = useCommentsContext()
   const [container, setContainer] = useState<HTMLDivElement | null>(null)
 
   const [items, setItems] = useState<PositionedItem[]>([])
@@ -107,62 +110,102 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
   const [isViewportLarge, setIsViewportLarge] = useState(() => window.innerWidth >= ViewportWidthThreshold)
 
   const getThreadPositions = useCallback(() => {
-    const getMarkRectForThread = (thread: CommentThreadInterface) => {
-      const markID = thread.markID
-      const markNodeKeys = markNodeMap.get(markID)
-      if (markNodeKeys === undefined) {
-        return null
-      }
-      const markNodeKey = Array.from(markNodeKeys)[0]
-      const markElement = editor.getElementByKey(markNodeKey)
-      if (!markElement) {
-        return null
-      }
-      const markRect = markElement.getBoundingClientRect()
-      return markRect
-    }
-
-    const activeThreadItems: PositionedItem[] = activeThreads
-      .sort((a, b) => a.createTime.serverTimestamp - b.createTime.serverTimestamp)
-      .map((thread) => {
-        const markRect = getMarkRectForThread(thread)
-        if (!markRect) {
+    editor.read(() => {
+      const getFirstAssociatedMarkNodeForThread = (thread: CommentThreadInterface) => {
+        const markID = thread.markID
+        const markNodeKeys = markNodeMap.get(markID)
+        if (markNodeKeys === undefined) {
           return null
         }
-        return {
-          id: thread.id,
-          item: <ThreadComponent thread={thread} isViewportLarge={isViewportLarge} />,
-          itemProps: {
-            style: {
-              left: isViewportLarge ? '50%' : undefined,
-              right: isViewportLarge ? undefined : 0,
-              width: isViewportLarge ? 'calc(100% - 2rem)' : 'auto',
-              '--translate-x': isViewportLarge ? '-50%' : undefined,
-            },
-          },
-          position: markRect.y,
-        } satisfies PositionedItem
-      })
-      .filter((thread) => !!thread)
+        const markNodeKey = Array.from(markNodeKeys)[0]
+        return $getNodeByKey(markNodeKey)
+      }
 
-    if (commentInputPosition !== undefined) {
-      const commentInputItem: PositionedItem[] = [
-        {
-          id: CommentInputID,
-          item: <CommentInputBox editor={editor} cancelAddComment={cancelAddComment} />,
-          itemProps: {
-            style: {
-              width: 'calc(100% - 2rem)',
-            },
-          },
-          position: commentInputPosition,
-        },
-      ]
-      setItems(commentInputItem.concat(activeThreadItems))
-    } else {
+      const getMarkRectForThread = (markNode: LexicalNode | null) => {
+        if (!markNode) {
+          return null
+        }
+        const key = markNode.__key
+        const markElement = editor.getElementByKey(key)
+        if (!markElement) {
+          return null
+        }
+        const markRect = markElement.getBoundingClientRect()
+        return markRect
+      }
+
+      const items: ({ node: LexicalNode | null } & (
+        | { thread: CommentThreadInterface }
+        | { selection: RangeSelection }
+      ))[] = activeThreads.map((thread) => ({
+        thread,
+        node: getFirstAssociatedMarkNodeForThread(thread),
+      }))
+
+      if (commentInputSelection !== undefined) {
+        items.push({
+          selection: commentInputSelection,
+          node: commentInputSelection.anchor.getNode(),
+        })
+      }
+
+      const activeThreadItems: PositionedItem[] = items
+        .sort((a, b) => {
+          if (a.node && b.node) {
+            return a.node.isBefore(b.node) ? -1 : 1
+          }
+          if ('thread' in a && 'thread' in b) {
+            return a.thread.createTime.serverTimestamp - b.thread.createTime.serverTimestamp
+          }
+          return 0
+        })
+        .map((item) => {
+          if ('thread' in item) {
+            const markRect = getMarkRectForThread(item.node)
+            if (!markRect) {
+              return null
+            }
+            return {
+              id: item.thread.localID,
+              item: <ThreadComponent thread={item.thread} isViewportLarge={isViewportLarge} />,
+              itemProps: {
+                style: {
+                  left: isViewportLarge ? '50%' : undefined,
+                  right: isViewportLarge ? undefined : 0,
+                  width: isViewportLarge ? 'calc(100% - 2rem)' : 'auto',
+                  '--translate-x': isViewportLarge ? '-50%' : undefined,
+                },
+              },
+              position: markRect.y,
+            } satisfies PositionedItem
+          }
+
+          if ('selection' in item) {
+            const rect = getRangeSelectionRect(editor, item.selection)
+            if (!rect) {
+              return null
+            }
+
+            const position = rect.top
+            return {
+              id: CommentInputID,
+              item: <CommentInputBox editor={editor} cancelAddComment={cancelAddComment} />,
+              itemProps: {
+                style: {
+                  width: 'calc(100% - 2rem)',
+                },
+              },
+              position,
+            }
+          }
+
+          return null
+        })
+        .filter((thread) => !!thread)
+
       setItems(activeThreadItems)
-    }
-  }, [activeThreads, cancelAddComment, commentInputPosition, editor, isViewportLarge, markNodeMap])
+    })
+  }, [activeThreads, cancelAddComment, commentInputSelection, editor, isViewportLarge, markNodeMap])
 
   const debouncedGetThreadPositions = useMemo(() => debounce(getThreadPositions, 50), [getThreadPositions])
 
@@ -207,7 +250,7 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
   return (
     <Positioner
       ref={setContainer}
-      activeItemID={commentInputPosition !== undefined ? CommentInputID : activeThread?.id}
+      activeItemID={commentInputSelection !== undefined ? CommentInputID : activeThread?.localID}
       items={items}
       className="pointer-events-none relative *:pointer-events-auto print:hidden"
       style={{
