@@ -33,6 +33,7 @@ import { TrashedDocumentModal } from '../TrashedDocumentModal'
 import { useFloatingWordCount } from '../WordCount/useFloatingWordCount'
 import { useWordCount } from '../WordCount/useWordCount'
 import type { EditorControllerInterface } from '@proton/docs-core'
+import { useExportToPDFModal } from '../Modals/ExportToPDFModal/ExportToPDFModal'
 
 const DocumentTitleDropdown = ({
   authenticatedController,
@@ -56,7 +57,7 @@ const DocumentTitleDropdown = ({
     documentState.getProperty('documentTrashState'),
   )
   const [isMakingNewDocument, setIsMakingNewDocument] = useState<boolean>(false)
-  const [isExportingPDF, setIsExportingPDF] = useState<boolean>(false)
+  const [pdfModal, openPdfModal] = useExportToPDFModal()
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
 
   const [isRenaming, setIsRenaming] = useState(false)
@@ -119,13 +120,9 @@ const DocumentTitleDropdown = ({
       event.preventDefault()
       event.stopPropagation()
 
-      setIsExportingPDF(true)
-
-      void editorController.exportAndDownload('pdf').finally(() => {
-        setIsExportingPDF(false)
-      })
+      void openPdfModal({ onClose: () => editorController.printAsPDF() })
     },
-    [editorController],
+    [openPdfModal, editorController],
   )
 
   useEffect(() => {
@@ -467,7 +464,6 @@ const DocumentTitleDropdown = ({
                 data-testid="download-pdf"
               >
                 {c('Action').t`PDF (.pdf)`}
-                {isExportingPDF && <CircleLoader size="small" className="ml-auto" />}
               </DropdownMenuButton>
             </DropdownMenu>
           </SimpleDropdown>
@@ -518,6 +514,7 @@ const DocumentTitleDropdown = ({
       </Dropdown>
 
       {historyModal}
+      {pdfModal}
       {authenticatedController && isDocumentState(documentState) && (
         <TrashedDocumentModal
           documentTitle={title}

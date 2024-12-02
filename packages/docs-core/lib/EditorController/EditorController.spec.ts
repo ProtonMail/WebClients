@@ -307,8 +307,8 @@ describe('EditorController', () => {
     })
 
     it('should export and download document', async () => {
-      const format = 'pdf'
-      const documentName = 'test.pdf'
+      const format = 'docx'
+      const documentName = 'test.docx'
       const data = new Uint8Array([1, 2, 3])
 
       editorInvoker.exportData.mockResolvedValue(data)
@@ -322,7 +322,7 @@ describe('EditorController', () => {
 
     it('should throw when exporting without editor invoker', async () => {
       const controller = new EditorController(logger, exportAndDownload, sharedState)
-      await expect(controller.exportAndDownload('pdf')).rejects.toThrow()
+      await expect(controller.exportAndDownload('docx')).rejects.toThrow()
     })
 
     it('should restore revision by replacing', async () => {
@@ -665,7 +665,7 @@ describe('EditorController', () => {
 
   describe('exportData', () => {
     it('should throw error when editor is not initialized', async () => {
-      await expect(controller.exportData('pdf')).rejects.toThrow(
+      await expect(controller.exportData('docx')).rejects.toThrow(
         'Attepting to export document before editor invoker or decrypted node is initialized',
       )
     })
@@ -675,10 +675,10 @@ describe('EditorController', () => {
       controller.receiveEditor(editorInvoker)
       editorInvoker.exportData.mockResolvedValue(mockExportedData)
 
-      const result = await controller.exportData('pdf')
+      const result = await controller.exportData('docx')
 
       expect(result).toEqual(mockExportedData)
-      expect(editorInvoker.exportData).toHaveBeenCalledWith('pdf')
+      expect(editorInvoker.exportData).toHaveBeenCalledWith('docx')
     })
   })
 
