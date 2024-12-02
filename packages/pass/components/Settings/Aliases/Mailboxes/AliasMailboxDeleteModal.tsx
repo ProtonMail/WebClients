@@ -33,7 +33,9 @@ export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID }) => {
         mailbox?.Verified ? defaultMailboxID : null
     );
     const transferAliases = transferMailboxID !== null;
-    const removeMailbox = useRequest(deleteMailbox, { onSuccess: pipe(() => onDelete(mailboxID), onClose) });
+    const removeMailbox = useRequest(deleteMailbox, {
+        onSuccess: pipe(() => onDelete(mailboxID, transferAliases), onClose),
+    });
 
     const emailJSX = <strong key="email-to-delete">{mailbox?.Email}</strong>;
 
