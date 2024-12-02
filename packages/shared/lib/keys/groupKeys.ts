@@ -29,7 +29,7 @@ type AddressKey = RequireSome<Key, 'Flags' | 'Signature' | 'AddressForwardingID'
 interface CreateGroupAddressKeyArguments {
     api: Api;
     organizationKey: CachedOrganizationKey;
-    keyGenConfig?: KeyGenConfig;
+    keyGenConfig?: KeyGenConfig; // v6 keys not supported for groups
     address: Address;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
@@ -53,9 +53,9 @@ export const createGroupAddressKey = async ({
         flags: getDefaultKeyFlags(address),
     });
 
-    const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, []);
+    const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, []); // v6 keys should not be present for groups
 
-    const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey, ...activeKeys.map(removePrimary)]);
+    const updatedActiveKeys = getNormalizedActiveKeys(address, { v4: [newActiveKey, ...activeKeys.v4.map(removePrimary)], v6: activeKeys.v6 });
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
         address,

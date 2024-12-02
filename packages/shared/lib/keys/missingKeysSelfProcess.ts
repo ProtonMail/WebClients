@@ -7,7 +7,7 @@ type OnUpdateCallback = (ID: string, update: { status: 'loading' | 'error' | 'ok
 interface MissingKeysSelfProcessArguments {
     api: Api;
     userKeys: DecryptedKey[];
-    keyGenConfig: KeyGenConfig;
+    keyGenConfig: KeyGenConfig; // only v4 keys generated for now
     addresses: Address[];
     addressesToGenerate: Address[];
     password: string;
@@ -38,7 +38,7 @@ export const missingKeysSelfProcess = ({
                         address,
                         keyGenConfig,
                         userKeys,
-                        activeKeys: [],
+                        activeKeys: { v4: [], v6: [] },
                         keyTransparencyVerify,
                     });
                 } else {
@@ -47,7 +47,7 @@ export const missingKeysSelfProcess = ({
                         address,
                         keyGenConfig,
                         passphrase: password,
-                        activeKeys: [],
+                        activeKeys: { v4: [], v6: [] },
                         keyTransparencyVerify,
                     });
                 }

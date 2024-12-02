@@ -18,8 +18,8 @@ const useResignSKLWithPrimaryKey = (): ResignSKLWithPrimaryKey => {
 
     const resignSKLWithPrimaryKey = async ({
         address,
-        newPrimaryKey,
-        formerPrimaryKey,
+        newPrimaryKeys,
+        formerPrimaryKeys,
         userKeys,
     }: ResignSKLWithPrimaryKeyArguments) => {
         try {
@@ -32,11 +32,11 @@ const useResignSKLWithPrimaryKey = (): ResignSKLWithPrimaryKey => {
             await Promise.all(
                 skls.map(async (skl) => {
                     if (skl.Data && skl.Signature) {
-                        const timestamp = await verifySKLSignature([formerPrimaryKey], skl.Data, skl.Signature);
+                        const timestamp = await verifySKLSignature(formerPrimaryKeys, skl.Data, skl.Signature);
                         if (!timestamp) {
                             return;
                         }
-                        const newSignature = await getSignedKeyListSignature(skl.Data, newPrimaryKey, timestamp);
+                        const newSignature = await getSignedKeyListSignature(skl.Data, newPrimaryKeys, timestamp);
                         await updateSignedKeyListSignature(address.ID, skl.Revision, newSignature, api);
                     }
                 })

@@ -38,12 +38,12 @@ export const generateAllPrivateMemberKeys = async ({
     if (getHasMigratedAddressKeys(addresses)) {
         return Promise.all(
             addressesToGenerate.map((address) => {
-                return createAddressKeyV2({
+                return createAddressKeyV2({ // only v4 key generated for now
                     api,
                     userKeys,
                     address,
-                    activeKeys: [],
-                    keyTransparencyVerify,
+                    activeKeys: { v4: [], v6: [] },
+                    keyTransparencyVerify
                 });
             })
         );
@@ -55,7 +55,7 @@ export const generateAllPrivateMemberKeys = async ({
                 api,
                 address,
                 passphrase: keyPassword,
-                activeKeys: [],
+                activeKeys: { v4: [], v6: [] },
                 keyTransparencyVerify,
             });
         })

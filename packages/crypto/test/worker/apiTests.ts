@@ -13,7 +13,7 @@ import {
     revokeKey as openpgp_revokeKey,
 } from 'pmcrypto/lib/openpgp';
 
-import type { CryptoApiInterface, SessionKey } from '../../lib';
+import type { CryptoApiInterface, PrivateKeyReferenceV4, PrivateKeyReferenceV6, SessionKey } from '../../lib';
 import { ARGON2_PARAMS, S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
 import {
     arrayToHexString,
@@ -1297,6 +1297,21 @@ siLL+xMJ+Hy4AhsMAAAKagEA4Knj6S6nG24nuXfqkkytPlFTHwzurjv3+qqXwWL6
     });
 
     describe('Key management API', () => {
+        it('version type inference of generated key', async () => {
+            const privateKeyRefV4: PrivateKeyReferenceV4 = await CryptoApiImplementation.generateKey({
+                userIDs: { name: 'name', email: 'email@test.com' },
+            });
+            expect(privateKeyRefV4.isPrivateKeyV4()).to.be.true;
+            const privateKeyRefV6: PrivateKeyReferenceV6 = await CryptoApiImplementation.generateKey({
+                userIDs: { name: 'name', email: 'email@test.com' },
+                config: { v6Keys: true },
+            });
+            expect(privateKeyRefV6.isPrivateKeyV6()).to.be.true;
+            // @ts-expect-error cannot assign a v6 key reference to a v4 one
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            const keyVersionGuard: PrivateKeyReferenceV4 = privateKeyRefV6;
+        });
+
         it('can export a generated key', async () => {
             const privateKeyRef = await CryptoApiImplementation.generateKey({
                 userIDs: { name: 'name', email: 'email@test.com' },

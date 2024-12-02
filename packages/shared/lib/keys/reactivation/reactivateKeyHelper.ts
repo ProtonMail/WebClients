@@ -3,6 +3,7 @@ import { CryptoProxy } from '@proton/crypto';
 import unique from '@proton/utils/unique';
 
 import type {
+    ActiveKeyWithVersion,
     DecryptedKey,
     Key,
     KeyPair,
@@ -80,17 +81,21 @@ export const getReactivatedAddressKeys = async ({
 
     const oldAddressKeysMap = new Map<string, Key>(address.Keys.map((Key) => [Key.ID, Key]));
     const newActiveKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, newDecryptedAddressKeys);
+    const setReactivateKeyFlag = <V extends ActiveKeyWithVersion>(activeKey: V) => {
+        if (!reactivatedKeysSet.has(activeKey.ID)) {
+            return activeKey;
+        }
+        return {
+            ...activeKey,
+            flags: getReactivatedKeyFlag(address, oldAddressKeysMap.get(activeKey.ID)?.Flags),
+        };
+    };
     const newActiveKeysFormatted = getNormalizedActiveKeys(
         address,
-        newActiveKeys.map((activeKey) => {
-            if (!reactivatedKeysSet.has(activeKey.ID)) {
-                return activeKey;
-            }
-            return {
-                ...activeKey,
-                flags: getReactivatedKeyFlag(address, oldAddressKeysMap.get(activeKey.ID)?.Flags),
-            };
-        })
+        { 
+            v4: newActiveKeys.v4.map(setReactivateKeyFlag),
+            v6: newActiveKeys.v6.map(setReactivateKeyFlag)
+        }
     );
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         newActiveKeysFormatted,
