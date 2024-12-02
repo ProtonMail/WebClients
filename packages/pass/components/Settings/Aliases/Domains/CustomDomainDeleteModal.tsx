@@ -24,6 +24,12 @@ export const CustomDomainDeleteModal: FC<Props> = ({ domainID }) => {
 
     const domainTextBold = <strong key="domain-to-delete">{domain?.Domain}</strong>;
 
+    const alertText =
+        domain?.AliasCount && domain.AliasCount > 0
+            ? c('Info')
+                  .jt`This operation is irreversible. All aliases using the domain ${domainTextBold} will be deleted. Please note that once deleted, aliases can't be restored.`
+            : c('Info').jt`This operation is irreversible.`;
+
     return (
         domain && (
             <ConfirmationModal
@@ -35,8 +41,7 @@ export const CustomDomainDeleteModal: FC<Props> = ({ domainID }) => {
                 onSubmit={() => deleteDomain.dispatch(domainID)}
                 closeAfterSubmit={false}
                 disabled={deleteDomain.loading}
-                alertText={c('Info')
-                    .jt`This operation is irreversible. All aliases using the domain ${domainTextBold} will be deleted.`}
+                alertText={alertText}
             />
         )
     );
