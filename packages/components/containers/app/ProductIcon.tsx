@@ -31,7 +31,10 @@ const ProductIcon = ({ appToLinkTo, current }: ProductIconProps) => {
             >
                 {appToLinkToName}
             </span>
-            {appToLinkTo === APPS.PROTONWALLET && isWalletAppSwitcherNewBadgeEnabled && <NewBadge />}
+            {appToLinkTo === APPS.PROTONLUMO ||
+            (appToLinkTo === APPS.PROTONWALLET && isWalletAppSwitcherNewBadgeEnabled) ? (
+                <NewBadge />
+            ) : null}
         </>
     );
 };
