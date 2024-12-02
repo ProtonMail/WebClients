@@ -4,7 +4,6 @@ import { EditorTxtExporter } from './EditorTxtExporter'
 import { EditorMarkdownExporter } from './EditorMarkdownExporter'
 import { EditorHtmlExporter } from './EditorHtmlExporter'
 import { EditorDocxExporter } from './DocxExport/EditorDocxExporter'
-import { EditorPdfExporter } from './EditorPdfExporter'
 import { EditorYjsExporter } from './EditorYjsExporter'
 import type { DocxExportContext } from './DocxExport/LexicalToDocx/Context'
 
@@ -24,8 +23,6 @@ export async function exportDataFromEditorState(
       return new EditorHtmlExporter(editorState, callbacks).export()
     case 'docx':
       return new EditorDocxExporter(editorState, callbacks).export()
-    case 'pdf':
-      return new EditorPdfExporter(editorState, callbacks).export()
     case 'yjs':
       return new EditorYjsExporter(editorState, callbacks, { customStateHandling: true }).export()
     default:
