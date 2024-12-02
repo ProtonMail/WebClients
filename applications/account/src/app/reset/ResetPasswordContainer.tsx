@@ -191,6 +191,7 @@ const ResetPasswordContainer = ({ onPreSubmit, toApp, metaTags, onLogin, setupVP
                 };
 
                 const validateFlow = createFlow();
+                await onPreSubmit?.();
                 await startUnAuthFlow();
                 const result = await handleRequestToken({
                     cache: cacheRef.current,
@@ -223,6 +224,7 @@ const ResetPasswordContainer = ({ onPreSubmit, toApp, metaTags, onLogin, setupVP
                     setAutomaticVerification({ username, loading: true });
 
                     const validateFlow = createFlow();
+                    await onPreSubmit?.();
                     await startUnAuthFlow();
                     const resetResponse = await silentApi<ValidateResetTokenResponse>(
                         validateResetToken(username, token)
