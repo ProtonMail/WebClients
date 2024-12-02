@@ -38,7 +38,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecoveryState';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode, useFeature } from '@proton/features';
-import { type PLANS, PLAN_NAMES } from '@proton/payments';
+import { getSubscriptionPlanTitleAndName } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppHref, getAppShortName } from '@proton/shared/lib/apps/helper';
@@ -59,13 +59,11 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { getPlan, hasLifetime, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls, openCalendlyLink } from '@proton/shared/lib/helpers/support';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
-import type { Subscription } from '@proton/shared/lib/interfaces';
 import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
@@ -77,14 +75,6 @@ import type { Props as UserDropdownButtonProps } from './UserDropdownButton';
 import UserDropdownButton from './UserDropdownButton';
 
 import './UserDropdown.scss';
-
-const getPlanTitle = (subscription: Subscription | undefined) => {
-    if (hasLifetime(subscription)) {
-        return 'Lifetime';
-    }
-
-    return getPlan(subscription)?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
-};
 
 interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onClick'> {
     onOpenChat?: () => void;
@@ -165,7 +155,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
         }
     };
 
-    const planName = isMember ? '' : getPlanTitle(subscription);
+    const planName = isMember ? '' : getSubscriptionPlanTitleAndName(user, subscription).planTitle;
 
     const handleBugReportClick = () => {
         setBugReportModal(true);
@@ -216,7 +206,8 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
     });
 
     const upgradeUrl = addUpsellPath(upgradePathname, upsellRef);
-    const displayUpgradeButton = (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname);
+    const displayUpgradeButton =
+        (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname) && !user.hasPassLifetime;
 
     const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
 

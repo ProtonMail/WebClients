@@ -92,7 +92,7 @@ const CredentialLeakSection = () => {
     const [hasEmailsEnabled, setHasEmailsEnabled] = useState<boolean>(
         BreachAlerts.EmailNotifications === DARK_WEB_MONITORING_EMAILS_STATE.ENABLED
     );
-    const isPaidUser = user.isPaid;
+    const isPaidUser = user.isPaid || user.hasPassLifetime;
 
     useEffect(() => {
         const fetchLeakData = async () => {
