@@ -70,10 +70,10 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -1173,6 +1173,9 @@
       ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "升級至${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "升級企業版"
@@ -7100,9 +7103,6 @@
       "High Priority": [
         "首要優先順序"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "國際銀行帳號${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "身分提供者簽署驗證判斷提示的公開金鑰。身分提供者應在某處備有憑證雜湊可供下載或複製。只需在文字區域欄位中貼上憑證雜湊即可。"
       ],
@@ -7627,6 +7627,9 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "請保存在安全的地方。在重設密碼後你將會需要它來解密你的資料。"
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
       ],
       "please open a support ticket": [
         "請開啟支援票卷"
@@ -9145,6 +9148,9 @@
       ],
       "5 minutes": [
         "5 分鐘"
+      ],
+      "Account holder": [
+        "帳戶持有人"
       ],
       "Account storage": [
         "帳號儲存空間"
@@ -10872,9 +10878,6 @@
       "From ${ price }": [
         "${ price }起"
       ],
-      "Get started for ${ price }": [
-        "使用${ price }取得"
-      ],
       "Starting from ${ priceMailPlus }": [
         "從${ priceMailPlus }起"
       ],
@@ -10972,6 +10975,9 @@
       "${ options }-day file version history": [
         "${ options }-天的檔案版本紀錄"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin 終身"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
       ],
@@ -11061,6 +11067,9 @@
       ],
       "Available on all platforms": [
         "適用於所有平台"
+      ],
+      "Breach alerts": [
+        "外洩警告"
       ],
       "Calendar sharing": [
         "行事曆分享"
@@ -11553,12 +11562,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }滿意體驗"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "使用${ price }取得Mail Plus"
-      ],
-      "Starting from ${ price }": [
-        "從${ price }起"
       ],
       "Your account's usage": [
         "您帳號的使用情況"
@@ -15256,6 +15259,9 @@
       ],
       "Customize your mail import": [
         "自訂您的郵件匯入"
+      ],
+      "Dark Web Monitoring": [
+        "暗網監控"
       ],
       "Dashboard": [
         "儀表板"

@@ -70,11 +70,11 @@
       "Accept": [
         "Αποδοχή"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -7602,9 +7602,6 @@
       "High Priority": [
         "Υψηλή προτεραιότητα"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Δημόσιο κλειδί της υπηρεσίας παροχής ταυτότητας για την υπογραφή ισχυρισμών ελέγχου ταυτότητας. Θα πρέπει να υπάρχει ένα μέρος για τη λήψη ή την αντιγραφή του κατακερματισμού πιστοποιητικού από την υπηρεσία παροχής ταυτότητας. Απλώς επικολλήστε τον κατακερματισμό του πιστοποιητικού στο πεδίο περιοχής κειμένου."
       ],
@@ -9945,6 +9942,9 @@
       "5 minutes": [
         "5 λεπτά"
       ],
+      "Account holder": [
+        "Δικαιούχος λογαριασμού"
+      ],
       "Account storage": [
         "Χωρητικότητα λογαριασμού"
       ],
@@ -11796,9 +11796,6 @@
       "From ${ price }": [
         "Από ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Ξεκινήστε με ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Ξεκινώντας από ${ priceMailPlus }"
       ],
@@ -12535,12 +12532,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Αποκτήστε το Mail Plus για ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ξεκινώντας από ${ price }"
       ],
       "Your account's usage": [
         "Η κατανάλωση του λογαριασμού σας"
@@ -17400,6 +17391,9 @@
       ],
       "Customize your mail import": [
         "Προσαρμογή εισαγωγής μηνυμάτων"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Dashboard": [
         "Πίνακας Ελέγχου"

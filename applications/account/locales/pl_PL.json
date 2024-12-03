@@ -70,11 +70,11 @@
       "Accept": [
         "Akceptuj"
       ],
-      "Activate": [
-        "Aktywuj"
-      ],
       "activate": [
         "aktywować"
+      ],
+      "Activate": [
+        "Aktywuj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -7742,9 +7742,6 @@
       "High Priority": [
         "Wysoki priorytet"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "Numer IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Klucz publiczny dostawcy tożsamości do podpisywania potwierdzeń uwierzytelniania. Pobierz lub skopiuj kryptograficzny skrót certyfikatu od dostawcy tożsamości. Wklej skrót certyfikatu do pola tekstowego."
       ],
@@ -12016,9 +12013,6 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Od ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Od ${ priceMailPlus }"
       ],
@@ -12805,12 +12799,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
       ],
       "Your account's usage": [
         "Użycie konta"
@@ -17804,6 +17792,9 @@
       ],
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoring dark web"
       ],
       "Dashboard": [
         "Pulpit"
