@@ -716,6 +716,9 @@
       "Upgrade now": [
         "Покращити"
       ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Покращити до ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
       "Upload picture": [
         "Вивантажити зображення"
       ],
@@ -895,6 +898,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Якщо ви зараз вийдете, подія не збережеться."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Не закривайте цю вкладку. Деякі запити все ще обробляються."
       ]
     },
     "Apps dropdown": {
@@ -1329,6 +1335,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Редагування (перегляд, створення й редагування подробиць події)"
+      ],
       "View (see all event details)": [
         "Перегляд (усі подробиці події)"
       ]
@@ -2549,6 +2558,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } захищає ваш обліковий запис із виділеним цілодобовим моніторингом підозрілої діяльності, включно з ескалацією до фахівців з безпеки."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двоетапна автентифікація підвищує рівень безпеки, запобігаючи несанкціонованому доступу."
       ],
@@ -2560,6 +2572,9 @@
       ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Позначайте події кольором, щоб легше організувати свій день, відстежувати час і визначати пріоритетність завдань."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Миттєво створіть конференцію Zoom і додайте відомості для приєднання до події."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Розшифрування контактів… Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
@@ -2585,14 +2600,23 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Заощаджуйте час, відсилаючи електронні листи всім одночасно за допомогою груп контактів. Розблокуйте ці та інші преміумфункції під час покращення."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті даних."
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті доступу до облікового запису."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Це може тривати декілька хвилин. Тим часом можете користуватися ${ CALENDAR_APP_NAME } як зазвичай."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Для гарантування максимальної безпеки вашого облікового запису налаштуйте фразу відновлення."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Щоб імпортувати з використанням файлів CSV і VCF, розмір файлу не має перевищувати ${ MAX_IMPORT_FILE_SIZE_STRING }, а кількість контактів – ${ MAX_IMPORT_CONTACTS_STRING }. Якщо ваш файл більший, розділіть його на декілька менших. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
@@ -2602,6 +2626,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "З контактними групами ви можете відправляти листи всім у групі одним натисканням."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
@@ -2614,6 +2641,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ваш обліковий запис і способи відновлення налаштовано."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2992,11 +3022,17 @@
       "Event not found": [
         "Подію не знайдено"
       ],
+      "Failed to create meeting": [
+        "Не вдалося створити зустріч"
+      ],
       "Failed to get event": [
         "Не вдалося отримати подію"
       ],
       "Failed to get original occurrence in series": [
         "Не вдалося отримати оригінальне повторення в серії"
+      ],
+      "Failed to load OAuth modal.": [
+        "Не вдалося завантажити діалогове вікно OAuth."
       ],
       "First name is too long": [
         "Ім'я занадто довге"
@@ -4558,6 +4594,12 @@
       "Dedicated servers": [
         "Виділені сервери"
       ],
+      "Deleting event...": [
+        "Видалення події...",
+        "Видалення подій...",
+        "Видалення подій...",
+        "Видалення подій..."
+      ],
       "Discard changes?": [
         "Відхилити зміни?"
       ],
@@ -4914,6 +4956,12 @@
       ],
       "Removed participants will be notified.": [
         "Вилучені учасники отримають сповіщення."
+      ],
+      "Saving event...": [
+        "Збереження події...",
+        "Збереження подій...",
+        "Збереження подій...",
+        "Збереження подій..."
       ],
       "Select a service provider to start": [
         "Виберіть постачальника послуг, щоб розпочати"
@@ -5466,6 +5514,9 @@
       "All-day event notifications": [
         "Сповіщення про події на цілий день"
       ],
+      "Anderson": [
+        "Андерсон"
+      ],
       "App password": [
         "Пароль програми"
       ],
@@ -5531,6 +5582,9 @@
       ],
       "Colors": [
         "Кольори"
+      ],
+      "Company name": [
+        "Назва компанії"
       ],
       "Confirm password": [
         "Підтвердити пароль"
@@ -5790,6 +5844,9 @@
       "Reveal password": [
         "Показати пароль"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Secondary": [
         "Додатковий"
       ],
@@ -5825,6 +5882,9 @@
       ],
       "Theme": [
         "Тема"
+      ],
+      "Thomas": [
+        "Томас"
       ],
       "Time zone": [
         "Часовий пояс"
@@ -6363,8 +6423,14 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Понизити до ${ downgradedPlanName }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Починаючи з ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Покращити"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Покращити до ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7898,6 +7964,9 @@
       "Try ${ PASS_APP_NAME }": [
         "Спробуйте ${ PASS_APP_NAME }"
       ],
+      "Used on Amazon for shopping, etc.": [
+        "Використовується на Amazon для покупок та ін."
+      ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Коли потрібно вказати адресу електронної пошти, скористайтеся натомість цим псевдонімом. Псевдоніми надаються ${ passLink }."
       ]
@@ -7905,6 +7974,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(відкриє ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Переглянути події"
       ]
     },
     "Security Center - Info": {
@@ -8324,6 +8398,9 @@
       "/ month": [
         "/ місяць"
       ],
+      "/month": [
+        "/місяць"
+      ],
       "1 year": [
         "1 рік"
       ],
@@ -8425,6 +8502,15 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Тепер ви можете бачити, коли учасники вільні, щоб приєднатися до вашої зустрічі."
+      ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "Створюйте і додавайте посилання на відеозустрічі до своїх подій."
+      ],
+      "Video conferencing is here!": [
+        "Відеоконференції вже тут!"
+      ],
+      "You can now collapse the navigation bar.": [
+        "Тепер ви можете згорнути панель навігації."
       ]
     },
     "sso": {
@@ -8946,6 +9032,9 @@
       "Fingerprint copied to clipboard": [
         "Цифровий відбиток скопійовано до буфера обміну"
       ],
+      "Finish Zoom authentication to save event": [
+        "Щоб зберегти подію, завершіть автентифікацію Zoom"
+      ],
       "Future events deleted": [
         "Майбутні події видалені"
       ],
@@ -9308,6 +9397,9 @@
       "Customize your mail import": [
         "Налаштуйте імпорт своєї пошти"
       ],
+      "Dark Web Monitoring": [
+        "Моніторинг Темного Вебу"
+      ],
       "Data recovery": [
         "Відновлення даних"
       ],
@@ -9397,6 +9489,9 @@
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Отримайте програми ${ appName[APP_NAME] }"
+      ],
+      "Get Zooming faster": [
+        "Швидше приєднання до конференцій Zoom"
       ],
       "Gift": [
         "Подарунок"
@@ -9634,6 +9729,9 @@
       ],
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
+      ],
+      "We're setting up calendar search": [
+        "Налаштування пошуку в календарі"
       ],
       "We've locked some calendars to protect your data": [
         "Ми заблокували деякі календарі для захисту ваших даних"
@@ -10282,6 +10380,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Щороку, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Додати конференцію Zoom"
+      ],
+      "Adding conferencing details": [
+        "Додавання відомостей про конференцію"
+      ],
+      "Loading Zoom configuration": [
+        "Завантаження конфігурації Zoom"
       ]
     },
     "Zoom Meeting": {

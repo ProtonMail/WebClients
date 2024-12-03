@@ -551,6 +551,9 @@
       "Remove this participant": [
         "移除此參與者"
       ],
+      "Remove Zoom meeting": [
+        "移除Zoom會議"
+      ],
       "Report a problem": [
         "回報問題"
       ],
@@ -718,6 +721,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "升級至${ BRAND_NAME }無限版"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "升級至${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upload picture": [
         "上載圖像"
@@ -3026,6 +3032,9 @@
       "Event not found": [
         "未找到活動行程"
       ],
+      "Failed to create meeting": [
+        "建立會議失敗"
+      ],
       "Failed to get event": [
         "取得活動失敗"
       ],
@@ -3891,6 +3900,9 @@
       "Less details": [
         "較少詳細資料"
       ],
+      "Meeting host:": [
+        "會議主持人:"
+      ],
       "Meeting link:": [
         "會議連結:"
       ],
@@ -4596,9 +4608,6 @@
       "High Priority": [
         "首要優先順序"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "國際銀行帳號${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
@@ -4802,6 +4811,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
       ],
       "Please provide a name and an email address for creating a group.": [
         "請提供一個名子和電子郵件位址以創建群組。"
@@ -5368,6 +5380,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
+      ],
+      "Account holder": [
+        "帳戶持有人"
       ],
       "Add email address": [
         "加入電郵位址"
@@ -6269,9 +6284,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "使用${ price }取得"
-      ],
       "Starting from ${ priceMailPlus }": [
         "從${ priceMailPlus }起"
       ],
@@ -6360,6 +6372,9 @@
       "${ options }-day file version history": [
         "${ options }-天的檔案版本紀錄"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin 終身"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
       ],
@@ -6440,6 +6455,9 @@
       ],
       "Available on all platforms": [
         "適用於所有平台"
+      ],
+      "Breach alerts": [
+        "外洩警告"
       ],
       "Calendar sharing": [
         "行事曆分享"
@@ -6840,14 +6858,6 @@
       ],
       "Switch plans?": [
         "切換方案？"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "使用${ price }取得Mail Plus"
-      ],
-      "Starting from ${ price }": [
-        "從${ price }起"
       ]
     },
     "new_plans: tooltip": {
@@ -9099,6 +9109,9 @@
       "Customize your mail import": [
         "自訂您的郵件匯入"
       ],
+      "Dark Web Monitoring": [
+        "暗網監控"
+      ],
       "Data recovery": [
         "資料救援"
       ],
@@ -9968,8 +9981,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "加入Zoom會議"
+      ],
       "Meeting ID:": [
         "會議識別碼:"
+      ],
+      "Passcode:": [
+        "數字密碼:"
       ]
     }
   }

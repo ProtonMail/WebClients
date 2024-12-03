@@ -554,6 +554,9 @@
       "Remove this participant": [
         "Hapus peserta ini"
       ],
+      "Remove Zoom meeting": [
+        "Hapus pertemuan Zoom"
+      ],
       "Report a problem": [
         "Laporkan masalah"
       ],
@@ -721,6 +724,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Tingkatkan ke ${ BRAND_NAME } Unlimited"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -1065,7 +1071,7 @@
         "Penawaran ${ PASS_SHORT_APP_NAME } Plus seumur hidup tidak memiliki biaya pembaruan. Cukup satu kali pembayaran untuk akses selama-lamanya ke Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
-        "Diskon berdasar pada harga bulanan standar."
+        "Diskon didasarkan pada harga bulanan standar."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Apabila Anda membeli Pass Family atau Unlimited, langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir siklus tagihan Anda."
@@ -3076,6 +3082,9 @@
       "Failed to get original occurrence in series": [
         "Keberlangsungan asli dalam rangkaian acara gagal diperoleh"
       ],
+      "Failed to load OAuth modal.": [
+        "Modal OAuth gagal dimuat."
+      ],
       "First name is too long": [
         "Nama depan terlalu panjang"
       ],
@@ -4661,9 +4670,6 @@
       "High Priority": [
         "Prioritas Tinggi"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
@@ -4870,6 +4876,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo pada akun Anda akan berkurang menjadi ${ creditsRemaining }."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Mohon sediakan nama dan alamat email untuk membuat grup."
@@ -5439,6 +5448,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
+      ],
+      "Account holder": [
+        "Pemilik akun"
       ],
       "Add email address": [
         "Tambah alamat email"
@@ -6340,9 +6352,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Turunkan jenis akun saya ke ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Mulai dengan harga ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Mulai dari ${ priceMailPlus }"
       ],
@@ -6943,14 +6952,6 @@
         "Ganti paket?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Mulai dari ${ price }"
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
@@ -7104,6 +7105,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Arahkan lalu lintas internet Anda melalui jaringan Tor dengan satu klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
@@ -9050,6 +9054,9 @@
       "Fingerprint copied to clipboard": [
         "Sidik jari disalin ke papan klip"
       ],
+      "Finish Zoom authentication to save event": [
+        "Selesaikan autentikasi Zoom untuk menyimpan acara"
+      ],
       "Future events deleted": [
         "Acara mendatang berhasil dihapus"
       ],
@@ -9390,6 +9397,9 @@
       ],
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
+      ],
+      "Dark Web Monitoring": [
+        "Pemantauan Dark Web"
       ],
       "Data recovery": [
         "Pemulihan data"
