@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasSync } from '@proton/pass/components/Onboarding/AliasSync';
-import { BlackFriday2024Offer } from '@proton/pass/components/Onboarding/BlackFriday2024Offer';
 import { UserRenewal } from '@proton/pass/components/Onboarding/UserRenewal';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { FiveStarIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
@@ -144,13 +143,6 @@ export const useSpotlightMessages = () => {
                         component: AliasSync,
                         id: 'alias-sync',
                         className: 'ui-teal',
-                    },
-                    {
-                        type: SpotlightMessage.BLACK_FRIDAY_2024,
-                        mode: 'custom',
-                        component: BlackFriday2024Offer,
-                        id: 'bf-2024',
-                        className: 'pass-bf2024-banner ui-violet',
                     },
                     {
                         type: SpotlightMessage.USER_RENEWAL,

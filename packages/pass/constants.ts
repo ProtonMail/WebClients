@@ -60,10 +60,6 @@ export enum AccountPath {
     POLICIES = 'pass/policies',
 }
 
-export const PASS_FAMILY_BF_2024_MONTHLY_PRICE = 349;
-export const PASS_LIFETIME_BF_2024_YEARLY_PRICE = 19900;
-export const PASS_BF_2024_DATES = [+new Date('2024-11-04T06:00:00'), +new Date('2024-12-03T00:00:00')] as const;
-
 export enum UpsellRefPrefix {
     Extension = 'pass_extension',
     Web = 'pass_web',
@@ -90,8 +86,6 @@ export enum UpsellRef {
     PASS_FAMILY_FREE_399 = 'pass_family_free_399',
     PASS_FAMILY_PLUS_399 = 'pass_family_plus_399',
     PASS_FAMILY_1LT_299 = 'pass_family_1lt_299',
-    PASS_FAMILY_BF_2024 = 'bf_24_pass-family',
-    PASS_LIFETIME_BF_2024 = 'bf_24_pass-lifetime',
 }
 
 export const MAX_LOCAL_STORAGE_SIZE = 5 * 1024 * 1024; /* 5MB */
@@ -107,8 +101,6 @@ export const BIOMETRICS_KEY = 'offlineKey_biometrics';
  * FIXME: Remove feature flags that are permanently enabled */
 export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassAccountSwitchV1]: false,
-    [PassFeature.PassBlackFriday2024Family]: false,
-    [PassFeature.PassBlackFriday2024Lifetime]: false,
     [PassFeature.PassEnableDesktopAutoUpdate]: false,
     [PassFeature.PassFamilyPlanPromo2024]: false,
     [PassFeature.PassKillSSO]: false,
