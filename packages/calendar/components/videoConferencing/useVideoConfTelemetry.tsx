@@ -46,19 +46,19 @@ export const useVideoConfTelemetry = () => {
     };
 
     const sendEventVideoConfSource = (source: VideoConferenceSource) => {
-        sendReport(TelemetryCalendarVideoConferencing.video_conference_widget, { video_conf_source: source });
+        sendReport(TelemetryCalendarVideoConferencing.video_conference_widget, { videoConfSource: source });
     };
 
     const sendEventVideoConferenceSettingsToggle = (value: boolean) => {
         sendReport(TelemetryCalendarVideoConferencing.video_conference_settings_toggle, {
-            toggle_value: value ? 'on' : 'off',
+            toggleValue: value ? 'on' : 'off',
         });
     };
 
     const sendEventVideoConferenceZoomIntegration = (value: VideoConferenceZoomIntegration, errorCode?: string) => {
         sendReport(TelemetryCalendarVideoConferencing.video_conference_zoom_integration, {
-            event_type: value,
-            error_code: errorCode,
+            eventType: value,
+            errorCode,
         });
     };
 
