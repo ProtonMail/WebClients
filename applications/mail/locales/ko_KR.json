@@ -1626,6 +1626,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "특별 할인가 ${ discountedPrice }는 첫 ${ cycle }개월간 적용됩니다. 이후 매월 할인된 가격인 ${ nextPrice }(으)로 ${ renewalLength }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "이 특별 할인가 (${ discountedPrice })는 첫 달에 한합니다. 자동으로 다음 달 부터는 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
       ]
@@ -6399,9 +6402,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "${ MAIL_APP_NAME }을 사용하고 있지 않는 유저에게 이 메시지를 보내고 있습니다."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
@@ -7905,6 +7905,9 @@
       "/month": [
         "/월간"
       ],
+      "Account holder": [
+        "예금주"
+      ],
       "Actions": [
         "동작"
       ],
@@ -9080,9 +9083,6 @@
       "Get ${ planTitle }": [
         "${ planTitle }로 계속하기"
       ],
-      "Get started for ${ price }": [
-        "${ price }로 시작하세요."
-      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }부터 시작"
       ],
@@ -9669,14 +9669,6 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price }에 Mail Plus를 구독하세요"
-      ],
-      "Starting from ${ price }": [
-        "${ price }부터 시작"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -9844,6 +9836,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "사용자 암호 및 2단계 인증 재설정"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "클릭 한 번으로 인터넷 트래픽을 Tor 네트워크로 라우팅하십시오"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -10399,8 +10394,23 @@
       "Please select your billing state first.": [
         "결제 청구 주를 먼저 선택하세요"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "${ renewPrice }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 ${ subscriptionLength }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPrice }로 ${ subscriptionLengthCopy }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 ${ subscriptionLength }개월간 적용됩니다. 이후 매월 ${ renewPrice }로 ${ subscriptionLengthCopy }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 1개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPrice }로 ${ subscriptionLength }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPrice }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
@@ -11417,6 +11427,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "별칭 비활성화됨"
+      ],
       "Unsubscribed": [
         "구독 해지됨"
       ]
@@ -12579,6 +12592,9 @@
       "Customize your mail import": [
         "사용자 메일 가져오기"
       ],
+      "Dark Web Monitoring": [
+        "다크 웹 모니터링"
+      ],
       "Data recovery": [
         "데이터 복구"
       ],
@@ -13249,6 +13265,9 @@
     "Tor out of date": {
       "stable release": [
         "안정 배포판"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "이 버전의 Tor 브라우저가 지원되지 않습니다. 최신 ${ stableRelease }(으)로 업데이트 해주세요"
       ]
     },
     "Update font modal": {

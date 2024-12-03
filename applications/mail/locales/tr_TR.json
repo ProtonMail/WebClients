@@ -375,6 +375,9 @@
       "Disable alias": [
         "Takma adı kullanımdan kaldır"
       ],
+      "Disabling alias": [
+        "Takma ad kullanımdan kaldırılıyor"
+      ],
       "Discard": [
         "Sil"
       ],
@@ -960,6 +963,9 @@
       ],
       "Remove this label": [
         "Bu etiketi sil"
+      ],
+      "Remove Zoom meeting": [
+        "Zoom görüşmesini kaldır"
       ],
       "Replace": [
         "Değiştir"
@@ -1629,6 +1635,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "İlk ${ cycle } ay için özel indirimli ${ discountedPrice } fiyatı geçerlidir. Ardından aylık ${ nextPrice } indirimli tutarıyla ${ renewalLength } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "İlk ay için ${ discountedPrice } özel indirimli fiyat geçerlidir. Ardından aylık ${ nextPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ]
@@ -6501,9 +6510,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Bu iletiyi ${ MAIL_APP_NAME } kullanmayan bir alıcıya gönderiyorum."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
       ],
@@ -6847,6 +6853,10 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bu işlemin kişi listenizin boyutuna bağlı olarak uzun sürebileceğini unutmayın."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın.",
+        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
+      ],
       "Please open the document to view it.": [
         "Görüntülemek için lütfen belgeyi açın."
       ],
@@ -7065,6 +7075,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Ne yazık ki, bu ileti bulunamadı ya da geçerlilik süresi dolmuş."
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Bu tarayıcıda depolama alanı özelliği desteklenmiyor. İletilerin içeriklerinde arama yapabilmek için bu özellik desteklenmelidir."
+      ],
       "Subject": [
         "Konu"
       ],
@@ -7208,6 +7221,9 @@
       "This message is from a mailing list.": [
         "Bu ileti bir posta listesinden gönderilmiş."
       ],
+      "This message is from a SimpleLogin alias.": [
+        "Bu ileti bir SimpleLogin takma adından geliyor."
+      ],
       "This message is signed by a key that has not been trusted yet.": [
         "Bu ileti, henüz güvenilmemiş bir anahtar ile imzalanmış."
       ],
@@ -7326,6 +7342,9 @@
       "Turn on to search the content of your messages": [
         "İletilerinizin içeriklerini arayabilmek için açın"
       ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Bu tarayıcının depolama alanı özelliği olup olmadığı denetlenemedi. İletilerin içeriklerinde arama yapabilmek için bu özellik desteklenmelidir."
+      ],
       "Unlock message": [
         "İletinin kilidini aç"
       ],
@@ -7433,6 +7452,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Şu reklam verenlerin ve kuruluşların bu e-postayı ne zaman açtığınızı, hangi aygıtı kullandığınızı ve nerede bulunduğunuzu görmesini engelledik."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Bu tarayıcıda iletilerin içeriklerinde arama özelliği açılamadı."
       ],
       "We could not verify the sender's trusted keys.": [
         "Göndericinin güvenilen anahtarlarını doğrulayamadık."
@@ -8018,6 +8040,9 @@
       ],
       "/month": [
         "/ay"
+      ],
+      "Account holder": [
+        "Hesap sahibi"
       ],
       "Actions": [
         "İşlemler"
@@ -9202,9 +9227,6 @@
       "Get ${ planTitle }": [
         "${ planTitle } edinin"
       ],
-      "Get started for ${ price }": [
-        "${ price } ile başlayın"
-      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus } tutarından başlayan fiyatlarla"
       ],
@@ -9815,14 +9837,6 @@
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price } ile Mail Plus edinin"
-      ],
-      "Starting from ${ price }": [
-        "${ price } tutarından başlayan fiyatlarla"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -9991,6 +10005,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -10550,8 +10567,23 @@
       "Please select your billing state first.": [
         "Lütfen önce faturanın kesileceği ili seçin."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "${ renewPrice } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
       "Select billing country to pay": [
         "Ödeme için fatura ülkesini seçin"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "İlk ${ subscriptionLength } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ renewPrice } tutarla ${ subscriptionLengthCopy } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "İlk ${ subscriptionLength } ay için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Ardından aylık ${ renewPrice } tutarla ${ subscriptionLengthCopy } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "İlk ay için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ renewPrice } tutarla ${ subscriptionLength } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ renewPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
@@ -11597,6 +11629,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Takma ad kullanımdan kaldırıldı"
+      ],
       "Unsubscribed": [
         "Abonelikten ayrıldınız"
       ]
@@ -12806,6 +12841,9 @@
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
       ],
+      "Dark Web Monitoring": [
+        "Karanlık ağ izleme"
+      ],
       "Data recovery": [
         "Veri kurtarma"
       ],
@@ -13484,6 +13522,9 @@
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Bu Tor Browser sürümü desteklenmiyor. Lütfen son ${ stableRelease } sürüme güncelleyin"
       ]
     },
     "Update font modal": {
