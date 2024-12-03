@@ -82,11 +82,6 @@ export interface PublicDriveCompat {
     getPublicAuthHeaders: () => { [key: string]: string };
 
     /**
-     * The decrypted node.
-     */
-    decryptedNode: DecryptedNode | undefined;
-
-    /**
      * The permissions of the public link.
      */
     permissions: SHARE_URL_PERMISSIONS | undefined;
@@ -109,7 +104,7 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         linkId,
     } = usePublicDocsToken();
 
-    const { getNode, getNodeContentKey, didCompleteInitialSetup, decryptedNode, permissions } = usePublicNode({
+    const { getNode, getNodeContentKey, didCompleteInitialSetup, permissions } = usePublicNode({
         isDocsTokenReady,
         linkId,
     });
@@ -134,7 +129,6 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         }),
         getNode,
         getPublicAuthHeaders,
-        decryptedNode,
         permissions,
     };
 };

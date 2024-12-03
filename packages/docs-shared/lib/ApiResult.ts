@@ -1,6 +1,6 @@
 import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 
-type DocsApiError = {
+export type DocsApiError = {
   code: DocsApiErrorCode
   message: string
 }

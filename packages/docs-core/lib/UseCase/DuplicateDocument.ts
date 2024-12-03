@@ -1,5 +1,5 @@
 import type { DocumentNodeMeta, DriveCompat } from '@proton/drive-store'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 
 import type { NodeMeta } from '@proton/drive-store'
 import type { SeedInitialCommit } from './SeedInitialCommit'
@@ -16,9 +16,13 @@ export class DuplicateDocument {
   ) {}
 
   /** Execute for a private document */
-  async executePrivate(docMeta: DocumentMetaInterface, state: Uint8Array): Promise<Result<DocumentNodeMeta>> {
+  async executePrivate(
+    nodeMeta: NodeMeta,
+    docMeta: DocumentMetaInterface,
+    state: Uint8Array,
+  ): Promise<Result<DocumentNodeMeta>> {
     try {
-      const node = await this.driveCompat.getNode(docMeta.nodeMeta)
+      const node = await this.driveCompat.getNode(nodeMeta)
 
       const parentMeta: NodeMeta = node.parentNodeId
         ? {
@@ -63,9 +67,12 @@ export class DuplicateDocument {
         return Result.fail(documentMetaResult.getError())
       }
 
-      const newDoc = documentMetaResult.getValue()
+      const newNodeMeta = {
+        volumeId: shellResult.volumeId,
+        linkId: shellResult.linkId,
+      }
 
-      const commitResult = await this.seedInitialCommit.execute(newDoc.nodeMeta, state, shellResult.keys)
+      const commitResult = await this.seedInitialCommit.execute(newNodeMeta, state, shellResult.keys)
       if (commitResult.isFailed()) {
         return Result.fail(commitResult.getError())
       }

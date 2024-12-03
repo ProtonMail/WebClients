@@ -1,6 +1,5 @@
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
-import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
+import { Result } from '@proton/docs-shared'
 import { Comment, CommentThread } from '../Models'
 import type { CommentMarkNodeChangeData, CommentThreadInterface, InternalEventBusInterface } from '@proton/docs-shared'
 import { CommentThreadState, CommentType, CommentsEvent, ServerTime } from '@proton/docs-shared'
@@ -12,6 +11,8 @@ import type { DocsApi } from '../Api/DocsApi'
 import metrics from '@proton/metrics'
 import { CommentThreadType } from '@proton/docs-shared'
 import type { LoggerInterface } from '@proton/utils/logs'
+import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
+import { isPrivateDocumentKeys } from '../Types/DocumentEntitlements'
 
 /**
  * Creates a new comment thread with the API, supplying and encrypting an initial comment.
@@ -27,8 +28,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
 
   async execute(dto: {
     text: string
-    lookup: NodeMeta
-    keys: DocumentKeys
+    entitlements: PublicDocumentEntitlements | DocumentEntitlements
     commentsState: LocalCommentsState
     type: CommentThreadType
     decryptedDocumentName: string | null
@@ -45,7 +45,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       ServerTime.now(),
       dto.text,
       null,
-      dto.keys.userOwnAddress,
+      isPrivateDocumentKeys(dto.entitlements.keys) ? dto.entitlements.keys.userOwnAddress : undefined,
       [],
       false,
       commentType,
@@ -91,7 +91,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       }
     }
 
-    const commentEncryptionResult = await this.encryptComment.execute(dto.text, markID, dto.keys)
+    const commentEncryptionResult = await this.encryptComment.execute(dto.text, markID, dto.entitlements.keys)
     if (commentEncryptionResult.isFailed()) {
       onFail()
       return Result.fail(commentEncryptionResult.getError())
@@ -99,16 +99,16 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
 
     const encryptedCommentContent = commentEncryptionResult.getValue()
 
-    const result = await this.api.createThread({
-      volumeId: dto.lookup.volumeId,
-      linkId: dto.lookup.linkId,
-      markId: markID,
-      encryptedMainCommentContent: encryptedCommentContent,
-      authorEmail: dto.keys.userOwnAddress,
-      type: dto.type,
-      commentType,
-      decryptedDocumentName: dto.decryptedDocumentName,
-    })
+    const result = await this.api.createThread(
+      {
+        markId: markID,
+        encryptedMainCommentContent: encryptedCommentContent,
+        type: dto.type,
+        commentType,
+        decryptedDocumentName: dto.decryptedDocumentName,
+      },
+      dto.entitlements,
+    )
 
     if (result.isFailed()) {
       metrics.docs_comments_error_total.increment({
@@ -117,14 +117,14 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
 
       onFail()
 
-      return Result.fail(result.getError())
+      return Result.fail(result.getError().message)
     }
 
     const response = result.getValue()
 
     const comments = await Promise.all(
       response.CommentThread.Comments.map(async (commentDto) => {
-        const result = await this.decryptComment.execute(commentDto, response.CommentThread.Mark, dto.keys)
+        const result = await this.decryptComment.execute(commentDto, response.CommentThread.Mark, dto.entitlements.keys)
         return result
       }),
     )

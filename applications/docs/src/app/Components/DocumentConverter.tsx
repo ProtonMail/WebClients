@@ -1,10 +1,11 @@
 import { CircleLoader } from '@proton/atoms'
 import { useCallback, useEffect, useState } from 'react'
 import { useApplication } from '../Containers/ApplicationProvider'
-import type { FileToDocConversionResult, Result } from '@proton/docs-core'
+import type { FileToDocConversionResult } from '@proton/docs-core'
 import type { DecryptedNode, NodeMeta } from '@proton/drive-store'
 import { c } from 'ttag'
 import useLoading from '@proton/hooks/useLoading'
+import type { Result } from '@proton/docs-shared'
 
 type Props = {
   lookup: NodeMeta

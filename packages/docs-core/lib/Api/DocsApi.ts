@@ -1,491 +1,321 @@
-import type { Commit, SquashCommit } from '@proton/docs-proto'
-import { ApiResult, type DocumentMetaInterface, type SuggestionThreadStateAction } from '@proton/docs-shared'
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
-import {
-  addCommentToThreadInDocument,
-  changeSuggestionThreadState,
-  createDocument,
-  createRealtimeValetToken,
-  createRealtimeValetTokenByToken,
-  createThreadInDocument,
-  deleteCommentInThreadInDocument,
-  deleteThreadInDocument,
-  editCommentInThreadInDocument,
-  fetchRecentDocuments,
-  getAllCommentThreadsInDocument,
-  getCommentThreadInDocument,
-  getCommitData,
-  getCommitDataByToken,
-  getDocumentMeta,
-  getDocumentMetaByToken,
-  lockDocument,
-  resolveThreadInDocument,
-  seedInitialCommit,
-  squashCommit,
-  unresolveThreadInDocument,
-} from '@proton/shared/lib/api/docs'
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper'
+import { DocsApiPrivateRouteBuilder } from './Routes/DocsApiPrivateRouteBuilder'
+import { DocsApiPublicRouteBuilder } from './Routes/DocsApiPublicRouteBuilder'
+import { DocsApiRouteBuilder } from './Routes/DocsApiRouteBuilder'
 import { forgeImageURL } from '@proton/shared/lib/helpers/image'
-import type { Api } from '@proton/shared/lib/interfaces'
-import { Result } from '../Domain/Result/Result'
 import { getErrorString } from '../Util/GetErrorString'
+import { isPublicNodeMeta } from '@proton/drive-store/lib/interface'
+import { Result } from '@proton/docs-shared'
+import { type ApiAddCommentToThread } from './Requests/ApiAddCommentToThread'
+import { type SuggestionThreadStateAction } from '@proton/docs-shared'
+import type { AddCommentToThreadDTO } from './Requests/ApiAddCommentToThread'
 import type { AddCommentToThreadResponse } from './Types/AddCommentToThreadResponse'
+import type { ApiCreateThread, CreateThreadDTO } from './Requests/ApiCreateThread'
+import type { ApiEditComment, EditCommentDTO } from './Requests/ApiEditComment'
+import type { ApiGetThread } from './Requests/ApiGetThread'
+import type { ApiResult } from '@proton/docs-shared'
+import type { Commit, SquashCommit } from '@proton/docs-proto'
 import type { CreateDocumentResponse } from './Types/CreateDocumentResponse'
 import type { CreateThreadResponse } from './Types/CreateThreadResponse'
 import type { CreateValetTokenResponse } from './Types/CreateValetTokenResponse'
 import type { DeleteCommentResponse } from './Types/DeleteCommentResponse'
 import type { DeleteThreadResponse } from './Types/DeleteThreadResponse'
+import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { EditCommentResponse } from './Types/EditCommentResponse'
 import type { GetAllThreadIDsResponse } from './Types/GetAllThreadIDsResponse'
 import type { GetCommentThreadResponse } from './Types/GetCommentThreadResponse'
 import type { GetDocumentMetaResponse } from './Types/GetDocumentMetaResponse'
+import type { GetRecentsResponse } from './Types/GetRecentsResponse'
+import type { HttpHeaders } from './Types/HttpHeaders'
 import type { ImageProxyParams } from './Types/ImageProxyParams'
+import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
+import type { PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { ResolveThreadResponse } from './Types/ResolveThreadResponse'
+import type { RouteExecutor } from './RouteExecutor'
 import type { SeedInitialCommitApiResponse } from './Types/SeedInitialCommitApiResponse'
 import type { UnresolveThreadResponse } from './Types/UnresolveThreadResponse'
-import type { CommentThreadType, CommentType } from '@proton/docs-shared'
-import { isPublicNodeMeta } from '@proton/drive-store/lib/interface'
-import type { GetRecentsResponse } from './Types/GetRecentsResponse'
-
-export type HttpHeaders = { [key: string]: string }
 
 export class DocsApi {
   constructor(
-    private protonApi: Api,
+    private routeExecutor: RouteExecutor,
     /** Headers to use when fetching public documents */
     private publicContextHeaders: HttpHeaders | undefined,
     private imageProxyParams: ImageProxyParams | undefined,
+    private apiCreateThread: ApiCreateThread,
+    private apiAddCommentToThread: ApiAddCommentToThread,
+    private apiGetThread: ApiGetThread,
+    private apiEditComment: ApiEditComment,
   ) {
     window.addEventListener('beforeunload', this.handleWindowUnload)
   }
 
-  private inflight: number = 0
-
   handleWindowUnload = (event: BeforeUnloadEvent): void => {
-    if (this.inflight !== 0) {
+    if (this.routeExecutor.inflight !== 0) {
       event.preventDefault()
     }
   }
 
-  async getDocumentMeta(lookup: NodeMeta | PublicNodeMeta): Promise<Result<GetDocumentMetaResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
-
+  async getDocumentMeta(lookup: NodeMeta | PublicNodeMeta): Promise<ApiResult<GetDocumentMetaResponse>> {
     if (isPublicNodeMeta(lookup) && !this.publicContextHeaders) {
       throw new Error('Public context headers not set')
     }
 
-    try {
-      this.inflight++
-      const response = await this.protonApi(
-        isPublicNodeMeta(lookup)
-          ? getDocumentMetaByToken(lookup.linkId, lookup.token, this.publicContextHeaders!)
-          : getDocumentMeta(lookup.volumeId, lookup.linkId),
-      )
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+    const route = isPublicNodeMeta(lookup)
+      ? new DocsApiPublicRouteBuilder({
+          token: lookup.token,
+          linkId: lookup.linkId,
+          headers: this.publicContextHeaders!,
+        }).meta()
+      : new DocsApiPrivateRouteBuilder({ volumeId: lookup.volumeId, linkId: lookup.linkId }).meta()
+
+    return this.routeExecutor.execute(route)
   }
 
-  async getCommitData(lookup: NodeMeta | PublicNodeMeta, commitId: string): Promise<Result<Uint8Array>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
-
+  async getCommitData(lookup: NodeMeta | PublicNodeMeta, commitId: string): Promise<ApiResult<Uint8Array>> {
     if (isPublicNodeMeta(lookup) && !this.publicContextHeaders) {
       throw new Error('Public context headers not set')
     }
 
-    try {
-      this.inflight++
-      const response: Response = await this.protonApi(
-        isPublicNodeMeta(lookup)
-          ? getCommitDataByToken(lookup.linkId, lookup.token, commitId, this.publicContextHeaders!)
-          : getCommitData(lookup.volumeId, lookup.linkId, commitId),
-      )
-      const buffer = await response.arrayBuffer()
-      return Result.ok(new Uint8Array(buffer))
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+    const route = isPublicNodeMeta(lookup)
+      ? new DocsApiPublicRouteBuilder({
+          token: lookup.token,
+          linkId: lookup.linkId,
+          headers: this.publicContextHeaders!,
+        }).commit({ commitId })
+      : new DocsApiPrivateRouteBuilder({ volumeId: lookup.volumeId, linkId: lookup.linkId }).commit({ commitId })
+
+    return this.routeExecutor.execute(route)
   }
 
-  async fetchRecentDocuments(): Promise<Result<GetRecentsResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
-
-    try {
-      this.inflight++
-      const response = await this.protonApi(fetchRecentDocuments())
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+  async fetchRecentDocuments(): Promise<ApiResult<GetRecentsResponse>> {
+    const route = new DocsApiRouteBuilder('docs').recentDocuments()
+    return this.routeExecutor.execute(route)
   }
 
-  async seedInitialCommit(
-    docMeta: DocumentMetaInterface['nodeMeta'],
-    commit: Commit,
-  ): Promise<Result<SeedInitialCommitApiResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
-
+  async seedInitialCommit(docMeta: NodeMeta, commit: Commit): Promise<ApiResult<SeedInitialCommitApiResponse>> {
     if (isPublicNodeMeta(docMeta)) {
       throw new Error('Cannot seed initial commit for public node')
     }
 
-    try {
-      this.inflight++
-      const response = await this.protonApi(
-        seedInitialCommit(docMeta.volumeId, docMeta.linkId, commit.serializeBinary()),
-      )
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+    const route = new DocsApiPrivateRouteBuilder({
+      volumeId: docMeta.volumeId,
+      linkId: docMeta.linkId,
+    }).seedInitialCommit({
+      data: commit.serializeBinary(),
+    })
+
+    return this.routeExecutor.execute(route)
   }
 
-  async lockDocument(docMeta: DocumentMetaInterface, fetchCommitId?: string): Promise<Result<Uint8Array>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
+  async lockDocument(nodeMeta: NodeMeta, fetchCommitId?: string): Promise<ApiResult<Uint8Array>> {
+    const route = new DocsApiPrivateRouteBuilder({
+      volumeId: nodeMeta.volumeId,
+      linkId: nodeMeta.linkId,
+    }).lock({ fetchCommitId })
 
-    if (isPublicNodeMeta(docMeta.nodeMeta)) {
-      throw new Error('Cannot lock public node')
-    }
-
-    try {
-      this.inflight++
-      const response = await this.protonApi(
-        lockDocument(docMeta.nodeMeta.volumeId, docMeta.nodeMeta.linkId, fetchCommitId),
-      )
-      const buffer = await response.arrayBuffer()
-      return Result.ok(new Uint8Array(buffer))
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+    return this.routeExecutor.execute(route)
   }
 
-  async squashCommit(
-    docMeta: DocumentMetaInterface,
-    commitId: string,
-    squash: SquashCommit,
-  ): Promise<Result<Uint8Array>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
+  async squashCommit(nodeMeta: NodeMeta, commitId: string, squash: SquashCommit): Promise<ApiResult<Uint8Array>> {
+    const route = new DocsApiPrivateRouteBuilder({
+      volumeId: nodeMeta.volumeId,
+      linkId: nodeMeta.linkId,
+    }).squashCommit({ commitId, data: squash.serializeBinary() })
 
-    if (isPublicNodeMeta(docMeta.nodeMeta)) {
-      throw new Error('Cannot squash commit for public node')
-    }
-
-    try {
-      this.inflight++
-      const response = await this.protonApi(
-        squashCommit(docMeta.nodeMeta.volumeId, docMeta.nodeMeta.linkId, commitId, squash.serializeBinary()),
-      )
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+    return this.routeExecutor.execute(route)
   }
 
-  async createDocument(lookup: NodeMeta): Promise<Result<CreateDocumentResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
+  async createDocument(lookup: NodeMeta): Promise<ApiResult<CreateDocumentResponse>> {
+    const route = new DocsApiPrivateRouteBuilder({
+      volumeId: lookup.volumeId,
+      linkId: lookup.linkId,
+    }).createDocument()
 
-    try {
-      this.inflight++
-      const response = await this.protonApi(createDocument(lookup.volumeId, lookup.linkId))
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+    return this.routeExecutor.execute(route)
   }
 
   async createRealtimeValetToken(
     lookup: NodeMeta | PublicNodeMeta,
     commitId?: string,
   ): Promise<ApiResult<CreateValetTokenResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
-
     if (isPublicNodeMeta(lookup) && !this.publicContextHeaders) {
       throw new Error('Public context headers not set')
     }
 
-    try {
-      this.inflight++
-      const response = await this.protonApi(
-        isPublicNodeMeta(lookup)
-          ? createRealtimeValetTokenByToken(lookup.token, lookup.linkId, this.publicContextHeaders!, commitId)
-          : createRealtimeValetToken(lookup.volumeId, lookup.linkId, commitId),
-      )
-      return ApiResult.ok(response)
-    } catch (error) {
-      const errorCode = getApiError(error).code
-      return ApiResult.fail({
-        code: errorCode > 0 ? errorCode : 0,
-        message: getErrorString(error) || 'Unknown error',
-      })
-    } finally {
-      this.inflight--
-    }
+    const route = isPublicNodeMeta(lookup)
+      ? new DocsApiPublicRouteBuilder({
+          token: lookup.token,
+          linkId: lookup.linkId,
+          headers: this.publicContextHeaders!,
+        }).createRealtimeValetToken({ commitId })
+      : new DocsApiPrivateRouteBuilder({ volumeId: lookup.volumeId, linkId: lookup.linkId }).createRealtimeValetToken({
+          commitId,
+        })
+
+    return this.routeExecutor.execute(route)
   }
 
-  async getAllThreadIDs(volumeId: string, linkId: string): Promise<Result<GetAllThreadIDsResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
+  async getAllThreadIDs(nodeMeta: NodeMeta | PublicNodeMeta): Promise<ApiResult<GetAllThreadIDsResponse>> {
+    if (isPublicNodeMeta(nodeMeta) && !this.publicContextHeaders) {
+      throw new Error('Public context headers not set')
     }
 
-    try {
-      this.inflight++
-      const response = await this.protonApi(getAllCommentThreadsInDocument(volumeId, linkId))
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+    const route = isPublicNodeMeta(nodeMeta)
+      ? new DocsApiPublicRouteBuilder({
+          token: nodeMeta.token,
+          linkId: nodeMeta.linkId,
+          headers: this.publicContextHeaders!,
+        }).getCommentThreads()
+      : new DocsApiPrivateRouteBuilder({ volumeId: nodeMeta.volumeId, linkId: nodeMeta.linkId }).getCommentThreads()
+
+    return this.routeExecutor.execute(route)
   }
 
-  async createThread(dto: {
-    volumeId: string
-    linkId: string
-    markId: string
-    encryptedMainCommentContent: string
-    authorEmail: string
-    type: CommentThreadType
-    commentType: CommentType
-    decryptedDocumentName: string | null
-  }): Promise<Result<CreateThreadResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
-
-    const {
-      volumeId,
-      linkId,
-      markId,
-      encryptedMainCommentContent,
-      authorEmail,
-      type,
-      commentType,
-      decryptedDocumentName,
-    } = dto
-
-    try {
-      this.inflight++
-      const response = await this.protonApi(
-        createThreadInDocument(volumeId, linkId, {
-          Mark: markId,
-          Comment: {
-            Type: commentType,
-            AuthorEmail: authorEmail,
-            Content: encryptedMainCommentContent,
-            DocumentName: decryptedDocumentName,
-          },
-          Type: type,
-        }),
-      )
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+  async createThread(
+    dto: CreateThreadDTO,
+    entitlements: PublicDocumentEntitlements | DocumentEntitlements,
+  ): Promise<ApiResult<CreateThreadResponse>> {
+    const result = await this.apiCreateThread.execute(dto, entitlements)
+    return result
   }
 
-  async getThread(volumeId: string, linkId: string, threadId: string): Promise<Result<GetCommentThreadResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
-
-    try {
-      this.inflight++
-      const response = await this.protonApi(getCommentThreadInDocument(volumeId, linkId, threadId))
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
-  }
-
-  async deleteThread(volumeId: string, linkId: string, threadId: string): Promise<Result<DeleteThreadResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
-
-    try {
-      this.inflight++
-      const response = await this.protonApi(deleteThreadInDocument(volumeId, linkId, threadId))
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
-  }
-
-  async addCommentToThread(dto: {
-    volumeId: string
-    linkId: string
+  async getThread(dto: {
+    nodeMeta: NodeMeta | PublicNodeMeta
     threadId: string
-    encryptedContent: string
-    parentCommentId: string | null
-    authorEmail: string
-    type: CommentType
-    decryptedDocumentName: string | null
-  }): Promise<Result<AddCommentToThreadResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
-
-    const { volumeId, linkId, threadId, encryptedContent, parentCommentId, authorEmail, type, decryptedDocumentName } =
-      dto
-
-    try {
-      this.inflight++
-      const response = await this.protonApi(
-        addCommentToThreadInDocument(volumeId, linkId, threadId, {
-          Type: type,
-          ParentCommentId: parentCommentId,
-          DocumentName: decryptedDocumentName,
-          AuthorEmail: authorEmail,
-          Content: encryptedContent,
-        }),
-      )
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+  }): Promise<ApiResult<GetCommentThreadResponse>> {
+    const result = await this.apiGetThread.execute(dto)
+    return result
   }
 
-  async editComment(dto: {
-    volumeId: string
-    linkId: string
+  async deleteThread(dto: {
+    nodeMeta: NodeMeta | PublicNodeMeta
+    threadId: string
+  }): Promise<ApiResult<DeleteThreadResponse>> {
+    if (isPublicNodeMeta(dto.nodeMeta) && !this.publicContextHeaders) {
+      throw new Error('Public context headers not set')
+    }
+
+    const route = isPublicNodeMeta(dto.nodeMeta)
+      ? new DocsApiPublicRouteBuilder({
+          token: dto.nodeMeta.token,
+          linkId: dto.nodeMeta.linkId,
+          headers: this.publicContextHeaders!,
+        }).deleteThread({ threadId: dto.threadId })
+      : new DocsApiPrivateRouteBuilder({
+          volumeId: dto.nodeMeta.volumeId,
+          linkId: dto.nodeMeta.linkId,
+        }).deleteThread({ threadId: dto.threadId })
+
+    return this.routeExecutor.execute(route)
+  }
+
+  async addCommentToThread(
+    dto: AddCommentToThreadDTO,
+    entitlements: PublicDocumentEntitlements | DocumentEntitlements,
+  ): Promise<ApiResult<AddCommentToThreadResponse>> {
+    const result = await this.apiAddCommentToThread.execute(dto, entitlements)
+    return result
+  }
+
+  async editComment(
+    dto: EditCommentDTO,
+    entitlements: PublicDocumentEntitlements | DocumentEntitlements,
+  ): Promise<ApiResult<EditCommentResponse>> {
+    const result = await this.apiEditComment.execute(dto, entitlements)
+    return result
+  }
+
+  async deleteComment(dto: {
+    nodeMeta: NodeMeta | PublicNodeMeta
     threadId: string
     commentId: string
-    encryptedContent: string
-    authorEmail: string
-  }): Promise<Result<EditCommentResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
+  }): Promise<ApiResult<DeleteCommentResponse>> {
+    if (isPublicNodeMeta(dto.nodeMeta) && !this.publicContextHeaders) {
+      throw new Error('Public context headers not set')
     }
 
-    const { volumeId, linkId, threadId, commentId, encryptedContent, authorEmail } = dto
+    const route = isPublicNodeMeta(dto.nodeMeta)
+      ? new DocsApiPublicRouteBuilder({
+          token: dto.nodeMeta.token,
+          linkId: dto.nodeMeta.linkId,
+          headers: this.publicContextHeaders!,
+        }).deleteComment({ threadId: dto.threadId, commentId: dto.commentId })
+      : new DocsApiPrivateRouteBuilder({ volumeId: dto.nodeMeta.volumeId, linkId: dto.nodeMeta.linkId }).deleteComment({
+          threadId: dto.threadId,
+          commentId: dto.commentId,
+        })
 
-    try {
-      this.inflight++
-      const response = await this.protonApi(
-        editCommentInThreadInDocument(volumeId, linkId, threadId, commentId, {
-          Content: encryptedContent,
-          AuthorEmail: authorEmail,
-        }),
-      )
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+    return this.routeExecutor.execute(route)
   }
 
-  async deleteComment(
-    volumeId: string,
-    linkId: string,
-    threadId: string,
-    commentId: string,
-  ): Promise<Result<DeleteCommentResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
+  async resolveThread(dto: {
+    nodeMeta: NodeMeta | PublicNodeMeta
+    threadId: string
+  }): Promise<ApiResult<ResolveThreadResponse>> {
+    if (isPublicNodeMeta(dto.nodeMeta) && !this.publicContextHeaders) {
+      throw new Error('Public context headers not set')
     }
 
-    try {
-      this.inflight++
-      const response = await this.protonApi(deleteCommentInThreadInDocument(volumeId, linkId, threadId, commentId))
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+    const route = isPublicNodeMeta(dto.nodeMeta)
+      ? new DocsApiPublicRouteBuilder({
+          token: dto.nodeMeta.token,
+          linkId: dto.nodeMeta.linkId,
+          headers: this.publicContextHeaders!,
+        }).resolveThread({ threadId: dto.threadId })
+      : new DocsApiPrivateRouteBuilder({ volumeId: dto.nodeMeta.volumeId, linkId: dto.nodeMeta.linkId }).resolveThread({
+          threadId: dto.threadId,
+        })
+
+    return this.routeExecutor.execute(route)
   }
 
-  async resolveThread(volumeId: string, linkId: string, threadId: string): Promise<Result<ResolveThreadResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
+  async unresolveThread(dto: {
+    nodeMeta: NodeMeta | PublicNodeMeta
+    threadId: string
+  }): Promise<ApiResult<UnresolveThreadResponse>> {
+    if (isPublicNodeMeta(dto.nodeMeta) && !this.publicContextHeaders) {
+      throw new Error('Public context headers not set')
     }
 
-    try {
-      this.inflight++
-      const response = await this.protonApi(resolveThreadInDocument(volumeId, linkId, threadId))
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+    const route = isPublicNodeMeta(dto.nodeMeta)
+      ? new DocsApiPublicRouteBuilder({
+          token: dto.nodeMeta.token,
+          linkId: dto.nodeMeta.linkId,
+          headers: this.publicContextHeaders!,
+        }).unresolveThread({ threadId: dto.threadId })
+      : new DocsApiPrivateRouteBuilder({
+          volumeId: dto.nodeMeta.volumeId,
+          linkId: dto.nodeMeta.linkId,
+        }).unresolveThread({
+          threadId: dto.threadId,
+        })
+
+    return this.routeExecutor.execute(route)
   }
 
-  async unresolveThread(volumeId: string, linkId: string, threadId: string): Promise<Result<UnresolveThreadResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
+  async changeSuggestionThreadState(dto: {
+    nodeMeta: NodeMeta | PublicNodeMeta
+    threadId: string
+    action: SuggestionThreadStateAction
+  }): Promise<ApiResult<UnresolveThreadResponse>> {
+    if (isPublicNodeMeta(dto.nodeMeta) && !this.publicContextHeaders) {
+      throw new Error('Public context headers not set')
     }
 
-    try {
-      this.inflight++
-      const response = await this.protonApi(unresolveThreadInDocument(volumeId, linkId, threadId))
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
-  }
+    const route = isPublicNodeMeta(dto.nodeMeta)
+      ? new DocsApiPublicRouteBuilder({
+          token: dto.nodeMeta.token,
+          linkId: dto.nodeMeta.linkId,
+          headers: this.publicContextHeaders!,
+        }).changeSuggestionState({ threadId: dto.threadId, action: dto.action })
+      : new DocsApiPrivateRouteBuilder({
+          volumeId: dto.nodeMeta.volumeId,
+          linkId: dto.nodeMeta.linkId,
+        }).changeSuggestionState({
+          threadId: dto.threadId,
+          action: dto.action,
+        })
 
-  async changeSuggestionThreadState(
-    volumeId: string,
-    linkId: string,
-    threadId: string,
-    action: SuggestionThreadStateAction,
-  ): Promise<Result<UnresolveThreadResponse>> {
-    if (!this.protonApi) {
-      throw new Error('Proton API not set')
-    }
-
-    try {
-      this.inflight++
-      const response = await this.protonApi(changeSuggestionThreadState(volumeId, linkId, threadId, action))
-      return Result.ok(response)
-    } catch (error) {
-      return Result.fail(getErrorString(error) || 'Unknown error')
-    } finally {
-      this.inflight--
-    }
+    return this.routeExecutor.execute(route)
   }
 
   async fetchExternalImageAsBase64(url: string): Promise<Result<string>> {
@@ -494,7 +324,7 @@ export class DocsApi {
     }
 
     try {
-      this.inflight++
+      this.routeExecutor.inflight++
       const forgedImageURL = forgeImageURL({
         url,
         origin: window.location.origin,
@@ -520,7 +350,7 @@ export class DocsApi {
     } catch (error) {
       return Result.fail(getErrorString(error) || 'Unknown error')
     } finally {
-      this.inflight--
+      this.routeExecutor.inflight--
     }
   }
 }

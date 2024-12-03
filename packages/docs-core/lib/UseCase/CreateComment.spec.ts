@@ -1,4 +1,4 @@
-import { Result } from '../Domain/Result/Result'
+import { ApiResult, DocumentRole, Result } from '@proton/docs-shared'
 import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { Comment } from '../Models'
 import { GenerateUUID } from '../Util/GenerateUuid'
@@ -6,6 +6,8 @@ import type { EncryptComment } from './EncryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { CreateComment } from './CreateComment'
 import type { DocsApi } from '../Api/DocsApi'
+import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 
 jest.mock('../Util/GenerateUuid', () => ({
   GenerateUUID: jest.fn(),
@@ -29,14 +31,18 @@ const mockCommentsState = {
 describe('CreateComment', () => {
   let createComment: CreateComment
 
-  const dto = {
-    text: 'Test comment',
-    threadID: 'thread-id',
-    lookup: { volumeId: 'volume-id', linkId: 'link-id' } as NodeMeta,
-    userDisplayName: 'User',
+  const entitlements = {
     keys: {
       userOwnAddress: 'foo@bar.com',
     } as DocumentKeys,
+    role: new DocumentRole('Editor'),
+    nodeMeta: { volumeId: 'volume-id', linkId: 'link-id' } as NodeMeta,
+  } as unknown as DocumentEntitlements
+
+  const dto: Parameters<CreateComment['execute']>[0] = {
+    text: 'Test comment',
+    threadID: 'thread-id',
+    entitlements,
     commentsState: mockCommentsState,
     type: 1,
     decryptedDocumentName: 'Test',
@@ -54,7 +60,10 @@ describe('CreateComment', () => {
     mockCommentsState.findThreadById.mockReturnValue({ markID: 'mark-id' } as never)
     mockEncryptComment.execute.mockResolvedValue(Result.ok('encrypted-comment'))
     mockCommentsApi.addCommentToThread.mockResolvedValue(
-      Result.ok({ Comment: { text: 'encrypted-response-comment', AuthorEmail: 'foo@bar.com' } as never, Code: 1000 }),
+      ApiResult.ok({
+        Comment: { text: 'encrypted-response-comment', AuthorEmail: 'foo@bar.com' } as never,
+        Code: 1000,
+      }),
     )
 
     await createComment.execute(dto)
@@ -64,16 +73,16 @@ describe('CreateComment', () => {
     expect(mockEncryptComment.execute).toHaveBeenCalledWith('Test comment', 'mark-id', {
       userOwnAddress: 'foo@bar.com',
     })
-    expect(mockCommentsApi.addCommentToThread).toHaveBeenCalledWith({
-      volumeId: 'volume-id',
-      linkId: 'link-id',
-      threadId: 'thread-id',
-      encryptedContent: 'encrypted-comment',
-      parentCommentId: null,
-      authorEmail: 'foo@bar.com',
-      type: 1,
-      decryptedDocumentName: 'Test',
-    })
+    expect(mockCommentsApi.addCommentToThread).toHaveBeenCalledWith(
+      {
+        threadId: 'thread-id',
+        encryptedContent: 'encrypted-comment',
+        parentCommentId: null,
+        decryptedDocumentName: 'Test',
+        type: 1,
+      },
+      entitlements,
+    )
     expect(mockCommentsState.replacePlaceholderComment).toHaveBeenCalled()
   })
 
@@ -90,7 +99,9 @@ describe('CreateComment', () => {
   it('should delete comment if api call fails', async () => {
     mockCommentsState.findThreadById.mockReturnValue({ markID: 'mark-id' } as never)
     mockEncryptComment.execute.mockResolvedValue(Result.ok('encrypted-comment'))
-    mockCommentsApi.addCommentToThread.mockResolvedValue(Result.fail('api error'))
+    mockCommentsApi.addCommentToThread.mockResolvedValue(
+      ApiResult.fail({ code: DocsApiErrorCode.Unknown, message: 'api error' }),
+    )
 
     const result = await createComment.execute(dto)
 

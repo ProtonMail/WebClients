@@ -1,5 +1,5 @@
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 import type { NodeMeta, PublicNodeMeta, DecryptedNode } from '@proton/drive-store'
 import { getErrorString } from '../Util/GetErrorString'
 import { isPublicNodeMeta } from '@proton/drive-store/lib/interface'

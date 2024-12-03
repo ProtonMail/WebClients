@@ -2,7 +2,7 @@ import type { LoggerInterface } from '@proton/utils/logs'
 import { Logger } from '@proton/utils/logs'
 import { DOCS_DEBUG_KEY, DependencyContainer } from '@proton/docs-shared'
 import { App_TYPES } from './Types'
-import type { HttpHeaders } from '../../Api/DocsApi'
+import type { HttpHeaders } from '../../Api/Types/HttpHeaders'
 import { DocsApi } from '../../Api/DocsApi'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { EncryptMessage } from '../../UseCase/EncryptMessage'
@@ -42,6 +42,11 @@ import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrap
 import { PublicDocLoader } from '../../Services/DocumentLoader/PublicDocLoader'
 import type { UnleashClient } from '@proton/unleash'
 import type { UserState } from '../../State/UserState'
+import { ApiEditComment } from '../../Api/Requests/ApiEditComment'
+import { ApiAddCommentToThread } from '../../Api/Requests/ApiAddCommentToThread'
+import { ApiCreateThread } from '../../Api/Requests/ApiCreateThread'
+import { ApiGetThread } from '../../Api/Requests/ApiGetThread'
+import { RouteExecutor } from '../../Api/RouteExecutor'
 
 export class AppDependencies extends DependencyContainer {
   constructor(
@@ -88,8 +93,36 @@ export class AppDependencies extends DependencyContainer {
       )
     })
 
+    this.bind(App_TYPES.RouteExecutor, () => {
+      return new RouteExecutor(api)
+    })
+
     this.bind(App_TYPES.DocsApi, () => {
-      return new DocsApi(api, publicContextHeaders, imageProxyParams)
+      return new DocsApi(
+        this.get<RouteExecutor>(App_TYPES.RouteExecutor),
+        publicContextHeaders,
+        imageProxyParams,
+        this.get<ApiCreateThread>(App_TYPES.ApiCreateThread),
+        this.get<ApiAddCommentToThread>(App_TYPES.ApiAddCommentToThread),
+        this.get<ApiGetThread>(App_TYPES.ApiGetThread),
+        this.get<ApiEditComment>(App_TYPES.ApiEditComment),
+      )
+    })
+
+    this.bind(App_TYPES.ApiEditComment, () => {
+      return new ApiEditComment(this.get<RouteExecutor>(App_TYPES.RouteExecutor), publicContextHeaders)
+    })
+
+    this.bind(App_TYPES.ApiAddCommentToThread, () => {
+      return new ApiAddCommentToThread(this.get<RouteExecutor>(App_TYPES.RouteExecutor), publicContextHeaders)
+    })
+
+    this.bind(App_TYPES.ApiCreateThread, () => {
+      return new ApiCreateThread(this.get<RouteExecutor>(App_TYPES.RouteExecutor), publicContextHeaders)
+    })
+
+    this.bind(App_TYPES.ApiGetThread, () => {
+      return new ApiGetThread(this.get<RouteExecutor>(App_TYPES.RouteExecutor), publicContextHeaders)
     })
 
     this.bind(App_TYPES.EncryptMessage, () => {
@@ -222,6 +255,12 @@ export class AppDependencies extends DependencyContainer {
         this.get<LoggerInterface>(App_TYPES.Logger),
         unleashClient,
         syncedEditorState,
+        this.get<EncryptComment>(App_TYPES.EncryptComment),
+        this.get<CreateComment>(App_TYPES.CreateComment),
+        this.get<CreateThread>(App_TYPES.CreateThread),
+        this.get<LoadThreads>(App_TYPES.LoadThreads),
+        this.get<HandleRealtimeCommentsEvent>(App_TYPES.HandleRealtimeCommentsEvent),
+        this.get<MetricService>(App_TYPES.MetricService),
       )
     })
 

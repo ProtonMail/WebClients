@@ -8,11 +8,10 @@ import {
   CreateSquashCommit,
 } from '@proton/docs-proto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
 import type { EncryptMessage } from './EncryptMessage'
-import type { DocumentKeys } from '@proton/drive-store'
-import type { DocumentMetaInterface } from '@proton/docs-shared'
+import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import type { DecryptCommit } from './DecryptCommit'
 import metrics from '@proton/metrics'
 import type { UpdatePair, SquashAlgorithm, SquashResult } from './SquashAlgorithm'
@@ -26,7 +25,7 @@ import { metricsBucketNumberForUpdateCount } from '../Util/bucketNumberForUpdate
 import type { LoggerInterface } from '@proton/utils/logs'
 
 export type SquashDocumentDTO = {
-  docMeta: DocumentMetaInterface
+  nodeMeta: NodeMeta
   commitId: string
   keys: DocumentKeys
   handleVerificationObjection: SquashVerificationObjectionCallback
@@ -48,13 +47,13 @@ export class SquashDocument implements UseCaseInterface<boolean> {
   async execute(dto: SquashDocumentDTO): Promise<Result<boolean>> {
     const startTime = Date.now()
 
-    const { docMeta, commitId, keys } = dto
+    const { nodeMeta, commitId, keys } = dto
 
     this.logger.info('[Squash] Locking document...')
 
-    const lockResult = await this.docsApi.lockDocument(docMeta, commitId)
+    const lockResult = await this.docsApi.lockDocument(nodeMeta, commitId)
     if (lockResult.isFailed()) {
-      return Result.fail(lockResult.getError())
+      return Result.fail(lockResult.getError().message)
     }
 
     const squashLock = SquashLock.deserializeBinary(lockResult.getValue())
@@ -91,9 +90,9 @@ export class SquashDocument implements UseCaseInterface<boolean> {
 
     this.logger.info('[Squash] Sending squash commit to API...')
 
-    const commitResult = await this.docsApi.squashCommit(docMeta, decryptedCommit.commitId, squashCommit)
+    const commitResult = await this.docsApi.squashCommit(nodeMeta, decryptedCommit.commitId, squashCommit)
     if (commitResult.isFailed()) {
-      return Result.fail(commitResult.getError())
+      return Result.fail(commitResult.getError().message)
     }
 
     const endTime = Date.now()
