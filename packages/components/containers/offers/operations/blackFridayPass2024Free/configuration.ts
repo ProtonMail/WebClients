@@ -4,11 +4,7 @@ import { FeatureCode } from '@proton/features';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 
-import {
-    getFamilyPassFeatures,
-    getLifetimePassFeatures,
-    getUnlimitedInboxFeaturesForPass,
-} from '../../helpers/offerCopies';
+import { getFamilyPassFeatures, getUnlimitedInboxFeaturesForPass } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 
@@ -35,26 +31,11 @@ const config: OfferConfig = {
                 [PLANS.PASS_FAMILY]: 1,
             },
             cycle: CYCLE.YEARLY,
-            popular: 2,
-            buttonSize: 'large',
-            mobileOrder: 2,
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2024,
-            features: getFamilyPassFeatures,
-        },
-        {
-            ref: 'bf_24_pass-free-passlifetime12',
-            dealName: `${PLAN_NAMES[PLANS.PASS_LIFETIME]}`,
-            planIDs: {
-                [PLANS.PASS_LIFETIME]: 1,
-            },
-            cycle: CYCLE.YEARLY,
             popular: 1,
-            isLifeTime: true,
             buttonSize: 'large',
             mobileOrder: 1,
             couponCode: COUPON_CODES.BLACK_FRIDAY_2024,
-            features: getLifetimePassFeatures,
-            bubbleText: c('BF2024: info').t`Limited stock!`,
+            features: getFamilyPassFeatures,
         },
         {
             ref: 'bf_24_pass-free-unlimited12',
@@ -64,9 +45,10 @@ const config: OfferConfig = {
             },
             cycle: CYCLE.YEARLY,
             buttonSize: 'large',
-            mobileOrder: 3,
+            mobileOrder: 2,
             couponCode: COUPON_CODES.BLACK_FRIDAY_2024,
             features: getUnlimitedInboxFeaturesForPass,
+            popular: 2,
         },
     ],
     layout: Layout,
