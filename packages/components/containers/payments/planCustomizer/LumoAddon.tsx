@@ -48,13 +48,15 @@ const LumoAddon = ({ price, onAddLumo, addon, input, value, maxUsers, showDescri
 
     if (showLumoBanner) {
         return (
-            <LumoAddonBanner
-                price={price}
-                onClick={() => {
-                    setShowLumoBanner(false);
-                    onAddLumo();
-                }}
-            />
+            <div>
+                <LumoAddonBanner
+                    price={price}
+                    onClick={() => {
+                        setShowLumoBanner(false);
+                        onAddLumo();
+                    }}
+                />
+            </div>
         );
     }
 
