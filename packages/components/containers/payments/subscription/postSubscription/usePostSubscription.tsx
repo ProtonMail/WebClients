@@ -6,6 +6,7 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import useFlag from '@proton/unleash/useFlag';
 
 import type { OpenCallbackProps } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
@@ -44,10 +45,11 @@ export const usePostSubscription = ({
     upsellRef,
     onSubscribed,
 }: Props): Pick<OpenCallbackProps, 'disableThanksStep' | 'onSubscribed' | 'renderCustomStepModal'> | undefined => {
+    const isPostSubscriptionFlowEnabled = useFlag('InboxWebPostSubscriptionFlow');
     const flowName = upsellRef ? UPSELL_REF_TO_POST_SUBCRIPTION_FLOW[upsellRef] : undefined;
     const [user] = useUser();
 
-    if (!flowName || !user.isFree) {
+    if (!flowName || !user.isFree || !isPostSubscriptionFlowEnabled) {
         return;
     }
 
