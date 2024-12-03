@@ -27,7 +27,7 @@ const getFeatures = (): UpsellFeature[] => [
         key: 'aliases',
         className: 'ui-teal',
         icon: 'alias',
-        label: c('Info').t`Unlimited hide-my-email aliases`,
+        label: c('Info').t`Unlimited hide-my-email aliases and advanced alias management`,
     },
     {
         key: '2FA',

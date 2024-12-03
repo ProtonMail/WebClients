@@ -13,16 +13,29 @@ import { AliasContactsMoreInfo } from '@proton/pass/components/Item/Alias/Contac
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { selectItem } from '@proton/pass/store/selectors';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { PassPlusIcon } from '@proton/pass/components/Upsell/PassPlusIcon';
+import { UpsellRef } from '@proton/pass/constants';
+import { selectItem, selectPassPlan } from '@proton/pass/store/selectors';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 type Props = Pick<ModalStateProps, 'onClose'>;
 
 export const AliasContactsView: FC<Props> = ({ onClose }) => {
     const { contacts, sync, loading, shareId, itemId } = useAliasContacts();
+    const spotlight = useSpotlight();
+
     const [openCreate, setOpenCreate] = useState(false);
     const [openMoreInfo, setOpenMoreInfo] = useState(false);
     const aliasEmail = useSelector(selectItem<'alias'>(shareId, itemId))?.aliasEmail;
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+
     const empty = !loading && contacts.active.length + contacts.blocked.length === 0;
+
+    const handleCreateClick = () => {
+        if (isFreePlan) spotlight.setUpselling({ type: 'pass-plus', upsellRef: UpsellRef.LIMIT_ALIAS });
+        else setOpenCreate(true);
+    };
 
     useEffect(sync, []);
 
@@ -45,8 +58,9 @@ export const AliasContactsView: FC<Props> = ({ onClose }) => {
                                 >
                                     <Icon name="cross" alt={c('Action').t`Cancel`} />
                                 </Button>,
-                                <Button color="norm" key="modal-submit-button" pill onClick={() => setOpenCreate(true)}>
+                                <Button color="norm" key="modal-submit-button" pill onClick={handleCreateClick}>
                                     {c('Action').t`Create contact`}
+                                    {isFreePlan && <PassPlusIcon className="ml-2" />}
                                 </Button>,
                             ]}
                         />
