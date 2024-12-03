@@ -1,7 +1,6 @@
 import type { Store } from 'redux';
 
-import { ITEM_COUNT_RATING_PROMPT, PASS_BF_2024_DATES } from '@proton/pass/constants';
-import { api } from '@proton/pass/lib/api/api';
+import { ITEM_COUNT_RATING_PROMPT } from '@proton/pass/constants';
 import {
     selectCreatedItemsCount,
     selectFeatureFlag,
@@ -151,30 +150,6 @@ export const createAliasSyncEnableRule = (store: Store<State>) =>
             const { pendingAliasToSync } = selectUserData(state);
 
             return enabled && !previous && pendingAliasToSync > 0;
-        },
-    });
-
-/* - Pass Family offer shown to pass2023 users
- * - Pass Lifetime offer shown to free users */
-export const createBlackFriday2024Rule = (store: Store<State>) =>
-    createSpotlightRule({
-        message: SpotlightMessage.BLACK_FRIDAY_2024,
-        when: (previous) => {
-            const state = store.getState();
-            if (!selectInAppNotificationsEnabled(state)) return false;
-
-            /* sanity check in-case feature flags are unreliable */
-            const now = api.getState().serverTime?.getTime() ?? Date.now();
-            if (now > PASS_BF_2024_DATES[1]) return false;
-
-            switch (selectUserPlan(state)?.InternalName) {
-                case 'pass2023':
-                    return !previous && selectFeatureFlag(PassFeature.PassBlackFriday2024Family)(state);
-                case 'free':
-                    return !previous && selectFeatureFlag(PassFeature.PassBlackFriday2024Lifetime)(state);
-                default:
-                    return false;
-            }
         },
     });
 
