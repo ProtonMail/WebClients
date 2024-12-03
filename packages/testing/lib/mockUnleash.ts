@@ -5,6 +5,8 @@ jest.mock('@unleash/proxy-client-react', () => ({
         isEnabled: jest.fn(),
     }),
     useFlags: () => {},
-    useVariant: () => {},
+    useVariant: () => {
+        return { name: 'disabled' };
+    },
     useFlagsStatus: () => {},
 }));
