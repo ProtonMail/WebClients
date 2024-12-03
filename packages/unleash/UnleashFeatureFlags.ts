@@ -69,6 +69,7 @@ enum CalendarFeatureFlag {
     CalendarRedux = 'CalendarRedux',
     // CancelSingleOccurrenceWeb = 'CancelSingleOccurrenceWeb', removed with proton-calendar@5.0.21.0, can be removed from Unleash when FU'd
     ZoomIntegration = 'ZoomIntegration',
+    CalendarMetrics = 'CalendarMetrics',
 }
 
 enum DriveFeatureFlag {
