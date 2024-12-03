@@ -63,16 +63,15 @@ export const decryptTransactionData = async (
         TransactionID,
         Sender: parsedSender,
         ToList: {},
-        verifiedBody: null,
     };
 
     if (!addressKeys) {
         return apiTransactionB;
     }
 
-    const { data: Body, verified: verifiedBody } = apiTransaction.Body
+    const { data: Body } = apiTransaction.Body
         ? await decryptTextData(apiTransaction.Body, addressKeys)
-        : { data: null, verified: null };
+        : { data: null };
     const SerialisedToList = apiTransaction.ToList && (await decryptTextData(apiTransaction.ToList, addressKeys)).data;
 
     const ToList = parsedRecipientList(SerialisedToList);
@@ -81,7 +80,6 @@ export const decryptTransactionData = async (
         ...apiTransactionB,
         Body,
         ToList,
-        verifiedBody,
     };
 };
 

@@ -26,13 +26,13 @@ export type EncryptedWalletPart = Partial<
 >;
 
 export const decryptTextData = async (armoredMessage: string, keys: PrivateKeyReference[]) => {
-    const { data, verified } = await CryptoProxy.decryptMessage({
+    // TODO: Implement verification
+    const { data } = await CryptoProxy.decryptMessage({
         armoredMessage,
         decryptionKeys: keys,
-        verificationKeys: keys,
     });
 
-    return { data, verified };
+    return { data };
 };
 
 type DecryptReturnType<T extends 'binary' | 'utf8'> = T extends 'binary' ? Uint8Array : string;
