@@ -128,7 +128,8 @@ const ConfirmationModalContent = ({ shortDomainAddress, modalProps }: Confirmati
 const MailShortDomainPostSubscriptionModal = ({ modalProps, step }: PostSubscriptionModalComponentProps) => {
     const [displayLoadingModal, setDisplayLoadingModal] = useState(true);
 
-    const { shortDomainAddress, createShortDomainAddress, loadingDependencies } = useShortDomainAddress();
+    const { shortDomainAddress, createShortDomainAddress, loadingDependencies, hasShortDomain } =
+        useShortDomainAddress();
     const getAddresses = useGetAddresses();
     const composerSpotlight = useMailShortDomainPostSubscriptionComposerSpotlight();
     const isAddressSetupRef = useRef(false);
@@ -138,6 +139,10 @@ const MailShortDomainPostSubscriptionModal = ({ modalProps, step }: PostSubscrip
             const setupNewAddress = async () => {
                 try {
                     const addresses = await getAddresses();
+
+                    if (hasShortDomain(addresses)) {
+                        return;
+                    }
 
                     // Prepare next signature
                     const nextAddressSignature = ((prevAddress: Address, nextEmailAddress: string) => {
