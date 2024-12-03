@@ -483,7 +483,7 @@
         "Ställ in åtkomstnivå"
       ],
       "Set extra password": [
-        "Ställ in extra lösenord"
+        "Ställ in extralösenord"
       ],
       "Setup 2FA": [
         "Ställ in 2FA"
@@ -1001,7 +1001,7 @@
         "Vi stötte på ett problem när vi startade ${ PASS_SHORT_APP_NAME }. Om problemet kvarstår, kontakta vår kundsupport för hjälp."
       ],
       "Wrong extra password": [
-        "Fel extra lösenord"
+        "Fel extralösenord"
       ],
       "Wrong password": [
         "Fel lösenord"
@@ -1283,7 +1283,7 @@
         "Stäng detta fönster för att använda en annan passkey-hanterare."
       ],
       "Confirm your extra password to proceed with its removal.": [
-        "Bekräfta ditt extra lösenord för att fortsätta med att ta bort det."
+        "Bekräfta ditt extralösenord för att fortsätta med att ta bort det."
       ],
       "Congratulations, your access has been confirmed": [
         "Grattis, din åtkomst har bekräftats"
@@ -1370,7 +1370,7 @@
         "Ange verifieringskod. Siffra ${ digit }."
       ],
       "Enter your extra password": [
-        "Ange ditt extra lösenord"
+        "Ange ditt extralösenord"
       ],
       "Enter your PIN code": [
         "Ange din PIN-kod"
@@ -1382,10 +1382,10 @@
         "Löper ut om ${ remainingTime }"
       ],
       "Extra password successfully created": [
-        "Extra lösenord skapat"
+        "Extralösenord skapat"
       ],
       "Extra password successfully removed": [
-        "Extra lösenord borttaget"
+        "Extralösenord borttaget"
       ],
       "Fill in the CSV with your data": [
         "Fyll i CSV med dina data"
@@ -1609,16 +1609,16 @@
         "Bekräfta ditt ${ BRAND_NAME }-lösenord för att exportera din ${ PASS_APP_NAME }-data"
       ],
       "Please confirm your extra password": [
-        "Bekräfta ditt extra lösenord"
+        "Bekräfta ditt extralösenord"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
-        "Bekräfta ditt extra lösenord för att exportera din ${ PASS_APP_NAME }-data"
+        "Bekräfta ditt extralösenord för att exportera din ${ PASS_APP_NAME }-data"
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
-        "Bekräfta ditt extra lösenord för att avregistrera ditt nuvarande lås."
+        "Bekräfta ditt extralösenord för att avregistrera ditt nuvarande lås."
       ],
       "Please confirm your extra password in order to update the auto-lock time.": [
-        "Bekräfta ditt extra lösenord för att uppdatera tiden för automatisk låsning."
+        "Bekräfta ditt extralösenord för att uppdatera tiden för automatisk låsning."
       ],
       "Please confirm your password": [
         "Bekräfta ditt lösenord"
@@ -1678,7 +1678,7 @@
         "Fyll snabbt i dina sparade inloggningsuppgifter automatiskt."
       ],
       "Registering extra password...": [
-        "Registrerar extra lösenord …"
+        "Registrerar extralösenord…"
       ],
       "Registering PIN lock failed": [
         "Registrering av PIN-lås misslyckades"
@@ -1687,7 +1687,7 @@
         "Tar bort alla inaktiva säkra länkar …"
       ],
       "Removing extra password...": [
-        "Tar bort extra lösenord …"
+        "Tar bort extralösenord…"
       ],
       "Removing secure link...": [
         "Tar bort säker länk …"
@@ -1774,7 +1774,7 @@
         "Den exporterade filen kommer att krypteras med PGP och kräver en stark lösenfras."
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
-        "Det extra lösenordet kommer att krävas för att använda ${ PASS_APP_NAME }. Det fungerar som ett extra lösenord utöver ditt ${ BRAND_NAME }-lösenord."
+        "Extralösenordet kommer att krävas för att använda ${ PASS_APP_NAME }. Det fungerar som ett extra lösenord utöver ditt ${ BRAND_NAME }-lösenord."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Följande ${ result.ignored.length } objekt kunde inte importeras:",
@@ -1835,7 +1835,7 @@
         "Lås upp ${ PASS_SHORT_APP_NAME } med ditt ${ BRAND_NAME }-lösenord"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
-        "Lås upp ${ PASS_SHORT_APP_NAME } med ditt extra lösenord"
+        "Lås upp ${ PASS_SHORT_APP_NAME } med ditt extralösenord"
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås upp den med din PIN-kod för att komma åt inställningarna"
@@ -2224,7 +2224,7 @@
         "Exportera"
       ],
       "Extra password": [
-        "Extra lösenord"
+        "Extralösenord"
       ],
       "Facebook account": [
         "Facebook-konto"
@@ -2479,7 +2479,7 @@
         "Fråga om att spara automatiskt när lösenord genereras"
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
-        "Skydda ${ PASS_APP_NAME } med ett extra lösenord"
+        "Skydda ${ PASS_APP_NAME } med ett extralösenord"
       ],
       "Rate us": [
         "Betygsätt oss"
@@ -2845,6 +2845,9 @@
       "Sign-in rejected": [
         "Inloggning avisad"
       ],
+      "Sign-in rejection failure": [
+        "Misslyckades avisa inloggning"
+      ],
       "Sign-in requested on another device. Was it you?": [
         "Inloggning begärd på annan enhet. Var det du?"
       ],
@@ -2909,7 +2912,7 @@
         "Fyll automatiskt"
       ],
       "Confirm extra password": [
-        "Bekräfta extra lösenord"
+        "Bekräfta extralösenord"
       ],
       "Confirm PIN code": [
         "Bekräfta PIN-kod"
@@ -2946,7 +2949,7 @@
         "Gillar du ${ PASS_APP_NAME }?"
       ],
       "Enter your extra password": [
-        "Ange ditt extra lösenord"
+        "Ange ditt extralösenord"
       ],
       "Enter your password": [
         "Ange ditt lösenord"
@@ -3057,10 +3060,10 @@
         "Observera att när alias väl har tagits bort kan de inte återställas."
       ],
       "Reject device?": [
-        "Avisa enhet?"
+        "Neka enhet?"
       ],
       "Remove extra password": [
-        "Ta bort extra lösenord"
+        "Ta bort extralösenord"
       ],
       "Remove secure link?": [
         "Tar bort säker länk?"
@@ -3078,7 +3081,7 @@
         "Ställ in åtkomstnivå"
       ],
       "Set extra password": [
-        "Ställ in extra lösenord"
+        "Ställ in extralösenord"
       ],
       "Set up 2FA for more security": [
         "Ställ in 2FA för mer säkerhet"
@@ -3238,13 +3241,13 @@
         "Utgångsdatum är inte i formatet MM/ÅÅ"
       ],
       "Extra password cannot be empty": [
-        "Extra lösenord kan inte vara tomt"
+        "Extralösenord kan inte vara tomt"
       ],
       "Extra password is required": [
-        "Extra lösenord är obligatoriskt"
+        "Extralösenord är obligatoriskt"
       ],
       "Extra password should have at least 8 characters": [
-        "Extra lösenord bör ha minst 8 tecken"
+        "Extralösenord bör ha minst 8 tecken"
       ],
       "Invalid alias prefix": [
         "Ogiltigt alias-prefix"
@@ -3311,7 +3314,7 @@
         "Verifiera din e-postadress för att använda valvdelning"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
-        "Att bort ditt extra lösenord kommer logga ut dig från alla enheter och avsluta alla aktiva sessioner."
+        "Att bort ditt extralösenord kommer logga ut dig från alla enheter och avsluta alla aktiva sessioner."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."

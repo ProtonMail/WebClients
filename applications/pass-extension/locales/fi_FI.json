@@ -1193,7 +1193,7 @@
         "Kun tietosi on tuotu, on suositeltavaa suojata tietosi poistamalla salasanasi sisältävän CSV-tiedosto."
       ],
       "Alias management features from SimpleLogin are coming soon!": [
-        "SimpleLoginin aliashallintaominaisuudet ovat tulossa pian!"
+        "SimpleLogin-aliasten hallintaominaisuudet ovat tulossa pian!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias on poistettu käytöstä. Et enää vastaanota osoitteeseen ${ item.aliasEmail } lähetettyjä sähköposteja"
@@ -1967,7 +1967,7 @@
         "${ PASS_APP_NAME } -istuntosi on lukittu."
       ],
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
-        "Tilisi on rajoitettu, koska organisaatiosi on pakottanut kaksivaiheisen tunnistautumisen. Ota kaksivaiheinen tunnistautuminen käyttöön tiliasetuksissasi tai ota yhteyttä ylläpitäjään."
+        "Tiliäsi on rajoitettu, koska organisaatiosi vaatii kaksivaiheisen tunnistautumisen. Ota se käyttöön tilisi asetuksista tai ole yhteydessä ylläpitoosi."
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
@@ -3312,6 +3312,9 @@
       ],
       "No results": [
         "Tuloksia ei löytynyt"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Synkronoinnin jälkeen aliasten poistaminen ${ PASS_SHORT_APP_NAME }ista poistaa ne myös SimpleLoginista."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Vain aakkosnumeeriset merkit, pisteet, väli- ja alaviivat sallitaan."
