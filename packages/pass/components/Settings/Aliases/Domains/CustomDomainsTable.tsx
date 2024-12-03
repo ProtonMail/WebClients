@@ -17,7 +17,7 @@ const getDomainStatusLabel = ({ OwnershipVerified, MxVerified }: CustomDomainOut
 };
 
 export const CustomDomainsTable: FC = () => {
-    const { canManage, customDomains, setAction, defaultAliasDomain, loading } = useAliasDomains();
+    const { customDomains, setAction, defaultAliasDomain, loading } = useAliasDomains();
 
     if (!loading && customDomains.length === 0) return null;
 
@@ -67,12 +67,10 @@ export const CustomDomainsTable: FC = () => {
                                                 <DropdownMenuButton
                                                     label={c('Action').t`Check settings`}
                                                     onClick={() => setAction({ type: 'info', domainID: domain.ID })}
-                                                    disabled={!canManage}
                                                 />
                                                 <DropdownMenuButton
                                                     label={c('Action').t`Check DNS`}
                                                     onClick={() => setAction({ type: 'dns', domainID: domain.ID })}
-                                                    disabled={!canManage}
                                                 />
                                                 <DropdownMenuButton
                                                     label={c('Action').t`Delete`}

@@ -16,7 +16,7 @@ import clsx from '@proton/utils/clsx';
 import { useAliasMailboxes } from './AliasMailboxesProvider';
 
 export const AliasMailboxesTable: FC = () => {
-    const { canManage, mailboxes, loading, onSetDefault, setAction } = useAliasMailboxes();
+    const { mailboxes, loading, onSetDefault, setAction } = useAliasMailboxes();
     const handleVerifyClick = (mailboxID: number) => setAction({ type: 'verify', mailboxID });
 
     const setDefault = useRequest(setDefaultMailbox, {
@@ -80,7 +80,7 @@ export const AliasMailboxesTable: FC = () => {
                                             >
                                                 {!IsDefault && (
                                                     <DropdownMenuButton
-                                                        disabled={!canManage || !Verified || setDefault.loading}
+                                                        disabled={!Verified || setDefault.loading}
                                                         label={c('Action').t`Make default`}
                                                         onClick={() =>
                                                             setDefault.dispatch({ defaultMailboxID: MailboxID })
@@ -92,7 +92,6 @@ export const AliasMailboxesTable: FC = () => {
                                                     <DropdownMenuButton
                                                         label={c('Action').t`Verify`}
                                                         onClick={() => handleVerifyClick(MailboxID)}
-                                                        disabled={!canManage}
                                                     />
                                                 )}
                                                 <DropdownMenuButton
