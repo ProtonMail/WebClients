@@ -9,7 +9,7 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
 import type { OpenCallbackProps } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
-import PostSubscriptionModal from './PostSubscriptionConfirmationModal';
+import PostSubscriptionModal from './PostSubscriptionModal';
 import type { PostSubscriptionFlowName } from './interface';
 
 interface Props extends Pick<OpenCallbackProps, 'onSubscribed'> {

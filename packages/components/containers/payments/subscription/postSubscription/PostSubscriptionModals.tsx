@@ -1,5 +1,27 @@
+import { type ReactNode } from 'react';
+
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import checkoutLoader from '@proton/styles/assets/img/post-subscription/checkout-loader.svg';
+
+export const PostSubscriptionModalWrapper = ({
+    children,
+    canClose,
+    ...modalProps
+}: { children: ReactNode; canClose: boolean } & ModalStateProps) => (
+    <ModalTwo
+        {...modalProps}
+        onClose={() => {
+            if (canClose) {
+                modalProps.onClose();
+            }
+        }}
+        className="modal-two--twocolors"
+    >
+        {children}
+    </ModalTwo>
+);
 
 export const PostSubscriptionLoadingModalContent = ({ title }: { title: string }) => (
     <ModalTwoContent

@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { TelemetryMailPostSubscriptionEvents } from '@proton/shared/lib/api/telemetry';
 
@@ -16,7 +15,6 @@ interface PostSubscriptionModalProps extends ModalStateProps {
 
 const PostSubscriptionModal = ({ name, step, ...modalProps }: PostSubscriptionModalProps) => {
     const config = name ? postSubscriptionConfig[name] : null;
-
     const sendTelemetryEvent = usePostSubscriptionTelemetry();
 
     useEffect(() => {
@@ -34,11 +32,7 @@ const PostSubscriptionModal = ({ name, step, ...modalProps }: PostSubscriptionMo
         return null;
     }
 
-    return (
-        <ModalTwo {...modalProps} className="modal-two--twocolors">
-            <config.modal onClose={modalProps.onClose} step={step} />
-        </ModalTwo>
-    );
+    return <config.modal modalProps={modalProps} step={step} />;
 };
 
 export default PostSubscriptionModal;
