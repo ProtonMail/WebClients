@@ -68,17 +68,17 @@ export const AliasMailboxesTable: FC = () => {
                                     </TableCell>
                                     <TableCell>
                                         <div className="flex justify-end">
-                                            <QuickActionsDropdown
-                                                icon="three-dots-horizontal"
-                                                color="weak"
-                                                shape="solid"
-                                                size="small"
-                                                className="button-xs ui-purple"
-                                                pill={false}
-                                                originalPlacement="bottom-end"
-                                                disabled={loading}
-                                            >
-                                                {!IsDefault && (
+                                            {!IsDefault && (
+                                                <QuickActionsDropdown
+                                                    icon="three-dots-horizontal"
+                                                    color="weak"
+                                                    shape="solid"
+                                                    size="small"
+                                                    className="button-xs ui-purple"
+                                                    pill={false}
+                                                    originalPlacement="bottom-end"
+                                                    disabled={loading}
+                                                >
                                                     <DropdownMenuButton
                                                         disabled={!Verified || setDefault.loading}
                                                         label={c('Action').t`Make default`}
@@ -87,19 +87,21 @@ export const AliasMailboxesTable: FC = () => {
                                                         }
                                                         loading={setDefault.loading}
                                                     />
-                                                )}
-                                                {!Verified && (
+                                                    {!Verified && (
+                                                        <DropdownMenuButton
+                                                            label={c('Action').t`Verify`}
+                                                            onClick={() => handleVerifyClick(MailboxID)}
+                                                        />
+                                                    )}
                                                     <DropdownMenuButton
-                                                        label={c('Action').t`Verify`}
-                                                        onClick={() => handleVerifyClick(MailboxID)}
+                                                        label={c('Action').t`Delete`}
+                                                        disabled={mailboxes.length === 1}
+                                                        onClick={() =>
+                                                            setAction({ type: 'delete', mailboxID: MailboxID })
+                                                        }
                                                     />
-                                                )}
-                                                <DropdownMenuButton
-                                                    label={c('Action').t`Delete`}
-                                                    disabled={IsDefault || mailboxes.length === 1}
-                                                    onClick={() => setAction({ type: 'delete', mailboxID: MailboxID })}
-                                                />
-                                            </QuickActionsDropdown>
+                                                </QuickActionsDropdown>
+                                            )}
                                         </div>
                                     </TableCell>
                                 </TableRow>
