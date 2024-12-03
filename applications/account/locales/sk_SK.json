@@ -70,11 +70,11 @@
       "Accept": [
         "Prijať"
       ],
-      "Activate": [
-        "Aktivovať"
-      ],
       "activate": [
         "aktivovať"
+      ],
+      "Activate": [
+        "Aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -1183,6 +1183,9 @@
       "Upgrade now": [
         "Aktualizovať teraz"
       ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
       "Upgrade to Business": [
         "Aktualizovať na Biznis predplatné"
       ],
@@ -1674,6 +1677,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ discountedPrice } platí počas prvých ${ cycle } mesiacov. Potom sa automaticky obnoví za zľavnenú cenu ${ nextPrice } na ${ renewalLength } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ discountedPrice } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ nextPrice }. Službu môžete kedykoľvek zrušiť."
       ]
@@ -4521,6 +4527,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Načítanie aktívnych relácií zlyhalo. Prosím ${ refresh } alebo to skúste neskôr."
       ],
+      "Failed to load OAuth modal.": [
+        "Nepodarilo sa načítať OAuth modal."
+      ],
       "Failed to process the logo": [
         "Spracovanie loga zlyhalo"
       ],
@@ -4723,7 +4732,7 @@
         "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
       ],
       "Please upload a square logo": [
-        "Nahrajte logo v štvorcovom tvare"
+        "Nahrajte logo v štvorcovom tvare, prosím"
       ],
       "Please upload an xml file": [
         "Nahrajte XML súbor"
@@ -7584,7 +7593,7 @@
         "End-to-end šifrovanie emailov je pre túto skupinu vypnuté. Môže byť povolené."
       ],
       "End-to-end email encryption is enabled for this group.": [
-        "Pre túto skupinu je end-to-end šifrovanie emailov aktivované."
+        "Pre túto skupinu je end-to-end šifrovanie emailov povolené."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa koncového bodu získaná od poskytovateľa identity (napr. https://idp.example.com/sso/saml)."
@@ -7729,9 +7738,6 @@
       ],
       "High Priority": [
         "Vysoká priorita"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Verejný kľúč poskytovateľa identity na podpisovanie autentifikačných overení. Malo by tu byť miesto na stiahnutie alebo skopírovanie hash certifikátu od poskytovateľa identity. Stačí vložiť hash certifikátu do poľa textovej oblasti."
@@ -8344,6 +8350,12 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Vezmite prosím na vedomie, že ak zmažete filter ${ nameDeleted }, prestaneme spracovávať všetky automatické akcie, ktoré spúšťa."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kredit.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú ${ creditsRemaining } kredity.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov."
       ],
       "please open a support ticket": [
         "otvorte, prosím, žiadosť o technickú podporu"
@@ -9360,7 +9372,7 @@
         "Pre zaistenie správnej emailovej adresy pre overenie môžete tento údaj jedenkrát upraviť."
       ],
       "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Môžete zapnúť log overovania, aby ste mali prehľad, kedy a z ktorej IP adresy bolo pristúpené k vášmu účtu. Budeme zaznamenávať IP adresu a čas prístupu k vášmu účtu, rovnako ako nepodarené prihlásenia."
+        "Môžete zapnúť log overovania, aby ste mali prehľad, kedy a z ktorej IP adresy bolo pristúpené k vášmu účtu. Budeme zaznamenávať IP adresu a čas prístupu k vášmu účtu rovnako, ako nepodarené prihlásenia."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Sekciu Fotografie môžete povoliť v rozhraní pomocou prepínača nižšie."
@@ -10123,6 +10135,9 @@
       "5 minutes": [
         "5 minútach"
       ],
+      "Account holder": [
+        "Vlastník účtu"
+      ],
       "Account storage": [
         "Úložisko účtu"
       ],
@@ -10574,7 +10589,7 @@
         "Darčekový kód"
       ],
       "Group address": [
-        "Skupinové adresy"
+        "Skupinová adresa"
       ],
       "Group members": [
         "Členovia skupiny"
@@ -11998,9 +12013,6 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Začnite za ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
       ],
@@ -12788,12 +12800,6 @@
       "${ shortPlan.title } Trial": [
         "Skúšobná verzia ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ price }": [
-        "Získajte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ],
       "Your account's usage": [
         "Využitie vášho účtu"
       ]
@@ -12974,6 +12980,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Obnoviť heslá a dvojstupňové overenie používateľov"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Smerujte vašu internetovú prevádzku cez sieť Tor jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
@@ -14325,8 +14334,23 @@
       "Processing payment": [
         "Spracováva sa platba"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Obnovuje sa za ${ renewPrice }, zrušiť môžete kedykoľvek."
+      ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvvých ${ subscriptionLength } mesiacov. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ subscriptionLength } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLength } mesiac. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPrice }. Službu môžete kedykoľvek zrušiť."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakcia bola úspešne rozpoznaná. Kredity budú pripísané na váš účet po úplnom potvrdení transakcie."
@@ -14775,7 +14799,7 @@
         "Pridať email pre obnovenie"
       ],
       "Add a recovery email address": [
-        "Pridajte emailovú adresu pre obnovenie"
+        "Pridajte emailovú adresu na obnovenie,"
       ],
       "Add a recovery phone number": [
         "Pridajte telefónne číslo určené na obnovenie"
@@ -14889,7 +14913,7 @@
         "pre obnovenie vášho účtu a dát, ak kedykoľvek stratíte prístup"
       ],
       "to recover your account if you're ever locked out": [
-        "pre obnovenie vášho účtu, ak kedykoľvek stratíte prístup"
+        "aby ste mohli obnoviť svoj účet, ak by ste ho niekedy zablokovali."
       ],
       "Update your Recovery Kit": [
         "Aktualizujte si svoju sadu pre obnovenie"
@@ -17784,6 +17808,9 @@
       "Customize your mail import": [
         "Prispôsobiť import vášho emailu"
       ],
+      "Dark Web Monitoring": [
+        "Monitorovanie Dark Webu"
+      ],
       "Dashboard": [
         "Prehľad"
       ],
@@ -18895,7 +18922,7 @@
         "Nastavte predvolené rozloženie vašej schránky."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
-        "V odosielaných emailoch nastaví nasledujúce päty: ${ signature } Odkaz odkazuje na váš odporúčací odkaz. Zápätie sa zobrazí pod vašim podpisom. Podpis si môžete kedykoľvek prispôsobiť v nastavení."
+        "V odosielaných emailoch nastaví nasledujúce päty: ${ signature } Odkaz odkazuje na váš odporúčací odkaz. Päta sa zobrazí pod vašim podpisom. Podpis si môžete kedykoľvek prispôsobiť v nastavení."
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Zobrazí obrázok každého odosielateľa. Ak nie je k dispozícii obrázok, zobrazia sa iniciály odosielateľa."
@@ -19057,6 +19084,9 @@
     "Tor out of date": {
       "stable release": [
         "stabilná verzia"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na poslednú ${ stableRelease }"
       ]
     },
     "unprivatization": {

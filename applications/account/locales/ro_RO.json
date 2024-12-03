@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -7675,9 +7675,6 @@
       "High Priority": [
         "Prioritate înaltă"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Cheia publică a furnizorului de identitate pentru a semna afirmațiile de autentificare. Ar trebui să existe un loc pentru a descărca sau copia hash-ul certificatului de la furnizorul de identitate. Doar lipiți hash-ul certificatului în câmpul de text."
       ],
@@ -10049,6 +10046,9 @@
       "5 minutes": [
         "5 minute"
       ],
+      "Account holder": [
+        "Titular cont"
+      ],
       "Account storage": [
         "Spațiu cont"
       ],
@@ -11915,9 +11915,6 @@
       "From ${ price }": [
         "De la ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Începeți cu ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Începând de la ${ priceMailPlus }"
       ],
@@ -12679,12 +12676,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Probare ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Începând de la ${ price }"
       ],
       "Your account's usage": [
         "Utilizare cont"
@@ -17641,6 +17632,9 @@
       ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorizare pe internetul ascuns"
       ],
       "Dashboard": [
         "Panou general"

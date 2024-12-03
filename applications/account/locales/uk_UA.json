@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -1135,6 +1135,9 @@
       "Upgrade now": [
         "Покращити"
       ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Покращити до ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
       "Upgrade to Business": [
         "Перейти на Business"
       ],
@@ -2021,6 +2024,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Редагування (перегляд, створення й редагування подробиць події)"
+      ],
       "View (see all event details)": [
         "Перегляд (усі подробиці події)"
       ]
@@ -3465,8 +3471,23 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Автоматично видаляйте спам і видалені повідомлення та розблокуйте більше преміумфункцій при покращенні."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Автоматично очищати листи, що переміщені в Кошик і Спам більше ніж 30 днів тому."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Автоматично сортувати ваші вхідні повідомлення, перш ніж вони потрапляють до вхідних."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Вітаємо! Ви зібрали максимум з ${ rewardsLimit } безплатних місяців користування ${ plusPlanName }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Миттєво створіть конференцію Zoom і додайте відомості для приєднання до події."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Створюйте стільки міток або тек, скільки вам потрібно щоб зберігати вхідну скриньку охайною."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Увімкніть ${ PROTON_SENTINEL_NAME }, щоб отримати доступ до цих функцій"
@@ -3483,6 +3504,9 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Передплатіть тарифний план, щоб відокремити різні аспекти свого життя за допомогою декількох адрес електронної пошти та отримати доступ до інших преміумфункцій."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Щоб імпортувати з використанням файлів CSV і VCF, розмір файлу не має перевищувати ${ MAX_IMPORT_FILE_SIZE_STRING }, а кількість контактів – ${ MAX_IMPORT_CONTACTS_STRING }. Якщо ваш файл більший, розділіть його на декілька менших. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
       ],
@@ -3491,6 +3515,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Відстежуйте стан і активність ваших запрошень."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Розблокуйте ${ activatePmUser } для яскравої та простої адреси електронної пошти."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Передплатіть тарифний план і розблокуйте короткі адреси електронної пошти та інші преміальні функції."
@@ -4265,6 +4292,9 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не вдалося отримати активні сеанси. ${ refresh } або повторіть спробу пізніше."
+      ],
+      "Failed to load OAuth modal.": [
+        "Не вдалося завантажити діалогове вікно OAuth."
       ],
       "Failed to process the logo": [
         "Не вдалося обробити логотип"
@@ -5135,6 +5165,12 @@
       "Manage user accounts": [
         "Керувати обліковими записами користувачів"
       ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Можна прийняти лише ${ n } запрошення протягом 6 місяців",
+        "Можна прийняти лише ${ n } запрошення протягом 6 місяців",
+        "Можна прийняти лише ${ n } запрошень протягом 6 місяців",
+        "Можна прийняти лише ${ n } запрошень протягом 6 місяців"
+      ],
       "Pending": [
         "У черзі"
       ],
@@ -5164,6 +5200,18 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас запросили приєднатися до ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Ви досягли обмеження в ${ n } прийняте запрошення за 6 місяців.",
+        "Ви досягли обмеження в ${ n } прийняті запрошення за 6 місяців.",
+        "Ви досягли обмеження в ${ n } прийнятих запрошень за 6 місяців.",
+        "Ви досягли обмеження в ${ n } прийнятих запрошень за 6 місяців."
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Ви досягли обмеження в ${ n } прийняте запрошення за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів.",
+        "Ви досягли обмеження в ${ n } прийняті запрошення за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів.",
+        "Ви досягли обмеження в ${ n } прийнятих запрошень за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів.",
+        "Ви досягли обмеження в ${ n } прийнятих запрошень за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів."
       ],
       "You have successfully joined the family group": [
         "Ви успішно приєдналися до сімейної групи"
@@ -8800,6 +8848,12 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ви не вказали спосіб відновлення, тому неможливо відновити обліковий запис при втраті пароля. Продовжити без способу відновлення?"
       ],
+      "You have ${ availableCount } new server available.": [
+        "Вам доступний ${ availableCount } новий сервер.",
+        "Вам доступні ${ availableCount } нові сервери.",
+        "Вам доступні ${ availableCount } нових серверів.",
+        "Вам доступні ${ availableCount } нових серверів."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас є пробний період передплати ${ planTitle }. Якщо ви бажаєте продовжити передплату після пробного періоду, будь ласка, додайте спосіб оплати."
       ],
@@ -9529,6 +9583,9 @@
       "And": [
         "Та"
       ],
+      "Anderson": [
+        "Андерсон"
+      ],
       "ANY": [
         "БУДЬ-ЯКЕ"
       ],
@@ -9645,6 +9702,9 @@
       ],
       "Colors": [
         "Кольори"
+      ],
+      "Company name": [
+        "Назва компанії"
       ],
       "Composer": [
         "Редактор"
@@ -10207,6 +10267,9 @@
       "Reveal password": [
         "Показати пароль"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -10305,6 +10368,9 @@
       ],
       "Then": [
         "Потім"
+      ],
+      "Thomas": [
+        "Томас"
       ],
       "Time format": [
         "Формат часу"
@@ -11240,11 +11306,17 @@
       "From ${ price }": [
         "Від ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Починаючи з ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Покращити"
       ],
       "Upgrade now": [
         "Покращити"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Покращити до ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -14449,6 +14521,9 @@
       "/ month": [
         "/ місяць"
       ],
+      "/month": [
+        "/місяць"
+      ],
       "1 year": [
         "1 рік"
       ],
@@ -15579,6 +15654,12 @@
       "Activate user": [
         "Активувати користувача"
       ],
+      "Add ${ totalServerCount } server?": [
+        "Додати ${ totalServerCount } сервер?",
+        "Додати ${ totalServerCount } сервери?",
+        "Додати ${ totalServerCount } серверів?",
+        "Додати ${ totalServerCount } серверів?"
+      ],
       "Add a custom logo": [
         "Додати власний логотип"
       ],
@@ -15836,6 +15917,9 @@
       ],
       "Customize your mail import": [
         "Налаштуйте імпорт своєї пошти"
+      ],
+      "Dark Web Monitoring": [
+        "Моніторинг Темного Вебу"
       ],
       "Dashboard": [
         "Огляд"
@@ -16097,6 +16181,9 @@
       ],
       "Get the apps": [
         "Отримати програми"
+      ],
+      "Get Zooming faster": [
+        "Швидше приєднання до конференцій Zoom"
       ],
       "Gift": [
         "Подарунок"

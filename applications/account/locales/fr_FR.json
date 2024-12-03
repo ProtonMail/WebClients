@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -561,6 +561,9 @@
       ],
       "Generate token": [
         "Générer un jeton"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Profitez de ${ MAIL_SHORT_APP_NAME } Plus pour ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
@@ -3580,6 +3583,9 @@
       ]
     },
     "Description": {
+      "Also included": [
+        "Également inclus"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Supprimez automatiquement les messages indésirables et ceux dans la corbeille, et débloquez davantage de fonctionnalités premium lorsque vous améliorez votre abonnement."
       ],
@@ -3612,6 +3618,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Recevez jusqu'à ${ credits } de crédits en invitant vos amis à rejoindre ${ BRAND_NAME }."
@@ -7605,9 +7614,6 @@
       "High Priority": [
         "Priorité élevée"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Il s'agit de la clé publique de votre fournisseur d'identité pour signer les déclarations d'authentification. Téléchargez ou copiez le hash du certificat de votre fournisseur d'identité. Il vous suffit ensuite de coller ce dernier dans le champ texte correspondant."
       ],
@@ -9948,6 +9954,9 @@
       "5 minutes": [
         "5 minutes"
       ],
+      "Account holder": [
+        "Titulaire du compte"
+      ],
       "Account storage": [
         "Espace de stockage du compte"
       ],
@@ -11799,8 +11808,8 @@
       "From ${ price }": [
         "À partir de ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Commencez pour ${ price }"
+      "Get started for ${ priceCoupon }": [
+        "Commencez pour ${ priceCoupon }"
       ],
       "Starting from ${ priceMailPlus }": [
         "À partir de ${ priceMailPlus }"
@@ -11951,6 +11960,9 @@
       ],
       "10 email addresses/aliases": [
         "10 adresses e-mail/alias"
+      ],
+      "10 more premium features": [
+        "10 fonctionnalités premium en plus"
       ],
       "10-year file version history": [
         "Historique des versions des fichiers sur 10 ans"
@@ -12539,11 +12551,11 @@
       "${ shortPlan.title } Trial": [
         "Essai de ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ price }": [
-        "Profitez de Mail Plus pour ${ price }"
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Profitez de Mail Plus pour ${ priceCoupon }"
       ],
-      "Starting from ${ price }": [
-        "À partir de ${ price }"
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
       ],
       "Your account's usage": [
         "Utilisation de votre compte"
@@ -17409,6 +17421,9 @@
       ],
       "Customize your mail import": [
         "Personnalisez votre importation de messagerie"
+      ],
+      "Dark Web Monitoring": [
+        "Surveillance du dark web"
       ],
       "Dashboard": [
         "Tableau de bord"

@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -1183,6 +1183,9 @@
       "Upgrade now": [
         "Atualizar agora"
       ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
       "Upgrade to Business": [
         "Fazer upgrade para o Business"
       ],
@@ -1664,6 +1667,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ discountedPrice } é válido nos primeiros ${ cycle } meses. Em seguida, será renovado automaticamente pelo preço com desconto de ${ nextPrice } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ discountedPrice } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ nextPrice } todo mês. Você pode cancelar a qualquer momento."
       ]
@@ -4498,6 +4504,9 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Erro ao obter sessões ativas. ${ refresh } ou tente novamente mais tarde."
+      ],
+      "Failed to load OAuth modal.": [
+        "Falha ao carregar o modal OAuth."
       ],
       "Failed to process the logo": [
         "Falha no processamento do logotipo"
@@ -7599,9 +7608,6 @@
       "High Priority": [
         "Alta prioridade"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Chave pública do provedor de identidade para assinar declarações de autenticação. Deve haver um local para baixar ou copiar o hash do certificado do provedor de identidade. Basta colar o hash do certificado no campo da área de texto."
       ],
@@ -7922,6 +7928,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Carregando o calendário, aguarde. Você será redirecionado à nossa plataforma de agendamento Calendly numa nova guia."
       ],
+      "Loading eduGAIN data...": [
+        "Carregando os dados do eduGAIN..."
+      ],
       "Loading gateways monitoring current status.": [
         "Carregando o estado atual de monitoramento dos gateways."
       ],
@@ -8038,6 +8047,9 @@
       ],
       "No logs yet.": [
         "Ainda não há registros."
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Nenhuma organização ativada com **eduGAIN** par **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Neste momento, não é necessário pagamento."
@@ -8196,6 +8208,10 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Observe que, se você excluir o filtro ${ nameDeleted }, interromperemos o processamento de todas as ações automatizadas que ele aciona."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes.",
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "please open a support ticket": [
         "abra um ticket de suporte"
@@ -8653,6 +8669,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Esta mensagem não chegará à equipe de suporte, se você tiver um problema com nossos serviços ou precisar de maiores ações de nossa parte ${ supportLink }."
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "A organização está ativado com **eduGAIN** par **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "O link da promoção expirou"
@@ -9923,6 +9942,9 @@
       "5 minutes": [
         "5 minutos"
       ],
+      "Account holder": [
+        "Titular da conta"
+      ],
       "Account storage": [
         "Armazenamento da conta"
       ],
@@ -10845,6 +10867,9 @@
       "User": [
         "Usuário"
       ],
+      "User affiliations": [
+        "Afiliações do usuário"
+      ],
       "User's new password": [
         "Nova senha do usuário"
       ],
@@ -11045,6 +11070,11 @@
       ],
       "To: ${ to }": [
         "Para: ${ to }"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Selecione um provedor de identidade para começar"
       ]
     },
     "Limit of calendars reached": {
@@ -11771,9 +11801,6 @@
       ],
       "From ${ price }": [
         "A partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Iniciando a partir de ${ priceMailPlus }"
@@ -12512,12 +12539,6 @@
       "${ shortPlan.title } Trial": [
         "Avaliação do ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ price }": [
-        "Obtenha Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ],
@@ -12699,6 +12720,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Redefina as senhas de usuários e redefina a autenticação de dois fatores para os usuários"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Envie todo o seu tráfego na internet por meio da rede Tor com um único clique"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com um armazenamento cloud criptografado. Inclui sincronização automática, compartilhamento de arquivo criptografado, e mais."
@@ -14053,8 +14077,20 @@
       "Processing payment": [
         "Processando pagamento"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Renova por ${ renewPrice }, cancele a qualquer momento."
+      ],
       "Select billing country to pay": [
         "Selecione o país de cobrança para pagar"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "A transação foi detectada com sucesso. Os créditos serão adicionados à sua conta assim que a transação for totalmente confirmada."
@@ -17274,6 +17310,9 @@
       "Choose an account": [
         "Escolha uma conta"
       ],
+      "Choose user affiliations": [
+        "Escolher as afiliações do usuário"
+      ],
       "Clear": [
         "Limpar"
       ],
@@ -17391,6 +17430,9 @@
       ],
       "Customize your mail import": [
         "Personalize sua importação de e-mail"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoramento da Dark Web"
       ],
       "Dashboard": [
         "Painel de controle"
@@ -18443,6 +18485,9 @@
       "Device information such as operating system": [
         "Informações do dispositivo, como sistema operacional"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Nome de exibição para a entidade no banco de dados de eduGAIN"
+      ],
       "Each imported email will have this label": [
         "Cada e-mail importado terá este marcador"
       ],
@@ -18660,6 +18705,9 @@
     "Tor out of date": {
       "stable release": [
         "versão estável"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Esta versão do navegador Tor não é suportada. Atualize-o para a última ${ stableRelease }."
       ]
     },
     "unprivatization": {
