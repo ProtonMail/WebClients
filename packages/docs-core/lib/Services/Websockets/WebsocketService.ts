@@ -310,8 +310,8 @@ export class WebsocketService implements WebsocketServiceInterface {
     return this.connections[linkId]
   }
 
-  isConnected(document: NodeMeta): boolean {
-    const record = this.getConnectionRecord(document.linkId)
+  isConnected(nodeMeta: NodeMeta | PublicNodeMeta): boolean {
+    const record = this.getConnectionRecord(nodeMeta.linkId)
     if (!record) {
       return false
     }
@@ -319,8 +319,8 @@ export class WebsocketService implements WebsocketServiceInterface {
     return record.connection.isConnected()
   }
 
-  async reconnectToDocumentWithoutDelay(document: NodeMeta): Promise<void> {
-    const record = this.getConnectionRecord(document.linkId)
+  async reconnectToDocumentWithoutDelay(nodeMeta: NodeMeta | PublicNodeMeta): Promise<void> {
+    const record = this.getConnectionRecord(nodeMeta.linkId)
     if (!record) {
       throw new Error('Connection not found')
     }
@@ -336,10 +336,10 @@ export class WebsocketService implements WebsocketServiceInterface {
   }
 
   async handleDocumentUpdateDebouncerFlush(
-    document: NodeMeta | PublicNodeMeta,
+    nodeMeta: NodeMeta | PublicNodeMeta,
     mergedUpdate: Uint8Array,
   ): Promise<void> {
-    const record = this.getConnectionRecord(document.linkId)
+    const record = this.getConnectionRecord(nodeMeta.linkId)
     if (!record) {
       throw new Error('Connection not found')
     }
@@ -355,7 +355,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     const encryptedContent = await this.encryptMessage(
       mergedUpdate,
       metadata,
-      document,
+      nodeMeta,
       keys,
       BroadcastSource.DocumentBufferFlush,
     )
@@ -380,8 +380,11 @@ export class WebsocketService implements WebsocketServiceInterface {
     metrics.docs_document_updates_total.increment({})
   }
 
-  async sendDocumentUpdateMessage(document: NodeMeta, rawContent: Uint8Array | Uint8Array[]): Promise<void> {
-    const record = this.getConnectionRecord(document.linkId)
+  async sendDocumentUpdateMessage(
+    nodeMeta: NodeMeta | PublicNodeMeta,
+    rawContent: Uint8Array | Uint8Array[],
+  ): Promise<void> {
+    const record = this.getConnectionRecord(nodeMeta.linkId)
     if (!record) {
       throw new Error('Connection not found')
     }
@@ -394,12 +397,12 @@ export class WebsocketService implements WebsocketServiceInterface {
   }
 
   async sendEventMessage(
-    document: NodeMeta,
+    nodeMeta: NodeMeta | PublicNodeMeta,
     rawContent: Uint8Array,
     type: EventTypeEnum,
     source: BroadcastSource,
   ): Promise<void> {
-    const record = this.getConnectionRecord(document.linkId)
+    const record = this.getConnectionRecord(nodeMeta.linkId)
     if (!record) {
       throw new Error('Connection not found')
     }
@@ -429,7 +432,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       version: ClientEventVersion.V1,
     }
 
-    const encryptedContent = await this.encryptMessage(rawContent, metadata, document, keys, source)
+    const encryptedContent = await this.encryptMessage(rawContent, metadata, nodeMeta, keys, source)
     const message = CreateClientEventMessage({
       content: encryptedContent,
       type: type,

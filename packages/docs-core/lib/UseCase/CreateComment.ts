@@ -1,14 +1,15 @@
-import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { Comment } from '../Models'
-import type { CommentInterface, CommentType } from '@proton/docs-shared'
-import { ServerTime } from '@proton/docs-shared'
 import { GenerateUUID } from '../Util/GenerateUuid'
+import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
+import { isPrivateDocumentKeys } from '../Types/DocumentEntitlements'
+import { Result } from '@proton/docs-shared'
+import { ServerTime } from '@proton/docs-shared'
+import metrics from '@proton/metrics'
+import type { CommentInterface, CommentType } from '@proton/docs-shared'
+import type { DocsApi } from '../Api/DocsApi'
 import type { EncryptComment } from './EncryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
-import { Result } from '../Domain/Result/Result'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import type { DocsApi } from '../Api/DocsApi'
-import metrics from '@proton/metrics'
 
 /**
  * Creates and encrypts a new comment in a thread with the API.
@@ -22,8 +23,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
   async execute(dto: {
     text: string
     threadID: string
-    lookup: NodeMeta
-    keys: DocumentKeys
+    entitlements: PublicDocumentEntitlements | DocumentEntitlements
     commentsState: LocalCommentsState
     type: CommentType
     decryptedDocumentName: string | null
@@ -39,7 +39,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       ServerTime.now(),
       dto.text,
       null,
-      dto.keys.userOwnAddress,
+      isPrivateDocumentKeys(dto.entitlements.keys) ? dto.entitlements.keys.userOwnAddress : undefined,
       [],
       true,
       dto.type,
@@ -47,7 +47,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
 
     dto.commentsState.addComment(localComment, dto.threadID)
 
-    const encryptionResult = await this.encryptComment.execute(dto.text, thread.markID, dto.keys)
+    const encryptionResult = await this.encryptComment.execute(dto.text, thread.markID, dto.entitlements.keys)
 
     if (encryptionResult.isFailed()) {
       dto.commentsState.deleteComment({ commentID: localComment.id, threadID: dto.threadID })
@@ -56,31 +56,29 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
 
     const encryptedValue = encryptionResult.getValue()
 
-    const result = await this.api.addCommentToThread({
-      volumeId: dto.lookup.volumeId,
-      linkId: dto.lookup.linkId,
-      threadId: dto.threadID,
-      encryptedContent: encryptedValue,
-      parentCommentId: null,
-      authorEmail: dto.keys.userOwnAddress,
-      type: dto.type,
-      decryptedDocumentName: dto.decryptedDocumentName,
-    })
+    const result = await this.api.addCommentToThread(
+      {
+        threadId: dto.threadID,
+        encryptedContent: encryptedValue,
+        parentCommentId: null,
+        type: dto.type,
+        decryptedDocumentName: dto.decryptedDocumentName,
+      },
+      dto.entitlements,
+    )
+
     if (result.isFailed()) {
       metrics.docs_comments_error_total.increment({
         reason: 'server_error',
       })
 
       dto.commentsState.deleteComment({ commentID: localComment.id, threadID: dto.threadID })
-      return Result.fail(result.getError())
+      return Result.fail(result.getError().message)
     }
 
     const { Comment: commentFromResponse } = result.getValue()
 
     const emailToUse = commentFromResponse.AuthorEmail || commentFromResponse.Author
-    if (!emailToUse) {
-      return Result.fail('No author email or author address found in comment')
-    }
 
     const comment = new Comment(
       commentFromResponse.CommentID,

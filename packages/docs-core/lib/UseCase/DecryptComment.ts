@@ -1,29 +1,36 @@
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { VERIFICATION_STATUS } from '@proton/crypto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import type { DocumentKeys } from '@proton/drive-store'
-import { GetAssociatedEncryptionDataForComment } from './GetAdditionalEncryptionData'
+import { GetAssociatedEncryptionDataForComment, isAnonymousComment } from './GetAdditionalEncryptionData'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { Comment } from '../Models'
 import { ServerTime } from '@proton/docs-shared'
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import metrics from '@proton/metrics'
 import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'
+import { isPrivateDocumentKeys, type PublicDocumentKeys } from '../Types/DocumentEntitlements'
 
 export class DecryptComment implements UseCaseInterface<Comment> {
   constructor(private encryption: EncryptionService<EncryptionContext.PersistentComment>) {}
 
-  async execute(dto: CommentResponseDto, markId: string, keys: DocumentKeys): Promise<Result<Comment>> {
+  async execute(
+    dto: CommentResponseDto,
+    markId: string,
+    keys: DocumentKeys | PublicDocumentKeys,
+  ): Promise<Result<Comment>> {
     const emailToUse = dto.AuthorEmail || dto.Author
-    if (!emailToUse) {
-      return Result.fail('No author email or author address found in comment')
+    const aad = GetAssociatedEncryptionDataForComment({ authorAddress: emailToUse, markId })
+
+    if (!emailToUse && !isAnonymousComment(aad)) {
+      return Result.fail('Decryption mismatch; no author email or author address found in private comment')
     }
 
     const decrypted = await this.encryption.decryptData(
       base64StringToUint8Array(dto.Content),
-      GetAssociatedEncryptionDataForComment({ authorAddress: emailToUse, markId }),
+      aad,
       keys.documentContentKey,
     )
 
@@ -35,35 +42,42 @@ export class DecryptComment implements UseCaseInterface<Comment> {
       return Result.fail(`Comment decryption failed: ${decrypted.getError()}`)
     }
 
-    const verificationKey = await this.encryption.getVerificationKey(emailToUse)
+    /** Cannot verify signatures if public viewier/editor, as API to retrieve public keys of signer is not available */
+    if (isPrivateDocumentKeys(keys) && !isAnonymousComment(aad)) {
+      if (!emailToUse) {
+        return Result.fail('Cannot verify; no author email or author address found in private comment')
+      }
 
-    if (verificationKey.isFailed()) {
-      return Result.fail(`Comment verification key failed: ${verificationKey.getError()}`)
-    }
+      const verificationKey = await this.encryption.getVerificationKey(emailToUse)
 
-    const verifyResult = await this.encryption.verifyData(
-      decrypted.getValue().content,
-      decrypted.getValue().signature,
-      GetAssociatedEncryptionDataForComment({ authorAddress: emailToUse, markId }),
-      verificationKey.getValue(),
-    )
+      if (verificationKey.isFailed()) {
+        return Result.fail(`Comment verification key failed: ${verificationKey.getError()}`)
+      }
 
-    if (verifyResult.isFailed()) {
-      metrics.docs_comments_download_error_total.increment({
-        reason: 'decryption_error',
-      })
+      const verifyResult = await this.encryption.verifyData(
+        decrypted.getValue().content,
+        decrypted.getValue().signature,
+        aad,
+        verificationKey.getValue(),
+      )
 
-      return Result.fail(`Comment verifyResult is failed: ${verifyResult.getError()}`)
-    }
+      if (verifyResult.isFailed()) {
+        metrics.docs_comments_download_error_total.increment({
+          reason: 'decryption_error',
+        })
 
-    const verifyValue = verifyResult.getValue()
+        return Result.fail(`Comment verifyResult is failed: ${verifyResult.getError()}`)
+      }
 
-    if (verifyValue !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-      metrics.docs_comments_download_error_total.increment({
-        reason: 'decryption_error',
-      })
+      const verifyValue = verifyResult.getValue()
 
-      return Result.fail(`Comment content verification failed: ${verifyValue}`)
+      if (verifyValue !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        metrics.docs_comments_download_error_total.increment({
+          reason: 'decryption_error',
+        })
+
+        return Result.fail(`Comment content verification failed: ${verifyValue}`)
+      }
     }
 
     return Result.ok(

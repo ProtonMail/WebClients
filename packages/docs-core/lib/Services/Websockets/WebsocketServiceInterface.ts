@@ -9,25 +9,25 @@ export interface WebsocketServiceInterface {
     keys: DocumentKeys | PublicDocumentKeys,
     options: { commitId: () => string | undefined },
   ): WebsocketConnectionInterface
-  isConnected(document: NodeMeta): boolean
+  isConnected(nodeMeta: NodeMeta | PublicNodeMeta): boolean
 
   sendDocumentUpdateMessage(
-    document: NodeMeta,
+    document: NodeMeta | PublicNodeMeta,
     rawContent: Uint8Array | Uint8Array[],
     source: BroadcastSource,
   ): Promise<void>
   sendEventMessage(
-    document: NodeMeta,
+    document: NodeMeta | PublicNodeMeta,
     rawContent: Uint8Array,
     type: EventTypeEnum,
     source: BroadcastSource,
   ): Promise<void>
 
   flushPendingUpdates(): void
-  reconnectToDocumentWithoutDelay(document: NodeMeta): Promise<void>
+  reconnectToDocumentWithoutDelay(nodeMeta: NodeMeta | PublicNodeMeta): Promise<void>
   retryAllFailedDocumentUpdates(): void
 
-  debugSendCommitCommandToRTS(document: NodeMeta, keys: DocumentKeys): Promise<void>
-  closeConnection(document: { linkId: string }): void
+  debugSendCommitCommandToRTS(nodeMeta: NodeMeta | PublicNodeMeta, keys: DocumentKeys): Promise<void>
+  closeConnection(nodeMeta: NodeMeta | PublicNodeMeta): void
   destroy(): void
 }

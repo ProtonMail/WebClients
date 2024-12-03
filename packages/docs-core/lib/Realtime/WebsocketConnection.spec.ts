@@ -6,7 +6,7 @@ import {
 import { getWebSocketServerURL } from './getWebSocketServerURL'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { WebsocketCallbacks } from '@proton/docs-shared'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 import { MetricService } from '../Services/Metrics/MetricService'
 import type { Api } from '@proton/shared/lib/interfaces'
 

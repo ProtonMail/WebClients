@@ -16,7 +16,7 @@ import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import type { EncryptionContext } from './EncryptionContext'
 import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
 import { HKDF_SALT_SIZE } from '../../Crypto/Constants'
-import { Result } from '../../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 
 export class EncryptionService<C extends EncryptionContext> {

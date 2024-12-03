@@ -1,4 +1,4 @@
-import { Result } from '../Domain/Result/Result'
+import { ApiResult, Result } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
 import type { DecryptCommit } from './DecryptCommit'
 import type { EncryptMessage } from './EncryptMessage'
@@ -33,7 +33,7 @@ describe('SquashDocument', () => {
   let logger: LoggerInterface
 
   const dto: SquashDocumentDTO = {
-    docMeta: {} as any,
+    nodeMeta: {} as any,
     commitId: 'commitId',
     keys: {} as any,
     handleVerificationObjection: jest.fn(),
@@ -96,7 +96,7 @@ describe('SquashDocument', () => {
   })
 
   it('should fail if lock document fails', async () => {
-    docsApi.lockDocument = jest.fn().mockReturnValue(Result.fail('failed'))
+    docsApi.lockDocument = jest.fn().mockReturnValue(ApiResult.fail({ message: 'failed', code: 0 }))
 
     const result = await usecase.execute(dto)
 
