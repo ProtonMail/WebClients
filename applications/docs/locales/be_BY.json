@@ -312,6 +312,9 @@
       "Go to label": [
         "Перайсці да меткі"
       ],
+      "Got it": [
+        "Зразумела"
+      ],
       "Help": [
         "Даведка"
       ],
@@ -4290,9 +4293,6 @@
       "High Priority": [
         "Высокі прыярытэт"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
       ],
@@ -5147,6 +5147,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступны. Паспрабуйце яшчэ раз пазней.)"
+      ],
+      "Account holder": [
+        "Трымальнік уліковага запісу"
       ],
       "Add email address": [
         "Дадаць адрас электроннай пошты"
@@ -6106,9 +6109,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Пачніце з коштам у памеры ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Пачатковы кошт ${ priceMailPlus }"
       ],
@@ -6765,14 +6765,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Атрымайце Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Пачатковы кошт ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7480,7 +7472,7 @@
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ subscriptionLength } месяцы(-аў). Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за ${ subscriptionLengthCopy } месяцы(-аў). Скасаваць можна ў любы момант."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за ${ subscriptionLength } месяцы(-аў). Скасаваць можна ў любы момант."
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за ${ subscriptionLength } месяцы(-аў). Скасаваць можна ў любы момант."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPrice } за кожны месяц. Скасаваць можна ў любы момант."
@@ -8906,6 +8898,9 @@
       ],
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "Аднаўленне даных"
