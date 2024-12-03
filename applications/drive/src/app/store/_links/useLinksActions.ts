@@ -119,12 +119,25 @@ export function useLinksActions({
             throw new Error('Cannot move corrupted file');
         }
 
-        const [currentParentPrivateKey, Hash, ContentHash, { NodePassphrase, NodePassphraseSignature }] =
-            await Promise.all([
-                getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
-                generateLookupHash(link.name, newParentHashKey).catch((e) =>
+        const [currentParentPrivateKey, Hash, ContentHash, { NodePassphrase }] = await Promise.all([
+            getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
+            generateLookupHash(link.name, newParentHashKey).catch((e) =>
+                Promise.reject(
+                    new EnrichedError('Failed to generate lookup hash during move', {
+                        tags: {
+                            shareId,
+                            newParentLinkId,
+                            newShareId: newShareId === shareId ? undefined : newShareId,
+                            linkId,
+                        },
+                        extra: { e },
+                    })
+                )
+            ),
+            link.digests?.sha1 &&
+                generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
                     Promise.reject(
-                        new EnrichedError('Failed to generate lookup hash during move', {
+                        new EnrichedError('Failed to generate content hash during move', {
                             tags: {
                                 shareId,
                                 newParentLinkId,
@@ -135,34 +148,20 @@ export function useLinksActions({
                         })
                     )
                 ),
-                link.digests?.sha1 &&
-                    generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
-                        Promise.reject(
-                            new EnrichedError('Failed to generate content hash during move', {
-                                tags: {
-                                    shareId,
-                                    newParentLinkId,
-                                    newShareId: newShareId === shareId ? undefined : newShareId,
-                                    linkId,
-                                },
-                                extra: { e },
-                            })
-                        )
-                    ),
-                encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch((e) =>
-                    Promise.reject(
-                        new EnrichedError('Failed to encrypt link passphrase during move', {
-                            tags: {
-                                shareId,
-                                newParentLinkId,
-                                newShareId: newShareId === shareId ? undefined : newShareId,
-                                linkId,
-                            },
-                            extra: { e },
-                        })
-                    )
-                ),
-            ]);
+            encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch((e) =>
+                Promise.reject(
+                    new EnrichedError('Failed to encrypt link passphrase during move', {
+                        tags: {
+                            shareId,
+                            newParentLinkId,
+                            newShareId: newShareId === shareId ? undefined : newShareId,
+                            linkId,
+                        },
+                        extra: { e },
+                    })
+                )
+            ),
+        ]);
 
         const sessionKeyName = await getDecryptedSessionKey({
             data: link.encryptedName,
@@ -201,13 +200,16 @@ export function useLinksActions({
             )
         );
 
+        if (!link.signatureAddress) {
+            throw new Error('Moving anonymous file is not yet supported');
+        }
+
         await debouncedRequest({
             ...queryMoveLink(shareId, linkId, {
                 Name: encryptedName,
                 Hash,
                 ParentLinkID: newParentLinkId,
                 NodePassphrase,
-                NodePassphraseSignature,
                 NameSignatureEmail: address.Email,
                 NewShareID: newShareId === shareId ? undefined : newShareId,
                 ContentHash,
