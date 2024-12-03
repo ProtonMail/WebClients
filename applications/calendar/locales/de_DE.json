@@ -722,6 +722,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Upgrade auf ${ BRAND_NAME } Unlimitiert"
       ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade auf ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
       "Upload picture": [
         "Bild hochladen"
       ],
@@ -3099,6 +3102,9 @@
       "Failed to get original occurrence in series": [
         "Abrufen des ursprünglichen Serienelements fehlgeschlagen"
       ],
+      "Failed to load OAuth modal.": [
+        "OAuth-Modal konnte nicht geladen werden."
+      ],
       "First name is too long": [
         "Der Vorname ist zu lang."
       ],
@@ -4721,9 +4727,6 @@
       ],
       "High Priority": [
         "Hohe Priorität"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
@@ -6416,9 +6419,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade auf ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Starte für ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Ab ${ priceMailPlus }"
       ],
@@ -6577,6 +6577,9 @@
       ],
       "Administration Panel": [
         "Verwaltungskonsole"
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME } Produkte und Funktionen"
@@ -7029,14 +7032,6 @@
       ],
       "Switch plans?": [
         "Abonnement wechseln?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hol dir Mail Plus für ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ab ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7736,6 +7731,9 @@
       ],
       "Please select your billing state first.": [
         "Bitte wähle zuerst deinen Rechnungsstaat aus."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Verlängert sich zu ${ renewPrice }, jederzeit kündbar."
       ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
@@ -8553,6 +8551,9 @@
       "Now you can see when participants are free to attend your meeting.": [
         "Jetzt kannst du sehen, wann die Teilnehmer verfügbar sind, um an deiner Besprechung teilzunehmen."
       ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "Erstelle nahtlos Links zu Videokonferenzen und füge diese zu deinem Termin hinzu."
+      ],
       "Video conferencing is here!": [
         "Videokonferenzen sind da!"
       ],
@@ -9191,6 +9192,9 @@
       "Fingerprint copied to clipboard": [
         "Fingerabdruck in die Zwischenablage kopiert"
       ],
+      "Finish Zoom authentication to save event": [
+        "Beende die Zoom-Authentifizierung, um den Termin zu speichern."
+      ],
       "Future events deleted": [
         "Zukünftige Termine gelöscht"
       ],
@@ -9539,6 +9543,9 @@
       ],
       "Customize your mail import": [
         "Mail-Import anpassen"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
       ],
       "Data recovery": [
         "Datenwiederherstellung"
