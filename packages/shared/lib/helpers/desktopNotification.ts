@@ -1,14 +1,7 @@
-import Push from 'push.js';
-
 import noop from '@proton/utils/noop';
 
 import type { ElectronNotification } from '../desktop/desktopTypes';
 import { invokeInboxDesktopIPC } from '../desktop/ipcHelpers';
-import { isElectronMail } from './desktop';
-
-Push.config({
-    serviceWorker: './assets/serviceWorker.min.js', // Sets a custom service worker script
-});
 
 export enum Status {
     DENIED = 'denied',
@@ -16,48 +9,103 @@ export enum Status {
     GRANTED = 'granted',
 }
 
+let notifications: Notification[] = [];
+
+export const hasNotificationSupport = (): boolean => 'Notification' in window;
+export const hasPermission = (): boolean => Notification.permission === Status.GRANTED;
+export const hasDenied = (): boolean => Notification.permission === Status.DENIED;
+
+const addNotification = (notification: Notification) => {
+    notifications.push(notification);
+};
+
+const removeNotification = (notification: Notification) => {
+    notifications = notifications.filter((n) => n !== notification);
+};
+
+const setupNotificationHandlers = (notification: Notification, onClick?: () => void) => {
+    notification.onclose = () => removeNotification(notification);
+    notification.onclick = () => {
+        onClick?.();
+        notification.close();
+    };
+};
+
 export const getStatus = (): Status => {
-    const permission = Push.Permission.get();
-    switch (permission) {
-        case Status.DENIED:
-            return Status.DENIED;
-        case Status.GRANTED:
-            return Status.GRANTED;
-        default:
-            return Status.DEFAULT;
+    if (!hasNotificationSupport()) {
+        return Status.DEFAULT;
     }
+
+    if (hasPermission()) {
+        return Status.GRANTED;
+    }
+
+    if (hasDenied()) {
+        return Status.DENIED;
+    }
+
+    return Status.DEFAULT;
 };
 
-export const isEnabled = (): boolean => Push.Permission.has();
+export const isEnabled = (): boolean => {
+    if (hasNotificationSupport()) {
+        return hasPermission();
+    }
+    return false;
+};
 
-export const clear = () => Push.clear();
+export const clear = () => {
+    notifications.forEach((notification) => notification.close());
+    notifications = [];
+};
 
-export const request = (onGranted: () => void = noop, onDenied: () => void = noop) => {
-    try {
-        Push.Permission.request(onGranted, onDenied);
-    } catch (err: any) {
+export const request = async (onGranted: () => void = noop, onDenied: () => void = noop) => {
+    if (!hasNotificationSupport() || hasDenied()) {
         onDenied();
-        /**
-         * Hotfix to fix requesting the permission on non-promisified requests.
-         * TypeError: undefined is not an object (evaluating 'this._win.Notification.requestPermission().then')
-         * https://github.com/Nickersoft/push.js/issues/117
-         */
+        return;
+    }
+
+    if (hasPermission()) {
+        onGranted();
+        return;
+    }
+
+    const permission = await Notification.requestPermission();
+
+    if (permission === Status.GRANTED) {
+        onGranted();
+    } else {
+        onDenied();
     }
 };
 
-/**
- * Create a desktop notification
- * @param title
- * @param params https://pushjs.org/docs/options
- * @param electronNotification used to show notification on Electron apps, optional parameter
- */
-export const create = async (title = '', params = {}, electronNotification?: ElectronNotification) => {
+const createWebNotification = (title: string, options?: NotificationOptions, onClick?: () => void) => {
     if (!isEnabled()) {
         return;
     }
-    if (isElectronMail && electronNotification) {
-        void invokeInboxDesktopIPC({ type: 'showNotification', payload: electronNotification });
-    } else {
-        return Push.create(title, params);
+
+    const notification = new Notification(title, options);
+
+    addNotification(notification);
+
+    setupNotificationHandlers(notification, onClick);
+
+    return notification;
+};
+
+export const createElectronNotification = (payload: ElectronNotification) => {
+    return invokeInboxDesktopIPC({ type: 'showNotification', payload });
+};
+
+interface NotificationParams extends NotificationOptions {
+    onClick?: () => void;
+}
+
+export const create = async (title = '', params: NotificationParams = {}) => {
+    await request();
+    if (!isEnabled()) {
+        return; // Exit if permission wasn't granted
     }
+
+    return createWebNotification(title, params, params.onClick);
 };
