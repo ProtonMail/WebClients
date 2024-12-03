@@ -130,7 +130,7 @@ export const makeRefineCleanup = (action: Action) => {
         fulltext = removeStopStrings(fulltext, customStopStrings);
         fulltext = fulltext.replaceAll(/<\/?[a-z][^>]*>/gi, '');
         fulltext = fulltext.replaceAll(/^(Harmful|Subject|Body|Language) ?:.*$/gm, '');
-        fulltext = convertToDoubleNewlines(fulltext);
+        fulltext = convertToDoubleNewlines(fulltext, false);
         fulltext = fulltext.trim();
         for (const s of stopStrings) {
             fulltext = removePartialSubstringAtEnd(fulltext, s);
