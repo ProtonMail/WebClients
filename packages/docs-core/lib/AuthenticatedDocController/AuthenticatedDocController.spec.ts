@@ -1,8 +1,8 @@
 import type { DocumentMetaInterface, InternalEventBusInterface } from '@proton/docs-shared'
 import { DocumentRole } from '@proton/docs-shared'
-import type { DecryptedNode, DriveCompat, NodeMeta } from '@proton/drive-store'
+import type { DecryptedNode, DriveCompat } from '@proton/drive-store'
 import type { LoggerInterface } from '@proton/utils/logs'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { CreateNewDocument } from '../UseCase/CreateNewDocument'
 import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
@@ -28,7 +28,6 @@ describe('AuthenticatedDocController', () => {
     documentState = new DocumentState({
       ...DocumentState.defaults,
       documentMeta: {
-        nodeMeta: {} as NodeMeta,
         latestCommitId: () => '123',
       } as unknown as DocumentMetaInterface,
       entitlements: { keys: {}, role: new DocumentRole('Editor') } as unknown as DocumentEntitlements,
@@ -72,10 +71,7 @@ describe('AuthenticatedDocController', () => {
 
   describe('trashDocument', () => {
     beforeEach(() => {
-      documentState.setProperty(
-        'documentMeta',
-        new DocumentMeta({ linkId: 'abc', volumeId: 'def' }, ['ghi'], 123, 456, 'jkl'),
-      )
+      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456, 'jkl'))
 
       documentState.setProperty('decryptedNode', { parentNodeId: '123', trashed: true } as unknown as DecryptedNode)
 
@@ -111,10 +107,7 @@ describe('AuthenticatedDocController', () => {
 
   describe('restoreDocument', () => {
     beforeEach(() => {
-      documentState.setProperty(
-        'documentMeta',
-        new DocumentMeta({ linkId: 'abc', volumeId: 'def' }, ['ghi'], 123, 456, 'jkl'),
-      )
+      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456, 'jkl'))
 
       documentState.setProperty('decryptedNode', { parentNodeId: '123', trashed: true } as unknown as DecryptedNode)
 
@@ -145,10 +138,7 @@ describe('AuthenticatedDocController', () => {
 
   describe('refreshNodeAndDocMeta', () => {
     it('trashed state will be not_trashed if DecryptedNode trashed property is null', async () => {
-      documentState.setProperty(
-        'documentMeta',
-        new DocumentMeta({ linkId: 'abc', volumeId: 'def' }, ['ghi'], 123, 456, 'jkl'),
-      )
+      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456, 'jkl'))
 
       controller._getNode.execute = jest
         .fn()
@@ -159,10 +149,7 @@ describe('AuthenticatedDocController', () => {
     })
 
     it('trashed state will be not_trashed if DecryptedNode trashed property is omitted', async () => {
-      documentState.setProperty(
-        'documentMeta',
-        new DocumentMeta({ linkId: 'abc', volumeId: 'def' }, ['ghi'], 123, 456, 'jkl'),
-      )
+      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456, 'jkl'))
 
       controller._getNode.execute = jest.fn().mockResolvedValueOnce(Result.ok({ node: { parentNodeId: 123 } }))
 
@@ -171,10 +158,7 @@ describe('AuthenticatedDocController', () => {
     })
 
     it('trashed state will be trashed if DecryptedNode trashed property is populated', async () => {
-      documentState.setProperty(
-        'documentMeta',
-        new DocumentMeta({ linkId: 'abc', volumeId: 'def' }, ['ghi'], 123, 456, 'jkl'),
-      )
+      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456, 'jkl'))
 
       controller._getNode.execute = jest
         .fn()

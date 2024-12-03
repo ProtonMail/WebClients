@@ -25,6 +25,10 @@ export function isPublicNodeMeta(meta: NodeMeta | PublicNodeMeta): meta is Publi
     return 'token' in meta;
 }
 
+export function isPrivateNodeMeta(meta: NodeMeta | PublicNodeMeta): meta is NodeMeta {
+    return 'volumeId' in meta;
+}
+
 export type LegacyNodeMeta = {
     shareId: string;
     volumeId: string;

@@ -6,7 +6,7 @@ export type CommentPayload = {
   modifyTime: number
   content: string
   parentCommentID: string | null
-  author: string
+  author: string | undefined
   comments: CommentPayload[]
   isPlaceholder: boolean
   type: CommentType

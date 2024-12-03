@@ -1,7 +1,7 @@
 import type { YjsState } from '@proton/docs-shared'
 import type { NativeVersionHistory } from '../VersionHistory'
-import type { TranslatedResult } from '../Domain/Result/TranslatedResult'
-import type { Result } from '../Domain/Result/Result'
+import type { TranslatedResult } from '@proton/docs-shared'
+import type { Result } from '@proton/docs-shared'
 
 export interface AuthenticatedDocControllerInterface {
   didTrashDocInCurrentSession: boolean

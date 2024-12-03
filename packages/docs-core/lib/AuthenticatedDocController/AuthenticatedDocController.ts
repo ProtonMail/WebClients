@@ -13,12 +13,12 @@ import { DocControllerEvent } from './AuthenticatedDocControllerEvent'
 import type { DocsClientSquashVerificationObjectionMadePayload } from '../Application/ApplicationEvent'
 import { ApplicationEvent, PostApplicationError } from '../Application/ApplicationEvent'
 import type { SquashVerificationObjectionCallback } from '../Types/SquashVerificationObjection'
-import { TranslatedResult } from '../Domain/Result/TranslatedResult'
-import type { Result } from '../Domain/Result/Result'
+import { TranslatedResult } from '@proton/docs-shared'
+import type { Result } from '@proton/docs-shared'
 import { getPlatformFriendlyDateForFileName } from '../Util/PlatformFriendlyFileNameDate'
 import { MAX_DOC_SIZE } from '../Models/Constants'
 import type { GetNode } from '../UseCase/GetNode'
-import { isDocumentState, type DocumentState, type PublicDocumentState } from '../State/DocumentState'
+import { isDocumentState, type DocumentState } from '../State/DocumentState'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { getErrorString } from '../Util/GetErrorString'
 
@@ -32,7 +32,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   receivedOrSentDUs: VersionHistoryUpdate[] = []
 
   constructor(
-    private readonly documentState: DocumentState | PublicDocumentState,
+    private readonly documentState: DocumentState,
     private driveCompat: DriveCompat,
     private _squashDocument: SquashDocument,
     readonly _createInitialCommit: SeedInitialCommit,
@@ -97,7 +97,9 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
    */
   async refreshNodeAndDocMeta(options: { imposeTrashState: 'trashed' | 'not_trashed' | undefined }): Promise<void> {
     const docMeta = this.documentState.getProperty('documentMeta')
-    const result = await this._getNode.execute(docMeta.nodeMeta, docMeta)
+    const { nodeMeta } = this.documentState.getProperty('entitlements')
+
+    const result = await this._getNode.execute(nodeMeta, docMeta)
     if (result.isFailed()) {
       this.logger.error('Failed to get node', result.getError())
       return
@@ -172,7 +174,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     }
 
     const result = await this._createInitialCommit.execute(
-      this.documentState.getProperty('documentMeta').nodeMeta,
+      this.documentState.getProperty('entitlements').nodeMeta,
       content,
       this.documentState.getProperty('entitlements').keys,
     )
@@ -213,10 +215,13 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
         }, ApplicationEvent.SquashVerificationObjectionDecisionMade)
       })
     }
+
+    const { keys, nodeMeta } = this.documentState.getProperty('entitlements')
+
     const result = await this._squashDocument.execute({
-      docMeta: this.documentState.getProperty('documentMeta'),
+      nodeMeta,
       commitId: baseCommit.commitId,
-      keys: this.documentState.getProperty('entitlements').keys,
+      keys,
       handleVerificationObjection,
     })
 
@@ -229,6 +234,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
   public async duplicateDocument(editorYjsState: Uint8Array): Promise<void> {
     const result = await this._duplicateDocument.executePrivate(
+      this.documentState.getProperty('entitlements').nodeMeta,
       this.documentState.getProperty('documentMeta'),
       editorYjsState,
     )
@@ -250,6 +256,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
   public async restoreRevisionAsCopy(yjsContent: YjsState): Promise<void> {
     const result = await this._duplicateDocument.executePrivate(
+      this.documentState.getProperty('entitlements').nodeMeta,
       this.documentState.getProperty('documentMeta'),
       yjsContent,
     )
@@ -277,7 +284,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
     const result = await this._createNewDocument.execute(
       newName,
-      this.documentState.getProperty('documentMeta').nodeMeta,
+      this.documentState.getProperty('entitlements').nodeMeta,
       this.documentState.getProperty('decryptedNode'),
     )
 
@@ -310,7 +317,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
         },
         newName,
       )
-      await this.driveCompat.renameDocument(this.documentState.getProperty('documentMeta').nodeMeta, name)
+      await this.driveCompat.renameDocument(this.documentState.getProperty('entitlements').nodeMeta, name)
       await this.refreshNodeAndDocMeta({ imposeTrashState: undefined })
       return TranslatedResult.ok()
     } catch (e) {
@@ -326,7 +333,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
       const parentLinkId = decryptedNode.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
-      await this.driveCompat.trashDocument(this.documentState.getProperty('documentMeta').nodeMeta, parentLinkId)
+      await this.driveCompat.trashDocument(this.documentState.getProperty('entitlements').nodeMeta, parentLinkId)
 
       await this.refreshNodeAndDocMeta({ imposeTrashState: 'trashed' })
 
@@ -347,7 +354,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
       const parentLinkId = decryptedNode.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
-      await this.driveCompat.restoreDocument(this.documentState.getProperty('documentMeta').nodeMeta, parentLinkId)
+      await this.driveCompat.restoreDocument(this.documentState.getProperty('entitlements').nodeMeta, parentLinkId)
 
       await this.refreshNodeAndDocMeta({ imposeTrashState: 'not_trashed' })
     } catch (error) {
@@ -361,7 +368,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   }
 
   public openDocumentSharingModal(): void {
-    void this.driveCompat.openDocumentSharingModal(this.documentState.getProperty('documentMeta').nodeMeta)
+    void this.driveCompat.openDocumentSharingModal(this.documentState.getProperty('entitlements').nodeMeta)
   }
 
   deinit() {}
