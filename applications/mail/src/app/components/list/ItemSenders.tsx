@@ -22,7 +22,7 @@ interface Props {
 }
 
 const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipients, isSelected }: Props) => {
-    const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
+    const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
     const { getRecipientsOrGroups, getRecipientOrGroupLabel } = useRecipientLabel();
 
@@ -57,6 +57,9 @@ const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipi
             {sendersAsRecipientOrGroup.map((sender, index) => {
                 const isLastItem = index === sendersAsRecipientOrGroup.length - 1;
                 const recipientLabel = getRecipientOrGroupLabel(sender);
+                // We do not want to highlight sender field in normal search, unless the field is the email address
+                const recipientAddress = sender.recipient && sender.recipient.Address;
+                const isLabelRecipientAddress = recipientLabel === recipientAddress;
 
                 // this fix works when there is 1 official recipient only (not with multiple), to be sure the official badge is shown
                 if (isLastItem && index === 0 && !!sender.recipient?.IsProton) {
@@ -66,7 +69,7 @@ const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipi
                             key={`${recipientLabel}-${index}`}
                         >
                             <span className="flex-1 text-ellipsis">
-                                {highlightData
+                                {highlightData && (esStatus.esEnabled || isLabelRecipientAddress) // Do not highlight sender field in normal search
                                     ? highlightMetadata(recipientLabel, unread, true).resultJSX
                                     : recipientLabel}{' '}
                             </span>
@@ -76,7 +79,9 @@ const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipi
                 }
                 return (
                     <span key={`${recipientLabel}-${index}`}>
-                        {highlightData ? highlightMetadata(recipientLabel, unread, true).resultJSX : recipientLabel}
+                        {highlightData && (esStatus.esEnabled || isLabelRecipientAddress) // Do not highlight sender field in normal search
+                            ? highlightMetadata(recipientLabel, unread, true).resultJSX
+                            : recipientLabel}
                         {sender.recipient && <ProtonBadgeType recipient={sender.recipient} selected={isSelected} />}
                         {!isLastItem && <span className="mr-1">,</span>}
                     </span>
