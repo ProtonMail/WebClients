@@ -26,7 +26,7 @@ const APP_TO_VIEW_TARGET: { [key in (typeof INBOX_DESKTOP_APPS)[number]]: CHANGE
 
 function InboxDesktopDefaultAppSwitcher({ appToLinkTo: currentApp }: Props) {
     const handleClick = (target: CHANGE_VIEW_TARGET) => {
-        invokeInboxDesktopIPC({ type: 'changeView', payload: target });
+        void invokeInboxDesktopIPC({ type: 'changeView', payload: target });
     };
 
     return (
@@ -69,7 +69,7 @@ function InboxDesktopMacAppSwitcher({ appToLinkTo }: Props) {
     const isAppCalendar = APP_NAME === APPS.PROTONCALENDAR || APPS.PROTONCALENDAR === appToLinkTo;
 
     const handleClick = (target: CHANGE_VIEW_TARGET) => {
-        invokeInboxDesktopIPC({ type: 'changeView', payload: target });
+        void invokeInboxDesktopIPC({ type: 'changeView', payload: target });
     };
 
     return (

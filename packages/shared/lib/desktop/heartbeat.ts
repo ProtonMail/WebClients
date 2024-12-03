@@ -35,7 +35,7 @@ function checkMailtoTelemetryIsNeeded() {
         return;
     }
 
-    checkDefaultMailto();
+    void checkDefaultMailto();
 }
 
 type MailtoDimensions = {
@@ -67,7 +67,7 @@ function sendMailtoTelemetry(api: Api, data: DefaultProtocol) {
         dimensions,
     });
 
-    defaultMailtoTelemetryReported(getUnixTime(new Date()));
+    void defaultMailtoTelemetryReported(getUnixTime(new Date()));
 }
 
 export function useInboxDesktopHeartbeat() {

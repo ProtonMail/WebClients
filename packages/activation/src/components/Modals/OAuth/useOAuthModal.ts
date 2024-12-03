@@ -46,7 +46,7 @@ const useOAuthModal = () => {
             return;
         }
 
-        triggerOAuthPopup({
+        void triggerOAuthPopup({
             provider,
             scope: finalScopes,
             callback: async (oAuthProps: OAuthProps) => {

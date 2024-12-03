@@ -21,7 +21,7 @@ const ClearBrowserDataModal = (rest: ModalProps) => {
 
     const handleClear = () => {
         if (isElectronMail) {
-            invokeInboxDesktopIPC({ type: 'clearAppData' });
+            void invokeInboxDesktopIPC({ type: 'clearAppData' });
         } else {
             void deleteAssistantCachedFiles().then(() => {
                 if (userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {

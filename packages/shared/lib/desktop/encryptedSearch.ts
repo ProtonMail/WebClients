@@ -5,7 +5,7 @@ export const storeESUserChoiceInboxDesktop = (userID: string, userChoice: boolea
         return;
     }
 
-    invokeInboxDesktopIPC({ type: 'setESUserChoice', payload: { userID, userChoice } });
+    void invokeInboxDesktopIPC({ type: 'setESUserChoice', payload: { userID, userChoice } });
 };
 
 // isESEnabledUserChoiceInboxDesktop must return `true` if:

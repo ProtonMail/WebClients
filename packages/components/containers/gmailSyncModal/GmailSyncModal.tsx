@@ -34,7 +34,7 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, source, reduceHeig
     });
 
     const handleGoogleSync = () => {
-        triggerOAuthPopup({
+        void triggerOAuthPopup({
             provider: ImportProvider.GOOGLE,
             scope: SYNC_G_OAUTH_SCOPES.join(' '),
             callback: async (oAuthProps: OAuthProps) => {
