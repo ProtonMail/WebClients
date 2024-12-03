@@ -8,7 +8,7 @@ export class Comment implements CommentInterface {
     public modifyTime: ServerTime,
     public content: string,
     public parentCommentID: string | null,
-    public author: string,
+    public author: string | undefined,
     public comments: CommentInterface[],
     public isPlaceholder: boolean,
     public type: CommentType,

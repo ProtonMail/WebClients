@@ -1,5 +1,5 @@
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import type { Result } from '../Domain/Result/Result'
+import type { Result } from '@proton/docs-shared'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import type { VerifyMessages } from './VerifyMessages'
 import type { VerificationUsecaseResult } from './VerifyUpdatesResult'

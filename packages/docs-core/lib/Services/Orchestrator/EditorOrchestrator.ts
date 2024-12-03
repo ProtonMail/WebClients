@@ -12,6 +12,7 @@ import {
   type EditorEvent,
   type DocsAwarenessStateChangeData,
   DocAwarenessEvent,
+  AnonymousUserEmail,
 } from '@proton/docs-shared'
 import type { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
 import type { UserState } from '@lexical/yjs'
@@ -30,7 +31,7 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
 
   public userAddress = isDocumentState(this.documentState)
     ? this.documentState.getProperty('entitlements').keys.userOwnAddress
-    : 'anonymous-proton@docs.proton.me'
+    : AnonymousUserEmail
 
   constructor(
     private readonly comments: CommentControllerInterface | undefined,

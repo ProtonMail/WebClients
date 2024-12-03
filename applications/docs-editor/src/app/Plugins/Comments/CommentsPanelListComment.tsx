@@ -3,7 +3,7 @@ import type { MouseEventHandler } from 'react'
 import { useCallback, useState } from 'react'
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, ToolbarButton, Tooltip } from '@proton/components'
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
-import { CommentThreadState, UserAvatar } from '@proton/docs-shared'
+import { AnonymousUserEmail, CommentThreadState, UserAvatar } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
 import { c } from 'ttag'
 import { useApplication } from '../../ApplicationProvider'
@@ -122,8 +122,9 @@ export function CommentsPanelListComment({
     })
   }
 
-  const isAuthorCurrentUser = comment.author === userAddress
+  const isAuthorCurrentUser = comment.author === userAddress || (!comment.author && userAddress === AnonymousUserEmail)
   const canEdit = application.getRole().canEdit()
+
   const isThreadActive = thread.state === CommentThreadState.Active
 
   const authorDisplayName = isAuthorCurrentUser ? userName : displayNameForEmail(comment.author)

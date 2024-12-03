@@ -1,3 +1,4 @@
+export * from './AnonymousUser'
 export * from './ApiResult'
 export * from './AssertUnreachable'
 export * from './Bridge/BridgeOriginProvider'

@@ -8,7 +8,7 @@ export interface CommentInterface {
   modifyTime: ServerTime
   content: string
   parentCommentID: string | null
-  author: string
+  author: string | undefined
   comments: CommentInterface[]
   isPlaceholder: boolean
   type: CommentType

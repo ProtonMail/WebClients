@@ -38,4 +38,11 @@ export const App_TYPES = {
   HandleRealtimeCommentsEvent: Symbol.for('HandleRealtimeCommentsEvent'),
   ExportAndDownload: Symbol.for('ExportAndDownload'),
   RecentDocumentsService: Symbol.for('RecentDocumentsService'),
+
+  // Api
+  ApiEditComment: Symbol.for('ApiEditComment'),
+  ApiAddCommentToThread: Symbol.for('ApiAddCommentToThread'),
+  ApiCreateThread: Symbol.for('ApiCreateThread'),
+  ApiGetThread: Symbol.for('ApiGetThread'),
+  RouteExecutor: Symbol.for('RouteExecutor'),
 }
