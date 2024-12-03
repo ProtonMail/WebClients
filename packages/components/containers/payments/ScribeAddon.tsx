@@ -66,7 +66,11 @@ const ScribeAddon = ({
     onAddScribe,
 }: Props) => {
     if (audience === Audience.B2B && showScribeBanner) {
-        return <ScribeB2BBanner price={price} onClick={onAddScribe} />;
+        return (
+            <div>
+                <ScribeB2BBanner price={price} onClick={onAddScribe} />
+            </div>
+        );
     }
 
     return (

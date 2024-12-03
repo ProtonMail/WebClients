@@ -322,23 +322,19 @@ const AccountStepPayment = ({
                         return null;
                     }
                     return (
-                        <>
-                            <ProtonPlanCustomizer
-                                mode="signup"
-                                loading={false}
-                                currentPlan={currentPlan}
-                                currency={options.currency}
-                                cycle={options.cycle}
-                                plansMap={model.plansMap}
-                                planIDs={planIDs}
-                                onChangePlanIDs={(planIDs) => handleOptimistic({ planIDs })}
-                                audience={isB2BPlan ? Audience.B2B : Audience.B2C}
-                                scribeAddonEnabled
-                            />
-                            <div className="mt-6 mb-6">
-                                <hr />
-                            </div>
-                        </>
+                        <ProtonPlanCustomizer
+                            separator
+                            mode="signup"
+                            loading={false}
+                            currentPlan={currentPlan}
+                            currency={options.currency}
+                            cycle={options.cycle}
+                            plansMap={model.plansMap}
+                            planIDs={planIDs}
+                            onChangePlanIDs={(planIDs) => handleOptimistic({ planIDs })}
+                            audience={isB2BPlan ? Audience.B2B : Audience.B2C}
+                            scribeAddonEnabled
+                        />
                     );
                 })()}
                 {renderingPaymentsWrapper ? (
