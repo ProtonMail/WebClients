@@ -44,7 +44,7 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
 
   useEffect(() => {
     application.updateCompatWrapper({ publicCompat: publicDriveCompat })
-  }, [publicDriveCompat])
+  }, [application, publicDriveCompat])
 
   const [isAppReady, setIsAppReady] = useState(false)
 
