@@ -60,10 +60,10 @@ export const getDefaultDimensions = ({
     const { DarkTheme, LightTheme, Mode } = userSettings.Theme || PROTON_DEFAULT_THEME_SETTINGS;
 
     return {
-        account_age: getAccountAgeForDimension(user),
+        accountAge: getAccountAgeForDimension(user),
         subscription: isFreeSubscription(subscription) ? 'free' : getPlanName(subscription),
-        light_theme_name: PROTON_THEMES_MAP[LightTheme].label,
-        dark_theme_name: PROTON_THEMES_MAP[DarkTheme].label,
-        theme_mode: getThemeMode(Mode),
+        lightThemeName: PROTON_THEMES_MAP[LightTheme].label,
+        darkThemeName: PROTON_THEMES_MAP[DarkTheme].label,
+        themeMode: getThemeMode(Mode),
     };
 };
