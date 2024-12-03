@@ -81,6 +81,9 @@
       "Apply": [
         "გადატარება"
       ],
+      "Ask me next time": [
+        "კითხვა შემდეგ ჯერზე"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
@@ -303,6 +306,9 @@
       "Go to label": [
         "ჭდეზე გადასვლა"
       ],
+      "Got it": [
+        "გავიგე"
+      ],
       "Help": [
         "დახმარება"
       ],
@@ -519,6 +525,9 @@
       "Restore this version": [
         "ამ ვერსიის აღდგენა"
       ],
+      "Restore this version?": [
+        "აღვადგინო ეს ვერსია?"
+      ],
       "Retry": [
         "თავიდან"
       ],
@@ -527,6 +536,9 @@
       ],
       "Save changes": [
         "ცვლილებების შენახვა"
+      ],
+      "Save preferences": [
+        "პარამეტრების შენახვა"
       ],
       "Search": [
         "ძებნა"
@@ -3840,6 +3852,9 @@
       "Amount below minimum (${ amount }).": [
         "თანხა მინიმუმზე ნაკლებია (${ amount })."
       ],
+      "an anonymous user": [
+        "ანონიმური მომხმარებელი"
+      ],
       "and": [
         "და"
       ],
@@ -4130,14 +4145,17 @@
       "Free 5GB encrypted storage to get started": [
         "უფასო 5გბ დაშიფრული საცავი დასაწყისისთვის"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "მიიღეთ ელფოსტის განახლებები კომენტარებისა და მინიშნებებისთვის, რომლებიც თქვენ დოკუმენტებს დაემატება."
+      ],
+      "Get Notified About Comments": [
+        "გაფრთხილება კომენტარების შესახებ"
+      ],
       "here": [
         "აქ"
       ],
       "High Priority": [
         "მაღალი პრიორიტეტი"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
@@ -4397,6 +4415,10 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი.",
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
+      ],
       "Please provide a name and an email address for creating a group.": [
         "ჯგუფის შესაქმნელად შეიყვანეთ სახელი და ელფოსტის მისამართი."
       ],
@@ -4448,6 +4470,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
+      ],
+      "Restored version to": [
+        "ვერსია აღდგენილია მნიშვნელობაზე"
       ],
       "Saving": [
         "დაზოგვა"
@@ -4638,6 +4663,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
+      ],
+      "Undo successful": [
+        "გაუქმება წარმატებულია"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "სამწუხაროდ, როგორც ჩანს, ფაილის ან მისი მონაცემების ნაწილის გაშიფვრა შეუძლებელია."
@@ -4950,6 +4978,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
       ],
+      "Account holder": [
+        "ანგარიშის მფლობელი"
+      ],
       "Add email address": [
         "ელფოსტის მისამართის დამატება"
       ],
@@ -5018,6 +5049,12 @@
       ],
       "Calendars": [
         "კალენდრები"
+      ],
+      "Can edit": [
+        "შეუძლია, ჩაასწოროს"
+      ],
+      "Can view": [
+        "შეუძლია, ნახოს"
       ],
       "Cancel download": [
         "გადმოწერის გაუქმება"
@@ -5118,6 +5155,9 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
+      "Enable email notifications": [
+        "ელფოსტის გაფრთხილებების ჩართვა"
+      ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
@@ -5174,6 +5214,9 @@
       ],
       "Import to:": [
         "შემოტანა:"
+      ],
+      "Include document name in notification": [
+        "დოკუმენტის სახელის ჩასმა გაფრთხილებებში"
       ],
       "Include message and file name in invite email": [
         "მოსაწვევის ფაილში შეტყობინებისა და ფაილის სახელის დართვა"
@@ -5378,6 +5421,14 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "დააორგანიზეთ, დაამატეთ და ჩაასწორეთ ფაილები"
+      ],
+      "View and download": [
+        "ნახვა და გადმოწერა"
       ]
     },
     "Label for contact group color": {
@@ -5826,9 +5877,6 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Get started for ${ price }": [
-        "დაწყება ${ price }-დან"
       ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }-დან"
@@ -6440,14 +6488,6 @@
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "მიიღეთ Mail Plus ფასით ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "${ price }-დან"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -6610,6 +6650,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "მომხმარებლების პაროლებისა და 2FA-ის აღდგენა"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "გადაამისამართეთ თქვენი ინტერნეტ-ტრაფიკი Tor-ის ქსელში თაგუნას ერთადერთი წკაპუნით"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
@@ -6889,6 +6932,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "არასაკმარისი ადგილი ${ formattedTotal }-ის ასატვირთად"
       ],
+      "Public link access updated": [
+        "საჯარო ბმულის წვდომა განახლდა"
+      ],
+      "Public link update access failed ": [
+        "საჯარო ბმულის წვდომის განახლება ჩავარდა "
+      ],
       "Stopping the sharing of this item has failed": [
         "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
       ],
@@ -7087,6 +7136,9 @@
       ],
       "Please select your billing state first.": [
         "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "განახლების დრო ${ renewPrice }. გააუქმეთ ნებისმიერ დროს."
       ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
@@ -8427,6 +8479,9 @@
       ],
       "Customize your mail import": [
         "თქვენი ელფოსტის შემოტანის მორგება"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "მონაცემების აღდგენა"

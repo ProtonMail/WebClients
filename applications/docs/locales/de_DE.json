@@ -300,6 +300,9 @@
       "Go to label": [
         "Zu Kategorie wechseln"
       ],
+      "Got it": [
+        "Verstanden"
+      ],
       "Help": [
         "Hilfe"
       ],
@@ -3841,6 +3844,9 @@
       "Amount below minimum (${ amount }).": [
         "Mindestbetrag unterschritten (${ amount })."
       ],
+      "an anonymous user": [
+        "anonymer Benutzer"
+      ],
       "and": [
         "und"
       ],
@@ -4127,9 +4133,6 @@
       ],
       "High Priority": [
         "Hohe Priorität"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
@@ -4506,6 +4509,12 @@
       ],
       "The Beginning": [
         "Der Anfang"
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Die digitale Signatur wurde teilweise verifiziert. Die Datei wurde von einer öffentlichen Seite hochgeladen, die keinen spezifischen Benutzerursprung angibt."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Die digitale Signatur wurde teilweise verifiziert. Die Datei wurde von einer öffentlichen Seite hochgeladen, die keinen spezifischen Benutzerursprung angibt."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Die offengelegten Informationen wurden von einem Service eines Drittanbieters preisgegeben. Deine ${ BRAND_NAME } Kontoinformationen bleiben sicher und verschlüsselt. ${ learnMoreLink }"
@@ -4990,6 +4999,12 @@
       "Calendars": [
         "Kalender"
       ],
+      "Can edit": [
+        "Kann bearbeiten"
+      ],
+      "Can view": [
+        "Kann anzeigen"
+      ],
       "Cancel download": [
         "Download abbrechen"
       ],
@@ -5349,6 +5364,14 @@
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Dateien verwalten, hinzufügen und bearbeiten"
+      ],
+      "View and download": [
+        "Anzeigen und herunterladen"
       ]
     },
     "Label for contact group color": {
@@ -5855,9 +5878,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade auf ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Starte für ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Ab ${ priceMailPlus }"
       ],
@@ -6016,6 +6036,9 @@
       ],
       "Administration Panel": [
         "Verwaltungskonsole"
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME } Produkte und Funktionen"
@@ -6454,14 +6477,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hol dir Mail Plus für ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ab ${ price }"
       ]
     },
     "new_plans: title": {
@@ -6905,6 +6920,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Nicht genug Speicherplatz, um ${ formattedTotal } hochzuladen"
       ],
+      "Public link access updated": [
+        "Öffentlicher Link-Zugang aktualisiert"
+      ],
+      "Public link update access failed ": [
+        "Update-Zugriff auf öffentlichen Link fehlgeschlagen "
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Der Link zu \"${ name }\" konnte nicht gelöscht werden"
       ],
@@ -7100,6 +7121,9 @@
       ],
       "Please select your billing state first.": [
         "Bitte wähle zuerst deinen Rechnungsstaat aus."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Verlängert sich zu ${ renewPrice }, jederzeit kündbar."
       ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
@@ -8437,6 +8461,9 @@
       ],
       "Customize your mail import": [
         "Mail-Import anpassen"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
       ],
       "Data recovery": [
         "Datenwiederherstellung"

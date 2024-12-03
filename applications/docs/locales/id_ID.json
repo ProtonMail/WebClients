@@ -81,6 +81,9 @@
       "Apply": [
         "Terapkan"
       ],
+      "Ask me next time": [
+        "Tanyakan saya lain kali"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Hanya ${ maxContacts } kontak yang dapat disisipkan dalam satu grup kontak"
       ],
@@ -300,6 +303,9 @@
       "Go to label": [
         "Tuju label"
       ],
+      "Got it": [
+        "Dimengerti"
+      ],
       "Help": [
         "Bantuan"
       ],
@@ -516,6 +522,9 @@
       "Restore this version": [
         "Pulihkan versi ini"
       ],
+      "Restore this version?": [
+        "Pulihkan versi ini?"
+      ],
       "Retry": [
         "Coba lagi"
       ],
@@ -524,6 +533,9 @@
       ],
       "Save changes": [
         "Simpan perubahan"
+      ],
+      "Save preferences": [
+        "Simpan preferensi"
       ],
       "Search": [
         "Pencarian"
@@ -906,7 +918,7 @@
         "Penawaran ${ PASS_SHORT_APP_NAME } Plus seumur hidup tidak memiliki biaya pembaruan. Cukup satu kali pembayaran untuk akses selama-lamanya ke Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
-        "Diskon berdasar pada harga bulanan standar."
+        "Diskon didasarkan pada harga bulanan standar."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Apabila Anda membeli Pass Family atau Unlimited, langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir siklus tagihan Anda."
@@ -3803,6 +3815,9 @@
       "Amount below minimum (${ amount }).": [
         "Di bawah jumlah minimum (${ amount })."
       ],
+      "an anonymous user": [
+        "pengguna anonim"
+      ],
       "and": [
         "dan"
       ],
@@ -4091,14 +4106,14 @@
       "Free 5GB encrypted storage to get started": [
         "Ruang penyimpanan terenkripsi 5GB gratis untuk memulai"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Dapatkan pembaruan email untuk komentar dan saran yang ditambahkan ke dokumen Anda."
+      ],
       "here": [
         "di sini"
       ],
       "High Priority": [
         "Prioritas Tinggi"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
@@ -4355,6 +4370,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo pada akun Anda akan berkurang menjadi ${ creditsRemaining }."
+      ],
       "Please provide a name and an email address for creating a group.": [
         "Mohon sediakan nama dan alamat email untuk membuat grup."
       ],
@@ -4405,6 +4423,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
+      ],
+      "Restored version to": [
+        "Versi dipulihkan ke"
       ],
       "Saving": [
         "Menyimpan"
@@ -4595,6 +4616,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
       ],
+      "Undo successful": [
+        "Pengurungan berhasil"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Sayangnya, berkas ini atau sebagian data yang terkandung di dalamnya tidak dapat didekripsi."
       ],
@@ -4784,6 +4808,9 @@
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Browser Anda saat ini tidak dapat digunakan untuk mengunduh berkas yang berukuran besar karena tidak tersedianya dukungan service worker yang memadai. Mengunduh berkas yang berukuran besar dapat membekukan layar atau menonaktifkan browser Anda sepenuhnya. Mohon gunakan versi terbaru dari ${ recommendedBrowser } dan coba lagi."
       ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "Dokumen Anda saat ini akan digantikan dengan versi ini. Seluruh komentar dan saran yang telah ada akan dihapus dari dokumen ini, namun akan tetap dapat diakses pada riwayat komentar."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
       ],
@@ -4903,6 +4930,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
+      ],
+      "Account holder": [
+        "Pemilik akun"
       ],
       "Add email address": [
         "Tambah alamat email"
@@ -5078,6 +5108,9 @@
       "Emails (last month)": [
         "Email (sebulan terakhir)"
       ],
+      "Enable email notifications": [
+        "Aktifkan notifikasi email"
+      ],
       "Encrypt emails": [
         "Enkripsi email"
       ],
@@ -5134,6 +5167,9 @@
       ],
       "Import to:": [
         "Impor ke:"
+      ],
+      "Include document name in notification": [
+        "Sertakan nama dokumen dalam notifikasi"
       ],
       "Include message and file name in invite email": [
         "Sertakan pesan dan nama berkas dalam email undangan"
@@ -5338,6 +5374,14 @@
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Kelola, tambahkan, dan sunting berkas"
+      ],
+      "View and download": [
+        "Lihat dan unduh"
       ]
     },
     "Label for contact group color": {
@@ -5838,9 +5882,6 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Mulai dengan harga ${ price }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Mulai dari ${ priceMailPlus }"
@@ -6428,14 +6469,6 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Mulai dari ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -6603,6 +6636,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Arahkan lalu lintas internet Anda melalui jaringan Tor dengan satu klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
@@ -8369,6 +8405,9 @@
       ],
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
+      ],
+      "Dark Web Monitoring": [
+        "Pemantauan Dark Web"
       ],
       "Data recovery": [
         "Pemulihan data"

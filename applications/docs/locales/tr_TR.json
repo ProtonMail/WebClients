@@ -81,6 +81,9 @@
       "Apply": [
         "Uygula"
       ],
+      "Ask me next time": [
+        "Gelecek sefer yeniden sor"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir",
         "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir"
@@ -303,6 +306,9 @@
       "Go to label": [
         "Etikete git"
       ],
+      "Got it": [
+        "Anladım"
+      ],
       "Help": [
         "Yardım"
       ],
@@ -519,6 +525,9 @@
       "Restore this version": [
         "Bu sürümü geri yükle"
       ],
+      "Restore this version?": [
+        "Bu sürüm geri yüklensin mi?"
+      ],
       "Retry": [
         "Yeniden dene"
       ],
@@ -527,6 +536,9 @@
       ],
       "Save changes": [
         "Değişiklikleri kaydet"
+      ],
+      "Save preferences": [
+        "Ayarları kaydet"
       ],
       "Search": [
         "Arama"
@@ -800,6 +812,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "İlk ${ cycle } ay için özel indirimli ${ discountedPrice } fiyatı geçerlidir. Ardından aylık ${ nextPrice } indirimli tutarıyla ${ renewalLength } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "İlk ay için ${ discountedPrice } özel indirimli fiyat geçerlidir. Ardından aylık ${ nextPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ]
@@ -3859,6 +3874,9 @@
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
       ],
+      "an anonymous user": [
+        "isimsiz bir kullanıcı"
+      ],
       "and": [
         "ve"
       ],
@@ -4149,14 +4167,17 @@
       "Free 5GB encrypted storage to get started": [
         "Başlamak için ücretsiz 5GB şifrelenmiş depolama alanı"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Belgelerinize eklenen yorum ve öneriler için e-posta bildirimleri alın."
+      ],
+      "Get Notified About Comments": [
+        "Yorumlar bildirilsin"
+      ],
       "here": [
         "buraya"
       ],
       "High Priority": [
         "Yüksek öncelik"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -4416,6 +4437,10 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bu işlemin kişi listenizin boyutuna bağlı olarak uzun sürebileceğini unutmayın."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın.",
+        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
+      ],
       "Please provide a name and an email address for creating a group.": [
         "Bir grup oluşturmak için lütfen bir ad ve bir e-posta adresi belirtin."
       ],
@@ -4467,6 +4492,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
+      ],
+      "Restored version to": [
+        "Şu sürüm geri yüklendi"
       ],
       "Saving": [
         "Kaydediliyor"
@@ -4548,6 +4576,12 @@
       ],
       "The Beginning": [
         "Başlangıç"
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Dijital imza kısmen doğrulandı. Dosya, belirli bir kullanıcı kaynağı belirtmeyen herkese açık bir sayfadan yüklendi."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Dijital imza kısmen doğrulandı. Klasör, belirli bir kullanıcı kaynağı belirtmeyen herkese açık bir sayfadan yüklendi."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
@@ -4657,6 +4691,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
+      ],
+      "Undo successful": [
+        "Geri alınamadı"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Ne yazık ki, bu dosyanın ya da dosyanın bazı verilerinin şifresi çözülemedi."
@@ -4849,6 +4886,9 @@
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Hizmet işlemleri kullanılamadığından kullandığınız tarayıcı büyük dosyaların indirilmesini desteklemiyor. Büyük dosyaları indirmek tarayıcının donmasına ya da yanıt vermemesine neden olabilir. Lütfen güncel ${ recommendedBrowser } sürümünü kullanarak yeniden deneyin."
       ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "Geçerli belgeniz bu sürümle değiştirilecek. Yorumlar ve öneriler belgeden kaldırılacak ancak yorum geçmişinde erişilebilir kalacak."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
@@ -4972,6 +5012,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
+      "Account holder": [
+        "Hesap sahibi"
+      ],
       "Add email address": [
         "E-posta adresi ekle"
       ],
@@ -5040,6 +5083,12 @@
       ],
       "Calendars": [
         "Takvimler"
+      ],
+      "Can edit": [
+        "Düzenleyebilir"
+      ],
+      "Can view": [
+        "Görüntüleyebilir"
       ],
       "Cancel download": [
         "İndirmeyi iptal et"
@@ -5140,6 +5189,9 @@
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
       ],
+      "Enable email notifications": [
+        "E-posta bildirimlerini aç"
+      ],
       "Encrypt emails": [
         "E-postaları şifrele"
       ],
@@ -5196,6 +5248,9 @@
       ],
       "Import to:": [
         "Şunun içine aktar:"
+      ],
+      "Include document name in notification": [
+        "Bildirime belge adı eklensin"
       ],
       "Include message and file name in invite email": [
         "Davet e-postasına bir ileti ve dosya adı eklensin"
@@ -5400,6 +5455,14 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Dosyaları taşıyabilir, ekleyebilir ve düzenleyebilir"
+      ],
+      "View and download": [
+        "Görüntüleyebilir ve indirebilir"
       ]
     },
     "Label for contact group color": {
@@ -5848,9 +5911,6 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Get started for ${ price }": [
-        "${ price } ile başlayın"
       ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus } tutarından başlayan fiyatlarla"
@@ -6462,14 +6522,6 @@
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price } ile Mail Plus edinin"
-      ],
-      "Starting from ${ price }": [
-        "${ price } tutarından başlayan fiyatlarla"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -6638,6 +6690,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -6917,6 +6972,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal } yüklemek için yeterli alan yok"
       ],
+      "Public link access updated": [
+        "Herkese açık bağlantı erişimi güncellendi"
+      ],
+      "Public link update access failed ": [
+        "Herkese açık bağlantı erişimi güncellenemedi "
+      ],
       "Stopping the sharing of this item has failed": [
         "Bu öge paylaşımdan kaldırılamadı"
       ],
@@ -7119,8 +7180,23 @@
       "Please select your billing state first.": [
         "Lütfen önce faturanın kesileceği ili seçin."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "${ renewPrice } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
       "Select billing country to pay": [
         "Ödeme için fatura ülkesini seçin"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "İlk ${ subscriptionLength } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ renewPrice } tutarla ${ subscriptionLengthCopy } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "İlk ${ subscriptionLength } ay için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Ardından aylık ${ renewPrice } tutarla ${ subscriptionLengthCopy } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "İlk ay için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ renewPrice } tutarla ${ subscriptionLength } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ renewPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
@@ -8461,6 +8537,9 @@
       ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
+      ],
+      "Dark Web Monitoring": [
+        "Karanlık ağ izleme"
       ],
       "Data recovery": [
         "Veri kurtarma"

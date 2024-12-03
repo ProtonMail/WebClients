@@ -81,6 +81,9 @@
       "Apply": [
         "Použít"
       ],
+      "Ask me next time": [
+        "Zeptat se příště"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
         "Na jednu skupinu kontaktů jsou povoleny maximálně ${ maxContacts } kontakty",
@@ -309,6 +312,9 @@
       "Go to label": [
         "Přejít na štítek"
       ],
+      "Got it": [
+        "Rozumím"
+      ],
       "Help": [
         "Pomoc"
       ],
@@ -525,6 +531,9 @@
       "Restore this version": [
         "Obnovit tuto verzi"
       ],
+      "Restore this version?": [
+        "Obnovit tuto verzi?"
+      ],
       "Retry": [
         "Opakovat"
       ],
@@ -533,6 +542,9 @@
       ],
       "Save changes": [
         "Uložit změny"
+      ],
+      "Save preferences": [
+        "Uložit předvolby"
       ],
       "Search": [
         "Vyhledat"
@@ -816,6 +828,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ discountedPrice } platí pro prvních ${ cycle } měsíců. Poté se automaticky obnoví za zvýhodněnou cenu ${ nextPrice } na ${ renewalLength } měsíců. Službu můžete kdykoli zrušit."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ discountedPrice } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ nextPrice }. Službu můžete kdykoli zrušit."
       ]
@@ -4268,14 +4283,17 @@
       "Free 5GB encrypted storage to get started": [
         "5 GB bezplatného šifrovaného úložného prostoru"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Získejte e-mailem upozornění na nové komentáře a návrhy přidané k vašim dokumentům."
+      ],
+      "Get Notified About Comments": [
+        "Buďte upozorněni na komentáře"
+      ],
       "here": [
         "zde"
       ],
       "High Priority": [
         "Vysoká priorita"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
@@ -4542,10 +4560,10 @@
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }."
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane kredit ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstanou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstanou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane ${ creditsRemaining } kreditů."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Pro vytvoření skupiny uveďte jméno a e-mailovou adresu."
@@ -4600,6 +4618,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
+      ],
+      "Restored version to": [
+        "Obnovena verze na"
       ],
       "Saving": [
         "Ukládání"
@@ -4799,6 +4820,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
       ],
+      "Undo successful": [
+        "Vrácení bylo úspěšné"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Zdá se, že soubor nebo některá jeho data nelze dešifrovat."
       ],
@@ -4994,6 +5018,9 @@
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Váš aktuální prohlížeč nepodporuje stahování velkých souborů z důvodu nedostupnosti Service Workers. Stahování velkých souborů může způsobit, že prohlížeč přestane reagovat. Použijte prosím nejnovější verzi ${ recommendedBrowser } a zkuste to znovu."
       ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "Váš aktuální dokument bude nahrazen touto verzí. Komentáře a návrhy budou z dokumentu odebrány, ale zůstanou přístupné v historii komentářů."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu ${ BRAND_NAME }."
       ],
@@ -5122,6 +5149,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
+      ],
+      "Account holder": [
+        "Majitel účtu"
       ],
       "Add email address": [
         "Přidat e-mailovou adresu"
@@ -5297,6 +5327,9 @@
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
       ],
+      "Enable email notifications": [
+        "Povolit e-mailová upozornění"
+      ],
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
@@ -5353,6 +5386,9 @@
       ],
       "Import to:": [
         "Importovat do:"
+      ],
+      "Include document name in notification": [
+        "Zahrnout název dokumentu do upozornění"
       ],
       "Include message and file name in invite email": [
         "Zahrnout zprávu a název souboru v e-mailu s pozvánkou"
@@ -5561,7 +5597,7 @@
     },
     "Label description": {
       "Organise, add and edit files": [
-        "Organizace, přidávání a úpravova souborů"
+        "Organizovat, přidávat a upravovat soubory"
       ],
       "View and download": [
         "Zobrazit a stáhnout"
@@ -6023,9 +6059,6 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Začněte za ${ price }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
@@ -6685,14 +6718,6 @@
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Získejte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -7172,7 +7197,7 @@
         "Není dostatek místa pro nahrání ${ formattedTotal }"
       ],
       "Public link access updated": [
-        "Přístupu k veřejným odkazům aktualizován"
+        "Veřejný přístup k odkazům aktualizován"
       ],
       "Public link update access failed ": [
         "Přístup k aktualizaci veřejného odkazu selhal "
@@ -7390,6 +7415,15 @@
       ],
       "Select billing country to pay": [
         "Vyberte zemi platby"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí prvních ${ subscriptionLength } měsíců. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } měsíců. Službu můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíce. Poté se automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } měsíců. Službu můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPrice } na ${ subscriptionLength } měsíc. Službu můžete kdykoli zrušit."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
@@ -8815,6 +8849,9 @@
       ],
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
+      ],
+      "Dark Web Monitoring": [
+        "Sledování Dark webu"
       ],
       "Data recovery": [
         "Obnovení dat"

@@ -81,6 +81,9 @@
       "Apply": [
         "Zastosuj"
       ],
+      "Ask me next time": [
+        "Zapytaj mnie później"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakt",
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakty",
@@ -303,6 +306,9 @@
       "Go to label": [
         "Przejdź do etykiety"
       ],
+      "Got it": [
+        "Ok"
+      ],
       "Help": [
         "Pomoc"
       ],
@@ -519,6 +525,9 @@
       "Restore this version": [
         "Przywróć tę wersję"
       ],
+      "Restore this version?": [
+        "Przywrócić tę wersję?"
+      ],
       "Retry": [
         "Spróbuj ponownie"
       ],
@@ -527,6 +536,9 @@
       ],
       "Save changes": [
         "Zapisz zmiany"
+      ],
+      "Save preferences": [
+        "Zapisz ustawienia"
       ],
       "Search": [
         "Szukaj"
@@ -4253,9 +4265,6 @@
       "High Priority": [
         "Wysoki priorytet"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "Numer IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
       ],
@@ -4964,6 +4973,9 @@
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Twoja obecna przeglądarka nie obsługuje pobierania dużych plików z powodu niedostępności mechanizmu Service Workers. Pobieranie dużych plików może spowodować zawieszenie przeglądarki lub brak reakcji na jej działanie. Użyj najnowszych wersji ${ recommendedBrowser } i spróbuj ponownie."
       ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "Twój aktualny dokument zostanie zastąpiony wybraną wersją. Komentarze i sugestie zostaną usunięte z dokumentu, ale nadal będą dostępne w historii komentarzy."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta ${ BRAND_NAME }."
       ],
@@ -5266,6 +5278,9 @@
       ],
       "Emails (last month)": [
         "Wiadomości (ostatni miesiąc)"
+      ],
+      "Enable email notifications": [
+        "Włącz powiadomienia e-mail"
       ],
       "Encrypt emails": [
         "Zaszyfruj wiadomości"
@@ -6043,9 +6058,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Od ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Od ${ priceMailPlus }"
       ],
@@ -6702,14 +6714,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -8822,6 +8826,9 @@
       ],
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoring dark web"
       ],
       "Data recovery": [
         "Odzyskiwanie danych"
