@@ -964,6 +964,9 @@
       "Remove this label": [
         "Remover este marcador"
       ],
+      "Remove Zoom meeting": [
+        "Remover reunião do Zoom"
+      ],
       "Replace": [
         "Substituir"
       ],
@@ -1632,6 +1635,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ discountedPrice } é válido nos primeiros ${ cycle } meses. Em seguida, será renovado automaticamente pelo preço com desconto de ${ nextPrice } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ discountedPrice } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ nextPrice } todo mês. Você pode cancelar a qualquer momento."
       ]
@@ -6516,9 +6522,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Estou enviando essa mensagem para um usuário que não usam o ${ MAIL_APP_NAME }."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
       ],
@@ -6862,6 +6865,10 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo, dependendo do tamanho da sua lista de contatos."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes.",
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
+      ],
       "Please open the document to view it.": [
         "Abra o documento para visualizá-lo"
       ],
@@ -7079,6 +7086,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "A capacidade de armazenamento não é suportada nesse navegador, precisamos desse suporte para ativar a pesquisa de conteúdo de mensagens."
       ],
       "Subject": [
         "Assunto"
@@ -8039,6 +8049,9 @@
       ],
       "/month": [
         "/mês"
+      ],
+      "Account holder": [
+        "Titular da conta"
       ],
       "Actions": [
         "Ações"
@@ -9223,9 +9236,6 @@
       "Get ${ planTitle }": [
         "Obtenha ${ planTitle }"
       ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Iniciando a partir de ${ priceMailPlus }"
       ],
@@ -9836,17 +9846,6 @@
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Obtenha Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -9859,6 +9858,11 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10015,6 +10019,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Redefina as senhas de usuários e redefina a autenticação de dois fatores para os usuários"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Envie todo o seu tráfego na internet por meio da rede Tor com um único clique"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com um armazenamento cloud criptografado. Inclui sincronização automática, compartilhamento de arquivo criptografado, e mais."
@@ -10580,8 +10587,20 @@
       "Please select your billing state first.": [
         "Selecione primeiro seu estado de cobrança."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Renova por ${ renewPrice }, cancele a qualquer momento."
+      ],
       "Select billing country to pay": [
         "Selecione o país de cobrança para pagar"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
@@ -11627,6 +11646,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Alias desativado"
+      ],
       "Unsubscribed": [
         "Assinatura cancelada"
       ]
@@ -12836,6 +12858,9 @@
       "Customize your mail import": [
         "Personalize sua importação de e-mail"
       ],
+      "Dark Web Monitoring": [
+        "Monitoramento da Dark Web"
+      ],
       "Data recovery": [
         "Recuperação de dados"
       ],
@@ -13514,6 +13539,9 @@
     "Tor out of date": {
       "stable release": [
         "versão estável"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Esta versão do navegador Tor não é suportada. Atualize-o para a última ${ stableRelease }."
       ]
     },
     "Update font modal": {

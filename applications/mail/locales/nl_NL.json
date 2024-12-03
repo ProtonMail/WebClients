@@ -375,6 +375,9 @@
       "Disable alias": [
         "Alias uitschakelen"
       ],
+      "Disabling alias": [
+        "Alias uitschakelen"
+      ],
       "Discard": [
         "Verwijderen"
       ],
@@ -6501,9 +6504,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Ik verzend dit bericht naar een niet-${ MAIL_APP_NAME }-gebruiker."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
@@ -7207,6 +7207,9 @@
       ],
       "This message is from a mailing list.": [
         "Dit bericht komt van een mailinglist."
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "Dit bericht komt van een SimpleLogin alias."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Dit bericht is ondertekend met een sleutel die nog niet als vertrouwd is gemarkeerd."
@@ -9202,9 +9205,6 @@
       "Get ${ planTitle }": [
         "Neem ${ planTitle }"
       ],
-      "Get started for ${ price }": [
-        "Begin voor ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Vanaf ${ priceMailPlus }"
       ],
@@ -9813,14 +9813,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Krijg Mail Plus voor ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Vanaf ${ price }"
       ]
     },
     "new_plans: title": {
@@ -11597,6 +11589,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Alias uitgeschakeld"
+      ],
       "Unsubscribed": [
         "Opgezegd"
       ]
@@ -12805,6 +12800,9 @@
       ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "Dataherstel"

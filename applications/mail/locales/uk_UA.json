@@ -3461,8 +3461,23 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } у налаштуваннях."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } захищає ваш обліковий запис із виділеним цілодобовим моніторингом підозрілої діяльності, включно з ескалацією до фахівців з безпеки."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двоетапна автентифікація підвищує рівень безпеки, запобігаючи несанкціонованому доступу."
+      ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Автоматично видаляйте спам і видалені повідомлення та розблокуйте більше преміумфункцій при покращенні."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Автоматично очищати листи, що переміщені в Кошик і Спам більше ніж 30 днів тому."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Автоматично сортувати ваші вхідні повідомлення, перш ніж вони потрапляють до вхідних."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Створюйте стільки міток або тек, скільки вам потрібно щоб зберігати вхідну скриньку охайною."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Розшифрування контактів… Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
@@ -3473,8 +3488,14 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Призначений для користувачів, які шукають посилений захист для своїх облікових записів."
       ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Не бажаєте відправити лист просто зараз? Заплануйте відправлення на потрібний час."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Для отримання необмеженого доступу до асистента письма та багато іншого, оновіть ${ BRAND_NAME } Duo."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Отримайте необмежену кількість псевдонімів і 500 ГБ сховища з ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3500,6 +3521,9 @@
       "No labels": [
         "Немає міток"
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Заощаджуйте час, відсилаючи електронні листи всім одночасно за допомогою груп контактів. Розблокуйте ці та інші преміумфункції під час покращення."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Передплатіть тарифний план, щоб відокремити різні аспекти свого життя за допомогою декількох адрес електронної пошти та отримати доступ до інших преміумфункцій."
       ],
@@ -3508,6 +3532,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті доступу до облікового запису."
+      ],
+      "Starting from ${ price }": [
+        "Починаючи з ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Щоб продовжувати користуватися помічником з написання, додайте його до своєї передплати."
@@ -3518,11 +3545,23 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Для гарантування максимальної безпеки вашого облікового запису налаштуйте фразу відновлення."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Щоб імпортувати з використанням файлів CSV і VCF, розмір файлу не має перевищувати ${ MAX_IMPORT_FILE_SIZE_STRING }, а кількість контактів – ${ MAX_IMPORT_CONTACTS_STRING }. Якщо ваш файл більший, розділіть його на декілька менших. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Увімкніть захист від стеження для електронної пошти, щоб рекламодавці та сторонні служби не відстежували ваше розташування й активність в інтернеті."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Розблокуйте ${ activatePmUser } для яскравої та простої адреси електронної пошти."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Розблокуйте власний планувальник повідомлень та більше преміумфункцій при оновленні."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Розблокуйте власне відкладання й більше преміумфункцій при покращенні."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Передплатіть тарифний план і розблокуйте короткі адреси електронної пошти та інші преміальні функції."
@@ -3536,6 +3575,9 @@
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Покращте свій обліковий запис, щоб активувати ${ PROTON_SENTINEL_NAME }, – наше найсучасніше рішення щодо безпеки на базі ШІ з експертною цілодобовою підтримкою."
       ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Використовуйте ${ MAIL_APP_NAME } , щоб увійти в онлайн-сервіси, на відміну від інших email-провайдерів, ми ніколи не будемо відстежувати дані та обмінюватися ними з третіми особами."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
       ],
@@ -3544,6 +3586,12 @@
       ],
       "When do you want your message to be sent?": [
         "Коли ви хочете надіслати своє повідомлення?"
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "З контактними групами ви можете відправляти листи всім у групі одним натисканням."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "За допомогою власного відкладення ви можете приховати листи та повернути їх у потрібний момент."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
@@ -3556,6 +3604,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ваш обліковий запис і способи відновлення налаштовано."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -7939,6 +7990,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
       ],
+      "/month": [
+        "/місяць"
+      ],
       "Actions": [
         "Дії"
       ],
@@ -7977,6 +8031,9 @@
       ],
       "And": [
         "Та"
+      ],
+      "Anderson": [
+        "Андерсон"
       ],
       "ANY": [
         "БУДЬ-ЯКЕ"
@@ -8062,6 +8119,9 @@
       "Colors": [
         "Кольори"
       ],
+      "Company name": [
+        "Назва компанії"
+      ],
       "Composer": [
         "Редактор"
       ],
@@ -8115,6 +8175,9 @@
       ],
       "Don't like the style": [
         "Не подобається стиль"
+      ],
+      "Don't show again": [
+        "Не показувати знову"
       ],
       "Don't show this again": [
         "Більше не показувати"
@@ -8374,6 +8437,9 @@
       "Reveal password": [
         "Показати пароль"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Search in": [
         "Шукати в"
       ],
@@ -8418,6 +8484,9 @@
       ],
       "Then": [
         "Потім"
+      ],
+      "Thomas": [
+        "Томас"
       ],
       "Time": [
         "Час"
@@ -8584,6 +8653,9 @@
       "click here": [
         "клацніть тут"
       ],
+      "contact us": [
+        "зв'язатися з нами"
+      ],
       "Create a calendar linked to an active email address.": [
         "Створіть календар, пов'язаний з активною адресою електронної пошти."
       ],
@@ -8697,6 +8769,9 @@
       ],
       "Terms": [
         "Умови"
+      ],
+      "terms of service": [
+        "умови надання послуг"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Цей ICS-файл містить більше однієї події. Будь ласка, завантажте його та імпортуйте події в ${ CALENDAR_APP_NAME }"
@@ -9111,8 +9186,17 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Понизити до ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Отримати ${ planTitle }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Починаючи з ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Покращити"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Покращити до ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9999,11 +10083,26 @@
       ]
     },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } гарантує, що тільки ви та зазначені отримувачі можуть отримати доступ до ваших листів."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Отримайте доступ до електронної пошти та календаря прямо з вашого настільного комп'ютера за допомогою додатку для настільних комп'ютерів."
+      ],
+      "Activate premium features": [
+        "Активувати преміумфункції"
+      ],
+      "Activate selected": [
+        "Активувати вибране"
+      ],
       "Advanced encryption": [
         "Розширене шифрування"
       ],
       "App Store": [
         "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "Автоматичне видалення спаму та смітника"
       ],
       "Automatically forward emails": [
         "Автоматично пересилайте листи"
@@ -10014,14 +10113,26 @@
       "Block unsavory senders": [
         "Блокувати небажаних відправників"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Очистить видалені листи та спам через 30 днів."
+      ],
       "Congratulations on choosing privacy": [
         "Вітаємо з вибором приватності"
       ],
       "Dark Web Monitoring": [
         "Відстеження Dark Web"
       ],
+      "Download the desktop app": [
+        "Завантажити настільний додаток"
+      ],
+      "Download the desktop app and continue": [
+        "Завантажити застосунок для настільного компʼютера та продовжити"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Шифрування настільки надійне, що ніхто крім вас і ваших отримувачів не зможе переглядати ваші листи. ${ kbLinkEncryption }"
+      ],
+      "Fixed and focused": [
+        "Фіксовано та фокусовано"
       ],
       "For your eyes only": [
         "Ніхто крім вас"
@@ -10029,23 +10140,47 @@
       "Forward Gmail messages to your inbox.": [
         "Пересилайте повідомлення з Gmail на свою поштову скриньку."
       ],
+      "Get notified if your password is compromised.": [
+        "Отримувати сповіщення якщо ваш пароль буде скомпрометовано."
+      ],
       "Get the desktop app": [
         "Отримати настільний застосунок"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Отримайте мобільний додаток з ${ mobileAppAppStoreLink } або ${ mobileAppGooglePlayLink }."
       ],
       "Google Play": [
         "Google Play"
       ],
+      "Make the most of your paid plan.": [
+        "Отримайте максимум від свого платного тарифного плану."
+      ],
       "Maybe later": [
         "Можливо пізніше"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Більше способів використовувати ${ MAIL_APP_NAME }"
       ],
       "Next": [
         "Далі"
       ],
+      "On the move": [
+        "На ходу"
+      ],
       "Protection from trackers": [
         "Захист від стеження"
       ],
+      "Replay introduction": [
+        "Повторити вступ"
+      ],
       "Skip": [
         "Пропустити"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "Почати використовувати ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Почніть використовувати коротшу версію своєї адреси електронної пошти."
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Ми забороняємо рекламодавцям і збирачам даних формувати ваш профіль. ${ kbLinkPrivacy }"
@@ -10636,6 +10771,9 @@
       "Try ${ PASS_APP_NAME }": [
         "Спробуйте ${ PASS_APP_NAME }"
       ],
+      "Used on Amazon for shopping, etc.": [
+        "Використовується на Amazon для покупок та ін."
+      ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Коли потрібно вказати адресу електронної пошти, скористайтеся натомість цим псевдонімом. Псевдоніми надаються ${ passLink }."
       ]
@@ -10643,6 +10781,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(відкриє ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Переглянути події"
       ]
     },
     "Security Center - Info": {
@@ -11157,6 +11300,9 @@
       "/ month": [
         "/ місяць"
       ],
+      "/month": [
+        "/місяць"
+      ],
       "1 year": [
         "1 рік"
       ],
@@ -11258,6 +11404,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Відтепер ми типово завантажуємо зображення і не даємо відправникам відстежувати вас.\nЦе можна змінити в ${ settingsLink }."
+      ],
+      "You can now collapse the navigation bar.": [
+        "Тепер ви можете згорнути панель навігації."
       ],
       "You can now schedule your messages to be sent later": [
         "Тепер ви можете планувати надсилання повідомлень"
@@ -12394,6 +12543,9 @@
       "Customize your mail import": [
         "Налаштуйте імпорт своєї пошти"
       ],
+      "Dark Web Monitoring": [
+        "Моніторинг Темного Вебу"
+      ],
       "Data recovery": [
         "Відновлення даних"
       ],
@@ -12705,6 +12857,9 @@
       ],
       "No trackers found": [
         "Стеження не виявлено"
+      ],
+      "No-reply address detected": [
+        "Виявлено адресу, що не очікує на відповіді"
       ],
       "Notes": [
         "Нотатки"

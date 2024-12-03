@@ -375,6 +375,9 @@
       "Disable alias": [
         "ფსევდონიმის გათიშვა"
       ],
+      "Disabling alias": [
+        "ფსევდონიმის გათიშვა"
+      ],
       "Discard": [
         "მოცილება"
       ],
@@ -960,6 +963,9 @@
       ],
       "Remove this label": [
         "ამ ჭდის წაშლა"
+      ],
+      "Remove Zoom meeting": [
+        "Zoom-ის შეხვედრის წაშლა"
       ],
       "Replace": [
         "ჩანაცვლება"
@@ -5260,6 +5266,9 @@
       "Close": [
         "დახურვა"
       ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "დაასრულეთ ეს საკონტროლო სია ${ daysCount } დღეში და გაიორმაგეთ საცავი უფასოდ."
+      ],
       "Congratulations, you completed all the steps!": [
         "გილოცავთ! თქვენ ყველა ნაბიჯი დაასრულეთ!"
       ],
@@ -6479,9 +6488,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "ამ შეტყობინებას არა-${ MAIL_APP_NAME }-ის მომხმარებელს ვუგზავნი."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
       ],
@@ -6824,6 +6830,10 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი.",
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
       ],
       "Please open the document to view it.": [
         "გახსენით დოკუმენტი, რომ ნახოთ ის."
@@ -7186,6 +7196,9 @@
       "This message is from a mailing list.": [
         "ეს შეტყობინება საფოსტო სიიდანაა."
       ],
+      "This message is from a SimpleLogin alias.": [
+        "ეს შეტყობინება SimpleLogin-ის ფსევდონიმიდანაა."
+      ],
       "This message is signed by a key that has not been trusted yet.": [
         "შეტყობინება ხელმოწერილია გასაღებით, რომელიც, ჯერ, სანდო არაა."
       ],
@@ -7408,6 +7421,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "ჩვენ დავბლოკეთ შემდეგი რეკლამები და ორგანიზაციები იმისგან, რომ დაინახონ, როდის გახსენით ეს ელფოსტა, რა მოწყობილობას იყენებთ და სად მდებარეობთ."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "ამ ბრაუზერში შეტყობინების შემცველობაში ძებნას ვერ ჩართავთ."
       ],
       "We could not verify the sender's trusted keys.": [
         "გამომგზავნის სანდო გასაღებების შემოწმების შეცდომა."
@@ -7984,6 +8000,9 @@
       ],
       "/month": [
         "/თვეში"
+      ],
+      "Account holder": [
+        "ანგარიშის მფლობელი"
       ],
       "Actions": [
         "ქმედებები"
@@ -9168,9 +9187,6 @@
       "Get ${ planTitle }": [
         "${ planTitle }-ის მიღება"
       ],
-      "Get started for ${ price }": [
-        "დაწყება ${ price }-დან"
-      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }-დან"
       ],
@@ -9781,14 +9797,6 @@
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "მიიღეთ Mail Plus ფასით ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "${ price }-დან"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -9951,6 +9959,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "მომხმარებლების პაროლებისა და 2FA-ის აღდგენა"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "გადაამისამართეთ თქვენი ინტერნეტ-ტრაფიკი Tor-ის ქსელში თაგუნას ერთადერთი წკაპუნით"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
@@ -10503,6 +10514,9 @@
       ],
       "Please select your billing state first.": [
         "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "განახლების დრო ${ renewPrice }. გააუქმეთ ნებისმიერ დროს."
       ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
@@ -11548,6 +11562,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "ფსევდონიმი გათიშულია"
+      ],
       "Unsubscribed": [
         "გამოწერა გაუქმებულია"
       ]
@@ -12754,6 +12771,9 @@
       "Customize your mail import": [
         "თქვენი ელფოსტის შემოტანის მორგება"
       ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
       "Data recovery": [
         "მონაცემების აღდგენა"
       ],
@@ -13432,6 +13452,9 @@
     "Tor out of date": {
       "stable release": [
         "სტაბილური რელიზი"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tor Browser-ის ეს ვერსია მხარდაუჭერელია. განაახლეთ უკანასკნელ ვერსიამდე: ${ stableRelease }"
       ]
     },
     "Update font modal": {
