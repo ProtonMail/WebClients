@@ -29,6 +29,7 @@ describe('Session utilities', () => {
             offlineKD: 'offlineKD-test',
             sessionLockToken: 'sessionLockToken-test',
             payloadVersion: 2,
+            isSSOUser: false,
         };
 
         test('should encrypt sensitive components in the encrypted blob', async () => {
