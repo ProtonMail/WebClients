@@ -5,7 +5,6 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import {
     createAliasSyncEnableRule,
     createB2BRule,
-    createBlackFriday2024Rule,
     createMonitorLearnMoreRule,
     createPendingShareAccessRule,
     createSecurityRule,
@@ -42,7 +41,6 @@ export const spotlight = createSpotlightService({
          * otherwise they may never be displayed, as an "invisible" rule may return `true` first */
         createPendingShareAccessRule(store),
         createTrialRule(store),
-        createBlackFriday2024Rule(store),
         createSecurityRule(store),
         createAliasSyncEnableRule(store),
         createUserRenewalRule(store),
