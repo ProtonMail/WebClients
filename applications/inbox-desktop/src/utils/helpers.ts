@@ -19,8 +19,8 @@ export const getPlatform = (): DESKTOP_PLATFORMS => {
     throw new Error(`Platform "${process.platform}" not supported.`);
 };
 
-export const restartApp = (timeout = 300) => {
-    mainLogger.info("Restarting app in", timeout, "ms");
+export const closeApp = (timeout = 300) => {
+    mainLogger.info("Closing app in", timeout, "ms");
     setTimeout(() => {
         // Since the app can crash under some circunstances when being restarted
         // We are just keeping it closed after clearing data.
@@ -36,7 +36,7 @@ const clear = (view: Electron.BrowserView) => {
     view.webContents.session.clearCache();
 };
 
-export const clearStorage = (restart: boolean, timeout?: number) => {
+export const clearStorage = (close: boolean, timeout?: number) => {
     const mailView = getMailView();
     const calendaView = getCalendarView();
 
@@ -49,8 +49,8 @@ export const clearStorage = (restart: boolean, timeout?: number) => {
 
     clearLogs();
 
-    if (restart) {
-        restartApp(timeout);
+    if (close) {
+        closeApp(timeout);
     }
 };
 
