@@ -513,6 +513,9 @@
       "Get ${ BRAND_NAME } Duo": [
         "Obtenga ${ BRAND_NAME } Duo"
       ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Disfrute de ${ MAIL_SHORT_APP_NAME } Plus por ${ priceCoupon }"
+      ],
       "Get in touch": [
         "Contáctenos"
       ],
@@ -3571,6 +3574,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA añade una capa de seguridad adicional, evitando acceso no autorizado."
       ],
+      "Also included": [
+        "También incluido"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Elimine automáticamente los mensajes de spam y de la papelera y desbloquee más funciones premium al mejorar el plan."
       ],
@@ -3600,6 +3606,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Para acceso ilimitado al asistente de escritura y más, actualice a ${ BRAND_NAME } Duo."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Reciba notificaciones si la contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obtenga alias ilimitados y 500 GB de almacenamiento con ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -6510,9 +6519,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Estoy enviando este mensaje a un usuario que no usa ${ MAIL_APP_NAME }."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear la cuenta, solicite una invitación y responderemos dentro de un día hábil."
       ],
@@ -8047,6 +8053,9 @@
       "/month": [
         "/mes"
       ],
+      "Account holder": [
+        "Titular de la cuenta"
+      ],
       "Actions": [
         "Acciones"
       ],
@@ -9230,8 +9239,8 @@
       "Get ${ planTitle }": [
         "Obtenga ${ planTitle }"
       ],
-      "Get started for ${ price }": [
-        "Empiece por ${ price }"
+      "Get started for ${ priceCoupon }": [
+        "Comenzar por ${ priceCoupon }"
       ],
       "Starting from ${ priceMailPlus }": [
         "A partir de ${ priceMailPlus }"
@@ -9373,6 +9382,9 @@
       ],
       "10 email addresses/aliases": [
         "10 direcciones/alias de correo electrónico"
+      ],
+      "10 more premium features": [
+        "10 funciones premium más"
       ],
       "10-year file version history": [
         "Historial de 10 años de las versiones de los archivos"
@@ -9843,14 +9855,6 @@
         "Está disfrutando de un precio promocional en el plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Obtenga Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -9863,6 +9867,14 @@
       ],
       "Switch plans?": [
         "¿Quiere cambiar de plan?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Disfrute de Mail Plus por ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puede cancelar en cualquier momento."
       ]
     },
     "new_plans: tooltip": {
@@ -12854,6 +12866,9 @@
       ],
       "Customize your mail import": [
         "Personalice la importación del correo"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoreo de la Dark Web"
       ],
       "Data recovery": [
         "Recuperación de datos"

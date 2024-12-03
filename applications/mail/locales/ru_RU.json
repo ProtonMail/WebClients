@@ -381,6 +381,9 @@
       "Disable alias": [
         "Отключить псевдоним"
       ],
+      "Disabling alias": [
+        "Отключение псевдонима"
+      ],
       "Discard": [
         "Сбросить"
       ],
@@ -968,6 +971,9 @@
       ],
       "Remove this label": [
         "Удалить этот ярлык"
+      ],
+      "Remove Zoom meeting": [
+        "Удалить встречу в Zoom"
       ],
       "Replace": [
         "Заменить"
@@ -1647,6 +1653,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Специально сниженная цена ${ discountedPrice } действует в течение первых ${ cycle } месяцев. Затем она будет автоматически продляться ${ renewalLength } месяцев по сниженной цене ${ nextPrice }. Отменить можно в любое время."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Специальная цена в ${ discountedPrice } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } каждый месяц. Отменить подписку можно в любой момент."
       ]
@@ -2231,11 +2240,17 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } хранилище"
       ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } места для писем"
+      ],
       "Advanced account protection": [
         "Расширенная защита аккаунта"
       ],
       "All ${ BRAND_NAME } apps and premium features": [
         "Все приложения ${ BRAND_NAME } и платные функции"
+      ],
+      "Cancel and downgrade": [
+        "Отменить и перейти на более дешевую версию"
       ],
       "Cloud storage and sharing for large files": [
         "Облачное хранилище и обмен большими файлами"
@@ -2246,14 +2261,23 @@
       "Encrypted password manager": [
         "Зашифрованный менеджер паролей"
       ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Наш базовый, бесплатный план со сквозным шифрованием электронной почты и хранением. Премиум функции не включены."
+      ],
       "Save ${ upsellSavings }": [
         "Сэкономьте ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Сэкономьте деньги с помощью ${ upsellPlanName }"
       ],
       "Secure personal and shared calendar": [
         "Безопасные личный и общий календари"
       ],
       "Try ${ planName }": [
         "Попробуйте ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Попробуйте ${ upsellPlanName } и сохраните доступ ко всем премиальным функциям электронной почты и календаря."
       ],
       "Ultra fast and private VPN": [
         "Сверхбыстрый и конфиденциальный VPN"
@@ -3602,6 +3626,9 @@
       "Designed for users seeking heightened protection for their accounts.": [
         "Создан для пользователей, желающих получить усиленную защиту своих аккаунтов."
       ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Не хотите отправлять письмо прямо сейчас? Запланируйте его на нужное время."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
@@ -3665,6 +3692,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Включите защиту от отслеживания электронной почты, чтобы предотвратить слежку рекламодателей и других лиц за вашим местоположением и активностью в сети."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Разблокируйте ${ activatePmUser } для запоминающегося и простого в наборе адреса электронной почты."
+      ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Разблокируйте настраиваемое расписание сообщений и другие платные функции при обновлении."
       ],
@@ -3697,6 +3727,9 @@
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Используя группы контактов, вы можете отправлять письма всем членам группы одним щелчком."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "С настраиваемым откладыванием вы можете скрыть письма и установить их повторное появление в лучшее время."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можете импортировать события в формате iCal (ICS файл). Размер файла не должен быть более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_EVENTS_STRING } событий. Если ваш файл больше, разделите его на меньшие файлы."
@@ -5435,8 +5468,14 @@
       ]
     },
     "Google Meet": {
+      "Join Google Meet": [
+        "Присоединиться к Google Meet"
+      ],
       "Joining instructions": [
         "Инструкции по присоединению"
+      ],
+      "Less details": [
+        "Меньше подробностей"
       ],
       "Meeting host:": [
         "Хозяин встречи:"
@@ -6687,9 +6726,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Я отправляю это сообщение пользователю, не являющемуся пользователем ${ MAIL_APP_NAME }."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
       ],
@@ -7035,6 +7071,12 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Пожалуйста, обратите внимание, что этот процесс может занять некоторое время в зависимости от размера вашей адресной книги."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредит.",
+        "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету.",
+        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов.",
+        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредита."
+      ],
       "Please open the document to view it.": [
         "Откройте документ для просмотра."
       ],
@@ -7257,6 +7299,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "К сожалению, это сообщение не существует, либо срок его действия уже истек."
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Возможности хранения не поддерживаются в этом браузере, нам нужна эта поддержка для включения поиска по содержимому сообщений."
+      ],
       "Subject": [
         "Тема"
       ],
@@ -7404,6 +7449,9 @@
       "This message is from a mailing list.": [
         "Это сообщение из списка рассылки."
       ],
+      "This message is from a SimpleLogin alias.": [
+        "Это сообщение из псевдонима SimpleLogin ."
+      ],
       "This message is signed by a key that has not been trusted yet.": [
         "Это сообщение подписано публичным ключом, который ещё не отмечен как доверенный."
       ],
@@ -7524,6 +7572,9 @@
       "Turn on to search the content of your messages": [
         "Включите поиск по содержимому ваших сообщений"
       ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Не удаётся получить доступ для хранения в этом браузере, нам нужен этот доступ для включения поиска по содержимому сообщений."
+      ],
       "Unlock message": [
         "Разблокировать сообщение"
       ],
@@ -7631,6 +7682,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Мы заблокировали получение информации о том, когда вы открываете это электронное письмо, какое устройство вы используете, и где вы находитесь, следующими рекламодателями и организациями."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Мы не можем включить поиск по содержимому сообщений в этом браузере."
       ],
       "We could not verify the sender's trusted keys.": [
         "Мы не можем проверить доверенные ключи отправителя."
@@ -8258,6 +8312,9 @@
       ],
       "/month": [
         "в месяц"
+      ],
+      "Account holder": [
+        "Владелец счёта"
       ],
       "Actions": [
         "Действия"
@@ -9458,9 +9515,6 @@
       "Get ${ planTitle }": [
         "Перейти на тариф ${ planTitle }"
       ],
-      "Get started for ${ price }": [
-        "Начните с ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Начиная с ${ priceMailPlus }"
       ],
@@ -10119,14 +10173,6 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Оформите Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Начиная с ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -10298,6 +10344,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Сбрасывайте пароли и двухфакторную аутентификацию для пользователей"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Направляйте свой трафик через сеть Tor одним нажатием"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ],
@@ -10439,6 +10488,9 @@
       ],
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
+      ],
+      "Meeting host copied to clipboard": [
+        "Хозяин митинга скопирован в буфер обмена"
       ],
       "Meeting ID copied to clipboard": [
         "Идентификатор митинга скопирован в буфер обмена"
@@ -10813,6 +10865,14 @@
         "Новая кредитная/дебетовая карта"
       ]
     },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Использовать имя компании"
+      ],
+      "Use personal name": [
+        "Использовать личное имя"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Страна плательщика"
@@ -10853,8 +10913,23 @@
       "Please select your billing state first.": [
         "Сначала выберите государство для выставления счета."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Затем стоимость подписки составит ${ renewPrice }. Отменить её можно в любое время."
+      ],
       "Select billing country to pay": [
         "Для оплаты, пожалуйста выберите страну"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ subscriptionLength } месяцев. Купон действителен ${ couponRedemptions } продления. Затем он будет автоматически продляться ${ subscriptionLengthCopy } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ subscriptionLength } месяцев. Затем она будет автоматически продляться ${ subscriptionLengthCopy } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен ${ couponRedemptions } продления. Затем он будет автоматически продляться ${ subscriptionLength } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Специальная цена в ${ priceWithDiscount } действует первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ renewPrice } каждый месяц. Отменить подписку можно в любой момент."
       ],
       "Timeout exceeded": [
         "Превышено время ожидания"
@@ -11953,6 +12028,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Псевдоним отключен"
+      ],
       "Unsubscribed": [
         "Подписка отменена"
       ]
@@ -12144,6 +12222,9 @@
     "Subscription change warning": {
       "Got it": [
         "Понятно"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Просто войдите в свой аккаунт Apple App Store, и выберите ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Просто войдите в свой аккаунт Play Маркет, а затем нажмите ${ subscriptions }."
@@ -12416,6 +12497,9 @@
       ],
       "Users won’t be able to send emails": [
         "Пользователи не смогут отправлять письма"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "Пользователи не смогут выгружать файлы на своих устройствах"
       ],
       "Version history": [
         "История версий"
@@ -13250,6 +13334,9 @@
       "Customize your mail import": [
         "Настройка импорта вашей почты"
       ],
+      "Dark Web Monitoring": [
+        "Мониторинг Темной паутины"
+      ],
       "Data recovery": [
         "Восстановление данных"
       ],
@@ -13944,6 +14031,9 @@
     "Tor out of date": {
       "stable release": [
         "стабильная версия"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Эта версия браузера Tor не поддерживается. Пожалуйста, обновите до последней ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -14504,6 +14594,12 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Присоединиться к встрече в Zoom"
+      ],
+      "Meeting ID:": [
+        "ID встречи:"
+      ],
       "Passcode:": [
         "Код доступа:"
       ]

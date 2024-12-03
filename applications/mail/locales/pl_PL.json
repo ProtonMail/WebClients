@@ -6723,9 +6723,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Wysyłam wiadomość do użytkownika spoza ${ MAIL_APP_NAME }."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "Numer IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
       ],
@@ -9503,9 +9500,6 @@
       "Get ${ planTitle }": [
         "Wybierz plan ${ planTitle }"
       ],
-      "Get started for ${ price }": [
-        "Od ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Od ${ priceMailPlus }"
       ],
@@ -10162,14 +10156,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -13322,6 +13308,9 @@
       ],
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoring dark web"
       ],
       "Data recovery": [
         "Odzyskiwanie danych"

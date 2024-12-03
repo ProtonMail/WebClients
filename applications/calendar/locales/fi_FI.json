@@ -557,6 +557,9 @@
       "Remove this participant": [
         "Poista tämä osallistuja"
       ],
+      "Remove Zoom meeting": [
+        "Poista Zoom-kokous"
+      ],
       "Report a problem": [
         "Ilmoita ongelmasta"
       ],
@@ -953,7 +956,7 @@
         "6 käyttäjää"
       ],
       "Premium Password Manager": [
-        "Premium salasanahallinta"
+        "Premium-salasanahallinta"
       ]
     },
     "bf2023: Offers": {
@@ -1038,7 +1041,7 @@
         "Kertamaksu, elinikäinen tarjous"
       ],
       "Online document editor": [
-        "Verkkodokumenttieditori"
+        "Selaimella käytettävä dokumenttieditori"
       ],
       "Password health alerts": [
         "Salasanaterveyshälytykset"
@@ -3628,7 +3631,7 @@
         "Sivua ei voitu ladata. Päivitä sivu tai tarkista Internet-yhteytesi."
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Kun lisäsalasana on käytössä, aliaksia voidaan hallita vain ${ PASS_APP_NAME }issa."
+        "Lisäsalasanan ollessa käytössä, voidaan aliaksia hallita vain ${ PASS_APP_NAME }issa."
       ],
       "You need an active personal calendar to import events": [
         "Tarvitset tapahtumien tuontiin aktiivisen henkilökohtaisen kalenterin"
@@ -3887,7 +3890,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista yhdistettyä laitetta, maailmanlaajuisen suoratoistotuen, haittasisällön- ja mainoseston sekä paljon muuta."
+        "Sisältää mm. yli 2950 palvelinta yli 65 maassa, 10 samanaikaista laiteyhteyttä, maailmanlaajuisen suoratoistotuen, sekä haittasisällön- ja mainoseston."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Sisältää tuen kolmelle omalle sähköpostiverkkotunnukselle, 90 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
@@ -4449,7 +4452,7 @@
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ota yhteyttä ylläpitoosi."
+        "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ole yhteydessä ylläpitoosi."
       ],
       "Account size": [
         "Tilin koko"
@@ -4740,9 +4743,6 @@
       "High Priority": [
         "Korkea tärkeys"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
       ],
@@ -4950,6 +4950,10 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediitti.",
+        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Anna nimi ja sähköpostiosoite ryhmän luomista varten."
@@ -5527,6 +5531,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
+      ],
+      "Account holder": [
+        "Tilinhaltija"
       ],
       "Add email address": [
         "Lisää sähköpostiosoite"
@@ -6437,9 +6444,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Alenna tilaukseen ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Aloita hintaan ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Alkaen ${ priceMailPlus }"
       ],
@@ -6489,8 +6493,8 @@
         "${ n } kalenteria/käyttäjä"
       ],
       "${ n } custom email domain": [
-        "${ n } oma sähköpostiverkkotunnus",
-        "${ n } omaa sähköpostiverkkotunnusta"
+        "${ n } oma verkkotunnus",
+        "${ n } omaa verkkotunnusta"
       ],
       "${ n } email address": [
         "${ n } sähköpostiosoite",
@@ -6558,10 +6562,10 @@
         "${ PROTON_SENTINEL_NAME } -ohjelma"
       ],
       "${ size } attachment size": [
-        "${ size } liitteen koko"
+        "${ size } liitekoko"
       ],
       "${ size } of secure storage per user": [
-        "${ size } suojattua tallennustilaa/käyttäjä"
+        "${ size } turvallista tallennustilaa/käyttäjä"
       ],
       "${ size } storage": [
         "${ size } tallennustilaa"
@@ -6582,13 +6586,13 @@
         "10 sähköpostiosoitetta/aliasta"
       ],
       "10-year file version history": [
-        "10 vuoden tiedostojen versiohistoria"
+        "10 vuoden tiedostoversiohistoria"
       ],
       "15 GB storage": [
         "15 Gt tallennustilaa"
       ],
       "24/7 account management support": [
-        "24/7 tilin hallinnan tuki"
+        "24/7-asiakaspalvelu tilien hallintaan"
       ],
       "99.95% SLA": [
         "99.95 % SLA"
@@ -6618,7 +6622,7 @@
         "Kaikki premium ${ BRAND_NAME } -palvelut. Yksi helppo tilaus"
       ],
       "Auto-delete Spam and Trash": [
-        "Tyhjennä roskaposti ja roskakori automaattisesti"
+        "Roskapostin ja roskakorin automaattinen tyhjennys"
       ],
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
@@ -6630,7 +6634,7 @@
         "Maksukorttien automaattitäyttö (tulossa pian)"
       ],
       "Automatic email forwarding": [
-        "Automaattinen sähköpostin välitys"
+        "Sähköpostin automaattiohjaus"
       ],
       "Available on all platforms": [
         "Saatavilla kaikilla alustoilla"
@@ -6648,7 +6652,7 @@
         "Keskitetty laskutus"
       ],
       "Collaborate and share large files": [
-        "Tee yhteistyötä ja jaa suuria tiedostoja"
+        "Yhteiskäytä ja jaa suuria tiedostoja"
       ],
       "Contact groups": [
         "Yhteystietoryhmät"
@@ -6684,7 +6688,7 @@
         "DNS-vuotosuojaus"
       ],
       "Double hop": [
-        "Double hop"
+        "Double hop -ohjaus"
       ],
       "Easy Switch import assistant": [
         "Easy Switch -tuontiapuri"
@@ -6726,7 +6730,7 @@
         "Luo sähköposteja kehotteella"
       ],
       "Group management (coming soon)": [
-        "Ryhmähallinta (tulossa pian)"
+        "Ryhmien hallinta (tulossa pian)"
       ],
       "High-speed streaming": [
         "Nopea suoratoisto"
@@ -6751,7 +6755,7 @@
         "Useita ylläpitäjien rooleja"
       ],
       "Online document editor": [
-        "Dokumenttieditori verkossa"
+        "Selaimella käytettävä dokumenttieditori"
       ],
       "Organize items with multiple vaults": [
         "Järjestele kohteita useilla holveilla"
@@ -6766,7 +6770,7 @@
         "Salasanahallinta"
       ],
       "Password-protected Emails": [
-        "Salasanasuojatut sähköpostiviestit"
+        "Salasanasuojatut sähköpostit"
       ],
       "Phone support (20+ users)": [
         "Puhelintuki (20+ käyttäjää)"
@@ -6806,7 +6810,7 @@
         "Tee sähköpostittelusta nopeampaa"
       ],
       "Schedule and snooze emails for any time": [
-        "Ajoita viestien lähetys tai torkutus mihin tahansa"
+        "Viestien vapaa ajoitus ja torkutus"
       ],
       "Schedule messages at any time": [
         "Ajoita viestit lähtemään milloin tahansa"
@@ -6821,10 +6825,10 @@
         "Suojattu linkkien jako"
       ],
       "See team's availability": [
-        "Katso tiimin saatavuus"
+        "Näe tiimisi tavoitettavuus"
       ],
       "Send & receive invitations": [
-        "Lähetä ja vastaanota kutsuja"
+        "Kutsujen lähetys ja vastaanotto"
       ],
       "Share files with no size limit": [
         "Jaa tiedostoja ilman kokorajoituksia"
@@ -6916,13 +6920,13 @@
         "Jopa ${ totalStorageSize } tallennustilaa"
       ],
       "User credential management": [
-        "Käyttäjien tunnusten hallinta"
+        "Käyttäjätietojen hallinta"
       ],
       "User session management": [
         "Käyttäjäistuntojen hallinta"
       ],
       "User storage management": [
-        "Käyttäjien tallennustilan hallinta"
+        "Käyttäjien tallennustilojen hallinta"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
@@ -6993,7 +6997,7 @@
         "Parannettu turvallisuus ja premium-ominaisuuksia tiimeille."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "Vättämätön suojaus ja turvallinen yhteistyö rajattomalle määrälle käyttäjiä."
+        "Vättämätön suojaus ja turvallinen yhteiskäyttö rajattomalle määrälle käyttäjiä."
       ],
       "For next-level password management and identity protection.": [
         "Edistyneempään salasanojen hallintaan ja henkilöllisyyden suojaukseen."
@@ -7014,7 +7018,7 @@
         "Suosittu"
       ],
       "Protect sensitive business information and collaborate securely.": [
-        "Suojaa arkaluonteiset yritystiedot ja yhteistyöskentele turvallisesti."
+        "Suojaa arkaluonteiset yritystiedot ja yhteiskäytä turvallisesti."
       ],
       "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
         "Suojaa perheesi kaikilla ${ PASS_SHORT_APP_NAME } Plussan premium-ominaisuuksista kuudelle käyttäjälle."
@@ -7062,14 +7066,6 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hanki Mail Plus hintaan ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Alkaen ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7177,13 +7173,13 @@
         "Arkipäivisin ${ BRAND_NAME }in asiakastuki vastaa pyyntöihin 24 tunnin kuluessa"
       ],
       "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
-        "Yksi VPN-yhteys mahdollistaa yhden laitteen ${ VPN_APP_NAME } VPN-yhteyden kerrallaan. Esimerkiksi puhelimen ja tietokoneen samanaikainen ${ VPN_APP_NAME } -käyttö vaatii kaksi VPN-yhteyttä."
+        "Yhdellä VPN-yhteydellä yksi laite kerrallaan voi yhdistää ${ VPN_APP_NAME }:ään, eli esimerkiksi puhelimen ja tietokoneen samanaikaiseen ${ VPN_APP_NAME } -käyttöön tarvitset kaksi VPN-yhteyttä."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mahdollisuus tarkastella ei-yksityisien käyttäjien postilaatikoiden sisältöä, kuten viestejä ja yhteystietoja käyttäjän näkökulmasta"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Organisaation hallintatyökalulla ylläpitäjät voivat lisätä ja poistaa käyttäjiä, hallita heidän ${ BRAND_NAME }-palveluiden käyttöoikeuksiaan ja suorittaa muita tehtäviä."
+        "Organisaation hallintatyökalulla ylläpitäjät voivat mm. lisätä ja poistaa käyttäjiä, hallita heidän ${ BRAND_NAME }-käyttöoikeuksiaan."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vahva infrastruktuurimme varmistaa, että pääset tilillesi, kun sitä tarvitset"
@@ -7258,7 +7254,7 @@
         "Tallennustila jaetaan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ja ${ PASS_APP_NAME } -käyttäjien kesken."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä. Ylläpitäjät voivat määrittää käytettävissä olevan tilan organisaatioissaan käyttäjäkohtaisesti."
+        "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä. Ylläpito voi määrittää organisaatioidensa kapasiteetin käyttäjäkohtaisesti."
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ja ${ PASS_APP_NAME } -käyttäjien kesken."
@@ -7784,6 +7780,9 @@
       ],
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPrice } kuukausihintaan. Voit perua milloin tahansa."
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
@@ -8558,10 +8557,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää 1700 palvelinta yli 60+ maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä/käyttäjä, suoratoistopalvelut maailmanlaajuisesti, haittasisällön- ja mainoseston sekä paljon muuta."
+        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää mm. 1700 palvelinta yli 60 maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä/käyttäjä, maailmanlaajuisen suoratoistotuen, sekä haittasisällön- ja mainosten eston."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää 1700 palvelinta yli 60+ maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä/käyttäjä, suoratoistopalvelut maailmanlaajuisesti, haittasisällön- ja mainoseston sekä paljon muuta."
+        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää mm. 1700 palvelinta yli 60 maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä, maailmanlaajuisen suoratoistotuen, sekä haittasisällön ja mainosten eston."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Kaikki premium-palvelumme parhaimmillaan: 100 sähköpostiosoitetta, tuki 10 omalle verkkotunnukselle, rajattomasti Hide-my-email-aliaksia, kalenterijako, salattu pilvitallennus tiedostojen jaolla sekä paljon muuta."
@@ -8659,7 +8658,7 @@
         "Alentamalla menetät seuraavat edut. Haluatko varmasti jatkaa?"
       ],
       "contact your administrator": [
-        "ota yhteyttä ylläpitoosi"
+        "ole yhteydessä ylläpitoosi"
       ],
       "For all ${ BRAND_NAME } services": [
         "Kaikille ${ BRAND_NAME }-palveluille"
@@ -8868,8 +8867,8 @@
         "${ planNumberOfCalendars } kalenteria/käyttäjä"
       ],
       "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } oma sähköpostiverkkotunnus",
-        "${ planNumberOfDomains } omaa sähköpostiverkkotunnusta"
+        "${ planNumberOfDomains } oma verkkotunnus",
+        "${ planNumberOfDomains } omaa verkkotunnusta"
       ],
       "${ planNumberOfEmails } email address": [
         "${ planNumberOfEmails } sähköpostiosoite",
@@ -8905,7 +8904,7 @@
         "Kaikki mukautetut sähköpostin verkkotunnukset poistetaan käytöstä"
       ],
       "Automatic email forwarding": [
-        "Automaattinen sähköpostin välitys"
+        "Sähköpostin automaattiohjaus"
       ],
       "Back up photos from your devices": [
         "Varmuuskopioi valokuvia laitteistasi"
@@ -9242,6 +9241,9 @@
       "Fingerprint copied to clipboard": [
         "Sormenjälki kopioitiin leikepöydälle"
       ],
+      "Finish Zoom authentication to save event": [
+        "Viimeistele Zoom-tunnistautuminen tapahtuman tallentamiseksi"
+      ],
       "Future events deleted": [
         "Ketjun tulevat tapahtumat poistettiin"
       ],
@@ -9339,7 +9341,7 @@
         "Luo turvallisia kirjautumistietoja kaikilla laitteillasi. Sisältää rajattomasti aliaksia, 20 holvia, sisäänrakennetun 2FA:n, luottokorttitietojen automaattisen täytön ja paljon muuta."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista laitetta, maailmanlaajuisen tuen suoratoistopalveluille, haittasisällön- ja mainoseston sekä paljon muuta."
+        "Sisältää mm. yli 2950 palvelinta yli 65 maassa, 10 samanaikaista laiteyhteyttä, maailmanlaajuisen suoratoistotuen, sekä haittasisällön- ja mainoseston."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitteelle, 10 hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
@@ -9590,6 +9592,9 @@
       ],
       "Customize your mail import": [
         "Mukauta viestien tuontia"
+      ],
+      "Dark Web Monitoring": [
+        "Pimeän verkon valvonta"
       ],
       "Data recovery": [
         "Tietojen palautus"
@@ -10098,8 +10103,8 @@
         "${ n } VPN-yhteyttä"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } palvelin ${ numberOfCountries } maassa",
-        "${ numberOfServers } palvelinta ${ numberOfCountries }+ maassa"
+        "${ numberOfServers } ${ numberOfCountries } maassa",
+        "${ numberOfServers } ${ numberOfCountries }+ maassa"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } ${ numberOfCountries } maassa",

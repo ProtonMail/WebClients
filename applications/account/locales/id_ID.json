@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -1183,6 +1183,9 @@
       "Upgrade now": [
         "Tingkatkan sekarang"
       ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
       "Upgrade to Business": [
         "Tingkatkan ke Business"
       ],
@@ -1778,7 +1781,7 @@
         "Penawaran ${ PASS_SHORT_APP_NAME } Plus seumur hidup tidak memiliki biaya pembaruan. Cukup satu kali pembayaran untuk akses selama-lamanya ke Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
-        "Diskon berdasar pada harga bulanan standar."
+        "Diskon didasarkan pada harga bulanan standar."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Apabila Anda membeli Pass Family atau Unlimited, langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir siklus tagihan Anda."
@@ -4478,6 +4481,9 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Gagal memperoleh sesi yang aktif. Silakan ${ refresh } atau coba lagi nanti."
+      ],
+      "Failed to load OAuth modal.": [
+        "Modal OAuth gagal dimuat."
       ],
       "Failed to process the logo": [
         "Logo gagal diproses"
@@ -7514,9 +7520,6 @@
       "High Priority": [
         "Prioritas Tinggi"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Kunci publik penyedia identitas untuk menandatangani pernyataan autentikasi. Harus ada tempat untuk mengunduh atau menyalin hash sertifikat dari penyedia identitas. Cukup tempelkan hash sertifikat di bidang area teks."
       ],
@@ -7955,6 +7958,9 @@
       "No logs yet.": [
         "Belum ada log."
       ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Tidak ada organisasi yang diaktifkan dengan **eduGAIN** untuk **${ domain.DomainName }**."
+      ],
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang dibutuhkan untuk saat ini."
       ],
@@ -8104,6 +8110,9 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Harap dicatat bahwa jika Anda menghapus filter ${ nameDeleted }, kami akan menghentikan pemrosesan semua tindakan otomatis yang dipicu olehnya."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo pada akun Anda akan berkurang menjadi ${ creditsRemaining }."
       ],
       "please open a support ticket": [
         "silakan buka tiket layanan dukungan"
@@ -8287,6 +8296,9 @@
       ],
       "Select a service provider to start": [
         "Pilih layanan email yang Anda gunakan untuk memulai"
+      ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Pilih organisasi yang diaktifkan dengan **eduGAIN** untuk **${ domain.DomainName }**."
       ],
       "Select one or multiple user affiliations": [
         "Pilih satu atau lebih afiliasi pengguna"
@@ -8563,6 +8575,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Pesan ini tidak akan tersampaikan ke tim layanan dukungan. Apabila Anda memiliki masalah dengan layanan kami atau membutuhkan tindak lanjut dari kami, ${ supportLink }."
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Organisasi ini diaktifkan dengan **eduGAIN** untuk **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Tautan promosi ini telah kedaluwarsa"
@@ -9816,6 +9831,9 @@
       ],
       "5 minutes": [
         "5 menit"
+      ],
+      "Account holder": [
+        "Pemilik akun"
       ],
       "Account storage": [
         "Penyimpanan akun"
@@ -11653,9 +11671,6 @@
       "From ${ price }": [
         "Dari ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Mulai dengan harga ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Mulai dari ${ priceMailPlus }"
       ],
@@ -12368,12 +12383,6 @@
       "${ shortPlan.title } Trial": [
         "Uji Coba ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Mulai dari ${ price }"
-      ],
       "Your account's usage": [
         "Penggunaan akun Anda"
       ]
@@ -12551,6 +12560,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Arahkan lalu lintas internet Anda melalui jaringan Tor dengan satu klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
@@ -17145,6 +17157,9 @@
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
       ],
+      "Dark Web Monitoring": [
+        "Pemantauan Dark Web"
+      ],
       "Dashboard": [
         "Dasbor"
       ],
@@ -18252,6 +18267,9 @@
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Tentukan domain yang diizinkan untuk mengautentikasi dengan SSO SAML"
       ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Tetapkan pengguna entitas eduGAIN yang diperbolehkan untuk mengautentikasi dengan SAML SSO"
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
       ],
@@ -18400,6 +18418,9 @@
     "Tor out of date": {
       "stable release": [
         "versi rilisan stabil"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Versi Tor Browser ini tidak didukung. Silakan perbarui browser Anda ke ${ stableRelease } terbaru"
       ]
     },
     "unprivatization": {

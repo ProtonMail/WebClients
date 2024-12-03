@@ -307,6 +307,9 @@
       "Forgot recovery method?": [
         "Heu oblidat el mètode de recuperació?"
       ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Obteniu ${ MAIL_SHORT_APP_NAME } Plus per ${ priceCoupon }"
+      ],
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
       ],
@@ -4099,9 +4102,6 @@
       "High Priority": [
         "Alta prioritat"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Hi ha d'haver un lloc on descarregar o copiar l'empremta electrònica del certificat del proveïdor d'identitat. Simplement, enganxeu-la al camp de l'àrea de text."
       ],
@@ -5387,6 +5387,9 @@
         "${ UsedAddresses } de ${ MaxAddresses } adreça de correu electrònic",
         "${ UsedAddresses } de ${ MaxAddresses } adreces de correu electrònic"
       ],
+      "Account holder": [
+        "Titular del compte"
+      ],
       "Account storage": [
         "Emmagatzematge del compte"
       ],
@@ -6264,8 +6267,8 @@
       "From ${ price }": [
         "Des de ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Comenceu per ${ price }"
+      "Get started for ${ priceCoupon }": [
+        "Comenceu per ${ priceCoupon }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Comenceu des de ${ priceMailPlus }"
@@ -6410,6 +6413,9 @@
       ],
       "10 email addresses/aliases": [
         "10 adreces de correu electrònic/àlies"
+      ],
+      "10 more premium features": [
+        "10 característiques prèmium més"
       ],
       "10-year file version history": [
         "Historial de versions de fitxers de 10 anys"
@@ -6944,11 +6950,11 @@
       "${ shortPlan.title } Trial": [
         "Prova de ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ price }": [
-        "Obtingueu el Mail Plus per ${ price }"
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Obteniu Mail Plus per ${ priceCoupon }"
       ],
-      "Starting from ${ price }": [
-        "Comenceu des de ${ price }"
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
       ],
       "Your account's usage": [
         "Ús del vostre compte"

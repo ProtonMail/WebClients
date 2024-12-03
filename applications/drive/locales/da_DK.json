@@ -813,6 +813,9 @@
       "Toggle Calendar app": [
         "Skift Kalender-app"
       ],
+      "Toggle Contacts app": [
+        "Skift Kontakt-app"
+      ],
       "Toggle settings": [
         "Åbn/luk indstillinger"
       ],
@@ -1160,6 +1163,9 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "til ${ durationDeal }"
+      ],
+      "forever": [
+        "for evigt"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornys automatisk efter 1 måned til ${ regularAmount }."
@@ -3446,6 +3452,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Livstidskonti kan ikke indgå i et familieabonnement."
       ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Ejere af et abonnement med medlemmer kan ikke deltage i et andet familieabonnement."
       ],
@@ -5667,6 +5676,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
       ],
+      "Account holder": [
+        "Kontohaver"
+      ],
       "Add email address": [
         "Tilføj e-mailadresse"
       ],
@@ -5916,6 +5928,9 @@
       ],
       "I understand the risk": [
         "Jeg er indforstået med risikoen"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Importer alle beskeder"
@@ -6670,9 +6685,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Fra ${ priceMailPlus }"
       ],
@@ -6832,6 +6844,9 @@
       "Administration Panel": [
         "Administrationspanel"
       ],
+      "Advanced account protection": [
+        "Avanceret kontobeskyttelse"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME } produkter og funktioner"
       ],
@@ -6858,6 +6873,9 @@
       ],
       "Available on all platforms": [
         "Tilgængelig på alle platforme"
+      ],
+      "Breach alerts": [
+        "Advarsler om databrud"
       ],
       "Calendar sharing": [
         "Kalenderdeling"
@@ -7277,14 +7295,6 @@
       ],
       "Switch plans?": [
         "Skift abonnement?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Fra ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -8073,6 +8083,9 @@
       "Please select your billing state first.": [
         "Vælg venligst dit faktureringsstat først."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Fornyes til ${ renewPrice }, annuller når som helst."
+      ],
       "Select billing country to pay": [
         "Vælg faktureringsland for at betale"
       ],
@@ -8354,6 +8367,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Bruges på Amazon til shopping osv."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
@@ -8999,6 +9015,11 @@
         "Abonnementet vil blive nedgraderet ved udgangen af faktureringscyklussen."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Til ${ totalPrice }"
@@ -9054,6 +9075,10 @@
       "${ planNumberOfCalendars } calendar per user": [
         "${ planNumberOfCalendars } kalender pr. bruger",
         "${ planNumberOfCalendars } kalendere pr. bruger"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } tilpasset e-maildomæne",
+        "${ planNumberOfDomains } tilpassede e-maildomæner"
       ],
       "${ planNumberOfEmails } email address": [
         "${ planNumberOfEmails } e-mailadresse",
@@ -9669,6 +9694,9 @@
       ],
       "Customize your mail import": [
         "Tilpas din mail-import"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorering af det mørke net"
       ],
       "Data recovery": [
         "Datagendannelse"

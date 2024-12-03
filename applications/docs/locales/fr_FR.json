@@ -294,6 +294,9 @@
       "Forward as attachment": [
         "Transférer en tant que pièce jointe"
       ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Profitez de ${ MAIL_SHORT_APP_NAME } Plus pour ${ priceCoupon }"
+      ],
       "Get in touch": [
         "Nous contacter"
       ],
@@ -305,6 +308,9 @@
       ],
       "Go to label": [
         "Afficher le label"
+      ],
+      "Got it": [
+        "J'ai compris"
       ],
       "Help": [
         "Aide"
@@ -2178,6 +2184,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "L'authentification A2F ajoute une couche de sécurité supplémentaire, empêchant tout accès non autorisé."
       ],
+      "Also included": [
+        "Également inclus"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Une fois le processus terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
       ],
@@ -2189,6 +2198,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obtenez un nombre illimité d'alias et 500 Go d'espace de stockage avec l'offre groupée ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -4176,9 +4188,6 @@
       "High Priority": [
         "Priorité élevée"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
       ],
@@ -5011,6 +5020,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
+      ],
+      "Account holder": [
+        "Titulaire du compte"
       ],
       "Add email address": [
         "Ajouter une adresse e-mail"
@@ -5909,8 +5921,8 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passer à ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Commencez pour ${ price }"
+      "Get started for ${ priceCoupon }": [
+        "Commencez pour ${ priceCoupon }"
       ],
       "Starting from ${ priceMailPlus }": [
         "À partir de ${ priceMailPlus }"
@@ -6052,6 +6064,9 @@
       ],
       "10 email addresses/aliases": [
         "10 adresses e-mail/alias"
+      ],
+      "10 more premium features": [
+        "10 fonctionnalités premium en plus"
       ],
       "10-year file version history": [
         "Historique des versions des fichiers sur 10 ans"
@@ -6523,11 +6538,11 @@
       ]
     },
     "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Profitez de Mail Plus pour ${ price }"
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Profitez de Mail Plus pour ${ priceCoupon }"
       ],
-      "Starting from ${ price }": [
-        "À partir de ${ price }"
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
       ]
     },
     "new_plans: title": {
@@ -8545,6 +8560,9 @@
       ],
       "Customize your mail import": [
         "Personnalisez votre importation de messagerie"
+      ],
+      "Dark Web Monitoring": [
+        "Surveillance du dark web"
       ],
       "Data recovery": [
         "Récupération de données"

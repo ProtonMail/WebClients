@@ -725,6 +725,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Upgrade naar ${ BRAND_NAME } Unlimited"
       ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
       "Upload picture": [
         "Afbeelding uploaden"
       ],
@@ -4734,9 +4737,6 @@
       "High Priority": [
         "Hoge Prioriteit"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
@@ -6431,9 +6431,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Begin voor ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Vanaf ${ priceMailPlus }"
       ],
@@ -7056,14 +7053,6 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Krijg Mail Plus voor ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Vanaf ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -9581,6 +9570,9 @@
       ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "Dataherstel"

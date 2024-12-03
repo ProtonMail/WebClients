@@ -683,6 +683,9 @@
       "Today": [
         "Idag"
       ],
+      "Toggle Contacts app": [
+        "Växla kontaktapp"
+      ],
       "Toggle settings": [
         "Öppna/stäng inställningar"
       ],
@@ -841,6 +844,10 @@
       "${ price } per user": [
         "${ price } per användare"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } skrivassistentplats",
+        "${ seats } skrivassistentplatser"
+      ],
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
@@ -958,6 +965,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ discountedPrice } är giltigt de första ${ cycle } månaderna. Därefter är de automatiska förnyelserna på det rabatterade priset ${ nextPrice } för ${ renewalLength } månader. Du kan säga upp när som helst."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Det speciellt rabatterade priset på ${ discountedPrice } är giltigt under den första månaden. Sedan förnyas det automatiskt med ${ nextPrice } varje månad. Du kan avbryta när som helst."
       ]
@@ -1071,6 +1081,9 @@
       "Discounts are based on standard monthly pricing.": [
         "Rabatterna är baserade på ordinarie månadspriser."
       ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Om du köper Pass Family eller Unlimited så kommer din prenumeration att förnyas automatiskt med det rabatterade standardpriset och standardlängden vid slutet av din faktureringscykel."
+      ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Din prenumeration kommer förnyas automatiskt till det rabatterade standardpriset i slutet av din faktureringsperiod."
       ]
@@ -1112,6 +1125,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer.",
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Säkra dina mail och schemalägg med end-to-end kryptering, det inkluderar ${ addresses } e-postadress, stöd for anpassade e-postdomäner, obegränsade hide-my-email-alias och mer.",
+        "Säkra dina mail och schemalägg med end-to-end kryptering, det inkluderar ${ addresses } e-postadresser, stöd for anpassade e-postdomäner, obegränsade hide-my-email-alias och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
@@ -2532,6 +2549,10 @@
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Dagligen, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Var ${ interval } dag, ${ untilString }",
+        "Var ${ interval }:e dag, ${ untilString }"
       ]
     },
     "Day": {
@@ -2712,22 +2733,22 @@
         "Jag vill inte dela"
       ],
       "I found a cheaper VPN": [
-        "Jag hittade ett billigare VPN"
+        "Jag hittade en billigare VPN"
       ],
       "I found a VPN with better features": [
-        "Jag hittade ett VPN med bättre funktioner"
+        "Jag hittade en VPN med bättre funktioner"
       ],
       "I have not managed to connect": [
-        "Jag har inte lyckats att ansluta"
+        "Jag har inte lyckats ansluta"
       ],
       "I only needed a VPN short-term": [
-        "Jag behövde bara ett VPN kortsiktigt"
+        "Jag behövde bara en VPN kortsiktigt"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Jag använder ett annat ${ BRAND_NAME }-konto"
       ],
       "It doesn't do what I need": [
-        "Det gör inte vad jag behöver"
+        "Den gör inte vad jag behöver"
       ],
       "Missing feature(s)": [
         "Saknade funktion(er)"
@@ -2783,6 +2804,14 @@
       ],
       "Get it for ${ price }": [
         "Skaffa det för ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Faktureras vartannat är på ${ amountBilled }. Rabatter baseras på standardpriset per månad."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Faktureras årligen på ${ amountBilled }. Spara ${ amountSave } jämfört med 2 individuella och årliga ${ BRAND_NAME } Unlimited-prenumerationer"
       ]
     },
     "duoplan2024: Info": {
@@ -3605,7 +3634,7 @@
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din Internetanslutning."
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "När extra lösenord är aktiverat kan hantering av alias endast göras i ${ PASS_APP_NAME }."
+        "När extralösenord är aktiverat kan hantering av alias endast göras i ${ PASS_APP_NAME }."
       ],
       "You need an active personal calendar to import events": [
         "Du behöver en aktiv personlig kalender för att importera händelser"
@@ -4726,9 +4755,6 @@
       "High Priority": [
         "Hög prioritet"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
       ],
@@ -4936,6 +4962,10 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Observera att processen kan ta lite tid beroende på storleken på din adressbok."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Vänligen notera att när du klickar på Bekräfta-knappen så kommer ditt konto att ha ${ creditsRemaining } kredit kvar.",
+        "Vänligen notera att när du klickar på Bekräfta-knappen så kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Ange ett namn och en e-postadress för att skapa en grupp."
@@ -5328,6 +5358,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. E-post levereras inte längre till din inkorg. Dina delade länkar på Drive är inte längre aktiva och du kan inte ladda upp nya filer. För att fortsätta använda ditt konto, betala eventuella förfallna fakturor."
       ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Din ${ PASS_SHORT_APP_NAME } Plus-prenumeration kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Den kvarvarande balansen för din prenumeration kommer att läggas till i ditt konto.${ PASS_SHORT_APP_NAME } livstidserbjudandet har inget förnyelsepris, det är en engångsbetalning för livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ditt konto har minst en försenad faktura. Din åtkomst kommer snart att begränsas. ${ payInvoiceLink }"
       ],
@@ -5516,6 +5549,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
+      ],
+      "Account holder": [
+        "Kontoinnehavare"
       ],
       "Add email address": [
         "Lägg till e-postadress"
@@ -6426,9 +6462,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Kom igång för ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Startar från ${ priceMailPlus }"
       ],
@@ -6576,6 +6609,9 @@
       "15 GB storage": [
         "15 GB lagringsutrymme"
       ],
+      "24/7 account management support": [
+        "24/7-support för kontohantering"
+      ],
       "99.95% SLA": [
         "99.95 % SLA"
       ],
@@ -6595,7 +6631,7 @@
         "Avancerade funktioner för alias (drivs av SimpleLogin)"
       ],
       "All ${ BRAND_NAME } products and features": [
-        "Alla ${ BRAND_NAME } produkter och funktioner"
+        "Alla ${ BRAND_NAME }-produkter och -funktioner"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6655,7 +6691,7 @@
         "Anpassade fält"
       ],
       "Custom snooze time": [
-        "Anpassad tid för snooza"
+        "Anpassad snooztid"
       ],
       "Data breach monitoring": [
         "Dataintrångsövervakning"
@@ -7048,12 +7084,6 @@
       ]
     },
     "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Skaffa Mail Plus för ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Startar från ${ price }"
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -7763,19 +7793,34 @@
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
       "Please select billing country": [
-        "Välj land för fakturering"
+        "Välj faktureringsland"
       ],
       "Please select billing state": [
         "Välj delstat för fakturering"
       ],
       "Please select your billing country first.": [
-        "Välj ditt land för fakturering först."
+        "Välj ditt faktureringsland först."
       ],
       "Please select your billing state first.": [
         "Välj din delstat för fakturering först."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Förnyas med ${ renewPrice }, avbryt när som helst."
+      ],
       "Select billing country to pay": [
-        "Välj faktureringsland att betala"
+        "Välj faktureringsland för att betala"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ subscriptionLength } månaderna. Kupongen är giltig för ${ couponRedemptions } förnyelser. Därefter är de automatiska förnyelserna på ${ renewPrice } för ${ subscriptionLengthCopy } månader. Du kan säga upp när som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ subscriptionLength } månaderna. Därefter är de automatiska förnyelserna på ${ renewPrice } för ${ subscriptionLengthCopy } månader. Du kan säga upp när som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första månaderna. Kupongen är giltig för ${ couponRedemptions } förnyelser. Därefter är de automatiska förnyelserna på ${ renewPrice } för ${ subscriptionLength } månader. Du kan säga upp när som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltig för den första månaden. Sedan kommer det förnyas den automatiskt med ${ renewPrice } varje månad. Du kan avbryta när som helst."
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
@@ -8483,7 +8528,7 @@
         "${ n } månader"
       ],
       "/ month": [
-        "/månad"
+        "/ månad"
       ],
       "/month": [
         "/månad"
@@ -9055,6 +9100,12 @@
       "Yearly free storage bonuses": [
         "Årliga bonusar med gratis lagringsutrymme"
       ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Du har fortfarande ${ expiryDate } av din ${ planName }-prenumeration. Vi kommer att lägga till krediter för den kvarvarande tiden till ditt ${ BRAND_NAME }-konto. Se till att du inte överskrider gränserna för gratispaketet innan uppsägning. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "Ditt ${ planName }-paket håller inte bara din ditt företags data och kommunikationer säkra. Det stödjer dina efterlevnadsmål och får ditt företag att sticka ut och håller ditt team hopkopplat."
+      ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
       ]
@@ -9301,7 +9352,7 @@
         "Verifiering lyckades"
       ],
       "You have successfully canceled your subscription.": [
-        "Du har avbrutit din prenumeration."
+        "Du har sagt upp din prenumeration."
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
@@ -9580,6 +9631,9 @@
       "Customize your mail import": [
         "Anpassa din e-postimport"
       ],
+      "Dark Web Monitoring": [
+        "Övervakning mörka webben"
+      ],
       "Data recovery": [
         "Dataåterställning"
       ],
@@ -9670,7 +9724,7 @@
         "Skaffa appen ${ appName[APP_NAME] }"
       ],
       "Get Zooming faster": [
-        "Kom snabbare till Zoom"
+        "Börja Zooma snabbare"
       ],
       "Gift": [
         "Gåva"
@@ -10144,7 +10198,7 @@
     },
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
-        "Problem med plånbok"
+        "Wallet-problem"
       ]
     },
     "Warning": {
@@ -10351,31 +10405,31 @@
         "Var ${ interval }:e vecka på onsdag, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Varje vecka på ${ multipleDaysString }, ${ timesString }"
+        "Veckovis på ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Varje vecka alla dagar, ${ timesString }"
+        "Veckovis alla dagar, ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Varje vecka på fredag, ${ timesString }"
+        "Veckovis på fredag, ${ timesString }"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Varje vecka på måndag, ${ timesString }"
+        "Veckovis på måndag, ${ timesString }"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Varje vecka på lördag, ${ timesString }"
+        "Veckovis på lördag, ${ timesString }"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Varje vecka på söndag, ${ timesString }"
+        "Veckovis på söndag, ${ timesString }"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Varje vecka på torsdag, ${ timesString }"
+        "Veckovis på torsdag, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Varje vecka på tisdag, ${ timesString }"
+        "Veckovis på tisdag, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Varje vecka på onsdag, ${ timesString }"
+        "Veckovis på onsdag, ${ timesString }"
       ]
     },
     "Weekly recurring event, frequency (until)": {
@@ -10416,31 +10470,31 @@
         "Var ${ interval }:e vecka på onsdag, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Varje vecka på ${ multipleDaysString }, ${ untilString }"
+        "Veckovis på ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Varje vecka alla dagar, ${ untilString }"
+        "Veckovis alla dagar, ${ untilString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Varje vecka på fredag, ${ untilString }"
+        "Veckovis på fredag, ${ untilString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Varje vecka på måndag, ${ untilString }"
+        "Veckovis på måndag, ${ untilString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Varje vecka på lördag, ${ untilString }"
+        "Veckovis på lördag, ${ untilString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Varje vecka på söndag, ${ untilString }"
+        "Veckovis på söndag, ${ untilString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Varje vecka på torsdag, ${ untilString }"
+        "Veckovis på torsdag, ${ untilString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Varje vecka på tisdag, ${ untilString }"
+        "Veckovis på tisdag, ${ untilString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Varje vecka på onsdag, ${ untilString }"
+        "Veckovis på onsdag, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -10476,11 +10530,19 @@
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Var ${ interval } år, ${ timesString }",
+        "Vart ${ interval }:e år, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "Årligen, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Var ${ interval } år, ${ untilString }",
+        "Vart ${ interval }:e år, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
       ]
