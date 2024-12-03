@@ -954,6 +954,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ discountedPrice } é válido nos primeiros ${ cycle } meses. Em seguida, será renovado automaticamente pelo preço com desconto de ${ nextPrice } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ discountedPrice } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ nextPrice } todo mês. Você pode cancelar a qualquer momento."
       ]
@@ -4098,9 +4101,6 @@
       "High Priority": [
         "Alta prioridade"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Chave pública do provedor de identidade para assinar declarações de autenticação. Deve haver um local para baixar ou copiar o hash do certificado do provedor de identidade. Basta colar o hash do certificado no campo da área de texto."
       ],
@@ -4299,6 +4299,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Carregando o calendário, aguarde. Você será redirecionado à nossa plataforma de agendamento Calendly numa nova guia."
       ],
+      "Loading eduGAIN data...": [
+        "Carregando os dados do eduGAIN..."
+      ],
       "Loading gateways monitoring current status.": [
         "Carregando o estado atual de monitoramento dos gateways."
       ],
@@ -4367,6 +4370,9 @@
       ],
       "No Gateways yet": [
         "Sem gateways ainda"
+      ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Nenhuma organização ativada com **eduGAIN** par **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Neste momento, não é necessário pagamento."
@@ -4470,6 +4476,10 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Digite a frase de recuperação de 12 palavras associada à sua conta."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes.",
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "please open a support ticket": [
         "abra um ticket de suporte"
@@ -4738,6 +4748,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Esta mensagem não chegará à equipe de suporte, se você tiver um problema com nossos serviços ou precisar de maiores ações de nossa parte ${ supportLink }."
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "A organização está ativado com **eduGAIN** par **${ domain.DomainName }**."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuário é atualmente responsável pelos pagamentos de sua organização. Ao rebaixar este membro, você se tornará responsável pelos pagamentos de sua organização."
@@ -5367,6 +5380,9 @@
         "${ UsedAddresses } de ${ MaxAddresses } endereço de e-mail",
         "${ UsedAddresses } de ${ MaxAddresses } endereços de e-mail"
       ],
+      "Account holder": [
+        "Titular da conta"
+      ],
       "Account storage": [
         "Armazenamento da conta"
       ],
@@ -5818,6 +5834,9 @@
       "User": [
         "Usuário"
       ],
+      "User affiliations": [
+        "Afiliações do usuário"
+      ],
       "User's new password": [
         "Nova senha do usuário"
       ],
@@ -5919,6 +5938,11 @@
     "Label, credit card": {
       "ZIP code": [
         "CEP"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Selecione um provedor de identidade para começar"
       ]
     },
     "Link": {
@@ -6238,9 +6262,6 @@
       ],
       "From ${ price }": [
         "A partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Iniciando a partir de ${ priceMailPlus }"
@@ -6919,12 +6940,6 @@
       "${ shortPlan.title } Trial": [
         "Avaliação do ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ price }": [
-        "Obtenha Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ],
@@ -7100,6 +7115,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Redefina as senhas de usuários e redefina a autenticação de dois fatores para os usuários"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Envie todo o seu tráfego na internet por meio da rede Tor com um único clique"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com um armazenamento cloud criptografado. Inclui sincronização automática, compartilhamento de arquivo criptografado, e mais."
@@ -7855,8 +7873,20 @@
       "Processing payment": [
         "Processando pagamento"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Renova por ${ renewPrice }, cancele a qualquer momento."
+      ],
       "Select billing country to pay": [
         "Selecione o país de cobrança para pagar"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "A transação foi detectada com sucesso. Os créditos serão adicionados à sua conta assim que a transação for totalmente confirmada."
@@ -10125,6 +10155,9 @@
       "Change second password": [
         "Alterar segunda senha"
       ],
+      "Choose user affiliations": [
+        "Escolher as afiliações do usuário"
+      ],
       "Click a value in the table to use it as filter": [
         "Clique em um valor na tabela para usá-lo como filtro"
       ],
@@ -10734,6 +10767,9 @@
       "Device information such as operating system": [
         "Informações do dispositivo, como sistema operacional"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Nome de exibição para a entidade no banco de dados de eduGAIN"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL do endpoint do provedor de identidade (por exemplo, https://idp.exemplo.com/sso/saml)"
       ],
@@ -10815,6 +10851,9 @@
     "Tor out of date": {
       "stable release": [
         "versão estável"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Esta versão do navegador Tor não é suportada. Atualize-o para a última ${ stableRelease }."
       ]
     },
     "unprivatization": {
