@@ -18,7 +18,6 @@ export enum SpotlightMessage {
     ALIAS_TRASH_CONFIRM,
     FAMILY_PLAN_PROMO_2024,
     ALIAS_SYNC_ENABLE /* shown if user has pending SL aliases to be sync */,
-    BLACK_FRIDAY_2024,
     USER_RENEWAL,
     NOOP /* Used for custom non-acknowledgable messages */,
 }
