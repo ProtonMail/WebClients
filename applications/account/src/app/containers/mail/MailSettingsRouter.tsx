@@ -28,6 +28,7 @@ import {
     MobileAppSettingsSection,
     OtherMailPreferencesSection,
     PmMeSection,
+    PostQuantumKeysOptInSection,
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
     ProtonMailBridgeSection,
@@ -122,6 +123,7 @@ const MailSettingsRouter = ({
                 <PrivateMainSettingsArea config={keys}>
                     <AddressVerificationSection />
                     <ExternalPGPSettingsSection />
+                    <PostQuantumKeysOptInSection />
                     <AddressKeysSection />
                     <UserKeysSection />
                 </PrivateMainSettingsArea>

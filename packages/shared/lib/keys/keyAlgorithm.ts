@@ -1,7 +1,7 @@
 import type { AlgorithmInfo } from '@proton/crypto';
 import unique from '@proton/utils/unique';
 
-import type { KeyGenConfig } from '../interfaces';
+import type { KeyGenConfig, KeyGenConfigV6 } from '../interfaces';
 
 const formatCurveName = (curve: AlgorithmInfo['curve']) => {
     switch (curve) {
@@ -61,20 +61,29 @@ export const getFormattedAlgorithmNames = (algorithmInfos: AlgorithmInfo[] = [],
     return unique(formattedAlgos).join(', ');
 };
 
+export const isKeyGenConfigV6 = (keyConfig: KeyGenConfig | KeyGenConfigV6): keyConfig is KeyGenConfigV6 =>
+    !!keyConfig?.config?.v6Keys;
+
 /**
  * Determine whether any of the given algorithmInfo matches the keyGenConfig
  */
-export const getAlgorithmExists = (algorithmInfos: AlgorithmInfo[] = [], keyGenConfig: KeyGenConfig) => {
+export const getAlgorithmExists = (
+    algorithmInfos: AlgorithmInfo[] = [],
+    keyGenConfig: KeyGenConfig | KeyGenConfigV6
+) => {
     return algorithmInfos.some(({ algorithm, curve, bits }) => {
         switch (algorithm) {
             case 'rsaEncrypt':
             case 'rsaEncryptSign':
             case 'rsaSign':
-                return bits === keyGenConfig.rsaBits;
+                return !isKeyGenConfigV6(keyGenConfig) && bits === keyGenConfig.rsaBits;
             case 'eddsaLegacy':
             case 'ecdsa':
             case 'ecdh':
-                return curve === keyGenConfig.curve;
+                return !isKeyGenConfigV6(keyGenConfig) && curve === keyGenConfig.curve;
+            case 'pqc_mldsa_ed25519':
+            case 'pqc_mlkem_x25519':
+                return isKeyGenConfigV6(keyGenConfig) && keyGenConfig.type === 'pqc';
             case 'ed25519':
             case 'x25519':
             case 'ed448':
