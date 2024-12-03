@@ -81,6 +81,9 @@
       "Apply": [
         "Toepassen"
       ],
+      "Ask me next time": [
+        "Volgende keer vragen"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
         "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
@@ -303,6 +306,9 @@
       "Go to label": [
         "Ga naar label"
       ],
+      "Got it": [
+        "Begrepen"
+      ],
       "Help": [
         "Hulp"
       ],
@@ -519,6 +525,9 @@
       "Restore this version": [
         "Deze versie herstellen"
       ],
+      "Restore this version?": [
+        "Deze versie herstellen?"
+      ],
       "Retry": [
         "Opnieuw proberen"
       ],
@@ -527,6 +536,9 @@
       ],
       "Save changes": [
         "Wijzigingen opslaan"
+      ],
+      "Save preferences": [
+        "Voorkeuren opslaan"
       ],
       "Search": [
         "Zoeken"
@@ -3859,6 +3871,9 @@
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
       ],
+      "an anonymous user": [
+        "een anonieme gebruiker"
+      ],
       "and": [
         "en"
       ],
@@ -4149,14 +4164,17 @@
       "Free 5GB encrypted storage to get started": [
         "Gratis 5GB versleutelde opslag om te beginnen"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Ontvang e-mailupdates voor opmerkingen en suggesties die aan uw documenten zijn toegevoegd."
+      ],
+      "Get Notified About Comments": [
+        "Krijg een melding bij reacties"
+      ],
       "here": [
         "hier"
       ],
       "High Priority": [
         "Hoge Prioriteit"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
@@ -4468,6 +4486,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
+      "Restored version to": [
+        "Versie hersteld naar"
+      ],
       "Saving": [
         "Bezig met opslaan"
       ],
@@ -4657,6 +4678,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
+      ],
+      "Undo successful": [
+        "Ongedaan maken is gelukt"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Helaas lijkt het erop dat het bestand of een deel van de gegevens ervan niet kan worden gedecodeerd."
@@ -4848,6 +4872,9 @@
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Uw huidige browser ondersteunt het downloaden van grote bestanden niet wegens de onbeschikbaarheid van service workers. Het downloaden van grote bestanden kan ervoor zorgen dat uw browser vastloopt of niet langer reageert. Gebruik de meest recente versie van een ${ recommendedBrowser } en probeer het opnieuw."
+      ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "Uw huidige document wordt vervangen door deze versie. Reacties en suggesties worden verwijderd van het document, maar blijven toegankelijk in de reactiegeschiedenis."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
@@ -5041,6 +5068,12 @@
       "Calendars": [
         "Agenda's"
       ],
+      "Can edit": [
+        "Kan bewerken"
+      ],
+      "Can view": [
+        "Kan bekijken"
+      ],
       "Cancel download": [
         "Download annuleren"
       ],
@@ -5140,6 +5173,9 @@
       "Emails (last month)": [
         "E-mails (laatste maand)"
       ],
+      "Enable email notifications": [
+        "E-mailmeldingen inschakelen"
+      ],
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
@@ -5196,6 +5232,9 @@
       ],
       "Import to:": [
         "Importeren naar:"
+      ],
+      "Include document name in notification": [
+        "Documentnaam opnemen in melding"
       ],
       "Include message and file name in invite email": [
         "Bericht- en bestandsnaam opnemen in uitnodigingsmail"
@@ -5400,6 +5439,11 @@
       ],
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
+      ]
+    },
+    "Label description": {
+      "View and download": [
+        "Bekijken en downloaden"
       ]
     },
     "Label for contact group color": {
@@ -5848,9 +5892,6 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Begin voor ${ price }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Vanaf ${ priceMailPlus }"
@@ -6460,14 +6501,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Krijg Mail Plus voor ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Vanaf ${ price }"
       ]
     },
     "new_plans: title": {
@@ -8461,6 +8494,9 @@
       ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "Dataherstel"

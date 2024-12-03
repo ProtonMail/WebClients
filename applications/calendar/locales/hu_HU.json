@@ -2861,6 +2861,9 @@
       "Event not found": [
         "Az esemény nem található"
       ],
+      "Failed to create meeting": [
+        "Találkozó létrehozása sikertelen"
+      ],
       "Failed to get event": [
         "Nem sikerült betölteni az eseményt"
       ],
@@ -4428,9 +4431,6 @@
       "High Priority": [
         "Magas prioritású"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
       ],
@@ -5207,6 +5207,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Átmenetileg nem elérhető. Próbálja meg később.)"
+      ],
+      "Account holder": [
+        "Fiók tulajdonos"
       ],
       "Add email address": [
         "E-mail cím hozzáadása"
@@ -8610,6 +8613,9 @@
       ],
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
+      ],
+      "Dark Web Monitoring": [
+        "Dark web figyelés"
       ],
       "Data recovery": [
         "Adat helyreállítás"

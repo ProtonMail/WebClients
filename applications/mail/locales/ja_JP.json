@@ -3024,10 +3024,10 @@
         "キリバス"
       ],
       "Korea (Democratic People's Republic of)": [
-        "北朝鮮"
+        "北朝鮮(朝鮮民主主義人民共和国)"
       ],
       "Korea (Republic of)": [
-        "韓国"
+        "韓国(大韓民国)"
       ],
       "Kosovo": [
         "コソボ"
@@ -3549,7 +3549,7 @@
         "${ manageBlockedAddressesSettingsLink }の設定。"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
-        "${ PROTON_SENTINEL_NAME } は、疑わしい活動の24時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
+        "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
@@ -3695,7 +3695,7 @@
     },
     "description": {
       "use the Easy Switch import assistant": [
-        "Easy Switchインポートアシスタントを使用する"
+        "easy Switch インポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3821,7 +3821,7 @@
     },
     "duoplan2024: SubTitle": {
       "All of ${ BRAND_NAME }, for 2.": [
-        "二人のための、${ BRAND_NAME }の全て"
+        "2 人のための、${ BRAND_NAME }の全て"
       ],
       "Double your storage": [
         "ストレージを 2 倍にしましょう"
@@ -6402,9 +6402,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "このメッセージを非 ${ MAIL_APP_NAME } ユーザーに送信しています。"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
       ],
@@ -6505,7 +6502,7 @@
         "${ PASS_APP_NAME } にログイン情報やクレジットカード情報を追加して、安全かつ便利に保管しましょう。${ BRAND_NAME } アカウントに無料で含まれています。"
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
-        "メールボックスを整理するために、30日以上経過したゴミ箱やスパムを自動的に削除します。"
+        "メールボックスを整理するために、 30 日以上経過したゴミ箱やスパムを自動的に削除します。"
       ],
       "Key fingerprint": [
         "鍵のフィンガープリント"
@@ -7261,7 +7258,7 @@
         "アップグレードして更なるアドレスを手に入れましょう。"
       ],
       "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
-        "ゴミ箱・迷惑メールへ移動したメッセージを30日後に自動的に削除するには、アップグレードしましょう。"
+        "ゴミ箱・迷惑メールへ移動したメッセージを 30 日後に自動的に削除するには、アップグレードしましょう。"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "アップグレードしてさらなるフォルダー、フィルター、アドレスを作成します。"
@@ -7340,6 +7337,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "次の広告主および組織が、あなたがこのメールを開いたとき、使用しているデバイス、現在地を確認できないようにブロックしました。"
+      ],
+      "We cannot enable message content search in this browser.": [
+        "このブラウザではメッセージ内容の検索はできません。"
       ],
       "We could not verify the sender's trusted keys.": [
         "差出人の信頼された鍵を検証できませんでした。"
@@ -7758,7 +7758,7 @@
         "星印付きを開く"
       ],
       "Go to Trash": [
-        "ごみ箱を開く"
+        "ごみ箱へ移動"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7904,6 +7904,9 @@
       ],
       "/month": [
         "/ 月"
+      ],
+      "Account holder": [
+        "アカウント所有者"
       ],
       "Actions": [
         "操作"
@@ -9080,9 +9083,6 @@
       "Get ${ planTitle }": [
         "${ planTitle }を獲得"
       ],
-      "Get started for ${ price }": [
-        "${ price } で始めましょう"
-      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }から始めましょう"
       ],
@@ -9157,7 +9157,7 @@
         "1 日あたり ${ n } メッセージ"
       ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        " 1人あたり${ n }の${ PASS_SHORT_APP_NAME }保管庫を共有"
+        "1人あたり${ n }の${ PASS_SHORT_APP_NAME }保管庫を共有"
       ],
       "${ n } vault": [
         "${ n } 個の保管庫"
@@ -9667,14 +9667,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price }で Mail Plus を入手する"
-      ],
-      "Starting from ${ price }": [
-        "${ price }から始めましょう"
       ]
     },
     "new_plans: title": {
@@ -10311,7 +10303,7 @@
     },
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
-        "すべてのプレミアム機能。ユーザー数は6人。 1 つの簡単なサブスクリプション。"
+        "すべてのプレミアム機能。ユーザー数は 6 人。 1 つの簡単なサブスクリプション。"
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
         "${ yearlyPrice } で毎年請求されます。 ${ passFamilyPlanName } で ${ yearlySavedPrice } を節約できます (個別の ${ passPlusPlanName } サブスクリプションを 6 つ購入する場合と比較)。"
@@ -10373,13 +10365,13 @@
         "現在、サブスクリプションの自動更新は無効になっています。今すぐサブスクリプションを変更すると、自動更新が再び有効になります。"
       ],
       "CVC": [
-        "CVC (セキュリティコード)"
+        "セキュリティコード"
       ],
       "Got it": [
         "わかった"
       ],
       "MM/YY": [
-        "MM/YY (月/年)"
+        "月/年"
       ],
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
@@ -10449,7 +10441,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "この支払いを確認することにより、${ BRAND_NAME }と当社の支払いサービスプロバイダーであるStripeに、あなたの銀行口座から引き落とすよう指示することを許可します。また、あなたの銀行はそれに応じて口座から引き落とします。銀行との契約条件に基づき、引き落とし日から8週間以内に返金を受けることができます。"
+        "この支払いを確認することにより、${ BRAND_NAME }と当社の支払いサービスプロバイダーであるStripeに、あなたの銀行口座から引き落とすよう指示することを許可します。また、あなたの銀行はそれに応じて口座から引き落とします。銀行との契約条件に基づき、引き落とし日から 8 週間以内に返金を受けることができます。"
       ],
       "Street address, postal code, and city": [
         "番地、郵便番号、市区町村名"
@@ -10595,13 +10587,13 @@
         "件名"
       ],
       "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
-        "執筆アシスタントに何を書くか伝えてください。(例: ニュースレターで今後のイベントをお知らせします)"
+        "執筆アシスタントに何を書くか伝えてください。例: \"ニュースレターで今後のイベントをお知らせします\""
       ],
       "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
         "ライティングアシスタントに何を書くべきかを伝えます。例：\"ジムのメンバーシップをキャンセルする\""
       ],
       "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
-        "執筆アシスタントに何を書くか伝えてください。(例: ジェーンをパーティーに詳細してください)"
+        "執筆アシスタントに何を書くか伝えてください。例: \"ジェーンをパーティーに詳細してください\""
       ],
       "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
         "ライティングアシスタントに何を書くべきかを伝えます。例：\"同僚にプロジェクトでの支援を感謝する\""
@@ -10610,7 +10602,7 @@
         "ライティングアシスタントに何を書くべきかを伝えます。例：\"インターンシップのカバーレターを書いてください\""
       ],
       "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
-        "執筆アシスタントに何を書くか伝えてください。(例: 顧客へのフォローアップメールを書いてください)"
+        "執筆アシスタントに何を書くか伝えてください。例: \"顧客へのフォローアップメールを書いてください\""
       ],
       "Text": [
         "テキスト"
@@ -12599,6 +12591,9 @@
       ],
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"
+      ],
+      "Dark Web Monitoring": [
+        "ダークウェブモニタリング"
       ],
       "Data recovery": [
         "データの回復"

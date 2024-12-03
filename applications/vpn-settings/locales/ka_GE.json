@@ -4072,9 +4072,6 @@
       "High Priority": [
         "მაღალი პრიორიტეტი"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "იდენტიფიკატორის მომწოდებლის საჯარო გასაღები ავთენტიკაციის მცდელობების ხელმოსაწერად. იდენტიფიკატორის მომწოდებელს უნდა ჰქონდეს ადგილი, საიდანაც სერტიფიკატის ჰეშის გადმოწერა ან კოპირება შეგიძლიათ. ეს სერტიფიკატის ჰეში, უბრალოდ, ტექსტის ველში ჩასვით."
       ],
@@ -4345,6 +4342,9 @@
       "No Gateways yet": [
         "რაუტერების გარეშე"
       ],
+      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "**eduGAIN** ჩართული ორგანიზები **${ domain.DomainName }**-სთვის აღმოჩენილი არაა."
+      ],
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
       ],
@@ -4444,6 +4444,10 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "შეიყვანეთ 12-სიტყვიანი აღსადგენი ფრაზა."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი.",
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
       ],
       "please open a support ticket": [
         "გახსენით მხარდაჭერის ბილეთი"
@@ -4561,6 +4565,12 @@
       ],
       "Securing your account": [
         "თქვენი ანგარიშის დაცვა"
+      ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "აირჩიეთ ორგანიზაცია, რომელსაც **eduGAIN** აქვს ჩართული **${ domain.DomainName }**-სთვის."
+      ],
+      "Select one or multiple user affiliations": [
+        "აიჩიეთ ერთი ან მეტი მომხმარებლის წევრობა"
       ],
       "Select recently used servers": [
         "ახლახან გამოყენებული სერვერების არჩევა"
@@ -4712,6 +4722,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "ეს შეტყობინება არ მიაღწევს მხარდაჭერის გუნდამდე. თუ გაქვთ პრობლემა ჩვენს სერვითან, ან ჩვენი მხრიდან დამატებითი ქმედებების საჭირო, დაგვიკავშირდით ბმულზე ${ supportLink }."
+      ],
+      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "ეს ორგანიზაცია ჩართულია **eduGAIN**-თან ერთად **${ domain.DomainName }**-სთვის"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "ეს მომხმარებელი, ამჟამად, პასუხისმგებელია თქვენი ორგანიზაციის გადასახადების გადახდაზე. მისი ჩამოქვეითებით, ორგანიზაციის გადახდებზე პასუხისმგებელი თქვენ გახდებით."
@@ -5332,6 +5345,9 @@
         "${ UsedAddresses }/${ MaxAddresses } ელფოსტის მისამართი",
         "${ UsedAddresses }/${ MaxAddresses } ელფოსტის მისამართი"
       ],
+      "Account holder": [
+        "ანგარიშის მფლობელი"
+      ],
       "Account storage": [
         "ანგარიშის საცავი"
       ],
@@ -5783,6 +5799,9 @@
       "User": [
         "მომხმარებელი"
       ],
+      "User affiliations": [
+        "მომხმარებლის წევრობა"
+      ],
       "User's new password": [
         "მომხმარებლის ახალი პაროლი"
       ],
@@ -6205,9 +6224,6 @@
       ],
       "From ${ price }": [
         "${ price }-დან"
-      ],
-      "Get started for ${ price }": [
-        "დაწყება ${ price }-დან"
       ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }-დან"
@@ -6886,12 +6902,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } საცდელი"
       ],
-      "Get Mail Plus for ${ price }": [
-        "მიიღეთ Mail Plus ფასით ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "${ price }-დან"
-      ],
       "Your account's usage": [
         "თქვენი ანგარიშის გამოყენება"
       ]
@@ -7058,6 +7068,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "მომხმარებლების პაროლებისა და 2FA-ის აღდგენა"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "გადაამისამართეთ თქვენი ინტერნეტ-ტრაფიკი Tor-ის ქსელში თაგუნას ერთადერთი წკაპუნით"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
@@ -7791,6 +7804,9 @@
       ],
       "Processing payment": [
         "გადახდის დამუშავება"
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "განახლების დრო ${ renewPrice }. გააუქმეთ ნებისმიერ დროს."
       ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
@@ -8789,6 +8805,10 @@
         "${ n } მომხმარებელი მოხსნილია SSO-დან",
         "${ n } მომხმარებელი მოხსნილია SSO-დან"
       ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "არააქტიურია ${ n } მომხმარებელი. ამ მომხმარებლების წაშლა თქვენი ორგანიზაციიდან უსაფრთხოდ შეგიძლიათ.",
+        "არააქტიურია ${ n } მომხმარებელი. ამ მომხმარებლების წაშლა თქვენი ორგანიზაციიდან უსაფრთხოდ შეგიძლიათ."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ.",
         "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ."
@@ -8941,6 +8961,9 @@
       ],
       "User details:": [
         "მომხმარებლის დეტალები:"
+      ],
+      "You will have to create new users manually to add them to your organization.": [
+        "თქვენს ორგანიზაციაშ დასამატებლად ახალი მომხმარებლების ხელით შექმნა მოგიწევთ."
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
@@ -10027,6 +10050,9 @@
       "Change second password": [
         "მეორე პაროლის შეცვლა"
       ],
+      "Choose user affiliations": [
+        "აირჩიეთ მომხმარებლის წევრობა"
+      ],
       "Click a value in the table to use it as filter": [
         "დააწკაპუნეთ მნიშვნელობაზე ცხრილში, მისი ფილტრის სახით გამოსაყენებლად"
       ],
@@ -10636,6 +10662,9 @@
       "Device information such as operating system": [
         "მოწყობილობის ინფორმაცია, როგორიცაა ოპერაციული სისტემა"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "სახელის ჩვენება ობექტისთვის eduGAIN მონაცემთა ბაზაში"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ბოლოწერტილის ბმული იდენტიფიკატორის მომწოდებლისგან (მაგ: https://idp.example.com/sso/saml)"
       ],
@@ -10714,6 +10743,9 @@
     "Tor out of date": {
       "stable release": [
         "სტაბილური რელიზი"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tor Browser-ის ეს ვერსია მხარდაუჭერელია. განაახლეთ უკანასკნელ ვერსიამდე: ${ stableRelease }"
       ]
     },
     "unprivatization": {

@@ -4886,9 +4886,6 @@
       "High Priority": [
         "Wysoki priorytet"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "Numer IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
       ],
@@ -6625,9 +6622,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Od ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Od ${ priceMailPlus }"
       ],
@@ -7298,14 +7292,6 @@
       ],
       "Switch plans?": [
         "Zmienić plany?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -9978,6 +9964,9 @@
       ],
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoring dark web"
       ],
       "Data recovery": [
         "Odzyskiwanie danych"

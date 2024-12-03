@@ -369,6 +369,9 @@
       "Details": [
         "詳細資訊"
       ],
+      "Disabling alias": [
+        "停用別名"
+      ],
       "Discard": [
         "放棄"
       ],
@@ -950,6 +953,9 @@
       ],
       "Remove this label": [
         "移除此標籤"
+      ],
+      "Remove Zoom meeting": [
+        "移除Zoom會議"
       ],
       "Replace": [
         "取代"
@@ -5271,6 +5277,9 @@
       "Less details": [
         "較少詳細資料"
       ],
+      "Meeting host:": [
+        "會議主持人:"
+      ],
       "Meeting link:": [
         "會議連結:"
       ],
@@ -6301,9 +6310,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "我正傳送郵件給一位非 ${ MAIL_APP_NAME } 的使用者。"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "國際銀行帳號${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
@@ -6639,6 +6645,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
       ],
       "Please open the document to view it.": [
         "請開啟文件以瀏覽。"
@@ -6993,6 +7002,9 @@
       ],
       "This message is from a mailing list.": [
         "此郵件來自郵寄清單。"
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "此訊息是從SimpleLogin別名傳送。"
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "簽署此郵件的金鑰尚未信任。"
@@ -7767,6 +7779,9 @@
       ],
       "/month": [
         "/月"
+      ],
+      "Account holder": [
+        "帳戶持有人"
       ],
       "Actions": [
         "操作"
@@ -8943,9 +8958,6 @@
       "Get ${ planTitle }": [
         "選用 ${ planTitle }"
       ],
-      "Get started for ${ price }": [
-        "使用${ price }取得"
-      ],
       "Starting from ${ priceMailPlus }": [
         "從${ priceMailPlus }起"
       ],
@@ -9034,6 +9046,9 @@
       "${ options }-day file version history": [
         "${ options }-天的檔案版本紀錄"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin 終身"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
       ],
@@ -9114,6 +9129,9 @@
       ],
       "Available on all platforms": [
         "適用於所有平台"
+      ],
+      "Breach alerts": [
+        "外洩警告"
       ],
       "Calendar sharing": [
         "行事曆分享"
@@ -9500,14 +9518,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "使用${ price }取得Mail Plus"
-      ],
-      "Starting from ${ price }": [
-        "從${ price }起"
       ]
     },
     "new_plans: title": {
@@ -11136,11 +11146,17 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "別名已停用"
+      ],
       "Unsubscribed": [
         "已取消訂閱"
       ]
     },
     "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "輸入${ MAIL_APP_NAME }地址成為新地址並儲存，確認，或驗證變更。"
+      ],
       "In the account settings, look for the option to edit or change your email address ": [
         "在帳號設定，找尋編輯或變更電子郵件地址。 "
       ],
@@ -12205,6 +12221,9 @@
       ],
       "Customize your mail import": [
         "自訂您的郵件匯入"
+      ],
+      "Dark Web Monitoring": [
+        "暗網監控"
       ],
       "Data recovery": [
         "資料救援"
@@ -13301,8 +13320,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "加入Zoom會議"
+      ],
       "Meeting ID:": [
         "會議識別碼:"
+      ],
+      "Passcode:": [
+        "數字密碼:"
       ]
     }
   }

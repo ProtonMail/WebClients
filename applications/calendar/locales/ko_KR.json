@@ -725,6 +725,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited로 업그레이드하기"
       ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
+      ],
       "Upload picture": [
         "사진 업로드"
       ],
@@ -954,6 +957,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "특별 할인가 ${ discountedPrice }는 첫 ${ cycle }개월간 적용됩니다. 이후 매월 할인된 가격인 ${ nextPrice }(으)로 ${ renewalLength }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "이 특별 할인가 (${ discountedPrice })는 첫 달에 한합니다. 자동으로 다음 달 부터는 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
       ]
@@ -3079,6 +3085,9 @@
       "Failed to get original occurrence in series": [
         "시리즈에서 원래 발생을 얻지 못했습니다."
       ],
+      "Failed to load OAuth modal.": [
+        "OAuth 창을 불러오지 못했습니다."
+      ],
       "First name is too long": [
         "이름이 너무 깁니다."
       ],
@@ -4664,9 +4673,6 @@
       "High Priority": [
         "중요도 높음"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
@@ -5445,6 +5451,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
+      ],
+      "Account holder": [
+        "예금주"
       ],
       "Add email address": [
         "이메일 주소 추가"
@@ -6346,9 +6355,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
       ],
-      "Get started for ${ price }": [
-        "${ price }로 시작하세요."
-      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }부터 시작"
       ],
@@ -6949,14 +6955,6 @@
         "요금제를 변경할까요?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price }에 Mail Plus를 구독하세요"
-      ],
-      "Starting from ${ price }": [
-        "${ price }부터 시작"
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
@@ -7110,6 +7108,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "사용자 암호 및 2단계 인증 재설정"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "클릭 한 번으로 인터넷 트래픽을 Tor 네트워크로 라우팅하십시오"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -7634,8 +7635,23 @@
       "Please select your billing state first.": [
         "결제 청구 주를 먼저 선택하세요"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "${ renewPrice }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 ${ subscriptionLength }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPrice }로 ${ subscriptionLengthCopy }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 ${ subscriptionLength }개월간 적용됩니다. 이후 매월 ${ renewPrice }로 ${ subscriptionLengthCopy }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 1개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPrice }로 ${ subscriptionLength }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPrice }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
@@ -9056,6 +9072,9 @@
       "Fingerprint copied to clipboard": [
         "지문이 클립보드에 복사됨"
       ],
+      "Finish Zoom authentication to save event": [
+        "이벤트 저장하기 위해 Zoom 인증 마무리하기"
+      ],
       "Future events deleted": [
         "추후 이벤트 삭제됨"
       ],
@@ -9396,6 +9415,9 @@
       ],
       "Customize your mail import": [
         "사용자 메일 가져오기"
+      ],
+      "Dark Web Monitoring": [
+        "다크 웹 모니터링"
       ],
       "Data recovery": [
         "데이터 복구"

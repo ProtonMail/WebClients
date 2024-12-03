@@ -333,7 +333,7 @@
         "Gå til innstillinger"
       ],
       "Got it": [
-        "Forstått"
+        "Skjønner"
       ],
       "Help": [
         "Hjelp"
@@ -3766,7 +3766,7 @@
         "Avvis invitasjon"
       ],
       "Got it": [
-        "Forstått"
+        "Skjønner"
       ],
       "Switch plans": [
         "Bytt plan"
@@ -4746,9 +4746,6 @@
       "High Priority": [
         "Høy prioritet"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
       ],
@@ -5537,6 +5534,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
+      ],
+      "Account holder": [
+        "Kontoinnehaver"
       ],
       "Add email address": [
         "Legg til e-postadresse"
@@ -6447,9 +6447,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Starter fra ${ priceMailPlus }"
       ],
@@ -7072,14 +7069,6 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Starter fra ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7766,7 +7755,7 @@
         "CVC"
       ],
       "Got it": [
-        "Forstått"
+        "Skjønner"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -8280,7 +8269,7 @@
         "Avbryt forespørsel"
       ],
       "Got it": [
-        "Forstått"
+        "Skjønner"
       ],
       "Learn more": [
         "Lær mer"
@@ -8799,7 +8788,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Forstått"
+        "Skjønner"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Bare logg på din Apple App Store-konto, deretter velg ${ subscriptions }."
@@ -9618,6 +9607,9 @@
       ],
       "Customize your mail import": [
         "Tilpass e-postimporten din"
+      ],
+      "Dark Web Monitoring": [
+        "Overvåking av det mørke nettet"
       ],
       "Data recovery": [
         "Datagjenoppretting"

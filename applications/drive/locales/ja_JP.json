@@ -1946,10 +1946,10 @@
         "キリバス"
       ],
       "Korea (Democratic People's Republic of)": [
-        "北朝鮮"
+        "北朝鮮(朝鮮民主主義人民共和国)"
       ],
       "Korea (Republic of)": [
-        "韓国"
+        "韓国(大韓民国)"
       ],
       "Kosovo": [
         "コソボ"
@@ -2402,12 +2402,12 @@
     },
     "description": {
       "use the Easy Switch import assistant": [
-        "Easy Switchインポートアシスタントを使用する"
+        "easy Switch インポートアシスタントを使用する"
       ]
     },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
-        "${ PROTON_SENTINEL_NAME } は、疑わしい活動の24時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
+        "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
@@ -2600,7 +2600,7 @@
     },
     "duoplan2024: SubTitle": {
       "All of ${ BRAND_NAME }, for 2.": [
-        "二人のための、${ BRAND_NAME }の全て"
+        "2 人のための、${ BRAND_NAME }の全て"
       ],
       "Double your storage": [
         "ストレージを 2 倍にしましょう"
@@ -4525,7 +4525,7 @@
         "最適な結果を得るには、ストリーミングやメモリ消費の大きな処理を避けるか、より小さな処理単位にアップロードを分割してください。"
       ],
       "Free 5GB encrypted storage to get started": [
-        "無料の5 GB暗号化ストレージで始めましょう"
+        "無料の5GB暗号化ストレージで始めましょう"
       ],
       "from the version history?": [
         "を完全に削除してよろしいですか？"
@@ -4550,9 +4550,6 @@
       ],
       "How does encrypted search work?": [
         "暗号化された検索の原理"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
@@ -5449,7 +5446,7 @@
         "この操作は取り消すことができません。"
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "${ expiresInDays } 日以内に、3 GB のウェルカムボーナスを受け取り、"
+        "${ expiresInDays } 日以内に、3 GB のウェルカムボーナスを受け取り "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "試用版 ${ planTitle } のサブスクリプションが有効です。試用期間後にサブスクリプションを継続したい場合は、支払い方法を追加してください。"
@@ -5660,6 +5657,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
+      ],
+      "Account holder": [
+        "アカウント所有者"
       ],
       "Add email address": [
         "メールアドレスの追加"
@@ -6684,9 +6684,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } へダウングレード"
       ],
-      "Get started for ${ price }": [
-        "${ price } で始めましょう"
-      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }から始めましょう"
       ],
@@ -6761,7 +6758,7 @@
         "1 日あたり ${ n } メッセージ"
       ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        " 1人あたり${ n }の${ PASS_SHORT_APP_NAME }保管庫を共有"
+        "1人あたり${ n }の${ PASS_SHORT_APP_NAME }保管庫を共有"
       ],
       "${ n } vault": [
         "${ n } 個の保管庫"
@@ -7285,14 +7282,6 @@
       ],
       "Switch plans?": [
         "プランを変更しますか?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price }で Mail Plus を入手する"
-      ],
-      "Starting from ${ price }": [
-        "${ price }から始めましょう"
       ]
     },
     "new_plans: tooltip": {
@@ -7936,7 +7925,7 @@
         "Androidをお持ちですか？私たちにお任せください。"
       ],
       "Got an iPhone? We've got you covered.": [
-        "iPhoneをお持ちですか？私たちにお任せください。"
+        "Iphoneをお持ちですか？私たちにお任せください。"
       ],
       "Hang tight": [
         "もう少々お待ちください"
@@ -8047,7 +8036,7 @@
     },
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
-        "すべてのプレミアム機能。ユーザー数は6人。 1 つの簡単なサブスクリプション。"
+        "すべてのプレミアム機能。ユーザー数は 6 人。 1 つの簡単なサブスクリプション。"
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
         "${ yearlyPrice } で毎年請求されます。 ${ passFamilyPlanName } で ${ yearlySavedPrice } を節約できます (個別の ${ passPlusPlanName } サブスクリプションを 6 つ購入する場合と比較)。"
@@ -8109,13 +8098,13 @@
         "現在、サブスクリプションの自動更新は無効になっています。今すぐサブスクリプションを変更すると、自動更新が再び有効になります。"
       ],
       "CVC": [
-        "CVC (セキュリティコード)"
+        "セキュリティコード"
       ],
       "Got it": [
         "わかった"
       ],
       "MM/YY": [
-        "MM/YY (月/年)"
+        "月/年"
       ],
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
@@ -8185,7 +8174,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "この支払いを確認することにより、${ BRAND_NAME }と当社の支払いサービスプロバイダーであるStripeに、あなたの銀行口座から引き落とすよう指示することを許可します。また、あなたの銀行はそれに応じて口座から引き落とします。銀行との契約条件に基づき、引き落とし日から8週間以内に返金を受けることができます。"
+        "この支払いを確認することにより、${ BRAND_NAME }と当社の支払いサービスプロバイダーであるStripeに、あなたの銀行口座から引き落とすよう指示することを許可します。また、あなたの銀行はそれに応じて口座から引き落とします。銀行との契約条件に基づき、引き落とし日から 8 週間以内に返金を受けることができます。"
       ],
       "Street address, postal code, and city": [
         "番地、郵便番号、市区町村名"
@@ -9772,6 +9761,9 @@
       ],
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"
+      ],
+      "Dark Web Monitoring": [
+        "ダークウェブモニタリング"
       ],
       "Data recovery": [
         "データの回復"

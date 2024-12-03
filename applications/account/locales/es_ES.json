@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -561,6 +561,9 @@
       ],
       "Generate token": [
         "Generar un token"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Disfruta de ${ MAIL_SHORT_APP_NAME } Plus por ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "Obtener ${ vpnPlus }"
@@ -3580,6 +3583,9 @@
       ]
     },
     "Description": {
+      "Also included": [
+        "También incluido"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Elimina automáticamente los mensajes de spam y de la papelera y desbloquea más funciones premium al mejorar el plan."
       ],
@@ -3612,6 +3618,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Obtén hasta ${ credits } créditos por invitar amigos a ${ BRAND_NAME }."
@@ -7605,9 +7614,6 @@
       "High Priority": [
         "Prioridad alta"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Clave pública del proveedor de identidad para firmar aserciones de autenticación. Debería haber un lugar para descargar o copiar el hash del certificado del proveedor de identidad. Simplemente pega el hash del certificado en el campo del área de texto."
       ],
@@ -9948,6 +9954,9 @@
       "5 minutes": [
         "5 minutos"
       ],
+      "Account holder": [
+        "Titular de la cuenta"
+      ],
       "Account storage": [
         "Almacenamiento de la cuenta"
       ],
@@ -11799,8 +11808,8 @@
       "From ${ price }": [
         "Desde ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Comienza por ${ price }"
+      "Get started for ${ priceCoupon }": [
+        "Comenzar por ${ priceCoupon }"
       ],
       "Starting from ${ priceMailPlus }": [
         "A partir de ${ priceMailPlus }"
@@ -11951,6 +11960,9 @@
       ],
       "10 email addresses/aliases": [
         "10 direcciones/alias de correo electrónico"
+      ],
+      "10 more premium features": [
+        "10 funciones premium más"
       ],
       "10-year file version history": [
         "Historial de 10 años de las versiones de los archivos"
@@ -12539,11 +12551,11 @@
       "${ shortPlan.title } Trial": [
         "Prueba de ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ price }": [
-        "Disfruta de Mail Plus por ${ price }"
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Disfruta de Mail Plus por ${ priceCoupon }"
       ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puedes cancelar en cualquier momento."
       ],
       "Your account's usage": [
         "Uso de la cuenta"
@@ -17409,6 +17421,9 @@
       ],
       "Customize your mail import": [
         "Personalizar la importación de tu correo"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoreo de la Dark Web"
       ],
       "Dashboard": [
         "Panel de control"

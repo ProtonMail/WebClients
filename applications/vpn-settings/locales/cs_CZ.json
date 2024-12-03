@@ -964,6 +964,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ discountedPrice } platí pro prvních ${ cycle } měsíců. Poté se automaticky obnoví za zvýhodněnou cenu ${ nextPrice } na ${ renewalLength } měsíců. Službu můžete kdykoli zrušit."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ discountedPrice } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ nextPrice }. Službu můžete kdykoli zrušit."
       ]
@@ -4185,9 +4188,6 @@
       "High Priority": [
         "Vysoká priorita"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Veřejný klíč poskytovatele identity pro podepisování ověření. Váš poskytovatel identity by měl nabízet možnost zkopírovat nebo stáhnout hash certifikátu. Vložte tento hash certifikátu do textového pole."
       ],
@@ -4459,7 +4459,7 @@
         "Zatím žádné brány"
       ],
       "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Žádné organizace s povolenou funkcí **eduGAIN** pro **${ domain.DomainName }**."
+        "Žádné organizace, které byly povoleny funkcí **eduGAIN** pro **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
@@ -4573,10 +4573,10 @@
         "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }.",
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbydou kredity ve výši ${ creditsRemaining }."
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane kredit ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstanou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstanou kredity ve výši ${ creditsRemaining }.",
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane ${ creditsRemaining } kreditů."
       ],
       "please open a support ticket": [
         "prosím odešlete požadavek na podporu"
@@ -4696,7 +4696,7 @@
         "Zabezpečení vašeho účtu"
       ],
       "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Vyberte organizaci s povolenou funkcí **eduGAIN** pro **${ domain.DomainName }**."
+        "Vyberte organizaci, která byla povolena funkcí **eduGAIN** pro **${ domain.DomainName }**."
       ],
       "Select one or multiple user affiliations": [
         "Vyberte jednu nebo více příslušností uživatele"
@@ -5515,6 +5515,9 @@
         "${ UsedAddresses } ze ${ MaxAddresses } e-mailových adres",
         "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres",
         "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres"
+      ],
+      "Account holder": [
+        "Majitel účtu"
       ],
       "Account storage": [
         "Prostor pro účet"
@@ -6400,9 +6403,6 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Začněte za ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
       ],
@@ -7129,12 +7129,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Získejte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
       ],
       "Your account's usage": [
         "Využití vašeho účtu"
@@ -8093,6 +8087,15 @@
       ],
       "Select billing country to pay": [
         "Vyberte zemi platby"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí prvních ${ subscriptionLength } měsíců. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } měsíců. Službu můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíce. Poté se automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } měsíců. Službu můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPrice } na ${ subscriptionLength } měsíc. Službu můžete kdykoli zrušit."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ renewPrice }. Službu můžete kdykoli zrušit."
