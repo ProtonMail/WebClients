@@ -4699,9 +4699,6 @@
       "How does encrypted search work?": [
         "Cum funcționează căutarea criptată?"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
       ],
@@ -5841,6 +5838,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
       ],
+      "Account holder": [
+        "Titular cont"
+      ],
       "Add email address": [
         "Adăugare e-mail"
       ],
@@ -6876,9 +6876,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Începeți cu ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Începând de la ${ priceMailPlus }"
       ],
@@ -7525,14 +7522,6 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Începând de la ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -10156,6 +10145,9 @@
       ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorizare pe internetul ascuns"
       ],
       "Data recovery": [
         "Recuperare date"

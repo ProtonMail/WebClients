@@ -217,6 +217,9 @@
       "Create": [
         "Erstellen"
       ],
+      "Create a folder": [
+        "Ordner erstellen"
+      ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
       ],
@@ -2490,6 +2493,14 @@
         "In der hochgeladenen CSV-Datei wurden die folgenden Felder erkannt. Wähle diejenigen aus, die du importieren möchtest."
       ]
     },
+    "Docs Info": {
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "Die Zusammenarbeit ist jetzt noch einfacher. Jetzt kann jeder Änderungen vorschlagen, ohne das Dokument zu verändern."
+      ],
+      "Suggestion mode is here": [
+        "Der Vorschlagsmodus ist hier"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Fehler oder Qualitätsprobleme"
@@ -4193,6 +4204,9 @@
       "An active recovery file": [
         "Eine aktive Wiederherstellungsdatei"
       ],
+      "an anonymous user": [
+        "anonymer Benutzer"
+      ],
       "An issue occurred during the restore process.": [
         "Beim Wiederherstellen der Fotos ist ein Fehler aufgetreten."
       ],
@@ -4601,9 +4615,6 @@
       ],
       "How does encrypted search work?": [
         "Wie funktioniert die verschlüsselte Suche?"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
@@ -5155,6 +5166,12 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Die Anwendung muss deine Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die du anschließend herunterladen kannst."
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Die digitale Signatur wurde teilweise verifiziert. Die Datei wurde von einer öffentlichen Seite hochgeladen, die keinen spezifischen Benutzerursprung angibt."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Die digitale Signatur wurde teilweise verifiziert. Die Datei wurde von einer öffentlichen Seite hochgeladen, die keinen spezifischen Benutzerursprung angibt."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Die Anzahl der Downloads umfasst sowohl die tatsächlichen Downloads als auch die Fälle, in denen Dateien in der Vorschau angezeigt werden."
@@ -5784,6 +5801,12 @@
       "Calendars": [
         "Kalender"
       ],
+      "Can edit": [
+        "Kann bearbeiten"
+      ],
+      "Can view": [
+        "Kann anzeigen"
+      ],
       "Cancel download": [
         "Download abbrechen"
       ],
@@ -6264,6 +6287,14 @@
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Dateien verwalten, hinzufügen und bearbeiten"
+      ],
+      "View and download": [
+        "Anzeigen und herunterladen"
       ]
     },
     "Label for contact group color": {
@@ -6787,9 +6818,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade auf ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Starte für ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Ab ${ priceMailPlus }"
       ],
@@ -6948,6 +6976,9 @@
       ],
       "Administration Panel": [
         "Verwaltungskonsole"
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME } Produkte und Funktionen"
@@ -7400,14 +7431,6 @@
       ],
       "Switch plans?": [
         "Abonnement wechseln?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hol dir Mail Plus für ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ab ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7879,6 +7902,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Nicht genug Speicherplatz, um ${ formattedTotal } hochzuladen"
       ],
+      "Public link access updated": [
+        "Öffentlicher Link-Zugang aktualisiert"
+      ],
+      "Public link update access failed ": [
+        "Update-Zugriff auf öffentlichen Link fehlgeschlagen "
+      ],
       "Root folder failed to be loaded": [
         "Stammordner konnte nicht geladen werden"
       ],
@@ -7912,6 +7941,10 @@
       "This item was not removed from your list": [
         "Dieser Eintrag wurde nicht aus deiner Liste entfernt",
         "Einige Einträge konnten nicht von deiner Liste entfernt werden"
+      ],
+      "This item was successfully removed from your list": [
+        "Dieser Eintrag wurde erfolgreich aus deiner Liste entfernt",
+        "Alle Einträge wurde erfolgreich aus deiner Liste entfernt"
       ],
       "Trash failed to be emptied": [
         "Der Papierkorb konnte nicht geleert werden"
@@ -7958,6 +7991,9 @@
       "Continue": [
         "Fortfahren"
       ],
+      "Create a document": [
+        "Dokument erstellen"
+      ],
       "Get started": [
         "Erste Schritte"
       ],
@@ -7969,6 +8005,9 @@
       ],
       "Invite members": [
         "Mitglieder einladen"
+      ],
+      "Maybe Later": [
+        "Vielleicht später"
       ],
       "Maybe later": [
         "Vielleicht später"
@@ -8243,6 +8282,9 @@
       ],
       "Please select your billing state first.": [
         "Bitte wähle zuerst deinen Rechnungsstaat aus."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Verlängert sich zu ${ renewPrice }, jederzeit kündbar."
       ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
@@ -9910,6 +9952,9 @@
       ],
       "Customize your mail import": [
         "Mail-Import anpassen"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
       ],
       "Data recovery": [
         "Datenwiederherstellung"
