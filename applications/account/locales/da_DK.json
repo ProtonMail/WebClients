@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -1150,6 +1150,9 @@
       "Upgrade now": [
         "Opgradér nu"
       ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
       "Upgrade to Business": [
         "Opgrader til Business"
       ],
@@ -1756,6 +1759,9 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "til ${ durationDeal }"
+      ],
+      "forever": [
+        "for evigt"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornys automatisk efter 1 måned til ${ regularAmount }."
@@ -4389,6 +4395,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Kunne ikke hente aktive sessioner. ${ refresh } eller prøv igen senere."
       ],
+      "Failed to load OAuth modal.": [
+        "Kunne ikke indlæse OAuth modal."
+      ],
       "Failed to process the logo": [
         "Logoet blev ikke behandlet"
       ],
@@ -5262,6 +5271,9 @@
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Livstidskonti kan ikke indgå i et familieabonnement."
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
       ],
       "Manage user accounts": [
         "Administrer brugerkonti"
@@ -7081,6 +7093,9 @@
         "Sletter ${ deletedServerCount } gateway-server",
         "Sletter ${ deletedServerCount } gateway-servere"
       ],
+      "Disable recovery by email address": [
+        "Deaktiver gendannelse via e-mailadresse"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Hvis du deaktiverer totrins-godkendelse, bliver din konto mindre sikker. Gør kun dette med det største forbehold."
       ],
@@ -7186,6 +7201,9 @@
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "E-mails mærket med denne etiket ${ nameDeleted } slettes ikke og kan stadig findes i den respektive mappe."
+      ],
+      "Enable email notifications": [
+        "Aktivér e-mailnotifikationer"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivér single sign-on for at holde din organisation sikker"
@@ -7384,6 +7402,12 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Hvis du aldrig tidligere har benyttet to-faktor-godkendelse, anbefaler vi dig stærkt at ${ guideButton }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Hvis du mister din adgangskode og har brug for at gendanne din konto, ${ boldImperative } at du har en ${ boldAccountRecovery } indstillet."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Hvis du mister din adgangskode og har brug for at gendanne din konto, ${ boldImperative } at du både har en ${ boldAccountAndRecovery } indstillet, ellers kan du måske ikke få adgang til dine e-mails, kontakter eller filer."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Mister du din to-faktor-aktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede to-faktor-godkendelseskode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
@@ -7932,6 +7956,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary abonnement påkrævet"
+      ],
+      "Preference saved": [
+        "Præference gemt"
       ],
       "Preview": [
         "Forhåndsvisning"
@@ -9552,6 +9579,9 @@
       "5 minutes": [
         "5 minutter"
       ],
+      "Account holder": [
+        "Kontohaver"
+      ],
       "Account storage": [
         "Kontolagerplads"
       ],
@@ -10004,6 +10034,9 @@
       ],
       "I understand the risk": [
         "Jeg er indforstået med risikoen"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "HVIS"
@@ -11331,9 +11364,6 @@
       "From ${ price }": [
         "Fra ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Fra ${ priceMailPlus }"
       ],
@@ -11505,6 +11535,9 @@
       "Administration Panel": [
         "Administrationspanel"
       ],
+      "Advanced account protection": [
+        "Avanceret kontobeskyttelse"
+      ],
       "Advanced network security": [
         "Avanceret netværkssikkerhed"
       ],
@@ -11537,6 +11570,9 @@
       ],
       "Available on all platforms": [
         "Tilgængelig på alle platforme"
+      ],
+      "Breach alerts": [
+        "Advarsler om databrud"
       ],
       "Calendar sharing": [
         "Kalenderdeling"
@@ -12053,12 +12089,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } Prøveversion"
       ],
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Fra ${ price }"
-      ],
       "Your account's usage": [
         "Din kontos forbrug"
       ]
@@ -12352,6 +12382,71 @@
         "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
       ]
     },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } og ${ additionalApp } produktopdateringer"
+      ],
+      "${ app } product updates": [
+        "${ app } produktopdateringer"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business nyhedsbrev"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } vigtige meddelelser"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } nyhedsbrev"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } tilbud og kampagner"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } brugerundersøgelse"
+      ],
+      "1 email per month": [
+        "1 e-mail pr. måned"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 e-mail pr. måned. Få de seneste nyheder om privatlivets fred, og om hvad der foregår i ${ BRAND_NAME }-universet."
+      ],
+      "1 email per quarter": [
+        "1 e-mail pr. kvartal"
+      ],
+      "1-2 emails per month": [
+        "1-2 e-mails pr. måned"
+      ],
+      "2-4 emails per year": [
+        "2-4 e-mails pr. år"
+      ],
+      "Application notifications": [
+        "Applikationsnotifikationer"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Kritiske kontonotifikationer vil stadig blive leveret"
+      ],
+      "Daily email notifications": [
+        "Daglige e-mailnotifikationer"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Hvis du deaktiverer dette, fjerner du muligheden for at modtage notifikationer i ${ BRAND_NAME } applikationer"
+      ],
+      "During your first month": [
+        "I løbet af din første måned"
+      ],
+      "Email subscriptions": [
+        "E-mailabonnementer"
+      ],
+      "In-app notifications": [
+        "Notifikationer i appen"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Deltag i undersøgelser for at forbedre ${ BRAND_NAME }-tjenester"
+      ],
+      "Product updates": [
+        "Produktopdateringer"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } oprettet"
@@ -12376,6 +12471,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Hentede 2FA-gendannelseskoder"
+      ],
+      "Email notifications have been disabled": [
+        "E-mailnotifikationer er blevet deaktiveret"
+      ],
+      "Email notifications have been enabled": [
+        "E-mailnotifikationer er blevet aktiveret"
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -13384,6 +13485,9 @@
       ],
       "Processing payment": [
         "Behandler betaling"
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Fornyes til ${ renewPrice }, annuller når som helst."
       ],
       "Select billing country to pay": [
         "Vælg faktureringsland for at betale"
@@ -14516,6 +14620,11 @@
         "Anmodning om nulstilling af adgangskode"
       ]
     },
+    "Setting": {
+      "Include document name in email notifications": [
+        "Inkluder dokumentnavn i e-mailnotifikationer"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Gennemfør omstillingen til privatliv med vores sikre værktøjer til import og videresendelse."
@@ -15130,6 +15239,11 @@
         "Abonnementet vil blive nedgraderet ved udgangen af faktureringscyklussen."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Til ${ totalPrice }"
@@ -15185,6 +15299,10 @@
       "${ planNumberOfCalendars } calendar per user": [
         "${ planNumberOfCalendars } kalender pr. bruger",
         "${ planNumberOfCalendars } kalendere pr. bruger"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } tilpasset e-maildomæne",
+        "${ planNumberOfDomains } tilpassede e-maildomæner"
       ],
       "${ planNumberOfEmails } email address": [
         "${ planNumberOfEmails } e-mailadresse",
@@ -16203,6 +16321,9 @@
       "Customize your mail import": [
         "Tilpas din mail-import"
       ],
+      "Dark Web Monitoring": [
+        "Monitorering af det mørke net"
+      ],
       "Dashboard": [
         "Kontrolpanel"
       ],
@@ -16356,6 +16477,9 @@
       ],
       "Email encryption keys": [
         "E-mailkrypteringsnøgler"
+      ],
+      "Email notifications": [
+        "Email-notifikationer"
       ],
       "Email privacy": [
         "E-mail-privatliv"
@@ -16610,6 +16734,9 @@
       ],
       "No recovery method": [
         "Ingen gendannelsesmetode"
+      ],
+      "Notifications": [
+        "Notifikationer"
       ],
       "Open": [
         "Åbn"

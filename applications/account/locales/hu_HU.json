@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -6971,9 +6971,6 @@
       "High Priority": [
         "Magas prioritású"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ha egy másik adminisztrátor megváltoztatná ezt a jelszót, el kell kérni tőle az új Szervezeti Jelszót."
       ],
@@ -9114,6 +9111,9 @@
       ],
       "5 minutes": [
         "5 perc"
+      ],
+      "Account holder": [
+        "Fiók tulajdonos"
       ],
       "Account storage": [
         "Fiók tárhely"
@@ -15272,6 +15272,9 @@
       ],
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
+      ],
+      "Dark Web Monitoring": [
+        "Dark web figyelés"
       ],
       "Dashboard": [
         "Vezérlőpult"
