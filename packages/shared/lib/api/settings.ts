@@ -233,7 +233,7 @@ export const updateEarlyAccess = (data: { EarlyAccess: number }) => ({
     data,
 });
 
-export const updateFlags = (data: { Welcomed?: number; EdmOptOut?: number }) => ({
+export const updateFlags = (data: { Welcomed?: number; EdmOptOut?: number } | { SupportPgpV6Keys: 1 }) => ({
     url: 'core/v4/settings/flags',
     method: 'put',
     data,
