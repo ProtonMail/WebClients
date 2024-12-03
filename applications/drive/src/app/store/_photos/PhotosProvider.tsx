@@ -27,10 +27,8 @@ export const PhotosProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const [photosShare, setPhotosShare] = useState<ShareWithKey>();
     const [share, setShare] = useState<ShareWithKey>();
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
-
     const request = useDebouncedRequest();
-    const [photosLoading, setIsPhotosLoading] = useState<boolean>(false);
-
+    const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
     const [photos, setPhotos] = useState<Photo[]>([]);
 
     const { isB2B } = useDrivePlan();
@@ -46,6 +44,10 @@ export const PhotosProvider: FC<{ children: ReactNode }> = ({ children }) => {
         void Promise.all([getDefaultShare(), getDefaultPhotosShare()]).then(([defaultShare, defaultPhotosShare]) => {
             setShare(defaultShare);
             setPhotosShare(defaultPhotosShare);
+            // loadPhotos() depends on the photo share shareId/volumeId
+            // if its undefined = loading is stopped (we have a problem)
+            // if its truthy = loading continues and loadPhotos will take over the photosLoading()
+            setIsPhotosLoading(!!defaultPhotosShare);
         });
     }, []);
 
@@ -92,7 +94,7 @@ export const PhotosProvider: FC<{ children: ReactNode }> = ({ children }) => {
                 linkId: photosShare?.rootLinkId,
                 volumeId: photosShare?.volumeId,
                 showPhotosSection,
-                isLoading: (!share && !photosShare) || photosLoading,
+                isLoading: photosLoading,
                 photos,
                 loadPhotos,
                 removePhotosFromCache,
