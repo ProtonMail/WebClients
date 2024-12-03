@@ -81,6 +81,9 @@
       "Apply": [
         "Použiť"
       ],
+      "Ask me next time": [
+        "Opýtať sa nabudúce"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktov je povolený najviac ${ maxContacts } kontakt",
         "Na jednu skupinu kontaktov sú povolené najviac ${ maxContacts } kontakty",
@@ -309,6 +312,9 @@
       "Go to label": [
         "Prejsť na štítok"
       ],
+      "Got it": [
+        "Rozumiem"
+      ],
       "Help": [
         "Nápoveda"
       ],
@@ -525,6 +531,9 @@
       "Restore this version": [
         "Obnoviť túto verziu"
       ],
+      "Restore this version?": [
+        "Obnoviť túto verziu?"
+      ],
       "Retry": [
         "Opakovať"
       ],
@@ -533,6 +542,9 @@
       ],
       "Save changes": [
         "Uložiť zmeny"
+      ],
+      "Save preferences": [
+        "Uložiť preferencie"
       ],
       "Search": [
         "Hľadať"
@@ -816,6 +828,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ discountedPrice } platí počas prvých ${ cycle } mesiacov. Potom sa automaticky obnoví za zľavnenú cenu ${ nextPrice } na ${ renewalLength } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ discountedPrice } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ nextPrice }. Službu môžete kedykoľvek zrušiť."
       ]
@@ -3962,6 +3977,9 @@
       "Amount below minimum (${ amount }).": [
         "Suma nižšia ako minimum (${ amount })."
       ],
+      "an anonymous user": [
+        "anonymný používateľ"
+      ],
       "and": [
         "a"
       ],
@@ -4256,14 +4274,17 @@
       "Free 5GB encrypted storage to get started": [
         "5 GB bezplatného šifrovaného úložného priestoru"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Dostávajte emailové aktualizácie o komentároch a návrhoch pridaných k vašim dokumentom."
+      ],
+      "Get Notified About Comments": [
+        "Dostávajte notifikácie o komentároch"
+      ],
       "here": [
         "tu"
       ],
       "High Priority": [
         "Vysoká priorita"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
@@ -4529,6 +4550,12 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornenie, tento proces môže trvať nejakú dobu v závislosti na veľkosti Vášho adresára."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kredit.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú ${ creditsRemaining } kredity.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov."
+      ],
       "Please provide a name and an email address for creating a group.": [
         "Na vytvorenie skupiny zadajte meno a emailovú adresu, prosím."
       ],
@@ -4582,6 +4609,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
+      ],
+      "Restored version to": [
+        "Verzia obnovená na"
       ],
       "Saving": [
         "Ukladanie"
@@ -4663,6 +4693,12 @@
       ],
       "The Beginning": [
         "Začiatok"
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Digitálny podpis bol čiastočne overený. Súbor bol nahratý z verejnej stránky, na ktorej nie je uvedený konkrétny pôvod používateľa."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Digitálny podpis bol čiastočne overený. Priečinok bol nahratý z verejnej stránky, na ktorej nie je uvedený konkrétny pôvod používateľa."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informácie, ktoré boli zverejnené, unikli zo služby tretej strany. Vaše informácie o účte ${ BRAND_NAME } zostávajú zabezpečené a zašifrované. ${ learnMoreLink }"
@@ -4774,6 +4810,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
+      ],
+      "Undo successful": [
+        "Späťvzatie bolo úspešné"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Bohužiaľ, zdá sa, že súbor alebo niektoré jeho údaje nemôžu byť dešifrované."
@@ -4970,6 +5009,9 @@
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Váš aktuálny prehliadač nepodporuje sťahovanie veľkých súborov kvôli nedostupnosti service workers. Sťahovanie veľkých súborov môže spôsobiť, že prehliadač zmrzne alebo prestane reagovať. Prosím, použite najnovšiu verziu prehliadača ${ recommendedBrowser } a skúste znovu."
       ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "Váš aktuálny dokument bude nahradený touto verziou. Komentáre a návrhy budú z dokumentu odstránené, ale zostanú prístupné v histórii komentárov."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
       ],
@@ -5099,6 +5141,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
       ],
+      "Account holder": [
+        "Vlastník účtu"
+      ],
       "Add email address": [
         "Pridať emailovú adresu"
       ],
@@ -5167,6 +5212,12 @@
       ],
       "Calendars": [
         "Kalendáre"
+      ],
+      "Can edit": [
+        "Môže upravovať"
+      ],
+      "Can view": [
+        "Môže zobraziť"
       ],
       "Cancel download": [
         "Zrušiť sťahovanie"
@@ -5267,6 +5318,9 @@
       "Emails (last month)": [
         "Emaily (posledný mesiac)"
       ],
+      "Enable email notifications": [
+        "Povoliť emailové notifikácie"
+      ],
       "Encrypt emails": [
         "Šifrovať emaily"
       ],
@@ -5323,6 +5377,9 @@
       ],
       "Import to:": [
         "Importovať do:"
+      ],
+      "Include document name in notification": [
+        "Zahrnúť názov dokumentu do notifikácie"
       ],
       "Include message and file name in invite email": [
         "Zahrnúť správu a názov súboru do emailovej pozvánky"
@@ -5527,6 +5584,14 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Usporiadanie, pridávanie a úprava súborov"
+      ],
+      "View and download": [
+        "Zobraziť a prevziať"
       ]
     },
     "Label for contact group color": {
@@ -5985,9 +6050,6 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Začnite za ${ price }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
@@ -6647,14 +6709,6 @@
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Získajte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -6825,6 +6879,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Obnoviť heslá a dvojstupňové overenie používateľov"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Smerujte vašu internetovú prevádzku cez sieť Tor jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
@@ -7130,6 +7187,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Nedostatok miesta na nahratie ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "Verejný prístupový odkaz bol aktualizovaný"
+      ],
+      "Public link update access failed ": [
+        "Aktualizácia verejného odkazu zlyhala "
+      ],
       "Stopping the sharing of this item has failed": [
         "Ukončenie zdieľania tejto položky zlyhalo"
       ],
@@ -7338,8 +7401,23 @@
       "Please select your billing state first.": [
         "Najprv vyberte fakturačný štát, prosím."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Obnovuje sa za ${ renewPrice }, zrušiť môžete kedykoľvek."
+      ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvvých ${ subscriptionLength } mesiacov. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ subscriptionLength } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLength } mesiac. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPrice }. Službu môžete kedykoľvek zrušiť."
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
@@ -8762,6 +8840,9 @@
       ],
       "Customize your mail import": [
         "Prispôsobiť import vášho emailu"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorovanie Dark Webu"
       ],
       "Data recovery": [
         "Obnovenie údajov"
