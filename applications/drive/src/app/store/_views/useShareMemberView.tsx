@@ -67,25 +67,22 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
             setIsShared(link.isShared);
             const share = await getShare(abortController.signal, link.shareId);
 
-            await listInvitations(abortController.signal, share.shareId).then((invites: ShareInvitation[]) => {
-                if (invites) {
-                    setInvitations(invites);
-                }
-            });
+            const [fetchedInvitations, fetchedExternalInvitations, fetchedMembers] = await Promise.all([
+                listInvitations(abortController.signal, share.shareId),
+                listExternalInvitations(abortController.signal, share.shareId),
+                getShareMembers(abortController.signal, { shareId: share.shareId }),
+            ]);
 
-            await listExternalInvitations(abortController.signal, share.shareId).then(
-                (externalInvites: ShareExternalInvitation[]) => {
-                    if (externalInvites) {
-                        setExternalInvitations(externalInvites);
-                    }
-                }
-            );
+            if (fetchedInvitations) {
+                setInvitations(fetchedInvitations);
+            }
+            if (fetchedExternalInvitations) {
+                setExternalInvitations(fetchedExternalInvitations);
+            }
+            if (fetchedMembers) {
+                setMembers(fetchedMembers);
+            }
 
-            await getShareMembers(abortController.signal, { shareId: share.shareId }).then((members) => {
-                if (members) {
-                    setMembers(members);
-                }
-            });
             setVolumeId(share.volumeId);
         });
 
