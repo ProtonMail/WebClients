@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import type { PushNotification } from 'push.js';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -19,7 +18,7 @@ const testDefaultNotification = () => {
 };
 
 export interface Props {
-    onTest?: () => Promise<PushNotification | undefined>;
+    onTest?: () => Promise<Notification | undefined>;
     infoURL?: string;
 }
 const DesktopNotificationPanel = ({ onTest = testDefaultNotification }: Props) => {

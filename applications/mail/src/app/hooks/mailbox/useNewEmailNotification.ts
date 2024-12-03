@@ -6,7 +6,8 @@ import { c } from 'ttag';
 import { useSubscribeEventManager } from '@proton/components';
 import { useFolders } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { create } from '@proton/shared/lib/helpers/desktopNotification';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { create, createElectronNotification } from '@proton/shared/lib/helpers/desktopNotification';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isImported } from '@proton/shared/lib/mail/messages';
 
@@ -35,21 +36,20 @@ const displayNotification = (
     const elementID = isConversationMode(labelID, mailSettings, cleanHistoryLocation) ? ConversationID : ID;
     const location = setParamsInLocation(cleanHistoryLocation, { labelID, elementID });
 
-    return create(
-        title,
-        {
-            tag: ID,
-            body,
-            icon: notificationIcon,
-            onClick() {
-                window.focus();
-                history.push(location);
-                onOpenElement();
-            },
+    if (isElectronMail) {
+        return createElectronNotification({ title, body, app: 'mail', elementID, labelID });
+    }
+
+    return create(title, {
+        tag: ID,
+        body,
+        icon: notificationIcon,
+        onClick() {
+            window.focus();
+            history.push(location);
+            onOpenElement();
         },
-        // Used for Electron notifications on the Mail desktop app
-        { title, body, app: 'mail', elementID, labelID }
-    );
+    });
 };
 
 const useNewEmailNotification = (onOpenElement: () => void) => {
