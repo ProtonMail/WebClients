@@ -8,7 +8,8 @@ import { useApi, useContactEmailsCache, useGetCalendarEventRaw, useHasSuspendedC
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { getAlarmMessage, getNextEventTime } from '@proton/shared/lib/calendar/alarms';
 import { MINUTE } from '@proton/shared/lib/constants';
-import { create } from '@proton/shared/lib/helpers/desktopNotification';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { create, createElectronNotification } from '@proton/shared/lib/helpers/desktopNotification';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { CalendarAlarm, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
@@ -19,19 +20,17 @@ import type { CalendarsEventsCache } from '../calendar/eventStore/interface';
 const MIN_CUTOFF = -MINUTE;
 
 export const displayNotification = ({ title = c('Title').t`Calendar alarm`, text = '', ...rest }) => {
-    return create(
-        title,
-        {
-            body: text,
-            icon: notificationIcon,
-            onClick() {
-                window.focus();
-            },
-            ...rest,
+    if (isElectronMail) {
+        return createElectronNotification({ title, body: text, app: 'calendar' });
+    }
+    return create(title, {
+        body: text,
+        icon: notificationIcon,
+        onClick() {
+            window.focus();
         },
-        // Used for Electron notifications on the Calendar desktop app
-        { title, body: text, app: 'calendar' }
-    );
+        ...rest,
+    });
 };
 
 const getFirstUnseenAlarm = (alarms: CalendarAlarm[] = [], set: Set<string>) => {
@@ -111,7 +110,7 @@ const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => 
                         const now = new Date();
                         const formatOptions = { locale: dateLocale };
                         const text = getAlarmMessage({ component, start, now, tzid, formatOptions });
-                        return displayNotification({ text, tag: ID });
+                        void displayNotification({ text, tag: ID });
                     })
                     .catch(noop);
 
