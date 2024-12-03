@@ -5423,9 +5423,6 @@
       "From ${ price }": [
         "A partir de ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
       "Upgrade": [
         "Alterar a subscrição"
       ],
@@ -6305,6 +6302,9 @@
       ]
     },
     "option": {
+      "Everyone": [
+        "Todos"
+      ],
       "Group members": [
         "Membros do grupo"
       ],
@@ -7370,6 +7370,9 @@
       ]
     },
     "sso": {
+      "Access denied": [
+        "Acesso negado"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -7390,6 +7393,9 @@
       ],
       "Sign in": [
         "Iniciar sessão"
+      ],
+      "User details:": [
+        "Detalhes do utilizador:"
       ]
     },
     "sso: auth device state": {
@@ -7398,6 +7404,9 @@
       ],
       "Inactive": [
         "Inativo"
+      ],
+      "Rejected": [
+        "Rejeitado"
       ],
       "Signed out": [
         "Sessão terminada"
@@ -8853,6 +8862,9 @@
     "Users table: badge": {
       "2FA": [
         "A2F"
+      ],
+      "Inactive": [
+        "Inativa"
       ],
       "Invite sent": [
         "O convite foi enviado."
