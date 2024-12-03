@@ -16,6 +16,7 @@ import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal'
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import { usePostSubscriptionTelemetry } from '@proton/components/containers/payments/subscription/postSubscription/usePostSubscriptionTelemetry';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -36,7 +37,6 @@ import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresse
 import addressesImg from '@proton/styles/assets/img/illustrations/new-upsells-img/addresses.svg';
 import move from '@proton/utils/move';
 
-import { usePostSubscriptionTelemetry } from '../payments/subscription/postSubscription/usePostSubscriptionTelemetry';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
 import { getPermissions, getStatus } from './helper';
