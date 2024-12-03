@@ -5,7 +5,6 @@ import type { Store } from 'redux';
 import browser from '@proton/pass/lib/globals/browser';
 import {
     createAliasSyncEnableRule,
-    createBlackFriday2024Rule,
     createMonitorRule,
     createPendingShareAccessRule,
     createPermissionsRule,
@@ -40,7 +39,6 @@ export const createSpotlightService = (
             createStorageIssueRule(withContext((ctx) => ctx.service.storage.getState().storageFull)),
             createUpdateRule(withContext((ctx) => ctx.service.activation.getAvailableUpdate())),
             createTrialRule(store),
-            ...(BUILD_TARGET !== 'safari' ? [createBlackFriday2024Rule(store)] : []),
             createSecurityRule(store),
             createUserRatingRule(store),
             createUserRenewalRule(store),
