@@ -88,7 +88,7 @@ export function removeStopStrings(text: string, customStopStrings?: string[]) {
     return text;
 }
 
-export function convertToDoubleNewlines(input: string): string {
+export function convertToDoubleNewlines(input: string, splitParagraphs: boolean = true): string {
     const lines = input.split('\n');
 
     let paragraphs: string[][] = [];
@@ -106,7 +106,9 @@ export function convertToDoubleNewlines(input: string): string {
         }
         const isListLine = /^(\d+[\.\)]|\-|\*|\•|[a-zA-Z][\.\)]) /.test(line);
         inList = isListLine || listJustBegan;
-        if (!inList) {
+        // This is splitting the content in different paragraphs, but in some cases (like refine),
+        // the content should already be formatted as expected, so we don't want to add extra spaces where not needed
+        if (!inList && splitParagraphs) {
             paragraphs.push(paragraph);
             paragraph = [];
         }
