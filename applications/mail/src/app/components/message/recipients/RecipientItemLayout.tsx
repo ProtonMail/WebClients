@@ -72,12 +72,18 @@ const RecipientItemLayout = ({
     // the usual encrypted search context but its default value, where each function
     // is mocked. Since highlightMetadata and shouldHighlight are irrelevant in that
     // scenario, the mocked version is enough and prevents the component from crashing
-    const { highlightMetadata, shouldHighlight } = useEncryptedSearchContext();
+    const { highlightMetadata, shouldHighlight, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
 
     const rootRef = useRef<HTMLSpanElement>(null);
+
+    // We don't want to highlight the display name in normal search.
+    // However, if recipient has no display name by default, we use the address as display name.
+    // In that case the address (that is in the display name) should be highlighted
+    const isLabelRecipientAddress = address === `<${label}>`;
+    const canHighlightLabel = !!label && highlightData && (esStatus.esEnabled || isLabelRecipientAddress);
     const highlightedLabel = useMemo(
-        () => (!!label && highlightData ? highlightNode(label, highlightMetadata) : label),
+        () => (canHighlightLabel ? highlightNode(label, highlightMetadata) : label),
         [label, highlightData]
     );
     const highlightedAddress = useMemo(
