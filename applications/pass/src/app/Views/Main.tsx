@@ -21,6 +21,7 @@ import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/Theme
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
+import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
@@ -30,6 +31,7 @@ import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActions
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
 import { selectIsSSO, selectLockSetupRequired, selectRequestInFlight } from '@proton/pass/store/selectors';
+import { SpotlightMessage } from '@proton/pass/types';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
 import { ExtensionInstallBar } from './Header/ExtensionInstallBar';
@@ -108,7 +110,11 @@ const MainSwitch: FC = () => {
                                     {!DESKTOP_BUILD && (
                                         <>
                                             <ThemeOnboardingModal />
-                                            {isSSO && <OnboardingSSO />}
+                                            {isSSO && (
+                                                <WithSpotlightModal type={SpotlightMessage.SSO_CHANGE_LOCK}>
+                                                    {(props) => <OnboardingSSO {...props} />}
+                                                </WithSpotlightModal>
+                                            )}
                                         </>
                                     )}
                                 </div>
