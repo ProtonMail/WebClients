@@ -1059,6 +1059,9 @@
       "for ${ durationDeal }": [
         "til ${ durationDeal }"
       ],
+      "forever": [
+        "for evigt"
+      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornys automatisk efter 1 måned til ${ regularAmount }."
       ]
@@ -2860,6 +2863,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Livstidskonti kan ikke indgå i et familieabonnement."
       ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
       "Manage user accounts": [
         "Administrer brugerkonti"
       ],
@@ -4314,6 +4320,9 @@
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary abonnement påkrævet"
       ],
+      "Preference saved": [
+        "Præference gemt"
+      ],
       "Preview": [
         "Forhåndsvisning"
       ],
@@ -5136,6 +5145,9 @@
         "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser",
         "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser"
       ],
+      "Account holder": [
+        "Kontohaver"
+      ],
       "Account storage": [
         "Kontolagerplads"
       ],
@@ -5354,6 +5366,9 @@
       ],
       "Hide password": [
         "Skjul adgangskode"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Interval": [
         "Interval"
@@ -5950,9 +5965,6 @@
       "From ${ price }": [
         "Fra ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Fra ${ priceMailPlus }"
       ],
@@ -6118,6 +6130,9 @@
       "Administration Panel": [
         "Administrationspanel"
       ],
+      "Advanced account protection": [
+        "Avanceret kontobeskyttelse"
+      ],
       "Advanced network security": [
         "Avanceret netværkssikkerhed"
       ],
@@ -6147,6 +6162,9 @@
       ],
       "Available on all platforms": [
         "Tilgængelig på alle platforme"
+      ],
+      "Breach alerts": [
+        "Advarsler om databrud"
       ],
       "Calendar sharing": [
         "Kalenderdeling"
@@ -6612,12 +6630,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } Prøveversion"
       ],
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Fra ${ price }"
-      ],
       "Your account's usage": [
         "Din kontos forbrug"
       ]
@@ -6900,6 +6912,71 @@
       ],
       "Support for ${ n } custom email domains": [
         "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
+      ]
+    },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } og ${ additionalApp } produktopdateringer"
+      ],
+      "${ app } product updates": [
+        "${ app } produktopdateringer"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business nyhedsbrev"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } vigtige meddelelser"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } nyhedsbrev"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } tilbud og kampagner"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } brugerundersøgelse"
+      ],
+      "1 email per month": [
+        "1 e-mail pr. måned"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 e-mail pr. måned. Få de seneste nyheder om privatlivets fred, og om hvad der foregår i ${ BRAND_NAME }-universet."
+      ],
+      "1 email per quarter": [
+        "1 e-mail pr. kvartal"
+      ],
+      "1-2 emails per month": [
+        "1-2 e-mails pr. måned"
+      ],
+      "2-4 emails per year": [
+        "2-4 e-mails pr. år"
+      ],
+      "Application notifications": [
+        "Applikationsnotifikationer"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Kritiske kontonotifikationer vil stadig blive leveret"
+      ],
+      "Daily email notifications": [
+        "Daglige e-mailnotifikationer"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Hvis du deaktiverer dette, fjerner du muligheden for at modtage notifikationer i ${ BRAND_NAME } applikationer"
+      ],
+      "During your first month": [
+        "I løbet af din første måned"
+      ],
+      "Email subscriptions": [
+        "E-mailabonnementer"
+      ],
+      "In-app notifications": [
+        "Notifikationer i appen"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Deltag i undersøgelser for at forbedre ${ BRAND_NAME }-tjenester"
+      ],
+      "Product updates": [
+        "Produktopdateringer"
       ]
     },
     "Notification": {
@@ -7388,6 +7465,9 @@
       ],
       "Processing payment": [
         "Behandler betaling"
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Fornyes til ${ renewPrice }, annuller når som helst."
       ],
       "Select billing country to pay": [
         "Vælg faktureringsland for at betale"
@@ -8554,6 +8634,11 @@
         "Abonnementet vil blive nedgraderet ved udgangen af faktureringscyklussen."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Til ${ totalPrice }"
@@ -8609,6 +8694,10 @@
       "${ planNumberOfCalendars } calendar per user": [
         "${ planNumberOfCalendars } kalender pr. bruger",
         "${ planNumberOfCalendars } kalendere pr. bruger"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } tilpasset e-maildomæne",
+        "${ planNumberOfDomains } tilpassede e-maildomæner"
       ],
       "${ planNumberOfEmails } email address": [
         "${ planNumberOfEmails } e-mailadresse",

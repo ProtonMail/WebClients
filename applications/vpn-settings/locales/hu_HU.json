@@ -3627,9 +3627,6 @@
       "High Priority": [
         "Magas prioritású"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ha egy másik adminisztrátor megváltoztatná ezt a jelszót, el kell kérni tőle az új Szervezeti Jelszót."
       ],
@@ -4757,6 +4754,9 @@
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből",
         "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből"
+      ],
+      "Account holder": [
+        "Fiók tulajdonos"
       ],
       "Account storage": [
         "Fiók tárhely"

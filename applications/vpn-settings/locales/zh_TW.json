@@ -3858,9 +3858,6 @@
       "High Priority": [
         "首要優先順序"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "國際銀行帳號${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "身分提供者簽署驗證判斷提示的公開金鑰。身分提供者應在某處備有憑證雜湊可供下載或複製。只需在文字區域欄位中貼上憑證雜湊即可。"
       ],
@@ -4187,6 +4184,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "請輸入與您的帳號關連的12字復原短語。"
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
       ],
       "please open a support ticket": [
         "請開啟支援票卷"
@@ -4964,6 +4964,9 @@
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "最多可有 ${ MaxAddresses } 個電郵位址，目前已有 ${ UsedAddresses } 個"
+      ],
+      "Account holder": [
+        "帳戶持有人"
       ],
       "Account storage": [
         "帳號儲存空間"
@@ -5778,9 +5781,6 @@
       "From ${ price }": [
         "${ price }起"
       ],
-      "Get started for ${ price }": [
-        "使用${ price }取得"
-      ],
       "Starting from ${ priceMailPlus }": [
         "從${ priceMailPlus }起"
       ],
@@ -5872,6 +5872,9 @@
       "${ options }-day file version history": [
         "${ options }-天的檔案版本紀錄"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin 終身"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
       ],
@@ -5958,6 +5961,9 @@
       ],
       "Available on all platforms": [
         "適用於所有平台"
+      ],
+      "Breach alerts": [
+        "外洩警告"
       ],
       "Calendar sharing": [
         "行事曆分享"
@@ -6402,12 +6408,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }滿意體驗"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "使用${ price }取得Mail Plus"
-      ],
-      "Starting from ${ price }": [
-        "從${ price }起"
       ],
       "Your account's usage": [
         "您帳號的使用情況"

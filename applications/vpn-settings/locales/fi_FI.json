@@ -916,7 +916,7 @@
         "6 käyttäjää"
       ],
       "Premium Password Manager": [
-        "Premium salasanahallinta"
+        "Premium-salasanahallinta"
       ]
     },
     "bf2023: header": {
@@ -1035,7 +1035,7 @@
         "Kertamaksu, elinikäinen tarjous"
       ],
       "Online document editor": [
-        "Verkkodokumenttieditori"
+        "Selaimella käytettävä dokumenttieditori"
       ],
       "Password health alerts": [
         "Salasanaterveyshälytykset"
@@ -3023,7 +3023,7 @@
         "Poistuttaan tilauksestasi, tämä käyttäjä siirretään ${ BRAND_NAME }  Unlimited -tilaukseen 30 päivän maksuttomalla kokeilujaksolla.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Oletuksena myönnämme ${ formattedStorage } tallennustilaa ylläpitäjän tilille. Voit hallita lisäkäyttäjien kesken jaettua tallennustilaa myöhemmin."
+        "Oletusarvoisesti ylläpitotilille määriteteään ${ formattedStorage } tallennustilaa. Voit myöhemmin muuttaa tallennustilan jakautumista muille käyttäjille."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Luo ja hallinnoi perheenjäseniä ja myönnä heille tallennustilaa, joka on jaettu ${ DRIVE_APP_NAME } ja ${ MAIL_APP_NAME } välillä."
@@ -3124,7 +3124,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista yhdistettyä laitetta, maailmanlaajuisen suoratoistotuen, haittasisällön- ja mainoseston sekä paljon muuta."
+        "Sisältää mm. yli 2950 palvelinta yli 65 maassa, 10 samanaikaista laiteyhteyttä, maailmanlaajuisen suoratoistotuen, sekä haittasisällön- ja mainoseston."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Sisältää tuen kolmelle omalle sähköpostiverkkotunnukselle, 90 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
@@ -3656,7 +3656,7 @@
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ota yhteyttä ylläpitoosi."
+        "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ole yhteydessä ylläpitoosi."
       ],
       "Account size": [
         "Tilin koko"
@@ -4095,9 +4095,6 @@
       "High Priority": [
         "Korkea tärkeys"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identiteetintarjoajan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Identiteetintarjoajallasi pitäisi olla paikka, josta voit kopioida tai ladata varmenteen tiivisteen. Liitä lataamasi tai kopioimasi varmenteen tiiviste tekstikenttään."
       ],
@@ -4153,7 +4150,7 @@
         "Jos kohtaat ongelmia, tarjoamme apua. ${ boldPhoneCall } tai ${ boldZoomMeeting } asiakaspalvelijamme kanssa."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
-        "TÄRKEÄÄ: Mikäli DNS-hallintasi ei anna CNAME-tietueen päättyä pisteeseen, voit poistaa viimeisen pisteen CNAME tiedoista."
+        "TÄRKEÄÄ: Mikäli DNS-hallintasi ei hyväksy pisteeseen päättyviä CNAME-tietueita, voit poistaa viimeiset pisteet."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Tärkeää: Varmista, että tallennat palautuskoodisi. Muutoin saatat menettää pääsyn tilillesi pysyvästi, jos menetät todennuslaitteesi."
@@ -4407,7 +4404,7 @@
         "Järjestä omat palvelimesi yhdyskäytäviin ja määritä millä käyttäjillä on niiden käyttöoikeus."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
-        "Organisaatiossasi on muita ylläpitäjiä ja olet vastuussa uuden salasanan välityksestä heille."
+        "Organisaatiossasi on muita ylläpitäjiä ja sinun on huolehdittava uuden salasanan välittämisestä heille."
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - oma sähköposti vahvistettiin"
@@ -4467,6 +4464,10 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Syötä tilillesi kuuluva 12-sanainen palautuslauseke."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediitti.",
+        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
       "please open a support ticket": [
         "avaa tukipyyntö"
@@ -5104,8 +5105,8 @@
         "Käytettävissäsi on ${ availableCount } uutta palvelinta."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "Sinulla on ${ unassignedAvailableCount } hiljattain käytetty palvelin. Jos haluat määrittää tälle palvelimelle toisen maan, odota, kunnes deaktivointi on suoritettu loppuun.",
-        "Sinulla on ${ unassignedAvailableCount } hiljattain käytettyä palvelinta. Jos haluat määrittää näille palvelimille toisen maan, odota, kunnes deaktivointi on suoritettu loppuun."
+        "Olet hiljattain käyttänyt ${ unassignedAvailableCount } palvelinta. Kohdistaaksesi palvelimen eri maahan, odota kunnes sen aktivointi on poistunut.",
+        "Olet hiljattain käyttänyt ${ unassignedAvailableCount } palvelinta. Kohdistaaksesi palvelimet eri maahan, odota kunnes niiden aktivointi on poistunut."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Sinulla on ${ planTitle } -kokeilutilaus. Jos haluat jatkaa tilausta kokeilujakson jälkeen, lisää maksutapa."
@@ -5123,7 +5124,7 @@
         "Sinut voidaan ohjata pankkisi verkkosivuille."
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
-        "Sinun on aktivoitava organisaatiosi yksityinen avain organisaatiosi ylläpidon ilmoittamalla organisaation vara-avaimen salasanalla."
+        "Sinun on aktivoitava yksityinen organisaatioavaimesi organisaatiosi ylläpidon ilmoittamalla organisaatioavaimen varmistussalasanalla."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Kaikki laajemmat ${ MAIL_APP_NAME } -määritykset, kuten käyttäjät, osoitteet ja omat verkkotunnukset on poistettava käytöstä tai poistettava ennen tilauksen alennusta."
@@ -5363,6 +5364,9 @@
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses }/${ MaxAddresses } sähköpostiosoite",
         "${ UsedAddresses }/${ MaxAddresses } sähköpostiosoitetta"
+      ],
+      "Account holder": [
+        "Tilinhaltija"
       ],
       "Account storage": [
         "Tilin tallennustila"
@@ -5755,7 +5759,7 @@
         "Vastaus URL (ACS)"
       ],
       "Require 2FA for administrators": [
-        "Pakota ylläpitäjille kaksivaiheinen tunnistautuminen"
+        "Pakota kaksivaiheinen tunnistautuminen ylläpitäjille"
       ],
       "Require 2FA for everyone": [
         "Vaadi 2FA kaikilta"
@@ -5913,6 +5917,11 @@
     "Label, credit card": {
       "ZIP code": [
         "Postinumero"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Aloita valitsemalla identiteetin tarjoaja"
       ]
     },
     "Link": {
@@ -6233,9 +6242,6 @@
       "From ${ price }": [
         "Alkaen ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Aloita hintaan ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Alkaen ${ priceMailPlus }"
       ],
@@ -6288,8 +6294,8 @@
         "${ n } kalenteria/käyttäjä"
       ],
       "${ n } custom email domain": [
-        "${ n } oma sähköpostiverkkotunnus",
-        "${ n } omaa sähköpostiverkkotunnusta"
+        "${ n } oma verkkotunnus",
+        "${ n } omaa verkkotunnusta"
       ],
       "${ n } email address": [
         "${ n } sähköpostiosoite",
@@ -6357,10 +6363,10 @@
         "${ PROTON_SENTINEL_NAME } -ohjelma"
       ],
       "${ size } attachment size": [
-        "${ size } liitteen koko"
+        "${ size } liitekoko"
       ],
       "${ size } of secure storage per user": [
-        "${ size } suojattua tallennustilaa/käyttäjä"
+        "${ size } turvallista tallennustilaa/käyttäjä"
       ],
       "${ size } storage": [
         "${ size } tallennustilaa"
@@ -6381,13 +6387,13 @@
         "10 sähköpostiosoitetta/aliasta"
       ],
       "10-year file version history": [
-        "10 vuoden tiedostojen versiohistoria"
+        "10 vuoden tiedostoversiohistoria"
       ],
       "15 GB storage": [
         "15 Gt tallennustilaa"
       ],
       "24/7 account management support": [
-        "24/7 tilin hallinnan tuki"
+        "24/7-asiakaspalvelu tilien hallintaan"
       ],
       "24/7 support": [
         "24/7-tuki"
@@ -6423,7 +6429,7 @@
         "Kaikki premium ${ BRAND_NAME } -palvelut. Yksi helppo tilaus"
       ],
       "Auto-delete Spam and Trash": [
-        "Tyhjennä roskaposti ja roskakori automaattisesti"
+        "Roskapostin ja roskakorin automaattinen tyhjennys"
       ],
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
@@ -6435,7 +6441,7 @@
         "Maksukorttien automaattitäyttö (tulossa pian)"
       ],
       "Automatic email forwarding": [
-        "Automaattinen sähköpostin välitys"
+        "Sähköpostin automaattiohjaus"
       ],
       "Available on all platforms": [
         "Saatavilla kaikilla alustoilla"
@@ -6456,7 +6462,7 @@
         "Keskitetyt asetukset ja laskutus"
       ],
       "Collaborate and share large files": [
-        "Tee yhteistyötä ja jaa suuria tiedostoja"
+        "Yhteiskäytä ja jaa suuria tiedostoja"
       ],
       "Contact groups": [
         "Yhteystietoryhmät"
@@ -6495,7 +6501,7 @@
         "DNS-vuotosuojaus"
       ],
       "Double hop": [
-        "Double hop"
+        "Double hop -ohjaus"
       ],
       "Easy Switch import assistant": [
         "Easy Switch -tuontiapuri"
@@ -6537,7 +6543,7 @@
         "Luo sähköposteja kehotteella"
       ],
       "Group management (coming soon)": [
-        "Ryhmähallinta (tulossa pian)"
+        "Ryhmien hallinta (tulossa pian)"
       ],
       "High-speed streaming": [
         "Nopea suoratoisto"
@@ -6568,7 +6574,7 @@
         "Lokivapaa käytäntö"
       ],
       "Online document editor": [
-        "Dokumenttieditori verkossa"
+        "Selaimella käytettävä dokumenttieditori"
       ],
       "Organize items with multiple vaults": [
         "Järjestele kohteita useilla holveilla"
@@ -6583,7 +6589,7 @@
         "Salasanahallinta"
       ],
       "Password-protected Emails": [
-        "Salasanasuojatut sähköpostiviestit"
+        "Salasanasuojatut sähköpostit"
       ],
       "Phone support (20+ users)": [
         "Puhelintuki (20+ käyttäjää)"
@@ -6623,7 +6629,7 @@
         "Tee sähköpostittelusta nopeampaa"
       ],
       "Schedule and snooze emails for any time": [
-        "Ajoita viestien lähetys tai torkutus mihin tahansa"
+        "Viestien vapaa ajoitus ja torkutus"
       ],
       "Schedule messages at any time": [
         "Ajoita viestit lähtemään milloin tahansa"
@@ -6638,10 +6644,10 @@
         "Suojattu linkkien jako"
       ],
       "See team's availability": [
-        "Katso tiimin saatavuus"
+        "Näe tiimisi tavoitettavuus"
       ],
       "Send & receive invitations": [
-        "Lähetä ja vastaanota kutsuja"
+        "Kutsujen lähetys ja vastaanotto"
       ],
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa",
@@ -6743,13 +6749,13 @@
         "Jopa ${ totalStorageSize } tallennustilaa"
       ],
       "User credential management": [
-        "Käyttäjien tunnusten hallinta"
+        "Käyttäjätietojen hallinta"
       ],
       "User session management": [
         "Käyttäjäistuntojen hallinta"
       ],
       "User storage management": [
-        "Käyttäjien tallennustilan hallinta"
+        "Käyttäjien tallennustilojen hallinta"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
@@ -6823,7 +6829,7 @@
         "Parannettu turvallisuus ja premium-ominaisuuksia tiimeille."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "Vättämätön suojaus ja turvallinen yhteistyö rajattomalle määrälle käyttäjiä."
+        "Vättämätön suojaus ja turvallinen yhteiskäyttö rajattomalle määrälle käyttäjiä."
       ],
       "For next-level password management and identity protection.": [
         "Edistyneempään salasanojen hallintaan ja henkilöllisyyden suojaukseen."
@@ -6844,7 +6850,7 @@
         "Suosittu"
       ],
       "Protect sensitive business information and collaborate securely.": [
-        "Suojaa arkaluonteiset yritystiedot ja yhteistyöskentele turvallisesti."
+        "Suojaa arkaluonteiset yritystiedot ja yhteiskäytä turvallisesti."
       ],
       "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
         "Suojaa perheesi kaikilla ${ PASS_SHORT_APP_NAME } Plussan premium-ominaisuuksista kuudelle käyttäjälle."
@@ -6912,12 +6918,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }-kokeilu"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Hanki Mail Plus hintaan ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Alkaen ${ price }"
       ],
       "Your account's usage": [
         "Tilisi käyttö"
@@ -7042,13 +7042,13 @@
         "Arkipäivisin ${ BRAND_NAME }in asiakastuki vastaa pyyntöihin 24 tunnin kuluessa"
       ],
       "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
-        "Yksi VPN-yhteys mahdollistaa yhden laitteen ${ VPN_APP_NAME } VPN-yhteyden kerrallaan. Esimerkiksi puhelimen ja tietokoneen samanaikainen ${ VPN_APP_NAME } -käyttö vaatii kaksi VPN-yhteyttä."
+        "Yhdellä VPN-yhteydellä yksi laite kerrallaan voi yhdistää ${ VPN_APP_NAME }:ään, eli esimerkiksi puhelimen ja tietokoneen samanaikaiseen ${ VPN_APP_NAME } -käyttöön tarvitset kaksi VPN-yhteyttä."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mahdollisuus tarkastella ei-yksityisien käyttäjien postilaatikoiden sisältöä, kuten viestejä ja yhteystietoja käyttäjän näkökulmasta"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Organisaation hallintatyökalulla ylläpitäjät voivat lisätä ja poistaa käyttäjiä, hallita heidän ${ BRAND_NAME }-palveluiden käyttöoikeuksiaan ja suorittaa muita tehtäviä."
+        "Organisaation hallintatyökalulla ylläpitäjät voivat mm. lisätä ja poistaa käyttäjiä, hallita heidän ${ BRAND_NAME }-käyttöoikeuksiaan."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vahva infrastruktuurimme varmistaa, että pääset tilillesi, kun sitä tarvitset"
@@ -7123,7 +7123,7 @@
         "Tallennustila jaetaan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ja ${ PASS_APP_NAME } -käyttäjien kesken."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä. Ylläpitäjät voivat määrittää käytettävissä olevan tilan organisaatioissaan käyttäjäkohtaisesti."
+        "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä. Ylläpito voi määrittää organisaatioidensa kapasiteetin käyttäjäkohtaisesti."
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ja ${ PASS_APP_NAME } -käyttäjien kesken."
@@ -7682,10 +7682,10 @@
     },
     "passwordless": {
       "All administrators will get access to the key.": [
-        "Kaikki ylläpitäjät pääsevät käsiksi avaimeen."
+        "Kaikki ylläpitäjät saavat avaimen käyttöoikeuden."
       ],
       "Are you sure you want to change your organization key?": [
-        "Haluatko varmasti vaihtaa organisaatioavaimen?"
+        "Haluatko varmasti vaihtaa organisaatioavaimesi?"
       ],
       "Change organization key": [
         "Vaida organisaatioavain"
@@ -7721,7 +7721,7 @@
         "Nollaa organisaatioavain"
       ],
       "The following administrators could not be restored.": [
-        "Seuraavia ylläpitäjiä ei voitu palauttaa"
+        "Seuraavia ylläpitäjiä ei voitu palauttaa."
       ],
       "The following administrators will get access to the organization key.": [
         "Seuraavat ylläpitäjät saavat organisaatioavaimen käyttöoikeuden."
@@ -7736,7 +7736,7 @@
         "Luodaksesi ei-yksityisiä käyttäjätilejä ja hallitaksesi heidän tilejään, sinun on aktivoitava organisaatioavaimesi."
       ],
       "To enable administrator rights on your account, activate the organization key.": [
-        "Aktivoidaksesi hallintaoikeudet tilillesi, aktivoi organisaatioavain."
+        "Aktivoi tilisi hallintaoikeudet aktivoimalla organisaatioavain."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
         "Palauta hallintaoikeudet tietojen palautustavalla tai nollaamalla organisaatioavain."
@@ -7757,7 +7757,7 @@
         "Olemme vahvistaneet tämän lähettäjän ja kutsun aitouden."
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
-        "Sinulle on myönnetty organisaation **${ organizationName }** hallintaoikeudet. Oikeudet myönsi"
+        "Sinusta on tehty organisaation **${ organizationName }** ylläpitäjä. Muutoksen teki"
       ],
       "You must privatize all users before generating a new organization key": [
         "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaatioavaimen luontia"
@@ -7836,6 +7836,9 @@
       ],
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPrice } kuukausihintaan. Voit perua milloin tahansa."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Siirto on havaittu. Krediitit lisätään tilillesi, kun siirto on täysin vahvistettu."
@@ -8100,8 +8103,8 @@
     },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
-        "${ n } organisaatiosi ylläpitäjä tarvitsee oikeuden käyttää organisaatioavainta.",
-        "${ n } organisaatiosi ylläpitäjää tarvitsee oikeudet käyttää organisaatioavainta."
+        "${ n } organisaatiosi ylläpitäjä tarvitsee organisaatioavaimen käyttöoikeuden.",
+        "${ n } organisaatiosi ylläpitäjää tarvitsee organisaatioavaimen käyttöoikeuden."
       ],
       "Changing organization keys": [
         "Organisaatioavainten vaihtaminen"
@@ -8110,7 +8113,7 @@
         "Organisaation salasanan vaihtaminen"
       ],
       "Creating or accessing non-private user accounts": [
-        "Ei-yksityisten käyttäjätilien luominen ja käyttäminen"
+        "Ei-yksityisten käyttäjätilien luominen tai käyttäminen"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Hallintaoikeuksiasi organisaatiossa on rajoitettu salasanan vaihdon seurauksena, eikä seuraavia toimintoja enää sallita:"
@@ -8236,7 +8239,7 @@
         "Kun SCIM on poistettu käytöstä organisaatiollesi, **kaikki tunnistietojen toimittajasi automaattisesti tarjoamat SCIM-käyttäjät muutetaan SSO-käyttäjiksi**, ja voit hallita heitä suoraan ${ BRAND_NAME } -asetuksissa."
       ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
-        "Yksinkertaistaa eri palveluiden välistä käyttäjähallintaa. Lisää, muokkaa ja poista käyttäjiä identiteetin tarjoajassasi, ja muutokset toteutetaan automaattisesti myös ${ appName } -organisaatiossasi."
+        "Yksinkertaistaa eri palveluiden välistä käyttäjähallintaa. Lisää, muokkaa ja poista identiteettitarjoajasi käyttäjiä, niin muutokset toteutetaan automaattisesti myös ${ appName }-organisaatiossasi."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automaattinen SCIM-provisiointi on pois käytöstä, kunnes syötät uuden SCIM-tunnisteen identiteetintarjoajasi asetuksiin."
@@ -8795,10 +8798,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää 1700 palvelinta yli 60+ maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä/käyttäjä, suoratoistopalvelut maailmanlaajuisesti, haittasisällön- ja mainoseston sekä paljon muuta."
+        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää mm. 1700 palvelinta yli 60 maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä/käyttäjä, maailmanlaajuisen suoratoistotuen, sekä haittasisällön- ja mainosten eston."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää 1700 palvelinta yli 60+ maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä/käyttäjä, suoratoistopalvelut maailmanlaajuisesti, haittasisällön- ja mainoseston sekä paljon muuta."
+        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää mm. 1700 palvelinta yli 60 maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä, maailmanlaajuisen suoratoistotuen, sekä haittasisällön ja mainosten eston."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Kaikki premium-palvelumme parhaimmillaan: 100 sähköpostiosoitetta, tuki 10 omalle verkkotunnukselle, rajattomasti Hide-my-email-aliaksia, kalenterijako, salattu pilvitallennus tiedostojen jaolla sekä paljon muuta."
@@ -8877,7 +8880,7 @@
         "Pyydä apua ylläpidoltasi"
       ],
       "Ask your administrator for access?": [
-        "Pyydetäänkö ylläpidolta käyttöoikeutta?"
+        "Haluatko pyytää käyttöoikeutta ylläpidoltasi?"
       ],
       "Backup password": [
         "Varasalasana"
@@ -9002,7 +9005,7 @@
         "Varmistaaksemme, että sinä todella yrität kirjautua sisään, syötä varasalasanasi."
       ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
-        "Varmistaaksemme juuri sinun pyrkivän kirjautumaan, jaa vahvistuskoodi ylläpitäjällesi **${ adminEmail }**, jotta he voivat hyväksyä pyynnön käyttäjältä **${ email }**."
+        "Varmistaaksemme juuri sinun olevan kirjautumassa, jaa vahvistuskoodi ylläpitäjällesi **${ adminEmail }**, jotta hän voi hyväksyä pyynnön tunnukselle **${ email }**."
       ],
       "Tried to sign in at": [
         "Yritti kirjautua sisään"
@@ -9086,7 +9089,7 @@
         "Alentamalla menetät seuraavat edut. Haluatko varmasti jatkaa?"
       ],
       "contact your administrator": [
-        "ota yhteyttä ylläpitoosi"
+        "ole yhteydessä ylläpitoosi"
       ],
       "For all ${ BRAND_NAME } services": [
         "Kaikille ${ BRAND_NAME }-palveluille"
@@ -9333,8 +9336,8 @@
         "${ planNumberOfCalendars } kalenteria/käyttäjä"
       ],
       "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } oma sähköpostiverkkotunnus",
-        "${ planNumberOfDomains } omaa sähköpostiverkkotunnusta"
+        "${ planNumberOfDomains } oma verkkotunnus",
+        "${ planNumberOfDomains } omaa verkkotunnusta"
       ],
       "${ planNumberOfEmails } email address": [
         "${ planNumberOfEmails } sähköpostiosoite",
@@ -9370,7 +9373,7 @@
         "Kaikki mukautetut sähköpostin verkkotunnukset poistetaan käytöstä"
       ],
       "Automatic email forwarding": [
-        "Automaattinen sähköpostin välitys"
+        "Sähköpostin automaattiohjaus"
       ],
       "Back up photos from your devices": [
         "Varmuuskopioi valokuvia laitteistasi"
@@ -9860,7 +9863,7 @@
         "Luo turvallisia kirjautumistietoja kaikilla laitteillasi. Sisältää rajattomasti aliaksia, 20 holvia, sisäänrakennetun 2FA:n, luottokorttitietojen automaattisen täytön ja paljon muuta."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista laitetta, maailmanlaajuisen tuen suoratoistopalveluille, haittasisällön- ja mainoseston sekä paljon muuta."
+        "Sisältää mm. yli 2950 palvelinta yli 65 maassa, 10 samanaikaista laiteyhteyttä, maailmanlaajuisen suoratoistotuen, sekä haittasisällön- ja mainoseston."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitteelle, 10 hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
@@ -10713,6 +10716,9 @@
       "Device information such as operating system": [
         "Muun muassa käyttöjärjestelmän kaltaisia tietoja käytetystä laitteesta"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Entiteetin näyttönimi eduGAIN-tietokannassa"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Identiteetintarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
       ],
@@ -10801,7 +10807,7 @@
     },
     "unprivatization": {
       "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
-        "**Odottaa ylläpitäjän käyttöoikeutta:** Lähetimme tälle käyttäjälle pyynnön sallia kenen tahansa ylläpitäjän hallita heidän tiliään."
+        "**Odottaa hallintaoikeutta:** Lähetimme käyttäjälle pyynnön sallia ylläpitäjien hallita heidän tiliään."
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
@@ -10823,7 +10829,7 @@
         "${ n } käyttäjän hallintaoikeuksia ei voitu aktivoida automaattisesti, koska heidän salausavaimensa on välillä muuttunut:"
       ],
       "Could not enable administrator access: ${ error }": [
-        "Ylläpitäjän käyttöoikeuksia ei voitu myöntää: ${ error }"
+        "Hallintaoikeutta ei voitu myöntää: ${ error }"
       ],
       "Enable manually": [
         "Ota käyttöön manuaalisesti"
@@ -10835,7 +10841,7 @@
         "Kun käyttäjä on antanyt suostumuksen, voit auttaa heitä samaan takaisin tilinkäyttöoikeuden tai hallinnoimaan heidän tietojaan."
       ],
       "Organization key must be activated to request data access": [
-        "Organisaatioavain on aktivoitava tietojen käyttöoikeuden anomiseksi"
+        "Tietojen käyttöoikeuspyyntö vaatii organisaatioavaimen aktivoinnin"
       ],
       "Private user": [
         "Yksityinen käyttäjä"
@@ -10850,7 +10856,7 @@
         "Mitätöi käyttöoikeus"
       ],
       "Revoke administrator access?": [
-        "Mitätöidäänkö ylläpito-oikeus?"
+        "Mitätöidäänkö hallintaoikeus?"
       ],
       "Send request": [
         "Lähetä pyyntö"
@@ -10859,10 +10865,10 @@
         "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
       ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
-        "Tämä peruuttaa odottavan pyynnön ylläpitäjän käyttöoikeukseen käyttäjän tietoihin tai salasanan nollaukseen."
+        "Tämä peruu odottavan käyttäjän tietojen tai salasanan nollauksen hallintapyynnön."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
-        "Tämä mitätöi ylläpitäjän oikeuden hallita tämän käyttäjän tiliä."
+        "Tämä mitätöi tämän käyttäjän tilin hallintaoikeuden."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Jatkaaksesi sinun on pyydettävä käyttäjältä lupa käyttää heidän tietojaan tai nollata heidän salasanansa."
@@ -10951,7 +10957,7 @@
         "2FA"
       ],
       "Administrators can't access the data of private users": [
-        "Ylläpitäjät eivät pääse käsiksi yksityisten käyttäjien tietoihin"
+        "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin"
       ],
       "Inactive": [
         "Inaktiivinen"
@@ -11020,8 +11026,8 @@
         "${ n } VPN-yhteyttä"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } palvelin ${ numberOfCountries } maassa",
-        "${ numberOfServers } palvelinta ${ numberOfCountries }+ maassa"
+        "${ numberOfServers } ${ numberOfCountries } maassa",
+        "${ numberOfServers } ${ numberOfCountries }+ maassa"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } ${ numberOfCountries } maassa",
@@ -11177,7 +11183,7 @@
         "DNS-asetuksissasi havaittiin ongelma. Varmista, että tietueesi vastaavat alla olevia ohjeita. Jos ongelma jatkuu, joudutaan DKIM-allekirjoitus poistamaan käytöstä."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
-        "Sinun on ${ activateLink } organisaation avain ennen kuin lisäät sähköpostiosoitteen ei-yksityiselle jäsenelle."
+        "Sinun on ${ activateLink } organisaatioavain ennen kuin lisäät sähköpostiosoitteen ei-yksityiselle jäsenelle."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ilmainen kokeilusi päättyy ${ textDate }. ${ action }"
