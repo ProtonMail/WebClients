@@ -3,6 +3,7 @@ import { activatePasswordlessKey } from '@proton/shared/lib/api/members';
 import {
     getIsPasswordless,
     getReplacedAddressKeyTokens,
+    isKeyGenConfigV6,
     reencryptOrganizationToken,
     splitKeys,
 } from '@proton/shared/lib/keys';
@@ -33,7 +34,7 @@ interface AddAddressKeysProcessArguments {
     userKeys: DecryptedKey[];
     address: Address;
     addresses: Address[];
-    keyGenConfig: KeyGenConfig;
+    keyGenConfig: KeyGenConfig | KeyGenConfigV6;
     keyPassword: string;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
@@ -61,6 +62,10 @@ export const addAddressKeysProcess = async ({
             address,
             keyTransparencyVerify,
         });
+    }
+
+    if (isKeyGenConfigV6(keyGenConfig)) {
+        throw new Error('Cannot generate v6 keys with non-migrated address');
     }
 
     return createAddressKeyLegacy({

@@ -67,6 +67,7 @@ enum AccountFlag {
     SharedServerFeature = 'SharedServerFeature',
     PassB2BVaultCreation = 'PassB2BVaultCreation',
     PassB2BItemSharing = 'PassB2BItemSharing',
+    CryptoPostQuantumOptIn = 'CryptoPostQuantumOptIn',
     PassB2BReports = 'PassB2BReports',
     DeleteAccountMergeReason = 'DeleteAccountMergeReason',
     VPNDashboard = 'VPNDashboard',

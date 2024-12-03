@@ -14,7 +14,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from '@proton/components/hooks/useDeviceRecovery';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useModals from '@proton/components/hooks/useModals';
-import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
+import type { KeyGenConfig, KeyGenConfigV6 } from '@proton/shared/lib/interfaces';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
 
 import KeysTable from './KeysTable';
@@ -64,7 +64,7 @@ const UserKeysSections = () => {
         setAddKeyModalOpen(true);
     };
 
-    const onAdd = async (keyGenConfig: KeyGenConfig) => {
+    const onAdd = async (keyGenConfig: KeyGenConfig | KeyGenConfigV6) => {
         if (!userKeys) {
             throw new Error('Missing keys');
         }

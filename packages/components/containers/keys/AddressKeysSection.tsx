@@ -22,7 +22,7 @@ import useModals from '@proton/components/hooks/useModals';
 import { resignSKLWithPrimaryKey } from '@proton/key-transparency';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
-import { ForwardingType, type KeyGenConfig } from '@proton/shared/lib/interfaces';
+import { ForwardingType, type KeyGenConfig, type KeyGenConfigV6 } from '@proton/shared/lib/interfaces';
 import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
 import {
     addAddressKeysProcess,
@@ -239,7 +239,7 @@ const AddressKeysSection = () => {
         setAddKeyModalOpen(true);
     };
 
-    const onAdd = async (keyGenConfig: KeyGenConfig) => {
+    const onAdd = async (keyGenConfig: KeyGenConfig | KeyGenConfigV6) => {
         if (!Address || !addressKeys || !userKeys || !Addresses) {
             throw new Error('Missing address or address keys');
         }
@@ -249,7 +249,7 @@ const AddressKeysSection = () => {
             const [newKey, updatedActiveKeys, formerActiveKeys] = await addAddressKeysProcess({
                 api,
                 userKeys,
-                keyGenConfig,
+                keyGenConfig: keyGenConfig,
                 addresses: Addresses,
                 address: Address,
                 addressKeys: addressKeys,
