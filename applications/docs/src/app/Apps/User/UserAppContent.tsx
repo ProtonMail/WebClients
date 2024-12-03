@@ -41,14 +41,16 @@ function UserAppContent() {
 
   useEffect(() => {
     application.updateCompatWrapper({ userCompat: driveCompat })
-  }, [driveCompat])
+  }, [application, driveCompat])
 
   return (
     <ApplicationProvider application={application}>
       <DocsNotificationsProvider>
         <Switch>
           <Route path={'/doc'}>
-            <SingleDocumentRoute driveCompat={driveCompat} />
+            <Suspense>
+              <SingleDocumentRoute driveCompat={driveCompat} />
+            </Suspense>
           </Route>
           <Route path={['/most-recent', '/owned-by-me', '/owned-by-others']}>
             {isLandingPageEnabled ? (
