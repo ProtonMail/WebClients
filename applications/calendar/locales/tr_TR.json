@@ -557,6 +557,9 @@
       "Remove this participant": [
         "Bu katılımcıyı kaldır"
       ],
+      "Remove Zoom meeting": [
+        "Zoom görüşmesini kaldır"
+      ],
       "Report a problem": [
         "Sorun bildirin"
       ],
@@ -724,6 +727,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited tarifesine yükseltin"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ],
       "Upload picture": [
         "Fotoğraf yükle"
@@ -959,6 +965,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "İlk ${ cycle } ay için özel indirimli ${ discountedPrice } fiyatı geçerlidir. Ardından aylık ${ nextPrice } indirimli tutarıyla ${ renewalLength } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "İlk ay için ${ discountedPrice } özel indirimli fiyat geçerlidir. Ardından aylık ${ nextPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ]
@@ -3102,6 +3111,9 @@
       "Failed to get original occurrence in series": [
         "Dizideki özgün yinelenme alınamadı"
       ],
+      "Failed to load OAuth modal.": [
+        "OAuth penceresi yüklenemedi."
+      ],
       "First name is too long": [
         "Ad çok uzun"
       ],
@@ -4734,9 +4746,6 @@
       "High Priority": [
         "Yüksek öncelik"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
       ],
@@ -4944,6 +4953,10 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bu işlemin kişi listenizin boyutuna bağlı olarak uzun sürebileceğini unutmayın."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın.",
+        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Bir grup oluşturmak için lütfen bir ad ve bir e-posta adresi belirtin."
@@ -5521,6 +5534,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
+      ],
+      "Account holder": [
+        "Hesap sahibi"
       ],
       "Add email address": [
         "E-posta adresi ekle"
@@ -6431,9 +6447,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
       ],
-      "Get started for ${ price }": [
-        "${ price } ile başlayın"
-      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus } tutarından başlayan fiyatlarla"
       ],
@@ -7058,14 +7071,6 @@
         "Tarifeler değiştirilsin mi?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price } ile Mail Plus edinin"
-      ],
-      "Starting from ${ price }": [
-        "${ price } tutarından başlayan fiyatlarla"
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
@@ -7220,6 +7225,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -7773,8 +7781,23 @@
       "Please select your billing state first.": [
         "Lütfen önce faturanın kesileceği ili seçin."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "${ renewPrice } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
       "Select billing country to pay": [
         "Ödeme için fatura ülkesini seçin"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "İlk ${ subscriptionLength } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ renewPrice } tutarla ${ subscriptionLengthCopy } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "İlk ${ subscriptionLength } ay için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Ardından aylık ${ renewPrice } tutarla ${ subscriptionLengthCopy } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "İlk ay için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ renewPrice } tutarla ${ subscriptionLength } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ renewPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
@@ -9233,6 +9256,9 @@
       "Fingerprint copied to clipboard": [
         "Parmak izi panoya kopyalandı"
       ],
+      "Finish Zoom authentication to save event": [
+        "Etkinliği kaydetmek için Zoom doğrulamasını tamamlayın"
+      ],
       "Future events deleted": [
         "Gelecekteki etkinlikler silindi"
       ],
@@ -9581,6 +9607,9 @@
       ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
+      ],
+      "Dark Web Monitoring": [
+        "Karanlık ağ izleme"
       ],
       "Data recovery": [
         "Veri kurtarma"
