@@ -27,6 +27,7 @@ const useShortDomainAddress = () => {
     return {
         loadingDependencies: loadingProtonDomains || loadingUser,
         shortDomainAddress: shortDomain,
+        hasShortDomain: (addresses: Address[]) => addresses.some(({ Email }) => Email === shortDomain),
         createShortDomainAddress: async ({
             setDefault,
             addressSignature,
