@@ -1,5 +1,5 @@
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
 
 import type { DocumentMetaInterface } from '@proton/docs-shared'
@@ -15,17 +15,12 @@ export class GetDocumentMeta implements UseCaseInterface<DocumentMetaInterface> 
   async execute(lookup: NodeMeta | PublicNodeMeta): Promise<Result<DocumentMetaInterface>> {
     const result = await this.docsApi.getDocumentMeta(lookup)
     if (result.isFailed()) {
-      return Result.fail(result.getError())
+      return Result.fail(result.getError().message)
     }
 
     const data = result.getValue().Document
 
-    const resolvedMeta = {
-      ...lookup,
-      volumeId: data.VolumeID,
-    }
-
-    const meta = new DocumentMeta(resolvedMeta, data.CommitIDs, data.CreateTime, data.ModifyTime, '')
+    const meta = new DocumentMeta(data.VolumeID, data.CommitIDs, data.CreateTime, data.ModifyTime, '')
 
     return Result.ok(meta)
   }

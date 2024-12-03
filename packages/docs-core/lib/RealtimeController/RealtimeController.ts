@@ -101,7 +101,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
       const commitIdUpgraded = value && previousValue && value !== previousValue
       if (
         commitIdUpgraded &&
-        !this.websocketService.isConnected(this.documentState.getProperty('documentMeta').nodeMeta)
+        !this.websocketService.isConnected(this.documentState.getProperty('entitlements').nodeMeta)
       ) {
         this.logger.info('Reconnecting to RTS because currentCommitId changed and we are not connected')
         void this.reconnect()
@@ -112,7 +112,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
       if (
         value === 'not_trashed' &&
         previousValue === 'trashed' &&
-        !this.websocketService.isConnected(this.documentState.getProperty('documentMeta').nodeMeta)
+        !this.websocketService.isConnected(this.documentState.getProperty('entitlements').nodeMeta)
       ) {
         this.logger.info('Reconnecting to RTS because document was untrashed')
         void this.reconnect()
@@ -136,16 +136,16 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
   }
 
   public closeConnection(): void {
-    this.websocketService.closeConnection(this.documentState.getProperty('documentMeta').nodeMeta)
+    this.websocketService.closeConnection(this.documentState.getProperty('entitlements').nodeMeta)
   }
 
   public async reconnect(): Promise<void> {
-    await this.websocketService.reconnectToDocumentWithoutDelay(this.documentState.getProperty('documentMeta').nodeMeta)
+    await this.websocketService.reconnectToDocumentWithoutDelay(this.documentState.getProperty('entitlements').nodeMeta)
   }
 
   public async debugSendCommitCommandToRTS(entitlements: DocumentEntitlements): Promise<void> {
     await this.websocketService.debugSendCommitCommandToRTS(
-      this.documentState.getProperty('documentMeta').nodeMeta,
+      this.documentState.getProperty('entitlements').nodeMeta,
       entitlements.keys,
     )
   }
@@ -304,7 +304,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     const entitlements = this.documentState.getProperty('entitlements')
 
     const connection = this.websocketService.createConnection(
-      this.documentState.getProperty('documentMeta').nodeMeta,
+      this.documentState.getProperty('entitlements').nodeMeta,
       entitlements.keys,
       {
         commitId: () => this.documentState.getProperty('currentCommitId'),
@@ -332,14 +332,14 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
         this.sizeTracker.incrementSize(message.content.byteLength)
 
         void this.websocketService.sendDocumentUpdateMessage(
-          this.documentState.getProperty('documentMeta').nodeMeta,
+          this.documentState.getProperty('entitlements').nodeMeta,
           message.content,
           debugSource,
         )
       }
     } else if (message.type.wrapper === 'events') {
       void this.websocketService.sendEventMessage(
-        this.documentState.getProperty('documentMeta').nodeMeta,
+        this.documentState.getProperty('entitlements').nodeMeta,
         message.content,
         message.type.eventType,
         debugSource,
@@ -439,7 +439,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
       })
     }
 
-    const nodeMeta = this.documentState.getProperty('documentMeta').nodeMeta
+    const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
 
     const result = await this._getDocumentMeta.execute(nodeMeta)
     if (result.isFailed()) {

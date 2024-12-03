@@ -1,26 +1,35 @@
-import type { FeatureFlag, UnleashClient } from '@proton/unleash'
-import type { LoggerInterface } from '@proton/utils/logs'
-import { type InternalEventBusInterface, type SyncedEditorState } from '@proton/docs-shared'
+import { CommentController } from '../Comments/CommentController'
+import { DocumentState, PublicDocumentState } from '../../State/DocumentState'
+import { EditorController } from '../../EditorController/EditorController'
 import { EditorOrchestrator } from '../Orchestrator/EditorOrchestrator'
-import type { LoadDocument } from '../../UseCase/LoadDocument'
-import type { PublicDriveCompat, PublicNodeMeta } from '@proton/drive-store'
+import { RealtimeController } from '../../RealtimeController/RealtimeController'
+import { AnonymousUserDisplayName, type InternalEventBusInterface, type SyncedEditorState } from '@proton/docs-shared'
+import type { CommentControllerInterface } from '@proton/docs-shared'
+import type { CreateComment } from '../../UseCase/CreateComment'
+import type { CreateThread } from '../../UseCase/CreateThread'
 import type { DocLoaderInterface } from './DocLoaderInterface'
-import type { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorInterface'
-import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
+import type { DocLoaderStatusObserver } from './StatusObserver'
 import type { DocsApi } from '../../Api/DocsApi'
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
-import { EditorController } from '../../EditorController/EditorController'
-import type { LoadCommit } from '../../UseCase/LoadCommit'
+import type { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorInterface'
+import type { EncryptComment } from '../../UseCase/EncryptComment'
+import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
+import type { FeatureFlag, UnleashClient } from '@proton/unleash'
 import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
-import { DocumentState, PublicDocumentState } from '../../State/DocumentState'
-import type { DocLoaderStatusObserver } from './StatusObserver'
-import { RealtimeController } from '../../RealtimeController/RealtimeController'
+import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
+import type { LoadCommit } from '../../UseCase/LoadCommit'
+import type { LoadDocument } from '../../UseCase/LoadDocument'
+import type { LoadThreads } from '../../UseCase/LoadThreads'
+import type { LoggerInterface } from '@proton/utils/logs'
+import type { MetricService } from '../Metrics/MetricService'
+import type { PublicDriveCompat, PublicNodeMeta } from '@proton/drive-store'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 
 export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> {
   private editorController?: EditorControllerInterface
   private orchestrator?: EditorOrchestratorInterface
   private documentState?: PublicDocumentState
+  private commentsController?: CommentControllerInterface
   private readonly statusObservers: DocLoaderStatusObserver<PublicDocumentState>[] = []
 
   constructor(
@@ -35,6 +44,12 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
     private logger: LoggerInterface,
     private unleashClient: UnleashClient,
     private syncedEditorState: SyncedEditorState,
+    private encryptComment: EncryptComment,
+    private createComment: CreateComment,
+    private createThread: CreateThread,
+    private loadThreads: LoadThreads,
+    private handleRealtimeCommentsEvent: HandleRealtimeCommentsEvent,
+    private metricService: MetricService,
   ) {}
 
   destroy(): void {}
@@ -62,20 +77,20 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       return
     }
 
-    const { entitlements, meta, node, decryptedCommit } = loadResult.getValue()
-    this.logger.info(`Loaded document meta with last commit id ${meta.latestCommitId()}`)
+    const { entitlements, meta: docMeta, node, decryptedCommit } = loadResult.getValue()
+    this.logger.info(`Loaded document meta with last commit id ${docMeta.latestCommitId()}`)
 
-    this.syncedEditorState.setProperty('userName', 'Anonymous Proton')
+    this.syncedEditorState.setProperty('userName', AnonymousUserDisplayName)
 
     const documentState = new PublicDocumentState({
       ...DocumentState.defaults,
       realtimeEnabled: publicEditingEnabled,
-      documentMeta: meta,
+      documentMeta: docMeta,
       userRole: entitlements.role,
       decryptedNode: node,
       entitlements,
-      documentName: meta.name,
-      currentCommitId: meta.latestCommitId(),
+      documentName: docMeta.name,
+      currentCommitId: docMeta.latestCommitId(),
       baseCommit: decryptedCommit,
       documentTrashState: node.trashed ? 'trashed' : 'not_trashed',
     })
@@ -95,16 +110,36 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       )
 
       realtime.initializeConnection()
+
+      this.commentsController = new CommentController(
+        undefined,
+        documentState,
+        this.websocketSerivce,
+        this.metricService,
+        this.docsApi,
+        this.encryptComment,
+        this.createThread,
+        this.createComment,
+        this.loadThreads,
+        this.handleRealtimeCommentsEvent,
+        this.eventBus,
+        this.logger,
+      )
+
+      this.commentsController.fetchAllComments()
     }
 
     if (entitlements.role.isPublicViewerWithAccess()) {
       this.logger.info('Redirecting to authed document')
-      this.driveCompat.redirectToAuthedDocument(meta.nodeMeta)
+      this.driveCompat.redirectToAuthedDocument({
+        volumeId: docMeta.volumeId,
+        linkId: nodeMeta.linkId,
+      })
       return
     }
 
     this.orchestrator = new EditorOrchestrator(
-      undefined,
+      this.commentsController,
       this.docsApi,
       this.eventBus,
       this.editorController,

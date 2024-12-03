@@ -1,6 +1,6 @@
 import { VERIFICATION_STATUS } from '@proton/crypto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import type { DecryptedMessage } from '@proton/docs-shared'

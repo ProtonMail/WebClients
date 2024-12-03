@@ -1,13 +1,15 @@
-import metrics from '@proton/metrics'
-import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
-import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { CommentThread } from '../Models'
 import { CommentThreadType, CommentType, ServerTime } from '@proton/docs-shared'
+import { Result } from '@proton/docs-shared'
+import metrics from '@proton/metrics'
 import type { DecryptComment } from './DecryptComment'
-import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import type { DocsApi } from '../Api/DocsApi'
+import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
+import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import type { LoggerInterface } from '@proton/utils/logs'
+import type { NodeMeta } from '@proton/drive-store'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { isPrivateNodeMeta } from '@proton/drive-store/lib/interface'
 
 /**
  * Updates the local comment state by loading and decrypting all threads from the API for the document.
@@ -20,24 +22,23 @@ export class LoadThreads implements UseCaseInterface<void> {
   ) {}
 
   async execute(dto: {
-    lookup: NodeMeta
-    keys: DocumentKeys
+    entitlements: PublicDocumentEntitlements | DocumentEntitlements
     commentsState: LocalCommentsState
   }): Promise<Result<void>> {
-    const result = await this.api.getAllThreadIDs(dto.lookup.volumeId, dto.lookup.linkId)
+    const result = await this.api.getAllThreadIDs(dto.entitlements.nodeMeta)
     if (result.isFailed()) {
       metrics.docs_comments_download_error_total.increment({
         reason: 'server_error',
       })
 
-      return Result.fail(result.getError())
+      return Result.fail(result.getError().message)
     }
 
     const response = result.getValue()
 
     await Promise.all(
       response.CommentThreads.map(async (threadID) => {
-        return this.loadThread({ threadID, lookup: dto.lookup, keys: dto.keys, commentsState: dto.commentsState })
+        return this.loadThread({ threadID, entitlements: dto.entitlements, commentsState: dto.commentsState })
       }),
     )
 
@@ -48,17 +49,19 @@ export class LoadThreads implements UseCaseInterface<void> {
 
   private async loadThread(dto: {
     threadID: string
-    lookup: NodeMeta
-    keys: DocumentKeys
+    entitlements: PublicDocumentEntitlements | DocumentEntitlements
     commentsState: LocalCommentsState
   }): Promise<Result<void>> {
-    const thread = await this.api.getThread(dto.lookup.volumeId, dto.lookup.linkId, dto.threadID)
+    const thread = await this.api.getThread({
+      nodeMeta: dto.entitlements.nodeMeta,
+      threadId: dto.threadID,
+    })
     if (thread.isFailed()) {
       metrics.docs_comments_download_error_total.increment({
         reason: 'server_error',
       })
 
-      return Result.fail(thread.getError())
+      return Result.fail(thread.getError().message)
     }
 
     const { CommentThread: commentThreadDto } = thread.getValue()
@@ -66,7 +69,7 @@ export class LoadThreads implements UseCaseInterface<void> {
 
     const comments = await Promise.all(
       commentThreadDto.Comments.map(async (commentDto) => {
-        const result = await this.decryptComment.execute(commentDto, commentThreadDto.Mark, dto.keys)
+        const result = await this.decryptComment.execute(commentDto, commentThreadDto.Mark, dto.entitlements.keys)
         if (!result.isFailed()) {
           return result.getValue()
         }
@@ -92,8 +95,8 @@ export class LoadThreads implements UseCaseInterface<void> {
       }),
     )
 
-    if (corruptThreadIds.size > 0) {
-      void this.deleteCorruptSuggestionThreads(Array.from(corruptThreadIds), dto.lookup)
+    if (corruptThreadIds.size > 0 && isPrivateNodeMeta(dto.entitlements.nodeMeta)) {
+      void this.deleteCorruptSuggestionThreads(Array.from(corruptThreadIds), dto.entitlements.nodeMeta)
 
       if (corruptThreadIds.has(dto.threadID)) {
         return Result.ok()
@@ -119,23 +122,32 @@ export class LoadThreads implements UseCaseInterface<void> {
     return Result.ok()
   }
 
-  private async deleteCorruptSuggestionThreads(threadIds: string[], lookup: NodeMeta): Promise<void> {
+  private async deleteCorruptSuggestionThreads(threadIds: string[], nodeMeta: NodeMeta): Promise<void> {
     for (const threadId of threadIds) {
       this.logger.error(`[LoadThreads] Deleting corrupt suggestion thread: ${threadId}`)
 
       /** First reject the thread with the API, so that the API will allow deletion, since it otherwise won't */
-      const rejectResponse = await this.api.changeSuggestionThreadState(
-        lookup.volumeId,
-        lookup.linkId,
+      const rejectResponse = await this.api.changeSuggestionThreadState({
+        nodeMeta: {
+          volumeId: nodeMeta.volumeId,
+          linkId: nodeMeta.linkId,
+        },
         threadId,
-        'reject',
-      )
+        action: 'reject',
+      })
+
       if (rejectResponse.isFailed()) {
         this.logger.info(`[LoadThreads] Failed to reject corrupt thread: ${rejectResponse.getError()}`)
         return
       }
 
-      void this.api.deleteThread(lookup.volumeId, lookup.linkId, threadId)
+      void this.api.deleteThread({
+        nodeMeta: {
+          volumeId: nodeMeta.volumeId,
+          linkId: nodeMeta.linkId,
+        },
+        threadId,
+      })
     }
   }
 }

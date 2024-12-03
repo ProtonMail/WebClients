@@ -1,4 +1,4 @@
-import type { NodeMeta } from '@proton/drive-store'
+import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import type { BeganTypingData, StoppedTypingData } from '@proton/docs-shared'
 import { BroadcastSource, CommentsMessageType } from '@proton/docs-shared'
 import type { LiveCommentsTypeStatusChangeData, InternalEventBusInterface } from '@proton/docs-shared'
@@ -14,7 +14,7 @@ export class LiveComments {
 
   constructor(
     private websocketService: WebsocketServiceInterface,
-    private readonly document: NodeMeta,
+    private readonly document: NodeMeta | PublicNodeMeta,
     private readonly userDisplayName: string,
     private readonly eventBus: InternalEventBusInterface,
     private readonly logger: LoggerInterface,

@@ -4,7 +4,7 @@ import type { GetDocumentMeta } from './GetDocumentMeta'
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants'
 import { getErrorString } from '../Util/GetErrorString'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 import { getNodeNameWithoutExtension } from '@proton/docs-shared'
 
 /**

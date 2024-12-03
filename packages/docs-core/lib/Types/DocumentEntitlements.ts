@@ -1,11 +1,12 @@
 import { getCanWrite, getCanAdmin, getIsOwner } from '@proton/shared/lib/drive/permissions'
-import type { DocumentKeys } from '@proton/drive-store'
+import type { DocumentKeys, NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import { DocumentRole } from '@proton/docs-shared'
 
 export type DocumentEntitlements = {
   keys: DocumentKeys
   role: DocumentRole
+  nodeMeta: NodeMeta
 }
 
 export type PublicDocumentKeys = Pick<DocumentKeys, 'documentContentKey'>
@@ -13,6 +14,19 @@ export type PublicDocumentKeys = Pick<DocumentKeys, 'documentContentKey'>
 export type PublicDocumentEntitlements = {
   keys: PublicDocumentKeys
   role: DocumentRole
+  nodeMeta: PublicNodeMeta
+}
+
+export function isPublicDocumentEntitlements(
+  entitlements: PublicDocumentEntitlements | DocumentEntitlements,
+): entitlements is PublicDocumentEntitlements {
+  return isPublicDocumentKeys(entitlements.keys)
+}
+
+export function isPrivateDocumentEntitlements(
+  entitlements: PublicDocumentEntitlements | DocumentEntitlements,
+): entitlements is DocumentEntitlements {
+  return isPrivateDocumentKeys(entitlements.keys)
 }
 
 export function isPublicDocumentKeys(keys: DocumentKeys | PublicDocumentKeys): keys is PublicDocumentKeys {

@@ -1,5 +1,5 @@
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 import type { DocumentUpdate } from '@proton/docs-proto'
 import type { DecryptedMessage } from '@proton/docs-shared'
 import { mergeUpdates } from 'yjs'

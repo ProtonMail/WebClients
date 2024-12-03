@@ -1,43 +1,44 @@
 import type {
   AnyCommentMessageData,
   CommentControllerInterface,
-  CommentThreadInterface,
   CommentInterface,
+  CommentMarkNodeChangeData,
+  CommentThreadInterface,
+  InternalEventBusInterface,
   InternalEventHandlerInterface,
   InternalEventInterface,
-  InternalEventBusInterface,
-  CommentMarkNodeChangeData,
-  SuggestionThreadStateAction,
   SuggestionSummaryType,
+  SuggestionThreadStateAction,
 } from '@proton/docs-shared'
 import {
-  CommentsMessageType,
-  CommentsEvent,
+  AnonymousUserDisplayName,
   BroadcastSource,
+  CommentsEvent,
+  CommentsMessageType,
   CommentThreadState,
   CommentType,
 } from '@proton/docs-shared'
-import type { EncryptComment } from '../../UseCase/EncryptComment'
-import type { LoggerInterface } from '@proton/utils/logs'
-import { CreateRealtimeCommentPayload } from './CreateRealtimeCommentPayload'
-import { LocalCommentsState } from './LocalCommentsState'
-import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
-import type { CreateThread } from '../../UseCase/CreateThread'
-import type { CreateComment } from '../../UseCase/CreateComment'
-import type { LoadThreads } from '../../UseCase/LoadThreads'
-import { LiveComments } from '../../Realtime/LiveComments/LiveComments'
-import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
-import type { DocControllerEventPayloads } from '../../AuthenticatedDocController/AuthenticatedDocControllerEvent'
-import { DocControllerEvent } from '../../AuthenticatedDocController/AuthenticatedDocControllerEvent'
-import metrics from '@proton/metrics'
-import { EventTypeEnum } from '@proton/docs-proto'
-import type { DocsApi } from '../../Api/DocsApi'
 import { CommentThreadType } from '@proton/docs-shared'
-import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
-import type { MetricService } from '../Metrics/MetricService'
+import { CreateRealtimeCommentPayload } from './CreateRealtimeCommentPayload'
+import { DocControllerEvent } from '../../AuthenticatedDocController/AuthenticatedDocControllerEvent'
+import { EventTypeEnum } from '@proton/docs-proto'
+import { isDocumentState, type DocumentState, type PublicDocumentState } from '../../State/DocumentState'
+import { LiveComments } from '../../Realtime/LiveComments/LiveComments'
+import { LocalCommentsState } from './LocalCommentsState'
 import { TelemetryDocsEvents } from '@proton/shared/lib/api/telemetry'
-import type { DocumentState } from '../../State/DocumentState'
+import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import metrics from '@proton/metrics'
+import type { CreateComment } from '../../UseCase/CreateComment'
+import type { CreateThread } from '../../UseCase/CreateThread'
+import type { DocControllerEventPayloads } from '../../AuthenticatedDocController/AuthenticatedDocControllerEvent'
+import type { DocsApi } from '../../Api/DocsApi'
+import type { EncryptComment } from '../../UseCase/EncryptComment'
+import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
+import type { LoadThreads } from '../../UseCase/LoadThreads'
+import type { LoggerInterface } from '@proton/utils/logs'
+import type { MetricService } from '../Metrics/MetricService'
 import type { UserState } from '../../State/UserState'
+import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 
 /**
  * Controls comments for a single document.
@@ -47,8 +48,8 @@ export class CommentController implements CommentControllerInterface, InternalEv
 
   public readonly liveComments: LiveComments = new LiveComments(
     this.websocketService,
-    this.documentState.getProperty('documentMeta').nodeMeta,
-    this.documentState.getProperty('entitlements').keys.userOwnAddress,
+    this.documentState.getProperty('entitlements').nodeMeta,
+    this.userDisplayName,
     this.eventBus,
     this.logger,
   )
@@ -56,8 +57,8 @@ export class CommentController implements CommentControllerInterface, InternalEv
   shouldSendDocumentName = false
 
   constructor(
-    private userState: UserState,
-    private documentState: DocumentState,
+    private userState: UserState | undefined,
+    private documentState: DocumentState | PublicDocumentState,
     private readonly websocketService: WebsocketServiceInterface,
     private readonly metricService: MetricService,
     private api: DocsApi,
@@ -73,19 +74,24 @@ export class CommentController implements CommentControllerInterface, InternalEv
     eventBus.addEventHandler(this, DocControllerEvent.RealtimeCommentMessageReceived)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady)
 
-    this.userState.subscribe((state) => {
-      this.shouldSendDocumentName = state.currentDocumentEmailDocTitleEnabled ?? false
-    })
+    if (this.userState) {
+      this.userState.subscribe((state) => {
+        this.shouldSendDocumentName = state.currentDocumentEmailDocTitleEnabled ?? false
+      })
+    }
   }
 
   get userDisplayName(): string {
-    return this.documentState.getProperty('entitlements').keys.userOwnAddress
+    if (isDocumentState(this.documentState)) {
+      return this.documentState.getProperty('entitlements').keys.userOwnAddress
+    }
+
+    return AnonymousUserDisplayName
   }
 
   public fetchAllComments(): void {
     void this._loadThreads.execute({
-      lookup: this.documentState.getProperty('documentMeta').nodeMeta,
-      keys: this.documentState.getProperty('entitlements').keys,
+      entitlements: this.documentState.getProperty('entitlements'),
       commentsState: this.localCommentsState,
     })
   }
@@ -94,7 +100,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
     const data = CreateRealtimeCommentPayload(type, dto)
 
     void this.websocketService.sendEventMessage(
-      this.documentState.getProperty('documentMeta').nodeMeta,
+      this.documentState.getProperty('entitlements').nodeMeta,
       data,
       EventTypeEnum.ClientHasSentACommentMessage,
       BroadcastSource.CommentsController,
@@ -108,9 +114,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
   }
 
   public getTypersExcludingSelf(threadId: string): string[] {
-    return this.liveComments
-      .getTypingUsers(threadId)
-      .filter((user) => user !== this.documentState.getProperty('entitlements').keys.userOwnAddress)
+    return this.liveComments.getTypingUsers(threadId).filter((user) => user !== this.userDisplayName)
   }
 
   public beganTypingInThread(threadID: string): void {
@@ -144,8 +148,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
 
     const threadResult = await this._createThread.execute({
       text: commentContent,
-      keys: this.documentState.getProperty('entitlements').keys,
-      lookup: this.documentState.getProperty('documentMeta').nodeMeta,
+      entitlements: this.documentState.getProperty('entitlements'),
       commentsState: this.localCommentsState,
       markID,
       createMarkNode,
@@ -174,8 +177,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
 
     const threadResult = await this._createThread.execute({
       text: commentContent,
-      keys: this.documentState.getProperty('entitlements').keys,
-      lookup: this.documentState.getProperty('documentMeta').nodeMeta,
+      entitlements: this.documentState.getProperty('entitlements'),
       commentsState: this.localCommentsState,
       markID: suggestionID,
       createMarkNode: false,
@@ -204,8 +206,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
     const commentResult = await this._createComment.execute({
       text: content,
       threadID,
-      keys: this.documentState.getProperty('entitlements').keys,
-      lookup: this.documentState.getProperty('documentMeta').nodeMeta,
+      entitlements: this.documentState.getProperty('entitlements'),
       commentsState: this.localCommentsState,
       type: CommentType.Comment,
       decryptedDocumentName,
@@ -234,8 +235,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
     const commentResult = await this._createComment.execute({
       text: content,
       threadID,
-      keys: this.documentState.getProperty('entitlements').keys,
-      lookup: this.documentState.getProperty('documentMeta').nodeMeta,
+      entitlements: this.documentState.getProperty('entitlements'),
       commentsState: this.localCommentsState,
       type: CommentType.Suggestion,
       decryptedDocumentName,
@@ -275,16 +275,14 @@ export class CommentController implements CommentControllerInterface, InternalEv
 
     const encryptedContent = encryptionResult.getValue()
 
-    const nodeMeta = this.documentState.getProperty('documentMeta').nodeMeta
-
-    const result = await this.api.editComment({
-      volumeId: nodeMeta.volumeId,
-      linkId: nodeMeta.linkId,
-      threadId: threadID,
-      commentId: commentID,
-      encryptedContent: encryptedContent,
-      authorEmail: this.documentState.getProperty('entitlements').keys.userOwnAddress,
-    })
+    const result = await this.api.editComment(
+      {
+        threadId: threadID,
+        commentId: commentID,
+        encryptedContent: encryptedContent,
+      },
+      this.documentState.getProperty('entitlements'),
+    )
     if (result.isFailed()) {
       return false
     }
@@ -297,9 +295,12 @@ export class CommentController implements CommentControllerInterface, InternalEv
   }
 
   async deleteThread(id: string): Promise<boolean> {
-    const nodeMeta = this.documentState.getProperty('documentMeta').nodeMeta
+    const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
 
-    const response = await this.api.deleteThread(nodeMeta.volumeId, nodeMeta.linkId, id)
+    const response = await this.api.deleteThread({
+      nodeMeta,
+      threadId: id,
+    })
     if (response.isFailed()) {
       return false
     }
@@ -312,9 +313,13 @@ export class CommentController implements CommentControllerInterface, InternalEv
   }
 
   async deleteComment(threadID: string, commentID: string): Promise<boolean> {
-    const nodeMeta = this.documentState.getProperty('documentMeta').nodeMeta
+    const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
 
-    const response = await this.api.deleteComment(nodeMeta.volumeId, nodeMeta.linkId, threadID, commentID)
+    const response = await this.api.deleteComment({
+      nodeMeta,
+      threadId: threadID,
+      commentId: commentID,
+    })
     if (response.isFailed()) {
       return false
     }
@@ -327,9 +332,12 @@ export class CommentController implements CommentControllerInterface, InternalEv
   }
 
   async resolveThread(threadId: string): Promise<boolean> {
-    const nodeMeta = this.documentState.getProperty('documentMeta').nodeMeta
+    const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
 
-    const response = await this.api.resolveThread(nodeMeta.volumeId, nodeMeta.linkId, threadId)
+    const response = await this.api.resolveThread({
+      nodeMeta,
+      threadId,
+    })
     if (response.isFailed()) {
       return false
     }
@@ -352,9 +360,12 @@ export class CommentController implements CommentControllerInterface, InternalEv
   }
 
   async unresolveThread(threadId: string): Promise<boolean> {
-    const nodeMeta = this.documentState.getProperty('documentMeta').nodeMeta
+    const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
 
-    const response = await this.api.unresolveThread(nodeMeta.volumeId, nodeMeta.linkId, threadId)
+    const response = await this.api.unresolveThread({
+      nodeMeta,
+      threadId,
+    })
     if (response.isFailed()) {
       return false
     }
@@ -388,9 +399,13 @@ export class CommentController implements CommentControllerInterface, InternalEv
       }
     }
 
-    const nodeMeta = this.documentState.getProperty('documentMeta').nodeMeta
+    const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
 
-    const response = await this.api.changeSuggestionThreadState(nodeMeta.volumeId, nodeMeta.linkId, threadId, action)
+    const response = await this.api.changeSuggestionThreadState({
+      nodeMeta,
+      threadId,
+      action,
+    })
     if (response.isFailed()) {
       return false
     }

@@ -1,5 +1,5 @@
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import type { Result } from '../Domain/Result/Result'
+import type { Result } from '@proton/docs-shared'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import type { DocumentKeys } from '@proton/drive-store'

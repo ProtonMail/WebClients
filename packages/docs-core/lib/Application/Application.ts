@@ -14,7 +14,7 @@ import type { RecentDocumentsInterface } from '../Services/RecentDocuments/types
 import type { MetricService } from '../Services/Metrics/MetricService'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { PublicDocLoader } from '../Services/DocumentLoader/PublicDocLoader'
-import type { HttpHeaders } from '../Api/DocsApi'
+import type { HttpHeaders } from '../Api/Types/HttpHeaders'
 import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 import type { UnleashClient } from '@proton/unleash'
 import { UserState } from '../State/UserState'

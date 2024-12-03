@@ -1,7 +1,7 @@
 import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared'
 import { DocumentExportMimeTypes } from '@proton/docs-shared'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 
 export class ExportAndDownload implements UseCaseInterface<void> {
   async execute(

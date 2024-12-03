@@ -1,5 +1,5 @@
 import { getCanWrite } from '@proton/shared/lib/drive/permissions'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 import { DocumentRole, type DocumentMetaInterface } from '@proton/docs-shared'
 import type { NodeMeta, PublicNodeMeta, DecryptedNode } from '@proton/drive-store'
 import type { GetDocumentMeta } from './GetDocumentMeta'
@@ -37,7 +37,9 @@ export class LoadDocument {
     }
     try {
       const [nodeResult, keysResult, fetchResult, permissionsResult] = await Promise.all([
-        this.getNode.execute(nodeMeta),
+        this.getNode.execute(nodeMeta).catch((error) => {
+          throw new Error(`Failed to load node: ${error}`)
+        }),
         this.compatWrapper.userCompat.getDocumentKeys(nodeMeta).catch((error) => {
           throw new Error(`Failed to load keys: ${error}`)
         }),
@@ -76,6 +78,7 @@ export class LoadDocument {
       const entitlements: DocumentEntitlements = {
         keys: keysResult,
         role: permissionsResult ? rawPermissionToRole(permissionsResult) : new DocumentRole('PublicViewer'),
+        nodeMeta,
       }
 
       const latestCommitId = serverBasedMeta.latestCommitId()
@@ -109,15 +112,17 @@ export class LoadDocument {
       return Result.fail('Public drive compat not found')
     }
 
-    const decryptedNode = this.compatWrapper.publicCompat.decryptedNode
     const permissions = this.compatWrapper.publicCompat.permissions
 
-    if (!decryptedNode || !permissions) {
-      return Result.fail('Decrypted node or permissions not yet loaded')
+    if (!permissions) {
+      return Result.fail('Permissions not yet loaded')
     }
 
     try {
-      const [keysResult, fetchResult] = await Promise.all([
+      const [nodeResult, keysResult, fetchResult] = await Promise.all([
+        this.getNode.execute(nodeMeta).catch((error) => {
+          throw new Error(`Failed to load public node: ${error}`)
+        }),
         this.compatWrapper.publicCompat.getDocumentKeys(nodeMeta).catch((error) => {
           throw new Error(`Failed to load public keys: ${error}`)
         }),
@@ -125,6 +130,8 @@ export class LoadDocument {
           throw new Error(`Failed to fetch document metadata: ${error}`)
         }),
       ])
+
+      const decryptedNode = nodeResult.getValue().node
 
       if (fetchResult.isFailed()) {
         return Result.fail(fetchResult.getError())
@@ -149,8 +156,8 @@ export class LoadDocument {
        * actions like duplicating it.
        */
       const authenticatedMetaAttempt = await this.getDocumentMeta.execute({
-        volumeId: decryptedMeta.nodeMeta.volumeId,
-        linkId: decryptedMeta.nodeMeta.linkId,
+        volumeId: decryptedMeta.volumeId,
+        linkId: nodeMeta.linkId,
       })
 
       const doesHaveAccessToDoc = !authenticatedMetaAttempt.isFailed()
@@ -168,6 +175,7 @@ export class LoadDocument {
       const entitlements: PublicDocumentEntitlements = {
         keys: keysResult,
         role,
+        nodeMeta,
       }
 
       const latestCommitId = serverBasedMeta.latestCommitId()

@@ -81,8 +81,9 @@ describe('CommentController', () => {
     documentState = new DocumentState({
       ...DocumentState.defaults,
       documentName: 'document-name',
-      documentMeta: { nodeMeta: { linkId: 'link-id-123', volumeId: 'volume-id-456' } },
+      documentMeta: {},
       entitlements: {
+        nodeMeta: { linkId: 'link-id-123', volumeId: 'volume-id-456' },
         keys: {
           documentContentKey: 'key-123' as unknown as SessionKey,
           userAddressPrivateKey: 'private-key-123' as unknown as PrivateKeyReference,

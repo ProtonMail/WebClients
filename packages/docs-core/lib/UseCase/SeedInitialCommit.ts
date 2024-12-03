@@ -1,10 +1,9 @@
 import { CommitVersion, DocumentUpdateVersion, CreateDocumentUpdate, CreateCommit } from '@proton/docs-proto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
 import type { EncryptMessage } from './EncryptMessage'
-import type { DocumentKeys } from '@proton/drive-store'
-import type { DocumentMetaInterface } from '@proton/docs-shared'
+import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { GenerateUUID } from '../Util/GenerateUuid'
 
 type SeedInitialCommitResult = { commitId: string; linkId: string; volumeId: string }
@@ -19,11 +18,7 @@ export class SeedInitialCommit implements UseCaseInterface<SeedInitialCommitResu
     private encryptMessage: EncryptMessage,
   ) {}
 
-  async execute(
-    docMeta: DocumentMetaInterface['nodeMeta'],
-    state: Uint8Array,
-    keys: DocumentKeys,
-  ): Promise<Result<SeedInitialCommitResult>> {
+  async execute(nodeMeta: NodeMeta, state: Uint8Array, keys: DocumentKeys): Promise<Result<SeedInitialCommitResult>> {
     const metadata = {
       version: DocumentUpdateVersion.V1,
       authorAddress: keys.userOwnAddress,
@@ -48,10 +43,10 @@ export class SeedInitialCommit implements UseCaseInterface<SeedInitialCommitResu
       lockId: '',
     })
 
-    const commitResult = await this.docsApi.seedInitialCommit(docMeta, commit)
+    const commitResult = await this.docsApi.seedInitialCommit(nodeMeta, commit)
 
     if (commitResult.isFailed()) {
-      return Result.fail(commitResult.getError())
+      return Result.fail(commitResult.getError().message)
     }
 
     const { CommitID: commitId, VolumeID: volumeId, LinkID: linkId } = commitResult.getValue()

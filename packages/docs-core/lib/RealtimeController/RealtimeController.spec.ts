@@ -48,10 +48,9 @@ describe('RealtimeController', () => {
     documentState = new DocumentState({
       ...DocumentState.defaults,
       documentMeta: {
-        nodeMeta: {} as NodeMeta,
         latestCommitId: () => '123',
       } as unknown as DocumentMetaInterface,
-      entitlements: { keys: {}, role: new DocumentRole('Editor') } as unknown as DocumentEntitlements,
+      entitlements: { keys: {}, role: new DocumentRole('Editor'), nodeMeta: {} } as unknown as DocumentEntitlements,
       decryptedNode: {} as DecryptedNode,
     } as DocumentStateValues)
 
@@ -188,7 +187,7 @@ describe('RealtimeController', () => {
           payload: undefined,
         })
         expect(controller.abortWebsocketConnectionAttempt).toBe(true)
-        const nodeMeta = documentState.getProperty('documentMeta').nodeMeta
+        const nodeMeta = documentState.getProperty('entitlements').nodeMeta
         expect(websocketService.closeConnection).toHaveBeenCalledWith(nodeMeta)
       })
 
@@ -198,7 +197,7 @@ describe('RealtimeController', () => {
           payload: undefined,
         })
         expect(controller.abortWebsocketConnectionAttempt).toBe(false)
-        const nodeMeta = documentState.getProperty('documentMeta').nodeMeta
+        const nodeMeta = documentState.getProperty('entitlements').nodeMeta
         expect(websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalledWith(nodeMeta)
       })
     })
@@ -214,7 +213,7 @@ describe('RealtimeController', () => {
         expect(logger.info).toHaveBeenCalledWith(
           'Reconnecting to RTS because currentCommitId changed and we are not connected',
         )
-        const nodeMeta = documentState.getProperty('documentMeta').nodeMeta
+        const nodeMeta = documentState.getProperty('entitlements').nodeMeta
         expect(websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalledWith(nodeMeta)
       })
 
@@ -234,7 +233,7 @@ describe('RealtimeController', () => {
         documentState.setProperty('documentTrashState', 'not_trashed')
 
         expect(logger.info).toHaveBeenCalledWith('Reconnecting to RTS because document was untrashed')
-        const nodeMeta = documentState.getProperty('documentMeta').nodeMeta
+        const nodeMeta = documentState.getProperty('entitlements').nodeMeta
         expect(websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalledWith(nodeMeta)
       })
 
@@ -524,7 +523,7 @@ describe('RealtimeController', () => {
 
   describe('initializeConnection', () => {
     it('should create connection with correct parameters', () => {
-      const mockEntitlements = { keys: {} } as DocumentEntitlements
+      const mockEntitlements = { keys: {}, nodeMeta: {} } as DocumentEntitlements
       const mockCurrentCommitId = 'commit-123'
       documentState.setProperty('currentCommitId', mockCurrentCommitId)
       documentState.setProperty('entitlements', mockEntitlements)
@@ -654,7 +653,7 @@ describe('RealtimeController', () => {
 
   describe('handleWebsocketDisconnectedEvent', () => {
     it('should update status and call callback with reason', () => {
-      const nodeMeta = documentState.getProperty('documentMeta').nodeMeta
+      const nodeMeta = documentState.getProperty('entitlements').nodeMeta
       documentState.setProperty('realtimeStatus', 'connected')
       const event = {
         document: nodeMeta,
@@ -802,7 +801,7 @@ describe('RealtimeController', () => {
     it('should call websocket service to close connection', () => {
       controller.closeConnection()
 
-      const nodeMeta = documentState.getProperty('documentMeta').nodeMeta
+      const nodeMeta = documentState.getProperty('entitlements').nodeMeta
       expect(controller.websocketService.closeConnection).toHaveBeenCalledWith(nodeMeta)
     })
   })
@@ -811,7 +810,7 @@ describe('RealtimeController', () => {
     it('should call websocket service to reconnect', async () => {
       await controller.reconnect()
 
-      const nodeMeta = documentState.getProperty('documentMeta').nodeMeta
+      const nodeMeta = documentState.getProperty('entitlements').nodeMeta
       expect(controller.websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalledWith(nodeMeta)
     })
   })
@@ -835,7 +834,7 @@ describe('RealtimeController', () => {
 
       await controller.debugSendCommitCommandToRTS(entitlements)
 
-      const nodeMeta = documentState.getProperty('documentMeta').nodeMeta
+      const nodeMeta = documentState.getProperty('entitlements').nodeMeta
       expect(controller.websocketService.debugSendCommitCommandToRTS).toHaveBeenCalledWith(nodeMeta, entitlements.keys)
     })
   })
