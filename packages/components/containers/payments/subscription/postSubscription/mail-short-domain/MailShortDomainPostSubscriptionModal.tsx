@@ -12,6 +12,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { TelemetryMailPostSubscriptionEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -20,6 +21,7 @@ import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import { PostSubscriptionLoadingModalContent } from '../PostSubscriptionLoadingModal';
 import type { PostSubscriptionModalComponentProps } from '../interface';
+import { usePostSubscriptionTelemetry } from '../usePostSubscriptionTelemetry';
 import useMailShortDomainPostSubscriptionComposerSpotlight from './useMailShortDomainPostSubscriptionSpotlight';
 
 const MailShortDomainPostSubscriptionModal = ({ onClose, step }: PostSubscriptionModalComponentProps) => {
@@ -27,6 +29,7 @@ const MailShortDomainPostSubscriptionModal = ({ onClose, step }: PostSubscriptio
     const location = useLocation();
     const goToSettings = useSettingsLink();
     const [displayLoadingModal, setDisplayLoadingModal] = useState(true);
+    const sendTelemetryEvent = usePostSubscriptionTelemetry();
 
     const { shortDomainAddress, createShortDomainAddress, loadingDependencies } = useShortDomainAddress();
     const getAddresses = useGetAddresses();
@@ -80,12 +83,34 @@ const MailShortDomainPostSubscriptionModal = ({ onClose, step }: PostSubscriptio
         },
     ] as const;
 
+    const handleClickContinue = () => {
+        void sendTelemetryEvent({
+            event: TelemetryMailPostSubscriptionEvents.modal_engagement,
+            dimensions: {
+                modal: 'mail-short-domain',
+                modalAction: 'primary_cta',
+            },
+        });
+        onClose();
+    };
+
+    const handleClickSettings = () => {
+        void sendTelemetryEvent({
+            event: TelemetryMailPostSubscriptionEvents.modal_engagement,
+            dimensions: {
+                modal: 'mail-short-domain',
+                modalAction: 'secondary_cta',
+            },
+        });
+        goToSettings('/identity-addresses', APPS.PROTONMAIL);
+    };
+
     useEffect(() => {
         if (!loadingDependencies && step === SUBSCRIPTION_STEPS.THANKS && !isAddressSetupRef.current) {
-            const closeModal = () => {
+            const hideLoadingModal = () => {
                 setDisplayLoadingModal(false);
             };
-            setupNewAddress().then(closeModal, closeModal);
+            setupNewAddress().then(hideLoadingModal, hideLoadingModal);
         }
     }, [loadingDependencies, step]);
 
@@ -138,16 +163,12 @@ const MailShortDomainPostSubscriptionModal = ({ onClose, step }: PostSubscriptio
                             ))}
                         </ul>
                         <div>
-                            <Button className="mb-2" color="norm" fullWidth onClick={onClose}>
+                            <Button className="mb-2" color="norm" fullWidth onClick={handleClickContinue}>
                                 {c('Button').t`Continue`}
                             </Button>
                             {!isIdentityAndAddressPage && (
-                                <Button
-                                    fullWidth
-                                    onClick={() => {
-                                        goToSettings('/identity-addresses', APPS.PROTONMAIL);
-                                    }}
-                                >{c('Button').t`Change email address settings`}</Button>
+                                <Button fullWidth onClick={handleClickSettings}>{c('Button')
+                                    .t`Change email address settings`}</Button>
                             )}
                         </div>
                     </ModalTwoContent>
