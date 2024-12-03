@@ -68,7 +68,7 @@ export const AliasContactsView: FC<Props> = ({ onClose }) => {
                         </Button>
                     </div>
 
-                    <div className="mb-6">{c('Info')
+                    <div className="mb-6 text-break">{c('Info')
                         .t`A contact is created for every email address that sends emails to or receives emails from ${aliasEmail}.`}</div>
 
                     <>
