@@ -11,7 +11,7 @@ import { sendTelemetryReport } from './metrics';
 export const useNewUpsellModalVariant = () => {
     const InboxNewUpsellModalsVariant = useVariant('InboxNewUpsellModals');
 
-    if (InboxNewUpsellModalsVariant?.payload?.value === 'old') {
+    if (InboxNewUpsellModalsVariant.name === 'old') {
         return false;
     }
 
