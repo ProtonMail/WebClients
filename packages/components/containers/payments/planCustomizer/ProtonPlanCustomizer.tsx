@@ -38,6 +38,8 @@ import { IPsNumberCustomiser } from './IPsNumberCustomiser';
 import LumoAddon from './LumoAddon';
 import type { DecreaseBlockedReason } from './helpers';
 
+import './ProtonPlanCustomizer.scss';
+
 export type CustomiserMode = 'signup' | undefined;
 
 interface AddonCustomizerProps {
@@ -299,6 +301,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     audience?: Audience;
     scribeAddonEnabled?: boolean;
     lumoAddonEnabled?: boolean;
+    separator?: boolean;
 }
 
 export const ProtonPlanCustomizer = ({
@@ -318,6 +321,7 @@ export const ProtonPlanCustomizer = ({
     audience,
     scribeAddonEnabled = false,
     lumoAddonEnabled = false,
+    separator = false,
     ...rest
 }: Props) => {
     const supportedAddons = getSupportedAddons(planIDs);
@@ -335,7 +339,7 @@ export const ProtonPlanCustomizer = ({
     );
 
     return (
-        <div className={clsx(['plan-customiser', className])} {...rest}>
+        <div className={clsx(['plan-customiser', separator && 'plan-customiser--separator', className])} {...rest}>
             {Object.keys(supportedAddons).map((key) => {
                 const addonName = key as ADDON_NAMES;
 
