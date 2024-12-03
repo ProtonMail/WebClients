@@ -84,11 +84,13 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
                 {c('Action').t`Share`}
               </Button>
             )}
+          </>
+        )}
 
-            {documentState.getProperty('userRole').canComment() && (
-              <CommentsButton editorController={editorController} />
-            )}
+        {documentState.getProperty('userRole').canComment() && <CommentsButton editorController={editorController} />}
 
+        {!publicContext && (
+          <>
             <div className="w-4" />
 
             <UserDropdown app={APPS.PROTONDOCS} />

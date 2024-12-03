@@ -40,9 +40,9 @@ const DebugMenu = ({
   }
 
   const closeConnection = async () => {
-    const meta = documentState.getProperty('documentMeta')
-    if (meta) {
-      void application.websocketService.closeConnection({ linkId: meta.nodeMeta.linkId })
+    const { nodeMeta } = documentState.getProperty('entitlements')
+    if (nodeMeta) {
+      void application.websocketService.closeConnection(nodeMeta)
     }
   }
 

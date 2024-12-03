@@ -15,7 +15,7 @@ import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState
 import type { LiveComments } from '../Realtime/LiveComments/LiveComments'
 import { getErrorString } from '../Util/GetErrorString'
 import type { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterface'
-import { Result } from '../Domain/Result/Result'
+import { Result } from '@proton/docs-shared'
 
 /**
  * Updates the local comment state after receiving a message from the RTS.
