@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -249,6 +249,9 @@
       ],
       "Connect": [
         "Conectar"
+      ],
+      "Connected": [
+        "Ligado"
       ],
       "Contact sales": [
         "Contacto de vendas"
@@ -10498,9 +10501,6 @@
       "From ${ price }": [
         "A partir de ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
       "Upgrade": [
         "Alterar a subscrição"
       ],
@@ -11703,6 +11703,9 @@
       ]
     },
     "option": {
+      "Everyone": [
+        "Todos"
+      ],
       "Group members": [
         "Membros do grupo"
       ],
@@ -13305,6 +13308,9 @@
       ]
     },
     "sso": {
+      "Access denied": [
+        "Acesso negado"
+      ],
       "Approve": [
         "Aprovar"
       ],
@@ -13337,6 +13343,9 @@
       ],
       "Sign in": [
         "Iniciar sessão"
+      ],
+      "User details:": [
+        "Detalhes do utilizador:"
       ]
     },
     "sso: auth device state": {
@@ -13345,6 +13354,9 @@
       ],
       "Inactive": [
         "Inativo"
+      ],
+      "Rejected": [
+        "Rejeitado"
       ],
       "Signed out": [
         "Sessão terminada"
@@ -14469,6 +14481,9 @@
       ],
       "Customize your mail import": [
         "Personalize a sua importação de e-mail"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoramento da Dark Web"
       ],
       "Dashboard": [
         "Painel de controlo"
@@ -15745,6 +15760,9 @@
     "Users table: badge": {
       "2FA": [
         "A2F"
+      ],
+      "Inactive": [
+        "Inativa"
       ],
       "Invite sent": [
         "O convite foi enviado."

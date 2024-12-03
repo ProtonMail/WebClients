@@ -81,6 +81,9 @@
       "Apply": [
         "적용"
       ],
+      "Ask me next time": [
+        "다음에 내게 묻기"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "연락처 그룹 당 최대 ${ maxContacts }개 연락처가 허용됩니다"
       ],
@@ -300,6 +303,9 @@
       "Go to label": [
         "라벨로 이동"
       ],
+      "Got it": [
+        "알겠습니다"
+      ],
       "Help": [
         "도움말"
       ],
@@ -516,6 +522,9 @@
       "Restore this version": [
         "이 버전으로 복구"
       ],
+      "Restore this version?": [
+        "이 버전으로 복구하시겠어요?"
+      ],
       "Retry": [
         "재시도"
       ],
@@ -524,6 +533,9 @@
       ],
       "Save changes": [
         "변경 사항 저장"
+      ],
+      "Save preferences": [
+        "환경설정 저장"
       ],
       "Search": [
         "검색"
@@ -792,6 +804,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "특별 할인가 ${ discountedPrice }는 첫 ${ cycle }개월간 적용됩니다. 이후 매월 할인된 가격인 ${ nextPrice }(으)로 ${ renewalLength }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "이 특별 할인가 (${ discountedPrice })는 첫 달에 한합니다. 자동으로 다음 달 부터는 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
       ]
@@ -3803,6 +3818,9 @@
       "Amount below minimum (${ amount }).": [
         "최소 금액 (${ amount })보다 적습니다."
       ],
+      "an anonymous user": [
+        "익명의 사용자"
+      ],
       "and": [
         "그리고"
       ],
@@ -4091,14 +4109,17 @@
       "Free 5GB encrypted storage to get started": [
         "시작하기 위한 5GB 무료 암호화 스토리지"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "문서에 추가된 댓글과 제안 사항에 대한 이메일 업데이트를 받아보세요."
+      ],
+      "Get Notified About Comments": [
+        "댓글 알림 받기"
+      ],
       "here": [
         "여기"
       ],
       "High Priority": [
         "중요도 높음"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
@@ -4409,6 +4430,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
       ],
+      "Restored version to": [
+        "다음 버전으로 복구됨:"
+      ],
       "Saving": [
         "저장 중"
       ],
@@ -4489,6 +4513,12 @@
       ],
       "The Beginning": [
         "시작"
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "디지털 서명이 부분적으로 검증되었습니다. 파일이 특정할 수 없는 사용자에 의해 공개 페이지로 업로드되었습니다."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "디지털 서명이 부분적으로 검증되었습니다. 폴더가 특정할 수 없는 사용자에 의해 공개 페이지로 업로드되었습니다."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
@@ -4597,6 +4627,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
+      ],
+      "Undo successful": [
+        "실행 취소 성공"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "안타깝지만 파일이나 일부 데이터를 복호화할 수 없는 것으로 보입니다."
@@ -4787,6 +4820,9 @@
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "이 브라우저는 서비스 워커를 사용할 수 없어 큰 파일의 다운로드를 지원할 수 없습니다. 큰 파일을 다운로드하게 되면 브라우저의 프리징이 일어나거나 응답 없음 상태가 될 수 있습니다. ${ recommendedBrowser }의 최신 버전을 사용하여 다시 시도해 주세요."
       ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "현재 문서가 이 버전으로 대체됩니다. 댓글과 제안이 문서에서 제거되지만 댓글 기록에서 계속 접근이 가능합니다."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
       ],
@@ -4907,6 +4943,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
       ],
+      "Account holder": [
+        "예금주"
+      ],
       "Add email address": [
         "이메일 주소 추가"
       ],
@@ -4975,6 +5014,12 @@
       ],
       "Calendars": [
         "캘린더"
+      ],
+      "Can edit": [
+        "편집 가능"
+      ],
+      "Can view": [
+        "보기 가능"
       ],
       "Cancel download": [
         "다운로드 취소"
@@ -5075,6 +5120,9 @@
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
+      "Enable email notifications": [
+        "이메일 알림 활성화"
+      ],
       "Encrypt emails": [
         "이메일 암호화"
       ],
@@ -5131,6 +5179,9 @@
       ],
       "Import to:": [
         "가져오기:"
+      ],
+      "Include document name in notification": [
+        "알림 내에 문서 이름 포함"
       ],
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
@@ -5335,6 +5386,14 @@
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "파일 정리, 추가 및 편집"
+      ],
+      "View and download": [
+        "보기 및 다운로드"
       ]
     },
     "Label for contact group color": {
@@ -5778,9 +5837,6 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get started for ${ price }": [
-        "${ price }로 시작하세요."
       ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }부터 시작"
@@ -6368,14 +6424,6 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price }에 Mail Plus를 구독하세요"
-      ],
-      "Starting from ${ price }": [
-        "${ price }부터 시작"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -6543,6 +6591,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "사용자 암호 및 2단계 인증 재설정"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "클릭 한 번으로 인터넷 트래픽을 Tor 네트워크로 라우팅하십시오"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -6809,6 +6860,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal }을(를) 업로드할 공간이 없습니다"
       ],
+      "Public link access updated": [
+        "공개 링크 접근이 업데이트되었습니다."
+      ],
+      "Public link update access failed ": [
+        "공개 링크 업데이트 접근 실패 "
+      ],
       "Stopping the sharing of this item has failed": [
         "이 항목에 대한 공유 중단 작업을 수행할 수 없습니다."
       ],
@@ -7008,8 +7065,23 @@
       "Please select your billing state first.": [
         "결제 청구 주를 먼저 선택하세요"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "${ renewPrice }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 ${ subscriptionLength }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPrice }로 ${ subscriptionLengthCopy }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 ${ subscriptionLength }개월간 적용됩니다. 이후 매월 ${ renewPrice }로 ${ subscriptionLengthCopy }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 1개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPrice }로 ${ subscriptionLength }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPrice }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
@@ -8309,6 +8381,9 @@
       ],
       "Customize your mail import": [
         "사용자 메일 가져오기"
+      ],
+      "Dark Web Monitoring": [
+        "다크 웹 모니터링"
       ],
       "Data recovery": [
         "데이터 복구"

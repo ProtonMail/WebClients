@@ -513,6 +513,9 @@
       "Get ${ BRAND_NAME } Duo": [
         "Obtingueu ${ BRAND_NAME } Duo"
       ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Obteniu ${ MAIL_SHORT_APP_NAME } Plus per ${ priceCoupon }"
+      ],
       "Get in touch": [
         "Contacte"
       ],
@@ -3566,6 +3569,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
       ],
+      "Also included": [
+        "També inclòs"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Suprimíeu automàticament el correu brossa i els missatges enviats a la paperera i desbloqueja més funcions prèmium quan milloreu."
       ],
@@ -3595,6 +3601,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Per obtenir accés il·limitat a l'assistent d'escriptura i més, milloreu a ${ BRAND_NAME } Duo."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -6505,9 +6514,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Envio aquest missatge a un usuari que no és de ${ MAIL_APP_NAME }."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
@@ -8039,6 +8045,9 @@
       "/month": [
         "/mes"
       ],
+      "Account holder": [
+        "Titular del compte"
+      ],
       "Actions": [
         "Accions"
       ],
@@ -9222,8 +9231,8 @@
       "Get ${ planTitle }": [
         "Obtingueu ${ planTitle }"
       ],
-      "Get started for ${ price }": [
-        "Comenceu per ${ price }"
+      "Get started for ${ priceCoupon }": [
+        "Comenceu per ${ priceCoupon }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Comenceu des de ${ priceMailPlus }"
@@ -9365,6 +9374,9 @@
       ],
       "10 email addresses/aliases": [
         "10 adreces de correu electrònic/àlies"
+      ],
+      "10 more premium features": [
+        "10 característiques prèmium més"
       ],
       "10-year file version history": [
         "Historial de versions de fitxers de 10 anys"
@@ -9835,14 +9847,6 @@
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Obtingueu el Mail Plus per ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Comenceu des de ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -9855,6 +9859,14 @@
       ],
       "Switch plans?": [
         "Voleu canviar de pla?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Obteniu Mail Plus per ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
       ]
     },
     "new_plans: tooltip": {
@@ -12846,6 +12858,9 @@
       ],
       "Customize your mail import": [
         "Personalitzeu la importació del vostre correu electrònic"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoratge del web fosc"
       ],
       "Data recovery": [
         "Recuperació de dades"

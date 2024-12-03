@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -126,6 +126,9 @@
       ],
       "Add label": [
         "Lägg till etikett"
+      ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Lägg till fler ${ BRAND_NAME } Scribe-säten"
       ],
       "Add notification": [
         "Lägg till avisering"
@@ -1349,6 +1352,10 @@
       "${ price } per user": [
         "${ price } per användare"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } skrivassistentplats",
+        "${ seats } skrivassistentplatser"
+      ],
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
@@ -1625,6 +1632,10 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månad.",
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månad."
       ]
     },
     "bf2023: Info": {
@@ -1656,6 +1667,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ discountedPrice } är giltigt de första ${ cycle } månaderna. Därefter är de automatiska förnyelserna på det rabatterade priset ${ nextPrice } för ${ renewalLength } månader. Du kan säga upp när som helst."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Det speciellt rabatterade priset på ${ discountedPrice } är giltigt under den första månaden. Sedan förnyas det automatiskt med ${ nextPrice } varje månad. Du kan avbryta när som helst."
       ]
@@ -1774,6 +1788,9 @@
       "Discounts are based on standard monthly pricing.": [
         "Rabatterna är baserade på ordinarie månadspriser."
       ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Om du köper Pass Family eller Unlimited så kommer din prenumeration att förnyas automatiskt med det rabatterade standardpriset och standardlängden vid slutet av din faktureringscykel."
+      ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Din prenumeration kommer förnyas automatiskt till det rabatterade standardpriset i slutet av din faktureringsperiod."
       ]
@@ -1816,6 +1833,10 @@
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer.",
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Säkra dina mail och schemalägg med end-to-end kryptering, det inkluderar ${ addresses } e-postadress, stöd for anpassade e-postdomäner, obegränsade hide-my-email-alias och mer.",
+        "Säkra dina mail och schemalägg med end-to-end kryptering, det inkluderar ${ addresses } e-postadresser, stöd for anpassade e-postdomäner, obegränsade hide-my-email-alias och mer."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
       ],
@@ -1830,6 +1851,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
+      ]
+    },
+    "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Förnyas automatiskt för ${ renewPrice }, för ${ renewLength } månad",
+        "Förnyas automatiskt för ${ renewPrice }, för ${ renewLength } månader"
       ]
     },
     "Billing cycle option": {
@@ -3447,6 +3474,10 @@
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Dagligen, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Var ${ interval } dag, ${ untilString }",
+        "Var ${ interval }:e dag, ${ untilString }"
       ]
     },
     "Day": {
@@ -3615,6 +3646,9 @@
       "Track the status and activity of your referrals.": [
         "Spåra status och aktivitet för dina hänvisningar."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Lås upp ${ activatePmUser } för en attraktiv e-postadress som är lätt att skriva."
+      ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Lås upp kortare e-postadresser och andra premiumfunktioner genom att uppgradera."
       ],
@@ -3731,22 +3765,22 @@
         "Jag vill inte dela"
       ],
       "I found a cheaper VPN": [
-        "Jag hittade ett billigare VPN"
+        "Jag hittade en billigare VPN"
       ],
       "I found a VPN with better features": [
-        "Jag hittade ett VPN med bättre funktioner"
+        "Jag hittade en VPN med bättre funktioner"
       ],
       "I have not managed to connect": [
-        "Jag har inte lyckats att ansluta"
+        "Jag har inte lyckats ansluta"
       ],
       "I only needed a VPN short-term": [
-        "Jag behövde bara ett VPN kortsiktigt"
+        "Jag behövde bara en VPN kortsiktigt"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Jag använder ett annat ${ BRAND_NAME }-konto"
       ],
       "It doesn't do what I need": [
-        "Det gör inte vad jag behöver"
+        "Den gör inte vad jag behöver"
       ],
       "Missing feature(s)": [
         "Saknade funktion(er)"
@@ -3806,6 +3840,9 @@
       "**Collaborative:** online document editor": [
         "**Samarbete:** dokumentredigerare online"
       ],
+      "**GDPR** and **HIPAA** compliant": [
+        "**GDPR**- och **HIPAA**-efterlevnad"
+      ],
       "**ISO 27001** certified": [
         "**ISO 27001**-certifierat"
       ],
@@ -3845,6 +3882,14 @@
       ],
       "Get it for ${ price }": [
         "Skaffa det för ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Faktureras vartannat är på ${ amountBilled }. Rabatter baseras på standardpriset per månad."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Faktureras årligen på ${ amountBilled }. Spara ${ amountSave } jämfört med 2 individuella och årliga ${ BRAND_NAME } Unlimited-prenumerationer"
       ]
     },
     "duoplan2024: Info": {
@@ -4017,6 +4062,9 @@
     "Email Unsubscribe": {
       "Change other email subscriptions": [
         "Ändra andra e-postprenumerationer"
+      ],
+      "Click the button below to unsubscribe from ${ categories } emails.": [
+        "Klicka på knappen nedan för att avsluta prenumerationen på e-postmeddelanden om ${ categories }."
       ],
       "Email subscriptions": [
         "E-postprenumerationer"
@@ -7562,9 +7610,6 @@
       "High Priority": [
         "Hög prioritet"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Om en annan administratör har ändrat detta lösenord måste du be dem om det nya organisationslösenordet."
       ],
@@ -8145,6 +8190,10 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Observera att om du tar bort filtret ${ nameDeleted } kommer vi att sluta bearbeta alla automatiska åtgärder som det utlöser."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Vänligen notera att när du klickar på Bekräfta-knappen så kommer ditt konto att ha ${ creditsRemaining } kredit kvar.",
+        "Vänligen notera att när du klickar på Bekräfta-knappen så kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
+      ],
       "please open a support ticket": [
         "öppna ett supportärende"
       ],
@@ -8330,6 +8379,9 @@
       ],
       "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
         "Välj en organisation aktiverad med **eduGAIN** för **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Välj en eller flera användartillhörigheter"
       ],
       "Select recently used servers": [
         "Välj nyligen använda servrar"
@@ -9092,6 +9144,10 @@
         "Du använder för närvarande ${ ipCount } av ${ ipAddresses } tillgänglig dedikerad server.",
         "Du använder för närvarande ${ ipCount } av ${ ipAddresses } tillgängliga dedikerade servrar."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Du använder för närvarande ${ usedMembers } av dina ${ maxMembers } tillgänglig användarlicens och inga av dina ${ maxAI } tillgängliga skrivassistentlicens.",
+        "Du använder för närvarande ${ usedMembers } av dina ${ maxMembers } tillgänglig användarlicens och inga av dina ${ maxAI } tillgängliga skrivassistentlicenser."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Du använder för närvarande ${ usedMembers } av din ${ maxMembers } tillgängliga användarlicens.",
         "Du använder för närvarande ${ usedMembers } av dina ${ maxMembers } tillgängliga användarlicenser."
@@ -9255,6 +9311,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Ditt ${ BRAND_NAME }-lösenord"
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Din ${ PASS_SHORT_APP_NAME } Plus-prenumeration kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Den kvarvarande balansen för din prenumeration kommer att läggas till i ditt konto.${ PASS_SHORT_APP_NAME } livstidserbjudandet har inget förnyelsepris, det är en engångsbetalning för livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Dina ${ VPN_APP_NAME }- och ${ MAIL_APP_NAME }-konton är länkade. För att ta bort båda, logga in på ${ loginLink } och ta bort ditt konto där."
@@ -9638,7 +9697,7 @@
         "Markera som oläst"
       ],
       "Minimize / maximize composer": [
-        "Minimera/maximera skrivfönster"
+        "Minimera / maximera kompositör"
       ],
       "Move down": [
         "Flytta ner"
@@ -9847,6 +9906,9 @@
       "5 minutes": [
         "5 minuter"
       ],
+      "Account holder": [
+        "Kontoinnehavare"
+      ],
       "Account storage": [
         "Kontolagring"
       ],
@@ -9968,7 +10030,7 @@
         "Belönades"
       ],
       "Backup password": [
-        "Säkerhetskopieringslösenord"
+        "Reservlösenord"
       ],
       "Beta": [
         "Beta"
@@ -10248,6 +10310,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Ange lösenordet för nyckeln med fingeravtrycket: ${ fingerprintCode }"
+      ],
+      "Entity ID": [
+        "Entitets-ID"
       ],
       "Event": [
         "Händelse"
@@ -10598,7 +10663,7 @@
         "Ta bort bild-metadata"
       ],
       "Repeat backup password": [
-        "Repetera säkerhetskopieringslösenord"
+        "Repetera reservlösenord"
       ],
       "Repeat password": [
         "Upprepa lösenord"
@@ -10663,6 +10728,9 @@
       ],
       "Signature": [
         "Signatur"
+      ],
+      "Single sign-on entity ID": [
+        "Entitets-ID för enkel inloggning"
       ],
       "Single sign-on URL": [
         "URL för enkel inloggning"
@@ -10762,6 +10830,9 @@
       ],
       "User": [
         "Användare"
+      ],
+      "User affiliations": [
+        "Användartillhörighet"
       ],
       "User's new password": [
         "Användarens nya lösenord"
@@ -11695,9 +11766,6 @@
       "From ${ price }": [
         "Från ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Kom igång för ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Startar från ${ priceMailPlus }"
       ],
@@ -11854,6 +11922,9 @@
       "15 GB storage": [
         "15 GB lagringsutrymme"
       ],
+      "24/7 account management support": [
+        "24/7-support för kontohantering"
+      ],
       "24/7 support": [
         "Support dygnet runt"
       ],
@@ -11879,7 +11950,7 @@
         "Avancerad nätverkssäkerhet"
       ],
       "All ${ BRAND_NAME } products and features": [
-        "Alla ${ BRAND_NAME } produkter och funktioner"
+        "Alla ${ BRAND_NAME }-produkter och -funktioner"
       ],
       "All ${ BRAND_NAME } services": [
         "Alla ${ BRAND_NAME }-tjänster"
@@ -11945,7 +12016,7 @@
         "Anpassade fält"
       ],
       "Custom snooze time": [
-        "Anpassad tid för snooza"
+        "Anpassad snooztid"
       ],
       "Data breach monitoring": [
         "Dataintrångsövervakning"
@@ -12429,12 +12500,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } provperiod"
       ],
-      "Get Mail Plus for ${ price }": [
-        "Skaffa Mail Plus för ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Startar från ${ price }"
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ],
@@ -12759,6 +12824,9 @@
       "${ app } product updates": [
         "Produktuppdateringar för ${ app }"
       ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } för Business-nyhetsbrev"
+      ],
       "${ BRAND_NAME } important announcements": [
         "Viktiga meddelanden från ${ BRAND_NAME }"
       ],
@@ -12803,6 +12871,9 @@
       ],
       "Daily email notifications": [
         "Dagliga e-postaviseringar"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Inaktivering av detta kommer att ta bort möjligheten att ta emot aviseringar i ${ BRAND_NAME }-applikationer"
       ],
       "During your first month": [
         "Under din första månad"
@@ -13953,13 +14024,13 @@
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
       "Please select billing country": [
-        "Välj land för fakturering"
+        "Välj faktureringsland"
       ],
       "Please select billing state": [
         "Välj delstat för fakturering"
       ],
       "Please select your billing country first.": [
-        "Välj ditt land för fakturering först."
+        "Välj ditt faktureringsland först."
       ],
       "Please select your billing state first.": [
         "Välj din delstat för fakturering först."
@@ -13967,8 +14038,23 @@
       "Processing payment": [
         "Bearbetar betalning"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Förnyas med ${ renewPrice }, avbryt när som helst."
+      ],
       "Select billing country to pay": [
-        "Välj faktureringsland att betala"
+        "Välj faktureringsland för att betala"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ subscriptionLength } månaderna. Kupongen är giltig för ${ couponRedemptions } förnyelser. Därefter är de automatiska förnyelserna på ${ renewPrice } för ${ subscriptionLengthCopy } månader. Du kan säga upp när som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ subscriptionLength } månaderna. Därefter är de automatiska förnyelserna på ${ renewPrice } för ${ subscriptionLengthCopy } månader. Du kan säga upp när som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första månaderna. Kupongen är giltig för ${ couponRedemptions } förnyelser. Därefter är de automatiska förnyelserna på ${ renewPrice } för ${ subscriptionLength } månader. Du kan säga upp när som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltig för den första månaden. Sedan kommer det förnyas den automatiskt med ${ renewPrice } varje månad. Du kan avbryta när som helst."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transaktionen har upptäckts. Krediterna kommer att läggas till ditt konto när transaktionen är fullständigt bekräftad."
@@ -14455,6 +14541,12 @@
       "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
         "Jag förstår att jag inte kommer att kunna återställa för närvarande låsta data med detta återställningskit"
       ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Om du glömmer ditt ${ BRAND_NAME }-lösenord och behöver återställa det så kommer full åtkomst till ditt ${ BRAND_NAME }-konto att återställas nästa gång du loggar in på den här enheten."
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Om du glömmer ditt ${ BRAND_NAME }-lösenord och behöver återställa det så kommer full åtkomst till ditt ${ BRAND_NAME }-konto att återställas nästa gång du loggar in på den här enheten."
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
         "Om du blir utelåst från ditt ${ BRAND_NAME }-konto kommer ditt återställningskit att låta dig logga in och återställa dina data."
       ],
@@ -14544,6 +14636,9 @@
       ],
       "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
         "Vi stötte på ett fel vid verifieringen av din telefon för återställning. Försök igen senare eller kontakta supporten om problemet kvarstår."
+      ],
+      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
+        "När du aktiverar enhetsbaserad återställning så kommer ${ BRAND_NAME } att lagra en krypterad reservnyckelkedja i din webbläsares webblagringsutrymme."
       ],
       "You are at risk of losing access to your account and data.": [
         "Du riskerar att förlora åtkomst till ditt konto och data."
@@ -14724,14 +14819,26 @@
       "Make sure you copy the above SCIM token now.": [
         "Se till att du kopierar SCIM-token ovan nu."
       ],
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "När SCIM inaktiverats för din organisation så kommer **alla SCIM-användare som erhållits automatiskt från din identitetsleverantör att konverteras till SSO-användare** och du kommer att kunna hantera dem direkt i ${ BRAND_NAME }-inställningarna."
+      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Förenklar användarhantering över olika tjänster. Lägg till, redigera och ta bort användare i din identitetsleverantör, så kommer dessa ändringar automatiskt att tillämpas på din ${ appName }-organisation."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "SCIM-baswebbadressen och -token kommer att tas bort."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "För att återaktivera synkronisering med din identitetsleverantör måste du slutföra SCIM-integreringen igen."
       ]
     },
     "scim: Label": {
+      "SCIM base URL": [
+        "SCIM-baswebbadress"
+      ],
+      "SCIM base URL (or tenant URL)": [
+        "SCIM-baswebbadress (eller tenant-URL)"
+      ],
       "SCIM token": [
         "SCIM-token"
       ]
@@ -14808,6 +14915,9 @@
       ],
       "to be created": [
         "att skapas"
+      ],
+      "to be deleted": [
+        "kommer att tas bort"
       ]
     },
     "Service provider": {
@@ -15034,6 +15144,9 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Vi kommer kontakta dig igen när lösenordsåterställningen är tillgänglig."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Du kan kontrollera statusen för din förfrågan när som helst ${ accountAndPasswordSectionLink } av inställningarna."
       ]
     },
     "session_recovery:initiation:link": {
@@ -15446,7 +15559,7 @@
         "${ n } månader"
       ],
       "/ month": [
-        "/månad"
+        "/ månad"
       ],
       "/month": [
         "/månad"
@@ -15543,6 +15656,9 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } ber om din hjälp att logga in på deras ${ BRAND_NAME }-konto med enkel inloggning."
+      ],
       "${ n } member requested your help to sign in.": [
         "${ n } medlem begärde din hjälp att logga in.",
         "${ n } medlemmar begärde din hjälp att logga in."
@@ -15551,6 +15667,10 @@
         "${ n } användare konverterad till SSO",
         "${ n } användare konverterade till SSO"
       ],
+      "${ n } user detached from SSO": [
+        "${ n } användare frånkopplad från SSO",
+        "${ n } användare frånkopplad från SSO"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska kontot nu:",
         "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska deras konton nu:"
@@ -15558,6 +15678,10 @@
       "${ n } user is inactive. You can safely remove this user from your organization.": [
         "${ n } användare är inaktiv. Du kan säkert ta bort denna användare från din organisation.",
         "${ n } användare är inaktiva. Du kan säkert ta bort dem från din organisation."
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } användare ber om din hjälp för att logga in på deras ${ BRAND_NAME }-konto med enkel inloggning.",
+        "${ n } användare ber om din hjälp för att logga in på deras ${ BRAND_NAME }-konto med enkel inloggning."
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO-användare (tillhandahållna av din identitetsleverantör) kommer att tas bort** och du måste skapa dem manuellt för att lägga till dem i din organisation igen."
@@ -15590,16 +15714,16 @@
         "Be din administratör om åtkomst?"
       ],
       "Backup password": [
-        "Säkerhetskopieringslösenord"
+        "Reservlösenord"
       ],
       "Cancel": [
         "Avbryt"
       ],
       "Change backup password": [
-        "Ändra säkerhetskopieringslösenord"
+        "Ändra reservlösenord"
       ],
       "Confirm backup password": [
-        "Bekräfta säkerhetskopieringslösenord"
+        "Bekräfta reservlösenord"
       ],
       "Confirmation code": [
         "Bekräftelsekod"
@@ -15643,10 +15767,10 @@
         "Ange bekräftelsekoden vi skickade till denna användare."
       ],
       "Enter your backup password": [
-        "Ange ditt säkerhetskopieringslösenord"
+        "Ange ditt reservlösenord"
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
-        "För din säkerhet har du blivit utloggad från alla dina andra aktiva enheter. Innan du kommer åt ditt konto måste du ange ett nytt säkerhetskopieringslösenord."
+        "För din säkerhet har du blivit utloggad från alla dina andra aktiva enheter. Innan du kommer åt ditt konto måste du ange ett nytt reservlösenord."
       ],
       "Grant": [
         "Bevilja"
@@ -15664,7 +15788,7 @@
         "Om du inte gjorde denna begäran, avbryt den nu."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
-        "Om du blir utelåst från ditt ${ BRAND_NAME }-konto kommer ditt säkerhetskopieringslösenord att tillåta dig att logga in och återställa dina data."
+        "Om du blir utelåst från ditt ${ BRAND_NAME }-konto kommer ditt reservlösenord att tillåta dig att logga in och återställa dina data."
       ],
       "Invalid confirmation code": [
         "Ogiltig bekräftelsekod"
@@ -15675,8 +15799,11 @@
       "Join ${ organizationName }": [
         "Gå med ${ organizationName }"
       ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Se till att spara den någonstans säkert så att du kan komma åt ditt konto ifall du förlorar åtkomst till inloggningsuppgifterna hos din identitetsleverantör."
+      ],
       "New backup password": [
-        "Nytt säkerhetskopieringslösenord"
+        "Nytt reservlösenord"
       ],
       "No, it wasn’t me": [
         "Nej, det var inte jag"
@@ -15688,7 +15815,7 @@
         "När enkel inloggning är inaktiverad för din organisation:"
       ],
       "Reject": [
-        "Avvisa"
+        "Neka"
       ],
       "Remove": [
         "Ta bort"
@@ -15703,10 +15830,10 @@
         "Ta bort enkel inloggning för din organisation?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
-        "Ställ in ett säkerhetskopieringslösenord för att lägga till ett extra lager av skydd. Det gör att du kan logga in om du blir utelåst, så se till att förvara det någonstans säkert."
+        "Ställ in ett reservlösenord för att lägga till ett extra skyddslager. Det gör att du kan logga in om du blir utelåst, så se till att förvara det någonstans säkert."
       ],
       "Set your backup password": [
-        "Ange ditt säkerhetskopieringslösenord"
+        "Ange ditt reservlösenord"
       ],
       "Share the confirmation code with your administrator": [
         "Dela bekräftelsekoden med din administratör"
@@ -15718,7 +15845,7 @@
         "Logga in på din organisation"
       ],
       "Sign out and in again to change your backup password": [
-        "Logga ut och in igen för att ändra ditt säkerhetskopieringslösenord"
+        "Logga ut och in igen för att ändra ditt reservlösenord"
       ],
       "Sign-in confirmed": [
         "Inloggning bekräftad"
@@ -15733,16 +15860,16 @@
         "Enkel inloggning borttagen"
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
-        "Detta kommer att logga ut användaren från sina andra enheter och de måste skapa ett nytt säkerhetskopieringslösenord."
+        "Detta kommer att logga ut användaren från sina andra enheter och de måste skapa ett nytt reservlösenord."
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
-        "Detta kommer att logga ut dig från dina andra enheter och du måste skapa ett nytt säkerhetskopieringslösenord."
+        "Detta kommer att logga ut dig från dina andra enheter och du måste skapa ett nytt reservlösenord."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "För att vara säker på att det verkligen är du som försöker logga in på **${ email }**, granska bekräftelsekoden och godkänn begäran från annan enhet."
       ],
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
-        "För att vara säker på att det verkligen är du som försöker logga in, ange ditt säkerhetskopieringslösenord."
+        "För att vara säker på att det verkligen är du som försöker logga in, ange ditt reservlösenord."
       ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "För att vara säker på att det verkligen är du som försöker logga in, dela bekräftelsekoden med din administratör **${ adminEmail }** så att de kan godkänna begäran för **${ email }**."
@@ -15751,7 +15878,7 @@
         "Provade att logga in på"
       ],
       "Use backup password instead": [
-        "Använd säkerhetskopieringslösenord istället"
+        "Använd reservlösenordet istället"
       ],
       "User details:": [
         "Användardetaljer:"
@@ -16354,6 +16481,12 @@
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Du kan fortsätta att dra nytta av alla fördelar med ditt nuvarande paket fram till ${ boldedDate }."
       ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Du har fortfarande ${ expiryDate } av din ${ planName }-prenumeration. Vi kommer att lägga till krediter för den kvarvarande tiden till ditt ${ BRAND_NAME }-konto. Se till att du inte överskrider gränserna för gratispaketet innan uppsägning. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "Ditt ${ planName }-paket håller inte bara din ditt företags data och kommunikationer säkra. Det stödjer dina efterlevnadsmål och får ditt företag att sticka ut och håller ditt team hopkopplat."
+      ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
       ]
@@ -16502,7 +16635,7 @@
         "Enhet borttagen"
       ],
       "Device rejected": [
-        "Enhet avvisad"
+        "Enhet nekad"
       ],
       "Display name updated": [
         "Visningsnamn uppdaterat"
@@ -16646,7 +16779,7 @@
         "Inställning för skrivassistent uppdaterad"
       ],
       "You have successfully canceled your subscription.": [
-        "Du har avbrutit din prenumeration."
+        "Du har sagt upp din prenumeration."
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
@@ -17124,6 +17257,9 @@
       "Choose an account": [
         "Välj ett konto"
       ],
+      "Choose user affiliations": [
+        "Välj användartillhörighet"
+      ],
       "Clear": [
         "Rensa"
       ],
@@ -17241,6 +17377,9 @@
       ],
       "Customize your mail import": [
         "Anpassa din e-postimport"
+      ],
+      "Dark Web Monitoring": [
+        "Övervakning mörka webben"
       ],
       "Dashboard": [
         "Adminpanel"
@@ -17524,7 +17663,7 @@
         "Skaffa appen"
       ],
       "Get Zooming faster": [
-        "Kom snabbare till Zoom"
+        "Börja Zooma snabbare"
       ],
       "Gift": [
         "Gåva"
@@ -17798,7 +17937,7 @@
         "Hänvisa en vän"
       ],
       "Reject device?": [
-        "Avisa enhet?"
+        "Neka enhet?"
       ],
       "Remove all members?": [
         "Ta bort alla medlemmar?"
@@ -18293,6 +18432,9 @@
       "Device information such as operating system": [
         "Enhetsinformation såsom operativsystem"
       ],
+      "Display name for the entity in the eduGAIN database": [
+        "Visningsnamn för entiteten i eduGAIN-databasen"
+      ],
       "Each imported email will have this label": [
         "Varje importerat e-postmeddelande kommer ha denna etikett"
       ],
@@ -18361,6 +18503,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Specificera domänen som tillåts autentisera med SAML SSO"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Ange vilka användare hos eduGAIN-entiteten som är tillåtna att autentisera med SAML SSO"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
@@ -18990,7 +19135,7 @@
     },
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
-        "Problem med plånbok"
+        "Wallet-problem"
       ]
     },
     "wallet_signup_2024:Info": {
@@ -19219,31 +19364,31 @@
         "Var ${ interval }:e vecka på onsdag, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Varje vecka på ${ multipleDaysString }, ${ timesString }"
+        "Veckovis på ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Varje vecka alla dagar, ${ timesString }"
+        "Veckovis alla dagar, ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Varje vecka på fredag, ${ timesString }"
+        "Veckovis på fredag, ${ timesString }"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Varje vecka på måndag, ${ timesString }"
+        "Veckovis på måndag, ${ timesString }"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Varje vecka på lördag, ${ timesString }"
+        "Veckovis på lördag, ${ timesString }"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Varje vecka på söndag, ${ timesString }"
+        "Veckovis på söndag, ${ timesString }"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Varje vecka på torsdag, ${ timesString }"
+        "Veckovis på torsdag, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Varje vecka på tisdag, ${ timesString }"
+        "Veckovis på tisdag, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Varje vecka på onsdag, ${ timesString }"
+        "Veckovis på onsdag, ${ timesString }"
       ]
     },
     "Weekly recurring event, frequency (until)": {
@@ -19284,31 +19429,31 @@
         "Var ${ interval }:e vecka på onsdag, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Varje vecka på ${ multipleDaysString }, ${ untilString }"
+        "Veckovis på ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Varje vecka alla dagar, ${ untilString }"
+        "Veckovis alla dagar, ${ untilString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Varje vecka på fredag, ${ untilString }"
+        "Veckovis på fredag, ${ untilString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Varje vecka på måndag, ${ untilString }"
+        "Veckovis på måndag, ${ untilString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Varje vecka på lördag, ${ untilString }"
+        "Veckovis på lördag, ${ untilString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Varje vecka på söndag, ${ untilString }"
+        "Veckovis på söndag, ${ untilString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Varje vecka på torsdag, ${ untilString }"
+        "Veckovis på torsdag, ${ untilString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Varje vecka på tisdag, ${ untilString }"
+        "Veckovis på tisdag, ${ untilString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Varje vecka på onsdag, ${ untilString }"
+        "Veckovis på onsdag, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -19344,11 +19489,19 @@
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Var ${ interval } år, ${ timesString }",
+        "Vart ${ interval }:e år, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "Årligen, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Var ${ interval } år, ${ untilString }",
+        "Vart ${ interval }:e år, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
       ]

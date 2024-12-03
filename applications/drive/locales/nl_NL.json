@@ -217,6 +217,9 @@
       "Create": [
         "Aanmaken"
       ],
+      "Create a folder": [
+        "Maak een map"
+      ],
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
@@ -4199,6 +4202,9 @@
       "An active recovery file": [
         "Een actief herstelbestand"
       ],
+      "an anonymous user": [
+        "een anonieme gebruiker"
+      ],
       "An issue occurred during the restore process.": [
         "Er is een probleem opgetreden tijdens het herstelproces."
       ],
@@ -4607,9 +4613,6 @@
       ],
       "How does encrypted search work?": [
         "Hoe werkt versleuteld zoeken?"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
@@ -5793,6 +5796,12 @@
       "Calendars": [
         "Agenda's"
       ],
+      "Can edit": [
+        "Kan bewerken"
+      ],
+      "Can view": [
+        "Kan bekijken"
+      ],
       "Cancel download": [
         "Download annuleren"
       ],
@@ -6275,6 +6284,11 @@
         "Uw wachtwoord (admin)"
       ]
     },
+    "Label description": {
+      "View and download": [
+        "Bekijken en downloaden"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "Kleur"
@@ -6738,9 +6752,6 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Begin voor ${ price }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Vanaf ${ priceMailPlus }"
@@ -7364,14 +7375,6 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Krijg Mail Plus voor ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Vanaf ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -9889,6 +9892,9 @@
       ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "Dataherstel"

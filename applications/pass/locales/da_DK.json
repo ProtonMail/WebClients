@@ -106,6 +106,9 @@
       "Confirm access": [
         "Bekræft adgang"
       ],
+      "Confirm all": [
+        "Bekræft alle"
+      ],
       "Continue": [
         "Fortsæt"
       ],
@@ -141,6 +144,9 @@
       ],
       "Create identity": [
         "Opret identitet"
+      ],
+      "Create item": [
+        "Opret element"
       ],
       "Create login": [
         "Opret login"
@@ -385,6 +391,9 @@
       "Please retry": [
         "Prøv igen"
       ],
+      "Reactivate now": [
+        "Genaktiver nu"
+      ],
       "Refresh the page": [
         "Opdater siden"
       ],
@@ -462,6 +471,9 @@
       ],
       "See members": [
         "Vis medlemmer"
+      ],
+      "Select": [
+        "Vælg"
       ],
       "Send invite": [
         "Send invitation"
@@ -608,6 +620,9 @@
       "Black Friday": [
         "Black Friday"
       ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Betal én gang og få ${ lifetimeAccessJSX } til Pass Plus og SimpleLogin. Kun ${ relativePrice }."
+      ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Gem op til ${ discountJSX } på Pass Family. Kun ${ relativePrice }/måned."
       ]
@@ -732,13 +747,16 @@
         "Kunne ikke åbne den oprettede boks"
       ],
       "Could not open invited vault": [
-        "Kunne ikke åbne den inviterede boks"
+        "Kunne ikke åbne boksen, du er blevet inviteret til"
       ],
       "Could not open updated vault": [
         "Kunne ikke åbne den opdaterede boks"
       ],
       "Could not resolve share members": [
         "Kunne ikke afgøre delingsmedlemmer"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Kunne ikke hente brugerinvitationer for boksen \"${ vaultName }\""
       ],
       "Could not validate addresses at the moment.": [
         "Kan ikke validere adresser i øjeblikket."
@@ -1109,6 +1127,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
       ],
+      "${ count } invite successfully sent": [
+        "${ count } invitation sendt",
+        "${ count } invitationer sendt"
+      ],
       "${ count } time": [
         "${ count } gang",
         "${ count } gange"
@@ -1133,6 +1155,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } vil vise elementets favicon via ${ BRAND_NAME } anonymiseret billedproxy."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } vil følge dit systemtema."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } vil kun importere indlogninger, noter, betalingskort og identiteter."
@@ -1261,6 +1286,9 @@
       "Change your password": [
         "Skift din adgangskode"
       ],
+      "Choose your preferred look and feel.": [
+        "Vælg dit foretrukne udseende og stil."
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Bekræft din ekstra adgangskode for at fortsætte med at fjerne den."
       ],
@@ -1377,6 +1405,10 @@
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Følg disse trin for at importere dine data med en generisk CSV:"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Af sikkerhedsmæssige årsager skal du bekræfte adgangen til denne fælles boks.",
+        "Af sikkerhedsmæssige årsager skal du bekræfte adgangen til disse fælles bokse."
       ],
       "For security reasons, your access needs to be confirmed": [
         "Af sikkerhedsmæssige årsager skal din adgang bekræftes."
@@ -1501,6 +1533,9 @@
       "Low Priority": [
         "Lav prioritet"
       ],
+      "Make it your own": [
+        "Gør den til din egen"
+      ],
       "me": [
         "mig"
       ],
@@ -1516,8 +1551,20 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } er mere end en adgangskodeadministrator, den beskytter din adgangskode og din personlige e-mailadresse via e-mail-aliasser. Med samme teknologi, som bruges til ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
       ],
+      "Move ${ count } item": [
+        "Flyt ${ count } element",
+        "Flyt ${ count } elementer"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Flyttes et element til en anden boks, slettes dets historik og alle sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres historik og alle sikre links."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Flyttes et element til en anden boks, slettes dets historik.",
+        "Flyttes elementer til en anden boks, slettes deres historik."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -1923,6 +1970,9 @@
       "You will no longer be notified of data breaches for this email address.": [
         "Du vil ikke længere blive underrettet om databrud for denne e-mailadresse."
       ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Du vil ikke længere have adgang til deling, 2FA, betalingskort og andre avancerede funktioner i ${ PASS_APP_NAME }"
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Du skal bruge denne pinkode til at låse ${ PASS_APP_NAME } op, når den låses automatisk efter en periode med inaktivitet."
       ],
@@ -2234,6 +2284,9 @@
       ],
       "Generic CSV": [
         "Generisk CSV"
+      ],
+      "Get Started": [
+        "Kom i gang"
       ],
       "Grant": [
         "Tildel"
@@ -2671,6 +2724,13 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elementer"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Du kan trække og slippe det valgte element til en anden boks",
+        "Du kan trække og slippe de valgte elementer til en anden boks"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Du valgte ${ semiboldText } i denne boks."
       ]
     },
     "new_plans: feature": {
@@ -2838,6 +2898,17 @@
         "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } brugere."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automatisk"
+      ],
+      "Dark": [
+        "Mørk"
+      ],
+      "Light": [
+        "Lys"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adresser"
@@ -2892,6 +2963,13 @@
       ],
       "Dark Web Monitoring": [
         "Monitorering af det mørke net"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Slet ${ deletedItemsCount } element?",
+        "Slet ${ deletedItemsCount } elementer?"
+      ],
+      "Delete this item?": [
+        "Slet dette element?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Slet boksen \"${ vaultName }\"?"
@@ -2971,8 +3049,19 @@
       "Modified": [
         "Ændret"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Flyt ${ count } element til ${ vaultName }",
+        "Flyt ${ count } elementer til ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Flyt ${ trashedItemsCount } element til papirkurven?",
+        "Flyt ${ trashedItemsCount } elementer til papirkurven?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Flyt alle elementer til \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "Flyt element til \"${ vaultName }\""
       ],
       "No excluded items": [
         "Ingen ekskluderede elementer"
@@ -3004,6 +3093,9 @@
       "Pause monitoring?": [
         "Sæt monitorering på pause?"
       ],
+      "Pending access confirmation": [
+        "Afventer bekræftelse på adgang"
+      ],
       "Pending access to the shared data": [
         "Afventer adgang til de delte data"
       ],
@@ -3014,8 +3106,8 @@
         "Fastgjorte (${ items.length })"
       ],
       "Please note that once deleted, the alias can't be restored.": [
-        "Bemærk, at aliasset ikke kan gendannes, når det er slettet.",
-        "Bemærk, at aliasserne ikke kan gendannes, når de er slettet."
+        "Bemærk, at aliasset ikke kan gendannes, når først det er slettet.",
+        "Bemærk, at aliasserne ikke kan gendannes, når først de er slettet."
       ],
       "Recommended actions": [
         "Anbefalede handlinger"
@@ -3126,6 +3218,9 @@
       "What is the dark web?": [
         "Hvad er det mørke net?"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Dit ${ planName }-abonnement udløber ${ endDate }"
+      ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
       ],
@@ -3134,6 +3229,10 @@
       ],
       "Your welcome gift": [
         "Din velkomstgave"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Du er ved at slette ${ aliasCount } alias permanent.",
+        "Du er ved at slette ${ aliasCount } aliasser permanent."
       ]
     },
     "Validation": {
@@ -3169,11 +3268,25 @@
       "A description of the problem is required": [
         "En beskrivelse af problemet er påkrævet"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Aliasser i papirkurven fortsætter med at videresende e-mails."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alle dine elementer i papirkurven vil blive slettet permanent. Du kan ikke fortryde denne handling."
       ],
       "An error occurred while exporting your data": [
         "Der opstod en fejl under eksport af dine data"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Er du sikker på, at du ønsker at flytte ${ trashedItemsCount } element til papirkurven?",
+        "Er du sikker på, at du ønsker at flytte ${ trashedItemsCount } elementer til papirkurven?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Er du sikker på, at du vil slette ${ deletedItemsCount } element permanent?",
+        "Er du sikker på, at du vil slette ${ deletedItemsCount } elementer permanent?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Er du sikker på, at du vil slette dette element permanent?"
       ],
       "At least one email address is required": [
         "Mindst én e-mailadresse er påkrævet"
@@ -3265,6 +3378,9 @@
       ],
       "Offline": [
         "Offline"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Når de er synkroniseret, vil sletning af aliasser i ${ PASS_SHORT_APP_NAME } også slette dem i SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Kun alfanumeriske tegn, prikker, bindestreger og bundstreger er tilladt"

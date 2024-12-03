@@ -964,6 +964,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ discountedPrice } platí počas prvých ${ cycle } mesiacov. Potom sa automaticky obnoví za zľavnenú cenu ${ nextPrice } na ${ renewalLength } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ discountedPrice } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ nextPrice }. Službu môžete kedykoľvek zrušiť."
       ]
@@ -2713,7 +2716,7 @@
         "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
       ],
       "Please upload a square logo": [
-        "Nahrajte logo v štvorcovom tvare"
+        "Nahrajte logo v štvorcovom tvare, prosím"
       ],
       "Please upload an xml file": [
         "Nahrajte XML súbor"
@@ -4075,7 +4078,7 @@
         "End-to-end šifrovanie emailov je pre túto skupinu vypnuté. Môže byť povolené."
       ],
       "End-to-end email encryption is enabled for this group.": [
-        "Pre túto skupinu je end-to-end šifrovanie emailov aktivované."
+        "Pre túto skupinu je end-to-end šifrovanie emailov povolené."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa koncového bodu získaná od poskytovateľa identity (napr. https://idp.example.com/sso/saml)."
@@ -4175,9 +4178,6 @@
       ],
       "High Priority": [
         "Vysoká priorita"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Verejný kľúč poskytovateľa identity na podpisovanie autentifikačných overení. Malo by tu byť miesto na stiahnutie alebo skopírovanie hash certifikátu od poskytovateľa identity. Stačí vložiť hash certifikátu do poľa textovej oblasti."
@@ -4559,6 +4559,12 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Zadajte 12-slovnú frázu na obnovenie spojenú s vaším účtom, prosím."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kredit.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú ${ creditsRemaining } kredity.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov."
       ],
       "please open a support ticket": [
         "otvorte, prosím, žiadosť o technickú podporu"
@@ -5498,6 +5504,9 @@
         "${ UsedAddresses } z ${ MaxAddresses } emailových adries",
         "${ UsedAddresses } z ${ MaxAddresses } emailových adries"
       ],
+      "Account holder": [
+        "Vlastník účtu"
+      ],
       "Account storage": [
         "Úložisko účtu"
       ],
@@ -5718,7 +5727,7 @@
         "Darčekový kód"
       ],
       "Group address": [
-        "Skupinové adresy"
+        "Skupinová adresa"
       ],
       "Group members": [
         "Členovia skupiny"
@@ -6378,9 +6387,6 @@
       ],
       "From ${ price }": [
         "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Začnite za ${ price }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
@@ -7109,12 +7115,6 @@
       "${ shortPlan.title } Trial": [
         "Skúšobná verzia ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ price }": [
-        "Získajte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ],
       "Your account's usage": [
         "Využitie vášho účtu"
       ]
@@ -7289,6 +7289,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Obnoviť heslá a dvojstupňové overenie používateľov"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Smerujte vašu internetovú prevádzku cez sieť Tor jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
@@ -8043,8 +8046,23 @@
       "Processing payment": [
         "Spracováva sa platba"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Obnovuje sa za ${ renewPrice }, zrušiť môžete kedykoľvek."
+      ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvvých ${ subscriptionLength } mesiacov. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ subscriptionLength } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLength } mesiac. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPrice }. Službu môžete kedykoľvek zrušiť."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakcia bola úspešne rozpoznaná. Kredity budú pripísané na váš účet po úplnom potvrdení transakcie."
@@ -11124,6 +11142,9 @@
     "Tor out of date": {
       "stable release": [
         "stabilná verzia"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na poslednú ${ stableRelease }"
       ]
     },
     "unprivatization": {

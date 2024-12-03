@@ -375,6 +375,9 @@
       "Disable alias": [
         "Alias deaktivieren"
       ],
+      "Disabling alias": [
+        "Alias deaktivieren"
+      ],
       "Discard": [
         "Verwerfen"
       ],
@@ -6483,9 +6486,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Ich sende diese Nachricht an einen Nicht-${ MAIL_APP_NAME }-Benutzer."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
       ],
@@ -7047,6 +7047,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Entschuldigung, diese Nachricht existiert nicht oder ist bereits abgelaufen."
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Speichermöglichkeiten werden von deinem Browser nicht unterstützt. Wir brauchen diese Unterstützung um die Suche nach Nachrichteninhalten zu aktivieren."
+      ],
       "Subject": [
         "Betreff"
       ],
@@ -7189,6 +7192,9 @@
       ],
       "This message is from a mailing list.": [
         "Diese Nachricht wurde von einer Verteilerliste gesendet."
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "Diese Nachricht stammt von einem SimpleLogin Alias."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Diese Nachricht ist mit einem Schlüssel signiert, dem noch nicht vertraut wurde."
@@ -7415,6 +7421,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Wir haben die folgenden Werbetreibenden und Organisationen daran gehindert zu sehen, wann du diese E-Mail öffnest, welches Gerät du verwendest und wo du dich befindest."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Wir können die Suche nach Nachrichteninhalten in diesem Browser nicht aktivieren."
       ],
       "We could not verify the sender's trusted keys.": [
         "Die vertrauenswürdigen Schlüssel des Absenders konnten nicht verifiziert werden."
@@ -9181,9 +9190,6 @@
       "Get ${ planTitle }": [
         "${ planTitle } holen"
       ],
-      "Get started for ${ price }": [
-        "Starte für ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Ab ${ priceMailPlus }"
       ],
@@ -9342,6 +9348,9 @@
       ],
       "Administration Panel": [
         "Verwaltungskonsole"
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME } Produkte und Funktionen"
@@ -9780,14 +9789,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hol dir Mail Plus für ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ab ${ price }"
       ]
     },
     "new_plans: title": {
@@ -10507,6 +10508,9 @@
       ],
       "Please select your billing state first.": [
         "Bitte wähle zuerst deinen Rechnungsstaat aus."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Verlängert sich zu ${ renewPrice }, jederzeit kündbar."
       ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
@@ -12760,6 +12764,9 @@
       ],
       "Customize your mail import": [
         "Mail-Import anpassen"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
       ],
       "Data recovery": [
         "Datenwiederherstellung"

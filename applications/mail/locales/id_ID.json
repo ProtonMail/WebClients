@@ -372,6 +372,9 @@
       "Disable alias": [
         "Nonaktifkan alias"
       ],
+      "Disabling alias": [
+        "Menonaktifkan alias"
+      ],
       "Discard": [
         "Buang"
       ],
@@ -956,6 +959,9 @@
       ],
       "Remove this label": [
         "Hapus label ini"
+      ],
+      "Remove Zoom meeting": [
+        "Hapus pertemuan Zoom"
       ],
       "Replace": [
         "Ubah"
@@ -1734,7 +1740,7 @@
         "Penawaran ${ PASS_SHORT_APP_NAME } Plus seumur hidup tidak memiliki biaya pembaruan. Cukup satu kali pembayaran untuk akses selama-lamanya ke Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
-        "Diskon berdasar pada harga bulanan standar."
+        "Diskon didasarkan pada harga bulanan standar."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Apabila Anda membeli Pass Family atau Unlimited, langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir siklus tagihan Anda."
@@ -6393,9 +6399,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Saya mengirimkan pesan ini kepada pengguna non-${ MAIL_APP_NAME }."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
@@ -6738,6 +6741,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo pada akun Anda akan berkurang menjadi ${ creditsRemaining }."
+      ],
       "Please open the document to view it.": [
         "Silakan buka dokumen ini untuk melihat isinya."
       ],
@@ -6954,6 +6960,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Maaf, pesan ini tidak ada atau telah kedaluwarsa."
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Kapabilitas penyimpanan tidak didukung pada browser ini. Kami membutuhkan dukungan ini untuk mengaktifkan pencarian konten pesan."
+      ],
       "Subject": [
         "Subjek"
       ],
@@ -7095,6 +7104,9 @@
       "This message is from a mailing list.": [
         "Pesan ini berasal dari milis."
       ],
+      "This message is from a SimpleLogin alias.": [
+        "Pesan ini berasal dari alias SimpleLogin."
+      ],
       "This message is signed by a key that has not been trusted yet.": [
         "Pesan ini ditandatangani dengan kunci yang belum dipercaya."
       ],
@@ -7212,6 +7224,9 @@
       "Turn on to search the content of your messages": [
         "Aktifkan untuk mencari konten pesan Anda"
       ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Kapabilitas penyimpanan tidak dapat diakses pada browser ini. Kami membutuhkan akses ini untuk mengaktifkan pencarian konten pesan."
+      ],
       "Unlock message": [
         "Buka kunci pesan"
       ],
@@ -7319,6 +7334,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Kami telah memblokir para pengiklan dan organisasi berikut agar mereka tidak dapat melacak kapan Anda membuka email ini, perangkat apa yang Anda gunakan, dan di mana Anda berada."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Kami tidak dapat mengaktifkan pencarian konten pesan pada browser ini."
       ],
       "We could not verify the sender's trusted keys.": [
         "Kami tidak dapat memverifikasi kunci yang dipercaya pengirim."
@@ -7883,6 +7901,9 @@
       ],
       "/month": [
         "/bulan"
+      ],
+      "Account holder": [
+        "Pemilik akun"
       ],
       "Actions": [
         "Tindakan"
@@ -9059,9 +9080,6 @@
       "Get ${ planTitle }": [
         "Dapatkan ${ planTitle }"
       ],
-      "Get started for ${ price }": [
-        "Mulai dengan harga ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Mulai dari ${ priceMailPlus }"
       ],
@@ -9648,14 +9666,6 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Mulai dari ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -9823,6 +9833,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Arahkan lalu lintas internet Anda melalui jaringan Tor dengan satu klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
@@ -12561,6 +12574,9 @@
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
       ],
+      "Dark Web Monitoring": [
+        "Pemantauan Dark Web"
+      ],
       "Data recovery": [
         "Pemulihan data"
       ],
@@ -13231,6 +13247,9 @@
     "Tor out of date": {
       "stable release": [
         "versi rilisan stabil"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Versi Tor Browser ini tidak didukung. Silakan perbarui browser Anda ke ${ stableRelease } terbaru"
       ]
     },
     "Update font modal": {

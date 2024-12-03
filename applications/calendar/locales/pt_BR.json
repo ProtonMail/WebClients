@@ -557,6 +557,9 @@
       "Remove this participant": [
         "Remover este participante"
       ],
+      "Remove Zoom meeting": [
+        "Remover reunião do Zoom"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -724,6 +727,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Faça upgrade para ${ BRAND_NAME } Unlimited"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upload picture": [
         "Carregar imagem"
@@ -959,6 +965,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ discountedPrice } é válido nos primeiros ${ cycle } meses. Em seguida, será renovado automaticamente pelo preço com desconto de ${ nextPrice } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ discountedPrice } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ nextPrice } todo mês. Você pode cancelar a qualquer momento."
       ]
@@ -3105,6 +3114,9 @@
       "Failed to get original occurrence in series": [
         "Não foi possível obter a ocorrência original em série."
       ],
+      "Failed to load OAuth modal.": [
+        "Falha ao carregar o modal OAuth."
+      ],
       "First name is too long": [
         "Primeiro nome é muito longo"
       ],
@@ -4746,9 +4758,6 @@
       "High Priority": [
         "Alta prioridade"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
       ],
@@ -4956,6 +4965,10 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo, dependendo do tamanho da sua lista de contatos."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes.",
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Forneça um nome e um endereço de e-mail para criar um grupo."
@@ -5539,6 +5552,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
+      ],
+      "Account holder": [
+        "Titular da conta"
       ],
       "Add email address": [
         "Adicionar endereços de e-mail"
@@ -6449,9 +6465,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Iniciando a partir de ${ priceMailPlus }"
       ],
@@ -7077,12 +7090,6 @@
       ]
     },
     "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Obtenha Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -7241,6 +7248,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Redefina as senhas de usuários e redefina a autenticação de dois fatores para os usuários"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Envie todo o seu tráfego na internet por meio da rede Tor com um único clique"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com um armazenamento cloud criptografado. Inclui sincronização automática, compartilhamento de arquivo criptografado, e mais."
@@ -7800,8 +7810,20 @@
       "Please select your billing state first.": [
         "Selecione primeiro seu estado de cobrança."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Renova por ${ renewPrice }, cancele a qualquer momento."
+      ],
       "Select billing country to pay": [
         "Selecione o país de cobrança para pagar"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
@@ -9260,6 +9282,9 @@
       "Fingerprint copied to clipboard": [
         "Impressão digital copiada para a área de transferência"
       ],
+      "Finish Zoom authentication to save event": [
+        "Terminar a autenticação do Zoom para salvar o evento"
+      ],
       "Future events deleted": [
         "Eventos futuros excluídos"
       ],
@@ -9608,6 +9633,9 @@
       ],
       "Customize your mail import": [
         "Personalize sua importação de e-mail"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoramento da Dark Web"
       ],
       "Data recovery": [
         "Recuperação de dados"

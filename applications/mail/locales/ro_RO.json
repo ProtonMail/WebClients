@@ -6618,9 +6618,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Trimit acest mesaj unui destinatar care nu este utilizator al ${ MAIL_APP_NAME }."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
       ],
@@ -8180,6 +8177,9 @@
       "/month": [
         "/lună"
       ],
+      "Account holder": [
+        "Titular cont"
+      ],
       "Actions": [
         "Acțiuni"
       ],
@@ -9371,9 +9371,6 @@
       "Get ${ planTitle }": [
         "Luați ${ planTitle }"
       ],
-      "Get started for ${ price }": [
-        "Începeți cu ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Începând de la ${ priceMailPlus }"
       ],
@@ -10006,14 +10003,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Începând de la ${ price }"
       ]
     },
     "new_plans: title": {
@@ -13100,6 +13089,9 @@
       ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorizare pe internetul ascuns"
       ],
       "Data recovery": [
         "Recuperare date"

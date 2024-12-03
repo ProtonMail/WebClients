@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "activate": [
         "activeer"
+      ],
+      "Activate": [
+        "Activeren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -1182,6 +1182,9 @@
       ],
       "Upgrade now": [
         "Nu upgraden"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Upgraden naar Business"
@@ -7593,9 +7596,6 @@
       "High Priority": [
         "Hoge Prioriteit"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identiteitsprovider heeft een publieke sleutel om authenticatieverklaringen te ondertekenen. Er moet een plaats zijn om de certificaathash van de identiteitsprovider te downloaden of te kopiëren. Plak gewoon de certificaathash in het tekstveld."
       ],
@@ -11783,9 +11783,6 @@
       "From ${ price }": [
         "Vanaf ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Begin voor ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Vanaf ${ priceMailPlus }"
       ],
@@ -12522,12 +12519,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } Proefversie"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Krijg Mail Plus voor ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Vanaf ${ price }"
       ],
       "Your account's usage": [
         "Verbruik van uw account"
@@ -17372,6 +17363,9 @@
       ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Dashboard": [
         "Dashboard"

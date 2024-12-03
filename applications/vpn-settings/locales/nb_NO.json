@@ -338,7 +338,7 @@
         "Gå til etikett"
       ],
       "Got it": [
-        "Forstått"
+        "Skjønner"
       ],
       "Help": [
         "Hjelp"
@@ -2880,7 +2880,7 @@
         "Avvis invitasjon"
       ],
       "Got it": [
-        "Forstått"
+        "Skjønner"
       ],
       "Invite a user": [
         "Inviter en bruker"
@@ -4103,9 +4103,6 @@
       ],
       "High Priority": [
         "Høy prioritet"
-      ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identitetsleverandørens offentlige nøkkel for å signere godkjenningsdeklarasjoner. Det bør være et sted å laste ned eller kopiere sertifikatnummeret fra identitetsleverandøren. Bare lim inn sertifikathashen i tekstfeltfeltet."
@@ -5395,6 +5392,9 @@
         "${ UsedAddresses } av ${ MaxAddresses } e-postadresse",
         "${ UsedAddresses } av ${ MaxAddresses } e-postadresser"
       ],
+      "Account holder": [
+        "Kontoinnehaver"
+      ],
       "Account storage": [
         "Kontolagring"
       ],
@@ -6275,9 +6275,6 @@
       "From ${ price }": [
         "Fra ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Starter fra ${ priceMailPlus }"
       ],
@@ -6954,12 +6951,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } prøveversjon"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Starter fra ${ price }"
       ],
       "Your account's usage": [
         "Kontoens forbruk"
@@ -7865,7 +7856,7 @@
         "CVC"
       ],
       "Got it": [
-        "Forstått"
+        "Skjønner"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -8541,7 +8532,7 @@
         "Avbryt forespørsel"
       ],
       "Got it": [
-        "Forstått"
+        "Skjønner"
       ],
       "Learn more": [
         "Lær mer"
@@ -8591,7 +8582,7 @@
     },
     "session_recovery:initiation:action": {
       "Got it": [
-        "Forstått"
+        "Skjønner"
       ],
       "Request password reset": [
         "Be om tilbakestilling av passord"
@@ -9317,7 +9308,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Forstått"
+        "Skjønner"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Bare logg på din Apple App Store-konto, deretter velg ${ subscriptions }."
@@ -9496,7 +9487,7 @@
         "Mapper, etiketter og egendefinerte filtre"
       ],
       "Got it": [
-        "Forstått"
+        "Skjønner"
       ],
       "Have a question?": [
         "Har du et spørsmål?"

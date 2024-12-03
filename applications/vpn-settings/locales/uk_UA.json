@@ -2780,6 +2780,12 @@
       "Manage user accounts": [
         "Керувати обліковими записами користувачів"
       ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Можна прийняти лише ${ n } запрошення протягом 6 місяців",
+        "Можна прийняти лише ${ n } запрошення протягом 6 місяців",
+        "Можна прийняти лише ${ n } запрошень протягом 6 місяців",
+        "Можна прийняти лише ${ n } запрошень протягом 6 місяців"
+      ],
       "Pending": [
         "У черзі"
       ],
@@ -2806,6 +2812,18 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас запросили приєднатися до ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Ви досягли обмеження в ${ n } прийняте запрошення за 6 місяців.",
+        "Ви досягли обмеження в ${ n } прийняті запрошення за 6 місяців.",
+        "Ви досягли обмеження в ${ n } прийнятих запрошень за 6 місяців.",
+        "Ви досягли обмеження в ${ n } прийнятих запрошень за 6 місяців."
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Ви досягли обмеження в ${ n } прийняте запрошення за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів.",
+        "Ви досягли обмеження в ${ n } прийняті запрошення за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів.",
+        "Ви досягли обмеження в ${ n } прийнятих запрошень за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів.",
+        "Ви досягли обмеження в ${ n } прийнятих запрошень за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів."
       ],
       "You have successfully joined the family group": [
         "Ви успішно приєдналися до сімейної групи"
@@ -4837,6 +4855,12 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Ви можете використовувати такі облікові дані для з'єднання з сервером ${ VPN_APP_NAME } через сторонні програми з відкритим кодом, наприклад, Tunnelblick для macOS чи OpenVPN для GNU/Linux."
       ],
+      "You have ${ availableCount } new server available.": [
+        "Вам доступний ${ availableCount } новий сервер.",
+        "Вам доступні ${ availableCount } нові сервери.",
+        "Вам доступні ${ availableCount } нових серверів.",
+        "Вам доступні ${ availableCount } нових серверів."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас є пробний період передплати ${ planTitle }. Якщо ви бажаєте продовжити передплату після пробного періоду, будь ласка, додайте спосіб оплати."
       ],
@@ -5110,6 +5134,9 @@
       "Amount due": [
         "До сплати"
       ],
+      "Anderson": [
+        "Андерсон"
+      ],
       "Assertion Consumer Service URL": [
         "URL-адреса обслуговування клієнтів"
       ],
@@ -5169,6 +5196,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
+      ],
+      "Company name": [
+        "Назва компанії"
       ],
       "Config to connect to ${ serverName }": [
         "Конфігурація для з'єднання з ${ serverName }"
@@ -5452,6 +5482,9 @@
       "Reveal password": [
         "Показати пароль"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -5481,6 +5514,9 @@
       ],
       "System information": [
         "Інформація про систему"
+      ],
+      "Thomas": [
+        "Томас"
       ],
       "Two-password mode": [
         "Двопарольний режим"
@@ -5884,11 +5920,17 @@
       "From ${ price }": [
         "Від ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Починаючи з ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Покращити"
       ],
       "Upgrade now": [
         "Покращити"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Покращити до ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -8137,6 +8179,9 @@
       "/ month": [
         "/ місяць"
       ],
+      "/month": [
+        "/місяць"
+      ],
       "1 year": [
         "1 рік"
       ],
@@ -9034,6 +9079,12 @@
       ],
       "Activate user": [
         "Активувати користувача"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "Додати ${ totalServerCount } сервер?",
+        "Додати ${ totalServerCount } сервери?",
+        "Додати ${ totalServerCount } серверів?",
+        "Додати ${ totalServerCount } серверів?"
       ],
       "Add address": [
         "Додати адресу"

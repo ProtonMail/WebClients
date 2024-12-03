@@ -4063,9 +4063,6 @@
       "High Priority": [
         "Hohe Priorität"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Öffentlicher Schlüssel des Identitätsanbieters zur Signierung von Authentifizierungsbehauptungen. Es sollte einen Ort geben, um den Zertifikat-Hash vom Identitätsanbieter herunterzuladen oder zu kopieren. Füge einfach den Zertifikat-Hash in das Textfeld ein."
       ],
@@ -6202,9 +6199,6 @@
       "From ${ price }": [
         "Ab ${ price }"
       ],
-      "Get started for ${ price }": [
-        "Starte für ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Ab ${ priceMailPlus }"
       ],
@@ -6369,6 +6363,9 @@
       ],
       "Administration Panel": [
         "Verwaltungskonsole"
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
       ],
       "Advanced network security": [
         "Fortgeschrittene Netzwerksicherheit"
@@ -6869,12 +6866,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }-Testversion"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Hol dir Mail Plus für ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ab ${ price }"
       ],
       "Your account's usage": [
         "Verbrauch deines Kontos"
@@ -7742,6 +7733,9 @@
       ],
       "Processing payment": [
         "Zahlungsabwicklung"
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Verlängert sich zu ${ renewPrice }, jederzeit kündbar."
       ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"

@@ -381,6 +381,9 @@
       "Disable alias": [
         "Vypnúť alias"
       ],
+      "Disabling alias": [
+        "Vypínanie aliasu"
+      ],
       "Discard": [
         "Zahodiť"
       ],
@@ -968,6 +971,9 @@
       ],
       "Remove this label": [
         "Odstrániť štítok"
+      ],
+      "Remove Zoom meeting": [
+        "Odstrániť Zoom stretnutie"
       ],
       "Replace": [
         "Nahradiť"
@@ -1647,6 +1653,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ discountedPrice } platí počas prvých ${ cycle } mesiacov. Potom sa automaticky obnoví za zľavnenú cenu ${ nextPrice } na ${ renewalLength } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ discountedPrice } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ nextPrice }. Službu môžete kedykoľvek zrušiť."
       ]
@@ -6708,9 +6717,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Túto správu posielam príjemcovi, ktorý nie je používateľom služby ${ MAIL_APP_NAME }."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
       ],
@@ -7056,6 +7062,12 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornenie, tento proces môže trvať nejakú dobu v závislosti na veľkosti Vášho adresára."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kredit.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú ${ creditsRemaining } kredity.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov."
+      ],
       "Please open the document to view it.": [
         "Ak si chcete dokument pozrieť, otvorte ho, prosím."
       ],
@@ -7278,6 +7290,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Je nám ľúto, táto správa neexistuje, alebo jej už vypršala platnosť."
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Možnosti úložiska nie sú v tomto prehliadači podporované, potrebujeme túto podporu, aby sme mohli prehľadávať obsah správ."
+      ],
       "Subject": [
         "Predmet"
       ],
@@ -7425,6 +7440,9 @@
       "This message is from a mailing list.": [
         "Správa pochádza zo zoznamu adresátov."
       ],
+      "This message is from a SimpleLogin alias.": [
+        "Táto správa je zo SimpleLogin aliasu."
+      ],
       "This message is signed by a key that has not been trusted yet.": [
         "Táto správa je podpísaná prílohou kľúča, ktorý nie je dôveryhodný kľúč."
       ],
@@ -7545,6 +7563,9 @@
       "Turn on to search the content of your messages": [
         "Zapnite, ak chcete vyhľadávať v obsahu vašich správ"
       ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "V tomto prehliadači nie je možné získať prístup k možnostiam ukladania, tento prístup potrebujeme na umožnenie vyhľadávania v obsahu správ."
+      ],
       "Unlock message": [
         "Odomknúť správu"
       ],
@@ -7652,6 +7673,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Zablokovali sme nasledovných inzerentov a organizácie aby nevideli, kedy otvoríte tento email, aké zariadenie používate a kde sa nachádzate."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "V tomto prehliadači nemôžeme povoliť vyhľadávanie obsahu správ."
       ],
       "We could not verify the sender's trusted keys.": [
         "Nemohli sme overiť dôverné kľúče odosielateľa."
@@ -8279,6 +8303,9 @@
       ],
       "/month": [
         "/mesiac"
+      ],
+      "Account holder": [
+        "Vlastník účtu"
       ],
       "Actions": [
         "Akcia"
@@ -9479,9 +9506,6 @@
       "Get ${ planTitle }": [
         "Získajte ${ planTitle }"
       ],
-      "Get started for ${ price }": [
-        "Začnite za ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
       ],
@@ -10140,14 +10164,6 @@
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Získajte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -10318,6 +10334,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Obnoviť heslá a dvojstupňové overenie používateľov"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Smerujte vašu internetovú prevádzku cez sieť Tor jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
@@ -10885,8 +10904,23 @@
       "Please select your billing state first.": [
         "Najprv vyberte fakturačný štát, prosím."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Obnovuje sa za ${ renewPrice }, zrušiť môžete kedykoľvek."
+      ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvvých ${ subscriptionLength } mesiacov. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ subscriptionLength } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLength } mesiac. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPrice }. Službu môžete kedykoľvek zrušiť."
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
@@ -11990,6 +12024,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Alias vypnutý"
+      ],
       "Unsubscribed": [
         "Odber bol odhlásený"
       ]
@@ -13293,6 +13330,9 @@
       "Customize your mail import": [
         "Prispôsobiť import vášho emailu"
       ],
+      "Dark Web Monitoring": [
+        "Monitorovanie Dark Webu"
+      ],
       "Data recovery": [
         "Obnovenie údajov"
       ],
@@ -13987,6 +14027,9 @@
     "Tor out of date": {
       "stable release": [
         "stabilná verzia"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na poslednú ${ stableRelease }"
       ]
     },
     "Update font modal": {

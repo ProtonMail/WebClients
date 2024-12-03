@@ -70,11 +70,11 @@
       "Accept": [
         "Sprejmi"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -11845,9 +11845,6 @@
       "${ shortPlan.title } Trial": [
         "Preizkus ${ shortPlan.title }"
       ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
-      ],
       "Your account's usage": [
         "Uporaba vašega računa"
       ]
@@ -15933,6 +15930,9 @@
       ],
       "Customize your mail import": [
         "Prilagodite uvoz pošte."
+      ],
+      "Dark Web Monitoring": [
+        "Spremljanje temnega spleta"
       ],
       "Dashboard": [
         "Nadzorna plošča"

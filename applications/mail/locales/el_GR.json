@@ -6510,9 +6510,6 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Στέλνω αυτό το μήνυμα σε έναν χρήστη εκτός ${ MAIL_APP_NAME }."
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
       ],
@@ -8044,6 +8041,9 @@
       "/month": [
         "/μήνα"
       ],
+      "Account holder": [
+        "Δικαιούχος λογαριασμού"
+      ],
       "Actions": [
         "Ενέργειες"
       ],
@@ -9227,9 +9227,6 @@
       "Get ${ planTitle }": [
         "Αποκτήστε ${ planTitle }"
       ],
-      "Get started for ${ price }": [
-        "Ξεκινήστε με ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Ξεκινώντας από ${ priceMailPlus }"
       ],
@@ -9838,14 +9835,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Αποκτήστε το Mail Plus για ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ξεκινώντας από ${ price }"
       ]
     },
     "new_plans: title": {
@@ -12851,6 +12840,9 @@
       ],
       "Customize your mail import": [
         "Προσαρμογή εισαγωγής μηνυμάτων"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "Ανάκτηση δεδομένων"

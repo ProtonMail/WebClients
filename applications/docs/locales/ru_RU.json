@@ -303,6 +303,9 @@
       "Go to label": [
         "Перейти к ярлыку"
       ],
+      "Got it": [
+        "Понятно"
+      ],
       "Help": [
         "Помощь"
       ],
@@ -807,6 +810,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Специально сниженная цена ${ discountedPrice } действует в течение первых ${ cycle } месяцев. Затем она будет автоматически продляться ${ renewalLength } месяцев по сниженной цене ${ nextPrice }. Отменить можно в любое время."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Специальная цена в ${ discountedPrice } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } каждый месяц. Отменить подписку можно в любой момент."
       ]
@@ -1109,11 +1115,17 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } хранилище"
       ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } места для писем"
+      ],
       "Advanced account protection": [
         "Расширенная защита аккаунта"
       ],
       "All ${ BRAND_NAME } apps and premium features": [
         "Все приложения ${ BRAND_NAME } и платные функции"
+      ],
+      "Cancel and downgrade": [
+        "Отменить и перейти на более дешевую версию"
       ],
       "Cloud storage and sharing for large files": [
         "Облачное хранилище и обмен большими файлами"
@@ -1124,14 +1136,23 @@
       "Encrypted password manager": [
         "Зашифрованный менеджер паролей"
       ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Наш базовый, бесплатный план со сквозным шифрованием электронной почты и хранением. Премиум функции не включены."
+      ],
       "Save ${ upsellSavings }": [
         "Сэкономьте ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Сэкономьте деньги с помощью ${ upsellPlanName }"
       ],
       "Secure personal and shared calendar": [
         "Безопасные личный и общий календари"
       ],
       "Try ${ planName }": [
         "Попробуйте ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Попробуйте ${ upsellPlanName } и сохраните доступ ко всем премиальным функциям электронной почты и календаря."
       ],
       "Ultra fast and private VPN": [
         "Сверхбыстрый и конфиденциальный VPN"
@@ -4235,9 +4256,6 @@
       "High Priority": [
         "Высокий приоритет"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
       ],
@@ -4489,6 +4507,12 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Пожалуйста, обратите внимание, что этот процесс может занять некоторое время в зависимости от размера вашей адресной книги."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредит.",
+        "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету.",
+        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов.",
+        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредита."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Пожалуйста, предоставьте имя и email-адрес для создания группы"
@@ -5059,6 +5083,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Проверьте позже.)"
+      ],
+      "Account holder": [
+        "Владелец счёта"
       ],
       "Add email address": [
         "Добавить адрес эл. почты"
@@ -5947,9 +5974,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "Начните с ${ price }"
-      ],
       "Starting from ${ priceMailPlus }": [
         "Начиная с ${ priceMailPlus }"
       ],
@@ -6608,14 +6632,6 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Оформите Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Начиная с ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -6786,6 +6802,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Сбрасывайте пароли и двухфакторную аутентификацию для пользователей"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Направляйте свой трафик через сеть Tor одним нажатием"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
@@ -7248,6 +7267,14 @@
         "Новая кредитная/дебетовая карта"
       ]
     },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Использовать имя компании"
+      ],
+      "Use personal name": [
+        "Использовать личное имя"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Страна плательщика"
@@ -7288,8 +7315,23 @@
       "Please select your billing state first.": [
         "Сначала выберите государство для выставления счета."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Затем стоимость подписки составит ${ renewPrice }. Отменить её можно в любое время."
+      ],
       "Select billing country to pay": [
         "Для оплаты, пожалуйста выберите страну"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ subscriptionLength } месяцев. Купон действителен ${ couponRedemptions } продления. Затем он будет автоматически продляться ${ subscriptionLengthCopy } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ subscriptionLength } месяцев. Затем она будет автоматически продляться ${ subscriptionLengthCopy } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен ${ couponRedemptions } продления. Затем он будет автоматически продляться ${ subscriptionLength } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Специальная цена в ${ priceWithDiscount } действует первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ renewPrice } каждый месяц. Отменить подписку можно в любой момент."
       ],
       "Timeout exceeded": [
         "Превышено время ожидания"
@@ -8230,6 +8272,9 @@
       "Got it": [
         "Понятно"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Просто войдите в свой аккаунт Apple App Store, и выберите ${ subscriptions }."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Просто войдите в свой аккаунт Play Маркет, а затем нажмите ${ subscriptions }."
       ],
@@ -8701,6 +8746,9 @@
       ],
       "Customize your mail import": [
         "Настройка импорта вашей почты"
+      ],
+      "Dark Web Monitoring": [
+        "Мониторинг Темной паутины"
       ],
       "Data recovery": [
         "Восстановление данных"

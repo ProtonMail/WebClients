@@ -557,6 +557,9 @@
       "Remove this participant": [
         "ამ მონაწილის წაშლა"
       ],
+      "Remove Zoom meeting": [
+        "Zoom-ის შეხვედრის წაშლა"
+      ],
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
       ],
@@ -724,6 +727,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Unlimited-ზე"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
@@ -3092,6 +3098,9 @@
       "Failed to get original occurrence in series": [
         "საწყისი მოხდენის სერიებად მიღების შეცდომა"
       ],
+      "Failed to load OAuth modal.": [
+        "შეუძლებელია Oauth-ის მოდალის ჩატვირთვა."
+      ],
       "First name is too long": [
         "სახელი ძალიან გრძელია"
       ],
@@ -4718,9 +4727,6 @@
       "High Priority": [
         "მაღალი პრიორიტეტი"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
       ],
@@ -4928,6 +4934,10 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი.",
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
       ],
       "Please provide a name and an email address for creating a group.": [
         "ჯგუფის შესაქმნელად შეიყვანეთ სახელი და ელფოსტის მისამართი."
@@ -5502,6 +5512,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
+      ],
+      "Account holder": [
+        "ანგარიშის მფლობელი"
       ],
       "Add email address": [
         "ელფოსტის მისამართის დამატება"
@@ -6412,9 +6425,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
       ],
-      "Get started for ${ price }": [
-        "დაწყება ${ price }-დან"
-      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }-დან"
       ],
@@ -7039,14 +7049,6 @@
         "გადავრთო სატარიფო გეგმა?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "მიიღეთ Mail Plus ფასით ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "${ price }-დან"
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: დაიცავით თქვენი განრიგი გამჭოლი დაშიფვრით. შეიცავს მომხმარებლის კალენდრების მხარდაჭერას, კალენდრის გაზიარებას და ა.შ."
@@ -7195,6 +7197,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "მომხმარებლების პაროლებისა და 2FA-ის აღდგენა"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "გადაამისამართეთ თქვენი ინტერნეტ-ტრაფიკი Tor-ის ქსელში თაგუნას ერთადერთი წკაპუნით"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
@@ -7744,6 +7749,9 @@
       ],
       "Please select your billing state first.": [
         "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "განახლების დრო ${ renewPrice }. გააუქმეთ ნებისმიერ დროს."
       ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
@@ -9199,6 +9207,9 @@
       "Fingerprint copied to clipboard": [
         "ანაბეჭდი დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Finish Zoom authentication to save event": [
+        "მოვლენის შესანახად დაასრულეთ Zoom-ის ავთენტიკაცია"
+      ],
       "Future events deleted": [
         "მომავალი მოვლენები წაიშალა"
       ],
@@ -9547,6 +9558,9 @@
       ],
       "Customize your mail import": [
         "თქვენი ელფოსტის შემოტანის მორგება"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "მონაცემების აღდგენა"
