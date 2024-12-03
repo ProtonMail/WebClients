@@ -14,11 +14,13 @@ import { Items } from '@proton/pass/components/Item/Items';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
+import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { selectIsSSO, selectLockSetupRequired } from '@proton/pass/store/selectors';
+import { SpotlightMessage } from '@proton/pass/types';
 
 import { Header } from './Header/Header';
 
@@ -46,7 +48,11 @@ const MainSwitch: FC = () => {
                             </Switch>
                         )}
                         <ThemeOnboardingModal />
-                        {isSSO && <OnboardingSSO />}
+                        {isSSO && (
+                            <WithSpotlightModal type={SpotlightMessage.SSO_CHANGE_LOCK}>
+                                {(props) => <OnboardingSSO {...props} />}
+                            </WithSpotlightModal>
+                        )}
                     </div>
                 </main>
             )}
