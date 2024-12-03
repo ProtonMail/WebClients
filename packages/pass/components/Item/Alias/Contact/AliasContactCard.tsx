@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, Tooltip, useNotifications } from '@proton/components/index';
+import { Icon, useNotifications } from '@proton/components/index';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -20,7 +20,7 @@ type Props = { contact: AliasContactWithStatsGetResponse };
 
 export const AliasContactCard: FC<Props> = ({ contact }) => {
     const { onUpdate, onDelete, shareId, itemId } = useAliasContacts();
-    const { writeToClipboard } = usePassCore();
+    const { writeToClipboard, onLink } = usePassCore();
     const { createNotification } = useNotifications();
 
     const { CreateTime, ReverseAlias, Email, ForwardedEmails, RepliedEmails, Blocked, ID } = contact;
@@ -35,6 +35,8 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
                 .t`Reverse alias address copied to clipboard. Send an email to this address and ${Email} will receive it.`,
         });
     };
+
+    const mailtoHref = `mailto:${ReverseAlias}`;
 
     return (
         <FieldsetCluster className={clsx('mb-3', deleteContact.loading && 'opacity-30 pointer-events-none')}>
@@ -67,18 +69,16 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
                         </Button>
                     </div>
                     <div className="flex flex-nowrap items-start shrink-0">
-                        <Tooltip openDelay={500} originalPlacement="top" title={c('Action').t`Copy alias address`}>
-                            <Button
-                                icon
-                                pill
-                                shape="ghost"
-                                className="color-weak"
-                                onClick={handleCopyAddress}
-                                title={c('Action').t`Copy alias address`}
-                            >
-                                <Icon name="paper-plane" />
-                            </Button>
-                        </Tooltip>
+                        <Button
+                            icon
+                            pill
+                            shape="ghost"
+                            className="color-weak"
+                            title={c('Action').t`Send email`}
+                            onClick={() => onLink(mailtoHref, { replace: true })}
+                        >
+                            <Icon name="paper-plane" />
+                        </Button>
                         <QuickActionsDropdown
                             className="color-weak"
                             shape="ghost"
