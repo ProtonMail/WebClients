@@ -21,6 +21,19 @@ turndownService.addRule('strikethrough', {
     },
 });
 
+// Add a custom rule so that converting a div does not add a line break before and after the content,
+// but only a single line break after the content
+turndownService.addRule('customDiv', {
+    filter: 'div',
+    replacement: function (content) {
+        // If div is empty and contains only a line break for example, returns it
+        if (content.trim() === '') {
+            return content;
+        }
+        return `${content}\n`;
+    },
+});
+
 export const cleanMarkdown = (markdown: string): string => {
     // Remove unnecessary spaces in unordered list but preserve indentation
     let result = markdown.replace(/(\n\s*)-\s*/g, '$1- ');
