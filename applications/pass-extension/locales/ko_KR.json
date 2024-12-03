@@ -1092,7 +1092,7 @@
         "\"${ payload.item.data.metadata.name }\" 업데이트가 무시되었습니다."
       ],
       "${ count } invite successfully sent": [
-        "초대 ${ count }개를 잘 보냈습니다"
+        "초대 ${ count }개를 성공적으로 보냈습니다."
       ],
       "${ count } time": [
         "${ count }번"
@@ -3265,6 +3265,9 @@
       ],
       "No results": [
         "결과 없음"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "한 번 연동하면, ${ PASS_SHORT_APP_NAME }에서 별칭 삭제 시 SimpleLogin에서도 삭제됩니다."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "영숫자, 점, 하이픈 및 밑줄만 허용됩니다."
