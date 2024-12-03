@@ -121,11 +121,11 @@ export const sendTelemetryReportWithBaseDimensions = async ({
         dimensions: {
             ...dimensions,
             // Base dimensions used to help get basic knowledge about the user
-            account_age: getAccountAgeForDimension(user),
-            user_locale: userSettings?.Locale ?? 'undefined',
+            accountAge: getAccountAgeForDimension(user),
+            userLocale: userSettings?.Locale ?? 'undefined',
             subscription: String(subscriptionName),
             audience,
-            is_free: subscriptionName === 'free' ? 'true' : 'false',
+            isFree: subscriptionName === 'free' ? 'true' : 'false',
         },
     });
 };
