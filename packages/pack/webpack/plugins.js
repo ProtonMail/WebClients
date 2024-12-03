@@ -95,15 +95,6 @@ module.exports = ({
                 release: buildData.version,
             }),
 
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: `${path.dirname(require.resolve('push.js'))}/serviceWorker.min.js`,
-                    to: 'assets/serviceWorker.min.js',
-                },
-            ],
-        }),
-
         new WriteWebpackPlugin([
             {
                 name: 'assets/version.json',
