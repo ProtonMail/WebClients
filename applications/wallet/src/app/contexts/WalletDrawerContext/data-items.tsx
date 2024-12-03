@@ -7,7 +7,6 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import { Href } from '@proton/atoms';
 import { Icon, Info, MiddleEllipsis, Tooltip, useModalState } from '@proton/components';
-import { VERIFICATION_STATUS } from '@proton/crypto';
 import { SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/index';
 import clsx from '@proton/utils/clsx';
@@ -283,13 +282,6 @@ export const MessageDataItem = ({ tx }: TxDataListItemProps) => {
             <div className="flex flex-column items-start grow mr-4">
                 <span className="block color-weak">{c('Wallet transaction').t`Message to recipient`}</span>
                 <span className="block w-full text-pre-wrap text-left text-break my-1 text-lg">
-                    {tx?.apiData?.verifiedBody === VERIFICATION_STATUS.SIGNED_AND_INVALID && (
-                        <Tooltip title="Signature is invalid">
-                            <>
-                                <Icon name="exclamation-circle" className="color-warning shrink-0" />{' '}
-                            </>
-                        </Tooltip>
-                    )}
                     {tx?.apiData?.Body}
                 </span>
             </div>
