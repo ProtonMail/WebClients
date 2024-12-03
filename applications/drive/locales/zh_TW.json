@@ -216,6 +216,9 @@
       "Create": [
         "創建"
       ],
+      "Create a folder": [
+        "新增資料夾"
+      ],
       "Create a new contact group": [
         "創建新連絡人群組"
       ],
@@ -2460,6 +2463,11 @@
         "我們在您上載的 CSV 檔案中偵測到以下欄位。請勾選您想匯入的内容。"
       ]
     },
+    "Docs Info": {
+      "Suggestion mode is here": [
+        "此為建議模式"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "臭蟲或品質問題"
@@ -4076,6 +4084,9 @@
       "An active recovery file": [
         "作用的還原檔案"
       ],
+      "an anonymous user": [
+        "一位未知使用者"
+      ],
       "An issue occurred during the restore process.": [
         "問題發生於還原程序。"
       ],
@@ -4478,9 +4489,6 @@
       "How does encrypted search work?": [
         "加密搜索如何運作？"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "國際銀行帳號${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
@@ -4567,6 +4575,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "透過端對端加密保護您的檔案。"
       ],
       "Key fingerprint": [
         "金鑰指紋"
@@ -4771,6 +4782,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
       ],
       "Please open the document to view it.": [
         "請開啟文件以瀏覽。"
@@ -5012,6 +5026,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "在可以匯出前，應用程式需要在本機先解密您的聯絡人。過程結束時，將會產生一個 VCF 檔案以供您下載。"
       ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "此數位簽署以被部分驗證。此資料夾於公開頁面被未知使用者上傳。"
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "下載數量包含實際下載與預覽檔案時的實體。"
       ],
@@ -5035,6 +5052,9 @@
       ],
       "There is nothing to see here": [
         "這裡什麼都沒有。"
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "此項目將刪除連結並撤銷全部使用者的存取權。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
@@ -5369,6 +5389,9 @@
       "You will lose all unsaved changes.": [
         "您所有未儲存的變更將會消失。"
       ],
+      "You will need to save it again from the public link page.": [
+        "您須於公開連結重新儲存"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
       ],
@@ -5549,6 +5572,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
       ],
+      "Account holder": [
+        "帳戶持有人"
+      ],
       "Add email address": [
         "加入電郵位址"
       ],
@@ -5617,6 +5643,12 @@
       ],
       "Calendars": [
         "行事曆"
+      ],
+      "Can edit": [
+        "可編輯"
+      ],
+      "Can view": [
+        "可以檢視"
       ],
       "Cancel download": [
         "取消下載"
@@ -6099,6 +6131,11 @@
         "您的密碼（管理員）"
       ]
     },
+    "Label description": {
+      "View and download": [
+        "瀏覽並下載"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "顏色"
@@ -6555,9 +6592,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
       ],
-      "Get started for ${ price }": [
-        "使用${ price }取得"
-      ],
       "Starting from ${ priceMailPlus }": [
         "從${ priceMailPlus }起"
       ],
@@ -6646,6 +6680,9 @@
       "${ options }-day file version history": [
         "${ options }-天的檔案版本紀錄"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin 終身"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
       ],
@@ -6726,6 +6763,9 @@
       ],
       "Available on all platforms": [
         "適用於所有平台"
+      ],
+      "Breach alerts": [
+        "外洩警告"
       ],
       "Calendar sharing": [
         "行事曆分享"
@@ -7126,14 +7166,6 @@
       ],
       "Switch plans?": [
         "切換方案？"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "使用${ price }取得Mail Plus"
-      ],
-      "Starting from ${ price }": [
-        "從${ price }起"
       ]
     },
     "new_plans: tooltip": {
@@ -7546,6 +7578,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "空間不足，無法上載 ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "公開網址已更新存取權"
+      ],
+      "Public link update access failed ": [
+        "公開網址更新存取權失敗 "
+      ],
       "Root folder failed to be loaded": [
         "根資料夾載入失敗"
       ],
@@ -7575,6 +7613,9 @@
       ],
       "This item was not removed from your list": [
         "項目未被從清單上移除。"
+      ],
+      "This item was successfully removed from your list": [
+        "此項目已成功從清單移除"
       ],
       "Trash failed to be emptied": [
         "無法清空垃圾桶"
@@ -7616,6 +7657,9 @@
       "Continue": [
         "下一步"
       ],
+      "Create a document": [
+        "建立新文件"
+      ],
       "Get started": [
         "開始使用"
       ],
@@ -7627,6 +7671,9 @@
       ],
       "Invite members": [
         "邀請成員"
+      ],
+      "Maybe Later": [
+        "稍後再試"
       ],
       "Maybe later": [
         "稍後再說"
@@ -7704,6 +7751,9 @@
       ],
       "Manage access": [
         "管理存取權限"
+      ],
+      "Scan the QR code to install the mobile app": [
+        "掃描QR代碼以安裝移動裝置應用程式。"
       ],
       "Secure your files": [
         "確保您的檔案安全"
@@ -9365,6 +9415,9 @@
       ],
       "Customize your mail import": [
         "自訂您的郵件匯入"
+      ],
+      "Dark Web Monitoring": [
+        "暗網監控"
       ],
       "Data recovery": [
         "資料救援"

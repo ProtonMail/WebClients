@@ -217,6 +217,9 @@
       "Create": [
         "შექმნა"
       ],
+      "Create a folder": [
+        "საქაღალდის შექმნა"
+      ],
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
@@ -2480,6 +2483,11 @@
         "თქვენს მიერ ატვირთულ CSV ფაილში ამოჩენილია შემდეგი ველები. მონიშნეთ ისინი, რომლების შემოტანაც გსურთ."
       ]
     },
+    "Docs Info": {
+      "Suggestion mode is here": [
+        "მინიშნებების რეჟიმი აქაა"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "შეცდომები ან ხარისხის პრობლემები"
@@ -4183,6 +4191,9 @@
       "An active recovery file": [
         "აღდგენის აქტიური ფაილი"
       ],
+      "an anonymous user": [
+        "ანონიმური მომხმარებელი"
+      ],
       "An issue occurred during the restore process.": [
         "აღდგენის პროცესში აღმოჩენილია პრობლემა."
       ],
@@ -4592,9 +4603,6 @@
       "How does encrypted search work?": [
         "როგორ მუშაობს დაშიფრული ძებნა?"
       ],
-      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
-        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
       ],
@@ -4900,6 +4908,10 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი.",
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
       ],
       "Please open the document to view it.": [
         "გახსენით დოკუმენტი, რომ ნახოთ ის."
@@ -5705,6 +5717,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
       ],
+      "Account holder": [
+        "ანგარიშის მფლობელი"
+      ],
       "Add email address": [
         "ელფოსტის მისამართის დამატება"
       ],
@@ -5773,6 +5788,12 @@
       ],
       "Calendars": [
         "კალენდრები"
+      ],
+      "Can edit": [
+        "შეუძლია, ჩაასწოროს"
+      ],
+      "Can view": [
+        "შეუძლია, ნახოს"
       ],
       "Cancel download": [
         "გადმოწერის გაუქმება"
@@ -6256,6 +6277,14 @@
         "თქვენი პაროლი (admin)"
       ]
     },
+    "Label description": {
+      "Organise, add and edit files": [
+        "დააორგანიზეთ, დაამატეთ და ჩაასწორეთ ფაილები"
+      ],
+      "View and download": [
+        "ნახვა და გადმოწერა"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "ფერი"
@@ -6719,9 +6748,6 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Get started for ${ price }": [
-        "დაწყება ${ price }-დან"
       ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }-დან"
@@ -7347,14 +7373,6 @@
         "გადავრთო სატარიფო გეგმა?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "მიიღეთ Mail Plus ფასით ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "${ price }-დან"
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: დაიცავით თქვენი განრიგი გამჭოლი დაშიფვრით. შეიცავს მომხმარებლის კალენდრების მხარდაჭერას, კალენდრის გაზიარებას და ა.შ."
@@ -7503,6 +7521,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "მომხმარებლების პაროლებისა და 2FA-ის აღდგენა"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "გადაამისამართეთ თქვენი ინტერნეტ-ტრაფიკი Tor-ის ქსელში თაგუნას ერთადერთი წკაპუნით"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
@@ -7824,6 +7845,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "არასაკმარისი ადგილი ${ formattedTotal }-ის ასატვირთად"
       ],
+      "Public link access updated": [
+        "საჯარო ბმულის წვდომა განახლდა"
+      ],
+      "Public link update access failed ": [
+        "საჯარო ბმულის წვდომის განახლება ჩავარდა "
+      ],
       "Root folder failed to be loaded": [
         "Root საქაღალდის ჩატვირთვის შეცდომა"
       ],
@@ -7860,6 +7887,10 @@
       "This item was not removed from your list": [
         "ეს ელემენტი თქვენი სიიდან არ წაშლილა",
         "ზოგიერთი ელემენტი თქვენი სიიდან არ წაშლილა"
+      ],
+      "This item was successfully removed from your list": [
+        "ეს ელემენტი წარმატებით წაიშალა თქვენი სიიდან",
+        "ეს ელემენტი წარმატებით წაიშალა თქვენი სიიდან"
       ],
       "Trash failed to be emptied": [
         "ნაგვის ყუთის გასუფთავების შეცდომა"
@@ -7906,6 +7937,9 @@
       "Continue": [
         "გაგრძელება"
       ],
+      "Create a document": [
+        "დოკუმენტის შექმნა"
+      ],
       "Get started": [
         "დაიწყეთ"
       ],
@@ -7917,6 +7951,9 @@
       ],
       "Invite members": [
         "წევრების მოწვევა"
+      ],
+      "Maybe Later": [
+        "მოგვიანებით"
       ],
       "Maybe later": [
         "მოგვიანებით"
@@ -8191,6 +8228,9 @@
       ],
       "Please select your billing state first.": [
         "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "განახლების დრო ${ renewPrice }. გააუქმეთ ნებისმიერ დროს."
       ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
@@ -9855,6 +9895,9 @@
       ],
       "Customize your mail import": [
         "თქვენი ელფოსტის შემოტანის მორგება"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "მონაცემების აღდგენა"

@@ -2348,6 +2348,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } захищає ваш обліковий запис із виділеним цілодобовим моніторингом підозрілої діяльності, включно з ескалацією до фахівців з безпеки."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двоетапна автентифікація підвищує рівень безпеки, запобігаючи несанкціонованому доступу."
       ],
@@ -2372,6 +2375,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Заощаджуйте час, відсилаючи електронні листи всім одночасно за допомогою груп контактів. Розблокуйте ці та інші преміумфункції під час покращення."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті даних."
       ],
@@ -2381,6 +2387,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Для гарантування максимальної безпеки вашого облікового запису налаштуйте фразу відновлення."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Щоб імпортувати з використанням файлів CSV і VCF, розмір файлу не має перевищувати ${ MAX_IMPORT_FILE_SIZE_STRING }, а кількість контактів – ${ MAX_IMPORT_CONTACTS_STRING }. Якщо ваш файл більший, розділіть його на декілька менших. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
       ],
@@ -2389,6 +2398,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "З контактними групами ви можете відправляти листи всім у групі одним натисканням."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
@@ -2401,6 +2413,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ваш обліковий запис і способи відновлення налаштовано."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5670,6 +5685,9 @@
       "Address": [
         "Адреса"
       ],
+      "Anderson": [
+        "Андерсон"
+      ],
       "Anyone on the Internet with the link can view": [
         "Переглядати можуть всі, хто має посилання"
       ],
@@ -5756,6 +5774,9 @@
       ],
       "Comment": [
         "Коментар"
+      ],
+      "Company name": [
+        "Назва компанії"
       ],
       "Confirm password": [
         "Підтвердити пароль"
@@ -6072,6 +6093,9 @@
       "Reveal password": [
         "Показати пароль"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Security code (${ codeName })": [
         "Код безпеки (${ codeName })"
       ],
@@ -6143,6 +6167,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Це остаточно видалить усі файли у вашому сховищі."
+      ],
+      "Thomas": [
+        "Томас"
       ],
       "Title": [
         "Назва"
@@ -6661,8 +6688,14 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Понизити до ${ downgradedPlanName }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Починаючи з ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Покращити"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Покращити до ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -8175,6 +8208,9 @@
       "Try ${ PASS_APP_NAME }": [
         "Спробуйте ${ PASS_APP_NAME }"
       ],
+      "Used on Amazon for shopping, etc.": [
+        "Використовується на Amazon для покупок та ін."
+      ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Коли потрібно вказати адресу електронної пошти, скористайтеся натомість цим псевдонімом. Псевдоніми надаються ${ passLink }."
       ]
@@ -8182,6 +8218,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(відкриє ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Переглянути події"
       ]
     },
     "Security Center - Info": {
@@ -8551,6 +8592,9 @@
       ],
       "/ month": [
         "/ місяць"
+      ],
+      "/month": [
+        "/місяць"
       ],
       "1 year": [
         "1 рік"
@@ -9468,6 +9512,9 @@
       ],
       "Customize your mail import": [
         "Налаштуйте імпорт своєї пошти"
+      ],
+      "Dark Web Monitoring": [
+        "Моніторинг Темного Вебу"
       ],
       "Data recovery": [
         "Відновлення даних"
