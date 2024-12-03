@@ -124,6 +124,8 @@ export function handleWebContents(contents: WebContents) {
         logger().info("will-navigate", details.url);
 
         if (!isHostAllowed(details.url) && !global.oauthProcess && !global.subscriptionProcess) {
+            logger().info("opening external URL", details.url);
+            shell.openExternal(details.url);
             return preventDefault(details);
         }
 
