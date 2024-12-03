@@ -8,6 +8,7 @@ jest.mock("../store/settingsStore", () => ({
 }));
 
 const getSettingsMock = getSettings as jest.MockedFn<typeof getSettings>;
+const updateSettingsMock = updateSettings as jest.MockedFn<typeof updateSettings>;
 
 const setThemeMock = (theme: Partial<ThemeSetting>) => {
     getSettingsMock.mockReturnValue({
@@ -16,6 +17,13 @@ const setThemeMock = (theme: Partial<ThemeSetting>) => {
         overrideError: false,
     });
 };
+
+updateSettingsMock.mockImplementation((update) => {
+    getSettingsMock.mockReturnValue({
+        ...getSettingsMock(),
+        ...update,
+    });
+});
 
 describe("storeMigrations", () => {
     describe("forceDarkAndLightThemes", () => {
@@ -79,6 +87,14 @@ describe("storeMigrations", () => {
             setThemeMock({ Mode: ThemeModeSetting.Light, LightTheme: ThemeTypes.Snow, DarkTheme: ThemeTypes.Carbon });
             performStoreMigrations();
             expect(updateSettings).not.toHaveBeenCalled();
+        });
+
+        it("works if multiple theme settings are messed up", () => {
+            setThemeMock({ Mode: ThemeModeSetting.Auto, LightTheme: ThemeTypes.Carbon, DarkTheme: ThemeTypes.Snow });
+            performStoreMigrations();
+            expect(updateSettings).toHaveBeenCalledWith({
+                theme: { Mode: ThemeModeSetting.Auto, LightTheme: ThemeTypes.Snow, DarkTheme: ThemeTypes.Carbon },
+            });
         });
     });
 });

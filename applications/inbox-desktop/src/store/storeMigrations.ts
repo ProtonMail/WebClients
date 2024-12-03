@@ -58,14 +58,16 @@ const deleteSerializedThemeMode = () => {
 
 // Force using a light theme for day and dark theme for night
 const forceLightAndDarkThemes = () => {
-    const { theme } = getSettings();
+    let { theme } = getSettings();
 
     if (!theme) {
         return;
     }
 
-    const updateTheme = (updatedTheme: Partial<ThemeSetting>) =>
+    const updateTheme = (updatedTheme: Partial<ThemeSetting>) => {
         updateSettings({ theme: { ...theme, ...updatedTheme } });
+        theme = getSettings().theme;
+    };
 
     const darkThemes = getDarkThemes();
     const isAutoTheme = theme.Mode === undefined || theme.Mode === ThemeModeSetting.Auto;
