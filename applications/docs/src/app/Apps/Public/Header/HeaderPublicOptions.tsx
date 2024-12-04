@@ -1,19 +1,33 @@
 import { useCallback } from 'react'
-import { ButtonLike } from '@proton/atoms'
+import { Button, ButtonLike } from '@proton/atoms'
 import { c } from 'ttag'
 import { useDocsContext } from '../../../Containers/ContextProvider'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
-import { SaveToDriveButton } from './SaveToDriveButton'
 import { usePublicDocumentCopying } from '../Hooks/usePublicDocumentCopying'
 import { UserInfo } from './UserInfo'
 import { DOCS_SIGNUP_FREE } from '@proton/shared/lib/docs/urls'
-import { MakeCopyButton } from './MakeCopyButton'
 import { useDocsUrlBar } from '../../../Containers/useDocsUrlBar'
 import { RedirectAction } from '@proton/drive-store/store/_documents'
 import { useApplication } from '../../../Containers/ApplicationProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import type { PublicDocumentState } from '@proton/docs-core'
+import { useSaveToDrive } from './useSaveToDrive'
+import {
+  Spotlight,
+  Tooltip,
+  Icon,
+  DropdownButton,
+  usePopperAnchor,
+  Dropdown,
+  DropdownSizeUnit,
+  DropdownMenu,
+  DropdownMenuButton,
+  DropdownMenuLink,
+} from '@proton/components'
+import { DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
+import { useSignupFlowModal } from '../SignupFlowModal/SignupFlowModal'
+import { TooltipKey, useTooltipOnce } from '@proton/docs-shared'
 
 export const HeaderPublicOptions = ({
   editorController,
@@ -66,29 +80,144 @@ export const HeaderPublicOptions = ({
     }
   }, [application.logger, createCopy, openParams, removeActionFromUrl, saveForLater, user])
 
+  const [signupFlowModal, showSignupFlowModal] = useSignupFlowModal()
+
+  const {
+    isAdding,
+    showSpotlight,
+    handleClick: handleSaveToDriveClick,
+  } = useSaveToDrive({
+    onClick: saveForLater,
+    isAlreadyBookmarked,
+    urlPassword,
+    showSignupFlowModal,
+  })
+
+  const saveToDriveButtonText = isAlreadyBookmarked
+    ? c('drive:action').t`Open in ${DRIVE_SHORT_APP_NAME}`
+    : c('drive:action').t`Save for later`
+
+  const { shouldShowTooltip: shouldShowMakeCopyTooltip } = useTooltipOnce(TooltipKey.PublicDocsMakeCopy)
+  const handleMakeCopyClick = useCallback(() => {
+    if (!user) {
+      showSignupFlowModal({ urlPassword, redirectAction: RedirectAction.MakeCopy })
+    } else {
+      createCopy()
+    }
+  }, [createCopy, showSignupFlowModal, urlPassword, user])
+
+  const {
+    anchorRef: mobileMenuAnchorRef,
+    isOpen: isMobileMenuOpen,
+    toggle: toggleMobileMenu,
+    close: closeMobileMenu,
+  } = usePopperAnchor<HTMLButtonElement>()
+
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-nowrap items-center gap-2">
       {!user && (
-        <ButtonLike as="a" href={DOCS_SIGNUP_FREE} target="_blank" color="weak" size="small">{c('Action')
-          .t`Sign up`}</ButtonLike>
+        <ButtonLike
+          className="head-max-849:[display:none]"
+          as="a"
+          href={DOCS_SIGNUP_FREE}
+          target="_blank"
+          color="weak"
+          size="small"
+          data-testid="public-view-sign-up-link"
+        >{c('Action').t`Sign up`}</ButtonLike>
       )}
 
       {!isLoading && (
-        <SaveToDriveButton
-          alreadyBookmarked={isAlreadyBookmarked}
-          onClick={saveForLater}
-          urlPassword={urlPassword}
-          loading={isLoading}
-        />
+        <Spotlight
+          show={showSpotlight}
+          content={c('Spotlight')
+            .t`A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.`}
+          originalPlacement="bottom-end"
+        >
+          <Tooltip
+            title={
+              isAlreadyBookmarked
+                ? ''
+                : c('Tooltip').t`Add this shared file to your ${DRIVE_APP_NAME} for easy access later.`
+            }
+          >
+            <Button
+              size="small"
+              loading={isLoading || isAdding}
+              className="flex items-center gap-2 head-max-849:min-h-7"
+              onClick={handleSaveToDriveClick}
+              color="weak"
+              data-testid="save-in-drive-button"
+            >
+              {!isAdding && <Icon name="folder-arrow-in" />}
+              <span className="head-max-849:sr-only">{isAdding ? c('Info').t`Saving...` : saveToDriveButtonText}</span>
+            </Button>
+          </Tooltip>
+        </Spotlight>
       )}
 
-      <MakeCopyButton onClick={createCopy} urlPassword={urlPassword} />
+      <Spotlight
+        show={shouldShowMakeCopyTooltip}
+        content={c('Spotlight').t`To edit this document, create a copy that you can modify.`}
+        originalPlacement="bottom-end"
+      >
+        <Button
+          color={user ? 'weak' : 'norm'}
+          size="small"
+          className="flex items-center gap-2 text-sm head-max-849:[display:none]"
+          data-testid="make-a-copy-button"
+          onClick={handleMakeCopyClick}
+        >
+          <Icon name="squares" />
+          <span>{c('Action').t`Create a copy`}</span>
+        </Button>
+      </Spotlight>
 
       {user && (
         <>
           <UserInfo user={user} />
         </>
       )}
+
+      <DropdownButton
+        ref={mobileMenuAnchorRef}
+        isOpen={isMobileMenuOpen}
+        onClick={toggleMobileMenu}
+        shape="outline"
+        size="small"
+        className="[display:none] head-max-849:inline-block"
+      >
+        <Icon name="chevron-down-filled" />
+        <span className="sr-only text-ellipsis text-sm">{c('Action').t`Show options`}</span>
+      </DropdownButton>
+      <Dropdown
+        isOpen={isMobileMenuOpen}
+        anchorRef={mobileMenuAnchorRef}
+        onClose={closeMobileMenu}
+        size={{
+          width: DropdownSizeUnit.Static,
+        }}
+        originalPlacement="bottom-start"
+      >
+        <DropdownMenu className="text-sm">
+          <DropdownMenuButton className="flex items-center gap-2 text-left" onClick={handleSaveToDriveClick}>
+            <Icon name="folder-arrow-in" />
+            <span>{isAdding ? c('Info').t`Saving...` : saveToDriveButtonText}</span>
+          </DropdownMenuButton>
+          <DropdownMenuButton className="flex items-center gap-2 text-left" onClick={handleMakeCopyClick}>
+            <Icon name="squares" />
+            <span>{c('Action').t`Create a copy`}</span>
+          </DropdownMenuButton>
+          {!user && (
+            <DropdownMenuLink className="flex items-center gap-2 text-left" href={DOCS_SIGNUP_FREE} target="_blank">
+              <Icon name="user" />
+              <span>{c('Action').t`Sign up`}</span>
+            </DropdownMenuLink>
+          )}
+        </DropdownMenu>
+      </Dropdown>
+
+      {signupFlowModal}
     </div>
   )
 }

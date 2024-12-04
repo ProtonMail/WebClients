@@ -212,14 +212,11 @@ const DocumentTitleDropdown = ({
         hasCaret
         shape="ghost"
         size="small"
-        className="max-w-custom whitespace-nowrap px-1.5 py-1.5"
-        style={{
-          '--max-w-custom': '35vw',
-        }}
+        className="w-fit whitespace-nowrap px-1.5 py-1.5"
         data-testid="document-name-dropdown"
       >
         <MimeIcon name="proton-doc" size={5} className="mr-2 shrink-0" />
-        <span className="text-ellipsis text-sm">{title}</span>
+        <span className="text-ellipsis text-left text-sm head-480-749:max-w-[215px]">{title}</span>
       </DropdownButton>
       <Dropdown
         isOpen={isOpen}
