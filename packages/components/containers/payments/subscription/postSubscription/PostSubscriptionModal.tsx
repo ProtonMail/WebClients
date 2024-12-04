@@ -3,14 +3,14 @@ import { useEffect } from 'react';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { TelemetryMailPostSubscriptionEvents } from '@proton/shared/lib/api/telemetry';
 
-import type { SUBSCRIPTION_STEPS } from '../constants';
+import type { SubscriptionOverridableStep } from '../SubscriptionModalProvider';
 import type { PostSubscriptionFlowName } from './interface';
 import postSubscriptionConfig from './postSubscriptionConfig';
 import { usePostSubscriptionTelemetry } from './usePostSubscriptionTelemetry';
 
 interface PostSubscriptionModalProps extends ModalStateProps {
     name: PostSubscriptionFlowName;
-    step: SUBSCRIPTION_STEPS;
+    step: SubscriptionOverridableStep;
 }
 
 const PostSubscriptionModal = ({ name, step, ...modalProps }: PostSubscriptionModalProps) => {

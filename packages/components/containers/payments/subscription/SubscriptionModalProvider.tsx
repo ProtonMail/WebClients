@@ -29,6 +29,10 @@ import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import SubscriptionContainer from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
 
+export type SubscriptionOverridableStep = SUBSCRIPTION_STEPS.UPGRADE | SUBSCRIPTION_STEPS.THANKS;
+const isOverridablableStep = (step: SUBSCRIPTION_STEPS): step is SubscriptionOverridableStep =>
+    [SUBSCRIPTION_STEPS.UPGRADE, SUBSCRIPTION_STEPS.THANKS].includes(step);
+
 export interface OpenCallbackProps
     extends Pick<
         SubscriptionContainerProps,
@@ -56,7 +60,7 @@ export interface OpenCallbackProps
     onClose?: () => void;
     disableCloseOnEscape?: boolean;
     fullscreen?: boolean;
-    renderCustomStepModal?: (step: SUBSCRIPTION_STEPS, modalProps: ModalStateProps) => ReactNode;
+    renderCustomStepModal?: (step: SubscriptionOverridableStep, modalProps: ModalStateProps) => ReactNode;
 }
 
 export type OpenSubscriptionModalCallback = (props: OpenCallbackProps) => void;
@@ -166,36 +170,38 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                     paymentsStatus={status}
                     {...rest}
                     render={({ onSubmit, title, content, footer, step }) => {
-                        return (
-                            renderCustomStepModal?.(step, modalState) || (
-                                <ModalTwo
-                                    blurBackdrop={blurBackdrop}
-                                    className={clsx([
-                                        subscriptionModalClassName,
-                                        [SUBSCRIPTION_STEPS.PLAN_SELECTION, SUBSCRIPTION_STEPS.CHECKOUT].includes(
-                                            step
-                                        ) && 'subscription-modal--fixed-height',
-                                        [SUBSCRIPTION_STEPS.PLAN_SELECTION].includes(step) &&
-                                            'subscription-modal--large-width',
-                                        [SUBSCRIPTION_STEPS.CHECKOUT].includes(step) &&
-                                            'subscription-modal--medium-width',
-                                    ])}
-                                    rootClassName={rootClassName}
-                                    data-testid="plansModal"
-                                    {...modalState}
-                                    onClose={handleClose}
-                                    disableCloseOnEscape={disableCloseOnEscape}
-                                    fullscreen={fullscreen}
-                                    as="form"
-                                    size="large"
-                                    onSubmit={onSubmit}
-                                >
-                                    <ModalTwoHeader title={title} hasClose={hasClose} />
-                                    <ModalTwoContent>{content}</ModalTwoContent>
-                                    {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
-                                </ModalTwo>
-                            )
+                        const modal = (
+                            <ModalTwo
+                                blurBackdrop={blurBackdrop}
+                                className={clsx([
+                                    subscriptionModalClassName,
+                                    [SUBSCRIPTION_STEPS.PLAN_SELECTION, SUBSCRIPTION_STEPS.CHECKOUT].includes(step) &&
+                                        'subscription-modal--fixed-height',
+                                    [SUBSCRIPTION_STEPS.PLAN_SELECTION].includes(step) &&
+                                        'subscription-modal--large-width',
+                                    [SUBSCRIPTION_STEPS.CHECKOUT].includes(step) && 'subscription-modal--medium-width',
+                                ])}
+                                rootClassName={rootClassName}
+                                data-testid="plansModal"
+                                {...modalState}
+                                onClose={handleClose}
+                                disableCloseOnEscape={disableCloseOnEscape}
+                                fullscreen={fullscreen}
+                                as="form"
+                                size="large"
+                                onSubmit={onSubmit}
+                            >
+                                <ModalTwoHeader title={title} hasClose={hasClose} />
+                                <ModalTwoContent>{content}</ModalTwoContent>
+                                {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
+                            </ModalTwo>
                         );
+
+                        if (isOverridablableStep(step)) {
+                            return renderCustomStepModal?.(step, modalState) || modal;
+                        }
+
+                        return modal;
                     }}
                 />
             );
