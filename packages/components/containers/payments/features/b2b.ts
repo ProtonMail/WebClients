@@ -130,6 +130,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getTwoFA(),
                 [PLANS.VPN_BUSINESS]: getTwoFA(),
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -155,6 +156,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -180,6 +182,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getConsole(),
                 [PLANS.VPN_BUSINESS]: getConsole(),
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -205,6 +208,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getBilling(),
                 [PLANS.VPN_BUSINESS]: getBilling(),
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -230,6 +234,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getAdmins(),
                 [PLANS.VPN_BUSINESS]: getAdmins(),
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -255,6 +260,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -280,6 +286,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getSignIn(),
                 [PLANS.VPN_BUSINESS]: getSignIn(),
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -305,6 +312,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -330,6 +338,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getCredentials(),
                 [PLANS.VPN_BUSINESS]: getCredentials(),
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -355,6 +364,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getSessions(),
                 [PLANS.VPN_BUSINESS]: getSessions(),
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
     ];
@@ -424,6 +434,7 @@ export const getSupportFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getGDPR(),
                 [PLANS.VPN_BUSINESS]: getGDPR(),
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -449,6 +460,7 @@ export const getSupportFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getHIPAA(),
                 [PLANS.VPN_BUSINESS]: getHIPAA(),
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -474,6 +486,7 @@ export const getSupportFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getSupport(),
                 [PLANS.VPN_BUSINESS]: getSupport(),
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -499,6 +512,7 @@ export const getSupportFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getPhoneSupport(),
                 [PLANS.VPN_BUSINESS]: getPhoneSupport(),
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -524,6 +538,7 @@ export const getSupportFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getSLA(),
                 [PLANS.VPN_BUSINESS]: getSLA(),
                 [PLANS.WALLET]: null,
+                [PLANS.LUMO]: null,
             },
         },
     ];

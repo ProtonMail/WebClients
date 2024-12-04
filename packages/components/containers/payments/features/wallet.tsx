@@ -100,6 +100,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.LUMO]: getWallets(FREE_WALLETS),
             },
         },
         {
@@ -124,6 +125,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.LUMO]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
             },
         },
         {
@@ -148,6 +150,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.LUMO]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
             },
         },
         {
@@ -172,6 +175,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.LUMO]: getBitcoinViaEmail(),
             },
         },
     ];
