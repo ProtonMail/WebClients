@@ -1,50 +1,134 @@
+import type { Action } from '@reduxjs/toolkit';
 import { type Middleware, isAction } from 'redux';
 
 import { selectRequest } from '@proton/pass/store/selectors';
+import type { Awaiter } from '@proton/pass/utils/fp/promises';
+import { awaiter } from '@proton/pass/utils/fp/promises';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import noop from '@proton/utils/noop';
 
-import { requestInvalidate } from './actions';
-import type { RequestState } from './types';
+import type { RequestAsyncResult, RequestState, RequestType, WithRequest } from './types';
 import { isActionWithRequest } from './utils';
 
-export const requestMiddleware: Middleware<{}, { request: RequestState }> =
-    ({ getState, dispatch }) =>
-    (next) => {
-        return (action: unknown) => {
-            if (isAction(action)) {
-                if (!isActionWithRequest(action)) return next(action);
+export interface RequestTracker {
+    requests: Map<string, Awaiter<RequestAsyncResult>>;
+    push: (requestID: string) => Awaiter<RequestAsyncResult>;
+}
 
-                const { request } = action.meta;
-                const { status, id } = request;
+export type RequestAsyncAccept = (action: WithRequest<Action, RequestType, unknown>) => boolean;
 
-                if ((status === 'success' && !request.maxAge) || status === 'failure') {
-                    /** request data garbage collection : on a request success or failure,
-                     * if it not persistent, dispatch an acknowledgment action in order to
-                     * clear the request data for this particular request id.*/
-                    setTimeout(() => dispatch(requestInvalidate(id)), 500);
-                }
+type RequestMiddlewareOptions = {
+    acceptAsync?: RequestAsyncAccept;
+    tracker?: RequestTracker;
+};
 
-                if (status === 'start') {
-                    if (request.revalidate) return next(action);
-                    const pending = selectRequest(id)(getState());
+export const requestTrackerFactory = (): RequestTracker => {
+    /** Map storing promise-like awaiters indexed by requestID.
+     * Used to track pending requests and resolve/reject them when
+     * the corresponding success/failure actions are dispatched */
+    const requests = new Map<string, Awaiter<RequestAsyncResult>>();
 
-                    switch (pending?.status) {
-                        case 'start' /* if there is an ongoing `start`, omit this action */:
-                            return;
+    /** Creates a new awaiter for a given `requestID`
+     * and stores it in the results map */
+    const createAsyncResult = (requestID: string) => {
+        const asyncResult =
+            requests.get(requestID) ??
+            awaiter<RequestAsyncResult>({
+                onResolve: () => requests.delete(requestID),
+                onReject: () => requests.delete(requestID),
+            });
 
-                        case 'success':
-                            /* if there is a request result with a `maxAge` property,
-                             * skip the action if not invalidated */
-                            const now = getEpoch();
-                            if (pending.maxAge && pending.requestedAt + pending.maxAge > now) return;
-                            else return next(action);
+        requests.set(requestID, asyncResult);
+        return asyncResult;
+    };
 
-                        default: /* if there is no pending request, process it */
-                            return next(action);
+    return { requests, push: createAsyncResult };
+};
+
+/** Redux middleware for managing async request lifecycles and
+ * caching. Handles request deduplication, TTL-based caching,
+ * and promise management. Provides a `thunk-like` API for UI
+ * requests while supporting saga architecture.  */
+export const requestMiddlewareFactory =
+    (options?: RequestMiddlewareOptions): Middleware<{}, { request: RequestState }> =>
+    ({ getState }) => {
+        const tracker = options?.tracker ?? requestTrackerFactory();
+
+        const acceptAsync: RequestAsyncAccept = (action) => {
+            if (!action.meta.request.async) return false;
+            return options?.acceptAsync?.(action) ?? true;
+        };
+
+        return (next) => {
+            return (action: unknown) => {
+                if (isAction(action)) {
+                    if (!isActionWithRequest(action)) return next(action);
+
+                    const { request } = action.meta;
+                    const { status, id: requestID } = request;
+                    const pending = tracker.requests.get(requestID);
+
+                    /** Handles the start of a request :
+                     * 1. Revalidation: By-passes cached result always
+                     * 2. Pending request: Returns existing promise to prevent concurrent requests
+                     * 3. Cached result: Skips request if within maxAge, otherwise processes normally */
+                    if (status === 'start') {
+                        /** Returns promises only for UI-dispatched actions (`async: true`)
+                         * to match the `redux-thunk` pattern. Otherwise, returns `noop` to
+                         * avoid unnecessary promise tracking. This aligns with our saga
+                         * architecture while maintaining thunk-like API for UI requests. */
+                        const maybePromise = (result: () => Promise<RequestAsyncResult>) =>
+                            (acceptAsync(action) ? result : noop)();
+
+                        const pendingRequest = selectRequest(requestID)(getState());
+
+                        switch (pendingRequest?.status) {
+                            case 'start': {
+                                /** If a request with this ID is already pending:
+                                 * - return the existing promise to avoid duplicates
+                                 * - else create a new async result without processing
+                                 * the action to prevent concurrent executions */
+                                return maybePromise(() => tracker.push(requestID));
+                            }
+
+                            case 'success': {
+                                /** For cached requests:
+                                 * - check if the cached result is still valid based on `maxAge`
+                                 * - if valid, return cached data without processing action
+                                 * - if expired, process normally with new async result */
+                                const now = getEpoch();
+                                const { maxAge, requestedAt, data } = pendingRequest;
+                                const cached = !request.revalidate && maxAge && requestedAt + maxAge > now;
+
+                                if (cached) return maybePromise(async () => ({ type: 'success', data }));
+                                else {
+                                    next(action);
+                                    return maybePromise(() => tracker.push(requestID));
+                                }
+                            }
+
+                            default: {
+                                next(action);
+                                return maybePromise(() => tracker.push(requestID));
+                            }
+                        }
                     }
-                }
 
-                return next(action);
-            }
+                    /** Handle request completion by resolving/rejecting the tracked promise:
+                     * - For success: resolves promise with action payload
+                     * - For failure: rejects promise with action payload
+                     * - Cleans up by removing the tracked promise from results map */
+                    if (status === 'success' || status === 'failure') {
+                        pending?.resolve({
+                            type: status,
+                            data: 'payload' in action ? action.payload : undefined,
+                        });
+                    }
+
+                    return next(action);
+                }
+            };
         };
     };
+
+export const requestMiddleware = requestMiddlewareFactory();

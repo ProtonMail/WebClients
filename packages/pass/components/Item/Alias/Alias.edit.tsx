@@ -1,4 +1,5 @@
-import { type FC, useRef, useState } from 'react';
+import { type FC, useRef } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -8,6 +9,7 @@ import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueCo
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
+import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
@@ -16,12 +18,18 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constan
 import { useAliasDetails } from '@proton/pass/hooks/useAliasDetails';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { formatDisplayNameWithEmail } from '@proton/pass/lib/items/item.utils';
 import { createEditAliasFormValidator } from '@proton/pass/lib/validation/alias';
+import { selectAliasDetails } from '@proton/pass/store/selectors';
 import type { AliasMailbox, EditAliasFormValues } from '@proton/pass/types';
 import { type MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
+
+import { AliasSLNoteLabel } from './AliasSLNoteLabel';
 
 const FORM_ID = 'edit-alias';
 
@@ -31,6 +39,8 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     const { metadata, ...uneditable } = item;
     const aliasEmail = revision.aliasEmail!;
 
+    const aliasManagementEnabled = useFeatureFlag(PassFeature.PassAdvancedAliasManagementV1);
+
     /** To ensure proper sequencing in handling alias options and details. we use an awaiter.
      * If alias options or details are cached, the execution order of 'onAliasOptionsLoaded'
      * after the 'aliasOptions.request()' call cannot be guaranteed. The awaiter is employed to
@@ -39,9 +49,8 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     const { current: aliasDetailsLoaded } = useRef(awaiter<void>());
     const reconciled = useRef(false);
 
-    /* If vault is not shared, we can safely assume the user is
-     * the owner of the alias and can edit the mailboxes */
-    const [aliasOwner, setAliasOwner] = useState(!vault.shared);
+    const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
+    const aliasOwner = aliasDetails?.modify ?? false;
 
     /* Keeping a ref to the alias details for composing the result
      * of `onAliasDetailsLoaded` with `onAliasOptionsLoading` effect */
@@ -51,11 +60,18 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     const validateEditAliasForm = createEditAliasFormValidator(aliasOwner);
 
     const form = useFormik<EditAliasFormValues>({
-        initialValues: { name: metadata.name, note, mailboxes: [], shareId: vault.shareId },
-        onSubmit: ({ name, note, mailboxes, shareId }) => {
+        initialValues: {
+            name: metadata.name,
+            note,
+            mailboxes: [],
+            shareId: vault.shareId,
+            displayName: aliasDetails?.name ?? '',
+            slNote: aliasDetails?.slNote ?? '',
+        },
+        onSubmit: ({ name, note, mailboxes, shareId, displayName, slNote }) => {
             onSubmit({
                 ...uneditable,
-                extraData: { aliasOwner, mailboxes, aliasEmail },
+                extraData: { aliasOwner, mailboxes, aliasEmail, displayName, slNote },
                 itemId,
                 lastRevision,
                 metadata: { ...metadata, name, note: obfuscate(note) },
@@ -67,6 +83,10 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
         validateOnMount: true,
     });
 
+    const emailSender = (
+        <strong key="alias-edit-display-name">{formatDisplayNameWithEmail(form.values.displayName, aliasEmail)}</strong>
+    );
+
     const aliasOptions = useAliasOptions({
         shareId: vault.shareId,
         lazy: true,
@@ -77,10 +97,6 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
             const formValues = draft ?? form.values;
             const prevMailboxes = draft?.mailboxes ?? mailboxesForAlias.current;
             const sanitizedMailboxes = mailboxes.filter((mailbox) => prevMailboxes.some(({ id }) => id === mailbox.id));
-
-            /* if the mailboxes do not match the user's alias options and the
-             * vault is shared, then the user cannot manage its mailboxes */
-            if (vault.shared) setAliasOwner(sanitizedMailboxes.length > 0);
 
             const values = { ...formValues, mailboxes: sanitizedMailboxes };
             const errors = validateEditAliasForm(values);
@@ -94,11 +110,11 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
         },
     });
 
-    const aliasDetails = useAliasDetails({
+    const aliasDetailsMailboxes = useAliasDetails({
         aliasEmail,
         itemId,
         shareId,
-        onAliasDetailsLoaded: (mailboxes) => {
+        onAliasMailboxesLoaded: (mailboxes) => {
             mailboxesForAlias.current = mailboxes ?? [];
             aliasOptions.request();
             aliasDetailsLoaded.resolve();
@@ -106,7 +122,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     });
 
     const mailboxes = aliasOptions.value?.mailboxes ?? [];
-    const disabledMailboxes = aliasOptions.loading || !aliasOptions;
+    const disabledMailboxes = !aliasOptions;
 
     useItemDraft<EditAliasFormValues>(form, {
         mode: 'edit',
@@ -117,7 +133,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     });
 
     /* check for length in case request gets revalidated in the background */
-    const detailsLoading = aliasDetails.loading && aliasDetails.value.length === 0;
+    const detailsLoading = aliasDetailsMailboxes.loading && aliasDetailsMailboxes.mailboxes.length === 0;
     const optionsLoading = aliasOptions.loading;
     const loading = !reconciled.current || detailsLoading || optionsLoading;
 
@@ -192,6 +208,39 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
                             />
                         </FieldsetCluster>
+
+                        {aliasManagementEnabled && aliasOwner && (
+                            <>
+                                {aliasDetails?.slNote && (
+                                    <FieldsetCluster>
+                                        <Field
+                                            name="slNote"
+                                            label={<AliasSLNoteLabel />}
+                                            placeholder={c('Placeholder').t`Note from SimpleLogin`}
+                                            component={TextAreaField}
+                                            icon="note"
+                                            maxLength={MAX_ITEM_NOTE_LENGTH}
+                                        />
+                                    </FieldsetCluster>
+                                )}
+
+                                <FieldsetCluster>
+                                    <Field
+                                        name="displayName"
+                                        label={c('Label').t`Display name`}
+                                        placeholder={c('Placeholder').t`Name to display when sending an email`}
+                                        component={TextField}
+                                        icon="card-identity"
+                                        maxLength={MAX_ITEM_NAME_LENGTH}
+                                    />
+                                </FieldsetCluster>
+
+                                {form.values.displayName && (
+                                    <span className="color-weak mt-2">{c('Info')
+                                        .jt`When sending an email from this alias, the email will display ${emailSender} as sender.`}</span>
+                                )}
+                            </>
+                        )}
                     </Form>
                 </FormikProvider>
             )}

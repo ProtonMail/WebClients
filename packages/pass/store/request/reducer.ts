@@ -12,32 +12,57 @@ const requestReducer: Reducer<RequestState> = (state = {}, action: Action) => {
     if (isActionWithRequest(action)) {
         const { request } = action.meta;
         const nextState = { ...state };
-        const data = request.data && 'payload' in action ? action.payload : undefined;
 
         switch (request.status) {
-            case 'start':
-                nextState[request.id] = { status: 'start', progress: 0, data };
-                return nextState;
+            case 'start': {
+                nextState[request.id] = {
+                    status: 'start',
+                    progress: 0,
+                    data: request.data,
+                };
 
-            case 'progress':
+                return nextState;
+            }
+
+            case 'progress': {
                 const ongoing = nextState[request.id];
                 if (ongoing?.status !== 'start') return state;
-                nextState[request.id] = { ...ongoing, progress: request.progress, data };
-                return nextState;
+                nextState[request.id] = { ...ongoing, progress: request.progress };
 
-            case 'failure':
-                nextState[request.id] = { status: request.status, data };
                 return nextState;
+            }
 
-            case 'success':
+            case 'failure': {
+                return objectDelete(state, request.id);
+            }
+
+            case 'success': {
                 const now = getEpoch();
-                nextState[request.id] = { status: request.status, maxAge: request.maxAge, requestedAt: now, data };
+                if (!request.maxAge) return objectDelete(state, request.id);
+
+                /** If there was a `maxAge` specified, store the
+                 * resulting payload in the `data` field. This should
+                 * ideally only be used for state not being tracked in
+                 * any other reducer (HOT data) */
+                nextState[request.id] = {
+                    status: request.status,
+                    maxAge: request.maxAge,
+                    requestedAt: now,
+                    data: (() => {
+                        if ('data' in request) return request.data;
+                        if ('payload' in action) return action.payload;
+                    })(),
+                };
+
                 return nextState;
+            }
         }
     }
 
     if (requestProgress.match(action) && state[action.payload.requestId]?.status === 'start') {
-        return partialMerge(state, { [action.payload.requestId]: { progress: action.payload.progress } });
+        return partialMerge(state, {
+            [action.payload.requestId]: { progress: action.payload.progress },
+        });
     }
 
     if (requestInvalidate.match(action)) return objectDelete(state, action.payload.requestId);

@@ -37,7 +37,7 @@ export type HydrationResult = { fromCache: boolean; version?: string };
  * boolean flag indicating wether hydration happened from cache or not. */
 export function* hydrate(
     config: HydrateCacheOptions,
-    { getCache, getAuthStore, getSettings, onBeforeHydrate }: RootSagaOptions
+    { getCache, getAuthStore, getSettings, getConfig, onBeforeHydrate }: RootSagaOptions
 ): Generator<any, HydrationResult> {
     try {
         const authStore = getAuthStore();
@@ -51,7 +51,10 @@ export function* hydrate(
             ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (allowFailure ? undefined : throwError(err)))
             : undefined;
 
-        const cachedState = cache?.state ? migrate(cache.state) : undefined;
+        const cachedState = cache?.state
+            ? migrate(cache.state, { from: encryptedCache.version, to: getConfig().APP_VERSION })
+            : undefined;
+
         const cachedUser = cachedState?.user;
         const snapshot = cache?.snapshot;
 
@@ -91,7 +94,7 @@ export function* hydrate(
             const paid = isPaidPlan(plan);
             const hasOfflinePassword = authStore.hasOfflinePassword();
             const autoEnableOffline = settings.offlineEnabled === undefined && supported && paid && hasOfflinePassword;
-            settings.offlineEnabled = autoEnableOffline || settings.offlineEnabled;
+            settings.offlineEnabled = autoEnableOffline || (paid && settings.offlineEnabled);
         }
 
         const incoming = { user: userState, settings, organization };

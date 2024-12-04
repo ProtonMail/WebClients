@@ -1,5 +1,6 @@
 import { devToolsEnhancer } from '@redux-devtools/remote';
 import { configureStore } from '@reduxjs/toolkit';
+import * as CONFIG from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
@@ -9,14 +10,16 @@ import createSagaMiddleware from 'redux-saga';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
+import { isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import { cacheGuard } from '@proton/pass/store/migrate';
 import reducer from '@proton/pass/store/reducers';
-import { requestMiddleware } from '@proton/pass/store/request/middleware';
+import { requestMiddlewareFactory } from '@proton/pass/store/request/middleware';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { EXTENSION_SAGAS } from '@proton/pass/store/sagas/extension';
 import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import { not } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
@@ -29,7 +32,7 @@ const store = configureStore({
     reducer,
     middleware: (middlewares) =>
         middlewares({ serializableCheck: false, immutableCheck: false, thunk: false }).concat(
-            requestMiddleware,
+            requestMiddlewareFactory({ acceptAsync: not(isActionWithSender) }),
             broadcastMiddleware,
             sagaMiddleware
         ),
@@ -79,7 +82,7 @@ const options: RootSagaOptions = {
     getSettings: withContext((ctx) => ctx.service.settings.resolve()),
     getStorage: withContext((ctx) => ctx.service.storage.local),
     getTelemetry: withContext((ctx) => ctx.service.telemetry),
-
+    getConfig: () => CONFIG,
     getAppState: withContext((ctx) => ctx.getState()),
     setAppStatus: withContext((ctx, status) => ctx.setStatus(status)),
 

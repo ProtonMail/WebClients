@@ -13,6 +13,7 @@ import { WINDOWS_APP_ID } from './constants';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
 import { getTheme } from './lib/theming';
+import { getWindowConfig, registerWindowManagementHandlers } from './lib/window-management';
 import { setApplicationMenu } from './menu-view/application-menu';
 import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
@@ -104,10 +105,16 @@ const createSession = () => {
 const createWindow = async (session: Session): Promise<BrowserWindow> => {
     if (ctx.window) return ctx.window;
 
+    const { x, y, minHeight, minWidth, height, width, maximized, zoomLevel } = getWindowConfig();
+
     ctx.window = new BrowserWindow({
+        x,
+        y,
+        minHeight,
+        minWidth,
+        width,
+        height,
         show: false,
-        width: 960,
-        height: 680,
         opacity: 1,
         autoHideMenuBar: true,
         webPreferences: {
@@ -124,11 +131,14 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
             x: 20,
             y: 18,
         },
-        minWidth: 881,
-        minHeight: 680,
     });
 
+    if (zoomLevel) {
+        ctx.window.webContents.setZoomLevel(zoomLevel);
+    }
+
     setApplicationMenu(ctx.window);
+    registerWindowManagementHandlers(ctx.window);
 
     ctx.window.on('close', (e) => {
         if (!ctx.quitting) {
@@ -142,6 +152,10 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
     await ctx.window.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
     ctx.window.show();
+
+    if (maximized) {
+        ctx.window.maximize();
+    }
 
     return ctx.window;
 };
@@ -256,7 +270,7 @@ app.addListener('web-contents-created', (_, contents) => {
         const url = new URL(href);
 
         // Shell out to the system browser if http(s)
-        if (['http:', 'https:'].includes(url.protocol)) shell.openExternal(href).catch(noop);
+        if (['http:', 'https:', 'mailto:'].includes(url.protocol)) shell.openExternal(href).catch(noop);
 
         // Always deny opening external links in-app
         return { action: 'deny' };

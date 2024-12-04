@@ -19,7 +19,12 @@ import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvid
 import { PassCoreContext } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { themeOptionToDesktop } from '@proton/pass/components/Layout/Theme/types';
-import { getLocalPath, removeLocalPath } from '@proton/pass/components/Navigation/routing';
+import {
+    decodeFilters,
+    encodeFilters,
+    getLocalPath,
+    removeLocalPath,
+} from '@proton/pass/components/Navigation/routing';
 import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -34,7 +39,13 @@ import { cacheGuard } from '@proton/pass/store/migrate';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { DESKTOP_SAGAS } from '@proton/pass/store/sagas/desktop';
 import { WEB_SAGAS } from '@proton/pass/store/sagas/web';
-import { selectB2BOnboardingEnabled, selectFeatureFlag, selectLocale, selectTheme } from '@proton/pass/store/selectors';
+import {
+    selectB2BOnboardingEnabled,
+    selectFeatureFlag,
+    selectFilters,
+    selectLocale,
+    selectTheme,
+} from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { semver } from '@proton/pass/utils/string/semver';
@@ -64,7 +75,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
         const runner = sagaMiddleware.run(
             rootSagaFactory(SAGAS).bind(null, {
                 endpoint: 'web',
-
+                getConfig: () => config,
                 getAppState: () => app.state,
                 setAppStatus: app.setStatus,
                 getAuthService: () => authService,
@@ -105,12 +116,28 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                         if (isDocumentVisible() && !res.offline) store.dispatch(startEventPolling());
 
-                        /* redirect only if initial path is empty */
-                        if (!removeLocalPath(history.location.pathname)) {
+                        const emptyPath = !removeLocalPath(history.location.pathname);
+
+                        const searchParams = new URLSearchParams(history.location.search);
+                        const searchFilters = searchParams.get('filters');
+                        const currentFilters = decodeFilters(searchFilters);
+                        const cachedFilters = selectFilters(state);
+
+                        /* if no search filters are in the URL - apply the last seen sort order */
+                        if (searchFilters === null && cachedFilters?.sort) currentFilters.sort = cachedFilters.sort;
+
+                        searchParams.set('filters', encodeFilters(currentFilters));
+                        const search = searchParams.toString();
+
+                        if (emptyPath) {
                             const b2bOnboardingEnabled = selectB2BOnboardingEnabled(installed)(state);
                             const b2bOnboard = await core.spotlight.check(SpotlightMessage.B2B_ONBOARDING);
-                            if (b2bOnboardingEnabled && b2bOnboard) history.replace(getLocalPath('onboarding'));
+                            const b2bRedirect = b2bOnboardingEnabled && b2bOnboard;
+
+                            if (b2bRedirect) return history.replace({ pathname: getLocalPath('onboarding'), search });
                         }
+
+                        history.replace({ ...history.location, search });
                     } else if (res.clearCache) void deletePassDB(userID);
                 },
 

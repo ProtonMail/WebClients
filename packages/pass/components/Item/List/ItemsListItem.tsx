@@ -10,6 +10,7 @@ import { ItemIcon, ItemIconIndicators, SafeItemIcon } from '@proton/pass/compone
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useBulkInFlight } from '@proton/pass/hooks/useBulkInFlight';
+import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectShare } from '@proton/pass/store/selectors';
@@ -46,6 +47,7 @@ const ItemsListItemRaw: FC<Props> = ({
     const bulkInFlight = useBulkInFlight(item);
     const loading = optimistic || bulkInFlight;
     const writable = (vault && isWritableVault(vault)) ?? false;
+    const aliasDisabled = isDisabledAliasItem(item);
 
     return (
         <div className={clsx(bulk.enabled && 'px-1 py-0.5')}>
@@ -70,7 +72,11 @@ const ItemsListItemRaw: FC<Props> = ({
                     <SafeItemIcon
                         item={item}
                         size={5}
-                        className={clsx('mr-3 shrink-0 relative', itemTypeToSubThemeClassName[data.type])}
+                        className={clsx(
+                            'mr-3 shrink-0 relative',
+                            itemTypeToSubThemeClassName[data.type],
+                            aliasDisabled && 'pass-item-icon--disabled'
+                        )}
                         iconClassName={clsx(loading && 'opacity-50')}
                         renderIndicators={(size) => (
                             <>

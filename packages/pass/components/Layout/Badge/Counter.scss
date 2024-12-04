@@ -1,0 +1,11 @@
+@import '~@proton/styles/scss/lib';
+
+.pass--counter-circle {
+	--counter-size: #{em(30)};
+
+	color: var(--interaction-norm-major-3);
+	border-color: var(--interaction-norm-minor-1) !important;
+	block-size: var(--counter-size);
+	inline-size: var(--counter-size);
+	overflow: hidden;
+}

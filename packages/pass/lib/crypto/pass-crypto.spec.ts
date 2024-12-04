@@ -211,6 +211,7 @@ describe('PassCrypto', () => {
                 TargetMembers: 0,
                 TargetType: ShareType.Vault,
                 VaultID: `vaultId-${Math.random()}`,
+                CanAutoFill: true,
             };
 
             /* register the share */
@@ -272,6 +273,7 @@ describe('PassCrypto', () => {
                 TargetMembers: 0,
                 TargetType: ShareType.Vault,
                 VaultID: `vaultId-${Math.random()}`,
+                CanAutoFill: true,
             };
 
             const share = await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] });
@@ -333,6 +335,7 @@ describe('PassCrypto', () => {
                 TargetMembers: 0,
                 TargetType: ShareType.Vault,
                 VaultID: `vaultId-${Math.random()}`,
+                CanAutoFill: true,
             };
 
             await expect(PassCrypto.openShare({ encryptedShare, shareKeys: [] })).rejects.toThrow(
@@ -373,6 +376,7 @@ describe('PassCrypto', () => {
                 TargetMembers: 0,
                 TargetType: ShareType.Vault,
                 VaultID: `vaultId-${Math.random()}`,
+                CanAutoFill: true,
             };
 
             await expect(PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] })).rejects.toThrow(
@@ -412,6 +416,7 @@ describe('PassCrypto', () => {
                 TargetMembers: 0,
                 TargetType: ShareType.Vault,
                 VaultID: `vaultId-${Math.random()}`,
+                CanAutoFill: true,
             };
 
             expect(await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] })).toEqual(null);
@@ -471,6 +476,7 @@ describe('PassCrypto', () => {
                 ItemID: `itemId-${Math.random()}`,
                 ItemKey: 'base64encoded',
                 KeyRotation: 1,
+                LastUseTime: 0,
                 ModifyTime: 0,
                 Pinned: false,
                 Revision: 1,
@@ -504,6 +510,7 @@ describe('PassCrypto', () => {
                 ItemID: `itemId-${Math.random()}`,
                 ItemKey: item.ItemKey,
                 KeyRotation: 1,
+                LastUseTime: 0,
                 ModifyTime: 0,
                 Pinned: false,
                 Revision: 1,
@@ -547,6 +554,7 @@ describe('PassCrypto', () => {
                 ItemID: `itemId-${Math.random()}`,
                 ItemKey: Item.ItemKey,
                 KeyRotation: 1,
+                LastUseTime: 0,
                 ModifyTime: 0,
                 Pinned: false,
                 Revision: 1,

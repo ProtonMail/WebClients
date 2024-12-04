@@ -1,14 +1,12 @@
-import { useEffect, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useMemo, useState } from 'react';
 
+import type { getAliasOptionsFailure, getAliasOptionsSuccess } from '@proton/pass/store/actions';
 import { getAliasOptionsIntent } from '@proton/pass/store/actions';
 import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
-import { selectAliasOptions } from '@proton/pass/store/selectors';
 import type { MaybeNull, MaybePromise } from '@proton/pass/types';
 import type { AliasMailbox } from '@proton/pass/types/data/alias';
-import noop from '@proton/utils/noop';
 
-import { useActionRequest } from './useActionRequest';
+import { useActionRequest } from './useRequest';
 
 export type SanitizedAliasOptions = {
     suffixes: { value: string; signature: string }[];
@@ -32,25 +30,26 @@ export const useAliasOptions = ({
     lazy = false,
     onAliasOptionsLoaded,
 }: UseAliasOptionsParams): UseAliasOptionsResult => {
-    const aliasOptions = useSelector(selectAliasOptions);
+    const [aliasOptions, setAliasOptions] = useState<MaybeNull<SanitizedAliasOptions>>(null);
 
-    const sanitizedAliasOptions = useMemo(
-        () =>
-            aliasOptions !== null
-                ? {
-                      suffixes: aliasOptions.suffixes.map(({ suffix, signedSuffix }) => ({
-                          value: suffix,
-                          signature: signedSuffix,
-                      })),
-                      mailboxes: aliasOptions.mailboxes,
-                  }
-                : null,
-        [aliasOptions]
-    );
-
-    const getAliasOptions = useActionRequest(getAliasOptionsIntent, {
+    const getAliasOptions = useActionRequest<
+        typeof getAliasOptionsIntent,
+        typeof getAliasOptionsSuccess,
+        typeof getAliasOptionsFailure
+    >(getAliasOptionsIntent, {
         requestId: aliasOptionsRequest(shareId),
-        onSuccess: sanitizedAliasOptions ? () => onAliasOptionsLoaded?.(sanitizedAliasOptions) : noop,
+        onSuccess: ({ options }) => {
+            const sanitized = {
+                suffixes: options.suffixes.map(({ suffix, signedSuffix }) => ({
+                    value: suffix,
+                    signature: signedSuffix,
+                })),
+                mailboxes: options.mailboxes,
+            };
+
+            setAliasOptions(sanitized);
+            return onAliasOptionsLoaded?.(sanitized);
+        },
     });
 
     useEffect(() => {
@@ -61,8 +60,8 @@ export const useAliasOptions = ({
         () => ({
             loading: getAliasOptions.loading,
             request: () => getAliasOptions.dispatch({ shareId }),
-            value: sanitizedAliasOptions,
+            value: aliasOptions,
         }),
-        [sanitizedAliasOptions, getAliasOptions.loading, shareId]
+        [aliasOptions, getAliasOptions.loading, shareId]
     );
 };

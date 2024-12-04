@@ -1,7 +1,6 @@
 import type { FC, ReactNode } from 'react';
 
-import { Scroll } from '@proton/atoms';
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader, Scroll } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import './Panel.scss';
@@ -11,13 +10,14 @@ type Props = {
     footer?: ReactNode;
     children?: ReactNode;
     className?: string;
+    unstyled?: boolean;
     loading?: boolean;
 };
 
-export const Panel: FC<Props> = ({ header, footer, children, className, loading }) => {
+export const Panel: FC<Props> = ({ header, footer, children, className, unstyled = false, loading }) => {
     return (
         <article className={clsx('pass-panel flex flex-column flex-nowrap', className)}>
-            {header && <div className="shrink-0 px-4 py-3">{header}</div>}
+            {header && <div className={clsx(!unstyled && 'shrink-0 px-4 py-3')}>{header}</div>}
             <div className="flex-auto h-full overflow-hidden relative">
                 {loading && <CircleLoader size="small" className="z-up absolute inset-center" />}
                 <Scroll

@@ -134,7 +134,7 @@ export const shareLeaveFailure = createAction(
 
 export const getShareAccessOptions = requestActionsFactory<SelectedShare, ShareAccessOptions>('share::access-options')({
     key: prop('shareId'),
-    success: { config: { maxAge: 15 } },
+    success: { config: { maxAge: 15, data: null } },
     failure: {
         prepare: (error: unknown, payload) =>
             withNotification({
