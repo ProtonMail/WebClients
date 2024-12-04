@@ -114,7 +114,7 @@ export const RevisionDiff: FC = () => {
                 </ButtonBar>
             }
         >
-            <Content revision={selectedItem} history={currentItem.revision !== selectedItem.revision} />
+            <Content revision={selectedItem} viewingHistory={true} />
 
             <ConfirmationModal
                 open={restore.pending}

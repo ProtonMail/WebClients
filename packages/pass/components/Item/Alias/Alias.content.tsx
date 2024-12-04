@@ -24,7 +24,7 @@ import { AliasStatusToggle } from './AliasStatusToggle';
 
 export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; actions: ReactNode }>> = ({
     revision,
-    history = false,
+    viewingHistory = false,
     optimistic = false,
     actions = [],
 }) => {
@@ -64,7 +64,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     const blockedText = c('Label').ngettext(msgid`${blockedCount} block`, `${blockedCount} blocks`, blockedCount);
 
     const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
-    const allowActions = canToggleStatus && !history && canModify;
+    const allowActions = canToggleStatus && !viewingHistory && canModify;
     const aliasActions = allowActions ? <AliasStatusToggle disabled={optimistic} revision={revision} /> : undefined;
     const aliasDisabled = isDisabledAlias(revision);
 
@@ -141,7 +141,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                 </>
             )}
 
-            {aliasManagementEnabled && canModify && (
+            {aliasManagementEnabled && canModify && !viewingHistory && (
                 <>
                     <FieldsetCluster mode="read" as="div">
                         <AliasContacts shareId={shareId} itemId={itemId} />
