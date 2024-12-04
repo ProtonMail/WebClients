@@ -32,8 +32,7 @@ export const OnboardingSSO: FC<SpotlightModalProps> = ({ acknowledge, onClose })
                             label={{
                                 [LockMode.PASSWORD]: (
                                     <>
-                                        <span className="mr-2">{c('Label')
-                                            .t`Authentication again with your backup password`}</span>
+                                        <span className="mr-2">{c('Label').t`Backup password`}</span>
                                         {isPasswordSelected && (
                                             <span className="color-weak text-sm align-end">
                                                 ({c('Info').t`Currently selected`})
