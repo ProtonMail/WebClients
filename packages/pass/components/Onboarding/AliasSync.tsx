@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { AliasSyncIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
@@ -13,14 +14,15 @@ import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants
 import noop from '@proton/utils/noop';
 
 export const AliasSync: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
+    const online = useConnectivity();
     const { openSettings } = usePassCore();
     const { pendingAliasToSync: aliasCount } = useSelector(selectUserData);
 
     return (
         <>
             <div className="flex-1">
-                <strong className="block color-invert">{c('Title').t`Sync your aliases from SimpleLogin`}</strong>
-                <span className="block text-sm color-invert">
+                <strong className="block">{c('Title').t`Sync your aliases from SimpleLogin`}</strong>
+                <span className="block text-sm">
                     {c('Info').ngettext(
                         msgid`You have ${aliasCount} alias that is present in SimpleLogin but missing in ${PASS_APP_NAME}. Would you like to sync it?`,
                         `You have ${aliasCount} aliases that are present in SimpleLogin but missing in ${PASS_APP_NAME}. Would you like to sync them?`,
@@ -39,7 +41,7 @@ export const AliasSync: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
                         size="small"
                         className="text-sm px-3"
                         onClick={pipe(onClose, () => openSettings?.('aliases'))}
-                        style={{ backgroundColor: 'var(--interaction-norm-major-3)' }}
+                        disabled={!online}
                     >
                         {c('Action').ngettext(msgid`Sync alias`, `Sync aliases`, aliasCount)}
                     </Button>
