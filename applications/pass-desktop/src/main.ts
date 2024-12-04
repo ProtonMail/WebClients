@@ -14,6 +14,7 @@ import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
 import { getTheme } from './lib/theming';
 import { getWindowConfig, registerWindowManagementHandlers } from './lib/window-management';
+import { userAgent } from './lib/user-agent';
 import { setApplicationMenu } from './menu-view/application-menu';
 import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
@@ -112,6 +113,8 @@ const createSession = () => {
         const nextUrl = `${MAIN_WINDOW_WEBPACK_ENTRY}#/login${url.hash}`;
         await ctx.window.loadURL(nextUrl);
     });
+
+    secureSession.setUserAgent(userAgent());
 
     return secureSession;
 };
