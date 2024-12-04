@@ -9,7 +9,6 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import useFlag from '@proton/unleash/useFlag';
 
 import type { OpenCallbackProps } from '../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../constants';
 import PostSubscriptionModal from './PostSubscriptionModal';
 import type { PostSubscriptionFlowName } from './interface';
 
@@ -57,7 +56,7 @@ export const usePostSubscription = ({
         // Force thanks step
         disableThanksStep: false,
         renderCustomStepModal: (step, modalProps) => {
-            if (flowName && [SUBSCRIPTION_STEPS.UPGRADE, SUBSCRIPTION_STEPS.THANKS].includes(step)) {
+            if (flowName) {
                 return (
                     <PostSubscriptionModal
                         {...modalProps}
