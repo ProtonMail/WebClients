@@ -23,6 +23,7 @@ import InAppPurchaseModal from './InAppPurchaseModal';
 import SubscriptionContainer from './SubscriptionContainer';
 import type { OpenCallbackProps, SubscriptionOverridableStep } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
+import { usePostSubscription } from './postSubscription/usePostSubscription';
 
 interface Props {
     app: APP_NAMES;
@@ -44,6 +45,7 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
         const [user] = useUser();
         const subscriptionPropsRef = useRef<OpenCallbackProps | null>(null);
         const [subscription, loadingSubscription] = useSubscription();
+        const postSubscriptionProps = usePostSubscription();
         const [plansResult, loadingPlans] = usePlans();
         const plans = plansResult?.plans || [];
         const freePlan = plansResult?.freePlan || FREE_PLAN;
@@ -89,7 +91,7 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
             onUnsubscribed,
             mode,
             currency,
-            renderCustomStepModal,
+            upsellRef,
             ...rest
         } = subscriptionPropsRef.current;
 
@@ -145,8 +147,11 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                 mode={mode}
                 currency={currency}
                 paymentsStatus={status}
+                upsellRef={upsellRef}
+                // Post subscription has advantage over config
+                disableThanksStep={postSubscriptionProps.disableThanksStep ?? rest.disableThanksStep}
                 {...rest}
-                render={({ onSubmit, title, content, footer, step }) => {
+                render={({ onSubmit, title, content, footer, step, planIDs }) => {
                     const modal = (
                         <ModalTwo
                             blurBackdrop={blurBackdrop}
@@ -174,7 +179,15 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                     );
 
                     if (isOverridablableStep(step)) {
-                        return renderCustomStepModal?.(step, modalState) || modal;
+                        return (
+                            postSubscriptionProps.renderCustomStepModal({
+                                step,
+                                modalProps: modalState,
+                                upsellRef,
+                                onSubscribed,
+                                planIDs,
+                            }) || modal
+                        );
                     }
 
                     return modal;
