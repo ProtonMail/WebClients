@@ -9,8 +9,6 @@ export const MIN_CACHE_VERSION = '1.10.0';
 
 export const MAX_BATCH_PER_REQUEST = 100;
 export const MAX_BATCH_ADDRESS_REQUEST = 10;
-export const ALIAS_OPTIONS_MAX_AGE = 10 * 60;
-export const ALIAS_DETAILS_MAX_AGE = 30;
 
 export const DEFAULT_LOCK_TTL = 600; /* 10 minutes */
 
@@ -45,6 +43,7 @@ export const PASS_LINUX_VERSION_URL = 'https://proton.me/download/PassDesktop/li
 export const PASS_LINUX_DOWNLOAD_URL = 'https://proton.me/support/set-up-proton-pass-linux';
 export const PASS_DESKTOP_CHANGELOG_URL =
     'https://github.com/ProtonMail/WebClients/blob/main/applications/pass-desktop/CHANGELOG.md';
+export const SIMPLELOGIN_DOMAIN_SETTINGS_URL = 'https://app.simplelogin.io/dashboard/custom_domain';
 export const WEBSITE_RULES_URL = 'https://proton.me/download/pass/auto-detection/rules.json';
 export const PASS_DOWNLOAD_URL = 'https://proton.me/pass/download';
 export const PASS_TROUBLESHOOT_URL = 'https://proton.me/support/pass-troubleshooting';

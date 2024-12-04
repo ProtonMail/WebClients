@@ -26,7 +26,13 @@ export type ItemCreateIntentDTO = {
 };
 
 export type ItemEditIntentDTO = {
-    alias: MaybeNull<{ aliasOwner: boolean; mailboxes: AliasMailbox[]; aliasEmail: string }>;
+    alias: MaybeNull<{
+        aliasOwner: boolean;
+        mailboxes: AliasMailbox[];
+        aliasEmail: string;
+        displayName: string;
+        slNote: string;
+    }>;
     login: never;
     note: never;
     creditCard: never;

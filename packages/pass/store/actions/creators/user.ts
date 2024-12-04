@@ -19,6 +19,7 @@ export const getUserFeaturesSuccess = createAction(
     'user::features::get::success',
     withRequestSuccess((payload: FeatureFlagState) => pipe(withCache, withSettings)({ payload }), {
         maxAge: UNIX_HOUR / 2,
+        data: null,
     })
 );
 
@@ -33,7 +34,7 @@ export const getUserAccessIntent = createAction('user::access::get::intent', (us
 
 export const getUserAccessSuccess = createAction(
     'user::access::get::success',
-    withRequestSuccess((payload: HydratedAccessState) => withCache({ payload }), { maxAge: UNIX_HOUR / 2 })
+    withRequestSuccess((payload: HydratedAccessState) => withCache({ payload }), { maxAge: UNIX_HOUR / 2, data: null })
 );
 
 export const getUserAccessFailure = createAction(

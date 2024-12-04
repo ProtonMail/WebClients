@@ -9,9 +9,6 @@ export const selectRequest =
     ({ request }: { request: RequestState }): Maybe<RequestEntry<RequestStatus>> =>
         request?.[namespaceOrId];
 
-export const selectRequestStatus = (namespaceOrId: string) =>
-    createSelector(selectRequest(namespaceOrId), (request) => request?.status);
-
 export const selectRequestInFlight = (namespaceOrId: string) =>
     createSelector(selectRequest(namespaceOrId), (request): boolean => Boolean(request?.status === 'start'));
 

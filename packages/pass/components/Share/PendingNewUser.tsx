@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { newUserInvitePromoteIntent, newUserInviteRemoveIntent } from '@proton/pass/store/actions';
 import type { NewUserPendingInvite, SelectedShare } from '@proton/pass/types';
 import type { NewUserInvitePromoteIntent } from '@proton/pass/types/data/invites.dto';

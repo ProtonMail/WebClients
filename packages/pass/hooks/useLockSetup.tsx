@@ -12,7 +12,7 @@ import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { DEFAULT_LOCK_TTL, UpsellRef } from '@proton/pass/constants';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { lockCreateIntent } from '@proton/pass/store/actions';
@@ -91,7 +91,7 @@ export const useLockSetup = (): LockSetup => {
 
     const createLock = useActionRequest(lockCreateIntent, {
         requestId: lockCreateRequest(),
-        onStart: ({ data }) => setNextLock({ ttl: data.lock.ttl, mode: data.lock.mode }),
+        onStart: ({ lock }) => setNextLock({ ttl: lock.ttl, mode: lock.mode }),
         onFailure: () => setNextLock(null),
         onSuccess: () => setNextLock(null),
     });
