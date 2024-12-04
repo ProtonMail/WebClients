@@ -18,7 +18,7 @@ export enum PAYMENT_METHOD_TYPES {
     TOKEN = 'token',
     CHARGEBEE_CARD = 'chargebee-card',
     CHARGEBEE_PAYPAL = 'chargebee-paypal',
-    CHARGEBEE_SEPA_DIRECT_DEBIT = 'sepadirectdebit',
+    CHARGEBEE_SEPA_DIRECT_DEBIT = 'sepa_direct_debit',
 }
 export const signupFlows: readonly PaymentMethodFlows[] = Object.freeze([
     'signup',
