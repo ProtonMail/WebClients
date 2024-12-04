@@ -1,30 +1,41 @@
-import { useEffect, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
+import type { getAliasDetailsFailure, getAliasDetailsSuccess } from '@proton/pass/store/actions';
 import { getAliasDetailsIntent } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
-import { selectAliasDetails } from '@proton/pass/store/selectors';
 import type { AliasMailbox, Maybe } from '@proton/pass/types';
 
-import { useActionRequest } from './useActionRequest';
+import { useActionRequest } from './useRequest';
 
 type UseAliasDetailsConfig = {
     aliasEmail: string;
     itemId: string;
     shareId: string;
-    onAliasDetailsLoaded?: (mailboxes: Maybe<AliasMailbox[]>) => void;
+    onAliasMailboxesLoaded?: (mailboxes: Maybe<AliasMailbox[]>) => void;
 };
 
-export const useAliasDetails = ({ aliasEmail, itemId, shareId, onAliasDetailsLoaded }: UseAliasDetailsConfig) => {
+export const useAliasDetails = ({
+    aliasEmail,
+    itemId,
+    shareId,
+    onAliasMailboxesLoaded: onAliasDetailsLoaded,
+}: UseAliasDetailsConfig) => {
     const { createNotification } = useNotifications();
-    const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
+    const [mailboxes, setMailboxes] = useState<Maybe<AliasMailbox[]>>();
 
-    const getAliasDetails = useActionRequest(getAliasDetailsIntent, {
+    const getAliasDetails = useActionRequest<
+        typeof getAliasDetailsIntent,
+        typeof getAliasDetailsSuccess,
+        typeof getAliasDetailsFailure
+    >(getAliasDetailsIntent, {
         requestId: aliasDetailsRequest(aliasEmail),
-        onSuccess: () => onAliasDetailsLoaded?.(aliasDetails),
+        onSuccess: ({ mailboxes }) => {
+            setMailboxes(mailboxes);
+            onAliasDetailsLoaded?.(mailboxes);
+        },
         onFailure: () => {
             createNotification({
                 type: 'warning',
@@ -38,7 +49,7 @@ export const useAliasDetails = ({ aliasEmail, itemId, shareId, onAliasDetailsLoa
     }, [shareId, itemId, aliasEmail]);
 
     return useMemo(
-        () => ({ value: aliasDetails ?? [], loading: getAliasDetails.loading }),
-        [aliasDetails, getAliasDetails.loading]
+        () => ({ mailboxes: mailboxes ?? [], loading: getAliasDetails.loading }),
+        [mailboxes, getAliasDetails.loading]
     );
 };

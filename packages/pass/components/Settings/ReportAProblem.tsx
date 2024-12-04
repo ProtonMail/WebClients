@@ -9,7 +9,7 @@ import { Button } from '@proton/atoms';
 import { TextAreaTwo } from '@proton/components';
 import { getClientName, getReportInfo } from '@proton/components/helpers/report';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { reportBugIntent } from '@proton/pass/store/actions';
 import { selectUser } from '@proton/pass/store/selectors';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';

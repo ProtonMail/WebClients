@@ -143,6 +143,7 @@ export const useSpotlightMessages = () => {
                         component: AliasSync,
                         id: 'alias-sync',
                         className: 'ui-teal',
+                        weak: true,
                     },
                     {
                         type: SpotlightMessage.USER_RENEWAL,

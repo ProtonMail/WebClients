@@ -1,4 +1,5 @@
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
+import type { FiltersState } from '@proton/pass/store/reducers';
 import { type MaybeNull } from '@proton/pass/types';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 import { type XorObfuscation, obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -26,7 +27,7 @@ export const cacheGuard = (
     return {};
 };
 
-export const migrate = (state: State) => {
+export const migrate = (state: State, versions: { from?: string; to: string }) => {
     const user = selectUser(state);
     const plan = selectPassPlan(state);
 
@@ -80,8 +81,24 @@ export const migrate = (state: State) => {
         };
     }
 
-    /** SSO migration */
+    /** v1.24.0 migration */
     if (!state.user.devices) state.user.devices = [];
+
+    /** v1.25.1 migration */
+    if ('popup' in state) {
+        const filters = state.popup as FiltersState;
+        delete state.popup;
+        state.filters = filters;
+    }
+
+    /** v1.26.0 migration */
+    if (state.alias.aliasDetails) {
+        const legacy = Object.values(state.alias.aliasDetails).some(Array.isArray);
+        if (legacy) state.alias.aliasDetails = {};
+    }
+
+    /** Clear request cache on update */
+    if (!versions.from || semver(versions.from) < semver(versions.to)) state.request = {};
 
     return state;
 };

@@ -1,8 +1,8 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import type { FetchedBreaches } from '@proton/components';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { type AddressBreachDTO, AddressType } from '@proton/pass/lib/monitor/types';
 import { getAliasBreach, getCustomBreach, getProtonBreach } from '@proton/pass/store/actions';
 import { selectLoginsByUserIdentifier } from '@proton/pass/store/selectors';
@@ -29,7 +29,8 @@ export type BreachDetails = {
 
 export const useAddressBreaches = <T extends AddressType>(dto: AddressBreachDTO<T>, email: string) => {
     const [request, initial] = getRequest(dto);
-    const req = useRequest(request, { initial });
+    const [breaches, setBreaches] = useState<FetchedBreaches[]>([]);
+    const req = useRequest(request, { initial, onSuccess: setBreaches });
     const usages = useSelector(selectLoginsByUserIdentifier(email));
 
     useEffect(() => {
@@ -44,8 +45,8 @@ export const useAddressBreaches = <T extends AddressType>(dto: AddressBreachDTO<
     }, []);
 
     return useMemo<BreachDetails>(() => {
-        const data = req.loading ? [] : (req.data ?? []);
+        const data = req.loading ? [] : breaches;
         const [active, resolved] = partition(data, ({ resolvedState }) => resolvedState < 3);
         return { loading: req.loading, active, resolved, usages };
-    }, [req, usages]);
+    }, [req, breaches, usages]);
 };

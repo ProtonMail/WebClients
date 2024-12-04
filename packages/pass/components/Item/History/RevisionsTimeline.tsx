@@ -10,7 +10,7 @@ import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHisto
 import { Timeline } from '@proton/pass/components/Layout/Timeline/Timeline';
 import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { epochToRelativeDate } from '@proton/pass/utils/time/format';
+import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
 import { useItemHistory } from './ItemHistoryContext';
 import { RevisionItem } from './RevisionItem';
@@ -66,7 +66,9 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                                 ellipsis
                                 subtitle={
                                     // translator: when this login was last used
-                                    current.lastUseTime ? epochToRelativeDate(current.lastUseTime) : c('Info').t`Never`
+                                    current.lastUseTime
+                                        ? epochToRelativeDaysAgo(current.lastUseTime)
+                                        : c('Info').t`Never`
                                 }
                             />
                         )}
@@ -75,7 +77,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                             <RevisionItem
                                 icon="clock"
                                 title={c('Title').t`Current version`}
-                                subtitle={epochToRelativeDate(current.revisionTime)}
+                                subtitle={epochToRelativeDaysAgo(current.revisionTime)}
                                 ellipsis
                             />
 
@@ -85,7 +87,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                                     onClick={() => navigate(`${location.pathname}/${item.revision}`)}
                                     icon={item.revision === 1 ? 'bolt' : 'pencil'}
                                     title={item.revision === 1 ? c('Title').t`Created` : c('Title').t`Modified`}
-                                    subtitle={epochToRelativeDate(item.revisionTime)}
+                                    subtitle={epochToRelativeDaysAgo(item.revisionTime)}
                                     ellipsis
                                 />
                             ))}

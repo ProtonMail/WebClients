@@ -175,7 +175,7 @@ export const itemBulkMoveIntent = createAction(
     'item::bulk::move::intent',
     (payload: { selected: BulkSelectionDTO; shareId: string }) =>
         pipe(
-            withRequest({ status: 'start', id: itemsBulkMoveRequest(), data: true }),
+            withRequest({ status: 'start', id: itemsBulkMoveRequest(), data: payload.selected }),
             withNotification({
                 expiration: -1,
                 type: 'info',
@@ -251,7 +251,7 @@ export const itemBulkTrashIntent = createAction(
     'item::bulk::trash::intent',
     (payload: { selected: BulkSelectionDTO }) =>
         pipe(
-            withRequest({ status: 'start', id: itemsBulkTrashRequest(), data: true }),
+            withRequest({ status: 'start', id: itemsBulkTrashRequest(), data: payload.selected }),
             withNotification({
                 expiration: -1,
                 type: 'info',
@@ -324,7 +324,7 @@ export const itemBulkDeleteIntent = createAction(
     'item::bulk::delete::intent',
     (payload: { selected: BulkSelectionDTO }) =>
         pipe(
-            withRequest({ status: 'start', id: itemsBulkDeleteRequest(), data: true }),
+            withRequest({ status: 'start', id: itemsBulkDeleteRequest(), data: payload.selected }),
             withNotification({
                 expiration: -1,
                 type: 'info',
@@ -401,7 +401,7 @@ export const itemBulkRestoreIntent = createAction(
     'item::bulk:restore::intent',
     (payload: { selected: BulkSelectionDTO }) =>
         pipe(
-            withRequest({ status: 'start', id: itemsBulkRestoreRequest(), data: true }),
+            withRequest({ status: 'start', id: itemsBulkRestoreRequest(), data: payload.selected }),
             withNotification({
                 expiration: -1,
                 type: 'info',
@@ -521,7 +521,7 @@ export const itemHistoryIntent = createAction('item::history::intent', (payload:
 
 export const itemHistorySuccess = createAction(
     'item::history::success',
-    withRequestSuccess((payload: ItemRevisionsSuccess) => ({ payload }), { data: true })
+    withRequestSuccess((payload: ItemRevisionsSuccess) => ({ payload }))
 );
 
 export const itemHistoryFailure = createAction(
@@ -536,12 +536,11 @@ export const itemHistoryFailure = createAction(
 );
 
 export const secureLinksGet = requestActionsFactory<void, SecureLink[]>('secure-link::get')({
-    success: { config: { maxAge: UNIX_MINUTE } },
+    success: { config: { maxAge: UNIX_MINUTE, data: null } },
 });
 
 export const secureLinkCreate = requestActionsFactory<SecureLinkCreationDTO, SecureLink>('secure-link::create')({
     key: selectedItemKey,
-    success: { config: { data: true } },
     failure: {
         prepare: (error, payload) =>
             withNotification({
@@ -554,9 +553,7 @@ export const secureLinkCreate = requestActionsFactory<SecureLinkCreationDTO, Sec
 
 export const secureLinkOpen = requestActionsFactory<SecureLinkQuery, SecureLinkItem>('secure-link::open')({
     key: prop('token'),
-    success: { config: { data: true } },
     failure: {
-        config: { data: true },
         prepare: (error) =>
             withNotification({
                 type: 'error',

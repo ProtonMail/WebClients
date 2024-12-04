@@ -5,7 +5,7 @@ import { inviteAddressesValidateIntent } from '@proton/pass/store/actions';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 
 import { uniqueId } from '../utils/string/unique-id';
-import { useActionRequest } from './useActionRequest';
+import { useActionRequest } from './useRequest';
 
 type InviteAddressesCache = Map<string, boolean>;
 export interface InviteAddressValidator {

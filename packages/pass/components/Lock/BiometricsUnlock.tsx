@@ -10,7 +10,7 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';

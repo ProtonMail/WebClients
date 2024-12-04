@@ -2,25 +2,29 @@ import type { ReactNode } from 'react';
 import { type FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
+import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
+import { AliasSLNoteLabel } from '@proton/pass/components/Item/Alias/AliasSLNoteLabel';
+import { AliasContacts } from '@proton/pass/components/Item/Alias/Contact/AliasContacts';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
+import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
-import { selectAliasDetails } from '@proton/pass/store/selectors';
+import { selectAliasDetails, selectAliasMailboxes } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 
 import { AliasStatusToggle } from './AliasStatusToggle';
 
 export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; actions: ReactNode }>> = ({
     revision,
-    history = false,
+    viewingHistory = false,
     optimistic = false,
     actions = [],
 }) => {
@@ -30,8 +34,9 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
 
     const aliasEmail = revision.aliasEmail!;
     const note = useDeobfuscatedValue(item.metadata.note);
-    const mailboxesForAlias = useSelector(selectAliasDetails(aliasEmail!));
+    const mailboxesForAlias = useSelector(selectAliasMailboxes(aliasEmail!));
     const canToggleStatus = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
+    const aliasManagementEnabled = useFeatureFlag(PassFeature.PassAdvancedAliasManagementV1);
 
     const getAliasDetails = useActionRequest(getAliasDetailsIntent, {
         requestId: aliasDetailsRequest(aliasEmail),
@@ -46,9 +51,22 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
         },
     });
 
+    const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
+    const displayName = aliasDetails?.name;
+    const slNote = aliasDetails?.slNote;
+    const forwardCount = aliasDetails?.stats?.forwardedEmails ?? 0;
+    const repliedCount = aliasDetails?.stats?.repliedEmails ?? 0;
+    const blockedCount = aliasDetails?.stats?.blockedEmails ?? 0;
+    const canModify = aliasDetails?.modify;
+
+    const forwardText = c('Label').ngettext(msgid`${forwardCount} forward`, `${forwardCount} forwards`, forwardCount);
+    const replyText = c('Label').ngettext(msgid`${repliedCount} reply`, `${repliedCount} replies`, repliedCount);
+    const blockedText = c('Label').ngettext(msgid`${blockedCount} block`, `${blockedCount} blocks`, blockedCount);
+
     const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
-    const allowActions = canToggleStatus && !history;
+    const allowActions = canToggleStatus && !viewingHistory && canModify;
     const aliasActions = allowActions ? <AliasStatusToggle disabled={optimistic} revision={revision} /> : undefined;
+    const aliasDisabled = isDisabledAlias(revision);
 
     useEffect(() => {
         if (!optimistic) getAliasDetails.dispatch({ shareId, itemId, aliasEmail });
@@ -60,7 +78,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                 <ValueControl
                     clickToCopy
                     icon="alias"
-                    label={c('Label').t`Alias address`}
+                    label={aliasDisabled ? c('Label').t`Alias address (disabled)` : c('Label').t`Alias address`}
                     value={aliasEmail ?? undefined}
                     extra={actions}
                     valueClassName="mr-12"
@@ -68,13 +86,20 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                     actionsContainerClassName="self-center"
                 />
 
-                <ValueControl as="ul" loading={!ready} icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>
-                    {mailboxesForAlias?.map(({ email }) => (
-                        <li key={email} className="text-ellipsis">
-                            {email}
-                        </li>
-                    ))}
-                </ValueControl>
+                {mailboxesForAlias && mailboxesForAlias.length > 0 && (
+                    <ValueControl
+                        as="ul"
+                        loading={!ready}
+                        icon="arrow-up-and-right-big"
+                        label={c('Label').t`Forwards to`}
+                    >
+                        {mailboxesForAlias.map(({ email }) => (
+                            <li key={email} className="text-ellipsis">
+                                {email}
+                            </li>
+                        ))}
+                    </ValueControl>
+                )}
             </FieldsetCluster>
 
             {note && (
@@ -87,6 +112,50 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                         value={note}
                     />
                 </FieldsetCluster>
+            )}
+
+            {aliasManagementEnabled && slNote && (
+                <FieldsetCluster mode="read" as="div">
+                    <ValueControl
+                        clickToCopy
+                        as={TextAreaReadonly}
+                        icon="note"
+                        label={<AliasSLNoteLabel />}
+                        value={slNote}
+                    />
+                </FieldsetCluster>
+            )}
+
+            {aliasManagementEnabled && displayName && (
+                <>
+                    <FieldsetCluster mode="read" as="div">
+                        <ValueControl
+                            clickToCopy
+                            icon="card-identity"
+                            label={c('Label').t`Display name`}
+                            value={displayName}
+                        />
+                    </FieldsetCluster>
+                    <div className="color-weak mb-4">{c('Info')
+                        .t`The display name when sending an email from this alias.`}</div>
+                </>
+            )}
+
+            {aliasManagementEnabled && canModify && !viewingHistory && (
+                <>
+                    <FieldsetCluster mode="read" as="div">
+                        <AliasContacts shareId={shareId} itemId={itemId} />
+                    </FieldsetCluster>
+                    <div className="color-weak mb-4">{c('Info')
+                        .t`Need to email someone but don’t want them to see your email address? Set up a contact alias.`}</div>
+
+                    <FieldsetCluster mode="read" as="div">
+                        <FieldBox icon="chart-line">
+                            <div className="color-weak text-sm">{c('Title').t`Activity`}</div>
+                            <div>{`${forwardText} • ${replyText} • ${blockedText}`}</div>
+                        </FieldBox>
+                    </FieldsetCluster>
+                </>
             )}
         </>
     );

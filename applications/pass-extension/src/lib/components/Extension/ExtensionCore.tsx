@@ -148,12 +148,14 @@ const getPassCoreProviderProps = (
 
         promptForPermissions,
 
-        onLink: (url) =>
-            browser.tabs
-                .create({ url })
-                /** Popup may not auto-close on firefox  */
-                .then(() => endpoint === 'popup' && BUILD_TARGET === 'firefox' && window.close())
-                .catch(noop),
+        onLink: (url, options) =>
+            options?.replace
+                ? browser.tabs.update({ url }).catch(noop)
+                : browser.tabs
+                      .create({ url })
+                      /** Popup may not auto-close on firefox  */
+                      .then(() => endpoint === 'popup' && BUILD_TARGET === 'firefox' && window.close())
+                      .catch(noop),
 
         onForceUpdate: () =>
             sendMessage(messageFactory({ type: WorkerMessageType.WORKER_RELOAD }))

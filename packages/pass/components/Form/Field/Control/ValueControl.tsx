@@ -1,4 +1,4 @@
-import type { ComponentType, ElementType } from 'react';
+import type { ComponentType, ElementType, ReactElement } from 'react';
 import { type ReactNode, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
@@ -21,13 +21,14 @@ export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon
     className?: string;
     clickToCopy?: boolean;
     clipboardValue?: string;
+    disabled?: boolean;
     error?: boolean;
     ellipsis?: boolean;
     extra?: ReactNode;
     hidden?: boolean;
     hiddenValue?: string;
-    icon?: IconName;
-    label: string;
+    icon?: IconName | ReactElement;
+    label: ReactNode;
     loading?: boolean;
     value?: string;
     valueClassName?: string;
@@ -58,6 +59,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
     className,
     clickToCopy = false,
     clipboardValue,
+    disabled = false,
     ellipsis = true,
     error = false,
     extra,
@@ -98,7 +100,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
     }, [value, children, loading, hide, intrinsicEl]);
 
     const canCopy = clickToCopy && value;
-    const interactive = canCopy || onClick;
+    const interactive = (canCopy || onClick) && !disabled;
     const MaybeClickToCopy: ElementType<ClickToCopyProps> = canCopy ? ClickToCopy : 'div';
 
     return (
@@ -107,9 +109,10 @@ export const ValueControl = <E extends ElementType = 'div'>({
                 'pass-value-control',
                 interactive && 'pass-value-control--interactive cursor-pointer',
                 !loading && error && 'border-danger',
+                disabled && 'opacity-50',
                 className
             )}
-            {...(canCopy ? { value: clipboardValue ?? value } : { onClick })}
+            {...(canCopy ? { value: clipboardValue ?? value } : { onClick: disabled ? undefined : onClick })}
         >
             <FieldBox
                 actions={
@@ -125,7 +128,8 @@ export const ValueControl = <E extends ElementType = 'div'>({
                 <ValueContainer
                     key={`${hide ? 'hidden' : 'visible'}-container`}
                     className={clsx(
-                        'pass-value-control--value m-0 p-0 cursor-pointer',
+                        'pass-value-control--value m-0 p-0',
+                        !disabled && 'cursor-pointer',
                         ellipsis && 'text-ellipsis',
                         hide && 'text-nowrap overflow-hidden',
                         valueClassName

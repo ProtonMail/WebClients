@@ -7,16 +7,31 @@ import { PassCrypto } from '@proton/pass/lib/crypto';
 import { serializeItemContent } from '@proton/pass/lib/items/item-proto.transformer';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type {
+    AliasContactBlockDTO,
+    AliasContactGetResponse,
+    AliasContactInfoDTO,
+    AliasContactNewDTO,
+    AliasContactWithStatsGetResponse,
     AliasCreateFromPendingDTO,
     AliasDetails,
     AliasMailbox,
+    AliasMailboxResponse,
     AliasOptions,
     AliasPending,
     AliasToggleStatusDTO,
+    CatchAllDTO,
     CreatePendingAliasRequest,
+    CustomDomainMailboxesDTO,
+    CustomDomainNameDTO,
+    CustomDomainOutput,
     EnableSLSyncRequest,
     ItemRevisionContentsResponse,
+    MailboxDefaultDTO,
+    MailboxDeleteDTO,
+    MaybeNull,
+    RandomPrefixDTO,
     SlSyncStatusOutput,
+    UniqueItem,
 } from '@proton/pass/types';
 import chunk from '@proton/utils/chunk';
 
@@ -46,16 +61,80 @@ export const getAliasOptions = async (shareId: string): Promise<AliasOptions> =>
 };
 
 export const getAliasDetails = async (shareId: string, itemId: string): Promise<AliasDetails> => {
-    const result = await api({
-        url: `pass/v1/share/${shareId}/alias/${itemId}`,
-        method: 'get',
-    });
+    const result = (
+        await api({
+            url: `pass/v1/share/${shareId}/alias/${itemId}`,
+            method: 'get',
+        })
+    ).Alias!;
+
+    const intoMailbox = ({ Email, ID }: AliasMailboxResponse): AliasMailbox => ({ id: ID, email: Email });
 
     return {
-        aliasEmail: result.Alias!.Email,
-        mailboxes: result.Alias!.Mailboxes?.map(({ Email, ID }): AliasMailbox => ({ id: ID, email: Email })) ?? [],
+        aliasEmail: result.Email,
+        availableMailboxes: result.AvailableMailboxes?.map(intoMailbox) ?? [],
+        mailboxes: result.Mailboxes?.map(intoMailbox) ?? [],
+        modify: result.Modify,
+        name: result.Name ?? '',
+        displayName: result.DisplayName,
+        slNote: result.Note ?? '',
+        stats: {
+            blockedEmails: result.Stats.BlockedEmails,
+            forwardedEmails: result.Stats.ForwardedEmails,
+            repliedEmails: result.Stats.RepliedEmails,
+        },
     };
 };
+
+export const aliasGetContactsListApi = ({ shareId, itemId }: UniqueItem): Promise<AliasContactWithStatsGetResponse[]> =>
+    createPageIterator({
+        request: async (cursor) => {
+            const result = await api({
+                url: `pass/v1/share/${shareId}/alias/${itemId}/contact`,
+                method: 'get',
+                params: { Since: cursor },
+            });
+            const contacts = result.Contacts ?? [];
+
+            return { data: contacts, cursor: result.LastID === 0 ? null : result.LastID?.toString() };
+        },
+    })();
+
+export const aliasGetContactInfoApi = async ({
+    shareId,
+    itemId,
+    contactId,
+}: AliasContactInfoDTO): Promise<AliasContactGetResponse> =>
+    (
+        await api({
+            url: `pass/v1/share/${shareId}/alias/${itemId}/contact/${contactId}`,
+            method: 'get',
+        })
+    ).Contact!;
+
+export const aliasCreateContactApi = async ({ shareId, itemId, name, email }: AliasContactNewDTO) =>
+    (
+        await api({
+            url: `pass/v1/share/${shareId}/alias/${itemId}/contact`,
+            method: 'post',
+            data: { Name: name, Email: email },
+        })
+    )?.Contact!;
+
+export const aliasDeleteContactApi = ({ shareId, itemId, contactId }: AliasContactInfoDTO) =>
+    api({
+        url: `pass/v1/share/${shareId}/alias/${itemId}/contact/${contactId}`,
+        method: 'delete',
+    }).then(() => contactId);
+
+export const aliasBlockContactApi = async ({ shareId, itemId, contactId, blocked }: AliasContactBlockDTO) =>
+    (
+        await api({
+            url: `pass/v1/share/${shareId}/alias/${itemId}/contact/${contactId}/blocked`,
+            method: 'put',
+            data: { Blocked: blocked },
+        })
+    )?.Contact!;
 
 export const getAliasCount = async (): Promise<number> =>
     (await api({ url: `pass/v1/user/alias/count`, method: 'get' }))?.AliasCount?.Total ?? 0;
@@ -127,3 +206,189 @@ export const toggleAliasStatus = async ({ shareId, itemId, enabled }: AliasToggl
             data: { Enable: enabled },
         })
     ).Item;
+
+export const getMailboxesApi = async () =>
+    (
+        await api({
+            url: `pass/v1/user/alias/mailbox`,
+            method: 'get',
+        })
+    ).Mailboxes!;
+
+export const createMailboxApi = async (email: string) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/mailbox`,
+            method: 'post',
+            data: { Email: email },
+        })
+    ).Mailbox!;
+
+export const resendVerifyMailboxApi = async (mailboxID: number) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/mailbox/${mailboxID}/verify`,
+            method: 'get',
+        })
+    ).Mailbox!;
+
+export const validateMailboxApi = async ({ mailboxID, code }: { mailboxID: number; code: string }) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/mailbox/${mailboxID}/verify`,
+            method: 'post',
+            data: { Code: code },
+        })
+    ).Mailbox!;
+
+export const deleteMailboxApi = async ({ mailboxID, transferMailboxID }: MailboxDeleteDTO) =>
+    api({
+        url: `pass/v1/user/alias/mailbox/${mailboxID}`,
+        method: 'delete',
+        data: { TransferMailboxID: transferMailboxID },
+    }).then(() => true);
+
+export const setDefaultMailboxApi = async ({ defaultMailboxID }: MailboxDefaultDTO) =>
+    (
+        await api({
+            url: 'pass/v1/user/alias/settings/default_mailbox_id',
+            method: 'put',
+            data: { DefaultMailboxID: defaultMailboxID },
+        })
+    ).Settings!;
+
+export const getAliasDomainsApi = async () =>
+    (
+        await api({
+            url: `pass/v1/user/alias/domain`,
+            method: 'get',
+        })
+    ).Domains!;
+
+export const syncAliasMailboxes = ({ shareId, itemId }: UniqueItem, MailboxIDs: number[]) =>
+    api({
+        url: `pass/v1/share/${shareId}/alias/${itemId}/mailbox`,
+        method: 'post',
+        data: { MailboxIDs },
+    });
+
+export const syncAliasName = ({ shareId, itemId }: UniqueItem, Name: string) =>
+    api({
+        url: `pass/v1/share/${shareId}/alias/${itemId}/name`,
+        method: 'put',
+        data: { Name },
+    });
+
+export const syncAliasSLNote = ({ shareId, itemId }: UniqueItem, Note: string) =>
+    api({
+        url: `pass/v1/share/${shareId}/alias/${itemId}/note`,
+        method: 'put',
+        data: { Note },
+    });
+
+export const setDefaultAliasDomainApi = async (domain: MaybeNull<string>) =>
+    (
+        await api({
+            url: 'pass/v1/user/alias/settings/default_alias_domain',
+            method: 'put',
+            data: { DefaultAliasDomain: domain },
+        })
+    ).Settings!;
+
+export const getCustomDomainsApi = async (): Promise<CustomDomainOutput[]> =>
+    createPageIterator({
+        request: async (LastID) => {
+            const result = await api({
+                url: `pass/v1/user/alias/custom_domain`,
+                method: 'get',
+                params: { LastID },
+            });
+
+            const domains = result.CustomDomains?.Domains ?? [];
+            const cursor = result.CustomDomains?.LastID;
+            const total = result.CustomDomains?.Total ?? 0;
+
+            /* BE may return a non-null LastID even if there is no
+             * next page, so we set the cursor to null in that case */
+            if (domains.length >= total) {
+                return { data: domains, cursor: null };
+            }
+
+            return { data: domains, cursor: cursor?.toString() };
+        },
+    })();
+
+export const getCustomDomainInfoApi = async (domainID: number) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}`,
+            method: 'get',
+        })
+    ).CustomDomain!;
+
+export const createCustomDomainApi = async (domain: string) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain`,
+            method: 'post',
+            data: { Domain: domain },
+        })
+    ).CustomDomain!;
+
+export const verifyCustomDomainApi = async (domainID: number) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}`,
+            method: 'post',
+        })
+    ).CustomDomainValidation!;
+
+export const deleteCustomDomainApi = async (domainID: number) =>
+    api({
+        url: `pass/v1/user/alias/custom_domain/${domainID}`,
+        method: 'delete',
+    }).then(() => domainID);
+
+export const getCustomDomainSettingsApi = async (domainID: number) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}/settings`,
+            method: 'get',
+        })
+    ).Settings!;
+
+export const updateCatchAllApi = async ({ domainID, catchAll }: CatchAllDTO) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}/settings/catch_all`,
+            method: 'put',
+            data: { CatchAll: catchAll },
+        })
+    ).Settings!;
+
+export const updateCustomDomainDisplayNameApi = async ({ domainID, name }: CustomDomainNameDTO) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}/settings/name`,
+            method: 'put',
+            data: { Name: name },
+        })
+    ).Settings!;
+
+export const updateRandomPrefixApi = async ({ domainID, randomPrefix }: RandomPrefixDTO) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}/settings/random_prefix`,
+            method: 'put',
+            data: { RandomPrefixGeneration: randomPrefix },
+        })
+    ).Settings!;
+
+export const updateCustomDomainMailboxesApi = async ({ domainID, mailboxIDs }: CustomDomainMailboxesDTO) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}/settings/mailboxes`,
+            method: 'put',
+            data: { MailboxIDs: mailboxIDs },
+        })
+    ).Settings!;
