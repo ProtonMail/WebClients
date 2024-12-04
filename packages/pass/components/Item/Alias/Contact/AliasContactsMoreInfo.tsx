@@ -65,11 +65,12 @@ export const AliasContactsMoreInfo: FC<Pick<ModalStateProps, 'onClose'>> = ({ on
                         </Button>,
                         <div
                             key="image-stamped-letter"
-                            className="w-full max-h-custom overflow-hidden"
-                            style={{ '--max-h-custom': '15rem' }}
-                        >
-                            <img className="w-full" src={stampedLetter} alt="" />
-                        </div>,
+                            className="w-full h-custom overflow-hidden"
+                            style={{
+                                '--h-custom': '10rem',
+                                'background-image': `url("${stampedLetter}")`,
+                            }}
+                        />,
                     ]}
                 />
             }
