@@ -6,12 +6,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import { canonicalizeInternalEmail } from '../helpers/email';
-import type { ActiveKeyWithVersion, Address } from '../interfaces';
 import type { CalendarEvent, CalendarEventData } from '../interfaces/calendar';
-import type { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
 import type { SimpleMap } from '../interfaces/utils';
-import { getKeyHasFlagsToVerify } from '../keys';
-import { getActiveAddressKeys } from '../keys/getActiveKeys';
 import { CALENDAR_CARD_TYPE } from './constants';
 
 const { SIGNED, ENCRYPTED_AND_SIGNED } = CALENDAR_CARD_TYPE;
@@ -29,16 +25,12 @@ export const withNormalizedAuthors = (x: CalendarEventData[]) => {
 
 interface GetAuthorPublicKeysMap {
     event: CalendarEvent;
-    addresses: Address[];
-    getAddressKeys: GetAddressKeys;
     getVerificationPreferences: GetVerificationPreferences;
     contactEmailsMap: SimpleMap<ContactEmail>;
 }
 
 export const getAuthorPublicKeysMap = async ({
     event,
-    addresses,
-    getAddressKeys,
     getVerificationPreferences,
     contactEmailsMap,
 }: GetAuthorPublicKeysMap) => {
@@ -54,41 +46,19 @@ export const getAuthorPublicKeysMap = async ({
             })
             .filter(isTruthy)
     );
-    const normalizedAddresses = addresses.map((address) => ({
-        ...address,
-        normalizedEmailAddress: canonicalizeInternalEmail(address.Email),
-    }));
-    const promises = authors.map(async (author) => {
-        const ownAddress = normalizedAddresses.find(({ normalizedEmailAddress }) => normalizedEmailAddress === author);
-        if (ownAddress) {
-            const decryptedKeys = await getAddressKeys(ownAddress.ID);
-            const addressKeys = await getActiveAddressKeys(
-                ownAddress,
-                ownAddress.SignedKeyList,
-                ownAddress.Keys,
-                decryptedKeys
-            );
-            const filterVerificationKeys = <V extends ActiveKeyWithVersion>(decryptedKey: V) =>
-                getKeyHasFlagsToVerify(decryptedKey.flags);
 
-            const verificationKeys = {
-                v4: addressKeys.v4.filter(filterVerificationKeys).map((key) => key.publicKey),
-                v6: addressKeys.v6.filter(filterVerificationKeys).map((key) => key.publicKey),
-            };
-            publicKeysMap[author] = [...verificationKeys.v4, ...verificationKeys.v6];
-        } else {
-            try {
-                const { verifyingKeys } = await getVerificationPreferences({ email: author, contactEmailsMap });
-                publicKeysMap[author] = verifyingKeys;
-            } catch (error: any) {
-                // We're seeing too many unexpected offline errors in the GET /keys route.
-                // We log them to Sentry and ignore them here (no verification will take place in these cases)
-                const { ID, CalendarID } = event;
-                const errorMessage = error?.message || 'Unknown error';
-                captureMessage('Unexpected error verifying event signature', {
-                    extra: { message: errorMessage, eventID: ID, calendarID: CalendarID },
-                });
-            }
+    const promises = authors.map(async (author) => {
+        try {
+            const { verifyingKeys } = await getVerificationPreferences({ email: author, contactEmailsMap });
+            publicKeysMap[author] = verifyingKeys;
+        } catch (error: any) {
+            // We're seeing too many unexpected offline errors in the GET /keys route.
+            // We log them to Sentry and ignore them here (no verification will take place in these cases)
+            const { ID, CalendarID } = event;
+            const errorMessage = error?.message || 'Unknown error';
+            captureMessage('Unexpected error verifying event signature', {
+                extra: { message: errorMessage, eventID: ID, calendarID: CalendarID },
+            });
         }
     });
     await Promise.all(promises);
