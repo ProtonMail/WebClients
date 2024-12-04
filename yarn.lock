@@ -35547,6 +35547,7 @@ __metadata:
     typescript: "npm:^5.7.2"
     web-streams-polyfill: "npm:^3.3.3"
     webpack: "npm:^5.96.1"
+    zustand: "npm:^4.5.5"
   languageName: unknown
   linkType: soft
 
@@ -45684,7 +45685,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zustand@npm:^4.1.5":
+"zustand@npm:^4.1.5, zustand@npm:^4.5.5":
   version: 4.5.5
   resolution: "zustand@npm:4.5.5"
   dependencies:

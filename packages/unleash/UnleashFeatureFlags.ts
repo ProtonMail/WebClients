@@ -95,6 +95,8 @@ enum DriveFeatureFlag {
     DriveDecryptionErrorDebugging = 'DriveDecryptionErrorDebugging',
     // B2B
     DriveB2BPhotosUpload = 'DriveB2BPhotosUpload',
+    // Refactor
+    DriveWebZustandShareMemberList = 'DriveWebZustandShareMemberList',
 }
 
 enum DocsFeatureFlag {
