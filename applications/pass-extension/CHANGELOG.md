@@ -1,3 +1,9 @@
+### Version 1.25.0
+
+-   Add light theme
+-   Improved dark theme
+-   Revamp autosave UI during password update
+
 ### Version 1.24.4
 
 -   Adjust copy in spotlight section

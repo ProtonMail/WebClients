@@ -1,3 +1,11 @@
+### Version 1.25.0
+
+-   Add light theme
+-   Improved dark theme
+-   Support drag and drop item(s) to another vault/trash
+-   Add option to automatically clear clipboard
+-   Add initial onboarding on first login
+
 ### Version 1.24.4
 
 -   Display multiple exposed values in Pass Monitor
