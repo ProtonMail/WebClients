@@ -1,6 +1,6 @@
 import { createContext, useContext, useRef } from 'react';
 
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { sendErrorReport } from '@proton/drive-store/utils/errorHandling';
 
 /**
  * volumeId -> [shareId01, shareId02]
@@ -34,7 +34,7 @@ export function useVolumesStateProvider() {
         }
 
         if (!volumeId) {
-            captureMessage('Trying to find missing volume');
+            sendErrorReport(new Error('Trying to find missing volume'));
         }
 
         return volumeId;
