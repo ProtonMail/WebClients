@@ -17,7 +17,13 @@ import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/mod
 import { useFolders, useLabels } from '@proton/mail';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
-import { LABEL_TYPE, MAIL_UPSELL_PATHS, ROOT_FOLDER, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import {
+    APP_UPSELL_REF_PATH,
+    LABEL_TYPE,
+    MAIL_UPSELL_PATHS,
+    ROOT_FOLDER,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 import { MESSAGE_ACTIONS } from 'proton-mail/constants';
@@ -165,7 +171,11 @@ const useTipConfig = ({ actionType }: Props) => {
         return (
             <>
                 {dwmUpsellModal.render && (
-                    <DWMUpsellModal modalProps={dwmUpsellModal.modalProps} upsellComponent={UPSELL_COMPONENT.TIP} />
+                    <DWMUpsellModal
+                        upsellApp={APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}
+                        modalProps={dwmUpsellModal.modalProps}
+                        upsellComponent={UPSELL_COMPONENT.TIP}
+                    />
                 )}
             </>
         );

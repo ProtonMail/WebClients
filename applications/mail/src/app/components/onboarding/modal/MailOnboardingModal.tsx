@@ -4,7 +4,8 @@ import { useWelcomeFlags } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { OnboardingModal } from '@proton/components/index';
+import { OnboardingModal } from '@proton/components';
+import { PLANS } from '@proton/payments';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -49,7 +50,7 @@ const useUserInfos = (): Record<'isB2B' | 'isLoading' | 'isMailPaidPlan', boolea
         isB2B = true;
     }
 
-    const isMailPaidPlan = user.isPaid && (isTrial(subscription) || user.hasPaidMail);
+    const isMailPaidPlan = isTrial(subscription, PLANS.MAIL) || user.hasPaidMail;
 
     return { isB2B, isLoading, isMailPaidPlan };
 };
