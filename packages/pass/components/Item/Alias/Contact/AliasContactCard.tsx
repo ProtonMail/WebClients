@@ -23,7 +23,7 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
     const { writeToClipboard, onLink } = usePassCore();
     const { createNotification } = useNotifications();
 
-    const { CreateTime, ReverseAlias, Email, ForwardedEmails, RepliedEmails, Blocked, ID } = contact;
+    const { CreateTime, ReverseAlias, Email, BlockedEmails, ForwardedEmails, RepliedEmails, Blocked, ID } = contact;
     const time = epochToRelativeDuration(CreateTime);
     const blockContact = useRequest(aliasBlockContact, { onSuccess: onUpdate });
     const deleteContact = useRequest(aliasDeleteContact, { onSuccess: onDelete });
@@ -43,13 +43,13 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
             <FieldBox>
                 <div className="flex flex-nowrap justify-space-between">
                     <div>
-                        <h2 className="text-lg mb-2 text-ellipsis">{Email.toLowerCase()}</h2>
+                        <h2 className="text-lg my-2 text-ellipsis">{Email.toLowerCase()}</h2>
                         {!ForwardedEmails && !RepliedEmails && (
                             <div className="text-sm color-weak">{c('Label').t`No Activity in the last 14 days.`}</div>
                         )}
                         <div className="text-sm color-weak">{c('Label').t`Contact created ${time} ago.`}</div>
                         <div className="text-sm color-weak">{c('Label')
-                            .t`${ForwardedEmails} forwarded, ${RepliedEmails} sent in the last 14 days.`}</div>
+                            .t`${ForwardedEmails} forwarded, ${RepliedEmails} sent, ${BlockedEmails} blocked, in the last 14 days.`}</div>
                         <Button
                             className="mt-2"
                             pill
@@ -69,16 +69,18 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
                         </Button>
                     </div>
                     <div className="flex flex-nowrap items-start shrink-0">
-                        <Button
-                            icon
-                            pill
-                            shape="ghost"
-                            className="color-weak"
-                            title={c('Action').t`Send email`}
-                            onClick={() => onLink(mailtoHref, { replace: true })}
-                        >
-                            <Icon name="paper-plane" />
-                        </Button>
+                        {!Blocked && (
+                            <Button
+                                icon
+                                pill
+                                shape="ghost"
+                                className="color-weak"
+                                title={c('Action').t`Send email`}
+                                onClick={() => onLink(mailtoHref, { replace: true })}
+                            >
+                                <Icon name="paper-plane" />
+                            </Button>
+                        )}
                         <QuickActionsDropdown
                             className="color-weak"
                             shape="ghost"
