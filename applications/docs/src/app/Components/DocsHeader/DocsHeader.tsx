@@ -46,24 +46,24 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   }
 
   return (
-    <div className="flex items-center px-4 py-2" data-testid="docs-header">
-      {/* Left */}
-      <div className="flex flex-1 items-center">
+    <div className="flex flex-nowrap items-center gap-2 px-3 py-2" data-testid="docs-header">
+      <div className="flex flex-1 flex-nowrap items-center head-480-749:flex-none head-max-479:basis-auto">
         <DocumentTitleDropdown
           action={action}
           authenticatedController={controller}
           editorController={editorController}
           documentState={documentState}
         />
-        <div className="w-2" />
-        <ConnectionStatus documentState={documentState} />
+        <div
+          className="ml-0.5 flex min-w-fit flex-1 flex-shrink-0 items-center justify-between gap-2 head-max-1199:max-w-[4.5rem]"
+          data-testid="status-container"
+        >
+          <ConnectionStatus documentState={documentState} />
+          <div className="flex-none head-max-479:[display:none]">{role?.isPublicViewer() && <ViewOnlyPill />}</div>
+        </div>
       </div>
 
-      {/* Middle */}
-      <div className="flex-none">{role?.isPublicViewer() && <ViewOnlyPill />}</div>
-
-      {/* Right */}
-      <div className="flex flex-1 items-center justify-end">
+      <div className="flex flex-1 flex-nowrap items-center justify-end head-max-479:flex-shrink-0 head-max-479:basis-auto">
         {publicContext ? (
           <HeaderPublicOptions
             editorController={editorController}
@@ -76,12 +76,12 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
             {documentState.getProperty('userRole').isAdmin() && (
               <Button
                 shape="ghost"
-                className="flex items-center gap-2 text-sm"
+                className="flex flex-nowrap items-center gap-2 text-sm head-max-849:mr-2 head-max-849:border head-max-849:border-[--border-norm] head-max-849:px-[0.5em]"
                 data-testid="share-button"
                 onClick={() => controller?.openDocumentSharingModal()}
               >
                 <Icon name="user-plus" />
-                {c('Action').t`Share`}
+                <span className="head-max-849:sr-only">{c('Action').t`Share`}</span>
               </Button>
             )}
           </>
@@ -91,7 +91,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
 
         {!publicContext && (
           <>
-            <div className="w-4" />
+            <div className="w-2" />
 
             <UserDropdown app={APPS.PROTONDOCS} />
           </>
@@ -116,7 +116,7 @@ const ViewOnlyPill = () => {
         .t`You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.`}
     >
       <Icon name="eye" className="h-4 w-4 fill-current" />
-      {c('Info').t`View only`}
+      <span className="head-max-1199:sr-only">{c('Info').t`View only`}</span>
     </PopoverPill>
   )
 }
