@@ -20,7 +20,7 @@ import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
@@ -52,7 +52,7 @@ const useGetFeatures = (shortDomain: string) => {
         };
         const monitoring: Feature = {
             id: 'monitoring',
-            title: c('Onboarding modal').t`Dark Web Monitoring`,
+            title: DARK_WEB_MONITORING_NAME,
             description: c('Onboarding modal').t`Get notified if your password is compromised.`,
             icon: monitoringIcon,
         };
