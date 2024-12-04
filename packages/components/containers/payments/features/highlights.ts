@@ -74,6 +74,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.PASS_BUSINESS]: null,
             [PLANS.VPN_PRO]: null,
             [PLANS.VPN_BUSINESS]: null,
+            [PLANS.LUMO]: null,
         },
     };
 };
@@ -184,6 +185,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: get24x7Support(),
                 [PLANS.VPN_PRO]: getSupport('priority'),
                 [PLANS.VPN_BUSINESS]: getSupport('priority'),
+                [PLANS.LUMO]: getSupport('priority'),
             },
         },
         {
@@ -208,6 +210,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: getSentinel(true),
                 [PLANS.VPN_PRO]: getSentinel(),
                 [PLANS.VPN_BUSINESS]: getSentinel(true),
+                [PLANS.LUMO]: getSentinel(),
             },
         },
         {
@@ -232,6 +235,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -257,6 +261,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: getAdminPanel(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.LUMO]: null,
             },
         },
     ];
