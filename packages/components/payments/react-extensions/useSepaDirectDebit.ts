@@ -222,7 +222,7 @@ export const useSepaDirectDebit = (
         reset,
         getFetchedPaymentToken,
         meta: {
-            type: 'sepadirectdebit',
+            type: 'sepa_direct_debit',
         },
     };
 };

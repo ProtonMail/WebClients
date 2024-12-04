@@ -544,7 +544,7 @@ export const usePaymentFacade = (
                         sourceType: params.type,
                         context: paymentContext.getOperationsData(),
                         paymentsVersion: 'v5',
-                        paymentProcessorType: 'sepadirectdebit',
+                        paymentProcessorType: 'sepa_direct_debit',
                     }
                 );
             },

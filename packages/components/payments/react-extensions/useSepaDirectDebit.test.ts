@@ -120,7 +120,7 @@ it('should fetch payment token', async () => {
         v: 5,
         chargeable: true,
         authorized: true,
-        type: 'sepadirectdebit',
+        type: 'sepa_direct_debit',
     });
 });
 
@@ -248,7 +248,7 @@ it('should verify payment token', async () => {
         PaymentToken: 'token',
         v: 5,
         chargeable: true,
-        type: 'sepadirectdebit',
+        type: 'sepa_direct_debit',
     });
 });
 
@@ -310,7 +310,7 @@ it('should not verify token if amount is 0', async () => {
         Currency: 'EUR',
         v: 5,
         chargeable: true,
-        type: 'sepadirectdebit',
+        type: 'sepa_direct_debit',
     });
 });
 
