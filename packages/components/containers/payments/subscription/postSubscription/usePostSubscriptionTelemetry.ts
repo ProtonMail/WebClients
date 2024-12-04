@@ -35,6 +35,13 @@ type Options =
       };
 
 type Dimensions = {
-    modal: 'mail-short-domain' | 'mail-auto-delete' | 'mail-folders-and-labels' | 'dark-web-monitoring' | 'sentinel';
+    modal:
+        | 'dark-web-monitoring'
+        | 'generic'
+        | 'mail-auto-delete'
+        | 'mail-folders'
+        | 'mail-labels'
+        | 'mail-short-domain'
+        | 'sentinel';
     isForCustomDomain: 'true' | 'false';
 };
