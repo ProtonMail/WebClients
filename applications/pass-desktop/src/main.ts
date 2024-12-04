@@ -270,7 +270,7 @@ app.addListener('web-contents-created', (_, contents) => {
         const url = new URL(href);
 
         // Shell out to the system browser if http(s)
-        if (['http:', 'https:'].includes(url.protocol)) shell.openExternal(href).catch(noop);
+        if (['http:', 'https:', 'mailto:'].includes(url.protocol)) shell.openExternal(href).catch(noop);
 
         // Always deny opening external links in-app
         return { action: 'deny' };
