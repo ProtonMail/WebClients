@@ -1408,6 +1408,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Disable alias": [
+        "Alias deaktivieren"
+      ],
+      "Disabling alias": [
+        "Alias deaktivieren"
       ]
     },
     "action": {
@@ -7730,6 +7736,15 @@
       ],
       "Your private writing assistant": [
         "Dein privater Schreibassistent"
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Speichermöglichkeiten werden von deinem Browser nicht unterstützt. Wir brauchen diese Unterstützung um die Suche nach Nachrichteninhalten zu aktivieren."
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "Diese Nachricht stammt von einem SimpleLogin Alias."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Wir können die Suche nach Nachrichteninhalten in diesem Browser nicht aktivieren."
       ]
     },
     "info": {
@@ -9688,6 +9703,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
       ]
     },
     "new_plans: feature highlight": {
@@ -10554,6 +10572,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Wir bearbeiten gerade deine Zahlung für die Rechnung. Bitte warte, bis die Zahlung abgeschlossen ist, bevor du Änderungen an deinem Abonnement vornimmst oder deine Zahlungsdaten aktualisierst. Vielen Dank für deine Geduld."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Verlängert sich zu ${ renewPrice }, jederzeit kündbar."
       ]
     },
     "Payments.Error": {
@@ -13390,6 +13411,9 @@
       ],
       "Your free trial has ended": [
         "Deine kostenlose Testversion ist abgelaufen."
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
       ]
     },
     "Title subscription": {

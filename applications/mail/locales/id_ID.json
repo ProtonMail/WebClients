@@ -265,7 +265,7 @@
         "Lanjutkan impor"
       ],
       "Continue with Google": [
-        "Lanjutkan dengan Google"
+        "Lanjut dengan Google"
       ],
       "Continue with Outlook": [
         "Lanjut dengan Outlook"
@@ -1406,6 +1406,15 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Disable alias": [
+        "Nonaktifkan alias"
+      ],
+      "Disabling alias": [
+        "Menonaktifkan alias"
+      ],
+      "Remove Zoom meeting": [
+        "Hapus pertemuan Zoom"
       ]
     },
     "action": {
@@ -1745,7 +1754,7 @@
         "Penawaran ${ PASS_SHORT_APP_NAME } Plus seumur hidup tidak memiliki biaya pembaruan. Cukup satu kali pembayaran untuk akses selama-lamanya ke Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
-        "Diskon berdasar pada harga bulanan standar."
+        "Diskon didasarkan pada harga bulanan standar."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Apabila Anda membeli Pass Family atau Unlimited, langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir siklus tagihan Anda."
@@ -1775,7 +1784,7 @@
         "selamanya"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "Diperbarui setelah 1 bulan dengan ${ regularAmount }."
+        "Diperbarui setelah 1 bulan dengan harga ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
@@ -4860,7 +4869,7 @@
         "Paket keluarga saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Jika Anda menerima undangan, kami akan mengalihkan Anda dari paket saat ini dan mengkredit akun Anda dengan sisa saldo."
+        "Apabila Anda menerima undangan ini, kami akan memindahkan Anda dari paket saat ini dan menagih akun Anda dengan saldo mana pun yang tersisa."
       ],
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
@@ -5191,7 +5200,7 @@
         "Nikmati akses yang cepat, aman, dan bebas gangguan menuju kotak masuk dan kalendar Anda."
       ],
       "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
-        "Dapatkan akses tak terbatas dengan langganan ${ MAIL_APP_NAME } apa pun."
+        "Dapatkan akses tak terbatas dengan paket langganan ${ MAIL_APP_NAME } mana pun."
       ],
       "No credit card required.": [
         "Tanpa perlu kartu kredit."
@@ -5335,6 +5344,15 @@
       ],
       "You've unlocked 1 GB": [
         "Anda telah memperoleh 1 GB"
+      ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } hari"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } hari lagi"
+      ],
+      "Tasks to complete count": [
+        "Jumlah tugas untuk diselesaikan"
       ]
     },
     "Gmail forwarding": {
@@ -7602,6 +7620,30 @@
       ],
       "Your private writing assistant": [
         "Asisten penulisan pribadi Anda"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }. Harga dan tanggal pembaruan langganan ${ planTitle } Anda tidak akan berubah."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo pada akun Anda akan berkurang menjadi ${ creditsRemaining }."
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Kapabilitas penyimpanan tidak didukung pada browser ini. Kami membutuhkan dukungan ini untuk mengaktifkan pencarian konten pesan."
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "Pesan ini berasal dari alias SimpleLogin."
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Kapabilitas penyimpanan tidak dapat diakses pada browser ini. Kami membutuhkan akses ini untuk mengaktifkan pencarian konten pesan."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Kami tidak dapat mengaktifkan pencarian konten pesan pada browser ini."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Langganan ${ PASS_SHORT_APP_NAME } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -8438,6 +8480,9 @@
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
+      ],
+      "Account holder": [
+        "Pemilik akun"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8699,6 +8744,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Anda perlu mengaktifkan ulang kunci Anda untuk melihat undangan yang diperbarui"
+      ],
+      "terms of service": [
+        "ketentuan layanan"
       ]
     },
     "Link to calendar event": {
@@ -9508,7 +9556,7 @@
         "Hingga ${ n } pengguna"
       ],
       "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Sampai dengan ${ n } pengguna (${ adminsText }, ${ usersText })"
+        "Hingga ${ n } pengguna (${ adminsText }, ${ usersText })"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Ruang penyimpanan hingga ${ totalStorageSize }"
@@ -9527,6 +9575,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin untuk seumur hidup"
+      ],
+      "Breach alerts": [
+        "Peringatan pembobolan"
       ]
     },
     "new_plans: feature highlight": {
@@ -9789,7 +9843,7 @@
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Layanan dukungan telepon tersedia dari tim Layanan Dukungan Pelanggan ${ BRAND_NAME } saat jam kantor Eropa, untuk pelanggan dengan 20 pengguna atau lebih"
+        "Dukungan telepon tersedia dari tim Layanan Dukungan ${ BRAND_NAME } pada jam kerja yang berlaku di Eropa, khusus untuk pelanggan dengan 20 atau lebih pengguna"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Mencegah pesan untuk dapat diakses oleh ${ BRAND_NAME } atau pihak ketiga. Pesan Anda hanya akan dibaca oleh penerima dan Anda sendiri."
@@ -9877,6 +9931,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Anda dapat menetapkan lebih dari satu admin. Seluruh admin akan dapat menambahkan dan mengelola pengguna, namun segala hal terkait pembayaran hanya akan dapat diatur oleh admin utama."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domain khusus untuk alias, kotak surat tambahan, kemampuan untuk mengirimkan email dari alias, dan masih banyak lagi"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Arahkan lalu lintas internet Anda melalui jaringan Tor dengan satu klik"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10139,6 +10199,9 @@
       ],
       "Where privacy is default.": [
         "Di mana privasi merupakan hal yang baku."
+      ],
+      "Replay introduction": [
+        "Ulangi pengenalan"
       ]
     },
     "Onboarding Proton": {
@@ -11304,10 +11367,10 @@
         "Dapatkan penawaran ini"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Diperbarui setelah 1 tahun dengan harga diskon ${ discountedAmount } daripada ${ regularAmount } (diskon ${ discount }%)"
+        "Diperbarui setelah 1 tahun dengan harga diskon ${ discountedAmount } alih-alih ${ regularAmount } (diskon ${ discount }%)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Diperbarui setelah 2 tahun dengan harga diskon ${ discountedAmount } daripada ${ regularAmount } (diskon ${ discount }%)"
+        "Diperbarui setelah 2 tahun dengan harga diskon ${ discountedAmount } alih-alih ${ regularAmount } (diskon ${ discount }%)"
       ],
       "Save ${ discount }%": [
         "Hemat ${ discount }%"
@@ -11404,6 +11467,9 @@
       ],
       "Unsubscribed": [
         "Langganan dihentikan"
+      ],
+      "Alias disabled": [
+        "Alias dinonaktifkan"
       ]
     },
     "Step": {
@@ -13002,7 +13068,7 @@
         "Kirim dengan preferensi yang telah diubah?"
       ],
       "Send with encryption disabled?": [
-        "Kirim dengan enkripsi nonaktif?"
+        "Kirim dengan enkripsi yang dinonaktifkan?"
       ],
       "Send without expiration?": [
         "Kirim tanpa waktu kedaluwarsa?"
@@ -13141,6 +13207,12 @@
       ],
       "Your free trial has ended": [
         "Masa uji coba gratis Anda telah berakhir"
+      ],
+      "Account locked": [
+        "Akun terkunci"
+      ],
+      "Dark Web Monitoring": [
+        "Pemantauan Dark Web"
       ]
     },
     "Title subscription": {
@@ -13250,6 +13322,9 @@
     "Tor out of date": {
       "stable release": [
         "versi rilisan stabil"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Versi Tor Browser ini tidak didukung. Silakan perbarui browser Anda ke ${ stableRelease } terbaru"
       ]
     },
     "Update font modal": {

@@ -1405,6 +1405,21 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Disable alias": [
+        "Deaktiver alias"
+      ],
+      "Disabling alias": [
+        "Deaktiverer alias"
+      ],
+      "Expand video conferencing widget": [
+        "Udvid widget til videokonference"
+      ],
+      "Remove Zoom meeting": [
+        "Fjern Zoom-møde"
+      ],
+      "Toggle Contacts app": [
+        "Skift Kontakt-app"
       ]
     },
     "action": {
@@ -1765,6 +1780,9 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornys automatisk efter 1 måned til ${ regularAmount }."
+      ],
+      "forever": [
+        "for evigt"
       ]
     },
     "BF2024: Tooltip": {
@@ -2209,6 +2227,9 @@
       "Total for ${ n } month": [
         "I alt for ${ n } måned",
         "I alt for ${ n } måneder"
+      ],
+      "Total": [
+        "I alt"
       ]
     },
     "Collapsible tooltip": {
@@ -4854,6 +4875,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5141,6 +5165,9 @@
       ],
       "Upgrade now": [
         "Opgradere dit plan nu"
+      ],
+      "Try the new desktop app": [
+        "Prøv den nye desktop app"
       ]
     },
     "Get started checklist instructions": {
@@ -7594,6 +7621,24 @@
       ],
       "Your private writing assistant": [
         "Din private skriveassistent"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Eventuelle undermapper vil også blive slettet. E-mails, der er gemt i mappen ${ nameDeleted } slettes dog ikke og kan findes i mappen Alle e-mails."
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-mails mærket med denne etiket ${ nameDeleted } slettes ikke og kan stadig findes i den respektive mappe."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Udsat indtil ${ dateString } kl. ${ formattedTime }"
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "Denne besked er fra et SimpleLogin-alias"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Slå fra for kun at søge efter dato, navn, e-mailadresse eller emnelinje. For at deaktivere søgning i beskedindhold (og slette beskeder downloadet for at aktivere denne funktion), skal du gå til indstillinger."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Opgradér for automatisk at slette beskeder, der har været i papirkurven eller spam i mere end 30 dage."
       ]
     },
     "info": {
@@ -7722,7 +7767,7 @@
         "Gå til Alle mails"
       ],
       "Go to Archive": [
-        "Gå til Arkiv"
+        "Gå til arkiv"
       ],
       "Go to Drafts": [
         "Gå til Kladder"
@@ -7779,7 +7824,7 @@
         "Flyt til højre / udvid"
       ],
       "Move to Archive": [
-        "Flyt til Arkiv"
+        "Flyt til arkiv"
       ],
       "Move to Inbox": [
         "Flyt til indbakke"
@@ -8216,7 +8261,7 @@
         "Flyt til"
       ],
       "Move to Archive": [
-        "Flyt til Arkiv"
+        "Flyt til arkiv"
       ],
       "Move to Inbox": [
         "Flyt til Indbakke"
@@ -8418,6 +8463,18 @@
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
+      ],
+      "/month": [
+        "/måned"
+      ],
+      "Account holder": [
+        "Kontohaver"
+      ],
+      "Company name": [
+        "Firmanavn"
+      ],
+      "IBAN": [
+        "IBAN"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8676,6 +8733,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du skal genaktivere dine nøgler for at se den opdateret invitation"
+      ],
+      "contact us": [
+        "kontakt os"
+      ],
+      "terms of service": [
+        "servicevilkår"
       ]
     },
     "Link to calendar event": {
@@ -9519,6 +9582,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "Advanced account protection": [
+        "Avanceret kontobeskyttelse"
+      ],
+      "Breach alerts": [
+        "Advarsler om databrud"
       ]
     },
     "new_plans: feature highlight": {
@@ -10251,6 +10320,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Vi er ved at behandle din betaling for den fremsendte faktura. Vent venligst, indtil betalingen er gennemført, før du foretager ændringer i dit abonnement eller opdaterer dine betalingsoplysninger. Tak for din tålmodighed."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Fornyes til ${ renewPrice }, annuller når som helst."
       ]
     },
     "Payments.Error": {
@@ -10659,6 +10731,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Bruges på Amazon til shopping osv."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -11446,6 +11521,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Dit abonnement blev købt via en iOS app. For at lave ændringer i dit abonnement eller opdatere dine betalingsoplysninger, skal du gå til Apple App Store."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Bare log ind på din Apple App Store-konto, og vælg derefter ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -11670,6 +11748,22 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } tilpasset e-maildomæne",
+        "${ planNumberOfDomains } tilpassede e-maildomæner"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mapper, etiketter og brugerdefinerede filtre"
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Sådan kæmpede vi tilbage, da ${ BRAND_NAME } blev blokeret i en aggressiv kampagne."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Sådan støttede vi lokale aktivister, da privatliv og ytringsfriheden blev truet i Hong Kong."
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Brugerabonnementer er ${ BRAND_NAME }s eneste indtægt. Din støtte holder os uafhængige, fremmer vores mission for online privatliv og hjælper aktivister og organisationer, der kæmper for frihed."
       ]
     },
     "subscription reminder": {
@@ -12293,7 +12387,7 @@
         "Tilføj gavekode"
       ],
       "Archive": [
-        "Arkivér"
+        "Arkiv"
       ],
       "Are you sure you want to close the preview?": [
         "Er du sikker på, at du vil lukke forhåndsvisningen?"
@@ -12989,6 +13083,12 @@
       ],
       "Your free trial has ended": [
         "Din gratis prøveperiode er slut"
+      ],
+      "Account locked": [
+        "Konto låst"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorering af det mørke net"
       ]
     },
     "Title subscription": {
@@ -13571,6 +13671,66 @@
     "Zoom Meeting": {
       "Meeting ID:": [
         "Møde-ID:"
+      ],
+      "Passcode:": [
+        "Adgangskode:"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } lagerplads"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } e-mail lagring"
+      ],
+      "Advanced account protection": [
+        "Avanceret kontobeskyttelse"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Alle ${ BRAND_NAME } apps og premium-funktioner"
+      ],
+      "Cancel and downgrade": [
+        "Annuller og nedgrader"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Sky-lagring og deling af store filer"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Krypteret sky-lagring til billeder og dokumenter"
+      ],
+      "Encrypted password manager": [
+        "Krypteret adgangskodeadministrator"
+      ],
+      "Save ${ upsellSavings }": [
+        "Gem ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Spar penge med ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Sikker personlig og delt kalender"
+      ],
+      "Try ${ planName }": [
+        "Prøv ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Prøv ${ upsellPlanName } og bevar adgangen til alle eksklusive e-mail- og kalenderfunktioner."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultra hurtig og privat VPN"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Log ind"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du bliver omdirigeret til din tredjeparts SSO-udbyder."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
       ]
     }
   }

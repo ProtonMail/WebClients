@@ -695,7 +695,7 @@
         "Gestiona les etiquetes"
       ],
       "Manage Snooze": [
-        "Gestiona la posposició"
+        "Gestiona la pausa"
       ],
       "Mark as read": [
         "Marca com a llegit"
@@ -1184,7 +1184,7 @@
         "Omet la verificació"
       ],
       "Snooze": [
-        "Posposa"
+        "Posa en pausa"
       ],
       "Star": [
         "Destaca"
@@ -1277,7 +1277,7 @@
         "Llista no ordenada"
       ],
       "Unsnooze": [
-        "Deixa de posposar"
+        "Deixa de posar en pausa"
       ],
       "Unstar": [
         "No destaquis"
@@ -1411,6 +1411,18 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Disable alias": [
+        "Desactiva l'àlies"
+      ],
+      "Disabling alias": [
+        "Desactivació de l'àlies"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Obteniu ${ MAIL_SHORT_APP_NAME } Plus per ${ priceCoupon }"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "La protecció contra els rastrejadors va impedir que es carreguessin algunes imatges. Carregueu-les si confieu en el remitent."
       ]
     },
     "action": {
@@ -1573,6 +1585,9 @@
       ],
       "Securely run on device": [
         "Executa de manera segura al dispositiu"
+      ],
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Les dades romanen al dispositiu per protegir la vostra privadesa. Requereix una descàrrega i un maquinari compatible."
       ]
     },
     "Assistant toggle": {
@@ -1640,6 +1655,9 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ discountedPrice } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ nextPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ discountedPrice } és vàlid durant els primers ${ cycle } mesos. Després es renovarà automàticament al preu rebaixat de ${ nextPrice } durant ${ renewalLength } mesos. Podeu cancel·lar en qualsevol moment."
       ]
     },
     "bf2023: Tooltip": {
@@ -1748,6 +1766,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "La vostra subscripció es renovarà automàticament a la tarifa amb descompte i durada predeterminades al final del cicle de facturació."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } Plus no té preu de renovació, és un pagament únic per accedir a Pass Plus de per vida."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Si compreu Pass Family o Unlimited, la vostra subscripció es renovarà automàticament a la tarifa i la durada amb descompte estàndard al final del vostre cicle de facturació."
       ]
     },
     "BF2024: Info": {
@@ -1802,6 +1826,10 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més.",
+        "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més."
       ]
     },
     "Billing cycle": {
@@ -2247,6 +2275,12 @@
       ],
       "Ultra fast and private VPN": [
         "VPN ultraràpida i privada"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "El nostre pla bàsic i gratuït amb correu electrònic i emmagatzematge xifrats d'extrem a extrem. No s'inclouen funcions prèmium."
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Proveu ${ upsellPlanName } i manteniu l'accés a totes les funcions de correu electrònic i calendari prèmium."
       ]
     },
     "Checkout row": {
@@ -3649,6 +3683,60 @@
       ],
       "Your account and data recovery methods are set.": [
         "El compte i els mètodes de recuperació de dades estan definits."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa l'escalada a especialistes en seguretat."
+      ],
+      "Also included": [
+        "També inclòs"
+      ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Suprimíeu automàticament el correu brossa i els missatges enviats a la paperera i desbloqueja més funcions prèmium quan milloreu."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Esborreu automàticament els correus electrònics moguts a la paperera i al correu brossa fa més de 30 dies."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Ordeneu automàticament els missatges entrants abans que arribin a la safata d'entrada."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Creeu tantes etiquetes o carpetes com necessiteu per mantenir ordenada la vostra safata d'entrada."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "No voleu enviar el vostre correu electrònic en aquest moment? Programeu-ho exactament al moment adequat."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Per obtenir accés il·limitat a l'assistent d'escriptura i més, milloreu a ${ BRAND_NAME } Duo."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Estalvieu temps enviant correus electrònics a tothom alhora amb grups de contactes. Desbloquegeu aquesta i altres funcions prèmium quan milloreu."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Per garantir la màxima seguretat possible del vostre compte, configureu una frase de recuperació."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Desbloquegeu ${ activatePmUser } per obtenir una adreça de correu electrònic enganxosa i fàcil d'escriure."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Desbloquegeu la programació de missatges personalitzada i més funcions prèmium quan milloreu."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Desbloquegeu els temps de pausa personalitzada i més funcions prèmium quan milloreu."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Utilitzeu ${ MAIL_APP_NAME } per iniciar la sessió als serveis en línia, ja que, a diferència d'altres proveïdors de correu electrònic, mai farem un seguiment de les vostres dades i les compartirem amb tercers."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Amb els grups de contactes, podeu enviar correus electrònics a tots els membres del grup amb un sol clic."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Amb la pausa personalitzada, podeu amagar els correus electrònics i configurar-los perquè tornin a aparèixer en un millor moment."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3667,6 +3755,9 @@
     "Desktop notification body": {
       "From: ${ sender } - ${ Subject }": [
         "Des de: ${ sender } - ${ Subject }"
+      ],
+      "${ notificationsToShow.length } new messages": [
+        "${ notificationsToShow.length } missatges nous"
       ]
     },
     "Desktop notification title": {
@@ -3729,6 +3820,9 @@
       ],
       "Remove discount": [
         "Suprimeix el descompte"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "La vostra subscripció de ${ PLAN_NAMES[PLANS.PASS] } té un preu especial de ${ price } per any. En passar a un pla gratuït, perdreu el descompte permanentment, fins i tot si torneu a millorar en el futur."
       ]
     },
     "Download attachments": {
@@ -4459,6 +4553,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu la cerca i torneu-ho a provar."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "L'enviament de fitxers adjunts està restringit mentre supereu els límits del vostre pla o fins que milloreu el pla."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4682,6 +4779,12 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "No ha creat cap contacte encara. Comença creant un nou contacte"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Els àlies no es poden utilitzar quan s'ha activat una contrasenya addicional a ${ PASS_APP_NAME }."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Quan s'ha activat una contrasenya addicional, la gestió d'àlies només es pot fer a ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -4845,6 +4948,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "El vostre compte utilitza ${ usedSpace } d'emmagatzematge, que supera els ${ inviteSpace } que us van assignar. Elimineu algunes dades o demaneu a l'administrador del pla que augmenti l'emmagatzematge."
+      ],
+      "The subscription will be billed to the primary admin of this plan.": [
+        "La subscripció es facturarà a l'administrador principal d'aquest pla."
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Teniu factures pendents de pagar. Pagueu-los abans d'unir-vos a un pla familiar."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5285,6 +5394,9 @@
       ],
       "You've unlocked 1 GB": [
         "Heu desbloquejat 1 GB"
+      ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Termineu aquesta llista en un termini de ${ daysCount } per duplicar el vostre emmagatzematge de manera gratuïta."
       ]
     },
     "Gmail forwarding": {
@@ -5977,7 +6089,7 @@
         "Es mostrarà un altre consell la pròxima vegada que obriu el Mail"
       ],
       "Any scheduled or snoozed messages will be canceled.": [
-        "Es cancel·larà qualsevol missatge planificat o posposat."
+        "Es cancel·larà qualsevol missatge planificat o en pausa."
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "També s'eliminaran les subcarpetes. Tanmateix, els correus electrònics emmagatzemats en la carpeta ${ nameDeleted } no s'eliminaran i es poden trobar a la carpeta Tot el correu."
@@ -6956,16 +7068,16 @@
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
       "Snoozed until ${ dateString } at ${ formattedTime }": [
-        "En posposició fins ${ dateString } a les ${ formattedTime }"
+        "En pausa fins ${ dateString } a les ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
-        "En posposició fins avui a les ${ formattedTime }"
+        "En pausa fins avui a les ${ formattedTime }"
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
-        "En posposició fins demà a les ${ formattedTime }"
+        "En pausa fins demà a les ${ formattedTime }"
       ],
       "Snoozing this conversation will be canceled.": [
-        "La posposició d'aquesta conversa es cancel·larà."
+        "La pausa d'aquesta conversa es cancel·larà."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
@@ -7620,6 +7732,52 @@
       ],
       "Your private writing assistant": [
         "El vostre assistent d'escriptura privat"
+      ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe us ajuda a crear millors correus electrònics de manera ràpida i sense esforç."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantenen sense canvis."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Les nostres alertes prioritzen la seguretat. Si no reconeixeu la informació compromesa, podeu ignorar aquest report."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Tingueu en compte que quan feu clic al botó «Confirmar», el vostre compte tindrà ${ creditsRemaining } crèdit restant.",
+        "Tingueu en compte que quan feu clic al botó «Confirmar», el vostre compte tindrà ${ creditsRemaining } crèdits restants."
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Recordeu actualitzar aquesta informació al vostre gestor de contrasenyes o allà on conserveu la informació i les credencials del vostre compte."
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Les capacitats d'emmagatzematge no són compatibles amb aquest navegador. Necessitem aquest suport per activar la cerca de contingut dels missatges."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "Sembla que l'adreça de correu electrònic ${ boldNoReplyEmail } no accepta respostes. Esteu segur que voleu enviar el vostre missatge?"
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "Aquest missatge prové d'un àlies SimpleLogin."
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Desactiveu per cercar només per data, nom, adreça de correu electrònic o línia d'assumpte. Per desactivar el contingut dels missatges de cerca (i suprimir els missatges descarregats per activar aquesta funció), aneu a Preferències."
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "No podem accedir a les capacitats d'emmagatzematge en aquest navegador. Necessitem aquest accés per activar la cerca de contingut dels missatges."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "No podem activar la cerca de contingut en els missatges en aquest navegador."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Hem detectat la creació de diversos comptes gratuïts, cosa que infringeix el nostre ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Tenim plans dissenyats específicament per a usuaris com vosaltres que necessiten més d'una adreça de correu electrònic.\nPer eliminar les restriccions, podeu millorar a un pla de pagament."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "La vostra subscripció ${ PASS_SHORT_APP_NAME } Plus es substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant de la vostra subscripció s'afegirà al vostre compte. L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } Lifetime no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -8462,6 +8620,9 @@
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
+      ],
+      "Account holder": [
+        "Titular del compte"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8674,10 +8835,10 @@
         "Registreu-vos gratuïtament"
       ],
       "Snooze": [
-        "Posposa"
+        "Posa en pausa"
       ],
       "Snoozed": [
-        "En posposició"
+        "En pausa"
       ],
       "Spam": [
         "Correu brossa"
@@ -9108,6 +9269,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Milloreu a ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenceu per ${ priceCoupon }"
       ]
     },
     "new_plans: action": {
@@ -9326,7 +9490,7 @@
         "Camps personalitzats"
       ],
       "Custom snooze time": [
-        "Períodes de posposició personalitzats"
+        "Períodes de pausa personalitzats"
       ],
       "Custom workspace branding": [
         "Marca personalitzada de l'espai de treball"
@@ -9463,7 +9627,7 @@
         "Estalvieu temps en l'enviament dels vostres correus electrònics"
       ],
       "Schedule and snooze emails for any time": [
-        "Planifiqueu i posposeu els correus electrònics per a qualsevol moment"
+        "Planifiqueu i poseu en pausa els correus electrònics per a qualsevol moment"
       ],
       "Schedule messages at any time": [
         "Programeu missatges en qualsevol moment."
@@ -9587,6 +9751,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "10 more premium features": [
+        "10 característiques prèmium més"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Tots els serveis bàsics de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ]
     },
     "new_plans: feature highlight": {
@@ -9607,7 +9777,7 @@
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia. Per exemple: JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
       ],
       "Snooze messages and get reminded when you want": [
-        "Posposeu missatges i rebeu-ne un recordatori quan vulgueu"
+        "Poseu en pausa els missatges i rebeu-ne un recordatori quan vulgueu"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
@@ -9699,6 +9869,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Protegiu la informació empresarial sensible i col·laboreu de manera segura."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Protegiu la vostra família amb totes les funcions prèmium de ${ PASS_SHORT_APP_NAME } Plus per a 6 usuaris."
       ]
     },
     "new_plans: Title": {
@@ -9707,6 +9883,12 @@
       ],
       "Starting from ${ price }": [
         "Comenceu des de ${ price }"
+      ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Obteniu Mail Plus per ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
       ]
     },
     "new_plans: title": {
@@ -9925,6 +10107,21 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Podeu tenir més d'un administrador. Tots els administradors poden afegir i gestionar usuaris, però només l'administrador principal té control sobre la facturació."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Dominis personalitzats per a àlies, bústies de correu addicionals, la possibilitat d'enviar correus electrònics des d'àlies i molt més"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Accés de tota la vida a les funcions prèmium de ${ PASS_APP_NAME } + SimpleLogin."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Eina de gestió de l'organització que permet als administradors afegir i eliminar usuaris, gestionar l'accés als serveis de ${ BRAND_NAME } i acomplir altres tasques."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Encamineu el trànsit d'internet a través de la xarxa Tor amb un sol clic"
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Compartiu elements individuals de manera segura amb qualsevol persona (encara que no utilitzi ${ PASS_APP_NAME })"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10066,6 +10263,9 @@
       ],
       "Social media": [
         "Xarxes socials"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Utilitzeu la vostra adreça de ${ MAIL_APP_NAME } per iniciar la sessió als serveis en línia i evitar que se us faci un seguiment i es perfili. Canvieu el vostre correu electrònic per als serveis populars ara. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -10170,6 +10370,24 @@
       ],
       "Where privacy is default.": [
         "On la privadesa és per defecte."
+      ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } garanteix que només vosaltres i els destinataris previstos podeu accedir als vostres correus electrònics."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } evita que els correus electrònics d'estafa arribin a la vostra safata d'entrada."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle }: no es permetrà més seguiment mitjançant internet."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Accediu al correu electrònic i al calendari directament des del vostre escriptori amb l'aplicació d'escriptori."
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Obteniu l'aplicació mòbil des de ${ mobileAppAppStoreLink } o ${ mobileAppGooglePlayLink }."
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Comenceu a utilitzar la versió més curta i atractiva de la vostra adreça de correu electrònic."
       ]
     },
     "Onboarding Proton": {
@@ -10196,6 +10414,9 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "Podreu canviar el tema en qualsevol moment a les preferències."
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Enllaceu el vostre nom de domini i creeu comptes per a tots els membres de la vostra organització."
       ]
     },
     "Online accounts": {
@@ -10319,6 +10540,12 @@
       ],
       "Limited-time deal.": [
         "Oferta per temps limitat."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Facturació anual a ${ yearlyPrice }. Estalvieu ${ yearlySavedPrice } amb ${ passFamilyPlanName } (en comparació amb 6 subscripcions individuals de ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Oferta exclusiva disponible només per als primers seguidors de ${ PASS_APP_NAME }."
       ]
     },
     "passwordless": {
@@ -10414,6 +10641,21 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Estem tramitant el pagament de la factura. Espereu que el pagament s'hagi completat abans de fer canvis al pla o actualitzar les dades del pagament. Gràcies per la vostra paciència."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Es renova per ${ renewPrice } i ho podeu cancel·lar en qualsevol moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ renewPrice } durant ${ subscriptionLengthCopy } mesos. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos. Després es renovarà automàticament al preu de ${ renewPrice } durant ${ subscriptionLengthCopy } mesos. Podeu cancel·lar en qualsevol moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ renewPrice } durant ${ subscriptionLength } mes. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
       ]
     },
     "Payments.Error": {
@@ -10439,6 +10681,9 @@
     "Payments.Sepa": {
       "Street address, postal code, and city": [
         "Adreça, codi postal i ciutat"
+      ],
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a ordenar al vostre banc que debiti el vostre compte i que faci el càrrec al vostre compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes a partir de la data de dèbit, segons les condicions del vostre acord amb el vostre banc."
       ]
     },
     "PGP key encryption warning": {
@@ -10793,7 +11038,7 @@
         "No s'ha trobat cap resultat."
       ],
       "No snoozed messages": [
-        "No hi ha missatges posposats."
+        "No hi ha missatges en pausa."
       ],
       "No unread messages found": [
         "No s'han trobat missatges sense llegir"
@@ -11199,7 +11444,7 @@
     },
     "Snooze message": {
       "Snooze Message": [
-        "Posposa el missatge"
+        "Posa en pausa el missatge"
       ],
       "When should the message reappear in your inbox?": [
         "Quan ha de reaparèixer el missatge a la safata d'entrada?"
@@ -11455,6 +11700,9 @@
       ],
       "Unsubscribed": [
         "Subscripció cancel·lada"
+      ],
+      "Alias disabled": [
+        "S'ha desactivat l'àlies."
       ]
     },
     "Step": {
@@ -11463,6 +11711,12 @@
       ],
       "Sign in to the service": [
         "Inicia sessió al servei"
+      ],
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Introduïu la vostra adreça ${ MAIL_APP_NAME } com a adreça nova i deseu, confirmeu o verifiqueu el canvi."
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "A la configuració del compte, cerqueu l'opció per editar o canviar la vostra adreça de correu electrònic. "
       ]
     },
     "Step in filter modal": {
@@ -11905,6 +12159,18 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
+      ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } us ofereix privadesa il·limitada i més emmagatzematge per a un màxim de 2 persones."
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Si el vostre ús supera els límits del pla gratuït, és possible que tingueu accés restringit a les funcions del producte i a les vostres dades."
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Les subscripcions d'usuari són els únics ingressos de ${ BRAND_NAME }. El vostre suport ens manté independents, fomenta la nostra missió de privadesa en línia i ajuda els activistes i les organitzacions que lluiten per la llibertat."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Quan la vostra subscripció a ${ planName } acabi el ${ expiryDate }, passareu al pla gratuït de ${ BRAND_NAME }."
       ]
     },
     "subscription reminder": {
@@ -12037,12 +12303,12 @@
         "${ elementsCount } converses esborrades de ${ labelName }."
       ],
       "${ elementsCount } conversation snoozed": [
-        "${ elementsCount } conversa posposada",
-        "${ elementsCount } converses posposades"
+        "${ elementsCount } conversa en pausa",
+        "${ elementsCount } converses en pausa"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } conversa sense posposar",
-        "${ elementsCount } converses sense posposar"
+        "${ elementsCount } conversa sense pausa",
+        "${ elementsCount } converses sense pausa"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } missatge afegit a ${ labelName }.",
@@ -12930,7 +13196,7 @@
         "Moure un missatge programat"
       ],
       "Moving a snoozed message": [
-        "S'està movent un missatge posposat."
+        "S'està movent un missatge en pausa."
       ],
       "Need more aliases?": [
         "Necessiteu més àlies?"
@@ -13122,10 +13388,10 @@
         "Tanca la sessió"
       ],
       "Snooze": [
-        "Posposa"
+        "Posa en pausa"
       ],
       "Snooze message": [
-        "Posposa el missatge"
+        "Posa en pausa el missatge"
       ],
       "Sort conversations": [
         "Ordenar converses"
@@ -13192,7 +13458,7 @@
         "S'està verificant el pagament..."
       ],
       "Want to snooze any time?": [
-        "Voleu posposar els vostres missatges quan vulgueu?"
+        "Voleu posar en pausa els vostres missatges quan vulgueu?"
       ],
       "Warning": [
         "Advertència"
@@ -13227,6 +13493,9 @@
       ],
       "Your free trial has ended": [
         "La prova gratuïta ha finalitzat."
+      ],
+      "Dark Web Monitoring": [
+        "Monitoratge del web fosc"
       ]
     },
     "Title subscription": {
@@ -13336,6 +13605,9 @@
     "Tor out of date": {
       "stable release": [
         "versió estable"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Aquesta versió del Navegador Tor no està suportada. Actualitzeu a la darrera ${ stableRelease }."
       ]
     },
     "Update font modal": {
@@ -13815,6 +14087,24 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Es factura cada 2 anys a ${ amountBilled }. Els descomptes es basen en el preu mensual estàndard."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Facturació anual a ${ amountBilled }. Estalvieu ${ amountSave } en 2 subscripcions individuals de ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "La subscripció es reduirà a una categoria inferior al final del cicle de facturació."
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN i moltes més funcions."
       ]
     }
   }

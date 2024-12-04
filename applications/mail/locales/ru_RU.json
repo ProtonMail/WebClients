@@ -1421,6 +1421,15 @@
       ],
       "Zoom out": [
         "Уменьшить масштаб"
+      ],
+      "Disable alias": [
+        "Отключить псевдоним"
+      ],
+      "Disabling alias": [
+        "Отключение псевдонима"
+      ],
+      "Remove Zoom meeting": [
+        "Удалить встречу в Zoom"
       ]
     },
     "action": {
@@ -1663,6 +1672,9 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Специальная цена в ${ discountedPrice } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } каждый месяц. Отменить подписку можно в любой момент."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Специально сниженная цена ${ discountedPrice } действует в течение первых ${ cycle } месяцев. Затем она будет автоматически продляться ${ renewalLength } месяцев по сниженной цене ${ nextPrice }. Отменить можно в любое время."
       ]
     },
     "bf2023: Tooltip": {
@@ -2282,6 +2294,21 @@
       ],
       "Ultra fast and private VPN": [
         "Сверхбыстрый и конфиденциальный VPN"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } места для писем"
+      ],
+      "Cancel and downgrade": [
+        "Отменить и перейти на более дешевую версию"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Наш базовый, бесплатный план со сквозным шифрованием электронной почты и хранением. Премиум функции не включены."
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Сэкономьте деньги с помощью ${ upsellPlanName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Попробуйте ${ upsellPlanName } и сохраните доступ ко всем премиальным функциям электронной почты и календаря."
       ]
     },
     "Checkout row": {
@@ -3737,6 +3764,15 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Не хотите отправлять письмо прямо сейчас? Запланируйте его на нужное время."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Разблокируйте ${ activatePmUser } для запоминающегося и простого в наборе адреса электронной почты."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "С настраиваемым откладыванием вы можете скрыть письма и установить их повторное появление в лучшее время."
       ]
     },
     "description": {
@@ -5471,6 +5507,12 @@
       ],
       "More details": [
         "Подробнее"
+      ],
+      "Join Google Meet": [
+        "Присоединиться к Google Meet"
+      ],
+      "Less details": [
+        "Меньше подробностей"
       ]
     },
     "Group": {
@@ -7983,6 +8025,24 @@
       ],
       "Your private writing assistant": [
         "Ваш конфиденциальный помощник по написанию"
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредит.",
+        "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету.",
+        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов.",
+        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредита."
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Возможности хранения не поддерживаются в этом браузере, нам нужна эта поддержка для включения поиска по содержимому сообщений."
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "Это сообщение из псевдонима SimpleLogin ."
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Не удаётся получить доступ для хранения в этом браузере, нам нужен этот доступ для включения поиска по содержимому сообщений."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Мы не можем включить поиск по содержимому сообщений в этом браузере."
       ]
     },
     "info": {
@@ -8837,6 +8897,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Account holder": [
+        "Владелец счёта"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10387,6 +10450,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас может быть несколько администраторов. Они все могут добавлять пользователей и управлять ими, но только основной администратор контролирует оплату"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Направляйте свой трафик через сеть Tor одним нажатием"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10490,6 +10556,9 @@
       ],
       "Trial started": [
         "Начат пробный период"
+      ],
+      "Meeting host copied to clipboard": [
+        "Хозяин митинга скопирован в буфер обмена"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10903,6 +10972,21 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Мы обрабатываем ваш платеж по выставленному счету. Дождитесь завершения оплаты, прежде чем вносить изменения в ваш тариф или обновлять платежные реквизиты. Благодарим вас за терпение."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Затем стоимость подписки составит ${ renewPrice }. Отменить её можно в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ subscriptionLength } месяцев. Купон действителен ${ couponRedemptions } продления. Затем он будет автоматически продляться ${ subscriptionLengthCopy } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ subscriptionLength } месяцев. Затем она будет автоматически продляться ${ subscriptionLengthCopy } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен ${ couponRedemptions } продления. Затем он будет автоматически продляться ${ subscriptionLength } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Специальная цена в ${ priceWithDiscount } действует первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ renewPrice } каждый месяц. Отменить подписку можно в любой момент."
       ]
     },
     "Payments.Error": {
@@ -12000,6 +12084,9 @@
       ],
       "Unsubscribed": [
         "Подписка отменена"
+      ],
+      "Alias disabled": [
+        "Псевдоним отключен"
       ]
     },
     "Step": {
@@ -12204,6 +12291,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Ваш тариф был приобретён в приложении iOS. Поэтому для изменения тарифа или способа оплаты вам нужно зайти в Apple App Store."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Просто войдите в свой аккаунт Apple App Store, и выберите ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -12491,6 +12581,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "Пользователи не смогут выгружать файлы на своих устройствах"
       ]
     },
     "subscription reminder": {
@@ -13899,6 +13992,9 @@
       ],
       "Your free trial has ended": [
         "Ваш бесплатный пробный период истек"
+      ],
+      "Dark Web Monitoring": [
+        "Мониторинг Темной паутины"
       ]
     },
     "Title subscription": {
@@ -14008,6 +14104,9 @@
     "Tor out of date": {
       "stable release": [
         "стабильная версия"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Эта версия браузера Tor не поддерживается. Пожалуйста, обновите до последней ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -14570,6 +14669,20 @@
     "Zoom Meeting": {
       "Passcode:": [
         "Код доступа:"
+      ],
+      "Join Zoom meeting": [
+        "Присоединиться к встрече в Zoom"
+      ],
+      "Meeting ID:": [
+        "ID встречи:"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Использовать имя компании"
+      ],
+      "Use personal name": [
+        "Использовать личное имя"
       ]
     }
   }

@@ -1418,6 +1418,18 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Disable alias": [
+        "Vypnúť alias"
+      ],
+      "Disabling alias": [
+        "Vypínanie aliasu"
+      ],
+      "Expand video conferencing widget": [
+        "Rozšírenie widgetu pre videokonferencie"
+      ],
+      "Remove Zoom meeting": [
+        "Odstrániť Zoom stretnutie"
       ]
     },
     "action": {
@@ -1660,6 +1672,9 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ discountedPrice } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ nextPrice }. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ discountedPrice } platí počas prvých ${ cycle } mesiacov. Potom sa automaticky obnoví za zľavnenú cenu ${ nextPrice } na ${ renewalLength } mesiacov. Službu môžete kedykoľvek zrušiť."
       ]
     },
     "bf2023: Tooltip": {
@@ -5486,6 +5501,9 @@
       ],
       "More details": [
         "Viac detailov"
+      ],
+      "Meeting host:": [
+        "Poskytovateľ schôdzky:"
       ]
     },
     "Group": {
@@ -7998,6 +8016,24 @@
       ],
       "Your private writing assistant": [
         "Váš súkromný asistent písania"
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kredit.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú ${ creditsRemaining } kredity.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov.",
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov."
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Možnosti úložiska nie sú v tomto prehliadači podporované, potrebujeme túto podporu, aby sme mohli prehľadávať obsah správ."
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "Táto správa je zo SimpleLogin aliasu."
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "V tomto prehliadači nie je možné získať prístup k možnostiam ukladania, tento prístup potrebujeme na umožnenie vyhľadávania v obsahu správ."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "V tomto prehliadači nemôžeme povoliť vyhľadávanie obsahu správ."
       ]
     },
     "info": {
@@ -8852,6 +8888,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ],
+      "Account holder": [
+        "Vlastník účtu"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10402,6 +10441,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Môžete mať viac ako jedného správcu. Všetci správcovia môžu pridávať a spravovať používateľov, ale iba primárny správca má kontrolu nad fakturáciou."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Smerujte vašu internetovú prevádzku cez sieť Tor jediným kliknutím"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10505,6 +10547,9 @@
       ],
       "Trial started": [
         "Skúšobné obdobie začalo"
+      ],
+      "Meeting host copied to clipboard": [
+        "Poskytovateľ schôdzky skopírovaný do schránky"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10926,6 +10971,21 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Spracovávame vašu platbu za vyúčtovanú faktúru. Pred vykonaním zmien vo vašom pláne alebo aktualizáciou platobných údajov počkajte, kým bude platba dokončená. Ďakujeme vám za vašu trpezlivosť."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Obnovuje sa za ${ renewPrice }, zrušiť môžete kedykoľvek."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvvých ${ subscriptionLength } mesiacov. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ subscriptionLength } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLength } mesiac. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPrice }. Službu môžete kedykoľvek zrušiť."
       ]
     },
     "Payments.Error": {
@@ -12028,6 +12088,9 @@
       ],
       "Unsubscribed": [
         "Odber bol odhlásený"
+      ],
+      "Alias disabled": [
+        "Alias vypnutý"
       ]
     },
     "Step": {
@@ -13933,6 +13996,9 @@
       ],
       "Your free trial has ended": [
         "Vaša bezplatná skúšobná verzia vypršala"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorovanie Dark Webu"
       ]
     },
     "Title subscription": {
@@ -14042,6 +14108,9 @@
     "Tor out of date": {
       "stable release": [
         "stabilná verzia"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na poslednú ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -14607,6 +14676,9 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ],
+      "Join Zoom meeting": [
+        "Pripojte sa k stretnutiu na Zoome"
       ]
     }
   }

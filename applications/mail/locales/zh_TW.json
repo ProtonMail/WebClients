@@ -1403,6 +1403,12 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Disabling alias": [
+        "停用別名"
+      ],
+      "Remove Zoom meeting": [
+        "移除Zoom會議"
       ]
     },
     "action": {
@@ -5298,6 +5304,9 @@
       ],
       "More details": [
         "更多詳細資料"
+      ],
+      "Meeting host:": [
+        "會議主持人:"
       ]
     },
     "Group": {
@@ -7507,6 +7516,12 @@
       ],
       "Your private writing assistant": [
         "您私人的撰寫幫手"
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "此訊息是從SimpleLogin別名傳送。"
       ]
     },
     "info": {
@@ -8343,6 +8358,9 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ],
+      "Account holder": [
+        "帳戶持有人"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9429,6 +9447,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin 終身"
+      ],
+      "Breach alerts": [
+        "外洩警告"
       ]
     },
     "new_plans: feature highlight": {
@@ -11177,6 +11201,9 @@
       ],
       "Unsubscribed": [
         "已取消訂閱"
+      ],
+      "Alias disabled": [
+        "別名已停用"
       ]
     },
     "Step": {
@@ -11188,6 +11215,9 @@
       ],
       "Sign in to the service": [
         "登入服務"
+      ],
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "輸入${ MAIL_APP_NAME }地址成為新地址並儲存，確認，或驗證變更。"
       ]
     },
     "Step in filter modal": {
@@ -12822,6 +12852,9 @@
       ],
       "Your free trial has ended": [
         "您的免費試用已結束"
+      ],
+      "Dark Web Monitoring": [
+        "暗網監控"
       ]
     },
     "Title subscription": {
@@ -13361,6 +13394,12 @@
     "Zoom Meeting": {
       "Meeting ID:": [
         "會議識別碼:"
+      ],
+      "Join Zoom meeting": [
+        "加入Zoom會議"
+      ],
+      "Passcode:": [
+        "數字密碼:"
       ]
     }
   }

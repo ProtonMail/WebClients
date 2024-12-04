@@ -1586,7 +1586,7 @@
         "6 位用户"
       ],
       "8500+ servers across 110+ countries": [
-        "8500+ servers across 110+ countries"
+        "110+ 个国家，8500+ 台服务器"
       ],
       "Ad-blocker and malware protection": [
         "广告拦截及恶意软件防护"
@@ -1619,7 +1619,7 @@
         "私人照片备份"
       ],
       "Protect 10 devices at a time": [
-        "Protect 10 devices at a time"
+        "可同时保护 10 台设备"
       ],
       "Secure file storage & sharing": [
         "安全文件存储与共享"
@@ -1653,7 +1653,7 @@
     },
     "BF2024: Info": {
       "Most popular": [
-        "常用"
+        "人气最高"
       ]
     },
     "BF2024: info": {
@@ -1663,27 +1663,27 @@
     },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
-        "总计${ durationDeal }"
+        "开通 ${ durationDeal }"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "Renews after 1 month at ${ regularAmount }."
+        "次月起按 ${ regularAmount } 续费。"
       ]
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
+        "突破网络封锁，保护线上隐私，最多可通过 10 台设备连接全球逾 110 个国家超过 8500 台服务器，畅享全球流媒体服务，拦截恶意软件和广告，还有 VPN 加速器等更多功能等您体验。"
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "随时随地畅享 Netflix、Disney+、Prime Video 等精彩内容。"
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more."
+        "在您的所有设备上安全登录，并且支持无限量的 hide-my-email 邮箱别名、文件共享、集成双重验证、暗网数据泄露监控等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术守护您的邮件安全。支持 ${ addresses } 个邮箱地址、自有域名、${ BRAND_NAME } Scribe 写作助手、无限量的 hide-my-email 别名等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more."
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术守护您的邮件安全。支持自定义域名、15 个邮箱地址、无限量的 hide-my-email 别名等更多高级功能。"
@@ -12170,6 +12170,11 @@
       ],
       "Yearly, ${ untilString }": [
         "每年, ${ untilString }"
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "有附件"
       ]
     }
   }

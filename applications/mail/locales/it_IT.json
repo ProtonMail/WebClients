@@ -1411,6 +1411,15 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Disable alias": [
+        "Disabilita l'alias"
+      ],
+      "Disabling alias": [
+        "Disabilitazione dell'alias"
+      ],
+      "Remove Zoom meeting": [
+        "Rimuovi riunione Zoom"
       ]
     },
     "action": {
@@ -1643,6 +1652,9 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ discountedPrice }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ nextPrice } al mese. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Il prezzo scontato di ${ discountedPrice } è valido per i primi ${ cycle } mesi. Successivamente verrà rinnovato automaticamente al prezzo scontato di ${ nextPrice } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
       ]
     },
     "bf2023: Tooltip": {
@@ -7751,6 +7763,22 @@
       ],
       "Your private writing assistant": [
         "Il tuo assistente alla scrittura privato"
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } credito rimanente.",
+        "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Le funzionalità di archiviazione non sono supportate in questo browser, abbiamo bisogno di questo supporto per abilitare la ricerca del contenuto dei messaggi."
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "Questo messaggio proviene da un alias SimpleLogin."
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Impossibile accedere alle funzionalità di archiviazione in questo browser, abbiamo bisogno di questo accesso per abilitare la ricerca del contenuto dei messaggi."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Non possiamo abilitare la ricerca del contenuto dei messaggi in questo browser."
       ]
     },
     "info": {
@@ -8596,6 +8624,9 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ],
+      "Account holder": [
+        "Titolare del conto"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10083,6 +10114,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puoi avere più di un amministratore. Tutti gli amministratori possono aggiungere e gestire gli utenti, ma solo l'amministratore principale ha il controllo sulla fatturazione."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Indirizza il tuo traffico Internet attraverso la rete Tor con un solo click"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10602,6 +10636,21 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Stiamo elaborando il pagamento della fattura. Attendi il completamento del pagamento prima di apportare modifiche al tuo piano o aggiornare i dettagli di pagamento. Grazie per la pazienza."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Rinnova a ${ renewPrice }, annulla in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ subscriptionLength } mesi. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ renewPrice } ogni ${ subscriptionLengthCopy }. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ subscriptionLength } mesi. Il piano si rinnoverà poi automaticamente a ${ renewPrice } per ${ subscriptionLengthCopy } mesi. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovi. Successivamente verrà rinnovato automaticamente a ${ renewPrice } per ${ subscriptionLength } mese. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ renewPrice } al mese. Puoi annullare in qualsiasi momento."
       ]
     },
     "Payments.Error": {
@@ -11646,6 +11695,9 @@
       ],
       "Unsubscribed": [
         "Iscrizione annullata"
+      ],
+      "Alias disabled": [
+        "Alias ​​disabilitato"
       ]
     },
     "Step": {
@@ -13441,6 +13493,9 @@
       ],
       "Your free trial has ended": [
         "La tua prova gratuita è terminata"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoraggio del Dark Web"
       ]
     },
     "Title subscription": {
@@ -13550,6 +13605,9 @@
     "Tor out of date": {
       "stable release": [
         "versione stabile"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Questa versione di Tor Browser non è supportata. Aggiornala all'ultima ${ stableRelease }"
       ]
     },
     "Update font modal": {

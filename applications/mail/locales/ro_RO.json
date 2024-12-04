@@ -1416,6 +1416,15 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Disable alias": [
+        "Dezactivare alias"
+      ],
+      "Disabling alias": [
+        "Dezactivare alias"
+      ],
+      "Remove Zoom meeting": [
+        "Eliminare conferință Zoom"
       ]
     },
     "action": {
@@ -1653,6 +1662,9 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ discountedPrice } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ nextPrice } în fiecare lună. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ discountedPrice } este valabil pentru primele ${ cycle } luni. Apoi va fi reînnoit automat la prețul redus de ${ nextPrice } pentru ${ renewalLength } luni. Puteți anula oricând."
       ]
     },
     "bf2023: Tooltip": {
@@ -7882,6 +7894,23 @@
       ],
       "Your private writing assistant": [
         "Asistentul personal privat de scriere"
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "După apăsarea pe butonul de confirmare, în cont va mai rămâne ${ creditsRemaining } credit.",
+        "După apăsarea pe butonul de confirmare, în cont vor mai rămâne ${ creditsRemaining } credite.",
+        "După apăsarea pe butonul de confirmare, în cont vor mai rămâne ${ creditsRemaining } de credite."
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Capacitatea de stocare nu este acceptată în acest navigator web. Este nevoie de această funcție pentru a activa căutarea în conținutul mesajelor."
+      ],
+      "This message is from a SimpleLogin alias.": [
+        "Acest mesaj este de la un alias SimpleLogin."
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Nu se poate accesa capacitatea de stocare în acest navigator web. Este nevoie de această funcție pentru a activa căutarea în conținutul mesajelor."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Nu se poate activa căutarea conținutului mesajelor în acest navigator web."
       ]
     },
     "info": {
@@ -8730,6 +8759,9 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Account holder": [
+        "Titular cont"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10247,6 +10279,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puteți avea mai mulți administratori. Toți administratorii pot adăuga și gestiona utilizatorii, dar numai administratorul principal are control asupra facturării."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Redirecționați traficul din Internet prin rețeaua Tor cu un singur clic."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10770,6 +10805,21 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Se procesează plata pentru factura emisă. Așteptați până când plata este finalizată înainte de a face modificări planului sau de a actualiza detaliile de plată. Vă mulțumim pentru răbdare."
+      ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Reînnoiți cu ${ renewPrice }, anulați oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ subscriptionLength } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ renewPrice } pentru ${ subscriptionLengthCopy } luni. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru primele ${ subscriptionLength } luni. Apoi va fi reînnoit automat cu ${ renewPrice } pentru ${ subscriptionLengthCopy } luni. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru primele prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ renewPrice } pentru ${ subscriptionLength } lună. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPrice } în fiecare lună. Puteți anula oricând."
       ]
     },
     "Payments.Error": {
@@ -11843,6 +11893,9 @@
       ],
       "Unsubscribed": [
         "Dezabonat"
+      ],
+      "Alias disabled": [
+        "Alias dezactivat"
       ]
     },
     "Step": {
@@ -13693,6 +13746,9 @@
       ],
       "Your free trial has ended": [
         "Perioada de probare gratuită a expirat"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorizare pe internetul ascuns"
       ]
     },
     "Title subscription": {
@@ -13802,6 +13858,9 @@
     "Tor out of date": {
       "stable release": [
         "versiune stabilă"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Această versiune a navigatorului web Tor nu este suportată. Actualizați la cea mai recentă versiune ${ stableRelease }."
       ]
     },
     "Update font modal": {
