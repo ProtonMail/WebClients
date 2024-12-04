@@ -50,8 +50,8 @@ export const openESDB = async (userID: string) => {
         // is called due to an update from an outdated version of IDB
         removeESFlags(userID);
         await deleteESDB(userID);
-        // let the caller handle the error
-        throw error;
+        // Currently our openESDB usage expects undefined in case a db was never there (see !dbExisted conditional above)
+        return;
     }
     return esDB;
 };
