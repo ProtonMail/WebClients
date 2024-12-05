@@ -428,6 +428,12 @@
       "Request a feature": [
         "Požiadavka na funkciu"
       ],
+      "Resend code": [
+        "Znovu odoslať kód"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Znovu odoslať kód (o ${ remaining } s)"
+      ],
       "Resend invitation": [
         "Znovu poslať pozvánku"
       ],
@@ -584,6 +590,9 @@
       "Use ${ label } theme": [
         "Použiť motív ${ label }"
       ],
+      "Verify": [
+        "Overiť"
+      ],
       "Via secure link": [
         "Cez bezpečný odkaz"
       ],
@@ -607,35 +616,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "doživotný prístup"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Všetky prémiové funkcie. 6 používateľov. 1 jednoduché predplatné."
-      ],
-      "Limited-stock available!": [
-        "K dispozícii obmedzené množstvo!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Získať ponuku"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Zaplaťte raz a získajte ${ lifetimeAccessJSX } na Pass Plus a SimpleLogin. Len za ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Ušetrite až ${ discountJSX } na Pass Family. Iba za ${ relativePrice }/mesiac."
       ]
     },
     "Browser": {
@@ -1346,6 +1326,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Vymazávam \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Nedostali ste kód?"
+      ],
       "Disabling auto-lock": [
         "Vypnutie automatického uzamykania"
       ],
@@ -1667,6 +1650,9 @@
       "Pinning item...": [
         "Pripínanie položky..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Skontrolujte priečinok so spamom alebo skúste kód poslať znova."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
       ],
@@ -1889,9 +1875,6 @@
       "Unable to copy to clipboard": [
         "Nedá sa kopírovať do schránky"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Neobmedzený počet hide-my-email aliasov"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Odomknúť ${ PASS_APP_NAME } s PIN kódom pre prístup k svojim prístupovým kľúčom"
       ],
@@ -1915,6 +1898,9 @@
       ],
       "Unpinning item...": [
         "Odopínanie položky..."
+      ],
+      "Unverified": [
+        "Neoverený"
       ],
       "Update login": [
         "Aktualizovať prihlásenie"
@@ -1963,6 +1949,9 @@
         "Zaznamenali sme, že máte ${ aliasCount } aliasy, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?",
         "Zaznamenali sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?",
         "Zaznamenali sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Odoslali sme overovací kód na adresu ${ email }. Zadajte ho, prosím, nižšie:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Pri vytváraní/úprave prihlásenia na ${ PASS_APP_NAME } bude vstupné pole 'používateľské meno' vždy viditeľné ."
@@ -2209,6 +2198,9 @@
       "City": [
         "Mesto"
       ],
+      "Code": [
+        "Kód"
+      ],
       "Company": [
         "Spoločnosť"
       ],
@@ -2217,6 +2209,9 @@
       ],
       "Contact details": [
         "Kontaktné údaje"
+      ],
+      "Contacts": [
+        "Kontakty"
       ],
       "Copy": [
         "Kopírovať"
@@ -2268,6 +2263,9 @@
       ],
       "Display": [
         "Zobraziť"
+      ],
+      "Display name": [
+        "Zobrazované meno"
       ],
       "Domain": [
         "Doména"
@@ -2871,6 +2869,9 @@
       "Full Name": [
         "Celé meno"
       ],
+      "me@example.com": [
+        "meno@priklad.sk"
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -3007,6 +3008,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Nastavenia ${ PASS_APP_NAME }"
       ],
+      "Actions": [
+        "Akcie"
+      ],
       "Auto-lock update": [
         "Aktualizácia automatického uzamknutia"
       ],
@@ -3019,8 +3023,17 @@
       "Confirm PIN code": [
         "Potvrdiť PIN kód"
       ],
+      "Confirm your email": [
+        "Potvrďte váš email"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Pripojte svoj ${ BRAND_NAME } účet"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Create contact": [
+        "Vytvoriť kontakt"
       ],
       "Create PIN code": [
         "Vytvoriť PIN kód"
@@ -3199,6 +3212,9 @@
       "Share with": [
         "Zdieľať s"
       ],
+      "Status": [
+        "Stav"
+      ],
       "Stay safer online": [
         "Zostaňte v bezpečí online"
       ],
@@ -3368,6 +3384,12 @@
       "Invalid alias prefix": [
         "Neplatná predpona aliasu"
       ],
+      "Invalid code": [
+        "Neplatný kód"
+      ],
+      "Invalid email": [
+        "Neplatný email"
+      ],
       "Invalid email addresses.": [
         "Neplatné emailové adresy."
       ],
@@ -3463,6 +3485,9 @@
       ],
       "Vault name is required": [
         "Názov trezoru je povinný"
+      ],
+      "Verification code is required": [
+        "Vyžaduje sa overovací kód"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Dosiahli ste limit členov, ktorí majú prístup k tomuto trezoru."

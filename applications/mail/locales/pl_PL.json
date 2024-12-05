@@ -1781,11 +1781,6 @@
         "Najpopularniejsze"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Ograniczone zapasy!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Płatne ${ amount } jednorazowo"
@@ -7296,6 +7291,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Wiadomość nie istnieje lub już wygasła."
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Funkcje przechowywania nie są obsługiwane w tej przeglądarce. Potrzebujemy tej obsługi, aby umożliwić wyszukiwanie zawartości wiadomości."
+      ],
       "Subject": [
         "Temat"
       ],
@@ -7566,6 +7564,9 @@
       "Turn on to search the content of your messages": [
         "Włącz, aby wyszukiwać zawartość wiadomości"
       ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Nie można uzyskać dostępu do funkcji przechowywania w tej przeglądarce. Potrzebujemy tego dostępu, aby umożliwić wyszukiwanie zawartości wiadomości."
+      ],
       "Unlock message": [
         "Odblokuj wiadomość"
       ],
@@ -7673,6 +7674,9 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Zablokowaliśmy następującym reklamodawcom i firmom możliwość sprawdzania, kiedy otwierasz tę wiadomość, z jakiego urządzenia i z jakiej lokalizacji."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Nie możemy włączyć wyszukiwania zawartości wiadomości w tej przeglądarce."
       ],
       "We could not verify the sender's trusted keys.": [
         "Nie możemy zweryfikować zaufanych kluczy nadawcy."
@@ -8300,6 +8304,9 @@
       ],
       "/month": [
         "/ miesiąc"
+      ],
+      "Account holder": [
+        "Właściciel konta"
       ],
       "Actions": [
         "Akcje"
@@ -10329,6 +10336,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetowanie haseł i uwierzytelniania dwustopniowego użytkowników"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Przekieruj ruch sieciowy przez sieć Tor jednym kliknięciem"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
@@ -10900,6 +10910,9 @@
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Specjalnie obniżona cena ${ priceWithDiscount } jest ważna przez pierwszy miesiąc. Potem usługa automatycznie odnowi się po cenie ${ renewPrice } za miesiąc. Możesz anulować subskrypcję w dowolnym momencie."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
@@ -14006,6 +14019,9 @@
     "Tor out of date": {
       "stable release": [
         "wersji stabilnej"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Ta wersja przeglądarki Tor nie jest obsługiwana. Zaktualizuj ją do najnowszej ${ stableRelease }"
       ]
     },
     "Update font modal": {

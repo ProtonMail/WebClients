@@ -55,6 +55,12 @@
       "Add domain": [
         "Добавить домен"
       ],
+      "Add external address": [
+        "Добавить внешний адрес"
+      ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Добавить места Scribe ${ BRAND_NAME }"
+      ],
       "Add PayPal": [
         "Добавить PayPal"
       ],
@@ -99,6 +105,9 @@
       ],
       "Change": [
         "Изменить"
+      ],
+      "Change configuration": [
+        "Изменить конфигурацию"
       ],
       "Change keys": [
         "Изменить ключи"
@@ -721,6 +730,9 @@
       "Verify domain": [
         "Проверить домен"
       ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Проверить домен ${ unverifiedSSODomain.DomainName }"
+      ],
       "View": [
         "Посмотреть"
       ],
@@ -1088,11 +1100,6 @@
         "Самые популярные"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Ограниченный запас!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Оплата ${ amount } единовременно"
@@ -1143,6 +1150,14 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
+      ]
+    },
+    "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяца",
+        "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев",
+        "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев",
+        "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев"
       ]
     },
     "Billing cycle option": {
@@ -2322,6 +2337,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Если отключено, доступ будет иметь только администраторы."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Разделите разные части своей жизни и упорядочьте свой почтовый ящик с помощью дополнительных адресов."
       ],
@@ -2700,6 +2718,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Чтобы управлять несколькими пользователями, перейдите на бизнес-план с более чем 1 пользователем."
+      ],
+      "Please upload a square logo": [
+        "Пожалуйста, загрузите квадратный логотип"
       ],
       "Please upload an xml file": [
         "Загрузите файл xml"
@@ -3736,6 +3757,9 @@
         "Добавление ${ addedServerCount } шлюзовых серверов",
         "Добавление ${ addedServerCount } шлюзовых серверов"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Добавление внешнего адреса электронной почты отключит сквозное шифрование для всех сообщений по электронной почте внутри этой группы. Вы хотите продолжить?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Добавление шлюзового сервера: ${ serverNumber } / ${ total }",
         "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
@@ -3754,8 +3778,14 @@
         "Затронутые пользователи находятся на строках",
         "Затронутые пользователи находятся на строках"
       ],
+      "All inactive members deleted": [
+        "Все неактивные участники удалены"
+      ],
       "All members have been added.": [
         "Все участники были добавлены."
+      ],
+      "All users": [
+        "Все пользователи"
       ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
@@ -3865,6 +3895,15 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Настройте аутентификацию SAML для своей организации через провайдера идентификационных данных, например Okta, Microsoft Azure или Google Identity Platform. Это позволит включить SAML для всей организации."
       ],
+      "Connection data will be available in around 1 hour.": [
+        "Данные подключения будут доступны примерно через 1 час."
+      ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Продолжайте, чтобы разрешить **${ affiliationsText }** из **${ organizationValue.Name }** присоединиться к вашей организации ${ BRAND_NAME }."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Продолжите подключение вашей организации ${ BRAND_NAME } к **${ organizationValue.Name }**."
+      ],
       "Continue with ${ freeName }": [
         "Продолжить с ${ freeName }"
       ],
@@ -3937,6 +3976,9 @@
         "Удаление ${ deletedServerCount } шлюзовых серверов",
         "Удаление ${ deletedServerCount } шлюзовых серверов"
       ],
+      "Disabled on ${ formattedDateAndTime }": [
+        "Отключено на ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Отключение двухфакторной аутентификации сделает вашу учетную запись менее защищенной. Продолжайте только при крайней необходимости."
       ],
@@ -4006,6 +4048,9 @@
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
+      "EduGain configuration saved": [
+        "Конфигурация EduGain сохранена"
+      ],
       "email": [
         "электронная почта"
       ],
@@ -4020,6 +4065,18 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Включите единый вход для обеспечения безопасности вашей организации"
+      ],
+      "Enabled on ${ formattedDateAndTime }": [
+        "Включено на ${ formattedDateAndTime }"
+      ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Сквозное шифрование электронной почты отключено для этой группы из-за внешних адресов."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "Сквозное шифрование электронной почты отключено для этой группы. Его можно включить."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Для этой группы включено сквозное шифрование электронной почты."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL конечной точки, полученный от поставщика идентификационных данных (например, https://idp.example.com/sso/saml)."
@@ -4228,6 +4285,9 @@
       "Invite rejected": [
         "Приглашение отклонено"
       ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "Изменение страны сервера займет 10 дней, поэтому убедитесь, что ваш выбор правильный."
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Элемент автоматически заполнен в ${ vaultLink }"
       ],
@@ -4291,6 +4351,9 @@
       "Learn more": [
         "Узнать больше"
       ],
+      "Learn more about Gateways": [
+        "Узнайте больше о шлюзах"
+      ],
       "Let's get started by pressing the New group button above": [
         "Давайте начнем с нажатия кнопки Новая группа, расположенной выше."
       ],
@@ -4308,6 +4371,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Подождите пока загружается календарь. Вы будете перенаправлены на нашу платформу для составления расписаний Calendly в новой вкладке."
+      ],
+      "Loading eduGAIN data...": [
+        "Загрузка данных eduGAIN..."
       ],
       "Loading gateways monitoring current status.": [
         "Загрузка текущего состояния отслеживания шлюзов."
@@ -4365,6 +4431,9 @@
       ],
       "New user invited to organization": [
         "Новый пользователь приглашен в организацию"
+      ],
+      "New VPN connection data will stop being collected and shown.": [
+        "Новые данные VPN соединений перестанут собираться и отображаться."
       ],
       "No addresses exist": [
         "Нет адресов"
@@ -4606,6 +4675,12 @@
       "Securing your account": [
         "Защита вашей учетной записи"
       ],
+      "Select one or multiple user affiliations": [
+        "Выберите одну или несколько связей пользователей"
+      ],
+      "Select recently used servers": [
+        "Выберите недавно использованный сервер"
+      ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Отправьте электронные письма, чтобы убедить ваших пользователей защитить свои аккаунты двухфакторной аутентификацией (2FA)."
       ],
@@ -4776,6 +4851,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Это позволит использовать PayPal для оплаты подписки на ${ BRAND_NAME }. Мы перенаправим вас на PayPal в новой вкладке браузера. Если вы используете какие-либо блокировщики всплывающих окон, пожалуйста, отключите их, чтобы продолжить."
+      ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Это навсегда удалит данные и все адреса электронной почты, связанные с этим пользователем."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Это навсегда удалит данные и все адреса электронной почты, связанные с этим пользователем."
@@ -5035,6 +5113,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "При отмене подписки она не будет возобновлена, но вы сможете пользоваться преимуществами тарифа до конца срока действия подписки. После этого вы будете переведены на тариф ${ BRAND_NAME } Free."
       ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Когда вы удаляете сервер из шлюза, он входит в 10-дневный период деактивации. Этот сервер может быть добавлен в новый шлюз, но его страна не может быть изменена."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
@@ -5185,6 +5266,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
+      "You won’t be able to reassign these servers to another country for 10 days.": [
+        "Вы не сможете переназначить эти серверы в другую страну в течение 10 дней."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, пожалуйста, оплатите все просроченные счета."
       ],
@@ -5241,6 +5325,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
+      ],
+      "You’ll be able to add these servers to another Gateway immediately.": [
+        "Вы сможете сразу добавить эти серверы на другой шлюз."
       ],
       "Zoom meeting": [
         "Конференция в Zoom "
@@ -5429,6 +5516,9 @@
       ],
       "Allowed Domain": [
         "Разрешённый Домен"
+      ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
       ],
       "Amount": [
         "Сумма"
@@ -5844,6 +5934,9 @@
       "User": [
         "Пользователь"
       ],
+      "User affiliations": [
+        "Принадлежности пользователей"
+      ],
       "User's new password": [
         "Новый пароль пользователя"
       ],
@@ -5858,6 +5951,9 @@
       ],
       "Verification code": [
         "Код подтверждения"
+      ],
+      "Video conferencing with Zoom": [
+        "Видеоконференции с помощью Zoom"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Жаль, что вы уходите. Пожалуйста, объясните, почему вы уходите, чтобы помочь нам улучшать нашу службу."
@@ -5939,6 +6035,11 @@
     "Label, credit card": {
       "ZIP code": [
         "Индекс"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Выберите поставщика услуг, чтобы начать"
       ]
     },
     "Link": {
@@ -7383,6 +7484,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Двухфакторная аутентификация более не требуется"
+      ],
+      "Video conferencing settings have been updated": [
+        "Настройки видеоконференций обновлены"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8205,6 +8309,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вход не был успешно завершен."
+      ],
       "Something went wrong": [
         "Что-то пошло не так"
       ]
@@ -8383,6 +8490,9 @@
       ],
       "to be created": [
         "будет создан"
+      ],
+      "to be deleted": [
+        "будет удален"
       ]
     },
     "session_recovery:available:action": {
@@ -8409,13 +8519,13 @@
         "${ timeRemaining.inDays } день",
         "${ timeRemaining.inDays } дня",
         "${ timeRemaining.inDays } дней",
-        "${ timeRemaining.inDays } дня"
+        "${ timeRemaining.inDays } дней"
       ],
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } час",
         "${ timeRemaining.inHours } часа",
         "${ timeRemaining.inHours } часов",
-        "${ timeRemaining.inHours } часа"
+        "${ timeRemaining.inHours } часов"
       ],
       "Didn’t make this request?": [
         "Вы не делали этот запрос?"
@@ -8639,7 +8749,7 @@
         "${ gracePeriodHoursRemaining } час",
         "${ gracePeriodHoursRemaining } часа",
         "${ gracePeriodHoursRemaining } часов",
-        "${ gracePeriodHoursRemaining } часа"
+        "${ gracePeriodHoursRemaining } часов"
       ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } теперь доступен."
@@ -8807,10 +8917,10 @@
     },
     "specialoffer: Offers": {
       "${ n } month": [
-        "первый ${ n } месяц",
-        "${ n } месяцев",
+        "${ n } месяц",
         "${ n } месяца",
-        "${ n } месяца"
+        "${ n } месяцев",
+        "${ n } месяцев"
       ],
       "/ month": [
         "/ месяц"
@@ -8918,6 +9028,18 @@
         "${ n } участника запросили вашу помощь для входа.",
         "${ n } участников запросили вашу помощь для входа.",
         "${ n } участников запросили вашу помощь для входа."
+      ],
+      "${ n } user converted to SSO": [
+        "${ n } пользователь преобразован в SSO",
+        "${ n } пользователя преобразовано в SSO",
+        "${ n } пользователей преобразовано в SSO",
+        "${ n } пользователя преобразовано в SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } пользователь отсоединён от SSO",
+        "${ n } пользователя отсоединёно от SSO",
+        "${ n } пользователей отсоединёно от SSO",
+        "${ n } пользователя отсоединёно от SSO"
       ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } пользователь присоединился к вашей организации через поставщика личных данных. Проверьте этот аккаунт сейчас:",
@@ -9096,8 +9218,14 @@
       "User details:": [
         "Информация о пользователе:"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Вы должны будете создать новых пользователей вручную, чтобы добавить их в вашу организацию."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Вы будете перенаправлены на вашего стороннего провайдера SSO."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Ваша конфигурация SSO будет удалена."
       ]
     },
     "sso: auth device state": {
@@ -9776,6 +9904,9 @@
       "Administrator privileges restored": [
         "Права администратора восстановлены"
       ],
+      "Backup password updated": [
+        "Пароль резервного копирования обновлен"
+      ],
       "Catch-all address updated": [
         "Адрес для приема всей почты домена обновлен"
       ],
@@ -9889,6 +10020,12 @@
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Вы получите ваше имя пользователя по электронной почте в течение минуты, если вы ввели верный адрес электронной почты."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Вы получите имя пользователя через SMS в течение минуты, если вы ввели верный номер телефона для восстановления."
       ]
     },
     "Success message": {
@@ -10198,6 +10335,9 @@
       "Change second password": [
         "Изменить второй пароль"
       ],
+      "Choose user affiliations": [
+        "Выберите принадлежности пользователей"
+      ],
       "Click a value in the table to use it as filter": [
         "Нажмите значение в таблице, чтобы использовать его в качестве фильтра"
       ],
@@ -10218,6 +10358,9 @@
       ],
       "Confirm phone number": [
         "Подтвердите номер телефона"
+      ],
+      "Connect organization": [
+        "Подключить организацию"
       ],
       "Contact us": [
         "Свяжитесь с нами"
@@ -10868,6 +11011,12 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Внешний адрес - отключает сквозное шифрование электронной почты для этой группы"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Внешний адрес - отключает сквозное шифрование электронной почты для этой группы, и этим пользователем не будут передаваться шифрованные ресурсы."
+      ],
       "Group membership paused": [
         "Членство в группе приостановлено"
       ],
@@ -10890,6 +11039,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Административный доступ ожидает:** Мы отправили запрос этому пользователю разрешить любому администратору управление его учетной записью."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
       ],
@@ -10898,6 +11050,12 @@
       ],
       "Cancel request": [
         "Отменить запрос"
+      ],
+      "Cancel request to access user data?": [
+        "Отменить запрос на доступ к данным пользователя?"
+      ],
+      "Confirm all": [
+        "Подтвердить все"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Не удалось автоматически включить доступ администратора для ${ n } пользователя, так как его ключи шифрования были обновлены в это время:",
@@ -10910,6 +11068,9 @@
       ],
       "Enable manually": [
         "Включить вручную"
+      ],
+      "Keep request": [
+        "Сохранить запрос"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Как только пользователь даст согласие, вы сможете помочь ему восстановить доступ к аккаунту или управлять его данными."
@@ -10937,6 +11098,9 @@
       ],
       "The user must have an address to request data access": [
         "Пользователь должен иметь адрес, чтобы запросить доступ к данным"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Это отменит ожидающий запрос на административный доступ к данным пользователя или сброс пароля."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Это отменит разрешение администратора на управление аккаунтом этого пользователя."

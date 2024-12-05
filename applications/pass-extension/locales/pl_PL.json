@@ -428,6 +428,12 @@
       "Request a feature": [
         "Poproś o dodatkową funkcję"
       ],
+      "Resend code": [
+        "Wyślij ponownie kod"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Wyślij ponownie kod (za ${ remaining } sek.)"
+      ],
       "Resend invitation": [
         "Wyślij ponownie zaproszenie"
       ],
@@ -584,6 +590,9 @@
       "Use ${ label } theme": [
         "Użyj motywu ${ label }"
       ],
+      "Verify": [
+        "Zweryfikuj"
+      ],
       "Via secure link": [
         "przez link"
       ],
@@ -607,35 +616,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "dożywotni dostęp"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Wszystkie funkcje premium. 6 użytkowników. Jedna prosta subskrypcja."
-      ],
-      "Limited-stock available!": [
-        "Ograniczona ilość na stanie!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Skorzystaj z oferty"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Czarny Piątek"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Zapłać raz i uzyskaj ${ lifetimeAccessJSX } do planu Pass Plus i usługi SimpleLogin. Tylko ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Zapisz do ${ discountJSX } na Pass Family. Tylko ${ relativePrice }/miesiąc."
       ]
     },
     "Browser": {
@@ -1346,6 +1326,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Usuwanie \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Nie otrzymano kodu?"
+      ],
       "Disabling auto-lock": [
         "Wyłączanie automatycznej blokady"
       ],
@@ -1667,6 +1650,9 @@
       "Pinning item...": [
         "Przypinanie elementu..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Sprawdź folder Spam lub wyślij ponownie kod."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
       ],
@@ -1889,9 +1875,6 @@
       "Unable to copy to clipboard": [
         "Nie można skopiować do schowka"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Nieograniczona liczba aliasów hide-my-email"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Odblokuj ${ PASS_APP_NAME } za pomocą kodu PIN, aby uzyskać dostęp do kluczy dostępu."
       ],
@@ -1915,6 +1898,9 @@
       ],
       "Unpinning item...": [
         "Odpinanie elementu..."
+      ],
+      "Unverified": [
+        "Niezweryfikowany"
       ],
       "Update login": [
         "Zaktualizuj dane logowania"
@@ -1963,6 +1949,9 @@
         "Masz ${ aliasCount } aliasy SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?",
         "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?",
         "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Wyślemy kod weryfikacyjny do ${ email }. Wpisz go poniżej:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Pole 'nazwa użytkownika' będzie zawsze widoczne podczas edytowania danych logowania w ${ PASS_APP_NAME }."
@@ -2209,6 +2198,9 @@
       "City": [
         "Miasto"
       ],
+      "Code": [
+        "Kod"
+      ],
       "Company": [
         "Firma"
       ],
@@ -2217,6 +2209,9 @@
       ],
       "Contact details": [
         "Szczegóły kontaktu"
+      ],
+      "Contacts": [
+        "Kontakty"
       ],
       "Copy": [
         "Kopiuj"
@@ -2268,6 +2263,9 @@
       ],
       "Display": [
         "Wyświetlanie"
+      ],
+      "Display name": [
+        "Nazwa wyświetlana"
       ],
       "Domain": [
         "Domena"
@@ -2871,6 +2869,9 @@
       "Full Name": [
         "Właściciel karty"
       ],
+      "me@example.com": [
+        "ja@przyklad.pl"
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -3007,6 +3008,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Ustawienia ${ PASS_APP_NAME }"
       ],
+      "Actions": [
+        "Akcje"
+      ],
       "Auto-lock update": [
         "Aktualizacja automatycznej blokady"
       ],
@@ -3019,8 +3023,17 @@
       "Confirm PIN code": [
         "Potwierdź kod PIN"
       ],
+      "Confirm your email": [
+        "Potwierdź adres"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Połącz konto ${ BRAND_NAME }"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Create contact": [
+        "Utwórz kontakt"
       ],
       "Create PIN code": [
         "Utwórz kod PIN"
@@ -3199,6 +3212,9 @@
       "Share with": [
         "Udostępnij"
       ],
+      "Status": [
+        "Status"
+      ],
       "Stay safer online": [
         "Zachowaj bezpieczeństwo online"
       ],
@@ -3368,6 +3384,12 @@
       "Invalid alias prefix": [
         "Przedrostek aliasu jest nieprawidłowy"
       ],
+      "Invalid code": [
+        "Kod jest nieprawidłowy"
+      ],
+      "Invalid email": [
+        "Adres e-mail jest nieprawidłowy"
+      ],
       "Invalid email addresses.": [
         "Adresy e-mail są nieprawidłowe."
       ],
@@ -3463,6 +3485,9 @@
       ],
       "Vault name is required": [
         "Nazwa sejfu jest wymagana"
+      ],
+      "Verification code is required": [
+        "Kod weryfikacyjny jest wymagany"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Osiągnięto maksymalną liczbę użytkowników sejfu."

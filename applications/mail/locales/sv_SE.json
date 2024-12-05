@@ -14,22 +14,22 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ link }"
+        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
+        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
+        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vita åtgärd. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vita åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ link }"
+        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ]
     },
     "Action": {
@@ -752,7 +752,7 @@
         "Modifiera"
       ],
       "Modify selection": [
-        "Modifiera val"
+        "Modifiera markering"
       ],
       "Monday": [
         "Måndag"
@@ -1211,10 +1211,10 @@
         "Stanna"
       ],
       "Stop downloading assistant": [
-        "Stoppa ladda ner assistent"
+        "Sluta ladda ner assistent"
       ],
       "Stop generating result": [
-        "Stoppa generera resultat"
+        "Sluta generera resultat"
       ],
       "Strikethrough": [
         "Genomstrykning"
@@ -1719,6 +1719,9 @@
       "Online document editor": [
         "Dokumentredigerare online"
       ],
+      "Password health alerts": [
+        "Aviseringar om lösenordshälsa"
+      ],
       "Private photo backup": [
         "Privat säkerhetskopiering av foto"
       ],
@@ -1764,11 +1767,6 @@
     "BF2024: Info": {
       "Most popular": [
         "Mest populär"
-      ]
-    },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Begränsat lager!"
       ]
     },
     "BF2024: Offers": {
@@ -2136,7 +2134,7 @@
         "Uppdatering av händelse stöds inte för tillfället"
       ],
       "Event rescheduling is not supported for the moment": [
-        "Omläggning av schema för händelse stöds inte för tillfället"
+        "Ombokning av händelser stöds inte för närvarande"
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
         "Detta svar kan inte läggas till i ${ CALENDAR_APP_NAME } eftersom vi endast stöder svar på alla händelser i en serie för tillfället"
@@ -4326,6 +4324,9 @@
       "Problem loading the writing assistant to your device. Please try again.": [
         "Problem att ladda skrivassistenten till din enhet. Försök igen."
       ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Fel vid urladdning av data som inte behövs när skrivassistenten är inaktiv"
+      ],
       "Process aborted": [
         "Process avbruten"
       ],
@@ -4596,7 +4597,7 @@
         "Kryptering misslyckades"
       ],
       "Missing FN property": [
-        "Saknar FN-egendom"
+        "FN-egenskap saknas"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 stöds inte"
@@ -4906,7 +4907,7 @@
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
-        "Du är inbjuden att gå med i ${ invite.OrganizationName }"
+        "Du har bjudits in att gå med i ${ invite.OrganizationName }"
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kan bara acceptera 3 inbjudningar under en 6-månadersperiod. Kontakta ${ supportLink } om du behöver ett undantag."
@@ -4930,7 +4931,7 @@
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
+        "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger de ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4957,10 +4958,10 @@
         "Bjud in medlemmar och få igång allt."
       ],
       "Set up your family": [
-        "Ställ in din familj"
+        "Konfigurera din familj"
       ],
       "Set up your family account": [
-        "Ställ in ditt familjekonto"
+        "Konfigurera ditt familjekonto"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5383,7 +5384,7 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Automatiskt vidarebefordrad"
+        "Vidarebefordra automatiskt"
       ],
       "Gmail messages to your inbox": [
         "Gmail-meddelanden till din inkorg"
@@ -5789,7 +5790,7 @@
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
-        "${ BRAND_NAME } Scribe hjälper dig att skapa bättre e-post snabbt och enkelt."
+        "${ BRAND_NAME } Scribe hjälper dig att skapa bättre e-postmeddelanden snabbt och enkelt."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
@@ -6316,7 +6317,7 @@
         "Visste du att du har krypterad molnlagring inkluderat med ditt ${ BRAND_NAME }-konto? Gå till ${ DRIVE_APP_NAME } och få ut det mesta av ditt utrymme. Det är gratis."
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
-        "Visste du detta ? Vi har reserverat en kortare e-postadress för dig. Det är ditt användarnamn följt av “@${ PM_DOMAIN }“."
+        "Visste du detta? Vi har reserverat en kortare e-postadress för dig. Det är ditt användarnamn följt av “@${ PM_DOMAIN }“."
       ],
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
@@ -6703,7 +6704,7 @@
         "Meddelandeåtgärder pågår. Detta kan ta ett tag."
       ],
       "Message download status:": [
-        "Meddelande för nedladdningsstatus:"
+        "Meddelandenedladdningsstatus:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Meddelandets förfallodatum fungerar bara när e-post skickas till andra ${ MAIL_APP_NAME }-användare. För att skicka e-postmeddelanden med förfallodag till användare utan ${ BRAND_NAME }, vänligen avbryt och lägg istället till lösenordsskydd till din e-post."
@@ -6811,7 +6812,7 @@
         "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
       ],
       "Open shortcut cheat sheet": [
-        "Öppna bladet för genvägar"
+        "Öppna fuskblad för genvägar"
       ],
       "Organization size": [
         "Organisationens storlek"
@@ -6832,7 +6833,7 @@
         "Betalningar skyddas med TLS-kryptering och Schweiziska integritetslagar."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline är endast kompatibel med oformaterad text."
+        "PGP/Inline är endast kompatibelt med oformaterad text."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME skickar automatiskt meddelandet med det aktuella kompositörsläget."
@@ -7147,7 +7148,7 @@
         "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
       ],
       "The initial setup may take a few minutes.": [
-        "Den initiala installationen kan ta några minuter."
+        "Den initiala konfigurationen kan ta några minuter."
       ],
       "The local database is being prepared": [
         "Den lokala databasen förbereds"
@@ -7199,7 +7200,7 @@
         "Denna konversation innehåller icke kastade meddelanden."
       ],
       "This conversation contains one or more expiring messages": [
-        "Denna konversation innehåller ett eller fler utlöpta meddelanden"
+        "Denna konversation innehåller ett eller flera utlöpta meddelanden"
       ],
       "This conversation contains trashed messages.": [
         "Denna konversation innehåller kastade meddelanden."
@@ -7393,7 +7394,7 @@
         "Uppgradera för att skapa fler mappar, filter och adresser."
       ],
       "Upgrade to level up your privacy.": [
-        "Uppgradera för att höja din integritet."
+        "Uppgradera för att levla upp din integritet."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Uppgradera för att skicka e-post från @pm.me-adresser."
@@ -7838,10 +7839,10 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "Genom att klicka på ”lita på nyckel” kopplas den här publika nyckeln till denna avsändare och e-post från den här adressen kommer automatiskt att verifieras kryptografiskt."
+        "Genom att klicka på ”lita på nyckel” kopplas den här publika nyckeln till denna avsändare och e-postmeddelanden från den här adressen kommer automatiskt att verifieras kryptografiskt."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
-        "Genom att klicka på ”lita på nyckel” kopplas den här publika nyckeln till denna avsändare och e-post från den här adressen kommer automatiskt att verifieras kryptografiskt."
+        "Genom att klicka på ”lita på nyckel” kopplas den här publika nyckeln till denna avsändare. E-postmeddelanden från den här adressen kommer automatiskt att verifieras kryptografiskt."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Vill du lita på den primära offentliga nyckeln med följande fingeravtryck?",
@@ -7883,7 +7884,7 @@
         "Kasta utkast"
       ],
       "Expand / contract composer": [
-        "Expandera/dra ihop skrivfönster"
+        "Expandera / dra ihop skrivfönster"
       ],
       "Filter": [
         "Filter"
@@ -8029,7 +8030,7 @@
         "Grundläggande navigering"
       ],
       "Composer shortcuts": [
-        "Kortkommandon för redigeringsfönster"
+        "Kompositörsgenvägar"
       ],
       "Folder shortcuts": [
         "Mappgenvägar"
@@ -9362,7 +9363,7 @@
         "${ PASS_APP_NAME } med obegränsat antal hide-my-email-alias"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
-        "Program ${ PROTON_SENTINEL_NAME }"
+        "${ PROTON_SENTINEL_NAME }-program"
       ],
       "${ size } attachment size": [
         "${ size } bilagestorlek"
@@ -9478,11 +9479,14 @@
       "Custom snooze time": [
         "Anpassad snooztid"
       ],
+      "Custom workspace branding": [
+        "Anpassat utseende för arbetsyta"
+      ],
       "Data breach monitoring": [
         "Dataintrångsövervakning"
       ],
       "Desktop app": [
-        "App för stationär dator"
+        "Skrivbordsapp"
       ],
       "DNS leak prevention": [
         "Förebyggande av DNS-läckage"
@@ -9512,7 +9516,7 @@
         "End-to-end-kryptering"
       ],
       "Fast P2P/BitTorrent downloads": [
-        "Snabba P2P/BitTorrent-nedladdningar"
+        "Snabba P2P-/BitTorrent-nedladdningar"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Gratis funktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och ${ DRIVE_SHORT_APP_NAME }"
@@ -9524,7 +9528,7 @@
         "Återbetalas till fullo i 30 dagar"
       ],
       "GDPR data processing agreement": [
-        "GDPR databehandlingsavtal"
+        "GDPR-databehandlingsavtal"
       ],
       "Generate emails with a prompt": [
         "Generera e-post med en prompt"
@@ -9679,7 +9683,7 @@
         "Obegränsade mappar, etiketter och filter"
       ],
       "Unlimited hide-my-email aliases": [
-        "Obegränsat antal Hide-my-email-alias"
+        "Obegränsat antal hide-my-email-alias"
       ],
       "Unlimited labels": [
         "Obegränsade etiketter"
@@ -10247,7 +10251,7 @@
         "${ protectionFromTrackersTitle } innebär att du inte längre följs över internet."
       ],
       "Access email and calendar right from your desktop with the desktop app.": [
-        "Kom åt e-post och kalender direkt från din stationära dator med appen för stationär dator."
+        "Kom åt e-post och kalender direkt från ditt skrivbord med skrivbordsappen."
       ],
       "Activate premium features": [
         "Aktivera premiumfunktioner"
@@ -10262,7 +10266,7 @@
         "App Store"
       ],
       "Auto-delete spam and trash": [
-        "Ta automatiskt bort skräppost och papperskorg"
+        "Ta automatiskt bort skräppost och pappersborg"
       ],
       "Automatically forward emails": [
         "Vidarebefordra e-post automatiskt"
@@ -10280,13 +10284,13 @@
         "Grattis till att du väljer integritet"
       ],
       "Dark Web Monitoring": [
-        "Övervakning mörka webben"
+        "Mörka webben-övervakning"
       ],
       "Download the desktop app": [
-        "Ladda ner appen för stationär dator"
+        "Ladda ner skrivbordsappen"
       ],
       "Download the desktop app and continue": [
-        "Ladda ner appen för stationär dator och fortsätt"
+        "Ladda ner skrivbordsappen och fortsätt"
       ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Kryptering så stark att endast du och avsedda mottagare kan visa dina e-postmeddelanden. ${ kbLinkEncryption }"
@@ -10301,10 +10305,10 @@
         "Vidarebefordra Gmail-meddelanden till din inkorg."
       ],
       "Get notified if your password is compromised.": [
-        "Bli aviserad om ditt lösenord har blivit komprometterat."
+        "Bli aviserad när ditt lösenord avslöjats."
       ],
       "Get the desktop app": [
-        "Skaffa appen för stationär dator"
+        "Skaffa skrivbordsappen"
       ],
       "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
         "Skaffa mobilappen från ${ mobileAppAppStoreLink } eller ${ mobileAppGooglePlayLink }."
@@ -10527,7 +10531,7 @@
         "Organisationsnyckeln måste aktiveras först."
       ],
       "You need access to the organization key to perform this operation.": [
-        "Du behöver åtkomst till organisationsnyckeln för att utföra denna operation."
+        "Du behöver åtkomst till organisationsnyckeln för att utföra denna åtgärd."
       ]
     },
     "Payment method option": {
@@ -10675,7 +10679,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-postadressen hittades inte bland användar-id som definierats i sändningsnyckeln (${ keyUserIds })"
+        "E-postadress hittades inte bland användar-ID:n definierad i sändningsnyckel (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -11187,7 +11191,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "Kontoåterställning är inte tillgänglig för äldre adressnycklar"
+        "Kontoåterställning är inte tillgänglig för föråldrade adressnycklar"
       ],
       "Please generate keys before you try to change your password": [
         "Generera nycklar innan du försöker ändra ditt lösenord"
@@ -11504,7 +11508,7 @@
         "Säker streaming"
       ],
       "Support online privacy": [
-        "Stöder integritet online"
+        "Stöd onlineintegritet"
       ]
     },
     "specialoffer: Footer": {
@@ -11658,7 +11662,7 @@
     },
     "Status": {
       "Alias disabled": [
-        "Alias inaktiverad"
+        "Alias inaktiverat"
       ],
       "Unsubscribed": [
         "Prenumeration avslutad"
@@ -11984,10 +11988,10 @@
         "Omfattande integritet och säkerhet"
       ],
       "Dark web monitoring": [
-        "Övervakning mörka webben"
+        "Mörka webben-övervakning"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Stöd för app för stationär dator och e-postklient (via IMAP)"
+        "Skrivbordsapp och stöd för e-postklienter (via IMAP)"
       ],
       "Direct contribution to our mission": [
         "Direkt bidrag till vårt uppdrag"
@@ -12017,7 +12021,7 @@
         "Hur vårt kundsupportteam fick vår VPN-app direkt i människors händer."
       ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
-        "Hur vi slog tillbaka när ${ BRAND_NAME } var blockerad i en aggressiv kampanj."
+        "Hur vi slog tillbaka när ${ BRAND_NAME } var blockerat i en aggressiv kampanj."
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Hur vi stöttade lokala aktivister när integritet och yttrandefrihet hotades."
@@ -12151,7 +12155,7 @@
         "Varningar om dataintrång ${ strongArgument }"
       ],
       "Desktop app": [
-        "App för stationär dator"
+        "Skrivbordsapp"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
         "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
@@ -12667,7 +12671,7 @@
         "Ladda ner ${ VPN_APP_NAME }"
       ],
       "Download Desktop app": [
-        "Ladda ner appen för stationär dator"
+        "Ladda ner skrivbordsappen"
       ],
       "Enable Dark Web Monitoring": [
         "Aktivera övervakning för mörka webben"
@@ -12698,7 +12702,7 @@
         "(aktiv)"
       ],
       "A filter name is required": [
-        "Ett filternamn är obligatoriskt"
+        "Ett filternamn är krävs"
       ],
       "A filter with this name already exists": [
         "Ett filter med detta namn finns redan"
@@ -12840,7 +12844,7 @@
         "Kupong"
       ],
       "Craft better emails": [
-        "Skapa bättre e-post"
+        "Skapa bättre e-postmeddelanden"
       ],
       "Create contact": [
         "Skapa kontakt"
@@ -12876,7 +12880,7 @@
         "Dataåterställning"
       ],
       "Day theme": [
-        "Dags-tema"
+        "Dagstema"
       ],
       "Decryption error": [
         "Dekrypteringsfel"
@@ -12959,7 +12963,7 @@
         "E-postadresser"
       ],
       "Email composer": [
-        "Redigeringsfönstret för e-post"
+        "E-postkompositör"
       ],
       "Email content": [
         "E-postinnehåll"
@@ -13007,7 +13011,7 @@
         "Skaffa avancerat skydd"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
-        "Skaffa appen ${ appName[APP_NAME] }"
+        "Skaffa ${ appName[APP_NAME] }-appen"
       ],
       "Gift": [
         "Gåva"
@@ -13176,7 +13180,7 @@
         "Nästa meddelande"
       ],
       "Night theme": [
-        "Natt-tema"
+        "Nattema"
       ],
       "No attachment found": [
         "Inga bilagor hittades"
@@ -13197,7 +13201,7 @@
         "Anteckningar"
       ],
       "One email, many recipients": [
-        "En e-post, många mottagare"
+        "En e-post, flera mottagare"
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
@@ -13332,7 +13336,7 @@
         "Skickar originalmeddelande"
       ],
       "Set recovery phrase": [
-        "Ställ in återställningsfras"
+        "Välj återställningsfras"
       ],
       "Set your own schedule": [
         "Ställ in ditt eget schema"

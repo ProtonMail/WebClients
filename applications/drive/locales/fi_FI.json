@@ -6,7 +6,7 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Välitys alkaa pian ja uudet viestit saapuvat postilaatikkoosi."
+        "Ohjaus alkaa pian ja uudet viestit saapuvat postilaatikkoosi."
       ],
       "Mail forward stopped": [
         "Sähköpostin ohjaus pysäytettiin"
@@ -748,7 +748,7 @@
         "Valitse maa"
       ],
       "Set recovery phrase": [
-        "Aseta palautuslauseke"
+        "Aseta palautuslause"
       ],
       "Settings": [
         "Asetukset"
@@ -853,7 +853,7 @@
         "Päivitä palautustiedosto"
       ],
       "Update recovery phrase": [
-        "Päivitä palautuslauseke"
+        "Vaihda palautuslause"
       ],
       "Upgrade": [
         "Päivitä tilaus"
@@ -1167,11 +1167,6 @@
         "Suosituin"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Rajoitettu varasto!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "${ amount } kertaveloitus"
@@ -1208,7 +1203,7 @@
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, rajattomasti Hide-my-email-aliaksia ja muuta."
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää mm. 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille ja rajattomasti Hide-my-email-aliaksia."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää verkkodokumenttieditorin, kuvien varmuuskopioinnin, versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
@@ -1242,7 +1237,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }In työpöytäsovellus"
+        "${ MAIL_APP_NAME }in työpöytäsovellus"
       ]
     },
     "Bug category": {
@@ -1479,7 +1474,7 @@
         "Lopetetaanko tuonnin mukautus?"
       ],
       "Quit import?": [
-        "Suljetaanko tuonti?"
+        "Lopetetaanko tuonti?"
       ]
     },
     "Contact field label": {
@@ -2409,11 +2404,6 @@
         "Erääntynyt lasku"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch -tuontiapurilla"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
@@ -2483,6 +2473,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3690,7 +3685,7 @@
         "Löydettiin ${ itemsCount } ehdotusta, käytä siirtymiseen näppäimistöä."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Selaa kirjoituksen jälkeen näytettäviä ehdotuksia Ylös-/Alas-näppäimillä ja vahvista valinta Enter-näppäimellä tai sulje ehdotukset Esc-näppäimellä."
+        "Selaa kirjoituksen jälkeen näytettäviä ehdotuksia Ylös- ja Alas-näppäimillä, ja vahvista valinta Enter-näppäimellä tai sulje ehdotukset Esc-näppäimellä."
       ]
     },
     "Human verification method": {
@@ -5630,7 +5625,7 @@
         "Edellinen salasanasi"
       ],
       "Your previous recovery phrase": [
-        "Edellinen palautuslausekkeesi"
+        "Edellinen palautuslauseesi"
       ]
     },
     "info": {
@@ -9483,7 +9478,7 @@
         "sekä 15 muuta premium-ominaisuutta"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostivälitys ${ strongText }"
+        "Automaattinen sähköpostiohjaus ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Tietomurtohälytykset ${ strongArgument }"
@@ -10253,7 +10248,7 @@
         "Valitse linkin erääntymisaika"
       ],
       "Set recovery phrase": [
-        "Aseta palautuslauseke"
+        "Aseta palautuslause"
       ],
       "Settings": [
         "Asetukset"

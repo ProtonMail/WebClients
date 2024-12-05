@@ -428,6 +428,12 @@
       "Request a feature": [
         "Minta fitur"
       ],
+      "Resend code": [
+        "Kirim ulang kode"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Kirim ulang kode (dalam ${ remaining } detik)"
+      ],
       "Resend invitation": [
         "Kirim ulang undangan"
       ],
@@ -578,6 +584,9 @@
       "Use ${ label } theme": [
         "Gunakan tema ${ label }"
       ],
+      "Verify": [
+        "Verifikasi"
+      ],
       "Via secure link": [
         "Via tautan aman"
       ],
@@ -601,35 +610,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Pengelola kata sandi Anda tidak terdaftar? Mintalah kepada kami."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "akses seumur hidup"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Seluruh fitur premium. 6 pengguna. 1 langganan mudah."
-      ],
-      "Limited-stock available!": [
-        "Persediaan terbatas!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Dapatkan penawaran ini"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Jumat Hitam"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Bayar satu kali dan dapatkan ${ lifetimeAccessJSX } untuk Pass Plus dan SimpleLogin. Hanya ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Hemat hingga ${ discountJSX } untuk Pass Family. Hanya ${ relativePrice }/bulan."
       ]
     },
     "Browser": {
@@ -1295,6 +1275,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Menghapus \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Tidak menerima kode?"
+      ],
       "Disabling auto-lock": [
         "Menonaktifkan kunci otomatis"
       ],
@@ -1592,6 +1575,9 @@
       "Pinning item...": [
         "Menyematkan item..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Silakan periksa folder spam Anda atau cobalah untuk mengirimkan ulang kode ini."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
       ],
@@ -1811,9 +1797,6 @@
       "Unable to copy to clipboard": [
         "Tidak dapat menyalin ke papan klip"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Tanpa batasan jumlah alias hide-my-email"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Buka kunci ${ PASS_APP_NAME } dengan kode PIN Anda untuk mengakses passkey yang Anda miliki"
       ],
@@ -1837,6 +1820,9 @@
       ],
       "Unpinning item...": [
         "Melepas sematan item..."
+      ],
+      "Unverified": [
+        "Tidak terverifikasi"
       ],
       "Update login": [
         "Perbarui entri masuk"
@@ -1882,6 +1868,9 @@
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Kami mendeteksi bahwa kamu mempunyai ${ aliasCount } alias yang ada di SimpleLogin tapi kehilangan ${ PASS_APP_NAME }. Apakah anda ingin mengimpornya?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Kami telah mengirimkan kode verifikasi ke ${ email }. Masukkan kode tersebut pada kolom di bawah ini:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Ketika membuat/mengedit informasi masuk di ${ PASS_APP_NAME } masukan 'nama pengguna' akan terus terlihat."
@@ -2104,6 +2093,9 @@
       "City": [
         "Kota"
       ],
+      "Code": [
+        "Kode"
+      ],
       "Company": [
         "Perusahaan"
       ],
@@ -2112,6 +2104,9 @@
       ],
       "Contact details": [
         "Rincian kontak"
+      ],
+      "Contacts": [
+        "Kontak"
       ],
       "Copy": [
         "Salin"
@@ -2163,6 +2158,9 @@
       ],
       "Display": [
         "Tampilan"
+      ],
+      "Display name": [
+        "Nama tampilan"
       ],
       "Domain": [
         "Domain"
@@ -2757,6 +2755,9 @@
       "Full Name": [
         "Nama Lengkap"
       ],
+      "me@example.com": [
+        "saya@contoh.com"
+      ],
       "MM/YY": [
         "BB/TT"
       ],
@@ -2890,6 +2891,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Pengaturan ${ PASS_APP_NAME }"
       ],
+      "Actions": [
+        "Tindakan"
+      ],
       "Auto-lock update": [
         "Pembaruan kunci otomatis"
       ],
@@ -2902,8 +2906,17 @@
       "Confirm PIN code": [
         "Konfirmasikan kode PIN"
       ],
+      "Confirm your email": [
+        "Konfirmasi email Anda"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Hubungkan Akun ${ BRAND_NAME } Anda"
+      ],
+      "Contacts": [
+        "Kontak"
+      ],
+      "Create contact": [
+        "Buat kontak"
       ],
       "Create PIN code": [
         "Buat kode PIN"
@@ -3070,6 +3083,9 @@
       "Share with": [
         "Bagikan dengan"
       ],
+      "Status": [
+        "Status"
+      ],
       "Stay safer online": [
         "Tetap aman saat online"
       ],
@@ -3230,6 +3246,12 @@
       "Invalid alias prefix": [
         "Awalan alias tidak valid"
       ],
+      "Invalid code": [
+        "Kode tidak valid"
+      ],
+      "Invalid email": [
+        "Email tidak valid"
+      ],
       "Invalid email addresses.": [
         "Terdapat alamat surel yang tidak valid."
       ],
@@ -3322,6 +3344,9 @@
       ],
       "Vault name is required": [
         "Nama brankas dibutuhkan"
+      ],
+      "Verification code is required": [
+        "Kode verifikasi diperlukan"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Anda telah mencapai batas jumlah anggota yang dapat mengakses brankas ini."

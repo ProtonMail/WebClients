@@ -428,6 +428,12 @@
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
       ],
+      "Resend code": [
+        "Επαναποστολή κωδικού"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Επανάληψη αποστολής κωδικού (σε ${ remaining })"
+      ],
       "Resend invitation": [
         "Επανάληψη αποστολής πρόσκλησης"
       ],
@@ -580,6 +586,9 @@
       "Use ${ label } theme": [
         "Χρήση ${ label } θέματος"
       ],
+      "Verify": [
+        "Επαλήθευση"
+      ],
       "Via secure link": [
         "Μέσω ασφαλούς συνδέσμου"
       ],
@@ -603,35 +612,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "ισόβια πρόσβαση"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Όλα τα premium χαρακτηριστικά. 6 χρήστες. 1 εύκολη συνδρομή."
-      ],
-      "Limited-stock available!": [
-        "Διαθέσιμο με περιορισμένα αποθέματα!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Αποκτήστε την προσφορά"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Πληρώστε μία φορά και λάβετε ${ lifetimeAccessJSX } στο Pass Plus και SimpleLogin. Μόνο ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Αποθηκεύστε έως ${ discountJSX } στην οικογένεια Pass. Μόνο ${ relativePrice }/μήνα."
       ]
     },
     "Browser": {
@@ -1312,6 +1292,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Διαγραφή του \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Δε λάβατε τον κωδικό;"
+      ],
       "Disabling auto-lock": [
         "Απενεργοποίηση αυτόματου κλειδώματος"
       ],
@@ -1617,6 +1600,9 @@
       "Pinning item...": [
         "Καρφίτσωμα στοιχείου..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Παρακαλούμε ελέγξτε τον φάκελο ανεπιθύμητης αλληλογραφίας ή δοκιμάστε να στείλετε ξανά τον κωδικό."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
       ],
@@ -1837,9 +1823,6 @@
       "Unable to copy to clipboard": [
         "Αδυναμία αντιγραφής στο πρόχειρο"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Απεριόριστα hide-my-email ψευδώνυμα"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Ξεκλειδώστε το ${ PASS_APP_NAME } με τον κωδικό PIN για πρόσβαση στα κλειδιά πρόσβασής σας"
       ],
@@ -1863,6 +1846,9 @@
       ],
       "Unpinning item...": [
         "Ξεκαρφίτσωμα στοιχείου..."
+      ],
+      "Unverified": [
+        "Μη επαληθευμένος"
       ],
       "Update login": [
         "Ενημέρωση διαπιστευτηρίων"
@@ -1909,6 +1895,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Εντοπίσαμε ότι έχετε ${ aliasCount } ψευδώνυμο που υπάρχει στο SimpleLogin αλλά λείπει στο ${ PASS_APP_NAME }. Θέλετε να το εισαγάγετε;",
         "Εντοπίσαμε ότι έχετε ${ aliasCount } ψευδώνυμα που υπάρχουν στο SimpleLogin αλλά λείπουν στο ${ PASS_APP_NAME }. Θέλετε να το εισαγάγετε;"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Στείλαμε έναν κωδικό επαλήθευσης στη διεύθυνση ${ email }. Παρακαλούμε εισάγετε τον παρακάτω:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Κατά τη δημιουργία/επεξεργασία μιας σύνδεσης στο ${ PASS_APP_NAME } η είσοδος 'όνομα χρήστη' θα είναι πάντα ορατή."
@@ -2139,6 +2128,9 @@
       "City": [
         "Πόλη"
       ],
+      "Code": [
+        "Κωδικός"
+      ],
       "Company": [
         "Εταιρεια"
       ],
@@ -2147,6 +2139,9 @@
       ],
       "Contact details": [
         "Στοιχεία επαφής"
+      ],
+      "Contacts": [
+        "Επαφές"
       ],
       "Copy": [
         "Αντιγραφή"
@@ -2198,6 +2193,9 @@
       ],
       "Display": [
         "Προβολή"
+      ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
       ],
       "Domain": [
         "Τομέας (Domain)"
@@ -2795,6 +2793,9 @@
       "Full Name": [
         "Ονοματεπώνυμο"
       ],
+      "me@example.com": [
+        "me@example.com"
+      ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
       ],
@@ -2929,6 +2930,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Ρυθμίσεις ${ PASS_APP_NAME }"
       ],
+      "Actions": [
+        "Ενέργειες"
+      ],
       "Auto-lock update": [
         "Ενημέρωση αυτόματου κλειδώματος"
       ],
@@ -2941,8 +2945,17 @@
       "Confirm PIN code": [
         "Επιβεβαιώστε τον κωδικό PIN"
       ],
+      "Confirm your email": [
+        "Επιβεβαιώστε τη διεύθυνση email σας"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Συνδέστε τον ${ BRAND_NAME } Λογαριασμό σας"
+      ],
+      "Contacts": [
+        "Επαφές"
+      ],
+      "Create contact": [
+        "Δημιουργία επαφής"
       ],
       "Create PIN code": [
         "Δημιουργία κωδικού PIN"
@@ -3113,6 +3126,9 @@
       "Share with": [
         "Κοινοποίηση με"
       ],
+      "Status": [
+        "Κατάσταση"
+      ],
       "Stay safer online": [
         "Παραμείνετε πιο ασφαλείς στο διαδίκτυο"
       ],
@@ -3276,6 +3292,12 @@
       "Invalid alias prefix": [
         "Μην έγκυρο πρόθεμα ψευδωνύμου"
       ],
+      "Invalid code": [
+        "Μη έγκυρος κωδικός"
+      ],
+      "Invalid email": [
+        "Μη έγκυρο email"
+      ],
       "Invalid email addresses.": [
         "Μη έγκυρες διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
@@ -3369,6 +3391,9 @@
       ],
       "Vault name is required": [
         "Απαιτείται όνομα κρύπτης"
+      ],
+      "Verification code is required": [
+        "Απαιτείται κωδικός επαλήθευσης"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Έχετε φτάσει το όριο των μελών που μπορούν να έχουν πρόσβαση σε αυτή την κρύπτη."
