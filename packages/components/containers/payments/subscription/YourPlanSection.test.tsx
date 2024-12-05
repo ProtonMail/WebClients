@@ -8,7 +8,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import useCache from '@proton/components/hooks/useCache';
 import useConfig from '@proton/components/hooks/useConfig';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
@@ -16,6 +15,7 @@ import { useFeature } from '@proton/features';
 import { PLANS, type PaymentMethodStatusExtended } from '@proton/payments';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { renderWithProviders } from '@proton/testing';
 import { getLongTestPlans } from '@proton/testing/data';
 import { mockUseFlag } from '@proton/testing/lib/mockUseFlag';
 

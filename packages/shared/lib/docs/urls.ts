@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/payments/index';
+import { PLANS } from '@proton/payments';
 
 import { getAppHref } from '../apps/helper';
 import { APPS } from '../constants';

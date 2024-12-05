@@ -3,8 +3,8 @@ import { screen } from '@testing-library/react';
 import { getModelState } from '@proton/account/test';
 import { UNPAID_STATE } from '@proton/payments';
 import type { UserModel } from '@proton/shared/lib/interfaces';
+import { renderWithProviders } from '@proton/testing';
 
-import { renderWithProviders } from '../contacts/tests/render';
 import DelinquentTopBanner from './DelinquentTopBanner';
 
 describe('DelinquentTopBanner', () => {

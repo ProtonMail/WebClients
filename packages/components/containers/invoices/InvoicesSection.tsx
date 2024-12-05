@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,119 +9,33 @@ import Alert from '@proton/components/components/alert/Alert';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Pagination from '@proton/components/components/pagination/Pagination';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
-import Time from '@proton/components/components/time/Time';
 import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import useApi from '@proton/components/hooks/useApi';
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
-import type { Invoice } from '@proton/payments';
 import { INVOICE_STATE } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { InvoiceDocument, getInvoice } from '@proton/shared/lib/api/payments';
-import { INVOICE_OWNER, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { InvoiceDocument } from '@proton/shared/lib/api/payments';
+import { INVOICE_OWNER } from '@proton/shared/lib/constants';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 
-import InvoiceActions from './InvoiceActions';
-import InvoiceAmount from './InvoiceAmount';
-import InvoiceState from './InvoiceState';
+import InvoiceGroup from './InvoiceGroup';
 import InvoiceTextModal from './InvoiceTextModal';
-import InvoiceType from './InvoiceType';
-import type { InvoicesPreviewControls } from './InvoicesPreview';
-import InvoicesPreview from './InvoicesPreview';
-import { getInvoicePaymentsVersion } from './helpers';
-import useInvoices, { ELEMENTS_PER_PAGE } from './useInvoices';
+import TransactionGroup from './TransactionGroup';
+import useInvoices, { ELEMENTS_PER_PAGE, type InvoicesHook } from './useInvoices';
+import useTransactions, { type TransactionsHook } from './useTransactions';
 
-type InvoicesHook = ReturnType<typeof useInvoices>;
-
-const InvoiceGroup = ({ invoices, loading, error, page, requestInvoices }: InvoicesHook) => {
-    const previewRef = useRef<InvoicesPreviewControls | undefined>();
-    const api = useApi();
-
-    const showError = !!error;
-    const isEmpty = page === 1 && !loading && invoices.length === 0 && !showError;
-    const showContent = !isEmpty && !showError;
-
-    const getFilename = (invoice: Invoice) =>
-        `${c('Title for PDF file').t`${MAIL_APP_NAME} invoice`} ${invoice.ID}.pdf`;
-
-    const handleDownload = async (invoice: Invoice) => {
-        const buffer = await api(getInvoice(invoice.ID, getInvoicePaymentsVersion(invoice)));
-        const blob = new Blob([buffer], { type: 'application/pdf' });
-        downloadFile(blob, getFilename(invoice));
-    };
-
-    return (
-        <>
-            {showError && c('Error').t`Couldn't load invoices. Please try again later.`}
-            {isEmpty && c('Info').t`You have no invoices.`}
-            {showContent && (
-                <div style={{ overflow: 'auto' }}>
-                    <Table hasActions responsive="cards">
-                        <TableHeader>
-                            <TableRow>
-                                <TableCell type="header">ID</TableCell>
-                                <TableCell type="header">{c('Title').t`Amount`}</TableCell>
-                                <TableCell type="header">{c('Title').t`Type`}</TableCell>
-                                <TableCell type="header">{c('Title').t`Status`}</TableCell>
-                                <TableCell type="header">{c('Title').t`Date`}</TableCell>
-                                <TableCell type="header">{c('Title').t`Action`}</TableCell>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody loading={loading} colSpan={6}>
-                            {invoices.map((invoice, index) => {
-                                const key = index.toString();
-                                return (
-                                    <TableRow
-                                        key={key}
-                                        labels={[
-                                            'ID',
-                                            c('Title').t`Amount`,
-                                            c('Title').t`Type`,
-                                            c('Title').t`Status`,
-                                            c('Title').t`Date`,
-                                            '',
-                                        ]}
-                                        cells={[
-                                            invoice.ID,
-                                            <InvoiceAmount key={key} invoice={invoice} />,
-                                            <InvoiceType key={key} invoice={invoice} />,
-                                            <InvoiceState key={key} invoice={invoice} />,
-                                            <Time key={key} sameDayFormat={false}>
-                                                {invoice.CreateTime}
-                                            </Time>,
-                                            <InvoiceActions
-                                                key={key}
-                                                invoice={invoice}
-                                                fetchInvoices={requestInvoices}
-                                                onPreview={previewRef.current?.preview}
-                                                onDownload={handleDownload}
-                                            />,
-                                        ]}
-                                    />
-                                );
-                            })}
-                        </TableBody>
-                    </Table>
-                </div>
-            )}
-            <InvoicesPreview
-                ref={previewRef}
-                invoices={invoices}
-                onDownload={handleDownload}
-                getFilename={getFilename}
-            />
-        </>
-    );
-};
+enum DocumentType {
+    Invoice = InvoiceDocument.Invoice,
+    CreditNote = InvoiceDocument.CreditNote,
+    CurrencyConversion = InvoiceDocument.CurrencyConversion,
+    Transactions = 'Transactions',
+}
 
 const InvoicesSection = () => {
+    const enableTransactions = useFlag('TransactionsView');
+
     const [user] = useUser();
 
     const { ORGANIZATION, USER } = INVOICE_OWNER;
@@ -134,11 +48,14 @@ const InvoicesSection = () => {
     const creditNotesHook = useInvoices({ owner, Document: InvoiceDocument.CreditNote });
     const currencyConversionsHook = useInvoices({ owner, Document: InvoiceDocument.CurrencyConversion });
 
-    const [document, setDocument] = useState<InvoiceDocument>(InvoiceDocument.Invoice);
-    const hook: InvoicesHook = {
-        [InvoiceDocument.Invoice]: invoicesHook,
-        [InvoiceDocument.CreditNote]: creditNotesHook,
-        [InvoiceDocument.CurrencyConversion]: currencyConversionsHook,
+    const transactionsHook = useTransactions({ owner });
+
+    const [document, setDocument] = useState<DocumentType>(DocumentType.Invoice);
+    const hook = {
+        [DocumentType.Invoice]: invoicesHook,
+        [DocumentType.CreditNote]: creditNotesHook,
+        [DocumentType.CurrencyConversion]: currencyConversionsHook,
+        [DocumentType.Transactions]: transactionsHook,
     }[document];
 
     const handleOwner =
@@ -146,7 +63,7 @@ const InvoicesSection = () => {
         () => {
             setOwner(own);
             invoicesHook.onSelect(1);
-            setDocument(InvoiceDocument.Invoice);
+            setDocument(DocumentType.Invoice);
         };
 
     const hasUnpaid = invoicesHook.invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
@@ -159,13 +76,13 @@ const InvoicesSection = () => {
             const paymentsVersion: PaymentsVersion | undefined =
                 User?.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED ? 'v5' : undefined;
 
-            void invoicesHook.requestInvoices(paymentsVersion);
-            setDocument(InvoiceDocument.Invoice);
+            void invoicesHook.request(paymentsVersion);
+            setDocument(DocumentType.Invoice);
         }
     });
 
     useEffect(() => {
-        void hook.requestInvoices();
+        void hook.request();
     }, [document, owner]);
 
     if (isManagedByMozilla) {
@@ -202,30 +119,40 @@ const InvoicesSection = () => {
                         <div className="flex items-center">
                             <ButtonGroup className="mr-4 mb-2">
                                 <Button
-                                    className={document === InvoiceDocument.Invoice ? 'is-selected' : ''}
-                                    onClick={() => setDocument(InvoiceDocument.Invoice)}
+                                    className={document === DocumentType.Invoice ? 'is-selected' : ''}
+                                    onClick={() => setDocument(DocumentType.Invoice)}
                                     data-testid="invoices-tab"
                                 >
                                     {c('Select invoice document').t`Invoice`}
                                 </Button>
                                 <Button
-                                    className={document === InvoiceDocument.CreditNote ? 'is-selected' : ''}
-                                    onClick={() => setDocument(InvoiceDocument.CreditNote)}
+                                    className={document === DocumentType.CreditNote ? 'is-selected' : ''}
+                                    onClick={() => setDocument(DocumentType.CreditNote)}
                                     data-testid="credit-note-tab"
                                 >
                                     {c('Select invoice document').t`Credit note`}
                                 </Button>
                                 <Button
-                                    className={document === InvoiceDocument.CurrencyConversion ? 'is-selected' : ''}
-                                    onClick={() => setDocument(InvoiceDocument.CurrencyConversion)}
+                                    className={document === DocumentType.CurrencyConversion ? 'is-selected' : ''}
+                                    onClick={() => setDocument(DocumentType.CurrencyConversion)}
                                     data-testid="currency-conversion-tab"
                                 >
                                     {c('Select invoice document').t`Currency conversion`}
                                 </Button>
+                                {enableTransactions && (
+                                    <Button
+                                        className={document === DocumentType.Transactions ? 'is-selected' : ''}
+                                        onClick={() => setDocument(DocumentType.Transactions)}
+                                        data-testid="transactions-tab"
+                                    >
+                                        {c('Select invoice document').t`Transactions`}
+                                    </Button>
+                                )}
                             </ButtonGroup>
-                            {hook.invoices.length > 0 && (
-                                <Button className="mb-2" onClick={() => setInvoiceModalOpen(true)}>{c('Action')
-                                    .t`Edit invoice details`}</Button>
+                            {hook.type === 'invoices' && hook.invoices.length > 0 && (
+                                <Button className="mb-2" onClick={() => setInvoiceModalOpen(true)}>
+                                    {c('Action').t`Edit invoice details`}
+                                </Button>
                             )}
                         </div>
                     </div>
@@ -238,7 +165,11 @@ const InvoicesSection = () => {
                         onSelect={hook.onSelect}
                     />
                 </div>
-                <InvoiceGroup {...hook} />
+                {document === DocumentType.Transactions ? (
+                    <TransactionGroup {...(hook as TransactionsHook)} />
+                ) : (
+                    <InvoiceGroup {...(hook as InvoicesHook)} />
+                )}
             </SettingsSectionWide>
 
             {renderInvoiceModal && <InvoiceTextModal {...invoiceModalProps} />}

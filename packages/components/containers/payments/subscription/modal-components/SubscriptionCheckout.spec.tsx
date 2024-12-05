@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
-import { PLANS } from '@proton/payments/index';
+import { PLANS } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 
 import SubscriptionCheckout from './SubscriptionCheckout';
