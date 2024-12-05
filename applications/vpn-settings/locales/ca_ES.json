@@ -1245,6 +1245,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "No s'han pogut modificar les preferències de l'adreça de correu electrònic."
+      ],
+      "Continue": [
+        "Continua"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
       ],
@@ -3696,6 +3702,9 @@
       "Additional options": [
         "Opcions addicionals"
       ],
+      "Address copied to clipboard": [
+        "S'ha copiat l'adreça al porta-retalls."
+      ],
       "Admin account allocation": [
         "Assignació del compte d'administrador"
       ],
@@ -3882,14 +3891,17 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servidors dedicats"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
       ],
+      "dedicated servers": [
+        "servidors dedicats"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreces IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat."
+      ],
+      "default email address": [
+        "adreça de correu electrònic per defecte"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimineu qualsevol altre registre MX o assegureu-vos que la prioritat de ${ MAIL_APP_NAME } és el número més baix."
@@ -4618,6 +4630,9 @@
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
       ],
+      "Setting up your new address...": [
+        "S'està configurant la vostra nova adreça..."
+      ],
       "Setting up your organization": [
         "S'està configurant la vostra organització."
       ],
@@ -4907,11 +4922,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "username": [
-        "nom d'usuari"
-      ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "username": [
+        "nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -10127,10 +10142,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -10625,6 +10640,9 @@
       ],
       "Unlock your data": [
         "Desbloqueu les vostres dades"
+      ],
+      "Upgrade complete!": [
+        "S'ha millorat el vostre pla."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Milloreu la vostra protecció de xarxa amb servidors dedicats"

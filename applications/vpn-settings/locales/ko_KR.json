@@ -3787,6 +3787,9 @@
       "Connection data will be available in around 1 hour.": [
         "연결 데이터가 한 시간 내에 사용 가능합니다."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "${ BRAND_NAME } 조직에 합류하기 위해 **${ organizationValue.Name }**(에)서 **${ affiliationsText }**을(를) 수락하여 계속하기"
+      ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "사용자의 ${ BRAND_NAME } 조직으로 **${ organizationValue.Name }**에 연결을 계속하십시오"
       ],
@@ -3841,10 +3844,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } 애플리케이션의 설정을 커스터마이징해 보세요."
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -4555,6 +4558,9 @@
       "Select recently used servers": [
         "최근 사용한 서버 선택"
       ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "**${ organizationValue.Name }** (${ organizationValue.EntityId })(에)서 ${ BRAND_NAME } 조직에 허용하려는 사용자 소속을 선택하십시오."
+      ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "회원들이 2단계 인증으로 계정을 보호하도록 이메일을 보내세요."
       ],
@@ -4855,10 +4861,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
       "Users": [
@@ -9986,11 +9992,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
