@@ -85,6 +85,7 @@ describe('ConversationView', () => {
                 });
             });
         }
+
         if (messageState) {
             result.store.dispatch(initializeMessage(messageState));
         }
