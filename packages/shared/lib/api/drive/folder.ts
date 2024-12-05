@@ -1,5 +1,6 @@
 import { SORT_DIRECTION } from '../../constants';
 import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER, FOLDER_PAGE_SIZE } from '../../drive/constants';
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import type { CreateNewFolder } from '../../interfaces/drive/folder';
 
 export const queryFolderChildren = (
@@ -35,4 +36,5 @@ export const queryPublicCreateFolder = (
     method: 'post',
     url: `drive/urls/${token}/folders`,
     data,
+    silence: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
 });
