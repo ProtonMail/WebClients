@@ -428,6 +428,12 @@
       "Request a feature": [
         "Anmod om en funktion"
       ],
+      "Resend code": [
+        "Send kode igen"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Send kode igen (om ${ remaining } s)"
+      ],
       "Resend invitation": [
         "Gensend invitation"
       ],
@@ -580,6 +586,9 @@
       "Use ${ label } theme": [
         "Brug ${ label } tema"
       ],
+      "Verify": [
+        "Bekræft"
+      ],
       "Via secure link": [
         "Via sikkert link"
       ],
@@ -603,35 +612,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "livsvarig adgang"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Alle premium-funktioner. 6 brugere. 1 nemt abonnement."
-      ],
-      "Limited-stock available!": [
-        "Begrænsede lagre tilgængelige!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Tag imod tilbuddet"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Betal én gang og få ${ lifetimeAccessJSX } til Pass Plus og SimpleLogin. Kun ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Gem op til ${ discountJSX } på Pass Family. Kun ${ relativePrice }/måned."
       ]
     },
     "Browser": {
@@ -1312,6 +1292,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Sletter \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Modtog du ikke koden?"
+      ],
       "Disabling auto-lock": [
         "Deaktiverer autolås"
       ],
@@ -1617,6 +1600,9 @@
       "Pinning item...": [
         "Fastgør element..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Tjek din spam-mappe, eller prøv at sende koden igen."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekræft din adgangskode til ${ BRAND_NAME } for at eksportere dine ${ PASS_APP_NAME }-data"
       ],
@@ -1834,9 +1820,6 @@
       "Unable to copy to clipboard": [
         "Kunne ikke kopiere til udklipsholder"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrænsede hide-my-email-aliasser"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Lås op for ${ PASS_APP_NAME } med din pinkode for at få adgang til dine adgangsnøgler"
       ],
@@ -1860,6 +1843,9 @@
       ],
       "Unpinning item...": [
         "Frigør element..."
+      ],
+      "Unverified": [
+        "Ubekræftet"
       ],
       "Update login": [
         "Opdatér login"
@@ -1906,6 +1892,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Vi har opdaget, at du har ${ aliasCount } alias, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere det?",
         "Vi har opdaget, at du har ${ aliasCount } aliasser, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere dem?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Vi har sendt en bekræftelseskode til ${ email }. Indtast den nedenfor:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Ved oprettelse/redigering af et login på ${ PASS_APP_NAME } vil 'brugernavn'-inputtet altid være synligt."
@@ -2136,6 +2125,9 @@
       "City": [
         "By"
       ],
+      "Code": [
+        "Kode"
+      ],
       "Company": [
         "Selskab"
       ],
@@ -2144,6 +2136,9 @@
       ],
       "Contact details": [
         "Kontaktoplysninger"
+      ],
+      "Contacts": [
+        "Kontakter"
       ],
       "Copy": [
         "Kopiér"
@@ -2195,6 +2190,9 @@
       ],
       "Display": [
         "Visning"
+      ],
+      "Display name": [
+        "Visningsnavn"
       ],
       "Domain": [
         "Domæne"
@@ -2792,6 +2790,9 @@
       "Full Name": [
         "Fuldt navn"
       ],
+      "me@example.com": [
+        "mig@eksempel.dk"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -2888,8 +2889,17 @@
       "Confirm PIN code": [
         "Bekræft pinkode"
       ],
+      "Confirm your email": [
+        "Bekræft din e-mail"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Tilslut din ${ BRAND_NAME }-konto"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Create contact": [
+        "Opret kontakt"
       ],
       "Create PIN code": [
         "Opret pinkode"
@@ -3057,6 +3067,9 @@
       "Share with": [
         "Del med"
       ],
+      "Status": [
+        "Status"
+      ],
       "Stay safer online": [
         "Bliv mere sikker online"
       ],
@@ -3220,6 +3233,12 @@
       "Invalid alias prefix": [
         "Ugyldigt alias-præfiks"
       ],
+      "Invalid code": [
+        "Ugyldig kode"
+      ],
+      "Invalid email": [
+        "Ugyldig e-mail"
+      ],
       "Invalid email addresses.": [
         "Ugyldige e-mailadresser."
       ],
@@ -3313,6 +3332,9 @@
       ],
       "Vault name is required": [
         "Navn på boks er påkrævet"
+      ],
+      "Verification code is required": [
+        "Bekræftelseskode er påkrævet."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Du har nået grænsen for medlemmer, der kan få adgang til denne boks."

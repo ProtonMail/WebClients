@@ -941,11 +941,6 @@
         "Самые популярные"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Ограниченный запас!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Оплата ${ amount } единовременно"
@@ -3816,7 +3811,7 @@
         "${ contactsLength } контакт",
         "${ contactsLength } контакта",
         "${ contactsLength } контактов",
-        "${ contactsLength } контакта"
+        "${ contactsLength } контактов"
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } в"
@@ -3964,6 +3959,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Сумма ниже допустимого минимума (${ amount })."
+      ],
+      "an anonymous user": [
+        "анонимный пользователь"
       ],
       "and": [
         "и"
@@ -4649,6 +4647,12 @@
       "The Beginning": [
         "Начало"
       ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "ЭЦП была проверена частично. Файл был загружен с публичной страницы, на которой не указано происхождение конкретного пользователя."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "ЭЦП была проверена частично. Папка была загружена с публичной страницы, на которой не указано происхождение конкретного пользователя."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Утечка информации произошла из сторонней службы. Информация о вашем аккаунте ${ BRAND_NAME } остается защищенной и зашифрованной. ${ learnMoreLink }"
       ],
@@ -5156,6 +5160,12 @@
       "Calendars": [
         "Календари"
       ],
+      "Can edit": [
+        "Может изменять"
+      ],
+      "Can view": [
+        "Может просматривать"
+      ],
       "Cancel download": [
         "Отменить скачивание"
       ],
@@ -5515,6 +5525,14 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Упорядочивать, добавлять и изменять файлы"
+      ],
+      "View and download": [
+        "Посмотреть и скачать"
       ]
     },
     "Label for contact group color": {
@@ -7110,6 +7128,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Недостаточно места для загрузки ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "Доступ к публичной ссылке обновлен"
+      ],
+      "Public link update access failed ": [
+        "Доступ к обновлению публичной ссылки не удался "
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Не удалось удалить ссылку на \"${ name }\""
       ],
@@ -7584,6 +7608,11 @@
         "Просмотрите безопасность вашего аккаунта"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вход не был успешно завершен."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Все псевдонимы"
@@ -7686,13 +7715,13 @@
         "${ timeRemaining.inDays } день",
         "${ timeRemaining.inDays } дня",
         "${ timeRemaining.inDays } дней",
-        "${ timeRemaining.inDays } дня"
+        "${ timeRemaining.inDays } дней"
       ],
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } час",
         "${ timeRemaining.inHours } часа",
         "${ timeRemaining.inHours } часов",
-        "${ timeRemaining.inHours } часа"
+        "${ timeRemaining.inHours } часов"
       ],
       "Password reset request approved (${ user.Email }).": [
         "Запрос на сброс пароля одобрен (${ user.Email })."
@@ -7848,7 +7877,7 @@
         "${ gracePeriodHoursRemaining } час",
         "${ gracePeriodHoursRemaining } часа",
         "${ gracePeriodHoursRemaining } часов",
-        "${ gracePeriodHoursRemaining } часа"
+        "${ gracePeriodHoursRemaining } часов"
       ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } теперь доступен."
@@ -7992,10 +8021,10 @@
     },
     "specialoffer: Offers": {
       "${ n } month": [
-        "первый ${ n } месяц",
-        "${ n } месяцев",
+        "${ n } месяц",
         "${ n } месяца",
-        "${ n } месяца"
+        "${ n } месяцев",
+        "${ n } месяцев"
       ],
       "/ month": [
         "/ месяц"
