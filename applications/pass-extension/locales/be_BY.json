@@ -428,6 +428,12 @@
       "Request a feature": [
         "Запытаць функцыю"
       ],
+      "Resend code": [
+        "Адправіць код яшчэ раз"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Адправіць код паўторна (праз ${ remaining } сек)"
+      ],
       "Resend invitation": [
         "Паўторна адправіць запрашэнне"
       ],
@@ -584,6 +590,9 @@
       "Use ${ label } theme": [
         "Выкарыстоўваць тэму ${ label }"
       ],
+      "Verify": [
+        "Праверка"
+      ],
       "Via secure link": [
         "Праз бяспечную спасылку"
       ],
@@ -607,35 +616,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "пажыццёвы доступ"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Усе прэміяльныя функцыі. 6 карыстальнікаў. 1 простая падпіска."
-      ],
-      "Limited-stock available!": [
-        "У наяўнасці абмежаваная колькасць!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Атрымаць прапанову"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Чорная пятніца"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Заплаціце адзін раз і атрымайце ${ lifetimeAccessJSX } да Pass Plus і SimpleLogin. Усяго за ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Зэканомце да ${ discountJSX } з Pass Family. Толькі ${ relativePrice }/месяц."
       ]
     },
     "Browser": {
@@ -1346,6 +1326,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Выдаленне \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Не атрымалі код?"
+      ],
       "Disabling auto-lock": [
         "Адключэнне аўтаблакіроўкі"
       ],
@@ -1557,7 +1540,7 @@
         "Загрузка..."
       ],
       "Make it your own": [
-        "Зрабіце гэта па-свойму"
+        "Персаналізуйце выгляд"
       ],
       "me": [
         "я"
@@ -1666,6 +1649,9 @@
       ],
       "Pinning item...": [
         "Замацаванне элемента..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Праверце папку са спамам або паспрабуйце адправіць код паўторна."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Пацвердзіце свой пароль ${ BRAND_NAME }, каб экспартаваць даныя ${ PASS_APP_NAME }"
@@ -1889,9 +1875,6 @@
       "Unable to copy to clipboard": [
         "Немагчыма скапіяваць у буфер абмену"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Неабмежаваная колькасць псеўданімаў Hide-my-email"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб атрымаць доступ да сваіх ключоў"
       ],
@@ -1915,6 +1898,9 @@
       ],
       "Unpinning item...": [
         "Адмацаванне элемента..."
+      ],
+      "Unverified": [
+        "Неправераны"
       ],
       "Update login": [
         "Абнавіць запіс уваходу"
@@ -1963,6 +1949,9 @@
         "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімы, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
         "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
         "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Мы адправілі вам праверачны код на ${ email }. Увядзіце яго ніжэй:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Пры стварэнні або рэдагаванні запісу ўваходу ў ${ PASS_APP_NAME } поле ўводу 'імя карыстальніка' заўсёды будзе бачным."
@@ -2209,6 +2198,9 @@
       "City": [
         "Горад"
       ],
+      "Code": [
+        "Код"
+      ],
       "Company": [
         "Кампанія"
       ],
@@ -2217,6 +2209,9 @@
       ],
       "Contact details": [
         "Кантактныя звесткі"
+      ],
+      "Contacts": [
+        "Кантакты"
       ],
       "Copy": [
         "Капіяваць"
@@ -2268,6 +2263,9 @@
       ],
       "Display": [
         "Адлюстроўваць"
+      ],
+      "Display name": [
+        "Бачнае імя"
       ],
       "Domain": [
         "Дамен"
@@ -2871,6 +2869,9 @@
       "Full Name": [
         "Поўнае імя"
       ],
+      "me@example.com": [
+        "ya@pryklad.com"
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -3007,6 +3008,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Налады ${ PASS_APP_NAME }"
       ],
+      "Actions": [
+        "Дзеянні"
+      ],
       "Auto-lock update": [
         "Абнаўленне аўтаблакіравання"
       ],
@@ -3019,8 +3023,17 @@
       "Confirm PIN code": [
         "Пацвердзіць PIN-код"
       ],
+      "Confirm your email": [
+        "Пацвердзіце сваю электронную пошту"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Падключыце свой уліковы запіс ${ BRAND_NAME }"
+      ],
+      "Contacts": [
+        "Кантакты"
+      ],
+      "Create contact": [
+        "Стварэнне кантакту"
       ],
       "Create PIN code": [
         "Стварыць PIN-код"
@@ -3199,6 +3212,9 @@
       "Share with": [
         "Абагуліць з"
       ],
+      "Status": [
+        "Статус"
+      ],
       "Stay safer online": [
         "Заставайцеся абароненымі ў інтэрнэце"
       ],
@@ -3368,6 +3384,12 @@
       "Invalid alias prefix": [
         "Памылковы прэфікс псеўданіма"
       ],
+      "Invalid code": [
+        "Памылковы код"
+      ],
+      "Invalid email": [
+        "Памылковая электронная пошта"
+      ],
       "Invalid email addresses.": [
         "Памылковыя адрасы электроннай пошты."
       ],
@@ -3463,6 +3485,9 @@
       ],
       "Vault name is required": [
         "Неабходна ўвесці назву сховішча"
+      ],
+      "Verification code is required": [
+        "Патрабуецца праверачны код"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Вы дасягнулі абмежавання па колькасці ўдзельнікаў, якія могуць атрымаць доступ да гэтага сховішча."

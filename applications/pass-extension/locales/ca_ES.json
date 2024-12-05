@@ -428,6 +428,12 @@
       "Request a feature": [
         "Demaneu una nova característica"
       ],
+      "Resend code": [
+        "Reenvia el codi"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Reenvia el codi (en ${ remaining } s)"
+      ],
       "Resend invitation": [
         "Reenvia la invitació"
       ],
@@ -580,6 +586,9 @@
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
       ],
+      "Verify": [
+        "Verifica"
+      ],
       "Via secure link": [
         "Mitjançant un enllaç segur"
       ],
@@ -603,35 +612,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "accés de per vida"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Totes les funcions premium. 6 usuaris. 1 subscripció fàcil."
-      ],
-      "Limited-stock available!": [
-        "Disponibilitat limitada!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Aconseguiu l'oferta"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Pagueu una vegada i obteniu ${ lifetimeAccessJSX } per Pass Plus i SimpleLogin. Només ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Estalvieu fins a ${ discountJSX } a Pass Family. Només ${ relativePrice }/mes."
       ]
     },
     "Browser": {
@@ -1312,6 +1292,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "S'està suprimint «${ payload.content.name }»"
       ],
+      "Didn't receive the code?": [
+        "No heu rebut el codi?"
+      ],
       "Disabling auto-lock": [
         "S'està desactivant el bloqueig automàtic"
       ],
@@ -1617,6 +1600,9 @@
       "Pinning item...": [
         "Ancorant l'element..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Comproveu la carpeta de correu brossa o proveu de tornar a enviar el codi."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmeu la contrasenya de ${ BRAND_NAME } per a exportar les dades de ${ PASS_APP_NAME }"
       ],
@@ -1837,9 +1823,6 @@
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre il·limitat d'àlies hide-my-email"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Desbloquegeu ${ PASS_APP_NAME } amb el vostre codi PIN per accedir a les vostres claus d'accés"
       ],
@@ -1863,6 +1846,9 @@
       ],
       "Unpinning item...": [
         "S'està desfixant l'element..."
+      ],
+      "Unverified": [
+        "Sense verificar"
       ],
       "Update login": [
         "Actualitza l'inici de sessió"
@@ -1909,6 +1895,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareix en ${ PASS_APP_NAME }. Voleu importar-lo?",
         "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareixen en ${ PASS_APP_NAME }. Voleu importar-los?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Hem enviat un codi de verificació a ${ email }. Si us plau, introdueixi'l a continuació:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Quan creeu o editeu un inici de sessió a ${ PASS_APP_NAME }, l'entrada «nom d'usuari» sempre serà visible."
@@ -2139,6 +2128,9 @@
       "City": [
         "Ciutat"
       ],
+      "Code": [
+        "Codi"
+      ],
       "Company": [
         "Empresa"
       ],
@@ -2147,6 +2139,9 @@
       ],
       "Contact details": [
         "Detalls del contacte"
+      ],
+      "Contacts": [
+        "Contactes"
       ],
       "Copy": [
         "Copia"
@@ -2198,6 +2193,9 @@
       ],
       "Display": [
         "Mostra"
+      ],
+      "Display name": [
+        "Nom a mostrar"
       ],
       "Domain": [
         "Domini"
@@ -2795,6 +2793,9 @@
       "Full Name": [
         "Nom complert"
       ],
+      "me@example.com": [
+        "correu@exemple.cat"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -2929,6 +2930,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Preferències de ${ PASS_APP_NAME }"
       ],
+      "Actions": [
+        "Accions"
+      ],
       "Auto-lock update": [
         "Actualització del bloqueig automàtic"
       ],
@@ -2941,8 +2945,17 @@
       "Confirm PIN code": [
         "Confirmeu el codi PIN"
       ],
+      "Confirm your email": [
+        "Confirmi el vostre correu electrònic"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Connecteu el vostre compte de ${ BRAND_NAME }"
+      ],
+      "Contacts": [
+        "Contactes"
+      ],
+      "Create contact": [
+        "Crea un contacte"
       ],
       "Create PIN code": [
         "Creeu un codi PIN"
@@ -3113,6 +3126,9 @@
       "Share with": [
         "Comparteix amb"
       ],
+      "Status": [
+        "Estat"
+      ],
       "Stay safer online": [
         "Mantingueu-vos més segurs en línia"
       ],
@@ -3276,6 +3292,12 @@
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"
       ],
+      "Invalid code": [
+        "Codi no vàlid"
+      ],
+      "Invalid email": [
+        "Correu electrònic no vàlid"
+      ],
       "Invalid email addresses.": [
         "Les adreces de correu electrònic no són vàlides."
       ],
@@ -3369,6 +3391,9 @@
       ],
       "Vault name is required": [
         "Es requereix el nom de la caixa forta"
+      ],
+      "Verification code is required": [
+        "Cal un codi de verificació"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Heu arribat al límit de membres que poden accedir a aquesta caixa forta."

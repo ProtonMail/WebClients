@@ -398,6 +398,12 @@
       "Request a feature": [
         "Запит нової функції"
       ],
+      "Resend code": [
+        "Надіслати код повторно"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Повторно відправити код (в ${ remaining }сек)"
+      ],
       "Resend invitation": [
         "Повторно надіслати запрошення"
       ],
@@ -533,6 +539,9 @@
       "Use ${ label } theme": [
         "Використовувати тему ${ label }"
       ],
+      "Verify": [
+        "Перевірити"
+      ],
       "Via secure link": [
         "Через безпечне посилання"
       ],
@@ -553,32 +562,6 @@
       ],
       "Write us on Twitter": [
         "Напишіть нам у Twitter"
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "довічний доступ"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Усі преміум функції. 6 користувачів. 1 проста передплата."
-      ],
-      "Limited-stock available!": [
-        "Обмежена кількість в наявності!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Скористатися пропозицією"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Чорна П'ятниця"
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Збережіть до ${ discountJSX } на Pass Family. Лише ${ relativePrice }/місяць."
       ]
     },
     "Browser": {
@@ -1205,6 +1188,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Видалення ${ payload.content.name }"
       ],
+      "Didn't receive the code?": [
+        "Не отримали код?"
+      ],
       "Disabling auto-lock": [
         "Вимкнення автоблокування"
       ],
@@ -1481,6 +1467,9 @@
       "Pinning item...": [
         "Закріпити елемент..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Будь ласка, перевірте теку спаму або спробуйте повторно надіслати код."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Будь ласка, підтвердьте свій пароль ${ BRAND_NAME }, щоб експортувати дані ${ PASS_APP_NAME }."
       ],
@@ -1616,9 +1605,6 @@
       "Unable to copy to clipboard": [
         "Неможливо скопіювати в буфер обміну"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Необмежена кількість псевдонімів Hide-my-email"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Розблокуйте ${ PASS_APP_NAME } з вашим PIN кодом для доступу до ваших ключів"
       ],
@@ -1636,6 +1622,9 @@
       ],
       "Unpinning item...": [
         "Відкріплення елементу..."
+      ],
+      "Unverified": [
+        "Не підтверджено"
       ],
       "Update login": [
         "Оновити дані для входу"
@@ -1672,6 +1661,9 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Виникли труднощі під час синхронізації даних з вашим локальним сховищем. Упевніться, що ви маєте достатньо дискового простору для безперебійної роботи ${ PASS_SHORT_APP_NAME }."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Ми надіслали код підтвердження на ${ email }. Будь ласка, введіть його нижче:"
       ],
       "You are about to create:": [
         "Ви збираєтеся створити:"
@@ -1870,6 +1862,9 @@
       "City": [
         "Місто"
       ],
+      "Code": [
+        "Код"
+      ],
       "Company": [
         "Компанія"
       ],
@@ -1878,6 +1873,9 @@
       ],
       "Contact details": [
         "Подробиці контакту"
+      ],
+      "Contacts": [
+        "Контакти"
       ],
       "Copy": [
         "Копіювати"
@@ -1920,6 +1918,9 @@
       ],
       "Display": [
         "Показувати"
+      ],
+      "Display name": [
+        "Ім'я"
       ],
       "Domain": [
         "Домен"
@@ -2424,6 +2425,9 @@
       "Full Name": [
         "Повне ім'я"
       ],
+      "me@example.com": [
+        "me@example.com"
+      ],
       "MM/YY": [
         "ММ/РР"
       ],
@@ -2494,8 +2498,17 @@
       "Confirm PIN code": [
         "Підтвердьте PIN-код"
       ],
+      "Confirm your email": [
+        "Підтвердьте вашу електронну пошту"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Під'єднати обліковий запис ${ BRAND_NAME }"
+      ],
+      "Contacts": [
+        "Контакти"
+      ],
+      "Create contact": [
+        "Створити контакт"
       ],
       "Create PIN code": [
         "Створіть PIN-код"
@@ -2626,6 +2639,9 @@
       "Share with": [
         "Поділитися"
       ],
+      "Status": [
+        "Стан"
+      ],
       "Stay safer online": [
         "Залишатися безпечніше онлайн"
       ],
@@ -2741,6 +2757,12 @@
       "Invalid alias prefix": [
         "Недійсний префікс псевдоніма"
       ],
+      "Invalid code": [
+        "Невірний код"
+      ],
+      "Invalid email": [
+        "Недійсна поштова адреса"
+      ],
       "Invalid email addresses.": [
         "Недійсна адреса електронної пошти."
       ],
@@ -2824,6 +2846,9 @@
       ],
       "Vault name is required": [
         "Потрібно вказати назву сховища"
+      ],
+      "Verification code is required": [
+        "Потрібно код підтвердження"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Ви досягли ліміту учасників, які можуть отримати доступ до цього сховища."

@@ -428,6 +428,12 @@
       "Request a feature": [
         "Bir özellik istiyorum"
       ],
+      "Resend code": [
+        "Kodu yeniden gönder"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Kodu yeniden gönder (${ remaining }s kaldı)"
+      ],
       "Resend invitation": [
         "Daveti yeniden gönder"
       ],
@@ -580,6 +586,9 @@
       "Use ${ label } theme": [
         "${ label } teması kullanılsın"
       ],
+      "Verify": [
+        "Doğrula"
+      ],
       "Via secure link": [
         "Güvenli bağlantı ile"
       ],
@@ -603,35 +612,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "ömür boyu erişim"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Tüm ücretli hizmetler. 6 kullanıcı. Bir kolay abonelik."
-      ],
-      "Limited-stock available!": [
-        "Sınırlı sayıda stok var!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Muhteşem Cuma"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Bir kere ${ lifetimeAccessJSX } ödeyerek Pass Plus tarifesi ve SimpleLogin alın. Yalnızca ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Pass Family tarifesi ile ${ discountJSX } oranına varan indirim kazanın. Yalnızca ${ relativePrice }/ay."
       ]
     },
     "Browser": {
@@ -1312,6 +1292,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" siliniyor"
       ],
+      "Didn't receive the code?": [
+        "Kodu almadınız mı?"
+      ],
       "Disabling auto-lock": [
         "Otomatik kilitleme kapatılıyor"
       ],
@@ -1617,6 +1600,9 @@
       "Pinning item...": [
         "Öge sabitleniyor..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Lütfen istenmeyen klasörünüzü denetleyin ya da kodu yeniden göndermeyi deneyin."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
       ],
@@ -1837,9 +1823,6 @@
       "Unable to copy to clipboard": [
         "Panoya kopyalanamadı"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Geçiş anahtarlarınıza erişmek için PIN kodunuzla ${ PASS_APP_NAME } kilidini açın"
       ],
@@ -1863,6 +1846,9 @@
       ],
       "Unpinning item...": [
         "Ögenin sabitlemesi kaldırılıyor..."
+      ],
+      "Unverified": [
+        "Doğrulanmamış"
       ],
       "Update login": [
         "Oturum açma kaydını güncelle"
@@ -1909,6 +1895,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunu içe aktarmak ister misiniz?",
         "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunları içe aktarmak ister misiniz?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "${ email } adresine bir doğrulama kodu gönderdik. Lütfen kodu aşağıya yazın:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "${ PASS_APP_NAME } üzerinde bir kayıt oluştururken ya da düzenlerken 'kullanıcı adı' alanı her zaman görüntülenir."
@@ -2139,6 +2128,9 @@
       "City": [
         "İl"
       ],
+      "Code": [
+        "Kod"
+      ],
       "Company": [
         "Kuruluş"
       ],
@@ -2147,6 +2139,9 @@
       ],
       "Contact details": [
         "Kişi bilgileri"
+      ],
+      "Contacts": [
+        "Kişiler"
       ],
       "Copy": [
         "Kopyala"
@@ -2198,6 +2193,9 @@
       ],
       "Display": [
         "Görünüm"
+      ],
+      "Display name": [
+        "Görüntülenecek ad"
       ],
       "Domain": [
         "Etki alanı"
@@ -2795,6 +2793,9 @@
       "Full Name": [
         "Ad Soyad"
       ],
+      "me@example.com": [
+        "ben@ornek.com"
+      ],
       "MM/YY": [
         "AA/YY"
       ],
@@ -2929,6 +2930,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } ayarları"
       ],
+      "Actions": [
+        "İşlemler"
+      ],
       "Auto-lock update": [
         "Ootmatik kilitleme güncellemesi"
       ],
@@ -2941,8 +2945,17 @@
       "Confirm PIN code": [
         "PIN kodu onayı"
       ],
+      "Confirm your email": [
+        "E-posta adresinizi onaylayın"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabınızı bağlayın"
+      ],
+      "Contacts": [
+        "Kişiler"
+      ],
+      "Create contact": [
+        "Kişi ekle"
       ],
       "Create PIN code": [
         "PIN kodu oluştur"
@@ -3113,6 +3126,9 @@
       "Share with": [
         "Şununla paylaş"
       ],
+      "Status": [
+        "Durum"
+      ],
       "Stay safer online": [
         "Çevrim içi ortamda daha güvende kalın"
       ],
@@ -3276,6 +3292,12 @@
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"
       ],
+      "Invalid code": [
+        "Kod geçersiz"
+      ],
+      "Invalid email": [
+        "E-posta adresi geçersiz"
+      ],
       "Invalid email addresses.": [
         "E-posta adresleri geçersiz."
       ],
@@ -3369,6 +3391,9 @@
       ],
       "Vault name is required": [
         "Kasa adının yazılması zorunludur"
+      ],
+      "Verification code is required": [
+        "Doğrulama kodunun yazılması zorunludur"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Bu kasaya erişebilecek en fazla üye sayısı sınırına ulaştınız."
