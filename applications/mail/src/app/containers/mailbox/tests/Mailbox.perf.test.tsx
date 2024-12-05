@@ -6,6 +6,12 @@ import { getElements, sendEvent, setup } from './Mailbox.test.helpers';
 
 jest.spyOn(useStarModule, 'useStar');
 
+jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+    useMailELDTMetric: () => {
+        return { stopELDTMetric: jest.fn() };
+    },
+}));
+
 // Spying useStar is a trick to count the number of renders on the component ItemStar
 // Beware, useStar is also used on the hotkeys management
 const useStar = useStarModule.useStar as jest.Mock;

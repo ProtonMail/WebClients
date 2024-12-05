@@ -8,6 +8,12 @@ import MailboxContainer from '../MailboxContainer';
 import type { SetupArgs } from './Mailbox.test.helpers';
 import { setup as generalSetup, getElements, props } from './Mailbox.test.helpers';
 
+jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+    useMailELDTMetric: () => {
+        return { stopELDTMetric: jest.fn() };
+    },
+}));
+
 describe('Mailbox hotkeys', () => {
     const conversations = getElements(4);
 

@@ -1,7 +1,7 @@
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
-import { getLabelID, getPageSizeString } from './mailMetricsHelper';
+import { getLabelID, getLabelName, getPageSizeString, pathnameToLabelName } from './mailMetricsHelper';
 
 describe('mailMetrisHelper', () => {
     it.each([
@@ -44,5 +44,35 @@ describe('mailMetrisHelper', () => {
         },
     ])('should return appropriate label for $value', ({ value, expected }) => {
         expect(getLabelID(value as unknown as string)).toBe(expected);
+    });
+
+    it.each([
+        {
+            value: '0',
+            expected: 'inbox',
+        },
+        {
+            value: 'testing',
+            expected: 'custom',
+        },
+    ])('should return appropriate label name for $value', ({ value, expected }) => {
+        expect(getLabelName(value)).toBe(expected);
+    });
+
+    it.each([
+        {
+            value: '/inbox',
+            expected: 'inbox',
+        },
+        {
+            value: '/testing',
+            expected: 'custom',
+        },
+        {
+            value: 'inbox',
+            expected: 'inbox',
+        },
+    ])('should return appropriate label name for $value', ({ value, expected }) => {
+        expect(pathnameToLabelName(value)).toBe(expected);
     });
 });
