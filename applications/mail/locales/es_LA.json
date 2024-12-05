@@ -1920,6 +1920,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Continuar"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
       ],
@@ -3659,9 +3662,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Active la protección de rastreo de correo para evitar que los anunciantes y otros rastreen su ubicación y actividad en línea."
-      ],
-      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
-        "Desbloquee ${ activatePmUser } para obtener una dirección de correo corta y fácil de escribir."
       ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Desbloquee la programación personalizada de mensajes y más funciones premium al mejorar su plan."
@@ -6030,6 +6030,9 @@
       "Additional options": [
         "Opciones adicionales"
       ],
+      "Address copied to clipboard": [
+        "Se copió la dirección al portapapeles."
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero confíe en las claves públicas que se pueden usar para enviar."
       ],
@@ -6301,6 +6304,9 @@
       ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "default email address": [
+        "dirección de correo electrónico por defecto"
       ],
       "Default email application": [
         "Aplicación de correo por defecto"
@@ -11634,6 +11640,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Ya puede programar los mensajes para ser enviados posteriormente"
+      ],
+      "Your pm.me email is active": [
+        "Su correo electrónico pm.me está activo."
       ]
     },
     "sso": {
@@ -13400,6 +13409,9 @@
       "Unsubscribe request sent": [
         "Solicitud de cancelación de suscripción enviada"
       ],
+      "Upgrade complete!": [
+        "Se ha mejorado su plan."
+      ],
       "Verification error": [
         "Error de verificación"
       ],
@@ -13708,6 +13720,9 @@
       ],
       "Missing alias suffix": [
         "Falta el sufijo de alias"
+      ],
+      "Name is required": [
+        "El nombre es obligatorio."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos"

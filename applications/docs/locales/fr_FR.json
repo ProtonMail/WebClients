@@ -585,6 +585,9 @@
       "Show advanced PGP settings": [
         "Afficher les paramètres PGP avancés"
       ],
+      "Show options": [
+        "Afficher les options"
+      ],
       "Sign out": [
         "Se déconnecter"
       ],
@@ -1097,6 +1100,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Modifier les paramètres de l'adresse e-mail"
+      ],
+      "Continue": [
+        "Continuer"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
       ],
@@ -3854,6 +3863,9 @@
       "Additional options": [
         "Options supplémentaires"
       ],
+      "Address copied to clipboard": [
+        "L'adresse a été copiée dans le presse-papiers."
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La vérification d’adresse avec les clés approuvées est activée pour cette adresse. Pour être en mesure d’envoyer à cette adresse, commencez par approuver des clés publiques pouvant être utilisées pour l’envoi."
       ],
@@ -4017,6 +4029,9 @@
       ],
       "Dedicated servers": [
         "Serveurs dédiés"
+      ],
+      "default email address": [
+        "adresse e-mail par défaut"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "La signature numérique a été vérifiée. Ce fichier a été chargé de manière sécurisée par ${ emailAddress }."
@@ -4320,6 +4335,9 @@
       "Merged": [
         "Fusionné"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Les messages adressés à toutes vos adresses e-mail seront envoyés dans votre boîte de réception."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -4497,6 +4515,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
+      "Registering your subscription...": [
+        "Enregistrement de votre abonnement...."
+      ],
       "Restored version to": [
         "La version a été restaurée à"
       ],
@@ -4530,6 +4551,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuration de PGP vous permet d'envoyer des messages chiffrés de bout en bout à une personne qui n'utilise pas ${ BRAND_NAME }, mais qui se sert d'un service compatible PGP."
       ],
+      "Setting up your new address...": [
+        "Configuration de votre nouvelle adresse..."
+      ],
       "Settings update failed": [
         "La mise à jour des paramètres n'a pas abouti."
       ],
@@ -4556,6 +4580,9 @@
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
@@ -4613,6 +4640,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Il se peut que ce document n'existe pas ou que vous ne soyez pas autorisé à le consulter. Vous pouvez essayer de recharger la page pour voir si le problème persiste."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Ceci est désormais votre ${ defaultEmailAddress } pour envoyer de nouveaux messages."
       ],
       "This item already exists in your library": [
         "Cet élément existe déjà dans votre bibliothèque."
@@ -8889,6 +8919,9 @@
       "Untitled document ${ date }": [
         "Document sans titre ${ date }"
       ],
+      "Upgrade complete!": [
+        "L'abonnement a été mis à jour."
+      ],
       "Uploading a large file or folder": [
         "Chargement d'un fichier ou d'un dossier volumineux"
       ],
@@ -8924,6 +8957,9 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
+      ],
+      "Your shorter address is now ready": [
+        "Votre adresse au format plus court est maintenant prête."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9150,6 +9186,9 @@
       ],
       "Missing alias suffix": [
         "Le suffixe de l'alias est manquant."
+      ],
+      "Name is required": [
+        "Veuillez indiquer un nom."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Seuls les caractères alphanumériques, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
