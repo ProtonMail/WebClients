@@ -1769,11 +1769,6 @@
         "Más popular"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "¡Stock limitado!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
@@ -3734,6 +3729,9 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new messages": [
+        "${ notificationsToShow.length } nuevos mensajes"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "De: ${ sender } - ${ Subject }"
       ]
