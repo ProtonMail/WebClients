@@ -44,6 +44,8 @@ export const DOCS_EDITOR_APP_NAME = `${BRAND_NAME} ${DOCS_EDITOR_SHORT_APP_NAME}
 export const VERIFY_APP_NAME = 'Proton Verify';
 export const WALLET_SHORT_APP_NAME = 'Wallet';
 export const WALLET_APP_NAME = `${BRAND_NAME} ${WALLET_SHORT_APP_NAME}`;
+export const LUMO_SHORT_APP_NAME = 'Lumo';
+export const LUMO_APP_NAME = `${BRAND_NAME} ${LUMO_SHORT_APP_NAME}`;
 export const REFERRER_CODE_MAIL_TRIAL = 'MAILPLUSTRIAL';
 export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
 export const DARK_WEB_MONITORING_NAME = 'Dark Web Monitoring';
@@ -65,6 +67,7 @@ export const APPS = {
     PROTONPASSBROWSEREXTENSION: 'proton-pass-extension',
     PROTONDOCS: 'proton-docs',
     PROTONDOCSEDITOR: 'proton-docs-editor',
+    PROTONLUMO: 'proton-lumo',
 } as const;
 
 interface AppConfiguration {
@@ -237,6 +240,15 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         icon: 'brand-proton', // TODO: brand icon for Docs
         settingsSlug: 'docs-editor',
     },
+    [APPS.PROTONLUMO]: {
+        publicPath: '',
+        subdomain: 'lumo',
+        name: LUMO_APP_NAME,
+        bareName: LUMO_SHORT_APP_NAME,
+        clientID: 'web-lumo',
+        icon: 'brand-proton',
+        settingsSlug: 'lumo',
+    },
 };
 
 export enum PRODUCT {
@@ -246,6 +258,7 @@ export enum PRODUCT {
     DRIVE = 4,
     PASS = 5,
     WALLET = 6,
+    LUMO = 7,
 }
 
 // Should be synced with ProductGroup in API
@@ -256,6 +269,7 @@ export enum PRODUCT_BIT {
     PASS = 8,
     WALLET = 16,
     NEUTRON = 32,
+    LUMO = 64,
 }
 
 export type APP_KEYS = keyof typeof APPS;
