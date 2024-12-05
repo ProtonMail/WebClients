@@ -298,6 +298,20 @@ describe('SelectedPlan', () => {
     it.each([
         {
             planIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+                [ADDON_NAMES.LUMO_MAIL_PRO]: 4,
+            },
+            expected: 4,
+        },
+    ])('should return the total number of lumos', ({ planIDs, expected }) => {
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+        expect(selectedPlan.getTotalLumos()).toBe(expected);
+    });
+
+    it.each([
+        {
+            planIDs: {
                 [PLANS.VPN_BUSINESS]: 1,
                 [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
                 [ADDON_NAMES.IP_VPN_BUSINESS]: 3,
@@ -431,6 +445,100 @@ describe('SelectedPlan', () => {
             [PLANS.MAIL_BUSINESS]: 1,
             [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3,
             [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 4,
+        });
+    });
+
+    it.each([
+        {
+            planIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+            },
+            newLumoCount: 3,
+            expectedPlanIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+                [ADDON_NAMES.LUMO_MAIL_PRO]: 3,
+            },
+        },
+        {
+            planIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+                [ADDON_NAMES.LUMO_MAIL_PRO]: 3,
+            },
+            newLumoCount: 1,
+            expectedPlanIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+                [ADDON_NAMES.LUMO_MAIL_PRO]: 1,
+            },
+        },
+        {
+            planIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+                [ADDON_NAMES.LUMO_MAIL_PRO]: 3,
+            },
+            newLumoCount: 0,
+            expectedPlanIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+            },
+        },
+        {
+            planIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+                [ADDON_NAMES.LUMO_MAIL_PRO]: 3,
+            },
+            newLumoCount: 4,
+            expectedPlanIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+                [ADDON_NAMES.LUMO_MAIL_PRO]: 4,
+            },
+        },
+        {
+            planIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+                [ADDON_NAMES.LUMO_MAIL_PRO]: 3,
+            },
+            newLumoCount: 40,
+            expectedPlanIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+                // there can't be more scribe addons than total members in the org
+                [ADDON_NAMES.LUMO_MAIL_PRO]: 4,
+            },
+        },
+    ])('should update lumos count', ({ planIDs, newLumoCount, expectedPlanIDs }) => {
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+        const updatedSelectedPlan = selectedPlan.setLumoCount(newLumoCount);
+
+        expect(updatedSelectedPlan.planIDs).toEqual(expectedPlanIDs);
+    });
+
+    it('should reduce the number of Lumo addons to the number of total members', () => {
+        const planIDs = {
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+            [ADDON_NAMES.LUMO_MAIL_PRO]: 40,
+        };
+
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(selectedPlan.getTotalMembers()).toEqual(4);
+        expect(selectedPlan.getTotalLumos()).toEqual(40);
+
+        const newSelectedPlan = selectedPlan.applyRules();
+        expect(newSelectedPlan.getTotalLumos()).toEqual(4);
+
+        expect(newSelectedPlan.planIDs).toEqual({
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+            [ADDON_NAMES.LUMO_MAIL_PRO]: 4,
         });
     });
 

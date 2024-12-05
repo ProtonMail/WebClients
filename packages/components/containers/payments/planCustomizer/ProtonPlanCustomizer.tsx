@@ -324,7 +324,8 @@ export const ProtonPlanCustomizer = ({
     separator = false,
     ...rest
 }: Props) => {
-    const supportedAddons = getSupportedAddons(planIDs);
+    const normalizePlanIds = SelectedPlan.createNormalized(planIDs, plansMap, cycle, currency).planIDs;
+    const supportedAddons = getSupportedAddons(normalizePlanIds);
     const showAddonDescriptions = mode !== 'signup' && !forceHideDescriptions;
 
     const isAllowedAddon = useCallback(
@@ -355,7 +356,7 @@ export const ProtonPlanCustomizer = ({
                         addonName={addonName}
                         cycle={cycle}
                         currency={currency}
-                        planIDs={planIDs}
+                        planIDs={normalizePlanIds}
                         onChangePlanIDs={(planIDs) => {
                             const selectedPlan = SelectedPlan.createNormalized(planIDs, plansMap, cycle, currency);
                             onChangePlanIDs(selectedPlan.planIDs);
