@@ -341,6 +341,12 @@
       "Request a feature": [
         "提出新功能建議"
       ],
+      "Resend code": [
+        "重新傳送驗證碼"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "重新寄送代碼(於${ remaining }秒)"
+      ],
       "Resend invitation": [
         "重新發送邀請"
       ],
@@ -455,6 +461,9 @@
       "Use ${ label } theme": [
         "使用 ${ label } 布景主題"
       ],
+      "Verify": [
+        "驗證"
+      ],
       "View app logs": [
         "瀏覽應用程式記錄檔"
       ],
@@ -472,32 +481,6 @@
       ],
       "Write us on Twitter": [
         "在 Twitter 上寫上我們"
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "終身存取"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "All premium features. 6 users. 1 easy subscription."
-      ],
-      "Limited-stock available!": [
-        "有限庫存可供應!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "取得優惠"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "黑色星期五"
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "節省高達 ${ discountJSX } 在 Pass Family。每月僅 ${ relativePrice }。"
       ]
     },
     "Browser": {
@@ -948,6 +931,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "刪除${ payload.content.name }"
       ],
+      "Didn't receive the code?": [
+        "沒收到驗證碼嗎?"
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "於YouTube觀看${ PASS_APP_NAME }的影片"
       ],
@@ -1236,9 +1222,6 @@
       "Unable to copy to clipboard": [
         "無法複製到剪貼簿"
       ],
-      "Unlimited hide-my-email aliases": [
-        "無限制的 hide-my-email 別名"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "使用個人識別數字代碼解開${ PASS_APP_NAME }以便儲存通行密鑰。"
       ],
@@ -1247,6 +1230,9 @@
       ],
       "Unpinning item...": [
         "取消訂選項目..."
+      ],
+      "Unverified": [
+        "未驗證"
       ],
       "Update login": [
         "更新登入"
@@ -1436,6 +1422,9 @@
       "City": [
         "縣市"
       ],
+      "Code": [
+        "代碼"
+      ],
       "Company": [
         "公司"
       ],
@@ -1444,6 +1433,9 @@
       ],
       "Contact details": [
         "聯絡人詳細資料"
+      ],
+      "Contacts": [
+        "聯絡人"
       ],
       "Copy": [
         "複製"
@@ -1483,6 +1475,9 @@
       ],
       "Display": [
         "顯示"
+      ],
+      "Display name": [
+        "顯示名稱"
       ],
       "Domain": [
         "網域"
@@ -1912,6 +1907,9 @@
       "Full Name": [
         "全名"
       ],
+      "me@example.com": [
+        "me@example.com"
+      ],
       "MM/YY": [
         "月月/年年"
       ],
@@ -1967,6 +1965,9 @@
       ]
     },
     "Title": {
+      "Actions": [
+        "操作"
+      ],
       "Auto-lock update": [
         "更新自動鎖定"
       ],
@@ -1976,8 +1977,17 @@
       "Confirm PIN code": [
         "確認個人識別數字代碼"
       ],
+      "Confirm your email": [
+        "確認您的電子郵件"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "連接您的${ BRAND_NAME }帳號"
+      ],
+      "Contacts": [
+        "通訊錄"
+      ],
+      "Create contact": [
+        "創建聯絡人"
       ],
       "Create PIN code": [
         "創建個人識別數字代碼"
@@ -2096,6 +2106,9 @@
       "Share with": [
         "與分享"
       ],
+      "Status": [
+        "狀態"
+      ],
       "Stay safer online": [
         "保持在線安全"
       ],
@@ -2193,6 +2206,12 @@
       "Invalid alias prefix": [
         "別名前綴無效"
       ],
+      "Invalid code": [
+        "代碼無效"
+      ],
+      "Invalid email": [
+        "無效的電子信箱"
+      ],
       "Invalid email addresses.": [
         "無效的電子郵件位址"
       ],
@@ -2261,6 +2280,9 @@
       ],
       "Vault name is required": [
         "保管庫需要名字"
+      ],
+      "Verification code is required": [
+        "驗證碼為必要"
       ],
       "You have reached the limit of members who can access this vault.": [
         "此保管庫的存取者數量已達上限。"

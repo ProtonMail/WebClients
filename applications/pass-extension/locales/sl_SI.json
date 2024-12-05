@@ -383,6 +383,12 @@
       "Request a feature": [
         "Predlagajte novo funkcijo"
       ],
+      "Resend code": [
+        "Znova pošlji kodo"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Znova pošlji kodo (v ${ remaining }s)"
+      ],
       "Resend invitation": [
         "Ponovno pošlji povabilo"
       ],
@@ -515,6 +521,9 @@
       "Use ${ label } theme": [
         "Uporabi temo ${ label }"
       ],
+      "Verify": [
+        "Preveri"
+      ],
       "View app logs": [
         "Oglejte si dnevnike aplikacij"
       ],
@@ -532,32 +541,6 @@
       ],
       "Write us on Twitter": [
         "Pišite nam na X (Twitter)"
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "dostop za celo življenje"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Vse premijske funkcije. 6 uporabnikov. 1 enostavna naročnina."
-      ],
-      "Limited-stock available!": [
-        "Na voljo v omejeni količini!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Izkoristite posebno ponudbo"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Prihranite do ${ discountJSX } na Pass Family. Le ${ relativePrice }/mesec."
       ]
     },
     "Browser": {
@@ -1160,6 +1143,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Brisanje »${ payload.content.name }«"
       ],
+      "Didn't receive the code?": [
+        "Niste prejeli kode?"
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Odkrijte ${ PASS_APP_NAME } Youtube Video"
       ],
@@ -1400,6 +1386,9 @@
       "Pinning item...": [
         "Pripenjanje predmeta ..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Preverite mapo z neželeno pošto ali poskusite znova poslati kodo."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potrdite geslo za ${ BRAND_NAME }, če želite izvoziti podatke ${ PASS_APP_NAME }."
       ],
@@ -1550,9 +1539,6 @@
       "Unable to copy to clipboard": [
         "Kopiranje v odložišče ni mogoče"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Neomejeno število vzdevkov hide-my-email"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Za dostop do identifikacijskih ključev odklenite ${ PASS_APP_NAME } z vašo PIN kodo"
       ],
@@ -1570,6 +1556,9 @@
       ],
       "Unpinning item...": [
         "Odpenjanje predmeta ..."
+      ],
+      "Unverified": [
+        "Nepotrjeno"
       ],
       "Update login": [
         "Posodobi prijavo"
@@ -1606,6 +1595,9 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Imamo težave pri sinhronizaciji podatkov z vašo lokalno shrambo. Prepričajte se, da imate dovolj prostora na disku za nemoteno delovanje aplikacije ${ PASS_SHORT_APP_NAME }."
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Poslali smo potrditveno kodo na ${ email }. Vnesite jo spodaj:"
       ],
       "You are about to create:": [
         "Ustvarili boste:"
@@ -1810,6 +1802,9 @@
       "City": [
         "Mesto"
       ],
+      "Code": [
+        "Koda"
+      ],
       "Company": [
         "Podjetje"
       ],
@@ -1818,6 +1813,9 @@
       ],
       "Contact details": [
         "Podrobnosti stika"
+      ],
+      "Contacts": [
+        "Stiki"
       ],
       "Copy": [
         "Kopiraj"
@@ -1866,6 +1864,9 @@
       ],
       "Display": [
         "Zaslon"
+      ],
+      "Display name": [
+        "Prikazno ime"
       ],
       "Domain": [
         "Domena"
@@ -2382,6 +2383,9 @@
       "Full Name": [
         "Polno ime"
       ],
+      "me@example.com": [
+        "ime@primer.si"
+      ],
       "MM/YY": [
         "MM/LL"
       ],
@@ -2453,6 +2457,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } Nastavitve"
       ],
+      "Actions": [
+        "Dejanja"
+      ],
       "Auto-lock update": [
         "Posodobitev samodejnega zaklepanja"
       ],
@@ -2465,8 +2472,17 @@
       "Confirm PIN code": [
         "Potrdi PIN kodo"
       ],
+      "Confirm your email": [
+        "Potrdite svoj elektronski naslov."
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Povežite svoj račun ${ BRAND_NAME }"
+      ],
+      "Contacts": [
+        "Stiki"
+      ],
+      "Create contact": [
+        "Ustvari stik"
       ],
       "Create PIN code": [
         "Ustvari PIN kodo"
@@ -2591,6 +2607,9 @@
       "Share with": [
         "Deli z"
       ],
+      "Status": [
+        "Stanje"
+      ],
       "Stay safer online": [
         "Izboljšajte spletno varnost"
       ],
@@ -2706,6 +2725,12 @@
       "Invalid alias prefix": [
         "Neveljavna predpona vzdevka"
       ],
+      "Invalid code": [
+        "Neveljavna koda"
+      ],
+      "Invalid email": [
+        "Neveljaven e-poštni naslov"
+      ],
       "Invalid email addresses.": [
         "Neveljavni e-poštni naslovi."
       ],
@@ -2792,6 +2817,9 @@
       ],
       "Vault name is required": [
         "Zahtevano je ime trezorja"
+      ],
+      "Verification code is required": [
+        "Zahtevana je koda za preverjanje"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Dosegli ste omejitev članov, ki lahko dostopajo do tega trezorja."
