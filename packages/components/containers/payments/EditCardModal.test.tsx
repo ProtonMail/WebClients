@@ -12,7 +12,7 @@
 //     withNotifications,
 // } from '@proton/testing';
 
-// import { renderWithProviders } from '../contacts/tests/render';
+// import { renderWithProviders } from '@proton/testing';
 // import EditCardModal from './EditCardModal';
 
 // jest.mock('@proton/components/components/portal/Portal');

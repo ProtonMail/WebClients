@@ -1,16 +1,13 @@
 import { getModelState } from '@proton/account/test';
-import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { plansDefaultResponse } from '@proton/components/hooks/helpers/test';
 import { PLANS } from '@proton/payments';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
 import type { Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
-import { Renew } from '@proton/shared/lib/interfaces';
+import { BillingPlatform, Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import { apiMock, applyHOCs, getSubscriptionState, withApi, withCache, withEventManager } from '@proton/testing';
+import { apiMock, getSubscriptionState, renderWithProviders } from '@proton/testing';
 
 import SubscriptionsSection from './SubscriptionsSection';
-
-const ContextSubscriptionSection = applyHOCs(withEventManager(), withApi(), withCache())(SubscriptionsSection);
 
 describe('SubscriptionsSection', () => {
     let subscription: SubscriptionModel;
@@ -57,6 +54,7 @@ describe('SubscriptionsSection', () => {
             External: 0,
             UpcomingSubscription: null,
             isManagedByMozilla: false,
+            BillingPlatform: BillingPlatform.Chargebee,
         };
 
         upcoming = {
@@ -97,6 +95,7 @@ describe('SubscriptionsSection', () => {
             ],
             Renew: 1,
             External: 0,
+            BillingPlatform: BillingPlatform.Chargebee,
         };
 
         jest.clearAllMocks();
@@ -109,7 +108,7 @@ describe('SubscriptionsSection', () => {
 
     it('should return MozillaInfoPanel if isManagedByMozilla is true', () => {
         subscription.isManagedByMozilla = true;
-        const { container } = renderWithProviders(<ContextSubscriptionSection />, {
+        const { container } = renderWithProviders(<SubscriptionsSection />, {
             preloadedState: {
                 subscription: getSubscriptionState(subscription),
                 plans: defaultPlansState,
@@ -119,7 +118,7 @@ describe('SubscriptionsSection', () => {
     });
 
     it('should render current subscription', () => {
-        const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
+        const { getByTestId } = renderWithProviders(<SubscriptionsSection />, {
             preloadedState: {
                 subscription: getSubscriptionState(subscription),
                 plans: defaultPlansState,
@@ -133,7 +132,7 @@ describe('SubscriptionsSection', () => {
 
     it('should display Expiring badge if renew is disabled', () => {
         subscription.Renew = Renew.Disabled;
-        const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
+        const { getByTestId } = renderWithProviders(<SubscriptionsSection />, {
             preloadedState: {
                 subscription: getSubscriptionState(subscription),
                 plans: defaultPlansState,
@@ -148,7 +147,7 @@ describe('SubscriptionsSection', () => {
     it('should render end date of upcoming subscription', () => {
         subscription.UpcomingSubscription = upcoming;
 
-        const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
+        const { getByTestId } = renderWithProviders(<SubscriptionsSection />, {
             preloadedState: {
                 subscription: getSubscriptionState(subscription),
                 plans: defaultPlansState,
@@ -161,7 +160,7 @@ describe('SubscriptionsSection', () => {
     });
 
     it('should show renewal notice if there is no upcoming subscription', () => {
-        const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
+        const { getByTestId } = renderWithProviders(<SubscriptionsSection />, {
             preloadedState: {
                 subscription: getSubscriptionState(subscription),
                 plans: defaultPlansState,
@@ -172,7 +171,7 @@ describe('SubscriptionsSection', () => {
 
     it('should show renewal notice if there is upcoming subscription', () => {
         subscription.UpcomingSubscription = upcoming;
-        const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
+        const { getByTestId } = renderWithProviders(<SubscriptionsSection />, {
             preloadedState: {
                 subscription: getSubscriptionState(subscription),
                 plans: defaultPlansState,
@@ -183,7 +182,7 @@ describe('SubscriptionsSection', () => {
 
     it('should now show renewal notice if subscription is expiring', () => {
         subscription.Renew = Renew.Disabled;
-        const { container } = renderWithProviders(<ContextSubscriptionSection />, {
+        const { container } = renderWithProviders(<SubscriptionsSection />, {
             preloadedState: {
                 subscription: getSubscriptionState(subscription),
                 plans: defaultPlansState,
@@ -194,7 +193,7 @@ describe('SubscriptionsSection', () => {
 
     it('should display Reactivate button when Renew is disabled', () => {
         subscription.Renew = Renew.Disabled;
-        const { getByText } = renderWithProviders(<ContextSubscriptionSection />, {
+        const { getByText } = renderWithProviders(<SubscriptionsSection />, {
             preloadedState: {
                 subscription: getSubscriptionState(subscription),
                 plans: defaultPlansState,
@@ -205,7 +204,7 @@ describe('SubscriptionsSection', () => {
 
     it('should display warning icon when renewal is disabled', () => {
         subscription.Renew = Renew.Disabled;
-        const { queryByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
+        const { queryByTestId } = renderWithProviders(<SubscriptionsSection />, {
             preloadedState: {
                 subscription: getSubscriptionState(subscription),
                 plans: defaultPlansState,
@@ -217,7 +216,7 @@ describe('SubscriptionsSection', () => {
     it('should not display date of upcoming subscription if renew is disabled', () => {
         subscription.Renew = Renew.Disabled;
         subscription.UpcomingSubscription = upcoming;
-        const { container } = renderWithProviders(<ContextSubscriptionSection />, {
+        const { container } = renderWithProviders(<SubscriptionsSection />, {
             preloadedState: {
                 subscription: getSubscriptionState(subscription),
                 plans: defaultPlansState,
@@ -228,7 +227,8 @@ describe('SubscriptionsSection', () => {
 
     it('should call API when user presses reactivate button', () => {
         subscription.Renew = Renew.Disabled;
-        const { getByText } = renderWithProviders(<ContextSubscriptionSection />, {
+
+        const { getByText } = renderWithProviders(<SubscriptionsSection />, {
             preloadedState: {
                 subscription: getSubscriptionState(subscription),
                 plans: defaultPlansState,
