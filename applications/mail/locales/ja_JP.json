@@ -628,7 +628,7 @@
         "挿入"
       ],
       "Insert ${ totalChecked } contact": [
-        "${ totalChecked } 個の連絡先を挿入"
+        "${ totalChecked } 件の連絡先を挿入"
       ],
       "Insert contact": [
         "連絡先を挿入"
@@ -3589,7 +3589,7 @@
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "${ senderEmailAddress }とその他${ otherSendersCount }件のアドレスからのメールは今後一切受信しません。"
+        "${ senderEmailAddress } と ${ otherSendersCount } からの新しいメールは受信されず、完全に削除されます。"
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "${ senderEmailAddress }とからのメールは今後一切受信しません。"
@@ -3632,9 +3632,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "電子メール トラッカー保護をオンにして、広告主などがあなたの位置情報やオンライン アクティビティを追跡しないようにします。"
-      ],
-      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
-        "キャッチーで入力しやすいメールアドレスを得るために、${ activatePmUser }を有効にしてください。"
       ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "カスタム予約メールやその他のプレミアム機能をアンロックするには、アップグレードしてください。"
@@ -3975,7 +3972,7 @@
         "問題が発生しました。もう一度お試しください。"
       ],
       "Add at least one action": [
-        "アクションを一つ以上追加してください"
+        "少なくとも 1つのアクションを追加してください"
       ],
       "Add at least one condition": [
         "条件を少なくとも一つ追加してください"
@@ -4050,7 +4047,7 @@
         "これを解決するには、組織の管理者に連絡してください"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "このブラウザでは、内容の検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください。"
+        "このブラウザでは、コンテンツ検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください。"
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "コンテンツ検索を有効にできません。アプリケーションを再起動するか、データを消去してください。"
@@ -4122,7 +4119,7 @@
         "名前が長すぎます。"
       ],
       "Folder name cannot be empty.": [
-        "フォルダー名は空にできません。"
+        "フォルダー名は空欄にできません。"
       ],
       "Forward address is required": [
         "転送先アドレスは必須です"
@@ -4173,7 +4170,7 @@
         "アイテムの内容が40KBを超えることはできません"
       ],
       "Label name cannot be empty.": [
-        "ラベル名を空にできません。"
+        "ラベル名は空欄にできません。"
       ],
       "Last name is too long": [
         "姓が長すぎます。"
@@ -4407,7 +4404,7 @@
         "執筆アシスタントはリクエストを続行できません。別のプロンプトをお試しください。"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "外部アカウントのフォルダーが多すぎます。いくつかのフォルダーを削除するにはインポートをカスタマイズしてください。"
+        "外部アカウントのフォルダが多すぎます。いくつかのフォルダを削除するにはインポートをカスタマイズしてください。"
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "コンテンツ検索に問題があります。既定の検索が代わりに使用されています。"
@@ -5443,7 +5440,7 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } 予定が暗号化され、カレンダーに追加されました"
+        "${ totalImported }/${ totalToImport } 件の予定が暗号化され、カレンダーに追加されました"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "予定の暗号化と追加中にエラーが発生しました。${ totalToImport } のうち ${ totalImported } の予定のインポートに成功しました。"
@@ -5486,7 +5483,7 @@
         "このファイルには予定の招待が含まれています:"
       ],
       "This file contains an invitation response:": [
-        "以下のファイルには参加の是非の回答があります。"
+        "このファイルには招待の回答が含まれています："
       ],
       "This file contains some data that we cannot import:": [
         "このファイルにはインポートできないデータが含まれています:"
@@ -5741,7 +5738,7 @@
         "${ contactEmailsLength } 人のメンバー"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
-        "${ contactGroupName }（${ numberOfContactsInGroup }件中${ numberOfSelectedContacts }件）"
+        "${ contactGroupName }(${ numberOfSelectedContacts }/${ numberOfContactsInGroup }人のメンバー)"
       ],
       "${ contactName } contains multiple email addresses.": [
         "連絡先 ${ contactName } に複数のメールアドレスが含まれています。"
@@ -5876,7 +5873,7 @@
         "(${ memberCount } 人のメンバー)"
       ],
       "(${ serverPrice }/month)": [
-        "(一月 ${ serverPrice })"
+        "(${ serverPrice } /月)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(以下のすべての条件が満たされた場合に動作します)"
@@ -6074,7 +6071,7 @@
         "探しているものが見つかりませんか? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "パスワード思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
+        "パスワードが思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
       ],
       "Center": [
         "中央揃え"
@@ -6203,7 +6200,7 @@
         "Discover ProtectBuy ロゴ"
       ],
       "Do you want to download this attachment anyway?": [
-        "とにかく添付ファイルをダウンロードしますか?"
+        "添付ファイルをダウンロードしますか?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "連絡先の詳細を再署名して、これらのフィンガープリントの鍵を信頼してよろしいですか？"
@@ -6317,7 +6314,7 @@
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your own password (as organization admin).": [
-        "パスワード（管理員のもの）を入力してください"
+        "自分(組織管理者として)のパスワードを入力してください。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "推定残り時間: ${ estimatedMinutes } 分"
@@ -6719,7 +6716,7 @@
         "少なくとも 1 件の宛先を追加してください。"
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "この文書に直接招待されるように所有者に依頼してください。"
+        "文書に直接招待するように所有者に依頼してください。"
       ],
       "Please authenticate your card in the verification tab.": [
         "認証タブでカード認証をしてください。"
@@ -6797,7 +6794,7 @@
         "このファイル形式はサポートされておりません。"
       ],
       "Preview of documents is not yet supported.": [
-        "文書のプレビューはまだできません。"
+        "文書のプレビューはまだサポートされていません。"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "価格には、適用されるすべてのサイクルベースの割引と、お客様のアカウントに保存されている有効期限内のクーポンが含まれています。"
@@ -7118,7 +7115,7 @@
         "このメッセージは ${ value } に自動的に削除されます。"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "このメッセージを迷惑メールとして扱います。将来のメールから購読を解除しますか?"
+        "これらのメッセージは迷惑メールとしてマークされます。今後のメールの購読を解除しますか？"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "編集のため、このメッセージは下書きへ移動されます。送信するにはもう一度、送信を予約する必要があります。"
@@ -7172,7 +7169,7 @@
         "お支払い手続きを完了するために、下のアドレスに ${ btcAmountBold } を送信してください。"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
+        "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "予定をインポートするには、まず ${ CALENDAR_APP_NAME } に予定のインポート先となるカレンダーを作成してください。"
@@ -7400,7 +7397,7 @@
         "旅行中や公共WiFiを使用する際は、${ VPN_APP_NAME } に接続することで、オンライン活動の追跡やデータの盗難を防ぐことができます。無料でご利用いただけます。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
+        "新しい認証コードを受け取るか、他の検証方法を使用しますか？"
       ],
       "Would you like to receive a new verification code?": [
         "新しい認証コードを受け取りますか?"
@@ -7642,7 +7639,7 @@
     },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } 件のフォルダーを選択済み"
+        "${ selectedFoldersCount } 件のフォルダが選択済み"
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } 件のラベルが選択済み"
@@ -7689,7 +7686,7 @@
         "次のフィンガープリントのプライマリー鍵を信頼しますか？"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "信頼鍵でのアドレス認証が有効になっていますが、信頼済みの暗号鍵がありません。このアドレスにメールを送信するには、送信用の鍵を追加してください。"
+        "これらのメールアドレスに対して、信頼されたキーによるアドレス確認を有効にしていますが、アクティブな暗号化キーが信頼されていません。\nこれらのメールアドレスにメッセージを送信するには、送信に有効なキーを信頼する必要があります。"
       ]
     },
     "Key validation warning": {
@@ -8732,7 +8729,7 @@
         "もう少しです"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "カレンダーの作成数：${ createdCalendarCount } のうち、${ calendarsToBeCreated }"
+        "作成されたカレンダーの数: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "メールプロバイダーに接続しています"
@@ -8792,7 +8789,7 @@
         "${ itemsToImportCount } ラベルからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } フォルダから ${ selectedItemsToImportCount } の全メッセージをインポートし、ラベル付けします"
+        "${ itemsToImportCount } フォルダから ${ selectedItemsToImportCount } のすべてのメッセージをインポートし、ラベル付けします"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
@@ -10947,13 +10944,13 @@
         "${ MAIL_APP_NAME } によって送信された、ゼロアクセス暗号化されたメッセージ"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "検証済みの宛先へ、${ MAIL_APP_NAME } によって送信された、ゼロアクセス暗号化されたメッセージ"
+        "検証済みの受信者にゼロアクセス暗号化で ${ MAIL_APP_NAME } によって送信されました"
       ],
       "Sent by you with end-to-end encryption": [
         "あなたによって送信された、エンドツーエンド暗号化されたメッセージ"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
-        "検証済みの宛先へ、あなたによって送信された、エンドツーエンド暗号化による送信"
+        "検証済みの受信者にエンドツーエンドの暗号化で送信されました"
       ],
       "Stored with zero-access encryption": [
         "暗号化されずに送受信されたメッセージ"
@@ -11988,7 +11985,7 @@
         "${ elementsCount } 件の会話を未読にしました。"
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount }件のやりとりを${ folderName }に移動し、差出人のアドレスは迷惑メールリストに登録されました。"
+        "${ elementsCount }件のやりとりを${ folderName }に移動し、送信元のアドレスは迷惑メールから除外されました。"
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } 件の会話を ${ folderName } に移動しました。"
@@ -12003,7 +12000,7 @@
         "${ elementsCount } 件の会話をスヌーズしました"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } 件の会話をスヌーズを解除しました"
+        "${ elementsCount } 件の会話のスヌーズを解除しました"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } 件のメッセージが ${ labelName } に追加されました。"
@@ -12012,7 +12009,7 @@
         "${ elementsCount } 件のメッセージを既読にしました。"
       ],
       "${ elementsCount } message marked as Starred.": [
-        "${ elementsCount } 件のメッセージに星印をつけました。"
+        "${ elementsCount } 件のメッセージにスターをつけました。"
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } 件のメッセージを未読にしました。"
@@ -12744,7 +12741,7 @@
         "画像"
       ],
       "Import as simple event?": [
-        "シンプル 予定としてインポートしますか?"
+        "シンプルな予定としてインポートしますか?"
       ],
       "Import contacts": [
         "連絡先をインポート"
@@ -13481,7 +13478,7 @@
         "${ interval } 週間毎の ${ multipleDaysString }"
       ],
       "Every ${ interval } week on all days": [
-        "${ interval } 週間毎の全曜日"
+        "${ interval } 週間毎の全ての日"
       ],
       "Every ${ interval } week on Friday": [
         "${ interval } 週間毎の金曜日"
