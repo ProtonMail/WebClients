@@ -3,8 +3,8 @@ import { type Subscription, type UserModel } from '@proton/shared/lib/interfaces
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { ADDON_NAMES, PLANS, PLAN_NAMES } from '../constants';
-import { isFreeSubscription } from '../helpers';
 import { type FreeSubscription } from '../interface';
+import { isFreeSubscription } from '../type-guards';
 
 export const getScribeAddonNameByPlan = (planName: PLANS) => {
     switch (planName) {

@@ -38,6 +38,8 @@ export {
     PLAN_SERVICES,
     PLAN_TYPES,
     SCRIBE_ADDON_PREFIX,
+    TransactionState,
+    TransactionType,
     UNPAID_STATE,
 } from './core/constants';
 export {
@@ -62,7 +64,6 @@ export {
     isChargebeePaymentMethod,
     isCreditNoteInvoice,
     isCurrencyConversionInvoice,
-    isFreeSubscription,
     isMainCurrency,
     isRegionalCurrency,
     isRegularInvoice,
@@ -121,6 +122,8 @@ export type {
     SepaDetails,
     TokenPayment,
     TokenPaymentMethod,
+    Transaction,
+    TransactionResponse,
     V5PaymentToken,
     WrappedCardPayment,
     WrappedCryptoPayment,
@@ -159,9 +162,16 @@ export {
 } from './core/subscription/plans-map-wrapper';
 export { SelectedPlan } from './core/subscription/selected-plan';
 export {
+    displayTransactionState,
+    displayTransactionType,
+    getTransactionStateTitle,
+    getTransactionTypeTitle,
+} from './core/transactions';
+export {
     isCardPayment,
     isCheckWithAutomaticOptions,
     isExistingPaymentMethod,
+    isFreeSubscription,
     isPaymentMethodStatusExtended,
     isPaypalDetails,
     isPaypalPayment,
@@ -173,6 +183,7 @@ export {
     isStringPLAN,
     isTokenPayment,
     isTokenPaymentMethod,
+    isTransaction,
     isV5PaymentToken,
     isWrappedPaymentsVersion,
     methodMatches,

@@ -278,7 +278,3 @@ export function getCurrencyRate(currency: Currency): number {
 
     return 1;
 }
-
-export function isFreeSubscription(obj: any): obj is FreeSubscription {
-    return !!obj && obj.isFreeSubscription && Object.keys(obj).filter((key) => obj[key] !== undefined).length === 1;
-}

@@ -62,6 +62,33 @@ export enum INVOICE_STATE {
     WRITEOFF = 4,
 }
 
+export enum TransactionState {
+    SUCCESS = 0,
+    VOIDED = 1,
+    FAILURE = 2,
+    TIMEOUT = 3,
+    NEEDS_ATTENTION = 4,
+    REFUNDED = 5,
+    CHARGEBACK = 6,
+}
+
+export enum TransactionType {
+    AUTHORIZATION = 0,
+    PAYMENT = 1,
+    REFUND = 2,
+    PAYMENT_REVERSAL = 3,
+    CURRENCY_CONVERSION = 4,
+    CREDIT = 5,
+    GIFT_CARD = 6,
+    BANK_TRANSFER = 7,
+    BITCOIN = 8,
+    CASH = 9,
+    CHARGEBACK = 10,
+    CREDIT_TRANSFER = 11,
+    MIGRATION = 12,
+    ADJUSTMENT_CREDIT = 13,
+}
+
 export enum UNPAID_STATE {
     NOT_UNPAID = 0,
     AVAILABLE = 1,

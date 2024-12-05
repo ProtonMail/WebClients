@@ -5,6 +5,7 @@ import { getModelState } from '@proton/account/test';
 import { PLANS } from '@proton/payments';
 import { Audience, External } from '@proton/shared/lib/interfaces';
 import format from '@proton/shared/lib/subscription/format';
+import { renderWithProviders } from '@proton/testing';
 import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import {
@@ -15,7 +16,6 @@ import {
     subscriptionDefaultResponse,
     userDefault,
 } from '../../../hooks/helpers/test';
-import { renderWithProviders } from '../../contacts/tests/render';
 import SubscriptionContainer from './SubscriptionContainer';
 import type { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import SubscriptionModalProvider, { useSubscriptionModal } from './SubscriptionModalProvider';
