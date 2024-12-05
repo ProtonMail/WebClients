@@ -464,7 +464,14 @@ const MessageView = (
                         onFocusIframe={handleFocus('IFRAME')}
                         hasQuickReply={canShowQuickReply}
                         onIframeReady={() => {
-                            stopECRTMetric(conversationMode ? message.data?.ConversationID : message.data?.ID);
+                            // The sent folder doesn't behave as other folders.
+                            // The inidividual message are displayed and not the conversation.
+                            // Regardless the conversation groupping setting.
+                            if (labelID === MAILBOX_LABEL_IDS.ALL_SENT) {
+                                stopECRTMetric(message.data?.ID);
+                            } else {
+                                stopECRTMetric(conversationMode ? message.data?.ConversationID : message.data?.ID);
+                            }
                         }}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}

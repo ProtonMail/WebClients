@@ -11,6 +11,7 @@ import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import AssistantIframe from 'proton-mail/components/assistant/AssistantIframe';
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailPTTMetric } from 'proton-mail/metrics/useMailPTTMetric';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
 import { LabelActionsContextProvider } from '../components/sidebar/EditLabelContext';
@@ -41,6 +42,8 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
     useContactsListener();
     useConversationsEvent();
     useMessagesEvents();
+
+    useMailPTTMetric();
 
     /**
      * Incoming defaults
