@@ -54,6 +54,8 @@ import type {
     MaybeArray,
     MessageInfo,
     PrivateKeyReference,
+    PrivateKeyReferenceV4,
+    PrivateKeyReferenceV6,
     PublicKeyReference,
     SignatureInfo,
     WorkerDecryptionOptions,
@@ -112,6 +114,7 @@ const toArray = <T>(maybeArray: MaybeArray<T>) => (Array.isArray(maybeArray) ? m
 const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promise<PublicKeyReference> => {
     const publicKey = key.isPrivate() ? key.toPublic() : key; // We don't throw on private key since we allow importing an (encrypted) private key using 'importPublicKey'
 
+    const version = publicKey.keyPacket.version;
     const fingerprint = publicKey.getFingerprint();
     const hexKeyID = publicKey.getKeyID().toHex();
     const hexKeyIDs = publicKey.getKeyIDs().map((id) => id.toHex());
@@ -141,17 +144,13 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
     } catch {
         isWeak = true;
     }
-    let compatibilityError: Error;
-    try {
-        checkKeyCompatibility(publicKey);
-    } catch (err: any) {
-        compatibilityError = err;
-    }
     return {
         _idx: keyStoreID,
         _keyContentHash: [keyContentHash, keyContentHashNoCerts],
-        _getCompatibilityError: () => compatibilityError,
         isPrivate: () => false,
+        isPrivateKeyV4: () => false,
+        isPrivateKeyV6: () => false,
+        getVersion: () => version,
         getFingerprint: () => fingerprint,
         getKeyID: () => hexKeyID,
         getKeyIDs: () => hexKeyIDs,
@@ -175,13 +174,15 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
     } as PublicKeyReference;
 };
 
-const getPrivateKeyReference = async (privateKey: PrivateKey, keyStoreID: number): Promise<PrivateKeyReference> => {
+const getPrivateKeyReference = async <V extends PrivateKeyReference = PrivateKeyReference>(privateKey: PrivateKey, keyStoreID: number): Promise<V> => {
     const publicKeyReference = await getPublicKeyReference(privateKey.toPublic(), keyStoreID);
     return {
         ...publicKeyReference,
         isPrivate: () => true,
+        isPrivateKeyV4: () => publicKeyReference.getVersion() === 4,
+        isPrivateKeyV6: () => publicKeyReference.getVersion() === 6,
         _dummyType: 'private',
-    } as PrivateKeyReference;
+    } as V;
 };
 
 class KeyStore {
@@ -250,6 +251,8 @@ type SerialisedOutputTypeFromFormat<F extends SerialisedOutputFormat> = F extend
       : never;
 
 class KeyManagementApi {
+    static test = 1;
+
     protected keyStore = new KeyStore();
 
     /**
@@ -280,7 +283,7 @@ class KeyManagementApi {
      * @param options.date - use the given date as creation date of the key and the key signatures, instead of the server time
      * @returns reference to the generated private key
      */
-    async generateKey(options: WorkerGenerateKeyOptions) {
+    async generateKey<CustomConfig extends { v6Keys?: boolean } | undefined = {}>(options: WorkerGenerateKeyOptions<CustomConfig>) {
         const { privateKey } = await generateKey({
             ...options,
             format: 'object',
@@ -293,7 +296,8 @@ class KeyManagementApi {
         }
         const keyStoreID = this.keyStore.add(privateKey);
 
-        return getPrivateKeyReference(privateKey, keyStoreID);
+        type KeyVersion = CustomConfig extends { v6Keys: true } ? PrivateKeyReferenceV6 : PrivateKeyReferenceV4;
+        return getPrivateKeyReference<KeyVersion>(privateKey, keyStoreID);
     }
 
     async reformatKey({ privateKey: keyReference, ...options }: WorkerReformatKeyOptions) {

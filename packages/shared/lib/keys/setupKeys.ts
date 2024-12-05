@@ -25,6 +25,7 @@ export const handleSetupKeys = async ({ api, addresses, password, preAuthKTVerif
     const { userKeyPayload, addressKeysPayload, onSKLPublishSuccess } = await getResetAddressesKeysV2({
         addresses,
         passphrase,
+        supportV6Keys: false,
         preAuthKTVerify,
     });
 

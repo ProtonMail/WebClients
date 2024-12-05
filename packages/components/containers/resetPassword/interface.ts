@@ -30,6 +30,7 @@ export type AccountType = 'internal' | 'external';
 export interface ValidateResetTokenResponse {
     Addresses: Address[];
     ToMigrate: 0 | 1;
+    SupportPgpV6Keys: 0 | 1;
 }
 
 interface MnemonicData {

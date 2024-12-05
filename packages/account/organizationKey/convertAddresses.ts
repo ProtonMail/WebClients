@@ -8,6 +8,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { ADDRESS_TYPE, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import type {
+    ActiveKeyWithVersion,
     Address,
     Api,
     DecryptedAddressKey,
@@ -21,9 +22,9 @@ import type {
 import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
 import {
     clearExternalFlags,
-    getActiveKeys,
+    getActiveAddressKeys,
     getMemberKeys,
-    getNormalizedActiveKeys,
+    getNormalizedActiveAddressKeys,
     getSignedKeyListWithDeferredPublish,
 } from '@proton/shared/lib/keys';
 
@@ -45,19 +46,19 @@ const convertToInternalAddress = async ({
     api: Api;
     keyTransparencyVerify: KeyTransparencyVerify;
 }) => {
-    const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, keys);
+    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, keys);
     const internalAddress = {
         ...address,
         // Reset type to an internal address with a custom domain
         Type: ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN,
     };
+    const normalizedKeys = getNormalizedActiveAddressKeys(internalAddress, activeKeys);
+    const clearFlags = <V extends ActiveKeyWithVersion>(key: V) => ({ ...key, flags: clearExternalFlags(key.flags) });
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
-        getNormalizedActiveKeys(internalAddress, activeKeys).map((key) => {
-            return {
-                ...key,
-                flags: clearExternalFlags(key.flags),
-            };
-        }),
+        {
+            v4: normalizedKeys.v4.map(clearFlags),
+            v6: normalizedKeys.v6.map(clearFlags)
+        },
         address,
         keyTransparencyVerify
     );

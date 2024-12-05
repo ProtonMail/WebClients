@@ -1,11 +1,23 @@
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { createAddressKeyRouteV2 } from '../../api/keys';
-import type { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../../interfaces';
+import {
+    type ActiveKeyWithVersion,
+    type Address,
+    type Api,
+    type DecryptedKey,
+    type KeyTransparencyVerify,
+    isActiveKeyV6,
+} from '../../interfaces';
 import { generateAddressKeyTokens } from '../addressKeys';
-import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from '../getActiveKeys';
+import {
+    getActiveAddressKeys,
+    getActiveKeyObject,
+    getNormalizedActiveAddressKeys,
+    getPrimaryFlag,
+} from '../getActiveKeys';
 import { getInactiveKeys } from '../getInactiveKeys';
 import { reactivateAddressKeysV2 } from '../reactivation/reactivateKeysProcessV2';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
@@ -32,12 +44,13 @@ const importKeysProcessV2 = async ({
     userKey,
     keyTransparencyVerify,
 }: ImportKeysProcessV2Arguments) => {
-    const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
-    const inactiveKeys = await getInactiveKeys(address.Keys, activeKeys);
+    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, addressKeys);
+    const activeKeysList = [...activeKeys.v4, ...activeKeys.v6];
+    const inactiveKeys = await getInactiveKeys(address.Keys, activeKeysList);
 
     const [keysToReactivate, keysToImport, existingKeys] = getFilteredImportRecords(
         keyImportRecords,
-        activeKeys,
+        activeKeysList,
         inactiveKeys
     );
 
@@ -57,12 +70,19 @@ const importKeysProcessV2 = async ({
                 passphrase: token,
             });
 
-            const newActiveKey = await getActiveKeyObject(privateKey, {
-                ID: 'tmp',
-                primary: getPrimaryFlag(mutableActiveKeys),
-                flags: getDefaultKeyFlags(address),
-            });
-            const updatedActiveKeys = getNormalizedActiveKeys(address, [...mutableActiveKeys, newActiveKey]);
+            const newActiveKey = (await getActiveKeyObject(
+                privateKey as PrivateKeyReferenceV4 | PrivateKeyReferenceV6,
+                {
+                    ID: 'tmp',
+                    // Do not set v6 as primary automatically (doing so would fail if forwarding is setup)
+                    primary: privateKey.isPrivateKeyV6() ? 0 : getPrimaryFlag(mutableActiveKeys.v4),
+                    flags: getDefaultKeyFlags(address),
+                }
+            )) as ActiveKeyWithVersion;
+            const toNormalize = isActiveKeyV6(newActiveKey)
+                ? { v4: [...mutableActiveKeys.v4], v6: [...mutableActiveKeys.v6, newActiveKey] }
+                : { v4: [...mutableActiveKeys.v4, newActiveKey], v6: [...mutableActiveKeys.v6] };
+            const updatedActiveKeys = getNormalizedActiveAddressKeys(address, toNormalize);
             const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
                 updatedActiveKeys,
                 address,

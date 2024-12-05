@@ -1,9 +1,15 @@
 import { getNewKeyFlags } from '@proton/components/containers/keys/shared/flags';
 import { FlagAction } from '@proton/components/containers/keys/shared/interface';
 import { updateAddressFlags } from '@proton/shared/lib/api/members';
-import type { Address, Api, DecryptedAddressKey, KeyTransparencyVerify } from '@proton/shared/lib/interfaces';
+import type {
+    ActiveKeyWithVersion,
+    Address,
+    Api,
+    DecryptedAddressKey,
+    KeyTransparencyVerify,
+} from '@proton/shared/lib/interfaces';
 import { getSignedKeyListWithDeferredPublish } from '@proton/shared/lib/keys';
-import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
 export const setAddressFlags = async ({
     encryptionDisabled,
@@ -31,20 +37,22 @@ export const setAddressFlags = async ({
 
     const { keys } = addressWithKeys;
 
-    const activeKeys = await getActiveKeys(address, currentSignedKeyList, currentKeys, keys);
-    const newActiveKeys = getNormalizedActiveKeys(
-        address,
-        activeKeys.map((activeKey) => ({
-            ...activeKey,
-            flags: getNewKeyFlags(
-                getNewKeyFlags(
-                    activeKey.flags,
-                    encryptionDisabled ? FlagAction.DISABLE_ENCRYPTION : FlagAction.ENABLE_ENCRYPTION
-                ),
-                expectSignatureDisabled ? FlagAction.DISABLE_EXPECT_SIGNED : FlagAction.ENABLE_EXPECT_SIGNED
+    const activeKeys = await getActiveAddressKeys(address, currentSignedKeyList, currentKeys, keys);
+
+    const setFlags = <V extends ActiveKeyWithVersion>(activeKey: V) => ({
+        ...activeKey,
+        flags: getNewKeyFlags(
+            getNewKeyFlags(
+                activeKey.flags,
+                encryptionDisabled ? FlagAction.DISABLE_ENCRYPTION : FlagAction.ENABLE_ENCRYPTION
             ),
-        }))
-    );
+            expectSignatureDisabled ? FlagAction.DISABLE_EXPECT_SIGNED : FlagAction.ENABLE_EXPECT_SIGNED
+        ),
+    });
+    const newActiveKeys = getNormalizedActiveAddressKeys(address, {
+        v4: activeKeys.v4.map(setFlags),
+        v6: activeKeys.v6.map(setFlags),
+    });
     const [newSignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         newActiveKeys,
         address,

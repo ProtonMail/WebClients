@@ -1,9 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import type { SessionKey } from 'packages/crypto/lib';
-
+import type { SessionKey } from '@proton/crypto';
 import { querySharedURLMetadata, querySharedURLPath } from '@proton/shared/lib/api/drive/sharing';
-import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type { LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
 
 import { linkMetaToEncryptedLink, usePublicSession } from '../../store/_api';

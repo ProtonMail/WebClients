@@ -16,11 +16,12 @@ import type {
     CachedOrganizationKey,
     DecryptedKey,
     KeyGenConfig,
+    KeyGenConfigV6,
     KeyTransparencyVerify,
     UserModel,
 } from '../../interfaces';
 import { storeDeviceRecovery } from '../../recoveryFile/deviceRecovery';
-import { getActiveKeys } from '../getActiveKeys';
+import { getActiveAddressKeys } from '../getActiveKeys';
 import { getHasMigratedAddressKeys } from '../keyMigration';
 import { generateUserKey } from '../userKeys';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './addAddressKeyHelper';
@@ -48,7 +49,7 @@ export const addAddressKeysProcess = async ({
 }: AddAddressKeysProcessArguments) => {
     const hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
 
-    const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
+    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, addressKeys);
 
     if (hasMigratedAddressKeys) {
         return createAddressKeyV2({
@@ -73,7 +74,7 @@ export const addAddressKeysProcess = async ({
 
 interface AddUserKeysProcessArguments {
     api: Api;
-    keyGenConfig?: KeyGenConfig;
+    keyGenConfig?: KeyGenConfig | KeyGenConfigV6;
     user: UserModel;
     userKeys: DecryptedKey[];
     addresses: Address[];

@@ -40,6 +40,13 @@ export interface KeyGenConfig {
     type?: 'ecc' | 'rsa';
     curve?: enums.curve;
     rsaBits?: number;
+    config?: { v6Keys?: false };
+}
+
+export interface KeyGenConfigV6 {
+    // TODO test only, not compatible with all clients
+    type?: 'curve25519'; // TODO 'pqc' once available
+    config: { v6Keys: true };
 }
 
 export type HumanVerificationMethodType =
