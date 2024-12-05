@@ -1,0 +1,17 @@
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(var(--translate-y-from, 10px));
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fade-in-up {
+	animation: fadeInUp 0.4s ease-out;
+	opacity: 0;
+	animation-fill-mode: forwards; /* Reste visible après l'animation */
+}

@@ -350,9 +350,9 @@ const MainContainer = () => {
     }
 
     return (
-        <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
-            <AccountStartupModals />
-            <SubscriptionModalProvider app={app}>
+        <SubscriptionModalProvider app={app}>
+            <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
+                <AccountStartupModals />
                 <Switch>
                     <Route path={anyAccountAppRoute}>
                         <AccountSettingsRouter
@@ -417,8 +417,8 @@ const MainContainer = () => {
                     </Route>
                     {redirect}
                 </Switch>
-            </SubscriptionModalProvider>
-        </PrivateAppContainer>
+            </PrivateAppContainer>
+        </SubscriptionModalProvider>
     );
 };
 

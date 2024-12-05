@@ -19,12 +19,19 @@ interface Props {
 
 // translator: full sentence is: Get notified if your password or other data was leaked from a third-party service. <Learn more>
 const learnMoreLink = (
-    <Href href={getKnowledgeBaseUrl('/dark-web-monitoring')} className="inline-block">{c('Link').t`Learn more`}</Href>
+    <Href
+        key="dark-web-monitoring-learn-more"
+        href={getKnowledgeBaseUrl('/dark-web-monitoring')}
+        className="inline-block"
+    >{c('Link').t`Learn more`}</Href>
 );
 
 const learnMoreLinkBreach = (
-    <Href href={getKnowledgeBaseUrl('/dark-web-monitoring')} className="inline-block color-danger">{c('Link')
-        .t`Learn more`}</Href>
+    <Href
+        key="dark-web-monitoring-learn-more-breach"
+        href={getKnowledgeBaseUrl('/dark-web-monitoring')}
+        className="inline-block color-danger"
+    >{c('Link').t`Learn more`}</Href>
 );
 
 const FreeUserBreachToggle = ({ onToggleBreaches, hasBreach, sample, count }: Props) => {

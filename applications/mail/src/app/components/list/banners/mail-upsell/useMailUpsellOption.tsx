@@ -5,7 +5,12 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { useTheme } from '@proton/components';
-import { MAIL_APP_NAME, PROTON_SENTINEL_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    MAIL_APP_NAME,
+    MAIL_UPSELL_BANNER_LINK_ID_REF_PATH,
+    PROTON_SENTINEL_NAME,
+    VPN_APP_NAME,
+} from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from 'proton-mail/constants';
@@ -22,23 +27,6 @@ export interface MessageOption {
     text: string | ReactNode;
     cta: ReactNode;
     condition?: number;
-}
-
-enum UPSELL_MAIL_BANNER_LINK_ID {
-    SEND_FROM_PM_ADDRESS = 3,
-    GET_MORE_FOLDERS_FILTERS_AND_ADDRESSES = 4,
-    AUTO_REPLY = 5,
-    THIRD_PARTY_CLIENTS = 7,
-    GET_MORE_FEATURES = 9,
-    HOST_EMAILS_FROM_YOUR_DOMAINS = 15,
-    PROTECT_YOUR_BUSINESS = 16,
-    ADD_MORE_ADDRESSES = 17,
-    CONTACT_GROUPS = 18,
-    PRIVACY_FIRST_INTERNET = 19,
-    PRIVACY_FOR_ALL = 20,
-    PREMIUM_FEATURES = 23,
-    LVL_UP_PRIVACY = 24,
-    PROTON_SENTINEL = 25,
 }
 
 const linkClasses = 'text-bold link align-baseline';
@@ -61,7 +49,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 cta: (
                     <MailUpsellOptionCTA
                         url={plansSelection}
-                        optionID={UPSELL_MAIL_BANNER_LINK_ID.SEND_FROM_PM_ADDRESS}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.SEND_FROM_PM_ADDRESS}
                     />
                 ),
             },
@@ -71,14 +59,19 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 cta: (
                     <MailUpsellOptionCTA
                         url={plansSelection}
-                        optionID={UPSELL_MAIL_BANNER_LINK_ID.GET_MORE_FOLDERS_FILTERS_AND_ADDRESSES}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.GET_MORE_FOLDERS_FILTERS_AND_ADDRESSES}
                     />
                 ),
             },
             {
                 id: 4,
                 text: c('Info').t`Upgrade to use auto-reply when you're away.`,
-                cta: <MailUpsellOptionCTA url={plansSelection} optionID={UPSELL_MAIL_BANNER_LINK_ID.AUTO_REPLY} />,
+                cta: (
+                    <MailUpsellOptionCTA
+                        url={plansSelection}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.AUTO_REPLY}
+                    />
+                ),
             },
             {
                 id: 5,
@@ -86,7 +79,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 cta: (
                     <MailUpsellOptionCTA
                         url={plansSelection}
-                        optionID={UPSELL_MAIL_BANNER_LINK_ID.THIRD_PARTY_CLIENTS}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.THIRD_PARTY_CLIENTS}
                     />
                 ),
             },
@@ -94,7 +87,10 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 id: 7,
                 text: c('Info').t`Upgrade to support privacy and get more features.`,
                 cta: (
-                    <MailUpsellOptionCTA url={plansSelection} optionID={UPSELL_MAIL_BANNER_LINK_ID.GET_MORE_FEATURES} />
+                    <MailUpsellOptionCTA
+                        url={plansSelection}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.GET_MORE_FEATURES}
+                    />
                 ),
             },
             {
@@ -121,7 +117,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 cta: (
                     <MailUpsellOptionCTA
                         url={plansSelection}
-                        optionID={UPSELL_MAIL_BANNER_LINK_ID.HOST_EMAILS_FROM_YOUR_DOMAINS}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.HOST_EMAILS_FROM_YOUR_DOMAINS}
                     />
                 ),
             },
@@ -131,7 +127,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 cta: (
                     <MailUpsellOptionCTA
                         url={protonBusiness}
-                        optionID={UPSELL_MAIL_BANNER_LINK_ID.PROTECT_YOUR_BUSINESS}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.PROTECT_YOUR_BUSINESS}
                         callToActionText={callToActionTexts.business}
                     />
                 ),
@@ -142,14 +138,19 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 cta: (
                     <MailUpsellOptionCTA
                         url={plansSelection}
-                        optionID={UPSELL_MAIL_BANNER_LINK_ID.ADD_MORE_ADDRESSES}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.ADD_MORE_ADDRESSES}
                     />
                 ),
             },
             {
                 id: 16,
                 text: c('Info').t`Upgrade to send emails to contact groups easily.`,
-                cta: <MailUpsellOptionCTA url={plansSelection} optionID={UPSELL_MAIL_BANNER_LINK_ID.CONTACT_GROUPS} />,
+                cta: (
+                    <MailUpsellOptionCTA
+                        url={plansSelection}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.CONTACT_GROUPS}
+                    />
+                ),
             },
             {
                 id: 17,
@@ -157,14 +158,19 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 cta: (
                     <MailUpsellOptionCTA
                         url={plansSelection}
-                        optionID={UPSELL_MAIL_BANNER_LINK_ID.PRIVACY_FIRST_INTERNET}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.PRIVACY_FIRST_INTERNET}
                     />
                 ),
             },
             {
                 id: 18,
                 text: c('Info').t`Upgrade to support our mission of privacy for all.`,
-                cta: <MailUpsellOptionCTA url={plansSelection} optionID={UPSELL_MAIL_BANNER_LINK_ID.PRIVACY_FOR_ALL} />,
+                cta: (
+                    <MailUpsellOptionCTA
+                        url={plansSelection}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.PRIVACY_FOR_ALL}
+                    />
+                ),
             },
             {
                 id: 19,
@@ -188,13 +194,21 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 id: 23,
                 text: c('Info').t`Upgrade to unlock premium features.`,
                 cta: (
-                    <MailUpsellOptionCTA url={plansSelection} optionID={UPSELL_MAIL_BANNER_LINK_ID.PREMIUM_FEATURES} />
+                    <MailUpsellOptionCTA
+                        url={plansSelection}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.PREMIUM_FEATURES}
+                    />
                 ),
             },
             {
                 id: 24,
                 text: c('Info').t`Upgrade to level up your privacy.`,
-                cta: <MailUpsellOptionCTA url={plansSelection} optionID={UPSELL_MAIL_BANNER_LINK_ID.LVL_UP_PRIVACY} />,
+                cta: (
+                    <MailUpsellOptionCTA
+                        url={plansSelection}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.LVL_UP_PRIVACY}
+                    />
+                ),
             },
             {
                 id: 25,
@@ -204,7 +218,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 cta: (
                     <MailUpsellOptionCTA
                         url={securityAndPrivacy}
-                        optionID={UPSELL_MAIL_BANNER_LINK_ID.PROTON_SENTINEL}
+                        optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.PROTON_SENTINEL}
                         callToActionText={callToActionTexts.learnMore}
                     />
                 ),

@@ -15,11 +15,19 @@ import MailUpsellButton from '@proton/components/components/upsell/MailUpsellBut
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import { usePostSubscriptionTelemetry } from '@proton/components/containers/payments/subscription/postSubscription/usePostSubscriptionTelemetry';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
-import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { TelemetryMailPostSubscriptionEvents } from '@proton/shared/lib/api/telemetry';
+import {
+    ADDRESS_TYPE,
+    APP_UPSELL_REF_PATH,
+    BRAND_NAME,
+    MAIL_UPSELL_PATHS,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -47,6 +55,7 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
     const { call } = useEventManager();
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
+    const sendTelemetryEvent = usePostSubscriptionTelemetry();
 
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
@@ -104,6 +113,20 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
                 await call();
 
                 setSavingIndex(undefined);
+
+                if (
+                    list.length &&
+                    newList.length &&
+                    list[0].Type === ADDRESS_TYPE.TYPE_PREMIUM &&
+                    newList[0].Type !== ADDRESS_TYPE.TYPE_PREMIUM
+                ) {
+                    void sendTelemetryEvent({
+                        event: TelemetryMailPostSubscriptionEvents.replaced_default_short_domain_address,
+                        dimensions: {
+                            isForCustomDomain: newList[0].Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN ? 'true' : 'false',
+                        },
+                    });
+                }
             } catch (e: any) {
                 setSavingIndex(undefined);
                 setAddresses(sortAddresses(addresses));

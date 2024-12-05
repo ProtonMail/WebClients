@@ -67,7 +67,6 @@ const MailSettingsRouter = ({
                     <PrivateMainAreaLoading />
                 ) : (
                     <PrivateMainSettingsArea config={general}>
-                        <PmMeSection isPMAddressActive={getHasPmMeAddress(addresses)} />
                         <MessagesGeneralSection />
                         <LayoutsSection />
                         <MessagesSection />
@@ -84,6 +83,7 @@ const MailSettingsRouter = ({
             </Route>
             <Route path={getSectionPath(path, identity)}>
                 <PrivateMainSettingsArea config={identity}>
+                    <PmMeSection isPMAddressActive={getHasPmMeAddress(addresses)} />
                     <IdentitySection />
                     <AliasPromotionSection />
                     <AddressesSection isOnlySelf />

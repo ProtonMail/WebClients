@@ -13,6 +13,7 @@ import type { ComposerID } from '../../store/composers/composerTypes';
 import type { MessageState } from '../../store/messages/messagesTypes';
 import type { MessageChange } from './Composer';
 import ComposerExpirationTime from './ComposerExpirationTime';
+import ComposerShortDomainSpotlight from './ComposerShortDomainSpotlight';
 import ComposerAddresses from './addresses/Addresses';
 import SelectSender from './addresses/SelectSender';
 
@@ -59,21 +60,26 @@ const ComposerMeta = forwardRef<HTMLDivElement, Props>(
                 // @ts-ignore
                 inert={isInert ? '' : undefined}
             >
-                <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center w-full">
-                    <Label
-                        htmlFor={`from-${uid}`}
-                        className={clsx(['composer-meta-label sr-only pt-0 text-semibold', disabled && 'placeholder'])}
-                    >
-                        {c('Info').t`From`}
-                    </Label>
-                    <SelectSender
-                        composerID={composerID}
-                        message={message}
-                        disabled={disabled}
-                        onChangeContent={onChangeContent}
-                        addressesBlurRef={addressesBlurRef}
-                    />
-                </div>
+                <ComposerShortDomainSpotlight>
+                    <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center w-full">
+                        <Label
+                            htmlFor={`from-${uid}`}
+                            className={clsx([
+                                'composer-meta-label sr-only pt-0 text-semibold',
+                                disabled && 'placeholder',
+                            ])}
+                        >
+                            {c('Info').t`From`}
+                        </Label>
+                        <SelectSender
+                            composerID={composerID}
+                            message={message}
+                            disabled={disabled}
+                            onChangeContent={onChangeContent}
+                            addressesBlurRef={addressesBlurRef}
+                        />
+                    </div>
+                </ComposerShortDomainSpotlight>
                 <ComposerAddresses
                     message={message}
                     messageSendInfo={messageSendInfo}

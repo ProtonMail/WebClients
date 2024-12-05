@@ -20,10 +20,10 @@ interface UpsellFeatureListProps {
 const UpsellFeatureList = ({
     className,
     features,
-    iconSize = 5,
     hideInfo,
-    plan,
+    iconSize = 5,
     odd = false,
+    plan,
 }: UpsellFeatureListProps) => {
     return (
         <ul className={clsx('m-0 unstyled', odd && 'odd:bg-weak', className)}>

@@ -26,6 +26,7 @@ enum CommonFeatureFlag {
     InboxDesktopWinLinNewAppSwitcher = 'InboxDesktopWinLinNewAppSwitcher',
     DarkWebEmailNotifications = 'DarkWebEmailNotifications',
     InboxNewUpsellModals = 'InboxNewUpsellModals',
+    InboxWebPostSubscriptionFlow = 'InboxWebPostSubscriptionFlow',
     NewCancellationFlowUpsell = 'NewCancellationFlowUpsell',
     ScribeAdminSetting = 'ScribeAdminSetting',
     WalletRbf = 'WalletRbf',

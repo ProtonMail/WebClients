@@ -11,6 +11,7 @@ import {
     useEventManager,
     useModalStateObject,
     useNotifications,
+    useShortDomainAddress,
 } from '@proton/components';
 import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modal/types/IncreasePrivacyUpsellModal';
 import { useFolders, useLabels } from '@proton/mail';
@@ -22,7 +23,6 @@ import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSet
 import { MESSAGE_ACTIONS } from 'proton-mail/constants';
 import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
 import { ComposeTypes } from 'proton-mail/hooks/composer/useCompose';
-import usePremiumAddress from 'proton-mail/hooks/usePremiumAddress';
 import { TipActionType } from 'proton-mail/models/tip';
 import { elements } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -52,7 +52,6 @@ const useTipConfig = ({ actionType }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const onCompose = useOnCompose();
-    const { createPremiumAddress, loadingProtonDomains, authModal } = usePremiumAddress();
     const dispatch = useMailDispatch();
     const mailboxElements = useMailSelector(elements);
     const { sendCTAButtonClickedReport } = useProtonTipsTelemetry();
@@ -63,6 +62,7 @@ const useTipConfig = ({ actionType }: Props) => {
     const increasePrivacyUpsellModal = useModalStateObject();
     const pmMeUpsellModal = useModalStateObject();
     const dwmUpsellModal = useModalStateObject();
+    const { createShortDomainAddress, loadingDependencies: loadingProtonDomains } = useShortDomainAddress();
 
     const renderFolderModals = () => {
         return (
@@ -147,9 +147,15 @@ const useTipConfig = ({ actionType }: Props) => {
     const renderPmMeUpsellModal = () => {
         return (
             <>
-                {authModal}
                 {pmMeUpsellModal.render && (
-                    <PmMeUpsellModal modalProps={pmMeUpsellModal.modalProps} upsellComponent={UPSELL_COMPONENT.TIP} />
+                    <PmMeUpsellModal
+                        modalProps={pmMeUpsellModal.modalProps}
+                        upsellRefOptions={{
+                            app: 'upsell_mail-',
+                            component: 'tip-',
+                            isSettings: false,
+                        }}
+                    />
                 )}
             </>
         );
@@ -205,7 +211,7 @@ const useTipConfig = ({ actionType }: Props) => {
     };
 
     const activateProtonSubdomainAddress = async () => {
-        const Address = await createPremiumAddress();
+        const Address = await createShortDomainAddress({ setDefault: false });
         await call();
         createNotification({
             text: `${Address?.Email}` + c('Success notification').t` is now active`,
