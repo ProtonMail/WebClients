@@ -30,6 +30,8 @@ import type {
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
     PLANS,
+    TransactionState,
+    TransactionType,
 } from './constants';
 
 export interface CreateCardDetailsBackend {
@@ -414,6 +416,24 @@ export interface Invoice {
 export interface InvoiceResponse {
     Code: number;
     Invoices: Invoice[];
+    Total: number;
+}
+
+export interface Transaction {
+    TransactionId: number;
+    ExternalId: string;
+    AccountId: number;
+    CurrencyCode: Currency;
+    Type: TransactionType;
+    Amount: number;
+    State: TransactionState;
+    Gateway: number;
+    CreatedAt: string;
+}
+
+export interface TransactionResponse {
+    Code: number;
+    Transactions: Transaction[];
     Total: number;
 }
 

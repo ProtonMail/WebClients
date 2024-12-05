@@ -271,8 +271,14 @@ export const queryPlans = (params?: QueryPlansParams) => ({
     params,
 });
 
-export const getInvoice = (invoiceID: string, version: PaymentsVersion) => ({
+export const getInvoicePDF = (invoiceID: string, version: PaymentsVersion) => ({
     url: `payments/${version}/invoices/${invoiceID}`,
+    method: 'get',
+    output: 'arrayBuffer',
+});
+
+export const getTransactionPDF = (transactionID: string | number) => ({
+    url: `payments/v5/invoices/TX-${transactionID}`,
     method: 'get',
     output: 'arrayBuffer',
 });
@@ -548,3 +554,15 @@ export type GetSubscriptionResponse = {
 export type GetPaymentMethodsResponse = {
     PaymentMethods: SavedPaymentMethod[];
 };
+
+export interface QueryTransactionsParams {
+    Page: number;
+    PageSize: number;
+    Owner: INVOICE_OWNER;
+}
+
+export const queryTransactions = (params: QueryTransactionsParams) => ({
+    url: `payments/v5/transactions`,
+    method: 'get',
+    params,
+});
