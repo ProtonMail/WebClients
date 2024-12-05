@@ -1,5 +1,4 @@
 import { Notification, Event, app } from "electron";
-import { ALLOWED_PERMISSIONS } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
@@ -7,7 +6,6 @@ import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
 import { initializeUpdateChecks, updateDownloaded } from "./update";
 import { isMac } from "./utils/helpers";
-import { isHostAllowed } from "./utils/urls/urlTests";
 import { urlOverrideError } from "./utils/view/dialogs";
 import { getMainWindow, getWebContentsViewName, viewCreationAppStartup } from "./utils/view/viewManagement";
 import { handleSquirrelEvents } from "./windows/squirrel";
@@ -19,7 +17,7 @@ import { registerLogIPCForwardTransport } from "./utils/log/logIPCForwardTranspo
 import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
 import { checkDefaultProtocols } from "./utils/protocol/default";
 import { initializeSentry } from "./utils/sentry";
-import { appSession } from "./utils/session";
+import { startFeatureCheck, setRequestPermission, extendAppVersionHeader } from "./utils/session";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
 import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 import metrics from "./utils/metrics";
@@ -146,23 +144,7 @@ import metrics from "./utils/metrics";
         mainWindow.show();
     });
 
-    // Security addition, reject all permissions except notifications
-    appSession().setPermissionRequestHandler((webContents, permission, callback) => {
-        try {
-            const { host, protocol } = new URL(webContents.getURL());
-            if (!isHostAllowed(host) || protocol !== "https:") {
-                return callback(false);
-            }
-
-            if (ALLOWED_PERMISSIONS.includes(permission)) {
-                return callback(true);
-            }
-
-            mainLogger.info("Permission request rejected", permission);
-            callback(false);
-        } catch (error) {
-            mainLogger.error("Permission request error", error);
-            callback(false);
-        }
-    });
+    startFeatureCheck();
+    setRequestPermission();
+    extendAppVersionHeader();
 })().catch(captureTopLevelRejection);
