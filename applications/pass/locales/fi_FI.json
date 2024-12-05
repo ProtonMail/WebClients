@@ -555,6 +555,9 @@
       "Unpin item": [
         "Irrota kohde"
       ],
+      "Update": [
+        "Päivitä"
+      ],
       "Update vault": [
         "Päivitä holvi"
       ],
@@ -598,38 +601,9 @@
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
       ]
     },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "elinikäisen pääsyn"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Kaikki premium-ominaisuudet. Kuusi käyttäjää. Yksi helppo tilaus."
-      ],
-      "Limited-stock available!": [
-        "Rajoitetusti saatavilla!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Hyödynnä tarjous"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Maksa kerran, ja saat ${ lifetimeAccessJSX } Pass Plussaan ja SimpleLoginiin. Vain ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Säästä jopa ${ discountJSX } Pass Familyllä. Vain ${ relativePrice }/kuukausi."
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }In työpöytäsovellus"
+        "${ MAIL_APP_NAME }in työpöytäsovellus"
       ]
     },
     "Button": {
@@ -1856,9 +1830,6 @@
       "Unable to copy to clipboard": [
         "Leikepöydälle kopiointi epäonnistui"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Rajattomasti Hide-my-email-aliaksia"
-      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Avaa ${ PASS_SHORT_APP_NAME } biometrisillä tiedoilla"
       ],
@@ -2156,6 +2127,9 @@
       "Contact details": [
         "Yhteystiedot"
       ],
+      "Contacts": [
+        "Yhteystiedot"
+      ],
       "Copy": [
         "Kopioi"
       ],
@@ -2207,8 +2181,14 @@
       "Display": [
         "Ulkoasu"
       ],
+      "Display name": [
+        "Näyttönimi"
+      ],
       "Domain": [
         "Verkkotunnus"
+      ],
+      "Domains": [
+        "Verkkotunnukset"
       ],
       "Don't remind me again": [
         "Älä muistuta uudelleen"
@@ -2975,6 +2955,9 @@
       "Account protection": [
         "Tilin suojaus"
       ],
+      "Actions": [
+        "Toiminnot"
+      ],
       "Auto-lock update": [
         "Muuta automaattilukitusta"
       ],
@@ -2996,8 +2979,14 @@
       "Confirm your email": [
         "Vahvista sähköpostiosoitteesi"
       ],
+      "Contacts": [
+        "Yhteystiedot"
+      ],
       "Create a vault": [
         "Luo holvi"
+      ],
+      "Create contact": [
+        "Luo yhteystieto"
       ],
       "Create PIN code": [
         "Luo PIN-koodi"
@@ -3222,6 +3211,9 @@
       ],
       "Share with": [
         "Jaa henkilöille"
+      ],
+      "Status": [
+        "Tila"
       ],
       "Stay safer online": [
         "Suojaudu paremmin verkossa"
