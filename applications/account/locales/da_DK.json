@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -805,11 +805,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "Refresh the page": [
-        "Opdater siden"
-      ],
       "refresh the page": [
         "opdater siden"
+      ],
+      "Refresh the page": [
+        "Opdater siden"
       ],
       "Reject": [
         "Afvis"
@@ -1593,11 +1593,6 @@
         "Vælg dit årsafslutnings-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagerplads (2x mere end noget andet abonnement)"
@@ -1619,6 +1614,11 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
       ]
     },
     "bf2023: Offers": {
@@ -1749,11 +1749,6 @@
     "BF2024: Info": {
       "Most popular": [
         "Mest populær"
-      ]
-    },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Begrænset lager!"
       ]
     },
     "BF2024: Offers": {
@@ -2134,6 +2129,9 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagerplads"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } e-mail lagring"
       ],
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
@@ -7077,11 +7075,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
@@ -9325,7 +9323,7 @@
         "Gå til Alle mails"
       ],
       "Go to Archive": [
-        "Gå til Arkiv"
+        "Gå til arkiv"
       ],
       "Go to Drafts": [
         "Gå til Kladder"
@@ -9382,7 +9380,7 @@
         "Flyt til højre / udvid"
       ],
       "Move to Archive": [
-        "Flyt til Arkiv"
+        "Flyt til arkiv"
       ],
       "Move to Inbox": [
         "Flyt til indbakke"
@@ -10156,7 +10154,7 @@
         "Flyt til"
       ],
       "Move to Archive": [
-        "Flyt til Arkiv"
+        "Flyt til arkiv"
       ],
       "Move to Inbox": [
         "Flyt til Indbakke"
@@ -11354,29 +11352,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Fra ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsæt med Free"
@@ -11404,6 +11379,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Fra ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12085,14 +12083,6 @@
         "Dit valgte abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -12111,6 +12101,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås op for premium-funktioner ved at opgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {
@@ -12712,7 +12710,7 @@
         "Føj til eksisterende gruppe"
       ],
       "Archive": [
-        "Arkiv"
+        "Arkivér"
       ],
       "Ask each time": [
         "Spørg hver gang"
@@ -15373,6 +15371,9 @@
       "Extra storage and users": [
         "Ekstra lagerplads og brugere"
       ],
+      "Folders, labels, and custom filters": [
+        "Mapper, etiketter og brugerdefinerede filtre"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -15384,6 +15385,12 @@
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Sådan fik vores kundeafdeling vores VPN-app direkte i hænderne på folk."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Sådan kæmpede vi tilbage, da ${ BRAND_NAME } blev blokeret i en aggressiv kampagne."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Sådan støttede vi lokale aktivister, da privatliv og ytringsfriheden blev truet i Hong Kong."
       ],
       "Invited members will be removed from your organization": [
         "Inviterede medlemmer vil blive fjernet fra din organisation"
@@ -15456,6 +15463,9 @@
       ],
       "Unlimited privacy for two": [
         "Ubegrænset privatliv for to"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Brugerabonnementer er ${ BRAND_NAME }s eneste indtægt. Din støtte holder os uafhængige, fremmer vores mission for online privatliv og hjælper aktivister og organisationer, der kæmper for frihed."
       ],
       "Users won’t be able to manage their calendars": [
         "Brugerne vil ikke kunne håndtere deres kalendere"
@@ -16182,11 +16192,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"

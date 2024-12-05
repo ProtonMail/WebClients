@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -170,7 +170,7 @@
         "Aplicar às mensagens existentes"
       ],
       "Attach screenshot(s)": [
-        "Anexar capturas de ecrã"
+        "Anexar captura(s) de ecrã"
       ],
       "Authenticate": [
         "Autenticar"
@@ -416,7 +416,7 @@
         "Não mostrar novamente"
       ],
       "Done": [
-        "Terminado"
+        "Feito"
       ],
       "Downgrade": [
         "Optar por um plano inferior"
@@ -808,11 +808,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar a página"
-      ],
       "refresh the page": [
         "actualizar a página"
+      ],
+      "Refresh the page": [
+        "Actualizar a página"
       ],
       "Reject": [
         "Rejeitar"
@@ -1154,7 +1154,7 @@
         "Actualizar agora"
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Melhorar para ${ MAIL_SHORT_APP_NAME } Plus"
+        "Atualize para o ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Melhore para Business"
@@ -1671,11 +1671,6 @@
     "BF2024: Info": {
       "Most popular": [
         "Mais populares"
-      ]
-    },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Estoque limitado!"
       ]
     },
     "BF2024: Offers": {
@@ -6586,11 +6581,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimine quaisquer outros registos MX ou certifique-se que a prioridade do ${ MAIL_APP_NAME } é o número mais baixo."
@@ -7953,11 +7948,11 @@
       "User activated": [
         "O utilizador foi ativado."
       ],
-      "username": [
-        "nome de utilizador"
-      ],
       "Username": [
         "Nome de utilizador"
+      ],
+      "username": [
+        "nome de utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -8651,7 +8646,7 @@
         "Mover para spam"
       ],
       "Move to Trash": [
-        "Mover para a lixeira"
+        "Mover para o Lixo"
       ],
       "Move to...": [
         "Mover para..."
@@ -8903,7 +8898,7 @@
         "E"
       ],
       "Anderson": [
-        "Ferreira"
+        "Anderson"
       ],
       "ANY": [
         "QUALQUER"
@@ -9653,7 +9648,7 @@
         "Então"
       ],
       "Thomas": [
-        "Andrea"
+        "Tomás"
       ],
       "Time format": [
         "Formato da hora"
@@ -10491,23 +10486,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -10535,6 +10513,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -10657,7 +10652,7 @@
         "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Auto-delete spam and trashed messages": [
-        "Eliminar mensagens de spam e lixeira automaticamente"
+        "Eliminar mensagens de spam e lixo automaticamente"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -10814,7 +10809,7 @@
         "Apoio prioritário e chat em direto"
       ],
       "Proofread and refine your emails": [
-        "Revise e refine seus e-mails"
+        "Revise e refine os seus e-mails"
       ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo ao mesmo tempo",
@@ -11097,14 +11092,6 @@
         "O seu plano selecionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Apagar a conta?"
@@ -11123,6 +11110,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -14343,11 +14338,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -14743,7 +14738,7 @@
         "Obter as aplicações"
       ],
       "Get Zooming faster": [
-        "Obtenha Zoom mais rápido"
+        "Obtenha o Zoom mais rápido"
       ],
       "Gift": [
         "Presente"
