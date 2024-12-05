@@ -585,6 +585,9 @@
       "Show advanced PGP settings": [
         "Mostra la configuració avançada del PGP"
       ],
+      "Show options": [
+        "Mostra opcions"
+      ],
       "Sign out": [
         "Tanca la sessió"
       ],
@@ -1092,6 +1095,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "No s'han pogut modificar les preferències de l'adreça de correu electrònic."
+      ],
+      "Continue": [
+        "Continua"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
       ],
@@ -3849,6 +3858,9 @@
       "Additional options": [
         "Opcions addicionals"
       ],
+      "Address copied to clipboard": [
+        "S'ha copiat l'adreça al porta-retalls."
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
       ],
@@ -4012,6 +4024,9 @@
       ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "default email address": [
+        "adreça de correu electrònic per defecte"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "S'ha validat la signatura digital. El fitxer va ser carregat de manera segura per ${ emailAddress }."
@@ -4524,6 +4539,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
+      ],
+      "Setting up your new address...": [
+        "S'està configurant la vostra nova adreça..."
       ],
       "Settings update failed": [
         "No s'han pogut actualitzar les preferències."
@@ -8884,6 +8902,9 @@
       "Untitled document ${ date }": [
         "Document sense títol ${ date }"
       ],
+      "Upgrade complete!": [
+        "S'ha millorat el vostre pla."
+      ],
       "Uploading a large file or folder": [
         "Càrrega d'un fitxer o carpeta gran"
       ],
@@ -9145,6 +9166,9 @@
       ],
       "Missing alias suffix": [
         "Falta el sufix de l'àlies"
+      ],
+      "Name is required": [
+        "Es requereix un nom."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Només es permeten caràcters alfanumèrics, punts, guions i guions baixos"
