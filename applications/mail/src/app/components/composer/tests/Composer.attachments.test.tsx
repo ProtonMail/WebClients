@@ -47,6 +47,7 @@ const file = new File([], fileName, { type: fileType });
 const attachmentData = { ID: 'AttachmentID', Name: fileName, MIMEType: fileType };
 
 const composerID = 'composer-test-id';
+const conversationID = 'conversation-test-id';
 
 const setup = async (MIMEType = MIME_TYPES.PLAINTEXT) => {
     const { attachment, sessionKey: generatedSessionKey } = await createAttachment(
@@ -73,7 +74,12 @@ const setup = async (MIMEType = MIME_TYPES.PLAINTEXT) => {
 
     const message = getMessage({
         localID: ID,
-        data: { AddressID: address1.ID, MIMEType, Sender: { Address: address1.Email, Name: address1.ID } },
+        data: {
+            AddressID: address1.ID,
+            ConversationID: conversationID,
+            MIMEType,
+            Sender: { Address: address1.Email, Name: address1.ID },
+        },
         messageDocument: { plainText: 'test', document: createDocument('hello') },
     });
 
