@@ -1,19 +1,30 @@
 import { DEFAULT_TIMEOUT } from '../constants';
 import window from '../window';
 import { createOfflineError, createTimeoutError } from './ApiError';
-import { checkStatus, createUrl, serializeData } from './helpers';
+import { createUrl } from './helpers';
+import type { FetchConfig } from './interface';
+import { serializeData } from './serialize';
+import { checkStatus } from './status';
 
-const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT, ...rest }) => {
+interface FetchHelperConfig extends Omit<FetchConfig, 'data' | 'input'> {}
+
+const fetchHelper = ({
+    url: urlString,
+    params,
+    signal,
+    timeout = DEFAULT_TIMEOUT,
+    ...rest
+}: FetchHelperConfig): Promise<Response> => {
     const abortController = new AbortController();
     let isTimeout = false;
 
-    const config = {
+    const config: RequestInit = {
         mode: 'cors',
         credentials: 'include',
         redirect: 'follow',
         signal: abortController.signal,
         ...rest,
-    };
+    } as const;
 
     const url = createUrl(urlString, params, window.location.origin);
 
@@ -57,7 +68,7 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
         });
 };
 
-export default ({ data, headers, input = 'json', ...config }) => {
+export default ({ data, headers, input = 'json', ...config }: FetchConfig) => {
     const { headers: dataHeaders, body } = serializeData(data, input);
 
     return fetchHelper({
