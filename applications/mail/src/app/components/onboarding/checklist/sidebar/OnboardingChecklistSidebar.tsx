@@ -7,14 +7,12 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import {
     CHECKLIST_ITEMS_TO_COMPLETE,
-    type OnboardingChecklistContext,
     useGetStartedChecklist,
 } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import OnboardingChecklistModalsProvider from '../OnboardingChecklistModalProvider';
 import useOnboardingChecklist from '../useOnboardingChecklist';
-import { getOnboardingChecklistCompletionState } from './OnboardingChecklistSidebar.helpers';
 import OnboardingChecklistSidebarHeader from './components/OnboardingChecklistSidebarHeader';
 import OnboardingChecklistSidebarList from './components/OnboardingChecklistSidebarList';
 
@@ -39,18 +37,17 @@ const InfoBloc = ({ remainingDaysCount }: { remainingDaysCount: number }) => {
     );
 };
 
-const OnboardingChecklistSidebar = ({
-    items,
-    expiresAt,
-    createdAt,
-    changeChecklistDisplay,
-    isChecklistFinished,
-}: OnboardingChecklistContext) => {
+const OnboardingChecklistSidebar = () => {
+    const {
+        items,
+        changeChecklistDisplay,
+        isChecklistFinished,
+        hasExpired: hasReachedLimit,
+        daysBeforeExpire: remainingDaysCount,
+    } = useGetStartedChecklist();
     const [user] = useUser();
     const [isOpened, toggleChecklist] = useLocalState(true, `sidebar-checklist-opened-${user.ID}`);
     const [sendOnboardingTelemetry] = useMailOnboardingTelemetry();
-
-    const { remainingDaysCount, hasReachedLimit } = getOnboardingChecklistCompletionState(createdAt, expiresAt);
 
     // Displays reward modal when items are completed
     useOnboardingChecklist();
@@ -89,19 +86,9 @@ const OnboardingChecklistSidebar = ({
 };
 
 const OnboardingChecklistSidebarWrapper = () => {
-    const checklistContext = useGetStartedChecklist();
-
-    if (
-        checklistContext.displayState === CHECKLIST_DISPLAY_TYPE.HIDDEN ||
-        // To prevent old users from seeing the checklist again
-        checklistContext.createdAt < new Date('2024-10-20')
-    ) {
-        return null;
-    }
-
     return (
         <OnboardingChecklistModalsProvider>
-            <OnboardingChecklistSidebar {...checklistContext} />
+            <OnboardingChecklistSidebar />
         </OnboardingChecklistModalsProvider>
     );
 };

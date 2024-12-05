@@ -421,6 +421,7 @@ describe('Sidebar checklist display', () => {
 
     it('Should display the checklist if state is reduced', async () => {
         mockedUseGetStartedChecklist.mockReturnValue({
+            createdAt: new Date(),
             expiresAt: addDays(new Date(), 10),
             canDisplayChecklist: true,
             displayState: CHECKLIST_DISPLAY_TYPE.REDUCED,
