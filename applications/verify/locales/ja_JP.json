@@ -988,7 +988,7 @@
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your own password (as organization admin).": [
-        "パスワード（管理員のもの）を入力してください"
+        "自分(組織管理者として)のパスワードを入力してください。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
@@ -1015,7 +1015,7 @@
         "セッションがタイムアウトしました"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
+        "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
       ],
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
@@ -1024,7 +1024,7 @@
         "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
+        "新しい認証コードを受け取るか、他の検証方法を使用しますか？"
       ],
       "Would you like to receive a new verification code?": [
         "新しい認証コードを受け取りますか?"
