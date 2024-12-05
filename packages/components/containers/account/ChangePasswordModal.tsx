@@ -45,6 +45,7 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import GenericError from '../error/GenericError';
+import PasswordStrengthIndicator, { usePasswordStrengthIndicator } from './PasswordStrengthIndicator';
 import { handleChangeLoginPassword } from './changePasswordHelper';
 
 export enum MODES {
@@ -114,6 +115,7 @@ const ChangePasswordModal = ({
     const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
+    const passwordStrengthIndicator = usePasswordStrengthIndicator();
     const { validator, onFormSubmit, reset } = useFormErrors();
 
     const disable2FA = signedInRecoveryFlow;
@@ -581,6 +583,11 @@ const ChangePasswordModal = ({
                         requiredValidator(inputs.newPassword),
                         passwordLengthValidator(inputs.newPassword),
                     ])}
+                    assistiveText={
+                        passwordStrengthIndicator.supported && (
+                            <PasswordStrengthIndicator password={inputs.newPassword} />
+                        )
+                    }
                     as={PasswordInputTwo}
                     autoFocus
                     autoComplete="new-password"

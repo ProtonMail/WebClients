@@ -41,3 +41,7 @@ export { default as VerticalSteps } from './VerticalSteps/VerticalSteps';
 export type { VerticalStepsProps } from './VerticalSteps/VerticalSteps';
 export { default as Vr } from './Vr/Vr';
 export type { VrProps } from './Vr/Vr';
+export {
+    default as PasswordStrengthIndicator,
+    type PasswordScore,
+} from './PasswordStrengthIndicator/PasswordStrengthIndicator';
