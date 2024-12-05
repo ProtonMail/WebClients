@@ -42,8 +42,6 @@ const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetC
                 getCalendarEventDecryptionKeys({ calendarEvent: Event, getAddressKeys, getCalendarKeys }),
                 getAuthorPublicKeysMap({
                     event: Event,
-                    addresses,
-                    getAddressKeys,
                     getVerificationPreferences,
                     contactEmailsMap,
                 }),

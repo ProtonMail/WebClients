@@ -1,7 +1,7 @@
 import type { ActiveAddressKeyPayload } from '../api/keys';
 import { AddressActiveStatus, updateAddressActiveKeysRoute } from '../api/keys';
-import type { Address, AddressKey, Api, DecryptedKey, KeyTransparencyVerify } from '../interfaces';
-import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
+import type { ActiveKey, Address, AddressKey, Api, DecryptedKey, KeyTransparencyVerify } from '../interfaces';
+import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { getInactiveKeys } from './getInactiveKeys';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 
@@ -45,14 +45,17 @@ export const updateActiveKeys = async (
     // Only consider migrated keys as active.
     const migratedDecryptedKeys = filterMigratedDecryptedKeys(decryptedKeys, address.Keys);
     const [activeKeys, inactiveKeys] = await Promise.all([
-        getActiveKeys(address, address.SignedKeyList, address.Keys, migratedDecryptedKeys),
+        getActiveAddressKeys(address, address.SignedKeyList, address.Keys, migratedDecryptedKeys),
         getInactiveKeys(address.Keys, migratedDecryptedKeys),
     ]);
-    const normalizedActiveKeys = getNormalizedActiveKeys(address, activeKeys);
+    const normalizedActiveKeysByVersion = getNormalizedActiveAddressKeys(address, activeKeys);
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
-        normalizedActiveKeys,
+        normalizedActiveKeysByVersion,
         address,
         keyTransparencyVerify
+    );
+    const normalizedActiveKeys = (normalizedActiveKeysByVersion.v4 as ActiveKey[]).concat(
+        normalizedActiveKeysByVersion.v6
     );
     const activeKeysPayload = normalizedActiveKeys.map<ActiveAddressKeyPayload>(({ ID }) => {
         return {

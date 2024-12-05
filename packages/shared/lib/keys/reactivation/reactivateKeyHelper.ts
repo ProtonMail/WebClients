@@ -3,6 +3,7 @@ import { CryptoProxy } from '@proton/crypto';
 import unique from '@proton/utils/unique';
 
 import type {
+    ActiveKeyWithVersion,
     DecryptedKey,
     Key,
     KeyPair,
@@ -11,7 +12,7 @@ import type {
     Address as tsAddress,
     User as tsUser,
 } from '../../interfaces';
-import { getActiveKeys, getNormalizedActiveKeys, getReactivatedKeyFlag } from '../getActiveKeys';
+import { getActiveAddressKeys, getNormalizedActiveAddressKeys, getReactivatedKeyFlag } from '../getActiveKeys';
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import type { OnSKLPublishSuccess } from '../signedKeyList';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
@@ -79,19 +80,25 @@ export const getReactivatedAddressKeys = async ({
     }
 
     const oldAddressKeysMap = new Map<string, Key>(address.Keys.map((Key) => [Key.ID, Key]));
-    const newActiveKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, newDecryptedAddressKeys);
-    const newActiveKeysFormatted = getNormalizedActiveKeys(
+    const newActiveKeys = await getActiveAddressKeys(
         address,
-        newActiveKeys.map((activeKey) => {
-            if (!reactivatedKeysSet.has(activeKey.ID)) {
-                return activeKey;
-            }
-            return {
-                ...activeKey,
-                flags: getReactivatedKeyFlag(address, oldAddressKeysMap.get(activeKey.ID)?.Flags),
-            };
-        })
+        address.SignedKeyList,
+        address.Keys,
+        newDecryptedAddressKeys
     );
+    const setReactivateKeyFlag = <V extends ActiveKeyWithVersion>(activeKey: V) => {
+        if (!reactivatedKeysSet.has(activeKey.ID)) {
+            return activeKey;
+        }
+        return {
+            ...activeKey,
+            flags: getReactivatedKeyFlag(address, oldAddressKeysMap.get(activeKey.ID)?.Flags),
+        };
+    };
+    const newActiveKeysFormatted = getNormalizedActiveAddressKeys(address, {
+        v4: newActiveKeys.v4.map(setReactivateKeyFlag),
+        v6: newActiveKeys.v6.map(setReactivateKeyFlag),
+    });
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         newActiveKeysFormatted,
         address,

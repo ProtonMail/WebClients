@@ -4,7 +4,7 @@ import { activateKeyRoute, activateKeyRouteV2 } from '../api/keys';
 import { MEMBER_PRIVATE } from '../constants';
 import type { Address, Api, DecryptedKey, KeyTransparencyVerify, UserModel as tsUserModel } from '../interfaces';
 import { generateAddressKeyTokens } from './addressKeys';
-import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
+import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { getPrimaryKey } from './getPrimaryKey';
 import { getHasMigratedAddressKeys } from './keyMigration';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
@@ -45,9 +45,9 @@ export const activateMemberAddressKeys = async ({
         throw new Error('Password required to generate keys');
     }
 
-    const activeKeys = getNormalizedActiveKeys(
+    const activeKeys = getNormalizedActiveAddressKeys(
         address,
-        await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys)
+        await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, addressKeys)
     );
 
     const primaryUserKey = getPrimaryKey(userKeys)?.privateKey;

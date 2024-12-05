@@ -156,6 +156,7 @@ export const handleSetupSSOUserKeys = async ({
     const { onSKLPublishSuccess, ...resetPayload } = await getResetAddressesKeysV2({
         addresses,
         passphrase,
+        supportV6Keys: false, // pqc: TODO (future)
         preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
     });
     if (!resetPayload.privateKeys || !onSKLPublishSuccess) {

@@ -1,13 +1,18 @@
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PrivateKeyReferenceV4 } from '@proton/crypto';
 import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
 
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../lib/constants';
-import type { Key } from '../../lib/interfaces';
+import type { Key, KeyGenConfig, KeyGenConfigV6 } from '../../lib/interfaces';
 import { generateAddressKey, generateAddressKeyTokens, generateUserKey } from '../../lib/keys';
 
-const keyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
+const defaultKeyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
 
-export const getUserKey = async (ID: string, keyPassword: string, version = 3) => {
+export const getUserKey = async (
+    ID: string,
+    keyPassword: string,
+    version = 3,
+    keyGenConfig: KeyGenConfig | KeyGenConfigV6 = defaultKeyGenConfig
+) => {
     const { privateKey, privateKeyArmored } = await generateUserKey({
         passphrase: keyPassword,
         keyGenConfig,
@@ -26,10 +31,10 @@ export const getUserKey = async (ID: string, keyPassword: string, version = 3) =
     };
 };
 
-export const getAddressKeyHelper = async (
+export const getAddressKeyHelper = async <V extends PrivateKeyReference>(
     ID: string,
     userKey: PrivateKeyReference,
-    privateKey: PrivateKeyReference,
+    privateKey: V,
     version = 3
 ) => {
     const result = await generateAddressKeyTokens(userKey);
@@ -54,8 +59,14 @@ export const getAddressKeyHelper = async (
     };
 };
 
-export const getAddressKey = async (ID: string, userKey: PrivateKeyReference, email: string, version?: number) => {
-    const key = await generateAddressKey({
+export const getAddressKey = async <C extends KeyGenConfig | KeyGenConfigV6 = KeyGenConfig>(
+    ID: string,
+    userKey: PrivateKeyReference,
+    email: string,
+    version?: number,
+    keyGenConfig: C = defaultKeyGenConfig as C
+) => {
+    const key = await generateAddressKey<C>({
         email,
         passphrase: 'tmp',
         keyGenConfig,
@@ -77,7 +88,7 @@ export const getAddressKeyForE2EEForwarding = async (
         userIDsForForwardeeKey: { email },
         passphrase: '123',
     });
-    const forwardeeKey = await CryptoProxy.importPrivateKey({ armoredKey, passphrase: '123' });
+    const forwardeeKey = await CryptoProxy.importPrivateKey({ armoredKey, passphrase: '123' }) as PrivateKeyReferenceV4;
     return getAddressKeyHelper(ID, userKey, forwardeeKey, version);
 };
 
@@ -85,7 +96,7 @@ export const getLegacyAddressKey = async (ID: string, password: string, email: s
     const key = await generateAddressKey({
         email,
         passphrase: password,
-        keyGenConfig,
+        keyGenConfig: defaultKeyGenConfig,
     });
     return {
         key: {

@@ -13,7 +13,7 @@ import type { ApiKeysConfig } from '@proton/shared/lib/interfaces';
 import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
 import type { GetVerificationPreferences } from '@proton/shared/lib/interfaces/hooks/GetVerificationPreferences';
 import { splitKeys } from '@proton/shared/lib/keys';
-import { getActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import { getActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
 
 import useApi from './useApi';
@@ -55,12 +55,13 @@ const useGetVerificationPreferences = () => {
                 .find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalEmail);
             if (selfAddress) {
                 const selfAddressKeys = await getAddressKeys(selfAddress.ID);
-                const activeAddressKeys = await getActiveKeys(
+                const activeAddressKeysByVersion = await getActiveAddressKeys(
                     selfAddress,
                     selfAddress.SignedKeyList,
                     selfAddress.Keys,
                     selfAddressKeys
                 );
+                const activeAddressKeys = [...activeAddressKeysByVersion.v6, ...activeAddressKeysByVersion.v4];
                 const activePublicKeys = activeAddressKeys.map(({ publicKey }) => publicKey);
                 const compromisedFingerprints = new Set(
                     activeAddressKeys

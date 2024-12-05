@@ -13,7 +13,7 @@ import {
     revokeKey as openpgp_revokeKey,
 } from 'pmcrypto/lib/openpgp';
 
-import type { CryptoApiInterface, SessionKey } from '../../lib';
+import type { CryptoApiInterface, PrivateKeyReferenceV4, PrivateKeyReferenceV6, SessionKey } from '../../lib';
 import { ARGON2_PARAMS, S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
 import {
     arrayToHexString,
@@ -1297,6 +1297,21 @@ siLL+xMJ+Hy4AhsMAAAKagEA4Knj6S6nG24nuXfqkkytPlFTHwzurjv3+qqXwWL6
     });
 
     describe('Key management API', () => {
+        it('version type inference of generated key', async () => {
+            const privateKeyRefV4: PrivateKeyReferenceV4 = await CryptoApiImplementation.generateKey({
+                userIDs: { name: 'name', email: 'email@test.com' },
+            });
+            expect(privateKeyRefV4.isPrivateKeyV4()).to.be.true;
+            const privateKeyRefV6: PrivateKeyReferenceV6 = await CryptoApiImplementation.generateKey({
+                userIDs: { name: 'name', email: 'email@test.com' },
+                config: { v6Keys: true },
+            });
+            expect(privateKeyRefV6.isPrivateKeyV6()).to.be.true;
+            // @ts-expect-error cannot assign a v6 key reference to a v4 one
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            const keyVersionGuard: PrivateKeyReferenceV4 = privateKeyRefV6;
+        });
+
         it('can export a generated key', async () => {
             const privateKeyRef = await CryptoApiImplementation.generateKey({
                 userIDs: { name: 'name', email: 'email@test.com' },
@@ -1449,7 +1464,6 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
                 checkCompatibility: false,
             });
             expect(importedKeyRef.isPrivate()).to.be.false;
-            expect(importedKeyRef._getCompatibilityError()?.message).to.match(expectedError);
 
             await expect(
                 CryptoApiImplementation.importPublicKey({
@@ -1460,16 +1474,19 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
         });
 
         it('compatibility - rejects importing a v6 public key', async () => {
-            // Until we integrate OpenPGP.js, parsing the key will fail, regardless of `checkCompatibility`.
-            // This test is mostly a placeholder to be updated once OpenPGP.js is updated.
             const importedKeyRef = await CryptoApiImplementation.importPublicKey({
                 armoredKey: v6KeyCurve25519,
                 checkCompatibility: false,
             });
             expect(importedKeyRef.isPrivate()).to.be.false;
-            expect(importedKeyRef._getCompatibilityError()?.message).to.match(
-                /Version 6 keys are currently not supported/
-            );
+            expect(importedKeyRef.getVersion()).to.equal(6);
+
+            await expect(
+                CryptoApiImplementation.importPublicKey({
+                    armoredKey: v6KeyCurve25519,
+                    checkCompatibility: true,
+                })
+            ).to.be.rejectedWith(/Version 6 keys are currently not supported./);
 
             await expect(
                 CryptoApiImplementation.importPublicKey({ armoredKey: v6KeyCurve25519, checkCompatibility: true })
