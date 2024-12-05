@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -23,6 +23,13 @@ export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'>
 const SubSettingsSection = ({ id, observer, title, beta, children, className, ...rest }: SubSettingsSectionProps) => {
     const ref = useRef<HTMLDivElement>(null);
     const { createNotification } = useNotifications();
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash === `#${id}`) {
+            ref.current?.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, []);
 
     useEffect(() => {
         const el = ref.current;
