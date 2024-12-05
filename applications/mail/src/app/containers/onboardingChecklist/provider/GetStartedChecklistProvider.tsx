@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';
 
-import { fromUnixTime, isBefore } from 'date-fns';
+import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import { useApi, useEventManager } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
@@ -31,8 +31,8 @@ export const CHECKLIST_ITEMS_TO_COMPLETE = [
 ];
 
 export interface OnboardingChecklistContext {
-    expiresAt: Date;
-    createdAt: Date;
+    expiresAt: Date | undefined;
+    createdAt: Date | undefined;
     loading: boolean;
     isUserPaid: boolean;
     isChecklistFinished: boolean;
@@ -42,9 +42,23 @@ export interface OnboardingChecklistContext {
     changeChecklistDisplay: (display: CHECKLIST_DISPLAY_TYPE) => void;
     markItemsAsDone: (item: ChecklistKeyType) => void;
     canDisplayChecklist: boolean;
+    /** Number of days before expiration */
+    daysBeforeExpire: number;
+    /** Has expired  */
+    hasExpired: boolean;
 }
 
-const GetStartedChecklistContext = createContext<OnboardingChecklistContext>({} as OnboardingChecklistContext);
+const GetStartedChecklistContext = createContext<OnboardingChecklistContext | undefined>(undefined);
+
+export const useGetStartedChecklist = () => {
+    const context = useContext(GetStartedChecklistContext);
+
+    if (context === undefined) {
+        throw new Error('useGetStartedChecklist must be used within a GetStartedChecklistProvider');
+    }
+
+    return context;
+};
 
 const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const api = useApi();
@@ -71,6 +85,29 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const isUserPaid = paidUserChecklist.Code === 1000;
     const items = isUserPaid ? paidUserChecklist.Items : freeUserChecklist.Items;
     const isChecklistFinished = CHECKLIST_ITEMS_TO_COMPLETE?.every((item) => items?.includes(item));
+
+    const createdAt: Date | undefined = (() => {
+        const timestamp = isUserPaid ? paidUserChecklist.CreatedAt : freeUserChecklist.CreatedAt;
+        // Ensure timestamp is a valid number
+        return !isNaN(Number(timestamp)) ? fromUnixTime(timestamp) : undefined;
+    })();
+    const expiresAt: Date | undefined = (() => {
+        const timestamp = isUserPaid ? paidUserChecklist.ExpiresAt : freeUserChecklist.ExpiresAt;
+        return !isNaN(Number(timestamp)) ? fromUnixTime(timestamp) : undefined;
+    })();
+    // // To prevent old users from seeing the checklist again
+    const canDisplayChecklist: boolean = !!expiresAt && !!createdAt && createdAt > new Date('2024-10-20');
+
+    const { daysBeforeExpire, hasExpired } = (() => {
+        if (!expiresAt || !createdAt) {
+            return { daysBeforeExpire: 0, hasExpired: false };
+        }
+        const hasExpired = expiresAt < new Date();
+        return {
+            daysBeforeExpire: hasExpired ? 0 : differenceInDays(expiresAt, createdAt),
+            hasExpired,
+        };
+    })();
 
     useEffect(() => {
         if (submitting) {
@@ -128,28 +165,23 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         });
     };
 
-    const getExpiredAt = (): Date =>
-        isUserPaid ? fromUnixTime(paidUserChecklist.ExpiresAt) : fromUnixTime(freeUserChecklist.ExpiresAt);
-
-    const canDisplayChecklist = isBefore(new Date(), getExpiredAt());
-
     const context: OnboardingChecklistContext = {
-        isUserPaid,
-        loading: isLoading,
-        isChecklistFinished,
-        changeChecklistDisplay,
-        userWasRewarded: isUserPaid ? paidUserChecklist.UserWasRewarded : freeUserChecklist.UserWasRewarded,
-        items: new Set([...doneItems]),
-        displayState,
-        expiresAt: getExpiredAt(),
-        createdAt: isUserPaid ? fromUnixTime(paidUserChecklist.CreatedAt) : fromUnixTime(freeUserChecklist.CreatedAt),
-        markItemsAsDone,
         canDisplayChecklist,
+        changeChecklistDisplay,
+        createdAt,
+        daysBeforeExpire,
+        displayState,
+        expiresAt,
+        hasExpired,
+        isChecklistFinished,
+        isUserPaid,
+        items: new Set([...doneItems]),
+        loading: isLoading,
+        markItemsAsDone,
+        userWasRewarded: isUserPaid ? paidUserChecklist.UserWasRewarded : freeUserChecklist.UserWasRewarded,
     };
 
     return <GetStartedChecklistContext.Provider value={context}>{children}</GetStartedChecklistContext.Provider>;
 };
-
-export const useGetStartedChecklist = () => useContext(GetStartedChecklistContext) as OnboardingChecklistContext;
 
 export default GetStartedChecklistProvider;
