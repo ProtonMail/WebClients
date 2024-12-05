@@ -13,8 +13,8 @@ import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';
 
 function ActionsFilterToolbar() {
     const [user] = useUser();
-    const [filterModalProps, setFilterModalOpen] = useModalState();
-    const [advancedFilterModalProps, setAdvancedFilterModalOpen] = useModalState();
+    const [filterModalProps, setFilterModalOpen, renderFilterModal] = useModalState();
+    const [advancedFilterModalProps, setAdvancedFilterModalOpen, renderAdvancedFilterModal] = useModalState();
     const [filters = []] = useFilters();
 
     const canCreateFilters = !hasReachedFiltersLimit(user, filters);
@@ -44,8 +44,8 @@ function ActionsFilterToolbar() {
                     />
                 )}
             </div>
-            <FilterModal {...filterModalProps} />
-            <AdvancedFilterModal {...advancedFilterModalProps} />
+            {renderFilterModal && <FilterModal {...filterModalProps} />}
+            {renderAdvancedFilterModal && <AdvancedFilterModal {...advancedFilterModalProps} />}
 
             {renderUpsellModal && <FiltersUpsellModal modalProps={upsellModalProps} isSettings />}
         </>
