@@ -9,9 +9,8 @@ import { isDelinquent } from '@proton/shared/lib/user/helpers';
 
 import { type BillingAddress } from './billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
-import { type ADDON_NAMES, PLANS } from './constants';
-import { MethodStorage, PAYMENT_METHOD_TYPES } from './constants';
-import { extendStatus, isFreeSubscription, isSignupFlow } from './helpers';
+import { type ADDON_NAMES, MethodStorage, PAYMENT_METHOD_TYPES, PLANS } from './constants';
+import { extendStatus, isSignupFlow } from './helpers';
 import type {
     AvailablePaymentMethod,
     Currency,
@@ -25,6 +24,7 @@ import type {
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
 } from './interface';
+import { isFreeSubscription } from './type-guards';
 import { isOnSessionMigration, isSplittedUser } from './utils';
 
 export interface PaymentMethodsParameters {

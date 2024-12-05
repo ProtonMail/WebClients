@@ -2,7 +2,6 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/test';
-import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { organization, vpnServersCount } from '@proton/components/containers/payments/subscription/__mocks__/data';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments';
@@ -12,6 +11,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled, Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { renderWithProviders } from '@proton/testing';
 import { PLANS_MAP, subscriptionMock } from '@proton/testing/data';
 import { apiMock } from '@proton/testing/lib/api';
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';

@@ -60,6 +60,7 @@ enum PaymentsFlag {
     SepaPayments = 'SepaPayments',
     IpAddonDowngrade = 'IpAddonDowngrade',
     RegionalCurrenciesBatch2 = 'RegionalCurrenciesBatch2',
+    TransactionsView = 'TransactionsView',
 }
 
 enum CalendarFeatureFlag {

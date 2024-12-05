@@ -8,10 +8,16 @@ import type { INVOICE_OWNER } from '@proton/shared/lib/constants';
 import { usePaginationAsync } from '../../components/pagination';
 import useApiResult from '../../hooks/useApiResult';
 import { useReportRoutingError } from '../../payments/react-extensions/usePaymentsApi';
+import { type DocumentHook } from './types';
 
 export const ELEMENTS_PER_PAGE = 10;
 
-const useInvoices = ({ owner, Document }: { owner: INVOICE_OWNER; Document: InvoiceDocument }) => {
+export type InvoicesHook = DocumentHook & {
+    type: 'invoices';
+    invoices: Invoice[];
+};
+
+const useInvoices = ({ owner, Document }: { owner: INVOICE_OWNER; Document: InvoiceDocument }): InvoicesHook => {
     const pagination = usePaginationAsync(1);
     const { page } = pagination;
 
@@ -21,7 +27,7 @@ const useInvoices = ({ owner, Document }: { owner: INVOICE_OWNER; Document: Invo
             Total: 0,
         },
         loading,
-        request: requestInvoices,
+        request,
         error,
     } = useApiResult<InvoiceResponse>(
         (paymentsVersion?: PaymentsVersion) =>
@@ -51,8 +57,9 @@ const useInvoices = ({ owner, Document }: { owner: INVOICE_OWNER; Document: Invo
         invoices: result.Invoices,
         total: result.Total,
         loading,
-        requestInvoices,
+        request,
         error,
+        type: 'invoices',
     };
 };
 

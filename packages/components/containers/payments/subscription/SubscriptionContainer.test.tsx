@@ -1,6 +1,5 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import {
     defaultSubscriptionCache,
     mockUserVPNServersCountApi,
@@ -14,6 +13,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization, Plan, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { renderWithProviders } from '@proton/testing';
 import { addApiMock, apiMock, applyHOCs, withDeprecatedModals, withReduxStore } from '@proton/testing';
 import { buildUser } from '@proton/testing/builders';
 import { getLongTestPlans } from '@proton/testing/data';
