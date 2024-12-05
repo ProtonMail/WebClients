@@ -1,6 +1,8 @@
 import type {
+    BinData,
     ChargebeeSubmitEventPayload,
     ChargebeeVerifySavedCardEventPayload,
+    MessageBusResponse,
     PaymentIntent,
 } from '@proton/chargebee/lib';
 import {
@@ -12,7 +14,7 @@ import {
     fetchPaymentIntentForExistingV5,
     fetchPaymentIntentV5,
 } from '@proton/shared/lib/api/payments';
-import { isProduction } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage, isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './constants';
@@ -237,31 +239,75 @@ function submitSavedChargebeeCard(
     return challengeOrAuthorizedPaymentIntent;
 }
 
+// it contains a little excessive error handling to narrow down the problem with BINs.
+async function getBin(handles: ChargebeeIframeHandles): Promise<string> {
+    let binResponse: MessageBusResponse<BinData | null>;
+    try {
+        binResponse = await handles.getBin();
+
+        // this should be unreachable. I keep it for the time being to observe the behavior.
+        if (binResponse.status === 'failure') {
+            captureMessage('Payments: BIN response failure', {
+                level: 'error' as const,
+                extra: {
+                    host: window.location.host,
+                    error: binResponse.error,
+                    originalError: binResponse?.error?.error,
+                    errorData: binResponse?.data,
+                },
+            });
+
+            throw new Error(binResponse.error?.error ?? binResponse.error);
+        }
+    } catch (error: any) {
+        captureMessage('Payments: BIN response error', {
+            level: 'error' as const,
+            extra: {
+                host: window.location.host,
+                error,
+                originalError: error?.error,
+                errorData: error?.data,
+            },
+        });
+
+        throw error;
+    }
+
+    let Bin = binResponse.data?.bin;
+
+    const allowBinFallback = !isProduction(window.location.host);
+    const binFallback = '424242';
+    if (!Bin && allowBinFallback) {
+        Bin = binFallback;
+    }
+
+    if (Bin === binFallback) {
+        captureMessage('Payments: BIN problem', {
+            level: 'warning',
+            extra: {
+                Bin,
+                allowBinFallback,
+                host: window.location.host,
+            },
+        });
+    }
+
+    return Bin as string;
+}
+
 export async function createPaymentTokenV5CreditCard(
     params: ChargebeeCardParams,
     { api, handles, events, forceEnableChargebee }: Dependencies,
     abortController?: AbortController
 ): Promise<ChargebeeFetchedPaymentToken> {
-    const { type, amountAndCurrency } = params;
-
-    const binResponse = await handles.getBin();
-    // Can the response even be a failure? Wouldn't it throw an error?
-    if (binResponse.status === 'failure') {
-        throw new Error(binResponse.error);
-    }
-
-    let Bin: string | undefined = binResponse.data?.bin;
-    const allowBinFallback = !isProduction(window.location.host);
-    if (!Bin && allowBinFallback) {
-        Bin = '424242';
-    }
+    const Bin = await getBin(handles);
 
     const data: CreatePaymentIntentData = {
-        ...amountAndCurrency,
+        ...params.amountAndCurrency,
         Payment: {
             Type: 'card',
             Details: {
-                Bin: Bin as string,
+                Bin,
             },
         },
     };
@@ -273,14 +319,14 @@ export async function createPaymentTokenV5CreditCard(
     } = await fetchPaymentIntentV5(api, data, abortController?.signal);
     forceEnableChargebee();
 
-    let Data = convertPaymentIntentData(paymentIntentData);
-    let authorizedStatus: AuthorizedV5PaymentToken | NonAuthorizedV5PaymentToken;
+    const paymentIntent = convertPaymentIntentData(paymentIntentData);
     const result = await submitChargebeeCard(handles, events, {
-        paymentIntent: Data,
+        paymentIntent,
         countryCode: params.countryCode,
         zip: params.zip,
     });
 
+    let authorizedStatus: AuthorizedV5PaymentToken | NonAuthorizedV5PaymentToken;
     if (!result.authorized) {
         authorizedStatus = {
             authorized: false,
@@ -295,9 +341,9 @@ export async function createPaymentTokenV5CreditCard(
     const chargeable = Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE;
 
     return {
-        ...amountAndCurrency,
+        ...params.amountAndCurrency,
         ...authorizedStatus,
-        type,
+        type: params.type,
         v: 5,
         PaymentToken,
         chargeable,
