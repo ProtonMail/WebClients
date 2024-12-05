@@ -2395,6 +2395,11 @@
         "未払いの請求"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "easy Switch インポートアシスタントを使用する"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
@@ -2464,11 +2469,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "easy Switch インポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2769,7 +2769,7 @@
         "連絡先の署名が検証されていません"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "このブラウザでは、内容の検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください。"
+        "このブラウザでは、コンテンツ検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください。"
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "コンテンツ検索を有効にできません。アプリケーションを再起動するか、データを消去してください。"
@@ -2838,7 +2838,7 @@
         "フォルダー「${ name }」はすでにダウンロード中です"
       ],
       "Folder name cannot be empty.": [
-        "フォルダー名は空にできません。"
+        "フォルダー名は空欄にできません。"
       ],
       "Forward address is required": [
         "転送先アドレスは必須です"
@@ -2889,7 +2889,7 @@
         "アイテムの内容が40KBを超えることはできません"
       ],
       "Label name cannot be empty.": [
-        "ラベル名を空にできません。"
+        "ラベル名は空欄にできません。"
       ],
       "Last name is too long": [
         "姓が長すぎます。"
@@ -3069,7 +3069,7 @@
         "元のフォルダーが見つかりません"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "外部アカウントのフォルダーが多すぎます。いくつかのフォルダーを削除するにはインポートをカスタマイズしてください。"
+        "外部アカウントのフォルダが多すぎます。いくつかのフォルダを削除するにはインポートをカスタマイズしてください。"
       ],
       "There was an error when exporting the contacts vCards": [
         "連絡先の vCard のエクスポート中にエラーが発生しました"
@@ -3675,7 +3675,7 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } 予定が暗号化され、カレンダーに追加されました"
+        "${ totalImported }/${ totalToImport } 件の予定が暗号化され、カレンダーに追加されました"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "予定の暗号化と追加中にエラーが発生しました。${ totalToImport } のうち ${ totalImported } の予定のインポートに成功しました。"
@@ -3718,7 +3718,7 @@
         "このファイルには予定の招待が含まれています:"
       ],
       "This file contains an invitation response:": [
-        "以下のファイルには参加の是非の回答があります。"
+        "このファイルには招待の回答が含まれています："
       ],
       "This file contains some data that we cannot import:": [
         "このファイルにはインポートできないデータが含まれています:"
@@ -4070,7 +4070,7 @@
         "(${ memberCount } 人のメンバー)"
       ],
       "(${ serverPrice }/month)": [
-        "(一月 ${ serverPrice })"
+        "(${ serverPrice } /月)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
@@ -4220,7 +4220,7 @@
         "共有リンクの読み込みに失敗しました"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "パスワード思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
+        "パスワードが思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
       ],
       "Change your password": [
         "パスワードを変更"
@@ -4454,7 +4454,7 @@
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your own password (as organization admin).": [
-        "パスワード（管理員のもの）を入力してください"
+        "自分(組織管理者として)のパスワードを入力してください。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "推定残り時間: ${ estimatedMinutes } 分"
@@ -4826,7 +4826,7 @@
         "写真は正常に復元されました。"
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "この文書に直接招待されるように所有者に依頼してください。"
+        "文書に直接招待するように所有者に依頼してください。"
       ],
       "Please authenticate your card in the verification tab.": [
         "認証タブでカード認証をしてください。"
@@ -4904,7 +4904,7 @@
         "このファイル形式はサポートされておりません。"
       ],
       "Preview of documents is not yet supported.": [
-        "文書のプレビューはまだできません。"
+        "文書のプレビューはまだサポートされていません。"
       ],
       "Previous versions are kept for ${ retentionLabel }": [
         "以前のバージョンは ${ retentionLabel } 保存されます"
@@ -5192,7 +5192,7 @@
         "厳格なプライベート検索を有効にするために、ローカルにファイルのインデックスを作成する必要があります。インデックス作成中も、通常通り ${ DRIVE_APP_NAME } をご利用いただけます。インデックス作成が完了したらお知らせします。"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
+        "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
         "あなたの保護するために、${ DRIVE_APP_NAME }はプライバシーを保護しながらファイルをスキャンし、悪意のあるファイルをブロックします。ただし信頼できるソースからのみファイルをダウンロードすることをおすすめします。"
@@ -5375,7 +5375,7 @@
         "${ DRIVE_APP_NAME } を使用すると、データはエンドツーエンドの暗号化によって保護されます。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
+        "新しい認証コードを受け取るか、他の検証方法を使用しますか？"
       ],
       "Would you like to receive a new verification code?": [
         "新しい認証コードを受け取りますか?"
@@ -5569,7 +5569,7 @@
     },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } 件のフォルダーを選択済み"
+        "${ selectedFoldersCount } 件のフォルダが選択済み"
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } 件のラベルが選択済み"
@@ -6327,7 +6327,7 @@
         "もう少しです"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "カレンダーの作成数：${ createdCalendarCount } のうち、${ calendarsToBeCreated }"
+        "作成されたカレンダーの数: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "メールプロバイダーに接続しています"
@@ -6387,7 +6387,7 @@
         "${ itemsToImportCount } ラベルからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } フォルダから ${ selectedItemsToImportCount } の全メッセージをインポートし、ラベル付けします"
+        "${ itemsToImportCount } フォルダから ${ selectedItemsToImportCount } のすべてのメッセージをインポートし、ラベル付けします"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
@@ -9893,7 +9893,7 @@
         "人間であることの検証"
       ],
       "Import as simple event?": [
-        "シンプル 予定としてインポートしますか?"
+        "シンプルな予定としてインポートしますか?"
       ],
       "Import contacts": [
         "連絡先をインポート"

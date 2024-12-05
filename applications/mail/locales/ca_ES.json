@@ -1915,6 +1915,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "No s'han pogut modificar les preferències de l'adreça de correu electrònic."
+      ],
+      "Continue": [
+        "Continua"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
       ],
@@ -3654,9 +3660,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activeu la protecció del rastrejador de correu electrònic per evitar que els anunciants i altres persones facin un seguiment de la vostra ubicació i activitat en línia."
-      ],
-      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
-        "Desbloquegeu ${ activatePmUser } per obtenir una adreça de correu electrònic enganxosa i fàcil d'escriure."
       ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Desbloquegeu la programació de missatges personalitzada i més funcions prèmium quan milloreu."
@@ -6025,6 +6028,9 @@
       "Additional options": [
         "Opcions addicionals"
       ],
+      "Address copied to clipboard": [
+        "S'ha copiat l'adreça al porta-retalls."
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
       ],
@@ -6296,6 +6302,9 @@
       ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "default email address": [
+        "adreça de correu electrònic per defecte"
       ],
       "Default email application": [
         "Aplicació de correu electrònic per defecte"
@@ -7049,6 +7058,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
+      ],
+      "Setting up your new address...": [
+        "S'està configurant la vostra nova adreça..."
       ],
       "Shorten selection": [
         "Escurça la selecció"
@@ -11626,6 +11638,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"
+      ],
+      "Your pm.me email is active": [
+        "El vostre correu electrònic de pm.me està actiu."
       ]
     },
     "sso": {
@@ -13392,6 +13407,9 @@
       "Unsubscribe request sent": [
         "Sol·licitud per a cancel·lar la subscripció enviada"
       ],
+      "Upgrade complete!": [
+        "S'ha millorat el vostre pla."
+      ],
       "Verification error": [
         "Error de verificació"
       ],
@@ -13700,6 +13718,9 @@
       ],
       "Missing alias suffix": [
         "Falta el sufix de l'àlies"
+      ],
+      "Name is required": [
+        "Es requereix un nom."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Només es permeten caràcters alfanumèrics, punts, guions i guions baixos"

@@ -588,6 +588,9 @@
       "Show advanced PGP settings": [
         "Mostrar ajustes PGP avanzados"
       ],
+      "Show options": [
+        "Mostrar opciones"
+      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -1100,6 +1103,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Continuar"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
       ],
@@ -3857,6 +3863,9 @@
       "Additional options": [
         "Opciones adicionales"
       ],
+      "Address copied to clipboard": [
+        "Se copió la dirección al portapapeles."
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero confíe en las claves públicas que se pueden usar para enviar."
       ],
@@ -4020,6 +4029,9 @@
       ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "default email address": [
+        "dirección de correo electrónico por defecto"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Este archivo fue cargado de forma segura por ${ emailAddress }."
@@ -8952,6 +8964,9 @@
       "Untitled document ${ date }": [
         "Documento sin título ${ date }"
       ],
+      "Upgrade complete!": [
+        "Se ha mejorado su plan."
+      ],
       "Uploading a large file or folder": [
         "Cargando un archivo grande o carpeta"
       ],
@@ -9213,6 +9228,9 @@
       ],
       "Missing alias suffix": [
         "Falta el sufijo de alias"
+      ],
+      "Name is required": [
+        "El nombre es obligatorio."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos"

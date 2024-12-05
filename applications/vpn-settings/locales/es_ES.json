@@ -1250,6 +1250,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Continuar"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
       ],
@@ -3701,6 +3704,9 @@
       "Additional options": [
         "Opciones adicionales"
       ],
+      "Address copied to clipboard": [
+        "Se ha copiado la dirección al portapapeles."
+      ],
       "Admin account allocation": [
         "Asignación de cuenta de administrador"
       ],
@@ -3887,14 +3893,17 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personaliza el aspecto de las aplicaciones de ${ BRAND_NAME }"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
       ],
+      "dedicated servers": [
+        "servidores dedicados"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
+      ],
+      "default email address": [
+        "dirección de correo electrónico por defecto"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimina cualquier otro registro MX o asegúrate de que la prioridad de ${ MAIL_APP_NAME } es el número más bajo."
@@ -4912,11 +4921,11 @@
       "User activated": [
         "Se ha activado el usuario."
       ],
-      "username": [
-        "nombre de usuario"
-      ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "username": [
+        "nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -10132,10 +10141,10 @@
       "Card verification": [
         "Verificación de la tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -10630,6 +10639,9 @@
       ],
       "Unlock your data": [
         "Desbloquea tus datos"
+      ],
+      "Upgrade complete!": [
+        "Se ha mejorado tu plan."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Mejora la protección de tu red con servidores dedicados"
