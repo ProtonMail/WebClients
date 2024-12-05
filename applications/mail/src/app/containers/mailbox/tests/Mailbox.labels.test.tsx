@@ -12,6 +12,12 @@ import { folders, labels, sendEvent, setup } from './Mailbox.test.helpers';
 const [label1, label2, label3, label4] = labels;
 const [folder1, folder2] = folders;
 
+jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+    useMailELDTMetric: () => {
+        return { stopELDTMetric: jest.fn() };
+    },
+}));
+
 describe('Mailbox labels actions', () => {
     const conversation1 = {
         ID: 'id1',
