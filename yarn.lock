@@ -7371,7 +7371,7 @@ __metadata:
     ts-node: "npm:^10.9.2"
     ttag: "npm:^1.8.7"
     typescript: "npm:^5.7.2"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
   languageName: unknown
   linkType: soft
 
@@ -7432,7 +7432,7 @@ __metadata:
     ts-loader: "npm:^9.5.1"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.7.2"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
     webpack-cli: "npm:^5.1.4"
   languageName: unknown
   linkType: soft
@@ -7572,7 +7572,7 @@ __metadata:
     prettier: "npm:^3.4.2"
     ts-loader: "npm:^9.5.1"
     typescript: "npm:^5.7.2"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
     webpack-cli: "npm:^5.1.4"
   languageName: unknown
   linkType: soft
@@ -7724,7 +7724,7 @@ __metadata:
     ts-loader: "npm:^9.5.1"
     ttag: "npm:^1.8.7"
     typescript: "npm:^5.7.2"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
   languageName: unknown
   linkType: soft
 
@@ -7848,7 +7848,7 @@ __metadata:
     playwright: "npm:^1.49.0"
     ts-loader: "npm:^9.5.1"
     typescript: "npm:^5.7.2"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
   languageName: unknown
   linkType: soft
 
@@ -7958,14 +7958,14 @@ __metadata:
     postcss-loader: "npm:^8.1.1"
     postcss-logical: "npm:^8.0.0"
     prettier: "npm:^3.4.2"
-    react-refresh: "npm:^0.14.2"
+    react-refresh: "npm:^0.16.0"
     resolve-url-loader: "npm:^5.0.0"
     sass: "npm:1.79.5"
     sass-loader: "npm:^16.0.4"
     svgo-loader: "npm:^4.0.0"
     swc-loader: "npm:^0.2.6"
     terser-webpack-plugin: "npm:^5.3.10"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
     webpack-bundle-analyzer: "npm:^4.10.2"
     webpack-cli: "npm:^5.1.4"
     webpack-dev-server: "npm:^5.1.0"
@@ -8202,7 +8202,7 @@ __metadata:
     ua-parser-js: "npm:^1.0.39"
     web-streams-polyfill: "npm:^3.3.3"
     web-vitals: "npm:^4.2.4"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
     zod: "npm:^3.23.8"
   languageName: unknown
   linkType: soft
@@ -35663,7 +35663,7 @@ __metadata:
     ttag: "npm:^1.8.7"
     typescript: "npm:^5.7.2"
     web-streams-polyfill: "npm:^3.3.3"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
     zustand: "npm:^4.5.5"
   languageName: unknown
   linkType: soft
@@ -35886,7 +35886,7 @@ __metadata:
     proton-pass-web: "workspace:applications/pass"
     ts-loader: "npm:^9.5.1"
     typescript: "npm:^5.7.2"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
   languageName: unknown
   linkType: soft
 
@@ -35910,7 +35910,7 @@ __metadata:
     react-helmet: "npm:^6.1.0"
     typescript: "npm:^5.7.2"
     webextension-polyfill: "npm:^0.12.0"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
     webpack-dev-server: "npm:^5.1.0"
   peerDependencies:
     react: ^18.3.1
@@ -35940,7 +35940,7 @@ __metadata:
     jest: "npm:^29.7.0"
     prettier: "npm:^3.4.2"
     typescript: "npm:^5.7.2"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
     webpack-manifest-plugin: "npm:^5.0.0"
   languageName: unknown
   linkType: soft
@@ -35995,7 +35995,7 @@ __metadata:
     react-router-dom: "npm:^5.3.4"
     ts-loader: "npm:^9.5.1"
     typescript: "npm:^5.7.2"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
   languageName: unknown
   linkType: soft
 
@@ -36107,7 +36107,7 @@ __metadata:
     typescript: "npm:^5.7.2"
     vite-plugin-wasm: "npm:^3.3.0"
     vitest: "npm:^1.6.0"
-    webpack: "npm:^5.97.0"
+    webpack: "npm:^5.97.1"
   languageName: unknown
   linkType: soft
 
@@ -37382,10 +37382,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-refresh@npm:^0.14.2":
-  version: 0.14.2
-  resolution: "react-refresh@npm:0.14.2"
-  checksum: 10c0/875b72ef56b147a131e33f2abd6ec059d1989854b3ff438898e4f9310bfcc73acff709445b7ba843318a953cb9424bcc2c05af2b3d80011cee28f25aef3e2ebb
+"react-refresh@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "react-refresh@npm:0.16.0"
+  checksum: 10c0/122525dbd7a44140757f46b8b93df6a349126e64b270809a8f082809662be5837a97310e56df2cfc7dac98b8adfaaafa570ec579c8b269c374e6928394307c68
   languageName: node
   linkType: hard
 
@@ -44722,9 +44722,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:>=4.43.0 <6.0.0, webpack@npm:^5, webpack@npm:^5.69.1, webpack@npm:^5.9.0, webpack@npm:^5.97.0":
-  version: 5.97.0
-  resolution: "webpack@npm:5.97.0"
+"webpack@npm:>=4.43.0 <6.0.0, webpack@npm:^5, webpack@npm:^5.69.1, webpack@npm:^5.9.0, webpack@npm:^5.97.1":
+  version: 5.97.1
+  resolution: "webpack@npm:5.97.1"
   dependencies:
     "@types/eslint-scope": "npm:^3.7.7"
     "@types/estree": "npm:^1.0.6"
@@ -44754,7 +44754,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 10c0/a8714d42defbf52382b61c157f68e161a16d0edf228d8d9abaa7a165f3ee0ac7386a08d28d4dcf8d6740ea5bda0c4d4abfeeb838df029e636c1c28bb2454ac56
+  checksum: 10c0/a12d3dc882ca582075f2c4bd88840be8307427245c90a8a0e0b372d73560df13fcf25a61625c9e7edc964981d16b5a8323640562eb48347cf9dd2f8bd1b39d35
   languageName: node
   linkType: hard
 
