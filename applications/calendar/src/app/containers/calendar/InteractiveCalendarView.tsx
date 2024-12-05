@@ -147,6 +147,7 @@ import type {
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
+import { useCalendarNESTMetric } from '../../metrics/useCalendarNESTMetric';
 import { getCurrentPartstat } from '../../store/events/eventsCache';
 import { isTmpEventSavingSelector, pendingUniqueIdsSelector } from '../../store/events/eventsSelectors';
 import { type CalendarViewEventStore, eventsActions } from '../../store/events/eventsSlice';
@@ -353,6 +354,7 @@ const InteractiveCalendarView = ({
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const isSearchView = view === VIEWS.SEARCH;
     const cancelClosePopoverRef = useRef(false);
+    const { startNESTMetric, stopNESTMetric } = useCalendarNESTMetric();
 
     const { triggerZoomOAuth } = useZoomOAuth();
     const { sendEventVideoConferenceZoomIntegration } = useVideoConfTelemetry();
@@ -1466,6 +1468,7 @@ const InteractiveCalendarView = ({
         isChangePartstat = false,
         isModal = false
     ) => {
+        startNESTMetric(temporaryEvent, isCreatingEvent);
         let hasStartChanged;
         // uid is not defined when we create a new event
         const UID = temporaryEvent.tmpData.uid || TMP_UID;
@@ -1500,6 +1503,8 @@ const InteractiveCalendarView = ({
                 onSaveConfirmation: async (params) => {
                     try {
                         const result = await handleSaveConfirmation(params);
+                        // If confirmation modals opens, we set start time to after the user confirms
+                        startNESTMetric(temporaryEvent, isCreatingEvent);
                         if (result.type === RECURRING_TYPES.ALL || result.type === RECURRING_TYPES.FUTURE) {
                             isSingleEventUpdate = false;
                         }
@@ -1675,6 +1680,7 @@ const InteractiveCalendarView = ({
                 }
             }
         }
+        stopNESTMetric(isCreatingEvent);
     };
 
     const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions: InviteActions, isModal = false) => {
