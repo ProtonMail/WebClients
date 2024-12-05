@@ -56,6 +56,7 @@ import type { HttpsProtonMeDriveUploadErrorsTransferSizeHistogramV1SchemaJson } 
 import type { HttpsProtonMeDriveUploadSuccessRateTotalV2SchemaJson } from './types/drive_upload_success_rate_total_v2.schema';
 import type { HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson } from './types/drive_users_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveVolumeEventsSubscriptionsHistogramV1SchemaJson } from './types/drive_volume_events_subscriptions_histogram_v1.schema';
+import type { NewEventSetupTime } from './types/web_calendar_new_event_setup_time_histogram_v1.schema';
 import type { WebCoreDeleteAccountTotal } from './types/web_core_delete_account_total_v1.schema';
 import type { WebCoreLightLabellingImageProcessingTotal } from './types/web_core_lightLabelling_imageProcessing_total_v1.schema';
 import type { WebCoreLightLabellingLogoRemovalTotal } from './types/web_core_lightLabelling_logoRemoval_total_v1.schema';
@@ -227,6 +228,8 @@ class Metrics extends MetricsBase {
     public drive_users_success_rate_total: Counter<HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson>;
 
     public drive_volume_events_subscriptions_histogram: Histogram<HttpsProtonMeDriveVolumeEventsSubscriptionsHistogramV1SchemaJson>;
+
+    public calendar_new_event_setup_time_histogram: Histogram<NewEventSetupTime>;
 
     public core_delete_account_total: Counter<WebCoreDeleteAccountTotal>;
 
@@ -635,6 +638,11 @@ class Metrics extends MetricsBase {
                 { name: 'drive_volume_events_subscriptions_histogram', version: 1 },
                 this.requestService
             );
+
+        this.calendar_new_event_setup_time_histogram = new Histogram<NewEventSetupTime>(
+            { name: 'web_calendar_new_event_setup_time_histogram', version: 1 },
+            this.requestService
+        );
 
         this.core_delete_account_total = new Counter<WebCoreDeleteAccountTotal>(
             { name: 'web_core_delete_account_total', version: 1 },
