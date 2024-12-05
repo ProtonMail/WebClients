@@ -53,6 +53,7 @@ enum AccountFlag {
     GlobalSSO = 'GlobalSSO',
     EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
     EduGainSSO = 'EduGainSSO',
+    ChangePasswordStrengthIndicator = 'ChangePasswordStrengthIndicator',
 }
 
 enum PaymentsFlag {
