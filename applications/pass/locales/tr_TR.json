@@ -555,6 +555,9 @@
       "Unpin item": [
         "Ögenin sabitlemesini kaldır"
       ],
+      "Update": [
+        "Güncelle"
+      ],
       "Update vault": [
         "Kasayı güncelle"
       ],
@@ -596,35 +599,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "ömür boyu erişim"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Tüm ücretli hizmetler. 6 kullanıcı. Bir kolay abonelik."
-      ],
-      "Limited-stock available!": [
-        "Sınırlı sayıda stok var!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Muhteşem Cuma"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Bir kere ${ lifetimeAccessJSX } ödeyerek Pass Plus tarifesi ve SimpleLogin alın. Yalnızca ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Pass Family tarifesi ile ${ discountJSX } oranına varan indirim kazanın. Yalnızca ${ relativePrice }/ay."
       ]
     },
     "Browser": {
@@ -1856,9 +1830,6 @@
       "Unable to copy to clipboard": [
         "Panoya kopyalanamadı"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
-      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "${ PASS_SHORT_APP_NAME } kilidini açmak için Biyometri kullanın"
       ],
@@ -2156,6 +2127,9 @@
       "Contact details": [
         "Kişi bilgileri"
       ],
+      "Contacts": [
+        "Kişiler"
+      ],
       "Copy": [
         "Kopyala"
       ],
@@ -2207,8 +2181,14 @@
       "Display": [
         "Görünüm"
       ],
+      "Display name": [
+        "Görüntülenecek ad"
+      ],
       "Domain": [
         "Etki alanı"
+      ],
+      "Domains": [
+        "Etki alanları"
       ],
       "Don't remind me again": [
         "Bir daha hatırlatma"
@@ -2975,6 +2955,9 @@
       "Account protection": [
         "Hesap koruması"
       ],
+      "Actions": [
+        "İşlemler"
+      ],
       "Auto-lock update": [
         "Ootmatik kilitleme güncellemesi"
       ],
@@ -2996,8 +2979,14 @@
       "Confirm your email": [
         "E-posta adresinizi onaylayın"
       ],
+      "Contacts": [
+        "Kişiler"
+      ],
       "Create a vault": [
         "Bir kasa oluşturun"
+      ],
+      "Create contact": [
+        "Kişi ekle"
       ],
       "Create PIN code": [
         "PIN kodu oluştur"
@@ -3222,6 +3211,9 @@
       ],
       "Share with": [
         "Şununla paylaş"
+      ],
+      "Status": [
+        "Durum"
       ],
       "Stay safer online": [
         "Çevrim içi ortamda daha güvende kalın"
