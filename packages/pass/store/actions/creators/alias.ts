@@ -203,14 +203,14 @@ export const resendVerifyMailbox = requestActionsFactory<number, UserMailboxOutp
     },
 });
 
-export const deleteMailbox = requestActionsFactory<MailboxDeleteDTO, Boolean>('alias::mailbox::delete')({
+export const deleteMailbox = requestActionsFactory<MailboxDeleteDTO, number>('alias::mailbox::delete')({
     key: ({ mailboxID }) => mailboxID.toString(),
     success: {
-        prepare: () =>
+        prepare: (payload) =>
             withNotification({
                 type: 'success',
                 text: c('Success').t`Mailbox successfully deleted`,
-            })({ payload: {} }),
+            })({ payload }),
     },
     failure: {
         prepare: (error, payload) =>
