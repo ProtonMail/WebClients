@@ -15,7 +15,13 @@ import { formatUser } from '@proton/shared/lib/user/helpers';
 import { getLastActivePersistedUserSession } from '../../utils/lastActivePersistedUserSession';
 import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
 import retryOnError from '../../utils/retryOnError';
-import { hasCustomPassword, hasGeneratedPasswordIncluded, isLegacySharedUrl } from '../_shares';
+import {
+    hasCustomPassword,
+    hasGeneratedPasswordIncluded,
+    isLegacySharedUrl,
+    useDefaultShare,
+    useShare,
+} from '../_shares';
 import useDebouncedRequest from './useDebouncedRequest';
 
 export const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
@@ -42,7 +48,18 @@ function usePublicSessionProvider() {
     const sessionInfo = useRef<SessionInfo>();
     const auth = useAuthentication();
     const [user, setUser] = useState<UserModel>();
+    const [userAddressEmail, setUserAddressEmail] = useState<string>();
     const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
+    const { getShareCreatorKeys } = useShare();
+    const { getDefaultShare } = useDefaultShare();
+
+    const getAddressKeyInfo = async (abortSignal: AbortSignal) => {
+        if (!auth.getUID()) {
+            return undefined;
+        }
+        const defaultShare = await getDefaultShare();
+        return getShareCreatorKeys(abortSignal, defaultShare.shareId);
+    };
 
     const initHandshake = async (token: string) => {
         /*
@@ -113,6 +130,12 @@ function usePublicSessionProvider() {
     };
 
     const initSession = async (token: string, password: string, handshakeInfo: SRPHandshakeInfo) => {
+        // In case user is logged-in we can preload default share.
+        // This will be used to get info for users actions (Rename, Delete, etc..)
+        const addressKeyInfo = await getAddressKeyInfo(new AbortController().signal);
+        if (addressKeyInfo) {
+            setUserAddressEmail(addressKeyInfo.address.Email);
+        }
         return getSessionToken(token, password, handshakeInfo).then(({ AccessToken, UID }) => {
             setHasSession(true);
             sessionInfo.current = {
@@ -173,11 +196,13 @@ function usePublicSessionProvider() {
 
     return {
         user,
+        userAddressEmail,
         hasSession,
         initHandshake,
         initSession,
         request,
         getSessionInfo,
+        getAddressKeyInfo,
     };
 }
 
