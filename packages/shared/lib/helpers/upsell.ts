@@ -1,5 +1,5 @@
 import { PLANS } from '@proton/payments';
-import type { APP_NAMES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import type { APP_NAMES, UPSELL_COMPONENT, UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { APPS, APP_UPSELL_REF_PATH } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, Audience, Subscription, UserModel } from '@proton/shared/lib/interfaces';
@@ -127,6 +127,7 @@ export const getUpgradePath = ({
  * @param app => Current app from which we open a link
  * @param feature => feature identifier to include in the path
  * @param component => Optional, ref component (e.g. banner, modal, button)
+ * @param isSettings => Optional, true if this upsell ref is in the apps settings
  */
 export const getUpsellRef = ({
     app,
@@ -134,9 +135,10 @@ export const getUpsellRef = ({
     component,
     isSettings = false,
 }: {
-    app: APP_UPSELL_REF_PATH;
-    feature: string;
-    component?: UPSELL_COMPONENT;
+    app: `${APP_UPSELL_REF_PATH}`;
+    feature: UPSELL_FEATURE;
+    component?: `${UPSELL_COMPONENT}`;
+    /** Is in settings section */
     isSettings?: boolean;
 }) => {
     const upsellComponent = component || '';
@@ -162,7 +164,7 @@ export const getUpsellRefFromApp = ({
     feature,
 }: {
     app: APP_NAMES;
-    feature: string;
+    feature: UPSELL_FEATURE;
     component?: UPSELL_COMPONENT;
     fromApp?: APP_NAMES;
 }) => {
