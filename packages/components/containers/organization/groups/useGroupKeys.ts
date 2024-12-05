@@ -78,7 +78,6 @@ const useGroupKeys = () => {
         const memberPublicKeys = await getPublicKeysForInbox({
             email: memberEmail,
             lifetime: 0,
-            noCache: true,
         });
 
         if (memberPublicKeys.Errors) {
