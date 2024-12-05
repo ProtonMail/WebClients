@@ -17,7 +17,14 @@ const RenameButton = ({ link, showRenameModal, close }: Props) => {
             name={c('Action').t`Rename`}
             icon="pen-square"
             testId="context-menu-rename"
-            action={() => showRenameModal({ item: link, renameLink })}
+            action={() =>
+                showRenameModal({
+                    isFile: link.isFile,
+                    name: link.name,
+                    onSubmit: (formattedName) =>
+                        renameLink(new AbortController().signal, link.rootShareId, link.linkId, formattedName),
+                })
+            }
             close={close}
         />
     );

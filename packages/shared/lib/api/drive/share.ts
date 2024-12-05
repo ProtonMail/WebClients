@@ -120,3 +120,20 @@ export const queryResolveContextShare = ({ volumeId, linkId }: { volumeId: strin
     url: `drive/volumes/${volumeId}/links/${linkId}/context`,
     method: 'get',
 });
+
+/** Public **/
+export const queryPublicRenameLink = (
+    token: string,
+    linkID: string,
+    data: {
+        Name: string;
+        MIMEType?: string;
+        Hash: string;
+        NameSignatureEmail: string;
+        OriginalHash: string;
+    }
+) => ({
+    method: `put`,
+    url: `drive/urls/${token}/links/${linkID}/rename`,
+    data,
+});

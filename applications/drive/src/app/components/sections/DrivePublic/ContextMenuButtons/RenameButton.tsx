@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import type { DecryptedLink } from '../../../../store';
+import usePublicToken from '../../../../hooks/drive/usePublicToken';
+import { type DecryptedLink, usePublicActions } from '../../../../store';
 import { type useRenameModal } from '../../../modals/RenameModal';
 import { ContextMenuButton } from '../../ContextMenu';
 
@@ -10,14 +11,27 @@ interface Props {
     close: () => void;
 }
 
-export const RenameButton = ({ close }: Props) => {
-    // TODO: Implement renameLink public action
+export const RenameButton = ({ link, showRenameModal, close }: Props) => {
+    const { token } = usePublicToken();
+    const { renameLink } = usePublicActions();
     return (
         <ContextMenuButton
             name={c('Action').t`Rename`}
             icon="pen-square"
             testId="context-menu-rename"
-            action={() => alert('Rename action')}
+            action={() =>
+                showRenameModal({
+                    isFile: link.isFile,
+                    name: link.name,
+                    onSubmit: (formattedName) =>
+                        renameLink(new AbortController().signal, {
+                            token,
+                            linkId: link.linkId,
+                            parentLinkId: link.parentLinkId,
+                            newName: formattedName,
+                        }),
+                })
+            }
             close={close}
         />
     );
