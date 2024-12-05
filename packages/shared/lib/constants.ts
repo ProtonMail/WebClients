@@ -1,7 +1,7 @@
 import type { enums } from '@proton/crypto';
 
 import { sizeUnits } from './helpers/size';
-import type { KeyGenConfig } from './interfaces';
+import type { KeyGenConfig, KeyGenConfigV6 } from './interfaces';
 
 export const DEFAULT_TIMEOUT = 30000; // default fetch timeout
 export const RETRY_DELAY_MAX = 10; // seconds
@@ -755,15 +755,20 @@ export const KEY_FILE_EXTENSION = `.${KEY_EXTENSION}`;
 
 export enum KEYGEN_TYPES {
     CURVE25519 = 'CURVE25519',
+    PQC = 'PQC',
 }
 
 export const DEFAULT_KEYGEN_TYPE = KEYGEN_TYPES.CURVE25519;
 
-export const KEYGEN_CONFIGS: { [key: string]: KeyGenConfig } = {
+export const KEYGEN_CONFIGS /*: { [key: string]: KeyGenConfig | KeyGenConfigV6 }*/ = {
     [KEYGEN_TYPES.CURVE25519]: {
         type: 'ecc',
         curve: 'ed25519Legacy' as enums.curve,
-    },
+    } as KeyGenConfig,
+    [KEYGEN_TYPES.PQC]: {
+        type: 'curve25519', // TODO waiting for pqc integration
+        config: { v6Keys: true },
+    } as KeyGenConfigV6,
 };
 
 export enum KEY_FLAG {

@@ -1,4 +1,4 @@
-import type { MaybeArray, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { MaybeArray, PrivateKeyReference, PrivateKeyReferenceV4, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { updateForwarding } from '@proton/shared/lib/api/forwardings';
@@ -7,7 +7,7 @@ import { createAddressKeyRouteV2 } from '@proton/shared/lib/api/keys';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type {
-    ActiveKey,
+    ActiveAddressKeysByVersion,
     Address,
     Api,
     ApiKeysConfig,
@@ -27,7 +27,11 @@ import {
     getSignedKeyListWithDeferredPublish,
     splitKeys,
 } from '@proton/shared/lib/keys';
-import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import {
+    getActiveAddressKeys,
+    getActiveKeyObject,
+    getNormalizedActiveAddressKeys,
+} from '@proton/shared/lib/keys/getActiveKeys';
 import { fromSieveTree, toSieveTree } from '@proton/sieve';
 import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/src/interface';
 import generateUID from '@proton/utils/generateUID';
@@ -105,9 +109,9 @@ export const getSieveParameters = (tree: SieveBranch[]): { conditions: Condition
 
 interface ForwardingAddressKeyParameters {
     api: Api;
-    privateKey: PrivateKeyReference;
+    privateKey: PrivateKeyReferenceV4;
     address: Address;
-    activeKeys: ActiveKey[];
+    activeKeys: ActiveAddressKeysByVersion;
     privateKeyArmored: string;
     signature: string;
     encryptedToken: string;
@@ -131,7 +135,7 @@ export const generateForwardingAddressKey = async ({
         primary: 0,
         flags: getDefaultKeyFlags(address),
     });
-    const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey]);
+    const updatedActiveKeys = getNormalizedActiveAddressKeys(address, { v4: [newActiveKey], v6: [] });
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         activeKeys,
         address,
@@ -323,7 +327,7 @@ export const acceptIncomingForwarding = async ({
         forwarderAddressKeys.map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))
     );
 
-    let activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, forwardeeAddressKeys);
+    let activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, forwardeeAddressKeys);
 
     for (const forwardingKey of forward.ForwardingKeys || []) {
         const decryptedToken = await decryptMemberToken(
@@ -335,6 +339,10 @@ export const acceptIncomingForwarding = async ({
             armoredKey: forwardingKey.PrivateKey,
             passphrase: decryptedToken,
         });
+        if (!privateKey.isPrivateKeyV4()) {
+            // this should be unreachable since v6 keys do not support forwarding atm
+            throw new Error('Unexpected v6 key');
+        }
         const extractedEmail = getEmailFromKey(privateKey);
 
         // The forwardee email address can change before the user has accepted the forwarding
@@ -362,7 +370,7 @@ export const acceptIncomingForwarding = async ({
             signature: primaryAddressKey.Signature,
             privateKeyArmored: armoredPrivateKey,
             activeKeys,
-            privateKey,
+            privateKey: privateKey as PrivateKeyReferenceV4,
         });
         await keyTransparencyCommit(userKeys);
         activeKeys = updatedActiveKeys;

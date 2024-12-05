@@ -1,22 +1,33 @@
 import { createAddressKeyRoute, createAddressKeyRouteV2 } from '../../api/keys';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../../constants';
-import type { ActiveKey, Address, Api, KeyGenConfig, KeyPair, KeyTransparencyVerify } from '../../interfaces';
+import {
+    type ActiveKeyWithVersion,
+    type ActiveAddressKeysByVersion,
+    type ActiveKey,
+    type Address,
+    type Api,
+    type KeyGenConfig,
+    type KeyGenConfigV6,
+    type KeyPair,
+    type KeyTransparencyVerify,
+    isActiveKeyV6,
+} from '../../interfaces';
 import { generateAddressKey, getNewAddressKeyToken } from '../addressKeys';
-import { getActiveKeyObject, getNormalizedActiveKeys } from '../getActiveKeys';
+import { getActiveKeyObject, getNormalizedActiveAddressKeys } from '../getActiveKeys';
 import { getDefaultKeyFlags } from '../keyFlags';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 
 interface CreateAddressKeyLegacyArguments {
     api: Api;
-    keyGenConfig?: KeyGenConfig;
+    keyGenConfig?: KeyGenConfig; // no v6 key support for non-migrated users
     address: Address;
     passphrase: string;
-    activeKeys: ActiveKey[];
+    activeKeys: ActiveAddressKeysByVersion;
     keyTransparencyVerify: KeyTransparencyVerify;
     addressForwardingID?: string;
 }
 
-export const removePrimary = (activeKey: ActiveKey): ActiveKey => {
+export const removePrimary = <T extends ActiveKey>(activeKey: T): T => {
     if (activeKey.primary) {
         return {
             ...activeKey,
@@ -45,7 +56,11 @@ export const createAddressKeyLegacy = async ({
         primary: 1,
         flags: getDefaultKeyFlags(address),
     });
-    const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey, ...activeKeys.map(removePrimary)]);
+    // no v6 keys allowed with non-migrated keys
+    const updatedActiveKeys = getNormalizedActiveAddressKeys(address, {
+        v4: [newActiveKey, ...activeKeys.v4.map(removePrimary)],
+        v6: [],
+    });
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
         address,
@@ -63,18 +78,23 @@ export const createAddressKeyLegacy = async ({
     await onSKLPublishSuccess();
     newActiveKey.ID = Key.ID;
 
-    return [newActiveKey, updatedActiveKeys] as const;
+    const formerActiveKeys = activeKeys;
+    return [newActiveKey, updatedActiveKeys, formerActiveKeys] as const;
 };
 
 interface CreateAddressKeyV2Arguments {
     api: Api;
     userKeys: KeyPair[];
-    keyGenConfig?: KeyGenConfig;
+    keyGenConfig?: KeyGenConfig | KeyGenConfigV6;
     address: Address;
-    activeKeys: ActiveKey[];
+    activeKeys: ActiveAddressKeysByVersion;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
+/**
+ * Generates either a v4 or v6 address key based on `keyGenConfig`.
+ * NB: if a v6 key is requested, this does not take care of also generating a v4 one.
+ */
 export const createAddressKeyV2 = async ({
     api,
     userKeys,
@@ -84,17 +104,25 @@ export const createAddressKeyV2 = async ({
     keyTransparencyVerify,
 }: CreateAddressKeyV2Arguments) => {
     const { token, encryptedToken, signature } = await getNewAddressKeyToken({ address, userKeys });
+
     const { privateKey, privateKeyArmored } = await generateAddressKey({
+        // also typeof keyGenConfig
         email: address.Email,
         passphrase: token,
         keyGenConfig,
     });
-    const newActiveKey = await getActiveKeyObject(privateKey, {
+    const newActiveKey = (await getActiveKeyObject(privateKey, {
         ID: 'tmp',
         primary: 1,
         flags: getDefaultKeyFlags(address),
-    });
-    const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey, ...activeKeys.map(removePrimary)]);
+    })) as ActiveKeyWithVersion;
+
+    const toNormalize = isActiveKeyV6(newActiveKey)
+        ? { v4: [...activeKeys.v4], v6: [newActiveKey, ...activeKeys.v6.map(removePrimary)] }
+        : { v4: [newActiveKey, ...activeKeys.v4.map(removePrimary)], v6: [...activeKeys.v6] };
+
+    const updatedActiveKeys = getNormalizedActiveAddressKeys(address, toNormalize);
+
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
         address,
@@ -114,5 +142,6 @@ export const createAddressKeyV2 = async ({
     await onSKLPublishSuccess();
     newActiveKey.ID = Key.ID;
 
-    return [newActiveKey, updatedActiveKeys] as const;
+    const formerActiveKeys = activeKeys;
+    return [newActiveKey, updatedActiveKeys, formerActiveKeys] as const;
 };

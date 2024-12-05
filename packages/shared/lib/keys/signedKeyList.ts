@@ -1,11 +1,10 @@
-import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { KT_SKL_SIGNING_CONTEXT } from '@proton/key-transparency/lib';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getIsAddressDisabled } from '../helpers/address';
 import type {
-    ActiveKey,
+    ActiveAddressKeysByVersion,
     Address,
     Api,
     DecryptedKey,
@@ -15,13 +14,15 @@ import type {
     SignedKeyListItem,
 } from '../interfaces';
 import type { SimpleMap } from '../interfaces/utils';
-import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
+import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
+import type { PrimaryAddressKeys} from './getPrimaryKey';
+import { getPrimaryAddressKeysForSigningByVersion } from './getPrimaryKey';
 
-export const getSignedKeyListSignature = async (data: string, signingKey: PrivateKeyReference, date?: Date) => {
+export const getSignedKeyListSignature = async (data: string, signingKeys: PrimaryAddressKeys, date?: Date) => {
     const signature = await CryptoProxy.signMessage({
         textData: data,
         stripTrailingSpaces: true,
-        signingKeys: [signingKey],
+        signingKeys,
         detached: true,
         context: KT_SKL_SIGNING_CONTEXT,
         date,
@@ -37,13 +38,15 @@ export type OnSKLPublishSuccess = () => Promise<void>;
  * has been called beforehand.
  */
 export const getSignedKeyListWithDeferredPublish = async (
-    keys: ActiveKey[],
+    keys: ActiveAddressKeysByVersion,
     address: Address,
     keyTransparencyVerify: KeyTransparencyVerify
 ): Promise<[SignedKeyList, OnSKLPublishSuccess]> => {
+    // the v6 primary key (if present) must come after the v4 one
+    const list = [...keys.v4, ...keys.v6].sort((a, b) => b.primary - a.primary);
     const transformedKeys = (
         await Promise.all(
-            keys.map(async ({ privateKey, flags, primary, sha256Fingerprints, fingerprint }) => {
+            list.map(async ({ privateKey, flags, primary, sha256Fingerprints, fingerprint }) => {
                 const result = await CryptoProxy.isE2EEForwardingKey({ key: privateKey });
 
                 if (result) {
@@ -60,17 +63,17 @@ export const getSignedKeyListWithDeferredPublish = async (
         )
     ).filter(isTruthy);
     const data = JSON.stringify(transformedKeys);
-    const signingKey = keys[0]?.privateKey;
-    if (!signingKey) {
+    const signingKeys = getPrimaryAddressKeysForSigningByVersion(keys);
+    if (!signingKeys.length) {
         throw new Error('Missing primary signing key');
     }
 
     // TODO: Could be filtered as well
-    const publicKeys = keys.map((key) => key.publicKey);
+    const publicKeys = list.map((key) => key.publicKey);
 
     const signedKeyList: SignedKeyList = {
         Data: data,
-        Signature: await getSignedKeyListSignature(data, signingKey),
+        Signature: await getSignedKeyListSignature(data, signingKeys),
     };
     const onSKLPublish = async () => {
         if (!getIsAddressDisabled(address)) {
@@ -84,18 +87,21 @@ export const getSignedKeyListWithDeferredPublish = async (
  * Generate the signed key list data and verify it for later commit to Key Transparency
  */
 export const getSignedKeyList = async (
-    keys: ActiveKey[],
+    keys: ActiveAddressKeysByVersion,
     address: Address,
     keyTransparencyVerify: KeyTransparencyVerify
 ): Promise<SignedKeyList> => {
-    const activeKeysWithoutForwarding = (
-        await Promise.all(
-            keys.map(async (key) => {
-                const result = await CryptoProxy.isE2EEForwardingKey({ key: key.privateKey });
-                return result ? false : key;
-            })
-        )
-    ).filter(isTruthy);
+    const activeKeysWithoutForwarding = {
+        v4: (
+            await Promise.all(
+                keys.v4.map(async (key) => {
+                    const result = await CryptoProxy.isE2EEForwardingKey({ key: key.privateKey });
+                    return result ? false : key;
+                })
+            )
+        ).filter(isTruthy),
+        v6: keys.v6, // forwarding not supported by v6 keys
+    };
 
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         activeKeysWithoutForwarding,
@@ -125,11 +131,12 @@ export const createSignedKeyListForMigration = async ({
         // Only create a new signed key list if the address does not have one already
         // or the signed key list is obsolete.
         await keyMigrationKTVerifier({ email: address.Email, signedKeyList: address.SignedKeyList, api });
-        const activeKeys = getNormalizedActiveKeys(
+        const activeKeys = getNormalizedActiveAddressKeys(
             address,
-            await getActiveKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)
+            await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)
         );
-        if (activeKeys.length > 0) {
+        if (activeKeys.v4.length > 0) {
+            // v4 keys always presents, no need to check for v6 ones
             [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
                 activeKeys,
                 address,

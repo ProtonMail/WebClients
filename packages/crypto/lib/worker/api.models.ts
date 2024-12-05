@@ -124,7 +124,9 @@ export type WorkerImportPublicKeyOptions<T extends Data> = {
     checkCompatibility?: boolean;
 };
 
-export interface WorkerGenerateKeyOptions extends Omit<GenerateKeyOptions, 'format' | 'passphrase'> {}
+export interface WorkerGenerateKeyOptions<CustomConfig extends PartialConfig | undefined> extends Omit<GenerateKeyOptions, 'format' | 'passphrase'> {
+    config?: CustomConfig; // parametrized for key version inference
+}
 
 export interface WorkerReformatKeyOptions extends Omit<ReformatKeyOptions, 'privateKey' | 'format' | 'passphrase'> {
     privateKey: PrivateKeyReference;
@@ -195,13 +197,8 @@ export interface KeyReference {
      * Second entry does not include 3rd party certifications (e.g. from Proton CA).
      **/
     readonly _keyContentHash: [string, string];
-    /**
-     * Return compatibility error if the key not compatible with all Proton clients.
-     * This function is intended for logging purposes.
-     * Use `options.checkCompatibility` with `importPrivateKey` and `importPublicKeys` to avoid importing incompatible keys.
-     */
-    _getCompatibilityError(): Error | null;
 
+    getVersion(): number;
     getFingerprint(): string;
     /**
      * Key ID of primary key in hex format.
@@ -214,6 +211,8 @@ export interface KeyReference {
     getAlgorithmInfo(): AlgorithmInfo;
     getCreationTime(): Date;
     isPrivate: () => this is PrivateKeyReference;
+    isPrivateKeyV4: () => this is PrivateKeyReferenceV4; // to be replaced with helper function in @proton/crypto once a PublicKey equivalent is needed
+    isPrivateKeyV6: () => this is PrivateKeyReferenceV6;
     getExpirationTime(): Date | number | null;
     getUserIDs(): string[];
     /**
@@ -238,6 +237,12 @@ export interface PublicKeyReference extends KeyReference {}
 export interface PrivateKeyReference extends PublicKeyReference {
     /** Dummy field needed to distinguish a PrivateKeyReference from  a PublicKeyReference, as they are otherwise seen as equivalent by TS */
     readonly _dummyType: 'private';
+}
+export interface PrivateKeyReferenceV4 extends PrivateKeyReference {
+    getVersion(): 4;
+}
+export interface PrivateKeyReferenceV6 extends PrivateKeyReference {
+    getVersion(): 6;
 }
 
 export interface ComputeHashStreamOptions {
