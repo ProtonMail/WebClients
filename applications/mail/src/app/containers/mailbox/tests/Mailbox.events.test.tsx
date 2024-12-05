@@ -1,4 +1,4 @@
-import { act } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { DEFAULT_MAIL_PAGE_SIZE, EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -24,7 +24,7 @@ describe('Mailbox elements list reacting to events', () => {
         const total = 3;
         const { getItems, store } = await setup({ conversations: getElements(total) });
 
-        const element = {
+        const conversation = {
             ID: 'id3',
             Labels: [{ ID: labelID }],
             LabelIDs: [labelID],
@@ -34,9 +34,9 @@ describe('Mailbox elements list reacting to events', () => {
             ConversationCounts: [{ LabelID: labelID, Total: total + 1, Unread: 0 }],
             Conversations: [
                 {
-                    ID: element.ID,
+                    ID: conversation.ID,
                     Action: EVENT_ACTIONS.CREATE,
-                    Conversation: element as Conversation,
+                    Conversation: conversation as Conversation,
                 },
             ],
         });
@@ -51,7 +51,7 @@ describe('Mailbox elements list reacting to events', () => {
         const total = 3;
         const search = { keyword: 'test' };
         const { getItems, store } = await setup({
-            messages: getElements(total),
+            messages: getElements(total, labelID, { ConversationID: 'id3' }),
             search,
         });
 
@@ -59,6 +59,7 @@ describe('Mailbox elements list reacting to events', () => {
             ID: 'id3',
             Labels: [{ ID: labelID }],
             LabelIDs: [labelID],
+            ConversationID: 'id3',
         } as any as Message;
         await sendEvent(store, {
             Messages: [
@@ -148,7 +149,7 @@ describe('Mailbox elements list reacting to events', () => {
         const total = 3;
         const search = { keyword: 'test' };
         const { getItems, store } = await setup({
-            messages: getElements(total),
+            messages: getElements(total, labelID, { ConversationID: 'id10' }),
             search,
         });
 
@@ -158,7 +159,7 @@ describe('Mailbox elements list reacting to events', () => {
                 {
                     ID,
                     Action: EVENT_ACTIONS.DELETE,
-                    Message: { ID } as Message,
+                    Message: { ID, ConversationID: ID } as Message,
                 },
             ],
         });
@@ -172,7 +173,7 @@ describe('Mailbox elements list reacting to events', () => {
 
         const total = 3;
         const search = { keyword: 'test' };
-        const messages = getElements(total);
+        const messages = getElements(total, labelID, { ConversationID: 'id3' });
         const { store } = await setup({ messages, search });
 
         await sendEvent(store, {
@@ -185,7 +186,7 @@ describe('Mailbox elements list reacting to events', () => {
     it('should not show the loader if not live cache but params has not changed', async () => {
         const total = DEFAULT_MAIL_PAGE_SIZE;
         const search = { keyword: 'test' };
-        const messages = getElements(total);
+        const messages = getElements(total, labelID, { ConversationID: 'id3' });
 
         baseApiMocks();
 
@@ -193,13 +194,14 @@ describe('Mailbox elements list reacting to events', () => {
 
         const { initialPath, ...props } = getProps({ search });
 
-        const { getAllByTestId, store } = await render(<MailboxContainer {...props} />, {
+        const view = await render(<MailboxContainer {...props} />, {
             preloadedState: {
                 messageCounts: getModelState([{ LabelID: labelID, Total: total }]),
             },
             initialPath,
         });
-        const getItems = () => getAllByTestId('message-item', { exact: false });
+        const { store } = view;
+        const getItems = () => screen.getAllByTestId('message-item', { exact: false });
 
         // First load pending
         expectElements(getItems, DEFAULT_PLACEHOLDERS_COUNT, true);
@@ -235,7 +237,7 @@ describe('Mailbox elements list reacting to events', () => {
     it('should show the loader if not live cache and params has changed', async () => {
         const total = DEFAULT_MAIL_PAGE_SIZE;
         const search = { keyword: 'test' };
-        const messages = getElements(total);
+        const messages = getElements(total, labelID, { ConversationID: 'id3' });
 
         baseApiMocks();
 
