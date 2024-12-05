@@ -4,10 +4,9 @@ import { createMemoryHistory } from 'history';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { GetBusySlotsResponse } from '@proton/shared/lib/interfaces/calendar';
-import { addApiResolver, apiMock } from '@proton/testing';
+import { addApiResolver } from '@proton/testing';
 
-import type { CalendarStore } from '../store';
-import { extendStore, setupStore } from '../store';
+import { getStoreWrapper } from '../../test/Store';
 import { busySlotsActions, busySlotsSliceName } from './busySlotsSlice';
 
 const busySlotsResponseFaker = ({ dataAccessible }: { dataAccessible: boolean }): GetBusySlotsResponse => {
@@ -37,22 +36,16 @@ const busySlotsResponseFaker = ({ dataAccessible }: { dataAccessible: boolean })
     };
 };
 
+const getStore = () => {
+    const history = createMemoryHistory();
+    const { store } = getStoreWrapper({ history });
+    return store;
+};
+
 describe('busySlotsListener', () => {
-    let store: CalendarStore;
-
-    beforeEach(() => {
-        store = setupStore();
-        extendStore({
-            history: createMemoryHistory(),
-            authentication: {
-                getPassword: () => '',
-            } as any,
-            api: apiMock as any,
-            eventManager: jest.fn() as any,
-        });
-    });
-
     it('Should not run the effect is metadata are not set', () => {
+        const store = getStore();
+
         const attendeeEmail = 'guigui@proton.black';
 
         expect(store.getState()[busySlotsSliceName].attendees).toEqual([]);
@@ -65,6 +58,8 @@ describe('busySlotsListener', () => {
     });
 
     it('Should run the effect is metadata are set', async () => {
+        const store = getStore();
+
         const attendeeA = 'guigui@proton.black';
         const attendeeB = 'roro@proton.black';
 
