@@ -1183,11 +1183,6 @@
         "Najpopularniejsze"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Ograniczone zapasy!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Płatne ${ amount } jednorazowo"
@@ -2433,11 +2428,6 @@
         "Zaległa faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2509,12 +2499,25 @@
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Dopasowaliśmy automatycznie pola CSV do pól vCard. Możesz ręcznie zmienić te dopasowania."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Wykryliśmy następujące pola w pliku CSV. Zaznacz te, które chcesz zaimportować."
+      ]
+    },
+    "Docs Info": {
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "Współpraca właśnie stała się prostsza. Teraz każdy może sugerować zmiany bez edytowania dokumentu."
+      ],
+      "Suggestion mode is here": [
+        "Tryb sugestii jest tutaj"
       ]
     },
     "Downgrade account reason": {
@@ -4342,6 +4345,9 @@
       "An active recovery file": [
         "Aktywny plik odzyskiwania"
       ],
+      "an anonymous user": [
+        "anonimowy użytkownik"
+      ],
       "An issue occurred during the restore process.": [
         "Wystąpił błąd podczas procesu przywracania."
       ],
@@ -4352,10 +4358,10 @@
         "Uzyskaj do niego dostęp, gdziekolwiek jesteś"
       ],
       "Anyone with this link can access your file.": [
-        "Każdy, kto posiada link, ma dostęp do pliku."
+        "Każdy, kto ma link, ma dostęp do pliku."
       ],
       "Anyone with this link can access your folder.": [
-        "Każdy, kto posiada link, ma dostęp do folderu."
+        "Każdy, kto ma link, ma dostęp do folderu."
       ],
       "Are you sure you want to discard your changes?": [
         "Czy na pewno chcesz odrzucić wprowadzone zmiany?"
@@ -5326,6 +5332,12 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Zanim kontakty będą mogły zostać wyeksportowane, aplikacja musi je lokalnie odszyfrować. Pod koniec procesu zostanie wygenerowany plik VCF do pobrania."
       ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Podpis cyfrowy został częściowo zweryfikowany. Plik został przesłany ze strony publicznej, która nie określa pochodzenia konkretnego użytkownika."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Podpis cyfrowy został częściowo zweryfikowany. Folder został przesłany ze strony publicznej, która nie określa pochodzenia konkretnego użytkownika."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Liczba pobrań obejmuje rzeczywiste pobrania i podgląd plików."
       ],
@@ -5381,19 +5393,19 @@
         "Link został utworzony w starej wersji aplikacji i nie może zostać zmodyfikowany. Usuń link i utwórz nowy, aby zmienić jego ustawienia."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Link zostanie wyłączony. Nikt, kto posiada link, nie będzie mógł uzyskać dostępu do pliku. Jeśli chcesz ponownie udostępnić plik, musisz utworzyć nowy link."
+        "Link zostanie wyłączony. Nikt, kto ma link, nie będzie mógł uzyskać dostępu do pliku. Jeśli chcesz ponownie udostępnić plik, musisz utworzyć nowy link."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Link zostanie wyłączony. Nikt, kto posiada link, nie będzie mógł uzyskać dostępu do folderu. Jeśli chcesz ponownie udostępnić folder, musisz utworzyć nowy link."
+        "Link zostanie wyłączony. Nikt, kto ma link, nie będzie mógł uzyskać dostępu do folderu. Jeśli chcesz ponownie udostępnić folder, musisz utworzyć nowy link."
       ],
       "This month": [
         "Ten miesiąc"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Spowoduje to usunięcie linku i dostępu do folderu dla każdego, kto posiada link.",
-        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link.",
-        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link.",
-        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link."
+        "Spowoduje to usunięcie linku i dostępu do folderu dla każdego, kto ma link.",
+        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto ma link.",
+        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto ma link",
+        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto ma link."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "Spowoduje to usunięcie zsynchronizowanego urządzenia ${ deviceName } z ${ DRIVE_APP_NAME } i zatrzymanie synchronizacji folderów."
@@ -5908,6 +5920,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
       ],
+      "Account holder": [
+        "Właściciel konta"
+      ],
       "Add email address": [
         "Dodaj adres e-mail"
       ],
@@ -5924,10 +5939,10 @@
         "Nowak"
       ],
       "Anyone on the Internet with the link can view": [
-        "Każdy, kto posiada link, może zobaczyć zawartość"
+        "Każdy, kto ma link, może zobaczyć zawartość"
       ],
       "Anyone with the link": [
-        "Każdy, kto posiada link"
+        "Każdy, kto ma link"
       ],
       "App password": [
         "Hasło aplikacji"
@@ -6465,6 +6480,11 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ]
+    },
+    "Label description": {
+      "View and download": [
+        "Zobacz i pobierz"
       ]
     },
     "Label for contact group color": {
@@ -7827,6 +7847,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetowanie haseł i uwierzytelniania dwustopniowego użytkowników"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Przekieruj ruch sieciowy przez sieć Tor jednym kliknięciem"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
@@ -8179,6 +8202,9 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Brak przestrzeni dyskowej do przesłania ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "Link został zaktualizowany"
+      ],
       "Root folder failed to be loaded": [
         "Załadowanie głównego folderu nie powiodło się"
       ],
@@ -8262,6 +8288,9 @@
     "Onboarding Action": {
       "Continue": [
         "Kontynuuj"
+      ],
+      "Create a document": [
+        "Utwórz dokument"
       ],
       "Get started": [
         "Rozpocznij"
@@ -8566,6 +8595,9 @@
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Specjalnie obniżona cena ${ priceWithDiscount } jest ważna przez pierwszy miesiąc. Potem usługa automatycznie odnowi się po cenie ${ renewPrice } za miesiąc. Możesz anulować subskrypcję w dowolnym momencie."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"

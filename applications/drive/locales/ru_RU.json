@@ -1183,11 +1183,6 @@
         "Самые популярные"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Ограниченный запас!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Оплата ${ amount } единовременно"
@@ -2433,11 +2428,6 @@
         "Просроченный счёт"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2507,6 +2497,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4115,7 +4110,7 @@
         "${ contactsLength } контакт",
         "${ contactsLength } контакта",
         "${ contactsLength } контактов",
-        "${ contactsLength } контакта"
+        "${ contactsLength } контактов"
       ],
       "${ doneCount } finished": [
         "${ doneCount } завершен",
@@ -4341,6 +4336,9 @@
       ],
       "An active recovery file": [
         "Активный файл восстановления"
+      ],
+      "an anonymous user": [
+        "анонимный пользователь"
       ],
       "An issue occurred during the restore process.": [
         "Во время восстановления возникла проблема."
@@ -5326,6 +5324,12 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Приложению необходимо расшифровать ваши контакты, прежде чем экспортировать их. В конце процесса будет сгенерирован файл VCF, и вы сможете его скачать."
       ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "ЭЦП была проверена частично. Файл был загружен с публичной страницы, на которой не указано происхождение конкретного пользователя."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "ЭЦП была проверена частично. Папка была загружена с публичной страницы, на которой не указано происхождение конкретного пользователя."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Количество загрузок включает как фактические загрузки, так и случаи предварительного просмотра файлов."
       ],
@@ -5980,6 +5984,12 @@
       "Calendars": [
         "Календари"
       ],
+      "Can edit": [
+        "Может изменять"
+      ],
+      "Can view": [
+        "Может просматривать"
+      ],
       "Cancel download": [
         "Отменить скачивание"
       ],
@@ -6462,6 +6472,14 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Упорядочивать, добавлять и изменять файлы"
+      ],
+      "View and download": [
+        "Посмотреть и скачать"
       ]
     },
     "Label for contact group color": {
@@ -8122,6 +8140,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Недостаточно места для загрузки ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "Доступ к публичной ссылке обновлен"
+      ],
+      "Public link update access failed ": [
+        "Доступ к обновлению публичной ссылки не удался "
+      ],
       "Root folder failed to be loaded": [
         "Не удалось загрузить корневую папку"
       ],
@@ -8782,6 +8806,11 @@
         "Просмотрите безопасность вашего аккаунта"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вход не был успешно завершен."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Все псевдонимы"
@@ -8884,13 +8913,13 @@
         "${ timeRemaining.inDays } день",
         "${ timeRemaining.inDays } дня",
         "${ timeRemaining.inDays } дней",
-        "${ timeRemaining.inDays } дня"
+        "${ timeRemaining.inDays } дней"
       ],
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } час",
         "${ timeRemaining.inHours } часа",
         "${ timeRemaining.inHours } часов",
-        "${ timeRemaining.inHours } часа"
+        "${ timeRemaining.inHours } часов"
       ],
       "Password reset request approved (${ user.Email }).": [
         "Запрос на сброс пароля одобрен (${ user.Email })."
@@ -9046,7 +9075,7 @@
         "${ gracePeriodHoursRemaining } час",
         "${ gracePeriodHoursRemaining } часа",
         "${ gracePeriodHoursRemaining } часов",
-        "${ gracePeriodHoursRemaining } часа"
+        "${ gracePeriodHoursRemaining } часов"
       ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } теперь доступен."
@@ -9190,10 +9219,10 @@
     },
     "specialoffer: Offers": {
       "${ n } month": [
-        "первый ${ n } месяц",
-        "${ n } месяцев",
+        "${ n } месяц",
         "${ n } месяца",
-        "${ n } месяца"
+        "${ n } месяцев",
+        "${ n } месяцев"
       ],
       "/ month": [
         "/ месяц"
