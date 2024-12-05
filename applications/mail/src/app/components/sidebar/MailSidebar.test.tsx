@@ -426,6 +426,8 @@ describe('Sidebar checklist display', () => {
             canDisplayChecklist: true,
             displayState: CHECKLIST_DISPLAY_TYPE.REDUCED,
             items: new Set(),
+            hasExpired: false,
+            daysBeforeExpire: 10,
         } as OnboardingChecklistContext);
 
         await render(<MailSidebar {...props} />);
@@ -479,6 +481,8 @@ describe('Sidebar checklist display', () => {
             loading: false,
             markItemsAsDone: jest.fn(),
             userWasRewarded: false,
+            daysBeforeExpire: 0,
+            hasExpired: true,
         } as OnboardingChecklistContext);
 
         await render(<MailSidebar {...props} />);
