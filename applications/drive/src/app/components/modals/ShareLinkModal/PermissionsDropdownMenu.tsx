@@ -86,18 +86,8 @@ export const PermissionsDropdownMenu = ({
     };
 
     const publicSharingPermissionsLabels = {
-        [SHARE_MEMBER_PERMISSIONS.VIEWER]: (
-            <div className="flex flex-column">
-                {c('Label').t`Can view`}
-                <span className="color-weak">{c('Label description').t`View and download`}</span>
-            </div>
-        ),
-        [SHARE_MEMBER_PERMISSIONS.EDITOR]: (
-            <div className="flex flex-column">
-                {c('Label').t`Can edit`}
-                <span className="color-weak text-nowrap">{c('Label description').t`Organise, add and edit files`}</span>
-            </div>
-        ),
+        [SHARE_URL_PERMISSIONS.VIEWER]: c('Label').t`Viewer`,
+        [SHARE_URL_PERMISSIONS.EDITOR]: c('Label').t`Editor`,
     };
 
     const getPermissionsOptionLabel = (permissions: number) => {
