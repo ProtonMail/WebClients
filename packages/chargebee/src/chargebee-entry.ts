@@ -365,11 +365,22 @@ async function renderCreditCardForm() {
     getMessageBus().onSubmit = handleSubmit;
 
     const onGetBinHandler: OnGetBinHandler = async (_, sendResponseToParent) => {
-        const data = cardComponent.getBinData();
-        sendResponseToParent({
-            status: 'success',
-            data,
-        });
+        try {
+            const data = cardComponent.getBinData();
+            sendResponseToParent({
+                status: 'success',
+                data,
+            });
+        } catch (error: any) {
+            sendResponseToParent({
+                status: 'failure',
+                error,
+                data: {
+                    origin: window?.location?.origin,
+                    errorMessage: 'Failed to get BIN data',
+                },
+            });
+        }
     };
     getMessageBus().onGetBin = onGetBinHandler;
 
@@ -629,7 +640,9 @@ async function setConfigurationAndCreateChargebee(configuration: CbIframeConfig)
 
 export async function initialize() {
     try {
-        addCheckpoint('initialize_started');
+        addCheckpoint('initialize_started', {
+            origin: window?.location?.origin,
+        });
 
         let promiseResolve!: (value: unknown) => void;
         let promiseReject!: (reason?: any) => void;

@@ -168,6 +168,7 @@ export type MessageBusResponseSuccess<T> = {
 export type MessageBusResponseFailure = {
     status: 'failure';
     error: any;
+    data?: any;
 };
 
 export function isMessageBusResponseFailure(obj: any): obj is MessageBusResponseFailure {

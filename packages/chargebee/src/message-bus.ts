@@ -514,6 +514,7 @@ export class MessageBus {
                 ...this.formatError(errorObj),
                 checkpoints: getCheckpoints(),
                 chargebeeWrapperVersion,
+                origin: window?.location?.origin,
             };
 
             const message: UnhandledErrorMessage = {
