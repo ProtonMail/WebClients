@@ -42,7 +42,41 @@ export function usePublicActions() {
             });
     };
 
+    const renameLink = async (
+        abortSignal: AbortSignal,
+        {
+            token,
+            linkId,
+            parentLinkId,
+            newName,
+        }: {
+            token: string;
+            linkId: string;
+            parentLinkId: string;
+            newName: string;
+        }
+    ) => {
+        // translator: ${newName} is for a folder or file name.
+        const successNotificationText = c('Notification').t`"${newName}" renamed successfully`;
+        // translator: ${newName} is for a folder or file name.
+        const failNotificationText = c('Notification').t`"${newName}" failed to be renamed`;
+
+        return publicLink
+            .renameLink(abortSignal, { token, linkId, newName })
+            .then(async () => {
+                await publicLinksListing.loadChildren(abortSignal, token, parentLinkId, false);
+                createNotification({
+                    text: <span className="text-pre-wrap">{successNotificationText}</span>,
+                });
+            })
+            .catch((e) => {
+                showErrorNotification(e, <span className="text-pre-wrap">{failNotificationText}</span>);
+                throw e;
+            });
+    };
+
     return {
+        renameLink,
         createFolder,
     };
 }

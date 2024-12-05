@@ -131,7 +131,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         nodeHashKey: link.FolderProperties?.NodeHashKey,
         contentKeyPacket: link.FileProperties?.ContentKeyPacket,
         contentKeyPacketSignature: link.FileProperties?.ContentKeyPacketSignature,
-        signatureAddress: link.SignatureAddress,
+        signatureAddress: link.SignatureEmail,
         xAttr: link.XAttr,
         volumeId: link.VolumeID,
     };
