@@ -5,8 +5,6 @@ import { getUnixTime } from 'date-fns';
 import { createMemoryHistory } from 'history';
 
 import { CacheProvider, useSubscribedCalendars } from '@proton/components';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
-import { baseConfigureStore } from '@proton/redux-shared-store/sharedStore';
 import {
     CALENDAR_FLAGS,
     CALENDAR_TYPE,
@@ -20,6 +18,7 @@ import { generateOwnedPersonalCalendars, generateSubscribedCalendars } from '@pr
 import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 import noop from '@proton/utils/noop';
 
+import { getStoreWrapper } from '../../test/Store';
 import type { CalendarSidebarProps } from './CalendarSidebar';
 import CalendarSidebar from './CalendarSidebar';
 
@@ -59,45 +58,13 @@ jest.mock('@proton/components/hooks/useEventManager', () => ({
     })),
 }));
 
-jest.mock('@proton/features/useFeature', () => () => ({}));
-
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 
 jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
 
-jest.mock('@proton/account/user/hooks', () => ({
-    __esModule: true,
-    useUser: jest.fn(() => [{ hasPaidMail: true, Flags: {} }, false]),
-    useGetUser: jest.fn(() => [{ hasPaidMail: true, Flags: {} }, false]),
-}));
-
 jest.mock('@proton/components/hooks/useSubscribedCalendars', () => ({
     __esModule: true,
     default: jest.fn(() => ({ loading: true })),
-}));
-
-jest.mock('@proton/account/welcomeFlags/index', () => ({
-    __esModule: true,
-    useWelcomeFlags: jest.fn(() => ({ welcomeFlags: { isWelcomeFlow: false } })),
-}));
-
-jest.mock('@proton/account/userSettings/hooks', () => ({
-    __esModule: true,
-    useUserSettings: jest.fn(() => [
-        {
-            EarlyAccess: false,
-        },
-    ]),
-}));
-jest.mock('@proton/account/subscription/hooks', () => () => [{}, jest.fn()]);
-jest.mock('@proton/account/subscription/hooks', () => ({
-    __esModule: true,
-    useSubscription: jest.fn(() => [{ isWelcomeFlow: false }]),
-}));
-
-jest.mock('@proton/components/hooks/useApi', () => ({
-    __esModule: true,
-    default: jest.fn(),
 }));
 
 jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
@@ -123,16 +90,6 @@ jest.mock('@proton/calendar/holidaysDirectory/hooks', () => ({
 jest.mock('@proton/components/hooks/drawer/useDrawer', () => () => {
     return { toggleDrawerApp: jest.fn() };
 });
-
-jest.mock('@proton/components/containers/organization/logoUpload/useOrganizationTheme.ts', () => ({
-    __esModule: true,
-    useOrganizationTheme: jest.fn(() => ({
-        logoURL: 'logo',
-        showName: false,
-        name: 'org',
-        access: false,
-    })),
-}));
 
 const mockedUseSubscribedCalendars = useSubscribedCalendars as jest.Mock<ReturnType<typeof useSubscribedCalendars>>;
 
@@ -200,14 +157,15 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
         onCreateCalendar: noop,
     };
     mockUseAuthentication({} as any);
-    const store = baseConfigureStore();
+    const history = createMemoryHistory();
+    const { Wrapper } = getStoreWrapper({ history });
     return (
-        <Router history={createMemoryHistory()}>
-            <ProtonStoreProvider store={store}>
+        <Router history={history}>
+            <Wrapper>
                 <CacheProvider cache={createCache()}>
                     <CalendarSidebar {...defaultProps} {...props} />
                 </CacheProvider>
-            </ProtonStoreProvider>
+            </Wrapper>
         </Router>
     );
 }
