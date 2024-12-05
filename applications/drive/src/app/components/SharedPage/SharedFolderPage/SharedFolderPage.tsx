@@ -14,6 +14,7 @@ import type { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import TransferManager from '../../TransferManager/TransferManager';
+import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import { EditActions } from '../EditActions/EditActions';
 import Breadcrumbs from '../Layout/Breadcrumbs';
 import HeaderSecureLabel from '../Layout/HeaderSecureLabel';
@@ -286,13 +287,20 @@ export default function SharedFolder({
                 ) : (
                     <SharedPageTransferManager rootItem={rootLink} />
                 )}
-                <SharedFileBrowser
-                    {...folderView}
-                    canWrite={canWrite}
-                    onItemOpen={onItemOpen}
-                    openInDocs={openInDocs}
-                    items={fileBrowserItems}
-                />
+                <UploadDragDrop
+                    shareId={token}
+                    linkId={linkId}
+                    className="flex flex-column flex-nowrap flex-1"
+                    disabled={!canWrite}
+                >
+                    <SharedFileBrowser
+                        {...folderView}
+                        canWrite={canWrite}
+                        onItemOpen={onItemOpen}
+                        openInDocs={openInDocs}
+                        items={fileBrowserItems}
+                    />
+                </UploadDragDrop>
                 {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={rootLink} />}
             </SharedPageLayout>
         </FileBrowserStateProvider>

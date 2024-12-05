@@ -3,14 +3,14 @@ import type { HashCheckResult } from '@proton/shared/lib/interfaces/drive/link';
 import { generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import range from '@proton/utils/range';
 
-import { useDebouncedRequest } from '../../_api';
+import { usePublicSession } from '../../_api';
 import { adjustName, splitLinkName, useLink, usePublicLinksListing } from '../../_links';
 import { isClientUidAvailable } from './uploadClientUid';
 
 const HASH_CHECK_AMOUNT = 10;
 
 export default function usePublicUploadHelper() {
-    const debouncedRequest = useDebouncedRequest();
+    const { request: publicDebouncedRequest } = usePublicSession();
     const { getLinkHashKey } = useLink();
     const { loadChildren, getCachedChildren } = usePublicLinksListing();
 
@@ -56,7 +56,7 @@ export default function usePublicUploadHelper() {
             );
 
             const Hashes = hashesToCheck.map(({ hash }) => hash);
-            const { AvailableHashes, PendingHashes } = await debouncedRequest<HashCheckResult>(
+            const { AvailableHashes, PendingHashes } = await publicDebouncedRequest<HashCheckResult>(
                 queryPublicCheckAvailableHashes(shareId, parentLinkId, { Hashes }, suppressErrors),
                 abortSignal
             );
