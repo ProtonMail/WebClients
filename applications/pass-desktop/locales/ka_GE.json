@@ -564,6 +564,9 @@
       "Unpin item": [
         "ელემენტის მოხსნა"
       ],
+      "Update": [
+        "განახლება"
+      ],
       "Update vault": [
         "საცავის განახლება"
       ],
@@ -628,35 +631,6 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის წაშლა"
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "უვადო წვდომა"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "ყველა ფასიანი სერვისი. 6 მომხმარებელი. ერთი იოლი გამოწერა."
-      ],
-      "Limited-stock available!": [
-        "ხელმისაწვდომია შეზღუდული რაოდენობა!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "ფასდაკლების მიღება"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "შავი პარასკევი"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "გადაიხადეთ ერთხელ და მიიღეთ ${ lifetimeAccessJSX } Pass Plus-ზე და SimlleLogin-ზე. მხოლოდ ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "დაზოეთ ${ discountJSX }-მდე Pass Family-ზე. მხოლოდ ${ relativePrice }/თვეში."
       ]
     },
     "Browser": {
@@ -1897,9 +1871,6 @@
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
       ],
-      "Unlimited hide-my-email aliases": [
-        "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
-      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ბიომეტრიით"
       ],
@@ -2209,6 +2180,9 @@
       "Contact details": [
         "კონტაქტის დეტალები"
       ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
       "Copy": [
         "კოპირება"
       ],
@@ -2263,8 +2237,14 @@
       "Display": [
         "ჩვენება"
       ],
+      "Display name": [
+        "საჩვენებელი სახელი"
+      ],
       "Domain": [
         "დომენი"
+      ],
+      "Domains": [
+        "დომენები"
       ],
       "Don't remind me again": [
         "აღარ შემახსენო"
@@ -3099,6 +3079,9 @@
       "Account protection": [
         "ანგარიშის დაცვა"
       ],
+      "Actions": [
+        "ქმედებები"
+      ],
       "Auto-lock update": [
         "ავტომატური დაბლოკვის განახლება"
       ],
@@ -3120,8 +3103,14 @@
       "Confirm your email": [
         "დაადასტურეთ თქვენი ელფოსტა"
       ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
       "Create a vault": [
         "საცავის შექმნა"
+      ],
+      "Create contact": [
+        "კონტაქტის შექმნა"
       ],
       "Create PIN code": [
         "PIN-კოდის შექმნა"
@@ -3346,6 +3335,9 @@
       ],
       "Share with": [
         "გაზიარება"
+      ],
+      "Status": [
+        "სტატუსი"
       ],
       "Stay safer online": [
         "იყავით უსაფრთხოდ ინტერნეტში"
