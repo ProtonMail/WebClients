@@ -28,7 +28,7 @@
         "Poista välitys"
       ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Välitys alkaa pian ja uudet viestit saapuvat postilaatikkoosi."
+        "Ohjaus alkaa pian ja uudet viestit saapuvat postilaatikkoosi."
       ],
       "Mail forward stopped": [
         "Sähköpostin ohjaus pysäytettiin"
@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "activate": [
-        "aktivoi"
-      ],
       "Activate": [
         "Aktivoi"
+      ],
+      "activate": [
+        "aktivoi"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -554,10 +554,10 @@
         "Luo avain"
       ],
       "Generate new recovery phrase": [
-        "Luo uusi palautuslauseke"
+        "Luo uusi palautuslause"
       ],
       "Generate recovery phrase": [
-        "Luo palautuslauseke"
+        "Luo palautuslause"
       ],
       "Generate token": [
         "Luo tunniste"
@@ -829,10 +829,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
       "Reject": [
@@ -1037,7 +1037,7 @@
         "Aseta uusi salasana"
       ],
       "Set recovery phrase": [
-        "Aseta palautuslauseke"
+        "Aseta palautuslause"
       ],
       "Settings": [
         "Asetukset"
@@ -1175,7 +1175,7 @@
         "Päivitä palautustiedosto"
       ],
       "Update recovery phrase": [
-        "Päivitä palautuslauseke"
+        "Vaihda palautuslause"
       ],
       "Upgrade": [
         "Päivitä tilaus"
@@ -1504,7 +1504,7 @@
         "Nopea ja turvallinen. Lokitietoja ei säilytetä."
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Suorita ${ BRAND_NAME } -palvelimilla"
+        "Suorita ${ BRAND_NAME }in palvelimilla"
       ],
       "Run on device": [
         "Suorita laitteella"
@@ -1629,15 +1629,6 @@
         "Valitse vuoden lopun tarjouksesi"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi.",
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 Tt tallennustilaa (2 kertaa enemmän kuin missään muussa tilauksessa)"
@@ -1659,6 +1650,15 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } -tilaus on taas saatavilla vain rajoitetun ajan"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi.",
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi."
       ]
     },
     "bf2023: Offers": {
@@ -1800,11 +1800,6 @@
         "Suosituin"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Rajoitettu varasto!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "${ amount } kertaveloitus"
@@ -1841,7 +1836,7 @@
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, rajattomasti Hide-my-email-aliaksia ja muuta."
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää mm. 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille ja rajattomasti Hide-my-email-aliaksia."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää verkkodokumenttieditorin, kuvien varmuuskopioinnin, versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
@@ -1891,7 +1886,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }In työpöytäsovellus"
+        "${ MAIL_APP_NAME }in työpöytäsovellus"
       ]
     },
     "Bug category": {
@@ -2484,7 +2479,7 @@
         "Lopetetaanko tuonnin mukautus?"
       ],
       "Quit import?": [
-        "Suljetaanko tuonti?"
+        "Lopetetaanko tuonti?"
       ],
       "Remove from the list?": [
         "Poistetaanko listalta?"
@@ -4878,7 +4873,7 @@
         "DKIM-allekirjoitus keskeytettiin DNS-asetuksissasi ilmenneen ongelman vuoksi. Jatka allekirjoitusta seuraamalla alla olevia ohjeita."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Väärä palautuslauseke. Yritä uudelleen tai kokeile toista palautustapaa."
+        "Väärä palautuslause. Yritä uudelleen tai kokeile toista palautustapaa."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Virheellinen vahvistuskoodi. Varmista, että kopioit vahvistuskoodin oikein ja yritä uudelleen. Muutosten voimaantulo saattaa kestää jopa 24 tuntia."
@@ -6279,7 +6274,7 @@
         "Löydettiin ${ itemsCount } ehdotusta, käytä siirtymiseen näppäimistöä."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Selaa kirjoituksen jälkeen näytettäviä ehdotuksia Ylös-/Alas-näppäimillä ja vahvista valinta Enter-näppäimellä tai sulje ehdotukset Esc-näppäimellä."
+        "Selaa kirjoituksen jälkeen näytettäviä ehdotuksia Ylös- ja Alas-näppäimillä, ja vahvista valinta Enter-näppäimellä tai sulje ehdotukset Esc-näppäimellä."
       ]
     },
     "Human verification method": {
@@ -6841,7 +6836,7 @@
         "Palautustiedosto mahdollistaa tietojesi avauksen ja tarkastelun tilin palautuksen jälkeen"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Palautuslauseke mahdollistaa pääsyn tilillesi ja salattujen viestiesi palautuksen mikäli unohdat salasanasi"
+        "Palautuslause mahdollistaa pääsyn tilillesi ja salattujen viestiesi palautuksen mikäli unohdat salasanasi"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
@@ -7282,11 +7277,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "dedicated servers": [
-        "omia palvelimia"
-      ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "dedicated servers": [
+        "omia palvelimia"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Omia kiinteää IP-osoitetta käyttäviä palvelimia voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -7435,7 +7430,7 @@
         "Otettu käyttöön ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        "Palautuslausekkeen uusi käyttöönotto luo uuden palautuslausekkeen."
+        "Palautuslauseen uusi käyttöönotto luo uuden lauseen."
       ],
       "Encryption setting updated": [
         "Salausasetukset päivitetty"
@@ -7498,7 +7493,7 @@
         "Syötä palautusnumerosi niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
       ],
       "Enter your recovery phrase to change your password now.": [
-        "Syötä palautuslausekkeesi vaihtaaksesi salasanasi."
+        "Syötä palautuslauseesi vaihtaaksesi salasanasi."
       ],
       "Event invitations and responses will be sent in this language.": [
         "Tapahtumakutsut ja -vastaukset lähetetään tällä kielellä."
@@ -7561,7 +7556,7 @@
         "Yhdyskäytävien valvonta on käytössä."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        "Uuden palautuslausekkeen luonti poistaa vanhan lausekkeen käytöstä."
+        "Uuden palautuslauseen luonti poistaa vanhan lauseen käytöstä."
       ],
       "Get ${ upsellPlanName }": [
         "Hanki ${ upsellPlanName }"
@@ -8102,7 +8097,7 @@
         "Vanhentuneita palautustapoja, jotka tulee päivittää varmistaaksesi pääsyn tietoihisi"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        "Vanhentunut palautuslauseke, joka tulee päivittää varmistaaksesi pääsyn tietoihisi"
+        "Vanhentunut palautuslause, joka tulee päivittää varmistaaksesi pääsyn tietoihisi"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Yli 100 miljoonaa ihmistä ja yritystä on rekisteröitynyt ${ BRAND_NAME }-palveluun."
@@ -8177,7 +8172,7 @@
         "Tarkista tiedostosi tai kokeile ${ csvTemplateButton }."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "Syötä tilillesi kuuluva 12-sanainen palautuslauseke."
+        "Syötä tilillesi kuuluva 12-sanainen palautuslause."
       ],
       "Please fill out this field.": [
         "Täytä tämä kenttä."
@@ -8289,13 +8284,13 @@
         "Palautuspaketti kopioitiin leikepöydälle"
       ],
       "Recovery phrase copied to clipboard": [
-        "Palautuslauseke kopioitiin leikepöydälle"
+        "Palautuslause kopioitiin leikepöydälle"
       ],
       "Recovery phrase downloaded": [
-        "Palautuslauseke ladattiin"
+        "Palautuslause ladattiin"
       ],
       "Recovery phrase has been disabled": [
-        "Palautuslausekkeesi on poistettu käytöstä"
+        "Palautuslause on poistettu käytöstä"
       ],
       "Recovery phrase is not associated with any keys.": [
         "Palautuslausetta ei ole liitetty mihinkään avaimiin."
@@ -8375,6 +8370,9 @@
       "Select a service provider to start": [
         "Aloita valitsemalla palveluntarjoaja"
       ],
+      "Select one or multiple user affiliations": [
+        "Valitse yksi tai useampi käyttäjäyhteys"
+      ],
       "Select recently used servers": [
         "Valitse viimeksi käytetyistä palvelimista"
       ],
@@ -8403,7 +8401,7 @@
         "Istunto aikakatkaistiin"
       ],
       "Set recovery phrase": [
-        "Aseta palautuslauseke"
+        "Aseta palautuslause"
       ],
       "Setting up your organization": [
         "Määritetään organisaatiotasi"
@@ -8857,7 +8855,7 @@
         "Päivitä palautustiedosto"
       ],
       "Update recovery phrase": [
-        "Päivitä palautuslauseke"
+        "Vaihda palautuslause"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
@@ -8907,11 +8905,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "username": [
-        "käyttäjätunnus"
-      ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -9395,7 +9393,7 @@
         "Tilauksesi on rajoitettu 10 versioon, joita säilytetään enintään 7 päivää"
       ],
       "Your recovery phrase": [
-        "Palautuslausekkeesi"
+        "Palautuslauseesi"
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Palautuslauseesi on sarja 12 satunnaisesti luotua sanaa tietyssä järjestyksessä."
@@ -9964,7 +9962,7 @@
         "Salli palautus puhelimitse"
       ],
       "Allow recovery by recovery phrase": [
-        "Salli palautus palautuslausekkeella"
+        "Salli palautus palautuslauseella"
       ],
       "Allow recovery using a trusted device": [
         "Salli palautus luotettavalla laitteella"
@@ -10669,7 +10667,7 @@
         "Palautuspuhelimen numero"
       ],
       "Recovery phrase": [
-        "Palautuslauseke"
+        "Palautuslause"
       ],
       "Remove image metadata": [
         "Poista kuvien metatiedot"
@@ -10843,6 +10841,9 @@
       "User": [
         "Käyttäjä"
       ],
+      "User affiliations": [
+        "Käyttäjäyhteydet"
+      ],
       "User's new password": [
         "Käyttäjän uusi salasana"
       ],
@@ -10912,7 +10913,7 @@
         "Palautusnumero"
       ],
       "Recovery phrase": [
-        "Palautuslauseke"
+        "Palautuslause"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11759,29 +11760,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Alkaen ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Jatka ilmaisella"
@@ -11809,6 +11787,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Alkaen ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
       ]
     },
     "new_plans: feature": {
@@ -12502,14 +12503,6 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -12528,6 +12521,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä tilauksesi"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -13652,7 +13653,7 @@
         "Ymmärrän, että kadottaessani palautustiedot, voin menettää pääsyn tililleni pysyvästi."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Jos et pääse ${ BRAND_NAME }-tilillesi, voit kirjautua **Palautuspakettisi** avulla ja palauttaa tietosi."
+        "Jos olet menettänyt pääsyn ${ BRAND_NAME }-tilillesi, voit **palautuspakettisi** avulla kirjautua ja palauttaa tietosi."
       ],
       "Includes:": [
         "Sisältää:"
@@ -13854,7 +13855,7 @@
         "**Kaikki olemassa olevat tietosi** (viestit, tapahtumat, yhteystiedot, tiedostot, ${ PASS_APP_NAME } -tietueet, yms.) **lukitaan** ja voidaan avata vain **vanhalla salasanallasi**."
       ],
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Kaikki olemassa olevat tietosi** (viestit, tapahtumat, yhteystiedot, tiedostot, ${ PASS_APP_NAME } -tietueet, yms.) **lukitaan** ja voidaan avata vain **palautuslausekkeellasi** tai **vanhalla salasanallasi**."
+        "**Kaikki olemassa olevat tietosi** (viestit, tapahtumat, yhteystiedot, tiedostot, ${ PASS_APP_NAME } -tietueet, yms.) **lukitaan** ja voidaan avata vain **palautuslauseellasi** tai **vanhalla salasanallasi**."
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
         "Kaikki tilillesi määritetyt **kaksivaiheisen tunnistautumisen (2FA)** todennustavat poistetaan käytöstä."
@@ -14512,7 +14513,7 @@
         "Jos unohdat ${ BRAND_NAME } -salasanasi ja sinun on nollattava se, kirjautuessasi seuraavan kerran sisään tällä laitteella uutta salasanaasi käyttäen, täysi pääsysi ${ BRAND_NAME } -tilille palautetaan."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Jos et pääse ${ BRAND_NAME } -tilillesi, voit kirjautua ja palauttaa tietosi palautuspakettisi avulla."
+        "Jos olet menettänyt pääsyn ${ BRAND_NAME }-tilillesi, voit palautuspakettisi avulla kirjautua ja palauttaa tietosi."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Jos kadotat kirjautumistietosi ja joudut nollaamaan tilisi, **on erittäin tärkeää**, että olet määrittänyt **tilin ja tietojen palautustavat**, tai et välttämättä pääse käsiksi sähköposteihisi, yhteystietoihisi, tiedostoihisi tai salasanoihisi."
@@ -14593,7 +14594,7 @@
         "Vahvista palautusnumerosi nyt"
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Palautuspakettisi luomisessa tapahtui virhe. Yritä myöhemmin uudelleen tai ota yhteyttä tukeen, jos ongelma jatkuu."
+        "Virhe luotaessa palautuspakettiasi. Yritä myöhemmin uudelleen tai ole ongelman jatkuessa yhteydessä asiakaspalveluun."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Palautussähköpostisi vahvistuksessa tapahtui virhe. Yritä myöhemmin uudelleen tai ota yhteyttä tukeen, jos ongelma jatkuu."
@@ -14623,7 +14624,7 @@
         "Voit käyttää palautuspuhelinta päästäksesi takaisin tilillesi, jos unohdat salasanasi."
       ],
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Olet aiemmin ladannut palautuspaketin. Uuden lataaminen **poistaa vanhan käytöstä**."
+        "Olet aiemmin ladannut palautuspaketin. Uuden lataaminen **mitätöi vanhan**."
       ],
       "You have recommended actions.": [
         "Sinulle on suositeltuja toimintoja."
@@ -16480,7 +16481,7 @@
         "sekä 15 muuta premium-ominaisuutta"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostivälitys ${ strongText }"
+        "Automaattinen sähköpostiohjaus ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Tietomurtohälytykset ${ strongArgument }"
@@ -17208,10 +17209,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -17234,6 +17235,9 @@
       ],
       "Choose an account": [
         "Valitse tili"
+      ],
+      "Choose user affiliations": [
+        "Valitse käyttäjäyhteydet"
       ],
       "Clear": [
         "Tyhjennä"
@@ -17626,7 +17630,7 @@
         "Luo puuttuvat avaimet"
       ],
       "Generate new recovery phrase?": [
-        "Luodaanko uusi palautuslauseke?"
+        "Luodaanko uusi palautuslause?"
       ],
       "Generate SMTP token": [
         "Luo SMTP-avain"
@@ -19191,7 +19195,7 @@
         "Palautustiedostosi on vanhentunut, eikä sillä voida palauttaa uusia tietoja, jos nollaat salasanasi uudelleen."
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
-        "Palautuslausekkeesi on vanhentunut, eikä sillä voida palauttaa uusia tietoja, jos nollaat salasanasi uudelleen."
+        "Palautuslauseesi on vanhentunut, eikä sillä voida palauttaa uusia tietoja, jos nollaat salasanasi uudelleen."
       ]
     },
     "Warning for domain modal": {
