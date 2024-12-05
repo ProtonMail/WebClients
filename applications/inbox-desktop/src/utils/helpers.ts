@@ -30,7 +30,6 @@ const clear = (view: Electron.BrowserView) => {
 export const clearStorage = async () => {
     const { t } = c("Clear application data prompt");
     const { response } = await dialog.showMessageBox({
-        type: "warning",
         buttons: [t`Clear application data`, t`Cancel`],
         title: MAIL_APP_NAME,
         message: t`Clear application data`,
