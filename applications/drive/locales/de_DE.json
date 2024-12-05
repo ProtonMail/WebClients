@@ -1169,7 +1169,7 @@
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
-        "Zum Preis von ${ amount } einmal"
+        "Zum Preis von einmalig ${ amount }"
       ],
       "for ${ durationDeal }": [
         "für ${ durationDeal }"
@@ -2404,6 +2404,11 @@
         "Überfällige Rechnung"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto mit spezieller 24/7-Überwachung verdächtiger Aktivitäten - einschließlich der Eskalation zu Sicherheitsspezialisten."
@@ -2473,11 +2478,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -9307,7 +9307,7 @@
         "${ planNumberOfUsers } Benutzer"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
-        "${ PROTON_SENTINEL_NAME } erweiterter Kontoschutz"
+        "Erweiterter Kontoschutz mit ${ PROTON_SENTINEL_NAME }"
       ],
       "2 users": [
         "2 Benutzer"
