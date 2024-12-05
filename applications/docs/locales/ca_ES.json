@@ -941,11 +941,6 @@
         "Més populars"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Oferta per temps limitat!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturat a ${ amount } una vegada"
@@ -4500,6 +4495,9 @@
       "Restored version to": [
         "La versió s'ha restaurat a"
       ],
+      "Save Document as PDF": [
+        "Desa el document com a PDF"
+      ],
       "Saving": [
         "S'està desant"
       ],
@@ -4765,6 +4763,15 @@
       "What do you want to do?": [
         "Què voleu fer?"
       ],
+      "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
+        "Quan la caixa de diàleg estigui oberta, seleccioneu Destinació, trieu «Desa com a PDF» i feu clic a «Desa»."
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "Quan la caixa de diàleg estigui oberta, seleccioneu Destinació, trieu «Desa com a PDF» i feu clic a «Desa»."
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "Quan la caixa de diàleg estigui oberta, seleccioneu «PDF» a la part inferior esquerra i premeu Desa."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
       ],
@@ -4880,6 +4887,9 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "El vostre compte s’actualitzarà un cop suprimit el pagament."
+      ],
+      "Your browser's Print dialog will now open, where you can export your document to PDF.": [
+        "S'obrirà el quadre de diàleg Imprimir del navegador, on podreu exportar el vostre document a PDF."
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "S'estan sincronitzant els canvis al Drive. No tanqueu la pàgina web."

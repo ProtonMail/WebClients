@@ -925,11 +925,6 @@
         "Mest populær"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Begrænset lager!"
-      ]
-    },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "til ${ durationDeal }"
@@ -1087,6 +1082,9 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagerplads"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } e-mail lagring"
       ],
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
@@ -5198,7 +5196,7 @@
         "Markér som bekræftet"
       ],
       "Move to Archive": [
-        "Flyt til Arkiv"
+        "Flyt til arkiv"
       ],
       "Move to Inbox": [
         "Flyt til Indbakke"
@@ -7952,6 +7950,9 @@
       "${ planNumberOfEmails } email address": [
         "${ planNumberOfEmails } e-mailadresse",
         "${ planNumberOfEmails } e-mailadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mapper, etiketter og brugerdefinerede filtre"
       ]
     },
     "Subscription renewal state": {
