@@ -1,6 +1,7 @@
 import type { ProductParam } from '../apps/product';
 import { getProductHeaders } from '../apps/product';
 import type { CLIENT_TYPES } from '../constants';
+import type { FetchConfig } from '../fetch/interface';
 import type { HumanVerificationMethodType } from '../interfaces';
 
 export const getUser = () => ({
@@ -25,7 +26,7 @@ export const queryCreateUser = (
         Salt?: string;
     },
     product: ProductParam
-) => ({
+): FetchConfig => ({
     url: 'core/v4/users',
     method: 'post',
     data,
@@ -35,7 +36,7 @@ export const queryCreateUser = (
     }),
 });
 
-export const getRecoveryMethods = (Username: string) => ({
+export const getRecoveryMethods = (Username: string): FetchConfig => ({
     url: 'core/v4/users/reset',
     method: 'get',
     params: { Username },
@@ -56,7 +57,7 @@ export const queryCreateUserExternal = (
         Salt?: string;
     },
     product: ProductParam
-) => ({
+): FetchConfig => ({
     url: 'core/v4/users/external',
     method: 'post',
     data,
@@ -66,33 +67,33 @@ export const queryCreateUserExternal = (
     }),
 });
 
-export const queryUnlock = () => ({
+export const queryUnlock = (): FetchConfig => ({
     url: 'core/v4/users/unlock',
     method: 'put',
 });
 
-export const canDelete = () => ({
+export const canDelete = (): FetchConfig => ({
     url: 'core/v4/users/delete',
     method: 'get',
 });
 
-export const deleteUser = (data: { Reason?: string; Feedback?: string; Email?: string }) => ({
+export const deleteUser = (data: { Reason?: string; Feedback?: string; Email?: string }): FetchConfig => ({
     url: 'core/v4/users/delete',
     method: 'put',
     data,
 });
 
-export const unlockPasswordChanges = () => ({
+export const unlockPasswordChanges = (): FetchConfig => ({
     url: 'core/v4/users/password',
     method: 'put',
 });
 
-export const lockSensitiveSettings = () => ({
+export const lockSensitiveSettings = (): FetchConfig => ({
     url: 'core/v4/users/lock',
     method: 'put',
 });
 
-export const getHumanVerificationMethods = () => ({
+export const getHumanVerificationMethods = (): FetchConfig => ({
     url: 'core/v4/users/human',
     method: 'get',
 });
@@ -128,7 +129,7 @@ export const queryCheckEmailAvailability = (Name: string) => ({
 
 export const queryDirectSignupStatus = (
     Type: CLIENT_TYPES // 1 = mail, 2 = VPN
-) => ({
+): FetchConfig => ({
     url: 'core/v4/users/direct',
     method: 'get',
     params: { Type },
@@ -138,28 +139,28 @@ export const queryCheckVerificationCode = (
     Token: string,
     TokenType: 'email' | 'sms' | 'invite' | 'coupon' | 'payment',
     Type: CLIENT_TYPES // 1 = mail, 2 = VPN
-) => ({
+): FetchConfig => ({
     url: 'core/v4/users/check',
     method: 'put',
     data: { Token, TokenType, Type },
 });
 
-export const getInvitations = () => ({
+export const getInvitations = (): FetchConfig => ({
     url: 'core/v4/users/invitations',
     method: 'get',
 });
 
-export const acceptInvitation = (invitationID: string) => ({
+export const acceptInvitation = (invitationID: string): FetchConfig => ({
     url: `core/v4/users/invitations/${invitationID}/accept`,
     method: 'post',
 });
 
-export const rejectInvitation = (invitationID: string) => ({
+export const rejectInvitation = (invitationID: string): FetchConfig => ({
     url: `core/v4/users/invitations/${invitationID}/reject`,
     method: 'post',
 });
 
-export const disableUser = (data: { JWT: string }) => ({
+export const disableUser = (data: { JWT: string }): FetchConfig => ({
     url: `core/v4/users/disable/${data.JWT}`,
     method: 'get',
 });

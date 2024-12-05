@@ -1,14 +1,19 @@
 import performRequest from '../../lib/fetch/fetch';
+import type { FetchConfig } from '../../lib/fetch/interface';
 
-class FormDataMock {
+class FormDataMockClass {
+    data: { [key: string]: any };
+
     constructor() {
         this.data = {};
     }
 
-    append(name, key) {
-        this.data[name] = key;
+    append(key: string, value: any) {
+        this.data[key] = value;
     }
 }
+
+const FormDataMock = FormDataMockClass as unknown as typeof FormData;
 
 const headersMock = {
     get: () => {
@@ -17,8 +22,8 @@ const headersMock = {
 };
 
 describe('fetch', () => {
-    let preFetch;
-    let preFormData;
+    let preFetch: typeof fetch;
+    let preFormData: typeof FormData;
 
     beforeEach(() => {
         preFetch = global.fetch;
@@ -31,7 +36,7 @@ describe('fetch', () => {
         global.FormData = preFormData;
     });
 
-    const setup = (fn) => {
+    const setup = (fn: any) => {
         const spy = jasmine.createSpy('fetch').and.callFake(fn);
         global.fetch = spy;
         return spy;
@@ -39,7 +44,7 @@ describe('fetch', () => {
 
     it('should be able to receive json data', async () => {
         setup(async () => ({ json: async () => ({ bar: 1 }), status: 200, headers: headersMock }));
-        const config = {
+        const config: FetchConfig = {
             url: 'http://foo.com/',
         };
         const result = await performRequest(config).then((response) => response.json());
@@ -47,18 +52,19 @@ describe('fetch', () => {
     });
 
     it('should be able to receive blob data', async () => {
-        setup(async () => ({ blob: async () => 123, status: 200, headers: headersMock }));
-        const config = {
+        const blob = new Blob(['test']);
+        setup(async () => ({ blob: async () => blob, status: 200, headers: headersMock }));
+        const config: FetchConfig = {
             url: 'http://foo.com/',
             output: 'blob',
         };
         const result = await performRequest(config).then((response) => response.blob());
-        expect(result).toEqual(123);
+        expect(result).toEqual(blob);
     });
 
     it('should be able to send json data', async () => {
         const spy = setup(async () => ({ json: async () => ({ bar: 1 }), status: 200, headers: headersMock }));
-        const config = {
+        const config: FetchConfig = {
             url: 'http://foo.com/',
             data: {
                 foo: 'bar',
@@ -72,7 +78,7 @@ describe('fetch', () => {
                 credentials: 'include',
                 redirect: 'follow',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'content-type': 'application/json',
                 },
                 body: JSON.stringify(config.data),
             }),
@@ -81,7 +87,7 @@ describe('fetch', () => {
 
     it('should be able to send form data', async () => {
         const spy = setup(async () => ({ json: async () => ({ bar: 1 }), status: 200, headers: headersMock }));
-        const config = {
+        const config: FetchConfig = {
             url: 'http://foo.com/',
             input: 'form',
             data: {
@@ -105,7 +111,7 @@ describe('fetch', () => {
 
     it('should throw on 400 error and include the config, data and status', async () => {
         setup(async () => ({ json: async () => ({ bar: 1 }), status: 400, headers: headersMock }));
-        const config = {
+        const config: FetchConfig = {
             url: 'http://foo.com/',
             suppress: [123],
         };
