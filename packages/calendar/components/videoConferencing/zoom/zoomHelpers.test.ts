@@ -28,6 +28,40 @@ describe('Zoom location helpers', () => {
         });
     });
 
+    it('should format the personal meetings', () => {
+        const location = 'https://us02web.zoom.us/my/protonCustom';
+        const dataLocation = getZoomDataFromLocation(location);
+        const dataDescription = getZoomDataFromLocation(location);
+
+        const expectData = {
+            service: 'zoom',
+            meetingUrl: 'https://us02web.zoom.us/my/protonCustom',
+            meetingId: 'protonCustom',
+            joiningInstructions: undefined,
+            password: undefined,
+        };
+
+        expect(dataLocation).toStrictEqual(expectData);
+        expect(dataDescription).toStrictEqual(expectData);
+    });
+
+    it('should format the personal meetings', () => {
+        const location = 'https://us02web.zoom.us/j/protonCustom';
+        const dataLocation = getZoomDataFromLocation(location);
+        const dataDescription = getZoomDataFromLocation(location);
+
+        const expectData = {
+            service: 'zoom',
+            meetingUrl: 'https://us02web.zoom.us/j/protonCustom',
+            meetingId: 'protonCustom',
+            joiningInstructions: undefined,
+            password: undefined,
+        };
+
+        expect(dataLocation).toStrictEqual(expectData);
+        expect(dataDescription).toStrictEqual(expectData);
+    });
+
     it('should not return a random URL containing google meet', () => {
         const location = 'https://meet.google.com/random-url';
         const data = getZoomDataFromLocation(location);
