@@ -70,11 +70,11 @@
       "Accept": [
         "承認する"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -829,10 +829,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Reject": [
@@ -1625,6 +1625,14 @@
         "年末オファーを選択してください"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "申し訳ありませんがこれらの要請は現在のあなたのプランでは許可されていません。${ cycle }ヶ月間のサブスクリプションで${ plan.Title }を${ discountPercentage }割引でご利用いただけます。"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB のストレージ (他のプランの 2 倍以上)"
@@ -1646,14 +1654,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } プランが期間限定で復活します"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "申し訳ありませんがこれらの要請は現在のあなたのプランでは許可されていません。${ cycle }ヶ月間のサブスクリプションで${ plan.Title }を${ discountPercentage }割引でご利用いただけます。"
       ]
     },
     "bf2023: Offers": {
@@ -3626,9 +3626,6 @@
       "Track the status and activity of your referrals.": [
         "招待の状態やアクティビティを確認します。"
       ],
-      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
-        "キャッチーで入力しやすいメールアドレスを得るために、${ activatePmUser }を有効にしてください。"
-      ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "アップグレードして短いメールアドレスとその他のプレミアム機能を使用できるようにします。"
       ],
@@ -4370,7 +4367,7 @@
         "アカウントは存在しません"
       ],
       "Add at least one action": [
-        "アクションを一つ以上追加してください"
+        "少なくとも 1つのアクションを追加してください"
       ],
       "Add at least one condition": [
         "条件を少なくとも一つ追加してください"
@@ -4493,7 +4490,7 @@
         "この名前のフィルターが既に存在します"
       ],
       "Folder name cannot be empty.": [
-        "フォルダー名は空にできません。"
+        "フォルダー名は空欄にできません。"
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "TV 上で時間切れになったら、「再読み込み」をクリックして再度コードを入力してください。"
@@ -4571,7 +4568,7 @@
         "アイテムの内容が40KBを超えることはできません"
       ],
       "Label name cannot be empty.": [
-        "ラベル名を空にできません。"
+        "ラベル名は空欄にできません。"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "${ calendarsToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
@@ -4790,7 +4787,7 @@
         "セッションがタイムアウトしました。再度サインインしてください。"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "外部アカウントのフォルダーが多すぎます。いくつかのフォルダーを削除するにはインポートをカスタマイズしてください。"
+        "外部アカウントのフォルダが多すぎます。いくつかのフォルダを削除するにはインポートをカスタマイズしてください。"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "このフィールドは${ maximumLength }文字の最大値を超えています。"
@@ -6256,7 +6253,7 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } 予定が暗号化され、カレンダーに追加されました"
+        "${ totalImported }/${ totalToImport } 件の予定が暗号化され、カレンダーに追加されました"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "予定の暗号化と追加中にエラーが発生しました。${ totalToImport } のうち ${ totalImported } の予定のインポートに成功しました。"
@@ -6299,7 +6296,7 @@
         "このファイルには予定の招待が含まれています:"
       ],
       "This file contains an invitation response:": [
-        "以下のファイルには参加の是非の回答があります。"
+        "このファイルには招待の回答が含まれています："
       ],
       "This file contains some data that we cannot import:": [
         "このファイルにはインポートできないデータが含まれています:"
@@ -6721,7 +6718,7 @@
         "(${ memberCount } 人のメンバー)"
       ],
       "(${ serverPrice }/month)": [
-        "(一月 ${ serverPrice })"
+        "(${ serverPrice } /月)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(以下のすべての条件が満たされた場合に動作します)"
@@ -7215,10 +7212,10 @@
       "Data locked": [
         "ロックされたデータ"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -7420,7 +7417,7 @@
         "${ BRAND_NAME } アカウントのメールアドレスまたはユーザー名を入力してください。"
       ],
       "Enter your own password (as organization admin).": [
-        "パスワード（管理員のもの）を入力してください"
+        "自分(組織管理者として)のパスワードを入力してください。"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "回復用メールアドレスを入力してください。ユーザー名またはメールアドレスを送信します。"
@@ -8089,7 +8086,7 @@
         "追加ユーザーのメールアドレスを入力してください。"
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "この文書に直接招待されるように所有者に依頼してください。"
+        "文書に直接招待するように所有者に依頼してください。"
       ],
       "Please authenticate your card in the verification tab.": [
         "認証タブでカード認証をしてください。"
@@ -8167,7 +8164,7 @@
         "このファイル形式はサポートされておりません。"
       ],
       "Preview of documents is not yet supported.": [
-        "文書のプレビューはまだできません。"
+        "文書のプレビューはまだサポートされていません。"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "価格には、適用されるすべてのサイクルベースの割引と、お客様のアカウントに保存されている有効期限内のクーポンが含まれています。"
@@ -8692,7 +8689,7 @@
         "重要なデータを失わないようにするため、${ DRIVE_APP_NAME } は、あなたと共同編集者が変更を加えるときにファイルの古いバージョンを保存します。 ${ BRAND_NAME } が以前のバージョンを保持する期間を選択します。"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
+        "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "予定をインポートするには、まず ${ CALENDAR_APP_NAME } に予定のインポート先となるカレンダーを作成してください。"
@@ -8841,11 +8838,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "Username": [
-        "ユーザーネーム"
-      ],
       "username": [
         "ユーザー名"
+      ],
+      "Username": [
+        "ユーザーネーム"
       ],
       "Users": [
         "ユーザー"
@@ -9049,7 +9046,7 @@
         "有効化しない限り、新規ユーザーの作成、既存ユーザーへのメールアドレスの追加並びに、ユーザーのアカウントへのアクセスはできません。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
+        "新しい認証コードを受け取るか、他の検証方法を使用しますか？"
       ],
       "Would you like to receive a new verification code?": [
         "新しい認証コードを受け取りますか?"
@@ -9396,7 +9393,7 @@
     },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } 件のフォルダーを選択済み"
+        "${ selectedFoldersCount } 件のフォルダが選択済み"
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } 件のラベルが選択済み"
@@ -11140,7 +11137,7 @@
         "もう少しです"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "カレンダーの作成数：${ createdCalendarCount } のうち、${ calendarsToBeCreated }"
+        "作成されたカレンダーの数: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "メールプロバイダーに接続しています"
@@ -11206,7 +11203,7 @@
         "${ itemsToImportCount } ラベルからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } フォルダから ${ selectedItemsToImportCount } の全メッセージをインポートし、ラベル付けします"
+        "${ itemsToImportCount } フォルダから ${ selectedItemsToImportCount } のすべてのメッセージをインポートし、ラベル付けします"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
@@ -11668,6 +11665,29 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }から始めましょう"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME }Plusへアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free で続行"
@@ -11695,29 +11715,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }から始めましょう"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME }Plusへアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -12386,6 +12383,14 @@
         "選択中のプラン: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -12404,14 +12409,6 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -17032,10 +17029,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -17504,7 +17501,7 @@
         "インポートとエクスポート"
       ],
       "Import as simple event?": [
-        "シンプル 予定としてインポートしますか?"
+        "シンプルな予定としてインポートしますか?"
       ],
       "Import contacts": [
         "連絡先をインポート"
@@ -19014,7 +19011,7 @@
         "${ interval } 週間毎の ${ multipleDaysString }"
       ],
       "Every ${ interval } week on all days": [
-        "${ interval } 週間毎の全曜日"
+        "${ interval } 週間毎の全ての日"
       ],
       "Every ${ interval } week on Friday": [
         "${ interval } 週間毎の金曜日"
