@@ -7,6 +7,7 @@ import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useRenameModal } from '../../modals/RenameModal';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
 import { DownloadButton, MoveToTrashButton, OpenInDocsButton, PreviewButton, RenameButton } from './ContextMenuButtons';
+import { usePublicLinkOwnerInfo } from './utils/usePublicLinkOwnerInfo';
 
 export function DrivePublicContextMenu({
     selectedLinks,
@@ -26,6 +27,7 @@ export function DrivePublicContextMenu({
     openPreview: (item: DecryptedLink) => void;
     openInDocs?: (linkId: string) => void;
 }) {
+    const { isCreator, isLastEditor } = usePublicLinkOwnerInfo(selectedLinks);
     const selectedLink = selectedLinks.length > 0 ? selectedLinks[0] : undefined;
     const isOnlyOneItem = selectedLinks.length === 1 && !!selectedLink;
     const isOnlyOneFileItem = isOnlyOneItem && selectedLink.isFile;
@@ -51,15 +53,19 @@ export function DrivePublicContextMenu({
                 )}
                 {(showPreviewButton || showOpenInDocsButton) && <ContextSeparator />}
                 <DownloadButton selectedBrowserItems={selectedLinks} close={close} />
-                {isOnlyOneItem && !isActiveLinkReadOnly && (
+                {isOnlyOneItem && !isActiveLinkReadOnly && isLastEditor && (
                     <>
                         <ContextSeparator />
                         <RenameButton showRenameModal={showPublicRenameModal} link={selectedLink} close={close} />
                     </>
                 )}
 
-                <ContextSeparator />
-                <MoveToTrashButton selectedLinks={selectedLinks} close={close} />
+                {isCreator && isLastEditor && (
+                    <>
+                        <ContextSeparator />
+                        <MoveToTrashButton selectedLinks={selectedLinks} close={close} />
+                    </>
+                )}
                 {children}
             </ItemContextMenu>
             {publicRenameModal}

@@ -77,7 +77,7 @@ interface DriveLink {
     NodeKey: string;
     NodePassphrase: string;
     NodePassphraseSignature: string;
-    SignatureAddress: string;
+    SignatureEmail: string;
     Attributes: number;
     Permissions: number;
     FileProperties: FileProperties | null;
