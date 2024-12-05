@@ -1784,11 +1784,6 @@
         "Самые популярные"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Ограниченный запас!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Оплата ${ amount } единовременно"
@@ -5926,7 +5921,7 @@
         "${ contactsLength } контакт",
         "${ contactsLength } контакта",
         "${ contactsLength } контактов",
-        "${ contactsLength } контакта"
+        "${ contactsLength } контактов"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } из ${ totalProgress }",
@@ -11314,6 +11309,11 @@
         "Просмотрите безопасность вашего аккаунта"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вход не был успешно завершен."
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "Сообщений не найдено"
@@ -11535,13 +11535,13 @@
         "${ timeRemaining.inDays } день",
         "${ timeRemaining.inDays } дня",
         "${ timeRemaining.inDays } дней",
-        "${ timeRemaining.inDays } дня"
+        "${ timeRemaining.inDays } дней"
       ],
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } час",
         "${ timeRemaining.inHours } часа",
         "${ timeRemaining.inHours } часов",
-        "${ timeRemaining.inHours } часа"
+        "${ timeRemaining.inHours } часов"
       ],
       "Password reset request approved (${ user.Email }).": [
         "Запрос на сброс пароля одобрен (${ user.Email })."
@@ -11697,7 +11697,7 @@
         "${ gracePeriodHoursRemaining } час",
         "${ gracePeriodHoursRemaining } часа",
         "${ gracePeriodHoursRemaining } часов",
-        "${ gracePeriodHoursRemaining } часа"
+        "${ gracePeriodHoursRemaining } часов"
       ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } теперь доступен."
@@ -11891,10 +11891,10 @@
     },
     "specialoffer: Offers": {
       "${ n } month": [
-        "первый ${ n } месяц",
-        "${ n } месяцев",
+        "${ n } месяц",
         "${ n } месяца",
-        "${ n } месяца"
+        "${ n } месяцев",
+        "${ n } месяцев"
       ],
       "/ month": [
         "/ месяц"

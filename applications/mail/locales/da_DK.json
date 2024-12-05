@@ -468,6 +468,9 @@
       "Expand URL": [
         "Udvid URL"
       ],
+      "Expand video conferencing widget": [
+        "Udvid widget til videokonference"
+      ],
       "Expiration time": [
         "Udløbstid"
       ],
@@ -960,6 +963,9 @@
       ],
       "Remove this label": [
         "Fjern denne etiket"
+      ],
+      "Remove Zoom meeting": [
+        "Fjern Zoom-møde"
       ],
       "Replace": [
         "Erstat"
@@ -1748,11 +1754,6 @@
         "Mest populær"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Begrænset lager!"
-      ]
-    },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "til ${ durationDeal }"
@@ -2192,6 +2193,9 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagerplads"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } e-mail lagring"
       ],
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
@@ -5174,6 +5178,9 @@
       "Start free trial": [
         "Start gratis prøveperiode"
       ],
+      "Try the new desktop app": [
+        "Prøv den nye desktop app"
+      ],
       "Upgrade now": [
         "Opgradere dit plan nu"
       ]
@@ -7770,7 +7777,7 @@
         "Gå til Alle mails"
       ],
       "Go to Archive": [
-        "Gå til Arkiv"
+        "Gå til arkiv"
       ],
       "Go to Drafts": [
         "Gå til Kladder"
@@ -7827,7 +7834,7 @@
         "Flyt til højre / udvid"
       ],
       "Move to Archive": [
-        "Flyt til Arkiv"
+        "Flyt til arkiv"
       ],
       "Move to Inbox": [
         "Flyt til indbakke"
@@ -8276,7 +8283,7 @@
         "Flyt til"
       ],
       "Move to Archive": [
-        "Flyt til Arkiv"
+        "Flyt til arkiv"
       ],
       "Move to Inbox": [
         "Flyt til Indbakke"
@@ -11647,11 +11654,20 @@
       "Extra storage and users": [
         "Ekstra lagerplads og brugere"
       ],
+      "Folders, labels, and custom filters": [
+        "Mapper, etiketter og brugerdefinerede filtre"
+      ],
       "Helping activists in Hong Kong": [
         "Hjælper aktivister i Hongkong"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Sådan fik vores kundeafdeling vores VPN-app direkte i hænderne på folk."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Sådan kæmpede vi tilbage, da ${ BRAND_NAME } blev blokeret i en aggressiv kampagne."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Sådan støttede vi lokale aktivister, da privatliv og ytringsfriheden blev truet i Hong Kong."
       ],
       "Invited members will be removed from your organization": [
         "Inviterede medlemmer vil blive fjernet fra din organisation"
@@ -11712,6 +11728,9 @@
       ],
       "Unlimited privacy for two": [
         "Ubegrænset privatliv for to"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Brugerabonnementer er ${ BRAND_NAME }s eneste indtægt. Din støtte holder os uafhængige, fremmer vores mission for online privatliv og hjælper aktivister og organisationer, der kæmper for frihed."
       ],
       "Users won’t be able to manage their calendars": [
         "Brugerne vil ikke kunne håndtere deres kalendere"
@@ -12363,7 +12382,7 @@
         "Tilføj gavekode"
       ],
       "Archive": [
-        "Arkivér"
+        "Arkiv"
       ],
       "Are you sure you want to close the preview?": [
         "Er du sikker på, at du vil lukke forhåndsvisningen?"
