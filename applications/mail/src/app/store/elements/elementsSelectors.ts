@@ -11,7 +11,9 @@ import {
     hasAttachments,
     hasAttachmentsFilter,
     hasLabel,
+    isConversation,
     isEmpty,
+    isMessage,
     isSearch,
     isUnread,
     sort as sortElements,
@@ -56,8 +58,8 @@ export const elements = createSelector(
     (elements, params, page, pageSize, pages, bypassFilter) => {
         // Getting all params from the cache and not from scoped params
         // To prevent any desynchronization between cache and the output of the memo
-        const { labelID, sort, filter } = params;
-        let finalSort = sort;
+        const { labelID, sort, filter, conversationMode } = params;
+        let finalSort = { ...sort };
         // The default sorting needs to be override when in inbox or snooze to display snoozed emails on top
         const isInSnoozeOrInbox = labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.SNOOZED;
         if (isInSnoozeOrInbox && sort.sort === 'Time') {
@@ -79,21 +81,28 @@ export const elements = createSelector(
          *
          * Since the cache is only a little subset of user's messages, it is not very costly.
          */
-        const filtered = elementsArray
-            .filter((element) => hasLabel(element, labelID))
-            .filter((element) => {
-                if (isEmpty(filter)) {
-                    return true;
-                }
-                if (filter.Attachments) {
-                    return hasAttachments(element);
-                }
-                if (bypassFilter.includes(element.ID || '')) {
-                    return true;
-                }
-                const elementUnread = isUnread(element, labelID);
-                return filter.Unread ? elementUnread : !elementUnread;
-            });
+        const filtered = elementsArray.filter((element) => {
+            if (!hasLabel(element, labelID)) {
+                return false;
+            }
+            if (conversationMode && !isConversation(element)) {
+                return false;
+            }
+            if (!conversationMode && !isMessage(element)) {
+                return false;
+            }
+            if (isEmpty(filter)) {
+                return true;
+            }
+            if (filter.Attachments) {
+                return hasAttachments(element);
+            }
+            if (bypassFilter.includes(element.ID || '')) {
+                return true;
+            }
+            const elementUnread = isUnread(element, labelID);
+            return filter.Unread ? elementUnread : !elementUnread;
+        });
         const sorted = sortElements(filtered, finalSort, labelID);
 
         // We only keep a slice of the cached elements: the ones we want to display in the current List view
