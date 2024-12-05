@@ -428,6 +428,12 @@
       "Request a feature": [
         "Begär en funktion"
       ],
+      "Resend code": [
+        "Skicka koden igen"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Skicka kod igen (om ${ remaining }s)"
+      ],
       "Resend invitation": [
         "Skicka inbjudan igen"
       ],
@@ -580,6 +586,9 @@
       "Use ${ label } theme": [
         "Använd ${ label }-temat"
       ],
+      "Verify": [
+        "Verifiera"
+      ],
       "Via secure link": [
         "Via säker länk"
       ],
@@ -603,35 +612,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär det."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "livstidsåtkomst"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Alla premiumfunktioner. 6 användare. 1 enkel prenumeration."
-      ],
-      "Limited-stock available!": [
-        "Begränsat lager tillgängligt!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Betala en gång och få ${ lifetimeAccessJSX } till Pass Plus och SimpleLogin. Endast ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Spara upp till ${ discountJSX } på Pass Family. Endast ${ relativePrice }/månad."
       ]
     },
     "Browser": {
@@ -725,6 +705,9 @@
       ],
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
+      ],
+      "Could not resolve share members": [
+        "Kunde inte lösa delningsmedlemmar"
       ],
       "Could not retrieve user invites for the \"${ vaultName }\" vault": [
         "Kunde inte hämta användarinbjudningar för valvet ”${ vaultName }”."
@@ -1309,6 +1292,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Tar bort “${ payload.content.name }“"
       ],
+      "Didn't receive the code?": [
+        "Fick du inte koden?"
+      ],
       "Disabling auto-lock": [
         "Inaktiverar automatiskt lås"
       ],
@@ -1326,6 +1312,9 @@
       ],
       "Drop to import": [
         "Släpp för att importera"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "På grund av en begränsning på Safaris webbläsartillägg kommer filen efter exporten att sakna filnamnstillägget \".pgp\". Redigera namnet på filen så att det innehåller .pgp-filändelsen (t.ex. fil.pgp) efter export."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importera enkelt dina befintliga lösenord in till ${ PASS_APP_NAME }."
@@ -1350,6 +1339,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Aktivera automatisk låsning för att säkra din data"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Aktivera biometriskt autolås"
       ],
       "Enabling biometrics lock failed": [
         "Aktivering av biometrisk lås misslyckades"
@@ -1562,6 +1554,9 @@
       "Offline mode could not be enabled at the moment": [
         "Offlineläge kunde inte aktiveras just nu"
       ],
+      "Offline support successfully disabled": [
+        "Offlinestöd har inaktiverats"
+      ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Onlineåtkomst till ${ PASS_APP_NAME } kommer kräva en PIN-kod. Du kommer att loggas ut efter 3 misslyckade försök."
       ],
@@ -1605,11 +1600,20 @@
       "Pinning item...": [
         "Fäster objekt..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Kontrollera din skräppostmapp eller försök att skicka koden igen."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt ${ BRAND_NAME }-lösenord för att exportera din ${ PASS_APP_NAME }-data"
       ],
       "Please confirm your extra password": [
         "Bekräfta ditt extralösenord"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Vänligen bekräfta ditt extralösenord för att autolåsa med biometri."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Vänligen bekräfta ditt extralösenord för att autolåsa med ditt extralösenord."
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt extralösenord för att exportera din ${ PASS_APP_NAME }-data"
@@ -1819,9 +1823,6 @@
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Obegränsat antal Hide-my-email-alias"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Lås upp ${ PASS_APP_NAME } med din PIN-kod för att komma åt dina passkeys"
       ],
@@ -1845,6 +1846,9 @@
       ],
       "Unpinning item...": [
         "Lossar objekt..."
+      ],
+      "Unverified": [
+        "Overifierad"
       ],
       "Update login": [
         "Uppdatera inloggning"
@@ -1891,6 +1895,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Vi upptäckte att du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera det?",
         "Vi upptäckte att du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera dem?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Vi har skickat en verifieringskod till ${ email }. Ange den nedan:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "När du skapar/redigerar en inloggning på ${ PASS_APP_NAME } kommer inmatning 'användarnamn' alltid vara synligt."
@@ -2010,6 +2017,9 @@
       "24 hours": [
         "24 timmar"
       ],
+      "2FA autofill": [
+        "2FA-autofyll"
+      ],
       "2FA secret key (TOTP)": [
         "Hemlig nyckel för 2FA (TOTP)"
       ],
@@ -2118,6 +2128,9 @@
       "City": [
         "Ort"
       ],
+      "Code": [
+        "Kod"
+      ],
       "Company": [
         "Företag"
       ],
@@ -2126,6 +2139,9 @@
       ],
       "Contact details": [
         "Kontaktdetaljer"
+      ],
+      "Contacts": [
+        "Kontakter"
       ],
       "Copy": [
         "Kopiera"
@@ -2177,6 +2193,9 @@
       ],
       "Display": [
         "Visa"
+      ],
+      "Display name": [
+        "Visningsnamn"
       ],
       "Domain": [
         "Domän"
@@ -2283,6 +2302,9 @@
       "Identity": [
         "Identitet"
       ],
+      "Identity autofill": [
+        "Identitetsautofyll"
+      ],
       "Import": [
         "Importera"
       ],
@@ -2354,6 +2376,9 @@
       ],
       "Login": [
         "Logga in"
+      ],
+      "Login autofill": [
+        "Inloggningsautofyll"
       ],
       "Logins": [
         "Inloggningar"
@@ -2771,6 +2796,9 @@
       "Full Name": [
         "Fullständigt namn"
       ],
+      "me@example.com": [
+        "me@example.com"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -2905,6 +2933,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Inställningar för ${ PASS_APP_NAME }"
       ],
+      "Actions": [
+        "Åtgärder"
+      ],
       "Auto-lock update": [
         "Uppdatering av autolås"
       ],
@@ -2917,8 +2948,17 @@
       "Confirm PIN code": [
         "Bekräfta PIN-kod"
       ],
+      "Confirm your email": [
+        "Bekräfta din e-post"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Anslut ditt ${ BRAND_NAME }-konto"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Create contact": [
+        "Skapa kontakt"
       ],
       "Create PIN code": [
         "Skapa PIN-kod"
@@ -3089,6 +3129,9 @@
       "Share with": [
         "Dela med"
       ],
+      "Status": [
+        "Status"
+      ],
       "Stay safer online": [
         "Var säkrare online"
       ],
@@ -3252,6 +3295,12 @@
       "Invalid alias prefix": [
         "Ogiltigt alias-prefix"
       ],
+      "Invalid code": [
+        "Ogiltig kod"
+      ],
+      "Invalid email": [
+        "Ogiltig e-post"
+      ],
       "Invalid email addresses.": [
         "Ogiltiga e-postadresser."
       ],
@@ -3345,6 +3394,9 @@
       ],
       "Vault name is required": [
         "Valvnamn är obligatoriskt"
+      ],
+      "Verification code is required": [
+        "Verifieringskod är obligatoriskt"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Du har nått gränsen för medlemmar som kan komma åt detta valv."

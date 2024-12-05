@@ -428,6 +428,12 @@
       "Request a feature": [
         "Solicitare funcție"
       ],
+      "Resend code": [
+        "Retrimitere cod"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Retrimitere cod (peste ${ remaining } s)"
+      ],
       "Resend invitation": [
         "Retrimitere invitație"
       ],
@@ -582,6 +588,9 @@
       "Use ${ label } theme": [
         "Folosire tema ${ label }"
       ],
+      "Verify": [
+        "Verifică"
+      ],
       "Via secure link": [
         "Prin legătură web securizată"
       ],
@@ -605,35 +614,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "acces pe viață"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Toate funcțiile premium. Șase utilizatori. Un singur abonament ușor."
-      ],
-      "Limited-stock available!": [
-        "Stoc limitat disponibil!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Luați oferta"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Vinerea Neagră"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Plătiți o dată și primiți ${ lifetimeAccessJSX } la Pass Plus și SimpleLogin. Cu doar ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Economisiți până la ${ discountJSX } cu Pass Family. Doar ${ relativePrice }/lună."
       ]
     },
     "Browser": {
@@ -1329,6 +1309,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Se șterge ”${ payload.content.name }”"
       ],
+      "Didn't receive the code?": [
+        "Nu ați primit codul?"
+      ],
       "Disabling auto-lock": [
         "Se dezactivează autoblocarea."
       ],
@@ -1642,6 +1625,9 @@
       "Pinning item...": [
         "Se fixează articolul..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Verificați în folderul de mesaje nedorite sau reîncercați trimiterea codului."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmați-vă parola ${ BRAND_NAME } pentru a vă exporta datele ${ PASS_APP_NAME }"
       ],
@@ -1863,9 +1849,6 @@
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
       ],
-      "Unlimited hide-my-email aliases": [
-        "Aliasuri nelimitate hide-my-email"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Deblocați ${ PASS_APP_NAME } cu codul PIN pentru a vă accesa parolele."
       ],
@@ -1889,6 +1872,9 @@
       ],
       "Unpinning item...": [
         "Se anulează fixarea articolului..."
+      ],
+      "Unverified": [
+        "Neverificat"
       ],
       "Update login": [
         "Actualizare autentificare"
@@ -1936,6 +1922,9 @@
         "Am detectat că aveți ${ aliasCount } alias care există în SimpleLogin, dar lipsește în ${ PASS_APP_NAME }. Doriți să-l importați?",
         "Am detectat că aveți ${ aliasCount } aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?",
         "Am detectat că aveți ${ aliasCount } de aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Vi s-a trimis un cod de verificare la ${ email }. Introduceți codul primit mai jos:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Când creați/editați date de autentificare în ${ PASS_APP_NAME } câmpul „nume utilizator” va fi întotdeauna vizibil."
@@ -2174,6 +2163,9 @@
       "City": [
         "Oraş"
       ],
+      "Code": [
+        "Cod"
+      ],
       "Company": [
         "Compania"
       ],
@@ -2182,6 +2174,9 @@
       ],
       "Contact details": [
         "Detalii contact"
+      ],
+      "Contacts": [
+        "Contacte"
       ],
       "Copy": [
         "Copiere"
@@ -2233,6 +2228,9 @@
       ],
       "Display": [
         "Afișare"
+      ],
+      "Display name": [
+        "Nume afișat"
       ],
       "Domain": [
         "Domeniu"
@@ -2833,6 +2831,9 @@
       "Full Name": [
         "Numele complet"
       ],
+      "me@example.com": [
+        "eu@examplu.com"
+      ],
       "MM/YY": [
         "LL/AA"
       ],
@@ -2968,6 +2969,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Setări ${ PASS_APP_NAME }"
       ],
+      "Actions": [
+        "Acțiuni"
+      ],
       "Auto-lock update": [
         "Actualizare autoblocare"
       ],
@@ -2980,8 +2984,17 @@
       "Confirm PIN code": [
         "Confirmare cod PIN"
       ],
+      "Confirm your email": [
+        "Confirmare adresă de e-mail"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Conectați-vă la contul ${ BRAND_NAME }"
+      ],
+      "Contacts": [
+        "Contacte"
+      ],
+      "Create contact": [
+        "Creare contact"
       ],
       "Create PIN code": [
         "Creare cod PIN"
@@ -3156,6 +3169,9 @@
       "Share with": [
         "Partajare cu"
       ],
+      "Status": [
+        "Stare"
+      ],
       "Stay safer online": [
         "Rămâneți în siguranță online"
       ],
@@ -3322,6 +3338,12 @@
       "Invalid alias prefix": [
         "Prefix alias nevalid."
       ],
+      "Invalid code": [
+        "Cod nevalid."
+      ],
+      "Invalid email": [
+        "Adresă de e-mail nevalidă."
+      ],
       "Invalid email addresses.": [
         "Adrese de e-mail nevalide."
       ],
@@ -3416,6 +3438,9 @@
       ],
       "Vault name is required": [
         "Numele seifului este obligatoriu."
+      ],
+      "Verification code is required": [
+        "Este necesar codul de verificare."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Ați atins limita de membri care pot accesa acest seif."
