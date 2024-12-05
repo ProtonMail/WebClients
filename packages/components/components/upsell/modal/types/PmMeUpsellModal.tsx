@@ -3,30 +3,28 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
+import UpsellFeatureList from '@proton/components/components/upsell/modal/UpsellFeatureList';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import type { Optional } from '@proton/shared/lib/interfaces';
 import pmMeImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
-
-import useOneDollarConfig from '../../useOneDollarPromo';
-import useUpsellConfig from '../../useUpsellConfig';
 
 interface Props {
     modalProps: ModalStateProps;
-    upsellComponent?: UPSELL_COMPONENT;
+    upsellRefOptions: Optional<Parameters<typeof getUpsellRef>[0], 'feature'>;
 }
-const FiltersUpsellModal = ({ modalProps, upsellComponent }: Props) => {
+
+const PmMeUpsellModal = ({ modalProps, upsellRefOptions }: Props) => {
     const upsellRef = getUpsellRef({
-        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-        component: upsellComponent ?? UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.SHORT_ADDRESS,
-        isSettings: true,
+        ...upsellRefOptions,
     });
     const [user] = useUser();
     const activatePmUser = `${user.Name}@pm.me`;
 
-    const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+    const upsellConfig = useUpsellConfig({ upsellRef });
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
@@ -35,8 +33,30 @@ const FiltersUpsellModal = ({ modalProps, upsellComponent }: Props) => {
             <NewUpsellModal
                 titleModal={c('Title').t`Same inbox, shorter email address`}
                 description={
-                    // translator: full sentence is Unlock <address@pm.me> for a catchy and easy-to-type email address.
-                    c('Description').t`Unlock ${activatePmUser} for a catchy and easy-to-type email address.`
+                    <>
+                        <p className="text-wrap-balance color-weak mt-0 mb-6">
+                            {
+                                // translator: full sentence is Upgrade to get <address@pm.me> for a shorter, easy-to-remember email address in addition to your current one.
+                                c('Description')
+                                    .t`Upgrade to get ${activatePmUser} for a shorter, easy-to-remember email address in addition to your current one.`
+                            }
+                        </p>
+                        <p className="text-left my-0 mb-2">
+                            <strong>{c('Description').t`Also included`}</strong>
+                        </p>
+                        <div className="text-left">
+                            <UpsellFeatureList
+                                hideInfo
+                                features={[
+                                    'more-storage',
+                                    'more-email-addresses',
+                                    'unlimited-folders-and-labels',
+                                    'custom-email-domains',
+                                    'more-premium-features',
+                                ]}
+                            />
+                        </div>
+                    </>
                 }
                 modalProps={modalProps}
                 illustration={pmMeImg}
@@ -58,4 +78,4 @@ const FiltersUpsellModal = ({ modalProps, upsellComponent }: Props) => {
     );
 };
 
-export default FiltersUpsellModal;
+export default PmMeUpsellModal;
