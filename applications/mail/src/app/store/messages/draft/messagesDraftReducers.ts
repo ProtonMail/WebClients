@@ -196,7 +196,12 @@ export const sent = (state: Draft<MessagesState>, { payload: Sent }: PayloadActi
     const message = getMessage(state, Sent.ID);
 
     if (message) {
-        message.data = Sent;
+        message.data = {
+            ...Sent,
+            // Keep password in case the user is undoing send
+            Password: message.data?.Password,
+            PasswordHint: message.data?.PasswordHint,
+        };
         message.messageDocument = undefined;
         message.messageImages = undefined;
         message.loadRetry = 0;
@@ -231,6 +236,11 @@ export const cancelSendSuccess = (state: Draft<MessagesState>, action: PayloadAc
     const message = getMessage(state, action.payload.ID);
 
     if (message) {
-        message.data = action.payload;
+        message.data = {
+            ...action.payload,
+            // Keep password in case the user is undoing send
+            Password: message.data?.Password,
+            PasswordHint: message.data?.PasswordHint,
+        };
     }
 };
