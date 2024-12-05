@@ -2428,6 +2428,11 @@
         "Zaległa faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2497,11 +2502,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6483,6 +6483,9 @@
       ]
     },
     "Label description": {
+      "Organise, add and edit files": [
+        "Organizuj, dodawaj i edytuj pliki"
+      ],
       "View and download": [
         "Zobacz i pobierz"
       ]
@@ -8205,6 +8208,9 @@
       "Public link access updated": [
         "Link został zaktualizowany"
       ],
+      "Public link update access failed ": [
+        "Dostęp do aktualizacji linku nie powiódł się "
+      ],
       "Root folder failed to be loaded": [
         "Załadowanie głównego folderu nie powiodło się"
       ],
@@ -8243,6 +8249,12 @@
         "Elementy nie zostały usunięte z listy",
         "Elementy nie zostały usunięte z listy",
         "Elementy nie zostały usunięte z listy"
+      ],
+      "This item was successfully removed from your list": [
+        "Element został usunięty z listy",
+        "Wszystkie elementy zostały usunięte z listy",
+        "Wszystkie elementy zostały usunięte z listy",
+        "Wszystkie elementy zostały usunięte z listy"
       ],
       "Trash failed to be emptied": [
         "Opróżnienie kosza nie powiodło się"
@@ -8597,7 +8609,7 @@
         "Wybierz kraj"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Specjalnie obniżona cena ${ priceWithDiscount } jest ważna przez pierwszy miesiąc. Potem usługa automatycznie odnowi się po cenie ${ renewPrice } za miesiąc. Możesz anulować subskrypcję w dowolnym momencie."
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
