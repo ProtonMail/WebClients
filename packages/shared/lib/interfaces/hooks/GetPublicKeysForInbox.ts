@@ -5,7 +5,6 @@ export type GetPublicKeysForInbox = ({
     lifetime,
     internalKeysOnly,
     includeInternalKeysWithE2EEDisabledForMail,
-    noCache,
 }: {
     email: string;
     lifetime?: number;
@@ -15,5 +14,4 @@ export type GetPublicKeysForInbox = ({
      * These keys may still be used for e.g. calendar sharing or message verification.
      **/
     includeInternalKeysWithE2EEDisabledForMail?: boolean;
-    noCache?: boolean;
 }) => Promise<ApiKeysConfig>;

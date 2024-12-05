@@ -80,7 +80,6 @@ const useGetEncryptionPreferences = () => {
                     internalKeysOnly: intendedForEmail === false,
                     includeInternalKeysWithE2EEDisabledForMail: intendedForEmail === false,
                     lifetime,
-                    noCache: !lifetime,
                 });
                 const isInternal = apiKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
                 pinnedKeysConfig = await getPublicKeysVcardHelper(api, email, publicKeys, isInternal, contactEmailsMap);
