@@ -94,8 +94,8 @@ export const handleIPCCalls = () => {
                 resetBadge();
                 break;
             case "clearAppData":
-                clearStorage(true, 500);
                 resetBadge();
+                clearStorage();
                 break;
             case "oauthPopupOpened": {
                 const enabled = payload === "oauthPopupStarted";
