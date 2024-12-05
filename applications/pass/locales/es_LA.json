@@ -34,6 +34,12 @@
       "Add current URL": [
         "Añadir la URL actual"
       ],
+      "Add custom domain": [
+        "Añadir un dominio personalizado"
+      ],
+      "Add mailbox": [
+        "Añadir un buzón"
+      ],
       "Add more": [
         "Añadir más"
       ],
@@ -61,6 +67,9 @@
       "Back": [
         "Atrás"
       ],
+      "Block contact": [
+        "Bloquear el contacto"
+      ],
       "Bulk delete items from trash": [
         "Eliminar un grupo de elementos de la papelera"
       ],
@@ -81,6 +90,12 @@
       ],
       "Change": [
         "Cambiar"
+      ],
+      "Check DNS": [
+        "Verificar el DNS"
+      ],
+      "Check settings": [
+        "Verificar los ajustes"
       ],
       "Choose a file or drag it here": [
         "Elija un archivo o arrástrelo aquí"
@@ -115,6 +130,9 @@
       "Continue offline": [
         "Continuar sin conexión"
       ],
+      "Copy alias address": [
+        "Copiar la dirección del alias"
+      ],
       "Copy and close": [
         "Copiar y cerrar"
       ],
@@ -141,6 +159,9 @@
       ],
       "Create card": [
         "Crear una tarjeta"
+      ],
+      "Create contact": [
+        "Crear un contacto"
       ],
       "Create identity": [
         "Crear una identidad"
@@ -180,6 +201,9 @@
       ],
       "Delete it, I will never need it": [
         "Eliminarlo, nunca lo necesitaré"
+      ],
+      "Delete mailbox": [
+        "Eliminar el buzón"
       ],
       "Delete password": [
         "Eliminar contraseña"
@@ -316,6 +340,9 @@
       "Make admin": [
         "Dar permisos para administrar"
       ],
+      "Make default": [
+        "Establecer por defecto"
+      ],
       "Make editor": [
         "Hacer editor"
       ],
@@ -336,6 +363,9 @@
       ],
       "Maximum views": [
         "Número máximo de vistas"
+      ],
+      "More info": [
+        "Más información"
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
@@ -390,6 +420,9 @@
       ],
       "Please retry": [
         "Intente de nuevo"
+      ],
+      "Re-verify": [
+        "Volver a verificar"
       ],
       "Reactivate now": [
         "Reactivar"
@@ -475,6 +508,9 @@
       "Select": [
         "Seleccionar"
       ],
+      "Send email": [
+        "Enviar un correo electrónico"
+      ],
       "Send invite": [
         "Enviar invitación"
       ],
@@ -530,6 +566,15 @@
       "Sync aliases": [
         "Sincronizar alias"
       ],
+      "To mailbox": [
+        "Al buzón"
+      ],
+      "Transfer aliases": [
+        "Transferir los alias"
+      ],
+      "Transfer and delete mailbox": [
+        "Transferir y eliminar el buzón"
+      ],
       "Transfer ownership": [
         "Transferir la propiedad"
       ],
@@ -541,6 +586,9 @@
       ],
       "Try for free": [
         "Probarlo gratis"
+      ],
+      "Unblock contact": [
+        "Desbloquear el contacto"
       ],
       "Understood, I will never need it": [
         "Entendido, nunca lo necesitaré",
@@ -679,6 +727,11 @@
         "Su información personal fue filtrada en una vulneración de datos de un servicio de terceros."
       ]
     },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "elemento@${ domainDisplay }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No se pudo analizar el archivo de ${ provider }. ${ errorDetail }"
@@ -778,11 +831,32 @@
       "Failed to add email address": [
         "Error al añadir la dirección de correo"
       ],
+      "Failed to block the contact": [
+        "Error al bloquear el contacto"
+      ],
+      "Failed to create domain": [
+        "Error al crear el dominio"
+      ],
+      "Failed to create new mailbox": [
+        "Error al crear el buzón"
+      ],
+      "Failed to create the contact": [
+        "Error al crear el contacto"
+      ],
+      "Failed to delete domain": [
+        "Error al eliminar el dominio"
+      ],
       "Failed to delete email address from monitoring": [
         "Error al eliminar la dirección de correo del monitoreo"
       ],
       "Failed to delete selected items": [
         "Error al eliminar los elementos seleccionados"
+      ],
+      "Failed to delete the contact": [
+        "Error al eliminar el contacto"
+      ],
+      "Failed to delete the mailbox": [
+        "Error al eliminar el buzón"
       ],
       "Failed to edit user's access.": [
         "Error al editar el acceso del usuario."
@@ -792,6 +866,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Error al cargar vulneraciones para este alias de correo electrónico"
+      ],
+      "Failed to load domain settings.": [
+        "Error al cargar los ajustes del dominio"
       ],
       "Failed to load item history": [
         "Error al leer el historial de elementos"
@@ -811,6 +888,9 @@
       "Failed to remove user's access.": [
         "Error al borrar el acceso del usuario"
       ],
+      "Failed to resend verification code": [
+        "Error al reenviar el código de verificación"
+      ],
       "Failed to resend verification for custom email": [
         "Error al reenviar verificación para este correo electrónico personalizado"
       ],
@@ -829,8 +909,23 @@
       "Failed to unpin item": [
         "Error al desanclar el elemento"
       ],
+      "Failed to update catch-all setting.": [
+        "Error al actualizar el ajuste catch-all"
+      ],
+      "Failed to update default domain": [
+        "Error al actualizar el dominio por defecto"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Error al actualizar los buzones del dominio"
+      ],
+      "Failed to update domain name.": [
+        "Error al actualizar el nombre del dominio"
+      ],
       "Failed to update monitoring settings": [
         "Error al actualizar los ajustes de monitoreo"
+      ],
+      "Failed to verify domain": [
+        "Error al verificar el dominio"
       ],
       "Failed to verify email address": [
         "Error al verificar la dirección de correo"
@@ -1224,6 +1319,9 @@
       "Auto-lock successfully disabled.": [
         "Bloqueo automático desactivado con éxito."
       ],
+      "automatically": [
+        "automáticamente"
+      ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Antes de exportar tus datos con este formato, abra y desactive Ajustes de Safari -> General -> Abrir archivos seguros al descargarlos. Esto evitará que Safari extraiga el archivo exportado de manera incorrecta."
       ],
@@ -1272,6 +1370,12 @@
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
+      "Create contact illustration": [
+        "Crear la ilustración del contacto"
+      ],
+      "Created ${ time }.": [
+        "Creado el ${ time }."
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "El formato CSV es conveniente para visualizar los datos. Por su simpleza, algunos datos no serán incluidos (campos personalizados, claves de acceso...). Para exportar datos de manera completa un formato distinto."
       ],
@@ -1299,6 +1403,9 @@
       "Disabling offline mode...": [
         "Desactivando el modo sin conexión..."
       ],
+      "Domain: ${ domainPath } or @": [
+        "Dominio: ${ domainPath } o @"
+      ],
       "Drop file here to upload": [
         "Suelte los archivos aquí para cargarlos"
       ],
@@ -1322,6 +1429,9 @@
       ],
       "Email address successfully included in monitoring": [
         "Dirección de correo incluida en el monitoreo."
+      ],
+      "Email headers illustration": [
+        "Ilustración de encabezados de correo electrónico"
       ],
       "Emptying trash...": [
         "Vaciando la papelera..."
@@ -1349,6 +1459,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Activando el bloqueo automático por código PIN"
+      ],
+      "Enter the address you want to email.": [
+        "Ingrese la dirección a la que desea enviar un correo electrónico."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Ingrese el código de verificación. Digite ${ digit }."
@@ -1396,6 +1509,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Obtenga alias ilimitados, disfrute funciones exclusivas y apóyenos al suscribirse a Pass Plus."
+      ],
+      "Here's how it works:": [
+        "Así funciona:"
       ],
       "High Priority": [
         "Prioridad alta"
@@ -1691,6 +1807,15 @@
       "Reconnecting": [
         "Reconectando"
       ],
+      "Record: CNAME": [
+        "Registro: CNAME"
+      ],
+      "Record: MX": [
+        "Registro: MX"
+      ],
+      "Record: TXT": [
+        "Registro: TXT"
+      ],
       "Registering extra password...": [
         "Registrando la contraseña adicional..."
       ],
@@ -1714,6 +1839,9 @@
       ],
       "Secure links": [
         "Enlaces seguros"
+      ],
+      "See more info": [
+        "Ver más información"
       ],
       "Select destination vault": [
         "Seleccione la bóveda de destino"
@@ -1753,6 +1881,9 @@
       ],
       "Signing you in": [
         "Iniciando sesión"
+      ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "La nota de SimpleLogin se almacena en la misma ubicación con la dirección de alias y, si bien está protegida con cifrado, no lo está con cifrado de extremo a extremo, lo que significa que cualquiera que tenga acceso a la base de datos de SimpleLogin puede leerla."
       ],
       "Successfully exported all your items": [
         "Todos sus elementos exportados con éxito."
@@ -1803,6 +1934,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportación no estará cifrada y cualquier persona con acceso al archivo exportado podrá ver sus contraseñas. Por seguridad, elimínelo una vez que haya terminado de usarlo."
       ],
+      "This operation is irreversible.": [
+        "Esta operación es irreversible."
+      ],
       "This option is currently not available on your device.": [
         "Esta opción no está disponible en su dispositivo."
       ],
@@ -1829,6 +1963,9 @@
       ],
       "Unable to copy to clipboard": [
         "No se puede copiar al portapapeles"
+      ],
+      "Unconfigured": [
+        "Sin configuración"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloquee ${ PASS_SHORT_APP_NAME } con datos biométricos"
@@ -1865,6 +2002,9 @@
       ],
       "username": [
         "nombre de usuario"
+      ],
+      "Value:": [
+        "Valor:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Bóveda \"${ payload.content.name }\" eliminada con éxito"
@@ -1959,6 +2099,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Su cuenta está restringida porque su organización ha aplicado la autenticación de dos factores. Active la autenticación de dos factores en los ajustes de su cuenta o contacte con su administrador."
       ],
+      "your domain": [
+        "su dominio"
+      ],
       "Your files will be encrypted and then saved": [
         "Los archivos serán cifrados y luego guardados."
       ],
@@ -1974,6 +2117,10 @@
         "${ aliasCount } alias",
         "${ aliasCount } alias"
       ],
+      "${ blockedCount } block": [
+        "${ blockedCount } bloqueo",
+        "${ blockedCount } bloqueos"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } caracter",
         "${ config.options.length } caracteres"
@@ -1986,6 +2133,13 @@
         "${ days } día",
         "${ days } días"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } reenvío",
+        "${ forwardCount } reenvíos"
+      ],
+      "${ ForwardedEmails } forwarded, ${ RepliedEmails } sent, ${ BlockedEmails } blocked, in the last 14 days.": [
+        "${ ForwardedEmails } reenviados, ${ RepliedEmails } enviados, ${ BlockedEmails } bloqueados en los últimos 14 días."
+      ],
       "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
@@ -1994,12 +2148,24 @@
         "${ minutes } minuto",
         "${ minutes } minutos"
       ],
+      "${ months } month": [
+        "${ months } mes",
+        "${ months } meses"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versión de ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } respuesta",
+        "${ repliedCount } respuestas"
       ],
       "${ usageCount } login": [
         "${ usageCount } inicio de sesión",
         "${ usageCount } inicios de sesión"
+      ],
+      "${ years } year": [
+        "${ years } año",
+        "${ years } años"
       ],
       "1 hour": [
         "1 hora"
@@ -2064,6 +2230,9 @@
       "Alias address": [
         "Dirección de alias"
       ],
+      "Alias address (disabled)": [
+        "Dirección del alias (desactivada)"
+      ],
       "Alias management": [
         "Administración de los alias"
       ],
@@ -2112,6 +2281,9 @@
       "Cards": [
         "Tarjetas"
       ],
+      "Catch-All": [
+        "Catch-all"
+      ],
       "City": [
         "Ciudad"
       ],
@@ -2123,6 +2295,9 @@
       ],
       "Confirm vault name": [
         "Confirmar nombre de la bóveda"
+      ],
+      "Contact created ${ time } ago.": [
+        "Se creó el contacto hace ${ time }."
       ],
       "Contact details": [
         "Detalles de contacto"
@@ -2184,8 +2359,14 @@
       "Display name": [
         "Nombre a mostrar"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Dominio"
+      ],
+      "Domain:": [
+        "Dominio:"
       ],
       "Domains": [
         "Dominios"
@@ -2316,6 +2497,9 @@
       "Include numbers (0-9)": [
         "Incluir números (0-9)"
       ],
+      "Info": [
+        "Información"
+      ],
       "Instagram handle": [
         "Nombre de usuario de Instagram"
       ],
@@ -2373,6 +2557,9 @@
       "Logins": [
         "Inicios de sesión"
       ],
+      "Mailboxes": [
+        "Buzones"
+      ],
       "Make all admins": [
         "Promover a todos como administradores"
       ],
@@ -2418,14 +2605,23 @@
       "Newest to oldest": [
         "De más reciente a más antiguo"
       ],
+      "No Activity in the last 14 days.": [
+        "Sin actividad en los últimos 14 días."
+      ],
       "No history": [
         "Sin historial"
       ],
       "None": [
         "Ninguna"
       ],
+      "Not selected": [
+        "Sin selección"
+      ],
       "Note": [
         "Nota"
+      ],
+      "Note • SimpleLogin": [
+        "Nota • SimpleLogin"
       ],
       "Notes": [
         "Notas"
@@ -2484,8 +2680,17 @@
       "Prefix": [
         "Prefijo"
       ],
+      "Premium domain": [
+        "Dominio premium"
+      ],
+      "Priority:": [
+        "Prioridad:"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Proteja ${ PASS_APP_NAME } con una contraseña adicional"
+      ],
+      "Public domain": [
+        "Dominio público"
       ],
       "Rate us": [
         "Evalúenos"
@@ -2516,6 +2721,9 @@
       ],
       "Security code": [
         "Código de seguridad"
+      ],
+      "Select a domain": [
+        "Seleccionar un dominio"
       ],
       "Select an email address": [
         "Seleccionar una dirección de correo"
@@ -2576,6 +2784,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Sincronizar alias con SimpleLogin"
+      ],
+      "Target:": [
+        "Destino:"
       ],
       "Tax number": [
         "Número de identificación fiscal"
@@ -2647,6 +2858,9 @@
       "Username": [
         "Nombre de usuario"
       ],
+      "Value:": [
+        "Valor:"
+      ],
       "Vault ID": [
         "ID de bóveda"
       ],
@@ -2689,11 +2903,17 @@
       "You are about to create": [
         "Está por crear"
       ],
+      "Your domain": [
+        "Su dominio"
+      ],
       "ZIP or Postal code": [
         "Código postal"
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "crear reglas automáticamente ››"
+      ],
       "Learn more": [
         "Más información"
       ],
@@ -2777,6 +2997,9 @@
       "Add text": [
         "Añadir texto"
       ],
+      "Alias Display Name": [
+        "Nombre a mostrar del alias"
+      ],
       "Email address": [
         "Dirección de correo"
       ],
@@ -2803,6 +3026,12 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "my-domain.com": [
+        "mi-dominio.com"
+      ],
+      "Note from SimpleLogin": [
+        "Nota de SimpleLogin"
       ],
       "Password": [
         "Contraseña"
@@ -2929,6 +3158,39 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Se activó la sincronización de alias. Los alias de SimpleLogin puede tomar un tiempo en sincronizarse."
       ],
+      "Contact successfully blocked": [
+        "Se bloqueó el contacto."
+      ],
+      "Contact successfully created": [
+        "Se creó el contacto."
+      ],
+      "Contact successfully deleted": [
+        "Se eliminó el contacto."
+      ],
+      "Contact successfully unblocked": [
+        "Se desbloqueó el contacto."
+      ],
+      "Default domain successfully updated": [
+        "Se actualizó el dominio por defecto."
+      ],
+      "Default mailbox successfully updated": [
+        "Se actualizó el buzón por defecto."
+      ],
+      "Display name successfully updated": [
+        "Se actualizó el nombre a mostrar."
+      ],
+      "Domain successfully deleted": [
+        "Se eliminó el dominio."
+      ],
+      "Mailbox successfully deleted": [
+        "Se eliminó el buzón."
+      ],
+      "Mailbox successfully verified": [
+        "Se verificó el buzón."
+      ],
+      "Mailboxes successfully updated": [
+        "Se actualizaron los buzones."
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Las bóvedas no pueden contener más de ${ vault.targetMaxMembers } usuario.",
         "Las bóvedas no pueden contener más de ${ vault.targetMaxMembers } usuarios."
@@ -2958,8 +3220,26 @@
       "Actions": [
         "Acciones"
       ],
+      "Activity": [
+        "Actividad"
+      ],
+      "Add custom domain": [
+        "Añadir un dominio personalizado"
+      ],
+      "Add mailbox": [
+        "Añadir un buzón"
+      ],
+      "Alias contacts": [
+        "Contactos del alias"
+      ],
+      "Aliases": [
+        "Alias"
+      ],
       "Auto-lock update": [
         "Actualización de bloqueo automático"
+      ],
+      "Blocked addresses": [
+        "Direcciones bloqueadas"
       ],
       "Breach detected": [
         "Vulneración detectada"
@@ -3000,6 +3280,9 @@
       "Custom addresses": [
         "Direcciones personalizadas"
       ],
+      "Custom domains": [
+        "Dominios personalizados"
+      ],
       "Custom email monitoring": [
         "Monitoreo de correo electrónico personalizado"
       ],
@@ -3009,9 +3292,21 @@
       "Dark Web Monitoring": [
         "Monitoreo de la Dark Web"
       ],
+      "Default": [
+        "Por defecto"
+      ],
+      "Default Display Name": [
+        "Nombre a mostrar por defecto"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "¿Eliminar ${ deletedItemsCount } elemento?",
         "¿Eliminar ${ deletedItemsCount } elementos?"
+      ],
+      "Delete domain": [
+        "Eliminar el dominio"
+      ],
+      "Delete mailbox": [
+        "Eliminar el buzón"
       ],
       "Delete this item?": [
         "¿Eliminar este elemento?"
@@ -3024,6 +3319,18 @@
       ],
       "Discard changes?": [
         "¿Descartar cambios?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (opcional)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (opcional)"
+      ],
+      "Domain": [
+        "Dominio"
+      ],
+      "Domain ownership verification": [
+        "Verificación de la propiedad del dominio"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "¿Disfrutando ${ PASS_APP_NAME }?"
@@ -3082,6 +3389,9 @@
       "Low disk space": [
         "Poco espacio en disco"
       ],
+      "Mailbox": [
+        "Buzón"
+      ],
       "Mark as resolved?": [
         "¿Marcar como resuelta?"
       ],
@@ -3107,6 +3417,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Mover el elemento a «${ vaultName }»"
+      ],
+      "MX record": [
+        "Registro MX"
       ],
       "No excluded items": [
         "No hay elementos excluidos"
@@ -3153,6 +3466,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Una vez eliminado, el alias no se puede recuperar.",
         "Una vez eliminados, los alias no se pueden recuperar."
+      ],
+      "Random Prefix Generation": [
+        "Generación aleatoria de prefijos"
       ],
       "Recommended actions": [
         "Acciones recomendadas"
@@ -3212,6 +3528,9 @@
       "Share with": [
         "Compartir con"
       ],
+      "SPF (Optional)": [
+        "SPF (opcional)"
+      ],
       "Status": [
         "Estado"
       ],
@@ -3238,6 +3557,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Desbloquear ${ brandNameJSX }"
+      ],
+      "Unverified": [
+        "Sin verificar"
       ],
       "Update available": [
         "Actualización disponible"
@@ -3287,6 +3609,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "La URL del dominio no es válida."
+      ],
       "Duplicated URL": [
         "La URL es duplicada."
       ],
@@ -3357,8 +3682,14 @@
       "Delete alias": [
         "Eliminar el alias"
       ],
+      "Domain cannot be empty": [
+        "El domino no puede estar vacío."
+      ],
       "Duplicate email addresses.": [
         "Direcciones de correo duplicadas."
+      ],
+      "Email cannot be empty": [
+        "El correo electrónico no puede estar vacío."
       ],
       "Email is required": [
         "Se requiere un correo electrónico."
@@ -3411,6 +3742,9 @@
       ],
       "Move to trash": [
         "Mover a la papelera"
+      ],
+      "Name is required": [
+        "El nombre es obligatorio."
       ],
       "No items": [
         "No hay elementos"
