@@ -117,7 +117,12 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
                     case 'create':
                         return <AliasMailboxCreateModal />;
                     case 'delete':
-                        return <AliasMailboxDeleteModal mailboxID={action.mailboxID} />;
+                        return (
+                            <AliasMailboxDeleteModal
+                                mailboxID={action.mailboxID}
+                                aliasCount={mailboxes[action.mailboxID].AliasCount}
+                            />
+                        );
                     case 'verify':
                         return <MailboxVerifyModal mailboxID={action.mailboxID} sentAt={action.sentAt} />;
                 }

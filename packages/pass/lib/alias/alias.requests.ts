@@ -246,7 +246,7 @@ export const deleteMailboxApi = async ({ mailboxID, transferMailboxID }: Mailbox
         url: `pass/v1/user/alias/mailbox/${mailboxID}`,
         method: 'delete',
         data: { TransferMailboxID: transferMailboxID },
-    }).then(() => true);
+    }).then(() => mailboxID);
 
 export const setDefaultMailboxApi = async ({ defaultMailboxID }: MailboxDefaultDTO) =>
     (
