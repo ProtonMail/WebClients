@@ -29,6 +29,13 @@ jest.mock('@proton/components/components/upsell/useUpsellConfig.ts', () => ({
     default: () => null,
 }));
 
+jest.mock('@proton/components/containers/payments/subscription/postSubscription/usePostSubscriptionTelemetry', () => ({
+    __esModule: true,
+    usePostSubscriptionTelemetry: () => {
+        return () => undefined;
+    },
+}));
+
 jest.mock('@proton/shared/lib/helpers/upsell.ts', () => ({
     __esModule: true,
     useNewUpsellModalVariant: () => true,

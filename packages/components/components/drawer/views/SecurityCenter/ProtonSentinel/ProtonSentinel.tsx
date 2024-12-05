@@ -77,7 +77,9 @@ const ProtonSentinel = () => {
     };
 
     const learnMoreLink = (
-        <Href href={getKnowledgeBaseUrl('/proton-sentinel')} className="inline-block">{c('Link').t`Learn more`}</Href>
+        <Href key="proton-sentinel-link" href={getKnowledgeBaseUrl('/proton-sentinel')} className="inline-block">{c(
+            'Link'
+        ).t`Learn more`}</Href>
     );
 
     return (

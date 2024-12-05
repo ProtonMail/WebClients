@@ -2,10 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
-import { useProtonDomains } from '@proton/account/protonDomains/hooks';
-import { useUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import {
@@ -15,26 +12,21 @@ import {
     Toggle,
     useActiveBreakpoint,
     useApi,
-    useAuthentication,
-    useEventManager,
-    useKTVerifier,
+    useShortDomainAddress,
 } from '@proton/components';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
-import { orderAddress, setupAddress } from '@proton/shared/lib/api/addresses';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
-import { ADDRESS_TYPE, BRAND_NAME, DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, BRAND_NAME } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
-import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import aliasesIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_aliases.svg';
 import autoDeleteIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_auto_delete.svg';
 import monitoringIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_dark_web_monitoring.svg';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
 import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
 
@@ -109,69 +101,18 @@ const FeatureItem = ({ checked, description, icon, id, isActivated, onToggle, ti
     );
 };
 
-const usePmMeAddress = () => {
-    const api = useApi();
-    const [user, loadingUser] = useUser();
-    const shortDomain = `${user.Name}@pm.me`;
-    const [{ premiumDomains }, loadingProtonDomains] = useProtonDomains();
-    const getAddresses = useGetAddresses();
-    const authentication = useAuthentication();
-    const { call } = useEventManager();
-    const getUserKeys = useGetUserKeys();
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
-
-    return {
-        shortDomain,
-        createPmMeAddress: async () => {
-            const [Domain = ''] = premiumDomains;
-            const addresses = await getAddresses();
-
-            // Early return if the address already exists
-            if (addresses.some(({ Email }) => Email === shortDomain)) {
-                return;
-            }
-
-            // Create address
-            const [{ DisplayName = '', Signature = '' } = {}] = addresses || [];
-            const { Address } = await api(
-                setupAddress({
-                    Domain,
-                    DisplayName: DisplayName || '', // DisplayName can be null
-                    Signature: Signature || '', // Signature can be null
-                })
-            );
-            const userKeys = await getUserKeys();
-            await missingKeysSelfProcess({
-                api,
-                userKeys,
-                addresses,
-                addressesToGenerate: [Address],
-                password: authentication.getPassword(),
-                keyGenConfig: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
-                onUpdate: noop,
-                keyTransparencyVerify,
-            });
-            await keyTransparencyCommit(userKeys);
-
-            // Made this address default
-            await api(orderAddress([Address.ID, ...addresses.map(({ ID }) => ID)]));
-
-            // Call event manager to ensure all the UI is up to date
-            await call();
-        },
-        loadingDependency: loadingProtonDomains || loadingUser,
-    };
-};
-
 const getIsAutoDeleteEnabled = (mailSettings: MailSettings | undefined) =>
     Boolean(mailSettings?.AutoDeleteSpamAndTrashDays);
 
 const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
     const api = useApi();
-    const { shortDomain, createPmMeAddress, loadingDependency } = usePmMeAddress();
-    const features = useGetFeatures(shortDomain);
-
+    const {
+        shortDomainAddress,
+        createShortDomainAddress,
+        loadingDependencies: loadingDependency,
+    } = useShortDomainAddress();
+    const features = useGetFeatures(shortDomainAddress);
     const [addresses] = useAddresses();
     const isAliasEnabled = Boolean(addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM));
 
@@ -197,7 +138,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
     const hasNoItemsChecked = !Object.values(checkedItems).some(Boolean);
 
     const handleNext = () => {
-        const promises = [
+        const promises: Promise<any>[] = [
             sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.premium_features, {
                 feature_auto_delete: checkedItems.autoDelete ? 'yes' : 'no',
                 feature_dark_web_monitoring: checkedItems.monitoring ? 'yes' : 'no',
@@ -206,7 +147,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
         ];
 
         if (checkedItems.aliases && !isAliasEnabled) {
-            promises.push(createPmMeAddress());
+            promises.push(createShortDomainAddress({ setDefault: true }));
         }
         if (checkedItems.autoDelete && !isAutoDeleteEnabled) {
             promises.push(api(updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE)));

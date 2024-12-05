@@ -10,7 +10,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useModalState, { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -28,6 +28,10 @@ import InAppPurchaseModal from './InAppPurchaseModal';
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import SubscriptionContainer from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
+
+export type SubscriptionOverridableStep = SUBSCRIPTION_STEPS.UPGRADE | SUBSCRIPTION_STEPS.THANKS;
+const isOverridablableStep = (step: SUBSCRIPTION_STEPS): step is SubscriptionOverridableStep =>
+    [SUBSCRIPTION_STEPS.UPGRADE, SUBSCRIPTION_STEPS.THANKS].includes(step);
 
 export interface OpenCallbackProps
     extends Pick<
@@ -56,6 +60,7 @@ export interface OpenCallbackProps
     onClose?: () => void;
     disableCloseOnEscape?: boolean;
     fullscreen?: boolean;
+    renderCustomStepModal?: (step: SubscriptionOverridableStep, modalProps: ModalStateProps) => ReactNode;
 }
 
 export type OpenSubscriptionModalCallback = (props: OpenCallbackProps) => void;
@@ -107,6 +112,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                 onUnsubscribed,
                 mode,
                 currency,
+                renderCustomStepModal,
                 ...rest
             } = subscriptionProps.current;
 
@@ -164,7 +170,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                     paymentsStatus={status}
                     {...rest}
                     render={({ onSubmit, title, content, footer, step }) => {
-                        return (
+                        const modal = (
                             <ModalTwo
                                 blurBackdrop={blurBackdrop}
                                 className={clsx([
@@ -190,6 +196,12 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                                 {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
                             </ModalTwo>
                         );
+
+                        if (isOverridablableStep(step)) {
+                            return renderCustomStepModal?.(step, modalState) || modal;
+                        }
+
+                        return modal;
                     }}
                 />
             );
