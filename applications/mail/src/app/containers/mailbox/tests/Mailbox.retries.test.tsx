@@ -8,6 +8,12 @@ import { expectElements, getElements, setup } from './Mailbox.test.helpers';
 
 jest.setTimeout(20000);
 
+jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+    useMailELDTMetric: () => {
+        return { stopELDTMetric: jest.fn() };
+    },
+}));
+
 describe('Mailbox retries and waitings', () => {
     beforeEach(clearAll);
 

@@ -3,6 +3,12 @@ import { fireEvent } from '@testing-library/react';
 import { clearAll } from '../../../helpers/test/helper';
 import { props, setup } from './Mailbox.test.helpers';
 
+jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+    useMailELDTMetric: () => {
+        return { stopELDTMetric: jest.fn() };
+    },
+}));
+
 describe('Mailbox elements selection', () => {
     const conversations = [
         { ID: '1', Labels: [{ ID: props.labelID }] },

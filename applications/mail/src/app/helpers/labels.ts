@@ -54,6 +54,11 @@ export const isSystemLabel = (labelID: string) => SYSTEM_LABELS.includes(labelID
 
 export const getHumanLabelID = (labelID: string) => LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] || labelID;
 
+export const isStringHumanLabelID = (labelID: string) => {
+    const humanLabels = Object.values(LABEL_IDS_TO_HUMAN);
+    return humanLabels.includes(labelID);
+};
+
 export const isCustomLabelOrFolder = (labelID: string) =>
     !Object.values(MAILBOX_LABEL_IDS).includes(labelID as MAILBOX_LABEL_IDS);
 
