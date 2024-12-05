@@ -13,7 +13,10 @@ export type { CalendarState };
 export const setupStore = ({
     preloadedState,
     persist,
-}: { preloadedState?: Partial<CalendarState>; persist?: Boolean } = {}) => {
+}: {
+    preloadedState?: Partial<CalendarState>;
+    persist?: Boolean;
+}) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
     const store = configureStore({
