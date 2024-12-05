@@ -1107,11 +1107,6 @@
         "Найбольш папулярны"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Абмежаваная колькасць тавараў!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Аплачваецца ${ amount } аднаразова"
@@ -2638,11 +2633,6 @@
         "Пратэрмінаваны рахунак"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скарыстайцеся памочнікам імпартавання Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
@@ -2730,6 +2720,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7572,7 +7567,7 @@
         "Прыватныя шлюзы"
       ],
       "Require 2FA": [
-        "Патрэбна 2ФА"
+        "Абавязковае 2ФА"
       ],
       "Support for ${ n } custom email domains": [
         "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты"
