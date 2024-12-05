@@ -6,22 +6,22 @@
   "contexts": {
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ link }"
+        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
+        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
+        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vita åtgärd. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vita åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ link }"
+        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ]
     },
     "Action": {
@@ -564,6 +564,9 @@
       "Unpin item": [
         "Lossa objekt"
       ],
+      "Update": [
+        "Uppdatera"
+      ],
       "Update vault": [
         "Uppdatera valv"
       ],
@@ -628,35 +631,6 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Avinstallera ${ PASS_APP_NAME }"
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "livstidsåtkomst"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Alla premiumfunktioner. 6 användare. 1 enkel prenumeration."
-      ],
-      "Limited-stock available!": [
-        "Begränsat lager tillgängligt!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Betala en gång och få ${ lifetimeAccessJSX } till Pass Plus och SimpleLogin. Endast ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Spara upp till ${ discountJSX } på Pass Family. Endast ${ relativePrice }/månad."
       ]
     },
     "Browser": {
@@ -786,6 +760,9 @@
       ],
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
+      ],
+      "Could not resolve share members": [
+        "Kunde inte lösa delningsmedlemmar"
       ],
       "Could not retrieve user invites for the \"${ vaultName }\" vault": [
         "Kunde inte hämta användarinbjudningar för valvet ”${ vaultName }”."
@@ -943,6 +920,9 @@
       ],
       "Network error": [
         "Nätverksfel"
+      ],
+      "Offline mode is currently not available for two password mode.": [
+        "Offlineläge är för närvarande inte tillgängligt för tvålösenordsläge."
       ],
       "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
         "Offlineläge är för närvarande inte tillgängligt för ditt paket och inte kompatibelt med två lösenordsläge."
@@ -1357,6 +1337,9 @@
       "Drop to import": [
         "Släpp för att importera"
       ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "På grund av en begränsning på Safaris webbläsartillägg kommer filen efter exporten att sakna filnamnstillägget \".pgp\". Redigera namnet på filen så att det innehåller .pgp-filändelsen (t.ex. fil.pgp) efter export."
+      ],
       "Editor": [
         "Redaktör"
       ],
@@ -1380,6 +1363,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Aktivera automatisk låsning för att säkra din data"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Aktivera biometriskt autolås"
       ],
       "Enabling biometrics lock failed": [
         "Aktivering av biometrisk lås misslyckades"
@@ -1625,6 +1611,9 @@
       "Offline mode could not be enabled at the moment": [
         "Offlineläge kunde inte aktiveras just nu"
       ],
+      "Offline support successfully disabled": [
+        "Offlinestöd har inaktiverats"
+      ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Onlineåtkomst till ${ PASS_APP_NAME } kommer kräva en PIN-kod. Du kommer att loggas ut efter 3 misslyckade försök."
       ],
@@ -1673,6 +1662,12 @@
       ],
       "Please confirm your extra password": [
         "Bekräfta ditt extralösenord"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Vänligen bekräfta ditt extralösenord för att autolåsa med biometri."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Vänligen bekräfta ditt extralösenord för att autolåsa med ditt extralösenord."
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt extralösenord för att exportera din ${ PASS_APP_NAME }-data"
@@ -1876,9 +1871,6 @@
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Obegränsat antal Hide-my-email-alias"
-      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Lås upp ${ PASS_SHORT_APP_NAME } med biometri"
       ],
@@ -2043,6 +2035,9 @@
         "${ minutes } minut",
         "${ minutes } minuter"
       ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } känner igen de webbplatser och appar som du använder och fyller automatiskt i formulär och inloggningsuppgifter i alla webbläsare och enheter. Du behöver inte kopiera och klistra in."
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-version"
       ],
@@ -2194,6 +2189,9 @@
       "Contact details": [
         "Kontaktdetaljer"
       ],
+      "Contacts": [
+        "Kontakter"
+      ],
       "Copy": [
         "Kopiera"
       ],
@@ -2248,8 +2246,14 @@
       "Display": [
         "Visa"
       ],
+      "Display name": [
+        "Visningsnamn"
+      ],
       "Domain": [
         "Domän"
+      ],
+      "Domains": [
+        "Domäner"
       ],
       "Don't remind me again": [
         "Påminn mig inte igen"
@@ -2545,6 +2549,9 @@
       "Passkey": [
         "Passkey"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Passkeys är ett enkelt och säkert alternativ till traditionella lösenord som förhindrar phishingattacker och gör din onlineupplevelse bekvämare. ${ PASS_APP_NAME } stödjer passkeys på alla plattformar."
+      ],
       "Passphrase": [
         "Lösenfras"
       ],
@@ -2616,6 +2623,9 @@
       ],
       "Securely log in with passkeys": [
         "Logga in säkert med passkeys"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Säker lagring, delning och autoinloggning av dina konton med ${ PASS_APP_NAME }, tack vare end-to-end-kryptering som miljontals litar på."
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Lagra, dela och logga in automatiskt på dina konton med ${ PASS_APP_NAME } på ett säkert sätt med hjälp av end-to-end-kryptering som är betrodd av miljontals."
@@ -2731,6 +2741,9 @@
       ],
       "Trash": [
         "Papperskorg"
+      ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "Tvåfaktorsautentisering (2FA) är ett av de bästa sätten att skydda dina konton online. ${ PASS_APP_NAME } gör 2FA enklare med en integrerad autentiserare som lagrar dina 2FA-koder och automatiskt visar och fyller i dem."
       ],
       "Type": [
         "Typ"
@@ -3096,6 +3109,9 @@
       "Account protection": [
         "Kontoskydd"
       ],
+      "Actions": [
+        "Åtgärder"
+      ],
       "Auto-lock update": [
         "Uppdatering av autolås"
       ],
@@ -3117,8 +3133,14 @@
       "Confirm your email": [
         "Bekräfta din e-post"
       ],
+      "Contacts": [
+        "Kontakter"
+      ],
       "Create a vault": [
         "Skapa ett valv"
+      ],
+      "Create contact": [
+        "Skapa kontakt"
       ],
       "Create PIN code": [
         "Skapa PIN-kod"
@@ -3343,6 +3365,9 @@
       ],
       "Share with": [
         "Dela med"
+      ],
+      "Status": [
+        "Status"
       ],
       "Stay safer online": [
         "Var säkrare online"

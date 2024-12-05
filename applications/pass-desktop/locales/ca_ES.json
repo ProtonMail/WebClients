@@ -564,6 +564,9 @@
       "Unpin item": [
         "No fixis l'element"
       ],
+      "Update": [
+        "Actualitza"
+      ],
       "Update vault": [
         "Actualitza la caixa forta"
       ],
@@ -628,35 +631,6 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Desinstal·la ${ PASS_APP_NAME }"
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "accés de per vida"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Totes les funcions premium. 6 usuaris. 1 subscripció fàcil."
-      ],
-      "Limited-stock available!": [
-        "Disponibilitat limitada!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Aconseguiu l'oferta"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Pagueu una vegada i obteniu ${ lifetimeAccessJSX } per Pass Plus i SimpleLogin. Només ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Estalvieu fins a ${ discountJSX } a Pass Family. Només ${ relativePrice }/mes."
       ]
     },
     "Browser": {
@@ -1897,9 +1871,6 @@
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre il·limitat d'àlies hide-my-email"
-      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloqueja ${ PASS_SHORT_APP_NAME } amb dades biomètriques"
       ],
@@ -2218,6 +2189,9 @@
       "Contact details": [
         "Detalls del contacte"
       ],
+      "Contacts": [
+        "Contactes"
+      ],
       "Copy": [
         "Copia"
       ],
@@ -2272,8 +2246,14 @@
       "Display": [
         "Mostra"
       ],
+      "Display name": [
+        "Nom a mostrar"
+      ],
       "Domain": [
         "Domini"
+      ],
+      "Domains": [
+        "Dominis"
       ],
       "Don't remind me again": [
         "No m'ho tornis a recordar"
@@ -3126,6 +3106,9 @@
       "Account protection": [
         "Protecció del compte"
       ],
+      "Actions": [
+        "Accions"
+      ],
       "Auto-lock update": [
         "Actualització del bloqueig automàtic"
       ],
@@ -3147,8 +3130,14 @@
       "Confirm your email": [
         "Confirmi el vostre correu electrònic"
       ],
+      "Contacts": [
+        "Contactes"
+      ],
       "Create a vault": [
         "Crea una caixa forta"
+      ],
+      "Create contact": [
+        "Crea un contacte"
       ],
       "Create PIN code": [
         "Creeu un codi PIN"
@@ -3373,6 +3362,9 @@
       ],
       "Share with": [
         "Comparteix amb"
+      ],
+      "Status": [
+        "Estat"
       ],
       "Stay safer online": [
         "Mantingueu-vos més segurs en línia"
