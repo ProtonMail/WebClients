@@ -70,7 +70,7 @@ const AddressesSummary = ({
                 >
                     {recipients.length === 0 ? <span className="placeholder">{c('Placeholder').t`To`}</span> : null}
                     {recipientTypes.map((type) => {
-                        const recipients: Recipient[] = composer.recipients[type] || [];
+                        const recipients: Recipient[] = composer?.recipients[type] || [];
                         if (recipients.length === 0) {
                             return null;
                         }
