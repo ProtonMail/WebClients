@@ -35,6 +35,7 @@ jest.mocked(useBookmarks).mockReturnValue({
 jest.mock('../_user');
 const mockedUsePublicSessionUser = jest.mocked(usePublicSessionUser).mockReturnValue({
     user: undefined,
+    userAddressEmail: '',
     localID: undefined,
     UID: '',
 });

@@ -20,9 +20,11 @@ jest.mock('../_links/useLinksListing/usePublicLinksListing');
 jest.mock('../_links/usePublicLinkActions');
 
 const mockNewFolderName = 'New Folder';
+const mockRenameLink = jest.fn().mockResolvedValue(true);
 const mockCreateFolder = jest.fn().mockResolvedValue(mockNewFolderName);
 const mockDeleteChildrenLink = jest.fn();
 jest.mocked(usePublicLinkActions).mockImplementation(() => ({
+    renameLink: mockRenameLink,
     createFolder: mockCreateFolder,
     deleteChildrenLinks: mockDeleteChildrenLink,
 }));
@@ -51,9 +53,59 @@ describe('usePublicActions', () => {
     const mockAbortSignal = new AbortController().signal;
     const mockToken = 'token';
     const mockParentLinkId = 'parentLinkId';
+    const mockLinkId = 'linkId';
+    const mockNewName = 'New Name';
 
     beforeEach(() => {
         jest.clearAllMocks();
+    });
+
+    describe('renameLink', () => {
+        it('should successfully rename a link and show success notification', async () => {
+            const { result } = renderHook(() => usePublicActions());
+
+            await result.current.renameLink(mockAbortSignal, {
+                token: mockToken,
+                linkId: mockLinkId,
+                parentLinkId: mockParentLinkId,
+                newName: mockNewName,
+            });
+
+            expect(mockRenameLink).toHaveBeenCalledWith(mockAbortSignal, {
+                token: mockToken,
+                linkId: mockLinkId,
+                newName: mockNewName,
+            });
+            expect(mockLoadChildren).toHaveBeenCalledWith(mockAbortSignal, mockToken, mockParentLinkId, false);
+            expect(mockCreateNotification).toHaveBeenCalledWith({
+                text: <span className="text-pre-wrap">"New Name" renamed successfully</span>,
+            });
+        });
+
+        it('should handle errors and show error notification', async () => {
+            const { result } = renderHook(() => usePublicActions());
+
+            mockRenameLink.mockRejectedValue(mockError);
+
+            await expect(
+                result.current.renameLink(mockAbortSignal, {
+                    token: mockToken,
+                    linkId: mockLinkId,
+                    parentLinkId: mockParentLinkId,
+                    newName: mockNewName,
+                })
+            ).rejects.toThrow(mockError);
+
+            expect(mockRenameLink).toHaveBeenCalledWith(mockAbortSignal, {
+                token: mockToken,
+                linkId: mockLinkId,
+                newName: mockNewName,
+            });
+            expect(mockShowErrorNotification).toHaveBeenCalledWith(
+                mockError,
+                <span className="text-pre-wrap">"New Name" failed to be renamed</span>
+            );
+        });
     });
 
     describe('createFolder', () => {
