@@ -70,11 +70,11 @@
       "Accept": [
         "Akceptuj"
       ],
-      "activate": [
-        "aktywować"
-      ],
       "Activate": [
         "Aktywuj"
+      ],
+      "activate": [
+        "aktywować"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -829,10 +829,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
       "Reject": [
@@ -1637,17 +1637,6 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąc.",
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiące.",
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesięcy.",
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąca."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1669,6 +1658,17 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąc.",
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiące.",
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesięcy.",
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąca."
       ]
     },
     "bf2023: Offers": {
@@ -1808,11 +1808,6 @@
     "BF2024: Info": {
       "Most popular": [
         "Najpopularniejsze"
-      ]
-    },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Ograniczone zapasy!"
       ]
     },
     "BF2024: Offers": {
@@ -4533,6 +4528,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Nie udało się uzyskać aktywnych sesji. ${ refresh } lub spróbuj ponownie później."
       ],
+      "Failed to load OAuth modal.": [
+        "Nie udało się załadować okna OAuth."
+      ],
       "Failed to process the logo": [
         "Nie udało się przetworzyć logo"
       ],
@@ -7134,13 +7132,13 @@
         "Podfoldery również zostaną usunięte. Wiadomości w folderze ${ nameDeleted } nie zostaną usunięte i będą nadal dostępne w folderze Wszystkie wiadomości."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Każdy, kto posiada link, może zobaczyć szczegóły wydarzenia w kalendarzu, w tym nazwę, lokalizację i uczestników."
+        "Każdy, kto ma link, może zobaczyć szczegóły wydarzenia w kalendarzu, w tym nazwę, lokalizację i uczestników."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Każdy, kto posiada link, może zobaczyć w kalendarzu informację o stanie wolny i zajęty. Nikt nie może zobaczyć szczegółów wydarzenia, takich jak nazwę, lokalizację i uczestników."
+        "Każdy, kto ma link, może zobaczyć w kalendarzu informację o stanie wolny i zajęty. Nikt nie może zobaczyć szczegółów wydarzenia, takich jak nazwę, lokalizację i uczestników."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Nikt, kto posiada link, nie będzie mógł synchronizować i otrzymywać przyszłych aktualizacji kalendarza. Jeśli chcesz ponownie zaktualizować wydarzenia, musisz utworzyć nowy link."
+        "Nikt, kto ma link, nie będzie mógł synchronizować i otrzymywać przyszłych aktualizacji kalendarza. Jeśli chcesz ponownie zaktualizować wydarzenia, musisz utworzyć nowy link."
       ],
       "Are you sure you want to cancel editing the group?": [
         "Czy na pewno chcesz anulować edytowanie grupy?"
@@ -7427,11 +7425,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
@@ -9095,11 +9093,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "username": [
-        "nazwa użytkownika"
-      ],
       "Username": [
         "Nazwa użytkownika"
+      ],
+      "username": [
+        "nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -10137,6 +10135,9 @@
       ],
       "5 minutes": [
         "5 minut"
+      ],
+      "Account holder": [
+        "Właściciel konta"
       ],
       "Account storage": [
         "Przestrzeń dyskowa konta"
@@ -12003,29 +12004,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -12053,6 +12031,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12796,14 +12797,6 @@
         "Wybrany plan: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -12822,6 +12815,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -12980,6 +12981,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetowanie haseł i uwierzytelniania dwustopniowego użytkowników"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Przekieruj ruch sieciowy przez sieć Tor jednym kliknięciem"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
@@ -14336,6 +14340,9 @@
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Specjalnie obniżona cena ${ priceWithDiscount } jest ważna przez pierwszy miesiąc. Potem usługa automatycznie odnowi się po cenie ${ renewPrice } za miesiąc. Możesz anulować subskrypcję w dowolnym momencie."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakcja została wykryta. Środki zostaną dodane do konta po pełnym potwierdzeniu transakcji."
@@ -17643,10 +17650,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -19069,6 +19076,9 @@
     "Tor out of date": {
       "stable release": [
         "wersji stabilnej"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Ta wersja przeglądarki Tor nie jest obsługiwana. Zaktualizuj ją do najnowszej ${ stableRelease }"
       ]
     },
     "unprivatization": {

@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -829,11 +829,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "Refresh the page": [
-        "Atualizar a página"
-      ],
       "refresh the page": [
         "atualizar a página"
+      ],
+      "Refresh the page": [
+        "Atualizar a página"
       ],
       "Reject": [
         "Rejeitar"
@@ -1629,15 +1629,6 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Desculpe, esta oferta não está disponível no seu plano atual. Mas você pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao assinar por ${ cycle } mês.",
-        "Desculpe, esta oferta não está disponível no seu plano atual. Mas você pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao assinar por ${ cycle } meses."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1659,6 +1650,15 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Desculpe, esta oferta não está disponível no seu plano atual. Mas você pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao assinar por ${ cycle } mês.",
+        "Desculpe, esta oferta não está disponível no seu plano atual. Mas você pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao assinar por ${ cycle } meses."
       ]
     },
     "bf2023: Offers": {
@@ -1801,11 +1801,6 @@
     "BF2024: Info": {
       "Most popular": [
         "Mais popular"
-      ]
-    },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Estoque limitado!"
       ]
     },
     "BF2024: Offers": {
@@ -7201,6 +7196,12 @@
       "Connection data will be available in around 1 hour.": [
         "Os dados de conexão estarão disponíveis em cerca de uma hora."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Continue para permitir **${ affiliationsText }** da **${ organizationValue.Name }** de juntar na sua organização ${ BRAND_NAME }."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Continue para conectar **${ organizationValue.Name }** com a sua organização ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Continuar com ${ freeName }"
       ],
@@ -7300,11 +7301,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a gateways privados para permitir o controle de acesso com ajuste fino."
@@ -7415,6 +7416,9 @@
       ],
       "Edit link": [
         "Editar link"
+      ],
+      "EduGain configuration saved": [
+        "Configuração do EduGain salva"
       ],
       "email": [
         "e-mail"
@@ -8396,6 +8400,12 @@
       "Select a service provider to start": [
         "Selecione um provedor de serviços para começar"
       ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Selecione uma organização ativada com **eduGAIN** para **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Selecione uma ou várias afiliações para o usuário"
+      ],
       "Select recently used servers": [
         "Selecionar servidores usados recentemente"
       ],
@@ -8931,10 +8941,10 @@
       "User activated": [
         "Usuário ativado"
       ],
-      "username": [
+      "Username": [
         "Nome de usuário"
       ],
-      "Username": [
+      "username": [
         "Nome de usuário"
       ],
       "Users": [
@@ -11792,29 +11802,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Iniciando a partir de ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -11842,6 +11829,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Iniciando a partir de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12535,17 +12545,6 @@
         "Seu plano selecionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -12564,6 +12563,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -17283,11 +17293,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"
