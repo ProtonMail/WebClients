@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "Activate": [
-        "Aktivoi"
-      ],
       "activate": [
         "aktivoi"
+      ],
+      "Activate": [
+        "Aktivoi"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -829,10 +829,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
       "Reject": [
@@ -1629,6 +1629,15 @@
         "Valitse vuoden lopun tarjouksesi"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi.",
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 Tt tallennustilaa (2 kertaa enemmän kuin missään muussa tilauksessa)"
@@ -1650,15 +1659,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } -tilaus on taas saatavilla vain rajoitetun ajan"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi.",
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi."
       ]
     },
     "bf2023: Offers": {
@@ -3637,9 +3637,6 @@
       ],
       "Track the status and activity of your referrals.": [
         "Seuraa suositustesi tilaa ja tapahtumia."
-      ],
-      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
-        "Hanki tarttuva ja helposti kirjoitettava ${ activatePmUser } -sähköpostiosoite."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Avaa lyhyemmät sähköpostiosoitteet ja myös muita premium-ominaisuuksia päivittämällä tilauksesi."
@@ -7277,11 +7274,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "Dedicated servers": [
-        "Omat palvelimet"
-      ],
       "dedicated servers": [
         "omia palvelimia"
+      ],
+      "Dedicated servers": [
+        "Omat palvelimet"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Omia kiinteää IP-osoitetta käyttäviä palvelimia voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -8905,11 +8902,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "Username": [
-        "Käyttäjätunnus"
-      ],
       "username": [
         "käyttäjätunnus"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -11760,6 +11757,29 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Alkaen ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Jatka ilmaisella"
@@ -11787,29 +11807,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Alkaen ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
       ]
     },
     "new_plans: feature": {
@@ -12503,6 +12500,14 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -12521,14 +12526,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä tilauksesi"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -17209,10 +17206,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
