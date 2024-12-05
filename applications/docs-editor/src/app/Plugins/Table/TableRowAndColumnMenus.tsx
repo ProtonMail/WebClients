@@ -1,11 +1,21 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
-import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import type { TableNode } from '@lexical/table'
+import { $isTableCellNode, $isTableRowNode } from '@lexical/table'
+import {
+  Dropdown,
+  DropdownButton,
+  DropdownMenu,
+  DropdownMenuButton,
+  Icon,
+  SimpleDropdown,
+  usePopperAnchor,
+} from '@proton/components'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { c } from 'ttag'
 import debounce from '@proton/utils/debounce'
 import { isHTMLElement } from '../../Utils/guard'
-import { $getNearestNodeFromDOMNode } from 'lexical'
+import type { NodeKey } from 'lexical'
+import { $getNearestNodeFromDOMNode, $getNodeByKey } from 'lexical'
 import { setBackgroundColorForSelection } from './TableUtils/setBackgroundColorForSelection'
 import { setColorForSelection } from './TableUtils/setColorForSelection'
 import { $clearCellsInTableSelection } from './TableUtils/clearCellsInTableSelection'
@@ -22,21 +32,82 @@ import {
   INSERT_TABLE_ROW_COMMAND,
 } from './Commands'
 import { useApplication } from '../../ApplicationProvider'
+import { useCombinedRefs } from '@proton/hooks'
 
 export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) {
   const [editor] = useLexicalComposerContext()
 
   const { isSuggestionMode } = useApplication()
 
-  const tableRowNode = useRef<TableRowNode | null>(null)
-  const rowMenuRef = useRef<HTMLDivElement>(null)
-  const [tableRowElement, setTableRowElement] = useState<HTMLTableRowElement | null>(null)
-  const [isRowMenuOpen, setIsRowMenuOpen] = useState(false)
+  const tableRowNodeKey = useRef<NodeKey | null>(null)
+  const getCurrentRow = useCallback(() => {
+    const key = tableRowNodeKey.current
+    if (!key) {
+      return null
+    }
+    const row = editor.read(() => $getNodeByKey(key))
+    if ($isTableRowNode(row)) {
+      return row
+    }
+    return null
+  }, [editor])
 
-  const tableCellNode = useRef<TableCellNode | null>(null)
-  const columnMenuRef = useRef<HTMLDivElement>(null)
+  const tableCellNodeKey = useRef<NodeKey | null>(null)
+  const getCurrentCell = useCallback(() => {
+    const key = tableCellNodeKey.current
+    if (!key) {
+      return null
+    }
+    const cell = editor.read(() => $getNodeByKey(key))
+    if ($isTableCellNode(cell)) {
+      return cell
+    }
+    return null
+  }, [editor])
+
+  const rowMenuButtonRef = useRef<HTMLButtonElement>(null)
+  const [tableRowElement, setTableRowElement] = useState<HTMLTableRowElement | null>(null)
+  const {
+    anchorRef: rowMenuAnchorRef,
+    isOpen: isRowMenuOpen,
+    toggle: toggleRowMenu,
+    close: closeRowMenu,
+  } = usePopperAnchor<HTMLButtonElement>()
+  useEffect(
+    function selectRowIfMenuIsOpen() {
+      if (!isRowMenuOpen) {
+        return
+      }
+      const row = getCurrentRow()
+      if (!row) {
+        return
+      }
+      selectRow(editor, row)
+    },
+    [editor, getCurrentRow, isRowMenuOpen],
+  )
+
+  const columnMenuButtonRef = useRef<HTMLButtonElement>(null)
   const [tableCellElement, setTableCellElement] = useState<HTMLTableCellElement | null>(null)
-  const [isColumnMenuOpen, setIsColumnMenuOpen] = useState(false)
+  const {
+    anchorRef: columnMenuAnchorRef,
+    isOpen: isColumnMenuOpen,
+    toggle: toggleColumnMenu,
+    close: closeColumnMenu,
+  } = usePopperAnchor<HTMLButtonElement>()
+  useEffect(
+    function selectColumnIfMenuIsOpen() {
+      if (!isColumnMenuOpen) {
+        return
+      }
+      const cell = getCurrentCell()
+      if (!cell) {
+        return
+      }
+      selectColumn(editor, cell)
+    },
+    [editor, getCurrentCell, isColumnMenuOpen],
+  )
 
   const tableElement = useMemo(() => {
     return editor.getEditorState().read(() => {
@@ -67,13 +138,13 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         return
       }
 
-      if (rowMenuRef.current) {
+      if (rowMenuButtonRef.current) {
         setTableRowElement(row)
 
         const rowRect = row.getBoundingClientRect()
         const rootOffset = rootContainer.scrollTop - rootContainer.getBoundingClientRect().top
 
-        const rowMenuButton = rowMenuRef.current
+        const rowMenuButton = rowMenuButtonRef.current
         const rowMenuButtonRect = rowMenuButton.getBoundingClientRect()
 
         rowMenuButton.style.setProperty('--x', `${rowRect.left - rowMenuButtonRect.width / 2}px`)
@@ -84,7 +155,8 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         rowMenuButton.style.visibility = 'visible'
 
         editor.read(() => {
-          tableRowNode.current = $getNearestNodeFromDOMNode(row) as TableRowNode
+          const node = $getNearestNodeFromDOMNode(row)
+          tableRowNodeKey.current = node ? node.__key : null
         })
       }
 
@@ -94,13 +166,13 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         return
       }
 
-      if (columnMenuRef.current) {
+      if (columnMenuButtonRef.current) {
         setTableCellElement(cell)
 
         const cellRect = cell.getBoundingClientRect()
         const rootOffset = rootContainer.scrollTop - rootContainer.getBoundingClientRect().top
 
-        const columnMenuButton = columnMenuRef.current
+        const columnMenuButton = columnMenuButtonRef.current
         const columnMenuButtonRect = columnMenuButton.getBoundingClientRect()
 
         columnMenuButton.style.setProperty(
@@ -115,7 +187,8 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         columnMenuButton.style.visibility = 'visible'
 
         editor.read(() => {
-          tableCellNode.current = $getNearestNodeFromDOMNode(cell) as TableCellNode
+          const node = $getNearestNodeFromDOMNode(cell)
+          tableCellNodeKey.current = node ? node.__key : null
         })
       }
     }, 10)
@@ -143,35 +216,28 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
 
   return (
     <>
-      <SimpleDropdown
+      <DropdownButton
         as="button"
-        ref={rowMenuRef}
-        hasCaret={false}
         className="bg-norm border-weak absolute left-0 top-0 flex items-center justify-center rounded border py-0.5 [opacity:0] hover:bg-[--background-weak] hover:opacity-100"
         style={{
           transform: `translate3d(var(--x), var(--y), 0)`,
           opacity: isRowMenuOpen || !!tableRowElement ? 1 : undefined,
           backgroundColor: isRowMenuOpen ? 'var(--background-weak)' : undefined,
         }}
-        content={
-          <>
-            <Icon name="dots" />
-            <div className="sr-only">{c('Action').t`Click to open row menu`}</div>
-          </>
-        }
-        contentProps={{
-          offset: 4,
-          disableFocusTrap: true,
-          autoClose: false,
-        }}
-        onToggle={setIsRowMenuOpen}
-        onClick={() => {
-          const row = tableRowNode.current
-          if (!row) {
-            return
-          }
-          selectRow(editor, row)
-        }}
+        ref={useCombinedRefs(rowMenuButtonRef, rowMenuAnchorRef)}
+        onClick={toggleRowMenu}
+        hasCaret={false}
+      >
+        <Icon name="dots" />
+        <div className="sr-only">{c('Action').t`Click to open row menu`}</div>
+      </DropdownButton>
+      <Dropdown
+        anchorRef={rowMenuButtonRef}
+        offset={4}
+        disableFocusTrap={true}
+        autoClose={false}
+        onClose={closeRowMenu}
+        isOpen={isRowMenuOpen}
       >
         <DropdownMenu>
           {!isSuggestionMode && (
@@ -206,11 +272,11 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
-              if (!tableRowNode.current) {
-                return
+              if (getCurrentRow()) {
+                editor.dispatchCommand(INSERT_TABLE_ROW_COMMAND, { insertAfter: false })
+                editor.focus()
               }
-              editor.dispatchCommand(INSERT_TABLE_ROW_COMMAND, { insertAfter: false })
-              editor.focus()
+              closeRowMenu()
             }}
           >
             <Icon name="arrow-up" />
@@ -219,11 +285,11 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
-              if (!tableRowNode.current) {
-                return
+              if (getCurrentRow()) {
+                editor.dispatchCommand(INSERT_TABLE_ROW_COMMAND, { insertAfter: true })
+                editor.focus()
               }
-              editor.dispatchCommand(INSERT_TABLE_ROW_COMMAND, { insertAfter: true })
-              editor.focus()
+              closeRowMenu()
             }}
           >
             <Icon name="arrow-down" />
@@ -232,10 +298,11 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
-              if (!tableRowNode.current) {
-                return
+              const row = getCurrentRow()
+              if (row) {
+                editor.dispatchCommand(DUPLICATE_TABLE_ROW_COMMAND, row)
               }
-              editor.dispatchCommand(DUPLICATE_TABLE_ROW_COMMAND, tableRowNode.current)
+              closeRowMenu()
             }}
           >
             <Icon name="squares" />
@@ -246,9 +313,12 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               className={menuButtonClassName}
               disabled={isSuggestionMode}
               onClick={() => {
-                editor.update(() => $clearCellsInTableSelection(), {
-                  onUpdate: () => editor.focus(),
-                })
+                if (getCurrentRow()) {
+                  editor.update(() => $clearCellsInTableSelection(), {
+                    onUpdate: () => editor.focus(),
+                  })
+                }
+                closeRowMenu()
               }}
             >
               <Icon name="cross" />
@@ -258,44 +328,42 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
-              editor.dispatchCommand(DELETE_TABLE_ROW_AT_SELECTION_COMMAND, undefined)
-              editor.focus()
+              if (getCurrentRow()) {
+                editor.dispatchCommand(DELETE_TABLE_ROW_AT_SELECTION_COMMAND, undefined)
+                editor.focus()
+              }
+              closeRowMenu()
             }}
           >
             <Icon name="trash" />
             {c('Action').t`Delete row`}
           </DropdownMenuButton>
         </DropdownMenu>
-      </SimpleDropdown>
-      <SimpleDropdown
+      </Dropdown>
+      <DropdownButton
         as="button"
-        ref={columnMenuRef}
-        hasCaret={false}
         className="bg-norm border-weak absolute left-0 top-0 flex items-center justify-center rounded border py-0.5 [opacity:0] hover:bg-[--background-weak] hover:opacity-100"
         style={{
           transform: `translate3d(var(--x), var(--y), 0) rotate(90deg)`,
           opacity: isColumnMenuOpen || !!tableCellElement ? 1 : undefined,
           backgroundColor: isColumnMenuOpen ? 'var(--background-weak)' : undefined,
         }}
-        content={
-          <>
-            <Icon name="dots" />
-            <div className="sr-only">{c('Action').t`Click to open column menu`}</div>
-          </>
-        }
-        contentProps={{
-          offset: 4,
-          disableFocusTrap: true,
-          autoClose: false,
-        }}
-        onToggle={setIsColumnMenuOpen}
+        ref={useCombinedRefs(columnMenuButtonRef, columnMenuAnchorRef)}
         onClick={() => {
-          const cell = tableCellNode.current
-          if (!cell) {
-            return
-          }
-          selectColumn(editor, cell)
+          toggleColumnMenu()
         }}
+        hasCaret={false}
+      >
+        <Icon name="dots" />
+        <div className="sr-only">{c('Action').t`Click to open column menu`}</div>
+      </DropdownButton>
+      <Dropdown
+        anchorRef={columnMenuButtonRef}
+        offset={4}
+        disableFocusTrap={true}
+        autoClose={false}
+        onClose={closeColumnMenu}
+        isOpen={isColumnMenuOpen}
       >
         <DropdownMenu>
           {!isSuggestionMode && (
@@ -331,11 +399,11 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
-              if (!tableCellNode.current) {
-                return
+              if (getCurrentCell()) {
+                editor.dispatchCommand(INSERT_TABLE_COLUMN_COMMAND, { insertAfter: false })
+                editor.focus()
               }
-              editor.dispatchCommand(INSERT_TABLE_COLUMN_COMMAND, { insertAfter: false })
-              editor.focus()
+              closeColumnMenu()
             }}
           >
             <Icon name="arrow-left" />
@@ -344,11 +412,11 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
-              if (!tableCellNode.current) {
-                return
+              if (getCurrentCell()) {
+                editor.dispatchCommand(INSERT_TABLE_COLUMN_COMMAND, { insertAfter: true })
+                editor.focus()
               }
-              editor.dispatchCommand(INSERT_TABLE_COLUMN_COMMAND, { insertAfter: true })
-              editor.focus()
+              closeColumnMenu()
             }}
           >
             <Icon name="arrow-right" />
@@ -357,11 +425,12 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
-              if (!tableCellNode.current) {
-                return
+              const cell = getCurrentCell()
+              if (cell) {
+                editor.dispatchCommand(DUPLICATE_TABLE_COLUMN_COMMAND, cell)
+                editor.focus()
               }
-              editor.dispatchCommand(DUPLICATE_TABLE_COLUMN_COMMAND, tableCellNode.current)
-              editor.focus()
+              closeColumnMenu()
             }}
           >
             <Icon name="squares" />
@@ -372,9 +441,12 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               className={menuButtonClassName}
               disabled={isSuggestionMode}
               onClick={() => {
-                editor.update(() => $clearCellsInTableSelection(), {
-                  onUpdate: () => editor.focus(),
-                })
+                if (getCurrentCell()) {
+                  editor.update(() => $clearCellsInTableSelection(), {
+                    onUpdate: () => editor.focus(),
+                  })
+                }
+                closeColumnMenu()
               }}
             >
               <Icon name="cross" size={4.5} />
@@ -384,15 +456,18 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
-              editor.dispatchCommand(DELETE_TABLE_COLUMN_AT_SELECTION_COMMAND, undefined)
-              editor.focus()
+              if (getCurrentCell()) {
+                editor.dispatchCommand(DELETE_TABLE_COLUMN_AT_SELECTION_COMMAND, undefined)
+                editor.focus()
+              }
+              closeColumnMenu()
             }}
           >
             <Icon name="trash" />
             {c('Action').t`Delete column`}
           </DropdownMenuButton>
         </DropdownMenu>
-      </SimpleDropdown>
+      </Dropdown>
     </>
   )
 }
