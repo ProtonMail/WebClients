@@ -50,5 +50,8 @@ export const getProductHeaders = (product: ProductParam, context?: ProductHeader
     const normalizedProduct = normalizeProduct(product);
     notifySentry(normalizedProduct, context);
 
+    if (normalizedProduct === undefined) {
+        return;
+    }
     return { 'x-pm-product': normalizedProduct };
 };
