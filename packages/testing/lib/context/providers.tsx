@@ -1,4 +1,7 @@
 import type { ComponentType } from 'react';
+import { Router } from 'react-router';
+
+import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
 import ApiContext from '@proton/components/containers/api/apiContext';
@@ -143,31 +146,39 @@ export const withPaymentContext =
 export type WithReduxStoreProps = {
     user?: UserModel;
     preloadedState?: Partial<RootState>;
+    store?: ReturnType<typeof setupStore>;
 };
+
+export const getPreloadedState = (
+    stateOverrides: Partial<RootState> = {},
+    modelOverrides: Partial<{ user: UserModel }> = {}
+) => ({
+    user: getModelState(modelOverrides.user ?? buildUser()),
+    addresses: getModelState([]),
+    addressKeys: {},
+    contacts: getModelState([]),
+    categories: getModelState([]),
+    contactEmails: getModelState([]),
+    subscription: getSubscriptionState(),
+    paymentStatus: getPaymentStatusState(),
+    organization: getOrganizationState(),
+    organizationKey: getModelState({} as CachedOrganizationKey),
+    userInvitations: getModelState([]),
+    plans: getModelState({ plans: [], freePlan: FREE_PLAN }),
+    features: {},
+    importerConfig: getModelState({} as ApiEnvironmentConfig),
+    vpnServersCount: getModelState(mockDefaultVPNServersCountData),
+    ...stateOverrides,
+});
 
 export const withReduxStore =
     (props: WithReduxStoreProps = {}) =>
     <T extends {}>(Component: ComponentType<T>) => {
-        const store = setupStore({
-            preloadedState: {
-                user: getModelState(props.user ?? buildUser()),
-                addresses: getModelState([]),
-                addressKeys: {},
-                contacts: getModelState([]),
-                categories: getModelState([]),
-                contactEmails: getModelState([]),
-                subscription: getSubscriptionState(),
-                paymentStatus: getPaymentStatusState(),
-                organization: getOrganizationState(),
-                organizationKey: getModelState({} as CachedOrganizationKey),
-                userInvitations: getModelState([]),
-                plans: getModelState({ plans: [], freePlan: FREE_PLAN }),
-                features: {},
-                importerConfig: getModelState({} as ApiEnvironmentConfig),
-                vpnServersCount: getModelState(mockDefaultVPNServersCountData),
-                ...props.preloadedState,
-            },
-        });
+        const store =
+            props.store ??
+            setupStore({
+                preloadedState: getPreloadedState(props.preloadedState, props),
+            });
 
         const ReduxStoreHoc = (props: T & JSX.IntrinsicAttributes) => {
             return (
@@ -180,4 +191,22 @@ export const withReduxStore =
         ReduxStoreHoc.displayName = `withReduxStore(${Component.displayName || Component.name})`;
 
         return ReduxStoreHoc;
+    };
+
+export const withMemoryRouter =
+    () =>
+    <T extends {}>(Component: ComponentType<T>) => {
+        const history = createMemoryHistory();
+
+        const MemoryRouterHoc = (props: T & JSX.IntrinsicAttributes) => {
+            return (
+                <Router history={history}>
+                    <Component {...props} />
+                </Router>
+            );
+        };
+
+        MemoryRouterHoc.displayName = `withMemoryRouter(${Component.displayName || Component.name})`;
+
+        return MemoryRouterHoc;
     };

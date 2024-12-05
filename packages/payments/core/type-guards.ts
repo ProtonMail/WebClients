@@ -4,6 +4,7 @@ import type {
     CheckWithAutomaticOptions,
     ExistingPaymentMethod,
     ExtendedTokenPayment,
+    FreeSubscription,
     PayPalDetails,
     PaymentMethodSepa,
     PaymentMethodStatusExtended,
@@ -17,6 +18,7 @@ import type {
     SepaDetails,
     TokenPayment,
     TokenPaymentMethod,
+    Transaction,
     V5PaymentToken,
     V5Payments,
     WrappedPaymentsVersion,
@@ -130,4 +132,12 @@ export function isSepaDetails(obj: any): obj is SepaDetails {
     const props: (keyof SepaDetails)[] = ['AccountName', 'Country', 'Last4'];
 
     return props.every((prop) => typeof obj[prop] === 'string');
+}
+
+export function isFreeSubscription(obj: any): obj is FreeSubscription {
+    return !!obj && obj.isFreeSubscription && Object.keys(obj).filter((key) => obj[key] !== undefined).length === 1;
+}
+
+export function isTransaction(obj: any): obj is Transaction {
+    return !!obj && !!obj.TransactionId;
 }
