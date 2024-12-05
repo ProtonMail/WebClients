@@ -279,6 +279,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Appearance`,
                 to: '/appearance',
                 icon: 'paint-roller',
+                available: app !== APPS.PROTONLUMO,
                 subsections: [
                     {
                         text: c('Title').t`Theme`,
