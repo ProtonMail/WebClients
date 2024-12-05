@@ -1250,6 +1250,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Modifier les paramètres de l'adresse e-mail"
+      ],
+      "Continue": [
+        "Continuer"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
       ],
@@ -3701,6 +3707,9 @@
       "Additional options": [
         "Options supplémentaires"
       ],
+      "Address copied to clipboard": [
+        "L'adresse a été copiée dans le presse-papiers."
+      ],
       "Admin account allocation": [
         "Attribution de compte administrateur"
       ],
@@ -3887,14 +3896,17 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personnalisez le style des applications ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "serveurs dédiés"
-      ],
       "Dedicated servers": [
         "Serveurs dédiés"
       ],
+      "dedicated servers": [
+        "serveurs dédiés"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
+      ],
+      "default email address": [
+        "adresse e-mail par défaut"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Supprimez les autres enregistrements MX ou assurez-vous que la priorité de ${ MAIL_APP_NAME } est le nombre le plus bas."
@@ -4336,6 +4348,9 @@
       "Member": [
         "Membre"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Les messages adressés à toutes vos adresses e-mail seront envoyés dans votre boîte de réception."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -4545,6 +4560,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
+      "Registering your subscription...": [
+        "Enregistrement de votre abonnement...."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Pensez à partager les informations de connexion avec l'utilisateur concerné."
       ],
@@ -4623,6 +4641,9 @@
       "Session timed out": [
         "La session a expiré."
       ],
+      "Setting up your new address...": [
+        "Configuration de votre nouvelle adresse..."
+      ],
       "Setting up your organization": [
         "Configuration de votre organisation"
       ],
@@ -4649,6 +4670,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF précise qui est autorisé à envoyer des messages pour votre domaine. Assurez-vous d'ajouter l'enregistrement TXT suivant dans votre console DNS (qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
       ],
       "Step ${ step }": [
         "Étape ${ step }",
@@ -4752,6 +4776,9 @@
       ],
       "This file is too large to preview": [
         "Ce fichier est trop volumineux pour afficher un aperçu."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Ceci est désormais votre ${ defaultEmailAddress } pour envoyer de nouveaux messages."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Ce message ne parviendra pas à l'équipe support. Si vous rencontrez un problème avec notre service ou si vous avez besoin de plus d'assistance de notre part ${ supportLink }."
@@ -4912,11 +4939,11 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "username": [
-        "nom d'utilisateur"
-      ],
       "Username": [
         "Nom d'utilisateur"
+      ],
+      "username": [
+        "nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -10132,10 +10159,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -10631,6 +10658,9 @@
       "Unlock your data": [
         "Débloquez vos données"
       ],
+      "Upgrade complete!": [
+        "L'abonnement a été mis à jour."
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Améliorez la protection de votre réseau avec des serveurs dédiés"
       ],
@@ -10678,6 +10708,9 @@
       ],
       "Your plan": [
         "Votre abonnement"
+      ],
+      "Your shorter address is now ready": [
+        "Votre adresse au format plus court est maintenant prête."
       ],
       "Your subscriptions": [
         "Vos abonnements"
