@@ -275,18 +275,17 @@ export default function SharedFolder({
                         openInDocs={openInDocs}
                     />
                 )}
-
                 {canWrite && <EditActions token={token} linkId={linkId} />}
-                {canWrite ? (
+                {/* // Use TransferManager only for uploads */}
+                {canWrite && !downloads.length && (
                     <div
                         className="fixed bottom-0 right-0 z-up w-full items-end max-w-custom"
                         style={{ '--max-w-custom': '50em' }}
                     >
                         <TransferManager />
                     </div>
-                ) : (
-                    <SharedPageTransferManager rootItem={rootLink} />
                 )}
+                <SharedPageTransferManager rootItem={rootLink} />
                 <UploadDragDrop
                     shareId={token}
                     linkId={linkId}
