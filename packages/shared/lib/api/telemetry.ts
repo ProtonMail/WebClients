@@ -23,7 +23,7 @@ export enum TelemetryMeasurementGroups {
     mailSignup = 'mail.web.signup',
     mailComposerAssistant = 'mail.web.composer_assistant',
     mailProtonTips = 'mail.web.proton_tips',
-    mailPostSubscriptionEvents = 'mail.web.post_subscription_events',
+    mailPostSubscriptionEvents = 'any.web.post_subscription_events',
     mailDesktopDefaultMailto = 'mail.desktop.default_mailto',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
