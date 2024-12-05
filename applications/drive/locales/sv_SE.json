@@ -14,22 +14,22 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ link }"
+        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
+        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
+        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vita åtgärd. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vita åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ link }"
+        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ]
     },
     "Action": {
@@ -1120,6 +1120,9 @@
       "Online document editor": [
         "Dokumentredigerare online"
       ],
+      "Password health alerts": [
+        "Aviseringar om lösenordshälsa"
+      ],
       "Private photo backup": [
         "Privat säkerhetskopiering av foto"
       ],
@@ -1165,11 +1168,6 @@
     "BF2024: Info": {
       "Most popular": [
         "Mest populär"
-      ]
-    },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Begränsat lager!"
       ]
     },
     "BF2024: Offers": {
@@ -2412,11 +2410,6 @@
         "Försenad faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
@@ -2486,6 +2479,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3198,7 +3196,7 @@
         "Kryptering misslyckades"
       ],
       "Missing FN property": [
-        "Saknar FN-egendom"
+        "FN-egenskap saknas"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 stöds inte"
@@ -3512,7 +3510,7 @@
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
-        "Du är inbjuden att gå med i ${ invite.OrganizationName }"
+        "Du har bjudits in att gå med i ${ invite.OrganizationName }"
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kan bara acceptera 3 inbjudningar under en 6-månadersperiod. Kontakta ${ supportLink } om du behöver ett undantag."
@@ -3536,7 +3534,7 @@
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
+        "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger de ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4059,7 +4057,7 @@
         "${ DRIVE_APP_NAME } på App Store"
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
-        "${ DRIVE_APP_NAME } på Play Store"
+        "${ DRIVE_APP_NAME } på Play Butik"
       ],
       "${ errorCount } failed": [
         "${ errorCount } misslyckades",
@@ -4714,7 +4712,7 @@
         "Objekt i papperskorgen blir kvar här tills du tar bort dem permanent"
       ],
       "Items moved to the trash will stay here until deleted": [
-        "Objekt som flyttas till papperskorgen stannar här tills de tas bort"
+        "Objekt som flyttats till papperskorgen stannar här tills de tas bort"
       ],
       "It’s easy and secure": [
         "Det är enkelt och säkert"
@@ -4753,7 +4751,7 @@
         "Länk kopierad till urklipp"
       ],
       "Link owner has the password": [
-        "Länkägare har lösenordet"
+        "Länkägaren har lösenordet"
       ],
       "Loading": [
         "Laddar"
@@ -4908,7 +4906,7 @@
         "Permanent radera alla filer på din låsta lagringsenhet"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline är endast kompatibel med oformaterad text."
+        "PGP/Inline är endast kompatibelt med oformaterad text."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME skickar automatiskt meddelandet med det aktuella kompositörsläget."
@@ -5365,7 +5363,7 @@
         "Fil stöds inte"
       ],
       "Updating drive search...": [
-        "Uppdaterar Drive-sök …"
+        "Uppdaterar Drive-sök…"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
@@ -6967,7 +6965,7 @@
         "${ PASS_APP_NAME } med obegränsat antal hide-my-email-alias"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
-        "Program ${ PROTON_SENTINEL_NAME }"
+        "${ PROTON_SENTINEL_NAME }-program"
       ],
       "${ size } attachment size": [
         "${ size } bilagestorlek"
@@ -7083,11 +7081,14 @@
       "Custom snooze time": [
         "Anpassad snooztid"
       ],
+      "Custom workspace branding": [
+        "Anpassat utseende för arbetsyta"
+      ],
       "Data breach monitoring": [
         "Dataintrångsövervakning"
       ],
       "Desktop app": [
-        "App för stationär dator"
+        "Skrivbordsapp"
       ],
       "DNS leak prevention": [
         "Förebyggande av DNS-läckage"
@@ -7117,7 +7118,7 @@
         "End-to-end-kryptering"
       ],
       "Fast P2P/BitTorrent downloads": [
-        "Snabba P2P/BitTorrent-nedladdningar"
+        "Snabba P2P-/BitTorrent-nedladdningar"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Gratis funktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och ${ DRIVE_SHORT_APP_NAME }"
@@ -7129,7 +7130,7 @@
         "Återbetalas till fullo i 30 dagar"
       ],
       "GDPR data processing agreement": [
-        "GDPR databehandlingsavtal"
+        "GDPR-databehandlingsavtal"
       ],
       "Generate emails with a prompt": [
         "Generera e-post med en prompt"
@@ -7284,7 +7285,7 @@
         "Obegränsade mappar, etiketter och filter"
       ],
       "Unlimited hide-my-email aliases": [
-        "Obegränsat antal Hide-my-email-alias"
+        "Obegränsat antal hide-my-email-alias"
       ],
       "Unlimited labels": [
         "Obegränsade etiketter"
@@ -7459,6 +7460,11 @@
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7471,11 +7477,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7971,6 +7972,9 @@
       "Share invitation declined": [
         "Delningsinbjudan avböjd"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Misslyckades att stoppa delning av detta objekt"
+      ],
       "Subfolder failed to be loaded": [
         "Undermapp kunde inte laddas"
       ],
@@ -8131,6 +8135,12 @@
       "Get the mobile app": [
         "Skaffa mobilappen"
       ],
+      "Got an Android? We've got you covered.": [
+        "Har du in Android? Då ordnar vi resten."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "Har du in iPhone? Då ordnar vi resten."
+      ],
       "Hang tight": [
         "Häng kvar"
       ],
@@ -8272,7 +8282,7 @@
         "Organisationsnyckeln måste aktiveras först."
       ],
       "You need access to the organization key to perform this operation.": [
-        "Du behöver åtkomst till organisationsnyckeln för att utföra denna operation."
+        "Du behöver åtkomst till organisationsnyckeln för att utföra denna åtgärd."
       ]
     },
     "Payment method option": {
@@ -8420,7 +8430,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-postadressen hittades inte bland användar-id som definierats i sändningsnyckeln (${ keyUserIds })"
+        "E-postadress hittades inte bland användar-ID:n definierad i sändningsnyckel (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -8710,7 +8720,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "Kontoåterställning är inte tillgänglig för äldre adressnycklar"
+        "Kontoåterställning är inte tillgänglig för föråldrade adressnycklar"
       ],
       "Please generate keys before you try to change your password": [
         "Generera nycklar innan du försöker ändra ditt lösenord"
@@ -8977,7 +8987,7 @@
         "Säker streaming"
       ],
       "Support online privacy": [
-        "Stöder integritet online"
+        "Stöd onlineintegritet"
       ]
     },
     "specialoffer: Footer": {
@@ -9420,10 +9430,10 @@
         "Omfattande integritet och säkerhet"
       ],
       "Dark web monitoring": [
-        "Övervakning mörka webben"
+        "Mörka webben-övervakning"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Stöd för app för stationär dator och e-postklient (via IMAP)"
+        "Skrivbordsapp och stöd för e-postklienter (via IMAP)"
       ],
       "Direct contribution to our mission": [
         "Direkt bidrag till vårt uppdrag"
@@ -9453,7 +9463,7 @@
         "Hur vårt kundsupportteam fick vår VPN-app direkt i människors händer."
       ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
-        "Hur vi slog tillbaka när ${ BRAND_NAME } var blockerad i en aggressiv kampanj."
+        "Hur vi slog tillbaka när ${ BRAND_NAME } var blockerat i en aggressiv kampanj."
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Hur vi stöttade lokala aktivister när integritet och yttrandefrihet hotades."
@@ -9587,7 +9597,7 @@
         "Varningar om dataintrång ${ strongArgument }"
       ],
       "Desktop app": [
-        "App för stationär dator"
+        "Skrivbordsapp"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
         "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
@@ -10035,7 +10045,7 @@
         "Datum"
       ],
       "Day theme": [
-        "Dags-tema"
+        "Dagstema"
       ],
       "Delete ${ count } contact": [
         "Ta bort ${ count } kontakt",
@@ -10228,7 +10238,7 @@
         "Nätverksfel"
       ],
       "Night theme": [
-        "Natt-tema"
+        "Nattema"
       ],
       "No breaches detected": [
         "Inga intrång upptäckta"
@@ -10243,7 +10253,7 @@
         "Antal objekt"
       ],
       "One email, many recipients": [
-        "En e-post, många mottagare"
+        "En e-post, flera mottagare"
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
@@ -10354,7 +10364,7 @@
         "Välj länkens utgångstid"
       ],
       "Set recovery phrase": [
-        "Ställ in återställningsfras"
+        "Välj återställningsfras"
       ],
       "Settings": [
         "Inställningar"
