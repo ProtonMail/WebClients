@@ -45,6 +45,7 @@ const PasswordInnerModalForm = ({ password, setPassword, passwordHint, setPasswo
             defaultType="text"
             onChange={handleChange(setPassword)}
             error={validator([requiredValidator(password), minLengthValidator(password, MIN_PASSWORD_LENGTH)])}
+            autoFocus
         />
     );
     return (
