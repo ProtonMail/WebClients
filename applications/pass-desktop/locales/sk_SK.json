@@ -568,6 +568,9 @@
       "Unpin item": [
         "Odopnúť položku"
       ],
+      "Update": [
+        "Aktualizovať"
+      ],
       "Update vault": [
         "Aktualizovať trezor"
       ],
@@ -632,35 +635,6 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Odinštalovať ${ PASS_APP_NAME }"
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "doživotný prístup"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Všetky prémiové funkcie. 6 používateľov. 1 jednoduché predplatné."
-      ],
-      "Limited-stock available!": [
-        "K dispozícii obmedzené množstvo!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Získať ponuku"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Zaplaťte raz a získajte ${ lifetimeAccessJSX } na Pass Plus a SimpleLogin. Len za ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Ušetrite až ${ discountJSX } na Pass Family. Iba za ${ relativePrice }/mesiac."
       ]
     },
     "Browser": {
@@ -1949,9 +1923,6 @@
       "Unable to copy to clipboard": [
         "Nedá sa kopírovať do schránky"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Neobmedzený počet hide-my-email aliasov"
-      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou biometrie"
       ],
@@ -2290,6 +2261,9 @@
       "Contact details": [
         "Kontaktné údaje"
       ],
+      "Contacts": [
+        "Kontakty"
+      ],
       "Copy": [
         "Kopírovať"
       ],
@@ -2344,8 +2318,14 @@
       "Display": [
         "Zobraziť"
       ],
+      "Display name": [
+        "Zobrazované meno"
+      ],
       "Domain": [
         "Doména"
+      ],
+      "Domains": [
+        "Domény"
       ],
       "Don't remind me again": [
         "Znovu nepripomínať"
@@ -3206,6 +3186,9 @@
       "Account protection": [
         "Ochrana účtu"
       ],
+      "Actions": [
+        "Akcie"
+      ],
       "Auto-lock update": [
         "Aktualizácia automatického uzamknutia"
       ],
@@ -3227,8 +3210,14 @@
       "Confirm your email": [
         "Potvrďte váš email"
       ],
+      "Contacts": [
+        "Kontakty"
+      ],
       "Create a vault": [
         "Vytvoriť trezor"
+      ],
+      "Create contact": [
+        "Vytvoriť kontakt"
       ],
       "Create PIN code": [
         "Vytvoriť PIN kód"
@@ -3463,6 +3452,9 @@
       ],
       "Share with": [
         "Zdieľať s"
+      ],
+      "Status": [
+        "Stav"
       ],
       "Stay safer online": [
         "Zostaňte v bezpečí online"

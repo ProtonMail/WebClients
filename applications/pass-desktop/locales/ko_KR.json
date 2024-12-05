@@ -562,6 +562,9 @@
       "Unpin item": [
         "항목 고정 해제"
       ],
+      "Update": [
+        "업데이트"
+      ],
       "Update vault": [
         "금고 업데이트"
       ],
@@ -626,35 +629,6 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 제거"
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "평생 이용권"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "모든 프리미엄 기능. 6명의 사용자. 한 번의 쉬운 구독으로."
-      ],
-      "Limited-stock available!": [
-        "한정 수량 구매 가능!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "구매하기"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "블랙 프라이데이"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "한 번 결제하고 Pass Plus과 SimpleLogin의 ${ lifetimeAccessJSX }을 얻으세요. 단돈 ${ relativePrice } 입니다."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Pass Family로 최대 ${ discountJSX }을 절약하세요. 오직 ${ relativePrice }달 입니다."
       ]
     },
     "Browser": {
@@ -1871,9 +1845,6 @@
       "Unable to copy to clipboard": [
         "클립보드에 복사할 수 없습니다."
       ],
-      "Unlimited hide-my-email aliases": [
-        "무제한 hide-my-email 별칭"
-      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "생체인증으로 ${ PASS_SHORT_APP_NAME } 잠금해제"
       ],
@@ -2182,6 +2153,9 @@
       "Contact details": [
         "연락처 정보"
       ],
+      "Contacts": [
+        "연락처"
+      ],
       "Copy": [
         "복사"
       ],
@@ -2236,7 +2210,13 @@
       "Display": [
         "표시"
       ],
+      "Display name": [
+        "표시되는 이름"
+      ],
       "Domain": [
+        "도메인"
+      ],
+      "Domains": [
         "도메인"
       ],
       "Don't remind me again": [
@@ -3086,6 +3066,9 @@
       "Account protection": [
         "계정 보호"
       ],
+      "Actions": [
+        "작업"
+      ],
       "Auto-lock update": [
         "자동 잠금 업데이트"
       ],
@@ -3107,8 +3090,14 @@
       "Confirm your email": [
         "이메일을 확인하세요"
       ],
+      "Contacts": [
+        "연락처"
+      ],
       "Create a vault": [
         "금고 생성"
+      ],
+      "Create contact": [
+        "연락처 추가"
       ],
       "Create PIN code": [
         "PIN 코드 생성"
@@ -3328,6 +3317,9 @@
       ],
       "Share with": [
         "공유 대상:"
+      ],
+      "Status": [
+        "상태"
       ],
       "Stay safer online": [
         "온라인 상에서 더욱 안전하게"
