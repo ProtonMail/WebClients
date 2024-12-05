@@ -17,8 +17,14 @@
       "Add current URL": [
         "Afegeix l'URL actual"
       ],
+      "Add custom domain": [
+        "Afegeix un domini personalitzat"
+      ],
       "Add domain": [
         "Afegir domini"
+      ],
+      "Add mailbox": [
+        "Afegeix una bústia de correu"
       ],
       "Add more": [
         "Afegeix-ne més"
@@ -44,6 +50,9 @@
       "Back": [
         "Torna"
       ],
+      "Block contact": [
+        "Bloqueja el contacte"
+      ],
       "Bulk delete items from trash": [
         "Suprimeix en massa els elements de la paperera"
       ],
@@ -64,6 +73,12 @@
       ],
       "Change": [
         "Canvia"
+      ],
+      "Check DNS": [
+        "Verifica el DNS"
+      ],
+      "Check settings": [
+        "Comprova les preferències"
       ],
       "Choose a file or drag it here": [
         "Trieu un fitxer o arrossegueu-lo aquí"
@@ -104,6 +119,9 @@
       "Continue without pinning": [
         "Continua sense fixar"
       ],
+      "Copy alias address": [
+        "Copia l'adreça de l'àlies"
+      ],
       "Copy and close": [
         "Copia i tanca"
       ],
@@ -133,6 +151,9 @@
       ],
       "Create card": [
         "Crea una targeta"
+      ],
+      "Create contact": [
+        "Crea un contacte"
       ],
       "Create identity": [
         "Crea una identitat"
@@ -172,6 +193,9 @@
       ],
       "Delete it, I will never need it": [
         "Suprimeix-lo. No ho necessitaré mai."
+      ],
+      "Delete mailbox": [
+        "Elimina la bústia de correu"
       ],
       "Delete password": [
         "Elimina la contrasenya"
@@ -317,6 +341,9 @@
       "Make admin": [
         "Estableix com a administrador"
       ],
+      "Make default": [
+        "Estableix per defecte"
+      ],
       "Make editor": [
         "Estableix com a editor"
       ],
@@ -334,6 +361,9 @@
       ],
       "Maximum views": [
         "Màxim de visualitzacions"
+      ],
+      "More info": [
+        "Més informació"
       ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
@@ -391,6 +421,9 @@
       ],
       "Please retry": [
         "Reintenta"
+      ],
+      "Re-verify": [
+        "Torna a verificar"
       ],
       "Reactivate now": [
         "Reactiva ara"
@@ -479,6 +512,9 @@
       "Select": [
         "Selecciona"
       ],
+      "Send email": [
+        "Envia un correu electrònic"
+      ],
       "Send invite": [
         "Envia l'invitació"
       ],
@@ -540,6 +576,15 @@
       "Sync aliases": [
         "Sincronitza els àlies"
       ],
+      "To mailbox": [
+        "A la bústia de correu"
+      ],
+      "Transfer aliases": [
+        "Transferí els àlies"
+      ],
+      "Transfer and delete mailbox": [
+        "Transferirà i elimina la bústia de correu"
+      ],
       "Transfer ownership": [
         "Transfereix la propietat"
       ],
@@ -548,6 +593,9 @@
       ],
       "Try again": [
         "Proveu de nou"
+      ],
+      "Unblock contact": [
+        "Desbloqueja el contacte"
       ],
       "Understood, I will never need it": [
         "Ho entenc i mai el necessitaré.",
@@ -656,6 +704,11 @@
         "Desbloquegeu característiques de seguretat avançades i registres detallats per a protegir la vostra presència en línia."
       ]
     },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "element@${ domainDisplay }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No s'ha pogut analitzar el fitxer de ${ provider }. ${ errorDetail }"
@@ -758,11 +811,32 @@
       "Failed to add email address": [
         "No s'ha pogut afegir l'adreça de correu electrònic"
       ],
+      "Failed to block the contact": [
+        "No s'ha pogut bloquejar el contacte."
+      ],
+      "Failed to create domain": [
+        "No s'ha pogut crear el domini."
+      ],
+      "Failed to create new mailbox": [
+        "No s'ha pogut crear la bústia de correu."
+      ],
+      "Failed to create the contact": [
+        "No s'ha pogut crear el contacte."
+      ],
+      "Failed to delete domain": [
+        "No s'ha pogut eliminar el domini."
+      ],
       "Failed to delete email address from monitoring": [
         "No s'ha pogut suprimir l'adreça de correu electrònic del monitoratge"
       ],
       "Failed to delete selected items": [
         "No s'han pogut suprimir els elements seleccionats"
+      ],
+      "Failed to delete the contact": [
+        "No s'ha pogut eliminar el contacte."
+      ],
+      "Failed to delete the mailbox": [
+        "No s'ha pogut eliminar la bústia de correu."
       ],
       "Failed to edit user's access.": [
         "No s'ha pogut Editar l'accés de l'usuari."
@@ -809,8 +883,17 @@
       "Failed to unpin item": [
         "No s'ha pogut desancorar l'element."
       ],
+      "Failed to update default domain": [
+        "No s'ha pogut actualitzar el domini per defecte."
+      ],
+      "Failed to update domain name.": [
+        "No s'ha pogut actualitzar el nom del domini."
+      ],
       "Failed to update monitoring settings": [
         "No s'han pogut actualitzar les preferències de monitoratge"
+      ],
+      "Failed to verify domain": [
+        "No s'ha pogut verificar el domini."
       ],
       "Failed to verify email address": [
         "No s'ha pogut verificar l'adreça de correu electrònic"
@@ -1217,6 +1300,9 @@
       "Auto-lock successfully disabled.": [
         "S'ha desactivat el bloqueig automàtic."
       ],
+      "automatically": [
+        "automàticament"
+      ],
       "Automatically copy the generated password to the clipboard": [
         "Copia automàticament la contrasenya generada al porta-retalls"
       ],
@@ -1274,6 +1360,12 @@
       "Copied to clipboard": [
         "Copiat al porta-retalls"
       ],
+      "Create contact illustration": [
+        "Crea la il·lustració del contacte"
+      ],
+      "Created ${ time }.": [
+        "Creat el ${ time }."
+      ],
       "Creating alias...": [
         "S'està creant un àlies..."
       ],
@@ -1307,6 +1399,9 @@
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Descobriu el vídeo de Youtube de ${ PASS_APP_NAME }"
       ],
+      "Domain: ${ domainPath } or @": [
+        "Domini: ${ domainPath } o @"
+      ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
       ],
@@ -1330,6 +1425,9 @@
       ],
       "Email address successfully included in monitoring": [
         "L'adreça de correu electrònic s'ha inclòs al monitoratge."
+      ],
+      "Email headers illustration": [
+        "Il·lustració de les capçaleres de correu electrònic"
       ],
       "Emptying trash...": [
         "Buidant la paperera..."
@@ -1410,6 +1508,9 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Aquí trobareu tota la informació necessària per a començar."
+      ],
+      "Here's how it works:": [
+        "Així funciona:"
       ],
       "Import in progress:": [
         "Importació en curs:"
@@ -1681,6 +1782,15 @@
       "Quickly autofill your saved credentials.": [
         "Emplena automàticament i ràpidament les vostres credencials desades"
       ],
+      "Record: CNAME": [
+        "Registre: CNAME"
+      ],
+      "Record: MX": [
+        "Registre: MX"
+      ],
+      "Record: TXT": [
+        "Registre: TXT"
+      ],
       "Registering extra password...": [
         "Registrant la contrasenya addicional..."
       ],
@@ -1710,6 +1820,9 @@
       ],
       "Secure links": [
         "Enllaços segurs"
+      ],
+      "See more info": [
+        "Mostra més informació"
       ],
       "Select an existing login or create a new one.": [
         "Seleccioneu un inici de sessió existent o creeu-ne un de nou."
@@ -1823,6 +1936,9 @@
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
       ],
+      "Unconfigured": [
+        "Sense configurar"
+      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Desbloquegeu ${ PASS_APP_NAME } amb el vostre codi PIN per accedir a les vostres claus d'accés"
       ],
@@ -1870,6 +1986,9 @@
       ],
       "User's access successfully updated": [
         "S'ha actualitzat l'accés de l'usuari."
+      ],
+      "Value:": [
+        "Valor:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "S'ha eliminat la caixa forta \"${ payload.content.name }\""
@@ -1958,6 +2077,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "El vostre compte està restringit perquè la vostra organització ha forçat l'autenticació de dos factors. Activeu l'autenticació de dos factors a la configuració del vostre compte o contacteu amb el vostre administrador."
       ],
+      "your domain": [
+        "el vostre domini"
+      ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
       ],
@@ -1969,6 +2091,10 @@
       "${ aliasCount } alias": [
         "${ aliasCount } àlies",
         "${ aliasCount } àlies"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } blocat",
+        "${ blockedCount } blocats"
       ],
       "${ config.options.length } character": [
         "${ config.options.length } caràcter",
@@ -1982,6 +2108,10 @@
         "${ days } dia",
         "${ days } dies"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } reenviament",
+        "${ forwardCount } reenviaments"
+      ],
       "${ hours } hour": [
         "${ hours } hora",
         "${ hours } hores"
@@ -1990,11 +2120,23 @@
         "${ minutes } minut",
         "${ minutes } minuts"
       ],
+      "${ months } month": [
+        "${ months } mes",
+        "${ months } mesos"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versió ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } resposta",
+        "${ repliedCount } respostes"
+      ],
+      "${ years } year": [
+        "${ years } any",
+        "${ years } anys"
       ],
       "1 hour": [
         "1 hora"
@@ -2062,6 +2204,9 @@
       "Alias address": [
         "Adreça d'àlies"
       ],
+      "Alias address (disabled)": [
+        "Adreça de l'àlies (desactivada)"
+      ],
       "Alias management": [
         "Gestió dels àlies"
       ],
@@ -2125,6 +2270,9 @@
       "Cards": [
         "Targetes"
       ],
+      "Catch-All": [
+        "Catch-all"
+      ],
       "City": [
         "Ciutat"
       ],
@@ -2136,6 +2284,9 @@
       ],
       "Confirm vault name": [
         "Confirma el nom de la caixa forta"
+      ],
+      "Contact created ${ time } ago.": [
+        "S'ha creat el contacte ${ time } fa."
       ],
       "Contact details": [
         "Detalls del contacte"
@@ -2197,8 +2348,14 @@
       "Display name": [
         "Nom a mostrar"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Domini"
+      ],
+      "Domain:": [
+        "Domini:"
       ],
       "Domains": [
         "Dominis"
@@ -2323,6 +2480,9 @@
       "Include numbers (0-9)": [
         "Incloeu números (0-9)"
       ],
+      "Info": [
+        "Informació"
+      ],
       "Instagram handle": [
         "Nom d'usuari d'Instagram"
       ],
@@ -2380,6 +2540,9 @@
       "Logins": [
         "Inicis de sessió"
       ],
+      "Mailboxes": [
+        "Bústies de correu"
+      ],
       "Make all admins": [
         "Estableix tots com a administradors"
       ],
@@ -2425,14 +2588,23 @@
       "Newest to oldest": [
         "De més recent a més antic"
       ],
+      "No Activity in the last 14 days.": [
+        "Cap activitat en els darrers 14 dies."
+      ],
       "No history": [
         "Sense historial"
       ],
       "None": [
         "Cap"
       ],
+      "Not selected": [
+        "Sense seleccionar"
+      ],
       "Note": [
         "Nota"
+      ],
+      "Note • SimpleLogin": [
+        "Nota • SimpleLogin"
       ],
       "Notes": [
         "Notes"
@@ -2494,6 +2666,12 @@
       "Prefix": [
         "Prefix"
       ],
+      "Premium domain": [
+        "Domini prèmium"
+      ],
+      "Priority:": [
+        "Prioritat:"
+      ],
       "Prompt for auto-save": [
         "Demana el desament automàtic"
       ],
@@ -2502,6 +2680,9 @@
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Protegiu ${ PASS_APP_NAME } amb una contrasenya addicional."
+      ],
+      "Public domain": [
+        "Domini públic"
       ],
       "Rate us": [
         "Avalueu-nos"
@@ -2532,6 +2713,9 @@
       ],
       "Security code": [
         "Codi de seguretat"
+      ],
+      "Select a domain": [
+        "Selecciona un domini"
       ],
       "Select an email address": [
         "Seleccioneu una adreça de correu electrònic"
@@ -2592,6 +2776,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Sincronitza els àlies amb SimpleLogin"
+      ],
+      "Target:": [
+        "Destinació:"
       ],
       "Tax number": [
         "Número d'identificació fiscal"
@@ -2666,6 +2853,9 @@
       "Username/email": [
         "Nom d'usuari/correu electrònic"
       ],
+      "Value:": [
+        "Valor:"
+      ],
       "Vault ID": [
         "ID de la caixa forta"
       ],
@@ -2707,6 +2897,9 @@
       ],
       "Your browser will stop using its built-in password manager.": [
         "El vostre navegador deixarà d'utilitzar el seu gestor de contrasenyes integrat."
+      ],
+      "Your domain": [
+        "El vostre domini"
       ],
       "ZIP or Postal code": [
         "Codi postal"
@@ -2772,6 +2965,9 @@
       "Add text": [
         "Afegiu text"
       ],
+      "Alias Display Name": [
+        "Nom a mostrar de l'àlies"
+      ],
       "Email address": [
         "Adreça de correu electrònic"
       ],
@@ -2798,6 +2994,12 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "my-domain.com": [
+        "el-meu-domini.cat"
+      ],
+      "Note from SimpleLogin": [
+        "Nota de SimpleLogin"
       ],
       "Password": [
         "Contrasenya"
@@ -2910,6 +3112,33 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "La sincronització d'àlies s'ha activat. Els àlies de SimpleLogin poden trigar una mica a sincronitzar-se"
       ],
+      "Contact successfully blocked": [
+        "S'ha bloquejat el contacte."
+      ],
+      "Contact successfully created": [
+        "S'ha creat el contacte."
+      ],
+      "Contact successfully deleted": [
+        "S'ha eliminat el contacte."
+      ],
+      "Contact successfully unblocked": [
+        "S'ha desbloquejat el contacte."
+      ],
+      "Default mailbox successfully updated": [
+        "S'ha actualitzat la bústia de correu per defecte."
+      ],
+      "Domain successfully deleted": [
+        "S'ha eliminat el domini."
+      ],
+      "Mailbox successfully deleted": [
+        "S'ha eliminat la bústia de correu."
+      ],
+      "Mailbox successfully verified": [
+        "S'ha verificat la bústia de correu."
+      ],
+      "Mailboxes successfully updated": [
+        "S'han actualitzat les bústies de correu."
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Les caixes fortes no poden contenir més d'${ vault.targetMaxMembers } usuari.",
         "Les caixes fortes no poden contenir més de ${ vault.targetMaxMembers } usuaris."
@@ -2933,11 +3162,29 @@
       "Actions": [
         "Accions"
       ],
+      "Activity": [
+        "Activitat"
+      ],
+      "Add custom domain": [
+        "Afegeix un domini personalitzat"
+      ],
+      "Add mailbox": [
+        "Afegeix una bústia de correu"
+      ],
+      "Alias contacts": [
+        "Contactes de l'àlies"
+      ],
+      "Aliases": [
+        "Àlies"
+      ],
       "Auto-lock update": [
         "Actualització del bloqueig automàtic"
       ],
       "Autofill": [
         "Emplenament automàtic"
+      ],
+      "Blocked addresses": [
+        "Adreces bloquejades"
       ],
       "Confirm extra password": [
         "Confirmeu la contrasenya addicional"
@@ -2966,9 +3213,24 @@
       "Current version": [
         "Versió actual"
       ],
+      "Custom domains": [
+        "Dominis personalitzats"
+      ],
+      "Default": [
+        "Per defecte"
+      ],
+      "Default Display Name": [
+        "Nom a mostrar per defecte"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "Voleu eliminar ${ deletedItemsCount } element?",
         "Voleu eliminar ${ deletedItemsCount } elements?"
+      ],
+      "Delete domain": [
+        "Elimina el domini"
+      ],
+      "Delete mailbox": [
+        "Elimina la bústia de correu"
       ],
       "Delete this item?": [
         "Voleu eliminar aquest element?"
@@ -2978,6 +3240,18 @@
       ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (opcional)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (opcional)"
+      ],
+      "Domain": [
+        "Domini"
+      ],
+      "Domain ownership verification": [
+        "Verificació de la propietat del domini"
       ],
       "Email": [
         "Correu electrònic"
@@ -3039,6 +3313,9 @@
       "Low disk space": [
         "Poc espai al disc"
       ],
+      "Mailbox": [
+        "Bústia de correu"
+      ],
       "Member limit": [
         "Límit de nombre de membres"
       ],
@@ -3061,6 +3338,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Mou l'element a «${ vaultName }»"
+      ],
+      "MX record": [
+        "Registre MX"
       ],
       "No items selected": [
         "No s'ha seleccionat cap element."
@@ -3096,6 +3376,9 @@
         "Recordeu que un cop eliminat, l'àlies no es pot recuperar.",
         "Recordeu que un cop eliminats, els àlies no es poden recuperar."
       ],
+      "Random Prefix Generation": [
+        "Generació aleatòria de prefixos"
+      ],
       "Reject device?": [
         "Voleu rebutjar el dispositiu?"
       ],
@@ -3125,6 +3408,9 @@
       ],
       "Share with": [
         "Comparteix amb"
+      ],
+      "SPF (Optional)": [
+        "SPF (opcional)"
       ],
       "Status": [
         "Estat"
@@ -3158,6 +3444,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Desbloqueja ${ brandNameJSX }"
+      ],
+      "Unverified": [
+        "Sense verificar"
       ],
       "Update available": [
         "Hi ha una actualització disponible"
@@ -3198,6 +3487,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "L'URL del domini no és vàlid."
+      ],
       "Duplicated URL": [
         "L'URL està duplicat."
       ],
@@ -3271,8 +3563,14 @@
       "Delete alias": [
         "Elimina l'àlies"
       ],
+      "Domain cannot be empty": [
+        "El domini no es pot deixar buit."
+      ],
       "Duplicate email addresses.": [
         "Duplicitat d'adreces de correu electrònic."
+      ],
+      "Email cannot be empty": [
+        "El correu electrònic no es pot deixar buit."
       ],
       "Empty note": [
         "Nota buida"
@@ -3319,6 +3617,9 @@
       ],
       "Move to trash": [
         "Mou a la paperera"
+      ],
+      "Name is required": [
+        "Es requereix un nom."
       ],
       "No items": [
         "Sense elements"

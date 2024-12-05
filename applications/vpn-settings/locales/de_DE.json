@@ -1082,7 +1082,7 @@
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
-        "Zum Preis von ${ amount } einmal"
+        "Zum Preis von einmalig ${ amount }"
       ],
       "for ${ durationDeal }": [
         "für ${ durationDeal }"
@@ -3855,11 +3855,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Lösche alle anderen MX-Einträge oder stelle sicher, dass ${ MAIL_APP_NAME } die geringste Priorität hat."
@@ -4858,10 +4858,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
       "Users": [
@@ -9106,7 +9106,7 @@
         "${ planNumberOfUsers } Benutzer"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
-        "${ PROTON_SENTINEL_NAME } erweiterter Kontoschutz"
+        "Erweiterter Kontoschutz mit ${ PROTON_SENTINEL_NAME }"
       ],
       "2 users": [
         "2 Benutzer"
@@ -9831,11 +9831,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"

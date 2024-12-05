@@ -1920,6 +1920,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Modifier les paramètres de l'adresse e-mail"
+      ],
+      "Continue": [
+        "Continuer"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
       ],
@@ -3660,9 +3666,6 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activez la protection contre le suivi dans les messages pour empêcher les annonceurs et toute autre personne de suivre votre localisation et vos activités en ligne."
       ],
-      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
-        "Débloquez ${ activatePmUser } et bénéficiez d'une adresse e-mail originale et facile à saisir."
-      ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Débloquez l'envoi programmé de messages personnalisé et d'autres fonctionnalités en passant à un abonnement supérieur."
       ],
@@ -3677,6 +3680,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Bénéficiez d'un nombre illimité de dossiers, de labels et d'autres fonctionnalités premium en passant à un abonnement supérieur."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Changez d'abonnement pour obtenir ${ activatePmUser } pour une adresse e-mail plus courte et facile à retenir en plus de votre adresse actuelle."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }, notre solution de sécurité de pointe reposant sur l'IA et une assistance d'experts dédiée 24h/24 et 7j/7."
@@ -6030,6 +6036,9 @@
       "Additional options": [
         "Options supplémentaires"
       ],
+      "Address copied to clipboard": [
+        "L'adresse a été copiée dans le presse-papiers."
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La vérification d’adresse avec les clés approuvées est activée pour cette adresse. Pour être en mesure d’envoyer à cette adresse, commencez par approuver des clés publiques pouvant être utilisées pour l’envoi."
       ],
@@ -6301,6 +6310,9 @@
       ],
       "Dedicated servers": [
         "Serveurs dédiés"
+      ],
+      "default email address": [
+        "adresse e-mail par défaut"
       ],
       "Default email application": [
         "Application de messagerie par défaut"
@@ -6725,6 +6737,9 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Les messages dans les dossiers Corbeille et Indésirables/spam depuis plus de 30 jours seront automatiquement supprimés."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Les messages adressés à toutes vos adresses e-mail seront envoyés dans votre boîte de réception."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -6952,6 +6967,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
+      "Registering your subscription...": [
+        "Enregistrement de votre abonnement...."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "N'oubliez pas de mettre à jour ces informations dans votre gestionnaire de mots de passe ou à l'endroit où vous conservez les informations concernant votre compte et vos identifiants."
       ],
@@ -7055,6 +7073,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuration de PGP vous permet d'envoyer des messages chiffrés de bout en bout à une personne qui n'utilise pas ${ BRAND_NAME }, mais qui se sert d'un service compatible PGP."
       ],
+      "Setting up your new address...": [
+        "Configuration de votre nouvelle adresse..."
+      ],
       "Shorten selection": [
         "Raccourcir la sélection"
       ],
@@ -7081,6 +7102,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "L'accès aux capacités de stockage dans ce navigateur n'est pas possible. Nous en avons besoin pour activer la recherche de contenu dans les messages."
@@ -7212,6 +7236,9 @@
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Ceci est destiné à vous aider à l'écriture. Vérifiez l'exactitude du texte proposé. ${ learnMoreResult }"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Ceci est désormais votre ${ defaultEmailAddress } pour envoyer de nouveaux messages."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte de paiement."
@@ -11620,6 +11647,9 @@
       "Schedule send": [
         "Programmer l'envoi"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Il s'agit désormais de votre adresse par défaut. Ouvrez le menu déroulant pour envoyer des messages à partir d'une autre adresse. "
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Activez la ${ DARK_WEB_MONITORING_NAME } pour recevoir des notifications si vos données ont été divulguées par un service tiers."
       ],
@@ -11631,6 +11661,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Vous pouvez désormais programmer vos messages pour les envoyer plus tard."
+      ],
+      "Your pm.me email is active": [
+        "Votre e-mail pm.me est actif."
       ]
     },
     "sso": {
@@ -13397,6 +13430,9 @@
       "Unsubscribe request sent": [
         "La demande de désabonnement a été envoyée."
       ],
+      "Upgrade complete!": [
+        "L'abonnement a été mis à jour."
+      ],
       "Verification error": [
         "Erreur de vérification"
       ],
@@ -13445,6 +13481,9 @@
       ],
       "Your free trial has ended": [
         "Votre essai gratuit est terminé."
+      ],
+      "Your shorter address is now ready": [
+        "Votre adresse au format plus court est maintenant prête."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13705,6 +13744,9 @@
       ],
       "Missing alias suffix": [
         "Le suffixe de l'alias est manquant."
+      ],
+      "Name is required": [
+        "Veuillez indiquer un nom."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Seuls les caractères alphanumériques, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
