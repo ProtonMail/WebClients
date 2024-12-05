@@ -10,11 +10,11 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces';
 export enum VideoConferenceSource {
     no_video_conf = 'no_video_conf',
     google_google_meet_desc = 'google_google_meet_desc',
-    google_google_meet_loc = 'google_google_meet_loc',
     google_zoom_desc = 'google_zoom_desc',
-    google_zoom_loc = 'google_zoom_loc',
+    zoom_loc = 'zoom_loc',
     zoom_desc = 'zoom_desc',
     google_meet_desc = 'google_meet_desc',
+    google_meet_loc = 'google_meet_loc',
     int_zoom = 'int_zoom',
 }
 
