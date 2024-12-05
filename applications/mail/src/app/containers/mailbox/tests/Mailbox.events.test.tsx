@@ -13,6 +13,12 @@ import { baseApiMocks, expectElements, getElements, getProps, props, sendEvent, 
 
 jest.setTimeout(20000);
 
+jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+    useMailELDTMetric: () => {
+        return { stopELDTMetric: jest.fn() };
+    },
+}));
+
 describe('Mailbox elements list reacting to events', () => {
     const { labelID } = props;
 
