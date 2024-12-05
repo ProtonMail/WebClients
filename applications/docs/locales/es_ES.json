@@ -585,6 +585,9 @@
       "Show advanced PGP settings": [
         "Mostrar configuración PGP avanzada"
       ],
+      "Show options": [
+        "Mostrar opciones"
+      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -1097,6 +1100,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Continuar"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
       ],
@@ -3854,6 +3860,9 @@
       "Additional options": [
         "Opciones adicionales"
       ],
+      "Address copied to clipboard": [
+        "Se ha copiado la dirección al portapapeles."
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
       ],
@@ -4017,6 +4026,9 @@
       ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "default email address": [
+        "dirección de correo electrónico por defecto"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Se ha cargado este archivo de forma segura por ${ emailAddress }."
@@ -8892,6 +8904,9 @@
       "Untitled document ${ date }": [
         "Documento sin título ${ date }"
       ],
+      "Upgrade complete!": [
+        "Se ha mejorado tu plan."
+      ],
       "Uploading a large file or folder": [
         "Cargando un archivo o una carpeta grande"
       ],
@@ -9153,6 +9168,9 @@
       ],
       "Missing alias suffix": [
         "Falta el sufijo del alias."
+      ],
+      "Name is required": [
+        "El nombre es obligatorio."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos."
