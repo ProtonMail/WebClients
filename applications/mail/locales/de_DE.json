@@ -1759,7 +1759,7 @@
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
-        "Zum Preis von ${ amount } einmal"
+        "Zum Preis von einmalig ${ amount }"
       ],
       "for ${ durationDeal }": [
         "für ${ durationDeal }"
@@ -3641,9 +3641,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Aktiviere den E-Mail-Tracker-Schutz, um zu verhindern, dass Werbetreibende und andere Personen deinen Standort und deine Online-Aktivitäten verfolgen."
-      ],
-      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
-        "Schalte ${ activatePmUser } für eine einprägsame und leicht einzugebende E-Mail-Adresse frei."
       ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Schalte mit dem Upgrade individuelle Nachrichtenplanung und weitere Premium-Funktionen frei."
@@ -6373,7 +6370,7 @@
         "E-Mails werden automatisch signiert."
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "E-Mails, die mit dem Label ${ nameDeleted } gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
+        "E-Mails, die mit der Kategorie ${ nameDeleted } gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
       ],
       "embedded image": [
         "eingebettetes Bild",
@@ -11839,7 +11836,7 @@
         "${ planNumberOfUsers } Benutzer"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
-        "${ PROTON_SENTINEL_NAME } erweiterter Kontoschutz"
+        "Erweiterter Kontoschutz mit ${ PROTON_SENTINEL_NAME }"
       ],
       "2 users": [
         "2 Benutzer"
