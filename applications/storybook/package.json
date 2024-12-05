@@ -24,20 +24,20 @@
         "@proton/pack": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
-        "@types/react": "^18.3.12",
+        "@types/react": "^18.3.13",
         "@types/react-dom": "^18.3.1",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^7.0.3",
         "eslint": "^8.57.1",
         "lodash.startcase": "^4.4.0",
-        "prettier": "^3.4.1",
+        "prettier": "^3.4.2",
         "prop-types": "15.8.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^5.3.4",
         "ts-loader": "^9.5.1",
         "typescript": "^5.7.2",
-        "webpack": "^5.96.1"
+        "webpack": "^5.97.0"
     },
     "devDependencies": {
         "@babel/core": "^7.26.0",
@@ -52,6 +52,6 @@
         "@storybook/source-loader": "^6.5.16",
         "babel-loader": "^9.2.1",
         "eslint-plugin-storybook": "^0.11.1",
-        "netlify-cli": "17.37.2"
+        "netlify-cli": "17.38.0"
     }
 }
