@@ -22,6 +22,7 @@ import { c } from "ttag";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { MenuBarMonitor } from "./MenuBarMonitor";
+import { PROTON_THEMES_MAP, ThemeTypes } from "@proton/shared/lib/themes/themes";
 
 type ViewID = keyof URLConfig;
 
@@ -363,8 +364,13 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
         ? join(process.resourcesPath, "error-network.html")
         : join(app.getAppPath(), "assets/error-network.html");
 
+    const themeColors = nativeTheme.shouldUseDarkColors
+        ? PROTON_THEMES_MAP[ThemeTypes.Carbon]
+        : PROTON_THEMES_MAP[ThemeTypes.Snow];
+
     const query: Record<string, string> = {
-        theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
+        color: themeColors.thumbColors.weak,
+        backgroundColor: isMac ? "transparent" : themeColors.themeColorMeta,
         title: c("error screen").t`Cannot establish connection`,
         description: c("error screen")
             .t`Check your internet connection or network settings. If the issue persists, please contact customer support.`,
@@ -397,9 +403,14 @@ async function renderLoadingPage(view: BrowserView, title: string): Promise<void
         ? join(process.resourcesPath, "loading.html")
         : join(app.getAppPath(), "assets/loading.html");
 
+    const themeColors = nativeTheme.shouldUseDarkColors
+        ? PROTON_THEMES_MAP[ThemeTypes.Carbon]
+        : PROTON_THEMES_MAP[ThemeTypes.Snow];
+
     const query: Record<string, string> = {
         message: c("loading screen").t`Loading ${title}…`,
-        theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
+        color: themeColors.thumbColors.weak,
+        backgroundColor: isMac ? "transparent" : themeColors.themeColorMeta,
     };
 
     if (isElectronOnMac) {
