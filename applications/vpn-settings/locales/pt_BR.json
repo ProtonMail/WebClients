@@ -1090,11 +1090,6 @@
         "Mais popular"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Estoque limitado!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Com o preço único de ${ amount }"
@@ -3836,6 +3831,12 @@
       "Connection data will be available in around 1 hour.": [
         "Os dados de conexão estarão disponíveis em cerca de uma hora."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Continue para permitir **${ affiliationsText }** da **${ organizationValue.Name }** de juntar na sua organização ${ BRAND_NAME }."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Continue para conectar **${ organizationValue.Name }** com a sua organização ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Continuar com ${ freeName }"
       ],
@@ -3974,6 +3975,9 @@
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
+      ],
+      "EduGain configuration saved": [
+        "Configuração do EduGain salva"
       ],
       "email": [
         "e-mail"
@@ -4597,6 +4601,12 @@
       ],
       "Securing your account": [
         "Protegendo sua conta"
+      ],
+      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
+        "Selecione uma organização ativada com **eduGAIN** para **${ domain.DomainName }**."
+      ],
+      "Select one or multiple user affiliations": [
+        "Selecione uma ou várias afiliações para o usuário"
       ],
       "Select recently used servers": [
         "Selecionar servidores usados recentemente"

@@ -6,22 +6,22 @@
   "contexts": {
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ link }"
+        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
+        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
+        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vita åtgärd. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vita åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ link }"
+        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ]
     },
     "Action": {
@@ -1040,6 +1040,9 @@
       "Online document editor": [
         "Dokumentredigerare online"
       ],
+      "Password health alerts": [
+        "Aviseringar om lösenordshälsa"
+      ],
       "Private photo backup": [
         "Privat säkerhetskopiering av foto"
       ],
@@ -1085,11 +1088,6 @@
     "BF2024: Info": {
       "Most popular": [
         "Mest populär"
-      ]
-    },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Begränsat lager!"
       ]
     },
     "BF2024: Offers": {
@@ -2971,7 +2969,7 @@
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
-        "Du är inbjuden att gå med i ${ invite.OrganizationName }"
+        "Du har bjudits in att gå med i ${ invite.OrganizationName }"
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kan bara acceptera 3 inbjudningar under en 6-månadersperiod. Kontakta ${ supportLink } om du behöver ett undantag."
@@ -3009,7 +3007,7 @@
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
+        "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger de ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3444,7 +3442,7 @@
         "Skydd"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
-        "Spara stort på det bästa erbjudandet för ${ VPN_APP_NAME }"
+        "Spara stort med de bästa ${ VPN_APP_NAME }-erbjudanden"
       ],
       "Select your deal": [
         "Välj ditt erbjudande"
@@ -3650,6 +3648,9 @@
       ],
       "30-day money-back guarantee.": [
         "30 dagars pengarna-tillbaka-garanti."
+      ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "En ${ protonSubdomain } hostas av ${ BRAND_NAME } vilket låter dig snabbt konfigurera en underdomän. ${ learnMoreLink }"
       ],
       "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
         "En anpassad domän är obligatoriskt för att skapa grupper. Om du inte har ställt in en anpassad domän, gör det först under ${ linkToDomainPage }."
@@ -4109,6 +4110,9 @@
       "High Priority": [
         "Hög prioritet"
       ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Identitetsleverantörens offentliga nyckel för signering av autentiseringspåståenden. Det borde finnas en plats att ladda ner eller kopiera certifikathashet från identitetsleverantören. Klistra in certifikathashet i textrutan."
+      ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Om en annan administratör har ändrat detta lösenord måste du be dem om det nya organisationslösenordet."
       ],
@@ -4240,6 +4244,18 @@
       ],
       "Item flags changed in vault": [
         "Objektflaggor ändrade i valv"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Objekt i ${ vaultLink } kastat"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Objekt i ${ vaultLink } avkastat"
+      ],
+      "Item in vault trashed": [
+        "Objekt i valv kastat"
+      ],
+      "Item in vault untrashed": [
+        "Objekt i valv avkastat"
       ],
       "Item read in ${ vaultLink }": [
         "Objekt läst i ${ vaultLink }"
@@ -4600,6 +4616,9 @@
       "Select recently used servers": [
         "Välj nyligen använda servrar"
       ],
+      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Välj användaraffilieringar från **${ organizationValue.Name }** (${ organizationValue.EntityId }) som du vill släppa in i din ${ BRAND_NAME }-organisation:"
+      ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Skicka e-post för att uppmuntra dina medlemmar att skydda sina konton med 2FA."
       ],
@@ -4853,6 +4872,9 @@
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Två-lösenordsläge kräver två lösenord: ett för att logga in på ditt konto och ett för att dekryptera dina data. (Avancerat)"
       ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Två-lösenordsläget använder separata lösenord för inloggning och dataavkryptering. Detta ger en mindre säkerhetsförmån i vissa situationer, men vi rekommenderar enkel-lösenordsläget för de flesta användare. För att växla till två-lösenordsläge, sätt först ett inloggningslösenord och sedan ett andra lösenord."
+      ],
       "Unable to check gateways monitoring current status.": [
         "Kan inte kontrollera nuvarande övervakningsstatus av gateways."
       ],
@@ -5015,6 +5037,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Vi kommer skicka en återställningskod till det telefonnummer som du angav för kontoåterställning."
       ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Vid aktivering av SAML för ${ appName } hos din identitetsleverantör så kan du bli ombedd att använda callback (ACS) URL och utfärdar-ID. Kopiera och klistra in värdena nedan i fälten hos din identitetsleverantör."
+      ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "När du avbryter din nuvarande betalda prenumeration kommer saldot av din prenumeration att returneras som kontokrediter och du kommer att nedgraderas till ${ BRAND_NAME } ${ PLANS.FREE }-paketet."
       ],
@@ -5067,6 +5092,10 @@
         "Du använder för närvarande ${ ipCount } av ${ ipAddresses } tillgänglig dedikerad server.",
         "Du använder för närvarande ${ ipCount } av ${ ipAddresses } tillgängliga dedikerade servrar."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Du använder för närvarande ${ usedMembers } av din ${ maxMembers } tillgänglig användarlicens och ${ usedAI } av din ${ maxAI } tillgänglig skrivassistentlicens.",
+        "Du använder för närvarande ${ usedMembers } av dina ${ maxMembers } tillgängliga användarlicenser och ${ usedAI } av dina ${ maxAI } tillgängliga skrivassistentlicenser."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
         "Du använder för närvarande ${ usedMembers } av dina ${ maxMembers } tillgänglig användarlicens och inga av dina ${ maxAI } tillgängliga skrivassistentlicens.",
         "Du använder för närvarande ${ usedMembers } av dina ${ maxMembers } tillgänglig användarlicens och inga av dina ${ maxAI } tillgängliga skrivassistentlicenser."
@@ -5107,6 +5136,10 @@
       "You have ${ availableCount } new server available.": [
         "Du har ${ availableCount } ny server tillgänglig.",
         "Du har ${ availableCount } nya servrar tillgängliga."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Du har ${ unassignedAvailableCount } nyligen använd server tillgänglig. För att allokera denna server till ett annat land så behöver du vänta tills inaktiveringen slutförts.",
+        "Du har ${ unassignedAvailableCount } nyligen använda servrar tillgängliga. För att allokera dessa servrar till ett annat land så behöver du vänta tills inaktiveringen slutförts."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har en provperiod på ${ planTitle }-prenumeration. Om du vill fortsätta med din prenumeration efter provperioden, lägg till en betalningsmetod."
@@ -6366,7 +6399,7 @@
         "${ PASS_APP_NAME } med obegränsat antal hide-my-email-alias"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
-        "Program ${ PROTON_SENTINEL_NAME }"
+        "${ PROTON_SENTINEL_NAME }-program"
       ],
       "${ size } attachment size": [
         "${ size } bilagestorlek"
@@ -6491,6 +6524,9 @@
       "Custom snooze time": [
         "Anpassad snooztid"
       ],
+      "Custom workspace branding": [
+        "Anpassat utseende för arbetsyta"
+      ],
       "Data breach monitoring": [
         "Dataintrångsövervakning"
       ],
@@ -6498,7 +6534,7 @@
         "Dedikerade servrar och IP"
       ],
       "Desktop app": [
-        "App för stationär dator"
+        "Skrivbordsapp"
       ],
       "DNS leak prevention": [
         "Förebyggande av DNS-läckage"
@@ -6528,7 +6564,7 @@
         "End-to-end-kryptering"
       ],
       "Fast P2P/BitTorrent downloads": [
-        "Snabba P2P/BitTorrent-nedladdningar"
+        "Snabba P2P-/BitTorrent-nedladdningar"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Gratis funktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och ${ DRIVE_SHORT_APP_NAME }"
@@ -6540,7 +6576,7 @@
         "Återbetalas till fullo i 30 dagar"
       ],
       "GDPR data processing agreement": [
-        "GDPR databehandlingsavtal"
+        "GDPR-databehandlingsavtal"
       ],
       "Generate emails with a prompt": [
         "Generera e-post med en prompt"
@@ -6711,7 +6747,7 @@
         "Obegränsade mappar, etiketter och filter"
       ],
       "Unlimited hide-my-email aliases": [
-        "Obegränsat antal Hide-my-email-alias"
+        "Obegränsat antal hide-my-email-alias"
       ],
       "Unlimited labels": [
         "Obegränsade etiketter"
@@ -7321,7 +7357,7 @@
         "Ogiltig kod"
       ],
       "Invalid input. Search an email or IP address.": [
-        "Ogiltig inmatning. Sök efter en e-post eller en IP-adress."
+        "Ogiltig inmatning. Sök efter en e-post- eller en IP-adress."
       ],
       "IP Address copied to clipboard": [
         "IP-adress kopierad till urklipp"
@@ -7342,13 +7378,13 @@
         "För många nyliga API-förfrågningar"
       ],
       "Two-factor authentication has been enforced for administrators": [
-        "Tvåfaktorsautentisering har verkställts för alla administratörer"
+        "Tvåfaktorsautentisering har tvingats för administratörer"
       ],
       "Two-factor authentication has been enforced for all members": [
-        "Tvåfaktorsautentisering har verkställts för alla medlemmar"
+        "Tvåfaktorsautentisering har tvingats för alla medlemmar"
       ],
       "Two-factor authentication is not required anymore": [
-        "Tvåfaktorsautentisering är inte längre obligatoriskt"
+        "Tvåfaktorsautentisering krävs inte längre"
       ],
       "Video conferencing settings have been updated": [
         "Inställningarna för videokonferenser har uppdaterats"
@@ -7647,7 +7683,7 @@
         "Säker valvdelning (${ n } valv) och länkdelning"
       ],
       "Setting up your organization": [
-        "Ställer in din organisation"
+        "Konfigurerar din organisation"
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Loggar in på ${ PASS_APP_NAME }"
@@ -7748,7 +7784,7 @@
         "Privata användare kan befordras till admin när de har loggat in för första gången"
       ],
       "Reset organization key": [
-        "Återställ organisationsnyckel"
+        "Återställ organisationsnyckeln"
       ],
       "The following administrators could not be restored.": [
         "Följande administratörer kunde inte återställas."
@@ -7793,7 +7829,7 @@
         "Du måste privatisera alla användare innan du genererar en ny organisationsnyckel"
       ],
       "You need access to the organization key to perform this operation.": [
-        "Du behöver åtkomst till organisationsnyckeln för att utföra denna operation."
+        "Du behöver åtkomst till organisationsnyckeln för att utföra denna åtgärd."
       ]
     },
     "Payment method option": {
@@ -8250,6 +8286,12 @@
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**Förutsättning:** SAML-autentisering måste konfigureras för att aktivera SCIM-provisionering."
+      ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Förutsättning:** För att aktivera SCIM-provisionering behöver du verifiera ägarskap för domänen **${ domainName }**. Denna verifiering kan ta upp till en timme."
+      ],
       "Enter the token into your identity provider": [
         "Ange token i din identitetsleverantör"
       ],
@@ -8280,6 +8322,9 @@
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Förenklar användarhantering över olika tjänster. Lägg till, redigera och ta bort användare i din identitetsleverantör, så kommer dessa ändringar automatiskt att tillämpas på din ${ appName }-organisation."
       ],
+      "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
+        "Den automatiska SCIM-provisioneringen kommer att inaktiveras tills du angett den nya SCIM-token i din identitetsleverantörs inställningar."
+      ],
       "The SCIM base URL and token will be deleted.": [
         "SCIM-baswebbadressen och -token kommer att tas bort."
       ],
@@ -8307,6 +8352,14 @@
       ],
       "SCIM automatic provisioning": [
         "Automatisk tillhandahållande av SCIM"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "API-nyckel för SCIM-anslutaren till vilken din IdP Provisioning Agent vidarebefordrar SCIM-data"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "URL för SCIM-anslutaren till vilken din IdP Provisioning Agent vidarebefordrar SCIM-data"
       ]
     },
     "Security Center - Info": {
@@ -8374,7 +8427,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "Kontoåterställning är inte tillgänglig för äldre adressnycklar"
+        "Kontoåterställning är inte tillgänglig för föråldrade adressnycklar"
       ],
       "Please generate keys before you try to change your password": [
         "Generera nycklar innan du försöker ändra ditt lösenord"
@@ -8737,7 +8790,7 @@
         "Säker streaming"
       ],
       "Support online privacy": [
-        "Stöder integritet online"
+        "Stöd onlineintegritet"
       ]
     },
     "specialoffer: Footer": {
@@ -9422,10 +9475,10 @@
         "Omfattande integritet och säkerhet"
       ],
       "Dark web monitoring": [
-        "Övervakning mörka webben"
+        "Mörka webben-övervakning"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Stöd för app för stationär dator och e-postklient (via IMAP)"
+        "Skrivbordsapp och stöd för e-postklienter (via IMAP)"
       ],
       "Direct contribution to our mission": [
         "Direkt bidrag till vårt uppdrag"
@@ -9461,7 +9514,7 @@
         "Hur vårt kundsupportteam fick vår VPN-app direkt i människors händer."
       ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
-        "Hur vi slog tillbaka när ${ BRAND_NAME } var blockerad i en aggressiv kampanj."
+        "Hur vi slog tillbaka när ${ BRAND_NAME } var blockerat i en aggressiv kampanj."
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Hur vi stöttade lokala aktivister när integritet och yttrandefrihet hotades."
@@ -9613,7 +9666,7 @@
         "Varningar om dataintrång ${ strongArgument }"
       ],
       "Desktop app": [
-        "App för stationär dator"
+        "Skrivbordsapp"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
         "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
@@ -10215,7 +10268,7 @@
         "Datum"
       ],
       "Day theme": [
-        "Dags-tema"
+        "Dagstema"
       ],
       "Delete": [
         "Ta bort"
@@ -10406,7 +10459,7 @@
         "Nästa"
       ],
       "Night theme": [
-        "Natt-tema"
+        "Nattema"
       ],
       "No recovery method": [
         "Ingen återställningsmetod"
@@ -11084,22 +11137,22 @@
     },
     "vpn_2step: discount": {
       "1-year": [
-        "1 år"
+        "1 års"
       ],
       "15-month": [
-        "15 månader"
+        "15 månaders"
       ],
       "18-month": [
-        "18 månader"
+        "18 månaders"
       ],
       "2-year": [
         "2-årig"
       ],
       "3-month": [
-        "3 månader"
+        "3 månaders"
       ],
       "30-month": [
-        "30 månader"
+        "30 månaders"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Få ${ discount } rabatt med en ${ billingCycle } prenumeration"
