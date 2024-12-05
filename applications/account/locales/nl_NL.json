@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -829,11 +829,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "Refresh the page": [
-        "Pagina vernieuwen"
-      ],
       "refresh the page": [
         "pagina vernieuwen"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
       ],
       "Reject": [
         "Afwijzen"
@@ -1629,15 +1629,6 @@
         "Selecteer uw eindejaarsaanbieding"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting ${ plan.Title } krijgen wanneer u zich voor ${ cycle } maand abonneert.",
-        "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting krijgen ${ plan.Title } wanneer u zich voor ${ cycle } maanden abonneert."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB opslagruimte (2x meer dan binnen elk ander abonnement)"
@@ -1659,6 +1650,15 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Het ${ plan }-abonnement is tijdelijk terug"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting ${ plan.Title } krijgen wanneer u zich voor ${ cycle } maand abonneert.",
+        "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting krijgen ${ plan.Title } wanneer u zich voor ${ cycle } maanden abonneert."
       ]
     },
     "bf2023: Offers": {
@@ -1798,11 +1798,6 @@
     "BF2024: Info": {
       "Most popular": [
         "Populairste keuze"
-      ]
-    },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Beperkte voorraad!"
       ]
     },
     "BF2024: Offers": {
@@ -7285,11 +7280,11 @@
       "Data locked": [
         "Gegevens vergrendeld"
       ],
-      "dedicated servers": [
-        "toegewijde servers"
-      ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "dedicated servers": [
+        "toegewijde servers"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -8921,11 +8916,11 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
-      "username": [
-        "gebruikersnaam"
-      ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "username": [
+        "gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -11773,29 +11768,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Vanaf ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Doorgaan met gratis"
@@ -11823,6 +11795,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Upgraden naar ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Vanaf ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12516,14 +12511,6 @@
         "Uw geselecteerde abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -12542,6 +12529,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -17216,11 +17211,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"

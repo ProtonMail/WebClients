@@ -428,6 +428,12 @@
       "Request a feature": [
         "Pyydä ominaisuutta"
       ],
+      "Resend code": [
+        "Lähetä koodi uudelleen"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Lähetä koodi uudelleen (${ remaining } s kuluttua)"
+      ],
       "Resend invitation": [
         "Lähetä kutsu uudelleen"
       ],
@@ -580,6 +586,9 @@
       "Use ${ label } theme": [
         "Käytä ${ label }-teemaa"
       ],
+      "Verify": [
+        "Vahvista"
+      ],
       "Via secure link": [
         "Suojatun linkin välityksellä"
       ],
@@ -605,38 +614,9 @@
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
       ]
     },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "elinikäisen pääsyn"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Kaikki premium-ominaisuudet. Kuusi käyttäjää. Yksi helppo tilaus."
-      ],
-      "Limited-stock available!": [
-        "Rajoitetusti saatavilla!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Hyödynnä tarjous"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Maksa kerran, ja saat ${ lifetimeAccessJSX } Pass Plussaan ja SimpleLoginiin. Vain ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Säästä jopa ${ discountJSX } Pass Familyllä. Vain ${ relativePrice }/kuukausi."
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }In työpöytäsovellus"
+        "${ MAIL_APP_NAME }in työpöytäsovellus"
       ]
     },
     "Button": {
@@ -1312,6 +1292,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Poistetaan kohdetta \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Etkö saanut koodia?"
+      ],
       "Disabling auto-lock": [
         "Automaattilukitusta poistetaan käytöstä"
       ],
@@ -1617,6 +1600,9 @@
       "Pinning item...": [
         "Kohdetta kiinnitetään..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Tarkasta roskapostikansiosi tai kokeile koodin uudelleenlähetystä."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
       ],
@@ -1837,9 +1823,6 @@
       "Unable to copy to clipboard": [
         "Leikepöydälle kopiointi epäonnistui"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Rajattomasti Hide-my-email-aliaksia"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Käytä pääsyavaimiasi avaamalla ${ PASS_APP_NAME } PIN-koodillasi"
       ],
@@ -1863,6 +1846,9 @@
       ],
       "Unpinning item...": [
         "Kohdetta irrotetaan..."
+      ],
+      "Unverified": [
+        "Vahvistamaton"
       ],
       "Update login": [
         "Päivitä kirjautumistieto"
@@ -1909,6 +1895,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Havaitsimme, että sinulla on SimpleLoginissa ${ aliasCount } alias, joka puuttuu ${ PASS_APP_NAME }ista. Haluaisitko tuoda sen?",
         "Havaitsimme, että sinulla on SimpleLoginissa ${ aliasCount } aliasta, jotka puuttuvat ${ PASS_APP_NAME }ista. Haluaisitko tuoda ne?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Osoitteeseen ${ email } on lähetetty vahvistuskoodi. Syötä se alle:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Käyttäjätunnus-kenttä näytetään aina, kun luot/muokkaat kirjautumistietoja ${ PASS_APP_NAME }issa."
@@ -2139,6 +2128,9 @@
       "City": [
         "Kaupunki"
       ],
+      "Code": [
+        "Koodi"
+      ],
       "Company": [
         "Yritys"
       ],
@@ -2146,6 +2138,9 @@
         "Vahvista holvin nimi"
       ],
       "Contact details": [
+        "Yhteystiedot"
+      ],
+      "Contacts": [
         "Yhteystiedot"
       ],
       "Copy": [
@@ -2198,6 +2193,9 @@
       ],
       "Display": [
         "Ulkoasu"
+      ],
+      "Display name": [
+        "Näyttönimi"
       ],
       "Domain": [
         "Verkkotunnus"
@@ -2795,6 +2793,9 @@
       "Full Name": [
         "Koko nimi"
       ],
+      "me@example.com": [
+        "mina@esimerkki.fi"
+      ],
       "MM/YY": [
         "KK/VV"
       ],
@@ -2929,6 +2930,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } -asetukset"
       ],
+      "Actions": [
+        "Toiminnot"
+      ],
       "Auto-lock update": [
         "Muuta automaattilukitusta"
       ],
@@ -2941,8 +2945,17 @@
       "Confirm PIN code": [
         "Vahvista PIN-koodi"
       ],
+      "Confirm your email": [
+        "Vahvista sähköpostiosoitteesi"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Yhdistä ${ BRAND_NAME }-tilisi"
+      ],
+      "Contacts": [
+        "Yhteystiedot"
+      ],
+      "Create contact": [
+        "Luo yhteystieto"
       ],
       "Create PIN code": [
         "Luo PIN-koodi"
@@ -3113,6 +3126,9 @@
       "Share with": [
         "Jaa henkilöille"
       ],
+      "Status": [
+        "Tila"
+      ],
       "Stay safer online": [
         "Suojaudu paremmin verkossa"
       ],
@@ -3276,6 +3292,12 @@
       "Invalid alias prefix": [
         "Virheellinen aliaksen etuliite"
       ],
+      "Invalid code": [
+        "Virheellinen koodi"
+      ],
+      "Invalid email": [
+        "Virheellinen sähköpostiosoite"
+      ],
       "Invalid email addresses.": [
         "Virheellisiä sähköpostiosoitteita."
       ],
@@ -3369,6 +3391,9 @@
       ],
       "Vault name is required": [
         "Holvin nimi vaaditaan"
+      ],
+      "Verification code is required": [
+        "Vahvistuskoodi vaaditaan"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Holvin käyttöoikeuden omaavien jäsenten enimmäismäärä on saavutettu."

@@ -416,6 +416,12 @@
       "Request a feature": [
         "Funktion vorschlagen"
       ],
+      "Resend code": [
+        "Code erneut senden"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Code erneut senden (in ${ remaining }s)"
+      ],
       "Resend invitation": [
         "Einladung erneut senden"
       ],
@@ -561,6 +567,9 @@
       "Use ${ label } theme": [
         "Farbschema „${ label }“ verwenden"
       ],
+      "Verify": [
+        "Verifizieren"
+      ],
       "Via secure link": [
         "Über sicheren Link"
       ],
@@ -581,32 +590,6 @@
       ],
       "Write us on Twitter": [
         "Schreibe uns auf Twitter"
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "lebenslangen Zugang"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Alle Premiumfunktionen. Sechs Benutzer. Ein einfaches Abonnement."
-      ],
-      "Limited-stock available!": [
-        "Begrenzter Bestand verfügbar!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Zugreifen"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Spare bis zu ${ discountJSX } auf Pass Family. Nur ${ relativePrice }/Monat."
       ]
     },
     "Browser": {
@@ -1271,6 +1254,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "„${ payload.content.name }“ wird gelöscht"
       ],
+      "Didn't receive the code?": [
+        "Code nicht erhalten?"
+      ],
       "Disabling auto-lock": [
         "Automatische Sperre deaktivieren"
       ],
@@ -1548,6 +1534,9 @@
       "Pinning item...": [
         "Eintrag wird angeheftet..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Bitte überprüfe deinen Spam-Ordner oder fordere den Code erneut an."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
       ],
@@ -1744,9 +1733,6 @@
       "Unable to copy to clipboard": [
         "Kopieren in die Zwischenablage nicht möglich"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Unbegrenzte Hide-my-email-Aliasse"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Entsperre ${ PASS_APP_NAME } mit deinem PIN-Code für den Zugang zu deinen Passkeys"
       ],
@@ -1770,6 +1756,9 @@
       ],
       "Unpinning item...": [
         "Eintrag wird losgelöst..."
+      ],
+      "Unverified": [
+        "Nicht verifiziert"
       ],
       "Update login": [
         "Anmeldedaten aktualisieren"
@@ -1810,6 +1799,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Wir haben festgestellt, dass du ${ aliasCount } Alias hast, der in SimpleLogin vorhanden ist, aber in ${ PASS_APP_NAME } fehlt. Möchtest du ihn importieren?",
         "Wir haben festgestellt, dass du ${ aliasCount } Aliasse hast, die in SimpleLogin vorhanden sind, aber in ${ PASS_APP_NAME } fehlen. Möchtest du sie importieren?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Wir haben einen Verifizierungscode an ${ email } gesendet. Bitte gib ihn unten ein:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Beim Erstellen/Bearbeiten eines Logins auf ${ PASS_APP_NAME } wird die Eingabe 'Benutzername' immer sichtbar sein."
@@ -2033,6 +2025,9 @@
       "City": [
         "Stadt"
       ],
+      "Code": [
+        "Code"
+      ],
       "Company": [
         "Unternehmen"
       ],
@@ -2041,6 +2036,9 @@
       ],
       "Contact details": [
         "Kontaktdetails"
+      ],
+      "Contacts": [
+        "Kontakte"
       ],
       "Copy": [
         "Kopieren"
@@ -2092,6 +2090,9 @@
       ],
       "Display": [
         "Darstellung"
+      ],
+      "Display name": [
+        "Anzeigename"
       ],
       "Domain": [
         "Domain"
@@ -2667,6 +2668,9 @@
       "Full Name": [
         "Vollständiger Name"
       ],
+      "me@example.com": [
+        "ich@beispiel.de"
+      ],
       "MM/YY": [
         "MM/JJ"
       ],
@@ -2769,6 +2773,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-Einstellungen"
       ],
+      "Actions": [
+        "Aktionen"
+      ],
       "Auto-lock update": [
         "Aktualisieren der automatischen Sperre"
       ],
@@ -2781,8 +2788,17 @@
       "Confirm PIN code": [
         "PIN-Code bestätigen"
       ],
+      "Confirm your email": [
+        "E-Mail-Adresse bestätigen"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto verbinden"
+      ],
+      "Contacts": [
+        "Kontakte"
+      ],
+      "Create contact": [
+        "Kontakt erstellen"
       ],
       "Create PIN code": [
         "PIN-Code erstellen"
@@ -2925,6 +2941,9 @@
       "Share with": [
         "Teilen mit"
       ],
+      "Status": [
+        "Status"
+      ],
       "Stay safer online": [
         "Bleib online geschützter"
       ],
@@ -3055,6 +3074,12 @@
       "Invalid alias prefix": [
         "Ungültiges Alias-Präfix"
       ],
+      "Invalid code": [
+        "Ungültiger Code"
+      ],
+      "Invalid email": [
+        "Ungültige E-Mail-Adresse"
+      ],
       "Invalid email addresses.": [
         "Ungültige E-Mail-Adressen."
       ],
@@ -3142,6 +3167,9 @@
       ],
       "Vault name is required": [
         "Tresorname ist erforderlich"
+      ],
+      "Verification code is required": [
+        "Verifizierungscode ist erforderlich"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Du hast die Benutzerlimite für den Zugriff auf diesen Tresor erreicht."

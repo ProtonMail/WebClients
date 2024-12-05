@@ -946,11 +946,6 @@
         "Le plus populaire"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Quantité limitée !"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturé ${ amount } en une fois"
@@ -4505,6 +4500,9 @@
       "Restored version to": [
         "La version a été restaurée à"
       ],
+      "Save Document as PDF": [
+        "Enregistrer le document au format PDF"
+      ],
       "Saving": [
         "Enregistrement"
       ],
@@ -4770,6 +4768,15 @@
       "What do you want to do?": [
         "Que voulez-vous faire ?"
       ],
+      "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
+        "Lorsque la boîte de dialogue s'ouvre, sélectionnez « Destination », choisissez « Enregistrer au format PDF », puis cliquez sur Enregistrer."
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "Lorsque la boîte de dialogue s'ouvre, sélectionnez « Destination », choisissez « Enregistrer au format PDF », puis cliquez sur Enregistrer."
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "Lorsque la boîte de dialogue s'ouvre, sélectionnez « PDF » dans le coin inférieur gauche, puis appuyez sur Enregistrer."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
@@ -4885,6 +4892,9 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Votre compte sera mis à jour une fois le paiement effectué."
+      ],
+      "Your browser's Print dialog will now open, where you can export your document to PDF.": [
+        "La boîte de dialogue Imprimer de votre navigateur s'ouvre, vous permettant d'exporter votre document au format PDF."
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Vos changements sont en cours de synchronisation avec Drive. Veuillez ne pas fermer cette page web."

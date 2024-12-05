@@ -419,6 +419,12 @@
       "Request a feature": [
         "Запросить функцию"
       ],
+      "Resend code": [
+        "Повторно отправить код"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Повторно отправить код (в ${ remaining }с)"
+      ],
       "Resend invitation": [
         "Отправить повторное приглашение"
       ],
@@ -566,6 +572,9 @@
       "Use ${ label } theme": [
         "Использовать тему ${ label }"
       ],
+      "Verify": [
+        "Подтвердить"
+      ],
       "Via secure link": [
         "Через защищенную ссылку"
       ],
@@ -589,35 +598,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "пожизненный доступ"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Все платные функции. 6 пользователей. 1 простая подписка."
-      ],
-      "Limited-stock available!": [
-        "Доступно ограниченное количество!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Заключить сделку"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Черная пятница"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Заплатите один раз и получите ${ lifetimeAccessJSX } к Pass Plus и SimpleLogin. Всего ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Сэкономьте до ${ discountJSX } на Pass Family. Всего ${ relativePrice }/месяц."
       ]
     },
     "Browser": {
@@ -1316,6 +1296,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Удаление \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Не получили код?"
+      ],
       "Disabling auto-lock": [
         "Отключение автоматической блокировки"
       ],
@@ -1619,6 +1602,9 @@
       "Pinning item...": [
         "Закрепление элемента..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Проверьте папку Спам или попробуйте повторно отправить код."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
       ],
@@ -1826,9 +1812,6 @@
       "Unable to copy to clipboard": [
         "Не могу скопировать в буфер обмена"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Неограниченное количество псевдонимов hide-my-email"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Разблокируйте ${ PASS_APP_NAME } с вашим PIN-кодом для доступа к вашим passkey"
       ],
@@ -1852,6 +1835,9 @@
       ],
       "Unpinning item...": [
         "Открепление элемента..."
+      ],
+      "Unverified": [
+        "Не подтвержденный"
       ],
       "Update login": [
         "Обновить логин"
@@ -1900,6 +1886,9 @@
         "Мы обнаружили, что у вас есть ${ aliasCount } псевдонима, которые присутствует в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?",
         "Мы обнаружили, что у вас есть ${ aliasCount } псевдонимов, которые присутствует в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?",
         "Мы обнаружили, что у вас есть ${ aliasCount } псевдонимов, которые присутствует в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Мы отправили код подтверждения на ${ email }. Введите его ниже:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "При создании или изменении имени пользователя в ${ PASS_APP_NAME } ввод 'имени пользователя' всегда будет виден."
@@ -2137,6 +2126,9 @@
       "City": [
         "Город"
       ],
+      "Code": [
+        "Код"
+      ],
       "Company": [
         "Компания"
       ],
@@ -2145,6 +2137,9 @@
       ],
       "Contact details": [
         "Информация контакта"
+      ],
+      "Contacts": [
+        "Контакты"
       ],
       "Copy": [
         "Копировать"
@@ -2196,6 +2191,9 @@
       ],
       "Display": [
         "Показать"
+      ],
+      "Display name": [
+        "Отображаемое имя"
       ],
       "Domain": [
         "Домен"
@@ -2793,6 +2791,9 @@
       "Full Name": [
         "Полное имя"
       ],
+      "me@example.com": [
+        "ya@primer.com"
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -2929,6 +2930,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Настройки ${ PASS_APP_NAME }"
       ],
+      "Actions": [
+        "Действия"
+      ],
       "Auto-lock update": [
         "Обновление авто-блокировки"
       ],
@@ -2941,8 +2945,17 @@
       "Confirm PIN code": [
         "Подтвердите ПИН-код"
       ],
+      "Confirm your email": [
+        "Подтвердите свою электронную почту"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Подключите свой аккаунт ${ BRAND_NAME }"
+      ],
+      "Contacts": [
+        "Контакты"
+      ],
+      "Create contact": [
+        "Создать контакт"
       ],
       "Create PIN code": [
         "Создать PIN-код"
@@ -3088,6 +3101,9 @@
       "Share with": [
         "Поделиться с"
       ],
+      "Status": [
+        "Состояние"
+      ],
       "Stay safer online": [
         "Будьте в безопасности в Интернете"
       ],
@@ -3224,6 +3240,12 @@
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
       ],
+      "Invalid code": [
+        "Недействительный код"
+      ],
+      "Invalid email": [
+        "Недействительная электронная почта"
+      ],
       "Invalid email addresses.": [
         "Недействительные адреса электронной почты."
       ],
@@ -3316,6 +3338,9 @@
       ],
       "Vault name is required": [
         "Требуется название хранилища"
+      ],
+      "Verification code is required": [
+        "Требуется код подтверждения"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Вы достигли предела количества пользователей, которые могут получить доступ к этому хранилищу."

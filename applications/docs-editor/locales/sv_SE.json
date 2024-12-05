@@ -418,6 +418,9 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
+        "Ett fel inträffade vid inläsning av dokumentet. För att förhindra att dokumentet blir korrupt så har redigeraren låsts. Uppdatera sidan och försök igen. Om felet kvarstår, öppna versionshistoriken från menyalternativen och försök att återställa dokumentet till en tidigare version."
+      ],
       "Failed to export document.": [
         "Misslyckades att exportera dokument."
       ],
@@ -554,6 +557,9 @@
       ],
       "Change image size": [
         "Ändra bildstorlek"
+      ],
+      "Change indent level": [
+        "Ändra indenteringsnivå"
       ],
       "Clear formatting": [
         "Rensa formatering"

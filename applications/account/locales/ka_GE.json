@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -829,10 +829,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
       "Reject": [
@@ -1629,11 +1629,6 @@
         "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ტბ საცავი (2-ჯერ მეტი, ვიდრე ნებისმიერი სხვა ტარიფი)"
@@ -1655,6 +1650,11 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "ტარიფი ${ plan } მოკლე დროით დაგვიბრუნდა"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
       ]
     },
     "bf2023: Offers": {
@@ -1791,11 +1791,6 @@
     "BF2024: Info": {
       "Most popular": [
         "ყველაზე პოპულარული"
-      ]
-    },
-    "BF2024: info": {
-      "Limited stock!": [
-        "შეზღუდული მარაგი!"
       ]
     },
     "BF2024: Offers": {
@@ -7256,11 +7251,11 @@
       "Data locked": [
         "მონაცემები დაბლოკილია"
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
@@ -8890,10 +8885,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -11736,29 +11731,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "უფასოთი გაგრძელება"
@@ -11786,6 +11758,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
       ]
     },
     "new_plans: feature": {
@@ -12479,14 +12474,6 @@
         "გადახდის არჩეული ტარიფი: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -12505,6 +12492,14 @@
       ],
       "Unlock premium features by upgrading": [
         "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -17145,10 +17140,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [

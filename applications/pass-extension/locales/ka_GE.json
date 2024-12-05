@@ -428,6 +428,12 @@
       "Request a feature": [
         "თვისების მოთხოვნა"
       ],
+      "Resend code": [
+        "კოდის თავიდან გაგზავნა"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "კოდის ხელახლა გადმოგზავნა (დარჩენილია ${ remaining } წმ)"
+      ],
       "Resend invitation": [
         "მოსაწვევის თავიდან გაგზავნა"
       ],
@@ -580,6 +586,9 @@
       "Use ${ label } theme": [
         "${ label }-ის გამოყენება"
       ],
+      "Verify": [
+        "გადამოწმება"
+      ],
       "Via secure link": [
         "დაცული ბმულით"
       ],
@@ -603,35 +612,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "უვადო წვდომა"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "ყველა ფასიანი სერვისი. 6 მომხმარებელი. ერთი იოლი გამოწერა."
-      ],
-      "Limited-stock available!": [
-        "ხელმისაწვდომია შეზღუდული რაოდენობა!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "ფასდაკლების მიღება"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "შავი პარასკევი"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "გადაიხადეთ ერთხელ და მიიღეთ ${ lifetimeAccessJSX } Pass Plus-ზე და SimlleLogin-ზე. მხოლოდ ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "დაზოეთ ${ discountJSX }-მდე Pass Family-ზე. მხოლოდ ${ relativePrice }/თვეში."
       ]
     },
     "Browser": {
@@ -1312,6 +1292,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "იშლება \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "კოდი არ მიგიღიათ?"
+      ],
       "Disabling auto-lock": [
         "ავტოდაბლოკვის გათიშვა"
       ],
@@ -1617,6 +1600,9 @@
       "Pinning item...": [
         "ელემენტის მიმაგრება..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "შეამოწმეთ თქვენი სპამის საქაღალდე, ან სცადეთ,, კოდი თავიდან გააგზავნოთ"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
       ],
@@ -1837,9 +1823,6 @@
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
       ],
-      "Unlimited hide-my-email aliases": [
-        "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "განბლოკეთ ${ PASS_APP_NAME } თქვენი PIN-კოდით თქვენს წვდომის გასაღებთან წვდომისთვის"
       ],
@@ -1863,6 +1846,9 @@
       ],
       "Unpinning item...": [
         "ელემენტის მოხსნა..."
+      ],
+      "Unverified": [
+        "გადაუმოწმებელი"
       ],
       "Update login": [
         "შესვლის დეტალების განახლება"
@@ -1909,6 +1895,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "აღმოვაჩინეთ, რომ გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი შემოტანა?",
         "აღმოვაჩინეთ, რომ გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი შემოტანა?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "გადამოწმების კოდი გაგზავნილია მისამართზე ${ email }. შეიყვანეთ ის ქვემოთ:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "${ PASS_APP_NAME }-ში შესვლის დეტალების შექმნისას/ჩასწროებისას ველი 'მომხმარებლის სახელი' ყოველთვის ხილული იქნება."
@@ -2136,6 +2125,9 @@
       "City": [
         "ქალაქი"
       ],
+      "Code": [
+        "კოდი"
+      ],
       "Company": [
         "კომპანია"
       ],
@@ -2144,6 +2136,9 @@
       ],
       "Contact details": [
         "კონტაქტის დეტალები"
+      ],
+      "Contacts": [
+        "კონტაქტები"
       ],
       "Copy": [
         "კოპირება"
@@ -2195,6 +2190,9 @@
       ],
       "Display": [
         "ჩვენება"
+      ],
+      "Display name": [
+        "საჩვენებელი სახელი"
       ],
       "Domain": [
         "დომენი"
@@ -2792,6 +2790,9 @@
       "Full Name": [
         "სახელი და გვარი"
       ],
+      "me@example.com": [
+        "me@example.com"
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -2926,6 +2927,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-ის მორგება"
       ],
+      "Actions": [
+        "ქმედებები"
+      ],
       "Auto-lock update": [
         "ავტომატური დაბლოკვის განახლება"
       ],
@@ -2938,8 +2942,17 @@
       "Confirm PIN code": [
         "დაადასტურეთ PIN–კოდი"
       ],
+      "Confirm your email": [
+        "დაადასტურეთ თქვენი ელფოსტა"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "შემოიერთეთ თქვენი ${ BRAND_NAME }-ის ანგარიში"
+      ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
+      "Create contact": [
+        "კონტაქტის შექმნა"
       ],
       "Create PIN code": [
         "PIN-კოდის შექმნა"
@@ -3110,6 +3123,9 @@
       "Share with": [
         "გაზიარება"
       ],
+      "Status": [
+        "სტატუსი"
+      ],
       "Stay safer online": [
         "იყავით უსაფრთხოდ ინტერნეტში"
       ],
@@ -3273,6 +3289,12 @@
       "Invalid alias prefix": [
         "არასწორი ფსევდონიმის პრეფიქსი"
       ],
+      "Invalid code": [
+        "არასწორი კოდი"
+      ],
+      "Invalid email": [
+        "არასწორი ელფოსტა"
+      ],
       "Invalid email addresses.": [
         "არასწორი ელფოსტის მისამართები."
       ],
@@ -3366,6 +3388,9 @@
       ],
       "Vault name is required": [
         "საცავის სახელი აუცილებელია"
+      ],
+      "Verification code is required": [
+        "აუცილებელია გადამოწმების კოდი"
       ],
       "You have reached the limit of members who can access this vault.": [
         "მიაღწიეთ მომხმარებლების რაოდენობის ზღვარს, რომლებსაც ამ საცავთან წვდომა შეიძლება, ჰქონდეთ."

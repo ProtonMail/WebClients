@@ -16,11 +16,11 @@
       "Accept": [
         "Prihvati"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -562,11 +562,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
       ],
       "Reject": [
         "Odbiti"
@@ -1153,11 +1153,6 @@
     "BF2024: Info": {
       "Most popular": [
         "Najpopularnije"
-      ]
-    },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Ograničena zaliha!"
       ]
     },
     "BF2024: Offers": {
@@ -6253,14 +6248,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -6273,6 +6260,14 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -6460,11 +6455,6 @@
         "Za početak odaberite ime za prikaz. To je ono što će ljudi vidjeti kada pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku."
       ]
     },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "Korištenje računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -6474,6 +6464,11 @@
       ],
       "Unlock premium features by upgrading": [
         "Otključajte vrhunske značajke nadogradnjom"
+      ]
+    },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "Korištenje računa"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8034,10 +8029,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [

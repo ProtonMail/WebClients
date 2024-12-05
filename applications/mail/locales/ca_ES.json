@@ -1764,11 +1764,6 @@
         "Més populars"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Oferta per temps limitat!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturat a ${ amount } una vegada"
@@ -3729,6 +3724,9 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new messages": [
+        "${ notificationsToShow.length } missatges nous"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Des de: ${ sender } - ${ Subject }"
       ]

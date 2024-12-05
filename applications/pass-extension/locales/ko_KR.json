@@ -428,6 +428,12 @@
       "Request a feature": [
         "기능 요청"
       ],
+      "Resend code": [
+        "코드 다시 보내기"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "(:${ remaining }초 내에)코드 재발송"
+      ],
       "Resend invitation": [
         "초대장 재전송"
       ],
@@ -578,6 +584,9 @@
       "Use ${ label } theme": [
         "${ label } 테마 사용"
       ],
+      "Verify": [
+        "인증"
+      ],
       "Via secure link": [
         "안전한 링크를 통해 공유"
       ],
@@ -601,35 +610,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "평생 이용권"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "모든 프리미엄 기능. 6명의 사용자. 한 번의 쉬운 구독으로."
-      ],
-      "Limited-stock available!": [
-        "한정 수량 구매 가능!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "구매하기"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "블랙 프라이데이"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "한 번 결제하고 Pass Plus과 SimpleLogin의 ${ lifetimeAccessJSX }을 얻으세요. 단돈 ${ relativePrice } 입니다."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Pass Family로 최대 ${ discountJSX }을 절약하세요. 오직 ${ relativePrice }달 입니다."
       ]
     },
     "Browser": {
@@ -1295,6 +1275,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 삭세 중"
       ],
+      "Didn't receive the code?": [
+        "코드를 받지 못하셨나요?"
+      ],
       "Disabling auto-lock": [
         "자동 잠금 비활성화"
       ],
@@ -1592,6 +1575,9 @@
       "Pinning item...": [
         "항목 고정 중..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "스팸 폴더를 확인하거나 코드를 다시 전송해 보세요."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
       ],
@@ -1811,9 +1797,6 @@
       "Unable to copy to clipboard": [
         "클립보드에 복사할 수 없습니다."
       ],
-      "Unlimited hide-my-email aliases": [
-        "무제한 hide-my-email 별칭"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "이 패스키에 접근하려면 PIN 코드로 ${ PASS_APP_NAME }를 잠금 해제하세요."
       ],
@@ -1837,6 +1820,9 @@
       ],
       "Unpinning item...": [
         "항목 고정 해제 중..."
+      ],
+      "Unverified": [
+        "확인되지 않음"
       ],
       "Update login": [
         "로그인 업데이트"
@@ -1882,6 +1868,9 @@
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "SimpleLogin에 ${ aliasCount }개의 별칭이 존재하지만 ${ PASS_APP_NAME }에는 누락된 별칭이 있음이 발견되었어요. 해당 별명을 불러오시겠어요?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "${ email }(으)로 인증 코드를 발송해 드렸습니다. 아래에 코드를 입력해 주세요:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "${ PASS_APP_NAME }에서 로그인을 생성/편집할 때 '사용자 이름' 입력이 항상 표시됩니다."
@@ -2104,6 +2093,9 @@
       "City": [
         "시/군/구"
       ],
+      "Code": [
+        "코드"
+      ],
       "Company": [
         "회사"
       ],
@@ -2112,6 +2104,9 @@
       ],
       "Contact details": [
         "연락처 정보"
+      ],
+      "Contacts": [
+        "연락처"
       ],
       "Copy": [
         "복사"
@@ -2163,6 +2158,9 @@
       ],
       "Display": [
         "표시"
+      ],
+      "Display name": [
+        "표시되는 이름"
       ],
       "Domain": [
         "도메인"
@@ -2757,6 +2755,9 @@
       "Full Name": [
         "성명"
       ],
+      "me@example.com": [
+        "나@예제.com"
+      ],
       "MM/YY": [
         "MM/YY (월/년)"
       ],
@@ -2890,6 +2891,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } 설정"
       ],
+      "Actions": [
+        "작업"
+      ],
       "Auto-lock update": [
         "자동 잠금 업데이트"
       ],
@@ -2902,8 +2906,17 @@
       "Confirm PIN code": [
         "PIN 코드 확인"
       ],
+      "Confirm your email": [
+        "이메일을 확인하세요"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정에 연결"
+      ],
+      "Contacts": [
+        "연락처"
+      ],
+      "Create contact": [
+        "연락처 추가"
       ],
       "Create PIN code": [
         "PIN 코드 생성"
@@ -3070,6 +3083,9 @@
       "Share with": [
         "공유 대상:"
       ],
+      "Status": [
+        "상태"
+      ],
       "Stay safer online": [
         "온라인 상에서 더욱 안전하게"
       ],
@@ -3230,6 +3246,12 @@
       "Invalid alias prefix": [
         "유효하지 않은 별칭 접두사"
       ],
+      "Invalid code": [
+        "잘못된 코드입니다"
+      ],
+      "Invalid email": [
+        "유효하지 않은 이메일"
+      ],
       "Invalid email addresses.": [
         "유효하지 않은 이메일 주소들입니다."
       ],
@@ -3322,6 +3344,9 @@
       ],
       "Vault name is required": [
         "금고 이름이 필요합니다."
+      ],
+      "Verification code is required": [
+        "인증 코드는 필수입니다"
       ],
       "You have reached the limit of members who can access this vault.": [
         "이 금고를 접근할 수 있는 최대 사용자 수에 도달했습니다."

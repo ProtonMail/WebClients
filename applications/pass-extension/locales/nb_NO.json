@@ -428,6 +428,12 @@
       "Request a feature": [
         "Be om en funksjon"
       ],
+      "Resend code": [
+        "Send kode på nytt"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Send kode på nytt (om ${ remaining }s)"
+      ],
       "Resend invitation": [
         "Send invitasjon på nytt"
       ],
@@ -580,6 +586,9 @@
       "Use ${ label } theme": [
         "Bruk ${ label }-temaet"
       ],
+      "Verify": [
+        "Verifiser"
+      ],
       "Via secure link": [
         "Via sikker kobling"
       ],
@@ -603,35 +612,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Passordbehandleren din er ikke her? Be om den."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "livslang tilgang"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Alle premiumfunksjoner. 6 brukere. Ett enkelt abonnement."
-      ],
-      "Limited-stock available!": [
-        "Begrenset lager tilgjengelig!"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Skaff deg tilbudet"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Betal én gang og få ${ lifetimeAccessJSX } til Pass Plus og SimpleLogin. Kun ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Spar opptil ${ discountJSX } på Pass Family. Kun ${ relativePrice }/måned."
       ]
     },
     "Browser": {
@@ -1312,6 +1292,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Sletter \"${ payload.content.name }\""
       ],
+      "Didn't receive the code?": [
+        "Fikk du ikke koden?"
+      ],
       "Disabling auto-lock": [
         "Deaktiverer auto-lås"
       ],
@@ -1617,6 +1600,9 @@
       "Pinning item...": [
         "Fester element..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Vennligst sjekk søppelpostmappen din eller prøv å sende koden på nytt."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vennligst bekreft passordet for ${ BRAND_NAME } for å eksportere ${ PASS_APP_NAME }-dataene dine."
       ],
@@ -1837,9 +1823,6 @@
       "Unable to copy to clipboard": [
         "Ikke i stand til å kopiere til utklippstavlen"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrenset antall hide-my-email-aliaser"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Lås opp ${ PASS_APP_NAME } med PIN-koden for å tilgang til dine tilgangsnøkler"
       ],
@@ -1863,6 +1846,9 @@
       ],
       "Unpinning item...": [
         "Løser element..."
+      ],
+      "Unverified": [
+        "Uverifisert"
       ],
       "Update login": [
         "Oppdater pålogging"
@@ -1909,6 +1895,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Vi oppdaget at du har ${ aliasCount } alias som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere det?",
         "Vi oppdaget at du har ${ aliasCount } aliaser som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere dem?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Vi har sendt en verifiseringskode til ${ email }. Vennligst angi den nedenfor:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Når du oppretter/redigerer en pålogging på ${ PASS_APP_NAME } vil 'brukernavn'-feltet alltid være synlig."
@@ -2139,6 +2128,9 @@
       "City": [
         "Poststed"
       ],
+      "Code": [
+        "Kode"
+      ],
       "Company": [
         "Firma"
       ],
@@ -2147,6 +2139,9 @@
       ],
       "Contact details": [
         "Kontaktdetaljer"
+      ],
+      "Contacts": [
+        "Kontakter"
       ],
       "Copy": [
         "Kopier"
@@ -2198,6 +2193,9 @@
       ],
       "Display": [
         "Vis"
+      ],
+      "Display name": [
+        "Visningsnavn"
       ],
       "Domain": [
         "Domene"
@@ -2795,6 +2793,9 @@
       "Full Name": [
         "Fullt navn"
       ],
+      "me@example.com": [
+        "meg@eksempel.no"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -2929,6 +2930,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Innstillinger for ${ PASS_APP_NAME }"
       ],
+      "Actions": [
+        "Handlinger"
+      ],
       "Auto-lock update": [
         "Oppdatering av autolås"
       ],
@@ -2941,8 +2945,17 @@
       "Confirm PIN code": [
         "Bekreft PIN-kode"
       ],
+      "Confirm your email": [
+        "Bekreft e-posten din"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Koble til ${ BRAND_NAME }-kontoen din"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Create contact": [
+        "Opprett kontakt"
       ],
       "Create PIN code": [
         "Opprett PIN-kode"
@@ -3113,6 +3126,9 @@
       "Share with": [
         "Del med"
       ],
+      "Status": [
+        "Status"
+      ],
       "Stay safer online": [
         "Hold deg tryggere på nettet"
       ],
@@ -3276,6 +3292,12 @@
       "Invalid alias prefix": [
         "Ugyldig aliasprefiks"
       ],
+      "Invalid code": [
+        "Ugyldig kode"
+      ],
+      "Invalid email": [
+        "Ugyldig e-post"
+      ],
       "Invalid email addresses.": [
         "Ugyldige e-postadresser"
       ],
@@ -3369,6 +3391,9 @@
       ],
       "Vault name is required": [
         "Hvelvnavn kreves"
+      ],
+      "Verification code is required": [
+        "Bekreftelseskode er påkrevd"
       ],
       "You have reached the limit of members who can access this vault.": [
         "Du har nådd grensen for medlemmer som kan ha tilgang til dette hvelvet."

@@ -428,6 +428,12 @@
       "Request a feature": [
         "機能を提案"
       ],
+      "Resend code": [
+        "コードを再送信"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "コードを再送信します (${ remaining } 秒以内)"
+      ],
       "Resend invitation": [
         "招待の再送"
       ],
@@ -578,6 +584,9 @@
       "Use ${ label } theme": [
         "${ label } テーマを使用"
       ],
+      "Verify": [
+        "検証"
+      ],
       "Via secure link": [
         "セキュアリンク経由で"
       ],
@@ -601,35 +610,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "あなたのパスワードマネージャーがここにはありませんか？リクエストしてください。"
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "ライフタイムアクセス"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "All premium features. 6 users. 1 easy subscription."
-      ],
-      "Limited-stock available!": [
-        "在庫限り！"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "お得情報を入手"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "ブラックフライデー"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "度支払うだけで、Pass PlusとSimpleLoginを${ lifetimeAccessJSX }で利用できます。価格はわずか${ relativePrice }です。"
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month."
       ]
     },
     "Browser": {
@@ -1295,6 +1275,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "「${ payload.content.name }」を削除しています"
       ],
+      "Didn't receive the code?": [
+        "コードを受け取っていませんか?"
+      ],
       "Disabling auto-lock": [
         "自動ロックを無効にしています"
       ],
@@ -1592,6 +1575,9 @@
       "Pinning item...": [
         "アイテムを固定中..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "スパムフォルダを確認するか、コードを再送信してください。"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } データをエクスポートするには、${ BRAND_NAME } のパスワードを確認してください"
       ],
@@ -1811,9 +1797,6 @@
       "Unable to copy to clipboard": [
         "クリップボードにコピーできない"
       ],
-      "Unlimited hide-my-email aliases": [
-        "無制限の Hide-my-email エイリアス"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "PIN コードで ${ PASS_APP_NAME } のロックを解除し、パスキーにアクセスしてください"
       ],
@@ -1837,6 +1820,9 @@
       ],
       "Unpinning item...": [
         "アイテムの固定解除中..."
+      ],
+      "Unverified": [
+        "未検証"
       ],
       "Update login": [
         "ログインを更新"
@@ -1882,6 +1868,9 @@
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "SimpleLogin に ${ aliasCount } 個のエイリアスが存在しますが、 ${ PASS_APP_NAME }に見つかりませんでした。インポートしますか？"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "確認コードを ${ email } に送信しました。以下に入力してください。"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "${ PASS_APP_NAME } でログインを作成/編集するとき、'ユーザー名' 入力を常に表示します。"
@@ -2104,6 +2093,9 @@
       "City": [
         "市区町村"
       ],
+      "Code": [
+        "コード"
+      ],
       "Company": [
         "会社"
       ],
@@ -2112,6 +2104,9 @@
       ],
       "Contact details": [
         "連絡先の詳細"
+      ],
+      "Contacts": [
+        "連絡先"
       ],
       "Copy": [
         "コピー"
@@ -2163,6 +2158,9 @@
       ],
       "Display": [
         "表示"
+      ],
+      "Display name": [
+        "表示名"
       ],
       "Domain": [
         "ドメイン"
@@ -2757,6 +2755,9 @@
       "Full Name": [
         "氏名"
       ],
+      "me@example.com": [
+        "me@example.com"
+      ],
       "MM/YY": [
         "MM/YY (月/年)"
       ],
@@ -2890,6 +2891,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } の設定"
       ],
+      "Actions": [
+        "アクション"
+      ],
       "Auto-lock update": [
         "自動ロックアップデート"
       ],
@@ -2902,8 +2906,17 @@
       "Confirm PIN code": [
         "PINコードの確認"
       ],
+      "Confirm your email": [
+        "メールを確認してください"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを接続してください"
+      ],
+      "Contacts": [
+        "連絡先"
+      ],
+      "Create contact": [
+        "連絡先の作成"
       ],
       "Create PIN code": [
         "PINコードの作成"
@@ -3070,6 +3083,9 @@
       "Share with": [
         "と共有する"
       ],
+      "Status": [
+        "状態"
+      ],
       "Stay safer online": [
         "オンラインでの安全性を高める"
       ],
@@ -3230,6 +3246,12 @@
       "Invalid alias prefix": [
         "無効なエイリアスプレフィックスです"
       ],
+      "Invalid code": [
+        "無効なコード"
+      ],
+      "Invalid email": [
+        "無効な電子メール"
+      ],
       "Invalid email addresses.": [
         "無効なメールアドレスです"
       ],
@@ -3322,6 +3344,9 @@
       ],
       "Vault name is required": [
         "保管庫名は必須です"
+      ],
+      "Verification code is required": [
+        "確認コードが必要です"
       ],
       "You have reached the limit of members who can access this vault.": [
         "この保管庫にアクセスできるメンバーの制限に達しました。"

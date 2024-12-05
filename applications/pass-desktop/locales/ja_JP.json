@@ -562,6 +562,9 @@
       "Unpin item": [
         "アイテムの固定解除"
       ],
+      "Update": [
+        "更新"
+      ],
       "Update vault": [
         "保管庫を 更新"
       ],
@@ -626,35 +629,6 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }をアンインストール"
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "ライフタイムアクセス"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "All premium features. 6 users. 1 easy subscription."
-      ],
-      "Limited-stock available!": [
-        "在庫限り！"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "お得情報を入手"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "ブラックフライデー"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "度支払うだけで、Pass PlusとSimpleLoginを${ lifetimeAccessJSX }で利用できます。価格はわずか${ relativePrice }です。"
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month."
       ]
     },
     "Browser": {
@@ -1871,9 +1845,6 @@
       "Unable to copy to clipboard": [
         "クリップボードにコピーできない"
       ],
-      "Unlimited hide-my-email aliases": [
-        "無制限の Hide-my-email エイリアス"
-      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "生体認証で ${ PASS_SHORT_APP_NAME } のロックを解除する"
       ],
@@ -2182,6 +2153,9 @@
       "Contact details": [
         "連絡先の詳細"
       ],
+      "Contacts": [
+        "連絡先"
+      ],
       "Copy": [
         "コピー"
       ],
@@ -2236,7 +2210,13 @@
       "Display": [
         "表示"
       ],
+      "Display name": [
+        "表示名"
+      ],
       "Domain": [
+        "ドメイン"
+      ],
+      "Domains": [
         "ドメイン"
       ],
       "Don't remind me again": [
@@ -3086,6 +3066,9 @@
       "Account protection": [
         "アカウントの保護"
       ],
+      "Actions": [
+        "アクション"
+      ],
       "Auto-lock update": [
         "自動ロックアップデート"
       ],
@@ -3107,8 +3090,14 @@
       "Confirm your email": [
         "メールを確認してください"
       ],
+      "Contacts": [
+        "連絡先"
+      ],
       "Create a vault": [
         "保管庫の作成"
+      ],
+      "Create contact": [
+        "連絡先の作成"
       ],
       "Create PIN code": [
         "PINコードの作成"
@@ -3328,6 +3317,9 @@
       ],
       "Share with": [
         "と共有する"
+      ],
+      "Status": [
+        "状態"
       ],
       "Stay safer online": [
         "オンラインでの安全性を高める"

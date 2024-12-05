@@ -428,6 +428,12 @@
       "Request a feature": [
         "Demander une fonctionnalité"
       ],
+      "Resend code": [
+        "Renvoyer le code"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Renvoyer le code (dans ${ remaining } s)"
+      ],
       "Resend invitation": [
         "Renvoyer l'invitation"
       ],
@@ -580,6 +586,9 @@
       "Use ${ label } theme": [
         "Utiliser le thème ${ label }"
       ],
+      "Verify": [
+        "Vérifier"
+      ],
       "Via secure link": [
         "Par lien sécurisé"
       ],
@@ -603,35 +612,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
-      ]
-    },
-    "bf2024: Deal": {
-      "lifetime access": [
-        "un accès à vie"
-      ]
-    },
-    "bf2024: Info": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Toutes les fonctionnalités premium, 6 utilisateurs et 1 seul abonnement."
-      ],
-      "Limited-stock available!": [
-        "Le nombre d'offres disponibles est limité !"
-      ]
-    },
-    "bf2024: Label": {
-      "Get the deal": [
-        "Je profite de l'offre"
-      ]
-    },
-    "bf2024: Title": {
-      "Black Friday": [
-        "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Payez une seule fois et obtenez ${ lifetimeAccessJSX } à Pass Plus et SimpleLogin pour seulement ${ relativePrice }."
-      ],
-      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Économisez jusqu'à ${ discountJSX } sur Pass Family pour seulement ${ relativePrice }/mois."
       ]
     },
     "Browser": {
@@ -1312,6 +1292,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Suppression de « ${ payload.content.name } »"
       ],
+      "Didn't receive the code?": [
+        "Vous n’avez pas reçu le code ?"
+      ],
       "Disabling auto-lock": [
         "Désactivation du verrouillage automatique"
       ],
@@ -1617,6 +1600,9 @@
       "Pinning item...": [
         "Épinglage de l'élément..."
       ],
+      "Please check your spam folder or try resending the code.": [
+        "Vérifiez le dossier indésirables/spam ou essayez de renvoyer le code."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmez votre mot de passe ${ BRAND_NAME } pour exporter vos données ${ PASS_APP_NAME }."
       ],
@@ -1837,9 +1823,6 @@
       "Unable to copy to clipboard": [
         "Impossible de copier dans le presse-papiers"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
-      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Débloquez ${ PASS_APP_NAME } avec votre code PIN pour accéder à vos clés d'accès."
       ],
@@ -1863,6 +1846,9 @@
       ],
       "Unpinning item...": [
         "Désépinglage de l'élément..."
+      ],
+      "Unverified": [
+        "Non vérifiée"
       ],
       "Update login": [
         "Mettre à jour l'identifiant"
@@ -1909,6 +1895,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Nous avons détecté que vous avez ${ aliasCount } alias qui est présent dans SimpleLogin mais manquant dans ${ PASS_APP_NAME }. Souhaitez-vous l'importer ?",
         "Nous avons détecté que vous avez ${ aliasCount } alias qui sont présents dans SimpleLogin mais manquants dans ${ PASS_APP_NAME }. Souhaitez-vous les importer ?"
+      ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Nous avons envoyé un code de vérification à ${ email }. Veuillez le saisir ci-dessous :"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Lors de la création ou de la modification d'un identifiant sur ${ PASS_APP_NAME }, le champ Nom d'utilisateur sera toujours visible."
@@ -2139,6 +2128,9 @@
       "City": [
         "Ville"
       ],
+      "Code": [
+        "Code"
+      ],
       "Company": [
         "Entreprise"
       ],
@@ -2147,6 +2139,9 @@
       ],
       "Contact details": [
         "Informations du contact"
+      ],
+      "Contacts": [
+        "Contacts"
       ],
       "Copy": [
         "Copier"
@@ -2198,6 +2193,9 @@
       ],
       "Display": [
         "Affichage"
+      ],
+      "Display name": [
+        "Nom d'affichage"
       ],
       "Domain": [
         "Domaine"
@@ -2795,6 +2793,9 @@
       "Full Name": [
         "Nom complet"
       ],
+      "me@example.com": [
+        "moi@exemple.fr"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -2929,6 +2930,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Paramètres de ${ PASS_APP_NAME }"
       ],
+      "Actions": [
+        "Actions"
+      ],
       "Auto-lock update": [
         "Mise à jour du verrouillage automatique"
       ],
@@ -2941,8 +2945,17 @@
       "Confirm PIN code": [
         "Confirmez le code PIN"
       ],
+      "Confirm your email": [
+        "Confirmez votre e-mail"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Connectez-vous à votre compte ${ BRAND_NAME }"
+      ],
+      "Contacts": [
+        "Contacts"
+      ],
+      "Create contact": [
+        "Créer un contact"
       ],
       "Create PIN code": [
         "Créez un code PIN"
@@ -3113,6 +3126,9 @@
       "Share with": [
         "Partager avec"
       ],
+      "Status": [
+        "État"
+      ],
       "Stay safer online": [
         "Améliorez votre sécurité en ligne"
       ],
@@ -3276,6 +3292,12 @@
       "Invalid alias prefix": [
         "Le préfixe de l'alias n'est pas valide."
       ],
+      "Invalid code": [
+        "Le code n’est pas valide."
+      ],
+      "Invalid email": [
+        "L'e-mail n'est pas valide."
+      ],
       "Invalid email addresses.": [
         "Les adresses électroniques ne sont pas valides."
       ],
@@ -3369,6 +3391,9 @@
       ],
       "Vault name is required": [
         "Le nom du coffre-fort est nécessaire."
+      ],
+      "Verification code is required": [
+        "Le code de vérification est nécessaire."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Vous avez atteint le nombre limite de membres qui peuvent accéder à ce coffre-fort."

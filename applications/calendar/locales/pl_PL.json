@@ -803,7 +803,7 @@
     },
     "Action subline": {
       "Anyone with the link can view your calendar": [
-        "Każdy, kto posiada link, może zobaczyć kalendarz"
+        "Każdy, kto ma link, może zobaczyć kalendarz"
       ],
       "They can view or edit your calendar": [
         "Użytkownicy mogą zobaczyć i edytować kalendarz"
@@ -1107,11 +1107,6 @@
     "BF2024: Info": {
       "Most popular": [
         "Najpopularniejsze"
-      ]
-    },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Ograniczone zapasy!"
       ]
     },
     "BF2024: Offers": {
@@ -2640,11 +2635,6 @@
         "Zaległa faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2732,6 +2722,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3159,6 +3154,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Nie udało się uzyskać oryginalnego powtórzenia w serii"
+      ],
+      "Failed to load OAuth modal.": [
+        "Nie udało się załadować okna OAuth."
       ],
       "First name is too long": [
         "Imię jest zbyt długie"
@@ -4644,10 +4642,10 @@
         "i"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Każdy, kto posiada link, może zobaczyć szczegóły wydarzenia w kalendarzu, w tym nazwę, lokalizację i uczestników."
+        "Każdy, kto ma link, może zobaczyć szczegóły wydarzenia w kalendarzu, w tym nazwę, lokalizację i uczestników."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Każdy, kto posiada link, może zobaczyć w kalendarzu informację o stanie wolny i zajęty. Nikt nie może zobaczyć szczegółów wydarzenia, takich jak nazwę, lokalizację i uczestników."
+        "Każdy, kto ma link, może zobaczyć w kalendarzu informację o stanie wolny i zajęty. Nikt nie może zobaczyć szczegółów wydarzenia, takich jak nazwę, lokalizację i uczestników."
       ],
       "Are you sure you want to discard your import?": [
         "Czy na pewno chcesz odrzucić swój import?"
@@ -5694,6 +5692,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
+      ],
+      "Account holder": [
+        "Właściciel konta"
       ],
       "Add email address": [
         "Dodaj adres e-mail"
@@ -7451,6 +7452,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetowanie haseł i uwierzytelniania dwustopniowego użytkowników"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Przekieruj ruch sieciowy przez sieć Tor jednym kliknięciem"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
@@ -8066,6 +8070,9 @@
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Specjalnie obniżona cena ${ priceWithDiscount } jest ważna przez pierwszy miesiąc. Potem usługa automatycznie odnowi się po cenie ${ renewPrice } za miesiąc. Możesz anulować subskrypcję w dowolnym momencie."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
@@ -9599,6 +9606,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "Odcisk klucza został skopiowany do schowka"
+      ],
+      "Finish Zoom authentication to save event": [
+        "Zakończ uwierzytelnianie Zoom, aby zapisać wydarzenie"
       ],
       "Future events deleted": [
         "Kolejne wydarzenia zostały usunięte"
