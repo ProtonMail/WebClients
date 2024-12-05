@@ -2561,6 +2561,50 @@ export const cachedPlans: Plan[] = [
         Amount: 19900,
         Vendors: [],
     },
+    {
+        ID: 'l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'lumo2024' as PLANS | ADDON_NAMES,
+        Title: 'Lumo Plus',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 64,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 2299,
+            '12': 21588,
+        },
+        DefaultPricing: {
+            '1': 2299,
+            '12': 21588,
+        },
+        PeriodEnd: {
+            '1': 1736074694,
+            '12': 1764932294,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 2299,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_sEDbHggp4uSCa39vtBoo',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
 ];
 
 export const cachedPlansMap = getPlansMap(cachedPlans, 'USD');
