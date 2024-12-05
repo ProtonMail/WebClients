@@ -944,11 +944,6 @@
         "Najpopularniejsze"
       ]
     },
-    "BF2024: info": {
-      "Limited stock!": [
-        "Ograniczone zapasy!"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Płatne ${ amount } jednorazowo"
@@ -3971,14 +3966,17 @@
       "Amount below minimum (${ amount }).": [
         "Kwota poniżej minimum (${ amount })."
       ],
+      "an anonymous user": [
+        "anonimowy użytkownik"
+      ],
       "and": [
         "i"
       ],
       "Anyone with this link can access your file.": [
-        "Każdy, kto posiada link, ma dostęp do pliku."
+        "Każdy, kto ma link, ma dostęp do pliku."
       ],
       "Anyone with this link can access your folder.": [
-        "Każdy, kto posiada link, ma dostęp do folderu."
+        "Każdy, kto ma link, ma dostęp do folderu."
       ],
       "Are you sure you want to discard your import?": [
         "Czy na pewno chcesz odrzucić swój import?"
@@ -4258,6 +4256,12 @@
       ],
       "Free 5GB encrypted storage to get started": [
         "Darmowe 5 GB zaszyfrowanej przestrzeni dyskowej na początek"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Otrzymuj wiadomości e-mail o komentarzach i sugestiach dodanych do Twoich dokumentów"
+      ],
+      "Get Notified About Comments": [
+        "Otrzymuj powiadomienia o komentarzach"
       ],
       "here": [
         "tutaj"
@@ -4589,6 +4593,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
+      "Restored version to": [
+        "Przywrócono wersję do"
+      ],
       "Saving": [
         "Zapisywanie"
       ],
@@ -4670,6 +4677,12 @@
       "The Beginning": [
         "Początek"
       ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Podpis cyfrowy został częściowo zweryfikowany. Plik został przesłany ze strony publicznej, która nie określa pochodzenia konkretnego użytkownika."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Podpis cyfrowy został częściowo zweryfikowany. Folder został przesłany ze strony publicznej, która nie określa pochodzenia konkretnego użytkownika."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Twoje informacje zostały ujawnione przez usługi stron trzecich. Informacje konta ${ BRAND_NAME } pozostają bezpieczne i zaszyfrowane. ${ learnMoreLink }"
       ],
@@ -4707,10 +4720,10 @@
         "Link został utworzony w starej wersji aplikacji i nie może zostać zmodyfikowany. Usuń link i utwórz nowy, aby zmienić jego ustawienia."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Link zostanie wyłączony. Nikt, kto posiada link, nie będzie mógł uzyskać dostępu do pliku. Jeśli chcesz ponownie udostępnić plik, musisz utworzyć nowy link."
+        "Link zostanie wyłączony. Nikt, kto ma link, nie będzie mógł uzyskać dostępu do pliku. Jeśli chcesz ponownie udostępnić plik, musisz utworzyć nowy link."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Link zostanie wyłączony. Nikt, kto posiada link, nie będzie mógł uzyskać dostępu do folderu. Jeśli chcesz ponownie udostępnić folder, musisz utworzyć nowy link."
+        "Link zostanie wyłączony. Nikt, kto ma link, nie będzie mógł uzyskać dostępu do folderu. Jeśli chcesz ponownie udostępnić folder, musisz utworzyć nowy link."
       ],
       "This message will be presented again later": [
         "Wiadomość zostanie pokazana później"
@@ -4719,10 +4732,10 @@
         "Ten publiczny dokument może nie istnieć lub możesz nie mieć uprawnień do jego wyświetlenia. Spróbuj odświeżyć stronę, aby sprawdzić, czy problem nadal występuje."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Spowoduje to usunięcie linku i dostępu do folderu dla każdego, kto posiada link.",
-        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link.",
-        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link.",
-        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link."
+        "Spowoduje to usunięcie linku i dostępu do folderu dla każdego, kto ma link.",
+        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto ma link.",
+        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto ma link",
+        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto ma link."
       ],
       "This will replace the existing file with the folder": [
         "Spowoduje to zastąpienie obecnego pliku folderem"
@@ -4780,6 +4793,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
+      ],
+      "Undo successful": [
+        "Cofnięto"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Nie można odszyfrować pliku lub niektórych danych."
@@ -5105,6 +5121,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
       ],
+      "Account holder": [
+        "Właściciel konta"
+      ],
       "Add email address": [
         "Dodaj adres e-mail"
       ],
@@ -5121,10 +5140,10 @@
         "Nowak"
       ],
       "Anyone on the Internet with the link can view": [
-        "Każdy, kto posiada link, może zobaczyć zawartość"
+        "Każdy, kto ma link, może zobaczyć zawartość"
       ],
       "Anyone with the link": [
-        "Każdy, kto posiada link"
+        "Każdy, kto ma link"
       ],
       "App password": [
         "Hasło aplikacji"
@@ -5339,6 +5358,9 @@
       "Import to:": [
         "Importuj do:"
       ],
+      "Include document name in notification": [
+        "Dołącz nazwę dokumentu w powiadomieniu"
+      ],
       "Include message and file name in invite email": [
         "Dołącz wiadomość i nazwę pliku w zaproszeniu"
       ],
@@ -5542,6 +5564,11 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ]
+    },
+    "Label description": {
+      "View and download": [
+        "Zobacz i pobierz"
       ]
     },
     "Label for contact group color": {
@@ -6887,6 +6914,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetowanie haseł i uwierzytelniania dwustopniowego użytkowników"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Przekieruj ruch sieciowy przez sieć Tor jednym kliknięciem"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
@@ -7191,6 +7221,9 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Brak przestrzeni dyskowej do przesłania ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "Link został zaktualizowany"
+      ],
       "Stopping the sharing of this item has failed": [
         "Zatrzymanie udostępniania nie powiodło się"
       ],
@@ -7404,6 +7437,9 @@
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Specjalnie obniżona cena ${ priceWithDiscount } jest ważna przez pierwszy miesiąc. Potem usługa automatycznie odnowi się po cenie ${ renewPrice } za miesiąc. Możesz anulować subskrypcję w dowolnym momencie."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
