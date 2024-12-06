@@ -7,6 +7,7 @@ import {
     DailyStatsValues,
     DailyStatsDimensions,
 } from "@proton/shared/lib/desktop/DailyStats";
+import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { IsDefaultProtocolReport, IsDefaultProtocolChangedReport } from "@proton/shared/lib/desktop/DefaultProtocol";
 
 import { getSettings } from "../store/settingsStore";
@@ -106,6 +107,49 @@ class TelemetryService {
         this.updateDailyStats((dailyStats): DailyStatsUpdate => {
             return { userLogin: dailyStats.userLogin + 1 };
         });
+    }
+
+    mailtoClicked() {
+        this.updateDailyStats((dailyStats): DailyStatsUpdate => {
+            return { mailtoClicks: dailyStats.mailtoClicks + 1 };
+        });
+    }
+
+    private lastView: CHANGE_VIEW_TARGET | null = null;
+
+    showView(viewID: CHANGE_VIEW_TARGET) {
+        // Only count calendar and mail changes, we are not interested in account.
+        if (viewID !== "mail" && viewID !== "calendar") {
+            return;
+        }
+
+        // Initial show view
+        if (this.lastView === null) {
+            this.lastView = viewID;
+            return;
+        }
+
+        // Mail to Calendar
+        if (this.lastView === "mail" && viewID === "calendar") {
+            this.updateDailyStats((dailyStats): DailyStatsUpdate => {
+                return { switchViewMailToCalendar: dailyStats.switchViewMailToCalendar + 1 };
+            });
+
+            this.lastView = "calendar";
+
+            return;
+        }
+
+        // Calendar to Mail
+        if (this.lastView === "calendar" && viewID === "mail") {
+            this.updateDailyStats((dailyStats): DailyStatsUpdate => {
+                return { switchViewCalendarToMail: dailyStats.switchViewCalendarToMail + 1 };
+            });
+
+            this.lastView = "mail";
+
+            return;
+        }
     }
 
     // Store
