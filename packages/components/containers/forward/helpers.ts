@@ -107,15 +107,16 @@ export const getSieveParameters = (tree: SieveBranch[]): { conditions: Condition
     };
 };
 
-interface ForwardingAddressKeyParameters {
+export interface ForwardingAddressKeyParameters {
     api: Api;
-    privateKey: PrivateKeyReferenceV4;
+    privateKey: PrivateKeyReferenceV4; // v6 keys do not support forwarding (yet)
     address: Address;
     activeKeys: ActiveAddressKeysByVersion;
     privateKeyArmored: string;
     signature: string;
     encryptedToken: string;
-    addressForwardingID: string;
+    addressForwardingID?: string; // for personal forwardings only, mutually exclusive with `groupMemberID`
+    groupMemberID?: string; // for groups only, mutually exclusive with `addressForwardingID`
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
@@ -128,6 +129,7 @@ export const generateForwardingAddressKey = async ({
     signature,
     encryptedToken,
     addressForwardingID,
+    groupMemberID,
     keyTransparencyVerify,
 }: ForwardingAddressKeyParameters) => {
     const newActiveKey = await getActiveKeyObject(privateKey, {
@@ -135,9 +137,15 @@ export const generateForwardingAddressKey = async ({
         primary: 0,
         flags: getDefaultKeyFlags(address),
     });
-    const updatedActiveKeys = getNormalizedActiveAddressKeys(address, { v4: [newActiveKey], v6: [] });
+    const updatedActiveKeys = getNormalizedActiveAddressKeys(address, {
+        v4: [...activeKeys.v4, newActiveKey],
+        v6: [...activeKeys.v6],
+    });
+
+    // The SKL isn't actually different from the existing one, since forwarding keys are not included.
+    // We still re-generate it here since it's needed by `createAddressKeyRouteV2`.
     const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
-        activeKeys,
+        updatedActiveKeys, // could also pass `activeKeys` since forwarding keys are ignored
         address,
         keyTransparencyVerify
     );
@@ -150,6 +158,7 @@ export const generateForwardingAddressKey = async ({
             Signature: signature,
             Token: encryptedToken,
             AddressForwardingID: addressForwardingID,
+            GroupMemberID: groupMemberID,
         })
     );
     await onSKLPublishSuccess();
@@ -323,17 +332,19 @@ export const acceptIncomingForwarding = async ({
         internalKeysOnly: true,
     });
 
-    const publicKeys = await Promise.all(
+    const forwarderPublicKeys = await Promise.all(
         forwarderAddressKeys.map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))
     );
 
     let activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, forwardeeAddressKeys);
 
+    // Multiple ForwardingKeys objects are present if e.g. the forwarder changed their primary key and updated/re-enabled
+    // the forwarding request while it was still pending (yet to be accepted by the forwardee).
     for (const forwardingKey of forward.ForwardingKeys || []) {
         const decryptedToken = await decryptMemberToken(
             forwardingKey.ActivationToken,
             splitAddressKeys.privateKeys,
-            publicKeys
+            forwarderPublicKeys
         );
         let privateKey = await CryptoProxy.importPrivateKey({
             armoredKey: forwardingKey.PrivateKey,
