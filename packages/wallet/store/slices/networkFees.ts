@@ -18,6 +18,11 @@ export interface FeeSettings {
     feesList: FeeRateByBlockTarget[];
     minimumBroadcastFee: number;
     minimumIncrementalFee: number;
+    recommendedFees: {
+        HighPriority: number;
+        MedianPriority: number;
+        LowPriority: number;
+    };
 }
 
 export interface NetworkFeesState {
@@ -34,6 +39,11 @@ export const DEFAULT_FEE_SETTINGS = {
     feesList: [],
     minimumBroadcastFee: 1.0,
     minimumIncrementalFee: 1.0,
+    recommendedFees: {
+        HighPriority: 1,
+        MedianPriority: 1,
+        LowPriority: 1,
+    },
 };
 const initialState = getInitialModelState<Model>(DEFAULT_FEE_SETTINGS);
 
@@ -49,19 +59,40 @@ const feesMapToList = (feesMap: Map<string, number>) => {
 
 const modelThunk = createAsyncModelThunk<Model, NetworkFeesState, WalletThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument }) => {
-        const isMinFeeEnabled = await extraArgument.unleashClient.isEnabled('WalletMinFee');
+        const isRecommendedFeesEnabled = await extraArgument.unleashClient.isEnabled('WalletRecommendedFees');
 
         const blockchainClient = new WasmBlockchainClient(extraArgument.walletApi);
 
         const feesMap = await blockchainClient.getFeesEstimation();
         const { MinimumBroadcastFee: minimumBroadcastFee, MinimumIncrementalFee: minimumIncrementalFee } =
-            isMinFeeEnabled
-                ? await blockchainClient.getMininumFees()
-                : { MinimumBroadcastFee: 1.0, MinimumIncrementalFee: 1.0 };
+            await blockchainClient.getMininumFees();
 
         const feesList = feesMapToList(feesMap);
 
-        return { feesMap, feesList, minimumBroadcastFee, minimumIncrementalFee };
+        const recommendedFees = isRecommendedFeesEnabled
+            ? await blockchainClient
+                  .getRecommendedFees()
+                  .then((recommendedFees) => {
+                      return {
+                          HighPriority: recommendedFees.FastestFee,
+                          MedianPriority: recommendedFees.HalfHourFee,
+                          LowPriority: recommendedFees.HourFee,
+                      };
+                  })
+                  .catch(() => {
+                      return {
+                          HighPriority: 1,
+                          MedianPriority: 1,
+                          LowPriority: 1,
+                      };
+                  })
+            : {
+                  HighPriority: 1,
+                  MedianPriority: 1,
+                  LowPriority: 1,
+              };
+
+        return { feesMap, feesList, minimumBroadcastFee, minimumIncrementalFee, recommendedFees };
     },
     previous: previousSelector(selectNetworkFees),
 });

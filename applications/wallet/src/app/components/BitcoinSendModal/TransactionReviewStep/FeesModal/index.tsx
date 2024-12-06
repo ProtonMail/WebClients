@@ -6,12 +6,7 @@ import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import type { IconName } from '@proton/components';
 import { Icon, Tooltip } from '@proton/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
-import {
-    COMPUTE_BITCOIN_UNIT,
-    HIGH_PRIORITY_TARGET_BLOCK,
-    LOW_PRIORITY_TARGET_BLOCK,
-    MEDIAN_PRIORITY_TARGET_BLOCK,
-} from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';
 
 import { Modal } from '../../../../atoms';
@@ -44,8 +39,12 @@ export const FeesModal = ({
     const [settings] = useUserWalletSettings();
 
     const getFeeOption = useCallback(
-        async (icon: IconName, text: string, blockTarget: number): Promise<[IconName, string, number, number]> => {
-            const feeRate = getFeesByBlockTarget(blockTarget) ?? 1;
+        async (
+            icon: IconName,
+            text: string,
+            blockTarget: PriorityTargetBlock
+        ): Promise<[IconName, string, number, number]> => {
+            const feeRate = getFeesByBlockTarget(blockTarget) ?? MIN_FEE_RATE;
             const draftPsbt = await txBuilder.setFeeRate(BigInt(feeRate)).createDraftPsbt(network);
 
             return [icon, text, feeRate, Number(draftPsbt.total_fees)];
@@ -58,9 +57,21 @@ export const FeesModal = ({
     useEffect(() => {
         const run = async () => {
             const options = await Promise.allSettled([
-                getFeeOption('chevron-up', c('Wallet send').t`High priority`, HIGH_PRIORITY_TARGET_BLOCK),
-                getFeeOption('minus', c('Wallet send').t`Median priority`, MEDIAN_PRIORITY_TARGET_BLOCK),
-                getFeeOption('chevron-down', c('Wallet send').t`Low priority`, LOW_PRIORITY_TARGET_BLOCK),
+                getFeeOption(
+                    'chevron-up',
+                    c('Wallet send').t`High priority`,
+                    PriorityTargetBlock.HighPriorityTargetBlock
+                ),
+                getFeeOption(
+                    'minus',
+                    c('Wallet send').t`Median priority`,
+                    PriorityTargetBlock.MedianPriorityTargetBlock
+                ),
+                getFeeOption(
+                    'chevron-down',
+                    c('Wallet send').t`Low priority`,
+                    PriorityTargetBlock.LowPriorityTargetBlock
+                ),
             ]).then((results) => results.filter((result) => 'value' in result).map((result) => result.value));
 
             setFeeOptions(options);
