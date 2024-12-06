@@ -8,7 +8,7 @@ Below are the requirements and build steps for our ProtonPass extension release.
 
 Before building the extension, please ensure that you have the following versions installed:
 
--   node v20.5
+-   node v22.11.0
 -   npm v9.8.0
 -   yarn v4.0.0
 
