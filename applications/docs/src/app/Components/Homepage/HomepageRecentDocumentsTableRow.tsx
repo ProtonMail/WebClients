@@ -1,4 +1,4 @@
-import type { RecentDocumentsSnapshotData } from '@proton/docs-core'
+import type { RecentDocumentItem } from '@proton/docs-core'
 import { c } from 'ttag'
 
 import { Avatar, Button } from '@proton/atoms'
@@ -11,7 +11,7 @@ import './HomepageRecentDocumentsTableRow.scss'
 import { HomepageRecentDocumentsContextMenu } from './HomepageRecentDocumentsContextMenu'
 import { useRecentDocuments } from './useRecentDocuments'
 
-export function HomepageRecentDocumentsTableRow({ recentDocument }: { recentDocument: RecentDocumentsSnapshotData }) {
+export function HomepageRecentDocumentsTableRow({ recentDocument }: { recentDocument: RecentDocumentItem }) {
   const { handleOpenDocument, handleOpenFolder, getDisplayName, getDisplayDate } = useRecentDocuments()
   const displayName = getDisplayName(recentDocument)
   const location =

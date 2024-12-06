@@ -13,6 +13,7 @@ import SharedLayout from '../SharedLayout'
 import { usePublicSessionUser } from '@proton/drive-store/store'
 import UserProvider from '../../Containers/ContextProvider'
 import { useUnleashClient } from '@proton/unleash'
+import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 
 function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: PublicDriveCompat }) {
   const api = useApi()
@@ -34,7 +35,7 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
       api,
       publicDriveCompat.getPublicAuthHeaders(),
       undefined,
-      { publicCompat: publicDriveCompat },
+      new DriveCompatWrapper({ publicCompat: publicDriveCompat }),
       APP_VERSION,
       unleashClient,
     )
@@ -43,7 +44,7 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
   }, [])
 
   useEffect(() => {
-    application.updateCompatWrapper({ publicCompat: publicDriveCompat })
+    application.updateCompatInstance({ publicCompat: publicDriveCompat })
   }, [application, publicDriveCompat])
 
   const [isAppReady, setIsAppReady] = useState(false)

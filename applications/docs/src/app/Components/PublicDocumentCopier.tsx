@@ -27,7 +27,7 @@ export function PublicDocumentCopier() {
         })
       } else {
         const shell = result.getValue()
-        void application.compatWrapper.userCompat?.openDocumentWindow({
+        void application.compatWrapper.getUserCompat().openDocumentWindow({
           ...shell,
           mode: 'open',
           window: window,

@@ -20,8 +20,8 @@ export class GetNode implements UseCaseInterface<GetNodeResult> {
   ): Promise<Result<GetNodeResult>> {
     try {
       const node = isPublicNodeMeta(nodeMeta)
-        ? await this.compatWrapper.publicCompat?.getNode(nodeMeta)
-        : await this.compatWrapper.userCompat?.getNode(nodeMeta)
+        ? await this.compatWrapper.getPublicCompat().getNode(nodeMeta)
+        : await this.compatWrapper.getUserCompat().getNode(nodeMeta)
 
       if (!node) {
         return Result.fail('Incorrect compat used; node not found')

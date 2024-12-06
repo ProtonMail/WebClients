@@ -47,6 +47,7 @@ import { ApiAddCommentToThread } from '../../Api/Requests/ApiAddCommentToThread'
 import { ApiCreateThread } from '../../Api/Requests/ApiCreateThread'
 import { ApiGetThread } from '../../Api/Requests/ApiGetThread'
 import { RouteExecutor } from '../../Api/RouteExecutor'
+import { LoadLogger } from '../../LoadLogger/LoadLogger'
 
 export class AppDependencies extends DependencyContainer {
   constructor(
@@ -62,7 +63,9 @@ export class AppDependencies extends DependencyContainer {
     super()
 
     this.bind(App_TYPES.Logger, () => {
-      return new Logger('proton-docs', DOCS_DEBUG_KEY)
+      const logger = new Logger('proton-docs', DOCS_DEBUG_KEY)
+      LoadLogger.initialize(logger)
+      return logger
     })
 
     this.bind(App_TYPES.EventBus, () => {
@@ -79,6 +82,10 @@ export class AppDependencies extends DependencyContainer {
 
     this.bind(App_TYPES.CommentsEncryptionService, () => {
       return new EncryptionService(EncryptionContext.PersistentComment, compatWrapper)
+    })
+
+    this.bind(App_TYPES.LocalStorageEncryptionService, () => {
+      return new EncryptionService(EncryptionContext.LocalStorage, compatWrapper)
     })
 
     this.bind(App_TYPES.EncryptComment, () => {
@@ -142,11 +149,8 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.CreateEmptyDocumentForConversion, () => {
-      if (!compatWrapper.userCompat) {
-        throw new Error('User compat not available')
-      }
       return new CreateEmptyDocumentForConversion(
-        compatWrapper.userCompat,
+        compatWrapper.getUserCompat(),
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
       )
     })
@@ -206,11 +210,8 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.DuplicateDocument, () => {
-      if (!compatWrapper.userCompat) {
-        throw new Error('User compat not available')
-      }
       return new DuplicateDocument(
-        compatWrapper.userCompat,
+        compatWrapper.getUserCompat(),
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         this.get<SeedInitialCommit>(App_TYPES.CreateInitialCommit),
       )
@@ -224,10 +225,7 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.CreateNewDocument, () => {
-      if (!compatWrapper.userCompat) {
-        throw new Error('User compat not available')
-      }
-      return new CreateNewDocument(compatWrapper.userCompat, this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta))
+      return new CreateNewDocument(compatWrapper.getUserCompat(), this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta))
     })
 
     this.bind(App_TYPES.CreateRealtimeValetToken, () => {
@@ -239,12 +237,8 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.PublicDocLoader, () => {
-      if (!compatWrapper.publicCompat) {
-        throw new Error('Public compat not available')
-      }
-
       return new PublicDocLoader(
-        compatWrapper.publicCompat,
+        compatWrapper.getPublicCompat(),
         this.get<WebsocketService>(App_TYPES.WebsocketService),
         this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<LoadDocument>(App_TYPES.LoadDocument),
@@ -265,13 +259,10 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.DocLoader, () => {
-      if (!compatWrapper.userCompat) {
-        throw new Error('User compat not available')
-      }
       return new DocLoader(
         userState,
         this.get<WebsocketService>(App_TYPES.WebsocketService),
-        compatWrapper.userCompat,
+        compatWrapper.getUserCompat(),
         this.get<MetricService>(App_TYPES.MetricService),
         this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<SquashDocument>(App_TYPES.SquashDocument),
@@ -333,13 +324,10 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.RecentDocumentsService, () => {
-      if (!compatWrapper.userCompat) {
-        throw new Error('User compat not available')
-      }
       return new RecentDocumentsService(
-        this.get<InternalEventBus>(App_TYPES.EventBus),
-        compatWrapper.userCompat,
+        compatWrapper.getUserCompat(),
         this.get<DocsApi>(App_TYPES.DocsApi),
+        this.get<EncryptionService<EncryptionContext.LocalStorage>>(App_TYPES.LocalStorageEncryptionService),
         this.get<LoggerInterface>(App_TYPES.Logger),
       )
     })
