@@ -78,7 +78,7 @@ const WalletSidebar = ({
                             onAddWallet={onAddWallet}
                         />
 
-                        <li className="flex-1 grow" aria-hidden />
+                        <li className="flex-1 grow" aria-hidden="true" />
 
                         <OtherSidebarListItems />
                     </SidebarList>
