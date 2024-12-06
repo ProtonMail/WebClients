@@ -236,7 +236,7 @@ export const setDefaultMailbox = requestActionsFactory<MailboxDefaultDTO, UserAl
     failure: {
         prepare: (error, payload) =>
             withNotification({
-                text: c('Error').t`Failed to set default mailbox default`,
+                text: c('Error').t`Failed to set default mailbox`,
                 type: 'error',
                 error,
             })({ payload }),
