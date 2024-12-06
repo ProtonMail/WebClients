@@ -1,6 +1,8 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useCallback } from 'react';
 
+import { useAuthentication } from '@proton/components/index';
 import type { PublicKeyReference } from '@proton/crypto/lib';
+import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 
@@ -111,10 +113,22 @@ export interface DriveCompat {
      * Modals that should be included in the DOM tree.
      */
     modals: ReactNode;
+
+    getKeysForLocalStorageEncryption: () => Promise<{ encryptionKey: CryptoKey; namespace: string } | undefined>;
 }
 
 export const useDriveCompat = (): DriveCompat => {
     const { withResolve } = useResolveShareId();
+
+    const authentication = useAuthentication();
+
+    const getKeysForLocalStorageEncryption: () => Promise<{ encryptionKey: CryptoKey; namespace: string } | undefined> =
+        useCallback(async () => {
+            const key = authentication.getClientKey();
+            const imported = await getClientKey(key);
+            const localId = authentication.getLocalID();
+            return { encryptionKey: imported, namespace: localId };
+        }, [authentication]);
 
     const { createDocumentNode, getDocumentKeys, renameDocument, getDocumentUrl, trashDocument, restoreDocument } =
         useDocuments();
@@ -154,5 +168,6 @@ export const useDriveCompat = (): DriveCompat => {
         getVerificationKey,
         // This should be changed to a fragment if more modals are added
         modals: linkSharingModal,
+        getKeysForLocalStorageEncryption,
     };
 };

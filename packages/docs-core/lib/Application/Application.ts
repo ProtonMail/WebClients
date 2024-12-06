@@ -10,7 +10,7 @@ import type { WebsocketServiceInterface } from '../Services/Websockets/Websocket
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { ImageProxyParams } from '../Api/Types/ImageProxyParams'
 import type { CustomWindow } from './Window'
-import type { RecentDocumentsInterface } from '../Services/RecentDocuments/types'
+import type { RecentDocumentsInterface } from '../Services/RecentDocuments/RecentDocumentsInterface'
 import type { MetricService } from '../Services/Metrics/MetricService'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { PublicDocLoader } from '../Services/DocumentLoader/PublicDocLoader'
@@ -19,6 +19,7 @@ import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 import type { UnleashClient } from '@proton/unleash'
 import { UserState } from '../State/UserState'
 import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
+import type { DriveCompat, PublicDriveCompat } from '@proton/drive-store/lib'
 
 declare const window: CustomWindow
 
@@ -48,8 +49,8 @@ export class Application implements ApplicationInterface {
     this.deps.get<MetricService>(App_TYPES.MetricService).initialize()
   }
 
-  public updateCompatWrapper(compatWrapper: DriveCompatWrapper) {
-    this.compatWrapper = compatWrapper
+  public updateCompatInstance(dto: { userCompat?: DriveCompat; publicCompat?: PublicDriveCompat }) {
+    this.compatWrapper.updateCompatInstance(dto)
   }
 
   destroy(): void {
@@ -57,7 +58,7 @@ export class Application implements ApplicationInterface {
 
     this.websocketService.destroy()
 
-    if (!this.compatWrapper.publicCompat) {
+    if (this.compatWrapper.getCompatType() === 'private') {
       this.privateDocLoader.destroy()
     } else {
       this.publicDocLoader.destroy()
@@ -79,7 +80,7 @@ export class Application implements ApplicationInterface {
   }
 
   public getDocLoader(): DocLoaderInterface<DocumentState | PublicDocumentState> {
-    if (this.compatWrapper.publicCompat) {
+    if (this.compatWrapper.getCompatType() === 'public') {
       return this.publicDocLoader
     } else {
       return this.privateDocLoader
@@ -87,7 +88,7 @@ export class Application implements ApplicationInterface {
   }
 
   private get publicDocLoader(): DocLoaderInterface<PublicDocumentState> {
-    if (!this.compatWrapper.publicCompat) {
+    if (this.compatWrapper.getCompatType() !== 'public') {
       throw new Error('Public mode is not supported in private mode')
     }
 
@@ -95,7 +96,7 @@ export class Application implements ApplicationInterface {
   }
 
   private get privateDocLoader(): DocLoaderInterface<DocumentState> {
-    if (this.compatWrapper.publicCompat) {
+    if (this.compatWrapper.getCompatType() !== 'private') {
       throw new Error('Private mode is not supported in public mode')
     }
 
@@ -106,7 +107,7 @@ export class Application implements ApplicationInterface {
    * Whether we are in a public document context, either as a public viewer or as a public editor.
    */
   public get isPublicMode(): boolean {
-    return !!this.compatWrapper.publicCompat
+    return this.compatWrapper.getCompatType() === 'public'
   }
 
   public get createEmptyDocumentForConversionUseCase(): CreateEmptyDocumentForConversion {
