@@ -426,8 +426,6 @@ describe('Sidebar checklist display', () => {
             canDisplayChecklist: true,
             displayState: CHECKLIST_DISPLAY_TYPE.REDUCED,
             items: new Set(),
-            hasExpired: false,
-            daysBeforeExpire: 10,
         } as OnboardingChecklistContext);
 
         await render(<MailSidebar {...props} />);
