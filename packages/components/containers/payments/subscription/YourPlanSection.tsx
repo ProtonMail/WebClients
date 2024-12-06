@@ -117,7 +117,6 @@ const YourPlanSection = ({ app }: Props) => {
                         upsells={shouldRenderUpsells ? upsells : []}
                     />
                 )}
-
                 {/* Usage for plans with >1 Members except VPN B2B */}
                 {shouldRenderUsagePanel && (
                     <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />

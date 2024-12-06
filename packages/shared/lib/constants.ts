@@ -662,6 +662,7 @@ export enum DASHBOARD_UPSELL_PATHS {
     FAMILY = 'family-dashboard',
     DUO = 'duo-dashboard',
     BUSINESS = 'business-dashboard',
+    LUMO = 'lumo-dashboard',
 }
 
 export type UPSELL_FEATURE =
