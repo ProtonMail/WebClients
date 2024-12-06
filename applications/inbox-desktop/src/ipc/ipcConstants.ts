@@ -11,11 +11,12 @@ export const DESKTOP_FEATURES = {
     MultiAccount: true,
     LatestVersionCheck: true,
     InstallSource: true,
-    MailtoTelemetry: true,
+    MailtoTelemetry: false,
     ESUserChoice: true,
     FullTheme: true,
     StoreVersion: true,
     HeartbeatMetrics: true,
+    StatsTelemetry: true,
 } as const satisfies Record<IPCInboxDesktopFeature, boolean>;
 
 export type IPCHasFeatureMessage = {
