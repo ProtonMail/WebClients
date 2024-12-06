@@ -6,8 +6,8 @@ import { Icon, SimpleSidebarListItemHeader } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
-    hasReachedLimit: boolean;
-    isChecklistFinished: boolean;
+    canCloseChecklist: boolean;
+    canDisplayCountDown: boolean;
     isOpened: boolean;
     itemsCompletedCount: number;
     itemsToCompleteCount: number;
@@ -25,8 +25,8 @@ const Counter = ({ children, title }: { children: ReactNode; title: string }) =>
 );
 
 const OnboardingChecklistSidebarHeader = ({
-    hasReachedLimit,
-    isChecklistFinished,
+    canCloseChecklist,
+    canDisplayCountDown,
     isOpened,
     itemsCompletedCount,
     itemsToCompleteCount,
@@ -34,39 +34,32 @@ const OnboardingChecklistSidebarHeader = ({
     onToggleChecklist,
     remainingDaysCount,
 }: Props) => {
-    const action =
-        isChecklistFinished || hasReachedLimit ? (
-            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-            <button
-                data-testid="onboarding-checklist-header-hide-button"
-                className="flex navigation-link-header-group-control shrink-0 mt-1"
-                onClick={onCloseChecklist}
-            >
-                <Icon name="cross" alt={c('Action').t`Close`} />
-            </button>
-        ) : (
-            <Counter title={c('Get started checklist instructions').t`Tasks to complete count`}>
-                {itemsCompletedCount}/{itemsToCompleteCount}
-            </Counter>
-        );
+    const action = canCloseChecklist ? (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        <button
+            data-testid="onboarding-checklist-header-hide-button"
+            className="flex navigation-link-header-group-control shrink-0 mt-1"
+            onClick={onCloseChecklist}
+        >
+            <Icon name="cross" alt={c('Action').t`Close`} />
+        </button>
+    ) : (
+        <Counter title={c('Get started checklist instructions').t`Tasks to complete count`}>
+            {itemsCompletedCount}/{itemsToCompleteCount}
+        </Counter>
+    );
 
-    const { text, subText } = (() => {
-        let text = c('Get started checklist instructions').t`Get more storage`;
-        let subText = undefined;
-
-        if (hasReachedLimit || isChecklistFinished) {
-            text = c('Get started checklist instructions').t`Finish setup`;
-        }
-        if (!isOpened && !(isChecklistFinished || hasReachedLimit)) {
-            subText = c('Get started checklist instructions').ngettext(
-                msgid`${remainingDaysCount} day left`,
-                `${remainingDaysCount} days left`,
-                remainingDaysCount
-            );
-        }
-
-        return { text, subText };
-    })();
+    let text = canDisplayCountDown
+        ? c('Get started checklist instructions').t`Get more storage`
+        : c('Get started checklist instructions').t`Finish setup`;
+    let subText =
+        !isOpened && canDisplayCountDown
+            ? c('Get started checklist instructions').ngettext(
+                  msgid`${remainingDaysCount} day left`,
+                  `${remainingDaysCount} days left`,
+                  remainingDaysCount
+              )
+            : undefined;
 
     return (
         <SimpleSidebarListItemHeader
