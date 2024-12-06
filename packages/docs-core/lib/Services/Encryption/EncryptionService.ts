@@ -1,23 +1,20 @@
-import type {
-  MaybeArray,
-  PrivateKeyReference,
-  PublicKeyReference,
-  SessionKey,
-  VERIFICATION_STATUS,
-} from '@proton/crypto'
+import type { MaybeArray, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto'
+import type { VERIFICATION_STATUS } from '@proton/crypto'
 import { CryptoProxy } from '@proton/crypto'
 import { SignedPlaintextContent } from '@proton/docs-proto'
 import {
   encryptDataWith16ByteIV as gcmEncryptWith16ByteIV,
   decryptData as gcmDecrypt,
+  encryptData,
 } from '@proton/crypto/lib/subtle/aesGcm'
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays'
-import { stringToUtf8Array } from '@proton/crypto/lib/utils'
+import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils'
 import type { EncryptionContext } from './EncryptionContext'
 import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
 import { HKDF_SALT_SIZE } from '../../Crypto/Constants'
 import { Result } from '@proton/docs-shared'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
+import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding'
 
 export class EncryptionService<C extends EncryptionContext> {
   constructor(
@@ -82,6 +79,37 @@ export class EncryptionService<C extends EncryptionContext> {
     }
   }
 
+  public async encryptDataForLocalStorage(
+    plaintext: string,
+    associatedData: string,
+    encryptionKey: CryptoKey,
+  ): Promise<Result<string>> {
+    try {
+      const data = stringToUtf8Array(plaintext)
+      const contextBytes = stringToUtf8Array(this.getContext(associatedData))
+      const cipherbytes = await encryptData(encryptionKey, data, contextBytes)
+      const ciphertext = uint8ArrayToBase64String(cipherbytes)
+      return Result.ok(ciphertext)
+    } catch (error) {
+      return Result.fail(`Failed to sign and encrypt data ${error}`)
+    }
+  }
+
+  public async decryptDataForLocalStorage(
+    ciphertext: string,
+    associatedData: string,
+    encryptionKey: CryptoKey,
+  ): Promise<Result<string>> {
+    try {
+      const contextBytes = stringToUtf8Array(this.getContext(associatedData))
+      const cipherbytes = base64StringToUint8Array(ciphertext)
+      const decryptedData = await gcmDecrypt(encryptionKey, cipherbytes, contextBytes)
+      return Result.ok(utf8ArrayToString(decryptedData))
+    } catch (error) {
+      return Result.fail(`Failed to decrypt data ${error}`)
+    }
+  }
+
   public async decryptData(
     encryptedData: Uint8Array,
     associatedData: string,
@@ -124,12 +152,8 @@ export class EncryptionService<C extends EncryptionContext> {
   }
 
   async getVerificationKey(email: string): Promise<Result<PublicKeyReference[]>> {
-    if (!this.driveCompat.userCompat) {
-      return Result.fail('User compat not available')
-    }
-
     try {
-      const value = await this.driveCompat.userCompat.getVerificationKey(email)
+      const value = await this.driveCompat.getUserCompat().getVerificationKey(email)
 
       return Result.ok(value)
     } catch (error) {

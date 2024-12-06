@@ -10,6 +10,7 @@ import { APP_VERSION } from '../../config'
 import ApplicationProvider from '../../Containers/ApplicationProvider'
 import { useUnleashClient } from '@proton/unleash'
 import { DocsNotificationsProvider } from '../../Containers/DocsNotificationsProvider'
+import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 
 const HomepageRoute = lazy(() => import('../../Components/Homepage/HomepageRoute'))
 const SingleDocumentRoute = lazy(() => import('./SingleDocumentRoute'))
@@ -31,7 +32,7 @@ function UserAppContent() {
         apiUrl: API_URL,
         uid: UID,
       },
-      { userCompat: driveCompat },
+      new DriveCompatWrapper({ userCompat: driveCompat }),
       APP_VERSION,
       unleashClient,
     )
@@ -40,7 +41,7 @@ function UserAppContent() {
   }, [])
 
   useEffect(() => {
-    application.updateCompatWrapper({ userCompat: driveCompat })
+    application.updateCompatInstance({ userCompat: driveCompat })
   }, [application, driveCompat])
 
   return (

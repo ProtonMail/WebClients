@@ -12,30 +12,32 @@ export function HomepageContent() {
 
   const { logger } = useApplication()
 
-  const { state, items } = useRecentDocuments()
+  const { status, items } = useRecentDocuments()
 
   const [startTime, setStartTime] = useState<number | null>(null)
 
   useEffect(() => {
-    if (state === 'resolving') {
+    if (status === 'resolving') {
       setStartTime(Date.now())
-    } else if (state === 'done' && startTime) {
+    } else if (status === 'done' && startTime) {
       const duration = (Date.now() - startTime) / 1000
       logger.debug(`Time to render ${items.length} recent documents: ${duration.toFixed(2)}s`)
       setStartTime(null)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state, logger])
+  }, [status, logger])
 
-  if (state === 'not_fetched') {
+  if (items.length > 0) {
+    children = <HomepageRecentDocumentsTable />
+  } else if (status === 'not_fetched') {
     children = null
-  } else if (state === 'fetching' || (state === 'resolving' && items.length === 0)) {
+  } else if (status === 'fetching' || (status === 'resolving' && items.length === 0)) {
     children = (
       <div className="flex h-full items-center justify-center">
         <CircleLoader size="large" />
       </div>
     )
-  } else if (items.length === 0 && state === 'done') {
+  } else if (items.length === 0 && status === 'done') {
     children = <HomepageNoItemsContent />
   } else {
     children = <HomepageRecentDocumentsTable />

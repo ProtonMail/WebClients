@@ -172,6 +172,8 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
       },
       Value: timeToLoadInSeconds,
     })
+
+    this.logger.info(`Loaded document in ${timeToLoadInSeconds} seconds`)
   }
 
   public addStatusObserver(observer: DocLoaderStatusObserver<DocumentState>): () => void {
