@@ -38,25 +38,21 @@ const InfoBloc = ({ remainingDaysCount }: { remainingDaysCount: number }) => {
 };
 
 const OnboardingChecklistSidebar = () => {
-    const {
-        items,
-        changeChecklistDisplay,
-        isChecklistFinished,
-        hasExpired: hasReachedLimit,
-        daysBeforeExpire: remainingDaysCount,
-    } = useGetStartedChecklist();
+    // This hooks manages reward modal display when items are completed
+    useOnboardingChecklist();
+
+    const { items, changeChecklistDisplay, isChecklistFinished, hasExpired, daysBeforeExpire, isUserPaid } =
+        useGetStartedChecklist();
     const [user] = useUser();
     const [isOpened, toggleChecklist] = useLocalState(true, `sidebar-checklist-opened-${user.ID}`);
     const [sendOnboardingTelemetry] = useMailOnboardingTelemetry();
-
-    // Displays reward modal when items are completed
-    useOnboardingChecklist();
+    const canDisplayRemainingDaysInfo = !isChecklistFinished && !hasExpired && !isUserPaid;
 
     return (
         <>
             <hr className="my-4 mx-3" />
             <OnboardingChecklistSidebarHeader
-                hasReachedLimit={hasReachedLimit}
+                hasReachedLimit={hasExpired}
                 isChecklistFinished={isChecklistFinished}
                 isOpened={isOpened}
                 itemsCompletedCount={CHECKLIST_ITEMS_TO_COMPLETE.filter((key) => items.has(key)).length}
@@ -71,11 +67,11 @@ const OnboardingChecklistSidebar = () => {
                     });
                 }}
                 onToggleChecklist={toggleChecklist}
-                remainingDaysCount={remainingDaysCount}
+                remainingDaysCount={daysBeforeExpire}
             />
             {isOpened && (
                 <>
-                    {!(isChecklistFinished || hasReachedLimit) && <InfoBloc remainingDaysCount={remainingDaysCount} />}
+                    {canDisplayRemainingDaysInfo && <InfoBloc remainingDaysCount={daysBeforeExpire} />}
                     <div data-testid="onboarding-checklist" className="px-3 w-full flex flex-column shrink-0">
                         <OnboardingChecklistSidebarList />
                     </div>
