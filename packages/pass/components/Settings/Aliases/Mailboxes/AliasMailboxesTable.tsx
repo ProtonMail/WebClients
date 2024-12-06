@@ -55,7 +55,8 @@ export const AliasMailboxesTable: FC = () => {
                                     <TableCell>
                                         <div className="flex justify-start lg:justify-center">
                                             {IsDefault ? (
-                                                <Badge type="primary">{c('Title').t`Default`}</Badge>
+                                                <Badge type="primary" className="text-center">{c('Title')
+                                                    .t`Default`}</Badge>
                                             ) : (
                                                 !Verified && (
                                                     <Button
