@@ -330,6 +330,25 @@ const getVPNUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsel
     });
 };
 
+const getLumoUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+    return getUpsell({
+        plan: PLANS.LUMO,
+        plansMap,
+        upsellPath: DASHBOARD_UPSELL_PATHS.LUMO,
+        onUpgrade: () =>
+            openSubscriptionModal({
+                cycle: defaultUpsellCycleB2C,
+                plan: PLANS.LUMO,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
+            }),
+        ...rest,
+    });
+};
+
 const getPassUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     return getUpsell({
         plan: PLANS.PASS,
@@ -700,6 +719,7 @@ export const resolveUpsellsToDisplay = ({
         const hasDriveFree = isFree && app === APPS.PROTONDRIVE;
         const hasPassFree = isFree && app === APPS.PROTONPASS && !user.hasPassLifetime;
         const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
+        const hasLumoFree = isFree && app === APPS.PROTONLUMO;
 
         switch (true) {
             case Boolean(isTrial(subscription) && hasMail(subscription) && subscription.PeriodEnd):
@@ -720,6 +740,8 @@ export const resolveUpsellsToDisplay = ({
                 return [getPassUpsell(upsellsPayload), getPassFamilyUpsell(upsellsPayload)];
             case Boolean(hasVPNFree):
                 return [getVPNUpsell(upsellsPayload)];
+            case Boolean(hasLumoFree):
+                return [getLumoUpsell({ ...upsellsPayload, isRecommended: true })];
             case Boolean(hasPass(subscription)):
                 return [
                     getPassFamilyUpsell({ ...upsellsPayload, isRecommended: true }),
