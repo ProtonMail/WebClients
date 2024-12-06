@@ -40,7 +40,10 @@ const PasswordStrengthIndicator = ({ score }: PasswordStrengthIndicatorProps) =>
 
     return (
         <div className={clsx('password-strength-indicator w-full flex flex-nowrap gap-3', className)}>
-            <div className="password-strength-indicator-bars flex flex-1 flex-nowrap gap-1 items-center" aria-hidden>
+            <div
+                className="password-strength-indicator-bars flex flex-1 flex-nowrap gap-1 items-center"
+                aria-hidden="true"
+            >
                 <span className="flex-1 rounded"></span>
                 <span className="flex-1 rounded"></span>
                 <span className="flex-1 rounded"></span>
