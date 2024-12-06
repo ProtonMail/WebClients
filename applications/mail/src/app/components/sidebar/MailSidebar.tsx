@@ -56,7 +56,7 @@ const MailSidebar = ({ labelID }: Props) => {
     const onCompose = useOnCompose();
     const dispatch = useMailDispatch();
     const expanded = useMailSelector(selectLayoutIsExpanded);
-    const { displayState } = useGetStartedChecklist();
+    const { displayState, canDisplayChecklist } = useGetStartedChecklist();
     const handleCompose = useCallback(() => {
         void onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
@@ -109,7 +109,7 @@ const MailSidebar = ({ labelID }: Props) => {
                                     }}
                                 />
                             )}
-                            {displayState === CHECKLIST_DISPLAY_TYPE.REDUCED && !collapsed && (
+                            {canDisplayChecklist && displayState === CHECKLIST_DISPLAY_TYPE.REDUCED && !collapsed && (
                                 <OnboardingChecklistSidebar />
                             )}
                         </>
