@@ -14,7 +14,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { type Address } from '@proton/shared/lib/interfaces';
 import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.jpg';
 import clsx from '@proton/utils/clsx';
-import { COMPUTE_BITCOIN_UNIT, type TransactionData, useWalletApiClients } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT, PriorityTargetBlock, type TransactionData, useWalletApiClients } from '@proton/wallet';
 import { DEFAULT_FEE_SETTINGS, useNetworkFees, useUserWalletSettings } from '@proton/wallet/store';
 
 import { Button, Modal } from '../../atoms';
@@ -51,7 +51,12 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
     const [fees, loadingFees] = useNetworkFees();
 
     const feeRateForNextBlock = useMemo(
-        () => findNearestBlockTargetFeeRate(1, fees?.feesList ?? [], fees?.minimumBroadcastFee),
+        () =>
+            findNearestBlockTargetFeeRate(
+                PriorityTargetBlock.HighPriorityTargetBlock,
+                fees?.feesList ?? [],
+                fees?.minimumBroadcastFee
+            ),
         [fees]
     );
 
