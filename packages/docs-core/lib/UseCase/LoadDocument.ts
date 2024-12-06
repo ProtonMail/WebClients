@@ -1,7 +1,7 @@
 import { getCanWrite } from '@proton/shared/lib/drive/permissions'
 import { Result } from '@proton/docs-shared'
 import { DocumentRole, type DocumentMetaInterface } from '@proton/docs-shared'
-import type { NodeMeta, PublicNodeMeta, DecryptedNode } from '@proton/drive-store'
+import type { NodeMeta, PublicNodeMeta, DecryptedNode, PublicDriveCompat, DriveCompat } from '@proton/drive-store'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
@@ -11,6 +11,7 @@ import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrap
 import type { LoadCommit } from './LoadCommit'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
+import { LoadLogger } from '../LoadLogger/LoadLogger'
 
 type LoadDocumentResult<E extends DocumentEntitlements | PublicDocumentEntitlements> = {
   entitlements: E
@@ -24,7 +25,7 @@ type LoadDocumentResult<E extends DocumentEntitlements | PublicDocumentEntitleme
  */
 export class LoadDocument {
   constructor(
-    private compatWrapper: DriveCompatWrapper,
+    private compatWrapper: DriveCompatWrapper<DriveCompat | PublicDriveCompat>,
     private getDocumentMeta: GetDocumentMeta,
     private getNode: GetNode,
     private loadCommit: LoadCommit,
@@ -32,24 +33,48 @@ export class LoadDocument {
   ) {}
 
   async executePrivate(nodeMeta: NodeMeta): Promise<Result<LoadDocumentResult<DocumentEntitlements>>> {
-    if (!this.compatWrapper.userCompat) {
-      return Result.fail('User drive compat not found')
-    }
+    const compat = this.compatWrapper.getCompat<DriveCompat>()
     try {
       const [nodeResult, keysResult, fetchResult, permissionsResult] = await Promise.all([
-        this.getNode.execute(nodeMeta).catch((error) => {
-          throw new Error(`Failed to load node: ${error}`)
-        }),
-        this.compatWrapper.userCompat.getDocumentKeys(nodeMeta).catch((error) => {
-          throw new Error(`Failed to load keys: ${error}`)
-        }),
-        this.getDocumentMeta.execute(nodeMeta).catch((error) => {
-          throw new Error(`Failed to fetch document metadata: ${error}`)
-        }),
-        this.compatWrapper.userCompat.getNodePermissions(nodeMeta).catch((error) => {
-          throw new Error(`Failed to load permissions: ${error}`)
-        }),
+        this.getNode
+          .execute(nodeMeta)
+          .then((result) => {
+            LoadLogger.logEventRelativeToLoadTime('[LoadDocument] getNode')
+            return result
+          })
+          .catch((error) => {
+            throw new Error(`Failed to load node: ${error}`)
+          }),
+        compat
+          .getDocumentKeys(nodeMeta)
+          .then((result) => {
+            LoadLogger.logEventRelativeToLoadTime('[LoadDocument] getDocumentKeys')
+            return result
+          })
+          .catch((error) => {
+            throw new Error(`Failed to load keys: ${error}`)
+          }),
+        this.getDocumentMeta
+          .execute(nodeMeta)
+          .then((result) => {
+            LoadLogger.logEventRelativeToLoadTime('[LoadDocument] getDocumentMeta')
+            return result
+          })
+          .catch((error) => {
+            throw new Error(`Failed to fetch document metadata: ${error}`)
+          }),
+        compat
+          .getNodePermissions(nodeMeta)
+          .then((result) => {
+            LoadLogger.logEventRelativeToLoadTime('[LoadDocument] getNodePermissions')
+            return result
+          })
+          .catch((error) => {
+            throw new Error(`Failed to load permissions: ${error}`)
+          }),
       ])
+
+      LoadLogger.logEventRelativeToLoadTime('[LoadDocument] All network requests')
 
       if (fetchResult.isFailed()) {
         return Result.fail(fetchResult.getError())
@@ -108,11 +133,8 @@ export class LoadDocument {
     nodeMeta: PublicNodeMeta,
     publicEditingEnabled: boolean,
   ): Promise<Result<LoadDocumentResult<PublicDocumentEntitlements>>> {
-    if (!this.compatWrapper.publicCompat) {
-      return Result.fail('Public drive compat not found')
-    }
-
-    const permissions = this.compatWrapper.publicCompat.permissions
+    const compat = this.compatWrapper.getCompat<PublicDriveCompat>()
+    const permissions = compat.permissions
 
     if (!permissions) {
       return Result.fail('Permissions not yet loaded')
@@ -123,7 +145,7 @@ export class LoadDocument {
         this.getNode.execute(nodeMeta).catch((error) => {
           throw new Error(`Failed to load public node: ${error}`)
         }),
-        this.compatWrapper.publicCompat.getDocumentKeys(nodeMeta).catch((error) => {
+        compat.getDocumentKeys(nodeMeta).catch((error) => {
           throw new Error(`Failed to load public keys: ${error}`)
         }),
         this.getDocumentMeta.execute(nodeMeta).catch((error) => {

@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { useState } from 'react';
 
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { DOCS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
@@ -9,7 +9,7 @@ import type { LogoProps } from './Logo';
 
 type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
 
-const DriveLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, ...rest }: Props) => {
+const DocsLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, ...rest }: Props) => {
     // This logo can be several times in the view, ids has to be different each time
     const [uid] = useState(generateUID('logo'));
 
@@ -31,13 +31,13 @@ const DriveLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true
         <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox={`0 0 ${logoWidth} 36`}
+            viewBox={`0 0 ${logoWidth + 2} 36`}
             width={logoWidth}
             className={clsx('logo', size && variant === 'glyph-only' && `icon-size-${size}`, variant, className)}
             aria-labelledby={`${uid}-title`}
             {...rest}
         >
-            {hasTitle && <title id={`${uid}-title`}>{DRIVE_APP_NAME}</title>}
+            {hasTitle && <title id={`${uid}-title`}>{DOCS_APP_NAME}</title>}
             <g clipPath="url(#a)">
                 <path
                     fill="#1B1340"
@@ -74,4 +74,4 @@ const DriveLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true
     );
 };
 
-export default DriveLogo;
+export default DocsLogo;
