@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Icon, useNotifications } from '@proton/components/index';
@@ -23,7 +23,16 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
     const { writeToClipboard, onLink } = usePassCore();
     const { createNotification } = useNotifications();
 
-    const { CreateTime, ReverseAlias, Email, BlockedEmails, ForwardedEmails, RepliedEmails, Blocked, ID } = contact;
+    const {
+        CreateTime,
+        ReverseAlias,
+        Email,
+        BlockedEmails: blockedEmailsCount,
+        ForwardedEmails: forwardedEmailsCount,
+        RepliedEmails: repliedEmailsCount,
+        Blocked,
+        ID,
+    } = contact;
     const time = epochToRelativeDuration(CreateTime);
     const blockContact = useRequest(aliasBlockContact, { onSuccess: onUpdate });
     const deleteContact = useRequest(aliasDeleteContact, { onSuccess: onDelete });
@@ -38,18 +47,35 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
 
     const mailtoHref = `mailto:${ReverseAlias}`;
 
+    const forwardedEmails = c('Info').ngettext(
+        msgid`${forwardedEmailsCount} forwarded`,
+        `${forwardedEmailsCount} forwarded`,
+        forwardedEmailsCount
+    );
+    const repliedEmails = c('Info').ngettext(
+        msgid`${repliedEmailsCount} sent`,
+        `${repliedEmailsCount} sent`,
+        repliedEmailsCount
+    );
+    const blockedEmails = c('Info').ngettext(
+        msgid`${blockedEmailsCount} blocked`,
+        `${blockedEmailsCount} blocked`,
+        blockedEmailsCount
+    );
+
     return (
         <FieldsetCluster className={clsx('mb-3', deleteContact.loading && 'opacity-30 pointer-events-none')}>
             <FieldBox>
                 <div className="flex flex-nowrap justify-space-between">
                     <div>
                         <h2 className="text-lg my-2 text-ellipsis">{Email.toLowerCase()}</h2>
-                        {!ForwardedEmails && !RepliedEmails && (
+                        {!forwardedEmailsCount && !repliedEmailsCount && !blockedEmailsCount && (
                             <div className="text-sm color-weak">{c('Label').t`No Activity in the last 14 days.`}</div>
                         )}
                         <div className="text-sm color-weak">{c('Label').t`Contact created ${time} ago.`}</div>
-                        <div className="text-sm color-weak">{c('Label')
-                            .t`${ForwardedEmails} forwarded, ${RepliedEmails} sent, ${BlockedEmails} blocked, in the last 14 days.`}</div>
+                        <div className="text-sm color-weak">{
+                           // translator: full sentence is: <x> forwarded, <x> sent, <x> blocked, in the last 14 days. (plural included in substrings)
+                           c('Label').t`${forwardedEmails}, ${repliedEmails}, ${blockedEmails}, in the last 14 days.`}</div>
                         <Button
                             className="mt-2"
                             pill
