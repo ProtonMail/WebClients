@@ -9,6 +9,7 @@ export const App_TYPES = {
   WebsocketService: Symbol.for('WebsocketService'),
   RealtimeEncryptionService: Symbol.for('RealtimeEncryptionService'),
   CommentsEncryptionService: Symbol.for('CommentsEncryptionService'),
+  LocalStorageEncryptionService: Symbol.for('LocalStorageEncryptionService'),
   MetricService: Symbol.for('MetricService'),
 
   // Use cases

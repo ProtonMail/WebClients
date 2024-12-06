@@ -5,7 +5,8 @@ import { HKDF_SALT_SIZE } from '../../Crypto/Constants'
 import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
 import * as aesGcm from '@proton/crypto/lib/subtle/aesGcm'
 import { EncryptionContext } from './EncryptionContext'
-import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
+import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
+import type { DriveCompat } from '@proton/drive-store/lib'
 
 jest.mock('@proton/crypto', () => ({
   CryptoProxy: {
@@ -25,11 +26,11 @@ jest.mock('../../Crypto/deriveGcmKey', () => ({
 
 describe('EncryptionService', () => {
   const mockContext = EncryptionContext.RealtimeMessage
-  const mockDriveCompat = {
+  const mockDriveCompat = new DriveCompatWrapper({
     userCompat: {
       getVerificationKey: jest.fn(),
-    },
-  } as unknown as jest.Mocked<DriveCompatWrapper>
+    } as unknown as DriveCompat,
+  })
 
   let service: EncryptionService<EncryptionContext.RealtimeMessage>
 
@@ -184,28 +185,28 @@ describe('EncryptionService', () => {
     const mockVerificationKey = ['test-key']
 
     it('should successfully get verification key', async () => {
-      ;(mockDriveCompat.userCompat!.getVerificationKey as jest.Mock).mockResolvedValue(mockVerificationKey)
+      ;(mockDriveCompat.getUserCompat().getVerificationKey as jest.Mock).mockResolvedValue(mockVerificationKey)
 
       const result = await service.getVerificationKey(mockEmail)
 
       expect(result.isFailed()).toBe(false)
       expect(result.getValue()).toBe(mockVerificationKey)
-      expect(mockDriveCompat.userCompat!.getVerificationKey).toHaveBeenCalledWith(mockEmail)
+      expect(mockDriveCompat.getUserCompat().getVerificationKey).toHaveBeenCalledWith(mockEmail)
     })
 
     it('should handle missing user compat', async () => {
-      const serviceWithoutCompat = new EncryptionService(mockContext, { userCompat: undefined } as any)
+      const serviceWithoutCompat = new EncryptionService(mockContext, new DriveCompatWrapper({ userCompat: undefined }))
 
       const result = await serviceWithoutCompat.getVerificationKey(mockEmail)
 
       expect(result.isFailed()).toBe(true)
-      expect(result.getError()).toBe('User compat not available')
+      expect(result.getError()).toBe('Failed to get verification key Error: User drive compat not found')
       expect(() => result.getValue()).toThrow()
     })
 
     it('should handle errors gracefully', async () => {
       const error = new Error('Get verification key failed')
-      ;(mockDriveCompat.userCompat!.getVerificationKey as jest.Mock).mockRejectedValue(error)
+      ;(mockDriveCompat.getUserCompat().getVerificationKey as jest.Mock).mockRejectedValue(error)
 
       const result = await service.getVerificationKey(mockEmail)
 
