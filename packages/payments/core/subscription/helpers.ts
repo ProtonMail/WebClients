@@ -80,10 +80,10 @@ export const getLumoAddonNameByPlan = (planName: PLANS) => {
             return ADDON_NAMES.LUMO_BUNDLE_PRO;
         case PLANS.BUNDLE_PRO_2024:
             return ADDON_NAMES.LUMO_BUNDLE_PRO_2024;
-        case PLANS.ENTERPRISE:
-            return ADDON_NAMES.LUMO_ENTERPRISE;
         case PLANS.VPN_PRO:
             return ADDON_NAMES.LUMO_VPN_PRO;
+        case PLANS.VPN_BUSINESS:
+            return ADDON_NAMES.LUMO_VPN_BUSINESS;
         case PLANS.PASS_PRO:
             return ADDON_NAMES.LUMO_PASS_PRO;
         case PLANS.PASS_BUSINESS:
