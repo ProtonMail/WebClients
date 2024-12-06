@@ -1,5 +1,3 @@
-import { useCallback } from 'react';
-
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useApi } from '@proton/components';
 import { PLANS } from '@proton/payments';
@@ -20,33 +18,30 @@ export const useMailOnboardingTelemetry = (): [sendTelemetry: SendTelemetryCallb
     const [organization, loadingOrg] = useOrganization();
     const userPlan = organization?.PlanName || PLANS.FREE;
 
-    const sendTelemetry = useCallback<SendTelemetryCallback>(
-        (
+    const sendTelemetry: SendTelemetryCallback = (
+        event,
+        /** No need to send variant and plan in the dimensions they're fetched at hook instanciation level */
+        dimensionsParam
+    ) => {
+        if (loadingOrg) {
+            captureMessage('useTelemetryOnboarding: Data is still loading, failled to send ' + event);
+            return Promise.resolve();
+        }
+
+        const dimensions = {
+            ...dimensionsParam,
+            plan: userPlan,
+            variant: 'new',
+        } as const;
+
+        return sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.mailOnboarding,
             event,
-            /** No need to send variant and plan in the dimensions they're fetched at hook instanciation level */
-            dimensionsParam
-        ) => {
-            if (loadingOrg) {
-                captureMessage('useTelemetryOnboarding: Data is still loading, failled to send ' + event);
-                return Promise.resolve();
-            }
-
-            const dimensions = {
-                ...dimensionsParam,
-                plan: userPlan,
-                variant: 'new',
-            } as const;
-
-            return sendTelemetryReport({
-                api,
-                measurementGroup: TelemetryMeasurementGroups.mailOnboarding,
-                event,
-                silence: true,
-                dimensions,
-            });
-        },
-        [userPlan]
-    );
+            silence: true,
+            dimensions,
+        });
+    };
 
     return [sendTelemetry, loadingOrg];
 };
