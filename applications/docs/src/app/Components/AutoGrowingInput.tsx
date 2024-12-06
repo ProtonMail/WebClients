@@ -13,7 +13,7 @@ export const AutoGrowingInput = forwardRef(function AutoGrowingInput(
       <Input className="[grid-area:1_/_2]" value={value} ref={ref} inputClassName={inputClassName} {...rest} />
       <div
         className={clsx('select-none whitespace-pre border opacity-0 [grid-area:1_/_2]', inputClassName)}
-        aria-hidden
+        aria-hidden="true"
       >
         {value}
       </div>
