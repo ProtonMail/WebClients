@@ -213,18 +213,17 @@ export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
     if (planIDs[ENTERPRISE]) {
         supported[ADDON_NAMES.MEMBER_ENTERPRISE] = true;
         supported[ADDON_NAMES.DOMAIN_ENTERPRISE] = true;
-        supported[ADDON_NAMES.LUMO_ENTERPRISE] = true;
     }
 
     if (planIDs[VPN_PRO]) {
         supported[ADDON_NAMES.MEMBER_VPN_PRO] = true;
-        supported[ADDON_NAMES.LUMO_MAIL] = true;
+        supported[ADDON_NAMES.LUMO_VPN_PRO] = true;
     }
 
     if (planIDs[VPN_BUSINESS]) {
         supported[ADDON_NAMES.MEMBER_VPN_BUSINESS] = true;
         supported[ADDON_NAMES.IP_VPN_BUSINESS] = true;
-        supported[ADDON_NAMES.LUMO_VPN_PRO] = true;
+        supported[ADDON_NAMES.LUMO_VPN_BUSINESS] = true;
     }
 
     if (planIDs[PASS_PRO]) {
