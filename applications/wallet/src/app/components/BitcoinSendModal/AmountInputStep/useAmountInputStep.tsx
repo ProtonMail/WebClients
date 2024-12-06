@@ -6,7 +6,7 @@ import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmTxBuilder } from '@
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { type SimpleMap } from '@proton/shared/lib/interfaces';
-import { COMPUTE_BITCOIN_UNIT, MEDIAN_PRIORITY_TARGET_BLOCK, MIN_FEE_RATE } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet';
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
 
 import { Price } from '../../../atoms/Price';
@@ -208,7 +208,7 @@ export const useAmountInputStep = ({
 
         // We constrain to make sure outputs are below inputs
         const constrained = await updatedTxBuilder
-            .setFeeRate(BigInt(getFeesByBlockTarget(MEDIAN_PRIORITY_TARGET_BLOCK) ?? MIN_FEE_RATE))
+            .setFeeRate(BigInt(getFeesByBlockTarget(PriorityTargetBlock.LowPriorityTargetBlock) ?? MIN_FEE_RATE))
             .constrainRecipientAmounts();
 
         // We check tx validity
