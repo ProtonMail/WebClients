@@ -22,6 +22,7 @@ import { c } from "ttag";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { MenuBarMonitor } from "./MenuBarMonitor";
+import telemetry from "./../telemetry";
 
 type ViewID = keyof URLConfig;
 
@@ -264,6 +265,8 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
 
     currentViewID = viewID;
     mainWindow!.title = viewTitleMap[viewID];
+
+    telemetry.showView(viewID);
 
     if (url && urlHasMailto(url)) {
         viewLogger(viewID).debug(`showView loading mailto ${url} from`, await getViewURL(viewID));
