@@ -1,3 +1,4 @@
+import { differenceInDays } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -41,19 +42,31 @@ const OnboardingChecklistSidebar = () => {
     // This hooks manages reward modal display when items are completed
     useOnboardingChecklist();
 
-    const { items, changeChecklistDisplay, isChecklistFinished, hasExpired, daysBeforeExpire, isUserPaid } =
-        useGetStartedChecklist();
     const [user] = useUser();
     const [isOpened, toggleChecklist] = useLocalState(true, `sidebar-checklist-opened-${user.ID}`);
     const [sendOnboardingTelemetry] = useMailOnboardingTelemetry();
-    const canDisplayRemainingDaysInfo = !isChecklistFinished && !hasExpired && !isUserPaid;
+    const { items, changeChecklistDisplay, isChecklistFinished, isUserPaid, expiresAt, createdAt } =
+        useGetStartedChecklist();
+
+    // If no expiration date, we consider the checklist as expired
+    const hasExpired = expiresAt ? expiresAt < new Date() : true;
+    const daysBeforeExpire = hasExpired || !expiresAt ? 0 : differenceInDays(expiresAt, createdAt);
+    /**
+     * The checklist can be closed if:
+     * - The user has completed all the items
+     * - The user has the paid checklist (user first registered with a paid plan)
+     * - The checklist has expired
+     */
+    const canCloseChecklist = isChecklistFinished || isUserPaid || hasExpired;
+    // The countdown is displayed if the checklist is not closed and the user has no paid plan
+    const canDisplayCountDown = !canCloseChecklist && !user.isPaid;
 
     return (
         <>
             <hr className="my-4 mx-3" />
             <OnboardingChecklistSidebarHeader
-                hasReachedLimit={hasExpired}
-                isChecklistFinished={isChecklistFinished}
+                canCloseChecklist={canCloseChecklist}
+                canDisplayCountDown={canDisplayCountDown}
                 isOpened={isOpened}
                 itemsCompletedCount={CHECKLIST_ITEMS_TO_COMPLETE.filter((key) => items.has(key)).length}
                 itemsToCompleteCount={CHECKLIST_ITEMS_TO_COMPLETE.length}
@@ -71,7 +84,7 @@ const OnboardingChecklistSidebar = () => {
             />
             {isOpened && (
                 <>
-                    {canDisplayRemainingDaysInfo && <InfoBloc remainingDaysCount={daysBeforeExpire} />}
+                    {canDisplayCountDown && <InfoBloc remainingDaysCount={daysBeforeExpire} />}
                     <div data-testid="onboarding-checklist" className="px-3 w-full flex flex-column shrink-0">
                         <OnboardingChecklistSidebarList />
                     </div>
@@ -81,12 +94,10 @@ const OnboardingChecklistSidebar = () => {
     );
 };
 
-const OnboardingChecklistSidebarWrapper = () => {
-    return (
-        <OnboardingChecklistModalsProvider>
-            <OnboardingChecklistSidebar />
-        </OnboardingChecklistModalsProvider>
-    );
-};
+const OnboardingChecklistSidebarWrapper = () => (
+    <OnboardingChecklistModalsProvider>
+        <OnboardingChecklistSidebar />
+    </OnboardingChecklistModalsProvider>
+);
 
 export default OnboardingChecklistSidebarWrapper;
