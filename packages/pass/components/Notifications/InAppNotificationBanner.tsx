@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -9,13 +10,13 @@ import { InAppNotificationState } from '@proton/pass/types';
 import { withInAppNotification } from './WithInAppNotification';
 
 export const InAppNotificationBanner: FC = withInAppNotification(
-    ({ changeNotificationState, navigateToUrl, notification }) => {
+    ({ changeNotificationState, readMessage, notification, getRedirectTo }) => {
         const position = EXTENSION_BUILD ? { '--top-custom': '100px' } : { '--bottom-custom': '100px' };
 
         return (
             <aside
-                className="promo-banner fixed top-custom left-custom bottom-custom max-w-custom bg-norm p-4 rounded-lg border border-primary"
-                style={{ ...position, '--left-custom': '.5rem', '--max-w-custom': '18rem' }}
+                className="promo-banner fixed top-custom left-custom bottom-custom max-w-custom bg-norm p-4 rounded-lg border border-primary z-custom"
+                style={{ ...position, '--left-custom': '.5rem', '--max-w-custom': '18rem', '--z-custom': 900 }}
                 aria-live="polite"
                 role="alert"
             >
@@ -49,16 +50,18 @@ export const InAppNotificationBanner: FC = withInAppNotification(
                     <div className="text-xl bold">{notification.content.title}</div>
                     <div className="text-base color-weak">{notification.content.message}</div>
                     {notification.content.cta && (
-                        <Button
-                            className="mt-4 color-white w-full"
-                            color="norm"
-                            shape="solid"
-                            size="large"
-                            pill
-                            onClick={navigateToUrl}
-                        >
-                            {notification.content.cta.text}
-                        </Button>
+                        <Link to={getRedirectTo(notification.content.cta.ref)}>
+                            <Button
+                                className="mt-4 color-white w-full"
+                                color="norm"
+                                shape="solid"
+                                size="large"
+                                pill
+                                onClick={readMessage}
+                            >
+                                {notification.content.cta.text}
+                            </Button>
+                        </Link>
                     )}
                 </div>
             </aside>
