@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -11,7 +12,7 @@ import { InAppNotificationState } from '@proton/pass/types';
 import './InAppNotificationModal.scss';
 
 export const InAppNotificationModal: FC = withInAppNotification(
-    ({ changeNotificationState, navigateToUrl, notification }) => (
+    ({ changeNotificationState, readMessage, notification, getRedirectTo }) => (
         <PassModal size="small" open>
             <ModalTwoHeader
                 hasClose={false}
@@ -32,15 +33,17 @@ export const InAppNotificationModal: FC = withInAppNotification(
 
             <ModalTwoFooter className="flex flex-column items-stretch text-center">
                 {notification.content.cta && (
-                    <Button
-                        className="color-white mb-2"
-                        color="norm"
-                        shape="solid"
-                        size="large"
-                        onClick={navigateToUrl}
-                    >
-                        {notification.content.cta.text}
-                    </Button>
+                    <Link to={getRedirectTo(notification.content.cta.ref)}>
+                        <Button
+                            className="color-white mb-2"
+                            color="norm"
+                            shape="solid"
+                            size="large"
+                            onClick={readMessage}
+                        >
+                            {notification.content.cta.text}
+                        </Button>
+                    </Link>
                 )}
                 <Button
                     color="weak"

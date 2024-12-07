@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
+import { DeepLinks } from 'proton-pass-web/app/DeepLinks/DeepLinks';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -105,6 +106,7 @@ const MainSwitch: FC = () => {
                                             <Route path={`${route.match.path}/monitor`} component={Monitor} />
                                             <Route exact path={`${route.match.path}/settings`} component={Settings} />
                                             <Route path={`${route.match.path}/secure-links`} component={SecureLinks} />
+                                            <Route path={`${route.match.path}/internal/:key`} component={DeepLinks} />
                                             <Route component={Items} />
                                         </Switch>
                                     )}
