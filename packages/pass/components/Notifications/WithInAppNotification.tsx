@@ -1,6 +1,7 @@
 import type { ComponentType, FC } from 'react';
 import { useSelector } from 'react-redux';
 
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
@@ -10,12 +11,15 @@ import { InAppNotificationCtaType, InAppNotificationState } from '@proton/pass/t
 import type { InAppNotification, TelemetryInAppNotificationStatus } from '@proton/pass/types/data/notification';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
 type InAppNotificationProps<P extends object> = P & {
     /** Changes the message state from Unread to Read or Dismissed */
     changeNotificationState: (messageId: string, state: InAppNotificationState) => void;
-    /** Marks the notification as read and redirect to the CTA Ref */
-    navigateToUrl: () => void;
+    /** Marks the notification as read and stores the event in Telemetry */
+    readMessage: () => void;
+    /** Based on the CTA Ref, returns the full path to redirect to */
+    getRedirectTo: (path: string) => string;
     /** The notification to be displayed */
     notification: InAppNotification;
 };
@@ -28,7 +32,8 @@ const TelemetryStatusName: Record<InAppNotificationState, TelemetryInAppNotifica
 
 export const withInAppNotification = <P extends object>(Component: ComponentType<InAppNotificationProps<P>>): FC<P> => {
     const WrappedComponent: FC<P> = (props) => {
-        const { onTelemetry, onLink } = usePassCore();
+        const { onLink, onTelemetry } = usePassCore();
+        const authStore = useAuthStore();
         const updateNotificationStateRequest = useRequest(updateInAppNotificationState);
         const notification = useSelector(selectNextNotification(getEpoch()))!;
 
@@ -44,18 +49,22 @@ export const withInAppNotification = <P extends object>(Component: ComponentType
             updateNotificationStateRequest.dispatch({ id, state });
         };
 
-        const navigateToUrl = () => {
+        const readMessage = () => {
             const { cta } = notification.content;
 
-            if (!cta?.ref) return;
+            if (!cta) return;
+
             onTelemetry(
                 TelemetryEventName.PassNotificationCTAClick,
                 {},
                 { notificationKey: notification.notificationKey }
             );
             changeNotificationState(notification.id, InAppNotificationState.READ);
-            onLink(cta.ref, { replace: cta.type === InAppNotificationCtaType.internal_navigation });
+
+            if (cta.type === InAppNotificationCtaType.external_link) onLink(cta.ref, { replace: true });
         };
+
+        const getRedirectTo = (path: string) => `/${getLocalIDPath(authStore?.getLocalID())}${path}`;
 
         useTelemetryEvent(
             TelemetryEventName.PassNotificationDisplay,
@@ -66,8 +75,9 @@ export const withInAppNotification = <P extends object>(Component: ComponentType
         return (
             <Component
                 {...props}
-                navigateToUrl={navigateToUrl}
+                readMessage={readMessage}
                 changeNotificationState={changeNotificationState}
+                getRedirectTo={getRedirectTo}
                 notification={notification}
             />
         );
