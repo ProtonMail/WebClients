@@ -20,6 +20,7 @@ import move from '@proton/utils/move';
 import noop from '@proton/utils/noop';
 
 import { sendCalendarInviteReport } from './CalendarInviteTelemetry';
+import { useCalendarERRTetric } from './metrics/useCalendarERRTMetric';
 
 interface Props {
     actions: PartstatActions;
@@ -42,6 +43,7 @@ const CalendarInviteButtons = ({
     const [loadingAccept, withLoadingAccept] = useLoading();
     const [loadingTentative, withLoadingTentative] = useLoading();
     const [loadingDecline, withLoadingDecline] = useLoading();
+    const { startERRTMetric, stopERRTMetric } = useCalendarERRTetric();
 
     const { accept, acceptTentatively, decline } = actions;
     const onAccept = () => {
@@ -49,21 +51,33 @@ const CalendarInviteButtons = ({
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'yes', plan },
         });
-        return withLoadingAccept(accept());
+        startERRTMetric('accept');
+        const promise = withLoadingAccept(accept()).then(() => {
+            stopERRTMetric();
+        });
+        return promise;
     };
     const onTentative = () => {
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'maybe', plan },
         });
-        return withLoadingTentative(acceptTentatively());
+        startERRTMetric('tentative');
+        const promise = withLoadingTentative(acceptTentatively()).then(() => {
+            stopERRTMetric();
+        });
+        return promise;
     };
     const onDecline = () => {
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'no', plan },
         });
-        return withLoadingDecline(decline());
+        startERRTMetric('decline');
+        const promise = withLoadingDecline(decline()).then(() => {
+            stopERRTMetric();
+        });
+        return promise;
     };
 
     const loadingAnswer = loadingAccept || loadingTentative || loadingDecline;
