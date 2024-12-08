@@ -12,7 +12,8 @@ interface ThumbnailGenerator {
     (
         file: File,
         thumbnailTypes: ThumbnailType[] | never,
-        mimeType: string | never
+        mimeType: string | never,
+        isWebPThumbnailEnabled: boolean
     ): Promise<(Media & { thumbnails?: ThumbnailInfo[] }) | undefined>;
 }
 
@@ -29,8 +30,11 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
     { checker: isSVG, creator: scaleSvgFile },
     {
         checker: isSupportedImage,
-        creator: async (file: File, thumbnailTypes: ThumbnailType[], mimeType) =>
-            scaleImageFile({ file, thumbnailTypes, mimeType }).catch((err) => {
+        creator: async (file: File, thumbnailTypes: ThumbnailType[], mimeType, isWebPThumbnailEnabled) =>
+            scaleImageFile(
+                { file, thumbnailTypes, mimeType },
+                isWebPThumbnailEnabled ? 'image/webp' : 'image/jpeg'
+            ).catch((err) => {
                 // Corrupted images cannot be loaded which we don't care about.
                 if (err === imageCannotBeLoadedError) {
                     return undefined;
@@ -40,16 +44,19 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
     },
     {
         checker: (mimeType: string, name?: string) => isCompatibleCBZ(mimeType, name || ''),
-        creator: async (cbz: Blob, thumbnailTypes: ThumbnailType[]) => {
+        creator: async (cbz: Blob, thumbnailTypes: ThumbnailType[], _, isWebPThumbnailEnabled) => {
             const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
             const { cover, file } = await getCBZCover(cbz);
 
             if (cover && file) {
-                return scaleImageFile({
-                    file,
-                    thumbnailTypes,
-                    mimeType: cover.endsWith('png') ? SupportedMimeTypes.png : SupportedMimeTypes.jpg,
-                }).catch((err) => {
+                return scaleImageFile(
+                    {
+                        file,
+                        thumbnailTypes,
+                        mimeType: cover.endsWith('png') ? SupportedMimeTypes.png : SupportedMimeTypes.jpg,
+                    },
+                    isWebPThumbnailEnabled ? 'image/webp' : 'image/jpeg'
+                ).catch((err) => {
                     // Corrupted images cannot be loaded which we don't care about.
                     if (err === imageCannotBeLoadedError) {
                         return undefined;
@@ -63,13 +70,19 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
     },
 ] as const;
 
-export const getMediaInfo = (mimeTypePromise: Promise<string>, file: File, isForPhotos: boolean) =>
+export const getMediaInfo = (
+    mimeTypePromise: Promise<string>,
+    file: File,
+    isForPhotos: boolean,
+    isWebPThumbnailEnabled: boolean = false
+) =>
     mimeTypePromise.then(async (mimeType) => {
         const mediaInfo = CHECKER_CREATOR_LIST.find(({ checker }) => checker(mimeType, file.name))
             ?.creator(
                 file,
                 isForPhotos ? [ThumbnailType.PREVIEW, ThumbnailType.HD_PREVIEW] : [ThumbnailType.PREVIEW],
-                mimeType
+                mimeType,
+                isWebPThumbnailEnabled
             )
             .catch((err) => {
                 sendErrorReport(err);
