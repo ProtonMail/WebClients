@@ -1,3 +1,4 @@
+import { $getRoot } from 'lexical'
 import * as ReactTestUtils from '../../Utils/react-test-utils'
 import type { EditorClient } from '../TestUtils/EditorClient'
 import { createEditorClient } from '../TestUtils/EditorClient'
@@ -64,6 +65,14 @@ describe('YjsReadonlyPlugin', () => {
         for (const edit of exampleEdits) {
           client1.state.receiveMessage(edit)
         }
+      })
+
+      // Marks the root node as dirty so that reconciliation
+      // happens and the direction property is correctly set.
+      await ReactTestUtils.act(async () => {
+        await client1.updateEditor(() => {
+          $getRoot().markDirty()
+        })
       })
 
       expect(client1.getStateAsJson()).toBe(exampleState)
