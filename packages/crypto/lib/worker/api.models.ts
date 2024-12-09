@@ -22,6 +22,8 @@ import type {
 } from 'pmcrypto';
 import type { PartialConfig, enums } from 'pmcrypto/lib/openpgp';
 
+import type { KeyCompatibilityLevel } from '../constants';
+
 export type MaybeArray<T> = T[] | T;
 export type { enums, SessionKey, AlgorithmInfo, MIMEAttachment, ContextSigningOptions, ContextVerificationOptions };
 
@@ -113,7 +115,7 @@ export interface WorkerImportPrivateKeyOptions<T extends Data> {
      * Check whether the key is compatible with all Proton clients.
      * This should be used when importing a key that was generate outside of Proton.
      */
-    checkCompatibility?: boolean;
+    checkCompatibility?: KeyCompatibilityLevel;
 }
 
 export type WorkerImportPublicKeyOptions<T extends Data> = {
@@ -123,7 +125,7 @@ export type WorkerImportPublicKeyOptions<T extends Data> = {
      * Check whether the key is compatible with all Proton clients.
      * This should be used when importing a key that was generate outside of Proton.
      */
-    checkCompatibility?: boolean;
+    checkCompatibility?: KeyCompatibilityLevel;
 };
 
 export interface WorkerGenerateKeyOptions<CustomConfig extends PartialConfig | undefined>

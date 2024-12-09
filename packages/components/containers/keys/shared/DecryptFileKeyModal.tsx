@@ -13,7 +13,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
@@ -41,7 +41,7 @@ const DecryptFileKeyModal = ({ privateKeyInfo, onSuccess, onClose, ...rest }: Pr
             const decryptedPrivateKey = await CryptoProxy.importPrivateKey({
                 armoredKey,
                 passphrase: password,
-                checkCompatibility: true, // the BE will enforce this as well, but the returned error messages might be less user friendly
+                checkCompatibility: KeyCompatibilityLevel.BACKWARDS_COMPATIBLE, // the BE will enforce this as well, but the returned error messages might be less user friendly
             });
             onSuccess(decryptedPrivateKey);
             onClose?.();
