@@ -19,6 +19,7 @@ export interface Organization {
     MaxSpace: number;
     MaxMembers: number;
     MaxAI: number;
+    MaxLumo: number;
     MaxWallets: number;
     MaxSubWallets: number;
     IsScimEnabled: boolean;
@@ -35,6 +36,7 @@ export interface Organization {
     UsedMembers: number;
     UsedVPN: number;
     UsedAI: number;
+    UsedLumo: number;
     InvitationsRemaining: number;
     HasKeys: number;
     CreateTime: number;

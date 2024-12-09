@@ -37,7 +37,13 @@ interface Props {
 }
 
 // Always enabled for these apps
-const singlePageSignupApps = new Set([APPS.PROTONDRIVE, APPS.PROTONDOCS, APPS.PROTONWALLET, ...passApps]);
+const singlePageSignupApps = new Set([
+    APPS.PROTONDRIVE,
+    APPS.PROTONDOCS,
+    APPS.PROTONWALLET,
+    APPS.PROTONLUMO,
+    ...passApps,
+]);
 const singlePageSignupPaths = new Set([
     SSO_PATHS.MAIL_SIGNUP_B2B,
     SSO_PATHS.CALENDAR_SIGNUP_B2B,

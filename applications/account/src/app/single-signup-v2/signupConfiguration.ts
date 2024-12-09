@@ -1,5 +1,5 @@
 import { PLANS } from '@proton/payments/core/constants';
-import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
+import { getIsLumoApp, getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -14,6 +14,7 @@ import type { SignupModelV2, SignupParameters2 } from './interface';
 import { getMailConfiguration } from './mail/configuration';
 import { getPassConfiguration } from './pass/configuration';
 import { getWalletConfiguration } from './wallet/configuration';
+import { getLumoConfiguration } from './lumo/configuration';
 
 export const getSignupConfiguration = ({
     toApp,
@@ -99,6 +100,11 @@ export const getSignupConfiguration = ({
             mode: signupParameters.mode,
         });
     }
+
+    if (getIsLumoApp(toApp)) {
+        return getLumoConfiguration();
+    }
+
     return getGenericConfiguration({
         theme,
         audience,

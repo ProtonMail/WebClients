@@ -6,6 +6,7 @@ import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import CalendarLogo from './CalendarLogo';
 import DocsLogo from './DocsLogo';
 import DriveLogo from './DriveLogo';
+import LumoLogo from './LumoLogo';
 import MailLogo from './MailLogo';
 import PassLogo from './PassLogo';
 import VpnLogo from './VpnLogo';
@@ -13,7 +14,16 @@ import WalletLogo from './WalletLogo';
 
 export type LogoVariant = 'with-wordmark' | 'glyph-only' | 'wordmark-only';
 
-const { PROTONCALENDAR, PROTONDRIVE, PROTONMAIL, PROTONVPN_SETTINGS, PROTONPASS, PROTONDOCS, PROTONWALLET } = APPS;
+const {
+    PROTONCALENDAR,
+    PROTONDRIVE,
+    PROTONMAIL,
+    PROTONVPN_SETTINGS,
+    PROTONPASS,
+    PROTONDOCS,
+    PROTONWALLET,
+    PROTONLUMO,
+} = APPS;
 
 export interface LogoProps extends Omit<ComponentPropsWithoutRef<'svg'>, 'size'> {
     appName: APP_NAMES;
@@ -50,6 +60,10 @@ const Logo = ({ appName, variant, fallback = null, ...rest }: LogoProps) => {
 
     if (appName === PROTONWALLET) {
         return <WalletLogo variant={variant} {...rest} />;
+    }
+
+    if (appName === PROTONLUMO) {
+        return <LumoLogo variant={variant} {...rest} />;
     }
 
     return fallback;

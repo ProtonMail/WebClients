@@ -230,6 +230,7 @@ export function useAccessiblePlans({
         PLANS.DRIVE,
         !user.hasPassLifetime && PLANS.PASS,
         canAccessWalletPlan && PLANS.WALLET,
+        PLANS.LUMO,
     ].filter(isTruthy);
 
     let enabledProductB2CPlans = enabledProductB2CPlanNames.map((planName) => plansMap[planName]).filter(isTruthy);

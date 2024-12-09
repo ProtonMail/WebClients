@@ -451,6 +451,7 @@ export type MaxKeys =
     | 'MaxVPN'
     | 'MaxTier'
     | 'MaxIPs' // synthetic key, it does't exist in the API
-    | 'MaxAI'; // synthetic key, it does't exist in the API
+    | 'MaxAI' // synthetic key, it does't exist in the API
+    | 'MaxLumo';
 
 export type FreeSubscription = typeof FREE_SUBSCRIPTION;

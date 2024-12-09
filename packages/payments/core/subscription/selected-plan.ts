@@ -3,6 +3,7 @@ import {
     type AddonGuard,
     isDomainAddon,
     isIpAddon,
+    isLumoAddon,
     isMemberAddon,
     isScribeAddon,
 } from '@proton/shared/lib/helpers/addons';
@@ -14,7 +15,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { type ADDON_NAMES, DEFAULT_CURRENCY, PLANS } from '../constants';
 import type { Currency, FreeSubscription, MaxKeys, PlanIDs } from '../interface';
-import { getScribeAddonNameByPlan } from './helpers';
+import { getLumoAddonNameByPlan, getScribeAddonNameByPlan } from './helpers';
 import { getPlansMap } from './plans-map-wrapper';
 
 export class SelectedPlan {
@@ -107,6 +108,10 @@ export class SelectedPlan {
         return this.getTotalAddons(isScribeAddon, 'MaxAI');
     }
 
+    getTotalLumos(): number {
+        return this.getTotalAddons(isLumoAddon, 'MaxLumo');
+    }
+
     getTotalByMaxKey(maxKey: MaxKeys): number {
         if (maxKey === 'MaxMembers') {
             return this.getTotalMembers();
@@ -116,6 +121,8 @@ export class SelectedPlan {
             return this.getTotalDomains();
         } else if (maxKey === 'MaxAI') {
             return this.getTotalScribes();
+        } else if (maxKey === 'MaxLumo') {
+            return this.getTotalLumos();
         } else {
             // Just count the respective maxKey in all the addons and plans
             return this.getTotalAddons(() => true, maxKey);
@@ -147,8 +154,33 @@ export class SelectedPlan {
         return updatedPlan.capScribes();
     }
 
+    setLumoCount(newCount: number): SelectedPlan {
+        const lumoAddonName = getLumoAddonNameByPlan(this.getPlanName());
+        if (!lumoAddonName) {
+            return this;
+        }
+
+        const planIDs = { ...this._planIDs };
+
+        const lumosInPlan = this.getCountInPlan('MaxLumo');
+
+        const lumosInAddons = this.getCountInAddons(isLumoAddon, 'MaxLumo');
+        const lumosChange = newCount - lumosInPlan - lumosInAddons;
+        if (lumosChange === 0) {
+            return this;
+        }
+
+        planIDs[lumoAddonName] = Math.max((planIDs[lumoAddonName] ?? 0) + lumosChange, 0);
+        if (planIDs[lumoAddonName] === 0) {
+            delete planIDs[lumoAddonName];
+        }
+
+        const updatedPlan = this.selectedPlanWithNewIds(planIDs);
+        return updatedPlan.capLumos();
+    }
+
     applyRules(): SelectedPlan {
-        return this.capScribes();
+        return this.capScribes().capLumos();
     }
 
     getPlanName(): PLANS {
@@ -172,6 +204,14 @@ export class SelectedPlan {
     private capScribes(): SelectedPlan {
         if (this.getTotalMembers() < this.getTotalScribes()) {
             return this.setScribeCount(this.getTotalMembers());
+        }
+
+        return this;
+    }
+
+    private capLumos(): SelectedPlan {
+        if (this.getTotalMembers() < this.getTotalLumos()) {
+            return this.setLumoCount(this.getTotalMembers());
         }
 
         return this;

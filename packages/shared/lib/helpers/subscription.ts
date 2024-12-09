@@ -14,7 +14,13 @@ import {
 } from '@proton/payments';
 import { type FreeSubscription, isFreeSubscription } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getSupportedAddons, isIpAddon, isMemberAddon, isScribeAddon } from '@proton/shared/lib/helpers/addons';
+import {
+    getSupportedAddons,
+    isIpAddon,
+    isLumoAddon,
+    isMemberAddon,
+    isScribeAddon,
+} from '@proton/shared/lib/helpers/addons';
 
 import { APPS, type APP_NAMES, COUPON_CODES, CYCLE } from '../constants';
 import type {
@@ -58,6 +64,7 @@ const {
     PASS_FAMILY,
     PASS_BUSINESS,
     PASS_LIFETIME,
+    LUMO,
 } = PLANS;
 
 const { MEMBER_SCRIBE_MAIL_BUSINESS, MEMBER_SCRIBE_MAIL_PRO, MEMBER_SCRIBE_BUNDLE_PRO, MEMBER_SCRIBE_BUNDLE_PRO_2024 } =
@@ -143,6 +150,7 @@ export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(
 export const hasDriveBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_BUSINESS);
 export const hasPass = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS);
 export const hasWallet = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, WALLET);
+export const hasLumo = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, LUMO);
 export const hasEnterprise = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, ENTERPRISE);
 export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE);
 export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE_PRO);
@@ -858,6 +866,10 @@ export const getPlanMaxIPs = (plan: Plan) => {
     return 0;
 };
 
+export const getPlanMaxLumo = (plan: Plan) => {
+    return isLumoAddon(plan.Name) ? 1 : 0;
+};
+
 const getPlanMaxAIs = (plan: Plan) => {
     return isScribeAddon(plan.Name) ? 1 : 0;
 };
@@ -869,6 +881,8 @@ export const getMaxValue = (plan: Plan, key: MaxKeys): number => {
         result = getPlanMaxIPs(plan);
     } else if (key === 'MaxAI') {
         result = getPlanMaxAIs(plan);
+    } else if (key === 'MaxLumo') {
+        result = getPlanMaxLumo(plan);
     } else {
         result = plan[key];
     }

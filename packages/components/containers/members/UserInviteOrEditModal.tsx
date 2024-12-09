@@ -18,14 +18,16 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { editMemberInvitation, inviteMember, updateAI } from '@proton/shared/lib/api/members';
-import { BRAND_NAME, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { editMemberInvitation, inviteMember, updateAI, updateLumo } from '@proton/shared/lib/api/members';
+import { BRAND_NAME, LUMO_APP_NAME, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { hasDuo, hasFamily, hasPassFamily, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
+import useFlag from '@proton/unleash/useFlag';
 import clamp from '@proton/utils/clamp';
 
+import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
 
@@ -34,6 +36,7 @@ interface Props extends ModalStateProps {
     member: Member | null | undefined;
     allowAIAssistantConfiguration: boolean;
     aiSeatsRemaining: boolean;
+    lumoSeatsRemaining: boolean;
     allowStorageConfiguration?: boolean;
 }
 
@@ -43,6 +46,7 @@ const UserInviteOrEditModal = ({
     allowStorageConfiguration,
     allowAIAssistantConfiguration,
     aiSeatsRemaining,
+    lumoSeatsRemaining,
     ...modalState
 }: Props) => {
     const api = useApi();
@@ -54,6 +58,8 @@ const UserInviteOrEditModal = ({
     const storageRange = getStorageRange(member ?? {}, organization);
     const storageSizeUnit = sizeUnits.GB;
     const isEditing = !!member?.ID;
+
+    const lumoAddonAvailable = useFlag('LumoAddonAvailable');
 
     const [subscription] = useSubscription();
     const isVisionary = hasVisionary(subscription);
@@ -68,6 +74,7 @@ const UserInviteOrEditModal = ({
                 : clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
             vpn: !!member?.MaxVPN,
             numAI: aiSeatsRemaining && (isVisionary || isDuo || isFamily), // Visionary, Duo and Family users should have the toggle set to true by default
+            lumo: lumoSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
             admin: member?.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
         }),
         [member]
@@ -94,6 +101,10 @@ const UserInviteOrEditModal = ({
             await api(updateAI(res.Member.ID, model.numAI ? 1 : 0));
         }
 
+        if (lumoAddonAvailable) {
+            await api(updateLumo(res.Member.ID, model.lumo ? 1 : 0));
+        }
+
         createNotification({ text: c('Success').t`Invitation sent` });
     };
 
@@ -103,6 +114,10 @@ const UserInviteOrEditModal = ({
 
         if (allowAIAssistantConfiguration) {
             await api(updateAI(member!.ID, model.numAI ? 1 : 0));
+        }
+
+        if (lumoAddonAvailable) {
+            await api(updateLumo(member!.ID, model.lumo ? 1 : 0));
         }
 
         updated = true;
@@ -194,6 +209,29 @@ const UserInviteOrEditModal = ({
                             }
                             assistiveText={
                                 !aiSeatsRemaining && !model.numAI ? <AssistantUpdateSubscriptionButton /> : undefined
+                            }
+                        />
+                    </div>
+                )}
+
+                {lumoAddonAvailable && (
+                    <div className="mb-4">
+                        <MemberToggleContainer
+                            toggle={
+                                <Toggle
+                                    id="lumo-toggle"
+                                    checked={model.lumo}
+                                    disabled={!lumoSeatsRemaining}
+                                    onChange={({ target }) => handleChange('lumo')(target.checked)}
+                                />
+                            }
+                            label={
+                                <label className="text-semibold" htmlFor="lumo-toggle">
+                                    {LUMO_APP_NAME}
+                                </label>
+                            }
+                            assistiveText={
+                                !lumoSeatsRemaining && !model.lumo ? <LumoUpdateSubscriptionButton /> : undefined
                             }
                         />
                     </div>
