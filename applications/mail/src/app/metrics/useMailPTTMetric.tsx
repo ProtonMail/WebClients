@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import metrics from '@proton/metrics';
 import useFlag from '@proton/unleash/useFlag';
 
-import { MAX_MAP_SIZE, pathnameToLabelName } from './mailMetricsHelper';
+import { pathnameToLabelName } from './mailMetricsHelper';
 
 interface TransitionData {
     from: string;
@@ -59,10 +59,6 @@ export const useMailPTTMetric = () => {
             }
 
             previousLocationRef.current = location.pathname;
-
-            if (transitionMap.size >= MAX_MAP_SIZE) {
-                return;
-            }
 
             transitionMap.set(current.to, {
                 ...current,
