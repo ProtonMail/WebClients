@@ -11,10 +11,11 @@ import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../Utils/react-test-utils'
 import type { Logger } from '@proton/utils/logs'
 import { YjsReadonlyPlugin } from '../YjsReadonly/YjsReadonlyPlugin'
-import { Provider } from '@lexical/yjs'
+import type { Provider } from '@lexical/yjs'
 import { LexicalDocProvider } from '@proton/docs-shared/lib/Doc/LexicalDocProvider'
-import { DocStateCallbacks } from '@proton/docs-shared/lib/Doc/DocStateCallbacks'
-import { DocState, DocWillInitializeWithEmptyNodeEvent, RtsMessagePayload, YDocMap } from '@proton/docs-shared'
+import type { DocStateCallbacks } from '@proton/docs-shared/lib/Doc/DocStateCallbacks'
+import type { RtsMessagePayload, YDocMap } from '@proton/docs-shared'
+import { DocState, DocWillInitializeWithEmptyNodeEvent } from '@proton/docs-shared'
 import { CollaborationContext } from '@lexical/react/LexicalCollaborationContext'
 
 const logger = {
@@ -110,7 +111,7 @@ export class EditorClient {
 
   async updateEditor(fn: () => void) {
     await ReactTestUtils.act(async () => {
-      this.editor.update(fn)
+      await this.editor.update(fn)
     })
   }
 
