@@ -66,8 +66,8 @@ export const withInAppNotification = <P extends object>(Component: ComponentType
             );
             changeNotificationState(notification.id, InAppNotificationState.READ);
 
-            if (EXTENSION_BUILD) return onLink(getPassWebUrl(API_URL) + getRedirectTo(cta.ref).substring(1));
             if (cta.type === InAppNotificationCtaType.external_link) return onLink(cta.ref, { replace: true });
+            if (EXTENSION_BUILD) return onLink(getPassWebUrl(API_URL) + getRedirectTo(cta.ref).substring(1));
         };
 
         useTelemetryEvent(
