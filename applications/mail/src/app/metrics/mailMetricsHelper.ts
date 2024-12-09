@@ -7,8 +7,6 @@ import { getHumanLabelID, isCustomLabelOrFolder, isStringHumanLabelID } from '..
 
 type LabelType = EmailListDisplayTime['Labels']['loaded'];
 
-export const MAX_MAP_SIZE = 20;
-
 export const getPageSizeString = (settings: MailSettings | undefined) => {
     const { PageSize } = settings || {};
     switch (PageSize) {
