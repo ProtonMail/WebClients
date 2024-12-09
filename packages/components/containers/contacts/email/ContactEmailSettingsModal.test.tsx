@@ -179,6 +179,7 @@ END:VCARD`.replaceAll('\n', '\r\n');
                 getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                 subkeys: [],
                 getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                getVersion: () => 4,
             })),
             canKeyEncrypt: jest.fn().mockImplementation(() => true),
             exportPublicKey: jest.fn().mockImplementation(({ key }) => new TextEncoder().encode(key.getFingerprint())),
@@ -278,6 +279,7 @@ END:VCARD`;
                 getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                 subkeys: [],
                 getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                getVersion: () => 4,
             })),
             canKeyEncrypt: jest.fn().mockImplementation(() => false),
             exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
@@ -371,6 +373,7 @@ END:VCARD`;
                 getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                 subkeys: [],
                 getUserIDs: jest.fn().mockImplementation(() => ['<jdoe@example.com>']),
+                getVersion: () => 4,
             })),
             canKeyEncrypt: jest.fn().mockImplementation(() => true),
             exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
@@ -475,6 +478,7 @@ END:VCARD`.replaceAll('\n', '\r\n');
                 getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                 subkeys: [],
                 getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                getVersion: () => 4,
             })),
             canKeyEncrypt: jest.fn().mockImplementation(() => false),
             exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
@@ -575,6 +579,7 @@ END:VCARD`;
                 getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                 subkeys: [],
                 getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                getVersion: () => 4,
             })),
             canKeyEncrypt: jest.fn().mockImplementation(() => true),
             exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
@@ -672,6 +677,7 @@ END:VCARD`;
                 getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                 subkeys: [],
                 getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                getVersion: () => 4,
             })),
             canKeyEncrypt: jest.fn().mockImplementation(() => true),
             exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
@@ -798,6 +804,7 @@ END:VCARD`;
                     getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                     subkeys: [],
                     getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                    getVersion: () => (armoredKey.includes('v6') ? 6 : 4),
                 })),
                 canKeyEncrypt: jest.fn().mockImplementation(() => true),
                 exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
@@ -842,6 +849,54 @@ END:VCARD`;
             expect(screen.queryByTestId('wkd-origin-label')).toBeNull();
             expect(screen.queryByTestId('koo-origin-label')).toBeNull();
         });
+
+        it('internal contact with v6 address keys: should display primary label for v6 key only (if primary)', async () => {
+            const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
+
+            addApiMock('core/v4/keys/all', () => ({
+                Address: {
+                    Keys: [
+                        {
+                            PublicKey: 'internally mocked armored key v4',
+                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED | KEY_FLAG.FLAG_NOT_OBSOLETE,
+                            Primary: 1,
+                        },
+                        {
+                            PublicKey: 'internally mocked armored key v6',
+                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED | KEY_FLAG.FLAG_NOT_OBSOLETE,
+                            Primary: 1,
+                        },
+                    ],
+                },
+                ProtonMX: true, // internal address
+            }));
+
+            renderWithProviders(
+                <ContactEmailSettingsModal
+                    open={true}
+                    {...props}
+                    vCardContact={vCardContact}
+                    emailProperty={vCardContact.email[0]}
+                />
+            );
+
+            const showMoreButton = screen.getByRole('button', { name: 'Expand' });
+            await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+            fireEvent.click(showMoreButton);
+
+            const table = await screen.findByTestId('contact-keys-table');
+            const rows = await within(table).findAllByRole('row');
+            expect(rows.length).toBe(2);
+            // first table row
+            const v6KeyFingerprint = await within(rows[0]).findByText('internally mocked armored key v6');
+            expect(v6KeyFingerprint).toBeVisible();
+            const primaryLabel = await within(rows[0]).findByTestId('primary-key-label');
+            expect(primaryLabel).toBeVisible();
+            // second table row
+            const v4KeyFingerprint = await within(rows[1]).findByText('internally mocked armored key v4');
+            expect(v4KeyFingerprint).toBeVisible();
+        });
+
         it('should display WKD label for WKD keys', async () => {
             const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
