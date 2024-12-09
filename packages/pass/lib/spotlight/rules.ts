@@ -176,3 +176,12 @@ export const createUserRenewalRule = (store: Store<State>) =>
             return subscriptionEnd - now < UNIX_MONTH;
         },
     });
+
+export const createSSOChangeLockRule = () =>
+    createSpotlightRule({
+        message: SpotlightMessage.SSO_CHANGE_LOCK,
+        when: (previous) => {
+            if (DESKTOP_BUILD) return false;
+            return !previous;
+        },
+    });

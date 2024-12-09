@@ -7,6 +7,7 @@ import {
     createB2BRule,
     createMonitorLearnMoreRule,
     createPendingShareAccessRule,
+    createSSOChangeLockRule,
     createSecurityRule,
     createTrialRule,
     createUserRenewalRule,
@@ -49,6 +50,7 @@ export const spotlight = createSpotlightService({
         createWelcomeRule(),
         createB2BRule(store),
         createMonitorLearnMoreRule(),
+        createSSOChangeLockRule(),
     ],
 });
 

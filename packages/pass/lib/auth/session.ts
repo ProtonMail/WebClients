@@ -45,6 +45,7 @@ export type AuthSession = {
     unlockRetryCount?: number;
     userData?: string;
     UserID: string;
+    isSSOUser: boolean;
 };
 
 /** The following values of the `AuthSession` are locally stored in
@@ -70,6 +71,7 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
     'sessionLockToken',
     'UID',
     'UserID',
+    'isSSOUser',
 ];
 
 export const getSessionEncryptionTag = (version?: AuthSessionVersion): Maybe<Uint8Array> =>

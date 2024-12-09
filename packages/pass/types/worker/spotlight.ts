@@ -20,6 +20,7 @@ export enum SpotlightMessage {
     ALIAS_SYNC_ENABLE /* shown if user has pending SL aliases to be sync */,
     USER_RENEWAL,
     NOOP /* Used for custom non-acknowledgable messages */,
+    SSO_CHANGE_LOCK,
 }
 
 export type SpotlightAcknowledgment = {
