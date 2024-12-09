@@ -26,21 +26,15 @@ export const InAppNotificationModal: FC = withInAppNotification(
                                 alt=""
                             />
                         )}
-                        <span className="text-ellipsis text-weak">{notification.content.message}</span>
+                        <span className="text-weak">{notification.content.message}</span>
                     </div>
                 }
             />
 
             <ModalTwoFooter className="flex flex-column items-stretch text-center">
                 {notification.content.cta && (
-                    <Link to={getRedirectTo(notification.content.cta.ref)}>
-                        <Button
-                            className="color-white mb-2"
-                            color="norm"
-                            shape="solid"
-                            size="large"
-                            onClick={readMessage}
-                        >
+                    <Link className="mb-2" to={getRedirectTo(notification.content.cta.ref)}>
+                        <Button className="w-full" color="norm" shape="solid" size="large" onClick={readMessage}>
                             {notification.content.cta.text}
                         </Button>
                     </Link>
