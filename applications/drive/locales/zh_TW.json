@@ -3452,6 +3452,12 @@
       "You have successfully joined the family group": [
         "您已成功加入家庭群組"
       ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "您有未付款的收據。請在加入家庭方案前繳付。"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此家庭方案，並一起享受所有 ${ brandOrAppName } 進階功能。"
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您帳號中的電子郵件位址多於此方案中可用的電子郵件位址。${ addressSettingsLink }"
       ],
@@ -3964,6 +3970,9 @@
       ],
       "${ nbFile } encrypted file...": [
         "${ nbFile }加密的檔案..."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME }終身方案無續約費，他是單次付費終身存取${ PASS_SHORT_APP_NAME }。"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } 個任務已暫停"
@@ -4729,6 +4738,9 @@
       ],
       "Organization size": [
         "組織規模"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
       ],
       "Owner": [
         "擁有者"
@@ -5639,12 +5651,6 @@
       "Calendars": [
         "行事曆"
       ],
-      "Can edit": [
-        "可編輯"
-      ],
-      "Can view": [
-        "可以檢視"
-      ],
       "Cancel download": [
         "取消下載"
       ],
@@ -6124,11 +6130,6 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
-      ]
-    },
-    "Label description": {
-      "View and download": [
-        "瀏覽並下載"
       ]
     },
     "Label for contact group color": {
@@ -6731,6 +6732,9 @@
       ],
       "Administration Panel": [
         "管理介面"
+      ],
+      "Advanced account protection": [
+        "進階的帳號保護"
       ],
       "All ${ BRAND_NAME } products and features": [
         "全部${ BRAND_NAME }產品及功能"
@@ -7720,11 +7724,17 @@
       "End-to-end encrypted storage for your files": [
         "端對端加密儲存您的檔案"
       ],
+      "Faster uploads for large or multiple files": [
+        "更快速上傳大型或多重檔案"
+      ],
       "Final approval in progress": [
         "最後審核正在進行"
       ],
       "Final approval pending": [
         "正在審核許可"
+      ],
+      "Free up hard drive space on your computer": [
+        "釋放電腦硬碟空間"
       ],
       "Get the desktop app": [
         "取得桌面應用程式"
@@ -7911,8 +7921,14 @@
       "Please select your billing state first.": [
         "請先選擇您的計費狀態。"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "更新價 ${ renewPrice }，任何時間都可取消。"
+      ],
       "Select billing country to pay": [
         "選取繳款國家以付款"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
       ],
       "Timeout exceeded": [
         "已經逾時"
@@ -8619,6 +8635,9 @@
     "sso": {
       "Sign in": [
         "登入"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您將被重新導向至您的第三方單一登入提供者。"
       ]
     },
     "State": {
@@ -8766,6 +8785,9 @@
     "Subscription change warning": {
       "Got it": [
         "明白"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "請登入您的 Apple App Store 帳號，然後選取「${ subscriptions }」。"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "請登入您的 Play 商店帳號，然後按一下「${ subscriptions }」。"

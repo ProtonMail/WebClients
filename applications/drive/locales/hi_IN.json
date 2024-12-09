@@ -210,6 +210,9 @@
       "Create a new contact group": [
         "नया संपर्क ग्रुप बनाएं"
       ],
+      "Create and copy alias": [
+        "उपनाम बनाएँ और कॉपी करें"
+      ],
       "Create link": [
         "लिंक बनाएं"
       ],
@@ -1602,6 +1605,9 @@
       "Dominican Republic": [
         "डोमिनिकन रिपब्लिक"
       ],
+      "East Timor": [
+        "ईस्ट तिमोर"
+      ],
       "Ecuador": [
         "इक्वाडोर"
       ],
@@ -2226,6 +2232,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को मर्ज किया जा रहा है... इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "आपके खाते की सर्वोत्तम सुरक्षा सुनिश्चित करने के लिए, एक पुनर्प्राप्ति वाक्यांश सेट करें।"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "संपर्कों के बीच विलय प्राथमिकता को रैंक करने के लिए ड्रैग एंड ड्रॉप का उपयोग करें। उन संपर्कों को अनचेक करें जिन्हें आप मर्ज नहीं करना चाहते हैं।"
       ],
@@ -2234,6 +2243,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "आप उन संपर्कों को हटाने के लिए चिह्नित कर सकते हैं जिन्हें आप न तो विलय करने के लिए नहीं चाहते हैं और न ही रखने के लिए। विलय बटन क्लिक करने के बाद ही हटाना होगा"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "आपका खाता और डेटा पुनर्प्राप्ति विधियाँ सेट हैं और 2FA सक्षम है।"
+      ],
+      "Your account and data recovery methods are set.": [
+        "आपका खाता और डेटा पुनर्प्राप्ति विधियाँ सेट हैं।"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4724,6 +4739,9 @@
       "Try ${ DRIVE_APP_NAME }: Free forever": [
         "आज़माएं ${ DRIVE_APP_NAME }: हमेशा के लिए मुफ्त"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "नई ${ BRAND_NAME } सुविधाओं, अपडेट्स और उत्पादों को जनता के लिए जारी होने से पहले आज़माएँ। इससे एप्लिकेशन फिर से लोड हो जाएगा।"
+      ],
       "Try searching by file name, date, or type.": [
         "फाइल नाम, तारीख, या प्रकार खोज के देखे।"
       ],
@@ -4852,6 +4870,9 @@
       ],
       "Would you like to restore your files?": [
         "क्या आप अपनी फ़ाइलें पुनर्स्थापित करना चाहते हैं?"
+      ],
+      "Writing assistant": [
+        "लेखन सहायक"
       ],
       "Yes": [
         "हां"
@@ -5164,12 +5185,6 @@
       ],
       "Calendars": [
         "कैलेंडर"
-      ],
-      "Can edit": [
-        "बदलाव कर सकते है"
-      ],
-      "Can view": [
-        "देख सकते हैं"
       ],
       "Cancel download": [
         "डाउनलोड रद्द करें"
@@ -5624,6 +5639,9 @@
       ],
       "Yes, I want to permanently delete my old files": [
         "हाँ, मुझे अपनी पुरानी फ़ाइलें स्थायी रूप से मिटानी है"
+      ],
+      "Your alias": [
+        "आपका उपनाम"
       ],
       "Your password (admin)": [
         "आपका पासवर्ड (व्यवस्थापक)"
@@ -6112,6 +6130,9 @@
       "${ n } VPN connection": [
         "${ n } VPN कनेक्शन",
         "${ n } VPN कनेक्शन"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } असीमित hide-my-email उपनामों के साथ"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } क्रमादेश"
@@ -6726,6 +6747,9 @@
         "आपके चीज़ का ${ numberOfItems } लिंक मिटाया गया",
         "आपके चीज़ो के ${ numberOfItems } लिंक मिटाए गए"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } को अक्षम कर दिया गया है"
+      ],
       "Access for the member removed": [
         "सदस्य की पहुंच हटा दी गई है"
       ],
@@ -7198,6 +7222,9 @@
       "All aliases": [
         "सभी नकली-नाम"
       ],
+      "Create alias": [
+        "नकली-नाम बनाएं"
+      ],
       "Create an alias": [
         "नकली-नाम बनाएं"
       ],
@@ -7221,6 +7248,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } आज़माएँ"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "अमेज़न पर शॉपिंग आदि के लिए उपयोग किया जाता है।"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "जब आपसे आपका ईमेल पता पूछा जाए, तो इसके बजाय यह उपनाम दें। उपनाम ${ passLink } द्वारा प्रदान किए जाते हैं।"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -7228,9 +7261,17 @@
         "(${ PASS_APP_NAME } खुल जाएगा)"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "घटनाएँ देखें"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "यदि आपका पासवर्ड या अन्य डेटा किसी तिसारे-पक्ष से लीक हुआ है, तो इसकी सूचना प्राप्त करें। ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel **सक्रिय** है और आपके खाते की सुरक्षा कर रहा है।"
       ]
     },
     "Select files": {
@@ -8272,6 +8313,9 @@
       "Night theme": [
         "रात की थीम"
       ],
+      "No breaches detected": [
+        "कोई उल्लंघन नहीं पाया गया"
+      ],
       "No results found": [
         "परिणाम नहीं मिला"
       ],
@@ -8512,6 +8556,9 @@
       "Your 3 GB bonus": [
         "आपका 3 GB का बोनस"
       ],
+      "Your account is protected": [
+        "आपका खाता सुरक्षित है"
+      ],
       "Your changes are not synced yet": [
         "आपके बदलाव अभी तक सिंक नहीं हुए"
       ],
@@ -8536,6 +8583,9 @@
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "स्वचालित इंगित करता है कि इस उपयोगकर्ता को भेजने के लिए संगीतकार में प्रारूप का उपयोग किया जाता है। सादा पाठ इंगित करता है कि संदेश भेजने पर संदेश हमेशा सादे पाठ में परिवर्तित हो जाएगा।"
+      ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "अपने पसंदीदा दिन और रात के विषयों के बीच स्वचालित रूप से स्विच करें, जो आपके सिस्टम के दिन और रात मोड के साथ सिंक में हो।"
       ],
       "Customize import to reduce the number of folders": [
         "फ़ोल्डरों की संख्या कम करने के लिए आयात को अनुकूलित करें"
