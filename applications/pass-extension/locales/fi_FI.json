@@ -17,8 +17,14 @@
       "Add current URL": [
         "Lisää nykyinen URL"
       ],
+      "Add custom domain": [
+        "Lisää oma verkkotunnus"
+      ],
       "Add domain": [
         "Lisää verkkotunnus"
+      ],
+      "Add mailbox": [
+        "Lisää postilaatikko"
       ],
       "Add more": [
         "Lisää kenttiä"
@@ -44,6 +50,9 @@
       "Back": [
         "Takaisin"
       ],
+      "Block contact": [
+        "Estä yhteystieto"
+      ],
       "Bulk delete items from trash": [
         "Poista roskakorista useita kohteita"
       ],
@@ -64,6 +73,12 @@
       ],
       "Change": [
         "Muuta"
+      ],
+      "Check DNS": [
+        "Tarkista DNS"
+      ],
+      "Check settings": [
+        "Tarkista asetukset"
       ],
       "Choose a file or drag it here": [
         "Valitse tiedosto tai pudota se tähän"
@@ -104,6 +119,9 @@
       "Continue without pinning": [
         "Jatka kiinnittämättä"
       ],
+      "Copy alias address": [
+        "Kopioi aliasosoite"
+      ],
       "Copy and close": [
         "Kopioi ja sulje"
       ],
@@ -133,6 +151,9 @@
       ],
       "Create card": [
         "Luo kortti"
+      ],
+      "Create contact": [
+        "Luo yhteystieto"
       ],
       "Create identity": [
         "Luo identiteetti"
@@ -172,6 +193,9 @@
       ],
       "Delete it, I will never need it": [
         "Poista se, en koskaan tarvitse sitä"
+      ],
+      "Delete mailbox": [
+        "Poista postilaatikko"
       ],
       "Delete password": [
         "Poista salasana"
@@ -317,6 +341,9 @@
       "Make admin": [
         "Määritä ylläpitäjäksi"
       ],
+      "Make default": [
+        "Aseta oletukseksi"
+      ],
       "Make editor": [
         "Määritä muokkaajaksi"
       ],
@@ -334,6 +361,9 @@
       ],
       "Maximum views": [
         "Avausten enimmäismäärä"
+      ],
+      "More info": [
+        "Lisätiedot"
       ],
       "More info: ${ safeTitle }": [
         "Lisätietoja: ${ safeTitle }"
@@ -391,6 +421,9 @@
       ],
       "Please retry": [
         "Yritä uudelleen"
+      ],
+      "Re-verify": [
+        "Vahvista uudelleen"
       ],
       "Reactivate now": [
         "Uudelleenaktivoi nyt"
@@ -479,6 +512,9 @@
       "Select": [
         "Valitse"
       ],
+      "Send email": [
+        "Lähetä sähköposti"
+      ],
       "Send invite": [
         "Lähetä kutsu"
       ],
@@ -540,6 +576,15 @@
       "Sync aliases": [
         "Synkronoi aliakset"
       ],
+      "To mailbox": [
+        "Postilaatikkoon"
+      ],
+      "Transfer aliases": [
+        "Siirrä aliakset"
+      ],
+      "Transfer and delete mailbox": [
+        "Siirrä ja poista postilaatikko"
+      ],
       "Transfer ownership": [
         "Siirrä omistajuus"
       ],
@@ -548,6 +593,9 @@
       ],
       "Try again": [
         "Yritä uudelleen"
+      ],
+      "Unblock contact": [
+        "Salli yhteystieto"
       ],
       "Understood, I will never need it": [
         "Ymmärrän, en koskaan tarvitse sitä",
@@ -640,6 +688,12 @@
       "A checked box means the feature is disabled.": [
         "Rasti ruudussa tarkoittaa, että toiminto ei ole käytössä."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Lisää seuraava CNAME DNS -tietue verkkotunnukseesi."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Lisää seuraava TXT DNS -tietue verkkotunnukseesi."
+      ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Pimeän verkon valvonta sisältyy maksullisiin tilauksiin. Hanki se heti käyttöösi päivitämällä tilauksesi."
       ],
@@ -662,6 +716,9 @@
       ],
       "[Error] an item could not be parsed": [
         "[Virhe] kohdetta ei voitu jäsentää"
+      ],
+      "A domain ownership must be verified first.": [
+        "Verkkotunnuksen omistajuus on vahvistettava ensin."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Aliasta ei voitu päivittää tällä hetkellä. Yritä uudelleen myöhemmin"
@@ -731,6 +788,9 @@
         "Havaittiin ${ errors.length } virheellinen CSV-rivi",
         "Havaittiin ${ errors.length } virheellinen CSV-rivi"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Verkkotunnusta ei voitu vahvistaa. Varmista, että olet lisännyt oikeat DNS-tietueet"
+      ],
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
       ],
@@ -758,11 +818,32 @@
       "Failed to add email address": [
         "Sähköpostiosoitteen lisäys epäonnistui"
       ],
+      "Failed to block the contact": [
+        "Yhteystiedon estäminen epäonnistui"
+      ],
+      "Failed to create domain": [
+        "Verkkotunnuksen luominen epäonnistui"
+      ],
+      "Failed to create new mailbox": [
+        "Uuden postilaatikon luominen epäonnistui"
+      ],
+      "Failed to create the contact": [
+        "Yhteystiedon luominen epäonnistui"
+      ],
+      "Failed to delete domain": [
+        "Verkkotunnuksen poistaminen epäonnistui"
+      ],
       "Failed to delete email address from monitoring": [
         "Sähköpostiosoitteen poisto valvonnasta epäonnistui"
       ],
       "Failed to delete selected items": [
         "Valittujen kohteiden poisto epäonnistui"
+      ],
+      "Failed to delete the contact": [
+        "Yhteystiedon poistaminen epäonnistui"
+      ],
+      "Failed to delete the mailbox": [
+        "Postilaatikon poistaminen epäonnistui"
       ],
       "Failed to edit user's access.": [
         "Käyttäjän käyttöoikeuden muutos epäonnistui."
@@ -772,6 +853,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Tähän sähköpostialiakseen liittyvien tietomurtojen lataus epäonnistui"
+      ],
+      "Failed to load domain settings.": [
+        "Verkkotunnusasetusten lataaminen epäonnistui."
       ],
       "Failed to load item history": [
         "Kohteen historian lataus epäonnistui"
@@ -791,6 +875,9 @@
       "Failed to remove user's access.": [
         "Käyttäjän käyttöoikeuden mitätöinti epäonnistui."
       ],
+      "Failed to resend verification code": [
+        "Vahvistuskoodin uudelleenlähettäminen epäonnistui"
+      ],
       "Failed to resend verification for custom email": [
         "Ulkoisen sähköpostiosoitteen vahvistuksen uudelleenlähetys epäonnistui"
       ],
@@ -809,8 +896,23 @@
       "Failed to unpin item": [
         "Kohteen irrotus epäonnistui"
       ],
+      "Failed to update catch-all setting.": [
+        "Nappaa kaikki -asetuksen muuttaminen epäonnistui."
+      ],
+      "Failed to update default domain": [
+        "Oletusverkkotunnuksen päivittäminen epäonnistui"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Verkkotunnuksen postilaatikoiden päivittäminen epäonnistui."
+      ],
+      "Failed to update domain name.": [
+        "Verkkotunnuksen muuttaminen epäonnistui."
+      ],
       "Failed to update monitoring settings": [
         "Valvonta-asetusten muutos epäonnistui"
+      ],
+      "Failed to verify domain": [
+        "Verkkotunnuksen vahvistaminen epäonnistui"
       ],
       "Failed to verify email address": [
         "Sähköpostiosoitteen vahvistus epäonnistui"
@@ -1114,6 +1216,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } noudattaa järjestelmäsi teemaa."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } luo välitysosoitteen (jota kutsutaan myös käänteiseksi aliakseksi), jonka voit kopioida leikepöydälle."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot, maksukortit ja identiteetit."
       ],
@@ -1147,6 +1252,9 @@
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 päivää aikaa kokeilla premium-ominaisuuksia ilmaiseksi. Voimassa vain ensimmäisen ${ BRAND_NAME } -viikkosi ajan."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Yhteystieto luodaan jokaiselle sähköpostiosoitteelle, joka lähettää tai vastaanottaa sähköposteja osoitteelta ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } -sovelluksesta on saatavilla uusi versio. Nauti uusista ominaisuuksista ja vikakorjauksista päivittämällä se."
@@ -1190,6 +1298,9 @@
       "Aliases out of sync (${ aliasCount })": [
         "Synkronoimattomat aliakset (${ aliasCount })"
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Kaikki postilaatikkoa ${ emailJSX } käyttävät aliakset poistetaan myös."
+      ],
       "All breaches for this address were resolved": [
         "Kaikki tämän osoitteet tietomurrot ratkaistiin"
       ],
@@ -1211,11 +1322,17 @@
       "An item previously shared with you was removed": [
         "Sinulle aiemmin jaettu kohde on poistettu"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Oletko varma, että haluat poistaa aliaksen ${ emailJSX } postilaatikoistasi?"
+      ],
       "Are you sure you want to remove the link?": [
         "Haluatko varmasti poistaa linkin?"
       ],
       "Auto-lock successfully disabled.": [
         "Automaattilukitus poistettiin käytöstä."
+      ],
+      "automatically": [
+        "automaattisesti"
       ],
       "Automatically copy the generated password to the clipboard": [
         "Kopioi luotu salasana leikepöydälle automaattisesti."
@@ -1274,6 +1391,9 @@
       "Copied to clipboard": [
         "Kopioitiin leikepöydälle"
       ],
+      "Created ${ time }.": [
+        "Luotu: ${ time }."
+      ],
       "Creating alias...": [
         "Luodaan aliasta..."
       ],
@@ -1307,6 +1427,12 @@
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Tutustu ${ PASS_APP_NAME }-YouTube-videoon"
       ],
+      "DNS changes could take up to 24 hours to update.": [
+        "DNS-muutoksissa voi kestää jopa 24 tuntia."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Verkkotunnus: ${ domainPath } tai @"
+      ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
       ],
@@ -1330,6 +1456,9 @@
       ],
       "Email address successfully included in monitoring": [
         "Sähköpostiosoite sisällytettiin valvontaan"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Lähetä sähköpostia tähän osoitteeseen, ja se näyttää tulevan esimerkiksi osoitteesta ${ exampleEmail }."
       ],
       "Emptying trash...": [
         "Tyhjennetään roskakoria..."
@@ -1357,6 +1486,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Automaattista PIN-lukitusta otetaan käyttöön"
+      ],
+      "Enter the address you want to email.": [
+        "Syötä osoite, johon haluat lähettää sähköpostia."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Syötä vahvistuskoodi. Numero ${ digit }."
@@ -1410,6 +1542,9 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Täältä löydät kaikki tarvittavat tiedot, jotta pääset alkuun."
+      ],
+      "Here's how it works:": [
+        "Näin se toimii:"
       ],
       "Import in progress:": [
         "Tuonti on käynnissä:"
@@ -1657,6 +1792,9 @@
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Aloita ${ PASS_SHORT_APP_NAME }n käyttäminen syöttämällä lisäsalasanasi."
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Seuraa alla olevia ohjeita verkkotunnuksesi määrittämiseksi."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Huomaa, että poistettua aliasta ei voi palauttaa. Haluatko sen sijaan poistaa aliaksen käytöstä?"
       ],
@@ -1681,6 +1819,15 @@
       "Quickly autofill your saved credentials.": [
         "Automaattitäytä tallennetut kirjautumistietosi nopeasti."
       ],
+      "Record: CNAME": [
+        "Tietue: CNAME"
+      ],
+      "Record: MX": [
+        "Tietue: MX"
+      ],
+      "Record: TXT": [
+        "Tietue: TXT"
+      ],
       "Registering extra password...": [
         "Lisäsalasanaa lisätään..."
       ],
@@ -1702,6 +1849,9 @@
       "Restoring trashed items...": [
         "Palautetaan kohteita roskakorista..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Käänteinen alias kopioitiin leikepöydälle. Lähetä sähköposti tähän osoitteeseen, ja ${ Email } vastaanottaa sen."
+      ],
       "Save login": [
         "Tallenna kirjautumistieto"
       ],
@@ -1710,6 +1860,9 @@
       ],
       "Secure links": [
         "Suojatut linkit"
+      ],
+      "See more info": [
+        "Katso lisätietoja"
       ],
       "Select an existing login or create a new one.": [
         "Valitse olemassa oleva kirjautumistieto tai luo uusi."
@@ -1771,6 +1924,9 @@
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
       ],
+      "The display name when sending an email from this alias.": [
+        "Näyttönimi, kun lähetät sähköpostia tästä aliaksesta."
+      ],
       "The export will only contain vaults that you own.": [
         "Vienti sisältää vain omistamasi holvit."
       ],
@@ -1796,6 +1952,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Vientitiedosto on salaamaton, eli kuka tahansa sen käsittelijä voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
       ],
+      "This operation is irreversible.": [
+        "Tätä toimintoa ei voi kumota."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Tätä toimintoa ei voi kumota. Kaikki verkkotunnusta ${ domainTextBold } käyttävät aliakset poistetaan. Huomaa, että poistettuja aliaksia ei voi palauttaa."
+      ],
       "This option is currently not available on your device.": [
         "Tämä valinta ei ole tällä hetkellä käytettävissä laitteellasi."
       ],
@@ -1811,6 +1973,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tämä hylkää laitteen **${ name }**, joka yritti kirjautua ${ BRAND_NAME }-tilillesi **${ date }**."
       ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Voit pitää henkilökohtaisen sähköpostiosoitteesi piilossa luomalla aliasyhteystiedon, joka naamioi sen."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Tuo tietosi muista salasanahallinnoista lataamalla käyttämästäsi palvelusta viemäsi tiedosto ${ PASS_APP_NAME }iin. Kun tietosi on tuotu, poista vientitiedosto."
       ],
@@ -1822,6 +1987,12 @@
       ],
       "Unable to copy to clipboard": [
         "Leikepöydälle kopiointi epäonnistui"
+      ],
+      "Unconfigured": [
+        "Ei määritetty"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Rajattomasti Hide-my-email-aliaksia ja edistynyt aliashallinta"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Käytä pääsyavaimiasi avaamalla ${ PASS_APP_NAME } PIN-koodillasi"
@@ -1870,6 +2041,9 @@
       ],
       "User's access successfully updated": [
         "Käyttäjän käyttöoikeutta muutettiin"
+      ],
+      "Value:": [
+        "Arvo:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Holvi \"${ payload.content.name }\" poistettiin"
@@ -1958,6 +2132,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Tiliäsi on rajoitettu, koska organisaatiosi vaatii kaksivaiheisen tunnistautumisen. Ota se käyttöön tilisi asetuksista tai ole yhteydessä ylläpitoosi."
       ],
+      "your domain": [
+        "verkkotunnuksesi"
+      ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
       ],
@@ -1969,6 +2146,10 @@
       "${ aliasCount } alias": [
         "${ aliasCount } alias",
         "${ aliasCount } aliasta"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } esto",
+        "${ blockedCount } estoa"
       ],
       "${ config.options.length } character": [
         "${ config.options.length } merkki",
@@ -1982,6 +2163,10 @@
         "${ days } vuorokausi",
         "${ days } päivää"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } välitys",
+        "${ forwardCount } välitystä"
+      ],
       "${ hours } hour": [
         "${ hours } tunti",
         "${ hours } tuntia"
@@ -1990,11 +2175,23 @@
         "${ minutes } minuutti",
         "${ minutes } minuuttia"
       ],
+      "${ months } month": [
+        "${ months } kuukausi",
+        "${ months } kuukautta"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-versio"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } vastaus",
+        "${ repliedCount } vastausta"
+      ],
+      "${ years } year": [
+        "${ years } vuosi",
+        "${ years } vuotta"
       ],
       "1 hour": [
         "Tunnin kuluttua"
@@ -2047,6 +2244,9 @@
       "Account": [
         "Tili"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Lisää tähän verkkotunnukseen satunnainen etuliite uutta aliasta luotaessa."
+      ],
       "Add section": [
         "Lisää osio"
       ],
@@ -2061,6 +2261,9 @@
       ],
       "Alias address": [
         "Aliaksen osoite"
+      ],
+      "Alias address (disabled)": [
+        "Aliasosoite (ei käytössä)"
       ],
       "Alias management": [
         "Aliashallinta"
@@ -2125,6 +2328,9 @@
       "Cards": [
         "Kortit"
       ],
+      "Catch-All": [
+        "Nappaa kaikki"
+      ],
       "City": [
         "Kaupunki"
       ],
@@ -2136,6 +2342,9 @@
       ],
       "Confirm vault name": [
         "Vahvista holvin nimi"
+      ],
+      "Contact created ${ time } ago.": [
+        "Yhteystieto luotiin ${ time } sitten."
       ],
       "Contact details": [
         "Yhteystiedot"
@@ -2197,8 +2406,14 @@
       "Display name": [
         "Näyttönimi"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Verkkotunnus"
+      ],
+      "Domain:": [
+        "Verkkotunnus:"
       ],
       "Domains": [
         "Verkkotunnukset"
@@ -2323,6 +2538,9 @@
       "Include numbers (0-9)": [
         "Sisällytä numerot (0-9)"
       ],
+      "Info": [
+        "Tiedot"
+      ],
       "Instagram handle": [
         "Instagram-tunnus"
       ],
@@ -2380,6 +2598,9 @@
       "Logins": [
         "Kirjautumistiedot"
       ],
+      "Mailboxes": [
+        "Postilaatikot"
+      ],
       "Make all admins": [
         "Määritä kaikki ylläpitäjiksi"
       ],
@@ -2425,14 +2646,23 @@
       "Newest to oldest": [
         "Uusimmasta vanhimpaan"
       ],
+      "No Activity in the last 14 days.": [
+        "Ei toimintaa viimeisten 14 päivän aikana."
+      ],
       "No history": [
         "Historiaa ei ole"
       ],
       "None": [
         "Ei mitään"
       ],
+      "Not selected": [
+        "Ei valittuna"
+      ],
       "Note": [
         "Muistiinpano"
+      ],
+      "Note • SimpleLogin": [
+        "Muistiinpano • SimpleLogin"
       ],
       "Notes": [
         "Muistiinpanot"
@@ -2494,6 +2724,12 @@
       "Prefix": [
         "Etuliite"
       ],
+      "Premium domain": [
+        "Premium-verkkotunnus"
+      ],
+      "Priority:": [
+        "Prioriteetti:"
+      ],
       "Prompt for auto-save": [
         "Tarjoa automaattitallennusta"
       ],
@@ -2502,6 +2738,9 @@
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Suojaa ${ PASS_APP_NAME } lisäsalasanalla"
+      ],
+      "Public domain": [
+        "Julkinen verkkotunnus"
       ],
       "Rate us": [
         "Arvostele meidät"
@@ -2532,6 +2771,9 @@
       ],
       "Security code": [
         "Turvakoodi"
+      ],
+      "Select a domain": [
+        "Valitse verkkotunnus"
       ],
       "Select an email address": [
         "Valitse sähköpostiosoite"
@@ -2592,6 +2834,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Synkronoi aliakset SimpleLoginiin"
+      ],
+      "Target:": [
+        "Kohde:"
       ],
       "Tax number": [
         "Veronumero"
@@ -2666,6 +2911,9 @@
       "Username/email": [
         "Käyttäjätunnus/sähköpostiosoite"
       ],
+      "Value:": [
+        "Arvo:"
+      ],
       "Vault ID": [
         "Holvin ID"
       ],
@@ -2707,6 +2955,9 @@
       ],
       "Your browser will stop using its built-in password manager.": [
         "Selaimesi lopettaa sisäänrakennetun salasanahallintansa käyttämisen."
+      ],
+      "Your domain": [
+        "Verkkotunnuksesi"
       ],
       "ZIP or Postal code": [
         "Postinumero"
@@ -2772,6 +3023,9 @@
       "Add text": [
         "Lisää teksti"
       ],
+      "Alias Display Name": [
+        "Aliaksen näyttönimi"
+      ],
       "Email address": [
         "Sähköpostiosoite"
       ],
@@ -2798,6 +3052,15 @@
       ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "my-domain.com": [
+        "oma-verkkotunnus.fi"
+      ],
+      "Name to display when sending an email": [
+        "Nimi, joka näytetään sähköpostia lähetettäessä"
+      ],
+      "Note from SimpleLogin": [
+        "Muistiinpano SimpleLogista"
       ],
       "Password": [
         "Salasana"
@@ -2910,9 +3173,57 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Aliasten synkronointi on käytössä. SimpleLogin-aliasten synkronointi voi kestää jonkin aikaa."
       ],
+      "Catch-all setting successfully disabled": [
+        "Nappaa kaikki -asetus poistettiin käytöstä"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Nappaa kaikki -asetus otettiin käyttöön"
+      ],
+      "Contact successfully blocked": [
+        "Yhteystieto estettiin"
+      ],
+      "Contact successfully created": [
+        "Yhteystieto luotiin"
+      ],
+      "Contact successfully deleted": [
+        "Yhteystieto poistettiin"
+      ],
+      "Contact successfully unblocked": [
+        "Yhteystieto sallittiin"
+      ],
+      "Default domain successfully updated": [
+        "Oletusverkkotunnus muutetiin"
+      ],
+      "Default mailbox successfully updated": [
+        "Oletuspostilaatikko muutetiin"
+      ],
+      "Display name successfully updated": [
+        "Näyttönimi muutettiin"
+      ],
+      "Domain successfully deleted": [
+        "Verkkotunnus poistettiin"
+      ],
+      "Mailbox successfully deleted": [
+        "Postilaatikko poistettiin"
+      ],
+      "Mailbox successfully verified": [
+        "Postilaatikko vahvistettiin"
+      ],
+      "Mailboxes successfully updated": [
+        "Postilaatikot päivitettiin"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Satunnaisen etuliitteen luominen on poistettu käytöstä"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Satunnaisen etuliitteen luominen on otettu käyttöön"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsenen.",
         "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsentä."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Vahvistussähköposti lähetettiin. Tarkista saapuneet vahvistaaksesi postilaatikkosi"
       ]
     },
     "Theme": {
@@ -2933,11 +3244,29 @@
       "Actions": [
         "Toiminnot"
       ],
+      "Add custom domain": [
+        "Lisää oma verkkotunnus"
+      ],
+      "Add mailbox": [
+        "Lisää postilaatikko"
+      ],
+      "Alias contacts": [
+        "Aliasyhteystiedot"
+      ],
+      "Aliases": [
+        "Aliakset"
+      ],
+      "Auto create/on the fly alias": [
+        "Automaattiluotu/lennossa -alias"
+      ],
       "Auto-lock update": [
         "Muuta automaattilukitusta"
       ],
       "Autofill": [
         "Automaattitäyttö"
+      ],
+      "Blocked addresses": [
+        "Estetyt osoitteet"
       ],
       "Confirm extra password": [
         "Vahvista lisäsalasana"
@@ -2966,9 +3295,24 @@
       "Current version": [
         "Nykyinen versio"
       ],
+      "Custom domains": [
+        "Omat verkkotunnukset"
+      ],
+      "Default": [
+        "Oletus"
+      ],
+      "Default Display Name": [
+        "Oletusarvoinen näyttönimi"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "Poistetaanko ${ deletedItemsCount } kohde?",
         "Poistetaanko ${ deletedItemsCount } kohdetta?"
+      ],
+      "Delete domain": [
+        "Poista verkkotunnus"
+      ],
+      "Delete mailbox": [
+        "Poista postilaatikko"
       ],
       "Delete this item?": [
         "Poistetaanko tämä kohde?"
@@ -2978,6 +3322,18 @@
       ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (valinnainen)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (valinnainen)"
+      ],
+      "Domain": [
+        "Verkkotunnus"
+      ],
+      "Domain ownership verification": [
+        "Verkkotunnuksen omistajuuden vahvistus"
       ],
       "Email": [
         "Sähköposti"
@@ -3039,6 +3395,9 @@
       "Low disk space": [
         "Tallennustila on vähissä"
       ],
+      "Mailbox": [
+        "Postilaatikko"
+      ],
       "Member limit": [
         "Jäsenrajoitus"
       ],
@@ -3061,6 +3420,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Siirrä kohde holviin \"${ vaultName }\""
+      ],
+      "MX record": [
+        "MX-tietue"
       ],
       "No items selected": [
         "Kohteita ei ole valittu"
@@ -3096,6 +3458,9 @@
         "Huomaa, että poistettua aliasta ei voi palauttaa.",
         "Huomaa, että poistettuja aliaksia ei voi palauttaa."
       ],
+      "Random Prefix Generation": [
+        "Satunnaisen etuliitteen luominen"
+      ],
       "Reject device?": [
         "Hylätäänkö laite?"
       ],
@@ -3114,6 +3479,9 @@
       "Secure your data": [
         "Suojaa tietosi"
       ],
+      "Select the default domain for aliases": [
+        "Valitse aliaksille oletusverkkotunnus"
+      ],
       "Set access level": [
         "Aseta käyttöoikeustaso"
       ],
@@ -3125,6 +3493,9 @@
       ],
       "Share with": [
         "Jaa henkilöille"
+      ],
+      "SPF (Optional)": [
+        "SPF (valinnainen)"
       ],
       "Status": [
         "Tila"
@@ -3159,6 +3530,9 @@
       "Unlock ${ brandNameJSX }": [
         "Avaa ${ brandNameJSX }"
       ],
+      "Unverified": [
+        "Vahvistamaton"
+      ],
       "Update available": [
         "Päivitys saatavilla"
       ],
@@ -3183,6 +3557,9 @@
       "Welcome to your new password manager!": [
         "Tervetuloa uuteen salasanahallintaasi!"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Mitä eroa on ${ PASS_SHORT_APP_NAME }- ja SimpleLogin-muistiinpanoilla?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName } -tilauksesi päättyy ${ endDate }"
       ],
@@ -3198,6 +3575,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "Verkkotunnuksen URL-osoite on virheellinen"
+      ],
       "Duplicated URL": [
         "Kahdennettu URL"
       ],
@@ -3271,8 +3651,14 @@
       "Delete alias": [
         "Poista alias"
       ],
+      "Domain cannot be empty": [
+        "Verkkotunnus ei voi olla tyhjä"
+      ],
       "Duplicate email addresses.": [
         "Sähköpostiosoitteiden kaksoiskappaleita."
+      ],
+      "Email cannot be empty": [
+        "Sähköposti ei voi olla tyhjä"
       ],
       "Empty note": [
         "Tyhjä muistiinpano"
@@ -3352,6 +3738,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Ota meihin yhteyttä ongelman selvittämiseksi"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Huomaa, että poistettuja aliaksia ei voi palauttaa"
       ],
       "Please verify your email address in order to use email aliases": [
         "Vahvista sähköpostiosoitteesi käyttääksesi sähköpostialiaksia"

@@ -17,8 +17,14 @@
       "Add current URL": [
         "Adăugare URL curent"
       ],
+      "Add custom domain": [
+        "Adăugare domeniu personal"
+      ],
       "Add domain": [
         "Adăugare domeniu"
+      ],
+      "Add mailbox": [
+        "Adăugare cont de e-mail"
       ],
       "Add more": [
         "Adăugare"
@@ -44,6 +50,9 @@
       "Back": [
         "Înapoi"
       ],
+      "Block contact": [
+        "Blocare contact"
+      ],
       "Bulk delete items from trash": [
         "Ștergere grup de articole din gunoi"
       ],
@@ -64,6 +73,12 @@
       ],
       "Change": [
         "Schimbare"
+      ],
+      "Check DNS": [
+        "Verificare DNS"
+      ],
+      "Check settings": [
+        "Verificare setări"
       ],
       "Choose a file or drag it here": [
         "Alegeți un fișier sau trageți-l aici"
@@ -104,6 +119,9 @@
       "Continue without pinning": [
         "Continuare fără fixare"
       ],
+      "Copy alias address": [
+        "Copiere alias adresă"
+      ],
       "Copy and close": [
         "Copiere și închidere"
       ],
@@ -133,6 +151,9 @@
       ],
       "Create card": [
         "Creare card"
+      ],
+      "Create contact": [
+        "Creare contact"
       ],
       "Create identity": [
         "Creare identitate"
@@ -172,6 +193,9 @@
       ],
       "Delete it, I will never need it": [
         "Ștergere, nu mai am nevoie de el"
+      ],
+      "Delete mailbox": [
+        "Ștergere cont de e-mail"
       ],
       "Delete password": [
         "Ștergere parolă"
@@ -317,6 +341,9 @@
       "Make admin": [
         "Stabilire administrator"
       ],
+      "Make default": [
+        "Setează ca implicit"
+      ],
       "Make editor": [
         "Stabilire editor"
       ],
@@ -334,6 +361,9 @@
       ],
       "Maximum views": [
         "Maxim vizualizări"
+      ],
+      "More info": [
+        "Detalii"
       ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
@@ -391,6 +421,9 @@
       ],
       "Please retry": [
         "Reîncercați"
+      ],
+      "Re-verify": [
+        "Reverificare"
       ],
       "Reactivate now": [
         "Reactivare"
@@ -479,6 +512,9 @@
       "Select": [
         "Selectare"
       ],
+      "Send email": [
+        "Trimitere mesaj"
+      ],
       "Send invite": [
         "Trimitere invitație"
       ],
@@ -541,6 +577,15 @@
       "Sync aliases": [
         "Sincronizare aliasuri"
       ],
+      "To mailbox": [
+        "Către contul de e-mail"
+      ],
+      "Transfer aliases": [
+        "Transferare aliasuri"
+      ],
+      "Transfer and delete mailbox": [
+        "Transferare și ștergere cont de e-mail"
+      ],
       "Transfer ownership": [
         "Transfer proprietar"
       ],
@@ -549,6 +594,9 @@
       ],
       "Try again": [
         "Reîncercați"
+      ],
+      "Unblock contact": [
+        "Deblocare contact"
       ],
       "Understood, I will never need it": [
         "Am înțeles, nu mai nevoie de el",
@@ -643,11 +691,44 @@
       "A checked box means the feature is disabled.": [
         "O casetă bifată înseamnă că funcția e dezactivată."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Adăugați următoarea înregistrare CNAME în DNS-ul domeniului personal."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Adăugați următoarea înregistrare MX în DNS-ul domeniului personal. Rețineți că există un punct (.) la adresele țintei finale. Dacă registratorul domeniului nu vă permite acest punct final, eliminați-l când adăugați înregistrarea DNS."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Adăugați următoarea înregistrare TXT în DNS-ul domeniului personal."
+      ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Monitorizarea de pe internetul ascuns este disponibilă cu un plan cu plată. Modificați planul pentru a avea acces imediat."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } este o metodă de autentificare a e-mailului concepută pentru a evita falsificarea acestuia. Configurarea DKIM este foarte recomandată pentru a reduce șansele ca e-mailurile trimise să vă ajungă în folderul de mesaje nedorite (spam) al destinatarului."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } este conceput pentru a proteja domeniul împotriva utilizării neautorizate, cunoscută în mod obișnuit ca falsificarea e-mailului. Construită în jurul SPF și DKIM, o politică DMARC îi spune serverului de e-mail care primește ce să facă dacă niciuna dintre aceste metode de autentificare nu trece."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Dacă utilizați un subdomeniu, de ex. ${ subdomainExample }, trebuie să utilizați în schimb ${ dmarcExampleSubdomain } ca domeniu."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Dacă utilizați un subdomeniu, de ex. subdomeniu.domeniu.com, trebuie să utilizați în schimb ${ domainKeyExampleSubdomain } ca domeniu. Aceasta înseamnă că, dacă domeniul personal este mail.domeniu.com, ar trebui să introduceți ${ domainKeyExampleMail } ca domeniu."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Dacă utilizați CloudFlare, asigurați-vă că nu selectați opțiunea Proxy."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista de domenii în care anumite funcții automate din ${ PASS_SHORT_APP_NAME } (autocompletare, autosugerare) nu ar trebui să fie executate. ${ infoText }"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Unele registratori de DNS ar putea necesita o cale de înregistrare completă, în acest caz, utilizați în schimb ${ domain } ca valoare de domeniu."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Unii registratori de domenii (Namecheap, CloudFlare etc.) pot folosi @ pentru domeniul rădăcină."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } este o metodă de autentificare a e-mailului concepută pentru a detecta falsificarea adreselor expeditorului în timpul livrării e-mailului. Configurarea SPF este foarte recomandată pentru a reduce șansele ca e-mailurile trimise să vă ajungă în folderul de mesaje nedorite (spam) al destinatarului."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Acest cont este vulnerabil, accesați serviciul și schimbați-vă parola."
@@ -655,8 +736,16 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Acest serviciu oferă A2A. Activați-l pentru o securitate suplimentară a contului."
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "Pentru a dovedi că dețineți domeniul, adăugați următoarea înregistrare TXT. Unii registratori de domenii (Namecheap, CloudFlare etc.) ar putea folosi @ pentru domeniul rădăcină."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Deblocați funcțiile de securitate avansate și jurnalele detaliate pentru a vă securiza prezența online."
+      ]
+    },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "orice@${ domainDisplay }"
       ]
     },
     "Error": {
@@ -665,6 +754,9 @@
       ],
       "[Error] an item could not be parsed": [
         "[Eroare] Un articol nu a putut fi analizat."
+      ],
+      "A domain ownership must be verified first.": [
+        "Deținerea unui domeniu trebuie verificată mai întâi."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Aliasurile nu au putut fi actualizate momentan. Reîncercați mai târziu."
@@ -736,6 +828,9 @@
         "S-au detectat ${ errors.length } rânduri cu erori în csv.",
         "S-au detectat ${ errors.length } de rânduri cu erori în csv."
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Domeniul nu a putut fi verificat. Asigurați-vă că ați adăugat înregistrările DNS corecte."
+      ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil, reîncercați mai târziu."
       ],
@@ -763,11 +858,32 @@
       "Failed to add email address": [
         "Adăugarea adresei de e-mail a eșuat."
       ],
+      "Failed to block the contact": [
+        "Contactul nu s-a putut bloca."
+      ],
+      "Failed to create domain": [
+        "Crearea domeniului a eșuat."
+      ],
+      "Failed to create new mailbox": [
+        "Crearea unui cont nou a eșuat."
+      ],
+      "Failed to create the contact": [
+        "Contactul nu s-a putut crea."
+      ],
+      "Failed to delete domain": [
+        "Ștergerea domeniului a eșuat."
+      ],
       "Failed to delete email address from monitoring": [
         "Eliminarea adresei de la monitorizare a eșuat."
       ],
       "Failed to delete selected items": [
         "Ștergerea articolelor selectate a eșuat."
+      ],
+      "Failed to delete the contact": [
+        "Contactul nu s-a putut șterge."
+      ],
+      "Failed to delete the mailbox": [
+        "Ștergerea contului a eșuat."
       ],
       "Failed to edit user's access.": [
         "Eșuare editare acces utilizator."
@@ -777,6 +893,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Încărcarea divulgărilor pentru acest alias a eșuat."
+      ],
+      "Failed to load domain settings.": [
+        "Încărcarea setărilor domeniului a eșuat."
       ],
       "Failed to load item history": [
         "Încărcarea istoricului articolelor a eșuat."
@@ -796,6 +915,9 @@
       "Failed to remove user's access.": [
         "Eșuare eliminare acces utilizator."
       ],
+      "Failed to resend verification code": [
+        "Retrimiterea codului de verificare a eșuat."
+      ],
       "Failed to resend verification for custom email": [
         "Retrimiterea codului de verificare pentru adresa personală a eșuat."
       ],
@@ -814,8 +936,26 @@
       "Failed to unpin item": [
         "Anularea fixării articolului a eșuat."
       ],
+      "Failed to update catch-all setting.": [
+        "Actualizarea setărilor de agregare a mesajelor a eșuat."
+      ],
+      "Failed to update default domain": [
+        "Actualizarea domeniului implicit a eșuat."
+      ],
+      "Failed to update domain mailboxes.": [
+        "Actualizarea conturilor de e-mail pentru domeniu a eșuat."
+      ],
+      "Failed to update domain name.": [
+        "Actualizarea numelui domeniului a eșuat."
+      ],
       "Failed to update monitoring settings": [
         "Actualizarea setărilor de monitorizare a eșuat."
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Nu s-a putut actualiza setarea de generare aleatorie a prefixului."
+      ],
+      "Failed to verify domain": [
+        "Verificarea domeniului a eșuat."
       ],
       "Failed to verify email address": [
         "Verificarea adresei a eșuat."
@@ -1130,6 +1270,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } va folosi tema ca cea a sistemului."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } va genera o adresă de redirecționare (cunoscută și ca alias invers) pe care o puteți copia în memorie."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } va importa doar date de conectare, notițe, carduri de plată și identități."
       ],
@@ -1164,6 +1307,9 @@
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Aveți 7 zile de încercare gratuită a funcțiilor premium. Valabil doar pentru prima săptămână de utilizare a ${ BRAND_NAME }."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Este creat un contact pentru fiecare adresă de e-mail care trimite mesaje către sau primește de la ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Este disponibilă o versiune nouă ${ PASS_APP_NAME }. Actualizați-o pentru a vă bucura de cele mai recente caracteristici și remedieri de erori."
@@ -1207,6 +1353,9 @@
       "Aliases out of sync (${ aliasCount })": [
         "Aliasuri nesincronizate (${ aliasCount })"
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Vir fi șterse și toate aliasurile care utilizează contul de email ${ emailJSX }."
+      ],
       "All breaches for this address were resolved": [
         "Toate divulgările pentru această adresă s-au rezolvat."
       ],
@@ -1228,11 +1377,20 @@
       "An item previously shared with you was removed": [
         "Un articol care v-a fost partajat a fost eliminat."
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Sigur doriți să eliminați ${ emailJSX }?"
+      ],
       "Are you sure you want to remove the link?": [
         "Sigur doriți să eliminați legătura web?"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Următoarele conturi de e-mail creează automat aliasuri:"
+      ],
       "Auto-lock successfully disabled.": [
         "Blocarea automată s-a dezactivat."
+      ],
+      "automatically": [
+        "automat"
       ],
       "Automatically copy the generated password to the clipboard": [
         "Copiați automat parola generată în memorie."
@@ -1248,6 +1406,9 @@
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
         "Datele biometrice vor fi dezactivate și vor trebui reactivate."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Aduceți-vă propriul domeniu și nu trebuie să cumpărați încă o soluție de găzduire de e-mail."
       ],
       "Built in 2FA authenticator": [
         "Autentificator A2F încorporat."
@@ -1291,6 +1452,12 @@
       "Copied to clipboard": [
         "Copiat în memorie"
       ],
+      "Create contact illustration": [
+        "Ilustrare creare contact"
+      ],
+      "Created ${ time }.": [
+        "Creat ${ time }."
+      ],
       "Creating alias...": [
         "Se creează aliasul…"
       ],
@@ -1302,6 +1469,9 @@
       ],
       "Decrypting your data": [
         "Se decriptează datele"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Numele afișat implicit pentru aliasurile create cu ${ domainDisplay }, dacă nu este suprascris de numele afișat al aliasului."
       ],
       "Deleted items will be moved here first": [
         "Articolele șterse vor fi mai întâi mutate aici"
@@ -1323,6 +1493,12 @@
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Descoperiți videoclipurile ${ PASS_APP_NAME } pe Youtube"
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Actualizarea modificărilor efectuate la DNS ar putea dura până la 24 de ore."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Domeniu: ${ domainPath } sau @"
       ],
       "Drop file here to upload": [
         "Plasați fișiere aici pentru încărcare"
@@ -1347,6 +1523,15 @@
       ],
       "Email address successfully included in monitoring": [
         "Adresa de e-mail s-a inclus la monitorizare."
+      ],
+      "Email headers illustration": [
+        "Ilustrare antete e-mail"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Mesajele trimise de la această adresă vor apărea ca fiind trimise de la ${ exampleEmail } de exemplu."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Mesajele trimise către aliasurile personale sunt redirecționate către conturile de e-mail. Un alias poate avea mai multe conturi de e-mail: util pentru a partaja un alias între dvs. și alți prieteni."
       ],
       "Emptying trash...": [
         "Se golește gunoiul..."
@@ -1374,6 +1559,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Se activează autoblocarea cu PIN."
+      ],
+      "Enter the address you want to email.": [
+        "Introduceți adresa la care trimiteți mesajul."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduceți codul de verificare. ${ digit } cifre."
@@ -1430,6 +1618,9 @@
       "Here you will find all the necessary information to get you started.": [
         "Aici veți găsi toate informațiile necesare pentru a începe."
       ],
+      "Here's how it works:": [
+        "Iată cum funcționează:"
+      ],
       "Import in progress:": [
         "Importare în derulare:"
       ],
@@ -1443,6 +1634,9 @@
       ],
       "Imported on ${ date }": [
         "Importat la ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "În ${ PASS_SHORT_APP_NAME }, un articol notiță este criptat cu cheia de criptare a articolului și numai utilizatorii care au acces la articol pot vizualiza notița. Nici măcar ${ BRAND_NAME } sau SimpleLogin nu o pot vedea."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Pentru a obține cea mai bună experiență cu ${ PASS_APP_NAME }, acordați permisiunile de extensie necesare."
@@ -1559,6 +1753,9 @@
       ],
       "Moving items to trash": [
         "Se mută articolele în gunoi."
+      ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Trebuie să trimiteți un mesaj cuiva, dar nu doriți ca acesta să vă vadă adresa de e-mail? Configurați un alias de contact."
       ],
       "Never": [
         "Niciodată"
@@ -1682,6 +1879,9 @@
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Introduceți parola suplimentară pentru a începe să utilizați ${ PASS_SHORT_APP_NAME }."
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Urmați pașii de mai jos pentru a vă seta domeniul."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "După ștergere, aliasul nu mai poate fi restaurat. Doriți să-l dezactivați în schimb?"
       ],
@@ -1690,6 +1890,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Treceți la un plan superior pentru a avea acces timpuriu la aplicația web ${ PASS_APP_NAME }."
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Utilizați domeniul cu calea completă, de exemplu domeniul-meu.com sau subdomeniul-meu.domeniul-meu.com dacă utilizați un subdomeniu."
       ],
       "Press Enter to copy": [
         "Apăsați Enter pentru copiere"
@@ -1705,6 +1908,15 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Autocompletați rapid datele de conectare salvate."
+      ],
+      "Record: CNAME": [
+        "Înregistrare: CNAME"
+      ],
+      "Record: MX": [
+        "Înregistrare: MX"
+      ],
+      "Record: TXT": [
+        "Înregistrare: TXT"
       ],
       "Registering extra password...": [
         "Se înregistrează parola suplimentară..."
@@ -1727,6 +1939,9 @@
       "Restoring trashed items...": [
         "Se restaurează articolele din gunoi..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Adresa alias inversă a fost copiată în memorie. Trimiteți un mesaj la această adresă și ${ Email } îl va primi."
+      ],
       "Save login": [
         "Salvare autentificare"
       ],
@@ -1735,6 +1950,9 @@
       ],
       "Secure links": [
         "Legături web securizate"
+      ],
+      "See more info": [
+        "Mai multe informații"
       ],
       "Select an existing login or create a new one.": [
         "Selectați o autentificare existentă sau creați alta."
@@ -1778,6 +1996,12 @@
       "Signing you in": [
         "Conectare la"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "Notița SimpleLogin este stocată în același loc cu adresa alias și, deși este protejată prin criptare în repaus, nu este criptată bilateral, ceea ce înseamnă că oricine are acces la baza de date SimpleLogin o poate citi."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Pur și simplu utilizați ${ emailBold } data viitoare când aveți nevoie de un alias: va fi creat ${ automaticallyBold } prima dată când primește un mesaj. Pentru a avea un control mai precis, puteți defini și ${ rulesHyperLink }."
+      ],
       "Successfully exported all your items": [
         "Toate articole au fost exportate."
       ],
@@ -1795,6 +2019,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Mulțumim, problema a fost raportată."
+      ],
+      "The display name when sending an email from this alias.": [
+        "Numele afișat când se trimite un mesaj de la acest alias."
       ],
       "The export will only contain vaults that you own.": [
         "Exportarea va conține doar seifurile pe care le dețineți."
@@ -1822,6 +2049,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Acest fișier exportat va fi necriptat și oricine are acces la el va putea vedea parolele. Pentru securitate, trebuie să-l ștergeți după ce l-ați terminat de utilizat."
       ],
+      "This operation is irreversible.": [
+        "Această operație nu este reversibilă."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Această operație nu este reversibilă. Toate aliasurile care utilizează domeniul ${ domainTextBold } vor fi șterse. După ștergere aliasurile nu pot fi restaurate."
+      ],
       "This option is currently not available on your device.": [
         "Această opțiune nu este disponibilă pe acest dispozitiv."
       ],
@@ -1837,6 +2070,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Aceasta va respinge dispozitivul **${ name }** care a încercat să se conecteze la contul personal ${ BRAND_NAME } la **${ date }**."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Pentru a continua să primiți mesaje pe e-mail, transferați aceste aliasuri la un alt cont de e-mail:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Pentru a vă păstra adresa de e-mail personală ascunsă, puteți crea un alias de contact care vă maschează adresa."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Pentru a migra datele dintr-un alt manager de parole, accesați managerul de parole, exportați datele, apoi încărcați-le în ${ PASS_APP_NAME }. După ce datele v-au fost importate, puteți șterge fișierul exportat."
       ],
@@ -1848,6 +2087,12 @@
       ],
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
+      ],
+      "Unconfigured": [
+        "Neconfigurat"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Aliasuri hide-my-email nelimitate și gestionare avansată aliasuri"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Deblocați ${ PASS_APP_NAME } cu codul PIN pentru a vă accesa parolele."
@@ -1897,6 +2142,9 @@
       "User's access successfully updated": [
         "Accesul utilizatorului a fost actualizat."
       ],
+      "Value:": [
+        "Valoare:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Seiful „${ payload.content.name }” a fost șters."
       ],
@@ -1928,6 +2176,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Când creați/editați date de autentificare în ${ PASS_APP_NAME } câmpul „nume utilizator” va fi întotdeauna vizibil."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Când trimiteți un mesaj de pe acest alias, acesta va afișa ${ emailSender } ca expeditor."
       ],
       "You are about to create:": [
         "Sunteți pe cale să creați:"
@@ -1966,6 +2217,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Ați atins lungimea maximă permisă de ${ maxLength } de caractere."
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Veți putea să vă personalizați setările domeniului (alias e-mail de agregare mesaje, numele afișat implicit pentru aliasuri etc...) după verificarea domeniului."
+      ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Contul se va deconecta și trebuie să vă reconectați pe toate celelalte dispozitive."
       ],
@@ -1987,6 +2241,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Contul este restricționat deoarece organizația a impus autentificarea cu doi factori. Activați autentificarea cu doi factori în setările contului sau contactați administratorul."
       ],
+      "your domain": [
+        "domeniul personal"
+      ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
@@ -1999,6 +2256,11 @@
         "${ aliasCount } alias",
         "${ aliasCount } aliasuri",
         "${ aliasCount } de aliasuri"
+      ],
+      "${ blockedCount } block": [
+        "Blocate: ${ blockedCount }",
+        "Blocate: ${ blockedCount }",
+        "Blocate: ${ blockedCount }"
       ],
       "${ config.options.length } character": [
         "${ config.options.length } caracter",
@@ -2015,6 +2277,11 @@
         "${ days } zile",
         "${ days } de zile"
       ],
+      "${ forwardCount } forward": [
+        "Redirecționate: ${ forwardCount }",
+        "Redirecționate: ${ forwardCount }",
+        "Redirecționate: ${ forwardCount }"
+      ],
       "${ hours } hour": [
         "${ hours } oră",
         "${ hours } ore",
@@ -2025,11 +2292,26 @@
         "${ minutes } minute",
         "${ minutes } de minute"
       ],
+      "${ months } month": [
+        "${ months } lună",
+        "${ months } luni",
+        "${ months } de luni"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "Monitorizare ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versiune ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ repliedCount } reply": [
+        "Răspunsuri: ${ repliedCount }",
+        "Răspunsuri: ${ repliedCount }",
+        "Răspunsuri: ${ repliedCount }"
+      ],
+      "${ years } year": [
+        "${ years } an",
+        "${ years } ani",
+        "${ years } de ani"
       ],
       "1 hour": [
         "o oră"
@@ -2082,6 +2364,9 @@
       "Account": [
         "Cont"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Adăugare prefix aleatoriu pentru acest domeniu atunci când se creează un alias nou."
+      ],
       "Add section": [
         "Adăugare secțiune"
       ],
@@ -2096,6 +2381,9 @@
       ],
       "Alias address": [
         "Adresă alias"
+      ],
+      "Alias address (disabled)": [
+        "Adresă alias (dezactivată)"
       ],
       "Alias management": [
         "Gestionare aliasuri"
@@ -2160,6 +2448,9 @@
       "Cards": [
         "Carduri"
       ],
+      "Catch-All": [
+        "Adresă de agregare"
+      ],
       "City": [
         "Oraş"
       ],
@@ -2171,6 +2462,9 @@
       ],
       "Confirm vault name": [
         "Confirmare nume seif"
+      ],
+      "Contact created ${ time } ago.": [
+        "Contactul a fost creat în urmă cu ${ time }."
       ],
       "Contact details": [
         "Detalii contact"
@@ -2232,8 +2526,14 @@
       "Display name": [
         "Nume afișat"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Domeniu"
+      ],
+      "Domain:": [
+        "Domeniu:"
       ],
       "Domains": [
         "Domenii"
@@ -2358,6 +2658,9 @@
       "Include numbers (0-9)": [
         "Includere cifre (0-9)"
       ],
+      "Info": [
+        "Informații"
+      ],
       "Instagram handle": [
         "Nume utilizator Instagram"
       ],
@@ -2415,6 +2718,9 @@
       "Logins": [
         "Conectări"
       ],
+      "Mailboxes": [
+        "Conturi de e-mail"
+      ],
       "Make all admins": [
         "Setare toți ca administratori"
       ],
@@ -2460,14 +2766,23 @@
       "Newest to oldest": [
         "De la noi la vechi"
       ],
+      "No Activity in the last 14 days.": [
+        "Nicio activitate în ultimele 14 zile."
+      ],
       "No history": [
         "Fără istoric"
       ],
       "None": [
         "Niciuna"
       ],
+      "Not selected": [
+        "Neselectat"
+      ],
       "Note": [
         "Notiță"
+      ],
+      "Note • SimpleLogin": [
+        "Notițe • SimpleLogin"
       ],
       "Notes": [
         "Notiță"
@@ -2529,6 +2844,12 @@
       "Prefix": [
         "Prefix"
       ],
+      "Premium domain": [
+        "Domeniu premium"
+      ],
+      "Priority:": [
+        "Prioritate:"
+      ],
       "Prompt for auto-save": [
         "Solicitare autosalvare"
       ],
@@ -2537,6 +2858,9 @@
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Protejați ${ PASS_APP_NAME } cu o parolă suplimentară"
+      ],
+      "Public domain": [
+        "Domeniu public"
       ],
       "Rate us": [
         "Evaluați-ne"
@@ -2567,6 +2891,9 @@
       ],
       "Security code": [
         "Cod de securitate"
+      ],
+      "Select a domain": [
+        "Selectare domeniu"
       ],
       "Select an email address": [
         "Selectați o adresă de e-mail"
@@ -2627,6 +2954,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Sincronizare aliasuri cu SimpleLogin"
+      ],
+      "Target:": [
+        "Destinație:"
       ],
       "Tax number": [
         "Număr identificare fiscală"
@@ -2702,6 +3032,9 @@
       "Username/email": [
         "Nume de utilizator/e-mail"
       ],
+      "Value:": [
+        "Valoare:"
+      ],
       "Vault ID": [
         "ID seif"
       ],
@@ -2744,8 +3077,16 @@
       "Your browser will stop using its built-in password manager.": [
         "Navigatorul web va înceta să folosească managerul său de parole."
       ],
+      "Your domain": [
+        "Domeniul personal"
+      ],
       "ZIP or Postal code": [
         "Cod poștal"
+      ]
+    },
+    "Link": {
+      "auto create rules ››": [
+        "creare automată reguli ››"
       ]
     },
     "Message": {
@@ -2810,6 +3151,9 @@
       "Add text": [
         "Adăugare text"
       ],
+      "Alias Display Name": [
+        "Nume afișat alias"
+      ],
       "Email address": [
         "Adresă e-mail"
       ],
@@ -2836,6 +3180,15 @@
       ],
       "MM/YY": [
         "LL/AA"
+      ],
+      "my-domain.com": [
+        "domeniul-meu.com"
+      ],
+      "Name to display when sending an email": [
+        "Numele de afișat când se trimite un mesaj"
+      ],
+      "Note from SimpleLogin": [
+        "Notiță din SimpleLogin"
       ],
       "Password": [
         "Parola"
@@ -2948,10 +3301,64 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Sincronizarea aliasurilor s-a activat. Sincronizarea aliasurilor SimpleLogin ar putea dura ceva timp."
       ],
+      "Catch-all setting successfully disabled": [
+        "Setarea de agregare a mesajelor a fost dezactivată."
+      ],
+      "Catch-all setting successfully enabled": [
+        "Setarea de agregare a mesajelor a fost activată."
+      ],
+      "Contact successfully blocked": [
+        "Contactul a fost blocat."
+      ],
+      "Contact successfully created": [
+        "Contactul a fost creat."
+      ],
+      "Contact successfully deleted": [
+        "Contactul a fost șters."
+      ],
+      "Contact successfully unblocked": [
+        "Contactul a fost deblocat."
+      ],
+      "Default domain successfully updated": [
+        "Domeniul implicit a fost actualizat."
+      ],
+      "Default mailbox successfully updated": [
+        "Contul de e-mail implicit a fost actualizat."
+      ],
+      "Display name successfully updated": [
+        "Numele afișat a fost actualizat."
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Deținerea domeniului a fost verificată. Acum puteți seta înregistrarea MX."
+      ],
+      "Domain successfully deleted": [
+        "Domeniul a fost șters."
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Domeniul a fost verificat. Domeniul poate începe să primească mesaje și să creeze aliasuri."
+      ],
+      "Mailbox successfully deleted": [
+        "Contul de e-mail a fost șters."
+      ],
+      "Mailbox successfully verified": [
+        "Contul de e-mail a fost verificat."
+      ],
+      "Mailboxes successfully updated": [
+        "Conturile au fost actualizate."
+      ],
+      "Random prefix generation successfully disabled": [
+        "Generarea aleatorie a prefixelor a fost dezactivată."
+      ],
+      "Random prefix generation successfully enabled": [
+        "Generarea aleatorie a prefixelor a fost activată."
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } utilizator.",
         "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } utilizatori.",
         "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } de utilizatori."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Mesajul de verificare a fost trimis. Accesați-vă contul de e-mail pentru a citi mesajul primit și confirma verificarea."
       ]
     },
     "Theme": {
@@ -2972,11 +3379,32 @@
       "Actions": [
         "Acțiuni"
       ],
+      "Activity": [
+        "Activitate"
+      ],
+      "Add custom domain": [
+        "Adăugare domeniu personal"
+      ],
+      "Add mailbox": [
+        "Adăugare cont de e-mail"
+      ],
+      "Alias contacts": [
+        "Contacte alias"
+      ],
+      "Aliases": [
+        "Aliasuri"
+      ],
+      "Auto create/on the fly alias": [
+        "Creare automată alias din mers"
+      ],
       "Auto-lock update": [
         "Actualizare autoblocare"
       ],
       "Autofill": [
         "Autocompletare"
+      ],
+      "Blocked addresses": [
+        "Adrese blocate"
       ],
       "Confirm extra password": [
         "Confirmare parolă suplimentară"
@@ -3005,10 +3433,25 @@
       "Current version": [
         "Versiune curentă"
       ],
+      "Custom domains": [
+        "Domenii personale"
+      ],
+      "Default": [
+        "Implicit"
+      ],
+      "Default Display Name": [
+        "Nume afișat implicit"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "Ștergeți ${ deletedItemsCount } articol?",
         "Ștergeți ${ deletedItemsCount } articole?",
         "Ștergeți ${ deletedItemsCount } de articole?"
+      ],
+      "Delete domain": [
+        "Ștergere domeniu"
+      ],
+      "Delete mailbox": [
+        "Ștergere cont de e-mail"
       ],
       "Delete this item?": [
         "Ștergeți acest articol?"
@@ -3018,6 +3461,18 @@
       ],
       "Discard changes?": [
         "Anulare modificări?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (Opțional)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (Opțional)"
+      ],
+      "Domain": [
+        "Domeniu"
+      ],
+      "Domain ownership verification": [
+        "Verificarea deținerii domeniului"
       ],
       "Email": [
         "E-mail"
@@ -3079,6 +3534,9 @@
       "Low disk space": [
         "Spațiu pe disc redus"
       ],
+      "Mailbox": [
+        "Cont e-mail"
+      ],
       "Member limit": [
         "Limită membri"
       ],
@@ -3103,6 +3561,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Mutare articol în „${ vaultName }”"
+      ],
+      "MX record": [
+        "Înregistrare MX"
       ],
       "No items selected": [
         "Nu sunt selectate articole"
@@ -3139,6 +3600,9 @@
         "După ștergere, aliasurile nu mai pot fi restaurate.",
         "După ștergere, aliasurile nu mai pot fi restaurate."
       ],
+      "Random Prefix Generation": [
+        "Generare aleatorie prefix"
+      ],
       "Reject device?": [
         "Respingeți dispozitivul?"
       ],
@@ -3157,6 +3621,9 @@
       "Secure your data": [
         "Securizați-vă datele"
       ],
+      "Select the default domain for aliases": [
+        "Selectați domeniul implicit pentru aliasuri"
+      ],
       "Set access level": [
         "Setare nivel de acces"
       ],
@@ -3168,6 +3635,9 @@
       ],
       "Share with": [
         "Partajare cu"
+      ],
+      "SPF (Optional)": [
+        "SPF (Opțional)"
       ],
       "Status": [
         "Stare"
@@ -3202,6 +3672,9 @@
       "Unlock ${ brandNameJSX }": [
         "Deblocare ${ brandNameJSX }"
       ],
+      "Unverified": [
+        "Neverificat"
+      ],
       "Update available": [
         "Actualizare disponibilă"
       ],
@@ -3226,6 +3699,9 @@
       "Welcome to your new password manager!": [
         "Bun venit la noul manager de parole!"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Care este diferența dintre o notiță din ${ PASS_SHORT_APP_NAME } și o notiță din SimpleLogin?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Abonamentul pentru ${ planName } se va încheia ${ endDate }"
       ],
@@ -3242,6 +3718,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "Adresa URL a domeniului nu este validă."
+      ],
       "Duplicated URL": [
         "Adresă URL duplicată."
       ],
@@ -3317,8 +3796,14 @@
       "Delete alias": [
         "Ștergere alias"
       ],
+      "Domain cannot be empty": [
+        "Domeniul nu poate fi gol."
+      ],
       "Duplicate email addresses.": [
         "Adrese de e-mail duplicate."
+      ],
+      "Email cannot be empty": [
+        "Câmpul e-mail nu poate fi gol."
       ],
       "Empty note": [
         "Notiță goală"
@@ -3399,6 +3884,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Contactați-ne pentru a investiga problema."
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "După ștergere, aliasurile nu mai pot fi restaurate."
       ],
       "Please verify your email address in order to use email aliases": [
         "Verificați-vă adresa de e-mail pentru a utiliza aliasurile de e-mail."
