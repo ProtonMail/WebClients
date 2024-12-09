@@ -8,6 +8,7 @@ import {
     createMonitorRule,
     createPendingShareAccessRule,
     createPermissionsRule,
+    createSSOChangeLockRule,
     createSecurityRule,
     createStorageIssueRule,
     createTrialRule,
@@ -46,6 +47,7 @@ export const createSpotlightService = (
 
             /* "Invisible" rules not displayed as spotlight should be defined at the bottom */
             createMonitorRule(),
+            createSSOChangeLockRule(),
         ],
     });
 

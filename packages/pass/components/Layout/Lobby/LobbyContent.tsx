@@ -67,6 +67,7 @@ export const LobbyContent: FC<Props> = ({
 
     const localID = authStore?.getLocalID();
     const hasExtraPassword = Boolean(authStore?.getExtraPassword());
+    const isSSo = Boolean(authStore?.getUserIsSSO());
 
     const stale = clientStale(status);
     const locked = clientSessionLocked(status);
@@ -139,6 +140,7 @@ export const LobbyContent: FC<Props> = ({
                             case AppStatus.SESSION_LOCKED:
                                 return c('Info').jt`Enter your PIN code`;
                             case AppStatus.PASSWORD_LOCKED:
+                                if (isSSo) return c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your backup password`;
                                 return hasExtraPassword
                                     ? c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your extra password`
                                     : c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your ${BRAND_NAME} password`;
@@ -150,6 +152,16 @@ export const LobbyContent: FC<Props> = ({
                                 return;
                             default:
                                 return c('Info').jt`Sign in to your account`;
+                        }
+                    })()}
+                </span>
+                <span className="text-xs text-bold color-weak">
+                    {(() => {
+                        switch (status) {
+                            case AppStatus.PASSWORD_LOCKED:
+                                if (isSSo) {
+                                    return c('Info').t`You can also define a PIN code to unlock ${PASS_APP_NAME}`;
+                                }
                         }
                     })()}
                 </span>
