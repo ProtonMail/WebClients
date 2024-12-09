@@ -1031,6 +1031,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Harga diskon khusus ${ discountedPrice } berlaku untuk ${ cycle } bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga diskon ${ nextPrice } selama ${ renewalLength } bulan. Anda dapat membatalkannya kapan saja."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Harga ${ discountedPrice } yang didiskon masih valid untuk bulan pertama. Lalu akan diperbarui secara otomatis dengan harga ${ nextPrice } setiap bulan. Anda dapat membatalkan kapan pun."
       ]
@@ -5092,6 +5095,12 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
       ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Tanda tangan digital telah sebagian diverifikasi. Berkas telah diunggah dari laman publik yang tidak menentukan asal pengguna yang spesifik."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Tanda tangan digital telah sebagian diverifikasi. Folder telah diunggah dari laman publik yang tidak menentukan asal pengguna yang spesifik."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Jumlah unduhan meliputi berapa kali berkas telah diunduh dan berapa kali berkas telah dipratinjau"
       ],
@@ -5716,12 +5725,6 @@
       "Calendars": [
         "Kalender"
       ],
-      "Can edit": [
-        "Dapat menyunting"
-      ],
-      "Can view": [
-        "Dapat melihat"
-      ],
       "Cancel download": [
         "Batalkan unduhan"
       ],
@@ -6201,14 +6204,6 @@
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "Kelola, tambahkan, dan sunting berkas"
-      ],
-      "View and download": [
-        "Lihat dan unduh"
       ]
     },
     "Label for contact group color": {
@@ -6792,7 +6787,7 @@
         "${ n } folder dan label"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } alias hide-my-email"
+        "${ n } samaran hide-my-email"
       ],
       "${ n } label": [
         "${ n } label"
@@ -7788,6 +7783,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Kapasitas penyimpanan tidak cukup untuk menampung ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "Akses tautan publik diperbarui"
+      ],
+      "Public link update access failed ": [
+        "Gagal memperbarui akses tautan publik "
+      ],
       "Root folder failed to be loaded": [
         "Folder akar gagal dimuat"
       ],
@@ -8164,8 +8165,23 @@
       "Please select your billing state first.": [
         "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Diperbarui seharga ${ renewPrice }, batalkan kapan pun."
+      ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku untuk ${ subscriptionLength } bulan pertama. Kupon ini berlaku untuk perpanjangan ${ couponRedemptions }. Kemudian secara otomatis akan diperpanjang dengan harga ${ renewPrice } untuk ${ subscriptionLengthCopy } bulan. Anda dapat membatalkannya kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku untuk ${ subscriptionLength } bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga ${ renewPrice } untuk ${ subscriptionLengthCopy } bulan. Anda dapat membatalkannya kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku untuk bulan pertama. Kupon ini berlaku untuk perpanjangan${ couponRedemptions }. Kemudian secara otomatis akan diperpanjang dengan harga ${ renewPrice } untuk ${ subscriptionLength } bulan. Anda dapat membatalkannya kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku untuk bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga ${ renewPrice } setiap bulannya. Anda dapat membatalkannya kapan saja."
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
