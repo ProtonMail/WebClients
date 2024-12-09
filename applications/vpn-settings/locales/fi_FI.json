@@ -954,6 +954,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Erityishinta ${ discountedPrice } on voimassa vain ensimmäisten ${ cycle } kuukauden ajan, jonka jälkeen tilaus uudistuu automaattisesti alennettuun hintaan ${ nextPrice } ${ renewalLength } kuukaudeksi. Voit perua sen milloin tahansa."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Erityishinta ${ discountedPrice } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ nextPrice } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ]
@@ -2552,6 +2555,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Laskuja ei voitu ladata. Yritä myöhemmin uudelleen."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Siirtoja ei voitu ladata. Yritä myöhemmin uudelleen."
+      ],
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
       ],
@@ -3760,7 +3766,7 @@
         "Huomiota vaaditaan"
       ],
       "Awaiting transaction": [
-        "Odotetaan tapahtumaa"
+        "Odotetaan siirtoa"
       ],
       "Balance from your previous subscription": [
         "Saldoa edellisestä tilauksestasi"
@@ -5118,6 +5124,9 @@
       "You have no saved payment methods.": [
         "Sinulla ei ole tallennettuja maksutapoja."
       ],
+      "You have no transactions.": [
+        "Sinulla ei ole siirtoja."
+      ],
       "You may be redirected to your bank’s website.": [
         "Sinut voidaan ohjata pankkisi verkkosivuille."
       ],
@@ -5796,6 +5805,9 @@
       "Start date": [
         "Aloituspäivä"
       ],
+      "Strong": [
+        "Vahva"
+      ],
       "Subscription options": [
         "Tilausvaihtoehdot"
       ],
@@ -5838,8 +5850,14 @@
       "Video conferencing with Zoom": [
         "Videoneuvotteu Zoomilla"
       ],
+      "Vulnerable": [
+        "Haavoittuvainen"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Olemme pahoillamme kun lähdet. Kertoisitko meille miksi, jotta voimme parantaa toimintaamme, kiitos."
+      ],
+      "Weak": [
+        "Heikko"
       ],
       "What happened?": [
         "Mitä tapahtui?"
@@ -7093,6 +7111,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Vaadi käyttäjien salasanojen uudelleenasetus ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Ohjaa Internet-tietoliikenteesi Tor-verkon kautta yhdellä klikkauksella"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
       ],
@@ -7838,6 +7859,15 @@
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ subscriptionLength } kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus uudistuu automaattisesti hintaan ${ renewPrice } ${ subscriptionLengthCopy } kuukaudeksi. Voit perua sen milloin tahansa."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ subscriptionLength } kuukauden ajan, jonka jälkeen tilaus uudistuu automaattisesti hintaan ${ renewPrice } ${ subscriptionLengthCopy } kuukaudeksi. Voit perua sen milloin tahansa."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus uudistuu automaattisesti hintaan ${ renewPrice } ${ subscriptionLength } kuukaudeksi. Voit perua sen milloin tahansa."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPrice } kuukausihintaan. Voit perua milloin tahansa."
       ],
@@ -8310,6 +8340,9 @@
       ],
       "Invoice": [
         "Lasku"
+      ],
+      "Transactions": [
+        "Siirrot"
       ]
     },
     "Select search results": {
@@ -10649,6 +10682,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME } -lasku"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME } -siirto"
       ]
     },
     "Title header for addresses domain table": {
@@ -10807,6 +10843,55 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tätä Tor-selaimen versiota ei tueta. Päivitä viimeisimpään ${ stableRelease }"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Failed": [
+        "Epäonnistunut"
+      ],
+      "Needs attention": [
+        "Tarvitsee huomiota"
+      ],
+      "Refunded": [
+        "Hyvitetty"
+      ],
+      "Success": [
+        "Suoritettu"
+      ],
+      "Timeout": [
+        "Aikakatkaistu"
+      ],
+      "Voided": [
+        "Mitätöity"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Bank transfer": [
+        "Pankkisiirto"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Käteinen"
+      ],
+      "Credit": [
+        "Luotto"
+      ],
+      "Currency conversion": [
+        "Valuuttamuunnos"
+      ],
+      "Gift card": [
+        "Lahjakortti"
+      ],
+      "Payment": [
+        "Maksu"
+      ],
+      "Payment reversal": [
+        "Maksun peruutus"
+      ],
+      "Refund": [
+        "Hyvitys"
       ]
     },
     "unprivatization": {
