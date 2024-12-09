@@ -958,7 +958,7 @@
     },
     "Badge": {
       "New!": [
-        "Новый"
+        "Новое!"
       ]
     },
     "bf2023: Deal details": {
@@ -2525,7 +2525,7 @@
     },
     "Custom frequency option": {
       "After…": [
-        "Через…"
+        "После…"
       ],
       "Never": [
         "Никогда"
@@ -2638,11 +2638,6 @@
         "Просроченный счёт"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2727,6 +2722,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4963,7 +4963,7 @@
         "Большой импорт может занять несколько дней."
       ],
       "Learn how to ${ staySaferOnlineLink }": [
-        "Узнайте как ${ staySaferOnlineLink }"
+        "Узнайте, как ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "Узнать больше"
