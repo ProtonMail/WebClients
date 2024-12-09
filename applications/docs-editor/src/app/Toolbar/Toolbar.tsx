@@ -1157,7 +1157,7 @@ export default function DocumentEditorToolbar({
       id: 'clear-formatting-option',
       items: [
         {
-          id: 'clear-formatting-option',
+          id: 'clear-formatting-button',
           type: 'button',
           label: c('Action').t`Clear formatting`,
           disabled: !isEditable,
