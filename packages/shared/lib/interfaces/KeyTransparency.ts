@@ -2,24 +2,18 @@ import type { PublicKeyReference } from '@proton/crypto';
 import type { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import type { PrimaryAddressKeys } from '../keys';
 import type { Address } from './Address';
 import type { Api } from './Api';
 import type { ProcessedApiKey } from './EncryptionPreferences';
 import type { DecryptedAddressKey, DecryptedKey, KeyPair } from './Key';
 import type { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
 import type { User } from './User';
-import type { PrimaryAddressKeys } from '../keys';
 
 export enum IGNORE_KT {
     NORMAL,
     EXTERNAL,
     CATCHALL,
-}
-
-export interface ProcessedAddressKey extends ProcessedApiKey {
-    flags: number;
-    publicKey: PublicKeyReference;
-    primary: 1 | 0;
 }
 
 export interface KTLocalStorageAPI {
