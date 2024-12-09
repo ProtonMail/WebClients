@@ -1246,7 +1246,7 @@
     },
     "Button": {
       "Change email address settings": [
-        "No s'han pogut modificar les preferències de l'adreça de correu electrònic."
+        "Modificar les preferències de l'adreça de correu electrònic"
       ],
       "Continue": [
         "Continua"
@@ -2558,6 +2558,9 @@
       ],
       "Couldn't load invoices. Please try again later.": [
         "No s'han pogut carregar les factures. Torneu a provar més tard."
+      ],
+      "Couldn't load transactions. Please try again later.": [
+        "No s'han pogut carregar les transaccions. Torneu a provar més tard."
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
@@ -4343,6 +4346,9 @@
       "Member": [
         "Membre"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Els missatges a totes les vostres adreces de correu electrònic aniran a la vostra safata d'entrada."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -4552,6 +4558,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
+      "Registering your subscription...": [
+        "Registrant la vostra subscripció..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Recordeu compartir els detalls d'inici de sessió amb l'usuari."
       ],
@@ -4660,6 +4669,9 @@
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF aclareix qui està autoritzat a enviar correus electrònics per al vostre domini. Assegureu-vos d'afegir el registre TXT següent a la consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Comenceu a compartir-la amb els vostres contactes i utilitzeu-la per a serveis en línia."
+      ],
       "Step ${ step }": [
         "Pas ${ step }",
         "Passes ${ step }"
@@ -4762,6 +4774,9 @@
       ],
       "This file is too large to preview": [
         "Aquest fitxer és massa gran per a previsualitzar-lo."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Aquest missatge no arribarà a l'equip de suport. Si teniu un problema amb el nostre servei o necessiteu més assistència per part nostra, ${ supportLink }"
@@ -5151,6 +5166,9 @@
       ],
       "You have no saved payment methods.": [
         "No teniu mètodes de pagament desats."
+      ],
+      "You have no transactions.": [
+        "No teniu cap transacció."
       ],
       "You may be redirected to your bank’s website.": [
         "És possible que se us redirigeixi al lloc web del vostre banc."
@@ -5830,6 +5848,9 @@
       "Start date": [
         "Data d'inici"
       ],
+      "Strong": [
+        "Forta"
+      ],
       "Subscription options": [
         "Opcions de subscripció"
       ],
@@ -5872,8 +5893,14 @@
       "Video conferencing with Zoom": [
         "Videoconferència amb Zoom"
       ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ens sap greu que marxeu. Expliqueu perquè us n'aneu per ajudar-nos a millorar."
+      ],
+      "Weak": [
+        "Feble"
       ],
       "What happened?": [
         "Què ha passat?"
@@ -8368,6 +8395,9 @@
       ],
       "Invoice": [
         "Factura"
+      ],
+      "Transactions": [
+        "Transaccions"
       ]
     },
     "Select search results": {
@@ -10692,6 +10722,9 @@
       "Your plan": [
         "El vostre pla"
       ],
+      "Your shorter address is now ready": [
+        "La vostra adreça més curta ja està preparada."
+      ],
       "Your subscriptions": [
         "Les vostres subscripcions"
       ]
@@ -10710,6 +10743,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Factura de ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "Transacció de ${ MAIL_APP_NAME }"
       ]
     },
     "Title header for addresses domain table": {
@@ -10871,6 +10907,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Aquesta versió del Navegador Tor no està suportada. Actualitzeu a la darrera ${ stableRelease }."
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Devolució de càrrec"
+      ],
+      "Failed": [
+        "Operació fallida"
+      ],
+      "Needs attention": [
+        "Necessita la vostra atenció"
+      ],
+      "Refunded": [
+        "Reemborsat"
+      ],
+      "Success": [
+        "Operació reeixida"
+      ],
+      "Timeout": [
+        "Temps esgotat"
+      ],
+      "Voided": [
+        "Anul·lado"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Crèdit d'ajustament"
+      ],
+      "Authorization": [
+        "Autorització"
+      ],
+      "Bank transfer": [
+        "Transferència bancària"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Efectiu"
+      ],
+      "Chargeback": [
+        "Devolució de càrrec"
+      ],
+      "Credit": [
+        "Crèdit"
+      ],
+      "Credit transfer": [
+        "Transferència de crèdits"
+      ],
+      "Currency conversion": [
+        "Conversió de moneda"
+      ],
+      "Gift card": [
+        "Targeta regal"
+      ],
+      "Migration": [
+        "Migració"
+      ],
+      "Payment": [
+        "Pagament"
+      ],
+      "Payment reversal": [
+        "Cancel·lació de pagament"
+      ],
+      "Refund": [
+        "Reemborsament"
       ]
     },
     "unprivatization": {
