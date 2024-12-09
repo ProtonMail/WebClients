@@ -957,6 +957,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Harga diskon khusus ${ discountedPrice } berlaku untuk ${ cycle } bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga diskon ${ nextPrice } selama ${ renewalLength } bulan. Anda dapat membatalkannya kapan saja."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Harga ${ discountedPrice } yang didiskon masih valid untuk bulan pertama. Lalu akan diperbarui secara otomatis dengan harga ${ nextPrice } setiap bulan. Anda dapat membatalkan kapan pun."
       ]
@@ -2575,11 +2578,6 @@
         "Faktur yang tertunggak"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
@@ -2667,6 +2665,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6412,7 +6415,7 @@
         "${ n } folder dan label"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } alias hide-my-email"
+        "${ n } samaran hide-my-email"
       ],
       "${ n } label": [
         "${ n } label"
@@ -7627,8 +7630,23 @@
       "Please select your billing state first.": [
         "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Diperbarui seharga ${ renewPrice }, batalkan kapan pun."
+      ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku untuk ${ subscriptionLength } bulan pertama. Kupon ini berlaku untuk perpanjangan ${ couponRedemptions }. Kemudian secara otomatis akan diperpanjang dengan harga ${ renewPrice } untuk ${ subscriptionLengthCopy } bulan. Anda dapat membatalkannya kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku untuk ${ subscriptionLength } bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga ${ renewPrice } untuk ${ subscriptionLengthCopy } bulan. Anda dapat membatalkannya kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku untuk bulan pertama. Kupon ini berlaku untuk perpanjangan${ couponRedemptions }. Kemudian secara otomatis akan diperpanjang dengan harga ${ renewPrice } untuk ${ subscriptionLength } bulan. Anda dapat membatalkannya kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku untuk bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga ${ renewPrice } setiap bulannya. Anda dapat membatalkannya kapan saja."
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
