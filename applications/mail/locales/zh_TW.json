@@ -4824,6 +4824,12 @@
       "You have successfully joined the family group": [
         "您已成功加入家庭群組"
       ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "您有未付款的收據。請在加入家庭方案前繳付。"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此家庭方案，並一起享受所有 ${ brandOrAppName } 進階功能。"
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您帳號中的電子郵件位址多於此方案中可用的電子郵件位址。${ addressSettingsLink }"
       ],
@@ -5184,8 +5190,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "強式加密，只有您及其他收件者可查看內容。"
       ],
+      "Finish setup": [
+        "完成設置"
+      ],
       "For your eyes only": [
         "自己看好了，別人不好看"
+      ],
+      "Get more storage": [
+        "取得更多儲存空間"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "免費下載 ${ MAIL_APP_NAME } 行動裝置程式"
@@ -5747,6 +5759,9 @@
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME }提供了一個簡單的方法，讓您可以創建使用者但不需要將您的真實電子郵件透露給不可信的第三方網站。"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME }終身方案無續約費，他是單次付費終身存取${ PASS_SHORT_APP_NAME }。"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
       ],
@@ -5890,6 +5905,9 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "任何已排定或延後的訊息將被取消。"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "所有附屬資料夾會被刪除。但儲存在 ${ nameDeleted } 資料夾的電子郵件不會被刪除，你可以在所有郵件中找回郵件。"
       ],
       "Applying actions to conversations": [
         "於對話內容套用程序"
@@ -6206,6 +6224,9 @@
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "帶有此標籤${ nameDeleted }的電子郵件不會被刪除，仍可在對應的資料夾中找到。"
+      ],
       "embedded image": [
         "嵌入圖像"
       ],
@@ -6307,6 +6328,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "若您相信我們出錯，請聯繫${ contactLink }。"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您還是決定取消，現有 ${ planTitle } 授權將不再自動續購，到期日為 ${ expiryDate }"
@@ -6593,6 +6617,9 @@
       "Organization size": [
         "組織規模"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
       ],
@@ -6845,6 +6872,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支援，您的帳號已啟用額外的功能。"
       ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "延後至於${ dateString }的${ formattedTime }"
+      ],
       "Snoozed until today, ${ formattedTime }": [
         "延後至今天，${ formattedTime }"
       ],
@@ -6856,6 +6886,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "抱歉，此郵件不存在或已過期。"
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "儲存功能無法支援此瀏覽器，我們需要此支援以啟用訊息內容搜尋。"
       ],
       "Subject": [
         "主題"
@@ -7115,6 +7148,9 @@
       "Turn on to search the content of your messages": [
         "啟用以搜尋您的郵件內容"
       ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "無法於此瀏覽器存取儲存功能，我們需要此權限以啟用訊息內文搜尋。"
+      ],
       "Unlock message": [
         "解鎖郵件"
       ],
@@ -7141,6 +7177,9 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "升級以加入更多電郵位址到您的帳號。"
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "升級以自動刪除在垃圾桶和垃圾郵件中超過30天的訊息。"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "升級以創建更多資料夾、過濾條件與位址。"
@@ -7220,11 +7259,17 @@
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "我們已攔截以下廣告商及組織機構獲取您打開此封電子郵件時的各項資料，其中包括您使用的裝置，以及您的地理位址。"
       ],
+      "We cannot enable message content search in this browser.": [
+        "我們無法於此瀏覽器啟用訊息內文搜尋。"
+      ],
       "We could not verify the sender's trusted keys.": [
         "我們無法驗證此寄件人的已信任金鑰。"
       ],
       "We couldn’t process your payment.": [
         "我們未能處理您的付款。"
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "我們偵測到創建多重免費帳號，違反我們的${ termsLink }。"
       ],
       "We need to authenticate your payment method with your bank.": [
         "我們需要與您的銀行認證您的繳款方式。"
@@ -9098,6 +9143,9 @@
       "Administration Panel": [
         "管理介面"
       ],
+      "Advanced account protection": [
+        "進階的帳號保護"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "全部${ BRAND_NAME }產品及功能"
       ],
@@ -9916,6 +9964,9 @@
       "Protection from trackers": [
         "保護免於追蹤"
       ],
+      "Replay introduction": [
+        "重新播放介紹"
+      ],
       "Skip": [
         "跳過"
       ],
@@ -10148,8 +10199,14 @@
       "Please select your billing state first.": [
         "請先選擇您的計費狀態。"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "更新價 ${ renewPrice }，任何時間都可取消。"
+      ],
       "Select billing country to pay": [
         "選取繳款國家以付款"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
       ],
       "Timeout exceeded": [
         "已經逾時"
@@ -11133,6 +11190,9 @@
     "sso": {
       "Sign in": [
         "登入"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您將被重新導向至您的第三方單一登入提供者。"
       ]
     },
     "State": {
@@ -11308,6 +11368,9 @@
     "Subscription change warning": {
       "Got it": [
         "明白"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "請登入您的 Apple App Store 帳號，然後選取「${ subscriptions }」。"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "請登入您的 Play 商店帳號，然後按一下「${ subscriptions }」。"

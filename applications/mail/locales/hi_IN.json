@@ -279,6 +279,9 @@
       "Create a new label": [
         "नयी चिप्पी बनाएं"
       ],
+      "Create and copy alias": [
+        "उपनाम बनाएँ और कॉपी करें"
+      ],
       "Create folder": [
         "फोल्डर बनाएं"
       ],
@@ -455,6 +458,9 @@
       "Forgot password?": [
         "पासवर्ड भूल गए?"
       ],
+      "Formalize": [
+        "संक्षेपित करें"
+      ],
       "Forward as attachment": [
         "अटैचमेंट जैसे फॉरवर्ड करें"
       ],
@@ -606,6 +612,9 @@
       "Loading${ ellipsis }": [
         "${ ellipsis } लोड हो रहा है"
       ],
+      "Make it friendly": [
+        "और मित्रवत"
+      ],
       "Manage folders": [
         "फोल्डर संभाले"
       ],
@@ -671,6 +680,9 @@
       ],
       "Move": [
         "ले जाएं"
+      ],
+      "Move all to archive": [
+        "सभी को संग्रह में स्थानांतरित करें"
       ],
       "Move all to trash": [
         "सब कचरे में डालें"
@@ -804,6 +816,9 @@
       "Print": [
         "प्रिंट करें"
       ],
+      "Proofread": [
+        "प्रूफरीड करें"
+      ],
       "Quit": [
         "बंद करें"
       ],
@@ -909,6 +924,9 @@
       "Revert to original display": [
         "मूल प्रदर्शन पर वापस जाएं"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } सर्वरों पर चलाएँ"
+      ],
       "Save": [
         "सेव करें"
       ],
@@ -1008,8 +1026,14 @@
       "Sharing options": [
         "शेयर करने के विकल्प"
       ],
+      "Shorten": [
+        "संक्षिप्त करें"
+      ],
       "Show": [
         "दिखाएं"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe लेखन सहायक दिखाएँ"
       ],
       "Show advanced PGP settings": [
         "एडवांस PGP सेटिंग दिखाएं"
@@ -1218,6 +1242,9 @@
       "Why not?": [
         "क्यों नहीं?"
       ],
+      "Write for me": [
+        "मेरे लिए लिखें"
+      ],
       "Yes": [
         "हां"
       ],
@@ -1347,6 +1374,23 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } ऐप"
+      ]
+    },
+    "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "डेटा आपके डिवाइस पर रहता है लेकिन इसे एक बार डाउनलोड करने और संगत हार्डवेयर की आवश्यकता होती है।"
+      ],
+      "Fast and secure. No logs are kept.": [
+        "तेज़ और सुरक्षित। कोई लॉग नहीं रखे जाते।"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } सर्वरों पर चलाएँ"
+      ],
+      "Run on device": [
+        "डिवाइस पर चलाएँ"
+      ],
+      "Securely run on device": [
+        "डिवाइस पर सुरक्षित रूप से चलाएँ"
       ]
     },
     "Attached ics file error": {
@@ -2503,6 +2547,9 @@
       "Dominican Republic": [
         "डोमिनिकन रिपब्लिक"
       ],
+      "East Timor": [
+        "ईस्ट तिमोर"
+      ],
       "Ecuador": [
         "इक्वाडोर"
       ],
@@ -3216,6 +3263,9 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "अपने जीवन के विभिन्न पहलुओं को एकाधिक ईमेल पतों के साथ अलग करें और अपग्रेड करने पर अधिक प्रीमियम सुविधाओं को अनलॉक करें।"
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "आपके खाते की सर्वोत्तम सुरक्षा सुनिश्चित करने के लिए, एक पुनर्प्राप्ति वाक्यांश सेट करें।"
+      ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "अपग्रेड करके छोटे ईमेल पते और अन्य प्रीमियम सुविधाएं अनलॉक करें।"
       ],
@@ -3230,6 +3280,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "आप उन संपर्कों को हटाने के लिए चिह्नित कर सकते हैं जिन्हें आप न तो विलय करने के लिए नहीं चाहते हैं और न ही रखने के लिए। विलय बटन क्लिक करने के बाद ही हटाना होगा"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "आपका खाता और डेटा पुनर्प्राप्ति विधियाँ सेट हैं और 2FA सक्षम है।"
+      ],
+      "Your account and data recovery methods are set.": [
+        "आपका खाता और डेटा पुनर्प्राप्ति विधियाँ सेट हैं।"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5112,6 +5168,9 @@
       "Attention required": [
         "ध्यान देने की आवश्यकता है"
       ],
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "संदेश जो कचरे और स्पैम में 30 दिन से ज़्यादा समय से हैं, उन्हें अपने आप मिटाएं।"
+      ],
       "Awaiting transaction": [
         "ट्रैन्ज़ैक्शन का इंतजार है"
       ],
@@ -5568,6 +5627,9 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "संदेश कल ${ formattedTime } पर भेजा जाएगा"
       ],
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "संदेश जो कचरे और स्पैम में 30 दिन से ज़्यादा समय से हैं, उन्हें अपने आप मिटा दिया जाएगा।"
+      ],
       "MM/YY": [
         "महीना/साल"
       ],
@@ -5639,6 +5701,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "एक या उससे ज़्यादा आपके भरोसेमंद चाबियां मालिक ने \"समझौता हुआ\" मार्क की। हमारी सलाह है की आप इनसे भरोसेमंद का मार्क हटा दें।"
+      ],
+      "Open shortcut cheat sheet": [
+        "शॉर्टकट चीट शीट खोलें"
       ],
       "Organization size": [
         "संगठन का साइज़"
@@ -6049,6 +6114,9 @@
       "Total VPN connections": [
         "कुल VPN कनेक्शन"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "नई ${ BRAND_NAME } सुविधाओं, अपडेट्स और उत्पादों को जनता के लिए जारी होने से पहले आज़माएँ। इससे एप्लिकेशन फिर से लोड हो जाएगा।"
+      ],
       "Turn on to search the content of your messages": [
         "अपने संदेशों की सामग्री खोजने के लिए चालू करें"
       ],
@@ -6069,6 +6137,9 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "अपने खाते में अधिक पते जोड़ने के लिए अपग्रेड करें।"
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "30 दिनों से अधिक समय से ट्रैश या स्पैम में पड़े संदेशों को स्वचालित रूप से हटाने के लिए अपग्रेड करें।"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "अधिक फ़ोल्डर, फ़िल्टर और पते बनाने के लिए अपग्रेड करें।"
@@ -6192,6 +6263,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "क्या आप एक नया सत्यापन कोड प्राप्त करना चाहेंगे?"
+      ],
+      "Writing assistant": [
+        "लेखन सहायक"
       ],
       "Yearly": [
         "सालाना"
@@ -7153,6 +7227,12 @@
       "Without attachment": [
         "संलग्नक के बिना"
       ],
+      "Writing assistant": [
+        "लेखन सहायक"
+      ],
+      "Your alias": [
+        "आपका उपनाम"
+      ],
       "Your password (admin)": [
         "आपका पासवर्ड (व्यवस्थापक)"
       ]
@@ -7804,6 +7884,9 @@
         "${ n } VPN कनेक्शन",
         "${ n } VPN कनेक्शन"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } असीमित hide-my-email उपनामों के साथ"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } क्रमादेश"
       ],
@@ -8334,6 +8417,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } बनाया गया"
       ],
+      "${ reason } has been disabled": [
+        "${ reason } को अक्षम कर दिया गया है"
+      ],
       "Block removed": [
         "अवरोध हटाया गया"
       ],
@@ -8375,6 +8461,9 @@
       ],
       "Download the desktop app": [
         "डेस्कटॉप ऐप डाउनलोड करें"
+      ],
+      "Maybe later": [
+        "शायद बाद में"
       ],
       "Next": [
         "अगला"
@@ -8816,6 +8905,9 @@
       "All aliases": [
         "सभी नकली-नाम"
       ],
+      "Create alias": [
+        "नकली-नाम बनाएं"
+      ],
       "Create an alias": [
         "नकली-नाम बनाएं"
       ],
@@ -8839,6 +8931,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } आज़माएँ"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "अमेज़न पर शॉपिंग आदि के लिए उपयोग किया जाता है।"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "जब आपसे आपका ईमेल पता पूछा जाए, तो इसके बजाय यह उपनाम दें। उपनाम ${ passLink } द्वारा प्रदान किए जाते हैं।"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -8846,9 +8944,17 @@
         "(${ PASS_APP_NAME } खुल जाएगा)"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "घटनाएँ देखें"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "यदि आपका पासवर्ड या अन्य डेटा किसी तिसारे-पक्ष से लीक हुआ है, तो इसकी सूचना प्राप्त करें। ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel **सक्रिय** है और आपके खाते की सुरक्षा कर रहा है।"
       ]
     },
     "Select files": {
@@ -9897,6 +10003,9 @@
       "Download Desktop app": [
         "डेस्कटॉप ऐप डाउनलोड करें"
       ],
+      "Enable Dark Web Monitoring": [
+        "Dark Web Monitoring सक्षम करें"
+      ],
       "Open ": [
         "अनिर्णित "
       ]
@@ -10105,6 +10214,9 @@
       "Delete draft": [
         "ड्राफ्ट हटाएं"
       ],
+      "Delete label?": [
+        "लेबल मिटाएं?"
+      ],
       "Delete message": [
         "संदेश मिटाएं"
       ],
@@ -10176,6 +10288,9 @@
       ],
       "Forward": [
         "आगे"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "${ appName[APP_NAME] } ऐप्स प्राप्त करें"
       ],
       "Gift": [
         "तोहफा"
@@ -10268,6 +10383,9 @@
       "More selections": [
         "अधिक चयन"
       ],
+      "Move all messages to archive": [
+        "सभी संदेशों को संग्रह में स्थानांतरित करें"
+      ],
       "Move all messages to trash": [
         "सभी संदेशों को ट्रैश में ले जाएं"
       ],
@@ -10306,6 +10424,9 @@
       ],
       "No attachment found": [
         "कोई अनुलग्नक नहीं मिला"
+      ],
+      "No breaches detected": [
+        "कोई उल्लंघन नहीं पाया गया"
       ],
       "No trackers found": [
         "कोई ट्रैकर नहीं मिला"
@@ -10528,6 +10649,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "आपका ${ planName } ट्रायल ${ textDate } को खत्म होगा"
       ],
+      "Your account is protected": [
+        "आपका खाता सुरक्षित है"
+      ],
       "Your changes are not synced yet": [
         "आपके बदलाव अभी तक सिंक नहीं हुए"
       ],
@@ -10543,6 +10667,9 @@
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "स्वचालित इंगित करता है कि इस उपयोगकर्ता को भेजने के लिए संगीतकार में प्रारूप का उपयोग किया जाता है। सादा पाठ इंगित करता है कि संदेश भेजने पर संदेश हमेशा सादे पाठ में परिवर्तित हो जाएगा।"
+      ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "अपने पसंदीदा दिन और रात के विषयों के बीच स्वचालित रूप से स्विच करें, जो आपके सिस्टम के दिन और रात मोड के साथ सिंक में हो।"
       ],
       "Customize import to reduce the number of folders": [
         "फ़ोल्डरों की संख्या कम करने के लिए आयात को अनुकूलित करें"
