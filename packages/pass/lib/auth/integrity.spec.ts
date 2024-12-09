@@ -19,6 +19,7 @@ const MOCK_SESSION = {
     RefreshToken: '',
     UID: 'uid-001',
     UserID: 'uid-002',
+    isSSOUser: false,
 } as const;
 
 describe('Session integrity', () => {

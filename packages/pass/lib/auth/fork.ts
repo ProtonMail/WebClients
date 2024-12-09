@@ -178,6 +178,7 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
         LocalID,
         UserID: User.ID,
         userData: encodeUserData(User.Email, User.DisplayName),
+        isSSOUser: User.Flags.sso,
         lastUsedAt: getEpoch(),
         AccessToken: cookies ? '' : refresh.AccessToken,
         RefreshToken: cookies ? '' : refresh.RefreshToken,

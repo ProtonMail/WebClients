@@ -20,6 +20,8 @@ import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
+import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
+import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
@@ -28,7 +30,8 @@ import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
-import { selectLockSetupRequired, selectRequestInFlight } from '@proton/pass/store/selectors';
+import { selectIsSSO, selectLockSetupRequired, selectRequestInFlight } from '@proton/pass/store/selectors';
+import { SpotlightMessage } from '@proton/pass/types';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
 import { ExtensionInstallBar } from './Header/ExtensionInstallBar';
@@ -46,6 +49,7 @@ const MainSwitch: FC = () => {
     const localID = authStore?.getLocalID();
     const offline = clientOffline(app.state.status);
     const offlineResuming = useSelector(selectRequestInFlight(offlineResume.requestID()));
+    const isSSO = useSelector(selectIsSSO);
 
     const { state: expanded, toggle } = useToggle();
 
@@ -103,7 +107,16 @@ const MainSwitch: FC = () => {
                                             <Route component={Items} />
                                         </Switch>
                                     )}
-                                    {!DESKTOP_BUILD && <ThemeOnboardingModal />}
+                                    {!DESKTOP_BUILD && (
+                                        <>
+                                            <ThemeOnboardingModal />
+                                            {isSSO && (
+                                                <WithSpotlightModal type={SpotlightMessage.SSO_CHANGE_LOCK}>
+                                                    {(props) => <OnboardingSSO {...props} />}
+                                                </WithSpotlightModal>
+                                            )}
+                                        </>
+                                    )}
                                 </div>
                             </div>
                         </main>
