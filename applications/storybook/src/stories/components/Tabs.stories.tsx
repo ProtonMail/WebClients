@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Checkbox, type Tab, Tabs } from '@proton/components';
+import { Checkbox, Option, SelectTwo, type Tab, Tabs } from '@proton/components';
 
 import bulbasaur from '../../assets/bulbasaur.png';
 import charmander from '../../assets/charmander.png';
@@ -99,10 +99,12 @@ export const ModernVariant = () => {
     return <Tabs tabs={tabs} variant="modern" fullWidth value={index} onChange={setIndex} />;
 };
 
-const toggles = ['fullWidth', 'stickyTabs'] as const;
+const toggles = ['fullWidth', 'contained', 'stickyTabs'] as const;
+const variant = ['underline', 'modern'] as const;
 
 export const Sandbox = () => {
     const [selectedToggles, setSelectedToggles] = useState(toggles.map(() => false));
+    const [selectedVariant, setSelectedVariant] = useState(variant[0]);
     const [index, setIndex] = useState(0);
 
     const tabs = [
@@ -162,6 +164,7 @@ export const Sandbox = () => {
             tabs={tabs}
             value={index}
             onChange={setIndex}
+            variant={selectedVariant}
             className="overflow-auto max-h-custom"
             {...selectedToggles.reduce<{ [key: string]: boolean }>((acc, value, i) => {
                 acc[toggles[i]] = value;
@@ -173,6 +176,14 @@ export const Sandbox = () => {
     return (
         <div>
             <div style={{ '--max-h-custom': '10rem' }}>{tabsExample}</div>
+            <div className="mt-8 mb-2 w-350">
+                <strong className="block mb-4">Variant</strong>
+                <SelectTwo value={selectedVariant} onChange={(event) => setSelectedVariant(event.value)}>
+                    {variant.map((variant) => {
+                        return <Option key={variant} title={variant.toString()} value={variant} />;
+                    })}
+                </SelectTwo>
+            </div>
             <div className="mt-8 mb-14">
                 <strong className="block mb-4">Toggles</strong>
                 {toggles.map((prop, i) => {
