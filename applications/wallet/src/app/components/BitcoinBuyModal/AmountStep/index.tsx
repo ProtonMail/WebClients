@@ -12,7 +12,8 @@ import type {
     WasmPaymentMethod,
     WasmQuote,
 } from '@proton/andromeda';
-import type { IconName } from '@proton/components';
+import type { IconName} from '@proton/components';
+import { useNotifications } from '@proton/components';
 import { useSubscriptionModal } from '@proton/components';
 import { DropdownSizeUnit, Icon, useModalState } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
@@ -165,6 +166,8 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
     const currentPlan = organization?.PlanName;
 
     const [openSubscriptionModal] = useSubscriptionModal();
+
+    const { createNotification } = useNotifications();
 
     return (
         <>
@@ -391,19 +394,27 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                         withLoadingConfirm(
                             (async () => {
                                 if (selectedQuote) {
-                                    const clientSecret =
-                                        selectedQuote.OrderID && selectedQuote?.provider === 'Azteco'
-                                            ? await walletApi.payment_gateway.createOnRampCheckout(
-                                                  selectedQuote.FiatAmount,
-                                                  btcAddress,
-                                                  selectedQuote.FiatCurrencySymbol,
-                                                  selectedQuote.PaymentMethod,
-                                                  'Azteco',
-                                                  selectedQuote.OrderID
-                                              )
-                                            : null;
+                                    try {
+                                        const clientSecret =
+                                            selectedQuote.OrderID && selectedQuote?.provider === 'Azteco'
+                                                ? await walletApi.payment_gateway.createOnRampCheckout(
+                                                      selectedQuote.FiatAmount,
+                                                      btcAddress,
+                                                      selectedQuote.FiatCurrencySymbol,
+                                                      selectedQuote.PaymentMethod,
+                                                      'Azteco',
+                                                      selectedQuote.OrderID
+                                                  )
+                                                : null;
 
-                                    onConfirm(selectedQuote, clientSecret);
+                                        onConfirm(selectedQuote, clientSecret);
+                                    } catch (error: any) {
+                                        createNotification({
+                                            type: 'error',
+                                            text: c('bitcoin buy')
+                                                .t`An error occurred while confirming this quote, please select another provider and try again.`,
+                                        });
+                                    }
                                 }
 
                                 disclaimerModal.onClose();
