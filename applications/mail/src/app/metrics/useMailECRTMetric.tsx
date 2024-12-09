@@ -4,7 +4,7 @@ import useFlag from '@proton/unleash/useFlag';
 
 import { conversationByID } from '../store/conversations/conversationsSelectors';
 import { useMailStore } from '../store/hooks';
-import { MAX_MAP_SIZE, getLabelID, getPageSizeString } from './mailMetricsHelper';
+import { getLabelID, getPageSizeString } from './mailMetricsHelper';
 
 interface ECRTMetric {
     labelID: string;
@@ -46,7 +46,7 @@ export const useMailECRTMetric = () => {
         }
 
         const metric = metricsMap.get(elementID);
-        if (!metric || metric.endRenderTime || metricsMap.size >= MAX_MAP_SIZE) {
+        if (!metric || metric.endRenderTime) {
             return;
         }
 
