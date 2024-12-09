@@ -707,6 +707,15 @@
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "L'autenticació de doble factor (A2F) afegeix una altra capa de seguretat als vostres inicis de sessió. ${ PASS_APP_NAME } facilita l'A2F emmagatzemant i omplint automàticament els vostres codis d'A2F."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Afegiu els següents registres DNS CNAME al vostre domini."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Afegiu el següent registre MX DNS al vostre domini. Tingueu en compte que hi ha un punt (.) a les adreces de destinació final. Si el vostre registrador de domini no permet aquest punt final, traieu-lo quan afegiu el registre DNS."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Afegiu el següent registre TXT DNS al vostre domini."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un àlies de correu electrònic funciona com una adreça de correu electrònic, però redueix el correu brossa i manté ocultes la vostra adreça de correu electrònic real i la vostra identitat."
       ],
@@ -719,8 +728,23 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "El monitoratge del web fosc està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "El protocol DKIM ${ WIKIPEDIA_LINK_DKIM } és un mètode d'autenticació de correu electrònic dissenyat per evitar la falsificació de correu electrònic. Es recomana configurar DKIM per reduir la possibilitat que els vostres correus electrònics acabin a la carpeta de correu brossa del destinatari."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "La política DMARC ${ WIKIPEDIA_LINK_DMARC } està dissenyat per protegir el domini de l'ús no autoritzat, comunament conegut com a falsificació de correu electrònic. Creada al voltant de SPF i DKIM, una política DMARC indica al servidor de correu receptor què ha de fer si cap d'aquests mètodes d'autenticació passa."
+      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Rebi una notificació si s'han filtrat el seu correu electrònic, contrasenya o altres dades personals."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Si utilitzeu un subdomini, per exemple ${ subdomainExample }, heu d'utilitzar ${ dmarcExampleSubdomain } com a domini."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Si utilitzeu un subdomini, per exemple subdomini.domini.cat, heu d'utilitzar ${ domainKeyExampleSubdomain } com a domini. Això vol dir que si el vostre domini és correu.domini.cat, heu d'introduir ${ domainKeyExampleMail } com a domini."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Si utilitzeu CloudFlare, assegureu-vos de no seleccionar l'opció Proxy."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Manteniu la vostra informació més segura i privada amb aquestes guies i consells."
@@ -730,6 +754,15 @@
       ],
       "Set up 2FA for more security": [
         "Configureu A2F per a més seguretat"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Alguns registradors de DNS poden requerir una ruta de registre completa. En aquest cas, utilitzeu ${ domain } com a valor de domini."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Alguns registradors de dominis (Namecheap, CloudFlare, etc.) també poden utilitzar @ per al domini arrel."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "La norma SPF ${ WIKIPEDIA_LINK_SPF } és un mètode d'autenticació de correu electrònic dissenyat per detectar adreces de remitents falsificades durant l'enviament del correu electrònic. Es recomana configurar SPF per reduir la possibilitat que els vostres correus electrònics acabin a la carpeta de correu brossa del destinatari."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Comenceu a monitoritzar les filtracions de dades relacionades amb els comptes creats amb la vostra adreça de correu electrònic i amb els vostres àlies de hide-my-email."
@@ -745,6 +778,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Aquest servei ofereix A2F. Habiliteu-lo per a augmentar la seguretat del compte."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "Per verificar la propietat del domini, afegiu el registre TXT següent. Alguns registradors de dominis (Namecheap, CloudFlare, etc.) poden utilitzar @ per al domini arrel."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloquegeu característiques de seguretat avançades i registres detallats per a protegir la vostra presència en línia."
@@ -770,6 +806,9 @@
       ],
       "[Error] an item could not be parsed": [
         "[Error] no s'ha pogut analitzar un element."
+      ],
+      "A domain ownership must be verified first.": [
+        "Primer s'ha de verificar la propietat d'un domini."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "L'àlies no s'ha pogut actualitzar en aquest moment. Proveu de nou més tard."
@@ -839,6 +878,9 @@
         "S'ha detectat ${ errors.length } fila CSV corrupta",
         "S'han detectat ${ errors.length } files CSV corruptes"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "No s'ha pogut verificar el domini. Assegureu-vos que heu afegit els registres DNS correctes."
+      ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
@@ -902,6 +944,9 @@
       "Failed to load breaches for this email alias": [
         "No s'han pogut carregar les infraccions per a aquest àlies de correu electrònic"
       ],
+      "Failed to load domain settings.": [
+        "No s'han pogut carregar les preferències."
+      ],
       "Failed to load item history": [
         "No s'ha pogut carregar l'historial d'elements"
       ],
@@ -920,6 +965,9 @@
       "Failed to remove user's access.": [
         "No s'ha pogut esborrar l'accés de l'usuari."
       ],
+      "Failed to resend verification code": [
+        "No s'ha pogut reenviar el codi de verificació."
+      ],
       "Failed to resend verification for custom email": [
         "No s'ha pogut tornar a enviar la verificació per al correu electrònic personalitzat"
       ],
@@ -928,6 +976,9 @@
       ],
       "Failed to restore items from trash": [
         "No s'han pogut restaurar els elements de la paperera"
+      ],
+      "Failed to set default mailbox": [
+        "No s'ha pogut establir la bústia de correu per defecte."
       ],
       "Failed to sync aliases": [
         "No s'han pogut sincronitzar els àlies."
@@ -938,14 +989,23 @@
       "Failed to unpin item": [
         "No s'ha pogut desancorar l'element."
       ],
+      "Failed to update catch-all setting.": [
+        "No s'ha pogut actualitzar la preferència catch-all."
+      ],
       "Failed to update default domain": [
         "No s'ha pogut actualitzar el domini per defecte."
+      ],
+      "Failed to update domain mailboxes.": [
+        "No s'han pogut actualitzar les bústies de correu del domini."
       ],
       "Failed to update domain name.": [
         "No s'ha pogut actualitzar el nom del domini."
       ],
       "Failed to update monitoring settings": [
         "No s'han pogut actualitzar les preferències de monitoratge"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "No s'ha pogut actualitzar la preferència de la generació aleatòria de prefixos."
       ],
       "Failed to verify domain": [
         "No s'ha pogut verificar el domini."
@@ -1219,6 +1279,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "S'ha descartat l'actualització de \"${ payload.item.data.metadata.name }\""
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } bloquejat",
+        "${ blockedEmailsCount } bloquejats"
+      ],
       "${ count } invite successfully sent": [
         "S'ha enviat ${ count } invitació.",
         "S'han enviat ${ count } invitacions."
@@ -1233,6 +1297,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } vistes"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } reenviat",
+        "${ forwardedEmailsCount } reenviats"
       ],
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -1251,6 +1319,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } aplicarà el mateix tema que el vostre sistema."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } generarà una adreça de reenviament (també anomenada àlies invers) que podeu copiar al porta-retalls."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } només importarà inicis de sessió, notes, targetes de crèdit i identitats."
       ],
@@ -1263,12 +1334,19 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "S'ha activat ${ PROTON_SENTINEL_NAME }."
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } enviat",
+        "${ repliedEmailsCount } enviats"
+      ],
       "${ row.breachCount } breach detected": [
         "S'ha detectat ${ row.breachCount } infracció.",
         "S'han detectat ${ row.breachCount } infraccions."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dies per a provar característiques prèmium de forma gratuïta. Només durant la primera setmana de ${ BRAND_NAME }."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Es crea un contacte per a cada adreça de correu electrònic que enviï correus electrònics a o rebi correus electrònics de ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
@@ -1312,6 +1390,9 @@
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Els àlies amb dominis personalitzats no se supervisen; afegeixi'ls com a correu electrònic personalitzat per al seguiment."
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "També se suprimiran tots els àlies que utilitzin la bústia ${ emailJSX }."
+      ],
       "All breaches for this address were resolved": [
         "S'han resolt totes les infraccions d'aquesta adreça"
       ],
@@ -1336,8 +1417,14 @@
       "An item previously shared with you was removed": [
         "S'ha esborrat un element compartit anteriorment amb vós."
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Esteu segur que voleu eliminar ${ emailJSX } de les vostres bústies de correu?"
+      ],
       "Are you sure you want to remove the link?": [
         "Esteu segur que voleu esborrar l'enllaç?"
+      ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Els àlies creats automàticament són propietat de les bústies de correu següents:"
       ],
       "Auto-lock successfully disabled.": [
         "S'ha desactivat el bloqueig automàtic."
@@ -1359,6 +1446,9 @@
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Porteu les vostres contrasenyes existents a ${ BRAND_NAME }."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Porteu el vostre propi domini i no haureu de comprar una altra solució d'allotjament de correu electrònic."
       ],
       "Built in 2FA authenticator": [
         "Autenticador 2FA integrat"
@@ -1405,6 +1495,9 @@
       "Decrypting your data": [
         "S'estan desxifrant les dades"
       ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "És el nom de visualització per defecte per als àlies creats amb ${ domainDisplay } tret que el sobreescriu el nom a mostrar de l'àlies."
+      ],
       "Deleted items will be moved here first": [
         "Els elements eliminats es mouran aquí primer"
       ],
@@ -1422,6 +1515,9 @@
       ],
       "Disabling offline mode...": [
         "S'està desactivant el mode fora de línia..."
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Els canvis de DNS poden trigar fins a 24 hores a actualitzar-se."
       ],
       "Domain: ${ domainPath } or @": [
         "Domini: ${ domainPath } o @"
@@ -1453,6 +1549,12 @@
       "Email headers illustration": [
         "Il·lustració de les capçaleres de correu electrònic"
       ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Per exmple, envieu un correu electrònic a aquesta adreça i apareixerà com a enviat des de ${ exampleEmail }."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Els correus electrònics enviats als vostres àlies es reenvien a les vostres bústies de correu. Un àlies pot tenir més d'una bústia de correu: útil per compartir un àlies entre vosaltres i els vostres amics."
+      ],
       "Emptying trash...": [
         "Buidant la paperera..."
       ],
@@ -1479,6 +1581,9 @@
       ],
       "Enabling PIN auto-lock": [
         "S'està activant el bloqueig automàtic amb codi PIN"
+      ],
+      "Enter the address you want to email.": [
+        "Introduïu l'adreça a la qual voleu enviar un correu electrònic."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduïu el codi de verificació. Dígit ${ digit }."
@@ -1551,6 +1656,9 @@
       ],
       "Imported on ${ date }": [
         "Importat el ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "A ${ PASS_SHORT_APP_NAME }, una nota es xifra amb la clau de xifratge de l'element i només els usuaris que tenen accés a l'element poden veure-la. Ni tan sols ${ BRAND_NAME } o SimpleLogin la poden veure."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Per a obtenir la millor experiència de ${ PASS_APP_NAME }, doneu els permisos d'extensió necessaris"
@@ -1685,6 +1793,9 @@
       "Moving items to trash": [
         "S'estan desplaçant els elements a la paperera…"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Necessiteu enviar un correu electrònic a algú però no voleu que vegi la teva adreça de correu electrònic? Configureu un àlies de contacte."
+      ],
       "Never": [
         "Mai"
       ],
@@ -1809,6 +1920,9 @@
       "Please enter your current PIN code to continue": [
         "Introduïu el codi PIN actual per a continuar."
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Seguiu els passos següents per configurar el vostre domini."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Tingueu en compte que, un cop suprimit, l'àlies no es pot restaurar. Potser voleu desactivar l'àlies?"
       ],
@@ -1817,6 +1931,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Actualitzeu per a tenir accés anticipat a l'aplicació web ${ PASS_APP_NAME }"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Utilitzeu el domini del camí complet, per exemple el- meu-domini.cat o el-meu-subdomini.el-meu-domini.cat si feu servir un subdomini."
       ],
       "Press Enter to copy": [
         "Premeu Retorn per a copiar"
@@ -1859,6 +1976,9 @@
       ],
       "Restoring trashed items...": [
         "S'estan restaurant els elements de la paperera..."
+      ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "L'adreça d'àlies inversa s'ha copiat al porta-retalls. Envieu un correu electrònic a aquesta adreça i ${ Email } el rebrà."
       ],
       "Secure links": [
         "Enllaços segurs"
@@ -1905,6 +2025,12 @@
       "Signing you in": [
         "S'està iniciant la sessió"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "Les notes de SimpleLogin s'emmagatzemen al mateix lloc que les adreces d'àlies i, tot i que estan protegides per xifratge en repòs, no estan xifrades d'extrem a extrem, és a dir, qualsevol persona amb accés a la base de dades SimpleLogin pot llegir-les."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Només cal que utilitzeu ${ emailBold } la pròxima vegada que necessiteu un àlies: es crearà ${ automaticallyBold } la primera vegada que rebi un correu electrònic. Per tenir un control més detallat, també podeu definir ${ rulesHyperLink }."
+      ],
       "Successfully exported all your items": [
         "S'han exportat tots els elements"
       ],
@@ -1928,6 +2054,9 @@
       ],
       "The changelog can be found ${ changelogLink }.": [
         "El registre de canvis es pot trobar ${ changelogLink }."
+      ],
+      "The display name when sending an email from this alias.": [
+        "Aquest és el nom a mostrar quan s'envia un missatge des d'aquest àlies."
       ],
       "The export will only contain vaults that you own.": [
         "L'exportació només contindrà les caixes fortes de la vostra propietat."
@@ -1957,6 +2086,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Aquesta exportació no es xifrarà i qualsevol persona amb accés al fitxer exportat podrà veure les contrasenyes. Per seguretat, elimineu-lo un cop hàgiu acabat d'utilitzar-lo."
       ],
+      "This operation is irreversible.": [
+        "Aquesta operació és irreversible."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Aquesta operació és irreversible. Se suprimiran tots els àlies que utilitzin el domini ${ domainTextBold }.Un cop suprimits, els àlies no es poden restaurar."
+      ],
       "This option is currently not available on your device.": [
         "Aquesta opció no està disponible actualment al vostre dispositiu."
       ],
@@ -1972,6 +2107,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Això rebutjarà el dispositiu **${ name }** que va intentar iniciar la sessió al vostre compte ${ BRAND_NAME } el **${ date }**."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Per continuar rebent correus electrònics, transferiu aquests àlies a una bústia de correu diferent:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Per mantenir la vostra adreça electrònica personal oculta, podeu crear un contacte d'àlies que emmascari la vostra adreça."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Per migrar dades des d'un altre gestor de contrasenyes, aneu al gestor de contrasenyes, exporteu les dades i carregueu-les a ${ PASS_APP_NAME }. Un cop les dades s'hagin importat, suprimiu el fitxer exportat."
       ],
@@ -1986,6 +2127,9 @@
       ],
       "Unconfigured": [
         "Sense configurar"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Número il·limitat d'àlies hide-my-email i administració avançada d'àlies"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloqueja ${ PASS_SHORT_APP_NAME } amb dades biomètriques"
@@ -2057,6 +2201,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Quan creeu o editeu un inici de sessió a ${ PASS_APP_NAME }, l'entrada «nom d'usuari» sempre serà visible."
       ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Quan envieu un correu electrònic des d'aquest àlies, el correu electrònic mostrarà ${ emailSender } com a remitent."
+      ],
       "You are about to create:": [
         "Esteu a punt de crear:"
       ],
@@ -2091,6 +2238,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Heu assolit la longitud màxima permesa de ${ maxLength } caràcters."
+      ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Podreu personalitzar la configuració del vostre domini (àlies de correu electrònic catch-all, nom a mostrar per defecte per als àlies, etc.) després de verificar el vostre domini."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Se us tancarà la sessió i haureu de tornar a iniciar sessió en tots els vostres altres dispositius."
@@ -2156,6 +2306,9 @@
       "${ forwardCount } forward": [
         "${ forwardCount } reenviament",
         "${ forwardCount } reenviaments"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails },${ repliedEmails } e ${ blockedEmails } en els darrers 14 dies."
       ],
       "${ hours } hour": [
         "${ hours } hora",
@@ -2237,6 +2390,9 @@
       ],
       "Account": [
         "Compte"
+      ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Afegiu un prefix aleatori per a aquest domini en crear un àlies."
       ],
       "Add section": [
         "Afegeix una secció"
@@ -3024,6 +3180,9 @@
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "crear regles automàticament ››"
+      ],
       "Learn more": [
         "Més informació"
       ],
@@ -3154,6 +3313,9 @@
       "my-domain.com": [
         "el-meu-domini.cat"
       ],
+      "Name to display when sending an email": [
+        "Nom a mostrar quan s'envia un correu electrònic"
+      ],
       "Note from SimpleLogin": [
         "Nota de SimpleLogin"
       ],
@@ -3282,6 +3444,12 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "La sincronització d'àlies s'ha activat. Els àlies de SimpleLogin poden trigar una mica a sincronitzar-se"
       ],
+      "Catch-all setting successfully disabled": [
+        "S'ha desactivat la preferència catch-call."
+      ],
+      "Catch-all setting successfully enabled": [
+        "S'ha activat la preferència catch-call."
+      ],
       "Contact successfully blocked": [
         "S'ha bloquejat el contacte."
       ],
@@ -3294,11 +3462,23 @@
       "Contact successfully unblocked": [
         "S'ha desbloquejat el contacte."
       ],
+      "Default domain successfully updated": [
+        "S'ha actualitzat el domini per defecte."
+      ],
       "Default mailbox successfully updated": [
         "S'ha actualitzat la bústia de correu per defecte."
       ],
+      "Display name successfully updated": [
+        "S'ha actualitzat el nom a mostrar."
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "S'ha verificat la propietat del domini. Podeu configurar el registre MX."
+      ],
       "Domain successfully deleted": [
         "S'ha eliminat el domini."
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "S'ha verificat el domini. El vostre domini pot començar a rebre correus electrònics i crear àlies."
       ],
       "Mailbox successfully deleted": [
         "S'ha eliminat la bústia de correu."
@@ -3309,9 +3489,18 @@
       "Mailboxes successfully updated": [
         "S'han actualitzat les bústies de correu."
       ],
+      "Random prefix generation successfully disabled": [
+        "S'ha desactivat la generació aleatòria de prefixos."
+      ],
+      "Random prefix generation successfully enabled": [
+        "S'ha activat la generació aleatòria de prefixos."
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Les caixes fortes no poden contenir més d'${ vault.targetMaxMembers } usuari.",
         "Les caixes fortes no poden contenir més de ${ vault.targetMaxMembers } usuaris."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "S'ha enviat un correu electrònic de verificació. Comproveu la vostra safata d'entrada per verificar la vostra bústia de correu"
       ]
     },
     "Theme": {
@@ -3352,6 +3541,9 @@
       ],
       "Aliases": [
         "Àlies"
+      ],
+      "Auto create/on the fly alias": [
+        "Crear automàticament un àlies sobre la marxa"
       ],
       "Auto-lock update": [
         "Actualització del bloqueig automàtic"
@@ -3625,6 +3817,9 @@
       "Secure your data": [
         "Assegureu les vostres dades"
       ],
+      "Select the default domain for aliases": [
+        "Selecciona el domini predeterminat per als àlies"
+      ],
       "Set access level": [
         "Estableix el nivell d`accés"
       ],
@@ -3708,6 +3903,9 @@
       ],
       "What is the dark web?": [
         "Què és el web fosc?"
+      ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Quina diferència hi ha entre una nota de ${ PASS_SHORT_APP_NAME } i una nota de SimpleLogin?"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "La vostra subscripció a ${ planName } finalitzarà el ${ endDate }."
@@ -3902,6 +4100,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Poseu-vos en contacte amb nosaltres per investigar el problema"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Un cop eliminats, els àlies no es poden recuperar."
       ],
       "Please update the extension to its latest version": [
         "Actualitzeu l'extensió a la seva darrera versió"

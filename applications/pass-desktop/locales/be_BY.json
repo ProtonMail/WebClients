@@ -34,6 +34,12 @@
       "Add current URL": [
         "Дадаць бягучы URL-адрас"
       ],
+      "Add custom domain": [
+        "Дадаць карыстальніцкі дамен"
+      ],
+      "Add mailbox": [
+        "Дадаць паштовую скрыню"
+      ],
       "Add more": [
         "Дадаць яшчэ"
       ],
@@ -61,6 +67,9 @@
       "Back": [
         "Назад"
       ],
+      "Block contact": [
+        "Заблакіраваць кантакт"
+      ],
       "Bulk delete items from trash": [
         "Масавае выдаленне элементаў са сметніцы"
       ],
@@ -81,6 +90,12 @@
       ],
       "Change": [
         "Змяніць"
+      ],
+      "Check DNS": [
+        "Праверыць DNS"
+      ],
+      "Check settings": [
+        "Праверыць налады"
       ],
       "Choose a file or drag it here": [
         "Выберыце файл або перацягніце яго сюды"
@@ -115,6 +130,9 @@
       "Continue offline": [
         "Працягнуць па-за сеткай"
       ],
+      "Copy alias address": [
+        "Скапіяваць адрас псеўданіма"
+      ],
       "Copy and close": [
         "Скапіяваць і закрыць"
       ],
@@ -141,6 +159,9 @@
       ],
       "Create card": [
         "Стварыць картку"
+      ],
+      "Create contact": [
+        "Стварыць кантакт"
       ],
       "Create identity": [
         "Стварыць ідэнтычнасць"
@@ -180,6 +201,9 @@
       ],
       "Delete it, I will never need it": [
         "Выдаліць яго. Ён мне больш непатрэбны"
+      ],
+      "Delete mailbox": [
+        "Выдаліць паштовую скрыню"
       ],
       "Delete password": [
         "Выдаліць пароль"
@@ -319,6 +343,9 @@
       "Make admin": [
         "Можа адміністраваць"
       ],
+      "Make default": [
+        "Зрабіць прадвызначаным"
+      ],
       "Make editor": [
         "Можа рэдагаваць"
       ],
@@ -339,6 +366,9 @@
       ],
       "Maximum views": [
         "Максімум праглядаў"
+      ],
+      "More info": [
+        "Падрабязней"
       ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
@@ -399,6 +429,9 @@
       ],
       "Previous": [
         "Папярэдні"
+      ],
+      "Re-verify": [
+        "Праверыць паўторна"
       ],
       "Reactivate now": [
         "Актываваць паўторна"
@@ -481,6 +514,9 @@
       "See members": [
         "Паглядзець удзельнікаў"
       ],
+      "Send email": [
+        "Адправіць ліст"
+      ],
       "Send invite": [
         "Адправіць запрашэнне"
       ],
@@ -541,6 +577,15 @@
       "Sync aliases": [
         "Сінхранізаваць псеўданімы"
       ],
+      "To mailbox": [
+        "У паштовую скрыню"
+      ],
+      "Transfer aliases": [
+        "Перадаць псеўданімы"
+      ],
+      "Transfer and delete mailbox": [
+        "Перадаць і выдаліць паштовую скрыню"
+      ],
       "Transfer ownership": [
         "Перадаць права ўласнасці"
       ],
@@ -552,6 +597,9 @@
       ],
       "Try for free": [
         "Паспрабуйце бясплатна"
+      ],
+      "Unblock contact": [
+        "Разблакіраваць кантакт"
       ],
       "Understood, I will never need it": [
         "Я ўсведамляю гэта. Ён мне больш не спатрэбіцца",
@@ -665,6 +713,15 @@
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2ФА дадае яшчэ адзін слой бяспекі вашым запісам уваходу. ${ PASS_APP_NAME } робіць 2ФА больш простым захоўваючы і аўтаматычна запаўняючы вашы коды 2ФА."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Дадайце наступны запіс CNAME DNS у свой дамен."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Дадайце наступны запіс MX запіс DNS да вашага дамена. Звярніце ўвагу, што ў канцы мэтавых адрасоў ёсць кропка (.). Магчыма, што пры дадаванні запісу DNS спатрэбіцца выдаліць кропку ў канцы, калі ваш рэгістратар не дазваляе яе ставіць."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Дадайце наступны запіс TXT DNS у свой дамен."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Псеўданімы электроннай пошты працуюць аналагічна адрасам электроннай пошты, але змяншаюць колькасць спама і захоўваюць ваш фактычны адрас электроннай пошты і ідэнтычнасць схаванымі."
       ],
@@ -677,8 +734,23 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Функцыя Dark Web Monitoring даступна з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да яе."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } - гэта спосаб аўтэнтыфікацыі электроннай пошты, які распрацаваны для прадухілення падробкі электроннай пошты. Настойліва рэкамендуецца наладзіць DKIM, каб паменшыць верагоднасць траплення вашых лістоў у папку са спамам атрымальніка."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "Палітыка DMARC ${ WIKIPEDIA_LINK_DMARC } распрацавана для абароны дамена ад неаўтарызаванага выкарыстання. Яна таксама вядомы пад назвай падробка электроннай пошты. Яна пабудавана на аснове SPF і DKIM і дае ўказанні паштоваму серверу, што рабіць, калі ні адзін з гэтых метадаў аўтэнтыфікацыі не праходзіць."
+      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Атрымліваць апавяшчэнне, калі адбываецца ўцечка вашай электроннай пошты, пароля або іншых асабістых даных."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Калі вы выкарыстоўваеце паддамен (напрыклад, ${ subdomainExample }), то вам неабходна замест гэтага выкарыстоўваць ${ dmarcExampleSubdomain } як дамен."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Калі вы выкарыстоўваеце паддамен (напрыклад, subdomain.domain.com), вам неабходна выкарыстоўваць ${ domainKeyExampleSubdomain } у якасці дамена. Гэта азначае, што калі ў вас ёсць дамен mail.domain.com, то ў якасці дамена неабходна ўвесці ${ domainKeyExampleMail }."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Пераканайцеся, што не выбраны параметр проксі-сервера, калі вы выкарыстоўваеце CloudFlare."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Захоўвайце свае звесткі больш бяспечна і прыватна з дапамогай гэтых дапаможнікаў і парад."
@@ -688,6 +760,15 @@
       ],
       "Set up 2FA for more security": [
         "Наладжванне 2ФА для большай бяспекі"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Некаторыя рэгістратары DNS могуць патрабаваць поўны шлях да запісу. У гэтым выпадку выкарыстайце ${ domain } у якасці значэння дамена."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Некаторыя рэгістратары даменаў (Namecheap, CloudFlare і г.д.) могуць таксама выкарыстоўваць знак @ каранёвага дамена."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } - гэта спосаб аўтэнтыфікацыі электроннай пошты, які распрацаваны для выяўлення падробкі адраса адпраўніка падчас дастаўкі ліста. Настойліва рэкамендуецца наладзіць SPF, каб паменшыць верагоднасць траплення вашых лістоў у папку са спамам атрымальніка."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Пачаць назіранне за ўцечкай даных звязаных уліковых запісаў, якія створаны з дапамогай вашага адраса электроннай пошты і вашых псеўданімаў hide-my-email."
@@ -704,6 +785,9 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Гэты сэрвіс прапануе 2ФА. Уключыце гэту функцыю, каб дадаць бяспеку ўліковаму запісу."
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "Дадайце наступны запіс TXT, каб праверыць права ўласнасці. Некаторыя рэгістратары даменаў (напрыклад, Namecheap, CloudFlare і г.д.) могуць выкарыстоўваць знак @ для каранёвага дамена."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Разблакіруйце дадатковыя функцыі бяспекі і падрабязныя журналы для абароны сваёй прысутнасці ў інтэрнэце."
       ],
@@ -717,12 +801,20 @@
         "Адбылася ўцечка вашых асабістых звестак са старонняга сэрвісу."
       ]
     },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "lubaja_nazva@${ domainDisplay }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Не атрымалася прааналізаваць файл ${ provider }. ${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
         "[Памылка] немагчыма прааналізаваць элемент"
+      ],
+      "A domain ownership must be verified first.": [
+        "Першапачаткова неабходна праверыць дамен уладальніка."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "У цяперашні момант немагчыма абнавіць псеўданім. Паспрабуйце яшчэ раз пазней"
@@ -796,6 +888,9 @@
         "Выяўлены ${ errors.length } пашкоджаных радкоў CSV",
         "Выяўлены ${ errors.length } пашкоджаных радкоў CSV"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Немагчыма праверыць дамен. Пераканайцеся, што ў вас правільна дададзены запісы DNS"
+      ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
       ],
@@ -823,11 +918,32 @@
       "Failed to add email address": [
         "Не ўдалося дадаць адрас электроннай пошты"
       ],
+      "Failed to block the contact": [
+        "Не ўдалося заблакіраваць кантакт"
+      ],
+      "Failed to create domain": [
+        "Не ўдалося стварыць дамен"
+      ],
+      "Failed to create new mailbox": [
+        "Не ўдалося стварыць новую паштовую скрыню"
+      ],
+      "Failed to create the contact": [
+        "Не ўдалося стварыць кантакт"
+      ],
+      "Failed to delete domain": [
+        "Не ўдалося выдалиць дамен"
+      ],
       "Failed to delete email address from monitoring": [
         "Не ўдалося выдаліць адрас электроннай пошты з назірання"
       ],
       "Failed to delete selected items": [
         "Не ўдалося выдаліць выбраныя элементы"
+      ],
+      "Failed to delete the contact": [
+        "Не ўдалося выдаліць кантакт"
+      ],
+      "Failed to delete the mailbox": [
+        "Не ўдалося выдаліць паштовую скрыню"
       ],
       "Failed to edit user's access.": [
         "Збой рэдагавання доступу карыстальніка."
@@ -837,6 +953,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Не ўдалося загрузіць парушэнні для гэтага псеўданіма электроннай пошты"
+      ],
+      "Failed to load domain settings.": [
+        "Не ўдалося загрузіць налады дамена."
       ],
       "Failed to load item history": [
         "Не ўдалося загрузіць элементы гісторыі"
@@ -856,6 +975,9 @@
       "Failed to remove user's access.": [
         "Збой выдалення доступу карыстальніка."
       ],
+      "Failed to resend verification code": [
+        "Не ўдалося паўторна адправіць праверачны код"
+      ],
       "Failed to resend verification for custom email": [
         "Не ўдалося паўторна адправіць код праверкі для карыстальніцкай электроннай пошты"
       ],
@@ -874,8 +996,26 @@
       "Failed to unpin item": [
         "Не ўдалося адмацаваць элемент"
       ],
+      "Failed to update catch-all setting.": [
+        "Не ўдалося абнавіць налады для ўсёй пошты дамена"
+      ],
+      "Failed to update default domain": [
+        "Не ўдалося абнавіць прадвызначаны дамен"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Не ўдалося абнавіць дамен паштовых скрынь."
+      ],
+      "Failed to update domain name.": [
+        "Не ўдалося абнавіць назву дамена."
+      ],
       "Failed to update monitoring settings": [
         "Не ўдалося абнавіць налады назірання."
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Не ўдалося абнавіць налады генерацыі выпадковага прэфікса"
+      ],
+      "Failed to verify domain": [
+        "Не ўдалося праверыць дамен"
       ],
       "Failed to verify email address": [
         "Не ўдалося праверыць адрас электроннай пошты"
@@ -1200,6 +1340,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } будзе адпавядаць сістэмнай тэме."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } згенерыруе адрас перасылкі (таксама вядомы пад назвай зваротны псеўданім), які вы зможаце скапіяваць у буфер абмену."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі, крэдытныя карткі і асабістыя звесткі."
       ],
@@ -1220,6 +1363,9 @@
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Паспрабуйце прэміяльныя функцыі праграмы на працягу 7 дзён бясплатна. Толькі на працягу першага тыдня выкарыстання ${ BRAND_NAME }."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Кантакт ствараецца для кожнага адраса электроннай пошты, які адпраўляе лісты або атрымлівае іх ад ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Даступна новая версія ${ PASS_APP_NAME }. Абнавіце праграму да апошняй версіі, каб паспрабаваць новыя функцыі і выпраўленыя памылкі."
@@ -1263,6 +1409,9 @@
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Псеўданімы з карыстальніцкіх даменаў не адсочваюцца. Дадайце іх як карыстальніцкія адрасы электроннай пошты для назірання."
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Усе псеўданімы, якія выкарыстоўваюць паштовую скрыню ${ emailJSX }, таксама будуць выдалены."
+      ],
       "All breaches for this address were resolved": [
         "Усе парушэнні для гэтага адраса былі вырашаны"
       ],
@@ -1287,11 +1436,20 @@
       "An item previously shared with you was removed": [
         "Раней абагулены з вамі элемент быў выдалены"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Вы сапраўды хочаце выдаліць ${ emailJSX } са сваёй паштовай скрыні?"
+      ],
       "Are you sure you want to remove the link?": [
         "Вы сапраўды хочаце выдаліць спасылку?"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Псеўданімы, якія створаны аўтаматычна будуць належыць наступны паштовым скрыням:"
+      ],
       "Auto-lock successfully disabled.": [
         "Аўтаблакіроўка паспяхова адключана."
+      ],
+      "automatically": [
+        "аўтаматычна"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Адкрыйце налады Safari -> укладка \"Агульныя (General)\" -> адключыце параметр \"Адкрываць бяспечныя файлы пасля спампоўвання (Open safe files after downloading)\" перад тым, як экспартаваць свае даныя ў гэты фармат."
@@ -1307,6 +1465,9 @@
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Перанясіце свае існуючыя паролі ў ${ BRAND_NAME }."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Дадайце свой уласны дамен, і вам не трэба будзе купляць яшчэ адно рашэнне для размяшчэння электроннай пошты."
       ],
       "Built in 2FA authenticator": [
         "Убудаваны аўтэнтыфікатар 2ФА"
@@ -1338,6 +1499,12 @@
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
       ],
+      "Create contact illustration": [
+        "Стварыце ілюстрацыю кантакту"
+      ],
+      "Created ${ time }.": [
+        "Створана ${ time }."
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV прапануе зручны фармат прагляду вашых даных. Аднак некаторыя даныя не будуць уключаны (карыстальніцкія палі, ключы доступу і г.д.), бо дадзены фармат мае спрошчаную рэалізацыю. Мы рэкамендуем скарыстацца іншым фарматам для поўнага экспартавання."
       ],
@@ -1346,6 +1513,9 @@
       ],
       "Decrypting your data": [
         "Расшыфроўка вашых даных"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Прадвызначанае бачнае імя для псеўданіма, якое створана з дапамогай ${ domainDisplay } пры ўмове, што яно не перазапісана бачным іменем псеўданіма."
       ],
       "Deleted items will be moved here first": [
         "Выдаленыя элементы першапачаткова трапяць сюды"
@@ -1364,6 +1534,12 @@
       ],
       "Disabling offline mode...": [
         "Адключэнне рэжыму па-за сеткай..."
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Змена DNS можа заняць да 24 гадзін."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Дамен: ${ domainPath } або @"
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -1388,6 +1564,15 @@
       ],
       "Email address successfully included in monitoring": [
         "Адрас электроннай пошты паспяхова ўключаны ў назіранне"
+      ],
+      "Email headers illustration": [
+        "Ілюстрацыя загалоўка ліста"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Адпраўце ліст на гэты адрас, і ён будзе выглядаць быццам адпраўлены з ${ exampleEmail }."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Лісты адпраўленыя на вашы псеўданімы будуць перасылацца ў вашы паштовыя скрыні. Псеўданім можа мець больш за адну паштовую скрыню: карысна для абагульвання псеўданіма з вашымі сябрамі."
       ],
       "Emptying trash...": [
         "Ачышчэнне сметніцы..."
@@ -1415,6 +1600,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Уключэнне аўтаблакіроўкі PIN"
+      ],
+      "Enter the address you want to email.": [
+        "Увядзіце адрас, на які вы хочаце адправіць ліст."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Увядзіце праверачны код. Лічба ${ digit }."
@@ -1470,6 +1658,9 @@
       "here": [
         "тут"
       ],
+      "Here's how it works:": [
+        "Вось як яно працуе:"
+      ],
       "High Priority": [
         "Высокі прыярытэт"
       ],
@@ -1490,6 +1681,9 @@
       ],
       "Imported on ${ date }": [
         "Імпартавана ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "У ${ PASS_SHORT_APP_NAME } нататка элемента зашыфравана з дапамогай ключа шыфравання элемента і паглядзець яе могуць толькі карыстальнікі, якія маюць доступ да элемента. Нават супрацоўнікі ${ BRAND_NAME } або SimpleLogin не могуць убачыць яе."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Для атрымання лепшага досведу ад працы з ${ PASS_APP_NAME }, дайце неабходныя дазволы пашырэнню"
@@ -1632,6 +1826,9 @@
       "Moving items to trash": [
         "Перамяшчэнне элементаў у сметніцу"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Неабходна адправіць некаму ліст, але вы не хочаце раскрываць свой адрас электроннай пошты? Наладзьце псеўданім кантакту."
+      ],
       "Never": [
         "Ніколі"
       ],
@@ -1758,6 +1955,9 @@
       "Please enter your current PIN code to continue": [
         "Увядзіце свой бягучы PIN-код для працягу"
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Прытрымлівайцеся крокаў ніжэй, каб наладзіць свой дамен."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Звярніце ўвагу, што выдалены псеўданім нельга аднавіць. Магчыма, што вы захочаце адключыць яго замест таго, каб выдаляць незваротна?"
       ],
@@ -1766,6 +1966,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Палепшыце, каб мець ранні доступ да вэб-праграмы ${ PASS_APP_NAME }"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Выкарыстоўвайце поўны шлях дамена. Напрыклад, moi-damen.com або moi-paddamen.moi-damen.com, калі вы выкарыстоўваеце паддамен."
       ],
       "Press Enter to copy": [
         "Націсніце Enter, каб скапіяваць"
@@ -1778,6 +1981,15 @@
       ],
       "Reconnecting": [
         "Перападключэнне"
+      ],
+      "Record: CNAME": [
+        "Запіс: CNAME"
+      ],
+      "Record: MX": [
+        "Запіс: MX"
+      ],
+      "Record: TXT": [
+        "Запіс: TXT"
       ],
       "Registering extra password...": [
         "Рэгістрацыя дадатковага пароля..."
@@ -1800,8 +2012,14 @@
       "Restoring trashed items...": [
         "Аднаўленне выдаленых элементаў..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Зваротны адрас псеўданіма скапіяваны ў буфер абмену. Адпраўце ліст на гэты адрас і ${ Email } атрымае яго."
+      ],
       "Secure links": [
         "Бяспечныя спасылкі"
+      ],
+      "See more info": [
+        "Азнаёміцца з іншымі звесткамі"
       ],
       "Select destination vault": [
         "Выберыце мэтавае сховішча"
@@ -1842,6 +2060,9 @@
       "Signing you in": [
         "Адбываецца ўваход…"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "Нататкі SimpleLogin захоўваюцца ў адным месцы з адрасам псеўданіма, і хоць яны абаронены шыфраваннем у стане спакою, у іх адсутнічае скразное шыфраванне. Такім чынам любы, хто мае доступ да базы даных SimpleLogin, зможа прачытаць іх."
+      ],
       "Successfully exported all your items": [
         "Усе вашы элементы паспяхова экспартаваны"
       ],
@@ -1865,6 +2086,9 @@
       ],
       "The changelog can be found ${ changelogLink }.": [
         "Журнал змен можна знайсці па спасылцы ${ changelogLink }"
+      ],
+      "The display name when sending an email from this alias.": [
+        "Бачнае імя пры адпраўцы ліста з гэтага псеўданіма."
       ],
       "The export will only contain vaults that you own.": [
         "Экспартаванне будзе змяшчаць толькі тыя сховішчы, якімі вы валодаеце."
@@ -1896,6 +2120,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Гэта экспартаванне будзе незашыфравана, і кожны ў каго ёсць доступ да файла экспартаванага файла зможа ўбачыць вашы паролі. Для вашай бяспекі, мы раім адразу выдаліць яго пасля таго, як вы скарысталіся ім."
       ],
+      "This operation is irreversible.": [
+        "Гэта аперацыя з'яўляецца незваротнай."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Гэта аперацыя з'яўляецца незваротнай. Усе псеўданімы, якія выкарыстоўвае дамен ${ domainTextBold } будуць выдалены. Звярніце ўвагу, што пасля выдалення псеўданімы немагчыма аднавіць."
+      ],
       "This option is currently not available on your device.": [
         "Гэты параметр у цяперашні час недаступны на вашай прыладзе."
       ],
@@ -1911,6 +2141,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Гэта прывядзе да адхілення прылады з назвай **${ name }**, якая **${ date }** спрабавала ўвайсці ў ваш уліковы запіс ${ BRAND_NAME }"
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Перанясіце гэтыя псеўданімы ў іншую паштовую скрыню, каб працягваць атрымліваць лісты:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Вы можаце стварыць кантакт псеўданіма, які замаскіруе ваш адрас. Гэта дазволіць захаваць ваш персанальны адрас электроннай пошты схаваным."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Для пераносу даных з іншага менеджара пароляў вам неабходна перайсці ў яго і экспартаваць свае даныя, а потым запампаваць іх у ${ PASS_APP_NAME }. Пасля завяршэння працэсу імпартавання, выдаліце экспартаваны файл."
       ],
@@ -1922,6 +2158,12 @@
       ],
       "Unable to copy to clipboard": [
         "Немагчыма скапіяваць у буфер абмену"
+      ],
+      "Unconfigured": [
+        "Несканфігурыравана"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Неабмежаваная колькасць псеўданімаў hide-my-email і пашыранае кіраванне псеўданімам"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай біяметрыі"
@@ -1959,6 +2201,9 @@
       "username": [
         "імя карыстальніка"
       ],
+      "Value:": [
+        "Значэнне:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховішча \"${ payload.content.name }\" паспяхова выдалена"
       ],
@@ -1991,6 +2236,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Пры стварэнні або рэдагаванні запісу ўваходу ў ${ PASS_APP_NAME } поле ўводу 'імя карыстальніка' заўсёды будзе бачным."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Пры адпраўцы ліста з гэтага псеўданіма ў якасці адпраўніка будзе адлюстравана электронная пошта ${ emailSender }."
       ],
       "You are about to create:": [
         "Вы збіраецеся стварыць:"
@@ -2031,6 +2279,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Вы дасягнулі максімальнай даўжыні. Дазволена сімвалаў: ${ maxLength }."
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "У вас ёсць магчымасць наладзіць дамен пад свае патрабаванні (адпраўляць усе лісты псеўданімаў ва ўсю пошту дамена, задаць прадвызначанае бачнае імя для псеўданімаў і г.д.) пасля таго, як ён будзе правераны."
+      ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "На ўсіх вашых іншых прыладах сеанс будзе завершаны і вам неабходна будзе аўтарызавацца паўторна."
       ],
@@ -2058,6 +2309,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Ваш уліковы запіс абмежаваны па той прычыне, што ў вашай арганізацыі прысутнічае прымусовая двухфактарная аўтэнтыфікацыя. Уключыце двухфактарную аўтэнтыфікацыю ў наладах уліковага запісу або звяжыцеся са сваім адміністратарам."
       ],
+      "your domain": [
+        "ваш дамен"
+      ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
@@ -2074,6 +2328,12 @@
         "${ aliasCount } псеўданімы",
         "${ aliasCount } псеўданімаў",
         "${ aliasCount } псеўданімаў"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } блакіроўка",
+        "${ blockedCount } блакіроўкі",
+        "${ blockedCount } блакіровак",
+        "${ blockedCount } блакіровак"
       ],
       "${ config.options.length } character": [
         "${ config.options.length } сімвал",
@@ -2093,6 +2353,12 @@
         "${ days } дзён",
         "${ days } дзён"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } перасылка",
+        "${ forwardCount } перасылкі",
+        "${ forwardCount } перасылак",
+        "${ forwardCount } перасылак"
+      ],
       "${ hours } hour": [
         "${ hours } гадзіна",
         "${ hours } гадзіны",
@@ -2105,17 +2371,35 @@
         "${ minutes } хвілін",
         "${ minutes } хвілін"
       ],
+      "${ months } month": [
+        "${ months } месяц",
+        "${ months } месяцы",
+        "${ months } месяцаў",
+        "${ months } месяцаў"
+      ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } распазнае вэб-сайты і праграмы, якія вы выкарыстоўваеце і аўтазапаўняе формы з вашымі ўліковымі данымі для вас у любым браўзеры і на любой прыладзе. Больш няма неабходнасці капіяваць і ўстаўляць гэтыя звесткі ўручную."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версія ${ PASS_SHORT_APP_NAME }"
       ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } адказ",
+        "${ repliedCount } адказы",
+        "${ repliedCount } адказаў",
+        "${ repliedCount } адказаў"
+      ],
       "${ usageCount } login": [
         "${ usageCount } запіс уваходу",
         "${ usageCount } запісы ўваходу",
         "${ usageCount } запісаў уваходу",
         "${ usageCount } запісаў уваходу"
+      ],
+      "${ years } year": [
+        "${ years } год",
+        "${ years } гады",
+        "${ years } гадоў",
+        "${ years } гадоў"
       ],
       "1 hour": [
         "1 гадзіна"
@@ -2168,6 +2452,9 @@
       "Account": [
         "Уліковы запіс"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Дадайце выпадковы прэфікс для дамена пры стварэнні новага псеўданіма."
+      ],
       "Add section": [
         "Дадаць раздзел"
       ],
@@ -2182,6 +2469,9 @@
       ],
       "Alias address": [
         "Адрас псеўданіма"
+      ],
+      "Alias address (disabled)": [
+        "Адрас псеўданіма (адключана)"
       ],
       "Alias management": [
         "Кіраванне псеўданімамі"
@@ -2237,6 +2527,9 @@
       "Cards": [
         "Карткі"
       ],
+      "Catch-All": [
+        "Уся пошта дамена"
+      ],
       "Choose unlock method": [
         "Выберыце спосаб разблакіроўкі"
       ],
@@ -2257,6 +2550,9 @@
       ],
       "Confirm vault name": [
         "Пацвярджэнне назвы сховішча"
+      ],
+      "Contact created ${ time } ago.": [
+        "Кантакт створаны ${ time } таму"
       ],
       "Contact details": [
         "Кантактныя звесткі"
@@ -2321,8 +2617,14 @@
       "Display name": [
         "Бачнае імя"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Дамен"
+      ],
+      "Domain:": [
+        "Дамен:"
       ],
       "Domains": [
         "Дамены"
@@ -2471,6 +2773,9 @@
       "Include numbers (0-9)": [
         "Уключаць лічбы (0-9)"
       ],
+      "Info": [
+        "Звесткі"
+      ],
       "Instagram handle": [
         "Профіль Instagram"
       ],
@@ -2537,6 +2842,9 @@
       "Logins": [
         "Запісы ўваходу"
       ],
+      "Mailboxes": [
+        "Паштовыя скрыні"
+      ],
       "Make all admins": [
         "Даць усім правы адміністратара"
       ],
@@ -2588,14 +2896,23 @@
       "Newest to oldest": [
         "Ад самых новых да самых старых"
       ],
+      "No Activity in the last 14 days.": [
+        "Адсутнічае актыўнасць на працягу 14 дзён."
+      ],
       "No history": [
         "Гісторыя пустая"
       ],
       "None": [
         "Няма"
       ],
+      "Not selected": [
+        "Не выбрана"
+      ],
       "Note": [
         "Нататка"
+      ],
+      "Note • SimpleLogin": [
+        "Нататка • SimpleLogin"
       ],
       "Notes": [
         "Нататкі"
@@ -2660,8 +2977,17 @@
       "Prefix": [
         "Прэфікс"
       ],
+      "Premium domain": [
+        "Прэміяльны дамен"
+      ],
+      "Priority:": [
+        "Прыярытэт:"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Абарона ${ PASS_APP_NAME } з дапамогай дадатковага пароля"
+      ],
+      "Public domain": [
+        "Публічны дамен"
       ],
       "Rate us": [
         "Ацаніце нас"
@@ -2704,6 +3030,9 @@
       ],
       "Security code": [
         "Код бяспекі"
+      ],
+      "Select a domain": [
+        "Выбраць дамен"
       ],
       "Select an email address": [
         "Выберыце адрас электроннай пошты"
@@ -2773,6 +3102,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Сінхранізаваць псеўданімы з SimpleLogin"
+      ],
+      "Target:": [
+        "Мэта:"
       ],
       "Tax number": [
         "Нумар падаткаплацельшчыка"
@@ -2852,6 +3184,9 @@
       "Username": [
         "Імя карыстальніка"
       ],
+      "Value:": [
+        "Значэнне:"
+      ],
       "Vault ID": [
         "Ідэнтыфікатар сховішча"
       ],
@@ -2897,6 +3232,9 @@
       "You can choose between PIN code, biometrics, or your account password to unlock.": [
         "Вы можаце выбіраць паміж PIN-кодам, біяметрыяй або разблакіроўкай уліковага запісу паролем."
       ],
+      "Your domain": [
+        "Ваш дамен"
+      ],
       "Your passwords. Everywhere.": [
         "Вашы паролі. У любым месцы."
       ],
@@ -2905,6 +3243,9 @@
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "аўтаматычнае стварэнне правіл ››"
+      ],
       "Learn more": [
         "Даведацца больш"
       ],
@@ -3006,6 +3347,9 @@
       "Add text": [
         "Дадаць тэкст"
       ],
+      "Alias Display Name": [
+        "Бачнае імя псеўданіма"
+      ],
       "Email address": [
         "Адрас электроннай пошты"
       ],
@@ -3032,6 +3376,15 @@
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "my-domain.com": [
+        "moi-damen.com"
+      ],
+      "Name to display when sending an email": [
+        "Імя для адлюстравання пры адпраўцы ліста"
+      ],
+      "Note from SimpleLogin": [
+        "Нататка з SimpleLogin"
       ],
       "Password": [
         "Пароль"
@@ -3158,11 +3511,65 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Сінхранізацыя псеўданімаў паспяхова ўключана. Можа спатрэбіцца некаторы час, каб сінхранізаваць псеўданімы SimpleLogin"
       ],
+      "Catch-all setting successfully disabled": [
+        "Налады для ўсёй пошты дамена паспяхова адключаны"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Налады для ўсёй пошты дамена паспяхова ўключаны"
+      ],
+      "Contact successfully blocked": [
+        "Кантакт паспяхова заблакіраваны"
+      ],
+      "Contact successfully created": [
+        "Кантакт паспяхова створаны"
+      ],
+      "Contact successfully deleted": [
+        "Кантакт паспяхова выдалены"
+      ],
+      "Contact successfully unblocked": [
+        "Кантакт паспяхова разблакіраваны"
+      ],
+      "Default domain successfully updated": [
+        "Прадвызначаны дамен паспяхова абноўлены"
+      ],
+      "Default mailbox successfully updated": [
+        "Прадвызначаная паштовая скрыня паспяхова абноўлена"
+      ],
+      "Display name successfully updated": [
+        "Бачанае імя паспяхова абноўлена"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Уладальнік дамена правераны. Цяпер вы можаце наладзіць запіс MX."
+      ],
+      "Domain successfully deleted": [
+        "Дамен паспяхова выдалены"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Дамен паспяхова правераны. Цяпер ваш дамен можа прымаць лісты і ствараць псеўданімы"
+      ],
+      "Mailbox successfully deleted": [
+        "Паштовая скрыня паспяхова выдалена"
+      ],
+      "Mailbox successfully verified": [
+        "Паштовая скрыня паспяхова праверана"
+      ],
+      "Mailboxes successfully updated": [
+        "Паштовая скрыня паспяхова абноўлена"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Адвольнай генерацыя прэфіксу паспяхова адключана"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Адвольнай генерацыя прэфіксу паспяхова ўключана"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальніка.",
         "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў.",
         "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў.",
         "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Праверачны ліст адпраўлены. Праверце папку з уваходнымі лістамі для праверкі сваёй паштовай скрыні."
       ]
     },
     "Theme": {
@@ -3189,8 +3596,29 @@
       "Actions": [
         "Дзеянні"
       ],
+      "Activity": [
+        "Актыўнасць"
+      ],
+      "Add custom domain": [
+        "Дадаць карыстальніцкі дамен"
+      ],
+      "Add mailbox": [
+        "Дадаць паштовую скрыню"
+      ],
+      "Alias contacts": [
+        "Кантакты псеўданіма"
+      ],
+      "Aliases": [
+        "Псеўданімы"
+      ],
+      "Auto create/on the fly alias": [
+        "Аўтаматычнае старэнне імгненных псеўданімаў"
+      ],
       "Auto-lock update": [
         "Абнаўленне аўтаблакіравання"
+      ],
+      "Blocked addresses": [
+        "Заблакіраваныя адрасы"
       ],
       "Breach detected": [
         "Выяўлена парушэнне"
@@ -3231,6 +3659,9 @@
       "Custom addresses": [
         "Карыстальніцкія адрасы"
       ],
+      "Custom domains": [
+        "Карыстальніцкія дамены"
+      ],
       "Custom email monitoring": [
         "Карыстальніцкі адрас электроннай пошты для назірання"
       ],
@@ -3240,11 +3671,23 @@
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
       ],
+      "Default": [
+        "Прадвызначаныя"
+      ],
+      "Default Display Name": [
+        "Прадвызначанае бачнае імя"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "Выдаліць ${ deletedItemsCount } элемент?",
         "Выдаліць ${ deletedItemsCount } элементы?",
         "Выдаліць ${ deletedItemsCount } элементаў?",
         "Выдаліць ${ deletedItemsCount } элементаў?"
+      ],
+      "Delete domain": [
+        "Выдаліць дамен"
+      ],
+      "Delete mailbox": [
+        "Выдаліць паштовую скрыню"
       ],
       "Delete this item?": [
         "Выдаліць гэты элемент?"
@@ -3257,6 +3700,18 @@
       ],
       "Discard changes?": [
         "Адхіліць змены?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (неабавязкова)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (неабавязкова)"
+      ],
+      "Domain": [
+        "Дамен"
+      ],
+      "Domain ownership verification": [
+        "Праверка ўладальніка дамена"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Падабаецца ${ PASS_APP_NAME }?"
@@ -3315,6 +3770,9 @@
       "Low disk space": [
         "Недастаткова месца на дыску"
       ],
+      "Mailbox": [
+        "Паштовая скрыня"
+      ],
       "Mark as resolved?": [
         "Пазначыць як вырашанае?"
       ],
@@ -3344,6 +3802,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Перамясціць элемент у \"${ vaultName }\""
+      ],
+      "MX record": [
+        "Запіс MX"
       ],
       "No excluded items": [
         "Няма выключаных элементаў"
@@ -3393,6 +3854,9 @@
         "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення.",
         "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення."
       ],
+      "Random Prefix Generation": [
+        "Выпадковая генерацыя прэфікса"
+      ],
       "Recommended actions": [
         "Рэкамендаваныя дзеянні"
       ],
@@ -3432,6 +3896,9 @@
       "Secure your data": [
         "Бяспека вашых даных"
       ],
+      "Select the default domain for aliases": [
+        "Выберыце прадвызначаныя дамены для псеўданімаў"
+      ],
       "Set access level": [
         "Задаць узровень доступу"
       ],
@@ -3452,6 +3919,9 @@
       ],
       "Share with": [
         "Абагуліць з"
+      ],
+      "SPF (Optional)": [
+        "SPF (неабавязкова)"
       ],
       "Status": [
         "Статус"
@@ -3479,6 +3949,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Разблакіроўка ${ brandNameJSX }"
+      ],
+      "Unverified": [
+        "Неправераны"
       ],
       "Update available": [
         "Даступна абнаўленне"
@@ -3510,6 +3983,9 @@
       "What is the dark web?": [
         "Што такое цёмная сетка?"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Якая розніца паміж нататкамі ${ PASS_SHORT_APP_NAME } і SimpleLogin?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Ваша падпіска ${ planName } завершыцца ${ endDate }"
       ],
@@ -3530,6 +4006,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "Памылковы URL-адрас дамена"
+      ],
       "Duplicated URL": [
         "Дубліраваны URL-адрас"
       ],
@@ -3604,8 +4083,14 @@
       "Delete alias": [
         "Выдаліць псеўданім"
       ],
+      "Domain cannot be empty": [
+        "Дамен не можа быць пустым."
+      ],
       "Duplicate email addresses.": [
         "Дубліраваныя адрасы электроннай пошты."
+      ],
+      "Email cannot be empty": [
+        "Поле электроннай пошты не можа быць пустым."
       ],
       "Email is required": [
         "Патрабуецца электронная пошта"
@@ -3699,6 +4184,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Звяжыцеся з намі для даследавання праблемы"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Звярніце ўвагу, што псеўданім немагчыма аднавіць пасля яго выдалення"
       ],
       "Please update the extension to its latest version": [
         "Абнавіце пашырэнне да апошняй версіі"

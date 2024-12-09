@@ -34,6 +34,12 @@
       "Add current URL": [
         "Προσθήκη τρέχουσας διεύθυνσης URL"
       ],
+      "Add custom domain": [
+        "Προσθήκη προσαρμοσμένου τομέα"
+      ],
+      "Add mailbox": [
+        "Προσθήκη γραμματοκιβωτίου"
+      ],
       "Add more": [
         "Προσθέστε περισσότερα"
       ],
@@ -61,6 +67,9 @@
       "Back": [
         "Πίσω"
       ],
+      "Block contact": [
+        "Αποκλεισμός επαφής"
+      ],
       "Bulk delete items from trash": [
         "Μαζική διαγραφή αντικειμένων από τα διαγραμμένα"
       ],
@@ -81,6 +90,12 @@
       ],
       "Change": [
         "Αλλαγή"
+      ],
+      "Check DNS": [
+        "Έλεγχος DNS"
+      ],
+      "Check settings": [
+        "Έλεγχος ρυθμίσεων"
       ],
       "Choose a file or drag it here": [
         "Επιλέξτε ένα αρχείο ή σύρετέ το εδώ"
@@ -115,6 +130,9 @@
       "Continue offline": [
         "Συνεχίστε εκτός σύνδεσης"
       ],
+      "Copy alias address": [
+        "Αντιγραφή διεύθυνσης ψευδωνύμου"
+      ],
       "Copy and close": [
         "Αντιγραφή και κλείσιμο"
       ],
@@ -141,6 +159,9 @@
       ],
       "Create card": [
         "Δημιουργήστε κάρτα"
+      ],
+      "Create contact": [
+        "Δημιουργία επαφής"
       ],
       "Create identity": [
         "Δημιουργία ταυτότητας"
@@ -180,6 +201,9 @@
       ],
       "Delete it, I will never need it": [
         "Διαγράψτε το, δε θα το χρειαστώ ποτέ"
+      ],
+      "Delete mailbox": [
+        "Διαγραφή γραμματοκιβωτίου"
       ],
       "Delete password": [
         "Διαγραφή κωδικού"
@@ -319,6 +343,9 @@
       "Make admin": [
         "Ορισμός ως διαχειριστή"
       ],
+      "Make default": [
+        "Ορισμός ως προεπιλογή"
+      ],
       "Make editor": [
         "Ορισμός ως επεξεργαστή"
       ],
@@ -339,6 +366,9 @@
       ],
       "Maximum views": [
         "Μέγιστος αριθμός εμφανίσεων"
+      ],
+      "More info": [
+        "Περισσότερες πληροφορίες"
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
@@ -399,6 +429,9 @@
       ],
       "Previous": [
         "Προηγούμενο"
+      ],
+      "Re-verify": [
+        "Εκ νέου επαλήθευση"
       ],
       "Reactivate now": [
         "Επανενεργοποίηση τώρα"
@@ -481,6 +514,9 @@
       "See members": [
         "Προβολή μελών"
       ],
+      "Send email": [
+        "Αποστολή μηνύματος"
+      ],
       "Send invite": [
         "Αποστολή πρόσκλησης"
       ],
@@ -539,6 +575,15 @@
       "Sync aliases": [
         "Συγχρονισμός ψευδωνύμων"
       ],
+      "To mailbox": [
+        "Στο γραμματοκιβώτιο"
+      ],
+      "Transfer aliases": [
+        "Μεταφορά ψευδωνύμων"
+      ],
+      "Transfer and delete mailbox": [
+        "Μεταφορά και διαγραφή γραμματοκιβωτίου"
+      ],
       "Transfer ownership": [
         "Μεταβίβαση κυριότητας"
       ],
@@ -550,6 +595,9 @@
       ],
       "Try for free": [
         "Δοκιμάστε δωρεάν"
+      ],
+      "Unblock contact": [
+        "Άρση αποκλεισμού επαφής"
       ],
       "Understood, I will never need it": [
         "Κατανοητό, δε θα το χρειαστώ ποτέ",
@@ -659,6 +707,15 @@
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "Το 2FA προσθέτει ένα ακόμη επίπεδο ασφάλειας στις συνδέσεις σας. Το ${ PASS_APP_NAME } κάνει το 2FA ευκολότερο, αποθηκεύοντας και συμπληρώνοντας αυτόματα τους κωδικούς 2FA."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Προσθέστε τις ακόλουθες εγγραφές DNS CNAME στον τομέα σας."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Προσθέστε την ακόλουθη εγγραφή MX DNS στον τομέα σας. Λάβετε υπόψη ότι υπάρχει μια τελεία (.) στις τελικές διευθύνσεις. Εάν το μητρώο καταχώρησης ονομάτων τομέων σας δεν επιτρέπει αυτήν την τελεία στο τέλος, καταργήστε την κατά την προσθήκη της εγγραφής DNS."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Προσθέστε την ακόλουθη εγγραφή DNS TXT στον τομέα σας."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ένα ψευδώνυμο ηλεκτρονικού ταχυδρομείου λειτουργεί όπως μια διεύθυνση ηλεκτρονικού ταχυδρομείου, αλλά μειώνει τα ανεπιθύμητα μηνύματα και διατηρεί κρυφή την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου και την ταυτότητά σας."
       ],
@@ -671,8 +728,23 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Το Dark Web Monitoring είναι διαθέσιμο με πλάνο επί πληρωμή. Αναβαθμίστε το πλάνο σας για άμεση πρόσβαση."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "Το DKIM ${ WIKIPEDIA_LINK_DKIM } είναι μια μέθοδος ελέγχου ταυτότητας ηλεκτρονικού ταχυδρομείου που έχει σχεδιαστεί για την αποφυγή πλαστογράφησης ηλεκτρονικού ταχυδρομείου. Η ρύθμιση του DKIM συνιστάται ιδιαίτερα για να μειώσετε την πιθανότητα τα email σας να καταλήξουν στον φάκελο ανεπιθύμητης αλληλογραφίας του παραλήπτη."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "Το DMARC ${ WIKIPEDIA_LINK_DMARC } έχει σχεδιαστεί για να προστατεύει τον τομέα από μη εξουσιοδοτημένη χρήση, κοινώς γνωστή ως πλαστογράφηση ηλεκτρονικού ταχυδρομείου. Χτισμένη γύρω από το SPF και το DKIM, μια πολιτική DMARC λέει στον διακομιστή αλληλογραφίας λήψης τι πρέπει να κάνει εάν καμία από αυτές τις μεθόδους ελέγχου ταυτότητας δεν επαληθευθέι."
+      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Λάβετε ειδοποίηση εάν η διεύθυνση ηλεκτρονικού ταχυδρομείου, ο κωδικός πρόσβασης ή άλλα προσωπικά δεδομένα σας έχουν διαρρεύσει."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Εάν χρησιμοποιείτε έναν υποτομέα, π.χ. ${ subdomainExample }, πρέπει να χρησιμοποιήσετε το ${ dmarcExampleSubdomain } ως τομέα."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Εάν χρησιμοποιείτε έναν υποτομέα, π.χ. subdomain.domain.com, πρέπει να χρησιμοποιήσετε το ${ domainKeyExampleSubdomain } ως τομέα. Αυτό σημαίνει ότι, εάν ο τομέας σας είναι mail.domain.com θα πρέπει να εισαγάγετε ${ domainKeyExampleMail } ως τομέα."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Εάν χρησιμοποιείτε το CloudFlare, βεβαιωθείτε ότι δεν έχετε επιλέξει την επιλογή Proxy."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Διατηρήστε τις πληροφορίες σας πιο ασφαλείς και ιδιωτικές με αυτούς τους οδηγούς και συμβουλές."
@@ -682,6 +754,15 @@
       ],
       "Set up 2FA for more security": [
         "Ρυθμίστε το 2FA για περισσότερη ασφάλεια"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Ορισμένα προγράμματα καταχώρησης ονομάτων DNS ενδέχεται να απαιτούν μια πλήρη διαδρομή εγγραφής, σε αυτήν την περίπτωση παρακαλούμε χρησιμοποιήστε ${ domain } ως τιμή τομέα."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Ορισμένοι καταχωρητές τομέα (Namecheap, CloudFlare, κ.λπ.) ενδέχεται επίσης να χρησιμοποιούν @ για τον ριζικό τομέα."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "Το SPF ${ WIKIPEDIA_LINK_SPF } είναι μια μέθοδος ελέγχου ταυτότητας ηλεκτρονικού ταχυδρομείου που έχει σχεδιαστεί για την ανίχνευση πλαστογράφησης διευθύνσεων αποστολέα κατά την παράδοση του μηνύματος ηλεκτρονικού ταχυδρομείου. Η ρύθμιση του SPF συνιστάται ιδιαίτερα για να μειώσετε την πιθανότητα τα μηνύματα ηλεκτρονικού ταχυδρομείου σας να καταλήξουν στον φάκελο ανεπιθύμητης αλληλογραφίας του παραλήπτη."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Ξεκινήστε την παρακολούθηση για παραβιάσεις δεδομένων που σχετίζονται με λογαριασμούς που έχουν δημιουργηθεί με τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας και τα hide-my-email ψευδώνυμά σας."
@@ -698,6 +779,9 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Αυτή η υπηρεσία προσφέρει 2FA. Ενεργοποιήστε το για πρόσθετη ασφάλεια λογαριασμού."
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "Για να επαληθεύσετε την ιδιοκτησία του τομέα, προσθέστε την ακόλουθη εγγραφή TXT. Ορισμένοι καταχωρητές τομέα (Namecheap, CloudFlare, κλπ.) ενδέχεται να χρησιμοποιούν @ για τον ριζικό τομέα."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Ξεκλειδώστε προηγμένες λειτουργίες ασφαλείας και λεπτομερή αρχεία καταγραφής για να προστατεύσετε την παρουσία σας στο διαδίκτυο."
       ],
@@ -711,12 +795,20 @@
         "Τα προσωπικά σας στοιχεία διέρρευσαν σε παραβίαση δεδομένων μιας υπηρεσίας τρίτου μέρους."
       ]
     },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "οτιδήποτε@${ domainDisplay }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου ${ provider }. ${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
         "[Σφάλμα] δεν ήταν δυνατή η ανάλυση ενός στοιχείου"
+      ],
+      "A domain ownership must be verified first.": [
+        "Η ιδιοκτησία του τομέα πρέπει πρώτα να επαληθευτεί."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Δεν ήταν δυνατή η ενημέρωση του ψευδωνύμου προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα"
@@ -786,6 +878,9 @@
         "Εντοπίστηκε ${ errors.length } αλλοιωμένη γραμμή csv",
         "Εντοπίστηκε ${ errors.length } αλλοιωμένες γραμμές csv"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Δεν ήταν δυνατή η επαλήθευση του τομέα. Βεβαιωθείτε ότι έχετε προσθέσει τις σωστές εγγραφές DNS"
+      ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
@@ -813,11 +908,32 @@
       "Failed to add email address": [
         "Αποτυχία προσθήκης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
+      "Failed to block the contact": [
+        "Αποτυχία αποκλεισμού της επαφής"
+      ],
+      "Failed to create domain": [
+        "Αποτυχία δημιουργίας τομέα"
+      ],
+      "Failed to create new mailbox": [
+        "Αποτυχία δημιουργίας νέου γραμματοκιβωτίου"
+      ],
+      "Failed to create the contact": [
+        "Αποτυχία δημιουργίας της επαφής"
+      ],
+      "Failed to delete domain": [
+        "Αποτυχία διαγραφής τομέα"
+      ],
       "Failed to delete email address from monitoring": [
         "Αποτυχία διαγραφής διεύθυνσης ηλεκτρονικού ταχυδρομείου από την παρακολούθηση"
       ],
       "Failed to delete selected items": [
         "Αποτυχία διαγραφής επιλεγμένων στοιχείων."
+      ],
+      "Failed to delete the contact": [
+        "Αποτυχία διαγραφής της επαφής"
+      ],
+      "Failed to delete the mailbox": [
+        "Αποτυχία διαγραφής του γραμματοκιβωτίου"
       ],
       "Failed to edit user's access.": [
         "Απέτυχε η επεξεργασία της πρόσβασης του χρήστη."
@@ -827,6 +943,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Αποτυχία φόρτωσης παραβιάσεων για αυτό το ψευδώνυμο ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Failed to load domain settings.": [
+        "Αποτυχία φόρτωσης ρυθμίσεων τομέα."
       ],
       "Failed to load item history": [
         "Αποτυχία φόρτωσης ιστορικού στοιχείων"
@@ -846,6 +965,9 @@
       "Failed to remove user's access.": [
         "Αποτυχία κατάργησης πρόσβασης χρήστη."
       ],
+      "Failed to resend verification code": [
+        "Αποτυχία επανάληψης αποστολής κωδικού επαλήθευσης"
+      ],
       "Failed to resend verification for custom email": [
         "Αποτυχία επανάληψης αποστολής επαλήθευσης για προσαρμοσμένο ηλεκτρονικό ταχυδρομείο"
       ],
@@ -864,8 +986,26 @@
       "Failed to unpin item": [
         "Αποτυχία ξεκαρφιτσώματος στοιχείου"
       ],
+      "Failed to update catch-all setting.": [
+        "Αποτυχία ενημέρωσης της ρύθμισης catch-all."
+      ],
+      "Failed to update default domain": [
+        "Αποτυχία ενημέρωσης προεπιλεγμένου τομέα"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Απέτυχε η ενημέρωση γραμματοκιβωτίων τομέα."
+      ],
+      "Failed to update domain name.": [
+        "Αποτυχία ενημέρωσης ονόματος τομέα."
+      ],
       "Failed to update monitoring settings": [
         "Αποτυχία ενημέρωσης των ρυθμίσεων παρακολούθησης"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Αποτυχία ενημέρωσης της ρύθμισης δημιουργίας τυχαίων προθεμάτων."
+      ],
+      "Failed to verify domain": [
+        "Αποτυχία επαλήθευσης τομέα"
       ],
       "Failed to verify email address": [
         "Αποτυχία επαλήθευσης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
@@ -1168,6 +1308,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } θα ακολουθήσει το θέμα του συστήματός σας."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "Το ${ PASS_APP_NAME } θα δημιουργήσει μια διεύθυνση προώθησης (αναφέρεται επίσης ως αντίστροφο ψευδώνυμο) την οποία μπορείτε να αντιγράψετε στο πρόχειρο."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις, πιστωτικές κάρτες και ταυτότητες."
       ],
@@ -1186,6 +1329,9 @@
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 ημέρες για να δοκιμάσετε δωρεάν premium χαρακτηριστικά. Μόνο κατά την πρώτη εβδομάδα χρησιμοποιώντας το ${ BRAND_NAME }."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Δημιουργείται μια επαφή για κάθε διεύθυνση ηλεκτρονικού ταχυδρομείου που στέλνει μηνύματα ηλεκτρονικού ταχυδρομείου ή λαμβάνει μηνύματα ηλεκτρονικού ταχυδρομείου από ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Μια νέα έκδοση του ${ PASS_APP_NAME } είναι διαθέσιμη. Ενημερώστε το για να απολαύσετε τις πιο πρόσφατες δυνατότητες και διορθώσεις σφαλμάτων."
@@ -1229,6 +1375,9 @@
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Τα ψευδώνυμα με προσαρμοσμένους τομείς δεν παρακολουθούνται, προσθέστε τα ως προσαρμοσμένο email για παρακολούθηση."
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Όλα τα ψευδώνυμα που χρησιμοποιούν το γραμματοκιβώτιο ${ emailJSX } θα διαγραφούν επίσης."
+      ],
       "All breaches for this address were resolved": [
         "Επιλύθηκαν όλες οι παραβιάσεις για αυτήν τη διεύθυνση"
       ],
@@ -1253,11 +1402,20 @@
       "An item previously shared with you was removed": [
         "Ένα στοιχείο που είχε μοιραστεί προηγουμένως μαζί σας καταργήθηκε"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Είστε βέβαιοι ότι θέλετε να καταργήσετε το ${ emailJSX } από τα γραμματοκιβώτιά σας;"
+      ],
       "Are you sure you want to remove the link?": [
         "Θέλετε σίγουρα να καταργήσετε τον σύνδεσμο;"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Τα ψευδώνυμα που δημιουργούνται αυτόματα ανήκουν αυτόματα στo/α ακόλουθo/α γραμματοκιβώτιo/α:"
+      ],
       "Auto-lock successfully disabled.": [
         "Το αυτόματο κλείδωμα απενεργοποιήθηκε με επιτυχία."
+      ],
+      "automatically": [
+        "αυτόματα"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Πριν εξαγάγετε τα δεδομένα σας με αυτήν τη μορφή, ανοίξτε τις ρυθμίσεις Safari -> καρτέλα \"Γενικά\" -> απενεργοποιήστε την επιλογή \"Άνοιγμα ασφαλών αρχείων μετά τη λήψη\". Αυτό θα αποτρέψει το Safari από την εσφαλμένη εξαγωγή του εξαγόμενου αρχείου."
@@ -1273,6 +1431,9 @@
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Φέρτε τους υπάρχοντες κωδικούς πρόσβασής σας στο ${ BRAND_NAME }."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Φέρτε το δικό σας τομέα και δε χρειάζεται να αγοράσετε άλλη λύση φιλοξενίας ηλεκτρονικού ταχυδρομείου."
       ],
       "Built in 2FA authenticator": [
         "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
@@ -1304,6 +1465,12 @@
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
       ],
+      "Create contact illustration": [
+        "Απεικόνιση δημιουργίας επαφών"
+      ],
+      "Created ${ time }.": [
+        "Δημιουργήθηκε ${ time }."
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "Το CSV προσφέρει μια βολική μορφή για την προβολή των δεδομένων σας. Ωστόσο, λόγω της απλότητάς του, ορισμένα δεδομένα δε θα συμπεριληφθούν (προσαρμοσμένα πεδία, κλειδιά πρόσβασης...). Για πλήρη εξαγωγή, συνιστάται η χρήση διαφορετικής μορφής."
       ],
@@ -1312,6 +1479,9 @@
       ],
       "Decrypting your data": [
         "Γίνεται αποκρυπτογράφηση των δεδομένων σας"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Το προεπιλεγμένο εμφανιζόμενο όνομα για ψευδώνυμα που δημιουργήθηκαν με ${ domainDisplay }, εκτός εάν αντικατασταθούν από το ψευδώνυμο εμφανιζόμενο όνομα."
       ],
       "Deleted items will be moved here first": [
         "Τα διαγραμμένα στοιχεία θα μετακινηθούν πρώτα εδώ"
@@ -1330,6 +1500,12 @@
       ],
       "Disabling offline mode...": [
         "Απενεργοποίηση λειτουργίας εκτός σύνδεσης..."
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Οι αλλαγές DNS μπορεί να χρειαστούν έως και 24 ώρες για να ενημερωθούν."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Τομέας: ${ domainPath } ή @"
       ],
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
@@ -1354,6 +1530,15 @@
       ],
       "Email address successfully included in monitoring": [
         "Η διεύθυνση ηλεκτρονικού ταχυδρομείου συμπεριλήφθηκε επιτυχώς στην παρακολούθηση"
+      ],
+      "Email headers illustration": [
+        "Απεικόνιση κεφαλίδων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Για παράδειγμα, στείλτε μήνυμα σε αυτήν τη διεύθυνση και θα φαίνεται ότι αποστέλλεται από το ${ exampleEmail }."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στα ψευδώνυμά σας προωθούνται στα γραμματοκιβώτιά σας. Ένα ψευδώνυμο μπορεί να έχει περισσότερα από ένα γραμματοκιβώτια: χρήσιμο για την κοινή χρήση ενός ψευδωνύμου ανάμεσα σε εσάς και τους φίλους σας."
       ],
       "Emptying trash...": [
         "Άδειασμα διαγραμμένων..."
@@ -1381,6 +1566,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Ενεργοποίηση αυτόματου κλειδώματος PIN"
+      ],
+      "Enter the address you want to email.": [
+        "Εισαγάγετε τη διεύθυνση που θέλετε να στείλετε μέσω ηλεκτρονικού ταχυδρομείου."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
@@ -1432,6 +1620,9 @@
       "here": [
         "εδώ"
       ],
+      "Here's how it works:": [
+        "Δείτε πώς λειτουργεί:"
+      ],
       "High Priority": [
         "Υψηλή προτεραιότητα"
       ],
@@ -1450,6 +1641,9 @@
       ],
       "Imported on ${ date }": [
         "Εισήχθη στις ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "Στο ${ PASS_SHORT_APP_NAME }, μια σημείωση στοιχείου κρυπτογραφείται με το κλειδί κρυπτογράφησης στοιχείου και μόνο οι χρήστες που έχουν πρόσβαση στο στοιχείο μπορούν να δουν τη σημείωση. Ούτε καν η ${ BRAND_NAME } ή η SimpleLogin δεν μπορούν να το δουν."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Για να αξιοποιήσετε στο έπακρο το ${ PASS_APP_NAME }, παραχωρήστε τα απαραίτητα δικαιώματα επέκτασης"
@@ -1584,6 +1778,9 @@
       "Moving items to trash": [
         "Μετακίνηση στοιχείων στα Διαγραμμένα"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Θέλετε να στείλετε μήνυμα ηλεκτρονικού ταχυδρομείου σε κάποιον, αλλά δε θέλετε να δει τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας; Ρυθμίστε ένα ψευδώνυμο επαφής."
+      ],
       "Never": [
         "Ποτέ"
       ],
@@ -1708,6 +1905,9 @@
       "Please enter your current PIN code to continue": [
         "Παρακαλούμε εισάγετε τον τρέχον κωδικό PIN σας για να συνεχίσετε"
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Ακολουθήστε τα παρακάτω βήματα για να ρυθμίσετε τον τομέα σας."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Παρακαλούμε λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδωνύμου. Ίσως θέλετε να απενεργοποιήσετε το ψευδώνυμο;"
       ],
@@ -1716,6 +1916,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Αναβαθμίστε για να έχετε πρώιμη πρόσβαση στη ${ PASS_APP_NAME } εφαρμογή ιστού"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Παρακαλούμε χρησιμοποιήστε τομέα πλήρους διαδρομής, για παράδειγμα my-domain.com ή my-subdomain.my-domain.com εάν χρησιμοποιείτε υποτομέα."
       ],
       "Press Enter to copy": [
         "Πατήστε Enter για αντιγραφή"
@@ -1728,6 +1931,15 @@
       ],
       "Reconnecting": [
         "Επανασύνδεση"
+      ],
+      "Record: CNAME": [
+        "Εγγραφή: CNAME"
+      ],
+      "Record: MX": [
+        "Εγγραφή: MX"
+      ],
+      "Record: TXT": [
+        "Εγγραφή: TXT"
       ],
       "Registering extra password...": [
         "Καταχώρηση επιπλέον κωδικού πρόσβασης..."
@@ -1750,8 +1962,14 @@
       "Restoring trashed items...": [
         "Επαναφορά διαγραμμένων στοιχείων..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Η αντίστροφη ψευδώνυμη διεύθυνση αντιγράφηκε στο πρόχειρο. Στείλτε ένα μήνυμα σε αυτήν τη διεύθυνση και το ${ Email } θα το λάβει."
+      ],
       "Secure links": [
         "Ασφαλείς σύνδεσμοι"
+      ],
+      "See more info": [
+        "Δείτε περισσότερες πληροφορίες"
       ],
       "Select destination vault": [
         "Επιλογή κρύπτης προορισμού"
@@ -1792,6 +2010,9 @@
       "Signing you in": [
         "Γίνεται είσοδος"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "Η σημείωση SimpleLogin αποθηκεύεται μαζί στην ίδια τοποθεσία με την ψευδώνυμη διεύθυνση και ενώ προστατεύεται από κρυπτογράφηση σε κατάσταση ηρεμίας, δεν είναι κρυπτογραφημένη E2E, πράγμα που σημαίνει ότι οποιοσδήποτε έχει πρόσβαση στη βάση δεδομένων SimpleLogin μπορεί να τη διαβάσει."
+      ],
       "Successfully exported all your items": [
         "Επιτυχής εξαγωγή όλων των στοιχείων σας"
       ],
@@ -1815,6 +2036,9 @@
       ],
       "The changelog can be found ${ changelogLink }.": [
         "Το αρχείο καταγραφής αλλαγών μπορεί να βρεθεί ${ changelogLink }."
+      ],
+      "The display name when sending an email from this alias.": [
+        "Το εμφανιζόμενο όνομα κατά την αποστολή ενός μηνύματος ηλεκτρονικού ταχυδρομείου από αυτό το ψευδώνυμο."
       ],
       "The export will only contain vaults that you own.": [
         "Η εξαγωγή θα περιέχει μόνο κρύπτες που σας ανήκουν."
@@ -1844,6 +2068,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Αυτή η εξαγωγή θα είναι μην κρυπτογραφημένη και οποιοσδήποτε έχει πρόσβαση στο εξαγόμενο αρχείο σας θα μπορεί να δει τους κωδικούς πρόσβασής σας. Για λόγους ασφαλείας, διαγράψτε το αφού ολοκληρώσετε τη χρήση του."
       ],
+      "This operation is irreversible.": [
+        "Αυτή η λειτουργία είναι μην αναστρέψιμη."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Αυτή η λειτουργία είναι μη αναστρέψιμη. Όλα τα ψευδώνυμα που χρησιμοποιούν τον τομέα ${ domainTextBold } θα διαγραφούν. Λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά των ψευδωνύμων."
+      ],
       "This option is currently not available on your device.": [
         "Αυτή η επιλογή δεν είναι προς το παρόν διαθέσιμη στη συσκευή σας."
       ],
@@ -1859,6 +2089,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Αυτό θα απορρίψει τη συσκευή **${ name }** που προσπάθησε να συνδεθεί στον λογαριασμό σας ${ BRAND_NAME } στις **${ date }**."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Για να συνεχίσετε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου, μεταφέρετε αυτά τα ψευδώνυμα σε διαφορετικό γραμματοκιβώτιο:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Για να διατηρήσετε κρυφή την προσωπική σας διεύθυνση ηλεκτρονικού ταχυδρομείου, μπορείτε να δημιουργήσετε μια ψευδώνυμη επαφή που καλύπτει τη διεύθυνσή σας."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Για να μεταφέρετε δεδομένα από έναν άλλο διαχειριστή κωδικών πρόσβασης, μεταβείτε στον διαχειριστή κωδικών πρόσβασης, εξαγάγετε τα δεδομένα σας και, στη συνέχεια, ανεβάστε τα στο ${ PASS_APP_NAME }. Μόλις εισαχθούν τα δεδομένα σας, διαγράψτε το εξαγόμενο αρχείο."
       ],
@@ -1870,6 +2106,12 @@
       ],
       "Unable to copy to clipboard": [
         "Αδυναμία αντιγραφής στο πρόχειρο"
+      ],
+      "Unconfigured": [
+        "Χωρίς διαμόρφωση"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Απεριόριστα hide-my-email ψευδώνυμα και προηγμένη διαχείριση ψευδωνύμων"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με βιομετρικά"
@@ -1907,6 +2149,9 @@
       "username": [
         "όνομα χρήστη"
       ],
+      "Value:": [
+        "Τιμή:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Η κρύπτη \"${ payload.content.name }\" διαγράφηκε με επιτυχία"
       ],
@@ -1937,6 +2182,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Κατά τη δημιουργία/επεξεργασία μιας σύνδεσης στο ${ PASS_APP_NAME } η είσοδος 'όνομα χρήστη' θα είναι πάντα ορατή."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Κατά την αποστολή ενός μηνύματος ηλεκτρονικού ταχυδρομείου από αυτό το ψευδώνυμο, το μήνυμα ηλεκτρονικού ταχυδρομείου θα εμφανίζει ως αποστολέα το ${ emailSender }."
       ],
       "You are about to create:": [
         "Είστε έτοιμοι να δημιουργήσετε:"
@@ -1973,6 +2221,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Έχετε φτάσει στο μέγιστο επιτρεπόμενο μήκος των ${ maxLength } χαρακτήρων."
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Θα μπορείτε να προσαρμόσετε τις ρυθμίσεις του τομέα σας (ψευδώνυμα ηλεκτρονικού ταχυδρομείου, προεπιλεγμένο εμφανιζόμενο όνομα για ψευδώνυμα κλπ.) αφού επαληθεύσετε τον τομέα σας."
+      ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Θα αποσυνδεθείτε και θα πρέπει να συνδεθείτε ξανά σε όλες τις άλλες συσκευές σας."
       ],
@@ -2000,6 +2251,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Ο λογαριασμός σας έχει περιοριστεί επειδή ο οργανισμός σας έχει επιβάλλει έλεγχο ταυτότητας δύο παραγόντων. Παρακαλώ ενεργοποιήστε τον έλεγχο ταυτότητας δύο παραγόντων στις δικές σας Ρυθμίσεις Λογαριασμού ή επικοινωνήστε με τον διαχειριστή σας."
       ],
+      "your domain": [
+        "ο τομέας σας"
+      ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
       ],
@@ -2015,6 +2269,10 @@
         "${ aliasCount } ψευδώνυμο",
         "${ aliasCount } ψευδώνυμα"
       ],
+      "${ blockedCount } block": [
+        "${ blockedCount } μπλοκ",
+        "${ blockedCount } μπλοκ"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } χαρακτήρας",
         "${ config.options.length } χαρακτήρες"
@@ -2027,6 +2285,10 @@
         "${ days } ημέρα",
         "${ days } ημέρες"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } προώθηση",
+        "${ forwardCount } προωθήσεις"
+      ],
       "${ hours } hour": [
         "${ hours } ώρα",
         "${ hours } ώρες"
@@ -2035,15 +2297,27 @@
         "${ minutes } λεπτό",
         "${ minutes } λεπτά"
       ],
+      "${ months } month": [
+        "${ months } μήνα",
+        "${ months } μήνες"
+      ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "Το ${ PASS_APP_NAME } αναγνωρίζει τους ιστότοπους και τις εφαρμογές που χρησιμοποιείτε και συμπληρώνει αυτόματα φόρμες με τα διαπιστευτήριά σας για εσάς σε οποιοδήποτε πρόγραμμα περιήγησης ή συσκευή. Δε χρειάζεται αντιγραφή και επικόλληση."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } έκδοση"
       ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } απάντηση",
+        "${ repliedCount } απαντήσεις"
+      ],
       "${ usageCount } login": [
         "${ usageCount } σύνδεση",
         "${ usageCount } συνδέσεις"
+      ],
+      "${ years } year": [
+        "${ years } έτος",
+        "${ years } έτη"
       ],
       "1 hour": [
         "1 ώρα"
@@ -2096,6 +2370,9 @@
       "Account": [
         "Λογαριασμός"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Προσθέστε ένα τυχαίο πρόθεμα για αυτόν τον τομέα κατά τη δημιουργία ενός νέου ψευδωνύμου."
+      ],
       "Add section": [
         "Προσθήκη ενότητας"
       ],
@@ -2110,6 +2387,9 @@
       ],
       "Alias address": [
         "Ψευδώνυμη διεύθυνση"
+      ],
+      "Alias address (disabled)": [
+        "Διεύθυνση ψευδωνύμου (απενεργοποιημένη)"
       ],
       "Alias management": [
         "Διαχείρισης ψευδωνύμων"
@@ -2165,6 +2445,9 @@
       "Cards": [
         "Κάρτες"
       ],
+      "Catch-All": [
+        "Catch-All"
+      ],
       "Choose unlock method": [
         "Επιλέξτε μέθοδο ξεκλειδώματος"
       ],
@@ -2185,6 +2468,9 @@
       ],
       "Confirm vault name": [
         "Επιβεβαίωση ονόματος κρύπτης"
+      ],
+      "Contact created ${ time } ago.": [
+        "Η επαφή δημιουργήθηκε πριν από ${ time }."
       ],
       "Contact details": [
         "Στοιχεία επαφής"
@@ -2249,8 +2535,14 @@
       "Display name": [
         "Εμφανιζόμενο Όνομα"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Τομέας (Domain)"
+      ],
+      "Domain:": [
+        "Τομέας:"
       ],
       "Domains": [
         "Τομείς"
@@ -2399,6 +2691,9 @@
       "Include numbers (0-9)": [
         "Συμπερίληψη αριθμών (0-9)"
       ],
+      "Info": [
+        "Πληροφορίες"
+      ],
       "Instagram handle": [
         "Όνομα χρήστη Instagram"
       ],
@@ -2465,6 +2760,9 @@
       "Logins": [
         "Συνδέσεις"
       ],
+      "Mailboxes": [
+        "Γραμματοκιβώτια"
+      ],
       "Make all admins": [
         "Κάντε τους όλους διαχειριστές"
       ],
@@ -2516,14 +2814,23 @@
       "Newest to oldest": [
         "Από το νεότερο στο παλαιότερο"
       ],
+      "No Activity in the last 14 days.": [
+        "Καμία Δραστηριότητα στις τελευταίες 14 ημέρες."
+      ],
       "No history": [
         "Χωρίς ιστορικό"
       ],
       "None": [
         "Κανένα"
       ],
+      "Not selected": [
+        "Δεν είναι επιλεγμένο"
+      ],
       "Note": [
         "Σημείωση"
+      ],
+      "Note • SimpleLogin": [
+        "Σημείωση • SimpleLogin"
       ],
       "Notes": [
         "Σημειώσεις"
@@ -2588,8 +2895,17 @@
       "Prefix": [
         "Πρόθεμα"
       ],
+      "Premium domain": [
+        "Premium τομέας"
+      ],
+      "Priority:": [
+        "Προτεραιότητα:"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Προστατέψτε το ${ PASS_APP_NAME } με έναν επιπλέον κωδικό πρόσβασης"
+      ],
+      "Public domain": [
+        "Δημόσιος τομέας"
       ],
       "Rate us": [
         "Βαθμολογήστε μας"
@@ -2632,6 +2948,9 @@
       ],
       "Security code": [
         "Κωδικός διασφάλισης"
+      ],
+      "Select a domain": [
+        "Επιλέξτε ένα τομέα"
       ],
       "Select an email address": [
         "Επιλέξτε μια διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -2701,6 +3020,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Συγχρονισμός ψευδωνύμων με το SimpleLogin"
+      ],
+      "Target:": [
+        "Στόχος:"
       ],
       "Tax number": [
         "Α.Φ.Μ."
@@ -2778,6 +3100,9 @@
       "Username": [
         "Όνομα Χρήστη"
       ],
+      "Value:": [
+        "Τιμή:"
+      ],
       "Vault ID": [
         "Αναγνωριστικό κρύπτης"
       ],
@@ -2823,6 +3148,9 @@
       "You can choose between PIN code, biometrics, or your account password to unlock.": [
         "Μπορείτε να επιλέξετε μεταξύ κωδικού PIN, βιομετρικών στοιχείων ή κωδικού πρόσβασης του λογαριασμού σας για ξεκλείδωμα."
       ],
+      "Your domain": [
+        "Ο τομέας σας"
+      ],
       "Your passwords. Everywhere.": [
         "Οι κωδικοί πρόσβασής σας. Παντού."
       ],
@@ -2831,6 +3159,9 @@
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "αυτόματη δημιουργία κανόνων ››"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
@@ -2928,6 +3259,9 @@
       "Add text": [
         "Προσθήκη κειμένου"
       ],
+      "Alias Display Name": [
+        "Εμφανιζόμενο Όνομα Ψευδώνυμου"
+      ],
       "Email address": [
         "Διεύθυνση email"
       ],
@@ -2954,6 +3288,15 @@
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
+      ],
+      "my-domain.com": [
+        "my-domain.com"
+      ],
+      "Name to display when sending an email": [
+        "Όνομα που θα εμφανίζεται κατά την αποστολή μηνύματος ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Note from SimpleLogin": [
+        "Σημείωση από το SimpleLogin"
       ],
       "Password": [
         "Κωδικός πρόσβασης"
@@ -3080,9 +3423,63 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Ο συγχρονισμός ψευδωνύμων ενεργοποιήθηκε με επιτυχία. Τα ψευδώνυμα SimpleLogin ενδέχεται να χρειαστούν λίγο χρόνο για να συγχρονιστούν"
       ],
+      "Catch-all setting successfully disabled": [
+        "Η ρύθμιση catch-all απενεργοποιήθηκε με επιτυχία"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Η ρύθμιση catch-all ενεργοποιήθηκε με επιτυχία"
+      ],
+      "Contact successfully blocked": [
+        "Η επαφή αποκλείστηκε με επιτυχία"
+      ],
+      "Contact successfully created": [
+        "Η επαφή δημιουργήθηκε με επιτυχία"
+      ],
+      "Contact successfully deleted": [
+        "Η επαφή διαγράφηκε με επιτυχία"
+      ],
+      "Contact successfully unblocked": [
+        "Η επαφή ξεμπλοκαρίστηκε με επιτυχία"
+      ],
+      "Default domain successfully updated": [
+        "Ο προεπιλεγμένος τομέας ενημερώθηκε με επιτυχία"
+      ],
+      "Default mailbox successfully updated": [
+        "Το προεπιλεγμένο γραμματοκιβώτιο ενημερώθηκε με επιτυχία"
+      ],
+      "Display name successfully updated": [
+        "Το εμφανιζόμενο όνομα ενημερώθηκε με επιτυχία"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Επαληθεύτηκε η ιδιοκτησία τομέα. Τώρα μπορείτε να ρυθμίσετε την εγγραφή MX."
+      ],
+      "Domain successfully deleted": [
+        "Ο τομέας διαγράφηκε με επιτυχία"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Ο τομέας επαληθεύτηκε με επιτυχία. Ο τομέας σας μπορεί να αρχίσει να λαμβάνει μηνύματα ηλεκτρονικού ταχυδρομείου και να δημιουργεί ψευδώνυμα"
+      ],
+      "Mailbox successfully deleted": [
+        "Το γραμματοκιβώτιο διαγράφηκε με επιτυχία"
+      ],
+      "Mailbox successfully verified": [
+        "Το γραμματοκιβώτιο επαληθεύτηκε με επιτυχία"
+      ],
+      "Mailboxes successfully updated": [
+        "Τα γραμματοκιβώτια ενημερώθηκαν με επιτυχία"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Η δημιουργία τυχαίων προθεμάτων απενεργοποιήθηκε με επιτυχία"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Η δημιουργία τυχαίων προθεμάτων ενεργοποιήθηκε με επιτυχία"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστη.",
         "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστες."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Στάλθηκε μήνυμα επαλήθευσης. Παρακαλούμε ελέγξτε τα εισερχόμενά σας για να επαληθεύσετε το γραμματοκιβώτιό σας"
       ]
     },
     "Theme": {
@@ -3109,8 +3506,29 @@
       "Actions": [
         "Ενέργειες"
       ],
+      "Activity": [
+        "Δραστηριότητα"
+      ],
+      "Add custom domain": [
+        "Προσθήκη προσαρμοσμένου τομέα"
+      ],
+      "Add mailbox": [
+        "Προσθήκη γραμματοκιβωτίου"
+      ],
+      "Alias contacts": [
+        "Ψευδώνυμες επαφές"
+      ],
+      "Aliases": [
+        "Ψευδώνυμα"
+      ],
+      "Auto create/on the fly alias": [
+        "Αυτόματη δημιουργία ψευδώνυμου"
+      ],
       "Auto-lock update": [
         "Ενημέρωση αυτόματου κλειδώματος"
+      ],
+      "Blocked addresses": [
+        "Αποκλεισμένες διευθύνσεις"
       ],
       "Breach detected": [
         "Εντοπίστηκε παραβίαση"
@@ -3151,6 +3569,9 @@
       "Custom addresses": [
         "Προσαρμοσμένες διευθύνσεις"
       ],
+      "Custom domains": [
+        "Προσαρμοσμένοι τομείς"
+      ],
       "Custom email monitoring": [
         "Παρακολούθηση προσαρμοσμένων διευθύνσεων ηλεκτρονικού ταχυδρομείου"
       ],
@@ -3160,9 +3581,21 @@
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
       ],
+      "Default": [
+        "Προεπιλογή"
+      ],
+      "Default Display Name": [
+        "Προκαθορισμένο Όνομα Εμφάνισης"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "Διαγραφή ${ deletedItemsCount } στοιχείου;",
         "Μεταγραφή ${ deletedItemsCount } στοιχείων;"
+      ],
+      "Delete domain": [
+        "Διαγραφή τομέα"
+      ],
+      "Delete mailbox": [
+        "Διαγραφή γραμματοκιβωτίου"
       ],
       "Delete this item?": [
         "Διαγραφή αυτού του στοιχείου;"
@@ -3175,6 +3608,18 @@
       ],
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (Προαιρετικό)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (Προαιρετικό)"
+      ],
+      "Domain": [
+        "Τομέας"
+      ],
+      "Domain ownership verification": [
+        "Επαλήθευση ιδιοκτησίας τομέα"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Απολαμβάνετε το ${ PASS_APP_NAME };"
@@ -3233,6 +3678,9 @@
       "Low disk space": [
         "Περιορισμένος χώρος στο δίσκο"
       ],
+      "Mailbox": [
+        "Γραμματοκιβώτιο"
+      ],
       "Mark as resolved?": [
         "Σήμανση ως επιλυμένου?"
       ],
@@ -3258,6 +3706,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Μετακίνηση στοιχείου στο \"${ vaultName }\""
+      ],
+      "MX record": [
+        "Εγγραφή MX"
       ],
       "No excluded items": [
         "Δεν υπάρχουν εξαιρούμενα στοιχεία"
@@ -3305,6 +3756,9 @@
         "Λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδώνυμου.",
         "Λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά των ψευδωνύμων."
       ],
+      "Random Prefix Generation": [
+        "Δημιουργία Τυχαίου Προθέματος"
+      ],
       "Recommended actions": [
         "Συνιστώμενες ενέργειες"
       ],
@@ -3342,6 +3796,9 @@
       "Secure your data": [
         "Ασφαλίστε τα δεδομένα σας"
       ],
+      "Select the default domain for aliases": [
+        "Επιλέξτε τον προεπιλεγμένο τομέα για ψευδώνυμα"
+      ],
       "Set access level": [
         "Ορισμός επιπέδου πρόσβασης"
       ],
@@ -3362,6 +3819,9 @@
       ],
       "Share with": [
         "Κοινοποίηση με"
+      ],
+      "SPF (Optional)": [
+        "SPF (Προαιρετικό)"
       ],
       "Status": [
         "Κατάσταση"
@@ -3389,6 +3849,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Ξεκλειδώστε ${ brandNameJSX }"
+      ],
+      "Unverified": [
+        "Μη επαληθευμένος"
       ],
       "Update available": [
         "Υπάρχει διαθέσιμη ενημέρωση"
@@ -3420,6 +3883,9 @@
       "What is the dark web?": [
         "Τι είναι ο σκοτεινός ιστός;"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Ποια είναι η διαφορά μεταξύ της σημείωσης ${ PASS_SHORT_APP_NAME } και της σημείωσης SimpleLogin;"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Η ${ planName } συνδρομή σας θα λήξει στις ${ endDate }"
       ],
@@ -3438,6 +3904,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "Η διεύθυνση URL τομέα δεν είναι έγκυρη"
+      ],
       "Duplicated URL": [
         "Διπλότυπη διεύθυνση URL"
       ],
@@ -3508,8 +3977,14 @@
       "Delete alias": [
         "Διαγραφή ψευδώνυμου"
       ],
+      "Domain cannot be empty": [
+        "Ο Τομέας δεν μπορεί να είναι κενός"
+      ],
       "Duplicate email addresses.": [
         "Διπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
+      "Email cannot be empty": [
+        "Το email δεν μπορεί να είναι κενό"
       ],
       "Email is required": [
         "Η διεύθυνση email είναι υποχρεωτική"
@@ -3601,6 +4076,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Επικοινωνήστε μαζί μας για να διερευνήσουμε το ζήτημα"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Παρακαλούμε σημειώστε ότι μετά τη διαγραφή, τα ψευδώνυμα δεν είναι δυνατό να επαναφερθούν"
       ],
       "Please update the extension to its latest version": [
         "Παρακαλούμε ενημερώστε την επέκταση στην πιο πρόσφατη έκδοσή της"
