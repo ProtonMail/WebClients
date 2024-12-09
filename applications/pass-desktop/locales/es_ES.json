@@ -707,6 +707,15 @@
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "La autenticación 2FA añade otra capa de seguridad a tus inicios de sesión. ${ PASS_APP_NAME } hace más fácil usar la autenticación 2FA al almacenar y rellenar automáticamente los códigos 2FA."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Agrega los siguientes registros DNS CNAME a tu dominio."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Agrega el siguiente registro DNS MX a tu dominio. Ten en cuenta que hay un punto (.) al final de las direcciones de destino. Si tu registrador de dominio no permite este punto final, elimínalo al agregar el registro DNS."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Agrega el siguiente registro DNS TXT a tu dominio."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de correo funciona como una dirección de correo electrónico, pero reduce el spam y mantiene tu dirección e identidad real ocultas."
       ],
@@ -719,8 +728,23 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "El monitoreo de la Dark Web está disponible con un plan de pago. Mejora el plan para un acceso inmediato."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "El protocolo DKIM ${ WIKIPEDIA_LINK_DKIM } es un método de autenticación de correo electrónico diseñado para evitar la suplantación de identidad. Se recomienda encarecidamente configurar DKIM para reducir las posibilidades de que tus correos electrónicos terminen en la carpeta de spam del destinatario."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "La politica DMARC ${ WIKIPEDIA_LINK_DMARC } está diseñada para proteger el dominio de usos no autorizados, comúnmente conocidos como suplantación de identidad de correo electrónico. Desarrollada en torno a SPF y DKIM, una política DMARC le indica al servidor de correo receptor qué hacer si ninguno de esos métodos de autenticación es válido."
+      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Recibe notificaciones si el correo electrónico, contraseña u otro dato personal ha sido filtrado."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Si estás usando un subdominio, por ejemplo, ${ subdomainExample }, deberás usar ${ dmarcExampleSubdomain } como dominio."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Si estás usando un subdominio, por ejemplo, subdominio.dominio.es, debes usar ${ domainKeyExampleSubdomain } como dominio. Esto significa que, si tu dominio es correo.dominio.es, debes ingresar ${ domainKeyExampleMail } como dominio."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Si estás usando CloudFlare, asegúrate de no seleccionar la opción Proxy."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mantén tu información más segura y privada con estas guías y consejos."
@@ -730,6 +754,15 @@
       ],
       "Set up 2FA for more security": [
         "Configura la 2FA para más seguridad"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Algunos registradores de DNS podrían requerir una ruta de registro completa. En este caso, usa ${ domain } como valor de dominio."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Algunos registradores de dominio (Namecheap, CloudFlare, etc.) también pueden usar @ para el dominio raíz."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "La norma SPF ${ WIKIPEDIA_LINK_SPF } es un método de autenticación de correo electrónico diseñado para detectar direcciones de remitentes falsificadas durante la entrega del correo electrónico. Se recomienda encarecidamente configurar SPF para reducir la posibilidad de que tus correos electrónicos terminen en la carpeta de spam del destinatario."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Empieza a monitorear vulneraciones de datos relacionadas a cuentas creadas con la dirección de correo y los alias de hide-my-email."
@@ -745,6 +778,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Este servicio ofrece la 2FA. Actívala para aumentar la seguridad de la cuenta."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "Para verificar la propiedad del dominio, agrega el siguiente registro TXT. Algunos registradores de dominios (Namecheap, CloudFlare, etc.) pueden usar @ para el dominio raíz."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloquea funciones de seguridad avanzadas y registros detallados para proteger tu presencia en línea."
@@ -770,6 +806,9 @@
       ],
       "[Error] an item could not be parsed": [
         "[Error] No se ha podido analizar un elemento."
+      ],
+      "A domain ownership must be verified first.": [
+        "Primero se debe verificar la propiedad de un dominio."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Los alias no se pueden actualizar en este momento. Inténtalo más tarde."
@@ -838,6 +877,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "Se ha detectado ${ errors.length } fila dañada en el archivo CSV.",
         "Se han detectado ${ errors.length } filas dañadas en el archivo CSV."
+      ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "No se ha podido verificar el dominio. Asegúrate de haber agregado los registros DNS correctos."
       ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
@@ -935,6 +977,9 @@
       "Failed to restore items from trash": [
         "Error al restaurar elementos en la papelera"
       ],
+      "Failed to set default mailbox": [
+        "No se ha podido establecer el buzón por defecto."
+      ],
       "Failed to sync aliases": [
         "Error al sincronizar los alias"
       ],
@@ -958,6 +1003,9 @@
       ],
       "Failed to update monitoring settings": [
         "Error al actualizar los ajustes de monitoreo"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "No se ha podido actualizar el ajuste de generación de prefijo aleatorio."
       ],
       "Failed to verify domain": [
         "Error al verificar el dominio"
@@ -1231,6 +1279,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } bloqueo",
+        "${ blockedEmailsCount } bloqueos"
+      ],
       "${ count } invite successfully sent": [
         "${ count } invitación enviada",
         "${ count } invitaciones enviadas"
@@ -1245,6 +1297,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } vistas"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } reenvío",
+        "${ forwardedEmailsCount } reenvíos"
       ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
@@ -1263,6 +1319,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } aplicará el mismo tema que el del sistema."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } generará una dirección de reenvío (también denominada alias inverso) que puedes copiar al portapapeles."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } solo importará inicios de sesión, notas, tarjetas de crédito e identidades."
       ],
@@ -1275,12 +1334,19 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } activado"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } envió",
+        "${ repliedEmailsCount } envíos"
+      ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } vulneración detectada",
         "${ row.breachCount } vulneraciones detectadas"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Prueba gratis las funciones premium durante 7 días, solo durante tu primera semana en ${ BRAND_NAME }."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Se crea un contacto por cada dirección de correo electrónico que envía o recibe correos electrónicos desde ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hay una nueva versión disponible de ${ PASS_APP_NAME }. Actualízala para disfrutar de las últimas funciones y errores corregidos."
@@ -1324,6 +1390,9 @@
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Los alias con dominios personalizados no son monitoreados. Añádelos como correo electrónico personalizado para monitorearlos."
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "También se eliminarán todos los alias que utilicen el buzón ${ emailJSX }."
+      ],
       "All breaches for this address were resolved": [
         "Todas las vulneraciones han sido resueltas para esta dirección."
       ],
@@ -1348,8 +1417,14 @@
       "An item previously shared with you was removed": [
         "Se ha borrado un elemento previamente compartido contigo."
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "¿Estás seguro de que deseas eliminar ${ emailJSX } de tus buzones de correo?"
+      ],
       "Are you sure you want to remove the link?": [
         "¿Estás seguro de que quieres borrar el enlace?"
+      ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Los alias creados automáticamente son propiedad de los siguientes buzones de correo:"
       ],
       "Auto-lock successfully disabled.": [
         "Se ha desactivado el bloqueo automático."
@@ -1371,6 +1446,9 @@
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Trae tus contraseñas existentes a ${ BRAND_NAME }."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Trae tu propio dominio y no tendrás que comprar otra solución de alojamiento de correo electrónico."
       ],
       "Built in 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -1417,6 +1495,9 @@
       "Decrypting your data": [
         "Descifrando tus datos"
       ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Eso es el nombre a mostrar por defecto para los alias creados con ${ domainDisplay } a menos que se sobrescriba con el nombre a mostrar del alias."
+      ],
       "Deleted items will be moved here first": [
         "Los elementos eliminados serán movidos aquí primero."
       ],
@@ -1434,6 +1515,9 @@
       ],
       "Disabling offline mode...": [
         "Desactivando el modo sin conexión..."
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Los cambios de DNS pueden tardar hasta 24 horas en actualizarse."
       ],
       "Domain: ${ domainPath } or @": [
         "Dominio: ${ domainPath } o @"
@@ -1464,6 +1548,12 @@
       ],
       "Email headers illustration": [
         "Ilustración de encabezados de correo electrónico"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Por ejemplo, envía un correo electrónico a esta dirección y aparecerá como enviado desde ${ exampleEmail }."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Los correos electrónicos enviados a tus alias se reenvían a tus buzones de correo. Un alias puede tener más de un buzón de correo: resulta útil para compartir un alias entre tú y tus amigos."
       ],
       "Emptying trash...": [
         "Vaciando la papelera..."
@@ -1566,6 +1656,9 @@
       ],
       "Imported on ${ date }": [
         "Importado el ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "En ${ PASS_SHORT_APP_NAME }, una nota se cifra con la clave de cifrado del elemento y solo los usuarios que tienen acceso al elemento pueden verla. Ni siquiera ${ BRAND_NAME } o SimpleLogin pueden verla."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Para obtener la mejor experiencia de ${ PASS_APP_NAME }, concede los permisos necesarios de la extensión."
@@ -1700,6 +1793,9 @@
       "Moving items to trash": [
         "Moviendo el elemento a la papelera"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "¿Necesitas enviar un correo electrónico a alguien pero no quieres que esa persona vea tu dirección de correo electrónico? Configura un alias de contacto."
+      ],
       "Never": [
         "Nunca"
       ],
@@ -1824,6 +1920,9 @@
       "Please enter your current PIN code to continue": [
         "Introduce tu código PIN actual para continuar."
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Sigue los pasos a continuación para configurar tu dominio."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Una vez eliminado, el alias no puede ser restaurado. ¿Quizás deseas desactivarlo en su lugar?"
       ],
@@ -1832,6 +1931,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Mejora tu plan para obtener un acceso anticipado a la aplicación web de ${ PASS_APP_NAME }."
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Usa la ruta de dominio completa, por ejemplo mi-dominio.es o mi-subdominio.mi-dominio.es si estás usando un subdominio."
       ],
       "Press Enter to copy": [
         "Presiona Enter para copiar"
@@ -1874,6 +1976,9 @@
       ],
       "Restoring trashed items...": [
         "Restaurando elementos de la papelera..."
+      ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Se ha copiado la dirección de alias inversa al portapapeles. Envía un correo electrónico a esta dirección y ${ Email } lo recibirá."
       ],
       "Secure links": [
         "Enlaces seguros"
@@ -1923,6 +2028,9 @@
       "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
         "La nota de SimpleLogin se almacena en la misma ubicación con la dirección de alias y, si bien está protegida con cifrado, no lo está con cifrado de extremo a extremo, lo que significa que cualquiera que tenga acceso a la base de datos de SimpleLogin puede leerla."
       ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Simplemente usa ${ emailBold } la próxima vez que necesites un alias: se creará ${ automaticallyBold } la primera vez que reciba un correo electrónico. Para tener un control más detallado, también puedes definir ${ rulesHyperLink }."
+      ],
       "Successfully exported all your items": [
         "Se han exportado correctamente todos tus elementos."
       ],
@@ -1946,6 +2054,9 @@
       ],
       "The changelog can be found ${ changelogLink }.": [
         "El registro de cambios puede encontrarse ${ changelogLink }."
+      ],
+      "The display name when sending an email from this alias.": [
+        "El nombre a mostrar cuando envíes un correo electrónico desde este alias."
       ],
       "The export will only contain vaults that you own.": [
         "La exportación solo contendrá las cajas fuertes que te pertenecen."
@@ -1978,6 +2089,9 @@
       "This operation is irreversible.": [
         "Esta operación es irreversible."
       ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Esta operación es irreversible. Se eliminarán todos los alias que utilicen el dominio ${ domainTextBold }. Una vez eliminados, los alias no se pueden restaurar."
+      ],
       "This option is currently not available on your device.": [
         "Esta opción no está disponible en tu dispositivo."
       ],
@@ -1993,6 +2107,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Esto rechazará el dispositivo **${ name }** que ha intentado iniciar sesión en tu cuenta ${ BRAND_NAME } el **${ date }**."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Para seguir recibiendo correos electrónicos, transfiera estos alias a otro buzón:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Para mantener la dirección de correo electrónico oculta, se puede crear un alias de contacto para enmascarar la dirección."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Para migrar los datos desde otro gestor de contraseñas, ve al gestor, exporta tus datos y luego cárgalos en ${ PASS_APP_NAME }. Una vez que los datos se han importado, elimina el archivo exportado."
       ],
@@ -2007,6 +2127,9 @@
       ],
       "Unconfigured": [
         "Sin configuración"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Número ilimitado de alias ​​hide-my-email y administración avanzada de alias"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloquea ${ PASS_SHORT_APP_NAME } con datos biométricos"
@@ -2078,6 +2201,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Cuando se cree o edite un inicio de sesión en ${ PASS_APP_NAME }, la entrada de «nombre de usuario» siempre estará visible."
       ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Cuando envíes un correo electrónico desde este alias, el correo electrónico mostrará ${ emailSender } como remitente."
+      ],
       "You are about to create:": [
         "Vas a crear:"
       ],
@@ -2112,6 +2238,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Has alcanzado el número máximo de ${ maxLength } caracteres."
+      ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Podrás personalizar la configuración de tu dominio (alias de correo electrónico catch-all, nombre a mostrar por defecto para los alias, etc.) después de verificar tu dominio."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Se cerrará la sesión y tendrás que volver a iniciarla en todos los dispositivos."
@@ -2178,8 +2307,8 @@
         "${ forwardCount } reenvío",
         "${ forwardCount } reenvíos"
       ],
-      "${ ForwardedEmails } forwarded, ${ RepliedEmails } sent, ${ BlockedEmails } blocked, in the last 14 days.": [
-        "${ ForwardedEmails } reenviados, ${ RepliedEmails } enviados, ${ BlockedEmails } bloqueados en los últimos 14 días."
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails },${ repliedEmails } y ${ blockedEmails } en los últimos 14 días."
       ],
       "${ hours } hour": [
         "${ hours } hora",
@@ -2261,6 +2390,9 @@
       ],
       "Account": [
         "Cuenta"
+      ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Agrega un prefijo aleatorio para este dominio al crear un nuevo alias."
       ],
       "Add section": [
         "Añadir una sección"
@@ -3181,6 +3313,9 @@
       "my-domain.com": [
         "mi-dominio.es"
       ],
+      "Name to display when sending an email": [
+        "Nombre a mostrar al enviar un correo electrónico"
+      ],
       "Note from SimpleLogin": [
         "Nota de SimpleLogin"
       ],
@@ -3309,6 +3444,12 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Se ha activado la sincronización de alias. Los alias de SimpleLogin puede tomar un tiempo en sincronizarse."
       ],
+      "Catch-all setting successfully disabled": [
+        "Se ha desactivado el ajuste catch-all."
+      ],
+      "Catch-all setting successfully enabled": [
+        "Se ha activado el ajuste catch-all."
+      ],
       "Contact successfully blocked": [
         "Se ha bloqueado el contacto."
       ],
@@ -3330,8 +3471,14 @@
       "Display name successfully updated": [
         "Se ha actualizado el nombre a mostrar."
       ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Se ha verificado la propiedad del dominio. Ahora puedes configurar el registro MX."
+      ],
       "Domain successfully deleted": [
         "Se ha eliminado el dominio."
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Se ha verificado el dominio. Tu dominio puede comenzar a recibir correos electrónicos y crear alias."
       ],
       "Mailbox successfully deleted": [
         "Se ha eliminado el buzón."
@@ -3342,9 +3489,18 @@
       "Mailboxes successfully updated": [
         "Se han actualizado los buzones."
       ],
+      "Random prefix generation successfully disabled": [
+        "Se ha desactivado la generación aleatoria de prefijos."
+      ],
+      "Random prefix generation successfully enabled": [
+        "Se ha activado la generación aleatoria de prefijos."
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Las cajas fuertes no pueden contener más de ${ vault.targetMaxMembers } usuario.",
         "Las cajas fuertes no pueden contener más de ${ vault.targetMaxMembers } usuarios."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Se ha enviado un correo electrónico de verificación. Revisa tu bandeja de entrada para verificar tu buzón de correo."
       ]
     },
     "Theme": {
@@ -3385,6 +3541,9 @@
       ],
       "Aliases": [
         "Alias"
+      ],
+      "Auto create/on the fly alias": [
+        "Crear automáticamente un alias sobre la marcha"
       ],
       "Auto-lock update": [
         "Actualización de bloqueo automático"
@@ -3658,6 +3817,9 @@
       "Secure your data": [
         "Asegura tus datos"
       ],
+      "Select the default domain for aliases": [
+        "Seleccionar el dominio por defecto por los alias"
+      ],
       "Set access level": [
         "Configurar el nivel de acceso"
       ],
@@ -3741,6 +3903,9 @@
       ],
       "What is the dark web?": [
         "¿Qué es la dark web?"
+      ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "¿Cuál es la diferencia entre una nota de ${ PASS_SHORT_APP_NAME } y una nota de SimpleLogin?"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Tu suscripción a ${ planName } finalizará el ${ endDate }."
@@ -3935,6 +4100,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Contáctanos para investigar el problema."
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Una vez eliminados, los alias no se pueden restaurar"
       ],
       "Please update the extension to its latest version": [
         "Actualiza la extensión a la última versión."

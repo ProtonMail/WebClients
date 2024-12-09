@@ -34,6 +34,12 @@
       "Add current URL": [
         "Přidat aktuální URL adresu"
       ],
+      "Add custom domain": [
+        "Přidat vlastní doménu"
+      ],
+      "Add mailbox": [
+        "Přidat e-mailovou schránku"
+      ],
       "Add more": [
         "Přidat další"
       ],
@@ -61,6 +67,9 @@
       "Back": [
         "Zpět"
       ],
+      "Block contact": [
+        "Zablokovat kontakt"
+      ],
       "Bulk delete items from trash": [
         "Hromadné smazání položek z koše"
       ],
@@ -81,6 +90,12 @@
       ],
       "Change": [
         "Změnit"
+      ],
+      "Check DNS": [
+        "Zkontrolovat DNS"
+      ],
+      "Check settings": [
+        "Zkontrolovat nastavení"
       ],
       "Choose a file or drag it here": [
         "Vyberte soubor nebo jej sem přetáhněte"
@@ -115,6 +130,9 @@
       "Continue offline": [
         "Pokračovat offline"
       ],
+      "Copy alias address": [
+        "Kopírovat adresu aliasu"
+      ],
       "Copy and close": [
         "Kopírovat a zavřít"
       ],
@@ -141,6 +159,9 @@
       ],
       "Create card": [
         "Vytvořit kartu"
+      ],
+      "Create contact": [
+        "Vytvořit kontakt"
       ],
       "Create identity": [
         "Vytvořit identitu"
@@ -180,6 +201,9 @@
       ],
       "Delete it, I will never need it": [
         "Smazat, nikdy ho nebudu potřebovat"
+      ],
+      "Delete mailbox": [
+        "Smazat e-mailovou schránku"
       ],
       "Delete password": [
         "Smazat heslo"
@@ -319,6 +343,9 @@
       "Make admin": [
         "Nastavit správcem"
       ],
+      "Make default": [
+        "Nastavit jako výchozí"
+      ],
       "Make editor": [
         "Nastavit editorem"
       ],
@@ -339,6 +366,9 @@
       ],
       "Maximum views": [
         "Maximální počet zobrazení"
+      ],
+      "More info": [
+        "Více informací"
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
@@ -399,6 +429,9 @@
       ],
       "Previous": [
         "Předchozí"
+      ],
+      "Re-verify": [
+        "Znovu ověřit"
       ],
       "Reactivate now": [
         "Znovu aktivovat"
@@ -481,6 +514,9 @@
       "See members": [
         "Zobrazit členy"
       ],
+      "Send email": [
+        "Poslat e-mail"
+      ],
       "Send invite": [
         "Odeslat pozvánku"
       ],
@@ -541,6 +577,15 @@
       "Sync aliases": [
         "Synchronizovat aliasy"
       ],
+      "To mailbox": [
+        "Do e-mailové schránky"
+      ],
+      "Transfer aliases": [
+        "Přenést aliasy"
+      ],
+      "Transfer and delete mailbox": [
+        "Přenést a smazat e-mailovou schránku"
+      ],
       "Transfer ownership": [
         "Převod vlastnictví"
       ],
@@ -552,6 +597,9 @@
       ],
       "Try for free": [
         "Vyzkoušet zdarma"
+      ],
+      "Unblock contact": [
+        "Odblokovat kontakt"
       ],
       "Understood, I will never need it": [
         "Rozumím, nikdy ho nebudu potřebovat",
@@ -665,6 +713,15 @@
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2FA přidává další úroveň zabezpečení k vašim přihlašovacím údajům. ${ PASS_APP_NAME } usnadňuje 2FA tím, že uchovává a automaticky vyplňuje kódy 2FA."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Přidejte do své domény následující záznamy CNAME DNS."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Přidejte do své domény následující záznam MX DNS. Upozorňujeme, že na konci cílových adres je tečka (.). Pokud váš registrátor domény tuto koncovou tečku nepovoluje, odstraňte ji při přidávání záznamu DNS."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Přidejte do své domény následující záznam TXT DNS."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "E-mailový alias funguje stejně jako e-mailová adresa, ale omezuje šíření spamu a udržuje vaši skutečnou e-mailovou adresu a identitu skrytou."
       ],
@@ -677,8 +734,23 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Sledování Dark webu je k dispozici s placeným tarifem. Navyšte tarif pro okamžitý přístup."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } je metoda ověřování e-mailů určená k zamezení falšování e-mailů. Nastavení DKIM se důrazně doporučuje, aby se snížila pravděpodobnost, že vaše e-maily skončí ve spamu příjemce."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } je určen k ochraně domény před neoprávněným použitím, které je běžně známé jako podvržení e-mailu. Zásada DMARC, která je postavena na metodách SPF a DKIM, říká přijímajícímu poštovnímu serveru, co má dělat, pokud ani jedna z těchto metod ověřování neprojde."
+      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Buďte upozorněni, pokud dojde k úniku vašeho e-mailu, hesla nebo jiných osobních údajů."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Pokud používáte subdoménu, např. ${ subdomainExample }, musíte místo ní použít ${ dmarcExampleSubdomain } jako doménu."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Pokud používáte subdoménu, např. subdoména.doména.cz, musíte jako doménu použít ${ domainKeyExampleSubdomain }. To znamená, že pokud je vaše doména mail.doména.cz, měli byste zadat ${ domainKeyExampleMail } jako doménu."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Pokud používáte CloudFlare, ujistěte se, že není vybrána možnost Proxy."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Udržujte své informace v bezpečí a soukromí pomocí těchto návodů a tipů."
@@ -688,6 +760,15 @@
       ],
       "Set up 2FA for more security": [
         "Nastavte 2FA pro větší zabezpečení"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Někteří registrátoři DNS mohou vyžadovat úplnou cestu k záznamu, v takovém případě použijte ${ domain } jako hodnotu domény."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Někteří registrátoři domén (Namecheap, CloudFlare atd.) mohou také používat @ pro hlavní doménu."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } je metoda ověřování e-mailů určená k odhalování podvržených adres odesílatele během doručování e-mailu. Nastavení SPF se důrazně doporučuje, aby se snížila pravděpodobnost, že vaše e-maily skončí ve spamu příjemce."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Začněte sledovat úniky informací, jejichž součástí jsou účty používající vaši e-mailovou addresu a aliasy Hide-my-email."
@@ -704,6 +785,9 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Tato služba nabízí 2FA. Povolte ho pro zvýšení zabezpečení účtu."
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "Chcete-li ověřit vlastnictví domény, přidejte následující záznam TXT. Někteří registrátoři domén (Namecheap, CloudFlare atd.) mohou pro hlavní doménu používat @."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Odemkněte pokročilé funkce zabezpečení a podrobné logy, abyste zabezpečili svou online přítomnost."
       ],
@@ -717,12 +801,20 @@
         "Vaše soukromé informace jsou součástí úniku informací ze služby třetí strany."
       ]
     },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "cokoli@${ domainDisplay }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } soubor se nepodařilo analyzovat. ${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
         "[Chyba] položku se nepodařilo analyzovat"
+      ],
+      "A domain ownership must be verified first.": [
+        "Nejprve je třeba ověřit vlastnictví domény."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias nelze v současné době aktualizovat. Zkuste to prosím později"
@@ -796,6 +888,9 @@
         "Zjištěno ${ errors.length } poškozených řádků csv",
         "Zjištěno ${ errors.length } poškozených řádků csv"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Doménu nebylo možné ověřit. Ujistěte se, že jste přidali správné záznamy DNS"
+      ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
@@ -823,11 +918,32 @@
       "Failed to add email address": [
         "Přidání e-mailové adresy selhalo"
       ],
+      "Failed to block the contact": [
+        "Blokování kontaktu selhalo"
+      ],
+      "Failed to create domain": [
+        "Vytvoření domény selhalo"
+      ],
+      "Failed to create new mailbox": [
+        "Vytvoření nové e-mailové schránky selhalo"
+      ],
+      "Failed to create the contact": [
+        "Vytvoření kontaktu selhalo"
+      ],
+      "Failed to delete domain": [
+        "Smazání domény selhalo"
+      ],
       "Failed to delete email address from monitoring": [
         "Smazání e-mailové adresy ze sledování selhalo"
       ],
       "Failed to delete selected items": [
         "Smazání vybraných položek selhalo."
+      ],
+      "Failed to delete the contact": [
+        "Smazání kontaktu selhalo"
+      ],
+      "Failed to delete the mailbox": [
+        "Smazání e-mailové schránky selhalo"
       ],
       "Failed to edit user's access.": [
         "Úprava uživatelského přístupu selhala."
@@ -837,6 +953,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Načtení úniků informací pro tento alias selhalo"
+      ],
+      "Failed to load domain settings.": [
+        "Načtení nastavení domény selhalo."
       ],
       "Failed to load item history": [
         "Načítání historie položky selhalo."
@@ -856,6 +975,9 @@
       "Failed to remove user's access.": [
         "Odstranění uživatelského přístupu selhalo."
       ],
+      "Failed to resend verification code": [
+        "Opětovné odeslání ověřovacího kódu selhalo"
+      ],
       "Failed to resend verification for custom email": [
         "Opětovné odeslání ověření pro vlastní e-mail selhalo"
       ],
@@ -874,8 +996,26 @@
       "Failed to unpin item": [
         "Odepnutí položky selhalo"
       ],
+      "Failed to update catch-all setting.": [
+        "Aktualizace nastavení doménového koše selhala."
+      ],
+      "Failed to update default domain": [
+        "Aktualizace výchozí domény selhala"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Aktualizace e-mailových schránek domény selhala."
+      ],
+      "Failed to update domain name.": [
+        "Aktualizace domény selhala."
+      ],
       "Failed to update monitoring settings": [
         "Aktualizace nastavení sledování selhala"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Aktualizace nastavení generování náhodných předpon selhala."
+      ],
+      "Failed to verify domain": [
+        "Ověření domény selhalo"
       ],
       "Failed to verify email address": [
         "Ověření e-mailové adresy selhalo"
@@ -1200,6 +1340,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } se bude řídit motivem vašeho systému."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } vygeneruje adresu pro přeposílání (označovanou také jako reverzní alias), kterou můžete zkopírovat."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky, platební karty a identity."
       ],
@@ -1220,6 +1363,9 @@
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dnů na vyzkoušení prémiových funkcí zdarma. Pouze během prvního týdne používání ${ BRAND_NAME }."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Pro každou e-mailovou adresu, která odesílá e-maily nebo přijímá e-maily z ${ aliasEmail }, je vytvořen kontakt."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Je dostupná nová verze aplikace ${ PASS_APP_NAME }. Aktualizací získáte nejnovější funkce a opravy chyb."
@@ -1263,6 +1409,9 @@
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliasy s vlastními doménami nejsou sledovány, pro sledování je prosím přidejte jako vlastní e-mail."
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Všechny aliasy používající e-mailovou schránku ${ emailJSX } budou také smazány."
+      ],
       "All breaches for this address were resolved": [
         "Všechny úniky informací pro tuto adresu byly vyřešeny"
       ],
@@ -1287,11 +1436,20 @@
       "An item previously shared with you was removed": [
         "Položka dříve sdílená s vámi byla odebrána"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Jste si jisti, že chcete odebrat ${ emailJSX } z vašich e-mailových schránek?"
+      ],
       "Are you sure you want to remove the link?": [
         "Skutečně chcete odebrat tento odkaz?"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Automaticky vytvořené aliasy jsou automaticky vlastněny následujícími e-mailovými schránkami:"
+      ],
       "Auto-lock successfully disabled.": [
         "Automatické zamykání bylo úspěšně deaktivováno."
+      ],
+      "automatically": [
+        "automaticky"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Před exportem dat v tomto formátu otevřete nastavení Safari -> záložku \"Obecné\" -> vypněte možnost \"Bezpečné soubory po stažení otevírat\". Tím zabráníte tomu, aby Safari nesprávně extrahoval exportovaný soubor."
@@ -1307,6 +1465,9 @@
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Přeneste svá stávající hesla do ${ BRAND_NAME }."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Přidejte si vlastní doménu a nemusíte kupovat další řešení e-mailového hostingu."
       ],
       "Built in 2FA authenticator": [
         "Vestavěný autentizátor 2FA"
@@ -1338,6 +1499,12 @@
       "Copied to clipboard": [
         "Zkopírováno do schránky"
       ],
+      "Create contact illustration": [
+        "Zobrazení vytvoření kontaktu"
+      ],
+      "Created ${ time }.": [
+        "Vytvořena ${ time }."
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV nabízí pohodlný formát pro zobrazení údajů. Vzhledem k jeho jednoduchosti však některé údaje nebudou zahrnuty (vlastní pole, přístupové klíče...). Pro úplný export doporučujeme použít jiný formát."
       ],
@@ -1346,6 +1513,9 @@
       ],
       "Decrypting your data": [
         "Dešifrování vašich dat"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Výchozí zobrazované jméno pro aliasy vytvořené pomocí ${ domainDisplay }, pokud není přepsáno zobrazovaným jménem aliasu."
       ],
       "Deleted items will be moved here first": [
         "Smazané položky budou nejprve přesunuty sem"
@@ -1364,6 +1534,12 @@
       ],
       "Disabling offline mode...": [
         "Deaktivace režimu offline..."
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Aktualizace změn DNS může trvat až 24 hodin."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Doména: ${ domainPath } nebo @"
       ],
       "Drop file here to upload": [
         "Sem přetáhněte soubor pro nahrání"
@@ -1388,6 +1564,15 @@
       ],
       "Email address successfully included in monitoring": [
         "E-mailová adresa úspěšně zahrnuta do sledování"
+      ],
+      "Email headers illustration": [
+        "Zobrazení e-mailových hlaviček"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Pošlete e-mail na tuto adresu a zobrazí se, že byl odeslán například z ${ exampleEmail }."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "E-maily odeslané na vaše aliasy jsou přeposílány do vašich e-mailových schránek. Alias může mít více než jednu e-mailovou schránku: užitečné pro sdílení aliasu mezi vámi a vašimi přáteli."
       ],
       "Emptying trash...": [
         "Vysypávání koše..."
@@ -1415,6 +1600,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Povolování zamykání PIN kódem"
+      ],
+      "Enter the address you want to email.": [
+        "Zadejte adresu, na kterou chcete poslat e-mail."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Zadejte ověřovací kód. Číslice ${ digit }."
@@ -1470,6 +1658,9 @@
       "here": [
         "zde"
       ],
+      "Here's how it works:": [
+        "Funguje to takto:"
+      ],
       "High Priority": [
         "Vysoká priorita"
       ],
@@ -1490,6 +1681,9 @@
       ],
       "Imported on ${ date }": [
         "Importováno ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "V ${ PASS_SHORT_APP_NAME } je poznámka k položce šifrována šifrovacím klíčem položky a mohou ji zobrazit pouze uživatelé, kteří mají k položce přístup. Nevidí ji ani ${ BRAND_NAME } nebo SimpleLogin."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Abyste mohli plně využívat rozšíření ${ PASS_APP_NAME }, udělte mu prosím potřebná oprávnění."
@@ -1632,6 +1826,9 @@
       "Moving items to trash": [
         "Přesouvání položek do koše"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Potřebujete někomu poslat e-mail, ale nechcete, aby viděl vaši e-mailovou adresu? Nastavte si alias kontaktu."
+      ],
       "Never": [
         "Nikdy"
       ],
@@ -1758,6 +1955,9 @@
       "Please enter your current PIN code to continue": [
         "Pro pokračování zadejte svůj aktuální PIN kód"
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Při nastavování domény postupujte podle níže uvedených kroků."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Upozorňujeme, že jednou smazaný alias nelze obnovit. Nechcete alias raději deaktivovat?"
       ],
@@ -1766,6 +1966,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Pro předběžný přístup k webové aplikaci ${ PASS_APP_NAME } prosím navyšte svůj tarif"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Použijte úplnou cestu domény, například má-doména.cz nebo pokud používáte subdoménu, tak má-subdoména.má-doména.cz."
       ],
       "Press Enter to copy": [
         "Pro kopírování stiskněte Enter"
@@ -1778,6 +1981,15 @@
       ],
       "Reconnecting": [
         "Obnovování připojení"
+      ],
+      "Record: CNAME": [
+        "Záznam: CNAME"
+      ],
+      "Record: MX": [
+        "Záznam: MX"
+      ],
+      "Record: TXT": [
+        "Záznam: TXT"
       ],
       "Registering extra password...": [
         "Registrování dodatečného hesla..."
@@ -1800,8 +2012,14 @@
       "Restoring trashed items...": [
         "Obnovování položek z koše..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Adresa reverzního aliasu zkopírována do schránky. Pošlete e-mail na tuto adresu a ${ Email } jej obdrží."
+      ],
       "Secure links": [
         "Bezpečné odkazy"
+      ],
+      "See more info": [
+        "Zobrazit další informace"
       ],
       "Select destination vault": [
         "Vyberte cílový trezor"
@@ -1842,6 +2060,12 @@
       "Signing you in": [
         "Přihlašujeme vás"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "Poznámka SimpleLogin je uložena společně na stejném místě s adresou aliasu, a přestože je v klidu chráněna šifrováním, není šifrována E2E, což znamená, že si ji může přečíst každý, kdo má přístup k databázi SimpleLogin."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Až budete příště potřebovat alias, jednoduše použijte ${ emailBold }: bude ${ automaticallyBold } vytvořen při prvním přijetí e-mailu. Chcete-li mít přesnější správu, můžete také definovat ${ rulesHyperLink }."
+      ],
       "Successfully exported all your items": [
         "Všechny položky byly úspěšně exportovány"
       ],
@@ -1865,6 +2089,9 @@
       ],
       "The changelog can be found ${ changelogLink }.": [
         "Seznam změn naleznete na ${ changelogLink }."
+      ],
+      "The display name when sending an email from this alias.": [
+        "Zobrazované jméno při odesílání e-mailu z tohoto aliasu."
       ],
       "The export will only contain vaults that you own.": [
         "Export bude obsahovat pouze vaše vlastní trezory."
@@ -1896,6 +2123,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nešifrovaný a kdokoli s přístupem k exportovanému souboru bude moci zobrazit vaše hesla. Z bezpečnostních důvodů jej po ukončení používání odstraňte."
       ],
+      "This operation is irreversible.": [
+        "Tato operace je nevratná."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Tato operace je nevratná. Všechny aliasy používající doménu ${ domainTextBold } budou smazány. Upozorňujeme, že jednou smazané aliasy nelze obnovit."
+      ],
       "This option is currently not available on your device.": [
         "Tato možnost není ve vašem zařízení aktuálně k dispozici."
       ],
@@ -1911,6 +2144,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tím zamítnete zařízení **${ name }**, které se **${ date }** pokusilo přihlásit k vašemu účtu ${ BRAND_NAME }."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Chcete-li nadále přijímat e-maily, přeneste tyto aliasy do jiné e-mailové schránky:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Chcete-li, aby vaše osobní e-mailová adresa zůstala skrytá, můžete si vytvořit alias kontaktu, který vaši adresu zamaskuje."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Chcete-li přenést data z jiného správce hesel, přejděte do správce hesel, exportujte data a poté je nahrajte do ${ PASS_APP_NAME }. Po importu dat exportovaný soubor smažte."
       ],
@@ -1922,6 +2161,12 @@
       ],
       "Unable to copy to clipboard": [
         "Nelze kopírovat do schránky"
+      ],
+      "Unconfigured": [
+        "Nenastaveno"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Neomezený počet aliasů hide-my-email a jejich pokročilá správa"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí biometrie"
@@ -1959,6 +2204,9 @@
       "username": [
         "uživatelské jméno"
       ],
+      "Value:": [
+        "Hodnota:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" úspěšně smazán"
       ],
@@ -1991,6 +2239,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Při vytváření/úpravě přihlášení na ${ PASS_APP_NAME } bude vždy viditelné vstupní 'uživatelské jméno'."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Při odesílání e-mailu z tohoto aliasu bude jako odesílatel zobrazen e-mail ${ emailSender }."
       ],
       "You are about to create:": [
         "Chystáte se vytvořit:"
@@ -2031,6 +2282,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Dosáhli jste maximální povolené délky ${ maxLength } znaků."
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Po ověření domény budete moci upravit nastavení domény (doménový koš e-mailových aliasů, výchozí zobrazované jméno pro aliasy atd...)."
+      ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Budete odhlášeni a budete se muset znovu přihlásit na všech svých ostatních zařízeních."
       ],
@@ -2058,6 +2312,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Váš účet je omezen, protože Vaše organizace zavedla dvoufázové ověření. Povolte prosím dvoufázové ověření v nastavení účtu nebo kontaktujte správce."
       ],
+      "your domain": [
+        "vaše doména"
+      ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
       ],
@@ -2074,6 +2331,12 @@
         "${ aliasCount } aliasy",
         "${ aliasCount } aliasů",
         "${ aliasCount } aliasů"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } blokování",
+        "${ blockedCount } blokování",
+        "${ blockedCount } blokování",
+        "${ blockedCount } blokování"
       ],
       "${ config.options.length } character": [
         "${ config.options.length } znak",
@@ -2093,6 +2356,12 @@
         "${ days } dnů",
         "${ days } dnů"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } přeposlání",
+        "${ forwardCount } přeposlání",
+        "${ forwardCount } přeposlání",
+        "${ forwardCount } přeposlání"
+      ],
       "${ hours } hour": [
         "${ hours } hodina",
         "${ hours } hodiny",
@@ -2105,17 +2374,35 @@
         "${ minutes } minut",
         "${ minutes } minut"
       ],
+      "${ months } month": [
+        "${ months } měsíc",
+        "${ months } měsíce",
+        "${ months } měsíců",
+        "${ months } měsíců"
+      ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } rozpozná webové stránky a aplikace, které používáte, a automaticky vyplní formuláře vašimi přihlašovacími údaji v jakémkoli prohlížeči nebo zařízení. Není třeba nic kopírovat a vkládat."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } verze"
       ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } odpověď",
+        "${ repliedCount } odpovědi",
+        "${ repliedCount } odpovědí",
+        "${ repliedCount } odpovědí"
+      ],
       "${ usageCount } login": [
         "${ usageCount } přihlášení",
         "${ usageCount } přihlášení",
         "${ usageCount } přihlášení",
         "${ usageCount } přihlášení"
+      ],
+      "${ years } year": [
+        "${ years } rok",
+        "${ years } roky",
+        "${ years } let",
+        "${ years } let"
       ],
       "1 hour": [
         "1 hodina"
@@ -2168,6 +2455,9 @@
       "Account": [
         "Účet"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Přidat náhodnou předponu pro tuto doménu při vytváření nového aliasu."
+      ],
       "Add section": [
         "Přidat sekci"
       ],
@@ -2182,6 +2472,9 @@
       ],
       "Alias address": [
         "Alias adresa"
+      ],
+      "Alias address (disabled)": [
+        "Adresa aliasu (deaktivována)"
       ],
       "Alias management": [
         "Správa aliasů"
@@ -2237,6 +2530,9 @@
       "Cards": [
         "Karty"
       ],
+      "Catch-All": [
+        "Doménový koš"
+      ],
       "Choose unlock method": [
         "Vyberte způsob odemknutí"
       ],
@@ -2257,6 +2553,9 @@
       ],
       "Confirm vault name": [
         "Potvrdit název trezoru"
+      ],
+      "Contact created ${ time } ago.": [
+        "Kontakt vytvořen před ${ time }."
       ],
       "Contact details": [
         "Detaily kontaktu"
@@ -2321,8 +2620,14 @@
       "Display name": [
         "Zobrazované jméno"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Doména"
+      ],
+      "Domain:": [
+        "Doména:"
       ],
       "Domains": [
         "Domény"
@@ -2471,6 +2776,9 @@
       "Include numbers (0-9)": [
         "Včetně číslic (0-9)"
       ],
+      "Info": [
+        "Informace"
+      ],
       "Instagram handle": [
         "Uživatelské jméno Instagram"
       ],
@@ -2537,6 +2845,9 @@
       "Logins": [
         "Přihlášení"
       ],
+      "Mailboxes": [
+        "E-mailové schránky"
+      ],
       "Make all admins": [
         "Udělat ze všech správce"
       ],
@@ -2588,14 +2899,23 @@
       "Newest to oldest": [
         "Od nejnovějších k nejstarším"
       ],
+      "No Activity in the last 14 days.": [
+        "Žádná aktivita za posledních 14 dní"
+      ],
       "No history": [
         "Žádná historie"
       ],
       "None": [
         "Žádné"
       ],
+      "Not selected": [
+        "Nevybrána"
+      ],
       "Note": [
         "Poznámka"
+      ],
+      "Note • SimpleLogin": [
+        "Poznámka • SimpleLogin"
       ],
       "Notes": [
         "Poznámky"
@@ -2660,8 +2980,17 @@
       "Prefix": [
         "Předpona"
       ],
+      "Premium domain": [
+        "Prémiová doména"
+      ],
+      "Priority:": [
+        "Priorita:"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Chraňte ${ PASS_APP_NAME } pomocí dodatečného hesla"
+      ],
+      "Public domain": [
+        "Veřejná doména"
       ],
       "Rate us": [
         "Ohodnoťte nás"
@@ -2704,6 +3033,9 @@
       ],
       "Security code": [
         "Bezpečnostní kód"
+      ],
+      "Select a domain": [
+        "Vyberte doménu"
       ],
       "Select an email address": [
         "Zvolit e-mailovou adresu"
@@ -2773,6 +3105,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Synchronizace aliasů se SimpleLogin"
+      ],
+      "Target:": [
+        "Cíl:"
       ],
       "Tax number": [
         "Daňové identifikační číslo"
@@ -2852,6 +3187,9 @@
       "Username": [
         "Uživatelské jméno"
       ],
+      "Value:": [
+        "Hodnota:"
+      ],
       "Vault ID": [
         "ID trezoru"
       ],
@@ -2897,6 +3235,9 @@
       "You can choose between PIN code, biometrics, or your account password to unlock.": [
         "Pro odemknutí si můžete vybrat mezi kódem PIN, biometrickými údaji nebo heslem účtu."
       ],
+      "Your domain": [
+        "Vaše doména"
+      ],
       "Your passwords. Everywhere.": [
         "Vaše hesla. Kdekoliv."
       ],
@@ -2905,6 +3246,9 @@
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "automatické vytváření pravidel ››"
+      ],
       "Learn more": [
         "Zjistit více"
       ],
@@ -3006,6 +3350,9 @@
       "Add text": [
         "Přidat text"
       ],
+      "Alias Display Name": [
+        "Zobrazované jméno aliasu"
+      ],
       "Email address": [
         "E-mailová adresa"
       ],
@@ -3032,6 +3379,15 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "my-domain.com": [
+        "moje-domena.cz"
+      ],
+      "Name to display when sending an email": [
+        "Jméno, které se zobrazí při odesílání e-mailu"
+      ],
+      "Note from SimpleLogin": [
+        "Poznámka z SimpleLogin"
       ],
       "Password": [
         "Heslo"
@@ -3158,11 +3514,65 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synchronizace aliasů byla úspěšně povolena. Synchronizace aliasů SimpleLogin může nějakou dobu trvat"
       ],
+      "Catch-all setting successfully disabled": [
+        "Nastavení doménového koše úspěšně deaktivováno"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Nastavení doménového koše úspěšně povoleno"
+      ],
+      "Contact successfully blocked": [
+        "Kontakt úspěšně zablokován"
+      ],
+      "Contact successfully created": [
+        "Kontakt úspěšně vytvořen"
+      ],
+      "Contact successfully deleted": [
+        "Kontakt úspěšně smazán"
+      ],
+      "Contact successfully unblocked": [
+        "Kontakt úspěšně odblokován"
+      ],
+      "Default domain successfully updated": [
+        "Výchozí doména úspěšně aktualizována"
+      ],
+      "Default mailbox successfully updated": [
+        "Výchozí e-mailová schránka úspěšně aktualizována"
+      ],
+      "Display name successfully updated": [
+        "Zobrazované jméno úspěšně aktualizováno"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Vlastnictví domény ověřeno. Nyní můžete nastavit MX záznam."
+      ],
+      "Domain successfully deleted": [
+        "Doména úspěšně smazána"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Doména úspěšně ověřena. Vaše doména může začít přijímat e-maily a vytvářet aliasy."
+      ],
+      "Mailbox successfully deleted": [
+        "E-mailová schránka úspěšně smazána"
+      ],
+      "Mailbox successfully verified": [
+        "E-mailová schránka úspěšně ověřena"
+      ],
+      "Mailboxes successfully updated": [
+        "E-mailové schránky úspěšně aktualizovány"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Generování náhodných předpon úspěšně deaktivováno"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Generování náhodných předpon úspěšně povoleno"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
         "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
         "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatelů.",
         "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatelů."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Ověřovací e-mail odeslán. Zkontrolujte prosím doručenou poštu a ověřte svou e-mailovou schránku."
       ]
     },
     "Theme": {
@@ -3189,8 +3599,29 @@
       "Actions": [
         "Akce"
       ],
+      "Activity": [
+        "Aktivita"
+      ],
+      "Add custom domain": [
+        "Přidat vlastní doménu"
+      ],
+      "Add mailbox": [
+        "Přidat e-mailovou schránku"
+      ],
+      "Alias contacts": [
+        "Kontakty aliasu"
+      ],
+      "Aliases": [
+        "Aliasy"
+      ],
+      "Auto create/on the fly alias": [
+        "Automatické vytváření aliasů za běhu"
+      ],
       "Auto-lock update": [
         "Aktualizace automatického uzamčení"
+      ],
+      "Blocked addresses": [
+        "Blokované adresy"
       ],
       "Breach detected": [
         "Zjištěny úniky informací"
@@ -3231,6 +3662,9 @@
       "Custom addresses": [
         "Vlastní adresy"
       ],
+      "Custom domains": [
+        "Vlastní domény"
+      ],
       "Custom email monitoring": [
         "Sledování vlastního e-mailu"
       ],
@@ -3240,11 +3674,23 @@
       "Dark Web Monitoring": [
         "Sledování Dark webu"
       ],
+      "Default": [
+        "Výchozí"
+      ],
+      "Default Display Name": [
+        "Výchozí zobrazované jméno"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "Smazat ${ deletedItemsCount } položku?",
         "Smazat ${ deletedItemsCount } položky?",
         "Smazat ${ deletedItemsCount } položek?",
         "Smazat ${ deletedItemsCount } položek?"
+      ],
+      "Delete domain": [
+        "Smazat doménu"
+      ],
+      "Delete mailbox": [
+        "Smazat e-mailovou schránku"
       ],
       "Delete this item?": [
         "Smazat tuto položku?"
@@ -3257,6 +3703,18 @@
       ],
       "Discard changes?": [
         "Zahodit změny?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (volitelné)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (volitelné)"
+      ],
+      "Domain": [
+        "Doména"
+      ],
+      "Domain ownership verification": [
+        "Ověření vlastnictví domény"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Užíváte si ${ PASS_APP_NAME }?"
@@ -3315,6 +3773,9 @@
       "Low disk space": [
         "Málo místa na disku"
       ],
+      "Mailbox": [
+        "E-mailová schránka"
+      ],
       "Mark as resolved?": [
         "Označit jako vyřešené?"
       ],
@@ -3344,6 +3805,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Přesunout položku do \"${ vaultName }\""
+      ],
+      "MX record": [
+        "MX záznam"
       ],
       "No excluded items": [
         "Žádné vyloučené položky"
@@ -3393,6 +3857,9 @@
         "Upozorňujeme, že jednou smazané aliasy nelze obnovit.",
         "Upozorňujeme, že jednou smazané aliasy nelze obnovit."
       ],
+      "Random Prefix Generation": [
+        "Generování náhodné předpony"
+      ],
       "Recommended actions": [
         "Doporučené akce"
       ],
@@ -3432,6 +3899,9 @@
       "Secure your data": [
         "Zabezpečte svá data"
       ],
+      "Select the default domain for aliases": [
+        "Vyberte výchozí doménu pro aliasy"
+      ],
       "Set access level": [
         "Nastavit úroveň přístupu"
       ],
@@ -3452,6 +3922,9 @@
       ],
       "Share with": [
         "Sdílet s"
+      ],
+      "SPF (Optional)": [
+        "SPF (volitelné)"
       ],
       "Status": [
         "Stav"
@@ -3479,6 +3952,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Odemknout ${ brandNameJSX }"
+      ],
+      "Unverified": [
+        "Neověřeno"
       ],
       "Update available": [
         "Aktualizace k dispozici"
@@ -3510,6 +3986,9 @@
       "What is the dark web?": [
         "Co je dark web?"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Jaký je rozdíl mezi poznámkou ${ PASS_SHORT_APP_NAME } a poznámkou SimpleLogin?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Vaše předplatné ${ planName } skončí ${ endDate }"
       ],
@@ -3530,6 +4009,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "URL domény je neplatná"
+      ],
       "Duplicated URL": [
         "Duplicitní URL adresa"
       ],
@@ -3604,8 +4086,14 @@
       "Delete alias": [
         "Smazat alias"
       ],
+      "Domain cannot be empty": [
+        "Doména nemůže být prázdná"
+      ],
       "Duplicate email addresses.": [
         "Duplicitní e-mailové adresy."
+      ],
+      "Email cannot be empty": [
+        "E–mail nemůže být prázdný"
       ],
       "Email is required": [
         "Je vyžadován e-mail"
@@ -3699,6 +4187,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Kontaktujte nás prosím pro vyšetření problému"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Upozorňujeme, že jednou smazané aliasy nelze obnovit"
       ],
       "Please update the extension to its latest version": [
         "Prosím, aktualizujte rozšíření na jeho nejnovější verzi"
