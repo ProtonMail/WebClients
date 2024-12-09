@@ -21,9 +21,12 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { getSAMLEdugainInfo, setupEdugainSAML } from '@proton/shared/lib/api/samlSSO';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { Domain } from '@proton/shared/lib/interfaces';
+import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
+import type { Domain, EduGainOrganization } from '@proton/shared/lib/interfaces';
 import { EdugainAffiliations } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
+import EduGainAutocomplete from './EduGainAutocomplete';
 import { EdugainAffiliationLabels } from './constants';
 
 enum STEP {
@@ -31,16 +34,22 @@ enum STEP {
     AFFILIATIONS,
 }
 
+interface EduGainInfo {
+    Information: {
+        Domain: string;
+        Federated: boolean;
+        Enabled: boolean;
+        Rank: number;
+        Count: number;
+        Organizations: EduGainOrganization[];
+    }[];
+}
+
 interface Props extends ModalProps {
     domain: Domain;
     SSOEntityID?: string;
     ExistingEdugainAffiliations?: EdugainAffiliations[];
     onClose: () => void;
-}
-
-interface EduGainOrganization {
-    EntityId: string;
-    Name: string;
 }
 
 const EduGainLoader = () => (
@@ -63,19 +72,20 @@ const ConfigureSamlEdugainModal = ({ domain, onClose, SSOEntityID, ExistingEduga
     const [loading, withLoading] = useLoading();
 
     const [organizationData, setOrganizationData] = useState<EduGainOrganization[]>([]);
-    const [organizationValue, setOrganizationValue] = useState<EduGainOrganization | null>(null);
+    const [organizationValue, setOrganizationValue] = useState<EduGainOrganization>({
+        EntityId: SSOEntityID ?? '',
+        Name: '',
+    });
 
     const getEdugainInfo = async () => {
         try {
-            const response = await api(getSAMLEdugainInfo());
-            const organizations: EduGainOrganization[] = response.Information[0].Organizations;
+            const response = await api<EduGainInfo>(getSAMLEdugainInfo());
+            const organizations: EduGainOrganization[] = response.Information[0]?.Organizations || [];
             setOrganizationData(organizations);
             const matchingOrganization = organizations.find((org) => org.EntityId === SSOEntityID);
 
             if (matchingOrganization) {
                 setOrganizationValue(matchingOrganization);
-            } else if (organizations.length > 0) {
-                setOrganizationValue(organizations[0]);
             }
         } catch (error) {
             throw error;
@@ -98,24 +108,33 @@ const ConfigureSamlEdugainModal = ({ domain, onClose, SSOEntityID, ExistingEduga
         }
     }, [affiliationsValue]);
 
-    const getOrganizationText = () => {
-        switch (organizationData.length) {
-            case 0:
-                return getBoldFormattedText(
-                    c('Info').t`No organizations enabled with **eduGAIN** for **${domain.DomainName}**.`
-                );
+    const getContinueText = () => {
+        if (!organizationValue.EntityId) {
+            return c('Info').t`Choose an Entity ID to continue.`;
+        }
 
-            case 1:
-                return getBoldFormattedText(
-                    c('Info').t`This organization is enabled with **eduGAIN** for **${domain.DomainName}**.`
-                );
-
-            default:
-                return getBoldFormattedText(
-                    c('Info').t`Select an organization enabled with **eduGAIN** for **${domain.DomainName}**.`
-                );
+        if (!organizationValue.Name) {
+            return c('Info').t`Continue to connect this entity with your ${BRAND_NAME} organization.`;
+        } else {
+            return getBoldFormattedText(
+                c('Info').t`Continue to connect **${organizationValue.Name}** with your ${BRAND_NAME} organization.`
+            );
         }
     };
+
+    const getFormattedOrganization = () => {
+        if (!organizationValue.Name) {
+            return <strong>{organizationValue.EntityId}</strong>;
+        } else {
+            return (
+                <>
+                    <strong>{organizationValue.Name}</strong> ({organizationValue.EntityId})
+                </>
+            );
+        }
+    };
+
+    const isValidEntityID = isValidHttpUrl(organizationValue.EntityId);
 
     const {
         title,
@@ -131,44 +150,25 @@ const ConfigureSamlEdugainModal = ({ domain, onClose, SSOEntityID, ExistingEduga
                     <EduGainLoader />
                 ) : (
                     <div>
-                        <div className="mb-4">{getOrganizationText()}</div>
-                        {organizationData.length > 0 && (
-                            <div>
-                                {organizationData.length === 1 ? (
-                                    <div className="rounded border bg-weak px-3 py-2">
-                                        <span className="block">{organizationData[0].Name}</span>
-                                        <span className="block color-weak">{organizationData[0].EntityId}</span>
-                                    </div>
-                                ) : (
-                                    <SelectTwo
-                                        value={organizationValue}
-                                        onValue={setOrganizationValue}
-                                        className="h-auto"
-                                    >
-                                        {organizationData.map((item) => (
-                                            <Option key={item.EntityId} title={item.Name} value={item}>
-                                                <span className="block">{item.Name}</span>
-                                                <span className="block color-weak">{item.EntityId}</span>
-                                            </Option>
-                                        ))}
-                                    </SelectTwo>
-                                )}
-                            </div>
-                        )}
-                        {organizationValue && (
-                            <p className="mb-0 mt-4">
-                                {getBoldFormattedText(
-                                    c('Info')
-                                        .t`Continue to connect **${organizationValue.Name}** with your ${BRAND_NAME} organization.`
-                                )}
-                            </p>
-                        )}
+                        <div className="mb-4">
+                            {getBoldFormattedText(
+                                // translator: Full sentence example: "Enter the entity ID of an eduGAIN organization for switch.ch" (DomainName is the SAML SSO domain)
+                                c('Info')
+                                    .t`Enter the entity ID of an **eduGAIN** organization for **${domain.DomainName}**.`
+                            )}
+                        </div>
+                        <EduGainAutocomplete
+                            organizationData={organizationData}
+                            organizationValue={organizationValue}
+                            setOrganizationValue={setOrganizationValue}
+                        />
+                        <p className={clsx('m-0', !isValidEntityID && 'visibility-hidden')}>{getContinueText()}</p>
                     </div>
                 ),
                 footer: (
                     <>
                         <div />
-                        <Button type="submit" disabled={!organizationValue} color="norm">
+                        <Button type="submit" disabled={!isValidEntityID} color="norm">
                             {c('Action').t`Continue`}
                         </Button>
                     </>
@@ -202,7 +202,7 @@ const ConfigureSamlEdugainModal = ({ domain, onClose, SSOEntityID, ExistingEduga
                 }
 
                 await call();
-                createNotification({ text: c('Info').t`EduGain configuration saved` });
+                createNotification({ text: c('Info').t`eduGAIN configuration saved` });
                 onClose();
             };
 
@@ -212,10 +212,8 @@ const ConfigureSamlEdugainModal = ({ domain, onClose, SSOEntityID, ExistingEduga
                 content: organizationValue && (
                     <div>
                         <div className="mb-4">
-                            {getBoldFormattedText(
-                                c('Info')
-                                    .t`Select the user affiliations from **${organizationValue.Name}** (${organizationValue.EntityId}) that you want to allow into your ${BRAND_NAME} organization:`
-                            )}
+                            {c('Info')
+                                .jt`Select the user affiliations from ${getFormattedOrganization} that you want to allow into your ${BRAND_NAME} organization:`}
                         </div>
                         <div>
                             <SelectTwo

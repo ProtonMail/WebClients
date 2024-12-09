@@ -25,3 +25,8 @@ export enum EdugainAffiliations {
     EMPLOYEE = 'employee',
     LIBRARY_WALK_IN = 'library-walk-in',
 }
+
+export interface EduGainOrganization {
+    EntityId: string;
+    Name: string;
+}
