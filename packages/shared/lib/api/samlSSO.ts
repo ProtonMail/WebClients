@@ -47,14 +47,6 @@ export const setupEdugainSAML = (data: { DomainID: string; SSOEntityID: string; 
     data: {
         ...data,
         Type: IDP_TYPE.EDUGAIN,
-
-        /**
-         * Dummy values. BE requires something to be set for these values. In the case of edugain, they are ignored.
-         * These should be removed when the BE no longer requires SSOURL and Certificate
-         */
-        SSOURL: 'https://dummy.proton.me',
-        Certificate: 'dummy',
-        // Dummy value end
     },
 });
 
