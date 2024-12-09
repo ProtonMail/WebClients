@@ -34,6 +34,12 @@
       "Add current URL": [
         "現在の URL を追加"
       ],
+      "Add custom domain": [
+        "カスタムドメインを追加"
+      ],
+      "Add mailbox": [
+        "メールボックスを追加"
+      ],
       "Add more": [
         "さらに追加する"
       ],
@@ -61,6 +67,9 @@
       "Back": [
         "戻る"
       ],
+      "Block contact": [
+        "ブロックした連絡先"
+      ],
       "Bulk delete items from trash": [
         "ごみ箱からアイテムを一括削除"
       ],
@@ -81,6 +90,12 @@
       ],
       "Change": [
         "変更"
+      ],
+      "Check DNS": [
+        "DNSを確認"
+      ],
+      "Check settings": [
+        "設定を確認"
       ],
       "Choose a file or drag it here": [
         "ファイルを選択するかここにドラッグしてください"
@@ -115,6 +130,9 @@
       "Continue offline": [
         "オフラインで続行"
       ],
+      "Copy alias address": [
+        "エイリアスアドレスをコピー"
+      ],
       "Copy and close": [
         "コピーして閉じる"
       ],
@@ -141,6 +159,9 @@
       ],
       "Create card": [
         "カードの作成"
+      ],
+      "Create contact": [
+        "連絡先を作成"
       ],
       "Create identity": [
         "ユーザー情報を作成"
@@ -180,6 +201,9 @@
       ],
       "Delete it, I will never need it": [
         "もう使わないので削除してください"
+      ],
+      "Delete mailbox": [
+        "メールボックスを削除"
       ],
       "Delete password": [
         "パスワードを削除"
@@ -316,6 +340,9 @@
       "Make admin": [
         "管理者として設定"
       ],
+      "Make default": [
+        "既定にする"
+      ],
       "Make editor": [
         "編集者として設定"
       ],
@@ -336,6 +363,9 @@
       ],
       "Maximum views": [
         "最大閲覧回数"
+      ],
+      "More info": [
+        "もっと詳しく"
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
@@ -390,6 +420,9 @@
       ],
       "Please retry": [
         "再度お試しください"
+      ],
+      "Re-verify": [
+        "再認証"
       ],
       "Reactivate now": [
         "今すぐ再アクティブ"
@@ -475,6 +508,9 @@
       "Select": [
         "選択"
       ],
+      "Send email": [
+        "メールを送信"
+      ],
       "Send invite": [
         "招待を送信"
       ],
@@ -529,6 +565,15 @@
       "Sync aliases": [
         "エイリアスを同期する"
       ],
+      "To mailbox": [
+        "メールボックスに"
+      ],
+      "Transfer aliases": [
+        "転送エイリアス"
+      ],
+      "Transfer and delete mailbox": [
+        "メールボックスを移動して削除"
+      ],
       "Transfer ownership": [
         "所有権の移行"
       ],
@@ -540,6 +585,9 @@
       ],
       "Try for free": [
         "無料で試す"
+      ],
+      "Unblock contact": [
+        "ブロックされていない連絡先"
       ],
       "Understood, I will never need it": [
         "はい、もう要りません"
@@ -624,6 +672,15 @@
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2FA はログインに別のセキュリティ層を追加します。 ${ PASS_APP_NAME } は、2FA コードを保存して自動的に自動入力することで、2FA を簡単にします。"
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "以下のCNAME DNSレコードをドメインに追加してください。"
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "以下のMX DNSレコードをドメインに追加してください。対象のアドレスにはドット(.)が含まれていることに注意してください。ドメイン登録業者がこの末尾のドットを許可していない場合は、DNSレコードを追加する際にそれを削除してください。"
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "以下のTXT DNSレコードをドメインに追加してください。"
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "メールエイリアスはメールアドレスと同じように機能しますが、スパムを減らし、実際のメールアドレスと身元を隠します。"
       ],
@@ -636,8 +693,23 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "ダークウェブモニタリングは有料プランで利用できます。アップグレードしてすぐにアクセスできます。"
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM }は、メールのなりすましを防ぐために設計されたメール認証方法です。DKIM の設定を行うことで、受信者の迷惑メールフォルダにメールが入る可能性を減らすことが強く推奨されます。"
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC${ WIKIPEDIA_LINK_DMARC }は、一般的にメールスプーフィングとして知られる不正使用からドメインを保護するために設計されています。SPFとDKIMを基に構築されたDMARCポリシーは、これらの認証方法のどちらも通過しなかった場合に、受信メールサーバーが何をすべきかを指示します。"
+      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "メールアドレス、パスワード、その他の個人データが漏洩した場合に通知を受け取ります。"
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "もしサブドメイン、例えば${ subdomainExample }を使う場合、ドメインの代わりに${ dmarcExampleSubdomain }を使う必要があります。"
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "もしサブドメイン、例えばsubdomain.domain.comを使う場合、ドメインの代わりに${ domainKeyExampleSubdomain }を使う必要があります。つまり、ドメインがmail.domain.comの場合、ドメインとして ${ domainKeyExampleMail } を入力する必要があります。"
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "CloudFlareを使う場合、プロキシオプションを選択していないことを確認してください。"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "これらのガイドとヒントを活用して、情報をより安全かつプライベートに保ちましょう。"
@@ -647,6 +719,15 @@
       ],
       "Set up 2FA for more security": [
         "2要素認証を設定するとより安全になります"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "DNS レジストラによっては、完全なレコードパスが必要な場合があります。この場合は、代わりにドメイン値として ${ domain } を使用してください。"
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "一部のドメイン登録業者(NamecheapやCloudFlareなど)はルートドメインに@を使うかもしれません。"
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF${ WIKIPEDIA_LINK_SPF }は、メールの配信中に送信者アドレスの偽装を検出するために設計されたメール認証方法です。SPFの設定は、あなたのメールが受信者の迷惑メールフォルダに入る可能性を減らすために強く推奨されます。"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "電子メール アドレスとhide-my-emailエイリアスを使用して作成されたアカウントに関連するデータ侵害の監視を開始します。"
@@ -663,6 +744,9 @@
       "This service offers 2FA. Enable it for added account security.": [
         "このサービスは 2FA を提供します。アカウントのセキュリティを強化するには、これを有効にします。"
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "ドメイン所有権を検証するには、次の TXT レコードを追加してください。一部のドメインレジストラ（Namecheap、Cloudflare など）は「@」をルートドメインに使用する可能性があります。"
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "高度なセキュリティ機能と詳細なログのロックを解除して、オンライン プレゼンスを保護します。"
       ],
@@ -676,12 +760,20 @@
         "サードパーティサービスのデータ侵害により、あなたの個人情報が漏洩しました。"
       ]
     },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "なんでも@${ domainDisplay }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } ファイルを解析できませんでした。 ${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
         "[Error] アイテムを解析できませんでした"
+      ],
+      "A domain ownership must be verified first.": [
+        "ドメインの所有権を最初に確認しなければなりません。"
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "エイリアスを更新できませんでした。しばらくしてからもう一度お試しください"
@@ -746,6 +838,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "このCSVは${ errors.length } 行の破損を検知しました"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "ドメインが認証できませんでした。正しいDSNレコードが追加されていることを確認してください。"
+      ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
       ],
@@ -773,11 +868,32 @@
       "Failed to add email address": [
         "メールアドレスの追加に失敗しました"
       ],
+      "Failed to block the contact": [
+        "連絡先のブロックに失敗しました"
+      ],
+      "Failed to create domain": [
+        "ドメインの作成に失敗しました"
+      ],
+      "Failed to create new mailbox": [
+        "新しいメールボックスの作成に失敗しました"
+      ],
+      "Failed to create the contact": [
+        "連絡先の作成に失敗しました"
+      ],
+      "Failed to delete domain": [
+        "ドメインの削除に失敗しました"
+      ],
       "Failed to delete email address from monitoring": [
         "監視対象からメールアドレスを削除できませんでした"
       ],
       "Failed to delete selected items": [
         "選択したアイテムを削除できませんでした"
+      ],
+      "Failed to delete the contact": [
+        "連絡先の削除に失敗しました"
+      ],
+      "Failed to delete the mailbox": [
+        "受信箱の削除に失敗しました"
       ],
       "Failed to edit user's access.": [
         "ユーザーのアクセスを削除できませんでした。"
@@ -787,6 +903,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "この電子メール エイリアスの侵害を読み込めませんでした"
+      ],
+      "Failed to load domain settings.": [
+        "ドメイン設定の読み込みに失敗しました。"
       ],
       "Failed to load item history": [
         "アイテム履歴のロードに失敗しました"
@@ -806,6 +925,9 @@
       "Failed to remove user's access.": [
         "ユーザーのアクセスを削除できませんでした。"
       ],
+      "Failed to resend verification code": [
+        "認証コードの再送に失敗しました"
+      ],
       "Failed to resend verification for custom email": [
         "カスタムメールの確認の再送信に失敗しました"
       ],
@@ -824,8 +946,26 @@
       "Failed to unpin item": [
         "アイテムの固定を解除できませんでした"
       ],
+      "Failed to update catch-all setting.": [
+        "キャッチオール設定の更新に失敗しました。"
+      ],
+      "Failed to update default domain": [
+        "既定のドメインの更新に失敗しました"
+      ],
+      "Failed to update domain mailboxes.": [
+        "ドメインメールボックスの更新に失敗しました。"
+      ],
+      "Failed to update domain name.": [
+        "ドメイン名の更新に失敗しました。"
+      ],
       "Failed to update monitoring settings": [
         "監視設定の更新に失敗しました"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "ランダムプレフィックス生成設定の更新に失敗しました。"
+      ],
+      "Failed to verify domain": [
+        "ドメインの認証に失敗しました"
       ],
       "Failed to verify email address": [
         "メールアドレスの認証に失敗しました"
@@ -1117,6 +1257,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } はシステムテーマに従います。"
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME }は転送アドレス(リバースエイリアスとも呼ばれる)を生成し、クリップボードにコピーできます。"
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } はログイン情報、メモ、クレジットカード、ユーザー情報のみインポートします。"
       ],
@@ -1134,6 +1277,9 @@
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "プレミアム機能を 7 日間無料でお試しいただけます。 ${ BRAND_NAME } の最初の 1 週間のみ。"
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "${ aliasEmail }にメールを送信したり、受信したりするすべてのメールアドレスに対して、連絡先が作成されます。"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } の新しいバージョンが利用可能です。 最新の機能やバグ修正をお楽しみいただくには、更新してください。"
@@ -1177,6 +1323,9 @@
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "カスタム ドメインを持つエイリアスは監視されません。監視用のカスタム電子メールとして追加してください。"
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "メールボックス${ emailJSX }を使用している全てのエイリアスは削除されます。"
+      ],
       "All breaches for this address were resolved": [
         "このアドレスの侵害はすべて解決されました"
       ],
@@ -1201,11 +1350,20 @@
       "An item previously shared with you was removed": [
         "以前にあなたと共有したアイテムが削除されました"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "メールボックスから${ emailJSX }を本当に削除してもよろしいですか？"
+      ],
       "Are you sure you want to remove the link?": [
         "本当にリンクを削除しますか？"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "自動生成されたエイリアスは自動で以下のメールボックスに所有されます："
+      ],
       "Auto-lock successfully disabled.": [
         "自動ロックを無効にしました."
+      ],
+      "automatically": [
+        "自動"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "このフォーマットでデータをエクスポートする前に、Safariの設定を開いて -> \"一般\"タブ -> \"ダウンロード後安全なファイルを開く\"のオプションを無効にしてください。これにより、Safariがエクスポートされたファイルを誤って抽出するのを防ぎます。"
@@ -1221,6 +1379,9 @@
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "既存のパスワードを${ BRAND_NAME }に移動する"
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "独自ドメインを持ち込むことで、別のメールホスティングソリューションを購入する必要がありません。"
       ],
       "Built in 2FA authenticator": [
         "2要素認証の認証器を内蔵"
@@ -1255,6 +1416,12 @@
       "Copied to clipboard": [
         "クリップボードにコピーされました"
       ],
+      "Create contact illustration": [
+        "連絡先イラストを作成"
+      ],
+      "Created ${ time }.": [
+        "${ time }に作成されました。"
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV は、データを表示するための便利な形式を提供します。ただし、その単純さのため、一部のデータは含まれません (カスタム フィールド、パスキーなど)。完全にエクスポートするには、別の形式を使用することをお勧めします。"
       ],
@@ -1263,6 +1430,9 @@
       ],
       "Decrypting your data": [
         "データの暗号化解除"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "エイリアスの表示名によって上書きされない限り、${ domainDisplay } で作成されたエイリアスのデフォルト表示名。"
       ],
       "Deleted items will be moved here first": [
         "削除された項目は、まずここに移動されます"
@@ -1281,6 +1451,12 @@
       ],
       "Disabling offline mode...": [
         "オフラインモードを無効にしています..."
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "DNSの変更が更新されるまでに最大 24 時間かかることがあります。"
+      ],
+      "Domain: ${ domainPath } or @": [
+        "ドメイン: ${ domainPath } または @"
       ],
       "Drop file here to upload": [
         "アップロードするファイルをここにドロップ"
@@ -1305,6 +1481,15 @@
       ],
       "Email address successfully included in monitoring": [
         "電子メールアドレスが監視に正常に含まれました"
+      ],
+      "Email headers illustration": [
+        "メールヘッダーイラスト"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "このアドレスにメールを送信すると、例えば${ exampleEmail }から送信されたように表示されます。"
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "エイリアスへのメール送信はメールボックスに転送されます。エイリアスには複数のメールボックスを持たせることができます。これはエイリアスをあなたと友人たちの間で共有するのに便利です。"
       ],
       "Emptying trash...": [
         "ごみ箱を空にしています..."
@@ -1332,6 +1517,9 @@
       ],
       "Enabling PIN auto-lock": [
         "PIN の自動ロックを有効にしています"
+      ],
+      "Enter the address you want to email.": [
+        "メールを送りたいアドレスを入力してください。"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
@@ -1378,6 +1566,9 @@
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Pass Plus に登録して、無制限のエイリアスを取得し、限定機能を利用し、サポートしてください。"
       ],
+      "Here's how it works:": [
+        "こちらがその仕組みです："
+      ],
       "High Priority": [
         "優先度：高"
       ],
@@ -1395,6 +1586,9 @@
       ],
       "Imported on ${ date }": [
         "${ date } にインポートされました"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "${ PASS_SHORT_APP_NAME }では、アイテムのメモはアイテム暗号化キーで暗号化されており、アイテムにアクセス権を持つユーザーのみがメモを表示できます。\n${ BRAND_NAME }やSimpleLoginでさえ、それを見ることはできません。"
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "${ PASS_APP_NAME } を最大限に活用するには、必要な拡張機能の権限を付与してください"
@@ -1528,6 +1722,9 @@
       "Moving items to trash": [
         "アイテムをごみ箱に移動中"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "メールアドレスを見られたくないけれど、誰かにメールを送りたいですか？連絡先のエイリアスを設定しましょう。"
+      ],
       "Never": [
         "なし"
       ],
@@ -1645,6 +1842,9 @@
       "Please enter your current PIN code to continue": [
         "続行するには、現在の PIN コードを入力してください"
       ],
+      "Please follow the steps below to set up your domain.": [
+        "以下の手順に従って、ドメインを設定してください。"
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "削除したエイリアスは復元できません。エイリアスを無効にするほうがよろしいでしょうか？"
       ],
@@ -1653,6 +1853,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "${ PASS_APP_NAME } ウェブ アプリに早期アクセスできるようにアップグレードしてください"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "サブドメインを使用する場合、例えばmy-domain.comやmy-subdomain.my-domain.comのようなフルパスドメインを使用してください。"
       ],
       "Press Enter to copy": [
         "Enterキーを押してコピーする"
@@ -1665,6 +1868,15 @@
       ],
       "Reconnecting": [
         "再接続中"
+      ],
+      "Record: CNAME": [
+        "レコード: CNAME"
+      ],
+      "Record: MX": [
+        "レコード: TXT"
+      ],
+      "Record: TXT": [
+        "レコード: TXT"
       ],
       "Registering extra password...": [
         "追加パスワードを登録中..."
@@ -1687,8 +1899,14 @@
       "Restoring trashed items...": [
         "ごみ箱の項目を復元しています..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "リバースエイリアスアドレスがクリップボードにコピーされました。このアドレスにメールを送信すると、${ Email } が受信します。"
+      ],
       "Secure links": [
         "セキュアリンク"
+      ],
+      "See more info": [
+        "さらに詳しい情報を見る"
       ],
       "Select destination vault": [
         "移動先の保管庫を選択"
@@ -1729,6 +1947,12 @@
       "Signing you in": [
         "サインインする"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "SimpleLoginのメモはエイリアスアドレスと同じ場所に一緒に保存されており、保存時に暗号化されて保護されていますが、エンドツーエンドで暗号化されていないため、SimpleLoginのデータベースにアクセスできる人は誰でもそれを読むことができます。"
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "次回エイリアスが必要なときは、単に${ emailBold }を使用してください。最初にメールを受け取ったときに${ automaticallyBold }作成されます。より詳細な制御が必要な場合は、${ rulesHyperLink }を定義することもできます。"
+      ],
       "Successfully exported all your items": [
         "すべてのアイテムのエクスポートに成功"
       ],
@@ -1749,6 +1973,9 @@
       ],
       "Thank you, the problem has been reported": [
         "問題は報告されました　ありがとうございます"
+      ],
+      "The display name when sending an email from this alias.": [
+        "このエイリアスからメールを送った時の表示名"
       ],
       "The export will only contain vaults that you own.": [
         "エクスポートには、自分が所有するボールトのみが含まれます。"
@@ -1777,6 +2004,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "このエクスポートは暗号化されていないため、エクスポートしたファイルにアクセスできる人は誰でもパスワードを見ることができます。セキュリティのため、使い終わったら削除してください。"
       ],
+      "This operation is irreversible.": [
+        "この操作は元に戻せません。"
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "この操作は元に戻せません。ドメイン${ domainTextBold }を使用しているすべてのエイリアスが削除されます。削除されたエイリアスは復元できないことにご注意ください。"
+      ],
       "This option is currently not available on your device.": [
         "このオプションは現在お使いのデバイスでは利用できません。"
       ],
@@ -1792,6 +2025,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "この操作により、**${ date } **にあなたの ${ BRAND_NAME } アカウントにサインインしようとしたデバイス **${ name }** が拒否されます。"
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "これらのエイリアスを別のメールボックスに転送して、メールの受信を続けてください："
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "個人のメールアドレスを隠したままにするために、アドレスを隠すエイリアス連絡先を作成することができます。"
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "別のパスワード マネージャーからデータを移行するには、パスワード マネージャーに移動し、データをエクスポートして、${ PASS_APP_NAME } にアップロードします。 データがインポートされたら、エクスポートされたファイルを削除します。"
       ],
@@ -1803,6 +2042,12 @@
       ],
       "Unable to copy to clipboard": [
         "クリップボードにコピーできない"
+      ],
+      "Unconfigured": [
+        "未構成"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "無制限の非表示ide-my-emailエイリアスと高度なエイリアス管理"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "生体認証で ${ PASS_SHORT_APP_NAME } のロックを解除する"
@@ -1840,6 +2085,9 @@
       "username": [
         "ユーザー名"
       ],
+      "Value:": [
+        "値:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "保管庫「${ payload.content.name }」が正常に削除されました"
       ],
@@ -1869,6 +2117,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "${ PASS_APP_NAME } でログインを作成/編集するとき、'ユーザー名' 入力を常に表示します。"
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "このエイリアスからメールを送ると、送信者として${ emailSender }が表示されます。"
       ],
       "You are about to create:": [
         "作成されるメールアドレス:"
@@ -1903,6 +2154,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "${ maxLength } 文字の最大許容長に達しました。"
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "ドメイン認証後に、ドメイン設定(キャッチオールメールエイリアス、エイリアスの既定の表示名など)をカスタマイズをすることができます。"
+      ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "ログアウトされ、他のすべてのデバイスで再度ログインする必要があります。"
       ],
@@ -1930,6 +2184,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "組織が 2 要素認証を導入しているため、アカウントは制限されています。 アカウント設定で 2 要素認証を有効にするか、管理者にお問い合わせください。"
       ],
+      "your domain": [
+        "あなたのドメイン"
+      ],
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
@@ -1944,6 +2201,9 @@
       "${ aliasCount } alias": [
         "${ aliasCount } 個のエイリアス"
       ],
+      "${ blockedCount } block": [
+        "${ blockedCount }件のブロック"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } 文字"
       ],
@@ -1953,17 +2213,29 @@
       "${ days } day": [
         "${ days } 日"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount }件の転送"
+      ],
       "${ hours } hour": [
         "${ hours } 時間"
       ],
       "${ minutes } minute": [
         "${ minutes } 分"
       ],
+      "${ months } month": [
+        "${ months }ヶ月"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } バージョン"
       ],
+      "${ repliedCount } reply": [
+        "${ repliedCount }件の返信"
+      ],
       "${ usageCount } login": [
         "${ usageCount } ログイン数"
+      ],
+      "${ years } year": [
+        "${ years }年"
       ],
       "1 hour": [
         "1 時間"
@@ -2013,6 +2285,9 @@
       "Account": [
         "アカウント"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "新しいエイリアスを作成する際に、このドメインにランダムなプレフィックスを追加します。"
+      ],
       "Add section": [
         "セクションの追加"
       ],
@@ -2027,6 +2302,9 @@
       ],
       "Alias address": [
         "エイリアスのアドレス"
+      ],
+      "Alias address (disabled)": [
+        "エイリアスアドレス(無効)"
       ],
       "Alias management": [
         "エイリアスの管理"
@@ -2076,6 +2354,9 @@
       "Cards": [
         "カード"
       ],
+      "Catch-All": [
+        "キャッチオール"
+      ],
       "City": [
         "市区町村"
       ],
@@ -2087,6 +2368,9 @@
       ],
       "Confirm vault name": [
         "保管庫名を確認する"
+      ],
+      "Contact created ${ time } ago.": [
+        "連絡先は${ time }時間前に作成されました。"
       ],
       "Contact details": [
         "連絡先の詳細"
@@ -2148,8 +2432,14 @@
       "Display name": [
         "表示名"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "ドメイン"
+      ],
+      "Domain:": [
+        "ドメイン:"
       ],
       "Domains": [
         "ドメイン"
@@ -2280,6 +2570,9 @@
       "Include numbers (0-9)": [
         "数字を含める (0 〜 9)"
       ],
+      "Info": [
+        "情報"
+      ],
       "Instagram handle": [
         "Instagram ユーザー名"
       ],
@@ -2337,6 +2630,9 @@
       "Logins": [
         "ログイン"
       ],
+      "Mailboxes": [
+        "メールボックス"
+      ],
       "Make all admins": [
         "全ての管理者を対象に"
       ],
@@ -2382,14 +2678,23 @@
       "Newest to oldest": [
         "新しい順"
       ],
+      "No Activity in the last 14 days.": [
+        "過去 14 日間でアクティビティはありません。"
+      ],
       "No history": [
         "履歴なし"
       ],
       "None": [
         "なし"
       ],
+      "Not selected": [
+        "選択されていません"
+      ],
       "Note": [
         "メモ"
+      ],
+      "Note • SimpleLogin": [
+        "メモ・SimpleLogin"
       ],
       "Notes": [
         "メモ"
@@ -2448,8 +2753,17 @@
       "Prefix": [
         "プレフィックス"
       ],
+      "Premium domain": [
+        "プレミアムドメイン"
+      ],
+      "Priority:": [
+        "プライオリティ:"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "追加のパスワードで${ PASS_APP_NAME } を保護"
+      ],
+      "Public domain": [
+        "公開ドメイン"
       ],
       "Rate us": [
         "評価"
@@ -2480,6 +2794,9 @@
       ],
       "Security code": [
         "セキュリティコード"
+      ],
+      "Select a domain": [
+        "ドメイン選択"
       ],
       "Select an email address": [
         "メールアドレスを選択"
@@ -2540,6 +2857,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "SimpleLoginとエイリアスを同期"
+      ],
+      "Target:": [
+        "ターゲット:"
       ],
       "Tax number": [
         "納税者番号"
@@ -2610,6 +2930,9 @@
       "Username": [
         "ユーザー名"
       ],
+      "Value:": [
+        "値:"
+      ],
       "Vault ID": [
         "保管庫 ID"
       ],
@@ -2652,11 +2975,17 @@
       "You are about to create": [
         "作成されるメールアドレス"
       ],
+      "Your domain": [
+        "あなたのドメイン"
+      ],
       "ZIP or Postal code": [
         "郵便番号"
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "自動生成ルール >>"
+      ],
       "Learn more": [
         "詳細"
       ],
@@ -2738,6 +3067,9 @@
       "Add text": [
         "テキストを追加"
       ],
+      "Alias Display Name": [
+        "エイリアス表示名"
+      ],
       "Email address": [
         "メールアドレス"
       ],
@@ -2765,6 +3097,15 @@
       "MM/YY": [
         "MM/YY (月/年)"
       ],
+      "my-domain.com": [
+        "my-domain.com"
+      ],
+      "Name to display when sending an email": [
+        "メールを送るときに表示される名前"
+      ],
+      "Note from SimpleLogin": [
+        "SimpleLoginからのメモ"
+      ],
       "Password": [
         "パスワード"
       ],
@@ -2772,7 +3113,7 @@
         "保管庫を選択"
       ],
       "Please describe the problem and include any error messages": [
-        "問題について、エラーメッセージ等も含めてご記入ください。（英語）"
+        "問題について、エラーメッセージ等も含めてご記入ください。"
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "削除を確認するには、「${ vaultName }」を再入力します。"
@@ -2890,8 +3231,62 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "エイリアスの同期が有効になりました。シンプルログインのエイリアスは同期に時間がかかることがあります"
       ],
+      "Catch-all setting successfully disabled": [
+        "キャッチオール設定は正常に無効になりました"
+      ],
+      "Catch-all setting successfully enabled": [
+        "キャッチオール設定は正常に有効になりました"
+      ],
+      "Contact successfully blocked": [
+        "連絡先は正常にブロックされました"
+      ],
+      "Contact successfully created": [
+        "連絡先は正常に作成されました"
+      ],
+      "Contact successfully deleted": [
+        "連絡先は正常に削除されました"
+      ],
+      "Contact successfully unblocked": [
+        "連絡先は正常にブロック解除されました"
+      ],
+      "Default domain successfully updated": [
+        "既定のドメインは正常に更新されました"
+      ],
+      "Default mailbox successfully updated": [
+        "既定のメールボックスが正常に更新されました"
+      ],
+      "Display name successfully updated": [
+        "表示名が更新されました"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "ドメインの所有権が認証されました。MXレコードの設定ができます。"
+      ],
+      "Domain successfully deleted": [
+        "ドメインは正常に削除されました"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "ドメインは正常に認証されました。あなたのドメインはメールの受信が開始され、エイリアスが作成されます"
+      ],
+      "Mailbox successfully deleted": [
+        "メールボックスは正常に削除されました"
+      ],
+      "Mailbox successfully verified": [
+        "メールボックスは正常に認証されました"
+      ],
+      "Mailboxes successfully updated": [
+        "メールボックスは正常に更新されました"
+      ],
+      "Random prefix generation successfully disabled": [
+        "ランダムプレフィックス生成が無効になりました"
+      ],
+      "Random prefix generation successfully enabled": [
+        "ランダムプレフィックス生成が有効になりました"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Vault には ${ vault.targetMaxMembers } を超えるユーザーを含めることはできません。"
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "認証メールが送信されました。メールボックスを認証するには受信トレイを確認してください"
       ]
     },
     "Theme": {
@@ -2918,8 +3313,29 @@
       "Actions": [
         "アクション"
       ],
+      "Activity": [
+        "アクティビティ"
+      ],
+      "Add custom domain": [
+        "カスタムドメインを追加"
+      ],
+      "Add mailbox": [
+        "メールボックスを追加"
+      ],
+      "Alias contacts": [
+        "エイリアス連絡先"
+      ],
+      "Aliases": [
+        "エイリアス"
+      ],
+      "Auto create/on the fly alias": [
+        "自動作成/緊急エイリアス"
+      ],
       "Auto-lock update": [
         "自動ロックアップデート"
+      ],
+      "Blocked addresses": [
+        "ブロックしたアドレス"
       ],
       "Breach detected": [
         "違反が検出されました"
@@ -2960,6 +3376,9 @@
       "Custom addresses": [
         "カスタムアドレス"
       ],
+      "Custom domains": [
+        "カスタムドメイン"
+      ],
       "Custom email monitoring": [
         "カスタムメール監視"
       ],
@@ -2969,8 +3388,20 @@
       "Dark Web Monitoring": [
         "ダークウェブモニタリング"
       ],
+      "Default": [
+        "既定"
+      ],
+      "Default Display Name": [
+        "既定の表示名"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "${ deletedItemsCount }個のアイテムを削除しますか？"
+      ],
+      "Delete domain": [
+        "ドメインを削除"
+      ],
+      "Delete mailbox": [
+        "メールボックスを削除"
       ],
       "Delete this item?": [
         "このアイテムを削除しますか？"
@@ -2983,6 +3414,18 @@
       ],
       "Discard changes?": [
         "変更を破棄しますか?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (任意)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (任意)"
+      ],
+      "Domain": [
+        "ドメイン"
+      ],
+      "Domain ownership verification": [
+        "ドメイン所有権の検証"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } をお楽しみですか?"
@@ -3041,6 +3484,9 @@
       "Low disk space": [
         "ディスクの空き容量が低下"
       ],
+      "Mailbox": [
+        "メールボックス"
+      ],
       "Mark as resolved?": [
         "解決済みとしてマークしますか?"
       ],
@@ -3064,6 +3510,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "\"${ vaultName }\"にアイテムを移動"
+      ],
+      "MX record": [
+        "MX レコード"
       ],
       "No excluded items": [
         "除外項目なし"
@@ -3110,6 +3559,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "削除したエイリアスは復元できませんので、ご注意ください。"
       ],
+      "Random Prefix Generation": [
+        "ランダムプレフィックス生成"
+      ],
       "Recommended actions": [
         "推奨されるアクション"
       ],
@@ -3146,6 +3598,9 @@
       "Secure your data": [
         "データの保護"
       ],
+      "Select the default domain for aliases": [
+        "エイリアスの既定のドメインを選択してください"
+      ],
       "Set access level": [
         "アクセスレベルの設定"
       ],
@@ -3166,6 +3621,9 @@
       ],
       "Share with": [
         "と共有する"
+      ],
+      "SPF (Optional)": [
+        "SPF (任意)"
       ],
       "Status": [
         "状態"
@@ -3193,6 +3651,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "${ brandNameJSX } のロックを解除します"
+      ],
+      "Unverified": [
+        "未認証"
       ],
       "Update available": [
         "更新あり"
@@ -3224,6 +3685,9 @@
       "What is the dark web?": [
         "ダークウェブとは？"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "${ PASS_SHORT_APP_NAME }メモとSimpleLoginメモの違いはなんですか？"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName }サブスクリプションは${ endDate }に終了します"
       ],
@@ -3241,6 +3705,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "ドメインURLが無効です"
+      ],
       "Duplicated URL": [
         "重複した URL"
       ],
@@ -3309,8 +3776,14 @@
       "Delete alias": [
         "エイリアスを削除"
       ],
+      "Domain cannot be empty": [
+        "ドメインは空欄にできません"
+      ],
       "Duplicate email addresses.": [
         "メールアドレスが重複しています"
+      ],
+      "Email cannot be empty": [
+        "メールは空欄にできません"
       ],
       "Email is required": [
         "メールアドレスは必須です"
@@ -3401,6 +3874,9 @@
       ],
       "Please contact us to investigate the issue": [
         "この問題の調査のため、私たちにご連絡ください"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "一度削除すると、エイリアスは復元できないことにご注意ください。"
       ],
       "Please update the extension to its latest version": [
         "拡張機能を最新のバージョンに更新してください"
