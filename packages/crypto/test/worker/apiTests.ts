@@ -341,6 +341,17 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
         expect(verificationValidContext.errors).to.be.undefined;
         expect(verificationMissingContext.errors).to.have.length(1);
         expect(verificationMissingContext.errors![0]).to.match(/Unknown critical notation: context@proton/);
+
+        // if `expectSign` is given, verification is expected to throw on wrong context
+        await expect(
+            CryptoApiImplementation.verifyMessage({
+                textData,
+                armoredSignature,
+                verificationKeys: privateKeyRef,
+                context: { value: 'unexpected-context', required: true },
+                expectSigned: true,
+            })
+        ).to.be.rejectedWith(/context verification error/);
     });
 
     it('verifyMessage - it verifies a message ten seconds in the future', async () => {
