@@ -11,6 +11,7 @@ export function OverflowMenuItem({ item }: { item: ToolbarItemInterface }) {
         className={clsx('flex items-center gap-2 text-left text-sm', item.active && 'active')}
         onClick={item.onClick}
         disabled={item.disabled}
+        data-testid={`overflow-${item.id}`}
       >
         {item.icon}
         {item.label}
