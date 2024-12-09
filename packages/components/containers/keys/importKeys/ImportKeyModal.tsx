@@ -11,7 +11,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
 import type { ArmoredKeyWithInfo, OnKeyImportCallback } from '@proton/shared/lib/keys';
 import getRandomString from '@proton/utils/getRandomString';
 
@@ -91,7 +91,7 @@ const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
             CryptoProxy.importPrivateKey({
                 armoredKey: first.armoredKey,
                 passphrase: null,
-                checkCompatibility: true, // the BE will enforce this as well, but the returned error messages might be less user friendly
+                checkCompatibility: KeyCompatibilityLevel.BACKWARDS_COMPATIBLE, // the BE will enforce this as well, but the returned error messages might be less user friendly
             })
                 .then(handleAddKey)
                 .catch((e: Error) => {
