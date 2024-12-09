@@ -81,6 +81,9 @@
       "Apply": [
         "Застосувати"
       ],
+      "Ask me next time": [
+        "Запитати наступного разу"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "До групи можна додати не більше ${ maxContacts } контакту",
         "До групи можна додати не більше ${ maxContacts } контактів",
@@ -113,6 +116,12 @@
       ],
       "Cancel subscription": [
         "Скасувати передплату"
+      ],
+      "characters": [
+        "символів"
+      ],
+      "characters out of": [
+        "символів з"
       ],
       "Chat with us": [
         "Чат з нами"
@@ -153,6 +162,9 @@
       "Contact group": [
         "Група контактів"
       ],
+      "Context menu": [
+        "Контекстне меню"
+      ],
       "Continue": [
         "Продовжити"
       ],
@@ -176,6 +188,9 @@
       ],
       "Copy link": [
         "Копіювати посилання"
+      ],
+      "Create a copy": [
+        "Створити копію"
       ],
       "Create a new contact group": [
         "Створити нову групу контактів"
@@ -420,6 +435,9 @@
       "Open ${ DRIVE_APP_NAME }": [
         "Відкрити ${ DRIVE_APP_NAME }"
       ],
+      "Open folder": [
+        "Відкрити теку"
+      ],
       "Open navigation": [
         "Відкрити панель навігації"
       ],
@@ -510,6 +528,9 @@
       "Restore this version": [
         "Відновити цю версію"
       ],
+      "Restore this version?": [
+        "Відновити цю версію?"
+      ],
       "Retry": [
         "Повторити спробу"
       ],
@@ -519,11 +540,17 @@
       "Save changes": [
         "Зберегти зміни"
       ],
+      "Save preferences": [
+        "Зберегти налаштування"
+      ],
       "Search": [
         "Пошук"
       ],
       "Search countries": [
         "Пошук країн"
+      ],
+      "Search docs": [
+        "Пошук документів"
       ],
       "See how": [
         "Подивитись як"
@@ -561,6 +588,9 @@
       "Sign out": [
         "Вийти"
       ],
+      "Sign up": [
+        "Зареєструватися"
+      ],
       "Skip verification": [
         "Пропустити перевірку"
       ],
@@ -578,6 +608,9 @@
       ],
       "Switch or add account": [
         "Змінити або додати обліковий запис"
+      ],
+      "Take out of trash": [
+        "Вийняти зі смітника"
       ],
       "Trust": [
         "Довіряти"
@@ -659,6 +692,15 @@
       ],
       "What do I get?": [
         "Що я отримую?"
+      ],
+      "Word count": [
+        "Кількість слів"
+      ],
+      "words": [
+        "слів"
+      ],
+      "words out of": [
+        "слів з"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контакт",
@@ -2369,6 +2411,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Виникла помилка при спробі продублювати документ. Спробуйте ще раз."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Під час відновлення документа виникла помилка. Повторіть спробу."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Під час видалення документа виникла помилка. Повторіть спробу."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Виникла помилка при створенні нового документа. Спробуйте ще раз."
       ],
@@ -3574,6 +3622,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "\"${ documentTitle }\" було переміщено до смітника. Він залишиться там, доки ви не відновите його або остаточно не видалите."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "\"${ documentTitle }\" знаходиться у смітнику і залишиться там, доки ви остаточно його не видалите."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } адреса е-пошти",
         "${ addressCount } адреси е-пошти",
@@ -3627,6 +3681,12 @@
         "${ contactsLength } контакти",
         "${ contactsLength } контактів",
         "${ contactsLength } контактів"
+      ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } дозволяє співпрацювати в режимі реального часу з використанням наскрізного шифрування для повної приватності. Щоб розпочати редагування, створіть копію, або запросіть доступ у власника."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } у"
       ],
       "${ groupCounts } group found": [
         "Знайдено ${ groupCounts } групу",
@@ -3814,6 +3874,12 @@
       "Change your password": [
         "Змініть свій пароль"
       ],
+      "characters": [
+        "символів"
+      ],
+      "characters without spaces": [
+        "символів без пробілів"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Перевірка контактів ${ progress } з ${ max }..."
       ],
@@ -3844,6 +3910,9 @@
         "Створити ${ calendarsToBeCreatedCount } нових календарів",
         "Створити ${ calendarsToBeCreatedCount } нових календарів"
       ],
+      "Create a copy to edit": [
+        "Створіть копію для редагування"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Створіть мітки для імпортованих повідомлень, часовий проміжок для цього імпорту, а також теки, які ви бажаєте імпортувати."
       ],
@@ -3864,6 +3933,9 @@
       ],
       "Create public link": [
         "Створити загальнодоступне посилання"
+      ],
+      "Create your end-to-end encrypted document": [
+        "Створити документ із наскрізним шифруванням"
       ],
       "Creating link to file": [
         "Створення посилання на файл"
@@ -3900,6 +3972,18 @@
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
+      ],
+      "Display word count": [
+        "Показувати кількість слів"
+      ],
+      "Document is in trash": [
+        "Документ знаходиться у смітнику"
+      ],
+      "Document moved to trash": [
+        "Документ переміщено до смітника"
+      ],
+      "Document owner has the password": [
+        "Власник документа має пароль"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічого не відбувається? Перевірте, чи не увімкнено блокування спливних вікон."
@@ -4030,6 +4114,12 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Щоб досягти найкращих результатів, уникайте потокової трансляції та інших дій, які потребують багато пам'яті, або розбивайте вивантаження на менші частини."
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Отримуйте оновлення е-поштою щодо коментарів і пропозицій, доданих до ваших документів."
+      ],
+      "Get Notified About Comments": [
+        "Отримуйте сповіщення про коментарі"
+      ],
       "here": [
         "тут"
       ],
@@ -4153,6 +4243,9 @@
       "Low Priority": [
         "Низький пріоритет"
       ],
+      "Making a copy...": [
+        "Створення копії..."
+      ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
       ],
@@ -4161,6 +4254,9 @@
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символи",
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символів",
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символів"
+      ],
+      "Me": [
+        "Я"
       ],
       "Medium Priority": [
         "Середній пріоритет"
@@ -4173,6 +4269,9 @@
       ],
       "Monitor accounts": [
         "Моніторинг облікових записів"
+      ],
+      "Most recent": [
+        "Найновіше"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
@@ -4194,6 +4293,9 @@
       ],
       "No payment is required at this time.": [
         "Наразі платіж не вимагається."
+      ],
+      "No recent documents": [
+        "Нещодавні документи відсутні"
       ],
       "No results found": [
         "Результатів не знайдено"
@@ -4233,6 +4335,12 @@
       ],
       "Organization size": [
         "Розмір організації"
+      ],
+      "Owned by me": [
+        "Належить мені"
+      ],
+      "Owned by others": [
+        "Належить іншим"
       ],
       "Owner": [
         "Власник"
@@ -4318,6 +4426,9 @@
       "Primary": [
         "Основний"
       ],
+      "Public documents are not yet enabled for your organization.": [
+        "Публічні документи ще не ввімкнені для вашої організації."
+      ],
       "recommended browser": [
         "рекомендований браузер"
       ],
@@ -4326,6 +4437,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
+      ],
+      "Restored version to": [
+        "Відновлено версію до"
       ],
       "Saving": [
         "Збереження"
@@ -4453,6 +4567,9 @@
       "This message will be presented again later": [
         "Це повідомлення буде представлено пізніше"
       ],
+      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Можливо, цей публічний документ не існує, або ви не маєте дозволу на перегляд. Спробуйте перезавантажити сторінку, щоб перевірити, чи проблема існує."
+      ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Це видалить посилання та вилучить доступ до вашої теки для всіх, хто має посилання.",
         "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання.",
@@ -4515,6 +4632,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
+      ],
+      "Undo successful": [
+        "Скасування виконано"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "На жаль, схоже що неможливо розшифрувати файл або його вміст."
@@ -4585,6 +4705,9 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
       ],
+      "words": [
+        "слів"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
       ],
@@ -4608,6 +4731,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Наразі ви ввійшли як ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
+        "Наразі ви переглядаєте цей документ у режимі перегляду. Зверніться до власника, щоб отримати доступ до редагування та коментування."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Ви використовуєте більший обсяг сховища, ніж передбачено планом ${ downgradedPlanName }. Щоб перейти на нижчий тарифний план, звільніть місце в сховищі."
@@ -4701,6 +4827,9 @@
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Ваш поточний браузер не підтримує завантаження великих файлів через недоступність служби обробників (service workers). Завантаження великих файлів може \"заморозити\" браузер. Будь ласка, скористайтеся найновішими версіями ${ recommendedBrowser } та повторіть спробу."
+      ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "Ваш поточний документ буде замінено на цю версію. Коментарі та пропозиції будуть вилучені з документа, але залишатимуться доступними в історії коментарів."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
@@ -4900,6 +5029,12 @@
       "Calendars": [
         "Календарі"
       ],
+      "Can edit": [
+        "Може редагувати"
+      ],
+      "Can view": [
+        "Може переглядати"
+      ],
       "Cancel download": [
         "Скасувати завантаження"
       ],
@@ -4999,6 +5134,9 @@
       "Emails (last month)": [
         "Е-пошта (останній місяць)"
       ],
+      "Enable email notifications": [
+        "Увімкнути сповіщення е-поштою"
+      ],
       "Encrypt emails": [
         "Шифрувати листи"
       ],
@@ -5055,6 +5193,9 @@
       ],
       "Import to:": [
         "Імпортувати до:"
+      ],
+      "Include document name in notification": [
+        "Додати назву документа в сповіщення"
       ],
       "Include message and file name in invite email": [
         "Додайте повідомлення та ім'я файлу до листа-запрошення"
@@ -5256,6 +5397,14 @@
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
+      ]
+    },
+    "Label description": {
+      "Organise, add and edit files": [
+        "Впорядковувати, додавати та редагувати файли"
+      ],
+      "View and download": [
+        "Переглядати та завантажувати"
       ]
     },
     "Label for contact group color": {
@@ -5554,6 +5703,9 @@
       "Graphics Interchange Format (GIF)": [
         "Формат обміну зображеннями (GIF)"
       ],
+      "GZip Archive": [
+        "Архів GZip"
+      ],
       "HyperText Markup Language (HTML)": [
         "Мова розмітки гіпертексту (HTML)"
       ],
@@ -5571,6 +5723,9 @@
       ],
       "Java Archive (JAR)": [
         "Архів Java (JAR)"
+      ],
+      "JPEG image": [
+        "Зображення JPEG"
       ],
       "MP3 audio": [
         "Аудіо MP3"
@@ -5607,6 +5762,9 @@
       ],
       "Opus audio": [
         "Аудіо Opus"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "Архів RAR"
@@ -6722,6 +6880,9 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Недостатньо місця для вивантаження ${ formattedTotal }"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Не вдалося зупинити поширення елемента"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Не вдалося видалити посилання на \"${ name }\""
       ],
@@ -7607,6 +7768,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запросіть друзів до ${ BRAND_NAME }"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Щоб редагувати документ, створіть копію."
       ]
     },
     "sso": {
@@ -8381,6 +8545,9 @@
       "Link confirmation": [
         "Підтвердження посилання"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Зробіть копію у ${ DRIVE_APP_NAME }"
+      ],
       "Manage secure link": [
         "Керувати захищеним посиланням"
       ],
@@ -8534,6 +8701,9 @@
       "The link expired": [
         "Термін дії посилання завершився"
       ],
+      "This document is password protected": [
+        "Цей документ захищено паролем"
+      ],
       "Unlock contacts groups": [
         "Розблокувати групи контактів"
       ],
@@ -8630,6 +8800,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
+      ],
+      "Shared with end-to-end encryption": [
+        "Поширено з наскрізним шифруванням"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системні підтеки показуватимуться окремими теками в ${ MAIL_APP_NAME }"
