@@ -15,7 +15,12 @@ import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
-import { getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, isTrial } from '@proton/shared/lib/helpers/subscription';
+import {
+    getCanSubscriptionAccessDuoPlan,
+    getHasVpnB2BPlan,
+    hasLumo,
+    isTrial,
+} from '@proton/shared/lib/helpers/subscription';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
@@ -77,7 +82,7 @@ const YourPlanSection = ({ app }: Props) => {
     const shouldRenderSubscription = user.canPay || (subscription && !isTrial(subscription));
     const shouldRenderPendingInvitation = !!invites.length;
     // Upsell panel if the user has a subscription and is not vpn or wallet
-    const shouldRenderUpsells = !isVpnB2b && !isWalletEA && shouldRenderSubscription;
+    const shouldRenderUpsells = !isVpnB2b && !isWalletEA && shouldRenderSubscription && !hasLumo(subscription);
     // Usage panel is displayed for members of B2B plans except VPN B2B
     const shouldRenderUsagePanel =
         (organization?.UsedMembers || 0) > 1 && !isVpnB2b && organization?.State === ORGANIZATION_STATE.ACTIVE;
@@ -112,7 +117,6 @@ const YourPlanSection = ({ app }: Props) => {
                         upsells={shouldRenderUpsells ? upsells : []}
                     />
                 )}
-
                 {/* Usage for plans with >1 Members except VPN B2B */}
                 {shouldRenderUsagePanel && (
                     <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />

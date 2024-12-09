@@ -749,6 +749,44 @@ export const getWalletPlan = (plan: Plan): ShortPlan => {
     };
 };
 
+export const getLumoPlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.LUMO,
+        title: plan.Title,
+        label: '',
+        description: c('collider_2025: Info').t`Your private AI helper`,
+        cta: getCTA(plan.Title),
+        features: [
+            {
+                text: c('collider_2025: feature').t`Unlimited questions every day`,
+                included: true,
+            },
+            {
+                text: c('collider_2025: feature').t`Unlimited chat history`,
+                included: true,
+            },
+            {
+                text: c('collider_2025: feature')
+                    .t`Handles complex conversations (supports input equivalent of 40 pages of text)`,
+                included: true,
+            },
+
+            {
+                text: c('collider_2025: feature').t`Favorite conversations`,
+                included: true,
+            },
+            {
+                text: c('collider_2025: feature').t`Priority access (get top priority, even during busy times)`,
+                included: true,
+            },
+            {
+                text: c('collider_2025: feature').t`Priority support`,
+                included: true,
+            },
+        ],
+    };
+};
+
 /**
  * Takes a plans map, a plan and some options and returns short visual plan details
  *
@@ -818,6 +856,8 @@ export const getShortPlan = (
             return getPassBusinessPlan(planData);
         case PLANS.WALLET:
             return getWalletPlan(planData);
+        case PLANS.LUMO:
+            return getLumoPlan(planData);
         default:
             return null;
     }

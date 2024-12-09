@@ -42,6 +42,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     type APP_NAMES,
     BRAND_NAME,
+    LUMO_APP_NAME,
     MAIL_APP_NAME,
     MEMBER_PRIVATE,
     MEMBER_ROLE,
@@ -64,6 +65,7 @@ import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
+import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';
@@ -93,6 +95,7 @@ interface Props extends ModalProps {
     disableDomainValidation?: boolean;
     disableAddressValidation?: boolean;
     aiSeatsRemaining: boolean;
+    lumoSeatsRemaining: boolean;
 }
 
 const SubUserCreateModal = ({
@@ -113,6 +116,7 @@ const SubUserCreateModal = ({
     disableDomainValidation,
     disableAddressValidation,
     aiSeatsRemaining,
+    lumoSeatsRemaining,
     ...rest
 }: Props) => {
     const { createNotification } = useNotifications();
@@ -140,6 +144,8 @@ const SubUserCreateModal = ({
     const isMagicLinkEnabled = useFlag('MagicLink');
     const csvMode = isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password;
 
+    const lumoAddonAvailable = useFlag('LumoAddonAvailable');
+
     const [model, setModel] = useState({
         mode: isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password,
         name: '',
@@ -150,6 +156,7 @@ const SubUserCreateModal = ({
         address: '',
         invitationEmail: '',
         numAI: aiSeatsRemaining || isVisionary || isDuo || isFamily, // Visionary, Duo and Family users should have the toggle set to true by default
+        lumo: lumoSeatsRemaining || isVisionary, // Visionary users should have the toggle set to true by default
         domain: useEmail ? null : (verifiedDomains[0]?.DomainName ?? null),
         vpn:
             organization &&
@@ -206,6 +213,7 @@ const SubUserCreateModal = ({
                         private: model.private ? MEMBER_PRIVATE.UNREADABLE : MEMBER_PRIVATE.READABLE,
                         role: model.admin ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER,
                         numAI: model.numAI,
+                        lumo: model.lumo,
                     },
                     verifiedDomains,
                     validationOptions: {
@@ -520,6 +528,29 @@ const SubUserCreateModal = ({
                             }
                             assistiveText={
                                 !aiSeatsRemaining && !model.numAI ? <AssistantUpdateSubscriptionButton /> : undefined
+                            }
+                        />
+                    )}
+
+                    {lumoAddonAvailable && (
+                        <MemberToggleContainer
+                            toggle={
+                                <Toggle
+                                    id="lumo-toggle"
+                                    checked={model.lumo}
+                                    disabled={!lumoSeatsRemaining}
+                                    onChange={({ target }) => handleChange('lumo')(target.checked)}
+                                />
+                            }
+                            label={
+                                <>
+                                    <label className="text-semibold" htmlFor="lumo-toggle">
+                                        {LUMO_APP_NAME}
+                                    </label>
+                                </>
+                            }
+                            assistiveText={
+                                !lumoSeatsRemaining && !model.lumo ? <LumoUpdateSubscriptionButton /> : undefined
                             }
                         />
                     )}

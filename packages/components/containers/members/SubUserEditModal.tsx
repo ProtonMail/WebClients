@@ -34,7 +34,13 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, NAME_PLACEHOLDER } from '@proton/shared/lib/constants';
+import {
+    LUMO_APP_NAME,
+    MEMBER_PRIVATE,
+    MEMBER_ROLE,
+    MEMBER_SUBSCRIBER,
+    NAME_PLACEHOLDER,
+} from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
@@ -45,6 +51,7 @@ import noop from '@proton/utils/noop';
 
 import Addresses from '../addresses/Addresses';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
+import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
 import SubUserCreateHint from './SubUserCreateHint';
@@ -59,6 +66,7 @@ interface Props extends ModalProps<'form'> {
     allowAIAssistantConfiguration?: boolean;
     showAddressesSection?: boolean;
     aiSeatsRemaining: boolean;
+    lumoSeatsRemaining: boolean;
 }
 
 interface MemberState {
@@ -67,6 +75,7 @@ interface MemberState {
     vpn: boolean;
     private: MEMBER_PRIVATE;
     ai: boolean;
+    lumo: boolean;
     role: MEMBER_ROLE;
 }
 
@@ -102,6 +111,7 @@ const getMemberStateFromMember = (member: Member): MemberState => {
         vpn: !!member.MaxVPN,
         private: member.Private,
         ai: !!member.NumAI,
+        lumo: !!member.NumLumo,
         role: member.Role,
     };
 };
@@ -118,11 +128,13 @@ const SubUserEditModal = ({
     allowAIAssistantConfiguration,
     showAddressesSection,
     aiSeatsRemaining,
+    lumoSeatsRemaining,
     ...rest
 }: Props) => {
     const [organization] = useOrganization();
     const [organizationKey] = useOrganizationKey();
     const unprivatizeMemberEnabled = useFlag('UnprivatizeMember');
+    const lumoAddonAvailable = useFlag('LumoAddonAvailable');
     const dispatch = useDispatch();
     const storageSizeUnit = sizeUnits.GB;
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
@@ -141,6 +153,7 @@ const SubUserEditModal = ({
 
     // We want to keep AI enabled if all seats are taken but the user already has a seat
     const disableAI = !organization?.MaxAI || (!aiSeatsRemaining && !member.NumAI);
+    const disableLumo = !organization?.MaxLumo || (!lumoSeatsRemaining && !member.NumLumo);
 
     useEffect(() => {
         dispatch(getMemberAddresses({ member })).catch(noop);
@@ -157,6 +170,7 @@ const SubUserEditModal = ({
     const [loadingRole, withLoadingRole] = useLoading();
     const [loadingVPN, withLoadingVPN] = useLoading();
     const [loadingScribe, withLoadingScribe] = useLoading();
+    const [loadingLumo, withLoadingLumo] = useLoading();
     const { createNotification } = useNotifications();
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
@@ -594,6 +608,34 @@ const SubUserEditModal = ({
                                 }
                                 assistiveText={
                                     !aiSeatsRemaining && !model.ai ? <AssistantUpdateSubscriptionButton /> : undefined
+                                }
+                            />
+                        )}
+
+                        {lumoAddonAvailable && (
+                            <MemberToggleContainer
+                                toggle={
+                                    <Toggle
+                                        id="lumo-toggle"
+                                        checked={model.lumo}
+                                        loading={loadingLumo}
+                                        disabled={disableLumo}
+                                        onChange={({ target }) => {
+                                            withLoadingLumo(handleUpdateMember({ lumo: target.checked })).catch(
+                                                errorHandler
+                                            );
+                                        }}
+                                    />
+                                }
+                                label={
+                                    <>
+                                        <label className="text-semibold" htmlFor="lumo-toggle">
+                                            {LUMO_APP_NAME}
+                                        </label>
+                                    </>
+                                }
+                                assistiveText={
+                                    !lumoSeatsRemaining && !model.lumo ? <LumoUpdateSubscriptionButton /> : undefined
                                 }
                             />
                         )}
