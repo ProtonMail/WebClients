@@ -57,11 +57,15 @@ export const sortApiKeys = ({
     obsoleteFingerprints,
     compromisedFingerprints,
     trustedFingerprints,
+    primaryKeyFingerprints,
+    preferV6Keys,
 }: {
     keys: PublicKeyReference[];
     obsoleteFingerprints: Set<string>;
     compromisedFingerprints: Set<string>;
     trustedFingerprints: Set<string>;
+    primaryKeyFingerprints: Set<string>;
+    preferV6Keys: boolean;
 }): PublicKeyReference[] =>
     keys
         .reduce<PublicKeyReference[][]>(
@@ -69,6 +73,10 @@ export const sortApiKeys = ({
                 const fingerprint = key.getFingerprint();
                 // calculate order through a bitmap
                 const index = toBitMap({
+                    // give precedence to either v4 or v6 primary key (NB: none of the v6 keys might be primary).
+                    // NB: a non-primary v6 key should NOT take precedence over a primary v4 key to avoid breaking e2ee forwarding.
+                    isNotPreferredVersion: preferV6Keys ? key.getVersion() !== 6 : key.getVersion() !== 4,
+                    isNotPrimary: !primaryKeyFingerprints.has(fingerprint),
                     isObsolete: obsoleteFingerprints.has(fingerprint),
                     isCompromised: compromisedFingerprints.has(fingerprint),
                     isNotTrusted: !trustedFingerprints.has(fingerprint),
@@ -76,7 +84,7 @@ export const sortApiKeys = ({
                 acc[index].push(key);
                 return acc;
             },
-            Array.from({ length: 8 }).map(() => [])
+            Array.from({ length: 32 }).map(() => [])
         )
         .flat();
 
@@ -88,11 +96,13 @@ export const sortPinnedKeys = ({
     obsoleteFingerprints,
     compromisedFingerprints,
     encryptionCapableFingerprints,
+    preferV6Keys,
 }: {
     keys: PublicKeyReference[];
     obsoleteFingerprints: Set<string>;
     compromisedFingerprints: Set<string>;
     encryptionCapableFingerprints: Set<string>;
+    preferV6Keys: boolean;
 }): PublicKeyReference[] =>
     keys
         .reduce<PublicKeyReference[][]>(
@@ -100,6 +110,7 @@ export const sortPinnedKeys = ({
                 const fingerprint = key.getFingerprint();
                 // calculate order through a bitmap
                 const index = toBitMap({
+                    isNotPreferredVersion: preferV6Keys ? key.getVersion() !== 6 : key.getVersion() !== 4,
                     isObsolete: obsoleteFingerprints.has(fingerprint),
                     isCompromised: compromisedFingerprints.has(fingerprint),
                     cannotSend: !encryptionCapableFingerprints.has(fingerprint),
@@ -107,7 +118,7 @@ export const sortPinnedKeys = ({
                 acc[index].push(key);
                 return acc;
             },
-            Array.from({ length: 8 }).map(() => [])
+            Array.from({ length: 16 }).map(() => [])
         )
         .flat();
 
@@ -149,6 +160,7 @@ export const getContactPublicKeyModel = async ({
     emailAddress,
     apiKeysConfig,
     pinnedKeysConfig,
+    preferV6Keys,
 }: Omit<PublicKeyConfigs, 'mailSettings'>): Promise<ContactPublicKeyModel> => {
     const {
         pinnedKeys = [],
@@ -165,6 +177,7 @@ export const getContactPublicKeyModel = async ({
     const encryptionCapableFingerprints = new Set<string>();
     const obsoleteFingerprints = new Set<string>();
     const compromisedFingerprints = new Set<string>();
+    const primaryKeyFingerprints = new Set<string>(); // either one and two keys expected (v4 + maybe v6)
 
     // prepare keys retrieved from the API
     const isInternalUser = getIsInternalUser(apiKeysConfig);
@@ -172,11 +185,14 @@ export const getContactPublicKeyModel = async ({
     const processedApiKeys = apiKeysConfig.publicKeys;
     const apiKeys = processedApiKeys.map(({ publicKey }) => publicKey);
     await Promise.all(
-        processedApiKeys.map(async ({ publicKey, flags }) => {
+        processedApiKeys.map(async ({ publicKey, flags, primary }) => {
             const fingerprint = publicKey.getFingerprint();
             const canEncrypt = await getKeyEncryptionCapableStatus(publicKey);
             if (canEncrypt) {
                 encryptionCapableFingerprints.add(fingerprint);
+            }
+            if (primary) {
+                primaryKeyFingerprints.add(fingerprint);
             }
             if (!hasBit(flags, KEY_FLAG.FLAG_NOT_COMPROMISED)) {
                 compromisedFingerprints.add(fingerprint);
@@ -203,6 +219,7 @@ export const getContactPublicKeyModel = async ({
         obsoleteFingerprints,
         compromisedFingerprints,
         encryptionCapableFingerprints,
+        preferV6Keys,
     });
 
     const orderedApiKeys = sortApiKeys({
@@ -210,6 +227,8 @@ export const getContactPublicKeyModel = async ({
         trustedFingerprints,
         obsoleteFingerprints,
         compromisedFingerprints,
+        primaryKeyFingerprints,
+        preferV6Keys,
     });
 
     let encrypt: boolean | undefined = undefined;
@@ -238,6 +257,7 @@ export const getContactPublicKeyModel = async ({
         obsoleteFingerprints,
         compromisedFingerprints,
         encryptionCapableFingerprints,
+        primaryKeyFingerprints,
         isPGPExternal: isExternalUser,
         isPGPInternal: isInternalUser,
         isPGPExternalWithExternallyFetchedKeys: isExternalUser && !!apiKeys.length,
