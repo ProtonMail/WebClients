@@ -1916,7 +1916,7 @@
     },
     "Button": {
       "Change email address settings": [
-        "No s'han pogut modificar les preferències de l'adreça de correu electrònic."
+        "Modificar les preferències de l'adreça de correu electrònic"
       ],
       "Continue": [
         "Continua"
@@ -3675,6 +3675,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Desbloquegeu carpetes i etiquetes il·limitades i més característiques prèmium quan milloreu el vostre pla."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Milloreu el vostre pla per obtenir ${ activatePmUser } per una adreça de correu electrònic més curta i fàcil de recordar, a més de la vostra actual."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Milloreu el compte per activar ${ PROTON_SENTINEL_NAME }, la nostra solució de seguretat d'avantguarda impulsada per IA amb suport expert dedicat 24/7."
@@ -6729,6 +6732,9 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Els missatges que hagin estat a la paperera i al correu brossa més de 30 dies se suprimiran automàticament."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Els missatges a totes les vostres adreces de correu electrònic aniran a la vostra safata d'entrada."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -6956,6 +6962,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
+      "Registering your subscription...": [
+        "Registrant la vostra subscripció..."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Recordeu actualitzar aquesta informació al vostre gestor de contrasenyes o allà on conserveu la informació i les credencials del vostre compte."
       ],
@@ -7089,6 +7098,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Comenceu a compartir-la amb els vostres contactes i utilitzeu-la per a serveis en línia."
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Les capacitats d'emmagatzematge no són compatibles amb aquest navegador. Necessitem aquest suport per activar la cerca de contingut dels missatges."
       ],
@@ -7219,6 +7231,9 @@
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Això pretén ser una ajuda per a l'escriptura. Comproveu la precisió del text suggerit. ${ learnMoreResult }"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
@@ -11627,6 +11642,9 @@
       "Schedule send": [
         "Programa l'enviament"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Aquesta és ara la vostra adreça per defecte. Obriu el menú desplegable per enviar missatges des d'una adreça diferent. "
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Activeu ${ DARK_WEB_MONITORING_NAME } per a rebre una notificació si les vostres dades s'han filtrat d'un servei de tercers."
       ],
@@ -13458,6 +13476,9 @@
       ],
       "Your free trial has ended": [
         "La prova gratuïta ha finalitzat."
+      ],
+      "Your shorter address is now ready": [
+        "La vostra adreça més curta ja està preparada."
       ]
     },
     "Today icon tooltip in mini calendar": {

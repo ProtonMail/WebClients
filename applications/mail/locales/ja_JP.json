@@ -175,7 +175,7 @@
         "カーボンコピー (Carbon Copy)"
       ],
       "Change email": [
-        "メールアドレスを変更"
+        "メールを変更する"
       ],
       "Change page": [
         "ページの変更"
@@ -268,7 +268,7 @@
         "Google で続行"
       ],
       "Continue with Outlook": [
-        "Outlook を続行する"
+        "Outlookで続ける"
       ],
       "Contract composer": [
         "元に戻す"
@@ -280,10 +280,10 @@
         "アドレスをコピー"
       ],
       "Copy email to clipboard": [
-        "メールをコピー"
+        "メールをクリップボードにコピー"
       ],
       "Copy password to clipboard": [
-        "パスワードをコピー"
+        "パスワードをクリップボードにコピー"
       ],
       "Copy version number to clipboard": [
         "バージョン番号をクリップボードにコピー"
@@ -496,7 +496,7 @@
         "フォント"
       ],
       "Forgot password?": [
-        "パスワードを忘れた?"
+        "パスワードを忘れましたか？"
       ],
       "Formalize": [
         "フォーマルにする"
@@ -580,7 +580,7 @@
         "この返信が好みです"
       ],
       "Image could not be loaded with tracker protection.": [
-        "トラッキング防止が画像の読み込みをブロックしました。"
+        "トラッカー保護機能により画像を読み込めません。"
       ],
       "Image will be loaded without a proxy": [
         "画像はプロキシーを経由せずに読み込まれます"
@@ -670,7 +670,7 @@
         "話をしよう"
       ],
       "Load": [
-        "読み込む"
+        "読み込み"
       ],
       "Load embedded images": [
         "埋め込み画像を読み込む"
@@ -1045,7 +1045,7 @@
         "国を検索"
       ],
       "Search in ${ option.text }": [
-        "検索対象: ${ option.text }"
+        "${ option.text } 内を検索"
       ],
       "Search message content": [
         "メッセージ内容の検索"
@@ -1189,7 +1189,7 @@
         "スヌーズを設定"
       ],
       "Star": [
-        "星印を付ける"
+        "スター"
       ],
       "Start import": [
         "インポート開始"
@@ -1285,7 +1285,7 @@
         "スヌーズを解除"
       ],
       "Unstar": [
-        "星印を外す"
+        "スターを外す"
       ],
       "Unsubscribe": [
         "登録解除"
@@ -1366,7 +1366,7 @@
         "HTML を表示"
       ],
       "View invoice": [
-        "請求書を参照する"
+        "請求書を確認"
       ],
       "View keys": [
         "鍵を表示"
@@ -1384,7 +1384,7 @@
         "何が入手できますか？"
       ],
       "Why not?": [
-        "なぜですか?"
+        "どうして？"
       ],
       "Write for me": [
         "私の代わりに返信"
@@ -1480,7 +1480,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        "今すぐ退出することで、いくつかの連絡先がインポートされない可能性があります"
+        "今終了すると、インポートされない連絡先がある可能性があります"
       ],
       "By leaving now, some events may not be imported": [
         "今終了すると、インポートされない予定がある可能性があります"
@@ -1552,7 +1552,7 @@
         "プライバシーを保護するため、データはデバイス上に保存されます。ダウンロードと互換性のあるハードウェアが必要です。"
       ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
-        "データはデバイスに保存されます。初回のダウンロードと互換性のあるハードウェアが必要です。"
+        "データはデバイスに保存されますが、一度のダウンロードと互換性のあるハードウェアが必要です"
       ],
       "Fast and secure. No logs are kept.": [
         "高速で安全です。ログは保持されません。"
@@ -1907,7 +1907,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME } を使って続行します。"
+        "${ MAIL_APP_NAME }で続ける。"
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle }を使い続ける"
@@ -2296,7 +2296,7 @@
         "コバルト"
       ],
       "copper": [
-        "コパー"
+        "カッパー"
       ],
       "cyan-blue azure": [
         "グレーな青"
@@ -2314,10 +2314,10 @@
         "やや黒いグレー"
       ],
       "enzian": [
-        "エンツィアン"
+        "リンドウ"
       ],
       "fern": [
-        "ファーン"
+        "シダ"
       ],
       "field drab": [
         "かなり黒い黄"
@@ -2344,7 +2344,7 @@
         "白い緑"
       ],
       "light red": [
-        "かなり白い赤"
+        "ライトレッド"
       ],
       "maize": [
         "やや黒い黄"
@@ -2380,13 +2380,13 @@
         "ペルシャ赤"
       ],
       "philippine gray": [
-        "グレー"
+        "やや白いグレー"
       ],
       "philippine silver": [
         "やや白いグレー"
       ],
       "pickle": [
-        "ピックル"
+        "ピクルス"
       ],
       "pine": [
         "パイン"
@@ -3670,10 +3670,10 @@
         "カスタムスヌーズを使用すると、メールを非表示にして、より適切なタイミングで再表示するように設定できます。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "iCal 形式 (ICS ファイル) をインポートできます。インポートするファイルは ${ MAX_IMPORT_FILE_SIZE_STRING } 以下でかつ、予定の数は ${ MAX_IMPORT_EVENTS_STRING } 件以下である必要があります。もし、インポートしようとしているファイルが大きすぎる場合、小さなファイルに分割してインポートしてください。"
+        "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
+        "結合または保持する必要のない連絡先を削除するためにマークすることができます。 削除はマージボタンがクリックされた後にのみ行われます"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "アカウントとデータの回復手段が設定され、2要素認証が有効になっています。"
@@ -3695,7 +3695,7 @@
         "また、CSVのフィールドを自動的にvCardのフィールドに変換しています。手動で変換が正しく行われているか確かめることもできます。"
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートされたいものを選択してください。"
+        "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートしたいものを選択してください。"
       ]
     },
     "Desktop notification body": {
@@ -3960,7 +3960,7 @@
         "${ BRAND_NAME } から外部アカウントに接続できません"
       ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "<${ email }> は次のエラーを発生しました: ${ error.message } この連絡先にほかのキーを追加するか、暗号化を無効にすることで問題は解決します。"
+        "<${ email }> で次のエラーが発生しました${ error.message } この連絡先にほかのキーを追加するか、暗号化を無効にすることで問題は解決します。"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
@@ -4428,10 +4428,10 @@
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
       "This message has already been sent": [
-        "このメッセージは送信されています"
+        "このメッセージは既に送信済みです"
       ],
       "This message has already been sent. A new draft has been saved.": [
-        "このメッセージは送信されています。下書きが保存されました。"
+        "このメッセージは既に送信済みです。新しい下書きが保存されました。"
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
@@ -4485,7 +4485,7 @@
         "文字数が上限に達しました。メッセージを短くしてください。"
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        "最近、パスワードをリセットしたため電子メールを復号できません。以前のパスワードを記憶している場合、 ${ reActivateKeyLink } してメッセージにアクセスすることができます。${ learnMoreLink }"
+        "最近パスワードをリセットしたためメールを復号できません。以前のパスワードを覚えているなら、 ${ reActivateKeyLink } してメッセージにアクセスすることができます。${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
         "電子メールを復号できません。パスワードをリセットしたためかもしれません。${ learnMoreLink }"
@@ -4539,16 +4539,16 @@
         "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS } 以上の予定が含まれています。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "ファイル　${ formattedFilename }はメソッドが正しくなく、インポートできません。"
+        "ファイル${ formattedFilename }はメソッドが正しくなく、インポートできません。"
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "ファイル　${ formattedFilename }にはインポートする連絡先がありません。"
+        "ファイル${ formattedFilename }にはインポートする連絡先がありません。"
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "ファイル　${ formattedFilename }は空です。"
+        "ファイル${ formattedFilename }が空です。"
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        "ファイル　${ formattedFilename }はカレンダーではありません。"
+        "ファイル${ formattedFilename }はカレンダーではありません。"
       ]
     },
     "Error importing contact": {
@@ -4715,7 +4715,7 @@
         "${ MAIL_APP_NAME }や${ CALENDAR_APP_NAME }を使うには、Webバージョンに切り替えてください。"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
+        "このページを読み込めませんでした。ページを更新するか、インターネット接続を確認してください。"
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "追加のパスワードが有効になっている場合、エイリアスの管理は ${ PASS_APP_NAME } でのみ行うことができます。"
@@ -4780,7 +4780,7 @@
         "回答は送信されましたが、予定をカレンダーに追加できませんでした"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "回答は送信されましたが、予定をカレンダーに反映できませんでした"
+        "回答が送信されましたが、予定はカレンダーで更新できませんでした"
       ]
     },
     "Event title": {
@@ -4869,7 +4869,7 @@
         "${ invite.OrganizationName } に招待されました"
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
-        "六ヶ月の間に受けられる招待は最大で３つまでです。例外措置が必要な場合は ${ supportLink } にお問い合わせください。"
+        "6 か月の間に受けられる招待は最大で 3 つまでです。例外措置が必要な場合は ${ supportLink } にお問い合わせください。"
       ],
       "You cannot accept this invitation with your current plan.": [
         "現在のプランではこの招待を受けることができません。"
@@ -5094,7 +5094,7 @@
         "既読にする"
       ],
       "starred": [
-        "星印付き"
+        "スター付き"
       ]
     },
     "filter: Label": {
@@ -5455,7 +5455,7 @@
         "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "予定を暗号化し、カレンダーに追加中...${ totalToImport }件中${ totalImported }件が完了"
+        "予定を暗号化し、カレンダーに追加中: ${ totalToImport }件中${ totalImported }件が完了"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
         "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
@@ -5511,7 +5511,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "${ contactId } へのお問い合わせ "
+        "連絡先 ${ contactId }: "
       ]
     },
     "Import contact groups info": {
@@ -5694,7 +5694,7 @@
     },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。クリックして詳細"
+        "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。詳細はクリックしてください"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         "${ totalEvents } 件のうち ${ totalEventsDiscarded } 件の予定はインポートされません。クリックして詳細を展開します。"
@@ -5972,7 +5972,7 @@
         "次回メールを開いた際に、別のヒントが表示されます"
       ],
       "Any scheduled or snoozed messages will be canceled.": [
-        "スケジュール・スヌーズされたメッセージはすべてキャンセルされます。"
+        "スケジュールまたはスヌーズされたメッセージはすべてキャンセルされます。"
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "「${ nameDeleted }」フォルダ内のサブフォルダはすべて削除されますが、フォルダ内に保存されているメールは削除されずに「すべてのメール」フォルダに残ります。"
@@ -6002,7 +6002,7 @@
         "インポートを破棄してもよろしいですか?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "この場所のすべてのメールをアーカイブへ移動しますか？"
+        "この場所にあるすべてのメッセージをアーカイブに移動してもよろしいですか？"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
         "この場所にあるすべてのメッセージをごみ箱に移動してもよろしいですか？"
@@ -6125,7 +6125,7 @@
         "クリップボードにコピーされました"
       ],
       "Copy the link to clipboard": [
-        "リンクをコピー"
+        "リンクをクリップボードにコピー"
       ],
       "Country code": [
         "国コード"
@@ -6329,7 +6329,7 @@
         "選択を展開"
       ],
       "Expand text": [
-        "文章を引き伸ばす"
+        "文章を展開"
       ],
       "Expiration time": [
         "有効期限"
@@ -6506,7 +6506,7 @@
         "ラベル:"
       ],
       "Large imports can take several days.": [
-        "巨大なインポートは数日かかる場合があります。"
+        "膨大なインポートには数日かかる場合があります。"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "${ staySaferOnlineLink } の使い方を学ぶ"
@@ -6701,7 +6701,7 @@
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline は Plain Text 形式にのみ対応しています。"
+        "PGP/Inline はプレーンテキスト形式のみと互換性があります。"
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME は、現在の新規作成時のモードを使用して自動的にメッセージを送信します。"
@@ -6743,7 +6743,7 @@
         "文書を表示するにはまず開いてください。"
       ],
       "Please provide a name and an email address for creating a group.": [
-        "グループ作成のため、お名前とEメールアドレスをご記入ください。"
+        "グループ作成のため、名前とメールアドレスをご記入ください。"
       ],
       "Please select the folders you would like to import:": [
         "インポートしたいフォルダーを選択してください:"
@@ -6758,7 +6758,7 @@
         "グループ ${ groupName } に追加するメールアドレスを選択してください。"
       ],
       "Please share what the issue is": [
-        "どのような問題ですか"
+        "問題を共有してください"
       ],
       "Please share what you expected": [
         "期待していたことを述べてください"
@@ -6818,7 +6818,7 @@
         "ドキュメントの公開共有はまだサポートされていません。"
       ],
       "Recipient: ": [
-        "宛先 "
+        "宛先: "
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "手動で削除しない限り、回復に関する情報はこのデバイス上に保存され続けます。"
@@ -6854,7 +6854,7 @@
         "${ dateString } に保存しました"
       ],
       "Saved yesterday": [
-        "昨日保存したもの"
+        "昨日保存しました"
       ],
       "Saved: ${ dateString }": [
         "保存済み: ${ dateString }"
@@ -6911,10 +6911,10 @@
         "メッセージを送信しています..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "@pm.me から送信されたメッセージは有料プランの機能です。メッセージは ${ email } から送信されます。"
+        "@pm.me から送信されたメッセージは有料プランの機能です。メッセージは既定のアドレスである ${ email } から送信されます。"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "安全なメール <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> で送信されました。"
+        "安全なメールシステム <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> から送信"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
@@ -7181,7 +7181,7 @@
         "データを復元するには、データが作成されたときに使用された連絡先の暗号鍵を再度有効にする必要があります。したがって、鍵が生成されたときに使用されたパスワードを覚えている必要があります。"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "このニュースレターの配信を解除するには、送信元が指定している方法に基づき${ boldFrom }からのメールを受信することになります。"
+        "このメーリングリストの購読を解除するには、ニュースレターの送信者によって定義された詳細とともに、${ boldFrom } からメールが送信されます。"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
         "このニュースレターの配信を解除するには、送信元が指定している次のリンクを開くことになります。"
@@ -7361,7 +7361,7 @@
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
       ],
       "We'll email you once import is complete.": [
-        "データの取り込みが完了したら自動的にメールが届きます。"
+        "インポートが完了したらメールでお知らせします。"
       ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
@@ -7439,7 +7439,7 @@
         "このタブやブラウザを閉じても構いません。"
       ],
       "You can either update your search query or ${ button }": [
-        "検索内容を変えるか ${ button }"
+        "検索クエリを更新するか、 ${ button }"
       ],
       "You can either update your search query or clear it": [
         "検索クエリを更新するか、クリアすることができます"
@@ -7852,7 +7852,7 @@
         "未読のメールを表示"
       ],
       "Star": [
-        "星印を付ける"
+        "スター"
       ]
     },
     "Keyboard shortcut section name": {
@@ -8090,7 +8090,7 @@
         "次回から表示しない"
       ],
       "e.g., Amazon, eBay, Etsy": [
-        "例: Amazon、eBay"
+        "例えば、Amazon、eBay、Etsy"
       ],
       "Email": [
         "メールアドレス"
@@ -8231,7 +8231,7 @@
         "アドレスの管理"
       ],
       "Mark as": [
-        "印をつける"
+        "としてマークする"
       ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } へ移動"
@@ -8366,7 +8366,7 @@
         "サイズ:"
       ],
       "Starred": [
-        "星印付き"
+        "スター付き"
       ],
       "Start date": [
         "開始日"
@@ -8538,7 +8538,7 @@
         "新しいカレンダーを追加するには、既存のカレンダーを削除します。"
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有償の${ MAIL_SHORT_APP_NAME } プランにアップグレードします。"
+        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有料の${ MAIL_SHORT_APP_NAME } プランにアップグレードします。"
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "このプランで利用できるカレンダーの最大数に達しました。"
@@ -8660,7 +8660,7 @@
         "無料でサインアップ"
       ],
       "Snooze": [
-        "スヌーズを設定"
+        "スヌーズ"
       ],
       "Snoozed": [
         "スヌーズ"
@@ -8669,7 +8669,7 @@
         "迷惑メール"
       ],
       "Starred": [
-        "星印付き"
+        "スター付き"
       ],
       "stay safer online": [
         "オンラインでの安全性を高める"
@@ -8741,7 +8741,7 @@
         "データを集めています"
       ],
       "We're gathering your data from your provider": [
-        "プロバイダーからファイルを集めています"
+        "プロバイダーからデータを収集しています"
       ],
       "Your import is starting": [
         "インポートが開始しました"
@@ -8749,7 +8749,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "詳細"
+        "もっと詳しく"
       ],
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
@@ -10080,7 +10080,7 @@
         "プライバシーを選択してくれてありがとうございます"
       ],
       "Dark Web Monitoring": [
-        "Dark Web Monitoring"
+        "ダークウェブモニタリング"
       ],
       "Download the desktop app": [
         "デスクトップアプリをダウンロード"
@@ -10166,7 +10166,7 @@
         "組織を構成、ドメイン名をリンク、アカウントを作成して、組織のすべてのメンバーを確実に保護します。"
       ],
       "Discover all ${ BRAND_NAME } services": [
-        "すべての ${ BRAND_NAME } サービスを 1 つのアカウントで"
+        "すべての ${ BRAND_NAME } サービスを見つける"
       ],
       "Link your domain name and create accounts for all members of your organization.": [
         "ドメイン名をリンクし、組織のすべてのメンバーのアカウントを作成します。"
@@ -10178,7 +10178,7 @@
         "テーマを選択"
       ],
       "Set up your organization": [
-        "組織のための設定"
+        "組織の設定"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
         "左上のアプリスイッチャーを使用して、すべての ${ BRAND_NAME } サービス ${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }にアクセスします。"
@@ -10492,7 +10492,7 @@
         "グループをフィルター"
       ],
       "Filter labels": [
-        "絞り込むラベル名"
+        "ラベルをフィルタ"
       ],
       "First name": [
         "名"
@@ -10531,7 +10531,7 @@
         "電話番号"
       ],
       "Please describe the problem and include any error messages": [
-        "問題について、エラーメッセージ等も含めてご記入ください。（英語）"
+        "問題について、エラーメッセージ等も含めてご記入ください。"
       ],
       "Please insert link first": [
         "最初にリンクを挿入してください"
@@ -10585,7 +10585,7 @@
         "ライティングアシスタントに何を書くべきかを伝えます。例：\"ジムのメンバーシップをキャンセルする\""
       ],
       "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
-        "執筆アシスタントに何を書くか伝えてください。例: \"ジェーンをパーティーに詳細してください\""
+        "執筆アシスタントに何を書くか伝えてください。例: ジェーンをパーティーに招待してください"
       ],
       "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
         "ライティングアシスタントに何を書くべきかを伝えます。例：\"同僚にプロジェクトでの支援を感謝する\""
@@ -10958,7 +10958,7 @@
     },
     "session_recovery:available:action": {
       "Cancel reset": [
-        "リクエストのキャンセル　"
+        "リセットをキャンセル"
       ],
       "Reset password": [
         "パスワードのリセット"
@@ -11066,7 +11066,7 @@
         "了解"
       ],
       "Learn more": [
-        "詳細"
+        "もっと詳しく"
       ]
     },
     "session_recovery:in_progress:info": {
@@ -11093,7 +11093,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "パスワード再設定リクエスト"
+        "パスワードのリセットがリクエストされました"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13056,7 +13056,7 @@
         "サインアウト"
       ],
       "Snooze": [
-        "スヌーズを設定"
+        "スヌーズ"
       ],
       "Snooze message": [
         "メッセージのスヌーズ"
@@ -13107,10 +13107,10 @@
         "連絡先グループをアンロック"
       ],
       "Unsubscribe": [
-        "退会"
+        "登録解除"
       ],
       "Unsubscribe request sent": [
-        "登録解除リクエストを送信"
+        "購読解除リクエストを送信しました"
       ],
       "Verification error": [
         "検証エラーが発生しました"
@@ -13171,7 +13171,7 @@
         "「自動」はこのユーザーに送信する際の書式が、自動選択される事を示しています。「プレーンテキスト」は、常にプレーンテキストに変換されてメッセージが送信されることを示します。"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "システムの昼夜モードと同期して、昼と夜のお好みのテーマを自動的に切り替える"
+        "システムの昼夜モードに同期して、昼と夜の好みのテーマを自動的に切り替えます"
       ],
       "Customize import to reduce the number of folders": [
         "フォルダー数を減らすためにインポートをカスタマイズします"
@@ -13219,7 +13219,7 @@
         "サイドパネルを表示"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
+        "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれぞれのフォルダーとして表示されます"
       ],
       "The image could not be loaded": [
         "画像が読み込めませんでした"
@@ -13240,7 +13240,7 @@
         "選択したテーマは、システムが「ライトモード」に設定されているときに有効になります。"
       ],
       "This feature is only available for paid users": [
-        "この機能は課金ユーザーのみが利用できます"
+        "この機能は有料ユーザのみが利用できます。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛の電子メールをエンドツーエンド暗号化することができます"
