@@ -1100,6 +1100,9 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Cambiar los ajustes de la dirección de correo electrónico"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -4332,6 +4335,9 @@
       "Merged": [
         "Combinado"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Los mensajes de todas tus direcciones de correo electrónico se enviarán a tu bandeja de entrada."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -4509,6 +4515,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
       ],
+      "Registering your subscription...": [
+        "Registrando tu suscripción..."
+      ],
       "Restored version to": [
         "La versión está restaurada a"
       ],
@@ -4542,6 +4551,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuración de PGP te permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
       ],
+      "Setting up your new address...": [
+        "Configurando tu nueva dirección..."
+      ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
       ],
@@ -4568,6 +4580,9 @@
       ],
       "Something went wrong": [
         "Ha ocurrido un error."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Comienza a compartirla con tus contactos y úsala para servicios en línea."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envía un depósito usando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
@@ -4625,6 +4640,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Este documento no existe o no tienes los permisos para verlo. Intenta recargar la página para ver si persiste el problema."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Esta es ahora tu ${ defaultEmailAddress } para enviar mensajes nuevos."
       ],
       "This item already exists in your library": [
         "Este elemento ya existe en tu librería."
@@ -8942,6 +8960,9 @@
       ],
       "Your exposed information": [
         "Tus datos expuestos"
+      ],
+      "Your shorter address is now ready": [
+        "Tu dirección en formato más corto ya está lista."
       ]
     },
     "Today icon tooltip in mini calendar": {
