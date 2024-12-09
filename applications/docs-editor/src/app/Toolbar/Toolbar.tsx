@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { $isCodeNode } from '@lexical/code'
 import type { ListType } from '@lexical/list'
@@ -13,7 +13,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import type { HeadingTagType } from '@lexical/rich-text'
 import { $isHeadingNode, $isQuoteNode } from '@lexical/rich-text'
 import { $getSelectionStyleValueForProperty } from '@lexical/selection'
-import { $findMatchingParent, $getNearestNodeOfType, IS_ANDROID, IS_IOS, mergeRegister } from '@lexical/utils'
+import { $findMatchingParent, $getNearestNodeOfType, mergeRegister } from '@lexical/utils'
 import type { ElementFormatType } from 'lexical'
 import {
   $getSelection,
@@ -36,7 +36,16 @@ import {
 import { $isLinkNode } from '@lexical/link'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { Button } from '@proton/atoms'
-import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, Spotlight } from '@proton/components'
+import {
+  Dropdown,
+  DropdownButton,
+  DropdownMenu,
+  DropdownMenuButton,
+  Icon,
+  SimpleDropdown,
+  Spotlight,
+  usePopperAnchor,
+} from '@proton/components'
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace'
 import { rootFontSize } from '@proton/shared/lib/helpers/dom'
 import clsx from '@proton/utils/clsx'
@@ -87,23 +96,12 @@ import SpeechBubblePenIcon from '../Icons/SpeechBubblePenIcon'
 import { SpotlightIllustration } from '../Icons/SpotlightIllustration'
 import { InteractionDropdownButton } from './InteractionDropdownButton'
 import { useApplication } from '../ApplicationProvider'
-import type { CustomWindow } from '@proton/docs-core'
-
-const stepFontSize = (currentFontSize: string, step: number): string => {
-  const currentFontIndex = FontSizes.indexOf(parseFloat(currentFontSize))
-  const nextFontSize = FontSizes[currentFontIndex + step]
-
-  return nextFontSize ? `${nextFontSize}px` : currentFontSize
-}
-
-function isMobile() {
-  return (
-    IS_ANDROID ||
-    IS_IOS ||
-    (window as CustomWindow).Android != null ||
-    (window as CustomWindow).webkit?.messageHandlers?.iOS != null
-  )
-}
+import { isHTMLElement } from '../Utils/guard'
+import { stepFontSize } from './stepFontSize'
+import { isMobile } from './isMobile'
+import type { ToolbarItems } from './ToolbarItems'
+import { OverflowMenuItem } from './OverflowMenuItem'
+import { ToolbarItem } from './ToolbarItem'
 
 export default function DocumentEditorToolbar({
   userMode,
@@ -624,16 +622,19 @@ export default function DocumentEditorToolbar({
     [activeEditor],
   )
 
-  const DropdownContentProps = {
-    onClosed: () => {
-      const activeElement = document.activeElement
-      const rootElementParent = editor.getRootElement()?.parentElement
-      if (!rootElementParent || rootElementParent.contains(activeElement)) {
-        return
-      }
-      focusEditor()
-    },
-  }
+  const DropdownContentProps = useMemo(
+    () => ({
+      onClosed: () => {
+        const activeElement = document.activeElement
+        const rootElementParent = editor.getRootElement()?.parentElement
+        if (!rootElementParent || rootElementParent.contains(activeElement)) {
+          return
+        }
+        focusEditor()
+      },
+    }),
+    [editor, focusEditor],
+  )
 
   const onToolbarAnywhereClicked = useCallback(() => {
     void clientInvoker?.editorReportingEvent(EditorEvent.ToolbarClicked, undefined)
@@ -695,6 +696,479 @@ export default function DocumentEditorToolbar({
     }
   }, [])
 
+  const {
+    anchorRef: overflowMenuAnchorRef,
+    isOpen: isOverflowMenuOpen,
+    toggle: toggleOverflowMenu,
+    close: closeOverflowMenu,
+  } = usePopperAnchor<HTMLButtonElement>()
+
+  const toolbarItems: ToolbarItems = [
+    {
+      id: 'undo-redo-options',
+      items: [
+        {
+          id: 'undo-button',
+          type: 'button',
+          label: c('Action').t`Undo`,
+          shortcut: 'UNDO_SHORTCUT',
+          onClick: undo,
+          disabled: !isEditable || !canUndo,
+          icon: <UndoIcon className="h-4 w-4 fill-current" />,
+        },
+        {
+          id: 'redo-button',
+          type: 'button',
+          label: c('Action').t`Redo`,
+          shortcut: 'REDO_SHORTCUT',
+          onClick: redo,
+          disabled: !isEditable || !canRedo,
+          icon: <RedoIcon className="h-4 w-4 fill-current" />,
+        },
+      ],
+    },
+    {
+      id: 'font-style-options',
+      items: [
+        {
+          id: 'headings-options',
+          type: 'dropdown',
+          label: () => (
+            <span
+              className="w-custom line-clamp-1 break-all"
+              style={{
+                '--w-custom': '9ch',
+              }}
+            >
+              {blockTypeToBlockName[blockType]}
+            </span>
+          ),
+          menu: (
+            <DropdownMenu>
+              {blockTypes.map(({ type, name, onClick, tooltip }) => (
+                <ToolbarTooltip key={type} title={tooltip} originalPlacement="right">
+                  <DropdownMenuButton className="text-left text-sm" onClick={onClick} disabled={!isEditable}>
+                    {name}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+              ))}
+            </DropdownMenu>
+          ),
+          disabled: !isEditable,
+          dropdownProps: DropdownContentProps,
+          overflowBehavior: 'submenu',
+        },
+        {
+          id: 'font-family',
+          type: 'dropdown',
+          label: () => (
+            <span
+              className="w-custom line-clamp-1 break-all"
+              style={{
+                '--w-custom': '7ch',
+              }}
+            >
+              {fontFamilyLabel}
+            </span>
+          ),
+          menu: (
+            <DropdownMenu>
+              {FontOptions.map(({ id, label, value }) => (
+                <DropdownMenuButton
+                  key={id}
+                  className="text-left text-sm"
+                  style={{
+                    fontFamily: value,
+                  }}
+                  onClick={() => {
+                    setFontFamilyForSelection(id)
+                  }}
+                  disabled={!isEditable}
+                  data-testid="font-family-options"
+                >
+                  {label}
+                </DropdownMenuButton>
+              ))}
+            </DropdownMenu>
+          ),
+          disabled: !isEditable,
+          dropdownProps: DropdownContentProps,
+          overflowBehavior: 'submenu',
+        },
+      ],
+    },
+    {
+      id: 'font-size-option',
+      items: [
+        {
+          id: 'font-size',
+          type: 'dropdown',
+          label: () => fontSize,
+          menu: (
+            <DropdownMenu>
+              {FontSizes.map((size) => (
+                <DropdownMenuButton
+                  key={size}
+                  className="text-left text-sm"
+                  onClick={() => {
+                    const clampedValue = Math.min(100, Math.max(4, size))
+                    setFontSizeForSelection(`${clampedValue}px`)
+                  }}
+                  disabled={!isEditable}
+                  data-testid="font-size-options"
+                >
+                  {size}px
+                </DropdownMenuButton>
+              ))}
+            </DropdownMenu>
+          ),
+          disabled: !isEditable,
+          tooltip: (
+            <ShortcutLabelContainer>
+              <ShortcutLabelText>{c('Action').t`Adjust font size`}</ShortcutLabelText>
+              <ModifierKbd /> <ShortcutKbd shortcut="Shift" />
+              <ShortcutKbd shortcut="." /> <ShortcutLabelText>{c('Action').t`and`}</ShortcutLabelText>
+              <ShortcutKbd shortcut="," />
+            </ShortcutLabelContainer>
+          ),
+          dropdownProps: DropdownContentProps,
+          overflowBehavior: 'submenu',
+        },
+      ],
+    },
+    {
+      id: 'indent-options',
+      items: [
+        {
+          id: 'indent-dropdown',
+          type: 'button',
+          label: c('Action').t`Indent`,
+          icon: <IndentIcon className="h-4 w-4 fill-current" />,
+          disabled: !isEditable,
+          onClick: () => {
+            activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
+          },
+          shortcut: 'INCREASE_INDENTATION_SHORTCUT',
+        },
+        {
+          id: 'outdent-dropdown',
+          type: 'button',
+          label: c('Action').t`Outdent`,
+          icon: <OutdentIcon className="h-4 w-4 fill-current" />,
+          disabled: !isEditable,
+          onClick: () => {
+            activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
+          },
+          shortcut: 'DECREASE_INDENTATION_SHORTCUT',
+        },
+      ],
+      showInToolbar: false,
+    },
+    {
+      id: 'formatting-options',
+      className: (visible) =>
+        clsx('order-[-1] md:order-[unset]', !visible && '[visibility:visible] md:[visibility:hidden]'),
+      items: [
+        {
+          id: 'bold-button',
+          type: 'button',
+          label: c('Action').t`Bold`,
+          shortcut: 'BOLD_SHORTCUT',
+          onClick: formatBold,
+          disabled: !isEditable,
+          active: isBold,
+          icon: <Icon name="text-bold" />,
+        },
+        {
+          id: 'italic-button',
+          type: 'button',
+          label: c('Action').t`Italic`,
+          shortcut: 'ITALIC_SHORTCUT',
+          onClick: formatItalic,
+          disabled: !isEditable,
+          active: isItalic,
+          icon: <Icon name="text-italic" />,
+        },
+        {
+          id: 'underline-button',
+          type: 'button',
+          label: c('Action').t`Underline`,
+          shortcut: 'UNDERLINE_SHORTCUT',
+          onClick: formatUnderline,
+          disabled: !isEditable,
+          active: isUnderline,
+          icon: <Icon name="text-underline" />,
+        },
+        {
+          id: 'strikethrough-button',
+          type: 'button',
+          label: c('Action').t`Strike-through`,
+          shortcut: 'STRIKETHROUGH_TOGGLE_SHORTCUT',
+          onClick: formatStrikethrough,
+          disabled: !isEditable,
+          active: isStrikethrough,
+          icon: <Icon name="text-strikethrough" />,
+        },
+        {
+          id: 'font-color-dropdown',
+          type: 'dropdown',
+          dropdownProps: DropdownContentProps,
+          label: (target) => (
+            <>
+              <Icon name="palette" />
+              <span className={target === 'toolbar' ? 'sr-only' : 'mr-auto'}>{c('Action').t`Colour`}</span>
+            </>
+          ),
+          menu: (
+            <FontColorMenu
+              textColors={TextColors}
+              onTextColorChange={(color) => updateTextStyle('color', color)}
+              backgroundColors={BackgroundColors}
+              onBackgroundColorChange={(color) => updateTextStyle('background-color', color)}
+            />
+          ),
+          disabled: !isEditable,
+          useToolbarButton: true,
+          overflowBehavior: 'submenu',
+        },
+      ],
+    },
+    {
+      id: 'insert-options',
+      items: [
+        {
+          id: 'link-button',
+          type: 'button',
+          label: c('Action').t`Insert link`,
+          shortcut: 'EDIT_LINK_SHORTCUT',
+          disabled: !isEditable,
+          active: isLink,
+          onClick: editLink,
+          icon: <Icon name="link" className="h-4 w-4 fill-current" />,
+        },
+        {
+          id: 'image-insert-button',
+          type: 'button',
+          label: c('Action').t`Insert image`,
+          disabled: !isEditable,
+          onClick: insertImage,
+          icon: <Icon name="image" className="h-4 w-4 fill-current" />,
+        },
+        {
+          id: 'table-button',
+          type: 'button',
+          label: c('Action').t`Insert table`,
+          shortcut: 'INSERT_TABLE_SHORTCUT',
+          disabled: !isEditable,
+          onClick: insertTable,
+          icon: <TableIcon className="h-4 w-4 fill-current" />,
+        },
+        {
+          id: 'comment-button',
+          type: 'button',
+          label: c('Action').t`Insert comment`,
+          shortcut: 'INSERT_COMMENT_SHORTCUT',
+          disabled: !isEditable,
+          onClick: insertComment,
+          icon: <AddCommentIcon className="h-4 w-4 fill-current" />,
+        },
+      ],
+    },
+    {
+      id: 'divider-option',
+      items: [
+        {
+          id: 'divider-dropdown',
+          type: 'button',
+          label: c('Action').t`Divider`,
+          disabled: !isEditable,
+          onClick: insertHorizontalRule,
+          icon: <DividerIcon className="h-4 w-4 fill-current" />,
+        },
+      ],
+      showInToolbar: false,
+    },
+    {
+      id: 'alignment-options',
+      items: [
+        {
+          id: 'alignment-button',
+          type: 'dropdown',
+          active: elementFormat !== 'left',
+          label: () =>
+            AlignmentOptions.find(({ align }) => align === elementFormat)?.icon || <Icon name="text-align-left" />,
+          disabled: !isEditable,
+          dropdownProps: DropdownContentProps,
+          menu: (
+            <DropdownMenu>
+              <AlignmentMenuOptions activeEditor={activeEditor} elementFormat={elementFormat} isEditable={isEditable} />
+            </DropdownMenu>
+          ),
+          useToolbarButton: true,
+          overflowBehavior: 'spread-items',
+        },
+      ],
+    },
+    {
+      id: 'list-options',
+      items: [
+        {
+          id: 'list-types-dropdown',
+          type: 'dropdown',
+          active: listTypes.some(({ type }) => type === listType),
+          label: () =>
+            listTypes.find(({ type }) => type === listType)?.icon || <CheckListIcon className="h-4 w-4 fill-current" />,
+          disabled: !isEditable,
+          dropdownProps: DropdownContentProps,
+          menu: (
+            <DropdownMenu>
+              {listTypes.map(({ type, icon, name, onClick, tooltip }) => (
+                <ToolbarTooltip key={type} title={tooltip} originalPlacement="right">
+                  <DropdownMenuButton
+                    className={clsx(
+                      'flex items-center gap-2 text-left text-sm',
+                      !listStyleType && type === listType && 'active font-bold',
+                    )}
+                    onClick={onClick}
+                    disabled={!isEditable}
+                  >
+                    {icon}
+                    {name}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+              ))}
+
+              <SimpleDropdown
+                as={DropdownMenuButton}
+                className={clsx(
+                  'flex items-center gap-2 text-left text-sm',
+                  listStyleType && listStyleType !== 'upper-roman' && 'active font-bold',
+                )}
+                data-testid="dropdown-alphabetical-list"
+                content={
+                  <>
+                    <AlphabeticalListIcon className="color-weak h-4 w-4" />
+                    {c('Action').t`Alphabetical`}
+                    <Icon name="chevron-right-filled" className="ml-auto" />
+                  </>
+                }
+                hasCaret={false}
+                onClick={(event: MouseEvent) => {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }}
+                originalPlacement="right-start"
+                contentProps={{
+                  offset: 0,
+                }}
+              >
+                <DropdownMenu className="text-sm">
+                  <DropdownMenuButton
+                    className={clsx(
+                      'flex items-center text-left',
+                      listStyleType === 'upper-alpha' && listMarker === 'period' && 'active font-bold',
+                    )}
+                    onClick={() => {
+                      formatCustomList('upper-alpha')
+                    }}
+                  >
+                    {c('Action').t`A. B. C. D.`}
+                  </DropdownMenuButton>
+                  <DropdownMenuButton
+                    className={clsx(
+                      'flex items-center text-left',
+                      listStyleType === 'lower-alpha' && listMarker === 'period' && 'active font-bold',
+                    )}
+                    onClick={() => {
+                      formatCustomList('lower-alpha')
+                    }}
+                  >
+                    {c('Action').t`a. b. c. d.`}
+                  </DropdownMenuButton>
+                  <DropdownMenuButton
+                    className={clsx(
+                      'flex items-center text-left',
+                      listStyleType === 'upper-alpha' && listMarker === 'bracket' && 'active font-bold',
+                    )}
+                    onClick={() => {
+                      formatCustomList('upper-alpha', 'bracket')
+                    }}
+                  >
+                    {c('Action').t`A) B) C) D)`}
+                  </DropdownMenuButton>
+                  <DropdownMenuButton
+                    className={clsx(
+                      'flex items-center text-left',
+                      listStyleType === 'lower-alpha' && listMarker === 'bracket' && 'active font-bold',
+                    )}
+                    onClick={() => {
+                      formatCustomList('lower-alpha', 'bracket')
+                    }}
+                  >
+                    {c('Action').t`a) b) c) d)`}
+                  </DropdownMenuButton>
+                </DropdownMenu>
+              </SimpleDropdown>
+
+              <DropdownMenuButton
+                className={clsx(
+                  'flex items-center gap-2 text-left text-sm',
+                  listStyleType === 'upper-roman' && 'active font-bold',
+                )}
+                onClick={() => formatCustomList('upper-roman')}
+                disabled={!isEditable}
+              >
+                <RomanListIcon className="color-weak h-4 w-4" />
+                {c('Action').t`Roman`}
+              </DropdownMenuButton>
+            </DropdownMenu>
+          ),
+          useToolbarButton: true,
+          overflowBehavior: 'spread-items',
+        },
+      ],
+    },
+    {
+      id: 'code-quote-options',
+      items: [
+        {
+          id: 'code-block-button',
+          type: 'button',
+          label: c('Action').t`Code block`,
+          shortcut: 'CODE_BLOCK_TOGGLE_SHORTCUT',
+          disabled: !isEditable || isSuggestionMode,
+          onClick: formatCode,
+          icon: <Icon name="code" />,
+          active: isCodeBlock,
+        },
+        {
+          id: 'quote-button',
+          type: 'button',
+          label: c('Action').t`Quote`,
+          shortcut: 'QUOTE_TOGGLE_SHORTCUT',
+          disabled: !isEditable,
+          onClick: formatQuote,
+          icon: <Icon name="text-quote" />,
+          active: isQuote,
+        },
+      ],
+    },
+    {
+      id: 'clear-formatting-option',
+      items: [
+        {
+          id: 'clear-formatting-option',
+          type: 'button',
+          label: c('Action').t`Clear formatting`,
+          disabled: !isEditable,
+          onClick: clearFormatting,
+          icon: <Icon name="eraser" />,
+        },
+      ],
+      showInToolbar: false,
+    },
+  ]
+
   return (
     // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
     <div
@@ -715,244 +1189,6 @@ export default function DocumentEditorToolbar({
           className="flex flex-nowrap items-center gap-1.5 overflow-hidden [&>*]:flex-shrink-0"
           ref={buttonsContainerRef}
         >
-          <div className="hidden items-center gap-1.5 md:flex" data-testid="undo-redo-options">
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="UNDO_SHORTCUT" label={c('Action').t`Undo`} />}
-              onClick={undo}
-              disabled={!isEditable || !canUndo}
-              data-testid="undo-button"
-            >
-              <UndoIcon className="h-4 w-4 fill-current" />
-            </ToolbarButton>
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="REDO_SHORTCUT" label={c('Action').t`Redo`} />}
-              onClick={redo}
-              disabled={!isEditable || !canRedo}
-              data-testid="redo-button"
-            >
-              <RedoIcon className="h-4 w-4 fill-current" />
-            </ToolbarButton>
-            <ToolbarSeparator />
-          </div>
-          <SimpleDropdown
-            as={Button}
-            shape="ghost"
-            type="button"
-            color="norm"
-            className="px-2 text-left text-sm"
-            content={
-              <span
-                className="w-custom line-clamp-1 break-all"
-                style={{
-                  '--w-custom': '9ch',
-                }}
-              >
-                {blockTypeToBlockName[blockType]}
-              </span>
-            }
-            disabled={!isEditable}
-            contentProps={DropdownContentProps}
-            data-testid="headings-options"
-          >
-            <DropdownMenu>
-              {blockTypes.map(({ type, name, onClick, tooltip }) => (
-                <ToolbarTooltip key={type} title={tooltip} originalPlacement="right">
-                  <DropdownMenuButton className="text-left text-sm" onClick={onClick} disabled={!isEditable}>
-                    {name}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-              ))}
-            </DropdownMenu>
-          </SimpleDropdown>
-          <SimpleDropdown
-            as={Button}
-            shape="ghost"
-            type="button"
-            color="norm"
-            className="px-2 text-left text-sm"
-            content={
-              <span
-                className="w-custom line-clamp-1 break-all"
-                style={{
-                  '--w-custom': '7ch',
-                }}
-              >
-                {fontFamilyLabel}
-              </span>
-            }
-            disabled={!isEditable}
-            contentProps={DropdownContentProps}
-            data-testid="font-family"
-          >
-            <DropdownMenu>
-              {FontOptions.map(({ id, label, value }) => (
-                <DropdownMenuButton
-                  key={id}
-                  className="text-left text-sm"
-                  style={{
-                    fontFamily: value,
-                  }}
-                  onClick={() => {
-                    setFontFamilyForSelection(id)
-                  }}
-                  disabled={!isEditable}
-                  data-testid="font-family-options"
-                >
-                  {label}
-                </DropdownMenuButton>
-              ))}
-            </DropdownMenu>
-          </SimpleDropdown>
-          <ToolbarSeparator />
-          <ToolbarTooltip
-            originalPlacement="bottom"
-            title={
-              <ShortcutLabelContainer>
-                <ShortcutLabelText>{c('Action').t`Adjust font size`}</ShortcutLabelText>
-                <ModifierKbd /> <ShortcutKbd shortcut="Shift" />
-                <ShortcutKbd shortcut="." /> <ShortcutLabelText>{c('Action').t`and`}</ShortcutLabelText>
-                <ShortcutKbd shortcut="," />
-              </ShortcutLabelContainer>
-            }
-          >
-            <SimpleDropdown
-              as={Button}
-              shape="ghost"
-              type="button"
-              color="norm"
-              className="px-2 text-left text-sm"
-              content={fontSize}
-              disabled={!isEditable}
-              contentProps={DropdownContentProps}
-              data-testid="font-size"
-            >
-              <DropdownMenu>
-                {FontSizes.map((size) => (
-                  <DropdownMenuButton
-                    key={size}
-                    className="text-left text-sm"
-                    onClick={() => {
-                      const clampedValue = Math.min(100, Math.max(4, size))
-                      setFontSizeForSelection(`${clampedValue}px`)
-                    }}
-                    disabled={!isEditable}
-                    data-testid="font-size-options"
-                  >
-                    {size}px
-                  </DropdownMenuButton>
-                ))}
-              </DropdownMenu>
-            </SimpleDropdown>
-          </ToolbarTooltip>
-          <ToolbarSeparator />
-          <div
-            className={clsx(
-              'hidden items-center gap-1.5 md:flex',
-              !visibleButtons['formatting-options'] && 'visibility-hidden',
-            )}
-            data-testid="formatting-options"
-          >
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="BOLD_SHORTCUT" label={c('Action').t`Bold`} />}
-              disabled={!isEditable}
-              active={isBold}
-              onClick={formatBold}
-              data-testid="bold-button"
-            >
-              <Icon name="text-bold" />
-            </ToolbarButton>
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="ITALIC_SHORTCUT" label={c('Action').t`Italic`} />}
-              disabled={!isEditable}
-              active={isItalic}
-              onClick={formatItalic}
-              data-testid="italic-button"
-            >
-              <Icon name="text-italic" />
-            </ToolbarButton>
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="UNDERLINE_SHORTCUT" label={c('Action').t`Underline`} />}
-              disabled={!isEditable}
-              active={isUnderline}
-              onClick={formatUnderline}
-              data-testid="underline-button"
-            >
-              <Icon name="text-underline" />
-            </ToolbarButton>
-            <ToolbarButton
-              label={<ShortcutLabel label={c('Action').t`Strike-through`} shortcut="STRIKETHROUGH_TOGGLE_SHORTCUT" />}
-              disabled={!isEditable}
-              active={isStrikethrough}
-              onClick={formatStrikethrough}
-              data-testid="strikethrough-button"
-            >
-              <Icon name="text-strikethrough" />
-            </ToolbarButton>
-            <SimpleDropdown
-              as={ToolbarButton}
-              shape="ghost"
-              type="button"
-              className="text-[--text-norm]"
-              content={<Icon name="palette" />}
-              disabled={!isEditable}
-              contentProps={DropdownContentProps}
-              data-testid="font-color-dropdown"
-            >
-              <FontColorMenu
-                textColors={TextColors}
-                onTextColorChange={(color) => updateTextStyle('color', color)}
-                backgroundColors={BackgroundColors}
-                onBackgroundColorChange={(color) => updateTextStyle('background-color', color)}
-              />
-            </SimpleDropdown>
-            <ToolbarSeparator />
-          </div>
-          <div
-            className={clsx(
-              'hidden items-center gap-1.5 md:flex',
-              !visibleButtons['insert-options'] && 'visibility-hidden',
-            )}
-            data-testid="insert-options"
-          >
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" label={c('Action').t`Insert link`} />}
-              disabled={!isEditable}
-              active={isLink}
-              onClick={editLink}
-              data-testid="link-button"
-            >
-              <Icon name="link" className="h-4 w-4 fill-current" />
-            </ToolbarButton>
-            <ToolbarButton
-              label={
-                <ShortcutLabelContainer>
-                  <ShortcutLabelText>{c('Action').t`Insert image`}</ShortcutLabelText>
-                </ShortcutLabelContainer>
-              }
-              disabled={!isEditable}
-              onClick={insertImage}
-              data-testid="image-insert-button"
-            >
-              <Icon name="image" className="h-4 w-4 fill-current" />
-            </ToolbarButton>
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="INSERT_TABLE_SHORTCUT" label={c('Action').t`Insert table`} />}
-              disabled={!isEditable}
-              onClick={insertTable}
-              data-testid="table-button"
-            >
-              <TableIcon className="h-4 w-4 fill-current" />
-            </ToolbarButton>
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="INSERT_COMMENT_SHORTCUT" label={c('Action').t`Insert comment`} />}
-              disabled={!isEditable}
-              onClick={insertComment}
-              data-testid="comment-button"
-            >
-              <AddCommentIcon className="h-4 w-4 fill-current" />
-            </ToolbarButton>
-            <ToolbarSeparator />
-          </div>
           <input
             ref={imageInputRef}
             className="absolute left-0 top-0 h-px w-px opacity-0"
@@ -979,436 +1215,73 @@ export default function DocumentEditorToolbar({
             data-testid="image-input"
             tabIndex={-1}
           />
-          <div
-            className={clsx(
-              'hidden items-center gap-1.5 md:flex',
-              !visibleButtons['alignment-options'] && 'visibility-hidden',
-            )}
-            data-testid="alignment-options"
-          >
-            <SimpleDropdown
-              as={ToolbarButton}
-              active={elementFormat !== 'left'}
-              shape="ghost"
-              type="button"
-              className="text-[--text-norm]"
-              content={
-                AlignmentOptions.find(({ align }) => align === elementFormat)?.icon || <Icon name="text-align-left" />
-              }
-              disabled={!isEditable}
-              contentProps={DropdownContentProps}
-              data-testid="alignment-button"
-            >
-              <DropdownMenu>
-                <AlignmentMenuOptions
-                  activeEditor={activeEditor}
-                  elementFormat={elementFormat}
-                  isEditable={isEditable}
-                />
-              </DropdownMenu>
-            </SimpleDropdown>
-            <ToolbarSeparator />
-          </div>
-          <div
-            className={clsx(
-              'hidden items-center gap-1.5 md:flex',
-              !visibleButtons['list-options'] && 'visibility-hidden',
-            )}
-            data-testid="list-options"
-          >
-            <SimpleDropdown
-              as={ToolbarButton}
-              active={listTypes.some(({ type }) => type === listType)}
-              shape="ghost"
-              type="button"
-              className="text-[--text-norm]"
-              content={
-                listTypes.find(({ type }) => type === listType)?.icon || (
-                  <CheckListIcon className="h-4 w-4 fill-current" />
-                )
-              }
-              disabled={!isEditable}
-              contentProps={DropdownContentProps}
-              data-testid="list-types-dropdown"
-            >
-              <DropdownMenu>
-                {listTypes.map(({ type, icon, name, onClick, tooltip }) => (
-                  <ToolbarTooltip key={type} title={tooltip} originalPlacement="right">
-                    <DropdownMenuButton
-                      className={clsx(
-                        'flex items-center gap-2 text-left text-sm',
-                        !listStyleType && type === listType && 'active font-bold',
-                      )}
-                      onClick={onClick}
-                      disabled={!isEditable}
-                    >
-                      {icon}
-                      {name}
-                    </DropdownMenuButton>
-                  </ToolbarTooltip>
+          {toolbarItems.map((group) => {
+            if (group.showInToolbar === false) {
+              return null
+            }
+
+            const isVisible = visibleButtons[group.id]
+
+            return (
+              <div
+                className={clsx(
+                  'flex flex-nowrap items-center gap-1.5',
+                  group.className ? group.className(isVisible) : !isVisible && 'visibility-hidden',
+                )}
+                key={group.id}
+                data-testid={group.id}
+              >
+                {group.items.map((item) => (
+                  <ToolbarItem key={item.id} item={item} />
                 ))}
-
-                <SimpleDropdown
-                  as={DropdownMenuButton}
-                  className={clsx(
-                    'flex items-center gap-2 text-left text-sm',
-                    listStyleType && listStyleType !== 'upper-roman' && 'active font-bold',
-                  )}
-                  data-testid="dropdown-alphabetical-list"
-                  content={
-                    <>
-                      <AlphabeticalListIcon className="color-weak h-4 w-4" />
-                      {c('Action').t`Alphabetical`}
-                      <Icon name="chevron-right-filled" className="ml-auto" />
-                    </>
-                  }
-                  hasCaret={false}
-                  onClick={(event: MouseEvent) => {
-                    event.preventDefault()
-                    event.stopPropagation()
-                  }}
-                  originalPlacement="right-start"
-                  contentProps={{
-                    offset: 0,
-                  }}
-                >
-                  <DropdownMenu className="text-sm">
-                    <DropdownMenuButton
-                      className={clsx(
-                        'flex items-center text-left',
-                        listStyleType === 'upper-alpha' && listMarker === 'period' && 'active font-bold',
-                      )}
-                      onClick={() => {
-                        formatCustomList('upper-alpha')
-                      }}
-                    >
-                      {c('Action').t`A. B. C. D.`}
-                    </DropdownMenuButton>
-                    <DropdownMenuButton
-                      className={clsx(
-                        'flex items-center text-left',
-                        listStyleType === 'lower-alpha' && listMarker === 'period' && 'active font-bold',
-                      )}
-                      onClick={() => {
-                        formatCustomList('lower-alpha')
-                      }}
-                    >
-                      {c('Action').t`a. b. c. d.`}
-                    </DropdownMenuButton>
-                    <DropdownMenuButton
-                      className={clsx(
-                        'flex items-center text-left',
-                        listStyleType === 'upper-alpha' && listMarker === 'bracket' && 'active font-bold',
-                      )}
-                      onClick={() => {
-                        formatCustomList('upper-alpha', 'bracket')
-                      }}
-                    >
-                      {c('Action').t`A) B) C) D)`}
-                    </DropdownMenuButton>
-                    <DropdownMenuButton
-                      className={clsx(
-                        'flex items-center text-left',
-                        listStyleType === 'lower-alpha' && listMarker === 'bracket' && 'active font-bold',
-                      )}
-                      onClick={() => {
-                        formatCustomList('lower-alpha', 'bracket')
-                      }}
-                    >
-                      {c('Action').t`a) b) c) d)`}
-                    </DropdownMenuButton>
-                  </DropdownMenu>
-                </SimpleDropdown>
-
-                <DropdownMenuButton
-                  className={clsx(
-                    'flex items-center gap-2 text-left text-sm',
-                    listStyleType === 'upper-roman' && 'active font-bold',
-                  )}
-                  onClick={() => formatCustomList('upper-roman')}
-                  disabled={!isEditable}
-                >
-                  <RomanListIcon className="color-weak h-4 w-4" />
-                  {c('Action').t`Roman`}
-                </DropdownMenuButton>
-              </DropdownMenu>
-            </SimpleDropdown>
-            <ToolbarSeparator />
-          </div>
-          <div
-            className={clsx(
-              'hidden items-center gap-1.5 md:flex',
-              !visibleButtons['code-quote-options'] && 'visibility-hidden',
-            )}
-            data-testid="code-quote-options"
-          >
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="CODE_BLOCK_TOGGLE_SHORTCUT" label={c('Action').t`Code block`} />}
-              active={isCodeBlock}
-              disabled={!isEditable || isSuggestionMode}
-              onClick={formatCode}
-              data-testid="code-block-button"
-            >
-              <Icon name="code" />
-            </ToolbarButton>
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="QUOTE_TOGGLE_SHORTCUT" label={c('Action').t`Quote`} />}
-              active={isQuote}
-              disabled={!isEditable}
-              onClick={formatQuote}
-              data-testid="quote-button"
-            >
-              <Icon name="text-quote" />
-            </ToolbarButton>
-            <ToolbarSeparator />
-          </div>
+                <ToolbarSeparator />
+              </div>
+            )
+          })}
         </div>
-        <SimpleDropdown
-          as={ToolbarButton}
-          shape="ghost"
-          type="button"
-          className="flex-shrink-0 text-[--text-norm]"
-          content={<Icon name="three-dots-vertical" />}
-          disabled={!isEditable}
+        <DropdownButton
           hasCaret={false}
-          contentProps={DropdownContentProps}
+          disabled={!isEditable}
+          as={ToolbarButton}
+          label={c('Action').t`More options`}
           data-testid="content-properties-button"
+          className="flex-shrink-0 text-[--text-norm]"
+          onClick={toggleOverflowMenu}
+          ref={overflowMenuAnchorRef}
+        >
+          <Icon name="three-dots-vertical" />
+        </DropdownButton>
+        <Dropdown
+          isOpen={isOverflowMenuOpen}
+          anchorRef={overflowMenuAnchorRef}
+          onClose={(event) => {
+            const target = event?.target
+            const isOpeningSubmenu = isHTMLElement(target) && target.closest('[data-submenu-button]')
+            if (isOpeningSubmenu) {
+              return
+            }
+            closeOverflowMenu()
+          }}
+          {...DropdownContentProps}
         >
           <DropdownMenu className="[&>li>hr]:min-h-px">
-            {!visibleButtons['undo-redo-options'] && (
-              <>
-                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="UNDO_SHORTCUT" />}>
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={undo}
-                    disabled={!isEditable || !canUndo}
-                  >
-                    <UndoIcon className="h-4 w-4 fill-current" />
-                    {c('Action').t`Undo`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="REDO_SHORTCUT" />}>
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={redo}
-                    disabled={!isEditable || !canRedo}
-                  >
-                    <RedoIcon className="h-4 w-4 fill-current" />
-                    {c('Action').t`Redo`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <hr className="my-1" />
-              </>
-            )}
-            <ToolbarTooltip
-              originalPlacement="right"
-              title={<ShortcutLabel shortcut="INCREASE_INDENTATION_SHORTCUT" />}
-            >
-              <DropdownMenuButton
-                className="flex items-center gap-2 text-left text-sm"
-                disabled={!isEditable}
-                onClick={() => {
-                  activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
-                }}
-                data-testid="indent-dropdown"
-              >
-                <IndentIcon className="h-4 w-4 fill-current" />
-                {c('Action').t`Indent`}
-              </DropdownMenuButton>
-            </ToolbarTooltip>
-            <ToolbarTooltip
-              originalPlacement="right"
-              title={<ShortcutLabel shortcut="DECREASE_INDENTATION_SHORTCUT" />}
-            >
-              <DropdownMenuButton
-                className="flex items-center gap-2 text-left text-sm"
-                disabled={!isEditable}
-                onClick={() => {
-                  activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
-                }}
-                data-testid="outdent-dropdown"
-              >
-                <OutdentIcon className="h-4 w-4 fill-current" />
-                {c('Action').t`Outdent`}
-              </DropdownMenuButton>
-            </ToolbarTooltip>
-            <DropdownMenuButton
-              className="flex items-center gap-2 text-left text-sm"
-              disabled={!isEditable}
-              onClick={insertHorizontalRule}
-              data-testid="divider-dropdown"
-            >
-              <DividerIcon className="h-4 w-4 fill-current" />
-              {c('Action').t`Divider`}
-            </DropdownMenuButton>
-            <hr className="my-1" />
-            {!visibleButtons['formatting-options'] && (
-              <>
-                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="BOLD_SHORTCUT" />}>
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={formatBold}
-                    disabled={!isEditable}
-                  >
-                    <Icon name="text-bold" />
-                    {c('Action').t`Bold`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="ITALIC_SHORTCUT" />}>
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={formatItalic}
-                    disabled={!isEditable}
-                  >
-                    <Icon name="text-italic" />
-                    {c('Action').t`Italic`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="UNDERLINE_SHORTCUT" />}>
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={formatUnderline}
-                    disabled={!isEditable}
-                  >
-                    <Icon name="text-underline" />
-                    {c('Action').t`Underline`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <ToolbarTooltip
-                  originalPlacement="right"
-                  title={<ShortcutLabel shortcut="STRIKETHROUGH_TOGGLE_SHORTCUT" />}
-                >
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={formatStrikethrough}
-                    disabled={!isEditable}
-                  >
-                    <Icon name="text-strikethrough" />
-                    {c('Action').t`Strikethrough`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <hr className="my-1" />
-              </>
-            )}
-            {!visibleButtons['alignment-options'] && (
-              <>
-                <AlignmentMenuOptions
-                  activeEditor={activeEditor}
-                  elementFormat={elementFormat}
-                  isEditable={isEditable}
-                />
-                <hr className="my-1" />
-              </>
-            )}
-            {!visibleButtons['list-options'] && (
-              <>
-                {listTypes.map(({ type, icon, tooltip, name, onClick }) => (
-                  <ToolbarTooltip originalPlacement="right" key={type} title={tooltip}>
-                    <DropdownMenuButton
-                      className={clsx(
-                        'flex items-center gap-2 text-left text-sm',
-                        type === listType && 'active font-bold',
-                      )}
-                      onClick={onClick}
-                      disabled={!isEditable}
-                    >
-                      {icon}
-                      {name}
-                    </DropdownMenuButton>
-                  </ToolbarTooltip>
-                ))}
-                <hr className="my-1" />
-              </>
-            )}
-            {!visibleButtons['insert-options'] && (
-              <>
-                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" />}>
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={editLink}
-                    disabled={!isEditable}
-                  >
-                    <Icon name="link" />
-                    {c('Action').t`Link`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <ToolbarTooltip
-                  originalPlacement="right"
-                  title={
-                    <ShortcutLabelContainer>
-                      <ShortcutLabelText>Insert image</ShortcutLabelText>
-                    </ShortcutLabelContainer>
-                  }
-                >
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={insertImage}
-                    disabled={!isEditable}
-                  >
-                    <Icon name="image" />
-                    {c('Action').t`Insert image`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="INSERT_TABLE_SHORTCUT" />}>
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={insertTable}
-                    disabled={!isEditable}
-                  >
-                    <TableIcon className="h-4 w-4 fill-current" />
-                    {c('Action').t`Insert table`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
-                  disabled={!isEditable}
-                  onClick={insertComment}
-                >
-                  <AddCommentIcon className="h-4 w-4 fill-current" />
-                  {c('Action').t`Insert comment`}
-                </DropdownMenuButton>
-                <hr className="my-1" />
-              </>
-            )}
-            {!visibleButtons['code-quote-options'] && (
-              <>
-                <ToolbarTooltip
-                  originalPlacement="right"
-                  title={<ShortcutLabel shortcut="CODE_BLOCK_TOGGLE_SHORTCUT" />}
-                >
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={formatCode}
-                    disabled={!isEditable || isSuggestionMode}
-                  >
-                    <Icon name="code" />
-                    {c('Action').t`Code block`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="QUOTE_TOGGLE_SHORTCUT" />}>
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={formatQuote}
-                    disabled={!isEditable}
-                  >
-                    <Icon name="text-quote" />
-                    {c('Action').t`Quote`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <hr className="my-1" />
-              </>
-            )}
-            <DropdownMenuButton
-              className="flex items-center gap-2 text-left text-sm"
-              disabled={!isEditable}
-              onClick={clearFormatting}
-              data-testid="clear-formatting-button"
-            >
-              <Icon name="eraser" />
-              {c('Action').t`Clear formatting`}
-            </DropdownMenuButton>
+            {toolbarItems.map((group, index, array) => {
+              const shouldShowInOverflowMenu = group.showInToolbar === false || !visibleButtons[group.id]
+              if (!shouldShowInOverflowMenu) {
+                return null
+              }
+
+              return (
+                <Fragment key={group.id}>
+                  {group.items.map((item) => (
+                    <OverflowMenuItem key={item.id} item={item} />
+                  ))}
+                  {index !== array.length - 1 && <hr className="my-1" />}
+                </Fragment>
+              )
+            })}
           </DropdownMenu>
-        </SimpleDropdown>
+        </Dropdown>
         {!isEditorHidden && (
           <Spotlight
             show={shouldShowSuggestionTooltip}
