@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { getPassWebUrl } from '@proton/pass/components/Navigation/routing';
+import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { updateInAppNotificationState } from '@proton/pass/store/actions';
@@ -33,6 +35,7 @@ const TelemetryStatusName: Record<InAppNotificationState, TelemetryInAppNotifica
 export const withInAppNotification = <P extends object>(Component: ComponentType<InAppNotificationProps<P>>): FC<P> => {
     const WrappedComponent: FC<P> = (props) => {
         const { onLink, onTelemetry } = usePassCore();
+        const { API_URL } = usePassConfig();
         const authStore = useAuthStore();
         const updateNotificationStateRequest = useRequest(updateInAppNotificationState);
         const notification = useSelector(selectNextNotification(getEpoch()))!;
@@ -49,6 +52,8 @@ export const withInAppNotification = <P extends object>(Component: ComponentType
             updateNotificationStateRequest.dispatch({ id, state });
         };
 
+        const getRedirectTo = (path: string) => `/${getLocalIDPath(authStore?.getLocalID())}${path}`;
+
         const readMessage = () => {
             const { cta } = notification.content;
 
@@ -61,10 +66,9 @@ export const withInAppNotification = <P extends object>(Component: ComponentType
             );
             changeNotificationState(notification.id, InAppNotificationState.READ);
 
-            if (cta.type === InAppNotificationCtaType.external_link) onLink(cta.ref, { replace: true });
+            if (EXTENSION_BUILD) return onLink(getPassWebUrl(API_URL) + getRedirectTo(cta.ref).substring(1));
+            if (cta.type === InAppNotificationCtaType.external_link) return onLink(cta.ref, { replace: true });
         };
-
-        const getRedirectTo = (path: string) => `/${getLocalIDPath(authStore?.getLocalID())}${path}`;
 
         useTelemetryEvent(
             TelemetryEventName.PassNotificationDisplay,
