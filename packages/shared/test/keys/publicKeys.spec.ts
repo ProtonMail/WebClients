@@ -59,7 +59,7 @@ describe('get contact public key model', () => {
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             apiKeysConfig: {
-                publicKeys: [{ publicKey, armoredKey: '', flags: 1, source: API_KEY_SOURCE.WKD }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1, primary: 1, source: API_KEY_SOURCE.WKD }],
             },
             pinnedKeysConfig: {
                 pinnedKeys: [publicKey],
@@ -76,7 +76,7 @@ describe('get contact public key model', () => {
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             apiKeysConfig: {
-                publicKeys: [{ publicKey, armoredKey: '', flags: 1, source: API_KEY_SOURCE.WKD }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1, primary: 1, source: API_KEY_SOURCE.WKD }],
             },
             pinnedKeysConfig: {
                 pinnedKeys: [],
@@ -93,7 +93,7 @@ describe('get contact public key model', () => {
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             apiKeysConfig: {
-                publicKeys: [{ publicKey, armoredKey: '', flags: 1, source: API_KEY_SOURCE.WKD }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1, primary: 1, source: API_KEY_SOURCE.WKD }],
             },
             pinnedKeysConfig: {
                 pinnedKeys: [publicKey],
@@ -128,7 +128,7 @@ describe('get contact public key model', () => {
             apiKeysConfig: {
                 ...publicKeyConfig,
                 RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
-                publicKeys: [{ publicKey, armoredKey: '', flags: 1, source: API_KEY_SOURCE.PROTON }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1, primary: 1, source: API_KEY_SOURCE.PROTON }],
             },
             pinnedKeysConfig: {
                 pinnedKeys: [publicKey],
