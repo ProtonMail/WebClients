@@ -328,6 +328,9 @@
       "Maximum views": [
         "Maximale Ansichten"
       ],
+      "More info": [
+        "Weitere Informationen"
+      ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
       ],
@@ -514,6 +517,9 @@
       ],
       "Sync aliases": [
         "Aliasse synchronisieren"
+      ],
+      "To mailbox": [
+        "Zum Postfach"
       ],
       "Transfer ownership": [
         "Inhaberschaft übertragen"
@@ -1770,6 +1776,9 @@
       "username": [
         "Benutzername"
       ],
+      "Value:": [
+        "Wert:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Tresor \"${ payload.content.name }\" erfolgreich gelöscht."
       ],
@@ -2081,8 +2090,14 @@
       "Display name": [
         "Anzeigename"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Domain"
+      ],
+      "Domain:": [
+        "Domain:"
       ],
       "Domains": [
         "Domains"
@@ -2204,6 +2219,9 @@
       "Include numbers (0-9)": [
         "Zahlen (0-9) einschließen"
       ],
+      "Info": [
+        "Information"
+      ],
       "Instagram handle": [
         "Instagram-Benutzername"
       ],
@@ -2260,6 +2278,9 @@
       ],
       "Logins": [
         "Zugangsdaten"
+      ],
+      "Mailboxes": [
+        "Postfächer"
       ],
       "Make all admins": [
         "Alle zu Administratoren machen"
@@ -2529,6 +2550,9 @@
       "Username": [
         "Benutzername"
       ],
+      "Value:": [
+        "Wert:"
+      ],
       "Vault ID": [
         "Tresor-ID"
       ],
@@ -2788,6 +2812,14 @@
         "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten."
       ]
     },
+    "Theme": {
+      "Dark": [
+        "Dunkel"
+      ],
+      "Light": [
+        "Hell"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } Adressen"
@@ -2800,6 +2832,9 @@
       ],
       "Actions": [
         "Aktionen"
+      ],
+      "Aliases": [
+        "Aliasse"
       ],
       "Auto-lock update": [
         "Aktualisieren der automatischen Sperre"
@@ -2852,11 +2887,17 @@
       "Dark Web Monitoring": [
         "Dark Web-Überwachung"
       ],
+      "Default": [
+        "Standard"
+      ],
       "Details": [
         "Details"
       ],
       "Discard changes?": [
         "Änderungen verwerfen?"
+      ],
+      "Domain": [
+        "Domain"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gefällt dir ${ PASS_APP_NAME }?"
@@ -3050,6 +3091,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "${ brandNameJSX } entsperren"
+      ],
+      "Unverified": [
+        "Nicht verifiziert"
       ],
       "Update available": [
         "Update verfügbar"

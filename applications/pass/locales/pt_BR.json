@@ -34,6 +34,12 @@
       "Add current URL": [
         "Adicionar URL atual"
       ],
+      "Add custom domain": [
+        "Adicionar domínio personalizado"
+      ],
+      "Add mailbox": [
+        "Adicionar caixa de correio"
+      ],
       "Add more": [
         "Adicionar mais"
       ],
@@ -61,6 +67,9 @@
       "Back": [
         "Voltar"
       ],
+      "Block contact": [
+        "Bloquear contato"
+      ],
       "Bulk delete items from trash": [
         "Excluir itens em massa da lixeira"
       ],
@@ -81,6 +90,12 @@
       ],
       "Change": [
         "Alterar"
+      ],
+      "Check DNS": [
+        "Verificar o DNS"
+      ],
+      "Check settings": [
+        "Verificar configurações"
       ],
       "Choose a file or drag it here": [
         "Escolha um arquivo ou arraste-o aqui"
@@ -115,6 +130,9 @@
       "Continue offline": [
         "Continuar off-line"
       ],
+      "Copy alias address": [
+        "Copiar endereço do alias"
+      ],
       "Copy and close": [
         "Copiar e fechar"
       ],
@@ -141,6 +159,9 @@
       ],
       "Create card": [
         "Criar cartão"
+      ],
+      "Create contact": [
+        "Criar contato"
       ],
       "Create identity": [
         "Criar identidade"
@@ -180,6 +201,9 @@
       ],
       "Delete it, I will never need it": [
         "Exclua-o, eu nunca vou precisar dele"
+      ],
+      "Delete mailbox": [
+        "Excluir caixa de correio"
       ],
       "Delete password": [
         "Excluir senha"
@@ -316,6 +340,9 @@
       "Make admin": [
         "Tornar administrador"
       ],
+      "Make default": [
+        "Tornar padrão"
+      ],
       "Make editor": [
         "Tornar editor"
       ],
@@ -336,6 +363,9 @@
       ],
       "Maximum views": [
         "Máximo de visualizações"
+      ],
+      "More info": [
+        "Mais informações"
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
@@ -390,6 +420,9 @@
       ],
       "Please retry": [
         "Tente novamente."
+      ],
+      "Re-verify": [
+        "Verificar novamente"
       ],
       "Reactivate now": [
         "Reativar agora"
@@ -475,6 +508,9 @@
       "Select": [
         "Selecionar"
       ],
+      "Send email": [
+        "Enviar e-mail"
+      ],
       "Send invite": [
         "Enviar convite"
       ],
@@ -530,6 +566,15 @@
       "Sync aliases": [
         "Sincronizar alias"
       ],
+      "To mailbox": [
+        "Para a caixa de correio"
+      ],
+      "Transfer aliases": [
+        "Transferir aliases"
+      ],
+      "Transfer and delete mailbox": [
+        "Transferir e excluir a caixa de correio"
+      ],
       "Transfer ownership": [
         "Transferir a propriedade"
       ],
@@ -541,6 +586,9 @@
       ],
       "Try for free": [
         "Experimente gratuitamente"
+      ],
+      "Unblock contact": [
+        "Desbloquear contato"
       ],
       "Understood, I will never need it": [
         "Entendido, eu nunca vou precisar dele",
@@ -686,6 +734,9 @@
       "[Error] an item could not be parsed": [
         "[Erro] um item não pôde ser analisado"
       ],
+      "A domain ownership must be verified first.": [
+        "A propriedade de um domínio deve ser verificada primeiro."
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "O alias não pôde ser atualizado no momento. Por favor, tente novamente mais tarde"
       ],
@@ -778,11 +829,32 @@
       "Failed to add email address": [
         "Falha ao adicionar o email"
       ],
+      "Failed to block the contact": [
+        "Não foi possível bloquear o contato"
+      ],
+      "Failed to create domain": [
+        "Não foi possível criar um domínio"
+      ],
+      "Failed to create new mailbox": [
+        "Não foi possível criar uma caixa de correio"
+      ],
+      "Failed to create the contact": [
+        "Não foi possível criar o contato"
+      ],
+      "Failed to delete domain": [
+        "Não foi possível excluir o domínio"
+      ],
       "Failed to delete email address from monitoring": [
         "Falha ao excluir o endereço de e-mail do monitoramento"
       ],
       "Failed to delete selected items": [
         "Falha ao excluir itens selecionados"
+      ],
+      "Failed to delete the contact": [
+        "Não foi possível excluir o contato"
+      ],
+      "Failed to delete the mailbox": [
+        "Não foi possível excluir a caixa de correio"
       ],
       "Failed to edit user's access.": [
         "Falha ao editar o acesso do usuário."
@@ -792,6 +864,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Falha ao carregar violações para este e-mail alias"
+      ],
+      "Failed to load domain settings.": [
+        "Não foi possível carregar as configurações do domínio."
       ],
       "Failed to load item history": [
         "Falha ao carregar o histórico do item"
@@ -811,6 +886,9 @@
       "Failed to remove user's access.": [
         "Falha ao remover o acesso do usuário."
       ],
+      "Failed to resend verification code": [
+        "Não foi possível reenviar o código de verificação"
+      ],
       "Failed to resend verification for custom email": [
         "Falha ao reenviar a verificação para o e-mail personalizado"
       ],
@@ -829,8 +907,23 @@
       "Failed to unpin item": [
         "Falha ao desafixar item"
       ],
+      "Failed to update default domain": [
+        "Não foi possível atualizar o domínio padrão"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Não foi possível atualizar as caixas de correio do domínio."
+      ],
+      "Failed to update domain name.": [
+        "Não foi possível atualizar o nome do domínio."
+      ],
       "Failed to update monitoring settings": [
         "Falha ao atualizar as configurações de monitoramento"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Não foi possível atualizar a configuração de geração de prefixo aleatório."
+      ],
+      "Failed to verify domain": [
+        "Não foi possível verificar o domínio"
       ],
       "Failed to verify email address": [
         "Falha ao verificar o email"
@@ -1152,6 +1245,9 @@
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dias para testar os recursos premium de graça. Somente durante a primeira semana da ${ BRAND_NAME }."
       ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Um contato é criado para cada endereço de e-mail que envia ou recebe e-mails de ${ aliasEmail }."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Uma nova versão do ${ PASS_APP_NAME } está disponível. Atualize para desfrutar dos recursos e correções de bugs mais recentes."
       ],
@@ -1272,6 +1368,9 @@
       "Copied to clipboard": [
         "Copiado para a área de transferência"
       ],
+      "Create contact illustration": [
+        "Criar ilustração de contato"
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "O formato CSV oferece uma maneira conveniente de visualizar seus dados. No entanto, devido à sua simplicidade, alguns dados não serão incluídos (campos personalizados, chaves de acesso...). Para uma exportação completa, recomendamos usar um formato diferente."
       ],
@@ -1299,6 +1398,9 @@
       "Disabling offline mode...": [
         "Desativando modo off-line..."
       ],
+      "Domain: ${ domainPath } or @": [
+        "Domínio: ${ domainPath } ou @"
+      ],
       "Drop file here to upload": [
         "Solte o arquivo aqui para enviar"
       ],
@@ -1322,6 +1424,9 @@
       ],
       "Email address successfully included in monitoring": [
         "Endereço de e-mail incluído com sucesso no monitoramento"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Envie um e-mail para esse endereço e ele parecerá ter sido enviado de ${ exampleEmail } por exemplo."
       ],
       "Emptying trash...": [
         "Esvaziando lixeira..."
@@ -1349,6 +1454,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Ativando bloqueio automático por PIN"
+      ],
+      "Enter the address you want to email.": [
+        "Digite o endereço para o qual você deseja enviar um e-mail."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Digite o código de verificação. Insira ${ digit }."
@@ -1691,6 +1799,15 @@
       "Reconnecting": [
         "Reconectando"
       ],
+      "Record: CNAME": [
+        "Registro: CNAME"
+      ],
+      "Record: MX": [
+        "Registro: MX"
+      ],
+      "Record: TXT": [
+        "Registro: TXT"
+      ],
       "Registering extra password...": [
         "Registrando senha adicional..."
       ],
@@ -1754,6 +1871,9 @@
       "Signing you in": [
         "Iniciando sessão"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "Uma nota no SimpleLogin é armazenada no mesmo local com o endereço alias e, embora seja protegida por criptografia em repouso, não é criptografada de ponta a ponta, o que significa que qualquer pessoa que tenha acesso ao banco de dados do SimpleLogin pode lê-la."
+      ],
       "Successfully exported all your items": [
         "Todos os seus itens foram exportados"
       ],
@@ -1774,6 +1894,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
+      ],
+      "The display name when sending an email from this alias.": [
+        "O nome de exibição ao enviar um e-mail deste alias."
       ],
       "The export will only contain vaults that you own.": [
         "A exportação conterá apenas cofres que você possui."
@@ -1803,6 +1926,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportação não será criptografada e qualquer pessoa com acesso ao seu arquivo exportado poderá ver suas senhas. Por segurança, exclua-o após terminar de usá-lo."
       ],
+      "This operation is irreversible.": [
+        "Esta operação é irreversível."
+      ],
       "This option is currently not available on your device.": [
         "Essa opção não está disponível atualmente no seu dispositivo."
       ],
@@ -1829,6 +1955,9 @@
       ],
       "Unable to copy to clipboard": [
         "Não é possível copiar para a área de transferência"
+      ],
+      "Unconfigured": [
+        "Não configurado"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloqueie o ${ PASS_SHORT_APP_NAME } com biometria"
@@ -1865,6 +1994,9 @@
       ],
       "username": [
         "Nome de usuário"
+      ],
+      "Value:": [
+        "Valor:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Cofre \"${ payload.content.name }\" excluído"
@@ -1959,6 +2091,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Sua conta está restrita porque sua organização usa a autenticação de dois fatores. Ative a autenticação de dois fatores nas configurações da conta ou entre em contato com o administrador."
       ],
+      "your domain": [
+        "seu domínio"
+      ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
       ],
@@ -1974,6 +2109,10 @@
         "${ aliasCount } alias",
         "${ aliasCount } alíases"
       ],
+      "${ blockedCount } block": [
+        "${ blockedCount } bloqueio",
+        "${ blockedCount } bloqueios"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } caracter",
         "${ config.options.length } caracteres"
@@ -1986,6 +2125,10 @@
         "${ days } dia",
         "${ days } dias"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } encaminhamento",
+        "${ forwardCount } encaminhamentos"
+      ],
       "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
@@ -1994,12 +2137,24 @@
         "${ minutes } minutos",
         "${ minutes } minutos"
       ],
+      "${ months } month": [
+        "${ months } mês",
+        "${ months } meses"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versão do ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } resposta",
+        "${ repliedCount } respostas"
       ],
       "${ usageCount } login": [
         "${ usageCount } início de sessão",
         "${ usageCount } inícios de sessão"
+      ],
+      "${ years } year": [
+        "${ years } ano",
+        "${ years } anos"
       ],
       "1 hour": [
         "1 hora"
@@ -2064,6 +2219,9 @@
       "Alias address": [
         "Endereço de alias"
       ],
+      "Alias address (disabled)": [
+        "Endereço de alias (desativado)"
+      ],
       "Alias management": [
         "Gerenciamento de alias"
       ],
@@ -2111,6 +2269,9 @@
       ],
       "Cards": [
         "Cartões"
+      ],
+      "Catch-All": [
+        "Catch-all"
       ],
       "City": [
         "Cidade"
@@ -2184,8 +2345,14 @@
       "Display name": [
         "Nome de exibição"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Domínio"
+      ],
+      "Domain:": [
+        "Domínio:"
       ],
       "Domains": [
         "Domínios"
@@ -2316,6 +2483,9 @@
       "Include numbers (0-9)": [
         "Incluir números (0–9)"
       ],
+      "Info": [
+        "Informação"
+      ],
       "Instagram handle": [
         "Usuário no Instagram"
       ],
@@ -2376,6 +2546,9 @@
       "Logins": [
         "Inícios de sessão"
       ],
+      "Mailboxes": [
+        "Caixas de correio"
+      ],
       "Make all admins": [
         "Definir todos como administradores"
       ],
@@ -2421,14 +2594,23 @@
       "Newest to oldest": [
         "Do mais recente ao mais antigo"
       ],
+      "No Activity in the last 14 days.": [
+        "Nenhuma atividade nos últimos 14 dias"
+      ],
       "No history": [
         "Sem histórico"
       ],
       "None": [
         "Nenhuma"
       ],
+      "Not selected": [
+        "Não selecionado"
+      ],
       "Note": [
         "Nota"
+      ],
+      "Note • SimpleLogin": [
+        "Nota • SimpleLogin"
       ],
       "Notes": [
         "Notas"
@@ -2487,8 +2669,17 @@
       "Prefix": [
         "Prefixo"
       ],
+      "Premium domain": [
+        "Domínio premium"
+      ],
+      "Priority:": [
+        "Prioridade:"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Proteja o ${ PASS_APP_NAME } com uma senha adicional"
+      ],
+      "Public domain": [
+        "Domínio público"
       ],
       "Rate us": [
         "Avalie-nos"
@@ -2519,6 +2710,9 @@
       ],
       "Security code": [
         "Código de segurança"
+      ],
+      "Select a domain": [
+        "Selecionar um domínio"
       ],
       "Select an email address": [
         "Selecione um endereço de e-mail"
@@ -2579,6 +2773,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Sincronizar aliases com SimpleLogin"
+      ],
+      "Target:": [
+        "Alvo:"
       ],
       "Tax number": [
         "Número de identificação fiscal"
@@ -2650,6 +2847,9 @@
       "Username": [
         "Nome de usuário"
       ],
+      "Value:": [
+        "Valor:"
+      ],
       "Vault ID": [
         "ID do cofre"
       ],
@@ -2691,6 +2891,9 @@
       ],
       "You are about to create": [
         "Você está prestes a criar"
+      ],
+      "Your domain": [
+        "Seu domínio"
       ],
       "ZIP or Postal code": [
         "CEP ou código postal"
@@ -2780,6 +2983,9 @@
       "Add text": [
         "Adicionar texto"
       ],
+      "Alias Display Name": [
+        "Nome de exibição do alias"
+      ],
       "Email address": [
         "Endereço de e-mail"
       ],
@@ -2806,6 +3012,12 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "my-domain.com": [
+        "meu-dominio.com"
+      ],
+      "Name to display when sending an email": [
+        "Nome a ser exibido ao enviar um e-mail"
       ],
       "Password": [
         "Senha"
@@ -2961,8 +3173,26 @@
       "Actions": [
         "Ações"
       ],
+      "Activity": [
+        "Atividade"
+      ],
+      "Add custom domain": [
+        "Adicionar domínio personalizado"
+      ],
+      "Add mailbox": [
+        "Adicionar caixa de correio"
+      ],
+      "Alias contacts": [
+        "Contatos de alias"
+      ],
+      "Aliases": [
+        "Aliases"
+      ],
       "Auto-lock update": [
         "Atualização de bloqueio automático"
+      ],
+      "Blocked addresses": [
+        "Endereços bloqueados"
       ],
       "Breach detected": [
         "Violação detectada"
@@ -3003,6 +3233,9 @@
       "Custom addresses": [
         "Endereços personalizados"
       ],
+      "Custom domains": [
+        "Domínios personalizados"
+      ],
       "Custom email monitoring": [
         "Monitoramento de e-mail personalizado"
       ],
@@ -3012,9 +3245,21 @@
       "Dark Web Monitoring": [
         "Monitoramento da Dark Web"
       ],
+      "Default": [
+        "Padrão"
+      ],
+      "Default Display Name": [
+        "Nome de exibição padrão"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "Excluir ${ deletedItemsCount } item?",
         "Excluir ${ deletedItemsCount } itens?"
+      ],
+      "Delete domain": [
+        "Excluir domínio"
+      ],
+      "Delete mailbox": [
+        "Excluir caixa de correio"
       ],
       "Delete this item?": [
         "Excluir este item?"
@@ -3027,6 +3272,18 @@
       ],
       "Discard changes?": [
         "Descartar alterações?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (Opcional)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (Opcional)"
+      ],
+      "Domain": [
+        "Domínio"
+      ],
+      "Domain ownership verification": [
+        "Verificação da propriedade do domínio"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Aproveitando o ${ PASS_APP_NAME }?"
@@ -3085,6 +3342,9 @@
       "Low disk space": [
         "Pouco espaço no disco"
       ],
+      "Mailbox": [
+        "Caixa de correio"
+      ],
       "Mark as resolved?": [
         "Marcar como resolvido?"
       ],
@@ -3110,6 +3370,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Mover item para \"${ vaultName }\""
+      ],
+      "MX record": [
+        "Registro MX"
       ],
       "No excluded items": [
         "Sem itens excluídos"
@@ -3157,6 +3420,9 @@
         "Por favor, note que, uma vez excluído, o alias não pode ser restaurado.",
         "Por favor, note que, uma vez excluídos, os aliases não podem ser restaurados."
       ],
+      "Random Prefix Generation": [
+        "Geração de prefixos aleatórios"
+      ],
       "Recommended actions": [
         "Ações recomendadas"
       ],
@@ -3194,6 +3460,9 @@
       "Secure your data": [
         "Proteja seus dados"
       ],
+      "Select the default domain for aliases": [
+        "Selecione o domínio padrão para aliases"
+      ],
       "Set access level": [
         "Definir nível de acesso"
       ],
@@ -3214,6 +3483,9 @@
       ],
       "Share with": [
         "Compartilhar com"
+      ],
+      "SPF (Optional)": [
+        "SPF (Opcional)"
       ],
       "Status": [
         "Status"
@@ -3241,6 +3513,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Desbloquear ${ brandNameJSX }"
+      ],
+      "Unverified": [
+        "Não verificado"
       ],
       "Update available": [
         "Atualização disponível"
@@ -3360,8 +3635,14 @@
       "Delete alias": [
         "Excluir alias"
       ],
+      "Domain cannot be empty": [
+        "O domínio não pode estar vazio"
+      ],
       "Duplicate email addresses.": [
         "Endereços de e-mail duplicados."
+      ],
+      "Email cannot be empty": [
+        "E-mail não pode estar vazio"
       ],
       "Email is required": [
         "O e-mail é obrigatório"
@@ -3453,6 +3734,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Entre em contato conosco para investigar o problema"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Note que, uma vez excluídos, os aliases não podem ser restaurados"
       ],
       "Please update the extension to its latest version": [
         "Atualize a extensão para a versão mais recente"
