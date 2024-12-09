@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
 import { verifyOutboundPublicKeys } from '@proton/key-transparency/lib/helpers/verifyOutboundPublicKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -34,7 +34,10 @@ interface ApiAddressKey {
     Primary: 1 | 0;
 }
 
-const importKeys = async (keys: ApiAddressKey[], checkCompatibility?: boolean): Promise<ProcessedApiKey[]> => {
+const importKeys = async (
+    keys: ApiAddressKey[],
+    checkCompatibility?: KeyCompatibilityLevel
+): Promise<ProcessedApiKey[]> => {
     const promises = await Promise.all(
         keys.map(async ({ PublicKey: armoredKey, Flags, Source, Primary }) => {
             const publicKey = await CryptoProxy.importPublicKey({ armoredKey, checkCompatibility }).catch(() => null);
@@ -96,7 +99,11 @@ export const getAndVerifyApiKeys = async ({
         Warnings: string[];
     }>(config);
     const addressKeys = await importKeys(Address.Keys);
-    const unverifiedKeys = Unverified ? await importKeys(Unverified.Keys, true) : undefined;
+    // unverified keys include WKD ones, hence we check compatibility (NB: internal users with v6 keys won't have unverified keys);
+    // we can eventually accept WKD v6 keys, as long as pinning them is limited to users who have opted in v6 support.
+    const unverifiedKeys = Unverified
+        ? await importKeys(Unverified.Keys, KeyCompatibilityLevel.BACKWARDS_COMPATIBLE)
+        : undefined;
     const catchAllKeys = CatchAll ? await importKeys(CatchAll.Keys) : undefined;
     const ktResult = await verifyOutboundPublicKeys({
         ktUserContext,

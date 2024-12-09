@@ -1,5 +1,5 @@
 import type { WorkerDecryptionResult } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
 import { arrayToBinaryString } from '@proton/crypto/lib/utils';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -40,7 +40,7 @@ export const extractKeysFromAttachments = async (
                     );
                     const key = await CryptoProxy.importPublicKey({
                         armoredKey: arrayToBinaryString(data),
-                        checkCompatibility: true,
+                        checkCompatibility: KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
                     });
                     return key;
                 } catch (e: any) {
@@ -77,7 +77,7 @@ export const extractKeysFromAutocrypt = async (
                     }
                     const key = await CryptoProxy.importPublicKey({
                         binaryKey: result.keydata,
-                        checkCompatibility: true,
+                        checkCompatibility: KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
                     });
                     return key;
                 } catch (e: any) {
