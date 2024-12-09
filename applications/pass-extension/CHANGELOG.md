@@ -1,3 +1,11 @@
+### Version 1.26.1
+-   Improve app unlock UX for SSO users
+
+### Version 1.26.0
+
+-   Add advanced alias management in the settings
+-   Show alias contacts, stats, display name & SimpleLogin note (if present) for alias item
+
 ### Version 1.25.0
 
 -   Add light theme
