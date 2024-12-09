@@ -14,9 +14,9 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { useAliasMailboxes } from './AliasMailboxesProvider';
 
-type Props = { mailboxID: number };
+type Props = { mailboxID: number; aliasCount: number };
 
-export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID }) => {
+export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID, aliasCount = 0 }) => {
     const { mailboxes, onDelete, setAction } = useAliasMailboxes();
     const onClose = () => setAction(null);
 
@@ -28,9 +28,11 @@ export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID }) => {
         [mailboxID, mailboxes]
     );
 
+    const hasAlias = aliasCount > 0;
+
     const defaultMailboxID = useMemo(() => (remaining.find(prop('IsDefault')) ?? remaining[0]).MailboxID, [remaining]);
     const [transferMailboxID, setTransferMailboxID] = useState<MaybeNull<number>>(
-        mailbox?.Verified ? defaultMailboxID : null
+        mailbox?.Verified && hasAlias ? defaultMailboxID : null
     );
     const transferAliases = transferMailboxID !== null;
     const removeMailbox = useRequest(deleteMailbox, {
@@ -57,7 +59,7 @@ export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID }) => {
                 closeAfterSubmit={false}
                 disabled={removeMailbox.loading}
             >
-                {mailbox.Verified ? (
+                {hasAlias ? (
                     <>
                         <p className="mb-2">{c('Info')
                             .jt`All aliases using the mailbox ${emailJSX} will be also deleted.`}</p>

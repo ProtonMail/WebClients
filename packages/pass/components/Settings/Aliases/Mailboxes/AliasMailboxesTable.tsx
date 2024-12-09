@@ -10,17 +10,21 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLoading';
 import { AliasMailboxLoading } from '@proton/pass/components/Settings/Aliases/Mailboxes/AliasMailboxLoading';
 import { useRequest } from '@proton/pass/hooks/useRequest';
-import { setDefaultMailbox } from '@proton/pass/store/actions';
+import { deleteMailbox, setDefaultMailbox } from '@proton/pass/store/actions';
 import clsx from '@proton/utils/clsx';
 
 import { useAliasMailboxes } from './AliasMailboxesProvider';
 
 export const AliasMailboxesTable: FC = () => {
-    const { mailboxes, loading, onSetDefault, setAction } = useAliasMailboxes();
+    const { mailboxes, loading, onSetDefault, setAction, onDelete } = useAliasMailboxes();
     const handleVerifyClick = (mailboxID: number) => setAction({ type: 'verify', mailboxID });
 
     const setDefault = useRequest(setDefaultMailbox, {
         onSuccess: ({ DefaultMailboxID }) => onSetDefault(DefaultMailboxID),
+    });
+
+    const removeMailbox = useRequest(deleteMailbox, {
+        onSuccess: (mailboxID) => onDelete(mailboxID),
     });
 
     return (
@@ -51,7 +55,8 @@ export const AliasMailboxesTable: FC = () => {
                                     <TableCell>
                                         <div className="flex justify-start lg:justify-center">
                                             {IsDefault ? (
-                                                <Badge type="primary">{c('Title').t`Default`}</Badge>
+                                                <Badge type="primary" className="text-center">{c('Title')
+                                                    .t`Default`}</Badge>
                                             ) : (
                                                 !Verified && (
                                                     <Button
@@ -97,7 +102,10 @@ export const AliasMailboxesTable: FC = () => {
                                                         label={c('Action').t`Delete`}
                                                         disabled={mailboxes.length === 1}
                                                         onClick={() =>
-                                                            setAction({ type: 'delete', mailboxID: MailboxID })
+                                                            // skip confirmation modal if not verified
+                                                            Verified
+                                                                ? setAction({ type: 'delete', mailboxID: MailboxID })
+                                                                : removeMailbox.dispatch({ mailboxID: MailboxID })
                                                         }
                                                     />
                                                 </QuickActionsDropdown>
