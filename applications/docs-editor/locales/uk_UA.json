@@ -5,6 +5,21 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
+      "Accept suggestion": [
+        "Прийняти пропозицію"
+      ],
       "Add comment": [
         "Додати коментар"
       ],
@@ -13,6 +28,12 @@
       ],
       "Add new table row": [
         "Додати новий рядок таблиці"
+      ],
+      "Add suggestion": [
+        "Додати пропозицію"
+      ],
+      "Adjust font size": [
+        "Змінити розмір шрифту"
       ],
       "Alphabetical": [
         "За абеткою"
@@ -26,11 +47,17 @@
       "Bold": [
         "Жирний"
       ],
+      "Bulleted List": [
+        "Маркований список"
+      ],
       "Cancel": [
         "Скасувати"
       ],
       "Center align": [
         "Вирівнювання по центру"
+      ],
+      "Check List": [
+        "Контрольний список"
       ],
       "Clear contents": [
         "Очистити вміст"
@@ -56,6 +83,9 @@
       "Copy link": [
         "Копіювати посилання"
       ],
+      "Decline suggestion": [
+        "Відхилити пропозицію"
+      ],
       "Delete": [
         "Видалити"
       ],
@@ -70,6 +100,9 @@
       ],
       "Delete thread": [
         "Видалити гілку"
+      ],
+      "Divider": [
+        "Роздільник"
       ],
       "Duplicate": [
         "Дублювати"
@@ -91,6 +124,9 @@
       ],
       "Insert below": [
         "Вставте нижче"
+      ],
+      "Insert comment": [
+        "Вставити коментар"
       ],
       "Insert image": [
         "Вставити зображення"
@@ -118,6 +154,9 @@
       ],
       "Link": [
         "Посилання"
+      ],
+      "Numbered List": [
+        "Нумерований список"
       ],
       "OK": [
         "Застосувати"
@@ -158,11 +197,17 @@
       "Right align": [
         "Вирівнювання по правому краю"
       ],
+      "Roman": [
+        "Римські"
+      ],
       "Save": [
         "Зберегти"
       ],
       "Show thread": [
         "Показати гілку"
+      ],
+      "Strike-through": [
+        "Закреслений"
       ],
       "Strikethrough": [
         "Закреслений"
@@ -358,7 +403,27 @@
         "Скасувати коментар?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Редагувати документ напряму"
+      ],
+      "Edits become suggestions": [
+        "Пропонування внести зміни"
+      ],
+      "Read or print final document": [
+        "Переглянути або друкувати остаточну версію документа"
+      ],
+      "Use the dropdown above to switch and start making suggestions.": [
+        "Скористайтеся випадним списком вище, щоб змінити режим і почати робити пропозиції."
+      ]
+    },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
+        "Під час завантаження документа сталася помилка. Щоб запобігти пошкодженню документа, редактор було заблоковано. Перезавантажте сторінку і повторіть спробу. Якщо помилка не зникне, відкрийте Історію версій в меню, щоб спробувати відновити документ до попередньої версії."
+      ],
+      "Failed to export document.": [
+        "Не вдалося експортувати документ."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Не вдалося імпортувати HTML через невідому помилку."
       ],
@@ -439,6 +504,9 @@
       "Font size": [
         "Розмір шрифту"
       ],
+      "Highlight": [
+        "Виділення"
+      ],
       "Internet connection lost": [
         "Втрачено інтернет-з'єднання"
       ],
@@ -460,11 +528,17 @@
       "Something went wrong:": [
         "Виникла проблема:"
       ],
+      "Suggesting": [
+        "Пропонування"
+      ],
       "Text color": [
         "Колір тексту"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Вміст, який ви намагаєтесь вставити, завеликий, щоб його можна було вставити одразу. Спробуйте ще раз, вставляючи менші фрагменти за раз."
+      ],
+      "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
+        "Мова, яку ви використовуєте, наразі не підтримується в режимі пропонування. Перейдіть у режим редагування або змініть мову."
       ],
       "Viewing": [
         "Перегляд"
@@ -474,14 +548,53 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Додати посилання"
+      ],
+      "Align": [
+        "Вирівнювання"
+      ],
       "Background colour": [
         "Колір тла"
+      ],
+      "Change image size": [
+        "Змінити розмір зображення"
+      ],
+      "Change indent level": [
+        "Змінити рівень відступу"
+      ],
+      "Clear formatting": [
+        "Очистити форматування"
       ],
       "Delete": [
         "Видалити"
       ],
+      "Delete divider": [
+        "Видалити роздільник"
+      ],
       "Delete image": [
         "Видалити зображення"
+      ],
+      "Delete link": [
+        "Видалити посилання"
+      ],
+      "Delete paragraph": [
+        "Видалити абзац"
+      ],
+      "Delete table": [
+        "Видалити таблицю"
+      ],
+      "Delete table column": [
+        "Видалити стовпець таблиці"
+      ],
+      "Delete table row": [
+        "Видалити рядок таблиці"
+      ],
+      "Duplicate table column": [
+        "Дублювати стовпець таблиці"
+      ],
+      "Duplicate table row": [
+        "Дублювати рядок таблиці"
       ],
       "Format": [
         "Формат"
@@ -489,8 +602,23 @@
       "Insert": [
         "Вставити"
       ],
+      "Insert divider": [
+        "Вставити роздільник"
+      ],
       "Insert image": [
         "Вставити зображення"
+      ],
+      "Insert paragraph": [
+        "Вставити абзац"
+      ],
+      "Insert table": [
+        "Вставити таблицю"
+      ],
+      "Insert table column": [
+        "Вставити стовпець таблиці"
+      ],
+      "Insert table row": [
+        "Вставити рядок таблиці"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Комбінація клавіш: ${ shortcut }"
@@ -507,8 +635,14 @@
       "Replace": [
         "Замінити"
       ],
+      "Replace link": [
+        "Замінити посилання"
+      ],
       "Text colour": [
         "Колір тексту"
+      ],
+      "with \"${ replaceWith }\"": [
+        "на \"${ replaceWith }\""
       ]
     },
     "Placeholder": {
@@ -534,6 +668,17 @@
       ],
       "Delete thread": [
         "Видалити гілку"
+      ],
+      "Explore the New Suggestion Mode": [
+        "Ознайомитись з новим режимом пропонування"
+      ],
+      "Language not supported": [
+        "Мова не підтримується"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Пропозиції всередині кодових блоків не підтримуються"
       ]
     }
   }
