@@ -935,7 +935,7 @@
         "Återställ data"
       ],
       "Refer a friend": [
-        "Hänvisa en vän"
+        "Bjud in en vän"
       ],
       "Refine it": [
         "Förfina det"
@@ -974,7 +974,7 @@
         "Ersätt"
       ],
       "Replaces the selected text in your message": [
-        "Ersätter markerade texten i ditt meddelande"
+        "Ersätter den markerade texten i ditt meddelande"
       ],
       "Reply": [
         "Svara"
@@ -1211,7 +1211,7 @@
         "Stanna"
       ],
       "Stop downloading assistant": [
-        "Sluta ladda ner assistent"
+        "Stoppa nedladdning av assistent"
       ],
       "Stop generating result": [
         "Sluta generera resultat"
@@ -1238,7 +1238,7 @@
         "För att söka i din e-post på ett säkert sätt måste vi ladda ner en kopia av dina meddelanden till din webbläsare. Den första nedladdningen kan ta en stund."
       ],
       "Toggle Calendar app": [
-        "Växla kalender-app"
+        "Växla Calendar-app"
       ],
       "Toggle Contacts app": [
         "Växla kontaktapp"
@@ -1346,7 +1346,7 @@
         "Använd återställningskod"
       ],
       "Use this": [
-        "Använd detta"
+        "Använd denna"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Använd din mus för att ändra storlek på vyn. Om du använder ditt tangentbord kan du använda piltangenterna för vänster- och höger för att ändra storlek."
@@ -1407,13 +1407,13 @@
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Din gratis provperiod av din app för stationär dator slutar om 2 dagar. ${ upgradeButton }"
+        "Din gratis provperiod av skrivbordsappen slutar om 2 dagar. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Din gratis provperiod av din app för stationär dator slutar om 5 dagar. ${ upgradeButton }"
+        "Din gratis provperiod av skrivbordsappen slutar om 5 dagar. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+        "Din gratis provperiod av skrivbordsappen slutar den ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Din skrivassistent för e-post"
@@ -1518,10 +1518,10 @@
         "Oläst e-post"
       ],
       "Unstar conversation": [
-        "Sluta stjärnmarkera konversationen"
+        "Avstjärnmarkera konversationen"
       ],
       "Unstar message": [
-        "Sluta stjärnmarkera meddelandet"
+        "Avstjärnmarkera meddelandet"
       ]
     },
     "Alternative text for conversation image": {
@@ -1531,7 +1531,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Inkorg för ${ nameToDisplay }"
+        "${ nameToDisplay }s inkorg"
       ],
       "5 trackers removed": [
         "5 spårare borttagna"
@@ -1657,7 +1657,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-app för stationär dator"
+        "${ MAIL_APP_NAME }-skrivbordsapp"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus och ${ CALENDAR_SHORT_APP_NAME }"
@@ -1696,13 +1696,13 @@
         "Annonsblockerare och skydd mot skadlig kod"
       ],
       "Admin panel to manage your family": [
-        "Administratörspanel för att hantera din familj"
+        "Adminpanel för att hantera din familj"
       ],
       "Advanced account protection": [
         "Avancerat kontoskydd"
       ],
       "Dark Web Monitoring": [
-        "Övervakning mörka webben"
+        "Övervakning av mörka webben"
       ],
       "Easily add or remove users": [
         "Lägg till eller ta bort användare enkelt"
@@ -1711,7 +1711,7 @@
         "Höghastighetsstreaming"
       ],
       "Integrated 2FA authenticator": [
-        "Integrerad 2FA-autentisering"
+        "Integrerad 2FA-autentiserare"
       ],
       "One-time payment, lifetime deal": [
         "Engångsbetalning, livstidserbjudande"
@@ -1726,13 +1726,13 @@
         "Privat säkerhetskopiering av foto"
       ],
       "Protect 10 devices at a time": [
-        "Skydda 10 enheter åt gången"
+        "Skydda 10 enheter samtidigt"
       ],
       "Secure file storage & sharing": [
         "Säker fillagring och delning"
       ],
       "Secure vault and link sharing": [
-        "Säker delning av valv och länk"
+        "Säker valv- och länkdelning"
       ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
@@ -1761,7 +1761,7 @@
         "Om du köper Pass Family eller Unlimited så kommer din prenumeration att förnyas automatiskt med det rabatterade standardpriset och standardlängden vid slutet av din faktureringscykel."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Din prenumeration kommer förnyas automatiskt till det rabatterade standardpriset i slutet av din faktureringsperiod."
+        "Din prenumeration kommer förnyas automatiskt med det rabatterade standardpriset i slutet av din faktureringsperiod."
       ]
     },
     "BF2024: Info": {
@@ -1785,7 +1785,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8 500+ servrar i över 110 länder, 10 enheter, hög hastighet streaming, annonsblockerare och skydd mot skadlig kod, VPN Accelerator och mer."
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8 500+ servrar i över 110 länder, 10 enheter, höghastighetsstreaming, annonsblockerare och skydd mot skadlig kod, VPN Accelerator och mer."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
@@ -1814,7 +1814,7 @@
         "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
+        "Lagringsutrymmet delas mellan alla ${ BRAND_NAME }-tjänster."
       ]
     },
     "Billing cycle option": {
@@ -1839,7 +1839,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+        "${ MAIL_APP_NAME }-skrivbordsapp"
       ]
     },
     "Bug category": {
@@ -2268,8 +2268,8 @@
         "Totalt"
       ],
       "Total for ${ n } month": [
-        "Total för ${ n } månad",
-        "Total för ${ n } månader"
+        "Totalt för ${ n } månad",
+        "Totalt för ${ n } månader"
       ]
     },
     "Collapsible tooltip": {
@@ -3005,7 +3005,7 @@
         "Irland"
       ],
       "Islamic Republic of Iran": [
-        "Iran"
+        "Islamiska republiken Iran"
       ],
       "Isle of Man": [
         "Isle of Man"
@@ -3053,7 +3053,7 @@
         "Kirgizistan"
       ],
       "Lao People's Democratic Republic": [
-        "Laos"
+        "Laos (Demokratiska folkrepubliken)"
       ],
       "Laos": [
         "Laos"
@@ -3368,7 +3368,7 @@
         "Tanzania"
       ],
       "Tanzania, United Republic of": [
-        "Tanzania"
+        "Tanzania, Förenade republiken"
       ],
       "Thailand": [
         "Thailand"
@@ -3631,10 +3631,10 @@
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
       ],
       "Set a data recovery method to prevent data loss.": [
-        "Ställ in en dataåterställningsmetod för att förhindra dataförlust."
+        "Konfigurera en dataåterställningsmetod för att förhindra dataförlust."
       ],
       "Set a recovery method to prevent losing access to your account.": [
-        "Ställ in en återställningsmetod för att förhindra att du förlorar åtkomst till ditt konto."
+        "Konfigurera en återställningsmetod för att förhindra att du förlorar åtkomst till ditt konto."
       ],
       "Starting from ${ price }": [
         "Startar från ${ price }"
@@ -3646,7 +3646,7 @@
         "För att fortsätta använda skrivassistenten, begär åtkomst från din administratör."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "För att säkerställa högsta möjliga säkerhet för ditt konto, ställ in en återställningsfras."
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, välj en återställningsfras."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "För import via en CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
@@ -3700,10 +3700,10 @@
         "Du kan markera de kontakter som du varken vill slå ihop eller behålla för borttagning. Borttagning kommer endast ske efter att ha klickat på knappen ”Slå ihop”"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Ditt konto- och dataåterställningsmetoder är inställda och 2FA är aktiverat."
+        "Dina konto- och dataåterställningsmetoder är konfigurerade och 2FA är aktiverat."
       ],
       "Your account and data recovery methods are set.": [
-        "Ditt konto och dina dataåterställningsmetoder är inställda."
+        "Dina konto- och dataåterställningsmetoder är konfigurerade."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
@@ -3778,7 +3778,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Hjälp oss att förbättra"
+        "Hjälp oss bli bättre"
       ]
     },
     "Downgrade warning": {
@@ -3855,13 +3855,13 @@
     },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
-        "${ eventTitle } blev inställd."
+        "${ eventTitle } avbokades."
       ],
       "All events in this series were updated.": [
         "Alla händelser i denna serie uppdaterades."
       ],
       "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Alla händelser i denna serie har uppdaterats. Här är vad som ändrades:\n\n${ updateEventDetailsText }"
+        "Alla händelser i denna serie har uppdaterats. Detta ändrades:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
         "Denna händelseförekomst blev inställd."
@@ -3876,7 +3876,7 @@
         "Denna händelse uppdaterades."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Denna händelse uppdaterades. Här är vad som ändrades:\n\n${ updateEventDetailsText }"
+        "Denna händelse uppdaterades. Detta ändrades:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Du är inbjuden till ${ eventTitle }.\n\n${ eventDetailsText }"
@@ -4006,7 +4006,7 @@
         "Adressens privata nyckel hittades inte"
       ],
       "Alias is not valid": [
-        "Alias är inte giltigt"
+        "Alias är ogiltigt"
       ],
       "Alias is required": [
         "Alias är obligatoriskt"
@@ -4015,7 +4015,7 @@
         "Alternativ för alias kunde inte lösas"
       ],
       "Aliases could not be loaded": [
-        "Alias kunde inte laddas"
+        "Alias kunde inte läsas in"
       ],
       "Amount above the maximum.": [
         "Belopp över det maximala."
@@ -4226,7 +4226,7 @@
         "Signatur saknas"
       ],
       "Name is required": [
-        "Namn är obligatoriskt"
+        "Namn krävs"
       ],
       "Network error: Please check your connection and try again.": [
         "Nätverksfel: Kontrollera din anslutning och försök igen."
@@ -4495,7 +4495,7 @@
         "Användarnamn måste sluta med en bokstav eller siffra"
       ],
       "Wrong second password": [
-        "Felaktigt andra lösenord"
+        "Felaktigt andralösenord"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
@@ -4726,7 +4726,7 @@
         "Alias ​​kan inte användas när ett extralösenord är aktiverat i ${ PASS_APP_NAME }."
       ],
       "App currently unavailable": [
-        "App är för närvarande inte tillgänglig"
+        "Appen är för närvarande otillgänglig"
       ],
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
@@ -4753,7 +4753,7 @@
         "Byt till webbversionen för att använda ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din Internetanslutning."
+        "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din internetanslutning."
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "När extralösenord är aktiverat kan hantering av alias endast göras i ${ PASS_APP_NAME }."
@@ -4898,7 +4898,7 @@
         "Du kan inte byta paket just nu."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
-        "Lagringsutrymme tilldelat till dig: ${ assignedStorage }"
+        "Lagringsutrymme tilldelat dig: ${ assignedStorage }"
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
@@ -4913,7 +4913,7 @@
         "Du kan inte acceptera denna inbjudan med ditt nuvarande paket."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Du har blivit inbjuden att gå med i ${ bannerOrganization }. ${ viewInviteButton }"
+        "Du har bjudits in att gå med i ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the family group": [
         "Du har gått med i familjegruppen"
@@ -5119,7 +5119,7 @@
         "Dölj flyttat meddelande"
       ],
       "Read": [
-        "Läs"
+        "Läst"
       ],
       "Show moved message": [
         "Visa flyttat meddelande"
@@ -5213,16 +5213,16 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-app för stationär dator"
+        "${ MAIL_APP_NAME }-skrivbordsapp"
       ],
       "14-day desktop app trial.": [
-        "14-dagars provperiod av app för stationär dator."
+        "14-dagars provperiod av skrivbordsappen"
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Njut av snabb, säker och distraktionsfri åtkomst till din inkorg och kalender."
       ],
       "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
-        "Få obegränsad åtkomst med valfritt ${ MAIL_APP_NAME }-paket."
+        "Få obegränsad åtkomst med alla ${ MAIL_APP_NAME }-paket."
       ],
       "No credit card required.": [
         "Inget kreditkort krävs."
@@ -5231,7 +5231,7 @@
         "Starta gratis provperiod"
       ],
       "Try the new desktop app": [
-        "Prova den nya appen för stationär dator"
+        "Prova den nya skrivbordsappen"
       ],
       "Upgrade now": [
         "Uppgradera nu"
@@ -5245,7 +5245,7 @@
         "${ MAIL_APP_NAME } på App Store"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
-        "${ MAIL_APP_NAME } på Play Store"
+        "${ MAIL_APP_NAME } på Play Butik"
       ],
       "${ remainingDaysCount } day": [
         "${ remainingDaysCount } dag",
@@ -5280,7 +5280,7 @@
         "Ändrade konton"
       ],
       "Checklist complete": [
-        "Checklista klar"
+        "Checklista färdig"
       ],
       "Close": [
         "Stäng"
@@ -5370,10 +5370,10 @@
         "Uppdatera dina inloggningar"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
-        "Använd din mobila enhet, skanna denna QR-kod eller besök iOS- eller Android-butiken."
+        "Med din mobila enhet, skanna denna QR-kod eller besök iOS- eller Android-butiken."
       ],
       "We stop advertisers and data collectors from profiling you.": [
-        "Vi stoppar annonsörer och datainsamlare från att profilera dig."
+        "Vi hindrar annonsörer och datainsamlare från att profilera dig."
       ],
       "You've unlocked 1 GB": [
         "Du har låst upp 1 GB"
@@ -5398,7 +5398,7 @@
         "Instruktioner för att gå med"
       ],
       "Less details": [
-        "Mindre detaljer"
+        "Färre detaljer"
       ],
       "Meeting host:": [
         "Mötesvärd:"
@@ -5441,7 +5441,7 @@
         "Kontakter"
       ],
       "Hardware not compatible": [
-        "Hårdvara inte kompatibel"
+        "Hårdvaran är okompatibel"
       ],
       "Report an issue": [
         "Rapportera ett problem"
@@ -5456,7 +5456,7 @@
         "Säkerhetscenter"
       ],
       "Set up the writing assistant": [
-        "Ställ in skrivassistenten"
+        "Konfigurera skrivassistenten"
       ],
       "Tell us more": [
         "Berätta mer"
@@ -6299,7 +6299,7 @@
         "Anpassad årligen"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
+        "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationerna."
       ],
       "Daily": [
         "Dagligen"
@@ -6381,7 +6381,7 @@
         "Redigera e-postadress"
       ],
       "Edit encryption": [
-        "Redigera kryptering"
+        "Byt kryptering"
       ],
       "Edit expiration time": [
         "Redigera utgångstid"
@@ -6544,7 +6544,7 @@
         "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalda funktioner i ${ VPN_APP_NAME }."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
-        "Om ditt alias säljs, läcker eller missbrukas är det bara att inaktivera det för att sluta ta emot skräppost."
+        "Om ditt alias säljs, läcks eller missbrukas är det bara att inaktivera det för att sluta ta emot skräppost."
       ],
       "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
         "Om ditt lösenord hamnar på den mörka webben kan ${ BRAND_NAME } berätta för dig vilken tjänst din data läckte från och hur du stoppar skadan."
@@ -6827,7 +6827,7 @@
         "lösenord"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Betalningar skyddas med TLS-kryptering och Schweiziska integritetslagar."
+        "Betalningar skyddas med TLS-kryptering och schweiziska integritetslagar."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline är endast kompatibelt med oformaterad text."
@@ -7298,7 +7298,7 @@
         "till ${ destinationElement }-mapp."
       ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
-        "För att undvika att bli av med de öppna flikarna i din webbläsare, använd appen för stationär dator."
+        "För att undvika att bli av med de öppna flikarna i din webbläsare, använd skrivbordsappen."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "För att slutföra din betalning, skicka ${ btcAmountBold } till adressen nedan."
@@ -7881,7 +7881,7 @@
         "Kasta utkast"
       ],
       "Expand / contract composer": [
-        "Expandera / dra ihop skrivfönster"
+        "Expandera / dra ihop kompositör"
       ],
       "Filter": [
         "Filter"
@@ -8126,7 +8126,7 @@
         "Hemlig kopia"
       ],
       "Beta Access": [
-        "Beta-åtkomst"
+        "Betaåtkomst"
       ],
       "Billing address": [
         "Faktureringsadress"
@@ -8492,7 +8492,7 @@
         "Offentliga nycklar"
       ],
       "Read": [
-        "Läs"
+        "Läst"
       ],
       "Recipient": [
         "Mottagare"
@@ -10182,7 +10182,7 @@
         "Lösenkod kopierat till urklipp"
       ],
       "Password has been set successfully": [
-        "Lösenord har ställts in"
+        "Lösenord har valts"
       ],
       "Sender ${ firstSenderAddress } blocked": [
         "Avsändare ${ firstSenderAddress } blockerad"
@@ -10281,7 +10281,7 @@
         "Grattis till att du väljer integritet"
       ],
       "Dark Web Monitoring": [
-        "Mörka webben-övervakning"
+        "Övervakning av mörka webben"
       ],
       "Download the desktop app": [
         "Ladda ner skrivbordsappen"
@@ -10468,7 +10468,7 @@
     },
     "pass_signup_2023: Info": {
       "Secure vault and link sharing": [
-        "Säker delning av valv och länk"
+        "Säker valv- och länkdelning"
       ],
       "Secure vault sharing": [
         "Säker valvdelning"
@@ -10662,10 +10662,10 @@
         "${ emailAddress } har markerat denna nyckel som inaktuell. Denna nyckel kan endast användas för signaturverifiering."
       ],
       "External key automatically fetched from keys.openpgp.org.": [
-        "Extern nyckel hämtas automatiskt från keys.openpgp.org."
+        "Extern nyckel automatiskt hämtad från keys.openpgp.org."
       ],
       "External key automatically fetched via WKD.": [
-        "Extern nyckel hämtas automatiskt via WKD."
+        "Extern nyckel automatiskt hämtad via WKD."
       ],
       "This key is used to encrypt messages to this contact": [
         "Denna nyckel används för att kryptera meddelanden till denna kontakt"
@@ -11218,7 +11218,7 @@
         "Denna tillåtelse löper ut om ${ timeRemaining.inHours } timmar"
       ],
       "This permission expires soon": [
-        "Denna tillåtelse löper snart ut"
+        "Denna rättighet löper snart ut"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nu ändra ditt lösenord för kontot ${ boldEmail } fritt i ${ boldDaysRemaining }."
@@ -11312,7 +11312,7 @@
         "Lösenordsåterställning begärd (${ user.Email }). Du kan ändra ditt lösenord inom ${ hoursRemaining } timmar."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "För att säkerställa att det verkligen är du som försöker återställa ditt lösenord väntar vi 72 timmar innan vi godkänner begäran. Du kan ändra ditt lösenord i ${ boldTimeLeft }. ${ viewRequest }"
+        "För att säkerställa att det verkligen är du som försöker återställa ditt lösenord väntar vi 72 timmar innan vi godkänner begäran. Du kan ändra ditt lösenord om ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Vi fick en begäran om lösenordsåterställning för ${ boldEmail }."
@@ -11345,7 +11345,7 @@
         "${ passwordReset } är nu tillgängligt."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Om du loggar ut innan du återställer ditt lösenord kan du förlora åtkomst till ditt konto."
+        "Om du loggar ut innan du återställer ditt lösenord kan du förlora åtkomsten till ditt konto."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
         "Om du loggar ut utan att återställa ditt lösenord kan du förlora åtkomst till ditt konto."
@@ -11399,7 +11399,7 @@
     },
     "SmartBanner": {
       "Faster on the app": [
-        "Snabbare på appen"
+        "Snabbare i appen"
       ],
       "Private, fast, and organized": [
         "Privat, snabbt och organiserat"
@@ -11629,7 +11629,7 @@
         "Schemalägg sändning"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
-        "Slå på ${ DARK_WEB_MONITORING_NAME } för att bli aviserad om din data har läckt från en tredjepartstjänst."
+        "Aktivera ${ DARK_WEB_MONITORING_NAME } för att bli aviserad om din data har läckt från en tredjepartstjänst."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi laddar nu bilder som standard och blockerar avsändare från att spåra dig. Detta kan ändras i ${ settingsLink }."
@@ -12030,7 +12030,7 @@
         "Om din användning överskrider gränserna för gratispaketet kan du uppleva begränsad åtkomst till produktfunktioner och din data."
       ],
       "Invited members will be removed from your organization": [
-        "Inbjudna medlemmar kommer att tas bort från din organisation"
+        "Inbjudna medlemmar kommer tas bort från din organisation"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Håll ditt team säkert när du är på språng med våra appar för webb, iOS, Android, Windows, Mac och Linux."
@@ -12102,7 +12102,7 @@
         "Användare kommer inte att kunna hantera sina kalendrar"
       ],
       "Users won’t be able to send emails": [
-        "Användare kommer inte att kunna skicka e-post"
+        "Användarna kommer inte att kunna skicka e-post"
       ],
       "Users won’t be able to upload files on their devices": [
         "Användare kommer inte kunna ladda upp filer på sina enheter"
@@ -12481,7 +12481,7 @@
         "Självförstörelse borttagen"
       ],
       "Self-destruction set": [
-        "Självförstörelse inställt"
+        "Självförstörelse konfigurerat"
       ],
       "Thanks for the feedback!": [
         "Tack för feedbacken!"
@@ -12871,7 +12871,7 @@
         "Anpassa din e-postimport"
       ],
       "Dark Web Monitoring": [
-        "Övervakning mörka webben"
+        "Övervakning av mörka webben"
       ],
       "Data recovery": [
         "Dataåterställning"
@@ -13008,7 +13008,7 @@
         "Skaffa avancerat skydd"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
-        "Skaffa ${ appName[APP_NAME] }-appen"
+        "Skaffa ${ appName[APP_NAME] }-apparna"
       ],
       "Gift": [
         "Gåva"
@@ -13312,7 +13312,7 @@
         "Skicka med ändrade preferenser?"
       ],
       "Send with encryption disabled?": [
-        "Skicka med kryptering inaktiverad?"
+        "Skicka med kryptering inaktiverat?"
       ],
       "Send without expiration?": [
         "Skicka utan utgångsdatum?"
@@ -13418,7 +13418,7 @@
         "Verifierar din betalning..."
       ],
       "Want to snooze any time?": [
-        "Vill du snooza valfri tid?"
+        "Vill du snooza hur länge som helst?"
       ],
       "Warning": [
         "Varning"
@@ -13504,7 +13504,7 @@
         "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."
       ],
       "Load image": [
-        "Ladda bild"
+        "Läs in bild"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
@@ -13519,7 +13519,7 @@
         "Bilden kunde inte laddas"
       ],
       "The image could not be loaded using proxy": [
-        "Bilden kunde inte laddas med proxy"
+        "Bilden kunde läsas in med proxy"
       ],
       "The import will start with the most recent messages.": [
         "Importering kommer att börja med de senaste meddelandena."
@@ -13775,13 +13775,13 @@
     },
     "WeekDay": {
       "Mon, ${ formatTime }": [
-        "Mån. ${ formatTime }"
+        "Mån, ${ formatTime }"
       ],
       "Sat, ${ formatTime }": [
-        "Lör. ${ formatTime }"
+        "Lör, ${ formatTime }"
       ],
       "Sun, ${ formatTime }": [
-        "Sön. ${ formatTime }"
+        "Sön, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

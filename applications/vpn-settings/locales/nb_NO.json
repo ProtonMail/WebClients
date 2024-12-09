@@ -2555,6 +2555,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Kunne ikke laste inn fakturaer. Prøv igjen senere."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Kunne ikke laste inn transaksjoner. Prøv igjen senere."
+      ],
       "Domain not available, try again later": [
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
       ],
@@ -5142,6 +5145,9 @@
       "You have no saved payment methods.": [
         "Du har ingen lagrede betalingsmåter."
       ],
+      "You have no transactions.": [
+        "Du har ingen transaksjoner."
+      ],
       "You may be redirected to your bank’s website.": [
         "Du kan bli omdirigert til din banks nettside."
       ],
@@ -5820,6 +5826,9 @@
       "Start date": [
         "Startdato"
       ],
+      "Strong": [
+        "Sterk"
+      ],
       "Subscription options": [
         "Abonnementalternativer"
       ],
@@ -5865,8 +5874,14 @@
       "VPN Accelerator": [
         "VPN Accelerator"
       ],
+      "Vulnerable": [
+        "Sårbar"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Vi beklager å se deg gå. Forklar hvorfor du slutter for å hjelpe oss med å forbedre oss."
+      ],
+      "Weak": [
+        "Svak"
       ],
       "What happened?": [
         "Hva skjedde?"
@@ -8370,6 +8385,9 @@
       ],
       "Invoice": [
         "Faktura"
+      ],
+      "Transactions": [
+        "Transaksjoner"
       ]
     },
     "Select search results": {
@@ -10706,6 +10724,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME }-faktura"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME }-transaksjon"
       ]
     },
     "Title header for addresses domain table": {
@@ -10867,6 +10888,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Denne versjonen av Tor-nettleser støttes ikke. Oppdater til seneste ${ stableRelease }"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Tilbakeførsel"
+      ],
+      "Failed": [
+        "Mislyktes"
+      ],
+      "Needs attention": [
+        "Trenger oppmerksomhet"
+      ],
+      "Refunded": [
+        "Refundert"
+      ],
+      "Success": [
+        "Vellykket"
+      ],
+      "Timeout": [
+        "Tidsavbrudd"
+      ],
+      "Voided": [
+        "Annullert"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Kreditt for justering"
+      ],
+      "Authorization": [
+        "Autorisasjon"
+      ],
+      "Bank transfer": [
+        "Bankoverføring"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Kontant"
+      ],
+      "Chargeback": [
+        "Tilbakeførsel"
+      ],
+      "Credit": [
+        "Kreditt"
+      ],
+      "Credit transfer": [
+        "Kredittoverføring"
+      ],
+      "Currency conversion": [
+        "Valutakonvertering"
+      ],
+      "Gift card": [
+        "Gavekort"
+      ],
+      "Migration": [
+        "Overføring"
+      ],
+      "Payment": [
+        "Betaling"
+      ],
+      "Payment reversal": [
+        "Tilbakeføring av betaling"
+      ],
+      "Refund": [
+        "Refusjon"
       ]
     },
     "unprivatization": {

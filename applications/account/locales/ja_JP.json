@@ -293,7 +293,7 @@
         "Google で続行"
       ],
       "Continue with Outlook": [
-        "Outlook を続行する"
+        "Outlookで続ける"
       ],
       "Continue with this password": [
         "このパスワードで続行する"
@@ -542,7 +542,7 @@
         "フォント"
       ],
       "Forgot password?": [
-        "パスワードを忘れた?"
+        "パスワードを忘れましたか？"
       ],
       "Forgot recovery method?": [
         "回復手順を忘れましたか？"
@@ -1259,7 +1259,7 @@
         "すべてのレポートを表示"
       ],
       "View invoice": [
-        "請求書を参照する"
+        "請求書を確認"
       ],
       "View plans details": [
         "プランの詳細を表示"
@@ -1425,7 +1425,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        "今すぐ退出することで、いくつかの連絡先がインポートされない可能性があります"
+        "今終了すると、インポートされない連絡先がある可能性があります"
       ],
       "By leaving now, some events may not be imported": [
         "今終了すると、インポートされない予定がある可能性があります"
@@ -1494,7 +1494,7 @@
     },
     "Assistant option": {
       "Data stay on your device but requires a one-time download and compatible hardware": [
-        "データはデバイスに保存されます。初回のダウンロードと互換性のあるハードウェアが必要です。"
+        "データはデバイスに保存されますが、一度のダウンロードと互換性のあるハードウェアが必要です"
       ],
       "Fast and secure. No logs are kept.": [
         "高速で安全です。ログは保持されません。"
@@ -1966,7 +1966,7 @@
         "リンクをメールフッターに追加"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME } を使って続行します。"
+        "${ MAIL_APP_NAME }で続ける。"
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle }を使い続ける"
@@ -2291,7 +2291,7 @@
         "コバルト"
       ],
       "copper": [
-        "コパー"
+        "カッパー"
       ],
       "cyan-blue azure": [
         "グレーな青"
@@ -2309,10 +2309,10 @@
         "やや黒いグレー"
       ],
       "enzian": [
-        "エンツィアン"
+        "リンドウ"
       ],
       "fern": [
-        "ファーン"
+        "シダ"
       ],
       "field drab": [
         "かなり黒い黄"
@@ -2339,7 +2339,7 @@
         "白い緑"
       ],
       "light red": [
-        "かなり白い赤"
+        "ライトレッド"
       ],
       "maize": [
         "やや黒い黄"
@@ -2375,13 +2375,13 @@
         "ペルシャ赤"
       ],
       "philippine gray": [
-        "グレー"
+        "やや白いグレー"
       ],
       "philippine silver": [
         "やや白いグレー"
       ],
       "pickle": [
-        "ピックル"
+        "ピクルス"
       ],
       "pine": [
         "パイン"
@@ -3639,7 +3639,7 @@
         "友達を招待し続けることはできますが、さらにクレジットを獲得することはできません。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "iCal 形式 (ICS ファイル) をインポートできます。インポートするファイルは ${ MAX_IMPORT_FILE_SIZE_STRING } 以下でかつ、予定の数は ${ MAX_IMPORT_EVENTS_STRING } 件以下である必要があります。もし、インポートしようとしているファイルが大きすぎる場合、小さなファイルに分割してインポートしてください。"
+        "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
       ]
     },
     "description": {
@@ -3652,7 +3652,7 @@
         "また、CSVのフィールドを自動的にvCardのフィールドに変換しています。手動で変換が正しく行われているか確かめることもできます。"
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートされたいものを選択してください。"
+        "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートしたいものを選択してください。"
       ]
     },
     "Disable account": {
@@ -4435,6 +4435,9 @@
       "Couldn't load invoices. Please try again later.": [
         "請求書が読み込めませんでした。後でもう一度お試しください。"
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "取引を読み込めませんでした。後ほど再度お試しください。"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "${ calendarsToFixCount } 件のカレンダーの選択を解除"
       ],
@@ -4920,16 +4923,16 @@
         "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS } 以上の予定が含まれています。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "ファイル　${ formattedFilename }はメソッドが正しくなく、インポートできません。"
+        "ファイル${ formattedFilename }はメソッドが正しくなく、インポートできません。"
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "ファイル　${ formattedFilename }にはインポートする連絡先がありません。"
+        "ファイル${ formattedFilename }にはインポートする連絡先がありません。"
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "ファイル　${ formattedFilename }は空です。"
+        "ファイル${ formattedFilename }が空です。"
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        "ファイル　${ formattedFilename }はカレンダーではありません。"
+        "ファイル${ formattedFilename }はカレンダーではありません。"
       ]
     },
     "Error importing contact": {
@@ -5113,7 +5116,7 @@
         "${ MAIL_APP_NAME }や${ CALENDAR_APP_NAME }を使うには、Webバージョンに切り替えてください。"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
+        "このページを読み込めませんでした。ページを更新するか、インターネット接続を確認してください。"
       ]
     },
     "Error message, Disable account": {
@@ -5214,7 +5217,7 @@
         "回答は送信されましたが、予定をカレンダーに追加できませんでした"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "回答は送信されましたが、予定をカレンダーに反映できませんでした"
+        "回答が送信されましたが、予定はカレンダーで更新できませんでした"
       ]
     },
     "Event title": {
@@ -5412,7 +5415,7 @@
         "あなたは ${ organization.Name } に所属しています"
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
-        "六ヶ月の間に受けられる招待は最大で３つまでです。例外措置が必要な場合は ${ supportLink } にお問い合わせください。"
+        "6 か月の間に受けられる招待は最大で 3 つまでです。例外措置が必要な場合は ${ supportLink } にお問い合わせください。"
       ],
       "You cannot accept this invitation with your current plan.": [
         "現在のプランではこの招待を受けることができません。"
@@ -5799,7 +5802,7 @@
         "既読にする"
       ],
       "starred": [
-        "星印付き"
+        "スター付き"
       ]
     },
     "filter: Label": {
@@ -6268,7 +6271,7 @@
         "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "予定を暗号化し、カレンダーに追加中...${ totalToImport }件中${ totalImported }件が完了"
+        "予定を暗号化し、カレンダーに追加中: ${ totalToImport }件中${ totalImported }件が完了"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
         "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
@@ -6324,7 +6327,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "${ contactId } へのお問い合わせ "
+        "連絡先 ${ contactId }: "
       ]
     },
     "Import contact groups info": {
@@ -6557,7 +6560,7 @@
     },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。クリックして詳細"
+        "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。詳細はクリックしてください"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         "${ totalEvents } 件のうち ${ totalEventsDiscarded } 件の予定はインポートされません。クリックして詳細を展開します。"
@@ -7132,7 +7135,7 @@
         "この URL をコピーして、アイデンティティ プロバイダーのエンティティ ID フィールドに貼り付けます。"
       ],
       "Copy the link to clipboard": [
-        "リンクをコピー"
+        "リンクをクリップボードにコピー"
       ],
       "Copy the suggested password to clipboard": [
         "提案されたパスワードをクリップボードにコピーする"
@@ -7780,7 +7783,7 @@
         "ラベル:"
       ],
       "Large imports can take several days.": [
-        "巨大なインポートは数日かかる場合があります。"
+        "膨大なインポートには数日かかる場合があります。"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "${ staySaferOnlineLink } の使い方を学ぶ"
@@ -8320,7 +8323,7 @@
         "メンバーに2FAでアカウントを保護するよう促すメールを送る。"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "安全なメール <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> で送信されました。"
+        "安全なメールシステム <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> から送信"
       ],
       "Server is currently down": [
         "このサーバーは現在オフラインです"
@@ -8962,7 +8965,7 @@
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
       ],
       "We'll email you once import is complete.": [
-        "データの取り込みが完了したら自動的にメールが届きます。"
+        "インポートが完了したらメールでお知らせします。"
       ],
       "We'll get back to you shortly.": [
         "すぐにお返事します。"
@@ -9176,6 +9179,9 @@
       ],
       "You have no saved payment methods.": [
         "支払い方法が登録されていません。"
+      ],
+      "You have no transactions.": [
+        "取引がありません。"
       ],
       "You may be redirected to your bank’s website.": [
         "銀行のウェブサイトに移動する場合があります。"
@@ -9703,7 +9709,7 @@
         "未読のメールを表示"
       ],
       "Star": [
-        "星印を付ける"
+        "スター"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10398,7 +10404,7 @@
         "カテゴリーを管理"
       ],
       "Mark as": [
-        "印をつける"
+        "としてマークする"
       ],
       "Message": [
         "メッセージ"
@@ -10677,7 +10683,7 @@
         "迷惑メール"
       ],
       "Starred": [
-        "星印付き"
+        "スター付き"
       ],
       "Start date": [
         "開始日"
@@ -10696,6 +10702,9 @@
       ],
       "Sticky labels": [
         "スティッキーラベル"
+      ],
+      "Strong": [
+        "強い"
       ],
       "Subscription options": [
         "サブスクリプションのオプション"
@@ -10781,8 +10790,14 @@
       "Video conferencing with Zoom": [
         "Zoomでのビデオ会議"
       ],
+      "Vulnerable": [
+        "脆弱"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "今後の改善のため、アカウントを削除する理由をお聞かせください。"
+      ],
+      "Weak": [
+        "弱い"
       ],
       "Week start": [
         "週の開始曜日"
@@ -10969,7 +10984,7 @@
         "新しいカレンダーを追加するには、既存のカレンダーを削除します。"
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有償の${ MAIL_SHORT_APP_NAME } プランにアップグレードします。"
+        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有料の${ MAIL_SHORT_APP_NAME } プランにアップグレードします。"
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "このプランで利用できるカレンダーの最大数に達しました。"
@@ -11149,7 +11164,7 @@
         "データを集めています"
       ],
       "We're gathering your data from your provider": [
-        "プロバイダーからファイルを集めています"
+        "プロバイダーからデータを収集しています"
       ],
       "Your import is starting": [
         "インポートが開始しました"
@@ -11157,7 +11172,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "詳細"
+        "もっと詳しく"
       ],
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
@@ -14042,7 +14057,7 @@
         "電話番号"
       ],
       "Please describe the problem and include any error messages": [
-        "問題について、エラーメッセージ等も含めてご記入ください。（英語）"
+        "問題について、エラーメッセージ等も含めてご記入ください。"
       ],
       "Please insert link first": [
         "最初にリンクを挿入してください"
@@ -14751,6 +14766,9 @@
       ],
       "Invoice": [
         "請求書"
+      ],
+      "Transactions": [
+        "取引"
       ]
     },
     "Select search results": {
@@ -14788,7 +14806,7 @@
         "パスワードリセットをキャンセルする"
       ],
       "Cancel reset": [
-        "リクエストのキャンセル　"
+        "リセットをキャンセル"
       ],
       "Reset password": [
         "パスワードのリセット"
@@ -14929,7 +14947,7 @@
         "了解"
       ],
       "Learn more": [
-        "詳細"
+        "もっと詳しく"
       ]
     },
     "session_recovery:in_progress:info": {
@@ -14968,7 +14986,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "パスワード再設定リクエスト"
+        "パスワードのリセットがリクエストされました"
       ]
     },
     "session_recovery:initiation:action": {
@@ -18084,6 +18102,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME } 請求書"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME }取引"
       ]
     },
     "Title header": {
@@ -18191,7 +18212,7 @@
         "疑わしいアクティビティに適用される保護"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "システムの昼夜モードと同期して、昼と夜のお好みのテーマを自動的に切り替える"
+        "システムの昼夜モードに同期して、昼と夜の好みのテーマを自動的に切り替えます"
       ],
       "Click here to learn how to create a customized signature with HTML.": [
         "ここをクリックしてHTMLでの署名カスタマイズ方法を学ぶ"
@@ -18290,7 +18311,7 @@
         "EduGAINエンティティのユーザーのうち、SAML SSOで認証することが許可されているユーザーを指定してください"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
+        "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれぞれのフォルダーとして表示されます"
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
@@ -18323,7 +18344,7 @@
         "この機能は電子メールの送信を遅らせ、選択した期間内に送信を取り消す機会を与えます。"
       ],
       "This feature is only available for paid users": [
-        "この機能は課金ユーザーのみが利用できます"
+        "この機能は有料ユーザのみが利用できます。"
       ],
       "This feature is only available on Beta": [
         "この機能はベータ版でのみ利用可能です"
@@ -18440,6 +18461,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Torブラウザのこのバージョンはサポートされていません。最近の${ stableRelease }へアップグレードしてください。"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "返金要求"
+      ],
+      "Failed": [
+        "失敗"
+      ],
+      "Needs attention": [
+        "注意が必要"
+      ],
+      "Refunded": [
+        "返金済み"
+      ],
+      "Success": [
+        "成功"
+      ],
+      "Timeout": [
+        "タイムアウト"
+      ],
+      "Voided": [
+        "無効"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "調整信用"
+      ],
+      "Authorization": [
+        "認証"
+      ],
+      "Bank transfer": [
+        "銀行振込"
+      ],
+      "Bitcoin": [
+        "ビットコイン"
+      ],
+      "Cash": [
+        "現金"
+      ],
+      "Chargeback": [
+        "返金要求"
+      ],
+      "Credit": [
+        "クレジット"
+      ],
+      "Credit transfer": [
+        "クレジット送金"
+      ],
+      "Currency conversion": [
+        "通貨換算"
+      ],
+      "Gift card": [
+        "ギフトカード"
+      ],
+      "Migration": [
+        "移動"
+      ],
+      "Payment": [
+        "支払い"
+      ],
+      "Payment reversal": [
+        "支払いの取り消し"
+      ],
+      "Refund": [
+        "返金"
       ]
     },
     "unprivatization": {

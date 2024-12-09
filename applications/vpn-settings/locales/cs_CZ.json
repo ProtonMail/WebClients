@@ -2575,6 +2575,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Nelze načíst faktury. Zkuste to prosím později."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Nelze načíst transakce. Zkuste to prosím později."
+      ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
@@ -5260,6 +5263,9 @@
       "You have no saved payment methods.": [
         "Nemáte uloženy žádné platební metody."
       ],
+      "You have no transactions.": [
+        "Nemáte žádné transakce."
+      ],
       "You may be redirected to your bank’s website.": [
         "Můžete být přesměrováni na webové stránky své banky."
       ],
@@ -5946,6 +5952,9 @@
       "Start date": [
         "Datum zahájení"
       ],
+      "Strong": [
+        "Silné"
+      ],
       "Subscription options": [
         "Možnosti předplatného"
       ],
@@ -5991,8 +6000,14 @@
       "VPN Accelerator": [
         "VPN Accelerator"
       ],
+      "Vulnerable": [
+        "Zranitelné"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Je nám líto, že odcházíte. Sdělte nám svůj důvod, abychom pomohli zlepšit naše služby."
+      ],
+      "Weak": [
+        "Slabé"
       ],
       "What happened?": [
         "Co se stalo?"
@@ -8570,6 +8585,9 @@
       ],
       "Invoice": [
         "Faktura"
+      ],
+      "Transactions": [
+        "Transakce"
       ]
     },
     "Select search results": {
@@ -11015,6 +11033,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME } faktura"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "Transakce ${ MAIL_APP_NAME }"
       ]
     },
     "Title header for addresses domain table": {
@@ -11176,6 +11197,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tato verze prohlížeče Tor není podporována. Prosím aktualizujte na poslední ${ stableRelease }"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Zpětné vyúčtování"
+      ],
+      "Failed": [
+        "Selhání"
+      ],
+      "Needs attention": [
+        "Vyžaduje pozornost"
+      ],
+      "Refunded": [
+        "Platba vrácena"
+      ],
+      "Success": [
+        "Úspěšné"
+      ],
+      "Timeout": [
+        "Vypršel časový limit"
+      ],
+      "Voided": [
+        "Neplatné"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Úprava kreditu"
+      ],
+      "Authorization": [
+        "Autorizace"
+      ],
+      "Bank transfer": [
+        "Bankovní převod"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Hotovost"
+      ],
+      "Chargeback": [
+        "Zpětné vyúčtování"
+      ],
+      "Credit": [
+        "Kredit"
+      ],
+      "Credit transfer": [
+        "Převod kreditu"
+      ],
+      "Currency conversion": [
+        "Převod měny"
+      ],
+      "Gift card": [
+        "Dárková karta"
+      ],
+      "Migration": [
+        "Mirgace"
+      ],
+      "Payment": [
+        "Platba"
+      ],
+      "Payment reversal": [
+        "Vrácení platby"
+      ],
+      "Refund": [
+        "Vrácení peněz"
       ]
     },
     "unprivatization": {

@@ -17,8 +17,14 @@
       "Add current URL": [
         "Tilføj nuværende URL"
       ],
+      "Add custom domain": [
+        "Tilføj brugerdomæne"
+      ],
       "Add domain": [
         "Tilføj domæne"
+      ],
+      "Add mailbox": [
+        "Tilføj postkasse"
       ],
       "Add more": [
         "Tilføj mere"
@@ -44,6 +50,9 @@
       "Back": [
         "Tilbage"
       ],
+      "Block contact": [
+        "Bloker kontakt"
+      ],
       "Bulk delete items from trash": [
         "Slet elementer i papirkurven i massevis"
       ],
@@ -64,6 +73,12 @@
       ],
       "Change": [
         "Skift"
+      ],
+      "Check DNS": [
+        "Kontrollér DNS"
+      ],
+      "Check settings": [
+        "Kontroller indstillinger"
       ],
       "Choose a file or drag it here": [
         "Vælg en fil eller træk den hertil"
@@ -104,6 +119,9 @@
       "Continue without pinning": [
         "Fortsæt uden at fastgøre"
       ],
+      "Copy alias address": [
+        "Kopiér alias-adresse"
+      ],
       "Copy and close": [
         "Kopiér og luk"
       ],
@@ -133,6 +151,9 @@
       ],
       "Create card": [
         "Opret kort"
+      ],
+      "Create contact": [
+        "Opret kontakt"
       ],
       "Create identity": [
         "Opret identitet"
@@ -172,6 +193,9 @@
       ],
       "Delete it, I will never need it": [
         "Slet det, jeg får aldrig brug for det"
+      ],
+      "Delete mailbox": [
+        "Slet postkasse"
       ],
       "Delete password": [
         "Slet adgangskode"
@@ -317,6 +341,9 @@
       "Make admin": [
         "Gør til admin"
       ],
+      "Make default": [
+        "Brug som standard"
+      ],
       "Make editor": [
         "Gør til redaktør"
       ],
@@ -334,6 +361,9 @@
       ],
       "Maximum views": [
         "Maks. visninger"
+      ],
+      "More info": [
+        "Mere info"
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
@@ -391,6 +421,9 @@
       ],
       "Please retry": [
         "Prøv igen"
+      ],
+      "Re-verify": [
+        "Bekræft igen"
       ],
       "Reactivate now": [
         "Genaktiver nu"
@@ -479,6 +512,9 @@
       "Select": [
         "Vælg"
       ],
+      "Send email": [
+        "Send e-mail"
+      ],
       "Send invite": [
         "Send invitation"
       ],
@@ -540,6 +576,15 @@
       "Sync aliases": [
         "Synkroniser aliasser"
       ],
+      "To mailbox": [
+        "Til postkasse"
+      ],
+      "Transfer aliases": [
+        "Overfør aliasser"
+      ],
+      "Transfer and delete mailbox": [
+        "Overfør og slet postkasse"
+      ],
       "Transfer ownership": [
         "Overfør ejerskab"
       ],
@@ -548,6 +593,9 @@
       ],
       "Try again": [
         "Prøv igen"
+      ],
+      "Unblock contact": [
+        "Ophæv blokering af kontakt"
       ],
       "Understood, I will never need it": [
         "Forstået, jeg får aldrig brug for det",
@@ -663,6 +711,9 @@
       "[Error] an item could not be parsed": [
         "[Fejl] et element kunne ikke håndteres"
       ],
+      "A domain ownership must be verified first.": [
+        "Ejerskabet af et domæne skal først bekræftes."
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias kunne ikke opdateres i øjeblikket. Prøv igen senere."
       ],
@@ -731,6 +782,9 @@
         "Registrerede ${ errors.length } beskadiget CSV-række",
         "Registrerede ${ errors.length } beskadigede CSV-rækker"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Domænet kunne ikke verificeres. Sørg for, at du har tilføjet de korrekte DNS-poster"
+      ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
@@ -758,11 +812,32 @@
       "Failed to add email address": [
         "Kunne ikke tilføje e-mailadresse"
       ],
+      "Failed to block the contact": [
+        "Kunne ikke blokere kontakten"
+      ],
+      "Failed to create domain": [
+        "Kunne ikke oprette domæne"
+      ],
+      "Failed to create new mailbox": [
+        "Kunne ikke oprette ny postkasse"
+      ],
+      "Failed to create the contact": [
+        "Kunne ikke oprette kontakten"
+      ],
+      "Failed to delete domain": [
+        "Kunne ikke slette domæne"
+      ],
       "Failed to delete email address from monitoring": [
         "Kunne ikke slette e-mailadresse fra monitorering"
       ],
       "Failed to delete selected items": [
         "Kunne ikke slette de valgte elementer"
+      ],
+      "Failed to delete the contact": [
+        "Kunne ikke slette kontakten"
+      ],
+      "Failed to delete the mailbox": [
+        "Kunne ikke slette postkassen"
       ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brugerens adgang."
@@ -772,6 +847,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Kunne ikke indlæse databrud for dette e-mail-alias"
+      ],
+      "Failed to load domain settings.": [
+        "Domæneindstillinger kunne ikke hentes."
       ],
       "Failed to load item history": [
         "Kunne ikke indlæse elementhistorik"
@@ -791,6 +869,9 @@
       "Failed to remove user's access.": [
         "Kunne ikke fjerne brugerens adgang."
       ],
+      "Failed to resend verification code": [
+        "Kunne ikke sende bekræftelseskode igen"
+      ],
       "Failed to resend verification for custom email": [
         "Kunne ikke gensende bekræftelse for brugerdefineret e-mail"
       ],
@@ -809,8 +890,26 @@
       "Failed to unpin item": [
         "Kunne ikke frigøre element"
       ],
+      "Failed to update catch-all setting.": [
+        "Det lykkedes ikke at opdatere catch-all-indstillingen."
+      ],
+      "Failed to update default domain": [
+        "Kunne ikke opdatere standarddomænet"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Det lykkedes ikke at opdatere domænepostkasser."
+      ],
+      "Failed to update domain name.": [
+        "Det lykkedes ikke at opdatere domænenavnet."
+      ],
       "Failed to update monitoring settings": [
         "Kunne ikke opdatere monitoreringens indstillinger"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Kunne ikke opdatere indstillingen for generering af tilfældigt præfiks."
+      ],
+      "Failed to verify domain": [
+        "Kunne ikke bekræfte domæne"
       ],
       "Failed to verify email address": [
         "Kunne ikke bekræfte e-mailadresse"
@@ -1114,6 +1213,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } vil følge dit systemtema."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } vil generere en videresendelsesadresse (også kaldet omvendt alias), som du kan kopiere til udklipsholderen."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } vil kun importere indlogninger, noter, betalingskort og identiteter."
       ],
@@ -1147,6 +1249,9 @@
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dage til at prøve premium-funktioner gratis. Kun i din første uge med ${ BRAND_NAME }."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Der oprettes en kontakt for hver e-mailadresse, der sender e-mails til eller modtager e-mails fra ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny version af ${ PASS_APP_NAME } er tilgængelig. Opdater den for at nyde de seneste funktioner og fejlrettelser."
@@ -1190,6 +1295,9 @@
       "Aliases out of sync (${ aliasCount })": [
         "Usynkroniserede aliasser (${ aliasCount })"
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Alle aliasser, der bruger postkassen ${ emailJSX }, bliver også slettet."
+      ],
       "All breaches for this address were resolved": [
         "Alle databrud for denne adresse blev håndteret"
       ],
@@ -1211,11 +1319,20 @@
       "An item previously shared with you was removed": [
         "Et element, der tidligere var delt med dig, er blevet fjernet"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Er du sikker på, at du vil fjerne ${ emailJSX } fra dine postkasser?"
+      ],
       "Are you sure you want to remove the link?": [
         "Er du sikker på at du vil fjerne linket?"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Automatisk oprettede aliasser ejes automatisk af følgende postkasse(r):"
+      ],
       "Auto-lock successfully disabled.": [
         "Autolås er blevet deaktiveret."
+      ],
+      "automatically": [
+        "automatisk"
       ],
       "Automatically copy the generated password to the clipboard": [
         "Kopier automatisk den genererede adgangskode til udklipsholderen"
@@ -1231,6 +1348,9 @@
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biometri vil blive deaktiveret og skal aktiveres igen."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Tag dit eget domæne med, så behøver du ikke at købe endnu en e-mail-hostingløsning."
       ],
       "Built in 2FA authenticator": [
         "Indbygget 2FA-godkendelse"
@@ -1274,6 +1394,12 @@
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
       ],
+      "Create contact illustration": [
+        "Opret illustration af kontakt"
+      ],
+      "Created ${ time }.": [
+        "Oprettet ${ time }."
+      ],
       "Creating alias...": [
         "Opretter alias..."
       ],
@@ -1285,6 +1411,9 @@
       ],
       "Decrypting your data": [
         "Dekrypterer dine data"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Standardvisningsnavn for aliasser oprettet med ${ domainDisplay }, medmindre det overskrives af aliasvisningsnavnet."
       ],
       "Deleted items will be moved here first": [
         "Slettede elementer vil blive flytte hertil først"
@@ -1306,6 +1435,12 @@
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Opdag ${ PASS_APP_NAME } YouTube-video"
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "DNS-ændringer kan tage op til 24 timer at opdatere."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Domæne: ${ domainPath } eller @"
       ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
@@ -1330,6 +1465,15 @@
       ],
       "Email address successfully included in monitoring": [
         "E-mail-adresse inkluderet i monitorering"
+      ],
+      "Email headers illustration": [
+        "Illustration af e-mail-overskrifter"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Send en e-mail til denne adresse, og det vil se ud, som om den er sendt fra ${ exampleEmail } for eksempel."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "E-mails, der sendes til dine aliasser, videresendes til dine postkasser. Et alias kan have mere end én postkasse: nyttigt at dele et alias mellem dig og dine venner."
       ],
       "Emptying trash...": [
         "Tømmer papirkurven..."
@@ -1357,6 +1501,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Aktiverer PIN-autolås"
+      ],
+      "Enter the address you want to email.": [
+        "Indtast den adresse, du ønsker at sende en e-mail til."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Indtast verifikationskode. Ciffer ${ digit }."
@@ -1411,6 +1558,9 @@
       "Here you will find all the necessary information to get you started.": [
         "Her finder du alle de nødvendige oplysninger, der skal til, for at du kan komme i gang."
       ],
+      "Here's how it works:": [
+        "Det virker sådan her:"
+      ],
       "Import in progress:": [
         "Import i gang:"
       ],
@@ -1423,6 +1573,9 @@
       ],
       "Imported on ${ date }": [
         "Importeret ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "I ${ PASS_SHORT_APP_NAME } er en elementnote krypteret med elementets krypteringsnøgle, og kun brugere, der har adgang til elementet, kan se noten. Ikke engang ${ BRAND_NAME } eller SimpleLogin kan se den."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "For at få den bedste oplevelse ud af ${ PASS_APP_NAME }, bedes du give de nødvendige udvidelsestilladelser"
@@ -1535,6 +1688,9 @@
       ],
       "Moving items to trash": [
         "Flytter elementer til papirkurven"
+      ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Har du brug for at sende en e-mail til nogen, men vil ikke have, at de ser din e-mailadresse? Opret et kontaktalias."
       ],
       "Never": [
         "Aldrig"
@@ -1657,6 +1813,9 @@
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Indtast din ekstra adgangskode for at begynde at bruge ${ PASS_SHORT_APP_NAME }."
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Følg nedenstående trin for at oprette dit domæne."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Bemærk, at aliasset ikke kan gendannes, når først det er slettet. Måske vil du hellere deaktivere aliasset?"
       ],
@@ -1665,6 +1824,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Opgrader for at få tidlig adgang ${ PASS_APP_NAME } webapp"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Brug den fulde sti til domænet, for eksempel my-domain.com eller my-subdomain.my-domain.com, hvis du bruger et subdomæne."
       ],
       "Press Enter to copy": [
         "Tryk Enter for at kopiere"
@@ -1680,6 +1842,15 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Autofyld hurtigt dine gemte legitimationsoplysninger."
+      ],
+      "Record: CNAME": [
+        "Post: CNAME"
+      ],
+      "Record: MX": [
+        "Post: MX"
+      ],
+      "Record: TXT": [
+        "Post: TXT"
       ],
       "Registering extra password...": [
         "Registrerer ekstra adgangskode..."
@@ -1702,6 +1873,9 @@
       "Restoring trashed items...": [
         "Gendanner elementer i papirkurven..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Omvendt alias-adresse kopieret til udklipsholder. Sender du en e-mail til denne adresse, vil ${ Email } modtage den."
+      ],
       "Save login": [
         "Gem login"
       ],
@@ -1710,6 +1884,9 @@
       ],
       "Secure links": [
         "Sikre links"
+      ],
+      "See more info": [
+        "Se mere info"
       ],
       "Select an existing login or create a new one.": [
         "Vælg et eksisterende login, eller opret et nyt."
@@ -1753,6 +1930,12 @@
       "Signing you in": [
         "Logger dig ind"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "SimpleLogin-notatet gemmes samme sted som alias-adressen, og selvom det er beskyttet af kryptering i hvile, er det ikke E2E-krypteret, hvilket betyder, at alle, der har adgang til SimpleLogin-databasen, kan læse det."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Brug blot ${ emailBold } næste gang, du har brug for et alias: det bliver ${ automaticallyBold } oprettet, første gang det modtager en e-mail. Hvis du vil have mere finmasket kontrol, kan du også definere ${ rulesHyperLink }."
+      ],
       "Successfully exported all your items": [
         "Eksporterede alle dine elementer"
       ],
@@ -1770,6 +1953,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
+      ],
+      "The display name when sending an email from this alias.": [
+        "Visningsnavnet, når man sender en e-mail fra dette alias."
       ],
       "The export will only contain vaults that you own.": [
         "Eksporten vil kun indeholde bokse, som du ejer."
@@ -1796,6 +1982,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksport vil ikke være krypteret, og hvem som helst med adgang til den eksporterede fil vil kunne se dine adgangskoder. For en sikkerheds skyld bedes du slette den, når du er færdig med at bruge den."
       ],
+      "This operation is irreversible.": [
+        "Denne handling er irreversibel."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Denne operation er irreversibel. Alle aliasser, der bruger domænet ${ domainTextBold }, vil blive slettet. Bemærk, at aliasser ikke kan gendannes, når de er slettet."
+      ],
       "This option is currently not available on your device.": [
         "Denne mulighed er pt. ikke til stede på din enhed."
       ],
@@ -1808,6 +2000,12 @@
       "This version will be added to the history as the newest version.": [
         "Denne version vil blive tilføjet til historikken som den nyeste version."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Hvis du vil fortsætte med at modtage e-mails, skal du overføre disse aliasser til en anden postkasse:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Hvis du vil holde din personlige e-mailadresse skjult, kan du oprette en alias-kontakt, der maskerer din adresse."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "For at migrere data fra en anden adgangskodeadministrator skal du gå til adgangskodeadministratoren, eksportere dine data og derefter uploade dem til ${ PASS_APP_NAME }. Når dine data er blevet importeret, skal du slette den eksporterede fil."
       ],
@@ -1819,6 +2017,12 @@
       ],
       "Unable to copy to clipboard": [
         "Kunne ikke kopiere til udklipsholder"
+      ],
+      "Unconfigured": [
+        "Ikke konfigureret"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Ubegrænset hide-my-email-aliasser og avanceret alias-styring"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Lås op for ${ PASS_APP_NAME } med din pinkode for at få adgang til dine adgangsnøgler"
@@ -1868,6 +2072,9 @@
       "User's access successfully updated": [
         "Brugers adgang opdateret"
       ],
+      "Value:": [
+        "Værdi:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Boksen \"${ payload.content.name }\" blev slettet"
       ],
@@ -1898,6 +2105,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Ved oprettelse/redigering af et login på ${ PASS_APP_NAME } vil 'brugernavn'-inputtet altid være synligt."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Når der sendes en e-mail fra dette alias, vil e-mailen vise ${ emailSender } som afsender."
       ],
       "You are about to create:": [
         "Du er ved at oprette:"
@@ -1934,6 +2144,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nået den maksimalt tilladte længde på ${ maxLength } tegn."
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Du får mulighed for at tilpasse dine domæneindstillinger (catch-all e-mail-alias, standardvisningsnavn for aliasser osv.), når du har bekræftet dit domæne."
+      ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Du bliver logget ud og skal logge ind igen på alle dine andre enheder."
       ],
@@ -1955,6 +2168,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Din konto er begrænset, fordi din organisation har håndhævet to-faktor-godkendelse. Aktivér to-faktor-godkendelse i dine kontoindstillinger, eller kontakt din administrator."
       ],
+      "your domain": [
+        "dit domæne"
+      ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
       ],
@@ -1966,6 +2182,10 @@
       "${ aliasCount } alias": [
         "${ aliasCount } alias",
         "${ aliasCount } aliasser"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } blokering",
+        "${ blockedCount } blokeringer"
       ],
       "${ config.options.length } character": [
         "${ config.options.length } tegn",
@@ -1979,6 +2199,10 @@
         "${ days } dag",
         "${ days } dage"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } videresending",
+        "${ forwardCount } videresendinger"
+      ],
       "${ hours } hour": [
         "${ hours } time",
         "${ hours } timer"
@@ -1987,11 +2211,23 @@
         "${ minutes } minut",
         "${ minutes } minutter"
       ],
+      "${ months } month": [
+        "${ months } måned",
+        "${ months } måneder"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } version"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } svar",
+        "${ repliedCount } svar"
+      ],
+      "${ years } year": [
+        "${ years } år",
+        "${ years } år"
       ],
       "1 hour": [
         "1 time"
@@ -2044,6 +2280,9 @@
       "Account": [
         "Konto"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Tilføj et tilfældigt præfiks til dette domæne, når du opretter et nyt alias."
+      ],
       "Add section": [
         "Tilføj sektion"
       ],
@@ -2058,6 +2297,9 @@
       ],
       "Alias address": [
         "Alias-adresse"
+      ],
+      "Alias address (disabled)": [
+        "Alias-adresse (deaktiveret)"
       ],
       "Alias management": [
         "Alias-administration"
@@ -2122,6 +2364,9 @@
       "Cards": [
         "Kort"
       ],
+      "Catch-All": [
+        "Catch-All"
+      ],
       "City": [
         "By"
       ],
@@ -2133,6 +2378,9 @@
       ],
       "Confirm vault name": [
         "Bekræft boks-navn"
+      ],
+      "Contact created ${ time } ago.": [
+        "Kontakt oprettet for ${ time } siden."
       ],
       "Contact details": [
         "Kontaktoplysninger"
@@ -2194,8 +2442,14 @@
       "Display name": [
         "Visningsnavn"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Domæne"
+      ],
+      "Domain:": [
+        "Domæne:"
       ],
       "Domains": [
         "Domæner"
@@ -2320,6 +2574,9 @@
       "Include numbers (0-9)": [
         "Inkluder tal (0-9)"
       ],
+      "Info": [
+        "Info"
+      ],
       "Instagram handle": [
         "Instagram - brugernavn"
       ],
@@ -2377,6 +2634,9 @@
       "Logins": [
         "Logins"
       ],
+      "Mailboxes": [
+        "Postkasser"
+      ],
       "Make all admins": [
         "Gør alle til administratorer"
       ],
@@ -2422,14 +2682,23 @@
       "Newest to oldest": [
         "Nyeste til ældste"
       ],
+      "No Activity in the last 14 days.": [
+        "Ingen aktivitet i de sidste 14 dage."
+      ],
       "No history": [
         "Ingen historik"
       ],
       "None": [
         "Ingen"
       ],
+      "Not selected": [
+        "Ikke valgt"
+      ],
       "Note": [
         "Note"
+      ],
+      "Note • SimpleLogin": [
+        "Note • SimpleLogin"
       ],
       "Notes": [
         "Noter"
@@ -2491,6 +2760,12 @@
       "Prefix": [
         "Præfiks"
       ],
+      "Premium domain": [
+        "Premium domæne"
+      ],
+      "Priority:": [
+        "Prioritet:"
+      ],
       "Prompt for auto-save": [
         "Spørg om auto-gem"
       ],
@@ -2499,6 +2774,9 @@
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Beskyt ${ PASS_APP_NAME } med en ekstra adgangskode"
+      ],
+      "Public domain": [
+        "Offentligt domæne"
       ],
       "Rate us": [
         "Bedøm os"
@@ -2529,6 +2807,9 @@
       ],
       "Security code": [
         "Sikkerhedskode"
+      ],
+      "Select a domain": [
+        "Vælg et domæne"
       ],
       "Select an email address": [
         "Vælg en e-mailadresse"
@@ -2589,6 +2870,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Synkroniser aliasser med SimpleLogin"
+      ],
+      "Target:": [
+        "Mål:"
       ],
       "Tax number": [
         "Afgiftsnummer"
@@ -2663,6 +2947,9 @@
       "Username/email": [
         "Brugernavn/e-mail"
       ],
+      "Value:": [
+        "Værdi:"
+      ],
       "Vault ID": [
         "Boks-ID"
       ],
@@ -2704,6 +2991,9 @@
       ],
       "Your browser will stop using its built-in password manager.": [
         "Din browser vil ikke længere bruge sin indbyggede adgangskodeadministrator."
+      ],
+      "Your domain": [
+        "Dit domæne"
       ],
       "ZIP or Postal code": [
         "Postnummer"
@@ -2843,6 +3133,9 @@
       ]
     },
     "sso": {
+      "Invalid confirmation code": [
+        "Ugyldig bekræftelseskode"
+      ],
       "Sign-in failed": [
         "Log-ind mislykkedes"
       ],
@@ -2853,9 +3146,56 @@
         "Der blev anmodet om login på en anden enhed. Var det dig? "
       ]
     },
+    "sso: auth device state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Inactive": [
+        "Inaktiv"
+      ],
+      "Pending activation": [
+        "Afventende aktivering"
+      ],
+      "Pending admin activation": [
+        "Afventende administratoraktivering"
+      ],
+      "Rejected": [
+        "Afvist"
+      ],
+      "Signed out": [
+        "Logget ud"
+      ],
+      "Unknown": [
+        "Ukendt"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synkronisering af aliasser er aktiveret. SimpleLogin-alias kan tage lidt tid at synkronisere"
+      ],
+      "Contact successfully blocked": [
+        "Kontakt blokeret"
+      ],
+      "Contact successfully created": [
+        "Kontakt oprettet"
+      ],
+      "Contact successfully deleted": [
+        "Kontakt slettet"
+      ],
+      "Contact successfully unblocked": [
+        "Blokering fjernet fra kontakt"
+      ],
+      "Display name successfully updated": [
+        "Visningsnavn opdateret"
+      ],
+      "Mailboxes successfully updated": [
+        "Postkasser opdateret"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Tilfældig præfiksgenerering deaktiveret"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Tilfældig præfiksgenerering aktiveret"
       ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } bruger.",
@@ -2877,11 +3217,23 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-indstillinger"
       ],
+      "Activity": [
+        "Aktivitet"
+      ],
+      "Add custom domain": [
+        "Tilføj brugerdomæne"
+      ],
+      "Alias contacts": [
+        "Alias-kontakter"
+      ],
       "Auto-lock update": [
         "Autolås-opdatering"
       ],
       "Autofill": [
         "Autofyld"
+      ],
+      "Blocked addresses": [
+        "Blokerede adresser"
       ],
       "Confirm extra password": [
         "Bekræft ekstra adgangskode"
@@ -2914,6 +3266,9 @@
         "Slet ${ deletedItemsCount } element?",
         "Slet ${ deletedItemsCount } elementer?"
       ],
+      "Delete domain": [
+        "Slet domæne"
+      ],
       "Delete this item?": [
         "Slet dette element?"
       ],
@@ -2922,6 +3277,15 @@
       ],
       "Discard changes?": [
         "Kassér ændringer?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (Valgfri)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (Valgfri)"
+      ],
+      "Domain ownership verification": [
+        "Verifikation af domæneejerskab"
       ],
       "Email": [
         "E-mail"
@@ -3006,6 +3370,9 @@
       "Move item to \"${ vaultName }\"": [
         "Flyt element til \"${ vaultName }\""
       ],
+      "MX record": [
+        "MX-post"
+      ],
       "No items selected": [
         "Ingen elementer valgt"
       ],
@@ -3067,6 +3434,9 @@
       "Share with": [
         "Del med"
       ],
+      "SPF (Optional)": [
+        "SPF (Valgfri)"
+      ],
       "Status": [
         "Status"
       ],
@@ -3124,6 +3494,9 @@
       "Welcome to your new password manager!": [
         "Velkommen til din nye adgangskodeadministrator!"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Hvad er forskellen mellem en ${ PASS_SHORT_APP_NAME } note og en SimpleLogin note?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Dit ${ planName }-abonnement udløber ${ endDate }"
       ],
@@ -3139,6 +3512,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "Domæne-URL er ugyldig"
+      ],
       "Duplicated URL": [
         "Duplikeret URL"
       ],
@@ -3212,8 +3588,14 @@
       "Delete alias": [
         "Slet alias"
       ],
+      "Domain cannot be empty": [
+        "Domæne må ikke være tomt"
+      ],
       "Duplicate email addresses.": [
         "Dubletter af e-mailadresser."
+      ],
+      "Email cannot be empty": [
+        "E-mail må ikke være tom"
       ],
       "Empty note": [
         "Tom note"
@@ -3293,6 +3675,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Kontakt os, så vi kan undersøge problemet"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Bemærk, at aliasser ikke kan gendannes, når de er slettet."
       ],
       "Please verify your email address in order to use email aliases": [
         "Bekræft din e-mailadresse for at bruge e-mail-aliasser."

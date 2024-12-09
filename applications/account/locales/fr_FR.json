@@ -4468,6 +4468,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Les factures n'ont pas pu être chargées. Veuillez réessayer plus tard."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Les transactions n'ont pas pu être chargées. Veuillez réessayer plus tard."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Désélectionnez au moins ${ calendarsToFixCount } calendrier.",
         "Désélectionnez au moins ${ calendarsToFixCount } calendriers."
@@ -9313,6 +9316,9 @@
       "You have no saved payment methods.": [
         "Vous n'avez actuellement aucun moyen de paiement enregistré."
       ],
+      "You have no transactions.": [
+        "Vous n'avez aucune transaction."
+      ],
       "You may be redirected to your bank’s website.": [
         "Vous serez peut-être redirigé vers le site internet de votre banque."
       ],
@@ -10841,6 +10847,9 @@
       "Sticky labels": [
         "Appliquer les labels aux conversations"
       ],
+      "Strong": [
+        "Fort"
+      ],
       "Subscription options": [
         "Options de l'abonnement"
       ],
@@ -10925,8 +10934,14 @@
       "Video conferencing with Zoom": [
         "Vidéoconférence avec Zoom"
       ],
+      "Vulnerable": [
+        "Vulnérable"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Nous sommes désolés de vous voir partir. Pouvez-vous nous expliquer les raisons de votre départ pour que nous puissions nous améliorer ?"
+      ],
+      "Weak": [
+        "Faible"
       ],
       "Week start": [
         "Début de la semaine"
@@ -14959,6 +14974,9 @@
       ],
       "Invoice": [
         "Facture"
+      ],
+      "Transactions": [
+        "Transactions"
       ]
     },
     "Select search results": {
@@ -18365,6 +18383,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Facture ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "Transaction de ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -18721,6 +18742,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Cette version du navigateur Tor n'est pas prise en charge. Nous vous invitons à mettre à jour avec la dernière ${ stableRelease }."
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Remboursement"
+      ],
+      "Failed": [
+        "Opération échouée"
+      ],
+      "Needs attention": [
+        "Nécessite votre attention"
+      ],
+      "Refunded": [
+        "Remboursé"
+      ],
+      "Success": [
+        "Opération réussie"
+      ],
+      "Timeout": [
+        "Délai dépassé"
+      ],
+      "Voided": [
+        "Annulé"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Crédit d’ajustement"
+      ],
+      "Authorization": [
+        "Autorisation"
+      ],
+      "Bank transfer": [
+        "Virement bancaire"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Espèces"
+      ],
+      "Chargeback": [
+        "Remboursement"
+      ],
+      "Credit": [
+        "Crédit"
+      ],
+      "Credit transfer": [
+        "Transfert de crédits"
+      ],
+      "Currency conversion": [
+        "Conversion de devise"
+      ],
+      "Gift card": [
+        "Carte cadeau"
+      ],
+      "Migration": [
+        "Migration"
+      ],
+      "Payment": [
+        "Paiement"
+      ],
+      "Payment reversal": [
+        "Annulation de paiement"
+      ],
+      "Refund": [
+        "Remboursement"
       ]
     },
     "unprivatization": {

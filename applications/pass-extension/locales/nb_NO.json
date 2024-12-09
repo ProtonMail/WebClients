@@ -17,8 +17,14 @@
       "Add current URL": [
         "Legg til gjeldende nettadresse"
       ],
+      "Add custom domain": [
+        "Legg til egendefinert domene"
+      ],
       "Add domain": [
         "Legg til domene"
+      ],
+      "Add mailbox": [
+        "Legg til postboks"
       ],
       "Add more": [
         "Legg til flere"
@@ -44,6 +50,9 @@
       "Back": [
         "Tilbake"
       ],
+      "Block contact": [
+        "Blokkèr kontakt"
+      ],
       "Bulk delete items from trash": [
         "Masseslett elementer fra papirkurven"
       ],
@@ -64,6 +73,12 @@
       ],
       "Change": [
         "Endre"
+      ],
+      "Check DNS": [
+        "Sjekk DNS"
+      ],
+      "Check settings": [
+        "Kontroller innstillinger"
       ],
       "Choose a file or drag it here": [
         "Velg en fil eller dra den hit"
@@ -104,6 +119,9 @@
       "Continue without pinning": [
         "Fortsett uten å feste"
       ],
+      "Copy alias address": [
+        "Kopier aliasadressen"
+      ],
       "Copy and close": [
         "Kopier og lukk"
       ],
@@ -133,6 +151,9 @@
       ],
       "Create card": [
         "Opprett kort"
+      ],
+      "Create contact": [
+        "Opprett kontakt"
       ],
       "Create identity": [
         "Opprett identitet"
@@ -172,6 +193,9 @@
       ],
       "Delete it, I will never need it": [
         "Slett det, jeg kommer aldri til å trenge det"
+      ],
+      "Delete mailbox": [
+        "Slett postboks"
       ],
       "Delete password": [
         "Slett passord"
@@ -317,6 +341,9 @@
       "Make admin": [
         "Gjør til administrator"
       ],
+      "Make default": [
+        "Angi som standard"
+      ],
       "Make editor": [
         "Gjør til redaktør"
       ],
@@ -334,6 +361,9 @@
       ],
       "Maximum views": [
         "Maksimalt antall visninger"
+      ],
+      "More info": [
+        "Mer info"
       ],
       "More info: ${ safeTitle }": [
         "Mer informasjon: ${ safeTitle }"
@@ -391,6 +421,9 @@
       ],
       "Please retry": [
         "Prøv igjen"
+      ],
+      "Re-verify": [
+        "Verifiser på nytt"
       ],
       "Reactivate now": [
         "Aktiver på nytt nå"
@@ -479,6 +512,9 @@
       "Select": [
         "Velg"
       ],
+      "Send email": [
+        "Send e-post"
+      ],
       "Send invite": [
         "Send invitasjon"
       ],
@@ -540,6 +576,15 @@
       "Sync aliases": [
         "Synkroniser aliaser"
       ],
+      "To mailbox": [
+        "Til postboks"
+      ],
+      "Transfer aliases": [
+        "Overfør aliaser"
+      ],
+      "Transfer and delete mailbox": [
+        "Overfør og slett postboks"
+      ],
       "Transfer ownership": [
         "Overfør eierskap"
       ],
@@ -548,6 +593,9 @@
       ],
       "Try again": [
         "Prøv igjen"
+      ],
+      "Unblock contact": [
+        "Fjern blokkering av kontakt"
       ],
       "Understood, I will never need it": [
         "Forstått, jeg kommer aldri til å trenge det",
@@ -640,11 +688,44 @@
       "A checked box means the feature is disabled.": [
         "En avmerket boks betyr at funksjonen er deaktivert."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Legg til følgende CNAME DNS-poster til domenet ditt."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Legg til følgende MX DNS-post til domenet ditt. Vær oppmerksom på at det er en prikk (.) ved sluttmåladressene. Hvis domeneregistratoren ikke tillater dette etterfølgende punktumet, må du fjerne det når du legger til DNS-posten."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Legg til følgende TXT DNS-post til domenet ditt."
+      ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Overvåking av det \"mørke nettet\" er tilgjengelige med en betalt plan. Oppgrader for umiddelbar tilgang."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } er en e-postautentiseringsmetode designet for å unngå e-postforfalskning. Det anbefales på det sterkeste å sette opp DKIM for å redusere sjansen for at e-postene dine havner i mottakerens søppelpostmappe."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } er designet for å beskytte domenet mot uautorisert bruk, ofte kjent som e-postforfalskning. Bygget rundt SPF og DKIM, forteller en DMARC-policy den mottakende e-postserveren hva den skal gjøre hvis ingen av disse autentiseringsmetodene går gjennom."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Hvis du bruker et underdomene, f.eks. ${ subdomainExample }, må du istedenfor bruke ${ dmarcExampleSubdomain } som domenet."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Hvis du bruker et underdomene, f.eks. underdomene.domene.no, må du istedenfor bruke ${ domainKeyExampleSubdomain } som domenet. Det betyr, hvis domenet ditt er e-post.domene.no, skal du skrive inn ${ domainKeyExampleMail } som domenet."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Hvis du bruker CloudFlare, sørg for at du ikke velger alternativet Proxy."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Liste over domener der visse autofunksjoner i ${ PASS_SHORT_APP_NAME } (autofyll, autoforslag, autolagre) ikke skal kjøres. ${ infoText }"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Noen DNS-registratorer kan kreve en fullstendig postbane, i dette tilfellet kan du bruke ${ domain } som domeneverdi i stedet."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Noen domeneregistratorer (Namecheap, CloudFlare, osv) kan også bruke @ for rotdomenet."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } er en e-postautentiseringsmetode utviklet for å oppdage forfalskede avsenderadresser under levering av e-posten. Det anbefales sterkt å sette opp SPF for å redusere sjansen for at e-postene dine havner i mottakerens søppelpostmappe."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Denne kontoen er sårbar, besøk tjenesten og endre passordet ditt."
@@ -652,8 +733,16 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Denne tjenesten tilbyr 2FA. Aktiver den for ekstra kontosikkerhet."
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "For å bekrefte eierskapet til domenet, legg til følgende TXT-post. Noen domeneregistratorer (Namecheap, CloudFlare, osv) kan bruke @ for rotdomenet."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Lås opp avanserte sikkerhetsfunksjoner og detaljerte logger for å beskytte din tilstedeværelse på nettet."
+      ]
+    },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "alt@${ domainDisplay }"
       ]
     },
     "Error": {
@@ -662,6 +751,9 @@
       ],
       "[Error] an item could not be parsed": [
         "[Feil] et element kunne ikke analyseres"
+      ],
+      "A domain ownership must be verified first.": [
+        "Et domeneeierskap må bekreftes først."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias kunne ikke oppdateres for øyeblikket. Vennligst prøv igjen senere"
@@ -731,6 +823,9 @@
         "Oppdaget ${ errors.length } korrupt csv-rad",
         "Oppdaget ${ errors.length } korrupte csv-rader"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Domenet kunne ikke bekreftes. Sørg for at du har lagt til de riktige DNS-postene"
+      ],
       "Domain not available, try again later": [
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
       ],
@@ -758,11 +853,32 @@
       "Failed to add email address": [
         "Kunne ikke legge til e-postadresse"
       ],
+      "Failed to block the contact": [
+        "Kunne ikke blokkere kontakten"
+      ],
+      "Failed to create domain": [
+        "Kunne ikke opprette domenet"
+      ],
+      "Failed to create new mailbox": [
+        "Kan ikke opprette ny postboks"
+      ],
+      "Failed to create the contact": [
+        "Kunne ikke opprette kontakten"
+      ],
+      "Failed to delete domain": [
+        "Kunne ikke slette domenet"
+      ],
       "Failed to delete email address from monitoring": [
         "Kunne ikke slette e-postadresse fra overvåking"
       ],
       "Failed to delete selected items": [
         "Kunne ikke slette valgte elementer"
+      ],
+      "Failed to delete the contact": [
+        "Kunne ikke slette kontakten"
+      ],
+      "Failed to delete the mailbox": [
+        "Kan ikke slette postboksen"
       ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brukerens tilgang."
@@ -772,6 +888,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Kunne ikke laste inn brudd for denne e-postaliasen"
+      ],
+      "Failed to load domain settings.": [
+        "Kunne ikke laste inn innstillingene for domenet."
       ],
       "Failed to load item history": [
         "Kunne ikke laste inn elementhistorikken"
@@ -791,6 +910,9 @@
       "Failed to remove user's access.": [
         "Kunne ikke fjerne brukerens tilgang."
       ],
+      "Failed to resend verification code": [
+        "Kan ikke sende bekreftelseskoden på nytt"
+      ],
       "Failed to resend verification for custom email": [
         "Kunne ikke sende bekreftelse på nytt for tilpasset e-post"
       ],
@@ -809,8 +931,26 @@
       "Failed to unpin item": [
         "Kunne ikke løsne element"
       ],
+      "Failed to update catch-all setting.": [
+        "Kunne ikke oppdatere innstilling for catch-all."
+      ],
+      "Failed to update default domain": [
+        "Kan ikke oppdatere standard domene"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Kunne ikke oppdatere domenepostbokser."
+      ],
+      "Failed to update domain name.": [
+        "Kunne ikke oppdatere domenenavnet."
+      ],
       "Failed to update monitoring settings": [
         "Kunne ikke oppdatere overvåkingsinnstillingene"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Kunne ikke oppdatere innstillingen for generering av tilfeldige prefikser."
+      ],
+      "Failed to verify domain": [
+        "Kunne ikke bekrefte domenet"
       ],
       "Failed to verify email address": [
         "Kunne ikke verifisere e-postadressen"
@@ -1114,6 +1254,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } vil følge systemtemaet ditt."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } vil generere en videresendingsadresse (også kalt omvendt alias) som du kan kopiere til utklippstavlen."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } vil bare importere pålogginger, notater, kredittkort og identiteter."
       ],
@@ -1147,6 +1290,9 @@
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dager for å prøve premiumfunksjoner gratis. Bare i løpet av den første uken med ${ BRAND_NAME }."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Det opprettes en kontakt for hver e-postadresse som sender e-post til eller mottar e-post fra ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny versjon av ${ PASS_APP_NAME } er tilgjengelig. Oppdater den for å nyte de nyeste funksjonene og feilrettingene."
@@ -1190,6 +1336,9 @@
       "Aliases out of sync (${ aliasCount })": [
         "Aliaser ute av synkronisering (${ aliasCount })"
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Alle aliaser som bruker postkassen ${ emailJSX } vil også bli slettet."
+      ],
       "All breaches for this address were resolved": [
         "Alle brudd for denne adressen ble løst"
       ],
@@ -1211,11 +1360,20 @@
       "An item previously shared with you was removed": [
         "Et element som tidligere er delt med deg, ble fjernet."
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Er du sikker på at du vil fjerne ${ emailJSX } fra postboksene dine?"
+      ],
       "Are you sure you want to remove the link?": [
         "Er du sikker på at du vil fjerne denne koblingen?"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Automatisk opprettede aliaser eies automatisk av følgende postboks(er):"
+      ],
       "Auto-lock successfully disabled.": [
         "Auto-lås vellykket deaktivert."
+      ],
+      "automatically": [
+        "automatisk"
       ],
       "Automatically copy the generated password to the clipboard": [
         "Kopier automatisk det genererte passordet til utklippstavlen"
@@ -1231,6 +1389,9 @@
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biometri vil bli deaktivert og må aktiveres på nytt."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Ta med ditt eget domene, og du trenger ikke kjøpe enda en e-posthostingløsning."
       ],
       "Built in 2FA authenticator": [
         "Innebygget 2FA-autentisering"
@@ -1274,6 +1435,12 @@
       "Copied to clipboard": [
         "Kopiert til utklippstavlen"
       ],
+      "Create contact illustration": [
+        "Lag kontaktillustrasjon"
+      ],
+      "Created ${ time }.": [
+        "Opprettet ${ time }."
+      ],
       "Creating alias...": [
         "Oppretter alias..."
       ],
@@ -1285,6 +1452,9 @@
       ],
       "Decrypting your data": [
         "Dekrypterer dataene dine"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Standard visningsnavn for aliaser som er opprettet med ${ domainDisplay }, med mindre det overskrives av aliasets visningsnavn."
       ],
       "Deleted items will be moved here first": [
         "Slettede elementer flyttes hit først"
@@ -1306,6 +1476,12 @@
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Oppdag ${ PASS_APP_NAME }-YouTube Video"
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "DNS-endringer kan ta opptil 24 timer å oppdatere."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Domene: ${ domainPath } eller @"
       ],
       "Drop file here to upload": [
         "Slipp fil her for å laste opp"
@@ -1330,6 +1506,15 @@
       ],
       "Email address successfully included in monitoring": [
         "E-postadresse inkludert i overvåking"
+      ],
+      "Email headers illustration": [
+        "E-posthoderillustrasjon"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Send denne e-posten til denne adressen, og den vil se ut til å være sendt fra ${ exampleEmail } for eksempel."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "E-poster som sendes til aliasene dine, videresendes til postkassene dine. Et alias kan ha mer enn én postboks: nyttig for å dele et alias mellom deg og vennene dine."
       ],
       "Emptying trash...": [
         "Tømming av papirkurven..."
@@ -1357,6 +1542,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Aktiverer PIN auto-lås"
+      ],
+      "Enter the address you want to email.": [
+        "Skriv inn adressen du vil sende e-post til."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Skriv inn verifiseringskode. Siffer ${ digit }."
@@ -1411,6 +1599,9 @@
       "Here you will find all the necessary information to get you started.": [
         "Her finner du all nødvendig informasjon for å komme i gang."
       ],
+      "Here's how it works:": [
+        "Slik fungerer det:"
+      ],
       "Import in progress:": [
         "Import pågår:"
       ],
@@ -1423,6 +1614,9 @@
       ],
       "Imported on ${ date }": [
         "Importert den ${ date }."
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "I ${ PASS_SHORT_APP_NAME } krypteres et elementnotat med elementkrypteringsnøkkelen, og bare brukere som har tilgang til elementet, kan se notatet. Ikke engang ${ BRAND_NAME } eller SimpleLogin kan se det."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "For å få den beste opplevelsen ut av ${ PASS_APP_NAME }, vennligst gi de nødvendige utvidelsestillatelsene."
@@ -1535,6 +1729,9 @@
       ],
       "Moving items to trash": [
         "Flytter elementer til papirkurven"
+      ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Trenger du å sende e-post til noen, men vil ikke at de skal se e-postadressen din? Sett opp et kontaktalias."
       ],
       "Never": [
         "Aldri"
@@ -1657,6 +1854,9 @@
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Vennligst skriv inn ditt ekstra passord for å begynne å bruke ${ PASS_SHORT_APP_NAME }."
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Følg trinnene nedenfor for å sette opp domenet ditt."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet. Kanskje du vil deaktivere aliaset i stedet?"
       ],
@@ -1665,6 +1865,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Vennligst oppgrader for å få tidlig tilgang til ${ PASS_APP_NAME }-webapp"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Bruk fullbanedomene, for eksempel mitt-domene.no eller mitt-underdomene.mitt-domene.no hvis du bruker et underdomene."
       ],
       "Press Enter to copy": [
         "Trykk Enter for å kopiere"
@@ -1680,6 +1883,15 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Autofyll raskt den lagrede legitimasjonen din."
+      ],
+      "Record: CNAME": [
+        "Post: CNAME"
+      ],
+      "Record: MX": [
+        "Post: MX"
+      ],
+      "Record: TXT": [
+        "Post: TXT"
       ],
       "Registering extra password...": [
         "Registrerer ekstra passord..."
@@ -1702,6 +1914,9 @@
       "Restoring trashed items...": [
         "Gjenoppretter elementer fra papirkurven..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Omvendt aliasadresse kopiert til utklippstavlen. Send en e-post til denne adressen, og ${ Email } vil motta den."
+      ],
       "Save login": [
         "Lagre pålogging"
       ],
@@ -1710,6 +1925,9 @@
       ],
       "Secure links": [
         "Sikre koblinger"
+      ],
+      "See more info": [
+        "Se mer info"
       ],
       "Select an existing login or create a new one.": [
         "Velg en eksisterende pålogging eller opprett en ny."
@@ -1753,6 +1971,12 @@
       "Signing you in": [
         "Logger deg på"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "SimpleLogin-notatet lagres sammen på samme sted med aliasadresse, og selv om det er beskyttet av kryptering i hvile, er det ikke E2E-kryptert, noe som betyr at alle som har tilgang til SimpleLogin-databasen kan lese det."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Bare bruk ${ emailBold } neste gang du trenger et alias: det blir ${ automaticallyBold } opprettet første gang det mottar en e-post. Hvis du vil ha mer finkornet kontroll, kan du også definere ${ rulesHyperLink }."
+      ],
       "Successfully exported all your items": [
         "Eksporterte alle elementene dine"
       ],
@@ -1770,6 +1994,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Takk, problemet er rapportert"
+      ],
+      "The display name when sending an email from this alias.": [
+        "Visningsnavnet når du sender en e-post fra dette aliaset."
       ],
       "The export will only contain vaults that you own.": [
         "Eksporten inneholder bare hvelv som du eier."
@@ -1796,6 +2023,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksporten vil være ukryptert, og alle med tilgang til den eksporterte filen vil kunne se passordene dine. For sikkerhets skyld, vennligst slett den etter at du er ferdig med å bruke den."
       ],
+      "This operation is irreversible.": [
+        "Denne operasjonen er irreversibel."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Denne operasjonen er irreversibel. Alle aliaser som bruker domenet ${ domainTextBold } vil bli slettet. Vær oppmerksom på at aliaser ikke kan gjenopprettes når de er slettet."
+      ],
       "This option is currently not available on your device.": [
         "Dette alternativet er for øyeblikket ikke tilgjengelig på enheten din."
       ],
@@ -1811,6 +2044,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dette vil avvise enheten **${ name }** som prøvde å logge på ${ BRAND_NAME }-kontoen din den **${ date }**."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Hvis du vil fortsette å motta e-post, flytter du disse aliasene til en annen postboks:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Hvis du vil holde den personlige e-postadressen din skjult, kan du opprette en aliaskontakt som maskerer adressen din."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "For å migrere data fra en annen passordbehandler, gå til passordbehandleren, eksporter dataene dine og last dem deretter opp til ${ PASS_APP_NAME }. Når dataene er importert, sletter du den eksporterte filen."
       ],
@@ -1822,6 +2061,12 @@
       ],
       "Unable to copy to clipboard": [
         "Ikke i stand til å kopiere til utklippstavlen"
+      ],
+      "Unconfigured": [
+        "Ikke konfigurert"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Ubegrenset antall hide-my-email-aliaser og avansert aliasadministrasjon"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Lås opp ${ PASS_APP_NAME } med PIN-koden for å tilgang til dine tilgangsnøkler"
@@ -1871,6 +2116,9 @@
       "User's access successfully updated": [
         "Brukerens tilgang oppdatert"
       ],
+      "Value:": [
+        "Verdi:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Hvelv \"${ payload.content.name }\" slettet"
       ],
@@ -1901,6 +2149,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Når du oppretter/redigerer en pålogging på ${ PASS_APP_NAME } vil 'brukernavn'-feltet alltid være synlig."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Når du sender en e-post fra dette aliaset, vil e-posten vise ${ emailSender } som avsender."
       ],
       "You are about to create:": [
         "Du er i ferd med å opprette:"
@@ -1937,6 +2188,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nådd den maksimalt tillatte lengden på ${ maxLength }-tegn."
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Du vil kunne tilpasse domeneinnstillingene dine (catch-all e-postaliaser, standard visningsnavn for aliaser osv...) etter å ha bekreftet domenet ditt."
+      ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Du blir logget ut og må logge på igjen på alle de andre enhetene dine."
       ],
@@ -1958,6 +2212,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Kontoen din er begrenset fordi organisasjonen din har håndhevet totrinnsverifisering. Aktiver tofaktorautentisering i kontoinnstillingene, eller kontakt administratoren."
       ],
+      "your domain": [
+        "ditt domene"
+      ],
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
@@ -1969,6 +2226,10 @@
       "${ aliasCount } alias": [
         "${ aliasCount } alias",
         "${ aliasCount } aliaser"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } blokkering",
+        "${ blockedCount } blokkeringer"
       ],
       "${ config.options.length } character": [
         "${ config.options.length } tegn",
@@ -1982,6 +2243,10 @@
         "${ days } dag",
         "${ days } dager"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } videresending",
+        "${ forwardCount } videresendinger"
+      ],
       "${ hours } hour": [
         "${ hours } time",
         "${ hours } timer"
@@ -1990,11 +2255,23 @@
         "${ minutes } minutt",
         "${ minutes } minutter"
       ],
+      "${ months } month": [
+        "${ months } måned",
+        "${ months } måneder"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-versjon"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } svar",
+        "${ repliedCount } svar"
+      ],
+      "${ years } year": [
+        "${ years } år",
+        "${ years } år"
       ],
       "1 hour": [
         "1 time"
@@ -2047,6 +2324,9 @@
       "Account": [
         "Konto"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Legg til et tilfeldig prefiks for dette domenet når du oppretter et nytt alias."
+      ],
       "Add section": [
         "Legg til seksjon"
       ],
@@ -2061,6 +2341,9 @@
       ],
       "Alias address": [
         "Aliasadresse"
+      ],
+      "Alias address (disabled)": [
+        "Aliasadresse (deaktivert)"
       ],
       "Alias management": [
         "Aliasadministrasjon"
@@ -2125,6 +2408,9 @@
       "Cards": [
         "Kort"
       ],
+      "Catch-All": [
+        "Catch-all"
+      ],
       "City": [
         "Poststed"
       ],
@@ -2136,6 +2422,9 @@
       ],
       "Confirm vault name": [
         "Bekreft hvelvnavn"
+      ],
+      "Contact created ${ time } ago.": [
+        "Kontakt opprettet ${ time } siden."
       ],
       "Contact details": [
         "Kontaktdetaljer"
@@ -2197,8 +2486,14 @@
       "Display name": [
         "Visningsnavn"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Domene"
+      ],
+      "Domain:": [
+        "Domene:"
       ],
       "Domains": [
         "Domener"
@@ -2323,6 +2618,9 @@
       "Include numbers (0-9)": [
         "Inkluder tall (0-9)"
       ],
+      "Info": [
+        "Info"
+      ],
       "Instagram handle": [
         "Instagram-brukernavn"
       ],
@@ -2380,6 +2678,9 @@
       "Logins": [
         "Pålogginger"
       ],
+      "Mailboxes": [
+        "Postbokser"
+      ],
       "Make all admins": [
         "Gjør alle administratorer"
       ],
@@ -2425,14 +2726,23 @@
       "Newest to oldest": [
         "Nyeste til eldste"
       ],
+      "No Activity in the last 14 days.": [
+        "Ingen aktivitet de siste 14 dagene."
+      ],
       "No history": [
         "Ingen historikk"
       ],
       "None": [
         "Ingen"
       ],
+      "Not selected": [
+        "Ikke valgt"
+      ],
       "Note": [
         "Notat"
+      ],
+      "Note • SimpleLogin": [
+        "Notat • SimpleLogin"
       ],
       "Notes": [
         "Notater"
@@ -2494,6 +2804,12 @@
       "Prefix": [
         "Prefiks"
       ],
+      "Premium domain": [
+        "Premium-domene"
+      ],
+      "Priority:": [
+        "Prioritet:"
+      ],
       "Prompt for auto-save": [
         "Be om autolagring"
       ],
@@ -2502,6 +2818,9 @@
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Beskytt ${ PASS_APP_NAME } med ett ekstra passord"
+      ],
+      "Public domain": [
+        "Offentlig domene"
       ],
       "Rate us": [
         "Vurder oss"
@@ -2532,6 +2851,9 @@
       ],
       "Security code": [
         "Sikkerhetskode"
+      ],
+      "Select a domain": [
+        "Velg et domene"
       ],
       "Select an email address": [
         "Velg en e-postadresse"
@@ -2592,6 +2914,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Synkroniser aliaser med SimpleLogin"
+      ],
+      "Target:": [
+        "Mål:"
       ],
       "Tax number": [
         "Avgiftsnummer"
@@ -2666,6 +2991,9 @@
       "Username/email": [
         "Brukernavn/e-post"
       ],
+      "Value:": [
+        "Verdi:"
+      ],
       "Vault ID": [
         "Hvelv ID"
       ],
@@ -2708,8 +3036,16 @@
       "Your browser will stop using its built-in password manager.": [
         "Nettleseren din vil slutte å bruke den innebygde passordbehandleren."
       ],
+      "Your domain": [
+        "Ditt domene"
+      ],
       "ZIP or Postal code": [
         "Postnummer"
+      ]
+    },
+    "Link": {
+      "auto create rules ››": [
+        "opprett automatisk regler ››"
       ]
     },
     "Message": {
@@ -2772,6 +3108,9 @@
       "Add text": [
         "Legg til tekst"
       ],
+      "Alias Display Name": [
+        "Visningsnavn for alias"
+      ],
       "Email address": [
         "E-postadresse"
       ],
@@ -2798,6 +3137,15 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "my-domain.com": [
+        "mitt-domene.no"
+      ],
+      "Name to display when sending an email": [
+        "Navn som skal vises når du sender en e-post"
+      ],
+      "Note from SimpleLogin": [
+        "Notat fra SimpleLogin"
       ],
       "Password": [
         "Passord"
@@ -2910,9 +3258,63 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Aliassynkronisering aktivert. SimpleLogin-aliaser kan ta litt tid å synkronisere"
       ],
+      "Catch-all setting successfully disabled": [
+        "Catch-all-innstilling ble deaktivert"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Catch-all-innstilling ble aktivert"
+      ],
+      "Contact successfully blocked": [
+        "Kontakt blokkert"
+      ],
+      "Contact successfully created": [
+        "Kontakt opprettet"
+      ],
+      "Contact successfully deleted": [
+        "Kontakt slettet"
+      ],
+      "Contact successfully unblocked": [
+        "Kontakt opphevet fra blokkering"
+      ],
+      "Default domain successfully updated": [
+        "Standard domene ble oppdatert"
+      ],
+      "Default mailbox successfully updated": [
+        "Standard postboks ble oppdatert"
+      ],
+      "Display name successfully updated": [
+        "Visningsnavn ble oppdatert"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Domeneeierskap bekreftet. Du kan nå sette opp MX-post."
+      ],
+      "Domain successfully deleted": [
+        "Domene ble slettet"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Domenet er bekreftet. Domenet ditt kan begynne å motta e-poster og opprette aliaser"
+      ],
+      "Mailbox successfully deleted": [
+        "Postboks ble slettet"
+      ],
+      "Mailbox successfully verified": [
+        "Postboks verifisert"
+      ],
+      "Mailboxes successfully updated": [
+        "Postbokser ble oppdatert"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Generering av tilfeldige prefikser er deaktivert"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Generering av tilfeldige prefikser er aktivert"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Hvelv kan ikke inneholde mer enn ${ vault.targetMaxMembers } bruker.",
         "Hvelv kan ikke inneholde mer enn ${ vault.targetMaxMembers } brukere."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Bekreftelses-e-post sendt. Sjekk innboksen din for å bekrefte postkassen din"
       ]
     },
     "Theme": {
@@ -2933,11 +3335,32 @@
       "Actions": [
         "Handlinger"
       ],
+      "Activity": [
+        "Aktivitet"
+      ],
+      "Add custom domain": [
+        "Legg til egendefinert domene"
+      ],
+      "Add mailbox": [
+        "Legg til postboks"
+      ],
+      "Alias contacts": [
+        "Alias-kontakter"
+      ],
+      "Aliases": [
+        "Aliaser"
+      ],
+      "Auto create/on the fly alias": [
+        "Automatisk oppretting/på farten-alias"
+      ],
       "Auto-lock update": [
         "Oppdatering av autolås"
       ],
       "Autofill": [
         "Autofyll"
+      ],
+      "Blocked addresses": [
+        "Blokkerte adresser"
       ],
       "Confirm extra password": [
         "Bekreft ekstra passord"
@@ -2966,9 +3389,24 @@
       "Current version": [
         "Gjeldende versjon"
       ],
+      "Custom domains": [
+        "Egendefinerte domener"
+      ],
+      "Default": [
+        "Standard"
+      ],
+      "Default Display Name": [
+        "Standard visningsnavn"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "Slette ${ deletedItemsCount } element?",
         "Slette ${ deletedItemsCount } elementer?"
+      ],
+      "Delete domain": [
+        "Slett domene"
+      ],
+      "Delete mailbox": [
+        "Slett postboks"
       ],
       "Delete this item?": [
         "Slette dette elementet?"
@@ -2978,6 +3416,18 @@
       ],
       "Discard changes?": [
         "Forkaste endringer?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (valgfritt)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (valgfritt)"
+      ],
+      "Domain": [
+        "Domene"
+      ],
+      "Domain ownership verification": [
+        "Bekreftelse av domeneeierskap"
       ],
       "Email": [
         "E-post"
@@ -3039,6 +3489,9 @@
       "Low disk space": [
         "Lite diskplass"
       ],
+      "Mailbox": [
+        "Postboks"
+      ],
       "Member limit": [
         "Medlemsgrense"
       ],
@@ -3061,6 +3514,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Flytte element til \"${ vaultName }\"?"
+      ],
+      "MX record": [
+        "MX-post"
       ],
       "No items selected": [
         "Ingen elementer valgt"
@@ -3096,6 +3552,9 @@
         "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet.",
         "Vær oppmerksom på at aliasene ikke kan gjenopprettes når de er slettet."
       ],
+      "Random Prefix Generation": [
+        "Generering av tilfeldig prefiks"
+      ],
       "Reject device?": [
         "Avvise enhet?"
       ],
@@ -3114,6 +3573,9 @@
       "Secure your data": [
         "Sikre dataene dine"
       ],
+      "Select the default domain for aliases": [
+        "Velg standard domene for aliaser"
+      ],
       "Set access level": [
         "Sett tilgangsnivå"
       ],
@@ -3125,6 +3587,9 @@
       ],
       "Share with": [
         "Del med"
+      ],
+      "SPF (Optional)": [
+        "SPF (valgfritt)"
       ],
       "Status": [
         "Status"
@@ -3159,6 +3624,9 @@
       "Unlock ${ brandNameJSX }": [
         "Lås opp ${ brandNameJSX }"
       ],
+      "Unverified": [
+        "Uverifisert"
+      ],
       "Update available": [
         "Oppdatering tilgjengelig"
       ],
@@ -3183,6 +3651,9 @@
       "Welcome to your new password manager!": [
         "Velkommen til din nye passordbehandler!"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Hva er foskjellen mellom ${ PASS_SHORT_APP_NAME }-notat og SimpleLogin-notat?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName }-abonnementet avsluttes den ${ endDate }"
       ],
@@ -3198,6 +3669,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "URL-adressen til domenet er ugyldig"
+      ],
       "Duplicated URL": [
         "Duplisert nettadresse"
       ],
@@ -3271,8 +3745,14 @@
       "Delete alias": [
         "Slett alias"
       ],
+      "Domain cannot be empty": [
+        "Domene kan ikke være tomt"
+      ],
       "Duplicate email addresses.": [
         "Dupliserte e-postadresser."
+      ],
+      "Email cannot be empty": [
+        "E-post kan ikke være tomt"
       ],
       "Empty note": [
         "Tomt notat"
@@ -3352,6 +3832,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Vennligst kontakt oss for å undersøke problemet."
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Vær oppmerksom på at aliasene ikke kan gjenopprettes når de er slettet"
       ],
       "Please verify your email address in order to use email aliases": [
         "Vennligst bekreft e-postadressen din for å kunne bruke e-postaliaser."

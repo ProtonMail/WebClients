@@ -82,6 +82,12 @@
       "Change": [
         "Ubah"
       ],
+      "Check DNS": [
+        "Periksa DNS"
+      ],
+      "Check settings": [
+        "Periksa pengaturan"
+      ],
       "Choose a file or drag it here": [
         "Pilih berkas atau taruh di sini"
       ],
@@ -400,6 +406,9 @@
       "Previous": [
         "Sebelumnya"
       ],
+      "Re-verify": [
+        "Verifikasi ulang"
+      ],
       "Reactivate now": [
         "Aktifkan ulang sekarang"
       ],
@@ -538,6 +547,9 @@
       "Sync aliases": [
         "Sinkronkan alias"
       ],
+      "Transfer and delete mailbox": [
+        "Transfer dan hapus kotak surat"
+      ],
       "Transfer ownership": [
         "Transfer kepemilikan"
       ],
@@ -671,6 +683,15 @@
       "Get notified if your email, password or other personal data was leaked.": [
         "Dapatkan notifikasi apabila email, kata sandi, atau data pribadi Anda lainnya dibocorkan."
       ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Apabila Anda menggunakan subdomain, mis. ${ subdomainExample }, Anda perlu untuk menggunakan ${ dmarcExampleSubdomain } sebagai domain Anda."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Apabila Anda menggunakan subdomain, mis. subdomain.domain.com, Anda perlu untuk menggunakan ${ domainKeyExampleSubdomain } sebagai domain Anda. Hal ini berarti apabila domain Anda adalah mail.domain.com, Anda harus memasukkan ${ domainKeyExampleMail } sebagai nama Domain."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Apabila Anda menggunakan CloudFlare, pastikan untuk tidak memilih pilihan Proxy."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Jaga agar informasi Anda lebih aman dan privat dengan berbagai panduan dan tips berikut."
       ],
@@ -714,6 +735,9 @@
       ],
       "[Error] an item could not be parsed": [
         "[Kesalahan] terdapat item yang tidak dapat diurai"
+      ],
+      "A domain ownership must be verified first.": [
+        "Kepemilikan domain harus diverifikasi terlebih dahulu."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias tidak dapat diperbaharui sekarang. Tolong coba lagi nanti"
@@ -781,6 +805,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } baris CSV yang rusak terdeteksi"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Domain tidak dapat diverifikasi. Silakan pastikan Anda telah menambahkan rekaman DNS yang benar"
+      ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
       ],
@@ -808,11 +835,32 @@
       "Failed to add email address": [
         "Alamat surel gagal ditambahkan"
       ],
+      "Failed to block the contact": [
+        "Kontak gagal diblokir"
+      ],
+      "Failed to create domain": [
+        "Domain gagal dibuat"
+      ],
+      "Failed to create new mailbox": [
+        "Kotak masuk baru gagal dibuat"
+      ],
+      "Failed to create the contact": [
+        "Kontak gagal dibuat"
+      ],
+      "Failed to delete domain": [
+        "Domain gagal dihapus"
+      ],
       "Failed to delete email address from monitoring": [
         "Alamat surel gagal dihapus dari pemantauan"
       ],
       "Failed to delete selected items": [
         "Item yang dipilih gagal dihapus"
+      ],
+      "Failed to delete the contact": [
+        "Kontak gagal dihapus"
+      ],
+      "Failed to delete the mailbox": [
+        "Kotak surat gagal dihapus"
       ],
       "Failed to edit user's access.": [
         "Akses pengguna gagal disunting."
@@ -822,6 +870,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Daftar kebocoran untuk alias email ini gagal dimuat"
+      ],
+      "Failed to load domain settings.": [
+        "Pengaturan domain gagal dimuat"
       ],
       "Failed to load item history": [
         "Riwayat item gagal dimuat"
@@ -841,6 +892,9 @@
       "Failed to remove user's access.": [
         "Akses pengguna gagal dihapus."
       ],
+      "Failed to resend verification code": [
+        "Kode verifikasi gagal dikirim ulang"
+      ],
       "Failed to resend verification for custom email": [
         "Verifikasi untuk surel khusus gagal dikirim ulang"
       ],
@@ -859,8 +913,26 @@
       "Failed to unpin item": [
         "Sematan item gagal dilepas"
       ],
+      "Failed to update catch-all setting.": [
+        "Pengaturan catch-all gagal diperbarui"
+      ],
+      "Failed to update default domain": [
+        "Domain bawaan gagal diperbarui"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Kotak surat domain gagal diperbarui"
+      ],
+      "Failed to update domain name.": [
+        "Nama domain gagal diperbarui"
+      ],
       "Failed to update monitoring settings": [
         "Pengaturan pemantauan gagal diperbarui"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Pengaturan pembuatan awalan acak gagal diperbarui"
+      ],
+      "Failed to verify domain": [
+        "Domain gagal diverifikasi"
       ],
       "Failed to verify email address": [
         "Alamat surel gagal diverifikasi"
@@ -1152,6 +1224,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } akan mengikuti tema sistem Anda."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } akan menghasilkan alamat penerusan (yang juga dikenal dengan istilah alias terbalik) yang dapat Anda salin ke papan klip."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } hanya akan mengimpor entri masuk, catatan, kartu kredit, dan identitas."
       ],
@@ -1168,7 +1243,10 @@
         "${ row.breachCount } kebocoran terdeteksi"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
-        "7 hari untuk mencoba fitur premium secara gratis. Hanya tersedia saat minggu pertama dengan ${ BRAND_NAME }."
+        "7 hari untuk mencoba berbagai fitur premium secara gratis. Hanya selama minggu pertama ${ BRAND_NAME } Anda."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Kontak dibuat untuk setiap alamat email yang mengirim atau menerima email dari ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Versi terbaru dari ${ PASS_APP_NAME } telah tersedia. Perbarui aplikasi Anda untuk menikmati berbagai fitur terbaru dan perbaikan bug."
@@ -1212,6 +1290,9 @@
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Alias dengan domain khusus tidak dipantau. Silakan tambahkan alias ini sebagai email khusus untuk keperluan pemantauan."
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Seluruh alias yang menggunakan kotak surat ${ emailJSX } akan turut dihapus."
+      ],
       "All breaches for this address were resolved": [
         "Seluruh kebocoran untuk alamat ini telah terselesaikan"
       ],
@@ -1236,11 +1317,17 @@
       "An item previously shared with you was removed": [
         "Item yang sebelumnya dibagikan dengan Anda telah dihapus"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Apakah Anda yakin ingin menghapus ${ emailJSX } dari kotak surat Anda?"
+      ],
       "Are you sure you want to remove the link?": [
         "Apakah Anda yakin ingin menghapus tautan?"
       ],
       "Auto-lock successfully disabled.": [
         "Pengunci otomatis berhasil dinonaktifkan."
+      ],
+      "automatically": [
+        "secara otomatis"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Sebelum mengekspor data Anda dengan format ini, silakan buka pengaturan Safari -> tab \"Umum\" -> nonaktifkan pilihan \"Buka berkas aman setelah mengunduh\". Hal ini akan mencegah Safari untuk secara tidak sengaja mengekstrak berkas yang diekspor."
@@ -1256,6 +1343,9 @@
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Bawa kata sandi Anda ke ${ BRAND_NAME }."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Bawa domain milik Anda sendiri, dan Anda tidak akan lagi butuh untuk membeli solusi hosting email lainnya."
       ],
       "Built in 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
@@ -1287,6 +1377,12 @@
       "Copied to clipboard": [
         "Disalin ke papan klip"
       ],
+      "Create contact illustration": [
+        "Ilustrasi pembuatan kontak"
+      ],
+      "Created ${ time }.": [
+        "Dibuat ${ time }."
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV merupakan format berkas yang menawarkan tampilan data yang ramah dipandang. Namun, karena kesederhanaannya, sebagian data tidak akan diikutsertakan dalam ekspor (kolom kustom, passkey, dll.). Untuk ekspor yang lengkap, kami menyarankan Anda untuk menggunakan format berkas yang berbeda."
       ],
@@ -1314,6 +1410,12 @@
       "Disabling offline mode...": [
         "Menonaktifkan mode offline..."
       ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Perubahan DNS dapat memakan waktu hingga 24 jam untuk diperbarui."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Domain: ${ domainPath } atau @"
+      ],
       "Drop file here to upload": [
         "Lepaskan berkas di sini untuk mengunggah"
       ],
@@ -1337,6 +1439,12 @@
       ],
       "Email address successfully included in monitoring": [
         "Alamat email berhasil diikutsertakan dalam pemantauan"
+      ],
+      "Email headers illustration": [
+        "Ilustrasi header email"
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Email yang dikirim ke alias Anda akan diteruskan ke kotak surat Anda. Suatu alias dapat memiliki lebih dari satu kotak surat: hal ini berguna untuk membagikan alias kepada Anda dan teman Anda."
       ],
       "Emptying trash...": [
         "Mengosongkan sampah..."
@@ -1364,6 +1472,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Mengaktifkan penguncian PIN otomatis"
+      ],
+      "Enter the address you want to email.": [
+        "Masukkan alamat yang ingin Anda kirimi email."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Masukkan kode verifikasi. Digit ${ digit }."
@@ -1413,6 +1524,9 @@
       "here": [
         "di sini"
       ],
+      "Here's how it works:": [
+        "Berikut cara kerjanya:"
+      ],
       "High Priority": [
         "Prioritas Tinggi"
       ],
@@ -1430,6 +1544,9 @@
       ],
       "Imported on ${ date }": [
         "Diimpor pada tanggal ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "Pada ${ PASS_SHORT_APP_NAME }, catatan item dienkripsi dengan kunci enkripsi dan hanya dapat dilihat oleh pengguna yang memiliki akses ke item. Bahkan ${ BRAND_NAME } atau SimpleLogin pun tidak dapat melihat catatan ini."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Untuk mendapatkan pengalaman terbaik menggunakan ${ PASS_APP_NAME }, mohon berikan izin yang diperlukan pada ekstensi ini."
@@ -1560,6 +1677,9 @@
       "Moving items to trash": [
         "Memindahkan item ke sampah"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Perlu untuk mengirim email kepada seseorang, namun tidak ingin mereka sampai melihat alamat email Anda? Siapkan alias kontak."
+      ],
       "Never": [
         "Tidak pernah"
       ],
@@ -1683,6 +1803,9 @@
       "Please enter your current PIN code to continue": [
         "Silakan masukkan kode PIN Anda saat ini untuk melanjutkan"
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Silakan ikuti langkah-langkah di bawah ini untuk mengatur domain Anda."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan. Apakah Anda ingin sekadar menonaktifkan alias ini?"
       ],
@@ -1691,6 +1814,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Tingkatkan akun untuk memperoleh akses dini ke aplikasi web ${ PASS_APP_NAME }"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Silakan gunakan jalur domain selengkapnya, semisal domain-saya.com atau subdomain-saya.domain-saya.com apabila Anda menggunakan subdomain."
       ],
       "Press Enter to copy": [
         "Tekan Enter untuk menyalin"
@@ -1703,6 +1829,9 @@
       ],
       "Reconnecting": [
         "Menghubungkan ulang"
+      ],
+      "Record: TXT": [
+        "Rekaman: TXT"
       ],
       "Registering extra password...": [
         "Mendaftarkan kata sandi tambahan..."
@@ -1725,8 +1854,14 @@
       "Restoring trashed items...": [
         "Memulihkan item yang dibuang..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Alamat alias terbalik disalin ke papan klip. Kirimkan email ke alamat ini dan ${ Email } akan menerima email yang bersangkutan."
+      ],
       "Secure links": [
         "Tautan aman"
+      ],
+      "See more info": [
+        "Lihat info lebih lanjut"
       ],
       "Select destination vault": [
         "Pilih brankas tujuan"
@@ -1767,6 +1902,12 @@
       "Signing you in": [
         "Memasukkan Anda ke akun"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "Catatan SimpleLogin disimpan pada lokasi yang sama dengan alamat alias, dan walaupun catatan ini terlindung oleh enkripsi, catatan ini tidak terlindung secara E2E — yang berarti bahwa siapa pun yang memiliki akses ke basis data SimpleLogin akan dapat membaca catatan ini."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Cukup gunakan ${ emailBold } pada saat Anda membutuhkan alias ke depannya: alias ini akan ${ automaticallyBold } dihasilkan secara otomatis pada saat alias menerima email. Untuk memperoleh kendali yang lebih terperinci, Anda juga dapat mendefinisikan ${ rulesHyperLink }."
+      ],
       "Successfully exported all your items": [
         "Seluruh item Anda berhasil diekspor"
       ],
@@ -1790,6 +1931,9 @@
       ],
       "The changelog can be found ${ changelogLink }.": [
         "Riwayat perubahan ini dapat ditemukan ${ changelogLink }."
+      ],
+      "The display name when sending an email from this alias.": [
+        "Nama tampilan pada saat mengirimkan email dari alias ini."
       ],
       "The export will only contain vaults that you own.": [
         "Ekspor ini hanya akan mengandung brankas yang Anda miliki."
@@ -1818,6 +1962,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas ekspor yang dihasilkan akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus berkas ekspor ini setelah tidak lagi digunakan."
       ],
+      "This operation is irreversible.": [
+        "Tindakan ini tidak dapat diurungkan."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Tindakan ini tidak dapat diurungkan. Seluruh alias yang menggunakan domain ${ domainTextBold } akan dihapus. Mohon diperhatikan bahwa setelah dihapus, alias tidak akan lagi dapat dipulihkan."
+      ],
       "This option is currently not available on your device.": [
         "Pilihan ini untuk saat ini tidak tersedia pada perangkat Anda."
       ],
@@ -1833,6 +1983,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tindakan ini akan menolak izin akses perangkat **${ name }** yang mencoba untuk masuk ke akun ${ BRAND_NAME } Anda pada **${ date }**."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Untuk tetap menerima email, pindahkan alias berikut ke kotak surat yang berbeda:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Untuk menjaga agar alamat email pribadi Anda tetap tersembunyi, Anda dapat membuat kontak alias yang menyamarkan alamat Anda."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Untuk memindahkan data dari pengelola kata sandi lain, tuju pengelola kata sandi yang dimaksud, ekspor data Anda, lalu unggah data ini ke ${ PASS_APP_NAME }. Setelah data selesai diunggah, hapus berkas yang diekspor."
       ],
@@ -1844,6 +2000,12 @@
       ],
       "Unable to copy to clipboard": [
         "Tidak dapat menyalin ke papan klip"
+      ],
+      "Unconfigured": [
+        "Tidak diatur"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Alias hide-my-email tanpa batasan jumlah dan pengelolaan alias tingkat lanjut"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Buka ${ PASS_SHORT_APP_NAME } dengan biometrik"
@@ -1881,6 +2043,9 @@
       "username": [
         "nama pengguna"
       ],
+      "Value:": [
+        "Nilai:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Brankas \"${ payload.content.name }\" berhasil dihapus"
       ],
@@ -1910,6 +2075,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Ketika membuat/mengedit informasi masuk di ${ PASS_APP_NAME } masukan 'nama pengguna' akan terus terlihat."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Pada saat mengirim email dari alias ini, email yang bersangkutan akan menampilkan ${ emailSender } sebagai nama pengirimnya."
       ],
       "You are about to create:": [
         "Anda akan membuat:"
@@ -1944,6 +2112,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Anda telah mencapai panjang maksimum yang diizinkan sebesar ${ maxLength } karakter."
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Anda akan dapat menyesuaikan pengaturan domain Anda (alias email catch-all, nama tampilan alias bawaan, dll...) setelah memverifikasi domain Anda."
+      ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Anda akan dikeluarkan dari akun dan perlu untuk masuk kembali pada seluruh perangkat lainnya yang Anda miliki."
       ],
@@ -1971,6 +2142,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Akun Anda dibatasi karena organisasi Anda telah mewajibkan penggunaan autentikasi dua faktor. Silakan aktifkan autentikasi dua faktor dalam Pengaturan Akun Anda atau hubungi administrator Anda."
       ],
+      "your domain": [
+        "domain Anda"
+      ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
       ],
@@ -1985,6 +2159,9 @@
       "${ aliasCount } alias": [
         "${ aliasCount } alias"
       ],
+      "${ blockedCount } block": [
+        "${ blockedCount } pemblokiran"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } karakter"
       ],
@@ -1994,11 +2171,17 @@
       "${ days } day": [
         "${ days } hari"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } penerusan"
+      ],
       "${ hours } hour": [
         "${ hours } jam"
       ],
       "${ minutes } minute": [
         "${ minutes } menit"
+      ],
+      "${ months } month": [
+        "${ months } bulan"
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } mengenali situs web dan aplikasi yang Anda gunakan serta mengisi berbagai formulir dengan kredensial Anda pada browser atau perangkat apa pun secara otomatis. Anda tidak perlu lagi menyalin dan menempel."
@@ -2006,8 +2189,14 @@
       "${ PASS_SHORT_APP_NAME } version": [
         "Versi ${ PASS_SHORT_APP_NAME }"
       ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } balasan"
+      ],
       "${ usageCount } login": [
         "${ usageCount } entri masuk"
+      ],
+      "${ years } year": [
+        "${ years } tahun"
       ],
       "1 hour": [
         "1 jam"
@@ -2059,6 +2248,9 @@
       ],
       "Account": [
         "Akun"
+      ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Tambahkan awalan acak untuk domain ini pada saat membuat alias baru."
       ],
       "Add section": [
         "Tambahkan bagian"
@@ -2129,6 +2321,9 @@
       "Cards": [
         "Kartu"
       ],
+      "Catch-All": [
+        "Catch-All"
+      ],
       "Choose unlock method": [
         "Pilih metode pembukaan"
       ],
@@ -2149,6 +2344,9 @@
       ],
       "Confirm vault name": [
         "Konfirmasi nama brankas"
+      ],
+      "Contact created ${ time } ago.": [
+        "Kontak dibuat ${ time } yang lalu."
       ],
       "Contact details": [
         "Rincian kontak"
@@ -2213,8 +2411,14 @@
       "Display name": [
         "Nama tampilan"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Domain"
+      ],
+      "Domain:": [
+        "Domain:"
       ],
       "Domains": [
         "Domain"
@@ -2363,6 +2567,9 @@
       "Include numbers (0-9)": [
         "Sertakan angka (0-9)"
       ],
+      "Info": [
+        "Info"
+      ],
       "Instagram handle": [
         "Akun Instagram"
       ],
@@ -2489,6 +2696,9 @@
       "Note": [
         "Catatan"
       ],
+      "Note • SimpleLogin": [
+        "Catatan • SimpleLogin"
+      ],
       "Notes": [
         "Catatan"
       ],
@@ -2552,8 +2762,17 @@
       "Prefix": [
         "Awalan"
       ],
+      "Premium domain": [
+        "Domain premium"
+      ],
+      "Priority:": [
+        "Prioritas:"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Lindungi ${ PASS_APP_NAME } dengan kata sandi tambahan"
+      ],
+      "Public domain": [
+        "Domain publik"
       ],
       "Rate us": [
         "Beri kami nilai"
@@ -2666,6 +2885,9 @@
       "Sync aliases with SimpleLogin": [
         "Sinkronkan alias dengan SimpleLogin"
       ],
+      "Target:": [
+        "Target:"
+      ],
       "Tax number": [
         "Nomor pajak"
       ],
@@ -2740,6 +2962,9 @@
       ],
       "Username": [
         "Nama pengguna"
+      ],
+      "Value:": [
+        "Nilai:"
       ],
       "Vault ID": [
         "ID Brankas"
@@ -2889,6 +3114,9 @@
       "Add text": [
         "Tambahkan teks"
       ],
+      "Alias Display Name": [
+        "Nama Tampilan Alias"
+      ],
       "Email address": [
         "Alamat email"
       ],
@@ -2915,6 +3143,12 @@
       ],
       "MM/YY": [
         "BB/TT"
+      ],
+      "my-domain.com": [
+        "domain-saya.com"
+      ],
+      "Note from SimpleLogin": [
+        "Catatan dari SimpleLogin"
       ],
       "Password": [
         "Kata sandi"
@@ -3041,8 +3275,35 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Penyinkronan alias sukses diaktifkan. Alias SimpleLogin mungkin memerlukan beberapa saat untuk sinkron"
       ],
+      "Catch-all setting successfully disabled": [
+        "Pengaturan catch-all berhasil dinonaktifkan"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Pengaturan catch-all berhasil diaktifkan"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Kepemilikan domain diverifikasi. Anda kini dapat mengatur rekaman MX."
+      ],
+      "Domain successfully deleted": [
+        "Domain berhasil dihapus."
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Domain berhasil diverifikasi. Domain Anda kini dapat mulai menerima email dan membuat alias"
+      ],
+      "Mailbox successfully verified": [
+        "Kotak surat berhasil diverifikasi"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Pembuatan awalan acak berhasil dinonaktifkan"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Pembuatan awalan acak berhasil diaktifkan"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Brankas tidak dapat mengandung lebih dari ${ vault.targetMaxMembers } pengguna."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Email verifikasi dikirim. Silakan periksa kotak masuk Anda untuk memverifikasi kotak surat Anda"
       ]
     },
     "Theme": {
@@ -3068,6 +3329,9 @@
       ],
       "Actions": [
         "Tindakan"
+      ],
+      "Aliases": [
+        "Alias"
       ],
       "Auto-lock update": [
         "Pembaruan kunci otomatis"
@@ -3120,6 +3384,9 @@
       "Dark Web Monitoring": [
         "Pemantauan Dark Web"
       ],
+      "Default": [
+        "Bawaan"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "Hapus ${ deletedItemsCount } item?"
       ],
@@ -3134,6 +3401,9 @@
       ],
       "Discard changes?": [
         "Batalkan perubahan?"
+      ],
+      "Domain": [
+        "Domain"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Menikmati ${ PASS_APP_NAME }?"
@@ -3191,6 +3461,9 @@
       ],
       "Low disk space": [
         "Ruang penyimpanan rendah"
+      ],
+      "Mailbox": [
+        "Kotak surat"
       ],
       "Mark as resolved?": [
         "Tandai sebagai terselesaikan?"
@@ -3261,6 +3534,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan."
       ],
+      "Random Prefix Generation": [
+        "Pembuatan Awalan Acak"
+      ],
       "Recommended actions": [
         "Tindakan yang direkomendasikan"
       ],
@@ -3296,6 +3572,9 @@
       ],
       "Secure your data": [
         "Amankan data Anda"
+      ],
+      "Select the default domain for aliases": [
+        "Pilih domain bawaan untuk alias"
       ],
       "Set access level": [
         "Tentukan tingkat akses"
@@ -3345,6 +3624,9 @@
       "Unlock ${ brandNameJSX }": [
         "Dapatkan ${ brandNameJSX }"
       ],
+      "Unverified": [
+        "Tidak terverifikasi"
+      ],
       "Update available": [
         "Pembaruan tersedia"
       ],
@@ -3375,6 +3657,9 @@
       "What is the dark web?": [
         "Apa itu dark web?"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Apa perbedaan antara catatan ${ PASS_SHORT_APP_NAME } dan catatan SimpleLogin?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Langganan ${ planName } Anda akan berakhir pada ${ endDate }"
       ],
@@ -3392,6 +3677,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "URL domain tidak valid"
+      ],
       "Duplicated URL": [
         "URL terduplikat"
       ],
@@ -3552,6 +3840,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Silakan hubungi kami untuk menyelidiki masalah ini"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Mohon diperhatikan bahwa setelah dihapus, alias tidak akan lagi dapat dipulihkan"
       ],
       "Please update the extension to its latest version": [
         "Silakan perbarui ekstensi ke versi terkini"

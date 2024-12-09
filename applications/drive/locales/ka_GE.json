@@ -2479,6 +2479,9 @@
       ]
     },
     "Docs Info": {
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "კოლაბორაცია უფრო ადვილია. ახლა ყველას შეუძლია, შემოგთავაზოთ ჩასწორების ვარიანტები თვით დოკუმენტის შეუცვლელად."
+      ],
       "Suggestion mode is here": [
         "მინიშნებების რეჟიმი აქაა"
       ]
@@ -5784,12 +5787,6 @@
       "Calendars": [
         "კალენდრები"
       ],
-      "Can edit": [
-        "შეუძლია, ჩაასწოროს"
-      ],
-      "Can view": [
-        "შეუძლია, ნახოს"
-      ],
       "Cancel download": [
         "გადმოწერის გაუქმება"
       ],
@@ -6270,14 +6267,6 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "დააორგანიზეთ, დაამატეთ და ჩაასწორეთ ფაილები"
-      ],
-      "View and download": [
-        "ნახვა და გადმოწერა"
       ]
     },
     "Label for contact group color": {
@@ -8229,6 +8218,12 @@
       ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "${ priceWithDiscount }-ის სპეციალური ფასდაკლება სწორია პირველი ${ subscriptionLength } თვე. კუპონი ვარგისია ${ couponRedemptions } განახლებისთვის. შემდეგ ის ავტომატურად გადავა ${ renewPrice }-ზე ${ subscriptionLengthCopy } თვით. გაუქმება ყოველთვის შეგიძლიათ"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ ${ subscriptionLength } თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ renewPrice } ${ subscriptionLengthCopy } თვით. გაუქმება ყოველთვის შეგიძლიათ."
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"

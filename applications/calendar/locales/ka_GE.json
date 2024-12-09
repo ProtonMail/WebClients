@@ -2588,11 +2588,6 @@
         "ინვოისი გადაცილებულია"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
-      ]
-    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA ამატებს უსაფრთხოების ფენას, რითიც ხელს უშლის არაავტორიზებულ წვდომას."
@@ -2677,6 +2672,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7750,6 +7750,12 @@
       ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "${ priceWithDiscount }-ის სპეციალური ფასდაკლება სწორია პირველი ${ subscriptionLength } თვე. კუპონი ვარგისია ${ couponRedemptions } განახლებისთვის. შემდეგ ის ავტომატურად გადავა ${ renewPrice }-ზე ${ subscriptionLengthCopy } თვით. გაუქმება ყოველთვის შეგიძლიათ"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ ${ subscriptionLength } თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ renewPrice } ${ subscriptionLengthCopy } თვით. გაუქმება ყოველთვის შეგიძლიათ."
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
