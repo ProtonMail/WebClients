@@ -40,10 +40,9 @@ import {
     verifyMessage,
 } from 'pmcrypto';
 import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
-import { ARGON2_PARAMS } from 'pmcrypto/lib/constants';
-import type { UserID } from 'pmcrypto/lib/openpgp';
-import { enums } from 'pmcrypto/lib/openpgp';
+import { type UserID, enums } from 'pmcrypto/lib/openpgp';
 
+import { ARGON2_PARAMS, KeyCompatibilityLevel } from '../constants';
 import { arrayToHexString } from '../utils';
 import type {
     ComputeHashStreamOptions,
@@ -333,7 +332,12 @@ class KeyManagementApi {
      * @throws {Error} if the key cannot be decrypted or importing fails
      */
     async importPrivateKey<T extends Data>(
-        { armoredKey, binaryKey, passphrase, checkCompatibility }: WorkerImportPrivateKeyOptions<T>,
+        {
+            armoredKey,
+            binaryKey,
+            passphrase,
+            checkCompatibility = KeyCompatibilityLevel.NONE,
+        }: WorkerImportPrivateKeyOptions<T>,
         _customIdx?: number
     ) {
         if (!armoredKey && !binaryKey) {
@@ -343,8 +347,8 @@ class KeyManagementApi {
         const maybeEncryptedKey = binaryKey
             ? await readPrivateKey({ binaryKey })
             : await readPrivateKey({ armoredKey: armoredKey! });
-        if (checkCompatibility) {
-            checkKeyCompatibility(maybeEncryptedKey);
+        if (checkCompatibility !== KeyCompatibilityLevel.NONE) {
+            checkKeyCompatibility(maybeEncryptedKey, checkCompatibility === KeyCompatibilityLevel.V6_COMPATIBLE);
         }
         let decryptedKey;
         if (expectDecrypted) {
@@ -378,12 +382,12 @@ class KeyManagementApi {
      * @returns reference to imported public key
      */
     async importPublicKey<T extends Data>(
-        { armoredKey, binaryKey, checkCompatibility }: WorkerImportPublicKeyOptions<T>,
+        { armoredKey, binaryKey, checkCompatibility = KeyCompatibilityLevel.NONE }: WorkerImportPublicKeyOptions<T>,
         _customIdx?: number
     ) {
         const publicKey = await getKey({ binaryKey, armoredKey });
-        if (checkCompatibility) {
-            checkKeyCompatibility(publicKey);
+        if (checkCompatibility !== KeyCompatibilityLevel.NONE) {
+            checkKeyCompatibility(publicKey, checkCompatibility === KeyCompatibilityLevel.V6_COMPATIBLE);
         }
         const keyStoreID = this.keyStore.add(publicKey, _customIdx);
         return getPublicKeyReference(publicKey, keyStoreID);
