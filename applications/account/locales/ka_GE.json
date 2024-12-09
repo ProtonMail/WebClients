@@ -4436,6 +4436,9 @@
       "Couldn't load invoices. Please try again later.": [
         "ინვოისების ჩატვირთვა შეუძლებელია. მოგვიანებით სცადეთ."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "ტრანზაქციების ჩატვირთვა შეუძლებელია. მოგვიანებით სცადეთ."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე",
         "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე"
@@ -7406,6 +7409,9 @@
       "Encryption setting updated": [
         "დაშიფვრის პარამეტრები განახლდა"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "გამჭოლი ელფოსტის დაშიფვრა გათიშულია ამ ჯგუფისთვის გარე მისამართების გამო."
+      ],
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "გამჭოლი ელფოსტოს დაშიფვრა გამორთულია ამ ჯგუფისთვის. მისი ჩართვა შესაძლებელია."
       ],
@@ -9227,6 +9233,9 @@
       "You have no saved payment methods.": [
         "თქვენ არ გაქვთ გადახდის შენახული მეთოდები."
       ],
+      "You have no transactions.": [
+        "ტრანზაქციები არ გაქვთ."
+      ],
       "You may be redirected to your bank’s website.": [
         "შეიძლება, თქვენი ბანკის ვებგვერდზე გადამისამართდეთ."
       ],
@@ -10749,6 +10758,9 @@
       "Sticky labels": [
         "წებოვანი ჭდეები"
       ],
+      "Strong": [
+        "ძლიერი"
+      ],
       "Subscription options": [
         "გამოწერის პარამეტრები"
       ],
@@ -10833,8 +10845,14 @@
       "Video conferencing with Zoom": [
         "ვიდეოკონფერენციები Zoom-ით"
       ],
+      "Vulnerable": [
+        "მოწყვლადი"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "ვწუხვართ, რომ მიდიხართ. აგვიხსენით, რატომ გვტოვებთ, რომ უკეთესები გავხდეთ."
+      ],
+      "Weak": [
+        "სუსტი"
       ],
       "Week start": [
         "კვირის დასაწყისი"
@@ -13977,6 +13995,12 @@
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "${ priceWithDiscount }-ის სპეციალური ფასდაკლება სწორია პირველი ${ subscriptionLength } თვე. კუპონი ვარგისია ${ couponRedemptions } განახლებისთვის. შემდეგ ის ავტომატურად გადავა ${ renewPrice }-ზე ${ subscriptionLengthCopy } თვით. გაუქმება ყოველთვის შეგიძლიათ"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ ${ subscriptionLength } თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ renewPrice } ${ subscriptionLengthCopy } თვით. გაუქმება ყოველთვის შეგიძლიათ."
+      ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "ტრანზაქცია წარამატებითაა აღმოჩენილი. კრედიტები დაემატება თქვენს ანგარიშს, როცა ტრანზაქცია ბოლომდე დადასტურდება."
       ],
@@ -14822,6 +14846,9 @@
       ],
       "Invoice": [
         "ინვოისი"
+      ],
+      "Transactions": [
+        "ტრანზაქციები"
       ]
     },
     "Select search results": {
@@ -15607,6 +15634,9 @@
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ.",
         "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO მომხმარებლები მოიხსნება თქვენი იდენტიფიკატორის მომწოდებლისგან** და არა-SSO მომხმარებლებად გადაკეთდება."
       ],
       "Access denied": [
         "წვდომა აკრძალულია"
@@ -18200,6 +18230,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME }-ის ინვოისი"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME }-ის ტრანზაქცია"
       ]
     },
     "Title header": {
@@ -18402,6 +18435,9 @@
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "მიუთითეთ დომენი, რომელსაც SAML SSO-ით ავთენტიკაციის უფლება აქვს"
       ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "მიუთითეთ eduGAIN ობიექტის მომხმარებლები, რომლებსაც SAML SSO-ით შესვლის უფლება გააჩნიათ"
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "სისტემური ქვესაქაღალდეები ${ MAIL_APP_NAME }-ში ცალკე საქაღალდეებად გამოჩნდება"
       ],
@@ -18550,6 +18586,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tor Browser-ის ეს ვერსია მხარდაუჭერელია. განაახლეთ უკანასკნელ ვერსიამდე: ${ stableRelease }"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "გადახდის დაბრუნება"
+      ],
+      "Failed": [
+        "წარუმატებელია"
+      ],
+      "Needs attention": [
+        "საჭიროებს ყურადღებას"
+      ],
+      "Refunded": [
+        "ანაზღაურებულია"
+      ],
+      "Success": [
+        "წარმატება"
+      ],
+      "Timeout": [
+        "შესვენება"
+      ],
+      "Voided": [
+        "ანულირებულია"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "შესწორების კრედიტი"
+      ],
+      "Authorization": [
+        "ავტორიზაცია"
+      ],
+      "Bank transfer": [
+        "საბანკო გადარიცხვა"
+      ],
+      "Bitcoin": [
+        "ბიტკოინი"
+      ],
+      "Cash": [
+        "ხელზე ფული"
+      ],
+      "Chargeback": [
+        "გადახდის დაბრუნება"
+      ],
+      "Credit": [
+        "კრედიტი"
+      ],
+      "Credit transfer": [
+        "კრედიტის გადარიცხვა"
+      ],
+      "Currency conversion": [
+        "ვალუტის გადაცვლა"
+      ],
+      "Gift card": [
+        "სასაჩუქრე ბარათი"
+      ],
+      "Migration": [
+        "მიგრაცია"
+      ],
+      "Payment": [
+        "გადახდა"
+      ],
+      "Payment reversal": [
+        "გადახდის დაბრუნება"
+      ],
+      "Refund": [
+        "ანაზღაურება"
       ]
     },
     "unprivatization": {

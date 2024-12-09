@@ -1662,6 +1662,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Harga diskon khusus ${ discountedPrice } berlaku untuk ${ cycle } bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga diskon ${ nextPrice } selama ${ renewalLength } bulan. Anda dapat membatalkannya kapan saja."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Harga ${ discountedPrice } yang didiskon masih valid untuk bulan pertama. Lalu akan diperbarui secara otomatis dengan harga ${ nextPrice } setiap bulan. Anda dapat membatalkan kapan pun."
       ]
@@ -2066,7 +2069,7 @@
     },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
-        "Tampilkan ${ remainingItems } lainnya"
+        "Tampilkan ${ remainingItems } lebih banyak"
       ]
     },
     "Calendar share permission label": {
@@ -4431,6 +4434,9 @@
       ],
       "Couldn't load invoices. Please try again later.": [
         "Faktur tidak dapat dimuat. Silakan coba lagi nanti."
+      ],
+      "Couldn't load transactions. Please try again later.": [
+        "Tidak dapat memuat transaksi. Silakan coba lagi nanti."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan"
@@ -7107,6 +7113,12 @@
       "Connection data will be available in around 1 hour.": [
         "Data koneksi akan tersedia sekitar 1 jam lagi."
       ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "Lanjutkan memperbolehkan **${ affiliationsText }** dari **${ organizationValue.Name }** untuk bergabung ke organisasi ${ BRAND_NAME } Anda."
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Lanjutkan menghubungkan **${ organizationValue.Name }** dengan organisasi ${ BRAND_NAME } Anda."
+      ],
       "Continue with ${ freeName }": [
         "Lanjutkan dengan ${ freeName }"
       ],
@@ -9168,6 +9180,9 @@
       "You have no saved payment methods.": [
         "Anda tidak memiliki metode pembayaran yang tersimpan."
       ],
+      "You have no transactions.": [
+        "Anda tidak memiliki transaksi."
+      ],
       "You may be redirected to your bank’s website.": [
         "Anda mungkin akan dialihkan ke situs web bank Anda."
       ],
@@ -10688,6 +10703,9 @@
       "Sticky labels": [
         "Label lekat"
       ],
+      "Strong": [
+        "Kuat"
+      ],
       "Subscription options": [
         "Pilihan langganan"
       ],
@@ -10772,8 +10790,14 @@
       "Video conferencing with Zoom": [
         "Pertemuan video dengan Zoom"
       ],
+      "Vulnerable": [
+        "Rentan"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Kami menyayangkan kepergian Anda dari layanan kami. Mohon jelaskan alasan kepergian Anda untuk membantu kami berkembang."
+      ],
+      "Weak": [
+        "Lemah"
       ],
       "Week start": [
         "Awal pekan"
@@ -11737,7 +11761,7 @@
         "${ n } folder dan label"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } alias hide-my-email"
+        "${ n } samaran hide-my-email"
       ],
       "${ n } label": [
         "${ n } label"
@@ -13870,8 +13894,23 @@
       "Processing payment": [
         "Memproses pembayaran"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Diperbarui seharga ${ renewPrice }, batalkan kapan pun."
+      ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku untuk ${ subscriptionLength } bulan pertama. Kupon ini berlaku untuk perpanjangan ${ couponRedemptions }. Kemudian secara otomatis akan diperpanjang dengan harga ${ renewPrice } untuk ${ subscriptionLengthCopy } bulan. Anda dapat membatalkannya kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku untuk ${ subscriptionLength } bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga ${ renewPrice } untuk ${ subscriptionLengthCopy } bulan. Anda dapat membatalkannya kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku untuk bulan pertama. Kupon ini berlaku untuk perpanjangan${ couponRedemptions }. Kemudian secara otomatis akan diperpanjang dengan harga ${ renewPrice } untuk ${ subscriptionLength } bulan. Anda dapat membatalkannya kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku untuk bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga ${ renewPrice } setiap bulannya. Anda dapat membatalkannya kapan saja."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transaksi berhasil dideteksi. Saldo akan ditambahkan ke akun Anda setelah transaksi sepenuhnya terkonfirmasi."
@@ -14724,6 +14763,9 @@
       ],
       "Invoice": [
         "Faktur"
+      ],
+      "Transactions": [
+        "Transaksi"
       ]
     },
     "Select search results": {
@@ -18060,6 +18102,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Faktur ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "transaksi ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -18189,6 +18234,9 @@
       ],
       "Device information such as operating system": [
         "Informasi seputar perangkat, seperti sistem operasi yang digunakan"
+      ],
+      "Display name for the entity in the eduGAIN database": [
+        "Nama tampilan untuk entitas dalam basis data eduGAIN"
       ],
       "Each imported email will have this label": [
         "Masing-masing email yang diimpor akan memiliki label ini"
@@ -18413,6 +18461,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Versi Tor Browser ini tidak didukung. Silakan perbarui browser Anda ke ${ stableRelease } terbaru"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Pengembalian dana"
+      ],
+      "Failed": [
+        "Gagal"
+      ],
+      "Needs attention": [
+        "Perlu perhatian"
+      ],
+      "Refunded": [
+        "Dikembalikan"
+      ],
+      "Success": [
+        "Berhasil"
+      ],
+      "Timeout": [
+        "Waktu habis"
+      ],
+      "Voided": [
+        "Batal"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Kredit yang disesuaikan"
+      ],
+      "Authorization": [
+        "Otorisasi"
+      ],
+      "Bank transfer": [
+        "Transfer via bank"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Tunai"
+      ],
+      "Chargeback": [
+        "Pengembalian dana"
+      ],
+      "Credit": [
+        "Kredit"
+      ],
+      "Credit transfer": [
+        "Transfer via kredit"
+      ],
+      "Currency conversion": [
+        "Konversi mata uang"
+      ],
+      "Gift card": [
+        "Kartu hadiah"
+      ],
+      "Migration": [
+        "Migrasi"
+      ],
+      "Payment": [
+        "Pembayaran"
+      ],
+      "Payment reversal": [
+        "Pembatalan pembayaran"
+      ],
+      "Refund": [
+        "Pengembalian dana"
       ]
     },
     "unprivatization": {

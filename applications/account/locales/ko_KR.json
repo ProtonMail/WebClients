@@ -4435,6 +4435,9 @@
       "Couldn't load invoices. Please try again later.": [
         "청구서 불러오기를 실패했습니다. 다시 시도해 주세요."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "거래내역을 불러올 수 없습니다. 나중에 다시 시도해 주세요."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "최소${ calendarsToFixCount } 개 캘린더를 선택 해제하세요"
       ],
@@ -9180,6 +9183,9 @@
       "You have no saved payment methods.": [
         "저장된 결제 수단이 없습니다."
       ],
+      "You have no transactions.": [
+        "거래내역이 없습니다."
+      ],
       "You may be redirected to your bank’s website.": [
         "은행 웹사이트로 리다이렉트 됩니다."
       ],
@@ -10700,6 +10706,9 @@
       "Sticky labels": [
         "라벨"
       ],
+      "Strong": [
+        "강함"
+      ],
       "Subscription options": [
         "구독 옵션"
       ],
@@ -10787,8 +10796,14 @@
       "VPN Accelerator": [
         "VPN Accelerator"
       ],
+      "Vulnerable": [
+        "취약함"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "가시는 모습을 본다니 슬프네요. 저희가 한층 더 발전할 수 있도록 어떤 이유로 떠나는지 알려주세요."
+      ],
+      "Weak": [
+        "약함"
       ],
       "Week start": [
         "한 주의 시작"
@@ -14778,6 +14793,9 @@
       ],
       "Invoice": [
         "인보이스"
+      ],
+      "Transactions": [
+        "거래 내역"
       ]
     },
     "Select search results": {
@@ -18108,6 +18126,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME } 청구서"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME } 거래"
       ]
     },
     "Title header": {
@@ -18464,6 +18485,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "이 버전의 Tor 브라우저가 지원되지 않습니다. 최신 ${ stableRelease }(으)로 업데이트 해주세요"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "환불"
+      ],
+      "Failed": [
+        "실패"
+      ],
+      "Needs attention": [
+        "주의 필요"
+      ],
+      "Refunded": [
+        "환불 완료"
+      ],
+      "Success": [
+        "성공"
+      ],
+      "Timeout": [
+        "시간 제한"
+      ],
+      "Voided": [
+        "무효화됨"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "크레딧 조정"
+      ],
+      "Authorization": [
+        "인증"
+      ],
+      "Bank transfer": [
+        "은행 송금"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "현금"
+      ],
+      "Chargeback": [
+        "환불"
+      ],
+      "Credit": [
+        "크레딧"
+      ],
+      "Credit transfer": [
+        "자동 이체"
+      ],
+      "Currency conversion": [
+        "화폐 변환"
+      ],
+      "Gift card": [
+        "기프트 카드"
+      ],
+      "Migration": [
+        "전환"
+      ],
+      "Payment": [
+        "결제"
+      ],
+      "Payment reversal": [
+        "거래 되돌리기"
+      ],
+      "Refund": [
+        "환불"
       ]
     },
     "unprivatization": {

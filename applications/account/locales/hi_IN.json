@@ -1360,6 +1360,20 @@
         "${ BRAND_NAME } ऐप"
       ]
     },
+    "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "डेटा आपके डिवाइस पर रहता है लेकिन इसे एक बार डाउनलोड करने और संगत हार्डवेयर की आवश्यकता होती है।"
+      ],
+      "Fast and secure. No logs are kept.": [
+        "तेज़ और सुरक्षित। कोई लॉग नहीं रखे जाते।"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } सर्वरों पर चलाएँ"
+      ],
+      "Run on device": [
+        "डिवाइस पर चलाएँ"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "खाली ICS फ़ाइल"
@@ -1653,6 +1667,12 @@
         "स्टोरेज स्पेस सभी ${ BRAND_NAME } सेवाओं में साझा किया गया है।"
       ]
     },
+    "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "${ renewLength } महीने के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकरण होगा।",
+        "${ renewLength } महीनों के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकरण होगा।"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 महीना"
@@ -1878,6 +1898,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "संपादित करें (इवेंट विवरण देखें, बनाएं या बदलें)"
+      ],
       "View (see all event details)": [
         "देखें (सारे इवेंट जानकारी देखें)"
       ]
@@ -2513,6 +2536,9 @@
       ],
       "Dominican Republic": [
         "डोमिनिकन रिपब्लिक"
+      ],
+      "East Timor": [
+        "ईस्ट तिमोर"
       ],
       "Ecuador": [
         "इक्वाडोर"
@@ -3265,6 +3291,12 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "इन सुविधाओं तक पहुँचने के लिए ${ PROTON_SENTINEL_NAME } को सक्षम करें"
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "विस्तृत घटनाएँ और ${ PROTON_SENTINEL_NAME } को इन सुविधाओं तक पहुँचने के लिए सक्षम करें"
+      ],
+      "Enable detailed events to access these features": [
+        "विस्तृत घटनाएँको इन सुविधाओं तक पहुँचने के लिए सक्षम करें"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
@@ -3640,6 +3672,9 @@
       ]
     },
     "email_forwarding_2023: Info": {
+      "Automatically forward emails to another email address.": [
+        "ईमेल को स्वचालित रूप से दूसरे ईमेल पते पर अग्रेषित करें।"
+      ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "एंड-टू-एंड एन्क्रिप्शन के बिना किसी पते पर अग्रेषित करने से आपके ${ boldForwarderEmail } पते के लिए एंड-टू-एंड एन्क्रिप्शन अक्षम हो जाएगा, लेकिन शून्य-एक्सेस एन्क्रिप्शन सक्षम रहेगा। ${ learnMoreLink }"
       ],
@@ -4604,6 +4639,9 @@
       "Got it": [
         "समझ गए"
       ],
+      "Invite a user": [
+        "किसी यूज़र को न्योता भेजें"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "मौजूदा ${ BRAND_NAME } यूज़र को न्योता भेजें"
       ],
@@ -4655,6 +4693,10 @@
       "Manage user accounts": [
         "यूज़र खाते संभालें"
       ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "6 महीने की अवधि में केवल ${ n } स्वीकृत निमंत्रण की अनुमति है।",
+        "6 महीने की अवधि में केवल ${ n } स्वीकृत निमंत्रणों की अनुमति है।"
+      ],
       "Pending": [
         "लंबित"
       ],
@@ -4704,6 +4746,11 @@
       ],
       "You left this plan": [
         "आपने ये प्लान छोड़ा"
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "अपने परिवार समूह में उपयोगकर्ता खातों को जोड़ें, हटाें, और उनमें परिवर्तन करें।"
       ]
     },
     "familyOffer_2023:Label": {
@@ -6285,6 +6332,12 @@
         "${ deletedServerCount } गेटवे सर्वर को मिटाया जा रहा है",
         "${ deletedServerCount } गेटवे सर्वर को मिटाये जा रहे हैं"
       ],
+      "Disable recovery by email address": [
+        "ईमेल पता द्वारा पुनर्प्राप्ति अक्षम करें"
+      ],
+      "Disable recovery by phone number": [
+        "फोन नंबर द्वारा पुनर्प्राप्ति अक्षम करें"
+      ],
       "Discover ProtectBuy logo": [
         "ProtectBuy लोगो देखें"
       ],
@@ -6376,6 +6429,9 @@
       "Emailing preference saved": [
         "ईमेल वरीयता सहेजी गई"
       ],
+      "Enable email notifications": [
+        "ईमेल सूचनाएँ सक्षम करें"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "संगठन को सुरक्षित रखने के लिए सिंगल साइन-ऑन सक्षम करें"
       ],
@@ -6441,6 +6497,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "पासवर्ड बदलने के लिए पुनर्प्राप्ति रिकवरी दर्ज करें।"
+      ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "घटनाओं में आपके ${ BRAND_NAME } प्रमाण का उपयोग करने वाली सभी ${ BRAND_NAME_TWO } सेवाओं पर सत्यापन की कोशिशें शामिल हैं।"
       ],
       "Example: ${ spfExample }": [
         "उदाहरण: ${ spfExample }"
@@ -6552,6 +6611,12 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "यदि आपने पहले कभी दो-कारक प्रमाणीकरण का उपयोग नहीं किया है, तो हम आपको दृढ़ता से ${ guideButton } की सलाह देते हैं।"
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "यदि आप अपना पासवर्ड खो देते हैं और अपने खाते को पुनः प्राप्त करने की आवश्यकता होती है, तो ${ boldImperative } कि आपके पास ${ boldAccountRecovery } स्थापित हो।"
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "अगर आप अपना पासवर्ड खो देते है और आपको अपना खाता रीसेट करने की ज़रूरत है, तो ${ boldImperative } की आपके पास ${ boldAccountAndRecovery } है, या फिर आप अपना ईमेल, संपर्क, या फाइल एक्सेस नहीं कर पाएगे।"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "अगर आप अपना दो-फैक्टर पे चल रहे डिवाइस को खो देते है, तो 6-अंक के दो-फैक्टर सत्यापन कोड की जगह ये कोड इस्तेमाल करके आप अपने खाते में साइन इन कर सकते है। हर कोड सिर्फ एक बार इस्तेमाल किया जा सकता है।"
@@ -7023,6 +7088,9 @@
       "Plus or Visionary subscription required": [
         "Plus या Visionary सदस्यता आवश्यक"
       ],
+      "Preference saved": [
+        "पसंद सेव किया गया"
+      ],
       "Preview": [
         "प्रीव्यू"
       ],
@@ -7459,6 +7527,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "अपने खाते तक निरंतर पहुंच सुनिश्चित करने के लिए, खाता पुनर्प्राप्ति विधि सेट करें"
       ],
+      "To ensure highest possible security of your account": [
+        "आपके खाते की सर्वोत्तम सुरक्षा सुनिश्चित करने के लिए"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "यह सुनिश्चित करने के लिए कि आप महत्वपूर्ण डेटा न खोएं, ${ DRIVE_APP_NAME } आपके और आपके सहयोगियों द्वारा परिवर्तन किए जाने पर आपकी फ़ाइलों के पुराने संस्करणों को सहेजता है। चुनें कि ${ BRAND_NAME } को पिछले संस्करण को कितने समय तक रखना चाहिए।"
       ],
@@ -7509,6 +7580,9 @@
       ],
       "Two-factor authentication enabled": [
         "दो-कारक प्रमाणीकरण सक्षम"
+      ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "दो-पासवर्ड मोड में दो पासवर्ड की आवश्यकता होती है: एक अपने खाते में साइन इन करने के लिए और एक अपने डेटा को डिक्रिप्ट करने के लिए। (उन्नत)"
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "पुनर्प्राप्ति फ़ाइल हस्ताक्षर सत्यापित करने में असमर्थ। कृपया समर्थन से संपर्क करें।"
@@ -7684,6 +7758,9 @@
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "हम अतिरेक प्रदान करने के लिए विभिन्न स्थानों पर एकाधिक सर्वर रखने की अनुशंसा करते हैं।"
       ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "हम अनुशंसा करते हैं कि 2FA का उपयोग लागू करने से पहले परिवार के सदस्यों को सूचित करें और उनसे अपने खातों के लिए 2FA सेटअप करने के लिए कहें।"
+      ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "हम अनुशंसा करते हैं कि 2FA का उपयोग लागू करने से पहले संगठन के सदस्यों को सूचित करें और उनसे अपने खातों के लिए 2FA स्थापित करने के लिए कहें।"
       ],
@@ -7741,6 +7818,9 @@
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "जब वो किसी प्लान की सदस्यता लेते है, तब आपको अपने सदस्यता पे इस्तेमाल करने के लिए मिलता है।"
       ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "जब आप सदस्यता रद्द करेंगे, तो आपकी सदस्यता नवीनीकरण नहीं होगी, लेकिन आप सदस्यता अवधि के अंत तक योजना के लाभों का आनंद ले सकते हैं। इसके बाद, आपकी योजना को ${ BRAND_NAME } Free योजना में डाउनग्रेड कर दिया जाएगा।"
+      ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "जब आप किसी लिंक पर क्लिक करते हैं, तो यह एंटी-फ़िशिंग सुविधा आपको वेब पेज के URL की पुष्टि करने के लिए कहेगी।"
       ],
@@ -7773,6 +7853,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "क्या आप एक नया सत्यापन कोड प्राप्त करना चाहेंगे?"
+      ],
+      "Writing assistant": [
+        "लेखन सहायक"
       ],
       "Yearly": [
         "सालाना"
@@ -9267,6 +9350,9 @@
       "Sticky labels": [
         "चिपकू लेबल"
       ],
+      "Strong": [
+        "मजबूत"
+      ],
       "Subscription options": [
         "सदस्यता विकल्प"
       ],
@@ -9284,6 +9370,9 @@
       ],
       "Time zone": [
         "समय क्षेत्र"
+      ],
+      "Tips and insights": [
+        "सुझाव और जानकारियाँ"
       ],
       "To: ${ toEmail }": [
         "को: ${ toEmail }"
@@ -9333,8 +9422,14 @@
       "Verify keys with Key Transparency": [
         "Key Transparency के साथ कुंजियों को सत्यापित करें"
       ],
+      "Vulnerable": [
+        "कमज़ोर"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "आपको जाते हुए देखकर हमें बड़ा अफसोस हो रहा है। कृपया बताएं कि आप हमें सुधारने में मदद करने के लिए क्यों जा रहे हैं।"
+      ],
+      "Weak": [
+        "कमज़ोर"
       ],
       "Week start": [
         "सप्ताह की शुरुआत"
@@ -9686,6 +9781,14 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "और जानें"
+      ]
+    },
+    "Log preference": {
+      "Enable detailed events": [
+        "विस्तृत घटनाएँ सक्षम करें"
+      ],
+      "Enable security events": [
+        "सुरक्षा घटनाएं सक्षम करें"
       ]
     },
     "Mail import summary": {
@@ -10166,6 +10269,9 @@
       "${ n } VPN connection": [
         "${ n } VPN कनेक्शन",
         "${ n } VPN कनेक्शन"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } असीमित hide-my-email उपनामों के साथ"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } क्रमादेश"
@@ -10818,8 +10924,20 @@
       ]
     },
     "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } और ${ additionalApp } प्रोडक्ट अपडेट"
+      ],
+      "${ app } product updates": [
+        "${ app } प्रोडक्ट अपडेट"
+      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business समाचार पत्रिका"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } महत्वपूर्ण घोषणाएँ"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } खबरपत्र"
       ],
       "${ BRAND_NAME } offers and promotions": [
         "${ BRAND_NAME } ऑफर और प्रचार"
@@ -10827,13 +10945,61 @@
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } प्रोडक्ट खबर"
       ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } उपयोगकर्ता सर्वेक्षण"
+      ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } स्वागत ईमेल"
+      ],
+      "1 email per month": [
+        "प्रति माह 1- ईमेल"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "प्रति माह 1 ईमेल। नवीनतम गोपनीयता समाचार प्राप्त करें और ${ BRAND_NAME } ब्रह्मांड में क्या हो रहा है, जानें।"
+      ],
+      "1 email per quarter": [
+        "1 ईमेल प्रति तिमाही"
+      ],
+      "1-2 emails per month": [
+        "प्रति माह 1-2 ईमेल"
+      ],
+      "2-4 emails per year": [
+        "2-4 ईमेल प्रति वर्ष"
+      ],
+      "4-6 emails per year": [
+        "4-6 ईमेल प्रति वर्ष"
+      ],
+      "Application notifications": [
+        "एप्लीकेशन सूचना"
+      ],
+      "Daily email notifications": [
+        "दैनिक ईमेल सूचनाएं"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "इसे अक्षम करने से ${ BRAND_NAME } एप्लीकेशनों में सूचनाएँ प्राप्त करने की क्षमता हटा दी जाएगी।"
+      ],
+      "During your first month": [
+        "आपके पहले महीने में"
+      ],
+      "Email subscriptions": [
+        "ईमेल सदस्यताएँ"
+      ],
+      "In-app notifications": [
+        "अनुप्रयोग के अंतर्गत अधिसूचनाएँ"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "${ BRAND_NAME } सेवाओं को सुधारने के लिए सर्वेक्षणों में भाग लें"
+      ],
+      "Product updates": [
+        "प्रोडक्ट अपडेट"
       ]
     },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } बनाया गया"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } को अक्षम कर दिया गया है"
       ],
       "A disabled address cannot be default": [
         "एक अक्षम पता डिफॉल्ट नहीं हो सकता"
@@ -10846,6 +11012,9 @@
       ],
       "Dark Web Monitoring has been enabled": [
         "Dark Web Monitoring सक्षम कर दी गई है"
+      ],
+      "Email notifications have been enabled": [
+        "ईमेल सूचनाएँ सक्षम कर दी गई हैं"
       ],
       "Invalid code": [
         "अमान्य कोड"
@@ -12716,6 +12885,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe लेखन सहायक ${ maxAi } उपयोगकर्ता के लिए",
+        "${ BRAND_NAME } Scribe लेखन सहायक ${ maxAi } उपयोगकर्ताओं के लिए"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } विशेष सर्वर",
         "${ ipAddresses } विशेष सर्वर"
@@ -13637,6 +13810,9 @@
       "Delete key permanently?": [
         "चाबी हमेशा के लिए मिटाएं?"
       ],
+      "Delete label?": [
+        "लेबल मिटाएं?"
+      ],
       "Delete logs": [
         "लॉग हटाएं"
       ],
@@ -14129,6 +14305,9 @@
       "Security and privacy": [
         "सुरक्षा व निजता"
       ],
+      "Security events": [
+        "सुरक्षा घटनाएं"
+      ],
       "Security logs": [
         "सुरक्षा लॉग"
       ],
@@ -14487,11 +14666,17 @@
       "Account is disconnected": [
         "खाता डिस्कनेक्ट किया गया है"
       ],
+      "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
+        "व्यवस्थापक उपयोगकर्ता खातों को प्रबंधित कर सकते हैं और अन्य उपयोगकर्ताओं को व्यवस्थापक अधिकार दे सकते हैं। केवल प्राथमिक व्यवस्थापक संगठन की योजना संपादित कर सकता है।"
+      ],
       "An approximate location of the IP address": [
         "IP ​​पते का अनुमानित स्थान"
       ],
       "Any protection applied to suspicious activity": [
         "संदिग्ध गतिविधि पर लागू कोई भी सुरक्षा"
+      ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "अपने पसंदीदा दिन और रात के विषयों के बीच स्वचालित रूप से स्विच करें, जो आपके सिस्टम के दिन और रात मोड के साथ सिंक में हो।"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "इस यूआरएल को कॉपी करके अपने पहचान प्रदाता के ACS (अभिकथन उपभोक्ता सेवा) यूआरएल फील्ड में पेस्ट करें"
@@ -14525,6 +14710,9 @@
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "पहचान प्रदाता से एंडपॉइंट URL (उदा. https://idp.udaaharan.in/sso/saml)"
+      ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "${ MAIL_APP_NAME } और इसके आगे के उपयोग को अधिकतम बनाने में मदद करने के लिए उत्पादकता और सुरक्षा सुझाव प्राप्त करें।"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "जीमेल अपने आप कुछ ईपत्रों को 'समाचिक' अथवा 'प्रचार ' जैसी श्रेणियों में डालता है। आप चुन सकते हैं कि इन ईपत्र को कहा पर आयात करना है।"

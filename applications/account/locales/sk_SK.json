@@ -4471,6 +4471,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Nie je možné načítať faktúry. Skúste to neskôr, prosím."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Nie je možné načítať transakcie. Skúste to neskôr, prosím."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendára",
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov",
@@ -9450,6 +9453,9 @@
       "You have no saved payment methods.": [
         "Nemáte uložené žiadne spôsoby platby."
       ],
+      "You have no transactions.": [
+        "Nemáte žiadne transakcie."
+      ],
       "You may be redirected to your bank’s website.": [
         "Môžete byť presmerovaní na webovú stránku vašej banky."
       ],
@@ -10994,6 +11000,9 @@
       "Sticky labels": [
         "Pripnuté štítky"
       ],
+      "Strong": [
+        "Silné"
+      ],
       "Subscription options": [
         "Možnosti predplatného"
       ],
@@ -11078,8 +11087,14 @@
       "Video conferencing with Zoom": [
         "Videokonferencie s aplikáciou Zoom"
       ],
+      "Vulnerable": [
+        "Zraniteľné"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Je nám ľúto, že odchádzate. Napíšte nám svoj dôvod, prečo odchádzate, aby sme mohli zlepšiť naše služby."
+      ],
+      "Weak": [
+        "Slabé"
       ],
       "Week start": [
         "Týždeň začína v"
@@ -15204,6 +15219,9 @@
       ],
       "Invoice": [
         "Faktúra"
+      ],
+      "Transactions": [
+        "Transakcie"
       ]
     },
     "Select search results": {
@@ -18723,6 +18741,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME } faktúra"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "Transakcie ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -19079,6 +19100,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na poslednú ${ stableRelease }"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Vrátenie peňazí"
+      ],
+      "Failed": [
+        "Zlyhalo"
+      ],
+      "Needs attention": [
+        "Vyžaduje pozornosť"
+      ],
+      "Refunded": [
+        "Vrátené"
+      ],
+      "Success": [
+        "Dokončené"
+      ],
+      "Timeout": [
+        "Čas vypršal"
+      ],
+      "Voided": [
+        "Zrušené"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Úprava kreditu"
+      ],
+      "Authorization": [
+        "Autorizácia"
+      ],
+      "Bank transfer": [
+        "Bankový prevod"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Hotovosť"
+      ],
+      "Chargeback": [
+        "Vrátenie peňazí"
+      ],
+      "Credit": [
+        "Kredit"
+      ],
+      "Credit transfer": [
+        "Presun kreditov"
+      ],
+      "Currency conversion": [
+        "Prepočet meny"
+      ],
+      "Gift card": [
+        "Darčekový poukaz"
+      ],
+      "Migration": [
+        "Migrácia"
+      ],
+      "Payment": [
+        "Platba"
+      ],
+      "Payment reversal": [
+        "Storno platby"
+      ],
+      "Refund": [
+        "Vrátenie peňazí"
       ]
     },
     "unprivatization": {

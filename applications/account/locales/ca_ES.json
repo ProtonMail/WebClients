@@ -1972,7 +1972,7 @@
         "Afegeix un enllaç al peu del correu electrònic"
       ],
       "Change email address settings": [
-        "No s'han pogut modificar les preferències de l'adreça de correu electrònic."
+        "Modificar les preferències de l'adreça de correu electrònic"
       ],
       "Continue": [
         "Continua"
@@ -3660,6 +3660,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Desbloquegeu carpetes i etiquetes il·limitades i més característiques prèmium quan milloreu el vostre pla."
       ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Milloreu el vostre pla per obtenir ${ activatePmUser } per una adreça de correu electrònic més curta i fàcil de recordar, a més de la vostra actual."
+      ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Podeu continuar convidant amics, però no podreu guanyar més crèdits"
       ],
@@ -4459,6 +4462,9 @@
       ],
       "Couldn't load invoices. Please try again later.": [
         "No s'han pogut carregar les factures. Torneu a provar més tard."
+      ],
+      "Couldn't load transactions. Please try again later.": [
+        "No s'han pogut carregar les transaccions. Torneu a provar més tard."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
@@ -7975,6 +7981,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Els missatges a la carpeta d'Enviats o Esborranys continuaran apareixent a aquestes carpetes, fins i tot si els moveu a una altra carpeta."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Els missatges a totes les vostres adreces de correu electrònic aniran a la vostra safata d'entrada."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -8329,6 +8338,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
+      "Registering your subscription...": [
+        "Registrant la vostra subscripció..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Recordeu compartir els detalls d'inici de sessió amb l'usuari."
       ],
@@ -8490,6 +8502,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF aclareix qui està autoritzat a enviar correus electrònics per al vostre domini. Assegureu-vos d'afegir el registre TXT següent a la consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Comenceu a compartir-la amb els vostres contactes i utilitzeu-la per a serveis en línia."
       ],
       "Stay tuned for future promotions.": [
         "Estigueu atent a futures promocions."
@@ -8668,6 +8683,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Això és una clau de xifratge que potser heu desat anteriorment."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
       ],
       "This is the password you used before the password reset.": [
         "Això és la contrasenya que utilitzàveu abans del restabliment de contrasenya."
@@ -9289,6 +9307,9 @@
       ],
       "You have no saved payment methods.": [
         "No teniu mètodes de pagament desats."
+      ],
+      "You have no transactions.": [
+        "No teniu cap transacció."
       ],
       "You may be redirected to your bank’s website.": [
         "És possible que se us redirigeixi al lloc web del vostre banc."
@@ -10818,6 +10839,9 @@
       "Sticky labels": [
         "Etiquetes automàtiques"
       ],
+      "Strong": [
+        "Forta"
+      ],
       "Subscription options": [
         "Opcions de subscripció"
       ],
@@ -10902,8 +10926,14 @@
       "Video conferencing with Zoom": [
         "Videoconferència amb Zoom"
       ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ens sap greu que marxeu. Expliqueu perquè us n'aneu per ajudar-nos a millorar."
+      ],
+      "Weak": [
+        "Feble"
       ],
       "Week start": [
         "Inici de setmana"
@@ -14936,6 +14966,9 @@
       ],
       "Invoice": [
         "Factura"
+      ],
+      "Transactions": [
+        "Transaccions"
       ]
     },
     "Select search results": {
@@ -18307,6 +18340,9 @@
       "Your recovery status": [
         "El seu estat de recuperació"
       ],
+      "Your shorter address is now ready": [
+        "La vostra adreça més curta ja està preparada."
+      ],
       "Your SMTP token": [
         "El vostre token SMTP"
       ],
@@ -18339,6 +18375,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Factura de ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "Transacció de ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -18695,6 +18734,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Aquesta versió del Navegador Tor no està suportada. Actualitzeu a la darrera ${ stableRelease }."
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Devolució de càrrec"
+      ],
+      "Failed": [
+        "Operació fallida"
+      ],
+      "Needs attention": [
+        "Necessita la vostra atenció"
+      ],
+      "Refunded": [
+        "Reemborsat"
+      ],
+      "Success": [
+        "Operació reeixida"
+      ],
+      "Timeout": [
+        "Temps esgotat"
+      ],
+      "Voided": [
+        "Anul·lado"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Crèdit d'ajustament"
+      ],
+      "Authorization": [
+        "Autorització"
+      ],
+      "Bank transfer": [
+        "Transferència bancària"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Efectiu"
+      ],
+      "Chargeback": [
+        "Devolució de càrrec"
+      ],
+      "Credit": [
+        "Crèdit"
+      ],
+      "Credit transfer": [
+        "Transferència de crèdits"
+      ],
+      "Currency conversion": [
+        "Conversió de moneda"
+      ],
+      "Gift card": [
+        "Targeta regal"
+      ],
+      "Migration": [
+        "Migració"
+      ],
+      "Payment": [
+        "Pagament"
+      ],
+      "Payment reversal": [
+        "Cancel·lació de pagament"
+      ],
+      "Refund": [
+        "Reemborsament"
       ]
     },
     "unprivatization": {
