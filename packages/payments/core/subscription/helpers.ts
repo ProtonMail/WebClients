@@ -46,3 +46,47 @@ export function getSubscriptionPlanTitle(
         planName: primaryPlan?.Name,
     };
 }
+
+export const getLumoAddonNameByPlan = (planName: PLANS) => {
+    switch (planName) {
+        // B2C
+        case PLANS.MAIL:
+            return ADDON_NAMES.LUMO_MAIL;
+        case PLANS.DRIVE:
+            return ADDON_NAMES.LUMO_DRIVE;
+        case PLANS.PASS:
+            return ADDON_NAMES.LUMO_PASS;
+        case PLANS.VPN:
+            return ADDON_NAMES.LUMO_VPN;
+        case PLANS.VPN2024:
+            return ADDON_NAMES.LUMO_VPN2024;
+        case PLANS.BUNDLE:
+            return ADDON_NAMES.LUMO_BUNDLE;
+        case PLANS.FAMILY:
+            return ADDON_NAMES.LUMO_FAMILY;
+        case PLANS.DUO:
+            return ADDON_NAMES.LUMO_DUO;
+
+        // B2B
+        case PLANS.MAIL_PRO:
+            return ADDON_NAMES.LUMO_MAIL_PRO;
+        case PLANS.MAIL_BUSINESS:
+            return ADDON_NAMES.LUMO_MAIL_BUSINESS;
+        case PLANS.DRIVE_PRO:
+            return ADDON_NAMES.LUMO_DRIVE_PRO;
+        case PLANS.DRIVE_BUSINESS:
+            return ADDON_NAMES.LUMO_DRIVE_BUSINESS;
+        case PLANS.BUNDLE_PRO:
+            return ADDON_NAMES.LUMO_BUNDLE_PRO;
+        case PLANS.BUNDLE_PRO_2024:
+            return ADDON_NAMES.LUMO_BUNDLE_PRO_2024;
+        case PLANS.VPN_PRO:
+            return ADDON_NAMES.LUMO_VPN_PRO;
+        case PLANS.VPN_BUSINESS:
+            return ADDON_NAMES.LUMO_VPN_BUSINESS;
+        case PLANS.PASS_PRO:
+            return ADDON_NAMES.LUMO_PASS_PRO;
+        case PLANS.PASS_BUSINESS:
+            return ADDON_NAMES.LUMO_PASS_BUSINESS;
+    }
+};

@@ -8,6 +8,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
+import useAppLink from '@proton/components/components/link/useAppLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
@@ -21,9 +22,15 @@ import useLoad from '@proton/components/hooks/useLoad';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import type { PLANS } from '@proton/payments';
-import { CURRENCIES, type Currency, type PaymentMethodStatusExtended, getPlansMap } from '@proton/payments';
-import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
-import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
+import {
+    CURRENCIES,
+    type Currency,
+    type PaymentMethodStatusExtended,
+    SelectedPlan,
+    getPlansMap,
+} from '@proton/payments';
+import { APPS, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { getPlanName, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import type { Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -90,6 +97,7 @@ const getParameters = (
     const edit = params.get('edit');
     const type = params.get('type');
     const offer = params.get('offer');
+    const addon = params.get('addon');
 
     const parsedTarget = (() => {
         if (target === 'compare') {
@@ -116,7 +124,12 @@ const getParameters = (
         }),
         true
     );
-    const plan = plansMap?.[planName as PLANS];
+
+    let plan = plansMap?.[planName as PLANS];
+
+    if (!plan && addon === 'lumo') {
+        plan = plansMap?.[getPlanName(subscription) as PLANS];
+    }
 
     return {
         plan,
@@ -124,9 +137,10 @@ const getParameters = (
         cycle: parsedCycle || subscription?.Cycle || DEFAULT_CYCLE,
         currency: parsedCurrency,
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
-        disablePlanSelection: type === 'offer' || edit === 'disable',
-        disableCycleSelector: edit === 'enable' ? false : type === 'offer' || Boolean(offer),
+        disablePlanSelection: type === 'offer' || edit === 'disable' || addon === 'lumo',
+        disableCycleSelector: edit === 'enable' ? false : type === 'offer' || addon === 'lumo' || Boolean(offer),
         plansMap,
+        addon,
     };
 };
 
@@ -185,7 +199,7 @@ const UpsellPrompt = ({ discount, planCombination: { plan, cycle }, onConfirm, .
             {...rest}
         >
             {c('bf2023: info').ngettext(
-                msgid `Sorry, this offer is not available with your current plan. But you can get ${discountPercentage} off ${plan.Title} when you subscribe for ${cycle} month.`,
+                msgid`Sorry, this offer is not available with your current plan. But you can get ${discountPercentage} off ${plan.Title} when you subscribe for ${cycle} month.`,
                 `Sorry, this offer is not available with your current plan. But you can get ${discountPercentage} off ${plan.Title} when you subscribe for ${cycle} months.`,
                 cycle
             )}
@@ -212,6 +226,8 @@ const AutomaticSubscriptionModal = () => {
     const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
     const [paymentStatus, loadingPaymentStatus] = usePaymentStatus();
 
+    const goToApp = useAppLink();
+
     useLoad();
 
     useEffect(() => {
@@ -229,7 +245,7 @@ const AutomaticSubscriptionModal = () => {
             return;
         }
 
-        const { plan, currency, cycle, coupon, step, disablePlanSelection, disableCycleSelector, plansMap } =
+        const { plan, currency, cycle, coupon, step, disablePlanSelection, disableCycleSelector, plansMap, addon } =
             getParameters(location.search, plans, subscription, user, getPreferredCurrency, paymentStatus);
 
         if (!plan) {
@@ -311,6 +327,17 @@ const AutomaticSubscriptionModal = () => {
         }
 
         if (eligibility.type === 'pass-through') {
+            if (addon === 'lumo') {
+                const selectedPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
+
+                // Default number of lumo addons to the total number of members
+                openProps.planIDs = selectedPlan.setLumoCount(selectedPlan.getTotalMembers()).planIDs;
+
+                openProps.plan = undefined; // We need to use maybePlanIDs when calculating planIDs in SubscriptionContainer
+                openProps.onSubscribed = () => {
+                    goToApp('/', APPS.PROTONLUMO, false);
+                };
+            }
             openSubscriptionModal(openProps);
         }
     }, [loadingPlans, loadingSubscription, loadingModal, loadingLastSubscriptionEnd, location.search]);

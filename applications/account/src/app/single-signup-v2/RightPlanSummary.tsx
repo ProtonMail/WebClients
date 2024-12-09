@@ -48,7 +48,7 @@ const RightPlanSummary = ({
         <div className={clsx('w-full p-6', className)}>
             <div className="text-rg text-bold mb-4">{c('Info').t`Summary`}</div>
             <div className="flex gap-2 flex-nowrap mb-4 items-center">
-                <div className="border rounded-lg p-2" title={title}>
+                <div className="border rounded-lg p-2 right-summary-logo" title={title}>
                     {logo}
                 </div>
                 <div className="flex-1">

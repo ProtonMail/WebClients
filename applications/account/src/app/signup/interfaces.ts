@@ -53,6 +53,7 @@ export const SERVICES: { [key: string]: APP_NAMES } = {
     pass: APPS.PROTONPASS,
     docs: APPS.PROTONDOCS,
     wallet: APPS.PROTONWALLET,
+    lumo: APPS.PROTONLUMO,
 };
 
 export interface SessionData {

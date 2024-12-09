@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react';
 
 import type { IconSize } from '@proton/components';
-import { DriveLogo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components';
+import { DriveLogo, Logo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getUsersFeature } from '@proton/components/containers/payments/features/highlights';
@@ -17,6 +17,7 @@ import {
     getDuoPlan,
     getEarlyAccessFeature,
     getFamilyPlan,
+    getLumoPlan,
     getMailBusinessPlan,
     getMailPlan,
     getMailProPlan,
@@ -36,7 +37,7 @@ import {
     getVPNAppFeature,
 } from '@proton/components/containers/payments/features/vpn';
 import { PLANS } from '@proton/payments';
-import { DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
+import { APPS, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 
@@ -300,6 +301,15 @@ export const getSummaryPlan = ({
         const shortPlan = getWalletPlan(plan);
         return {
             logo: <WalletLogo variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.LUMO) {
+        const shortPlan = getLumoPlan(plan);
+        return {
+            logo: <Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={iconSize} />,
             ...shortPlan,
             plan,
         };

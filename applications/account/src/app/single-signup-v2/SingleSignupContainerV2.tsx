@@ -429,6 +429,9 @@ const SingleSignupContainerV2 = ({
             if (productParam === 'business') {
                 return 'business_signup';
             }
+            if (toApp === APPS.PROTONLUMO) {
+                return 'lumo_signup';
+            }
             return 'generic_signup';
         })();
         return sendTelemetryReport({

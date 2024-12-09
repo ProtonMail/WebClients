@@ -223,6 +223,7 @@ const SubscriptionContainer = ({
     paymentsStatus,
 }: SubscriptionContainerProps) => {
     const allowDowncycling = useFlag('AllowDowncycling');
+    const isLumoAddonAvailable = useFlag('LumoAddonAvailable');
 
     const defaultMaximumCycle = getMaximumCycleForApp(app);
     const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
@@ -1077,7 +1078,8 @@ const SubscriptionContainer = ({
                                         </h2>
                                         {hasPlanCustomizer && currentPlan && (
                                             <ProtonPlanCustomizer
-                                                scribeEnabled={scribeEnabled.paymentsEnabled}
+                                                scribeAddonEnabled={scribeEnabled.paymentsEnabled}
+                                                lumoAddonEnabled={isLumoAddonAvailable}
                                                 loading={blockAccountSizeSelector}
                                                 currency={model.currency}
                                                 cycle={model.cycle}

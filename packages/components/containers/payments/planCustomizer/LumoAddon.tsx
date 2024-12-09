@@ -1,20 +1,15 @@
-import type { ReactElement } from 'react';
+import { type ReactElement, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import {
-    getScribeUpsellLearnMore,
-    getScribeUpsellText,
-} from '@proton/components/containers/payments/subscription/assistant/helpers';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/interfaces';
-import { Audience } from '@proton/shared/lib/interfaces';
 
-import { AccountSizeCustomiser } from './planCustomizer/AccountSizeCustomiser';
+import { AccountSizeCustomiser } from './AccountSizeCustomiser';
 
-const ScribeB2BBanner = ({ onClick, price }: { onClick: () => void; price: ReactElement }) => (
+const LumoAddonBanner = ({ onClick, price }: { onClick: () => void; price: ReactElement }) => (
     <div
         className="border p-4 flex flex-column lg:flex-row gap-2 flex-nowrap items-start lg:items-center rounded-lg"
         style={{ background: 'linear-gradient(85deg, rgb(112 76 255 / 0.15) 0%, rgb(70 26 255 / 0.04) 100%)' }}
@@ -22,15 +17,12 @@ const ScribeB2BBanner = ({ onClick, price }: { onClick: () => void; price: React
         <div className="w-full">
             <p className="m-0 mb-1 text-lg">
                 {/* {translator: Full sentence: Add writing assistant for ${price} per user per month } */}
-                <strong className="block lg:inline">{c('mail_signup_2024: Info')
-                    .t`Add ${BRAND_NAME} Scribe writing assistant`}</strong>{' '}
+                <strong className="block lg:inline">{c('collider_2025: Info').t`Add ${LUMO_APP_NAME}`}</strong>{' '}
                 {c('mail_signup_2024: Info').jt`for ${price}`}
             </p>
             <p className="m-0 text-sm color-weak">
-                {getScribeUpsellText()}{' '}
-                <Href href={getScribeUpsellLearnMore()} className="inline-block color-weak text-normal">
-                    {c('Link').t`Learn more`}
-                </Href>
+                {c('collider_2025: Info')
+                    .t`${LUMO_APP_NAME} is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.`}
             </p>
         </div>
         <Button color="norm" shape="outline" className="shrink-0 flex items-center gap-1" pill onClick={onClick}>
@@ -41,34 +33,29 @@ const ScribeB2BBanner = ({ onClick, price }: { onClick: () => void; price: React
 );
 
 interface Props {
+    price: ReactElement;
+    onAddLumo: () => void;
     addon: Plan;
     maxUsers: number;
-    price: ReactElement;
     input: ReactElement;
     showDescription?: boolean;
     showTooltip?: boolean;
-    audience?: Audience;
-    showScribeBanner?: boolean;
-    onAddScribe: () => void;
     value: number;
 }
 
-const ScribeAddon = ({
-    addon,
-    input,
-    value,
-    price,
-    maxUsers,
-    showDescription,
-    showTooltip,
-    audience,
-    showScribeBanner,
-    onAddScribe,
-}: Props) => {
-    if (audience === Audience.B2B && showScribeBanner) {
+const LumoAddon = ({ price, onAddLumo, addon, input, value, maxUsers, showDescription, showTooltip }: Props) => {
+    const [showLumoBanner, setShowLumoBanner] = useState(value === 0);
+
+    if (showLumoBanner) {
         return (
             <div>
-                <ScribeB2BBanner price={price} onClick={onAddScribe} />
+                <LumoAddonBanner
+                    price={price}
+                    onClick={() => {
+                        setShowLumoBanner(false);
+                        onAddLumo();
+                    }}
+                />
             </div>
         );
     }
@@ -83,9 +70,9 @@ const ScribeAddon = ({
             maxUsers={maxUsers}
             showDescription={showDescription}
             showTooltip={showTooltip}
-            mode="gpt-seats"
+            mode="lumo"
         />
     );
 };
 
-export default ScribeAddon;
+export default LumoAddon;

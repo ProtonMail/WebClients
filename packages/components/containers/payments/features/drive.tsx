@@ -276,6 +276,7 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
             [PLANS.PASS_BUSINESS]: getStorageFeature(-1, { subtext: true, freePlan }),
             [PLANS.VPN_PRO]: null,
             [PLANS.VPN_BUSINESS]: null,
+            [PLANS.LUMO]: getStorageFeature(-1, { subtext: true, freePlan }),
         },
     };
 };
@@ -305,6 +306,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_BUSINESS]: getVersionHistory(),
                 [PLANS.VPN_PRO]: getVersionHistory(),
                 [PLANS.VPN_BUSINESS]: getVersionHistory(),
+                [PLANS.LUMO]: null,
             },
         },
         {
@@ -329,6 +331,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.LUMO]: getEndToEndEncryption(),
             },
         },
         {
@@ -354,6 +357,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_BUSINESS]: getDocumentEditor(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.LUMO]: getDocumentEditor(),
             },
         },
         {
@@ -378,6 +382,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_BUSINESS]: getShareFeature(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.LUMO]: getShareFeature(),
             },
         },
         {
@@ -402,6 +407,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_BUSINESS]: getSyncAndBackupFeature(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.LUMO]: getSyncAndBackupFeature(),
             },
         },
     ];

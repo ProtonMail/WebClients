@@ -60,6 +60,9 @@ export const getIsDocsApp = (toApp?: APP_NAMES) => {
 export const getIsWalletApp = (toApp?: APP_NAMES) => {
     return toApp === APPS.PROTONWALLET;
 };
+export const getIsLumoApp = (toApp?: APP_NAMES) => {
+    return toApp === APPS.PROTONLUMO;
+};
 
 export const getRequiresAddress = (toApp: APP_NAMES) => {
     return requiresAddress.includes(toApp);
