@@ -4465,6 +4465,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Nu s-au putut încărca facturile. Mai reîncercați."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Nu s-au putut încărca tranzacțiile. Reîncercați mai târziu."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deselectați cel puțin ${ calendarsToFixCount } calendar.",
         "Deselectați cel puțin ${ calendarsToFixCount } calendare.",
@@ -9368,6 +9371,9 @@
       "You have no saved payment methods.": [
         "Nu aveți metode de plată salvate."
       ],
+      "You have no transactions.": [
+        "Nu aveți tranzacții."
+      ],
       "You may be redirected to your bank’s website.": [
         "Ar putea fi necesară redirecționarea spre pagina web a băncii."
       ],
@@ -10904,6 +10910,9 @@
       "Sticky labels": [
         "Etichete adezive"
       ],
+      "Strong": [
+        "Puternică"
+      ],
       "Subscription options": [
         "Opțiuni abonament"
       ],
@@ -10991,8 +11000,14 @@
       "VPN Accelerator": [
         "VPN Accelerator"
       ],
+      "Vulnerable": [
+        "Vulnerabilă"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ne pare rău că ne părăsiți. Vă rugăm să ne explicaţi de ce plecaţi pentru a ne ajuta să îmbunătăţim serviciul."
+      ],
+      "Weak": [
+        "Slabă"
       ],
       "Week start": [
         "Început săptămână"
@@ -15086,6 +15101,9 @@
       ],
       "Invoice": [
         "Factura"
+      ],
+      "Transactions": [
+        "Tranzacții"
       ]
     },
     "Select search results": {
@@ -18544,6 +18562,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Factura ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "Tranzacție ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -18900,6 +18921,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Această versiune a navigatorului web Tor nu este suportată. Actualizați la cea mai recentă versiune ${ stableRelease }."
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Rambursare"
+      ],
+      "Failed": [
+        "Eșuată"
+      ],
+      "Needs attention": [
+        "Necesită atenție"
+      ],
+      "Refunded": [
+        "Rambursat"
+      ],
+      "Success": [
+        "Operație reușită"
+      ],
+      "Timeout": [
+        "Timp expirat"
+      ],
+      "Voided": [
+        "Anulată"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Ajustare credit"
+      ],
+      "Authorization": [
+        "Autorizare"
+      ],
+      "Bank transfer": [
+        "Transfer bancar"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Numerar"
+      ],
+      "Chargeback": [
+        "Rambursare"
+      ],
+      "Credit": [
+        "Credit"
+      ],
+      "Credit transfer": [
+        "Transfer credit"
+      ],
+      "Currency conversion": [
+        "Conversie valutară"
+      ],
+      "Gift card": [
+        "Card cadou"
+      ],
+      "Migration": [
+        "Migrare"
+      ],
+      "Payment": [
+        "Plată"
+      ],
+      "Payment reversal": [
+        "Anulare plată"
+      ],
+      "Refund": [
+        "Restituire"
       ]
     },
     "unprivatization": {
