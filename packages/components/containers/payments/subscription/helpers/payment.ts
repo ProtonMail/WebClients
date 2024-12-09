@@ -76,6 +76,8 @@ export const getDefaultSelectedProductPlans = ({
         defaultB2CPlan = PLANS.PASS;
     } else if (appName === APPS.PROTONWALLET) {
         defaultB2CPlan = PLANS.WALLET;
+    } else if (appName === APPS.PROTONLUMO) {
+        defaultB2CPlan = PLANS.LUMO;
     }
 
     const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, /*PLANS.VPN2024, */ PLANS.DRIVE, PLANS.WALLET].find(

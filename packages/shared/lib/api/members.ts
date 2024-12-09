@@ -172,6 +172,12 @@ export const updateAI = (memberID: string, MaxAI: number) => ({
     data: { MaxAI },
 });
 
+export const updateLumo = (memberID: string, MaxLumo: number) => ({
+    method: 'put',
+    url: `core/v4/members/${memberID}/lumo`,
+    data: { MaxLumo },
+});
+
 export interface RequestMemberUnprivatizationInput {
     InvitationData: string;
     InvitationSignature: string;

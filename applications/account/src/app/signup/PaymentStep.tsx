@@ -311,6 +311,7 @@ const PaymentStep = ({
                                 planIDs={optimisticPlanIDs ?? subscriptionData.planIDs}
                                 onChangePlanIDs={handleOptimisticPlanIDs}
                                 className="pb-7 mb-8"
+                                scribeAddonEnabled
                             />
                         );
                     })()}

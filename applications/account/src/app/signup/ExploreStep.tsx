@@ -26,6 +26,7 @@ const ExploreStep = ({ onExplore, user, plan }: Props) => {
     const { APP_NAME } = useConfig();
 
     const isWalletAppSwitcherNewBadgeEnabled = useFlag('WalletAppSwitcherNewBadge');
+    const isLumoAvailable = useFlag('LumoInProductSwitcher');
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -42,7 +43,7 @@ const ExploreStep = ({ onExplore, user, plan }: Props) => {
             <Content>
                 <ExploreAppsList
                     subscription={{ subscribed, plan }}
-                    apps={getExploreApps({ subscribed, user, isWalletAppSwitcherNewBadgeEnabled })}
+                    apps={getExploreApps({ subscribed, user, isWalletAppSwitcherNewBadgeEnabled, isLumoAvailable })}
                     onExplore={onExplore}
                 />
             </Content>

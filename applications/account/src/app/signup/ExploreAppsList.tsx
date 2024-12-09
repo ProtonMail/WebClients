@@ -14,6 +14,7 @@ import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { User } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
+import isTruthy from '@proton/utils/isTruthy';
 
 interface App {
     name: APP_NAMES;
@@ -26,10 +27,12 @@ export const getExploreApps = ({
     subscribed,
     user,
     isWalletAppSwitcherNewBadgeEnabled,
+    isLumoAvailable,
 }: {
     subscribed?: User['Subscribed'];
     user: User | undefined;
     isWalletAppSwitcherNewBadgeEnabled: boolean;
+    isLumoAvailable: boolean;
 }) => {
     const availableApps = getAvailableApps({ user, context: 'dropdown' });
     return [
@@ -77,7 +80,15 @@ export const getExploreApps = ({
             },
             isNew: isWalletAppSwitcherNewBadgeEnabled,
         },
+        isLumoAvailable && {
+            name: APPS.PROTONLUMO,
+            bit: PRODUCT_BIT.LUMO,
+            description: () => {
+                return c('collider_2025: app-switcher').t`Your private AI helper`;
+            },
+        },
     ]
+        .filter(isTruthy)
         .sort((a, b) => {
             if (
                 (hasBit(subscribed, a.bit) && !hasBit(subscribed, b.bit)) ||

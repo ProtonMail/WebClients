@@ -3,13 +3,13 @@ import type { ReactElement, ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_APP_NAME } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { contactHref } from './helpers';
 
-export type AccountTypeKey = 'drive' | 'org-size' | 'users' | 'gpt-seats';
+export type AccountTypeKey = 'drive' | 'org-size' | 'users' | 'gpt-seats' | 'lumo';
 export type AccountSizeConfig = {
     [key in AccountTypeKey]: { label: string; tooltip?: string };
 };
@@ -74,6 +74,9 @@ export const AccountSizeCustomiser = ({
         'gpt-seats': {
             label: c('Info').t`${BRAND_NAME} Scribe writing assistant`,
             tooltip: c('Infog').t`AI powered assistant to help you craft better emails, quickly and effortlessly.`,
+        },
+        lumo: {
+            label: LUMO_APP_NAME,
         },
     };
 
