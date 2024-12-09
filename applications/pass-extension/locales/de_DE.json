@@ -326,6 +326,9 @@
       "Maximum views": [
         "Maximale Ansichten"
       ],
+      "More info": [
+        "Weitere Informationen"
+      ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
       ],
@@ -524,6 +527,9 @@
       ],
       "Sync aliases": [
         "Aliasse synchronisieren"
+      ],
+      "To mailbox": [
+        "Zum Postfach"
       ],
       "Transfer ownership": [
         "Inhaberschaft übertragen"
@@ -1775,6 +1781,9 @@
       "User's access removed": [
         "Benutzerzugriff entfernt"
       ],
+      "Value:": [
+        "Wert:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Tresor \"${ payload.content.name }\" erfolgreich gelöscht."
       ],
@@ -2094,8 +2103,14 @@
       "Display name": [
         "Anzeigename"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Domain"
+      ],
+      "Domain:": [
+        "Domain:"
       ],
       "Domains": [
         "Domains"
@@ -2214,6 +2229,9 @@
       "Include numbers (0-9)": [
         "Zahlen (0-9) einschließen"
       ],
+      "Info": [
+        "Information"
+      ],
       "Instagram handle": [
         "Instagram-Benutzername"
       ],
@@ -2267,6 +2285,9 @@
       ],
       "Logins": [
         "Zugangsdaten"
+      ],
+      "Mailboxes": [
+        "Postfächer"
       ],
       "Make all admins": [
         "Alle zu Administratoren machen"
@@ -2548,6 +2569,9 @@
       "Username/email": [
         "Benutzername/E-Mail"
       ],
+      "Value:": [
+        "Wert:"
+      ],
       "Vault ID": [
         "Tresor-ID"
       ],
@@ -2769,12 +2793,23 @@
         "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten."
       ]
     },
+    "Theme": {
+      "Dark": [
+        "Dunkel"
+      ],
+      "Light": [
+        "Hell"
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-Einstellungen"
       ],
       "Actions": [
         "Aktionen"
+      ],
+      "Aliases": [
+        "Aliasse"
       ],
       "Auto-lock update": [
         "Aktualisieren der automatischen Sperre"
@@ -2809,8 +2844,14 @@
       "Current version": [
         "Aktuelle Version"
       ],
+      "Default": [
+        "Standard"
+      ],
       "Discard changes?": [
         "Änderungen verwerfen?"
+      ],
+      "Domain": [
+        "Domain"
       ],
       "Email": [
         "E-Mail-Adresse"
@@ -2970,6 +3011,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "${ brandNameJSX } entsperren"
+      ],
+      "Unverified": [
+        "Nicht verifiziert"
       ],
       "Update available": [
         "Update verfügbar"

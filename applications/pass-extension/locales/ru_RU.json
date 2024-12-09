@@ -17,8 +17,14 @@
       "Add current URL": [
         "Добавить текущий URL"
       ],
+      "Add custom domain": [
+        "Добавить пользовательский домен"
+      ],
       "Add domain": [
         "Добавить домен"
+      ],
+      "Add mailbox": [
+        "Добавить почтовый ящик"
       ],
       "Add more": [
         "И ещё"
@@ -44,6 +50,9 @@
       "Back": [
         "Назад"
       ],
+      "Block contact": [
+        "Заблокировать контакт"
+      ],
       "Bulk delete items from trash": [
         "Множественное удаление элементов из корзины"
       ],
@@ -64,6 +73,12 @@
       ],
       "Change": [
         "Изменить"
+      ],
+      "Check DNS": [
+        "Проверить DNS-"
+      ],
+      "Check settings": [
+        "Проверьте настройки"
       ],
       "Choose a file or drag it here": [
         "Выберите файл или перетащите его сюда"
@@ -101,6 +116,9 @@
       "Continue without pinning": [
         "Продолжить без закрепления"
       ],
+      "Copy alias address": [
+        "Копировать адрес псевдонима"
+      ],
       "Copy and close": [
         "Скопировать и закрыть"
       ],
@@ -130,6 +148,9 @@
       ],
       "Create card": [
         "Создать карту"
+      ],
+      "Create contact": [
+        "Создать контакт"
       ],
       "Create identity": [
         "Создать личные данные"
@@ -163,6 +184,9 @@
       ],
       "Delete all": [
         "Удалить все"
+      ],
+      "Delete mailbox": [
+        "Удалить почтовый ящик"
       ],
       "Delete password": [
         "Удалить пароль"
@@ -308,6 +332,9 @@
       "Make admin": [
         "Сделать администратором"
       ],
+      "Make default": [
+        "Установить по умолчанию"
+      ],
       "Make editor": [
         "Сделать редактором"
       ],
@@ -325,6 +352,9 @@
       ],
       "Maximum views": [
         "Максимум просмотров"
+      ],
+      "More info": [
+        "Подробнее"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
@@ -382,6 +412,9 @@
       ],
       "Please retry": [
         "Повторите попытку"
+      ],
+      "Re-verify": [
+        "Перепроверить"
       ],
       "Reactivate now": [
         "Восстановить подписку"
@@ -470,6 +503,9 @@
       "Select": [
         "Выбрать"
       ],
+      "Send email": [
+        "Отправить электронное письмо"
+      ],
       "Send invite": [
         "Отправить приглашение"
       ],
@@ -533,6 +569,15 @@
       "Sync aliases": [
         "Синхронизировать псевдонимы"
       ],
+      "To mailbox": [
+        "В почтовый ящик"
+      ],
+      "Transfer aliases": [
+        "Перенести псевдонимы"
+      ],
+      "Transfer and delete mailbox": [
+        "Перенести и удалить почтовый ящик"
+      ],
       "Transfer ownership": [
         "Передать права владельца"
       ],
@@ -541,6 +586,9 @@
       ],
       "Try again": [
         "Попробовать снова"
+      ],
+      "Unblock contact": [
+        "Разблокировать контакт"
       ],
       "Unlock": [
         "Разблокировать"
@@ -628,11 +676,44 @@
       "A checked box means the feature is disabled.": [
         "Установленный флажок означает, что функция отключена."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Добавьте следующие записи DNS CNAME к вашему домену."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Добавьте следующую запись MX DNS к вашему домену. Обратите внимание, что в конце целевых адресов есть точка (.). Если ваш регистратор домена не разрешает эту точку, удалите ее при добавлении записи DNS."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Добавьте следующую запись TXT DNS к вашему домену."
+      ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Доступен платный тариф мониторинга Черной паутины. Улучшите приложение для немедленного доступа."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } - это метод аутентификации электронной почты, предназначенный для предотвращения подделки писем. Настоятельно рекомендуется настроить DKIM, чтобы снизить вероятность попадания ваших писем в папку «Спам» получателя."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } предназначен для защиты домена от несанкционированного использования, известного как подделка электронной почты. Построенная на основе SPF и DKIM, политика DMARC указывает принимающему почтовому серверу, что делать, если ни один из этих методов аутентификации не проходит."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Если вы используете поддомен, например ${ subdomainExample }, вам нужно использовать ${ dmarcExampleSubdomain } в качестве домена."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Если вы используете поддомен, например subdomain.domain.com, вам нужно использовать ${ domainKeyExampleSubdomain } в качестве домена. То есть, если вашим доменом является mail.domain.com, в качестве домена следует ввести ${ domainKeyExampleMail }."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Если вы используете CloudFlare, убедитесь, что не выбрали опцию прокси-сервера."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Список доменов, в которых определенные автоматические функции в ${ PASS_SHORT_APP_NAME } (автозаполнение, автопредложение, автосохранение) не должны запускаться.${ infoText }"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Некоторые регистраторы DNS могут потребовать полный путь к записи, в этом случае используйте ${ domain } в качестве значения домена."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Некоторые регистраторы доменов (Namecheap, CloudFlare и др.) также могут использовать @ для корневого домена."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } - это метод проверки подлинности электронной почты, предназначенный для обнаружения подделки адреса отправителя во время доставки письма. Настройка SPF настоятельно рекомендуется для снижения вероятности попадания ваших писем в папку «Спам» получателя."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Этот аккаунт уязвим, посетите службу и смените пароль."
@@ -640,8 +721,16 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Эта служба предлагает двухфакторную аутентификацию. Включите ее, чтобы обеспечить дополнительную безопасность аккаунта."
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "Чтобы проверить право собственности на домен, добавьте следующую запись TXT. Некоторые регистраторы доменов (Namecheap, CloudFlare и др.) могут использовать @ для корневого домена."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Разблокируйте расширенные функции безопасности и подробные журналы для защиты вашего присутствия в Интернете."
+      ]
+    },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "anything@${ domainDisplay }"
       ]
     },
     "Error": {
@@ -650,6 +739,9 @@
       ],
       "[Error] an item could not be parsed": [
         "[Ошибка] элемент не может быть обработан"
+      ],
+      "A domain ownership must be verified first.": [
+        "Сначала необходимо проверить владение доменом."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "В данный момент псевдоним не может быть обновлен. Повторите попытку позже"
@@ -720,6 +812,9 @@
         "Обнаружено ${ errors.length } повреждённых строк в csv",
         "Обнаружено ${ errors.length } повреждённых строк в csv"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Домен не может быть проверен. Пожалуйста, убедитесь, что вы добавили правильные записи DNS"
+      ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
@@ -747,11 +842,32 @@
       "Failed to add email address": [
         "Не удалось добавить адрес электронной почты"
       ],
+      "Failed to block the contact": [
+        "Не удалось заблокировать контакт"
+      ],
+      "Failed to create domain": [
+        "Не удалось создать домен"
+      ],
+      "Failed to create new mailbox": [
+        "Не удалось создать новый почтовый ящик"
+      ],
+      "Failed to create the contact": [
+        "Не удалось создать контакт"
+      ],
+      "Failed to delete domain": [
+        "Не удалось удалить домен"
+      ],
       "Failed to delete email address from monitoring": [
         "Не удалось исключить адрес электронной почты из мониторинга"
       ],
       "Failed to delete selected items": [
         "Не удалось удалить выбранные элементы"
+      ],
+      "Failed to delete the contact": [
+        "Не удалось удалить контакт"
+      ],
+      "Failed to delete the mailbox": [
+        "Не удалось удалить почтовый ящик"
       ],
       "Failed to edit user's access.": [
         "Не удалось изменить доступ пользователя."
@@ -761,6 +877,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Не удалось загрузить утечки для этого псевдонима электронной почты"
+      ],
+      "Failed to load domain settings.": [
+        "Не удалось загрузить настройки домена."
       ],
       "Failed to load item history": [
         "Не удалось загрузить историю элементов"
@@ -780,6 +899,9 @@
       "Failed to remove user's access.": [
         "Не удалось удалить доступ пользователя."
       ],
+      "Failed to resend verification code": [
+        "Не удалось повторно отправить код подтверждения"
+      ],
       "Failed to resend verification for custom email": [
         "Не удалось повторно отправить проверку для пользовательской электронной почты"
       ],
@@ -798,8 +920,26 @@
       "Failed to unpin item": [
         "Сбой при откреплении элемента"
       ],
+      "Failed to update catch-all setting.": [
+        "Не удалось обновить настройки универсального домена."
+      ],
+      "Failed to update default domain": [
+        "Не удалось обновить домен по умолчанию"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Не удалось обновить почтовые ящики домена."
+      ],
+      "Failed to update domain name.": [
+        "Не удалось обновить имя домена."
+      ],
       "Failed to update monitoring settings": [
         "Не удалось обновить настройки мониторинга"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Не удалось обновить настройки генерации случайных префиксов."
+      ],
+      "Failed to verify domain": [
+        "Не удалось проверить домен"
       ],
       "Failed to verify email address": [
         "Не удалось проверить адрес электронной почты"
@@ -1116,6 +1256,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } отобразит фавикон элемента через ${ BRAND_NAME } анонимизированный прокси-сервер изображений."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } сгенерирует адрес пересылки (также называемый обратным псевдонимом), который вы сможете скопировать в буфер обмена."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } будет импортировать только имена пользователей, заметки, кредитные карты и личные данные."
       ],
@@ -1151,6 +1294,9 @@
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 дней, чтобы попробовать платные функции бесплатно. Только в течение первой недели использования ${ BRAND_NAME }."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Контакт создан для каждого адреса электронной почты, который отправляет или получает письма от ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна новая версия ${ PASS_APP_NAME }. Обновите ее, чтобы насладиться последними функциями и исправлениями ошибок."
@@ -1194,6 +1340,9 @@
       "Aliases out of sync (${ aliasCount })": [
         "Псевдонимы не синхронизируются (${ aliasCount })"
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Все псевдонимы, использующие почтовый ящик ${ emailJSX }, также будут удалены."
+      ],
       "All breaches for this address were resolved": [
         "Все утечки по этому адресу были устранены"
       ],
@@ -1215,11 +1364,20 @@
       "An item previously shared with you was removed": [
         "Элемент, которым ранее поделились с вами, был удален"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Вы уверены, что хотите удалить ${ emailJSX } из своих почтовых ящиков?"
+      ],
       "Are you sure you want to remove the link?": [
         "Вы уверены, что хотите удалить ссылку?"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Автоматически созданные псевдонимы автоматически принадлежат следующему почтовому ящику (ящикам):"
+      ],
       "Auto-lock successfully disabled.": [
         "Автоблокировка успешно отключена."
+      ],
+      "automatically": [
+        "автоматически"
       ],
       "Automatically copy the generated password to the clipboard": [
         "Автоматически копировать сгенерированный пароль в буфер обмена"
@@ -1235,6 +1393,9 @@
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
         "Биометрические данные будут отключены и должны быть снова активированы."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Заведите собственный домен, и вам не придется покупать еще один хостинг электронной почты."
       ],
       "Built in 2FA authenticator": [
         "Встроенный двухфакторный аутентификатор"
@@ -1278,6 +1439,12 @@
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
       ],
+      "Create contact illustration": [
+        "Создайте иллюстрацию контакта"
+      ],
+      "Created ${ time }.": [
+        "Создан ${ time }."
+      ],
       "Creating alias...": [
         "Создание псевдонима..."
       ],
@@ -1289,6 +1456,9 @@
       ],
       "Decrypting your data": [
         "Расшифровка ваших данных"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Отображаемое имя по умолчанию для псевдонимов, созданных с помощью ${ domainDisplay }, если оно не перезаписано отображаемым именем псевдонима."
       ],
       "Deleted items will be moved here first": [
         "Удаленные элементы будут сначала перемещены сюда"
@@ -1310,6 +1480,12 @@
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Откройте видео ${ PASS_APP_NAME } на YouTube"
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Обновление DNS может занять до 24 часов."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Домен: ${ domainPath } или @"
       ],
       "Drop file here to upload": [
         "Переместите файл сюда, чтобы скачать"
@@ -1334,6 +1510,15 @@
       ],
       "Email address successfully included in monitoring": [
         "Адрес электронной почты успешно включен в мониторинг"
+      ],
+      "Email headers illustration": [
+        "Иллюстрация заголовков писем"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Отправьте электронное письмо на этот адрес, и будет казаться, что оно отправлено, например, с адреса ${ exampleEmail }."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Письма, отправленные на ваши псевдонимы, пересылаются на ваши почтовые ящики. Псевдоним может иметь более одного почтового ящика: это полезно для совместного использования псевдонима вами и вашими друзьями."
       ],
       "Emptying trash...": [
         "Очистка корзины..."
@@ -1361,6 +1546,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Включение автоматической блокировки PIN-кодом"
+      ],
+      "Enter the address you want to email.": [
+        "Введите адрес, на который вы хотите отправить электронное письмо."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Введите код подтверждения. Цифра ${ digit }."
@@ -1413,6 +1601,9 @@
       "Here you will find all the necessary information to get you started.": [
         "Здесь вы найдете всю необходимую информацию для начала работы."
       ],
+      "Here's how it works:": [
+        "Вот как это работает:"
+      ],
       "Import in progress:": [
         "Выполняется импорт:"
       ],
@@ -1427,6 +1618,9 @@
       ],
       "Imported on ${ date }": [
         "Импортировано ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "В ${ PASS_SHORT_APP_NAME } заметка элемента шифруется с помощью ключа шифрования элемента, и только пользователи, имеющие доступ к элементу, могут просмотреть заметку. Даже ${ BRAND_NAME } или SimpleLogin не смогут ее увидеть."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Для того чтобы получить лучший опыт использования ${ PASS_APP_NAME }, пожалуйста, предоставьте необходимые разрешения расширению."
@@ -1535,6 +1729,9 @@
       ],
       "Moving items to trash": [
         "Перемещение элементов в Корзину"
+      ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Вам нужно отправить кому-то письмо, но вы не хотите, чтобы он видел ваш адрес электронной почты? Создайте псевдоним для контакта."
       ],
       "Never": [
         "Никогда"
@@ -1659,8 +1856,14 @@
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Введите дополнительный пароль, чтобы начать использовать ${ PASS_SHORT_APP_NAME }."
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Следуйте инструкциям ниже, чтобы настроить домен."
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Улучшите, чтобы получить ранний доступ к веб-приложению ${ PASS_APP_NAME }"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Используйте полный путь к домену, например moy-domen.com или moy-subdomen.moy-domen.com, если вы используете поддомен."
       ],
       "Press Enter to copy": [
         "Нажмите Enter, чтобы скопировать"
@@ -1676,6 +1879,15 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Быстрое автоматическое заполнение сохраненных учетных данных."
+      ],
+      "Record: CNAME": [
+        "Запись: CNAME"
+      ],
+      "Record: MX": [
+        "Запись: MX"
+      ],
+      "Record: TXT": [
+        "Запись: TXT"
       ],
       "Registering extra password...": [
         "Регистрация дополнительного пароля..."
@@ -1698,6 +1910,9 @@
       "Restoring trashed items...": [
         "Восстановление элементов из корзины..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Обратный адрес псевдонима скопирован в буфер обмена. Отправьте письмо на этот адрес, и ${ Email } получит его."
+      ],
       "Save login": [
         "Сохранить логин"
       ],
@@ -1706,6 +1921,9 @@
       ],
       "Secure links": [
         "Защищенные ссылки"
+      ],
+      "See more info": [
+        "Подробнее"
       ],
       "Select an existing login or create a new one.": [
         "Выберите существующее имя пользователя, чтобы создать новое."
@@ -1743,6 +1961,12 @@
       "Signing you in": [
         "Выполняется вход"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "Заметки SimpleLogin хранятся в одном месте с адресом псевдонима, и хотя они защищены шифрованием в состоянии покоя, они не зашифрованы E2E, то есть любой, кто имеет доступ к базе данных SimpleLogin, может их прочитать."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Просто используйте ${ emailBold } в следующий раз, когда вам понадобится псевдоним: он будет ${ automaticallyBold } создан при первом получении письма. Чтобы получить более точное управление, вы также можете определить ${ rulesHyperLink }."
+      ],
       "Successfully exported all your items": [
         "Все ваши элементы успешно экспортированы"
       ],
@@ -1760,6 +1984,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Спасибо, отчет о проблеме отправлен"
+      ],
+      "The display name when sending an email from this alias.": [
+        "Отображаемое имя при отправке электронной почты с этого псевдонима."
       ],
       "The export will only contain vaults that you own.": [
         "Экспорт будет содержать только те хранилища, которые принадлежат вам."
@@ -1788,6 +2015,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Экспорт не будет зашифрован, и кто угодно, кто получит доступ к вашему экспортированному файлу, сможет увидеть ваши пароли. Для безопасности, пожалуйста, удалите его после использования."
       ],
+      "This operation is irreversible.": [
+        "Эта операция необратима."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Эта операция необратима. Все псевдонимы, использующие домен ${ domainTextBold }, будут удалены. Обратите внимание, что после удаления псевдонимы не могут быть восстановлены."
+      ],
       "This option is currently not available on your device.": [
         "В настоящее время эта опция недоступна на вашем устройстве."
       ],
@@ -1803,6 +2036,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Это отклонит устройство **${ name }**, которое пыталось войти в ваш аккаунт ${ BRAND_NAME } **${ date }**."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Чтобы продолжать получать электронные письма, перенесите эти псевдонимы в другой почтовый ящик:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Чтобы скрыть свой личный адрес электронной почты, вы можете создать псевдонимный контакт, который будет маскировать ваш адрес."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Чтобы перенести данные из другого менеджера паролей, перейдите в менеджер паролей, экспортируйте свои данные, а затем загрузите их в ${ PASS_APP_NAME }. После того как данные будут импортированы, удалите экспортированный файл."
       ],
@@ -1811,6 +2050,12 @@
       ],
       "Unable to copy to clipboard": [
         "Не могу скопировать в буфер обмена"
+      ],
+      "Unconfigured": [
+        "Ненастроенный"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Неограниченное количество псевдонимов hide-my-email и расширенное управление псевдонимами"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Разблокируйте ${ PASS_APP_NAME } с вашим PIN-кодом для доступа к вашим passkey"
@@ -1860,6 +2105,9 @@
       "User's access successfully updated": [
         "Доступ пользователя обновлен"
       ],
+      "Value:": [
+        "Значение:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Хранилище \"${ payload.content.name }\" успешно удалено"
       ],
@@ -1892,6 +2140,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "При создании или изменении имени пользователя в ${ PASS_APP_NAME } ввод 'имени пользователя' всегда будет виден."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "При отправке письма с этого псевдонима в письме в качестве отправителя будет указан ${ emailSender }."
       ],
       "You are about to create:": [
         "Вы собираетесь создать:"
@@ -1926,6 +2177,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Вы достигли максимально разрешенной длины в ${ maxLength } символов."
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "После проверки домена вы сможете настроить параметры домена (универсальные почтовые псевдонимы, отображаемое имя по умолчанию для псевдонимов и т. д.)."
+      ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Вы выйдете из системы и должны будете заново войти в нее на всех остальных устройствах."
       ],
@@ -1944,6 +2198,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Доступ к Вашему аккаунту ограничен, так как ваша организация ввела двухфакторную аутентификацию. Пожалуйста, включите двухфакторную аутентификацию в настройках Вашего аккаунта или свяжитесь с администратором."
       ],
+      "your domain": [
+        "ваш домен"
+      ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
       ],
@@ -1957,6 +2214,12 @@
         "${ aliasCount } псевдонима",
         "${ aliasCount } псевдонимов",
         "${ aliasCount } псевдонимов"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } блокировка",
+        "${ blockedCount } блокировки",
+        "${ blockedCount } блокировок",
+        "${ blockedCount } блокировок"
       ],
       "${ config.options.length } character": [
         "${ config.options.length } символ",
@@ -1976,6 +2239,12 @@
         "${ days } дней",
         "${ days } дней"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } пересылка",
+        "${ forwardCount } пересылки",
+        "${ forwardCount } пересылок",
+        "${ forwardCount } пересылок"
+      ],
       "${ hours } hour": [
         "${ hours } час",
         "${ hours } часа",
@@ -1988,11 +2257,29 @@
         "${ minutes } минут",
         "${ minutes } минут"
       ],
+      "${ months } month": [
+        "${ months } месяц",
+        "${ months } месяца",
+        "${ months } месяцев",
+        "${ months } месяцев"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } монитор"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версия ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } ответ",
+        "${ repliedCount } ответа",
+        "${ repliedCount } ответов",
+        "${ repliedCount } ответов"
+      ],
+      "${ years } year": [
+        "${ years } год",
+        "${ years } года",
+        "${ years } лет",
+        "${ years } лет"
       ],
       "1 hour": [
         "1 час"
@@ -2045,6 +2332,9 @@
       "Account": [
         "Аккаунт"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Добавьте случайный префикс для этого домена при создании нового псевдонима."
+      ],
       "Add section": [
         "Добавить раздел"
       ],
@@ -2059,6 +2349,9 @@
       ],
       "Alias address": [
         "Адрес псевдонима"
+      ],
+      "Alias address (disabled)": [
+        "Адрес псевдонима (отключен)"
       ],
       "Alias management": [
         "Управление псевдонимами"
@@ -2123,6 +2416,9 @@
       "Cards": [
         "Карты"
       ],
+      "Catch-All": [
+        "Прием всей почты домена"
+      ],
       "City": [
         "Город"
       ],
@@ -2134,6 +2430,9 @@
       ],
       "Confirm vault name": [
         "Подтвердите название хранилища"
+      ],
+      "Contact created ${ time } ago.": [
+        "Контакт создан ${ time } назад."
       ],
       "Contact details": [
         "Информация контакта"
@@ -2195,8 +2494,14 @@
       "Display name": [
         "Отображаемое имя"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Домен"
+      ],
+      "Domain:": [
+        "Домен:"
       ],
       "Domains": [
         "Домены"
@@ -2321,6 +2626,9 @@
       "Include numbers (0-9)": [
         "Включить числа (0-9)"
       ],
+      "Info": [
+        "Информация"
+      ],
       "Instagram handle": [
         "Ссылка на Instagram"
       ],
@@ -2378,6 +2686,9 @@
       "Logins": [
         "Имена пользователей"
       ],
+      "Mailboxes": [
+        "Почтовые ящики"
+      ],
       "Make all admins": [
         "Сделать всех администраторами"
       ],
@@ -2423,14 +2734,23 @@
       "Newest to oldest": [
         "От новых к старым"
       ],
+      "No Activity in the last 14 days.": [
+        "Нет активности за последние 14 дней."
+      ],
       "No history": [
         "Нет истории"
       ],
       "None": [
         "Нет"
       ],
+      "Not selected": [
+        "Не выбран"
+      ],
       "Note": [
         "Заметка"
+      ],
+      "Note • SimpleLogin": [
+        "Примечание • SimpleLogin"
       ],
       "Notes": [
         "Примечания"
@@ -2492,6 +2812,12 @@
       "Prefix": [
         "Префикс"
       ],
+      "Premium domain": [
+        "Платный домен"
+      ],
+      "Priority:": [
+        "Приоритет:"
+      ],
       "Prompt for auto-save": [
         "Предлагать автосохранение"
       ],
@@ -2500,6 +2826,9 @@
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Защитить ${ PASS_APP_NAME } дополнительным паролем"
+      ],
+      "Public domain": [
+        "Общедоступный домен"
       ],
       "Rate us": [
         "Оцените нас"
@@ -2530,6 +2859,9 @@
       ],
       "Security code": [
         "Код безопасности"
+      ],
+      "Select a domain": [
+        "Выбрать домен"
       ],
       "Select an email address": [
         "Выберите адрес электронной почты"
@@ -2590,6 +2922,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Синхронизировать псевдонимы с SimpleLogin"
+      ],
+      "Target:": [
+        "Цель:"
       ],
       "Tax number": [
         "Налоговый номер"
@@ -2666,6 +3001,9 @@
       "Username/email": [
         "Имя пользователя / адрес электронной почты"
       ],
+      "Value:": [
+        "Значение:"
+      ],
       "Vault ID": [
         "ID хранилища"
       ],
@@ -2708,8 +3046,16 @@
       "Your browser will stop using its built-in password manager.": [
         "Ваш браузер перестанет использовать встроенный менеджер паролей."
       ],
+      "Your domain": [
+        "Ваш домен"
+      ],
       "ZIP or Postal code": [
         "ZIP-код или почтовый индекс"
+      ]
+    },
+    "Link": {
+      "auto create rules ››": [
+        "автоматическое создание правил ››"
       ]
     },
     "Message": {
@@ -2770,6 +3116,9 @@
       "Add text": [
         "Добавить текст"
       ],
+      "Alias Display Name": [
+        "Введите отображаемое имя"
+      ],
       "Email address": [
         "Адрес электронной почты"
       ],
@@ -2796,6 +3145,15 @@
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "my-domain.com": [
+        "moy-domen.com"
+      ],
+      "Name to display when sending an email": [
+        "Имя для отображения при отправке письма"
+      ],
+      "Note from SimpleLogin": [
+        "Заметка из SimpleLogin"
       ],
       "Password": [
         "Пароль"
@@ -2908,11 +3266,65 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Синхронизация псевдонимов успешно включена. Синхронизация псевдонимов SimpleLogin может занять некоторое время"
       ],
+      "Catch-all setting successfully disabled": [
+        "Настройка универсального домена успешно отключена"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Настройка универсального домена успешно включена"
+      ],
+      "Contact successfully blocked": [
+        "Контакт успешно заблокирован"
+      ],
+      "Contact successfully created": [
+        "Контакт успешно создан"
+      ],
+      "Contact successfully deleted": [
+        "Контакт успешно удален"
+      ],
+      "Contact successfully unblocked": [
+        "Контакт успешно разблокирован"
+      ],
+      "Default domain successfully updated": [
+        "Домен по умолчанию успешно обновлен"
+      ],
+      "Default mailbox successfully updated": [
+        "Почтовый ящик по умолчанию успешно обновлен"
+      ],
+      "Display name successfully updated": [
+        "Отображаемое имя успешно обновлено"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Владение доменом подтверждено. Теперь вы можете настроить запись MX."
+      ],
+      "Domain successfully deleted": [
+        "Domain sucessfully deleted."
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Домен успешно проверен. Ваш домен может начать получать электронные письма и создавать псевдонимы"
+      ],
+      "Mailbox successfully deleted": [
+        "Почтовый ящик успешно удален"
+      ],
+      "Mailbox successfully verified": [
+        "Почтовый ящик успешно подтвержден"
+      ],
+      "Mailboxes successfully updated": [
+        "Почтовые ящики успешно обновлены"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Генерация случайных префиксов успешно отключена"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Генерация случайных префиксов успешно включена"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователя.",
         "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей.",
         "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей.",
         "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Письмо с подтверждением отправлено. Проверьте свой почтовый ящик, чтобы подтвердить его подлинность."
       ]
     },
     "Theme": {
@@ -2933,11 +3345,32 @@
       "Actions": [
         "Действия"
       ],
+      "Activity": [
+        "Активность"
+      ],
+      "Add custom domain": [
+        "Добавить пользовательский домен"
+      ],
+      "Add mailbox": [
+        "Добавить почтовый ящик"
+      ],
+      "Alias contacts": [
+        "Контакты псевдонима"
+      ],
+      "Aliases": [
+        "Псевдонимы"
+      ],
+      "Auto create/on the fly alias": [
+        "Автоматическое создание/псевдонимы на лету"
+      ],
       "Auto-lock update": [
         "Обновление авто-блокировки"
       ],
       "Autofill": [
         "Автозаполнение"
+      ],
+      "Blocked addresses": [
+        "Заблокированные адреса"
       ],
       "Confirm extra password": [
         "Подтвердить дополнительный пароль"
@@ -2966,11 +3399,38 @@
       "Current version": [
         "Текущая версия"
       ],
+      "Custom domains": [
+        "Пользовательские домены"
+      ],
+      "Default": [
+        "По умолчанию"
+      ],
+      "Default Display Name": [
+        "Отображаемое имя по умолчанию"
+      ],
+      "Delete domain": [
+        "Удалить домен"
+      ],
+      "Delete mailbox": [
+        "Удалить почтовый ящик"
+      ],
       "Delete vault \"${ vaultName }\"?": [
         "Удалить хранилище \"${ vaultName }\"?"
       ],
       "Discard changes?": [
         "Сбросить изменения?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (необязательно)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (необязательно)"
+      ],
+      "Domain": [
+        "Домен"
+      ],
+      "Domain ownership verification": [
+        "Проверка владения доменом"
       ],
       "Email": [
         "Эл. почта"
@@ -3032,6 +3492,9 @@
       "Low disk space": [
         "Мало места на диске"
       ],
+      "Mailbox": [
+        "Почтовый ящик"
+      ],
       "Member limit": [
         "Ограничение количества участников"
       ],
@@ -3046,6 +3509,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Переместить элемент в \"${ vaultName }\""
+      ],
+      "MX record": [
+        "Запись MX"
       ],
       "No items selected": [
         "Элементы не выбраны"
@@ -3071,6 +3537,9 @@
       "Pinned (${ items.length })": [
         "Закреплено (${ items.length })"
       ],
+      "Random Prefix Generation": [
+        "Создание случайного префикса"
+      ],
       "Reject device?": [
         "Отклонить устройство?"
       ],
@@ -3089,6 +3558,9 @@
       "Secure your data": [
         "Защитите свои данные"
       ],
+      "Select the default domain for aliases": [
+        "Выберите домен по умолчанию для псевдонимов"
+      ],
       "Set access level": [
         "Задать уровень доступа"
       ],
@@ -3100,6 +3572,9 @@
       ],
       "Share with": [
         "Поделиться с"
+      ],
+      "SPF (Optional)": [
+        "SPF (необязательно)"
       ],
       "Status": [
         "Состояние"
@@ -3131,6 +3606,9 @@
       "Unlock ${ brandNameJSX }": [
         "Разблокировать ${ brandNameJSX }"
       ],
+      "Unverified": [
+        "Неподтвержденный"
+      ],
       "Update available": [
         "Доступно обновление"
       ],
@@ -3155,6 +3633,9 @@
       "Welcome to your new password manager!": [
         "Добро пожаловать в ваш новый менеджер паролей!"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "В чем разница между заметкой ${ PASS_SHORT_APP_NAME } и заметкой SimpleLogin?"
+      ],
       "Your vault is empty": [
         "Ваше хранилище пусто"
       ],
@@ -3163,6 +3644,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "Недействительный URL домена"
+      ],
       "Duplicated URL": [
         "Дублированный URL"
       ],
@@ -3219,8 +3703,14 @@
       "Delete alias": [
         "Удалить псевдоним"
       ],
+      "Domain cannot be empty": [
+        "Домен не может быть пустым"
+      ],
       "Duplicate email addresses.": [
         "Дублирование адресов электронной почты."
+      ],
+      "Email cannot be empty": [
+        "Электронная почта не может быть пустой"
       ],
       "Empty note": [
         "Пустая заметка"
@@ -3299,6 +3789,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Пожалуйста, свяжитесь с нами для изучения проблемы"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Обратите внимание, что после удаления псевдонимы не могут быть восстановлены."
       ],
       "Please verify your email address in order to use email aliases": [
         "Пожалуйста, подтвердите свой адрес электронной почты, чтобы использовать псевдонимы электронной почты"
