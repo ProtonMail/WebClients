@@ -2570,6 +2570,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Немагчыма загрузіць рахункі. Паспрабуйце яшчэ раз пазней."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Немагчыма загрузіць трансакцыі. Паспрабуйце яшчэ раз пазней."
+      ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
       ],
@@ -5252,6 +5255,9 @@
       "You have no saved payment methods.": [
         "У вас няма захаваных спосабаў аплаты."
       ],
+      "You have no transactions.": [
+        "У вас няма трансакцый."
+      ],
       "You may be redirected to your bank’s website.": [
         "Вы будзеце перанакіраваны на вэб-сайт вашага банка."
       ],
@@ -5938,6 +5944,9 @@
       "Start date": [
         "Дата пачатку"
       ],
+      "Strong": [
+        "Надзейны"
+      ],
       "Subscription options": [
         "Параметры падпіскі"
       ],
@@ -5980,8 +5989,14 @@
       "Video conferencing with Zoom": [
         "Відэаканферэнцыя з Zoom"
       ],
+      "Vulnerable": [
+        "Уразлівы"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Шкада, што вы пакідаеце нас. Патлумачце, чаму вы вырашылі так зрабіць. Гэта дапаможа нам палепшыць наш сэрвіс"
+      ],
+      "Weak": [
+        "Ненадзейны"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -8538,6 +8553,9 @@
       ],
       "Invoice": [
         "Рахунак"
+      ],
+      "Transactions": [
+        "Трансакцыі"
       ]
     },
     "Select search results": {
@@ -10983,6 +11001,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Рахунак ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "Трансакцыі ${ MAIL_APP_NAME }"
       ]
     },
     "Title header for addresses domain table": {
@@ -11144,6 +11165,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Гэта версія браўзера Tor не падтрымліваецца. Абнавіце праграму да апошняй версіі ${ stableRelease }"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Вяртанне сродкаў"
+      ],
+      "Failed": [
+        "Збой"
+      ],
+      "Needs attention": [
+        "Патрабуе ўвагі"
+      ],
+      "Refunded": [
+        "Кампенсавана"
+      ],
+      "Success": [
+        "Паспяхова"
+      ],
+      "Timeout": [
+        "Час чакання"
+      ],
+      "Voided": [
+        "Анулявана"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Крэдытны рахунак карэкцыі"
+      ],
+      "Authorization": [
+        "Аўтарызацыя"
+      ],
+      "Bank transfer": [
+        "Банкаўскі перавод"
+      ],
+      "Bitcoin": [
+        "Біткойн"
+      ],
+      "Cash": [
+        "Наяўныя"
+      ],
+      "Chargeback": [
+        "Вяртанне сродкаў"
+      ],
+      "Credit": [
+        "Крэдыт"
+      ],
+      "Credit transfer": [
+        "Перавод крэдыту"
+      ],
+      "Currency conversion": [
+        "Канвертацыя валюты"
+      ],
+      "Gift card": [
+        "Падарункавая картка"
+      ],
+      "Migration": [
+        "Міграцыя"
+      ],
+      "Payment": [
+        "Плацеж"
+      ],
+      "Payment reversal": [
+        "Вяртанне плацяжу"
+      ],
+      "Refund": [
+        "Вяртанне"
       ]
     },
     "unprivatization": {

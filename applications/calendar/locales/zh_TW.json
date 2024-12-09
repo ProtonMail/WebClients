@@ -2560,11 +2560,6 @@
         "逾期帳單"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 匯入小幫手"
-      ]
-    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "雙重驗證可以增加一層安全保障，防止盜用。"
@@ -2637,6 +2632,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 匯入小幫手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3035,6 +3035,9 @@
       ],
       "Failed to get original occurrence in series": [
         "無法取得系列中原本事件"
+      ],
+      "Failed to load OAuth modal.": [
+        "載入OAuth 模組"
       ],
       "First name is too long": [
         "名字太長"
@@ -3750,6 +3753,12 @@
       "You have successfully joined the family group": [
         "您已成功加入家庭群組"
       ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "您有未付款的收據。請在加入家庭方案前繳付。"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此家庭方案，並一起享受所有 ${ brandOrAppName } 進階功能。"
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您帳號中的電子郵件位址多於此方案中可用的電子郵件位址。${ addressSettingsLink }"
       ],
@@ -4260,6 +4269,9 @@
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME }終身方案無續約費，他是單次付費終身存取${ PASS_SHORT_APP_NAME }。"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
@@ -4779,6 +4791,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "在您的組織機構的其他用戶會看到你繁忙的時段。沒有行程的詳細資料會與他們共享。"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
       ],
       "password": [
         "密碼"
@@ -6424,6 +6439,9 @@
       "Administration Panel": [
         "管理介面"
       ],
+      "Advanced account protection": [
+        "進階的帳號保護"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "全部${ BRAND_NAME }產品及功能"
       ],
@@ -7461,8 +7479,14 @@
       "Please select your billing state first.": [
         "請先選擇您的計費狀態。"
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "更新價 ${ renewPrice }，任何時間都可取消。"
+      ],
       "Select billing country to pay": [
         "選取繳款國家以付款"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
       ],
       "Timeout exceeded": [
         "已經逾時"
@@ -8242,6 +8266,9 @@
     "sso": {
       "Sign in": [
         "登入"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您將被重新導向至您的第三方單一登入提供者。"
       ]
     },
     "State": {
@@ -8385,6 +8412,9 @@
     "Subscription change warning": {
       "Got it": [
         "明白"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "請登入您的 Apple App Store 帳號，然後選取「${ subscriptions }」。"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "請登入您的 Play 商店帳號，然後按一下「${ subscriptions }」。"
@@ -8762,6 +8792,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "指紋已複製到剪貼簿"
+      ],
+      "Finish Zoom authentication to save event": [
+        "完成Zoom驗證以儲存行程"
       ],
       "Future events deleted": [
         "未來的活動已刪除"
@@ -9193,6 +9226,9 @@
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "獲得 ${ appName[APP_NAME] } 應用程式"
+      ],
+      "Get Zooming faster": [
+        "更快速取得Zoom"
       ],
       "Gift": [
         "禮物"

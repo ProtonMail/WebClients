@@ -2575,6 +2575,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Не удалось загрузить счета-фактуры. Повторите попытку позже."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Не удалось загрузить транзакции. Пожалуйста, повторите попытку позже."
+      ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
@@ -3896,7 +3899,7 @@
         "Настройте аутентификацию SAML для своей организации через провайдера идентификационных данных, например Okta, Microsoft Azure или Google Identity Platform. Это позволит включить SAML для всей организации."
       ],
       "Connection data will be available in around 1 hour.": [
-        "Данные подключения будут доступны примерно через 1 час."
+        "Данные подключения будут доступны примерно в течение 1 часа."
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "Продолжайте, чтобы разрешить **${ affiliationsText }** из **${ organizationValue.Name }** присоединиться к вашей организации ${ BRAND_NAME }."
@@ -5236,6 +5239,9 @@
       "You have no saved payment methods.": [
         "У вас нет сохраненных способов оплаты."
       ],
+      "You have no transactions.": [
+        "У вас нет транзакций"
+      ],
       "You may be redirected to your bank’s website.": [
         "Вы можете быть перенаправлены на сайт вашего банка."
       ],
@@ -5913,6 +5919,9 @@
       "Start date": [
         "Дата начала"
       ],
+      "Strong": [
+        "Надежный"
+      ],
       "Subscription options": [
         "Параметры подписки"
       ],
@@ -5955,8 +5964,14 @@
       "Video conferencing with Zoom": [
         "Видеоконференции с помощью Zoom"
       ],
+      "Vulnerable": [
+        "Уязвимый"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Жаль, что вы уходите. Пожалуйста, объясните, почему вы уходите, чтобы помочь нам улучшать нашу службу."
+      ],
+      "Weak": [
+        "Слабый"
       ],
       "What happened?": [
         "Что случилось?"
@@ -8471,6 +8486,9 @@
       ],
       "Invoice": [
         "Счет-фактура"
+      ],
+      "Transactions": [
+        "Транзакции"
       ]
     },
     "Select search results": {
@@ -10884,6 +10902,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Счет ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME } транзакция"
       ]
     },
     "Title header for addresses domain table": {
@@ -11036,6 +11057,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Эта версия браузера Tor не поддерживается. Пожалуйста, обновите до последней ${ stableRelease }"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Возврат платежа"
+      ],
+      "Failed": [
+        "Не удалось"
+      ],
+      "Needs attention": [
+        "Требует внимания"
+      ],
+      "Refunded": [
+        "Возвращено"
+      ],
+      "Success": [
+        "Успех"
+      ],
+      "Timeout": [
+        "Тайм-аут"
+      ],
+      "Voided": [
+        "Аннулировано"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Корректирующий кредит"
+      ],
+      "Authorization": [
+        "Авторизация"
+      ],
+      "Bank transfer": [
+        "Банковский перевод"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Наличные"
+      ],
+      "Chargeback": [
+        "Возврат платежа"
+      ],
+      "Credit": [
+        "Кредит"
+      ],
+      "Credit transfer": [
+        "Перевод кредита"
+      ],
+      "Currency conversion": [
+        "Конвертация валюты"
+      ],
+      "Gift card": [
+        "Подарочная карта"
+      ],
+      "Migration": [
+        "Миграция"
+      ],
+      "Payment": [
+        "Платеж"
+      ],
+      "Payment reversal": [
+        "Payment reversal"
+      ],
+      "Refund": [
+        "Возврат средств"
       ]
     },
     "unprivatization": {

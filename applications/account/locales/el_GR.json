@@ -4450,6 +4450,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Δεν ήταν δυνατή η φόρτωση των τιμολογίων. Παρακαλούμε προσπαθήστε ξανά αργότερα."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Δεν ήταν δυνατή η φόρτωση των συναλλαγών. Παρακαλούμε προσπαθήστε ξανά αργότερα."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
         "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια"
@@ -9271,6 +9274,9 @@
       "You have no saved payment methods.": [
         "Δεν έχετε αποθηκευμένους τρόπους πληρωμής."
       ],
+      "You have no transactions.": [
+        "Δεν έχετε συναλλαγές."
+      ],
       "You may be redirected to your bank’s website.": [
         "Ενδέχεται να ανακατευθυνθείτε στον ιστότοπο της τράπεζάς σας."
       ],
@@ -10799,6 +10805,9 @@
       "Sticky labels": [
         "Κολλώδεις ετικέτες"
       ],
+      "Strong": [
+        "Δυνατό"
+      ],
       "Subscription options": [
         "Επιλογές συνδρομής"
       ],
@@ -10883,8 +10892,14 @@
       "Video conferencing with Zoom": [
         "Τηλεδιάσκεψη με Zoom"
       ],
+      "Vulnerable": [
+        "Ευάλωτο"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Λυπούμαστε που φεύγετε. Παρακαλούμε εξηγήστε τον λόγο, για να μας βοηθήσετε να βελτιωθούμε."
+      ],
+      "Weak": [
+        "Αδύναμο"
       ],
       "Week start": [
         "Έναρξη εβδομάδας"
@@ -14905,6 +14920,9 @@
       ],
       "Invoice": [
         "Τιμολόγιο"
+      ],
+      "Transactions": [
+        "Συναλλαγές"
       ]
     },
     "Select search results": {
@@ -18299,6 +18317,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Τιμολόγιο ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME } συναλλαγή"
       ]
     },
     "Title header": {
@@ -18655,6 +18676,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Αυτή η έκδοση του περιηγητή Tor δεν υποστηρίζεται. Παρακαλούμε ενημερώστε στην τελευταία ${ stableRelease }"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Επιστροφή χρέωσης"
+      ],
+      "Failed": [
+        "Απέτυχε"
+      ],
+      "Needs attention": [
+        "Χρειάζεται προσοχή"
+      ],
+      "Refunded": [
+        "Επιστράφηκαν"
+      ],
+      "Success": [
+        "Επιτυχία"
+      ],
+      "Timeout": [
+        "Λήξη χρονικού ορίου"
+      ],
+      "Voided": [
+        "Ακυρωμένη"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Πίστωση προσαρμογής"
+      ],
+      "Authorization": [
+        "Εξουσιοδότηση"
+      ],
+      "Bank transfer": [
+        "Τραπεζική μεταφορά"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Μετρητά"
+      ],
+      "Chargeback": [
+        "Επιστροφή χρέωσης"
+      ],
+      "Credit": [
+        "Πίστωση"
+      ],
+      "Credit transfer": [
+        "Μεταφορά πίστωσης"
+      ],
+      "Currency conversion": [
+        "Μετατροπή Νομίσματος"
+      ],
+      "Gift card": [
+        "Δωροκάρτα"
+      ],
+      "Migration": [
+        "Μετεγκατάσταση"
+      ],
+      "Payment": [
+        "Πληρωμή"
+      ],
+      "Payment reversal": [
+        "Αντιστροφή πληρωμής"
+      ],
+      "Refund": [
+        "Επιστροφή χρημάτων"
       ]
     },
     "unprivatization": {

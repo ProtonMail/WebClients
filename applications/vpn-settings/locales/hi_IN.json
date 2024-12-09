@@ -1002,6 +1002,12 @@
         "स्टोरेज स्पेस सभी ${ BRAND_NAME } सेवाओं में साझा किया गया है।"
       ]
     },
+    "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "${ renewLength } महीने के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकरण होगा।",
+        "${ renewLength } महीनों के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकरण होगा।"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 महीना"
@@ -1403,6 +1409,9 @@
       ],
       "Dominican Republic": [
         "डोमिनिकन रिपब्लिक"
+      ],
+      "East Timor": [
+        "ईस्ट तिमोर"
       ],
       "Ecuador": [
         "इक्वाडोर"
@@ -2494,6 +2503,9 @@
       "Got it": [
         "समझ गए"
       ],
+      "Invite a user": [
+        "किसी यूज़र को न्योता भेजें"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "मौजूदा ${ BRAND_NAME } यूज़र को न्योता भेजें"
       ],
@@ -2545,6 +2557,10 @@
       "Manage user accounts": [
         "यूज़र खाते संभालें"
       ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "6 महीने की अवधि में केवल ${ n } स्वीकृत निमंत्रण की अनुमति है।",
+        "6 महीने की अवधि में केवल ${ n } स्वीकृत निमंत्रणों की अनुमति है।"
+      ],
       "Pending": [
         "लंबित"
       ],
@@ -2588,6 +2604,11 @@
       ],
       "You can increase or reduce the storage for this user.": [
         "आप इस उपयोगकर्ता के लिए स्टोरेज बढ़ा या घटा सकते हैं।"
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "अपने परिवार समूह में उपयोगकर्ता खातों को जोड़ें, हटाें, और उनमें परिवर्तन करें।"
       ]
     },
     "familyOffer_2023:Label": {
@@ -3795,6 +3816,9 @@
       "Plus or Visionary subscription required": [
         "Plus या Visionary सदस्यता आवश्यक"
       ],
+      "Preference saved": [
+        "पसंद सेव किया गया"
+      ],
       "Preview": [
         "प्रीव्यू"
       ],
@@ -4066,6 +4090,9 @@
       "Two-factor authentication enabled": [
         "दो-कारक प्रमाणीकरण सक्षम"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "दो-पासवर्ड मोड में दो पासवर्ड की आवश्यकता होती है: एक अपने खाते में साइन इन करने के लिए और एक अपने डेटा को डिक्रिप्ट करने के लिए। (उन्नत)"
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "दुर्भाग्य से इस खाते के लिए कोई पुनर्प्राप्ति विधि सहेजी नहीं गई है।"
       ],
@@ -4183,6 +4210,9 @@
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "हम अतिरेक प्रदान करने के लिए विभिन्न स्थानों पर एकाधिक सर्वर रखने की अनुशंसा करते हैं।"
       ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "हम अनुशंसा करते हैं कि 2FA का उपयोग लागू करने से पहले परिवार के सदस्यों को सूचित करें और उनसे अपने खातों के लिए 2FA सेटअप करने के लिए कहें।"
+      ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "हम अनुशंसा करते हैं कि 2FA का उपयोग लागू करने से पहले संगठन के सदस्यों को सूचित करें और उनसे अपने खातों के लिए 2FA स्थापित करने के लिए कहें।"
       ],
@@ -4219,6 +4249,9 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "पहचान प्रदाता में ${ appName } के लिए SAML सक्षम करते समय, कॉलबैक (ACS) URL और जारीकर्ता ID का उपयोग करने के लिए कहा जा सकता है। बस नीचे दिए गए डाटा को पहचान प्रदाता फील्ड में कॉपी-पेस्ट करें।"
       ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "जब आप सदस्यता रद्द करेंगे, तो आपकी सदस्यता नवीनीकरण नहीं होगी, लेकिन आप सदस्यता अवधि के अंत तक योजना के लाभों का आनंद ले सकते हैं। इसके बाद, आपकी योजना को ${ BRAND_NAME } Free योजना में डाउनग्रेड कर दिया जाएगा।"
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "जब आप टू-फैक्टर ऑथेंटिकेशन सेट करते हैं, तो हम रिकवरी कोड प्रदान करते हैं जिनका उपयोग आप अपने ऑथेंटिकेटर ऐप का एक्सेस खो देने पर साइन इन करने के लिए कर सकते हैं।"
       ],
@@ -4245,6 +4278,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "क्या आप एक नया सत्यापन कोड प्राप्त करना चाहेंगे?"
+      ],
+      "Writing assistant": [
+        "लेखन सहायक"
       ],
       "You already have a free account": [
         "आपके पास पहले से एक निःशुल्क खाता है"
@@ -4879,6 +4915,9 @@
       "Start date": [
         "आरंभ करने की तिथि"
       ],
+      "Strong": [
+        "मजबूत"
+      ],
       "Subscription options": [
         "सदस्यता विकल्प"
       ],
@@ -4912,8 +4951,14 @@
       "Verification code": [
         "पुष्टि संख्या"
       ],
+      "Vulnerable": [
+        "कमज़ोर"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "आपको जाते हुए देखकर हमें बड़ा अफसोस हो रहा है। कृपया बताएं कि आप हमें सुधारने में मदद करने के लिए क्यों जा रहे हैं।"
+      ],
+      "Weak": [
+        "कमज़ोर"
       ],
       "What happened?": [
         "क्या हुआ?"
@@ -5301,6 +5346,9 @@
       "${ n } VPN connection": [
         "${ n } VPN कनेक्शन",
         "${ n } VPN कनेक्शन"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } असीमित hide-my-email उपनामों के साथ"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } क्रमादेश"
@@ -5902,8 +5950,20 @@
       ]
     },
     "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } और ${ additionalApp } प्रोडक्ट अपडेट"
+      ],
+      "${ app } product updates": [
+        "${ app } प्रोडक्ट अपडेट"
+      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business समाचार पत्रिका"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } महत्वपूर्ण घोषणाएँ"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } खबरपत्र"
       ],
       "${ BRAND_NAME } offers and promotions": [
         "${ BRAND_NAME } ऑफर और प्रचार"
@@ -5911,11 +5971,59 @@
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } प्रोडक्ट खबर"
       ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } उपयोगकर्ता सर्वेक्षण"
+      ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } स्वागत ईमेल"
+      ],
+      "1 email per month": [
+        "प्रति माह 1- ईमेल"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "प्रति माह 1 ईमेल। नवीनतम गोपनीयता समाचार प्राप्त करें और ${ BRAND_NAME } ब्रह्मांड में क्या हो रहा है, जानें।"
+      ],
+      "1 email per quarter": [
+        "1 ईमेल प्रति तिमाही"
+      ],
+      "1-2 emails per month": [
+        "प्रति माह 1-2 ईमेल"
+      ],
+      "2-4 emails per year": [
+        "2-4 ईमेल प्रति वर्ष"
+      ],
+      "4-6 emails per year": [
+        "4-6 ईमेल प्रति वर्ष"
+      ],
+      "Application notifications": [
+        "एप्लीकेशन सूचना"
+      ],
+      "Daily email notifications": [
+        "दैनिक ईमेल सूचनाएं"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "इसे अक्षम करने से ${ BRAND_NAME } एप्लीकेशनों में सूचनाएँ प्राप्त करने की क्षमता हटा दी जाएगी।"
+      ],
+      "During your first month": [
+        "आपके पहले महीने में"
+      ],
+      "Email subscriptions": [
+        "ईमेल सदस्यताएँ"
+      ],
+      "In-app notifications": [
+        "अनुप्रयोग के अंतर्गत अधिसूचनाएँ"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "${ BRAND_NAME } सेवाओं को सुधारने के लिए सर्वेक्षणों में भाग लें"
+      ],
+      "Product updates": [
+        "प्रोडक्ट अपडेट"
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } को अक्षम कर दिया गया है"
+      ],
       "A disabled address cannot be default": [
         "एक अक्षम पता डिफॉल्ट नहीं हो सकता"
       ],
@@ -7039,6 +7147,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe लेखन सहायक ${ maxAi } उपयोगकर्ता के लिए",
+        "${ BRAND_NAME } Scribe लेखन सहायक ${ maxAi } उपयोगकर्ताओं के लिए"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } विशेष सर्वर",
         "${ ipAddresses } विशेष सर्वर"
@@ -7954,6 +8066,9 @@
       "SAML authentication": [
         "SAML सत्यापन"
       ],
+      "Security events": [
+        "सुरक्षा घटनाएं"
+      ],
       "Select a plan": [
         "एक योजना चुनें"
       ],
@@ -8143,11 +8258,17 @@
       ]
     },
     "Tooltip": {
+      "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
+        "व्यवस्थापक उपयोगकर्ता खातों को प्रबंधित कर सकते हैं और अन्य उपयोगकर्ताओं को व्यवस्थापक अधिकार दे सकते हैं। केवल प्राथमिक व्यवस्थापक संगठन की योजना संपादित कर सकता है।"
+      ],
       "An approximate location of the IP address": [
         "IP ​​पते का अनुमानित स्थान"
       ],
       "Any protection applied to suspicious activity": [
         "संदिग्ध गतिविधि पर लागू कोई भी सुरक्षा"
+      ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "अपने पसंदीदा दिन और रात के विषयों के बीच स्वचालित रूप से स्विच करें, जो आपके सिस्टम के दिन और रात मोड के साथ सिंक में हो।"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "इस यूआरएल को कॉपी करके अपने पहचान प्रदाता के ACS (अभिकथन उपभोक्ता सेवा) यूआरएल फील्ड में पेस्ट करें"

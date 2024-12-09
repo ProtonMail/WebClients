@@ -302,7 +302,7 @@
         "ウィンドウに合わせる"
       ],
       "Forgot password?": [
-        "パスワードを忘れた?"
+        "パスワードを忘れましたか？"
       ],
       "Forgot recovery method?": [
         "回復手順を忘れましたか？"
@@ -737,7 +737,7 @@
         "表示"
       ],
       "View invoice": [
-        "請求書を参照する"
+        "請求書を確認"
       ],
       "View plans details": [
         "プランの詳細を表示"
@@ -1240,7 +1240,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME } を使って続行します。"
+        "${ MAIL_APP_NAME }で続ける。"
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle }を使い続ける"
@@ -1337,13 +1337,13 @@
         "コバルト"
       ],
       "copper": [
-        "コパー"
+        "カッパー"
       ],
       "enzian": [
-        "エンツィアン"
+        "リンドウ"
       ],
       "fern": [
-        "ファーン"
+        "シダ"
       ],
       "forest": [
         "フォレスト"
@@ -1358,7 +1358,7 @@
         "パシフィック"
       ],
       "pickle": [
-        "ピックル"
+        "ピクルス"
       ],
       "pine": [
         "パイン"
@@ -2545,6 +2545,9 @@
       "Couldn't load invoices. Please try again later.": [
         "請求書が読み込めませんでした。後でもう一度お試しください。"
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "取引を読み込めませんでした。後ほど再度お試しください。"
+      ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
       ],
@@ -2834,7 +2837,7 @@
         "${ MAIL_APP_NAME }や${ CALENDAR_APP_NAME }を使うには、Webバージョンに切り替えてください。"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
+        "このページを読み込めませんでした。ページを更新するか、インターネット接続を確認してください。"
       ]
     },
     "Error notification": {
@@ -2961,7 +2964,7 @@
         "${ invite.OrganizationName } に招待されました"
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
-        "六ヶ月の間に受けられる招待は最大で３つまでです。例外措置が必要な場合は ${ supportLink } にお問い合わせください。"
+        "6 か月の間に受けられる招待は最大で 3 つまでです。例外措置が必要な場合は ${ supportLink } にお問い合わせください。"
       ],
       "You cannot accept this invitation with your current plan.": [
         "現在のプランではこの招待を受けることができません。"
@@ -5080,6 +5083,9 @@
       "You have no saved payment methods.": [
         "支払い方法が登録されていません。"
       ],
+      "You have no transactions.": [
+        "取引がありません。"
+      ],
       "You may be redirected to your bank’s website.": [
         "銀行のウェブサイトに移動する場合があります。"
       ],
@@ -5754,6 +5760,9 @@
       "Start date": [
         "開始日"
       ],
+      "Strong": [
+        "強い"
+      ],
       "Subscription options": [
         "サブスクリプションのオプション"
       ],
@@ -5796,8 +5805,14 @@
       "Video conferencing with Zoom": [
         "Zoomでのビデオ会議"
       ],
+      "Vulnerable": [
+        "脆弱"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "今後の改善のため、アカウントを削除する理由をお聞かせください。"
+      ],
+      "Weak": [
+        "弱い"
       ],
       "What happened?": [
         "どのような問題が発生しましたか?"
@@ -5999,7 +6014,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "詳細"
+        "もっと詳しく"
       ],
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
@@ -7891,7 +7906,7 @@
         "パスワード"
       ],
       "Please describe the problem and include any error messages": [
-        "問題について、エラーメッセージ等も含めてご記入ください。（英語）"
+        "問題について、エラーメッセージ等も含めてご記入ください。"
       ],
       "Please select the main reason": [
         "主な理由をお選びください。"
@@ -8243,6 +8258,9 @@
       ],
       "Invoice": [
         "請求書"
+      ],
+      "Transactions": [
+        "取引"
       ]
     },
     "Select search results": {
@@ -8272,7 +8290,7 @@
         "パスワードリセットをキャンセルする"
       ],
       "Cancel reset": [
-        "リクエストのキャンセル　"
+        "リセットをキャンセル"
       ],
       "Reset password": [
         "パスワードのリセット"
@@ -8395,7 +8413,7 @@
         "了解"
       ],
       "Learn more": [
-        "詳細"
+        "もっと詳しく"
       ]
     },
     "session_recovery:in_progress:info": {
@@ -8434,7 +8452,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "パスワード再設定リクエスト"
+        "パスワードのリセットがリクエストされました"
       ]
     },
     "session_recovery:initiation:action": {
@@ -10529,6 +10547,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME } 請求書"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME }取引"
       ]
     },
     "Title header for addresses domain table": {
@@ -10589,7 +10610,7 @@
         "疑わしいアクティビティに適用される保護"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "システムの昼夜モードと同期して、昼と夜のお好みのテーマを自動的に切り替える"
+        "システムの昼夜モードに同期して、昼と夜の好みのテーマを自動的に切り替えます"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "この URL をコピーして、ACS(Assertion Consumer Service)の URL フィールドに貼り付けてください。"
@@ -10690,6 +10711,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Torブラウザのこのバージョンはサポートされていません。最近の${ stableRelease }へアップグレードしてください。"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "返金要求"
+      ],
+      "Failed": [
+        "失敗"
+      ],
+      "Needs attention": [
+        "注意が必要"
+      ],
+      "Refunded": [
+        "返金済み"
+      ],
+      "Success": [
+        "成功"
+      ],
+      "Timeout": [
+        "タイムアウト"
+      ],
+      "Voided": [
+        "無効"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "調整信用"
+      ],
+      "Authorization": [
+        "認証"
+      ],
+      "Bank transfer": [
+        "銀行振込"
+      ],
+      "Bitcoin": [
+        "ビットコイン"
+      ],
+      "Cash": [
+        "現金"
+      ],
+      "Chargeback": [
+        "返金要求"
+      ],
+      "Credit": [
+        "クレジット"
+      ],
+      "Credit transfer": [
+        "クレジット送金"
+      ],
+      "Currency conversion": [
+        "通貨換算"
+      ],
+      "Gift card": [
+        "ギフトカード"
+      ],
+      "Migration": [
+        "移動"
+      ],
+      "Payment": [
+        "支払い"
+      ],
+      "Payment reversal": [
+        "支払いの取り消し"
+      ],
+      "Refund": [
+        "返金"
       ]
     },
     "unprivatization": {

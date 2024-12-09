@@ -2555,6 +2555,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Não foi possível carregar faturas. Tente novamente mais tarde."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Não foi possível carregar transações. Tente novamente mais tarde."
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
       ],
@@ -5145,6 +5148,9 @@
       "You have no saved payment methods.": [
         "Você não tem uma opção de pagamento salva."
       ],
+      "You have no transactions.": [
+        "Você não tem transações."
+      ],
       "You may be redirected to your bank’s website.": [
         "Você pode ser redirecionado para o site do seu banco."
       ],
@@ -5823,6 +5829,9 @@
       "Start date": [
         "Data de início"
       ],
+      "Strong": [
+        "Forte"
+      ],
       "Subscription options": [
         "Opções de assinatura"
       ],
@@ -5868,8 +5877,14 @@
       "VPN Accelerator": [
         "VPN Accelerator"
       ],
+      "Vulnerable": [
+        "Vulnerável"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Sentimos muito em vê-lo partir. Explique por que você está partindo para nos ajudar a melhorar."
+      ],
+      "Weak": [
+        "Fraco"
       ],
       "What happened?": [
         "O que aconteceu?"
@@ -8367,6 +8382,9 @@
       ],
       "Invoice": [
         "Fatura"
+      ],
+      "Transactions": [
+        "Transações"
       ]
     },
     "Select search results": {
@@ -10706,6 +10724,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Fatura de ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "Transação do ${ MAIL_APP_NAME }"
       ]
     },
     "Title header for addresses domain table": {
@@ -10864,6 +10885,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Esta versão do navegador Tor não é suportada. Atualize-o para a última ${ stableRelease }."
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Estorno"
+      ],
+      "Failed": [
+        "Falhou"
+      ],
+      "Needs attention": [
+        "Precisa de atenção"
+      ],
+      "Refunded": [
+        "Reembolsado"
+      ],
+      "Success": [
+        "Sucesso"
+      ],
+      "Timeout": [
+        "Tempo limite"
+      ],
+      "Voided": [
+        "Anulado"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Credito de ajuste"
+      ],
+      "Authorization": [
+        "Autorização"
+      ],
+      "Bank transfer": [
+        "Transferência bancária"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Dinheiro"
+      ],
+      "Chargeback": [
+        "Estorno"
+      ],
+      "Credit": [
+        "Crédito"
+      ],
+      "Credit transfer": [
+        "Transferência de crédito"
+      ],
+      "Currency conversion": [
+        "Conversão de moeda"
+      ],
+      "Gift card": [
+        "Vale-presente"
+      ],
+      "Migration": [
+        "Migração"
+      ],
+      "Payment": [
+        "Pagamento"
+      ],
+      "Payment reversal": [
+        "Cancelamento de pagamento"
+      ],
+      "Refund": [
+        "Reembolso"
       ]
     },
     "unprivatization": {

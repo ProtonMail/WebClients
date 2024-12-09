@@ -242,7 +242,7 @@
         "Redigera"
       ],
       "Edit billing cycle": [
-        "Redigera faktureringsperiod"
+        "Byt faktureringsperiod"
       ],
       "Edit display name": [
         "Redigera visningsnamn"
@@ -449,7 +449,7 @@
         "Återställ data"
       ],
       "Refer a friend": [
-        "Hänvisa en vän"
+        "Bjud in en vän"
       ],
       "Refresh status": [
         "Uppdatera status"
@@ -590,7 +590,7 @@
         "Ställ in \"Catch-all\""
       ],
       "Set new password": [
-        "Ställ in nytt lösenord"
+        "Välj nytt lösenord"
       ],
       "Settings": [
         "Inställningar"
@@ -978,7 +978,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-app för stationär dator"
+        "${ MAIL_APP_NAME }-skrivbordsapp"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus och ${ CALENDAR_SHORT_APP_NAME }"
@@ -1017,13 +1017,13 @@
         "Annonsblockerare och skydd mot skadlig kod"
       ],
       "Admin panel to manage your family": [
-        "Administratörspanel för att hantera din familj"
+        "Adminpanel för att hantera din familj"
       ],
       "Advanced account protection": [
         "Avancerat kontoskydd"
       ],
       "Dark Web Monitoring": [
-        "Övervakning mörka webben"
+        "Övervakning av mörka webben"
       ],
       "Easily add or remove users": [
         "Lägg till eller ta bort användare enkelt"
@@ -1032,7 +1032,7 @@
         "Höghastighetsstreaming"
       ],
       "Integrated 2FA authenticator": [
-        "Integrerad 2FA-autentisering"
+        "Integrerad 2FA-autentiserare"
       ],
       "One-time payment, lifetime deal": [
         "Engångsbetalning, livstidserbjudande"
@@ -1047,13 +1047,13 @@
         "Privat säkerhetskopiering av foto"
       ],
       "Protect 10 devices at a time": [
-        "Skydda 10 enheter åt gången"
+        "Skydda 10 enheter samtidigt"
       ],
       "Secure file storage & sharing": [
         "Säker fillagring och delning"
       ],
       "Secure vault and link sharing": [
-        "Säker delning av valv och länk"
+        "Säker valv- och länkdelning"
       ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
@@ -1082,7 +1082,7 @@
         "Om du köper Pass Family eller Unlimited så kommer din prenumeration att förnyas automatiskt med det rabatterade standardpriset och standardlängden vid slutet av din faktureringscykel."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Din prenumeration kommer förnyas automatiskt till det rabatterade standardpriset i slutet av din faktureringsperiod."
+        "Din prenumeration kommer förnyas automatiskt med det rabatterade standardpriset i slutet av din faktureringsperiod."
       ]
     },
     "BF2024: Info": {
@@ -1106,7 +1106,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8 500+ servrar i över 110 länder, 10 enheter, hög hastighet streaming, annonsblockerare och skydd mot skadlig kod, VPN Accelerator och mer."
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8 500+ servrar i över 110 länder, 10 enheter, höghastighetsstreaming, annonsblockerare och skydd mot skadlig kod, VPN Accelerator och mer."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
@@ -1135,13 +1135,13 @@
         "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
+        "Lagringsutrymmet delas mellan alla ${ BRAND_NAME }-tjänster."
       ]
     },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Förnyas automatiskt för ${ renewPrice }, för ${ renewLength } månad",
-        "Förnyas automatiskt för ${ renewPrice }, för ${ renewLength } månader"
+        "Förnyas automatiskt med ${ renewPrice }, för ${ renewLength } månad",
+        "Förnyas automatiskt med ${ renewPrice }, för ${ renewLength } månader"
       ]
     },
     "Billing cycle option": {
@@ -1166,7 +1166,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+        "${ MAIL_APP_NAME }-skrivbordsapp"
       ]
     },
     "Bug category": {
@@ -1313,8 +1313,8 @@
         "Totalt"
       ],
       "Total for ${ n } month": [
-        "Total för ${ n } månad",
-        "Total för ${ n } månader"
+        "Totalt för ${ n } månad",
+        "Totalt för ${ n } månader"
       ]
     },
     "Checkout summary": {
@@ -1755,7 +1755,7 @@
         "Irland"
       ],
       "Islamic Republic of Iran": [
-        "Iran"
+        "Islamiska republiken Iran"
       ],
       "Isle of Man": [
         "Isle of Man"
@@ -1803,7 +1803,7 @@
         "Kirgizistan"
       ],
       "Lao People's Democratic Republic": [
-        "Laos"
+        "Laos (Demokratiska folkrepubliken)"
       ],
       "Laos": [
         "Laos"
@@ -2118,7 +2118,7 @@
         "Tanzania"
       ],
       "Tanzania, United Republic of": [
-        "Tanzania"
+        "Tanzania, Förenade republiken"
       ],
       "Thailand": [
         "Thailand"
@@ -2426,7 +2426,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Hjälp oss att förbättra"
+        "Hjälp oss bli bättre"
       ]
     },
     "Downgrade warning": {
@@ -2554,6 +2554,9 @@
       ],
       "Couldn't load invoices. Please try again later.": [
         "Kunde inte ladda fakturor. Försök igen senare."
+      ],
+      "Couldn't load transactions. Please try again later.": [
+        "Kunde inte ladda transaktioner. Försök igen senare."
       ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
@@ -2823,7 +2826,7 @@
     },
     "Error message": {
       "App currently unavailable": [
-        "App är för närvarande inte tillgänglig"
+        "Appen är för närvarande otillgänglig"
       ],
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
@@ -2844,7 +2847,7 @@
         "Byt till webbversionen för att använda ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din Internetanslutning."
+        "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din internetanslutning."
       ]
     },
     "Error notification": {
@@ -2884,7 +2887,7 @@
         "Bjud in en befintlig ${ BRAND_NAME }-användare"
       ],
       "Set up family group": [
-        "Ställ in familjegrupp"
+        "Konfigurera familjegrupp"
       ],
       "Switch plans": [
         "Byt paket"
@@ -2963,7 +2966,7 @@
         "Du kan inte byta paket just nu."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
-        "Lagringsutrymme tilldelat till dig: ${ assignedStorage }"
+        "Lagringsutrymme tilldelat dig: ${ assignedStorage }"
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
@@ -2978,7 +2981,7 @@
         "Du kan inte acceptera denna inbjudan med ditt nuvarande paket."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Du har blivit inbjuden att gå med i ${ bannerOrganization }. ${ viewInviteButton }"
+        "Du har bjudits in att gå med i ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Du har nått gränsen på ${ n } accepterad inbjudan på 6 månader.",
@@ -3117,7 +3120,7 @@
         "Hantera familjegrupp"
       ],
       "Set family name": [
-        "Ställ in familjenamn"
+        "Välj familjenamn"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -3893,7 +3896,7 @@
         "Anpassade e-domäner"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
+        "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationerna."
       ],
       "Dedicated servers": [
         "Dedikerade servrar"
@@ -4446,7 +4449,7 @@
         "Lösenord måste vara ${ MIN_PASSWORD_LENGTH } tecken eller mer."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Betalningar skyddas med TLS-kryptering och Schweiziska integritetslagar."
+        "Betalningar skyddas med TLS-kryptering och schweiziska integritetslagar."
       ],
       "per month": [
         "per månad"
@@ -4834,7 +4837,7 @@
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "För att hänga med i den senaste utvecklingen på ${ BRAND_NAME }-produkter kan du prenumerera på våra olika e-postmeddelanden och ${ blogLink } då och då."
+        "För att hänga med i den senaste utvecklingen av ${ BRAND_NAME }-produkter kan du prenumerera på våra olika e-postmeddelanden och ${ blogLink } då och då."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "För att fortsätta, välj en metod för kontoåterställning så att vi kan verifiera begäran."
@@ -4870,10 +4873,10 @@
         "Tvåfaktorsautentisering aktiverad"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
-        "Två-lösenordsläge kräver två lösenord: ett för att logga in på ditt konto och ett för att dekryptera dina data. (Avancerat)"
+        "Tvålösenordsläge kräver två lösenord: ett för att logga in på ditt konto och ett för att dekryptera dina data. (Avancerat)"
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
-        "Två-lösenordsläget använder separata lösenord för inloggning och dataavkryptering. Detta ger en mindre säkerhetsförmån i vissa situationer, men vi rekommenderar enkel-lösenordsläget för de flesta användare. För att växla till två-lösenordsläge, sätt först ett inloggningslösenord och sedan ett andra lösenord."
+        "Tvålösenordsläget använder separata lösenord för inloggning och dataavkryptering. Detta ger en mindre säkerhetsförmån i vissa situationer, men vi rekommenderar enkel-lösenordsläget för de flesta användare. För att växla till tvålösenordsläge, sätt först ett inloggningslösenord och sedan ett andra lösenord."
       ],
       "Unable to check gateways monitoring current status.": [
         "Kan inte kontrollera nuvarande övervakningsstatus av gateways."
@@ -5153,6 +5156,9 @@
       "You have no saved payment methods.": [
         "Du har inga sparade betalningsmetoder."
       ],
+      "You have no transactions.": [
+        "Du har inga transaktioner."
+      ],
       "You may be redirected to your bank’s website.": [
         "Du kan bli omdirigerad till webbplatsen för din bank."
       ],
@@ -5238,7 +5244,7 @@
         "Din organisations e-post skyddas med end-to-end-kryptering genom organisationsnyckeln. Detta fingeravtryck kan användas för att verifiera att alla administratörer på ditt konto har samma nyckel."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Dina betalningsdetaljer skyddas med TLS-kryptering och Schweiziska integritetslagar."
+        "Dina betalningsuppgifter skyddas med TLS-kryptering och schweiziska integritetslagar."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
@@ -5343,7 +5349,7 @@
         "Annullering"
       ],
       "Chargeback": [
-        "Återbetalning"
+        "Kortreklamation"
       ],
       "Credit": [
         "Kredit"
@@ -5678,7 +5684,7 @@
         "Namn och adress"
       ],
       "NAT-PMP (Port Forwarding)": [
-        "NAT-PMP (vidarebefordring av port)"
+        "NAT-PMP (vidarebefordran av port)"
       ],
       "Navigation": [
         "Navigering"
@@ -5708,10 +5714,10 @@
         "Icke-standardiserade portar"
       ],
       "OpenVPN / IKEv2 password": [
-        "OpenVPN/IKEv2-lösenord"
+        "OpenVPN-/IKEv2-lösenord"
       ],
       "OpenVPN / IKEv2 username": [
-        "OpenVPN/IKEv2-användarnamn"
+        "OpenVPN-/IKEv2-användarnamn"
       ],
       "Operating system": [
         "Operativsystem"
@@ -5831,6 +5837,9 @@
       "Start date": [
         "Startdatum"
       ],
+      "Strong": [
+        "Starkt"
+      ],
       "Subscription options": [
         "Prenumerationsalternativ"
       ],
@@ -5876,8 +5885,14 @@
       "VPN Accelerator": [
         "VPN Accelerator"
       ],
+      "Vulnerable": [
+        "Sårbart"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Tråkigt att du lämnar oss. Vill du vara snäll och berätta varför du lämnar oss för att hjälpa oss bli bättre."
+      ],
+      "Weak": [
+        "Svagt"
       ],
       "What happened?": [
         "Vad hände?"
@@ -6049,7 +6064,7 @@
         "Visa guide"
       ],
       "visit our blog": [
-        "besök vår blogg"
+        "besöka vår blogg"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Vad är skillnaden mellan UDP- och TCP-protokoll?"
@@ -6186,7 +6201,7 @@
     },
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex., du@yourcompany.com). Vår guide kommer att guida dig genom processen."
+        "Anslut din anpassade domän till ${ BRAND_NAME } för att konfigurera anpassade e-postadresser (t.ex. dittnamn@dittföretag.se). Vår guide kommer att guida dig genom processen."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
@@ -7295,7 +7310,7 @@
         "1 e-postmeddelande per månad"
       ],
       "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 e-post per månad. Få de senaste integritetsnyheterna och vad som händer i ${ BRAND_NAME }-universumet."
+        "1 e-postmeddelande per månad. Få de senaste integritetsnyheterna och vad som händer i ${ BRAND_NAME }-universumet."
       ],
       "1 email per quarter": [
         "1 e-postmeddelande per kvartal"
@@ -7369,7 +7384,7 @@
         "Antalet poster överskrider nedladdningsgränsen på 10 000"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN/IKEv2-inloggningsuppgifter återskapat"
+        "OpenVPN-/IKEv2-inloggningsuppgifter återskapat"
       ],
       "Reminder has been sent": [
         "Påminnelse har skickats"
@@ -7579,7 +7594,7 @@
         "Gå till ditt valv för att hantera dina lösenord, alias och mer."
       ],
       "Set up your organization": [
-        "Ställ in din organisation"
+        "Konfigurera din organisation"
       ],
       "Start adding users to give them access to ${ PASS_APP_NAME }.": [
         "Börja lägga till användare för att ge dem åtkomst till ${ PASS_APP_NAME }."
@@ -7669,7 +7684,7 @@
         "Förbereder ditt återställningskit"
       ],
       "Secure vault and link sharing": [
-        "Säker delning av valv och länk"
+        "Säker valv- och länkdelning"
       ],
       "Secure vault sharing": [
         "Säker valvdelning"
@@ -8390,6 +8405,9 @@
       ],
       "Invoice": [
         "Faktura"
+      ],
+      "Transactions": [
+        "Transaktioner"
       ]
     },
     "Select search results": {
@@ -8463,7 +8481,7 @@
         "Denna tillåtelse löper ut om ${ timeRemaining.inHours } timmar"
       ],
       "This permission expires soon": [
-        "Denna tillåtelse löper snart ut"
+        "Denna rättighet löper snart ut"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nu ändra ditt lösenord för kontot ${ boldEmail } fritt i ${ boldDaysRemaining }."
@@ -8575,7 +8593,7 @@
         "Lösenordsåterställning begärd (${ user.Email }). Du kan ändra ditt lösenord inom ${ hoursRemaining } timmar."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "För att säkerställa att det verkligen är du som försöker återställa ditt lösenord väntar vi 72 timmar innan vi godkänner begäran. Du kan ändra ditt lösenord i ${ boldTimeLeft }. ${ viewRequest }"
+        "För att säkerställa att det verkligen är du som försöker återställa ditt lösenord väntar vi 72 timmar innan vi godkänner begäran. Du kan ändra ditt lösenord om ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Vi fick en begäran om lösenordsåterställning för ${ boldEmail }."
@@ -8656,7 +8674,7 @@
         "${ passwordReset } är nu tillgängligt."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Om du loggar ut innan du återställer ditt lösenord kan du förlora åtkomst till ditt konto."
+        "Om du loggar ut innan du återställer ditt lösenord kan du förlora åtkomsten till ditt konto."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
         "Om du loggar ut utan att återställa ditt lösenord kan du förlora åtkomst till ditt konto."
@@ -9526,7 +9544,7 @@
         "Om din användning överskrider gränserna för gratispaketet kan du uppleva begränsad åtkomst till produktfunktioner och din data."
       ],
       "Invited members will be removed from your organization": [
-        "Inbjudna medlemmar kommer att tas bort från din organisation"
+        "Inbjudna medlemmar kommer tas bort från din organisation"
       ],
       "Keep ${ config.planName }": [
         "Behåll ${ config.planName }"
@@ -9613,7 +9631,7 @@
         "Användare kommer inte att kunna hantera sina kalendrar"
       ],
       "Users won’t be able to send emails": [
-        "Användare kommer inte att kunna skicka e-post"
+        "Användarna kommer inte att kunna skicka e-post"
       ],
       "Users won’t be able to upload files on their devices": [
         "Användare kommer inte kunna ladda upp filer på sina enheter"
@@ -10471,7 +10489,7 @@
         "Öppna sidnumrering"
       ],
       "OpenVPN / IKEv2 username": [
-        "OpenVPN/IKEv2-användarnamn"
+        "OpenVPN-/IKEv2-användarnamn"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurationsfiler"
@@ -10594,7 +10612,7 @@
         "Ställ in tvåfaktorsautentisering"
       ],
       "Set your password": [
-        "Ställ in ditt lösenord"
+        "Välj ditt lösenord"
       ],
       "Settings": [
         "Inställningar"
@@ -10729,6 +10747,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME }-faktura"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME }-transaktion"
       ]
     },
     "Title header for addresses domain table": {
@@ -10890,6 +10911,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Denna version av Tor-webbläsaren stöds inte. Uppdatera till senaste ${ stableRelease }"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Kortreklamation"
+      ],
+      "Failed": [
+        "Misslyckad"
+      ],
+      "Needs attention": [
+        "Kräver åtgärd"
+      ],
+      "Refunded": [
+        "Återbetald"
+      ],
+      "Success": [
+        "Framgång"
+      ],
+      "Timeout": [
+        "Timeout"
+      ],
+      "Voided": [
+        "Annullerad"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Justeringskredit"
+      ],
+      "Authorization": [
+        "Auktorisering"
+      ],
+      "Bank transfer": [
+        "Banköverföring"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Kontant"
+      ],
+      "Chargeback": [
+        "Kortreklamation"
+      ],
+      "Credit": [
+        "Kredit"
+      ],
+      "Credit transfer": [
+        "Kreditöverföring"
+      ],
+      "Currency conversion": [
+        "Valutaomvandling"
+      ],
+      "Gift card": [
+        "Presentkort"
+      ],
+      "Migration": [
+        "Migrering"
+      ],
+      "Payment": [
+        "Betalning"
+      ],
+      "Payment reversal": [
+        "Betalning återkallad"
+      ],
+      "Refund": [
+        "Återbetalning"
       ]
     },
     "unprivatization": {

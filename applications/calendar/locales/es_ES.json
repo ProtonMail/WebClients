@@ -1250,6 +1250,9 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Cambiar los ajustes de la dirección de correo electrónico"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -2604,11 +2607,6 @@
         "Factura atrasada"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utiliza el asistente de importación Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2702,6 +2700,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4880,6 +4883,9 @@
       "Merged": [
         "Combinado"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Los mensajes de todas tus direcciones de correo electrónico se enviarán a tu bandeja de entrada."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -5017,6 +5023,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
       ],
+      "Registering your subscription...": [
+        "Registrando tu suscripción..."
+      ],
       "Removed participants will be notified.": [
         "Se notificarán a los participantes borrados."
       ],
@@ -5045,11 +5054,17 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuración de PGP te permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
       ],
+      "Setting up your new address...": [
+        "Configurando tu nueva dirección..."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene activadas funciones adicionales."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Se perderán algunas de tus respuestas a ocurrencias previamente actualizadas por el organizador."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Comienza a compartirla con tus contactos y úsala para servicios en línea."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envía un depósito usando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
@@ -5119,6 +5134,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Se ha actualizado este evento. El organizador no será notificado de que rechazas la invitación porque no puedes enviar correos electrónicos desde la dirección invitada. ¿Quieres eliminar este evento de todos modos?"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Esta es ahora tu ${ defaultEmailAddress } para enviar mensajes nuevos."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
@@ -7079,6 +7097,14 @@
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Disfruta de Mail Plus por ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puedes cancelar en cualquier momento."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -7091,14 +7117,6 @@
       ],
       "Switch plans?": [
         "¿Cambiar de plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Disfruta de Mail Plus por ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puedes cancelar en cualquier momento."
       ]
     },
     "new_plans: tooltip": {
@@ -10003,6 +10021,9 @@
       ],
       "Your exposed information": [
         "Tus datos expuestos"
+      ],
+      "Your shorter address is now ready": [
+        "Tu dirección en formato más corto ya está lista."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
