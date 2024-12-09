@@ -45,36 +45,7 @@
 		}
 	}
 
-	&--modern {
-		background-color: var(--interaction-weak-minor-2);
-		border-radius: var(--border-radius-lg);
-		overflow: hidden;
-	}
-
-	&--modern &-list-link {
-		padding-block: var(--space-4);
-		padding-inline: var(--space-3);
-		border-block-end: 1px solid transparent;
-
-		&[aria-selected='false'] {
-			background-color: var(--interaction-weak-minor-1);
-			border-block-end-color: var(--border-weak);
-
-			&:hover {
-				background-color: var(--interaction-default-hover);
-			}
-		}
-	}
-
-	&--modern &-list-item {
-		border-inline-end: 1px solid var(--border-weak);
-
-		&:last-child {
-			border-inline-end: none;
-		}
-	}
-
-	&-indicator {
+	&--underline &-indicator {
 		position: absolute;
 		inset-block-end: -1px;
 		inset-inline: 0;
@@ -83,6 +54,72 @@
 		transform: translateX(var(--translate)) scaleX(var(--scale));
 		border-block-end: 2px solid var(--interaction-norm);
 		transition: transform 0.15s easing(ease-out-quad);
+
+		@at-root {
+			[dir='rtl'] & {
+				transform-origin: right center;
+			}
+		}
+	}
+
+	&--modern &-list {
+		padding: var(--space-1);
+		gap: var(--space-1);
+		background-color: var(--background-lowered);
+		border-radius: var(--border-radius-lg);
+		z-index: 1;
+	}
+
+	&--modern &-list-item {
+		position: relative;
+
+		&:hover {
+			&::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				z-index: -1;
+				border-radius: var(--border-radius-md);
+				background-color: var(--interaction-default-hover);
+			}
+		}
+	}
+
+	&--modern &-list-link {
+		z-index: 3;
+		padding-block: var(--space-1);
+		padding-inline: var(--space-2);
+
+		&[aria-selected='true'] {
+			pointer-events: none;
+		}
+
+		span {
+			&::after {
+				content: attr(data-title);
+				visibility: hidden;
+				display: inline-block;
+				font-weight: var(--font-weight-semibold);
+				block-size: 0;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+		}
+	}
+
+	&--modern &-indicator {
+		position: absolute;
+		inset-block: var(--space-1);
+		inset-inline-start: 0;
+		transform-origin: left center;
+		transform: translateX(var(--translate));
+		inline-size: var(--width);
+		transition: transform 0.3s easing(ease-out-quad);
+		border-radius: var(--border-radius-md);
+		background-color: var(--background-elevated);
+		box-shadow: var(--shadow-norm);
+		z-index: 2;
 
 		@at-root {
 			[dir='rtl'] & {
