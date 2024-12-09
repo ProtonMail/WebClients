@@ -31,6 +31,7 @@ export interface ProcessedApiKey {
     flags: KEY_FLAG;
     publicKey: PublicKeyReference;
     source: API_KEY_SOURCE;
+    primary: 0 | 1;
 }
 
 export interface ApiKeysConfig {

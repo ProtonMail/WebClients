@@ -183,7 +183,7 @@ const verifyPublicKeys = async ({
                 // Verify key list matches the signed key list
                 await checkKeysInSKL(
                     email,
-                    apiKeys.map(({ publicKey, flags }) => ({ key: publicKey, flags })),
+                    apiKeys.map(({ publicKey, flags, primary }) => ({ key: publicKey, flags, primary })),
                     signedKeyList.Data!
                 );
             }
