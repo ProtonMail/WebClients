@@ -4477,6 +4477,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Nie można załadować faktur. Spróbuj ponownie później."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Nie udało się wczytać transakcji. Spróbuj ponownie później."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Odznacz co najmniej ${ calendarsToFixCount } kalendarz",
         "Odznacz co najmniej ${ calendarsToFixCount } kalendarze",
@@ -9456,6 +9459,9 @@
       "You have no saved payment methods.": [
         "Nie masz zapisanych metod płatności."
       ],
+      "You have no transactions.": [
+        "Nie masz żadnych transakcji."
+      ],
       "You may be redirected to your bank’s website.": [
         "Możesz zostać przekierowany na stronę banku."
       ],
@@ -11000,6 +11006,9 @@
       "Sticky labels": [
         "Automatyczne etykiety"
       ],
+      "Strong": [
+        "Silne"
+      ],
       "Subscription options": [
         "Opcje subskrypcji"
       ],
@@ -11084,8 +11093,14 @@
       "Video conferencing with Zoom": [
         "Wideokonferencje w Zoom"
       ],
+      "Vulnerable": [
+        "Bardzo słabe"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Przykro nam, że odchodzisz. Wyjaśnij nam, dlaczego nas opuszczasz, aby pomóc ulepszać nasze usługi."
+      ],
+      "Weak": [
+        "Słabe"
       ],
       "Week start": [
         "Początek tygodnia"
@@ -19076,6 +19091,32 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Ta wersja przeglądarki Tor nie jest obsługiwana. Zaktualizuj ją do najnowszej ${ stableRelease }"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Authorization": [
+        "Autoryzacja"
+      ],
+      "Bank transfer": [
+        "Przelew bankowy"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Gotówka"
+      ],
+      "Chargeback": [
+        "Chargeback"
+      ],
+      "Currency conversion": [
+        "Przeliczenie walut"
+      ],
+      "Payment": [
+        "Płatność"
+      ],
+      "Refund": [
+        "Zwrot"
       ]
     },
     "unprivatization": {

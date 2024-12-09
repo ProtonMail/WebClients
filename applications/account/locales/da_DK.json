@@ -250,6 +250,9 @@
       "Connect": [
         "Forbind"
       ],
+      "Connected": [
+        "Forbundet"
+      ],
       "Contact sales": [
         "Kontakt salg"
       ],
@@ -664,6 +667,9 @@
       "Leave": [
         "Forlad"
       ],
+      "Leave group": [
+        "Forlad gruppe"
+      ],
       "Let's talk": [
         "Lad os snakke"
       ],
@@ -822,6 +828,9 @@
       ],
       "Remove all members": [
         "Fjern alle medlemmer"
+      ],
+      "Remove all other devices": [
+        "Fjern alle andre enheder"
       ],
       "Remove bonuses": [
         "Fjern bonusser"
@@ -1023,6 +1032,9 @@
       ],
       "Show": [
         "Vis"
+      ],
+      "Show all": [
+        "Vis alle"
       ],
       "Show less": [
         "Vis mindre"
@@ -5201,6 +5213,9 @@
       "Got it": [
         "Forstået"
       ],
+      "Invite a user": [
+        "Inviter en bruger"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Inviter en eksisterende ${ BRAND_NAME } bruger"
       ],
@@ -6750,11 +6765,17 @@
         "Alle (${ totalFoldersCount } etiket)",
         "Alle (${ totalFoldersCount } etiketter)"
       ],
+      "All inactive members deleted": [
+        "Alle inaktive brugere er slettet"
+      ],
       "All keys successfully reactivated": [
         "Alle nøgler er genaktiveret med succes"
       ],
       "All members have been added.": [
         "Alle medlemmer er blevet tilføjet."
+      ],
+      "All users": [
+        "Alle brugere"
       ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
@@ -8610,6 +8631,9 @@
       "username": [
         "brugernavn"
       ],
+      "Username": [
+        "Brugernavn"
+      ],
       "Users": [
         "Brugere"
       ],
@@ -8642,6 +8666,12 @@
       ],
       "Verify domain": [
         "Bekræft domæne"
+      ],
+      "Verify email address": [
+        "Bekræft e-mailadresse"
+      ],
+      "Verify phone number": [
+        "Bekræft telefonnummer"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bekræft din identitet med en tidsbaseret engangsadgangskode fra en godkendelsesapp"
@@ -8925,6 +8955,9 @@
       ],
       "You have no saved payment methods.": [
         "Du har ingen gemte betalingsmetoder."
+      ],
+      "You have no transactions.": [
+        "Du har ingen transaktioner"
       ],
       "You may be redirected to your bank’s website.": [
         "Du vil muligvis blive omdirigeret til din banks hjemmeside."
@@ -9222,6 +9255,9 @@
       ],
       "Other": [
         "Andre"
+      ],
+      "Product": [
+        "Produkt"
       ],
       "Refund": [
         "Refundering"
@@ -10417,6 +10453,9 @@
       "Sticky labels": [
         "Klæbende etiketter"
       ],
+      "Strong": [
+        "Stærk"
+      ],
       "Subscription options": [
         "Abonnementsmuligheder"
       ],
@@ -10492,8 +10531,14 @@
       "Verify keys with Key Transparency": [
         "Bekræft nøgler med Key Transparency"
       ],
+      "Vulnerable": [
+        "Sårbar"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Vi er kede af at du forlader os. Forklar venligst hvorfor, så vi kan forbedre os."
+      ],
+      "Weak": [
+        "Svag"
       ],
       "Week start": [
         "Ugestart"
@@ -10774,6 +10819,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "PayPal without credit card": [
+        "PayPal uden betalingskort"
       ],
       "perform a password reset from your active session": [
         "udføre en nulstilling af adgangskoden fra din aktive session"
@@ -11139,11 +11187,23 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Australske Dollars"
+      ],
+      "British pound": [
+        "Britisk pund"
+      ],
+      "Canadian dollar": [
+        "Canadiske Dollars"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Schweizer franc"
+      ],
+      "US Dollar": [
+        "Amerikanske dollars"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -12413,6 +12473,9 @@
       ],
       "2-4 emails per year": [
         "2-4 e-mails pr. år"
+      ],
+      "4-6 emails per year": [
+        "4-6 e-mails pr. året"
       ],
       "Application notifications": [
         "Applikationsnotifikationer"
@@ -14291,6 +14354,9 @@
       ],
       "Invoice": [
         "Faktura"
+      ],
+      "Transactions": [
+        "Transaktioner"
       ]
     },
     "Select search results": {
@@ -14756,6 +14822,14 @@
         "Anmod om prøveperiode"
       ]
     },
+    "Signup: Info": {
+      "ISO 27001 certified": [
+        "ISO 27001 godkendt"
+      ],
+      "Works on all devices": [
+        "Virker på alle enheder"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "Overholder GDPR og HIPAA"
@@ -14958,11 +15032,67 @@
       ]
     },
     "sso": {
+      "Approve": [
+        "Godkend"
+      ],
+      "Cancel": [
+        "Annuller"
+      ],
+      "Deny": [
+        "Afslå"
+      ],
+      "Devices management": [
+        "Enhedshåndtering"
+      ],
+      "Grant": [
+        "Tildel"
+      ],
+      "Grant access": [
+        "Tildel adgang"
+      ],
+      "Invalid confirmation code": [
+        "Ugyldig bekræftelseskode"
+      ],
+      "Reject": [
+        "Afvis"
+      ],
+      "Remove": [
+        "Fjern"
+      ],
+      "Remove all other devices": [
+        "Fjern alle andre enheder"
+      ],
+      "Remove single sign-on": [
+        "Fjern single sign-on"
+      ],
       "Sign in": [
         "Log ind"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du bliver omdirigeret til din tredjeparts SSO-udbyder."
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Inactive": [
+        "Inaktiv"
+      ],
+      "Pending activation": [
+        "Afventende aktivering"
+      ],
+      "Pending admin activation": [
+        "Afventende administratoraktivering"
+      ],
+      "Rejected": [
+        "Afvist"
+      ],
+      "Signed out": [
+        "Logget ud"
+      ],
+      "Unknown": [
+        "Ukendt"
       ]
     },
     "State": {
@@ -15629,6 +15759,9 @@
       ],
       "Default calendar updated": [
         "Standardkalender opdateret"
+      ],
+      "Device deleted": [
+        "Enhed slettet"
       ],
       "Display name updated": [
         "Visningsnavnet opdateret"
@@ -16491,6 +16624,9 @@
       "Email privacy": [
         "E-mail-privatliv"
       ],
+      "Enable for all users": [
+        "Aktiver for alle brugere"
+      ],
       "Encryption and keys": [
         "Kryptering og nøgler"
       ],
@@ -16828,6 +16964,9 @@
       ],
       "Profile": [
         "Profil"
+      ],
+      "QR Code": [
+        "QR-kode"
       ],
       "Ready, set, forward": [
         "Klar, parat, videresend"
@@ -17358,6 +17497,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP Adresse (Internetudbyder)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Medlemmer, der ikke bruger 2FA, vil modtage en e-mail, der beder dem om at aktivere det hurtigst muligt."
       ],
@@ -17526,6 +17668,29 @@
         "stabil udgave"
       ]
     },
+    "Transaction type display as badge": {
+      "Bank transfer": [
+        "Bankoverførsel"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Kontant"
+      ],
+      "Credit": [
+        "Kredit"
+      ],
+      "Currency conversion": [
+        "Valutaomregning"
+      ],
+      "Gift card": [
+        "Gavekort"
+      ],
+      "Migration": [
+        "Migration"
+      ]
+    },
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer kan ikke tilgå private brugeres data eller nulstille deres adgangskode."
@@ -17541,6 +17706,9 @@
       ],
       "Cancel": [
         "Annuller"
+      ],
+      "Confirm all": [
+        "Bekræft alle"
       ],
       "Enable admin access?": [
         "Aktiver administratoradgang?"

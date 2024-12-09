@@ -4450,6 +4450,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Impossibile caricare le fatture. Riprova più tardi."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Impossibile caricare le transazioni. Per favore riprova più tardi."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deseleziona almeno ${ calendarsToFixCount } calendario",
         "Deseleziona almeno ${ calendarsToFixCount } calendari"
@@ -9274,6 +9277,9 @@
       "You have no saved payment methods.": [
         "Non hai metodi di pagamento salvati."
       ],
+      "You have no transactions.": [
+        "Non hai transazioni."
+      ],
       "You may be redirected to your bank’s website.": [
         "Potresti essere reindirizzato al sito web della tua banca."
       ],
@@ -10802,6 +10808,9 @@
       "Sticky labels": [
         "Etichette adesive"
       ],
+      "Strong": [
+        "Sicura"
+      ],
       "Subscription options": [
         "Opzioni di abbonamento"
       ],
@@ -10889,8 +10898,14 @@
       "VPN Accelerator": [
         "VPN Accelerator"
       ],
+      "Vulnerable": [
+        "Vulnerabile"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Siamo spiacenti di vederti andare via. Spiegaci perché ci stai lasciando per aiutarci a migliorare."
+      ],
+      "Weak": [
+        "Debole"
       ],
       "Week start": [
         "Inizio della settimana"
@@ -14935,6 +14950,9 @@
       ],
       "Invoice": [
         "Fattura"
+      ],
+      "Transactions": [
+        "Transazioni"
       ]
     },
     "Select search results": {
@@ -18332,6 +18350,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME } fattura"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME } transazione"
       ]
     },
     "Title header": {
@@ -18688,6 +18709,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Questa versione di Tor Browser non è supportata. Aggiornala all'ultima ${ stableRelease }"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Riaccredito"
+      ],
+      "Failed": [
+        "Fallito"
+      ],
+      "Needs attention": [
+        "Richiede attenzione"
+      ],
+      "Refunded": [
+        "Rimborsato"
+      ],
+      "Success": [
+        "Successo"
+      ],
+      "Timeout": [
+        "Timeout"
+      ],
+      "Voided": [
+        "Annullato"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Credito di aggiustamento"
+      ],
+      "Authorization": [
+        "Autorizzazione"
+      ],
+      "Bank transfer": [
+        "Bonifico"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Contanti"
+      ],
+      "Chargeback": [
+        "Riaccredito"
+      ],
+      "Credit": [
+        "Credito"
+      ],
+      "Credit transfer": [
+        "Trasferimento del credito"
+      ],
+      "Currency conversion": [
+        "Conversione della valuta"
+      ],
+      "Gift card": [
+        "Carta regalo"
+      ],
+      "Migration": [
+        "Migrazione"
+      ],
+      "Payment": [
+        "Pagamento"
+      ],
+      "Payment reversal": [
+        "Storno del pagamento"
+      ],
+      "Refund": [
+        "Rimborso"
       ]
     },
     "unprivatization": {
