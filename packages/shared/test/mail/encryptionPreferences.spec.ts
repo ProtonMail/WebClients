@@ -7,40 +7,21 @@ import type { MailSettings, SelfSend } from '../../lib/interfaces';
 import { KT_VERIFICATION_STATUS } from '../../lib/interfaces';
 import extractEncryptionPreferences, { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '../../lib/mail/encryptionPreferences';
 
-const fakeKey1: PublicKeyReference = {
-    getFingerprint() {
-        return 'fakeKey1';
-    },
-    getUserIDs: () => ['<user@pm.me>'],
-} as any;
-const pinnedFakeKey1: PublicKeyReference = {
-    getFingerprint() {
-        return 'fakeKey1';
-    },
-    getUserIDs: () => ['<user@pm.me>'],
-} as any;
-const fakeKey2: PublicKeyReference = {
-    getFingerprint() {
-        return 'fakeKey2';
-    },
-    getUserIDs: () => ['<user@tatoo.me>'],
-} as any;
-const pinnedFakeKey2: PublicKeyReference = {
-    getFingerprint() {
-        return 'fakeKey2';
-    },
-    getUserIDs: () => ['<user@tatoo.me>'],
-} as any;
-const fakeKey3: PublicKeyReference = {
-    getFingerprint() {
-        return 'fakeKey3';
-    },
-} as any;
-const pinnedFakeKey3: PublicKeyReference = {
-    getFingerprint() {
-        return 'fakeKey3';
-    },
-} as any;
+const getMockedPublicKey = (fingerprint: string, userID: string, version: 4 | 6 = 4): PublicKeyReference =>
+    ({
+        getFingerprint() {
+            return fingerprint;
+        },
+        getUserIDs: () => [userID],
+        getVersion: () => version,
+    }) as PublicKeyReference;
+
+const fakeKey1 = getMockedPublicKey('fakeKey1', '<user@pm.me>');
+const pinnedFakeKey1 = getMockedPublicKey('fakeKey1', '<user@pm.me>');
+const fakeKey2 = getMockedPublicKey('fakeKey2', '<user@tatoo.me>');
+const pinnedFakeKey2 = getMockedPublicKey('fakeKey2', '<user@tatoo.me>');
+const fakeKey3 = getMockedPublicKey('fakeKey3', '<user3@test.me>');
+const pinnedFakeKey3 = getMockedPublicKey('fakeKey3', '<user3@test.me>');
 
 describe('extractEncryptionPreferences for an internal user', () => {
     const ktVerificationResult = { status: KT_VERIFICATION_STATUS.VERIFIED_KEYS };
@@ -54,6 +35,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         encryptionCapableFingerprints: new Set([]),
         obsoleteFingerprints: new Set([]),
         compromisedFingerprints: new Set([]),
+        primaryKeyFingerprints: new Set([]),
         isPGPExternal: false,
         isPGPInternal: true,
         isPGPExternalWithExternallyFetchedKeys: false,
@@ -82,6 +64,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
             obsoleteFingerprints: new Set(['fakeKey3']),
+            primaryKeyFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -153,6 +136,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             trustedFingerprints: new Set(['fakeKey1', 'fakeKey2']),
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
             obsoleteFingerprints: new Set(['fakeKey3']),
+            primaryKeyFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -188,10 +172,14 @@ describe('extractEncryptionPreferences for an internal user', () => {
             publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             trustedFingerprints: new Set(['fakeKey2']),
             encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
+            primaryKeyFingerprints: new Set(['fakeKey2']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
         expect(result.warnings?.length).toEqual(1);
+        expect(result.warnings![0]).toEqual(
+            'Email address not found among user ids defined in sending key (user@tatoo.me)'
+        );
     });
 
     it('should give an error when the API gave emailAddress errors', () => {
@@ -203,6 +191,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
             obsoleteFingerprints: new Set(['fakeKey1']),
+            primaryKeyFingerprints: new Set(['fakeKey1']),
             emailAddressErrors: ['Recipient could not be found'],
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -217,6 +206,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             publicKeys: { apiKeys, pinnedKeys: [], verifyingPinnedKeys: [] },
             encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
             compromisedFingerprints: new Set(['fakeKey1']),
+            primaryKeyFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -232,6 +222,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
             obsoleteFingerprints: new Set(['fakeKey1']),
+            primaryKeyFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -247,6 +238,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2']),
             trustedFingerprints: new Set(['fakeKey3']),
+            primaryKeyFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -278,6 +270,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             trustedFingerprints: new Set(['fakeKey1']),
             encryptionCapableFingerprints: new Set(['fakeKey3']),
             obsoleteFingerprints: new Set(['fakeKey3']),
+            primaryKeyFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -293,6 +286,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isContactSignatureVerified: false,
             publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
+            primaryKeyFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -337,6 +331,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
             encryptionCapableFingerprints: new Set([]),
             obsoleteFingerprints: new Set([]),
             compromisedFingerprints: new Set([]),
+            primaryKeyFingerprints: new Set([]),
             isPGPExternal: true,
             isPGPInternal: false,
             isPGPExternalWithExternallyFetchedKeys: true,
@@ -364,7 +359,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 contactSignatureTimestamp: undefined,
                 publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
                 encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
-                obsoleteFingerprints: new Set(['fakeKey3']),
+                // no obsolete or primary key fingerprints for WKD keys
             };
             const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -399,7 +394,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 ...model,
                 publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
                 encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
-                obsoleteFingerprints: new Set(['fakeKey3']),
+                // no obsolete or primary key fingerprints for WKD keys
             };
             const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -435,7 +430,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
                 trustedFingerprints: new Set(['fakeKey1', 'fakeKey2']),
                 encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
-                obsoleteFingerprints: new Set(['fakeKey3']),
+                // no obsolete or primary key fingerprints for WKD keys
             };
             const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -471,6 +466,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
                 trustedFingerprints: new Set(['fakeKey2']),
                 encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
+                // no obsolete or primary key fingerprints for WKD keys
             };
             const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -486,7 +482,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                     verifyingPinnedKeys: [],
                 },
                 encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
-                obsoleteFingerprints: new Set(['fakeKey1']),
+                // no obsolete or primary key fingerprints for WKD keys
                 emailAddressErrors: ['Recipient could not be found'],
             };
             const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -503,7 +499,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                     verifyingPinnedKeys: [pinnedFakeKey1],
                 },
                 encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
-                obsoleteFingerprints: new Set(['fakeKey1']),
+                // no obsolete or primary key fingerprints for WKD keys
             };
             const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -520,6 +516,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 },
                 encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
                 trustedFingerprints: new Set(['fakeKey3']),
+                // no obsolete or primary key fingerprints for WKD keys
             };
             const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -535,8 +532,8 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                     verifyingPinnedKeys: [],
                 },
                 trustedFingerprints: new Set(['fakeKey1']),
-                encryptionCapableFingerprints: new Set(['fakeKey3']),
-                obsoleteFingerprints: new Set(['fakeKey3']),
+                encryptionCapableFingerprints: new Set([]),
+                // no obsolete or primary key fingerprints for WKD keys
             };
             const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -578,6 +575,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         encryptionCapableFingerprints: new Set([]),
         obsoleteFingerprints: new Set([]),
         compromisedFingerprints: new Set([]),
+        primaryKeyFingerprints: new Set([]),
         isPGPExternal: true,
         isPGPInternal: false,
         isPGPExternalWithExternallyFetchedKeys: false,
@@ -772,6 +770,7 @@ describe('extractEncryptionPreferences for an own address', () => {
         encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2']),
         obsoleteFingerprints: new Set([]),
         compromisedFingerprints: new Set([]),
+        primaryKeyFingerprints: new Set(['fakeKey1']),
         isPGPExternal: false,
         isPGPInternal: true,
         isPGPExternalWithExternallyFetchedKeys: false,

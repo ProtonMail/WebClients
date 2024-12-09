@@ -114,6 +114,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
             emailAddress,
             apiKeysConfig,
             pinnedKeysConfig: { ...pinnedKeysConfig, isContact: true },
+            preferV6Keys: true,
         });
         setModel({
             ...publicKeyModel,
@@ -234,18 +235,22 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                 obsoleteFingerprints,
                 compromisedFingerprints,
                 encryptionCapableFingerprints,
+                primaryKeyFingerprints,
             } = model;
             const apiKeys = sortApiKeys({
                 keys: publicKeys.apiKeys,
                 trustedFingerprints,
                 obsoleteFingerprints,
                 compromisedFingerprints,
+                primaryKeyFingerprints,
+                preferV6Keys: true,
             });
             const pinnedKeys = sortPinnedKeys({
                 keys: publicKeys.pinnedKeys,
                 obsoleteFingerprints,
                 compromisedFingerprints,
                 encryptionCapableFingerprints,
+                preferV6Keys: true,
             });
             const verifyingPinnedKeys = getVerifyingKeys(pinnedKeys, model.compromisedFingerprints);
 
@@ -259,6 +264,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
         model?.obsoleteFingerprints,
         model?.encryptionCapableFingerprints,
         model?.compromisedFingerprints,
+        model?.primaryKeyFingerprints,
     ]);
 
     useEffect(() => {
