@@ -3985,6 +3985,18 @@
         "Знайдено ${ groupCounts } груп",
         "Знайдено ${ groupCounts } груп"
       ],
+      "${ invitations.length } pending invitation": [
+        "${ invitations.length } запрошення на розгляді",
+        "${ invitations.length } запрошення на розгляді",
+        "${ invitations.length } запрошень на розгляді",
+        "${ invitations.length } запрошень на розгляді"
+      ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } зашифрований файл",
+        "${ nbFile } зашифровані файли",
+        "${ nbFile } зашифрованих файлів",
+        "${ nbFile } зашифрованих файлів"
+      ],
       "${ nbFile } encrypted file...": [
         "${ nbFile } зашифрований файл...",
         "${ nbFile } зашифровані файли...",
@@ -5473,6 +5485,12 @@
       "You will lose all unsaved changes.": [
         "Ви втратите всі незбережені зміни."
       ],
+      "You will need to save it again from the public link page.": [
+        "Вам необхідно буде знову зберегти його зі сторінки з публічним посиланням.",
+        "Вам необхідно буде знову зберегти їх зі сторінки з публічним посиланням.",
+        "Вам необхідно буде знову зберегти їх зі сторінки з публічним посиланням.",
+        "Вам необхідно буде знову зберегти їх зі сторінки з публічним посиланням."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
       ],
@@ -6531,6 +6549,9 @@
       "Graphics Interchange Format (GIF)": [
         "Формат обміну зображеннями (GIF)"
       ],
+      "GZip Archive": [
+        "Архів GZip"
+      ],
       "HyperText Markup Language (HTML)": [
         "Мова розмітки гіпертексту (HTML)"
       ],
@@ -6548,6 +6569,9 @@
       ],
       "Java Archive (JAR)": [
         "Архів Java (JAR)"
+      ],
+      "JPEG image": [
+        "Зображення JPEG"
       ],
       "MP3 audio": [
         "Аудіо MP3"
@@ -6584,6 +6608,9 @@
       ],
       "Opus audio": [
         "Аудіо Opus"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "Архів RAR"
@@ -7753,6 +7780,9 @@
       "Share invitation declined": [
         "Запрошення, яким поділилися, відхилено"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Не вдалося зупинити поширення елемента"
+      ],
       "Subfolder failed to be loaded": [
         "Не вдалося завантажити підтеку"
       ],
@@ -7767,6 +7797,18 @@
       ],
       "The link to your item was deleted": [
         "Посилання на ваш елемент було видалено"
+      ],
+      "This item was not removed from your list": [
+        "Цей елемент не вдалося вилучити з вашого списку",
+        "Деякі елементи не вдалося вилучити з вашого списку",
+        "Деякі елементи не вдалося вилучити з вашого списку",
+        "Деякі елементи не вдалося вилучити з вашого списку"
+      ],
+      "This item was successfully removed from your list": [
+        "Цей елемент успішно вилучено з вашого списку",
+        "Всі елементи успішно вилучено з вашого списку",
+        "Всі елементи успішно вилучено з вашого списку",
+        "Всі елементи успішно вилучено з вашого списку"
       ],
       "Trash failed to be emptied": [
         "Не вдалося спорожнити смітник"
@@ -9421,6 +9463,12 @@
       "Are you sure you want to close the preview?": [
         "Ви впевнені, що хочете закрити попередній перегляд?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Ви дійсно хочете видалити цей елемент зі свого списку?",
+        "Ви дійсно хочете видалити ці елементи зі свого списку?",
+        "Ви дійсно хочете видалити ці елементи зі свого списку?",
+        "Ви дійсно хочете видалити ці елементи зі свого списку?"
+      ],
       "Billing cycle": [
         "Платіжний цикл"
       ],
@@ -10033,6 +10081,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
+      ],
+      "Shared with end-to-end encryption": [
+        "Поширено з наскрізним шифруванням"
       ],
       "Show side panel": [
         "Показати бічну панель"

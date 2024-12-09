@@ -1976,6 +1976,9 @@
       "Add link to your email footer": [
         "Añadir enlace al pie de tu correo electrónico"
       ],
+      "Change email address settings": [
+        "Cambiar los ajustes de la dirección de correo electrónico"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -3662,6 +3665,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Desbloquea un número ilimitado de carpetas y etiquetas y más funciones premium al mejorar tu plan."
       ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Mejora tu plan para obtener ${ activatePmUser } para una dirección de correo electrónico más corta y fácil de recordar, además de tu dirección actual."
+      ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Puedes seguir invitando amigos, pero no podrás ganar más créditos."
       ],
@@ -4461,6 +4467,9 @@
       ],
       "Couldn't load invoices. Please try again later.": [
         "No se han podido cargar las facturas. Intenta más tarde."
+      ],
+      "Couldn't load transactions. Please try again later.": [
+        "No se han podido cargar las transacciones. Intenta más tarde."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Anula la selección de al menos ${ calendarsToFixCount } calendario",
@@ -7980,6 +7989,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Los mensajes en la carpeta Enviados o Borradores continuarán apareciendo en esa carpeta, incluso si los mueves a otra carpeta."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Los mensajes de todas tus direcciones de correo electrónico se enviarán a tu bandeja de entrada."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -8334,6 +8346,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
       ],
+      "Registering your subscription...": [
+        "Registrando tu suscripción..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Recuerda compartir los detalles de inicio de sesión con el usuario."
       ],
@@ -8439,6 +8454,9 @@
       "Set recovery phrase": [
         "Configurar una frase de recuperación"
       ],
+      "Setting up your new address...": [
+        "Configurando tu nueva dirección..."
+      ],
       "Setting up your organization": [
         "Configurando tu organización"
       ],
@@ -8492,6 +8510,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF aclara quién puede enviar correos a tu dominio. Asegúrate de añadir el siguiente registro TXT en tu panel de DNS (en la plataforma donde has comprado el dominio personalizado)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Comienza a compartirla con tus contactos y úsala para servicios en línea."
       ],
       "Stay tuned for future promotions.": [
         "Manténgate al tanto de promociones futuras."
@@ -8670,6 +8691,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Esta es una clave de cifrado que puedes haber guardado anteriormente."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Esta es ahora tu ${ defaultEmailAddress } para enviar mensajes nuevos."
       ],
       "This is the password you used before the password reset.": [
         "Esta es la contraseña que utilizabas antes de restablecer la contraseña."
@@ -9291,6 +9315,9 @@
       ],
       "You have no saved payment methods.": [
         "No tienes ningún método de pago guardado."
+      ],
+      "You have no transactions.": [
+        "No tienes transacciones."
       ],
       "You may be redirected to your bank’s website.": [
         "Puedes ser redirigido al sitio web de tu banco."
@@ -10820,6 +10847,9 @@
       "Sticky labels": [
         "Etiquetas fijas"
       ],
+      "Strong": [
+        "Segura"
+      ],
       "Subscription options": [
         "Opciones de suscripción"
       ],
@@ -10904,8 +10934,14 @@
       "Video conferencing with Zoom": [
         "Videoconferencia por Zoom"
       ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos que te vayas. Explica por qué te vas para ayudarnos a mejorar."
+      ],
+      "Weak": [
+        "Poco segura"
       ],
       "Week start": [
         "Inicio de semana"
@@ -14938,6 +14974,9 @@
       ],
       "Invoice": [
         "Factura"
+      ],
+      "Transactions": [
+        "Transacciones"
       ]
     },
     "Select search results": {
@@ -18309,6 +18348,9 @@
       "Your recovery status": [
         "Tu estado de recuperación"
       ],
+      "Your shorter address is now ready": [
+        "Tu dirección en formato más corto ya está lista."
+      ],
       "Your SMTP token": [
         "Tu token SMTP"
       ],
@@ -18341,6 +18383,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Factura de ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "Transacción de ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -18697,6 +18742,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Esta versión del navegador Tor no es compatible. Actualiza a la última ${ stableRelease }."
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Devolución"
+      ],
+      "Failed": [
+        "Operación fallida"
+      ],
+      "Needs attention": [
+        "Necesita tu atención"
+      ],
+      "Refunded": [
+        "Reembolsado"
+      ],
+      "Success": [
+        "Operación exitosa"
+      ],
+      "Timeout": [
+        "Tiempo agotado"
+      ],
+      "Voided": [
+        "Anulado"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Crédito de ajuste"
+      ],
+      "Authorization": [
+        "Autorización"
+      ],
+      "Bank transfer": [
+        "Transferencia bancaria"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Efectivo"
+      ],
+      "Chargeback": [
+        "Devolución"
+      ],
+      "Credit": [
+        "Crédito"
+      ],
+      "Credit transfer": [
+        "Transferencia de créditos"
+      ],
+      "Currency conversion": [
+        "Conversión de divisa"
+      ],
+      "Gift card": [
+        "Tarjeta de regalo"
+      ],
+      "Migration": [
+        "Migración"
+      ],
+      "Payment": [
+        "Pago"
+      ],
+      "Payment reversal": [
+        "Cancelación de pago"
+      ],
+      "Refund": [
+        "Reembolso"
       ]
     },
     "unprivatization": {

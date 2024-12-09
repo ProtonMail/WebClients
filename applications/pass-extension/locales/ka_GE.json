@@ -17,8 +17,14 @@
       "Add current URL": [
         "მიმდინარე URL-ის დამატება"
       ],
+      "Add custom domain": [
+        "მომხმარებლის დომენის დამატება"
+      ],
       "Add domain": [
         "დომენის დამატება"
+      ],
+      "Add mailbox": [
+        "საფოსტო ყუთის დამატება"
       ],
       "Add more": [
         "მეტის დამატება"
@@ -44,6 +50,9 @@
       "Back": [
         "უკან"
       ],
+      "Block contact": [
+        "კონტაქტის დაბლოკვა"
+      ],
       "Bulk delete items from trash": [
         "ერთზე მეტი ელემენტის წაშლა ნაგვის ყუთიდან"
       ],
@@ -64,6 +73,12 @@
       ],
       "Change": [
         "შეცვლა"
+      ],
+      "Check DNS": [
+        "DNS-ის შემოწმება"
+      ],
+      "Check settings": [
+        "პარამეტრების შემოწმება"
       ],
       "Choose a file or drag it here": [
         "აირჩიეთ ფაილი ან გადმოათრიეთ აქ"
@@ -104,6 +119,9 @@
       "Continue without pinning": [
         "მიმაგრების გარეშე გაგრძელება"
       ],
+      "Copy alias address": [
+        "ფსევდონიმის მისამართის კოპირება"
+      ],
       "Copy and close": [
         "კოპირება და დახურვა"
       ],
@@ -133,6 +151,9 @@
       ],
       "Create card": [
         "ბარათის შექმნა"
+      ],
+      "Create contact": [
+        "კონტაქტის შექმნა"
       ],
       "Create identity": [
         "იდენტიფიკატორის შექმნა"
@@ -172,6 +193,9 @@
       ],
       "Delete it, I will never need it": [
         "წაშალე, ის მე არასდროს დამჭირდება"
+      ],
+      "Delete mailbox": [
+        "საფოსტო ყუთის წაშლა"
       ],
       "Delete password": [
         "პაროლის წაშლა"
@@ -317,6 +341,9 @@
       "Make admin": [
         "ადმინობის მინიჭება"
       ],
+      "Make default": [
+        "ნაგულისხმევად დაყენება"
+      ],
       "Make editor": [
         "რედაქტორობის მინიჭება"
       ],
@@ -334,6 +361,9 @@
       ],
       "Maximum views": [
         "მაქსიმალური ნახვები"
+      ],
+      "More info": [
+        "მეტი ინფორმაცია"
       ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
@@ -391,6 +421,9 @@
       ],
       "Please retry": [
         "თავიდან სცადეთ"
+      ],
+      "Re-verify": [
+        "თავიდან გადამოწმება"
       ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
@@ -479,6 +512,9 @@
       "Select": [
         "მონიშვნა"
       ],
+      "Send email": [
+        "ელფოსტის გაგზავნა"
+      ],
       "Send invite": [
         "მოსაწვევის გაგზავნა"
       ],
@@ -540,6 +576,15 @@
       "Sync aliases": [
         "ფსევდონიმების სინქი"
       ],
+      "To mailbox": [
+        "საფოსტო ყუთში"
+      ],
+      "Transfer aliases": [
+        "ფსევდონიმების გადაცემა"
+      ],
+      "Transfer and delete mailbox": [
+        "საფოსტო ყუთის გადაცემა და წაშლა"
+      ],
       "Transfer ownership": [
         "მფლობელობის გადაცემა"
       ],
@@ -548,6 +593,9 @@
       ],
       "Try again": [
         "კიდევ ცდა"
+      ],
+      "Unblock contact": [
+        "კონტაქტის განბლოკვა"
       ],
       "Understood, I will never need it": [
         "გავიგე. არასდროს დამჭირდება",
@@ -640,11 +688,23 @@
       "A checked box means the feature is disabled.": [
         "ჩართული ნიშნავს, რომ ეს ფუნქცია გამორთულია."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "დაამატეთ შემდეგი DNS CNAME ჩანაწერები თქვენს დომენს."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "დაამატეთ შემდეგი DNS TXT ჩანაწერი თქვენს დომენს."
+      ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Dark Web Monitoring ფასიან ვერსიაშია ხელმისაწვდომი. ასწიეთ ტარიფი წვდომის დაუყოვნებლივ მისაღებად."
       ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "თუ იყენებთ CloudFlare-ს, დარწმუნდით, რომ პროქსის პარამეტრი არჩეული არ გაქვთ."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "დომენების სია, სადაც ${ PASS_SHORT_APP_NAME }-ში მითითებული ავტომატური ფუნქციები (ავტომატური შევსება, ავტომატური შეთავაზება და ავტომატური შენახვა) არ უნდა მუშაობდეს. ${ infoText }"
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "ზოგიერთი დომენის რეგისტრატორი (Namecheap, CloudFlare და ა.შ.) ძირითადი დომენისთვის ასევე იყენებს სიმბოლოს @."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "ეს ანგარიში მოწყვლადია. მიმართეთ სერვისს და შეცვალეთ თქვენი პაროლი."
@@ -654,6 +714,11 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "განბლოკეთ დამატებითი უსაფრთხოების ფუნქციები და დეტალური ჟურნალი, რომ დაიცვათ თქვენი კვალი ინტერნეტში."
+      ]
+    },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "რაცგნებავთ@${ domainDisplay }"
       ]
     },
     "Error": {
@@ -731,6 +796,9 @@
         "აღმოჩენილია ${ errors.length } დაზიანებული CSV მწკრივი",
         "აღმოჩენილია ${ errors.length } დაზიანებული CSV მწკრივი"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "დომენის გადამოწმება შეუძლებელია. დარწმუნდით, რომ დაამატეთ სწორი DNS ჩანაწერები"
+      ],
       "Domain not available, try again later": [
         "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
       ],
@@ -758,11 +826,32 @@
       "Failed to add email address": [
         "ელფოსტის მისამართის დამატება ჩავარდა"
       ],
+      "Failed to block the contact": [
+        "კონტაქტის დაბლოკვა ჩავარდა"
+      ],
+      "Failed to create domain": [
+        "დომენის შექმნა ჩავარდა"
+      ],
+      "Failed to create new mailbox": [
+        "ახალი საფოსტო ყუთის შექმნა ჩავარდა"
+      ],
+      "Failed to create the contact": [
+        "კონტაქტის შექმნა ჩავარდა"
+      ],
+      "Failed to delete domain": [
+        "დომენის წაშლა ჩავარდა"
+      ],
       "Failed to delete email address from monitoring": [
         "მონიტორინგიდან ელფოსტის მისამართის წაშლა ჩავარდა"
       ],
       "Failed to delete selected items": [
         "მონიშნული ელემენტების წაშლა ჩავარდა"
+      ],
+      "Failed to delete the contact": [
+        "კონტაქტის წაშლა ჩავარდა"
+      ],
+      "Failed to delete the mailbox": [
+        "საფოსტო ყუთის წაშლა ჩავარდა"
       ],
       "Failed to edit user's access.": [
         "მომხმარებლის წვდომის ჩასწორება ჩავარდა."
@@ -772,6 +861,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "ამ ელფოსტის ფსევდონიმისთვის გაჟონვების ჩატვირთვა ჩავარდა"
+      ],
+      "Failed to load domain settings.": [
+        "დომენის პარამეტრების ჩატვირთვა ჩავარდა."
       ],
       "Failed to load item history": [
         "ელემენტის ისტორიის ჩატვირთვა ჩავარდა"
@@ -791,6 +883,9 @@
       "Failed to remove user's access.": [
         "მომხმარებლის წვდომის წაშლა ჩავარდა."
       ],
+      "Failed to resend verification code": [
+        "გადამოწმების კოდის თავიდან გაგზავნა ჩავარდა"
+      ],
       "Failed to resend verification for custom email": [
         "მორგებული ელფოსტისთვის გადამოწმების თავიდან გაგზავნა ჩავარდა"
       ],
@@ -809,8 +904,26 @@
       "Failed to unpin item": [
         "ელემენტის მოხსნა ჩავარდა"
       ],
+      "Failed to update catch-all setting.": [
+        "ყველასფრის ჩაჭერის პარამეტრის განახლება ჩავარდა."
+      ],
+      "Failed to update default domain": [
+        "ნაგულისხმევი დომენის განახლება ჩავარდა"
+      ],
+      "Failed to update domain mailboxes.": [
+        "დომენის საფოსტო ყუთების განახლება ჩავარდა."
+      ],
+      "Failed to update domain name.": [
+        "დომენის სახელის განახლება ჩავარდა."
+      ],
       "Failed to update monitoring settings": [
         "მონიტორინგის პარამეტრები ჩავარდა"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "პრეფიქის შექმნის პარამეტრის განახლება ჩავარდა."
+      ],
+      "Failed to verify domain": [
+        "დომენის გადამოწმება ჩავარდა"
       ],
       "Failed to verify email address": [
         "ელფოსტის მისამართის გადამოწმება ჩავარდა"
@@ -1190,6 +1303,9 @@
       "Aliases out of sync (${ aliasCount })": [
         "არადასინქრონებული ფსევდონიმები (${ aliasCount })"
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "ასევე წაიშლება ყველა ფსევდონიმი, რომელიც საფოსტო ყუთს ${ emailJSX } იყენებს\n."
+      ],
       "All breaches for this address were resolved": [
         "ამ მისამართისთვის ყველა გაჟონვა გადაწყვეტილია"
       ],
@@ -1211,11 +1327,20 @@
       "An item previously shared with you was removed": [
         "თქვენთვის ადრე გაზიარებული ელემენტი წაიშალა"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "მართლა გნებავთ წაშალოთ ${ emailJSX } თქვენი საფოსტო ყუთებიდან?"
+      ],
       "Are you sure you want to remove the link?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ბმული?"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "ავტოშექმნილი ფსევდონიმებს ავტომატურად ფლობს შემდეგი საფოსტო ყუთები:"
+      ],
       "Auto-lock successfully disabled.": [
         "ავტომატური დაბლოკვა წარმატებით გამოირთო."
+      ],
+      "automatically": [
+        "ავტომატურად"
       ],
       "Automatically copy the generated password to the clipboard": [
         "გენერირებული პაროლების ავტომატური დაკოპირება ბუფერში."
@@ -1231,6 +1356,9 @@
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
         "ბიომეტრია გაითიშება და საჭიროა, ის თავიდან ჩართოთ."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "იქონიეთ თქვენი საკუთარი დომენი და არ მოგიწევთ, კიდევ ერთი ელფოსტის ჰოსტინგის გადაწყვეტილება შეიძინოთ."
       ],
       "Built in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
@@ -1274,6 +1402,12 @@
       "Copied to clipboard": [
         "დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Create contact illustration": [
+        "კონტრაქცის ილუსტრაციის შექმნა"
+      ],
+      "Created ${ time }.": [
+        "შექმნის დრო: ${ time }."
+      ],
       "Creating alias...": [
         "ფსევდონიმის შექმნა..."
       ],
@@ -1307,6 +1441,12 @@
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "აღმოაჩინეთ ${ PASS_APP_NAME }-ის ვიდეო Youtube-ზე"
       ],
+      "DNS changes could take up to 24 hours to update.": [
+        "DNS-ის ცვლილებების განახლებას, შეიძლება, 24 საათამდე დასჭირდე."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "დომენი: ${ domainPath } ან @"
+      ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
       ],
@@ -1330,6 +1470,12 @@
       ],
       "Email address successfully included in monitoring": [
         "ელფოსტის მისამართის მონიტორინგში ჩასმა წარმატებულია"
+      ],
+      "Email headers illustration": [
+        "ელფოსტის თავსართების ჩვენება"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "მისწერეთ ამ მისამართს ელფოსტა და ის გამოჩნდება, როგორც გაგზავნილი, მაგალითად, მისამართიდან ${ exampleEmail }."
       ],
       "Emptying trash...": [
         "ნაგვის ყუთის დაცარიელება..."
@@ -1357,6 +1503,9 @@
       ],
       "Enabling PIN auto-lock": [
         "PIN-კოდის ავტომატური დაბლოკვის ჩართვა"
+      ],
+      "Enter the address you want to email.": [
+        "შეიყვანეთ მისამართი, ვისთვისაც ელფოსტის მიწერა გნებავთ."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
@@ -1410,6 +1559,9 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "აქ დასაწყებად საკმარის ინფორმაციას იპოვით."
+      ],
+      "Here's how it works:": [
+        "აი, როგორ მუშაობს ის:"
       ],
       "Import in progress:": [
         "მიმდინარეობს შემოტანა:"
@@ -1657,6 +1809,9 @@
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "შეიყვანეთ თქვენი დამატებითი პაროლი, რომ ${ PASS_SHORT_APP_NAME }-ის გამოყენება დაიწყოთ."
       ],
+      "Please follow the steps below to set up your domain.": [
+        "მიჰყევით შემდეგ ნაბიჯებს ქვემოთ, რომ თქვენი დომენი მოირგოთ."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "დაიმახსოვრეთ, რომ ფსევდონიმის აღდგენა შეუქცევადია. შეიძლება, მისი, უბრალოდ გათიშვა გნებავთ?"
       ],
@@ -1680,6 +1835,15 @@
       ],
       "Quickly autofill your saved credentials.": [
         "სწრაფი შევსება თქვენი შენახული ავტორიზაციის დეტალებით."
+      ],
+      "Record: CNAME": [
+        "ჩანაწერი: CNAME"
+      ],
+      "Record: MX": [
+        "ჩანაწერი: MX"
+      ],
+      "Record: TXT": [
+        "ჩანაწერი: TXT"
       ],
       "Registering extra password...": [
         "დამატებითი პაროლის რეგისტრაცია..."
@@ -1710,6 +1874,9 @@
       ],
       "Secure links": [
         "დაცული ბმულები"
+      ],
+      "See more info": [
+        "იხილეთ მეტი"
       ],
       "Select an existing login or create a new one.": [
         "აირჩიეთ არსებული შესვლის დეტალი ან შექმენით ახალი."
@@ -1771,6 +1938,9 @@
       "Thank you, the problem has been reported": [
         "მადლობა, პრობლემის შესახებ ინფორმაცია გადაცემულია"
       ],
+      "The display name when sending an email from this alias.": [
+        "საჩვენებელი სახელი, როცა ელფოსტას ამ ფსევდონიმიდან აგზავნით."
+      ],
       "The export will only contain vaults that you own.": [
         "გატანა, მხოლოდ, იმ მნიშვნელობას შეიცავს, რომელსაც თქვენ ფლობთ."
       ],
@@ -1796,6 +1966,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "ეს გატანა დაუშიფრავი იქნება და ყველას, ვისაც გატანილ ფაილზე წვდომა ექნება, შეეძლება, პაროლები დაინახოს. უსაფრთხოებისთვის, სჯობს, წაშალოთ ის, როცა მის გამოყენებას მორჩებით."
       ],
+      "This operation is irreversible.": [
+        "ეს ოპერაცია შეუქცევადია."
+      ],
       "This option is currently not available on your device.": [
         "ეს პარამეტრი ამჟამად თქვენს მოწყობილობაზე ხელმისაწვდომი არაა."
       ],
@@ -1811,6 +1984,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "ეს  უარჰყოფს მოწყობილობას **${ name }**, რომელმაც ცადა, თქვენს ${ BRAND_NAME }-ის ანგარიშში შესულიყო. მცდელობის თარიღი: **${ date }**."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "ელფოსტის მიღების გასაგრძელებლად გადაიტანეთ ეს ფსევდონიმები სხვა საფოსტო ყუთზე:"
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "სხვა პაროლების მმართველიდან მონაცემების შემოსატანად, გადადით პაროლების მმართველში, გამოიტანეთ თქვენი მონაცემები და ატვირთეთ ის ${ PASS_APP_NAME }-ზე. როცა მონაცემების შემოტანა დასრულდება, გამოტანილი ფაილი წაშალეთ."
       ],
@@ -1822,6 +1998,12 @@
       ],
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
+      ],
+      "Unconfigured": [
+        "მოურგებელი"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "შეუზღუდავი hide-my-email-ის ფსევდონიმები და მისი დამატებითი მართვა"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "განბლოკეთ ${ PASS_APP_NAME } თქვენი PIN-კოდით თქვენს წვდომის გასაღებთან წვდომისთვის"
@@ -1871,6 +2053,9 @@
       "User's access successfully updated": [
         "მომხმარებლის წვდომები წარმატებით განახლდა"
       ],
+      "Value:": [
+        "მნიშვნელობა:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "საცავი \"${ payload.content.name }\" წარმატებით წაიშალა"
       ],
@@ -1901,6 +2086,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "${ PASS_APP_NAME }-ში შესვლის დეტალების შექმნისას/ჩასწროებისას ველი 'მომხმარებლის სახელი' ყოველთვის ხილული იქნება."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "ამ ფსევდონიმიდან ელფოსტის გაგზავნისას მას გამგზავნად ${ emailSender } ექნება."
       ],
       "You are about to create:": [
         "აპირებთ, შექმნათ:"
@@ -1955,6 +2143,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "თქვენი ანგარიში შეზღუდულია, რადგან ახლა 2FA მოთხოვნილი თქვენი ორგანიზაციის მიერ. ჩართეთ 2FA თქვენი ანგარიშის მორგების ფანჯარაში ან დაუკავშირდით თქვენს ადმინისტრატორს."
       ],
+      "your domain": [
+        "თქვენი დომენი"
+      ],
       "Your files will be encrypted and then saved": [
         "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
       ],
@@ -1966,6 +2157,10 @@
       "${ aliasCount } alias": [
         "${ aliasCount } ფსევდონიმი",
         "${ aliasCount } ფსევდონიმი"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } დაბლოკილი",
+        "${ blockedCount } დაბლოკილი"
       ],
       "${ config.options.length } character": [
         "${ config.options.length } სიმბოლო",
@@ -1979,6 +2174,10 @@
         "${ days } დღე",
         "${ days } დღე"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } გადაგზავნა",
+        "${ forwardCount } გადაგზავნა"
+      ],
       "${ hours } hour": [
         "${ hours } საათი",
         "${ hours } საათი"
@@ -1987,11 +2186,23 @@
         "${ minutes } წუთი",
         "${ minutes } წუთი"
       ],
+      "${ months } month": [
+        "${ months } თვე",
+        "${ months } თვე"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME }-ის მონიტორი"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-ის ვერსია"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } პასუხი",
+        "${ repliedCount } პასუხი"
+      ],
+      "${ years } year": [
+        "${ years } წელი",
+        "${ years } წელი"
       ],
       "1 hour": [
         "1 სთ"
@@ -2044,6 +2255,9 @@
       "Account": [
         "ანგარიში"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "შემთხვევითი პრეფიქსის დამატება დომენისთვის ახალი ფსევდონიმის შექმნისას."
+      ],
       "Add section": [
         "განყოფილების დამატება"
       ],
@@ -2058,6 +2272,9 @@
       ],
       "Alias address": [
         "ფსევდონიმის მისამართი"
+      ],
+      "Alias address (disabled)": [
+        "ფსევდონიმის მისამართი (გათიშულია)"
       ],
       "Alias management": [
         "ფსევდონიმების მართვა"
@@ -2122,6 +2339,9 @@
       "Cards": [
         "ბარათები"
       ],
+      "Catch-All": [
+        "ყველას დაჭერა"
+      ],
       "City": [
         "ქალაქი"
       ],
@@ -2133,6 +2353,9 @@
       ],
       "Confirm vault name": [
         "დაადასტურეთ საცავის სახელი"
+      ],
+      "Contact created ${ time } ago.": [
+        "კონტაქი შეიქმნა ${ time }-ის წინ."
       ],
       "Contact details": [
         "კონტაქტის დეტალები"
@@ -2194,8 +2417,14 @@
       "Display name": [
         "საჩვენებელი სახელი"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "დომენი"
+      ],
+      "Domain:": [
+        "დომენი:"
       ],
       "Domains": [
         "დომენები"
@@ -2320,6 +2549,9 @@
       "Include numbers (0-9)": [
         "რიცხვების ჩათვლით (0-9)"
       ],
+      "Info": [
+        "ინფორმაცია"
+      ],
       "Instagram handle": [
         "Instagram-ის წარწერა"
       ],
@@ -2377,6 +2609,9 @@
       "Logins": [
         "შესვლები"
       ],
+      "Mailboxes": [
+        "საფოსტო ყუთები"
+      ],
       "Make all admins": [
         "ყველას მონიშვნა ადმინისტრატორად"
       ],
@@ -2422,14 +2657,23 @@
       "Newest to oldest": [
         "უახლესიდან ძველისკენ"
       ],
+      "No Activity in the last 14 days.": [
+        "აქტივობის გარეშე ბოლო 14 დღეში."
+      ],
       "No history": [
         "ისტორია არ არის"
       ],
       "None": [
         "არცერთი"
       ],
+      "Not selected": [
+        "მონიშნული არაა"
+      ],
       "Note": [
         "შენიშვნა"
+      ],
+      "Note • SimpleLogin": [
+        "შენიშვნა • SimpleLogin"
       ],
       "Notes": [
         "შენიშვნები"
@@ -2491,6 +2735,12 @@
       "Prefix": [
         "პრეფიქსი"
       ],
+      "Premium domain": [
+        "ფასიანი დომენი"
+      ],
+      "Priority:": [
+        "პრიორიტეტი:"
+      ],
       "Prompt for auto-save": [
         "კითხვა ავტომატური შენახვისას"
       ],
@@ -2499,6 +2749,9 @@
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "დაიცავით ${ PASS_APP_NAME } დამატებითი პაროლით"
+      ],
+      "Public domain": [
+        "საჯარო დომენი"
       ],
       "Rate us": [
         "შეგვაფასეთ"
@@ -2529,6 +2782,9 @@
       ],
       "Security code": [
         "უსაფრთხოების კოდი"
+      ],
+      "Select a domain": [
+        "აირჩიეთ დომენი"
       ],
       "Select an email address": [
         "აირჩიეთ ელფოსტის მისამართი"
@@ -2589,6 +2845,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "ფსევდონიმების სინქრონიზაცია SimpleLogin-თან"
+      ],
+      "Target:": [
+        "სამიზნე:"
       ],
       "Tax number": [
         "ფისკალური ნომერი"
@@ -2663,6 +2922,9 @@
       "Username/email": [
         "მომხმარებლის სახელი/ელფოსტა"
       ],
+      "Value:": [
+        "მნიშვნელობა:"
+      ],
       "Vault ID": [
         "საცავის ID"
       ],
@@ -2705,8 +2967,16 @@
       "Your browser will stop using its built-in password manager.": [
         "თქვენი ბრაუზერი შეწყვეტს ჩაშენებული პაროლების მმართველის გამოყენებას."
       ],
+      "Your domain": [
+        "თქვენი დომენი"
+      ],
       "ZIP or Postal code": [
         "Zip ან საფოსტო კოდი"
+      ]
+    },
+    "Link": {
+      "auto create rules ››": [
+        "წესების ავტოშექმნა ››"
       ]
     },
     "Message": {
@@ -2769,6 +3039,9 @@
       "Add text": [
         "ტექსტის დამატება"
       ],
+      "Alias Display Name": [
+        "ფსევდონიმის საჩვენებელი სახელი"
+      ],
       "Email address": [
         "ელ-ფოსტის მისამართი"
       ],
@@ -2795,6 +3068,15 @@
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "my-domain.com": [
+        "my-domain.com"
+      ],
+      "Name to display when sending an email": [
+        "საჩვეენებელი სახელი ელფოსტის გაგზავნისას"
+      ],
+      "Note from SimpleLogin": [
+        "შენიშვნა SimpleLogin-დან"
       ],
       "Password": [
         "პაროლი"
@@ -2907,9 +3189,63 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "ფსევდონიმების სინქრონიზაცის ჩართვა წარმატებულია. SimpleLogin-ის ფსევდონიმების სინქრონიზაციას, შეიძლება, რაღაც დრო დასჭირდეს"
       ],
+      "Catch-all setting successfully disabled": [
+        "ყველაფრის ჩაჭერის პარამეტრი წარმატებით გაითიშა"
+      ],
+      "Catch-all setting successfully enabled": [
+        "ყველაფრის ჩაჭერის პარამეტრი წარმატებით ჩაირთო"
+      ],
+      "Contact successfully blocked": [
+        "კონტაქტი წარმატებით დაიბლოკა"
+      ],
+      "Contact successfully created": [
+        "კონტაქტი წარმატებით შეიქმნა"
+      ],
+      "Contact successfully deleted": [
+        "კონტაქტი წარმატებით წაიშალა"
+      ],
+      "Contact successfully unblocked": [
+        "კონტაქტი წარმატებით განიბლოკა"
+      ],
+      "Default domain successfully updated": [
+        "ნაგულისხმვი დომენი წარმატებით განახლდა"
+      ],
+      "Default mailbox successfully updated": [
+        "ნაგულისხმევი საფოსტო ყუთი წარმატებით განახლდა"
+      ],
+      "Display name successfully updated": [
+        "საჩვენებელი სახელი წარამატებით განახლდა"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "დომენის მფლობელობა გადამოწმდა. ახლა შეგიძლიათ, MX ჩანაწერი მოირგოთ."
+      ],
+      "Domain successfully deleted": [
+        "დომენი წარმატებით წაიშალა"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "დომენი წარმატებით გადამოწმდა. თქვენს დომენს შეუძლია დაიწყოს ელფოსტების მიღება და ფსევდონიმების შექმნა"
+      ],
+      "Mailbox successfully deleted": [
+        "საფოსტო ყუთი წარმატებით წაიშალა"
+      ],
+      "Mailbox successfully verified": [
+        "საფოსტო ყუთი წარმატებით გადამოწმდა"
+      ],
+      "Mailboxes successfully updated": [
+        "საფოსტო ყუთები წარმატებით განახლდა"
+      ],
+      "Random prefix generation successfully disabled": [
+        "შემთხვევითი პრეფიქსის შექმნა წარმატებით გამოირთო"
+      ],
+      "Random prefix generation successfully enabled": [
+        "შემთხვევითი პრეფიქსის შექმნა წარმატებით ჩაირთო"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
         "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "გადამოწმების ელფოსტა გაიგზავნა. შეამოწმეთ თქვენი საფოსტო ყუთი ელფოსტის დასადასტურებლად"
       ]
     },
     "Theme": {
@@ -2930,11 +3266,32 @@
       "Actions": [
         "ქმედებები"
       ],
+      "Activity": [
+        "აქტიურობა"
+      ],
+      "Add custom domain": [
+        "მომხმარებლის დომენის დამატება"
+      ],
+      "Add mailbox": [
+        "საფოსტო ყუთის დამატება"
+      ],
+      "Alias contacts": [
+        "ფსევდონიმები კონტაქტებისთვის"
+      ],
+      "Aliases": [
+        "ფსევდონიმები"
+      ],
+      "Auto create/on the fly alias": [
+        "ავტოშექმნა/ფსევდონიმები საჭიროებისამებრ"
+      ],
       "Auto-lock update": [
         "ავტომატური დაბლოკვის განახლება"
       ],
       "Autofill": [
         "ავტოშევსება"
+      ],
+      "Blocked addresses": [
+        "დაბლოკილი მისამართები"
       ],
       "Confirm extra password": [
         "დაადასტურეთ დამატებითი პაროლი"
@@ -2963,9 +3320,24 @@
       "Current version": [
         "მიმდინარე ვერსია"
       ],
+      "Custom domains": [
+        "მორგებული დომენები"
+      ],
+      "Default": [
+        "ნაგულისხმევი"
+      ],
+      "Default Display Name": [
+        "ნაგულისხმევი საჩვენებელი სახელი"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "წავშალო ${ deletedItemsCount } ელემენტი?",
         "წავშალო ${ deletedItemsCount } ელემენტი?"
+      ],
+      "Delete domain": [
+        "წავშალო დომენი"
+      ],
+      "Delete mailbox": [
+        "საფოსტო ყუთის წაშლა"
       ],
       "Delete this item?": [
         "წავშალო ეს ელემენტი?"
@@ -2975,6 +3347,15 @@
       ],
       "Discard changes?": [
         "ცვლილებების გაუქმება?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (არასავალდებულო)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (არასავალდებულო)"
+      ],
+      "Domain": [
+        "დომენი"
       ],
       "Email": [
         "ელ-ფოსტა"
@@ -3036,6 +3417,9 @@
       "Low disk space": [
         "დისკზე ადგილი ცოტაღაა"
       ],
+      "Mailbox": [
+        "საფოსტო ყუთი"
+      ],
       "Member limit": [
         "წევრების ზღვარი"
       ],
@@ -3058,6 +3442,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "გადავიტანო ელემენტი საცავში \"${ vaultName }\""
+      ],
+      "MX record": [
+        "MX ჩანაწერი"
       ],
       "No items selected": [
         "ელემენტები მონიშნული არაა"
@@ -3093,6 +3480,9 @@
         "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმს წაშლით, მას ვერ აღადგენთ.",
         "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმებს წაშლით, მას ვერ აღადგენთ."
       ],
+      "Random Prefix Generation": [
+        "შემთხვევითი პრეფიქსის შექმნა"
+      ],
       "Reject device?": [
         "უარვყო მოწყობილობა?"
       ],
@@ -3111,6 +3501,9 @@
       "Secure your data": [
         "დაიცავით თქვენი მონაცემები"
       ],
+      "Select the default domain for aliases": [
+        "აირჩიეთ ნაგულისხმევი დომენი ფსევდონიმებისთვის"
+      ],
       "Set access level": [
         "წვდომის დონის დაყენება"
       ],
@@ -3122,6 +3515,9 @@
       ],
       "Share with": [
         "გაზიარება"
+      ],
+      "SPF (Optional)": [
+        "SPF (არასავალდებულო)"
       ],
       "Status": [
         "სტატუსი"
@@ -3156,6 +3552,9 @@
       "Unlock ${ brandNameJSX }": [
         "განბლოკეთ ${ brandNameJSX }"
       ],
+      "Unverified": [
+        "გადაუმოწმებელი"
+      ],
       "Update available": [
         "განახლება ხელმისაწვდომია"
       ],
@@ -3180,6 +3579,9 @@
       "Welcome to your new password manager!": [
         "მოგესალმებით თქვენი ახალ პაროლების მმართველში!"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "რა სხვაობაა ${ PASS_SHORT_APP_NAME }-ის შენიშვნასა და SimpleLogin-ის შენიშვნას შორის?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "თქვვენი ${ planName } გამოწერის დასრულების თარიღია ${ endDate }"
       ],
@@ -3195,6 +3597,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "დომენის URL არასწორია"
+      ],
       "Duplicated URL": [
         "დუბლირებული URL"
       ],
@@ -3268,8 +3673,14 @@
       "Delete alias": [
         "ფსევდონიმის წაშლა"
       ],
+      "Domain cannot be empty": [
+        "დომენი ცარიელი ვერ იქნება"
+      ],
       "Duplicate email addresses.": [
         "დუბლირებული ელფოსტის მისამართები."
+      ],
+      "Email cannot be empty": [
+        "ელფოსტა ცარიელი ვერ იქნება"
       ],
       "Empty note": [
         "ცარიელი შენიშვნა"
@@ -3349,6 +3760,9 @@
       ],
       "Please contact us to investigate the issue": [
         "დაგვიკავშირდით ამ პრობლემის გამოსაკვლევად"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმს წაშლით, მას ვერ აღადგენთ"
       ],
       "Please verify your email address in order to use email aliases": [
         "ელფოსტის ფსევდონიმების გამოსაყენებლად საჭიროა თქვენი ანგარიშის გადამოწმება"

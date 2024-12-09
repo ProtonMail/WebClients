@@ -1320,7 +1320,7 @@
     },
     "Button": {
       "Change email address settings": [
-        "No s'han pogut modificar les preferències de l'adreça de correu electrònic."
+        "Modificar les preferències de l'adreça de correu electrònic"
       ],
       "Continue": [
         "Continua"
@@ -4797,6 +4797,9 @@
       "Merged": [
         "Combinats"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Els missatges a totes les vostres adreces de correu electrònic aniran a la vostra safata d'entrada."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -5040,6 +5043,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
+      "Registering your subscription...": [
+        "Registrant la vostra subscripció..."
+      ],
       "Report has been sent": [
         "S'ha enviat l'informe"
       ],
@@ -5173,6 +5179,9 @@
       "Something went wrong...": [
         "Alguna cosa ha anat malament..."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Comenceu a compartir-la amb els vostres contactes i utilitzeu-la per a serveis en línia."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
       ],
@@ -5241,6 +5250,9 @@
       ],
       "This folder is empty": [
         "Aquesta carpeta és buida."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
       ],
       "This item already exists in your library": [
         "Aquest element ja existeix a la biblioteca"
@@ -5834,12 +5846,6 @@
       "Calendars": [
         "Calendaris"
       ],
-      "Can edit": [
-        "Edita"
-      ],
-      "Can view": [
-        "Mostra"
-      ],
       "Cancel download": [
         "Cancel·lar la descarregada"
       ],
@@ -6320,14 +6326,6 @@
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "Organitzeu, afegiu i editeu fitxers"
-      ],
-      "View and download": [
-        "Mostra i descarrega"
       ]
     },
     "Label for contact group color": {
@@ -10453,6 +10451,9 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
+      ],
+      "Your shorter address is now ready": [
+        "La vostra adreça més curta ja està preparada."
       ],
       "Your welcome actions": [
         "Les vostres accions de benvinguda"

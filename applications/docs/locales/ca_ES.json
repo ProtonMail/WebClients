@@ -1096,7 +1096,7 @@
     },
     "Button": {
       "Change email address settings": [
-        "No s'han pogut modificar les preferències de l'adreça de correu electrònic."
+        "Modificar les preferències de l'adreça de correu electrònic"
       ],
       "Continue": [
         "Continua"
@@ -4330,6 +4330,9 @@
       "Merged": [
         "Combinats"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Els missatges a totes les vostres adreces de correu electrònic aniran a la vostra safata d'entrada."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -4507,6 +4510,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
+      "Registering your subscription...": [
+        "Registrant la vostra subscripció..."
+      ],
       "Restored version to": [
         "La versió s'ha restaurat a"
       ],
@@ -4570,6 +4576,9 @@
       "Something went wrong": [
         "S'ha produït un error."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Comenceu a compartir-la amb els vostres contactes i utilitzeu-la per a serveis en línia."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
       ],
@@ -4626,6 +4635,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "És possible que aquest document no existeixi o que no tingueu permís per a veure'l. Podeu intentar tornar a carregar la pàgina per veure si el problema persisteix."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
       ],
       "This item already exists in your library": [
         "Aquest element ja existeix a la biblioteca"
@@ -8940,6 +8952,9 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
+      ],
+      "Your shorter address is now ready": [
+        "La vostra adreça més curta ja està preparada."
       ]
     },
     "Today icon tooltip in mini calendar": {

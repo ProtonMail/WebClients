@@ -1324,6 +1324,9 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Cambiar los ajustes de la dirección de correo electrónico"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -4799,6 +4802,9 @@
       "Merged": [
         "Fusionado"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Los mensajes de todas sus direcciones de correo electrónico se enviarán a su bandeja de entrada."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -5042,6 +5048,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
+      "Registering your subscription...": [
+        "Registrando su suscripción..."
+      ],
       "Report has been sent": [
         "El informe ha sido enviado"
       ],
@@ -5124,6 +5133,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Los ajustes de PGP le permite enviar correos electrónicos cifrados de extremo a extremo a un usuario que no sea de ${ BRAND_NAME } y que use un servicio compatible con PGP."
       ],
+      "Setting up your new address...": [
+        "Configurando su nueva dirección..."
+      ],
       "Share files with links": [
         "Compartir archivos con enlaces"
       ],
@@ -5171,6 +5183,9 @@
       ],
       "Something went wrong...": [
         "Hubo un problema..."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Comience a compartirla con sus contactos y úsela para servicios en línea."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envíe un depósito usando la siguiente dirección o escanee el código QR. El depósito aparecerá en la cuenta después de la confirmación."
@@ -5240,6 +5255,9 @@
       ],
       "This folder is empty": [
         "Esta carpeta está vacía."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Esta es ahora su ${ defaultEmailAddress } para enviar mensajes nuevos."
       ],
       "This item already exists in your library": [
         "Este elemento ya existe en su librería"
@@ -5836,12 +5854,6 @@
       "Calendars": [
         "Calendarios"
       ],
-      "Can edit": [
-        "Editar"
-      ],
-      "Can view": [
-        "Leer"
-      ],
       "Cancel download": [
         "Cancelar descarga"
       ],
@@ -6322,14 +6334,6 @@
       ],
       "Your password (admin)": [
         "La contraseña (admin)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "Organice, añada y edite archivos"
-      ],
-      "View and download": [
-        "Ver y descargar"
       ]
     },
     "Label for contact group color": {
@@ -10512,6 +10516,9 @@
       ],
       "Your exposed information": [
         "Sus datos expuestos"
+      ],
+      "Your shorter address is now ready": [
+        "Su dirección en formato más corto ya está lista."
       ],
       "Your welcome actions": [
         "Sus acciones de bienvenida"

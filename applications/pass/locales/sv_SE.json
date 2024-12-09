@@ -34,6 +34,12 @@
       "Add current URL": [
         "Lägg till nuvarande URL"
       ],
+      "Add custom domain": [
+        "Lägg till anpassad domän"
+      ],
+      "Add mailbox": [
+        "Lägg till brevlåda"
+      ],
       "Add more": [
         "Lägg till fler"
       ],
@@ -61,6 +67,9 @@
       "Back": [
         "Tillbaka"
       ],
+      "Block contact": [
+        "Blockera kontakt"
+      ],
       "Bulk delete items from trash": [
         "Ta bort flera objekt från papperskorg"
       ],
@@ -81,6 +90,12 @@
       ],
       "Change": [
         "Ändra"
+      ],
+      "Check DNS": [
+        "Kontrollera DNS"
+      ],
+      "Check settings": [
+        "Kontrollera inställningar"
       ],
       "Choose a file or drag it here": [
         "Välj en fil eller dra den hit"
@@ -115,6 +130,9 @@
       "Continue offline": [
         "Fortsätt offline"
       ],
+      "Copy alias address": [
+        "Kopiera alias-adress"
+      ],
       "Copy and close": [
         "Kopiera och stäng"
       ],
@@ -141,6 +159,9 @@
       ],
       "Create card": [
         "Skapa kort"
+      ],
+      "Create contact": [
+        "Skapa kontakt"
       ],
       "Create identity": [
         "Skapa identitet"
@@ -180,6 +201,9 @@
       ],
       "Delete it, I will never need it": [
         "Ta bort det, jag kommer aldrig att behöva det"
+      ],
+      "Delete mailbox": [
+        "Ta bort brevlåda"
       ],
       "Delete password": [
         "Ta bort lösenord"
@@ -316,8 +340,11 @@
       "Make admin": [
         "Gör till admin"
       ],
+      "Make default": [
+        "Gör standard"
+      ],
       "Make editor": [
-        "Gör till redaktör"
+        "Gör till redigerare"
       ],
       "Make viewer": [
         "Gör till läsare"
@@ -336,6 +363,9 @@
       ],
       "Maximum views": [
         "Maximalt antal visningar"
+      ],
+      "More info": [
+        "Mer info"
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
@@ -390,6 +420,9 @@
       ],
       "Please retry": [
         "Försök igen"
+      ],
+      "Re-verify": [
+        "Verifiera igen"
       ],
       "Reactivate now": [
         "Återaktivera nu"
@@ -475,6 +508,9 @@
       "Select": [
         "Välj"
       ],
+      "Send email": [
+        "Skicka e-post"
+      ],
       "Send invite": [
         "Skicka inbjudan"
       ],
@@ -488,7 +524,7 @@
         "Ställ in extralösenord"
       ],
       "Setup 2FA": [
-        "Ställ in 2FA"
+        "Konfigurera 2FA"
       ],
       "Share": [
         "Dela"
@@ -530,6 +566,15 @@
       "Sync aliases": [
         "Synkronisera alias"
       ],
+      "To mailbox": [
+        "Till brevlåda"
+      ],
+      "Transfer aliases": [
+        "Överför alias"
+      ],
+      "Transfer and delete mailbox": [
+        "Överför och ta bort brevlåda"
+      ],
       "Transfer ownership": [
         "Överför ägarskap"
       ],
@@ -541,6 +586,9 @@
       ],
       "Try for free": [
         "Prova gratis"
+      ],
+      "Unblock contact": [
+        "Avblockera kontakt"
       ],
       "Understood, I will never need it": [
         "Förstått, jag kommer aldrig att behöva det",
@@ -598,12 +646,12 @@
         "Skriv till oss på Twitter"
       ],
       "Your password manager is not here? Request it.": [
-        "Är din lösenordshanterare inte här? Begär det."
+        "Är din lösenordshanterare inte här? Begär den."
       ]
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+        "${ MAIL_APP_NAME }-skrivbordsapp"
       ]
     },
     "Button": {
@@ -627,6 +675,15 @@
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2FA lägger till ytterligare ett lager av säkerhet till dina inloggningar. ${ PASS_APP_NAME } gör 2FA enklare genom att lagra och automatiskt fylla i dina 2FA-koder."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Lägg till följande CNAME DNS-poster till din domän."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Lägg till följande MX-post för din domän. Notera att det är en punkt (.) på slutet av måladresserna. Om din domänåterförsäljare inte tillåter punkter på slutet så kan du ta bort den när du lägger till DNS-posten."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Lägg till följande TXT DNS-post till din domän."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ett e-postalias fungerar som en e-postadress, men minskar skräppost och håller din faktiska e-postadress och identitet dold."
       ],
@@ -639,8 +696,23 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Övervakning av mörka webben är tillgängligt med ett betalt paket. Uppgradera för omedelbar åtkomst."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } är en autentiseringsmetod för e-post designat för att undvika e-postspoofing. Konfiguration av DKIM rekommenderas starkt för att minska risken för att dina e-postmeddelanden hamnar i mottagarens skräppostmapp."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } är designat för att skydda domänen mot obehörig användning, vilket ofta kallas för e-postspoofing. Byggt kring SPF och DKIM så berättar en DMARC-policy för den mottagande e-postserver vad som ska göras om ingen av de två autentiseringsmetoderna lyckas."
+      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Bli aviserad om din e-post, lösenord eller annan personlig data har läckt."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Om du använder en underdomän, t.ex. ${ subdomainExample } måste du använda ${ dmarcExampleSubdomain } som domän istället."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Om du använder en underdomän, t.ex. underdomän.domän.se, så behöver du använda ${ domainKeyExampleSubdomain } som domän istället. Det betyder att om din domän är epost.domän.se så behöver du ange ${ domainKeyExampleMail } som domän."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Om du använder Cloudflare, se till att inte välja proxyalternativet."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Håll din information mer säker och privat med dessa guider och tips."
@@ -649,7 +721,16 @@
         "Vår banbrytande AI-drivna säkerhetslösning designad för användare som söker utökat skydd för sina konton. ${ learnMoreLink }"
       ],
       "Set up 2FA for more security": [
-        "Ställ in 2FA för mer säkerhet"
+        "Konfigurera 2FA för mer säkerhet"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Vissa DNS-återförsäljare kan kräva en fullständig postsökväg, i detta fall använd ${ domain } som domänvärde istället."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Vissa domänåterförsäljare (Namecheap, Cloudflare, etc) kan även använda @ för rotdomänen."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } är en autentiseringsmetod för e-post designat för att upptäcka förfalskade sändaradresser under leveransen av e-postmeddelandet. Konfiguration av SPF rekommenderas starkt för att minska risken för att dina e-postmeddelanden hamnar i mottagarens skräppostmapp."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Börja övervaka för dataintrång relaterade till konton som skapats med din e-postadress och dina hide-my-email-alias."
@@ -666,11 +747,14 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Denna tjänst erbjuder 2FA. Aktivera det för extra kontosäkerhet."
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "För att verifiera ägarskap av domänen lägg till följande TXT-post. Vissa domänåterförsäljare (Namecheap, Cloudflare, etc) kan använda @ för rotdomänen."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Lås upp avancerade säkerhetsfunktioner och detaljerade loggar för att skydda din närvaro online."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Med ${ PASS_SHORT_APP_NAME }-övervakning kan du ligga steget före hot genom att få omedelbara varningar om dina inloggningsuppgifter är komprometterade. Lås upp avancerade säkerhetsfunktioner och detaljerade loggar för att skydda din närvaro online."
+        "Med ${ PASS_SHORT_APP_NAME } Monitor kan du ligga steget före hot genom att få omedelbara varningar om dina inloggningsuppgifter är komprometterade. Lås upp avancerade säkerhetsfunktioner och detaljerade loggar för att skydda din närvaro online."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Dina e-postadresser läckte vid minst 1 dataintrång."
@@ -679,12 +763,20 @@
         "Din personliga information läckte i ett dataintrång från en tredjepartstjänst."
       ]
     },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "vadsomhelst@${ domainDisplay }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunde inte analyseras. ${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
         "[Fel] ett objekt kunde inte analyseras"
+      ],
+      "A domain ownership must be verified first.": [
+        "Ett domänägarskap behöver verifieras först."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias ​​kunde inte uppdateras just nu. Försök igen senare"
@@ -751,6 +843,9 @@
         "Upptäckte ${ errors.length } skadad CSV-rad",
         "Upptäckte ${ errors.length } skadade CSV-rader"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Domän kunde inte verifieras. Se till att du har lagt till rätt DNS-poster"
+      ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
       ],
@@ -778,11 +873,32 @@
       "Failed to add email address": [
         "Misslyckades att lägga till e-postadress"
       ],
+      "Failed to block the contact": [
+        "Misslyckades att blockera kontakten"
+      ],
+      "Failed to create domain": [
+        "Misslyckades att skapa domän"
+      ],
+      "Failed to create new mailbox": [
+        "Misslyckades att skapa ny brevlåda"
+      ],
+      "Failed to create the contact": [
+        "Misslyckades att skapa kontakten"
+      ],
+      "Failed to delete domain": [
+        "Misslyckades att ta bort domän"
+      ],
       "Failed to delete email address from monitoring": [
         "Misslyckades att ta bort e-postadress från övervakning"
       ],
       "Failed to delete selected items": [
         "Misslyckades att ta bort markerade objekt"
+      ],
+      "Failed to delete the contact": [
+        "Misslyckades att ta bort kontakten"
+      ],
+      "Failed to delete the mailbox": [
+        "Misslyckades att ta bort brevlådan"
       ],
       "Failed to edit user's access.": [
         "Misslyckades att redigera användaråtkomst."
@@ -792,6 +908,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Misslyckades att ladda intrång för detta e-postalias"
+      ],
+      "Failed to load domain settings.": [
+        "Misslyckades att läsa in domäninställningar."
       ],
       "Failed to load item history": [
         "Misslyckades att ladda objekthistorik"
@@ -811,6 +930,9 @@
       "Failed to remove user's access.": [
         "Misslyckades att ta bort användaråtkomst."
       ],
+      "Failed to resend verification code": [
+        "Misslyckades att skicka verifieringskod igen"
+      ],
       "Failed to resend verification for custom email": [
         "Misslyckades att skicka verifieringskod igen för anpassad e-post"
       ],
@@ -829,8 +951,26 @@
       "Failed to unpin item": [
         "Misslyckades att lossa objekt"
       ],
+      "Failed to update catch-all setting.": [
+        "Misslyckades att uppdatera catch-all-inställningar."
+      ],
+      "Failed to update default domain": [
+        "Misslyckades att uppdatera standarddomän"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Misslyckades att uppdatera domänens brevlådor."
+      ],
+      "Failed to update domain name.": [
+        "Misslyckades att uppdatera domännamn."
+      ],
       "Failed to update monitoring settings": [
         "Misslyckades att uppdatera övervakningsinställningar"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Misslyckades att uppdatera inställningar för generering av slumpmässigt prefix."
+      ],
+      "Failed to verify domain": [
+        "Misslyckades att verifiera domän"
       ],
       "Failed to verify email address": [
         "Misslyckades att verifiera e-postadress"
@@ -1017,7 +1157,7 @@
     },
     "Feature": {
       "Dark Web Monitoring": [
-        "Övervakning mörka webben"
+        "Övervakning av mörka webben"
       ],
       "Integrated 2FA authenticator": [
         "Integrerad 2FA-autentisering"
@@ -1133,6 +1273,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } kommer följa ditt systemtema."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } kommer att generera en vidarebefordransadress (som även kallas omvänt alias) som du kan kopiera till urklipp."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar, kreditkort och identiteter."
       ],
@@ -1151,6 +1294,9 @@
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dagar att prova premiumfunktioner gratis. Endast under din första vecka med ${ BRAND_NAME }."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "En kontakt skapas för varje e-postadress som skickar e-post till eller tar emot e-post från ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny version av ${ PASS_APP_NAME } är tillgänglig. Uppdatera den för att ta del av de senaste funktionerna och buggfixarna."
@@ -1194,6 +1340,9 @@
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Alias med anpassade domäner övervakas inte, lägg till dem som en anpassad e-post för övervakning."
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Alla alias som använder brevlådan ${ emailJSX } kommer också att tas bort."
+      ],
       "All breaches for this address were resolved": [
         "Alla intrång för denna adress löstes"
       ],
@@ -1218,11 +1367,20 @@
       "An item previously shared with you was removed": [
         "Ett objekt som tidigare delats med dig togs bort"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Är du säker på att du vill ta bort ${ emailJSX } från dina brevlådor?"
+      ],
       "Are you sure you want to remove the link?": [
         "Är du säker på att du vill ta bort länken?"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Autoskapade alias ägs automatiskt av följande brevlådor:"
+      ],
       "Auto-lock successfully disabled.": [
         "Automatisk låsning inaktiverat."
+      ],
+      "automatically": [
+        "automatiskt"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Innan du exporterar dina data med detta format, öppna Safari-inställningar -> fliken ”Allmänt” -> inaktivera alternativet ”Öppna säkra filer efter nedladdning”. Detta kommer att förhindra att Safari extraherar den exporterade filen felaktigt."
@@ -1238,6 +1396,9 @@
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Ta med dina befintliga lösenord till ${ BRAND_NAME }."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Ta med din egen domän och du slipper att köpa ännu en hostinglösning för e-post."
       ],
       "Built in 2FA authenticator": [
         "Inbyggd 2FA-autentisering"
@@ -1272,6 +1433,12 @@
       "Copied to clipboard": [
         "Kopierad till urklipp"
       ],
+      "Create contact illustration": [
+        "Skapa kontaktillustration"
+      ],
+      "Created ${ time }.": [
+        "Skapad ${ time }."
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV erbjuder ett bekvämt format för att visa din data. Men på grund av dess enkelhet kommer vissa data inte att inkluderas (anpassade fält, passkeys …). För en fullständig export rekommenderar vi att du använder ett annat format."
       ],
@@ -1280,6 +1447,9 @@
       ],
       "Decrypting your data": [
         "Dekrypterar dina data"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Standardvisningsnamnet för alias skapade med ${ domainDisplay } såvida de inte skrivits över av aliasvisningsnamnet."
       ],
       "Deleted items will be moved here first": [
         "Borttagna objekt kommer att flyttas hit först"
@@ -1299,6 +1469,12 @@
       "Disabling offline mode...": [
         "Inaktiverar offlineläge …"
       ],
+      "DNS changes could take up to 24 hours to update.": [
+        "DNS-ändringar kan ta upp till 24 timmar att uppdateras."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Domän: ${ domainPath } eller @"
+      ],
       "Drop file here to upload": [
         "Släpp filer här för att ladda upp"
       ],
@@ -1309,7 +1485,7 @@
         "På grund av en begränsning på Safaris webbläsartillägg kommer filen efter exporten att sakna filnamnstillägget \".pgp\". Redigera namnet på filen så att det innehåller .pgp-filändelsen (t.ex. fil.pgp) efter export."
       ],
       "Editor": [
-        "Redaktör"
+        "Redigerare"
       ],
       "email": [
         "e-post"
@@ -1322,6 +1498,15 @@
       ],
       "Email address successfully included in monitoring": [
         "E-postadress inkluderad i övervakning"
+      ],
+      "Email headers illustration": [
+        "E-postrubrikillustration"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "E-posta denna adress och det kommer att se ut att ha skickats från t.ex. ${ exampleEmail }."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "E-post som skickas till dina alias vidarebefordras till dina brevlådor. Ett alias kan ha mer än en brevlåda, användbart för att dela ett alias mellan dig och dina vänner."
       ],
       "Emptying trash...": [
         "Tömmer papperskorg..."
@@ -1349,6 +1534,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Aktiverar automatiskt PIN-lås"
+      ],
+      "Enter the address you want to email.": [
+        "Ange adressen du vill skicka e-post till."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Ange verifieringskod. Siffra ${ digit }."
@@ -1397,6 +1585,9 @@
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Få obegränsade alias, njut av exklusiva funktioner och stöd oss ​​genom att prenumerera på Pass Plus."
       ],
+      "Here's how it works:": [
+        "Så här fungerar det:"
+      ],
       "High Priority": [
         "Hög prioritet"
       ],
@@ -1415,6 +1606,9 @@
       ],
       "Imported on ${ date }": [
         "Importerad den ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "I ${ PASS_SHORT_APP_NAME } så är en objektanteckning krypterad med objektets krypteringsnyckel och endast användare med åtkomst till objektet kan se anteckningen. Inte ens ${ BRAND_NAME } eller SimpleLogin kan se den."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "För att få ut den bästa upplevelsen av ${ PASS_APP_NAME }, bevilja de nödvändiga tilläggsbehörigheterna"
@@ -1552,6 +1746,9 @@
       "Moving items to trash": [
         "Flyttar objekt till papperskorg"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Behöver du skicka e-post till någon men vill inte att de ska se din e-postadress? Ställ in ett kontaktalias."
+      ],
       "Never": [
         "Aldrig"
       ],
@@ -1670,6 +1867,9 @@
       "Please enter your current PIN code to continue": [
         "Ange din nuvarande PIN-kod för att fortsätta"
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Följ stegen nedan för att ställa in din domän."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Observera att när aliaset väl har tagits bort kan det inte återställas. Kanske vill du inaktivera aliaset istället?"
       ],
@@ -1678,6 +1878,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Uppgradera för att få förhandstillgång till webbappen ${ PASS_APP_NAME }"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Använd fullständig domänsökväg, t.ex. min-domän.se eller min-underdomän.min-domän.se om du använder en underdomän."
       ],
       "Press Enter to copy": [
         "Tryck på Enter för att kopiera"
@@ -1690,6 +1893,15 @@
       ],
       "Reconnecting": [
         "Återansluter"
+      ],
+      "Record: CNAME": [
+        "Post: CNAME"
+      ],
+      "Record: MX": [
+        "Post: MX"
+      ],
+      "Record: TXT": [
+        "Post: TXT"
       ],
       "Registering extra password...": [
         "Registrerar extralösenord…"
@@ -1712,8 +1924,14 @@
       "Restoring trashed items...": [
         "Återställer kastade objekt..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Omvänd aliasadress kopierat till urklipp. Skicka ett e-postmeddelande till denna adress och ${ Email } kommer ta emot det."
+      ],
       "Secure links": [
         "Säkra länkar"
+      ],
+      "See more info": [
+        "Se mer info"
       ],
       "Select destination vault": [
         "Välj målvalv"
@@ -1754,6 +1972,12 @@
       "Signing you in": [
         "Loggar in dig"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "En SimpleLogin-anteckning sparas på samma plats som aliasadresser och medan den skyddas med kryptering under vila så är den inte E2E-krypterad vilket betyder att vem som helst med tillgång till SimpleLogin-databasen kan läsa den."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Använd bara ${ emailBold } nästa gång du behöver ett alias: det kommer att skapas ${ automaticallyBold } första gången det tar emot ett e-postmeddelande. För att få bättre kontroll så kan du också skapa ${ rulesHyperLink }."
+      ],
       "Successfully exported all your items": [
         "Alla dina objekt har exporterats"
       ],
@@ -1774,6 +1998,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Tack, problemet har rapporterats"
+      ],
+      "The display name when sending an email from this alias.": [
+        "Visningsnamnet när du skickar ett e-postmeddelande från detta alias."
       ],
       "The export will only contain vaults that you own.": [
         "Exporten kommer endast innehålla valv som du äger."
@@ -1803,6 +2030,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denna export kommer vara okrypterad och alla som har åtkomst till din exporterade fil kommer att kunna se dina lösenord. Av säkerhetsskäl, ta bort den när du är klar med den."
       ],
+      "This operation is irreversible.": [
+        "Åtgärden går ej att ångra."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Åtgärden går ej att ångra. Alla alias som använder domänen ${ domainTextBold } kommer att tas bort. Notera att efter att de tagits bort så kan inte alias återställas."
+      ],
       "This option is currently not available on your device.": [
         "Detta alternativ är för närvarande inte tillgängligt på din enhet."
       ],
@@ -1818,6 +2051,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Detta kommer avvisa enheten **${ name }** som försökte logga in på ditt ${ BRAND_NAME }-konto den **${ date }**."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "För att fortsätta ta emot e-post, överför dessa alias till en annan brevlåda:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "För att hålla din personliga e-postadress dold kan du skapa en aliaskontakt som maskerar din adress."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "För att migrera data från en annan lösenordshanterare, gå till lösenordshanteraren, exportera din data och ladda sedan upp den till ${ PASS_APP_NAME }. När din data har importerats, ta bort den exporterade filen."
       ],
@@ -1829,6 +2068,12 @@
       ],
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
+      ],
+      "Unconfigured": [
+        "Okonfigurerad"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Obegränsade hide-my-email-alias och avancerad aliashantering"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Lås upp ${ PASS_SHORT_APP_NAME } med biometri"
@@ -1866,6 +2111,9 @@
       "username": [
         "användarnamn"
       ],
+      "Value:": [
+        "Värde:"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Valv “${ payload.content.name }“ borttaget"
       ],
@@ -1896,6 +2144,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "När du skapar/redigerar en inloggning på ${ PASS_APP_NAME } kommer inmatning 'användarnamn' alltid vara synligt."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "När du skickar ett e-postmeddelande från detta alias kommer e-postmeddelandet att visa ${ emailSender } som avsändare."
       ],
       "You are about to create:": [
         "Du är på väg att skapa:"
@@ -1932,6 +2183,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nått den högsta tillåtna längden på ${ maxLength } tecken."
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Du kommer att kunna anpassade dina domäninställningar (catch-all e-postalias, standardvisningsnamn, namn för alias, etc...) efter verifiering av domänen."
+      ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Du kommer bli utloggad och måste logga in igen på alla dina andra enheter."
       ],
@@ -1959,6 +2213,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Ditt konto är begränsat eftersom din organisation har tvingat tvåfaktorsautentisering. Aktivera tvåfaktorsautentisering i dina kontoinställningar eller kontakta din administratör."
       ],
+      "your domain": [
+        "din domän"
+      ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
       ],
@@ -1974,6 +2231,10 @@
         "${ aliasCount } alias",
         "${ aliasCount } alias"
       ],
+      "${ blockedCount } block": [
+        "${ blockedCount } blockerad",
+        "${ blockedCount } blockerade"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } tecken",
         "${ config.options.length } tecken"
@@ -1986,6 +2247,10 @@
         "${ days } dag",
         "${ days } dagar"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } vidarebefordrad",
+        "${ forwardCount } vidarebefordrade"
+      ],
       "${ hours } hour": [
         "${ hours } timme",
         "${ hours } timmar"
@@ -1994,12 +2259,24 @@
         "${ minutes } minut",
         "${ minutes } minuter"
       ],
+      "${ months } month": [
+        "${ months } månad",
+        "${ months } månader"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-version"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } svar",
+        "${ repliedCount } svar"
       ],
       "${ usageCount } login": [
         "${ usageCount } inloggning",
         "${ usageCount } inloggningar"
+      ],
+      "${ years } year": [
+        "${ years } år",
+        "${ years } år"
       ],
       "1 hour": [
         "1 timme"
@@ -2049,6 +2326,9 @@
       "Account": [
         "Konto"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Lägg till ett slumpmässigt prefix för denna domän när du skapar ett nytt alias."
+      ],
       "Add section": [
         "Lägg till sektion"
       ],
@@ -2063,6 +2343,9 @@
       ],
       "Alias address": [
         "Alias-adress"
+      ],
+      "Alias address (disabled)": [
+        "Alias-adress (inaktiverad)"
       ],
       "Alias management": [
         "Aliashantering"
@@ -2089,7 +2372,7 @@
         "Lås automatiskt efter"
       ],
       "Beta Access": [
-        "Beta-åtkomst"
+        "Betaåtkomst"
       ],
       "Biometrics": [
         "Biometri"
@@ -2112,6 +2395,9 @@
       "Cards": [
         "Kort"
       ],
+      "Catch-All": [
+        "Catch-all"
+      ],
       "City": [
         "Ort"
       ],
@@ -2124,8 +2410,11 @@
       "Confirm vault name": [
         "Bekräfta valvnamn"
       ],
+      "Contact created ${ time } ago.": [
+        "Kontakt skapat för ${ time } sedan."
+      ],
       "Contact details": [
-        "Kontaktdetaljer"
+        "Kontaktuppgifter"
       ],
       "Contacts": [
         "Kontakter"
@@ -2184,8 +2473,14 @@
       "Display name": [
         "Visningsnamn"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Domän"
+      ],
+      "Domain:": [
+        "Domän:"
       ],
       "Domains": [
         "Domäner"
@@ -2215,7 +2510,7 @@
         "Töm papperskorg"
       ],
       "Enable offline access": [
-        "Aktivera åtkomst offline"
+        "Aktivera offlineåtkomst"
       ],
       "Enter email or username": [
         "Ange e-post eller användarnamn"
@@ -2316,6 +2611,9 @@
       "Include numbers (0-9)": [
         "Inkludera nummer (0-9)"
       ],
+      "Info": [
+        "Info"
+      ],
       "Instagram handle": [
         "Instagram-användarnamn"
       ],
@@ -2371,16 +2669,19 @@
         "LinkedIn-konto"
       ],
       "Login": [
-        "Logga in"
+        "Inloggning"
       ],
       "Logins": [
         "Inloggningar"
+      ],
+      "Mailboxes": [
+        "Brevlådor"
       ],
       "Make all admins": [
         "Gör alla till administratörer"
       ],
       "Make all editors": [
-        "Gör alla till redaktörer"
+        "Gör alla till redigerare"
       ],
       "Make all viewers": [
         "Gör alla till visare"
@@ -2421,14 +2722,23 @@
       "Newest to oldest": [
         "Nyaste till äldsta"
       ],
+      "No Activity in the last 14 days.": [
+        "Ingen aktivitet under de senaste 14 dagarna."
+      ],
       "No history": [
         "Ingen historik"
       ],
       "None": [
         "Ingen"
       ],
+      "Not selected": [
+        "Inte vald"
+      ],
       "Note": [
         "Anteckning"
+      ],
+      "Note • SimpleLogin": [
+        "Anteckning • SimpleLogin"
       ],
       "Notes": [
         "Anteckningar"
@@ -2487,8 +2797,17 @@
       "Prefix": [
         "Prefix"
       ],
+      "Premium domain": [
+        "Premiumdomän"
+      ],
+      "Priority:": [
+        "Prioritet:"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Skydda ${ PASS_APP_NAME } med ett extralösenord"
+      ],
+      "Public domain": [
+        "Offentlig domän"
       ],
       "Rate us": [
         "Betygsätt oss"
@@ -2519,6 +2838,9 @@
       ],
       "Security code": [
         "Säkerhetskod"
+      ],
+      "Select a domain": [
+        "Välj en domän"
       ],
       "Select an email address": [
         "Välj en e-postadress"
@@ -2579,6 +2901,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Synkronisera alias med SimpleLogin"
+      ],
+      "Target:": [
+        "Mål:"
       ],
       "Tax number": [
         "Momsnummer"
@@ -2650,6 +2975,9 @@
       "Username": [
         "Användarnamn"
       ],
+      "Value:": [
+        "Värde:"
+      ],
       "Vault ID": [
         "Valv-ID"
       ],
@@ -2692,11 +3020,17 @@
       "You are about to create": [
         "Du är på väg att skapa"
       ],
+      "Your domain": [
+        "Din domän"
+      ],
       "ZIP or Postal code": [
         "Postnummer"
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "autoskapa regler ››"
+      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -2780,6 +3114,9 @@
       "Add text": [
         "Lägga till text"
       ],
+      "Alias Display Name": [
+        "Aliasvisningsnamn"
+      ],
       "Email address": [
         "E-postadress"
       ],
@@ -2806,6 +3143,15 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "my-domain.com": [
+        "my-domain.com"
+      ],
+      "Name to display when sending an email": [
+        "Namn att visa när e-post skickas"
+      ],
+      "Note from SimpleLogin": [
+        "Anteckning från SimpleLogin"
       ],
       "Password": [
         "Lösenord"
@@ -2932,20 +3278,74 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synkronisering av alias aktiverat. SimpleLogin-alias kan ta lite tid att synkronisera"
       ],
+      "Catch-all setting successfully disabled": [
+        "Catch-all-inställning inaktiverad"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Catch-all-inställning aktiverad"
+      ],
+      "Contact successfully blocked": [
+        "Kontakt blockerad"
+      ],
+      "Contact successfully created": [
+        "Kontakt skapad"
+      ],
+      "Contact successfully deleted": [
+        "Kontakt borttagen"
+      ],
+      "Contact successfully unblocked": [
+        "Kontakt avblockerad"
+      ],
+      "Default domain successfully updated": [
+        "Standardbrevlåda uppdaterad"
+      ],
+      "Default mailbox successfully updated": [
+        "Standardbrevlåda uppdaterad"
+      ],
+      "Display name successfully updated": [
+        "Visningsnamn uppdaterat"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Domänägarskap verifierat. Du kan nu konfigurera MX-poster."
+      ],
+      "Domain successfully deleted": [
+        "Domän borttagen"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Domän verifierad. Din domän kan börja ta emot e-post och skapa alias"
+      ],
+      "Mailbox successfully deleted": [
+        "Brevlåda borttagen"
+      ],
+      "Mailbox successfully verified": [
+        "Brevlåda verifierad"
+      ],
+      "Mailboxes successfully updated": [
+        "Brevlådor uppdaterade"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Slumpmässig prefixgenerering inaktiverad"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Slumpmässig prefixgenerering aktiverad"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare.",
         "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "E-postverifiering skickat. Kontrollera din inkorg för att verifiera din brevlåda"
       ]
     },
     "Theme": {
       "Automatic": [
-        "Automatisk"
+        "Automatiskt"
       ],
       "Dark": [
-        "Mörk"
+        "Mörkt"
       ],
       "Light": [
-        "Ljus"
+        "Ljust"
       ]
     },
     "Title": {
@@ -2961,8 +3361,29 @@
       "Actions": [
         "Åtgärder"
       ],
+      "Activity": [
+        "Aktivitet"
+      ],
+      "Add custom domain": [
+        "Lägg till anpassad domän"
+      ],
+      "Add mailbox": [
+        "Lägg till brevlåda"
+      ],
+      "Alias contacts": [
+        "Aliaskontakter"
+      ],
+      "Aliases": [
+        "Alias"
+      ],
+      "Auto create/on the fly alias": [
+        "Autoskapat/på-språng-alias"
+      ],
       "Auto-lock update": [
         "Uppdatering av autolås"
+      ],
+      "Blocked addresses": [
+        "Blockerade adresser"
       ],
       "Breach detected": [
         "Intrång upptäckt"
@@ -3003,6 +3424,9 @@
       "Custom addresses": [
         "Anpassade adresser"
       ],
+      "Custom domains": [
+        "Anpassade domäner"
+      ],
       "Custom email monitoring": [
         "Anpassad e-postövervakning"
       ],
@@ -3010,11 +3434,23 @@
         "Anpassad e-post"
       ],
       "Dark Web Monitoring": [
-        "Övervakning mörka webben"
+        "Övervakning av mörka webben"
+      ],
+      "Default": [
+        "Standard"
+      ],
+      "Default Display Name": [
+        "Standardvisningsnamn"
       ],
       "Delete ${ deletedItemsCount } item?": [
         "Ta bort ${ deletedItemsCount } objekt?",
         "Ta bort ${ deletedItemsCount } objekt?"
+      ],
+      "Delete domain": [
+        "Ta bort domän"
+      ],
+      "Delete mailbox": [
+        "Ta bort brevlåda"
       ],
       "Delete this item?": [
         "Ta bort detta objekt?"
@@ -3027,6 +3463,18 @@
       ],
       "Discard changes?": [
         "Ignorera ändringar?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (valfritt)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (valfritt)"
+      ],
+      "Domain": [
+        "Domän"
+      ],
+      "Domain ownership verification": [
+        "Domänägarskapverifiering"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gillar du ${ PASS_APP_NAME }?"
@@ -3071,7 +3519,7 @@
         "Installera utökning"
       ],
       "Last autofill": [
-        "Sista autofyll"
+        "Senast autofylld"
       ],
       "Last modified": [
         "Senast ändrad"
@@ -3084,6 +3532,9 @@
       ],
       "Low disk space": [
         "Lågt diskutrymme"
+      ],
+      "Mailbox": [
+        "Brevlåda"
       ],
       "Mark as resolved?": [
         "Markera som löst?"
@@ -3110,6 +3561,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Flytta objekt till ”${ vaultName }”?"
+      ],
+      "MX record": [
+        "MX-post"
       ],
       "No excluded items": [
         "Inga exkluderade objekt"
@@ -3157,6 +3611,9 @@
         "Observera att när aliaset väl har tagits bort kan det inte återställas.",
         "Observera att när alias väl har tagits bort kan de inte återställas."
       ],
+      "Random Prefix Generation": [
+        "Slumpmässig prefixgenerering"
+      ],
       "Recommended actions": [
         "Rekommenderade åtgärder"
       ],
@@ -3194,6 +3651,9 @@
       "Secure your data": [
         "Säkra dina data"
       ],
+      "Select the default domain for aliases": [
+        "Välj standarddomänen för alias"
+      ],
       "Set access level": [
         "Ställ in åtkomstnivå"
       ],
@@ -3201,10 +3661,10 @@
         "Ställ in extralösenord"
       ],
       "Set up 2FA for better security": [
-        "Ställ in 2FA för bättre säkerhet"
+        "Konfigurera 2FA för bättre säkerhet"
       ],
       "Set up 2FA for more security": [
-        "Ställ in 2FA för mer säkerhet"
+        "Konfigurera 2FA för mer säkerhet"
       ],
       "Settings": [
         "Inställningar"
@@ -3214,6 +3674,9 @@
       ],
       "Share with": [
         "Dela med"
+      ],
+      "SPF (Optional)": [
+        "SPF (valfritt)"
       ],
       "Status": [
         "Status"
@@ -3241,6 +3704,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Lås upp ${ brandNameJSX }"
+      ],
+      "Unverified": [
+        "Overifierad"
       ],
       "Update available": [
         "Uppdatering tillgänglig"
@@ -3272,6 +3738,9 @@
       "What is the dark web?": [
         "Vad är mörka webben?"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Vad är skillnaden mellan en ${ PASS_SHORT_APP_NAME }-anteckning och en SimpleLogin-anteckning?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Din ${ planName }-prenumeration kommer avslutas den ${ endDate }"
       ],
@@ -3290,6 +3759,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "Domän-URL är ogiltig"
+      ],
       "Duplicated URL": [
         "Duplicerad URL"
       ],
@@ -3360,8 +3832,14 @@
       "Delete alias": [
         "Ta bort alias"
       ],
+      "Domain cannot be empty": [
+        "Domän kan inte vara tom"
+      ],
       "Duplicate email addresses.": [
         "Dubbletter av e-postadresser."
+      ],
+      "Email cannot be empty": [
+        "E-post kan inte vara tom"
       ],
       "Email is required": [
         "E-post är obligatoriskt"
@@ -3453,6 +3931,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Kontakta oss för att undersöka problemet"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Observera att när de har tagits bort kan alias inte återställas"
       ],
       "Please update the extension to its latest version": [
         "Uppdatera utökningen till den senaste versionen"

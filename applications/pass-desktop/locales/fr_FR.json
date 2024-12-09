@@ -708,7 +708,7 @@
         "L'authentification A2F ajoute une couche supplémentaire de sécurité à vos connexions. ${ PASS_APP_NAME } simplifie cette authentification en stockant et en remplissant automatiquement vos codes A2F."
       ],
       "Add the following CNAME DNS records to your domain.": [
-        "Ajoutez les enregistrements DNS TXT suivants à votre domaine."
+        "Ajoutez les enregistrements DNS CNAME suivants à votre domaine."
       ],
       "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
         "Ajoutez l'enregistrement DNS MX suivant à votre domaine. Veuillez noter qu'il y a un point (.) à la fin des adresses cibles. Si votre registraire de domaine n'autorise pas ce point final, veuillez le supprimer lors de l'ajout de l'enregistrement DNS."
@@ -741,10 +741,10 @@
         "Si vous utilisez un sous-domaine, par exemple ${ subdomainExample }, vous devez utiliser ${ dmarcExampleSubdomain } comme domaine à la place."
       ],
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
-        "Si vous utilisez un sous-domaine, par exemple sous-domaine.domaine.fr, vous devez utiliser ${ domainKeyExampleSubdomain } comme domaine à la place. Cela signifie que si votre domaine est e-mail.domaine.fr, vous devez saisir ${ domainKeyExampleMail } comme domaine."
+        "Si vous utilisez un sous-domaine, par exemple sous-domaine.domaine.fr, vous devez utiliser ${ domainKeyExampleSubdomain } comme domaine à la place. Cela signifie que si votre domaine est mail.domaine.fr, vous devez saisir ${ domainKeyExampleMail } comme domaine."
       ],
       "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "S vous utilisez CloudFlare, assurez-vous de ne pas sélectionner l'option Proxy."
+        "Si vous utilisez CloudFlare, assurez-vous de ne pas sélectionner l'option Proxy."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Renforcez la sécurité et la confidentialité de vos informations avec ces conseils."
@@ -977,7 +977,7 @@
       "Failed to restore items from trash": [
         "Les éléments de la corbeille n'ont pas pu être restaurés."
       ],
-      "Failed to set default mailbox default": [
+      "Failed to set default mailbox": [
         "La configuration de la messagerie par défaut n'a pas abouti."
       ],
       "Failed to sync aliases": [
@@ -999,7 +999,7 @@
         "La mise à jour des messageries du domaine n'a pas abouti."
       ],
       "Failed to update domain name.": [
-        "La mise à jour du nom de domaine n'a pas abouti."
+        "La mise à jour du nom du domaine n'a pas abouti."
       ],
       "Failed to update monitoring settings": [
         "Les paramètres de surveillance n'ont pas pu être mis à jour."
@@ -1279,6 +1279,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "La mise à jour de « ${ payload.item.data.metadata.name } » a été rejetée."
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } blocage",
+        "${ blockedEmailsCount } blocages"
+      ],
       "${ count } invite successfully sent": [
         "${ count } invitation a été envoyée.",
         "${ count } invitations ont été envoyées."
@@ -1293,6 +1297,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } vues"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } transfert",
+        "${ forwardedEmailsCount } transferts"
       ],
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -1325,6 +1333,10 @@
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } a été activé."
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } envoi",
+        "${ repliedEmailsCount } envois"
       ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } fuite de données a été détectée.",
@@ -1406,7 +1418,7 @@
         "Un élément partagé avec vous a été retiré."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
-        "Êtes-vous sûr de vouloir retirer${ emailJSX } de vos messageries ?"
+        "Êtes-vous sûr de vouloir retirer ${ emailJSX } de vos messageries ?"
       ],
       "Are you sure you want to remove the link?": [
         "Êtes-vous sûr de vouloir retirer le lien ?"
@@ -1505,7 +1517,7 @@
         "Désactivation du mode hors-ligne..."
       ],
       "DNS changes could take up to 24 hours to update.": [
-        "La mise à jour des modifications de DNS peut prendre jusqu'à 24 heures."
+        "Les modifications de DNS peuvent prendre jusqu'à 24 heures pour se mettre à jour."
       ],
       "Domain: ${ domainPath } or @": [
         "Domaine : ${ domainPath } ou @"
@@ -1541,7 +1553,7 @@
         "Par exemple, envoyez un e-mail à cette adresse et il semblera être envoyé depuis ${ exampleEmail }."
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
-        "Les emails envoyés à vos alias sont transférés vers vos messageries. Un alias peut avoir plusieurs messageries : c'est utile pour partager un alias entre vous et vos amis."
+        "Les e-mails envoyés à vos alias sont transférés vers vos messageries. Un alias peut avoir plusieurs messageries : c'est utile pour partager un alias entre vous et vos amis."
       ],
       "Emptying trash...": [
         "Suppression des éléments de la corbeille en cours"
@@ -2190,7 +2202,7 @@
         "Lors de la création ou de la modification d'un identifiant sur ${ PASS_APP_NAME }, le champ Nom d'utilisateur sera toujours visible."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
-        "Lors de l'envoi d'un email depuis cet alias, l'expéditeur sera ${ emailSender }."
+        "Lors de l'envoi d'un email depuis cet alias, l'expéditeur affiché sera ${ emailSender }."
       ],
       "You are about to create:": [
         "Vous êtes sur le point de créer :"
@@ -2228,7 +2240,7 @@
         "Vous avez atteint le nombre maximum de ${ maxLength } caractères."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
-        "Vous pourrez personnaliser les paramètres de votre domaine (alias d'e-mail catch-call, nom d'affichage par défaut pour les alias, etc.) après avoir vérifié votre domaine."
+        "Vous pourrez personnaliser les paramètres de votre domaine (alias d'e-mail catch-all, nom d'affichage par défaut pour les alias, etc.) après avoir vérifié votre domaine."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Vous serez déconnecté et vous devrez vous connecter à nouveau sur tous vos autres appareils."
@@ -2276,8 +2288,8 @@
         "${ aliasCount } alias"
       ],
       "${ blockedCount } block": [
-        "${ blockedCount } blocage",
-        "${ blockedCount } blocages"
+        "${ blockedCount } bloqué",
+        "${ blockedCount } bloqués"
       ],
       "${ config.options.length } character": [
         "${ config.options.length } caractère",
@@ -2292,11 +2304,11 @@
         "${ days } jours"
       ],
       "${ forwardCount } forward": [
-        "${ forwardCount } transfert",
-        "${ forwardCount } transferts"
+        "${ forwardCount } transféré",
+        "${ forwardCount } transférés"
       ],
-      "${ ForwardedEmails } forwarded, ${ RepliedEmails } sent, ${ BlockedEmails } blocked, in the last 14 days.": [
-        "${ ForwardedEmails } transférés, ${ RepliedEmails } envoyés et ${ BlockedEmails } bloqués au cours des 14 derniers jours."
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails },${ repliedEmails } et${ blockedEmails } au cours des 14 derniers jours."
       ],
       "${ hours } hour": [
         "${ hours } heure",
@@ -3433,7 +3445,7 @@
         "La synchronisation des alias a été activée. La synchronisation des alias SimpleLogin peut prendre un certain temps."
       ],
       "Catch-all setting successfully disabled": [
-        "Le paramètre catch-all a été desactivé."
+        "Le paramètre catch-all a été désactivé."
       ],
       "Catch-all setting successfully enabled": [
         "Le paramètre catch-all a été activé."
@@ -3460,7 +3472,7 @@
         "Le nom d'affichage a été mis à jour."
       ],
       "Domain ownership verified. You can now set up MX record.": [
-        "La propriété du domaine a été vérifiée. Vous pouvez configurer l'enregistrement MX."
+        "La propriété du domaine a été vérifiée. Vous pouvez maintenant configurer l'enregistrement MX."
       ],
       "Domain successfully deleted": [
         "Le domaine a été supprimé."
@@ -3475,10 +3487,10 @@
         "La messagerie a été vérifiée."
       ],
       "Mailboxes successfully updated": [
-        "Les messagies ont été mises à jour."
+        "Les messageries ont été mises à jour."
       ],
       "Random prefix generation successfully disabled": [
-        "La génération de préfixe aléatoire a été desactivée."
+        "La génération de préfixe aléatoire a été désactivée."
       ],
       "Random prefix generation successfully enabled": [
         "La génération de préfixe aléatoire a été activée."
@@ -3628,7 +3640,7 @@
         "Domaine"
       ],
       "Domain ownership verification": [
-        "Vérification de la propriété de domaine"
+        "Vérification de la propriété d'un domaine"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vous appréciez ${ PASS_APP_NAME } ?"

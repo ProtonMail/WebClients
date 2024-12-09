@@ -1250,6 +1250,9 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Cambiar los ajustes de la dirección de correo electrónico"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -2560,6 +2563,9 @@
       ],
       "Couldn't load invoices. Please try again later.": [
         "No se han podido cargar las facturas. Intenta más tarde."
+      ],
+      "Couldn't load transactions. Please try again later.": [
+        "No se han podido cargar las transacciones. Intenta más tarde."
       ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
@@ -4345,6 +4351,9 @@
       "Member": [
         "Miembro"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Los mensajes de todas tus direcciones de correo electrónico se enviarán a tu bandeja de entrada."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -4554,6 +4563,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
       ],
+      "Registering your subscription...": [
+        "Registrando tu suscripción..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Recuerda compartir los detalles de inicio de sesión con el usuario."
       ],
@@ -4632,6 +4644,9 @@
       "Session timed out": [
         "El tiempo de la sesión ha expirado."
       ],
+      "Setting up your new address...": [
+        "Configurando tu nueva dirección..."
+      ],
       "Setting up your organization": [
         "Configurando tu organización"
       ],
@@ -4658,6 +4673,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF aclara quién puede enviar correos a tu dominio. Asegúrate de añadir el siguiente registro TXT en tu panel de DNS (en la plataforma donde has comprado el dominio personalizado)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Comienza a compartirla con tus contactos y úsala para servicios en línea."
       ],
       "Step ${ step }": [
         "Paso ${ step }",
@@ -4761,6 +4779,9 @@
       ],
       "This file is too large to preview": [
         "Este archivo es demasiado grande para previsualizarlo."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Esta es ahora tu ${ defaultEmailAddress } para enviar mensajes nuevos."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Este mensaje no llegará al equipo de soporte. Si tienes algún problema con nuestro servicio o necesitas más asistencia de nuestra parte ${ supportLink }."
@@ -5150,6 +5171,9 @@
       ],
       "You have no saved payment methods.": [
         "No tienes ningún método de pago guardado."
+      ],
+      "You have no transactions.": [
+        "No tienes transacciones."
       ],
       "You may be redirected to your bank’s website.": [
         "Puedes ser redirigido al sitio web de tu banco."
@@ -5829,6 +5853,9 @@
       "Start date": [
         "Fecha de inicio"
       ],
+      "Strong": [
+        "Segura"
+      ],
       "Subscription options": [
         "Opciones de suscripción"
       ],
@@ -5871,8 +5898,14 @@
       "Video conferencing with Zoom": [
         "Videoconferencia por Zoom"
       ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos que te vayas. Explica por qué te vas para ayudarnos a mejorar."
+      ],
+      "Weak": [
+        "Poco segura"
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
@@ -8367,6 +8400,9 @@
       ],
       "Invoice": [
         "Factura"
+      ],
+      "Transactions": [
+        "Transacciones"
       ]
     },
     "Select search results": {
@@ -10691,6 +10727,9 @@
       "Your plan": [
         "Tu plan"
       ],
+      "Your shorter address is now ready": [
+        "Tu dirección en formato más corto ya está lista."
+      ],
       "Your subscriptions": [
         "Tus suscripciones"
       ]
@@ -10709,6 +10748,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Factura de ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "Transacción de ${ MAIL_APP_NAME }"
       ]
     },
     "Title header for addresses domain table": {
@@ -10870,6 +10912,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Esta versión del navegador Tor no es compatible. Actualiza a la última ${ stableRelease }."
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Devolución"
+      ],
+      "Failed": [
+        "Operación fallida"
+      ],
+      "Needs attention": [
+        "Necesita tu atención"
+      ],
+      "Refunded": [
+        "Reembolsado"
+      ],
+      "Success": [
+        "Operación exitosa"
+      ],
+      "Timeout": [
+        "Tiempo agotado"
+      ],
+      "Voided": [
+        "Anulado"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Crédito de ajuste"
+      ],
+      "Authorization": [
+        "Autorización"
+      ],
+      "Bank transfer": [
+        "Transferencia bancaria"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Efectivo"
+      ],
+      "Chargeback": [
+        "Devolución"
+      ],
+      "Credit": [
+        "Crédito"
+      ],
+      "Credit transfer": [
+        "Transferencia de créditos"
+      ],
+      "Currency conversion": [
+        "Conversión de divisa"
+      ],
+      "Gift card": [
+        "Tarjeta de regalo"
+      ],
+      "Migration": [
+        "Migración"
+      ],
+      "Payment": [
+        "Pago"
+      ],
+      "Payment reversal": [
+        "Cancelación de pago"
+      ],
+      "Refund": [
+        "Reembolso"
       ]
     },
     "unprivatization": {

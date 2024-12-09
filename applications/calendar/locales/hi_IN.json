@@ -191,6 +191,9 @@
       "Create a new contact group": [
         "नया संपर्क ग्रुप बनाएं"
       ],
+      "Create and copy alias": [
+        "उपनाम बनाएँ और कॉपी करें"
+      ],
       "Create calendar": [
         "कैलेंडर बनाएँ"
       ],
@@ -1217,6 +1220,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "संपादित करें (इवेंट विवरण देखें, बनाएं या बदलें)"
+      ],
       "View (see all event details)": [
         "देखें (सारे इवेंट जानकारी देखें)"
       ]
@@ -1686,6 +1692,9 @@
       ],
       "Dominican Republic": [
         "डोमिनिकन रिपब्लिक"
+      ],
+      "East Timor": [
+        "ईस्ट तिमोर"
       ],
       "Ecuador": [
         "इक्वाडोर"
@@ -2402,6 +2411,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को मर्ज किया जा रहा है... इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "यह कुछ मिनट ले सकता है। इस बीच, आप ${ CALENDAR_APP_NAME } का सामान्य रूप से उपयोग जारी रख सकते हैं।"
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "आपके खाते की सर्वोत्तम सुरक्षा सुनिश्चित करने के लिए, एक पुनर्प्राप्ति वाक्यांश सेट करें।"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "संपर्कों के बीच विलय प्राथमिकता को रैंक करने के लिए ड्रैग एंड ड्रॉप का उपयोग करें। उन संपर्कों को अनचेक करें जिन्हें आप मर्ज नहीं करना चाहते हैं।"
       ],
@@ -2410,6 +2425,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "आप उन संपर्कों को हटाने के लिए चिह्नित कर सकते हैं जिन्हें आप न तो विलय करने के लिए नहीं चाहते हैं और न ही रखने के लिए। विलय बटन क्लिक करने के बाद ही हटाना होगा"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "आपका खाता और डेटा पुनर्प्राप्ति विधियाँ सेट हैं और 2FA सक्षम है।"
+      ],
+      "Your account and data recovery methods are set.": [
+        "आपका खाता और डेटा पुनर्प्राप्ति विधियाँ सेट हैं।"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4528,6 +4549,9 @@
       "Total VPN connections": [
         "कुल VPN कनेक्शन"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "नई ${ BRAND_NAME } सुविधाओं, अपडेट्स और उत्पादों को जनता के लिए जारी होने से पहले आज़माएँ। इससे एप्लिकेशन फिर से लोड हो जाएगा।"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
       ],
@@ -4611,6 +4635,9 @@
       ],
       "Would you like to update this event?": [
         "इवेंट अपडेट करें?"
+      ],
+      "Writing assistant": [
+        "लेखन सहायक"
       ],
       "Yearly": [
         "सालाना"
@@ -5285,6 +5312,9 @@
       "What happened?": [
         "क्या हुआ?"
       ],
+      "Your alias": [
+        "आपका उपनाम"
+      ],
       "Your calendar URL": [
         "आपका कैलेंडर यूआरएल"
       ],
@@ -5795,6 +5825,9 @@
       "${ n } VPN connection": [
         "${ n } VPN कनेक्शन",
         "${ n } VPN कनेक्शन"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } असीमित hide-my-email उपनामों के साथ"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } क्रमादेश"
@@ -6323,6 +6356,9 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } को अक्षम कर दिया गया है"
+      ],
       "Contact group created": [
         "संपर्क समूह बनाया गया"
       ],
@@ -6870,6 +6906,9 @@
       "All aliases": [
         "सभी नकली-नाम"
       ],
+      "Create alias": [
+        "नकली-नाम बनाएं"
+      ],
       "Create an alias": [
         "नकली-नाम बनाएं"
       ],
@@ -6893,6 +6932,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } आज़माएँ"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "अमेज़न पर शॉपिंग आदि के लिए उपयोग किया जाता है।"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "जब आपसे आपका ईमेल पता पूछा जाए, तो इसके बजाय यह उपनाम दें। उपनाम ${ passLink } द्वारा प्रदान किए जाते हैं।"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -6900,9 +6945,17 @@
         "(${ PASS_APP_NAME } खुल जाएगा)"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "घटनाएँ देखें"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "यदि आपका पासवर्ड या अन्य डेटा किसी तिसारे-पक्ष से लीक हुआ है, तो इसकी सूचना प्राप्त करें। ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel **सक्रिय** है और आपके खाते की सुरक्षा कर रहा है।"
       ]
     },
     "Select files": {
@@ -7968,6 +8021,9 @@
       "Exporting contacts": [
         "संपर्क निर्यात हो रहे हे"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "${ appName[APP_NAME] } ऐप्स प्राप्त करें"
+      ],
       "Gift": [
         "तोहफा"
       ],
@@ -8013,6 +8069,9 @@
       ],
       "Night theme": [
         "रात की थीम"
+      ],
+      "No breaches detected": [
+        "कोई उल्लंघन नहीं पाया गया"
       ],
       "Notes": [
         "नोट"
@@ -8209,6 +8268,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "आपका ${ planName } ट्रायल ${ textDate } को खत्म होगा"
       ],
+      "Your account is protected": [
+        "आपका खाता सुरक्षित है"
+      ],
       "Your calendar link": [
         "आपका कैलेंडर लिंक"
       ],
@@ -8239,6 +8301,9 @@
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "स्वचालित इंगित करता है कि इस उपयोगकर्ता को भेजने के लिए संगीतकार में प्रारूप का उपयोग किया जाता है। सादा पाठ इंगित करता है कि संदेश भेजने पर संदेश हमेशा सादे पाठ में परिवर्तित हो जाएगा।"
+      ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "अपने पसंदीदा दिन और रात के विषयों के बीच स्वचालित रूप से स्विच करें, जो आपके सिस्टम के दिन और रात मोड के साथ सिंक में हो।"
       ],
       "Change start date to unselect": [
         "अचयनित करने के लिए आरंभ तिथि बदलें"

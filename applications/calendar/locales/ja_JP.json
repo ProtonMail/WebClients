@@ -180,7 +180,7 @@
         "Google で続行"
       ],
       "Continue with Outlook": [
-        "Outlook を続行する"
+        "Outlookで続ける"
       ],
       "Copy address": [
         "アドレスをコピー"
@@ -189,7 +189,7 @@
         "メールアドレスをコピー"
       ],
       "Copy email to clipboard": [
-        "メールをコピー"
+        "メールをクリップボードにコピー"
       ],
       "Copy link": [
         "リンクをコピー"
@@ -306,7 +306,7 @@
         "連絡先のエクスポート"
       ],
       "Forgot password?": [
-        "パスワードを忘れた?"
+        "パスワードを忘れましたか？"
       ],
       "Forward as attachment": [
         "添付ファイルとして送信"
@@ -348,7 +348,7 @@
         "タイムゾーンを非表示"
       ],
       "Image could not be loaded with tracker protection.": [
-        "トラッキング防止が画像の読み込みをブロックしました。"
+        "トラッカー保護機能により画像を読み込めません。"
       ],
       "Image will be loaded without a proxy": [
         "画像はプロキシーを経由せずに読み込まれます"
@@ -402,7 +402,7 @@
         "話をしよう"
       ],
       "Load": [
-        "読み込む"
+        "読み込み"
       ],
       "Load image": [
         "画像を読み込む"
@@ -765,7 +765,7 @@
         "連絡先の詳細を表示"
       ],
       "View invoice": [
-        "請求書を参照する"
+        "請求書を確認"
       ],
       "What do I get?": [
         "何が入手できますか？"
@@ -885,7 +885,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        "今すぐ退出することで、いくつかの連絡先がインポートされない可能性があります"
+        "今終了すると、インポートされない連絡先がある可能性があります"
       ],
       "By leaving now, some events may not be imported": [
         "今終了すると、インポートされない予定がある可能性があります"
@@ -1238,7 +1238,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME } を使って続行します。"
+        "${ MAIL_APP_NAME }で続ける。"
       ],
       "Continue using ${ planTitle }": [
         "${ planTitle }を使い続ける"
@@ -1515,13 +1515,13 @@
         "コバルト"
       ],
       "copper": [
-        "コパー"
+        "カッパー"
       ],
       "enzian": [
-        "エンツィアン"
+        "リンドウ"
       ],
       "fern": [
-        "ファーン"
+        "シダ"
       ],
       "forest": [
         "フォレスト"
@@ -1536,7 +1536,7 @@
         "パシフィック"
       ],
       "pickle": [
-        "ピックル"
+        "ピクルス"
       ],
       "pine": [
         "パイン"
@@ -2578,11 +2578,6 @@
         "未払いの請求"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "easy Switch インポートアシスタントを使用する"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
@@ -2657,10 +2652,10 @@
         "連絡先グループを使用することで、ワンクリックでそのグループ全員にメールを送信することができます。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "iCal 形式 (ICS ファイル) をインポートできます。インポートするファイルは ${ MAX_IMPORT_FILE_SIZE_STRING } 以下でかつ、予定の数は ${ MAX_IMPORT_EVENTS_STRING } 件以下である必要があります。もし、インポートしようとしているファイルが大きすぎる場合、小さなファイルに分割してインポートしてください。"
+        "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
+        "結合または保持する必要のない連絡先を削除するためにマークすることができます。 削除はマージボタンがクリックされた後にのみ行われます"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "アカウントとデータの回復手段が設定され、2要素認証が有効になっています。"
@@ -2672,12 +2667,17 @@
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "easy Switch インポートアシスタントを使用する"
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "また、CSVのフィールドを自動的にvCardのフィールドに変換しています。手動で変換が正しく行われているか確かめることもできます。"
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートされたいものを選択してください。"
+        "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートしたいものを選択してください。"
       ]
     },
     "Disabled calendar": {
@@ -3423,16 +3423,16 @@
         "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS } 以上の予定が含まれています。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "ファイル　${ formattedFilename }はメソッドが正しくなく、インポートできません。"
+        "ファイル${ formattedFilename }はメソッドが正しくなく、インポートできません。"
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "ファイル　${ formattedFilename }にはインポートする連絡先がありません。"
+        "ファイル${ formattedFilename }にはインポートする連絡先がありません。"
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "ファイル　${ formattedFilename }は空です。"
+        "ファイル${ formattedFilename }が空です。"
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        "ファイル　${ formattedFilename }はカレンダーではありません。"
+        "ファイル${ formattedFilename }はカレンダーではありません。"
       ]
     },
     "Error importing contact": {
@@ -3593,7 +3593,7 @@
         "${ MAIL_APP_NAME }や${ CALENDAR_APP_NAME }を使うには、Webバージョンに切り替えてください。"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
+        "このページを読み込めませんでした。ページを更新するか、インターネット接続を確認してください。"
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "追加のパスワードが有効になっている場合、エイリアスの管理は ${ PASS_APP_NAME } でのみ行うことができます。"
@@ -3684,7 +3684,7 @@
         "回答は送信されましたが、予定をカレンダーに追加できませんでした"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "回答は送信されましたが、予定をカレンダーに反映できませんでした"
+        "回答が送信されましたが、予定はカレンダーで更新できませんでした"
       ]
     },
     "Event popover close button": {
@@ -3792,7 +3792,7 @@
         "${ invite.OrganizationName } に招待されました"
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
-        "六ヶ月の間に受けられる招待は最大で３つまでです。例外措置が必要な場合は ${ supportLink } にお問い合わせください。"
+        "6 か月の間に受けられる招待は最大で 3 つまでです。例外措置が必要な場合は ${ supportLink } にお問い合わせください。"
       ],
       "You cannot accept this invitation with your current plan.": [
         "現在のプランではこの招待を受けることができません。"
@@ -4034,7 +4034,7 @@
         "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "予定を暗号化し、カレンダーに追加中...${ totalToImport }件中${ totalImported }件が完了"
+        "予定を暗号化し、カレンダーに追加中: ${ totalToImport }件中${ totalImported }件が完了"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
         "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
@@ -4090,7 +4090,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "${ contactId } へのお問い合わせ "
+        "連絡先 ${ contactId }: "
       ]
     },
     "Import contact groups info": {
@@ -4265,7 +4265,7 @@
     },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。クリックして詳細"
+        "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。詳細はクリックしてください"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         "${ totalEvents } 件のうち ${ totalEventsDiscarded } 件の予定はインポートされません。クリックして詳細を展開します。"
@@ -4513,7 +4513,7 @@
         "連絡先はグループ${ contactGroupName }から解除されました"
       ],
       "Copy the link to clipboard": [
-        "リンクをコピー"
+        "リンクをクリップボードにコピー"
       ],
       "Country code": [
         "国コード"
@@ -4744,7 +4744,7 @@
         "ラベル:"
       ],
       "Large imports can take several days.": [
-        "巨大なインポートは数日かかる場合があります。"
+        "膨大なインポートには数日かかる場合があります。"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "${ staySaferOnlineLink } の使い方を学ぶ"
@@ -4855,7 +4855,7 @@
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline は Plain Text 形式にのみ対応しています。"
+        "PGP/Inline はプレーンテキスト形式のみと互換性があります。"
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME は、現在の新規作成時のモードを使用して自動的にメッセージを送信します。"
@@ -4879,7 +4879,7 @@
         "確認ボタンをクリックすると、アカウントには ${ creditsRemaining } クレジットが残りますのでご注意ください。"
       ],
       "Please provide a name and an email address for creating a group.": [
-        "グループ作成のため、お名前とEメールアドレスをご記入ください。"
+        "グループ作成のため、名前とメールアドレスをご記入ください。"
       ],
       "Please remove the duplicates and try again.": [
         "重複を削除して再度お試しください。"
@@ -5104,7 +5104,7 @@
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
       ],
       "We'll email you once import is complete.": [
-        "データの取り込みが完了したら自動的にメールが届きます。"
+        "インポートが完了したらメールでお知らせします。"
       ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
@@ -5583,7 +5583,7 @@
         "今後表示しない"
       ],
       "e.g., Amazon, eBay, Etsy": [
-        "例: Amazon、eBay"
+        "例えば、Amazon、eBay、Etsy"
       ],
       "Email": [
         "メールアドレス"
@@ -5932,7 +5932,7 @@
         "新しいカレンダーを追加するには、既存のカレンダーを削除します。"
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有償の${ MAIL_SHORT_APP_NAME } プランにアップグレードします。"
+        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有料の${ MAIL_SHORT_APP_NAME } プランにアップグレードします。"
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "このプランで利用できるカレンダーの最大数に達しました。"
@@ -6011,7 +6011,7 @@
         "データを集めています"
       ],
       "We're gathering your data from your provider": [
-        "プロバイダーからファイルを集めています"
+        "プロバイダーからデータを収集しています"
       ],
       "Your import is starting": [
         "インポートが開始しました"
@@ -6019,7 +6019,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "詳細"
+        "もっと詳しく"
       ],
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
@@ -7412,13 +7412,13 @@
         "組織を構成、ドメイン名をリンク、アカウントを作成して、組織のすべてのメンバーを確実に保護します。"
       ],
       "Discover all ${ BRAND_NAME } services": [
-        "すべての ${ BRAND_NAME } サービスを 1 つのアカウントで"
+        "すべての ${ BRAND_NAME } サービスを見つける"
       ],
       "Pick a theme": [
         "テーマを選択"
       ],
       "Set up your organization": [
-        "組織のための設定"
+        "組織の設定"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
         "左上のアプリスイッチャーを使用して、すべての ${ BRAND_NAME } サービス ${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }にアクセスします。"
@@ -7769,7 +7769,7 @@
         "パスワード"
       ],
       "Please describe the problem and include any error messages": [
-        "問題について、エラーメッセージ等も含めてご記入ください。（英語）"
+        "問題について、エラーメッセージ等も含めてご記入ください。"
       ],
       "Please select a country": [
         "国を選択してください"
@@ -8000,7 +8000,7 @@
     },
     "session_recovery:available:action": {
       "Cancel reset": [
-        "リクエストのキャンセル　"
+        "リセットをキャンセル"
       ],
       "Reset password": [
         "パスワードのリセット"
@@ -8108,7 +8108,7 @@
         "了解"
       ],
       "Learn more": [
-        "詳細"
+        "もっと詳しく"
       ]
     },
     "session_recovery:in_progress:info": {
@@ -8135,7 +8135,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "パスワード再設定リクエスト"
+        "パスワードのリセットがリクエストされました"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -9797,7 +9797,7 @@
         "「自動」はこのユーザーに送信する際の書式が、自動選択される事を示しています。「プレーンテキスト」は、常にプレーンテキストに変換されてメッセージが送信されることを示します。"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "システムの昼夜モードと同期して、昼と夜のお好みのテーマを自動的に切り替える"
+        "システムの昼夜モードに同期して、昼と夜の好みのテーマを自動的に切り替えます"
       ],
       "Change start date to unselect": [
         "開始日を未選択に変更"
@@ -9848,7 +9848,7 @@
         "サイドパネルを表示"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
+        "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれぞれのフォルダーとして表示されます"
       ],
       "The image could not be loaded": [
         "画像が読み込めませんでした"
