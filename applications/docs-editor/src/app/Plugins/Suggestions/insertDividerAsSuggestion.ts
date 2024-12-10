@@ -1,6 +1,6 @@
 import { $createHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import { $insertNodeToNearestRoot } from '@lexical/utils'
-import { GenerateUUID } from '@proton/docs-core'
+import { GenerateUUID } from '@proton/docs-shared'
 import { $createParagraphNode, $getSelection, $isRangeSelection } from 'lexical'
 import { $createSuggestionNode } from './ProtonNode'
 

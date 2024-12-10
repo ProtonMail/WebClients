@@ -1,5 +1,5 @@
 import { $getNearestBlockElementAncestorOrThrow, $wrapNodeInElement } from '@lexical/utils'
-import { GenerateUUID } from '@proton/docs-core'
+import { GenerateUUID } from '@proton/docs-shared'
 import { $getSelection, $isRangeSelection, $isTextNode } from 'lexical'
 import { $createSuggestionNode } from './ProtonNode'
 
