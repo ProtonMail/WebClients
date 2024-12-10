@@ -7,7 +7,7 @@ import {
   $isRangeSelection,
   $isTextNode,
 } from 'lexical'
-import { GenerateUUID } from '@proton/docs-core'
+import { GenerateUUID } from '@proton/docs-shared'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { $wrapSelectionInSuggestionNode, $isNodeNotInline } from './Utils'
 import type { Logger } from '@proton/utils/logs'

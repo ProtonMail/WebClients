@@ -18,7 +18,7 @@ import { $getListInfo } from '../CustomList/$getListInfo'
 import { $insertFirst } from '@lexical/utils'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
-import { GenerateUUID } from '@proton/docs-core'
+import { GenerateUUID } from '@proton/docs-shared'
 import { $getElementBlockType } from '../BlockTypePlugin'
 import { $isEmptyListItemExceptForSuggestions } from './Utils'
 

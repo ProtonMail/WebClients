@@ -1,5 +1,5 @@
 import { Comment } from '../Models'
-import { GenerateUUID } from '../Util/GenerateUuid'
+import { GenerateUUID } from '@proton/docs-shared'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
 import { isPrivateDocumentKeys } from '../Types/DocumentEntitlements'
 import { Result } from '@proton/docs-shared'

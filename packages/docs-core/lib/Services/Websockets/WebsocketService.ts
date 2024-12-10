@@ -37,7 +37,7 @@ import {
 import { c } from 'ttag'
 import type { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { DocumentConnectionRecord } from './DocumentConnectionRecord'
-import { GenerateUUID } from '../../Util/GenerateUuid'
+import { GenerateUUID } from '@proton/docs-shared'
 import { AckLedger } from './AckLedger/AckLedger'
 import type { AckLedgerInterface } from './AckLedger/AckLedgerInterface'
 import type { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
