@@ -10,6 +10,7 @@ import type {
   EditorInitializationConfig,
   YjsState,
   SyncedEditorStateValues,
+  SyncedEditorEvent,
 } from '@proton/docs-shared'
 import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -31,6 +32,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     value: SyncedEditorStateValues[keyof SyncedEditorStateValues],
   ): Promise<void> {
     return this.invokeEditorMethod('syncProperty', [property, value])
+  }
+
+  async syncEvent(event: SyncedEditorEvent): Promise<void> {
+    return this.invokeEditorMethod('syncEvent', [event])
   }
 
   async loadUserSettings(settings: UserSettings): Promise<void> {
