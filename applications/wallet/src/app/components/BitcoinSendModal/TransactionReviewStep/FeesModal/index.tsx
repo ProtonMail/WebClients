@@ -120,7 +120,7 @@ export const FeesModal = ({
                         onClick={() => {
                             void handleFeesSelection(feeRate);
                         }}
-                        className="fees-selection-button unstyled flex flex-row py-4 px-6 items-center"
+                        className="button fees-selection-button unstyled flex flex-row py-4 px-6 items-center"
                     >
                         <div className="flex items-center justify-center bg-norm rounded-full p-4">
                             <Icon name={iconName} />
