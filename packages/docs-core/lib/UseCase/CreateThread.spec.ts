@@ -3,7 +3,7 @@ import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { CommentThread } from '../Models'
 import type { InternalEventBusInterface } from '@proton/docs-shared'
 import { ServerTime } from '@proton/docs-shared'
-import { GenerateUUID } from '../Util/GenerateUuid'
+import { GenerateUUID } from '@proton/docs-shared'
 import type { EncryptComment } from './EncryptComment'
 import type { DecryptComment } from './DecryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
@@ -12,12 +12,9 @@ import type { DocsApi } from '../Api/DocsApi'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 
-jest.mock('../Util/GenerateUuid', () => ({
-  GenerateUUID: jest.fn(),
-}))
-
 jest.mock('@proton/docs-shared', () => ({
   ...jest.requireActual('@proton/docs-shared'),
+  GenerateUUID: jest.fn(),
   ServerTime: jest.fn().mockImplementation(() => ({})),
   CommentThreadState: {
     Active: 'Active',

@@ -20,7 +20,7 @@ import type { VerifyCommit } from './VerifyCommit'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import type { SquashVerificationObjectionCallback } from '../Types/SquashVerificationObjection'
 import { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
-import { GenerateUUID } from '../Util/GenerateUuid'
+import { GenerateUUID } from '@proton/docs-shared'
 import { metricsBucketNumberForUpdateCount } from '../Util/bucketNumberForUpdateCount'
 import type { LoggerInterface } from '@proton/utils/logs'
 
