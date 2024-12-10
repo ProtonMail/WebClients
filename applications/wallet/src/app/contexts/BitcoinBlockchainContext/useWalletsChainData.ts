@@ -250,6 +250,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                         await blockchainClient.partialSync(wasmAccount);
                     } else {
                         await blockchainClient.fullSync(wasmAccount, getDefaultStopGap() + account.poolSize);
+                        await blockchainClient.partialSync(wasmAccount);
                     }
 
                     incrementSyncKey(walletId, accountId);
