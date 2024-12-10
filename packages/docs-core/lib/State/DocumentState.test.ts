@@ -143,57 +143,6 @@ describe('DocumentState', () => {
     })
   })
 
-  describe('general subscription', () => {
-    it('should call subscriber immediately with current state', () => {
-      const callback = jest.fn()
-      documentPropertiesState.subscribe(callback)
-
-      expect(callback).toHaveBeenCalledTimes(1)
-      expect(callback).toHaveBeenCalledWith(documentPropertiesState.getState())
-    })
-
-    it('should notify subscribers when any property changes', () => {
-      const callback = jest.fn()
-      documentPropertiesState.subscribe(callback)
-      callback.mockClear()
-
-      documentPropertiesState.setProperty('realtimeEnabled', false)
-
-      expect(callback).toHaveBeenCalledTimes(1)
-      expect(callback).toHaveBeenCalledWith(
-        expect.objectContaining({
-          realtimeEnabled: false,
-        }),
-      )
-    })
-
-    it('should not call subscriber after unsubscribe', () => {
-      const callback = jest.fn()
-      const unsubscribe = documentPropertiesState.subscribe(callback)
-      callback.mockClear()
-
-      unsubscribe()
-      documentPropertiesState.setProperty('realtimeEnabled', false)
-
-      expect(callback).not.toHaveBeenCalled()
-    })
-
-    it('should handle multiple subscribers', () => {
-      const callback1 = jest.fn()
-      const callback2 = jest.fn()
-
-      documentPropertiesState.subscribe(callback1)
-      documentPropertiesState.subscribe(callback2)
-      callback1.mockClear()
-      callback2.mockClear()
-
-      documentPropertiesState.setProperty('realtimeEnabled', false)
-
-      expect(callback1).toHaveBeenCalledTimes(1)
-      expect(callback2).toHaveBeenCalledTimes(1)
-    })
-  })
-
   describe('property subscription cleanup', () => {
     it('should remove property from propertySubscribers map when last subscriber is removed', () => {
       const callback1 = jest.fn()
@@ -218,25 +167,6 @@ describe('DocumentState', () => {
     it('should handle invalid property access gracefully', () => {
       // @ts-expect-error Testing invalid property
       expect(() => documentPropertiesState.getProperty('invalidProperty')).not.toThrow()
-    })
-
-    it('should handle subscriber errors without breaking other subscribers', () => {
-      const errorCallback = jest.fn().mockImplementation(() => {
-        throw new Error('Subscriber error')
-      })
-      const normalCallback = jest.fn()
-
-      documentPropertiesState.subscribe(errorCallback)
-      documentPropertiesState.subscribe(normalCallback)
-
-      errorCallback.mockClear()
-      normalCallback.mockClear()
-
-      expect(() => {
-        documentPropertiesState.setProperty('realtimeEnabled', false)
-      }).not.toThrow()
-
-      expect(normalCallback).toHaveBeenCalled()
     })
 
     it('should handle errors in initial property subscriber call', () => {

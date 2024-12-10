@@ -15,7 +15,6 @@ export type PropertyCallback<T extends keyof P, P extends BasePropertyValues> = 
 ) => void
 
 export interface BasePropertiesStateInterface<P extends BasePropertyValues, E extends BaseEvent> {
-  subscribe: (callback: (state: P) => void) => () => void
   subscribeToProperty<T extends keyof P>(property: T, callback: PropertyCallback<T, P>): () => void
   setProperty: <T extends keyof P>(property: T, value: P[T]) => void
   getProperty: <T extends keyof P>(property: T) => P[T]
