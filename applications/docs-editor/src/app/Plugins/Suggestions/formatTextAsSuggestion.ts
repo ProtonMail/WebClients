@@ -8,7 +8,7 @@ import {
   $isTokenOrSegmented,
   $setSelection,
 } from 'lexical'
-import { GenerateUUID } from '@proton/docs-core'
+import { GenerateUUID } from '@proton/docs-shared'
 import { $isSuggestionNode, $createSuggestionNode } from './ProtonNode'
 import type { PropertyChangeSuggestionProperties } from './Types'
 import { $unwrapSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'

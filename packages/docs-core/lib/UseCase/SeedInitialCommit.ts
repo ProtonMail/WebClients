@@ -4,7 +4,7 @@ import { Result } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
 import type { EncryptMessage } from './EncryptMessage'
 import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
-import { GenerateUUID } from '../Util/GenerateUuid'
+import { GenerateUUID } from '@proton/docs-shared'
 
 type SeedInitialCommitResult = { commitId: string; linkId: string; volumeId: string }
 
