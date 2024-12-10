@@ -56,6 +56,8 @@ export const getLumoAddonNameByPlan = (planName: PLANS) => {
             return ADDON_NAMES.LUMO_DRIVE;
         case PLANS.PASS:
             return ADDON_NAMES.LUMO_PASS;
+        case PLANS.PASS_FAMILY:
+            return ADDON_NAMES.LUMO_PASS_FAMILY;
         case PLANS.VPN:
             return ADDON_NAMES.LUMO_VPN;
         case PLANS.VPN2024:
