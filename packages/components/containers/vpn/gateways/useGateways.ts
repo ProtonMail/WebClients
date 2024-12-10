@@ -104,7 +104,6 @@ export const useGateways = (maxAge: number) => {
                 TranslatedDuration: c('Label').ngettext(msgid`${nbDay} day`, `${nbDay} days`, nbDay),
             },
         },
-        countries: result?.Countries,
         locations: result?.Locations,
         gateways: result?.Gateways,
         users: result?.Users || [],

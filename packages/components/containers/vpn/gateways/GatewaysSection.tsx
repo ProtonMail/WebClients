@@ -72,7 +72,6 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
             Provisioning: { TranslatedDuration: provisioningDuration },
         },
         users,
-        countries,
         locations,
         gateways,
         refresh,
@@ -106,7 +105,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const { sortedList } = useSortedList(allGateways as Gateway[], { key: 'Name', direction: SORT_DIRECTION.ASC });
     const [openSubscriptionModal] = useSubscriptionModal();
 
-    if (!organization || !user || !subscription || !gateways || !countries || !locations) {
+    if (!organization || !user || !subscription || !gateways || !locations) {
         return <Loader />;
     }
 
@@ -347,7 +346,6 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
             countryOptions,
             showCancelButton,
             gateway,
-            countries,
             locations,
             deletedInCountries,
             users,
