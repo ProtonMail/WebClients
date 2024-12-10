@@ -1,4 +1,4 @@
-import { MockedStore } from "../utils/testUtils";
+import { MockedStore } from "../utils/tests/electronStoreMock";
 import { getSettings, updateSettings } from "./settingsStore";
 
 describe("settingsStore", () => {

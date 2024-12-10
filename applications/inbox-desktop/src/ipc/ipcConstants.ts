@@ -17,6 +17,7 @@ export const DESKTOP_FEATURES = {
     StoreVersion: true,
     HeartbeatMetrics: true,
     StatsTelemetry: true,
+    RestrictedThemeSelection: true,
 } as const satisfies Record<IPCInboxDesktopFeature, boolean>;
 
 export type IPCHasFeatureMessage = {

@@ -12,7 +12,7 @@ import { urlOverrideError } from "./utils/view/dialogs";
 import { getMainWindow, getWebContentsViewName, viewCreationAppStartup } from "./utils/view/viewManagement";
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
-import { getTheme, observeNativeTheme, updateNativeTheme } from "./utils/themes";
+import { getTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
 import { registerLogIPCForwardTransport } from "./utils/log/logIPCForwardTransport";
@@ -102,7 +102,6 @@ import metrics from "./utils/metrics";
 
     checkDefaultProtocols();
     registerLogIPCForwardTransport();
-    observeNativeTheme();
     connectNetLogger(getWebContentsViewName);
     initializeUpdateChecks();
     new Notification();
@@ -130,7 +129,7 @@ import metrics from "./utils/metrics";
         }
 
         if (!getMainWindow()) {
-            return viewCreationAppStartup();
+            viewCreationAppStartup();
         }
     });
 

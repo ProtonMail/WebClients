@@ -85,15 +85,16 @@
             const description = locationSearchParams.get("description") || "";
             const buttonText = locationSearchParams.get("button") || "";
             const buttonTarget = locationSearchParams.get("buttonTarget") || "";
-            const theme = locationSearchParams.get("theme") || "light";
+            const color = locationSearchParams.get("color") || "#fff";
+            const backgroundColor = locationSearchParams.get("backgroundColor") || "#000";
             const draggable = locationSearchParams.has("draggable");
 
             if (draggable) {
                 document.body.style.setProperty("-webkit-app-region-", "drag");
             }
 
-            document.documentElement.style.background = theme === "dark" ? "#666" : "#fff";
-            document.documentElement.style.color = theme === "dark" ? "#e1e1e1" : "#222";
+            document.body.style.color = color;
+            document.body.style.backgroundColor = backgroundColor;
 
             titleElement.textContent = title;
             descriptionElement.textContent = description;
