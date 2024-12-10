@@ -1,7 +1,7 @@
 import { ApiResult, DocumentRole, Result } from '@proton/docs-shared'
 import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { Comment } from '../Models'
-import { GenerateUUID } from '../Util/GenerateUuid'
+import { GenerateUUID } from '@proton/docs-shared'
 import type { EncryptComment } from './EncryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { CreateComment } from './CreateComment'
@@ -9,7 +9,8 @@ import type { DocsApi } from '../Api/DocsApi'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 
-jest.mock('../Util/GenerateUuid', () => ({
+jest.mock('@proton/docs-shared', () => ({
+  ...jest.requireActual('@proton/docs-shared'),
   GenerateUUID: jest.fn(),
 }))
 
