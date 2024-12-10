@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';
 
-import { differenceInDays, fromUnixTime } from 'date-fns';
+import { fromUnixTime } from 'date-fns';
 
 import { useApi, useEventManager } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
@@ -31,8 +31,12 @@ export const CHECKLIST_ITEMS_TO_COMPLETE = [
 ];
 
 export interface OnboardingChecklistContext {
+    /**
+     * If user registered first with a paid plan
+     * `expiresAt` is undefined
+     */
     expiresAt: Date | undefined;
-    createdAt: Date | undefined;
+    createdAt: Date;
     loading: boolean;
     isUserPaid: boolean;
     isChecklistFinished: boolean;
@@ -42,10 +46,6 @@ export interface OnboardingChecklistContext {
     changeChecklistDisplay: (display: CHECKLIST_DISPLAY_TYPE) => void;
     markItemsAsDone: (item: ChecklistKeyType) => void;
     canDisplayChecklist: boolean;
-    /** Number of days before expiration */
-    daysBeforeExpire: number;
-    /** Has expired  */
-    hasExpired: boolean;
 }
 
 const GetStartedChecklistContext = createContext<OnboardingChecklistContext | undefined>(undefined);
@@ -86,28 +86,17 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const items = isUserPaid ? paidUserChecklist.Items : freeUserChecklist.Items;
     const isChecklistFinished = CHECKLIST_ITEMS_TO_COMPLETE?.every((item) => items?.includes(item));
 
-    const createdAt: Date | undefined = (() => {
+    const createdAt: Date = (() => {
         const timestamp = isUserPaid ? paidUserChecklist.CreatedAt : freeUserChecklist.CreatedAt;
         // Ensure timestamp is a valid number
-        return !isNaN(Number(timestamp)) ? fromUnixTime(timestamp) : undefined;
+        return fromUnixTime(timestamp);
     })();
     const expiresAt: Date | undefined = (() => {
         const timestamp = isUserPaid ? paidUserChecklist.ExpiresAt : freeUserChecklist.ExpiresAt;
-        return !isNaN(Number(timestamp)) ? fromUnixTime(timestamp) : undefined;
+        return timestamp ? fromUnixTime(timestamp) : undefined;
     })();
     // // To prevent old users from seeing the checklist again
-    const canDisplayChecklist: boolean = !!expiresAt && !!createdAt && createdAt > new Date('2024-10-20');
-
-    const { daysBeforeExpire, hasExpired } = (() => {
-        if (!expiresAt || !createdAt) {
-            return { daysBeforeExpire: 0, hasExpired: false };
-        }
-        const hasExpired = expiresAt < new Date();
-        return {
-            daysBeforeExpire: hasExpired ? 0 : differenceInDays(expiresAt, createdAt),
-            hasExpired,
-        };
-    })();
+    const canDisplayChecklist: boolean = createdAt > new Date('2024-10-20');
 
     useEffect(() => {
         if (submitting) {
@@ -169,10 +158,8 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         canDisplayChecklist,
         changeChecklistDisplay,
         createdAt,
-        daysBeforeExpire,
         displayState,
         expiresAt,
-        hasExpired,
         isChecklistFinished,
         isUserPaid,
         items: new Set([...doneItems]),
