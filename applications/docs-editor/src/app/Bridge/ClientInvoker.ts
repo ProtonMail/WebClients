@@ -13,7 +13,7 @@ import type {
 } from '@proton/docs-shared'
 import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
 import type { UserState } from '@lexical/yjs'
-import { GenerateUUID } from '@proton/docs-core'
+import { GenerateUUID } from '@proton/docs-shared'
 import type { ErrorInfo } from 'react'
 import type { WordCountInfoCollection } from '@proton/docs-shared'
 import type { EditorEvent, EditorEventData } from '@proton/docs-shared'

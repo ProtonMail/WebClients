@@ -13,7 +13,7 @@ import type {
 } from '@proton/docs-shared'
 import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
 import type { LoggerInterface } from '@proton/utils/logs'
-import { GenerateUUID } from '../Util/GenerateUuid'
+import { GenerateUUID } from '@proton/docs-shared'
 import type { SerializedEditorState } from 'lexical'
 import type { UserSettings } from '@proton/shared/lib/interfaces'
 
