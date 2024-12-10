@@ -75,8 +75,8 @@ export class CommentController implements CommentControllerInterface, InternalEv
     eventBus.addEventHandler(this, WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady)
 
     if (this.userState) {
-      this.userState.subscribe((state) => {
-        this.shouldSendDocumentName = state.currentDocumentEmailDocTitleEnabled ?? false
+      this.userState.subscribeToProperty('currentDocumentEmailDocTitleEnabled', (value) => {
+        this.shouldSendDocumentName = value
       })
     }
   }

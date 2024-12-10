@@ -123,6 +123,10 @@ export function App({ systemMode }: Props) {
         void application.syncedState.setProperty(property, value)
       },
 
+      async syncEvent(event) {
+        void application.syncedState.emitEvent(event)
+      },
+
       async receiveMessage(message: RtsMessagePayload) {
         void docState.receiveMessage(message)
       },
