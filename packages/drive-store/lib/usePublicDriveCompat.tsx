@@ -1,14 +1,14 @@
-import type { ReactNode } from 'react';
 import { createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
 
-import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 import { useDriveDocsFeatureFlag, useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
+import type { NodeMeta, PublicNodeMeta } from './NodeMeta';
 import { type DocumentKeys } from './_documents';
 import { usePublicNode } from './_nodes';
 import type { DecryptedNode } from './_nodes/interface';
 import { usePublicDocsToken } from './_shares';
-import type { NodeMeta, PublicNodeMeta } from './interface';
 
 export interface PublicDriveCompat {
     /**

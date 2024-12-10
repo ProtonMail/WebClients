@@ -9,7 +9,6 @@ export class DocumentMeta implements DocumentMetaInterface {
     public commitIds: string[],
     public createTime: number,
     public modifyTime: number,
-    public name: string,
   ) {}
 
   copyWithNewValues(newValues: Partial<DocumentMetaInterface>): DocumentMetaInterface {
@@ -18,7 +17,6 @@ export class DocumentMeta implements DocumentMetaInterface {
       newValues.commitIds ?? this.commitIds,
       newValues.createTime ?? this.createTime,
       newValues.modifyTime ?? this.modifyTime,
-      newValues.name ?? this.name,
     )
   }
 
