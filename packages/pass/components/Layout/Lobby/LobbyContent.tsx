@@ -67,7 +67,7 @@ export const LobbyContent: FC<Props> = ({
 
     const localID = authStore?.getLocalID();
     const hasExtraPassword = Boolean(authStore?.getExtraPassword());
-    const isSSo = Boolean(authStore?.getUserIsSSO());
+    const isSSo = Boolean(authStore?.getSSO());
 
     const stale = clientStale(status);
     const locked = clientSessionLocked(status);
