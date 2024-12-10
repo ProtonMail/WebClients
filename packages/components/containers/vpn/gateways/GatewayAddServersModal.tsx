@@ -26,7 +26,6 @@ import { useAddedQuantities, useUnassigningAddedQuantities } from './useAddedQua
 import { useSpecificCountryCount } from './useSpecificCountryCount';
 
 interface Props extends ModalStateProps {
-    countries: readonly string[];
     locations: readonly GatewayLocation[];
     deletedInCountries: Record<string, number>;
     ownedCount: number;
@@ -40,7 +39,6 @@ interface Props extends ModalStateProps {
 }
 
 const GatewayAddServersModal = ({
-    countries,
     locations,
     deletedInCountries,
     ownedCount,
