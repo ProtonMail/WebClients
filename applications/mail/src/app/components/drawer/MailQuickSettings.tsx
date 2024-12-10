@@ -38,6 +38,7 @@ import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mai
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import { isChromiumBased, isFirefox, openNewTab } from '@proton/shared/lib/helpers/browser';
@@ -415,7 +416,11 @@ const MailQuickSettings = () => {
                     }
                 >
                     <QuickSettingsButton
-                        onClick={() => setClearBrowserDataModalOpen(true)}
+                        onClick={() =>
+                            isElectronMail && hasInboxDesktopFeature('ClearAppModal')
+                                ? invokeInboxDesktopIPC({ type: 'clearAppData' })
+                                : setClearBrowserDataModalOpen(true)
+                        }
                         data-testid="mail-quick-settings:clear-cache-button"
                     >
                         {isElectronMail ? c('Action').t`Clear application data` : c('Action').t`Clear browser data`}

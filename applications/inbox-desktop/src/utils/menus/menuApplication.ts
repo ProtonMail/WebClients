@@ -43,7 +43,7 @@ export const setApplicationMenu = () => {
                 {
                     label: c("App menu").t`Clear application data`,
                     type: "normal",
-                    click: () => clearStorage(true),
+                    click: () => clearStorage(),
                 },
                 {
                     label: c("App menu").t`Show logs`,
