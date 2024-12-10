@@ -6,9 +6,16 @@ import {
 import { getWebSocketServerURL } from './getWebSocketServerURL'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { WebsocketCallbacks } from '@proton/docs-shared'
-import { Result } from '@proton/docs-shared'
+import { ApiResult, Result } from '@proton/docs-shared'
 import { MetricService } from '../Services/Metrics/MetricService'
 import type { Api } from '@proton/shared/lib/interfaces'
+import type { DocumentStateValues } from '../State/DocumentState';
+import { DocumentState } from '../State/DocumentState'
+import { UserState } from '../State/UserState'
+import type { FetchRealtimeToken } from '../UseCase/FetchRealtimeToken'
+import { LoadLogger } from '../LoadLogger/LoadLogger'
+import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
+import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 
 const setWindowLocationHref = (href: string) => {
   delete (window as any).location
@@ -18,15 +25,29 @@ const setWindowLocationHref = (href: string) => {
 describe('WebsocketConnection', () => {
   let connection: WebsocketConnection
   let metricService: MetricService
+  let documentState: DocumentState
+  let userState: UserState
 
   beforeEach(() => {
+    jest.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(jest.fn())
+
     metricService = new MetricService({} as Api)
+    documentState = new DocumentState({
+      entitlements: {} as DocumentEntitlements,
+    } as DocumentStateValues)
+    userState = new UserState()
 
     connection = new WebsocketConnection(
+      documentState,
+      userState,
       {
         onFailToGetToken: jest.fn(),
         onConnecting: jest.fn(),
       } as unknown as WebsocketCallbacks,
+      {
+        execute: jest.fn().mockResolvedValue(ApiResult.ok({ token: '123' })),
+        docsApi: {} as Api,
+      } as unknown as FetchRealtimeToken,
       metricService,
       {
         error: jest.fn(),
@@ -256,10 +277,21 @@ describe('WebsocketConnection', () => {
       const onFailToGetToken = jest.fn()
 
       connection = new WebsocketConnection(
+        documentState,
+        userState,
         {
           getUrlAndToken: () => Result.fail('error'),
           onFailToGetToken: onFailToGetToken,
         } as unknown as WebsocketCallbacks,
+        {
+          execute: jest.fn().mockResolvedValue(
+            ApiResult.fail({
+              code: DocsApiErrorCode.CommitIdOutOfSync,
+              message: 'error',
+            }),
+          ),
+          docsApi: {} as Api,
+        } as unknown as FetchRealtimeToken,
         metricService,
         {
           error: jest.fn(),

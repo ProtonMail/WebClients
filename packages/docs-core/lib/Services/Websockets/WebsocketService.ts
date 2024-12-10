@@ -11,7 +11,7 @@ import type {
   RealtimeUrlAndToken,
 } from '@proton/docs-shared'
 import { BroadcastSource, ProcessedIncomingRealtimeEventMessage, assertUnreachableAndLog } from '@proton/docs-shared'
-import type { GetRealtimeUrlAndToken } from '../../UseCase/CreateRealtimeValetToken'
+import type { FetchRealtimeToken } from '../../UseCase/FetchRealtimeToken'
 import type { WebsocketServiceInterface } from './WebsocketServiceInterface'
 import metrics from '@proton/metrics'
 import type {
@@ -50,6 +50,7 @@ import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { MetricService } from '../Metrics/MetricService'
 import type { UserState } from '../../State/UserState'
 import { isPrivateDocumentKeys, type PublicDocumentKeys } from '../../Types/DocumentEntitlements'
+import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 
 type LinkID = string
 
@@ -59,7 +60,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
   constructor(
     private userState: UserState,
-    private _createRealtimeValetToken: GetRealtimeUrlAndToken,
+    private _createRealtimeValetToken: FetchRealtimeToken,
     private _encryptMessage: EncryptMessage,
     private _decryptMessage: DecryptMessage,
     private logger: LoggerInterface,
@@ -117,19 +118,16 @@ export class WebsocketService implements WebsocketServiceInterface {
     }
   }
 
-  createConnection(
-    document: NodeMeta | PublicNodeMeta,
-    keys: DocumentKeys | PublicDocumentKeys,
-    options: { commitId: () => string | undefined },
-  ): WebsocketConnectionInterface {
-    this.logger.info(`Creating connection for document ${document.linkId}`)
+  createConnection(documentState: DocumentState | PublicDocumentState): WebsocketConnectionInterface {
+    const nodeMeta = documentState.nodeMeta
+    this.logger.info(`Creating connection for document ${nodeMeta.linkId}`)
 
     const callbacks: WebsocketCallbacks = {
       onConnecting: () => {
         this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Connecting]>({
           type: WebsocketConnectionEvent.Connecting,
           payload: {
-            document: document,
+            document: nodeMeta,
           },
         })
       },
@@ -140,7 +138,7 @@ export class WebsocketService implements WebsocketServiceInterface {
         >({
           type: WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady,
           payload: {
-            document: document,
+            document: nodeMeta,
           },
         })
       },
@@ -149,7 +147,7 @@ export class WebsocketService implements WebsocketServiceInterface {
         this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.FailedToConnect]>({
           type: WebsocketConnectionEvent.FailedToConnect,
           payload: {
-            document: document,
+            document: nodeMeta,
             serverReason: reason,
           },
         })
@@ -159,21 +157,21 @@ export class WebsocketService implements WebsocketServiceInterface {
         this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected]>({
           type: WebsocketConnectionEvent.Disconnected,
           payload: {
-            document: document,
+            document: nodeMeta,
             serverReason: reason,
           },
         })
       },
 
       onMessage: (message) => {
-        void this.handleConnectionMessage(document, message)
+        void this.handleConnectionMessage(nodeMeta, message)
       },
 
       onEncryptionError: (error) => {
         this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.EncryptionError]>({
           type: WebsocketConnectionEvent.EncryptionError,
           payload: {
-            document,
+            document: nodeMeta,
             error,
           },
         })
@@ -186,44 +184,42 @@ export class WebsocketService implements WebsocketServiceInterface {
           >({
             type: WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync,
             payload: {
-              document,
+              document: nodeMeta,
             },
           })
         } else {
           this.logger.error(`Failed to get token: ${errorCode}`)
         }
       },
-
-      getUrlAndToken: async () => {
-        const result = await this._createRealtimeValetToken.execute(document, options.commitId())
-
-        if (!result.isFailed()) {
-          this.handleRetrievedValetTokenResult(result.getValue())
-        }
-
-        return result
-      },
     }
 
-    const connection = new WebsocketConnection(callbacks, this.metricService, this.logger, this.appVersion)
+    const connection = new WebsocketConnection(
+      documentState,
+      this.userState,
+      callbacks,
+      this._createRealtimeValetToken,
+      this.metricService,
+      this.logger,
+      this.appVersion,
+    )
 
-    const debouncer = new UpdateDebouncer(document, this.logger, (event) => {
+    const debouncer = new UpdateDebouncer(nodeMeta, this.logger, (event) => {
       if (event.type === UpdateDebouncerEventType.DidFlush) {
-        void this.handleDocumentUpdateDebouncerFlush(document, event.mergedUpdate)
+        void this.handleDocumentUpdateDebouncerFlush(nodeMeta, event.mergedUpdate)
       } else if (event.type === UpdateDebouncerEventType.WillFlush) {
         this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Saving]>({
           type: WebsocketConnectionEvent.Saving,
           payload: {
-            document,
+            document: nodeMeta,
           },
         })
       }
     })
 
-    this.connections[document.linkId] = {
-      document,
+    this.connections[nodeMeta.linkId] = {
+      document: nodeMeta,
       connection,
-      keys,
+      keys: documentState.getProperty('entitlements').keys,
       debouncer,
     }
 

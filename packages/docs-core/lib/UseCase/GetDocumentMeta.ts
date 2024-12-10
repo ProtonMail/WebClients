@@ -20,7 +20,7 @@ export class GetDocumentMeta implements UseCaseInterface<DocumentMetaInterface> 
 
     const data = result.getValue().Document
 
-    const meta = new DocumentMeta(data.VolumeID, data.CommitIDs, data.CreateTime, data.ModifyTime, '')
+    const meta = new DocumentMeta(data.VolumeID, data.CommitIDs, data.CreateTime, data.ModifyTime)
 
     return Result.ok(meta)
   }

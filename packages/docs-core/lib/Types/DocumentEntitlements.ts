@@ -5,7 +5,6 @@ import { DocumentRole } from '@proton/docs-shared'
 
 export type DocumentEntitlements = {
   keys: DocumentKeys
-  role: DocumentRole
   nodeMeta: NodeMeta
 }
 
@@ -13,7 +12,6 @@ export type PublicDocumentKeys = Pick<DocumentKeys, 'documentContentKey'>
 
 export type PublicDocumentEntitlements = {
   keys: PublicDocumentKeys
-  role: DocumentRole
   nodeMeta: PublicNodeMeta
 }
 

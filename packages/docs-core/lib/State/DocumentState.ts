@@ -10,7 +10,7 @@ import type {
 } from '@proton/docs-shared'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
-import type { DecryptedNode } from '@proton/drive-store/lib'
+import type { DecryptedNode, NodeMeta, PublicNodeMeta } from '@proton/drive-store/lib'
 
 export type DocumentEvent =
   | {
@@ -84,6 +84,7 @@ export interface DocumentStateValues {
   realtimeIsExperiencingErroredSync: boolean
   realtimeIsLockedDueToSizeContraint: boolean
   realtimeIsParticipantLimitReached: boolean
+  realtimeConnectionToken: string | undefined
 }
 
 const DefaultValues: Pick<
@@ -125,14 +126,24 @@ export function isDocumentState(state: DocumentState | PublicDocumentState): sta
  */
 export class DocumentState extends BasePropertiesState<DocumentStateValues, DocumentEvent> {
   static readonly defaults: typeof DefaultValues = DefaultValues
+
+  get nodeMeta(): NodeMeta {
+    return this.getProperty('entitlements').nodeMeta
+  }
 }
 
 /**
  * Same as DocumentState but entitlements are of type PublicDocumentEntitlements
  */
 export class PublicDocumentState extends BasePropertiesState<
-  Omit<DocumentStateValues, 'entitlements'> & { entitlements: PublicDocumentEntitlements },
+  Omit<DocumentStateValues, 'entitlements'> & {
+    entitlements: PublicDocumentEntitlements
+  },
   DocumentEvent
 > {
   static readonly defaults: typeof DefaultValues = DefaultValues
+
+  get nodeMeta(): PublicNodeMeta {
+    return this.getProperty('entitlements').nodeMeta
+  }
 }

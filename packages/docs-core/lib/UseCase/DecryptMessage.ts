@@ -3,15 +3,15 @@ import { DocumentUpdate } from '@proton/docs-proto'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import { GetAssociatedEncryptionDataForRealtimeMessage } from './GetAdditionalEncryptionData'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
-import type { SessionKey } from '@proton/crypto'
 import { VERIFICATION_STATUS } from '@proton/crypto'
 import { DecryptedMessage } from '@proton/docs-shared'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
+import type { DocumentKeys } from '@proton/drive-store/lib/_documents'
 
 export type DecryptMessageDTO = {
   message: DocumentUpdate | Event
-  documentContentKey: SessionKey
+  documentContentKey: DocumentKeys['documentContentKey']
   verify: boolean
 }
 

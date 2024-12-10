@@ -1,15 +1,5 @@
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
-
-import type { NodeMeta } from '../interface';
-
-/**
- * Container for document keys.
- */
-export type DocumentKeys = {
-    documentContentKey: SessionKey;
-    userAddressPrivateKey: PrivateKeyReference;
-    userOwnAddress: string;
-};
+import type { NodeMeta } from "../NodeMeta";
+import type { DocumentKeys } from './DocumentKeys';
 
 /**
  * Metadata for a document node.

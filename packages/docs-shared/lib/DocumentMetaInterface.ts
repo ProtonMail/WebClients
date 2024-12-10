@@ -3,7 +3,6 @@ export interface DocumentMetaInterface {
   commitIds: string[]
   createTime: number
   modifyTime: number
-  name: string
   volumeId: string
 
   copyWithNewValues(newValues: Partial<DocumentMetaInterface>): DocumentMetaInterface
