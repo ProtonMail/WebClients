@@ -52,7 +52,7 @@ export const getMembers = (users: readonly GatewayUser[], logical: GatewayLogica
         : /* translator: The whole organization has access to the gateway */ c('Info').t`Whole organization`;
 
 export const getLocationId = (location: GatewayLocation): string => {
-    const id = btoa(location.Country + '\n' + (location.City || ''));
+    const id = btoa(location.Country + '\n' + location.City);
 
     if (!(id in locations)) {
         locations[id] = location;
@@ -63,7 +63,7 @@ export const getLocationId = (location: GatewayLocation): string => {
 
 export const getLocationDisplayName = (location: GatewayLocation, countryOptions: CountryOptions): string => {
     const country = getLocalizedCountryByAbbr(location.Country, countryOptions) || location.Country;
-    return country + (location.TranslatedCity ? ' - ' + location.TranslatedCity : '');
+    return country + ' - ' + location.TranslatedCity;
 };
 
 export const getLocationFromId = (locationId: string): GatewayLocation => {
