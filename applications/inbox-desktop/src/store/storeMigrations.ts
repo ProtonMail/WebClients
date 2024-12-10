@@ -1,7 +1,13 @@
 import Store from "electron-store";
 import { getSettings, updateSettings } from "./settingsStore";
 import { SERIALIZED_THEME_MODE } from "../utils/themes";
-import { electronAppTheme, ThemeModeSetting } from "@proton/shared/lib/themes/themes";
+import {
+    electronAppTheme,
+    getDarkThemes,
+    ThemeModeSetting,
+    ThemeSetting,
+    ThemeTypes,
+} from "@proton/shared/lib/themes/themes";
 
 const store = new Store();
 
@@ -50,9 +56,43 @@ const deleteSerializedThemeMode = () => {
     }
 };
 
+// Force using a light theme for day and dark theme for night
+const forceLightAndDarkThemes = () => {
+    let { theme } = getSettings();
+
+    if (!theme) {
+        return;
+    }
+
+    const updateTheme = (updatedTheme: Partial<ThemeSetting>) => {
+        updateSettings({ theme: { ...theme, ...updatedTheme } });
+        theme = getSettings().theme;
+    };
+
+    const darkThemes = getDarkThemes();
+    const isAutoTheme = theme.Mode === undefined || theme.Mode === ThemeModeSetting.Auto;
+
+    if (isAutoTheme && theme.LightTheme && theme.DarkTheme && theme.LightTheme === theme.DarkTheme) {
+        if (darkThemes.includes(theme.LightTheme)) {
+            updateTheme({ Mode: ThemeModeSetting.Dark, LightTheme: ThemeTypes.Snow, DarkTheme: ThemeTypes.Carbon });
+        } else {
+            updateTheme({ Mode: ThemeModeSetting.Light, LightTheme: ThemeTypes.Snow, DarkTheme: ThemeTypes.Carbon });
+        }
+    }
+
+    if (theme.LightTheme && darkThemes.includes(theme.LightTheme)) {
+        updateTheme({ LightTheme: ThemeTypes.Snow });
+    }
+
+    if (theme.DarkTheme && !darkThemes.includes(theme.DarkTheme)) {
+        updateTheme({ DarkTheme: ThemeTypes.Carbon });
+    }
+};
+
 export const performStoreMigrations = () => {
     deleteWindowStore(); // Introduced in v0.9.4
     deleteURLStore(); // Introduced in v1.0.0
     deleteTrialEndStore(); // Introduced in v1.0.0
-    deleteSerializedThemeMode(); // Introduced in v.1.2.4
+    deleteSerializedThemeMode(); // Introduced in v1.2.4
+    forceLightAndDarkThemes(); // Introduced in v1.6.0
 };
