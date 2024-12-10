@@ -5,7 +5,7 @@ import type { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType
 import type { SerializedEditorState } from 'lexical'
 import type { UserSettings } from '@proton/shared/lib/interfaces'
 import type { YjsState } from '../YjsState'
-import type { SyncedEditorStateValues } from '../State/SyncedEditorState'
+import type { SyncedEditorEvent, SyncedEditorStateValues } from '../State/SyncedEditorState'
 
 export interface ClientRequiresEditorMethods {
   receiveMessage(message: RtsMessagePayload): Promise<void>
@@ -47,4 +47,5 @@ export interface ClientRequiresEditorMethods {
     property: keyof SyncedEditorStateValues,
     value: SyncedEditorStateValues[keyof SyncedEditorStateValues],
   ): Promise<void>
+  syncEvent(event: SyncedEditorEvent): Promise<void>
 }

@@ -10,6 +10,7 @@ import { useYjsHistory } from './useYjsHistory'
 import type { EditorInitializationConfig } from '@proton/docs-shared'
 import { useYjsFocusTracking } from './useYjsFocusTracking'
 import type { EditorLoadResult } from '../../EditorLoadResult'
+import { useScrollToUserCursorOnEvent } from './ScrollToUserCursorPlugin'
 
 type Props = {
   id: string
@@ -64,6 +65,7 @@ export function CollaborationPlugin({
 
   useYjsHistory(editor, binding)
   useYjsFocusTracking(editor, provider, name, color)
+  useScrollToUserCursorOnEvent(binding)
 
   return cursors
 }
