@@ -15,6 +15,7 @@ export const mockUseBlockchainClient = (
     spy.mockReturnValue({
         getFeesEstimation: vi.fn(),
         getMininumFees: vi.fn(),
+        getRecommendedFees: vi.fn(),
         fullSync: vi.fn(),
         partialSync: vi.fn(),
         shouldSync: vi.fn(),
