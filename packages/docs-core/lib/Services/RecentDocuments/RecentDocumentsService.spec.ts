@@ -5,9 +5,8 @@ import { RecentDocumentItem } from './RecentDocumentItem'
 import type { DocsApi } from '../../Api/DocsApi'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { RecentDocumentAPIItem } from '../../Api/Types/GetRecentsResponse'
-import type { EncryptionService } from '../Encryption/EncryptionService'
-import type { EncryptionContext } from '../Encryption/EncryptionContext'
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces'
+import type { CacheService } from '../CacheService'
 
 describe('RecentDocumentsService', () => {
   const mockData: RecentDocumentAPIItem[] = [
@@ -29,7 +28,7 @@ describe('RecentDocumentsService', () => {
   let service: RecentDocumentsService
   let driveCompat: DriveCompat
   let docsApi: DocsApi
-  let encryptionService: EncryptionService<EncryptionContext.LocalStorage>
+  let cacheService: CacheService
   let logger: LoggerInterface
 
   beforeEach(() => {
@@ -57,12 +56,12 @@ describe('RecentDocumentsService', () => {
       }),
     } as unknown as DocsApi
 
-    encryptionService = {
-      encryptDataForLocalStorage: jest.fn().mockResolvedValue(Result.ok('encrypted')),
-      decryptDataForLocalStorage: jest.fn().mockResolvedValue(Result.ok('[]')),
-    } as unknown as EncryptionService<EncryptionContext.LocalStorage>
+    cacheService = {
+      getCachedValue: jest.fn().mockResolvedValue(Result.ok('[]')),
+      cacheValue: jest.fn().mockResolvedValue(Result.ok('[]')),
+    } as unknown as CacheService
 
-    service = new RecentDocumentsService(driveCompat, docsApi, encryptionService, logger)
+    service = new RecentDocumentsService(driveCompat, docsApi, cacheService, logger)
   })
 
   describe('fetch', () => {
@@ -91,7 +90,7 @@ describe('RecentDocumentsService', () => {
   describe('loadCachedSnapshot', () => {
     test('should skip loading if no address key is found', async () => {
       driveCompat.getKeysForLocalStorageEncryption = jest.fn().mockResolvedValue(undefined)
-      const newService = new RecentDocumentsService(driveCompat, docsApi, encryptionService, logger)
+      const newService = new RecentDocumentsService(driveCompat, docsApi, cacheService, logger)
 
       // Wait for loadCachedSnapshot to complete
       await new Promise((resolve) => setTimeout(resolve, 0))
@@ -117,11 +116,9 @@ describe('RecentDocumentsService', () => {
       ]
 
       localStorage.setItem('recentDocumentsSnapshot-testUser', 'encrypted')
-      encryptionService.decryptDataForLocalStorage = jest
-        .fn()
-        .mockResolvedValue(Result.ok(JSON.stringify(mockSnapshot)))
+      cacheService.getCachedValue = jest.fn().mockResolvedValue(Result.ok(JSON.stringify(mockSnapshot)))
 
-      const newService = new RecentDocumentsService(driveCompat, docsApi, encryptionService, logger)
+      const newService = new RecentDocumentsService(driveCompat, docsApi, cacheService, logger)
 
       // Wait for loadCachedSnapshot to complete
       await new Promise((resolve) => setTimeout(resolve, 0))
@@ -146,11 +143,12 @@ describe('RecentDocumentsService', () => {
     test('should resolve and store item correctly', async () => {
       await service.resolveItem({
         LinkID: 'link1',
+        VolumeID: 'volume1',
         ContextShareID: 'share1',
         LastOpenTime: 1698765432,
       } as RecentDocumentAPIItem)
 
-      const item = service.snapshot.get('link1')
+      const item = service.snapshot.get('volume1-link1')
       expect(item).toBeDefined()
       expect(item?.linkId).toBe('link1')
       expect(item?.shareId).toBe('share1')
@@ -199,17 +197,7 @@ describe('RecentDocumentsService', () => {
   })
 
   describe('cacheSnapshot', () => {
-    test('should throw error if no address key is available', async () => {
-      service.cacheConfig = undefined
-      await expect(service.cacheSnapshot()).rejects.toThrow('Attempting to cache snapshot with no address key')
-    })
-
     test('should successfully cache snapshot', async () => {
-      service.cacheConfig = {
-        encryptionKey: 'mockKey' as unknown as CryptoKey,
-        namespace: 'testUser',
-      }
-
       const mockItem = new RecentDocumentItem(
         'test',
         'link1',
@@ -227,7 +215,7 @@ describe('RecentDocumentsService', () => {
       service.setSnapshotItem(mockItem)
       await service.cacheSnapshot()
 
-      expect(encryptionService.encryptDataForLocalStorage).toHaveBeenCalled()
+      expect(cacheService.cacheValue).toHaveBeenCalled()
       expect(localStorage.getItem('recentDocumentsSnapshot-testUser')).toBe('encrypted')
     })
   })

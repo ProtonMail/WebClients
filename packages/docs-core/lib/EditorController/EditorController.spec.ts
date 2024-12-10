@@ -9,6 +9,7 @@ import { DocumentState } from '../State/DocumentState'
 import type { ClientRequiresEditorMethods, DecryptedMessage } from '@proton/docs-shared'
 import type { SerializedEditorState } from 'lexical'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
+import { LoadLogger } from '../LoadLogger/LoadLogger'
 
 jest.mock('@proton/metrics', () => ({
   docs_readonly_mode_documents_total: {
@@ -24,6 +25,8 @@ describe('EditorController', () => {
   let editorInvoker: jest.Mocked<ClientRequiresEditorMethods>
 
   beforeEach(() => {
+    jest.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(jest.fn())
+
     logger = {
       info: jest.fn(),
       error: jest.fn(),

@@ -42,7 +42,7 @@ describe('AuthenticatedDocController', () => {
       {} as jest.Mocked<DuplicateDocument>,
       {} as jest.Mocked<CreateNewDocument>,
       {
-        execute: jest.fn().mockReturnValue(Result.ok({})),
+        execute: jest.fn().mockReturnValue(Result.ok({ node: {} })),
       } as unknown as jest.Mocked<GetNode>,
       {
         addEventHandler: jest.fn(),
@@ -71,7 +71,7 @@ describe('AuthenticatedDocController', () => {
 
   describe('trashDocument', () => {
     beforeEach(() => {
-      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456, 'jkl'))
+      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456))
 
       documentState.setProperty('decryptedNode', { parentNodeId: '123', trashed: true } as unknown as DecryptedNode)
 
@@ -107,7 +107,7 @@ describe('AuthenticatedDocController', () => {
 
   describe('restoreDocument', () => {
     beforeEach(() => {
-      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456, 'jkl'))
+      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456))
 
       documentState.setProperty('decryptedNode', { parentNodeId: '123', trashed: true } as unknown as DecryptedNode)
 
@@ -138,7 +138,7 @@ describe('AuthenticatedDocController', () => {
 
   describe('refreshNodeAndDocMeta', () => {
     it('trashed state will be not_trashed if DecryptedNode trashed property is null', async () => {
-      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456, 'jkl'))
+      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456))
 
       controller._getNode.execute = jest
         .fn()
@@ -149,7 +149,7 @@ describe('AuthenticatedDocController', () => {
     })
 
     it('trashed state will be not_trashed if DecryptedNode trashed property is omitted', async () => {
-      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456, 'jkl'))
+      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456))
 
       controller._getNode.execute = jest.fn().mockResolvedValueOnce(Result.ok({ node: { parentNodeId: 123 } }))
 
@@ -158,7 +158,7 @@ describe('AuthenticatedDocController', () => {
     })
 
     it('trashed state will be trashed if DecryptedNode trashed property is populated', async () => {
-      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456, 'jkl'))
+      documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456))
 
       controller._getNode.execute = jest
         .fn()

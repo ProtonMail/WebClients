@@ -5,14 +5,16 @@ export type NodeMeta = {
     volumeId: string;
     linkId: string;
 };
-
 /**
  * A unique node identifier pair, for a public shared node.
  */
+
 export type PublicNodeMeta = {
     token: string;
     linkId: string;
 };
+
+export type AnyNodeMeta = NodeMeta | PublicNodeMeta;
 
 /**
  * A PublicNodeMeta with an additional resolved volumeId.
@@ -27,6 +29,17 @@ export function isPublicNodeMeta(meta: NodeMeta | PublicNodeMeta): meta is Publi
 
 export function isPrivateNodeMeta(meta: NodeMeta | PublicNodeMeta): meta is NodeMeta {
     return 'volumeId' in meta;
+}
+
+/**
+ * If private node meta, returns the volumeId and linkId as a concatenated string.
+ * If public node meta, returns the linkId.
+ */
+export function nodeMetaUniqueId(meta: NodeMeta | PublicNodeMeta): string {
+    if (isPublicNodeMeta(meta)) {
+        return `${meta.linkId}`;
+    }
+    return `${meta.volumeId}-${meta.linkId}`;
 }
 
 export type LegacyNodeMeta = {

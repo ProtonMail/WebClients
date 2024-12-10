@@ -9,7 +9,7 @@ import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { NodeMeta } from '@proton/drive-store'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { isPrivateNodeMeta } from '@proton/drive-store/lib/interface'
+import { isPrivateNodeMeta } from '@proton/drive-store'
 
 /**
  * Updates the local comment state by loading and decrypting all threads from the API for the document.
