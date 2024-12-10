@@ -11,6 +11,7 @@ import metrics from '@proton/metrics'
 import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from '@proton/metrics/types/docs_readonly_mode_documents_total_v1.schema'
 import { EventTypeEnum } from '@proton/docs-proto'
 import { EventType } from '@proton/docs-proto'
+import { LoadLogger } from '../LoadLogger/LoadLogger'
 
 export interface EditorControllerInterface {
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
@@ -148,6 +149,8 @@ export class EditorController implements EditorControllerInterface {
 
     void this.editorInvoker.showEditor()
     void this.editorInvoker.performOpeningCeremony()
+
+    LoadLogger.logEventRelativeToLoadTime('Editor shown for first time')
 
     this.documentState.emitEvent({
       name: 'EditorIsReadyToBeShown',
