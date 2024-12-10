@@ -33,8 +33,9 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
         ref: ForwardedRef<HTMLButtonElement>
     ) => {
         const { APP_NAME } = useConfig();
+        const isLumoAvailable = useFlag('LumoInProductSwitcher');
 
-        const availableApps = getAvailableApps({ user, context: 'dropdown' });
+        const availableApps = getAvailableApps({ user, context: 'dropdown', isLumoAvailable });
 
         if (availableApps.length <= 1) {
             return null;

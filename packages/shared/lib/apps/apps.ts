@@ -21,7 +21,7 @@ export const getSSOVPNOnlyAccountApps = (): APP_NAMES[] => {
     return [APPS.PROTONVPN_SETTINGS];
 };
 
-export const getAvailableApps = (options: { user?: User; context: AppContext }) => {
+export const getAvailableApps = (options: { user?: User; context: AppContext; isLumoAvailable: boolean }) => {
     if (getIsSSOVPNOnlyAccount(options.user)) {
         return getSSOVPNOnlyAccountApps();
     }
@@ -39,8 +39,11 @@ export const getAvailableApps = (options: { user?: User; context: AppContext }) 
         APPS.PROTONVPN_SETTINGS,
         APPS.PROTONPASS,
         APPS.PROTONWALLET,
-        APPS.PROTONLUMO,
     ];
+
+    if (options.isLumoAvailable) {
+        apps.push(APPS.PROTONLUMO);
+    }
 
     return apps;
 };

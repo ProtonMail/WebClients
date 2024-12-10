@@ -100,6 +100,8 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
     const [confirmSignOutModal, setConfirmSignOutModal, renderConfirmSignOutModal] = useModalState();
 
+    const isLumoAvailable = useFlag('LumoInProductSwitcher');
+
     const [{ isSentinelUser }] = useIsSentinelUser();
     const [
         sessionRecoverySignOutConfirmPrompt,
@@ -441,7 +443,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
 
                     {(() => {
                         if (viewportWidth['<=small'] && hasAppLinks) {
-                            const availableApps = getAvailableApps({ user, context: 'dropdown' });
+                            const availableApps = getAvailableApps({ user, context: 'dropdown', isLumoAvailable });
                             if (availableApps.length <= 1) {
                                 return null;
                             }

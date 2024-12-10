@@ -34,7 +34,7 @@ export const getExploreApps = ({
     isWalletAppSwitcherNewBadgeEnabled: boolean;
     isLumoAvailable: boolean;
 }) => {
-    const availableApps = getAvailableApps({ user, context: 'dropdown' });
+    const availableApps = getAvailableApps({ user, context: 'dropdown', isLumoAvailable });
     return [
         {
             name: APPS.PROTONMAIL,
