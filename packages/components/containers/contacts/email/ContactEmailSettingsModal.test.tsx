@@ -786,7 +786,7 @@ END:VCARD`;
         expect(signedCardContent.includes('ITEM1.X-PM-SIGN:true')).toBe(true);
     });
 
-    describe('contact key origin label', () => {
+    describe('contact key status label', () => {
         const vcard = `BEGIN:VCARD
 VERSION:4.0
 FN;PREF=1:J. Doe
@@ -821,7 +821,7 @@ END:VCARD`;
                     Keys: [
                         {
                             PublicKey: 'internally mocked armored key',
-                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED,
+                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED | KEY_FLAG.FLAG_NOT_OBSOLETE,
                         },
                     ],
                 },
@@ -844,6 +844,11 @@ END:VCARD`;
             await waitFor(() => {
                 const wkdKeyFingerprint = screen.getByText('internally mocked armored key');
                 return expect(wkdKeyFingerprint).toBeVisible();
+            });
+
+            await waitFor(() => {
+                const primaryLabel = screen.getByTestId('primary-key-label');
+                return expect(primaryLabel).toBeVisible();
             });
 
             expect(screen.queryByTestId('wkd-origin-label')).toBeNull();
@@ -908,7 +913,7 @@ END:VCARD`;
                     Keys: [
                         {
                             PublicKey: 'externally fetched mocked armored key',
-                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED,
+                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED | KEY_FLAG.FLAG_NOT_OBSOLETE,
                             Source: API_KEY_SOURCE.WKD,
                         },
                     ],
@@ -931,6 +936,8 @@ END:VCARD`;
             fireEvent.click(showMoreButton);
 
             await waitFor(() => {
+                const primaryLabel = screen.getByTestId('primary-key-label');
+                expect(primaryLabel).toBeVisible();
                 const wkdOriginLabel = screen.getByTestId('wkd-origin-label');
                 return expect(wkdOriginLabel).toBeVisible();
             });
@@ -949,7 +956,7 @@ END:VCARD`;
                     Keys: [
                         {
                             PublicKey: 'externally fetched mocked armored key',
-                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED,
+                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED | KEY_FLAG.FLAG_NOT_OBSOLETE,
                             Source: API_KEY_SOURCE.KOO,
                         },
                     ],
@@ -971,6 +978,8 @@ END:VCARD`;
             fireEvent.click(showMoreButton);
 
             await waitFor(() => {
+                const primaryLabel = screen.getByTestId('primary-key-label');
+                expect(primaryLabel).toBeVisible();
                 const kooOriginLabel = screen.getByTestId('koo-origin-label');
                 return expect(kooOriginLabel).toBeVisible();
             });
