@@ -105,6 +105,7 @@ const {
     MAIL,
     DRIVE,
     PASS,
+    PASS_FAMILY,
     VPN,
     VPN2024,
     BUNDLE,
@@ -129,20 +130,20 @@ export type SupportedAddons = Partial<Record<ADDON_NAMES, boolean>>;
 export function getSupportedB2CAddons(planIDs: PlanIDs): SupportedAddons {
     const supported: SupportedAddons = {};
 
-    // Re-enable the scribe addons when/if B2C plans trully support them
-
     if (planIDs[MAIL]) {
-        // supported[ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS] = true;
         supported[ADDON_NAMES.LUMO_MAIL] = true;
     }
 
     if (planIDs[DRIVE]) {
-        // supported[ADDON_NAMES.MEMBER_SCRIBE_DRIVEPLUS] = true;
         supported[ADDON_NAMES.LUMO_DRIVE] = true;
     }
 
     if (planIDs[PASS]) {
         supported[ADDON_NAMES.LUMO_PASS] = true;
+    }
+
+    if (planIDs[PASS_FAMILY]) {
+        supported[ADDON_NAMES.LUMO_PASS_FAMILY] = true;
     }
 
     if (planIDs[VPN]) {
@@ -154,7 +155,6 @@ export function getSupportedB2CAddons(planIDs: PlanIDs): SupportedAddons {
     }
 
     if (planIDs[BUNDLE]) {
-        // supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE] = true;
         supported[ADDON_NAMES.LUMO_BUNDLE] = true;
     }
 
