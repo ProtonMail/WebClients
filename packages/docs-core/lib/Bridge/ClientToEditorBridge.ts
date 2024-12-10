@@ -30,6 +30,10 @@ export class ClientToEditorBridge {
       void this.editorInvoker.syncProperty(property, value)
     })
 
+    this.syncedEditorState?.subscribeToAnyEvent((event) => {
+      void this.editorInvoker.syncEvent(event)
+    })
+
     window.addEventListener('message', (event) => {
       if (event.source !== this.editorFrame.contentWindow) {
         this.logger.info('Client ignoring message from unknown source', event.data)
