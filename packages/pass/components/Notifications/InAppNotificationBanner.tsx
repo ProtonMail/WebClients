@@ -15,8 +15,8 @@ export const InAppNotificationBanner: FC = withInAppNotification(
 
         return (
             <aside
-                className="promo-banner fixed top-custom left-custom bottom-custom max-w-custom bg-norm p-4 rounded-lg border border-primary z-custom"
-                style={{ ...position, '--left-custom': '.5rem', '--max-w-custom': '18rem', '--z-custom': 900 }}
+                className="promo-banner fixed top-custom left-custom bottom-custom w-custom bg-norm p-4 rounded-lg border border-primary z-custom"
+                style={{ ...position, '--left-custom': '.5rem', '--w-custom': '18rem', '--z-custom': 900 }}
                 aria-live="polite"
                 role="alert"
             >
@@ -50,13 +50,14 @@ export const InAppNotificationBanner: FC = withInAppNotification(
                     <div className="text-xl bold">{notification.content.title}</div>
                     <div className="text-base color-weak">{notification.content.message}</div>
                     {notification.content.cta && (
-                        <Link to={getRedirectTo(notification.content.cta.ref)}>
+                        <Link className="w-full" to={getRedirectTo(notification.content.cta.ref)}>
                             <Button
-                                className="mt-4 color-white w-full"
+                                className="mt-4 color-white text-ellipsis"
                                 color="norm"
                                 shape="solid"
                                 size="large"
                                 pill
+                                fullWidth
                                 onClick={readMessage}
                             >
                                 {notification.content.cta.text}

@@ -33,8 +33,15 @@ export const InAppNotificationModal: FC = withInAppNotification(
 
             <ModalTwoFooter className="flex flex-column items-stretch text-center">
                 {notification.content.cta && (
-                    <Link className="mb-2" to={getRedirectTo(notification.content.cta.ref)}>
-                        <Button className="w-full" color="norm" shape="solid" size="large" onClick={readMessage}>
+                    <Link className="w-full mb-2" to={getRedirectTo(notification.content.cta.ref)}>
+                        <Button
+                            className="text-ellipsis"
+                            color="norm"
+                            shape="solid"
+                            size="large"
+                            fullWidth
+                            onClick={readMessage}
+                        >
                             {notification.content.cta.text}
                         </Button>
                     </Link>
