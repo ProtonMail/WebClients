@@ -22,26 +22,24 @@ const ClearBrowserDataModal = (rest: ModalProps) => {
     const handleClear = () => {
         if (isElectronMail) {
             void invokeInboxDesktopIPC({ type: 'clearAppData' });
-        } else {
-            void deleteAssistantCachedFiles().then(() => {
-                if (userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
-                    for (const { id } of openedAssistants) {
-                        closeAssistant(id, true);
-                    }
-                }
-                resetAssistantState();
-            });
-            void esDelete();
-            onClose?.();
+            return;
         }
+
+        void deleteAssistantCachedFiles().then(() => {
+            if (userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
+                for (const { id } of openedAssistants) {
+                    closeAssistant(id, true);
+                }
+            }
+            resetAssistantState();
+        });
+        void esDelete();
+        onClose?.();
     };
 
-    const title = isElectronMail ? c('Info').t`Clear app data` : c('Info').t`Clear browser data`;
-    const description = isElectronMail
-        ? c('Info')
-              .t`This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.`
-        : c('Info')
-              .t`Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.`;
+    const title = c('Info').t`Clear browser data`;
+    const description = c('Info')
+        .t`Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.`;
 
     return (
         <Prompt

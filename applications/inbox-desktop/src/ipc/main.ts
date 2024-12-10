@@ -101,8 +101,8 @@ export const handleIPCCalls = () => {
                 telemetry.userLogout();
                 break;
             case "clearAppData":
-                clearStorage(true, 500);
                 resetBadge();
+                clearStorage();
                 break;
             case "oauthPopupOpened": {
                 const enabled = payload === "oauthPopupStarted";

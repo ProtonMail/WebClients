@@ -1,7 +1,8 @@
-import { app } from "electron";
+import { app, dialog } from "electron";
 import { getCalendarView, getMailView } from "./view/viewManagement";
 import { clearLogs, mainLogger } from "./log";
-import { DESKTOP_PLATFORMS } from "@proton/shared/lib/constants";
+import { DESKTOP_PLATFORMS, MAIL_APP_NAME } from "@proton/shared/lib/constants";
+import { c } from "ttag";
 
 export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";
@@ -19,16 +20,6 @@ export const getPlatform = (): DESKTOP_PLATFORMS => {
     throw new Error(`Platform "${process.platform}" not supported.`);
 };
 
-export const restartApp = (timeout = 300) => {
-    mainLogger.info("Restarting app in", timeout, "ms");
-    setTimeout(() => {
-        // Since the app can crash under some circunstances when being restarted
-        // We are just keeping it closed after clearing data.
-        // app.relaunch();
-        app.exit();
-    }, timeout);
-};
-
 const clear = (view: Electron.BrowserView) => {
     view.webContents.session.flushStorageData();
     view.webContents.session.clearStorageData();
@@ -36,7 +27,21 @@ const clear = (view: Electron.BrowserView) => {
     view.webContents.session.clearCache();
 };
 
-export const clearStorage = (restart: boolean, timeout?: number) => {
+export const clearStorage = async () => {
+    const { t } = c("Clear application data prompt");
+    const { response } = await dialog.showMessageBox({
+        buttons: [t`Clear application data`, t`Cancel`],
+        title: MAIL_APP_NAME,
+        message: t`Clear application data`,
+        detail: t`This removes all data associated with this app, including downloaded messages. The app will close and you will need to sign in again to use the app.`,
+    });
+
+    if (response !== 0) {
+        mainLogger.info("Clear application data canceled by user.");
+        return;
+    }
+
+    mainLogger.info("Clear application data.");
     const mailView = getMailView();
     const calendaView = getCalendarView();
 
@@ -49,9 +54,14 @@ export const clearStorage = (restart: boolean, timeout?: number) => {
 
     clearLogs();
 
-    if (restart) {
-        restartApp(timeout);
-    }
+    const timeout = 500;
+    mainLogger.info("Closing app in", timeout, "ms");
+    setTimeout(() => {
+        // Since the app can crash under some circunstances when being restarted
+        // We are just keeping it closed after clearing data.
+        // app.relaunch();
+        app.exit();
+    }, timeout);
 };
 
 /**
