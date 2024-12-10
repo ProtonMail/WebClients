@@ -81,6 +81,8 @@ const UserInviteOrEditModal = ({
     );
     const [model, setModel] = useState(initialModel);
 
+    const lumoHasChanged = model.lumo !== initialModel.lumo;
+
     const handleClose = () => {
         if (submitting) {
             return;
@@ -101,7 +103,7 @@ const UserInviteOrEditModal = ({
             await api(updateAI(res.Member.ID, model.numAI ? 1 : 0));
         }
 
-        if (lumoAddonAvailable) {
+        if (lumoAddonAvailable && lumoHasChanged) {
             await api(updateLumo(res.Member.ID, model.lumo ? 1 : 0));
         }
 
@@ -116,7 +118,7 @@ const UserInviteOrEditModal = ({
             await api(updateAI(member!.ID, model.numAI ? 1 : 0));
         }
 
-        if (lumoAddonAvailable) {
+        if (lumoAddonAvailable && lumoHasChanged) {
             await api(updateLumo(member!.ID, model.lumo ? 1 : 0));
         }
 
