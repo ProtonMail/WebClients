@@ -1,6 +1,6 @@
 import { BrowserWindow, Display, screen } from "electron";
 import { getWindowBounds, saveWindowBounds } from "./boundsStore";
-import { MockedStore } from "../utils/testUtils";
+import { MockedStore } from "../utils/tests/electronStoreMock";
 
 jest.mock("../utils/view/windowBounds.ts", () => ({
     ensureWindowIsVisible: () => {},
