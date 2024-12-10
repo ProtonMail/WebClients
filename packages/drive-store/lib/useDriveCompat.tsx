@@ -1,23 +1,28 @@
 import { type ReactNode, useCallback } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useAuthentication } from '@proton/components/index';
 import type { PublicKeyReference } from '@proton/crypto/lib';
-import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
+import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import { useDriveCrypto } from '../store/_crypto';
 import type { DocumentAction } from '../store/_documents';
 import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
 import type { PathItem } from '../store/_views/useLinkPath';
-import type { DocumentKeys, DocumentNodeMeta } from './_documents';
+import type { CacheConfig } from './CacheConfig';
+import type { NodeMeta } from './NodeMeta';
+import type { DocumentNodeMeta } from './_documents';
 import { useDocuments } from './_documents';
+import type { DocumentKeys } from './_documents/DocumentKeys';
 import type { DecryptedNode } from './_nodes/interface';
 import useNode from './_nodes/useNode';
 import useNodes from './_nodes/useNodes';
 import { useMyFiles, useResolveShareId } from './_shares';
-import type { NodeMeta } from './interface';
 
 export interface DriveCompat {
     /**
@@ -114,21 +119,23 @@ export interface DriveCompat {
      */
     modals: ReactNode;
 
-    getKeysForLocalStorageEncryption: () => Promise<{ encryptionKey: CryptoKey; namespace: string } | undefined>;
+    getKeysForLocalStorageEncryption: () => CacheConfig | undefined;
+
+    getPrimaryAddressKeys: () => Promise<{ keys: DecryptedAddressKey[]; address: Address } | undefined>;
 }
 
 export const useDriveCompat = (): DriveCompat => {
     const { withResolve } = useResolveShareId();
 
     const authentication = useAuthentication();
+    const getAddresses = useGetAddresses();
+    const getAddressKeys = useGetAddressKeys();
 
-    const getKeysForLocalStorageEncryption: () => Promise<{ encryptionKey: CryptoKey; namespace: string } | undefined> =
-        useCallback(async () => {
-            const key = authentication.getClientKey();
-            const imported = await getClientKey(key);
-            const localId = authentication.getLocalID();
-            return { encryptionKey: imported, namespace: localId };
-        }, [authentication]);
+    const getKeysForLocalStorageEncryption: () => CacheConfig | undefined = useCallback(() => {
+        const key = authentication.getClientKey();
+        const localId = authentication.getLocalID();
+        return { encryptionKey: key, namespace: localId };
+    }, [authentication]);
 
     const { createDocumentNode, getDocumentKeys, renameDocument, getDocumentUrl, trashDocument, restoreDocument } =
         useDocuments();
@@ -143,6 +150,15 @@ export const useDriveCompat = (): DriveCompat => {
 
     const openDocument = (meta: NodeMeta) =>
         openDocumentWindow({ ...meta, mode: 'open', window: getNewWindow().handle });
+
+    const getPrimaryAddressKeys = async () => {
+        const primaryAddress = getPrimaryAddress(await getAddresses());
+        if (!primaryAddress) {
+            return undefined;
+        }
+        const keys = await getAddressKeys(primaryAddress.ID);
+        return { keys, address: primaryAddress };
+    };
 
     return {
         isDocsEnabled,
@@ -169,5 +185,6 @@ export const useDriveCompat = (): DriveCompat => {
         // This should be changed to a fragment if more modals are added
         modals: linkSharingModal,
         getKeysForLocalStorageEncryption,
+        getPrimaryAddressKeys,
     };
 };

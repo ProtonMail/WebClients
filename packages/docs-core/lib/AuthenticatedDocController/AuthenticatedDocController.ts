@@ -96,22 +96,17 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
    * to do so.
    */
   async refreshNodeAndDocMeta(options: { imposeTrashState: 'trashed' | 'not_trashed' | undefined }): Promise<void> {
-    const docMeta = this.documentState.getProperty('documentMeta')
     const { nodeMeta } = this.documentState.getProperty('entitlements')
 
-    const result = await this._getNode.execute(nodeMeta, docMeta)
+    const result = await this._getNode.execute(nodeMeta, { useCache: false })
     if (result.isFailed()) {
       this.logger.error('Failed to get node', result.getError())
       return
     }
 
-    const { node, refreshedDocMeta } = result.getValue()
+    const { node } = result.getValue()
     this.documentState.setProperty('decryptedNode', node)
-
-    if (refreshedDocMeta) {
-      this.documentState.setProperty('documentMeta', refreshedDocMeta)
-      this.documentState.setProperty('documentName', refreshedDocMeta.name)
-    }
+    this.documentState.setProperty('documentName', node.name)
 
     if (options.imposeTrashState) {
       this.documentState.setProperty('documentTrashState', options.imposeTrashState)
@@ -235,7 +230,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   public async duplicateDocument(editorYjsState: Uint8Array): Promise<void> {
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,
-      this.documentState.getProperty('documentMeta'),
+      this.documentState.getProperty('decryptedNode'),
       editorYjsState,
     )
 
@@ -257,7 +252,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   public async restoreRevisionAsCopy(yjsContent: YjsState): Promise<void> {
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,
-      this.documentState.getProperty('documentMeta'),
+      this.documentState.getProperty('decryptedNode'),
       yjsContent,
     )
 

@@ -3,7 +3,7 @@ import type { GetCommentThreadResponse } from '../Types/GetCommentThreadResponse
 import type { ApiResult } from '@proton/docs-shared'
 import { DocsApiPrivateRouteBuilder } from '../Routes/DocsApiPrivateRouteBuilder'
 import { DocsApiPublicRouteBuilder } from '../Routes/DocsApiPublicRouteBuilder'
-import { isPublicNodeMeta, type NodeMeta, type PublicNodeMeta } from '@proton/drive-store/lib/interface'
+import { isPublicNodeMeta, type NodeMeta, type PublicNodeMeta } from '@proton/drive-store'
 import type { RouteExecutor } from '../RouteExecutor'
 
 export class ApiGetThread {

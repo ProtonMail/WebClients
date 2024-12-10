@@ -2,23 +2,38 @@ import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
 import type { NodeMeta, PublicNodeMeta, DecryptedNode } from '@proton/drive-store'
 import { getErrorString } from '../Util/GetErrorString'
-import { isPublicNodeMeta } from '@proton/drive-store/lib/interface'
-import type { DocumentMetaInterface } from '@proton/docs-shared'
+import { isPublicNodeMeta } from '@proton/drive-store'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
+import type { CacheService } from '../Services/CacheService'
+import type { CachableResult } from './CachableResult'
 
-type GetNodeResult = {
+type GetNodeResult = CachableResult & {
   node: DecryptedNode
-  refreshedDocMeta?: DocumentMetaInterface
 }
 
-export class GetNode implements UseCaseInterface<GetNodeResult> {
-  constructor(private compatWrapper: DriveCompatWrapper) {}
+const NODE_CACHE_KEY = 'decrypted-node'
 
-  async execute(
-    nodeMeta: NodeMeta | PublicNodeMeta,
-    docMetaToRefresh?: DocumentMetaInterface,
-  ): Promise<Result<GetNodeResult>> {
+export class GetNode implements UseCaseInterface<GetNodeResult> {
+  constructor(
+    private compatWrapper: DriveCompatWrapper,
+    private cacheService: CacheService | undefined,
+  ) {}
+
+  async execute(nodeMeta: NodeMeta | PublicNodeMeta, options: { useCache: boolean }): Promise<Result<GetNodeResult>> {
     try {
+      if (options.useCache && this.cacheService) {
+        const cachedResult = await this.cacheService.getCachedValue({
+          document: nodeMeta,
+          key: NODE_CACHE_KEY,
+        })
+        if (!cachedResult.isFailed()) {
+          const value = cachedResult.getValue()
+          if (value) {
+            return Result.ok({ node: JSON.parse(value), fromCache: true })
+          }
+        }
+      }
+
       const node = isPublicNodeMeta(nodeMeta)
         ? await this.compatWrapper.getPublicCompat().getNode(nodeMeta)
         : await this.compatWrapper.getUserCompat().getNode(nodeMeta)
@@ -27,12 +42,11 @@ export class GetNode implements UseCaseInterface<GetNodeResult> {
         return Result.fail('Incorrect compat used; node not found')
       }
 
-      if (docMetaToRefresh) {
-        const newDocMeta = docMetaToRefresh.copyWithNewValues({ name: node.name })
-        return Result.ok({ node, refreshedDocMeta: newDocMeta })
+      if (this.cacheService) {
+        void this.cacheService.cacheValue({ document: nodeMeta, key: NODE_CACHE_KEY, value: JSON.stringify(node) })
       }
 
-      return Result.ok({ node })
+      return Result.ok({ node, fromCache: false })
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to get node')
     }

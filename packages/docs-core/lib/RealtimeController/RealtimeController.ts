@@ -26,7 +26,7 @@ import metrics from '@proton/metrics'
 import type { DocControllerEventPayloads } from '../AuthenticatedDocController/AuthenticatedDocControllerEvent'
 import { DocControllerEvent } from '../AuthenticatedDocController/AuthenticatedDocControllerEvent'
 import type { GetDocumentMeta } from '../UseCase/GetDocumentMeta'
-import type { LoadCommit } from '../UseCase/LoadCommit'
+import type { FetchDecryptedCommit } from '../UseCase/FetchDecryptedCommit'
 
 /**
  * @TODO DRVDOC-802
@@ -52,7 +52,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     readonly websocketService: WebsocketServiceInterface,
     private readonly eventBus: InternalEventBusInterface,
     readonly documentState: DocumentState | PublicDocumentState,
-    readonly _loadCommit: LoadCommit,
+    readonly _fetchDecryptedCommit: FetchDecryptedCommit,
     readonly _getDocumentMeta: GetDocumentMeta,
     readonly logger: LoggerInterface,
   ) {
@@ -301,15 +301,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
   }
 
   initializeConnection(): WebsocketConnectionInterface {
-    const entitlements = this.documentState.getProperty('entitlements')
-
-    const connection = this.websocketService.createConnection(
-      this.documentState.getProperty('entitlements').nodeMeta,
-      entitlements.keys,
-      {
-        commitId: () => this.documentState.getProperty('currentCommitId'),
-      },
-    )
+    const connection = this.websocketService.createConnection(this.documentState)
 
     connection
       .connect(() => {
@@ -458,7 +450,11 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
 
     const entitlements = this.documentState.getProperty('entitlements')
 
-    const decryptResult = await this._loadCommit.execute(nodeMeta, latestCommitId, entitlements.keys.documentContentKey)
+    const decryptResult = await this._fetchDecryptedCommit.execute(
+      nodeMeta,
+      latestCommitId,
+      entitlements.keys.documentContentKey,
+    )
     if (decryptResult.isFailed()) {
       fail(`Failed to reload or decrypt commit: ${decryptResult.getError()}`)
 

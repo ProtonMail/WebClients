@@ -1,15 +1,15 @@
 import type { DecryptCommit } from './DecryptCommit'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
+import type { DocumentKeys, NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import type { GetCommitData } from './GetCommitData'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
-import type { SessionKey } from '@proton/crypto'
 
 /**
- * Fetches commit data from the Docs server and decrypts it
+ * Fetches commit data from the Docs server and decrypts it. This usecase assumes you already have the commitId you
+ * want to fetch. If not, use @FetchMetaAndRawCommit instead.
  */
-export class LoadCommit implements UseCaseInterface<DecryptedCommit> {
+export class FetchDecryptedCommit implements UseCaseInterface<DecryptedCommit> {
   constructor(
     private getCommitData: GetCommitData,
     private decryptCommit: DecryptCommit,
@@ -18,7 +18,7 @@ export class LoadCommit implements UseCaseInterface<DecryptedCommit> {
   async execute(
     lookup: NodeMeta | PublicNodeMeta,
     commitId: string,
-    documentContentKey: SessionKey,
+    documentContentKey: DocumentKeys['documentContentKey'],
   ): Promise<Result<DecryptedCommit>> {
     const commitDataResult = await this.getCommitData.execute(lookup, commitId)
     if (commitDataResult.isFailed()) {

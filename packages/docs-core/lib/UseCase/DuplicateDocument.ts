@@ -1,11 +1,10 @@
-import type { DocumentNodeMeta, DriveCompat } from '@proton/drive-store'
+import type { DecryptedNode, DocumentNodeMeta, DriveCompat } from '@proton/drive-store'
 import { Result } from '@proton/docs-shared'
 
 import type { NodeMeta } from '@proton/drive-store'
 import type { SeedInitialCommit } from './SeedInitialCommit'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
-import type { DocumentMetaInterface } from '@proton/docs-shared'
 import { getPlatformFriendlyDateForFileName } from '../Util/PlatformFriendlyFileNameDate'
 
 export class DuplicateDocument {
@@ -16,11 +15,7 @@ export class DuplicateDocument {
   ) {}
 
   /** Execute for a private document */
-  async executePrivate(
-    nodeMeta: NodeMeta,
-    docMeta: DocumentMetaInterface,
-    state: Uint8Array,
-  ): Promise<Result<DocumentNodeMeta>> {
+  async executePrivate(nodeMeta: NodeMeta, node: DecryptedNode, state: Uint8Array): Promise<Result<DocumentNodeMeta>> {
     try {
       const node = await this.driveCompat.getNode(nodeMeta)
 
@@ -32,7 +27,7 @@ export class DuplicateDocument {
         : await this.driveCompat.getMyFilesNodeMeta()
 
       const date = getPlatformFriendlyDateForFileName()
-      const newName = `${docMeta.name} (copy ${date})`
+      const newName = `${node.name} (copy ${date})`
 
       return await this.genericDuplicate(newName, parentMeta, state)
     } catch (error) {

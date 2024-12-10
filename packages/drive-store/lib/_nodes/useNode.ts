@@ -9,7 +9,7 @@ import useUploadHelper from '../../store/_uploads/UploadProvider/useUploadHelper
 import { useAbortSignal } from '../../store/_views/utils';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../utils/stream';
-import type { LegacyNodeMeta } from '../interface';
+import type { LegacyNodeMeta } from '../NodeMeta';
 import type { DecryptedNode } from './interface';
 import { decryptedLinkToNode } from './utils';
 
