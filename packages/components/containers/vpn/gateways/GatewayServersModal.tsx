@@ -31,7 +31,6 @@ import { getFormattedLoad, getLocationFromId, getSuffix, getTotalAdded } from '.
 
 interface Props extends ModalProps<typeof Form> {
     gateway: Gateway;
-    countries: readonly string[];
     locations: readonly GatewayLocation[];
     countryOptions: CountryOptions;
     deletedInCountries: Record<string, number>;
@@ -51,7 +50,6 @@ interface Props extends ModalProps<typeof Form> {
 
 const GatewayServersModal = ({
     gateway,
-    countries,
     locations,
     countryOptions,
     deletedInCountries,
@@ -141,7 +139,6 @@ const GatewayServersModal = ({
 
     const addServers = () =>
         showAddServersModal({
-            countries,
             locations,
             deletedInCountries,
             ownedCount,
