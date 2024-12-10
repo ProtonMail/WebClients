@@ -2,7 +2,7 @@ import { $createLinkNode, $isAutoLinkNode, $isLinkNode, TOGGLE_LINK_COMMAND } fr
 import { $findMatchingParent, $wrapNodeInElement } from '@lexical/utils'
 import type { LexicalEditor } from 'lexical'
 import { $getSelection, $isRangeSelection, $createTextNode } from 'lexical'
-import { GenerateUUID } from '@proton/docs-core'
+import { GenerateUUID } from '@proton/docs-shared'
 import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import type { LinkChangePayload } from '../Link/LinkPlugin'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'

@@ -1,4 +1,4 @@
-import { GenerateUUID } from '@proton/docs-core'
+import { GenerateUUID } from '@proton/docs-shared'
 import type { LexicalNode } from 'lexical'
 import { $createRangeSelection, $getNodeByKey, $getSelection, $setSelection } from 'lexical'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
