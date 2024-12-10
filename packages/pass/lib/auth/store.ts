@@ -38,7 +38,7 @@ const PASS_ENCRYPTED_OFFLINE_KD = 'pass:encrypted_offline_kd';
 const PASS_LAST_USED_AT = 'pass:last_used_at';
 const PASS_USER_DISPLAY_NAME = 'pass:user_display_name';
 const PASS_USER_EMAIL = 'pass:user_email';
-const PASS_USER_IS_SSO = 'pass:user_is_sso';
+const PASS_SSO = 'pass:sso';
 
 export const encodeUserData = (email: string = '', displayName: string = '') => {
     const encodedEmail = JSON.stringify(obfuscate(email));
@@ -90,7 +90,7 @@ export const createAuthStore = (store: Store) => {
             unlockRetryCount: authStore.getUnlockRetryCount(),
             userData: authStore.getUserData(),
             UserID: authStore.getUserID() ?? '',
-            isSSOUser: authStore.getUserIsSSO(),
+            sso: authStore.getSSO(),
         }),
 
         shouldCookieUpgrade: (data: Partial<AuthSession>) => AUTH_MODE === AuthMode.COOKIE && !data.cookies,
@@ -137,7 +137,7 @@ export const createAuthStore = (store: Store) => {
             if (session.UID) authStore.setUID(session.UID);
             if (session.unlockRetryCount !== undefined) authStore.setUnlockRetryCount(session.unlockRetryCount);
             if (session.UserID) authStore.setUserID(session.UserID);
-            if (session.isSSOUser) authStore.setUserIsSSO(session.isSSOUser);
+            if (session.sso) authStore.setSSO(session.sso);
         },
 
         setAccessToken: (accessToken: Maybe<string>): void => store.set(PASS_ACCESS_TOKEN_KEY, accessToken),
@@ -155,8 +155,8 @@ export const createAuthStore = (store: Store) => {
         getUserEmail: encodedGetter(store)(PASS_USER_EMAIL),
         setUserDisplayName: encodedSetter(store)(PASS_USER_DISPLAY_NAME),
         getUserDisplayName: encodedGetter(store)(PASS_USER_DISPLAY_NAME),
-        setUserIsSSO: (isSSO: boolean): void => store.set(PASS_USER_IS_SSO, isSSO),
-        getUserIsSSO: (): boolean => store.get(PASS_USER_IS_SSO) ?? false,
+        setSSO: (sso: boolean): void => store.set(PASS_SSO, sso),
+        getSSO: (): boolean => store.get(PASS_SSO) ?? false,
 
         getUserData: () => encodeUserData(authStore.getUserEmail(), authStore.getUserDisplayName()),
         setUserData: (userData: string) => {
