@@ -1,7 +1,7 @@
 import { $getRoot, $getSelection } from 'lexical'
 import type { BlockType } from '../BlockTypePlugin'
 import { $getElementBlockType, blockTypeToCreateElementFn } from '../BlockTypePlugin'
-import { GenerateUUID } from '@proton/docs-core'
+import { GenerateUUID } from '@proton/docs-shared'
 import { $findMatchingParent, $insertFirst } from '@lexical/utils'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'

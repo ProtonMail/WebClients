@@ -1,5 +1,5 @@
 import type { DocumentMetaInterface } from '@proton/docs-shared'
-import { GenerateUUID } from '../Util/GenerateUuid'
+import { GenerateUUID } from '@proton/docs-shared'
 
 export class DocumentMeta implements DocumentMetaInterface {
   public readonly uniqueIdentifier = GenerateUUID()

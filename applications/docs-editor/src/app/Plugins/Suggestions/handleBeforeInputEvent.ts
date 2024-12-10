@@ -1,6 +1,6 @@
 import { $generateNodesFromSerializedNodes, $insertGeneratedNodes } from '@lexical/clipboard'
 import { $findMatchingParent, $insertFirst } from '@lexical/utils'
-import { GenerateUUID } from '@proton/docs-core'
+import { GenerateUUID } from '@proton/docs-shared'
 import type { LexicalEditor, ElementNode, RangeSelection, LexicalNode } from 'lexical'
 import { $isDecoratorNode, $isParagraphNode, OUTDENT_CONTENT_COMMAND } from 'lexical'
 import {
