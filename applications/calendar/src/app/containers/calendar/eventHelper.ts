@@ -199,4 +199,5 @@ export const deleteConferenceData = (tmpData: EventModel) => {
     delete tmpData.conferenceUrl;
     delete tmpData.conferencePassword;
     delete tmpData.conferenceHost;
+    delete tmpData.conferenceCreator;
 };
