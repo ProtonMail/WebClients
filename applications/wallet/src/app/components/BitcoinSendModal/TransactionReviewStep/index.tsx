@@ -4,7 +4,7 @@ import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromed
 import { CircleLoader } from '@proton/atoms';
 import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { COMPUTE_BITCOIN_UNIT, type IWasmApiWalletData } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT, type IWasmApiWalletData, PriorityTargetBlock } from '@proton/wallet';
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
 
 import { Button, CoreButton } from '../../../atoms';
@@ -87,7 +87,7 @@ export const TransactionReviewStep = ({
         onSent,
     });
 
-    const hasFeeEstimations = Boolean(getFeesByBlockTarget(1));
+    const hasFeeEstimations = Boolean(getFeesByBlockTarget(PriorityTargetBlock.HighPriorityTargetBlock));
     const convertedTotalSentAmount = convertAmount(totalSentAmount, COMPUTE_BITCOIN_UNIT, exchangeRate);
 
     return (
