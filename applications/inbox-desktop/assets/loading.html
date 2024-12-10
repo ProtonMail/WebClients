@@ -38,14 +38,16 @@
             const locationSearchParams = new URLSearchParams(location.search);
 
             const message = locationSearchParams.get("message") || "Loading…";
-            const theme = locationSearchParams.get("theme") || "light";
+            const color = locationSearchParams.get("color") || "#fff";
+            const backgroundColor = locationSearchParams.get("backgroundColor") || "#000";
             const draggable = locationSearchParams.has("draggable");
 
             if (draggable) {
                 document.body.style.setProperty("-webkit-app-region-", "drag");
             }
 
-            wrapperElement.style.color = theme === "dark" ? "#e1e1e1" : "#666";
+            document.body.style.color = color;
+            document.body.style.backgroundColor = backgroundColor;
             messageElement.textContent = message;
             document.title = message;
 

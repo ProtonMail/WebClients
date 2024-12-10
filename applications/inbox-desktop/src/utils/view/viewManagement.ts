@@ -22,6 +22,7 @@ import { c } from "ttag";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { MenuBarMonitor } from "./MenuBarMonitor";
+import { PROTON_THEMES_MAP, ThemeTypes } from "@proton/shared/lib/themes/themes";
 
 type ViewID = keyof URLConfig;
 
@@ -64,14 +65,6 @@ export const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED];
 export const viewCreationAppStartup = async () => {
     mainWindow = createBrowserWindow();
     createViews();
-    await showLoadingPage(viewTitleMap.mail);
-
-    // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
-    const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
-
-    setTimeout(() => {
-        showView("mail");
-    }, delay);
 
     const debouncedSaveWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);
     mainWindow.on("move", debouncedSaveWindowBounds);
@@ -100,10 +93,19 @@ export const viewCreationAppStartup = async () => {
     });
 
     if (getWindowBounds().maximized) {
-        mainWindow.maximize();
+        mainWindow!.maximize();
     }
 
-    return mainWindow;
+    // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
+    const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
+    await new Promise((resolve) => setTimeout(resolve, delay));
+
+    const mailto = readAndClearMailtoArgs();
+
+    loadURL("mail", getAppURL().mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
+        showView("mail");
+        mainWindow!.show();
+    });
 };
 
 const createView = (viewID: ViewID) => {
@@ -142,11 +144,6 @@ const createViews = () => {
     browserViewMap.mail.setAutoResize({ width: true, height: true });
     browserViewMap.calendar.setAutoResize({ width: true, height: true });
     browserViewMap.account.setAutoResize({ width: true, height: true });
-
-    const mailto = readAndClearMailtoArgs();
-    loadURL("mail", getAppURL().mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
-        updateViewBounds(browserViewMap.mail, "mail");
-    });
 };
 
 const createBrowserWindow = () => {
@@ -367,8 +364,13 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
         ? join(process.resourcesPath, "error-network.html")
         : join(app.getAppPath(), "assets/error-network.html");
 
+    const themeColors = nativeTheme.shouldUseDarkColors
+        ? PROTON_THEMES_MAP[ThemeTypes.Carbon]
+        : PROTON_THEMES_MAP[ThemeTypes.Snow];
+
     const query: Record<string, string> = {
-        theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
+        color: themeColors.thumbColors.weak,
+        backgroundColor: isMac ? "transparent" : themeColors.themeColorMeta,
         title: c("error screen").t`Cannot establish connection`,
         description: c("error screen")
             .t`Check your internet connection or network settings. If the issue persists, please contact customer support.`,
@@ -401,9 +403,14 @@ async function renderLoadingPage(view: BrowserView, title: string): Promise<void
         ? join(process.resourcesPath, "loading.html")
         : join(app.getAppPath(), "assets/loading.html");
 
+    const themeColors = nativeTheme.shouldUseDarkColors
+        ? PROTON_THEMES_MAP[ThemeTypes.Carbon]
+        : PROTON_THEMES_MAP[ThemeTypes.Snow];
+
     const query: Record<string, string> = {
         message: c("loading screen").t`Loading ${title}…`,
-        theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
+        color: themeColors.thumbColors.weak,
+        backgroundColor: isMac ? "transparent" : themeColors.themeColorMeta,
     };
 
     if (isElectronOnMac) {

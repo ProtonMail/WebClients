@@ -9,6 +9,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { ColorScheme, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
 import ThemeCards from './ThemeCards';
@@ -22,6 +23,10 @@ const ThemesSection = () => {
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
     const themes = getThemes();
+    const showSyncThemeSelection = hasInboxDesktopFeature('RestrictedThemeSelection')
+        ? false
+        : settings.Mode === ThemeModeSetting.Auto;
+    const showManualThemeSelection = settings.Mode !== ThemeModeSetting.Auto;
 
     return (
         <>
@@ -52,7 +57,7 @@ const ThemesSection = () => {
                 </SettingsLayoutRight>
             </SettingsLayout>
 
-            {settings.Mode === ThemeModeSetting.Auto ? (
+            {showSyncThemeSelection && (
                 <SettingsSectionWide className="flex mt-6 flex-nowrap gap-4 flex-column lg:flex-row">
                     <ThemeSyncModeCard
                         className="lg:flex-1"
@@ -77,7 +82,8 @@ const ThemesSection = () => {
                         active={information.colorScheme === ColorScheme.Dark}
                     />
                 </SettingsSectionWide>
-            ) : (
+            )}
+            {showManualThemeSelection && (
                 <SettingsSectionWide className="mt-6">
                     <ThemeCards
                         size="large"
