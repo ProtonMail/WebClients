@@ -8,13 +8,12 @@ import {
   encryptData,
 } from '@proton/crypto/lib/subtle/aesGcm'
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays'
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils'
+import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import type { EncryptionContext } from './EncryptionContext'
 import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
 import { HKDF_SALT_SIZE } from '../../Crypto/Constants'
 import { Result } from '@proton/docs-shared'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding'
 
 export class EncryptionService<C extends EncryptionContext> {
   constructor(
@@ -80,31 +79,28 @@ export class EncryptionService<C extends EncryptionContext> {
   }
 
   public async encryptDataForLocalStorage(
-    plaintext: string,
+    data: Uint8Array,
     associatedData: string,
     encryptionKey: CryptoKey,
-  ): Promise<Result<string>> {
+  ): Promise<Result<Uint8Array>> {
     try {
-      const data = stringToUtf8Array(plaintext)
       const contextBytes = stringToUtf8Array(this.getContext(associatedData))
       const cipherbytes = await encryptData(encryptionKey, data, contextBytes)
-      const ciphertext = uint8ArrayToBase64String(cipherbytes)
-      return Result.ok(ciphertext)
+      return Result.ok(cipherbytes)
     } catch (error) {
       return Result.fail(`Failed to sign and encrypt data ${error}`)
     }
   }
 
   public async decryptDataForLocalStorage(
-    ciphertext: string,
+    data: Uint8Array,
     associatedData: string,
     encryptionKey: CryptoKey,
-  ): Promise<Result<string>> {
+  ): Promise<Result<Uint8Array>> {
     try {
       const contextBytes = stringToUtf8Array(this.getContext(associatedData))
-      const cipherbytes = base64StringToUint8Array(ciphertext)
-      const decryptedData = await gcmDecrypt(encryptionKey, cipherbytes, contextBytes)
-      return Result.ok(utf8ArrayToString(decryptedData))
+      const decryptedData = await gcmDecrypt(encryptionKey, data, contextBytes)
+      return Result.ok(decryptedData)
     } catch (error) {
       return Result.fail(`Failed to decrypt data ${error}`)
     }

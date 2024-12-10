@@ -19,8 +19,10 @@ import useLinksState from '../../store/_links/useLinksState';
 import { useShare } from '../../store/_shares';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import type { LegacyNodeMeta, NodeMeta } from '../interface';
-import type { DocumentKeys, DocumentNodeMeta } from './interface';
+import type { LegacyNodeMeta } from '../NodeMeta';
+import type { NodeMeta } from '../NodeMeta';
+import type { DocumentKeys } from './DocumentKeys';
+import type { DocumentNodeMeta } from './interface';
 
 export const useDocuments = () => {
     const debouncedRequest = useDebouncedRequest();

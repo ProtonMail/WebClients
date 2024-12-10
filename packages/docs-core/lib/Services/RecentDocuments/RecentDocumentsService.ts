@@ -6,108 +6,69 @@ import type { LoggerInterface } from '@proton/utils/logs'
 import type { LocalStorageValue } from './types'
 import { RecentDocumentItem } from './RecentDocumentItem'
 import type { RecentDocumentsInterface } from './RecentDocumentsInterface'
-import type { EncryptionService } from '../Encryption/EncryptionService'
-import type { EncryptionContext } from '../Encryption/EncryptionContext'
 import type { RecentDocumentAPIItem } from '../../Api/Types/GetRecentsResponse'
+import type { CacheService } from '../CacheService'
 
-const RECENTS_LOCAL_STORAGE_KEY = 'recentDocumentsSnapshot'
-function buildLocalStorageKey(userId: string) {
-  return `${RECENTS_LOCAL_STORAGE_KEY}-${userId}`
-}
+const RECENTS_LOCAL_STORAGE_KEY = 'recent-documents'
 
 type LinkId = string
 
 export class RecentDocumentsService implements RecentDocumentsInterface {
   state = new RecentDocumentState(DefaultValues)
-  cacheConfig?: Awaited<ReturnType<DriveCompat['getKeysForLocalStorageEncryption']>>
   snapshot: Map<LinkId, RecentDocumentItem> = new Map()
 
   constructor(
     private driveCompat: DriveCompat,
     private docsApi: DocsApi,
-    private encryptionService: EncryptionService<EncryptionContext.LocalStorage>,
+    private cacheService: CacheService,
     private logger: LoggerInterface,
   ) {
     void this.loadCachedSnapshot()
   }
 
-  private async loadAddressKey() {
-    try {
-      const result = await this.driveCompat.getKeysForLocalStorageEncryption()
-      if (!result) {
-        return undefined
-      }
-
-      this.cacheConfig = result
-      return result
-    } catch (error) {
-      this.logger.error('Failed to load address key', { error })
-    }
-
-    return undefined
-  }
-
   async cacheSnapshot() {
-    if (!this.cacheConfig) {
-      throw new Error('Attempting to cache snapshot with no address key')
-    }
-
     this.logger.info(`Caching recent document snapshot with ${this.snapshot.size} items`)
 
     const data: LocalStorageValue[] = Array.from(this.snapshot.values()).map((item) => item.serialize())
     const stringified = JSON.stringify(data)
-    const encrypted = await this.encryptionService.encryptDataForLocalStorage(
-      stringified,
-      this.cacheConfig.namespace,
-      this.cacheConfig.encryptionKey,
-    )
 
-    if (encrypted.isFailed()) {
-      this.logger.error('Failed to encrypt recent document snapshot', { error: encrypted.getError() })
-      return
-    }
-
-    localStorage.setItem(buildLocalStorageKey(this.cacheConfig.namespace), encrypted.getValue())
+    await this.cacheService.cacheValue({
+      document: undefined,
+      key: RECENTS_LOCAL_STORAGE_KEY,
+      value: stringified,
+    })
   }
 
   async loadCachedSnapshot(): Promise<void> {
     this.logger.info('Loading recent document snapshot')
 
-    const loadResult = await this.loadAddressKey()
-    if (!loadResult) {
-      this.logger.info('No address key found, skipping snapshot load')
+    const result = await this.cacheService.getCachedValue({
+      document: undefined,
+      key: RECENTS_LOCAL_STORAGE_KEY,
+    })
+    if (result.isFailed()) {
+      this.logger.error('Failed to decrypt recent document snapshot', { error: result.getError() })
       return undefined
     }
 
-    const { encryptionKey, namespace } = loadResult
-
-    const encrypted = localStorage.getItem(buildLocalStorageKey(namespace))
-    if (!encrypted) {
-      this.logger.info('No encrypted snapshot found, skipping load')
-      return undefined
+    const value = result.getValue()
+    if (!value) {
+      this.logger.info('No recent document snapshot found, skipping load')
+      return
     }
 
-    try {
-      const decrypted = await this.encryptionService.decryptDataForLocalStorage(encrypted, namespace, encryptionKey)
-      if (decrypted.isFailed()) {
-        this.logger.error('Failed to decrypt recent document snapshot', { error: decrypted.getError() })
-        return undefined
-      }
+    const parsed: LocalStorageValue[] = JSON.parse(value)
+    this.logger.info(`Loaded recent document snapshot with ${parsed.length} items`)
 
-      const parsed: LocalStorageValue[] = JSON.parse(decrypted.getValue())
-      this.logger.info(`Loaded recent document snapshot with ${parsed.length} items`)
-
-      parsed.forEach((raw) => {
-        const item = RecentDocumentItem.deserialize(raw)
-        this.setSnapshotItem(item)
-      })
-    } catch (error) {
-      this.logger.error('Failed to decrypt recent document snapshot', { error })
-    }
+    parsed.forEach((raw) => {
+      const item = RecentDocumentItem.deserialize(raw)
+      this.setSnapshotItem(item)
+    })
   }
 
   setSnapshotItem(item: RecentDocumentItem): void {
-    this.snapshot.set(item.linkId, item)
+    this.snapshot.set(item.uniqueId(), item)
+
     this.sortRecents()
   }
 
@@ -134,7 +95,9 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
 
     this.state.setProperty('state', 'resolving')
 
-    await Promise.all(response.getValue().RecentDocuments.map((item) => this.resolveItem(item)))
+    const recents = response.getValue().RecentDocuments
+
+    await Promise.all(recents.map((item) => this.resolveItem(item)))
 
     void this.cacheSnapshot()
 

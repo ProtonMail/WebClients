@@ -11,7 +11,7 @@ import { useLinksListingHelpers } from '../../store/_links/useLinksListing/useLi
 import { usePublicShare } from '../../store/_shares';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import type { PublicNodeMeta } from '../interface';
+import type { PublicNodeMeta } from '../NodeMeta';
 import type { DecryptedNode } from './interface';
 import { decryptedLinkToNode } from './utils';
 
@@ -27,6 +27,7 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
     const [rootLink, setRootLink] = useState<DecryptedLink>();
     const [token, setToken] = useState<string>('');
     const [permissions, setPermissions] = useState<SHARE_URL_PERMISSIONS>();
+    const didQueueLoadPublicShare = useRef(false);
 
     const { loadPublicShare } = usePublicShare();
     const { request } = usePublicSession();
@@ -81,6 +82,12 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
             return;
         }
 
+        if (didQueueLoadPublicShare.current) {
+            return;
+        }
+
+        didQueueLoadPublicShare.current = true;
+
         loadPublicShare(abortSignal)
             .then(({ link, token, permissions }) => {
                 cache.current.set(getCacheKey(link), link);
@@ -89,7 +96,7 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
                 setPermissions(permissions);
             })
             .catch(console.error);
-    }, [loadPublicShare, rootLink, isDocsTokenReady]);
+    }, [loadPublicShare, rootLink, isDocsTokenReady, abortSignal]);
 
     useEffect(() => {
         if (didLoadChildren || !rootLink) {

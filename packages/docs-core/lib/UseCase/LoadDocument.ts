@@ -1,23 +1,23 @@
+import { DocumentRole } from '@proton/docs-shared'
+import { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import { getCanWrite } from '@proton/shared/lib/drive/permissions'
-import { Result } from '@proton/docs-shared'
-import { DocumentRole, type DocumentMetaInterface } from '@proton/docs-shared'
-import type { NodeMeta, PublicNodeMeta, DecryptedNode, PublicDriveCompat, DriveCompat } from '@proton/drive-store'
-import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
-import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
-import { rawPermissionToRole } from '../Types/DocumentEntitlements'
-import type { GetNode } from './GetNode'
-import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
-import type { LoadCommit } from './LoadCommit'
-import type { LoggerInterface } from '@proton/utils/logs'
-import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
+import { Result } from '@proton/docs-shared'
+import type { DecryptCommit } from './DecryptCommit'
+import type { DecryptedCommit } from '../Models/DecryptedCommit'
+import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
+import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
+import type { GetDocumentKeys } from './GetDocumentKeys'
+import type { GetDocumentMeta } from './GetDocumentMeta'
+import type { GetNode } from './GetNode'
+import type { GetNodePermissions } from './GetNodePermissions'
+import type { LoggerInterface } from '@proton/utils/logs'
+import type { NodeMeta, PublicNodeMeta, PublicDriveCompat, DriveCompat } from '@proton/drive-store'
+import type { FetchMetaAndRawCommit } from './FetchMetaAndRawCommit'
 
-type LoadDocumentResult<E extends DocumentEntitlements | PublicDocumentEntitlements> = {
-  entitlements: E
-  meta: DocumentMetaInterface
-  node: DecryptedNode
-  decryptedCommit?: DecryptedCommit
+type LoadDocumentResult<E extends DocumentState | PublicDocumentState> = {
+  documentState: E
 }
 
 /**
@@ -28,16 +28,19 @@ export class LoadDocument {
     private compatWrapper: DriveCompatWrapper<DriveCompat | PublicDriveCompat>,
     private getDocumentMeta: GetDocumentMeta,
     private getNode: GetNode,
-    private loadCommit: LoadCommit,
+    private decryptCommit: DecryptCommit,
+    private getNodePermissions: GetNodePermissions,
+    private loadMetaAndCommit: FetchMetaAndRawCommit,
+    private getDocumentKeys: GetDocumentKeys,
     private logger: LoggerInterface,
   ) {}
 
-  async executePrivate(nodeMeta: NodeMeta): Promise<Result<LoadDocumentResult<DocumentEntitlements>>> {
-    const compat = this.compatWrapper.getCompat<DriveCompat>()
+  async executePrivate(nodeMeta: NodeMeta): Promise<Result<LoadDocumentResult<DocumentState>>> {
+    LoadLogger.logEventRelativeToLoadTime('[LoadDocument] Beginning to load document')
     try {
-      const [nodeResult, keysResult, fetchResult, permissionsResult] = await Promise.all([
+      const [nodeResult, keysResult, metaResult, permissionsResult] = await Promise.all([
         this.getNode
-          .execute(nodeMeta)
+          .execute(nodeMeta, { useCache: true })
           .then((result) => {
             LoadLogger.logEventRelativeToLoadTime('[LoadDocument] getNode')
             return result
@@ -45,8 +48,8 @@ export class LoadDocument {
           .catch((error) => {
             throw new Error(`Failed to load node: ${error}`)
           }),
-        compat
-          .getDocumentKeys(nodeMeta)
+        this.getDocumentKeys
+          .execute(nodeMeta, { useCache: true })
           .then((result) => {
             LoadLogger.logEventRelativeToLoadTime('[LoadDocument] getDocumentKeys')
             return result
@@ -54,17 +57,17 @@ export class LoadDocument {
           .catch((error) => {
             throw new Error(`Failed to load keys: ${error}`)
           }),
-        this.getDocumentMeta
+        this.loadMetaAndCommit
           .execute(nodeMeta)
           .then((result) => {
-            LoadLogger.logEventRelativeToLoadTime('[LoadDocument] getDocumentMeta')
+            LoadLogger.logEventRelativeToLoadTime('[LoadDocument] Loaded meta and encrypted commit')
             return result
           })
           .catch((error) => {
             throw new Error(`Failed to fetch document metadata: ${error}`)
           }),
-        compat
-          .getNodePermissions(nodeMeta)
+        this.getNodePermissions
+          .execute(nodeMeta, { useCache: true })
           .then((result) => {
             LoadLogger.logEventRelativeToLoadTime('[LoadDocument] getNodePermissions')
             return result
@@ -76,21 +79,37 @@ export class LoadDocument {
 
       LoadLogger.logEventRelativeToLoadTime('[LoadDocument] All network requests')
 
-      if (fetchResult.isFailed()) {
-        return Result.fail(fetchResult.getError())
-      }
-
       if (nodeResult.isFailed()) {
         return Result.fail(nodeResult.getError())
       }
-      const node = nodeResult.getValue().node
-
-      const serverBasedMeta: DocumentMetaInterface = fetchResult.getValue()
-      if (!serverBasedMeta) {
-        return Result.fail('Document meta not found')
+      if (metaResult.isFailed()) {
+        return Result.fail(metaResult.getError())
+      }
+      if (keysResult.isFailed()) {
+        return Result.fail(keysResult.getError())
       }
 
-      const decryptedMeta = serverBasedMeta.copyWithNewValues({ name: node.name })
+      const { keys } = keysResult.getValue()
+      const { node, fromCache: nodeIsFromCache } = nodeResult.getValue()
+      const { serverBasedMeta, latestCommit: encryptedCommit, realtimeToken } = metaResult.getValue()
+
+      let decryptedCommit: DecryptedCommit | undefined
+
+      const commitId = serverBasedMeta.latestCommitId()
+
+      if (encryptedCommit && commitId) {
+        const decryptResult = await this.decryptCommit.execute({
+          commit: encryptedCommit,
+          commitId,
+          documentContentKey: keys.documentContentKey,
+        })
+
+        if (decryptResult.isFailed()) {
+          return Result.fail(`Failed to decrypt commit ${decryptResult.getError()}`)
+        }
+
+        decryptedCommit = decryptResult.getValue()
+      }
 
       if (!permissionsResult) {
         return Result.fail('Unable to load permissions')
@@ -100,30 +119,56 @@ export class LoadDocument {
         return Result.fail('Unable to load all necessary data')
       }
 
+      if (permissionsResult.isFailed()) {
+        return Result.fail(permissionsResult.getError())
+      }
+
+      const { role, fromCache: roleIsFromCache } = permissionsResult.getValue()
+
       const entitlements: DocumentEntitlements = {
-        keys: keysResult,
-        role: permissionsResult ? rawPermissionToRole(permissionsResult) : new DocumentRole('PublicViewer'),
+        keys,
         nodeMeta,
       }
 
-      const latestCommitId = serverBasedMeta.latestCommitId()
-      let decryptedCommit: DecryptedCommit | undefined
+      const documentState = new DocumentState({
+        ...DocumentState.defaults,
+        documentMeta: serverBasedMeta,
+        currentCommitId: serverBasedMeta.latestCommitId(),
+        userRole: role,
+        entitlements,
+        baseCommit: decryptedCommit,
+        decryptedNode: node,
+        documentName: node.name,
+        documentTrashState: node.trashed ? 'trashed' : 'not_trashed',
+        realtimeConnectionToken: realtimeToken,
+      })
 
-      if (latestCommitId) {
-        const decryptResult = await this.loadCommit.execute(
-          nodeMeta,
-          latestCommitId,
-          entitlements.keys.documentContentKey,
-        )
-        if (decryptResult.isFailed()) {
-          return Result.fail(decryptResult.getError())
-        }
-
-        decryptedCommit = decryptResult.getValue()
-        this.logger.info(`Downloaded and decrypted commit with ${decryptedCommit?.numberOfUpdates()} updates`)
+      if (nodeIsFromCache) {
+        void this.getNode.execute(nodeMeta, { useCache: false }).then((result) => {
+          if (result.isFailed()) {
+            this.logger.error('Failed to load node from network', result.getError())
+          } else {
+            const node = result.getValue().node
+            documentState.setProperty('decryptedNode', node)
+            documentState.setProperty('documentTrashState', node.trashed ? 'trashed' : 'not_trashed')
+            documentState.setProperty('documentName', node.name)
+          }
+        })
       }
 
-      return Result.ok({ entitlements, meta: decryptedMeta, node: node, decryptedCommit })
+      if (roleIsFromCache) {
+        void this.getNodePermissions.execute(nodeMeta, { useCache: false }).then((result) => {
+          if (result.isFailed()) {
+            this.logger.error('Failed to load permissions from network', result.getError())
+            return
+          }
+
+          const { role } = result.getValue()
+          documentState.setProperty('userRole', role)
+        })
+      }
+
+      return Result.ok({ documentState })
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to load document')
     }
@@ -132,7 +177,7 @@ export class LoadDocument {
   async executePublic(
     nodeMeta: PublicNodeMeta,
     publicEditingEnabled: boolean,
-  ): Promise<Result<LoadDocumentResult<PublicDocumentEntitlements>>> {
+  ): Promise<Result<LoadDocumentResult<PublicDocumentState>>> {
     const compat = this.compatWrapper.getCompat<PublicDriveCompat>()
     const permissions = compat.permissions
 
@@ -141,30 +186,26 @@ export class LoadDocument {
     }
 
     try {
-      const [nodeResult, keysResult, fetchResult] = await Promise.all([
-        this.getNode.execute(nodeMeta).catch((error) => {
+      const [nodeResult, keysResult, metaResult] = await Promise.all([
+        this.getNode.execute(nodeMeta, { useCache: false }).catch((error) => {
           throw new Error(`Failed to load public node: ${error}`)
         }),
         compat.getDocumentKeys(nodeMeta).catch((error) => {
           throw new Error(`Failed to load public keys: ${error}`)
         }),
-        this.getDocumentMeta.execute(nodeMeta).catch((error) => {
+        this.loadMetaAndCommit.execute(nodeMeta).catch((error) => {
           throw new Error(`Failed to fetch document metadata: ${error}`)
         }),
       ])
 
-      const decryptedNode = nodeResult.getValue().node
-
-      if (fetchResult.isFailed()) {
-        return Result.fail(fetchResult.getError())
+      if (metaResult.isFailed()) {
+        return Result.fail(metaResult.getError())
       }
 
-      const serverBasedMeta: DocumentMetaInterface = fetchResult.getValue()
+      const { serverBasedMeta, latestCommit, realtimeToken } = metaResult.getValue()
       if (!serverBasedMeta) {
         return Result.fail('Document meta not found')
       }
-
-      const decryptedMeta = serverBasedMeta.copyWithNewValues({ name: decryptedNode.name })
 
       if (!keysResult) {
         return Result.fail('Unable to load all necessary data')
@@ -178,7 +219,7 @@ export class LoadDocument {
        * actions like duplicating it.
        */
       const authenticatedMetaAttempt = await this.getDocumentMeta.execute({
-        volumeId: decryptedMeta.volumeId,
+        volumeId: serverBasedMeta.volumeId,
         linkId: nodeMeta.linkId,
       })
 
@@ -196,19 +237,18 @@ export class LoadDocument {
 
       const entitlements: PublicDocumentEntitlements = {
         keys: keysResult,
-        role,
         nodeMeta,
       }
 
       const latestCommitId = serverBasedMeta.latestCommitId()
       let decryptedCommit: DecryptedCommit | undefined
 
-      if (latestCommitId) {
-        const decryptResult = await this.loadCommit.execute(
-          nodeMeta,
-          latestCommitId,
-          entitlements.keys.documentContentKey,
-        )
+      if (latestCommit && latestCommitId) {
+        const decryptResult = await this.decryptCommit.execute({
+          commit: latestCommit,
+          commitId: latestCommitId,
+          documentContentKey: entitlements.keys.documentContentKey,
+        })
         if (decryptResult.isFailed()) {
           return Result.fail(decryptResult.getError())
         }
@@ -217,7 +257,23 @@ export class LoadDocument {
         this.logger.info(`Downloaded and decrypted commit with ${decryptedCommit?.numberOfUpdates()} updates`)
       }
 
-      return Result.ok({ entitlements, meta: decryptedMeta, node: decryptedNode, decryptedCommit })
+      const decryptedNode = nodeResult.getValue().node
+
+      const documentState = new PublicDocumentState({
+        ...DocumentState.defaults,
+        realtimeEnabled: publicEditingEnabled,
+        documentMeta: serverBasedMeta,
+        userRole: role,
+        decryptedNode: decryptedNode,
+        entitlements,
+        documentName: decryptedNode.name,
+        currentCommitId: serverBasedMeta.latestCommitId(),
+        baseCommit: decryptedCommit,
+        documentTrashState: decryptedNode.trashed ? 'trashed' : 'not_trashed',
+        realtimeConnectionToken: realtimeToken,
+      })
+
+      return Result.ok({ documentState })
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to load document')
     }
