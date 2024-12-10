@@ -1,5 +1,5 @@
 import { CommentController } from '../Comments/CommentController'
-import { DocumentState, PublicDocumentState } from '../../State/DocumentState'
+import type { PublicDocumentState } from '../../State/DocumentState'
 import { EditorController } from '../../EditorController/EditorController'
 import { EditorOrchestrator } from '../Orchestrator/EditorOrchestrator'
 import { RealtimeController } from '../../RealtimeController/RealtimeController'
@@ -17,7 +17,7 @@ import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { FeatureFlag, UnleashClient } from '@proton/unleash'
 import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
-import type { LoadCommit } from '../../UseCase/LoadCommit'
+import type { FetchDecryptedCommit } from '../../UseCase/FetchDecryptedCommit'
 import type { LoadDocument } from '../../UseCase/LoadDocument'
 import type { LoadThreads } from '../../UseCase/LoadThreads'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -39,7 +39,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
     private loadDocument: LoadDocument,
     private exportAndDownload: ExportAndDownload,
     private eventBus: InternalEventBusInterface,
-    private loadCommit: LoadCommit,
+    private loadCommit: FetchDecryptedCommit,
     private getDocumentMeta: GetDocumentMeta,
     private logger: LoggerInterface,
     private unleashClient: UnleashClient,
@@ -77,23 +77,13 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       return
     }
 
-    const { entitlements, meta: docMeta, node, decryptedCommit } = loadResult.getValue()
-    this.logger.info(`Loaded document meta with last commit id ${docMeta.latestCommitId()}`)
+    const { documentState } = loadResult.getValue()
+    this.logger.info(
+      `Loaded document meta with last commit id ${documentState.getProperty('documentMeta').latestCommitId()}`,
+    )
 
     this.syncedEditorState.setProperty('userName', AnonymousUserDisplayName)
 
-    const documentState = new PublicDocumentState({
-      ...DocumentState.defaults,
-      realtimeEnabled: publicEditingEnabled,
-      documentMeta: docMeta,
-      userRole: entitlements.role,
-      decryptedNode: node,
-      entitlements,
-      documentName: docMeta.name,
-      currentCommitId: docMeta.latestCommitId(),
-      baseCommit: decryptedCommit,
-      documentTrashState: node.trashed ? 'trashed' : 'not_trashed',
-    })
     this.documentState = documentState
 
     const editorController = new EditorController(this.logger, this.exportAndDownload, this.documentState)
@@ -129,10 +119,10 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       this.commentsController.fetchAllComments()
     }
 
-    if (entitlements.role.isPublicViewerWithAccess()) {
+    if (documentState.getProperty('userRole').isPublicViewerWithAccess()) {
       this.logger.info('Redirecting to authed document')
       this.driveCompat.redirectToAuthedDocument({
-        volumeId: docMeta.volumeId,
+        volumeId: documentState.getProperty('documentMeta').volumeId,
         linkId: nodeMeta.linkId,
       })
       return

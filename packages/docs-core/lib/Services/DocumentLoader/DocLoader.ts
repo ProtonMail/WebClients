@@ -1,6 +1,6 @@
 import { AuthenticatedDocController } from '../../AuthenticatedDocController/AuthenticatedDocController'
 import { CommentController } from '../Comments/CommentController'
-import { DocumentState } from '../../State/DocumentState'
+import type { DocumentState } from '../../State/DocumentState'
 import { EditorController } from '../../EditorController/EditorController'
 import { EditorOrchestrator } from '../Orchestrator/EditorOrchestrator'
 import { metricsBucketNumberForUpdateCount } from '../../Util/bucketNumberForUpdateCount'
@@ -23,7 +23,7 @@ import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import type { GetNode } from './../../UseCase/GetNode'
 import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
 import type { InternalEventBusInterface, CommentControllerInterface } from '@proton/docs-shared'
-import type { LoadCommit } from '../../UseCase/LoadCommit'
+import type { FetchDecryptedCommit } from '../../UseCase/FetchDecryptedCommit'
 import type { LoadDocument } from '../../UseCase/LoadDocument'
 import type { LoadThreads } from '../../UseCase/LoadThreads'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -50,7 +50,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     private squashDoc: SquashDocument,
     private createInitialCommit: SeedInitialCommit,
     private loadDocument: LoadDocument,
-    private loadCommit: LoadCommit,
+    private loadCommit: FetchDecryptedCommit,
     private encryptComment: EncryptComment,
     private createComment: CreateComment,
     private createThread: CreateThread,
@@ -85,20 +85,11 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
       return
     }
 
-    const { entitlements, meta, node, decryptedCommit } = loadResult.getValue()
-    this.logger.info(`Loaded document meta with last commit id ${meta.latestCommitId()}`)
+    const { documentState } = loadResult.getValue()
+    this.logger.info(
+      `Loaded document meta with last commit id ${documentState.getProperty('documentMeta').latestCommitId()}`,
+    )
 
-    const documentState = new DocumentState({
-      ...DocumentState.defaults,
-      documentMeta: meta,
-      userRole: entitlements.role,
-      decryptedNode: node,
-      entitlements,
-      documentName: meta.name,
-      currentCommitId: meta.latestCommitId(),
-      baseCommit: decryptedCommit,
-      documentTrashState: node.trashed ? 'trashed' : 'not_trashed',
-    })
     this.documentState = documentState
 
     const editorController = new EditorController(this.logger, this.exportAndDownload, documentState)
@@ -168,7 +159,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     const timeToLoadInSeconds = (endTime - startTime) / 1000
     metrics.docs_time_load_document_histogram.observe({
       Labels: {
-        updates: metricsBucketNumberForUpdateCount(decryptedCommit?.numberOfUpdates() ?? 0),
+        updates: metricsBucketNumberForUpdateCount(documentState.getProperty('baseCommit')?.numberOfUpdates() ?? 0),
       },
       Value: timeToLoadInSeconds,
     })

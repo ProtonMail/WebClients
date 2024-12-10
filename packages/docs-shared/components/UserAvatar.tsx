@@ -60,6 +60,7 @@ export const UserAvatar = forwardRef(function UserAvatar(
   return (
     <button
       ref={ref}
+      data-testid="user-avatar"
       className={clsx(
         'h-custom w-custom relative flex items-center justify-center overflow-hidden rounded-lg',
         className,
