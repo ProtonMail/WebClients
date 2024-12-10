@@ -8,7 +8,7 @@ import { Icon, useModalState, useNotifications } from '@proton/components';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { CoreButton } from '../atoms';
+import { Button, CoreButton } from '../atoms';
 import { Balance } from '../components/Balance';
 import { BitcoinBuyModal } from '../components/BitcoinBuyModal';
 import { BitcoinSendModal } from '../components/BitcoinSendModal';
@@ -109,8 +109,19 @@ export const AccountContainer = () => {
                                 <Icon alt={c('Action').t`Edit`} name="cog-drawer" size={5} />
                             </CoreButton>
                         </div>
-
                         <div className="ui-standard">
+                            <Button
+                                size="small"
+                                shape="ghost"
+                                color="norm"
+                                className="my-2 button-lighter"
+                                onClick={() => {
+                                    openDrawer({ kind: 'discover', wallet, theme });
+                                }}
+                            >
+                                {c('Wallet header').t`Secure your wallet`}
+                                <Icon alt={c('Action').t`Secure your wallet`} name="chevron-right" className="ml-2" />
+                            </Button>
                             <InvitesButton walletAccount={walletAccount} />
                         </div>
                     </div>
