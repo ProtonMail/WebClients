@@ -33,7 +33,7 @@ import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import { DocControllerEvent } from '../AuthenticatedDocController/AuthenticatedDocControllerEvent'
 import type { GetDocumentMeta } from '../UseCase/GetDocumentMeta'
-import type { LoadCommit } from '../UseCase/LoadCommit'
+import type { FetchDecryptedCommit } from '../UseCase/FetchDecryptedCommit'
 
 describe('RealtimeController', () => {
   let controller: RealtimeController
@@ -90,7 +90,7 @@ describe('RealtimeController', () => {
             byteSize: 0,
           }),
         ),
-      } as unknown as jest.Mocked<LoadCommit>,
+      } as unknown as jest.Mocked<FetchDecryptedCommit>,
       {
         execute: jest.fn().mockReturnValue(
           Result.ok({
@@ -530,17 +530,12 @@ describe('RealtimeController', () => {
 
       controller.initializeConnection()
 
-      expect(websocketService.createConnection).toHaveBeenCalledWith(
-        expect.any(Object),
-        mockEntitlements.keys,
-        expect.objectContaining({
-          commitId: expect.any(Function),
-        }),
-      )
+      expect(websocketService.createConnection).toHaveBeenCalledWith(documentState)
 
       // Test that the commitId callback returns the current commit ID
-      const commitIdCallback = websocketService.createConnection.mock.calls[0][2].commitId
-      expect(commitIdCallback()).toBe(mockCurrentCommitId)
+      const firstParam = websocketService.createConnection.mock.calls[0][0]
+      const commitId = firstParam.getProperty('currentCommitId')
+      expect(commitId).toBe(mockCurrentCommitId)
     })
 
     it('should log error if connection fails', async () => {
@@ -1052,7 +1047,7 @@ describe('RealtimeController', () => {
       controller.logger.error = jest.fn()
       eventBus.publish = jest.fn()
 
-      controller._loadCommit.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
+      controller._fetchDecryptedCommit.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
       controller._getDocumentMeta.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
 
       await controller.refetchCommitDueToStaleContents('rts-disconnect')
@@ -1064,7 +1059,7 @@ describe('RealtimeController', () => {
     })
 
     it('should not reprocess if already processing', async () => {
-      controller._loadCommit.execute = jest.fn().mockReturnValue(
+      controller._fetchDecryptedCommit.execute = jest.fn().mockReturnValue(
         Result.ok({
           numberOfUpdates: jest.fn(),
           squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
@@ -1077,11 +1072,11 @@ describe('RealtimeController', () => {
 
       await controller.refetchCommitDueToStaleContents('rts-disconnect')
 
-      expect(controller._loadCommit.execute).not.toHaveBeenCalled()
+      expect(controller._fetchDecryptedCommit.execute).not.toHaveBeenCalled()
     })
 
     it('should re-set the initial commit if commit is successfully resolved', async () => {
-      controller._loadCommit.execute = jest.fn().mockReturnValue(
+      controller._fetchDecryptedCommit.execute = jest.fn().mockReturnValue(
         Result.ok({
           numberOfUpdates: jest.fn().mockReturnValue(0),
           needsSquash: jest.fn().mockReturnValue(false),

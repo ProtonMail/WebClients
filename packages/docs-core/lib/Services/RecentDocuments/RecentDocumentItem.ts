@@ -1,5 +1,6 @@
 import { ServerTime } from '@proton/docs-shared'
 import type { LocalStorageValue } from './types'
+import { nodeMetaUniqueId } from '@proton/drive-store/lib'
 
 export class RecentDocumentItem {
   constructor(
@@ -76,5 +77,9 @@ export class RecentDocumentItem {
       data.isOwnedByOthers as boolean,
       data.nodePath as string[],
     )
+  }
+
+  uniqueId(): string {
+    return nodeMetaUniqueId({ linkId: this.linkId, volumeId: this.volumeId })
   }
 }

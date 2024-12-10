@@ -3,7 +3,7 @@ import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import type { ServerMessageWithDocumentUpdates, ServerMessageWithEvents } from '@proton/docs-proto'
 import { DecryptedValue, EventTypeEnum } from '@proton/docs-proto'
 import type { LoggerInterface } from '@proton/utils/logs'
-import type { GetRealtimeUrlAndToken } from '../../UseCase/CreateRealtimeValetToken'
+import type { FetchRealtimeToken } from '../../UseCase/FetchRealtimeToken'
 import type { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { WebsocketService } from './WebsocketService'
@@ -18,6 +18,9 @@ import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto'
 import { MetricService } from '../Metrics/MetricService'
 import { UserState } from '../../State/UserState'
+import type { DocumentStateValues } from '../../State/DocumentState';
+import { DocumentState } from '../../State/DocumentState'
+import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
 
 const mockOnReadyContentPayload = new TextEncoder().encode(
   JSON.stringify({ connectionId: '12345678', clientUpgradeRecommended: true, clientUpgradeRequired: true }),
@@ -56,6 +59,16 @@ describe('WebsocketService', () => {
       userOwnAddress: 'foo',
     }
 
+    const entitlements = {
+      keys,
+      nodeMeta: document,
+    } as DocumentEntitlements
+
+    const documentState = new DocumentState({
+      ...DocumentState.defaults,
+      entitlements,
+    } as DocumentStateValues)
+
     eventBus = {
       publish: jest.fn(),
     } as unknown as jest.Mocked<InternalEventBusInterface>
@@ -72,7 +85,7 @@ describe('WebsocketService', () => {
 
     service = new WebsocketService(
       userState,
-      {} as jest.Mocked<GetRealtimeUrlAndToken>,
+      {} as jest.Mocked<FetchRealtimeToken>,
       encryptMessage,
       {
         execute: jest.fn().mockReturnValue(Result.ok(stringToUtf8Array('123'))),
@@ -83,9 +96,7 @@ describe('WebsocketService', () => {
       '0.0.0.0',
     )
 
-    service.createConnection(document, keys, {
-      commitId: () => undefined,
-    })
+    service.createConnection(documentState)
 
     record = service.getConnectionRecord('link-id-123')!
 

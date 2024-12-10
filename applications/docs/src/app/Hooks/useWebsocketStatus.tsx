@@ -4,7 +4,7 @@ import { mergeRegister } from '@lexical/utils'
 import type { WebsocketConnectionEventPayloads, WebsocketConnectionEventStatusChange } from '@proton/docs-core'
 import { WebsocketConnectionEvent } from '@proton/docs-core'
 import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
-import { areNodeMetasEqual } from '@proton/drive-store/lib/interface'
+import { areNodeMetasEqual } from '@proton/drive-store'
 import type { ConnectionCloseReason } from '@proton/docs-proto'
 
 type WebsocketStatus = {

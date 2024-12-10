@@ -7,6 +7,11 @@ import metrics from '@proton/metrics'
 import { isLocalEnvironment } from '../Util/isDevOrBlack'
 import { getWebSocketServerURL } from './getWebSocketServerURL'
 import type { MetricService } from '../Services/Metrics/MetricService'
+import { LoadLogger } from '../LoadLogger/LoadLogger'
+import type { PublicDocumentState } from '../State/DocumentState'
+import type { DocumentState } from '../State/DocumentState'
+import type { FetchRealtimeToken } from '../UseCase/FetchRealtimeToken'
+import type { UserState } from '../State/UserState'
 
 /**
  * The heartbeat mechanism is temporarily disabled due to the fact that we cannot renew our heartbeat when receiving
@@ -36,16 +41,62 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   private didReceiveReadyMessageFromRTS = false
   closeConnectionDueToGoingAwayTimer: ReturnType<typeof setTimeout> | undefined = undefined
 
+  lastCommitId: string | undefined = undefined
+  realtimeToken: { token: string; commitId: string | undefined; initializedAt: number } | undefined = undefined
+
   constructor(
+    readonly documentState: DocumentState | PublicDocumentState,
+    readonly userState: UserState,
     readonly callbacks: WebsocketCallbacks,
+    private _fetchRealtimeToken: FetchRealtimeToken,
     readonly metricService: MetricService,
     private logger: LoggerInterface,
     private appVersion: string,
   ) {
     window.addEventListener('offline', this.handleWindowWentOfflineEvent)
     window.addEventListener('online', this.handleWindowCameOnlineEvent)
-
     document.addEventListener('visibilitychange', this.handleVisibilityChangeEvent)
+
+    this.lastCommitId = this.documentState.getProperty('currentCommitId')
+
+    /**
+     * On app initialization, the load document flow will fetch a conenction token for us so it can do it much earlier
+     * then the constructor of this function is called. If it's available we use it. Otherwise, the token will be fetched
+     * during the connect execution, and can be refetched multiple times if we disconnect and reconnect.
+     */
+    this.documentState.subscribeToProperty('realtimeConnectionToken', (token) => {
+      if (token) {
+        this.realtimeToken = { token, commitId: this.lastCommitId, initializedAt: Date.now() }
+      }
+    })
+
+    this.documentState.subscribeToProperty('currentCommitId', (commitId) => {
+      if (commitId !== this.lastCommitId) {
+        this.lastCommitId = commitId
+        this.clearTokenCache()
+      }
+    })
+  }
+
+  clearTokenCache(): void {
+    this.realtimeToken = undefined
+  }
+
+  /**
+   * A cached in memory token that we'll use if it's available.
+   * The cached token comes from outside our class during app init.
+   */
+  getCachedToken(): string | undefined {
+    /** If we retrieve a token, we'll treat it as valid for this long. When the commit id changes, we'll invalidate the cached token */
+    const TokenCacheValidityPeriodMS = 60_000
+
+    if (!this.realtimeToken) {
+      return undefined
+    }
+
+    return Date.now() - this.realtimeToken.initializedAt < TokenCacheValidityPeriodMS
+      ? this.realtimeToken.token
+      : undefined
   }
 
   handleVisibilityChangeEvent = (): void => {
@@ -131,20 +182,34 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   }
 
   async getTokenOrFailConnection(): Promise<ApiResult<{ token: string }>> {
-    const urlAndTokenResult = await this.callbacks.getUrlAndToken()
-
-    if (urlAndTokenResult.isFailed()) {
-      this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getError())
-      this.state.didFailToFetchToken()
-
-      this.callbacks.onFailToGetToken(urlAndTokenResult.getError().code)
-
-      this.queueReconnection()
-
-      return ApiResult.fail(urlAndTokenResult.getError())
+    const cachedToken = this.getCachedToken()
+    if (cachedToken) {
+      this.logger.info('Using cached realtime token')
+      return ApiResult.ok({ token: cachedToken })
     }
 
-    return ApiResult.ok(urlAndTokenResult.getValue())
+    const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
+    const urlAndTokenResult = await this._fetchRealtimeToken.execute(nodeMeta, this.lastCommitId)
+
+    if (!urlAndTokenResult.isFailed()) {
+      this.userState.setProperty(
+        'currentDocumentEmailDocTitleEnabled',
+        urlAndTokenResult.getValue().preferences.includeDocumentNameInEmails,
+      )
+
+      this.documentState.setProperty('realtimeConnectionToken', urlAndTokenResult.getValue().token)
+
+      return ApiResult.ok(urlAndTokenResult.getValue())
+    }
+
+    this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getError())
+    this.state.didFailToFetchToken()
+
+    this.callbacks.onFailToGetToken(urlAndTokenResult.getError().code)
+
+    this.queueReconnection()
+
+    return ApiResult.fail(urlAndTokenResult.getError())
   }
 
   async connect(abortSignal?: () => boolean): Promise<void> {
@@ -164,7 +229,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     clearTimeout(this.reconnectTimeout)
 
-    this.logger.info('Fetching url and token for websocket connection')
+    LoadLogger.logEventRelativeToLoadTime('Fetching token for websocket connection')
 
     const urlAndTokenResult = await this.getTokenOrFailConnection()
     if (urlAndTokenResult.isFailed()) {
@@ -183,7 +248,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       return
     }
 
-    this.logger.info('Opening websocket connection')
+    LoadLogger.logEventRelativeToLoadTime('Opening websocket connection')
 
     this.socket = new WebSocket(connectionUrl, [this.appVersion])
     this.socket.binaryType = 'arraybuffer'
@@ -195,11 +260,15 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
         `Websocket connection opened; readyState: ${this.socket?.readyState} bufferAmount: ${this.socket?.bufferedAmount}`,
       )
 
+      this.clearTokenCache()
+
       this.heartbeat()
 
       this.state.didOpen()
 
       this.callbacks.onOpen()
+
+      LoadLogger.logEventRelativeToLoadTime('Websocket connection opened')
     }
 
     this.socket.onmessage = async (event) => {
@@ -211,11 +280,15 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       /** socket errors are completely opaque and convey no info. So we do not log an error here as to not pollute Sentry */
       this.logger.info('Websocket error:', event)
 
+      this.clearTokenCache()
+
       this.handleSocketClose(ConnectionCloseReason.CODES.INTERNAL_ERROR, 'Websocket error')
     }
 
     this.socket.onclose = (event) => {
       this.logger.info('Websocket closed:', event.code, event.reason)
+
+      this.clearTokenCache()
 
       this.handleSocketClose(event.code, event.reason)
     }

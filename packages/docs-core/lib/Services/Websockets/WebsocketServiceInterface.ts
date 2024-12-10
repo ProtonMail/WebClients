@@ -1,14 +1,10 @@
 import type { DocumentKeys, NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import type { BroadcastSource, WebsocketConnectionInterface } from '@proton/docs-shared'
 import type { EventTypeEnum } from '@proton/docs-proto'
-import type { PublicDocumentKeys } from '../../Types/DocumentEntitlements'
+import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 
 export interface WebsocketServiceInterface {
-  createConnection(
-    nodeMeta: NodeMeta | PublicNodeMeta,
-    keys: DocumentKeys | PublicDocumentKeys,
-    options: { commitId: () => string | undefined },
-  ): WebsocketConnectionInterface
+  createConnection(documentState: DocumentState | PublicDocumentState): WebsocketConnectionInterface
   isConnected(nodeMeta: NodeMeta | PublicNodeMeta): boolean
 
   sendDocumentUpdateMessage(

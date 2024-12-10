@@ -5,12 +5,12 @@ import { Result } from '@proton/docs-shared'
 import type { DecryptedMessage } from '@proton/docs-shared'
 import { DecryptedCommit } from '../Models/DecryptedCommit'
 import metrics from '@proton/metrics'
-import type { SessionKey } from '@proton/crypto/lib'
+import type { DocumentKeys } from '@proton/drive-store/lib/_documents'
 
 type DecryptCommitDTO = {
   commit: Commit
   commitId: string
-  documentContentKey: SessionKey
+  documentContentKey: DocumentKeys['documentContentKey']
 }
 
 const VERIFY_VALUE_FALSE_DUE_TO_COMMIT_HAVING_SEPARATE_VERIFICATION = false

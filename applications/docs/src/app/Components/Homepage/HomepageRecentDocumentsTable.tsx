@@ -19,7 +19,7 @@ export function HomepageRecentDocumentsTable() {
       </thead>
       <tbody className="overflow-scroll">
         {items.map((recentDocument) => (
-          <HomepageRecentDocumentsTableRow key={recentDocument.linkId} recentDocument={recentDocument} />
+          <HomepageRecentDocumentsTableRow key={recentDocument.uniqueId()} recentDocument={recentDocument} />
         ))}
       </tbody>
     </table>

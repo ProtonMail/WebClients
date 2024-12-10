@@ -2,10 +2,14 @@ import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import { ApiResult, type RealtimeUrlAndToken } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
 
-export class GetRealtimeUrlAndToken {
+/** Gets a connection token from the Docs API to connect with the RTS */
+export class FetchRealtimeToken {
   constructor(private docsApi: DocsApi) {}
 
-  async execute(lookup: NodeMeta | PublicNodeMeta, commitId?: string): Promise<ApiResult<RealtimeUrlAndToken>> {
+  async execute(
+    lookup: NodeMeta | PublicNodeMeta,
+    commitId: string | undefined,
+  ): Promise<ApiResult<RealtimeUrlAndToken>> {
     const result = await this.docsApi.createRealtimeValetToken(lookup, commitId)
 
     if (result.isFailed()) {
