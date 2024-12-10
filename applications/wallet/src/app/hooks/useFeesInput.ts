@@ -1,15 +1,28 @@
 import { useEffect } from 'react';
 
-import { MEDIAN_PRIORITY_TARGET_BLOCK, MIN_FEE_RATE } from '@proton/wallet';
+import { MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet';
 import { useNetworkFees } from '@proton/wallet/store';
 
 import { type TxBuilderHelper } from './useTxBuilder';
 
 export const findNearestBlockTargetFeeRate = (
-    blockEstimate: number,
+    blockEstimate: PriorityTargetBlock,
     blockEstimationKeys: [number, number][],
-    minimumFee?: number | undefined
+    minimumFee?: number | undefined,
+    recommendedFees?:
+        | {
+              HighPriority: number;
+              MedianPriority: number;
+              LowPriority: number;
+          }
+        | undefined
 ): number | undefined => {
+    const recommendedFeesByBlockTarget = {
+        [PriorityTargetBlock.HighPriorityTargetBlock]: recommendedFees?.HighPriority ?? MIN_FEE_RATE,
+        [PriorityTargetBlock.MedianPriorityTargetBlock]: recommendedFees?.MedianPriority ?? MIN_FEE_RATE,
+        [PriorityTargetBlock.LowPriorityTargetBlock]: recommendedFees?.LowPriority ?? MIN_FEE_RATE,
+    };
+
     const nearestAbove = blockEstimationKeys.find(([block]) => {
         return Number(block) >= blockEstimate;
     });
@@ -21,9 +34,12 @@ export const findNearestBlockTargetFeeRate = (
     const [first] = blockEstimationKeys;
 
     const fee = (nearestAbove ?? nearestBelow ?? first)?.[1];
+    // Use recommended fees if exist and valid
+    const estimatedFee =
+        recommendedFeesByBlockTarget[blockEstimate] > 1 ? recommendedFeesByBlockTarget[blockEstimate] : fee;
 
     // Return minimumFee if exists and if superior to fee or if fee is undefined
-    return minimumFee && (fee === undefined || minimumFee > fee) ? minimumFee : fee;
+    return minimumFee && (estimatedFee === undefined || minimumFee > estimatedFee) ? minimumFee : estimatedFee;
 };
 
 export const findQuickestBlock = (feeRate: number, blockEstimationKeys: [number, number][]): number | undefined => {
@@ -36,20 +52,26 @@ export const useFeesInput = (txBuilderHelpers: TxBuilderHelper) => {
 
     const [fees, loading] = useNetworkFees();
 
-    const getFeesByBlockTarget = (blockTarget: number) => {
-        return findNearestBlockTargetFeeRate(blockTarget, fees?.feesList ?? [], fees?.minimumBroadcastFee);
+    const getFeesByBlockTarget = (blockTarget: PriorityTargetBlock) => {
+        return findNearestBlockTargetFeeRate(
+            blockTarget,
+            fees?.feesList ?? [],
+            fees?.minimumBroadcastFee,
+            fees?.recommendedFees
+        );
     };
 
     const feeRate = Number(txBuilder.getFeeRate() ?? MIN_FEE_RATE);
 
     useEffect(() => {
         if (fees) {
-            const { feesList, minimumBroadcastFee } = fees;
+            const { feesList, minimumBroadcastFee, recommendedFees } = fees;
 
             const defaultFeeRate = findNearestBlockTargetFeeRate(
-                MEDIAN_PRIORITY_TARGET_BLOCK,
+                PriorityTargetBlock.LowPriorityTargetBlock,
                 feesList,
-                minimumBroadcastFee
+                minimumBroadcastFee,
+                recommendedFees
             );
             if (defaultFeeRate && !txBuilder.getFeeRate()) {
                 updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(Math.round(defaultFeeRate))));
