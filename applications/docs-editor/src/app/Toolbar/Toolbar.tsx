@@ -148,6 +148,8 @@ export default function DocumentEditorToolbar({
   const [isLink, setIsLink] = useState(false)
   const defaultFontSize = `${rootFontSize()}px`
   const [fontSize, setFontSize] = useState(defaultFontSize)
+  const [textColor, setTextColor] = useState('')
+  const [backgroundColor, setBackgroundColor] = useState('')
 
   const [fontFamily, setFontFamily] = useState(DefaultFont.id)
   const fontFamilyLabel = useMemo(
@@ -357,6 +359,9 @@ export default function DocumentEditorToolbar({
 
       const defaultFontSizeValue = elementDOM ? `${getHTMLElementFontSize(elementDOM)}px` : defaultFontSize
       setFontSize($getSelectionStyleValueForProperty(selection, 'font-size', defaultFontSizeValue))
+
+      setTextColor($getSelectionStyleValueForProperty(selection, 'color'))
+      setBackgroundColor($getSelectionStyleValueForProperty(selection, 'background-color'))
 
       const fontFamilyValue = $getSelectionStyleValueForProperty(selection, 'font-family', 'Arial')
       const fontFamilyId = getFontFaceIdFromValue(fontFamilyValue)
@@ -921,8 +926,10 @@ export default function DocumentEditorToolbar({
           ),
           menu: (
             <FontColorMenu
+              currentTextColor={textColor}
               textColors={TextColors}
               onTextColorChange={(color) => updateTextStyle('color', color)}
+              currentBackgroundColor={backgroundColor}
               backgroundColors={BackgroundColors}
               onBackgroundColorChange={(color) => updateTextStyle('background-color', color)}
             />
