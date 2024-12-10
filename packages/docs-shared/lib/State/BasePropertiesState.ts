@@ -10,26 +10,15 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
   implements BasePropertiesStateInterface<P, E>
 {
   private values: P
-  private subscribers: Set<(state: P) => void> = new Set()
+
   private propertySubscribers: Map<keyof P, Set<PropertyCallback<keyof P, P>>> = new Map()
-  private eventSubscribers: Map<E['name'], Set<(payload: E['payload']) => void>> = new Map()
   private anyPropertySubscribers: Set<(property: keyof P, value: P[keyof P]) => void> = new Set()
+
+  private eventSubscribers: Map<E['name'], Set<(payload: E['payload']) => void>> = new Map()
+  private anyEventSubscribers: Set<(event: E) => void> = new Set()
 
   constructor(defaultValues: P) {
     this.values = { ...defaultValues }
-  }
-
-  subscribe(callback: (state: P) => void) {
-    this.subscribers.add(callback)
-    try {
-      callback({ ...this.values })
-    } catch (error) {
-      console.error('Error in subscriber:', error)
-    }
-
-    return () => {
-      this.subscribers.delete(callback)
-    }
   }
 
   subscribeToAnyProperty(callback: (property: keyof P, value: P[keyof P]) => void): () => void {
@@ -70,17 +59,6 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
     }
   }
 
-  private notifyGeneralSubscribers() {
-    const state = { ...this.values }
-    this.subscribers.forEach((callback) => {
-      try {
-        callback(state)
-      } catch (error) {
-        console.error('Error in subscriber:', error)
-      }
-    })
-  }
-
   private notifyPropertySubscribers<T extends keyof P>(property: T, value: P[T], previousValue: P[T]) {
     const propertySubscribers = this.propertySubscribers.get(property)
     if (propertySubscribers) {
@@ -109,7 +87,6 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
     const previousValue = this.values[property]
     this.values[property] = value
 
-    this.notifyGeneralSubscribers()
     this.notifyPropertySubscribers(property, value, previousValue)
   }
 
@@ -122,9 +99,9 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
   }
 
   emitEvent(event: E): void {
-    const subscribers = this.eventSubscribers.get(event.name)
-    if (subscribers) {
-      subscribers.forEach((callback) => {
+    const thisEventSubscribers = this.eventSubscribers.get(event.name)
+    if (thisEventSubscribers) {
+      thisEventSubscribers.forEach((callback) => {
         try {
           callback(event.payload)
         } catch (error) {
@@ -132,6 +109,8 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
         }
       })
     }
+
+    this.notifyAnyEventSubscribers(event)
   }
 
   subscribeToEvent<T extends E['name']>(event: T, callback: (payload: EventPayloadMap<E>[T]) => void): () => void {
@@ -148,5 +127,22 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
         this.eventSubscribers.delete(event)
       }
     }
+  }
+
+  subscribeToAnyEvent(callback: (event: E) => void): () => void {
+    this.anyEventSubscribers.add(callback)
+    return () => {
+      this.anyEventSubscribers.delete(callback)
+    }
+  }
+
+  private notifyAnyEventSubscribers(event: E) {
+    this.anyEventSubscribers.forEach((callback) => {
+      try {
+        callback(event)
+      } catch (error) {
+        console.error(`Error in any event subscriber for ${String(event)}:`, error)
+      }
+    })
   }
 }

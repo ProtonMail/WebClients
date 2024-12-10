@@ -15,7 +15,7 @@ type HueValue = number
 
 const UserAvatarHueCache = new Map<string, number>()
 
-interface UserAvatarProps extends Omit<ComponentPropsWithoutRef<'div'>, 'color'> {
+interface UserAvatarProps extends Omit<ComponentPropsWithoutRef<'button'>, 'color'> {
   name: string
   className?: string
   color?: { hue: HueValue } | { hsl: string }
@@ -23,7 +23,7 @@ interface UserAvatarProps extends Omit<ComponentPropsWithoutRef<'div'>, 'color'>
 
 export const UserAvatar = forwardRef(function UserAvatar(
   { name, className, color, ...rest }: UserAvatarProps,
-  ref: ForwardedRef<HTMLDivElement>,
+  ref: ForwardedRef<HTMLButtonElement>,
 ) {
   if (!name) {
     throw new Error('UserAvatar requires a name prop')
@@ -58,7 +58,7 @@ export const UserAvatar = forwardRef(function UserAvatar(
   }, [name])
 
   return (
-    <div
+    <button
       ref={ref}
       className={clsx(
         'h-custom w-custom relative flex items-center justify-center overflow-hidden rounded-lg',
@@ -80,6 +80,6 @@ export const UserAvatar = forwardRef(function UserAvatar(
       {...rest}
     >
       {letter}
-    </div>
+    </button>
   )
 })
