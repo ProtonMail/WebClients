@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -7,6 +7,7 @@ import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
 import type { OnLoginCallback } from '@proton/components';
 import {
+    LoaderPage,
     StandardLoadErrorPage,
     UnAuthenticated,
     startUnAuthFlow,
@@ -63,7 +64,7 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
-import { useFlag } from '@proton/unleash';
+import { useFlag, useFlagsReady } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -219,6 +220,10 @@ const SingleSignupContainerV2 = ({
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
+    const lumoSignupEnabled = useFlag('LumoSignupAvailable');
+
+    const [flagsReady, setFlagsReady] = useState(false);
+    const flagsReadyPromise = useFlagsReady();
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -364,6 +369,10 @@ const SingleSignupContainerV2 = ({
         generateMnemonic,
         CustomStep,
     } = signupConfiguration;
+
+    useEffect(() => {
+        void flagsReadyPromise.finally(() => setFlagsReady(true));
+    }, []);
 
     useEffect(() => {
         const run = async () => {
@@ -1128,6 +1137,14 @@ const SingleSignupContainerV2 = ({
 
         return result.cache;
     };
+
+    if (toApp === APPS.PROTONLUMO && flagsReady && !lumoSignupEnabled) {
+        return <Redirect to={SSO_PATHS.LOGIN} />;
+    }
+
+    if (toApp === APPS.PROTONLUMO && !flagsReady) {
+        return <LoaderPage />;
+    }
 
     return (
         <PublicThemeProvider value={theme}>
