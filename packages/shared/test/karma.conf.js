@@ -16,9 +16,10 @@ module.exports = (config) => {
         basePath: '..',
         frameworks: ['jasmine', 'webpack'],
         plugins: [karmaJasmine, karmaWebpack, karmaChromeLauncher, karmaSpecReporter, karmaJunitReporter],
-        files: ['test/index.spec.js'],
+        files: ['test/index.spec.js', { pattern: 'test/**/*.jpg', watched: false, included: false, served: true }],
         preprocessors: {
             'test/index.spec.js': ['webpack'],
+            'test/**/*.jpg': ['webpack'],
         },
         webpack: {
             mode: 'development',
@@ -41,6 +42,18 @@ module.exports = (config) => {
                             },
                         ],
                         exclude: /node_modules\/(?!.*(bip39|pmcrypto))/,
+                    },
+                    {
+                        test: /\.(jpg|jpeg|png|gif)$/i,
+                        use: [
+                            {
+                                loader: 'url-loader',
+                                options: {
+                                    limit: 8192,
+                                    esModule: false,
+                                },
+                            },
+                        ],
                     },
                 ],
             },
