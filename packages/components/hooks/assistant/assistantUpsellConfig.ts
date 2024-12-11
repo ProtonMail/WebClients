@@ -51,7 +51,7 @@ const paidMultipleUserUpsellConfig = (
     // if we already have scribe addons, then we will use the current number of scribes as starting addon number
     // in the upsell
     // if we don't, then we will use the number of members as starting number for scribe addons
-    const addonsValue = selectedPlan.getTotalScribes() || selectedPlan.getTotalMembers();
+    const addonsValue = selectedPlan.getTotalScribes() || selectedPlan.getTotalUsers();
 
     const planIDs: PlanIDs = {
         ...selectedPlan.planIDs,
