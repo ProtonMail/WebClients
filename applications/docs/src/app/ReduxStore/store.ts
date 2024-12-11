@@ -4,15 +4,21 @@ import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit'
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable'
 
 import { start } from './listener'
-import { rootReducer } from './rootReducer'
+import { type DocsState, persistReducer, rootReducer } from './rootReducer'
 import { type DocsThunkArguments, extraThunkArguments } from './thunk'
+import { getPersistedState } from '@proton/redux-shared-store/persist'
 
-export type DocsState = ReturnType<typeof rootReducer>
-
-export const setupStore = () => {
+export const setupStore = ({
+  preloadedState,
+  persist,
+}: {
+  preloadedState?: Partial<DocsState>
+  persist?: boolean
+} = {}) => {
   const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments })
 
   const store = configureStore({
+    preloadedState,
     reducer: rootReducer,
     devTools: process.env.NODE_ENV !== 'production',
     middleware: (getDefaultMiddleware) =>
@@ -26,13 +32,14 @@ export const setupStore = () => {
   })
 
   const startListening = listenerMiddleware.startListening as AppStartListening
-  start(startListening)
+  const getDocsPersistedState = persist ? (state: DocsState) => getPersistedState(state, persistReducer) : undefined
+  start({ startListening, persistTransformer: getDocsPersistedState })
 
   if (process.env.NODE_ENV !== 'production' && module.hot) {
     module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer))
     module.hot.accept('./listener', () => {
       listenerMiddleware.clearListeners()
-      start(startListening)
+      start({ startListening, persistTransformer: getDocsPersistedState })
     })
   }
 
