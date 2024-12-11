@@ -12,17 +12,20 @@ import {
     updateDraftType,
     updateFontFace,
     updateFontSize,
+    updateRemoveImageMetadata,
     updateRightToLeft,
 } from '@proton/shared/lib/api/mailSettings';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
+import type { DIRECTION, REMOVE_IMAGE_METADATA } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
+import useFlag from '@proton/unleash/useFlag';
 
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/constants';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import DelaySendSecondsSelect from '../messages/DelaySendSecondsSelect';
+import RemoveImageMetadataToggle from '../messages/RemoveImageMetadataToggle';
 import DraftTypeSelect from './DraftTypeSelect';
 import FontFaceSelect from './FontFaceSelect';
 import FontSizeSelect from './FontSizeSelect';
@@ -30,8 +33,16 @@ import TextDirectionSelect from './TextDirectionSelect';
 
 const MessagesOtherSection = () => {
     const api = useApi();
-    const [{ DraftMIMEType, RightToLeft, FontFace, FontSize, DelaySendSeconds } = DEFAULT_MAILSETTINGS] =
-        useMailSettings();
+    const [
+        {
+            DraftMIMEType,
+            RightToLeft,
+            FontFace,
+            FontSize,
+            DelaySendSeconds,
+            RemoveImageMetadata,
+        } = DEFAULT_MAILSETTINGS,
+    ] = useMailSettings();
     const fontFaceValue = getFontFaceValueFromId(FontFace) || DEFAULT_FONT_FACE;
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -40,6 +51,8 @@ const MessagesOtherSection = () => {
     const [loadingRightToLeft, withLoadingRightToLeft] = useLoading();
     const [loadingFontFace, withLoadingFontFace] = useLoading();
     const [loadingFontSize, withLoadingFontSize] = useLoading();
+    const [loadingRemoveImageMetadata, withLoadingRemoveImageMetadata] = useLoading();
+    const removeImageMetadataFeatureFlag = useFlag('RemoveImageMetadata');
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
@@ -66,6 +79,12 @@ const MessagesOtherSection = () => {
 
     const handleChangeFontSize = async (value: number) => {
         await api(updateFontSize(value));
+        await call();
+        notifyPreferenceSaved();
+    };
+
+    const handleRemoveImageMetadata = async (value: REMOVE_IMAGE_METADATA) => {
+        await api(updateRemoveImageMetadata(value));
         await call();
         notifyPreferenceSaved();
     };
@@ -148,6 +167,25 @@ const MessagesOtherSection = () => {
                     <DelaySendSecondsSelect id="delaySendSecondsSelect" delaySendSeconds={DelaySendSeconds} />
                 </SettingsLayoutRight>
             </SettingsLayout>
+
+            {removeImageMetadataFeatureFlag ? (
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <label htmlFor="removeImageMetadata" className="text-semibold">
+                            <span className="mr-2">{c('Label').t`Remove image metadata`}</span>
+                            <Info title={c('Tooltip').t`Remove metadata from images to protect your privacy.`} />
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight>
+                        <RemoveImageMetadataToggle
+                            id="removeImageMetadata"
+                            removeImageMetadata={RemoveImageMetadata}
+                            loading={loadingRemoveImageMetadata}
+                            onChange={(newValue) => withLoadingRemoveImageMetadata(handleRemoveImageMetadata(newValue))}
+                        />
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            ) : null}
         </>
     );
 };

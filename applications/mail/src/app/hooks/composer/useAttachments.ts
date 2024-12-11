@@ -4,11 +4,15 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi, useAuthentication, useHandler, useNotifications } from '@proton/components';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
+import removeExifMetadata from '@proton/shared/lib/helpers/exif';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION, ATTACHMENT_MAX_COUNT } from '@proton/shared/lib/mail/constants';
+import { REMOVE_IMAGE_METADATA } from '@proton/shared/lib/mail/mailSettings';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -75,6 +79,9 @@ export const useAttachments = ({
     const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
     const dispatch = useMailDispatch();
+    const removeImageMetadataFeatureFlag = useFlag('RemoveImageMetadata');
+    const [mailSettings] = useMailSettings();
+    const removeImageMetadata = mailSettings?.RemoveImageMetadata === REMOVE_IMAGE_METADATA.ENABLED;
 
     // Pending files to upload
     const [pendingFiles, setPendingFiles] = useState<File[]>();
@@ -220,9 +227,14 @@ export const useAttachments = ({
 
             // When last async call is done, we can remove dummy uploads and replace with the real ones
             removeDummyUploads();
-
-            const uploads = upload(files, messageFromState, messageKeys, action, auth.UID);
-            const pendingUploads = files.map<AttachmentUpload>((file, i) => ({ file, upload: uploads[i] }));
+            const promises = files.map((file) =>
+                removeImageMetadataFeatureFlag && removeImageMetadata
+                    ? removeExifMetadata(file).catch(() => file)
+                    : file
+            );
+            const strippedFiles = await Promise.all(promises);
+            const uploads = upload(strippedFiles, messageFromState, messageKeys, action, auth.UID);
+            const pendingUploads = strippedFiles.map<AttachmentUpload>((file, i) => ({ file, upload: uploads[i] }));
 
             // Add real pending uploads
             addPendingUploads(pendingUploads);
