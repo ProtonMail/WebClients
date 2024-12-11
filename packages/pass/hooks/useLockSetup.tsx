@@ -19,6 +19,7 @@ import { lockCreateIntent } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
 import {
     selectExtraPasswordEnabled,
+    selectIsSSO,
     selectLockMode,
     selectLockTTL,
     selectPassPlan,
@@ -75,6 +76,7 @@ export const useLockSetup = (): LockSetup => {
 
     const currentLockMode = useSelector(selectLockMode);
     const hasExtraPassword = useSelector(selectExtraPasswordEnabled);
+    const isSSO = useSelector(selectIsSSO);
     const lockTTL = useSelector(selectLockTTL);
     const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
     const plan = useSelector(selectPassPlan);
@@ -141,11 +143,18 @@ export const useLockSetup = (): LockSetup => {
                                         : c('Info')
                                               .t`Please confirm your password in order to auto-lock with biometrics.`;
                                 default:
-                                    return hasExtraPassword
-                                        ? c('Info')
-                                              .t`Please confirm your extra password in order to unregister your current lock.`
-                                        : c('Info')
-                                              .t`Please confirm your password in order to unregister your current lock.`;
+                                    return (() => {
+                                        if (isSSO) {
+                                            return c('Info')
+                                                .t`Please confirm your backup password in order to unregister your current lock.`;
+                                        }
+
+                                        return hasExtraPassword
+                                            ? c('Info')
+                                                  .t`Please confirm your extra password in order to unregister your current lock.`
+                                            : c('Info')
+                                                  .t`Please confirm your password in order to unregister your current lock.`;
+                                    })();
                             }
                         })(),
                         onSubmit: async (secret) => {
@@ -180,10 +189,18 @@ export const useLockSetup = (): LockSetup => {
             case LockMode.PASSWORD:
                 return confirmPassword({
                     onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
-                    message: hasExtraPassword
-                        ? c('Info')
-                              .t`Please confirm your extra password in order to auto-lock with your extra password.`
-                        : c('Info').t`Please confirm your password in order to auto-lock with your password.`,
+
+                    message: (() => {
+                        if (isSSO) {
+                            return c('Info')
+                                .t`Please confirm your backup password in order to auto-lock with your password.`;
+                        }
+
+                        return hasExtraPassword
+                            ? c('Info')
+                                  .t`Please confirm your extra password in order to auto-lock with your extra password.`
+                            : c('Info').t`Please confirm your password in order to auto-lock with your password.`;
+                    })(),
                 });
 
             case LockMode.BIOMETRICS: {
