@@ -33,6 +33,10 @@ interface Props {
      * Tabs will take the maximum width and divide equally
      */
     fullWidth?: boolean;
+    /**
+     * Tabs container will only take as much width as needed
+     */
+    contained?: boolean;
     className?: string;
     containerClassName?: string;
     navContainerClassName?: string;
@@ -48,6 +52,7 @@ export const Tabs = ({
     children,
     stickyTabs = false,
     fullWidth = false,
+    contained = false,
     className,
     containerClassName,
     navContainerClassName,
@@ -64,14 +69,11 @@ export const Tabs = ({
     const [isRTL] = useRightToLeft();
 
     const scale = (selectedTabRect?.width || 0) / (containerTabRect?.width || 1);
+    const width = `${selectedTabRect?.width || 0}px`;
     const offset = (isRTL ? -1 : 1) * Math.abs((selectedTabRect?.x || 0) - (containerTabRect?.x || 0));
     const translate = `${offset}px`;
 
     useEffect(() => {
-        if (variant !== 'underline') {
-            return;
-        }
-
         const containerTabEl = containerRef.current;
         if (!containerTabEl || !selectedTabEl) {
             return;
@@ -120,6 +122,7 @@ export const Tabs = ({
                     className={clsx([
                         'tabs-container',
                         variant === 'underline' && 'border-bottom border-weak',
+                        !!contained && 'inline-flex',
                         containerClassName,
                     ])}
                 >
@@ -131,7 +134,7 @@ export const Tabs = ({
                         ])}
                         role="tablist"
                         ref={containerRef}
-                        style={{ '--translate': translate, '--scale': scale }}
+                        style={{ '--translate': translate, '--scale': scale, '--width': width }}
                     >
                         {tabList.map(({ title, icon }, index) => {
                             const key = toKey(index, 'key_');
@@ -144,11 +147,11 @@ export const Tabs = ({
                                     key={key}
                                     className={clsx(
                                         'tabs-list-item',
-                                        variant === 'underline' && 'text-semibold hover:color-norm',
-                                        variant === 'underline' && !selected && 'color-weak',
+                                        selected && 'tabs-list-item--selected',
+                                        !selected && 'color-weak hover:color-norm',
+                                        variant === 'underline' && 'text-semibold',
                                         variant === 'underline' && selected && 'color-norm',
-                                        variant === 'modern' && 'text-lg color-primary',
-                                        variant === 'modern' && selected && 'text-semibold'
+                                        variant === 'modern' && selected && 'text-semibold color-norm'
                                     )}
                                     role="presentation"
                                     ref={selected ? setSelectedTabEl : undefined}
@@ -160,7 +163,11 @@ export const Tabs = ({
                                             onChange(index);
                                         }}
                                         type="button"
-                                        className="tabs-list-link flex flex-nowrap justify-center items-center gap-1 relative"
+                                        className={clsx(
+                                            'tabs-list-link flex flex-nowrap justify-center items-center gap-1 relative interactive--no-background',
+                                            variant === 'underline' && 'interactive-pseudo-inset',
+                                            variant === 'modern' && 'interactive-pseudo rounded'
+                                        )}
                                         id={label}
                                         role="tab"
                                         aria-controls={key}
@@ -168,7 +175,12 @@ export const Tabs = ({
                                         aria-selected={selected}
                                         data-testid={`tab-header-${title.replace(/\s+/, '-').toLowerCase()}-button`}
                                     >
-                                        <span className={clsx((variant === 'modern' || icon) && 'text-ellipsis block')}>
+                                        <span
+                                            className={clsx(
+                                                (variant === 'modern' || icon) && 'text-ellipsis flex flex-column'
+                                            )}
+                                            data-title={title}
+                                        >
                                             {title}
                                         </span>
                                         {icon && <Icon name={icon} className="shrink-0" />}
@@ -176,7 +188,7 @@ export const Tabs = ({
                                 </li>
                             );
                         })}
-                        {variant === 'underline' && <li className="tabs-indicator" aria-hidden />}
+                        <li className="tabs-indicator" aria-hidden="true" />
                     </ul>
                 </nav>
             </div>
