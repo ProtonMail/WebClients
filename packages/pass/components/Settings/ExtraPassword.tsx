@@ -12,7 +12,7 @@ import { useRequest } from '@proton/pass/hooks/useRequest';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { validateNewExtraPassword } from '@proton/pass/lib/validation/auth';
 import { extraPasswordToggle } from '@proton/pass/store/actions';
-import { selectExtraPasswordEnabled, selectLockMode } from '@proton/pass/store/selectors';
+import { selectExtraPasswordEnabled, selectIsSSO, selectLockMode } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -23,6 +23,7 @@ export const ExtraPassword: FC = () => {
     const confirmPassword = usePasswordUnlock();
     const toggle = useRequest(extraPasswordToggle, { initial: true });
     const enabled = useSelector(selectExtraPasswordEnabled);
+    const isSSO = useSelector(selectIsSSO);
     const biometricsEnabled = useSelector(selectLockMode) === LockMode.BIOMETRICS;
     const biometricsMessage = biometricsEnabled
         ? ' ' + c('Info').t`Biometrics will be disabled and will need to be enabled again.`
@@ -70,6 +71,9 @@ export const ExtraPassword: FC = () => {
                 }),
         });
     };
+
+    // SSO Users are not allowed to set an extra password
+    if (isSSO) return null;
 
     return (
         <SettingsPanel title={c('Label').t`Extra password`}>
