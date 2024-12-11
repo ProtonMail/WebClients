@@ -173,7 +173,7 @@ const AddonCustomizer = ({
     // The total number of scribe or lumo addons can't be higher than the total number of members
     const max =
         isScribeAddon(addonNameKey) || isLumoAddon(addonNameKey)
-            ? selectedPlan.getTotalMembers()
+            ? selectedPlan.getTotalUsers()
             : AddonLimit[addonNameKey] * addonMultiplier;
 
     const input = (

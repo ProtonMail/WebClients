@@ -88,6 +88,20 @@ export class SelectedPlan {
         return this.getTotalAddons(isMemberAddon, 'MaxMembers');
     }
 
+    /**
+     * Unlike getTotalMembers(), this returns 1 if the user has no members.
+     * `MaxMembers` is 0 for most of the plans that don't have accesss to mail. So for example if you have Drive Plus
+     * then `MaxMembers` is 0 even though you do have 1 user.
+     *
+     * This fix is a bit simplistic because in theory there might be plans that have several members but `MaxMembers` is
+     * still 0. But so far plans without Mail and with multiple users have their own non-zero `MaxMembers` value.
+     * For example, passfamily2024 has MaxMembers == 6, and the VPN B2B plans have MaxMembers == 2. Watch out for the
+     * new plans in the future that have multiple members but the backend returns MaxMembers == 0.
+     */
+    getTotalUsers(): number {
+        return this.getTotalMembers() || 1;
+    }
+
     getTotalIPs(): number {
         return this.getTotalAddons(isIpAddon, 'MaxIPs');
     }
@@ -202,16 +216,16 @@ export class SelectedPlan {
     }
 
     private capScribes(): SelectedPlan {
-        if (this.getTotalMembers() < this.getTotalScribes()) {
-            return this.setScribeCount(this.getTotalMembers());
+        if (this.getTotalUsers() < this.getTotalScribes()) {
+            return this.setScribeCount(this.getTotalUsers());
         }
 
         return this;
     }
 
     private capLumos(): SelectedPlan {
-        if (this.getTotalMembers() < this.getTotalLumos()) {
-            return this.setLumoCount(this.getTotalMembers());
+        if (this.getTotalUsers() < this.getTotalLumos()) {
+            return this.setLumoCount(this.getTotalUsers());
         }
 
         return this;

@@ -2709,6 +2709,53 @@ const plans: Plan[] = deepFreeze([
             },
         },
     },
+    {
+        ID: 'C7yR_PpifbYWhO8J5Mb2F_Mjnc47SvgtP5VgR_hXqdQEV0vxIj_RBKs3VxFt0oFb7EtKnzqIMDJ1kSRFaQ6Fog==',
+        ParentMetaPlanID: 'Lab5ug5wsnIedm7-pe5hB6nZ-vVDyoznnMHbCSNoyAIiuMiSSATtyyR-BBMaqIdUiNrYiVMfy1Zmh9L-q74Lng==',
+        Type: 0,
+        Name: '1lumo-drive2022',
+        Title: '+1 Lumo Seat Drive Plus',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 64,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 2299,
+            '12': 21588,
+            '24': 43176,
+        },
+        DefaultPricing: {
+            '1': 2299,
+            '12': 21588,
+            '24': 43176,
+        },
+        PeriodEnd: {
+            '1': 1736537237,
+            '12': 1765394837,
+            '24': 1796930837,
+        },
+        Currency: 'EUR',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 2299,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_UHPDw9pI145bsXAA7KRp',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
 ]);
 
 export function getTestPlansMap() {

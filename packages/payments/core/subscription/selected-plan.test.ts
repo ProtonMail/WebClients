@@ -260,6 +260,21 @@ describe('SelectedPlan', () => {
                 [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
                 [ADDON_NAMES.IP_VPN_BUSINESS]: 4,
             },
+            expected: 4, // 2 users come from the plan and 2 from the addon
+        },
+    ])('should return the total users', ({ planIDs, expected }) => {
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(selectedPlan.getTotalUsers()).toBe(expected);
+    });
+
+    it.each([
+        {
+            planIDs: {
+                [PLANS.VPN_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
+                [ADDON_NAMES.IP_VPN_BUSINESS]: 4,
+            },
             expected: 5, // 1 ip from plan and 4 from the addon
         },
     ])('should return the total number of IPs', ({ planIDs, expected }) => {
@@ -301,6 +316,13 @@ describe('SelectedPlan', () => {
                 [PLANS.MAIL_PRO]: 1,
                 [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
                 [ADDON_NAMES.LUMO_MAIL_PRO]: 4,
+            },
+            expected: 4,
+        },
+        {
+            planIDs: {
+                [PLANS.DRIVE]: 1,
+                [ADDON_NAMES.LUMO_DRIVE]: 4,
             },
             expected: 4,
         },
@@ -436,6 +458,7 @@ describe('SelectedPlan', () => {
         const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
         expect(selectedPlan.getTotalMembers()).toEqual(4);
+        expect(selectedPlan.getTotalUsers()).toEqual(4);
         expect(selectedPlan.getTotalScribes()).toEqual(40);
 
         const newSelectedPlan = selectedPlan.applyRules();
@@ -513,6 +536,18 @@ describe('SelectedPlan', () => {
                 [ADDON_NAMES.LUMO_MAIL_PRO]: 4,
             },
         },
+        {
+            planIDs: {
+                [PLANS.DRIVE]: 1,
+                [ADDON_NAMES.LUMO_DRIVE]: 3,
+            },
+            newLumoCount: 40,
+            expectedPlanIDs: {
+                [PLANS.DRIVE]: 1,
+                // default to 1 if there are no members and there are lumo addons
+                [ADDON_NAMES.LUMO_DRIVE]: 1,
+            },
+        },
     ])('should update lumos count', ({ planIDs, newLumoCount, expectedPlanIDs }) => {
         const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
         const updatedSelectedPlan = selectedPlan.setLumoCount(newLumoCount);
@@ -530,6 +565,7 @@ describe('SelectedPlan', () => {
         const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
         expect(selectedPlan.getTotalMembers()).toEqual(4);
+        expect(selectedPlan.getTotalUsers()).toEqual(4);
         expect(selectedPlan.getTotalLumos()).toEqual(40);
 
         const newSelectedPlan = selectedPlan.applyRules();
@@ -582,6 +618,12 @@ describe('SelectedPlan', () => {
             const selectedPlan = SelectedPlan.createFromSubscription(subscription, PLANS_MAP);
 
             expect(selectedPlan.getTotalMembers()).toBe(0);
+        });
+
+        it.each([FREE_SUBSCRIPTION, null, undefined])('should return 1 for total users', (subscription) => {
+            const selectedPlan = SelectedPlan.createFromSubscription(subscription, PLANS_MAP);
+
+            expect(selectedPlan.getTotalUsers()).toBe(1);
         });
 
         it.each([FREE_SUBSCRIPTION, null, undefined])('should return 0 for total IPs', (subscription) => {
@@ -656,4 +698,13 @@ describe('SelectedPlan', () => {
         expect(selectedPlan.getAdditionalIPs()).toBe(4);
         expect(selectedPlan.getTotalIPs()).toBe(4);
     });
+
+    it.each([{ [PLANS.VPN]: 1 }, { [PLANS.DRIVE]: 1 }])(
+        'should return 1 for total users if there are no members',
+        (planIDs) => {
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+            expect(selectedPlan.getTotalUsers()).toBe(1);
+        }
+    );
 });
