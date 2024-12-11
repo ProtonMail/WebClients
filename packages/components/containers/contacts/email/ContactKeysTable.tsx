@@ -28,6 +28,7 @@ import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 interface Props {
     model: ContactPublicKeyModelWithApiKeySource;
     setModel: Dispatch<SetStateAction<ContactPublicKeyModelWithApiKeySource | undefined>>;
+    supportV6Keys: boolean;
 }
 
 type LocalKeyModel = {
@@ -52,7 +53,7 @@ type LocalKeyModel = {
     canBeUntrusted: boolean;
 };
 
-const ContactKeysTable = ({ model, setModel }: Props) => {
+const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
     const [keys, setKeys] = useState<LocalKeyModel[]>([]);
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -123,7 +124,9 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     isUploaded &&
                     encryptionEnabled &&
                     supportsEncryption;
-                const canBeTrusted = !isTrusted && !isUploaded && !isCompromised;
+                // v6 keys can only be trusted if the user has opted into v6 support because older mobile clients do not support encrypting to these keys
+                const canBeTrusted =
+                    !isTrusted && !isUploaded && !isCompromised && (publicKey.getVersion() !== 6 || supportV6Keys);
                 const canBeUntrusted = isTrusted && !isUploaded;
                 return {
                     publicKey,

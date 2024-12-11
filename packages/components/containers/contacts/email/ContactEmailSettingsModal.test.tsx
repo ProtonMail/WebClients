@@ -1,15 +1,22 @@
 import { fireEvent, screen, waitFor, within } from '@testing-library/react';
 
+import { useUserSettings } from '@proton/account';
 import { CryptoProxy } from '@proton/crypto';
 import { API_CODES, API_KEY_SOURCE, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
-import type { RequireSome } from '@proton/shared/lib/interfaces';
+import type { RequireSome, UserSettings } from '@proton/shared/lib/interfaces';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { addApiMock } from '@proton/testing/lib/api';
 
 import { clearAll, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/render';
 import type { ContactEmailSettingsProps } from './ContactEmailSettingsModal';
 import ContactEmailSettingsModal from './ContactEmailSettingsModal';
+
+jest.mock('@proton/account/userSettings/hooks');
+
+const mockUserSettings = ({ SupportPgpV6Keys }: { SupportPgpV6Keys: 1 | 0 }) => {
+    jest.mocked(useUserSettings).mockReturnValue([{ Flags: { SupportPgpV6Keys } } as UserSettings, false, jest.fn()]);
+};
 
 describe('ContactEmailSettingsModal', () => {
     const props: ContactEmailSettingsProps = {
@@ -27,6 +34,7 @@ describe('ContactEmailSettingsModal', () => {
 
     it('should save a contact with updated email settings (no keys)', async () => {
         CryptoProxy.setEndpoint(mockedCryptoApi);
+        mockUserSettings({ SupportPgpV6Keys: 0 });
 
         const vcard = `BEGIN:VCARD
 VERSION:4.0
@@ -104,6 +112,7 @@ END:VCARD`.replaceAll('\n', '\r\n');
 
     it('should not store X-PM-SIGN if global default signing setting is selected', async () => {
         CryptoProxy.setEndpoint(mockedCryptoApi);
+        mockUserSettings({ SupportPgpV6Keys: 0 });
 
         const vcard = `BEGIN:VCARD
 VERSION:4.0
@@ -186,6 +195,7 @@ END:VCARD`.replaceAll('\n', '\r\n');
             isExpiredKey: jest.fn().mockImplementation(() => false),
             isRevokedKey: jest.fn().mockImplementation(() => false),
         });
+        mockUserSettings({ SupportPgpV6Keys: 0 });
 
         const dummyKey1Base64 = btoa('dummy-pinned-key-1');
         const dummyKey2Base64 = btoa('dummy-pinned-key-2');
@@ -286,6 +296,7 @@ END:VCARD`;
             isExpiredKey: jest.fn().mockImplementation(() => true),
             isRevokedKey: jest.fn().mockImplementation(() => false),
         });
+        mockUserSettings({ SupportPgpV6Keys: 0 });
 
         const vcard = `BEGIN:VCARD
 VERSION:4.0
@@ -380,6 +391,8 @@ END:VCARD`;
             isExpiredKey: jest.fn().mockImplementation(() => false),
             isRevokedKey: jest.fn().mockImplementation(() => false),
         });
+        mockUserSettings({ SupportPgpV6Keys: 0 });
+
         const armoredPublicKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 xjMEYRaiLRYJKwYBBAHaRw8BAQdAMrsrfniSJuxOLn+Q3VKP0WWqgizG4VOF
@@ -485,6 +498,7 @@ END:VCARD`.replaceAll('\n', '\r\n');
             isExpiredKey: jest.fn().mockImplementation(() => true),
             isRevokedKey: jest.fn().mockImplementation(() => false),
         });
+        mockUserSettings({ SupportPgpV6Keys: 0 });
 
         const armoredPublicKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -586,6 +600,7 @@ END:VCARD`;
             isExpiredKey: jest.fn().mockImplementation(() => false),
             isRevokedKey: jest.fn().mockImplementation(() => false),
         });
+        mockUserSettings({ SupportPgpV6Keys: 0 });
 
         const vcard = `BEGIN:VCARD
 VERSION:4.0
@@ -684,6 +699,7 @@ END:VCARD`;
             isExpiredKey: jest.fn().mockImplementation(() => false),
             isRevokedKey: jest.fn().mockImplementation(() => false),
         });
+        mockUserSettings({ SupportPgpV6Keys: 0 });
 
         const vcard = `BEGIN:VCARD
 VERSION:4.0
@@ -814,6 +830,7 @@ END:VCARD`;
         );
 
         it('should display no origin label for internal keys', async () => {
+            mockUserSettings({ SupportPgpV6Keys: 0 });
             const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
             addApiMock('core/v4/keys/all', () => ({
@@ -855,7 +872,7 @@ END:VCARD`;
             expect(screen.queryByTestId('koo-origin-label')).toBeNull();
         });
 
-        it('internal contact with v6 address keys: should display primary label for v6 key only (if primary)', async () => {
+        it('internal contact with v6 address keys: should display primary label for v6 primary key only', async () => {
             const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
             addApiMock('core/v4/keys/all', () => ({
@@ -876,33 +893,50 @@ END:VCARD`;
                 ProtonMX: true, // internal address
             }));
 
-            renderWithProviders(
-                <ContactEmailSettingsModal
-                    open={true}
-                    {...props}
-                    vCardContact={vCardContact}
-                    emailProperty={vCardContact.email[0]}
-                />
-            );
+            const renderAndTest = async (withV6Support: boolean) => {
+                mockUserSettings({ SupportPgpV6Keys: withV6Support ? 1 : 0 });
 
-            const showMoreButton = screen.getByRole('button', { name: 'Expand' });
-            await waitFor(() => expect(showMoreButton).not.toBeDisabled());
-            fireEvent.click(showMoreButton);
+                const { unmount } = renderWithProviders(
+                    <ContactEmailSettingsModal
+                        open={true}
+                        {...props}
+                        vCardContact={vCardContact}
+                        emailProperty={vCardContact.email[0]}
+                    />
+                );
 
-            const table = await screen.findByTestId('contact-keys-table');
-            const rows = await within(table).findAllByRole('row');
-            expect(rows.length).toBe(2);
-            // first table row
-            const v6KeyFingerprint = await within(rows[0]).findByText('internally mocked armored key v6');
-            expect(v6KeyFingerprint).toBeVisible();
-            const primaryLabel = await within(rows[0]).findByTestId('primary-key-label');
-            expect(primaryLabel).toBeVisible();
-            // second table row
-            const v4KeyFingerprint = await within(rows[1]).findByText('internally mocked armored key v4');
-            expect(v4KeyFingerprint).toBeVisible();
+                const showMoreButton = screen.getByRole('button', { name: 'Expand' });
+                await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+                fireEvent.click(showMoreButton);
+
+                const table = await screen.findByTestId('contact-keys-table');
+                const rows = await within(table).findAllByRole('row');
+                expect(rows.length).toBe(2);
+                // first table row
+                const v6KeyFingerprint = await within(rows[0]).findByText('internally mocked armored key v6');
+                expect(v6KeyFingerprint).toBeVisible();
+                const primaryLabel = await within(rows[0]).findByTestId('primary-key-label');
+                expect(primaryLabel).toBeVisible();
+                if (withV6Support) {
+                    // cannot trust a v6 key unless user settings declare support for it
+                    expect(within(rows[0]).getByTitle('Open actions dropdown')).toBeVisible();
+                } else {
+                    expect(within(rows[0]).queryByTitle('Open actions dropdown')).toBeNull();
+                }
+
+                // second table row
+                const v4KeyFingerprint = await within(rows[1]).findByText('internally mocked armored key v4');
+                expect(v4KeyFingerprint).toBeVisible();
+                expect(within(rows[1]).getByTitle('Open actions dropdown')).toBeVisible(); // can trust a v4 key
+
+                unmount();
+            };
+            await renderAndTest(false);
+            await renderAndTest(true);
         });
 
         it('should display WKD label for WKD keys', async () => {
+            mockUserSettings({ SupportPgpV6Keys: 0 });
             const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
             addApiMock('core/v4/keys/all', () => ({
@@ -946,6 +980,7 @@ END:VCARD`;
         });
 
         it('should display KOO label for KOO keys', async () => {
+            mockUserSettings({ SupportPgpV6Keys: 0 });
             const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
             addApiMock('core/v4/keys/all', () => ({

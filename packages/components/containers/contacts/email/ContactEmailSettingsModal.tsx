@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
@@ -73,6 +74,10 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     const [loadingSave, withLoadingSave] = useLoading(false);
     const { createNotification } = useNotifications();
     const [mailSettings] = useMailSettings();
+    const [userSettings] = useUserSettings();
+
+    const supportV6Keys = userSettings.Flags.SupportPgpV6Keys === 1;
+
     const { verifyOutboundPublicKeys, ktActivation } = useKeyTransparencyContext();
 
     const saveVCardContact = useSaveVCardContact();
@@ -130,11 +135,15 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
      * @param group attached to the current email address
      * @returns key properties to save in the vCard
      */
-    const getKeysProperties = (group: string, model: ContactPublicKeyModelWithApiKeySource) => {
+    const getKeysProperties = (group: string, model: ContactPublicKeyModelWithApiKeySource, allowV6Keys: boolean) => {
         const allKeys = model?.isPGPInternal
             ? [...model.publicKeys.apiKeys]
             : [...model.publicKeys?.apiKeys, ...model.publicKeys.pinnedKeys];
         const trustedKeys = allKeys.filter((publicKey) => model.trustedFingerprints.has(publicKey.getFingerprint()));
+        if (!allowV6Keys && trustedKeys.some((trustedKey) => trustedKey.getVersion() === 6)) {
+            // sanity check: the UI should prevent the user to reach this state.
+            throw new Error('v6 keys cannot be pinned without opting into v6 support');
+        }
         const uniqueTrustedKeys = uniqueBy(trustedKeys, (publicKey) => publicKey.getFingerprint());
         return Promise.all(uniqueTrustedKeys.map((publicKey, index) => toKeyProperty({ publicKey, group, index })));
     };
@@ -150,7 +159,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
         const newProperties = properties.filter(({ field, group }) => {
             return !VCARD_KEY_FIELDS.includes(field) || (group && group !== emailGroup);
         });
-        newProperties.push(...(await getKeysProperties(emailGroup || '', model)));
+        newProperties.push(...(await getKeysProperties(emailGroup || '', model, supportV6Keys)));
 
         const mimeType = getMimeTypeVcard(model.mimeType);
         if (mimeType) {
@@ -357,7 +366,12 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                         </CollapsibleHeader>
                         <CollapsibleContent className="mt-4">
                             {showPgpSettings && model ? (
-                                <ContactPGPSettings model={model} setModel={setModel} mailSettings={mailSettings} />
+                                <ContactPGPSettings
+                                    model={model}
+                                    setModel={setModel}
+                                    mailSettings={mailSettings}
+                                    supportV6Keys={supportV6Keys}
+                                />
                             ) : null}
                         </CollapsibleContent>
                     </Collapsible>
