@@ -88,6 +88,7 @@ export default function SharedFilePage({
                     fileSize={link?.size}
                     imgThumbnailUrl={link?.cachedThumbnailUrl}
                     isPublic
+                    isSharedFile={true}
                     isPublicDocsAvailable={isDocsPublicSharingEnabled}
                     onOpenInDocs={link && isDocument && openInDocs ? () => openInDocs(link.linkId) : undefined}
                 />
