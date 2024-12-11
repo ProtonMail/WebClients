@@ -83,6 +83,7 @@ export const FilePreviewContent = ({
     fileSize,
     fileName,
     isPublic,
+    isSharedFile,
     isPublicDocsAvailable,
 
     contents,
@@ -103,6 +104,7 @@ export const FilePreviewContent = ({
     fileName?: string;
     fileSize?: number;
     isPublic?: boolean;
+    isSharedFile?: boolean;
     isPublicDocsAvailable?: boolean;
 
     contents?: Uint8Array[];
@@ -185,7 +187,14 @@ export const FilePreviewContent = ({
             );
         }
         if (isVideo(mimeType)) {
-            return <VideoPreview contents={contents} mimeType={mimeType} onDownload={onDownload} />;
+            return (
+                <VideoPreview
+                    contents={contents}
+                    mimeType={mimeType}
+                    isSharedFile={isSharedFile}
+                    onDownload={onDownload}
+                />
+            );
         }
         if (isAudio(mimeType)) {
             return <AudioPreview contents={contents} mimeType={mimeType} onDownload={onDownload} />;
