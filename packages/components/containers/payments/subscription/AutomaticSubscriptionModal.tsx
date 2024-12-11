@@ -331,7 +331,7 @@ const AutomaticSubscriptionModal = () => {
                 const selectedPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
 
                 // Default number of lumo addons to the total number of members
-                openProps.planIDs = selectedPlan.setLumoCount(selectedPlan.getTotalMembers()).planIDs;
+                openProps.planIDs = selectedPlan.setLumoCount(selectedPlan.getTotalUsers()).planIDs;
 
                 openProps.plan = undefined; // We need to use maybePlanIDs when calculating planIDs in SubscriptionContainer
                 openProps.onSubscribed = () => {
