@@ -1,21 +1,60 @@
+import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
-import { useUser } from '@proton/account/user/hooks';
+import { CircleLoader } from '@proton/atoms/index';
 import Price from '@proton/components/components/price/Price';
-import { type Currency, PLANS } from '@proton/payments';
+import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
+import { useLoading } from '@proton/hooks/index';
+import { PLANS, getPlanByName } from '@proton/payments';
 import { COUPON_CODES, CYCLE, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 
+const OFFER_DEFAULT_AMOUNT_DUE = 100;
+
 const useOneDollarConfig = () => {
-    const [user] = useUser();
-    const currency: Currency = user?.Currency || 'USD';
+    const [currency, loadingCurrency] = useAutomaticCurrency();
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+    const { paymentsApi } = usePaymentsApi();
+    const [loading, withLoading] = useLoading(true);
+    const [amountDue, setAmountDue] = useState<number>();
 
     const [plansResult] = usePlans();
-    const mailPlus = plansResult?.plans.find(({ Name }) => Name === PLANS.MAIL);
+    const mailPlus = getPlanByName(plansResult?.plans ?? [], PLANS.MAIL, currency);
 
-    const amount = mailPlus?.DefaultPricing?.[CYCLE.MONTHLY] || 0;
+    const mailPlusPrice = mailPlus?.Pricing?.[CYCLE.MONTHLY] || 0;
+
+    useEffect(() => {
+        const handleGetPlanAmount = async () => {
+            if (mailPlus && currency && !loadingCurrency && !amountDue) {
+                // For USD, CHF and EUR, default value is "1 dollar"
+                const isDefaultAmountDue = ['USD', 'CHF', 'EUR'].includes(currency);
+                if (isDefaultAmountDue) {
+                    setAmountDue(OFFER_DEFAULT_AMOUNT_DUE);
+                    return;
+                }
+
+                await paymentsApi
+                    .checkWithAutomaticVersion({
+                        Plans: { [PLANS.MAIL]: 1 },
+                        Currency: currency,
+                        Cycle: CYCLE.MONTHLY,
+                        CouponCode: COUPON_CODES.TRYMAILPLUS0724,
+                    })
+                    .then(({ AmountDue }) => {
+                        setAmountDue(AmountDue);
+                    })
+                    .catch(() => {
+                        // If request fails, default on plan full price
+                        setAmountDue(mailPlusPrice);
+                    });
+            }
+        };
+
+        void withLoading(handleGetPlanAmount);
+    }, [mailPlus, currency, loadingCurrency]);
 
     const priceMailPlus = (
         <Price
@@ -24,15 +63,18 @@ const useOneDollarConfig = () => {
             suffix={c('specialoffer: Offers').t`/month`}
             isDisplayedInSentence
         >
-            {amount}
+            {mailPlusPrice}
         </Price>
     );
 
-    const priceCoupon = (
-        <Price currency={currency} key="monthlyAmount">
-            1
-        </Price>
-    );
+    const priceCoupon =
+        !loading && amountDue ? (
+            <Price currency={currency} key="monthlyAmount">
+                {amountDue}
+            </Price>
+        ) : (
+            <CircleLoader size="small" />
+        );
 
     if (displayNewUpsellModalsVariant) {
         return {
