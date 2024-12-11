@@ -29,16 +29,11 @@ type Options =
           dimensions: Pick<Dimensions, 'isForCustomDomain'>;
       }
     | {
-          event: TelemetryMailPostSubscriptionEvents.modal_engagement;
-          dimensions: Pick<Dimensions, 'modal' | 'modalAction'>;
-      }
-    | {
           event: TelemetryMailPostSubscriptionEvents.post_subscription_start;
           dimensions: Pick<Dimensions, 'modal'>;
       };
 
 type Dimensions = {
     modal: 'mail-short-domain' | 'mail-auto-delete' | 'mail-folders-and-labels' | 'dark-web-monitoring' | 'sentinel';
-    modalAction: 'primary_cta' | 'secondary_cta' | 'close_button';
     isForCustomDomain: 'true' | 'false';
 };
