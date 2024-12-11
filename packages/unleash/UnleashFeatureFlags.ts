@@ -56,6 +56,7 @@ enum AccountFlag {
     ChangePasswordStrengthIndicator = 'ChangePasswordStrengthIndicator',
     LumoInProductSwitcher = 'LumoInProductSwitcher',
     LumoAddonAvailable = 'LumoAddonAvailable',
+    LumoSignupAvailable = 'LumoSignupAvailable',
 }
 
 enum PaymentsFlag {
