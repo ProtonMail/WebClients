@@ -73,6 +73,10 @@ const Layout = ({
 
     const theme = useTheme();
 
+    if (toApp === APPS.PROTONLUMO) {
+        toApp = undefined;
+    }
+
     const protonLogo = (
         <ProtonLogo
             variant="full"
