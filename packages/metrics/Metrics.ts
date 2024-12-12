@@ -132,6 +132,7 @@ import type { HttpsProtonMeWebDrivePerformanceLoadHistogramV1SchemaJson } from '
 import type { HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson } from './types/web_drive_public_share_load_error_total_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson } from './types/web_drive_public_share_load_success_total_v1.schema';
 import type { EmailContentRenderTime } from './types/web_mail_performance_email_content_render_time_histogram_v1.schema';
+import type { EmailContentRenderTimeSeconds } from './types/web_mail_performance_email_content_render_time_second_histogram_v1.schema';
 import type { EmailListDisplayTime } from './types/web_mail_performance_email_list_display_time_histogram_v1.schema';
 import type { PageTransitionTime } from './types/web_mail_performance_page_transition_time_histogram_v1.schema';
 import type { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_subscription_steps_total_v1.schema';
@@ -383,6 +384,8 @@ class Metrics extends MetricsBase {
     public drive_public_share_load_success_total: Counter<HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson>;
 
     public mail_performance_email_content_render_time_histogram: Histogram<EmailContentRenderTime>;
+
+    public mail_performance_email_content_render_time_second_histogram: Histogram<EmailContentRenderTimeSeconds>;
 
     public mail_performance_email_list_display_time_histogram: Histogram<EmailListDisplayTime>;
 
@@ -1051,6 +1054,11 @@ class Metrics extends MetricsBase {
 
         this.mail_performance_email_content_render_time_histogram = new Histogram<EmailContentRenderTime>(
             { name: 'web_mail_performance_email_content_render_time_histogram', version: 1 },
+            this.requestService
+        );
+
+        this.mail_performance_email_content_render_time_second_histogram = new Histogram<EmailContentRenderTimeSeconds>(
+            { name: 'web_mail_performance_email_content_render_time_second_histogram', version: 1 },
             this.requestService
         );
 
