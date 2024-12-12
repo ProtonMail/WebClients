@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
+import { type PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
+import { getPlansWithAddons } from '@proton/shared/lib/helpers/addons';
 import type { PlansMap } from '@proton/shared/lib/interfaces';
 
 export const getHasPlanCustomizer = ({ plansMap, planIDs }: { plansMap: PlansMap; planIDs: PlanIDs }) => {
@@ -13,30 +14,8 @@ export const getHasPlanCustomizer = ({ plansMap, planIDs }: { plansMap: PlansMap
             return false;
         }) || [];
     const currentPlan = plansMap?.[currentPlanName as keyof PlansMap];
-    const hasPlanCustomizer = Boolean(
-        currentPlan &&
-            [
-                PLANS.MAIL,
-                PLANS.MAIL_PRO,
-                PLANS.MAIL_BUSINESS,
-                PLANS.DRIVE,
-                PLANS.DRIVE_PRO,
-                PLANS.DRIVE_BUSINESS,
-                PLANS.BUNDLE,
-                PLANS.FAMILY,
-                PLANS.DUO,
-                PLANS.BUNDLE_PRO,
-                PLANS.BUNDLE_PRO_2024,
-                PLANS.ENTERPRISE,
-                PLANS.VPN,
-                PLANS.VPN2024,
-                PLANS.VPN_PRO,
-                PLANS.VPN_BUSINESS,
-                PLANS.PASS,
-                PLANS.PASS_PRO,
-                PLANS.PASS_BUSINESS,
-            ].includes(currentPlan.Name as PLANS)
-    );
+
+    const hasPlanCustomizer = !!currentPlan && !!getPlansWithAddons().includes(currentPlan.Name as PLANS);
 
     return { currentPlan, hasPlanCustomizer };
 };
