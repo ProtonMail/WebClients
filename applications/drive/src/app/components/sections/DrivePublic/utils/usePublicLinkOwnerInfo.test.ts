@@ -44,6 +44,7 @@ describe('usePublicLinkOwnerInfo', () => {
         expect(result.current).toEqual({
             isCreator: false,
             isLastEditor: false,
+            loggedIn: false,
         });
     });
 
@@ -53,6 +54,7 @@ describe('usePublicLinkOwnerInfo', () => {
         expect(result.current).toEqual({
             isCreator: false,
             isLastEditor: false,
+            loggedIn: false,
         });
     });
 
@@ -63,6 +65,7 @@ describe('usePublicLinkOwnerInfo', () => {
         expect(result.current).toEqual({
             isCreator: true,
             isLastEditor: true,
+            loggedIn: true,
         });
     });
 
@@ -77,6 +80,7 @@ describe('usePublicLinkOwnerInfo', () => {
         expect(result.current).toEqual({
             isCreator: true,
             isLastEditor: false,
+            loggedIn: true,
         });
     });
 
@@ -92,6 +96,7 @@ describe('usePublicLinkOwnerInfo', () => {
         expect(result.current).toEqual({
             isCreator: true,
             isLastEditor: true,
+            loggedIn: true,
         });
     });
 
@@ -108,6 +113,7 @@ describe('usePublicLinkOwnerInfo', () => {
         expect(result.current).toEqual({
             isCreator: false,
             isLastEditor: true,
+            loggedIn: true,
         });
     });
 
@@ -121,6 +127,7 @@ describe('usePublicLinkOwnerInfo', () => {
         expect(result.current).toEqual({
             isCreator: true,
             isLastEditor: true,
+            loggedIn: true,
         });
     });
 
@@ -139,6 +146,7 @@ describe('usePublicLinkOwnerInfo', () => {
         expect(result.current).toEqual({
             isCreator: true,
             isLastEditor: false,
+            loggedIn: true,
         });
     });
 });

@@ -1,10 +1,7 @@
 import { usePreventLeave } from '@proton/components';
 import { CryptoProxy } from '@proton/crypto/lib';
 import { queryPublicCreateFolder } from '@proton/shared/lib/api/drive/folder';
-import { queryPublicDeleteChildrenLinks } from '@proton/shared/lib/api/drive/link';
 import { queryPublicRenameLink } from '@proton/shared/lib/api/drive/share';
-import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
-import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import {
     encryptName,
     generateLookupHash,
@@ -12,11 +9,11 @@ import {
     generateNodeKeys,
 } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
-import chunk from '@proton/utils/chunk';
 import getRandomString from '@proton/utils/getRandomString';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
+import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';
 import { usePublicSession } from '../_api';
 import { useShare } from '../_shares';
 import { encryptFolderExtendedAttributes } from './extendedAttributes';
@@ -24,20 +21,24 @@ import useLink from './useLink';
 import { validateLinkName } from './validation';
 
 /**
- * useLinkActions provides actions for manipulating with individual link.
+ * usePublicLinkActions provides actions for manipulating with individual link in a public context.
  */
 export function usePublicLinkActions() {
     const { preventLeave } = usePreventLeave();
+    const { setUploadToken } = useAnonymousUploadAuthStore();
     const { request: publicDebouncedRequest, getAddressKeyInfo } = usePublicSession();
     const { getLinkPrivateKey, getLinkHashKey, getLink } = useLink();
     const { getSharePrivateKey } = useShare();
 
     const createFolder = async (
         abortSignal: AbortSignal,
-        token: string,
-        parentLinkId: string,
-        name: string,
-        modificationTime?: Date
+        {
+            token,
+            parentLinkId,
+            name,
+            modificationTime,
+            silence,
+        }: { token: string; parentLinkId: string; name: string; modificationTime?: Date; silence?: number | number[] }
     ) => {
         // Name Hash is generated from LC, for case-insensitive duplicate detection.
         const error = validateLinkName(name);
@@ -113,9 +114,9 @@ export function usePublicLinkActions() {
                   addressKeyInfo ? addressKeyInfo.privateKey : privateKey
               );
 
-        const { Folder } = await preventLeave(
-            publicDebouncedRequest<{ Folder: { ID: string } }>(
-                queryPublicCreateFolder(token, {
+        const { Folder, AuthorizationToken } = await preventLeave(
+            publicDebouncedRequest<{ Folder: { ID: string }; AuthorizationToken: string }>({
+                ...queryPublicCreateFolder(token, {
                     Hash,
                     NodeHashKey,
                     Name: encryptedName,
@@ -125,9 +126,14 @@ export function usePublicLinkActions() {
                     SignatureEmail: addressKeyInfo?.address.Email,
                     ParentLinkID: parentLinkId,
                     XAttr: xattr,
-                })
-            )
+                }),
+                silence,
+            })
         );
+
+        if (AuthorizationToken) {
+            setUploadToken({ linkId: Folder.ID, authorizationToken: AuthorizationToken });
+        }
 
         return Folder.ID;
     };
@@ -220,57 +226,8 @@ export function usePublicLinkActions() {
         );
     };
 
-    /**
-     * batchHelper makes easier to do any action with many links in several
-     * batches to make sure API can handle it (to not send thousands of links
-     * in one request), all run in parallel (up to a reasonable limit).
-     */
-    const batchHelper = async <T>(
-        abortSignal: AbortSignal,
-        shareId: string,
-        linkIds: string[],
-        query: (batchLinkIds: string[], shareId: string) => any,
-        maxParallelRequests = MAX_THREADS_PER_REQUEST
-    ) => {
-        const responses: { batchLinkIds: string[]; response: T }[] = [];
-        const successes: string[] = [];
-        const failures: { [linkId: string]: any } = {};
-
-        const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
-
-        const queue = batches.map(
-            (batchLinkIds) => () =>
-                publicDebouncedRequest<T>(query(batchLinkIds, shareId), abortSignal)
-                    .then((response) => {
-                        responses.push({ batchLinkIds, response });
-                        batchLinkIds.forEach((linkId) => successes.push(linkId));
-                    })
-                    .catch((error) => {
-                        batchLinkIds.forEach((linkId) => (failures[linkId] = error));
-                    })
-        );
-        await preventLeave(runInQueue(queue, maxParallelRequests));
-        return {
-            responses,
-            successes,
-            failures,
-        };
-    };
-
-    const deleteChildrenLinks = async (
-        abortSignal: AbortSignal,
-        shareId: string,
-        parentLinkId: string,
-        linkIds: string[]
-    ) => {
-        return batchHelper(abortSignal, shareId, linkIds, (batchLinkIds) =>
-            queryPublicDeleteChildrenLinks(shareId, parentLinkId, batchLinkIds)
-        );
-    };
-
     return {
         renameLink,
         createFolder,
-        deleteChildrenLinks,
     };
 }

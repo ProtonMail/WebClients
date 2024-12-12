@@ -105,8 +105,15 @@ export const queryPublicCheckAvailableHashes = (
     };
 };
 
-export const queryPublicDeleteChildrenLinks = (token: string, parentLinkId: string, linkIds: string[]) => ({
+export const queryPublicDeleteChildrenLinks = (
+    token: string,
+    parentLinkId: string,
+    links: {
+        LinkID: string;
+        AuthorizationToken?: string;
+    }[]
+) => ({
     method: 'post',
     url: `drive/urls/${token}/folders/${parentLinkId}/delete_multiple`,
-    data: { LinkIDs: linkIds },
+    data: { Links: links },
 });
