@@ -318,20 +318,11 @@
       ]
     },
     "Address list": {
-      "Activate Bitcoin via Email": [
-        "Activeer Bitcoin via e-mail"
-      ],
       "Address copied": [
         "Adres gekopieerd"
       ],
-      "Bitcoin via Email ${ availableAddresses }": [
-        "Bitcoin via e-mail ${ availableAddresses }"
-      ],
       "Change address": [
         "Wijzigingsadres"
-      ],
-      "Given out": [
-        "Uitgegeven"
       ],
       "Index": [
         "Index"
@@ -354,8 +345,8 @@
       "Toggle keychain": [
         "Sleutelhanger aan/uit"
       ],
-      "Used (${ transactionsCount })": [
-        "Gebruikt (${ transactionsCount })"
+      "Used": [
+        "Gebruikt"
       ],
       "Value": [
         "Waarde"
@@ -834,6 +825,11 @@
       ],
       "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
         "Bedankt voor uw inkooppoging met onze partner.\nU kunt de status van uw bestelling volgen via de bevestigingsmail die u van onze partner heeft ontvangen.\nAls de transactie mislukt, kunt u opnieuw proberen of een andere partner kiezen."
+      ]
+    },
+    "Buy in progress": {
+      "Buy more bitcoin": [
+        "Koop meer bitcoin"
       ]
     },
     "Cancellation upsell": {
@@ -2480,6 +2476,10 @@
       "Please authenticate your payment in the verification tab.": [
         "Authenticeer uw betaling in het verificatietabblad."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credit over.",
+        "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
       ],
@@ -3624,6 +3624,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Routeer uw internetverkeer door het Tor-netwerk met een enkele klik"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
       ],
@@ -3853,6 +3856,9 @@
       ],
       "Select billing country to pay": [
         "Selecteer factureringsland om te betalen"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } per maand. U kunt opzeggen wanneer u wilt."
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
@@ -5124,9 +5130,6 @@
       "Boost transaction priority": [
         "Prioriteit van transactie verhogen"
       ],
-      "By increasing the fee, you can prioritize your transaction, helping it get confirmed faster during busy network times.": [
-        "Door de kosten te verhogen, kunt u uw transactie prioriteit geven, zodat deze sneller wordt bevestigd tijdens drukke netwerktijden."
-      ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "QR-codescanner kan niet worden gebruikt. Controleer de browsercompatibiliteit"
       ],
@@ -5162,9 +5165,6 @@
       ],
       "How much are you sending?": [
         "Hoeveel verstuurt u?"
-      ],
-      "Increase fee and resend": [
-        "Verhoog kosten en opnieuw verzenden"
       ],
       "Low": [
         "Laag"
