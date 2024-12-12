@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { DeprecatedBanner, DeprecatedBannerBackgroundColor } from '@proton/components';
+import { Banner } from '@proton/atoms';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getIsVeventCancelled } from '@proton/shared/lib/calendar/vcalHelper';
 import type { RequireSome } from '@proton/shared/lib/interfaces';
@@ -28,7 +28,11 @@ const ExtraEventTimeStatus = ({ model }: Props) => {
         timeStatus === EVENT_TIME_STATUS.HAPPENING
             ? c('Calendar widget banner').t`Event in progress`
             : c('Calendar widget banner').t`Event already ended`;
-    return <DeprecatedBanner backgroundColor={DeprecatedBannerBackgroundColor.WARNING}>{text}</DeprecatedBanner>;
+    return (
+        <Banner className="mb-2" variant="warning" noIcon>
+            {text}
+        </Banner>
+    );
 };
 
 export default ExtraEventTimeStatus;

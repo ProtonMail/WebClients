@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { Banner } from '@proton/atoms/index';
 import { Icon, Tooltip } from '@proton/components';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
@@ -30,20 +31,17 @@ const ExtraDecryptedSubject = ({ message }: Props) => {
     }
 
     return (
-        <div className="bg-norm rounded border px-2 py-1 mb-3 flex flex-nowrap" data-testid="encrypted-subject-banner">
-            <div className="flex">
+        <Banner
+            data-testid="encrypted-subject-banner"
+            variant="norm-outline"
+            icon={
                 <Tooltip title={c('Info').t`Subject is end-to-end encrypted`}>
-                    <Icon
-                        name="lock"
-                        className="mt-1 mr-2 ml-1 shrink-0"
-                        alt={c('Info').t`Subject is end-to-end encrypted`}
-                    />
+                    <Icon name="lock" alt={c('Info').t`Subject is end-to-end encrypted`} />
                 </Tooltip>
-                <div className="mr-2 mt-1 flex-1 pb-1">
-                    {c('Info').t`Subject:`} {subjectElement}
-                </div>
-            </div>
-        </div>
+            }
+        >
+            {c('Info').t`Subject:`} {subjectElement}
+        </Banner>
     );
 };
 
