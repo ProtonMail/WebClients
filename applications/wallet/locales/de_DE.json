@@ -318,20 +318,11 @@
       ]
     },
     "Address list": {
-      "Activate Bitcoin via Email": [
-        "Aktiviere Bitcoin via E-Mail"
-      ],
       "Address copied": [
         "Adresse kopiert"
       ],
-      "Bitcoin via Email ${ availableAddresses }": [
-        "Bitcoin via E-Mail ${ availableAddresses }"
-      ],
       "Change address": [
         "Änderungsadresse"
-      ],
-      "Given out": [
-        "Ausgegeben"
       ],
       "Index": [
         "Index"
@@ -354,8 +345,8 @@
       "Toggle keychain": [
         "Schlüsselbund ein-/ausschalten"
       ],
-      "Used (${ transactionsCount })": [
-        "(${ transactionsCount }) genutzt"
+      "Used": [
+        "Benutzt"
       ],
       "Value": [
         "Wert"
@@ -497,7 +488,7 @@
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
-        "Zum Preis von ${ amount } einmal"
+        "Zum Preis von einmalig ${ amount }"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlängert sich nach 1 Monat zum ${ regularAmount }."
@@ -558,6 +549,9 @@
       ]
     },
     "bitcoin buy": {
+      "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
+        "${ WALLET_APP_NAME } ist eine Partnerschaft mit ${ rampLink }, ${ banxaLink } und ${ moonpayLink }, zwei registrierten Krypto-Asset-Dienstleistern, eingegangen, um den Kauf von BTC zu erleichtern. Bitte gib deine Region ein, um die verfügbaren Anbieter und Zahlungsmethoden zu sehen."
+      ],
       "1% bank transfer fee": [
         "1 % Überweisungsgebühr"
       ],
@@ -3048,6 +3042,9 @@
       "Administration Panel": [
         "Verwaltungskonsole"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Erweiterte Alias-Funktionen (unterstützt durch SimpleLogin)"
+      ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle ${ BRAND_NAME } Standarddienste (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
@@ -3606,6 +3603,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Leite deinen Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
@@ -3830,8 +3830,14 @@
       "Please select your billing state first.": [
         "Bitte wähle zuerst deinen Rechnungsstaat aus."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Verlängert sich zu ${ renewPrice }, jederzeit kündbar."
+      ],
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPrice } verlängert. Du kannst jederzeit kündigen."
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
@@ -5100,9 +5106,6 @@
       "Boost transaction priority": [
         "Priorität der Transaktion erhöhen"
       ],
-      "By increasing the fee, you can prioritize your transaction, helping it get confirmed faster during busy network times.": [
-        "Durch Erhöhung der Gebühr kannst du deine Transaktion priorisieren, damit sie in Zeiten mit hoher Netzwerkauslastung schneller bestätigt wird."
-      ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "QR-Code-Scanner kann nicht verwendet werden. Bitte überprüfe die Browser-Kompatibilität."
       ],
@@ -5138,9 +5141,6 @@
       ],
       "How much are you sending?": [
         "Wie viel sendest du?"
-      ],
-      "Increase fee and resend": [
-        "Gebühr erhöhen und erneut senden"
       ],
       "Low": [
         "Niedrig"
