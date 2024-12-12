@@ -31,6 +31,7 @@ import {
     getNormalCycleFromCustomCycle,
     getPlanIDs,
     getPlanTitle,
+    isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
 import { Renew } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -38,6 +39,7 @@ import noop from '@proton/utils/noop';
 
 import type { BadgeType } from '../../components/badge/Badge';
 import { default as Badge } from '../../components/badge/Badge';
+import { getSubscriptionManagerName } from './subscription/InAppPurchaseModal';
 import { subscriptionExpires } from './subscription/helpers';
 
 const SubscriptionsSection = () => {
@@ -155,11 +157,19 @@ const SubscriptionsSection = () => {
     })();
 
     const renewPrice = getSimplePriceString(renewCurrency, renewAmount);
-    const renewalText = c('Billing cycle').ngettext(
-        msgid`Renews automatically at ${renewPrice}, for ${renewLength} month`,
-        `Renews automatically at ${renewPrice}, for ${renewLength} months`,
-        renewLength
-    );
+    const renewalText = (() => {
+        if (isManagedExternally(current)) {
+            const subscriptionManagerName = getSubscriptionManagerName(current.External);
+            // translator: possible values are "Google Play" or "Apple App Store". This sentence means "Subscription renews automatically on Google Play (or Apple App Store)"
+            return c('Billing cycle').t`Renews automatically on ${subscriptionManagerName}`;
+        }
+
+        return c('Billing cycle').ngettext(
+            msgid`Renews automatically at ${renewPrice}, for ${renewLength} month`,
+            `Renews automatically at ${renewPrice}, for ${renewLength} months`,
+            renewLength
+        );
+    })();
 
     const renewalTextElement = <span data-testid="renewalNotice">{renewalText}</span>;
 
