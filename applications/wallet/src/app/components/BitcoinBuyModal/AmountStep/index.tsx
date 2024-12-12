@@ -12,7 +12,7 @@ import type {
     WasmPaymentMethod,
     WasmQuote,
 } from '@proton/andromeda';
-import type { IconName} from '@proton/components';
+import type { IconName } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import { useSubscriptionModal } from '@proton/components';
 import { DropdownSizeUnit, Icon, useModalState } from '@proton/components';
@@ -29,6 +29,7 @@ import { useWalletApiClients } from '@proton/wallet';
 import type { CoreSearchableSelectProps } from '../../../atoms';
 import { Button, Input, SearchableSelect, Select } from '../../../atoms';
 import { CurrencySelect } from '../../../atoms/CurrencySelect';
+import { Skeleton } from '../../../atoms/Skeleton';
 import { BUY_BITCOIN_DEFAULT_AMOUNT } from '../../../constants/amount';
 import { countDecimal, formatNumberForDisplay } from '../../../utils';
 import { AztecoPaymentDetailsModal } from './AztecoPaymentDetailsModal';
@@ -212,7 +213,7 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                                     <CurrencySelect
                                         dense
                                         value={selectedCurrency as string}
-                                        disabled={loadingCurrencies}
+                                        disabled={loadingCurrencies || loadingQuotes}
                                         options={allCurrencies}
                                         stackedFieldWrapper={false}
                                         onSelect={(currency) => {
@@ -229,140 +230,148 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                             }
                         />
 
-                        <Input
-                            isGroupElement
-                            label={c('bitcoin buy').t`You receive`}
-                            readOnly
-                            value={selectedQuote?.BitcoinAmount && `${selectedQuote?.BitcoinAmount} BTC`}
-                            disabled={loadingQuotes}
-                            subline={
-                                selectedPaymentProvider === 'Azteco' &&
-                                selectedQuote &&
-                                !loadingQuotes && (
-                                    <div className="flex flex-row items-center text-sm text-weak">
-                                        {selectedQuote.PurchaseAmount} {selectedQuote.FiatCurrencySymbol}
-                                        <span className="block mx-1">|</span>
-                                        <Button
-                                            shape="underline"
-                                            color="weak"
-                                            onClick={() => setAztecoPaymentDetailsModal(true)}
-                                            style={{ padding: 0 }}
-                                        >
-                                            {c('bitcoin buy').t`See details`}
-                                        </Button>
-                                    </div>
-                                )
-                            }
-                            suffix={
-                                (availableProviders.length || !loadingQuotes) && (
-                                    <div className="flex grow items-center flex-row flex-nowrap">
-                                        <Select
-                                            value={selectedPaymentProvider}
-                                            onChange={(event) => {
-                                                setSelectedPaymentProvider(event.value);
-                                            }}
-                                            size={{
-                                                width: DropdownSizeUnit.Dynamic,
-                                                maxWidth: DropdownSizeUnit.Viewport,
-                                            }}
-                                            containerClassName="provider-select-dense"
-                                            stackedFieldWrapper={false}
-                                            renderSelected={(provider) => {
-                                                if (!provider) {
-                                                    return null;
-                                                }
+                        <Skeleton loading={loadingQuotes}>
+                            <Input
+                                isGroupElement
+                                label={c('bitcoin buy').t`You receive`}
+                                readOnly
+                                value={selectedQuote?.BitcoinAmount && `${selectedQuote?.BitcoinAmount} BTC`}
+                                disabled={loadingQuotes}
+                                subline={
+                                    selectedPaymentProvider === 'Azteco' &&
+                                    selectedQuote &&
+                                    !loadingQuotes && (
+                                        <div className="flex flex-row items-center text-sm text-weak">
+                                            {selectedQuote.PurchaseAmount} {selectedQuote.FiatCurrencySymbol}
+                                            <span className="block mx-1">|</span>
+                                            <Button
+                                                shape="underline"
+                                                color="weak"
+                                                onClick={() => setAztecoPaymentDetailsModal(true)}
+                                                style={{ padding: 0 }}
+                                            >
+                                                {c('bitcoin buy').t`See details`}
+                                            </Button>
+                                        </div>
+                                    )
+                                }
+                                suffix={
+                                    (availableProviders.length || !loadingQuotes) && (
+                                        <div className="flex grow items-center flex-row flex-nowrap">
+                                            <Skeleton loading={loadingQuotes}>
+                                                <Select
+                                                    value={selectedPaymentProvider}
+                                                    onChange={(event) => {
+                                                        setSelectedPaymentProvider(event.value);
+                                                    }}
+                                                    size={{
+                                                        width: DropdownSizeUnit.Dynamic,
+                                                        maxWidth: DropdownSizeUnit.Viewport,
+                                                    }}
+                                                    containerClassName="provider-select-dense"
+                                                    stackedFieldWrapper={false}
+                                                    renderSelected={(provider) => {
+                                                        if (!provider) {
+                                                            return null;
+                                                        }
 
-                                                const content = getContentForProvider(provider);
-                                                if (!content) {
-                                                    return null;
-                                                }
+                                                        const content = getContentForProvider(provider);
+                                                        if (!content) {
+                                                            return null;
+                                                        }
 
-                                                return (
-                                                    <div className="flex flex-row items-center">
-                                                        <img
-                                                            src={content.assetSrc}
-                                                            style={{ width: '1.25rem' }}
-                                                            alt=""
-                                                            className="mr-2"
-                                                        />
-                                                        <span className="text-sm">{content.title}</span>
-                                                    </div>
-                                                );
-                                            }}
-                                            disabled={!availableProviders.length}
-                                            options={compact(
-                                                availableProviders.map((provider) => {
-                                                    const content = getContentForProvider(provider);
-
-                                                    if (!content) {
-                                                        return null;
-                                                    }
-
-                                                    return {
-                                                        value: provider,
-                                                        label: provider,
-                                                        id: provider,
-                                                        children: (
+                                                        return (
                                                             <div className="flex flex-row items-center">
-                                                                <div
-                                                                    className="p-2 mr-2 flex rounded-full bg-weak border-norm"
-                                                                    style={{ width: '2rem', height: '2rem' }}
-                                                                >
-                                                                    <img src={content.assetSrc} alt="" />
-                                                                </div>
-                                                                <span>{content.title}</span>
+                                                                <img
+                                                                    src={content.assetSrc}
+                                                                    style={{ width: '1.25rem' }}
+                                                                    alt=""
+                                                                    className="mr-2"
+                                                                />
+                                                                <span className="text-sm">{content.title}</span>
                                                             </div>
-                                                        ),
-                                                    };
-                                                })
-                                            )}
-                                        />
-                                    </div>
-                                )
-                            }
-                        />
+                                                        );
+                                                    }}
+                                                    disabled={!availableProviders.length}
+                                                    options={compact(
+                                                        availableProviders.map((provider) => {
+                                                            const content = getContentForProvider(provider);
+
+                                                            if (!content) {
+                                                                return null;
+                                                            }
+
+                                                            return {
+                                                                value: provider,
+                                                                label: provider,
+                                                                id: provider,
+                                                                children: (
+                                                                    <div className="flex flex-row items-center">
+                                                                        <div
+                                                                            className="p-2 mr-2 flex rounded-full bg-weak border-norm"
+                                                                            style={{ width: '2rem', height: '2rem' }}
+                                                                        >
+                                                                            <img src={content.assetSrc} alt="" />
+                                                                        </div>
+                                                                        <span>{content.title}</span>
+                                                                    </div>
+                                                                ),
+                                                            };
+                                                        })
+                                                    )}
+                                                />
+                                            </Skeleton>
+                                        </div>
+                                    )
+                                }
+                            />
+                        </Skeleton>
                     </InputFieldStackedGroup>
 
                     <InputFieldStackedGroup>
-                        <Select
-                            prefix={(() => {
-                                if (!selectedPaymentMethod) {
-                                    return undefined;
-                                }
-
-                                const content = getContentForPaymentMethod(selectedPaymentMethod);
-
-                                if (!content) {
-                                    return undefined;
-                                }
-
-                                return (
-                                    <div className="p-3 rounded-full bg-norm flex items-center justify-center mr-2">
-                                        <Icon size={4} name={content.icon} className="color-weak" />
-                                    </div>
-                                );
-                            })()}
-                            label={c('bitcoin buy').t`Pay with`}
-                            disabled={!selectedPaymentProvider || loadingQuotes}
-                            value={selectedPaymentMethod}
-                            onChange={(e) => {
-                                setSelectedPaymentMethod(e.value);
-                            }}
-                            options={compact(
-                                availablePaymentMethods.map((paymentMethod) => {
-                                    const content = getContentForPaymentMethod(paymentMethod);
-                                    if (!content) {
-                                        return null;
+                        <Skeleton loading={loadingQuotes && availablePaymentMethods.length > 0}>
+                            <Select
+                                prefix={(() => {
+                                    if (!selectedPaymentMethod) {
+                                        return undefined;
                                     }
 
-                                    return {
-                                        value: paymentMethod,
-                                        id: paymentMethod,
-                                        label: content.text,
-                                    };
-                                })
-                            ).sort((a, b) => a.label.localeCompare(b.label))}
-                        />
+                                    const content = getContentForPaymentMethod(selectedPaymentMethod);
+
+                                    if (!content) {
+                                        return undefined;
+                                    }
+
+                                    return (
+                                        <Skeleton loading={loadingQuotes}>
+                                            <div className="p-3 rounded-full bg-norm flex items-center justify-center mr-2">
+                                                <Icon size={4} name={content.icon} className="color-weak" />
+                                            </div>
+                                        </Skeleton>
+                                    );
+                                })()}
+                                label={c('bitcoin buy').t`Pay with`}
+                                disabled={!selectedPaymentProvider || loadingQuotes}
+                                value={selectedPaymentMethod}
+                                onChange={(e) => {
+                                    setSelectedPaymentMethod(e.value);
+                                }}
+                                options={compact(
+                                    availablePaymentMethods.map((paymentMethod) => {
+                                        const content = getContentForPaymentMethod(paymentMethod);
+                                        if (!content) {
+                                            return null;
+                                        }
+
+                                        return {
+                                            value: paymentMethod,
+                                            id: paymentMethod,
+                                            label: content.text,
+                                        };
+                                    })
+                                ).sort((a, b) => a.label.localeCompare(b.label))}
+                            />
+                        </Skeleton>
                     </InputFieldStackedGroup>
 
                     <div className="w-full px-8 my-5">
