@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { differenceInDays } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { DeprecatedBanner, DeprecatedBannerBackgroundColor } from '@proton/components';
+import { Banner } from '@proton/atoms';
+import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import type { Nullable } from '@proton/shared/lib/interfaces';
 
@@ -11,9 +12,10 @@ export interface EventReminderTextProps {
     isAllDay: boolean;
     startDate: Date;
     endDate: Date;
+    className?: string;
 }
 
-const EventReminderText = ({ isAllDay, startDate, endDate }: EventReminderTextProps) => {
+const EventReminderText = ({ isAllDay, startDate, endDate, className }: EventReminderTextProps) => {
     const [now, setNow] = useState(new Date());
 
     useEffect(() => {
@@ -30,13 +32,13 @@ const EventReminderText = ({ isAllDay, startDate, endDate }: EventReminderTextPr
     const hasStarted = msUntilEvent <= 0;
     const hasEnded = +endDate < +now;
 
-    const getMessageInfo = (): Nullable<[DeprecatedBannerBackgroundColor, string]> => {
+    const getMessageInfo = (): Nullable<[BannerVariants, string]> => {
         if (hasEnded) {
-            return [DeprecatedBannerBackgroundColor.WARNING, c('Calendar widget banner').t`Event already ended`];
+            return [BannerVariants.WARNING, c('Calendar widget banner').t`Event already ended`];
         }
 
         if (hasStarted) {
-            return [DeprecatedBannerBackgroundColor.WARNING, c('Calendar widget banner').t`Event in progress`];
+            return [BannerVariants.WARNING, c('Calendar widget banner').t`Event in progress`];
         }
 
         if (!isAllDay && msUntilEvent < HOUR) {
@@ -49,7 +51,7 @@ const EventReminderText = ({ isAllDay, startDate, endDate }: EventReminderTextPr
                           `Event starts in ${minutesUntilEvent} minutes`,
                           minutesUntilEvent
                       );
-            return [DeprecatedBannerBackgroundColor.INFO, text];
+            return [BannerVariants.INFO, text];
         }
 
         if (isAllDay && msUntilEvent < DAY) {
@@ -57,7 +59,7 @@ const EventReminderText = ({ isAllDay, startDate, endDate }: EventReminderTextPr
                 differenceInDays(endDate, startDate) === 1
                     ? c('Email reminder banner').t`Event is tomorrow`
                     : c('Email reminder banner').t`Event starts tomorrow`;
-            return [DeprecatedBannerBackgroundColor.INFO, text];
+            return [BannerVariants.INFO, text];
         }
 
         return null;
@@ -72,9 +74,9 @@ const EventReminderText = ({ isAllDay, startDate, endDate }: EventReminderTextPr
     const [backgroundColor, text] = messageInfo;
 
     return (
-        <DeprecatedBanner backgroundColor={backgroundColor} icon="bell">
+        <Banner className={className} noIcon variant={backgroundColor}>
             {text}
-        </DeprecatedBanner>
+        </Banner>
     );
 };
 
