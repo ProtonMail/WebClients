@@ -247,3 +247,7 @@ export const getSupportedAddons = (planIDs: PlanIDs): SupportedAddons => {
 
     return supported;
 };
+
+export const getPlansWithAddons = (): PLANS[] => {
+    return Object.values(PLANS).filter((plan) => Object.keys(getSupportedAddons({ [plan]: 1 })).length > 0);
+};
