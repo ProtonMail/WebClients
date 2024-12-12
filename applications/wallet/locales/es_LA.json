@@ -318,20 +318,11 @@
       ]
     },
     "Address list": {
-      "Activate Bitcoin via Email": [
-        "Activar Bitcoin por correo electrónico"
-      ],
       "Address copied": [
         "Se copió la dirección."
       ],
-      "Bitcoin via Email ${ availableAddresses }": [
-        "Bitcoin por correo electrónico ${ availableAddresses }"
-      ],
       "Change address": [
         "Cambio de dirección"
-      ],
-      "Given out": [
-        "Entregada"
       ],
       "Index": [
         "Índice"
@@ -345,6 +336,12 @@
       "Receive address": [
         "Dirección de recepción"
       ],
+      "Search exact address": [
+        "Buscar la dirección exacta"
+      ],
+      "Search for exact address": [
+        "Buscar la dirección exacta"
+      ],
       "Status": [
         "Estado"
       ],
@@ -354,8 +351,8 @@
       "Toggle keychain": [
         "Activar el llavero"
       ],
-      "Used (${ transactionsCount })": [
-        "Uso (${ transactionsCount })"
+      "Used": [
+        "Usada"
       ],
       "Value": [
         "Valor"
@@ -575,6 +572,9 @@
       ],
       "Amount": [
         "Importe"
+      ],
+      "An error occurred while confirming this quote, please select another provider and try again.": [
+        "Ocurrió un error al confirmar esta cuota. Seleccione otro proveedor y vuelva a intentarlo."
       ],
       "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
         "¡Como usuario de pago, está ahorrando ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } en tarifas de servicio de Azteco!"
@@ -2000,7 +2000,7 @@
         "Fecha de expiración inválida"
       ],
       "Invalid IBAN": [
-        "IBAN inválido"
+        "El IBAN no es válido."
       ],
       "Invalid postal code": [
         "Código postal inválido"
@@ -2564,6 +2564,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una pestaña nueva en el navegador. Desactive cualquier bloqueador de ventanas emergentes activo."
       ],
+      "This address is used to receive Bitcoin via Email": [
+        "Se usa esta dirección para recibir Bitcoin por correo electrónico."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar el pago, envíe ${ btcAmountBold } a la dirección de abajo."
       ],
@@ -2709,6 +2712,9 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } meses"
+      ],
+      "Account holder": [
+        "Titular de la cuenta"
       ],
       "Address": [
         "Dirección"
@@ -5190,11 +5196,14 @@
       "Bitcoin address signature could not be verified": [
         "No se ha podido verificar la firma de la dirección de Bitcoin"
       ],
+      "Boost transaction": [
+        "Aumentar la prioridad de la transacción"
+      ],
       "Boost transaction priority": [
         "Aumentar la prioridad de la transacción"
       ],
-      "By increasing the fee, you can prioritize your transaction, helping it get confirmed faster during busy network times.": [
-        "Al aumentar la tarifa, puede priorizar su transacción, lo que ayuda a que se confirme más rápido durante los momentos en que la red está más congestionada."
+      "By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.": [
+        "Al aumentar la tarifa de la red, puede aumentar la velocidad de su transacción, ayudándola a procesarse y confirmarse más rápido."
       ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "No se puede usar el escáner QRCode. Compruebe la compatibilidad del navegador."
@@ -5231,9 +5240,6 @@
       ],
       "How much are you sending?": [
         "¿Cuánto está enviando?"
-      ],
-      "Increase fee and resend": [
-        "Aumentar la tarifa y reenviar"
       ],
       "Low": [
         "Baja"

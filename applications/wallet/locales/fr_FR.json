@@ -318,20 +318,11 @@
       ]
     },
     "Address list": {
-      "Activate Bitcoin via Email": [
-        "Activer Bitcoin via Email"
-      ],
       "Address copied": [
         "L'adresse a été copiée."
       ],
-      "Bitcoin via Email ${ availableAddresses }": [
-        "Bitcoin via Email ${ availableAddresses }"
-      ],
       "Change address": [
         "Changer l'adresse"
-      ],
-      "Given out": [
-        "Remise"
       ],
       "Index": [
         "Index"
@@ -345,6 +336,12 @@
       "Receive address": [
         "Adresse de réception"
       ],
+      "Search exact address": [
+        "Rechercher l'adresse exacte"
+      ],
+      "Search for exact address": [
+        "Rechercher l'adresse exacte"
+      ],
       "Status": [
         "État"
       ],
@@ -354,8 +351,8 @@
       "Toggle keychain": [
         "Afficher ou masquer le trousseau"
       ],
-      "Used (${ transactionsCount })": [
-        "Utilisation de (${ transactionsCount })"
+      "Used": [
+        "Utilisée"
       ],
       "Value": [
         "Valeur"
@@ -565,7 +562,7 @@
         "Frais de service Azteco de ${ serviceFeePercentage } %"
       ],
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
-        "${ WALLET_APP_NAME } s'est associé à ${ rampLink }, ${ banxaLink } et ${ moonpayLink }, trois services de crypto-actifs enregistrés, pour faciliter l'achat de bitcoins. Veuillez entrer votre région pour afficher les fournisseurs et les moyens de paiement disponibles."
+        "${ WALLET_APP_NAME } s'est associé à ${ rampLink }, ${ banxaLink } et ${ moonpayLink }, trois services de crypto-actifs, enregistrés pour faciliter l'achat de bitcoins. Veuillez entrer votre région pour afficher les fournisseurs et les moyens de paiement disponibles."
       ],
       "1% bank transfer fee": [
         "1 % de frais de virement bancaire"
@@ -575,6 +572,9 @@
       ],
       "Amount": [
         "Montant"
+      ],
+      "An error occurred while confirming this quote, please select another provider and try again.": [
+        "Une erreur s'est produite lors de la confirmation de ce tarif. Veuillez sélectionner un autre fournisseur et réessayer."
       ],
       "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
         "En tant qu'utilisateur payant, vous économisez ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } sur les frais de service d'Azteco."
@@ -857,7 +857,7 @@
         "Merci d'avoir acheté un bon Azteco.\nNous allons maintenant utiliser votre bon d'achat et Azteco enverra les BTC sur votre portefeuille.\nNous vous enverrons également un e-mail contenant les informations concernant l'achat."
       ],
       "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
-        "Merci pour votre achat auprès de notre partenaire.\nVous pouvez suivre l'état de votre commande via l'e-mail de confirmation qui vous a été envoyé par notre partenaire.\nSi la transaction n'aboutit pas, vous pouvez réessayer ou choisir un autre partenaire."
+        "Merci pour votre achat auprès de notre partenaire.\nVous pouvez suivre l'état de votre commande via l'e-mail de confirmation qui vous a été envoyé par notre partenaire.\nSi la transaction échoue, vous pouvez réessayer ou choisir un autre partenaire."
       ]
     },
     "Buy in progress": {
@@ -2561,6 +2561,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
       ],
+      "This address is used to receive Bitcoin via Email": [
+        "Cette adresse est utilisée pour recevoir des bitcoins via e-mail."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pour finaliser votre paiement, vous devez envoyer ${ btcAmountBold } à l'adresse ci-dessous."
       ],
@@ -2706,6 +2709,9 @@
       "${ n } month": [
         "${ n } mois",
         "${ n } mois"
+      ],
+      "Account holder": [
+        "Titulaire du compte"
       ],
       "Address": [
         "Adresse"
@@ -5187,11 +5193,14 @@
       "Bitcoin address signature could not be verified": [
         "La signature de l'adresse Bitcoin n'a pas pu être vérifiée."
       ],
+      "Boost transaction": [
+        "Accélérer la transaction"
+      ],
       "Boost transaction priority": [
         "Augmenter la priorité des transactions"
       ],
-      "By increasing the fee, you can prioritize your transaction, helping it get confirmed faster during busy network times.": [
-        "En augmentant les frais, vous pouvez prioriser votre transaction, afin qu'elle soit confirmée plus rapidement pendant les périodes de forte activité sur le réseau."
+      "By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.": [
+        "En augmentant les frais de réseau, vous pouvez accélérer la vitesse de votre transaction, ce qui permet un traitement et une confirmation plus rapide."
       ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "Le scanner de QR codes ne peut pas être utilisé. Veuillez vérifier la compatibilité de votre navigateur."
@@ -5228,9 +5237,6 @@
       ],
       "How much are you sending?": [
         "Combien envoyez-vous ?"
-      ],
-      "Increase fee and resend": [
-        "Augmenter les frais et renvoyer"
       ],
       "Low": [
         "Faible"
