@@ -29,6 +29,7 @@ import {
     hasVisionary,
     hasVpnBusiness,
     hasWallet,
+    isManagedExternally,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
@@ -441,7 +442,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         );
     };
 
-    const planPriceElement = (user.hasPaidMail || user.hasPaidVpn) && (
+    const planPriceElement = (user.hasPaidMail || user.hasPaidVpn) && !isManagedExternally(subscription) && (
         <Price
             className="h3 color-weak"
             currency={subscription?.Currency}
