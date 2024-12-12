@@ -20,6 +20,7 @@ import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailELDTMetric } from 'proton-mail/metrics/useMailELDTMetric';
+import { useMailPTTMetric } from 'proton-mail/metrics/useMailPTTMetric';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -158,6 +159,7 @@ const List = (
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
 
     const { stopELDTMetric } = useMailELDTMetric();
+    const { stopPTTMetric } = useMailPTTMetric();
 
     useEffect(() => {
         // We want  to report the end of ELDT as soon as no placeholder is present in the list
@@ -166,7 +168,11 @@ const List = (
         }
 
         stopELDTMetric(labelID);
-    }, [elements]);
+
+        if (!loading) {
+            stopPTTMetric();
+        }
+    }, [elements, loading]);
 
     const pagingHandlers = usePaging(inputPage, pageSize, inputTotal, onPage);
     const { total, page } = pagingHandlers;
