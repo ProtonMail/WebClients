@@ -85,7 +85,13 @@ export const DataList = <I extends { key: string }>({ columns, rows, canClickRow
             }}
         >
             {header && (
-                <div className={clsx('datagrid-row relative text-bold mt-4', isNarrow ? 'px-3 py-2' : 'px-6 py-3')}>
+                <div
+                    className={clsx(
+                        'datagrid-row relative text-bold mt-4',
+                        isNarrow ? 'px-3 py-2' : 'px-6 py-3',
+                        rows.length === 0 && 'mb-4'
+                    )}
+                >
                     {header}
                 </div>
             )}
