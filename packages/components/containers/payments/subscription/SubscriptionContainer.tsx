@@ -1174,7 +1174,7 @@ const SubscriptionContainer = ({
                                 statusExtended={paymentFacade.statusExtended}
                                 paymentMethods={paymentFacade.methods}
                                 onBillingAddressChange={handleBillingAddressChange}
-                                showPlanDescription={!hasPlanCustomizer}
+                                showPlanDescription={audience !== Audience.B2B}
                                 paymentNeeded={!model.noPaymentNeeded}
                                 user={user}
                                 {...checkoutModifiers}
