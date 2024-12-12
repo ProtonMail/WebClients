@@ -117,6 +117,35 @@ export default function useListNotifications() {
         );
     };
 
+    const createDeletedPublicItemsNotifications = (
+        linkInfos: LinkInfo[],
+        ok: string[],
+        failures: { [linkId: string]: any }
+    ) => {
+        createSuccessMessage(
+            linkInfos,
+            ok,
+            (name: string) => c('Notification').t`"${name}" deleted`,
+            (numberOfItems: number) =>
+                c('Notification').ngettext(
+                    msgid`${numberOfItems} item deleted`,
+                    `${numberOfItems} items deleted`,
+                    numberOfItems
+                )
+        );
+        createFailureMessage(
+            linkInfos,
+            failures,
+            (name: string) => c('Notification').t`"${name}" failed to be deleted`,
+            (numberOfItems: number) =>
+                c('Notification').ngettext(
+                    msgid`${numberOfItems} item failed to be deleted`,
+                    `${numberOfItems} items failed to be deleted`,
+                    numberOfItems
+                )
+        );
+    };
+
     const createRestoredItemsNotifications = (
         linkInfos: LinkInfo[],
         ok: string[],
@@ -213,5 +242,6 @@ export default function useListNotifications() {
         createRestoredItemsNotifications,
         createDeletedItemsNotifications,
         createDeletedSharedLinksNotifications,
+        createDeletedPublicItemsNotifications,
     };
 }

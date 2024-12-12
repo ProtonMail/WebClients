@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { isErrorDueToNameConflict } from '../../../utils/isErrorDueToNameConflict';
-import { usePublicLinkActions, usePublicLinksListing } from '../../_links';
+import { usePublicLinkActions, usePublicLinksActions, usePublicLinksListing } from '../../_links';
 import type { UploadFolderControls } from '../interface';
 import type { ConflictStrategyHandler } from './interface';
 import usePublicUploadHelper from './usePublicUploadHelper';
@@ -18,7 +20,7 @@ interface Folder {
 export default function usePublicUploadFolder() {
     const queuedFunction = useQueuedFunction();
     const { createFolder } = usePublicLinkActions();
-    const { deleteChildrenLinks } = usePublicLinkActions();
+    const { deleteLinks } = usePublicLinksActions();
     const { findAvailableName } = usePublicUploadHelper();
     const publicLinksListing = usePublicLinksListing();
 
@@ -29,7 +31,14 @@ export default function usePublicUploadFolder() {
         folderName: string,
         modificationTime?: Date
     ): Promise<Folder> => {
-        const folderId = await createFolder(abortSignal, token, parentId, folderName, modificationTime);
+        const folderId = await createFolder(abortSignal, {
+            token,
+            parentLinkId: parentId,
+            name: folderName,
+            modificationTime,
+            // Since we don't have conflict management and we choose to create new folder name in case of, we want to hide "already exist" error
+            silence: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
+        });
         await publicLinksListing.loadChildren(abortSignal, token, parentId, false);
         return {
             folderId,
@@ -67,7 +76,7 @@ export default function usePublicUploadFolder() {
         folderName: string,
         modificationTime?: Date
     ) => {
-        await deleteChildrenLinks(abortSignal, shareId, parentId, [linkId]);
+        await deleteLinks(abortSignal, { token: shareId, parentLinkId: parentId, links: [{ linkId }] });
         return createEmptyFolder(abortSignal, shareId, parentId, folderName, modificationTime);
     };
 

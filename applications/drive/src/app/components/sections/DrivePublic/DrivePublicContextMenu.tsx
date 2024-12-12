@@ -1,12 +1,13 @@
-import { ContextSeparator } from '@proton/components';
+import { ContextSeparator, useConfirmActionModal } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import type { DecryptedLink } from '../../../store';
+import { useAnonymousUploadAuthStore } from '../../../zustand/upload/anonymous-auth.store';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useRenameModal } from '../../modals/RenameModal';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
-import { DownloadButton, MoveToTrashButton, OpenInDocsButton, PreviewButton, RenameButton } from './ContextMenuButtons';
+import { DeleteButton, DownloadButton, OpenInDocsButton, PreviewButton, RenameButton } from './ContextMenuButtons';
 import { usePublicLinkOwnerInfo } from './utils/usePublicLinkOwnerInfo';
 
 export function DrivePublicContextMenu({
@@ -27,17 +28,29 @@ export function DrivePublicContextMenu({
     openPreview: (item: DecryptedLink) => void;
     openInDocs?: (linkId: string) => void;
 }) {
-    const { isCreator, isLastEditor } = usePublicLinkOwnerInfo(selectedLinks);
+    const { uploadTokens } = useAnonymousUploadAuthStore();
+    const { isCreator, isLastEditor, loggedIn } = usePublicLinkOwnerInfo(selectedLinks);
     const selectedLink = selectedLinks.length > 0 ? selectedLinks[0] : undefined;
     const isOnlyOneItem = selectedLinks.length === 1 && !!selectedLink;
     const isOnlyOneFileItem = isOnlyOneItem && selectedLink.isFile;
     const hasPreviewAvailable =
         isOnlyOneFileItem && selectedLink.mimeType && isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
     const [publicRenameModal, showPublicRenameModal] = useRenameModal();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const isDocument = isProtonDocument(selectedLink?.mimeType || '');
 
     const showPreviewButton = hasPreviewAvailable;
     const showOpenInDocsButton = isOnlyOneFileItem && isDocument && openInDocs;
+
+    // TODO: Move it once we have we have renaming for anonymous
+    const isDeletionAllowed = loggedIn
+        ? isCreator && isLastEditor
+        : selectedLinks.every((link) => uploadTokens.has(link.linkId));
+
+    // In case user is loggedIn, we will not have any authorizationToken for uploads
+    const selectedLinksWithToken = loggedIn
+        ? selectedLinks
+        : selectedLinks.map((link) => ({ ...link, authorizationToken: uploadTokens.get(link.linkId) }));
 
     return (
         <>
@@ -60,15 +73,21 @@ export function DrivePublicContextMenu({
                     </>
                 )}
 
-                {isCreator && isLastEditor && (
+                {isDeletionAllowed && (
                     <>
                         <ContextSeparator />
-                        <MoveToTrashButton selectedLinks={selectedLinks} close={close} />
+                        <DeleteButton
+                            selectedLinks={selectedLinksWithToken}
+                            close={close}
+                            showConfirmModal={showConfirmModal}
+                            anonymousRemoval={!isCreator && !isLastEditor}
+                        />
                     </>
                 )}
                 {children}
             </ItemContextMenu>
             {publicRenameModal}
+            {confirmModal}
         </>
     );
 }
