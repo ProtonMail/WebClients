@@ -4,12 +4,15 @@ import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import type { EncryptedLink, LinkShareUrl, useSearchView } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
+import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
 import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
@@ -77,6 +80,8 @@ export const Search = ({ shareId, searchView }: Props) => {
     const { navigateToLink } = useNavigate();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
+    const { openDocument } = useDocumentActions();
+    const { canUseDocs } = useDriveDocsFeatureFlag();
 
     const { layout, items, sortParams, setSorting, isLoading } = searchView;
 
@@ -123,6 +128,24 @@ export const Search = ({ shareId, searchView }: Props) => {
             if (!item) {
                 return;
             }
+
+            if (isProtonDocument(item.mimeType)) {
+                void canUseDocs(shareId)
+                    .then((canUse) => {
+                        if (!canUse) {
+                            return;
+                        }
+
+                        return openDocument({
+                            linkId: id,
+                            shareId,
+                            openBehavior: 'tab',
+                        });
+                    })
+                    .catch(sendErrorReport);
+                return;
+            }
+
             document.getSelection()?.removeAllRanges();
             navigateToLink(shareId, item.linkId, item.isFile);
         },
