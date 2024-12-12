@@ -2,8 +2,10 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { useNotifications } from '@proton/components/index';
 
-import { usePublicLinkActions, usePublicLinksListing } from '../_links';
+import { usePublicLinkActions, usePublicLinksActions, usePublicLinksListing } from '../_links';
+import useLinksState from '../_links/useLinksState';
 import { useErrorHandler } from '../_utils';
+import useListNotifications from './useListNotifications';
 import { usePublicActions } from './usePublicActions';
 
 jest.mock('@proton/components');
@@ -46,6 +48,32 @@ jest.mocked(useErrorHandler).mockImplementation(
     () =>
         ({
             showErrorNotification: mockShowErrorNotification,
+        }) as any
+);
+
+const mockShowConfirmModal = jest.fn();
+const mockDeleteLinks = jest.fn();
+
+jest.mock('../_links/usePublicLinksActions');
+jest.mocked(usePublicLinksActions).mockImplementation(() => ({
+    deleteLinks: mockDeleteLinks,
+}));
+
+const mockRemoveLinksForPublicPage = jest.fn();
+jest.mock('../_links/useLinksState');
+jest.mocked(useLinksState).mockImplementation(
+    () =>
+        ({
+            removeLinksForPublicPage: mockRemoveLinksForPublicPage,
+        }) as any
+);
+
+const mockCreateDeletedPublicItemsNotifications = jest.fn();
+jest.mock('./useListNotifications');
+jest.mocked(useListNotifications).mockImplementation(
+    () =>
+        ({
+            createDeletedPublicItemsNotifications: mockCreateDeletedPublicItemsNotifications,
         }) as any
 );
 
@@ -118,12 +146,11 @@ describe('usePublicActions', () => {
                 mockNewFolderName
             );
 
-            expect(mockCreateFolder).toHaveBeenCalledWith(
-                mockAbortSignal,
-                mockToken,
-                mockParentLinkId,
-                mockNewFolderName
-            );
+            expect(mockCreateFolder).toHaveBeenCalledWith(mockAbortSignal, {
+                token: mockToken,
+                parentLinkId: mockParentLinkId,
+                name: mockNewFolderName,
+            });
             expect(mockLoadChildren).toHaveBeenCalledWith(mockAbortSignal, mockToken, mockParentLinkId, false);
             expect(mockCreateNotification).toHaveBeenCalledWith({
                 text: <span className="text-pre-wrap">"New Folder" created successfully</span>,
@@ -140,15 +167,183 @@ describe('usePublicActions', () => {
                 result.current.createFolder(mockAbortSignal, mockToken, mockParentLinkId, mockNewFolderName)
             ).rejects.toThrow(mockError);
 
-            expect(mockCreateFolder).toHaveBeenCalledWith(
-                mockAbortSignal,
-                mockToken,
-                mockParentLinkId,
-                mockNewFolderName
-            );
+            expect(mockCreateFolder).toHaveBeenCalledWith(mockAbortSignal, {
+                token: mockToken,
+                parentLinkId: mockParentLinkId,
+                name: mockNewFolderName,
+            });
             expect(mockShowErrorNotification).toHaveBeenCalledWith(
                 mockError,
                 <span className="text-pre-wrap">"New Folder" failed to be created</span>
+            );
+        });
+    });
+
+    describe('deleteLinks', () => {
+        let confirmModalHandler = { onSubmit: () => Promise.resolve() };
+        beforeEach(() => {
+            mockShowConfirmModal.mockImplementation((handler) => {
+                confirmModalHandler = handler;
+            });
+        });
+
+        it('should show confirm modal with correct messages for single file deletion', async () => {
+            const { result } = renderHook(() => usePublicActions());
+            const singleFileLink = [
+                {
+                    linkId: 'link1',
+                    parentLinkId: 'parent1',
+                    name: 'test-file.txt',
+                    isFile: true,
+                },
+            ];
+
+            await result.current.deleteLinks(mockAbortSignal, {
+                token: mockToken,
+                links: singleFileLink,
+                showConfirmModal: mockShowConfirmModal,
+            });
+
+            expect(mockShowConfirmModal).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    title: 'Delete test-file.txt?',
+                    message: 'This action will delete the file you uploaded permanently.',
+                    submitText: 'Delete',
+                })
+            );
+        });
+
+        it('should show confirm modal with correct messages for single folder deletion', async () => {
+            const { result } = renderHook(() => usePublicActions());
+            const singleFolderLink = [
+                {
+                    linkId: 'link1',
+                    parentLinkId: 'parent1',
+                    name: 'test-folder',
+                    isFile: false,
+                },
+            ];
+
+            await result.current.deleteLinks(mockAbortSignal, {
+                token: mockToken,
+                links: singleFolderLink,
+                showConfirmModal: mockShowConfirmModal,
+            });
+
+            expect(mockShowConfirmModal).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    title: 'Delete test-folder?',
+                    message:
+                        'This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.',
+                    submitText: 'Delete',
+                })
+            );
+        });
+
+        it('should show confirm modal with correct messages for multiple items deletion', async () => {
+            const { result } = renderHook(() => usePublicActions());
+            const multipleLinks = [
+                {
+                    linkId: 'link1',
+                    parentLinkId: 'parent1',
+                    name: 'test-file.txt',
+                    isFile: true,
+                },
+                {
+                    linkId: 'link2',
+                    parentLinkId: 'parent1',
+                    name: 'test-folder',
+                    isFile: false,
+                },
+            ];
+
+            await result.current.deleteLinks(mockAbortSignal, {
+                token: mockToken,
+                links: multipleLinks,
+                showConfirmModal: mockShowConfirmModal,
+            });
+
+            expect(mockShowConfirmModal).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    title: 'Delete 2 items?',
+                    message: 'This action will delete the selected items permanently.',
+                    submitText: 'Delete',
+                })
+            );
+        });
+
+        it('should handle successful deletion and update state', async () => {
+            const { result } = renderHook(() => usePublicActions());
+            const links = [
+                {
+                    linkId: 'link1',
+                    parentLinkId: 'parent1',
+                    name: 'test-file.txt',
+                    isFile: true,
+                },
+            ];
+
+            mockDeleteLinks.mockResolvedValue({
+                successes: ['link1'],
+                failures: [],
+            });
+
+            await result.current.deleteLinks(mockAbortSignal, {
+                token: mockToken,
+                links,
+                showConfirmModal: mockShowConfirmModal,
+            });
+
+            await confirmModalHandler.onSubmit();
+
+            expect(mockDeleteLinks).toHaveBeenCalledWith(mockAbortSignal, {
+                token: mockToken,
+                links,
+                parentLinkId: 'parent1',
+            });
+            expect(mockRemoveLinksForPublicPage).toHaveBeenCalledWith(mockToken, ['link1']);
+            expect(mockCreateDeletedPublicItemsNotifications).toHaveBeenCalledWith(
+                [{ ...links[0], rootShareId: mockToken }],
+                ['link1'],
+                []
+            );
+        });
+
+        it('should handle partial failures during deletion', async () => {
+            const { result } = renderHook(() => usePublicActions());
+            const links = [
+                {
+                    linkId: 'link1',
+                    parentLinkId: 'parent1',
+                    name: 'test-file1.txt',
+                    isFile: true,
+                },
+                {
+                    linkId: 'link2',
+                    parentLinkId: 'parent1',
+                    name: 'test-file2.txt',
+                    isFile: true,
+                },
+            ];
+
+            mockDeleteLinks.mockResolvedValue({
+                successes: ['link1'],
+                failures: ['link2'],
+            });
+
+            await result.current.deleteLinks(mockAbortSignal, {
+                token: mockToken,
+                links,
+                showConfirmModal: mockShowConfirmModal,
+            });
+
+            await confirmModalHandler.onSubmit();
+
+            expect(mockRemoveLinksForPublicPage).toHaveBeenCalledWith(mockToken, ['link1']);
+            expect(mockCreateDeletedPublicItemsNotifications).toHaveBeenCalledWith(
+                links.map((link) => ({ ...link, rootShareId: mockToken })),
+                ['link1'],
+                ['link2']
             );
         });
     });

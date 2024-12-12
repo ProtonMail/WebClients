@@ -151,6 +151,14 @@ export function useLinksStateProvider() {
         [state]
     );
 
+    // TODO: Remove this when events or refactor will be in place
+    const removeLinksForPublicPage = useCallback(
+        (token: string, linkIds: string[]) => {
+            setState((state) => deleteLinks(state, token, linkIds));
+        },
+        [state]
+    );
+
     return {
         setLinks,
         lockLinks,
@@ -165,6 +173,7 @@ export function useLinksStateProvider() {
         getAllShareLinks, // This should be use only in specific case when you know the links you need (Ex: Bookmarks)
         removeLinkForMigration,
         removeLinkForSharedWithMe,
+        removeLinksForPublicPage,
     };
 }
 
