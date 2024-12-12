@@ -1,4 +1,4 @@
-export { MoveToTrashButton } from './MoveToTrashButton';
+export { DeleteButton } from './DeleteButton';
 export { PreviewButton } from './PreviewButton';
 export { DownloadButton } from './DownloadButton';
 export { RenameButton } from './RenameButton';

@@ -28,9 +28,10 @@ import { isErrorDueToNameConflict } from '../../../utils/isErrorDueToNameConflic
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import retryOnError from '../../../utils/retryOnError';
 import { isPhotosDisabledUploadError } from '../../../utils/transfer';
+import { useAnonymousUploadAuthStore } from '../../../zustand/upload/anonymous-auth.store';
 import { usePublicSession } from '../../_api';
 import { integrityMetrics } from '../../_crypto';
-import { useLink, usePublicLinkActions, usePublicLinksListing, validateLinkName } from '../../_links';
+import { useLink, usePublicLinksActions, usePublicLinksListing, validateLinkName } from '../../_links';
 import type { ShareTypeString } from '../../_shares';
 import { getShareTypeString, useDefaultShare, useShare } from '../../_shares';
 import { useIsPaid } from '../../_user';
@@ -66,10 +67,11 @@ interface FileRevision {
 
 export default function usePublicUploadFile() {
     const isPaidUser = useIsPaid();
+    const { setUploadToken } = useAnonymousUploadAuthStore();
     const { request: publicDebouncedRequest, user } = usePublicSession();
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
-    const { deleteChildrenLinks } = usePublicLinkActions();
+    const { deleteLinks } = usePublicLinksActions();
     const { getShare } = useShare();
     const { findHash, findAvailableName } = usePublicUploadHelper();
     const publicLinksListing = usePublicLinksListing();
@@ -175,8 +177,10 @@ export default function usePublicUploadFile() {
                 backoff: true,
             });
 
-            const { File: createdFile } = await createFile();
-
+            const { File: createdFile, AuthorizationToken } = await createFile();
+            if (AuthorizationToken) {
+                setUploadToken({ linkId: createdFile.ID, authorizationToken: AuthorizationToken });
+            }
             return {
                 fileID: createdFile.ID,
                 filename,
@@ -280,7 +284,7 @@ export default function usePublicUploadFile() {
             linkId: string,
             clientUid?: string
         ) => {
-            await deleteChildrenLinks(abortSignal, token, parentLinkId, [linkId]);
+            await deleteLinks(abortSignal, { token, parentLinkId, links: [{ linkId }] });
             return createFile(abortSignal, filename, mimeType, hash, keys, clientUid);
         };
 
@@ -595,9 +599,11 @@ export default function usePublicUploadFile() {
                             if (createdFileRevision.isNewFile) {
                                 log(`Deleting file`);
                                 // Cleanup should not be able to abort.
-                                await deleteChildrenLinks(new AbortController().signal, token, parentLinkId, [
-                                    createdFileRevision.fileID,
-                                ]);
+                                await deleteLinks(new AbortController().signal, {
+                                    token,
+                                    parentLinkId,
+                                    links: [{ linkId: createdFileRevision.fileID }],
+                                });
                             } else {
                                 log(`Deleting revision`);
                                 await request(
