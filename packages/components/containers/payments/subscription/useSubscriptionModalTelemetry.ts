@@ -82,10 +82,19 @@ const useSubscriptionModalTelemetry = () => {
         });
     };
 
+    const reportCancellationOnSameDay = () => {
+        return sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.subscriptionModal,
+            event: TelemetrySubscriptionModalEvents.cancelledOnSameDay,
+        });
+    };
+
     return {
         reportSubscriptionModalInitialization,
         reportSubscriptionModalPayment,
         reportPostAction,
+        reportCancellationOnSameDay,
     };
 };
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { fromUnixTime, isSameDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -17,6 +18,7 @@ import useFlag from '@proton/unleash/useFlag';
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
 import { useCancelSubscriptionFlow } from '../cancelSubscription/useCancelSubscriptionFlow';
 import { SUBSCRIPTION_STEPS } from '../constants';
+import useSubscriptionModalTelemetry from '../useSubscriptionModalTelemetry';
 import CancelConfirmationModal from './CancelConfirmationModal';
 import CancelRedirectionModal from './CancelRedirectionModal';
 import ReminderSectionFeatures from './ReminderSectionFeatures';
@@ -33,6 +35,7 @@ interface Props {
 export const CancellationReminderSection = ({ app }: Props) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
+    const { reportCancellationOnSameDay } = useSubscriptionModalTelemetry();
     const [openSubscriptionModal] = useSubscriptionModal();
     const [{ paid }] = useVPNServersCount();
     const { b2bAccess, b2cAccess, redirectToDashboard, setStartedCancellation } = useCancellationFlow();
@@ -72,7 +75,13 @@ export const CancellationReminderSection = ({ app }: Props) => {
 
         const isSubscriptionReminderFlow = !isUpsellEnabled || !config.upsellPlan;
 
+        const hasCancelledOnSameDayHeSubscribed =
+            subscription?.CreateTime && isSameDay(fromUnixTime(subscription.CreateTime), new Date());
         const { status } = await cancelSubscription(isSubscriptionReminderFlow, config.upsellPlan);
+
+        if (hasCancelledOnSameDayHeSubscribed) {
+            void reportCancellationOnSameDay();
+        }
 
         if (status === 'cancelled' || status === 'downgraded') {
             setRedirectModalOpen(true);
