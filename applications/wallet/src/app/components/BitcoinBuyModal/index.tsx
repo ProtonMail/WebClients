@@ -7,6 +7,7 @@ import type { WasmApiCountry, WasmApiWallet, WasmApiWalletAccount } from '@proto
 import { Loader, type ModalOwnProps } from '@proton/components';
 import type { ApiWalletWithPassphraseInput, IWasmApiWalletData } from '@proton/wallet';
 import { toWalletAccountSelectorOptions } from '@proton/wallet';
+import { resetQuotesByProvider, useWalletDispatch } from '@proton/wallet/store';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -41,6 +42,7 @@ const getSteps = (): Steps<StepKey> => [
 ];
 
 export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
+    const dispatch = useWalletDispatch();
     const [stepKey, setStepKey] = useState<StepKey>(StepKey.Location);
     const [country, setCountry] = useState<WasmApiCountry>();
     const [quote, setQuote] = useState<QuoteWithProvider>();
@@ -68,6 +70,7 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
         : undefined;
 
     const reset = () => {
+        dispatch(resetQuotesByProvider());
         setCountry(undefined);
         setQuote(undefined);
         setSelectedWalletAccount(defaultSelected);
@@ -184,6 +187,7 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
                                                         setOpenedModal('in-progress');
                                                         return;
                                                     }
+                                                    dispatch(resetQuotesByProvider());
                                                     setStepKey(StepKey.Amount);
                                                 }}
                                             />
