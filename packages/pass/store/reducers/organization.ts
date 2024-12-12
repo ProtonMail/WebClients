@@ -11,6 +11,7 @@ export const INITIAL_ORGANIZATION_SETTINGS: OrganizationSettings = {
     ExportMode: BitField.DISABLED,
     ShareMode: BitField.DISABLED,
     ForceLockSeconds: BitField.DISABLED,
+    PasswordPolicy: null,
 };
 
 export type OrganizationState = {
