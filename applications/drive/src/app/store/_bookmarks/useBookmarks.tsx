@@ -31,7 +31,7 @@ export const useBookmarks = () => {
         const defaultShare = await getDefaultShare();
         const { address, addressKeyID, privateKey } = await getShareCreatorKeys(
             new AbortController().signal,
-            defaultShare.shareId
+            defaultShare
         );
 
         const signature = await CryptoProxy.signMessage({
