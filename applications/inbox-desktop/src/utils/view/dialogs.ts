@@ -1,6 +1,6 @@
 import { BrowserView, app, dialog } from "electron";
 import { c } from "ttag";
-import { viewLogger } from "../log";
+import { mainLogger, viewLogger } from "../log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 
 const beforeUnloadChoice = () => {
@@ -36,6 +36,7 @@ export const urlOverrideError = () => {
     });
 
     if (choice === 0) {
+        mainLogger.error("Invalid URL override, quitting");
         app.quit();
     }
 };
