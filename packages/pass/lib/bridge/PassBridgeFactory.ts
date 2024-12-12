@@ -4,7 +4,11 @@ import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { createAlias, requestAllItemsForShareId } from '@proton/pass/lib/items/item.requests';
-import { getOrganizationSettings, setOrganizationSettings } from '@proton/pass/lib/organization/organization.requests';
+import {
+    getOrganizationSettings,
+    setOrganizationSettings,
+    setPasswordGeneratorPolicySettings,
+} from '@proton/pass/lib/organization/organization.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
@@ -114,6 +118,7 @@ export const createPassBridge = (api: Api): PassBridge => {
                     settings: {
                         get: getOrganizationSettings,
                         set: (key, value) => setOrganizationSettings({ [key]: value }),
+                        setPasswordGeneratorPolicy: setPasswordGeneratorPolicySettings,
                     },
                 },
             };
