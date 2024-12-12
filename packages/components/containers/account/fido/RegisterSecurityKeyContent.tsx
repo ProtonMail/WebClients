@@ -2,10 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
-import DeprecatedBanner, {
-    DeprecatedBannerBackgroundColor,
-} from '@proton/components/components/deprecatedBanner/DeprecatedBanner';
+import { Banner, CircleLoader } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import physicalKey from '@proton/styles/assets/img/illustrations/physical-key.svg';
 
 interface Props {
@@ -33,9 +31,9 @@ const RegisterSecurityKeyContent = ({ loading, error, checkbox }: Props) => {
             {checkbox && <div className="mt-2">{checkbox}</div>}
             {error && (
                 <div className="mt-4">
-                    <DeprecatedBanner icon="exclamation-circle" backgroundColor={DeprecatedBannerBackgroundColor.WEAK}>
+                    <Banner className="mb-3" variant="norm" icon={<Icon name="exclamation-circle" />}>
                         {c('fido2: Error').t`Something went wrong registering your security key. Please try again.`}
-                    </DeprecatedBanner>
+                    </Banner>
                 </div>
             )}
         </>

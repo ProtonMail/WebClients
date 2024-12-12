@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { DeprecatedBanner, DeprecatedBannerBackgroundColor } from '@proton/components';
+import { Banner } from '@proton/atoms';
 
 import EventReminderText from './EventReminderText';
 
@@ -10,25 +10,24 @@ interface Props {
     endDate: Date;
     isOutdated?: boolean;
     isCanceled?: boolean;
+    className?: string;
 }
-const EventReminderBanner = ({ isAllDay, startDate, endDate, isOutdated, isCanceled }: Props) => {
+const EventReminderBanner = ({ isAllDay, startDate, endDate, isOutdated, isCanceled, className }: Props) => {
     if (isCanceled) {
         return (
-            <DeprecatedBanner icon="exclamation-circle" backgroundColor={DeprecatedBannerBackgroundColor.WARNING}>
-                {c('Email reminder out of date alert').t`Event was canceled`}
-            </DeprecatedBanner>
+            <Banner variant="warning" className={className}>{c('Email reminder out of date alert')
+                .t`Event was canceled`}</Banner>
         );
     }
 
     if (isOutdated) {
         return (
-            <DeprecatedBanner icon="exclamation-circle" backgroundColor={DeprecatedBannerBackgroundColor.DANGER}>
-                {c('Email reminder out of date alert').t`Event was updated. This reminder is out-of-date.`}
-            </DeprecatedBanner>
+            <Banner variant="danger" className={className}>{c('Email reminder out of date alert')
+                .t`Event was updated. This reminder is out-of-date.`}</Banner>
         );
     }
 
-    return <EventReminderText startDate={startDate} endDate={endDate} isAllDay={isAllDay} />;
+    return <EventReminderText startDate={startDate} endDate={endDate} isAllDay={isAllDay} className={className} />;
 };
 
 export default EventReminderBanner;

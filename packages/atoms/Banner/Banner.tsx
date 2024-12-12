@@ -25,6 +25,7 @@ type RestrictedButtonLikeProps = {
 
 export enum BannerVariants {
     NORM = 'norm',
+    NORM_OUTLINE = 'norm-outline',
     INFO = 'info',
     INFO_OUTLINE = 'info-outline',
     SUCCESS = 'success',
@@ -36,6 +37,7 @@ export enum BannerVariants {
 }
 
 const BannerVariantsBordered = [
+    BannerVariants.NORM_OUTLINE,
     BannerVariants.INFO_OUTLINE,
     BannerVariants.SUCCESS_OUTLINE,
     BannerVariants.WARNING_OUTLINE,
@@ -45,6 +47,7 @@ const BannerVariantsBordered = [
 export interface BannerProps extends ComponentPropsWithoutRef<'div'> {
     variant?: BannerVariants | `${BannerVariants}`;
     icon?: ReactElement;
+    noIcon?: boolean;
     action?: ReactElement<RestrictedButtonLikeProps>;
     link?: ReactElement<HrefProps>;
     dismissible?: boolean;
@@ -55,6 +58,7 @@ const getDefaultIcon = (variant: BannerVariants) => {
     if (
         [
             BannerVariants.NORM,
+            BannerVariants.NORM_OUTLINE,
             BannerVariants.INFO,
             BannerVariants.INFO_OUTLINE,
             BannerVariants.SUCCESS,
@@ -96,6 +100,7 @@ const getButtonProps = (variant: BannerVariants): BaseButtonLikeProps => {
 const Banner = ({
     variant = BannerVariants.NORM,
     icon = getDefaultIcon(variant as BannerVariants),
+    noIcon = false,
     onDismiss,
     children,
     action,
@@ -131,7 +136,7 @@ const Banner = ({
         >
             <div className="banner-inner p-1">
                 <div className="banner-main flex flex-nowrap gap-2 pl-1 py-1">
-                    {icon && <BannerIcon icon={icon} />}
+                    {!noIcon && icon && <BannerIcon icon={icon} />}
                     <span>
                         {children}
                         {link && <> {link}</>}
