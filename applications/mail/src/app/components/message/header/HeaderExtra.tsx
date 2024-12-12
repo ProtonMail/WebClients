@@ -51,7 +51,7 @@ const HeaderExtra = ({
     }
 
     return (
-        <section className="message-header-extra pt-2 empty:hidden">
+        <section className="message-header-extra flex flex-column flex-nowrap py-2 gap-1 empty:hidden">
             <ExtraDecryptedSubject message={message} />
             <ExtraSpamScore message={message} />
             <ExtraErrors message={message} />

@@ -4,14 +4,13 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Banner, Button } from '@proton/atoms';
 import { Icon, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
-import clsx from '@proton/utils/clsx';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -120,27 +119,20 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     };
 
     return (
-        <div
-            className="bg-info rounded border border-info pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap"
+        <Banner
             data-testid="message:schedule-banner"
-        >
-            <Icon name="paper-plane-clock" className="mt-1 ml-0.5 shrink-0" />
-            <span className={clsx(['px-2 flex-1 mt-1', isScheduleSentShortly && 'mb-1'])}>
-                {getScheduleBannerMessage()}
-            </span>
-            {!isScheduleSentShortly ? (
-                <span className="shrink-0 items-start flex">
+            variant="info"
+            icon={<Icon name="paper-plane-clock" />}
+            action={
+                !isScheduleSentShortly ? (
                     <Button
-                        size="small"
-                        color="info"
-                        shape="outline"
-                        fullWidth
-                        className="rounded-sm"
                         onClick={() => setEditScheduleModalOpen(true)}
                         data-testid="message:schedule-banner-edit-button"
                     >{c('Action').t`Edit`}</Button>
-                </span>
-            ) : null}
+                ) : undefined
+            }
+        >
+            {getScheduleBannerMessage()}
 
             <Prompt
                 title={c('Confirm modal title').t`Edit and reschedule`}
@@ -159,7 +151,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
                 {c('Info')
                     .t`This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.`}
             </Prompt>
-        </div>
+        </Banner>
     );
 };
 
