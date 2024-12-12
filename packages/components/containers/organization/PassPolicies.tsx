@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
@@ -12,14 +12,16 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { PassLockSelector } from '@proton/components/containers/pass/PassLockSelector';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
-import type { OrganizationGetResponse } from '@proton/pass/types';
+import type { OrganizationGetResponse, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
 import { BitField, type Maybe } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import GenericError from '../error/GenericError';
+import { PasswordGeneratorPolicyModal } from '../pass/PasswordGeneratorPolicyModal';
 
 const getPolicies = (): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [
     {
@@ -39,10 +41,12 @@ const getPolicies = (): { setting: keyof OrganizationSettings; label: string; to
 const PassPolicies = () => {
     const { organization } = usePassBridge();
     const [loading, withLoading] = useLoading(true);
+    const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
 
     const policies = getPolicies();
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
+    const [openPasswordModal, setOpenPasswordModal] = useState(false);
 
     const touched = useRef<keyof OrganizationSettings>();
     const didLoad = useRef(false);
@@ -68,6 +72,16 @@ const PassPolicies = () => {
         withLoading(organization.settings.set('ForceLockSeconds', ttl).then(setOrganizationSettings)).catch(
             handleError
         );
+    };
+
+    const handleSubmitPasswordGenerator = async (config: OrganizationUpdatePasswordPolicyRequest) => {
+        withLoading(
+            organization.settings.setPasswordGeneratorPolicy(config).then((orgSettings) => {
+                setOrganizationSettings(orgSettings);
+                setOpenPasswordModal(false);
+                createNotification({ text: c('Info').t`Password generator rules successfully saved` });
+            })
+        ).catch(handleError);
     };
 
     return (
@@ -113,6 +127,27 @@ const PassPolicies = () => {
                                 />
                             </SettingsLayoutRight>
                         </SettingsLayout>
+                        <SettingsLayout>
+                            <SettingsLayoutLeft>
+                                <label className="text-semibold" htmlFor="pass-generator" id="label-pass-generator">
+                                    <span className="mr-1"> {c('Action').t`Set password generator rules`}</span>
+                                </label>
+                            </SettingsLayoutLeft>
+                            <SettingsLayoutRight>
+                                <Button id="pass-generator" onClick={() => setOpenPasswordModal(true)}>
+                                    {c('Action').t`Open`}
+                                </Button>
+                            </SettingsLayoutRight>
+                        </SettingsLayout>
+                        {openPasswordModal && (
+                            <PasswordGeneratorPolicyModal
+                                config={organizationSettings.Settings.PasswordPolicy}
+                                onClose={() => setOpenPasswordModal(false)}
+                                onSubmit={handleSubmitPasswordGenerator}
+                                size="large"
+                                loading={loading}
+                            />
+                        )}
                     </>
                 )}
             </SettingsSection>
