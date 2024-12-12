@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import { PLANS, PLAN_TYPES } from '@proton/payments';
 import { APPS, CYCLE } from '@proton/shared/lib/constants';
-import { type Plan } from '@proton/shared/lib/interfaces';
+import { External, type Plan } from '@proton/shared/lib/interfaces';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 
@@ -114,5 +114,12 @@ describe('SubscriptionPanel', () => {
             expect(screen.getByText(/Built-in ad blocker/)).toBeInTheDocument();
             expect(screen.getByText(/Access to streaming services/)).toBeInTheDocument();
         });
+    });
+
+    it('should not render price if subscription is managed externally', () => {
+        renderWithProviders(
+            <SubscriptionPanel {...defaultProps} subscription={buildSubscription({ External: External.Android })} />
+        );
+        expect(screen.queryByTestId('plan-price')).not.toBeInTheDocument();
     });
 });
