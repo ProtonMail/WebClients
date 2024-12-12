@@ -318,20 +318,11 @@
       ]
     },
     "Address list": {
-      "Activate Bitcoin via Email": [
-        "Ativar Bitcoin via e-mail"
-      ],
       "Address copied": [
         "Endereço copiado"
       ],
-      "Bitcoin via Email ${ availableAddresses }": [
-        "Bitcoin via e-mail ${ availableAddresses }"
-      ],
       "Change address": [
         "Alterar endereço"
-      ],
-      "Given out": [
-        "Fornecido"
       ],
       "Index": [
         "Índice"
@@ -353,9 +344,6 @@
       ],
       "Toggle keychain": [
         "Alternar chaveiro"
-      ],
-      "Used (${ transactionsCount })": [
-        "Usado (${ transactionsCount })"
       ],
       "Value": [
         "Valor"
@@ -391,6 +379,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ discountedPrice } é válido nos primeiros ${ cycle } meses. Em seguida, será renovado automaticamente pelo preço com desconto de ${ nextPrice } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ discountedPrice } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ nextPrice } todo mês. Você pode cancelar a qualquer momento."
       ]
@@ -844,8 +835,19 @@
       "Purchase completed": [
         "Compra concluída"
       ],
+      "Purchase finished": [
+        "Transação concluída"
+      ],
       "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
         "Obrigado por sua tentativa de compra com nosso parceiro.\nVocê pode rastrear o status do seu pedido por meio do e-mail de confirmação enviado a você por nosso parceiro.\nSe a transação falhar, você pode tentar novamente ou escolher um parceiro alternativo."
+      ]
+    },
+    "Buy in progress": {
+      "Buy more bitcoin": [
+        "Comprar mais bitcoin"
+      ],
+      "Purchase in progress": [
+        "Transação em progresso"
       ]
     },
     "Cancellation upsell": {
@@ -2495,6 +2497,10 @@
       "Please authenticate your payment in the verification tab.": [
         "Autentique seu pagamento na guia de verificação."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes.",
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
       ],
@@ -2676,6 +2682,9 @@
       "${ n } month": [
         "${ n } mês",
         "${ n } meses"
+      ],
+      "Account holder": [
+        "Titular da conta"
       ],
       "Address": [
         "Endereço"
@@ -3891,6 +3900,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupom é válido para renovações de ${ couponRedemptions }. Em seguida, ele será renovado automaticamente a ${ renewPrice } por ${ subscriptionLength } mês. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
@@ -5170,9 +5182,6 @@
       "Boost transaction priority": [
         "Aumente a prioridade da transação"
       ],
-      "By increasing the fee, you can prioritize your transaction, helping it get confirmed faster during busy network times.": [
-        "Ao aumentar a taxa, você pode priorizar sua transação, ajudando-a a ser confirmada mais rapidamente durante horários de pico de rede."
-      ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "Não é possível usar o scanner QRCode. Verifique a compatibilidade do navegador"
       ],
@@ -5208,9 +5217,6 @@
       ],
       "How much are you sending?": [
         "Quanto você está enviando?"
-      ],
-      "Increase fee and resend": [
-        "Aumentar a taxa e reenviar"
       ],
       "Low": [
         "Baixo"
