@@ -48,14 +48,17 @@ export const ActionButtons = ({ user, subscription }: { user: UserModel; subscri
 
     const hasPassB2B = getHasPassB2BPlan(subscription);
 
+    const showCustomizePlan = user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription);
+
     const showEditBillingDetails =
         user.isPaid &&
         user.canPay &&
         (!hasMaximumCycle(subscription) || allowDowncycling) &&
         !hasPassB2B &&
         !getIsCustomCycle(subscription) &&
-        !hasVPNPassBundle(subscription);
-    const showCustomizePlan = user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription);
+        !hasVPNPassBundle(subscription) &&
+        !showCustomizePlan;
+
     const showExploreOtherPlans = user.canPay;
 
     return (
