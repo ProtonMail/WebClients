@@ -318,20 +318,11 @@
       ]
     },
     "Address list": {
-      "Activate Bitcoin via Email": [
-        "Attiva Bitcoin via email"
-      ],
       "Address copied": [
         "Indirizzo copiato"
       ],
-      "Bitcoin via Email ${ availableAddresses }": [
-        "Bitcoin via email ${ availableAddresses }"
-      ],
       "Change address": [
         "Indirizzo di resto"
-      ],
-      "Given out": [
-        "Condiviso"
       ],
       "Index": [
         "Indice"
@@ -353,9 +344,6 @@
       ],
       "Toggle keychain": [
         "Attiva portachiavi"
-      ],
-      "Used (${ transactionsCount })": [
-        "Usato (${ transactionsCount })"
       ],
       "Value": [
         "Valore"
@@ -391,6 +379,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Il prezzo scontato di ${ discountedPrice } è valido per i primi ${ cycle } mesi. Successivamente verrà rinnovato automaticamente al prezzo scontato di ${ nextPrice } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ discountedPrice }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ nextPrice } al mese. Puoi annullare in qualsiasi momento."
       ]
@@ -560,6 +551,9 @@
     "bitcoin buy": {
       "${ serviceFeePercentage }% Azteco service fee": [
         "${ serviceFeePercentage }% commissione di servizio Azteco"
+      ],
+      "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
+        "${ WALLET_APP_NAME } ha stretto una partnership con ${ rampLink }, ${ banxaLink } e ${ moonpayLink }, tre servizi di asset crittografici registrati, per facilitare l'acquisto di BTC. Inserisci la tua regione per vedere i fornitori e i metodi di pagamento disponibili."
       ],
       "1% bank transfer fee": [
         "Commissione bonifico bancario 1%."
@@ -838,6 +832,9 @@
       "Purchase finished": [
         "Acquisto terminato"
       ],
+      "Thank you for purchasing an Azteco voucher.\nWe will now redeem your voucher and Azteco will send the BTC to your wallet.\nWe will also send you an email with the purchase details.": [
+        "Grazie per aver acquistato un buono Azteco.\nOra riscatteremo il tuo voucher e Azteco invierà i BTC al tuo wallet.\nTi invieremo anche un'email con i dettagli dell'acquisto."
+      ],
       "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
         "Grazie per il tuo tentativo di acquisto con il nostro partner.\nPuoi monitorare lo stato del tuo ordine tramite l'email di conferma inviata dal nostro partner.\nSe la transazione fallisce, puoi riprovare o scegliere un partner alternativo."
       ]
@@ -851,6 +848,9 @@
       ],
       "Purchase in progress": [
         "Acquisto in corso"
+      ],
+      "Thank you for your purchase attempt for an Azteco voucher.\nAs soon as we receive your payment, we will create and redeem the voucher based on BTC price at that time.\nThen Azteco will send the BTC to your wallet.": [
+        "Grazie per aver tentato di acquistare un buono Azteco.\nNon appena riceveremo il pagamento, creeremo e riscatteremo il voucher in base al prezzo BTC in quel momento.\nQuindi Azteco invierà i BTC al tuo wallet."
       ]
     },
     "Cancellation upsell": {
@@ -2230,6 +2230,9 @@
       "${ WALLET_APP_NAME } support": [
         "supporto ${ WALLET_APP_NAME }"
       ],
+      "As soon as your payment is received, ${ WALLET_APP_NAME } will redeem the voucher according to the market price of BTC and network fee at that time.\nThe redeemed BTC will then be sent by ${ azteco } to your wallet.\nFor any questions related to Azteco bitcoin vouchers, please contact ${ support }.": [
+        "Non appena ricevuto il pagamento, ${ WALLET_APP_NAME } riscatterà il voucher in base al prezzo di mercato di BTC e alla commissione di rete in quel momento.\nIl BTC riscattato verrà quindi inviato da ${ azteco } al tuo wallet.\nPer qualsiasi domanda relativa ai voucher bitcoin Azteco, contatta ${ support }."
+      ],
       "Confirm": [
         "Conferma"
       ],
@@ -2682,6 +2685,9 @@
       "${ n } month": [
         "${ n } mese",
         "${ n } mesi"
+      ],
+      "Account holder": [
+        "Titolare del conto"
       ],
       "Address": [
         "Indirizzo"
@@ -3891,6 +3897,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ subscriptionLength } mesi. Il piano si rinnoverà poi automaticamente a ${ renewPrice } per ${ subscriptionLengthCopy } mesi. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovi. Successivamente verrà rinnovato automaticamente a ${ renewPrice } per ${ subscriptionLength } mese. Puoi annullare in qualsiasi momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ renewPrice } al mese. Puoi annullare in qualsiasi momento."
@@ -5168,9 +5177,6 @@
       "Boost transaction priority": [
         "Aumenta la priorità della transazione"
       ],
-      "By increasing the fee, you can prioritize your transaction, helping it get confirmed faster during busy network times.": [
-        "Aumentando la commissione, puoi dare priorità alla tua transazione, aiutandola a essere confermata più velocemente durante i periodi di maggiore traffico di rete."
-      ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "Impossibile utilizzare il lettore QRCode. Verifica la compatibilità del browser"
       ],
@@ -5206,9 +5212,6 @@
       ],
       "How much are you sending?": [
         "Quanto stai inviando?"
-      ],
-      "Increase fee and resend": [
-        "Aumenta la commissione e invia nuovamente"
       ],
       "Low": [
         "Lento"
