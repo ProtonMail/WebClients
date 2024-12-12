@@ -43,6 +43,7 @@ export interface CreateFileResult {
         ID: string;
         RevisionID: string;
     };
+    AuthorizationToken?: string;
 }
 
 export interface CreateFileRevisionResult {

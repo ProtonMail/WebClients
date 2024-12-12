@@ -1,9 +1,13 @@
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import { type useConfirmActionModal, useNotifications } from '@proton/components';
 
+import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';
 import { usePublicLinkActions, usePublicLinksListing } from '../_links';
+import useLinksState from '../_links/useLinksState';
+import { usePublicLinksActions } from '../_links/usePublicLinksActions';
 import { useErrorHandler } from '../_utils';
+import useListNotifications from './useListNotifications';
 
 /**
  * useActions provides actions over links and its results is reported back
@@ -15,9 +19,12 @@ export function usePublicActions() {
     const { showErrorNotification } = useErrorHandler();
     const { createNotification } = useNotifications();
     const publicLinksListing = usePublicLinksListing();
+    const linksState = useLinksState();
+    const { removeUploadTokens } = useAnonymousUploadAuthStore();
 
     const publicLink = usePublicLinkActions();
-
+    const publicLinks = usePublicLinksActions();
+    const { createDeletedPublicItemsNotifications } = useListNotifications();
     const createFolder = async (
         abortSignal: AbortSignal,
         token: string,
@@ -25,7 +32,7 @@ export function usePublicActions() {
         name: string
     ): Promise<string> => {
         return publicLink
-            .createFolder(abortSignal, token, parentLinkId, name)
+            .createFolder(abortSignal, { token, parentLinkId, name })
             .then(async (id: string) => {
                 await publicLinksListing.loadChildren(abortSignal, token, parentLinkId, false);
                 createNotification({
@@ -75,8 +82,72 @@ export function usePublicActions() {
             });
     };
 
+    const deleteLinks = async (
+        abortSignal: AbortSignal,
+        {
+            token,
+            links,
+            anonymousRemoval = false,
+            showConfirmModal,
+        }: {
+            token: string;
+            links: {
+                linkId: string;
+                parentLinkId: string;
+                authorizationToken?: string;
+                name: string;
+                isFile: boolean;
+            }[];
+            showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
+            anonymousRemoval?: boolean;
+        }
+    ) => {
+        const isSingleItem = links.length === 1;
+        const item = links[0];
+
+        let title;
+        let message;
+
+        if (isSingleItem) {
+            // translator: ${item.name} is for a folder or file name.
+            title = c('Title').t`Delete ${item.name}?`;
+            message = item.isFile
+                ? c('Info').t`This action will delete the file you uploaded permanently.`
+                : c('Info')
+                      .t`This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.`;
+        } else {
+            title = c('Title').t`Delete ${links.length} items?`;
+            message = c('Info').t`This action will delete the selected items permanently.`;
+        }
+
+        void showConfirmModal({
+            title,
+            submitText: c('Title').t`Delete`,
+            message,
+            onSubmit: () =>
+                publicLinks
+                    .deleteLinks(abortSignal, {
+                        token,
+                        links,
+                        parentLinkId: links[0].parentLinkId,
+                    })
+                    .then(({ successes, failures }) => {
+                        linksState.removeLinksForPublicPage(token, successes);
+                        if (anonymousRemoval) {
+                            removeUploadTokens(successes);
+                        }
+                        createDeletedPublicItemsNotifications(
+                            links.map((link) => ({ ...link, rootShareId: token })),
+                            successes,
+                            failures
+                        );
+                    }),
+        });
+    };
+
     return {
         renameLink,
         createFolder,
+        deleteLinks,
     };
 }

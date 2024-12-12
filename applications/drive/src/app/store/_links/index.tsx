@@ -11,6 +11,7 @@ export { default as useLinks } from './useLinks';
 export { default as useLinkActions } from './useLinkActions';
 export { default as useLinksActions } from './useLinksActions';
 export { usePublicLinkActions } from './usePublicLinkActions';
+export { usePublicLinksActions } from './usePublicLinksActions';
 export { useLinksListing, usePublicLinksListing } from './useLinksListing';
 export { useLinksQueue } from './useLinksQueue';
 
