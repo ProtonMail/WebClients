@@ -117,7 +117,14 @@ const createView = (viewID: ViewID) => {
     }
 
     view.webContents.on("context-menu", (_e, props) => {
-        createContextMenu(props, view)?.popup();
+        const contextMenu = createContextMenu(props, view);
+
+        if (contextMenu) {
+            mainLogger.info("Opening context menu");
+            contextMenu.popup();
+        } else {
+            mainLogger.info("Cannot create context menu");
+        }
     });
 
     view.webContents.session.setCertificateVerifyProc((request, callback) => {

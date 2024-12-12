@@ -64,11 +64,13 @@ import metrics from "./utils/metrics";
             return;
         }
 
+        mainLogger.info("before-quit destroying main window");
         mainWindow.destroy();
     });
 
     app.on("window-all-closed", () => {
         if (!isMac) {
+            mainLogger.info("All windows closed");
             app.quit();
         }
     });
