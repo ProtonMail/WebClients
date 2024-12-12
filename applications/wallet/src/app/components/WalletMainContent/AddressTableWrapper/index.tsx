@@ -101,18 +101,6 @@ export const AddressTableWrapper = ({ selectorOrTitle, apiWalletData, apiAccount
                                 />
                             </Button>
                         )}
-
-                        <CoreButton
-                            icon
-                            size={isNarrow ? 'small' : 'medium'}
-                            shape="ghost"
-                            color="weak"
-                            className="ml-2 rounded-full bg-weak"
-                            disabled={loading}
-                            onClick={() => sync(true)}
-                        >
-                            <Icon name="arrows-rotate" size={isNarrow ? 4 : 5} alt={c('Address list').t`Sync`} />
-                        </CoreButton>
                     </div>
                 </div>
 
