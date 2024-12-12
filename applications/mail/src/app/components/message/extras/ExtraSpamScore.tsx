@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
-import { Icon, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import { Banner, Button, Href } from '@proton/atoms';
+import { Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { markAsHam } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -30,21 +30,20 @@ const ExtraSpamScore = ({ message }: Props) => {
 
     if (isDMARCValidationFailure(message.data)) {
         return (
-            <div
-                className="bg-norm rounded border px-2 py-1 mb-3 flex flex-nowrap"
-                data-testid="spam-banner:failed-dmarc-validation"
-            >
-                <Icon name="exclamation-circle-filled" className="shrink-0 mt-1 ml-0.5 color-danger" />
-                <span className="px-2 pb-1 mt-0.5 flex-1">
-                    {c('Info')
-                        .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.`}{' '}
+            <Banner
+                link={
                     <Href
+                        className="inline-block"
                         href={getKnowledgeBaseUrl('/email-has-failed-its-domains-authentication-requirements-warning')}
                     >
                         {c('Info').t`Learn more`}
                     </Href>
-                </span>
-            </div>
+                }
+                variant="danger-outline"
+            >
+                {c('Info')
+                    .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.`}
+            </Banner>
         );
     }
 
@@ -59,42 +58,35 @@ const ExtraSpamScore = ({ message }: Props) => {
         };
 
         return (
-            <div
-                className="bg-danger border border-danger rounded pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap"
-                data-testid="spam-banner:phishing-banner"
-            >
-                <Icon name="exclamation-circle-filled" className="shrink-0 ml-0.5 mt-1" />
-                <span className="px-2 mt-0.5 flex-1">
-                    {isSuspiciousFlagged ? (
-                        <>
-                            {c('Info')
-                                .t`Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.`}
-                        </>
-                    ) : (
-                        <>
-                            {c('Info')
-                                .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
-                            <Href className="px-2" href={getBlogURL('/prevent-phishing-attacks')}>
-                                {c('Info').t`Learn more`}
-                            </Href>
-                        </>
-                    )}
-                </span>
-                <span className="shrink-0 items-start flex">
+            <Banner
+                link={
+                    <Href className="inline-block" href={getBlogURL('/prevent-phishing-attacks')}>
+                        {c('Info').t`Learn more`}
+                    </Href>
+                }
+                action={
                     <Button
-                        size="small"
-                        color="danger"
-                        shape="outline"
-                        className="rounded-sm"
-                        fullWidth
                         onClick={() => setSpamScoreModalOpen(true)}
                         disabled={loading}
                         data-testid="spam-banner:mark-legitimate"
                     >
                         {c('Action').t`Mark legitimate`}
                     </Button>
-                </span>
-
+                }
+                data-testid="spam-banner:phishing-banner"
+                variant="danger"
+            >
+                {isSuspiciousFlagged ? (
+                    <>
+                        {c('Info')
+                            .t`Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.`}
+                    </>
+                ) : (
+                    <>
+                        {c('Info')
+                            .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
+                    </>
+                )}
                 <Prompt
                     title={c('Title').t`Mark email as legitimate`}
                     buttons={[
@@ -107,7 +99,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                     {c('Info')
                         .t`We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?`}
                 </Prompt>
-            </div>
+            </Banner>
         );
     }
 

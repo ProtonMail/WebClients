@@ -3,10 +3,9 @@ import { useEffect, useMemo, useState } from 'react';
 import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Banner, Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { isSnoozed } from '@proton/shared/lib/mail/messages';
-import clsx from '@proton/utils/clsx';
 
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { formatDateToHuman } from '../../../helpers/date';
@@ -79,25 +78,19 @@ const ExtraSnoozedMessage = ({ message }: Props) => {
     const isUnsnoozeShortly = beforeSendInterval < PREVENT_CANCEL_SEND_INTERVAL;
 
     return (
-        <div
-            className="rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap"
+        <Banner
             data-testid="message:snooze-banner"
+            variant="info-outline"
+            icon={<Icon name="clock" />}
+            action={
+                canUnsnooze && !isUnsnoozeShortly ? (
+                    <Button onClick={handleUnsnoozeMessage} data-testid="snooze-banner-edit-button">{c('Action')
+                        .t`Unsnooze`}</Button>
+                ) : undefined
+            }
         >
-            <Icon name="clock" className="mt-1 ml-0.5 shrink-0 color-warning" />
-            <span className={clsx(['px-2 flex-1 mt-1'])}>{getSnoozeBannerMessage()}</span>
-            {canUnsnooze && !isUnsnoozeShortly ? (
-                <span className="shrink-0 items-start flex">
-                    <Button
-                        size="small"
-                        shape="outline"
-                        fullWidth
-                        className="rounded-sm"
-                        onClick={handleUnsnoozeMessage}
-                        data-testid="snooze-banner-edit-button"
-                    >{c('Action').t`Unsnooze`}</Button>
-                </span>
-            ) : null}
-        </div>
+            {getSnoozeBannerMessage()}
+        </Banner>
     );
 };
 

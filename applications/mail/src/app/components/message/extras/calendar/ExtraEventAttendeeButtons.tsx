@@ -3,15 +3,8 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
-import {
-    CalendarInviteButtons,
-    DeprecatedBanner,
-    DeprecatedBannerBackgroundColor,
-    Loader,
-    useDrawer,
-    useNotifications,
-} from '@proton/components';
+import { Banner, Button } from '@proton/atoms';
+import { CalendarInviteButtons, Loader, useDrawer, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
@@ -263,19 +256,13 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
         }
 
         return (
-            <DeprecatedBanner
-                backgroundColor={DeprecatedBannerBackgroundColor.DANGER}
-                icon="exclamation-circle"
-                action={
-                    <span className="shrink-0 flex">
-                        <InlineLinkButton onClick={handleRetry} className="text-underline color-inherit">
-                            {c('Action').t`Try again`}
-                        </InlineLinkButton>
-                    </span>
-                }
+            <Banner
+                className="mb-2"
+                variant="danger"
+                action={<Button onClick={handleRetry}>{c('Action').t`Try again`}</Button>}
             >
                 {message}
-            </DeprecatedBanner>
+            </Banner>
         );
     }
 

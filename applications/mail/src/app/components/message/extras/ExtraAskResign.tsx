@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Banner, Button, Href } from '@proton/atoms';
 import { Icon, useModalState } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -46,30 +46,21 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
     };
 
     return (
-        <div
-            className="bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap flex-column md:flex-row"
+        <Banner
             data-testid="extra-ask-resign:banner"
+            variant="norm-outline"
+            icon={<Icon name="exclamation-triangle-filled" className="color-danger" />}
+            link={
+                <Href className="inline-block" href={getKnowledgeBaseUrl('/address-verification')}>
+                    {c('Info').t`Learn more`}
+                </Href>
+            }
+            action={
+                <Button onClick={handleClick} data-testid="ask-resign-banner:verify-button">{c('Action')
+                    .t`Verify`}</Button>
+            }
         >
-            <div className="md:flex-1 flex flex-nowrap mb-2 md:mb-0">
-                <Icon name="exclamation-circle-filled" className="shrink-0 ml-0.5 mt-1 color-danger" />
-                <span className="px-2 mt-0 flex-1 self-center">
-                    <span className="mr-1">{c('Info').t`We could not verify the sender's trusted keys.`}</span>
-                    <Href className="mr-4 inline-block" href={getKnowledgeBaseUrl('/address-verification')}>
-                        {c('Info').t`Learn more`}
-                    </Href>
-                </span>
-            </div>
-            <span className="shrink-0 items-start flex w-full md:w-auto">
-                <Button
-                    size="small"
-                    color="weak"
-                    shape="outline"
-                    fullWidth
-                    className="rounded-sm"
-                    onClick={handleClick}
-                    data-testid="ask-resign-banner:verify-button"
-                >{c('Action').t`Verify`}</Button>
-            </span>
+            {c('Info').t`We could not verify the sender's trusted keys.`}
 
             {render && (
                 <ContactResignModal
@@ -88,7 +79,7 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
                         .t`There has been an error with the signature used to verify the contact details, which may be the result of a password reset.`}
                 </ContactResignModal>
             )}
-        </div>
+        </Banner>
     );
 };
 
