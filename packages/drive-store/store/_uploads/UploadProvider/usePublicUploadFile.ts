@@ -28,7 +28,7 @@ import retryOnError from '../../../utils/retryOnError';
 import { isPhotosDisabledUploadError } from '../../../utils/transfer';
 import { usePublicSession } from '../../_api';
 import { integrityMetrics } from '../../_crypto';
-import { useLink, usePublicLinkActions, usePublicLinksListing, validateLinkName } from '../../_links';
+import { useLink, usePublicLinksActions, usePublicLinksListing, validateLinkName } from '../../_links';
 import type { ShareTypeString } from '../../_shares';
 import { getShareTypeString, useDefaultShare, useShare } from '../../_shares';
 import { useIsPaid } from '../../_user';
@@ -67,7 +67,7 @@ export default function usePublicUploadFile() {
     const { request: publicDebouncedRequest, user } = usePublicSession();
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
-    const { deleteChildrenLinks } = usePublicLinkActions();
+    const { deleteLinks } = usePublicLinksActions();
     const { getShare } = useShare();
     const { findHash } = usePublicUploadHelper();
     const publicLinksListing = usePublicLinksListing();
@@ -596,9 +596,11 @@ export default function usePublicUploadFile() {
                             if (createdFileRevision.isNewFile) {
                                 log(`Deleting file`);
                                 // Cleanup should not be able to abort.
-                                await deleteChildrenLinks(new AbortController().signal, token, parentLinkId, [
-                                    createdFileRevision.fileID,
-                                ]);
+                                await deleteLinks(new AbortController().signal, {
+                                    token,
+                                    parentLinkId,
+                                    links: [{ linkId: createdFileRevision.fileID }],
+                                });
                             } else {
                                 log(`Deleting revision`);
                                 await request(
