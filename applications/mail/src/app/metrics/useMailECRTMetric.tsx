@@ -52,8 +52,8 @@ export const useMailECRTMetric = () => {
 
         metricsMap.set(elementID, { ...metric, endRenderTime: end });
 
-        metrics.mail_performance_email_content_render_time_histogram.observe({
-            Value: end - metric.startRenderTime,
+        metrics.mail_performance_email_content_render_time_second_histogram.observe({
+            Value: (end - metric.startRenderTime) / 1000,
             Labels: {
                 location: getLabelID(metric.labelID),
                 pageSize: getPageSizeString(settings),
