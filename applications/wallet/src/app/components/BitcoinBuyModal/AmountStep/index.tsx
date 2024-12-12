@@ -258,6 +258,9 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                                 suffix={
                                     (availableProviders.length || !loadingQuotes) && (
                                         <div className="flex grow items-center flex-row flex-nowrap">
+                                            {!loadingQuotes && selectedPaymentProvider === 'Azteco' && (
+                                                <span className={'azteco-recommended-label'}>Recommended</span>
+                                            )}
                                             <Skeleton loading={loadingQuotes}>
                                                 <Select
                                                     value={selectedPaymentProvider}
@@ -309,7 +312,10 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                                                                     <div className="flex flex-row items-center">
                                                                         <div
                                                                             className="p-2 mr-2 flex rounded-full bg-weak border-norm"
-                                                                            style={{ width: '2rem', height: '2rem' }}
+                                                                            style={{
+                                                                                width: '2rem',
+                                                                                height: '2rem',
+                                                                            }}
                                                                         >
                                                                             <img src={content.assetSrc} alt="" />
                                                                         </div>
