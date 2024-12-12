@@ -16,7 +16,6 @@ import {
     AddressBalanceDataListItem,
     AddressDataListItem,
     AddressStatusDataListItem,
-    CopyAddressDataListItem,
     IndexDataListItem,
 } from './data-list-items';
 
@@ -33,11 +32,6 @@ interface Props {
 
 const getDummyLoadingColumns = (keychain: WasmKeychainKind): DataColumn<null>[] => {
     return compact([
-        {
-            id: 'action',
-            colSpan: '5rem',
-            data: () => <CopyAddressDataListItem loading />,
-        },
         {
             header: <div>{c('Address list').t`Index`}</div>,
             id: 'index',
@@ -110,12 +104,6 @@ export const AddressTable = ({
         key: string;
         address: WasmAddressDetailsData;
     }>[] = compact([
-        {
-            id: 'action',
-            colSpan: '5rem',
-            className: 'flex flex-column items-center',
-            data: (row) => <CopyAddressDataListItem address={row.address.Data} />,
-        },
         {
             header: <div>{c('Address list').t`Index`}</div>,
             id: 'index',

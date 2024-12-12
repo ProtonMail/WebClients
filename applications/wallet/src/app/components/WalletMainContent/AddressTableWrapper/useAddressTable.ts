@@ -56,9 +56,7 @@ export const useAddressTable = ({
                             .getAddress(network, addressSearch, blockchainClient, force_sync)
                             .catch(noop);
 
-                        if (address) {
-                            return setAddresses([address]);
-                        }
+                        return address ? setAddresses([address]) : setAddresses([]);
                     }
 
                     const addresses = await account.account

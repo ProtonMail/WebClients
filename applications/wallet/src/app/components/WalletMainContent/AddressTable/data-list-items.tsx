@@ -32,6 +32,8 @@ export const AddressDataListItem = ({
     highlighted?: boolean;
     loading?: boolean;
 }) => {
+    const { createNotification } = useNotifications();
+
     return (
         <DataListItem
             bottomNode={
@@ -39,10 +41,17 @@ export const AddressDataListItem = ({
                     <div className={clsx('block text-ellipsis text-monospace', highlighted && 'color-primary')}>
                         {address ? `${address.address}` : 'bc1qplaceholderplaceholderplaceholder'}
                         {highlighted && (
-                            <Tooltip title={c('Info').t`This address is used to receive Bitcoin via Email`}>
+                            <Tooltip title={c('Info').t`This address is for Bitcoin via Email`}>
                                 <Icon name="brand-bitcoin" className="ml-2 color-hint" />
                             </Tooltip>
                         )}
+                        <Copy
+                            value={address?.address ?? ''}
+                            onCopy={() => {
+                                createNotification({ text: c('Address list').t`Address copied` });
+                            }}
+                            className={'ml-2'}
+                        />
                     </div>
                 </Skeleton>
             }
