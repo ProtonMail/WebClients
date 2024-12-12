@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { Button, Href, InlineLinkButton } from '@proton/atoms';
+import { Banner, Button, Href, InlineLinkButton } from '@proton/atoms';
 import { Icon, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
@@ -186,47 +186,31 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     };
 
     return (
-        <div
-            className="bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap justify-space-between flex-column md:flex-row"
-            data-testid="extra-pin-key:banner"
-        >
-            <div className="flex flex-nowrap pr-4 mb-2 md:mb-0">
-                <Icon name="exclamation-circle-filled" className="mt-1 mr-2 ml-0.5 shrink-0 color-danger" />
-                <div>
-                    <span className="pr-2 flex mt-1">
-                        <span className="mr-1" data-testid="extra-pin-key:content">
-                            {getBannerMessage(promptKeyPinningType)}
-                        </span>
-                        {promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
-                            <InlineLinkButton
-                                disabled={loadingDisablePromptPin}
-                                onClick={() => withLoadingDisablePromptPin(handleDisablePromptPin())}
-                            >
-                                {c('Action').t`Never show`}
-                            </InlineLinkButton>
-                        ) : (
-                            <Href href={getKnowledgeBaseUrl('/address-verification')}>{c('Link').t`Learn more`}</Href>
-                        )}
-                    </span>
-                </div>
-            </div>
-            <span className="items-start shrink-0 w-full md:w-auto pt-0.5">
-                <Button
-                    size="small"
-                    color="weak"
-                    shape="outline"
-                    fullWidth
-                    className="rounded-sm"
-                    onClick={handleTrustKey}
-                    disabled={loading}
-                    data-testid="extra-pin-key:trust-button"
-                >
+        <Banner
+            variant="norm-outline"
+            icon={<Icon name="exclamation-triangle-filled" className="color-danger" />}
+            link={
+                promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
+                    <InlineLinkButton
+                        disabled={loadingDisablePromptPin}
+                        onClick={() => withLoadingDisablePromptPin(handleDisablePromptPin())}
+                    >
+                        {c('Action').t`Never show`}
+                    </InlineLinkButton>
+                ) : (
+                    <Href href={getKnowledgeBaseUrl('/address-verification')}>{c('Link').t`Learn more`}</Href>
+                )
+            }
+            action={
+                <Button onClick={handleTrustKey} disabled={loading} data-testid="extra-pin-key:trust-button">
                     {c('Action').t`Trust key`}
                 </Button>
-            </span>
-
+            }
+            data-testid="extra-pin-key:banner"
+        >
+            {getBannerMessage(promptKeyPinningType)}
             {renderTrustPublicKeyModal && <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />}
-        </div>
+        </Banner>
     );
 };
 

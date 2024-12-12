@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, SettingsLink } from '@proton/components';
+import { Banner, Button, ButtonLike } from '@proton/atoms';
+import { ButtonGroup, Icon, SettingsLink } from '@proton/components';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { useReloadMessage } from '../../../hooks/message/useLoadMessage';
@@ -57,42 +57,27 @@ const ExtraErrors = ({ message }: Props) => {
                 const showKeysLink = errorType === 'decryption' && alreadyTried;
 
                 return (
-                    <div
+                    <Banner
                         key={errorType}
-                        className="bg-norm border rounded pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap flex-column md:flex-row"
+                        variant="norm-outline"
+                        icon={<Icon name="exclamation-triangle-filled" className="color-danger" />}
+                        action={
+                            <ButtonGroup>
+                                {showReload && (
+                                    <Button onClick={handleReload} data-testid="errors-banner:reload">{c('Action')
+                                        .t`Try again`}</Button>
+                                )}
+                                {showKeysLink && (
+                                    <ButtonLike as={SettingsLink} path="/encryption-keys" app={APPS.PROTONMAIL}>
+                                        {c('Action').t`View keys`}
+                                    </ButtonLike>
+                                )}
+                            </ButtonGroup>
+                        }
                         data-testid="errors-banner"
                     >
-                        <div className="md:flex-1 flex flex-nowrap mb-2 md:mb-0">
-                            <Icon name="exclamation-circle-filled" className="shrink-0 mt-1 ml-0.5 color-danger" />
-                            <span className="px-2 mt-0.5 flex-1" data-testid="errors-banner:content">
-                                {getTranslations(errorType, alreadyTried)}
-                            </span>
-                        </div>
-                        {showReload && (
-                            <span className="shrink-0 items-start flex w-full md:w-auto">
-                                <Button
-                                    size="small"
-                                    color="weak"
-                                    shape="outline"
-                                    fullWidth
-                                    className="rounded-sm"
-                                    onClick={handleReload}
-                                    data-testid="errors-banner:reload"
-                                >{c('Action').t`Try again`}</Button>
-                            </span>
-                        )}
-                        {showKeysLink && (
-                            <span className="shrink-0 items-start flex w-full md:w-auto">
-                                <SettingsLink
-                                    path="/encryption-keys"
-                                    app={APPS.PROTONMAIL}
-                                    className="text-underline color-inherit w-full md:w-auto"
-                                >
-                                    {c('Action').t`View keys`}
-                                </SettingsLink>
-                            </span>
-                        )}
-                    </div>
+                        {getTranslations(errorType, alreadyTried)}
+                    </Banner>
                 );
             })}
         </>
