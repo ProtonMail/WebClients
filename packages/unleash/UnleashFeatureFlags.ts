@@ -104,6 +104,8 @@ enum DriveFeatureFlag {
     DriveB2BPhotosUpload = 'DriveB2BPhotosUpload',
     // Refactor
     DriveWebZustandShareMemberList = 'DriveWebZustandShareMemberList',
+    // Experiment
+    DriveThumbnailWebP = 'DriveThumbnailWebP',
 }
 
 enum DocsFeatureFlag {
