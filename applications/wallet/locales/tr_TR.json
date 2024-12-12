@@ -318,20 +318,11 @@
       ]
     },
     "Address list": {
-      "Activate Bitcoin via Email": [
-        "E-posta ile Bitcoin kullanılsın"
-      ],
       "Address copied": [
         "Adres kopyalandı"
       ],
-      "Bitcoin via Email ${ availableAddresses }": [
-        "E-posta ile Bitcoin ${ availableAddresses }"
-      ],
       "Change address": [
         "Değiştirilen adres"
-      ],
-      "Given out": [
-        "Gönderilen"
       ],
       "Index": [
         "Dizin"
@@ -353,9 +344,6 @@
       ],
       "Toggle keychain": [
         "Anahtar zincirini aç/kapat"
-      ],
-      "Used (${ transactionsCount })": [
-        "Kullanılan (${ transactionsCount })"
       ],
       "Value": [
         "Değer"
@@ -2697,6 +2685,9 @@
       "${ n } month": [
         "${ n } ay",
         "${ n } ay"
+      ],
+      "Account holder": [
+        "Hesap sahibi"
       ],
       "Address": [
         "Adres"
@@ -5181,9 +5172,6 @@
       "Boost transaction priority": [
         "Hesap işlemi önceliğini artır"
       ],
-      "By increasing the fee, you can prioritize your transaction, helping it get confirmed faster during busy network times.": [
-        "Ücreti artırarak hesap işleminizin önceliğini artırabilir, yoğun ağ saatlerinde daha hızlı onaylanmasını sağlayabilirsiniz."
-      ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "QR kod tarayıcı kullanılamıyor. Lütfen tarayıcı uyumluluğunu denetleyin"
       ],
@@ -5219,9 +5207,6 @@
       ],
       "How much are you sending?": [
         "Ne kadar gönderiyorsunuz?"
-      ],
-      "Increase fee and resend": [
-        "Ücreti artırıp yeniden gönder"
       ],
       "Low": [
         "Yavaş"
