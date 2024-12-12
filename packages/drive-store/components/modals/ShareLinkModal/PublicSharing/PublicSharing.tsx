@@ -74,6 +74,7 @@ export const PublicSharing = ({
                     <div className="hidden sm:block shrink-0">{c('Label').t`Viewer`}</div>
                 ) : (
                     <PermissionsDropdownMenu
+                        disabled={!publicSharedLink || isLoading}
                         isLoading={isPermissionsLoading}
                         selectedPermissions={publicSharedLinkPermissions}
                         onChangePermissions={handleUpdatePermissions}

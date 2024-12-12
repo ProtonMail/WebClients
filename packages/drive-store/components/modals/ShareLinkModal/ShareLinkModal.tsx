@@ -1,3 +1,4 @@
+/* eslint react-hooks/rules-of-hooks: 0 */
 import type { MouseEvent } from 'react';
 import { useMemo, useState } from 'react';
 
@@ -17,9 +18,16 @@ import {
     useToggle,
 } from '@proton/components';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import useFlag from '@proton/unleash/useFlag';
 
 import type { ShareMember } from '../../../store';
-import { useDrivePublicSharingFlags, useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
+import {
+    useDrivePublicSharingFlags,
+    useDriveSharingFlags,
+    useShareMemberView,
+    useShareMemberViewZustand,
+    useShareURLView,
+} from '../../../store';
 import { useIsPaid } from '../../../store/_user';
 import ModalContentLoader from '../ModalContentLoader';
 import { DirectSharingAutocomplete, DirectSharingListing, useShareInvitees } from './DirectSharing';
@@ -59,6 +67,11 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         isShareUrlEnabled,
     } = useShareURLView(rootShareId, linkId);
 
+    const isZustandShareMemberListEnabled = useFlag('DriveWebZustandShareMemberList');
+    const shareMemberList = isZustandShareMemberListEnabled
+        ? useShareMemberViewZustand(rootShareId, linkId)
+        : useShareMemberView(rootShareId, linkId);
+
     const {
         volumeId,
         members,
@@ -78,7 +91,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         removeExternalInvitation,
         updateExternalInvitePermissions,
         deleteShareIfEmpty,
-    } = useShareMemberView(rootShareId, linkId);
+    } = shareMemberList;
 
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const { isPublicEditModeEnabled } = useDrivePublicSharingFlags();

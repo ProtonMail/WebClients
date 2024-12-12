@@ -48,13 +48,6 @@ export function useLinksStateProvider() {
 
     const [state, setState] = useState<LinksState>({});
 
-    const removeLinkForDriveCompat = useCallback(
-        (shareId: string, linkId: string) => {
-            setState((state) => deleteLinks(state, shareId, [linkId]));
-        },
-        [state]
-    );
-
     useEffect(() => {
         const callbackId = eventsManager.eventHandlers.register((_volumeId, events, processedEventCounter) =>
             setState((state) => updateByEvents(state, events, processedEventCounter))
@@ -158,6 +151,21 @@ export function useLinksStateProvider() {
         [state]
     );
 
+    // TODO: Remove this when events or refactor will be in place
+    const removeLinksForPublicPage = useCallback(
+        (token: string, linkIds: string[]) => {
+            setState((state) => deleteLinks(state, token, linkIds));
+        },
+        [state]
+    );
+
+    const removeLinkForDriveCompat = useCallback(
+        (shareId: string, linkId: string) => {
+            setState((state) => deleteLinks(state, shareId, [linkId]));
+        },
+        [state]
+    );
+
     return {
         setLinks,
         lockLinks,
@@ -172,6 +180,7 @@ export function useLinksStateProvider() {
         getAllShareLinks, // This should be use only in specific case when you know the links you need (Ex: Bookmarks)
         removeLinkForMigration,
         removeLinkForSharedWithMe,
+        removeLinksForPublicPage,
         /** Should never be used outside of `drive-store`. */
         removeLinkForDriveCompat,
     };

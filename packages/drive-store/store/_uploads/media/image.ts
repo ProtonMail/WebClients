@@ -16,15 +16,18 @@ interface ReturnProps {
 const shouldGenerateHDPreview = ({ width, mimeType }: { width: number; mimeType: string }) =>
     mimeType == SupportedMimeTypes.jpg && width && width <= HD_THUMBNAIL_MAX_SIDE;
 
-export function scaleImageFile({
-    file,
-    mimeType,
-    thumbnailTypes = [ThumbnailType.PREVIEW],
-}: {
-    file: Blob;
-    mimeType: string;
-    thumbnailTypes?: ThumbnailType[];
-}): Promise<ReturnProps> {
+export function scaleImageFile(
+    {
+        file,
+        mimeType,
+        thumbnailTypes = [ThumbnailType.PREVIEW],
+    }: {
+        file: Blob;
+        mimeType: string;
+        thumbnailTypes?: ThumbnailType[];
+    },
+    thumbnailFormatExperimentMimeType: 'image/jpeg' | 'image/webp' = 'image/jpeg'
+): Promise<ReturnProps> {
     return new Promise((resolve, reject) => {
         const img = new Image();
         img.addEventListener('load', async () => {
@@ -32,7 +35,11 @@ export function scaleImageFile({
                 ? [ThumbnailType.PREVIEW]
                 : thumbnailTypes;
 
-            Promise.all(thumbnailTypesToGenerate.map((thumbnailType) => scaleImage(img, thumbnailType)))
+            Promise.all(
+                thumbnailTypesToGenerate.map((thumbnailType) =>
+                    scaleImage(img, thumbnailType, thumbnailFormatExperimentMimeType)
+                )
+            )
                 .then((thumbnails) => {
                     resolve({ width: img.width, height: img.height, thumbnails });
                 })
@@ -49,7 +56,8 @@ export function scaleImageFile({
 
 async function scaleImage(
     img: HTMLImageElement,
-    thumbnailType: ThumbnailType = ThumbnailType.PREVIEW
+    thumbnailType: ThumbnailType = ThumbnailType.PREVIEW,
+    mimeType: 'image/jpeg' | 'image/webp' = 'image/jpeg'
 ): Promise<ThumbnailInfo> {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
@@ -71,6 +79,6 @@ async function scaleImage(
 
     return {
         thumbnailType,
-        thumbnailData: new Uint8Array(await canvasToThumbnail(canvas, thumbnailType)),
+        thumbnailData: new Uint8Array(await canvasToThumbnail(canvas, thumbnailType, mimeType)),
     };
 }

@@ -13,6 +13,7 @@ import getRandomString from '@proton/utils/getRandomString';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
+import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';
 import { usePublicSession } from '../_api';
 import { useShare } from '../_shares';
 import { encryptFolderExtendedAttributes } from './extendedAttributes';
@@ -24,16 +25,20 @@ import { validateLinkName } from './validation';
  */
 export function usePublicLinkActions() {
     const { preventLeave } = usePreventLeave();
+    const { setUploadToken } = useAnonymousUploadAuthStore();
     const { request: publicDebouncedRequest, getAddressKeyInfo } = usePublicSession();
     const { getLinkPrivateKey, getLinkHashKey, getLink } = useLink();
     const { getSharePrivateKey } = useShare();
 
     const createFolder = async (
         abortSignal: AbortSignal,
-        token: string,
-        parentLinkId: string,
-        name: string,
-        modificationTime?: Date
+        {
+            token,
+            parentLinkId,
+            name,
+            modificationTime,
+            silence,
+        }: { token: string; parentLinkId: string; name: string; modificationTime?: Date; silence?: number | number[] }
     ) => {
         // Name Hash is generated from LC, for case-insensitive duplicate detection.
         const error = validateLinkName(name);
@@ -109,9 +114,9 @@ export function usePublicLinkActions() {
                   addressKeyInfo ? addressKeyInfo.privateKey : privateKey
               );
 
-        const { Folder } = await preventLeave(
-            publicDebouncedRequest<{ Folder: { ID: string } }>(
-                queryPublicCreateFolder(token, {
+        const { Folder, AuthorizationToken } = await preventLeave(
+            publicDebouncedRequest<{ Folder: { ID: string }; AuthorizationToken: string }>({
+                ...queryPublicCreateFolder(token, {
                     Hash,
                     NodeHashKey,
                     Name: encryptedName,
@@ -121,9 +126,14 @@ export function usePublicLinkActions() {
                     SignatureEmail: addressKeyInfo?.address.Email,
                     ParentLinkID: parentLinkId,
                     XAttr: xattr,
-                })
-            )
+                }),
+                silence,
+            })
         );
+
+        if (AuthorizationToken) {
+            setUploadToken({ linkId: Folder.ID, authorizationToken: AuthorizationToken });
+        }
 
         return Folder.ID;
     };
