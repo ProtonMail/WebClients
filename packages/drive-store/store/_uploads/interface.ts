@@ -122,3 +122,6 @@ export enum TransferConflictStrategy {
     Replace = 'replace',
     Skip = 'skip',
 }
+
+// key = linkId, value = AuthorizationToken
+export type AnonymousUploadsToken = Map<string, string>;
