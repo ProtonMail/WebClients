@@ -540,6 +540,27 @@ describe('payments core helpers', () => {
                 })
             ).toEqual('CHF');
         });
+
+        it('should return regional currency if plans have it and status has it even if the feature flag is disable (backend-lead behaviour)', () => {
+            const status = {
+                CountryCode: 'BR',
+                VendorStates: {} as any,
+            };
+
+            const plans = [
+                {
+                    Currency: 'BRL',
+                },
+            ] as Plan[];
+
+            expect(
+                getPreferredCurrency({
+                    status,
+                    plans,
+                    enableNewBatchCurrencies: false,
+                })
+            ).toEqual('BRL');
+        });
     });
 
     describe('getAvailableCurrencies', () => {
@@ -1135,6 +1156,27 @@ describe('payments core helpers', () => {
                 })
             ).toEqual(['GBP', 'BRL']);
         });
+    });
+
+    it('should return regional currency if plans have it and status has it even if the feature flag is disable (backend-lead behaviour)', () => {
+        const status = {
+            CountryCode: 'BR',
+            VendorStates: {} as any,
+        };
+
+        const plans = [
+            {
+                Currency: 'BRL',
+            },
+        ] as Plan[];
+
+        expect(
+            getSupportedRegionalCurrencies({
+                status,
+                plans,
+                enableNewBatchCurrencies: false,
+            })
+        ).toEqual(['BRL']);
     });
 });
 
