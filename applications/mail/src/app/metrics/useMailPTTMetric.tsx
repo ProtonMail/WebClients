@@ -46,7 +46,7 @@ export const useMailPTTMetric = () => {
         return () => unlisten();
     }, [history]);
 
-    useEffect(() => {
+    const stopPTTMetric = () => {
         if (currentTransitionRef.current) {
             const endTime = performance.now();
 
@@ -74,5 +74,7 @@ export const useMailPTTMetric = () => {
                 },
             });
         }
-    }, [location]);
+    };
+
+    return { stopPTTMetric };
 };

@@ -6,11 +6,6 @@ import useFlag from '@proton/unleash/useFlag';
 
 import { getLabelName, getPageSizeString } from './mailMetricsHelper';
 
-const ELDTMetrickMark = 'mail_web_ELDT';
-const ELDTMetricMarkEnd = `${ELDTMetrickMark}-end`;
-
-export const ELDTMetricMarkStart = `${ELDTMetrickMark}-start`;
-
 export const useMailELDTMetric = () => {
     const [settings] = useMailSettings();
     const mailMetricsEnabled = useFlag('MailMetrics');
@@ -18,7 +13,7 @@ export const useMailELDTMetric = () => {
     const alreadyReportedELDT = useRef<boolean>(false);
 
     const stopELDTMetric = (labelID: string) => {
-        performance.mark(ELDTMetricMarkEnd);
+        const end = performance.now();
 
         if (alreadyReportedELDT.current || !mailMetricsEnabled) {
             return;
@@ -26,9 +21,8 @@ export const useMailELDTMetric = () => {
 
         alreadyReportedELDT.current = true;
 
-        const eldtMetric = performance.measure(ELDTMetrickMark, ELDTMetricMarkStart, ELDTMetricMarkEnd);
         metrics.mail_performance_email_list_display_time_histogram.observe({
-            Value: eldtMetric.duration / 1000,
+            Value: end / 1000,
             Labels: {
                 pageSize: getPageSizeString(settings),
                 loaded: getLabelName(labelID),
