@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { fromUnixTime, isSameDay } from 'date-fns';
+import { addDays, fromUnixTime, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -76,7 +76,7 @@ export const CancellationReminderSection = ({ app }: Props) => {
         const isSubscriptionReminderFlow = !isUpsellEnabled || !config.upsellPlan;
 
         const hasCancelledOnSameDayHeSubscribed =
-            subscription?.CreateTime && isSameDay(fromUnixTime(subscription.CreateTime), new Date());
+            subscription?.CreateTime && isBefore(new Date(), addDays(fromUnixTime(subscription.CreateTime), 1));
         const { status } = await cancelSubscription(isSubscriptionReminderFlow, config.upsellPlan);
 
         if (hasCancelledOnSameDayHeSubscribed) {
