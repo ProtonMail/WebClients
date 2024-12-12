@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Banner, Button } from '@proton/atoms';
 import { Icon, Tooltip, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
-import clsx from '@proton/utils/clsx';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -45,31 +44,26 @@ const ExtraExpirationSelfDestruction = ({ message }: Props) => {
     };
 
     return (
-        <div
-            className={clsx(
-                'bg-norm rounded border flex items-center py-2 px-2 mb-2 gap-4',
-                expiresInLessThan24Hours && 'color-danger border-danger'
-            )}
+        <Banner
             data-testid="expiration-banner"
-        >
-            <Icon name="hourglass" className="shrink-0" />
-            <span className="flex flex-1 items-center">{expirationMessage}</span>
-            {canExpire && (
-                <span className="shrink-0 w-full md:w-auto">
+            variant={expiresInLessThan24Hours ? 'danger' : 'info-outline'}
+            icon={<Icon name="hourglass" />}
+            action={
+                canExpire ? (
                     <Tooltip title={c('Cancel expiration of the message').t`Cancel expiration`}>
                         <Button
                             onClick={handleClick}
-                            size="small"
                             color={expiresInLessThan24Hours ? 'danger' : 'weak'}
-                            shape="underline"
                             data-testid="unsubscribe-banner"
                         >
                             {c('Cancel expiration of the message').t`Cancel`}
                         </Button>
                     </Tooltip>
-                </span>
-            )}
-        </div>
+                ) : undefined
+            }
+        >
+            {expirationMessage}
+        </Banner>
     );
 };
 

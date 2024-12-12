@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { Button, ButtonLike, Href } from '@proton/atoms';
+import { Banner, Button, ButtonLike, Href } from '@proton/atoms';
 import {
     Field,
     Icon,
@@ -15,7 +15,6 @@ import {
     PrimaryButton,
     Prompt,
     Row,
-    Tooltip,
     useApi,
     useEventManager,
     useModalState,
@@ -262,31 +261,20 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         .jt`Protect your email from being leaked to mailing lists or spammers with ${maskMyEmailButton}.`;
 
     return (
-        <div className="bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap flex-column md:flex-row">
-            <div className="md:flex-1 flex flex-nowrap mb-2 md:mb-0">
-                <Icon
-                    name="envelope"
-                    className="mt-0.5 md:mt-custom ml-0.5 shrink-0"
-                    style={{ '--md-mt-custom': '0.375rem' }}
-                />
-                <span className="px-1 flex flex-1 items-center">{descriptionText}</span>
-            </div>
-            <span className="shrink-0 items-start flex w-full md:w-auto pt-0.5">
-                <Tooltip title={descriptionText}>
-                    <Button
-                        onClick={() => setUnsubscribeModalOpen(true)}
-                        size="small"
-                        color="weak"
-                        shape="outline"
-                        fullWidth
-                        className="rounded-sm"
-                        data-testid="unsubscribe-banner"
-                        disabled={loading || isUnsubscribed(message)}
-                    >
-                        {actionText}
-                    </Button>
-                </Tooltip>
-            </span>
+        <Banner
+            icon={<Icon name="envelope" />}
+            variant="norm-outline"
+            action={
+                <Button
+                    onClick={() => setUnsubscribeModalOpen(true)}
+                    data-testid="unsubscribe-banner"
+                    disabled={loading || isUnsubscribed(message)}
+                >
+                    {actionText}
+                </Button>
+            }
+        >
+            {descriptionText}
 
             {renderUnsubscribeModal && (
                 <ModalTwo className="pm-modal--shorterLabels" {...unsubscribeModalProps}>
@@ -313,7 +301,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             )}
 
             {renderPassAliasesModal && <ProtonPassAliasesModal {...passAliasesModalProps} />}
-        </div>
+        </Banner>
     );
 };
 

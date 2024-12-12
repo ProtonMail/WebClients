@@ -5,20 +5,18 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
-import { ButtonLike, Href } from '@proton/atoms';
+import { Banner, ButtonLike, Href } from '@proton/atoms';
 import { VideoConferencingWidgetConfig } from '@proton/calendar';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {
     AppLink,
     CalendarEventDateHeader,
-    DeprecatedBanner,
     Icon,
     IconRow,
     useApi,
     useGetCalendarEventRaw,
     useNotifications,
 } from '@proton/components';
-import { DeprecatedBannerBackgroundColor } from '@proton/components/components/deprecatedBanner/DeprecatedBanner';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
@@ -255,16 +253,12 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                         );
 
                         setError(
-                            <DeprecatedBanner
-                                icon="key"
+                            <Banner
+                                className="mb-3"
+                                variant="info-outline"
+                                icon={<Icon name="key" />}
                                 action={
-                                    <ButtonLike
-                                        as={AppLink}
-                                        toApp={APPS.PROTONCALENDAR}
-                                        to="/"
-                                        color="norm"
-                                        className="shrink-0"
-                                    >
+                                    <ButtonLike as={AppLink} toApp={APPS.PROTONCALENDAR} to="/">
                                         <div className="flex items-center">
                                             <span className="mr-3">{c('Action').t`Open ${CALENDAR_APP_NAME}`}</span>
                                             <Icon name="arrow-out-square" />
@@ -274,7 +268,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                             >
                                 {c('Email reminder decryption error')
                                     .jt`Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${learnMoreLink}`}
-                            </DeprecatedBanner>
+                            </Banner>
                         );
 
                         return;
@@ -287,12 +281,8 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     );
 
                     setError(
-                        <DeprecatedBanner
-                            icon="exclamation-circle"
-                            backgroundColor={DeprecatedBannerBackgroundColor.DANGER}
-                        >
-                            {c('Email reminder decryption error').jt`Event details cannot be decrypted. ${whyNotLink}`}
-                        </DeprecatedBanner>
+                        <Banner className="mb-3" variant="danger">{c('Email reminder decryption error')
+                            .jt`Event details cannot be decrypted. ${whyNotLink}`}</Banner>
                     );
 
                     return;
@@ -300,12 +290,8 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
 
                 if (error.message === EVENT_NOT_FOUND_ERROR) {
                     setError(
-                        <DeprecatedBanner
-                            icon="exclamation-circle"
-                            backgroundColor={DeprecatedBannerBackgroundColor.DANGER}
-                        >
-                            {c('Email reminder error').t`Event is no longer in your calendar`}
-                        </DeprecatedBanner>
+                        <Banner className="mb-3" variant="danger">{c('Email reminder error')
+                            .t`Event is no longer in your calendar`}</Banner>
                     );
 
                     return;
@@ -377,13 +363,14 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const labelClassName = 'inline-flex pt-0.5';
 
     return (
-        <div className="calendar-widget mb-3" ref={eventReminderRef}>
+        <div className="calendar-widget mb-2" ref={eventReminderRef}>
             <EventReminderBanner
                 startDate={startDate}
                 endDate={endDate}
                 isAllDay={!!FullDay}
                 isCanceled={getIsEventCancelled(calendarEvent)}
                 isOutdated={isOutdated}
+                className={!isOutdated ? 'mb-2' : undefined}
             />
             {!isOutdated && (
                 <div className="rounded border bg-norm overflow-auto">
