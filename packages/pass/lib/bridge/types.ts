@@ -4,6 +4,7 @@ import type {
     AliasOptions,
     ItemRevision,
     OrganizationGetResponse,
+    OrganizationUpdatePasswordPolicyRequest,
     Share,
     ShareType,
 } from '@proton/pass/types';
@@ -59,10 +60,13 @@ export interface PassBridge {
         settings: {
             /** Get organization settings for Pass */
             get: () => Promise<OrganizationGetResponse>;
-            /** Update an organization setting for Pass */
+            /** Update an organization setting for Pass. Doesn't include password generator policy */
             set: <K extends keyof OrganizationSettings>(
                 setting: K,
                 value: OrganizationSettings[K]
+            ) => Promise<OrganizationGetResponse>;
+            setPasswordGeneratorPolicy: (
+                value: OrganizationUpdatePasswordPolicyRequest
             ) => Promise<OrganizationGetResponse>;
         };
     };
