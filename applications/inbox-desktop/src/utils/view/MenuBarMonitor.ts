@@ -1,5 +1,6 @@
 import { BrowserWindow } from "electron";
 import EventEmitter from "node:events";
+import { mainLogger } from "../log";
 
 export class MenuBarMonitor {
     private static INTERVAL_DELAY = 100;
@@ -44,6 +45,11 @@ export class MenuBarMonitor {
 
             const menuBarVisible = this.browserWindow.isMenuBarVisible();
             if (menuBarVisible !== this.menuBarVisible) {
+                if (menuBarVisible) {
+                    mainLogger.info("Menu bar show");
+                } else {
+                    mainLogger.info("Menu bar hide");
+                }
                 this.menuBarVisible = menuBarVisible;
                 this.emitter.emit(MenuBarMonitor.EMITTER_EVENT);
             }

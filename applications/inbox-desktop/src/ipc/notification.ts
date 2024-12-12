@@ -2,7 +2,7 @@ import { Notification, app } from "electron";
 import { isWindows } from "../utils/helpers";
 import { addHashToCurrentURL } from "../utils/urls/urlHelpers";
 import { getMailView, getMainWindow, showView } from "../utils/view/viewManagement";
-import { ipcLogger } from "../utils/log";
+import { ipcLogger, notificationLogger } from "../utils/log";
 import { ElectronNotification } from "@proton/shared/lib/desktop/desktopTypes";
 
 export const handleIPCBadge = (count: number) => {
@@ -35,24 +35,32 @@ export const showNotification = (payload: ElectronNotification) => {
     notification.on("click", () => {
         const mainWindow = getMainWindow();
 
+        if (!mainWindow || mainWindow.isDestroyed()) {
+            notificationLogger.warn("Ignoring notification, mainWindow is not available");
+            return;
+        }
+
         if (labelID && elementID && app === "mail") {
             const url = addHashToCurrentURL(
                 getMailView().webContents.getURL(),
                 `#elementID=${elementID}&labelID=${labelID}`,
             );
 
+            notificationLogger.info("Opening email from notification");
             showView("mail", url);
         } else {
+            notificationLogger.info("Showing app from notification");
             showView(app);
         }
 
-        if (mainWindow) {
-            if (mainWindow.isMinimized()) {
-                mainWindow.restore();
-            }
-            mainWindow.focus();
+        if (mainWindow.isMinimized()) {
+            notificationLogger.info("Restoring main window");
+            mainWindow.restore();
         }
+
+        mainWindow.focus();
     });
 
+    notificationLogger.info("Showing notification");
     notification.show();
 };

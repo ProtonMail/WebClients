@@ -42,11 +42,7 @@ export function handleWebContents(contents: WebContents) {
         return getCurrentView()?.webContents === contents;
     };
 
-    const preventDefault = (ev: Electron.Event) => {
-        ev.preventDefault();
-    };
-
-    contents.on("did-navigate", (ev, url) => {
+    contents.on("did-navigate", (_ev, url) => {
         logger().info("did-navigate", url);
 
         if (isHostAllowed(url)) {
@@ -88,7 +84,7 @@ export function handleWebContents(contents: WebContents) {
         }
 
         if (!isHostAllowed(url)) {
-            return preventDefault(ev);
+            return ev.preventDefault();
         }
 
         if (isAccountSwitch(url)) {
@@ -105,7 +101,10 @@ export function handleWebContents(contents: WebContents) {
         }
     });
 
-    contents.on("will-attach-webview", preventDefault);
+    contents.on("will-attach-webview", (event) => {
+        logger().info("will-attach-webview event prevented");
+        return event.preventDefault();
+    });
 
     contents.on("did-fail-load", (_event, errorCode, validatedURL) => {
         logger().error("did-fail-load", errorCode, validatedURL);
@@ -126,7 +125,7 @@ export function handleWebContents(contents: WebContents) {
         if (!isHostAllowed(details.url) && !global.oauthProcess && !global.subscriptionProcess) {
             logger().info("opening external URL", details.url);
             shell.openExternal(details.url);
-            return preventDefault(details);
+            return details.preventDefault();
         }
 
         // Only redirect to a different browser view if the navigation is happening in
@@ -134,17 +133,17 @@ export function handleWebContents(contents: WebContents) {
         if (isCurrentContent()) {
             if (isAccount(details.url) && !isAccountAuthorize(details.url) && getCurrentView() !== getAccountView()) {
                 showView("account", details.url);
-                return preventDefault(details);
+                return details.preventDefault();
             }
 
             if (isCalendar(details.url) && getCurrentView() !== getCalendarView()) {
                 showView("calendar", details.url);
-                return preventDefault(details);
+                return details.preventDefault();
             }
 
             if (isMail(details.url) && getCurrentView() !== getMailView()) {
                 showView("mail", details.url);
-                return preventDefault(details);
+                return details.preventDefault();
             }
         }
 
