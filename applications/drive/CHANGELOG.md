@@ -1,3 +1,10 @@
+# November 2024
+
+-   Updated Folder Icon Design
+    -   The folder icon has been updated, improving the visual difference between folders and Proton Docs.
+-   CBZ (Comic Book) Preview
+    -   Added support for CBZ previews.
+
 # October 2024
 
 -   Invitation Counter in Sidebar
