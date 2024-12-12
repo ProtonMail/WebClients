@@ -3,7 +3,6 @@ import { render } from '@testing-library/react';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import Loader from '@proton/components/components/loader/Loader';
-import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import { FREE_SUBSCRIPTION, MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { applyHOCs, mockUseUser, withEventManager } from '@proton/testing';
 
@@ -20,7 +19,6 @@ jest.mock('@proton/account/subscription/hooks');
 jest.mock('../../../hooks/useModals');
 
 jest.mock('../../../components/loader/Loader');
-jest.mock('../../account/MozillaInfoPanel');
 jest.mock('./PaymentMethodsTable');
 
 const PaymentMethodsSectionContext = applyHOCs(withEventManager())(PaymentMethodsSection);
@@ -36,7 +34,6 @@ describe('PaymentMethodsSection', () => {
         } as any);
 
         jest.mocked(Loader).mockImplementation(() => <>Loader</>);
-        jest.mocked(MozillaInfoPanel).mockImplementation(() => <>MozillaInfoPanel</>);
         jest.mocked(PaymentMethodsTable).mockImplementation(() => <>PaymentMethodsTable</>);
     });
 
@@ -55,14 +52,6 @@ describe('PaymentMethodsSection', () => {
         const { container } = render(<PaymentMethodsSectionContext />);
 
         expect(container).toHaveTextContent('Loader');
-    });
-
-    it('should render <MozillaInfoPanel> if subscription is managed by mozilla', () => {
-        jest.mocked(useSubscription).mockReturnValue([{ isManagedByMozilla: true } as any, false]);
-
-        const { container } = render(<PaymentMethodsSectionContext />);
-
-        expect(container).toHaveTextContent('MozillaInfoPanel');
     });
 
     it('should render the main contanet otherwise', () => {
