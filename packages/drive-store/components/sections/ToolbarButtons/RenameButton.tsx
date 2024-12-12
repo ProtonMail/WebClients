@@ -23,7 +23,19 @@ const RenameButton = ({ selectedLinks }: Props) => {
             <ToolbarButton
                 title={c('Action').t`Rename`}
                 icon={<Icon name="pen-square" alt={c('Action').t`Rename`} />}
-                onClick={() => showRenameModal({ item: selectedLinks[0], renameLink })}
+                onClick={() =>
+                    showRenameModal({
+                        isFile: selectedLinks[0].isFile,
+                        name: selectedLinks[0].name,
+                        onSubmit: (formattedName) =>
+                            renameLink(
+                                new AbortController().signal,
+                                selectedLinks[0].rootShareId,
+                                selectedLinks[0].linkId,
+                                formattedName
+                            ),
+                    })
+                }
                 data-testid="toolbar-rename"
             />
             {renameModal}
