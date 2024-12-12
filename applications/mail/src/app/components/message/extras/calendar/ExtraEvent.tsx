@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
-import { DeprecatedBanner, DeprecatedBannerBackgroundColor, useApi, useDrawer } from '@proton/components';
+import { Banner, InlineLinkButton } from '@proton/atoms';
+import { useApi, useDrawer } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import {
@@ -337,19 +337,19 @@ const ExtraEvent = ({
         });
 
         return (
-            <DeprecatedBanner
-                backgroundColor={DeprecatedBannerBackgroundColor.DANGER}
-                icon="exclamation-circle"
+            <Banner
+                variant="danger"
+                className="mb-2"
                 action={
-                    canTryAgain && (
+                    canTryAgain ? (
                         <span className="shrink-0 flex">
                             <InlineLinkButton onClick={handleReloadWidget}>{c('Action').t`Try again`}</InlineLinkButton>
                         </span>
-                    )
+                    ) : undefined
                 }
             >
                 {message}
-            </DeprecatedBanner>
+            </Banner>
         );
     }
 
@@ -358,7 +358,7 @@ const ExtraEvent = ({
     }
 
     return (
-        <div data-testid="calendar-widget" className="calendar-widget mb-3">
+        <div data-testid="calendar-widget" className="calendar-widget mb-2">
             <ExtraEventTimeStatus model={model} />
             <div className="rounded border bg-norm overflow-auto">
                 <div className="p-5">

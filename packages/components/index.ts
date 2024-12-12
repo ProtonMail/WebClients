@@ -65,10 +65,6 @@ export { default as Summary } from './components/container/Summary';
 export { default as ContextMenu } from './components/contextMenu/ContextMenu';
 export { default as ContextMenuButton } from './components/contextMenu/ContextMenuButton';
 export { default as ContextSeparator } from './components/contextMenu/ContextSeparator';
-export {
-    default as DeprecatedBanner,
-    DeprecatedBannerBackgroundColor,
-} from './components/deprecatedBanner/DeprecatedBanner';
 export { default as DownloadClientCard } from './components/downloadClientCard/DownloadClientCard';
 export { default as DragMoveContainer } from './components/dragMoveContainer/DragMoveContainer';
 export { default as DrawerApp } from './components/drawer/DrawerApp';

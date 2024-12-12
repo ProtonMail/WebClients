@@ -1,5 +1,5 @@
+import { Banner } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import clsx from '@proton/utils/clsx';
 
 import useExpiration from '../../../../hooks/useExpiration';
 import type { MessageState } from '../../../../store/messages/messagesTypes';
@@ -13,16 +13,13 @@ const ExtraExpirationSentExpirationAutoDelete = ({ message, autoDelete }: Props)
     const { expirationMessage, expiresInLessThan24Hours } = useExpiration(message, autoDelete);
 
     return (
-        <div
-            className={clsx(
-                'bg-norm rounded border flex items-center py-2 px-2 mb-2 gap-4',
-                expiresInLessThan24Hours && 'color-danger border-danger'
-            )}
+        <Banner
             data-testid="expiration-banner"
+            variant={expiresInLessThan24Hours ? 'danger' : 'info-outline'}
+            icon={<Icon name={autoDelete ? 'trash-clock' : 'hourglass'} />}
         >
-            <Icon name={autoDelete ? 'trash-clock' : 'hourglass'} className="shrink-0" />
-            <span className="flex flex-1 items-center">{expirationMessage}</span>
-        </div>
+            {expirationMessage}
+        </Banner>
     );
 };
 
