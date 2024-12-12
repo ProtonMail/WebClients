@@ -7,6 +7,7 @@ export const usePublicLinkOwnerInfo = (linksInput: DecryptedLink | DecryptedLink
 
     if (!userAddressEmail || !links.length) {
         return {
+            loggedIn: false,
             isCreator: false,
             isLastEditor: false,
         };
@@ -22,6 +23,7 @@ export const usePublicLinkOwnerInfo = (linksInput: DecryptedLink | DecryptedLink
     });
 
     return {
+        loggedIn: true,
         isCreator,
         isLastEditor,
     };
