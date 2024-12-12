@@ -8,11 +8,9 @@ import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useConfig from '@proton/components/hooks/useConfig';
-import useMozillaCheck from '@proton/components/hooks/useMozillaCheck';
 import { useChargebeeEnabledCache } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import useLoading from '@proton/hooks/useLoading';
@@ -24,12 +22,14 @@ import {
     isSplittedUser,
 } from '@proton/payments';
 import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import EditCardModal from '../EditCardModal';
 import { default as PayPalV4Modal, PayPalV5Modal } from '../PayPalModal';
+import InAppPurchaseModal from '../subscription/InAppPurchaseModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
 const AddPaypalButton = ({ onClick, ...rest }: ButtonProps) => {
@@ -44,12 +44,12 @@ const AddPaypalButton = ({ onClick, ...rest }: ButtonProps) => {
 const PaymentMethodsSection = () => {
     const { APP_NAME } = useConfig();
     const [paymentMethods = [], loadingPaymentMethods] = usePaymentMethods();
-    const [isManagedByMozilla, loadingCheck] = useMozillaCheck();
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
     const [paypalV4ModalProps, setPaypalV4ModalOpen, renderPaypalV4Modal] = useModalState();
     const [paypalV5ModalProps, setPaypalV5ModalOpen, renderPaypalV5Modal] = useModalState();
+    const [inAppPurchaseModalProps, setInAppPurchaseModalOpen, renderInAppPurchaseModal] = useModalState();
     const isChargebeeEnabled = useChargebeeEnabledCache();
-    const [subscription] = useSubscription();
+    const [subscription, loadingSubscription] = useSubscription();
     const [user] = useUser();
     const pollPaymentMethodsCreate = usePollEvents({
         subscribeToProperty: 'PaymentMethods',
@@ -58,12 +58,8 @@ const PaymentMethodsSection = () => {
     const [pollingEvents, withPollingEvents] = useLoading();
     const redirectToAccountApp = useRedirectToAccountApp();
 
-    if (loadingPaymentMethods || loadingCheck) {
+    if (loadingPaymentMethods || loadingSubscription) {
         return <Loader />;
-    }
-
-    if (isManagedByMozilla) {
-        return <MozillaInfoPanel />;
     }
 
     const learnMoreUrl =
@@ -103,6 +99,11 @@ const PaymentMethodsSection = () => {
                             return;
                         }
 
+                        if (isManagedExternally(subscription)) {
+                            setInAppPurchaseModalOpen(true);
+                            return;
+                        }
+
                         setCreditCardModalOpen(true);
                     }}
                 >
@@ -114,6 +115,11 @@ const PaymentMethodsSection = () => {
                         disabled={pollingEvents}
                         onClick={() => {
                             if (redirectToAccountApp()) {
+                                return;
+                            }
+
+                            if (isManagedExternally(subscription)) {
+                                setInAppPurchaseModalOpen(true);
                                 return;
                             }
 
@@ -129,6 +135,11 @@ const PaymentMethodsSection = () => {
                                 return;
                             }
 
+                            if (isManagedExternally(subscription)) {
+                                setInAppPurchaseModalOpen(true);
+                                return;
+                            }
+
                             setPaypalV5ModalOpen(true);
                         }}
                     />
@@ -138,6 +149,9 @@ const PaymentMethodsSection = () => {
             {renderCreditCardModal && <EditCardModal onMethodAdded={loadAddedMethod} {...creditCardModalProps} />}
             {renderPaypalV4Modal && <PayPalV4Modal {...paypalV4ModalProps} />}
             {renderPaypalV5Modal && <PayPalV5Modal onMethodAdded={loadAddedMethod} {...paypalV5ModalProps} />}
+            {renderInAppPurchaseModal && subscription && (
+                <InAppPurchaseModal {...inAppPurchaseModalProps} subscription={subscription} />
+            )}
         </SettingsSection>
     );
 };
