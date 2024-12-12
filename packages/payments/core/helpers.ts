@@ -87,6 +87,22 @@ export function getFallbackCurrency(currency: Currency): Currency {
     return currency;
 }
 
+function getMaybeRegionalPlansCurrency(
+    plans: Plan[] | undefined,
+    status: PaymentMethodStatusExtended | undefined
+): Currency | null {
+    const plansCurrency = plans?.[0]?.Currency;
+    const maybeRegionalPlansCurrency =
+        !!plansCurrency &&
+        isRegionalCurrency(plansCurrency) &&
+        !!status &&
+        plansCurrency === mapCountryToRegionalCurrency(status?.CountryCode, true)
+            ? plansCurrency
+            : null;
+
+    return maybeRegionalPlansCurrency;
+}
+
 export function getSupportedRegionalCurrencies({
     status,
     plans,
@@ -110,7 +126,12 @@ export function getSupportedRegionalCurrencies({
         ? mapCountryToRegionalCurrency(status.CountryCode, enableNewBatchCurrencies)
         : undefined;
 
-    const currencies = [statusCurrency, subscription?.Currency, user?.Currency]
+    const currencies = [
+        statusCurrency,
+        subscription?.Currency,
+        user?.Currency,
+        getMaybeRegionalPlansCurrency(plans, status),
+    ]
         .filter(isTruthy)
         .filter(isRegionalCurrency)
         // if plans are provided, only include regional currencies that are supported by at least one plan
@@ -155,7 +176,12 @@ export function getPreferredCurrency({
             ? user.Currency
             : undefined;
 
-    const usedCurrencies = [userCurrency, subscription?.Currency, statusCurrency].filter(isTruthy);
+    const usedCurrencies = [
+        userCurrency,
+        subscription?.Currency,
+        statusCurrency,
+        getMaybeRegionalPlansCurrency(plans, status),
+    ].filter(isTruthy);
 
     const fallbackResult = (() => {
         const planCurrency = plans?.[0]?.Currency;
