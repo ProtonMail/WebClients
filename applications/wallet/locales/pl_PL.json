@@ -326,20 +326,11 @@
       ]
     },
     "Address list": {
-      "Activate Bitcoin via Email": [
-        "Aktywuj Bitcoiny na adres e-mail"
-      ],
       "Address copied": [
         "Adres skopiowany"
       ],
-      "Bitcoin via Email ${ availableAddresses }": [
-        "Bitcoiny na adres e-mail: ${ availableAddresses }"
-      ],
       "Change address": [
         "Adres do zmiany"
-      ],
-      "Given out": [
-        "Przekazano"
       ],
       "Index": [
         "Indeks"
@@ -361,9 +352,6 @@
       ],
       "Toggle keychain": [
         "Przełącz klucz"
-      ],
-      "Used (${ transactionsCount })": [
-        "Użyto (${ transactionsCount })"
       ],
       "Value": [
         "Wartość"
@@ -856,8 +844,19 @@
       "Purchase completed": [
         "Transakcja została zakończona"
       ],
+      "Purchase finished": [
+        "Zakończono zakup"
+      ],
       "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
         "Dziękujemy za próbę zakupu u naszego partnera.\nStatus zamówienia można śledzić za pośrednictwem wiadomości e-mail z potwierdzeniem wysłanej przez naszego partnera.\nJeśli transakcja nie powiedzie się, możesz spróbować ponownie lub wybrać innego partnera."
+      ]
+    },
+    "Buy in progress": {
+      "Buy more bitcoin": [
+        "Kup więcej Bitcoinów"
+      ],
+      "Purchase in progress": [
+        "Zakup jest w toku"
       ]
     },
     "Cancellation upsell": {
@@ -2720,6 +2719,9 @@
         "${ n } miesięcy",
         "${ n } miesiąca"
       ],
+      "Account holder": [
+        "Właściciel konta"
+      ],
       "Address": [
         "Adres"
       ],
@@ -3732,6 +3734,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetowanie haseł i uwierzytelniania dwustopniowego użytkowników"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Przekieruj ruch sieciowy przez sieć Tor jednym kliknięciem"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
@@ -3972,6 +3977,9 @@
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
@@ -5285,9 +5293,6 @@
       "Boost transaction priority": [
         "Zwiększ priorytet transakcji"
       ],
-      "By increasing the fee, you can prioritize your transaction, helping it get confirmed faster during busy network times.": [
-        "Zwiększając opłatę, możesz zwiększyć priorytet transakcji, przyśpieszając jej potwierdzenie w godzinach dużego ruchu w sieci."
-      ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "Nie można użyć skanera kodów QR. Sprawdź zgodność przeglądarki."
       ],
@@ -5323,9 +5328,6 @@
       ],
       "How much are you sending?": [
         "Ile chcesz wysłać?"
-      ],
-      "Increase fee and resend": [
-        "Zwiększ opłatę i wyślij ponownie"
       ],
       "Low": [
         "Niska"
@@ -5441,6 +5443,9 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin na adres e-mail"
+      ],
+      "Browser storage cleared. Please refresh the page": [
+        "Pamięć przeglądarki wyczyszczona. Odśwież stronę"
       ],
       "Could not fill the pool after email address addition": [
         "Nie można uzupełnić puli po dodaniu adresu e-mail"
