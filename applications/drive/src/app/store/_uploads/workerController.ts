@@ -213,6 +213,13 @@ export class UploadWorker {
         // Notify the main thread we are alive.
         // We use this message to check for failures to load the worker.
         this.postWorkerAlive();
+        // Main thread start listening with a slight delay and we see some users
+        // got the error even though keys were generated - probably race condition
+        // that first message was sent too soon. Sending it again a bit later
+        // is not an issue.
+        setTimeout(() => {
+            this.postWorkerAlive();
+        }, 1000);
 
         // Set up the heartbeat. This notifies the main thread that the worker is still alive.
         this.heartbeatInterval = setInterval(() => this.postHeartbeat(), HEARTBEAT_INTERVAL);
