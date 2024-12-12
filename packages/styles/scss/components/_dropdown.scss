@@ -354,4 +354,9 @@
 			content: none;
 		}
 	}
+
+	// fix for case of a dropdown opening a modal, dropdown will be behind backdrop
+	&:has(+ .modal-two) {
+		z-index: map.get($z-indexes, 'modals') - 1;
+	}
 }
