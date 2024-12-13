@@ -13,6 +13,7 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getParsedHeadersFirstValue, getSender, isAutoForwardee, isMIME } from '@proton/shared/lib/mail/messages';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import type { MessageErrors } from '../../store/messages/messagesTypes';
 import { convert } from '../attachment/attachmentConverter';
@@ -114,14 +115,15 @@ export const decryptMessage = async (
             },
         });
 
-        const {
-            data: decryptedRawContent,
-            signatures: [signature],
-        } = decryption;
+        const { data: decryptedRawContent, signatures } = decryption;
 
         const decryptedBody = binaryToString(decryptedRawContent);
 
-        return { decryptedBody, decryptedRawContent, signature };
+        return {
+            decryptedBody,
+            decryptedRawContent,
+            signature: signatures.length > 0 ? mergeUint8Arrays(signatures) : undefined,
+        };
     } catch (error: any) {
         return {
             decryptedBody: '',
