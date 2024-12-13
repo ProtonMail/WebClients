@@ -3,13 +3,13 @@ import { randomBytes } from 'crypto';
 import { type MessageBoxOptions, type Session, app, autoUpdater, dialog } from 'electron';
 import logger from 'electron-log/main';
 import isURL from 'is-url';
-import os from 'os';
 
 import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/features';
 import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
 import { ARCH } from './lib/env';
+import { userAgent } from './lib/user-agent';
 import { store } from './store';
 import { isMac, isProdEnv, isWindows } from './utils/platform';
 
@@ -47,7 +47,6 @@ export type UpdateOptions = {
 
 const calculateUpdateDistribution = () => randomBytes(4).readUint32LE() / Math.pow(2, 32);
 
-const userAgent = `ProtonPass/${config.APP_VERSION} (${os.platform()}: ${os.arch()})`;
 const supportedPlatforms = ['darwin', 'win32'];
 
 const validateInput = (opts: UpdateOptions) => {
@@ -145,7 +144,7 @@ const initUpdater = (opts: ReturnType<typeof validateInput>) => {
 
     autoUpdater.setFeedURL({
         url: feedURL,
-        headers: { 'user-agent': userAgent },
+        headers: { 'user-agent': userAgent() },
         serverType,
     });
 
