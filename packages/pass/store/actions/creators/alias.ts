@@ -284,26 +284,29 @@ export const getCustomDomainInfo = requestActionsFactory<number, CustomDomainOut
     key: intKey,
 });
 
-export const verifyCustomDomain = requestActionsFactory<number, CustomDomainValidationOutput>(
-    'alias::custom-domain::validate'
-)({
-    key: intKey,
+export const verifyCustomDomain = requestActionsFactory<
+    { domainID: number; silent?: boolean },
+    CustomDomainValidationOutput & { silent?: boolean }
+>('alias::custom-domain::validate')({
+    key: ({ domainID }) => intKey(domainID),
     success: {
-        prepare: (payload) =>
-            withNotification({
-                type: 'success',
-                text: (() => {
-                    if (payload.OwnershipVerified && payload.MxVerified) {
-                        return c('Success')
-                            .t`Domain successfully verified. Your domain can start receiving emails and creating aliases`;
-                    } else if (payload.OwnershipVerified && !payload.MxVerified) {
-                        return c('Success').t`Domain ownership verified. You can now set up MX record.`;
-                    } else {
-                        return c('Error')
-                            .t`Domain could not be verified. Please make sure you added the correct DNS records`;
-                    }
-                })(),
-            })({ payload }),
+        prepare: ({ silent, ...payload }) =>
+            silent
+                ? { payload }
+                : withNotification({
+                      type: payload.OwnershipVerified ? 'success' : 'warning',
+                      text: (() => {
+                          if (payload.OwnershipVerified) {
+                              return payload.MxVerified
+                                  ? c('Success')
+                                        .t`Domain successfully verified. Your domain can start receiving emails and creating aliases`
+                                  : c('Success').t`Domain ownership verified. You can now set up MX record.`;
+                          } else {
+                              return c('Error')
+                                  .t`Domain could not be verified. Please make sure you added the correct DNS records`;
+                          }
+                      })(),
+                  })({ payload }),
     },
     failure: {
         prepare: (error, payload) =>
