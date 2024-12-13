@@ -81,7 +81,7 @@ function makeChildrenLinkMeta(linkId: string, size?: number): ChildrenLinkMeta {
         name: linkId,
         mimeType: size !== undefined ? 'text/plain' : 'Folder',
         size: size || 0,
-        signatureAddress: 'address',
+        signatureEmail: 'address',
         fileModifyTime: 1692962760,
         createTime: 10,
     };

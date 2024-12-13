@@ -13,7 +13,7 @@ function makeDownloadLink(name: string, isFile = true): LinkDownload {
         name,
         mimeType: isFile ? 'text/plain' : 'Folder',
         size: 1234,
-        signatureAddress: 'address',
+        signatureEmail: 'address',
         createTime: 10,
     };
 }

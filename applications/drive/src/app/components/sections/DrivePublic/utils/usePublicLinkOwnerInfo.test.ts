@@ -16,9 +16,9 @@ const createMockLink = (options: Partial<DecryptedLink> = {}) =>
     ({
         linkId: '1',
         isFile: true,
-        signatureAddress: mockUserEmail,
+        signatureEmail: mockUserEmail,
         activeRevision: {
-            signatureAddress: mockUserEmail,
+            signatureEmail: mockUserEmail,
         },
         ...options,
     }) as DecryptedLink;
@@ -72,7 +72,7 @@ describe('usePublicLinkOwnerInfo', () => {
     it('identifies user as creator but not last editor when signatures email differ', () => {
         const link = createMockLink({
             activeRevision: {
-                signatureAddress: differentEmail,
+                signatureEmail: differentEmail,
             },
         } as DecryptedLink);
         const { result } = renderHook(() => usePublicLinkOwnerInfo(link));
@@ -105,7 +105,7 @@ describe('usePublicLinkOwnerInfo', () => {
             createMockLink(),
             createMockLink({
                 linkId: '2',
-                signatureAddress: differentEmail,
+                signatureEmail: differentEmail,
             }),
         ];
         const { result } = renderHook(() => usePublicLinkOwnerInfo(links));
@@ -120,7 +120,7 @@ describe('usePublicLinkOwnerInfo', () => {
     it('handles non-file links correctly', () => {
         const link = createMockLink({
             isFile: false,
-            signatureAddress: mockUserEmail,
+            signatureEmail: mockUserEmail,
         });
         const { result } = renderHook(() => usePublicLinkOwnerInfo([link]));
 
@@ -137,7 +137,7 @@ describe('usePublicLinkOwnerInfo', () => {
             createMockLink({
                 linkId: '2',
                 activeRevision: {
-                    signatureAddress: differentEmail,
+                    signatureEmail: differentEmail,
                 },
             } as DecryptedLink),
         ];

@@ -18,7 +18,7 @@ export interface LinkDownload {
 
     createTime?: number;
     revisionId?: string;
-    signatureAddress?: string;
+    signatureEmail?: string;
     signatureIssues?: SignatureIssues;
     buffer?: Uint8Array[];
 }
@@ -101,7 +101,7 @@ export type ChildrenLinkMeta = Pick<
     | 'mimeType'
     | 'size'
     | 'fileModifyTime'
-    | 'signatureAddress'
+    | 'signatureEmail'
     | 'signatureIssues'
     | 'createTime'
 >;

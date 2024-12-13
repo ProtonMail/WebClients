@@ -33,7 +33,7 @@ export interface TrashItem extends FileBrowserBaseItem {
     name: string;
     shareUrl?: LinkShareUrl;
     signatureIssues?: SignatureIssues;
-    signatureAddress?: string;
+    signatureEmail?: string;
     size: number;
     trashed: number | null;
     parentLinkId: string;
