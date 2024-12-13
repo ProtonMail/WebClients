@@ -24,7 +24,7 @@ interface ConflictModalProps {
     isFile: boolean;
     name: string;
     downloadName: string;
-    signatureAddress?: string;
+    signatureEmail?: string;
     signatureIssues: SignatureIssues;
     apply: (strategy: TransferSignatureIssueStrategy, all: boolean) => void;
     cancelAll: () => void;
@@ -34,7 +34,7 @@ export default function SignatureIssueModal({
     isFile,
     name,
     downloadName,
-    signatureAddress,
+    signatureEmail,
     signatureIssues,
     apply,
     cancelAll,
@@ -73,7 +73,7 @@ export default function SignatureIssueModal({
                 <p>
                     <SignatureAlertBody
                         signatureIssues={signatureIssues}
-                        signatureAddress={signatureAddress}
+                        signatureEmail={signatureEmail}
                         isFile={isFile}
                         name={name}
                     />

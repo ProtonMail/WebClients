@@ -14,12 +14,12 @@ export const usePublicLinkOwnerInfo = (linksInput: DecryptedLink | DecryptedLink
     }
 
     const isLastEditor = links.every((link) => {
-        const signatureAddress = link.isFile ? link.activeRevision?.signatureAddress : link.signatureAddress;
-        return signatureAddress === userAddressEmail;
+        const signatureEmail = link.isFile ? link.activeRevision?.signatureEmail : link.signatureEmail;
+        return signatureEmail === userAddressEmail;
     });
 
     const isCreator = links.every((link) => {
-        return link.signatureAddress === userAddressEmail;
+        return link.signatureEmail === userAddressEmail;
     });
 
     return {

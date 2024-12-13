@@ -173,7 +173,7 @@ export class FolderTreeLoader {
                 mimeType: link.mimeType,
                 size: link.size,
                 fileModifyTime: link.fileModifyTime,
-                signatureAddress: link.signatureAddress,
+                signatureEmail: link.signatureEmail,
                 signatureIssues: link.signatureIssues,
                 createTime: link.createTime,
             })),

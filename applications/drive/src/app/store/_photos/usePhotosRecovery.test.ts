@@ -31,7 +31,7 @@ function generateDecryptedLink(linkId = 'linkId'): DecryptedLink {
         activeRevision: {
             id: 'id',
             size: 323212,
-            signatureAddress: 'address@gmail.com',
+            signatureEmail: 'address@gmail.com',
             photo: {
                 linkId: 'linkId',
                 captureTime: 321321,
