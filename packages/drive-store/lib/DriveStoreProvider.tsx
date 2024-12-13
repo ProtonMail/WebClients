@@ -36,13 +36,13 @@ export const PublicDriveStoreProvider = ({ children }: { children: React.ReactNo
 
     return (
         <UnleashFlagProvider api={api}>
-            <PublicSessionProvider>
-                <VolumesProvider>
-                    <SharesProvider>
+            <VolumesProvider>
+                <SharesProvider>
+                    <PublicSessionProvider>
                         <PublicLinksProvider>{children}</PublicLinksProvider>
-                    </SharesProvider>
-                </VolumesProvider>
-            </PublicSessionProvider>
+                    </PublicSessionProvider>
+                </SharesProvider>
+            </VolumesProvider>
         </UnleashFlagProvider>
     );
 };

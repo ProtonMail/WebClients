@@ -7,6 +7,9 @@ import useLinksState from '../_links/useLinksState';
 import { ShareType, useShare } from '../_shares';
 import { isLinkReadOnly } from './utils/useIsActiveLinkReadOnly';
 
+/**
+ * DRIVE-DEVS: Do not remove export. Used by drive-store.
+ */
 export type PathItem = {
     linkId: string;
     name: string;

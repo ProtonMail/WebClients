@@ -17,15 +17,18 @@ import type {
     RequestUploadResult,
 } from '@proton/shared/lib/interfaces/drive/file';
 import { encryptName } from '@proton/shared/lib/keys/driveKeys';
+import useFlag from '@proton/unleash/useFlag';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { logError } from '../../../utils/errorHandling';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';
+import { isErrorDueToNameConflict } from '../../../utils/isErrorDueToNameConflict';
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import retryOnError from '../../../utils/retryOnError';
 import { isPhotosDisabledUploadError } from '../../../utils/transfer';
+import { useAnonymousUploadAuthStore } from '../../../zustand/upload/anonymous-auth.store';
 import { usePublicSession } from '../../_api';
 import { integrityMetrics } from '../../_crypto';
 import { useLink, usePublicLinksActions, usePublicLinksListing, validateLinkName } from '../../_links';
@@ -64,13 +67,15 @@ interface FileRevision {
 
 export default function usePublicUploadFile() {
     const isPaidUser = useIsPaid();
+    const { setUploadToken } = useAnonymousUploadAuthStore();
     const { request: publicDebouncedRequest, user } = usePublicSession();
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
     const { deleteLinks } = usePublicLinksActions();
     const { getShare } = useShare();
-    const { findHash } = usePublicUploadHelper();
+    const { findHash, findAvailableName } = usePublicUploadHelper();
     const publicLinksListing = usePublicLinksListing();
+    const isWebPThumbnailEnabled = useFlag('DriveThumbnailWebP');
 
     const { getShareCreatorKeys } = useShare();
 
@@ -172,8 +177,10 @@ export default function usePublicUploadFile() {
                 backoff: true,
             });
 
-            const { File: createdFile } = await createFile();
-
+            const { File: createdFile, AuthorizationToken } = await createFile();
+            if (AuthorizationToken) {
+                setUploadToken({ linkId: createdFile.ID, authorizationToken: AuthorizationToken });
+            }
             return {
                 fileID: createdFile.ID,
                 filename,
@@ -268,18 +275,18 @@ export default function usePublicUploadFile() {
          * without any revision. One day it would be good to keep the draft
          * and just finish upload of the missing blocks.
          */
-        // const replaceDraft = async (
-        //     abortSignal: AbortSignal,
-        //     filename: string,
-        //     mimeType: string,
-        //     hash: string,
-        //     keys: FileKeys,
-        //     linkId: string,
-        //     clientUid?: string
-        // ) => {
-        //     await deleteChildrenLinks(abortSignal, token, parentLinkId, [linkId]);
-        //     return createFile(abortSignal, filename, mimeType, hash, keys, clientUid);
-        // };
+        const replaceDraft = async (
+            abortSignal: AbortSignal,
+            filename: string,
+            mimeType: string,
+            hash: string,
+            keys: FileKeys,
+            linkId: string,
+            clientUid?: string
+        ) => {
+            await deleteLinks(abortSignal, { token, parentLinkId, links: [{ linkId }] });
+            return createFile(abortSignal, filename, mimeType, hash, keys, clientUid);
+        };
 
         // const handleNameConflict = async (
         //     abortSignal: AbortSignal,
@@ -345,42 +352,38 @@ export default function usePublicUploadFile() {
                 checkSignal(abortSignal, file.name);
 
                 log(`Creating new file`);
-                return createFile(abortSignal, file.name, mimeType, hash, keys);
-                // .catch(async (err) => {
-                // if (isErrorDueToNameConflict(err)) {
-                //     const {
-                //         filename: newName,
-                //         hash,
-                //         draftLinkId,
-                //         clientUid,
-                //     } = await findAvailableName(abortSignal, {
-                //         shareId: token,
-                //         parentLinkId: parentLinkId,
-                //         filename: file.name,
-                //     });
+                return createFile(abortSignal, file.name, mimeType, hash, keys).catch(async (err) => {
+                    if (isErrorDueToNameConflict(err)) {
+                        const {
+                            filename: newName,
+                            hash,
+                            draftLinkId,
+                            clientUid,
+                        } = await findAvailableName(abortSignal, {
+                            shareId: token,
+                            parentLinkId: parentLinkId,
+                            filename: file.name,
+                        });
 
-                //     checkSignal(abortSignal, file.name);
+                        checkSignal(abortSignal, file.name);
 
-                //     // Automatically replace file - previous draft was uploaded
-                //     // by the same client.
-                //     if (draftLinkId && clientUid) {
-                //         log(`Automatically replacing draft link ID: ${draftLinkId}`);
-                //         // Careful: uploading duplicate file has different name and
-                //         // this newName has to be used, not file.name.
-                //         // Example: upload A, then do it again with adding number
-                //         // A (2) which will fail, then do it again to replace draft
-                //         // with new upload - it needs to be A (2), not just A.
-                //         return replaceDraft(abortSignal, newName, mimeType, hash, keys, draftLinkId, clientUid);
-                //     }
+                        // Automatically replace file - previous draft was uploaded
+                        // by the same client.
+                        if (draftLinkId && clientUid) {
+                            log(`Automatically replacing draft link ID: ${draftLinkId}`);
+                            // Careful: uploading duplicate file has different name and
+                            // this newName has to be used, not file.name.
+                            // Example: upload A, then do it again with adding number
+                            // A (2) which will fail, then do it again to replace draft
+                            // with new upload - it needs to be A (2), not just A.
+                            return replaceDraft(abortSignal, newName, mimeType, hash, keys, draftLinkId, clientUid);
+                        }
 
-                //     return handleNameConflict(abortSignal, mimeType, keys, {
-                //         filename: newName,
-                //         hash,
-                //         draftLinkId,
-                //     });
-                // }
-                // throw err;
-                // });
+                        // No support for conflict for now, we create a new folder
+                        return createFile(abortSignal, newName, mimeType, hash, keys);
+                    }
+                    throw err;
+                });
             },
             MAX_UPLOAD_BLOCKS_LOAD
         );
@@ -634,7 +637,8 @@ export default function usePublicUploadFile() {
                         });
                 },
             },
-            (message) => log(`worker: ${message}`)
+            (message) => log(`worker: ${message}`),
+            isWebPThumbnailEnabled
         );
     };
 
