@@ -24,7 +24,7 @@ import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
 import {
     addAddressKeysProcess,
     deleteAddressKey,
-    getPrimaryAddressKeysForSigningByVersion,
+    getPrimaryAddressKeysForSigning,
     importKeysProcess,
     reactivateKeysProcess,
     setAddressKeyFlags,
@@ -101,12 +101,18 @@ const AddressKeysSection = () => {
 
         try {
             setLoadingKeyID(ID);
-            const [, newActiveKeys, formerActiveKeys] = await setPrimaryAddressKey(api, Address, addressKeys, ID, keyTransparencyVerify);
+            const [, newActiveKeys, formerActiveKeys] = await setPrimaryAddressKey(
+                api,
+                Address,
+                addressKeys,
+                ID,
+                keyTransparencyVerify
+            );
             await Promise.all([
                 resignSKLWithPrimaryKey({
                     address: Address,
-                    newPrimaryKeys: getPrimaryAddressKeysForSigningByVersion(newActiveKeys),
-                    formerPrimaryKeys: getPrimaryAddressKeysForSigningByVersion(formerActiveKeys),
+                    newPrimaryKeys: getPrimaryAddressKeysForSigning(newActiveKeys, true),
+                    formerPrimaryKeys: getPrimaryAddressKeysForSigning(formerActiveKeys, true),
                     userKeys,
                 }),
                 keyTransparencyCommit(userKeys),
@@ -221,8 +227,8 @@ const AddressKeysSection = () => {
             await Promise.all([
                 resignSKLWithPrimaryKey({
                     address: Address,
-                    newPrimaryKeys: getPrimaryAddressKeysForSigningByVersion(updatedActiveKeys),
-                    formerPrimaryKeys: getPrimaryAddressKeysForSigningByVersion(formerActiveKeys),
+                    newPrimaryKeys: getPrimaryAddressKeysForSigning(updatedActiveKeys, true),
+                    formerPrimaryKeys: getPrimaryAddressKeysForSigning(formerActiveKeys, true),
                     userKeys,
                 }),
                 keyTransparencyCommit(userKeys),
