@@ -13,16 +13,15 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { TelemetryMailPostSubscriptionEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Address } from '@proton/shared/lib/interfaces';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
 import { SUBSCRIPTION_STEPS } from '../../constants';
+import useSubscriptionModalTelemetry from '../../useSubscriptionModalTelemetry';
 import { PostSubscriptionLoadingModalContent, PostSubscriptionModalWrapper } from '../PostSubscriptionModals';
 import type { PostSubscriptionModalComponentProps } from '../interface';
-import { usePostSubscriptionTelemetry } from '../usePostSubscriptionTelemetry';
 import useMailShortDomainPostSubscriptionComposerSpotlight from './useMailShortDomainPostSubscriptionSpotlight';
 
 interface ConfirmationModalContentProps {
@@ -32,7 +31,7 @@ interface ConfirmationModalContentProps {
 const ConfirmationModalContent = ({ shortDomainAddress, modalProps }: ConfirmationModalContentProps) => {
     const location = useLocation();
     const goToSettings = useSettingsLink();
-    const sendTelemetryEvent = usePostSubscriptionTelemetry();
+    const { reportPostAction } = useSubscriptionModalTelemetry();
     const { createNotification } = useNotifications();
     const isIdentityAndAddressPage = location.pathname.includes('/identity-addresses');
 
@@ -55,24 +54,12 @@ const ConfirmationModalContent = ({ shortDomainAddress, modalProps }: Confirmati
     ] as const;
 
     const handleClickContinue = () => {
-        void sendTelemetryEvent({
-            event: TelemetryMailPostSubscriptionEvents.modal_engagement,
-            dimensions: {
-                modal: 'mail-short-domain',
-                modalAction: 'primary_cta',
-            },
-        });
+        void reportPostAction({ postAction: 'continue' });
         modalProps.onClose();
     };
 
     const handleClickSettings = () => {
-        void sendTelemetryEvent({
-            event: TelemetryMailPostSubscriptionEvents.modal_engagement,
-            dimensions: {
-                modal: 'mail-short-domain',
-                modalAction: 'secondary_cta',
-            },
-        });
+        void reportPostAction({ postAction: 'go_to_settings' });
         goToSettings('/identity-addresses', APPS.PROTONMAIL);
     };
 
