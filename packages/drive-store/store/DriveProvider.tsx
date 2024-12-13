@@ -52,17 +52,17 @@ export function PublicDriveProvider({ children }: PublicDriveProviderProps) {
     const api = useApi();
     return (
         <UnleashFlagProvider api={api}>
-            <PublicSessionProvider>
-                <VolumesProvider>
-                    <SharesProvider>
+            <VolumesProvider>
+                <SharesProvider>
+                    <PublicSessionProvider>
                         <PublicLinksProvider>
                             <PublicUploadProvider>
                                 <PublicDownloadsProvider>{children}</PublicDownloadsProvider>
                             </PublicUploadProvider>
                         </PublicLinksProvider>
-                    </SharesProvider>
-                </VolumesProvider>
-            </PublicSessionProvider>
+                    </PublicSessionProvider>
+                </SharesProvider>
+            </VolumesProvider>
         </UnleashFlagProvider>
     );
 }

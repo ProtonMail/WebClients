@@ -22,7 +22,7 @@ export const useOnItemRenderedMetrics = (layout: LayoutSetting, isLoading: boole
     const resetItemRenderedCounter = () => {
         setCount(0);
         setFirstItemIsSet(false);
-        setLastPageIsSet(false);
+        setFirstPageIsSet(false);
         setLastPageIsSet(false);
     };
 
@@ -48,7 +48,7 @@ export const useOnItemRenderedMetrics = (layout: LayoutSetting, isLoading: boole
         // This prevents Events data after page is loaded to be counted like it was part of the navigation
         if (isLoading === false) {
             setFirstItemIsSet(true);
-            setLastPageIsSet(true);
+            setFirstPageIsSet(true);
             setLastPageIsSet(true);
         }
     }, [count, isLoading]);

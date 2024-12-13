@@ -20,17 +20,17 @@ import {
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
-import type { DecryptedLink } from '../../store';
 import { formatLinkName, splitLinkName, validateLinkNameField } from '../../store';
 
 interface Props {
     onClose?: () => void;
-    renameLink: (abortSignal: AbortSignal, shareId: string, linkId: string, newName: string) => Promise<void>;
-    item: DecryptedLink;
+    onSubmit: (formattedName: string) => Promise<void>;
+    isFile: boolean;
+    name: string;
 }
 
-const RenameModal = ({ item, onClose, renameLink, ...modalProps }: Props & ModalStateProps) => {
-    const [name, setName] = useState(item.name);
+const RenameModal = ({ isFile, name: linkName, onClose, onSubmit, ...modalProps }: Props & ModalStateProps) => {
+    const [name, setName] = useState(linkName);
     const [loading, withLoading] = useLoading();
     const [autofocusDone, setAutofocusDone] = useState(false);
 
@@ -39,8 +39,8 @@ const RenameModal = ({ item, onClose, renameLink, ...modalProps }: Props & Modal
             return;
         }
         setAutofocusDone(true);
-        const [namePart] = splitLinkName(item.name);
-        if (!namePart || !item.isFile) {
+        const [namePart] = splitLinkName(linkName);
+        if (!namePart || !isFile) {
             return e.target.select();
         }
         e.target.setSelectionRange(0, namePart.length);
@@ -54,15 +54,13 @@ const RenameModal = ({ item, onClose, renameLink, ...modalProps }: Props & Modal
         setName(target.value);
     };
 
-    const ac = new AbortController();
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         const formattedName = formatLinkName(name);
         setName(formattedName);
 
-        await renameLink(ac.signal, item.rootShareId, item.linkId, formattedName);
+        await onSubmit(formattedName);
         onClose?.();
     };
 
@@ -79,11 +77,11 @@ const RenameModal = ({ item, onClose, renameLink, ...modalProps }: Props & Modal
         >
             <ModalTwoHeader
                 closeButtonProps={{ disabled: loading }}
-                title={!item.isFile ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
+                title={!isFile ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
             />
             <ModalTwoContent>
                 <Row className="my-4">
-                    <Label>{!item.isFile ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
+                    <Label>{!isFile ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
                     <Field>
                         <InputFieldTwo
                             id="link-name"

@@ -72,10 +72,10 @@ const RemoveDeviceModal = ({ device, onClose, ...modalProps }: Props) => {
             <ModalTwoContent>
                 <p key={'remove-device-modal-content-paragraph-1'}>
                     {c('Info')
-                        .jt`This will remove the synced device ${deviceName} from ${DRIVE_APP_NAME} and stop syncing folders you added to My Computers.`}
+                        .jt`This will remove the synced device ${deviceName} from ${DRIVE_APP_NAME} and all it's data from ${DRIVE_APP_NAME}. Folders you added to My Computers will stop syncing.`}
                 </p>
                 <p key={'remove-device-modal-content-paragraph-2'}>
-                    {c('Info').t`Enter the device name to confirm removal.`}
+                    {c('Info').t`This can NOT be undone. Please enter the device name to confirm removal.`}
                 </p>
                 <Row className="my-4">
                     <InputFieldTwo
