@@ -58,6 +58,8 @@ export enum TelemetryMailOnboardingEvents {
 export enum TelemetrySubscriptionModalEvents {
     initialization = 'initialization',
     payment = 'payment',
+    postAction = 'post_action',
+    cancelledOnSameDay = 'cancelled_on_same_day',
 }
 
 export enum TelemetryMailTrial2024UpsellModal {
