@@ -2,7 +2,7 @@ import type { PublicKeyReference } from '@proton/crypto';
 import type { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import type { PrimaryAddressKeys } from '../keys';
+import type { PrimaryAddressKeysForSigning } from '../keys';
 import type { Address } from './Address';
 import type { Api } from './Api';
 import type { ProcessedApiKey } from './EncryptionPreferences';
@@ -123,8 +123,8 @@ export type ResetSelfAudit = (user: User, keyPassword: string, addressesBeforeRe
 
 export interface ResignSKLWithPrimaryKeyArguments {
     address: Address;
-    newPrimaryKeys: PrimaryAddressKeys;
-    formerPrimaryKeys: PrimaryAddressKeys;
+    newPrimaryKeys: PrimaryAddressKeysForSigning;
+    formerPrimaryKeys: PrimaryAddressKeysForSigning;
     userKeys: DecryptedKey[];
 }
 

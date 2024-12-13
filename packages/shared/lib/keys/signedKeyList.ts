@@ -15,10 +15,13 @@ import type {
 } from '../interfaces';
 import type { SimpleMap } from '../interfaces/utils';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
-import type { PrimaryAddressKeys } from './getPrimaryKey';
-import { getPrimaryAddressKeysForSigningByVersion } from './getPrimaryKey';
+import { type PrimaryAddressKeysForSigning, getPrimaryAddressKeysForSigning } from './getPrimaryKey';
 
-export const getSignedKeyListSignature = async (data: string, signingKeys: PrimaryAddressKeys, date?: Date) => {
+export const getSignedKeyListSignature = async (
+    data: string,
+    signingKeys: PrimaryAddressKeysForSigning,
+    date?: Date
+) => {
     const signature = await CryptoProxy.signMessage({
         textData: data,
         stripTrailingSpaces: true,
@@ -63,7 +66,7 @@ export const getSignedKeyListWithDeferredPublish = async (
         )
     ).filter(isTruthy);
     const data = JSON.stringify(transformedKeys);
-    const signingKeys = getPrimaryAddressKeysForSigningByVersion(keys);
+    const signingKeys = getPrimaryAddressKeysForSigning(keys, true);
     if (!signingKeys.length) {
         throw new Error('Missing primary signing key');
     }
