@@ -7,7 +7,7 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { deleteCheckedItemsForUser } from 'proton-mail/helpers/checklist/checkedItemsStorage';
 
-import { useOnboardingChecklistModalsContext } from './OnboardingChecklistModalProvider';
+import { useOnboardingChecklistModalsContext } from './OnboardingChecklistModalsProvider';
 
 const useOnboardingChecklist = () => {
     const [user] = useUser();

@@ -3,7 +3,7 @@ import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 
 import { isColumnMode } from 'proton-mail/helpers/mailSettings';
 
-import UsersOnboardingChecklistPlaceholder from './UsersOnboardingReplaceAccountPlaceholder';
+import UserOnboardingAccountsSwitcher from './UserOnboardingAccountsSwitcher';
 
 interface Props {
     location: 'list' | 'emptyPlaceholder' | 'mailboxContainerPlaceholder';
@@ -18,7 +18,8 @@ const UserOnboardingMessageListPlaceholder = ({ location }: Props) => {
     const [mailSettings] = useMailSettings();
     const { viewportWidth } = useActiveBreakpoint();
     const hidden = location === 'list' && viewportWidth['>=large'] ? isColumnMode(mailSettings) : undefined;
-    return hidden ? null : <UsersOnboardingChecklistPlaceholder />;
+
+    return hidden ? null : <UserOnboardingAccountsSwitcher />;
 };
 
 export default UserOnboardingMessageListPlaceholder;
