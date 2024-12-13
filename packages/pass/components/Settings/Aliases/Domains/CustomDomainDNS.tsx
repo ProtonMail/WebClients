@@ -38,6 +38,12 @@ export const CustomDomainDNS = ({ domainID }: Props) => {
     return (
         domain && (
             <div className="pb-1">
+                {ENV === 'development' && (
+                    <Banner variant="info" className="mb-4">
+                        {/* No need to translate development text */}
+                        You are on staging env. Don't forget to replace 'proton.me' below with 'proton.black'
+                    </Banner>
+                )}
                 <div>{c('Info').t`Please follow the steps below to set up your domain.`}</div>
                 <div className="mb-5">{c('Info').t`DNS changes could take up to 24 hours to update.`}</div>
                 {getDNSSections(domain).map(({ id, title, isVerified, errorMessages, content }, index, sections) => {
