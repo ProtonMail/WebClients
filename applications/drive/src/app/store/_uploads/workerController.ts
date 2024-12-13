@@ -122,7 +122,7 @@ type ProgressMessage = {
 type DoneMessage = {
     command: 'done';
     signature: string;
-    signatureAddress: string;
+    signatureEmail: string;
     xattr: string;
     photo?: PhotoUpload;
 };
@@ -182,7 +182,7 @@ interface WorkerControllerHandlers {
     keysGenerated: (keys: FileKeys) => void;
     createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlocks?: ThumbnailRequestBlock[]) => void;
     onProgress: (increment: number) => void;
-    finalize: (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => void;
+    finalize: (signature: string, signatureEmail: string, xattr: string, photo?: PhotoUpload) => void;
     onNetworkError: (error: Error) => void;
     onError: (error: Error) => void;
     onHeartbeatTimeout: () => void;
@@ -382,11 +382,11 @@ export class UploadWorker {
         } satisfies ProgressMessage);
     }
 
-    postDone(signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) {
+    postDone(signature: string, signatureEmail: string, xattr: string, photo?: PhotoUpload) {
         this.worker.postMessage({
             command: 'done',
             signature,
-            signatureAddress,
+            signatureEmail,
             xattr,
             photo,
         } satisfies DoneMessage);
@@ -518,7 +518,7 @@ export class UploadWorkerController {
                     break;
                 case 'done':
                     this.clearHeartbeatTimeout();
-                    finalize(data.signature, data.signatureAddress, data.xattr, data.photo);
+                    finalize(data.signature, data.signatureEmail, data.xattr, data.photo);
                     break;
                 case 'network_error':
                     onNetworkError(data.error);
