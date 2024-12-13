@@ -282,8 +282,10 @@ async function getBin(handles: ChargebeeIframeHandles): Promise<string> {
     }
 
     if (Bin === binFallback) {
-        captureMessage('Payments: BIN problem', {
-            level: 'warning',
+        const message = `Payments: BIN problem. FallbackEnabled: ${allowBinFallback}`;
+
+        captureMessage(message, {
+            level: allowBinFallback ? 'error' : 'warning',
             extra: {
                 Bin,
                 allowBinFallback,
