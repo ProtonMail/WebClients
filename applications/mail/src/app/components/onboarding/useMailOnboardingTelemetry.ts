@@ -49,46 +49,41 @@ export const useMailOnboardingTelemetry = (): [sendTelemetry: SendTelemetryCallb
 type Options =
     | {
           event: TelemetryMailOnboardingEvents.start_onboarding_modals;
-          dimensions: Pick<Dimensions, 'plan' | 'variant'>;
+          dimensions: Pick<Dimensions, 'plan'>;
       }
     | {
           event: TelemetryMailOnboardingEvents.finish_onboarding_modals;
-          dimensions: Pick<Dimensions, 'plan' | 'variant'>;
+          dimensions: Pick<Dimensions, 'plan'>;
       }
     | {
           event: TelemetryMailOnboardingEvents.select_theme;
-          dimensions: Pick<Dimensions, 'plan' | 'variant' | 'theme' | 'is_default_theme'>;
+          dimensions: Pick<Dimensions, 'plan' | 'theme' | 'is_default_theme'>;
       }
     | {
           event: TelemetryMailOnboardingEvents.enable_gmail_forwarding;
-          dimensions: Pick<Dimensions, 'plan' | 'variant'>;
+          dimensions: Pick<Dimensions, 'plan'>;
       }
     | {
           event: TelemetryMailOnboardingEvents.change_login;
-          dimensions: Pick<Dimensions, 'plan' | 'variant' | 'service'>;
+          dimensions: Pick<Dimensions, 'plan' | 'service'>;
       }
     | {
           event: TelemetryMailOnboardingEvents.change_login_checklist;
-          dimensions: Pick<Dimensions, 'plan' | 'variant' | 'service_checklist' | 'service_checklist_button'>;
+          dimensions: Pick<Dimensions, 'plan' | 'service_checklist' | 'service_checklist_button'>;
       }
     | {
           event: TelemetryMailOnboardingEvents.finish_change_login;
-          dimensions: Pick<Dimensions, 'plan' | 'variant'>;
+          dimensions: Pick<Dimensions, 'plan'>;
       }
     | {
           event: TelemetryMailOnboardingEvents.download_desktop_app;
-          dimensions: Pick<Dimensions, 'plan' | 'variant'>;
-      }
-    | {
-          event: TelemetryMailOnboardingEvents.clicked_checklist_setting;
-          dimensions: Pick<Dimensions, 'plan' | 'variant' | 'is_checklist_completed'>;
+          dimensions: Pick<Dimensions, 'plan'>;
       }
     | {
           event: TelemetryMailOnboardingEvents.close_checklist;
           dimensions: Pick<
               Dimensions,
               | 'plan'
-              | 'variant'
               | 'checklist_step_privacy_completed'
               | 'checklist_step_import_completed'
               | 'checklist_step_update_login_completed'
@@ -99,13 +94,12 @@ type Options =
           event: TelemetryMailOnboardingEvents.premium_features;
           dimensions: Pick<
               Dimensions,
-              'plan' | 'variant' | 'feature_short_domain' | 'feature_auto_delete' | 'feature_dark_web_monitoring'
+              'plan' | 'feature_short_domain' | 'feature_auto_delete' | 'feature_dark_web_monitoring'
           >;
       };
 
 type Dimensions = {
     plan: `${PLANS}`;
-    variant: 'new';
     theme: `${ThemeTypes}`;
     is_default_theme: 'yes' | 'no';
     service: AllowedServices;
@@ -118,7 +112,6 @@ type Dimensions = {
     checklist_step_import_completed: 'yes' | 'no';
     checklist_step_update_login_completed: 'yes' | 'no';
     checklist_step_mobile_app_completed: 'yes' | 'no';
-    is_checklist_completed: 'yes' | 'no';
 };
 
 type AllowedServices = Extract<
