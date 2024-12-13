@@ -11,7 +11,7 @@ type Props = {
     loading: boolean;
     signatureIssues: SignatureIssues | undefined;
     signatureNetworkError?: boolean;
-    signatureAddress: string | undefined;
+    signatureEmail: string | undefined;
     isFile: boolean;
     name: string;
     corruptedLink?: boolean;
@@ -21,7 +21,7 @@ type Props = {
 export default function SignatureAlert({
     loading,
     signatureIssues,
-    signatureAddress,
+    signatureEmail,
     signatureNetworkError,
     corruptedLink,
     className,
@@ -52,14 +52,13 @@ export default function SignatureAlert({
         );
     }
 
-    const validAnonymousSignature =
-        !!signatureIssues && !signatureAddress && hasValidAnonymousSignature(signatureIssues);
+    const validAnonymousSignature = !!signatureIssues && !signatureEmail && hasValidAnonymousSignature(signatureIssues);
 
     return (
         <Alert type={signatureIssues && !validAnonymousSignature ? 'error' : 'success'} className={className}>
             <SignatureAlertBody
                 signatureIssues={signatureIssues}
-                signatureAddress={signatureAddress}
+                signatureEmail={signatureEmail}
                 validAnonymousSignature={validAnonymousSignature}
                 {...props}
             />
@@ -69,7 +68,7 @@ export default function SignatureAlert({
 
 type PropsBody = {
     signatureIssues: SignatureIssues | undefined;
-    signatureAddress: string | undefined;
+    signatureEmail: string | undefined;
     isFile: boolean;
     name: string;
     validAnonymousSignature?: boolean;
@@ -77,7 +76,7 @@ type PropsBody = {
 
 export function SignatureAlertBody({
     signatureIssues,
-    signatureAddress,
+    signatureEmail,
     validAnonymousSignature,
     isFile,
     name,
@@ -89,8 +88,8 @@ export function SignatureAlertBody({
     );
 
     const emailAddress = (
-        <strong className="text-break" key="signatureAddress" data-testid="signature-address">
-            {signatureAddress || c('Info').t`an anonymous user`}
+        <strong className="text-break" key="signatureEmail" data-testid="signature-address">
+            {signatureEmail || c('Info').t`an anonymous user`}
         </strong>
     );
 
@@ -105,7 +104,7 @@ export function SignatureAlertBody({
     }
 
     if (
-        !signatureAddress &&
+        !signatureEmail &&
         (validAnonymousSignature === undefined ? hasValidAnonymousSignature(signatureIssues) : validAnonymousSignature)
     ) {
         return (
@@ -140,7 +139,7 @@ export function SignatureAlertBody({
     let textReason;
     let textWarning;
     if (hasNoSignatureIssue && !hasBadSignatureIssue) {
-        if (signatureAddress) {
+        if (signatureEmail) {
             textReason = isFile
                 ? c('Info').jt`File is missing signature. We couldn’t verify that ${emailAddress} uploaded ${fileName}.`
                 : c('Info')
@@ -152,7 +151,7 @@ export function SignatureAlertBody({
         }
         textWarning = c('Info').jt`The following may have been tampered with: ${items}. Only open if you trust it.`;
     } else {
-        if (signatureAddress) {
+        if (signatureEmail) {
             textReason = c('Info').jt`We couldn’t verify that ${emailAddress} uploaded ${fileName}.`;
             textWarning = c('Info')
                 .jt`The account may have a new key, or the following may have been tampered with: ${items}. Only open if you trust it.`;
