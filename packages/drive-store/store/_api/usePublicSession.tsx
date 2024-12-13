@@ -77,6 +77,14 @@ function usePublicSessionProvider() {
                     auth.setPassword(resumedSession.keyPassword);
                     auth.setUID(persistedSession.UID);
                     auth.setLocalID(persistedSession.localID);
+                    // This hack is needed to have authenticated requests
+                    (api as any).UID = persistedSession.UID;
+                    // In case user is logged-in we can preload default share.
+                    // This will be used to get info for users actions (Rename, Delete, etc..)
+                    const addressKeyInfo = await getAddressKeyInfo(new AbortController().signal);
+                    if (addressKeyInfo) {
+                        setUserAddressEmail(addressKeyInfo.address.Email);
+                    }
                 }
                 const user = formatUser(resumedSession.User);
                 setUser(user);
@@ -130,12 +138,6 @@ function usePublicSessionProvider() {
     };
 
     const initSession = async (token: string, password: string, handshakeInfo: SRPHandshakeInfo) => {
-        // In case user is logged-in we can preload default share.
-        // This will be used to get info for users actions (Rename, Delete, etc..)
-        const addressKeyInfo = await getAddressKeyInfo(new AbortController().signal);
-        if (addressKeyInfo) {
-            setUserAddressEmail(addressKeyInfo.address.Email);
-        }
         return getSessionToken(token, password, handshakeInfo).then(({ AccessToken, UID }) => {
             setHasSession(true);
             sessionInfo.current = {
