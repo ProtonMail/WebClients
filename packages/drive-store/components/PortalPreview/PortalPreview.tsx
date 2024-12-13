@@ -70,7 +70,7 @@ const PortalPreview = (
         return (
             <SignatureAlertBody
                 signatureIssues={link.signatureIssues}
-                signatureAddress={link.signatureAddress}
+                signatureAddress={link.activeRevision?.signatureAddress || link.signatureAddress}
                 isFile={link.isFile}
                 name={link.name}
             />
