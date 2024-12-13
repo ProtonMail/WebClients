@@ -119,25 +119,12 @@ export function useLinksActions({
             throw new Error('Cannot move corrupted file');
         }
 
-        const [currentParentPrivateKey, Hash, ContentHash, { NodePassphrase }] = await Promise.all([
-            getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
-            generateLookupHash(link.name, newParentHashKey).catch((e) =>
-                Promise.reject(
-                    new EnrichedError('Failed to generate lookup hash during move', {
-                        tags: {
-                            shareId,
-                            newParentLinkId,
-                            newShareId: newShareId === shareId ? undefined : newShareId,
-                            linkId,
-                        },
-                        extra: { e },
-                    })
-                )
-            ),
-            link.digests?.sha1 &&
-                generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
+        const [currentParentPrivateKey, Hash, ContentHash, { NodePassphrase, NodePassphraseSignature }] =
+            await Promise.all([
+                getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
+                generateLookupHash(link.name, newParentHashKey).catch((e) =>
                     Promise.reject(
-                        new EnrichedError('Failed to generate content hash during move', {
+                        new EnrichedError('Failed to generate lookup hash during move', {
                             tags: {
                                 shareId,
                                 newParentLinkId,
@@ -148,20 +135,34 @@ export function useLinksActions({
                         })
                     )
                 ),
-            encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch((e) =>
-                Promise.reject(
-                    new EnrichedError('Failed to encrypt link passphrase during move', {
-                        tags: {
-                            shareId,
-                            newParentLinkId,
-                            newShareId: newShareId === shareId ? undefined : newShareId,
-                            linkId,
-                        },
-                        extra: { e },
-                    })
-                )
-            ),
-        ]);
+                link.digests?.sha1 &&
+                    generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
+                        Promise.reject(
+                            new EnrichedError('Failed to generate content hash during move', {
+                                tags: {
+                                    shareId,
+                                    newParentLinkId,
+                                    newShareId: newShareId === shareId ? undefined : newShareId,
+                                    linkId,
+                                },
+                                extra: { e },
+                            })
+                        )
+                    ),
+                encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch((e) =>
+                    Promise.reject(
+                        new EnrichedError('Failed to encrypt link passphrase during move', {
+                            tags: {
+                                shareId,
+                                newParentLinkId,
+                                newShareId: newShareId === shareId ? undefined : newShareId,
+                                linkId,
+                            },
+                            extra: { e },
+                        })
+                    )
+                ),
+            ]);
 
         const sessionKeyName = await getDecryptedSessionKey({
             data: link.encryptedName,
@@ -200,20 +201,42 @@ export function useLinksActions({
             )
         );
 
-        if (!link.signatureAddress) {
-            throw new Error('Moving anonymous file is not yet supported');
-        }
+        const baseRequestBody = {
+            Name: encryptedName,
+            Hash,
+            ParentLinkID: newParentLinkId,
+            NewShareID: newShareId === shareId ? undefined : newShareId,
+            ContentHash,
+            NameSignatureEmail: address.Email,
+            NodePassphrase,
+        };
+
+        // There are three cases for move request body:
+        // 1. In case the file was uploaded by logged-in proton user, we will not pass NodePassphraseSignature and SignatureEmail,
+        //    which means it was uploaded by logged-in proton user.
+        // 2. In case the file was uploaded by logged-in proton user, but renamed/moved by anonymous user,
+        //    The link will have nameSignatureEmail and no signatureEmail:
+        //    -> Add NodePassphraseSignature and SignatureEmail
+        // 3. In case the file was uploaded by an anonymous user,
+        //    The link will have no nameSignatureEmail and signatureEmail:
+        //    -> Add NodePassphraseSignature, SignatureEmail, and NameSignatureEmail
+        const requestBody = {
+            ...baseRequestBody,
+            ...(!!link.nameSignatureEmail &&
+                !link.signatureEmail && {
+                    NodePassphraseSignature,
+                    SignatureEmail: address.Email,
+                }),
+            ...(!link.nameSignatureEmail &&
+                !link.signatureEmail && {
+                    NodePassphraseSignature,
+                    SignatureEmail: address.Email,
+                    NameSignatureEmail: address.Email,
+                }),
+        };
 
         await debouncedRequest({
-            ...queryMoveLink(shareId, linkId, {
-                Name: encryptedName,
-                Hash,
-                ParentLinkID: newParentLinkId,
-                NodePassphrase,
-                NameSignatureEmail: address.Email,
-                NewShareID: newShareId === shareId ? undefined : newShareId,
-                ContentHash,
-            }),
+            ...queryMoveLink(shareId, linkId, requestBody),
             silence,
         }).catch((err) => {
             if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {

@@ -103,9 +103,9 @@ export function initUploadFileWorker(
                 onProgress: (increment: number) => {
                     onProgress?.(increment);
                 },
-                finalize: (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => {
+                finalize: (signature: string, signatureEmail: string, xattr: string, photo?: PhotoUpload) => {
                     onFinalize?.();
-                    finalize(signature, signatureAddress, xattr, photo).then(resolve).catch(reject);
+                    finalize(signature, signatureEmail, xattr, photo).then(resolve).catch(reject);
                 },
                 onNetworkError: (error: Error) => {
                     onNetworkError?.(error);

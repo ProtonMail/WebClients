@@ -106,7 +106,7 @@ export default function useDownload() {
                       queryFileRevision(shareId, linkId, revisionId),
                       abortSignal
                   ).then(({ Revision }) => Revision.SignatureAddress)
-                : link.activeRevision?.signatureAddress;
+                : link.activeRevision?.signatureEmail;
 
         if (!sessionKey) {
             throw new Error('Session key missing on file link');

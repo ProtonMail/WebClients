@@ -80,7 +80,7 @@ export function isEncryptedLinkSame(original: EncryptedLink, newLink: EncryptedL
         original.nodeHashKey === newLink.nodeHashKey &&
         original.contentKeyPacket === newLink.contentKeyPacket &&
         original.contentKeyPacketSignature === newLink.contentKeyPacketSignature &&
-        original.signatureAddress === newLink.signatureAddress &&
+        original.signatureEmail === newLink.signatureEmail &&
         isDecryptedLinkSame(original, newLink)
     );
 }
