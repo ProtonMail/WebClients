@@ -144,7 +144,7 @@ const TabContent = memo(({ selectedCategory }: { selectedCategory: Category }) =
 });
 TabContent.displayName = 'TabContent';
 
-const UsersOnboardingReplaceAccountPlaceholder = ({ className }: { className?: string }) => {
+const UserOnboardingAccountsSwitcher = ({ className }: { className?: string }) => {
     const [addresses] = useAddresses();
     const [selectedCategory, setSelectedCategory] = useState<Category>('finance');
     const sortedAddresses = sortAddresses(addresses || []);
@@ -184,7 +184,11 @@ const UsersOnboardingReplaceAccountPlaceholder = ({ className }: { className?: s
 
     return (
         <>
-            <div className={clsx('m-auto max-w-custom py-6', className)} style={{ '--max-w-custom': '35rem' }}>
+            <div
+                data-testid="onboarding-accounts-switcher"
+                className={clsx('m-auto max-w-custom py-6', className)}
+                style={{ '--max-w-custom': '35rem' }}
+            >
                 <div className="text-center mb-6 mx-4">
                     <h1 className="text-4xl text-bold mb-3">{c('Onboarding List Placeholder')
                         .t`Privacy for all your online accounts`}</h1>
@@ -237,4 +241,4 @@ const UsersOnboardingReplaceAccountPlaceholder = ({ className }: { className?: s
     );
 };
 
-export default UsersOnboardingReplaceAccountPlaceholder;
+export default UserOnboardingAccountsSwitcher;
