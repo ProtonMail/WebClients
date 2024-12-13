@@ -1,9 +1,11 @@
 import { getModelState } from '@proton/account/test';
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, PrivateKeyReferenceV4, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, KEY_FLAG } from '@proton/shared/lib/constants';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+
+import type { MessageKeys } from 'proton-mail/store/messages/messagesTypes';
 
 import { base64ToArray } from '../base64';
 import { addApiMock } from './api';
@@ -14,7 +16,7 @@ export interface GeneratedKey {
     publicKeyArmored: string;
     privateKeyArmored: string;
     publicKeys: PublicKeyReference[];
-    privateKeys: PrivateKeyReference[];
+    privateKeys: PrivateKeyReferenceV4[];
 }
 
 export interface ApiKey {
@@ -76,6 +78,14 @@ export const generateKeys = async (name: string, email: string, passphrase = 'pa
         privateKeys,
     };
 };
+
+export const fromGeneratedKeysToMessageKeys = (generatedKeys: GeneratedKey): MessageKeys => ({
+    type: 'publicPrivate',
+    encryptionKeys: [generatedKeys.privateKeys[0]],
+    signingKeys: [generatedKeys.privateKeys[0]],
+    verificationKeys: generatedKeys.publicKeys,
+    decryptionKeys: generatedKeys.privateKeys,
+});
 
 export const generateCalendarKeysAndPassphrase = async (addressKey: GeneratedKey | Promise<GeneratedKey>) => {
     const { publicKeys: addressPublicKeys, privateKeys: addressPrivateKeys } =

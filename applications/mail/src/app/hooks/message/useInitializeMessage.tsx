@@ -105,7 +105,7 @@ export const useInitializeMessage = () => {
 
             const messageKeys = await getMessageKeys(message.data);
 
-            decryption = await decryptMessage(getData(), messageKeys.privateKeys, onUpdateAttachment);
+            decryption = await decryptMessage(getData(), messageKeys.decryptionKeys, onUpdateAttachment);
 
             if (decryption.mimetype) {
                 dataChanges = { ...dataChanges, MIMEType: decryption.mimetype };

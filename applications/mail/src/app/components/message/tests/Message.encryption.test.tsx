@@ -8,6 +8,7 @@ import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Mes
 import { constructMime } from '../../../helpers/send/sendMimeBuilder';
 import { addApiContact } from '../../../helpers/test/contact';
 import {
+    fromGeneratedKeysToMessageKeys,
     getAddressKeyCache,
     getStoredKey,
     releaseCryptoProxy,
@@ -47,11 +48,7 @@ describe('MessageView encryption', () => {
         fromKeys = await generateKeys('someone', fromAddress);
         otherKeys = await generateKeys('other', otherAddress);
 
-        publicPrivateKey = {
-            type: 'publicPrivate',
-            publicKeys: toKeys.publicKeys,
-            privateKeys: toKeys.privateKeys,
-        };
+        publicPrivateKey = fromGeneratedKeysToMessageKeys(toKeys);
     });
 
     afterAll(async () => {
