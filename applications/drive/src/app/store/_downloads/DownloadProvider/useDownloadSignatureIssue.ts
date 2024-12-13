@@ -97,7 +97,7 @@ export default function useDownloadSignatureIssue(
             name: string;
             downloadName: string;
             signatureIssues: SignatureIssues;
-            signatureAddress?: string;
+            signatureEmail?: string;
         }
     ) => {
         isSignatureIssueModalOpen.current = true;
@@ -155,7 +155,7 @@ export default function useDownloadSignatureIssue(
             name: link.name,
             downloadName: download.meta.filename,
             signatureIssues: linkSignatureIssues,
-            signatureAddress: link.signatureAddress,
+            signatureEmail: link.signatureEmail,
         });
     }, [signatureIssues]);
 

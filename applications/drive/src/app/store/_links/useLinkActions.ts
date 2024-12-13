@@ -204,7 +204,7 @@ export default function useLinkActions() {
                 queryRenameLink(shareId, linkId, {
                     Name: encryptedName,
                     Hash,
-                    SignatureAddress: address.Email,
+                    NameSignatureEmail: address.Email,
                     OriginalHash: meta.hash,
                 })
             )

@@ -123,7 +123,7 @@ export function useSharedWithMeLinksListingByVolume() {
         const addresses = new Set(
             Object.values(results).flatMap((result) => {
                 return Object.values(result).flatMap(({ links }) => {
-                    return [...links.map(({ signatureAddress }) => signatureAddress)];
+                    return [...links.map(({ signatureEmail }) => signatureEmail)];
                 });
             })
         );

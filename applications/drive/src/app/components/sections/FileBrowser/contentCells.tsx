@@ -46,7 +46,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
             )}
             <SignatureIcon
                 signatureIssues={item.signatureIssues}
-                isAnonymous={!item.activeRevision?.signatureAddress && !item.signatureAddress}
+                isAnonymous={!item.activeRevision?.signatureEmail && !item.signatureEmail}
                 isFile={item.isFile}
                 className="mr-2 shrink-0"
             />
