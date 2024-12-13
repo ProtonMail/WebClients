@@ -43,15 +43,15 @@ export interface UploadResult {
 export const encryptFile = async (
     file: File,
     inline: boolean,
-    pubKeys: PublicKeyReference[],
-    privKey?: PrivateKeyReference[]
+    encryptionKeys: PublicKeyReference[],
+    signingKeys?: PrivateKeyReference[]
 ) => {
     if (!file) {
         throw new TypeError(c('Error').t`You did not provide a file.`);
     }
     try {
         const result = await readFileAsBuffer(file);
-        return await encryptAttachment(new Uint8Array(result), file, inline, pubKeys, privKey);
+        return await encryptAttachment(new Uint8Array(result), file, inline, encryptionKeys, signingKeys);
     } catch (e: any) {
         throw new Error(c('Error').t`Failed to encrypt attachment. Please try again.`);
     }
@@ -73,14 +73,10 @@ const uploadFile = (
     const filename = file.name || `${titleImage} ${getAttachments(message.data).length + 1}`;
     const ContentID = inline ? cid || generateCid(generateProtonWebUID(), message.data?.Sender?.Address || '') : '';
 
-    const publicKeys = messageKeys.publicKeys && messageKeys.publicKeys.length > 0 ? [messageKeys.publicKeys[0]] : [];
-    const privateKeys =
-        messageKeys.privateKeys && messageKeys.privateKeys.length > 0 ? [messageKeys.privateKeys[0]] : [];
-
     let packets: Packets;
 
     const getParams = async () => {
-        packets = await encryptFile(file, inline, publicKeys, privateKeys);
+        packets = await encryptFile(file, inline, messageKeys.encryptionKeys, messageKeys.signingKeys);
 
         return uploadAttachment({
             Filename: packets.Filename || filename,

@@ -156,7 +156,7 @@ export const fetchMessage = async (
     }
 
     const keys = await getMessageKeys(message);
-    const decryptionResult = await decryptMessage(message, keys.privateKeys);
+    const decryptionResult = await decryptMessage(message, keys.decryptionKeys);
 
     let decryptedSubject: string | undefined;
     let decryptedBody: string | undefined;

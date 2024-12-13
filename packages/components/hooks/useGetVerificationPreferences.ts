@@ -59,6 +59,7 @@ const useGetVerificationPreferences = () => {
                     selfAddress.SignedKeyList,
                     selfAddressKeys
                 );
+                // for verification, the order of the keys does not currently matter, but we put v6 keys first as ideally v6 signatures should take precedence
                 const activeAddressKeys = [...activeAddressKeysByVersion.v6, ...activeAddressKeysByVersion.v4];
                 const activePublicKeys = activeAddressKeys.map(({ publicKey }) => publicKey);
                 const compromisedFingerprints = new Set(

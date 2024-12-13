@@ -78,7 +78,7 @@ export const useAttachmentThumbnailDownload = () => {
                 const messageFlagsForAutoForwarding = bigIntToNumber(MESSAGE_FLAGS.FLAG_AUTO_FORWARDEE);
                 const sessionKey = await getSessionKey(
                     { KeyPackets },
-                    messageKeys.privateKeys,
+                    messageKeys.decryptionKeys,
                     IsAutoForwardee ? messageFlagsForAutoForwarding : undefined
                 );
 
