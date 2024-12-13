@@ -9,7 +9,16 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 
 import type { CustomDomain } from './DomainsProvider';
 
+export enum DNSSectionID {
+    OWNERSHIP = 'OWNERSHIP',
+    MX = 'MX',
+    SPF = 'SPF',
+    DKIM = 'DKIM',
+    DMARC = 'DMARC',
+}
+
 export type CustomDomainDNSSection = {
+    id: DNSSectionID;
     disabled?: boolean;
     errorMessages?: string[];
     isVerified: boolean;
@@ -75,6 +84,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
 
     return [
         {
+            id: DNSSectionID.OWNERSHIP,
             title: c('Title').t`Domain ownership verification`,
             content: (
                 <>
@@ -93,6 +103,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
             errorMessages: domain.VerificationErrors,
         },
         {
+            id: DNSSectionID.MX,
             title: c('Title').t`MX record`,
             content: (
                 <>
@@ -122,6 +133,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
             errorMessages: domain.MxErrors,
         },
         {
+            id: DNSSectionID.SPF,
             title: c('Title').t`SPF (Optional)`,
             content: (
                 <>
@@ -145,6 +157,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
             errorMessages: domain.SpfErrors,
         },
         {
+            id: DNSSectionID.DKIM,
             title: c('Title').t`DKIM (Optional)`,
             content: (
                 <>
@@ -194,6 +207,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
             errorMessages: domain.DkimErrors,
         },
         {
+            id: DNSSectionID.DMARC,
             title: c('Title').t`DMARC (Optional)`,
             content: (
                 <>

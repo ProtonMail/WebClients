@@ -55,7 +55,10 @@ const createCustomDomainSaga = createRequestSaga({
 
 const verifyCustomDomainSaga = createRequestSaga({
     actions: verifyCustomDomain,
-    call: verifyCustomDomainApi,
+    call: async ({ domainID, silent }) => {
+        const result = await verifyCustomDomainApi(domainID);
+        return { ...result, silent };
+    },
 });
 
 const deleteCustomDomainSaga = createRequestSaga({
