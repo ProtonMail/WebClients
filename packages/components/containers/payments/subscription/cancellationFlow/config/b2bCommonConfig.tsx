@@ -80,10 +80,16 @@ export const getDefaultConfirmationModal = (
     planName: string,
     isChargeBeeUser?: boolean
 ): ConfirmationModal => {
-    const expiryDate = <ExpirationTime subscription={subscription} isChargeBeeUser={isChargeBeeUser} />;
+    const expiryDate = (
+        <ExpirationTime
+            subscription={subscription}
+            isChargeBeeUser={isChargeBeeUser}
+            key="confirmationModalExpiryDate"
+        />
+    );
 
     const learnMoreLink = (
-        <Href className="mb-8" href={getKnowledgeBaseUrl('/free-plan-limits')}>
+        <Href className="mb-8" href={getKnowledgeBaseUrl('/free-plan-limits')} key="confirmationModalLearnMoreLink">
             {c('Link').t`Learn more`}
         </Href>
     );
