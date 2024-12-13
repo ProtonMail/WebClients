@@ -8,7 +8,12 @@ import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import type { MessageKeys, MessageVerification } from '../../../store/messages/messagesTypes';
 import { api } from '../../test/api';
 import type { GeneratedKey } from '../../test/crypto';
-import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../test/crypto';
+import {
+    fromGeneratedKeysToMessageKeys,
+    generateKeys,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../test/crypto';
 import type { Download } from '../attachmentDownloader';
 import {
     formatDownload,
@@ -43,11 +48,7 @@ describe('formatDownload', () => {
 
         toKeys = await generateKeys('me', me);
 
-        messageKeys = {
-            type: 'publicPrivate',
-            publicKeys: toKeys.publicKeys,
-            privateKeys: toKeys.privateKeys,
-        };
+        messageKeys = fromGeneratedKeysToMessageKeys(toKeys);
     });
 
     afterAll(async () => {
@@ -149,11 +150,7 @@ describe('formatDownloadALl', () => {
 
         toKeys = await generateKeys('me', me);
 
-        messageKeys = {
-            type: 'publicPrivate',
-            publicKeys: toKeys.publicKeys,
-            privateKeys: toKeys.privateKeys,
-        };
+        messageKeys = fromGeneratedKeysToMessageKeys(toKeys);
     });
 
     afterAll(async () => {
