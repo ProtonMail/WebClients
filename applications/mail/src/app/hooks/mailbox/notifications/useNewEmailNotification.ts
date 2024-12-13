@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useSubscribeEventManager } from '@proton/components';
 import { useFolders } from '@proton/mail';
@@ -56,7 +56,11 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
 
         if (isWindows() && notificationsToShow.length > MAX_WINDOWS_NOTIFICATIONS) {
             void displayGrouppedNotification({
-                body: c('Desktop notification body').t`${notificationsToShow.length} new messages`,
+                body: c('Desktop notification body').ngettext(
+                    msgid`${notificationsToShow.length} new message`,
+                    `${notificationsToShow.length} new messages`,
+                    notificationsToShow.length
+                ),
                 history,
                 onOpenElement,
             });
