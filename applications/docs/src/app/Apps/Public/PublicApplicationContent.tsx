@@ -19,12 +19,7 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
   const api = useApi()
   const unleashClient = useUnleashClient()
 
-  const { user, UID, localID } = usePublicSessionUser()
-
-  if (user) {
-    /** Allow the API to make authenticated requests, such as bookmarking a document for the current session user */
-    ;(api as any).UID = UID
-  }
+  const { user, localID } = usePublicSessionUser()
 
   const { openAction } = useDocsUrlBar({ isDocsEnabled: publicDriveCompat.isDocsEnabled })
 
