@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { type useConfirmActionModal, useNotifications } from '@proton/components';
 
@@ -116,7 +116,12 @@ export function usePublicActions() {
                 : c('Info')
                       .t`This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.`;
         } else {
-            title = c('Title').t`Delete ${links.length} items?`;
+            // translator: single string won't be used, <Delete ${item.name}?> will be used for this case.
+            title = c('Title').ngettext(
+                msgid`Delete ${links.length} item?`,
+                `Delete ${links.length} items?`,
+                links.length
+            );
             message = c('Info').t`This action will delete the selected items permanently.`;
         }
 
