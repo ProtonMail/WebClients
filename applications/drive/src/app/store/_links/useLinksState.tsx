@@ -159,6 +159,13 @@ export function useLinksStateProvider() {
         [state]
     );
 
+    const removeLinkForDriveCompat = useCallback(
+        (shareId: string, linkId: string) => {
+            setState((state) => deleteLinks(state, shareId, [linkId]));
+        },
+        [state]
+    );
+
     return {
         setLinks,
         lockLinks,
@@ -174,6 +181,8 @@ export function useLinksStateProvider() {
         removeLinkForMigration,
         removeLinkForSharedWithMe,
         removeLinksForPublicPage,
+        /** Should never be used outside of `drive-store`. */
+        removeLinkForDriveCompat,
     };
 }
 

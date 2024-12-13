@@ -6,12 +6,17 @@ import { APPS } from '@proton/shared/lib/constants';
  * When coming back from the account sign up or sign in, we are usually coming back after the user initiated the auth
  * by pressing Bookmark or Make Copy button. The `action` param in the URL will tell us where to pick back up once
  * we're back in Docs.
+ *
+ * DRIVE-DEVS: Do not remove export. Used by drive-store.
  */
 export enum RedirectAction {
     Bookmark = 'bookmark',
     MakeCopy = 'make-copy',
 }
 
+/**
+ * DRIVE-DEVS: Do not remove export. Used by drive-store.
+ */
 export type DocumentAction =
     | {
           mode: 'open' | 'convert' | 'download' | 'history';
