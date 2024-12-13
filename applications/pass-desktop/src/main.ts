@@ -33,15 +33,29 @@ const createSession = () => {
 
     secureSession.setPermissionRequestHandler((_webContents, _permission, callback) => callback(false));
 
-    if (isProdEnv()) {
-        // Always use system DNS settings
-        app.configureHostResolver({
-            enableAdditionalDnsQueryTypes: false,
-            enableBuiltInResolver: true,
-            secureDnsMode: 'off',
-            secureDnsServers: [],
-        });
+    // Fix SSO callback URL
+    secureSession.webRequest.onHeadersReceived(
+        {
+            urls: [`https://${DOMAIN}/api/auth/saml`, `${config.SSO_URL}/api/auth/saml`, `${config.API_URL}/auth/saml`],
+            types: ['mainFrame'],
+        },
+        ({ responseHeaders }, callback) => {
+            const location = (responseHeaders?.Location || responseHeaders?.location)?.[0];
 
+            if (location && !location.startsWith(config.SSO_URL)) {
+                delete responseHeaders!.location;
+                delete responseHeaders!.Location;
+                const url = new URL(location);
+                const newLocation = `${config.SSO_URL}${url.pathname}${url.search}${url.hash}`;
+                responseHeaders!.location = [newLocation];
+                logger.debug(`[onHeadersReceived] rewriting SSO callback URL from '${location}' to '${newLocation}'`);
+            }
+
+            callback({ cancel: false, responseHeaders });
+        }
+    );
+
+    if (isProdEnv()) {
         // Use certificate pinning
         if (config.SSO_URL.endsWith('proton.me')) secureSession.setCertificateVerifyProc(certificateVerifyProc);
 
@@ -206,6 +220,14 @@ await startup(ctx);
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.addListener('ready', async () => {
+    // Always use system DNS settings
+    app.configureHostResolver({
+        enableAdditionalDnsQueryTypes: false,
+        enableBuiltInResolver: true,
+        secureDnsMode: 'off',
+        secureDnsServers: [],
+    });
+
     const secureSession = createSession();
     const handleActivate = onActivate(secureSession);
 
@@ -246,33 +268,54 @@ app.addListener('web-contents-created', (_, contents) => {
         getAppUrlFromApiUrl(config.API_URL, APPS.PROTONPASS).host,
     ];
 
-    contents.addListener('will-navigate', (evt, href) => {
-        if (href.startsWith(MAIN_WINDOW_WEBPACK_ENTRY)) return;
+    contents.addListener('will-navigate', (evt) => {
+        // Do nothing if navigating to the bundled web app
+        if (evt.url.startsWith(MAIN_WINDOW_WEBPACK_ENTRY)) return;
 
-        const url = new URL(href);
+        const url = new URL(evt.url);
 
-        // Prevent opening URLs outside of account
-        if (!allowedHosts.includes(url.host) || !['/authorize', '/login'].includes(url.pathname)) {
+        // Open 'Create account' externally
+        if (
+            url.origin === config.SSO_URL &&
+            url.pathname === '/authorize' &&
+            url.searchParams.get('t') === ForkType.SIGNUP
+        ) {
             evt.preventDefault();
-            logger.warn(`[will-navigate] preventDefault: ${url.toString()}`);
+            logger.debug(`[will-navigate] allow (external): ${url.toString()}`);
+            return shell.openExternal(url.href).catch(noop);
+        }
+
+        // Allow account URLs
+        if (allowedHosts.includes(url.host) && ['/authorize', '/login'].includes(url.pathname)) {
+            logger.debug(`[will-navigate] allow (main frame): ${url.href}`);
             return;
         }
 
-        // Open Create account externally
-        if (url.searchParams.has('t') && url.searchParams.get('t') === ForkType.SIGNUP) {
-            evt.preventDefault();
-            logger.warn(`[will-navigate] openExternal: ${url.toString()}`);
-            return shell.openExternal(href).catch(noop);
+        // Allow SSO flows (happens in a dedicated window)
+        if (
+            evt.initiator?.url?.startsWith(config.SSO_URL) ||
+            ctx.window?.webContents.getURL().startsWith(config.SSO_URL)
+        ) {
+            logger.debug(`[will-navigate] allow (external frame): ${url.href}`);
+            return;
         }
+
+        // Let OS handle anything else
+        evt.preventDefault();
+        logger.debug(`[will-navigate] allow (external): ${url.href}`);
+        return shell.openExternal(evt.url).catch(noop);
     });
 
     contents.setWindowOpenHandler(({ url: href }) => {
         const url = new URL(href);
 
-        // Shell out to the system browser if http(s)
+        // Open a new window for SSO
+        if (url.origin === config.SSO_URL) return { action: 'allow' };
+
+        // Shell out to the OS handler for http(s) and mailto
         if (['http:', 'https:', 'mailto:'].includes(url.protocol)) shell.openExternal(href).catch(noop);
 
-        // Always deny opening external links in-app
+        // Always deny opening extra windows
         return { action: 'deny' };
     });
 });
