@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { useApi } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -18,7 +17,6 @@ export const useBookmarksPublicView = ({ customPassword }: Props) => {
     const [bookmarksTokens, setBookmarksTokens] = useState<Set<string>>(new Set());
     const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const [isLoading, withLoading] = useLoading(false);
-    const api = useApi();
     const { token, urlPassword } = usePublicToken();
     const { user, UID } = usePublicSessionUser();
 
@@ -29,8 +27,6 @@ export const useBookmarksPublicView = ({ customPassword }: Props) => {
 
         const abortControler = new AbortController();
         void withLoading(async () => {
-            // TODO: We need to find a better way of doing this
-            (api as any).UID = UID;
             const bookmarks = await listBookmarks(abortControler.signal);
             setBookmarksTokens(new Set(bookmarks.map((bookmark) => bookmark.token.Token)));
         });

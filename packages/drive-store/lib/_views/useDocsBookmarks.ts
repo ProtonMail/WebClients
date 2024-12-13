@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { useApi } from '@proton/components';
 import { useBookmarks } from '@proton/drive-store/store/_bookmarks/useBookmarks';
 import { usePublicSessionUser } from '@proton/drive-store/store/_user';
 import useLoading from '@proton/hooks/useLoading';
@@ -17,7 +16,6 @@ export const useDocsBookmarks = ({ token, urlPassword, customPassword }: Props) 
     const { listBookmarks, addBookmark } = useBookmarks();
     const [bookmarksTokens, setBookmarksTokens] = useState<Set<string>>(new Set());
     const [isLoading, withLoading] = useLoading(false);
-    const api = useApi();
 
     const { user, UID } = usePublicSessionUser();
 
@@ -28,8 +26,6 @@ export const useDocsBookmarks = ({ token, urlPassword, customPassword }: Props) 
 
         const abortControler = new AbortController();
         void withLoading(async () => {
-            // TODO: We need to find a better way of doing this
-            (api as any).UID = UID;
             const bookmarks = await listBookmarks(abortControler.signal);
             setBookmarksTokens(new Set(bookmarks.map((bookmark) => bookmark.token.Token)));
         });
