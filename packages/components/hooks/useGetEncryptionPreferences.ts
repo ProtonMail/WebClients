@@ -8,10 +8,10 @@ import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKe
 import { MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmail, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type { ActiveKey, ApiKeysConfig, PinnedKeysConfig, SelfSend } from '@proton/shared/lib/interfaces';
+import type { ApiKeysConfig, PinnedKeysConfig, SelfSend } from '@proton/shared/lib/interfaces';
 import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
 import type { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
-import { getKeyHasFlagsToEncrypt } from '@proton/shared/lib/keys';
+import { getKeyHasFlagsToEncrypt, getPrimaryActiveAddressKeyForEncryption } from '@proton/shared/lib/keys';
 import { getActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getContactPublicKeyModel, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
@@ -64,13 +64,8 @@ const useGetEncryptionPreferences = () => {
                     selfAddress.Keys,
                     selfAddressKeys
                 );
-                const isPrimary = ({ primary }: ActiveKey) => !!primary;
-                const primaryAddressKey = preferV6Keys
-                    ? (activeAddressKeys.v6.find(isPrimary) ?? activeAddressKeys.v4.find(isPrimary))
-                    : activeAddressKeys.v4.find(isPrimary);
-                if (!primaryAddressKey) {
-                    throw new Error('Missing primary address key');
-                }
+                const primaryAddressKey = getPrimaryActiveAddressKeyForEncryption(activeAddressKeys, preferV6Keys);
+
                 const selfPublicKey = primaryAddressKey.publicKey;
                 const canEncrypt = await getKeyEncryptionCapableStatus(selfPublicKey);
                 const canSend = canEncrypt && getKeyHasFlagsToEncrypt(primaryAddressKey.flags);
