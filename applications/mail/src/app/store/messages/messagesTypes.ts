@@ -2,6 +2,7 @@ import type { PrivateKeyReference, PublicKeyReference, WorkerDecryptionResult } 
 import type { Api, KeyTransparencyVerificationResult, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
 import type { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
@@ -18,8 +19,9 @@ export interface OutsideKey {
 
 export interface PublicPrivateKey {
     type: 'publicPrivate';
-    publicKeys: PublicKeyReference[];
-    privateKeys: PrivateKeyReference[];
+    decryptionKeys: PrivateKeyReference[];
+    encryptionKeys: [PrimaryAddressKeyForEncryption];
+    signingKeys: PrimaryAddressKeysForSigning;
 }
 
 export type MessageKeys = PublicPrivateKey | OutsideKey;

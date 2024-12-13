@@ -63,7 +63,7 @@ export const getDecryptedAttachment = async (
 
     try {
         if (!isOutside) {
-            const sessionKey = await getSessionKey(attachment, messageKeys.privateKeys, messageFlags);
+            const sessionKey = await getSessionKey(attachment, messageKeys.decryptionKeys, messageFlags);
             const decryptedAttachment = await decryptAndVerify(
                 encryptedBinary,
                 sessionKey,
