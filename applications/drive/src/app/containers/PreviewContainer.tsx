@@ -144,7 +144,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
             <SignatureIcon
                 isFile={link.isFile}
                 signatureIssues={link.signatureIssues}
-                isAnonymous={!link.activeRevision?.signatureAddress && !link.signatureAddress}
+                isAnonymous={!link.activeRevision?.signatureEmail && !link.signatureEmail}
                 className="ml-2 color-danger"
             />
         );
@@ -158,7 +158,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         return (
             <SignatureAlertBody
                 signatureIssues={link.signatureIssues}
-                signatureAddress={link.signatureAddress}
+                signatureEmail={link.signatureEmail}
                 isFile={link.isFile}
                 name={link.name}
             />

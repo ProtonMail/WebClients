@@ -43,7 +43,7 @@ export interface SharedWithMeItem extends FileBrowserBaseItem {
     mimeType: string;
     name: string;
     signatureIssues?: SignatureIssues;
-    signatureAddress?: string;
+    signatureEmail?: string;
     size: number;
     trashed: number | null;
     rootShareId: string;

@@ -33,7 +33,7 @@ export interface UploadCallbacks {
         fileBlocks: FileRequestBlock[],
         thumbnailBlocks?: ThumbnailRequestBlock[]
     ) => Promise<{ fileLinks: Link[]; thumbnailLinks?: Link[] }>;
-    finalize: (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => Promise<void>;
+    finalize: (signature: string, signatureEmail: string, xattr: string, photo?: PhotoUpload) => Promise<void>;
     onError?: (error: Error) => void;
     notifyVerificationError: (retryHelped: boolean) => void;
 }
