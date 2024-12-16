@@ -8,10 +8,12 @@ const authToken = 'mockAuthToken';
 describe('useAnonymousUploadAuthStore', () => {
     beforeEach(() => {
         jest.useFakeTimers();
+        jest.spyOn(Date, 'now').mockImplementation(() => 0);
     });
 
     afterEach(() => {
         jest.useRealTimers();
+        jest.spyOn(Date, 'now').mockRestore();
     });
 
     describe('setUploadToken', () => {
@@ -25,11 +27,13 @@ describe('useAnonymousUploadAuthStore', () => {
                 });
             });
 
-            expect(result.current.uploadTokens.get(linkId)).toBe(authToken);
+            expect(result.current.getUploadToken(linkId)).toBe(authToken);
         });
 
         it('should remove token after expiration time', () => {
             const { result } = renderHook(() => useAnonymousUploadAuthStore());
+
+            jest.spyOn(Date, 'now').mockReturnValue(0);
 
             act(() => {
                 result.current.setUploadToken({
@@ -38,13 +42,11 @@ describe('useAnonymousUploadAuthStore', () => {
                 });
             });
 
-            expect(result.current.uploadTokens.get(linkId)).toBe(authToken);
+            expect(result.current.getUploadToken(linkId)).toBe(authToken);
 
-            act(() => {
-                jest.advanceTimersByTime(59 * 60 * 1000); // Fast-forward time by 59 minutes
-            });
+            jest.spyOn(Date, 'now').mockReturnValue(59 * 60 * 1000 + 1); // Fast-forward time by 59 minutes + 1 seconds
 
-            expect(result.current.uploadTokens.has(linkId)).toBeFalsy();
+            expect(result.current.hasUploadToken(linkId)).toBeFalsy();
         });
     });
 
@@ -63,7 +65,7 @@ describe('useAnonymousUploadAuthStore', () => {
                 result.current.removeUploadTokens(linkId);
             });
 
-            expect(result.current.uploadTokens.has(linkId)).toBeFalsy();
+            expect(result.current.hasUploadToken(linkId)).toBeFalsy();
         });
 
         it('should remove multiple tokens', () => {
@@ -87,10 +89,10 @@ describe('useAnonymousUploadAuthStore', () => {
                 result.current.removeUploadTokens(['id1', 'id2']);
             });
 
-            expect(result.current.uploadTokens.has('id1')).toBeFalsy();
-            expect(result.current.uploadTokens.has('id2')).toBeFalsy();
-            expect(result.current.uploadTokens.has('id3')).toBeTruthy();
-            expect(result.current.uploadTokens.get('id3')).toBe('token3');
+            expect(result.current.hasUploadToken('id1')).toBeFalsy();
+            expect(result.current.hasUploadToken('id2')).toBeFalsy();
+            expect(result.current.hasUploadToken('id3')).toBeTruthy();
+            expect(result.current.getUploadToken('id3')).toBe('token3');
         });
     });
 });
