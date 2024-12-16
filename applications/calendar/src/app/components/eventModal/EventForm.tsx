@@ -363,7 +363,9 @@ const EventForm = ({
                 view={view}
             />
             <RowLocation canEditSharedEventData={canEditSharedEventData} model={model} setModel={setModel} />
-            {canEditSharedEventData && <RowVideoConference model={model} setModel={setModel} />}
+            {canEditSharedEventData && (
+                <RowVideoConference model={model} setModel={setModel} isCreateEvent={isCreateEvent} />
+            )}
             {!isMinimal && showNotifications && notificationsRow}
             <RowDescription canEditSharedEventData={canEditSharedEventData} model={model} setModel={setModel} />
             {linkModal}

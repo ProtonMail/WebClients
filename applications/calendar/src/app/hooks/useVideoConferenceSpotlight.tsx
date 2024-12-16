@@ -9,12 +9,18 @@ import { FeatureCode } from '@proton/features/interface';
 import spotlightVideoConfImg from '@proton/styles/assets/img/illustrations/spotlight-video-conference.svg';
 import useFlag from '@proton/unleash/useFlag';
 
-const useVideoConferenceSpotlight = () => {
+interface Props {
+    isEventCreation: boolean;
+}
+
+const useVideoConferenceSpotlight = ({ isEventCreation }: Props) => {
     const [user] = useUser();
     const { viewportWidth } = useActiveBreakpoint();
     const [organization] = useOrganization();
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
-    const { welcomeFlags: { isDone: hasUserFinishedWelcomeFlow } } = useWelcomeFlags();
+    const {
+        welcomeFlags: { isDone: hasUserFinishedWelcomeFlow },
+    } = useWelcomeFlags();
     const userAccountHasMoreThanTwoDays = new Date() > addDays(fromUnixTime(user.CreateTime), 2);
     const hasAccessToZoomIntegration =
         isZoomIntegrationEnabled && user.hasPaidMail && organization?.Settings.VideoConferencingEnabled;
@@ -27,10 +33,14 @@ const useVideoConferenceSpotlight = () => {
         onClose,
     } = useSpotlightOnFeature(
         FeatureCode.CalendarVideoConferenceSpotlight,
-        hasAccessToZoomIntegration && !isSmallViewport && hasUserFinishedWelcomeFlow && userAccountHasMoreThanTwoDays
+        hasAccessToZoomIntegration &&
+            !isSmallViewport &&
+            hasUserFinishedWelcomeFlow &&
+            userAccountHasMoreThanTwoDays &&
+            isEventCreation
     );
 
-    const shouldShowVideoConferenceSpotlight = useSpotlightShow(showVideoConferenceSpotlight, 3000);
+    const shouldShowVideoConferenceSpotlight = useSpotlightShow(showVideoConferenceSpotlight);
 
     const getSpotlightContent = () => {
         return (
