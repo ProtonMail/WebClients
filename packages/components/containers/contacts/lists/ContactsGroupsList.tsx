@@ -18,7 +18,6 @@ interface Props {
     isLargeViewport: boolean;
     checkedIDs: string[];
     onClick: (contactID: string) => void;
-    isDrawer?: boolean;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
 }
 
@@ -28,7 +27,6 @@ const ContactsGroupsList = ({
     onCheckOne,
     checkedIDs,
     onClick,
-    isDrawer = false,
     onCompose,
 }: Props) => {
     const listRef = useRef<List>(null);
@@ -60,7 +58,7 @@ const ContactsGroupsList = ({
     );
 
     return (
-        <div ref={elementRef} className="h-full">
+        <div ref={elementRef} className="h-full w-full">
             <div ref={listContainerRef} className="min-h-full">
                 <AutoSizer>
                     {({ height, width }) => (
@@ -78,7 +76,6 @@ const ContactsGroupsList = ({
                                     onCheck={(event) => onCheckOne(event, groups[index].ID)}
                                     index={index}
                                     onFocus={handleFocus}
-                                    isDrawer={isDrawer}
                                     onCompose={onCompose}
                                 />
                             )}
