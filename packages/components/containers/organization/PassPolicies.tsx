@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
@@ -21,7 +21,8 @@ import type { OrganizationSettings } from '@proton/pass/types/data/organization'
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import GenericError from '../error/GenericError';
-import { PasswordGeneratorPolicyModal } from '../pass/PasswordGeneratorPolicyModal';
+import SubSettingsSection from '../layout/SubSettingsSection';
+import { PasswordGeneratorPolicyForm } from '../pass/PasswordGeneratorPolicyForm';
 
 const getPolicies = (): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [
     {
@@ -46,7 +47,6 @@ const PassPolicies = () => {
 
     const policies = getPolicies();
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
-    const [openPasswordModal, setOpenPasswordModal] = useState(false);
 
     const touched = useRef<keyof OrganizationSettings>();
     const didLoad = useRef(false);
@@ -78,7 +78,6 @@ const PassPolicies = () => {
         withLoading(
             organization.settings.setPasswordGeneratorPolicy(config).then((orgSettings) => {
                 setOrganizationSettings(orgSettings);
-                setOpenPasswordModal(false);
                 createNotification({ text: c('Info').t`Password generator rules successfully saved` });
             })
         ).catch(handleError);
@@ -92,62 +91,63 @@ const PassPolicies = () => {
                 </SettingsParagraph>
                 {organizationSettings && (
                     <>
-                        <ul className="unstyled relative">
-                            {policies.map(({ setting, label, tooltip }) => (
-                                <li key={setting} className="mb-4 flex items-center flex-nowrap gap-4">
-                                    <Toggle
-                                        checked={organizationSettings.Settings?.[setting] === BitField.ACTIVE}
-                                        id={`${setting}-toggle`}
-                                        onChange={({ target }) => handleToggle(target.checked, setting)}
-                                        disabled={loading || !organizationSettings.CanUpdate}
-                                        loading={touched.current === setting && loading}
-                                    />
-                                    <label htmlFor={`${setting}-toggle`}>
-                                        <span className="mr-1">{label}</span>
-                                        {tooltip && <Info title={tooltip} />}
+                        <div className="mb-10">
+                            <ul className="unstyled relative">
+                                {policies.map(({ setting, label, tooltip }) => (
+                                    <li key={setting} className="mb-4 flex items-center flex-nowrap gap-4">
+                                        <Toggle
+                                            checked={organizationSettings.Settings?.[setting] === BitField.ACTIVE}
+                                            id={`${setting}-toggle`}
+                                            onChange={({ target }) => handleToggle(target.checked, setting)}
+                                            disabled={loading || !organizationSettings.CanUpdate}
+                                            loading={touched.current === setting && loading}
+                                        />
+                                        <label htmlFor={`${setting}-toggle`}>
+                                            <span className="mr-1">{label}</span>
+                                            {tooltip && <Info title={tooltip} />}
+                                        </label>
+                                    </li>
+                                ))}
+                            </ul>
+                            <SettingsLayout>
+                                <SettingsLayoutLeft>
+                                    <label
+                                        className="text-semibold"
+                                        htmlFor="pass-lock-select"
+                                        id="label-pass-lock-select"
+                                    >
+                                        <span className="mr-1"> {c('Label').t`Lock app after inactivity`}</span>
+                                        <Info
+                                            title={c('Info')
+                                                .t`After being locked, organization members will need to unlock ${PASS_APP_NAME} with their password or PIN etc.`}
+                                        />
                                     </label>
-                                </li>
-                            ))}
-                        </ul>
-                        <SettingsLayout>
-                            <SettingsLayoutLeft>
-                                <label className="text-semibold" htmlFor="pass-lock-select" id="label-pass-lock-select">
-                                    <span className="mr-1"> {c('Label').t`Lock app after inactivity`}</span>
-                                    <Info
-                                        title={c('Info')
-                                            .t`After being locked, organization members will need to unlock ${PASS_APP_NAME} with their password or PIN etc.`}
+                                </SettingsLayoutLeft>
+                                <SettingsLayoutRight>
+                                    <PassLockSelector
+                                        value={organizationSettings?.Settings?.ForceLockSeconds}
+                                        disabled={loading || !organizationSettings.CanUpdate}
+                                        onChange={handleLockChange}
                                     />
-                                </label>
-                            </SettingsLayoutLeft>
-                            <SettingsLayoutRight>
-                                <PassLockSelector
-                                    value={organizationSettings?.Settings?.ForceLockSeconds}
-                                    disabled={loading || !organizationSettings.CanUpdate}
-                                    onChange={handleLockChange}
-                                />
-                            </SettingsLayoutRight>
-                        </SettingsLayout>
-                        <SettingsLayout>
-                            <SettingsLayoutLeft>
-                                <label className="text-semibold" htmlFor="pass-generator" id="label-pass-generator">
-                                    <span className="mr-1"> {c('Action').t`Set password generator rules`}</span>
-                                </label>
-                            </SettingsLayoutLeft>
-                            <SettingsLayoutRight>
-                                <Button id="pass-generator" onClick={() => setOpenPasswordModal(true)}>
-                                    {c('Action').t`Open`}
-                                </Button>
-                            </SettingsLayoutRight>
-                        </SettingsLayout>
-                        {openPasswordModal && (
-                            <PasswordGeneratorPolicyModal
+                                </SettingsLayoutRight>
+                            </SettingsLayout>
+                        </div>
+
+                        <SubSettingsSection
+                            id="password-generator"
+                            title={c('Title').t`Password generator rules`}
+                            className="container-section-sticky-section"
+                        >
+                            <div className="color-weak mb-4">
+                                {c('Description')
+                                    .t`You can enforce the password rules that organization members will use when they generate a password in ${PASS_APP_NAME}.`}
+                            </div>
+                            <PasswordGeneratorPolicyForm
                                 config={organizationSettings.Settings.PasswordPolicy}
-                                onClose={() => setOpenPasswordModal(false)}
                                 onSubmit={handleSubmitPasswordGenerator}
-                                size="large"
                                 loading={loading}
                             />
-                        )}
+                        </SubSettingsSection>
                     </>
                 )}
             </SettingsSection>
