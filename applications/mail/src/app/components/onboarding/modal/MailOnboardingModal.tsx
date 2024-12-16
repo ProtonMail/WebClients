@@ -1,10 +1,23 @@
 import { useCallback, useEffect } from 'react';
 
 import { useWelcomeFlags } from '@proton/account';
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { OnboardingModal } from '@proton/components/index';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import {
+    getIsB2BAudienceFromPlan,
+    getIsB2BAudienceFromSubscription,
+    isTrial,
+} from '@proton/shared/lib/helpers/subscription';
 
 import { useMailOnboardingTelemetry } from '../useMailOnboardingTelemetry';
-import NewMailOnboardingModalVariant from './variants/new/NewMailOnboardingVariant';
+import ActivatePremiumFeaturesStep from './steps/ActivatePremiumFeaturesStep';
+import GetTheAppsStep from './steps/GetTheAppsStep';
+import NewOnboardingOrganizationStep from './steps/NewOnboardingOrganizationStep';
+import NewOnboardingThemes from './steps/NewOnboardingThemes';
+import OnboardingWelcomeStep from './steps/OnboardingWelcomeStep';
 
 export interface MailOnboardingProps {
     hideDiscoverApps?: boolean;
@@ -15,9 +28,30 @@ export interface MailOnboardingProps {
     open?: boolean;
 }
 
+const useUserInfos = (): Record<'isB2B' | 'isLoading' | 'isMailPaidPlan', boolean> => {
+    const [user, loadingUser] = useUser();
+    const [subscription, loadingSub] = useSubscription();
+    const [organization, loadingOrg] = useOrganization();
+
+    let isB2B = false;
+    const isLoading = loadingUser || loadingSub || loadingOrg;
+    const isUserWithB2BPlan = !user.isSubUser && getIsB2BAudienceFromSubscription(subscription);
+    const isSubUserWithB2BPlan = user.isSubUser && organization && getIsB2BAudienceFromPlan(organization.PlanName);
+
+    if (isUserWithB2BPlan || isSubUserWithB2BPlan) {
+        isB2B = true;
+    }
+
+    const isMailPaidPlan = user.isPaid && (isTrial(subscription) || user.hasPaidMail);
+
+    return { isB2B, isLoading, isMailPaidPlan };
+};
+
 const MailOnboardingModal = (props: MailOnboardingProps) => {
     const { endReplay } = useWelcomeFlags();
     const [sendMailOnboardingTelemetry, loadingTelemetryDeps] = useMailOnboardingTelemetry();
+    const { isLoading, isB2B, isMailPaidPlan } = useUserInfos();
+    const displayPremiumFeaturesSteps = isMailPaidPlan && !isB2B;
 
     const handleDone = useCallback(() => {
         void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.finish_onboarding_modals, {});
@@ -33,13 +67,28 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
         void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.start_onboarding_modals, {});
     }, [loadingTelemetryDeps]);
 
+    if (isLoading) {
+        return null;
+    }
+
     return (
-        <NewMailOnboardingModalVariant
+        <OnboardingModal
             {...props}
             onClose={endReplay}
             onDone={handleDone}
+            modalContentClassname="mx-12 mt-12 mb-6"
+            modalClassname="onboarding-modal--larger onboarding-modal--new"
+            showGenericSteps={false}
+            extraProductStep={displayPremiumFeaturesSteps ? [ActivatePremiumFeaturesStep] : undefined}
+            stepDotClassName="mt-4"
             data-testid="new-onboarding-variant"
-        />
+            genericSteps={{
+                setupThemeStep: NewOnboardingThemes,
+                organizationStep: NewOnboardingOrganizationStep,
+            }}
+        >
+            {[OnboardingWelcomeStep, GetTheAppsStep]}
+        </OnboardingModal>
     );
 };
 

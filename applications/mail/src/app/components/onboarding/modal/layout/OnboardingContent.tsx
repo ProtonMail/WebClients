@@ -13,7 +13,7 @@ export interface Props {
     className?: string;
 }
 
-const NewOnboardingContent = ({ description, children, title, titleBlockClassName = 'mb-12', ...rest }: Props) => {
+const OnboardingContent = ({ description, children, title, titleBlockClassName = 'mb-12', ...rest }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
 
     return (
@@ -31,4 +31,4 @@ const NewOnboardingContent = ({ description, children, title, titleBlockClassNam
     );
 };
 
-export default NewOnboardingContent;
+export default OnboardingContent;
