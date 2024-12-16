@@ -64,14 +64,22 @@ const PassPolicies = () => {
     const handleToggle = async (checked: boolean, setting: keyof OrganizationSettings) => {
         touched.current = setting;
         const value = checked ? BitField.ACTIVE : BitField.DISABLED;
-        withLoading(organization.settings.set(setting, value).then(setOrganizationSettings)).catch(handleError);
+        withLoading(
+            organization.settings.set(setting, value).then((orgSettings) => {
+                setOrganizationSettings(orgSettings);
+                createNotification({ text: c('Info').t`Setting successfully saved` });
+            })
+        ).catch(handleError);
     };
 
     const handleLockChange = async (ttl: number) => {
         touched.current = 'ForceLockSeconds';
-        withLoading(organization.settings.set('ForceLockSeconds', ttl).then(setOrganizationSettings)).catch(
-            handleError
-        );
+        withLoading(
+            organization.settings.set('ForceLockSeconds', ttl).then((orgSettings) => {
+                setOrganizationSettings(orgSettings);
+                createNotification({ text: c('Info').t`Setting successfully saved` });
+            })
+        ).catch(handleError);
     };
 
     const handleSubmitPasswordGenerator = async (config: OrganizationUpdatePasswordPolicyRequest) => {
@@ -92,9 +100,15 @@ const PassPolicies = () => {
                 {organizationSettings && (
                     <>
                         <div className="mb-10">
-                            <ul className="unstyled relative">
-                                {policies.map(({ setting, label, tooltip }) => (
-                                    <li key={setting} className="mb-4 flex items-center flex-nowrap gap-4">
+                            {policies.map(({ setting, label, tooltip }) => (
+                                <SettingsLayout className="pb-4">
+                                    <SettingsLayoutLeft>
+                                        <label htmlFor={`${setting}-toggle`}>
+                                            <span className="text-semibold mr-1">{label}</span>
+                                            {tooltip && <Info title={tooltip} />}
+                                        </label>
+                                    </SettingsLayoutLeft>
+                                    <SettingsLayoutRight isToggleContainer>
                                         <Toggle
                                             checked={organizationSettings.Settings?.[setting] === BitField.ACTIVE}
                                             id={`${setting}-toggle`}
@@ -102,14 +116,10 @@ const PassPolicies = () => {
                                             disabled={loading || !organizationSettings.CanUpdate}
                                             loading={touched.current === setting && loading}
                                         />
-                                        <label htmlFor={`${setting}-toggle`}>
-                                            <span className="mr-1">{label}</span>
-                                            {tooltip && <Info title={tooltip} />}
-                                        </label>
-                                    </li>
-                                ))}
-                            </ul>
-                            <SettingsLayout>
+                                    </SettingsLayoutRight>
+                                </SettingsLayout>
+                            ))}
+                            <SettingsLayout className="pb-4">
                                 <SettingsLayoutLeft>
                                     <label
                                         className="text-semibold"
