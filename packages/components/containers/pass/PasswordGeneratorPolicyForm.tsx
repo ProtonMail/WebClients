@@ -5,13 +5,7 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { Maybe, MaybeNull, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { PasswordGeneratorPolicyOption } from './PasswordGeneratorOption';
 
@@ -160,17 +154,20 @@ export const validatePasswordGeneratorForm = (
     return errors;
 };
 
-type Props = Omit<ModalProps, 'onSubmit'> & {
+type Props = {
     config: MaybeNull<OrganizationUpdatePasswordPolicyRequest>;
     onSubmit: (config: OrganizationUpdatePasswordPolicyRequest) => Promise<void>;
     loading?: boolean;
 };
 
-export const PasswordGeneratorPolicyModal: FC<Props> = ({ onClose, onSubmit, config, loading, ...rest }) => {
+export const PasswordGeneratorPolicyForm: FC<Props> = ({ onSubmit, config, loading }) => {
     const form = useFormik<OrganizationUpdatePasswordPolicyRequest>({
         initialValues: config ?? PASSWORD_GENERATOR_DEFAULT,
         validate: validatePasswordGeneratorForm,
-        onSubmit,
+        onSubmit: async (values) => {
+            await onSubmit(values);
+            form.resetForm({ values });
+        },
     });
 
     const handleOnChange = (id: keyof OrganizationUpdatePasswordPolicyRequest, value: PasswordGeneratorOptionValue) => {
@@ -189,15 +186,10 @@ export const PasswordGeneratorPolicyModal: FC<Props> = ({ onClose, onSubmit, con
     };
 
     return (
-        <ModalTwo onClose={onClose} open={true} {...rest}>
-            <ModalTwoHeader title={c('Action').t`Password generator rules`} />
-            <ModalTwoContent>
-                <div>
-                    {c('Description')
-                        .t`You can enforce the password rules that organization members will use when they generate a password in ${PASS_APP_NAME}.`}
-                </div>
-                <FormikProvider value={form}>
-                    <Form id={FORM_ID}>
+        <>
+            <FormikProvider value={form}>
+                <Form id={FORM_ID}>
+                    <div>
                         {randomPasswordRules.map(({ label, id, length }) => (
                             <PasswordGeneratorPolicyOption
                                 label={label}
@@ -210,6 +202,7 @@ export const PasswordGeneratorPolicyModal: FC<Props> = ({ onClose, onSubmit, con
                                 key={`option-${id}`}
                             />
                         ))}
+                        <hr className="my-4" />
                         {memorablePasswordRules.map(({ label, id, length }) => (
                             <PasswordGeneratorPolicyOption
                                 label={label}
@@ -222,21 +215,24 @@ export const PasswordGeneratorPolicyModal: FC<Props> = ({ onClose, onSubmit, con
                                 key={`option-${id}`}
                             />
                         ))}
-                    </Form>
-                </FormikProvider>
-            </ModalTwoContent>
-            <ModalTwoFooter>
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                <Button
-                    type="submit"
-                    form={FORM_ID}
-                    color="norm"
-                    disabled={!form.isValid || !form.dirty}
-                    loading={loading}
-                >
-                    {c('Action').t`Save`}
+                    </div>
+                </Form>
+            </FormikProvider>
+            <Button
+                type="submit"
+                form={FORM_ID}
+                color="norm"
+                disabled={!form.isValid || !form.dirty}
+                loading={loading}
+                className="mr-8"
+            >
+                {c('Action').t`Save`}
+            </Button>
+            {form.dirty && (
+                <Button color="norm" shape="ghost" type="reset" form={FORM_ID}>
+                    {c('Action').t`Reset modifications`}
                 </Button>
-            </ModalTwoFooter>
-        </ModalTwo>
+            )}
+        </>
     );
 };
