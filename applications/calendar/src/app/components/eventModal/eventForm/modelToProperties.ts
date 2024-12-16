@@ -130,15 +130,15 @@ const modelToVideoConferenceProperties = ({
         'x-pm-conference-id': {
             value: conferenceId,
             parameters: {
-                provider: '1',
-                ...(conferenceCreator && { creator: conferenceCreator }),
+                'x-pm-provider': '1',
+                ...(conferenceCreator && { 'x-pm-creator': conferenceCreator }),
             },
         },
         'x-pm-conference-url': {
             value: conferenceUrl,
             parameters: {
-                ...(conferencePassword && { password: conferencePassword }),
-                ...(conferenceHost && { host: conferenceHost }),
+                ...(conferencePassword && { 'x-pm-password': conferencePassword }),
+                ...(conferenceHost && { 'x-pm-host': conferenceHost }),
             },
         },
     };
