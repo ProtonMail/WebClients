@@ -80,30 +80,28 @@ export const ButtonNumberInput = ({
                     <Info title={reasonText} className="mt-1" />
                 </span>
             )}
-            <label htmlFor={id} className="my-2 flex">
-                <input
-                    autoComplete="off"
-                    min={min}
-                    max={max}
-                    value={tmpValue === null ? '' : currentValue}
-                    id={id}
-                    type="number"
-                    className="w-custom border-left border-right text-center invisible-number-input-arrow"
-                    style={{ '--w-custom': '6em' }}
-                    onBlur={() => {
-                        // Revert to the latest valid value upon blur
-                        setTmpValue(undefined);
-                    }}
-                    onChange={({ target: { value: newValue } }) => {
-                        if (newValue === '') {
-                            setTmpValue(null);
-                            return;
-                        }
-                        const newIntValue = parseInt(newValue, 10);
-                        handleOnChange(newIntValue);
-                    }}
-                />
-            </label>
+            <input
+                autoComplete="off"
+                min={min}
+                max={max}
+                value={tmpValue === null ? '' : currentValue}
+                id={id}
+                type="number"
+                className="my-2 w-custom border-left border-right text-center invisible-number-input-arrow"
+                style={{ '--w-custom': '6em' }}
+                onBlur={() => {
+                    // Revert to the latest valid value upon blur
+                    setTmpValue(undefined);
+                }}
+                onChange={({ target: { value: newValue } }) => {
+                    if (newValue === '') {
+                        setTmpValue(null);
+                        return;
+                    }
+                    const newIntValue = parseInt(newValue, 10);
+                    handleOnChange(newIntValue);
+                }}
+            />
             <button
                 type="button"
                 title={c('Action').t`Increase`}
