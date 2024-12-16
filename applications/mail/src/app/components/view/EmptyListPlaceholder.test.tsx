@@ -29,7 +29,7 @@ describe('EmptyListPlaceholder', () => {
         } as OnboardingChecklistContext);
 
         await render(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
-        screen.getByTestId('onboarding-checklist');
+        screen.getByTestId('onboarding-accounts-switcher');
     });
 
     it('Should display placeholder when checklist is not reduced', async () => {

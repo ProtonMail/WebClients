@@ -40,7 +40,7 @@ describe('MailboxContainerPlaceholder', () => {
                 handleCheckAll={jest.fn()}
             />
         );
-        screen.getByTestId('onboarding-checklist');
+        screen.getByTestId('onboarding-accounts-switcher');
     });
 
     it('Should display section pane when checklist is reduced', async () => {

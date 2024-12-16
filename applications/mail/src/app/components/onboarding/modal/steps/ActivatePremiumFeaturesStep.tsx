@@ -30,7 +30,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
 
-import NewOnboardingContent from '../layout/NewOnboardingContent';
+import OnboardingContent from '../layout/OnboardingContent';
 
 type FeatureID = 'aliases' | 'monitoring' | 'autoDelete';
 
@@ -170,7 +170,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
 
     return (
         <OnboardingStep>
-            <NewOnboardingContent
+            <OnboardingContent
                 title={c('Onboarding modal').t`Activate premium features`}
                 description={c('Onboarding modal').t`Make the most of your paid plan.`}
                 className="mb-16"
@@ -189,7 +189,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
                         />
                     ))}
                 </div>
-            </NewOnboardingContent>
+            </OnboardingContent>
             <footer>
                 <Button size="large" fullWidth color="norm" onClick={handleNext} disabled={loadingDependency}>
                     {hasAllItemsActivated || hasNoItemsChecked
