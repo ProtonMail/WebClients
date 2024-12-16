@@ -14,7 +14,7 @@ import type { OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types
 import { oneOf } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
 
-import type { PasswordGeneratorOptionValue, PasswordLength } from './PasswordGeneratorPolicyModal';
+import type { PasswordGeneratorOptionValue, PasswordLength } from './PasswordGeneratorPolicyForm';
 
 type Props = {
     id: keyof OrganizationUpdatePasswordPolicyRequest;
@@ -34,10 +34,10 @@ const getOptions = () => [
 
 export const PasswordGeneratorPolicyOption: FC<Props> = ({ id, label, value, onChange, length, disabled, error }) => {
     return oneOf('RandomPasswordAllowed', 'MemorablePasswordAllowed')(id) ? (
-        <SettingsLayout className="mt-8">
-            <SettingsLayoutLeft className="mr-auto">
+        <SettingsLayout>
+            <SettingsLayoutLeft>
                 <label htmlFor={`${id}-toggle`}>
-                    <span className="mr-1">{label}</span>
+                    <span className="text-semibold mr-1">{label}</span>
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight isToggleContainer>
@@ -46,9 +46,9 @@ export const PasswordGeneratorPolicyOption: FC<Props> = ({ id, label, value, onC
         </SettingsLayout>
     ) : (
         <SettingsLayout>
-            <SettingsLayoutLeft className="mr-auto">
+            <SettingsLayoutLeft>
                 <label htmlFor={`${id}-select`}>
-                    <span className="mr-1">{label}</span>
+                    <span className="text-semibold mr-1">{label}</span>
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight>
