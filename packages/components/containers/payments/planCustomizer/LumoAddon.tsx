@@ -7,7 +7,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/interfaces';
 
-import { AccountSizeCustomiser } from './AccountSizeCustomiser';
+import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
 
 const LumoAddonBanner = ({ onClick, price }: { onClick: () => void; price: ReactElement }) => (
     <div
@@ -32,18 +32,13 @@ const LumoAddonBanner = ({ onClick, price }: { onClick: () => void; price: React
     </div>
 );
 
-interface Props {
+interface LumoAddonProps extends Omit<NumberCustomiserProps, 'label' | 'tooltip'> {
     price: ReactElement;
-    onAddLumo: () => void;
     addon: Plan;
-    maxUsers: number;
-    input: ReactElement;
-    showDescription?: boolean;
-    showTooltip?: boolean;
-    value: number;
+    onAddLumo: () => void;
 }
 
-const LumoAddon = ({ price, onAddLumo, addon, input, value, maxUsers, showDescription, showTooltip }: Props) => {
+const LumoAddon = ({ price, onAddLumo, value, ...rest }: LumoAddonProps) => {
     const [showLumoBanner, setShowLumoBanner] = useState(value === 0);
 
     if (showLumoBanner) {
@@ -59,20 +54,7 @@ const LumoAddon = ({ price, onAddLumo, addon, input, value, maxUsers, showDescri
             </div>
         );
     }
-
-    return (
-        <AccountSizeCustomiser
-            key={`${addon.Name}-size`}
-            addon={addon}
-            price={price}
-            input={input}
-            value={value}
-            maxUsers={maxUsers}
-            showDescription={showDescription}
-            showTooltip={showTooltip}
-            mode="lumo"
-        />
-    );
+    return <NumberCustomiser label={LUMO_APP_NAME} value={value} {...rest} />;
 };
 
 export default LumoAddon;
