@@ -14,7 +14,7 @@ import type { FullPlansMap, PaymentMethodStatusExtended, PlanIDs } from '@proton
 import { type Currency, PLANS } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
-import { getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
+import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import {
     getPlanFromPlanIDs,
     hasPlanIDs,
@@ -198,7 +198,12 @@ const SubscriptionCheckout = ({
                 <span>
                     <strong className="mb-1">{isFreePlanSelected ? c('Payments.plan_name').t`Free` : planTitle}</strong>
                     {discountPercent !== 0 && !loading && (
-                        <Badge type="success" tooltip={getDiscountText()} className="ml-2 text-semibold">
+                        <Badge
+                            type="success"
+                            tooltip={c('Info')
+                                .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`}
+                            className="ml-2 text-semibold absolute"
+                        >
                             -{discountPercent}%
                         </Badge>
                     )}
