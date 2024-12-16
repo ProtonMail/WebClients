@@ -312,6 +312,7 @@ const PaymentStep = ({
                                 onChangePlanIDs={handleOptimisticPlanIDs}
                                 className="pb-7 mb-8"
                                 scribeAddonEnabled
+                                showUsersTooltip
                             />
                         );
                     })()}
