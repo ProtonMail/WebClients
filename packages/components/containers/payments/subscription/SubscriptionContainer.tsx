@@ -41,7 +41,7 @@ import {
 import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { ProrationMode, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
+import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { AddonGuard } from '@proton/shared/lib/helpers/addons';
@@ -74,7 +74,6 @@ import type {
 import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
-import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -421,10 +420,11 @@ const SubscriptionContainer = ({
         }
 
         const shouldCalendarPreventSubscriptionChangePromise = getShouldCalendarPreventSubscripitionChange({
-            hasPaidMail: hasPaidMail(user),
-            willHavePaidMail: willHavePaidMail(operationsSubscriptionData.Plans, plans),
+            user,
             api,
             getCalendars,
+            newPlan: operationsSubscriptionData.Plans,
+            plans,
         });
 
         if (await shouldCalendarPreventSubscriptionChangePromise) {
