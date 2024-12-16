@@ -9,10 +9,9 @@ import {
     getScribeUpsellText,
 } from '@proton/components/containers/payments/subscription/assistant/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { Plan } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 
-import { AccountSizeCustomiser } from './planCustomizer/AccountSizeCustomiser';
+import { NumberCustomiser, type NumberCustomiserProps } from './planCustomizer/NumberCustomiser';
 
 const ScribeB2BBanner = ({ onClick, price }: { onClick: () => void; price: ReactElement }) => (
     <div
@@ -40,31 +39,15 @@ const ScribeB2BBanner = ({ onClick, price }: { onClick: () => void; price: React
     </div>
 );
 
-interface Props {
-    addon: Plan;
-    maxUsers: number;
+interface ScribeAddonProps extends Omit<NumberCustomiserProps, 'label' | 'tooltip'> {
     price: ReactElement;
-    input: ReactElement;
-    showDescription?: boolean;
-    showTooltip?: boolean;
     audience?: Audience;
     showScribeBanner?: boolean;
     onAddScribe: () => void;
-    value: number;
+    showTooltip?: boolean;
 }
 
-const ScribeAddon = ({
-    addon,
-    input,
-    value,
-    price,
-    maxUsers,
-    showDescription,
-    showTooltip,
-    audience,
-    showScribeBanner,
-    onAddScribe,
-}: Props) => {
+const ScribeAddon = ({ price, audience, showScribeBanner, onAddScribe, showTooltip, ...rest }: ScribeAddonProps) => {
     if (audience === Audience.B2B && showScribeBanner) {
         return (
             <div>
@@ -74,16 +57,14 @@ const ScribeAddon = ({
     }
 
     return (
-        <AccountSizeCustomiser
-            key={`${addon.Name}-size`}
-            addon={addon}
-            price={price}
-            input={input}
-            value={value}
-            maxUsers={maxUsers}
-            showDescription={showDescription}
-            showTooltip={showTooltip}
-            mode="gpt-seats"
+        <NumberCustomiser
+            label={c('Info').t`${BRAND_NAME} Scribe writing assistant`}
+            tooltip={
+                showTooltip
+                    ? c('Info').t`AI powered assistant to help you craft better emails, quickly and effortlessly.`
+                    : undefined
+            }
+            {...rest}
         />
     );
 };
