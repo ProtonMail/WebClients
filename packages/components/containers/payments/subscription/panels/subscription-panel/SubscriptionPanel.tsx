@@ -300,34 +300,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     };
 
     const getLumo = () => {
-        const items: Item[] = [
-            {
-                text: c('collider_2025: feature').t``,
-                included: true,
-            },
-            {
-                text: c('collider_2025: feature').t``,
-                included: true,
-            },
-            {
-                text: c('collider_2025: feature')
-                    .t``,
-                included: true,
-            },
-
-            {
-                text: c('collider_2025: feature').t``,
-                included: true,
-            },
-            {
-                text: c('collider_2025: feature').t`Priority access (get top priority, even during busy times)`,
-                included: true,
-            },
-            {
-                text: c('collider_2025: feature').t`Priority support`,
-                included: true,
-            },
-        ];
+        const items: Item[] = [];
 
         return (
             <StripedList alternate={alternate}>
