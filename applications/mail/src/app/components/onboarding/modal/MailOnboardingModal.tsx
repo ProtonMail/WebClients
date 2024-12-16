@@ -1,19 +1,23 @@
 import { useCallback, useEffect } from 'react';
 
 import { useWelcomeFlags } from '@proton/account';
-import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { useApi } from '@proton/components';
-import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { OnboardingModal } from '@proton/components/index';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
-import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
-
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import {
+    getIsB2BAudienceFromPlan,
+    getIsB2BAudienceFromSubscription,
+    isTrial,
+} from '@proton/shared/lib/helpers/subscription';
 
 import { useMailOnboardingTelemetry } from '../useMailOnboardingTelemetry';
-import useMailOnboardingVariant from '../useMailOnboardingVariant';
-import NewMailOnboardingModalVariant from './variants/new/NewMailOnboardingVariant';
-import OldMailOnboardingModal from './variants/old/OldMailOnboardingVariant';
+import ActivatePremiumFeaturesStep from './steps/ActivatePremiumFeaturesStep';
+import GetTheAppsStep from './steps/GetTheAppsStep';
+import NewOnboardingOrganizationStep from './steps/NewOnboardingOrganizationStep';
+import NewOnboardingThemes from './steps/NewOnboardingThemes';
+import OnboardingWelcomeStep from './steps/OnboardingWelcomeStep';
 
 export interface MailOnboardingProps {
     hideDiscoverApps?: boolean;
@@ -24,13 +28,30 @@ export interface MailOnboardingProps {
     open?: boolean;
 }
 
+const useUserInfos = (): Record<'isB2B' | 'isLoading' | 'isMailPaidPlan', boolean> => {
+    const [user, loadingUser] = useUser();
+    const [subscription, loadingSub] = useSubscription();
+    const [organization, loadingOrg] = useOrganization();
+
+    let isB2B = false;
+    const isLoading = loadingUser || loadingSub || loadingOrg;
+    const isUserWithB2BPlan = !user.isSubUser && getIsB2BAudienceFromSubscription(subscription);
+    const isSubUserWithB2BPlan = user.isSubUser && organization && getIsB2BAudienceFromPlan(organization.PlanName);
+
+    if (isUserWithB2BPlan || isSubUserWithB2BPlan) {
+        isB2B = true;
+    }
+
+    const isMailPaidPlan = user.isPaid && (isTrial(subscription) || user.hasPaidMail);
+
+    return { isB2B, isLoading, isMailPaidPlan };
+};
+
 const MailOnboardingModal = (props: MailOnboardingProps) => {
-    const api = useApi();
-    const { changeChecklistDisplay } = useGetStartedChecklist();
-    const { welcomeFlags, endReplay } = useWelcomeFlags();
-    const [userSettings] = useUserSettings();
-    const { variant, isEnabled } = useMailOnboardingVariant();
+    const { endReplay } = useWelcomeFlags();
     const [sendMailOnboardingTelemetry, loadingTelemetryDeps] = useMailOnboardingTelemetry();
+    const { isLoading, isB2B, isMailPaidPlan } = useUserInfos();
+    const displayPremiumFeaturesSteps = isMailPaidPlan && !isB2B;
 
     const handleDone = useCallback(() => {
         void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.finish_onboarding_modals, {});
@@ -39,57 +60,36 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
 
     // Specific for Telemetry
     useEffect(() => {
-        if (!isEnabled || loadingTelemetryDeps || variant === 'none') {
+        if (loadingTelemetryDeps) {
             return;
         }
 
         void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.start_onboarding_modals, {});
     }, [loadingTelemetryDeps]);
 
-    // Specific for 'NONE' variant
-    useEffect(() => {
-        // For the none variant, can directly call onDone to update welcome flags
-        if (variant === 'none') {
-            if (welcomeFlags.isWelcomeFlow) {
-                // Set generic welcome to true
-                void api(updateFlags({ Welcomed: 1 })).catch(noop);
-            }
-            if (!userSettings.WelcomeFlag) {
-                // Set product specific welcome to true
-                void api(updateWelcomeFlags()).catch(noop);
-            }
-
-            changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED);
-
-            // Using orignal onDone callback as 'none' variant does not need start or end
-            props.onDone?.();
-        }
-    }, []);
-
-    if (variant === 'new') {
-        return (
-            <NewMailOnboardingModalVariant
-                {...props}
-                onClose={endReplay}
-                onDone={handleDone}
-                data-testid="new-onboarding-variant"
-            />
-        );
+    if (isLoading) {
+        return null;
     }
 
-    if (variant === 'old') {
-        return (
-            <OldMailOnboardingModal
-                {...props}
-                onClose={endReplay}
-                onDone={handleDone}
-                data-testid="old-onboarding-variant"
-            />
-        );
-    }
-
-    // Render nothing if variant is none
-    return null;
+    return (
+        <OnboardingModal
+            {...props}
+            onClose={endReplay}
+            onDone={handleDone}
+            modalContentClassname="mx-12 mt-12 mb-6"
+            modalClassname="onboarding-modal--larger onboarding-modal--new"
+            showGenericSteps={false}
+            extraProductStep={displayPremiumFeaturesSteps ? [ActivatePremiumFeaturesStep] : undefined}
+            stepDotClassName="mt-4"
+            data-testid="new-onboarding-variant"
+            genericSteps={{
+                setupThemeStep: NewOnboardingThemes,
+                organizationStep: NewOnboardingOrganizationStep,
+            }}
+        >
+            {[OnboardingWelcomeStep, GetTheAppsStep]}
+        </OnboardingModal>
+    );
 };
 
 export default MailOnboardingModal;

@@ -6,7 +6,7 @@ import { OnboardingStep, type OnboardingStepRenderCallback, useSettingsLink } fr
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 
-import NewOnboardingContent from '../layout/NewOnboardingContent';
+import OnboardingContent from '../layout/OnboardingContent';
 
 const NewOnboardingOrganizationStep = (props: OnboardingStepRenderCallback) => {
     const [organization] = useOrganization();
@@ -23,7 +23,7 @@ const NewOnboardingOrganizationStep = (props: OnboardingStepRenderCallback) => {
 
     return (
         <OnboardingStep>
-            <NewOnboardingContent title={title} description={description} className="mb-12 text-center">
+            <OnboardingContent title={title} description={description} className="mb-12 text-center">
                 <div className="py-12">
                     <div>
                         <img
@@ -43,7 +43,7 @@ const NewOnboardingOrganizationStep = (props: OnboardingStepRenderCallback) => {
                         {c('Action').t`Start setup`}
                     </Button>
                 </div>
-            </NewOnboardingContent>
+            </OnboardingContent>
             <footer>
                 <footer>
                     <Button size="large" fullWidth onClick={props.onNext}>
