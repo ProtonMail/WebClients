@@ -12,7 +12,7 @@ import {
 } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
-import OnboardingChecklistModalsProvider from '../OnboardingChecklistModalProvider';
+import OnboardingChecklistModalsProvider from '../OnboardingChecklistModalsProvider';
 import useOnboardingChecklist from '../useOnboardingChecklist';
 import OnboardingChecklistSidebarHeader from './components/OnboardingChecklistSidebarHeader';
 import OnboardingChecklistSidebarList from './components/OnboardingChecklistSidebarList';

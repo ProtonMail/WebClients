@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
-import { useOnboardingChecklistModalsContext } from '../../OnboardingChecklistModalProvider';
+import { useOnboardingChecklistModalsContext } from '../../OnboardingChecklistModalsProvider';
 
 const OnboardingChecklistSidebarList = () => {
     const { displayModal } = useOnboardingChecklistModalsContext();
