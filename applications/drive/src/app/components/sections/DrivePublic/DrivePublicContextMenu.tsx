@@ -28,7 +28,7 @@ export function DrivePublicContextMenu({
     openPreview: (item: DecryptedLink) => void;
     openInDocs?: (linkId: string) => void;
 }) {
-    const { uploadTokens } = useAnonymousUploadAuthStore();
+    const { hasUploadToken, getUploadToken } = useAnonymousUploadAuthStore();
     const { isCreator, isLastEditor, loggedIn } = usePublicLinkOwnerInfo(selectedLinks);
     const selectedLink = selectedLinks.length > 0 ? selectedLinks[0] : undefined;
     const isOnlyOneItem = selectedLinks.length === 1 && !!selectedLink;
@@ -45,12 +45,12 @@ export function DrivePublicContextMenu({
     // TODO: Move it once we have we have renaming for anonymous
     const isDeletionAllowed = loggedIn
         ? isCreator && isLastEditor
-        : selectedLinks.every((link) => uploadTokens.has(link.linkId));
+        : selectedLinks.every((link) => hasUploadToken(link.linkId));
 
     // In case user is loggedIn, we will not have any authorizationToken for uploads
     const selectedLinksWithToken = loggedIn
         ? selectedLinks
-        : selectedLinks.map((link) => ({ ...link, authorizationToken: uploadTokens.get(link.linkId) }));
+        : selectedLinks.map((link) => ({ ...link, authorizationToken: getUploadToken(link.linkId) }));
 
     return (
         <>
