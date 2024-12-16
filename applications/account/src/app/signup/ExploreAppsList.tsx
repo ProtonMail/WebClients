@@ -83,9 +83,7 @@ export const getExploreApps = ({
         isLumoAvailable && {
             name: APPS.PROTONLUMO,
             bit: PRODUCT_BIT.LUMO,
-            description: () => {
-                return c('collider_2025: app-switcher').t`Your private AI helper`;
-            },
+            description: () => '',
         },
     ]
         .filter(isTruthy)
