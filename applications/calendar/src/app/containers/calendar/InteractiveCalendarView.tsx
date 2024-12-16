@@ -147,6 +147,7 @@ import type {
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
+import { useCalendarEALMetric } from '../../metrics/useCalendarEALMetric';
 import { useCalendarNESTMetric } from '../../metrics/useCalendarNESTMetric';
 import { getCurrentPartstat } from '../../store/events/eventsCache';
 import { isTmpEventSavingSelector, pendingUniqueIdsSelector } from '../../store/events/eventsSelectors';
@@ -355,6 +356,7 @@ const InteractiveCalendarView = ({
     const isSearchView = view === VIEWS.SEARCH;
     const cancelClosePopoverRef = useRef(false);
     const { startNESTMetric, stopNESTMetric } = useCalendarNESTMetric();
+    const { startEALMetric, stopEALMetric } = useCalendarEALMetric();
 
     const { triggerZoomOAuth } = useZoomOAuth();
     const { sendEventVideoConferenceZoomIntegration } = useVideoConfTelemetry();
@@ -1469,6 +1471,9 @@ const InteractiveCalendarView = ({
         isModal = false
     ) => {
         startNESTMetric(temporaryEvent, isCreatingEvent);
+        if (isEditingEvent) {
+            startEALMetric('edit');
+        }
         let hasStartChanged;
         // uid is not defined when we create a new event
         const UID = temporaryEvent.tmpData.uid || TMP_UID;
@@ -1505,6 +1510,9 @@ const InteractiveCalendarView = ({
                         const result = await handleSaveConfirmation(params);
                         // If confirmation modals opens, we set start time to after the user confirms
                         startNESTMetric(temporaryEvent, isCreatingEvent);
+                        if (isEditingEvent) {
+                            startEALMetric('edit');
+                        }
                         if (result.type === RECURRING_TYPES.ALL || result.type === RECURRING_TYPES.FUTURE) {
                             isSingleEventUpdate = false;
                         }
@@ -1681,6 +1689,9 @@ const InteractiveCalendarView = ({
             }
         }
         stopNESTMetric(isCreatingEvent);
+        if (isEditingEvent) {
+            stopEALMetric();
+        }
     };
 
     const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions: InviteActions, isModal = false) => {
@@ -1700,6 +1711,7 @@ const InteractiveCalendarView = ({
                 addresses,
                 onDeleteConfirmation: async (params) => {
                     const result = await handleDeleteConfirmation(params);
+                    startEALMetric('delete');
                     recurringType = result.type;
                     if (result.type === RECURRING_TYPES.ALL || result.type === RECURRING_TYPES.FUTURE) {
                         isSingleEventUpdate = false;
@@ -1814,6 +1826,7 @@ const InteractiveCalendarView = ({
                 dispatch(eventsActions.markEventAsDeleting({ targetEvent, isDeleting: false, recurringType }));
             }
         }
+        stopEALMetric();
     };
 
     useImperativeHandle(interactiveRef, () => ({
