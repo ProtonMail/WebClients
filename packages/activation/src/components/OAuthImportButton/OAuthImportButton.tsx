@@ -18,9 +18,10 @@ interface Props {
     displayOn: keyof EasySwitchFeatureFlag;
     onClick?: () => void;
     provider: AllowedImporter;
+    isDropdownButton?: boolean;
 }
 
-const OAuthImportButton = ({ className, provider, defaultCheckedTypes, displayOn, source, onClick }: Props) => {
+const OAuthImportButton = ({ className, provider, defaultCheckedTypes, displayOn, source, onClick, isDropdownButton }: Props) => {
     const [user, userLoading] = useUser();
     const isDelinquent = !user.hasNonDelinquentScope;
 
@@ -50,6 +51,7 @@ const OAuthImportButton = ({ className, provider, defaultCheckedTypes, displayOn
                 className={className}
                 onClick={handleClick}
                 label={c('Action').t`Import from Google`}
+                isDropdownButton={isDropdownButton}
             />
         );
     }
@@ -61,6 +63,7 @@ const OAuthImportButton = ({ className, provider, defaultCheckedTypes, displayOn
                 className={className}
                 onClick={handleClick}
                 label={c('Action').t`Import from Outlook`}
+                isDropdownButton={isDropdownButton}
             />
         );
     }
