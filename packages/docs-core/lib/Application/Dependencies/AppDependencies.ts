@@ -53,7 +53,7 @@ import { GetNodePermissions } from '../../UseCase/GetNodePermissions'
 import { GetDocumentKeys } from '../../UseCase/GetDocumentKeys'
 import { FetchMetaAndRawCommit } from '../../UseCase/FetchMetaAndRawCommit'
 import { IndexedDatabase } from '../../Database/IndexedDB'
-import type { DatabaseSchema} from '../../Database/Schema';
+import type { DatabaseSchema } from '../../Database/Schema'
 import { CURRENT_DB_VERSION, DATABASE_NAME, migrations } from '../../Database/Schema'
 
 export class AppDependencies extends DependencyContainer {
@@ -219,11 +219,19 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.GetNodePermissions, () => {
-      return new GetNodePermissions(compatWrapper, this.get<CacheService>(App_TYPES.CacheService))
+      return new GetNodePermissions(
+        compatWrapper,
+        this.get<CacheService>(App_TYPES.CacheService),
+        this.get<LoggerInterface>(App_TYPES.Logger),
+      )
     })
 
     this.bind(App_TYPES.GetDocumentKeys, () => {
-      return new GetDocumentKeys(compatWrapper, this.get<CacheService>(App_TYPES.CacheService))
+      return new GetDocumentKeys(
+        compatWrapper,
+        this.get<CacheService>(App_TYPES.CacheService),
+        this.get<LoggerInterface>(App_TYPES.Logger),
+      )
     })
 
     this.bind(App_TYPES.FetchMetaAndRawCommit, () => {
@@ -248,7 +256,11 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.GetNode, () => {
-      return new GetNode(compatWrapper, this.get<CacheService>(App_TYPES.CacheService))
+      return new GetNode(
+        compatWrapper,
+        this.get<CacheService>(App_TYPES.CacheService),
+        this.get<LoggerInterface>(App_TYPES.Logger),
+      )
     })
 
     this.bind(App_TYPES.LoadCommit, () => {
