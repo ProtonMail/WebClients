@@ -25,7 +25,6 @@ import {
     SidebarPrimaryButton,
     SimpleDropdown,
     SimpleSidebarListItemHeader,
-    Spotlight,
     SubscribedCalendarModal,
     Tooltip,
     useActiveBreakpoint,
@@ -52,7 +51,6 @@ import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/in
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import useVideoConferenceSpotlight from '../../hooks/useVideoConferenceSpotlight';
 import { useCalendarDispatch } from '../../store/hooks';
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 
@@ -86,7 +84,6 @@ const CalendarSidebar = ({
     const [showSideBar, setshowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONCALENDAR}-left-nav-opened`);
     const { viewportWidth } = useActiveBreakpoint();
     const collapsed = !showSideBar && !viewportWidth['<=small'];
-    const { spotlightContent, shouldShowSotlight, onDisplayed, onClose } = useVideoConferenceSpotlight();
 
     const onClickExpandNav = () => {
         sendRequestCollapsibleSidebarReport({
@@ -170,35 +167,20 @@ const CalendarSidebar = ({
 
     const primaryAction = (
         <Tooltip title={collapsed ? c('Action').t`New event` : null}>
-            <Spotlight
-                content={spotlightContent}
-                className="ml-2"
-                show={shouldShowSotlight}
-                onDisplayed={onDisplayed}
-                originalPlacement="right"
+            <SidebarPrimaryButton
+                data-testid="calendar-view:new-event-button"
+                disabled={!onCreateEvent}
+                onClick={() => {
+                    onCreateEvent?.();
+                }}
+                className={clsx('hidden md:flex items-center justify-center flex-nowrap gap-2', collapsed && 'px-0')}
             >
-                <SidebarPrimaryButton
-                    data-testid="calendar-view:new-event-button"
-                    disabled={!onCreateEvent}
-                    onClick={() => {
-                        // Close spotlight when clicking the button
-                        if (shouldShowSotlight) {
-                            onClose();
-                        }
-                        onCreateEvent?.();
-                    }}
-                    className={clsx(
-                        'hidden md:flex items-center justify-center flex-nowrap gap-2',
-                        collapsed && 'px-0'
-                    )}
-                >
-                    {collapsed ? (
-                        <Icon name="plus" className="flex mx-auto my-0.5" alt={c('Action').t`New event`} />
-                    ) : (
-                        <span className="text-ellipsis">{c('Action').t`New event`}</span>
-                    )}
-                </SidebarPrimaryButton>
-            </Spotlight>
+                {collapsed ? (
+                    <Icon name="plus" className="flex mx-auto my-0.5" alt={c('Action').t`New event`} />
+                ) : (
+                    <span className="text-ellipsis">{c('Action').t`New event`}</span>
+                )}
+            </SidebarPrimaryButton>
         </Tooltip>
     );
 

@@ -48,9 +48,10 @@ interface Props {
     model: EventModel;
     setModel: (value: EventModel) => void;
     accessLevel: ZoomAccessLevel;
+    onRowClick?: () => void;
 }
 
-export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
+export const ZoomRow = ({ model, setModel, accessLevel, onRowClick }: Props) => {
     const [user] = useUser();
 
     const [oAuthToken, oauthTokenLoading] = useOAuthToken();
@@ -132,6 +133,7 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
 
     const handleClick = async () => {
         sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.add_zoom_meeting_button);
+        onRowClick?.();
 
         if (!user.hasPaidMail) {
             sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.free_mail_users_upsell);
