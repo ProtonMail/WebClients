@@ -104,6 +104,7 @@ interface Props {
     addresses: Address[];
     calendarUserSettings: CalendarUserSettings;
     isAskUpdateTimezoneModalOpen?: boolean;
+    startPTTMetric?: (transition_type: VIEWS, prevClicked?: boolean, nextClicked?: boolean) => void;
 }
 
 const CalendarContainerView = ({
@@ -143,6 +144,8 @@ const CalendarContainerView = ({
     isAskUpdateTimezoneModalOpen,
 
     calendarUserSettings,
+
+    startPTTMetric,
 }: Props) => {
     const [showIframeMiniCalendar, setShowIframeMiniCalendar] = useState<boolean>(false);
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
@@ -207,10 +210,12 @@ const CalendarContainerView = ({
     );
 
     const handleClickNext = useCallback(() => {
+        startPTTMetric?.(view, false, true);
         onChangeDate(getDateDiff(utcDate, range, view, 1));
     }, [utcDate, range, view]);
 
     const handleClickPrev = useCallback(() => {
+        startPTTMetric?.(view, true);
         onChangeDate(getDateDiff(utcDate, range, view, -1));
     }, [utcDate, range, view]);
 
