@@ -88,7 +88,7 @@ export const useBitcoinAddresses = ({
                         return addr;
                     }
 
-                    // Verify if the signature is outdate
+                    // Verify if the signature is outdated
                     const isVerified = await verifySignedData(
                         addr.BitcoinAddress,
                         addr.BitcoinAddressSignature,
