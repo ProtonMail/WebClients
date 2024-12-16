@@ -1,5 +1,3 @@
-import { c, msgid } from 'ttag';
-
 import { Logo } from '@proton/components';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { PLANS } from '@proton/payments';
@@ -27,61 +25,12 @@ const getLumoBenefits = (): BenefitItem[] => {
     return [getSwissPrivacyLawsBenefit()].filter(isTruthy);
 };
 
-const  = (n: number) => {
-    return c('collider_2025: Info').ngettext(
-        msgid``,
-        ` day`,
-        n
-    );
-};
-
 const getFreeLumoFeatures = () => {
-    return [
-        {
-            text: (20),
-            included: true,
-        },
-        {
-            text: c('collider_2025: Info').t``,
-            included: true,
-        },
-        {
-            text: c('collider_2025: Info')
-                .t``,
-            included: true,
-        },
-    ];
+    return [];
 };
 
 const getLumoPlusFeatures = () => {
-    return [
-        {
-            text: c('collider_2025: feature').t``,
-            included: true,
-        },
-        {
-            text: c('collider_2025: feature').t``,
-            included: true,
-        },
-        {
-            text: c('collider_2025: feature')
-                .t``,
-            included: true,
-        },
-
-        {
-            text: c('collider_2025: feature').t``,
-            included: true,
-        },
-        {
-            text: c('collider_2025: feature').t`Priority access (get top priority, even during busy times)`,
-            included: true,
-        },
-        {
-            text: c('collider_2025: feature').t`Priority support`,
-            included: true,
-        },
-    ];
+    return [];
 };
 
 export const getLumoConfiguration = (): SignupConfiguration => {
@@ -89,7 +38,7 @@ export const getLumoConfiguration = (): SignupConfiguration => {
 
     const appName = LUMO_APP_NAME;
 
-    const title = c('collider_2025: Info').t``;
+    const title = '';
 
     const features = [getNoLogsFeature(), getEncryptedFeature({ e2ee: false }), getSwissFeature({ fullText: true })];
 
