@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { EasySwitchProvider } from '@proton/activation';
-import { Button } from '@proton/atoms';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 import DrawerView from '@proton/components/components/drawer/views/DrawerView';
@@ -13,9 +12,9 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import { useContactMergeModals } from '@proton/components/containers/contacts/hooks/useContactMergeModals';
 import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
 import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';
+import ContactsTabImportDropdown from '@proton/components/containers/contacts/widget/ContactsTabImportDropdown';
 import ContactsWidgetContainer from '@proton/components/containers/contacts/widget/ContactsWidgetContainer';
 import ContactsWidgetGroupsContainer from '@proton/components/containers/contacts/widget/ContactsWidgetGroupsContainer';
-import ContactsWidgetSettingsContainer from '@proton/components/containers/contacts/widget/ContactsWidgetSettingsContainer';
 import type { CustomAction } from '@proton/components/containers/contacts/widget/types';
 import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
 import useDrawerContactFocus from '@proton/components/hooks/useDrawerContactFocus';
@@ -35,7 +34,6 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
     const options: SelectedDrawerOption[] = [
         { text: c('Title').t`Contacts`, value: CONTACT_TAB.CONTACT },
         { text: c('Title').t`Groups`, value: CONTACT_TAB.CONTACT_GROUP },
-        { text: c('Title').t`Settings`, value: CONTACT_TAB.SETTINGS },
     ];
 
     const [tab, setTab] = useState<SelectedDrawerOption>(options[0]);
@@ -76,42 +74,52 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
         customAction.tabs.includes(tab);
 
     const getContent = (tab: CONTACT_TAB) => {
-        switch (tab) {
-            case CONTACT_TAB.CONTACT:
-                return (
-                    <ContactsWidgetContainer
-                        onCompose={onCompose}
-                        customActions={customActions.filter(actionIncludes(CONTACT_WIDGET_TABS.CONTACTS))}
-                        onDetails={handleDetails}
-                        onEdit={onEdit}
-                        onDelete={onDelete}
-                        onImport={onOpenImportModal}
-                        onMerge={onMerge}
-                        onGroupDetails={onGroupDetails}
-                        onGroupEdit={onGroupEdit}
-                        onUpgrade={onUpgrade}
-                        onSelectEmails={onSelectEmails}
-                        onLimitReached={onLimitReached}
-                        isDrawer
-                        searchInputRef={searchInputRef}
-                    />
-                );
-            case CONTACT_TAB.CONTACT_GROUP:
-                return (
-                    <ContactsWidgetGroupsContainer
-                        onCompose={onCompose}
-                        onImport={onOpenImportModal}
-                        customActions={customActions.filter(actionIncludes(CONTACT_WIDGET_TABS.GROUPS))}
-                        onDetails={onGroupDetails}
-                        onEdit={onGroupEdit}
-                        onDelete={onGroupDelete}
-                        onUpgrade={onUpgrade}
-                        isDrawer
-                    />
-                );
-            case CONTACT_TAB.SETTINGS:
-                return <ContactsWidgetSettingsContainer onImport={onOpenImportModal} onExport={onExport} />;
-        }
+        const tabContent = () => {
+            switch (tab) {
+                case CONTACT_TAB.CONTACT:
+                    return (
+                        <ContactsWidgetContainer
+                            onCompose={onCompose}
+                            customActions={customActions.filter(actionIncludes(CONTACT_WIDGET_TABS.CONTACTS))}
+                            onDetails={handleDetails}
+                            onEdit={onEdit}
+                            onDelete={onDelete}
+                            onImport={onOpenImportModal}
+                            onMerge={onMerge}
+                            onGroupDetails={onGroupDetails}
+                            onGroupEdit={onGroupEdit}
+                            onUpgrade={onUpgrade}
+                            onSelectEmails={onSelectEmails}
+                            onLimitReached={onLimitReached}
+                            searchInputRef={searchInputRef}
+                            onExport={onExport}
+                        />
+                    );
+                case CONTACT_TAB.CONTACT_GROUP:
+                    return (
+                        <ContactsWidgetGroupsContainer
+                            onCompose={onCompose}
+                            onImport={onOpenImportModal}
+                            customActions={customActions.filter(actionIncludes(CONTACT_WIDGET_TABS.GROUPS))}
+                            onDetails={onGroupDetails}
+                            onEdit={onGroupEdit}
+                            onDelete={onGroupDelete}
+                            onUpgrade={onUpgrade}
+                        />
+                    );
+            }
+        };
+
+        return (
+            <div
+                id={`content-tab-${tab}`}
+                role="tabpanel"
+                aria-labelledby={`header-tab-${tab}`}
+                className="flex flex-1 h-full w-full"
+            >
+                {tabContent()}
+            </div>
+        );
     };
 
     const getFooterButtons = (tab: CONTACT_TAB) => {
@@ -120,21 +128,19 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                 return [
                     <PrimaryButton
                         data-testid="contacts:add-contact"
-                        key="footer-button-1"
+                        key="contact-footer-button-1"
                         onClick={() => onEdit({})}
                     >{c('Action').t`Add contact`}</PrimaryButton>,
-                    <Button key="footer-button-2" onClick={onOpenImportModal}>{c('Action').t`Import contacts`}</Button>,
+                    <ContactsTabImportDropdown onImport={onOpenImportModal} />,
                 ];
             case CONTACT_TAB.CONTACT_GROUP:
                 return [
                     <PrimaryButton
                         data-testid="groups:add-group"
-                        key="footer-button-1"
+                        key="contact-footer-button-3"
                         onClick={() => handleAddContactGroup()}
                     >{c('Action').t`Add new group`}</PrimaryButton>,
                 ];
-            case CONTACT_TAB.SETTINGS:
-                return undefined;
         }
     };
 
@@ -147,6 +153,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                 footerButtons={getFooterButtons(tab.value as CONTACT_TAB)}
                 onAnimationEnd={onFocusSearchInput}
                 id="drawer-app-proton-contact"
+                isUsingTabs
             >
                 {getContent(tab.value as CONTACT_TAB)}
             </DrawerView>

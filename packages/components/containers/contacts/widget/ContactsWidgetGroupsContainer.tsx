@@ -32,7 +32,6 @@ interface Props {
     onDelete: (props: ContactGroupDeleteProps) => void;
     onEdit: (props: ContactGroupEditProps) => void;
     onUpgrade: () => void;
-    isDrawer?: boolean;
 }
 
 const ContactsWidgetGroupsContainer = ({
@@ -44,7 +43,6 @@ const ContactsWidgetGroupsContainer = ({
     onDelete,
     onEdit,
     onUpgrade,
-    isDrawer = false,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const { createNotification } = useNotifications();
@@ -184,7 +182,7 @@ const ContactsWidgetGroupsContainer = ({
     const showList = !showPlaceholder;
 
     return (
-        <div className="flex flex-column flex-nowrap h-full">
+        <div className="flex flex-column flex-nowrap h-full w-full">
             <div className="contacts-widget-search-container shrink-0">
                 <label htmlFor="id_contact-widget-search" className="sr-only">{c('Placeholder')
                     .t`Search for group name`}</label>
@@ -199,7 +197,7 @@ const ContactsWidgetGroupsContainer = ({
                     {c('Info').ngettext(msgid`${groupCounts} group found`, `${groupCounts} groups found`, groupCounts)}
                 </span>
             </div>
-            <div className="contacts-widget-toolbar py-4 border-bottom border-weak shrink-0">
+            <div className="contacts-widget-toolbar py-3 border-bottom border-weak shrink-0">
                 <ContactsWidgetGroupsToolbar
                     allChecked={allChecked}
                     selected={selectedIDs}
@@ -210,14 +208,12 @@ const ContactsWidgetGroupsContainer = ({
                     recipients={recipients}
                     onClose={onClose}
                     customActions={customActions}
-                    onCreate={handleCreate}
                     onDelete={handleDelete}
-                    isDrawer={isDrawer}
                 />
             </div>
-            <div className="flex-1 w-full">
+            <div className="flex-1 w-full h-full">
                 {loading ? (
-                    <div className="flex h-full">
+                    <div className="flex h-full w-full">
                         <CircleLoader className="m-auto color-primary" size="large" />
                     </div>
                 ) : null}
@@ -237,7 +233,6 @@ const ContactsWidgetGroupsContainer = ({
                         isLargeViewport={false}
                         checkedIDs={checkedIDs}
                         onClick={handleDetails}
-                        isDrawer={isDrawer}
                         onCompose={onCompose}
                     />
                 ) : null}

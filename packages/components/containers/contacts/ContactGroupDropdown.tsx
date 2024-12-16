@@ -219,7 +219,7 @@ const ContactGroupDropdown = ({
                     onClick={handleClick}
                     hasCaret={!forToolbar}
                     disabled={disabled}
-                    className={clsx([forToolbar ? 'button-for-icon' : 'flex items-center', className])}
+                    className={clsx(['flex items-center', className])}
                     {...rest}
                 >
                     {children}

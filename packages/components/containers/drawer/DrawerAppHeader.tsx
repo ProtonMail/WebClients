@@ -27,13 +27,14 @@ import './DrawerAppHeader.scss';
 export interface PrivateIframeHeaderProps {
     title?: ReactNode;
     onCloseDropdown?: () => void;
+    isUsingTabs?: boolean;
 
     // Need to set this to true for iframes apps. When inside an iframe, the window width is really small
     // So, If we want to display a dropdown "correctly" (not in a modal) we need to make a special case for now
     customDropdown?: ReactNode;
 }
 
-const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIframeHeaderProps) => {
+const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown, isUsingTabs = false }: PrivateIframeHeaderProps) => {
     const { call } = useEventManager();
     const theme = useTheme();
     const { appInView, setAppInView, parentApp } = useDrawer();
@@ -140,9 +141,9 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIfra
 
     return (
         <div className="relative ui-standard color-norm shrink-0" ref={wrapperRef}>
-            <Header className="header--drawer p-3">
+            <Header className="header--drawer flex-column p-3" style={{ blockSize: 'auto' }}>
                 <div className="drawer-app-header-actions flex justify-space-between items-center w-full">
-                    <h2 className="text-bold text-lg">{title}</h2>
+                    {isUsingTabs ? title : <h2 className="text-bold text-lg flex-1">{title}</h2>}
 
                     <div className="flex items-center flex-nowrap gap-2">
                         <Tooltip title={c('Action').t`Close`}>
