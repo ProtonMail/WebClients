@@ -754,36 +754,9 @@ export const getLumoPlan = (plan: Plan): ShortPlan => {
         plan: PLANS.LUMO,
         title: plan.Title,
         label: '',
-        description: c('collider_2025: Info').t`Your private AI helper`,
+        description: '',
         cta: getCTA(plan.Title),
-        features: [
-            {
-                text: c('collider_2025: feature').t`Unlimited questions every day`,
-                included: true,
-            },
-            {
-                text: c('collider_2025: feature').t`Unlimited chat history`,
-                included: true,
-            },
-            {
-                text: c('collider_2025: feature')
-                    .t`Handles complex conversations (supports input equivalent of 40 pages of text)`,
-                included: true,
-            },
-
-            {
-                text: c('collider_2025: feature').t`Favorite conversations`,
-                included: true,
-            },
-            {
-                text: c('collider_2025: feature').t`Priority access (get top priority, even during busy times)`,
-                included: true,
-            },
-            {
-                text: c('collider_2025: feature').t`Priority support`,
-                included: true,
-            },
-        ],
+        features: [],
     };
 };
 
