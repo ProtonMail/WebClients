@@ -12,6 +12,7 @@ import * as config from './app/config';
 import { WINDOWS_APP_ID } from './constants';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
+import { fixSSOUrl } from './lib/sso';
 import { getTheme } from './lib/theming';
 import { userAgent } from './lib/user-agent';
 import { getWindowConfig, registerWindowManagementHandlers } from './lib/window-management';
@@ -37,31 +38,13 @@ const createSession = () => {
     // Use certificate pinning
     secureSession.setCertificateVerifyProc(certificateVerifyProc);
 
-    // Fix SSO callback URL
-    secureSession.webRequest.onHeadersReceived(
-        {
-            urls: [`https://${DOMAIN}/api/auth/saml`, `${config.SSO_URL}/api/auth/saml`, `${config.API_URL}/auth/saml`],
-            types: ['mainFrame'],
-        },
-        ({ responseHeaders }, callback) => {
-            const location = (responseHeaders?.Location || responseHeaders?.location)?.[0];
+    secureSession.webRequest.onHeadersReceived({ urls: [`https://*.${DOMAIN}/*`] }, (details, callback) => {
+        // FIXME: Temporary bypass for SSO callback using the wrong protocol
+        fixSSOUrl(details);
 
-            if (location && !location.startsWith(config.SSO_URL)) {
-                delete responseHeaders!.location;
-                delete responseHeaders!.Location;
-                const url = new URL(location);
-                const newLocation = `${config.SSO_URL}${url.pathname}${url.search}${url.hash}`;
-                responseHeaders!.location = [newLocation];
-                logger.debug(`[onHeadersReceived] rewriting SSO callback URL from '${location}' to '${newLocation}'`);
-            }
-
-            callback({ cancel: false, responseHeaders });
-        }
-    );
-
-    if (isProdEnv()) {
-        secureSession.webRequest.onHeadersReceived({ urls: [`https://*.${DOMAIN}/*`] }, (details, callback) => {
-            const { responseHeaders = {}, frame } = details;
+        if (isProdEnv()) {
+            if (!details.responseHeaders) details.responseHeaders = {};
+            const { responseHeaders, frame } = details;
             const appRequest = frame?.url?.startsWith('file://') ?? false;
 
             /** If the request is made from a `file://` url: migrate ALL `SameSite` directives
@@ -69,14 +52,14 @@ const createSession = () => {
              * EMPTY `SameSite` cookie directives to `None` to preserve `Session-ID` cookies */
             if (appRequest) {
                 migrateSameSiteCookies(responseHeaders);
+                responseHeaders['access-control-allow-headers'] = Object.keys(responseHeaders);
                 responseHeaders['access-control-allow-origin'] = ['file://'];
                 responseHeaders['access-control-allow-credentials'] = ['true'];
-                responseHeaders['access-control-allow-headers'] = Object.keys(details.responseHeaders || {});
             } else upgradeSameSiteCookies(responseHeaders);
+        }
 
-            callback({ cancel: false, responseHeaders });
-        });
-    }
+        callback({ cancel: false, responseHeaders: details.responseHeaders });
+    });
 
     const clientId = ((): string => {
         const config = APPS_CONFIGURATION[APPS.PROTONPASS];
