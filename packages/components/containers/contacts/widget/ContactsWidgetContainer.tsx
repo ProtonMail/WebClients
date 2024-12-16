@@ -7,6 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { CircleLoader } from '@proton/atoms';
 import SearchInput from '@proton/components/components/input/SearchInput';
+import type { ContactExportingProps } from '@proton/components/containers/contacts/modals/ContactExportingModal';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
@@ -48,8 +49,8 @@ interface Props {
     onLimitReached: (props: ContactGroupLimitReachedProps) => void;
     onUpgrade: () => void;
     onSelectEmails: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
-    isDrawer?: boolean;
     searchInputRef?: RefObject<HTMLInputElement>;
+    onExport: (props: ContactExportingProps) => void;
 }
 
 const ContactsWidgetContainer = ({
@@ -67,8 +68,8 @@ const ContactsWidgetContainer = ({
     onLimitReached,
     onUpgrade,
     onSelectEmails,
-    isDrawer = false,
     searchInputRef,
+    onExport,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const [user, loadingUser] = useUser();
@@ -190,6 +191,11 @@ const ContactsWidgetContainer = ({
         onClose?.();
     };
 
+    const handleExport = () => {
+        // Opens the contact export modal, with a selection of contacts to export
+        onExport({ inputContactsIds: selectedIDs });
+    };
+
     const handleDelete = () => {
         const deleteAll = selectedIDs.length === contacts.length;
         onDelete({
@@ -233,13 +239,12 @@ const ContactsWidgetContainer = ({
     const showList = !loading && !showPlaceholder;
 
     return (
-        <div className="flex flex-column flex-nowrap h-full">
+        <div className="flex flex-column flex-nowrap h-full w-full">
             <div className="contacts-widget-search-container shrink-0">
                 <label htmlFor="id_contact-widget-search" className="sr-only">{c('Placeholder')
                     .t`Search for name or email`}</label>
                 <SearchInput
                     ref={searchInputRef}
-                    autoFocus={!isDrawer}
                     value={search}
                     onChange={setSearch}
                     id="id_contact-widget-search"
@@ -263,7 +268,7 @@ const ContactsWidgetContainer = ({
                     customActions={customActions}
                     contactList={contactList}
                     onForward={handleForward}
-                    onCreate={handleCreate}
+                    onExport={handleExport}
                     onDelete={handleDelete}
                     onMerge={() => handleMerge(false)}
                     onLimitReached={onLimitReached}
@@ -272,7 +277,6 @@ const ContactsWidgetContainer = ({
                     onGroupEdit={onGroupEdit}
                     onUpgrade={onUpgrade}
                     onSelectEmails={onSelectEmails}
-                    isDrawer={isDrawer}
                 />
 
                 {contactsLength ? (
@@ -301,9 +305,9 @@ const ContactsWidgetContainer = ({
             {showList && countMergeableContacts ? (
                 <MergeContactBanner onMerge={() => handleMerge(true)} countMergeableContacts={countMergeableContacts} />
             ) : null}
-            <div className="flex-1 w-full">
+            <div className="flex-1 w-full flex">
                 {loading ? (
-                    <div className="flex h-full">
+                    <div className="flex h-full w-full">
                         <CircleLoader className="m-auto color-primary" size="large" />
                     </div>
                 ) : null}
@@ -327,7 +331,6 @@ const ContactsWidgetContainer = ({
                         onClick={onDetails}
                         activateDrag={false}
                         onGroupDetails={onGroupDetails}
-                        isDrawer={isDrawer}
                         onCompose={onCompose}
                     />
                 ) : null}

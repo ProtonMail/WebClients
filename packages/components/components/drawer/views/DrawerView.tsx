@@ -4,6 +4,7 @@ import DrawerHeaderTitleDropdown from '@proton/components/components/drawer/view
 import DrawerAppFooter from '@proton/components/containers/drawer/DrawerAppFooter';
 import DrawerAppHeader from '@proton/components/containers/drawer/DrawerAppHeader';
 import clsx from '@proton/utils/clsx';
+import DrawerHeaderTitleTabs from './DrawerHeaderTitleTabs';
 
 export interface SelectedDrawerOption {
     text: string;
@@ -17,6 +18,7 @@ interface Props extends Omit<HTMLAttributes<HTMLElement>, 'content'> {
     children: ReactNode;
     footerButtons?: JSX.Element[];
     onAnimationEnd?: () => void;
+    isUsingTabs?: boolean;
 }
 
 const DrawerView = ({
@@ -27,11 +29,13 @@ const DrawerView = ({
     onAnimationEnd,
     className,
     children,
+    isUsingTabs = false,
     ...rest
 }: Props) => {
-    const drawerHeaderTitle = options ? (
+    const drawerHeaderTitle = options ?
+        isUsingTabs ? <DrawerHeaderTitleTabs title={tab.text} options={options} onClickOption={onSelectDrawerOption} /> : 
         <DrawerHeaderTitleDropdown title={tab.text} options={options} onClickOption={onSelectDrawerOption} />
-    ) : (
+     : (
         tab.text
     );
 
@@ -49,7 +53,7 @@ const DrawerView = ({
             onAnimationEnd={handleOnAnimationEnd}
             {...rest}
         >
-            <DrawerAppHeader title={drawerHeaderTitle} />
+            <DrawerAppHeader title={drawerHeaderTitle} isUsingTabs={isUsingTabs} />
             <div className="flex-1 contacts-widget w-full">{children}</div>
             {footerButtons && <DrawerAppFooter buttons={footerButtons} />}
         </div>
