@@ -1,5 +1,5 @@
 import { RecentDocumentState, DefaultValues } from './RecentDocumentState'
-import { ServerTime } from '@proton/docs-shared'
+import { getErrorString, ServerTime } from '@proton/docs-shared'
 import type { DriveCompat } from '@proton/drive-store'
 import type { DocsApi } from '../../Api/DocsApi'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -23,7 +23,9 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
     private cacheService: CacheService,
     private logger: LoggerInterface,
   ) {
-    void this.loadCachedSnapshot()
+    this.loadCachedSnapshot().catch((error) => {
+      this.logger.error('Failed to load recent documents from cache', getErrorString(error))
+    })
   }
 
   async cacheSnapshot() {
