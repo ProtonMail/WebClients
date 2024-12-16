@@ -1,4 +1,4 @@
-import { FREQUENCY } from '@proton/shared/lib/calendar/constants';
+import { FREQUENCY, VIEWS } from '@proton/shared/lib/calendar/constants';
 
 import type { CalendarViewEventTemporaryEvent } from '../containers/calendar/interface';
 
@@ -9,3 +9,18 @@ export const getNESTData = (temporaryEvent: CalendarViewEventTemporaryEvent) => 
         hasConferenceData: !!temporaryEvent.tmpData.conferenceId && !!temporaryEvent.tmpData.conferenceUrl,
     };
 };
+
+export const converViewToString = (view: VIEWS) => {
+    switch (view) {
+        case VIEWS.DAY:
+            return 'day-view';
+        case VIEWS.WEEK:
+            return 'week-view';
+        case VIEWS.MONTH:
+            return 'month-view';
+        case VIEWS.SEARCH:
+            return 'search-view';
+        default:
+            return 'custom';
+    }
+}

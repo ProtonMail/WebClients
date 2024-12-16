@@ -57,6 +57,8 @@ import {
     saveLastTimezoneSuggestion,
 } from '../../helpers/timezoneSuggestion';
 import type { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
+import { useCalendarCEDTMetric } from '../../metrics/useCalendarCEDTMetric';
+import { useCalendarPTTMetric } from '../../metrics/useCalendarPTTMetric';
 import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';
@@ -300,6 +302,9 @@ const CalendarContainer = ({
         return WEEK;
     })();
 
+    const { stopCEDTMetric } = useCalendarCEDTMetric();
+    const { startPTTMetric, stopPTTMetric } = useCalendarPTTMetric();
+
     // Temporary log for debugging
     const prevViewRef = useRef('' as unknown as VIEWS);
     useEffect(() => {
@@ -318,6 +323,9 @@ const CalendarContainer = ({
         }
 
         if (prevViewRef.current !== view) {
+            if (!!prevViewRef.current) {
+                startPTTMetric(prevViewRef.current);
+            }
             prevViewRef.current = view;
         }
     }, [view]);
@@ -495,6 +503,14 @@ const CalendarContainer = ({
         !activeCalendars.some(unary(getIsCalendarWritable)) ||
         view === SEARCH;
 
+    useEffect(() => {
+        if (isLoading || calendarsEvents.some((event) => !event.data.eventReadResult)) {
+            return;
+        }
+        stopCEDTMetric(view);
+        stopPTTMetric();
+    }, [calendarsEvents]);
+
     return (
         <CalendarContainerView
             calendarUserSettings={calendarUserSettings}
@@ -528,6 +544,7 @@ const CalendarContainer = ({
             onSearch={handleSearch}
             addresses={addresses}
             isAskUpdateTimezoneModalOpen={isAskUpdateTimezoneModalOpen}
+            startPTTMetric={startPTTMetric}
         >
             {!!localTimezoneId && (
                 <AskUpdateTimezoneModal
