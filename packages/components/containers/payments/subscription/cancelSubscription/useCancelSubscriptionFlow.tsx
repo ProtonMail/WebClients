@@ -357,10 +357,11 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
 
     const handleUnsubscribe = async (subscriptionReminderFlow: boolean = false) => {
         const shouldCalendarPreventDowngradePromise = getShouldCalendarPreventSubscripitionChange({
-            hasPaidMail: hasPaidMail(user),
-            willHavePaidMail: false,
+            user,
+            newPlan: {},
             api,
             getCalendars,
+            plans,
         });
 
         if (hasMigrationDiscount(subscription)) {
