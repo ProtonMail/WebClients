@@ -7,6 +7,7 @@ import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrap
 import type { CacheService } from '../Services/CacheService'
 import type { CachableResult } from './CachableResult'
 import { rawPermissionToRole } from '../Types/DocumentEntitlements'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 type GetNodePermissionsResult = CachableResult & {
   role: DocumentRole
@@ -18,6 +19,7 @@ export class GetNodePermissions implements UseCaseInterface<GetNodePermissionsRe
   constructor(
     private compatWrapper: DriveCompatWrapper,
     private cacheService: CacheService,
+    private logger: LoggerInterface,
   ) {}
 
   async execute(nodeMeta: NodeMeta, options: { useCache: boolean }): Promise<Result<GetNodePermissionsResult>> {
@@ -34,7 +36,11 @@ export class GetNodePermissions implements UseCaseInterface<GetNodePermissionsRe
           }
         }
       }
+    } catch (error) {
+      this.logger.error('Failed to load node permissions from cache', getErrorString(error))
+    }
 
+    try {
       const permissions = await this.compatWrapper.getUserCompat().getNodePermissions(nodeMeta)
 
       if (!permissions) {

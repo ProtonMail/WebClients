@@ -6,6 +6,7 @@ import { isPublicNodeMeta } from '@proton/drive-store'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { CacheService } from '../Services/CacheService'
 import type { CachableResult } from './CachableResult'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 type GetNodeResult = CachableResult & {
   node: DecryptedNode
@@ -17,6 +18,7 @@ export class GetNode implements UseCaseInterface<GetNodeResult> {
   constructor(
     private compatWrapper: DriveCompatWrapper,
     private cacheService: CacheService | undefined,
+    private logger: LoggerInterface,
   ) {}
 
   async execute(nodeMeta: NodeMeta | PublicNodeMeta, options: { useCache: boolean }): Promise<Result<GetNodeResult>> {
@@ -33,7 +35,11 @@ export class GetNode implements UseCaseInterface<GetNodeResult> {
           }
         }
       }
+    } catch (error) {
+      this.logger.error('Failed to load node from cache', getErrorString(error))
+    }
 
+    try {
       const node = isPublicNodeMeta(nodeMeta)
         ? await this.compatWrapper.getPublicCompat().getNode(nodeMeta)
         : await this.compatWrapper.getUserCompat().getNode(nodeMeta)
