@@ -12,7 +12,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
-import NewOnboardingContent from '../layout/NewOnboardingContent';
+import OnboardingContent from '../layout/OnboardingContent';
 
 const getPrivacyFeatures = () => {
     // translator: full sentence "Advanced encryption ensures only you and intended recipients can access your emails."
@@ -85,7 +85,7 @@ const OnboardingWelcomeStep = ({ onNext }: OnboardingStepRenderCallback) => {
 
     return (
         <OnboardingStep>
-            <NewOnboardingContent
+            <OnboardingContent
                 title={c('Onboarding modal').t`Welcome to ${MAIL_APP_NAME}`}
                 description={c('Onboarding modal').t`Where privacy is default.`}
                 className="mb-16"
@@ -95,7 +95,7 @@ const OnboardingWelcomeStep = ({ onNext }: OnboardingStepRenderCallback) => {
                         <PrivacyFeature key={id} imgSrc={img} description={description} />
                     ))}
                 </div>
-            </NewOnboardingContent>
+            </OnboardingContent>
             <footer>
                 <Button size="large" color="norm" fullWidth onClick={handleNext}>
                     {c('Onboarding modal').t`Let's get started`}

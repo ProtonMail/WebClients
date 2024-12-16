@@ -23,7 +23,7 @@ import noop from '@proton/utils/noop';
 
 import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
 
-import NewOnboardingContent from '../layout/NewOnboardingContent';
+import OnboardingContent from '../layout/OnboardingContent';
 
 const getApps = (displayAltDesktopVersion: boolean, onClick: (type: 'desktopLink' | 'mobileLink') => void) => {
     // translator: full sentence "Get it from the App Store or Google Play."
@@ -181,7 +181,7 @@ const GetTheAppsStep = ({ onNext }: OnboardingStepRenderCallback) => {
 
     return (
         <OnboardingStep>
-            <NewOnboardingContent
+            <OnboardingContent
                 title={c('Onboarding modal').jt`More ways to experience ${MAIL_APP_NAME}`}
                 className="mb-12"
             >
@@ -203,7 +203,7 @@ const GetTheAppsStep = ({ onNext }: OnboardingStepRenderCallback) => {
                         title={apps.desktopApp.title}
                     />
                 </div>
-            </NewOnboardingContent>
+            </OnboardingContent>
             <footer>
                 {!displayAltVersion && desktopAppLink && (
                     <ButtonLike
