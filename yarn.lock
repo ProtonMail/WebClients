@@ -7568,7 +7568,7 @@ __metadata:
     karma-webkit-launcher: "npm:^2.6.0"
     karma-webpack: "npm:^5.0.1"
     playwright: "npm:^1.49.0"
-    pmcrypto: "npm:@protontech/pmcrypto@^8.1.2"
+    pmcrypto: "npm:@protontech/pmcrypto@~8.1.3"
     prettier: "npm:^3.4.2"
     ts-loader: "npm:^9.5.1"
     typescript: "npm:^5.7.2"
@@ -32758,10 +32758,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openpgp@npm:@protontech/openpgp@~6.0.2-patch.0":
-  version: 6.0.2-patch.0
-  resolution: "@protontech/openpgp@npm:6.0.2-patch.0"
-  checksum: 10c0/3f149a9979b2b7aef7df649e02ddf6281d77138ad8b7e03125db4927d8e76be6200515aa4e36f28c63b4eae9b46ccc536071e19ef4178f7d52f9d26f94750fb0
+"openpgp@npm:@protontech/openpgp@~6.0.2-patch.1":
+  version: 6.0.2-patch.1
+  resolution: "@protontech/openpgp@npm:6.0.2-patch.1"
+  checksum: 10c0/c9c79d9df8eabba84ba1d52e5c53b2010a2075a937ff25504908c3afb43fff22899be216bb14f5a6b9d7b5504f8ed6843d03453a3d46a47f94f0856dbf5612f9
   languageName: node
   linkType: hard
 
@@ -34144,15 +34144,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pmcrypto@npm:@protontech/pmcrypto@^8.1.2":
-  version: 8.1.2
-  resolution: "@protontech/pmcrypto@npm:8.1.2"
+"pmcrypto@npm:@protontech/pmcrypto@~8.1.3":
+  version: 8.1.3
+  resolution: "@protontech/pmcrypto@npm:8.1.3"
   dependencies:
     "@noble/hashes": "npm:^1.6.0"
     "@openpgp/web-stream-tools": "npm:~0.1.3"
     jsmimeparser: "npm:@protontech/jsmimeparser@^3.0.1"
-    openpgp: "npm:@protontech/openpgp@~6.0.2-patch.0"
-  checksum: 10c0/5c8dea6cdd2748c7ffb5caff78e5aaa66926204960d5b7bb1f7eeea79a18f9bcaf097d97c67f4467fa1889b9175371ea8da40dd36324f83e57edeaae53e65fa6
+    openpgp: "npm:@protontech/openpgp@~6.0.2-patch.1"
+  checksum: 10c0/f19b92f8f72d83fa8f825d94a4ed7e1f1ced7603e00e02c744d161075703ebe0cf3907a450e50a1320fb7f8513c51f9c7ab24f77f14fbbef9fc6ac4a63617de7
   languageName: node
   linkType: hard
 
