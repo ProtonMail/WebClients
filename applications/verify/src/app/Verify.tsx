@@ -12,6 +12,7 @@ import {
     useNotifications,
     useThemeQueryParameter,
 } from '@proton/components';
+import AccountLockedUpsellForm from '@proton/components/components/upsell/modal/AccountLockedUpsellForm';
 import useInstance from '@proton/hooks/useInstance';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
@@ -182,7 +183,9 @@ const Verify = () => {
         return wrapInMain('You need to specify a token');
     }
 
-    const hv = (
+    const hv = methods.includes('payment') ? (
+        <AccountLockedUpsellForm />
+    ) : (
         <HumanVerificationForm
             theme={theme && darkThemes.includes(theme) ? 'dark' : 'light'}
             step={step}
