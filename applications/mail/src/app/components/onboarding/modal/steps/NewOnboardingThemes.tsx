@@ -16,7 +16,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
 
-import NewOnboardingContent from '../layout/NewOnboardingContent';
+import OnboardingContent from '../layout/OnboardingContent';
 
 const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
     const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
@@ -42,7 +42,7 @@ const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
 
     return (
         <OnboardingStep>
-            <NewOnboardingContent
+            <OnboardingContent
                 title={c('Onboarding Proton').t`Make it your own`}
                 description={c('Onboarding Proton').t`Choose your preferred look and feel.`}
                 titleBlockClassName="mb-6"
@@ -72,7 +72,7 @@ const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
                         );
                     })}
                 </ul>
-            </NewOnboardingContent>
+            </OnboardingContent>
             <footer>
                 <Button size="large" fullWidth color="norm" onClick={handleNext}>
                     {c('Action').t`Use this`}
