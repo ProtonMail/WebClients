@@ -8,13 +8,12 @@ interface DownloadConfig {
 }
 
 const SECURITY_HEADERS = {
-    'Content-Security-Policy': "default-src 'none'",
+    'Content-Security-Policy': "default-src 'none'; frame-ancestors 'self'",
     'X-Content-Security-Policy': "default-src 'none'",
     'X-WebKit-CSP': "default-src 'none'",
     'Referrer-Policy': 'strict-origin-when-cross-origin',
     'Strict-Transport-Security': 'max-age=31536000',
     'X-Content-Type-Options': 'nosniff',
-    'X-Frame-Options': 'deny',
     'X-XSS-Protection': '1; mode=block',
     'X-Permitted-Cross-Domain-Policies': 'none',
 };
