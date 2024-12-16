@@ -13,8 +13,8 @@ import { WINDOWS_APP_ID } from './constants';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
 import { getTheme } from './lib/theming';
-import { getWindowConfig, registerWindowManagementHandlers } from './lib/window-management';
 import { userAgent } from './lib/user-agent';
+import { getWindowConfig, registerWindowManagementHandlers } from './lib/window-management';
 import { setApplicationMenu } from './menu-view/application-menu';
 import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
@@ -33,6 +33,9 @@ const createSession = () => {
     const filter = { urls: [`${getAppUrlFromApiUrl(config.API_URL, APPS.PROTONPASS)}*`] };
 
     secureSession.setPermissionRequestHandler((_webContents, _permission, callback) => callback(false));
+
+    // Use certificate pinning
+    secureSession.setCertificateVerifyProc(certificateVerifyProc);
 
     // Fix SSO callback URL
     secureSession.webRequest.onHeadersReceived(
@@ -57,9 +60,6 @@ const createSession = () => {
     );
 
     if (isProdEnv()) {
-        // Use certificate pinning
-        if (config.SSO_URL.endsWith('proton.me')) secureSession.setCertificateVerifyProc(certificateVerifyProc);
-
         secureSession.webRequest.onHeadersReceived({ urls: [`https://*.${DOMAIN}/*`] }, (details, callback) => {
             const { responseHeaders = {}, frame } = details;
             const appRequest = frame?.url?.startsWith('file://') ?? false;
