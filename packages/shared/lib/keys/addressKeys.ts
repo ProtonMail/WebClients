@@ -309,7 +309,6 @@ export interface GenerateAddressKeyArguments<C extends KeyGenConfig | KeyGenConf
     keyGenConfig?: C;
 }
 
-// TODOOOOO instead of type inference, create separate generateAddressKeyV6 helper?
 export const generateAddressKey = async <C extends KeyGenConfig | KeyGenConfigV6>({
     email,
     name = email,
