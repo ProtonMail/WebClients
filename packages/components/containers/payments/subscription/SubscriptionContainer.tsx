@@ -1087,11 +1087,9 @@ const SubscriptionContainer = ({
                                                 currentPlan={currentPlan}
                                                 planIDs={optimisticPlanIDs ?? model.planIDs}
                                                 onChangePlanIDs={handleOptimisticPlanIDs}
-                                                forceHideDescriptions
-                                                showUsersTooltip={false}
                                                 latestSubscription={latestSubscription}
                                                 allowedAddonTypes={allowedAddonTypes}
-                                                className="mb-8"
+                                                className="subscription-container-plan-customizer"
                                             />
                                         )}
                                         <div className="mb-8">

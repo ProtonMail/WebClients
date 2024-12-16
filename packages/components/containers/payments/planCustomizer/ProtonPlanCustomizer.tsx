@@ -1,10 +1,11 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { useCallback, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
 import { type ADDON_NAMES, AddonKey, AddonLimit, type Currency, type PlanIDs, SelectedPlan } from '@proton/payments';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { AddonGuard, SupportedAddons } from '@proton/shared/lib/helpers/addons';
 import {
     getSupportedAddons,
@@ -31,11 +32,9 @@ import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import ScribeAddon from '../ScribeAddon';
-import { AccountSizeCustomiser } from './AccountSizeCustomiser';
-import { AdditionalOptionsCustomiser } from './AdditionalOptionsCustomiser';
-import { ButtonNumberInput } from './ButtonNumberInput';
 import { IPsNumberCustomiser } from './IPsNumberCustomiser';
 import LumoAddon from './LumoAddon';
+import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
 import type { DecreaseBlockedReason } from './helpers';
 
 import './ProtonPlanCustomizer.scss';
@@ -54,7 +53,6 @@ interface AddonCustomizerProps {
     showUsersTooltip?: boolean;
     latestSubscription?: Subscription;
     supportedAddons: SupportedAddons;
-    showAddonDescriptions: boolean;
     scribeAddonEnabled: boolean;
     lumoAddonEnabled: boolean;
     audience?: Audience;
@@ -73,7 +71,6 @@ const AddonCustomizer = ({
     showUsersTooltip,
     latestSubscription,
     supportedAddons,
-    showAddonDescriptions,
     scribeAddonEnabled,
     lumoAddonEnabled,
     audience,
@@ -176,90 +173,100 @@ const AddonCustomizer = ({
             ? selectedPlan.getTotalUsers()
             : AddonLimit[addonNameKey] * addonMultiplier;
 
-    const input = (
-        <ButtonNumberInput
-            key={`${addon.Name}-input`}
-            id={addon.Name}
-            value={value}
-            min={displayMin}
-            max={max}
-            disabled={loading || !isSupported}
-            onChange={(newQuantity) => {
-                const newValue = (newQuantity - min) / addonMultiplier;
-                let newPlanIDs = setQuantity(planIDs, addon.Name, newValue);
-                if (isMemberAddon(addonNameKey) && scribeAddonKey) {
-                    const membersValue = value;
-                    const scribeValue = planIDs[scribeAddonKey];
-                    const scribeConstrain = membersValue === scribeValue;
-                    if (scribeConstrain) {
-                        newPlanIDs = setQuantity(newPlanIDs, scribeAddonKey, newQuantity);
-                    }
+    const sharedNumberCustomizerProps: Pick<
+        NumberCustomiserProps,
+        'addon' | 'value' | 'min' | 'max' | 'disabled' | 'onChange' | 'step' | 'decreaseBlockedReasons'
+    > = {
+        addon,
+        value,
+        min: displayMin,
+        max,
+        disabled: loading || !isSupported,
+        onChange: (newQuantity) => {
+            const newValue = (newQuantity - min) / addonMultiplier;
+            let newPlanIDs = setQuantity(planIDs, addon.Name, newValue);
+            if (isMemberAddon(addonNameKey) && scribeAddonKey) {
+                const membersValue = value;
+                const scribeValue = planIDs[scribeAddonKey];
+                const scribeConstrain = membersValue === scribeValue;
+                if (scribeConstrain) {
+                    newPlanIDs = setQuantity(newPlanIDs, scribeAddonKey, newQuantity);
                 }
-                onChangePlanIDs(newPlanIDs);
-            }}
-            step={addonMultiplier}
-            decreaseBlockedReasons={decreaseBlockedReasons}
-        />
-    );
+            }
+            onChangePlanIDs(newPlanIDs);
+        },
+        step: addonMultiplier,
+        decreaseBlockedReasons,
+    };
 
     if (isMemberAddon(addonNameKey)) {
+        if (isDriveOrgSizeAddon(addonNameKey)) {
+            return (
+                <NumberCustomiser
+                    key={`${addon.Name}-drive`}
+                    label={c('Info').ngettext(
+                        msgid`Create a secure cloud for ${value} member`,
+                        `Create a secure cloud for ${value} members`,
+                        value
+                    )}
+                    {...sharedNumberCustomizerProps}
+                />
+            );
+        }
+
+        if (isOrgSizeAddon(addonNameKey)) {
+            return (
+                <NumberCustomiser
+                    key={`${addon.Name}-org-size`}
+                    label={c('Info').t`Organization size`}
+                    {...sharedNumberCustomizerProps}
+                />
+            );
+        }
+
         return (
-            <AccountSizeCustomiser
-                mode={isDriveOrgSizeAddon(addonNameKey) ? 'drive' : isOrgSizeAddon(addonNameKey) ? 'org-size' : 'users'}
-                key={`${addon.Name}-size`}
-                addon={addon}
-                value={value}
-                price={addonPriceInline}
-                input={input}
-                maxUsers={max}
-                showDescription={showAddonDescriptions}
-                showTooltip={showUsersTooltip}
+            <NumberCustomiser
+                key={`${addon.Name}-users`}
+                label={c('Info').t`Users`}
+                tooltip={
+                    showUsersTooltip
+                        ? c('Info').t`A user is an account associated with a single username, mailbox, and person`
+                        : undefined
+                }
+                {...sharedNumberCustomizerProps}
             />
         );
     }
 
     if (isDomainAddon(addonNameKey)) {
         return (
-            <AdditionalOptionsCustomiser
-                key={`${addon.Name}-options`}
-                addon={addon}
-                price={addonPriceInline}
-                input={input}
-                showDescription={showAddonDescriptions}
+            <NumberCustomiser
+                key={`${addon.Name}-domain`}
+                label={c('Info').t`Custom email domains`}
+                tooltip={c('Info')
+                    .t`Email hosting is only available for domains you already own. Domain registration is not currently available through ${BRAND_NAME}. You can host email for domains registered on any domain registrar.`}
+                {...sharedNumberCustomizerProps}
             />
         );
     }
 
     if (isIpAddon(addonNameKey)) {
-        return (
-            <IPsNumberCustomiser
-                key={`${addon.Name}-ips`}
-                addon={addon}
-                price={addonPriceInline}
-                input={input}
-                showDescription={showAddonDescriptions}
-                maxIPs={max}
-            />
-        );
+        return <IPsNumberCustomiser key={`${addon.Name}-ips`} {...sharedNumberCustomizerProps} />;
     }
 
     if (isScribeAddon(addonNameKey) && scribeAddonEnabled) {
         return (
             <ScribeAddon
                 key={`${addon.Name}-size`}
-                addon={addon}
                 price={addonPriceInline}
-                input={input}
-                value={value}
-                maxUsers={max}
                 showScribeBanner={showScribeBanner}
                 onAddScribe={() => {
                     setShowScribeBanner(false);
                     onChangePlanIDs(setQuantity(planIDs, addon.Name, max));
                 }}
-                showDescription={showAddonDescriptions}
                 showTooltip={showUsersTooltip}
                 audience={audience}
+                {...sharedNumberCustomizerProps}
             />
         );
     }
@@ -268,16 +275,11 @@ const AddonCustomizer = ({
         return (
             <LumoAddon
                 key={`${addon.Name}-size`}
-                addon={addon}
-                input={input}
-                value={value}
-                maxUsers={max}
-                showDescription={showAddonDescriptions}
-                showTooltip={showUsersTooltip}
                 price={addonPriceInline}
                 onAddLumo={() => {
                     onChangePlanIDs(setQuantity(planIDs, addon.Name, max));
                 }}
+                {...sharedNumberCustomizerProps}
             />
         );
     }
@@ -294,7 +296,6 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     plansMap: { [key: string]: Plan };
     loading?: boolean;
     mode?: CustomiserMode;
-    forceHideDescriptions?: boolean;
     showUsersTooltip?: boolean;
     latestSubscription?: Subscription;
     allowedAddonTypes?: AddonGuard[];
@@ -314,7 +315,6 @@ export const ProtonPlanCustomizer = ({
     currentPlan,
     loading,
     className,
-    forceHideDescriptions,
     showUsersTooltip,
     latestSubscription,
     allowedAddonTypes,
@@ -326,7 +326,6 @@ export const ProtonPlanCustomizer = ({
 }: Props) => {
     const normalizePlanIds = SelectedPlan.createNormalized(planIDs, plansMap, cycle, currency).planIDs;
     const supportedAddons = getSupportedAddons(normalizePlanIds);
-    const showAddonDescriptions = mode !== 'signup' && !forceHideDescriptions;
 
     const isAllowedAddon = useCallback(
         (addonName: ADDON_NAMES) => {
@@ -340,7 +339,14 @@ export const ProtonPlanCustomizer = ({
     );
 
     return (
-        <div className={clsx(['plan-customiser', separator && 'plan-customiser--separator', className])} {...rest}>
+        <div
+            className={clsx([
+                'plan-customiser flex flex-column gap-4',
+                separator && 'plan-customiser--separator',
+                className,
+            ])}
+            {...rest}
+        >
             {Object.keys(supportedAddons).map((key) => {
                 const addonName = key as ADDON_NAMES;
 
@@ -367,7 +373,6 @@ export const ProtonPlanCustomizer = ({
                         showUsersTooltip={showUsersTooltip}
                         latestSubscription={latestSubscription}
                         supportedAddons={supportedAddons}
-                        showAddonDescriptions={showAddonDescriptions}
                         audience={audience}
                         mode={mode}
                     />

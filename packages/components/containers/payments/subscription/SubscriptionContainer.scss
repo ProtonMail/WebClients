@@ -1,6 +1,10 @@
 @import '~@proton/styles/scss/lib';
 @import '~@proton/styles/scss/specifics/bf-background';
 
+.subscription-container-plan-customizer:has(*) {
+	margin-block-end: var(--space-8);
+}
+
 @include media('>xsmall') {
 	.subscription-modal {
 		@include bf-bgs;
