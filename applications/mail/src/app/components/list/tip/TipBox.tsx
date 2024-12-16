@@ -84,14 +84,11 @@ const TipBox = ({ tips, isDismissed, setIsDismissed }: Props) => {
             </div>
             {user.isPaid && (
                 <Tooltip title={c('Action').t`Close`}>
-                    <button className="close-button absolute top-0 right-0 bg-norm z-up border border-weak shadow-norm rounded-full flex items-center justify-center group-hover:opacity-100 interactive">
-                        <Icon
-                            className="color-hint"
-                            name="cross"
-                            size={4}
-                            onClick={onCancel}
-                            alt={c('Action').t`Close`}
-                        />
+                    <button
+                        className="close-button absolute top-0 right-0 bg-norm z-up border border-weak shadow-norm rounded-full flex items-center justify-center group-hover:opacity-100 interactive"
+                        onClick={onCancel}
+                    >
+                        <Icon className="color-hint" name="cross" size={4} alt={c('Action').t`Close`} />
                     </button>
                 </Tooltip>
             )}
