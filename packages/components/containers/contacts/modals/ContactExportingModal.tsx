@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { format } from 'date-fns';
 import { c, msgid } from 'ttag';
@@ -14,7 +14,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
 import useApi from '@proton/components/hooks/useApi';
 import { useContacts } from '@proton/mail/contacts/hooks';
-import { exportContactsFromLabel } from '@proton/shared/lib/contacts/helpers/export';
+import { exportContactsFromIds, exportContactsFromLabel } from '@proton/shared/lib/contacts/helpers/export';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import noop from '@proton/utils/noop';
 
@@ -23,21 +23,25 @@ const DOWNLOAD_FILENAME = 'protonContacts';
 export interface ContactExportingProps {
     contactGroupID?: string;
     onSave?: () => void;
+    inputContactsIds?: string[];
 }
 
 type Props = ContactExportingProps & ModalProps;
 
-const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, ...rest }: Props) => {
+const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, inputContactsIds, ...rest }: Props) => {
     const api = useApi();
     const [contacts = [], loadingContacts] = useContacts();
+    const contactsToDownload = useMemo(() => {
+        return inputContactsIds ? contacts.filter((contact) => inputContactsIds.includes(contact.ID)) : contacts;
+    }, [contacts, inputContactsIds]);
     const getUserKeys = useGetUserKeys();
 
     const [contactsExported, addSuccess] = useState<string[]>([]);
     const [contactsNotExported, addError] = useState<string[]>([]);
 
     const countContacts = LabelID
-        ? contacts.filter(({ LabelIDs = [] }) => LabelIDs.includes(LabelID)).length
-        : contacts.length;
+        ? contactsToDownload.filter(({ LabelIDs = [] }) => LabelIDs.includes(LabelID)).length
+        : contactsToDownload.length;
 
     const handleSave = (vcards: string[]) => {
         const allVcards = vcards.join('\r\n');
@@ -55,20 +59,42 @@ const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, ...rest
         const abortController = new AbortController();
         const run = async () => {
             const userKeys = await getUserKeys();
-            exportContactsFromLabel(
-                LabelID,
-                countContacts,
-                userKeys,
-                abortController.signal,
-                api,
-                (contactExported) => addSuccess((contactsExported) => [...contactsExported, contactExported]),
-                (ID) => addError((contactsNotExported) => [...contactsNotExported, ID])
-            ).catch((error) => {
-                if (error.name !== 'AbortError') {
-                    rest.onClose?.(); // close the modal; otherwise it is left hanging in there
-                    throw error;
-                }
-            });
+            /* There are 2 cases to export contacts
+             * 1- Export a selection of contacts
+             * 2- Export all contacts
+             */
+            if (inputContactsIds) {
+                exportContactsFromIds({
+                    contactIDs: inputContactsIds,
+                    userKeys,
+                    signal: abortController.signal,
+                    api,
+                    callbackSuccess: (contactExported) =>
+                        addSuccess((contactsExported) => [...contactsExported, contactExported]),
+                    callbackFailure: (ID) => addError((contactsNotExported) => [...contactsNotExported, ID]),
+                }).catch((error) => {
+                    if (error.name !== 'AbortError') {
+                        rest.onClose?.(); // close the modal; otherwise it is left hanging in there
+                        throw error;
+                    }
+                });
+            } else {
+                exportContactsFromLabel({
+                    labelID: LabelID,
+                    count: countContacts,
+                    userKeys,
+                    signal: abortController.signal,
+                    api,
+                    callbackSuccess: (contactExported) =>
+                        addSuccess((contactsExported) => [...contactsExported, contactExported]),
+                    callbackFailure: (ID) => addError((contactsNotExported) => [...contactsNotExported, ID]),
+                }).catch((error) => {
+                    if (error.name !== 'AbortError') {
+                        rest.onClose?.(); // close the modal; otherwise it is left hanging in there
+                        throw error;
+                    }
+                });
+            }
         };
         run();
 

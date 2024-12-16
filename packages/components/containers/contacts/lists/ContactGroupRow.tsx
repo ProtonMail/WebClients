@@ -25,7 +25,6 @@ interface Props {
     group: ContactGroup;
     index: number;
     onFocus: (index: number) => void;
-    isDrawer?: boolean;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
 }
 
@@ -38,7 +37,6 @@ const ContactGroupRow = ({
     onCheck,
     index,
     onFocus,
-    isDrawer = false,
     onCompose,
 }: Props) => {
     const { ID, Name, Color } = group;
@@ -74,9 +72,8 @@ const ContactGroupRow = ({
             style={style}
             onClick={() => onClick(ID)}
             className={clsx([
-                'contact-item-container item-contact flex cursor-pointer bg-global-white',
+                'contact-item-container item-contact flex cursor-pointer bg-global-white item-in-drawer',
                 hasFocus && 'item-is-focused',
-                isDrawer && 'item-in-drawer',
             ])}
             onFocus={handleFocus}
             onBlur={handleBlur}
