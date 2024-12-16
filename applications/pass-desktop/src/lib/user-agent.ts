@@ -20,8 +20,13 @@ export const userAgent = (): string => {
         }
     })();
 
-    const comments = osNameAndVersion && `(${osNameAndVersion})`;
-    const productAndVersion = `ProtonPass/${config.APP_VERSION}`;
+    const productAndVersion = [`ProtonPass/${config.APP_VERSION}`, osNameAndVersion && `(${osNameAndVersion})`]
+        .filter(truthy)
+        .join(' ');
 
-    return [productAndVersion, comments].filter(truthy).join(' ');
+    const chrome = `Chrome/${process.versions.chrome}`;
+
+    const electron = `Electron/${process.versions.electron}`;
+
+    return [productAndVersion, chrome, electron].join(' ');
 };
