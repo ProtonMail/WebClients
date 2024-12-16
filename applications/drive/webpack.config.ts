@@ -1,6 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
-import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
 import getConfig from '@proton/pack/webpack.config';
 import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries';
@@ -51,28 +50,6 @@ const result = (env: any): webpack.Configuration => {
     if (env.appMode === 'standalone') {
         addDevEntry(config);
     }
-
-    config.plugins.push(
-        new WebpackManifestPlugin({
-            fileName: 'assets/offline.json',
-            filter: (file) => {
-                /** exclude sourcemaps and certain assets */
-                if (
-                    file.name.includes('.map') ||
-                    file.name.includes('date-fns') ||
-                    file.name.includes('locales') ||
-                    file.name.includes('downloadSW') ||
-                    file.name.includes('.json')
-                ) {
-                    return false;
-                }
-                if (file.name.includes('.js') || file.name.includes('.css')) {
-                    return true;
-                }
-                return false;
-            },
-        })
-    );
 
     return {
         ...config,
