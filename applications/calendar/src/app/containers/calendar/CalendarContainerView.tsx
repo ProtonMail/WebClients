@@ -422,7 +422,14 @@ const CalendarContainerView = ({
 
                 return (
                     <Tooltip key="createEvent" title={createEventText}>
-                        <Button icon className="inline-flex" onClick={onClick} disabled={noSelection || !onCreateEvent}>
+                        <Button
+                            icon
+                            shape="ghost"
+                            size="small"
+                            className="inline-flex"
+                            onClick={onClick}
+                            disabled={noSelection || !onCreateEvent}
+                        >
                             <Icon name="calendar-grid" alt={createEventText} />
                         </Button>
                     </Tooltip>
