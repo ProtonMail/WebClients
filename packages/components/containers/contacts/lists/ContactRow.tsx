@@ -33,7 +33,6 @@ interface Props {
     index: number;
     onFocus: (index: number) => void;
     onGroupDetails: (contactGroupID: string) => void;
-    isDrawer?: boolean;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
 }
 
@@ -52,7 +51,6 @@ const ContactRow = ({
     index,
     onFocus,
     onGroupDetails,
-    isDrawer = false,
     onCompose,
 }: Props) => {
     const { createNotification } = useNotifications();
@@ -96,8 +94,7 @@ const ContactRow = ({
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
             className={clsx(
-                'contact-item-container item-contact flex cursor-pointer bg-global-white group-hover-opacity-container interactive-pseudo-inset interactive--no-background',
-                isDrawer && 'item-in-drawer',
+                'contact-item-container item-contact flex cursor-pointer bg-global-white group-hover-opacity-container interactive-pseudo-inset interactive--no-background item-in-drawer',
                 dragged && 'item-dragging',
                 hasFocus && 'item-is-focused'
             )}
@@ -143,7 +140,7 @@ const ContactRow = ({
                         <div className="contact-item-hover-action-buttons">
                             <Copy
                                 value={emails[0]}
-                                className={clsx(isDrawer && 'mr-1')}
+                                className="mr-1'"
                                 onCopy={handleCopyEmail}
                                 tooltipText={c('Action').t`Copy email to clipboard`}
                                 shape="ghost"

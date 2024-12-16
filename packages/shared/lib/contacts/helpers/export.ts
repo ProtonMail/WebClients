@@ -65,15 +65,23 @@ export const exportContacts = (contactIDs: string[], userKeys: DecryptedKey[], a
 /**
  * Export contacts from a labelID full featured with batch requests, callbacks, abort
  */
-export const exportContactsFromLabel = async (
-    labelID: string | undefined,
-    count: number,
-    userKeys: DecryptedKey[],
-    signal: AbortSignal,
-    api: Api,
-    callbackSuccess: (contactContent: string) => void,
-    callbackFailure: (contactID: string) => void
-) => {
+export const exportContactsFromLabel = async ({
+    labelID,
+    count,
+    userKeys,
+    signal,
+    api,
+    callbackSuccess,
+    callbackFailure,
+}: {
+    labelID: string | undefined;
+    count: number;
+    userKeys: DecryptedKey[];
+    signal: AbortSignal;
+    api: Api;
+    callbackSuccess: (contactContent: string) => void;
+    callbackFailure: (contactID: string) => void;
+}) => {
     const apiWithAbort = getApiWithAbort(api, signal);
     const apiCalls = Math.ceil(count / QUERY_EXPORT_MAX_PAGESIZE);
     const results = { success: [] as string[], failures: [] as string[] };
@@ -115,6 +123,62 @@ export const exportContactsFromLabel = async (
         // avoid overloading API in the unlikely case exportBatch is too fast
         await wait(API_SAFE_INTERVAL);
     }
+
+    return results;
+};
+
+/**
+ * Export contacts from a list of contact ids, featured with batch requests, callbacks, abort
+ */
+export const exportContactsFromIds = async ({
+    contactIDs,
+    userKeys,
+    signal,
+    api,
+    callbackSuccess,
+    callbackFailure,
+}: {
+    contactIDs: string[];
+    userKeys: DecryptedKey[];
+    signal: AbortSignal;
+    api: Api;
+    callbackSuccess: (contactContent: string) => void;
+    callbackFailure: (contactID: string) => void;
+}) => {
+    const apiWithAbort = getApiWithAbort(api, signal);
+    const results = { success: [] as string[], failures: [] as string[] };
+
+    contactIDs.forEach(async (contactID) => {
+        const { Contact: contact } = await apiWithAbort<{ Contact: Contact }>(getContact(contactID));
+
+        const { Cards, ID } = contact;
+
+        if (signal.aborted) {
+            return;
+        }
+        try {
+            const { vcard } = await exportContact(Cards, userKeys);
+
+            // need to check again for signal.aborted because the abort
+            // may have taken place during await prepareContact
+            if (!signal.aborted) {
+                callbackSuccess(vcard);
+            }
+
+            results.success.push(vcard);
+        } catch (error: any) {
+            // need to check again for signal.aborted because the abort
+            // may have taken place during await prepareContact
+            if (!signal.aborted) {
+                callbackFailure(ID);
+            }
+
+            results.failures.push(ID);
+        }
+
+        // avoid overloading API in the unlikely case exportBatch is too fast
+        await wait(API_SAFE_INTERVAL);
+    });
 
     return results;
 };

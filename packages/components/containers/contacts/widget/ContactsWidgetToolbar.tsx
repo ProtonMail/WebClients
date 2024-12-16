@@ -4,9 +4,13 @@ import { useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
@@ -25,8 +29,8 @@ interface Props {
     onCheckAll: (checked: boolean) => void;
     onCompose?: () => void;
     onForward: () => void;
+    onExport: () => void;
     onDelete: () => void;
-    onCreate: () => void;
     onMerge: () => void;
     onClose?: () => void;
     onLock?: (lock: boolean) => void;
@@ -36,7 +40,6 @@ interface Props {
     onLimitReached: (props: ContactGroupLimitReachedProps) => void;
     onUpgrade: () => void;
     onSelectEmails: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
-    isDrawer?: boolean;
 }
 
 const ContactsWidgetToolbar = ({
@@ -46,8 +49,8 @@ const ContactsWidgetToolbar = ({
     onCheckAll,
     onCompose,
     onForward,
+    onExport,
     onDelete,
-    onCreate,
     onMerge,
     onClose,
     onLock,
@@ -57,8 +60,9 @@ const ContactsWidgetToolbar = ({
     onLimitReached,
     onUpgrade,
     onSelectEmails,
-    isDrawer = false,
 }: Props) => {
+    const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
+
     const selectedCount = selected.length;
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
     const noEmailInSelected = noEmailsContactCount === selectedCount;
@@ -80,7 +84,7 @@ const ContactsWidgetToolbar = ({
     return (
         <div className="flex">
             <Tooltip title={allChecked ? c('Action').t`Deselect all` : c('Action').t`Select all`}>
-                <span className="mr-4 flex">
+                <span className="mr-3 flex">
                     <Checkbox
                         id="id_contact-widget-select-all"
                         checked={allChecked}
@@ -92,48 +96,23 @@ const ContactsWidgetToolbar = ({
                     </label>
                 </span>
             </Tooltip>
-            <ButtonGroup>
+            <div className="border-left border-weak flex flex-row flex-nowrap pl-2 gap-1">
                 {onCompose && (
                     <Tooltip title={c('Action').t`Compose`}>
                         <Button
                             icon
+                            size="small"
+                            shape="ghost"
                             className="inline-flex"
                             onClick={onCompose}
                             disabled={noEmailInSelected}
                             title={c('Action').t`Compose`}
                             data-testid="contacts:compose"
                         >
-                            <Icon name="pen-square" alt={c('Action').t`Compose`} />
+                            <Icon name="envelope" alt={c('Action').t`Compose`} />
                         </Button>
                     </Tooltip>
                 )}
-                {onCompose && (
-                    <Tooltip title={c('Action').t`Forward as attachment`}>
-                        <Button
-                            icon
-                            className="inline-flex"
-                            onClick={onForward}
-                            disabled={noSelection}
-                            title={c('Action').t`Forward as attachment`}
-                            data-testid="contacts:forward-attachment"
-                        >
-                            <Icon name="arrow-right" alt={c('Action').t`Forward as attachment`} />
-                        </Button>
-                    </Tooltip>
-                )}
-                {customActions.map((action) => action.render({ contactList, noSelection, onClose, selected }))}
-                <Tooltip title={c('Action').t`Merge contacts`}>
-                    <Button
-                        icon
-                        className="inline-flex"
-                        onClick={onMerge}
-                        disabled={!canMerge}
-                        title={c('Action').t`Merge contacts`}
-                        data-testid="contacts:merge-contacts"
-                    >
-                        <Icon name="users-merge" alt={c('Action').t`Merge contacts`} />
-                    </Button>
-                </Tooltip>
                 <ContactGroupDropdown
                     className="inline-flex"
                     contactEmails={contactEmails}
@@ -145,36 +124,93 @@ const ContactsWidgetToolbar = ({
                     onLimitReached={onLimitReached}
                     onUpgrade={onUpgrade}
                     onSelectEmails={onSelectEmails}
+                    shape="ghost"
+                    size="small"
+                    icon
                 >
-                    <Icon name="users" />
+                    <Icon name="users" alt={c('Action').t`Add to group`} />
                 </ContactGroupDropdown>
+                {customActions.map((action) => action.render({ contactList, noSelection, onClose, selected }))}
                 <Tooltip title={deleteText}>
                     <Button
                         icon
+                        shape="ghost"
+                        size="small"
                         className="inline-flex"
                         onClick={onDelete}
                         disabled={noSelection}
                         title={deleteText}
                         data-testid="contacts:delete-contacts"
                     >
-                        <Icon name="trash" />
+                        <Icon name="trash" alt={deleteText} />
                     </Button>
                 </Tooltip>
-                {!isDrawer && (
-                    <Tooltip title={c('Action').t`Add new contact`}>
-                        <Button
+                <>
+                    <Tooltip title={c('Action').t`More actions`}>
+                        <DropdownButton
                             icon
-                            color="norm"
-                            className="ml-auto inline-flex"
-                            onClick={onCreate}
-                            title={c('Action').t`Add new contact`}
-                            data-testid="contacts:add-new-contact"
+                            shape="ghost"
+                            size="small"
+                            className="inline-flex"
+                            onClick={toggle}
+                            disabled={noSelection}
+                            title={c('Action').t`More actions`}
+                            data-testid="contacts:more-actions"
+                            ref={anchorRef}
                         >
-                            <Icon name="user-plus" />
-                        </Button>
+                            <Icon name="three-dots-horizontal" alt={c('Action').t`More actions`} />
+                        </DropdownButton>
                     </Tooltip>
-                )}
-            </ButtonGroup>
+                    <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+                        <DropdownMenu>
+                            <DropdownMenuButton
+                                className="text-left flex flex-nowrap items-center"
+                                onClick={onMerge}
+                                data-testid="contacts:merge-contacts"
+                                title={c('Action').t`Merge contacts`}
+                                disabled={!canMerge}
+                            >
+                                <Icon name="users-merge" className="mr-2" alt={c('Action').t`Merge contacts`} />
+                                <span className="flex-1 my-auto">{c('Action').t`Merge contacts`}</span>
+                            </DropdownMenuButton>
+                            <div className="dropdown-item-hr" key="hr-1" />
+                            {onCompose && (
+                                <>
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-nowrap items-center"
+                                        onClick={onForward}
+                                        data-testid="contacts:forward-attachment"
+                                        title={c('Action').t`Forward as attachment`}
+                                        disabled={noSelection}
+                                    >
+                                        <Icon
+                                            name="arrow-up-and-right-big"
+                                            className="mr-2"
+                                            alt={c('Action').t`Forward as attachment`}
+                                        />
+                                        <span className="flex-1 my-auto">{c('Action').t`Forward as attachment`}</span>
+                                    </DropdownMenuButton>
+                                    <div className="dropdown-item-hr" key="hr-1" />
+                                </>
+                            )}
+                            <DropdownMenuButton
+                                className="text-left flex flex-nowrap items-center"
+                                onClick={onExport}
+                                data-testid="contacts:export-selection"
+                                title={c('Action').t`Export selection as .vcf`}
+                                disabled={noSelection}
+                            >
+                                <Icon
+                                    name="arrow-up-from-square"
+                                    className="mr-2"
+                                    alt={c('Action').t`Export selection as .vcf`}
+                                />
+                                <span className="flex-1 my-auto">{c('Action').t`Export selection as .vcf`}</span>
+                            </DropdownMenuButton>
+                        </DropdownMenu>
+                    </Dropdown>
+                </>
+            </div>
         </div>
     );
 };

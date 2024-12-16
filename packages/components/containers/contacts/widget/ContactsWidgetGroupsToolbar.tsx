@@ -3,7 +3,6 @@ import type { ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
@@ -18,13 +17,11 @@ interface Props {
     numberOfRecipients: number;
     onCheckAll: (checked: boolean) => void;
     onCompose?: () => void;
-    onCreate: () => void;
     onDelete: () => void;
     customActions: CustomAction[];
     groupsEmailsMap: SimpleMap<ContactEmail[]>;
     recipients: Recipient[];
     onClose?: () => void;
-    isDrawer?: boolean;
 }
 
 const ContactsWidgetGroupsToolbar = ({
@@ -33,13 +30,11 @@ const ContactsWidgetGroupsToolbar = ({
     numberOfRecipients,
     onCheckAll,
     onCompose,
-    onCreate,
     onDelete,
     customActions,
     groupsEmailsMap,
     recipients,
     onClose,
-    isDrawer = false,
 }: Props) => {
     const selectedCount = selected.length;
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
@@ -57,7 +52,7 @@ const ContactsWidgetGroupsToolbar = ({
     return (
         <div className="flex">
             <Tooltip title={allChecked ? c('Action').t`Deselect all` : c('Action').t`Select all`}>
-                <span className="mr-4 flex">
+                <span className="mr-3 flex">
                     <Checkbox
                         id="id_contact-widget-select-all"
                         checked={allChecked}
@@ -69,11 +64,13 @@ const ContactsWidgetGroupsToolbar = ({
                     </label>
                 </span>
             </Tooltip>
-            <ButtonGroup>
+            <div className="border-left border-weak flex flex-row flex-nowrap pl-2 gap-1">
                 {onCompose ? (
                     <Tooltip title={c('Action').t`Compose`}>
                         <Button
                             icon
+                            shape="ghost"
+                            size="small"
                             className="inline-flex"
                             onClick={onCompose}
                             disabled={noContactInSelected}
@@ -89,28 +86,17 @@ const ContactsWidgetGroupsToolbar = ({
                 <Tooltip title={deleteText}>
                     <Button
                         icon
+                        shape="ghost"
+                        size="small"
                         className="inline-flex"
                         onClick={onDelete}
                         disabled={noSelection}
                         data-testid="contacts:delete-contact-group"
                     >
-                        <Icon name="trash" />
+                        <Icon name="trash" alt={deleteText} />
                     </Button>
                 </Tooltip>
-                {!isDrawer && (
-                    <Tooltip title={c('Action').t`Add new group`}>
-                        <Button
-                            icon
-                            color="norm"
-                            className="ml-auto inline-flex"
-                            onClick={onCreate}
-                            data-testid="contacts:add-contact-group"
-                        >
-                            <Icon name="users-plus" alt={c('Action').t`Add new group`} />
-                        </Button>
-                    </Tooltip>
-                )}
-            </ButtonGroup>
+            </div>
         </div>
     );
 };
