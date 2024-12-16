@@ -1,5 +1,3 @@
-import { c, msgid } from 'ttag';
-
 import { Logo } from '@proton/components';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { PLANS } from '@proton/payments';
@@ -27,61 +25,12 @@ const getLumoBenefits = (): BenefitItem[] => {
     return [getSwissPrivacyLawsBenefit()].filter(isTruthy);
 };
 
-const getQuestions = (n: number) => {
-    return c('collider_2025: Info').ngettext(
-        msgid`Ask up to ${n} question per day`,
-        `Ask up to ${n} questions per day`,
-        n
-    );
-};
-
 const getFreeLumoFeatures = () => {
-    return [
-        {
-            text: getQuestions(20),
-            included: true,
-        },
-        {
-            text: c('collider_2025: Info').t`Limited chat history (1 week)`,
-            included: true,
-        },
-        {
-            text: c('collider_2025: Info')
-                .t`Handles shorter conversations (supports input equivalent of 5 pages of text)`,
-            included: true,
-        },
-    ];
+    return [];
 };
 
 const getLumoPlusFeatures = () => {
-    return [
-        {
-            text: c('collider_2025: feature').t`Unlimited questions every day`,
-            included: true,
-        },
-        {
-            text: c('collider_2025: feature').t`Unlimited chat history`,
-            included: true,
-        },
-        {
-            text: c('collider_2025: feature')
-                .t`Handles complex conversations (supports input equivalent of 40 pages of text)`,
-            included: true,
-        },
-
-        {
-            text: c('collider_2025: feature').t`Favorite conversations`,
-            included: true,
-        },
-        {
-            text: c('collider_2025: feature').t`Priority access (get top priority, even during busy times)`,
-            included: true,
-        },
-        {
-            text: c('collider_2025: feature').t`Priority support`,
-            included: true,
-        },
-    ];
+    return [];
 };
 
 export const getLumoConfiguration = (): SignupConfiguration => {
@@ -89,7 +38,7 @@ export const getLumoConfiguration = (): SignupConfiguration => {
 
     const appName = LUMO_APP_NAME;
 
-    const title = c('collider_2025: Info').t`Your private AI helper`;
+    const title = '';
 
     const features = [getNoLogsFeature(), getEncryptedFeature({ e2ee: false }), getSwissFeature({ fullText: true })];
 

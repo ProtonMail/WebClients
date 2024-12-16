@@ -2577,14 +2577,8 @@ export const cachedPlans: Plan[] = [
         Services: 64,
         Features: 0,
         State: 1,
-        Pricing: {
-            '1': 2299,
-            '12': 21588,
-        },
-        DefaultPricing: {
-            '1': 2299,
-            '12': 21588,
-        },
+        Pricing: {},
+        DefaultPricing: {},
         PeriodEnd: {
             '1': 1736074694,
             '12': 1764932294,
@@ -2593,17 +2587,8 @@ export const cachedPlans: Plan[] = [
         Quantity: 1,
         Offers: [],
         Cycle: 1,
-        Amount: 2299,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_sEDbHggp4uSCa39vtBoo',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
+        Amount: 0,
+        Vendors: {},
     },
 ];
 
