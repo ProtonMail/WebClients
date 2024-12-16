@@ -15,10 +15,8 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import './OnboardingModal.scss';
 
 export const OnboardingSSO: FC<SpotlightModalProps> = ({ acknowledge, onClose }) => {
-    const online = useConnectivity();
     const { lock } = useLockSetup();
-
-    const isPasswordSelected = lock.mode === LockMode.PASSWORD;
+    const online = useConnectivity();
 
     return (
         <PassModal open size="medium" className="pass-onboarding-modal">
@@ -28,26 +26,18 @@ export const OnboardingSSO: FC<SpotlightModalProps> = ({ acknowledge, onClose })
                 <div className="flex items-center gap-6 w-full">
                     <div className="pass-onboarding-modal--lock">
                         <p className="text-bold mt-0">{c('Label').t`Unlock with:`}</p>
-                        <OnboardingLockSetup
-                            label={{
-                                [LockMode.PASSWORD]: (
-                                    <>
-                                        <span className="mr-2">{c('Label').t`Backup password`}</span>
-                                        {isPasswordSelected && (
-                                            <span className="color-weak text-sm align-end">
-                                                ({c('Info').t`Currently selected`})
-                                            </span>
-                                        )}
-                                    </>
-                                ),
-                            }}
-                        />
+                        <OnboardingLockSetup />
                     </div>
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter className="mt-0">
                 <div className="flex justify-end w-full">
-                    <Button pill shape="solid" onClick={pipe(onClose, acknowledge)} disabled={!online}>
+                    <Button
+                        pill
+                        shape="solid"
+                        onClick={pipe(onClose, acknowledge)}
+                        disabled={!online || lock.mode === LockMode.PASSWORD}
+                    >
                         {c('Action').t`Accept`}
                     </Button>
                 </div>
