@@ -4,7 +4,7 @@ import type { ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account';
 import { type WasmApiWalletBitcoinAddress } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
-import { MINUTE } from '@proton/shared/lib/constants';
+import { SECOND } from '@proton/shared/lib/constants';
 
 import type { WalletThunkArguments } from '../thunk';
 
@@ -42,7 +42,7 @@ const modelThunk = createAsyncModelThunk<Model, BitcoinAddressPoolState, WalletT
                 [walletAccountId]: addresses,
             };
         },
-        expiry: 10 * MINUTE,
+        expiry: 30 * SECOND,
         previous: ({ getState, options }) => {
             const state = getState()[name];
 
