@@ -23,11 +23,6 @@ import {
     getPricingPerMember,
 } from './subscription';
 
-export const getDiscountText = () => {
-    return c('Info')
-        .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`;
-};
-
 export const getUserTitle = (users: number) => {
     return c('Checkout row').ngettext(msgid`${users} user`, `${users} users`, users);
 };
