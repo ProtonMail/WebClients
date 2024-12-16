@@ -1,13 +1,13 @@
-import { PLAN_SERVICES, PLAN_TYPES, type PlanIDs } from '@proton/payments';
+import { PLANS, PLAN_SERVICES, PLAN_TYPES, type PlanIDs } from '@proton/payments';
 import noop from '@proton/utils/noop';
 
 import { hasBit } from '../helpers/bitset';
-import type { Api, Plan } from '../interfaces';
+import type { Api, Plan, UserModel } from '../interfaces';
 import type { CalendarWithOwnMembers } from '../interfaces/calendar';
 import { MAX_CALENDARS_FREE } from './constants';
 import getHasSharedCalendars from './sharing/getHasSharedCalendars';
 
-export const willHavePaidMail = (planIDs: PlanIDs, plans: Plan[]) => {
+export const planHasPaidMail = (planIDs: PlanIDs, plans: Plan[]) => {
     const newPlanName = Object.keys(planIDs).find((planName) =>
         plans.find((plan) => plan.Type === PLAN_TYPES.PLAN && plan.Name === planName)
     );
@@ -17,17 +17,26 @@ export const willHavePaidMail = (planIDs: PlanIDs, plans: Plan[]) => {
 };
 
 export const getShouldCalendarPreventSubscripitionChange = async ({
-    hasPaidMail,
-    willHavePaidMail,
+    user,
     api,
     getCalendars,
+    newPlan,
+    plans,
 }: {
-    hasPaidMail: boolean;
-    willHavePaidMail: boolean;
+    user: UserModel;
     api: Api;
     getCalendars: () => Promise<CalendarWithOwnMembers[] | undefined>;
+    newPlan: PlanIDs;
+    plans: Plan[];
 }) => {
-    if (!hasPaidMail || willHavePaidMail) {
+    const userBuysPassLifetime = (newPlan[PLANS.PASS_LIFETIME] ?? 0) > 0;
+    const newPlanHasPaidMail = planHasPaidMail(newPlan, plans);
+
+    // if user buys pass lifetime, then they will still keep their current plan. So if they already have
+    // paid mail, then they will keep it.
+    const userDoesntCancelMail = user.hasPaidMail && userBuysPassLifetime;
+
+    if (!user.hasPaidMail || newPlanHasPaidMail || userDoesntCancelMail) {
         // We only prevent subscription change when downgrading the paid-mail condition
         return false;
     }
