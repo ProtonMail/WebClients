@@ -37,7 +37,6 @@ const ContactsList = ({
     onClick,
     activateDrag = true,
     onGroupDetails,
-    isDrawer = false,
     onCompose,
 }: Props) => {
     const listRef = useRef<List>(null);
@@ -79,7 +78,7 @@ const ContactsList = ({
     const contactRowHeightComfort = 4 * rootFontSize() + 8; // 4 * 16 = we want 72px by default
 
     return (
-        <div ref={elementRef} className="h-full">
+        <div ref={elementRef} className="h-full w-full">
             <div ref={listContainerRef} className="min-h-full">
                 <AutoSizer>
                     {({ height, width }) => (
@@ -103,7 +102,6 @@ const ContactsList = ({
                                     index={index}
                                     onFocus={handleFocus}
                                     onGroupDetails={onGroupDetails}
-                                    isDrawer={isDrawer}
                                     onCompose={onCompose}
                                 />
                             )}
