@@ -8,6 +8,7 @@ import type { CachableResult } from './CachableResult'
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding'
 import type { DocumentKeys } from '@proton/drive-store/lib/_documents'
 import type { SessionKey } from '@proton/crypto/lib'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 type GetDocumentKeysResult = CachableResult & {
   keys: DocumentKeys
@@ -43,6 +44,7 @@ export class GetDocumentKeys implements UseCaseInterface<GetDocumentKeysResult> 
   constructor(
     private compatWrapper: DriveCompatWrapper,
     private cacheService: CacheService,
+    private logger: LoggerInterface,
   ) {}
 
   async execute(nodeMeta: NodeMeta, options: { useCache: boolean }): Promise<Result<GetDocumentKeysResult>> {
@@ -56,7 +58,11 @@ export class GetDocumentKeys implements UseCaseInterface<GetDocumentKeysResult> 
           }
         }
       }
+    } catch (error) {
+      this.logger.error('Failed to load document keys from cache', getErrorString(error))
+    }
 
+    try {
       const keys = await this.compatWrapper.getCompat<DriveCompat>().getDocumentKeys(nodeMeta)
 
       void this.cacheService.cacheValue({
