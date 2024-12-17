@@ -15,7 +15,7 @@ const useRevisions = (shareId: string, linkId: string) => {
     const getRevisionDecryptedXattrs = async (
         abortSignal: AbortSignal,
         revisionEncryptedXattr: string | undefined,
-        revisionSignatureEmail: string
+        revisionSignatureEmail: string | undefined
     ) => {
         if (!revisionEncryptedXattr) {
             return;

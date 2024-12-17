@@ -112,6 +112,7 @@ export function RevisionDetailsModal({
                     signatureIssues={signatureIssues}
                     signatureNetworkError={signatureNetworkError}
                     signatureEmail={revision.signatureEmail}
+                    isAnonymous={!revision.signatureEmail}
                     isFile
                     name={name}
                     className="mb-4"
@@ -219,7 +220,8 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                     loading={isSignatureIssuesLoading}
                     signatureIssues={signatureIssues}
                     signatureNetworkError={signatureNetworkError}
-                    signatureEmail={link.activeRevision?.signatureEmail || link.signatureEmail}
+                    signatureEmail={link.isFile ? link.activeRevision?.signatureEmail : link.signatureEmail}
+                    isAnonymous={link.isAnonymous}
                     corruptedLink={link.corruptedLink}
                     isFile={link.isFile}
                     name={link.name}

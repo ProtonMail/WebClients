@@ -112,16 +112,13 @@ export default function useDownload() {
             throw new Error('Session key missing on file link');
         }
 
-        const isAnonymous = !revisionSignatureAddress;
-
-        const addressPublicKeys = !isAnonymous ? await getVerificationKey(revisionSignatureAddress) : undefined;
+        const addressPublicKeys = !link.isAnonymous ? await getVerificationKey(revisionSignatureAddress) : undefined;
 
         return [
             {
                 privateKey: privateKey,
                 sessionKeys: sessionKey,
                 addressPublicKeys,
-                isAnonymous,
             },
             link.signatureIssues,
         ];

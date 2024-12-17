@@ -559,10 +559,9 @@ export function useLinkInner(
                     : undefined;
                 // Files have signature address on the revision.
                 // Folders have signature address on the link itself.
-                const signatureEmail =
-                    revision?.signatureEmail ||
-                    encryptedLink.activeRevision?.signatureEmail ||
-                    encryptedLink.signatureEmail;
+                const signatureEmail = encryptedLink.isFile
+                    ? revision?.signatureEmail || encryptedLink.activeRevision?.signatureEmail
+                    : encryptedLink.signatureEmail;
                 const xattrPromise = !encryptedLink.xAttr
                     ? {
                           fileModifyTime: encryptedLink.metaDataModifyTime,
@@ -699,6 +698,7 @@ export function useLinkInner(
                 return {
                     ...encryptedLink,
                     ...(sharingInfo ? { sharedOn: sharingInfo.sharedOn, sharedBy: sharingInfo.sharedBy } : undefined),
+                    isAnonymous: !signatureEmail,
                     encryptedName: encryptedLink.name,
                     name: displayName,
                     fileModifyTime: fileModifyTime,
