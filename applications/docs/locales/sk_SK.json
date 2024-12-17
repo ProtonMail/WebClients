@@ -60,9 +60,6 @@
       "Add group": [
         "Pridať skupinu"
       ],
-      "Add new contact": [
-        "Pridať nový kontakt"
-      ],
       "Add new group": [
         "Pridať novú skupinu"
       ],
@@ -291,14 +288,14 @@
       "Export contact group": [
         "Exportovať skupinu kontaktov"
       ],
-      "Export contacts": [
-        "Exportovať kontakty"
-      ],
       "Forgot password?": [
         "Zabudnuté heslo?"
       ],
       "Forward as attachment": [
         "Preposlať ako prílohu"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Získajte ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
       ],
       "Get in touch": [
         "Skontaktovať sa"
@@ -587,6 +584,9 @@
       ],
       "Show advanced PGP settings": [
         "Zobraziť pokročilé nastavenia PGO"
+      ],
+      "Show options": [
+        "Zobraziť možnosti"
       ],
       "Sign out": [
         "Odhlásiť sa"
@@ -968,9 +968,15 @@
       ],
       "forever": [
         "navždy"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Obnoví sa po 1 mesiaci za ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Prístup k zablokovanému obsahu a súkromné prehliadanie. Zahŕňa viac ako 8 500 serverov vo viac ako 110 krajinách, 10 zariadení, vysokorýchlostné streamovanie, blokovanie reklám a ochranu pred malvérom, VPN Accelerator a ďalšie."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+, Prime Video a ďalších odkiaľkoľvek."
       ],
@@ -1000,6 +1006,9 @@
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Špeciálne navrhnutý NetShield chráni vaše zariadenia a zrýchľuje vaše prehliadanie tým, že blokuje reklamy, sledovače a malvér."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
       ]
     },
     "Billing cycle option": {
@@ -1105,6 +1114,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Pokračovať"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
       ],
@@ -3933,14 +3945,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z dôvodu nezaplatených faktúr bol prístup k účtu obmedzený. Kontaktujte správcu Vášho účtu."
       ],
-      "Account size": [
-        "Veľkosť účtu"
-      ],
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
       ],
-      "Additional options": [
-        "Ďalšie možnosti"
+      "Address copied to clipboard": [
+        "Adresa bola skopírovaná do schránky"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Overenie adresy pomocou dôveryhodného kľúča je pre túto adresu povolené. Ak chcete posielať správy na túto adresu, najprv dôverujte verejnému kľúču, ktorý môže byť použitý na odosielanie."
@@ -4074,12 +4083,6 @@
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Vytvorte bezpečný cloud pre ${ n } člena",
-        "Vytvorte bezpečný cloud pre ${ n } členov",
-        "Vytvorte bezpečný cloud pre ${ n } členov",
-        "Vytvorte bezpečný cloud pre ${ n } členov"
-      ],
       "Create in": [
         "Vytvoriť v"
       ],
@@ -4101,9 +4104,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Sú podporované CSV súbory z aplikácií Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a iných, ako i formáty vCard 3.1 a 4.0 (UTF-8 kódovanie)."
-      ],
       "Current plan": [
         "Aktuálny plán"
       ],
@@ -4115,6 +4115,9 @@
       ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "default email address": [
+        "predvolená emailová adresa"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitálny podpis overený. Tento súbor bol bezpečne nahraný prostredníctvom ${ emailAddress }."
@@ -4175,9 +4178,6 @@
       ],
       "email": [
         "email"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Emailový hosting pre 10 vlastných emailových domén je zahrnutý zadarmo. Ďalšie domény je možné pridať za cenu ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
@@ -4680,9 +4680,6 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Účet môže mať nový kľúč alebo mohlo dôjsť k manipulácii s nasledujúcimi údajmi: ${ items }. Otvorte len v prípade, že tomu dôverujete."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Pred exportom kontaktov musí aplikácia kontakty lokálne dešifrovať. Na konci procesu bude vygenerovaný súbor VCF, ktorý si budete môcť stiahnuť."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Autorstvo úprav v dokumente nebolo možné overiť. Chcete tento dokument označiť ako overený? Môžete zvoliť možnosť Ignorovať a rozhodnúť sa neskôr."
       ],
@@ -5072,11 +5069,6 @@
         "Iba zobrazenie"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
-      ]
-    },
     "Item": {
       "file attributes": [
         "atribúty súboru"
@@ -5178,9 +5170,6 @@
       "Authenticator app": [
         "Aplikácia 2FA"
       ],
-      "Automatically save contacts": [
-        "Automaticky ukladať kontakty"
-      ],
       "Beta Access": [
         "Beta prístup"
       ],
@@ -5207,12 +5196,6 @@
       ],
       "Calendars": [
         "Kalendáre"
-      ],
-      "Can edit": [
-        "Môže upravovať"
-      ],
-      "Can view": [
-        "Môže zobraziť"
       ],
       "Cancel download": [
         "Zrušiť sťahovanie"
@@ -5328,9 +5311,6 @@
       "Expires": [
         "Exspiruje"
       ],
-      "Export contacts": [
-        "Exportovať kontakty"
-      ],
       "Extended address": [
         "Rozšírená adresa"
       ],
@@ -5360,9 +5340,6 @@
       ],
       "Import all messages": [
         "Importovať všetky správy"
-      ],
-      "Import contacts": [
-        "Importovať kontakty"
       ],
       "Import interval": [
         "Interval pre import"
@@ -5579,14 +5556,6 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "Usporiadanie, pridávanie a úprava súborov"
-      ],
-      "View and download": [
-        "Zobraziť a prevziať"
       ]
     },
     "Label for contact group color": {
@@ -6045,6 +6014,9 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začnite teraz za ${ priceCoupon }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
@@ -6704,6 +6676,11 @@
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Získajte Mail Plus za ${ priceCoupon }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -7001,6 +6978,9 @@
     "Notification": {
       "\"${ name }\" created successfully": [
         "„${ name }“ úspešne vytvorené"
+      ],
+      "\"${ name }\" deleted": [
+        "\"${ name } bol vymazaný"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "„${ name }“ trvalo zmazané z koša"
@@ -7558,32 +7538,9 @@
         "Meno"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } náš Predajný tím, prosím."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Vyberte počet IP, ktoré chcete zahrnúť do svojho plánu. Každá ďalšia IP stojí ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Ak potrebujete viac ako ${ maxIPs } IP, ",
-        "Ak potrebujete viac ako ${ maxIPs } IP, ",
-        "Ak potrebujete viac ako ${ maxIPs } IP, ",
-        "Ak potrebujete viac ako ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontaktujte"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Vyberte počet používateľov, ktorých chcete zahrnúť do svojho plánu. Každý ďalší používateľ stojí ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Ak potrebujete viac ako ${ maxUsers } používateľský účet, ${ contact } prosím náš obchodný tím.",
-        "Ak potrebujete viac ako ${ maxUsers } používateľské účty, ${ contact } prosím náš obchodný tím.",
-        "Ak potrebujete viac ako ${ maxUsers } používateľských účtov, ${ contact } prosím náš obchodný tím.",
-        "Ak potrebujete viac ako ${ maxUsers } používateľských účtov, ${ contact } prosím náš obchodný tím."
       ]
     },
     "Price": {
@@ -9277,9 +9234,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
-      ],
-      "You do not have any contacts to export": [
-        "Nemáte žiadne kontakty na export"
       ]
     },
     "tooltip": {
@@ -9445,6 +9399,9 @@
       ],
       "Missing alias suffix": [
         "Chýbajúca prípona aliasu"
+      ],
+      "Name is required": [
+        "Názov je povinný"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Povolené sú len alfanumerické znaky, bodky, pomlčky a podčiarkovníky"

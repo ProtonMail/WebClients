@@ -60,9 +60,6 @@
       "Add group": [
         "Ajouter un groupe"
       ],
-      "Add new contact": [
-        "Ajouter un nouveau contact"
-      ],
       "Add new group": [
         "Ajouter un nouveau groupe"
       ],
@@ -285,8 +282,8 @@
       "Export contact group": [
         "Exporter le groupe de contacts"
       ],
-      "Export contacts": [
-        "Exporter les contacts"
+      "Export selection as .vcf": [
+        "Exporter la sélection au format *.vcf"
       ],
       "Forgot password?": [
         "Mot de passe oublié ?"
@@ -392,6 +389,9 @@
       ],
       "Merge contacts": [
         "Fusionner les contacts"
+      ],
+      "More actions": [
+        "Actions supplémentaires"
       ],
       "More info: ${ safeTitle }": [
         "Plus d'informations : ${ safeTitle }"
@@ -3854,14 +3854,8 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
       ],
-      "Account size": [
-        "Taille du compte"
-      ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
-      ],
-      "Additional options": [
-        "Options supplémentaires"
       ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
@@ -3990,10 +3984,6 @@
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Créer un cloud sécurisé pour ${ n } membre",
-        "Créer un cloud sécurisé pour ${ n } membres"
-      ],
       "Create in": [
         "Créer dans"
       ],
@@ -4014,9 +4004,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications, ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8), sont pris en charge."
       ],
       "Current plan": [
         "Abonnement actuel"
@@ -4092,9 +4079,6 @@
       ],
       "email": [
         "e-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "L'hébergement de messagerie pour 10 noms de domaine personnalisés est inclus gratuitement. Des domaines supplémentaires peuvent être ajoutés pour ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
@@ -4516,7 +4500,7 @@
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Registering your subscription...": [
-        "Enregistrement de votre abonnement...."
+        "Enregistrement de votre abonnement…"
       ],
       "Restored version to": [
         "La version a été restaurée à"
@@ -4601,9 +4585,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Le compte peut avoir une nouvelle clé ou les éléments suivants ont peut-être été falsifiés : ${ items }. N'ouvrez que si vous avez confiance."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
       ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "La provenance des modifications dans le document n'a pas pu être vérifiée. Voulez-vous marquer ce document comme vérifié ? Vous pouvez choisir d'ignorer et décider plus tard."
@@ -4999,11 +4980,6 @@
         "Lecture seule"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
-      ]
-    },
     "Item": {
       "file attributes": [
         "attributs du fichier"
@@ -5103,9 +5079,6 @@
       "Authenticator app": [
         "Application d'authentification"
       ],
-      "Automatically save contacts": [
-        "Enregistrer automatiquement les contacts"
-      ],
       "Beta Access": [
         "Accès à la version bêta"
       ],
@@ -5132,12 +5105,6 @@
       ],
       "Calendars": [
         "Calendriers"
-      ],
-      "Can edit": [
-        "Peut modifier"
-      ],
-      "Can view": [
-        "Peut consulter"
       ],
       "Cancel download": [
         "Annuler le téléchargement"
@@ -5253,9 +5220,6 @@
       "Expires": [
         "Expire le"
       ],
-      "Export contacts": [
-        "Exporter les contacts"
-      ],
       "Extended address": [
         "Complément d’adresse"
       ],
@@ -5285,9 +5249,6 @@
       ],
       "Import all messages": [
         "Importer tous les messages"
-      ],
-      "Import contacts": [
-        "Importer les contacts"
       ],
       "Import interval": [
         "Intervalle d'importation"
@@ -5504,14 +5465,6 @@
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "Organisez, ajoutez et modifiez vos fichiers"
-      ],
-      "View and download": [
-        "Afficher et télécharger"
       ]
     },
     "Label for contact group color": {
@@ -6879,11 +6832,17 @@
       "\"${ name }\" created successfully": [
         "« ${ name } » a été créé."
       ],
+      "\"${ name }\" deleted": [
+        "« ${ name } » a été supprimé."
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "« ${ name } » a été définitivement supprimé du dossier Corbeille."
       ],
       "\"${ name }\" failed to be created": [
         "« ${ name } » n'a pas pu être créé."
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "La suppression de « ${ name } » n'a pas abouti."
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "« ${ name } » n'a pu être définitivement supprimé du dossier Corbeille."
@@ -6922,9 +6881,17 @@
         "${ count } élément n'a pas pu être déchiffré.",
         "${ count } éléments n'ont pas pu être déchiffrés."
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } élément supprimé",
+        "${ numberOfItems } éléments supprimés"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } élément a été définitivement supprimé du dossier Corbeille.",
         "${ numberOfItems } éléments ont été définitivement supprimés du dossier Corbeille."
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } élément n'a pas été supprimé.",
+        "${ numberOfItems } éléments n'ont pas été supprimés."
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } élément n'a pu être définitivement supprimé du dossier Corbeille.",
@@ -7405,28 +7372,9 @@
         "Nom"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } notre équipe commerciale."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Sélectionnez le nombre d'IP à inclure dans votre abonnement. Chaque IP supplémentaire coûte ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si vous avez besoin de plus de ${ maxIPs } IP, ",
-        "Si vous avez besoin de plus de ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contactez"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Sélectionnez le nombre d'utilisateurs à inclure dans votre abonnement. Chaque utilisateur supplémentaire coûte ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si vous avez besoin de plus d'${ maxUsers } compte utilisateur, nous vous invitons à ${ contact } notre service client.",
-        "Si vous avez besoin de plus de ${ maxUsers } comptes utilisateur, nous vous invitons à ${ contact } notre service client."
       ]
     },
     "Price": {
@@ -9042,9 +8990,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Nous leur avons envoyé une invitation pour accéder à l'élément."
-      ],
-      "You do not have any contacts to export": [
-        "Vous n'avez aucun contact à exporter."
       ]
     },
     "tooltip": {
