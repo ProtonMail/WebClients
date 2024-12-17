@@ -18,8 +18,6 @@ const StepFormErrorYahoo = ({ isReconnect, errorCode }: Props) => {
         return null;
     }
 
-    const boldNot = <strong key="boldNot">{c('Import error emphasis').t`not`}</strong>;
-
     const learnMoreUrl =
         errorCode !== RATE_LIMIT_EXCEEDED ? getKnowledgeBaseUrl('/troubleshooting-easy-switch/') : undefined;
     return (
@@ -31,10 +29,7 @@ const StepFormErrorYahoo = ({ isReconnect, errorCode }: Props) => {
                     </div>
                     <ul className="m-0 pb-4">
                         <li>{c('Import error').t`IMAP access is enabled in your Yahoo account.`}</li>
-                        <li>{
-                            // // translator: the variable here is a HTML tag, here is the complete sentence: "your app password is correct. Do not use your regular password"
-                            c('Import error').jt`Your app password is correct. Do ${boldNot} use your regular password.`
-                        }</li>
+                        <li>{c('Import error').jt`Your app password is correct. Do not use your regular password.`}</li>
                     </ul>
                 </>
             )}
@@ -50,7 +45,7 @@ const StepFormErrorYahoo = ({ isReconnect, errorCode }: Props) => {
                     </div>
                     <ul className="m-0 pb-4">
                         <li>{c('Import error')
-                            .jt`Your email address and app password are correct. Do ${boldNot} use your regular password.`}</li>
+                            .jt`Your email address and app password are correct. Do not use your regular password.`}</li>
                         <li>{c('Import error').t`IMAP access is enabled in your Yahoo account.`}</li>
                     </ul>
                 </>
