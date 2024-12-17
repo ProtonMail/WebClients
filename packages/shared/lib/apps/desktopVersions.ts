@@ -1,4 +1,5 @@
-import type { DESKTOP_APP_NAMES, DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
+import type { DESKTOP_APP_NAMES, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
+import type { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import { getDownloadUrl } from '@proton/shared/lib/helpers/url';
 
 export interface Props {
@@ -6,6 +7,7 @@ export interface Props {
     platform: DESKTOP_PLATFORMS;
     version: 'latest' | string;
     category: RELEASE_CATEGORIES;
+    manifestVersion?: string;
 }
 
 interface RELEASE {
@@ -32,6 +34,7 @@ export const fetchDesktopVersion = async ({
     platform,
     category,
     version,
+    manifestVersion,
 }: Props): Promise<
     | {
           url: string;
@@ -40,7 +43,9 @@ export const fetchDesktopVersion = async ({
     | undefined
 > => {
     try {
-        const response = await fetch(getDownloadUrl(`/${appName}/${platform}/version.json`));
+        const url = `/${appName}/${platform}${manifestVersion ? '/' + manifestVersion : ''}/version.json`;
+
+        const response = await fetch(getDownloadUrl(url));
         if (!response.ok) {
             throw new Error(response.statusText);
         }
