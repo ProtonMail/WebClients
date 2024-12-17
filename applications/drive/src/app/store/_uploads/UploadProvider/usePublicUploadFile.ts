@@ -107,7 +107,7 @@ export default function usePublicUploadFile() {
             }
             if (!shareKeysCache) {
                 const defaultShare = await getDefaultShare();
-                shareKeysCache = await getShareCreatorKeys(abortSignal, defaultShare.shareId);
+                shareKeysCache = await getShareCreatorKeys(abortSignal, defaultShare);
             }
 
             return shareKeysCache;
