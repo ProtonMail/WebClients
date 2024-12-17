@@ -98,8 +98,6 @@ enum DriveFeatureFlag {
     DriveShareURLBookmarking = 'DriveShareURLBookmarking',
     DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
     DriveWebShareURLSignupModal = 'DriveWebShareURLSignupModal',
-    // Temp
-    DriveDecryptionErrorDebugging = 'DriveDecryptionErrorDebugging',
     // B2B
     DriveB2BPhotosUpload = 'DriveB2BPhotosUpload',
     // Refactor
