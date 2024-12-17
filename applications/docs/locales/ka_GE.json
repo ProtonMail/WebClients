@@ -60,9 +60,6 @@
       "Add group": [
         "ჯგუფის დამატება"
       ],
-      "Add new contact": [
-        "ახალი კონტაქტის დამატება"
-      ],
       "Add new group": [
         "ახალი ჯგუფის დამატება"
       ],
@@ -285,14 +282,14 @@
       "Export contact group": [
         "კონტაქტების ჯგუფის გატანა"
       ],
-      "Export contacts": [
-        "კონტაქტების გატანა"
-      ],
       "Forgot password?": [
         "დაგავიწყდათ პაროლი?"
       ],
       "Forward as attachment": [
         "გადაგზავნა მიმაგრებული ფაილის სახით"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "მიიღეთ ${ MAIL_SHORT_APP_NAME } Plus ფასად ${ priceCoupon }"
       ],
       "Get in touch": [
         "დაგვიკავშირდით"
@@ -581,6 +578,9 @@
       ],
       "Show advanced PGP settings": [
         "PGP-ის დამატებითი პარამეტრების ჩვენება"
+      ],
+      "Show options": [
+        "პარამეტრების ჩვენება"
       ],
       "Sign out": [
         "გასვლა"
@@ -1084,6 +1084,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "ელფოსტის მისამართის პარამეტრების შეცვლა"
+      ],
+      "Continue": [
+        "გაგრძელება"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
       ],
@@ -2163,6 +2169,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA ამატებს უსაფრთხოების ფენას, რითიც ხელს უშლის არაავტორიზებულ წვდომას."
       ],
+      "Also included": [
+        "ასევე შეიცავს"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "მიმდინარეობს კონტაქტების გაშიფვრა… ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, თქვენ შეგეძლებათ, გადმოწეროთ ფაილი ყველა თქვენი კონტაქტით."
       ],
@@ -2174,6 +2183,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "მიიღეთ შეუზღუდავი ფსევდონიმები და 500 გბ საცავი ${ PLAN_NAMES[PLANS.BUNDLE] }-სთან ერთად."
@@ -3814,14 +3826,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "ანგარიშთან წვდომა აკრძალულია გადაუხდელი ინვოისების გამო. დაუკავშირდით თქვენს ადმინისტრატორს."
       ],
-      "Account size": [
-        "ანგარიშის ზომა"
-      ],
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
       ],
-      "Additional options": [
-        "დამატებითი პარამეტრები"
+      "Address copied to clipboard": [
+        "მისამართი დაკოპირდა გაცვლის ბაფერში"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
@@ -3947,10 +3956,6 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის",
-        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის"
-      ],
       "Create in": [
         "რაში შევქმნა"
       ],
@@ -3972,9 +3977,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "მხარდაჭერილია CSV ფაილები Outlook-დან, Outlook Express-დან, Yahoo!-ს ფოსტიდან, Hotmail-დან, Eudora-დან და ზოგიერთი სხვა აპიდან, ასევე vCard 3.1-დან და 4.0 ფორმატები-დან (UTF-8 კოდირებით)."
-      ],
       "Current plan": [
         "მიმდინარე ტარიფი"
       ],
@@ -3986,6 +3988,9 @@
       ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "default email address": [
+        "ნაგულისხმევი ელფოსტის მისამართი"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "ციფრული ხელმოწერა შემოწმებულია. ეს ფაილი დაცულად ატვირთა ${ emailAddress }-მა."
@@ -4046,9 +4051,6 @@
       ],
       "email": [
         "ელფოსტა"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "ელფოსტის ჰოსტინგი 10 ხელით მითითებული დომენის სახელით უფასოა. დამატებითი დომენების შეძენის ფასია ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "ელფოსტის ჰოსტინგი ხელმისაწვდომია, მხოლოდ, იმ დომენებისთვის, რომლებსაც უკვე ფლობთ. დომენის რეგისტრაცია, ამჟამად, არ არის ხელმისაწვდომი ${ BRAND_NAME }-ის საშუალებით. დომენის შეძენა ნებისმიერ რეგისტრატორთან შეგიძლიათ."
@@ -4289,6 +4291,9 @@
       "Merged": [
         "შერწყმული"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "შეტყობინებები ყველა თქვენს ელფოსტის მისამართზე საფოსტ ყუთში მოგივათ."
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -4466,8 +4471,14 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
       ],
+      "Registering your subscription...": [
+        "თქვენი გამოწერის რეგისტრაცია..."
+      ],
       "Restored version to": [
         "ვერსია აღდგენილია მნიშვნელობაზე"
+      ],
+      "Save Document as PDF": [
+        "დოკუმენტის შენახვა PDF-ში"
       ],
       "Saving": [
         "დაზოგვა"
@@ -4496,6 +4507,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP-ის აწყობა საშუალებას მოგცემთ, გააგზავნოთ დაშიფრული ელფოსტები არა${ BRAND_NAME }-ის მომხმარებლებთან, რომლებიც ასევე იყენებენ PGP-სთან თავსებად სერვისს."
       ],
+      "Setting up your new address...": [
+        "თქვენი ახალი მისამართის მორგება..."
+      ],
       "Settings update failed": [
         "პარამეტრების განახლება ჩავარდა"
       ],
@@ -4523,6 +4537,9 @@
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "დაიწყეთ კონტაქტებთან გაზიარება და გამოიყენეთ ის ინტერნეტ-სერვისებისთვის."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "გადმორიცხეთ დეპოზიტი შემდეგ მისამართზე ან დაასკანერეთ QR კოდი. თქვენი დეპოზიტი ანგარიშში დადასტურების შემდეგ აისახება."
       ],
@@ -4540,9 +4557,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "ამ ანგარიშს შეიძლება, ახალი გასაღები ჰქონდეს, ან შეიცვალა: ${ items } არ გახსნათ, თუ არ ენდობით."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "გატანამდე აპლიკაცია თქვენს კონტაქტებს გაშიფრავს. პროცესის ბოლოს შეიქმნება VCF ფაილი, რომლის გადმოწერაც შეგეძლებათ."
       ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "დოკუმენტის ჩასწორებების ავტორის გადამოწმება შეუძლებელია. გნებავთ, მონიშნოთ ეს დოკუმენტი, როგორც გადამოწმებული? შეგიძლიათ, აირჩიოთ გამოტოვოთ ეს და მოგვიანებით გადაწყვიტოთ."
@@ -4573,6 +4587,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "ეს დოკუმენტი ან არ არსებობს, ან მისი ნახვის უფლება არ გაქვთ. შეგიძლიათ, სცადოთ თავიდან ჩატვირთოთ გვერდი, რომ ნახოთ, გაქრება თუ არა პრობლემა."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "ეს ახლა თქვენი ${ defaultEmailAddress }-ია ახალი შეტყობინებების გასაგზავნად."
       ],
       "This item already exists in your library": [
         "ეს ელემენტი თქვენს ბიბლიოთეკაში უკვე არსებობს"
@@ -4728,6 +4745,15 @@
       "What do you want to do?": [
         "რისი გაკეთება გნებავთ?"
       ],
+      "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
+        "როცა დიალოგი გამოჩნდება, შეცვალთ 'სამიზნე' ვარიანტზე 'შენახვა, როგორც PDF', შემდეგი დაჭირეთ ღილაკს 'შენახვა'."
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "როცა დიალოგი გამოჩნდება, შეცვალთ 'სამიზნე' ვარიანტზე 'PDF-ში შენახვა', შემდეგი დაჭირეთ ღილაკს 'შენახვა'."
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "როცა დიალოგი გამოჩნდება, აირჩიეთ \"PDF\" ქვედა მარცხენა კუთხეში, შემდეგ კი დააჭირეთ ღილაკს 'შენახვა'."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
       ],
@@ -4841,6 +4867,9 @@
       "Your account will be updated once the payment is cleared.": [
         "გადახდის შემდეგ თქვენი ანგარიში განახლდება."
       ],
+      "Your browser's Print dialog will now open, where you can export your document to PDF.": [
+        "ახლა გაიხსნება თქვენი ბრაუზერის ბეჭდვის დიალოგი, სადაც შეგიძლიათ, აირჩიოთ, რომ თქვენი დოკუმენტები PDF-ში იქნეს გატანილი."
+      ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "მიმდინარეობს თქვენი ცვლილებების სინქრონიზაცია Drive-ზე. არ დახუროთ ეს ვებგვერდი."
       ],
@@ -4909,11 +4938,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "მხოლოდ დათვალიერებისათვის"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
       ]
     },
     "Item": {
@@ -5015,9 +5039,6 @@
       "Authenticator app": [
         "ავთენტიკატორი აპი"
       ],
-      "Automatically save contacts": [
-        "კონტაქტების ავტომატური შენახვა"
-      ],
       "Beta Access": [
         "წვდომა ბეტა ვერსიებზე"
       ],
@@ -5044,12 +5065,6 @@
       ],
       "Calendars": [
         "კალენდრები"
-      ],
-      "Can edit": [
-        "შეუძლია, ჩაასწოროს"
-      ],
-      "Can view": [
-        "შეუძლია, ნახოს"
       ],
       "Cancel download": [
         "გადმოწერის გაუქმება"
@@ -5165,9 +5180,6 @@
       "Expires": [
         "ვადა"
       ],
-      "Export contacts": [
-        "კონტაქტების გატანა"
-      ],
       "Extended address": [
         "გაფართოებული მისამართი"
       ],
@@ -5197,9 +5209,6 @@
       ],
       "Import all messages": [
         "ყველა შეტყობინების შემოტანა"
-      ],
-      "Import contacts": [
-        "კონტაქტების შემოტანა"
       ],
       "Import interval": [
         "შემოტანის დაყოვნება"
@@ -5416,14 +5425,6 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "დააორგანიზეთ, დაამატეთ და ჩაასწორეთ ფაილები"
-      ],
-      "View and download": [
-        "ნახვა და გადმოწერა"
       ]
     },
     "Label for contact group color": {
@@ -5873,6 +5874,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
       ],
+      "Get started for ${ priceCoupon }": [
+        "დაწყება ${ priceCoupon }-დან"
+      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }-დან"
       ],
@@ -6013,6 +6017,9 @@
       ],
       "10 email addresses/aliases": [
         "10 ელ ფოსტა/ფსევდონიმი"
+      ],
+      "10 more premium features": [
+        "და კიდევ 10 ფასიანი ფუნქცია"
       ],
       "10-year file version history": [
         "10-წლიანი ფაილის ვერსიის ისტორია"
@@ -6483,6 +6490,11 @@
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "მიიღეთ Mail Plus ფასით ${ priceCoupon }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -6546,6 +6558,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "შექმენით ${ n }-მდე ელფოსტის მისამართი/ფსევდონიმი, რომლებიც შეგიძლიათ, ოჯახის წევრებს მიანიჭოთ. გამოიყენეთ ისინი, მაგალითად, შოინგისთვის. JemalShpper@${ domain }."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "მომხმარებლის დომენი ფსევდონიმებისთვის, დამატებითი საფოსტო ყუთებისთვის, შესაძლებლობისთვის, რომ ელფოსტების ფსევდონიმებიდან გააგზავნოთ და აშ"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ"
@@ -6771,11 +6786,17 @@
       "\"${ name }\" created successfully": [
         "${ name } წარმატებით შეიქმნა"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" წაიშალა"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" ნაგვის ყუთიდან წარმატებით წაიშალა"
       ],
       "\"${ name }\" failed to be created": [
         "\"${ name }\"-ის შექმნის შეცდომა"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\"-ის წაშლის შეცდომა"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\"-ის ნაგვიდან წაშლის შეცდომა"
@@ -6814,9 +6835,17 @@
         "${ count } ელემენტის გაშიფვრის შეცდომა",
         "${ count } ელემენტის გაშიფვრის შეცდომა"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } ელემენტის წაიშალა",
+        "${ numberOfItems } ელემენტის წაიშალა"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } ელემენტი წარმატებულად წაიშალა ნაგვის ყუთიდან",
         "${ numberOfItems } ელემენტი წარმატებულად წაიშალა ნაგვის ყუთიდან"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } ელემენტის წაშლის შეცდომა",
+        "${ numberOfItems } ელემენტის წაშლის შეცდომა"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "ნაგვის ყუთიდან ${ numberOfItems } ელემენტის წაშლის შეცდომა",
@@ -7144,6 +7173,9 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ ${ subscriptionLength } თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ renewPrice } ${ subscriptionLengthCopy } თვით. გაუქმება ყოველთვის შეგიძლიათ."
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ],
@@ -7285,28 +7317,9 @@
         "სახელი"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } ჩვენს გაყიდვების გუნდს."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "თქვენს სატარიფო გეგმაში ჩასასმელი IP-ების რაოდენობა. თითოეული დამატებითი IP-ის ფასია ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, ",
-        "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "კონტაქტი"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "თქვენს სატარიფო გეგმაში ჩასასმელი მომხმარებლების რაოდენობა. თითოეული დამატებითი მომხმარებლის ფასია ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "თუ დაგჭირდათ ${ maxUsers }-ზე მეტი მომხმარებელი, დაუკავშირდით ჩვენი გაყიდვების გუნდს ${ contact }.",
-        "თუ დაგჭირდათ ${ maxUsers }-ზე მეტი მომხმარებელი, დაუკავშირდით ჩვენი გაყიდვების გუნდს ${ contact }."
       ]
     },
     "Price": {
@@ -8799,6 +8812,9 @@
       "Untitled document ${ date }": [
         "უსათაურო დოკუმენტი ${ date }"
       ],
+      "Upgrade complete!": [
+        "განახლება დასრულებულია!"
+      ],
       "Uploading a large file or folder": [
         "დიდი ფაილის ან საქაღალდის ატვირთვა"
       ],
@@ -8834,6 +8850,9 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
+      ],
+      "Your shorter address is now ready": [
+        "თქვენი მოკლე მისამართი ახლა მზადაა"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8916,9 +8935,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "ჩვენ მათ მოწვევა გავუგზავნეთ ელემენტთან წვდომისთვის."
-      ],
-      "You do not have any contacts to export": [
-        "თქვენ არ გაქვთ გატანადი კონტაქტები"
       ]
     },
     "tooltip": {
@@ -9060,6 +9076,9 @@
       ],
       "Missing alias suffix": [
         "აკლია ფსევდონიმის სუფიქსი"
+      ],
+      "Name is required": [
+        "სახელი აუცილებელია"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "დაშვებულია, მხოლოდ, ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"

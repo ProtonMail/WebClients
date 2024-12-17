@@ -60,9 +60,6 @@
       "Add group": [
         "Добавить группу"
       ],
-      "Add new contact": [
-        "Добавить новый контакт"
-      ],
       "Add new group": [
         "Добавить новую группу"
       ],
@@ -282,14 +279,14 @@
       "Export contact group": [
         "Экспорт группы контактов"
       ],
-      "Export contacts": [
-        "Экспортировать контакты"
-      ],
       "Forgot password?": [
         "Забыли пароль?"
       ],
       "Forward as attachment": [
         "Переслать как вложение"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Оформите ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
       ],
       "Get in touch": [
         "Связаться с нами"
@@ -3921,14 +3918,8 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
       ],
-      "Account size": [
-        "Размер аккаунта"
-      ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
-      ],
-      "Additional options": [
-        "Дополнительные параметры"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
@@ -4059,12 +4050,6 @@
       "Create a new contact group": [
         "Создать новую группу контактов"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Создать безопасное облако для ${ n } участника",
-        "Создать безопасное облако для ${ n } участников",
-        "Создать безопасное облако для ${ n } участников",
-        "Создать безопасное облако для ${ n } участников"
-      ],
       "Create in": [
         "Создать в"
       ],
@@ -4082,9 +4067,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Поддерживаются файлы CSV из Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora и некоторых других приложений, а также форматы vCard 3.1 и 4.0 (кодировка UTF-8)."
       ],
       "Current plan": [
         "Текущий тариф"
@@ -4154,9 +4136,6 @@
       ],
       "email": [
         "электронная почта"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через ${ BRAND_NAME } в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
@@ -4638,9 +4617,6 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Акаунт может иметь новый ключ или могли быть взломаны следующие элементы: ${ items }. Открывайте только в том случае, если вы им доверяете."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Приложению необходимо расшифровать ваши контакты, прежде чем экспортировать их. В конце процесса будет сгенерирован файл VCF, и вы сможете его скачать."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Не удалось проверить авторство правок в этом документе. Хотите ли вы отметить этот документ как проверенный? Вы можете выбрать Игнорировать, чтобы решить это позже."
       ],
@@ -5024,11 +5000,6 @@
         "Только просмотр"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
-      ]
-    },
     "Item": {
       "file attributes": [
         "аттрибуты файла"
@@ -5130,9 +5101,6 @@
       "Authenticator app": [
         "Приложение-аутентификатор"
       ],
-      "Automatically save contacts": [
-        "Автоматическое сохранение контактов"
-      ],
       "Beta Access": [
         "Бета доступ"
       ],
@@ -5159,12 +5127,6 @@
       ],
       "Calendars": [
         "Календари"
-      ],
-      "Can edit": [
-        "Может изменять"
-      ],
-      "Can view": [
-        "Может просматривать"
       ],
       "Cancel download": [
         "Отменить скачивание"
@@ -5277,9 +5239,6 @@
       "Expires": [
         "Срок действия"
       ],
-      "Export contacts": [
-        "Экспорт контактов"
-      ],
       "Extended address": [
         "Расширенный адрес"
       ],
@@ -5309,9 +5268,6 @@
       ],
       "Import all messages": [
         "Импортировать все сообщения"
-      ],
-      "Import contacts": [
-        "Импорт контактов"
       ],
       "Import interval": [
         "Интервал импорта"
@@ -5525,14 +5481,6 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "Упорядочивать, добавлять и изменять файлы"
-      ],
-      "View and download": [
-        "Посмотреть и скачать"
       ]
     },
     "Label for contact group color": {
@@ -6650,6 +6598,14 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Оформите Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -7501,32 +7457,9 @@
         "Имя"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } нашим Отделом продаж."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Выберите количество адресов IP, которые необходимо включить в ваш тариф. Каждый дополнительный IP стоит ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "свяжитесь"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Выберите количество пользователей для включения в ваш тариф. Каждый дополнительный пользователь стоит ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Если вам нужно более ${ maxUsers } аккаунта, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж."
       ]
     },
     "Price": {
@@ -9205,9 +9138,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Мы отправили им приглашение получить доступ к этому элементу."
-      ],
-      "You do not have any contacts to export": [
-        "У вас нет контактов для экспорта"
       ]
     },
     "tooltip": {
