@@ -28,7 +28,7 @@ import { CommentsEvent, EditorEvent, EditorSystemMode, LiveCommentsEvent } from 
 import { EditorFrame } from './EditorFrame'
 import { mergeRegister } from '@lexical/utils'
 import { useSignatureCheckFailedModal } from './Modals/SignatureCheckFailedModal'
-import type { DocumentAction, NodeMeta, PublicNodeMeta } from '@proton/drive-store'
+import { isPrivateNodeMeta, type DocumentAction, type NodeMeta, type PublicNodeMeta } from '@proton/drive-store'
 import { c } from 'ttag'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
@@ -40,6 +40,8 @@ import WordCountOverlay from './WordCount/WordCountOverlay'
 import { useSuggestionsFeatureFlag } from '../Hooks/useSuggestionsFeatureFlag'
 import { useWelcomeSplashModal } from '../Apps/Public/WelcomeSplashModal/WelcomeSplashModal'
 import type { EditorControllerInterface } from '@proton/docs-core'
+import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import { InviteAutoAccepter } from './InviteAutoAccepter'
 
 type Props = {
   nodeMeta: NodeMeta | PublicNodeMeta
@@ -50,11 +52,14 @@ type Props = {
 type Error = {
   message: string
   userUnderstandableMessage: boolean
+  code?: DocsApiErrorCode
 }
 
 export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }: Props) {
   const application = useApplication()
   const { getLocalID } = useAuthentication()
+  const getUserSettings = useGetUserSettings()
+  const debug = useDebug()
 
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
   const [docController, setDocController] = useState<AuthenticatedDocControllerInterface | undefined>(undefined)
@@ -75,8 +80,11 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   const [error, setError] = useState<Error | null>(null)
   const [didLoadTitle, setDidLoadTitle] = useState(false)
   const [didLoadEditorContent, setDidLoadEditorContent] = useState(false)
-  const debug = useDebug()
-  const getUserSettings = useGetUserSettings()
+  /**
+   * If a document fails to laod with insufficient permissions, we try to see if there's a pending invite for it
+   * and autoaccept it, before showing any error state to the user.
+   */
+  const [didAttemptToAutoAcceptInvite, setDidAttemptToAutoAcceptInvite] = useState(false)
 
   const isPublicViewer = useMemo(() => documentState?.getProperty('userRole').isPublicViewer(), [documentState])
   /**
@@ -322,8 +330,8 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
         setEditorController(result.editorController)
         setReady(true)
       },
-      onError: (errorMessage) => {
-        setError({ message: errorMessage, userUnderstandableMessage: false })
+      onError: (errorMessage, code) => {
+        setError({ message: errorMessage, userUnderstandableMessage: false, code })
         application.metrics.reportFullyBlockingErrorModal()
       },
     })
@@ -342,6 +350,37 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
       createBridge(docOrchestrator, editorFrame)
     }
   }, [docOrchestrator, editorFrame, createBridge, bridge])
+
+  const onInviteAutoAcceptResult = useCallback((result: boolean) => {
+    if (result) {
+      window.location.reload()
+    }
+
+    setDidAttemptToAutoAcceptInvite(true)
+  }, [])
+
+  const Loader = (
+    <div className="relative h-full w-full">
+      <div className="bg-norm flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center gap-4">
+        <CircleLoader size="large" />
+        <div className="text-center">{c('Info').t`Loading document...`}</div>
+      </div>
+    </div>
+  )
+
+  if (
+    error &&
+    error.code === DocsApiErrorCode.InsufficientPermissions &&
+    isPrivateNodeMeta(nodeMeta) &&
+    !didAttemptToAutoAcceptInvite
+  ) {
+    return (
+      <>
+        <InviteAutoAccepter nodeMeta={nodeMeta} onResult={onInviteAutoAcceptResult} />
+        {Loader}
+      </>
+    )
+  }
 
   if (error) {
     return (
@@ -373,14 +412,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
 
       {ready && <WordCountOverlay />}
 
-      {(!documentState || !editorController) && (
-        <div className="relative h-full w-full">
-          <div className="bg-norm flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center gap-4">
-            <CircleLoader size="large" />
-            <div className="text-center">{c('Info').t`Loading document...`}</div>
-          </div>
-        </div>
-      )}
+      {(!documentState || !editorController) && Loader}
 
       {renderEditor && (
         <EditorFrame

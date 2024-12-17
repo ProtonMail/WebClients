@@ -12,7 +12,8 @@ let logLevel = 'info';
 // Function to copy files from source to target
 async function copyFiles(source, target) {
     try {
-        const entries = await fs.readdir(source, { withFileTypes: true });
+        const sourceEntries = await fs.readdir(source, { withFileTypes: true });
+        const targetEntries = await fs.readdir(target, { withFileTypes: true });
 
         try {
             await fs.access(target);
@@ -21,7 +22,26 @@ async function copyFiles(source, target) {
             return;
         }
 
-        for (let entry of entries) {
+        // Remove files/directories that exist in target but not in source
+        for (let targetEntry of targetEntries) {
+            const sourcePath = path.join(source, targetEntry.name);
+            const targetPath = path.join(target, targetEntry.name);
+
+            try {
+                await fs.access(sourcePath);
+            } catch {
+                // Source doesn't exist, so remove from target
+                if (targetEntry.isDirectory()) {
+                    await fs.rm(targetPath, { recursive: true });
+                } else {
+                    await fs.unlink(targetPath);
+                }
+                console.log(`Removed stale ${targetEntry.isDirectory() ? 'directory' : 'file'}: ${targetPath}`);
+            }
+        }
+
+        // Continue with existing copy logic
+        for (let entry of sourceEntries) {
             const sourcePath = path.join(source, entry.name);
             const targetPath = path.join(target, entry.name);
 

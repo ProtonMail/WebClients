@@ -187,8 +187,6 @@ export class WebsocketService implements WebsocketServiceInterface {
               document: nodeMeta,
             },
           })
-        } else {
-          this.logger.error(`Failed to get token: ${errorCode}`)
         }
       },
     }

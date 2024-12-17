@@ -24,7 +24,6 @@ import { PrivateHookChangesToEvents } from './Hooks/PrivateHookChangesToEvents'
 import { useFlag } from '@proton/unleash'
 
 export default function SingleDocumentRoute({ driveCompat }: { driveCompat: DriveCompat }) {
-  void import('../../tailwind.scss')
   const application = useApplication()
 
   const [user] = useUser()
@@ -76,7 +75,8 @@ export default function SingleDocumentRoute({ driveCompat }: { driveCompat: Driv
 
     const isOpeningDocsAtRootPage = !openAction
     const isOpeningDocsWithCreateAction = openAction && openAction.mode === 'create'
-    const shouldCreateNewRootDoc = isOpeningDocsAtRootPage || isOpeningDocsWithCreateAction
+    const isUsingNewRoute = openAction && openAction.mode === 'new'
+    const shouldCreateNewRootDoc = isOpeningDocsAtRootPage || isOpeningDocsWithCreateAction || isUsingNewRoute
     const isRedirectBackToPublicContext = openAction && openAction.mode === 'open-url-reauth'
 
     if (isRedirectBackToPublicContext) {
@@ -99,7 +99,7 @@ export default function SingleDocumentRoute({ driveCompat }: { driveCompat: Driv
       setIsCreatingNewDocument(true)
 
       void createNewDocInRoot().then((result) => {
-        updateParameters(result.volumeId, result.linkId)
+        updateParameters({ newVolumeId: result.volumeId, newLinkId: result.linkId, pathname: 'doc' })
 
         setIsCreatingNewDocument(false)
         setDidCreateNewDocument(true)
@@ -109,13 +109,13 @@ export default function SingleDocumentRoute({ driveCompat }: { driveCompat: Driv
     const shouldOpenHistory = openAction && openAction.mode === 'history'
     if (shouldOpenHistory) {
       setActionMode('history')
-      updateParameters(openAction.volumeId, openAction.linkId)
+      updateParameters({ newVolumeId: openAction.volumeId, newLinkId: openAction.linkId })
     }
 
     const shouldDownload = openAction && openAction.mode === 'download'
     if (shouldDownload) {
       setActionMode('download')
-      updateParameters(openAction.volumeId, openAction.linkId)
+      updateParameters({ newVolumeId: openAction.volumeId, newLinkId: openAction.linkId })
     }
   }, [
     application.logger,
@@ -130,7 +130,7 @@ export default function SingleDocumentRoute({ driveCompat }: { driveCompat: Driv
   const onConversionSuccess = useCallback(
     (result: FileToDocConversionResult) => {
       setContentToInject(result.dataToConvert)
-      updateParameters(result.newShell.volumeId, result.newShell.linkId)
+      updateParameters({ newVolumeId: result.newShell.volumeId, newLinkId: result.newShell.linkId })
     },
     [updateParameters],
   )
@@ -202,7 +202,7 @@ function Content({
     }
   }, [emailTitleEnabled, emailNotificationsEnabled, openEmailOptInModal, isNotificationsReady, emailFeatureEnabled])
 
-  if (isCreatingNewDocument) {
+  if (isCreatingNewDocument || openAction?.mode === 'new') {
     return (
       <div className="flex-column flex h-full w-full items-center justify-center gap-4">
         <CircleLoader size="large" />

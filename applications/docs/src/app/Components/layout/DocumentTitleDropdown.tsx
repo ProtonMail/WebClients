@@ -177,7 +177,6 @@ const DocumentTitleDropdown = ({
       <div className="flex items-center px-1.5">
         <MimeIcon name="proton-doc" size={5} className="mr-0.5" />
         <AutoGrowingInput
-          className="text-sm"
           inputClassName="px-1 py-1.5"
           ref={focusInputOnMount}
           value={renameInputValue}
@@ -216,22 +215,24 @@ const DocumentTitleDropdown = ({
         data-testid="document-name-dropdown"
       >
         <MimeIcon name="proton-doc" size={5} className="mr-2 shrink-0" />
-        <span className="text-ellipsis text-left text-sm head-480-749:max-w-[215px]">{title}</span>
+        <span className="text-ellipsis text-left head-480-749:!max-w-[215px]">{title}</span>
       </DropdownButton>
       <Dropdown
         isOpen={isOpen}
         anchorRef={anchorRef}
         onClose={close}
         size={{
-          width: DropdownSizeUnit.Static,
+          width: DropdownSizeUnit.Dynamic,
+          height: DropdownSizeUnit.Dynamic,
+          maxHeight: DropdownSizeUnit.Viewport,
         }}
         originalPlacement="bottom-start"
         className="py-0"
         contentProps={{
-          className: 'after:h-0',
+          className: 'after:!h-0',
         }}
       >
-        <DropdownMenu className="text-sm">
+        <DropdownMenu>
           {authenticatedController && documentState.getProperty('userRole').canEdit() && (
             <DropdownMenuButton
               className="flex items-center text-left"
@@ -313,7 +314,7 @@ const DocumentTitleDropdown = ({
                 offset: 0,
               }}
             >
-              <DropdownMenu className="text-sm">
+              <DropdownMenu>
                 <DropdownMenuButton
                   className="flex items-center gap-1 text-left"
                   onClick={(event) => {
@@ -418,7 +419,7 @@ const DocumentTitleDropdown = ({
               offset: 0,
             }}
           >
-            <DropdownMenu className="text-sm">
+            <DropdownMenu>
               <DropdownMenuButton
                 className="flex items-center text-left"
                 onClick={() => {
@@ -487,10 +488,10 @@ const DocumentTitleDropdown = ({
             {c('Action').t`Open ${DRIVE_APP_NAME}`}
           </DropdownMenuButton>
 
-          <hr className="mt-1 min-h-px" />
+          <hr className="mb-0 mt-1 min-h-px" />
 
           <div
-            className="color-weak px-4 py-2 text-xs"
+            className="color-weak px-4 py-2 text-sm"
             style={{
               background: 'var(--primary-minor-2)',
             }}
@@ -500,7 +501,7 @@ const DocumentTitleDropdown = ({
             <span className="align-middle">{c('Info').t`End-to-end encrypted.`} </span>
             <a
               data-connection-popover
-              className="inline-block align-middle underline hover:underline"
+              className="mr-2 inline-block align-middle underline hover:underline"
               href="https://proton.me/security/end-to-end-encryption"
               target="_blank"
             >

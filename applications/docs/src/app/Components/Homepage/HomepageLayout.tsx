@@ -7,7 +7,6 @@ import DocsQuickSettings from '../layout/DocsQuickSettings'
 import type { DocumentAction } from '@proton/drive-store'
 import { HomepageHeader } from './HomepageHeader'
 import { HomepageSidebar } from './HomepageSidebar'
-import './HomepageLayout.scss'
 
 interface Props {
   children: ReactNode

@@ -31,6 +31,9 @@ import { extraThunkArguments } from '../../ReduxStore/thunk'
 import type { AvailabilityReport } from '@proton/utils/availability'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 import { DocsThemeProvider } from '../DocsThemeProvider'
+import CustomNotificationsHijack from './CustomNotificationHijacker'
+
+const HIDDEN_NOTIFICATIONS = ['Requested data does not exist or you do not have permission to access it']
 
 const defaultState: {
   initialUser?: UserModel
@@ -98,27 +101,29 @@ const UserApp = () => {
 
         return (
           <ProtonStoreProvider store={state.store}>
-            <AuthenticationProvider store={extraThunkArguments.authentication}>
-              <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
-                <Router history={extraThunkArguments.history}>
-                  <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                    <ApiProvider api={extraThunkArguments.api}>
-                      <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
-                        <ErrorBoundary big component={<StandardErrorPage big />}>
-                          <StandardPrivateApp
-                            hasReadableMemberKeyActivation
-                            hasMemberKeyMigration
-                            hasPrivateMemberKeyGeneration
-                          >
-                            <state.MainContainer />
-                          </StandardPrivateApp>
-                        </ErrorBoundary>
-                      </DrawerProvider>
-                    </ApiProvider>
-                  </EventManagerProvider>
-                </Router>
-              </FlagProvider>
-            </AuthenticationProvider>
+            <CustomNotificationsHijack ignoredNotifications={HIDDEN_NOTIFICATIONS}>
+              <AuthenticationProvider store={extraThunkArguments.authentication}>
+                <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                  <Router history={extraThunkArguments.history}>
+                    <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                      <ApiProvider api={extraThunkArguments.api}>
+                        <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
+                          <ErrorBoundary big component={<StandardErrorPage big />}>
+                            <StandardPrivateApp
+                              hasReadableMemberKeyActivation
+                              hasMemberKeyMigration
+                              hasPrivateMemberKeyGeneration
+                            >
+                              <state.MainContainer />
+                            </StandardPrivateApp>
+                          </ErrorBoundary>
+                        </DrawerProvider>
+                      </ApiProvider>
+                    </EventManagerProvider>
+                  </Router>
+                </FlagProvider>
+              </AuthenticationProvider>
+            </CustomNotificationsHijack>
           </ProtonStoreProvider>
         )
       })()}
