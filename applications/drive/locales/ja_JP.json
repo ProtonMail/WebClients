@@ -46,7 +46,7 @@
         "追加"
       ],
       "Add address": [
-        "住所を追加"
+        "アドレスを追加"
       ],
       "Add birthday": [
         "誕生日を追加"
@@ -62,9 +62,6 @@
       ],
       "Add group": [
         "グループを追加"
-      ],
-      "Add new contact": [
-        "新しい連絡先を追加"
       ],
       "Add new group": [
         "新しいグループを追加"
@@ -145,7 +142,7 @@
         "データを消去"
       ],
       "Clear query": [
-        "検索をクリア"
+        "クエリをクリア"
       ],
       "Clear selection": [
         "選択解除"
@@ -357,9 +354,6 @@
       "Export contact group": [
         "連絡先グループをエクスポート"
       ],
-      "Export contacts": [
-        "連絡先のエクスポート"
-      ],
       "Fit to window": [
         "ウィンドウに合わせる"
       ],
@@ -367,10 +361,13 @@
         "パスワードを忘れましたか？"
       ],
       "Forward as attachment": [
-        "添付ファイルとして送信"
+        "添付ファイルとして転送"
       ],
       "Get ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } を入手"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "${ priceCoupon }で${ MAIL_SHORT_APP_NAME }Plusを獲得"
       ],
       "Get in touch": [
         "連絡する"
@@ -950,7 +947,7 @@
         "${ domains } 追加カスタムドメイン"
       ],
       "${ ips } server": [
-        "${ ips } のサーバー"
+        "${ ips } 台のサーバー"
       ],
       "${ price } per dedicated server": [
         "専用サーバーあたり ${ price }"
@@ -965,7 +962,7 @@
         "${ seats } ライティングアシスタントのシート"
       ],
       "${ users } user": [
-        "${ users } のユーザー"
+        "${ users } 人のユーザー"
       ]
     },
     "Alert": {
@@ -1040,7 +1037,7 @@
     },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+        "1 件の独自メールドメイン対応、10 のメールアドレス、10 の hide-my-email エイリアス、カレンダー共有などが含まれます。"
       ]
     },
     "BF2024: Action (top button in header)": {
@@ -1196,7 +1193,7 @@
         "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
+        "メールとスケジュールをエンドツーエンド暗号化で保護します。15 のメールアドレス、カスタムメールドメインのサポート、無制限のide-my-emailなどが含まれています。"
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。オンライン文書エディタ、写真のバックアップ、バージョン履歴、暗号化済みファイル共有などが含まれています。"
@@ -1311,6 +1308,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "メールアドレス設定を変更"
+      ],
+      "Continue": [
+        "続ける"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }で続ける。"
       ],
@@ -1358,7 +1361,7 @@
         "暗号化されたパスワードマネージャー"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "エンドツーエンドで暗号化された電子メールとストレージを備えた基本的な無料プラン。プレミアム機能は含まれていません。"
+        "エンドツーエンドで暗号化されたメールとストレージを備えた基本的な無料プラン。プレミアム機能は含まれていません。"
       ],
       "Save ${ upsellSavings }": [
         "${ upsellSavings }を節約"
@@ -1638,7 +1641,7 @@
         "ベナン"
       ],
       "Bermuda": [
-        "バミューダ"
+        "バミューダ諸島"
       ],
       "Bhutan": [
         "ブータン"
@@ -1785,7 +1788,7 @@
         "エストニア"
       ],
       "Eswatini": [
-        "スワジランド"
+        "エスワティニ"
       ],
       "Ethiopia": [
         "エチオピア"
@@ -1875,7 +1878,7 @@
         "ハード島とマクドナルド諸島"
       ],
       "Holy See (Vatican City State)": [
-        "聖座 (バチカン市国)"
+        "バチカン市国"
       ],
       "Honduras": [
         "ホンジュラス"
@@ -2052,7 +2055,7 @@
         "モザンビーク"
       ],
       "Myanmar": [
-        "ビルマ"
+        "ミャンマー"
       ],
       "Namibia": [
         "ナミビア"
@@ -2325,7 +2328,7 @@
         "アメリカ"
       ],
       "United States Minor Outlying Islands": [
-        "合衆国領有小離島"
+        "アメリカ合衆国外諸島"
       ],
       "Uruguay": [
         "ウルグアイ"
@@ -2372,7 +2375,7 @@
         "/月"
       ],
       "/user per month": [
-        "毎月 (1 ユーザーあたり)"
+        "/ 毎月 (1 ユーザーあたり)"
       ]
     },
     "Default display name vcard": {
@@ -2397,7 +2400,7 @@
     },
     "description": {
       "use the Easy Switch import assistant": [
-        "easy Switch インポートアシスタントを使用する"
+        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description": {
@@ -2406,6 +2409,9 @@
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
+      ],
+      "Also included": [
+        "含まれています"
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "連絡先を復号しています… これには数分かかります。完了するとエクスポートされたすべての連絡先がダウンロードできるようになります。"
@@ -2418,6 +2424,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "サードパーティサービスからパスワードやその他のデータが漏洩した場合に通知します。"
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] }で無制限のエイリアスと 500 GBの容量を獲得しましょう。"
@@ -2712,7 +2721,7 @@
         "問題が発生しました。もう一度お試しください。"
       ],
       "Account does not exist": [
-        "アカウントは存在しません"
+        "アカウントが存在しません"
       ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
@@ -2898,7 +2907,7 @@
         "${ calendarsToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
       ],
       "Missing key packet": [
-        "キーパケットが利用できません"
+        "キーパケットが見つかりません"
       ],
       "Missing signature": [
         "署名がありません"
@@ -3093,7 +3102,7 @@
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
       ],
       "Try using only letters, numerals, and _.-": [
-        "文字・数字・ _.- のみを使用してみてください"
+        "文字、数字、_.- のみを使用してみてください。"
       ],
       "Unexpected error, we can't import the contacts": [
         "予期しないエラーにより、連絡先をインポートできません"
@@ -3514,7 +3523,7 @@
     },
     "familyOffer_2023:Label": {
       "Enter family group name to confirm": [
-        "ファミリーグループ名を入力して確認"
+        "家族グループ名を入力して確認"
       ],
       "Enter organization name to confirm": [
         "組織名を入力して確認する"
@@ -3541,7 +3550,7 @@
         "65 か国以上の 2700 台のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "3 件の独自メールドメイン対応、90 件のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+        "3 の独自メールドメイン対応、90 のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
@@ -4082,7 +4091,7 @@
         "30日間の返金保証。"
       ],
       "A number will be added to the filename": [
-        "ファイル名の最後に番号が付加されます"
+        "ファイル名に番号が付加されます"
       ],
       "A number will be added to the folder name": [
         "フォルダーの名前に番号が追加されます"
@@ -4096,14 +4105,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
       ],
-      "Account size": [
-        "アカウント サイズ"
-      ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
-      "Additional options": [
-        "追加のオプション"
+      "Address copied to clipboard": [
+        "アドレスをクリップボードにコピーしました"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に公開鍵を信頼する必要があります。"
@@ -4136,7 +4142,7 @@
         "最低金額 (${ amount }) を下回っています。"
       ],
       "An active recovery file": [
-        "復元ファイル"
+        "アクティブな復元ファイル"
       ],
       "an anonymous user": [
         "匿名のユーザー"
@@ -4166,7 +4172,7 @@
         "すべてのアイテムを完全に削除し、ごみ箱を空にしてよろしいですか？"
       ],
       "Are you sure you want to permanently delete": [
-        "バージョン履歴から"
+        "完全に削除してもよろしいですか？"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "「${ itemName }」をごみ箱から完全に削除してよろしいですか？"
@@ -4184,7 +4190,7 @@
         "利用可能"
       ],
       "Awaiting transaction": [
-        "トランザクション待ち"
+        "取引待ち"
       ],
       "Balance from your previous subscription": [
         "前回の定期購入時の残高"
@@ -4202,7 +4208,7 @@
         "御社のイメージ力を強め、ユーザーにより一貫したオンラインサービスを提供しましょう。"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "FREEプランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
+        "無料プランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
       ],
       "Calendar side panel": [
         "カレンダーサイドパネル"
@@ -4241,7 +4247,7 @@
         "暗号化検索のデータを削除"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "ブラウザーからデータを削除すると、検索インデックスも削除されます。検索機能を再度利用するには、またインデックスが必要になります。"
+        "ブラウザデータをクリアすると、このデバイス上の検索インデックスが消去されます。検索機能を使用している間、すべてのファイルは再度インデックスを作成する必要があります。"
       ],
       "Clears browser data related to the encrypted search.": [
         "暗号化検索のデータをブラウザから削除します。"
@@ -4282,9 +4288,6 @@
       "Create a new contact group": [
         "新しい連絡先グループを作成"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "${ n } 名のメンバーのために安全なクラウドを作成します"
-      ],
       "Create in": [
         "作成日時"
       ],
@@ -4309,9 +4312,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "以前のサブスクリプションプランの未使用分のクレジット"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora などからエスクポートした CSV ファイルや vCard 3.1 および 4.0 形式 (UTF-8エンコーディング) をサポートしています。"
-      ],
       "Current plan": [
         "現在のプラン"
       ],
@@ -4326,6 +4326,9 @@
       ],
       "Dedicated servers": [
         "専用サーバー"
+      ],
+      "default email address": [
+        "既定のメールアドレス"
       ],
       "Delete locked drive": [
         "ロックされたドライブの削除"
@@ -4414,20 +4417,17 @@
       "email": [
         "メール"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "10個のカスタムメールドメイン名のメールホスティングが無料で含まれています。 追加のドメインを${ price } で追加できます。"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "メール ホスティングはあなたがお持ちのドメインでのみ利用できます。ドメインの登録は現在、${ BRAND_NAME } 経由では取り扱っていません。ドメイン レジストラーからドメインを登録することでメールのホストが可能になります。"
       ],
       "Emails are automatically signed": [
-        "電子メールは自動的に署名されます"
+        "メールは自動的に署名されます"
       ],
       "Empty folder": [
         "空のフォルダ"
       ],
       "Enabling drive search": [
-        "ドライブ内検索をオンにしています"
+        "ドライブ内検索を有効にしています"
       ],
       "Encrypted search is here": [
         "暗号化検索が利用できます"
@@ -4443,9 +4443,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
-      ],
-      "Enter the device name to confirm removal.": [
-        "削除確認のため、デバイス名を入力してください。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
@@ -4478,7 +4475,7 @@
         "セキュアリンクの生成に失敗しました。後でもう一度お試しください"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        "リンクを開くことができませんでした。エラー内容：${ error }"
+        "リンクを開くことができませんでした。原因:${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
         "ファイル「${ name }」はダウンロード中に削除されました"
@@ -4523,7 +4520,7 @@
         "無料の5GB暗号化ストレージで始めましょう"
       ],
       "from the version history?": [
-        "を完全に削除してよろしいですか？"
+        "バージョン履歴から"
       ],
       "Get the app to backup photos from your phone.": [
         "携帯電話から写真をバックアップするアプリを入手してください。"
@@ -4535,7 +4532,7 @@
         "${ DRIVE_APP_NAME } について学び、3 GB のストレージボーナスを手に入れましょう！"
       ],
       "Go to \"My files\" and upload some files first.": [
-        "「マイファイル」に移動し、共有したいファイルをアップロードしてください。"
+        "「マイファイル」に移動し、ファイルをアップロードしてください。"
       ],
       "here": [
         "こちら"
@@ -4544,7 +4541,7 @@
         "優先度：高"
       ],
       "How does encrypted search work?": [
-        "暗号化された検索の原理"
+        "暗号化された検索はどのように機能しますか？"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
@@ -4705,6 +4702,9 @@
       "Merged": [
         "結合済み"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "すべてのメールアドレスへのメッセージは受信トレイに移動します。"
+      ],
       "MM/YY": [
         "MM/YY"
       ],
@@ -4718,7 +4718,7 @@
         "ファイルを移動中"
       ],
       "My Links": [
-        "共有リンク一覧"
+        "マイリンク"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
@@ -4775,7 +4775,7 @@
         " / "
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "パスワードの変更により、開くことのできないドライブがあります。"
+        "暗号化されたドライブの1つがロックされています。これは最近のパスワードリセットによるものです。"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
@@ -4814,7 +4814,7 @@
         "アクセス権のある人"
       ],
       "Permanently delete all files in your locked drive": [
-        "ドライブからすべてのファイルを完全に削除"
+        "ロックされたドライブ内のすべてのファイルを完全に削除する"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline はプレーンテキスト形式のみと互換性があります。"
@@ -4934,7 +4934,7 @@
         "写真を追加する準備はできましたか?"
       ],
       "recommended browser": [
-        "推奨ブラウザー"
+        "推奨ブラウザ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "手動で削除しない限り、回復に関する情報はこのデバイス上に保存され続けます。"
@@ -4944,6 +4944,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
+      ],
+      "Registering your subscription...": [
+        "サブスクリプションを登録中…"
       ],
       "Report has been sent": [
         "レポートは送信されました"
@@ -4982,7 +4985,7 @@
         "このブラウザーでは検索を使用することができません。"
       ],
       "Search Enabled": [
-        "検索機能がオンです"
+        "検索機能が有効です"
       ],
       "Securely downloaded ${ nbFile } file": [
         "${ nbFile } 件のファイルが安全にダウンロードされました"
@@ -5026,6 +5029,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ${ BRAND_NAME } 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
       ],
+      "Setting up your new address...": [
+        "新しいアドレスを設定中…"
+      ],
       "Share files with links": [
         "リンクでファイルを共有"
       ],
@@ -5057,7 +5063,7 @@
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
       ],
       "Skipped": [
-        "スキップ"
+        "スキップ済"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "ダウンロードに失敗したファイルがあります。再度ダウンロードしてください。"
@@ -5073,6 +5079,9 @@
       ],
       "Something went wrong...": [
         "何か問題が発生しました..."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "連絡先との共有を始め、オンラインサービスのために使ってください。"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
@@ -5091,9 +5100,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "${ items } は改ざんされたか、アカウントに新しい鍵が設定された可能性があります。信頼できる場合のみ開いてください。"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "アプリケーションは、エクスポートする前に連絡先をローカルで復号する必要があります。プロセスの終了時に、VCF ファイルが生成され、ダウンロードすることができます。"
       ],
       "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
         "デジタル署名は部分的に検証されました。ファイルは特定のユーザーの出所を指定していない公開ページからアップロードされました。"
@@ -5125,14 +5131,26 @@
       "There is nothing to see here": [
         "ここには何もありません"
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "この操作はアップロードしたファイルを完全に削除します。"
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "この操作はアップロードしたフォルダを完全に削除します。所有権のないファイルが含まれるフォルダは削除することができません。"
+      ],
       "This action will delete the link and revoke access for all users.": [
         "この操作はリンクを削除し、すべてのユーザーがアクセスできなくなります。"
+      ],
+      "This action will delete the selected items permanently.": [
+        "この操作は選択したアイテムを完全に削除します。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
+      ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "元に戻すことはできません。削除を確認するにはデバイス名を入力してください。"
       ],
       "This file is too large to preview": [
         "このファイルは、非常に大きいためプレビューできません"
@@ -5142,6 +5160,9 @@
       ],
       "This folder is empty": [
         "このフォルダーは空です"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "これは新しいメッセージを送信するための${ defaultEmailAddress }です。"
       ],
       "This item already exists in your library": [
         "このアイテムはすでにライブラリに存在します"
@@ -5167,8 +5188,8 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "共有リンクは削除され、今後誰に対しても機能しなくなります。"
       ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "この操作により、同期デバイス ${ deviceName } が ${ DRIVE_APP_NAME } から削除され、マイコンピューターに追加したフォルダーの同期が停止します。"
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "これにより${ DRIVE_APP_NAME }から同期されたデバイス${ deviceName }が削除され、${ DRIVE_APP_NAME }からすべてのデータが削除されます。マイコンピュータに追加されたフォルダは同期が停止します。"
       ],
       "This will replace the existing file with the folder": [
         "既存のファイルをフォルダーで置き換えます"
@@ -5252,7 +5273,7 @@
         "ファイル名、日付、種類で検索してみてください。"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "残念ながら、ファイルまたはそのデータの一部は復号化できないようだ。"
+        "残念ながら、ファイルまたは一部のデータは復号化できないようです。"
       ],
       "Unknown date": [
         "日付不明"
@@ -5342,7 +5363,7 @@
         "お客様のお支払いを銀行で認証する必要があります。"
       ],
       "We use 3-D Secure to protect your payments": [
-        "決済を保護するために 3D セキュアを利用します"
+        "支払いを保護するために 3 D セキュアを使用しています"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
@@ -5396,7 +5417,7 @@
         "あなた"
       ],
       "You already have a free account": [
-        "すでに無料アカウントをお持ちですか？"
+        "あなたはすでに無料アカウントをお持ちです"
       ],
       "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
         "共有アイテムから離れようとしています。所有者が再度共有するまで、このアイテムにアクセスできなくなります。"
@@ -5465,7 +5486,7 @@
         "この日付以降、${ planTitle } 機能にアクセスできなくなります。"
       ],
       "You will lose all unsaved changes.": [
-        "保存されていない変更はすべて失なわれます。"
+        "保存されていない変更はすべて失われます。"
       ],
       "You will need to save it again from the public link page.": [
         "公開リンクページから再度保存する必要があります。"
@@ -5580,11 +5601,6 @@
         "閲覧のみ"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
-      ]
-    },
     "Item": {
       "file attributes": [
         "ファイル属性"
@@ -5695,9 +5711,6 @@
       "Authenticator app": [
         "認証アプリ"
       ],
-      "Automatically save contacts": [
-        "宛先を連絡先に自動追加"
-      ],
       "Beta Access": [
         "ベータ版アクセス"
       ],
@@ -5714,10 +5727,10 @@
         "ブラウザのバージョン"
       ],
       "BTC address": [
-        "BTC アドレス"
+        "ビットコインアドレス"
       ],
       "BTC amount": [
-        "BTC（ビットコイン）の額"
+        "ビットコイン金額"
       ],
       "Calendar": [
         "カレンダー"
@@ -5780,7 +5793,7 @@
         "そのストリーミングサービスについて教えていただけますか?"
       ],
       "Could you please specify?": [
-        "理由を教えてくれますか?"
+        "具体的に教えていただけますか？"
       ],
       "Country": [
         "国"
@@ -5872,9 +5885,6 @@
       "Expires": [
         "有効期限"
       ],
-      "Export contacts": [
-        "連絡先のエクスポート"
-      ],
       "Extended address": [
         "拡張アドレス"
       ],
@@ -5913,9 +5923,6 @@
       ],
       "Import all messages": [
         "すべてのメッセージをインポート"
-      ],
-      "Import contacts": [
-        "連絡先のインポート"
       ],
       "Import interval": [
         "インポートの間隔"
@@ -6053,7 +6060,7 @@
         "日割り計算"
       ],
       "Protect with password": [
-        "パスワードを設定"
+        "パスワードで保護"
       ],
       "Public keys": [
         "公開鍵"
@@ -6290,10 +6297,10 @@
         "今すぐ再アクティブ化する"
       ],
       "Request an invite": [
-        "登録を申請"
+        "招待をリクエスト"
       ],
       "Shared": [
-        "共有中"
+        "共有済み"
       ],
       "Shared with me": [
         "私と共有しました"
@@ -6415,7 +6422,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "試用は終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
+        "無料トライアルは終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -6665,6 +6672,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } へダウングレード"
       ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }で開始"
+      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }から始めましょう"
       ],
@@ -6706,7 +6716,7 @@
         "${ DARK_WEB_MONITORING_NAME }と${ PROTON_SENTINEL_NAME }"
       ],
       "${ n } calendar": [
-        "${ n } カレンダー"
+        "${ n } 個のカレンダー"
       ],
       "${ n } calendar per user": [
         "1 ユーザーあたり ${ n } 件のカレンダー"
@@ -6736,7 +6746,7 @@
         "${ n } 件のラベル"
       ],
       "${ n } message per day": [
-        "1 日あたり ${ n } メッセージ"
+        "1日あたり${ n } 件のメッセージ"
       ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
         "1人あたり${ n }の${ PASS_SHORT_APP_NAME }保管庫を共有"
@@ -6788,6 +6798,9 @@
       ],
       "10 email addresses/aliases": [
         "10 件のメールアドレス / エイリアス"
+      ],
+      "10 more premium features": [
+        "10 以上のプレミアム機能"
       ],
       "10-year file version history": [
         "10 年間のファイルバージョン履歴"
@@ -6946,7 +6959,7 @@
         "HTML 署名"
       ],
       "Integrated 2FA authenticator": [
-        "統合された2FA認証機能"
+        "統合された2要素認証機能"
       ],
       "Kill switch/always-on VPN": [
         "キルスイッチ / 常時接続 VPN"
@@ -7099,7 +7112,7 @@
         "ユーザー毎の${ PASS_SHORT_APP_NAME }保管庫の無制限共有"
       ],
       "Unlimited shared vaults with access permissions": [
-        "アクセス権限のある無制限の共有コンテナー"
+        "アクセス権限のある無制限の共有保管庫"
       ],
       "Unlimited vault sharing": [
         "無制限の保管庫共有"
@@ -7212,7 +7225,7 @@
         "${ visionary } プランは、特別な機能と特典を備えた元の ${ BRAND_NAME } ユーザー向けの特別プランであるため、新規加入者は利用できなくなりました。"
       ],
       "Popular": [
-        "最も人気"
+        "人気"
       ],
       "Protect sensitive business information and collaborate securely.": [
         "ビジネスの機密情報を保護して安全に共同作業"
@@ -7227,10 +7240,10 @@
         "必要不可欠なネットワーク監視で、どこからでも安全にインターネットにアクセス"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "ファイルを簡単かつ安全に保存、同期、共有できる、安全なクラウドストレージのプランです。"
+        "ファイルを簡単かつ安全に保存、同期、共有できる、安全なクラウドストレージ。"
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "毎日の会話のための、高度な機能を備えた安全な電子メールのプランです。"
+        "毎日の会話のための、高度な機能を備えた安全なメールのプランです。"
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "特定のセキュリティ ニーズを持つ大規模組織向けにカスタマイズされたソリューション"
@@ -7265,6 +7278,14 @@
         "プランを変更しますか?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon }でMail Plusを入手"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceMailPlus }で自動更新されます。いつでもキャンセル可能です。"
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: エンドツーエンドの暗号化でスケジュールを保護します。 カスタム カレンダー、カレンダー共有などのサポートが含まれます。"
@@ -7273,7 +7294,7 @@
         "${ DRIVE_APP_NAME }：暗号化されたクラウドストレージでファイルを保護。自動同期、暗号化ファイル共有などを含みます。"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
-        "${ MAIL_APP_NAME }: エンドツーエンド暗号化でメールを保護します。 カスタム電子メール ドメイン、15 個の電子メール アドレス、無制限の hide-my-email エイリアスなどのサポートが含まれます。"
+        "${ MAIL_APP_NAME }: エンドツーエンド暗号化でメールを保護します。 カスタムメール ドメイン、15 個のメール アドレス、無制限の hide-my-email エイリアスなどのサポートが含まれます。"
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: ブロックされたコンテンツにアクセスし、プライベートに閲覧します。 ${ serversAndCountries }、最高の VPN 速度、世界中のストリーミング サービスへのアクセス、マルウェアと広告ブロッカー、高速 BitTorrent ダウンロードなどが含まれます。"
@@ -7303,7 +7324,7 @@
         "現在、プロモーション目的やプログラム制御のメールの一括送信はサポートしていません。このような場合は、専用のメールサービスプロバイダーを使用することをおすすめします。"
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "電子メールについて通知するか、メッセージが到着するカスタム時間を選択します"
+        "メールについて通知するか、メッセージが到着するカスタム時間を選択します"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "複数のメールアドレスを作成して使用できます。例えば、買い物用に JohnShopper@${ domain } 、ニュース購読用に JohnNews@${ domain } を使用するなどです。"
@@ -7312,7 +7333,7 @@
         "${ n } 個までのカレンダーを作成または友人/家族/同僚/組織のカレンダーを追加"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "最大 ${ n } 個の電子メール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します。\n例: ショッピングアカウントのJohnShopper@${ domain }。"
+        "最大 ${ n } 個のメール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します。\n例: ショッピングアカウントのJohnShopper@${ domain }。"
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "エイリアスのカスタムドメイン、追加のメールボックス、エイリアスからメールを送信する機能など"
@@ -7387,7 +7408,7 @@
         "パスワード管理と個人情報保護"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "ロゴ、画像、ソーシャルメディアアイコン、連絡先詳細へのリンクなどを使用して電子メールの署名をパーソナライズします"
+        "ロゴ、画像、ソーシャルメディアアイコン、連絡先詳細へのリンクなどを使用してメールの署名をパーソナライズします"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
         "ユーザーが 20 名以上のお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME }カスタマー サポート チームから電話サポートを利用可能"
@@ -7541,13 +7562,19 @@
     },
     "Notification": {
       "\"${ name }\" created successfully": [
-        "「${ name }」を作成しました"
+        "「${ name }」が正常に作成されました。"
+      ],
+      "\"${ name }\" deleted": [
+        "「${ name }」が削除されました"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "「${ name }」がごみ箱から完全に削除されました"
       ],
       "\"${ name }\" failed to be created": [
-        "「${ name }」を作成に失敗しました"
+        "\"${ name }\" の作成に失敗しました"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "「${ name }」の削除に失敗しました"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "「${ name }」のごみ箱からの完全な削除に失敗しました"
@@ -7580,13 +7607,19 @@
         "「${ newName }」に名前を変更できませんでした"
       ],
       "\"${ newName }\" renamed successfully": [
-        "「${ newName }」に名前を変更しました"
+        "\"${ newName }\" の名前を正常に変更しました"
       ],
       "${ count } item failed to be decrypted": [
         "${ count }件のアイテムの復号に失敗しました"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems }個のアイテムが削除されました"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems }件のアイテムをごみ箱から完全に削除しました"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems }個のアイテムの削除に失敗しました"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems }件のアイテムをごみ箱から完全に削除できませんでした"
@@ -7697,10 +7730,10 @@
         "ファイルのアップロードに失敗しました: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "「${ filename }」とその他 ${ count }件はすでにアップロード中です"
+        "ファイルまたはフォルダ「${ filename }」とその他 ${ count }件はすでにアップロード中です"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "「${ filename }」はすでにアップロード中です"
+        "ファイルまたはフォルダ \"${ filename }\" は既にアップロードされています"
       ],
       "File or folder is missing a name": [
         "ファイルまたはフォルダーに名前がありません"
@@ -7712,13 +7745,13 @@
         "招待メールが再度送信されました"
       ],
       "Link copied to clipboard": [
-        "クリップボードにリンクがコピーされました"
+        "リンクがクリップボードにコピーされました"
       ],
       "Move ${ n } file": [
         "${ n } 件のファイルの移動"
       ],
       "Move ${ n } folder": [
-        "${ n } フォルダを移動する"
+        "${ n } 件のフォルダーを移動"
       ],
       "Move ${ n } item": [
         "${ n } 件のアイテムの移動"
@@ -7784,7 +7817,7 @@
         "設定の保存に失敗しました"
       ],
       "Your settings have been changed successfully": [
-        "設定を変更しました"
+        "設定が正常に変更されました"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7979,7 +8012,7 @@
         "新しいカレンダーを作成"
       ],
       "Merge with calendar": [
-        "カレンダーと結合"
+        "カレンダーと統合"
       ]
     },
     "Participant name": {
@@ -8141,7 +8174,7 @@
         "無効な有効期限です"
       ],
       "Invalid security code": [
-        "無効なセキュリティコード"
+        "無効なセキュリティコードです"
       ],
       "Something went wrong. Please try again later.": [
         "何か問題が発生しました。 後でもう一度試してください。"
@@ -8205,10 +8238,10 @@
         "メール"
       ],
       "Enter a new file name": [
-        "ファイル名を入力してください"
+        "新しいファイル名を入力してください"
       ],
       "Enter a new folder name": [
-        "フォルダー名を入力"
+        "新しいフォルダ名を入力してください"
       ],
       "Enter device name": [
         "デバイス名を入力"
@@ -8277,7 +8310,7 @@
         "${ BRAND_NAME }をより良くするためには何が必要だと思うか共有してください。"
       ],
       "Start typing an email address": [
-        "電子メールアドレスを入力"
+        "メールアドレスを入力"
       ]
     },
     "Placeholder for contact group name": {
@@ -8285,26 +8318,9 @@
         "名前"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } 営業チームまでお問い合わせください。"
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "プランに含める IP の数を選択します。 追加の IP ごとに ${ price } の費用がかかります。"
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "${ maxIPs } を超える IP が必要な場合は、 "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "お問い合わせ"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "プランに含めるユーザー数を選択してください。ユーザーを 1 人追加するごとに ${ price } 必要です。"
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "${ maxUsers }個以上のアカウントが必要な場合は、営業チームに連絡してください。${ contact }"
       ]
     },
     "Price": {
@@ -8812,16 +8828,16 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "ブロックされたコンテンツへのアクセスや、プライベートなブラウジングが可能です。60 か国以上の 1700 台のサーバー、最高速の VPN、ユーザー毎に 10 件の VPN 接続、世界的なストリーミングサービス、マルウェアおよび広告ブロッカーなどが含まれます。"
+        "ブロックされたコンテンツへのアクセスや、プライベートなブラウジングが可能です。60 か国以上の 1700 台のサーバー、最高速の VPN、ユーザー毎に 10 の VPN 接続、世界的なストリーミングサービス、マルウェアおよび広告ブロッカーなどが含まれます。"
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "ブロックされたコンテンツへのアクセスや、プライベートなブラウジングが可能です。60 か国以上の 1700 台のサーバー、最高速の VPN、10 件の VPN 接続、世界的なストリーミングサービス、マルウェアおよび広告ブロッカーなどが含まれます。"
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "すべてのプレミアムサービスを高い自由度で利用できます。100 件のメールアドレス、10 件の独自ドメイン対応、無制限の hide-my-email エイリアス、カレンダー共有、暗号化クラウドストレージとファイル共有など。"
+        "すべてのプレミアムサービスを高い自由度で利用できます。100 のメールアドレス、10 の独自ドメイン対応、無制限の hide-my-email エイリアス、カレンダー共有、暗号化クラウドストレージとファイル共有など。"
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "3 件の独自メールドメイン対応、15 件のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+        "3 つの独自メールドメイン対応、15 のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "ファミリーや小規模なチームに最適で、各自が受信トレイとエイリアスを持ちます。カスタムドメインが必要です。"
@@ -8963,7 +8979,7 @@
         "${ gb } のストレージと優先サポートにアクセスできなくなります。"
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
-        "追加のストレージ、電子メール アドレス、エイリアス、カレンダー、および優先サポートにアクセスできなくなります。"
+        "追加のストレージ、メール アドレス、エイリアス、カレンダー、および優先サポートにアクセスできなくなります。"
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
         "最高の VPN 速度、10 台のデバイスの保護、高速ストリーミング、広告ブロッカーとマルウェアからの保護、および優先サポートへのアクセスが失われます。"
@@ -9014,7 +9030,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "了承"
+        "了解"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Apple App Storeアカウントにサインインして、${ subscriptions }を選んでください。"
@@ -9097,10 +9113,10 @@
         "${ planName }は、ファイルや写真のために${ planMaxSpace }のストレージを提供します。さらに、毎年のストレージボーナスを受け取る資格があります。"
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
-        "${ planName } は、電子メール、添付ファイル、イベント、ファイル用にユーザーごとに ${ planMaxSpace }のストレージを提供します。年間ストレージ ボーナスも受け取ることができます。"
+        "${ planName } は、メール、添付ファイル、イベント、ファイル用にユーザーごとに ${ planMaxSpace }のストレージを提供します。年間ストレージ ボーナスも受け取ることができます。"
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
-        "${ planName } は、電子メール、添付ファイル、イベント、ファイル、パスワード用にユーザーごとに ${ planMaxSpace } のストレージを提供します。年間ストレージ ボーナスも受け取ることができます"
+        "${ planName } は、メール、添付ファイル、イベント、ファイル、パスワード用にユーザーごとに ${ planMaxSpace } のストレージを提供します。年間ストレージ ボーナスも受け取ることができます"
       ],
       "${ planNumberOfCalendars } calendar per user": [
         "${ planNumberOfCalendars }個のユーザー毎のカレンダー"
@@ -9205,7 +9221,7 @@
         "Web、iOS、Android、Windows、Mac、Linux用のアプリを使用して、外出先でもチームの安全を確保します。"
       ],
       "Learn more": [
-        "もっと詳しく知る"
+        "もっと詳しく"
       ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
@@ -9371,7 +9387,7 @@
         "この支払い方法による自動課金はなくなりますが、課金サイクルの終了時に購読は更新されます。サブスクリプションのダウングレードまたは変更をご希望の場合は、請求期間の終了前にご自身で行っていただく必要があります。さらに、手動によるお支払いをお忘れになり、自動支払いがすべての支払方法で無効になっている場合、当社はお客様のアカウントを自動ダウングレードすることがあり、これにより多くの機能が失われます。"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "この支払い方法による自動課金はなくなりますが、課金サイクルの終了時に購読は更新されます。サブスクリプションをダウングレードまたは変更したい場合は、請求期間の終了前にご自身で行う必要があります。無料プランのストレージ容量を超過している場合、またはその他の有料機能を使用している場合、ファイル、Eメール、その他のデータを自動削除できないため、自動ダウングレードはできません。自動支払いを無効にした場合は、アカウントの停止を防ぐために、期日までに次回の請求書を支払うことを忘れないでください。"
+        "この支払い方法による自動課金はなくなりますが、課金サイクルの終了時に購読は更新されます。サブスクリプションをダウングレードまたは変更したい場合は、請求期間の終了前にご自身で行う必要があります。無料プランのストレージ容量を超過している場合、またはその他の有料機能を使用している場合、ファイル、メール、その他のデータを自動削除できないため、自動ダウングレードはできません。自動支払いを無効にした場合は、アカウントの停止を防ぐために、期日までに次回の請求書を支払うことを忘れないでください。"
       ]
     },
     "Subscription saving": {
@@ -9387,7 +9403,7 @@
         "残り ${ countOfUnrecoveredLinksLeft }"
       ],
       "Address copied to clipboard": [
-        "住所がクリップボードにコピーされました"
+        "アドレスをクリップボードにコピーしました"
       ],
       "Alias copied to clipboard": [
         "エイリアスがクリップボードにコピーされました"
@@ -9435,7 +9451,7 @@
         "支払い方法が追加されました"
       ],
       "Payment method updated": [
-        "支払い方法が更新されました。"
+        "支払い方法が更新されました"
       ],
       "Phone number copied to clipboard": [
         "電話番号がクリップボードにコピーされました"
@@ -9456,7 +9472,7 @@
         "セキュアリンクがコピーされました"
       ],
       "The link to your file was successfully copied": [
-        "ファイルのリンクをコピーしました"
+        "ファイルへのリンクが正常にコピーされました"
       ],
       "Undo in progress": [
         "取り消し中"
@@ -9489,13 +9505,13 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "すべてのデバイスで安全なログインの詳細情報を作成します。無制限のエイリアス、20 個の保管庫、統合された 2 要素認証、クレジットカードの自動入力などが含まれます。"
+        "すべてのデバイスで安全なログインの詳細情報を作成します。無制限のエイリアス、20 の保管庫、統合された2要素認証、クレジットカードの自動入力などが含まれます。"
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65 か国以上の 2950 台以上のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+        "1 件の独自メールドメイン対応、10 のメールアドレス、10 の hide-my-email エイリアス、カレンダー共有などが含まれます。"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
@@ -9615,7 +9631,7 @@
         "アカウントのセキュリティ"
       ],
       "Active": [
-        "転送中"
+        "アクティブ"
       ],
       "Add a custom logo": [
         "カスタムロゴを追加"
@@ -9755,14 +9771,23 @@
       "Day theme": [
         "昼間のテーマ"
       ],
+      "Delete": [
+        "削除"
+      ],
       "Delete ${ count } contact": [
         "${ count } 件の連絡先を削除"
       ],
       "Delete ${ count } contact group": [
         "${ count } 件の連絡先を削除"
       ],
+      "Delete ${ item.name }?": [
+        "${ item.name }を削除しますか？"
+      ],
+      "Delete ${ links.length } items?": [
+        "${ links.length }個のアイテムを削除しますか？"
+      ],
       "Delete ${ value }": [
-        "${ value } を削除しますか"
+        "${ value } を削除"
       ],
       "Delete permanently": [
         "完全に削除"
@@ -9783,7 +9808,7 @@
         "アカウントのダウングレード"
       ],
       "Downgrade to ${ downgradedPlanName }?": [
-        "${ downgradedPlanName } へダウングレード?"
+        "${ downgradedPlanName } にダウングレードしますか？"
       ],
       "Download ${ date }": [
         "${ date } をダウンロード"
@@ -9873,7 +9898,7 @@
         "アカウントの高度なセキュリティ"
       ],
       "Hm, we couldn't find that one": [
-        "その要素が見つかりませんでした"
+        "うーん、それは見つかりませんでした"
       ],
       "Human verification": [
         "人間であることの検証"
@@ -10110,7 +10135,7 @@
         "共有を停止してよろしいですか?"
       ],
       "Stop sharing?": [
-        "共有を停止?"
+        "共有を停止しますか？"
       ],
       "Stop transfers?": [
         "転送を中止してよろしいですか？"
@@ -10144,6 +10169,9 @@
       ],
       "Unlock contacts groups": [
         "連絡先グループをアンロック"
+      ],
+      "Upgrade complete!": [
+        "アップグレード完了!"
       ],
       "Uploaded": [
         "アップロード日時"
@@ -10188,7 +10216,7 @@
         "共有するファイルがありません"
       ],
       "You have no folders yet": [
-        "フォルダーがありません"
+        "まだフォルダがありません"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName }のフリートライアルは${ textDate }に終了します"
@@ -10206,7 +10234,10 @@
         "ダウンロードには${ DOCS_APP_NAME }ファイルが含まれています"
       ],
       "Your exposed information": [
-        "あなたの暴露された情報"
+        "あなたの公開情報"
+      ],
+      "Your shorter address is now ready": [
+        "短いアドレスの準備ができました"
       ],
       "Your welcome actions": [
         "ウェルカムアクション"
@@ -10297,18 +10328,15 @@
         "新しいサブスクリプション サイクルは ${ formattedTime } に始まります"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "公開鍵をアップロードすると、このメールアドレス宛の電子メールをエンドツーエンド暗号化することができます"
+        "公開鍵をアップロードすると、このメールアドレス宛のメールをエンドツーエンド暗号化することができます"
       ],
       "We have sent them an invite to access the item.": [
         "アイテムにアクセスするための招待を送りました。"
-      ],
-      "You do not have any contacts to export": [
-        "エクスポートする連絡先がありません"
       ]
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2FA などが含まれます。"
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Validation": {
@@ -10434,6 +10462,9 @@
       "Missing alias suffix": [
         "エイリアスのサフィックスがありません"
       ],
+      "Name is required": [
+        "名前は必須です"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "英数字、ドット、ハイフン、アンダースコアのみが使用できます"
       ],
@@ -10474,7 +10505,7 @@
         "このインポートは現在 ${ BRAND_NAME } アカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "申し訳ありませんが、現在オンラインにおりません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"
+        "申し訳ありませんが、現在オンラインではありません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "メールサーバーを検証できませんでした。信頼できる場合は、この検証をスキップできます。"

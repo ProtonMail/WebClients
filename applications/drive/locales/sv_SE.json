@@ -14,22 +14,22 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
+        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
+        "${ name } och 1 annan potentiell läcka upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
+        "En potentiell läcka på ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vita åtgärd. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
+        "Din information hittades i minst en dataläcka. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ]
     },
     "Action": {
@@ -62,9 +62,6 @@
       ],
       "Add group": [
         "Lägg till grupp"
-      ],
-      "Add new contact": [
-        "Lägg till ny kontakt"
       ],
       "Add new group": [
         "Lägg till ny grupp"
@@ -360,9 +357,6 @@
       "Export contact group": [
         "Exportera kontaktgrupp"
       ],
-      "Export contacts": [
-        "Exportera kontakter"
-      ],
       "Fit to window": [
         "Passa till fönster"
       ],
@@ -374,6 +368,9 @@
       ],
       "Get ${ DRIVE_APP_NAME }": [
         "Skaffa ${ DRIVE_APP_NAME }"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Skaffa ${ MAIL_SHORT_APP_NAME } Plus för ${ priceCoupon }"
       ],
       "Get in touch": [
         "Kontakta oss"
@@ -1321,6 +1318,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Ändra e-postadressinställningarna"
+      ],
+      "Continue": [
+        "Fortsätt"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
       ],
@@ -2422,6 +2425,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lägger till ett extra säkerhetslager som förhindrar obehörig åtkomst."
       ],
+      "Also included": [
+        "Även inkluderat"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterar kontakter… Detta kan ta några minuter. När processen är klar kommer du att kunna ladda ner filen med alla dina kontakter exporterade."
       ],
@@ -2433,6 +2439,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Bli aviserad om ditt lösenord eller annan data har läckts från en tredjepartstjänst."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ PLAN_NAMES[PLANS.BUNDLE] }"
@@ -3932,7 +3941,7 @@
         "applösenord"
       ],
       "app password or enable IMAP": [
-        "app-lösenord eller aktivera IMAP"
+        "applösenord eller aktivera IMAP"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV- eller en VCF-fil (vCard)"
@@ -4002,7 +4011,7 @@
         "${ addressCount } e-postadresser"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
+        "${ appName } behöver din tillåtelse för att ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
@@ -4175,14 +4184,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoåtkomst begränsad på grund av obetalda fakturor. Kontakta din administratör."
       ],
-      "Account size": [
-        "Kontostorlek"
-      ],
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
-      "Additional options": [
-        "Ytterligare alternativ"
+      "Address copied to clipboard": [
+        "Adress kopierad till urklipp"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressverifiering med betrodda nycklar är aktiverad för denna adress. För att kunna skicka till denna adress, lita först på offentliga nycklar som kan användas för att skicka."
@@ -4365,10 +4371,6 @@
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Skapa ett säkert moln för ${ n } medlem",
-        "Skapa ett säkert moln för ${ n } medlemmar"
-      ],
       "Create in": [
         "Skapa i"
       ],
@@ -4393,9 +4395,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit för den oanvända delen av din tidigare paketprenumeration"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "CSV-filer från Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora och några andra appar samt formaten vCard 3.1 och 4.0 (UTF-8-kodning) stöds."
-      ],
       "Current plan": [
         "Nuvarande paket"
       ],
@@ -4410,6 +4409,9 @@
       ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "default email address": [
+        "förvalda e-postadress"
       ],
       "Delete locked drive": [
         "Ta bort låst lagringsenhet",
@@ -4499,9 +4501,6 @@
       "email": [
         "e-post"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-postlagring för 10 anpassade e-postdomännamn är inkluderat gratis. Ytterligare domäner kan läggas till för ${ price }."
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
       ],
@@ -4528,9 +4527,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Ange inloggningsuppgifter till e-postkontot du vill importera från."
-      ],
-      "Enter the device name to confirm removal.": [
-        "Ange enhetsnamnet för att bekräfta borttagning."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ange verifieringskoden som skickades till ${ destinationText }."
@@ -4760,7 +4756,7 @@
         "Laddar ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Laddar kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
+        "Läser in kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
       ],
       "Loading link": [
         "Laddar länk"
@@ -4769,10 +4765,10 @@
         "Laddar länkar"
       ],
       "Loading preview": [
-        "Laddar förhandsgranskning"
+        "Läser in förhandsgranskning"
       ],
       "Loading...": [
-        "Laddar..."
+        "Läser in..."
       ],
       "Low Priority": [
         "Låg prioritet"
@@ -4792,6 +4788,9 @@
       ],
       "Merged": [
         "Sammanslagna"
+      ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Meddelanden till alla dina e-postadresser kommer att hamna i din inkorg."
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -4824,7 +4823,7 @@
         "Nej"
       ],
       "No contacts added yet": [
-        "Inga kontakter tillagda ännu"
+        "Inga kontakter tillagda än"
       ],
       "No email address": [
         "Ingen e-postadress"
@@ -5036,6 +5035,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
+      "Registering your subscription...": [
+        "Registrerar din prenumeration..."
+      ],
       "Report has been sent": [
         "Rapport har skickats"
       ],
@@ -5118,6 +5120,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfigurering av PGP låter dig skicka end-to-end-krypterad e-post till någon som inte använder ${ BRAND_NAME }, men har en PGP-kompatibel tjänst."
       ],
+      "Setting up your new address...": [
+        "Konfigurerar din nya adress..."
+      ],
       "Share files with links": [
         "Dela filer med länkar"
       ],
@@ -5166,6 +5171,9 @@
       "Something went wrong...": [
         "Något gick fel..."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Börja dela den med kontakter och använd den för onlinetjänster."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Skicka in en insättning med följande adress eller skanna QR-koden. Din insättning kommer att återspeglas på ditt konto efter bekräftelse."
       ],
@@ -5183,9 +5191,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontot kanske har en ny nyckel eller så har något av följande mixtrats med: ${ items }. Öppna endast om du litar på den."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Applikationen måste dekryptera dina kontakter lokalt innan de kan exporteras. I slutet av processen kommer en VCF-fil att genereras och du kommer att kunna ladda ner den."
       ],
       "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
         "Den digitala signaturen har delvis verifierats. Filen laddades upp från en offentlig sida som inte anger ett specifikt användarursprung."
@@ -5217,14 +5222,26 @@
       "There is nothing to see here": [
         "Det finns inget att se här"
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Denna åtgärd kommer att ta bort filen du laddat upp permanent."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Denna åtgärd kommer att ta bort mappen du laddat upp permanent. Du kan inte ta bort en mapp som innehåller en fil du inte äger."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Denna åtgärd kommer ta bort länken och återkalla åtkomst för alla användare."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Denna åtgärd kommer att ta bort de valda objekten permanent."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denna adress är inaktiverad. För att kunna skicka till denna adress måste ägaren först aktivera adressen."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denna webbläsare stöder inte förhandsgranskning av PDF-dokument. Ladda ner filen."
+      ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "Detta kan INTE ångras. Ange enhetens namn för att bekräfta borttagning."
       ],
       "This file is too large to preview": [
         "Denna fil är för stor för att förhandsgranska"
@@ -5234,6 +5251,9 @@
       ],
       "This folder is empty": [
         "Denna mapp är tom"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Detta är nu din ${ defaultEmailAddress } för att skicka nya meddelanden."
       ],
       "This item already exists in your library": [
         "Detta objekt finns redan i ditt bibliotek"
@@ -5260,8 +5280,8 @@
         "Detta kommer att ta bort länken och ta bort åtkomst till din fil eller mapp för alla med länken.",
         "Detta kommer att ta bort länkarna och ta bort åtkomst till dina filer eller mappar för alla med länkarna."
       ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Detta tar bort den synkroniserade enheten ${ deviceName } från ${ DRIVE_APP_NAME } och slutar synkronisera mappar du har lagt till i “Mina datorer“."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "Detta kommer att ta bort den synkade enheten ${ deviceName } från ${ DRIVE_APP_NAME } och all dess data från ${ DRIVE_APP_NAME }. Mappar du lagt till i Mina datorer kommer att inte längre synkas."
       ],
       "This will replace the existing file with the folder": [
         "Detta kommer ersätta den befintliga filen med mappen"
@@ -5679,11 +5699,6 @@
         "Endast visa"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
-      ]
-    },
     "Item": {
       "file attributes": [
         "filattribut"
@@ -5802,9 +5817,6 @@
       ],
       "Authenticator app": [
         "Autentiseringsapp"
-      ],
-      "Automatically save contacts": [
-        "Spara kontakter automatiskt"
       ],
       "Beta Access": [
         "Betaåtkomst"
@@ -5958,7 +5970,7 @@
         "E-post (senaste 12 månaderna)"
       ],
       "Emails (last 3 months)": [
-        "E-post (senaste 3 månader)"
+        "E-post (senaste 3 månaderna)"
       ],
       "Emails (last month)": [
         "E-post (senaste månaden)"
@@ -5980,9 +5992,6 @@
       ],
       "Expires": [
         "Löper ut"
-      ],
-      "Export contacts": [
-        "Exportera kontakter"
       ],
       "Extended address": [
         "Utökad adress"
@@ -6022,9 +6031,6 @@
       ],
       "Import all messages": [
         "Importera alla meddelanden"
-      ],
-      "Import contacts": [
-        "Importera kontakter"
       ],
       "Import interval": [
         "Importintervall"
@@ -6836,6 +6842,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Startar från ${ priceMailPlus }"
       ],
@@ -6976,6 +6985,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-postadresser/alias"
+      ],
+      "10 more premium features": [
+        "10 fler premiumfunktioner"
       ],
       "10-year file version history": [
         "10-års filversionshistorik"
@@ -7259,7 +7271,7 @@
         "Obegränsat antal enheter"
       ],
       "Unlimited devices and aliases": [
-        "Obegränsat antal enheter och alias"
+        "Obegränsade enheter och alias"
       ],
       "Unlimited filters": [
         "Obegränsade filter"
@@ -7461,6 +7473,12 @@
       ]
     },
     "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Skaffa Mail Plus för ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Det rabatterade priset på ${ priceCoupon } är giltigt den första månaden. Därefter kommer det förnyas automatiskt med ${ priceMailPlus }. Dun kan säga upp när som helst."
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -7479,10 +7497,10 @@
         "${ VPN_APP_NAME }: Få åtkomst till blockerat innehåll och surfa privat. Inkluderar ${ serversAndCountries }, högsta VPN-hastigheter, åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser, snabba BitTorrent-nedladdningar och mer."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
-        "Kom åt ${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME } bekvämt från din stationära dator"
+        "Kom åt ${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME } bekvämt från ditt skrivbord"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Få åtkomst till innehåll på streamingtjänster, inklusive Netflix, Disney+ och Prime Video, var som helst"
+        "Få åtkomst till innehåll på streamingtjänster, inklusive Netflix, Disney+, Prime Video, SVT Play och Viaplay var som helst"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Adresser har full sändnings- och mottagningsförmåga. En användare kan ha flera adresser tilldelade till dem. En enda adress kan dock inte tilldelas till flera användare."
@@ -7540,7 +7558,7 @@
         "Tvinga utloggning från användares sessioner när användaruppgifterna tros ha äventyrats"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "IMAP-stöd är begränsat till användning av appar för stationära datorer (t.ex. Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Molnbaserade IMAP-integreringar stöds för närvarande inte."
+        "IMAP-stöd är begränsat till användning av skrivbordsappar (t.ex. Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Molnbaserade IMAP-integreringar stöds för närvarande inte."
       ],
       "Increase or reallocate storage for a user": [
         "Öka eller omfördela lagringsutrymme för en användare"
@@ -7745,11 +7763,17 @@
       "\"${ name }\" created successfully": [
         "“${ name }“ skapades utan problem"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" borttagen"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "“${ name }“ togs bort permanent från papperskorg"
       ],
       "\"${ name }\" failed to be created": [
         "“${ name }“ misslyckades att skapas"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\" kunde inte tas bort"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "“${ name }“ misslyckades att tas bort permanent från papperskorg"
@@ -7788,9 +7812,17 @@
         "${ count } objekt kunde inte dekrypteras",
         "${ count } objekt kunde inte dekrypteras"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } objekt borttaget",
+        "${ numberOfItems } objekt borttagna"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } objekt har tagits bort permanent från papperskorg",
         "${ numberOfItems } objekt har tagits bort permanent från papperskorg"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } objekt kunde inte tas bort",
+        "${ numberOfItems } objekt kunde inte tas bort"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "“${ numberOfItems }“ fil misslyckades att tas bort permanent från papperskorgen",
@@ -8143,7 +8175,7 @@
         "Hantera åtkomst"
       ],
       "Organize files right from your desktop": [
-        "Organisera filer direkt från din stationära dator"
+        "Organisera filer direkt från ditt skrivbord"
       ],
       "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
         "Skydda dina finansiella dokument, ID-kort, projektfiler, foton och mer med end-to-end-kryptering."
@@ -8513,28 +8545,9 @@
         "Namn"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } vårt säljteam."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Välj antalet IP som ska inkluderas i ditt paket. Varje ytterligare IP kostar ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Skulle du behöva mer än ${ maxIPs } IP, ",
-        "Skulle du behöva mer än ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontakt"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Välj antalet användare som ska inkluderas i ditt paket. Varje ytterligare användare kostar ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Skulle du behöva fler än ${ maxUsers } användarkonto, ${ contact } vårt säljteam.",
-        "Skulle du behöva fler än ${ maxUsers } användarkonton, ${ contact } vårt säljteam."
       ]
     },
     "Price": {
@@ -8978,7 +8991,7 @@
     },
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
-        "Denna prenumeration kommer förnyas automatiskt vartannat år med samma taxa tills den avbryts."
+        "Denna prenumeration kommer förnyas automatiskt vartannat år med samma pris tills den avbryts."
       ]
     },
     "specialoffer: Link": {
@@ -10033,6 +10046,9 @@
       "Day theme": [
         "Dagstema"
       ],
+      "Delete": [
+        "Ta bort"
+      ],
       "Delete ${ count } contact": [
         "Ta bort ${ count } kontakt",
         "Ta bort ${ count } kontakter"
@@ -10040,6 +10056,12 @@
       "Delete ${ count } contact group": [
         "Ta bort ${ count } kontaktgrupp",
         "Ta bort ${ count } kontaktgrupper"
+      ],
+      "Delete ${ item.name }?": [
+        "Ta bort ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Ta bort ${ links.length } objekt?"
       ],
       "Delete ${ value }": [
         "Ta bort ${ value }"
@@ -10430,6 +10452,9 @@
       "Unlock contacts groups": [
         "Lås upp kontaktgrupper"
       ],
+      "Upgrade complete!": [
+        "Uppgradering slutförd!"
+      ],
       "Uploaded": [
         "Uppladdat"
       ],
@@ -10492,6 +10517,9 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
+      ],
+      "Your shorter address is now ready": [
+        "Din kortare adress är redo nu"
       ],
       "Your welcome actions": [
         "Din välkomståtgärd"
@@ -10586,9 +10614,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har skickat dem en inbjudan att komma åt objektet."
-      ],
-      "You do not have any contacts to export": [
-        "Du har inga kontakter att exportera"
       ]
     },
     "tooltip": {
@@ -10730,6 +10755,9 @@
       ],
       "Missing alias suffix": [
         "Alias-suffix saknas"
+      ],
+      "Name is required": [
+        "Namn krävs"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Endast alfanumeriska tecken, punkter, bindestreck och understreck är tillåtna"

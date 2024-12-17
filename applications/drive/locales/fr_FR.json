@@ -63,9 +63,6 @@
       "Add group": [
         "Ajouter un groupe"
       ],
-      "Add new contact": [
-        "Ajouter un nouveau contact"
-      ],
       "Add new group": [
         "Ajouter un nouveau groupe"
       ],
@@ -360,8 +357,8 @@
       "Export contact group": [
         "Exporter le groupe de contacts"
       ],
-      "Export contacts": [
-        "Exporter les contacts"
+      "Export selection as .vcf": [
+        "Exporter la sélection au format *.vcf"
       ],
       "Fit to window": [
         "Ajuster à la fenêtre"
@@ -515,6 +512,9 @@
       ],
       "Minimize transfers": [
         "Réduire les transferts"
+      ],
+      "More actions": [
+        "Actions supplémentaires"
       ],
       "More info: ${ safeTitle }": [
         "Plus d'informations : ${ safeTitle }"
@@ -4178,14 +4178,8 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
       ],
-      "Account size": [
-        "Taille du compte"
-      ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
-      ],
-      "Additional options": [
-        "Options supplémentaires"
       ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
@@ -4371,10 +4365,6 @@
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Créer un cloud sécurisé pour ${ n } membre",
-        "Créer un cloud sécurisé pour ${ n } membres"
-      ],
       "Create in": [
         "Créer dans"
       ],
@@ -4398,9 +4388,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications, ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8), sont pris en charge."
       ],
       "Current plan": [
         "Abonnement actuel"
@@ -4508,9 +4495,6 @@
       "email": [
         "e-mail"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "L'hébergement de messagerie pour 10 noms de domaine personnalisés est inclus gratuitement. Des domaines supplémentaires peuvent être ajoutés pour ${ price }."
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
       ],
@@ -4537,9 +4521,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous voulez importer."
-      ],
-      "Enter the device name to confirm removal.": [
-        "Saisissez le nom de l'appareil pour confirmer sa suppression."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
@@ -5049,7 +5030,7 @@
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Registering your subscription...": [
-        "Enregistrement de votre abonnement...."
+        "Enregistrement de votre abonnement…"
       ],
       "Report has been sent": [
         "Le rapport a été envoyé."
@@ -5205,9 +5186,6 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Le compte peut avoir une nouvelle clé ou les éléments suivants ont peut-être été falsifiés : ${ items }. N'ouvrez que si vous avez confiance."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
-      ],
       "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
         "La signature numérique a été partiellement vérifiée. Le fichier a été téléchargé à partir d'une page publique qui ne précise pas l'origine spécifique de l'utilisateur."
       ],
@@ -5238,14 +5216,26 @@
       "There is nothing to see here": [
         "Il n'y a aucune donnée à afficher."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Cette action supprimera définitivement le fichier importé."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Cette action supprimera définitivement le dossier que vous avez importé. Vous ne pouvez pas supprimer un dossier qui contient un fichier qui ne vous appartient pas."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Cette action supprimera le lien et révoquera l'accès de tous les utilisateurs."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Cette action supprimera définitivement les éléments sélectionnés."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Téléchargez le fichier."
+      ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "Cette action ne peut pas être annulée. Saisissez le nom de l'appareil pour confirmer le retrait."
       ],
       "This file is too large to preview": [
         "Ce fichier est trop volumineux pour afficher un aperçu."
@@ -5284,8 +5274,8 @@
         "Cela supprimera le lien et retirera l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
         "Cela supprimera les liens et retirera l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
       ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "L'appareil synchronisé ${ deviceName } sera retiré de ${ DRIVE_APP_NAME } et les fichiers qui ont été ajoutés à Ordinateurs ne seront plus synchronisés."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "Cela retirera l'appareil synchronisé ${ deviceName } de ${ DRIVE_APP_NAME } et toutes ses données de ${ DRIVE_APP_NAME }. Les dossiers que vous avez ajoutés à Mes ordinateurs cesseront d'être synchronisés."
       ],
       "This will replace the existing file with the folder": [
         "Cela remplacera le fichier existant par le dossier."
@@ -5703,11 +5693,6 @@
         "Lecture seule"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
-      ]
-    },
     "Item": {
       "file attributes": [
         "attributs du fichier"
@@ -5820,9 +5805,6 @@
       ],
       "Authenticator app": [
         "Application d'authentification"
-      ],
-      "Automatically save contacts": [
-        "Enregistrer automatiquement les contacts"
       ],
       "Beta Access": [
         "Accès à la version bêta"
@@ -5999,9 +5981,6 @@
       "Expires": [
         "Expire le"
       ],
-      "Export contacts": [
-        "Exporter les contacts"
-      ],
       "Extended address": [
         "Complément d’adresse"
       ],
@@ -6040,9 +6019,6 @@
       ],
       "Import all messages": [
         "Importer tous les messages"
-      ],
-      "Import contacts": [
-        "Importer les contacts"
       ],
       "Import interval": [
         "Intervalle d'importation"
@@ -7715,11 +7691,17 @@
       "\"${ name }\" created successfully": [
         "« ${ name } » a été créé."
       ],
+      "\"${ name }\" deleted": [
+        "« ${ name } » a été supprimé."
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "« ${ name } » a été définitivement supprimé du dossier Corbeille."
       ],
       "\"${ name }\" failed to be created": [
         "« ${ name } » n'a pas pu être créé."
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "La suppression de « ${ name } » n'a pas abouti."
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "« ${ name } » n'a pu être définitivement supprimé du dossier Corbeille."
@@ -7758,9 +7740,17 @@
         "${ count } élément n'a pas pu être déchiffré.",
         "${ count } éléments n'ont pas pu être déchiffrés."
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } élément supprimé",
+        "${ numberOfItems } éléments supprimés"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } élément a été définitivement supprimé du dossier Corbeille.",
         "${ numberOfItems } éléments ont été définitivement supprimés du dossier Corbeille."
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } élément n'a pas été supprimé.",
+        "${ numberOfItems } éléments n'ont pas été supprimés."
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } élément n'a pu être définitivement supprimé du dossier Corbeille.",
@@ -8477,28 +8467,9 @@
         "Nom"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } notre équipe commerciale."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Sélectionnez le nombre d'IP à inclure dans votre abonnement. Chaque IP supplémentaire coûte ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si vous avez besoin de plus de ${ maxIPs } IP, ",
-        "Si vous avez besoin de plus de ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contactez"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Sélectionnez le nombre d'utilisateurs à inclure dans votre abonnement. Chaque utilisateur supplémentaire coûte ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si vous avez besoin de plus d'${ maxUsers } compte utilisateur, nous vous invitons à ${ contact } notre service client.",
-        "Si vous avez besoin de plus de ${ maxUsers } comptes utilisateur, nous vous invitons à ${ contact } notre service client."
       ]
     },
     "Price": {
@@ -9997,6 +9968,9 @@
       "Day theme": [
         "Thème jour"
       ],
+      "Delete": [
+        "Supprimer"
+      ],
       "Delete ${ count } contact": [
         "Supprimer ${ count } contact",
         "Supprimer ${ count } contacts"
@@ -10004,6 +9978,12 @@
       "Delete ${ count } contact group": [
         "Supprimer ${ count } groupe de contacts",
         "Supprimer ${ count } groupes de contacts"
+      ],
+      "Delete ${ item.name }?": [
+        "Voulez-vous supprimer ${ item.name } ?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Voulez-vous supprimer ${ links.length } éléments ?"
       ],
       "Delete ${ value }": [
         "Supprimer ${ value } "
@@ -10553,9 +10533,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Nous leur avons envoyé une invitation pour accéder à l'élément."
-      ],
-      "You do not have any contacts to export": [
-        "Vous n'avez aucun contact à exporter."
       ]
     },
     "tooltip": {
