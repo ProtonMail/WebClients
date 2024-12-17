@@ -37,7 +37,7 @@ export const getDisplayKey = ({
     const { isPrivate } = User;
     const signedKeyListItem = signedKeyListMap[fingerprint];
 
-    const { ID, Flags, Primary, AddressForwardingID } = Key;
+    const { ID, Flags, Primary, AddressForwardingID, GroupMemberID } = Key;
 
     const flags = signedKeyListItem?.Flags ?? Flags ?? getDefaultKeyFlags(Address);
     const primary = signedKeyListItem?.Primary ?? Primary ?? 0;
@@ -69,7 +69,7 @@ export const getDisplayKey = ({
 
     const hasUserPermission = isPrivate;
     const canModify = isAddressKey && hasUserPermission && !isPrimary;
-    const canDeleteForwarding = AddressForwardingID === null;
+    const canDeleteForwarding = isPrivate && (AddressForwardingID === null || GroupMemberID === null);
 
     return {
         ID,
