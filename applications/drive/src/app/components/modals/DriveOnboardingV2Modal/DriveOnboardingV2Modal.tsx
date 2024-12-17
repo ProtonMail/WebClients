@@ -32,7 +32,7 @@ export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
     const { downloads: desktopDownloads, isLoading: isDesktopDownloadsLoading } = useDesktopDownloads();
     const isLoading = isOnboardingLoading || isDesktopDownloadsLoading;
     const preferredPlatform = useMemo(
-        () => desktopDownloads.find((platform) => platform.isPreferred()),
+        () => desktopDownloads.find((platform) => platform.isPreferred),
         [desktopDownloads]
     );
 
