@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "activate": [
-        "aktiválás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -399,6 +399,9 @@
       ],
       "Discard changes": [
         "Módosítások elvetése"
+      ],
+      "Dismiss": [
+        "Elvetés"
       ],
       "Domain name": [
         "Domain név"
@@ -6353,9 +6356,6 @@
       "account recovery method": [
         "fiók helyreállítási módszer"
       ],
-      "Account size": [
-        "Fiók mérete"
-      ],
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
       ],
@@ -6394,9 +6394,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Állítsa be a szervezet nevét és logóját, hogy személyesebb élményt nyújtson a szervezet számára."
-      ],
-      "Additional options": [
-        "További lehetőségek"
       ],
       "Admin account allocation": [
         "Tárhely admin fiók számára"
@@ -6664,10 +6661,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Hozzon létre egy címkét az importált levelekhez, válassza ki a kívánt idő intervallumot és adja meg az importálandó címkéket."
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Hozzon létre biztonságos felhőárhelyet ${ n } tagnak",
-        "Hozzon létre biztonságos felhőárhelyet ${ n } tagnak"
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Hozzon létre és kezeljen al-fiókokat és rendeljen hozzájuk e-mail címeket a saját domain nevén."
       ],
@@ -6806,9 +6799,6 @@
       ],
       "Email address": [
         "E-mail cím"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Az e-mail szolgáltatás 10 saját domain névig beletartozik. További domain nevek ${ price } áron adhatók hozzá."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Az e-mail szolgáltatás olyan domain nevekre lehetséges, amelyek már a tulajdonában vannak. A ${ BRAND_NAME } jelenleg nem biztosít domain név regisztrációt. Bármilyen regisztrátornál regisztrált domain nevet használhat."
@@ -12802,25 +12792,9 @@
         "Tagok"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "kérjük, ${ contactHref } az értékesítési csoporttal."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Amennyiben ${ maxIPs } IP címnél többre lenne szüksége, ",
-        "Amennyiben ${ maxIPs } IP címnél többre lenne szüksége, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "lépjen kapcsolatba"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Válassza ki, hány felhasználót szeretne a csomagjába. Minden további felhasználó ára: ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Ha több mint ${ maxUsers } felhasználói fiókra lenne szüksége, kérjük ${ contact } értékesítési csoportunkkal.",
-        "Ha több mint ${ maxUsers } felhasználói fiókra lenne szüksége, kérjük ${ contact } értékesítési csoportunkkal."
       ]
     },
     "Price": {

@@ -70,11 +70,11 @@
       "Accept": [
         "Αποδοχή"
       ],
-      "activate": [
-        "ενεργοποιήστε"
-      ],
       "Activate": [
         "Ενεργοποίηση"
+      ],
+      "activate": [
+        "ενεργοποιήστε"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -421,6 +421,9 @@
       "Discard changes": [
         "Απόρριψη αλλαγών"
       ],
+      "Dismiss": [
+        "Παράβλεψη"
+      ],
       "Domain name": [
         "Όνομα τομέα"
       ],
@@ -561,6 +564,9 @@
       ],
       "Generate token": [
         "Δημιουργία διακριτικού"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Απκτήστε το ${ MAIL_SHORT_APP_NAME } Plus για ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "Λήψη ${ vpnPlus }"
@@ -1855,6 +1861,9 @@
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewLength } μήνα",
         "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewLength } μήνες"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Ανανεώνεται αυτόματα στο ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -1972,6 +1981,12 @@
     "Button": {
       "Add link to your email footer": [
         "Προσθήκη συνδέσμου στο υποσέλιδο ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Change email address settings": [
+        "Αλλαγή ρυθμίσεων διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Continue": [
+        "Συνέχεια"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
@@ -3575,6 +3590,9 @@
       ]
     },
     "Description": {
+      "Also included": [
+        "Περιλαμβάνονται επίσης"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Αυτόματη διαγραφή ανεπιθύμητων μηνυμάτων και απορριφθέντων μηνυμάτων και ξεκλείδωμα περισσότερων premium λειτουργιών κατά την αναβάθμιση."
       ],
@@ -3607,6 +3625,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις προσκαλώντας φίλους στο ${ BRAND_NAME }."
@@ -3649,6 +3670,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Ξεκλειδώστε απεριόριστους φακέλους, ετικέτες και περισσότερες premium λειτουργίες κατά την αναβάθμιση."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Αναβαθμίστε για να λάβετε ${ activatePmUser } για μια συντομότερη, εύκολη στην απομνημόνευση διεύθυνση ηλεκτρονικού ταχυδρομείου εκτός από την τρέχουσα."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Μπορείτε να συνεχίσετε να προσκαλείτε φίλους, αλλά δεν θα μπορείτε να κερδίσετε περισσότερες πιστώσεις"
@@ -4671,6 +4695,9 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Παρακαλώ ενεργοποιήστε την υποστήριξη πολλαπλών-χρηστών πριν προσθέσετε χρήστες στον οργανισμό σας."
+      ],
+      "Please enter a valid entity ID URL": [
+        "Εισαγάγετε μια έγκυρη Entity ID διεύθυνσης URL"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
@@ -6856,9 +6883,6 @@
       "account recovery method": [
         "μέθοδος ανάκτησης λογαριασμού"
       ],
-      "Account size": [
-        "Μέγεθος λογαριασμού"
-      ],
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
@@ -6913,8 +6937,8 @@
         "Προσθήκη διακομιστή πύλης: ${ serverNumber } / ${ total }",
         "Προσθήκη διακομιστών πύλης: ${ serverNumber } / ${ total }"
       ],
-      "Additional options": [
-        "Πρόσθετες επιλογές"
+      "Address copied to clipboard": [
+        "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
       ],
       "Admin account allocation": [
         "Κατανομή στον λογαριασμό του διαχειριστή"
@@ -7166,6 +7190,9 @@
       "Choose an app to get started": [
         "Επιλέξτε μια εφαρμογή για να ξεκινήσετε"
       ],
+      "Choose an Entity ID to continue.": [
+        "Επιλέξτε ένα Entity ID για να συνεχίσετε."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
       ],
@@ -7186,6 +7213,9 @@
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Συνεχίστε για να συνδέσετε το **${ organizationValue.Name }** με τον οργανισμό σας ${ BRAND_NAME }."
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Συνεχίστε για να συνδέσετε αυτήν την οντότητα με τον ${ BRAND_NAME } οργανισμό σας."
       ],
       "Continue with ${ freeName }": [
         "Συνέχεια με το ${ freeName }"
@@ -7223,10 +7253,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, ένα χρονικό εύρος για αυτήν την εισαγωγή, και τις ετικέτες που θα θέλατε να εισάγετε."
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλος",
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλη"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Δημιουργήστε και διαχειριστείτε τους δευτερεύοντες λογαριασμούς και αντιστοιχίστε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου στον προσαρμοσμένο τομέα σας."
@@ -7294,6 +7320,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να επιτρέψουν βελτιστοποιημένο έλεγχο πρόσβασης."
+      ],
+      "default email address": [
+        "προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Διαγράψτε κάθε άλλη εγγραφή MX ή βεβαιωθείτε ότι η Προτεραιότητα του ${ MAIL_APP_NAME } είναι ο μικρότερος αριθμός."
@@ -7402,17 +7431,14 @@
       "Edit link": [
         "Επεξεργασία συνδέσμου"
       ],
-      "EduGain configuration saved": [
-        "Αποθηκεύτηκε η διαμόρφωση EduGain"
+      "eduGAIN configuration saved": [
+        "Αποθηκεύτηκε η διαμόρφωση eduGAIN"
       ],
       "email": [
         "ηλεκτρονικό ταχυδρομείο"
       ],
       "Email address": [
         "Διεύθυνση E-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Η φιλοξενία email για 10 προσαρμοσμένους τομείς email συμπεριλαμβάνεται δωρεάν. Επιπρόσθετοι τομείς μπορούν να προστεθούν έναντι ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
@@ -7476,6 +7502,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Εισαγάγετε το αναγνωριστικό οντότητας ενός οργανισμού **eduGAIN** για τον τομέα **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Καταχωρίστε τον κωδικό οργανισμού για να επαναφέρετε τα προνόμια διαχειριστή. ${ learnMore }"
@@ -7962,6 +7991,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Τα μηνύματα στον φάκελο Απεσταλμένα ή Πρόχειρα θα συνεχίσουν να εμφανίζονται σε αυτόν τον φάκελο, ακόμη και αν τα μετακινήσετε σε άλλο φάκελο."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Τα μηνύματα σε όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας θα μεταφερθούν στα εισερχόμενά σας."
+      ],
       "MM/YY": [
         "ΜΜ/ΧΧ"
       ],
@@ -8036,9 +8068,6 @@
       ],
       "No logs yet.": [
         "Δεν υπάρχουν αρχεία καταγραφής ακόμα."
-      ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Δεν υπάρχουν οργανισμοί ενεργοποιημένοι με **eduGAIN** για το **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
@@ -8316,6 +8345,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
+      "Registering your subscription...": [
+        "Εγγραφή της συνδρομής σας..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Θυμηθείτε να μοιραστείτε τις λεπτομέρειες σύνδεσης με τον χρήστη."
       ],
@@ -8382,17 +8414,14 @@
       "Select a service provider to start": [
         "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Επιλέξτε έναν οργανισμό ενεργοποιημένο με **eduGAIN** για **${ domain.DomainName }**."
-      ],
       "Select one or multiple user affiliations": [
         "Επιλέξτε μία ή περισσότερες συνεργασίες χρηστών"
       ],
       "Select recently used servers": [
         "Επιλέξτε από πρόσφατα χρησιμοποιημένους διακομιστές"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "Επιλέξτε τις συνεργασίες χρηστών από **${ organizationValue.Name }** (${ organizationValue.EntityId }) που θέλετε να επιτρέψετε στον οργανισμό σας ${ BRAND_NAME }:"
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Επιλέξτε τις συνεργασίες χρηστών από ${ getFormattedOrganization } που θέλετε να επιτρέψετε στον ${ BRAND_NAME } οργανισμό σας:"
       ],
       "Select what you want to import.": [
         "Επιλέξτε τι θέλετε να εισάγετε."
@@ -8420,6 +8449,9 @@
       ],
       "Set recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
+      ],
+      "Setting up your new address...": [
+        "Ρύθμιση της νέας διεύθυνσής σας..."
       ],
       "Setting up your organization": [
         "Γίνεται ρύθμιση του οργανισμού σας"
@@ -8474,6 +8506,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "Το SPF διευκρινίζει ποιος επιτρέπεται να στέλνει μηνύματα ηλεκτρονικού ταχυδρομείου για τον τομέα σας. Βεβαιωθείτε ότι έχετε προσθέσει την ακόλουθη εγγραφή TXT στην κονσόλα DNS (που βρίσκεται στην πλατφόρμα από την οποία αγοράσατε τον προσαρμοσμένο τομέα)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
       ],
       "Stay tuned for future promotions.": [
         "Μείνετε συντονισμένοι για μελλοντικές προσφορές."
@@ -8653,6 +8688,9 @@
       "This is an encryption key you may have previously saved.": [
         "Αυτό είναι ένα κλειδί κρυπτογράφησης που ίσως αποθηκεύσατε προηγουμένως."
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
+      ],
       "This is the password you used before the password reset.": [
         "Αυτός είναι ο κωδικός που χρησιμοποιούσατε πριν την επαναφορά κωδικού πρόσβασης."
       ],
@@ -8664,9 +8702,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Αυτό το μήνυμα δε θα φτάσει στην ομάδα υποστήριξης, εάν έχετε κάποιο πρόβλημα με την υπηρεσία μας ή χρειάζεστε περαιτέρω ενέργειες από την πλευρά μας ${ supportLink }."
-      ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Αυτός ο οργανισμός είναι ενεργοποιημένος με **eduGAIN** για **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Αυτός ο σύνδεσμος προσφοράς έχει λήξει."
@@ -9507,11 +9542,6 @@
         "Μόνο για ανάγνωση"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Μη έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -10348,6 +10378,9 @@
       "Entity ID": [
         "ID οντότητας"
       ],
+      "Entity ID URL": [
+        "Entity ID URL"
+      ],
       "Event": [
         "Εκδήλωση"
       ],
@@ -10692,6 +10725,9 @@
       ],
       "Recovery phrase": [
         "Φράση ανάκτησης"
+      ],
+      "Remove": [
+        "Αφαίρεση"
       ],
       "Remove image metadata": [
         "Αφαίρεση μετα-δεδομένων εικόνας"
@@ -11803,6 +11839,9 @@
       "From ${ price }": [
         "Από ${ price }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Ξεκινώντας από ${ priceMailPlus }"
       ],
@@ -11952,6 +11991,9 @@
       ],
       "10 email addresses/aliases": [
         "10 διεύθυνσεις email/ψευδώνυμα"
+      ],
+      "10 more premium features": [
+        "10 περισσότερα premium χαρακτηριστικά"
       ],
       "10-year file version history": [
         "Ιστορικό εκδόσεων αρχείων 10 ετών"
@@ -12539,6 +12581,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Αποκτήστε το Mail Plus για ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Η μειωμένη τιμή του ${ priceCoupon } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ priceMailPlus }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "Your account's usage": [
         "Η κατανάλωση του λογαριασμού σας"
@@ -14276,28 +14324,9 @@
         "Μέλη"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "παρακαλούμε ${ contactHref } την ομάδα Πωλήσεών μας."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Επιλέξτε τον αριθμό διευθύνσεων IP που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον διεύθυνση IP κοστίζει ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διεύθυνση IP, ",
-        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διευθύνσεις IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "επικοινωνήστε"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Επιλέξτε τον αριθμό χρηστών που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον χρήστης κοστίζει ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Εάν χρειαστείτε περισσότερους από ${ maxUsers } λογαριασμό χρήστη, παρακαλούμε ${ contact } με την ομάδα μας Πωλήσεων.",
-        "Εάν χρειαστείτε περισσότερους από ${ maxUsers } λογαριασμούς χρηστών, παρακαλούμε ${ contact } με την ομάδα μας Πωλήσεων."
       ]
     },
     "Price": {
@@ -15408,6 +15437,14 @@
     "signup: Action": {
       "Request trial": [
         "Ζητήστε δοκιμαστική έκδοση"
+      ]
+    },
+    "signup: Feature": {
+      "Encrypted": [
+        "Κρυπτογραφημένα"
+      ],
+      "Strict no-logs policy": [
+        "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
       ]
     },
     "Signup: Info": {
@@ -18198,6 +18235,9 @@
       "Unlock your data": [
         "Ξεκλειδώστε τα δεδομένα σας"
       ],
+      "Upgrade complete!": [
+        "Η αναβάθμιση ολοκληρώθηκε!"
+      ],
       "Upgrade plan": [
         "Αναβάθμιση προγράμματος"
       ],
@@ -18284,6 +18324,9 @@
       ],
       "Your recovery status": [
         "Το καθεστώς σας ανάκτησης"
+      ],
+      "Your shorter address is now ready": [
+        "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
       ],
       "Your SMTP token": [
         "Το διακριτικό SMTP σας"
@@ -18497,6 +18540,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Τα μηνύματα στον φάκελο Απεσταλμένα ή Πρόχειρα θα συνεχίσουν να εμφανίζονται σε αυτόν τον φάκελο, ακόμη και αν τα μετακινήσετε σε άλλο φάκελο."
+      ],
+      "Remove metadata from images to protect your privacy.": [
+        "Καταργήστε τα μεταδεδομένα από τις εικόνες για να προστατεύσετε την ιδιωτικότητά σας."
       ],
       "See number of unread messages in the tab icon": [
         "Δείτε τον αριθμό των μην αναγνωσμένων μηνυμάτων στο εικονίδιο καρτέλας"
