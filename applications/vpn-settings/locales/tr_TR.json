@@ -220,6 +220,9 @@
       "Discard changes": [
         "Değişiklileri yok say"
       ],
+      "Dismiss": [
+        "Yok say"
+      ],
       "Domain name": [
         "Etki alanı adı"
       ],
@@ -306,6 +309,9 @@
       ],
       "Forgot recovery method?": [
         "Kurtarma yöntemi unutulsun mu?"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "${ priceCoupon } ile ${ MAIL_SHORT_APP_NAME } Plus edinin"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } alın"
@@ -1142,6 +1148,9 @@
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir",
         "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "${ subscriptionManagerName } tarihinde otomatik olarak yenilenir"
       ]
     },
     "Billing cycle option": {
@@ -1247,6 +1256,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "E-posta adresi ayarlarını değiştir"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ],
@@ -2555,6 +2570,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Faturalar yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Hesap işlemleri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
@@ -2680,6 +2698,9 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Lütfen kuruluşunuza kullanıcılar eklemeden önce çok kullanıcı desteğini açın."
+      ],
+      "Please enter a valid entity ID URL": [
+        "Lütfen geçerli bir varlık kimliği adresi yazın"
       ],
       "Please generate keys before you try to change your password": [
         "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
@@ -3656,9 +3677,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
-      "Account size": [
-        "Hesap boyutu"
-      ],
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
@@ -3695,8 +3713,8 @@
         "Ağ geçidi sunucusu ekleniyor: ${ serverNumber } / ${ total }",
         "Ağ geçidi sunucusu ekleniyor: ${ serverNumber } / ${ total }"
       ],
-      "Additional options": [
-        "Ek seçenekler"
+      "Address copied to clipboard": [
+        "Adres panoya kopyalandı"
       ],
       "Admin account allocation": [
         "Yönetici hesabına ayrılan"
@@ -3813,6 +3831,9 @@
       "Change your password": [
         "Parolanızı değiştirin"
       ],
+      "Choose an Entity ID to continue.": [
+        "İlerlemek için bir varlık kimliği seçin"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
@@ -3831,6 +3852,9 @@
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "${ BRAND_NAME } kuruluşunuzla **${ organizationValue.Name }** bağlantısı kurun."
       ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "${ BRAND_NAME } kuruluşunuzla bu varlığın bağlantısı kurun."
+      ],
       "Continue with ${ freeName }": [
         "${ freeName } ile ilerle"
       ],
@@ -3848,10 +3872,6 @@
       ],
       "Country code": [
         "Ülke kodu"
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "${ n } üye için bir güvenli bulut oluştur",
-        "${ n } üye için bir güvenli bulut oluştur"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Alt hesaplar ekleyin ve yönetin. Özel etki alanınızda e-posta adresleri atayın."
@@ -3884,14 +3904,17 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
       ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
+      ],
+      "default email address": [
+        "varsayılan e-posta adresi"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Diğer tüm MX kayıtlarını silin veya ${ MAIL_APP_NAME } kaydının Priority değerinin en küçüğü olduğundan emin olun."
@@ -3970,14 +3993,11 @@
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
-      "EduGain configuration saved": [
-        "eduGain yapılandırması kaydedildi"
+      "eduGAIN configuration saved": [
+        "eduGAIN yapılandırması kaydedildi"
       ],
       "email": [
         "e-posta"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
@@ -4020,6 +4040,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "${ email } alıcısına gönderilen doğrulama kodunu yazın. E-postayı Gelen kutunuzda bulamazsanız, İstenmeyen kutusuna bakmayı unutmayın."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "**${ domain.DomainName }** için bir **eduGAIN** kuruluşunun varlık kimliğini yazın."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Yönetici yetkilerini geri yüklemek için kuruluş parolasını yazın. ${ learnMore }"
@@ -4333,6 +4356,9 @@
       "Member": [
         "Üye"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
+      ],
       "MM/YY": [
         "AA/YY"
       ],
@@ -4368,9 +4394,6 @@
       ],
       "No Gateways yet": [
         "Henüz bir ağ geçidi yok"
-      ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "**${ domain.DomainName }** için **eduGAIN** kullanıma alınmış bir kuruluş yok."
       ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
@@ -4542,6 +4565,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
+      "Registering your subscription...": [
+        "Abonelik kaydınız oluşturuluyor..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Kullanıcının oturum açabilmesi için kimlik doğrulama bilgilerini paylaşmayı unutmayın."
       ],
@@ -4593,17 +4619,14 @@
       "Securing your account": [
         "Hesabınız korunuyor"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "**${ domain.DomainName }** için **eduGAIN** kullanıma alınmış bir kuruluş seçin."
-      ],
       "Select one or multiple user affiliations": [
         "Bir ya da birkaç kullanıcı ilişkisi seçin"
       ],
       "Select recently used servers": [
         "Son kullanılan sunucuları seçin"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "${ BRAND_NAME } kuruluşunuza izin vermek istediğiniz kullanıcı ilişkilerini **${ organizationValue.Name }** (${ organizationValue.EntityId }) üzerinden seçin:"
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "${ BRAND_NAME } kuruluşunuza izin vermek istediğiniz kullanıcı ilişkilerini ${ getFormattedOrganization } üzerinden seçin:"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Üyelerinize hesaplarını iki adımlı doğrulama ile korumaya özendiren e-postalar gönderin."
@@ -4619,6 +4642,9 @@
       ],
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
+      ],
+      "Setting up your new address...": [
+        "Yeni adresiniz ayarlanıyor..."
       ],
       "Setting up your organization": [
         "Kuruluşunuz ayarlanıyor"
@@ -4646,6 +4672,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF, etki alanınız için kimlerin e-posta göndermesine izin verildiğini belirtir. Aşağıdaki TXT kaydını DNS panonuza (özel etki alanınızı kiraladığınız yerde bulunur) eklediğinizden emin olun."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
       ],
       "Step ${ step }": [
         "${ step }. adım",
@@ -4750,11 +4779,11 @@
       "This file is too large to preview": [
         "Bu dosya ön izleme için çok büyük"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
+      ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Hizmetimizle ilgili bir sorun yaşıyorsanız ya da tarafımızdan ek bir işlem yapılmasını istiyorsanız, bu ileti destek ekibimize ulaşmayacak ${ supportLink }."
-      ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Bu kuruluşta **${ domain.DomainName }** için **eduGAIN** kullanıma alınmış."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Şu anda kuruluşunuzun ödemelerinden bu kullanıcı sorumludur. Bu kullanıcının yetki düzeyini düşürürseniz kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
@@ -4909,11 +4938,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "Username": [
-        "Kullanıcı adı"
-      ],
       "username": [
         "kullanıcı adı"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -5139,6 +5168,9 @@
       "You have no saved payment methods.": [
         "Kayıtlı bir ödeme yönteminiz yok."
       ],
+      "You have no transactions.": [
+        "Herhangi bir hesap işleminiz yok."
+      ],
       "You may be redirected to your bank’s website.": [
         "Bankanızın sitesine yönlendirilebilirsiniz."
       ],
@@ -5278,11 +5310,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Yalnızca görüntüleme"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ]
     },
     "Input Error": {
@@ -5588,6 +5615,9 @@
       "Entity ID": [
         "Varlık kimliği"
       ],
+      "Entity ID URL": [
+        "Varlık kimliği adresi"
+      ],
       "Event": [
         "Etkinlik"
       ],
@@ -5770,6 +5800,9 @@
       ],
       "Recovery phrase": [
         "Kurtarma ifadesi"
+      ],
+      "Remove": [
+        "Kaldır"
       ],
       "Repeat backup password": [
         "Yedek parola onayı"
@@ -6273,6 +6306,9 @@
       "From ${ price }": [
         "${ price } ile başlar"
       ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus } tutarından başlayan fiyatlarla"
       ],
@@ -6416,6 +6452,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-posta adresi/takma adı"
+      ],
+      "10 more premium features": [
+        "10 ücretli özellik daha"
       ],
       "10-year file version history": [
         "10 yıllık dosya sürümü geçmişi"
@@ -6949,6 +6988,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } deneme"
+      ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon } ile Mail Plus edinin"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "İndirimli fiyat olan ${ priceCoupon } ilk ay için geçerlidir. Daha sonra aylık ${ priceMailPlus } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Your account's usage": [
         "Hesap kullanımınız"
@@ -8047,28 +8092,9 @@
         "Üyeler"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "lütfen ${ contactHref } satış ekibimizle görüşün."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Tarifenizde bulunacak IP adresi sayısını seçin. Her ek IP adresinin maliyeti ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, ",
-        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "görüşün"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Tarifenizde bulunacak kullanıcı sayısını seçin. Her ek kullanıcının maliyeti ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "${ maxUsers } kullanıcı hesabından fazlasına gerek duyuyorsanız, lütfen satış ekibimizle ${ contact }.",
-        "${ maxUsers } kullanıcı hesabından fazlasına gerek duyuyorsanız, lütfen satış ekibimizle ${ contact }."
       ]
     },
     "Price": {
@@ -8352,6 +8378,9 @@
       ],
       "Invoice": [
         "Fatura"
+      ],
+      "Transactions": [
+        "Hesap işlemleri"
       ]
     },
     "Select search results": {
@@ -9431,7 +9460,7 @@
         "Abonelik iptal edilsin mi?"
       ],
       "Catch-all email address": [
-        "Tümünü yakalan e-posta adresi"
+        "Tümünü toplama e-posta adresi"
       ],
       "Comprehensive privacy and security": [
         "Kapsamlı gizlilik ve güvenlik"
@@ -10126,10 +10155,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -10625,6 +10654,9 @@
       "Unlock your data": [
         "Verilerinizin kilidini açın"
       ],
+      "Upgrade complete!": [
+        "Yükseltme tamamlandı!"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Size ayrılmış sunucular ile ağ korumanızı yükseltin"
       ],
@@ -10673,6 +10705,9 @@
       "Your plan": [
         "Tarifeniz"
       ],
+      "Your shorter address is now ready": [
+        "Daha kısa adresiniz hazır"
+      ],
       "Your subscriptions": [
         "Abonelikleriniz"
       ]
@@ -10691,6 +10726,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME } faturası"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME } hesap işlemi"
       ]
     },
     "Title header for addresses domain table": {
@@ -10852,6 +10890,73 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Bu Tor Browser sürümü desteklenmiyor. Lütfen son ${ stableRelease } sürüme güncelleyin"
+      ]
+    },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Geri ödeme"
+      ],
+      "Failed": [
+        "Başarısız"
+      ],
+      "Needs attention": [
+        "İlgilenilmesi gerekiyor"
+      ],
+      "Refunded": [
+        "İade edildi"
+      ],
+      "Success": [
+        "Başarılı"
+      ],
+      "Timeout": [
+        "Zaman aşımı"
+      ],
+      "Voided": [
+        "Geçersiz kılındı"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Denge kredisi"
+      ],
+      "Authorization": [
+        "Yetkilendirme"
+      ],
+      "Bank transfer": [
+        "Banka havalesi"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Nakit"
+      ],
+      "Chargeback": [
+        "Geri ödeme"
+      ],
+      "Credit": [
+        "Kredi"
+      ],
+      "Credit transfer": [
+        "Kredi aktarımı"
+      ],
+      "Currency conversion": [
+        "Para birimi dönüştürme"
+      ],
+      "Gift card": [
+        "Hediye kartı"
+      ],
+      "Migration": [
+        "Aktarım"
+      ],
+      "Payment": [
+        "Ödeme"
+      ],
+      "Payment reversal": [
+        "Ödeme iptali"
+      ],
+      "Refund": [
+        "Geri ödeme"
       ]
     },
     "unprivatization": {
