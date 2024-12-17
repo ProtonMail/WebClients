@@ -21,11 +21,7 @@ type LockModeOption = {
     active: boolean;
 };
 
-type OnboardingLockSetupProps = {
-    label?: Partial<Record<LockMode, ReactNode>>;
-};
-
-export const OnboardingLockSetup: FC<OnboardingLockSetupProps> = ({ label }) => {
+export const OnboardingLockSetup: FC = () => {
     const online = useConnectivity();
     const { setLockMode, setLockTTL, lock, biometrics, password } = useLockSetup();
 
@@ -33,26 +29,26 @@ export const OnboardingLockSetup: FC<OnboardingLockSetupProps> = ({ label }) => 
         const options: LockModeOption[] = [
             {
                 value: LockMode.SESSION,
-                label: label?.SESSION ?? c('Label').t`PIN code`,
+                label: c('Label').t`PIN code`,
                 icon: 'pass-lockmode-pin',
                 active: true,
             },
             {
                 value: LockMode.PASSWORD,
-                label: label?.PASSWORD ?? c('Label').t`Password`,
+                label: c('Label').t`Password`,
                 icon: 'pass-lockmode-password',
                 active: password.enabled,
             },
             {
                 value: LockMode.BIOMETRICS,
-                label: label?.BIOMETRICS ?? c('Label').t`Biometrics`,
+                label: c('Label').t`Biometrics`,
                 icon: isMac() ? 'fingerprint' : 'pass-lockmode-biometrics',
                 needsUpgrade: biometrics.needsUpgrade,
                 active: DESKTOP_BUILD && password.enabled && biometrics.enabled,
             },
             {
                 value: LockMode.NONE,
-                label: label?.NONE ?? (
+                label: (
                     <>
                         <span className="mr-2">{c('Label').t`None`}</span>
                         <span className="color-weak text-sm align-end">({c('Info').t`Not recommended`})</span>
