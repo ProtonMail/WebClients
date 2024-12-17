@@ -21,6 +21,7 @@ export interface LinkDownload {
     signatureEmail?: string;
     signatureIssues?: SignatureIssues;
     buffer?: Uint8Array[];
+    isAnonymous?: boolean;
 }
 
 export type DownloadControls = {
@@ -126,7 +127,6 @@ export type DecryptFileKeys = {
     privateKey: PrivateKeyReference;
     sessionKeys?: SessionKey;
     addressPublicKeys?: PublicKeyReference[];
-    isAnonymous?: boolean;
 };
 
 export type InitDownloadCallback = (

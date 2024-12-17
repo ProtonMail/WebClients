@@ -155,4 +155,5 @@ export interface DecryptedLink extends Link {
     corruptedLink?: boolean;
     sharedOn?: number;
     sharedBy?: string;
+    isAnonymous?: boolean;
 }
