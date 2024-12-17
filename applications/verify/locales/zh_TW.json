@@ -17,6 +17,9 @@
       "Continue": [
         "繼續"
       ],
+      "Dismiss": [
+        "忽略"
+      ],
       "Edit email address": [
         "編輯電郵位址"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "查看帳單"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "Dark Web Monitoring": [
+        "暗網監測"
+      ],
+      "Use your own email domain": [
+        "使用您自己的電子郵件網域"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "胡蘿蔔"
+      ],
+      "cerise": [
+        "櫻桃"
+      ],
+      "cobalt": [
+        "鈷"
+      ],
+      "copper": [
+        "銅"
+      ],
+      "enzian": [
+        "龍膽"
+      ],
+      "fern": [
+        "蕨類"
+      ],
+      "forest": [
+        "森林"
+      ],
+      "ocean": [
+        "海洋"
+      ],
+      "olive": [
+        "橄欖"
+      ],
+      "pacific": [
+        "太平洋"
+      ],
+      "pickle": [
+        "泡菜"
+      ],
+      "pine": [
+        "松樹"
+      ],
+      "pink": [
+        "粉紅色"
+      ],
+      "plum": [
+        "梅子"
+      ],
+      "purple": [
+        "紫色"
+      ],
+      "reef": [
+        "礁石"
+      ],
+      "sahara": [
+        "撒哈拉"
+      ],
+      "slateblue": [
+        "板岩藍"
+      ],
+      "soil": [
+        "土壤"
+      ],
+      "strawberry": [
+        "草莓"
       ]
     },
     "Country name": {
@@ -923,6 +999,40 @@
         "安全性金鑰"
       ]
     },
+    "file size format": {
+      "byte": [
+        "位元組"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "位元組"
+      ],
+      "Gigabyte": [
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "千位元組"
+      ],
+      "Megabyte": [
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabytes"
+      ]
+    },
     "Font face option": {
       "System default": [
         "系統預設值"
@@ -993,6 +1103,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "若您相信我們出錯，請聯繫${ contactLink }。"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
@@ -1016,6 +1129,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "我們偵測到創建多重免費帳號，違反我們的${ termsLink }。"
       ],
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
@@ -1075,11 +1191,347 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "聯絡我們"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
       "Request an invite": [
         "需求邀請"
+      ],
+      "terms of service": [
+        "服務條款"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "用資料夾讓信箱井然有序"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "選用 ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }Scribe撰寫幫手"
+      ],
+      "${ n } calendar": [
+        "${ n } 個行事曆"
+      ],
+      "${ n } calendar per user": [
+        "${ n } 個行事曆分配給每位使用者"
+      ],
+      "${ n } custom email domain": [
+        "${ n } 個自訂電郵網域"
+      ],
+      "${ n } email address": [
+        "${ n } 組電郵位址/別名"
+      ],
+      "${ n } email address per user": [
+        "${ n } 組電郵位址/每位使用者"
+      ],
+      "${ n } filter": [
+        "${ n } 個篩選器"
+      ],
+      "${ n } folder": [
+        "${ n } 個資料夾"
+      ],
+      "${ n } folder and label": [
+        "${ n } 個資料夾和標籤"
+      ],
+      "${ n } label": [
+        "${ n } 個標籤"
+      ],
+      "${ n } message per day": [
+        "${ n } 封郵件 / 每天"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-天的檔案版本紀錄"
+      ],
+      "${ size } attachment size": [
+        "${ size } 的附件大小"
+      ],
+      "${ size } of secure storage per user": [
+        "每位使用者${ size }安全空間"
+      ],
+      "${ size } storage": [
+        "${ size } 儲存空間"
+      ],
+      "1 TB secure storage": [
+        "1TB安全儲存空間"
+      ],
+      "10 email addresses/aliases": [
+        "10 組電子郵件地址/別名"
+      ],
+      "10-year file version history": [
+        "10年的檔案版本紀錄"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "Advanced account protection": [
+        "進階的帳號保護"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "全部${ BRAND_NAME }產品及功能"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "全部頂級版${ BRAND_NAME }服務。一個簡單的訂購授權。"
+      ],
+      "Auto-delete Spam and Trash": [
+        "自動清理垃圾郵件及垃圾桶"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "自動刪除垃圾郵件與垃圾桶中的訊息"
+      ],
+      "Auto-reply": [
+        "自動回覆"
+      ],
+      "Automatic email forwarding": [
+        "自動郵件轉寄"
+      ],
+      "Breach alerts": [
+        "外洩警告"
+      ],
+      "Calendar sharing": [
+        "行事曆分享"
+      ],
+      "Catch-all": [
+        "全部擷取"
+      ],
+      "Collaborate and share large files": [
+        "合作和共享大型檔案"
+      ],
+      "Contact groups": [
+        "聯絡人群組"
+      ],
+      "Contact groups management": [
+        "聯絡人群組管理"
+      ],
+      "Custom and secure business email": [
+        "自訂和自訂商用電子郵件"
+      ],
+      "Custom email domains": [
+        "自訂電郵網域"
+      ],
+      "Custom snooze time": [
+        "自訂延遲時間"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch 匯入小幫手"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "電子郵件客戶端支援（透過 IMAP/SMTP）"
+      ],
+      "Email groups": [
+        "電子郵件群組"
+      ],
+      "Encrypted contact details": [
+        "經加密的聯絡人詳細資訊"
+      ],
+      "End-to-end encryption": [
+        "端對端加密"
+      ],
+      "Generate emails with a prompt": [
+        "透過提示生成電子郵件"
+      ],
+      "HTML signatures": [
+        "HTML簽名"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Password health": [
+        "密碼穩固性"
+      ],
+      "Password-protected Emails": [
+        "密碼 - 安全防護的電子郵件"
+      ],
+      "Proofread and refine your emails": [
+        "校閱與修飾你的電子郵件"
+      ],
+      "Quickly craft replies": [
+        "快速替回復打草稿"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Save time emailing": [
+        "儲存寄件時間"
+      ],
+      "Schedule and snooze emails for any time": [
+        "隨時計畫和延後電子郵件"
+      ],
+      "Schedule messages at any time": [
+        "在任意時間排程訊息"
+      ],
+      "Search message content": [
+        "搜尋郵件內容"
+      ],
+      "See team's availability": [
+        "查看團隊可用程度"
+      ],
+      "Send & receive invitations": [
+        "傳送並接收邀請"
+      ],
+      "Share files with no size limit": [
+        "分享檔案無大小限制"
+      ],
+      "SMTP submission": [
+        "SMTP 傳送"
+      ],
+      "SMTP submission for select organizations": [
+        "選定組織的 SMTP 傳送"
+      ],
+      "Support for up to 2 users": [
+        "支援最多2位使用者"
+      ],
+      "Sync and backup all your files across devices": [
+        "於裝置同步及備份您全部的檔案"
+      ],
+      "Unlimited filters": [
+        "無限制篩選器"
+      ],
+      "Unlimited folders": [
+        "無限制資料夾"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤和篩選器無上限"
+      ],
+      "Unlimited labels": [
+        "無限制標籤"
+      ],
+      "Unlimited messages per day": [
+        "每日郵件無上限"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "最多至 ${ totalStorageSize } 儲存空間"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1個自訂電子郵件網域"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "創建多重電子郵件位址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "緩辦郵件，容後依時提醒"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }：透過端對端加密保護您的行程安排。包括對自訂行事曆、行事曆共用等的支援。"
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }：透過端對端加密保護您的電子郵件。包含對自訂電子郵件網域、15 個電子郵件位址、無限的 hide-my-email 別名等的支援。"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "電郵位址具有完整的傳送和接收能力。單一使用者可有多組指派的位址；但是一組電郵位址不能指派給多位使用者。"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "可讓您設定收到電子郵件的自動化回應 (自動回覆)"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "目前並不支援大量推廣或程式化電子郵件傳送。我們建議使用專屬的電子郵件服務提供者作此用途。"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "為您的線上身分創建多個電子郵件位址，例如 JohnShopper@${ domain } 作購物帳號、JohnNews@${ domain } 作新聞訂閱"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "創建多達 ${ n } 個行事曆或新增好友、家人、同事和組織的行事曆"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "創建${ n }個電子郵件位址/別名分配至家庭成員。包含線上身分，如，JohnShopper@${ domain }給購物帳號。"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "輕鬆與您的家人、好友或同事分享您的行事曆"
+      ],
+      "Email everyone in a group with a single email address": [
+        "使用一個電子郵件地址給群組中的每位使用者"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "確保您接收所有傳送至您的網域的電子郵件，即使電子郵件位址並不存在、不復存在，或是拼寫有誤"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP 支援僅限透過 ${ MAIL_APP_NAME } Bridge 使用桌面應用程式 (例如 Outlook、Apple Mail、Thunderbird)。目前不支援雲端型 IMAP 整合。"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "使用加密日曆讓您的方案對您和您的家人保密"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "標籤是簡單的標記，讓您加到郵件上，好以更容易找到或者套用篩選器"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
+      ],
+      "Quickly set up out-of-office messages": [
+        "快速設立容後再覆訊息"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "自任何提供者快速轉移您的電子郵件、行事曆或聯絡人"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "安全地儲存您的聯絡人詳細資訊，例如電話號碼、位址、生日以及個人備忘。零存取加密，確保即使 ${ BRAND_NAME } 也無法存取。"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "創建通訊群組 (每個群組最多100名聯絡人) 可以簡單迅速的將信件寄送給一大群人。"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "設立篩選器，以便為您的電子郵件自動回覆、排序及/或加上標籤"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "以安全、可分享的連結與任何人分享您的檔案或資料夾"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP 允許第三方服務或裝置透過 ${ MAIL_APP_NAME } 傳送郵件。"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME }。管理員可分配不同儲存空間大小予組織中的使用者"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "帳戶空間將在每位使用者的 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME }與 ${ PASS_APP_NAME } 之間共用。"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "使用您擁有的自訂電子郵件網域位址，例如 you@yourname.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "傳送至其他 ${ MAIL_APP_NAME } 使用者時，將自動加密。傳送至非 ${ MAIL_APP_NAME_TWO } 使用者則需要於傳送前先設定一組密碼。"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "可使用多達 15 組電子郵件位址，支援 3 個自訂電子郵件網域，個性化由您定義"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "將現有儲存空間加大至 ${ bundleStorage } 予每位使用者"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "將現有儲存空間加大至 ${ bundleStorage }為總可用量"
+      ],
+      "Create up to ${ n } calendar": [
+        "創建多達 ${ n } 個行事曆"
+      ],
+      "Support for ${ n } custom email domains": [
+        "支援 ${ n } 組自訂電子郵件網域"
       ]
     },
     "Placeholder": {
@@ -1095,6 +1547,19 @@
         "您將被重新導向至您的第三方單一登入提供者。"
       ]
     },
+    "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "最多至 ${ totalStorageSize } 儲存空間"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "最多至 ${ totalStorageSize } 郵件儲存空間"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "所有 ${ BRAND_NAME } 服務"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
@@ -1104,6 +1569,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "帳號已鎖定"
+      ],
       "Enter 2FA code": [
         "輸入雙重驗證碼"
       ],

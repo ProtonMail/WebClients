@@ -63,9 +63,6 @@
       "Add group": [
         "Groep toevoegen"
       ],
-      "Add new contact": [
-        "Contactpersoon toevoegen"
-      ],
       "Add new group": [
         "Voeg nieuwe groep toe"
       ],
@@ -360,9 +357,6 @@
       "Export contact group": [
         "Exporteer contactgroep"
       ],
-      "Export contacts": [
-        "Contactpersonen exporteren"
-      ],
       "Fit to window": [
         "Passend in venster"
       ],
@@ -374,6 +368,9 @@
       ],
       "Get ${ DRIVE_APP_NAME }": [
         "Kies ${ DRIVE_APP_NAME }"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Krijg ${ MAIL_SHORT_APP_NAME } Plus voor ${ priceCoupon }"
       ],
       "Get in touch": [
         "Neem contact op"
@@ -1039,6 +1036,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ discountedPrice } is geldig voor de eerste ${ cycle } maanden. Daarna wordt uw abonnement automatisch vernieuwd tegen de gereduceerde prijs van ${ nextPrice } voor ${ renewalLength } maanden. U kunt op ieder moment annuleren."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ discountedPrice } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ nextPrice } per maand. U kunt opzeggen wanneer u wilt."
       ]
@@ -1318,6 +1318,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Wijzig de instellingen van het e-mailadres"
+      ],
+      "Continue": [
+        "Ga verder"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
       ],
@@ -2416,6 +2422,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA voegt een extra beveiligingslaag toe, waardoor onbevoegde toegang wordt voorkomen."
       ],
+      "Also included": [
+        "Ook inbegrepen"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw geëxporteerde contactpersonen."
       ],
@@ -2427,6 +2436,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Krijg onbeperkte aliassen en 500 GB opslagruimte met ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -4152,14 +4164,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
-      "Account size": [
-        "Accountgrootte"
-      ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
       ],
-      "Additional options": [
-        "Aanvullende opties"
+      "Address copied to clipboard": [
+        "Adres gekopieerd naar het klembord"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresverificatie met vertrouwde sleutels is voor dit adres ingeschakeld. Vertrouw eerst een aantal openbare sleutels sleutels om berichten te kunnen versturen naar deze ontvanger."
@@ -4342,10 +4351,6 @@
       "Create a new contact group": [
         "Maak een nieuwe contactengroep"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Maak een beveiligde cloud voor ${ n } lid",
-        "Maak een beveiligde cloud voor ${ n } leden"
-      ],
       "Create in": [
         "Maak in"
       ],
@@ -4370,9 +4375,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "CSV bestanden van Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps, alsmede vCard 3.1 en 4.0 formaten (UTF-8 encoding) worden ondersteund."
-      ],
       "Current plan": [
         "Huidig abonnement"
       ],
@@ -4387,6 +4389,9 @@
       ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "default email address": [
+        "standaard e-mailadres"
       ],
       "Delete locked drive": [
         "Verwijder vergrendelde drive",
@@ -4476,9 +4481,6 @@
       "email": [
         "e-mail"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via ${ BRAND_NAME }. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
       ],
@@ -4505,9 +4507,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
-      ],
-      "Enter the device name to confirm removal.": [
-        "Voer de apparaatnaam in om de verwijdering te bevestigen."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
@@ -4770,6 +4769,9 @@
       "Merged": [
         "Samengevoegd"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Berichten naar al uw e-mailadressen gaan naar uw inbox."
+      ],
       "MM/YY": [
         "MM/JJ"
       ],
@@ -4915,6 +4917,10 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credit over.",
+        "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
+      ],
       "Please open the document to view it.": [
         "Open het document om het te bekijken."
       ],
@@ -5009,6 +5015,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
+      "Registering your subscription...": [
+        "Uw abonnement wordt geregistreerd..."
+      ],
       "Report has been sent": [
         "Rapport werd verzonden"
       ],
@@ -5091,6 +5100,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
       ],
+      "Setting up your new address...": [
+        "Uw nieuwe adres wordt ingesteld..."
+      ],
       "Share files with links": [
         "Bestanden delen met links"
       ],
@@ -5139,6 +5151,9 @@
       "Something went wrong...": [
         "Er is iets fout gegaan..."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Begin het te delen met contacten en gebruik het voor online diensten."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
@@ -5156,9 +5171,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het account heeft mogelijk een nieuwe sleutel of het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "De applicatie moet uw contacten lokaal decoderen voordat ze kunnen worden geëxporteerd. Aan het einde van het proces zal een VCF-bestand worden gegenereerd en kan u het downloaden."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Het aantal downloads omvat zowel daadwerkelijke downloads als exemplaren waarin bestanden worden bekeken."
@@ -5184,6 +5196,9 @@
       "There is nothing to see here": [
         "Er is hier niets te zien"
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Deze actie zal het bestand dat u heeft geüpload definitief verwijderen."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Deze actie verwijdert de link en trekt de toegang voor alle gebruikers in."
       ],
@@ -5201,6 +5216,9 @@
       ],
       "This folder is empty": [
         "Deze map is leeg"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
       ],
       "This item already exists in your library": [
         "Dit item bestaat al in uw bibliotheek"
@@ -5226,9 +5244,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
         "Dit zal de links verwijderen en de toegang tot uw bestanden en mappen voor iedereen met de links verwijderen."
-      ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Hiermee wordt het gesynchroniseerde apparaat ${ deviceName } verwijderd van ${ DRIVE_APP_NAME } en worden de mappen die u aan Mijn computers hebt toegevoegd, niet meer gesynchroniseerd."
       ],
       "This will replace the existing file with the folder": [
         "Dit zal het bestaande bestand vervangen door de map"
@@ -5646,11 +5661,6 @@
         "Alleen bekijken"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
-      ]
-    },
     "Item": {
       "file attributes": [
         "bestandsattributen"
@@ -5722,6 +5732,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
+      "Account holder": [
+        "Rekeninghouder"
+      ],
       "Add email address": [
         "E-mailadres toevoegen"
       ],
@@ -5760,9 +5773,6 @@
       ],
       "Authenticator app": [
         "Authenticator-app"
-      ],
-      "Automatically save contacts": [
-        "Contacten automatisch opslaan"
       ],
       "Beta Access": [
         "Bèta toegang"
@@ -5939,9 +5949,6 @@
       "Expires": [
         "Verloopt"
       ],
-      "Export contacts": [
-        "Contacten exporteren"
-      ],
       "Extended address": [
         "Adrestoevoeging"
       ],
@@ -5980,9 +5987,6 @@
       ],
       "Import all messages": [
         "Alle berichten importeren"
-      ],
-      "Import contacts": [
-        "Contacten importeren"
       ],
       "Import interval": [
         "Interval importeren"
@@ -6737,6 +6741,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Aan de slag voor ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Vanaf ${ priceMailPlus }"
       ],
@@ -6877,6 +6884,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-mailadressen/aliassen"
+      ],
+      "10 more premium features": [
+        "10 meer premium functies"
       ],
       "10-year file version history": [
         "10-jarige bestandsversiegeschiedenis"
@@ -7361,6 +7371,14 @@
         "Van abonnement wisselen?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Krijg Mail Plus voor ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "De kortingsprijs van ${ priceCoupon } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ priceMailPlus }. U kunt op ieder moment annuleren."
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Beveilig uw agenda met end-to-end versleuteling. Dit is inclusief ondersteuning voor aangepaste agenda's, agenda-delen en meer."
@@ -7515,6 +7533,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Routeer uw internetverkeer door het Tor-netwerk met een enkele klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
@@ -7681,9 +7702,17 @@
         "${ count } item kon niet worden ontsleuteld",
         "${ count } items konden niet worden ontsleuteld"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } item verwijderd",
+        "${ numberOfItems } items verwijderd"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item permanent verwijderd uit de prullenbak",
         "${ numberOfItems } items permanent verwijderd uit de prullenbak"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } item kon niet worden verwijderd",
+        "${ numberOfItems } items konden niet verwijderd worden"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems }\" item kon niet permanent verwijderd worden uit prullenbak",
@@ -7873,6 +7902,10 @@
         "Dit item werd niet uit uw lijst verwijderd.",
         "Sommige items werden niet uit uw lijst verwijderd."
       ],
+      "This item was successfully removed from your list": [
+        "Dit item is met succes verwijderd uit uw lijst",
+        "Alle items zijn met succes verwijderd uit uw lijst"
+      ],
       "Trash failed to be emptied": [
         "Prullenbak legen mislukt"
       ],
@@ -7918,6 +7951,9 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Create a document": [
+        "Een document maken"
+      ],
       "Get started": [
         "Aan de slag"
       ],
@@ -7929,6 +7965,9 @@
       ],
       "Invite members": [
         "Nodig leden uit"
+      ],
+      "Maybe Later": [
+        "Misschien later"
       ],
       "Maybe later": [
         "Misschien later"
@@ -8207,8 +8246,23 @@
       "Please select your billing state first.": [
         "Selecteer eerst uw factureringsstaat."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Wordt verlengd voor ${ renewPrice }, altijd opzegbaar."
+      ],
       "Select billing country to pay": [
         "Selecteer factureringsland om te betalen"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } voor ${ subscriptionLengthCopy } maanden. U kunt op ieder moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } voor ${ subscriptionLengthCopy } maanden. U kunt op ieder moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } voor ${ subscriptionLength } maand. U kunt op ieder moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } per maand. U kunt opzeggen wanneer u wilt."
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
@@ -8369,28 +8423,9 @@
         "Naam"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } met ons Verkoopteam."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Selecteer het aantal IP-adressen om op te nemen in uw abonnement. Elk extra IP-adres kost ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Indien u meer dan ${ maxIPs } IP-adres nodig hebt, ",
-        "Indien u meer dan ${ maxIPs } IP-adressen nodig hebt, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "neem contact op"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Selecteer het aantal gebruikers om op te nemen in uw abonnement. Elke extra gebruiker kost ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Heeft u meer dan ${ maxUsers } gebruiker nodig, ${ contact } met ons Sales team.",
-        "Heeft u meer dan ${ maxUsers } gebruikers nodig, ${ contact } met ons Sales team."
       ]
     },
     "Price": {
@@ -9889,6 +9924,9 @@
       "Day theme": [
         "Dag thema"
       ],
+      "Delete": [
+        "Verwijderen"
+      ],
       "Delete ${ count } contact": [
         "Verwijder ${ count } contact",
         "${ count } contacten verwijderen"
@@ -10283,6 +10321,9 @@
       "Unlock contacts groups": [
         "Ontgrendel contactgroepen"
       ],
+      "Upgrade complete!": [
+        "Upgrade voltooid!"
+      ],
       "Uploaded": [
         "Geüpload"
       ],
@@ -10345,6 +10386,9 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
+      ],
+      "Your shorter address is now ready": [
+        "Uw kortere adres is nu klaar"
       ],
       "Your welcome actions": [
         "Uw welkomstacties"
@@ -10439,9 +10483,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "We hebben ze een uitnodiging gestuurd om het item te bekijken."
-      ],
-      "You do not have any contacts to export": [
-        "U heeft geen contactpersonen om te exporteren"
       ]
     },
     "tooltip": {
@@ -10583,6 +10624,9 @@
       ],
       "Missing alias suffix": [
         "Ontbrekend alias-achtervoegsel"
+      ],
+      "Name is required": [
+        "Naam is vereist."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Alleen alfanumerieke tekens, punten, koppeltekens en underscores zijn toegestaan"

@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Accepta"
+      ],
       "Add": [
         "Afegeix"
       ],
@@ -1322,6 +1325,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de recuperació."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Per accedir a ${ PASS_APP_NAME } caldrà la vostra empremta digital o el codi PIN del dispositiu."
       ],
@@ -1459,6 +1465,9 @@
       ],
       "Current version": [
         "Versió actual"
+      ],
+      "Currently selected": [
+        "Selecció actual"
       ],
       "Decrypting your data": [
         "S'estan desxifrant les dades"
@@ -1776,6 +1785,9 @@
       "None": [
         "Cap"
       ],
+      "Not recommended": [
+        "No recomanat"
+      ],
       "Offline mode": [
         "Mode fora de línia"
       ],
@@ -1833,6 +1845,15 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmeu la contrasenya de ${ BRAND_NAME } per a exportar les dades de ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password": [
+        "Confirmeu la vostra contrasenya de recuperació."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Confirmeu la vostra contrasenya de recuperació per tal de bloquejar-la automàticament amb la vostra contrasenya"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Confirmeu la vostra contrasenya de recuperació per desregistrar el vostre bloqueig."
       ],
       "Please confirm your extra password": [
         "Confirmeu la vostra contrasenya addicional."
@@ -2096,6 +2117,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya de ${ BRAND_NAME }."
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya de recuperació."
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya addicional."
       ],
@@ -2165,6 +2189,9 @@
       ],
       "You are about to create:": [
         "Esteu a punt de crear:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "També podeu definir un codi PIN per desbloquejar ${ PASS_APP_NAME }."
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ara podeu usar la contrasenya de ${ BRAND_NAME } per a accedir a ${ PASS_SHORT_APP_NAME } fora de línia"
@@ -2388,6 +2415,9 @@
       ],
       "Auto-lock after": [
         "Bloqueig automàtic després de"
+      ],
+      "Backup password": [
+        "Contrasenya de recuperació"
       ],
       "Beta Access": [
         "Accés beta"
@@ -2966,6 +2996,9 @@
       "Unlock with": [
         "Desbloqueja amb"
       ],
+      "Unlock with:": [
+        "Desbloqueja amb:"
+      ],
       "Unnamed Credit Card": [
         "Targeta de crèdit sense nom"
       ],
@@ -3409,6 +3442,9 @@
       "Breaches detected for": [
         "Infraccions detectades per"
       ],
+      "Change your lock method": [
+        "Canvia el mètode de bloqueig"
+      ],
       "Confirm extra password": [
         "Confirmeu la contrasenya addicional"
       ],
@@ -3493,6 +3529,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gaudint ${ PASS_APP_NAME }?"
+      ],
+      "Enter your backup password": [
+        "Introduïu la vostra contrasenya de recuperació."
       ],
       "Enter your extra password": [
         "Introduïu la vostra contrasenya addicional"

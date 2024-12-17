@@ -35,9 +35,6 @@
       "Add group": [
         "Dodaj grupu"
       ],
-      "Add new contact": [
-        "Dodaj novi kontakt"
-      ],
       "Add new group": [
         "Dodaj novu grupu"
       ],
@@ -371,9 +368,6 @@
       ],
       "Export contact group": [
         "Izvezi grupu kontakata"
-      ],
-      "Export contacts": [
-        "Uvezi kontakte"
       ],
       "Filter on...": [
         "Filtar za..."
@@ -3574,17 +3568,11 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } na Play Storeu"
       ],
-      "Close": [
-        "Zatvori"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Nabavite ${ MAIL_APP_NAME } mobilnu aplikaciju"
       ],
       "Learn more": [
         "Više informacija"
-      ],
-      "Maybe later": [
-        "Možda kasnije"
       ]
     },
     "Gmail forwarding": {
@@ -4462,9 +4450,6 @@
       "Text to display": [
         "Tekst za prikaz"
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplikacija mora lokalno dešifrirati vaše kontakte prije nego što se mogu izvesti. Na kraju postupka generirat će se VCF datoteka i moći ćete je preuzeti."
-      ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Podaci koje ste unijeli u skicu mogu biti izgubljeni ako napustite stranicu."
       ],
@@ -4982,9 +4967,6 @@
       "Authenticator app": [
         "Aplikacija autentifikatora"
       ],
-      "Automatically save contacts": [
-        "Automatsko spremanje kontakata"
-      ],
       "BCC": [
         "Skrivena kopija"
       ],
@@ -5099,9 +5081,6 @@
       "Expires": [
         "Ističe"
       ],
-      "Export contacts": [
-        "Izvezi kontakte"
-      ],
       "Extended address": [
         "Produžena adresa"
       ],
@@ -5137,9 +5116,6 @@
       ],
       "Import all messages": [
         "Uvoz svih poruka"
-      ],
-      "Import contacts": [
-        "Uvezi kontakte"
       ],
       "Import interval": [
         "Interval uvoza"
@@ -6001,14 +5977,8 @@
       ]
     },
     "Onboarding modal": {
-      "Forward Gmail messages to your inbox.": [
-        "Proslijedite Gmail poruke u svoju pristiglu poštu."
-      ],
       "Next": [
         "Sljedeće"
-      ],
-      "Skip": [
-        "Preskoči"
       ]
     },
     "Onboarding Proton": {
@@ -7623,9 +7593,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prenesite javni ključ za omogućavanje slanja end-to-end šifriranih e-poruka na ovu adresu e-pošte"
-      ],
-      "You do not have any contacts to export": [
-        "Nemate kontakata za izvoz"
       ]
     },
     "Update font modal": {

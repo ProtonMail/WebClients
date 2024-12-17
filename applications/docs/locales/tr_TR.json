@@ -60,9 +60,6 @@
       "Add group": [
         "Grup ekle"
       ],
-      "Add new contact": [
-        "Yeni kişi ekle"
-      ],
       "Add new group": [
         "Yeni grup ekle"
       ],
@@ -285,14 +282,14 @@
       "Export contact group": [
         "Kişi grubunu dışa aktar"
       ],
-      "Export contacts": [
-        "Kişileri dışa aktar"
-      ],
       "Forgot password?": [
         "Parolanızı mı unuttunuz?"
       ],
       "Forward as attachment": [
         "Ek dosya olarak ilet"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "${ priceCoupon } ile ${ MAIL_SHORT_APP_NAME } Plus edinin"
       ],
       "Get in touch": [
         "Bizimle görüşün"
@@ -581,6 +578,9 @@
       ],
       "Show advanced PGP settings": [
         "Gelişmiş PGP ayarlarını görüntüle"
+      ],
+      "Show options": [
+        "Seçenekleri görüntüle"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -1094,6 +1094,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "E-posta adresi ayarlarını değiştir"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ],
@@ -2176,6 +2182,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "İki adımlı doğrulama ek bir güvenlik katmanı ekleyerek yetkisiz erişimi önler."
       ],
+      "Also included": [
+        "Ayrıca şunlar da bulunur"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kişilerin şifresi çözülüyor… Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında dışa aktardığınız tüm kişilerin bulunduğu dosyayı indirebilirsiniz."
       ],
@@ -2187,6 +2196,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] } ile sınırsız takma ad ve 500 GB depolama alanı edinin."
@@ -3836,14 +3848,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
-      "Account size": [
-        "Hesap boyutu"
-      ],
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
-      "Additional options": [
-        "Ek seçenekler"
+      "Address copied to clipboard": [
+        "Adres panoya kopyalandı"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
@@ -3969,10 +3978,6 @@
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "${ n } üye için bir güvenli bulut oluştur",
-        "${ n } üye için bir güvenli bulut oluştur"
-      ],
       "Create in": [
         "Şuraya ekle"
       ],
@@ -3994,9 +3999,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimlerindeki (UTF-8) dosyalar desteklenir."
-      ],
       "Current plan": [
         "Geçerli tarife"
       ],
@@ -4008,6 +4010,9 @@
       ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "default email address": [
+        "varsayılan e-posta adresi"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Sayısal imza doğrulandı. Bu dosya ${ emailAddress } tarafından güvenli şekilde yüklendi."
@@ -4068,9 +4073,6 @@
       ],
       "email": [
         "e-posta"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
@@ -4311,6 +4313,9 @@
       "Merged": [
         "Birleştirilmiş"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
+      ],
       "MM/YY": [
         "AA/YY"
       ],
@@ -4488,8 +4493,14 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
+      "Registering your subscription...": [
+        "Abonelik kaydınız oluşturuluyor..."
+      ],
       "Restored version to": [
         "Şu sürüm geri yüklendi"
+      ],
+      "Save Document as PDF": [
+        "Belgeyi PDF olarak kaydet"
       ],
       "Saving": [
         "Kaydediliyor"
@@ -4518,6 +4529,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
       ],
+      "Setting up your new address...": [
+        "Yeni adresiniz ayarlanıyor..."
+      ],
       "Settings update failed": [
         "Ayarlar güncellenemedi"
       ],
@@ -4545,6 +4559,9 @@
       "Something went wrong": [
         "Bir sorun çıktı"
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
       ],
@@ -4562,9 +4579,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Hesabın yeni bir anahtarı olabilir ya da şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
       ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Belgedeki düzenlemelerin sahibi doğrulanamadı. Bu belgeyi doğrulanmış olarak işaretlemek ister misiniz? Daha sonra karar vermek için Yok say üzerine tıklayın."
@@ -4601,6 +4615,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Bu belge var olmayabilir veya onu görüntüleme izniniz olmayabilir. Sorun sürüyor mu anlamak için sayfayı yeniden yüklemeyi deneyebilirsiniz."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
       ],
       "This item already exists in your library": [
         "Bu öge kitaplığınızda zaten var"
@@ -4756,6 +4773,15 @@
       "What do you want to do?": [
         "Ne yapmak istersiniz?"
       ],
+      "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
+        "Pencere açıldığında, \"Hedef\" seçeneğini \"PDF olarak kaydet\" olarak seçin ve Kaydet üzerine basın."
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "Pencere açıldığında, \"Hedef\" seçeneğini \"PDF olarak kaydet\" olarak seçin ve Kaydet üzerine basın."
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "Pencere açıldığında, sağ alt köşeden \"PDF\" seçeneğini seçin ve Kaydet üzerine basın."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
@@ -4872,6 +4898,9 @@
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
       ],
+      "Your browser's Print dialog will now open, where you can export your document to PDF.": [
+        "Tarayıcınızın Yazdırma penceresi açılacak buradan belgenizi PDF olarak dışa aktarabileceksiniz."
+      ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Değişiklikleriniz Drive ile eşitleniyor. Lütfen sayfayı kapatmayın."
       ],
@@ -4943,11 +4972,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Yalnızca görüntüleme"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ]
     },
     "Item": {
@@ -5049,9 +5073,6 @@
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
       ],
-      "Automatically save contacts": [
-        "Kişileri otomatik olarak kaydet"
-      ],
       "Beta Access": [
         "Beta erişimi"
       ],
@@ -5078,12 +5099,6 @@
       ],
       "Calendars": [
         "Takvimler"
-      ],
-      "Can edit": [
-        "Düzenleyebilir"
-      ],
-      "Can view": [
-        "Görüntüleyebilir"
       ],
       "Cancel download": [
         "İndirmeyi iptal et"
@@ -5199,9 +5214,6 @@
       "Expires": [
         "Geçerlilik sonu"
       ],
-      "Export contacts": [
-        "Kişileri dışa aktar"
-      ],
       "Extended address": [
         "Açık adres"
       ],
@@ -5231,9 +5243,6 @@
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
-      ],
-      "Import contacts": [
-        "Kişileri içe aktar"
       ],
       "Import interval": [
         "İçe aktarma aralığı"
@@ -5450,14 +5459,6 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "Dosyaları taşıyabilir, ekleyebilir ve düzenleyebilir"
-      ],
-      "View and download": [
-        "Görüntüleyebilir ve indirebilir"
       ]
     },
     "Label for contact group color": {
@@ -5907,6 +5908,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
       ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus } tutarından başlayan fiyatlarla"
       ],
@@ -6047,6 +6051,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-posta adresi/takma adı"
+      ],
+      "10 more premium features": [
+        "10 ücretli özellik daha"
       ],
       "10-year file version history": [
         "10 yıllık dosya sürümü geçmişi"
@@ -6517,6 +6524,14 @@
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon } ile Mail Plus edinin"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "İndirimli fiyat olan ${ priceCoupon } ilk ay için geçerlidir. Daha sonra aylık ${ priceMailPlus } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -6811,11 +6826,17 @@
       "\"${ name }\" created successfully": [
         "\"${ name }\" eklendi"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" silindi"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" çöp kutusundan kalıcı olarak silindi"
       ],
       "\"${ name }\" failed to be created": [
         "\"${ name }\" eklenemedi"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\" silinemedi"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name } çöp kutusundan kalıcı olarak silinemedi"
@@ -6854,9 +6875,17 @@
         "${ count } ögenin şifresi çözülemedi",
         "${ count } ögenin şifresi çözülemedi"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } öge silindi",
+        "${ numberOfItems } öge silindi"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi",
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } öge silinemedi",
+        "${ numberOfItems } öge silinemedi"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silinemedi",
@@ -7337,28 +7366,9 @@
         "Ad"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "lütfen ${ contactHref } satış ekibimizle görüşün."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Tarifenizde bulunacak IP adresi sayısını seçin. Her ek IP adresinin maliyeti ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, ",
-        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "görüşün"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Tarifenizde bulunacak kullanıcı sayısını seçin. Her ek kullanıcının maliyeti ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "${ maxUsers } kullanıcı hesabından fazlasına gerek duyuyorsanız, lütfen satış ekibimizle ${ contact }.",
-        "${ maxUsers } kullanıcı hesabından fazlasına gerek duyuyorsanız, lütfen satış ekibimizle ${ contact }."
       ]
     },
     "Price": {
@@ -8851,6 +8861,9 @@
       "Untitled document ${ date }": [
         "Adlandırılmamış belge ${ date }"
       ],
+      "Upgrade complete!": [
+        "Yükseltme tamamlandı!"
+      ],
       "Uploading a large file or folder": [
         "Büyük bir dosya ya da klasör yükleniyor"
       ],
@@ -8886,6 +8899,9 @@
       ],
       "Your exposed information": [
         "Açığa çıkmış bilgileriniz"
+      ],
+      "Your shorter address is now ready": [
+        "Daha kısa adresiniz hazır"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8968,9 +8984,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
-      ],
-      "You do not have any contacts to export": [
-        "Dışa aktarılacak bir kişi kaydınız yok"
       ]
     },
     "tooltip": {
@@ -9112,6 +9125,9 @@
       ],
       "Missing alias suffix": [
         "Takma ad son eki eksik"
+      ],
+      "Name is required": [
+        "Adın yazılması zorunludur"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"

@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activa"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -420,6 +420,9 @@
       ],
       "Discard changes": [
         "Descarta els canvis"
+      ],
+      "Dismiss": [
+        "Descarta"
       ],
       "Domain name": [
         "Nom de domini"
@@ -1746,7 +1749,7 @@
         "Autenticador de doble factor (2FA) integrat"
       ],
       "One-time payment, lifetime deal": [
-        "Un pagament únic, una oferta de per vida"
+        "Pagament únic, oferta per a tota la vida"
       ],
       "Online document editor": [
         "Editor de documents en línia"
@@ -1853,6 +1856,9 @@
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Es renova automàticament a ${ renewPrice } durant ${ renewLength } mes.",
         "Es renova automàticament a ${ renewPrice } durant ${ renewLength } mesos."
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Es renova automàticament el ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -1972,7 +1978,7 @@
         "Afegeix un enllaç al peu del correu electrònic"
       ],
       "Change email address settings": [
-        "Modificar les preferències de l'adreça de correu electrònic"
+        "Modifica les preferències de l'adreça de correu electrònic"
       ],
       "Continue": [
         "Continua"
@@ -2360,7 +2366,7 @@
         "dacsa"
       ],
       "mughal green": [
-        "verd mogol"
+        "verd fosc"
       ],
       "ocean": [
         "oceà"
@@ -2369,7 +2375,7 @@
         "verd oliva"
       ],
       "outer space": [
-        "espai exterior"
+        "blau còsmic"
       ],
       "pacific": [
         "pacífic"
@@ -3601,7 +3607,7 @@
         "Creeu una reunió a Zoom i afegiu els detalls de participació a l'esdeveniment en un clic."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
-        "Creeu tantes etiquetes o carpetes com necessiteu per mantenir ordenada la vostra safata d'entrada."
+        "Creeu tantes etiquetes o carpetes com necessiteu per mantenir ordenada la safata d'entrada."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activa ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
@@ -4685,6 +4691,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Habiliteu el suport multiusuari abans d'afegir usuaris a la vostra organització."
       ],
+      "Please enter a valid entity ID URL": [
+        "Introduïu un URL d'identificació d'entitat vàlid."
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
@@ -5194,7 +5203,7 @@
         "No s'ha trobat el certificat ${ name } o ja s'ha revocat"
       ],
       "Display name cannot be empty": [
-        "El nom a mostrar no pot estar buit."
+        "El nom visible no pot estar buit"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5408,7 +5417,7 @@
         "Deixa el pla Visionary"
       ],
       "Lifetime accounts cannot join a family plan.": [
-        "Els comptes Lifetime no poden unir-se a un pla familiar."
+        "Els comptes de per vida no poden unir-se a un pla familiar."
       ],
       "Manage addresses": [
         "Gestiona les adreces"
@@ -6869,9 +6878,6 @@
       "account recovery method": [
         "mètode de recuperació de compte"
       ],
-      "Account size": [
-        "Mida del compte"
-      ],
       "Account successfully updated": [
         "El compte s'ha actualitzat."
       ],
@@ -6925,9 +6931,6 @@
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "S'està afegint un servidor de passarel·la: ${ serverNumber } / ${ total }",
         "S'estan afegint servidors de passarel·la: ${ serverNumber } / ${ total }"
-      ],
-      "Additional options": [
-        "Opcions addicionals"
       ],
       "Address copied to clipboard": [
         "S'ha copiat l'adreça al porta-retalls."
@@ -7182,6 +7185,9 @@
       "Choose an app to get started": [
         "Trieu una aplicació per començar"
       ],
+      "Choose an Entity ID to continue.": [
+        "Trieu un ID d'entitat per continuar."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
@@ -7202,6 +7208,9 @@
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Continueu connectant **${ organizationValue.Name }** amb la vostra organització ${ BRAND_NAME }."
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Continueu connectant aquesta entitat amb la vostra organització de ${ BRAND_NAME }."
       ],
       "Continue with ${ freeName }": [
         "Continua amb ${ freeName }"
@@ -7239,10 +7248,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les etiquetes que vulgueu importar."
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Crea un núvol segur per a ${ n } membre",
-        "Crea un núvol segur per a ${ n } membres"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crear i gestionar subcomptes i assignar-los adreces de correu en el vostre domini personalitzat."
@@ -7421,7 +7426,7 @@
       "Edit link": [
         "Editar l'enllaç"
       ],
-      "EduGain configuration saved": [
+      "eduGAIN configuration saved": [
         "S'ha desat la configuració d'EduGain."
       ],
       "email": [
@@ -7429,9 +7434,6 @@
       ],
       "Email address": [
         "Adreça de correu electrònic"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "S'inclou gratuïtament l'allotjament de correu electrònic per a 10 noms de domini de correu electrònic personalitzats. Es poden afegir dominis addicionals per ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'allotjament de correu electrònic només està disponible per als dominis que ja teniu. El registre de domini no està disponible actualment a través de ${ BRAND_NAME }. Podeu allotjar correu electrònic per a dominis registrats a qualsevol registrador de dominis."
@@ -7495,6 +7497,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduïu les credencials del compte de correu electrònic des d'on voleu importar."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Introduïu l'ID d'entitat d'una organització **eduGAIN** per a **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Introdueixi la Contrasenya d'organització per a restaurar els privilegis d'administrador. ${ learnMore }"
@@ -8059,9 +8064,6 @@
       "No logs yet.": [
         "Encara no hi ha registres."
       ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "No hi ha cap organització activada amb **eduGAIN** per a **${ domain.DomainName }**."
-      ],
       "No payment is required at this time.": [
         "En aquest moment no cal pagar cap pagament."
       ],
@@ -8407,17 +8409,14 @@
       "Select a service provider to start": [
         "Seleccioneu un proveïdor de serveis per començar"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Seleccioneu una organització activada amb **eduGAIN** per a **${ domain.DomainName }**."
-      ],
       "Select one or multiple user affiliations": [
         "Seleccioneu una o diverses afiliacions per l'usuari."
       ],
       "Select recently used servers": [
         "Selecciona els servidors utilitzats recentment"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "Seleccioneu les afiliacions de l'usuari de **${ organizationValue.Name }** (${ organizationValue.EntityId }) que voleu permetre a la vostra organització ${ BRAND_NAME }:"
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Seleccioneu les afiliacions dels usuaris de ${ getFormattedOrganization } que voleu permetre a la vostra organització ${ BRAND_NAME }:"
       ],
       "Select what you want to import.": [
         "Seleccioneu què voleu importar."
@@ -8504,7 +8503,7 @@
         "SPF aclareix qui està autoritzat a enviar correus electrònics per al vostre domini. Assegureu-vos d'afegir el registre TXT següent a la consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
       ],
       "Start sharing it with contacts and use it for online services.": [
-        "Comenceu a compartir-la amb els vostres contactes i utilitzeu-la per a serveis en línia."
+        "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
       ],
       "Stay tuned for future promotions.": [
         "Estigueu atent a futures promocions."
@@ -8698,9 +8697,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Aquest missatge no arribarà a l'equip de suport. Si teniu un problema amb el nostre servei o necessiteu més assistència per part nostra, ${ supportLink }"
-      ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Aquesta organització està activada amb **eduGAIN** per a **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "L'enllaç de la promoció ha caducat."
@@ -9186,7 +9182,7 @@
         "Esteu a punt d'obrir una altra pestanya del navegador i visitar:"
       ],
       "You are about to open your default browser and visit:": [
-        "Esteu a punt d'obrir el vostre navegador predeterminat i visitar:"
+        "Esteu a punt d'obrir el navegador per defecte i visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
@@ -9539,11 +9535,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Només lectura"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
       ]
     },
     "Input Error": {
@@ -10094,6 +10085,9 @@
       "Auto-unsubscribe": [
         "Anul·la la subscripció automàticament"
       ],
+      "Automatically save contacts": [
+        "Desa els contactes automàticament"
+      ],
       "Awarded": [
         "Premiat"
       ],
@@ -10381,6 +10375,9 @@
       ],
       "Entity ID": [
         "Identificador de l'entitat"
+      ],
+      "Entity ID URL": [
+        "URL d'identificació de l'entitat"
       ],
       "Event": [
         "Esdeveniment"
@@ -10726,6 +10723,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperació"
+      ],
+      "Remove": [
+        "Esborra"
       ],
       "Remove image metadata": [
         "Esborra les metadades de la imatge"
@@ -11950,11 +11950,11 @@
         "Fins a ${ numberOfUsers } usuaris"
       ],
       "${ options }-day file version history": [
-        "Historial de versions de fitxers d'${ options } dia",
-        "Historial de versions de fitxers d'${ options } dies"
+        "Historial de versions de fitxer de ${ options } dies",
+        "Historial de versions de fitxers de ${ options } dies"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
-        "Accés de tota la vida a les funcions ${ PASS_APP_NAME } i SimpleLogin"
+        "Accés de per vida a ${ PASS_APP_NAME } i SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
@@ -12021,7 +12021,7 @@
         "Protecció avançada dels comptes"
       ],
       "Advanced alias features (powered by SimpleLogin)": [
-        "Funcions d'àlies avançades (impulsades per SimpleLogin)"
+        "Funcions d'àlies avançades (impulsades pel SimpleLogin)"
       ],
       "Advanced network security": [
         "Seguretat de xarxa avançada"
@@ -12153,7 +12153,7 @@
         "Acord de processament de dades RGPD"
       ],
       "Generate emails with a prompt": [
-        "Genera correus electrònics amb una demanda"
+        "Genera correus electrònics amb una indicació"
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
@@ -12676,7 +12676,7 @@
         "Compartiu fàcilment els vostres calendaris amb la família, els amics o els col·legues."
       ],
       "Email everyone in a group with a single email address": [
-        "Envieu un correu electrònic a tothom d'un grup amb una única adreça de correu electrònic."
+        "Envieu un correu electrònic a tothom en un grup amb una única adreça de correu electrònic."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Assegura que rebeu tots els correus electrònics enviats al vostre domini, fins i tot si l'adreça de correu electrònic no existeix, ha deixat d'existir o té un error ortogràfic"
@@ -12700,7 +12700,7 @@
         "Podeu afegir etiquetes als missatges per facilitar-ne la cerca o l'aplicació de filtres"
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
-        "Accés de tota la vida a les funcions prèmium de ${ PASS_APP_NAME } + SimpleLogin."
+        "Accés per a tota la vida a les funcions prèmium de ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Com una carpeta, una caixa forta és una manera còmoda d'organitzar els elements"
@@ -13914,7 +13914,7 @@
     },
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
-        "Totes les funcions premium. 6 usuaris. 1 subscripció fàcil."
+        "Totes les característiques prèmium. 6 usuaris. 1 subscripció fàcil."
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
         "Facturació anual a ${ yearlyPrice }. Estalvieu ${ yearlySavedPrice } amb ${ passFamilyPlanName } (en comparació amb 6 subscripcions individuals de ${ passPlusPlanName })."
@@ -14322,28 +14322,9 @@
         "Membres"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } el nostre equip de vendes."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Seleccioneu el nombre d'IP per incloure en el vostre pla. Cada IP addicional té un cost de ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si necessitéssiu més d'${ maxIPs } IP, ",
-        "Si necessitéssiu més de ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contacte"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Seleccioneu el nombre d'usuaris per incloure en el vostre pla. Cada usuari addicional té un cost de ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si necessiteu més d'${ maxUsers } compte d'usuari, ${ contact } amb el nostre equip de vendes.",
-        "Si necessiteu més de ${ maxUsers } comptes d'usuari, ${ contact } amb el nostre equip de vendes."
       ]
     },
     "Price": {
@@ -15457,6 +15438,14 @@
     "signup: Action": {
       "Request trial": [
         "Sol·liciteu una prova"
+      ]
+    },
+    "signup: Feature": {
+      "Encrypted": [
+        "Xifrat"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de no conservació de registres"
       ]
     },
     "Signup: Info": {
@@ -18058,7 +18047,7 @@
         "Revoca el certificat"
       ],
       "Same inbox, shorter email address": [
-        "La mateixa safata d'entrada amb una adreça electrònica més curta"
+        "La mateixa safata d'entrada, amb una adreça de correu electrònic més curta"
       ],
       "SAML authentication": [
         "Autenticació SAML"
@@ -18251,7 +18240,7 @@
         "Desbloqueu les vostres dades"
       ],
       "Upgrade complete!": [
-        "S'ha millorat el vostre pla."
+        "S'ha millorat el pla."
       ],
       "Upgrade plan": [
         "Millora el pla"
@@ -18341,7 +18330,7 @@
         "El seu estat de recuperació"
       ],
       "Your shorter address is now ready": [
-        "La vostra adreça més curta ja està preparada."
+        "La vostra adreça més curta ja està a punt."
       ],
       "Your SMTP token": [
         "El vostre token SMTP"
@@ -18555,6 +18544,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Els missatges a la carpeta d'Enviats o Esborranys continuaran apareixent a aquestes carpetes, fins i tot si els moveu a una altra carpeta."
+      ],
+      "Remove metadata from images to protect your privacy.": [
+        "Elimineu les metadades de les imatges per protegir la vostra privadesa."
       ],
       "See number of unread messages in the tab icon": [
         "Mostra el nombre de missatges sense llegir a la icona de la pestanya"

@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -421,6 +421,9 @@
       "Discard changes": [
         "Сбросить изменения"
       ],
+      "Dismiss": [
+        "Отклонить"
+      ],
       "Domain name": [
         "Доменное имя"
       ],
@@ -561,6 +564,9 @@
       ],
       "Generate token": [
         "Сгенерировать токен"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Оформите ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "Получить ${ vpnPlus }"
@@ -1871,6 +1877,9 @@
         "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев",
         "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев",
         "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Обновляется автоматически в ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -3614,6 +3623,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Автоматическая сортировка сообщений, прежде чем они попадут во входящие."
       ],
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "Доступно с ${ MAIL_APP_NAME } Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Поздравляем! Вы заработали максимальное количество из ${ rewardsLimit } бесплатных месяцев ${ plusPlanName }."
       ],
@@ -4704,6 +4716,9 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Пожалуйста, включите многопользовательский режим перед добавлением пользователей в вашу организацию."
+      ],
+      "Please enter a valid entity ID URL": [
+        "Пожалуйста, введите правильный URL идентификатора сущности"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
@@ -6787,6 +6802,9 @@
         "${ numberOfNonPrivateKeys } загруженных файлов не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку.",
         "${ numberOfNonPrivateKeys } загруженных файлов не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку."
       ],
+      "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
+        "${ PASS_APP_NAME } — это менеджер паролей следующего поколения, разработанный для удобства использования и производительности. Открытый исходный код, совместно разработанный SimpleLogin и ${ BRAND_NAME }."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "У пожизненного предложения ${ PASS_SHORT_APP_NAME } нет платы за продление, это однократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
       ],
@@ -6964,9 +6982,6 @@
       "account recovery method": [
         "метод восстановления аккаунта"
       ],
-      "Account size": [
-        "Размер аккаунта"
-      ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
@@ -7026,9 +7041,6 @@
         "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
         "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
         "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }"
-      ],
-      "Additional options": [
-        "Дополнительные параметры"
       ],
       "Admin account allocation": [
         "Распределение аккаунтов администраторов"
@@ -7162,6 +7174,9 @@
       "Are you sure you want to give administrative privileges to this user?": [
         "Вы уверены, что хотите предоставить этому пользователю права администратора?"
       ],
+      "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
+        "Вы уверены, что хотите покинуть эту группу? Чтобы вы могли присоединиться обратно, администратор должен будет пригласить вас."
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Вы уверены, что хотите безвозвратно удалить все журналы доступа?"
       ],
@@ -7249,6 +7264,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Расширьте идентификацию бренда вашей организации и создайте более последовательный опыт работы в Интернете для ваших пользователей."
       ],
+      "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
+        "Создавая учетную запись ${ PASS_APP_NAME } с адресом электронной почтой SimpleLogin, вы сможете управлять своими псевдонимами непосредственно из ${ PASS_APP_NAME }."
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "По умолчанию члены организации могут экспортировать только те хранилища, владельцами которых они являются. Если этот параметр включен, они не смогут экспортировать никакие данные"
       ],
@@ -7282,6 +7300,9 @@
       "Choose an app to get started": [
         "Выберите приложение, чтобы начать"
       ],
+      "Choose an Entity ID to continue.": [
+        "Выберите ID сущности для продолжения."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
       ],
@@ -7302,6 +7323,9 @@
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Продолжите подключение вашей организации ${ BRAND_NAME } к **${ organizationValue.Name }**."
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Продолжите подключение этой сущности к вашей организации ${ BRAND_NAME }."
       ],
       "Continue with ${ freeName }": [
         "Продолжить с ${ freeName }"
@@ -7341,12 +7365,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и ярлыки, которые вы хотите импортировать."
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Создать безопасное облако для ${ n } участника",
-        "Создать безопасное облако для ${ n } участников",
-        "Создать безопасное облако для ${ n } участников",
-        "Создать безопасное облако для ${ n } участников"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Создавайте и управляйте дополнительными аккаунтами, назначайте им адреса электронной почты на вашем домене."
@@ -7413,6 +7431,9 @@
       ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
@@ -7525,17 +7546,14 @@
       "Edit link": [
         "Изменить ссылку"
       ],
-      "EduGain configuration saved": [
-        "Конфигурация EduGain сохранена"
+      "eduGAIN configuration saved": [
+        "конфигурация eduGain сохранена"
       ],
       "email": [
         "электронная почта"
       ],
       "Email address": [
         "Адрес электронной почты"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через ${ BRAND_NAME } в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
@@ -7599,6 +7617,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Введите ID сущности организации **eduGAIN** для **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Введите пароль организации для восстановления полномочий администратора. ${ learnMore }"
@@ -8002,6 +8023,9 @@
       "learn more about Sieve programming language": [
         "узнать больше о языке программирования Sieve"
       ],
+      "Learn more about single sign-on": [
+        "Узнайте больше о едином входе"
+      ],
       "Left to Right": [
         "Слева направо"
       ],
@@ -8064,6 +8088,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Убедитесь, что вы ${ addARecoveryMethod }, чтобы вы могли попась в ваш аккаунт, если забудете пароль."
+      ],
+      "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
+        "Управление настройками уведомлений электронной почты для ${ DOCS_APP_NAME }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Введите эту информацию вручную в устройство двухфакторной аутентификации, чтобы настроить учетную запись. ${ switchButton }."
@@ -9331,6 +9358,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можете изменить это один раз, чтобы обеспечить правильную проверку адреса электронной почты."
       ],
+      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Вы можете включить журнал аутентификации, чтобы видеть, в какое время и с какого IP-адреса производился доступ к учётной записи. Мы будем записывать IP-адреса, с которых был получен доступ к учётной записи, его время и неудачные попытки входа."
+      ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Вы можете включить раздел Фотографии в интерфейсе с помощью расположенного ниже переключателя."
       ],
@@ -9450,6 +9480,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "После входа в систему вы будете перенаправлены на ${ destination }"
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Вы сохраните пожизненный доступ к ${ PASS_APP_NAME } + премиум функциям SimpleLogin, если вы отмените свою подписку."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "В этот день вы потеряете доступ к возможностям ${ planTitle }."
@@ -9649,11 +9682,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Только просмотр"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
       ]
     },
     "Input Error": {
@@ -10494,6 +10522,12 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Введите пароль для ключа с цифровым отпечатком: ${ fingerprintCode }"
       ],
+      "Entity ID": [
+        "Идентификатор сущности"
+      ],
+      "Entity ID URL": [
+        "URL идентификатора сущности"
+      ],
       "Event": [
         "Событие"
       ],
@@ -10838,6 +10872,9 @@
       ],
       "Recovery phrase": [
         "Фраза для восстановления"
+      ],
+      "Remove": [
+        "Удалить"
       ],
       "Remove image metadata": [
         "Удалить метаданные изображения"
@@ -12739,6 +12776,12 @@
       "${ shortPlan.title } Trial": [
         "Пробная версия ${ shortPlan.title }"
       ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Оформите Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
+      ],
       "Your account's usage": [
         "Использование вашего аккаунта"
       ]
@@ -14465,32 +14508,9 @@
         "Участники"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } нашим Отделом продаж."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Выберите количество адресов IP, которые необходимо включить в ваш тариф. Каждый дополнительный IP стоит ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "свяжитесь"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Выберите количество пользователей для включения в ваш тариф. Каждый дополнительный пользователь стоит ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Если вам нужно более ${ maxUsers } аккаунта, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж."
       ]
     },
     "Price": {
@@ -14872,6 +14892,9 @@
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Вы можете восстановить аккаунт и данные. Проверьте, есть ли у вас доступ к методам восстановления."
       ],
+      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
+        "Вы можете восстановить аккаунт и данные. У вас есть рекомендованные действия, чтобы дальше защитить аккаунт."
+      ],
       "Your account and data can be recovered. You have recommended actions.": [
         "Ваш аккаунт и данные могут быть восстановлены. Есть рекомендуемые действия."
       ],
@@ -14919,6 +14942,9 @@
       ],
       "Your recovery phone is set": [
         "Резервный номер телефона настроен"
+      ],
+      "Your recovery phone number is:": [
+        "Номер телефона для восстановления доступа:"
       ]
     },
     "saml: Action": {
@@ -15371,6 +15397,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Мы свяжемся с вами, когда будет доступен сброс пароля."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Проверить статус запроса можно в любой момент ${ accountAndPasswordSectionLink } настроек."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "в разделе Аккаунт и пароль"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -15459,6 +15493,12 @@
     "Setting": {
       "Enable Photos section": [
         "Включить раздел \"Фото\""
+      ],
+      "Get updates about comments via email": [
+        "Получать по электронной почте новости о комментариях"
+      ],
+      "Include document name in email notifications": [
+        "Включить имя документа в уведомления по электронной почте"
       ]
     },
     "Settings description": {
@@ -15600,38 +15640,74 @@
       ]
     },
     "Signup: Info": {
+      "10 aliases for email protection from breaches": [
+        "10 псевдонимами для защиты электронной почты от утечек"
+      ],
       "Advanced security features": [
         "Расширенные функции безопасности"
       ],
       "Advanced sharing security": [
         "Повышенная безопасность совместного доступа"
       ],
+      "Apps for all devices": [
+        "Приложениями для всех устройств"
+      ],
       "Based in Switzerland, GDPR compliant": [
         "Находится в Швейцарии, соответствует требованиям GDPR"
       ],
       "Built-in encryption": [
-        "Встроенное шифрование"
+        "Встроенным шифрованием"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Календарем, менеджером паролей, хранилищем файлов и VPN в комплекте"
+      ],
+      "Device sync": [
+        "Синхронизацией устройств"
       ],
       "Email aliases": [
-        "Псевдонимы электронной почты"
+        "Псевдонимами электронной почты"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "Включена электронная почта, календарь, менеджер паролей и VPN"
+      ],
+      "End-to-end encrypted transactions": [
+        "Транзакциями со сквозным шифрованием"
       ],
       "End-to-end encryption": [
-        "Сквозное шифрование"
+        "Сквозным шифрованием"
       ],
       "From the team that knows encryption": [
-        "От команды, знающей шифрование"
+        "Создан командой, знающей шифрование"
+      ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "Встроенной электронной почтой, календарем, хранилищем файлов, менеджером паролей и VPN"
       ],
       "ISO 27001 certified": [
-        "Сертификат ISO 27001"
+        "Сертифицирован ISO 27001"
       ],
       "Open source and audited": [
-        "Открытый исходный код, проверенный на безопасность"
+        "Открытым исходным кодом, проверенным на безопасность"
+      ],
+      "Open source and verified": [
+        "Открытым исходным кодом, проверенным на безопасность"
       ],
       "Protected by Swiss privacy laws": [
-        "Защищено швейцарскими законами о конфиденциальности"
+        "Защищен швейцарскими законами о конфиденциальности"
+      ],
+      "Self-custody — only you have access to your wallet keys": [
+        "Само-гарантией — только у вас есть доступ к ключам кошелька"
       ],
       "The only business solution that is:": [
         "Единственное решение для бизнеса:"
+      ],
+      "The only cloud storage with:": [
+        "Единственное облачное хранилище с:"
+      ],
+      "The only email service with:": [
+        "Единственная служба электронной почты с:"
+      ],
+      "Unlimited passwords": [
+        "Неограниченными паролями"
       ],
       "Works on all devices": [
         "Работает на всех устройствах"
@@ -17084,11 +17160,20 @@
       "Filter removed": [
         "Фильтр удален"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Групповое сквозное шифрование электронной почты отключено"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Групповое сквозное шифрование электронной почты включено"
+      ],
       "Preference updated": [
         "Предпочтение обновлено"
       ],
       "Preferences updated": [
         "Настройки обновлены"
+      ],
+      "Resent invitation": [
+        "Пригласить повторно"
       ],
       "Status updated": [
         "Состояние обновлено"
@@ -18643,6 +18728,9 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Администраторы могут управлять аккаунтами пользователей и предоставлять права администратора другим пользователям. Только основной администратор может изменить тариф организации."
       ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Позволяет бесшовно добавлять ссылки на видеоконференции в приглашения календаря."
+      ],
       "An approximate location of the IP address": [
         "Примерное местонахождение IP-адреса"
       ],
@@ -18651,6 +18739,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматически переключаться между вашими предпочтительными темами для дня и ночи синхронно с системными дневным и ночным режимами."
+      ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "Нажмите здесь, чтобы узнать как создать свою подпись с HTML."
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопируйте и вставьте этот URL в поле URL ACS (Assertion Consumer Service) вашего поставщика идентификационных данных."
@@ -18669,6 +18760,9 @@
       ],
       "Device information such as operating system": [
         "Информация об устройстве, например операционная система"
+      ],
+      "Display name for the entity in the eduGAIN database": [
+        "Отображаемое имя в базе данных eduGAIN"
       ],
       "Each imported email will have this label": [
         "У каждого импортированного письма будет этот ярлык"
@@ -18738,6 +18832,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Укажите домен, которому разрешена аутентификация с помощью SAML SSO"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Укажите пользователей сущности eduGAIN, которым разрешено аутентифицироваться с помощью SAML SSO"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"

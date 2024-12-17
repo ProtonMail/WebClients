@@ -69,9 +69,6 @@
       "Add group": [
         "加入群組"
       ],
-      "Add new contact": [
-        "加入聯絡人"
-      ],
       "Add new group": [
         "創建新的群組"
       ],
@@ -470,9 +467,6 @@
       ],
       "Export contact group": [
         "匯出聯絡人群組"
-      ],
-      "Export contacts": [
-        "匯出聯絡人"
       ],
       "External encryption": [
         "外部加密"
@@ -5172,20 +5166,11 @@
       "Checklist complete": [
         "清單完成"
       ],
-      "Close": [
-        "關閉"
-      ],
-      "Congratulations, you completed all the steps!": [
-        "恭喜，你完成所有指示了！"
-      ],
       "Discover how our ${ strongText } protect you": [
         "了解${ strongText }如何保護您。"
       ],
       "Discover privacy features": [
         "發現隱私功能"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "完成以下任務後，您的免費存儲空間將翻倍至 1 GB："
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "強式加密，只有您及其他收件者可查看內容。"
@@ -5214,26 +5199,14 @@
       "Learn more": [
         "了解更多"
       ],
-      "Maybe later": [
-        "稍後再說"
-      ],
       "Nice! You've updated all services in this category.": [
         "您已更新於清單上的全部服務"
-      ],
-      "Open checklist": [
-        "開啟確認清單"
-      ],
-      "Open checklist and get free storage": [
-        "開啟檢查清單並取得免費的儲存空間"
       ],
       "Popular online services": [
         "熱門線上節點"
       ],
       "privacy features": [
         "隱私功能"
-      ],
-      "Protect and simplify your email": [
-        "保護及簡化您的電子郵件"
       ],
       "Protection from trackers": [
         "保護免於追蹤"
@@ -5840,9 +5813,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由於有帳單仍未繳付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
-      "Account size": [
-        "帳號容量"
-      ],
       "Account successfully updated": [
         "帳號已成功更新"
       ],
@@ -5851,9 +5821,6 @@
       ],
       "Add image URL": [
         "附加圖像網址"
-      ],
-      "Additional options": [
-        "額外設定"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
@@ -6014,9 +5981,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "正在檢查聯絡人 ${ progress } / ${ max }..."
       ],
-      "Clear app data": [
-        "清除應用程式資料"
-      ],
       "Clear browser data": [
         "清除瀏覽器資料"
       ],
@@ -6077,17 +6041,11 @@
       "Create a new contact group": [
         "創建新聯絡人群組"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "替成員創建一個安全${ n }"
-      ],
       "Create in": [
         "創建在"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "您之前訂購授權方案裡未使用部分的餘額"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 或其它軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 ( UTF-8 編碼) 都可以支援。"
       ],
       "Current plan": [
         "當前方案"
@@ -6208,9 +6166,6 @@
       ],
       "Email copied to clipboard": [
         "已複製電子郵件至剪貼簿"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "免費提供 10 個自訂電郵網域名稱的託管服務。 亦可加入更多網域，現在只需 ${ price }。"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。 ${ BRAND_NAME } 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
@@ -6926,9 +6881,6 @@
       "Text to display": [
         "要顯示的文字"
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "在可以匯出前，應用程式需要在本機先解密您的聯絡人。過程結束時，將會產生一個 VCF 檔案以供您下載。"
-      ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "若您離開此頁面，您在草稿中輸入的資料將不作儲存。"
       ],
@@ -7084,9 +7036,6 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "將自動使用此公開金鑰加密寄送到此電郵位址的電郵。"
-      ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "請移除這程式所有有關數據，包括已下戴訊息。這應用程式將會重新啟動並須要重新登入才能駛用。"
       ],
       "This sender's public key has not been trusted yet.": [
         "此寄件人的公開金鑰尚未信任。"
@@ -7573,11 +7522,6 @@
         "僅能檢視"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "已毀損"
@@ -7880,9 +7824,6 @@
       "Authenticator app": [
         "驗證 app"
       ],
-      "Automatically save contacts": [
-        "自動儲存聯絡人"
-      ],
       "BCC": [
         "密件副本"
       ],
@@ -8048,9 +7989,6 @@
       "Expires": [
         "有效期限"
       ],
-      "Export contacts": [
-        "匯出聯絡人"
-      ],
       "Extended address": [
         "詳細位址"
       ],
@@ -8095,9 +8033,6 @@
       ],
       "Import all messages": [
         "匯入全部郵件"
-      ],
-      "Import contacts": [
-        "匯入聯絡人"
       ],
       "Import interval": [
         "匯入頻率"
@@ -9892,20 +9827,8 @@
       "Auto-delete spam and trash": [
         "自動刪除垃圾郵件和垃圾桶"
       ],
-      "Automatically forward emails": [
-        "自動轉寄信件"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "永久封鎖來自濫發郵件者的電子郵件通訊。${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "封鎖不良寄件者"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "30天後清除已刪除和垃圾郵件電子郵件。"
-      ],
-      "Congratulations on choosing privacy": [
-        "恭喜您選擇了隱私"
       ],
       "Dark Web Monitoring": [
         "黑暗網路監測"
@@ -9916,17 +9839,8 @@
       "Download the desktop app and continue": [
         "下載桌面應用程式及繼續"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "強式加密，只有您及其他收件者可查看內容。 ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "已修復與關注"
-      ],
-      "For your eyes only": [
-        "自己看好了，別人不好看"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "將 Gmail 電郵轉寄到您的信箱"
       ],
       "Get notified if your password is compromised.": [
         "獲得提醒，當您的密碼處於危害。"
@@ -9967,14 +9881,8 @@
       "Replay introduction": [
         "重新播放介紹"
       ],
-      "Skip": [
-        "跳過"
-      ],
       "Start using ${ BRAND_NAME }": [
         "開始使用 ${ BRAND_NAME }"
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "我們阻止廣告商與數據蒐集者建立您的分析檔案。${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "歡迎使用 ${ MAIL_APP_NAME }"
@@ -10407,23 +10315,9 @@
         "名稱"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "請聯繫${ contactHref }我們的銷售團隊。"
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "您需要多餘 ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "業務聯繫"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "選擇欲加入您授權方案的使用者人數。每一位加入使用者的費用為 ${ price }。"
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "若您需求超過 ${ maxUsers } 位使用者帳號，請 ${ contact } 我們的客戶成功團隊。"
       ]
     },
     "Price": {
@@ -12937,9 +12831,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
-      ],
-      "You do not have any contacts to export": [
-        "您沒有任何可匯出的聯絡人"
       ]
     },
     "tooltip": {

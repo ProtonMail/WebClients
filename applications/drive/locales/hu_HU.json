@@ -63,9 +63,6 @@
       "Add group": [
         "Csoport hozzáadása"
       ],
-      "Add new contact": [
-        "Új névjegy"
-      ],
       "Add new group": [
         "Új csoport hozzáadása"
       ],
@@ -353,9 +350,6 @@
       ],
       "Export contact group": [
         "Névjegy csoport exportálása"
-      ],
-      "Export contacts": [
-        "Névjegyek exportálása"
       ],
       "Fit to window": [
         "Ablakhoz illesztés"
@@ -3834,14 +3828,8 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "A fiók hozzáférése rendezetlen számla miatt korlátozva lett. Kérjük lépjen kapcsolatba az adminisztrátorral."
       ],
-      "Account size": [
-        "Fiók mérete"
-      ],
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
-      ],
-      "Additional options": [
-        "További lehetőségek"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Cím hitelesítés a megbízható kulcsokkal engedélyezve van ehhez a címhez. A küldéshez a címzett nyilvános kulcsát megbízhatóként kell megjelölnie."
@@ -4018,10 +4006,6 @@
       "Create a new contact group": [
         "Új névjegy csoport"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Hozzon létre biztonságos felhőárhelyet ${ n } tagnak",
-        "Hozzon létre biztonságos felhőárhelyet ${ n } tagnak"
-      ],
       "Create in": [
         "Létrehozás itt"
       ],
@@ -4045,9 +4029,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit az előző csomag-feliratkozásának fel nem használt részéért"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Támogatottak az Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és más alkalmazások CSV fájljai, illetve a vCard 3.1 és 4.0 formátum (UTF-8 kódolással)."
       ],
       "Current plan": [
         "Jelenlegi csomag"
@@ -4149,9 +4130,6 @@
       "email": [
         "e-mail cím"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Az e-mail szolgáltatás 10 saját domain névig beletartozik. További domain nevek ${ price } áron adhatók hozzá."
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Az e-mail szolgáltatás olyan domain nevekre lehetséges, amelyek már a tulajdonában vannak. A ${ BRAND_NAME } jelenleg nem biztosít domain név regisztrációt. Bármilyen regisztrátornál regisztrált domain nevet használhat."
       ],
@@ -4178,9 +4156,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Adja meg az e-mail fiók belépési adatait, amelyről importálni szeretne."
-      ],
-      "Enter the device name to confirm removal.": [
-        "Írja be az eszköz nevét az eltávolítás megerősítéséhez."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
@@ -4775,9 +4750,6 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "A fióknak lehet, hogy új kulcsa van, vagy babráltak a következőkkel: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Az alkalmazásnak helyben kell visszafejtenie a névjegyeket az exportáláshoz. A folyamat végén egy VCF fájl fog létrejönni, amelyet letölthet."
-      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "A letöltések száma tartalmazza a tényleges letöltéseket és az előnézet megtekintéseit is."
       ],
@@ -4844,9 +4816,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Ez törli a hivatkozást és megszünteti a fájl vagy mappa elérhetőségét azok számára, akiknek elküldte.",
         "Ez törli a hivatkozásokat és megszünteti a fájlok vagy mappák elérhetőségét azok számára, akiknek elküldte."
-      ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Ez eltávolítja a szinkronizált ${ deviceName } eszközt a ${ DRIVE_APP_NAME } alkalmazásból és leállítja azoknak a mappáknak a szinkronizálását, amelyeket a Saját Számítógépeimhez adott."
       ],
       "This will replace the existing file with the folder": [
         "Ez lecseréli a meglévő fájl a mappával"
@@ -5343,9 +5312,6 @@
       "Authenticator app": [
         "Hitelesítő alkalmazás"
       ],
-      "Automatically save contacts": [
-        "Névjegyek automatikus mentése"
-      ],
       "Beta Access": [
         "Béta hozzáférés"
       ],
@@ -5512,9 +5478,6 @@
       "Expires": [
         "Lejárat"
       ],
-      "Export contacts": [
-        "Névjegyek exportálása"
-      ],
       "Extended address": [
         "Bővebb cím"
       ],
@@ -5550,9 +5513,6 @@
       ],
       "Import all messages": [
         "Összes üzenet importálása"
-      ],
-      "Import contacts": [
-        "Névjegyek importálása"
       ],
       "Import interval": [
         "Importálás intervalluma"
@@ -7372,25 +7332,9 @@
         "Név"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "kérjük, ${ contactHref } az értékesítési csoporttal."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Amennyiben ${ maxIPs } IP címnél többre lenne szüksége, ",
-        "Amennyiben ${ maxIPs } IP címnél többre lenne szüksége, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "lépjen kapcsolatba"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Válassza ki, hány felhasználót szeretne a csomagjába. Minden további felhasználó ára: ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Ha több mint ${ maxUsers } felhasználói fiókra lenne szüksége, kérjük ${ contact } értékesítési csoportunkkal.",
-        "Ha több mint ${ maxUsers } felhasználói fiókra lenne szüksége, kérjük ${ contact } értékesítési csoportunkkal."
       ]
     },
     "Price": {
@@ -8609,6 +8553,9 @@
       "Day theme": [
         "Nappali téma"
       ],
+      "Delete": [
+        "Törlés"
+      ],
       "Delete ${ count } contact": [
         "${ count } névjegy törlése",
         "${ count } névjegy törlése"
@@ -9129,9 +9076,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Töltsön fel egy nyilvános kulcsot, hogy erre a címre lehetővé tegye végpontok közt titkosított üzenetek küldését"
-      ],
-      "You do not have any contacts to export": [
-        "Önnek nincs exportálható névjegye"
       ]
     },
     "Validation": {

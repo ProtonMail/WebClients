@@ -63,9 +63,6 @@
       "Add group": [
         "Adicionar grupo"
       ],
-      "Add new contact": [
-        "Adicionar novo contacto"
-      ],
       "Add new group": [
         "Adicionar novo grupo"
       ],
@@ -353,9 +350,6 @@
       ],
       "Export contact group": [
         "Exportar grupo de contactos"
-      ],
-      "Export contacts": [
-        "Exportar contactos"
       ],
       "Fit to window": [
         "Ajustar na janela"
@@ -2323,7 +2317,7 @@
         "Para importar os seus contactos do Google e Outlook, ${ easySwitchLink }."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Actualize a sua conta para ativar o ${ PROTON_SENTINEL_NAME }, a nossa solução de segurança de ponta baseada em IA com suporte especializado dedicado 24 horas por dia, 7 dias por semana."
+        "Atualize a sua conta para ativar o ${ PROTON_SENTINEL_NAME }, a nossa solução de segurança de ponta baseada em IA com suporte especializado dedicado 24 horas por dia, 7 dias por semana."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
@@ -3884,14 +3878,8 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta restringido devido a faturas por pagar. Contacte o administrador."
       ],
-      "Account size": [
-        "Tamanho da conta"
-      ],
       "Account successfully updated": [
         "Conta atualizada"
-      ],
-      "Additional options": [
-        "Opções adicionais"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Está ativada a verificação de endereço com chaves confiadas para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser utilizadas para enviar."
@@ -4062,10 +4050,6 @@
       "Create a new contact group": [
         "Criar novo grupo de contactos"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Criar uma nuvem segura para ${ n } membro",
-        "Criar uma nuvem segura para ${ n } membros"
-      ],
       "Create in": [
         "Criar em"
       ],
@@ -4089,9 +4073,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não utilizada no plano anterior da sua subscrição"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "São suportados os ficheiros CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e algumas outras aplicações, bem como os formatos vCard 3.1 e 4.0 (codificação UTF-8)."
       ],
       "Current plan": [
         "Plano atual"
@@ -4187,9 +4168,6 @@
       "email": [
         "e-mail"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "O alojamento de e-mails para 10 nomes de domínio de e-mail personalizado está incluído gratuitamente. Pode adicionar domínios adicionais por ${ price }."
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "O alojamento de e-mail está apenas disponível para domínios que já possui. O registo de domínio não está atualmente disponível através da ${ BRAND_NAME }. No entanto, pode alojar o e-mail para domínios registados em qualquer registador de domínios."
       ],
@@ -4216,9 +4194,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduza as credenciais da conta de e-mail da qual deseja importar."
-      ],
-      "Enter the device name to confirm removal.": [
-        "Introduza o nome do dispositivo para confirmar a remoção."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduza o código de verificação que foi enviado para ${ destinationText }."
@@ -4821,9 +4796,6 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "A conta pode ter uma nova chave ou o seguinte pode ter sido adulterado: ${ items } Abra apenas se confiar nele."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Temos de desencriptar localmente os seus contactos antes que os possa exportar. No final do processo, será gerado um ficheiro VCF e poderá transferi-lo."
-      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "A contagem de transferências inclui ambas transferências reais e instâncias em que os ficheiros são pré-visualizados."
       ],
@@ -4881,9 +4853,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Isto elimina a ligação e remove o acesso ao ficheiro ou pasta através da ligação existente.",
         "Isto elimina as ligações e remove o acesso ao ficheiro ou pasta através da ligação existente."
-      ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Isto removerá o dispositivo sincronizado ${ deviceName } do ${ DRIVE_APP_NAME } e interromperá a sincronização das pastas que adicionou a Computadores."
       ],
       "This will replace the existing file with the folder": [
         "Isto irá substituir o ficheiro existente pela pasta."
@@ -5376,9 +5345,6 @@
       "Authenticator app": [
         "Aplicação de autenticação"
       ],
-      "Automatically save contacts": [
-        "Guardar contactos automaticamente"
-      ],
       "Beta Access": [
         "Acesso Beta"
       ],
@@ -5551,9 +5517,6 @@
       "Expires": [
         "Expira"
       ],
-      "Export contacts": [
-        "Exportar contactos"
-      ],
       "Extended address": [
         "Endereço completo"
       ],
@@ -5592,9 +5555,6 @@
       ],
       "Import all messages": [
         "Importar todas as mensagens"
-      ],
-      "Import contacts": [
-        "Importar contactos"
       ],
       "Import interval": [
         "Intervalo de importação"
@@ -6577,7 +6537,7 @@
         "Política rigorosa de não registo"
       ],
       "Support for up to 2 users": [
-        "Suporte para até 2 usuários"
+        "Suporte para até 2 utilizadores"
       ],
       "TOR over VPN": [
         "TOR sobre VPN"
@@ -7431,28 +7391,9 @@
         "Nome"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "por favor, ${ contactHref } a nossa equipa de vendas."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Selecione o número de IP a incluir no seu plano. Cada IP adicional custa ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Se precisar de mais do que ${ maxIPs } IP, ",
-        "Se precisar de mais do que ${ maxIPs } IPs, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contacto"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Selecione o número de utilizadores a incluir no seu plano. Cada utilizador adicional custa ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Se precisar de mais de ${ maxUsers } conta de utilizador, ${ contact } a nossa equipa de vendas.",
-        "Se precisar de mais de ${ maxUsers } contas de utilizador, ${ contact } a nossa equipa de vendas."
       ]
     },
     "Price": {
@@ -8679,6 +8620,9 @@
       "Day theme": [
         "Tema diurno"
       ],
+      "Delete": [
+        "Eliminar"
+      ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
         "Eliminar ${ count } contactos"
@@ -9202,9 +9146,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."
-      ],
-      "You do not have any contacts to export": [
-        "Não tem contactos para exportar"
       ]
     },
     "Validation": {

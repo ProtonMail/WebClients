@@ -6,25 +6,28 @@
   "contexts": {
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
+        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
+        "${ name } och 1 annan potentiell läcka upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
+        "En potentiell läcka på ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vita åtgärd. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
+        "Din information hittades i minst en dataläcka. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ]
     },
     "Action": {
+      "Accept": [
+        "Acceptera"
+      ],
       "Add": [
         "Lägg till"
       ],
@@ -942,6 +945,9 @@
       "Failed to restore items from trash": [
         "Misslyckades att återställa objekt från papperskorg"
       ],
+      "Failed to set default mailbox": [
+        "Misslyckades att ställa in standardbrevlåda"
+      ],
       "Failed to sync aliases": [
         "Misslyckades att synkronisera alias"
       ],
@@ -1241,6 +1247,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Uppdatering ”${ payload.item.data.metadata.name }” avfärdades"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } blockerat",
+        "${ blockedEmailsCount } blockerade"
+      ],
       "${ count } invite successfully sent": [
         "${ count } inbjudan skickad",
         "${ count } inbjudningar skickat"
@@ -1255,6 +1265,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } visningar"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } vidarebefordrat",
+        "${ forwardedEmailsCount } vidarebefordrade"
       ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -1288,6 +1302,10 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } aktiverades"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } skickat",
+        "${ repliedEmailsCount } skickade"
+      ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } intrång upptäckt",
         "${ row.breachCount } intrång upptäckta"
@@ -1306,6 +1324,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer alltid att kräva ditt ${ BRAND_NAME }-lösenord."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Åtkomst till ${ PASS_APP_NAME } kommer alltid att kräva ditt reservlösenord."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer kräva ditt fingeravtryck eller enhetens PIN-kod."
@@ -1444,6 +1465,9 @@
       ],
       "Current version": [
         "Nuvarande version"
+      ],
+      "Currently selected": [
+        "Nuvarande val"
       ],
       "Decrypting your data": [
         "Dekrypterar dina data"
@@ -1761,6 +1785,9 @@
       "None": [
         "Ingen"
       ],
+      "Not recommended": [
+        "Rekommenderas inte"
+      ],
       "Offline mode": [
         "Offlineläge"
       ],
@@ -1818,6 +1845,15 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt ${ BRAND_NAME }-lösenord för att exportera din ${ PASS_APP_NAME }-data"
+      ],
+      "Please confirm your backup password": [
+        "Bekräfta ditt reservlösenord"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Bekräfta ditt reservlösenord för att autolåsa med ditt lösenord."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Bekräfta ditt reservlösenord för att avregistrera ditt nuvarande lås"
       ],
       "Please confirm your extra password": [
         "Bekräfta ditt extralösenord"
@@ -2081,6 +2117,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Lås upp ${ PASS_SHORT_APP_NAME } med ditt ${ BRAND_NAME }-lösenord"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Lås upp ${ PASS_SHORT_APP_NAME } med ditt reservlösenord"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Lås upp ${ PASS_SHORT_APP_NAME } med ditt extralösenord"
       ],
@@ -2150,6 +2189,9 @@
       ],
       "You are about to create:": [
         "Du är på väg att skapa:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Du kan också definiera en PIN-kod för att låsa upp ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kan nu använda ditt ${ BRAND_NAME }-lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
@@ -2250,6 +2292,9 @@
       "${ forwardCount } forward": [
         "${ forwardCount } vidarebefordrad",
         "${ forwardCount } vidarebefordrade"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails } de senaste 14 dagarna."
       ],
       "${ hours } hour": [
         "${ hours } timme",
@@ -2370,6 +2415,9 @@
       ],
       "Auto-lock after": [
         "Lås automatiskt efter"
+      ],
+      "Backup password": [
+        "Reservlösenord"
       ],
       "Beta Access": [
         "Betaåtkomst"
@@ -2951,6 +2999,9 @@
       "Unlock with": [
         "Lås upp med"
       ],
+      "Unlock with:": [
+        "Lås upp med:"
+      ],
       "Unnamed Credit Card": [
         "Namnlöst kreditkort"
       ],
@@ -3139,7 +3190,7 @@
         "Fullständigt namn"
       ],
       "me@example.com": [
-        "me@example.com"
+        "mig@exempel.se"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -3394,6 +3445,9 @@
       "Breaches detected for": [
         "Intrång upptäckta för"
       ],
+      "Change your lock method": [
+        "Byt din låsmetod"
+      ],
       "Confirm extra password": [
         "Bekräfta extralösenord"
       ],
@@ -3478,6 +3532,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gillar du ${ PASS_APP_NAME }?"
+      ],
+      "Enter your backup password": [
+        "Ange ditt reservlösenord"
       ],
       "Enter your extra password": [
         "Ange ditt extralösenord"
@@ -3892,6 +3949,9 @@
       ],
       "Move to trash": [
         "Flytta till papperskorg"
+      ],
+      "Name is required": [
+        "Namn krävs"
       ],
       "No items": [
         "Inga objekt"

@@ -220,6 +220,9 @@
       "Discard changes": [
         "Descartar cambios"
       ],
+      "Dismiss": [
+        "Descartar"
+      ],
       "Domain name": [
         "Nombre del dominio"
       ],
@@ -614,7 +617,7 @@
         "Mostrar todo"
       ],
       "Show preview": [
-        "Vista previa"
+        "Mostrar la vista previa"
       ],
       "Sign in": [
         "Iniciar sesión"
@@ -740,7 +743,7 @@
         "Ver"
       ],
       "View invoice": [
-        "Ver factura"
+        "Ver la factura"
       ],
       "View plans details": [
         "Ver detalles de planes"
@@ -1145,6 +1148,9 @@
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Se renueva automáticamente por ${ renewPrice } durante ${ renewLength } mes.",
         "Se renueva automáticamente por ${ renewPrice } durante ${ renewLength } meses."
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Se renueva automáticamente en ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -2637,7 +2643,7 @@
         "Fecha de expiración inválida"
       ],
       "Invalid IBAN": [
-        "IBAN inválido"
+        "El IBAN no es válido."
       ],
       "Invalid invitation link": [
         "Enlace de invitación inválido"
@@ -2692,6 +2698,9 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Active el soporte multi usuario antes de añadir usuarios a la organización."
+      ],
+      "Please enter a valid entity ID URL": [
+        "Ingrese una URL de identificación de entidad válida"
       ],
       "Please generate keys before you try to change your password": [
         "Genere claves antes de intentar cambiar la contraseña"
@@ -3668,9 +3677,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acceso restringido a la cuenta por falta de pago. Contacte con la administración."
       ],
-      "Account size": [
-        "Tamaño de la cuenta"
-      ],
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
@@ -3706,9 +3712,6 @@
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Añadiendo servidor de puerta de enlace: ${ serverNumber } / ${ total }",
         "Añadiendo servidores de puerta de enlace: ${ serverNumber } / ${ total }"
-      ],
-      "Additional options": [
-        "Opciones adicionales"
       ],
       "Address copied to clipboard": [
         "Se copió la dirección al portapapeles."
@@ -3828,6 +3831,9 @@
       "Change your password": [
         "Cambie la contraseña"
       ],
+      "Choose an Entity ID to continue.": [
+        "Seleccione una ID de entidad para continuar."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
       ],
@@ -3846,6 +3852,9 @@
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Continúe conectando **${ organizationValue.Name }** con su organización ${ BRAND_NAME }."
       ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Continúe conectando esta entidad con su organización de ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Continuar con ${ freeName }"
       ],
@@ -3863,10 +3872,6 @@
       ],
       "Country code": [
         "Código de país"
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Crear una nube segura para ${ n } miembro",
-        "Crear una nube segura para ${ n } miembros"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Cree y administre subcuentas y asígneles direcciones de correo en el dominio personalizado."
@@ -3899,17 +3904,17 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalice el aspecto y sensación de las aplicaciones de ${ BRAND_NAME }"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
       ],
       "default email address": [
-        "dirección de correo electrónico por defecto"
+        "dirección de correo por defecto"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimine cualquier otro registro MX o asegúrese de que la Prioridad de ${ MAIL_APP_NAME } sea el número más bajo."
@@ -3988,14 +3993,11 @@
       "Edit email address": [
         "Editar dirección de correo"
       ],
-      "EduGain configuration saved": [
-        "Se guardó la configuración de EduGain."
+      "eduGAIN configuration saved": [
+        "Configuración de eduGAIN guardada"
       ],
       "email": [
         "correo"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se pueden añadir dominios adicionales por ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para los dominios que ya posee. El registro de dominio no está disponible actualmente a través de ${ BRAND_NAME }. Puede alojar correo electrónico para dominios registrados en cualquier registrador de dominios."
@@ -4038,6 +4040,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Ingrese el código que fue enviado a ${ email }. Si no encuentra el mensaje en la bandeja de entrada, revise la carpeta de correo no deseado."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Ingrese la ID de entidad de una organización **eduGAIN** para **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Ingrese la contraseña de la organización para restablecer los privilegios de administrador. ${ learnMore }"
@@ -4352,7 +4357,7 @@
         "Miembro"
       ],
       "Messages to all your email addresses will go to your inbox.": [
-        "Los mensajes de todas sus direcciones de correo electrónico se enviarán a su bandeja de entrada."
+        "Los mensajes de todas sus direcciones de correo se enviarán a su bandeja de entrada."
       ],
       "MM/YY": [
         "MM/AA"
@@ -4389,9 +4394,6 @@
       ],
       "No Gateways yet": [
         "Aún no hay puertas de enlace"
-      ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "No hay organizaciones activadas con **eduGAIN** para **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "No se requiere ningún pago en este momento."
@@ -4617,17 +4619,14 @@
       "Securing your account": [
         "Asegurando la cuenta"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Seleccione una organización activada con **eduGAIN** para **${ domain.DomainName }**."
-      ],
       "Select one or multiple user affiliations": [
         "Seleccione una o varias afiliaciones para el usuario"
       ],
       "Select recently used servers": [
         "Seleccionar los servidores usados recientemente"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "Seleccione las afiliaciones del usuario de **${ organizationValue.Name }** (${ organizationValue.EntityId }) que desea permitir en su organización ${ BRAND_NAME }:"
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Seleccione las afiliaciones de los usuarios de ${ getFormattedOrganization } que desea permitir en su organización ${ BRAND_NAME }:"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envíe correos electrónicos para animar sus miembros a proteger las cuentas con 2FA."
@@ -4786,9 +4785,6 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Este mensaje no llegará al equipo de soporte. Si tiene algún problema con nuestro servicio o necesita más asistencia de nuestra parte ${ supportLink }."
       ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Esta organización está activada con **eduGAIN** para **${ domain.DomainName }**."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuario es actualmente responsable de los pagos de la organización. Al darlo de baja, usted será el responsable de los pagos de la organización."
       ],
@@ -4942,11 +4938,11 @@
       "User activated": [
         "El usuario fue activado."
       ],
-      "Username": [
-        "Nombre de usuario"
-      ],
       "username": [
         "nombre de usuario"
+      ],
+      "Username": [
+        "Nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -5316,11 +5312,6 @@
         "Solo lectura"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistente con tecnología de IA para ayudarle a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "No es una dirección de correo electrónico válida."
@@ -5624,6 +5615,9 @@
       "Entity ID": [
         "ID de la entidad"
       ],
+      "Entity ID URL": [
+        "URL de identificación de la entidad"
+      ],
       "Event": [
         "Evento"
       ],
@@ -5806,6 +5800,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperación"
+      ],
+      "Remove": [
+        "Borrar"
       ],
       "Repeat backup password": [
         "Repetir la contraseña de respaldo"
@@ -8095,28 +8092,9 @@
         "Miembros"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "contacte ${ contactHref } con nuestro equipo de ventas."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Elija el número de IPs para incluir en el plan. Cada IP adicional cuesta ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si necesita más de ${ maxIPs } IP, ",
-        "Si necesita más de ${ maxIPs } IPs, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contacte"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Elija el número de usuarios para incluir en el plan. Cada usuario adicional cuesta ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si necesita más de ${ maxUsers } cuenta de usuario, ${ contact } con nuestro equipo de ventas.",
-        "Si necesita más de ${ maxUsers } cuentas de usuario, ${ contact } con nuestro equipo de ventas."
       ]
     },
     "Price": {
@@ -10177,10 +10155,10 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
       "Change login password": [

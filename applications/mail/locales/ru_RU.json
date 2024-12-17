@@ -69,9 +69,6 @@
       "Add group": [
         "Добавить группу"
       ],
-      "Add new contact": [
-        "Добавить новый контакт"
-      ],
       "Add new group": [
         "Добавить новую группу"
       ],
@@ -486,9 +483,6 @@
       "Export contact group": [
         "Экспорт группы контактов"
       ],
-      "Export contacts": [
-        "Экспортировать контакты"
-      ],
       "External encryption": [
         "Внешнее шифрование"
       ],
@@ -518,6 +512,9 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "Оформить ${ BRAND_NAME } Duo"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Оформите ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
       ],
       "Get in touch": [
         "Связаться с нами"
@@ -5351,23 +5348,14 @@
       "Checklist complete": [
         "Контрольный список завершен"
       ],
-      "Close": [
-        "Закрыть"
-      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Завершите этот чек-лист в течение ${ daysCount }, чтобы бесплатно удвоить хранилище."
-      ],
-      "Congratulations, you completed all the steps!": [
-        "Поздравляем, вы выполнили все шаги!"
       ],
       "Discover how our ${ strongText } protect you": [
         "Узнайте, как наши ${ strongText } защищают вас"
       ],
       "Discover privacy features": [
         "Откройте для себя функции конфиденциальности"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "Ваше доступное бесплатное место удвоится до 1 ГБ, когда вы выполните следующее:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Шифрование настолько сильное, что только вы и предназначенные получатели могут просматривать ваши электронные письма."
@@ -5396,26 +5384,14 @@
       "Learn more": [
         "Подробнее"
       ],
-      "Maybe later": [
-        "Может быть позже"
-      ],
       "Nice! You've updated all services in this category.": [
         "Отлично! Вы обновили все сервисы в этой категории."
-      ],
-      "Open checklist": [
-        "Открыть чеклист"
-      ],
-      "Open checklist and get free storage": [
-        "Откройте контрольный список и получите бесплатное хранилище"
       ],
       "Popular online services": [
         "Популярные сервисы в сети"
       ],
       "privacy features": [
         "функции конфиденциальности"
-      ],
-      "Protect and simplify your email": [
-        "Защитите и упростите свою электронную почту"
       ],
       "Protection from trackers": [
         "Защита от трекеров"
@@ -6184,9 +6160,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
       ],
-      "Account size": [
-        "Размер аккаунта"
-      ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
@@ -6195,9 +6168,6 @@
       ],
       "Add image URL": [
         "Добавить ссылку на изображение"
-      ],
-      "Additional options": [
-        "Дополнительные параметры"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
@@ -6376,9 +6346,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Проверка контакта ${ progress } из ${ max }..."
       ],
-      "Clear app data": [
-        "Очистить данные приложения"
-      ],
       "Clear browser data": [
         "Очистить данные браузера"
       ],
@@ -6442,20 +6409,11 @@
       "Create a new contact group": [
         "Создать новую группу контактов"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Создать безопасное облако для ${ n } участника",
-        "Создать безопасное облако для ${ n } участников",
-        "Создать безопасное облако для ${ n } участников",
-        "Создать безопасное облако для ${ n } участников"
-      ],
       "Create in": [
         "Создать в"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Поддерживаются файлы CSV из Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora и некоторых других приложений, а также форматы vCard 3.1 и 4.0 (кодировка UTF-8)."
       ],
       "Current plan": [
         "Текущий тариф"
@@ -6579,9 +6537,6 @@
       ],
       "Email copied to clipboard": [
         "Эл. почта скопирована в буфер обмена"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через ${ BRAND_NAME } в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
@@ -7330,9 +7285,6 @@
       "Text to display": [
         "Текст для отображения"
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Приложению необходимо расшифровать ваши контакты, прежде чем экспортировать их. В конце процесса будет сгенерирован файл VCF, и вы сможете его скачать."
-      ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Если вы покинете эту страницу, то введённые в черновике данные могут быть потеряны."
       ],
@@ -7497,9 +7449,6 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Этот открытый ключ будет автоматически использован для шифрования электронной почты, отправленной на этот адрес."
-      ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Это приведёт к удалению всех связанных с этим приложением данных, включая загруженные сообщения. Приложение будет перезапущено и вам нужно будет войти снова, чтобы использовать приложение."
       ],
       "This sender's public key has not been trusted yet.": [
         "Публичный ключ отправителя пока не отмечен как доверенный."
@@ -7686,9 +7635,6 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Мы обнаружили создание нескольких бесплатных учетных записей, что нарушает наше ${ termsLink }."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
-        "Мы разработали специальные планы для таких пользователей, как вы, нуждаетесь в более чем одном адресе электронной почты.\nДля отмены ограничений вы можете перейти на платный план."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам нужно подтвердить ваш способ оплаты в вашем банке."
@@ -8049,11 +7995,6 @@
         "Только просмотр"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Раскрытый"
@@ -8365,9 +8306,6 @@
       "Authenticator app": [
         "Приложение-аутентификатор"
       ],
-      "Automatically save contacts": [
-        "Автоматическое сохранение контактов"
-      ],
       "BCC": [
         "Cкрытая копия"
       ],
@@ -8533,9 +8471,6 @@
       "Expires": [
         "Срок действия"
       ],
-      "Export contacts": [
-        "Экспорт контактов"
-      ],
       "Extended address": [
         "Расширенный адрес"
       ],
@@ -8580,9 +8515,6 @@
       ],
       "Import all messages": [
         "Импортировать все сообщения"
-      ],
-      "Import contacts": [
-        "Импорт контактов"
       ],
       "Import interval": [
         "Интервал импорта"
@@ -10179,6 +10111,14 @@
         "Сменить тариф?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Оформите Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } Защитите свое расписание с помощью сквозного шифрования. Включает поддержку пользовательских календарей, совместное использование календарей и многое другое."
@@ -10574,20 +10514,8 @@
       "Auto-delete spam and trash": [
         "Автоудаление спама и сообщений в корзине"
       ],
-      "Automatically forward emails": [
-        "Автоматически пересылать сообщения"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Заблокируйте сообщения электронной почты от мошенников навсегда. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "Блокировка нежелательных отправителей"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Очистить удаленные письма и спам через 30 дней."
-      ],
-      "Congratulations on choosing privacy": [
-        "Поздравляем с выбором конфиденциальности"
       ],
       "Dark Web Monitoring": [
         "Мониторинг даркнета"
@@ -10598,17 +10526,8 @@
       "Download the desktop app and continue": [
         "Загрузите приложение для настольных компьютеров и продолжите"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "Шифрование настолько сильное, что только вы и предназначенные получатели могут просматривать ваши электронные письма. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "Исправлено и сфокусировано"
-      ],
-      "For your eyes only": [
-        "Только для ваших глаз"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "Пересылать сообщения Gmail во входящие."
       ],
       "Get notified if your password is compromised.": [
         "Получайте уведомления, если ваш пароль скомпрометирован."
@@ -10649,17 +10568,11 @@
       "Replay introduction": [
         "Повторить введение"
       ],
-      "Skip": [
-        "Пропустить"
-      ],
       "Start using ${ BRAND_NAME }": [
         "Начните использовать ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Начните использовать более короткий и запоминающийся вариант своего адреса электронной почты."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "Мы запрещаем рекламодателям и сборщикам данных создавать ваши профили. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Добро пожаловать в ${ MAIL_APP_NAME }"
@@ -11133,32 +11046,9 @@
         "Имя"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } нашим Отделом продаж."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Выберите количество адресов IP, которые необходимо включить в ваш тариф. Каждый дополнительный IP стоит ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "свяжитесь"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Выберите количество пользователей для включения в ваш тариф. Каждый дополнительный пользователь стоит ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Если вам нужно более ${ maxUsers } аккаунта, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж."
       ]
     },
     "Price": {
@@ -14015,9 +13905,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
-      ],
-      "You do not have any contacts to export": [
-        "У вас нет контактов для экспорта"
       ]
     },
     "tooltip": {

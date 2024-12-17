@@ -17,6 +17,9 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Dismiss": [
+        "Negeren"
+      ],
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "Factuur bekijken"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-desktopapp"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "wortel"
+      ],
+      "cerise": [
+        "kers"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "koper"
+      ],
+      "enzian": [
+        "gentiaan"
+      ],
+      "fern": [
+        "varen"
+      ],
+      "forest": [
+        "bos"
+      ],
+      "ocean": [
+        "oceaan"
+      ],
+      "olive": [
+        "olijf"
+      ],
+      "pacific": [
+        "stille oceaan"
+      ],
+      "pickle": [
+        "augurk"
+      ],
+      "pine": [
+        "den"
+      ],
+      "pink": [
+        "roze"
+      ],
+      "plum": [
+        "pruim"
+      ],
+      "purple": [
+        "paars"
+      ],
+      "reef": [
+        "rif"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "leisteenblauw"
+      ],
+      "soil": [
+        "aarde"
+      ],
+      "strawberry": [
+        "aardbei"
       ]
     },
     "Country name": {
@@ -923,6 +999,46 @@
         "Beveiligingssleutel"
       ]
     },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyt",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Systeem standaard"
@@ -993,6 +1109,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Als u denkt dat we een fout hebben gemaakt, gelieve ${ contactLink }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
@@ -1016,6 +1135,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "We hebben geconstateerd dat er meerdere gratis accounts zijn aangemaakt, wat in strijd is met onze ${ termsLink }."
       ],
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
@@ -1075,11 +1197,384 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "neem contact op"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
       "Request an invite": [
         "Uitnodiging aanvragen"
+      ],
+      "terms of service": [
+        "servicevoorwaarden"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Houd uw inbox overzichtelijk met mappen"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Neem ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
+      ],
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
+      ],
+      "${ n } calendar per user": [
+        "${ n } agenda per gebruiker",
+        "${ n } agenda's per gebruiker"
+      ],
+      "${ n } custom email domain": [
+        "${ n } aangepast e-maildomein",
+        "${ n } aangepaste e-maildomeinen"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadres",
+        "${ n } e-mailadressen/aliassen"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mailadres per gebruiker",
+        "${ n } e-mailadressen per gebruiker"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filters"
+      ],
+      "${ n } folder": [
+        "${ n } map",
+        "${ n } mappen"
+      ],
+      "${ n } folder and label": [
+        "${ n } map en label",
+        "${ n } mappen en labels"
+      ],
+      "${ n } label": [
+        "${ n } label",
+        "${ n } labels"
+      ],
+      "${ n } message per day": [
+        "${ n } bericht per dag",
+        "${ n } berichten per dag"
+      ],
+      "${ options }-day file version history": [
+        "Bestandsversiegeschiedenis van ${ options } dag",
+        "Bestandsversiegeschiedenis van ${ options } dagen"
+      ],
+      "${ size } attachment size": [
+        "${ size } bijlagegrootte"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } veilige opslag per gebruiker"
+      ],
+      "${ size } storage": [
+        "${ size } opslagruimte"
+      ],
+      "1 TB secure storage": [
+        "1 TB veilige opslag"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-mailadressen/aliassen"
+      ],
+      "10 more premium features": [
+        "10 meer premium functies"
+      ],
+      "10-year file version history": [
+        "10-jarige bestandsversiegeschiedenis"
+      ],
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME } producten en functies"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle premium ${ BRAND_NAME }-services. Eén simpel abonnement"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Spam en Prullenbak automatisch verwijderen"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Automatisch spam en verwijderde berichten verwijderen"
+      ],
+      "Auto-reply": [
+        "Automatisch beantwoorden"
+      ],
+      "Automatic email forwarding": [
+        "Automatisch e-mail doorsturen"
+      ],
+      "Breach alerts": [
+        "Breach waarschuwingen"
+      ],
+      "Calendar sharing": [
+        "Agenda-delen"
+      ],
+      "Catch-all": [
+        "Catch-all"
+      ],
+      "Collaborate and share large files": [
+        "Samenwerken en grote bestanden delen"
+      ],
+      "Contact groups": [
+        "Contactgroepen"
+      ],
+      "Contact groups management": [
+        "Beheer van contactgroepen"
+      ],
+      "Custom and secure business email": [
+        "Aangepaste en veilige zakelijke e-mail"
+      ],
+      "Custom email domains": [
+        "Aangepaste e-maildomeinen"
+      ],
+      "Custom snooze time": [
+        "Aangepaste snoozetijd"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch-importhulp"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Ondersteuning van e-mailclient (via IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-mailgroepen"
+      ],
+      "Encrypted contact details": [
+        "Versleutelde contactpersoonsgegevens"
+      ],
+      "End-to-end encryption": [
+        "End-to-end versleuteling"
+      ],
+      "Generate emails with a prompt": [
+        "Genereer e-mails met een prompt"
+      ],
+      "HTML signatures": [
+        "HTML-handtekeningen"
+      ],
+      "Online document editor": [
+        "Online documenteditor"
+      ],
+      "Password health": [
+        "Wachtwoordgezondheid"
+      ],
+      "Password-protected Emails": [
+        "E-mails met wachtwoordbeveiliging"
+      ],
+      "Proofread and refine your emails": [
+        "Controleer en verfijn uw e-mails"
+      ],
+      "Quickly craft replies": [
+        "Snel antwoorden opstellen"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Save time emailing": [
+        "Bespaar tijd op e-mailen"
+      ],
+      "Schedule and snooze emails for any time": [
+        "E-mails plannen en snoozen wanneer u wilt"
+      ],
+      "Schedule messages at any time": [
+        "Plan berichten in op ieder moment"
+      ],
+      "Search message content": [
+        "Doorzoek berichtinhoud"
+      ],
+      "See team's availability": [
+        "Bekijk beschikbaarheid van het team"
+      ],
+      "Send & receive invitations": [
+        "Uitnodigingen verzenden & ontvangen"
+      ],
+      "Share files with no size limit": [
+        "Deel bestanden zonder maximale grootte"
+      ],
+      "SMTP submission": [
+        "SMTP-indiening"
+      ],
+      "SMTP submission for select organizations": [
+        "SMTP-indiening voor beperkte organisaties"
+      ],
+      "Support for up to 2 users": [
+        "Ondersteuning voor maximaal 2 gebruikers"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchroniseer en back-up al uw bestanden op alle apparaten"
+      ],
+      "Unlimited filters": [
+        "Onbeperkt aantal filters"
+      ],
+      "Unlimited folders": [
+        "Onbeperkt aantal mappen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ongelimiteerde mappen, labels en filters"
+      ],
+      "Unlimited labels": [
+        "Onbeperkt aantal labels"
+      ],
+      "Unlimited messages per day": [
+        "Onbeperkt aantal berichten per dag"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Tot ${ totalStorageSize } opslag"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 eigen e-maildomein"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Berichten snoozen en ontvangen wanneer u wil"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Beveilig uw agenda met end-to-end versleuteling. Dit is inclusief ondersteuning voor aangepaste agenda's, agenda-delen en meer."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Beveilig uw bestanden met versleutelde cloud-opslag. Inclusief automatisch synchroniseren, versleutelde bestandsdeling en meer."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Beveilig uw e-mails met end-to-end versleuteling. Dit is inclusief ondersteuning voor eigen e-mail domeinen, 15 e-mailadressen, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Krijg toegang tot ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } via het gemak van uw desktop"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Adressen beschikken over alle functies voor verzenden en ontvangen. Aan één gebruiker kunnen meerdere adressen worden toegewezen; een adres kan echter niet aan meerdere gebruikers worden toegewezen."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Hiermee kunt u automatische antwoorden instellen voor uw ontvangen berichten"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Verwijder automatisch berichten ouder dan 30 dagen uit de Prullenbak en Spam"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "E-mails verzonden naar uw ${ MAIL_APP_NAME }-account kunt u automatisch doorsturen naar elk ander e-mailadres."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Het verzenden van massamails of programmatische e-mails wordt op dit moment niet ondersteund. Voor deze situaties kunt u een hierin gespecialiseerde e-mailserviceprovider gebruiken."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Kies aangepaste tijden om herinnerd te worden aan een e-mail of om uw bericht te ontvangen"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Maak meerdere e-mailadressen aan voor uw online identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain } voor nieuwsabonnementen"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
+        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Deel uw agenda's eenvoudig met uw familie, vrienden of collega's."
+      ],
+      "Email everyone in a group with a single email address": [
+        "E-mail iedereen in een groep met één e-mailadres"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Zorgt dat u alle e-mails ontvangt die naar uw domein worden verzonden, zelfs als het e-mailadres niet (meer) bestaat of een typfout bevat"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP-ondersteuning is beperkt tot het gebruik van desktop-apps (zoals Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. IMAP-integraties in de cloud worden op dit moment niet ondersteund."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Houd uw plannen privé voor u en uw gezin met een versleutelde agenda"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Labels zijn simpele tags die u kunt toevoegen aan berichten zodat u ze makkelijker kunt vinden of filteren"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Voorkomt dat berichten worden gelezen door ${ BRAND_NAME } of derden. De enige personen die de berichten kunnen lezen, zijn de afzender en de beoogde ontvanger."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Stel snel afwezigheidsberichten in"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Zet uw e-mails, agenda's of contactpersonen snel over van uw huidige provider"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Sla de gegevens van uw contactpersonen, zoals telefoonnummer, adres, geboortedatum en persoonlijke notities, veilig op. Dankzij zero-access versleuteling heeft zelfs ${ BRAND_NAME } geen toegang tot deze gegevens."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Zie de beschikbaarheid van de deelnemers aan de vergadering en bespaar tijd bij het plannen van vergaderingen"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Stuur snel en eenvoudig e-mails naar grote groepen door zoveel contactgroepen te maken als u wilt (tot 100 contactpersonen per groep)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Stel filters in om uw e-mails automatisch te beantwoorden, te sorteren en/of te labelen"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Deel uw bestanden of mappen via veilige, deelbare koppelingen"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP staat diensten of apparaten van derde partijen toe om e-mail to versturen via ${ MAIL_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Opslagruimte wordt gedeeld over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } en ${ PASS_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }. Beheerders kunnen afwijkende opslagruimte toewijzen aan gebruikers binnen de organisatie"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Opslagruimte wordt gedeeld tussen gebruikers over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } en ${ PASS_APP_NAME }"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Berichten naar andere gebruikers van ${ MAIL_APP_NAME } worden automatisch versleuteld. Voor berichten naar ontvangers zonder ${ MAIL_APP_NAME_TWO } moet u een wachtwoord instellen voordat u het bericht verzendt."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Voeg meer personalisatie toe met 15 e-mailadressen en ondersteuning voor 3 aangepaste e-maildomeinen"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Boost uw opslagruimte uit naar ${ bundleStorage } per gebruiker"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Verhoog uw opslagruimte tot ${ bundleStorage }"
+      ],
+      "Create up to ${ n } calendar": [
+        "Maak tot ${ n } agenda",
+        "Maak tot ${ n } agenda's"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
     "Placeholder": {
@@ -1103,6 +1598,22 @@
         "U wordt doorgestuurd naar uw derde partij SSO-provider."
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Opslag voor gegevens gegenereerd door ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Tot ${ totalStorageSize } Drive opslag"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Tot ${ totalStorageSize } Mail-opslag"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Voor alle ${ BRAND_NAME }-diensten"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
@@ -1112,6 +1623,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "Account vergrendeld"
+      ],
       "Enter 2FA code": [
         "Voer 2FA-code in"
       ],

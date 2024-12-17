@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Accept": [
+        "Přijmout"
+      ],
       "Account": [
         "Účet"
       ],
@@ -932,6 +935,9 @@
       "Failed to restore items from trash": [
         "Selhalo obnovení položek z koše"
       ],
+      "Failed to set default mailbox": [
+        "Nastavení výchozí e-mailové schránky selhalo"
+      ],
       "Failed to sync aliases": [
         "Synchronizace aliasů selhala"
       ],
@@ -1244,6 +1250,12 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizace \"${ payload.item.data.metadata.name }\" byla odmítnuta"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } blokován",
+        "${ blockedEmailsCount } blokovány",
+        "${ blockedEmailsCount } blokováno",
+        "${ blockedEmailsCount } blokováno"
+      ],
       "${ count } invite successfully sent": [
         "${ count } pozvánka úspěšně odeslána",
         "${ count } pozvánky úspěšně odeslány",
@@ -1264,6 +1276,12 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } zobrazení"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } přeposlán",
+        "${ forwardedEmailsCount } přeposlány",
+        "${ forwardedEmailsCount } přeposláno",
+        "${ forwardedEmailsCount } přeposláno"
       ],
       "${ memberCount } member": [
         "${ memberCount } člen",
@@ -1316,6 +1334,12 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } úspěšně povolen"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } odeslán",
+        "${ repliedEmailsCount } odeslány",
+        "${ repliedEmailsCount } odesláno",
+        "${ repliedEmailsCount } odesláno"
+      ],
       "${ trialDaysLeft } day left": [
         "Zbývá ${ trialDaysLeft } den",
         "Zbývají ${ trialDaysLeft } dny",
@@ -1339,6 +1363,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Přístup k ${ PASS_APP_NAME } bude vždy vyžadovat vaše ${ BRAND_NAME } heslo."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Přístup k ${ PASS_APP_NAME } bude vždy vyžadovat vaše záložní heslo."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Přístup k ${ PASS_APP_NAME } bude vyžadovat váš otisk prstu nebo PIN zařízení."
@@ -1483,6 +1510,9 @@
       ],
       "Current version": [
         "Současná verze"
+      ],
+      "Currently selected": [
+        "Aktuálně vybráno"
       ],
       "Decrypting your data": [
         "Dešifrování vašich dat"
@@ -1793,6 +1823,9 @@
       "None": [
         "Nic"
       ],
+      "Not recommended": [
+        "Nedoporučeno"
+      ],
       "Offline mode could not be disabled at the moment": [
         "Režim offline nemohl být v tuto chvíli deaktivován"
       ],
@@ -1852,6 +1885,15 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potvrďte prosím své ${ BRAND_NAME } heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your backup password": [
+        "Prosím potvrďte vaše záložní heslo"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Pro automatické zamykání vaším heslem prosím potvrďte své záložní heslo."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Pro zrušení stávajícího zámku prosím potvrďte své záložní heslo."
       ],
       "Please confirm your extra password": [
         "Prosím potvrďte vaše dodatečné heslo"
@@ -2132,6 +2174,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí vašeho hesla ${ BRAND_NAME }"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí vašeho záložního hesla"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí vašeho dodatečného hesla"
       ],
@@ -2209,6 +2254,9 @@
       ],
       "You are about to create:": [
         "Chystáte se vytvořit:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Můžete také definovat PIN kód pro odemknutí ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Nyní můžete použít své heslo ${ BRAND_NAME } pro přístup k ${ PASS_SHORT_APP_NAME } offline."
@@ -2316,6 +2364,9 @@
         "${ forwardCount } přeposlání",
         "${ forwardCount } přeposlání",
         "${ forwardCount } přeposlání"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "Za posledních 14 dní ${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }."
       ],
       "${ hours } hour": [
         "${ hours } hodina",
@@ -2463,6 +2514,9 @@
       ],
       "Autosuggest": [
         "Automatické doporučení"
+      ],
+      "Backup password": [
+        "Záložní heslo"
       ],
       "Biometrics": [
         "Biometrie"
@@ -3046,6 +3100,9 @@
       "Unlock with": [
         "Odemknout pomocí"
       ],
+      "Unlock with:": [
+        "Odemknout pomocí:"
+      ],
       "Unnamed Credit Card": [
         "Nepojmenovaná platební karta"
       ],
@@ -3450,6 +3507,9 @@
       "Blocked addresses": [
         "Blokované adresy"
       ],
+      "Change your lock method": [
+        "Změna způsobu zamykání"
+      ],
       "Confirm extra password": [
         "Potvrdit dodatečné heslo"
       ],
@@ -3524,6 +3584,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Užíváte si ${ PASS_APP_NAME }?"
+      ],
+      "Enter your backup password": [
+        "Zadejte své záložní heslo"
       ],
       "Enter your extra password": [
         "Zadejte své dodatečné heslo"
@@ -3903,6 +3966,9 @@
       ],
       "Move to trash": [
         "Přesunout do koše"
+      ],
+      "Name is required": [
+        "Název je povinný"
       ],
       "No items": [
         "Žádné položky"

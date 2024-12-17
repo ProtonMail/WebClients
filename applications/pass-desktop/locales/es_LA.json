@@ -1346,7 +1346,7 @@
         "Pruebe gratis las funciones premium durante 7 días, solo durante la primera semana en ${ BRAND_NAME }."
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
-        "Se crea un contacto por cada dirección de correo electrónico que envía o recibe correos electrónicos desde ${ aliasEmail }."
+        "Se crea un contacto por cada dirección que envía o recibe correos electrónicos desde ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hay una versión nueva disponible de ${ PASS_APP_NAME }. Actualícela para disfrutar de las últimas funciones y errores corregidos."
@@ -1356,6 +1356,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "El acceso a ${ PASS_APP_NAME } siempre requerirá su contraseña de ${ BRAND_NAME }."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "El acceso a ${ PASS_APP_NAME } siempre requerirá su contraseña de respaldo."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "El acceso a ${ PASS_APP_NAME } requerirá su huella dactilar o el código PIN del dispositivo."
@@ -1418,7 +1421,7 @@
         "Se borró un elemento previamente compartido con usted."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
-        "¿Está seguro de que desea eliminar ${ emailJSX } de sus buzones de correo?"
+        "¿En verdad desea eliminar ${ emailJSX } de sus buzones de correo?"
       ],
       "Are you sure you want to remove the link?": [
         "¿En verdad desea eliminar el enlace?"
@@ -1872,6 +1875,15 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme la contraseña de ${ BRAND_NAME } para exportar los datos de ${ PASS_APP_NAME }"
       ],
+      "Please confirm your backup password": [
+        "Confirme su contraseña de respaldo."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Confirme su contraseña de respaldo para bloquear automáticamente con su contraseña."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Confirme la contraseña de respaldo para cancelar el registro del bloqueo actual."
+      ],
       "Please confirm your extra password": [
         "Confirme su contraseña adicional"
       ],
@@ -2108,10 +2120,10 @@
         "Esto rechazará el dispositivo **${ name }** que intentó iniciar sesión en su cuenta ${ BRAND_NAME } el **${ date }**."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
-        "Para seguir recibiendo correos electrónicos, transfiere estos alias a otro buzón:"
+        "Para seguir recibiendo correos electrónicos, transfiera estos alias a otro buzón:"
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
-        "Para mantener la dirección de correo electrónico oculta, se puede crear un alias de contacto para enmascarar la dirección."
+        "Para mantener la dirección oculta, se puede crear un alias de contacto para enmascarar la dirección."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Para migrar los datos desde otro gestor de contraseñas, vaya al gestor, exporte los datos y luego cárguelos en ${ PASS_APP_NAME }. Una vez que los datos se han importado, elimine el archivo exportado."
@@ -2126,7 +2138,7 @@
         "No se puede copiar al portapapeles"
       ],
       "Unconfigured": [
-        "Sin configuración"
+        "No configurado"
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Número ilimitado de alias ​​hide-my-email y administración avanzada de alias"
@@ -2136,6 +2148,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Desbloquee ${ PASS_SHORT_APP_NAME } con su contraseña de ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Desbloquee ${ PASS_SHORT_APP_NAME } con su contraseña de respaldo."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Desbloquee ${ PASS_SHORT_APP_NAME } con su contraseña adicional"
@@ -2206,6 +2221,9 @@
       ],
       "You are about to create:": [
         "Está por crear:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "También puede definir un código PIN para desbloquear ${ PASS_APP_NAME }."
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ahora puede usar la contraseña de ${ BRAND_NAME } para acceder sin conexión a ${ PASS_SHORT_APP_NAME }"
@@ -2436,6 +2454,9 @@
       "Auto-lock after": [
         "Bloqueo automático después de"
       ],
+      "Backup password": [
+        "Contraseña de respaldo"
+      ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Además de almacenar sus inicios de sesión, ${ PASS_APP_NAME } protege su identidad con una función de alias de correo electrónico integrada. Cada vez que se registre para obtener una cuenta nueva en línea, ${ PASS_APP_NAME } puede crear automáticamente un alias para mantener protegida su dirección de correo real. "
       ],
@@ -2491,7 +2512,7 @@
         "Confirmar nombre de la bóveda"
       ],
       "Contact created ${ time } ago.": [
-        "Se creó el contacto hace ${ time }."
+        "Contacto creado hace ${ time }."
       ],
       "Contact details": [
         "Detalles de contacto"
@@ -3644,6 +3665,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "¿Disfrutando ${ PASS_APP_NAME }?"
+      ],
+      "Enter your backup password": [
+        "Ingrese su contraseña de respaldo."
       ],
       "Enter your extra password": [
         "Ingrese su contraseña adicional"

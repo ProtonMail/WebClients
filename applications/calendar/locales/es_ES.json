@@ -68,9 +68,6 @@
       "Add group": [
         "Añadir grupo"
       ],
-      "Add new contact": [
-        "Añadir contacto"
-      ],
       "Add new group": [
         "Añadir grupo"
       ],
@@ -305,8 +302,8 @@
       "Export contact group": [
         "Exportar grupo de contactos"
       ],
-      "Export contacts": [
-        "Exportar contactos"
+      "Export selection as .vcf": [
+        "Exportar la selección en formato *.vcf"
       ],
       "Forgot password?": [
         "¿Contraseña olvidada?"
@@ -448,6 +445,9 @@
       ],
       "Merge contacts": [
         "Combinar contactos"
+      ],
+      "More actions": [
+        "Más acciones"
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
@@ -666,7 +666,7 @@
         "Omitir verificación"
       ],
       "Start import": [
-        "Iniciar importación"
+        "Iniciar la importación"
       ],
       "Start setup": [
         "Iniciar la configuración"
@@ -771,7 +771,7 @@
         "Ver detalles del contacto"
       ],
       "View invoice": [
-        "Ver factura"
+        "Ver la factura"
       ],
       "What do I get?": [
         "¿Qué obtengo?"
@@ -2607,6 +2607,11 @@
         "Factura atrasada"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2700,11 +2705,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4467,9 +4467,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
       ],
-      "Account size": [
-        "Tamaño de la cuenta"
-      ],
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
@@ -4478,9 +4475,6 @@
       ],
       "Added and removed participants will be notified.": [
         "Se notificarán a los participantes añadidos y borrados."
-      ],
-      "Additional options": [
-        "Opciones adicionales"
       ],
       "Address copied to clipboard": [
         "Se ha copiado la dirección al portapapeles."
@@ -4618,18 +4612,11 @@
       "Create a new contact group": [
         "Crear un grupo de contactos"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Crear una nube segura para ${ n } miembro",
-        "Crear una nube segura para ${ n } miembros"
-      ],
       "Create in": [
         "Crear en"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu suscripción al plan anterior"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
       "Current plan": [
         "Plan actual"
@@ -4703,9 +4690,6 @@
       ],
       "email": [
         "correo electrónico"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se puede añadir dominios adicionales por ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para dominios que posees. El registro de dominios no está disponible a través de ${ BRAND_NAME }. Puedes alojar correos electrónicos para dominios registrados en cualquier registrador de dominios."
@@ -5080,9 +5064,6 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "La aplicación necesita descifrar localmente tus contactos antes de poder exportarlos. Al final del proceso se generará un archivo VCF y podrás descargarlo."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de tu cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
@@ -5506,11 +5487,6 @@
         "Puedes volver a compartir tus calendarios en la configuración."
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
-      ]
-    },
     "Information about why calendar event cannot be saved": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Se permite hasta ${ maxAttendees } participante por invitación.",
@@ -5601,9 +5577,6 @@
       ],
       "Authenticator app": [
         "Aplicación de autenticación"
-      ],
-      "Automatically save contacts": [
-        "Guardar contactos automáticamente"
       ],
       "Beta Access": [
         "Acceso beta"
@@ -5752,9 +5725,6 @@
       "Expires": [
         "Expira"
       ],
-      "Export contacts": [
-        "Exportar contactos"
-      ],
       "Extended address": [
         "Dirección extendida"
       ],
@@ -5784,9 +5754,6 @@
       ],
       "Import all messages": [
         "Importar todos los mensajes"
-      ],
-      "Import contacts": [
-        "Importar contactos"
       ],
       "Import interval": [
         "Intervalo de importación"
@@ -7097,14 +7064,6 @@
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Disfruta de Mail Plus por ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puedes cancelar en cualquier momento."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -7117,6 +7076,14 @@
       ],
       "Switch plans?": [
         "¿Cambiar de plan?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Disfruta de Mail Plus por ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puedes cancelar en cualquier momento."
       ]
     },
     "new_plans: tooltip": {
@@ -8011,28 +7978,9 @@
         "(Sin nombre)"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "contacta ${ contactHref } con nuestro equipo de ventas."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Elige el número de IP para incluir en tu plan. Cada IP adicional cuesta ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si necesitas más de ${ maxIPs } IP, ",
-        "Si necesitas más de ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contactar"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Elige el número de usuarios para incluir en tu plan. Cada usuario adicional cuesta ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si necesitas más de ${ maxUsers } cuenta de usuario, ${ contact } con nuestro equipo de Ventas.",
-        "Si necesitas más de ${ maxUsers } cuentas de usuario, ${ contact } con nuestro equipo de Ventas."
       ]
     },
     "Price": {
@@ -10118,9 +10066,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."
-      ],
-      "You do not have any contacts to export": [
-        "No tienes ningún contacto para exportar."
       ]
     },
     "tooltip": {

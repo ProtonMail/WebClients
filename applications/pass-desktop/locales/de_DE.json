@@ -34,6 +34,12 @@
       "Add current URL": [
         "Aktuelle URL hinzufügen"
       ],
+      "Add custom domain": [
+        "Eigene Domain hinzufügen"
+      ],
+      "Add mailbox": [
+        "Postfach hinzufügen"
+      ],
       "Add more": [
         "Weitere hinzufügen"
       ],
@@ -60,6 +66,9 @@
       ],
       "Back": [
         "Zurück"
+      ],
+      "Block contact": [
+        "Kontakt blockieren"
       ],
       "Bulk delete items from trash": [
         "Mehrfacheinträge aus dem Papierkorb löschen"
@@ -106,11 +115,17 @@
       "Confirm access": [
         "Zugriff bestätigen"
       ],
+      "Confirm all": [
+        "Alle bestätigen"
+      ],
       "Continue": [
         "Weiter"
       ],
       "Continue offline": [
         "Offline fortsetzen"
+      ],
+      "Copy alias address": [
+        "Alias-Adresse kopieren"
       ],
       "Copy and close": [
         "Kopieren und schließen"
@@ -139,8 +154,14 @@
       "Create card": [
         "Karte anlegen"
       ],
+      "Create contact": [
+        "Kontakt erstellen"
+      ],
       "Create identity": [
         "Identität erstellen"
+      ],
+      "Create item": [
+        "Eintrag erstellen"
       ],
       "Create login": [
         "Login erstellen"
@@ -171,6 +192,12 @@
       ],
       "Delete all": [
         "Alle löschen"
+      ],
+      "Delete it, I will never need it": [
+        "Lösche es, ich werde es nie brauchen"
+      ],
+      "Delete mailbox": [
+        "Postfach löschen"
       ],
       "Delete password": [
         "Passwort löschen"
@@ -310,6 +337,9 @@
       "Make admin": [
         "Zum Administrator ändern"
       ],
+      "Make default": [
+        "Als Standard festlegen"
+      ],
       "Make editor": [
         "Zum Bearbeiter ändern"
       ],
@@ -394,6 +424,12 @@
       "Previous": [
         "Zurück"
       ],
+      "Re-verify": [
+        "Erneut bestätigen"
+      ],
+      "Reactivate now": [
+        "Jetzt reaktivieren"
+      ],
       "Refresh the page": [
         "Seite aktualisieren"
       ],
@@ -472,6 +508,9 @@
       "See members": [
         "Mitglieder anzeigen"
       ],
+      "Send email": [
+        "E-Mail senden"
+      ],
       "Send invite": [
         "Einladung senden"
       ],
@@ -533,6 +572,12 @@
       "To mailbox": [
         "Zum Postfach"
       ],
+      "Transfer aliases": [
+        "Aliasse übertragen"
+      ],
+      "Transfer and delete mailbox": [
+        "Postfach übertragen und löschen"
+      ],
       "Transfer ownership": [
         "Inhaberschaft übertragen"
       ],
@@ -544,6 +589,9 @@
       ],
       "Try for free": [
         "Kostenlos ausprobieren"
+      ],
+      "Unblock contact": [
+        "Kontakt entsperren"
       ],
       "Unlock": [
         "Entsperren"
@@ -595,6 +643,9 @@
       ],
       "Write us on Twitter": [
         "Schreibe uns auf Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
       ]
     },
     "App menu": {
@@ -793,6 +844,9 @@
       ],
       "Failed to add email address": [
         "Fehler beim Hinzufügen der E-Mail-Adresse."
+      ],
+      "Failed to create the contact": [
+        "Fehler beim Erstellen des Kontakts"
       ],
       "Failed to delete email address from monitoring": [
         "Fehler beim Löschen der E-Mail-Adresse aus der Überwachung."
@@ -1117,6 +1171,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Die Aktualisierung von \"${ payload.item.data.metadata.name }\" wurde verworfen."
       ],
+      "${ count } invite successfully sent": [
+        "${ count } Einladung gesendet",
+        "${ count } Einladungen gesendet"
+      ],
       "${ count } time": [
         "${ count } Mal",
         "${ count } Mal"
@@ -1172,6 +1230,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Zugang zu ${ PASS_APP_NAME } wird deinen Fingerabdruck oder Geräte-PIN-Code benötigen."
+      ],
+      "Add your custom email address to monitor:": [
+        "Füge deine eigene E-Mail-Adresse zur Überwachung hinzu:"
       ],
       "Admin": [
         "Administrator"
@@ -1368,6 +1429,12 @@
       "Expires in ${ remainingTime }": [
         "Läuft ab in ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Zusätzliches Passwort erstellt"
+      ],
+      "Extra password successfully removed": [
+        "Zusätzliches Passwort entfernt"
+      ],
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
       ],
@@ -1392,6 +1459,9 @@
       ],
       "here": [
         "hier"
+      ],
+      "Here's how it works:": [
+        "So funktioniert es:"
       ],
       "High Priority": [
         "Hohe Priorität"
@@ -1515,6 +1585,9 @@
       "Monitoring settings successfully updated": [
         "Überwachungseinstellungen erfolgreich aktualisiert."
       ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "${ PASS_APP_NAME } ist mehr als nur ein Passwort-Manager: Er schützt dein Passwort und deine persönliche E-Mail-Adresse über E-Mail-Aliasse. Dank der gleichen Technologie wie bei ${ MAIL_APP_NAME } sind deine Daten durchgängig verschlüsselt und nur für dich zugänglich."
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
@@ -1544,6 +1617,9 @@
       ],
       "None": [
         "Keine Sperre"
+      ],
+      "Not recommended": [
+        "Nicht empfohlen"
       ],
       "Offline mode": [
         "Offline-Modus"
@@ -1648,6 +1724,12 @@
       "Please enter your current PIN code to continue": [
         "Bitte gib deinen aktuellen PIN-Code ein, um fortzufahren."
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Bitte beachte, dass der Alias nach dem Löschen nicht wiederhergestellt werden kann. Vielleicht möchtest du stattdessen den Alias deaktivieren?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Bitte beachte, dass der Alias nach dem Löschen nicht wiederhergestellt werden kann. Der Alias ist bereits deaktiviert und kann keine E-Mails an dein Postfach weiterleiten"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Bitte upgrade, um frühen Zugang zur ${ PASS_APP_NAME } Web-App zu erhalten."
       ],
@@ -1662,6 +1744,15 @@
       ],
       "Reconnecting": [
         "Verbindung wird wiederhergestellt"
+      ],
+      "Record: CNAME": [
+        "Eintrag: CNAME"
+      ],
+      "Record: MX": [
+        "Eintrag: MX"
+      ],
+      "Record: TXT": [
+        "Eintrag: TXT"
       ],
       "Registering extra password...": [
         "Zusätzliches Passwort wird registriert..."
@@ -1693,6 +1784,9 @@
       "Select vault to share": [
         "Zu teilenden Tresor auswählen"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Wähle aus, wo die importierten Tresore gespeichert werden sollen."
+      ],
       "Selected items permanently deleted": [
         "Ausgewählte Einträge dauerhaft gelöscht"
       ],
@@ -1709,10 +1803,13 @@
         "Zeitüberschreitung der Sitzung"
       ],
       "Set by your organization": [
-        "Von deiner Organisation eingestellt"
+        "Von deiner Organisation festgelegt"
       ],
       "Settings successfully updated": [
         "Einstellungen erfolgreich aktualisiert."
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Teile deine Logins und sichere Notizen mit bis zu 10 Personen."
       ],
       "Sign in to your account": [
         "Mit deinem Konto anmelden"
@@ -1787,11 +1884,17 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Um Daten von einem anderen Passwort-Manager zu migrieren, exportiere deine Daten und lade sie dann zu ${ PASS_APP_NAME } hoch. Lösche die exportierte Datei, sobald deine Daten importiert wurden."
       ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Klicke auf das ${ PASS_APP_NAME }-Symbol in der Symbolleiste deines Browsers, um deine importierten Daten zu überprüfen."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
       ],
       "Unable to copy to clipboard": [
         "Kopieren in die Zwischenablage nicht möglich"
+      ],
+      "Unconfigured": [
+        "Nicht konfiguriert"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "${ PASS_SHORT_APP_NAME } mit Biometrie entsperren"
@@ -1814,11 +1917,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Upgrade jetzt zum Freischalten von Premiumfunktionen"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Upgrade auf ein kostenpflichtiges Abonnement, um mehrere Tresore zu erstellen."
+      ],
       "Use vaults to share this item with others.": [
         "Verwende Tresore, um diesen Eintrag mit anderen zu teilen."
       ],
       "User's access removed": [
         "Benutzerzugriff entfernt"
+      ],
+      "User's access successfully updated": [
+        "Benutzerzugriff aktualisiert"
       ],
       "username": [
         "Benutzername"
@@ -1912,6 +2021,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Dein Konto ist eingeschränkt, weil deine Organisation die Zwei-Faktor-Authentifizierung erzwungen hat. Bitte aktiviere die Zwei-Faktor-Authentifizierung in deinen Kontoeinstellungen oder kontaktiere deinen Administrator."
       ],
+      "your domain": [
+        "deine Domain"
+      ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
@@ -1919,7 +2031,7 @@
         "Deine Informationen wurden am ${ displayedDate } gefunden."
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
-        "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } sicherst."
+        "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
       ]
     },
     "Label": {
@@ -1947,12 +2059,27 @@
         "${ minutes } Minute",
         "${ minutes } Minuten"
       ],
+      "${ months } month": [
+        "${ months } Monat",
+        "${ months } Monate"
+      ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } erkennt die von dir verwendeten Websites und Apps und füllt für dich in jedem Browser und auf jedem Gerät Formulare automatisch mit deinen Anmeldedaten aus. Kein Kopieren und Einfügen mehr erforderlich."
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } Version"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } Antwort",
+        "${ repliedCount } Antworten"
       ],
       "${ usageCount } login": [
         "${ usageCount } Login",
         "${ usageCount } Logins"
+      ],
+      "${ years } year": [
+        "${ years } Jahr",
+        "${ years } Jahre"
       ],
       "1 hour": [
         "1 Stunde"
@@ -1968,6 +2095,9 @@
       ],
       "15 minutes": [
         "15 Minuten"
+      ],
+      "15 seconds": [
+        "15 Sekunden"
       ],
       "2 minutes": [
         "2 Minuten"
@@ -2041,6 +2171,12 @@
       "Auto-lock after": [
         "Automatisch sperren nach"
       ],
+      "Backup password": [
+        "Passwort sichern"
+      ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Neben der Speicherung deiner Anmeldungen schützt ${ PASS_APP_NAME } deine Identität mit einer integrierten E-Mail-Alias-Funktion. Wenn du dich für ein neues Online-Konto anmeldest, kann ${ PASS_APP_NAME } automatisch einen Alias ​​erstellen, um deine tatsächliche E-Mail-Adresse zu schützen. "
+      ],
       "Beta Access": [
         "Beta-Zugang"
       ],
@@ -2064,6 +2200,12 @@
       ],
       "Cards": [
         "Karten"
+      ],
+      "Catch-All": [
+        "Catch-all"
+      ],
+      "Choose your preferred look and feel.": [
+        "Wähle dein bevorzugtes Aussehen und deine bevorzugte Bedienung."
       ],
       "City": [
         "Stadt"
@@ -2124,6 +2266,9 @@
       ],
       "Custom text field": [
         "Benutzerdefiniertes Textfeld"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
       ],
       "Date": [
         "Datum"
@@ -2230,6 +2375,9 @@
       "Generic CSV": [
         "Generische CSV"
       ],
+      "Get Started": [
+        "Erste Schritte"
+      ],
       "Grant": [
         "Zulassen"
       ],
@@ -2238,6 +2386,9 @@
       ],
       "Hide password": [
         "Passwort ausblenden"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-Aliasse"
       ],
       "https://example.com": [
         "https://beispiel.de"
@@ -2257,6 +2408,9 @@
       "Import passwords": [
         "Passwörter importieren"
       ],
+      "Imported from: ": [
+        "Importiert von: "
+      ],
       "Imported on : ": [
         "Importiert am: "
       ],
@@ -2271,6 +2425,15 @@
       ],
       "Instagram handle": [
         "Instagram-Benutzername"
+      ],
+      "Install and continue": [
+        "Installiere und fahre fort"
+      ],
+      "Install extension": [
+        "Erweiterung installieren"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
       ],
       "Invitations": [
         "Einladungen"
@@ -2338,6 +2501,9 @@
       "Make all viewers": [
         "Alle zu Betrachtern machen"
       ],
+      "Make it your own.": [
+        "Mach es zu deinem."
+      ],
       "max views reached": [
         "maximale Ansichten erreicht"
       ],
@@ -2383,8 +2549,14 @@
       "None": [
         "Keine"
       ],
+      "Not selected": [
+        "Nicht ausgewählt"
+      ],
       "Note": [
         "Notiz"
+      ],
+      "Note • SimpleLogin": [
+        "Notiz • SimpleLogin"
       ],
       "Notes": [
         "Notizen"
@@ -2428,6 +2600,9 @@
       "Personal website": [
         "Persönliche Website"
       ],
+      "Personalize": [
+        "Personalisieren"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP-verschlüsselte JSON (empfohlen)"
       ],
@@ -2443,8 +2618,17 @@
       "Prefix": [
         "Präfix"
       ],
+      "Premium domain": [
+        "Premium-Domain"
+      ],
+      "Priority:": [
+        "Priorität:"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Schütze ${ PASS_APP_NAME } mit einem zusätzlichen Passwort"
+      ],
+      "Public domain": [
+        "Öffentliche Domain"
       ],
       "Rate us": [
         "Bewerte uns"
@@ -2467,6 +2651,12 @@
       "Reveal password": [
         "Passwort anzeigen"
       ],
+      "Secure password sharing": [
+        "Sichere Passwortfreigabe"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Speichere, melde dich automatisch an und teile deine Accounts, geschützt mit ${ PASS_APP_NAME }, durch von Millionen vertraute Ende-zu-Ende-Verschlüsselung"
+      ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Speichere, melde dich automatisch an und teile deine Accounts, geschützt mit ${ PASS_APP_NAME }, durch von Millionen vertraute Ende-zu-Ende-Verschlüsselung."
       ],
@@ -2475,6 +2665,9 @@
       ],
       "Security code": [
         "Sicherheitscode"
+      ],
+      "Select a domain": [
+        "Domain auswählen"
       ],
       "Select an email address": [
         "E-Mail-Adresse auswählen"
@@ -2485,8 +2678,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         " Wähle den Tresor, in den SimpleLogin-Aliasse importiert werden sollen"
       ],
+      "Select theme": [
+        "Farbschema auswählen"
+      ],
       "Select your password manager": [
         "Passwort-Manager auswählen"
+      ],
+      "Select your theme": [
+        "Wähle dein Farbschema"
       ],
       "Selected": [
         "Ausgewählt"
@@ -2561,11 +2760,20 @@
       "Today": [
         "Heute"
       ],
+      "Total imported items: ": [
+        "Insgesamt importierte Einträge: "
+      ],
+      "Total items: ": [
+        "Einträge insgesamt: "
+      ],
       "TOTP": [
         "TOTP"
       ],
       "Trash": [
         "Papierkorb"
+      ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "Die Zwei-Faktor-Authentifizierung (2FA) ist eine der besten Möglichkeiten, deine Konten online zu schützen. ${ PASS_APP_NAME } erleichtert dir die 2FA mit einem integrierten Authentifikator, der deine 2FA-Codes speichert und diese automatisch anzeigt und ausfüllt."
       ],
       "Type": [
         "Typ"
@@ -2575,6 +2783,9 @@
       ],
       "Unlock with": [
         "Entsperren mit"
+      ],
+      "Unlock with:": [
+        "Entsperren mit:"
       ],
       "Unnamed Credit Card": [
         "Unbenannte Kreditkarte"
@@ -2645,6 +2856,9 @@
       "You are about to create": [
         "Folgender Alias wird erstellt:"
       ],
+      "Your domain": [
+        "Deine Domain"
+      ],
       "ZIP or Postal code": [
         "Postleitzahl oder ZIP-Code"
       ]
@@ -2680,6 +2894,9 @@
       "${ count } item": [
         "${ count } Eintrag",
         "${ count } Einträge"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Du hast ${ semiboldText } in diesem Tresor ausgewählt."
       ]
     },
     "new_plans: feature": {
@@ -2766,6 +2983,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "my-domain.com": [
+        "meine-Domain.de"
       ],
       "Password": [
         "Passwort"
@@ -2860,6 +3080,9 @@
       "Pending activation": [
         "Ausstehende Aktivierung"
       ],
+      "Rejected": [
+        "Abgelehnt"
+      ],
       "Signed out": [
         "Abgemeldet"
       ],
@@ -2871,12 +3094,24 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Die Synchronisierung der Aliasse wurde erfolgreich aktiviert. Die Synchronisierung der SimpleLogin-Aliasse kann einige Zeit in Anspruch nehmen."
       ],
+      "Default mailbox successfully updated": [
+        "Standard-Postfach aktualisiert"
+      ],
+      "Domain successfully deleted": [
+        "Domain gelöscht"
+      ],
+      "Mailbox successfully verified": [
+        "Postfach verifiziert"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten.",
         "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten."
       ]
     },
     "Theme": {
+      "Automatic": [
+        "Automatisch"
+      ],
       "Dark": [
         "Dunkel"
       ],
@@ -2897,11 +3132,26 @@
       "Actions": [
         "Aktionen"
       ],
+      "Activity": [
+        "Aktivität"
+      ],
+      "Add custom domain": [
+        "Eigene Domain hinzufügen"
+      ],
+      "Add mailbox": [
+        "Postfach hinzufügen"
+      ],
+      "Alias contacts": [
+        "Alias-Kontakte"
+      ],
       "Aliases": [
         "Aliasse"
       ],
       "Auto-lock update": [
         "Aktualisieren der automatischen Sperre"
+      ],
+      "Blocked addresses": [
+        "Blockierte Adressen"
       ],
       "Breach detected": [
         "Datenleck entdeckt"
@@ -2942,6 +3192,9 @@
       "Custom addresses": [
         "Eigene Adressen"
       ],
+      "Custom domains": [
+        "Eigene Domains"
+      ],
       "Custom email monitoring": [
         "Benutzerdefinierte E-Mail-Überwachung"
       ],
@@ -2954,11 +3207,26 @@
       "Default": [
         "Standard"
       ],
+      "Delete domain": [
+        "Domain löschen"
+      ],
+      "Delete mailbox": [
+        "Postfach löschen"
+      ],
+      "Delete this item?": [
+        "Diesen Eintrag löschen?"
+      ],
       "Details": [
         "Details"
       ],
       "Discard changes?": [
         "Änderungen verwerfen?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (optional)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (optional)"
       ],
       "Domain": [
         "Domain"
@@ -3020,6 +3288,9 @@
       "Low disk space": [
         "Wenig Speicherplatz auf der Festplatte"
       ],
+      "Mailbox": [
+        "Postfach"
+      ],
       "Mark as resolved?": [
         "Als gelöst markieren?"
       ],
@@ -3032,8 +3303,15 @@
       "Modified": [
         "Geändert"
       ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "${ trashedItemsCount } Eintrag in den Papierkorb verschieben?",
+        "${ trashedItemsCount } Einträge in den Papierkorb verschieben?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Alle Einträge zu \"${ vaultName }\" verschieben?"
+      ],
+      "MX record": [
+        "MX-Eintrag"
       ],
       "No excluded items": [
         "Keine ausgeschlossenen Einträge"
@@ -3132,6 +3410,9 @@
       "Share with": [
         "Teilen mit"
       ],
+      "SPF (Optional)": [
+        "SPF (optional)"
+      ],
       "Status": [
         "Status"
       ],
@@ -3146,6 +3427,9 @@
       ],
       "Sync alias": [
         "Alias synchronisieren"
+      ],
+      "Sync your aliases from SimpleLogin": [
+        "Synchronisiere deine Aliasse von SimpleLogin"
       ],
       "Transfer ownership": [
         "Inhaberschaft übertragen"
@@ -3235,6 +3519,14 @@
       "An error occurred while exporting your data": [
         "Beim Exportieren deiner Daten ist ein Fehler aufgetreten"
       ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Bist du sicher, dass du diese ${ trashedItemsCount } Eintrag in den Papierkorb verschieben möchtest?",
+        "Bist du sicher, dass du diese ${ trashedItemsCount } Einträge in den Papierkorb verschieben möchtest?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Möchtest du ${ deletedItemsCount } Eintrag wirklich dauerhaft löschen?",
+        "Möchtest du ${ deletedItemsCount } Einträge wirklich dauerhaft löschen?"
+      ],
       "At least one email address is required": [
         "Mindestens eine E-Mail-Adresse ist erforderlich."
       ],
@@ -3246,6 +3538,12 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Tresor \"${ vaultName }\" konnte nicht erstellt werden."
+      ],
+      "Could not send invitations to the following addresses:": [
+        "An folgende Adressen konnten keine Einladungen gesendet werden:"
+      ],
+      "Delete alias": [
+        "Alias löschen"
       ],
       "Duplicate email addresses.": [
         "Doppelte E-Mail-Adressen."
@@ -3302,6 +3600,9 @@
       "Move to trash": [
         "In den Papierkorb verschieben"
       ],
+      "Name is required": [
+        "Name ist erforderlich"
+      ],
       "No items": [
         "Keine Einträge"
       ],
@@ -3334,6 +3635,9 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Bitte überprüfe, ob die Erweiterung richtig installiert und aktiviert ist"
+      ],
+      "Please contact us to investigate the issue": [
+        "Bitte kontaktiere uns, um das Problem zu untersuchen."
       ],
       "Please update the extension to its latest version": [
         "Bitte update die Erweiterung auf die aktuelle Version"
@@ -3412,6 +3716,9 @@
       ],
       "Your session was locked.": [
         "Deine Sitzung wurde gesperrt."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Du kannst nicht mehr Tresore erstellen, als dein Abonnement zulässt."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."

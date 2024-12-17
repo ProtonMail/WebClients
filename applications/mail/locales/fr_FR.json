@@ -69,9 +69,6 @@
       "Add group": [
         "Ajouter un groupe"
       ],
-      "Add new contact": [
-        "Ajouter un nouveau contact"
-      ],
       "Add new group": [
         "Ajouter un nouveau groupe"
       ],
@@ -480,8 +477,8 @@
       "Export contact group": [
         "Exporter le groupe de contacts"
       ],
-      "Export contacts": [
-        "Exporter les contacts"
+      "Export selection as .vcf": [
+        "Exporter la sélection au format *.vcf"
       ],
       "External encryption": [
         "Chiffrement externe"
@@ -759,6 +756,9 @@
       ],
       "More": [
         "Plus"
+      ],
+      "More actions": [
+        "Actions supplémentaires"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Plus d'informations à propos de ${ ariaLabelTitle }"
@@ -3735,7 +3735,8 @@
       ]
     },
     "Desktop notification body": {
-      "${ notificationsToShow.length } new messages": [
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } nouveau message",
         "${ notificationsToShow.length } nouveaux messages"
       ],
       "From: ${ sender } - ${ Subject }": [
@@ -5292,23 +5293,14 @@
       "Checklist complete": [
         "La checklist est terminée."
       ],
-      "Close": [
-        "Fermer"
-      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Terminez cette liste dans ${ daysCount } pour doubler gratuitement votre espace de stockage."
-      ],
-      "Congratulations, you completed all the steps!": [
-        "Félicitations ! Vous avez terminé toutes les étapes."
       ],
       "Discover how our ${ strongText } protect you": [
         "Découvrez comment nos ${ strongText } vous protègent."
       ],
       "Discover privacy features": [
         "Découvrez les fonctionnalités de protection de la vie privée"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "Doublez votre espace de stockage gratuit jusqu'à 1 Go en effectuant ces actions :"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Un chiffrement si puissant que personne d'autre que vous et vos destinataires ne peut consulter vos messages."
@@ -5337,26 +5329,14 @@
       "Learn more": [
         "En savoir plus"
       ],
-      "Maybe later": [
-        "Peut-être plus tard"
-      ],
       "Nice! You've updated all services in this category.": [
         "Super ! Vous avez mis à jour tous les services de cette catégorie."
-      ],
-      "Open checklist": [
-        "Ouvrir la checklist"
-      ],
-      "Open checklist and get free storage": [
-        "Ouvrez la checklist et profitez gratuitement de plus d'espace de stockage"
       ],
       "Popular online services": [
         "Services en ligne les plus courants"
       ],
       "privacy features": [
         "fonctionnalités de protection de la vie privée"
-      ],
-      "Protect and simplify your email": [
-        "Protégez et simplifiez votre messagerie"
       ],
       "Protection from trackers": [
         "Protection contre les traqueurs"
@@ -6021,9 +6001,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
       ],
-      "Account size": [
-        "Taille du compte"
-      ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
@@ -6032,9 +6009,6 @@
       ],
       "Add image URL": [
         "Ajouter l'URL de l'image"
-      ],
-      "Additional options": [
-        "Options supplémentaires"
       ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
@@ -6204,9 +6178,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Vérification des contacts en cours : ${ progress } de ${ max }"
       ],
-      "Clear app data": [
-        "Effacer les données de l'application"
-      ],
       "Clear browser data": [
         "Effacer les données du navigateur"
       ],
@@ -6268,18 +6239,11 @@
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Créer un cloud sécurisé pour ${ n } membre",
-        "Créer un cloud sécurisé pour ${ n } membres"
-      ],
       "Create in": [
         "Créer dans"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications, ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8), sont pris en charge."
       ],
       "Current plan": [
         "Abonnement actuel"
@@ -6404,9 +6368,6 @@
       ],
       "Email copied to clipboard": [
         "L'e-mail a été copié dans le presse-papiers."
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "L'hébergement de messagerie pour 10 noms de domaine personnalisés est inclus gratuitement. Des domaines supplémentaires peuvent être ajoutés pour ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
@@ -6968,7 +6929,7 @@
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Registering your subscription...": [
-        "Enregistrement de votre abonnement...."
+        "Enregistrement de votre abonnement…"
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "N'oubliez pas de mettre à jour ces informations dans votre gestionnaire de mots de passe ou à l'endroit où vous conservez les informations concernant votre compte et vos identifiants."
@@ -7145,9 +7106,6 @@
       "Text to display": [
         "Texte à afficher"
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
-      ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Les données que vous avez saisies dans le brouillon ne peuvent pas être sauvegardées si vous quittez la page."
       ],
@@ -7310,9 +7268,6 @@
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Cette clé publique sera automatiquement utilisée pour chiffrer les messages envoyés à cette adresse."
       ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Cette action supprime toutes les données associées à cette application, y compris les messages téléchargés. L'application va redémarrer et vous devrez vous reconnecter pour l'utiliser."
-      ],
       "This sender's public key has not been trusted yet.": [
         "La clé publique de cet expéditeur n'a pas encore été approuvée."
       ],
@@ -7336,6 +7291,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Pour récupérer vos données, vous devez réactiver la clé de compte qui a été utilisée au moment où les données ont été créées. Pour cela, vous devez vous souvenir du mot de passe que vous avez utilisé lors de la création de la clé."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Pour lever ces restrictions, vous pouvez passer à un abonnement payant."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Pour lever ces restrictions, vous pouvez consulter ${ mailLink } et passer à un abonnement payant."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Pour vous désinscrire de cette liste de diffusion, un message sera envoyé à partir de ${ boldFrom } avec les détails suivants comme définis par l'expéditeur de la newsletter :"
@@ -7499,8 +7460,8 @@
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Nous avons détecté la création de plusieurs comptes gratuits, ce qui constitue une violation de nos ${ termsLink }."
       ],
-      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
-        "Nous proposons des offres spécialement conçues pour les utilisateurs comme vous, qui ont besoin de plus d'une adresse e-mail.\nPour lever ces restrictions, vous pouvez passer à une offre payante."
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Nous avons des abonnements conçus spécifiquement pour les utilisateurs comme vous ayant besoin de plusieurs adresses e-mail."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Nous devons authentifier votre moyen de paiement auprès de votre banque."
@@ -7825,11 +7786,6 @@
         "Lecture seule"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Compromise"
@@ -8135,9 +8091,6 @@
       "Authenticator app": [
         "Application d'authentification"
       ],
-      "Automatically save contacts": [
-        "Enregistrer automatiquement les contacts"
-      ],
       "BCC": [
         "Cci"
       ],
@@ -8303,9 +8256,6 @@
       "Expires": [
         "Expire le"
       ],
-      "Export contacts": [
-        "Exporter les contacts"
-      ],
       "Extended address": [
         "Complément d’adresse"
       ],
@@ -8350,9 +8300,6 @@
       ],
       "Import all messages": [
         "Importer tous les messages"
-      ],
-      "Import contacts": [
-        "Importer les contacts"
       ],
       "Import interval": [
         "Intervalle d'importation"
@@ -10290,20 +10237,8 @@
       "Auto-delete spam and trash": [
         "Suppression automatique des messages indésirables/spam et dans la corbeille"
       ],
-      "Automatically forward emails": [
-        "Transférez automatiquement vos messages."
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Bloquez définitivement les messages envoyés par des personnes malveillantes. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "Bloquez les expéditeurs indésirables"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Supprimez les e-mails dans la corbeille et les spams après 30 jours."
-      ],
-      "Congratulations on choosing privacy": [
-        "Bienvenue sur un internet libre et respectueux de votre vie privée "
       ],
       "Dark Web Monitoring": [
         "Surveillance du dark web"
@@ -10314,17 +10249,8 @@
       "Download the desktop app and continue": [
         "Téléchargez l'application de bureau et continuez"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "Un chiffrement si puissant que personne d'autre que vous et vos destinataires ne peut consulter vos messages. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "Fixe et concentré"
-      ],
-      "For your eyes only": [
-        "Strictement confidentiel"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "Transférez les messages Gmail vers votre boite de réception."
       ],
       "Get notified if your password is compromised.": [
         "Recevez une notification si votre mot de passe est compromis."
@@ -10365,17 +10291,11 @@
       "Replay introduction": [
         "Revoir l'introduction"
       ],
-      "Skip": [
-        "Ignorer"
-      ],
       "Start using ${ BRAND_NAME }": [
         "Commencez à utiliser ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Commencez à utiliser la version plus courte et plus facile à mémoriser de votre adresse e-mail."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "Nous empêchons les professionnels de la publicité et les entreprises qui collectent des données d'établir votre profil. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Bienvenue dans ${ MAIL_APP_NAME }"
@@ -10843,28 +10763,9 @@
         "Nom"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } notre équipe commerciale."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Sélectionnez le nombre d'IP à inclure dans votre abonnement. Chaque IP supplémentaire coûte ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si vous avez besoin de plus de ${ maxIPs } IP, ",
-        "Si vous avez besoin de plus de ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contactez"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Sélectionnez le nombre d'utilisateurs à inclure dans votre abonnement. Chaque utilisateur supplémentaire coûte ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si vous avez besoin de plus d'${ maxUsers } compte utilisateur, nous vous invitons à ${ contact } notre service client.",
-        "Si vous avez besoin de plus de ${ maxUsers } comptes utilisateur, nous vous invitons à ${ contact } notre service client."
       ]
     },
     "Price": {
@@ -13569,9 +13470,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."
-      ],
-      "You do not have any contacts to export": [
-        "Vous n'avez aucun contact à exporter."
       ]
     },
     "tooltip": {

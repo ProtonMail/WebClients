@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Accept": [
+        "Αποδοχή"
+      ],
       "Account": [
         "Λογαριασμός"
       ],
@@ -922,6 +925,9 @@
       "Failed to restore items from trash": [
         "Αποτυχία επαναφοράς στοιχείων από τα διαγραμμένα"
       ],
+      "Failed to set default mailbox": [
+        "Απέτυχε ο ορισμός προεπιλεγμένου γραμματοκιβωτίου"
+      ],
       "Failed to sync aliases": [
         "Αποτυχία συγχρονισμού ψευδώνυμων"
       ],
@@ -1222,6 +1228,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Η ενημερωμένη έκδοση του \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } αποκλείστηκε",
+        "${ blockedEmailsCount } αποκλείστηκαν"
+      ],
       "${ count } invite successfully sent": [
         "${ count } πρόσκληση στάλθηκε με επιτυχία",
         "${ count } προσκλήσεις στάλθηκαν με επιτυχία"
@@ -1236,6 +1246,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } προβολές"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } προωθήθηκε",
+        "${ forwardedEmailsCount } προωθήθηκαν"
       ],
       "${ memberCount } member": [
         "${ memberCount } μέλος",
@@ -1284,6 +1298,10 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "Το ${ PROTON_SENTINEL_NAME } ενεργοποιήθηκε επιτυχώς"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } στάλθηκε",
+        "${ repliedEmailsCount } στάλθηκαν"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } ημέρα απομένει",
         "${ trialDaysLeft } ημέρες απομένουν"
@@ -1305,6 +1323,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον κωδικό πρόσβασής σας ${ BRAND_NAME }."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον εφεδρικό κωδικό πρόσβασής σας."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει το δακτυλικό αποτύπωμα σας ή το PIN της συσκευής σας."
@@ -1449,6 +1470,9 @@
       ],
       "Current version": [
         "Τρέχουσα έκδοση"
+      ],
+      "Currently selected": [
+        "Τρέχουσα επιλογή"
       ],
       "Decrypting your data": [
         "Γίνεται αποκρυπτογράφηση των δεδομένων σας"
@@ -1745,6 +1769,9 @@
       "None": [
         "Κανένα"
       ],
+      "Not recommended": [
+        "Δεν συνιστάται"
+      ],
       "Offline mode could not be disabled at the moment": [
         "Δεν ήταν δυνατή η απενεργοποίηση της λειτουργίας χωρίς σύνδεση αυτήν τη στιγμή"
       ],
@@ -1802,6 +1829,15 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
+      ],
+      "Please confirm your backup password": [
+        "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό σας"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασης για αυτόματο κλείδωμα με τον κωδικό πρόσβασής σας."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασης σας για να καταργήσετε το τρέχον κλείδωμα."
       ],
       "Please confirm your extra password": [
         "Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασής σας"
@@ -1974,6 +2010,9 @@
       "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
         "Η σημείωση SimpleLogin αποθηκεύεται μαζί στην ίδια τοποθεσία με την ψευδώνυμη διεύθυνση και ενώ προστατεύεται από κρυπτογράφηση σε κατάσταση ηρεμίας, δεν είναι κρυπτογραφημένη E2E, πράγμα που σημαίνει ότι οποιοσδήποτε έχει πρόσβαση στη βάση δεδομένων SimpleLogin μπορεί να τη διαβάσει."
       ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Απλώς χρησιμοποιήστε το ${ emailBold } την επόμενη φορά που θα χρειαστείτε ένα ψευδώνυμο: αυτό θα δημιουργηθεί ${ automaticallyBold } την πρώτη φορά που θα λάβει κάποιο email. Για πιο λεπτομερή έλεγχο, μπορείτε επιπλέον να ορίσετε ${ rulesHyperLink }."
+      ],
       "Successfully exported all your items": [
         "Επιτυχής εξαγωγή όλων των στοιχείων σας"
       ],
@@ -2077,6 +2116,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Ξεκλειδώστε ${ PASS_SHORT_APP_NAME } με τον κωδικό πρόσβασης ${ BRAND_NAME }"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με τον εφεδρικό κωδικό πρόσβασής σας"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με τον επιπλέον κωδικό πρόσβασης σας"
       ],
@@ -2152,6 +2194,9 @@
       ],
       "You are about to create:": [
         "Είστε έτοιμοι να δημιουργήσετε:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Μπορείτε, επίσης, να ορίσετε έναν κωδικό PIN για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Τώρα μπορείτε να χρησιμοποιήσετε τον κωδικό πρόσβασης ${ BRAND_NAME } σας για πρόσβαση στο ${ PASS_SHORT_APP_NAME } εκτός σύνδεσης"
@@ -2243,6 +2288,9 @@
       "${ forwardCount } forward": [
         "${ forwardCount } προώθηση",
         "${ forwardCount } προωθήσεις"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, στις τελευταίες 14 ημέρες"
       ],
       "${ hours } hour": [
         "${ hours } ώρα",
@@ -2380,6 +2428,9 @@
       ],
       "Autosuggest": [
         "Αυτόματη πρόταση"
+      ],
+      "Backup password": [
+        "Εφεδρικός κωδικός πρόσβασης"
       ],
       "Biometrics": [
         "Βιομετρικά"
@@ -2961,6 +3012,9 @@
       "Unlock with": [
         "Ξεκλείδωμα με"
       ],
+      "Unlock with:": [
+        "Ξεκλείδωμα με:"
+      ],
       "Unnamed Credit Card": [
         "Πιστωτική κάρτα χωρίς όνομα"
       ],
@@ -3359,6 +3413,9 @@
       "Blocked addresses": [
         "Αποκλεισμένες διευθύνσεις"
       ],
+      "Change your lock method": [
+        "Αλλάξτε τον τρόπο κλειδώματος"
+      ],
       "Confirm extra password": [
         "Επιβεβαίωση επιπλέον κωδικού πρόσβασης"
       ],
@@ -3431,6 +3488,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Απολαμβάνετε το ${ PASS_APP_NAME };"
+      ],
+      "Enter your backup password": [
+        "Εισαγάγετε τον εφεδρικό κωδικό πρόσβασης σας"
       ],
       "Enter your extra password": [
         "Εισαγάγετε τον επιπλέον κωδικό πρόσβασής σας"
@@ -3796,6 +3856,9 @@
       ],
       "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
+      ],
+      "Name is required": [
+        "Απαιτείται όνομα"
       ],
       "No items": [
         "Δεν υπάρχουν στοιχεία"

@@ -60,9 +60,6 @@
       "Add group": [
         "Προσθήκη ομάδας"
       ],
-      "Add new contact": [
-        "Προσθήκη νέας επαφής"
-      ],
       "Add new group": [
         "Προσθήκη νέας ομάδας"
       ],
@@ -285,14 +282,14 @@
       "Export contact group": [
         "Εξαγωγή ομάδας επαφών"
       ],
-      "Export contacts": [
-        "Εξαγωγή Επαφών"
-      ],
       "Forgot password?": [
         "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Απκτήστε το ${ MAIL_SHORT_APP_NAME } Plus για ${ priceCoupon }"
       ],
       "Get in touch": [
         "Επικοινωνήστε"
@@ -1097,6 +1094,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Αλλαγή ρυθμίσεων διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Continue": [
+        "Συνέχεια"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
       ],
@@ -2179,6 +2182,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Το 2FA προσθέτει ένα επιπλέον επίπεδο ασφαλείας, αποτρέποντας τη μη εξουσιοδοτημένη πρόσβαση."
       ],
+      "Also included": [
+        "Περιλαμβάνονται επίσης"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Αποκρυπτογράφηση επαφών… Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, θα μπορείτε να κάνετε λήψη του αρχείου με όλες τις επαφές που έχουν εξαχθεί."
       ],
@@ -2190,6 +2196,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3839,14 +3848,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Η πρόσβαση σε λογαριασμό περιορίζεται λόγω απλήρωτων τιμολογίων. Επικοινωνήστε με το διαχειριστή σας."
       ],
-      "Account size": [
-        "Μέγεθος λογαριασμού"
-      ],
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
-      "Additional options": [
-        "Πρόσθετες επιλογές"
+      "Address copied to clipboard": [
+        "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
@@ -3972,10 +3978,6 @@
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλος",
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλη"
-      ],
       "Create in": [
         "Δημιουργία σε"
       ],
@@ -3997,9 +3999,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πρόγραμμα"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
-      ],
       "Current plan": [
         "Τρέχον πλάνο"
       ],
@@ -4011,6 +4010,9 @@
       ],
       "Dedicated servers": [
         "Αποκλειστικοί διακομιστές"
+      ],
+      "default email address": [
+        "προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο μεταφορτώθηκε διασφαλισμένα από ${ emailAddress }."
@@ -4071,9 +4073,6 @@
       ],
       "email": [
         "ηλεκτρονικό ταχυδρομείο"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Η φιλοξενία email για 10 προσαρμοσμένους τομείς email συμπεριλαμβάνεται δωρεάν. Επιπρόσθετοι τομείς μπορούν να προστεθούν έναντι ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
@@ -4314,6 +4313,9 @@
       "Merged": [
         "Συγχωνευμένο"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Τα μηνύματα σε όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας θα μεταφερθούν στα εισερχόμενά σας."
+      ],
       "MM/YY": [
         "ΜΜ/ΧΧ"
       ],
@@ -4491,8 +4493,14 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
+      "Registering your subscription...": [
+        "Εγγραφή της συνδρομής σας..."
+      ],
       "Restored version to": [
         "Έγινε επαναφορά στην έκδοση"
+      ],
+      "Save Document as PDF": [
+        "Αποθήκευση εγγράφου ως PDF"
       ],
       "Saving": [
         "Αποθήκευση"
@@ -4521,6 +4529,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Η ρύθμιση PGP επιτρέπει την αποστολή διατερματικά κρυπτογραφημένων μηνυμάτων προς χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
       ],
+      "Setting up your new address...": [
+        "Ρύθμιση της νέας διεύθυνσής σας..."
+      ],
       "Settings update failed": [
         "Αποτυχία ενημέρωσης ρυθμίσεων"
       ],
@@ -4548,6 +4559,9 @@
       "Something went wrong": [
         "Κάτι πήγε στραβά"
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
       ],
@@ -4565,9 +4579,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Ο λογαριασμός μπορεί να έχει ένα νέο κλειδί ή μπορεί τα εξής να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
       ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Δεν ήταν δυνατή η επαλήθευση της πατρότητας των επεξεργασιών στο έγγραφο. Θέλετε να επισημάνετε αυτό το έγγραφο ως επαληθευμένο; Μπορείτε να επιλέξετε Παράβλεψη για να αποφασίσετε αργότερα."
@@ -4604,6 +4615,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Αυτό το έγγραφο ενδέχεται να μην υπάρχει ή να μην έχετε δικαίωμα προβολής του. Μπορείτε να δοκιμάσετε να φορτώσετε ξανά τη σελίδα για να δείτε εάν το πρόβλημα παραμένει."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
       ],
       "This item already exists in your library": [
         "Αυτό το στοιχείο υπάρχει ήδη στη βιβλιοθήκη σας"
@@ -4759,6 +4773,15 @@
       "What do you want to do?": [
         "Τι θέλετε να κάνετε;"
       ],
+      "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
+        "Όταν ανοίξει ο διάλογος, αλλάξτε τον \"Προορισμό\" σε \"Αποθήκευση ως PDF\" και, στη συνέχεια, πατήστε Αποθήκευση."
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "Όταν ανοίξει ο διάλογος, αλλάξτε τον \"Προορισμό\" σε \"Αποθήκευση σε PDF\" και, στη συνέχεια, πατήστε Αποθήκευση."
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "Όταν ανοίξει ο διάλογος, επιλέξτε \"PDF\" στην κάτω αριστερή γωνία και, στη συνέχεια, πατήστε Αποθήκευση."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
       ],
@@ -4875,6 +4898,9 @@
       "Your account will be updated once the payment is cleared.": [
         "Ο λογαριασμός σας θα ενημερωθεί μόλις γίνει εκκαθάριση της πληρωμής."
       ],
+      "Your browser's Print dialog will now open, where you can export your document to PDF.": [
+        "Θα ανοίξει τώρα το παράθυρο διαλόγου Εκτύπωσης του προγράμματος περιήγησής σας, όπου μπορείτε να εξαγάγετε το έγγραφό σας σε PDF."
+      ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Οι αλλαγές σας συγχρονίζονται με το Drive. Παρακαλούμε μην κλείσετε την ιστοσελίδα."
       ],
@@ -4946,11 +4972,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Μόνο για ανάγνωση"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
       ]
     },
     "Item": {
@@ -5052,9 +5073,6 @@
       "Authenticator app": [
         "Εφαρμογή επαλήθευσης"
       ],
-      "Automatically save contacts": [
-        "Αυτόματη αποθήκευση επαφών"
-      ],
       "Beta Access": [
         "Πρόσβαση Beta"
       ],
@@ -5081,12 +5099,6 @@
       ],
       "Calendars": [
         "Ημερολόγια"
-      ],
-      "Can edit": [
-        "Με δυνατότητα επεξεργασίας"
-      ],
-      "Can view": [
-        "Με δυνατότητα προβολής"
       ],
       "Cancel download": [
         "Ακύρωση λήψης"
@@ -5202,9 +5214,6 @@
       "Expires": [
         "Λήγει"
       ],
-      "Export contacts": [
-        "Εξαγωγή Επαφών"
-      ],
       "Extended address": [
         "Εκτεταμένη διεύθυνση"
       ],
@@ -5234,9 +5243,6 @@
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
-      ],
-      "Import contacts": [
-        "Εισαγωγή Επαφών"
       ],
       "Import interval": [
         "Μεσοδιάστημα εισαγωγών"
@@ -5453,14 +5459,6 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "Οργανώστε, προσθέστε και επεξεργαστείτε αρχεία"
-      ],
-      "View and download": [
-        "Προβολή και λήψη"
       ]
     },
     "Label for contact group color": {
@@ -5910,6 +5908,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Ξεκινώντας από ${ priceMailPlus }"
       ],
@@ -6050,6 +6051,9 @@
       ],
       "10 email addresses/aliases": [
         "10 διεύθυνσεις email/ψευδώνυμα"
+      ],
+      "10 more premium features": [
+        "10 περισσότερα premium χαρακτηριστικά"
       ],
       "10-year file version history": [
         "Ιστορικό εκδόσεων αρχείων 10 ετών"
@@ -6520,6 +6524,14 @@
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Αποκτήστε το Mail Plus για ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Η μειωμένη τιμή του ${ priceCoupon } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ priceMailPlus }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -6814,11 +6826,17 @@
       "\"${ name }\" created successfully": [
         "Το \"${ name }\" δημιουργήθηκε επιτυχώς"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" διαγράφηκε"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "Το \"${ name }\" διαγράφηκε οριστικά από τα Διαγραμμένα"
       ],
       "\"${ name }\" failed to be created": [
         "Αποτυχία δημιουργίας του \"${ name }\""
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\" απέτυχε να διαγραφεί"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "Αποτυχία οριστικής διαγραφής του \"${ name }\" από τα Διαγραμμένα"
@@ -6857,9 +6875,17 @@
         "${ count } αντικείμενο απέτυχε να αποκρυπτογραφηθεί",
         "${ count } αντικείμενα απέτυχαν να αποκρυπτογραφηθούν"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } στοιχείο διαγράφηκε",
+        "${ numberOfItems } στοιχεία διαγράφηκαν"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } στοιχείο εξαλείφθηκε οριστικά από τα Διαγραμμένα",
         "${ numberOfItems } στοιχεία εξαλείφθηκαν οριστικά από τα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } στοιχείο απέτυχε να διαγραφεί",
+        "${ numberOfItems } στοιχεία απέτυχαν να διαγραφούν"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Αποτυχία οριστικής εξάλειψης \"${ numberOfItems }\" στοιχείου από τα Διαγραμμένα",
@@ -7340,28 +7366,9 @@
         "Όνομα"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "παρακαλούμε ${ contactHref } την ομάδα Πωλήσεών μας."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Επιλέξτε τον αριθμό διευθύνσεων IP που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον διεύθυνση IP κοστίζει ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διεύθυνση IP, ",
-        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διευθύνσεις IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "επικοινωνήστε"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Επιλέξτε τον αριθμό χρηστών που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον χρήστης κοστίζει ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Εάν χρειαστείτε περισσότερους από ${ maxUsers } λογαριασμό χρήστη, παρακαλούμε ${ contact } με την ομάδα μας Πωλήσεων.",
-        "Εάν χρειαστείτε περισσότερους από ${ maxUsers } λογαριασμούς χρηστών, παρακαλούμε ${ contact } με την ομάδα μας Πωλήσεων."
       ]
     },
     "Price": {
@@ -8854,6 +8861,9 @@
       "Untitled document ${ date }": [
         "Έγγραφο χωρίς τίτλο ${ date }"
       ],
+      "Upgrade complete!": [
+        "Η αναβάθμιση ολοκληρώθηκε!"
+      ],
       "Uploading a large file or folder": [
         "Αποστολή μεγάλου αρχείου ή φακέλου"
       ],
@@ -8889,6 +8899,9 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "Your shorter address is now ready": [
+        "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8971,9 +8984,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Τους στείλαμε μια πρόσκληση για πρόσβαση στο στοιχείο."
-      ],
-      "You do not have any contacts to export": [
-        "Δεν έχετε επαφές προς εξαγωγή"
       ]
     },
     "tooltip": {
@@ -9115,6 +9125,9 @@
       ],
       "Missing alias suffix": [
         "Λείπει το επίθημα ψευδωνύμου"
+      ],
+      "Name is required": [
+        "Απαιτείται όνομα"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"

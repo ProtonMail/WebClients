@@ -977,6 +977,9 @@
       "Failed to restore items from trash": [
         "Impossibile recuperare gli elementi dal cestino"
       ],
+      "Failed to set default mailbox": [
+        "Impossibile impostare la casella di posta predefinita"
+      ],
       "Failed to sync aliases": [
         "Impossibile sincronizzare gli alias"
       ],
@@ -1276,6 +1279,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "L'aggiornamento \"${ payload.item.data.metadata.name }\" è stato rimosso"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } bloccata",
+        "${ blockedEmailsCount } bloccate"
+      ],
       "${ count } invite successfully sent": [
         "${ count } invito spedito con successo",
         "${ count } inviti spediti con successo"
@@ -1290,6 +1297,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } visualizzazioni"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } inoltrata",
+        "${ forwardedEmailsCount } inoltrate"
       ],
       "${ memberCount } member": [
         "${ memberCount } membro",
@@ -1323,6 +1334,10 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } abilitato"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } inviata",
+        "${ repliedEmailsCount } inviate"
+      ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } violazione di dati rilevata",
         "${ row.breachCount } violazioni di dati rilevate"
@@ -1341,6 +1356,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà sempre la password ${ BRAND_NAME }."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "L'accesso a ${ PASS_APP_NAME } richiederà sempre la password di backup."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà l'impronta digitale o il PIN del dispositivo."
@@ -1857,6 +1875,15 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Conferma la password del tuo account ${ BRAND_NAME } per esportare i dati di ${ PASS_APP_NAME }"
       ],
+      "Please confirm your backup password": [
+        "Conferma la tua password di backup"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Conferma la tua password di backup per abilitare il blocco automatico con password."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Conferma la tua password di backup per disabilitare il blocco attuale."
+      ],
       "Please confirm your extra password": [
         "Conferma la tua password aggiuntiva"
       ],
@@ -2122,6 +2149,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Sblocca ${ PASS_SHORT_APP_NAME } con la tua password ${ BRAND_NAME }"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Sblocca ${ PASS_SHORT_APP_NAME } con la tua password di backup"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Sblocca ${ PASS_SHORT_APP_NAME } con la tua password aggiuntiva"
       ],
@@ -2191,6 +2221,9 @@
       ],
       "You are about to create:": [
         "Stai per creare:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Puoi anche definire un codice PIN per sbloccare ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ora puoi utilizzare la password dell'account ${ BRAND_NAME } per accedere a ${ PASS_SHORT_APP_NAME } offline"
@@ -2291,6 +2324,9 @@
       "${ forwardCount } forward": [
         "${ forwardCount } inoltro",
         "${ forwardCount } inoltri"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, negli ultimi 14 giorni."
       ],
       "${ hours } hour": [
         "${ hours } ora",
@@ -2417,6 +2453,9 @@
       ],
       "Auto-lock after": [
         "Blocca automaticamente dopo"
+      ],
+      "Backup password": [
+        "Password di backup"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Oltre a memorizzare i tuoi dati di accesso, ${ PASS_APP_NAME } protegge la tua identità con una funzione di alias email integrata. Ogni volta che crei un nuovo account online, ${ PASS_APP_NAME } può creare automaticamente un alias per mantenere protetto il tuo indirizzo email effettivo. "
@@ -3627,6 +3666,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Ti piace ${ PASS_APP_NAME }?"
       ],
+      "Enter your backup password": [
+        "Inserisci la tua password di backup"
+      ],
       "Enter your extra password": [
         "Inserisci la password aggiuntiva"
       ],
@@ -4040,6 +4082,9 @@
       ],
       "Move to trash": [
         "Sposta nel cestino"
+      ],
+      "Name is required": [
+        "Nome obbligatorio"
       ],
       "No items": [
         "Nessun elemento"
