@@ -110,15 +110,11 @@ const MainSwitch: FC = () => {
                                             <Route component={Items} />
                                         </Switch>
                                     )}
-                                    {!DESKTOP_BUILD && (
-                                        <>
-                                            <ThemeOnboardingModal />
-                                            {isSSO && (
-                                                <WithSpotlightModal type={SpotlightMessage.SSO_CHANGE_LOCK}>
-                                                    {(props) => <OnboardingSSO {...props} />}
-                                                </WithSpotlightModal>
-                                            )}
-                                        </>
+                                    {!DESKTOP_BUILD && <ThemeOnboardingModal />}
+                                    {isSSO && (
+                                        <WithSpotlightModal type={SpotlightMessage.SSO_CHANGE_LOCK}>
+                                            {(props) => <OnboardingSSO {...props} />}
+                                        </WithSpotlightModal>
                                     )}
                                     <InAppNotifications />
                                 </div>
