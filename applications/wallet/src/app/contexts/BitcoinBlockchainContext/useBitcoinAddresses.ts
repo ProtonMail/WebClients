@@ -272,18 +272,17 @@ export const useBitcoinAddresses = ({
                         continue;
                     }
 
-                    // Naming is wrong but LastUsedIndex is actually the next index to use
-                    const nextIndexToUse = walletAccount.WalletAccount.LastUsedIndex;
+                    const addressToDisplay = walletAccount.WalletAccount.LastUsedIndex;
 
-                    // Mark all addresses below in range [0, LastUsedIndex] as used to avoid reusing them
-                    await accountChainData.account.markReceiveAddressesUsedTo(0, nextIndexToUse);
+                    // Mark all addresses below in range [0, addressToDisplay[ as used to avoid reusing them
+                    await accountChainData.account.markReceiveAddressesUsedTo(0, addressToDisplay);
 
                     // Check if current displayed address is still ok
                     const currentHelpers = bitcoinAddressHelperByWalletAccountId[walletAccount.WalletAccount.ID];
 
                     if (
                         currentHelpers?.receiveBitcoinAddress.index &&
-                        currentHelpers.receiveBitcoinAddress.index <= nextIndexToUse - 1
+                        currentHelpers.receiveBitcoinAddress.index < addressToDisplay
                     ) {
                         const receiveBitcoinAddress = await accountChainData.account.getNextReceiveAddress();
                         updateBitcoinAddressHelper(walletAccount.WalletAccount.ID, { receiveBitcoinAddress });
@@ -321,22 +320,18 @@ export const useBitcoinAddresses = ({
                         return;
                     }
 
-                    const highestIndexInOutput =
-                        (await accountChainData.account.getHighestUsedAddressIndexInOutput()) ?? 0;
-                    const highestIndex = Math.max(highestIndexInOutput + 1, account.LastUsedIndex); // +1 to exclude it from used addresses
-                    if (highestIndex > account.LastUsedIndex) {
-                        try {
-                            // Update last used index to avoid reusing the new address
-                            // LastUsedIndex is actually the next index to use in case of a refresh
-                            await api.wallet.updateWalletAccountLastUsedIndex(wallet.ID, account.ID, highestIndex);
-                        } catch {}
-                    }
-                    // Mark all addresses below in range [0, highestIndex[ as used to avoid reusing them
-                    await accountChainData.account.markReceiveAddressesUsedTo(0, highestIndex);
+                    const addressToDisplay = account.LastUsedIndex;
+                    // Mark all addresses below in range [0, addressToDisplay[ as used to avoid reusing them
+                    await accountChainData.account.markReceiveAddressesUsedTo(0, addressToDisplay);
 
                     await manageBitcoinAddressPool({ wallet, account, accountChainData });
 
-                    const receiveBitcoinAddress = await accountChainData.account.peekReceiveAddress(highestIndex);
+                    // Check if current displayed address is still ok
+                    const currentHelpers = bitcoinAddressHelperByWalletAccountId[account.ID];
+                    const receiveBitcoinAddress =
+                        currentHelpers && currentHelpers.receiveBitcoinAddress.index >= addressToDisplay
+                            ? currentHelpers.receiveBitcoinAddress
+                            : await accountChainData.account.getNextReceiveAddress();
 
                     const generateNewReceiveAddress = async () => {
                         if (isSyncing) {
