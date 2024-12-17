@@ -172,7 +172,7 @@ function HistoryViewerModalContent({
         <div className="flex items-center gap-3 px-3 py-2.5">
           <Icon name="clock-rotate-left" size={5} />
           {selectedBatchTimestamp}
-          <div className="flex items-center gap-1 rounded-lg bg-[--background-weak] px-2 py-1 text-xs text-[--text-weak]">
+          <div className="flex items-center gap-1 rounded-lg bg-[--background-weak] px-2 py-1 text-sm text-[--text-weak]">
             <Icon name="eye" />
             {c('Info').t`View only`}
           </div>
@@ -191,7 +191,7 @@ function HistoryViewerModalContent({
         {/* Upper content */}
         <div className="flex flex-col">
           <div className="sticky top-0 flex items-center justify-between gap-2 bg-[--optional-background-lowered] px-3.5 py-1.5">
-            <div className="text-bold text-base">Document History</div>
+            <div className="text-bold text-rg">Document History</div>
             <Tooltip title={c('Action').t`Close`}>
               <Button className="shrink-0" icon shape="ghost" onClick={onClose}>
                 <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />

@@ -121,7 +121,7 @@ const PopoverPill = ({
         >
           <div className="flex flex-col gap-4 p-6">
             <span className="text-rg text-bold">{title}</span>
-            <span className="text-sm">{content}</span>
+            <span>{content}</span>
           </div>
         </div>
       )}

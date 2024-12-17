@@ -125,7 +125,7 @@ export interface DriveCompat {
 }
 
 export const useDriveCompat = (): DriveCompat => {
-    const { withResolve } = useResolveShareId();
+    const { withResolveShareId } = useResolveShareId();
 
     const authentication = useAuthentication();
     const getAddresses = useGetAddresses();
@@ -162,24 +162,24 @@ export const useDriveCompat = (): DriveCompat => {
 
     return {
         isDocsEnabled,
-        canUseDocs: withResolve(({ shareId }) => canUseDocs(shareId)),
-        createDocumentNode: withResolve(createDocumentNode),
-        getDocumentKeys: withResolve(getDocumentKeys),
+        canUseDocs: withResolveShareId(({ shareId }) => canUseDocs(shareId)),
+        createDocumentNode: withResolveShareId(createDocumentNode),
+        getDocumentKeys: withResolveShareId(getDocumentKeys),
         getNodePaths,
         getNodesAreShared,
-        getNode: withResolve(getNode),
-        getNodeContents: withResolve(getNodeContents),
-        getNodePermissions: withResolve(getNodePermissions),
+        getNode: withResolveShareId(getNode),
+        getNodeContents: withResolveShareId(getNodeContents),
+        getNodePermissions: withResolveShareId(getNodePermissions),
         getNodes,
-        getShareId: withResolve(({ shareId }) => shareId),
-        findAvailableNodeName: withResolve(findAvailableNodeName),
-        renameDocument: withResolve(renameDocument),
-        trashDocument: withResolve(trashDocument),
-        restoreDocument: withResolve(restoreDocument),
+        getShareId: withResolveShareId(({ shareId }) => shareId),
+        findAvailableNodeName: withResolveShareId(findAvailableNodeName),
+        renameDocument: withResolveShareId(renameDocument),
+        trashDocument: withResolveShareId(trashDocument),
+        restoreDocument: withResolveShareId(restoreDocument),
         getDocumentUrl,
         openDocument,
         openDocumentWindow,
-        openDocumentSharingModal: withResolve(showLinkSharingModal),
+        openDocumentSharingModal: withResolveShareId(showLinkSharingModal),
         getMyFilesNodeMeta,
         getVerificationKey,
         // This should be changed to a fragment if more modals are added

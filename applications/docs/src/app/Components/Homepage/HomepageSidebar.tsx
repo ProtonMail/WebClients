@@ -18,7 +18,7 @@ export const HomepageSidebar = ({ expanded, onToggle }: { expanded: boolean; onT
   const { getLocalID } = useAuthentication()
   return (
     <Sidebar
-      className="ui-standard homepage-wrapper"
+      className="ui-standard"
       expanded={expanded}
       onToggleExpand={onToggle}
       app="proton-docs"
