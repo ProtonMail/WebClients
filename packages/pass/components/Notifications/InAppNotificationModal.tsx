@@ -16,6 +16,7 @@ export const InAppNotificationModal: FC = withInAppNotification(
     ({ changeNotificationState, readMessage, notification, getRedirectTo }) => (
         <PassModal className="overflow-auto" size="small" open>
             <ModalTwoHeader
+                className="w-full"
                 hasClose={false}
                 title={notification.content.title}
                 titleClassName="text-center"
@@ -32,7 +33,7 @@ export const InAppNotificationModal: FC = withInAppNotification(
                                 alt=""
                             />
                         )}
-                        <span className="text-weak text-center">{notification.content.message}</span>
+                        <span className="text-weak text-center w-full">{notification.content.message}</span>
                     </div>
                 }
             />
