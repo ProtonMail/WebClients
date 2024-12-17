@@ -69,9 +69,6 @@
       "Add group": [
         "Legg til gruppe"
       ],
-      "Add new contact": [
-        "Legg til ny kontakt"
-      ],
       "Add new group": [
         "Legg til ny gruppe"
       ],
@@ -480,9 +477,6 @@
       "Export contact group": [
         "Eksporter kontaktgruppe"
       ],
-      "Export contacts": [
-        "Eksporter kontakter"
-      ],
       "External encryption": [
         "Ekstern kryptering"
       ],
@@ -512,6 +506,9 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "Få ${ BRAND_NAME } Duo"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Skaff deg ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
       ],
       "Get in touch": [
         "Ta kontakt"
@@ -756,6 +753,9 @@
       ],
       "More": [
         "Mer"
+      ],
+      "More actions": [
+        "Flere handlinger"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Flere detaljer om ${ ariaLabelTitle }"
@@ -1917,6 +1917,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Endre innstillinger for e-postadresse"
+      ],
+      "Continue": [
+        "Fortsett"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsett å bruke ${ MAIL_APP_NAME }."
       ],
@@ -3566,6 +3572,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA legger til et ekstra sikkerhetslag, og forhindrer uautorisert tilgang."
       ],
+      "Also included": [
+        "Også inkludert"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Slett automatisk søppelpost og meldinger i papirkurven, og lås opp flere premiumfunksjoner når du oppgraderer."
       ],
@@ -3595,6 +3604,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "For ubegrenset tilgang til skriveassistenten og mer, oppgrader til ${ BRAND_NAME } Duo."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Få ubegrensede aliaser og 500 GB lagringsplass med ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3666,6 +3678,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Lås opp ubegrensede mapper, etiketter og flere premiumfunksjoner når du oppgraderer."
       ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Oppgrader for å få ${ activatePmUser } som en kortere e-postadresse som er enklere å huske, i tillegg til den nåværende e-postadressen din."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Oppgrader kontoen din for å aktivere ${ PROTON_SENTINEL_NAME }, vår banebrytende AI-drevne sikkerhetsløsning med dedikert 24/7 ekspertstøtte."
       ],
@@ -3717,6 +3732,10 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } ny melding",
+        "${ notificationsToShow.length } nye meldinger"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Fra: ${ sender } - ${ Subject }"
       ]
@@ -5271,23 +5290,14 @@
       "Checklist complete": [
         "Sjekkliste fullført"
       ],
-      "Close": [
-        "Lukk"
-      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Fullfør denne sjekklisten innen ${ daysCount } for å doble lagringsplassen din gratis."
-      ],
-      "Congratulations, you completed all the steps!": [
-        "Gratulerer, du fullførte alle trinnene!"
       ],
       "Discover how our ${ strongText } protect you": [
         "Oppdag hvordan våre ${ strongText } beskytter deg"
       ],
       "Discover privacy features": [
         "Oppdag personvernfunksjoner"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "Doble den gratis lagringsplassen til 1 GB når du fullfører følgende:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Kryptering så sterk, bare du og tiltenkte mottakere kan se e-postene dine."
@@ -5316,26 +5326,14 @@
       "Learn more": [
         "Lær mer"
       ],
-      "Maybe later": [
-        "Kanskje senere"
-      ],
       "Nice! You've updated all services in this category.": [
         "Flott! Du har oppdatert alle tjenestene i denne kategorien."
-      ],
-      "Open checklist": [
-        "Åpne sjekkliste"
-      ],
-      "Open checklist and get free storage": [
-        "Åpne sjekkliste og få gratis lagringsplass"
       ],
       "Popular online services": [
         "Populære tjenester på nettet"
       ],
       "privacy features": [
         "personvernfunksjoner"
-      ],
-      "Protect and simplify your email": [
-        "Beskytt og forenkle e-posten din"
       ],
       "Protection from trackers": [
         "Beskyttelse mot sporere"
@@ -6000,9 +5998,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontotilgang begrenset på grunn av ubetalte fakturaer. Kontakt systemansvarlig."
       ],
-      "Account size": [
-        "Kontostørrelse"
-      ],
       "Account successfully updated": [
         "Konto oppdatert"
       ],
@@ -6012,8 +6007,8 @@
       "Add image URL": [
         "Legg til bildenettadresse"
       ],
-      "Additional options": [
-        "Ytterligere alternativer"
+      "Address copied to clipboard": [
+        "Adresse kopiert til utklippstavlen"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresseverifisering med klarerte nøkler er aktivert for denne adressen. For å kunne sende til denne adressen skal de offentlige nøklene, som kan brukes for å sende, først angis som klarerte."
@@ -6180,9 +6175,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Sjekker kontakt ${ progress } av ${ max }..."
       ],
-      "Clear app data": [
-        "Fjern appdata"
-      ],
       "Clear browser data": [
         "Tøm nettleserdata"
       ],
@@ -6244,18 +6236,11 @@
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Opprett en sikker sky for ${ n }-medlem",
-        "Opprett en sikker sky for ${ n }-medlemmer"
-      ],
       "Create in": [
         "Opprett i"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kreditt for den ubrukte delen av ditt forrige planabonnement"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og noen andre apper så vel som vCard 3.1 og 4.0 formater (UTF-8-koding) er støttet."
       ],
       "Current plan": [
         "Gjeldende plan"
@@ -6286,6 +6271,9 @@
       ],
       "Dedicated servers": [
         "Dedikerte tjenere"
+      ],
+      "default email address": [
+        "standard e-postadresse"
       ],
       "Default email application": [
         "Standardprogram for e-post"
@@ -6377,9 +6365,6 @@
       ],
       "Email copied to clipboard": [
         "E-post kopiert til utklippstavlen"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-posthotell for 10 egendefinerte e-postdomenenavn er gratis inkludert. Ytterligere domener kan legges til for ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
@@ -6710,6 +6695,9 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Meldinger i papirkurven eller søppelposten som har vært der lenger enn 30 dager, slettes automatisk."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Meldinger til alle e-postadressene dine vil gå til innboksen din."
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -6937,6 +6925,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Oppdatering av siden eller ${ link } løser automatisk de fleste problemer."
       ],
+      "Registering your subscription...": [
+        "Registrerer abonnementet ditt..."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Husk å oppdatere dette i passordbehandleren din eller der du oppbevarer konto- og påloggingsinformasjonen din."
       ],
@@ -7040,6 +7031,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved å sette opp PGP kan du sende ende-til-ende-krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
       ],
+      "Setting up your new address...": [
+        "Konfigurerer den nye adressen din ..."
+      ],
       "Shorten selection": [
         "Forkort utvalget"
       ],
@@ -7066,6 +7060,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne meldingen finnes ikke eller har løpt ut."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Begynn å dele det med kontakter og bruk det til nettjenester."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Lagringsfunksjoner støttes ikke i denne nettleseren, vi trenger denne støtten for å aktivere søk etter meldingsinnhold."
@@ -7105,9 +7102,6 @@
       ],
       "Text to display": [
         "Tekst som skal vises"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Programmet trenger å dekryptere kontaktene dine lokalt før de kan bli eksportert. På slutten av prosessen vil en VCF-fil bli generert, og du vil kunne laste den ned."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Dataene du har lagt inn i utkastet, kan ikke lagres hvis du forlater siden."
@@ -7198,6 +7192,9 @@
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Dette er ment som et skrivehjelpemiddel. Kontroller om foreslått tekst er nøyaktig. ${ learnMoreResult }."
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Dette er nå din ${ defaultEmailAddress } for å sende nye meldinger."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denne koblingen fører til et nettsted som kanskje prøver å stjele informasjonen din, for eksempel passord og kredittkortdetaljer."
       ],
@@ -7267,9 +7264,6 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Denne offentlige nøkkelen brukes automatisk til å kryptere e-post som sendes til denne adressen."
-      ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Dette fjerner alle data knyttet til denne appen, inkludert nedlastede meldinger. Appen starter på nytt, og du må logge på igjen for å bruke appen."
       ],
       "This sender's public key has not been trusted yet.": [
         "Denne avsenderens offentlige nøkkel er ikke klarert enda."
@@ -7456,9 +7450,6 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Vi har oppdaget at du har opprettet flere gratiskontoer, som er et brudd på ${ termsLink }."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
-        "Vi har planer som er utviklet for brukere som deg, som trenger mer enn én e-postadresse.\nHvis du vil fjerne begrensningene, kan du oppgradere til en betalt plan."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Vi trenger å autentisere betalingsmåten med banken din."
@@ -7783,11 +7774,6 @@
         "Vis bare"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Kompromittert"
@@ -8093,9 +8079,6 @@
       "Authenticator app": [
         "Autentiseringsapp"
       ],
-      "Automatically save contacts": [
-        "Lagre automatisk kontakter"
-      ],
       "BCC": [
         "Blindkopi"
       ],
@@ -8261,9 +8244,6 @@
       "Expires": [
         "Utløper"
       ],
-      "Export contacts": [
-        "Eksporter kontakter"
-      ],
       "Extended address": [
         "Utvidet adresse"
       ],
@@ -8308,9 +8288,6 @@
       ],
       "Import all messages": [
         "Importer alle meldinger"
-      ],
-      "Import contacts": [
-        "Importer kontakter"
       ],
       "Import interval": [
         "Importintervall"
@@ -9219,6 +9196,9 @@
       "Get ${ planTitle }": [
         "Skaff deg ${ planTitle }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Starter fra ${ priceMailPlus }"
       ],
@@ -9359,6 +9339,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-postadresser/aliaser"
+      ],
+      "10 more premium features": [
+        "10 flere premiumfunksjoner"
       ],
       "10-year file version history": [
         "10-år filversjonshistorikk"
@@ -9843,6 +9826,14 @@
         "Bytte plan?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Skaff deg Mail Plus for ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: sikre tidsplanen din med ende-til-ende kryptering. Inkluderer støtte for tilpassede kalendere, kalenderdeling og mer."
@@ -10234,20 +10225,8 @@
       "Auto-delete spam and trash": [
         "Auto-slett søppelpost og meldinger i papirkurven"
       ],
-      "Automatically forward emails": [
-        "Videresend e-post automatisk"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Blokkér e-postkommunikasjon fra svindlere permanent. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "Blokkér uønskede avsendere"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Fjern slettede e-poster og søppelpost-e-poster etter 30 dager."
-      ],
-      "Congratulations on choosing privacy": [
-        "Gratulerer med valg av personvern"
       ],
       "Dark Web Monitoring": [
         "Overvåking av det mørke nettet"
@@ -10258,17 +10237,8 @@
       "Download the desktop app and continue": [
         "Last ned skrivebordsappen og fortsett"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "Kryptering så sterk, bare du og tiltenkte mottakere kan se e-postene dine. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "Fast og fokusert"
-      ],
-      "For your eyes only": [
-        "Kun for dine øyne"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "Videresend Gmail-meldinger til innboksen."
       ],
       "Get notified if your password is compromised.": [
         "Bli varslet hvis passordet ditt er kompromittert."
@@ -10309,17 +10279,11 @@
       "Replay introduction": [
         "Spill av introduksjon på nytt"
       ],
-      "Skip": [
-        "Hopp over"
-      ],
       "Start using ${ BRAND_NAME }": [
         "Begynn å bruke ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Begynn å bruke den kortere, mer fengende versjonen av e-postadressen din."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "Vi stopper annonsører og datainnsamlere fra å profilere deg. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Velkommen til ${ MAIL_APP_NAME }"
@@ -10787,28 +10751,9 @@
         "Navn"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "vennligst ${ contactHref } vår salgsavdeling."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Velg antall IP-er som skal inkluderes i planen. Hver ekstra IP koster ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Skulle du behøve mer enn ${ maxIPs } IP, ",
-        "Skulle du behøve mer enn ${ maxIPs } IP-er, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontakt"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Velg antall brukere som skal inkluderes i planen. Hver ekstra bruker koster ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Skulle du trenge mer enn ${ maxUsers } brukerkonto, ${ contact } vår salgsavdeling.",
-        "Skulle du trenge flere enn ${ maxUsers } brukerkontoer, ${ contact } vår salgsavdeling."
       ]
     },
     "Price": {
@@ -11591,6 +11536,9 @@
       "Schedule send": [
         "Planlegg sending"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Dette er nå standardadressen din. Åpne rullegardinmenyen for å sende fra en annen adresse. "
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Slå på ${ DARK_WEB_MONITORING_NAME } for å bli varslet hvis dataene dine ble lekket fra en tredjepartstjeneste."
       ],
@@ -11602,6 +11550,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nå planlegge at meldingene skal sendes senere"
+      ],
+      "Your pm.me email is active": [
+        "Din pm.me-e-post er aktiv"
       ]
     },
     "sso": {
@@ -13368,6 +13319,9 @@
       "Unsubscribe request sent": [
         "Avmeldingsforespørsel sendt"
       ],
+      "Upgrade complete!": [
+        "Oppgradering fullført!"
+      ],
       "Verification error": [
         "Verifiseringsfeil"
       ],
@@ -13416,6 +13370,9 @@
       ],
       "Your free trial has ended": [
         "Din gratis prøveperiode har utløpt"
+      ],
+      "Your shorter address is now ready": [
+        "Den kortere adressen din er nå klar"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13501,9 +13458,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende-krypterte e-postmeldinger til denne e-posten."
-      ],
-      "You do not have any contacts to export": [
-        "Du har ingen kontakter å eksportere"
       ]
     },
     "tooltip": {
@@ -13676,6 +13630,9 @@
       ],
       "Missing alias suffix": [
         "Mangler aliasprefiks"
+      ],
+      "Name is required": [
+        "Navn kreves"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."

@@ -69,9 +69,6 @@
       "Add group": [
         "Προσθήκη ομάδας"
       ],
-      "Add new contact": [
-        "Προσθήκη νέας επαφής"
-      ],
       "Add new group": [
         "Προσθήκη νέας ομάδας"
       ],
@@ -480,9 +477,6 @@
       "Export contact group": [
         "Εξαγωγή ομάδας επαφών"
       ],
-      "Export contacts": [
-        "Εξαγωγή Επαφών"
-      ],
       "External encryption": [
         "Εξωτερική κρυπτογράφηση"
       ],
@@ -512,6 +506,9 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "Αποκτήστε το ${ BRAND_NAME } Duo"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Απκτήστε το ${ MAIL_SHORT_APP_NAME } Plus για ${ priceCoupon }"
       ],
       "Get in touch": [
         "Επικοινωνήστε"
@@ -1917,6 +1914,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Αλλαγή ρυθμίσεων διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Continue": [
+        "Συνέχεια"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
       ],
@@ -3566,6 +3569,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Το 2FA προσθέτει ένα επιπλέον επίπεδο ασφαλείας, αποτρέποντας τη μη εξουσιοδοτημένη πρόσβαση."
       ],
+      "Also included": [
+        "Περιλαμβάνονται επίσης"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Αυτόματη διαγραφή ανεπιθύμητων μηνυμάτων και απορριφθέντων μηνυμάτων και ξεκλείδωμα περισσότερων premium λειτουργιών κατά την αναβάθμιση."
       ],
@@ -3595,6 +3601,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Για απεριόριστη πρόσβαση στον βοηθό γραφής και πολλά άλλα, κάντε αναβάθμιση σε ${ BRAND_NAME } Duo."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3665,6 +3674,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Ξεκλειδώστε απεριόριστους φακέλους, ετικέτες και περισσότερες premium λειτουργίες κατά την αναβάθμιση."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Αναβαθμίστε για να λάβετε ${ activatePmUser } για μια συντομότερη, εύκολη στην απομνημόνευση διεύθυνση ηλεκτρονικού ταχυδρομείου εκτός από την τρέχουσα."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Αναβαθμίστε τον λογαριασμό σας για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }, την πρωτοποριακή λύση ασφάλειας που βασίζεται στην τεχνητή νοημοσύνη με αποκλειστική 24/7 εξειδικευμένη υποστήριξη."
@@ -5271,23 +5283,14 @@
       "Checklist complete": [
         "Η λίστα ελέγχου ολοκληρώθηκε"
       ],
-      "Close": [
-        "Κλείσιμο"
-      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Συμπληρώστε αυτήν τη λίστα ελέγχου εντός ${ daysCount } για να διπλασιάσετε τον αποθηκευτικό σας χώρο δωρεάν."
-      ],
-      "Congratulations, you completed all the steps!": [
-        "Συγχαρητήρια, ολοκληρώσατε όλα τα βήματα!"
       ],
       "Discover how our ${ strongText } protect you": [
         "Ανακαλύψτε πώς το ${ strongText } μας σας προστατεύει"
       ],
       "Discover privacy features": [
         "Ανακαλύψτε λειτουργίες απορρήτου"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "Διπλασιάστε τον δωρεάν χώρο αποθήκευσης σε 1 GB όταν ολοκληρώσετε τα εξής:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Τόσο ισχυρή κρυπτογράφηση, που μόνο εσείς και οι παραλήπτες για τους οποίους προορίζεστε μπορείτε να δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας."
@@ -5316,26 +5319,14 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
-      "Maybe later": [
-        "Ίσως αργότερα"
-      ],
       "Nice! You've updated all services in this category.": [
         "Ωραία! Έχετε ενημερώσει όλες τις υπηρεσίες αυτής της κατηγορίας."
-      ],
-      "Open checklist": [
-        "Άνοιγμα λίστας ελέγχου"
-      ],
-      "Open checklist and get free storage": [
-        "Ανοίξτε τη λίστα ελέγχου και αποκτήστε δωρεάν χώρο αποθήκευσης"
       ],
       "Popular online services": [
         "Δημοφιλείς ηλεκτρονικές υπηρεσίες"
       ],
       "privacy features": [
         "λειτουργίες απορρήτου"
-      ],
-      "Protect and simplify your email": [
-        "Προστατέψτε και απλοποιήστε το ηλεκτρονικό ταχυδρομείο σας"
       ],
       "Protection from trackers": [
         "Προστασία από ιχνηλάτες"
@@ -6000,9 +5991,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Η πρόσβαση σε λογαριασμό περιορίζεται λόγω απλήρωτων τιμολογίων. Επικοινωνήστε με το διαχειριστή σας."
       ],
-      "Account size": [
-        "Μέγεθος λογαριασμού"
-      ],
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
@@ -6012,8 +6000,8 @@
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
       ],
-      "Additional options": [
-        "Πρόσθετες επιλογές"
+      "Address copied to clipboard": [
+        "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
@@ -6180,9 +6168,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Έλεγχος επαφής ${ progress } από ${ max }..."
       ],
-      "Clear app data": [
-        "Εκκαθάριση δεδομένων εφαρμογής"
-      ],
       "Clear browser data": [
         "Εκκαθάριση δεδομένων περιηγητή"
       ],
@@ -6244,18 +6229,11 @@
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλος",
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλη"
-      ],
       "Create in": [
         "Δημιουργία σε"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πρόγραμμα"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
       ],
       "Current plan": [
         "Τρέχον πλάνο"
@@ -6286,6 +6264,9 @@
       ],
       "Dedicated servers": [
         "Αποκλειστικοί διακομιστές"
+      ],
+      "default email address": [
+        "προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Default email application": [
         "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
@@ -6377,9 +6358,6 @@
       ],
       "Email copied to clipboard": [
         "Το email αντιγράφηκε στο πρόχειρο"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Η φιλοξενία email για 10 προσαρμοσμένους τομείς email συμπεριλαμβάνεται δωρεάν. Επιπρόσθετοι τομείς μπορούν να προστεθούν έναντι ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
@@ -6710,6 +6688,9 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Μηνύματα που παραμένουν στα Διαγραμμένα ή στα Ενοχλητικά για περισσότερες από 30 ημέρες, θα εξαλείφονται αυτόματα και οριστικά."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Τα μηνύματα σε όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας θα μεταφερθούν στα εισερχόμενά σας."
+      ],
       "MM/YY": [
         "ΜΜ/ΧΧ"
       ],
@@ -6937,6 +6918,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
+      "Registering your subscription...": [
+        "Εγγραφή της συνδρομής σας..."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Θυμηθείτε να το ενημερώσετε στον διαχειριστή κωδικών πρόσβασής σας ή οπουδήποτε διατηρείτε τον λογαριασμό και τα στοιχεία σύνδεσής σας."
       ],
@@ -7040,6 +7024,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Η ρύθμιση PGP επιτρέπει την αποστολή διατερματικά κρυπτογραφημένων μηνυμάτων προς χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
       ],
+      "Setting up your new address...": [
+        "Ρύθμιση της νέας διεύθυνσής σας..."
+      ],
       "Shorten selection": [
         "Συντόμευση επιλογής"
       ],
@@ -7066,6 +7053,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Ο περιηγητής σας δεν υποστηρίζει δυνατότητες αποθήκευσης. Χρειαζόμαστε αυτήν την υποστήριξη για να ενεργοποιήσουμε την αναζήτηση εντός του περιεχομένου μηνυμάτων."
@@ -7105,9 +7095,6 @@
       ],
       "Text to display": [
         "Κείμενο για εμφάνιση"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Εάν αποχωρήσετε από τη σελίδα, τα δεδομένα που έχετε εισαγάγει στο πρόχειρο ενδέχεται να μην αποθηκευτούν."
@@ -7198,6 +7185,9 @@
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Αυτό προορίζεται ως βοήθημα γραφής. Ελέγξτε το προτεινόμενο κείμενο για ακρίβεια. ${ learnMoreResult }"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
       ],
@@ -7267,9 +7257,6 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Αυτό το δημόσιο κλειδί θα χρησιμοποιηθεί αυτόματα για την κρυπτογράφηση email που αποστέλλεται σε αυτήν τη διεύθυνση."
-      ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Αυτό καταργεί όλα τα δεδομένα που σχετίζονται με αυτήν την εφαρμογή, συμπεριλαμβανομένων των ληφθέντων μηνυμάτων. Η εφαρμογή θα επανεκκινηθεί και θα χρειαστεί να συνδεθείτε ξανά για να χρησιμοποιήσετε την εφαρμογή."
       ],
       "This sender's public key has not been trusted yet.": [
         "Το δημόσιο κλειδί αυτού του αποστολέα δεν έχει γίνει αξιόπιστο ακόμα."
@@ -7456,9 +7443,6 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Εντοπίσαμε τη δημιουργία πολλών δωρεάν λογαριασμών, η οποία παραβιάζει το ${ termsLink }."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
-        "Έχουμε πακέτα σχεδιασμένα ειδικά για χρήστες όπως εσείς που χρειάζονται περισσότερες από μία διευθύνσεις ηλεκτρονικού ταχυδρομείου.\nΓια να καταργήσετε τους περιορισμούς, μπορείτε να κάνετε αναβάθμιση σε πρόγραμμα επί πληρωμή."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Πρέπει να επαληθεύσουμε τον τρόπο πληρωμής σας με την τράπεζά σας."
@@ -7783,11 +7767,6 @@
         "Μόνο για ανάγνωση"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Εκτεθειμένο"
@@ -8093,9 +8072,6 @@
       "Authenticator app": [
         "Εφαρμογή επαλήθευσης"
       ],
-      "Automatically save contacts": [
-        "Αυτόματη αποθήκευση επαφών"
-      ],
       "BCC": [
         "Κρυφή Κοιν."
       ],
@@ -8261,9 +8237,6 @@
       "Expires": [
         "Λήγει"
       ],
-      "Export contacts": [
-        "Εξαγωγή Επαφών"
-      ],
       "Extended address": [
         "Εκτεταμένη διεύθυνση"
       ],
@@ -8308,9 +8281,6 @@
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
-      ],
-      "Import contacts": [
-        "Εισαγωγή Επαφών"
       ],
       "Import interval": [
         "Μεσοδιάστημα εισαγωγών"
@@ -9219,6 +9189,9 @@
       "Get ${ planTitle }": [
         "Αποκτήστε ${ planTitle }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Ξεκινώντας από ${ priceMailPlus }"
       ],
@@ -9359,6 +9332,9 @@
       ],
       "10 email addresses/aliases": [
         "10 διεύθυνσεις email/ψευδώνυμα"
+      ],
+      "10 more premium features": [
+        "10 περισσότερα premium χαρακτηριστικά"
       ],
       "10-year file version history": [
         "Ιστορικό εκδόσεων αρχείων 10 ετών"
@@ -9843,6 +9819,14 @@
         "Αλλαγή προγράμματος;"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Αποκτήστε το Mail Plus για ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Η μειωμένη τιμή του ${ priceCoupon } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ priceMailPlus }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
@@ -10234,20 +10218,8 @@
       "Auto-delete spam and trash": [
         "Αυτόματη διαγραφή ανεπιθύμητων και διαγεγραμμένων μηνυμάτων"
       ],
-      "Automatically forward emails": [
-        "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Αποκλείστε μόνιμα επικοινωνίες ηλεκτρονικού ταχυδρομείου από απατεώνες. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "Αποκλεισμός δυσάρεστων αποστολέων"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Διαγράψτε τα διαγραμμένα και ανεπιθύμητα μηνύματα ηλεκτρονικού ταχυδρομείου μετά από 30 ημέρες."
-      ],
-      "Congratulations on choosing privacy": [
-        "Συγχαρητήρια για την προτίμησή σας στην ιδωτικότητα"
       ],
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
@@ -10258,17 +10230,8 @@
       "Download the desktop app and continue": [
         "Κατεβάστε την εφαρμογή για υπολογιστές και συνεχίστε"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "Τόσο ισχυρή κρυπτογράφηση, που μόνο εσείς και οι παραλήπτες για τους οποίους προορίζεστε μπορείτε να δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "Σταθερό και εστιασμένο"
-      ],
-      "For your eyes only": [
-        "Μόνο για τα μάτια σας"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "Προωθήστε μηνύματα Gmail στα εισερχόμενά σας."
       ],
       "Get notified if your password is compromised.": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας έχει παραβιαστεί."
@@ -10309,17 +10272,11 @@
       "Replay introduction": [
         "Επανάληψη Εισαγωγής"
       ],
-      "Skip": [
-        "Παράλειψη"
-      ],
       "Start using ${ BRAND_NAME }": [
         "Αρχίστε να χρησιμοποιείτε το ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Ξεκινήστε να χρησιμοποιείτε τη συντομότερη, πιο πιασάρικη έκδοση της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "Σταματάμε τους διαφημιζόμενους και τους συλλέκτες δεδομένων από το να δημιουργούν το προφίλ σας. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Καλώς ήρθατε στο ${ MAIL_APP_NAME }"
@@ -10787,28 +10744,9 @@
         "Όνομα"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "παρακαλούμε ${ contactHref } την ομάδα Πωλήσεών μας."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Επιλέξτε τον αριθμό διευθύνσεων IP που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον διεύθυνση IP κοστίζει ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διεύθυνση IP, ",
-        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διευθύνσεις IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "επικοινωνήστε"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Επιλέξτε τον αριθμό χρηστών που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον χρήστης κοστίζει ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Εάν χρειαστείτε περισσότερους από ${ maxUsers } λογαριασμό χρήστη, παρακαλούμε ${ contact } με την ομάδα μας Πωλήσεων.",
-        "Εάν χρειαστείτε περισσότερους από ${ maxUsers } λογαριασμούς χρηστών, παρακαλούμε ${ contact } με την ομάδα μας Πωλήσεων."
       ]
     },
     "Price": {
@@ -11591,6 +11529,9 @@
       "Schedule send": [
         "Προγραμματισμός αποστολής"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Αυτή είναι τώρα η προεπιλεγμένη διεύθυνσή σας. Ανοίξτε το αναπτυσσόμενο μενού για αποστολή από διαφορετική διεύθυνση. "
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να λαμβάνετε ειδοποιήσεις εάν τα δεδομένα σας διέρρευσαν από υπηρεσία τρίτου μέρους."
       ],
@@ -11602,6 +11543,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Τώρα μπορείτε να χρονοδιαγραφήσετε την αποστολή των μηνυμάτων σας αργότερα"
+      ],
+      "Your pm.me email is active": [
+        "Το email pm.me σας είναι ενεργό"
       ]
     },
     "sso": {
@@ -13368,6 +13312,9 @@
       "Unsubscribe request sent": [
         "Απεστάλη το αίτημα κατάργησης εγγραφής"
       ],
+      "Upgrade complete!": [
+        "Η αναβάθμιση ολοκληρώθηκε!"
+      ],
       "Verification error": [
         "Σφάλμα επαλήθευσης"
       ],
@@ -13416,6 +13363,9 @@
       ],
       "Your free trial has ended": [
         "Η δωρεάν δοκιμαστική περίοδός σας έχει λήξει."
+      ],
+      "Your shorter address is now ready": [
+        "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13501,9 +13451,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"
-      ],
-      "You do not have any contacts to export": [
-        "Δεν έχετε επαφές προς εξαγωγή"
       ]
     },
     "tooltip": {
@@ -13676,6 +13623,9 @@
       ],
       "Missing alias suffix": [
         "Λείπει το επίθημα ψευδωνύμου"
+      ],
+      "Name is required": [
+        "Απαιτείται όνομα"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"

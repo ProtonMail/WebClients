@@ -69,9 +69,6 @@
       "Add group": [
         "Aggiungi un gruppo"
       ],
-      "Add new contact": [
-        "Aggiungi nuovo contatto"
-      ],
       "Add new group": [
         "Aggiungi un nuovo gruppo"
       ],
@@ -480,9 +477,6 @@
       "Export contact group": [
         "Esporta gruppo di contatti"
       ],
-      "Export contacts": [
-        "Esporta i contatti"
-      ],
       "External encryption": [
         "Crittografia esterna"
       ],
@@ -512,6 +506,9 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "Ottieni ${ BRAND_NAME } Duo"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Ottieni ${ MAIL_SHORT_APP_NAME } Plus per ${ priceCoupon }"
       ],
       "Get in touch": [
         "Mettiti in contatto"
@@ -1917,6 +1914,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Modifica le impostazioni dell'indirizzo email"
+      ],
+      "Continue": [
+        "Continua"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua a usare ${ MAIL_APP_NAME }."
       ],
@@ -3566,6 +3569,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA aggiunge un ulteriore livello di sicurezza, impedendo l'accesso non autorizzato."
       ],
+      "Also included": [
+        "Incluso anche"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Elimina automaticamente i messaggi spam e quelli nel cestino e sblocca altre funzionalità premium effettuando l'upgrade."
       ],
@@ -3595,6 +3601,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Per accesso illimitato all'assistente alla scrittura e altro ancora, effettua l'upgrade a ${ BRAND_NAME } Duo."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3666,6 +3675,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Sblocca cartelle illimitate, etichette e altre funzionalità premium quando effettui l'upgrade."
       ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Esegui l'upgrade per ottenere ${ activatePmUser } per un indirizzo email più breve e facile da ricordare oltre a quello attuale."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Effettua l'upgrade del tuo account per attivare ${ PROTON_SENTINEL_NAME }, la nostra soluzione di sicurezza all'avanguardia basata sull'intelligenza artificiale, con assistenza dedicata dai nostri esperti 24 ore su 24, 7 giorni su 7."
       ],
@@ -3717,6 +3729,10 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } nuovo messaggio",
+        "${ notificationsToShow.length } nuovi messaggi"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Da: ${ sender } - ${ Subject }"
       ]
@@ -5271,23 +5287,14 @@
       "Checklist complete": [
         "Checklist completata"
       ],
-      "Close": [
-        "Chiudi"
-      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Completa questo elenco di controllo entro ${ daysCount } per raddoppiare gratuitamente il tuo spazio di archiviazione."
-      ],
-      "Congratulations, you completed all the steps!": [
-        "Congratulazioni, hai completato tutti i passaggi!"
       ],
       "Discover how our ${ strongText } protect you": [
         "Scopri come la nostra ${ strongText } ti protegge"
       ],
       "Discover privacy features": [
         "Scopri le funzionalità per la privacy"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "Raddoppia lo spazio di archiviazione gratuito a 1 GB completando quanto segue:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Una crittografia così resistente che solo tu e i destinatari previsti potete visualizzare le email."
@@ -5316,26 +5323,14 @@
       "Learn more": [
         "Scopri di più"
       ],
-      "Maybe later": [
-        "Forse più tardi"
-      ],
       "Nice! You've updated all services in this category.": [
         "Ottimo! Hai aggiornato tutti i servizi in questa categoria."
-      ],
-      "Open checklist": [
-        "Apri checklist"
-      ],
-      "Open checklist and get free storage": [
-        "Apri la checklist e ottieni spazio di archiviazione gratuito"
       ],
       "Popular online services": [
         "Servizi online popolari"
       ],
       "privacy features": [
         "funzionalità per la privacy"
-      ],
-      "Protect and simplify your email": [
-        "Proteggi e semplifica la tua email"
       ],
       "Protection from trackers": [
         "Protezione dai tracker"
@@ -6000,9 +5995,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "A causa di fatture non pagate, l'accesso all'account è stato limitato. Per favore, contatta il tuo amministratore."
       ],
-      "Account size": [
-        "Dimensione dell'account"
-      ],
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
@@ -6012,8 +6004,8 @@
       "Add image URL": [
         "Aggiungi URL immagine"
       ],
-      "Additional options": [
-        "Opzioni aggiuntive"
+      "Address copied to clipboard": [
+        "Indirizzo copiato negli appunti"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verifica dell'indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
@@ -6180,9 +6172,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Controllo contatto ${ progress } di ${ max }..."
       ],
-      "Clear app data": [
-        "Cancella i dati dell'app"
-      ],
       "Clear browser data": [
         "Cancella i dati del browser"
       ],
@@ -6244,18 +6233,11 @@
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Crea un cloud sicuro per ${ n } membro",
-        "Crea un cloud sicuro per ${ n } membri"
-      ],
       "Create in": [
         "Crea in"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Sono supportati i file CSV da Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alcune altre app, così come i formati vCard 3.1 e 4.0 (codifica UTF-8)."
       ],
       "Current plan": [
         "Piano attuale"
@@ -6286,6 +6268,9 @@
       ],
       "Dedicated servers": [
         "Server dedicati"
+      ],
+      "default email address": [
+        "indirizzo email predefinito"
       ],
       "Default email application": [
         "Applicazione email predefinita"
@@ -6377,9 +6362,6 @@
       ],
       "Email copied to clipboard": [
         "Email copiata negli appunti"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "L'hosting di posta elettronica per 10 nomi di dominio di posta elettronica personalizzati è incluso gratuitamente. È possibile aggiungere ulteriori domini per ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hosting di posta elettronica è disponibile solo per i domini che già possiedi. La registrazione del dominio non è attualmente disponibile tramite ${ BRAND_NAME }. Puoi ospitare email per domini registrati su qualsiasi registrar di domini."
@@ -6710,6 +6692,9 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Gli elementi nella cartella Cestino o Spam saranno eliminati automaticamente dopo 30 giorni."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "I messaggi a tutti i tuoi indirizzi email verranno inviati alla tua casella di posta."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -6937,6 +6922,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
+      "Registering your subscription...": [
+        "Registrazione dell'abbonamento..."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Ricordati di aggiornarlo nel tuo gestore di password o dove conservi il tuo account e le informazioni di accesso."
       ],
@@ -7040,6 +7028,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configurazione di PGP consente di inviare email crittografate end-to-end con un utente non-${ BRAND_NAME } che utilizza un servizio compatibile PGP."
       ],
+      "Setting up your new address...": [
+        "Configurazione del tuo nuovo indirizzo..."
+      ],
       "Shorten selection": [
         "Accorcia la selezione"
       ],
@@ -7066,6 +7057,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Siamo spiacenti, questo messaggio non esiste o è già scaduto."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Le funzionalità di archiviazione non sono supportate in questo browser, abbiamo bisogno di questo supporto per abilitare la ricerca del contenuto dei messaggi."
@@ -7105,9 +7099,6 @@
       ],
       "Text to display": [
         "Testo da visualizzare"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'applicazione deve decrittografare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo verrà generato un file VCF che potrai scaricare."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "I dati inseriti nella bozza non possono essere salvati se si lascia la pagina."
@@ -7198,6 +7189,9 @@
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Si tratta di un aiuto alla scrittura. Controlla l'accuratezza del testo suggerito. ${ learnMoreResult }"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Questo ora è il tuo ${ defaultEmailAddress } per l'invio di nuovi messaggi."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Questo link conduce a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
       ],
@@ -7267,9 +7261,6 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Questa chiave pubblica sarà automaticamente usata per crittografare l'email inviata a questo indirizzo."
-      ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Questo rimuove tutti i dati associati con questa app, inclusi i messaggi scaricati. L'app verrà riavviata e dovrai effettuare nuovamente l'accesso per utilizzare l'app."
       ],
       "This sender's public key has not been trusted yet.": [
         "La chiave pubblica di questo mittente non è ancora stata considerata attendibile."
@@ -7456,9 +7447,6 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Abbiamo rilevato la creazione di più account gratuiti, il che viola i nostri ${ termsLink }."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
-        "Abbiamo piani progettati appositamente per utenti come te che necessitano di più di un indirizzo email.\nPer rimuovere le restrizioni, puoi passare a un piano a pagamento."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Abbiamo bisogno di verificare il tuo metodo di pagamento con la tua banca."
@@ -7783,11 +7771,6 @@
         "Visualizza soltanto"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Assistente basato sull'intelligenza artificiale per aiutarti a creare email migliori, in modo rapido e semplice."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Compromessa"
@@ -8096,9 +8079,6 @@
       "Authenticator app": [
         "App di autenticazione"
       ],
-      "Automatically save contacts": [
-        "Salvataggio automatico dei contatti"
-      ],
       "BCC": [
         "CCN"
       ],
@@ -8264,9 +8244,6 @@
       "Expires": [
         "Scadenza"
       ],
-      "Export contacts": [
-        "Esporta i contatti"
-      ],
       "Extended address": [
         "Indirizzo completo"
       ],
@@ -8311,9 +8288,6 @@
       ],
       "Import all messages": [
         "Importa tutti i messaggi"
-      ],
-      "Import contacts": [
-        "Importa i contatti"
       ],
       "Import interval": [
         "Intervallo di importazione"
@@ -9222,6 +9196,9 @@
       "Get ${ planTitle }": [
         "Passa a ${ planTitle }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Inizia per ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "A partire da ${ priceMailPlus }"
       ],
@@ -9362,6 +9339,9 @@
       ],
       "10 email addresses/aliases": [
         "10 indirizzi email/alias"
+      ],
+      "10 more premium features": [
+        "Altre 10 funzionalità premium"
       ],
       "10-year file version history": [
         "Cronologia delle versioni dei file per 10 anni"
@@ -9847,6 +9827,12 @@
       ]
     },
     "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Ottieni Mail Plus per ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceMailPlus }. Puoi annullare in qualsiasi momento."
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -10242,20 +10228,8 @@
       "Auto-delete spam and trash": [
         "Eliminazione automatica del contenuto dallo spam e dal cestino"
       ],
-      "Automatically forward emails": [
-        "Inoltra automaticamente le email"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Blocca definitivamente le comunicazioni email dai truffatori. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "Blocca i mittenti non desiderati"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Elimina le email cancellate e di spam dopo 30 giorni."
-      ],
-      "Congratulations on choosing privacy": [
-        "Congratulazioni per aver scelto la privacy"
       ],
       "Dark Web Monitoring": [
         "Monitoraggio del dark web"
@@ -10266,17 +10240,8 @@
       "Download the desktop app and continue": [
         "Scarica l'app desktop e continua"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "Una crittografia così resistente che non consente a nessuno oltre a te e i destinatari previsti di visualizzare le tue email. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "Fisso e concentrato"
-      ],
-      "For your eyes only": [
-        "Solo per i tuoi occhi"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "Inoltra i messaggi di Gmail alla tua posta in arrivo."
       ],
       "Get notified if your password is compromised.": [
         "Ricevi una notifica se la tua password è compromessa."
@@ -10317,17 +10282,11 @@
       "Replay introduction": [
         "Riesegui introduzione"
       ],
-      "Skip": [
-        "Salta"
-      ],
       "Start using ${ BRAND_NAME }": [
         "Inizia a utilizzare ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Inizia a utilizzare la versione più breve e accattivante del tuo indirizzo email."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "Impediamo agli inserzionisti e ai raccoglitori di dati di ottenere informazioni su di te. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Ti diamo il benvenuto in ${ MAIL_APP_NAME }"
@@ -10795,28 +10754,9 @@
         "Nome"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } il nostro team di vendita."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Seleziona il numero di IP da includere nel piano. Ogni IP aggiuntivo costa ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Se hai bisogno di più di ${ maxIPs } IP, ",
-        "Se hai bisogno di più di ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contatto"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Seleziona il numero di utenti da includere nel tuo piano. Ogni utente aggiuntivo costa ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Se hai bisogno di più di ${ maxUsers } account, per favore ${ contact } il nostro team di vendita.",
-        "Se hai bisogno di più di ${ maxUsers } account, per favore ${ contact } il nostro team di vendita."
       ]
     },
     "Price": {
@@ -11599,6 +11539,9 @@
       "Schedule send": [
         "Programma l'invio"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Questo ora è il tuo indirizzo predefinito. Apri il menu a cascata per inviare da un indirizzo diverso. "
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Attiva ${ DARK_WEB_MONITORING_NAME } per ricevere una notifica qualora i tuoi dati vengano resi pubblici da un servizio di terze parti."
       ],
@@ -11610,6 +11553,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Ora puoi programmare i tuoi messaggi da inviare più tardi"
+      ],
+      "Your pm.me email is active": [
+        "La tua email pm.me è attiva"
       ]
     },
     "sso": {
@@ -13376,6 +13322,9 @@
       "Unsubscribe request sent": [
         "Richiesta di disiscrizione inviata"
       ],
+      "Upgrade complete!": [
+        "Aggiornamento completato!"
+      ],
       "Verification error": [
         "Errore di verifica"
       ],
@@ -13424,6 +13373,9 @@
       ],
       "Your free trial has ended": [
         "La tua prova gratuita è terminata"
+      ],
+      "Your shorter address is now ready": [
+        "Il tuo indirizzo breve ora è pronto"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13509,9 +13461,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"
-      ],
-      "You do not have any contacts to export": [
-        "Non hai alcun contatto da esportare"
       ]
     },
     "tooltip": {
@@ -13684,6 +13633,9 @@
       ],
       "Missing alias suffix": [
         "Suffisso alias mancante"
+      ],
+      "Name is required": [
+        "Nome obbligatorio"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Sono consentiti solo caratteri alfanumerici, punti, trattini e trattini bassi"
