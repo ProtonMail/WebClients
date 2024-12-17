@@ -14,6 +14,7 @@ type Props = {
     signatureEmail: string | undefined;
     isFile: boolean;
     name: string;
+    isAnonymous?: boolean;
     corruptedLink?: boolean;
     className?: string;
 };
@@ -23,6 +24,7 @@ export default function SignatureAlert({
     signatureIssues,
     signatureEmail,
     signatureNetworkError,
+    isAnonymous,
     corruptedLink,
     className,
     ...props
@@ -52,7 +54,7 @@ export default function SignatureAlert({
         );
     }
 
-    const validAnonymousSignature = !!signatureIssues && !signatureEmail && hasValidAnonymousSignature(signatureIssues);
+    const validAnonymousSignature = !!signatureIssues && isAnonymous && hasValidAnonymousSignature(signatureIssues);
 
     return (
         <Alert type={signatureIssues && !validAnonymousSignature ? 'error' : 'success'} className={className}>
