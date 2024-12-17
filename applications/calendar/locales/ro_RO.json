@@ -68,9 +68,6 @@
       "Add group": [
         "Adăugare grup"
       ],
-      "Add new contact": [
-        "Adăugare contact"
-      ],
       "Add new group": [
         "Adăugare grup"
       ],
@@ -308,14 +305,14 @@
       "Export contact group": [
         "Exportare grup de contacte"
       ],
-      "Export contacts": [
-        "Exportare contacte"
-      ],
       "Forgot password?": [
         "Ați uitat parola?"
       ],
       "Forward as attachment": [
         "Redirecționare ca atașament"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Luați ${ MAIL_SHORT_APP_NAME } Plus cu ${ priceCoupon }"
       ],
       "Get in touch": [
         "Contactați-ne"
@@ -1257,6 +1254,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Modificare setări adresă de e-mail"
+      ],
+      "Continue": [
+        "Continuare"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
       ],
@@ -2618,12 +2621,20 @@
         "Factură restantă"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "folosiți asistentul de importare Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul printr-o monitorizare dedicată 24/7 a activităților suspecte, inclusiv intervenția specialiștilor în securitate."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A2F adaugă un nivel de securitate suplimentar, prevenind accesul neautorizat."
+      ],
+      "Also included": [
+        "De asemenea, inclus"
       ],
       "Availability unknown": [
         "Disponibilitate necunoscută"
@@ -2648,6 +2659,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obțineți aliasuri nelimitate și 500 GIB spațiu de stocare cu ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -2705,11 +2719,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "folosiți asistentul de importare Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4518,9 +4527,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Accesul la cont a fost restricționat din cauza facturilor neplătite. Contactați-vă administratorul."
       ],
-      "Account size": [
-        "Mărime cont"
-      ],
       "Account successfully updated": [
         "Cont actualizat cu succes"
       ],
@@ -4530,8 +4536,8 @@
       "Added and removed participants will be notified.": [
         "Participanții adăugați şi eliminaţi vor fi notificați."
       ],
-      "Additional options": [
-        "Opțiuni adiționale"
+      "Address copied to clipboard": [
+        "Adresa a fost copiată în memorie."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
@@ -4670,19 +4676,11 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Creați un cont cloud securizat pentru ${ n } membru",
-        "Creați un cont cloud securizat pentru ${ n } membri",
-        "Creați un cont cloud securizat pentru ${ n } de membri"
-      ],
       "Create in": [
         "Creare în"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Credit pentru porțiunea neutilizată din abonamentul planului anterior"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
       ],
       "Current plan": [
         "Plan actual"
@@ -4710,6 +4708,9 @@
       ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "default email address": [
+        "adresa de e-mail implicită"
       ],
       "Deleting event...": [
         "Se șterge evenimentul...",
@@ -4754,9 +4755,6 @@
       ],
       "email": [
         "e-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Gazduirea de e-mail pentru 10 nume de domeniu de e-mail personale este inclusă gratuit. Domenii suplimentare pot fi adăugate pentru ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
@@ -4936,6 +4934,9 @@
       "Merged": [
         "Îmbinat"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Mesajele adresate tuturor adreselor de e-mail personale vor fi livrate în contul de e-mail."
+      ],
       "MM/YY": [
         "LL/AA"
       ],
@@ -5075,6 +5076,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
+      "Registering your subscription...": [
+        "Se înregistrează abonamentul..."
+      ],
       "Removed participants will be notified.": [
         "Participanţii eliminaţi vor fi notificaţi."
       ],
@@ -5104,11 +5108,17 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele bilateral cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
       ],
+      "Setting up your new address...": [
+        "Vi se configurează noile adrese..."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Unele dintre răspunsurile dvs. la evenimentele actualizate anterior de către organizator vor fi pierdute."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Începeți să o partajați contactelor personale și folosiți-l pentru serviciile online."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
@@ -5124,9 +5134,6 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informațiile expuse au fost divulgate de la un serviciu terță parte. Informațiile contului ${ BRAND_NAME } rămân securizate și criptate. ${ learnMoreLink }"
@@ -5178,6 +5185,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Acest eveniment a fost actualizat. Organizatorul nu va fi notificat că refuzați invitația deoarece nu puteți trimite e-mailuri de la adresa invitată. Doriți totuși să ștergeți acest eveniment?"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură web duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
@@ -5551,11 +5561,6 @@
         "Puteți repartaja calendarele din setări."
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
-      ]
-    },
     "Information about why calendar event cannot be saved": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Este permis cel mult ${ maxAttendees } participant per invitație.",
@@ -5645,9 +5650,6 @@
       ],
       "Authenticator app": [
         "Aplicație Authenticator"
-      ],
-      "Automatically save contacts": [
-        "Salvare automată contacte"
       ],
       "Beta Access": [
         "Acces la Beta"
@@ -5796,9 +5798,6 @@
       "Expires": [
         "Expirare"
       ],
-      "Export contacts": [
-        "Exportare contacte"
-      ],
       "Extended address": [
         "Adresa extinsă"
       ],
@@ -5828,9 +5827,6 @@
       ],
       "Import all messages": [
         "Importare toate mesajele"
-      ],
-      "Import contacts": [
-        "Importare contacte"
       ],
       "Import interval": [
         "Interval de importare"
@@ -6534,6 +6530,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Începând de la ${ priceMailPlus }"
       ],
@@ -6691,6 +6690,9 @@
       ],
       "10 email addresses/aliases": [
         "10 adrese de e-mail/aliasuri"
+      ],
+      "10 more premium features": [
+        "Încă 10 funcții premium"
       ],
       "10-year file version history": [
         "10 ani istoric versiuni fișiere"
@@ -7180,6 +7182,14 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Luați Mail Plus cu ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceMailPlus }. Puteți anula oricând."
       ]
     },
     "new_plans: tooltip": {
@@ -8104,30 +8114,9 @@
         "(Fără nume)"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "vă rugăm să ${ contactHref } echipa noastră de vânzări."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Selectați numărul de adrese IP de inclus în plan. Fiecare Adresă IP adițională costă ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Dacă aveți nevoie de mai mult de ${ maxIPs } adresă IP, ",
-        "Dacă aveți nevoie de mai mult de ${ maxIPs } adrese IP, ",
-        "Dacă aveți nevoie de mai mult de ${ maxIPs } de adrese IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contactați"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Selectați numărul de utilizatori de inclus în plan. Fiecare utilizator în plus costă ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Dacă aveți nevoie de mai mult de un utilizator în cont, ${ contact } echipa noastră de vânzări.",
-        "Dacă aveți nevoie de mai mult de ${ maxUsers } utilizatori în cont, ${ contact } echipa noastră de vânzări.",
-        "Dacă aveți nevoie de mai mult de ${ maxUsers } de utilizatori în cont, ${ contact } echipa noastră de vânzări."
       ]
     },
     "Price": {
@@ -10119,6 +10108,9 @@
       "Update recurring event": [
         "Actualizare eveniment recurent"
       ],
+      "Upgrade complete!": [
+        "Modificare finalizată!"
+      ],
       "Verification failed": [
         "Verificarea a eșuat"
       ],
@@ -10160,6 +10152,9 @@
       ],
       "Your exposed information": [
         "Informațiile expuse"
+      ],
+      "Your shorter address is now ready": [
+        "Adresa scurtă este pregătită acum"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10254,9 +10249,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
-      ],
-      "You do not have any contacts to export": [
-        "Nu aveți persoane de contact pentru exportare"
       ]
     },
     "tooltip": {
@@ -10416,6 +10408,9 @@
       ],
       "Missing alias suffix": [
         "Lipsește sufixul aliasului."
+      ],
+      "Name is required": [
+        "Numele este obligatoriu."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."
