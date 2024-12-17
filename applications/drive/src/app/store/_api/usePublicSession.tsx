@@ -58,7 +58,7 @@ function usePublicSessionProvider() {
             return undefined;
         }
         const defaultShare = await getDefaultShare();
-        return getShareCreatorKeys(abortSignal, defaultShare.shareId);
+        return getShareCreatorKeys(abortSignal, defaultShare);
     };
 
     const initHandshake = async (token: string) => {
