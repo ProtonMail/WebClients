@@ -296,7 +296,10 @@ app.addListener('web-contents-created', (_, contents) => {
         const url = new URL(href);
 
         // Open a new window for SSO
-        if (url.origin === config.SSO_URL) return { action: 'allow' };
+        if (url.origin === config.SSO_URL && url.pathname.match(/(\/api)?\/auth\/sso/)) {
+            logger.debug(`[setWindowOpenHandler] opening url in window: ${href}`);
+            return { action: 'allow' };
+        }
 
         // Shell out to the OS handler for http(s) and mailto
         if (['http:', 'https:', 'mailto:'].includes(url.protocol)) shell.openExternal(href).catch(noop);
