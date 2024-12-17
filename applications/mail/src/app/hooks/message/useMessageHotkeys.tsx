@@ -12,6 +12,7 @@ import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';
 
+import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import {
     MESSAGE_FILTER_DROPDOWN_ID,
     MESSAGE_FOLDER_DROPDOWN_ID,
@@ -49,6 +50,7 @@ interface MessageHotkeysContext {
     conversationMode: boolean;
     mailSettings: MailSettings;
     messageRef: React.RefObject<HTMLElement>;
+    currentFolder: string;
 }
 
 interface MessageHotkeysHandlers {
@@ -72,6 +74,7 @@ export const useMessageHotkeys = (
         conversationMode,
         mailSettings,
         messageRef,
+        currentFolder,
     }: MessageHotkeysContext,
     {
         hasFocus,
@@ -114,6 +117,8 @@ export const useMessageHotkeys = (
             sourceLabelID: labelID,
             destinationLabelID: LabelID,
             folderName,
+            sourceAction: SOURCE_ACTION.SHORTCUTS,
+            currentFolder,
         });
     };
 
@@ -280,6 +285,8 @@ export const useMessageHotkeys = (
                         elements: [message.data as Element],
                         labelID,
                         status: MARK_AS_STATUS.UNREAD,
+                        sourceAction: SOURCE_ACTION.SHORTCUTS,
+                        currentFolder,
                     });
                     await call();
                 }
@@ -290,7 +297,12 @@ export const useMessageHotkeys = (
             async (e) => {
                 if (hotkeysEnabledAndMessageReady && message.data) {
                     e.stopPropagation();
-                    await star([message.data as Element], !isStarred(message.data));
+                    await star(
+                        [message.data as Element],
+                        !isStarred(message.data),
+                        SOURCE_ACTION.SHORTCUTS,
+                        currentFolder
+                    );
                 }
             },
         ],

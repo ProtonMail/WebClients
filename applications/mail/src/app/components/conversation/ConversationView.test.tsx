@@ -47,6 +47,7 @@ describe('ConversationView', () => {
         elementIDs: ['conversationID'],
         loadingElements: false,
         conversationMode: true,
+        currentFolder: 'INBOX',
     };
     const conversation = {
         ID: props.conversationID,

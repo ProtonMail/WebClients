@@ -3,10 +3,12 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton, useActiveBreakpoint, useElementBreakpoints } from '@proton/components';
+import { useFolders, useLabels } from '@proton/mail';
 import clsx from '@proton/utils/clsx';
 
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
+import { folderLocation } from '../list/useListTelemetry';
 import LabelsAndFolders from './LabelsAndFolders';
 import MoreActions from './MoreActions';
 import MoreDropdown from './MoreDropdown';
@@ -54,6 +56,11 @@ const ToolbarHeaderMessageNarrow = ({
     // We override this value because the "more" dropdown is not displayed in the toolbar otherwise
     const isTiny = localIsNarrow;
 
+    const [labels] = useLabels();
+    const [folders] = useFolders();
+
+    const currentFolder = folderLocation(labelID, labels, folders);
+
     const viewportBreakpoint = useActiveBreakpoint();
 
     return (
@@ -94,7 +101,14 @@ const ToolbarHeaderMessageNarrow = ({
                         />
                     ) : null}
 
-                    {!isTiny ? <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} /> : null}
+                    {!isTiny ? (
+                        <SnoozeToolbarDropdown
+                            labelID={labelID}
+                            selectedIDs={selectedIDs}
+                            labels={labels}
+                            folders={folders}
+                        />
+                    ) : null}
 
                     <MoreDropdown
                         labelID={labelID}
@@ -108,6 +122,7 @@ const ToolbarHeaderMessageNarrow = ({
                         onDelete={onDelete}
                         breakpoints={breakpoints}
                         onCheckAll={onCheckAll}
+                        currentFolder={currentFolder}
                     />
 
                     <MoreActions selectedIDs={selectedIDs} />
