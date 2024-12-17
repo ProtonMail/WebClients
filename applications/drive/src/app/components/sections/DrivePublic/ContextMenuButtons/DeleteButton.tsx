@@ -6,18 +6,13 @@ import usePublicToken from '../../../../hooks/drive/usePublicToken';
 import { type DecryptedLink, usePublicActions } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
 
-interface DecryptedLinkWithToken extends DecryptedLink {
-    authorizationToken?: string;
-}
-
 interface Props {
-    selectedLinks: DecryptedLinkWithToken[];
-    anonymousRemoval?: boolean;
+    links: DecryptedLink[];
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
     close: () => void;
 }
 
-export const DeleteButton = ({ close, selectedLinks, anonymousRemoval = false, showConfirmModal }: Props) => {
+export const DeleteButton = ({ close, links, showConfirmModal }: Props) => {
     const { token } = usePublicToken();
     const { deleteLinks } = usePublicActions();
     return (
@@ -28,9 +23,8 @@ export const DeleteButton = ({ close, selectedLinks, anonymousRemoval = false, s
             action={() =>
                 deleteLinks(new AbortController().signal, {
                     token,
-                    links: selectedLinks,
+                    links,
                     showConfirmModal,
-                    anonymousRemoval,
                 })
             }
             close={close}
