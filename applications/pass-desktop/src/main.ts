@@ -1,5 +1,4 @@
 import { BrowserWindow, Menu, type Session, Tray, app, nativeImage, nativeTheme, session, shell } from 'electron';
-import logger from 'electron-log/main';
 import { join } from 'path';
 
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
@@ -21,6 +20,7 @@ import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
 import type { PassElectronContext } from './types';
 import { SourceType, updateElectronApp } from './update';
+import logger from './utils/logger';
 import { isMac, isProdEnv, isWindows } from './utils/platform';
 
 const ctx: PassElectronContext = { window: null, quitting: false };
