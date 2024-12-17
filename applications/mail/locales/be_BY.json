@@ -69,9 +69,6 @@
       "Add group": [
         "Дадаць групу"
       ],
-      "Add new contact": [
-        "Дадаць новы кантакт"
-      ],
       "Add new group": [
         "Дадаць новую групу"
       ],
@@ -486,9 +483,6 @@
       "Export contact group": [
         "Экспартаваць групу кантактаў"
       ],
-      "Export contacts": [
-        "Экспартаваць кантакты"
-      ],
       "External encryption": [
         "Знешняе шыфраванне"
       ],
@@ -518,6 +512,9 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "Атрымаць ${ BRAND_NAME } Duo"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Атрымайце ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
       ],
       "Get in touch": [
         "Звязацца з намі"
@@ -1934,6 +1931,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Змяніць налады адраса электроннай пошты"
+      ],
+      "Continue": [
+        "Працягнуць"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
       ],
@@ -3595,6 +3598,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
       ],
+      "Also included": [
+        "Таксама ўключана"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Аўтаматычнае выдаленне спама і паведамленняў, якія былі перамешчаны ў сметніцу, а таксама разблакіроўка яшчэ большай колькасці прэміяльных функцый пасля паляпшэння тарыфнага плана."
       ],
@@ -3624,6 +3630,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Палепшыце да ${ BRAND_NAME } Duo, каб атрымаць безлімітны доступ да памочніка ў напісанні і іншыя функцыі."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Атрымайце неабмежаваную колькасць псеўданімаў і сховішча аб'ёмам у 500 ГБ з тарыфным планам ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3696,6 +3705,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Разблакіруйце неабмежаваную колькасць папак, метак і іншыя прэміяльныя функцыі пасля паляпшэння."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Абнавіце падпіску, каб атрымаць больш кароткі і запамінальны адрас электроннай пошты ${ activatePmUser } у дадатак да вашага бягучага."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Палепшыце свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }, наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту з падтрымкай ад экспертаў 24/7."
@@ -5346,23 +5358,14 @@
       "Checklist complete": [
         "Кантрольны спіс завершаны"
       ],
-      "Close": [
-        "Закрыць"
-      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Завяршыце гэты кантрольны спіс за ${ daysCount }, каб падвоіць сваё сховішча бясплатна."
-      ],
-      "Congratulations, you completed all the steps!": [
-        "Віншуем, вы выканалі ўсе крокі!"
       ],
       "Discover how our ${ strongText } protect you": [
         "Даведайцеся, як нашы ${ strongText } вас абараняюць"
       ],
       "Discover privacy features": [
         "Пазнаёмцеся з функцыямі прыватнасці"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "Падвойце бясплатнае сховішча да 1 ГБ, выканаўшы наступныя дзеянні:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "У нас настолькі надзейнае шыфраванне, што толькі вы і прызначаныя атрымальнікі змогуць прачытаць вашы лісты."
@@ -5391,26 +5394,14 @@
       "Learn more": [
         "Даведацца больш"
       ],
-      "Maybe later": [
-        "Магчыма пазней"
-      ],
       "Nice! You've updated all services in this category.": [
         "Цудоўна! Вы абнавілі ўсе сэрвісы ў гэтай катэгорыі."
-      ],
-      "Open checklist": [
-        "Адкрыць кантроль спіс"
-      ],
-      "Open checklist and get free storage": [
-        "Адкрыйце кантрольны спіс і атрымайце бясплатнае сховішча"
       ],
       "Popular online services": [
         "Папулярныя сеткавыя сэрвісы"
       ],
       "privacy features": [
         "функцыі прыватнасці"
-      ],
-      "Protect and simplify your email": [
-        "Абарона і спрашчэнне электроннай пошты"
       ],
       "Protection from trackers": [
         "Абарона ад праграм сачэння"
@@ -6179,9 +6170,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
-      "Account size": [
-        "Памер уліковага запісу"
-      ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
       ],
@@ -6191,8 +6179,8 @@
       "Add image URL": [
         "Дадаць URL-адрас відарыса"
       ],
-      "Additional options": [
-        "Дадатковы параметры"
+      "Address copied to clipboard": [
+        "Адрас скапіяваны ў буфер абмену"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
@@ -6371,9 +6359,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Праверка кантакту ${ progress } з ${ max }..."
       ],
-      "Clear app data": [
-        "Ачыстка даных праграмы"
-      ],
       "Clear browser data": [
         "Ачысціць даныя браўзера"
       ],
@@ -6437,20 +6422,11 @@
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Стварыць бяспечнае воблака для ${ n } удзельніка",
-        "Стварыць бяспечнае воблака для ${ n } удзельнікаў",
-        "Стварыць бяспечнае воблака для ${ n } удзельнікаў",
-        "Стварыць бяспечнае воблака для ${ n } удзельнікаў"
-      ],
       "Create in": [
         "Стварыць у"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Крэдыты для нявыкарыстанай часткі вашага папярэдняга плана падпіскі"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Падтрымліваюцца файлы CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і некаторых іншых праграм, а таксама фарматы vCard 3.1 і 4.0 (кадаванне UTF-8)."
       ],
       "Current plan": [
         "Бягучы тарыфны план"
@@ -6481,6 +6457,9 @@
       ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "default email address": [
+        "прадвызначаны адрас электроннай пошты"
       ],
       "Default email application": [
         "Прадвызначаная праграма электроннай пошты"
@@ -6574,9 +6553,6 @@
       ],
       "Email copied to clipboard": [
         "Электронная пошта скапіявана ў буфер абмену"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Размяшчэнне электроннай пошты для 10 карыстальніцкіх даменных імён электроннай пошты даецца карыстальніку бясплатна. За дадатковыя дамены будзе спаганяцца плата ў памеры ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Служба электроннай пошты даступна толькі для даменаў, якімі вы ўжо валодаеце. Рэгістрацыя даменаў праз ${ BRAND_NAME } зараз недаступна. Вы можаце размясціць электронную пошту для даменаў, якія зарэгістраваны іншымі рэгістратарамі даменаў."
@@ -6923,6 +6899,9 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Паведамленні, якія знаходзяцца ў папках сметніца і спам больш за 30 дзён будуць выдаляцца аўтаматычна."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Паведамленні для ўсіх вашых адрасоў электроннай пошты будуць трапляць у вашу паштовую скрыню."
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -7154,6 +7133,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
+      "Registering your subscription...": [
+        "Рэгістрацыя вашай падпіскі..."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Не забудзьцеся абнавіць яго ў менеджары пароляў або ў тым месцы, дзе вы захоўваеце ўліковы запіс і звесткі для яго ўваходу."
       ],
@@ -7259,6 +7241,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
       ],
+      "Setting up your new address...": [
+        "Наладжванне вашага новага адраса..."
+      ],
       "Shorten selection": [
         "Скараціць выбар"
       ],
@@ -7324,9 +7309,6 @@
       ],
       "Text to display": [
         "Тэкст для паказу"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Перад пачаткам экспартавання праграме неабходна выканаць лакальную расшыфроўку вашых кантактаў. Пасля завяршэння працэсу будзе згенерыраваны файл VCF, які вы зможаце спампаваць."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Калі вы пакінеце гэту старонку, то ўведзеныя вамі даныя могуць не захавацца ў чарнавіку."
@@ -7421,6 +7403,9 @@
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Гэта прызначана для дапамогі ў напісанні. Правярайце дакладнасць прапанаванага тэксту. ${ learnMoreResult }"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
       ],
@@ -7492,9 +7477,6 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Гэты публічны ключ будзе аўтаматычна выкарыстаны для шыфравання лістоў, якія адпраўляюцца на гэты адрас."
-      ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Гэта прывядзе да выдалення ўсіх даных звязаных з гэтай праграмай, уключаючы спампаваныя паведамленні. Праграма перазапусціцца і вам неабходна будзе ўвайсці ў яе яшчэ раз."
       ],
       "This sender's public key has not been trusted yet.": [
         "Публічны ключ адпраўніка яшчэ не быў давераным."
@@ -7681,9 +7663,6 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Выяўлена стварэнне мноства бясплатных уліковых запісаў, а гэта парушае нашы ${ termsLink }."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
-        "Прапанаваныя тарыфныя планы, распрацаваны адмыслова для карыстальнікаў, якім патрабуецца больш за адзін адрас электроннай пошты. Перайдзіце на платны тарыфны план, каб зняць гэта абмежаванне."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам неабходна аўтэнтыфікаваць спосаб плацяжу з дапамогай вашага банка."
@@ -8044,11 +8023,6 @@
         "Толькі прагляд"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Асістэнт ШІ дапаможа вам стварыць лепшыя лісты, хутка і без намаганняў."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Скампраметаваны"
@@ -8360,9 +8334,6 @@
       "Authenticator app": [
         "Праграма аўтэнтыфікацыі"
       ],
-      "Automatically save contacts": [
-        "Аўтаматычна захоўваць кантакты"
-      ],
       "BCC": [
         "Схаваная копія"
       ],
@@ -8528,9 +8499,6 @@
       "Expires": [
         "Дзейнічае да"
       ],
-      "Export contacts": [
-        "Экспартаваць кантакты"
-      ],
       "Extended address": [
         "Пашыраны адрас"
       ],
@@ -8575,9 +8543,6 @@
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
-      ],
-      "Import contacts": [
-        "Імпартаваць кантакты"
       ],
       "Import interval": [
         "Інтэрвал імпартавання"
@@ -9502,6 +9467,9 @@
       "Get ${ planTitle }": [
         "Атрымаць тарыфны план ${ planTitle }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Пачніце за ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Пачатковы кошт ${ priceMailPlus }"
       ],
@@ -9676,6 +9644,9 @@
       ],
       "10 email addresses/aliases": [
         "10 адрасоў электроннай пошты/псеўданімаў"
+      ],
+      "10 more premium features": [
+        "І больш за 10 прэміяльных функцый"
       ],
       "10-year file version history": [
         "Гісторыя версій файлаў за 10 гадоў"
@@ -9990,7 +9961,7 @@
         "Неабмежаваная колькасць паведамленняў у дзень"
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
-        "Неабмежаванае абагульванне сховішчаў ${ PASS_SHORT_APP_NAME } на карыстальніка"
+        "Неабмежаванае колькасць абагуленых сховішчаў ${ PASS_SHORT_APP_NAME } на карыстальніка"
       ],
       "Unlimited shared vaults with access permissions": [
         "Неабмежаваная колькасць абагуленых сховішчаў з дазволамі доступу"
@@ -10172,6 +10143,14 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Атрымайце Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
       ]
     },
     "new_plans: tooltip": {
@@ -10569,20 +10548,8 @@
       "Auto-delete spam and trash": [
         "Аўтаматычнае выдаленне спаму і смецця"
       ],
-      "Automatically forward emails": [
-        "Аўтаматычна перасылаць лісты"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Цалкам блакіруйце электронныя лісты ад ашуканцаў. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "Блакіруйце адпраўнікоў з дрэннай рэпутацыяй"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Выдаленне перамешчаных у сметніцу лістоў і спаму пасля 30 дзён."
-      ],
-      "Congratulations on choosing privacy": [
-        "Віншуем з выбарам прыватнасці"
       ],
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
@@ -10593,17 +10560,8 @@
       "Download the desktop app and continue": [
         "Спампаваць настольную праграму і працягнуць"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "У нас настолькі надзейнае шыфраванне, што толькі вы і прызначаныя атрымальнікі змогуць прачытаць вашы лісты. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "Нязменны і сканцэнтраваны"
-      ],
-      "For your eyes only": [
-        "Толькі для вашых вачэй"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "Перасылаць паведамленні Gmail у вашу паштовую скрыню."
       ],
       "Get notified if your password is compromised.": [
         "Будзьце ў курсе ў выпадку, калі ваш пароль будзе скампраметаваны."
@@ -10644,17 +10602,11 @@
       "Replay introduction": [
         "Паўтарыць уводзіны"
       ],
-      "Skip": [
-        "Прапусціць"
-      ],
       "Start using ${ BRAND_NAME }": [
         "Пачаць выкарыстоўваць ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Пачніце выкарыстоўваць больш кароткую і запамінальную версію свайго адраса электроннай пошты."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "Мы не дазваляем рэкламадаўцам і зборшчыкам даных фарміраваць ваш профіль. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Вітаем у ${ MAIL_APP_NAME }"
@@ -11128,32 +11080,9 @@
         "Назва"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } з нашай камандай па продажам."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Выберыце колькасць IP для ўключэння ў ваш тарыфны план. Кожны дадатковы IP каштуе ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Калі вам неабходна больш за ${ maxIPs } IP, ",
-        "Калі вам неабходна больш за ${ maxIPs } IP, ",
-        "Калі вам неабходна больш за ${ maxIPs } IP, ",
-        "Калі вам неабходна больш за ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "звяжыцеся"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Выберыце колькасць карыстальнікаў для ўключэння ў ваш тарыфны план. Кожны дадатковы карыстальнік каштуе ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Калі вам патрабуецца больш за ${ maxUsers } уліковы запіс карыстальніка, звяжыцеся па пошце ${ contact } з нашай камандай па продажам.",
-        "Калі вам патрабуецца больш за ${ maxUsers } уліковыя запісы карыстальніка, звяжыцеся па пошце ${ contact } з нашай камандай па продажам.",
-        "Калі вам патрабуецца больш за ${ maxUsers } уліковых запісаў карыстальніка, звяжыцеся па пошце ${ contact } з нашай камандай па продажам.",
-        "Калі вам патрабуецца больш за ${ maxUsers } уліковыя запісы карыстальніка, звяжыцеся па пошце ${ contact } з нашай камандай па продажам."
       ]
     },
     "Price": {
@@ -11990,6 +11919,9 @@
       "Schedule send": [
         "Запланаваць адпраўку"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Цяпер гэта ваш прадвызначаны адрас. Адкрыйце выпадальны спіс, каб адправіць ліст з іншага адраса. "
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб атрымліваць апавяшчэнні пры ўцечцы са старонняга сэрвісу."
       ],
@@ -12001,6 +11933,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Цяпер вы можаце запланаваць адпраўку паведамленняў на больш позні час"
+      ],
+      "Your pm.me email is active": [
+        "Ваш адрас pm.me актыўны"
       ]
     },
     "sso": {
@@ -13875,6 +13810,9 @@
       "Unsubscribe request sent": [
         "Запыт на скасаванне падпіскі адпраўлены"
       ],
+      "Upgrade complete!": [
+        "Абнаўленне завершана!"
+      ],
       "Verification error": [
         "Памылка праверкі"
       ],
@@ -13925,6 +13863,9 @@
       ],
       "Your free trial has ended": [
         "Час пробнага перыяду завяршыўся"
+      ],
+      "Your shorter address is now ready": [
+        "Ваш больш кароткі адрас гатовы да выкарыстання"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14010,9 +13951,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце публічны ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
-      ],
-      "You do not have any contacts to export": [
-        "У вас няма кантактаў для экспартавання"
       ]
     },
     "tooltip": {
@@ -14207,6 +14145,9 @@
       ],
       "Missing alias suffix": [
         "Памылковы суфікс псеўданіма"
+      ],
+      "Name is required": [
+        "Патрабуецца назва"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"

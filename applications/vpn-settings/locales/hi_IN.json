@@ -190,6 +190,9 @@
       "Discard changes": [
         "परिवर्तन छोड़ें"
       ],
+      "Dismiss": [
+        "रद्द करें"
+      ],
       "Done": [
         "पूरा हुआ"
       ],
@@ -1103,6 +1106,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "जारी रखें"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } का उपयोग करते रहें।"
       ],
@@ -3141,9 +3147,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "अवैतनिक चालान के कारण खाता पहुंच प्रतिबंधित है। कृपया अपने व्यवस्थापक से संपर्क करें।"
       ],
-      "Account size": [
-        "खाते का साइज़"
-      ],
       "Account successfully updated": [
         "खाता आधुनिकीकरण सफल हो गया है"
       ],
@@ -3176,9 +3179,6 @@
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "गेटवे सर्वर जोड़ा जा रहा है: ${ serverNumber } / ${ total }",
         "गेटवे सर्वर जोड़ें जा रहें हैं: ${ serverNumber } / ${ total }"
-      ],
-      "Additional options": [
-        "अतिरिक्त विकल्प"
       ],
       "Admin account allocation": [
         "एडमिन खाता बंटवारा"
@@ -3338,11 +3338,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } एप्लिकेशन के स्वरूप और अनुभव को अनुकूलित करें"
       ],
-      "Dedicated servers": [
-        "विशेष सर्वर"
-      ],
       "dedicated servers": [
         "समर्पित सर्वर"
+      ],
+      "Dedicated servers": [
+        "विशेष सर्वर"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "कोई भी अन्य MX रिकॉर्ड को हटा दें या सुनिश्चित करें कि ${ MAIL_APP_NAME } की प्राथमिकता सबसे कम नंबर पे है।"
@@ -3414,9 +3414,6 @@
       ],
       "email": [
         "ईमेल"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "10 कस्टम ईमेल डोमेन नामों के लिए ईमेल होस्ट करना साथ में मुफ्त में मौजूद है। और डोमेन ले सकते है ${ price } देकर।"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "ईमेल होस्ट करना सिर्फ उन डोमेन के लिए मौजूद है जिनके आप मालिक है। ${ BRAND_NAME } पे अभी डोमेन रजिस्टर करने की सुविधा नहीं है। आप किसी भी डोमेन रजिस्टर पे रजिस्टर किए गए डोमेन पे ईमेल होस्ट कर सकते है।"
@@ -4135,10 +4132,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -6472,22 +6469,9 @@
         "सदस्य"
       ]
     },
-    "plan customizer, ips": {
-      "Should you need more than ${ maxIPs } IP, ": [
-        "अगर आपको ${ maxIPs } से अधिक IP की आवश्यकता हो, ",
-        "अगर आपको ${ maxIPs } से अधिक IP की आवश्यकता हो, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "संपर्क करें"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "अपने प्लान में कितने यूज़र डालने है चुनें। हर यूज़र को जोड़ने का ${ price } लगेगा।"
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "अगर आपको ${ maxUsers } से ज़्यादा यूज़र खाता चाहिए, कृपया हमारी सेल्स टीम को ${ contact } करे।",
-        "अगर आपको ${ maxUsers } से ज़्यादा यूज़र खाते चाहिए, कृपया हमारी सेल्स टीम को ${ contact } करे।"
       ]
     },
     "Price": {
@@ -7703,10 +7687,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -8325,6 +8309,11 @@
     "Tor out of date": {
       "stable release": [
         "स्थिर निस्तार"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Cash": [
+        "रोकड़ा"
       ]
     },
     "upsell panel": {

@@ -60,9 +60,6 @@
       "Add group": [
         "Dodaj skupino"
       ],
-      "Add new contact": [
-        "Dodaj nov stik"
-      ],
       "Add new group": [
         "Dodaj novo skupino"
       ],
@@ -287,9 +284,6 @@
       ],
       "Export contact group": [
         "Izvozi skupino stikov"
-      ],
-      "Export contacts": [
-        "Izvozi stike"
       ],
       "Forgot password?": [
         "Pozabljeno geslo?"
@@ -3781,14 +3775,8 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Zaradi neplačanih računov je dostop do računa omejen. Obrnite se na svojega skrbnika."
       ],
-      "Account size": [
-        "Velikost računa"
-      ],
       "Account successfully updated": [
         "Račun je uspešno posodobljen"
-      ],
-      "Additional options": [
-        "Dodatne možnosti"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Za ta naslov je omogočena potrditev naslova z zaupnimi ključi. Če želite pošiljati na ta naslov, najprej označite javne ključe, ki jih lahko uporabite za pošiljanje, kot vredne zaupanja."
@@ -3937,9 +3925,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Dobropis za neporabljen naročnine prejšnjega paketa"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Podprte so datoteke CSV iz programov Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora in nekaterih drugih ter obliki vCard 3.1 in 4.0 (kodiranje UTF-8)."
-      ],
       "Current plan": [
         "Trenutni paket"
       ],
@@ -4008,9 +3993,6 @@
       ],
       "email": [
         "e-pošta"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-poštno gostovanje za deset po meri prilagojenih domenskih imen je brezplačno vključeno. Dodatne domene je mogoče dodati za ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-poštno gostovanje je na voljo samo za domene, ki jih že imate. Registracija domene trenutno ni na voljo preko ${ BRAND_NAME }. Lahko pa gostujete e-pošto za domene, registrirane pri kateremkoli registrarju domen."
@@ -4477,9 +4459,6 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Račun ima morda nov ključ ali pa je bilo spremenjeno naslednje: ${ items }. Odprite le, če mu zaupate."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplikacija mora pred izvozom lokalno dešifrirati vaše stike. Po končanem dešifriranju se bo ustvarila datoteka VCF, ki bo na voljo za prenos."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Avtorstva urejanj v dokumentu ni bilo mogoče preveriti. Želite označiti ta dokument kot preverjen? Lahko izberete Prezri in se odločite kasneje."
       ],
@@ -4943,9 +4922,6 @@
       "Authenticator app": [
         "Aplikacija za preverjanje pristnosti"
       ],
-      "Automatically save contacts": [
-        "Samodejno shrani stike"
-      ],
       "Beta Access": [
         "Dostop beta"
       ],
@@ -5084,9 +5060,6 @@
       "Expires": [
         "Poteče"
       ],
-      "Export contacts": [
-        "Izvozi stike"
-      ],
       "Extended address": [
         "Razširjeni naslov"
       ],
@@ -5116,9 +5089,6 @@
       ],
       "Import all messages": [
         "Uvozi vsa sporočila"
-      ],
-      "Import contacts": [
-        "Uvozi stike"
       ],
       "Import interval": [
         "Interval uvoza"
@@ -7080,32 +7050,9 @@
         "Ime"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "prosimo, ${ contactHref } našo prodajno ekipo."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Izberite število IP naslovov, ki jih želite vključiti v svoj paket. Vsak dodatni IP naslov stane ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Če potrebujete več kot ${ maxIPs } IP, ",
-        "Če potrebujete več kot ${ maxIPs } IP-ja, ",
-        "Če potrebujete več kot ${ maxIPs } IP-jev, ",
-        "Če potrebujete več kot ${ maxIPs } IP-jev, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontaktirajte"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Izberite število uporabnikov, ki jih želite vključiti v svoj paket. Vsak dodatni uporabnik stane ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Če potrebujete več kot ${ maxUsers } uporabniški račun, vas prosimo, da ${ contact } našo prodajno ekipo.",
-        "Če potrebujete več kot ${ maxUsers } uporabniška računa, vas prosimo, da ${ contact } našo prodajno ekipo.",
-        "Če potrebujete več kot ${ maxUsers } uporabniške račune, vas prosimo, da ${ contact } našo prodajno ekipo.",
-        "Če potrebujete več kot ${ maxUsers } uporabniških računov, vas prosimo, da ${ contact } našo prodajno ekipo."
       ]
     },
     "Price": {
@@ -8739,9 +8686,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali smo jim povabilo za dostop do predmeta."
-      ],
-      "You do not have any contacts to export": [
-        "Nimate stikov, ki bi jih lahko izvozili"
       ]
     },
     "tooltip": {

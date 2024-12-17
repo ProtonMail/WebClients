@@ -68,9 +68,6 @@
       "Add group": [
         "Προσθήκη ομάδας"
       ],
-      "Add new contact": [
-        "Προσθήκη νέας επαφής"
-      ],
       "Add new group": [
         "Προσθήκη νέας ομάδας"
       ],
@@ -305,14 +302,14 @@
       "Export contact group": [
         "Εξαγωγή ομάδας επαφών"
       ],
-      "Export contacts": [
-        "Εξαγωγή Επαφών"
-      ],
       "Forgot password?": [
         "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Απκτήστε το ${ MAIL_SHORT_APP_NAME } Plus για ${ priceCoupon }"
       ],
       "Get in touch": [
         "Επικοινωνήστε"
@@ -1247,6 +1244,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Αλλαγή ρυθμίσεων διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Continue": [
+        "Συνέχεια"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
       ],
@@ -2598,12 +2601,20 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα παρακολούθηση ύποπτης δραστηριότητας — συμπεριλαμβανομένης της κλιμάκωσης σε ειδικούς ασφαλείας."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Το 2FA προσθέτει ένα επιπλέον επίπεδο ασφαλείας, αποτρέποντας τη μη εξουσιοδοτημένη πρόσβαση."
+      ],
+      "Also included": [
+        "Περιλαμβάνονται επίσης"
       ],
       "Availability unknown": [
         "'Άγνωστη διαθεσιμότητα"
@@ -2628,6 +2639,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -2685,11 +2699,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4452,9 +4461,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Η πρόσβαση σε λογαριασμό περιορίζεται λόγω απλήρωτων τιμολογίων. Επικοινωνήστε με το διαχειριστή σας."
       ],
-      "Account size": [
-        "Μέγεθος λογαριασμού"
-      ],
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
@@ -4464,8 +4470,8 @@
       "Added and removed participants will be notified.": [
         "Οι συμμετέχοντες που έχουν προστεθεί και αφαιρεθεί θα ειδοποιηθούν."
       ],
-      "Additional options": [
-        "Πρόσθετες επιλογές"
+      "Address copied to clipboard": [
+        "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
@@ -4600,18 +4606,11 @@
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλος",
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ n } μέλη"
-      ],
       "Create in": [
         "Δημιουργία σε"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πρόγραμμα"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
       ],
       "Current plan": [
         "Τρέχον πλάνο"
@@ -4639,6 +4638,9 @@
       ],
       "Dedicated servers": [
         "Αποκλειστικοί διακομιστές"
+      ],
+      "default email address": [
+        "προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Deleting event...": [
         "Διαγραφή εκδήλωσης...",
@@ -4682,9 +4684,6 @@
       ],
       "email": [
         "ηλεκτρονικό ταχυδρομείο"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Η φιλοξενία email για 10 προσαρμοσμένους τομείς email συμπεριλαμβάνεται δωρεάν. Επιπρόσθετοι τομείς μπορούν να προστεθούν έναντι ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
@@ -4862,6 +4861,9 @@
       "Merged": [
         "Συγχωνευμένο"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Τα μηνύματα σε όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας θα μεταφερθούν στα εισερχόμενά σας."
+      ],
       "MM/YY": [
         "ΜΜ/ΧΧ"
       ],
@@ -4999,6 +5001,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
+      "Registering your subscription...": [
+        "Εγγραφή της συνδρομής σας..."
+      ],
       "Removed participants will be notified.": [
         "Οι συμμετέχοντες που αφαιρέθηκαν θα ειδοποιηθούν."
       ],
@@ -5027,11 +5032,17 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Η ρύθμιση PGP επιτρέπει την αποστολή διατερματικά κρυπτογραφημένων μηνυμάτων προς χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
       ],
+      "Setting up your new address...": [
+        "Ρύθμιση της νέας διεύθυνσής σας..."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Μερικές από τις απαντήσεις σας σε γεγονότα που ενημερώθηκαν προηγουμένως από τον διοργανωτή, θα χαθούν."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
@@ -5047,9 +5058,6 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Οι εκτεθειμένες πληροφορίες διέρρευσαν από μια υπηρεσία τρίτου μέρους. Οι πληροφορίες του λογαριασμού σας ${ BRAND_NAME } παραμένουν ασφαλείς και κρυπτογραφημένες. ${ learnMoreLink }"
@@ -5101,6 +5109,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Η εκδήλωση έχει ενημερωθεί. Ο διοργανωτής δεν θα ειδοποιηθεί ότι απορρίπτετε την πρόσκληση, καθώς δεν μπορείτε να στείλετε μήνυμα από τη διεύθυνση στην οποία λάβατε την πρόσκληση. Θέλετε να διαγράψετε αυτήν την εκδήλωση ούτως ή άλλως;"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
@@ -5470,11 +5481,6 @@
         "Μπορείτε να αναδημοσιεύσετε τα ημερολόγιά σας στις ρυθμίσεις."
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
-      ]
-    },
     "Information about why calendar event cannot be saved": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Το πολύ ${ maxAttendees } συμμετέχων επιτρέπεται ανά πρόσκληση",
@@ -5562,9 +5568,6 @@
       ],
       "Authenticator app": [
         "Εφαρμογή επαλήθευσης"
-      ],
-      "Automatically save contacts": [
-        "Αυτόματη αποθήκευση επαφών"
       ],
       "Beta Access": [
         "Πρόσβαση Beta"
@@ -5713,9 +5716,6 @@
       "Expires": [
         "Λήγει"
       ],
-      "Export contacts": [
-        "Εξαγωγή Επαφών"
-      ],
       "Extended address": [
         "Εκτεταμένη διεύθυνση"
       ],
@@ -5745,9 +5745,6 @@
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
-      ],
-      "Import contacts": [
-        "Εισαγωγή Επαφών"
       ],
       "Import interval": [
         "Μεσοδιάστημα εισαγωγών"
@@ -6442,6 +6439,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Ξεκινώντας από ${ priceMailPlus }"
       ],
@@ -6582,6 +6582,9 @@
       ],
       "10 email addresses/aliases": [
         "10 διεύθυνσεις email/ψευδώνυμα"
+      ],
+      "10 more premium features": [
+        "10 περισσότερα premium χαρακτηριστικά"
       ],
       "10-year file version history": [
         "Ιστορικό εκδόσεων αρχείων 10 ετών"
@@ -7064,6 +7067,14 @@
       ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Αποκτήστε το Mail Plus για ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Η μειωμένη τιμή του ${ priceCoupon } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ priceMailPlus }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ]
     },
     "new_plans: tooltip": {
@@ -7958,28 +7969,9 @@
         "(Χωρίς όνομα)"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "παρακαλούμε ${ contactHref } την ομάδα Πωλήσεών μας."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Επιλέξτε τον αριθμό διευθύνσεων IP που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον διεύθυνση IP κοστίζει ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διεύθυνση IP, ",
-        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διευθύνσεις IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "επικοινωνήστε"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Επιλέξτε τον αριθμό χρηστών που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον χρήστης κοστίζει ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Εάν χρειαστείτε περισσότερους από ${ maxUsers } λογαριασμό χρήστη, παρακαλούμε ${ contact } με την ομάδα μας Πωλήσεων.",
-        "Εάν χρειαστείτε περισσότερους από ${ maxUsers } λογαριασμούς χρηστών, παρακαλούμε ${ contact } με την ομάδα μας Πωλήσεων."
       ]
     },
     "Price": {
@@ -9924,6 +9916,9 @@
       "Update recurring event": [
         "Ενημέρωση επαναλαμβανόμενης εκδήλωσης"
       ],
+      "Upgrade complete!": [
+        "Η αναβάθμιση ολοκληρώθηκε!"
+      ],
       "Verification failed": [
         "Αποτυχία επαλήθευσης"
       ],
@@ -9965,6 +9960,9 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "Your shorter address is now ready": [
+        "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10059,9 +10057,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"
-      ],
-      "You do not have any contacts to export": [
-        "Δεν έχετε επαφές προς εξαγωγή"
       ]
     },
     "tooltip": {
@@ -10210,6 +10205,9 @@
       ],
       "Missing alias suffix": [
         "Λείπει το επίθημα ψευδωνύμου"
+      ],
+      "Name is required": [
+        "Απαιτείται όνομα"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"

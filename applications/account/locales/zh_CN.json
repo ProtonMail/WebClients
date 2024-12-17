@@ -61,11 +61,11 @@
       "Accept": [
         "接受"
       ],
-      "activate": [
-        "激活"
-      ],
       "Activate": [
         "启用"
+      ],
+      "activate": [
+        "激活"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -166,6 +166,9 @@
       "Back": [
         "上一步"
       ],
+      "Back to sign-in": [
+        "返回登录"
+      ],
       "Block": [
         "屏蔽"
       ],
@@ -231,6 +234,9 @@
       ],
       "Connect": [
         "连接"
+      ],
+      "Connected": [
+        "已连接"
       ],
       "Contact support": [
         "联系客服"
@@ -372,6 +378,9 @@
       ],
       "Discard changes": [
         "放弃修改"
+      ],
+      "Dismiss": [
+        "忽略"
       ],
       "Domain name": [
         "域名"
@@ -966,6 +975,9 @@
       ],
       "Show": [
         "显示"
+      ],
+      "Show all": [
+        "显示全部"
       ],
       "Show less": [
         "显示更少"
@@ -1641,6 +1653,9 @@
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "将以 ${ renewPrice } 的价格自动续订，续订时长为 ${ renewLength } 个月。"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "将以 ${ subscriptionManagerName } 的价格自动续期"
       ]
     },
     "Billing cycle option": {
@@ -1758,6 +1773,9 @@
     "Button": {
       "Add link to your email footer": [
         "将链接加入邮件来源标识中"
+      ],
+      "Continue": [
+        "继续"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "继续使用 ${ MAIL_APP_NAME }。"
@@ -3270,6 +3288,9 @@
       ],
       "Delete": [
         "刪除"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "请注意，如果删除这个域名${ domainName }，且其下所有地址都将被停用。"
       ]
     },
     "Delinquent modal title": {
@@ -5743,6 +5764,9 @@
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/月)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "（满足下列所有条件）"
       ],
@@ -5803,9 +5827,6 @@
       "account recovery method": [
         "账户恢复方式"
       ],
-      "Account size": [
-        "账户大小"
-      ],
       "Account successfully updated": [
         "账户已成功更新"
       ],
@@ -5850,9 +5871,6 @@
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "添加网关服务器：${ serverNumber } / ${ total }"
-      ],
-      "Additional options": [
-        "其他选项"
       ],
       "Admin account allocation": [
         "分配管理员账户"
@@ -6163,6 +6181,9 @@
       "Dedicated servers": [
         "专用服务器"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "具有专用 IP 地址的专用服务器可以添加到专用网关，以实现微调的访问控制。"
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "删除其他 MX 记录，或者确保 ${ MAIL_APP_NAME } 的优先级数字最小。"
       ],
@@ -6258,9 +6279,6 @@
       ],
       "Email address": [
         "邮箱地址"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "免费为 10 个自有域名提供邮件托管服务，额外增加的域名按 ${ price } 收费。"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
@@ -6603,6 +6621,9 @@
       ],
       "Learn more": [
         "了解详情"
+      ],
+      "Learn more about Gateways": [
+        "了解网关"
       ],
       "learn more about Sieve programming language": [
         "进一步了解 Sieve 编程语言"
@@ -6961,6 +6982,9 @@
       "read our two-factor authentication guide first": [
         "首先阅读我们的双重认证指南"
       ],
+      "Recently used servers:": [
+        "近期使用的服务器:"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "建议仅在可信设备上勾选。${ keepMeSignedInLearnMoreLink }"
       ],
@@ -7234,6 +7258,9 @@
       "The format of your CSV file is incorrect.": [
         "您的 csv 文件格式错误。"
       ],
+      "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "用于报告您未设置 ${ BRAND_NAME } 账户的链接已过期。请联系我们的支持团队来解决此问题。"
+      ],
       "The name will be visible to your users while they are signed in.": [
         "您的用户在登录时将可以看到该名称。"
       ],
@@ -7498,6 +7525,9 @@
       "username": [
         "用户名"
       ],
+      "Username": [
+        "用户名"
+      ],
       "Users": [
         "用户"
       ],
@@ -7524,6 +7554,9 @@
       ],
       "Verify domain": [
         "认证域名"
+      ],
+      "Verify email address": [
+        "验证邮箱地址"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "通过应用程序根据时间生成的一次性验证码确认身份"
@@ -7633,6 +7666,9 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "关闭后可防止在您不知情的情况下加载图像。"
       ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "在身份提供商中为 ${ appName } 启用 SAML 时，系统可能会提示您使用回调 (ACS) URL 和颁发者 ID。只需将以下数据复制粘贴到您的身份提供商字段中即可。"
+      ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "开启通知后，我们将通过密保邮箱提醒您 ${ MAIL_APP_NAME } 收到的新邮件。"
       ],
@@ -7716,6 +7752,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "您可以修改一次地址，以确保使用正确的邮箱验证。"
+      ],
+      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "您可以开启登录记录功能查看每次登录的时间和 IP 地址，登录失败也会被记录下来。"
       ],
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
@@ -8459,6 +8498,9 @@
       "Awarded": [
         "已奖励"
       ],
+      "Backup password": [
+        "备用密码"
+      ],
       "Beta": [
         "测试版"
       ],
@@ -8780,6 +8822,9 @@
       "I understand the risk": [
         "风险已知悉"
       ],
+      "IBAN": [
+        "国际银行账户号码（IBAN）"
+      ],
       "IF": [
         "如果"
       ],
@@ -9053,6 +9098,9 @@
       "Recovery phrase": [
         "恢复密语"
       ],
+      "Remove": [
+        "移除"
+      ],
       "Remove image metadata": [
         "移除图片元数据"
       ],
@@ -9220,6 +9268,9 @@
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "我们对您的离去深表遗憾。请告诉我们您为什么要删除账户，帮助我们加以改进："
+      ],
+      "Weak": [
+        "弱"
       ],
       "Week start": [
         "每周第一天"
@@ -10412,6 +10463,9 @@
       "Early access to new apps and features": [
         "抢先访问新应用和功能"
       ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "对无限量用户提供基本保护与安全协作."
+      ],
       "For next-level password management and identity protection.": [
         "体验更高等级的密码管理与身份保护。"
       ],
@@ -10732,6 +10786,9 @@
       ]
     },
     "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } 和 ${ lastCategoryTitle }"
+      ],
       "${ app } and ${ additionalApp } product updates": [
         "${ app } 与 ${ additionalApp } 产品资讯"
       ],
@@ -11336,6 +11393,9 @@
       "Current plan": [
         "当前方案"
       ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "对无限量用户提供基本保护与安全协作"
+      ],
       "Free forever": [
         "永久免费"
       ],
@@ -11390,6 +11450,9 @@
       ]
     },
     "passwordless": {
+      "Change organization key": [
+        "更改机构密钥"
+      ],
       "Organization key activated": [
         "机构密钥已激活"
       ],
@@ -11603,20 +11666,9 @@
         "成员"
       ]
     },
-    "plan customizer, ips": {
-      "Should you need more than ${ maxIPs } IP, ": [
-        "如果您需要超过 ${ maxIPs } IP， "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "联系人"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "选择包含在套餐中的用户数。 每位额外用户需支付 ${ price }。"
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "如果您需要超过 ${ maxUsers } 个用户账户，请 ${ contact } 我们的销售团队。"
       ]
     },
     "Price": {
@@ -12266,6 +12318,11 @@
         "验证"
       ]
     },
+    "Signup: Info": {
+      "Works on all devices": [
+        "可在所有设备上运行"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "关闭"
@@ -12361,6 +12418,9 @@
       ],
       "/ month": [
         "/ 月"
+      ],
+      "/month": [
+        "/个月"
       ],
       "1 year": [
         "一年"
@@ -12472,11 +12532,44 @@
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "有 ${ n } 名用户正在请求您的帮助，以使用单点登录（SSO）来登录其 ${ BRAND_NAME } 账户。"
       ],
+      "Backup password": [
+        "备用密码"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Confirmation code": [
+        "验证码"
+      ],
       "Delete ${ n } inactive user?": [
         "删除 ${ n } 名不活跃用户？"
       ],
       "Delete ${ n } user": [
         "删除 ${ n } 名用户"
+      ],
+      "Deny": [
+        "拒绝"
+      ],
+      "Devices available": [
+        "设备可用"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "为了您的账号安全，您已从其他所有活跃设备中登出。在访问您的账户之前，您将需要输入一个新的备用密码。"
+      ],
+      "Reject": [
+        "拒绝"
+      ],
+      "Remove": [
+        "移除"
+      ],
+      "Sign in": [
+        "登录"
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "这将使您从其他设备登出，您必须创建一个新的备用密码。"
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "为了确保是您本人在登录，请输入您的备用密码。"
       ]
     },
     "State": {
@@ -12658,6 +12751,9 @@
       ],
       "1 email address": [
         "1 个邮箱地址"
+      ],
+      "1 email address per user": [
+        "每位用户 1 个邮箱地址"
       ],
       "1 VPN connection": [
         "1 台设备可接入 VPN"
@@ -13591,6 +13687,9 @@
       "Details": [
         "详细信息"
       ],
+      "Device": [
+        "台设备"
+      ],
       "Device connected!": [
         "设备连上了！"
       ],
@@ -14515,6 +14614,9 @@
       "Set the default layout for your Inbox.": [
         "设置您收件箱的默认布局。"
       ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "在您发出的邮件中通过来源标识分享您的邀请链接，如：${ signature }这段标识文字将置于您的落款下方。您可以随时在设置中修改落款。"
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "在邮件列表中显示发件人的头像，无头像则显示发件人名称首字母。"
       ],
@@ -14600,6 +14702,11 @@
         "您的第三方账户可能已超过 24 小时内的带宽上限，${ BRAND_NAME } 将尽快继续导入过程。"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
+      ]
+    },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "发送邮件时自动附上您的公钥，以便收件人验证邮件真实性并向您回复加密邮件。"
@@ -14631,6 +14738,17 @@
     "Tor out of date": {
       "stable release": [
         "稳定版"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Cash": [
+        "现金"
+      ],
+      "Credit": [
+        "充值"
+      ],
+      "Refund": [
+        "退款"
       ]
     },
     "unprivatization": {

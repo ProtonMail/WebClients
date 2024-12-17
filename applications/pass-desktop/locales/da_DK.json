@@ -707,6 +707,15 @@
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2FA tilføjer endnu et lag af sikkerhed til dine logins. ${ PASS_APP_NAME } gør 2FA nemmere ved at gemme og automatisk udfylde dine 2FA-koder."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Tilføj følgende CNAME DNS-records til dit domæne."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Tilføj følgende MX DNS record til dit domæne. Bemærk, at der er en punktum (.) i slutningen af måladresserne. Hvis din domæneregistrator ikke tillader dette afsluttende punktum, skal du fjerne det, når du tilføjer DNS-record."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Tilføj følgende TXT DNS-record til dit domæne."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Et e-mailalias fungerer som en e-mailadresse, men reducerer spam og holder din faktiske e-mailadresse og identitet skjult."
       ],
@@ -719,8 +728,23 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Monitorering af det mørke net er tilgængelig med et betalt abonnement. Opgrader for øjeblikkelig adgang."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } er en e-mail-godkendelsesmetode, der er designet til at undgå e-mail-spoofing. Det anbefales stærkt at sætte DKIM op for at reducere risikoen for, at dine e-mails ender i modtagerens spam-mappe."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } er designet til at beskytte domænet mod uautoriseret brug, almindeligvis kendt som e-mail-spoofing. En DMARC-politik er bygget op omkring SPF og DKIM og fortæller den modtagende mailserver, hvad den skal gøre, hvis ingen af disse godkendelsesmetoder bestås."
+      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Få besked, hvis din e-mail, adgangskode eller andre personlige data er blevet lækket."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Hvis du bruger et underdomæne, f.eks. ${ subdomainExample }, skal du bruge ${ dmarcExampleSubdomain } som domæne i stedet."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Hvis du bruger et underdomæne, f.eks. subdomain.domain.com, skal du bruge ${ domainKeyExampleSubdomain } som domæne i stedet. Det betyder, at hvis dit domæne er mail.domain.com, skal du indtaste ${ domainKeyExampleMail } som domæne."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Hvis du bruger CloudFlare, skal du sørge for ikke at vælge Proxy-indstillingen."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Hold dine oplysninger mere sikre og private med disse vejledninger og tips."
@@ -730,6 +754,15 @@
       ],
       "Set up 2FA for more security": [
         "Indstil 2FA for mere sikkerhed"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Nogle DNS-registratorer kræver måske en fuld record-sti, i så fald skal du bruge ${ domain } som domæneværdi i stedet."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Nogle domæneregistratorer (Namecheap, CloudFlare osv.) bruger måske også @ til roddomænet."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } er en e-mail-godkendelsesmetode, der er designet til at detektere falske afsenderadresser under leveringen af e-mailen. Det anbefales stærkt at opsætte SPF for at reducere risikoen for, at dine e-mails ender i modtagerens spam-mappe."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Begynd at monitorere for databrud relateret til konti, der er oprettet med din e-mailadresse og dine hide-my-email-aliasser."
@@ -746,6 +779,9 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Denne tjeneste tilbyder 2FA. Aktivér det for at få ekstra kontosikkerhed."
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "For at bekræfte ejerskabet af domænet skal du tilføje følgende TXT-record. Nogle domæneregistratorer (Namecheap, CloudFlare osv.) bruger muligvis @ for roddomænet."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Frigør avancerede sikkerhedsfunktioner og udførlige logfiler for at beskytte din færden på nettet."
       ],
@@ -757,6 +793,11 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Dine personlige oplysninger blev lækket i et databrud hos en tredjepartstjeneste."
+      ]
+    },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "noget@${ domainDisplay }"
       ]
     },
     "Error": {
@@ -935,6 +976,9 @@
       ],
       "Failed to restore items from trash": [
         "Kunne ikke gendanne elementer fra papirkurven"
+      ],
+      "Failed to set default mailbox": [
+        "Kunne ikke indstille standardpostkasse"
       ],
       "Failed to sync aliases": [
         "Kunne ikke synkronisere aliasser"
@@ -1235,6 +1279,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } blokeret",
+        "${ blockedEmailsCount } blokerede"
+      ],
       "${ count } invite successfully sent": [
         "${ count } invitation sendt",
         "${ count } invitationer sendt"
@@ -1249,6 +1297,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } visninger"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } videresendt",
+        "${ forwardedEmailsCount } videresendte"
       ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -1282,6 +1334,10 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } aktiveret"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } sendt",
+        "${ repliedEmailsCount } sendte"
+      ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } databrud registreret",
         "${ row.breachCount } databrud registreret"
@@ -1300,6 +1356,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Adgang til ${ PASS_APP_NAME } vil altid kræve din ${ BRAND_NAME }-adgangskode."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Adgang til ${ PASS_APP_NAME } vil altid kræve din sikkerhedskopi-adgangskode."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Brug af ${ PASS_APP_NAME } kræver dit fingeraftryk eller enhedens pinkode."
@@ -1773,6 +1832,9 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Onlineadgang til ${ PASS_APP_NAME } kræver en PIN-kode. Du bliver logget ud efter 3 mislykkede forsøg."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Vores advarsler prioriterer sikkerhed. Hvis du ikke genkender nogen af de kompromitterede oplysninger, kan du roligt ignorere denne rapport."
+      ],
       "Owner": [
         "Ejer"
       ],
@@ -1812,6 +1874,15 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekræft din adgangskode til ${ BRAND_NAME } for at eksportere dine ${ PASS_APP_NAME }-data"
+      ],
+      "Please confirm your backup password": [
+        "Bekræft din adgangskode til sikkerhedskopi"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Bekræft din sikkerhedskopi-adgangskode for at autolåse med din adgangskode."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Bekræft din sikkerhedskopi-adgangskode for at afregistrere din nuværende lås."
       ],
       "Please confirm your extra password": [
         "Bekræft din ekstra adgangskode"
@@ -1889,13 +1960,13 @@
         "Genforbinder"
       ],
       "Record: CNAME": [
-        "Post: CNAME"
+        "Record: CNAME"
       ],
       "Record: MX": [
-        "Post: MX"
+        "Record: MX"
       ],
       "Record: TXT": [
-        "Post: TXT"
+        "Record: TXT"
       ],
       "Registering extra password...": [
         "Registrerer ekstra adgangskode..."
@@ -2075,6 +2146,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Lås op for ${ PASS_SHORT_APP_NAME } med din adgangskode til ${ BRAND_NAME }."
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Lås ${ PASS_SHORT_APP_NAME } op med din adgangskode til sikkerhedskopi"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Lås op for ${ PASS_SHORT_APP_NAME } med din ekstra adgangskode"
       ],
@@ -2144,6 +2218,9 @@
       ],
       "You are about to create:": [
         "Du er ved at oprette:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Du kan også angive en pinkode til at låse op for ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kan nu bruge din ${ BRAND_NAME }-adgangskode til at tilgå ${ PASS_SHORT_APP_NAME } offline"
@@ -2244,6 +2321,9 @@
       "${ forwardCount } forward": [
         "${ forwardCount } videresending",
         "${ forwardCount } videresendinger"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, inden for de sidste 14 dage."
       ],
       "${ hours } hour": [
         "${ hours } time",
@@ -2370,6 +2450,9 @@
       ],
       "Auto-lock after": [
         "Lås automatisk efter"
+      ],
+      "Backup password": [
+        "Adgangskode til sikkerhedskopi"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Ud over at gemme dine logins beskytter ${ PASS_APP_NAME } din identitet med en integreret e-mailaliasfunktion. Når du tilmelder dig en ny onlinekonto, kan ${ PASS_APP_NAME } automatisk oprette et alias for at beskytte din faktiske e-mailadresse. "
@@ -3115,6 +3198,9 @@
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "regler for automatisk oprettelse ››"
+      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -3212,6 +3298,9 @@
       "Add text": [
         "Tilføj tekst"
       ],
+      "Alias Display Name": [
+        "Alias-visningsnavn"
+      ],
       "Email address": [
         "E-mail"
       ],
@@ -3238,6 +3327,15 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "my-domain.com": [
+        "my-domain.com"
+      ],
+      "Name to display when sending an email": [
+        "Navn, der skal vises, når du sender en e-mail"
+      ],
+      "Note from SimpleLogin": [
+        "Note fra SimpleLogin"
       ],
       "Password": [
         "Adgangskode"
@@ -3300,8 +3398,14 @@
       ]
     },
     "sso": {
+      "If you didn't make this request, cancel it now.": [
+        "Hvis du ikke har anmodet om dette, så annuller det nu."
+      ],
       "Invalid confirmation code": [
         "Ugyldig bekræftelseskode"
+      ],
+      "No, it wasn’t me": [
+        "Nej, det var ikke mig"
       ],
       "Sign-in failed": [
         "Log-ind mislykkedes"
@@ -3309,8 +3413,14 @@
       "Sign-in rejection failure": [
         "Fejl med afvisning af login"
       ],
+      "Sign-in requested on another device. Was it you?": [
+        "Der blev anmodet om login fra en anden enhed. Var det dig?"
+      ],
       "Sign-in requested on another device. Was it you? ": [
         "Der blev anmodet om login på en anden enhed. Var det dig? "
+      ],
+      "Yes, it was me": [
+        "Ja, det var mig"
       ]
     },
     "sso: auth device state": {
@@ -3340,6 +3450,12 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synkronisering af aliasser er aktiveret. SimpleLogin-alias kan tage lidt tid at synkronisere"
       ],
+      "Catch-all setting successfully disabled": [
+        "Catch-all-indstilling deaktiveret"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Catch-all-indstilling aktiveret"
+      ],
       "Contact successfully blocked": [
         "Kontakt blokeret"
       ],
@@ -3352,8 +3468,29 @@
       "Contact successfully unblocked": [
         "Blokering fjernet fra kontakt"
       ],
+      "Default domain successfully updated": [
+        "Standarddomæne opdateret"
+      ],
+      "Default mailbox successfully updated": [
+        "Standardpostkasse opdateret"
+      ],
       "Display name successfully updated": [
         "Visningsnavn opdateret"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Ejerskab af domæne bekræftet. Du kan nu indstille MX record."
+      ],
+      "Domain successfully deleted": [
+        "Domæne slettet"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Domænet er blevet verificeret. Dit domæne kan begynde at modtage e-mails og oprette aliasser"
+      ],
+      "Mailbox successfully deleted": [
+        "Postkasse slettet"
+      ],
+      "Mailbox successfully verified": [
+        "Postkasse verificeret"
       ],
       "Mailboxes successfully updated": [
         "Postkasser opdateret"
@@ -3367,6 +3504,9 @@
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } bruger.",
         "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } brugere."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Bekræftelsesmail sendt. Tjek din indbakke for at bekræfte din postkasse."
       ]
     },
     "Theme": {
@@ -3390,14 +3530,26 @@
       "Account protection": [
         "Kontobeskyttelse"
       ],
+      "Actions": [
+        "Handlinger"
+      ],
       "Activity": [
         "Aktivitet"
       ],
       "Add custom domain": [
         "Tilføj brugerdomæne"
       ],
+      "Add mailbox": [
+        "Tilføj postkasse"
+      ],
       "Alias contacts": [
         "Alias-kontakter"
+      ],
+      "Aliases": [
+        "Aliasser"
+      ],
+      "Auto create/on the fly alias": [
+        "Opret automatisk/på farten alias"
       ],
       "Auto-lock update": [
         "Autolås-opdatering"
@@ -3444,6 +3596,9 @@
       "Custom addresses": [
         "Brugerdefinerede adresser"
       ],
+      "Custom domains": [
+        "Brugerdomæner"
+      ],
       "Custom email monitoring": [
         "Monitorering af brugerdefinerede e-mails"
       ],
@@ -3453,12 +3608,21 @@
       "Dark Web Monitoring": [
         "Monitorering af det mørke net"
       ],
+      "Default": [
+        "Standard"
+      ],
+      "Default Display Name": [
+        "Standard visningsnavn"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "Slet ${ deletedItemsCount } element?",
         "Slet ${ deletedItemsCount } elementer?"
       ],
       "Delete domain": [
         "Slet domæne"
+      ],
+      "Delete mailbox": [
+        "Slet postkasse"
       ],
       "Delete this item?": [
         "Slet dette element?"
@@ -3478,11 +3642,17 @@
       "DMARC (Optional)": [
         "DMARC (Valgfri)"
       ],
+      "Domain": [
+        "Domæne"
+      ],
       "Domain ownership verification": [
         "Verifikation af domæneejerskab"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Glad for ${ PASS_APP_NAME }?"
+      ],
+      "Enter your backup password": [
+        "Indtast din sikkerhedskopi-adgangskode"
       ],
       "Enter your extra password": [
         "Indtast din ekstra adgangskode"
@@ -3538,6 +3708,9 @@
       "Low disk space": [
         "Kun lidt diskplads"
       ],
+      "Mailbox": [
+        "Postkasse"
+      ],
       "Mark as resolved?": [
         "Markér som løst?"
       ],
@@ -3565,7 +3738,7 @@
         "Flyt element til \"${ vaultName }\""
       ],
       "MX record": [
-        "MX-post"
+        "MX-record"
       ],
       "No excluded items": [
         "Ingen ekskluderede elementer"
@@ -3613,6 +3786,9 @@
         "Bemærk, at aliasset ikke kan gendannes, når først det er slettet.",
         "Bemærk, at aliasserne ikke kan gendannes, når først de er slettet."
       ],
+      "Random Prefix Generation": [
+        "Generering af tilfældige præfikser"
+      ],
       "Recommended actions": [
         "Anbefalede handlinger"
       ],
@@ -3646,6 +3822,9 @@
       ],
       "Secure your data": [
         "Beskyt dine data"
+      ],
+      "Select the default domain for aliases": [
+        "Vælg standarddomænet for aliasser"
       ],
       "Set access level": [
         "Angiv adgangsniveau"
@@ -3697,6 +3876,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Lås op for ${ brandNameJSX }"
+      ],
+      "Unverified": [
+        "Ikke verificeret"
       ],
       "Update available": [
         "Opdatering tilgængelig"
@@ -3882,6 +4064,9 @@
       ],
       "Move to trash": [
         "Flyt til papirkurv"
+      ],
+      "Name is required": [
+        "Navn er påkrævet"
       ],
       "No items": [
         "Ingen elementer"

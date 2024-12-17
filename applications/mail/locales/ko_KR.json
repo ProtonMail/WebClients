@@ -69,9 +69,6 @@
       "Add group": [
         "그룹 추가"
       ],
-      "Add new contact": [
-        "새 연락처 추가"
-      ],
       "Add new group": [
         "새 그룹 추가"
       ],
@@ -477,9 +474,6 @@
       "Export contact group": [
         "연락처 그룹 내보내기"
       ],
-      "Export contacts": [
-        "연락처 가져오기"
-      ],
       "External encryption": [
         "외부 암호화"
       ],
@@ -509,6 +503,9 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "${ BRAND_NAME } Duo 플랜 받기"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "${ priceCoupon }에 ${ MAIL_SHORT_APP_NAME } 받기"
       ],
       "Get in touch": [
         "연락하기"
@@ -1906,6 +1903,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "이메일 주소 설정 변경"
+      ],
+      "Continue": [
+        "기계속"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
       ],
@@ -3549,6 +3552,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2단계 인증은 추가적인 보안 계층, 접근 불가 상황 방지에 도움을 줍니다."
       ],
+      "Also included": [
+        "이것 외에도"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "업그레이드시 스펨 메일함과 휴지통 내 메시지를 자동으로 삭제하며 더 많은 프리미엄 기능이 해제됩니다."
       ],
@@ -3578,6 +3584,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "글쓰기 도우미 및 기타 서비스에 대한 무제한 접근이 필요하다면 ${ BRAND_NAME } Duo로 업그레이드하세요."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] }으로 무제한 별칭과 500 GB 스토리지 공간을 받으세요."
@@ -3648,6 +3657,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "업그레이드하여 무제한 폴더, 라벨과 더 많은 프리미엄 기능들을 잠금 해제하세요."
       ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "업그레이드하여 현재 이메일 주소 이외에 더 짧고, 기억하기 쉬운 ${ activatePmUser }을 얻으세요."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "지정 24시간 추가적인 지원이 포함된 최첨단 AI 방식의 보안 솔루션인 ${ PROTON_SENTINEL_NAME }을 활성화 하려면 계정을 업그레이드 하세요."
       ],
@@ -3699,6 +3711,9 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length }개의 새로운 메시지"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "보낸 사람: ${ sender } - ${ Subject }"
       ]
@@ -5231,23 +5246,14 @@
       "Checklist complete": [
         "체크 리스트 완료"
       ],
-      "Close": [
-        "닫기"
-      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "스토리지를 두 배로 늘리려면 ${ daysCount }일 내에 이 체크리스트를 완료하세요."
-      ],
-      "Congratulations, you completed all the steps!": [
-        "모든 단계를 완료하셨습니다. 축하합니다!"
       ],
       "Discover how our ${ strongText } protect you": [
         "${ strongText }이 당신을 보호하는 방법을 알아보기"
       ],
       "Discover privacy features": [
         "개인정보 보호 기능 알아보기"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "무료 저장공간을 두 배인 1GB로 늘리려면 다음을 완료하세요:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "강력한 암호화로, 이메일은 오직 당신과 주고 받는 사람간에서만 볼 수 있습니다."
@@ -5276,26 +5282,14 @@
       "Learn more": [
         "더 알아보기"
       ],
-      "Maybe later": [
-        "나중에"
-      ],
       "Nice! You've updated all services in this category.": [
         "좋아요! 이 카테고리의 모든 서비스를 업데이트했습니다."
-      ],
-      "Open checklist": [
-        "체크리스트 열기"
-      ],
-      "Open checklist and get free storage": [
-        "체크리스트를 열고 무료 저장공간 받기"
       ],
       "Popular online services": [
         "인기 있는 온라인 서비스"
       ],
       "privacy features": [
         "개인정보 보호 기능"
-      ],
-      "Protect and simplify your email": [
-        "이메일 보호 및 간소화하기"
       ],
       "Protection from trackers": [
         "트래커로부터 보호"
@@ -5908,9 +5902,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "요금 미납으로 인해 계정 액세스가 제한되었습니다. 관리자에게 문의하세요."
       ],
-      "Account size": [
-        "계정 크기"
-      ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
       ],
@@ -5920,8 +5911,8 @@
       "Add image URL": [
         "이미지 URL 추가"
       ],
-      "Additional options": [
-        "추가적인 옵션"
+      "Address copied to clipboard": [
+        "주소가 클립보드에 복사됨"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "이 주소에 대해 신뢰할 수 있는 키로 주소 확인을 사용할 수 있습니다. 이 주소로 보내려면 먼저 전송에 사용 할 수 있는 공개 키를 신뢰해야 합니다."
@@ -6082,9 +6073,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "연락처 확인 중 ${ max } 중 ${ progress }..."
       ],
-      "Clear app data": [
-        "앱 데이터 지우기"
-      ],
       "Clear browser data": [
         "브라우저 데이터 제거"
       ],
@@ -6145,17 +6133,11 @@
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "${ n }명의 구성원을 위한 보안 클라우드 만들기"
-      ],
       "Create in": [
         "만들기"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 및 일부 기타 앱과 vCard 3.1 및 4.0 형식(UTF-8 인코딩) 이(가) 지원됩니다."
       ],
       "Current plan": [
         "현재 플랜"
@@ -6186,6 +6168,9 @@
       ],
       "Dedicated servers": [
         "전용 서버"
+      ],
+      "default email address": [
+        "기본 이메일 주소"
       ],
       "Default email application": [
         "기본 이메일 애플리케이션"
@@ -6276,9 +6261,6 @@
       ],
       "Email copied to clipboard": [
         "이메일이 클립보드에 복사되었습니다"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "10개 사용자 지정 이메일 도메인 호스팅이 무료로 포함되어 있습니다. 추가적인 도메인이 ${ price } 으로 추가할 수 있습니다."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "이메일 호스팅은 이미 개인이 소유한 도메인만 가능합니다. 도메인 등록은 현재 ${ BRAND_NAME }에서 사용하실 수 없습니다. 도메인 호스팅 업체에 등록된 도메인에 대한 이메일을 호스트할 수 있습니다."
@@ -6601,6 +6583,9 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "휴지통 및 스팸함으로 이동된 메시지가 30일 이후 자동으로 삭제됩니다."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "내 모든 이메일 주소로 오는 메시지는 받은 편지함으로 이동됩니다."
+      ],
       "MM/YY": [
         "MM/YY"
       ],
@@ -6826,6 +6811,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
       ],
+      "Registering your subscription...": [
+        "구독 등록 중"
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "계정 및 로그인 정보를 보관하는 곳 또는 비밀번호 관리자에서 이 사항을 업데이트하십시오."
       ],
@@ -6928,6 +6916,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP를 설정하면 ${ BRAND_NAME }을 사용하지 않는 PGP 호환 서비스를 사용하는 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
       ],
+      "Setting up your new address...": [
+        "새 주소 준비 중"
+      ],
       "Shorten selection": [
         "단락 단축"
       ],
@@ -6954,6 +6945,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "죄송합니다. 이 메시지가 존재하지 않거나 이미 만료되었습니다."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "연락처에 있는 사람들과 공유하고 온라인 서비스에서 사용하세요."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "이 브라우저에서 브라우저 저장소를 지원하지 않습니다. 메시지 내용 검색을 사용하려면 기능의 지원이 필요합니다."
@@ -6993,9 +6987,6 @@
       ],
       "Text to display": [
         "표시할 이름"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "연락처를 내보내려면 먼저 로컬에서 암호를 해독해야 합니다. 프로세스가 끝나면 VCF 파일이 생성되고 다운로드할 수 있습니다."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "이 페이지를 떠난다면 받은 편지함에 있는 데이터가 저장되지 않을 수 있습니다."
@@ -7084,6 +7075,9 @@
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "글을 쓰는데 도움을 주기 위한 것입니다. 정확성을 위해 제안된 문장을 확인해 주세요. ${ learnMoreResult }"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
       ],
@@ -7152,9 +7146,6 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "이 공개 키는 이 주소에 암호화된 이메일을 전송할 때 자동으로 사용됩니다."
-      ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "이 작업은 다운로드된 메시지를 포함한 이 앱과 연관된 모든 데이터를 지웁니다. 앱이 재시작 되며, 다시 사용하기 위해서는 다시 로그인해야 합니다."
       ],
       "This sender's public key has not been trusted yet.": [
         "이 발신자의 공개 키는 아직 신뢰되지 않았습니다."
@@ -7341,9 +7332,6 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "최근 회원님께서 ${ termsLink } 위반 사유에 해당되는 다중 무료 계정 생성을 감지했습니다."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
-        "Proton에는 하나 이상의 이메일 주소가 필요한 회원님과 같은 사용자를 위해 특별히 설계된 플랜이 이미 존재합니다.\n제한을 제거하려면, 유료 플랜으로 업그레이드하실 수 있습니다."
       ],
       "We need to authenticate your payment method with your bank.": [
         "은행의 결제 수단 인증이 필요합니다."
@@ -7650,11 +7638,6 @@
         "보기 전용"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "유출됨"
@@ -7957,9 +7940,6 @@
       "Authenticator app": [
         "인증 앱"
       ],
-      "Automatically save contacts": [
-        "자동으로 연락처 저장"
-      ],
       "BCC": [
         "숨은참조"
       ],
@@ -8125,9 +8105,6 @@
       "Expires": [
         "만료"
       ],
-      "Export contacts": [
-        "연락처 가져오기"
-      ],
       "Extended address": [
         "상세 주소"
       ],
@@ -8172,9 +8149,6 @@
       ],
       "Import all messages": [
         "모든 메시지 가져오기"
-      ],
-      "Import contacts": [
-        "연락처 가져오기"
       ],
       "Import interval": [
         "가져오기 간격"
@@ -9075,6 +9049,9 @@
       "Get ${ planTitle }": [
         "${ planTitle }로 계속하기"
       ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }부터 시작"
       ],
@@ -9198,6 +9175,9 @@
       ],
       "10 email addresses/aliases": [
         "10개의 이메일 주소/별칭"
+      ],
+      "10 more premium features": [
+        "10개 더 많은 프리미엄 기능들"
       ],
       "10-year file version history": [
         "10년 파일 버전 기록"
@@ -9675,6 +9655,14 @@
         "요금제를 변경할까요?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon }에 Mail Plus 얻기"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
@@ -10064,20 +10052,8 @@
       "Auto-delete spam and trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
-      "Automatically forward emails": [
-        "자동으로 Gmail에서 당신의 받은 편지함으로"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "사기꾼으로부터의 이메일의 수발신을 영구적으로 차단합니다. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "보낸 사람을 차단하기"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "30일 뒤 삭제되거나 스팸인 이메일을 제거합니다."
-      ],
-      "Congratulations on choosing privacy": [
-        "프라이버시를 선택하신 것을 축하합니다"
       ],
       "Dark Web Monitoring": [
         "다크 웹 모니터링"
@@ -10088,17 +10064,8 @@
       "Download the desktop app and continue": [
         "데스크톱 앱 다운로드하고 계속하기"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "강력한 암호화로, 이메일은 오직 당신과 주고 받는 사람간에서만 볼 수 있습니다. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "고정되고 집중되게"
-      ],
-      "For your eyes only": [
-        "눈으로만 보기"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "메시지를 가져오세요."
       ],
       "Get notified if your password is compromised.": [
         "비밀번호가 유출되면 알림을 받아보세요."
@@ -10139,17 +10106,11 @@
       "Replay introduction": [
         "소개 다시 재생"
       ],
-      "Skip": [
-        "건너뛰기"
-      ],
       "Start using ${ BRAND_NAME }": [
         "${ BRAND_NAME } 사용 시작하기"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "더 짧고 매력있는 이메일 주소를 사용하세요."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "사용자를 프로파일링하는 광고주와 데이터 수집자들을 차단합니다. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }에 오신 것을 환영해요"
@@ -10614,26 +10575,9 @@
         "이름"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "이러한 경우 지원 팀에 ${ contactHref }하십시오."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "플랜이 포함되는 IP 수를 선택하세요. 각 추가 IP 가격은 ${ price } 입니다."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "${ maxIPs } IP 이상이여야 합니다, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "연락"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "플랜이 포함되는 사용자의 수를 선택하세요. 각 추가 사용자의 가격은 ${ price } 입니다."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "${ maxUsers } 이상의 사용자 계정이 필요하시다면, ${ contact } 저희 세일즈팀에 문의해 주세요."
       ]
     },
     "Price": {
@@ -11389,6 +11333,9 @@
       "Schedule send": [
         "스케줄 발송"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "이것이 이제 기본 주소입니다. 다른 주소에서 전송하려면 드롭다운을 여세요. "
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "제 3자 서비스에서 당신의 데이터가 유출되었는지 알림을 받으려면 ${ DARK_WEB_MONITORING_NAME }을 활성화하십시오."
       ],
@@ -11400,6 +11347,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "이제 메시지를 예약하여 나중에 전송할 수 있습니다"
+      ],
+      "Your pm.me email is active": [
+        "pm.me 이메일이 활성상태입니다."
       ]
     },
     "sso": {
@@ -11951,7 +11901,7 @@
         "시스템이 더 이상 이 결제 수단으로 자동 결제할 수 없습니다, 다만 고객님의 구독이 청구 주기가 끝날 때까지 갱신될 것입니다. 구독을 다운그레이드하거나 변경하려면, 청구 기간이 끝나기 전에 수동으로 해야합니다. 또한, 수동 결제를 하는 것을 잊어버리고 모든 결제 수단에 자동 결제가 비활성화된 경우, 고객님의 계정이 자동 다운그레이드되어 많은 기능이 손실될 수 있습니다."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 사용자의 구독이 여전히 마지막 결제일이 갱신됩니다. 만일 요금제를 다운그레이드하고 싶으시거나 구독을 변경하려면, 여전히 결제일이 끝나기 전 직전 수행해야 합니다. 만약 사용자가 무료 요금제 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기에 자동으로 다운그레이드할 수 없습니다. 자동 결제 수단을 비활성화 하시려면, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 마세요."
+        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독이 여전히 마지막 결제일에 갱신됩니다. 만일 플랜을 다운그레이드 또는 변경하시려면, 결제일이 끝나기 직전 수행해야 합니다. 만약 무료 플랜 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기에 자동으로 다운그레이드할 수 없습니다. 자동 결제 수단을 비활성화 하시려면, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
       ]
     },
     "Subscription saving": {
@@ -13112,6 +13062,9 @@
       "Unsubscribe request sent": [
         "수신 거부 요청이 전송됨"
       ],
+      "Upgrade complete!": [
+        "업그레이드 완료!"
+      ],
       "Verification error": [
         "인증 오류"
       ],
@@ -13159,6 +13112,9 @@
       ],
       "Your free trial has ended": [
         "무료 체험 기간이 종료되었습니다."
+      ],
+      "Your shorter address is now ready": [
+        "짧은 주소가 준비되었습니다"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13244,9 +13200,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
-      ],
-      "You do not have any contacts to export": [
-        "내보낼 연락처가 없습니다."
       ]
     },
     "tooltip": {
@@ -13408,6 +13361,9 @@
       ],
       "Missing alias suffix": [
         "별칭 접미사가 빠져있습니다"
+      ],
+      "Name is required": [
+        "이름은 필수입니다"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "영숫자, 점, 하이픈 및 밑줄만 허용됩니다."

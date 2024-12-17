@@ -220,6 +220,9 @@
       "Discard changes": [
         "Сбросить изменения"
       ],
+      "Dismiss": [
+        "Отклонить"
+      ],
       "Domain name": [
         "Доменное имя"
       ],
@@ -306,6 +309,9 @@
       ],
       "Forgot recovery method?": [
         "Забыли метод восстановления?"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Оформите ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "Получить ${ vpnPlus }"
@@ -1158,6 +1164,9 @@
         "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев",
         "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев",
         "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Обновляется автоматически в ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -2704,6 +2713,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Пожалуйста, включите многопользовательский режим перед добавлением пользователей в вашу организацию."
       ],
+      "Please enter a valid entity ID URL": [
+        "Пожалуйста, введите правильный URL идентификатора сущности"
+      ],
       "Please generate keys before you try to change your password": [
         "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
       ],
@@ -3724,9 +3736,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
       ],
-      "Account size": [
-        "Размер аккаунта"
-      ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
@@ -3768,9 +3777,6 @@
         "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
         "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
         "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }"
-      ],
-      "Additional options": [
-        "Дополнительные параметры"
       ],
       "Admin account allocation": [
         "Распределение аккаунтов администраторов"
@@ -3889,6 +3895,9 @@
       "Change your password": [
         "Измените пароль"
       ],
+      "Choose an Entity ID to continue.": [
+        "Выберите ID сущности для продолжения."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
       ],
@@ -3907,6 +3916,9 @@
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Продолжите подключение вашей организации ${ BRAND_NAME } к **${ organizationValue.Name }**."
       ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Продолжите подключение этой сущности к вашей организации ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Продолжить с ${ freeName }"
       ],
@@ -3924,12 +3936,6 @@
       ],
       "Country code": [
         "Код страны"
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Создать безопасное облако для ${ n } участника",
-        "Создать безопасное облако для ${ n } участников",
-        "Создать безопасное облако для ${ n } участников",
-        "Создать безопасное облако для ${ n } участников"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Создавайте и управляйте дополнительными аккаунтами, назначайте им адреса электронной почты на вашем домене."
@@ -3964,11 +3970,14 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Настройте внешний вид ${ BRAND_NAME } приложений."
       ],
+      "dedicated servers": [
+        "выделенные серверы"
+      ],
       "Dedicated servers": [
         "Выделенные серверы"
       ],
-      "dedicated servers": [
-        "выделенные серверы"
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
@@ -4051,14 +4060,11 @@
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
-      "EduGain configuration saved": [
-        "Конфигурация EduGain сохранена"
+      "eduGAIN configuration saved": [
+        "конфигурация eduGain сохранена"
       ],
       "email": [
         "электронная почта"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через ${ BRAND_NAME } в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
@@ -4101,6 +4107,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Введите код, который был отправлен на ${ email }. Если вы не нашли письмо в папке \"Входящие\", проверьте папку \"Спам\"."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Введите ID сущности организации **eduGAIN** для **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Введите пароль организации для восстановления полномочий администратора. ${ learnMore }"
@@ -4356,6 +4365,9 @@
       ],
       "Learn more about Gateways": [
         "Узнайте больше о шлюзах"
+      ],
+      "Learn more about single sign-on": [
+        "Узнайте больше о едином входе"
       ],
       "Let's get started by pressing the New group button above": [
         "Давайте начнем с нажатия кнопки Новая группа, расположенной выше."
@@ -4993,11 +5005,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "Username": [
-        "Имя пользователя"
-      ],
       "username": [
         "имя пользователя"
+      ],
+      "Username": [
+        "Имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -5263,6 +5275,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "После входа в систему вы будете перенаправлены на ${ destination }"
       ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Вы сохраните пожизненный доступ к ${ PASS_APP_NAME } + премиум функциям SimpleLogin, если вы отмените свою подписку."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "В этот день вы потеряете доступ к возможностям ${ planTitle }."
       ],
@@ -5378,11 +5393,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Только просмотр"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
       ]
     },
     "Input Error": {
@@ -5688,6 +5698,12 @@
       "Enter the code displayed on your TV": [
         "Введите код, отображаемый на вашем ТВ"
       ],
+      "Entity ID": [
+        "Идентификатор сущности"
+      ],
+      "Entity ID URL": [
+        "URL идентификатора сущности"
+      ],
       "Event": [
         "Событие"
       ],
@@ -5870,6 +5886,9 @@
       ],
       "Recovery phrase": [
         "Фраза для восстановления"
+      ],
+      "Remove": [
+        "Удалить"
       ],
       "Repeat backup password": [
         "Повторите пароль резервной копии"
@@ -7089,6 +7108,12 @@
       "${ shortPlan.title } Trial": [
         "Пробная версия ${ shortPlan.title }"
       ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Оформите Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
+      ],
       "Your account's usage": [
         "Использование вашего аккаунта"
       ]
@@ -8184,32 +8209,9 @@
         "Участники"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } нашим Отделом продаж."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Выберите количество адресов IP, которые необходимо включить в ваш тариф. Каждый дополнительный IP стоит ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "свяжитесь"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Выберите количество пользователей для включения в ваш тариф. Каждый дополнительный пользователь стоит ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Если вам нужно более ${ maxUsers } аккаунта, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж."
       ]
     },
     "Price": {
@@ -8736,6 +8738,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Мы свяжемся с вами, когда будет доступен сброс пароля."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Проверить статус запроса можно в любой момент ${ accountAndPasswordSectionLink } настроек."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "в разделе Аккаунт и пароль"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -10082,11 +10092,20 @@
       "Creating config file for ${ serverName }": [
         "Создание файла конфигурации для ${ serverName }"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Групповое сквозное шифрование электронной почты отключено"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Групповое сквозное шифрование электронной почты включено"
+      ],
       "Preference updated": [
         "Предпочтение обновлено"
       ],
       "Preferences updated": [
         "Настройки обновлены"
+      ],
+      "Resent invitation": [
+        "Пригласить повторно"
       ]
     },
     "Suffix": {
@@ -10329,10 +10348,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -10955,6 +10974,9 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Администраторы могут управлять аккаунтами пользователей и предоставлять права администратора другим пользователям. Только основной администратор может изменить тариф организации."
       ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Позволяет бесшовно добавлять ссылки на видеоконференции в приглашения календаря."
+      ],
       "An approximate location of the IP address": [
         "Примерное местонахождение IP-адреса"
       ],
@@ -10972,6 +10994,9 @@
       ],
       "Device information such as operating system": [
         "Информация об устройстве, например операционная система"
+      ],
+      "Display name for the entity in the eduGAIN database": [
+        "Отображаемое имя в базе данных eduGAIN"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL конечной точки поставщика личных данных (например, https://idp.primer.com/sso/saml)."
@@ -10993,6 +11018,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Укажите домен, которому разрешена аутентификация с помощью SAML SSO"
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Укажите пользователей сущности eduGAIN, которым разрешено аутентифицироваться с помощью SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новый цикл подписки начинается ${ formattedTime }"

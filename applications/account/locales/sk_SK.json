@@ -70,11 +70,11 @@
       "Accept": [
         "Prijať"
       ],
-      "activate": [
-        "aktivovať"
-      ],
       "Activate": [
         "Aktivovať"
+      ],
+      "activate": [
+        "aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -421,6 +421,9 @@
       "Discard changes": [
         "Zahodiť zmeny"
       ],
+      "Dismiss": [
+        "Odmietnuť"
+      ],
       "Domain name": [
         "Názov domény"
       ],
@@ -561,6 +564,9 @@
       ],
       "Generate token": [
         "Vygenerovať token"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Získajte ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "Získať ${ vpnPlus }"
@@ -1822,9 +1828,15 @@
       ],
       "forever": [
         "navždy"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Obnoví sa po 1 mesiaci za ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Prístup k zablokovanému obsahu a súkromné prehliadanie. Zahŕňa viac ako 8 500 serverov vo viac ako 110 krajinách, 10 zariadení, vysokorýchlostné streamovanie, blokovanie reklám a ochranu pred malvérom, VPN Accelerator a ďalšie."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+, Prime Video a ďalších odkiaľkoľvek."
       ],
@@ -1854,6 +1866,9 @@
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Špeciálne navrhnutý NetShield chráni vaše zariadenia a zrýchľuje vaše prehliadanie tým, že blokuje reklamy, sledovače a malvér."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
       ]
     },
     "Billing cycle": {
@@ -1862,6 +1877,9 @@
         "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiace",
         "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiacov",
         "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiacov"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Automaticky sa obnovuje ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -1979,6 +1997,9 @@
     "Button": {
       "Add link to your email footer": [
         "Pridať odkaz do päty emailu"
+      ],
+      "Continue": [
+        "Pokračovať"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
@@ -4699,6 +4720,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Pred pridaním používateľov do organizácie povoľte podporu viacerých používateľov."
       ],
+      "Please enter a valid entity ID URL": [
+        "Zadajte platnú URL ID subjektu, prosím"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Ak chcete pokračovať, opravte zvýraznený problém.",
         "Ak chcete pokračovať, opravte zvýraznené problémy.",
@@ -6969,9 +6993,6 @@
       "account recovery method": [
         "metóda obnovenia účtu"
       ],
-      "Account size": [
-        "Veľkosť účtu"
-      ],
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
       ],
@@ -7032,8 +7053,8 @@
         "Pridávanie serverov brány: ${ serverNumber } / ${ total }",
         "Pridávanie serverov brány: ${ serverNumber } / ${ total }"
       ],
-      "Additional options": [
-        "Ďalšie možnosti"
+      "Address copied to clipboard": [
+        "Adresa bola skopírovaná do schránky"
       ],
       "Admin account allocation": [
         "Pridelenie účtu správcu"
@@ -7293,6 +7314,9 @@
       "Choose an app to get started": [
         "Vyberte si aplikáciu a začnite"
       ],
+      "Choose an Entity ID to continue.": [
+        "Pre pokračovanie vyberte ID subjektu."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
       ],
@@ -7313,6 +7337,9 @@
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Pokračujte v pripojení **${ organizationValue.Name }** s vašou organizáciou ${ BRAND_NAME }."
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Pokračujte v pripojení tohto subjektu k vašej organizácii ${ BRAND_NAME }."
       ],
       "Continue with ${ freeName }": [
         "Pokračovať ako ${ freeName }"
@@ -7352,12 +7379,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Vytvorte štítok pre importované správy, časový rozsah pre tento import a štítky, ktoré chcete importovať."
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Vytvorte bezpečný cloud pre ${ n } člena",
-        "Vytvorte bezpečný cloud pre ${ n } členov",
-        "Vytvorte bezpečný cloud pre ${ n } členov",
-        "Vytvorte bezpečný cloud pre ${ n } členov"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Vytvorte a spravujte podúčty a priraďte im emailové adresy vo vlastnej doméne."
@@ -7427,6 +7448,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
+      ],
+      "default email address": [
+        "predvolená emailová adresa"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstráňte všetky ostatné MX záznamy, alebo sa uistite, že priorita ${ MAIL_APP_NAME } má najnižšie číslo."
@@ -7539,17 +7563,14 @@
       "Edit link": [
         "Upraviť odkaz"
       ],
-      "EduGain configuration saved": [
-        "Konfigurácia eduGain uložená"
+      "eduGAIN configuration saved": [
+        "konfigurácia eduGAIN uložená"
       ],
       "email": [
         "email"
       ],
       "Email address": [
         "Emailová adresa"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Emailový hosting pre 10 vlastných emailových domén je zahrnutý zadarmo. Ďalšie domény je možné pridať za cenu ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
@@ -7613,6 +7634,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Zadajte prihlasovacie údaje emailového účtu, z ktorého chcete importovať."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Zadajte ID subjektu organizácie **eduGAIN** pre **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Zadajte heslo organizácie pre obnovenie oprávnenia správcu. ${ learnMore }"
@@ -8178,9 +8202,6 @@
       "No logs yet.": [
         "Zatiaľ žiadne záznamy."
       ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Žiadne organizácie s povolenou funkciou **eduGAIN** pre ** ${ domain.DomainName }**."
-      ],
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
       ],
@@ -8535,17 +8556,14 @@
       "Select a service provider to start": [
         "Vyberte poskytovateľa služieb a začnite"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Vyberte organizáciu s povolenou funkciou **eduGAIN** pre **${ domain.DomainName }**."
-      ],
       "Select one or multiple user affiliations": [
         "Vyberte jednu alebo viacero používateľských príslušností"
       ],
       "Select recently used servers": [
         "Výber nedávno použitých serverov"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "Vyberte príslušnosť používateľov z **${ organizationValue.Name }** (${ organizationValue.EntityId }), ktorým chcete povoliť vstup do vašej organizácie ${ BRAND_NAME }:"
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Vyberte príslušnosť používateľov z ${ getFormattedOrganization }, ktorú chcete povoliť vo vašej organizácii ${ BRAND_NAME }:"
       ],
       "Select what you want to import.": [
         "Vyberte čo chcete importovať."
@@ -8825,9 +8843,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Táto správa sa nedostane k tímu podpory, ak máte problém s našou službou alebo potrebujete ďalšie kroky z našej strany ${ supportLink }."
-      ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Táto organizácia je povolená pomocou **eduGAIN** pre **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Platnosť tohto propagačného odkazu vypršala."
@@ -9692,11 +9707,6 @@
         "Iba zobrazenie"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Neplatná emailová adresa"
@@ -10541,6 +10551,9 @@
       "Entity ID": [
         "ID entity"
       ],
+      "Entity ID URL": [
+        "URL ID subjektu"
+      ],
       "Event": [
         "Udalosť"
       ],
@@ -10885,6 +10898,9 @@
       ],
       "Recovery phrase": [
         "Obnovovacia fráza"
+      ],
+      "Remove": [
+        "Odstrániť"
       ],
       "Remove image metadata": [
         "Odstrániť metadáta obrázku"
@@ -12020,6 +12036,9 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Začnite teraz za ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
       ],
@@ -12806,6 +12825,9 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Získajte Mail Plus za ${ priceCoupon }"
       ],
       "Your account's usage": [
         "Využitie vášho účtu"
@@ -14569,32 +14591,9 @@
         "Členovia"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } náš Predajný tím, prosím."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Vyberte počet IP, ktoré chcete zahrnúť do svojho plánu. Každá ďalšia IP stojí ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Ak potrebujete viac ako ${ maxIPs } IP, ",
-        "Ak potrebujete viac ako ${ maxIPs } IP, ",
-        "Ak potrebujete viac ako ${ maxIPs } IP, ",
-        "Ak potrebujete viac ako ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontaktujte"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Vyberte počet používateľov, ktorých chcete zahrnúť do svojho plánu. Každý ďalší používateľ stojí ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Ak potrebujete viac ako ${ maxUsers } používateľský účet, ${ contact } prosím náš obchodný tím.",
-        "Ak potrebujete viac ako ${ maxUsers } používateľské účty, ${ contact } prosím náš obchodný tím.",
-        "Ak potrebujete viac ako ${ maxUsers } používateľských účtov, ${ contact } prosím náš obchodný tím.",
-        "Ak potrebujete viac ako ${ maxUsers } používateľských účtov, ${ contact } prosím náš obchodný tím."
       ]
     },
     "Price": {
@@ -15735,6 +15734,14 @@
     "signup: Action": {
       "Request trial": [
         "Požiadať o skúšobnú verziu"
+      ]
+    },
+    "signup: Feature": {
+      "Encrypted": [
+        "Šifrované"
+      ],
+      "Strict no-logs policy": [
+        "Prísna zásada neuchovávania záznamov"
       ]
     },
     "Signup: Info": {
@@ -18921,6 +18928,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Správy v priečinku Odoslané alebo Koncepty sa budú naďalej zobrazovať v tomto priečinku, aj keď ich presuniete do iného priečinka."
+      ],
+      "Remove metadata from images to protect your privacy.": [
+        "Odstránenie metadát z vašich obrázkov na ochranu vášho súkromia."
       ],
       "See number of unread messages in the tab icon": [
         "Zobraziť počet neprečítaných správ v ikone karty"

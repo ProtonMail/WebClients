@@ -17,6 +17,9 @@
       "Continue": [
         "Lanjutkan"
       ],
+      "Dismiss": [
+        "Abaikan"
+      ],
       "Edit email address": [
         "Sunting alamat email"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "Lihat faktur"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikasi desktop ${ MAIL_APP_NAME }"
+      ],
+      "Dark Web Monitoring": [
+        "Pemantauan Dark Web"
+      ],
+      "Use your own email domain": [
+        "Gunakan domain email milik Anda sendiri"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "wortel"
+      ],
+      "cerise": [
+        "ceri"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "tembaga"
+      ],
+      "enzian": [
+        "enzian"
+      ],
+      "fern": [
+        "perdu"
+      ],
+      "forest": [
+        "hutan"
+      ],
+      "ocean": [
+        "samudera"
+      ],
+      "olive": [
+        "zaitun"
+      ],
+      "pacific": [
+        "pasifik"
+      ],
+      "pickle": [
+        "acar"
+      ],
+      "pine": [
+        "pinus"
+      ],
+      "pink": [
+        "merah jambu"
+      ],
+      "plum": [
+        "plem"
+      ],
+      "purple": [
+        "ungu"
+      ],
+      "reef": [
+        "karang"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "biru tanah"
+      ],
+      "soil": [
+        "tanah"
+      ],
+      "strawberry": [
+        "stroberi"
       ]
     },
     "Country name": {
@@ -870,7 +946,7 @@
         "Alamat email tidak sesuai"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
+        "Isi kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
       ],
       "This field is required": [
         "Kolom ini wajib diisi"
@@ -896,7 +972,7 @@
         "Kesalahan: ${ errorMessage }"
       ],
       "Please refresh the page or try again later.": [
-        "Silakan muat ulang laman atau coba lagi nanti."
+        "Silakan muat ulang halaman ini atau coba lagi nanti."
       ],
       "Something went wrong": [
         "Terdapat suatu kesalahan"
@@ -921,6 +997,40 @@
     "fido2: Label": {
       "Security key": [
         "Kunci keamanan"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte"
+      ],
+      "Gigabyte": [
+        "Gigabyte"
+      ],
+      "Kilobyte": [
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte"
       ]
     },
     "Font face option": {
@@ -993,6 +1103,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Apabila Anda merasa bahwa ini merupakan sebuah kesalahan, silakan ${ contactLink }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
@@ -1016,6 +1129,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Kami mendeteksi pembuatan lebih dari satu akun gratis, yang melanggar ${ termsLink } kami."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
@@ -1075,11 +1191,371 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "hubungi kami"
+      ],
       "Learn more": [
         "Lebih lanjut"
       ],
       "Request an invite": [
         "Minta undangan"
+      ],
+      "terms of service": [
+        "ketentuan layanan"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Kelola kotak masuk Anda dengan folder yang tertata rapi"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Dapatkan ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
+      "${ n } calendar": [
+        "${ n } kalender"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalender per pengguna"
+      ],
+      "${ n } custom email domain": [
+        "${ n } domain email khusus"
+      ],
+      "${ n } email address": [
+        "${ n } alamat email/alias"
+      ],
+      "${ n } email address per user": [
+        "${ n } alamat email per pengguna"
+      ],
+      "${ n } filter": [
+        "${ n } filter"
+      ],
+      "${ n } folder": [
+        "${ n } folder"
+      ],
+      "${ n } folder and label": [
+        "${ n } folder dan label"
+      ],
+      "${ n } label": [
+        "${ n } label"
+      ],
+      "${ n } message per day": [
+        "${ n } pesan per hari"
+      ],
+      "${ options }-day file version history": [
+        "Riwayat versi berkas ${ options } hari"
+      ],
+      "${ size } attachment size": [
+        "Batas ukuran lampiran ${ size }"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } penyimpanan aman per pengguna"
+      ],
+      "${ size } storage": [
+        "Ruang penyimpanan ${ size }"
+      ],
+      "1 TB secure storage": [
+        "Ruang penyimpanan aman 1 TB"
+      ],
+      "10 email addresses/aliases": [
+        "10 alamat email/alias"
+      ],
+      "10 more premium features": [
+        "10 fitur premium lainnya"
+      ],
+      "10-year file version history": [
+        "Riwayat versi berkas 10 tahun"
+      ],
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "Advanced account protection": [
+        "Perlindungan akun tingkat lanjut"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Seluruh produk dan fitur ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Seluruh layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Semua layanan ${ BRAND_NAME } premium. Satu langganan mudah"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Kosongkan Spam dan Sampah secara otomatis"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Hapus pesan spam dan sampah secara otomatis"
+      ],
+      "Auto-reply": [
+        "Pesan balasan otomatis"
+      ],
+      "Automatic email forwarding": [
+        "Penerusan email otomatis"
+      ],
+      "Breach alerts": [
+        "Peringatan pembobolan"
+      ],
+      "Calendar sharing": [
+        "Berbagi kalender"
+      ],
+      "Catch-all": [
+        "Alamat email catch-all"
+      ],
+      "Collaborate and share large files": [
+        "Kolaborasi dan berbagi file besar"
+      ],
+      "Contact groups": [
+        "Grup kontak"
+      ],
+      "Contact groups management": [
+        "Pengelolaan grup kontak"
+      ],
+      "Custom and secure business email": [
+        "Email bisnis khusus dan aman"
+      ],
+      "Custom email domains": [
+        "Domain email khusus"
+      ],
+      "Custom snooze time": [
+        "Pilih sendiri waktu tunda"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Easy Switch import assistant": [
+        "Alat bantu impor Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Dukungan klien email (via IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grup email"
+      ],
+      "Encrypted contact details": [
+        "Rincian kontak yang terenkripsi"
+      ],
+      "End-to-end encryption": [
+        "Enkripsi end-to-end"
+      ],
+      "Generate emails with a prompt": [
+        "Hasilkan email hanya dengan sebaris perintah"
+      ],
+      "HTML signatures": [
+        "Tanda tangan HTML"
+      ],
+      "Online document editor": [
+        "Editor dokumen online"
+      ],
+      "Password health": [
+        "Kesehatan kata sandi"
+      ],
+      "Password-protected Emails": [
+        "Email yang terlindung oleh kata sandi"
+      ],
+      "Proofread and refine your emails": [
+        "Periksa dan sempurnakan email Anda"
+      ],
+      "Quickly craft replies": [
+        "Tulis pesan balasan dengan cepat"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi berkas sebelumnya"
+      ],
+      "Save time emailing": [
+        "Hemat waktu dalam mengirim email"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Jadwalkan dan tunda email kapan saja"
+      ],
+      "Schedule messages at any time": [
+        "Jadwalkan pesan sesuai keinginan Anda"
+      ],
+      "Search message content": [
+        "Cari konten pesan"
+      ],
+      "See team's availability": [
+        "Lihat ketersediaan tim"
+      ],
+      "Send & receive invitations": [
+        "Kirim & terima undangan"
+      ],
+      "Share files with no size limit": [
+        "Bagikan berkas tanpa batasan ukuran"
+      ],
+      "SMTP submission": [
+        "Submisi SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Submisi SMTP untuk organisasi pilihan"
+      ],
+      "Support for up to 2 users": [
+        "Dukungan hingga 2 pengguna"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
+      ],
+      "Unlimited filters": [
+        "Tanpa batasan jumlah filter"
+      ],
+      "Unlimited folders": [
+        "Tanpa batasan jumlah folder"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Tanpa batasan jumlah folder, label, dan filter"
+      ],
+      "Unlimited labels": [
+        "Tanpa batasan jumlah label"
+      ],
+      "Unlimited messages per day": [
+        "Tanpa batasan jumlah pesan per harinya"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Ruang penyimpanan hingga ${ totalStorageSize }"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domain email khusus"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Tunda pesan dan dapatkan peringatan di waktu yang Anda inginkan"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Amankan email Anda dengan enkripsi end-to-end. Meliputi dukungan untuk domain email khusus, 15 alamat email, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Akses ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME } secara langsung dari desktop Anda"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Setiap alamat dapat digunakan untuk mengirim dan menerima pesan. Seorang pengguna dapat memiliki lebih dari satu alamat; meskipun demikian, satu alamat tidak dapat dimiliki oleh lebih dari satu pengguna."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Hapus pesan yang telah berusia lebih dari 30 hari secara otomatis dari Sampah dan Spam"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Terusken email yang terkirim pada akun ${ MAIL_APP_NAME } Anda ke alamat email lainnya secara otomatis."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Pengiriman email secara massal atau terprogram saat ini tidak didukung. Kami menyarankan Anda untuk menggunakan layanan email yang secara khusus diperuntukkan bagi keperluan tersebut."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Sesuaikan waktu untuk mengingatkan kapan pesanmu tiba"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain } untuk berlangganan berita"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Buat hingga ${ n } kalender atau tambahkan kalender dari teman, keluarga, rekan kerja, dan organisasi Anda"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Buat hingga ${ n } alamat/alias email yang dapat Anda tentukan kepada para anggota keluarga. Gunakan alamat/alias ini untuk identitas online-nya masing-masing, mis. JohnShopper@${ domain } untuk akun berbelanja."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Email seluruh anggota grup dengan satu alamat email"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Memastikan Anda tetap dapat menerima seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif, tidak lagi ada, atau salah ketik sekalipun"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "Dukungan IMAP terbatas hanya pada aplikasi desktop (mis. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis cloud saat ini tidak didukung."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Jaga agar rencana Anda tetap privat antara Anda dan keluarga Anda dengan kalender yang terenkripsi"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Label merupakan penanda yang dapat Anda sematkan kepada pesan tertentu agar mereka dapat dicari atau difilter dengan mudah"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Mencegah pesan untuk dapat diakses oleh ${ BRAND_NAME } atau pihak ketiga. Pesan Anda hanya akan dibaca oleh penerima dan Anda sendiri."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Siapkan pesan balasan otomatis dengan cepat"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Pindahkan email, kalender, atau kontak Anda dari layanan email lain dengan cepat"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Simpan rincian kontak Anda seperti nomor telepon, alamat, tanggal ulang tahun, catatan personal, dan lain sebagainya secara aman. Enkripsi zero-access kami memastikan bahwa tidak ada siapapun yang dapat mengakses data Anda, termasuk ${ BRAND_NAME } sendiri."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Lihat ketersediaan peserta rapat dan menghemat waktu dalam menjadawalkan rapat"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Kirim email ke grup yang besar dengan mudah dan cepat ke dengan cara membuat kontak grup khusus sejumlah pesan yang Anda butuhkan (hingga 100 kontak per grup)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Atur filter untuk membalas, menyortir, dan/atau melabeli email Anda secara otomatis"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Bagikan berkas atau folder Anda dengan siapa pun melalui tautan yang aman dan mudah untuk dibagikan"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Ruang penyimpanan terbagi antar ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }. Para administrator akan dapat mengatur besar kuota penyimpanan yang dimiliki oleh masing-masing pengguna di dalam organisasi mereka"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Ruang penyimpanan terbagi untuk seluruh pengguna antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Pada saat Anda mengirim pesan ke pengguna ${ MAIL_APP_NAME } lainnya, enkripsi akan diterapkan secara otomatis. Sebaliknya, pada saat Anda mengirim pesan ke pengguna non-${ MAIL_APP_NAME_TWO }, Anda harus menentukan kata sandi pada pesan yang Anda kirim."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Terapkan berbagai opsi personalisasi dengan dukungan 15 alamat email dan 3 domain khusus"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Tingkatkan ruang penyimpanan Anda ke ${ bundleStorage } per pengguna"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Tingkatkan total ruang penyimpanan Anda ke ${ bundleStorage }"
+      ],
+      "Create up to ${ n } calendar": [
+        "Buat hingga ${ n } kalender"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Dukungan untuk ${ n } domain email khusus"
       ]
     },
     "Placeholder": {
@@ -1103,6 +1579,22 @@
         "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Ruang penyimpanan untuk data yang dihasilkan oleh ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, dan ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Ruang penyimpanan Drive hingga ${ totalStorageSize }"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Ruang penyimpanan Mail hingga ${ totalStorageSize }"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Untuk seluruh layanan ${ BRAND_NAME }"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
@@ -1112,6 +1604,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "Akun terkunci"
+      ],
       "Enter 2FA code": [
         "Masukkan kode 2FA"
       ],

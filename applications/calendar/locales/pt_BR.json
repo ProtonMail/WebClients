@@ -68,9 +68,6 @@
       "Add group": [
         "Adicionar grupo"
       ],
-      "Add new contact": [
-        "Adicionar novo contato"
-      ],
       "Add new group": [
         "Adicionar novo grupo"
       ],
@@ -305,14 +302,14 @@
       "Export contact group": [
         "Exportar grupo de contato"
       ],
-      "Export contacts": [
-        "Exportar contatos"
-      ],
       "Forgot password?": [
         "Esqueceu sua senha?"
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Obtenha ${ MAIL_SHORT_APP_NAME } Plus por ${ priceCoupon }"
       ],
       "Get in touch": [
         "Entre em contato"
@@ -1247,6 +1244,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Alterar configurações do endereço de e-mail"
+      ],
+      "Continue": [
+        "Continuar"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
       ],
@@ -2601,12 +2604,20 @@
         "Fatura vencida"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use o assistente de importação Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A A2F adiciona uma camada extra de segurança, prevenindo acesso não autorizado."
+      ],
+      "Also included": [
+        "Também incluído"
       ],
       "Availability unknown": [
         "Disponibilidade desconhecida"
@@ -2631,6 +2642,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obtenha infinitos aliases e 500 GB de armazenamento com ${ PLAN_NAMES[PLANS.BUNDLE] }"
@@ -2688,11 +2702,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4464,9 +4473,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta foi restringido devido a faturas não pagas. Entre em contato com o seu administrador."
       ],
-      "Account size": [
-        "Tamanho da conta"
-      ],
       "Account successfully updated": [
         "Conta atualizada"
       ],
@@ -4476,8 +4482,8 @@
       "Added and removed participants will be notified.": [
         "Os participantes adicionados e removidos serão notificados."
       ],
-      "Additional options": [
-        "Opções adicionais"
+      "Address copied to clipboard": [
+        "O endereço foi copiado para a área de transferência"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "A verificação de endereço com chaves de confiança ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
@@ -4612,18 +4618,11 @@
       "Create a new contact group": [
         "Criar novo grupo de contato"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Criar uma nuvem segura para ${ n } membro",
-        "Criar uma nuvem segura para ${ n } membros"
-      ],
       "Create in": [
         "Criar em"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não usada no plano anterior da sua assinatura"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim como os formatos vCard 3.1 e 4.0 (encode UTF-8)."
       ],
       "Current plan": [
         "Plano atual"
@@ -4651,6 +4650,9 @@
       ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "default email address": [
+        "endereço de e-mail padrão"
       ],
       "Deleting event...": [
         "Excluindo evento...",
@@ -4694,9 +4696,6 @@
       ],
       "email": [
         "e-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "A hospedagem de e-mails para 10 nomes de domínio de e-mail adicionais está incluída gratuitamente. Domínios adicionais podem ser adicionados por ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "A hospedagem de e-mail está disponível apenas para domínios que você já possui. O registro de domínio não está disponível no momento através da ${ BRAND_NAME }. Você pode hospedar e-mail para domínios registrados em qualquer registrador de domínio."
@@ -4874,6 +4873,9 @@
       "Merged": [
         "Mesclado"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "As mensagens para todos os seus endereços de e-mail irão para sua caixa de entrada."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -4962,7 +4964,7 @@
         "Note que este processo pode levar algum tempo, dependendo do tamanho da sua lista de contatos."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes.",
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } crédito restante.",
         "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "Please provide a name and an email address for creating a group.": [
@@ -5011,6 +5013,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
+      "Registering your subscription...": [
+        "Registrando sua assinatura..."
+      ],
       "Removed participants will be notified.": [
         "Os participantes removidos serão notificados."
       ],
@@ -5039,11 +5044,17 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário que não usam o ${ BRAND_NAME } que usa um serviço compatível com PGP."
       ],
+      "Setting up your new address...": [
+        "Configurando seu novo endereço..."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Algumas das suas respostas a ocorrências previamente atualizadas pelo organizador serão perdidas."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Comece a compartilhá-lo com contatos e a usá-lo em serviços online."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
@@ -5059,9 +5070,6 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "O aplicativo precisa descriptografar localmente seus contatos antes que eles possam ser exportados. Ao final do processo, um arquivo VCF será gerado e você poderá baixá-lo."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "As informações expostas vazaram de um serviço de terceiros. As informações da sua conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
@@ -5113,6 +5121,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Este evento foi atualizado. O organizador não será notificado de que você recusou o convite porque você não pode enviar e-mails do endereço convidado. Gostaria de excluir este evento mesmo assim?"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Este é agora o seu ${ defaultEmailAddress } para enviar novas mensagens."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
@@ -5482,11 +5493,6 @@
         "Você pode compartilhar seus calendários em configurações."
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Assistente com tecnologia de IA para ajudar você a criar e-mails melhores, com rapidez e facilidade."
-      ]
-    },
     "Information about why calendar event cannot be saved": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "É permitido no máximo ${ maxAttendees } participante por convite",
@@ -5580,9 +5586,6 @@
       ],
       "Authenticator app": [
         "Aplicativo autenticador"
-      ],
-      "Automatically save contacts": [
-        "Salvar contatos automaticamente"
       ],
       "Beta Access": [
         "Acesso beta"
@@ -5731,9 +5734,6 @@
       "Expires": [
         "Data de validade"
       ],
-      "Export contacts": [
-        "Exportar contatos"
-      ],
       "Extended address": [
         "Endereço completo"
       ],
@@ -5763,9 +5763,6 @@
       ],
       "Import all messages": [
         "Importar todas as mensagens"
-      ],
-      "Import contacts": [
-        "Importar contatos"
       ],
       "Import interval": [
         "Intervalo de importação"
@@ -6460,6 +6457,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Iniciando a partir de ${ priceMailPlus }"
       ],
@@ -6600,6 +6600,9 @@
       ],
       "10 email addresses/aliases": [
         "10 endereços de e-mail/aliases"
+      ],
+      "10 more premium features": [
+        "10 novos recursos premium"
       ],
       "10-year file version history": [
         "Histórico de versões de arquivos por 10 anos"
@@ -7070,11 +7073,6 @@
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -7087,6 +7085,17 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Obtenha Mail Plus por ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "O preço com desconto de ${ priceCoupon } é válido no primeiro mês. Em seguida, será renovado automaticamente por ${ priceMailPlus } meses. Você pode cancelar a qualquer momento."
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7245,7 +7254,7 @@
         "Redefina as senhas de usuários e redefina a autenticação de dois fatores para os usuários"
       ],
       "Route your internet traffic through the Tor network with a single click": [
-        "Envie todo o seu tráfego na internet por meio da rede Tor com um único clique"
+        "Roteie seu tráfego de internet pela rede Tor com um único clique"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com um armazenamento cloud criptografado. Inclui sincronização automática, compartilhamento de arquivo criptografado, e mais."
@@ -7815,10 +7824,13 @@
         "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+        "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. Depois, ele será renovado automaticamente por ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupom é válido para renovações de ${ couponRedemptions }. Em seguida, ele será renovado automaticamente a ${ renewPrice } por ${ subscriptionLength } mês. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
+        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. Depois, ele será renovado automaticamente por ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
@@ -7984,28 +7996,9 @@
         "(Sem nome)"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "por favor ${ contactHref } nossa equipe de vendas."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Selecione o número de IPs a serem incluídos no seu plano. Cada IP adicional custa ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Se você precisar de mais de ${ maxIPs } IP, ",
-        "Se você precisar de mais de ${ maxIPs } IPs, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contato"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Selecione o número de usuários a serem incluídos em seu plano. Cada usuário adicional custa ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Se você precisar de mais de ${ maxUsers } conta de usuário, ${ contact } nossa equipe de vendas.",
-        "Se você precisar de mais de ${ maxUsers } contas de usuário, ${ contact } nossa equipe de vendas."
       ]
     },
     "Price": {
@@ -9950,6 +9943,9 @@
       "Update recurring event": [
         "Atualizar evento recorrente"
       ],
+      "Upgrade complete!": [
+        "Upgrade concluído!"
+      ],
       "Verification failed": [
         "Erro na verificação"
       ],
@@ -9991,6 +9987,9 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
+      ],
+      "Your shorter address is now ready": [
+        "Seu endereço mais curto já está pronto"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10085,9 +10084,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"
-      ],
-      "You do not have any contacts to export": [
-        "Você não possui nenhum contato para exportar"
       ]
     },
     "tooltip": {
@@ -10236,6 +10232,9 @@
       ],
       "Missing alias suffix": [
         "Faltando sufixo de alias"
+      ],
+      "Name is required": [
+        "Nome é obrigatório"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Somente caracteres alfanuméricos, pontos, hifens e sublinhados são permitidos"

@@ -63,9 +63,6 @@
       "Add group": [
         "Aggiungi un gruppo"
       ],
-      "Add new contact": [
-        "Aggiungi nuovo contatto"
-      ],
       "Add new group": [
         "Aggiungi un nuovo gruppo"
       ],
@@ -360,9 +357,6 @@
       "Export contact group": [
         "Esporta gruppo di contatti"
       ],
-      "Export contacts": [
-        "Esporta i contatti"
-      ],
       "Fit to window": [
         "Adatta alla finestra"
       ],
@@ -374,6 +368,9 @@
       ],
       "Get ${ DRIVE_APP_NAME }": [
         "Ottieni ${ DRIVE_APP_NAME }"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Ottieni ${ MAIL_SHORT_APP_NAME } Plus per ${ priceCoupon }"
       ],
       "Get in touch": [
         "Mettiti in contatto"
@@ -1321,6 +1318,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Modifica le impostazioni dell'indirizzo email"
+      ],
+      "Continue": [
+        "Continua"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua a usare ${ MAIL_APP_NAME }."
       ],
@@ -2419,6 +2422,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA aggiunge un ulteriore livello di sicurezza, impedendo l'accesso non autorizzato."
       ],
+      "Also included": [
+        "Incluso anche"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Decrittografia dei contatti in corso. Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, potrai scaricare il file con tutti i tuoi contatti esportati."
       ],
@@ -2430,6 +2436,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -4163,14 +4172,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "A causa di fatture non pagate, l'accesso all'account è stato limitato. Per favore, contatta il tuo amministratore."
       ],
-      "Account size": [
-        "Dimensione dell'account"
-      ],
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
-      "Additional options": [
-        "Opzioni aggiuntive"
+      "Address copied to clipboard": [
+        "Indirizzo copiato negli appunti"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verifica dell'indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
@@ -4353,10 +4359,6 @@
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Crea un cloud sicuro per ${ n } membro",
-        "Crea un cloud sicuro per ${ n } membri"
-      ],
       "Create in": [
         "Crea in"
       ],
@@ -4381,9 +4383,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Sono supportati i file CSV da Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alcune altre app, così come i formati vCard 3.1 e 4.0 (codifica UTF-8)."
-      ],
       "Current plan": [
         "Piano attuale"
       ],
@@ -4398,6 +4397,9 @@
       ],
       "Dedicated servers": [
         "Server dedicati"
+      ],
+      "default email address": [
+        "indirizzo email predefinito"
       ],
       "Delete locked drive": [
         "Elimina spazio bloccato",
@@ -4487,9 +4489,6 @@
       "email": [
         "email"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "L'hosting di posta elettronica per 10 nomi di dominio di posta elettronica personalizzati è incluso gratuitamente. È possibile aggiungere ulteriori domini per ${ price }."
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hosting di posta elettronica è disponibile solo per i domini che già possiedi. La registrazione del dominio non è attualmente disponibile tramite ${ BRAND_NAME }. Puoi ospitare email per domini registrati su qualsiasi registrar di domini."
       ],
@@ -4516,9 +4515,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Inserisci le credenziali dell'account email da cui vuoi importare."
-      ],
-      "Enter the device name to confirm removal.": [
-        "Inserisci il nome del dispositivo per confermare la rimozione."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
@@ -4781,6 +4777,9 @@
       "Merged": [
         "Unito"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "I messaggi a tutti i tuoi indirizzi email verranno inviati alla tua casella di posta."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -5024,6 +5023,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
+      "Registering your subscription...": [
+        "Registrazione dell'abbonamento..."
+      ],
       "Report has been sent": [
         "La segnalazione è stata inviata"
       ],
@@ -5106,6 +5108,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configurazione di PGP consente di inviare email crittografate end-to-end con un utente non-${ BRAND_NAME } che utilizza un servizio compatibile PGP."
       ],
+      "Setting up your new address...": [
+        "Configurazione del tuo nuovo indirizzo..."
+      ],
       "Share files with links": [
         "File condivisi con link"
       ],
@@ -5154,6 +5159,9 @@
       "Something went wrong...": [
         "Qualcosa è andato storto..."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
       ],
@@ -5171,9 +5179,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "L'account potrebbe avere una nuova chiave o quanto segue potrebbe essere stato manomesso: ${ items }. Aprilo solo se ti fidi."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'applicazione deve decrittografare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo verrà generato un file VCF che potrai scaricare."
       ],
       "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
         "La firma digitale è stata parzialmente verificata. Il file è stato caricato da una pagina pubblica che non specifica un'origine utente specifica."
@@ -5205,14 +5210,26 @@
       "There is nothing to see here": [
         "Non c'è niente da vedere qui"
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Questa azione eliminerà definitivamente il file caricato."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Questa azione eliminerà definitivamente la cartella caricata. Non è possibile eliminare una cartella che contiene file non di proprietà."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Questa azione eliminerà il link e revocherà l'accesso a tutti gli utenti."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Questa azione eliminerà definitivamente gli elementi selezionati."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Questo browser non supporta l'anteprima dei documenti PDF. Scarica il file."
+      ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "L'operazione NON può essere annullata. Inserisci il nome del dispositivo per confermare la rimozione."
       ],
       "This file is too large to preview": [
         "Questo file è troppo grande per l'anteprima"
@@ -5222,6 +5239,9 @@
       ],
       "This folder is empty": [
         "Questa cartella è vuota"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Questo ora è il tuo ${ defaultEmailAddress } per l'invio di nuovi messaggi."
       ],
       "This item already exists in your library": [
         "Questo elemento è già presente nella tua libreria"
@@ -5248,8 +5268,8 @@
         "Questo eliminerà il link e rimuoverà l'accesso al file o alla cartella per chiunque abbia il link.",
         "Questo eliminerà i link e rimuoverà l'accesso ai file o alle cartelle per chiunque abbia i link."
       ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Questo rimuoverà il dispositivo sincronizzato ${ deviceName } da ${ DRIVE_APP_NAME } e interromperà la sincronizzazione delle cartelle che hai aggiunto a Computer."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "Questa operazione rimuoverà il dispositivo sincronizzato ${ deviceName } da ${ DRIVE_APP_NAME } e tutti i suoi dati da ${ DRIVE_APP_NAME }. Le cartelle aggiunte a I miei computer non verranno più sincronizzate."
       ],
       "This will replace the existing file with the folder": [
         "Questo sostituirà il file esistente con la cartella."
@@ -5667,11 +5687,6 @@
         "Visualizza soltanto"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Assistente basato sull'intelligenza artificiale per aiutarti a creare email migliori, in modo rapido e semplice."
-      ]
-    },
     "Item": {
       "file attributes": [
         "attributi file"
@@ -5787,9 +5802,6 @@
       ],
       "Authenticator app": [
         "App di autenticazione"
-      ],
-      "Automatically save contacts": [
-        "Salvataggio automatico dei contatti"
       ],
       "Beta Access": [
         "Accesso beta"
@@ -5966,9 +5978,6 @@
       "Expires": [
         "Scadenza"
       ],
-      "Export contacts": [
-        "Esporta i contatti"
-      ],
       "Extended address": [
         "Indirizzo completo"
       ],
@@ -6007,9 +6016,6 @@
       ],
       "Import all messages": [
         "Importa tutti i messaggi"
-      ],
-      "Import contacts": [
-        "Importa i contatti"
       ],
       "Import interval": [
         "Intervallo di importazione"
@@ -6812,6 +6818,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Esegui il downgrade a ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Inizia per ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "A partire da ${ priceMailPlus }"
       ],
@@ -6952,6 +6961,9 @@
       ],
       "10 email addresses/aliases": [
         "10 indirizzi email/alias"
+      ],
+      "10 more premium features": [
+        "Altre 10 funzionalità premium"
       ],
       "10-year file version history": [
         "Cronologia delle versioni dei file per 10 anni"
@@ -7437,6 +7449,12 @@
       ]
     },
     "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Ottieni Mail Plus per ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceMailPlus }. Puoi annullare in qualsiasi momento."
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -7721,11 +7739,17 @@
       "\"${ name }\" created successfully": [
         "\"${ name }\" creato con successo"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" eliminato"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" eliminato definitivamente dal cestino"
       ],
       "\"${ name }\" failed to be created": [
         "Creazione di \"${ name }\" non riuscita"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "Eliminazione di \"${ name }\" non riuscita"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "Eliminazione definitiva di \"${ name }\" dal cestino non riuscita"
@@ -7764,9 +7788,17 @@
         "Decrittografia di ${ count } elemento non riuscita",
         "Decrittografia di ${ count } elementi non riuscita"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } elemento eliminato",
+        "${ numberOfItems } elementi eliminati"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elemento eliminato definitivamente dal cestino",
         "${ numberOfItems } elementi eliminati definitivamente dal cestino"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "Eliminazione di ${ numberOfItems } elemento non riuscita",
+        "Eliminazione di ${ numberOfItems } elementi non riuscita"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Eliminazione definitiva di ${ numberOfItems } elemento dal cestino non riuscita",
@@ -8483,28 +8515,9 @@
         "Nome"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } il nostro team di vendita."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Seleziona il numero di IP da includere nel piano. Ogni IP aggiuntivo costa ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Se hai bisogno di più di ${ maxIPs } IP, ",
-        "Se hai bisogno di più di ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contatto"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Seleziona il numero di utenti da includere nel tuo piano. Ogni utente aggiuntivo costa ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Se hai bisogno di più di ${ maxUsers } account, per favore ${ contact } il nostro team di vendita.",
-        "Se hai bisogno di più di ${ maxUsers } account, per favore ${ contact } il nostro team di vendita."
       ]
     },
     "Price": {
@@ -10003,6 +10016,9 @@
       "Day theme": [
         "Tema giorno"
       ],
+      "Delete": [
+        "Elimina"
+      ],
       "Delete ${ count } contact": [
         "Elimina ${ count } contatto",
         "Elimina ${ count } contatti"
@@ -10010,6 +10026,12 @@
       "Delete ${ count } contact group": [
         "Elimina ${ count } gruppo di contatti",
         "Elimina ${ count } gruppi di contatti"
+      ],
+      "Delete ${ item.name }?": [
+        "Eliminare ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Eliminare ${ links.length } elementi?"
       ],
       "Delete ${ value }": [
         "Elimina ${ value }"
@@ -10397,6 +10419,9 @@
       "Unlock contacts groups": [
         "Sblocca i gruppi di contatti"
       ],
+      "Upgrade complete!": [
+        "Aggiornamento completato!"
+      ],
       "Uploaded": [
         "Caricato"
       ],
@@ -10459,6 +10484,9 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
+      ],
+      "Your shorter address is now ready": [
+        "Il tuo indirizzo breve ora è pronto"
       ],
       "Your welcome actions": [
         "Le tue azioni di benvenuto"
@@ -10553,9 +10581,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Abbiamo spedito un invito per accedere all'elemento."
-      ],
-      "You do not have any contacts to export": [
-        "Non hai alcun contatto da esportare"
       ]
     },
     "tooltip": {
@@ -10697,6 +10722,9 @@
       ],
       "Missing alias suffix": [
         "Suffisso alias mancante"
+      ],
+      "Name is required": [
+        "Nome obbligatorio"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Sono consentiti solo caratteri alfanumerici, punti, trattini e trattini bassi"

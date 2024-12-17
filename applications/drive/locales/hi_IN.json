@@ -63,9 +63,6 @@
       "Add group": [
         "ग्रुप जोड़ें"
       ],
-      "Add new contact": [
-        "नया संपर्क जोड़ें"
-      ],
       "Add new group": [
         "नया ग्रुप जोड़ें"
       ],
@@ -343,9 +340,6 @@
       ],
       "Export contact group": [
         "संपर्क ग्रुप निर्यात करें"
-      ],
-      "Export contacts": [
-        "संपर्क निर्यात करें"
       ],
       "Fit to window": [
         "विंडो में फिट करें"
@@ -1223,6 +1217,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "जारी रखें"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } का उपयोग करते रहें।"
       ],
@@ -3669,14 +3666,8 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "अवैतनिक चालान के कारण खाता पहुंच प्रतिबंधित है। कृपया अपने व्यवस्थापक से संपर्क करें।"
       ],
-      "Account size": [
-        "खाते का साइज़"
-      ],
       "Account successfully updated": [
         "खाता आधुनिकीकरण सफल हो गया है"
-      ],
-      "Additional options": [
-        "अतिरिक्त विकल्प"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "इस पते के लिए विश्वसनीय कुंजी के साथ पता सत्यापन सक्षम है। इस पते पर भेजने में सक्षम होने के लिए, पहले सार्वजनिक कुंजियों पर भरोसा करें जिनका उपयोग भेजने के लिए किया जा सकता है।"
@@ -3858,9 +3849,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "आपके पिछले प्लान सदस्यता से बचा क्रेडिट"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora और कुछ अन्य ऐप्स के साथ-साथ vCard 3.1 और 4.0 प्रारूप (UTF-8 एन्कोडिंग) समर्थित हैं।"
-      ],
       "Current plan": [
         "वर्तमान योजना"
       ],
@@ -3961,9 +3949,6 @@
       "email": [
         "ईमेल"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "10 कस्टम ईमेल डोमेन नामों के लिए ईमेल होस्ट करना साथ में मुफ्त में मौजूद है। और डोमेन ले सकते है ${ price } देकर।"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "ईमेल होस्ट करना सिर्फ उन डोमेन के लिए मौजूद है जिनके आप मालिक है। ${ BRAND_NAME } पे अभी डोमेन रजिस्टर करने की सुविधा नहीं है। आप किसी भी डोमेन रजिस्टर पे रजिस्टर किए गए डोमेन पे ईमेल होस्ट कर सकते है।"
       ],
@@ -3990,9 +3975,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "आप जिस ईमेल खाते से आयात करना चाहते हैं, उसके क्रेडेंशियल दर्ज करें।"
-      ],
-      "Enter the device name to confirm removal.": [
-        "हटाने की पुष्टि के लिए डिवाइस का नाम दर्ज करें।"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "वह सत्यापन कोड दर्ज करें जो ${ destinationText } को भेजा गया था।"
@@ -4597,9 +4579,6 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "खाते की नई चाबी हो सकती है, या फिर इस चीज़ साथ छेड़छाड़ हुई हो सकती है: ${ items }। तभी खोले जब उसपे विश्वास हो।"
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "एप्लिकेशन को निर्यात किए जाने से पहले आपके संपर्कों को स्थानीय रूप से डिक्रिप्ट करना होगा। प्रक्रिया के अंत में, एक VCF फ़ाइल जनरेट होगी और आप इसे डाउनलोड करने में सक्षम होंगे।"
-      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "डाउनलोड गणना में डाउनलोड और उन समय को शामिल करते है जब फ़ाइलों की झलक देखी जाती है।"
       ],
@@ -4663,9 +4642,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "ये लिंक को मिटा देगा और जिस भी व्यक्ति के पास ये लिंक है उसके लिए आपके फाइल या फोल्डर तक का पहुंच हटा देगा।",
         "ये लिंकों को मिटा देगा और जिस भी व्यक्ति के पास इनमें से कोई लिंक है उसके लिए आपके फाइल या फोल्डर तक का पहुंच हटा देगा।"
-      ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "यह ${ DRIVE_APP_NAME } से सिंक की गई डिवाइस ${ deviceName } को हटा देगा और कंप्यूटर में जोड़े गए फ़ोल्डरों को सिंक करना बंद कर देगा।"
       ],
       "This will replace the existing file with the folder": [
         "यह मौजूदा फ़ाइल को फ़ोल्डर के साथ बदल देगा।"
@@ -5156,9 +5132,6 @@
       "Authenticator app": [
         "प्रमाणीकरण अनुप्रयोग"
       ],
-      "Automatically save contacts": [
-        "संपर्कों को स्वचालित रूप से सहेजें"
-      ],
       "Beta Access": [
         "बीटा एक्सेस"
       ],
@@ -5328,9 +5301,6 @@
       "Expires": [
         "समय खत्म"
       ],
-      "Export contacts": [
-        "संपर्क निर्यात करें"
-      ],
       "Extended address": [
         "विस्तारित पता"
       ],
@@ -5366,9 +5336,6 @@
       ],
       "Import all messages": [
         "सभी संदेशों को आयात करें"
-      ],
-      "Import contacts": [
-        "संपर्क आयात करें"
       ],
       "Import interval": [
         "इम्पोर्ट अंतराल"
@@ -7132,22 +7099,9 @@
         "नाम"
       ]
     },
-    "plan customizer, ips": {
-      "Should you need more than ${ maxIPs } IP, ": [
-        "अगर आपको ${ maxIPs } से अधिक IP की आवश्यकता हो, ",
-        "अगर आपको ${ maxIPs } से अधिक IP की आवश्यकता हो, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "संपर्क करें"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "अपने प्लान में कितने यूज़र डालने है चुनें। हर यूज़र को जोड़ने का ${ price } लगेगा।"
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "अगर आपको ${ maxUsers } से ज़्यादा यूज़र खाता चाहिए, कृपया हमारी सेल्स टीम को ${ contact } करे।",
-        "अगर आपको ${ maxUsers } से ज़्यादा यूज़र खाते चाहिए, कृपया हमारी सेल्स टीम को ${ contact } करे।"
       ]
     },
     "Price": {
@@ -8141,6 +8095,9 @@
       "Day theme": [
         "दिन का थीम"
       ],
+      "Delete": [
+        "मिटाएं"
+      ],
       "Delete ${ count } contact": [
         "${ count } संपर्क हटाएं",
         "${ count } संपर्क हटाएं"
@@ -8649,9 +8606,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "हमने उन्हें आइटम तक पहुंचने के लिए एक आमंत्र भेजा है।"
-      ],
-      "You do not have any contacts to export": [
-        "आपके पास निर्यात करने के लिए कोई संपर्क नहीं है"
       ]
     },
     "Validation": {

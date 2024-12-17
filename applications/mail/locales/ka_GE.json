@@ -69,9 +69,6 @@
       "Add group": [
         "ჯგუფის დამატება"
       ],
-      "Add new contact": [
-        "ახალი კონტაქტის დამატება"
-      ],
       "Add new group": [
         "ახალი ჯგუფის დამატება"
       ],
@@ -480,9 +477,6 @@
       "Export contact group": [
         "კონტაქტების ჯგუფის გატანა"
       ],
-      "Export contacts": [
-        "კონტაქტების გატანა"
-      ],
       "External encryption": [
         "გარე შიფრაცია"
       ],
@@ -512,6 +506,9 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "მიიღეთ ${ BRAND_NAME } Duo"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "მიიღეთ ${ MAIL_SHORT_APP_NAME } Plus ფასად ${ priceCoupon }"
       ],
       "Get in touch": [
         "დაგვიკავშირდით"
@@ -1907,6 +1904,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "ელფოსტის მისამართის პარამეტრების შეცვლა"
+      ],
+      "Continue": [
+        "გაგრძელება"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
       ],
@@ -3553,6 +3556,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA ამატებს უსაფრთხოების ფენას, რითიც ხელს უშლის არაავტორიზებულ წვდომას."
       ],
+      "Also included": [
+        "ასევე შეიცავს"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "განბლოკეთ სპამისა და სანაგვე ყუთის ავტომატური წაშლა და სხვა ფასიანი ფუნქციები, როცა სატარიფო გეგმას ასწევთ."
       ],
@@ -3582,6 +3588,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "შეუზღუდავი წვდომისთვის წერის დამხმარესთან ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Duo-მდე."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "მიიღეთ შეუზღუდავი ფსევდონიმები და 500 გბ საცავი ${ PLAN_NAMES[PLANS.BUNDLE] }-სთან ერთად."
@@ -5255,23 +5264,14 @@
       "Checklist complete": [
         "საკონტროლო სია დასრულდა"
       ],
-      "Close": [
-        "დახურვა"
-      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "დაასრულეთ ეს საკონტროლო სია ${ daysCount } დღეში და გაიორმაგეთ საცავი უფასოდ."
-      ],
-      "Congratulations, you completed all the steps!": [
-        "გილოცავთ! თქვენ ყველა ნაბიჯი დაასრულეთ!"
       ],
       "Discover how our ${ strongText } protect you": [
         "აღმოაჩინეთ, როგორ გიცავთ ჩვენი ${ strongText }"
       ],
       "Discover privacy features": [
         "აღმოაჩინეთ კონფიდენციალობის ფუნქციები"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "გაიორმაგეთ უფასო ადგილი 1გბ-მდე, როცა დაასრულებთ შემდეგს:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "დაშიფვრა, რომელიც ისეთი ძლიერია, რომ თქვენი ელფოსტების გახსნა, მხოლოდ, მისთვის განკუთვნილ მიმღებებს შეუძლიათ."
@@ -5300,26 +5300,14 @@
       "Learn more": [
         "გაიგეთ მეტი"
       ],
-      "Maybe later": [
-        "მოგვიანებით"
-      ],
       "Nice! You've updated all services in this category.": [
         "ძალიან კარგი! ჩვენ ამ კატეგორიაში ყველა სერვისი განვაახლეთ."
-      ],
-      "Open checklist": [
-        "საკონტროლო სიის გახსნა"
-      ],
-      "Open checklist and get free storage": [
-        "გახსენით სია და მიიღეთ უფასო საცავი"
       ],
       "Popular online services": [
         "პოპულარული ონლაინ-სერვისები"
       ],
       "privacy features": [
         "კონფიდენციალობის ფუნქციები"
-      ],
-      "Protect and simplify your email": [
-        "დაიცავით და გაამარტივეთ თქვენი ელფოსტა"
       ],
       "Protection from trackers": [
         "ტრეკერებისგან დაცვა"
@@ -5978,9 +5966,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "ანგარიშთან წვდომა აკრძალულია გადაუხდელი ინვოისების გამო. დაუკავშირდით თქვენს ადმინისტრატორს."
       ],
-      "Account size": [
-        "ანგარიშის ზომა"
-      ],
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
       ],
@@ -5990,8 +5975,8 @@
       "Add image URL": [
         "გამოსახულების URL-ის დამატება"
       ],
-      "Additional options": [
-        "დამატებითი პარამეტრები"
+      "Address copied to clipboard": [
+        "მისამართი დაკოპირდა გაცვლის ბაფერში"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
@@ -6158,9 +6143,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "მოწმდება ${ progress }-ე კონტაქტი ${ max }-დან..."
       ],
-      "Clear app data": [
-        "აპლიკაციის მონაცემთა გასუფთავება"
-      ],
       "Clear browser data": [
         "ბრაუზერის მონაცემების წაშლა"
       ],
@@ -6222,18 +6204,11 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის",
-        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის"
-      ],
       "Create in": [
         "რაში შევქმნა"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "მხარდაჭერილია CSV ფაილები Outlook-დან, Outlook Express-დან, Yahoo!-ს ფოსტიდან, Hotmail-დან, Eudora-დან და ზოგიერთი სხვა აპიდან, ასევე vCard 3.1-დან და 4.0 ფორმატები-დან (UTF-8 კოდირებით)."
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
@@ -6264,6 +6239,9 @@
       ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "default email address": [
+        "ნაგულისხმევი ელფოსტის მისამართი"
       ],
       "Default email application": [
         "ელ-ფოსტის ნაგულისხმევი აპლიკაცია"
@@ -6355,9 +6333,6 @@
       ],
       "Email copied to clipboard": [
         "ელფოსტა დაკოპირდა გაცვლის ბუფერში"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "ელფოსტის ჰოსტინგი 10 ხელით მითითებული დომენის სახელით უფასოა. დამატებითი დომენების შეძენის ფასია ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "ელფოსტის ჰოსტინგი ხელმისაწვდომია, მხოლოდ, იმ დომენებისთვის, რომლებსაც უკვე ფლობთ. დომენის რეგისტრაცია, ამჟამად, არ არის ხელმისაწვდომი ${ BRAND_NAME }-ის საშუალებით. დომენის შეძენა ნებისმიერ რეგისტრატორთან შეგიძლიათ."
@@ -6688,6 +6663,9 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "ნაგვის ყუთში 30 დღეზე მეტ ხანს მყოფი შეტყობინებები და სპამი ავტომატურად წაიშლება."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "შეტყობინებები ყველა თქვენს ელფოსტის მისამართზე საფოსტ ყუთში მოგივათ."
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -6915,6 +6893,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
       ],
+      "Registering your subscription...": [
+        "თქვენი გამოწერის რეგისტრაცია..."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "დაიმახსოვრეთ, რომ განაახლოთ ეს პაროლების მმართველში, ან სადაც პაროლებს ინახავთ."
       ],
@@ -7018,6 +6999,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP-ის აწყობა საშუალებას მოგცემთ, გააგზავნოთ დაშიფრული ელფოსტები არა${ BRAND_NAME }-ის მომხმარებლებთან, რომლებიც ასევე იყენებენ PGP-სთან თავსებად სერვისს."
       ],
+      "Setting up your new address...": [
+        "თქვენი ახალი მისამართის მორგება..."
+      ],
       "Shorten selection": [
         "მონიშნულის შემოკლება"
       ],
@@ -7044,6 +7028,12 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "ეს შეტყობინება არ არსებობს, ან ვადა გაუვიდა."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "დაიწყეთ კონტაქტებთან გაზიარება და გამოიყენეთ ის ინტერნეტ-სერვისებისთვის."
+      ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "ამ ბრაუზერში საცავის შესაძლებლობები მხარდაჭერილი არაა. ჩვენ, ის, შეტყობინების შემცველობაში ძებნის ჩასართავად გვჭირდება."
       ],
       "Subject": [
         "საგანი"
@@ -7080,9 +7070,6 @@
       ],
       "Text to display": [
         "საჩვენებელი ტექსტი"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "გატანამდე აპლიკაცია თქვენს კონტაქტებს გაშიფრავს. პროცესის ბოლოს შეიქმნება VCF ფაილი, რომლის გადმოწერაც შეგეძლებათ."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "მონაცემები, რომელიც მონახაზში შეიყვანეთ, სხვა გვერდზე გადასვლის შემთხვევაში შეიძლება, დაიკარგოს."
@@ -7173,6 +7160,9 @@
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "ეს განკუთვნილია წერაში დახმარებისთვის. შეამოწმეთ შემოთავაზებული ტექსტი სისწორეზე. ${ learnMoreResult }"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "ეს ახლა თქვენი ${ defaultEmailAddress }-ია ახალი შეტყობინებების გასაგზავნად."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "ბმული მიდის ვებგვერდამდე, რომელმაც შეიძლება მოიპაროს თქვენი ისეთი ინფორმაცია, როგორიცაა პაროლები და საკრედიტო ბარათის დეტალები."
       ],
@@ -7243,9 +7233,6 @@
       "This public key will be automatically used for encrypting email sent to this address.": [
         "ეს საჯარო გასაღები ავტომატურად იქნება გამოყენებული ამ მისამართზე გამოგზავნილი ელფოსტის დასაშიფრად."
       ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "ეს წაშლის ამ აპთან ასოცირებულ ყველა მონაცემებს, გადმოწერილი შეტყობინებების ჩათვლთ. აპი თავიდანგ აეშვება და მის გამოსაყენებლად თავიდან შესვლა მოგიწევთ."
-      ],
       "This sender's public key has not been trusted yet.": [
         "გამოგზავნის საჯარო გასაღები ჯერ სანდო არაა."
       ],
@@ -7305,6 +7292,9 @@
       ],
       "Turn on to search the content of your messages": [
         "ჩართეთ თქვენი შეტყობინებების შემცველობაში ძებნა"
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "ბრაუზერის სააცავის შესაძლებლობებთან წვდომა შეუძლებელია. ეს წვდომა შეტყობინების შემცველობაში ძებნისთვისაა საჭირო."
       ],
       "Unlock message": [
         "შეტყობინების განბლოკვა"
@@ -7746,11 +7736,6 @@
         "მხოლოდ დათვალიერებისათვის"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "კომპრომეტირებულია"
@@ -8056,9 +8041,6 @@
       "Authenticator app": [
         "ავთენტიკატორი აპი"
       ],
-      "Automatically save contacts": [
-        "კონტაქტების ავტომატური შენახვა"
-      ],
       "BCC": [
         "ბრმა ასლი"
       ],
@@ -8224,9 +8206,6 @@
       "Expires": [
         "ვადა"
       ],
-      "Export contacts": [
-        "კონტაქტების გატანა"
-      ],
       "Extended address": [
         "გაფართოებული მისამართი"
       ],
@@ -8271,9 +8250,6 @@
       ],
       "Import all messages": [
         "ყველა შეტყობინების შემოტანა"
-      ],
-      "Import contacts": [
-        "კონტაქტების შემოტანა"
       ],
       "Import interval": [
         "შემოტანის დაყოვნება"
@@ -9182,6 +9158,9 @@
       "Get ${ planTitle }": [
         "${ planTitle }-ის მიღება"
       ],
+      "Get started for ${ priceCoupon }": [
+        "დაწყება ${ priceCoupon }-დან"
+      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }-დან"
       ],
@@ -9322,6 +9301,9 @@
       ],
       "10 email addresses/aliases": [
         "10 ელ ფოსტა/ფსევდონიმი"
+      ],
+      "10 more premium features": [
+        "და კიდევ 10 ფასიანი ფუნქცია"
       ],
       "10-year file version history": [
         "10-წლიანი ფაილის ვერსიის ისტორია"
@@ -9806,6 +9788,11 @@
         "გადავრთო სატარიფო გეგმა?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "მიიღეთ Mail Plus ფასით ${ priceCoupon }"
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: დაიცავით თქვენი განრიგი გამჭოლი დაშიფვრით. შეიცავს მომხმარებლის კალენდრების მხარდაჭერას, კალენდრის გაზიარებას და ა.შ."
@@ -9855,6 +9842,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "შექმენით ${ n }-მდე ელფოსტის მისამართი/ფსევდონიმი, რომლებიც შეგიძლიათ, ოჯახის წევრებს მიანიჭოთ. გამოიყენეთ ისინი, მაგალითად, შოინგისთვის. JemalShpper@${ domain }."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "მომხმარებლის დომენი ფსევდონიმებისთვის, დამატებითი საფოსტო ყუთებისთვის, შესაძლებლობისთვის, რომ ელფოსტების ფსევდონიმებიდან გააგზავნოთ და აშ"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ"
@@ -10188,20 +10178,8 @@
       "Auto-delete spam and trash": [
         "სპამისა და ნაგვის ყუთის ავტოწაშლა"
       ],
-      "Automatically forward emails": [
-        "ელფოსტების ავტომატური გადაგზავნა"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "სამუდამოდ დაბლოკეთ ელფოსტით კომუნიკაცია სკამერებისგან. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "დაბლოკეთ უსიამოვნო მგზავნლები"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "წაშლილი და სპამი ელფოსტების გასუფთავება 30 დღის შემდეგ."
-      ],
-      "Congratulations on choosing privacy": [
-        "გილოცავთ კონფიდენციალობის დაცვის არჩევას"
       ],
       "Dark Web Monitoring": [
         "Dark Web-ის მონიტორინგი"
@@ -10212,17 +10190,8 @@
       "Download the desktop app and continue": [
         "კომპიუტერის აპის გადმოწერა და გაგრძელება"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "დაშიფვრა, რომელიც ისეთი ძლიერია, რომ თქვენი ელფოსტების გახსნა, მხოლოდ, მისთვის განკუთვნილ მიმღებებს შეუძლიათ. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "ფიქსირებული და დაფოკუსებული"
-      ],
-      "For your eyes only": [
-        "მხოლოდ, თქვენს დასანახად"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "გადმოაგზავნეთ Gmail-ის შეტყობინებები თქვენს საფოსტო ყუთში."
       ],
       "Get notified if your password is compromised.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი გაჟონავს."
@@ -10263,17 +10232,11 @@
       "Replay introduction": [
         "შესავლის თავიდან დაკვრა"
       ],
-      "Skip": [
-        "გამოტოვება"
-      ],
       "Start using ${ BRAND_NAME }": [
         "${ BRAND_NAME }-ის გამოყენების დაწყება"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "დაიწყეთ თქვენი ელფოსტის უფრო მოკლე და გასაგები ვერსიის გამოყენება."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "ჩვენ ხელს ვუშლით რეკლამის გამავრცელებლებს და მონაცემების შემგროვებლებს თქვენს პროფილირებაში. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "კეთილი იყოს თქვენი მობრძანება ${ MAIL_APP_NAME }-ში"
@@ -10522,6 +10485,9 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ ${ subscriptionLength } თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ renewPrice } ${ subscriptionLengthCopy } თვით. გაუქმება ყოველთვის შეგიძლიათ."
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ],
@@ -10729,28 +10695,9 @@
         "სახელი"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } ჩვენს გაყიდვების გუნდს."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "თქვენს სატარიფო გეგმაში ჩასასმელი IP-ების რაოდენობა. თითოეული დამატებითი IP-ის ფასია ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, ",
-        "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "კონტაქტი"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "თქვენს სატარიფო გეგმაში ჩასასმელი მომხმარებლების რაოდენობა. თითოეული დამატებითი მომხმარებლის ფასია ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "თუ დაგჭირდათ ${ maxUsers }-ზე მეტი მომხმარებელი, დაუკავშირდით ჩვენი გაყიდვების გუნდს ${ contact }.",
-        "თუ დაგჭირდათ ${ maxUsers }-ზე მეტი მომხმარებელი, დაუკავშირდით ჩვენი გაყიდვების გუნდს ${ contact }."
       ]
     },
     "Price": {
@@ -11533,6 +11480,9 @@
       "Schedule send": [
         "გაგზავნის დაგეგმვა"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "ეს ახლა თქვენი ნაგულისხმევი მისამართია. გახსენით ჩამოსაშლელი მენიუ, რომ გააგზავნოთ სხვა მისამართიდან. "
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "ჩართეთ ${ DARK_WEB_MONITORING_NAME }, რომ მიიღოთ გაფრთხიელბა, თუ თქვენი მონაცემების მესამე პირებისთვის გაჟონვა მოხდება."
       ],
@@ -11544,6 +11494,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "ახლა შეგიძლიათ, შექმნათ შეტყობინებების განრიგი, რომელიც დანიშნულ დროს აგზავნის ელფოსტას"
+      ],
+      "Your pm.me email is active": [
+        "თქვენი pm.me ელფოსტა აქტიურია"
       ]
     },
     "sso": {
@@ -13307,6 +13260,9 @@
       "Unsubscribe request sent": [
         "გამოწერის გაუქმების ელფოსტა გაგზავნილია"
       ],
+      "Upgrade complete!": [
+        "განახლება დასრულებულია!"
+      ],
       "Verification error": [
         "შემოწმების შეცდომა"
       ],
@@ -13355,6 +13311,9 @@
       ],
       "Your free trial has ended": [
         "თქვენი გამოსაცდელი პერიოდი დასრულდა"
+      ],
+      "Your shorter address is now ready": [
+        "თქვენი მოკლე მისამართი ახლა მზადაა"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13440,9 +13399,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "ამ ელფოსტიდან გამჭოლი შიფრაციით დაშიფრული ელფოსტების გასაგზავნად ატვირთეთ საჯარო გასაღები"
-      ],
-      "You do not have any contacts to export": [
-        "თქვენ არ გაქვთ გატანადი კონტაქტები"
       ]
     },
     "tooltip": {
@@ -13615,6 +13571,9 @@
       ],
       "Missing alias suffix": [
         "აკლია ფსევდონიმის სუფიქსი"
+      ],
+      "Name is required": [
+        "სახელი აუცილებელია"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "დაშვებულია, მხოლოდ, ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
