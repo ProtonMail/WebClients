@@ -14,6 +14,7 @@ import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getHasOnlyIcsAttachments, getRecipients, isInternal, isScheduled } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
@@ -57,6 +58,7 @@ interface Props {
     filterDropdownToggleRef: React.MutableRefObject<() => void>;
     parentMessageRef: React.RefObject<HTMLElement>;
     conversationIndex?: number;
+    currentFolder: string;
 }
 
 const HeaderExpanded = ({
@@ -81,6 +83,7 @@ const HeaderExpanded = ({
     filterDropdownToggleRef,
     parentMessageRef,
     conversationIndex = 0,
+    currentFolder,
 }: Props) => {
     const [addresses = []] = useAddresses();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
@@ -213,7 +216,11 @@ const HeaderExpanded = ({
                     </span>
                     <ItemDate element={message.data} labelID={labelID} useTooltip className="color-weak text-sm" />
                     <span className="message-header-star mr-2 inline-flex">
-                        <ItemStar element={message.data} />
+                        <ItemStar
+                            element={message.data}
+                            sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
+                            currentFolder={currentFolder}
+                        />
                     </span>
                 </div>
             )}
@@ -240,7 +247,11 @@ const HeaderExpanded = ({
                         data-testid="message:message-header-metas"
                     >
                         <span className="message-header-star mr-2 inline-flex">
-                            <ItemStar element={message.data} />
+                            <ItemStar
+                                sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
+                                currentFolder={currentFolder}
+                                element={message.data}
+                            />
                         </span>
                         {messageLoaded && (
                             <>
@@ -287,6 +298,7 @@ const HeaderExpanded = ({
                 messageLoaded={messageLoaded}
                 onLoadRemoteImages={onLoadRemoteImages}
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
+                currentFolder={currentFolder}
             />
 
             {messageLoaded && (

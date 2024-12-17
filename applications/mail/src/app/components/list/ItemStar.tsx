@@ -13,13 +13,16 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { isMessage, isStarred as testIsStarred } from '../../helpers/elements';
 import { useStar } from '../../hooks/actions/useStar';
 import type { Element } from '../../models/element';
+import type { SOURCE_ACTION } from './useListTelemetry';
 
 interface Props {
     element?: Element;
     size?: IconSize;
+    sourceAction: SOURCE_ACTION;
+    currentFolder: string;
 }
 
-const ItemStar = ({ element, size }: Props) => {
+const ItemStar = ({ sourceAction, currentFolder, element, size }: Props) => {
     const [loading, withLoading] = useLoading();
     const star = useStar();
     const { Shortcuts } = useMailModel('MailSettings');
@@ -41,7 +44,7 @@ const ItemStar = ({ element, size }: Props) => {
         // Programmatically block the action instead of disabling the action
         // Perhaps a bit less accessible but prevent to collapse a message on a second click
         if (!loading) {
-            void withLoading(star([element || ({} as Element)], !isStarred));
+            void withLoading(star([element || ({} as Element)], !isStarred, sourceAction, currentFolder));
         }
     };
 

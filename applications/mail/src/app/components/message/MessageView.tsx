@@ -33,6 +33,7 @@ import { useMailECRTMetric } from '../../metrics/useMailECRTMetric';
 import type { Element } from '../../models/element';
 import type { MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 import QuickReplyContainer from '../composer/quickReply/QuickReplyContainer';
+import { SOURCE_ACTION } from '../list/useListTelemetry';
 import MessageBody from './MessageBody';
 import MessageFooter from './MessageFooter';
 import HeaderCollapsed from './header/HeaderCollapsed';
@@ -61,6 +62,7 @@ interface Props {
     wrapperRef?: React.RefObject<HTMLDivElement>;
     onOpenQuickReply?: (index?: number) => void;
     onReadMessage?: (messageID?: string) => void;
+    currentFolder: string;
 }
 
 export interface MessageViewRef {
@@ -91,6 +93,7 @@ const MessageView = (
         wrapperRef,
         onOpenQuickReply,
         onReadMessage,
+        currentFolder,
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
@@ -311,6 +314,8 @@ const MessageView = (
                 elements: [element],
                 labelID,
                 status: MARK_AS_STATUS.READ,
+                sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
+                currentFolder: currentFolder,
             });
         }
 
@@ -321,6 +326,8 @@ const MessageView = (
                 elements: [element],
                 labelID,
                 status: MARK_AS_STATUS.READ,
+                sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
+                currentFolder: currentFolder,
             });
         }
     }, [expanded, unread, bodyLoaded]);
@@ -372,6 +379,7 @@ const MessageView = (
             conversationMode,
             mailSettings,
             messageRef: elementRef,
+            currentFolder,
         },
         {
             hasFocus: !!hasFocus,
@@ -451,6 +459,7 @@ const MessageView = (
                         filterDropdownToggleRef={filterDropdownToggleRef}
                         parentMessageRef={elementRef}
                         conversationIndex={conversationIndex}
+                        currentFolder={currentFolder}
                     />
                     <MessageBody
                         labelID={labelID}
@@ -498,6 +507,7 @@ const MessageView = (
                     onExpand={handleToggle(true)}
                     breakpoints={breakpoints}
                     conversationIndex={conversationIndex}
+                    currentFolder={currentFolder}
                 />
             )}
             {moveScheduledModal}

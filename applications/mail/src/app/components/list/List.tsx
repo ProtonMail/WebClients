@@ -40,6 +40,7 @@ import { ResizeHandle } from './ResizeHandle';
 import SkeletonItem from './SkeletonItem';
 import useEncryptedSearchList from './useEncryptedSearchList';
 import { useItemContextMenu } from './useItemContextMenu';
+import type { SOURCE_ACTION } from './useListTelemetry';
 
 import './delight/DelightList.scss';
 
@@ -73,14 +74,15 @@ interface Props {
     resetWidth: () => void;
     showContentPanel: boolean;
     scrollBarWidth: number;
-    onMarkAs: (status: MARK_AS_STATUS) => void;
-    onMove: (labelID: string) => void;
-    onDelete: () => void;
+    onMarkAs: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => void;
+    onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
+    onDelete: (sourceAction: SOURCE_ACTION) => void;
     onBack: () => void;
     userSettings: UserSettings;
     toolbar?: ReactNode | undefined;
     onCheckAll: (check: boolean) => void;
     listContainerRef: RefObject<HTMLDivElement>;
+    currentFolder: string;
 }
 
 const List = (
@@ -117,6 +119,7 @@ const List = (
         toolbar,
         onCheckAll,
         listContainerRef,
+        currentFolder,
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
@@ -314,6 +317,7 @@ const List = (
                                                         element={element}
                                                         index={index}
                                                         breakpoints={breakpoints}
+                                                        currentFolder={currentFolder}
                                                     />
                                                 ) : (
                                                     <Item
@@ -339,6 +343,7 @@ const List = (
                                                         mailSettings={mailSettings}
                                                         labels={labels}
                                                         showAttachmentThumbnails={showAttachmentThumbnails}
+                                                        currentFolder={currentFolder}
                                                     />
                                                 )}
                                             </Fragment>

@@ -5,6 +5,11 @@ import { labelConversations, unlabelConversations } from '@proton/shared/lib/api
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import useListTelemetry, {
+    ACTION_TYPE,
+    type SOURCE_ACTION,
+    numberSelectionElements,
+} from 'proton-mail/components/list/useListTelemetry';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
@@ -17,34 +22,45 @@ export const useStar = () => {
     const { stop, start } = useEventManager();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const dispatch = useMailDispatch();
+    const { sendSimpleActionReport } = useListTelemetry();
 
-    const star = useCallback(async (elements: Element[], value: boolean) => {
-        if (!elements.length) {
-            return;
-        }
+    const star = useCallback(
+        async (elements: Element[], value: boolean, sourceAction: SOURCE_ACTION, currentFolder: string) => {
+            if (!elements.length) {
+                return;
+            }
 
-        const isMessage = testIsMessage(elements[0]);
-        const labelAction = isMessage ? labelMessages : labelConversations;
-        const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
-        const action = value ? labelAction : unlabelAction;
+            const isMessage = testIsMessage(elements[0]);
+            const labelAction = isMessage ? labelMessages : labelConversations;
+            const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
+            const action = value ? labelAction : unlabelAction;
 
-        let rollback = () => {};
+            sendSimpleActionReport({
+                actionType: value ? ACTION_TYPE.STAR : ACTION_TYPE.UNSTAR,
+                actionLocation: sourceAction,
+                numberMessage: numberSelectionElements(elements.length),
+                folderLocation: currentFolder,
+            });
 
-        try {
-            // Stop the event manager to prevent race conditions
-            stop();
-            dispatch(backendActionStarted());
-            rollback = optimisticApplyLabels(elements, { [MAILBOX_LABEL_IDS.STARRED]: value });
-            await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elements.map((element) => element.ID) }));
-        } catch (error: any) {
-            rollback();
-            throw error;
-        } finally {
-            dispatch(backendActionFinished());
-            start();
-            // await call();
-        }
-    }, []);
+            let rollback = () => {};
+
+            try {
+                // Stop the event manager to prevent race conditions
+                stop();
+                dispatch(backendActionStarted());
+                rollback = optimisticApplyLabels(elements, { [MAILBOX_LABEL_IDS.STARRED]: value });
+                await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elements.map((element) => element.ID) }));
+            } catch (error: any) {
+                rollback();
+                throw error;
+            } finally {
+                dispatch(backendActionFinished());
+                start();
+                // await call();
+            }
+        },
+        []
+    );
 
     return star;
 };

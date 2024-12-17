@@ -7,6 +7,8 @@ import { Banner, Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { isSnoozed } from '@proton/shared/lib/mail/messages';
 
+import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { formatDateToHuman } from '../../../helpers/date';
 import { getSnoozeTimeFromElement } from '../../../helpers/snooze';
@@ -16,9 +18,10 @@ import type { MessageStateWithData } from '../../../store/messages/messagesTypes
 
 interface Props {
     message: MessageStateWithData;
+    currentFolder: string;
 }
 
-const ExtraSnoozedMessage = ({ message }: Props) => {
+const ExtraSnoozedMessage = ({ message }: Props, currentFolder: string) => {
     const getElementsFromIDs = useGetElementsFromIDs();
     const elements = useMemo(() => getElementsFromIDs([message.data.ConversationID]), [message]);
 
@@ -42,7 +45,7 @@ const ExtraSnoozedMessage = ({ message }: Props) => {
             return;
         }
 
-        unsnooze(elements);
+        unsnooze(elements, SOURCE_ACTION.MESSAGE_VIEW, currentFolder);
     };
 
     const getSnoozeBannerMessage = () => {
