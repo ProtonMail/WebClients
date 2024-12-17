@@ -17,6 +17,9 @@
       "Continue": [
         "Nastavi"
       ],
+      "Dismiss": [
+        "Odbaci"
+      ],
       "Edit email address": [
         "Uredi adresu e-pošte"
       ],
@@ -61,6 +64,79 @@
       ],
       "View invoice": [
         "Prikaži fakturu"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktop aplikacija"
+      ],
+      "Dark Web Monitoring": [
+        "Praćenje Tamnog Weba"
+      ],
+      "Use your own email domain": [
+        "Koristite vlastitu e-poštu domenu"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "mrkva"
+      ],
+      "cerise": [
+        "trešnja"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "bakar"
+      ],
+      "enzian": [
+        "gorčica"
+      ],
+      "fern": [
+        "paprat"
+      ],
+      "forest": [
+        "šuma"
+      ],
+      "ocean": [
+        "ocean"
+      ],
+      "olive": [
+        "maslina"
+      ],
+      "pacific": [
+        "pacifik"
+      ],
+      "pickle": [
+        "kiseli krastavac"
+      ],
+      "pine": [
+        "bor"
+      ],
+      "pink": [
+        "ružičasta"
+      ],
+      "plum": [
+        "šljiva"
+      ],
+      "purple": [
+        "ljubičasta"
+      ],
+      "reef": [
+        "greben"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "škriljevac plava"
+      ],
+      "soil": [
+        "tlo"
+      ],
+      "strawberry": [
+        "jagoda"
       ]
     },
     "Country name": {
@@ -882,6 +958,52 @@
         "Sigurnosni ključ"
       ]
     },
+    "file size format": {
+      "byte": [
+        "bajt",
+        "bajta",
+        "bajtovi"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajta",
+        "Bajtovi"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajta",
+        "Gigabajta"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajta",
+        "Kilobajta"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajta",
+        "Megabajta"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajta",
+        "Terabajta"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Zadani sustav"
@@ -1000,6 +1122,102 @@
       ],
       "Request an invite": [
         "Zatraži pozivnicu"
+      ]
+    },
+    "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } kalendar",
+        "${ n } kalendara",
+        "${ n } kalendara"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendar po korisniku",
+        "${ n } kalendara po korisniku",
+        "${ n } kalendara po korisniku"
+      ],
+      "${ n } email address": [
+        "${ n } adresa e-pošte",
+        "${ n } adresa e-pošte/pseudonim",
+        "${ n } adresa e-pošte/pseudonima"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-pošta po korisniku",
+        "${ n } e-pošte po korisniku",
+        "${ n } e-pošte po korisniku"
+      ],
+      "${ n } filter": [
+        "${ n } filtar",
+        "${ n } filtara",
+        "${ n } filtara"
+      ],
+      "${ n } folder": [
+        "${ n } mapa",
+        "${ n } mape",
+        "${ n } mapa"
+      ],
+      "${ n } folder and label": [
+        "${ n } mapa i oznaka",
+        "${ n } mape i oznake",
+        "${ n } mapa i oznaka"
+      ],
+      "${ n } label": [
+        "${ n } oznaka",
+        "${ n } oznake",
+        "${ n } oznaka"
+      ],
+      "${ size } attachment size": [
+        "Veličina privitka: ${ size }"
+      ],
+      "Auto-reply": [
+        "Automatski odgovor"
+      ],
+      "Contact groups": [
+        "Grupa kontakata"
+      ],
+      "Custom email domains": [
+        "Prilagođene domene"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Easy Switch import assistant": [
+        "Pomoćnik za uvoz Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Podrška email klijenta (putem IMAP/SMTP)"
+      ],
+      "Encrypted contact details": [
+        "Šifrirani podaci o kontaktu"
+      ],
+      "End-to-end encryption": [
+        "Krajnje do krajnje šifriranje"
+      ],
+      "HTML signatures": [
+        "HTML potpisi"
+      ],
+      "Password-protected Emails": [
+        "Emailovi zaštićeni lozinkom"
+      ],
+      "Search message content": [
+        "Pretraži sadržaj poruka"
+      ],
+      "SMTP submission": [
+        "SMTP predaja"
+      ],
+      "Unlimited filters": [
+        "Neograničen broj filtera"
+      ],
+      "Unlimited folders": [
+        "Neograničen broj mapa"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neograničen broj mapa, oznaka i filtara"
+      ],
+      "Unlimited labels": [
+        "Neograničen broj oznaka"
+      ],
+      "Unlimited messages per day": [
+        "Neograničen broj poruka dnevno"
       ]
     },
     "Placeholder": {

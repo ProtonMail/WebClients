@@ -17,6 +17,9 @@
       "Continue": [
         "Pokračovať"
       ],
+      "Dismiss": [
+        "Odmietnuť"
+      ],
       "Edit email address": [
         "Upraviť emailovú adresu"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "Zobraziť faktúru"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Desktopová aplikácia ${ MAIL_APP_NAME }"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorovanie Dark Webu"
+      ],
+      "Use your own email domain": [
+        "Používajte vlastnú emailovú doménu"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "mrkva"
+      ],
+      "cerise": [
+        "čerešňa"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "meď"
+      ],
+      "enzian": [
+        "horec"
+      ],
+      "fern": [
+        "papraď"
+      ],
+      "forest": [
+        "les"
+      ],
+      "ocean": [
+        "oceán"
+      ],
+      "olive": [
+        "oliva"
+      ],
+      "pacific": [
+        "pacifik"
+      ],
+      "pickle": [
+        "uhorka"
+      ],
+      "pine": [
+        "borovica"
+      ],
+      "pink": [
+        "ružová"
+      ],
+      "plum": [
+        "slivka"
+      ],
+      "purple": [
+        "purpurová"
+      ],
+      "reef": [
+        "útes"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "bridlicová modrá"
+      ],
+      "soil": [
+        "pôda"
+      ],
+      "strawberry": [
+        "jahoda"
       ]
     },
     "Country name": {
@@ -923,6 +999,58 @@
         "Bezpečnostný kľúč"
       ]
     },
+    "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtov",
+        "bajtov"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajty",
+        "Bajtov",
+        "Bajtov"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtov",
+        "Gigabajtov"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtov",
+        "Kilobajtov"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajty",
+        "Megabajtov",
+        "Megabajtov"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtov",
+        "terabajtov"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Podľa systému"
@@ -993,6 +1121,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Ak sa domnievate, že sa stala chyba, kontaktujte nás, prosím, ${ contactLink }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
       ],
@@ -1016,6 +1147,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Zistili sme vytvorenie viacerých bezplatných účtov, čo porušuje naše ${ termsLink }."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Na adresu ${ strong } pošleme nový overovací kód"
@@ -1075,11 +1209,407 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "kontaktujte nás"
+      ],
       "Learn more": [
         "Zistiť viac"
       ],
       "Request an invite": [
         "Požiadať o pozvánku"
+      ],
+      "terms of service": [
+        "podmienky používania"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Získajte ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
+      "${ n } calendar": [
+        "${ n } kalendár",
+        "${ n } kalendáre",
+        "${ n } kalendárov",
+        "${ n } kalendárov"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendár na používateľa",
+        "${ n } kalendáre na používateľa",
+        "${ n } kalendárov na používateľa",
+        "${ n } kalendárov na používateľa"
+      ],
+      "${ n } custom email domain": [
+        "${ n } vlastná emailová doména",
+        "${ n } vlastné emailové domény",
+        "${ n } vlastných emailových domén",
+        "${ n } vlastných emailových domén"
+      ],
+      "${ n } email address": [
+        "${ n } emailová adresa",
+        "${ n } emailové adresy/aliasy",
+        "${ n } emailových adries/aliasov",
+        "${ n } emailových adries/aliasov"
+      ],
+      "${ n } email address per user": [
+        "${ n } emailová adresa na používateľa",
+        "${ n } emailové adresy na používateľa",
+        "${ n } emailových adries na používateľa",
+        "${ n } emailových adries na používateľa"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filtre",
+        "${ n } filtrov",
+        "${ n } filtrov"
+      ],
+      "${ n } folder": [
+        "${ n } priečinok",
+        "${ n } priečinky",
+        "${ n } priečinkov",
+        "${ n } priečinkov"
+      ],
+      "${ n } folder and label": [
+        "${ n } priečinok a štítok",
+        "${ n } priečinky a štítky",
+        "${ n } priečinkov a štítkov",
+        "${ n } priečinkov a štítkov"
+      ],
+      "${ n } label": [
+        "${ n } štítok",
+        "${ n } štítky",
+        "${ n } štítkov",
+        "${ n } štítkov"
+      ],
+      "${ n } message per day": [
+        "${ n } správa za deň",
+        "${ n } správy za deň",
+        "${ n } správ za deň",
+        "${ n } správ za deň"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dňová história verzií súborov",
+        "${ options }-dňová história verzií súborov",
+        "${ options }-dňová história verzií súborov",
+        "${ options }-dňová história verzií súborov"
+      ],
+      "${ size } attachment size": [
+        "${ size } veľkosť prílohy"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } bezpečného úložiska na používateľa"
+      ],
+      "${ size } storage": [
+        "${ size } úložisko"
+      ],
+      "1 TB secure storage": [
+        "1 TB bezpečného úložiska"
+      ],
+      "10 email addresses/aliases": [
+        "10 emailových adries/aliasov"
+      ],
+      "10-year file version history": [
+        "10-ročná história verzií súborov"
+      ],
+      "15 GB storage": [
+        "15 GB úložisko"
+      ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Všetky ${ BRAND_NAME } produkty a funkcie"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Všetky prémiové služby ${ BRAND_NAME }. Jedno jednoduché predplatné"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Automatické mazanie nevyžiadanej pošty a koša"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Automaticky mazať správy v spame a koši"
+      ],
+      "Auto-reply": [
+        "Automatická odpoveď"
+      ],
+      "Automatic email forwarding": [
+        "Automatické preposielanie emailov"
+      ],
+      "Breach alerts": [
+        "Upozornenia na narušenie"
+      ],
+      "Calendar sharing": [
+        "Zdieľanie kalendára"
+      ],
+      "Catch-all": [
+        "Doménový kôš"
+      ],
+      "Collaborate and share large files": [
+        "Spolupracujte a zdieľajte veľké súbory"
+      ],
+      "Contact groups": [
+        "Skupiny kontaktov"
+      ],
+      "Contact groups management": [
+        "Správa skupín kontaktov"
+      ],
+      "Custom and secure business email": [
+        "Zákaznícky prispôsobený a zabezpečený firemný email"
+      ],
+      "Custom email domains": [
+        "Vlastné emailové domény"
+      ],
+      "Custom snooze time": [
+        "Vlastný čas odloženia"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch asistent importu"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Podpora emailových klientov (cez IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Emailové skupiny"
+      ],
+      "Encrypted contact details": [
+        "Šifrované kontaktné údaje"
+      ],
+      "End-to-end encryption": [
+        "Šifrovanie End-to-end"
+      ],
+      "Generate emails with a prompt": [
+        "Generujte emaily len pomocou podnetu"
+      ],
+      "HTML signatures": [
+        "HTML podpisy"
+      ],
+      "Online document editor": [
+        "Online editor dokumentov"
+      ],
+      "Password health": [
+        "Zdravie hesla"
+      ],
+      "Password-protected Emails": [
+        "Heslom chránené emaily"
+      ],
+      "Proofread and refine your emails": [
+        "Korigujte a zdokonaľujte vaše emaily"
+      ],
+      "Quickly craft replies": [
+        "Rýchlo vytvárajte odpovede"
+      ],
+      "Recover previous file versions": [
+        "Obnova predchádzajúcich verzií súborov"
+      ],
+      "Save time emailing": [
+        "Ušetriť čas pri emailovaní"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Plánovanie a odkladanie emailov na ľubovoľný čas"
+      ],
+      "Schedule messages at any time": [
+        "Plánujte správy kedykoľvek"
+      ],
+      "Search message content": [
+        "Hľadať v obsahu správy"
+      ],
+      "See team's availability": [
+        "Pozrite si dostupnosť tímu"
+      ],
+      "Send & receive invitations": [
+        "Odosielanie a prijímanie pozvánok"
+      ],
+      "Share files with no size limit": [
+        "Zdieľanie súborov bez obmedzenia veľkosti"
+      ],
+      "SMTP submission": [
+        "Odosielanie pomocou SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Odosielanie SMTP pre vybrané organizácie"
+      ],
+      "Support for up to 2 users": [
+        "Podpora až pre 2 používateľov"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchronizácia a zálohovanie všetkých vašich súborov medzi zariadeniami"
+      ],
+      "Unlimited filters": [
+        "Neobmedzený počet filtrov"
+      ],
+      "Unlimited folders": [
+        "Neobmedzený počet priečinkov"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neobmedzené množstvo priečinkov, štítkov a filtrov"
+      ],
+      "Unlimited labels": [
+        "Neobmedzený počet štítkov"
+      ],
+      "Unlimited messages per day": [
+        "Neobmedzený počet správ za deň"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Až ${ totalStorageSize } úložného priestoru"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 vlastná emailová doména"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Vytvorte si viacero emailových adries pre svoje online identity, napr. JohnShopper@${ domain } pre nákupné účty, JohnNews@${ domain2 } pre odber noviniek"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Odložte správy a pripomeňte si ich, kedy chcete"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Zabezpečte svoj kalendár pomocou end-to-end šifrovania. Súčasťou je podpora vlastných kalendárov, zdieľanie kalendára a ďalšie funkcie."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Obsahuje automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Zahŕňa podporu vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Prístup k ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME } z pohodlia vašej pracovnej plochy"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Adresy majú plnú schopnosť odosielania a prijímania. Používateľ môže mať priradených viacero adries; jedna adresa však nemôže byť priradená viacerým používateľom."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Umožňuje vám nastaviť pre vaše prichádzajúce správy automatické odpovedanie (automatická odpoveď)"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Automaticky vymazať správy staršie ako 30 dní z Koša a Spamu"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Automaticky preposielajte emaily odoslané na váš ${ MAIL_APP_NAME } účet na akúkoľvek inú emailovú adresu."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Hromadné propagačné alebo programové odosielanie emailov momentálne nie je podporované. Pre tento prípad použitia odporúčame použiť špecializovaného poskytovateľa emailových služieb."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Zvoľte si vlastné časy, kedy chcete dostať upozornenie na email alebo kedy má prísť vaša správa."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Vytvorte si viacero emailových adries pre svoje online identity, napr. JanNakupy@${ domain } pre nákupné účty, JanSpravy@${ domain } pre odber noviniek"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Vytvorte si ${ n } kalendár alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendáre alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Svoje kalendáre zdieľajte jednoducho s rodinou, priateľmi alebo kolegami"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Pošlite email všetkým v skupine pomocou jednej emailovej adresy"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Zabezpečuje, aby ste dostávali všetky emaily odoslané na vašu doménu, aj keď emailová adresa neexistuje, už viac neexistuje alebo má preklep"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "Podpora IMAP je obmedzená na používanie aplikácií pre počítače (napr. Outlook, Apple Mail, Thunderbird) cez ${ MAIL_APP_NAME } Bridge. Cloudové integrácie IMAP momentálne nie sú podporované."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Udržujte svoje plány v súkromí pre seba a svoju rodinu pomocou šifrovaného kalendára"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Štítky sú jednoduché značky, ktoré môžete pridať do správ, aby ste ich ľahšie našli alebo na ne použili filtre"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Rýchle nastavenie správ mimo kancelárie (out-of-office)"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Rýchlo preneste svoje emaily, kalendáre alebo kontakty od akéhokoľvek poskytovateľa"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Bezpečne si uložte podrobnosti o svojich kontaktoch, ako je telefónne číslo, adresa, narodeniny a osobné poznámky. Šifrovanie s nulovým prístupom zaisťuje, že k nim nebude mať prístup ani ${ BRAND_NAME }."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Pozrite si dostupnosť účastníkov stretnutí a ušetrite čas pri ich plánovaní"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Posielajte emaily veľkým skupinám rýchlo a jednoducho vytvorením toľkých skupín kontaktov, koľko potrebujete (až 100 kontaktov na skupinu)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Nastavte filtre pre automatickú odpoveď, triedenie a/alebo označenie emailov"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Zdieľajte svoje súbory alebo priečinky s kýmkoľvek pomocou bezpečných a zdieľateľných odkazov"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP umožňuje službám alebo zariadeniam tretích strán odosielať emaily prostredníctvom ${ MAIL_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } a ${ PASS_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Úložný priestor je zdieľaný cez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }. Administrátori môžu používateľom vo svojej organizácii prideliť rôznu veľkosť úložného priestoru"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Úložný priestor sa zdieľa medzi používateľmi v ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } a ${ PASS_APP_NAME }"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Použite svoje vlastné emailové adresy domény, napr. vy@vasemeno.sk"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Pri odosielaní iným používateľom ${ MAIL_APP_NAME } je šifrovanie automatické. Odosielanie používateľom, ktorí nie sú členmi ${ MAIL_APP_NAME_TWO }, vyžaduje pred odoslaním nastavenie hesla."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Získajte 15 emailových adries a podporu pre 3 vlastné emailové domény"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Zvýšte úložný priestor na ${ bundleStorage } na používateľa"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Zvýšte úložný priestor na ${ bundleStorage } celkom"
+      ],
+      "Create up to ${ n } calendar": [
+        "Vytvorte až ${ n } kalendár",
+        "Vytvorte až ${ n } kalendáre",
+        "Vytvorte až ${ n } kalendárov",
+        "Vytvorte až ${ n } kalendárov"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Podpora pre ${ n } vlastné emailové domény"
       ]
     },
     "Placeholder": {
@@ -1103,6 +1633,22 @@
         "Presmerujeme vás na poskytovateľa SSO tretej strany."
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Úložisko pre údaje generované pomocou ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Až ${ totalStorageSize } úložného priestoru"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Až ${ totalStorageSize } úložisko pošty"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Pre všetky ${ BRAND_NAME } služby"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Kód zaslaný na ${ methodTo }"
@@ -1112,6 +1658,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "Účet zamknutý"
+      ],
       "Enter 2FA code": [
         "Zadajte 2FA kód"
       ],

@@ -17,6 +17,9 @@
       "Continue": [
         "Kemmel"
       ],
+      "Dismiss": [
+        "Zgel"
+      ],
       "Edit email address": [
         "Ẓreg tansa imayl"
       ],
@@ -64,6 +67,73 @@
       ],
       "View invoice": [
         "Wali tafaturt"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Asnas ${ MAIL_APP_NAME } i Desktop"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Use your own email domain": [
+        "Use a own email domain"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "zṛudyya"
+      ],
+      "cerise": [
+        "areḍli"
+      ],
+      "cobalt": [
+        "kubalt"
+      ],
+      "copper": [
+        "nnḥas"
+      ],
+      "fern": [
+        "ifilku"
+      ],
+      "forest": [
+        "tiẓgi"
+      ],
+      "ocean": [
+        "agaraw"
+      ],
+      "olive": [
+        "azemmur"
+      ],
+      "pacific": [
+        "amelwi"
+      ],
+      "pine": [
+        "azumba"
+      ],
+      "pink": [
+        "axuxi"
+      ],
+      "plum": [
+        "taxuxet"
+      ],
+      "purple": [
+        "akeẓẓal"
+      ],
+      "reef": [
+        "lmerǧan"
+      ],
+      "sahara": [
+        "sseḥra"
+      ],
+      "slateblue": [
+        "tabdert tazegzawt"
+      ],
+      "soil": [
+        "akal"
+      ],
+      "strawberry": [
+        "tizwal"
       ]
     },
     "Country name": {
@@ -891,6 +961,27 @@
         "Tasarutt n tɣellist"
       ]
     },
+    "file size format": {
+      "byte": [
+        "ibiten",
+        "ibiten"
+      ],
+      "GB": [
+        "GAṬ"
+      ],
+      "KB": [
+        "KAṬ"
+      ],
+      "MB": [
+        "KAṬ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Ibit",
+        "Ibiten"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Anagraw amezwar"
@@ -1024,6 +1115,136 @@
       ],
       "Request an invite": [
         "Suter tinubga"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Eǧǧ tanaka-k n urmas teddes s yikaramen."
+      ]
+    },
+    "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } uwitay",
+        "${ n } yiwitayen"
+      ],
+      "${ n } calendar per user": [
+        "${ n } uwitay i yal aseqdac",
+        "${ n } yiwitayen i yal aseqdac"
+      ],
+      "${ n } custom email domain": [
+        "${ n } taɣult n yimaylen udmawanen",
+        "${ n } tiɣula n yimaylen udmawanen"
+      ],
+      "${ n } email address": [
+        "${ n } tansa n yimayl",
+        "${ n } tansiwin n yimayl"
+      ],
+      "${ n } email address per user": [
+        "${ n } tansa n yimayl i useqdac",
+        "${ n } tansiwin n yimayl i useqdac"
+      ],
+      "${ n } filter": [
+        "${ n } yimsizdeg",
+        "${ n } yimsizedgen"
+      ],
+      "${ n } folder": [
+        "${ n } n ukaram",
+        "${ n } n ikaramen"
+      ],
+      "${ n } folder and label": [
+        "${ n } ukaram d tebzimt",
+        "${ n } yikaramen d tebzimin"
+      ],
+      "${ n } label": [
+        "${ n } tebzimt",
+        "${ n } tebzimin"
+      ],
+      "${ n } message per day": [
+        "${ n } n yiznen i wass",
+        "${ n } n yiznan i ass"
+      ],
+      "${ size } attachment size": [
+        "${ size } teɣzi n yimeddayen"
+      ],
+      "${ size } storage": [
+        "${ size } n uḥraz"
+      ],
+      "Auto-reply": [
+        "Tiririt tawurmant"
+      ],
+      "Calendar sharing": [
+        "Beṭṭu n uwitay"
+      ],
+      "Catch-all": [
+        "Ṭṭef kullec"
+      ],
+      "Contact groups": [
+        "Igrawen n urmas"
+      ],
+      "Contact groups management": [
+        "Asefrek n yigrawen n yinermisen"
+      ],
+      "Custom email domains": [
+        "Tiɣula n yimayl tudmawanin"
+      ],
+      "Encrypted contact details": [
+        "Talqayt n unermis awgelhan"
+      ],
+      "End-to-end encryption": [
+        "Awgelhen seg yixef ɣer yixef"
+      ],
+      "HTML signatures": [
+        "Izmulen n HTML"
+      ],
+      "Schedule messages at any time": [
+        "Sɣawes akud n tuzna n yizen melmi i tebɣiḍ"
+      ],
+      "Search message content": [
+        "Agbur n yizen n unadi"
+      ],
+      "Send & receive invitations": [
+        "Azen & nermes-d tinubgiwin"
+      ],
+      "SMTP submission": [
+        "Assuter n SMTP"
+      ],
+      "Unlimited filters": [
+        "Imsizedgen war tilas"
+      ],
+      "Unlimited folders": [
+        "Ikaramen war tilas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ikaramen, tibzimin, d yimsizedgen war tilas"
+      ],
+      "Unlimited labels": [
+        "Tibzimin war tilas"
+      ],
+      "Unlimited messages per day": [
+        "War talast n yiznan i wass"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Alamma d ${ totalStorageSize } n uḥraz"
+      ]
+    },
+    "new_plans: feature info": {
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Tallunt n uḥraz tettwabḍa gar ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } d ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Snerni tallunt-ik n uḥraz i usemday n ${ bundleStorage } i useqdac"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Snerni tallunt-ik n uḥraz i usemday n ${ bundleStorage }"
+      ],
+      "Create up to ${ n } calendar": [
+        "Rnu alamma d ${ n } n uwitay",
+        "Rnu alamma d ${ n } n yiwitayen"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Asefrek i ${ n } tiɣula n yimayl udmawan"
       ]
     },
     "Placeholder": {
