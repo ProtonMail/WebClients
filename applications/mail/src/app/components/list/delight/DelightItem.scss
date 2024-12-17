@@ -145,6 +145,11 @@ $item-container-height: rem(64);
 	// Used to keep the buttons visible when a dropdown is open regardless of hover state
 	&-hover-action-buttons--dropdown-open {
 		display: inline-flex;
+
+		// AND force this one to be hidden for row mode when dropdown is opened
+		+ .item-senddate-row {
+			display: none;
+		}
 	}
 
 	// loading state
