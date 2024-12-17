@@ -76,7 +76,7 @@ export default function usePublicUploadFolder() {
         folderName: string,
         modificationTime?: Date
     ) => {
-        await deleteLinks(abortSignal, { token: shareId, parentLinkId: parentId, links: [{ linkId }] });
+        await deleteLinks(abortSignal, { token: shareId, parentLinkId: parentId, linkIds: [linkId] });
         return createEmptyFolder(abortSignal, shareId, parentId, folderName, modificationTime);
     };
 
