@@ -211,6 +211,9 @@
       "Discard changes": [
         "Zavrzi spremembe"
       ],
+      "Dismiss": [
+        "Opusti"
+      ],
       "Domain name": [
         "Ime domene"
       ],
@@ -3514,9 +3517,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Zaradi neplačanih računov je dostop do računa omejen. Obrnite se na svojega skrbnika."
       ],
-      "Account size": [
-        "Velikost računa"
-      ],
       "Account successfully updated": [
         "Račun je uspešno posodobljen"
       ],
@@ -3555,9 +3555,6 @@
         "Dodajam prehodna strežnika: ${ serverNumber } / ${ total }",
         "Dodajam prehodne strežnike: ${ serverNumber } / ${ total }",
         "Dodajam prehodne strežnike: ${ serverNumber } / ${ total }"
-      ],
-      "Additional options": [
-        "Dodatne možnosti"
       ],
       "Admin account allocation": [
         "Dodeljevanje skrbniškega računa."
@@ -3730,11 +3727,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prilagodite prikaz aplikacij ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Namenski strežniki"
-      ],
       "dedicated servers": [
         "namenske strežnike"
+      ],
+      "Dedicated servers": [
+        "Namenski strežniki"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Izbrišite druge zapise MX ali poskrbite, da je prioriteta ${ MAIL_APP_NAME } najnižja številka."
@@ -3813,9 +3810,6 @@
       ],
       "email": [
         "e-pošta"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-poštno gostovanje za deset po meri prilagojenih domenskih imen je brezplačno vključeno. Dodatne domene je mogoče dodati za ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-poštno gostovanje je na voljo samo za domene, ki jih že imate. Registracija domene trenutno ni na voljo preko ${ BRAND_NAME }. Lahko pa gostujete e-pošto za domene, registrirane pri kateremkoli registrarju domen."
@@ -4579,11 +4573,11 @@
       "User activated": [
         "Uporabnik je aktiviran."
       ],
-      "Username": [
-        "Uporabniško ime"
-      ],
       "username": [
         "uporabniško ime"
+      ],
+      "Username": [
+        "Uporabniško ime"
       ],
       "Users": [
         "Uporabniki"
@@ -7389,32 +7383,9 @@
         "Člani"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "prosimo, ${ contactHref } našo prodajno ekipo."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Izberite število IP naslovov, ki jih želite vključiti v svoj paket. Vsak dodatni IP naslov stane ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Če potrebujete več kot ${ maxIPs } IP, ",
-        "Če potrebujete več kot ${ maxIPs } IP-ja, ",
-        "Če potrebujete več kot ${ maxIPs } IP-jev, ",
-        "Če potrebujete več kot ${ maxIPs } IP-jev, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontaktirajte"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Izberite število uporabnikov, ki jih želite vključiti v svoj paket. Vsak dodatni uporabnik stane ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Če potrebujete več kot ${ maxUsers } uporabniški račun, vas prosimo, da ${ contact } našo prodajno ekipo.",
-        "Če potrebujete več kot ${ maxUsers } uporabniška računa, vas prosimo, da ${ contact } našo prodajno ekipo.",
-        "Če potrebujete več kot ${ maxUsers } uporabniške račune, vas prosimo, da ${ contact } našo prodajno ekipo.",
-        "Če potrebujete več kot ${ maxUsers } uporabniških računov, vas prosimo, da ${ contact } našo prodajno ekipo."
       ]
     },
     "Price": {
@@ -9124,10 +9095,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [

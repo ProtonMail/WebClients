@@ -217,6 +217,9 @@
       "Discard changes": [
         "Änderungen verwerfen"
       ],
+      "Dismiss": [
+        "Verwerfen"
+      ],
       "Domain name": [
         "Domainname"
       ],
@@ -1128,6 +1131,11 @@
         "Der Speicherplatz wird von allen ${ BRAND_NAME }-Services gemeinsam genutzt."
       ]
     },
+    "Billing cycle": {
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Verlängert sich automatisch auf ${ subscriptionManagerName }"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 Monat"
@@ -1231,6 +1239,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Fortfahren"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
       ],
@@ -2665,6 +2676,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Bitte aktiviere die Mehrbenutzerunterstützung, bevor du Benutzer zu deiner Organisation hinzufügst."
       ],
+      "Please enter a valid entity ID URL": [
+        "Bitte gib eine gültige URL zur Entitäts-ID ein"
+      ],
       "Please generate keys before you try to change your password": [
         "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ],
@@ -3630,9 +3644,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Der Zugriff auf dein Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
       ],
-      "Account size": [
-        "Größe des Kontos"
-      ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
@@ -3669,8 +3680,8 @@
         "Gateway-Server wird hinzugefügt: ${ serverNumber } / ${ total }",
         "Gateway-Server werden hinzugefügt: ${ serverNumber } / ${ total }"
       ],
-      "Additional options": [
-        "Zusätzliche Optionen"
+      "Address copied to clipboard": [
+        "Adresse in die Zwischenablage kopiert"
       ],
       "Admin account allocation": [
         "Admin-Konto-Zuweisung"
@@ -3787,6 +3798,9 @@
       "Change your password": [
         "Passwort ändern"
       ],
+      "Choose an Entity ID to continue.": [
+        "Wähle eine Entitäts-ID, um fortzufahren."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
       ],
@@ -3805,6 +3819,9 @@
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Verbinde weiterhin **${ organizationValue.Name }** mit deiner ${ BRAND_NAME }-Organisation."
       ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Verbinde diese Entität weiterhin mit deiner ${ BRAND_NAME }-Organisation."
+      ],
       "Continue with ${ freeName }": [
         "Mit ${ freeName } fortfahren"
       ],
@@ -3822,10 +3839,6 @@
       ],
       "Country code": [
         "Ländercode"
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Erstelle eine sichere Cloud für ${ n } Benutzer",
-        "Erstelle eine sichere Cloud für ${ n } Benutzer"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Erstelle und verwalte Unterkonten und weise ihnen E-Mail-Adressen in deiner eigenen Domain zu."
@@ -3858,11 +3871,14 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
       ],
+      "dedicated servers": [
+        "dedizierte Server"
+      ],
       "Dedicated servers": [
         "Dezidierte Server"
       ],
-      "dedicated servers": [
-        "dedizierte Server"
+      "default email address": [
+        "standard E-Mail-Adresse"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Lösche alle anderen MX-Einträge oder stelle sicher, dass ${ MAIL_APP_NAME } die geringste Priorität hat."
@@ -3941,14 +3957,11 @@
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
-      "EduGain configuration saved": [
+      "eduGAIN configuration saved": [
         "eduGAIN-Konfiguration gespeichert"
       ],
       "email": [
         "E-Mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-Mail-Hosting für 10 eigene E-Mail-Domainnamen ist kostenlos enthalten. Zusätzliche Domains können für ${ price } hinzugefügt werden."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über ${ BRAND_NAME } möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
@@ -3982,6 +3995,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Gib den an „${ email }” gesendeten Code ein. Solltest du die Nachricht nicht in deinem Posteingang vorfinden, überprüfe bitte deinen Spam-Ordner."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Gib die Entitäts-ID einer **eduGAIN**-Organisation für **${ domain.DomainName }** ein."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Gib das Organisationspasswort ein, um die Administratorrechte wiederherzustellen. ${ learnMore }"
@@ -4331,9 +4347,6 @@
       "No Gateways yet": [
         "Noch keine Gateways"
       ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Keine Organisationen mit **eduGAIN** für **${ domain.DomainName }** aktiviert."
-      ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
       ],
@@ -4551,17 +4564,14 @@
       "Securing your account": [
         "Dein Konto wird abgesichert"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Wähle eine Organisation aus, die mit **eduGAIN** für **${ domain.DomainName }** aktiviert ist."
-      ],
       "Select one or multiple user affiliations": [
         "Wähle eine oder mehrere Benutzerzugehörigkeiten"
       ],
       "Select recently used servers": [
         "Zuletzt verwendete Server auswählen"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "Wähle die Benutzerzugehörigkeiten aus **${ organizationValue.Name }** (${ organizationValue.EntityId }), die du in deiner ${ BRAND_NAME }-Organisation zulassen möchtest:"
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Wähle die Benutzerzugehörigkeiten aus ${ getFormattedOrganization }, die du in deiner ${ BRAND_NAME }-Organisation zulassen möchtest:"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Versende E-Mails, um deine Mitglieder zu ermutigen, ihre Konten mit 2FA zu schützen."
@@ -4711,9 +4721,6 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Diese Nachricht wird das Support-Team nicht erreichen, wenn du ein Problem mit unserem Service hast oder weitere Maßnahmen von unserer Seite benötigst, ${ supportLink }."
       ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Diese Organisation ist mit **eduGAIN** für **${ domain.DomainName }** aktiviert."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Dieser Benutzer ist zurzeit für Zahlungen für deine Organisation zuständig. Wenn du den Benutzer zurückstufst, wirst du für die Zahlungen deiner Organisation zuständig."
       ],
@@ -4861,10 +4868,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
       "Users": [
@@ -5229,11 +5236,6 @@
         "Nur anzeigen"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Keine gültige E-Mail-Adresse"
@@ -5534,6 +5536,9 @@
       "Entity ID": [
         "Entitäts-ID"
       ],
+      "Entity ID URL": [
+        "URL zur Entitäts-ID"
+      ],
       "Event": [
         "Ereignis"
       ],
@@ -5716,6 +5721,9 @@
       ],
       "Recovery phrase": [
         "Wiederherstellungsphrase"
+      ],
+      "Remove": [
+        "Entfernen"
       ],
       "Repeat backup password": [
         "Wiederholung des Backup-Passworts"
@@ -6350,6 +6358,9 @@
       "10 email addresses/aliases": [
         "10 E-Mail-Adressen/Aliasse"
       ],
+      "10 more premium features": [
+        "10 weitere Premium-Funktionen"
+      ],
       "10-year file version history": [
         "Dateiversionsverlauf für 10 Jahre"
       ],
@@ -6376,6 +6387,9 @@
       ],
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Erweiterte Alias-Funktionen (unterstützt durch SimpleLogin)"
       ],
       "Advanced network security": [
         "Fortgeschrittene Netzwerksicherheit"
@@ -6877,6 +6891,12 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }-Testversion"
       ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Hol dir Mail Plus für ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
+      ],
       "Your account's usage": [
         "Verbrauch deines Kontos"
       ]
@@ -7044,6 +7064,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Leite deinen Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
@@ -7192,6 +7215,12 @@
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME }-Produktankündigungen"
       ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME }-Benutzerumfrage"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME }-Willkommens-E-Mails"
+      ],
       "1 email per month": [
         "1 E-Mail pro Monat"
       ],
@@ -7204,8 +7233,20 @@
       "2-4 emails per year": [
         "2-4 E-Mails pro Jahr"
       ],
+      "4-6 emails per year": [
+        "4-6 E-Mails pro Jahr"
+      ],
       "Daily email notifications": [
         "Tägliche E-Mail-Benachrichtigungen"
+      ],
+      "During your first month": [
+        "Während des ersten Monats"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Nimm an Umfragen teil, um die Dienstleistungen von ${ BRAND_NAME } zu verbessern."
+      ],
+      "Product updates": [
+        "Produkt-Updates"
       ]
     },
     "Notification": {
@@ -7750,6 +7791,9 @@
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPrice } verlängert. Du kannst jederzeit kündigen."
+      ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Die Transaktion wurde erfolgreich erkannt. Das Guthaben wird deinem Konto gutgeschrieben, sobald die Transaktion vollständig bestätigt ist."
       ],
@@ -7914,28 +7958,9 @@
         "Mitglieder"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } bitte unser Verkaufsteam."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Wähle die Anzahl der IP's aus, die in deinem Abonnement enthalten sein sollen. Jede zusätzliche IP kostet ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Solltest du mehr als ${ maxIPs } IP benötigen, ",
-        "Solltest du mehr als ${ maxIPs } IP's benötigen, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontaktiere"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Wähle die Anzahl der Benutzer aus, die in deinem Abonnement enthalten sein sollen. Jeder zusätzliche Benutzer kostet ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Benötigst du mehr als ${ maxUsers } Benutzerkonto, ${ contact } bitte unser Vertriebsteam.",
-        "Benötigst du mehr als ${ maxUsers } Benutzerkonten, ${ contact } bitte unser Vertriebsteam."
       ]
     },
     "Price": {
@@ -8213,6 +8238,9 @@
       ],
       "Invoice": [
         "Rechnung"
+      ],
+      "Transactions": [
+        "Transaktionen"
       ]
     },
     "Select search results": {
@@ -8735,6 +8763,15 @@
       "Access granted": [
         "Zugriff gewährt"
       ],
+      "Ask administrator for help": [
+        "Administrator um Hilfe bitten"
+      ],
+      "Ask your administrator for access?": [
+        "Möchtest du deinen Administrator um Zugriff bitten?"
+      ],
+      "Backup password": [
+        "Backup-Passwort"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -8743,6 +8780,9 @@
       ],
       "Contact administrator": [
         "Administrator kontaktieren"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Kontaktiere deinen Administrator, wenn das Problem weiterhin besteht."
       ],
       "Delete ${ n } inactive user?": [
         "${ n } inaktiven Benutzer löschen?",
@@ -8760,6 +8800,9 @@
       ],
       "Devices available": [
         "Verfügbare Geräte"
+      ],
+      "Enter your backup password": [
+        "Gib dein Backup-Passwort ein"
       ],
       "Grant": [
         "Zulassen"
@@ -8788,11 +8831,20 @@
       "Remove single sign-on for your organization?": [
         "Single Sign-on für deine Organisation entfernen?"
       ],
+      "Share the confirmation code with your administrator": [
+        "Teile den Bestätigungscode mit deinem Administrator"
+      ],
       "Sign in": [
         "Anmelden"
       ],
       "Single sign-on removed": [
         "Single Sign-on entfernt"
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Um sicherzugehen, dass es wirklich du bist, der versucht, sich bei deinem Konto anzumelden, gib den Bestätigungscode an deinen Administrator **${ adminEmail }** weiter, damit er die Anfrage für **${ email }** genehmigen kann."
+      ],
+      "Use backup password instead": [
+        "Stattdessen Backup-Passwort verwenden"
       ],
       "User details:": [
         "Benutzerdetails:"
@@ -8810,6 +8862,9 @@
       ],
       "Pending activation": [
         "Ausstehende Aktivierung"
+      ],
+      "Rejected": [
+        "Abgelehnt"
       ],
       "Signed out": [
         "Abgemeldet"
@@ -9846,11 +9901,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-all address": [
-        "Catch-all-Weiterleitungsadresse"
-      ],
       "Catch-All address": [
         "Catch-all-Adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-Weiterleitungsadresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -10563,22 +10618,49 @@
     "Tor out of date": {
       "stable release": [
         "stabile Version"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
       ]
     },
     "Transaction state display as badge": {
       "Chargeback": [
         "Rückbuchung"
+      ],
+      "Refunded": [
+        "Erstattet"
       ]
     },
     "Transaction type display as badge": {
+      "Authorization": [
+        "Autorisierung"
+      ],
+      "Bank transfer": [
+        "Banküberweisung"
+      ],
       "Bitcoin": [
         "Bitcoin"
+      ],
+      "Cash": [
+        "Bar"
       ],
       "Chargeback": [
         "Rückbuchung"
       ],
       "Credit": [
         "Kredit"
+      ],
+      "Currency conversion": [
+        "Währungsumrechnung"
+      ],
+      "Migration": [
+        "Migration"
+      ],
+      "Payment": [
+        "Zahlung"
+      ],
+      "Refund": [
+        "Erstattung"
       ]
     },
     "unprivatization": {
@@ -10588,11 +10670,23 @@
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Wenn du den Benutzer als privat einstufst, kannst du ihm nicht helfen, wieder Zugang zu seinen Daten oder seinem Konto zu erhalten."
       ],
+      "Cancel request": [
+        "Anfrage abbrechen"
+      ],
+      "Cancel request to access user data?": [
+        "Anfrage zum Zugriff auf Benutzerdaten abbrechen?"
+      ],
+      "Confirm all": [
+        "Alle bestätigen"
+      ],
       "Could not enable administrator access: ${ error }": [
         "Fehler beim Aktivieren des Administratorzugriffs: ${ error }"
       ],
       "Enable manually": [
         "Manuell aktivieren"
+      ],
+      "Keep request": [
+        "Anfrage behalten"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Sobald der Nutzer zustimmt, kannst du ihm helfen, wieder Zugang zu seinem Konto zu erhalten oder seine Daten zu verwalten."
