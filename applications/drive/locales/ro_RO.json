@@ -63,9 +63,6 @@
       "Add group": [
         "Adăugare grup"
       ],
-      "Add new contact": [
-        "Adăugare contact"
-      ],
       "Add new group": [
         "Adăugare grup"
       ],
@@ -363,9 +360,6 @@
       "Export contact group": [
         "Exportare grup de contacte"
       ],
-      "Export contacts": [
-        "Exportare contacte"
-      ],
       "Fit to window": [
         "Potrivire la fereastră"
       ],
@@ -377,6 +371,9 @@
       ],
       "Get ${ DRIVE_APP_NAME }": [
         "Luați ${ DRIVE_APP_NAME }"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Luați ${ MAIL_SHORT_APP_NAME } Plus cu ${ priceCoupon }"
       ],
       "Get in touch": [
         "Contactați-ne"
@@ -1331,6 +1328,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Modificare setări adresă de e-mail"
+      ],
+      "Continue": [
+        "Continuare"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
       ],
@@ -2431,6 +2434,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A2F adaugă un nivel de securitate suplimentar, prevenind accesul neautorizat."
       ],
+      "Also included": [
+        "De asemenea, inclus"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Se decriptează contactele… Ar putea dura câteva minute. După finalizarea operației, veți putea descărca fișierul cu contactele exportate."
       ],
@@ -2442,6 +2448,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obțineți aliasuri nelimitate și 500 GIB spațiu de stocare cu ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -4230,14 +4239,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Accesul la cont a fost restricționat din cauza facturilor neplătite. Contactați-vă administratorul."
       ],
-      "Account size": [
-        "Mărime cont"
-      ],
       "Account successfully updated": [
         "Cont actualizat cu succes"
       ],
-      "Additional options": [
-        "Opțiuni adiționale"
+      "Address copied to clipboard": [
+        "Adresa a fost copiată în memorie."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
@@ -4424,11 +4430,6 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Creați un cont cloud securizat pentru ${ n } membru",
-        "Creați un cont cloud securizat pentru ${ n } membri",
-        "Creați un cont cloud securizat pentru ${ n } de membri"
-      ],
       "Create in": [
         "Creare în"
       ],
@@ -4453,9 +4454,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Credit pentru porțiunea neutilizată din abonamentul planului anterior"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
-      ],
       "Current plan": [
         "Plan actual"
       ],
@@ -4470,6 +4468,9 @@
       ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "default email address": [
+        "adresa de e-mail implicită"
       ],
       "Delete locked drive": [
         "Ștergere unitate blocată",
@@ -4560,9 +4561,6 @@
       "email": [
         "e-mail"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Gazduirea de e-mail pentru 10 nume de domeniu de e-mail personale este inclusă gratuit. Domenii suplimentare pot fi adăugate pentru ${ price }."
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
       ],
@@ -4589,9 +4587,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduceți datele de conectare a contului de e-mail din care doriți să importați."
-      ],
-      "Enter the device name to confirm removal.": [
-        "Introduceți numele dispozitivului pentru a confirma ștergerea."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -4857,6 +4852,9 @@
       "Merged": [
         "Îmbinat"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Mesajele adresate tuturor adreselor de e-mail personale vor fi livrate în contul de e-mail."
+      ],
       "MM/YY": [
         "LL/AA"
       ],
@@ -5103,6 +5101,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
+      "Registering your subscription...": [
+        "Se înregistrează abonamentul..."
+      ],
       "Report has been sent": [
         "Raportul a fost trimis."
       ],
@@ -5186,6 +5187,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele bilateral cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
       ],
+      "Setting up your new address...": [
+        "Vi se configurează noile adrese..."
+      ],
       "Share files with links": [
         "Partajare fișiere prin legături web"
       ],
@@ -5234,6 +5238,9 @@
       "Something went wrong...": [
         "Ceva nu a funcționat corect..."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Începeți să o partajați contactelor personale și folosiți-l pentru serviciile online."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
       ],
@@ -5251,9 +5258,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Contul poate avea o cheie nouă sau este posibil ca următoarele să fi fost modificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
       ],
       "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
         "Semnătura digitală a fost parțial verificată. Fișierul a fost încărcat de pe o pagină publică în care nu se specifică o anumită origine a utilizatorului."
@@ -5285,14 +5289,26 @@
       "There is nothing to see here": [
         "Nu e nimic de văzut aici"
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Această acțiune va șterge permanent fișierul încărcat."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Această acțiune va șterge permanent folderul încărcat. Nu puteți șterge un folder care conține fișiere care nu vă aparțin."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Această acțiune va șterge legătura web și va anula accesul pentru toți utilizatorii."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Această acțiune va șterge permanent articolele selectate."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
+      ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "Rezultatul acestei operații NU se mai poate anula. Introduceți numele dispozitivului pentru a confirma eliminarea."
       ],
       "This file is too large to preview": [
         "Acest fișier este prea mare pentru a fi examinat."
@@ -5302,6 +5318,9 @@
       ],
       "This folder is empty": [
         "Acest folder este gol."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
       ],
       "This item already exists in your library": [
         "Articolul există deja în librăria proprie."
@@ -5329,8 +5348,8 @@
         "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura.",
         "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura."
       ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Aceasta va elimina dispozitivul sincronizat ${ deviceName } din ${ DRIVE_APP_NAME } și va opri sincronizarea folderelor pe care le-ați adăugat la secțiunea „Calculatoare”."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "Aceasta va elimina dispozitivul sincronizat ${ deviceName } din ${ DRIVE_APP_NAME } și toate datele sale din ${ DRIVE_APP_NAME }. Folderele pe care le-ați adăugat la „Calculator” nu se vor mai sincroniza."
       ],
       "This will replace the existing file with the folder": [
         "Aceasta va înlocui fișierul existent cu folderul."
@@ -5754,11 +5773,6 @@
         "Numai vizualizare"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
-      ]
-    },
     "Item": {
       "file attributes": [
         "atribute fișier"
@@ -5874,9 +5888,6 @@
       ],
       "Authenticator app": [
         "Aplicație Authenticator"
-      ],
-      "Automatically save contacts": [
-        "Salvare automată contacte"
       ],
       "Beta Access": [
         "Acces la Beta"
@@ -6054,9 +6065,6 @@
       "Expires": [
         "Expirare"
       ],
-      "Export contacts": [
-        "Exportare contacte"
-      ],
       "Extended address": [
         "Adresa extinsă"
       ],
@@ -6095,9 +6103,6 @@
       ],
       "Import all messages": [
         "Importare toate mesajele"
-      ],
-      "Import contacts": [
-        "Importare contacte"
       ],
       "Import interval": [
         "Interval de importare"
@@ -6857,6 +6862,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Începând de la ${ priceMailPlus }"
       ],
@@ -7014,6 +7022,9 @@
       ],
       "10 email addresses/aliases": [
         "10 adrese de e-mail/aliasuri"
+      ],
+      "10 more premium features": [
+        "Încă 10 funcții premium"
       ],
       "10-year file version history": [
         "10 ani istoric versiuni fișiere"
@@ -7505,6 +7516,14 @@
         "Schimbare planuri?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Luați Mail Plus cu ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceMailPlus }. Puteți anula oricând."
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Asigurați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
@@ -7787,11 +7806,17 @@
       "\"${ name }\" created successfully": [
         "„${ name }” a fost creat cu succes."
       ],
+      "\"${ name }\" deleted": [
+        "S-a șters „${ name }”"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "„${ name }” a fost eliminat permanent din «Gunoi»."
       ],
       "\"${ name }\" failed to be created": [
         "„${ name }” nu a putut fi creat."
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "Nu s-a putut șterge „${ name }”"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "„${ name }” nu a putut fi eliminat definitiv din «Gunoi»."
@@ -7831,10 +7856,20 @@
         "Nu s-au putut decripta ${ count } articole.",
         "Nu s-au putut decripta ${ count } de articole."
       ],
+      "${ numberOfItems } item deleted": [
+        "Articole șterse: ${ numberOfItems }",
+        "Articole șterse: ${ numberOfItems }",
+        "Articole șterse: ${ numberOfItems }"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "S-a eliminat permanent un element din «Gunoi».",
         "S-au eliminat definitiv ${ numberOfItems } articole din «Gunoi».",
         "S-au eliminat definitiv ${ numberOfItems } de articole din «Gunoi»."
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "Eșuare ștergere articole: ${ numberOfItems }",
+        "Eșuare ștergere articole: ${ numberOfItems }",
+        "Eșuare ștergere articole: ${ numberOfItems }"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Un element nu a putut fi eliminat definitiv din «Gunoi».",
@@ -8569,30 +8604,9 @@
         "Nume"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "vă rugăm să ${ contactHref } echipa noastră de vânzări."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Selectați numărul de adrese IP de inclus în plan. Fiecare Adresă IP adițională costă ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Dacă aveți nevoie de mai mult de ${ maxIPs } adresă IP, ",
-        "Dacă aveți nevoie de mai mult de ${ maxIPs } adrese IP, ",
-        "Dacă aveți nevoie de mai mult de ${ maxIPs } de adrese IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contactați"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Selectați numărul de utilizatori de inclus în plan. Fiecare utilizator în plus costă ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Dacă aveți nevoie de mai mult de un utilizator în cont, ${ contact } echipa noastră de vânzări.",
-        "Dacă aveți nevoie de mai mult de ${ maxUsers } utilizatori în cont, ${ contact } echipa noastră de vânzări.",
-        "Dacă aveți nevoie de mai mult de ${ maxUsers } de utilizatori în cont, ${ contact } echipa noastră de vânzări."
       ]
     },
     "Price": {
@@ -10139,6 +10153,9 @@
       "Day theme": [
         "Temă zi"
       ],
+      "Delete": [
+        "Ștergere"
+      ],
       "Delete ${ count } contact": [
         "Ștergere un contact",
         "Ștergere ${ count } contacte",
@@ -10148,6 +10165,12 @@
         "Ștergere grup de contacte",
         "Ștergere ${ count } grupuri de contacte",
         "Ștergere ${ count } de grupuri de contacte"
+      ],
+      "Delete ${ item.name }?": [
+        "Ștergeți ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Ștergeți ${ links.length } de articole?"
       ],
       "Delete ${ value }": [
         "Ștergere ${ value }"
@@ -10537,6 +10560,9 @@
       "Unlock contacts groups": [
         "Deblocare grupuri de contacte"
       ],
+      "Upgrade complete!": [
+        "Modificare finalizată!"
+      ],
       "Uploaded": [
         "Încărcat"
       ],
@@ -10599,6 +10625,9 @@
       ],
       "Your exposed information": [
         "Informațiile expuse"
+      ],
+      "Your shorter address is now ready": [
+        "Adresa scurtă este pregătită acum"
       ],
       "Your welcome actions": [
         "Acțiuni de bun venit"
@@ -10693,9 +10722,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Li s-a trimis o invitație pentru a accesa articolul."
-      ],
-      "You do not have any contacts to export": [
-        "Nu aveți persoane de contact pentru exportare"
       ]
     },
     "tooltip": {
@@ -10849,6 +10875,9 @@
       ],
       "Missing alias suffix": [
         "Lipsește sufixul aliasului."
+      ],
+      "Name is required": [
+        "Numele este obligatoriu."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."

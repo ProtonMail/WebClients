@@ -63,9 +63,6 @@
       "Add group": [
         "Grup ekle"
       ],
-      "Add new contact": [
-        "Yeni kişi ekle"
-      ],
       "Add new group": [
         "Yeni grup ekle"
       ],
@@ -360,9 +357,6 @@
       "Export contact group": [
         "Kişi grubunu dışa aktar"
       ],
-      "Export contacts": [
-        "Kişileri dışa aktar"
-      ],
       "Fit to window": [
         "Pencereye sığdır"
       ],
@@ -374,6 +368,9 @@
       ],
       "Get ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } edinin"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "${ priceCoupon } ile ${ MAIL_SHORT_APP_NAME } Plus edinin"
       ],
       "Get in touch": [
         "Bizimle görüşün"
@@ -1321,6 +1318,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "E-posta adresi ayarlarını değiştir"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ],
@@ -2419,6 +2422,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "İki adımlı doğrulama ek bir güvenlik katmanı ekleyerek yetkisiz erişimi önler."
       ],
+      "Also included": [
+        "Ayrıca şunlar da bulunur"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kişilerin şifresi çözülüyor… Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında dışa aktardığınız tüm kişilerin bulunduğu dosyayı indirebilirsiniz."
       ],
@@ -2430,6 +2436,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] } ile sınırsız takma ad ve 500 GB depolama alanı edinin."
@@ -4163,14 +4172,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
-      "Account size": [
-        "Hesap boyutu"
-      ],
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
-      "Additional options": [
-        "Ek seçenekler"
+      "Address copied to clipboard": [
+        "Adres panoya kopyalandı"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
@@ -4353,10 +4359,6 @@
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "${ n } üye için bir güvenli bulut oluştur",
-        "${ n } üye için bir güvenli bulut oluştur"
-      ],
       "Create in": [
         "Şuraya ekle"
       ],
@@ -4381,9 +4383,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimlerindeki (UTF-8) dosyalar desteklenir."
-      ],
       "Current plan": [
         "Geçerli tarife"
       ],
@@ -4398,6 +4397,9 @@
       ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "default email address": [
+        "varsayılan e-posta adresi"
       ],
       "Delete locked drive": [
         "Kilitlenmiş sürücüyü sil",
@@ -4487,9 +4489,6 @@
       "email": [
         "e-posta"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
       ],
@@ -4516,9 +4515,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
-      ],
-      "Enter the device name to confirm removal.": [
-        "Kaldırma işlemini onaylamak için aygıt adını yazın."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
@@ -4781,6 +4777,9 @@
       "Merged": [
         "Birleştirilmiş"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
+      ],
       "MM/YY": [
         "AA/YY"
       ],
@@ -5024,6 +5023,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
+      "Registering your subscription...": [
+        "Abonelik kaydınız oluşturuluyor..."
+      ],
       "Report has been sent": [
         "Şikayet gönderildi"
       ],
@@ -5106,6 +5108,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
       ],
+      "Setting up your new address...": [
+        "Yeni adresiniz ayarlanıyor..."
+      ],
       "Share files with links": [
         "Dosyaları bağlantı ile paylaş"
       ],
@@ -5154,6 +5159,9 @@
       "Something went wrong...": [
         "Bir sorun çıktı..."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
       ],
@@ -5171,9 +5179,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Hesabın yeni bir anahtarı olabilir ya da şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
       ],
       "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
         "Dijital imza kısmen doğrulandı. Dosya, belirli bir kullanıcı kaynağı belirtmeyen herkese açık bir sayfadan yüklendi."
@@ -5205,14 +5210,26 @@
       "There is nothing to see here": [
         "Burada görecek bir şey yok"
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Bu işlem yüklediğiniz dosyayı kalıcı olarak silecek."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Bu işlem yüklediğiniz klasörü kalıcı olarak silecek. Sahibi olmadığınız bir dosyanın bulunduğu bir klasörü silemezsiniz."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Bu işlem bağlantıyı silecek ve tüm kullanıcılar için erişimi iptal edecek."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Bu işlem seçilmiş ögeleri kalıcı olarak silecek."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
+      ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "Bu işlem geri alınamaz. Lütfen kaldırmayı onaylamak için aygıt adını yazın."
       ],
       "This file is too large to preview": [
         "Bu dosya ön izleme için çok büyük"
@@ -5222,6 +5239,9 @@
       ],
       "This folder is empty": [
         "Bu klasör boş"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
       ],
       "This item already exists in your library": [
         "Bu öge kitaplığınızda zaten var"
@@ -5248,8 +5268,8 @@
         "Bu işlem, bağlantıyı siler ve bağlantıya sahip olan herkesin dosyanıza erişimini kaldırır.",
         "Bu işlem, bağlantıları siler ve bağlantılara sahip olan herkesin dosyalarınıza erişimini kaldırır."
       ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Bu işlem, ${ DRIVE_APP_NAME } uygulamasından ${ deviceName } aygıtının eşitlemesini kaldıracak ve Bilgisayarlarım altına eklediğiniz klasörlerin eşitlemesini durduracak."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "Bu işlem, eşitlenmiş ${ deviceName } aygıtını ${ DRIVE_APP_NAME } üzerinden ve tüm verilerini ${ DRIVE_APP_NAME } üzerinden kaldıracak. Bilgisayarlarım üzerine eklediğiniz klasörlerin eşitlenmesi durdurulacak."
       ],
       "This will replace the existing file with the folder": [
         "Bu işlem var olan dosyayı klasör ile değiştirir"
@@ -5667,11 +5687,6 @@
         "Yalnızca görüntüleme"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
-      ]
-    },
     "Item": {
       "file attributes": [
         "dosya öznitelikleri"
@@ -5784,9 +5799,6 @@
       ],
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
-      ],
-      "Automatically save contacts": [
-        "Kişileri otomatik olarak kaydet"
       ],
       "Beta Access": [
         "Beta erişimi"
@@ -5963,9 +5975,6 @@
       "Expires": [
         "Geçerlilik sonu"
       ],
-      "Export contacts": [
-        "Kişileri dışa aktar"
-      ],
       "Extended address": [
         "Açık adres"
       ],
@@ -6004,9 +6013,6 @@
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
-      ],
-      "Import contacts": [
-        "Kişileri içe aktar"
       ],
       "Import interval": [
         "İçe aktarma aralığı"
@@ -6761,6 +6767,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
       ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus } tutarından başlayan fiyatlarla"
       ],
@@ -6901,6 +6910,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-posta adresi/takma adı"
+      ],
+      "10 more premium features": [
+        "10 ücretli özellik daha"
       ],
       "10-year file version history": [
         "10 yıllık dosya sürümü geçmişi"
@@ -7385,6 +7397,14 @@
         "Tarifeler değiştirilsin mi?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon } ile Mail Plus edinin"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "İndirimli fiyat olan ${ priceCoupon } ilk ay için geçerlidir. Daha sonra aylık ${ priceMailPlus } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
@@ -7665,11 +7685,17 @@
       "\"${ name }\" created successfully": [
         "\"${ name }\" eklendi"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" silindi"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" çöp kutusundan kalıcı olarak silindi"
       ],
       "\"${ name }\" failed to be created": [
         "\"${ name }\" eklenemedi"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\" silinemedi"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name } çöp kutusundan kalıcı olarak silinemedi"
@@ -7708,9 +7734,17 @@
         "${ count } ögenin şifresi çözülemedi",
         "${ count } ögenin şifresi çözülemedi"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } öge silindi",
+        "${ numberOfItems } öge silindi"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi",
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } öge silinemedi",
+        "${ numberOfItems } öge silinemedi"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silinemedi",
@@ -8427,28 +8461,9 @@
         "Ad"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "lütfen ${ contactHref } satış ekibimizle görüşün."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Tarifenizde bulunacak IP adresi sayısını seçin. Her ek IP adresinin maliyeti ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, ",
-        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "görüşün"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Tarifenizde bulunacak kullanıcı sayısını seçin. Her ek kullanıcının maliyeti ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "${ maxUsers } kullanıcı hesabından fazlasına gerek duyuyorsanız, lütfen satış ekibimizle ${ contact }.",
-        "${ maxUsers } kullanıcı hesabından fazlasına gerek duyuyorsanız, lütfen satış ekibimizle ${ contact }."
       ]
     },
     "Price": {
@@ -9324,7 +9339,7 @@
         "Kendi etki alanınızı kullanan profesyonel e-posta adresleriyle güven ve marka bilinirliği sağlayın."
       ],
       "Catch-all email address": [
-        "Tümünü yakalan e-posta adresi"
+        "Tümünü toplama e-posta adresi"
       ],
       "Comprehensive privacy and security": [
         "Kapsamlı gizlilik ve güvenlik"
@@ -9947,6 +9962,9 @@
       "Day theme": [
         "Gündüz teması"
       ],
+      "Delete": [
+        "Sil"
+      ],
       "Delete ${ count } contact": [
         "${ count } kişiyi sil",
         "${ count } kişiyi sil"
@@ -9954,6 +9972,12 @@
       "Delete ${ count } contact group": [
         "${ count } kişi grubunu sil",
         "${ count } kişi grubunu sil"
+      ],
+      "Delete ${ item.name }?": [
+        "${ item.name } silinsin mi?"
+      ],
+      "Delete ${ links.length } items?": [
+        "${ links.length } öge silinsin mi?"
       ],
       "Delete ${ value }": [
         "${ value } sil"
@@ -10341,6 +10365,9 @@
       "Unlock contacts groups": [
         "Kişi gruplarının kilidini açın"
       ],
+      "Upgrade complete!": [
+        "Yükseltme tamamlandı!"
+      ],
       "Uploaded": [
         "Yüklenme"
       ],
@@ -10403,6 +10430,9 @@
       ],
       "Your exposed information": [
         "Açığa çıkmış bilgileriniz"
+      ],
+      "Your shorter address is now ready": [
+        "Daha kısa adresiniz hazır"
       ],
       "Your welcome actions": [
         "Karşılama işlemleriniz"
@@ -10497,9 +10527,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
-      ],
-      "You do not have any contacts to export": [
-        "Dışa aktarılacak bir kişi kaydınız yok"
       ]
     },
     "tooltip": {
@@ -10641,6 +10668,9 @@
       ],
       "Missing alias suffix": [
         "Takma ad son eki eksik"
+      ],
+      "Name is required": [
+        "Adın yazılması zorunludur"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
