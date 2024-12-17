@@ -5,3 +5,5 @@ export * from './_documents/interface';
 export * from './_nodes/interface';
 export * from './_documents/DocumentKeys';
 export * from './NodeMeta';
+export * from './_invites/useDocInvites';
+export * from './useDocsUrlPublicToken';

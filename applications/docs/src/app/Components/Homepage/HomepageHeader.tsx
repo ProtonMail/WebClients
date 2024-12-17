@@ -22,18 +22,16 @@ export const HomepageHeader = ({
   const { viewportWidth } = useActiveBreakpoint()
 
   return (
-    <PrivateHeader
-      app={APPS.PROTONDRIVE}
-      userDropdown={
-        <div className="homepage-wrapper">
-          <UserDropdown app={APPS.PROTONDOCS} />
-        </div>
-      }
-      title={title}
-      expanded={isHeaderExpanded}
-      onToggleExpand={toggleHeaderExpanded}
-      isSmallViewport={viewportWidth['<=small']}
-      actionArea={<HomepageSearch onSearchTextChange={onSearchTextChange} />}
-    />
+    <div className="homepage-header items-center justify-center">
+      <PrivateHeader
+        app={APPS.PROTONDRIVE}
+        userDropdown={<UserDropdown app={APPS.PROTONDOCS} />}
+        title={title}
+        expanded={isHeaderExpanded}
+        onToggleExpand={toggleHeaderExpanded}
+        isSmallViewport={viewportWidth['<=small']}
+        actionArea={<HomepageSearch onSearchTextChange={onSearchTextChange} />}
+      />
+    </div>
   )
 }

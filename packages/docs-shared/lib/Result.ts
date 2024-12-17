@@ -1,7 +1,7 @@
-export class Result<T> {
+export class Result<T, E = string> {
   constructor(
     private isSuccess: boolean,
-    private error?: string,
+    private error?: E,
     private value?: T,
   ) {
     Object.freeze(this)
@@ -19,7 +19,7 @@ export class Result<T> {
     return this.value as T
   }
 
-  getError(): string {
+  getError(): E {
     if (this.isSuccess || this.error === undefined) {
       throw new Error('Cannot get an error of a successful result')
     }
@@ -27,15 +27,15 @@ export class Result<T> {
     return this.error
   }
 
-  static ok<U>(value?: U): Result<U> {
-    return new Result<U>(true, undefined, value)
+  static ok<U, E = string>(value?: U): Result<U, E> {
+    return new Result<U, E>(true, undefined, value)
   }
 
-  static fail<U>(error: string): Result<U> {
+  static fail<U, E = string>(error: E): Result<U, E> {
     if (!error) {
       throw new Error('Attempting to create a failed result without an error')
     }
 
-    return new Result<U>(false, error)
+    return new Result<U, E>(false, error)
   }
 }

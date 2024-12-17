@@ -1,4 +1,3 @@
-import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
 import type { DriveCompat, DocumentNodeMeta, NodeMeta, DecryptedNode } from '@proton/drive-store'
 import type { GetDocumentMeta } from './GetDocumentMeta'
@@ -7,7 +6,7 @@ import { getErrorString } from '../Util/GetErrorString'
 /**
  * Creates a new document from within the Docs client. This is used when selecting "New Document" from the UI.
  */
-export class CreateNewDocument implements UseCaseInterface<DocumentNodeMeta> {
+export class CreateNewDocument {
   constructor(
     private driveCompat: DriveCompat,
     private getDocumentMeta: GetDocumentMeta,
@@ -35,7 +34,7 @@ export class CreateNewDocument implements UseCaseInterface<DocumentNodeMeta> {
       })
 
       if (createResult.isFailed()) {
-        return Result.fail(createResult.getError())
+        return Result.fail(createResult.getError().message)
       }
 
       return Result.ok(shellResult)

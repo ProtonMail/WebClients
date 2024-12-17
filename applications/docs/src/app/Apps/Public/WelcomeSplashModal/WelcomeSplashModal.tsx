@@ -65,7 +65,7 @@ export default function WelcomeSplashModal({
           </div>
         </div>
         <div className="p-6">
-          <h1 className="text-base font-bold">{c('Info').t`Create a copy to edit`}</h1>
+          <h1 className="text-rg font-bold">{c('Info').t`Create a copy to edit`}</h1>
           <p className="mt-1">{c('Info')
             .t`${DOCS_APP_NAME} lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.`}</p>
         </div>

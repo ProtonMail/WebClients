@@ -48,7 +48,7 @@ function UserAppContent() {
     <ApplicationProvider application={application}>
       <DocsNotificationsProvider>
         <Switch>
-          <Route path={'/doc'}>
+          <Route path={['/doc', '/new']}>
             <Suspense>
               <SingleDocumentRoute driveCompat={driveCompat} />
             </Suspense>
@@ -59,7 +59,7 @@ function UserAppContent() {
                 <HomepageRoute />
               </Suspense>
             ) : (
-              <Redirect to="/doc" />
+              <Redirect to="/new" />
             )}
           </Route>
           <Route
