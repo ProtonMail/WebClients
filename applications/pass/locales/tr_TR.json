@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Kabul et"
+      ],
       "Add": [
         "Ekle"
       ],
@@ -33,6 +36,12 @@
       ],
       "Add current URL": [
         "Geçerli adresi ekle"
+      ],
+      "Add custom domain": [
+        "Özel etki alanı ekle"
+      ],
+      "Add mailbox": [
+        "E-posta kutusu ekle"
       ],
       "Add more": [
         "Başka ekle"
@@ -61,6 +70,9 @@
       "Back": [
         "Geri"
       ],
+      "Block contact": [
+        "Kişiyi engelle"
+      ],
       "Bulk delete items from trash": [
         "Çöpteki ögeleri toplu olarak sil"
       ],
@@ -81,6 +93,12 @@
       ],
       "Change": [
         "Değiştir"
+      ],
+      "Check DNS": [
+        "DNS kayıtlarını denetle"
+      ],
+      "Check settings": [
+        "Ayarları denetle"
       ],
       "Choose a file or drag it here": [
         "Bir dosya seçin ya da sürükleyip buraya bırakın"
@@ -115,6 +133,9 @@
       "Continue offline": [
         "Çevrim dışı kal"
       ],
+      "Copy alias address": [
+        "Takma ad adresini kopyala"
+      ],
       "Copy and close": [
         "Kopyala ve kapat"
       ],
@@ -141,6 +162,9 @@
       ],
       "Create card": [
         "Kart ekle"
+      ],
+      "Create contact": [
+        "Kişi ekle"
       ],
       "Create identity": [
         "Kimlik oluştur"
@@ -180,6 +204,9 @@
       ],
       "Delete it, I will never need it": [
         "Silebilirsin, onu asla kullanmayacağım"
+      ],
+      "Delete mailbox": [
+        "E-posta kutusunu sil"
       ],
       "Delete password": [
         "Parolayı sil"
@@ -316,6 +343,9 @@
       "Make admin": [
         "Yönetici yap"
       ],
+      "Make default": [
+        "Varsayılan yap"
+      ],
       "Make editor": [
         "Düzenleyici yap"
       ],
@@ -336,6 +366,9 @@
       ],
       "Maximum views": [
         "En fazla görüntüleme sayısı"
+      ],
+      "More info": [
+        "Diğer bilgiler"
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
@@ -390,6 +423,9 @@
       ],
       "Please retry": [
         "Lütfen yeniden deneyin"
+      ],
+      "Re-verify": [
+        "Yeniden doğrula"
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
@@ -475,6 +511,9 @@
       "Select": [
         "Seçin"
       ],
+      "Send email": [
+        "E-posta gönder"
+      ],
       "Send invite": [
         "Davet gönder"
       ],
@@ -530,6 +569,15 @@
       "Sync aliases": [
         "Takma adları eşitle"
       ],
+      "To mailbox": [
+        "E-posta kutusuna"
+      ],
+      "Transfer aliases": [
+        "Takma adları aktar"
+      ],
+      "Transfer and delete mailbox": [
+        "Aktar ve e-posta kutusunu sil"
+      ],
       "Transfer ownership": [
         "Sahipliği aktar"
       ],
@@ -541,6 +589,9 @@
       ],
       "Try for free": [
         "Ücretsiz deneyin"
+      ],
+      "Unblock contact": [
+        "Kişinin engellemesini kaldır"
       ],
       "Understood, I will never need it": [
         "Anladım. Onu asla kullanmayacağım",
@@ -627,6 +678,15 @@
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "İki adımlı doğrulama, oturum açma işlemlerinize ek bir güvenlik katmanı ekler. ${ PASS_APP_NAME }, iki adımlı doğrulama kodlarınızı saklayarak ve otomatik olarak otomatik doldurarak iki adımlı doğrulamayı kullanmanızı kolaylaştırır."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Etki alanınızın DNS kayıtlarına şu CNAME kaydını ekleyin."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Etki alanınızın DNS kayıtlarına aşağıdaki MX kaydını ekleyin. Lütfen hedef adreslerin sonunda bir nokta (.) olduğunu unutmayın. Etki alanı kayıt kuruluşunuz bu son noktayı yazmanıza izin vermiyorsa, DNS kaydını eklerken bunu kaldırın."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Etki alanınızın DNS kayıtlarına şu TXT kaydını ekleyin."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "E-posta takma adı e-posta adresi gibi çalışır. Ancak istenmeyen e-postaları azaltır ve gerçek e-posta adresiniz ile kimliğinizi gizli tutar."
       ],
@@ -639,8 +699,23 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Karanlık ağ izleme özelliği ücretli bir tarife ile kullanılabilir. Hemen kullanmak için tarifenizi yükseltin."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM }, e-posta sahteciliğini önlemek için tasarlanmış bir e-posta kimlik doğrulama yöntemidir. E-postalarınızın alıcının İstenmeyen klasörüne düşme olasılığını azaltmak için DKIM kullanmanız şiddetle önerilir."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC }, etki alanını izinsiz kullanılmasından, yaygın olarak e-posta sahteciliği olarak bilinen şeyden korumak için tasarlanmıştır. SPF ve DKIM etrafında oluşturulan bir DMARC ilkesi, alıcı e-posta sunucusuna bu kimlik doğrulama yöntemlerinden hiçbiri geçemezse ne yapacağını söyler."
+      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "E-posta adresiniz, parolanız veya diğer kişisel verileriniz açığa çıktığında bildirim alın."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Örneğin ${ subdomainExample } gibi bir alt etki alanı kullanıyorsanız, etki alanı olarak ${ dmarcExampleSubdomain } kullanmanız gerekir."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Bir alt etki alanı kullanıyorsanız, örneğin alt-etki-alani.etki-alani.com, etki alanı olarak ${ domainKeyExampleSubdomain } kullanmanız gerekir. Yani, etki alanınız mail.etki-alani.com ise etki alanı olarak ${ domainKeyExampleMail } yazmalısınız."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "CloudFlare kullanıyorsanız vekil sunucu seçeneğini seçmediğinizden emin olun."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Bu rehberler ve ipuçları ile bilgilerinizi daha güvenli ve gizli tutun."
@@ -650,6 +725,15 @@
       ],
       "Set up 2FA for more security": [
         "Güvenliği artırmak için iki adımlı doğrulamayı açın"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Bazı DNS kayıt kuruluşları için tam kayıt yolu gerekebilir. Bu durumda lütfen etki alanı değeri olarak ${ domain } kullanın."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Bazı etki alanı kayıt kuruluşları (Namecheap, CloudFlare, vb.) kök etki alanı için @ işaretini de kullanabilir."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF }, e-posta teslimi sırasında sahte gönderici adreslerini bulmak için tasarlanmış bir e-posta kimlik doğrulama yöntemidir. E-postalarınızın alıcının İstenmeyen klasörüne düşme olasılığını azaltmak için SPF kullanılması şiddetle önerilir."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "E-posta adresiniz ve hide-my-email takma adlarınızla oluşturulan hesaplarla ilgili verilerin ele geçirilmesi olaylarını izlemeye başlayın."
@@ -666,6 +750,9 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Bu hizmet iki adımlı doğrulama sağlıyor. Hesap güvenliğini artırmak için bunu kullanın."
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "Etki alanının sahipliğini doğrulamak için lütfen aşağıdaki TXT kaydını ekleyin. Bazı etki alanı kayıt kuruluşları (Namecheap, CloudFlare, vb.) kök etki alanı için @ kullanabilir."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Çevrim içi varlığınızı korumak için gelişmiş güvenlik özellikleri ile ayrıntılı günlük kayıtlarına erişin."
       ],
@@ -679,12 +766,20 @@
         "Kişisel bilgileriniz üçüncü taraf bir hizmetin verilerinin ele geçirilmesi nedeniyle sızdırıldı."
       ]
     },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "bir-ad@${ domainDisplay }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } dosyası işlenemedi. ${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
         "[Error] bir öge işlenemedi"
+      ],
+      "A domain ownership must be verified first.": [
+        "Önce bir etki alanının sahipliği doğrulanmalıdır."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Takma ad şu anda güncellenemedi. Lütfen bir süre sonra yeniden deneyin"
@@ -751,6 +846,9 @@
         "${ errors.length } bozuk CSV satırı bulundu",
         "${ errors.length } bozuk CSV satırı bulundu"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Etki alanı doğrulanamadı. Lütfen doğru DNS kayıtlarını eklediğinizden emin olun"
+      ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
@@ -778,11 +876,32 @@
       "Failed to add email address": [
         "E-posta adresi eklenemedi"
       ],
+      "Failed to block the contact": [
+        "Kişi engellenemedi"
+      ],
+      "Failed to create domain": [
+        "Etki alanı oluşturulamadı"
+      ],
+      "Failed to create new mailbox": [
+        "Yeni e-posta kutusu oluşturulamadı"
+      ],
+      "Failed to create the contact": [
+        "Kişi oluşturulamadı"
+      ],
+      "Failed to delete domain": [
+        "Etki alanı silinemedi"
+      ],
       "Failed to delete email address from monitoring": [
         "E-posta adresi izlemeden çıkarılamadı"
       ],
       "Failed to delete selected items": [
         "Seçilmiş ögeler silinemedi"
+      ],
+      "Failed to delete the contact": [
+        "Kişi silinemedi"
+      ],
+      "Failed to delete the mailbox": [
+        "E-posta kutusu oluşturulamadı"
       ],
       "Failed to edit user's access.": [
         "Kullanıcının erişimi düzenlenemedi."
@@ -792,6 +911,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Bu e-posta takma adı için verilerin ele geçirilmesi olayları yüklenemedi"
+      ],
+      "Failed to load domain settings.": [
+        "Etki alanı ayarları yüklenemedi"
       ],
       "Failed to load item history": [
         "Öge geçmişi yüklenemedi"
@@ -811,6 +933,9 @@
       "Failed to remove user's access.": [
         "Kullanıcının erişimi kaldırılamadı."
       ],
+      "Failed to resend verification code": [
+        "Doğrulama kodu yeniden gönderilemedi"
+      ],
       "Failed to resend verification for custom email": [
         "Özel e-posta için doğrulama yeniden gönderilemedi"
       ],
@@ -819,6 +944,9 @@
       ],
       "Failed to restore items from trash": [
         "Ögeler çöpten çıkarılamadı"
+      ],
+      "Failed to set default mailbox": [
+        "Varsayılan e-posta kutusu ayarlanamadı"
       ],
       "Failed to sync aliases": [
         "Takma adlar eşitlenemedi"
@@ -829,8 +957,26 @@
       "Failed to unpin item": [
         "Ögenin sabitlemesi kaldırılamadı"
       ],
+      "Failed to update catch-all setting.": [
+        "Tümünü toplama ayarı güncellenemedi."
+      ],
+      "Failed to update default domain": [
+        "Varsayılan etki alanı güncellenemedi"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Etki alanı e-posta kutuları güncellenemedi."
+      ],
+      "Failed to update domain name.": [
+        "Etki alanı adı güncellenemedi."
+      ],
       "Failed to update monitoring settings": [
         "İzleme ayarları güncellenemedi"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Rastgele ön ek oluşturma ayarı güncellenemedi."
+      ],
+      "Failed to verify domain": [
+        "Etki alanı doğrulanamadı"
       ],
       "Failed to verify email address": [
         "E-posta adresi doğrulanamadı"
@@ -1101,6 +1247,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } engellendi",
+        "${ blockedEmailsCount } engellendi"
+      ],
       "${ count } invite successfully sent": [
         "${ count } davet gönderildi",
         "${ count } davet gönderildi"
@@ -1115,6 +1265,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } görüntüleme"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } iletildi",
+        "${ forwardedEmailsCount } iletildi"
       ],
       "${ memberCount } member": [
         "${ memberCount } üye",
@@ -1133,6 +1287,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } sistem ayarlarınıza uyacak."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } panoya kopyalayabileceğiniz bir yönlendirme adresi (ters takma ad olarak da bilinir) oluşturacak."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not, kredi kartı ve kimlik kayıtlarını içe aktarır."
       ],
@@ -1145,12 +1302,19 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } kullanıma alındı"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } gönderildi",
+        "${ repliedEmailsCount } gönderildi"
+      ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } verilerin ele geçirilmesi olayı bulundu",
         "${ row.breachCount } verilerin ele geçirilmesi olayı bulundu"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 gün boyunca ücretli özellikleri ücretsiz olarak deneyin. Yalnızca ${ BRAND_NAME } ile ilk haftanızda."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "${ aliasEmail } adresiyle e-posta gönderen veya alan her e-posta adresi için bir kişi oluşturulur."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Yeni bir ${ PASS_APP_NAME } sürümü yayınlanmış. Son özellikler ile hata düzeltmelerini almak için güncelleyin."
@@ -1160,6 +1324,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } uygulamasına erişim için her zaman ${ BRAND_NAME } parolanız istenir."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "${ PASS_APP_NAME } uygulamasına erişim için her zaman yedek parolanız istenir."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME } kilidi açmak için parmak iziniz veya aygıtınızın PIN kodu gerekecek."
@@ -1194,6 +1361,9 @@
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Özel etki alanlarındaki takma adlar izlenmez. Lütfen bunları izlemek için bir özel e-posta olarak ekleyin."
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "${ emailJSX } e-posta kutusunu kullanan tüm takma adlar da silinecek."
+      ],
       "All breaches for this address were resolved": [
         "Bu adres için tüm verilerin ele geçirilmesi olayları çözümlendi"
       ],
@@ -1218,11 +1388,20 @@
       "An item previously shared with you was removed": [
         "Daha önce sizinle paylaşılan bir öge kullanımdan kaldırıldı"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "${ emailJSX } adresini e-posta kutularınızdan kaldırmak istediğinize emin misiniz?"
+      ],
       "Are you sure you want to remove the link?": [
         "Bağlantıyı kaldırmak istediğinize emin misiniz?"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Otomatik oluşturulan takma adlar kendiliğinden şu e-posta kutularına ait olur:"
+      ],
       "Auto-lock successfully disabled.": [
         "Otomatik kilitleme kapatıldı."
+      ],
+      "automatically": [
+        "otomatik olarak"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Verilerinizi bu biçimde dışa aktarmadan önce lütfen Safari -> Ayarlar -> \"Genel\" sekmesini açın ve \"Güvenli dosyaları indirdikten sonra aç\" seçeneğini kapatın. Böylece, dışa aktarılan dosyanın Safari tarafından yanlış bir şekilde ayıklanması engellenir."
@@ -1238,6 +1417,9 @@
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Var olan parolalarınızı ${ BRAND_NAME } üzerine aktarın."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Kendi etki alanınızı kullanın ve başka bir e-posta barındırma çözümü satın almanıza gerek kalmasın."
       ],
       "Built in 2FA authenticator": [
         "Hazır iki adımlı kimlik doğrulayıcı"
@@ -1272,14 +1454,26 @@
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
+      "Create contact illustration": [
+        "Kişi oluşturma görseli"
+      ],
+      "Created ${ time }.": [
+        "Oluşturulma: ${ time }."
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV, verilerinizi görüntülemek için pratik bir biçim sunar. Ancak basit yapısı nedeniyle bazı veriler katılmaz (özel alanlar, geçiş anahtarları...). Eksiksiz bir dışa aktarım için farklı bir biçim kullanmanızı öneririz."
       ],
       "Current version": [
         "Güncel sürüm"
       ],
+      "Currently selected": [
+        "Şu an seçilmiş olan"
+      ],
       "Decrypting your data": [
         "Verilerinizin şifresi çözülüyor"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "${ domainDisplay } ile oluşturulan takma adlar için, takma adın görüntülenecek adı tarafından değiştirilmediği sürece kullanılacak varsayılan görüntülenecek ad."
       ],
       "Deleted items will be moved here first": [
         "Silinen ögeler önce buraya taşınır"
@@ -1298,6 +1492,12 @@
       ],
       "Disabling offline mode...": [
         "Çevrim dışı kip kapatılıyor..."
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "DNS değişikliklerinin güncellenmesi 24 saat kadar sürebilir."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Etki alanı: ${ domainPath } ya da @"
       ],
       "Drop file here to upload": [
         "Yüklemek için dosyayı buraya bırakın"
@@ -1322,6 +1522,15 @@
       ],
       "Email address successfully included in monitoring": [
         "E-posta adresi izlemeye eklendi"
+      ],
+      "Email headers illustration": [
+        "E-posta üst bilgileri görseli"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Bu adrese e-posta gönderdiğinizde örneğin ${ exampleEmail } adresinden gönderilmiş gibi görünecek."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Takma adlarınıza gönderilen e-postalar, e-posta kutularınıza iletilir. Bir takma adın birden fazla e-posta kutusu olabilir: Bir takma ad sizinle arkadaşlarınız arasında paylaşmak için kullanışlıdır."
       ],
       "Emptying trash...": [
         "Çöp kutusu boşaltılıyor..."
@@ -1349,6 +1558,9 @@
       ],
       "Enabling PIN auto-lock": [
         "PIN ile otomatik kilitleme açılıyor"
+      ],
+      "Enter the address you want to email.": [
+        "E-posta göndermek istediğiniz adresi yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Doğrulama kodunu yazın. Rakam ${ digit }."
@@ -1397,6 +1609,9 @@
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Sınırsız sayıda takma ad edinin, ücretli özelliklerin tadını çıkarın ve Pass Plus tarifesine abone olarak bizi destekleyin."
       ],
+      "Here's how it works:": [
+        "Şöyle çalışır:"
+      ],
       "High Priority": [
         "Yüksek öncelik"
       ],
@@ -1415,6 +1630,9 @@
       ],
       "Imported on ${ date }": [
         "${ date } tarihinde içe aktarıldı"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "${ PASS_SHORT_APP_NAME }, bir öge notunu öge şifreleme anahtarıyla şifreler ve notu yalnızca ögeye erişimi olan kullanıcılar görüntüleyebilir. ${ BRAND_NAME } veya SimpleLogin bile notu göremez."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "En iyi ${ PASS_APP_NAME } deneyimine ulaşmak için lütfen gerekli eklenti izinlerini verin"
@@ -1552,6 +1770,9 @@
       "Moving items to trash": [
         "Ögeler çöpe atılıyor"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Birine e-posta göndermeniz gerekiyor ancak e-posta adresinizi görmesini istemiyor musunuz? Bir kişi takma adı ayarlayın."
+      ],
       "Never": [
         "Asla"
       ],
@@ -1563,6 +1784,9 @@
       ],
       "None": [
         "Yok"
+      ],
+      "Not recommended": [
+        "Önerilmez"
       ],
       "Offline mode": [
         "Çevrim dışı kip"
@@ -1622,6 +1846,15 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
       ],
+      "Please confirm your backup password": [
+        "Lütfen yedek parolanızı onaylayın"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Parolanızla otomatik kilitleme için lütfen yedek parolanızı yazın"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Geçerli kilidin kaydını kaldırmak için yedek parolanızı yazın."
+      ],
       "Please confirm your extra password": [
         "Lütfen ek parolanızı onaylayın"
       ],
@@ -1670,6 +1903,9 @@
       "Please enter your current PIN code to continue": [
         "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Etki alanınızı kurmak için lütfen aşağıdaki adımları izleyin."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Takma adın silindikten sonra geri alınamayacağını unutmayın. Silmek yerine takma adı kullanımdan kaldırmak ister misiniz?"
       ],
@@ -1678,6 +1914,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "${ PASS_APP_NAME } internet uygulamasına erken erişmek için lütfen tarifenizi yükseltin"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Örneğin bir alt etki alanı kullanıyorsanız, etki-alanim.com veya alt-etki-alanim.etki.alanim.com gibi tam yol alan adını kullanın."
       ],
       "Press Enter to copy": [
         "Kopyalamak için Enter tuşuna basın"
@@ -1690,6 +1929,15 @@
       ],
       "Reconnecting": [
         "Yeniden bağlantı kuruluyor"
+      ],
+      "Record: CNAME": [
+        "Kayıt türü: CNAME"
+      ],
+      "Record: MX": [
+        "Kayıt türü: MX"
+      ],
+      "Record: TXT": [
+        "Kayıt türü: TXT"
       ],
       "Registering extra password...": [
         "Ek parola kaydediliyor..."
@@ -1712,8 +1960,14 @@
       "Restoring trashed items...": [
         "Çöpe atılmış ögeler geri yükleniyor..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Ters takma ad adresi panoya kopyalandı. Bu adrese bir e-posta gönderildiğinde ${ Email } bunu alır."
+      ],
       "Secure links": [
         "Güvenli bağlantılar"
+      ],
+      "See more info": [
+        "Ayrıntılı bilgi"
       ],
       "Select destination vault": [
         "Hedef kasayı seçin"
@@ -1754,6 +2008,12 @@
       "Signing you in": [
         "Oturumunuz açılıyor"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "SimpleLogin notu, takma ad adresiyle aynı konumda tutulur ve dinlenme halindeyken şifreleme ile korunsa da uçtan uca şifrelenmez. Yani SimpleLogin veri tabanına erişme izni olan herkes onu okuyabilir."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Bir dahaki sefere bir takma ada gerek duyduğunuzda ${ emailBold } adresini kullanın: İlk kez bir e-posta aldığında ${ automaticallyBold } oluşturulur. Daha ayrıntılı bir denetim için, ${ rulesHyperLink } de tanımlayabilirsiniz."
+      ],
       "Successfully exported all your items": [
         "Tüm ögeleriniz dışa aktarıldı"
       ],
@@ -1774,6 +2034,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
+      ],
+      "The display name when sending an email from this alias.": [
+        "Bu takma ad ile e-posta gönderilirken görüntülenecek ad."
       ],
       "The export will only contain vaults that you own.": [
         "Yalnızca sahibi olduğunuz kasalar dışa aktarılacak."
@@ -1803,6 +2066,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
       ],
+      "This operation is irreversible.": [
+        "Bu işlem geri alınamaz."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Bu işlem geri alınamaz. ${ domainTextBold } etki alanını kullanan tüm takma adlar silinecek. Lütfen takma adların silindikten sonrageri yüklenemeyeceğini unutmayın."
+      ],
       "This option is currently not available on your device.": [
         "Bu seçenek şu anda aygıtınızda kullanılamıyor."
       ],
@@ -1818,6 +2087,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Bu işlem, **${ date }** tarihinde ${ BRAND_NAME } hesabınızda oturum açmayı deneyen **${ name }** aygıtına izin vermeyecek."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "E-posta almayı sürdürmek için bu takma adları farklı bir e-posta kutusuna aktarın:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Kişisel e-posta adresinizi gizli tutmak için bir takma ad kişisi oluşturarak adresinizi gizleyebilirsiniz."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Başka bir parola yöneticisindeki verileri aktarmak için parola yöneticisine gidin, verilerinizi dışa aktarın ve ardından ${ PASS_APP_NAME } uygulamasına yükleyin. Verileriniz içe aktarıldıktan sonra dışa aktardığınız dosyayı silin."
       ],
@@ -1830,11 +2105,20 @@
       "Unable to copy to clipboard": [
         "Panoya kopyalanamadı"
       ],
+      "Unconfigured": [
+        "Yapılandırılmamış"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Sınırsız hide-my-email takma adı ve gelişmiş takma ad yönetimi"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "${ PASS_SHORT_APP_NAME } kilidini açmak için Biyometri kullanın"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "${ PASS_SHORT_APP_NAME } uygulamasını ${ BRAND_NAME } parolanızla açın"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "${ PASS_SHORT_APP_NAME } uygulamasının kilidini açmak için yedek parolanızı kullanın"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "${ PASS_SHORT_APP_NAME } uygulamasının kilidini açmak için ek parola kullanın"
@@ -1865,6 +2149,9 @@
       ],
       "username": [
         "kullanıcı adı"
+      ],
+      "Value:": [
+        "Değer:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "\"${ payload.content.name }\" kasası silindi"
@@ -1897,8 +2184,14 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "${ PASS_APP_NAME } üzerinde bir kayıt oluştururken ya da düzenlerken 'kullanıcı adı' alanı her zaman görüntülenir."
       ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Bu takma addan gönderilecek e-postaların göndericisi olarak ${ emailSender } görüntülenecek."
+      ],
       "You are about to create:": [
         "Şunu oluşturmak üzeresiniz:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasının kilidini açmak için bir PIN kodu da tanımlayabilirsiniz."
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Artık ${ PASS_SHORT_APP_NAME } çevrim dışı erişimi için ${ BRAND_NAME } parolanızı kullanabilirsiniz"
@@ -1932,6 +2225,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "İzin verilen en fazla ${ maxLength } karakter sayısına ulaştınız."
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Etki alanınızı doğruladıktan sonra etki alanı ayarlarınızı (tümünü toplama e-posta takma adları, takma adlar için varsayılan görüntülenecek ad vb.) özelleştirebileceksiniz."
+      ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Oturumunuz kapatılacak ve diğer tüm aygıtlarınızda yeniden oturum açmanız gerekecek."
       ],
@@ -1959,6 +2255,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Kuruluşunuz iki adımlı doğrulama kullanılmasını zorunlu kıldığından hesabınız kısıtlandı. Lütfen hesap ayarlarınızdan iki adımlı doğrulamayı açın ya da yöneticinizle görüşün."
       ],
+      "your domain": [
+        "etki alanınız"
+      ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
       ],
@@ -1974,6 +2273,10 @@
         "${ aliasCount } takma ad",
         "${ aliasCount } takma ad"
       ],
+      "${ blockedCount } block": [
+        "${ blockedCount } engelleme",
+        "${ blockedCount } engelleme"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } karakter",
         "${ config.options.length } karakter"
@@ -1986,6 +2289,13 @@
         "${ days } gün",
         "${ days } gün"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } iletme",
+        "${ forwardCount } iletme"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "Son 14 günde ${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }."
+      ],
       "${ hours } hour": [
         "${ hours } saat",
         "${ hours } saat"
@@ -1994,12 +2304,24 @@
         "${ minutes } dakika",
         "${ minutes } dakika"
       ],
+      "${ months } month": [
+        "${ months } ay",
+        "${ months } ay"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } sürümü"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } yanıt",
+        "${ repliedCount } yanıt"
       ],
       "${ usageCount } login": [
         "${ usageCount } oturum açma kaydı",
         "${ usageCount } oturum açma kaydı"
+      ],
+      "${ years } year": [
+        "${ years } yıl",
+        "${ years } yıl"
       ],
       "1 hour": [
         "1 saat"
@@ -2049,6 +2371,9 @@
       "Account": [
         "Hesap"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Bu etki alanı için yeni bir takma ad oluşturulurken rastgele bir ön ek ekler."
+      ],
       "Add section": [
         "Bölüm ekle"
       ],
@@ -2063,6 +2388,9 @@
       ],
       "Alias address": [
         "Takma ad adresi"
+      ],
+      "Alias address (disabled)": [
+        "Takma adres (kullanımdan kaldırılmış)"
       ],
       "Alias management": [
         "Takma ad yönetimi"
@@ -2088,6 +2416,9 @@
       "Auto-lock after": [
         "Otomatik kilitleme süresi"
       ],
+      "Backup password": [
+        "Yedek parola"
+      ],
       "Beta Access": [
         "Beta erişimi"
       ],
@@ -2112,6 +2443,9 @@
       "Cards": [
         "Kartlar"
       ],
+      "Catch-All": [
+        "Tümünü toplama"
+      ],
       "City": [
         "İl"
       ],
@@ -2123,6 +2457,9 @@
       ],
       "Confirm vault name": [
         "Kasa adı onayı"
+      ],
+      "Contact created ${ time } ago.": [
+        "Kişi ${ time } önce oluşturulmuş."
       ],
       "Contact details": [
         "Kişi bilgileri"
@@ -2184,8 +2521,14 @@
       "Display name": [
         "Görüntülenecek ad"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Etki alanı"
+      ],
+      "Domain:": [
+        "Etki alanı:"
       ],
       "Domains": [
         "Etki alanları"
@@ -2316,6 +2659,9 @@
       "Include numbers (0-9)": [
         "Sayılar katılsın (0-9)"
       ],
+      "Info": [
+        "Bilgiler"
+      ],
       "Instagram handle": [
         "Instagram kullanıcı adı"
       ],
@@ -2373,6 +2719,9 @@
       "Logins": [
         "Oturum açma kayıtları"
       ],
+      "Mailboxes": [
+        "E-posta kutuları"
+      ],
       "Make all admins": [
         "Tümünü yönetici yap"
       ],
@@ -2418,14 +2767,23 @@
       "Newest to oldest": [
         "Yeniden eskiye"
       ],
+      "No Activity in the last 14 days.": [
+        "Son 14 günde herhangi bir etkinlik yok."
+      ],
       "No history": [
         "Geçmiş yok"
       ],
       "None": [
         "Yok"
       ],
+      "Not selected": [
+        "Seçilmemiş"
+      ],
       "Note": [
         "Not"
+      ],
+      "Note • SimpleLogin": [
+        "Not • SimpleLogin"
       ],
       "Notes": [
         "Notlar"
@@ -2484,8 +2842,17 @@
       "Prefix": [
         "Ön ek"
       ],
+      "Premium domain": [
+        "Ücretli etki alanı"
+      ],
+      "Priority:": [
+        "Öncelik:"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "${ PASS_APP_NAME } uygulamasını ek parola ile koruyun"
+      ],
+      "Public domain": [
+        "Herkese açık etki alanı"
       ],
       "Rate us": [
         "Bizi değerlendirin"
@@ -2516,6 +2883,9 @@
       ],
       "Security code": [
         "Güvenlik kodu"
+      ],
+      "Select a domain": [
+        "Bir etki alanı seçin"
       ],
       "Select an email address": [
         "Bir e-posta adresi seçin"
@@ -2577,6 +2947,9 @@
       "Sync aliases with SimpleLogin": [
         "Takma adları SimpleLogin ile eşitle"
       ],
+      "Target:": [
+        "Hedef:"
+      ],
       "Tax number": [
         "Vergi numarası"
       ],
@@ -2623,6 +2996,9 @@
       "Unlock with": [
         "Kilit şununla açılsın:"
       ],
+      "Unlock with:": [
+        "Kilit şununla açılsın:"
+      ],
       "Unnamed Credit Card": [
         "Adsız kredi kartı"
       ],
@@ -2646,6 +3022,9 @@
       ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "Value:": [
+        "Değer:"
       ],
       "Vault ID": [
         "Kasa kimliği"
@@ -2689,11 +3068,17 @@
       "You are about to create": [
         "Şunu oluşturmak üzeresiniz"
       ],
+      "Your domain": [
+        "Etki alanınız"
+      ],
       "ZIP or Postal code": [
         "Posta kodu"
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "kurallar otomatik oluşturulsun ››"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -2777,6 +3162,9 @@
       "Add text": [
         "Metin ekle"
       ],
+      "Alias Display Name": [
+        "Takma adın görüntülenecek adı"
+      ],
       "Email address": [
         "E-posta adresi"
       ],
@@ -2803,6 +3191,15 @@
       ],
       "MM/YY": [
         "AA/YY"
+      ],
+      "my-domain.com": [
+        "etki-alanim.com"
+      ],
+      "Name to display when sending an email": [
+        "Bir e-posta gönderirken görüntülenecek ad"
+      ],
+      "Note from SimpleLogin": [
+        "SimpleLogin notu"
       ],
       "Password": [
         "Parola"
@@ -2929,9 +3326,63 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Takma adların eşitlenmesi açıldı. SimpleLogin takma adlarının eşitlenmesi biraz zaman alabilir"
       ],
+      "Catch-all setting successfully disabled": [
+        "Tümünü toplama ayarı kullanımdan kaldırıldı"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Tümünü toplama ayarı kullanıma alındı"
+      ],
+      "Contact successfully blocked": [
+        "Kişi engellendi"
+      ],
+      "Contact successfully created": [
+        "Kişi oluşturuldu"
+      ],
+      "Contact successfully deleted": [
+        "Kişi silindi"
+      ],
+      "Contact successfully unblocked": [
+        "Kişinin engellemesi kaldırıldı"
+      ],
+      "Default domain successfully updated": [
+        "Varsayılan etki alanı güncellendi"
+      ],
+      "Default mailbox successfully updated": [
+        "Varsayılan e-posta kutusu güncellendi"
+      ],
+      "Display name successfully updated": [
+        "Görüntülenecek ad güncellendi"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Etki alanının sahipliği doğrulandı. Şimdi MX kaydını ayarlayabilirsiniz."
+      ],
+      "Domain successfully deleted": [
+        "Etki alanı silindi"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Etki alanı doğrulandı. Etki alanınızla e-posta almaya ve takma adlar oluşturmaya başlayabilirsiniz"
+      ],
+      "Mailbox successfully deleted": [
+        "E-posta kutusu silindi"
+      ],
+      "Mailbox successfully verified": [
+        "E-posta kutusu doğrulandı"
+      ],
+      "Mailboxes successfully updated": [
+        "E-posta kutuları güncellendi"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Rastgele ön ek oluşturma özelliği kapatıldı"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Rastgele ön ek oluşturma özelliği açıldı"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz.",
         "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Doğrulama e-postası gönderildi. Lütfen e-posta kutusunu doğrulamak için gelen kutunuza bakın"
       ]
     },
     "Theme": {
@@ -2958,8 +3409,29 @@
       "Actions": [
         "İşlemler"
       ],
+      "Activity": [
+        "Etkinlik"
+      ],
+      "Add custom domain": [
+        "Özel etki alanı ekle"
+      ],
+      "Add mailbox": [
+        "E-posta kutusu ekle"
+      ],
+      "Alias contacts": [
+        "Takma ad kişileri"
+      ],
+      "Aliases": [
+        "Takma adlar"
+      ],
+      "Auto create/on the fly alias": [
+        "Otomatik/anında takma ad"
+      ],
       "Auto-lock update": [
         "Ootmatik kilitleme güncellemesi"
+      ],
+      "Blocked addresses": [
+        "Engellenmiş adresler"
       ],
       "Breach detected": [
         "Veriler ele geçirilmiş"
@@ -2969,6 +3441,9 @@
       ],
       "Breaches detected for": [
         "Şunun verileri ele geçirilmiş"
+      ],
+      "Change your lock method": [
+        "Kilitleme yönteminizi değiştirin"
       ],
       "Confirm extra password": [
         "Ek parolayı onayla"
@@ -3000,6 +3475,9 @@
       "Custom addresses": [
         "Özel adresler"
       ],
+      "Custom domains": [
+        "Özel etki alanları"
+      ],
       "Custom email monitoring": [
         "Özel e-posta adresi izleme"
       ],
@@ -3009,9 +3487,21 @@
       "Dark Web Monitoring": [
         "Karanlık ağ izleme"
       ],
+      "Default": [
+        "Varsayılan"
+      ],
+      "Default Display Name": [
+        "Varsayılan görüntülenecek ad"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "${ deletedItemsCount } öge silinsin mi?",
         "${ deletedItemsCount } öge silinsin mi?"
+      ],
+      "Delete domain": [
+        "Etki alanını sil"
+      ],
+      "Delete mailbox": [
+        "E-posta kutusunu sil"
       ],
       "Delete this item?": [
         "Bu öge silinsin mi?"
@@ -3025,8 +3515,23 @@
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
       ],
+      "DKIM (Optional)": [
+        "DKIM (isteğe bağlı)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (isteğe bağlı)"
+      ],
+      "Domain": [
+        "Etki alanı"
+      ],
+      "Domain ownership verification": [
+        "Etki alanı sahipliği doğrulaması"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } hoşunuza gitti mi?"
+      ],
+      "Enter your backup password": [
+        "Yedek parolanızı yazın"
       ],
       "Enter your extra password": [
         "Ek parolanızı yazın"
@@ -3082,6 +3587,9 @@
       "Low disk space": [
         "Boş disk alanı azaldı"
       ],
+      "Mailbox": [
+        "E-posta kutusu"
+      ],
       "Mark as resolved?": [
         "Çözümlenmiş olarak işaretlensin mi?"
       ],
@@ -3107,6 +3615,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Ögeyi \"${ vaultName }\" kasasına taşı"
+      ],
+      "MX record": [
+        "MX kaydı"
       ],
       "No excluded items": [
         "Katılmayan bir öge yok"
@@ -3154,6 +3665,9 @@
         "Takma adın silindikten sonra geri alınamayacağını unutmayın",
         "Takma adın silindikten sonra geri alınamayacağını unutmayın"
       ],
+      "Random Prefix Generation": [
+        "Rastgele ön ek oluşturma"
+      ],
       "Recommended actions": [
         "Önerilen işlemler"
       ],
@@ -3191,6 +3705,9 @@
       "Secure your data": [
         "Verilerinizi koruyun"
       ],
+      "Select the default domain for aliases": [
+        "Takma adlar için varsayılan etki alanını seçin"
+      ],
       "Set access level": [
         "Erişim düzeyini ayarla"
       ],
@@ -3211,6 +3728,9 @@
       ],
       "Share with": [
         "Şununla paylaş"
+      ],
+      "SPF (Optional)": [
+        "SPF (isteğe bağlı)"
       ],
       "Status": [
         "Durum"
@@ -3238,6 +3758,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "${ brandNameJSX } kilidini aç"
+      ],
+      "Unverified": [
+        "Doğrulanmamış"
       ],
       "Update available": [
         "Güncelleme yayınlanmış"
@@ -3269,6 +3792,9 @@
       "What is the dark web?": [
         "Karanlık ağ nedir?"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "${ PASS_SHORT_APP_NAME } notu ile SimpleLogin notu arasındaki fark nedir?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName } aboneliğiniz ${ endDate } tarihinde sona erecek"
       ],
@@ -3287,6 +3813,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "Etki alanı adresi geçersiz"
+      ],
       "Duplicated URL": [
         "Çift adres"
       ],
@@ -3357,8 +3886,14 @@
       "Delete alias": [
         "Takma adı sil"
       ],
+      "Domain cannot be empty": [
+        "Etki alanı boş olamaz"
+      ],
       "Duplicate email addresses.": [
         "E-posta adresleri yineleniyor."
+      ],
+      "Email cannot be empty": [
+        "E-posta adresi boş olamaz"
       ],
       "Email is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -3412,6 +3947,9 @@
       "Move to trash": [
         "Çöpe at"
       ],
+      "Name is required": [
+        "Adın yazılması zorunludur"
+      ],
       "No items": [
         "Herhangi bir öge yok"
       ],
@@ -3450,6 +3988,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Sorunu araştırmamız için lütfen bizimle görüşün"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Takma adların silindikten sonra geri alınamayacağını unutmayın"
       ],
       "Please update the extension to its latest version": [
         "Lütfen eklentiyi son sürümüne güncelleyin"
