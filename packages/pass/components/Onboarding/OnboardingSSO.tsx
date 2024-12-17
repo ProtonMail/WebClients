@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { type FC, useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -17,31 +17,44 @@ import './OnboardingModal.scss';
 export const OnboardingSSO: FC<SpotlightModalProps> = ({ acknowledge, onClose }) => {
     const { lock } = useLockSetup();
     const online = useConnectivity();
+    const hasPasswordLockMethod = lock.mode === LockMode.PASSWORD;
+
+    useEffect(() => {
+        // Only display the modal if the Lock Mode is Password
+        if (!hasPasswordLockMethod) pipe(onClose, acknowledge)();
+    }, []);
 
     return (
-        <PassModal open size="medium" className="pass-onboarding-modal">
-            <ModalTwoHeader title={c('Title').t`Change your lock method`} className="justify-start" hasClose={false} />
+        online &&
+        hasPasswordLockMethod && (
+            <PassModal open size="medium" className="pass-onboarding-modal">
+                <ModalTwoHeader
+                    title={c('Title').t`Change your lock method`}
+                    className="justify-start"
+                    hasClose={false}
+                />
 
-            <ModalTwoContent>
-                <div className="flex items-center gap-6 w-full">
-                    <div className="pass-onboarding-modal--lock">
-                        <p className="text-bold mt-0">{c('Label').t`Unlock with:`}</p>
-                        <OnboardingLockSetup />
+                <ModalTwoContent>
+                    <div className="flex items-center gap-6 w-full">
+                        <div className="pass-onboarding-modal--lock">
+                            <p className="text-bold mt-0">{c('Label').t`Unlock with:`}</p>
+                            <OnboardingLockSetup />
+                        </div>
                     </div>
-                </div>
-            </ModalTwoContent>
-            <ModalTwoFooter className="mt-0">
-                <div className="flex justify-end w-full">
-                    <Button
-                        pill
-                        shape="solid"
-                        onClick={pipe(onClose, acknowledge)}
-                        disabled={!online || lock.mode === LockMode.PASSWORD}
-                    >
-                        {c('Action').t`Accept`}
-                    </Button>
-                </div>
-            </ModalTwoFooter>
-        </PassModal>
+                </ModalTwoContent>
+                <ModalTwoFooter className="mt-0">
+                    <div className="flex justify-end w-full">
+                        <Button
+                            pill
+                            shape="solid"
+                            onClick={pipe(onClose, acknowledge)}
+                            disabled={!online || lock.mode === LockMode.PASSWORD}
+                        >
+                            {c('Action').t`Accept`}
+                        </Button>
+                    </div>
+                </ModalTwoFooter>
+            </PassModal>
+        )
     );
 };
