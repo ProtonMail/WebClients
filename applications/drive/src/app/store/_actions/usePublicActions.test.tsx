@@ -4,6 +4,7 @@ import { useNotifications } from '@proton/components/index';
 
 import { usePublicLinkActions, usePublicLinksActions, usePublicLinksListing } from '../_links';
 import useLinksState from '../_links/useLinksState';
+import { usePublicSessionUser } from '../_user';
 import { useErrorHandler } from '../_utils';
 import useListNotifications from './useListNotifications';
 import { usePublicActions } from './usePublicActions';
@@ -19,12 +20,19 @@ jest.mocked(useNotifications).mockImplementation(
 
 jest.mock('../_links/useLinksListing/usePublicLinksListing');
 
-jest.mock('../_links/usePublicLinkActions');
+jest.mock('../_user', () => ({
+    usePublicSessionUser: jest.fn(),
+}));
+jest.mocked(usePublicSessionUser).mockReturnValue({
+    user: {},
+} as any);
 
 const mockNewFolderName = 'New Folder';
 const mockRenameLink = jest.fn().mockResolvedValue(true);
 const mockCreateFolder = jest.fn().mockResolvedValue(mockNewFolderName);
 const mockDeleteChildrenLink = jest.fn();
+
+jest.mock('../_links/usePublicLinkActions');
 jest.mocked(usePublicLinkActions).mockImplementation(() => ({
     renameLink: mockRenameLink,
     createFolder: mockCreateFolder,
@@ -298,7 +306,7 @@ describe('usePublicActions', () => {
 
             expect(mockDeleteLinks).toHaveBeenCalledWith(mockAbortSignal, {
                 token: mockToken,
-                links,
+                linkIds: ['link1'],
                 parentLinkId: 'parent1',
             });
             expect(mockRemoveLinksForPublicPage).toHaveBeenCalledWith(mockToken, ['link1']);
