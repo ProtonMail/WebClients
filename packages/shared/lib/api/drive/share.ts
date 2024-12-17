@@ -129,8 +129,9 @@ export const queryPublicRenameLink = (
         Name: string;
         MIMEType?: string;
         Hash: string;
-        NameSignatureEmail: string;
+        NameSignatureEmail?: string;
         OriginalHash: string;
+        AuthorizationToken?: string;
     }
 ) => ({
     method: `put`,
