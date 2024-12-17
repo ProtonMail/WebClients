@@ -52,6 +52,7 @@ export interface BannerProps extends ComponentPropsWithoutRef<'div'> {
     link?: ReactElement<HrefProps>;
     dismissible?: boolean;
     onDismiss?: () => void;
+    largeRadius?: boolean;
 }
 
 const getDefaultIcon = (variant: BannerVariants) => {
@@ -106,6 +107,7 @@ const Banner = ({
     action,
     link,
     className,
+    largeRadius = false,
     ...rest
 }: BannerProps) => {
     const handleDismiss = () => {
@@ -128,8 +130,9 @@ const Banner = ({
     return (
         <div
             className={clsx(
-                `banner banner--${variant} rounded-lg border border-weak w-full`,
+                `banner banner--${variant} border border-weak w-full`,
                 !BannerVariantsBordered.includes(variant as BannerVariants) && 'banner--no-border',
+                largeRadius ? 'rounded-lg' : 'rounded',
                 className
             )}
             {...rest}
