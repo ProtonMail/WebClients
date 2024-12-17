@@ -17,6 +17,9 @@
       "Continue": [
         "Продовжити"
       ],
+      "Dismiss": [
+        "Відхилити"
+      ],
       "Edit email address": [
         "Змінити адресу е-пошти"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "Переглянути рахунок"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Програма ${ MAIL_APP_NAME } для комп'ютера"
+      ],
+      "Dark Web Monitoring": [
+        "Відстеження Dark Web"
+      ],
+      "Use your own email domain": [
+        "Використовуйте свій власний домен електронної пошти"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "морквяний"
+      ],
+      "cerise": [
+        "вишневий"
+      ],
+      "cobalt": [
+        "кобальтовий"
+      ],
+      "copper": [
+        "мідний"
+      ],
+      "enzian": [
+        "енізан"
+      ],
+      "fern": [
+        "папороть"
+      ],
+      "forest": [
+        "лісовий"
+      ],
+      "ocean": [
+        "океанічний"
+      ],
+      "olive": [
+        "оливковий"
+      ],
+      "pacific": [
+        "тихоокеанський"
+      ],
+      "pickle": [
+        "розсіл"
+      ],
+      "pine": [
+        "сосновий"
+      ],
+      "pink": [
+        "рожевий"
+      ],
+      "plum": [
+        "сливовий"
+      ],
+      "purple": [
+        "бузковий"
+      ],
+      "reef": [
+        "рифовий"
+      ],
+      "sahara": [
+        "сахара"
+      ],
+      "slateblue": [
+        "сивий"
+      ],
+      "soil": [
+        "земляний"
+      ],
+      "strawberry": [
+        "полуничний"
       ]
     },
     "Country name": {
@@ -923,6 +999,58 @@
         "Ключ безпеки"
       ]
     },
+    "file size format": {
+      "byte": [
+        "байт",
+        "байти",
+        "байтів",
+        "байтів"
+      ],
+      "GB": [
+        "ГБ"
+      ],
+      "KB": [
+        "кБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "TB": [
+        "ТБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байти",
+        "Байтів",
+        "Байтів"
+      ],
+      "Gigabyte": [
+        "Гігабайт",
+        "Гігабайти",
+        "Гігабайтів",
+        "Гігабайтів"
+      ],
+      "Kilobyte": [
+        "Кілобайт",
+        "Кілобайти",
+        "Кілобайтів",
+        "Кілобайтів"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайти",
+        "Мегабайтів",
+        "Мегабайтів"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайти",
+        "Терабайтів",
+        "Терабайтів"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Системна"
@@ -993,6 +1121,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Якщо ви вважаєте, що ми зробили помилку, зв'яжіться з нами ${ contactLink }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
@@ -1016,6 +1147,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Ми виявили створення декількох безплатних облікових записів, що порушує наші ${ termsLink }"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
@@ -1075,11 +1209,410 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "зв'язатися з нами"
+      ],
       "Learn more": [
         "Докладніше"
       ],
       "Request an invite": [
         "Запитати запрошення"
+      ],
+      "terms of service": [
+        "умови надання послуг"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Упорядковуйте вхідні за допомогою тек"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Отримати ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Письмовий асистент Scribe"
+      ],
+      "${ n } calendar": [
+        "${ n } календар",
+        "${ n } календарі",
+        "${ n } календарів",
+        "${ n } календарів"
+      ],
+      "${ n } calendar per user": [
+        "${ n } календар на користувача",
+        "${ n } календарі на користувача",
+        "${ n } календарів на користувача",
+        "${ n } календарів на користувача"
+      ],
+      "${ n } custom email domain": [
+        "${ n } власний домен",
+        "${ n } власні домени",
+        "${ n } власних доменів",
+        "${ n } власних доменів"
+      ],
+      "${ n } email address": [
+        "${ n } адреса електронної пошти",
+        "${ n } адреси/псевдонімів е-пошти",
+        "${ n } адрес/псевдонімів е-пошти",
+        "${ n } адреси/псевдонімів е-пошти"
+      ],
+      "${ n } email address per user": [
+        "${ n } адреса е-пошти на користувача",
+        "${ n } адреси е-пошти на користувача",
+        "${ n } адрес е-пошти на користувача",
+        "${ n } адрес е-пошти на користувача"
+      ],
+      "${ n } filter": [
+        "${ n } фільтр",
+        "${ n } фільтри",
+        "${ n } фільтрів",
+        "${ n } фільтри"
+      ],
+      "${ n } folder": [
+        "${ n } тека",
+        "${ n } теки",
+        "${ n } тек",
+        "${ n } тек"
+      ],
+      "${ n } folder and label": [
+        "${ n } тека й мітка",
+        "${ n } теки й мітки",
+        "${ n } тек і міток",
+        "${ n } тек і міток"
+      ],
+      "${ n } label": [
+        "${ n } мітка",
+        "${ n } мітки",
+        "${ n } міток",
+        "${ n } міток"
+      ],
+      "${ n } message per day": [
+        "${ n } повідомлення на добу",
+        "${ n } повідомлення на добу",
+        "${ n } повідомлень на добу",
+        "${ n } повідомлення на добу"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-денний журнал версії файлу",
+        "${ options }-денний журнал версії файлу",
+        "${ options }-денний журнал версії файлу",
+        "${ options }-денний журнал версії файлу"
+      ],
+      "${ size } attachment size": [
+        "Розмір вкладень ${ size }"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } захищеного сховища для користувача"
+      ],
+      "${ size } storage": [
+        "${ size } сховища"
+      ],
+      "1 TB secure storage": [
+        "1 ТБ безпечного сховища"
+      ],
+      "10 email addresses/aliases": [
+        "10 адрес/псевдонімів е-пошти"
+      ],
+      "10 more premium features": [
+        "Ще 10 преміум функцій"
+      ],
+      "10-year file version history": [
+        "10-річна історія версій файлу"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "Advanced account protection": [
+        "Розширений захист облікового запису"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Всі ${ BRAND_NAME } продукти та функції"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Всі базові ${ BRAND_NAME } послуги (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Всі преміумсервіси ${ BRAND_NAME }. Одна проста підписка"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Автоматичне видалення спаму та смітника"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Автоматичне видалення спаму та повідомлень зі смітника"
+      ],
+      "Auto-reply": [
+        "Автовідповідь"
+      ],
+      "Automatic email forwarding": [
+        "Автоматичне пересилання пошти"
+      ],
+      "Breach alerts": [
+        "Сповіщення про витік даних"
+      ],
+      "Calendar sharing": [
+        "Спільний доступ до календаря"
+      ],
+      "Catch-all": [
+        "Catch-all"
+      ],
+      "Collaborate and share large files": [
+        "Співпраця та обмін великими файлами"
+      ],
+      "Contact groups": [
+        "Групи контактів"
+      ],
+      "Contact groups management": [
+        "Керування групами контактів"
+      ],
+      "Custom and secure business email": [
+        "Користувальницька та захищена бізнес-пошта"
+      ],
+      "Custom email domains": [
+        "Власні домени електронної пошти"
+      ],
+      "Custom snooze time": [
+        "Власний час відкладення"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Easy Switch import assistant": [
+        "Помічник імпорту Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Підтримка поштових клієнтів (через IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Групи електронної пошти"
+      ],
+      "Encrypted contact details": [
+        "Зашифровані подробиці контакту"
+      ],
+      "End-to-end encryption": [
+        "Наскрізне шифрування"
+      ],
+      "Generate emails with a prompt": [
+        "Генерувати електронні листи за запитом"
+      ],
+      "HTML signatures": [
+        "HTML-підписи"
+      ],
+      "Online document editor": [
+        "Редактор онлайн-документів"
+      ],
+      "Password health": [
+        "Якість пароля"
+      ],
+      "Password-protected Emails": [
+        "Електронні листи, захищені паролем"
+      ],
+      "Proofread and refine your emails": [
+        "Вичитуйте та вдосконалюйте свої електронні листи"
+      ],
+      "Quickly craft replies": [
+        "Швидко створюйте відповіді"
+      ],
+      "Recover previous file versions": [
+        "Відновити попередні версії файлів"
+      ],
+      "Save time emailing": [
+        "Заощаджуйте час з електронною поштою"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Плануйте і відкладайте електронні листи на будь-який час"
+      ],
+      "Schedule messages at any time": [
+        "Заплануйте надсилання повідомлень в будь-який час"
+      ],
+      "Search message content": [
+        "Пошук вмісту повідомлень"
+      ],
+      "See team's availability": [
+        "Огляд зайнятості команди"
+      ],
+      "Send & receive invitations": [
+        "Надсилайте й отримуйте запрошення"
+      ],
+      "Share files with no size limit": [
+        "Обмінюйтеся файлами без обмеження розміру"
+      ],
+      "SMTP submission": [
+        "Надсилання через SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Надсилання через SMTP для вибраних організацій"
+      ],
+      "Support for up to 2 users": [
+        "Підтримка до 2 користувачів"
+      ],
+      "Sync and backup all your files across devices": [
+        "Синхронізуйте та створюйте резервні копії всіх файлів на різних пристроях"
+      ],
+      "Unlimited filters": [
+        "Необмежена кількість фільтрів"
+      ],
+      "Unlimited folders": [
+        "Необмежена кількість тек"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Unlimited labels": [
+        "Необмежена кількість міток"
+      ],
+      "Unlimited messages per day": [
+        "Необмежена кількість повідомлень на день"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "До ${ totalStorageSize } сховища"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 користувацький домен електронної пошти"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Створіть різні адреси електронної пошти для ваших онлайн-профілів, наприклад, ArtemShopper@${ domain } для інтернет-магазинів, ArtemNews@${ domain2 } для підписки на новини"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Відкладайте повідомлення та отримуйте нагадування, коли захочете"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: захистіть свій порядок денний наскрізним шифруванням. Підтримуються користувацькі календарі, спільний доступ до календарів тощо."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: захистіть свої файли у зашифрованому хмарному сховищі. Забезпечує автоматичну синхронізацію, зашифрований обмін файлами тощо."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: захистіть свої електронні листи за допомогою наскрізного шифрування. Підтримуються власні домени електронної пошти, 15 адрес електронної пошти, необмежена кількість псевдонімів hide-my-email та багато інших можливостей."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Зручно користуйтеся програмами ${ MAIL_APP_NAME } та ${ CALENDAR_APP_NAME } для комп'ютера"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Адреси мають повноцінні можливості надсилання й отримання. Користувач може мати різні адреси, однак одну адресу не можна призначити різним користувачам."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Дає вам змогу встановлювати автоматичні відповіді для вхідних повідомлень"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Автоматично очищайте повідомлення, які зберігаються в теках Смітник і Спам понад 30 днів"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Автоматично пересилайте електронні листи, надіслані на ваш обліковий запис ${ MAIL_APP_NAME }, на будь-яку іншу адресу електронної пошти."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Масові та програмовані розсилки листів наразі не підтримуються. Для таких потреб ми радимо користуватися окремою службою електронної пошти від інших провайдерів."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Обирайте власний час нагадування про електронний лист або час отримання вашого повідомлення"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Створіть кілька адрес електронної пошти для свого онлайн-життя, наприклад, JohnShopper@${ domain } для облікових записів для покупок, JohnNews@${ domain } для підписок на новини"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Створіть максимум ${ n } календар або додайте календарі друзів, рідних, колег та організацій",
+        "Створіть максимум ${ n } календарі або додайте календарі друзів, рідних, колег та організацій",
+        "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій",
+        "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Легко діліться календарями з родиною, друзями чи колегами"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Надсилайте електронні листи всім членам групи з однієї адреси електронної пошти"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Гарантовано отримуйте всі електронні листи, надіслані на ваш домен, навіть якщо адреси не існує або вона введена з помилкою"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "Підтримка IMAP доступна лише для комп'ютерних програм (як-от Outlook, Apple Mail, Thunderbird) через ${ MAIL_APP_NAME } Bridge. Хмарна інтеграція IMAP наразі не підтримується."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Захистіть приватність власних і родинних планів, користуючись зашифрованим календарем"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Мітки – це прості позначки, які можна застосовувати до повідомлень для спрощення пошуку чи створення фільтрів"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Налаштуйте свій підпис з використанням логотипів, зображень, піктограм соціальних мереж, посилань на свої контакти та інших можливостей"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Запобігає доступу до повідомлень ${ BRAND_NAME } чи сторонніх осіб. Відправник та отримувач повідомлень – єдині, хто може читати повідомлення."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Швидко налаштовуйте автоматичні відповіді"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Швидко перенесіть свої листи, календарі та контакти від будь-якого провайдера"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Надійно зберігайте свої контактні дані, як-от номер телефону, адреса, день народження та особисті примітки. Шифрування нульового рівня гарантує неможливість отримання доступу до них, навіть для ${ BRAND_NAME }."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Переглядайте доступність учасників та заощаджуйте час, плануючи зустрічі"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Швидко та легко надсилайте листи великим групам, створюючи скільки завгодно груп контактів (до 100 контактів на групу)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Налаштуйте фільтри для створення автоматичних відповідей, впорядкування та призначення міток своїм листам"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Діліться своїми файлами чи теками з ким завгодно з використанням надійних посилань для спільного доступу"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP дозволяє стороннім сервісам або пристроям надсилати електронну пошту через ${ MAIL_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } та ${ PASS_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Обсяг сховища використовується спільно для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }. Адміністратори можуть призначати різний обсяг сховища користувачам своєї організації"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Простір сховища, доступного користувачам, спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } та ${ PASS_APP_NAME }"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Під час надсилання іншим користувачам ${ MAIL_APP_NAME }, шифрування відбувається автоматично. Щоб надіслати користувачам поза ${ MAIL_APP_NAME_TWO }, необхідно налаштувати пароль заздалегідь."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Розширте свої можливості з 15 адресами електронної пошти та підтримкою 3 власних доменів"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Розширте обсяг свого сховища до ${ bundleStorage } на користувача"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Розширте загальний обсяг свого сховища до ${ bundleStorage }"
+      ],
+      "Create up to ${ n } calendar": [
+        "Створіть до ${ n } календаря",
+        "Створіть до ${ n } календарів",
+        "Створіть до ${ n } календарів",
+        "Створіть до ${ n } календарів"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Підтримка ${ n } власних доменів електронної пошти"
       ]
     },
     "Placeholder": {
@@ -1090,6 +1623,25 @@
     "sso": {
       "Sign in": [
         "Увійти"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вас буде перенаправлено до вашого стороннього провайдера SSO."
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Сховище для даних, що зберігаються в ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }${ CONTACTS_SHORT_APP_NAME } та ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "До ${ totalStorageSize } сховища Drive"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "До ${ totalStorageSize } сховища Mail"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Для всіх сервісів ${ BRAND_NAME }"
       ]
     },
     "Success": {
@@ -1101,6 +1653,12 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "Обліковий запис заблоковано"
+      ],
+      "Enter 2FA code": [
+        "Введіть код 2FA"
+      ],
       "Enter your password": [
         "Введіть свій пароль"
       ],

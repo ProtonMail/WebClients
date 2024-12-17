@@ -19,6 +19,11 @@
         "This message will be automatically deleted at ${ value }"
       ]
     },
+    "new_plans: feature": {
+      "TOR over VPN": [
+        "Tor over VPN"
+      ]
+    },
     "new_plans: tooltip": {
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize your email signature with logos, images, social media icons, links to your contact details, and more"
@@ -36,6 +41,11 @@
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "You have ${ timeRemaining.inSeconds } second to reset your password.",
         "You have ${ timeRemaining.inSeconds } seconds to reset your password."
+      ]
+    },
+    "Spotlight": {
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "This is now your default address. Open the dropdown to send from a different address."
       ]
     }
   }

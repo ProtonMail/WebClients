@@ -63,9 +63,6 @@
       "Add group": [
         "添加群组"
       ],
-      "Add new contact": [
-        "添加新联系人"
-      ],
       "Add new group": [
         "添加新群组"
       ],
@@ -350,9 +347,6 @@
       ],
       "Export contact group": [
         "导出联系人群组"
-      ],
-      "Export contacts": [
-        "导出联系人"
       ],
       "Fit to window": [
         "适应窗口大小"
@@ -1261,6 +1255,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "继续"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "继续使用 ${ MAIL_APP_NAME }。"
       ],
@@ -3782,6 +3779,9 @@
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/月)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 特权存储空间"
       ],
@@ -3806,14 +3806,8 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "账户因欠费已被限制使用，请联系机构管理员。"
       ],
-      "Account size": [
-        "账户大小"
-      ],
       "Account successfully updated": [
         "账户已成功更新"
-      ],
-      "Additional options": [
-        "其他选项"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "已对此地址开启密钥验证，向对方发送邮件前需要先信任其公钥。"
@@ -4004,9 +3998,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "根据当前账户等级的剩余有效时间折算返还的余额"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
-      ],
       "Current plan": [
         "当前等级"
       ],
@@ -4109,9 +4100,6 @@
       "email": [
         "电子邮箱"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "免费为 10 个自有域名提供邮件托管服务，额外增加的域名按 ${ price } 收费。"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
       ],
@@ -4138,9 +4126,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "输入您要导入的邮箱账号和密码。"
-      ],
-      "Enter the device name to confirm removal.": [
-        "输入设备名称以确认删除。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
@@ -4481,6 +4466,9 @@
       "Organization size": [
         "组织的规模"
       ],
+      "Owner": [
+        "所有者"
+      ],
       "password": [
         "密码"
       ],
@@ -4766,9 +4754,6 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "该账户可能有一个新密钥，或是以下内容可能已被篡改：${ items }。请务必在信任的情况下打开。"
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "通讯录需在本机解密后方可导出，解密完成时将生成一份 VCF 文件供您下载。"
-      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "下载次数是在线预览和实际下载的总次数。"
       ],
@@ -4831,9 +4816,6 @@
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "这将删除链接并移除任何拥有该链接的人对您文件（夹）的访问权限。"
-      ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "这将从 ${ DRIVE_APP_NAME } 中删除已同步的设备 ${ deviceName } 并停止同步您添加到“我的电脑”中的文件夹。"
       ],
       "This will replace the existing file with the folder": [
         "这将用该文件夹替换现有文件"
@@ -5331,9 +5313,6 @@
       "Authenticator app": [
         "身份验证应用"
       ],
-      "Automatically save contacts": [
-        "自动保存联系人"
-      ],
       "Beta Access": [
         "测试版功能"
       ],
@@ -5505,9 +5484,6 @@
       "Expires": [
         "有效期至"
       ],
-      "Export contacts": [
-        "导出联系人"
-      ],
       "Extended address": [
         "详细地址"
       ],
@@ -5541,11 +5517,11 @@
       "I understand the risk": [
         "风险已知悉"
       ],
+      "IBAN": [
+        "国际银行账户号码（IBAN）"
+      ],
       "Import all messages": [
         "导入所有邮件"
-      ],
-      "Import contacts": [
-        "导入联系人"
       ],
       "Import interval": [
         "导入间隔"
@@ -6659,6 +6635,9 @@
       "Early access to new apps and features": [
         "抢先访问新应用和功能"
       ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "对无限量用户提供基本保护与安全协作."
+      ],
       "For next-level password management and identity protection.": [
         "体验更高等级的密码管理与身份保护。"
       ],
@@ -7150,6 +7129,14 @@
         "欢迎来到 ${ appName }"
       ]
     },
+    "Onboarding Action": {
+      "Continue": [
+        "继续"
+      ],
+      "Skip": [
+        "跳过"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "添加到已有队列"
@@ -7380,20 +7367,9 @@
         "名称"
       ]
     },
-    "plan customizer, ips": {
-      "Should you need more than ${ maxIPs } IP, ": [
-        "如果您需要超过 ${ maxIPs } IP， "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "联系人"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "选择包含在套餐中的用户数。 每位额外用户需支付 ${ price }。"
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "如果您需要超过 ${ maxUsers } 个用户账户，请 ${ contact } 我们的销售团队。"
       ]
     },
     "Price": {
@@ -7806,6 +7782,9 @@
       "/ month": [
         "/ 月"
       ],
+      "/month": [
+        "/个月"
+      ],
       "1 year": [
         "一年"
       ],
@@ -7901,6 +7880,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "现在，您可以保持数据安全，同时轻松搜索网盘文件。"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "登录"
       ]
     },
     "State": {
@@ -8523,6 +8507,9 @@
       "Day theme": [
         "日间模式"
       ],
+      "Delete": [
+        "删除"
+      ],
       "Delete ${ count } contact": [
         "删除 ${ count } 联系人"
       ],
@@ -9054,9 +9041,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "我们已向他们发送了访问该项目的邀请。"
-      ],
-      "You do not have any contacts to export": [
-        "您没有任何联系人可导出"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
       ]
     },
     "Validation": {

@@ -17,6 +17,9 @@
       "Continue": [
         "Fortsett"
       ],
+      "Dismiss": [
+        "Avvis"
+      ],
       "Edit email address": [
         "Rediger e-postadresse"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "Vis faktura"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-skrivebordsapp"
+      ],
+      "Dark Web Monitoring": [
+        "Overvåking av det mørke nettet"
+      ],
+      "Use your own email domain": [
+        "Bruk ditt eget e-postdomene"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "gulrot"
+      ],
+      "cerise": [
+        "kirsebærrød"
+      ],
+      "cobalt": [
+        "kobolt"
+      ],
+      "copper": [
+        "kobberfarget"
+      ],
+      "enzian": [
+        "enzian blå"
+      ],
+      "fern": [
+        "bregne"
+      ],
+      "forest": [
+        "skog"
+      ],
+      "ocean": [
+        "hav"
+      ],
+      "olive": [
+        "oliven"
+      ],
+      "pacific": [
+        "stillehavet"
+      ],
+      "pickle": [
+        "sylteagurk"
+      ],
+      "pine": [
+        "furu"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "plomme"
+      ],
+      "purple": [
+        "lilla"
+      ],
+      "reef": [
+        "rev"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "skiferblått"
+      ],
+      "soil": [
+        "jord"
+      ],
+      "strawberry": [
+        "jordbær"
       ]
     },
     "Country name": {
@@ -923,6 +999,46 @@
         "Sikkerhetsnøkkel"
       ]
     },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Systemstandard"
@@ -993,6 +1109,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Hvis du tror vi har gjort en feil, kan du ${ contactLink }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke finner e-posten i innboksen, sjekk søppelpostmappen din."
       ],
@@ -1016,6 +1135,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Vi har oppdaget at du har opprettet flere gratiskontoer, som er et brudd på ${ termsLink }."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifiseringskode til ${ strong }"
@@ -1075,11 +1197,384 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "kontakt oss"
+      ],
       "Learn more": [
         "Lær mer"
       ],
       "Request an invite": [
         "Be om en invitasjon"
+      ],
+      "terms of service": [
+        "brukervilkår"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Hold din innboks organisert med mapper"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Skaff deg ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skriveassistent"
+      ],
+      "${ n } calendar": [
+        "${ n } kalender",
+        "${ n } kalendere"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalender per bruker",
+        "${ n } kalendere per bruker"
+      ],
+      "${ n } custom email domain": [
+        "${ n } egendefinert e-postdomene",
+        "${ n } egendefinerte e-postdomener"
+      ],
+      "${ n } email address": [
+        "${ n } e-postadresse",
+        "${ n } e-postadresser/aliaser"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-postadresse per bruker",
+        "${ n } e-postadresser per bruker"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filtre"
+      ],
+      "${ n } folder": [
+        "${ n } mappe",
+        "${ n } mapper"
+      ],
+      "${ n } folder and label": [
+        "${ n } mappe og etikett",
+        "${ n } mapper og etiketter"
+      ],
+      "${ n } label": [
+        "${ n } etikett",
+        "${ n } etiketter"
+      ],
+      "${ n } message per day": [
+        "${ n } melding per dag",
+        "${ n } meldinger per dag"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dag filversjonshistorikk",
+        "${ options }-dager filversjonshistorikk"
+      ],
+      "${ size } attachment size": [
+        "${ size } vedleggsstørrelse"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } med sikker lagringsplass per bruker"
+      ],
+      "${ size } storage": [
+        "${ size } lagringsplass"
+      ],
+      "1 TB secure storage": [
+        "1 TB sikker lagring"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-postadresser/aliaser"
+      ],
+      "10 more premium features": [
+        "10 flere premiumfunksjoner"
+      ],
+      "10-year file version history": [
+        "10-år filversjonshistorikk"
+      ],
+      "15 GB storage": [
+        "15 GB lagring"
+      ],
+      "Advanced account protection": [
+        "Avansert kontobeskyttelse"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME }-produkter og tjenester"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle premium ${ BRAND_NAME }-tjenester. Ett enkelt abonnement"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Auto-slett søppelpost og papirkurv"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Fjern automatisk søppelpost og meldinger som er slettet"
+      ],
+      "Auto-reply": [
+        "Autosvar"
+      ],
+      "Automatic email forwarding": [
+        "Automatisk videresending av e-post"
+      ],
+      "Breach alerts": [
+        "Varsler om datainnbrudd"
+      ],
+      "Calendar sharing": [
+        "Kalenderdeling"
+      ],
+      "Catch-all": [
+        "Catch-all"
+      ],
+      "Collaborate and share large files": [
+        "Samarbeid og del store filer"
+      ],
+      "Contact groups": [
+        "Kontaktgrupper"
+      ],
+      "Contact groups management": [
+        "Administrasjon av kontaktgrupper"
+      ],
+      "Custom and secure business email": [
+        "Tilpasset og sikker bedrifts-e-post"
+      ],
+      "Custom email domains": [
+        "Egendefinerte e-postdomener"
+      ],
+      "Custom snooze time": [
+        "Tilpasset slumretid"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch importassistent"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Støtte for e-postklienter (via IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-postgrupper"
+      ],
+      "Encrypted contact details": [
+        "Kryptert kontaktinformasjon"
+      ],
+      "End-to-end encryption": [
+        "Ende-til-ende kryptering"
+      ],
+      "Generate emails with a prompt": [
+        "Generer e-poster med en ledetekst"
+      ],
+      "HTML signatures": [
+        "HTML-signaturer"
+      ],
+      "Online document editor": [
+        "Dokumentredigering på nett"
+      ],
+      "Password health": [
+        "Passordhelse"
+      ],
+      "Password-protected Emails": [
+        "Passordbeskyttede e-poster"
+      ],
+      "Proofread and refine your emails": [
+        "Korrekturles og finjuster e-postene dine"
+      ],
+      "Quickly craft replies": [
+        "Lag svar raskt"
+      ],
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
+      ],
+      "Save time emailing": [
+        "Spar tid på e-post"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Planlegg og slumre e-poster når som helst"
+      ],
+      "Schedule messages at any time": [
+        "Planlegg meldinger når som helst"
+      ],
+      "Search message content": [
+        "Søk i meldingsinnhold"
+      ],
+      "See team's availability": [
+        "Se teamets tilgjengelighet"
+      ],
+      "Send & receive invitations": [
+        "Send & motta invitasjoner"
+      ],
+      "Share files with no size limit": [
+        "Del filer uten størrelsesbegrensning"
+      ],
+      "SMTP submission": [
+        "SMTP-innsending"
+      ],
+      "SMTP submission for select organizations": [
+        "SMTP-innsending for utvalgte organisasjoner"
+      ],
+      "Support for up to 2 users": [
+        "Støtte for opptil 2 brukere"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synkroniser og sikkerhetskopier alle filene dine på tvers av enheter"
+      ],
+      "Unlimited filters": [
+        "Ubegrenset antall filtre"
+      ],
+      "Unlimited folders": [
+        "Ubegrenset antall mapper"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrenset antall mapper, etiketter og filtre"
+      ],
+      "Unlimited labels": [
+        "Ubegrenset antall etiketter"
+      ],
+      "Unlimited messages per day": [
+        "Ubegrensede meldinger per dag"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Opptil ${ totalStorageSize } lagringsplass"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 egendefinert e-postdomene"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Opprett flere e-postadresser for dine nettbaserte identiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer, alexnyheter@${ domain2 } for nyhetsabonnement."
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Slumre/utsett meldinger og bli påminnet når du vil."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Lagringsplass er delt mellom ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: sikre tidsplanen din med ende-til-ende kryptering. Inkluderer støtte for tilpassede kalendere, kalenderdeling og mer."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: sikre e-postene dine med ende-til-ende kryptering. Inkluderer støtte for egendefinerte e-postdomener, 15 e-postadresser, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Få tilgang til ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME } fra skrivebordets bekvemmelighet."
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Adresser har full mulighet for sending og mottak. En bruker kan ha flere adresser tilordnet; en enkelt adresse kan imidlertid ikke tilordnes flere brukere."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Lar deg sette opp automatiske svar (autosvar) for dine innkommende meldinger"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Fjern automatisk e-poster som er eldre enn 30 dager, fra papirkurven og søppelposten."
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Videresend automatisk e-postmeldinger sendt til ${ MAIL_APP_NAME }-kontoen din til en hvilken som helst annen e-postadresse."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Massesending av salgsfremmende eller programmatisk e-post støttes for øyeblikket ikke. Vi anbefaler at du bruker en dedikert e-postleverandør for dette brukstilfellet."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Velg egendefinerte tidspunkter for å bli påminnet om en e-postmelding eller for når meldingen skal ankomme."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Opprett flere e-postadresser for dine nettbaserte identiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer, JohnNews@${ domain } for nyhetsabonnement"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Opprett opptil ${ n } kalender eller legg til kalendere fra venner, familie, kollegaer og organisasjoner.",
+        "Opprett opptil ${ n } kalendere eller legg til kalendere fra venner, familie, kollegaer og organisasjoner."
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Opprett opp til ${ n } e-postadresser/aliaser som du kan tilordne til familemedlemmer. Bruk dem til nettidentiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Del kalenderne dine med familie, venner eller kolleger på en enkel måte."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Send e-post til alle i en gruppe med én enkelt e-postadresse"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Sikrer at du mottar alle e-postmeldinger som sendes til domenet ditt, selv om e-postadressen ikke eksisterer, ikke lenger eksisterer eller har en skrivefeil."
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP-støtte er begrenset til bruk av skrivebordsapper (eks. Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME }-Bridge. Skybasert IMAP-integrering er for tiden ikke støttet."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Hold planene dine private for deg og familien din med en kryptert kalender."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Etiketter er enkle merker du kan legge til i meldinger for å gjøre dem enklere å finne eller bruke filtre på."
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Tilpass e-postsignaturen din med logoer, bilder, ikoner for sosiale medier, koblinger til kontaktinformasjonen din og mer."
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Forhindrer at meldinger åpnes av ${ BRAND_NAME } eller tredjeparter. De eneste som kan lese meldingene, er avsenderen og den tiltenkte mottakeren."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Raskt sette opp fraværsmeldinger"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Overfør raskt e-post, kalendere eller kontakter fra hvilken som helst leverandør"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Lagre kontaktenes detaljer på en sikker måte, for eksempel telefonnummer, adresse, bursdag og personlige notater. Nulltilgangskryptering sikrer at selv ${ BRAND_NAME } ikke får tilgang til dem."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Se tilgjengeligheten til møtedeltakere og spar tid på å planlegge møter"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Send e-post til store grupper raskt og enkelt ved å opprette så mange kontaktgrupper du trenger (opptil 100 kontakter per gruppe)."
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Sett opp filtre for automatisk å svare på, sortere og / eller merke e-postene dine"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Del filene eller mappene dine med hvem som helst ved å bruke sikre og delbare koblinger."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP tillater tredjepartstjenester eller enheter å sende e-post gjennom ${ MAIL_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Lagringsplass er delt over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } og ${ PASS_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Lagringsplass er delt mellom ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }. Administratorer kan tildele ulike lagringsmengder til brukere i deres organisasjon"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Lagringsplass er delt mellom brukere over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } og ${ PASS_APP_NAME }."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Bruk dine egendefinerte e-post-domeneadresser, f.eks., deg@dittnavn.no."
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Når du sender til andre ${ MAIL_APP_NAME }-brukere, skjer krypteringen automatisk. Sending til brukere som ikke er ${ MAIL_APP_NAME_TWO }-brukere krever at du angir et passord før sending."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Legg til mer personalisering med 15 e-postadresser og støtte for 3 egendefinerte e-postdomener"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Øk lagringsplassen din til totalt ${ bundleStorage } per bruker"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Øk lagringsplassen din til totalt ${ bundleStorage }"
+      ],
+      "Create up to ${ n } calendar": [
+        "Opprett opptil ${ n } kalender",
+        "Opprett opptil ${ n } kalendere"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Støtte for ${ n } egendefinerte e-postdomener"
       ]
     },
     "Placeholder": {
@@ -1103,6 +1598,22 @@
         "Du blir omdirigert til din tredjeparts SSO-leverandør."
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Lagring for data generert av ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, og ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Opptil ${ totalStorageSize } Drive-lagring"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Opptil ${ totalStorageSize } Mail-lagring"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "For alle ${ BRAND_NAME }-tjenester"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
@@ -1112,6 +1623,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "Konto låst"
+      ],
       "Enter 2FA code": [
         "Angi 2FA-kode"
       ],

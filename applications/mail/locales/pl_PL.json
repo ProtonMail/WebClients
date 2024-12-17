@@ -69,9 +69,6 @@
       "Add group": [
         "Dodaj grupę"
       ],
-      "Add new contact": [
-        "Dodaj nowy kontakt"
-      ],
       "Add new group": [
         "Dodaj nową grupę"
       ],
@@ -486,9 +483,6 @@
       "Export contact group": [
         "Eksportuj grupę kontaktów"
       ],
-      "Export contacts": [
-        "Eksportuj kontakty"
-      ],
       "External encryption": [
         "Szyfrowanie zewnętrzne"
       ],
@@ -518,6 +512,9 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "Wybierz plan ${ BRAND_NAME } Duo"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Wybierz plan ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
       ],
       "Get in touch": [
         "Skontaktuj się z nami"
@@ -1653,6 +1650,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwsze ${ cycle } miesięcy. Odnowienie nastąpi w obniżonej cenie ${ nextPrice } za ${ renewalLength } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ nextPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ]
@@ -1936,6 +1936,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Zmień ustawienia adresu e-mail"
+      ],
+      "Continue": [
+        "Kontynuuj"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ],
@@ -3597,6 +3603,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Uwierzytelnianie dwustopniowe dodaje dodatkową warstwę bezpieczeństwa, zapobiegając nieautoryzowanemu dostępowi."
       ],
+      "Also included": [
+        "Również w zestawie"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Automatyczne usuwanie Spamu i Kosza oraz odblokowanie funkcji premium po ulepszeniu konta."
       ],
@@ -3626,6 +3635,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Aby uzyskać nieograniczony dostęp do asystenta pisania i nie tylko, ulepsz konto do planu ${ BRAND_NAME } Duo."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3698,6 +3710,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Ulepsz konto, aby odblokować nieograniczoną liczbę folderów, etykiet i wiele więcej funkcji premium."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Ulepsz plan, aby uzyskać krótszy i łatwiejszy do zapamiętania adres e-mail ${ activatePmUser }."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Ulepsz konto, aby włączyć program ${ PROTON_SENTINEL_NAME } — nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji z dedykowanym wsparciem ekspertów 24/7."
@@ -5348,23 +5363,14 @@
       "Checklist complete": [
         "Lista kontrolna została zakończona"
       ],
-      "Close": [
-        "Zamknij"
-      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Zakończ listę kontrolną w ciągu ${ daysCount }, aby podwoić przestrzeń dyskową za darmo."
-      ],
-      "Congratulations, you completed all the steps!": [
-        "Gratulacje. Zakończono wszystkie kroki!"
       ],
       "Discover how our ${ strongText } protect you": [
         "Poznaj jak nasze ${ strongText } chronią Cię"
       ],
       "Discover privacy features": [
         "Poznaj funkcje ochrony prywatności"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "Podwój darmową przestrzeń dyskową do 1 GB po wykonaniu następujących kroków:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Szyfrowanie tak silne, że tylko Ty i odbiorcy mogę odczytać treść wiadomości."
@@ -5393,26 +5399,14 @@
       "Learn more": [
         "Dowiedz się więcej"
       ],
-      "Maybe later": [
-        "Może później"
-      ],
       "Nice! You've updated all services in this category.": [
         "Świetnie! Zaktualizowano wszystkie usługi w tej kategorii."
-      ],
-      "Open checklist": [
-        "Otwórz listę kontrolną"
-      ],
-      "Open checklist and get free storage": [
-        "Otwórz listę kontrolną i uzyskaj darmową przestrzeń dyskową"
       ],
       "Popular online services": [
         "Popularne usługi online"
       ],
       "privacy features": [
         "funkcje ochrony prywatności"
-      ],
-      "Protect and simplify your email": [
-        "Chroń i upraszczaj swoją pocztę"
       ],
       "Protection from trackers": [
         "Ochrona przed elementami śledzącymi"
@@ -6181,9 +6175,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Skontaktuj się ze swoim administratorem."
       ],
-      "Account size": [
-        "Rozmiar konta"
-      ],
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
       ],
@@ -6193,8 +6184,8 @@
       "Add image URL": [
         "Dodaj adres URL obrazu"
       ],
-      "Additional options": [
-        "Dodatkowe opcje"
+      "Address copied to clipboard": [
+        "Adres został skopiowany do schowka"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ten adres posiada włączoną weryfikację z zaufanymi kluczami. Zaufaj kluczom publicznym, aby wysyłać wiadomości na ten adres."
@@ -6373,9 +6364,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Sprawdzanie kontaktów... (${ progress } z ${ max })"
       ],
-      "Clear app data": [
-        "Wyczyść dane aplikacji"
-      ],
       "Clear browser data": [
         "Wyczyść pamięć podręczną przeglądarki"
       ],
@@ -6439,20 +6427,11 @@
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Utwórz bezpieczną chmurę dla ${ n } użytkownika",
-        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
-        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
-        "Utwórz bezpieczną chmurę dla ${ n } użytkowników"
-      ],
       "Create in": [
         "Utwórz w"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Niewykorzystane środki z poprzedniego planu"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Obsługiwane są pliki vCard w wersji 3.1, 4.0 (kodowanie UTF-8) oraz CSV z programów Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i kilku innych."
       ],
       "Current plan": [
         "Obecny plan"
@@ -6483,6 +6462,9 @@
       ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "default email address": [
+        "domyślny adres e-mail"
       ],
       "Default email application": [
         "Domyślna aplikacja pocztowa"
@@ -6576,9 +6558,6 @@
       ],
       "Email copied to clipboard": [
         "Adres został skopiowany do schowka"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Poczta e-mail dla 10 niestandardowych domen za darmo. Dodatkowe domeny możesz dodać za ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Poczta e-mail jest dostępna tylko dla Twoich domen. Rejestracja domeny przez ${ BRAND_NAME } nie jest obecnie dostępna. Możesz uzyskać pocztę dla domeny zarejestrowanej u dowolnego dostawcy."
@@ -6925,6 +6904,9 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni, zostaną automatycznie usunięte."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Wiadomości wysyłane na wszystkie adresy e-mail będą kierowane do skrzynki odbiorczej."
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -7156,6 +7138,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
+      "Registering your subscription...": [
+        "Rejestrowanie subskrypcji..."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Pamiętaj, aby zaktualizować adres w menedżerze haseł lub miejscu, gdzie przechowujesz swoje konto i dane logowania."
       ],
@@ -7261,6 +7246,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
       ],
+      "Setting up your new address...": [
+        "Konfiguracja nowego adresu..."
+      ],
       "Shorten selection": [
         "Skróć zaznaczenie"
       ],
@@ -7287,6 +7275,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Wiadomość nie istnieje lub już wygasła."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Funkcje przechowywania nie są obsługiwane w tej przeglądarce. Potrzebujemy tej obsługi, aby umożliwić wyszukiwanie zawartości wiadomości."
@@ -7326,9 +7317,6 @@
       ],
       "Text to display": [
         "Tekst do wyświetlenia"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Zanim kontakty będą mogły zostać wyeksportowane, aplikacja musi je lokalnie odszyfrować. Pod koniec procesu zostanie wygenerowany plik VCF do pobrania."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Jeśli opuścisz stronę, dane wpisane w szkicu mogą nie zostać zapisane."
@@ -7423,6 +7411,9 @@
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Ma to pomóc w wygenerowaniu tekstu. Sprawdź poprawność sugerowanego tekstu. ${ learnMoreResult }"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "To Twój ${ defaultEmailAddress } do wysyłania nowych wiadomości."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
       ],
@@ -7494,9 +7485,6 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Klucz publiczny zostanie automatycznie użyty do zaszyfrowania wiadomości wysłanej na ten adres."
-      ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Usuwa wszystkie dane powiązane z aplikacją, w tym pobrane wiadomości. Aplikacja uruchomi się ponownie i konieczne będzie ponowne zalogowanie się, aby móc z niej korzystać."
       ],
       "This sender's public key has not been trusted yet.": [
         "Ten klucz publiczny nadawcy nie został jeszcze dodany do zaufanych."
@@ -7683,9 +7671,6 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Wykryliśmy utworzenie wielu darmowych kont, co narusza nasz ${ termsLink }."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
-        "Mamy plany zaprojektowane specjalnie dla użytkowników takich jak Ty, którzy potrzebują więcej niż jednego adresu e-mail.\nAby usunąć ograniczenia, ulepsz konto do płatnego planu."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Musimy zweryfikować metodę płatności z Twoim bankiem."
@@ -8046,11 +8031,6 @@
         "Tylko do odczytu"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asystent sztucznej inteligencji, który pomaga tworzyć lepsze wiadomości, szybko i bez wysiłku."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Zagrożony"
@@ -8362,9 +8342,6 @@
       "Authenticator app": [
         "Aplikacja uwierzytelniająca"
       ],
-      "Automatically save contacts": [
-        "Automatyczne zapisywanie kontaktów"
-      ],
       "BCC": [
         "UDW"
       ],
@@ -8530,9 +8507,6 @@
       "Expires": [
         "Wygasa"
       ],
-      "Export contacts": [
-        "Eksportuj kontakty"
-      ],
       "Extended address": [
         "Rozszerzony adres"
       ],
@@ -8577,9 +8551,6 @@
       ],
       "Import all messages": [
         "Importuj wszystkie wiadomości"
-      ],
-      "Import contacts": [
-        "Importuj kontakty"
       ],
       "Import interval": [
         "Interwał importu"
@@ -9504,6 +9475,9 @@
       "Get ${ planTitle }": [
         "Wybierz plan ${ planTitle }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Od ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Od ${ priceMailPlus }"
       ],
@@ -9678,6 +9652,9 @@
       ],
       "10 email addresses/aliases": [
         "10 adresów e-mail / aliasów"
+      ],
+      "10 more premium features": [
+        "10 więcej funkcji premium"
       ],
       "10-year file version history": [
         "10-letnia historia wersji plików"
@@ -10176,6 +10153,14 @@
         "Zmienić plany?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Wybierz plan Mail Plus za ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Obniżona cena ${ priceCoupon } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ priceMailPlus }. Możesz anulować w dowolnym momencie."
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpiecz swój harmonogram dzięki szyfrowaniu end-to-end. Zawiera obsługę niestandardowych kalendarzy, udostępnianie kalendarzy i wiele więcej."
@@ -10571,20 +10556,8 @@
       "Auto-delete spam and trash": [
         "Automatyczne usuwanie Spamu i Kosza"
       ],
-      "Automatically forward emails": [
-        "Automatyczne przekierowanie wiadomości"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Zablokuj wiadomości od oszustów. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "Zablokuj niechcianych nadawców"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni."
-      ],
-      "Congratulations on choosing privacy": [
-        "Gratulujemy wyboru prywatności"
       ],
       "Dark Web Monitoring": [
         "Monitoring dark web"
@@ -10595,17 +10568,8 @@
       "Download the desktop app and continue": [
         "Pobierz aplikację desktopową i kontynuuj"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "Szyfrowanie tak silne, że tylko Ty i odbiorcy mogę odczytać treść wiadomości. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "Skoncentrowana aplikacja"
-      ],
-      "For your eyes only": [
-        "Tylko dla Twoich oczu"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "Przekierowanie wiadomości z Gmaila do skrzynki odbiorczej."
       ],
       "Get notified if your password is compromised.": [
         "Otrzymaj powiadomienie, jeśli Twoje hasło zostanie naruszone."
@@ -10646,17 +10610,11 @@
       "Replay introduction": [
         "Powtórz samouczek"
       ],
-      "Skip": [
-        "Pomiń"
-      ],
       "Start using ${ BRAND_NAME }": [
         "Zacznij korzystać z ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Używaj krótszej i bardziej chwytliwej nazwy swojego adresu e-mail."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "Blokujemy reklamodawców i firmy zbierające dane, które profilują Cię. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Witaj w ${ MAIL_APP_NAME }"
@@ -10908,6 +10866,15 @@
       "Select billing country to pay": [
         "Wybierz kraj"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesięcy. Kupon jest ważny na ${ couponRedemptions } odnowień. Odnowienie nastąpi w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesięcy. Odnowienie nastąpi w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Kupon jest ważny na ${ couponRedemptions } odnowień. Odnowienie nastąpi w cenie ${ renewPrice } za ${ subscriptionLength } miesiąc. Możesz anulować w dowolnym momencie."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
@@ -11121,32 +11088,9 @@
         "Nazwa"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } z naszym zespołem sprzedaży."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Wybierz liczbę adresów IP w planie. Każdy dodatkowy adres IP kosztuje ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Jeśli potrzebujesz więcej niż ${ maxIPs } adres IP, ",
-        "Jeśli potrzebujesz więcej niż ${ maxIPs } adresy IP, ",
-        "Jeśli potrzebujesz więcej niż ${ maxIPs } adresów IP, ",
-        "Jeśli potrzebujesz więcej niż ${ maxIPs } adresów IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "skontaktuj się"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Wybierz liczbę użytkowników w planie. Każdy dodatkowy użytkownik kosztuje ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Jeśli potrzebujesz więcej niż ${ maxUsers } użytkownika, ${ contact } z naszym zespołem sprzedaży.",
-        "Jeśli potrzebujesz więcej niż ${ maxUsers } użytkowników, ${ contact } z naszym zespołem sprzedaży.",
-        "Jeśli potrzebujesz więcej niż ${ maxUsers } użytkowników, ${ contact } z naszym zespołem sprzedaży.",
-        "Jeśli potrzebujesz więcej niż ${ maxUsers } użytkowników, ${ contact } z naszym zespołem sprzedaży."
       ]
     },
     "Price": {
@@ -11983,6 +11927,9 @@
       "Schedule send": [
         "Zaplanuj wysyłanie"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "To jest Twój nowy domyślny adres e-mail. Otwórz listę rozwijaną, aby wysyłać z innego adresu. "
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Włącz ${ DARK_WEB_MONITORING_NAME }, aby otrzymać powiadomienie o wycieku danych przez usługi stron trzecich."
       ],
@@ -11994,6 +11941,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Możesz zaplanować wysyłanie wiadomości w późniejszym czasie"
+      ],
+      "Your pm.me email is active": [
+        "Adres pm.me jest aktywny"
       ]
     },
     "sso": {
@@ -13868,6 +13818,9 @@
       "Unsubscribe request sent": [
         "Żądanie anulowania subskrypcji zostało wysłane"
       ],
+      "Upgrade complete!": [
+        "Ulepszenie zakończone!"
+      ],
       "Verification error": [
         "Błąd weryfikacji"
       ],
@@ -13918,6 +13871,9 @@
       ],
       "Your free trial has ended": [
         "Darmowa wersja próbna zakończyła się"
+      ],
+      "Your shorter address is now ready": [
+        "Krótszy adres jest już gotowy"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14003,9 +13959,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"
-      ],
-      "You do not have any contacts to export": [
-        "Nie masz żadnych kontaktów do wyeksportowania"
       ]
     },
     "tooltip": {
@@ -14200,6 +14153,9 @@
       ],
       "Missing alias suffix": [
         "Brak przyrostka aliasu"
+      ],
+      "Name is required": [
+        "Nazwa jest wymagana"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Dozwolone są tylko znaki alfanumeryczne, kropki, myślniki i podkreślenia"

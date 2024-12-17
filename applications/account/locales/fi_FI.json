@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "activate": [
-        "aktivoi"
-      ],
       "Activate": [
         "Aktivoi"
+      ],
+      "activate": [
+        "aktivoi"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -421,6 +421,9 @@
       "Discard changes": [
         "Hylkää muutokset"
       ],
+      "Dismiss": [
+        "Sulje"
+      ],
       "Domain name": [
         "Verkkotunnus"
       ],
@@ -561,6 +564,9 @@
       ],
       "Generate token": [
         "Luo tunniste"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Hanki ${ MAIL_SHORT_APP_NAME } Plus hintaan ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "Hanki ${ vpnPlus }"
@@ -1855,6 +1861,9 @@
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Uusiutuu automaattisesti ${ renewLength } kuukaudeksi hintaan ${ renewPrice }",
         "Uusiutuu automaattisesti ${ renewLength } kuukaudeksi hintaan ${ renewPrice }"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Uudistuu automaattisesti palvelussa ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -1972,6 +1981,12 @@
     "Button": {
       "Add link to your email footer": [
         "Lisää linkki viestisi alatunnisteeseen"
+      ],
+      "Change email address settings": [
+        "Muuta sähköpostiosoitteen asetuksia"
+      ],
+      "Continue": [
+        "Jatka"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
@@ -3575,6 +3590,9 @@
       ]
     },
     "Description": {
+      "Also included": [
+        "Sisältyy myös"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Päivitä tilauksesi poistaaksesi roskapostit ja roskakorissa olevat viestit automaattisesti, ja avataksesi muita premium-ominaisuuksia."
       ],
@@ -3607,6 +3625,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut kolmannen osapuolen palvelusta."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Ansaitse jopa ${ credits } krediittiä kutsumalla kavereita ${ BRAND_NAME }iin."
@@ -3649,6 +3670,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Päivittämällä tilauksesi avaat rajattomasti kansioita, tunnisteita ja muita premium-ominaisuuksia."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Päivitä tilauksesi saadaksesi ${ activatePmUser }, toisen lyhyemmän ja helpommin muistettavan sähköpostiosoitten nykyisen lisäksi."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Voit edelleen kutsua kavereita, muttet voi ansaita enempää krediittejä"
@@ -4671,6 +4695,9 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Ota usean käyttäjän tuki käyttöön ennen kuin lisäät käyttäjiä organisaatioosi."
+      ],
+      "Please enter a valid entity ID URL": [
+        "Syötä kelvollinen entiteetti-ID-URL"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Jatka korjaamalla korostettu ristiriita.",
@@ -6856,9 +6883,6 @@
       "account recovery method": [
         "tilin palautustapa"
       ],
-      "Account size": [
-        "Tilin koko"
-      ],
       "Account successfully updated": [
         "Tili on päivitetty"
       ],
@@ -6913,8 +6937,8 @@
         "Lisätään yhdyskäytäväpalvelinta: ${ serverNumber }/${ total }",
         "Lisätään yhdyskäytäväpalvelimia: ${ serverNumber }/${ total }"
       ],
-      "Additional options": [
-        "Lisävalinnat"
+      "Address copied to clipboard": [
+        "Osoite kopioitiin leikepöydälle"
       ],
       "Admin account allocation": [
         "Varattu ylläpitäjän tilille"
@@ -7166,6 +7190,9 @@
       "Choose an app to get started": [
         "Aloita valitsemalla sovellus"
       ],
+      "Choose an Entity ID to continue.": [
+        "Valitse entiteetti-ID jatkaaksesi."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
       ],
@@ -7194,7 +7221,7 @@
         "Kopioi ja liitä tämä URL identiteetintarjoajasi ACS (Assertion Consumer Service) URL -kenttään."
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopio ja liitä tämä URL identiteetintarjoajasi Entiteetin ID -kenttään."
+        "Kopio ja liitä tämä URL identiteetintarjoajasi entiteetti-ID-kenttään"
       ],
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
@@ -7217,10 +7244,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Luo tuoduille viesteille tunniste, ajanjakso tälle tuonnille ja tunnisteet, jotka haluat tuoda."
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Luo suojattu pilvi ${ n } jäsenelle",
-        "Luo suojattu pilvi ${ n } jäsenelle"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Luo ja hallinnoi alitilejä ja määritä niille omaa verkkotunnustasi käyttävät sähköpostiosoitteet."
@@ -7288,6 +7311,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Omia kiinteää IP-osoitetta käyttäviä palvelimia voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
+      ],
+      "default email address": [
+        "oletussähköpostiosoite"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Poista kaikki muut MX-tietueet tai varmista, että ${ MAIL_APP_NAME }in painotus on pienin numero."
@@ -7396,17 +7422,14 @@
       "Edit link": [
         "Muokkaa linkkiä"
       ],
-      "EduGain configuration saved": [
-        "EduGain-määritys on tallennettu"
+      "eduGAIN configuration saved": [
+        "eduGAIN-määritys on tallennettu"
       ],
       "email": [
         "sähköpostiosoite"
       ],
       "Email address": [
         "Sähköpostiosoite"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Sisältää sähköpostin isännöinnin 10 omalla verkkotunnuksella veloituksetta. Lisää verkkotunnuksia voidaan lisätä ${ price } kappalehintaan."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Sähköpostin isännöinti on saatavilla vain jo entuudestaan omistamillesi verkkotunnuksille. ${ BRAND_NAME }in kautta ei tällä hetkellä ole mahdollista rekisteröidä verkkotunnuksia. Voit käyttää miltä tahansa verkkotunnustoimittajalta hankkimaasi verkkotunnusta."
@@ -7470,6 +7493,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Syötä tuotavan tilin kirjautumistiedot."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Syötä **eduGAIN** organisaation entiteetti-ID verkkotunnukselle **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Palauta hallintaoikeudet syöttämällä organisaation salasana. ${ learnMore }"
@@ -7956,6 +7982,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Lähetetyt- ja Luonnokset-kansioiden viestit näytetään niissä edelleen, vaikka ne siirrettäisiin eri kansioihin."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Kaikkiin sähköpostiosoitteisiisi lähetetyt viestit saapuvat postilaatikkoosi."
+      ],
       "MM/YY": [
         "KK/VV"
       ],
@@ -8307,6 +8336,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
       ],
+      "Registering your subscription...": [
+        "Rekisteröidään tilaustasi..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Muista jakaa käyttäjälle hänen kirjautumistietonsa."
       ],
@@ -8406,6 +8438,9 @@
       "Set recovery phrase": [
         "Aseta palautuslause"
       ],
+      "Setting up your new address...": [
+        "Määritetään uutta osoitettasi..."
+      ],
       "Setting up your organization": [
         "Määritetään organisaatiotasi"
       ],
@@ -8459,6 +8494,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF määrittää verkkotunnuksesi hyväksytyt lähettäjät. Varmista, että lisäät seuraavan TXT-tietueen DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Aloita sen jakaminen yhteystietojen kanssa ja käytä sitä verkkopalveluissa."
       ],
       "Stay tuned for future promotions.": [
         "Pysy kuulolla tulevista kampanjoista."
@@ -8637,6 +8675,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Tämä on salausavain, jonka olet saattanut tallentaa aiemmin."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Tämä on nyt ${ defaultEmailAddress } uusien viestien lähettämistä varten."
       ],
       "This is the password you used before the password reset.": [
         "Tämä on ennen salasanan uudelleenasetusta käyttämäsi salasana."
@@ -9489,11 +9530,6 @@
         "Vain tarkastelu"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Virheellinen sähköpostiosoite"
@@ -10328,7 +10364,10 @@
         "Syötä salasana avaimelle sormenjäljellä: ${ fingerprintCode }"
       ],
       "Entity ID": [
-        "Entiteetin ID"
+        "Entiteetti-ID"
+      ],
+      "Entity ID URL": [
+        "Entiteetti-ID-URL"
       ],
       "Event": [
         "Tapahtuma"
@@ -10675,6 +10714,9 @@
       "Recovery phrase": [
         "Palautuslause"
       ],
+      "Remove": [
+        "Poista"
+      ],
       "Remove image metadata": [
         "Poista kuvien metatiedot"
       ],
@@ -10746,7 +10788,7 @@
         "Allekirjoitus"
       ],
       "Single sign-on entity ID": [
-        "Kertakirjautumisen entiteetin ID (SSO entity ID)"
+        "Kertakirjautumisen entiteetti-ID"
       ],
       "Single sign-on URL": [
         "Kertakirjautumisen URL-osoite"
@@ -11785,6 +11827,9 @@
       "From ${ price }": [
         "Alkaen ${ price }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Aloita hintaan ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Alkaen ${ priceMailPlus }"
       ],
@@ -11934,6 +11979,9 @@
       ],
       "10 email addresses/aliases": [
         "10 sähköpostiosoitetta/aliasta"
+      ],
+      "10 more premium features": [
+        "10 muuta premium-ominaisuutta"
       ],
       "10-year file version history": [
         "10 vuoden tiedostoversiohistoria"
@@ -12521,6 +12569,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }-kokeilu"
+      ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Hanki Mail Plus hintaan ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceMailPlus } kuukausihintaan. Voit perua milloin tahansa."
       ],
       "Your account's usage": [
         "Tilisi käyttö"
@@ -14258,28 +14312,9 @@
         "Jäsenet"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } myyntiimme."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Valitse tilauksesi sisältyvien IP-osoitteiden määrä. Jokainen lisäosoite maksaa ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Jos tarvitset enemmän kuin ${ maxIPs } IP-osoitteen, ",
-        "Jos tarvitset enemmän kuin ${ maxIPs } IP-osoitetta, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "ole yhteydessä"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Valitse tilauksesi käyttäjämäärä. Jokainen lisäkäyttäjä maksaa ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Jos tarvitset enemmän kuin ${ maxUsers } käyttäjätilin, ${ contact } myyntiimme.",
-        "Jos tarvitset enemmän kuin ${ maxUsers } käyttäjätiliä, ${ contact } myyntiimme."
       ]
     },
     "Price": {
@@ -15390,6 +15425,14 @@
     "signup: Action": {
       "Request trial": [
         "Pyydä kokeiluversiota"
+      ]
+    },
+    "signup: Feature": {
+      "Encrypted": [
+        "Salattu"
+      ],
+      "Strict no-logs policy": [
+        "Tiukka lokivapaa käytäntö"
       ]
     },
     "Signup: Info": {
@@ -18183,6 +18226,9 @@
       "Unlock your data": [
         "Avaa tietojesi lukitus"
       ],
+      "Upgrade complete!": [
+        "Päivitys valmis!"
+      ],
       "Upgrade plan": [
         "Päivitä tilaus"
       ],
@@ -18269,6 +18315,9 @@
       ],
       "Your recovery status": [
         "Palautustilasi"
+      ],
+      "Your shorter address is now ready": [
+        "Lyhyempi osoittesi on nyt valmis"
       ],
       "Your SMTP token": [
         "SMTP-tunnisteesi"
@@ -18421,7 +18470,7 @@
         "Kopioi ja liitä tämä URL identiteetintarjoajasi ACS (Assertion Consumer Service) URL -kenttään."
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopio ja liitä tämä URL identiteetintarjoajasi Entiteetin ID -kenttään."
+        "Kopio ja liitä tämä URL identiteetintarjoajasi entiteetti-ID-kenttään."
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"
@@ -18483,6 +18532,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Lähetetyt- ja Luonnokset-kansioiden viestit näytetään niissä edelleen, vaikka ne siirrettäisiin eri kansioihin."
       ],
+      "Remove metadata from images to protect your privacy.": [
+        "Poista kuvien metatiedot suojataksesi yksityisyyttäsi."
+      ],
       "See number of unread messages in the tab icon": [
         "Näytä lukemattomien viestien määrä välilehden kuvakkeessa"
       ],
@@ -18506,6 +18558,9 @@
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Määritä verkkotunnus, joka on sallittu todentaa SAML SSO kertakirjautumisella."
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Määritä eduGAIN-entiteetin käyttäjät, joiden sallitaan tunnistautua SAML SSO:lla"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Järjestelmän alikansiot näkyvät ${ MAIL_APP_NAME }issa erillisinä kansioina"
@@ -18661,6 +18716,9 @@
       ]
     },
     "Transaction state display as badge": {
+      "Chargeback": [
+        "Takaisinveloitus"
+      ],
       "Failed": [
         "Epäonnistunut"
       ],
@@ -18681,6 +18739,12 @@
       ]
     },
     "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Oikaisuhyvitys"
+      ],
+      "Authorization": [
+        "Valtuutus"
+      ],
       "Bank transfer": [
         "Pankkisiirto"
       ],
@@ -18690,14 +18754,23 @@
       "Cash": [
         "Käteinen"
       ],
+      "Chargeback": [
+        "Takaisinveloitus"
+      ],
       "Credit": [
         "Luotto"
+      ],
+      "Credit transfer": [
+        "Krediittisiirto"
       ],
       "Currency conversion": [
         "Valuuttamuunnos"
       ],
       "Gift card": [
         "Lahjakortti"
+      ],
+      "Migration": [
+        "Migraatio"
       ],
       "Payment": [
         "Maksu"

@@ -68,9 +68,6 @@
       "Add group": [
         "Legg til gruppe"
       ],
-      "Add new contact": [
-        "Legg til ny kontakt"
-      ],
       "Add new group": [
         "Legg til ny gruppe"
       ],
@@ -305,14 +302,14 @@
       "Export contact group": [
         "Eksporter kontaktgruppe"
       ],
-      "Export contacts": [
-        "Eksporter kontakter"
-      ],
       "Forgot password?": [
         "Glemt passord?"
       ],
       "Forward as attachment": [
         "Videresend som vedlegg"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Skaff deg ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
       ],
       "Get in touch": [
         "Ta kontakt"
@@ -445,6 +442,9 @@
       ],
       "Merge contacts": [
         "Slå sammen kontakter"
+      ],
+      "More actions": [
+        "Flere handlinger"
       ],
       "More info: ${ safeTitle }": [
         "Mer informasjon: ${ safeTitle }"
@@ -1247,6 +1247,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Endre innstillinger for e-postadresse"
+      ],
+      "Continue": [
+        "Fortsett"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsett å bruke ${ MAIL_APP_NAME }."
       ],
@@ -2598,12 +2604,20 @@
         "Forfalt faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "bruk Easy Switch-importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA legger til et ekstra sikkerhetslag, og forhindrer uautorisert tilgang."
+      ],
+      "Also included": [
+        "Også inkludert"
       ],
       "Availability unknown": [
         "Ukjent tilgjengelighet"
@@ -2628,6 +2642,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Få ubegrensede aliaser og 500 GB lagringsplass med ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -2685,11 +2702,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "bruk Easy Switch-importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4452,9 +4464,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontotilgang begrenset på grunn av ubetalte fakturaer. Kontakt systemansvarlig."
       ],
-      "Account size": [
-        "Kontostørrelse"
-      ],
       "Account successfully updated": [
         "Konto oppdatert"
       ],
@@ -4464,8 +4473,8 @@
       "Added and removed participants will be notified.": [
         "Tilføyde og fjernede deltakere vil bli varslet."
       ],
-      "Additional options": [
-        "Ytterligere alternativer"
+      "Address copied to clipboard": [
+        "Adresse kopiert til utklippstavlen"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresseverifisering med klarerte nøkler er aktivert for denne adressen. For å kunne sende til denne adressen skal de offentlige nøklene, som kan brukes for å sende, først angis som klarerte."
@@ -4600,18 +4609,11 @@
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Opprett en sikker sky for ${ n }-medlem",
-        "Opprett en sikker sky for ${ n }-medlemmer"
-      ],
       "Create in": [
         "Opprett i"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kreditt for den ubrukte delen av ditt forrige planabonnement"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og noen andre apper så vel som vCard 3.1 og 4.0 formater (UTF-8-koding) er støttet."
       ],
       "Current plan": [
         "Gjeldende plan"
@@ -4639,6 +4641,9 @@
       ],
       "Dedicated servers": [
         "Dedikerte tjenere"
+      ],
+      "default email address": [
+        "standard e-postadresse"
       ],
       "Deleting event...": [
         "Sletter hendelse...",
@@ -4682,9 +4687,6 @@
       ],
       "email": [
         "e-post"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-posthotell for 10 egendefinerte e-postdomenenavn er gratis inkludert. Ytterligere domener kan legges til for ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
@@ -4862,6 +4864,9 @@
       "Merged": [
         "Slått sammen"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Meldinger til alle e-postadressene dine vil gå til innboksen din."
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -4999,6 +5004,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Oppdatering av siden eller ${ link } løser automatisk de fleste problemer."
       ],
+      "Registering your subscription...": [
+        "Registrerer abonnementet ditt..."
+      ],
       "Removed participants will be notified.": [
         "Fjernede deltakere vil bli varslet."
       ],
@@ -5027,11 +5035,17 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved å sette opp PGP kan du sende ende-til-ende-krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
       ],
+      "Setting up your new address...": [
+        "Konfigurerer den nye adressen din ..."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Noen av svarene dine på forekomster som tidligere er oppdatert av arrangøren vil gå tapt."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Begynn å dele det med kontakter og bruk det til nettjenester."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Send inn et innskudd ved å bruke følgende adresse eller skann QR-koden. Innskuddet ditt vil gjenspeiles i kontoen din etter bekreftelse."
@@ -5047,9 +5061,6 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Kom tilbake senere."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Programmet trenger å dekryptere kontaktene dine lokalt før de kan bli eksportert. På slutten av prosessen vil en VCF-fil bli generert, og du vil kunne laste den ned."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den eksponerte informasjonen ble lekket fra en tredjepartstjeneste. ${ BRAND_NAME }-kontoinformasjonen din forblir sikker og kryptert. ${ learnMoreLink }."
@@ -5101,6 +5112,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Hendelsen har blitt oppdatert. Arrangøren av denne hendelsen vil ikke bli varslet om at du avslår invitasjonen, siden du ikke kan sende e-post fra den inviterte adressen. Vil du slette denne hendelsen uansett?"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Dette er nå din ${ defaultEmailAddress } for å sende nye meldinger."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denne koblingen fører til et nettsted som kanskje prøver å stjele informasjonen din, for eksempel passord og kredittkortdetaljer."
@@ -5470,11 +5484,6 @@
         "Du kan dele kalenderne dine på nytt i innstillinger."
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
-      ]
-    },
     "Information about why calendar event cannot be saved": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "På det meste ${ maxAttendees } deltaker er tillatt per invitasjon",
@@ -5562,9 +5571,6 @@
       ],
       "Authenticator app": [
         "Autentiseringsapp"
-      ],
-      "Automatically save contacts": [
-        "Lagre automatisk kontakter"
       ],
       "Beta Access": [
         "Beta-tilgang"
@@ -5713,9 +5719,6 @@
       "Expires": [
         "Utløper"
       ],
-      "Export contacts": [
-        "Eksporter kontakter"
-      ],
       "Extended address": [
         "Utvidet adresse"
       ],
@@ -5745,9 +5748,6 @@
       ],
       "Import all messages": [
         "Importer alle meldinger"
-      ],
-      "Import contacts": [
-        "Importer kontakter"
       ],
       "Import interval": [
         "Importintervall"
@@ -6442,6 +6442,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Starter fra ${ priceMailPlus }"
       ],
@@ -6582,6 +6585,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-postadresser/aliaser"
+      ],
+      "10 more premium features": [
+        "10 flere premiumfunksjoner"
       ],
       "10-year file version history": [
         "10-år filversjonshistorikk"
@@ -7064,6 +7070,14 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Skaff deg Mail Plus for ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
       ]
     },
     "new_plans: tooltip": {
@@ -7958,28 +7972,9 @@
         "(Ingen navn)"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "vennligst ${ contactHref } vår salgsavdeling."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Velg antall IP-er som skal inkluderes i planen. Hver ekstra IP koster ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Skulle du behøve mer enn ${ maxIPs } IP, ",
-        "Skulle du behøve mer enn ${ maxIPs } IP-er, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontakt"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Velg antall brukere som skal inkluderes i planen. Hver ekstra bruker koster ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Skulle du trenge mer enn ${ maxUsers } brukerkonto, ${ contact } vår salgsavdeling.",
-        "Skulle du trenge flere enn ${ maxUsers } brukerkontoer, ${ contact } vår salgsavdeling."
       ]
     },
     "Price": {
@@ -9924,6 +9919,9 @@
       "Update recurring event": [
         "Oppdater gjentakende hendelse"
       ],
+      "Upgrade complete!": [
+        "Oppgradering fullført!"
+      ],
       "Verification failed": [
         "Bekreftelse mislyktes"
       ],
@@ -9965,6 +9963,9 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
+      ],
+      "Your shorter address is now ready": [
+        "Den kortere adressen din er nå klar"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10059,9 +10060,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende-krypterte e-postmeldinger til denne e-posten."
-      ],
-      "You do not have any contacts to export": [
-        "Du har ingen kontakter å eksportere"
       ]
     },
     "tooltip": {
@@ -10210,6 +10208,9 @@
       ],
       "Missing alias suffix": [
         "Mangler aliasprefiks"
+      ],
+      "Name is required": [
+        "Navn kreves"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."

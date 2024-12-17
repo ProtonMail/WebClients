@@ -69,9 +69,6 @@
       "Add group": [
         "Gruppe hinzufügen"
       ],
-      "Add new contact": [
-        "Neuen Kontakt hinzufügen"
-      ],
       "Add new group": [
         "Neue Gruppe hinzufügen"
       ],
@@ -476,9 +473,6 @@
       ],
       "Export contact group": [
         "Kontaktgruppe exportieren"
-      ],
-      "Export contacts": [
-        "Kontakte exportieren"
       ],
       "External encryption": [
         "Externe Verschlüsselung"
@@ -960,6 +954,9 @@
       ],
       "Remove this label": [
         "Kategorie entfernen"
+      ],
+      "Remove Zoom meeting": [
+        "Zoom-Meeting entfernen"
       ],
       "Replace": [
         "Ersetzen"
@@ -1908,6 +1905,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Fortfahren"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
       ],
@@ -3587,6 +3587,9 @@
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Für unbegrenzten Zugang zum Schreibassistenten und mehr, upgrade auf ${ BRAND_NAME } Duo."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Lass dich benachrichtigen, wenn dein Passwort oder andere Daten von einem Service eines Drittanbieters preisgegeben wurden."
+      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Erhalte unbegrenzte Aliasse und 500 GB Speicherplatz mit ${ PLAN_NAMES[PLANS.BUNDLE] }"
       ],
@@ -5262,20 +5265,11 @@
       "Checklist complete": [
         "Checkliste vollständig"
       ],
-      "Close": [
-        "Schließen"
-      ],
-      "Congratulations, you completed all the steps!": [
-        "Glückwunsch, du hast alle Schritte abgeschlossen!"
-      ],
       "Discover how our ${ strongText } protect you": [
         "Entdecke, wie dich unsere ${ strongText } schützen"
       ],
       "Discover privacy features": [
         "Entdecke die Datenschutzfunktionen"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "Verdopple deinen kostenlosen Speicherplatz auf 1 GB, indem du die folgenden Schritte abschließt:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Eine so starke Verschlüsselung, dass nur du und die beabsichtigten Empfänger deine E-Mails einsehen können."
@@ -5304,26 +5298,14 @@
       "Learn more": [
         "Mehr erfahren"
       ],
-      "Maybe later": [
-        "Vielleicht später"
-      ],
       "Nice! You've updated all services in this category.": [
         "Sehr schön! Du hast alle Dienste in dieser Kategorie aktualisiert."
-      ],
-      "Open checklist": [
-        "Checkliste öffnen"
-      ],
-      "Open checklist and get free storage": [
-        "Checkliste öffnen und kostenlosen Speicherplatz erhalten"
       ],
       "Popular online services": [
         "Beliebte Online-Dienste"
       ],
       "privacy features": [
         "Datenschutzfunktionen"
-      ],
-      "Protect and simplify your email": [
-        "Schütze und vereinfache deine E-Mail-Adresse"
       ],
       "Protection from trackers": [
         "Schutz vor Trackern"
@@ -5373,6 +5355,9 @@
       ],
       "Less details": [
         "Weniger Details"
+      ],
+      "Meeting host:": [
+        "Gastgeber:"
       ],
       "Meeting link:": [
         "Meeting-Link:"
@@ -5976,9 +5961,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Der Zugriff auf dein Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
       ],
-      "Account size": [
-        "Größe des Kontos"
-      ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
@@ -5988,8 +5970,8 @@
       "Add image URL": [
         "Bild-URL hinzufügen"
       ],
-      "Additional options": [
-        "Zusätzliche Optionen"
+      "Address copied to clipboard": [
+        "Adresse in die Zwischenablage kopiert"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, musst du zunächst öffentlichen Schlüsseln vertrauen, die für den Versand verwendet werden können."
@@ -6156,9 +6138,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Kontakt ${ progress } von ${ max } wird geprüft…"
       ],
-      "Clear app data": [
-        "App-Daten löschen"
-      ],
       "Clear browser data": [
         "Browserdaten löschen"
       ],
@@ -6220,18 +6199,11 @@
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Erstelle eine sichere Cloud für ${ n } Benutzer",
-        "Erstelle eine sichere Cloud für ${ n } Benutzer"
-      ],
       "Create in": [
         "Erstellen in"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
       ],
       "Current plan": [
         "Aktuelles Abonnement"
@@ -6262,6 +6234,9 @@
       ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "default email address": [
+        "standard E-Mail-Adresse"
       ],
       "Default email application": [
         "Standard E-Mail-Anwendung"
@@ -6353,9 +6328,6 @@
       ],
       "Email copied to clipboard": [
         "E-Mail-Adresse in Zwischenablage kopiert"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-Mail-Hosting für 10 eigene E-Mail-Domainnamen ist kostenlos enthalten. Zusätzliche Domains können für ${ price } hinzugefügt werden."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über ${ BRAND_NAME } möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
@@ -7078,9 +7050,6 @@
       "Text to display": [
         "Anzuzeigender Text"
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Die Anwendung muss deine Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die du anschließend herunterladen kannst."
-      ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Die in den Entwurf eingegebenen Daten werden möglicherweise nicht gespeichert, wenn du die Seite verlässt."
       ],
@@ -7239,9 +7208,6 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Dieser öffentliche Schlüssel wird automatisch für die Verschlüsselung von E-Mails verwendet, die an diese Adresse gesendet werden."
-      ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Dadurch werden alle mit dieser App verbundenen Daten, einschließlich heruntergeladener Nachrichten, gelöscht. Die App wird neu gestartet und du musst dich erneut anmelden, um die App zu verwenden."
       ],
       "This sender's public key has not been trusted yet.": [
         "Dem öffentlichen Schlüssel dieses Absenders wurde noch nicht vertraut."
@@ -7425,9 +7391,6 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Wir haben die Erstellung mehrerer kostenloser Konten festgestellt, was gegen unsere ${ termsLink } verstößt."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
-        "Wir haben Abonnemente, die speziell für Benutzer wie dich entwickelt wurden, die mehr als eine E-Mail-Adresse benötigen.\nUm Einschränkungen zu beseitigen, kannst du ein Upgrade auf ein kostenpflichtiges Abonnement."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Wir müssen deine Zahlungsmethode bei deiner Bank authentifizieren."
@@ -7749,11 +7712,6 @@
         "Nur anzeigen"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Kompromittiert"
@@ -8056,9 +8014,6 @@
       "Authenticator app": [
         "Authenticator App"
       ],
-      "Automatically save contacts": [
-        "Kontakte automatisch speichern"
-      ],
       "BCC": [
         "BCC"
       ],
@@ -8224,9 +8179,6 @@
       "Expires": [
         "Gültig bis"
       ],
-      "Export contacts": [
-        "Kontakte exportieren"
-      ],
       "Extended address": [
         "Adresszusatz"
       ],
@@ -8271,9 +8223,6 @@
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
-      ],
-      "Import contacts": [
-        "Kontakte importieren"
       ],
       "Import interval": [
         "Importintervall"
@@ -9320,6 +9269,9 @@
       "10 email addresses/aliases": [
         "10 E-Mail-Adressen/Aliasse"
       ],
+      "10 more premium features": [
+        "10 weitere Premium-Funktionen"
+      ],
       "10-year file version history": [
         "Dateiversionsverlauf für 10 Jahre"
       ],
@@ -9343,6 +9295,9 @@
       ],
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Erweiterte Alias-Funktionen (unterstützt durch SimpleLogin)"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME } Produkte und Funktionen"
@@ -9797,6 +9752,14 @@
         "Abonnement wechseln?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Hol dir Mail Plus für ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Sichere deinen Kalender mit Ende-zu-Ende-Verschlüsselung. Beinhaltet Unterstützung für benutzerdefinierte Kalender, Kalenderfreigabe und mehr."
@@ -9945,6 +9908,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Leite deinen Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
@@ -10179,20 +10145,8 @@
       "Auto-delete spam and trash": [
         "Spam und Papierkorb automatisch löschen"
       ],
-      "Automatically forward emails": [
-        "E-Mails automatisch weiterleiten"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Blockiere die E-Mail-Kommunikation von Betrügern dauerhaft. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "Blockiere unerwünschte Absender"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Lösche gelöschte und Spam-E-Mails nach 30 Tagen."
-      ],
-      "Congratulations on choosing privacy": [
-        "Herzlichen Glückwunsch zur Entscheidung für den Datenschutz"
       ],
       "Dark Web Monitoring": [
         "Dark Web-Überwachung"
@@ -10203,17 +10157,8 @@
       "Download the desktop app and continue": [
         "Lade die Desktop-App herunter und fahre fort"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "Eine so starke Verschlüsselung, dass nur du und die beabsichtigten Empfänger deine E-Mails einsehen können. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "Fixiert und konzentriert"
-      ],
-      "For your eyes only": [
-        "Nur für dich"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "Leite Gmail-Nachrichten automatisch an dein Postfach weiter."
       ],
       "Get notified if your password is compromised.": [
         "Lass dich benachrichtigen, wenn dein Passwort kompromittiert wurde."
@@ -10254,17 +10199,11 @@
       "Replay introduction": [
         "Einführung erneut durchlaufen"
       ],
-      "Skip": [
-        "Überspringen"
-      ],
       "Start using ${ BRAND_NAME }": [
         "Beginne mit ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Verwende die kürzere, eingängigere Version deiner E-Mail Adresse."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "Wir hindern Werbetreibende und Datensammler daran, ein Profil von dir zu erstellen. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Willkommen bei ${ MAIL_APP_NAME }"
@@ -10507,6 +10446,9 @@
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPrice } verlängert. Du kannst jederzeit kündigen."
+      ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
       ],
@@ -10717,28 +10659,9 @@
         "Name"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } bitte unser Verkaufsteam."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Wähle die Anzahl der IP's aus, die in deinem Abonnement enthalten sein sollen. Jede zusätzliche IP kostet ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Solltest du mehr als ${ maxIPs } IP benötigen, ",
-        "Solltest du mehr als ${ maxIPs } IP's benötigen, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontaktiere"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Wähle die Anzahl der Benutzer aus, die in deinem Abonnement enthalten sein sollen. Jeder zusätzliche Benutzer kostet ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Benötigst du mehr als ${ maxUsers } Benutzerkonto, ${ contact } bitte unser Vertriebsteam.",
-        "Benötigst du mehr als ${ maxUsers } Benutzerkonten, ${ contact } bitte unser Vertriebsteam."
       ]
     },
     "Price": {
@@ -11548,6 +11471,9 @@
       ]
     },
     "Status": {
+      "Alias disabled": [
+        "Alias deaktiviert"
+      ],
       "Unsubscribed": [
         "Abbestellt"
       ]
@@ -13425,9 +13351,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lade einen öffentlichen Schlüssel hoch, um das Senden von Ende-zu-Ende-verschlüsselten Nachrichten an diese E-Mail-Adresse zu ermöglichen"
-      ],
-      "You do not have any contacts to export": [
-        "Es gibt keine Kontakte, die exportiert werden können"
       ]
     },
     "tooltip": {
@@ -13438,6 +13361,9 @@
     "Tor out of date": {
       "stable release": [
         "stabile Version"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13597,6 +13523,9 @@
       ],
       "Missing alias suffix": [
         "Fehlendes Alias-Suffix"
+      ],
+      "Name is required": [
+        "Name ist erforderlich"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Nur alphanumerische Zeichen, Punkte, Bindestriche und Unterstriche sind erlaubt."

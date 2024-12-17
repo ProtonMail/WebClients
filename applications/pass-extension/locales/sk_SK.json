@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Accept": [
+        "Prijať"
+      ],
       "Account": [
         "Účet"
       ],
@@ -75,10 +78,10 @@
         "Zmeniť"
       ],
       "Check DNS": [
-        "Skontrolujte DNS"
+        "Skontrolovať DNS"
       ],
       "Check settings": [
-        "Skontrolujte nastavenia"
+        "Skontrolovať nastavenia"
       ],
       "Choose a file or drag it here": [
         "Vyberte súbor alebo ho sem pretiahnite"
@@ -707,7 +710,7 @@
         "K dispozícii je platený plán monitorovania Dark Webu. Aktualizujte si ho pre okamžitý prístup."
       ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
-        "DKIM ${ WIKIPEDIA_LINK_DKIM } je metóda overovania elektronickej pošty navrhnutá na zabránenie falšovaniu emailov. Nastavenie DKIM sa dôrazne odporúča, aby ste znížili pravdepodobnosť, že vaše emaily skončia v priečinku nevyžiadanej pošty príjemcu."
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } je metóda overovania elektronickej pošty navrhnutá na zabránenie falšovania emailov. Nastavenie DKIM sa dôrazne odporúča, aby ste znížili pravdepodobnosť, že vaše emaily skončia v priečinku nevyžiadanej pošty príjemcu."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } je určený na ochranu domény pred neoprávneným použitím, bežne známym ako spoofing emailu. Zásady DMARC, ktoré sú postavené na SPF a DKIM, hovoria prijímajúcemu poštovému serveru, čo má robiť, ak ani jedna z týchto metód overovania neprejde."
@@ -731,7 +734,7 @@
         "Niektorí registrátori domén (Namecheap, CloudFlare atď.) môžu tiež používať @ pre koreňovú doménu."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
-        "SPF ${ WIKIPEDIA_LINK_SPF } je metóda overovania elektronickej pošty určená na zisťovanie falšovania adries odosielateľov počas doručovania emailov. Nastavenie SPF sa vrelo odporúča, aby ste znížili pravdepodobnosť, že vaše emaily skončia v priečinku nevyžiadanej pošty príjemcu."
+        "SPF ${ WIKIPEDIA_LINK_SPF } je metóda overovania elektronickej pošty určená na zisťovanie falšovania adries odosielateľov počas doručovania emailov. Nastavenie SPF sa dôrazne odporúča, aby ste znížili pravdepodobnosť, že vaše emaily skončia v priečinku nevyžiadanej pošty príjemcu."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Tento účet je zraniteľný. Navštívte službu a zmeňte si heslo."
@@ -900,7 +903,7 @@
         "Načítanie únikov pre tento emailový alias zlyhalo"
       ],
       "Failed to load domain settings.": [
-        "Zlyhalo načítanie nastavení domény."
+        "Načítanie nastavení domény zlyhalo."
       ],
       "Failed to load item history": [
         "Nepodarilo sa načítať históriu položky"
@@ -932,6 +935,9 @@
       "Failed to restore items from trash": [
         "Nepodarilo sa obnoviť položky z koša"
       ],
+      "Failed to set default mailbox": [
+        "Nastavenie predvolenej poštovej schránky zlyhalo"
+      ],
       "Failed to sync aliases": [
         "Nepodarilo sa synchronizovať aliasy"
       ],
@@ -942,13 +948,13 @@
         "Odopnutie položky zlyhalo"
       ],
       "Failed to update catch-all setting.": [
-        "Zlyhala aktualizácia nastavení doménového koša."
+        "Aktualizácia nastavení doménového koša zlyhala."
       ],
       "Failed to update default domain": [
         "Aktualizácia predvolenej domény zlyhala"
       ],
       "Failed to update domain mailboxes.": [
-        "Zlyhala aktualizácia doménových poštových schránok."
+        "Aktualizácia doménových poštových schránok zlyhala."
       ],
       "Failed to update domain name.": [
         "Aktualizácia názvu domény zlyhala."
@@ -957,7 +963,7 @@
         "Zlyhala aktualizácia nastavení monitorovania"
       ],
       "Failed to update random prefix generation setting.": [
-        "Zlyhala aktualizácia nastavenia generovania náhodných prefixov."
+        "Aktualizácia nastavenia generovania náhodných prefixov zlyhala."
       ],
       "Failed to verify domain": [
         "Overenie domény zlyhalo"
@@ -1244,6 +1250,12 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizácia \"${ payload.item.data.metadata.name }\" bola zamietnutá"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } zablokovaný",
+        "${ blockedEmailsCount } zablokované",
+        "${ blockedEmailsCount } zablokovaných",
+        "${ blockedEmailsCount } zablokovaných"
+      ],
       "${ count } invite successfully sent": [
         "${ count } pozvánka úspešne odoslaná",
         "${ count } pozvánky úspešne odoslané",
@@ -1264,6 +1276,12 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } zobrazení"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } preposlaný",
+        "${ forwardedEmailsCount } preposlané",
+        "${ forwardedEmailsCount } preposlaných",
+        "${ forwardedEmailsCount } preposlaných"
       ],
       "${ memberCount } member": [
         "${ memberCount } člen",
@@ -1287,7 +1305,7 @@
         "${ PASS_APP_NAME } sa bude prispôsobovať vzhľadu systému."
       ],
       "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
-        "${ PASS_APP_NAME } vygeneruje presmerovaciu adresu (označovanú aj ako reverzný alias), ktorú môžete skopírovať do schránky."
+        "${ PASS_APP_NAME } vygeneruje adresu presmerovania (označovanú aj ako reverzný alias), ktorú môžete skopírovať do schránky."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } naimportuje len prihlasovacie údaje, poznámky, platobné karty a identity."
@@ -1316,6 +1334,12 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } úspešne zapnutý"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } odoslaný",
+        "${ repliedEmailsCount } odoslané",
+        "${ repliedEmailsCount } odoslaných",
+        "${ repliedEmailsCount } odoslaných"
+      ],
       "${ trialDaysLeft } day left": [
         "Zostáva ${ trialDaysLeft } deň",
         "Zostávajú ${ trialDaysLeft } dni",
@@ -1339,6 +1363,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše heslo do ${ BRAND_NAME }"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše záložné heslo"
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Prístup k ${ PASS_APP_NAME } bude vyžadovať váš odtlačok prsta alebo PIN zariadenia."
@@ -1483,6 +1510,9 @@
       ],
       "Current version": [
         "Súčasná verzia"
+      ],
+      "Currently selected": [
+        "Aktuálne vybrané"
       ],
       "Decrypting your data": [
         "Dešifrujeme vaše údaje"
@@ -1656,7 +1686,7 @@
         "Importované ${ date }"
       ],
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
-        "V ${ PASS_SHORT_APP_NAME } je poznámka k položke zašifrovaná pomocou šifrovacieho kľúča položky a poznámku môžu zobraziť len používatelia, ktorí majú prístup k položke. Nemôže ju vidieť ani ${ BRAND_NAME } alebo SimpleLogin."
+        "V ${ PASS_SHORT_APP_NAME } je poznámka k položke zašifrovaná pomocou šifrovacieho kľúča položky a poznámku môžu zobraziť len používatelia, ktorí majú prístup k položke. Nemôže ju vidieť ani ${ BRAND_NAME } ani SimpleLogin."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Pre čo najlepší zážitok z rozšírenia ${ PASS_APP_NAME }, udeľte rozšíreniu potrebné oprávnenia"
@@ -1793,6 +1823,9 @@
       "None": [
         "Nezamykať"
       ],
+      "Not recommended": [
+        "Neodporúčané"
+      ],
       "Offline mode could not be disabled at the moment": [
         "Offline režim momentálne nie je možné vypnúť"
       ],
@@ -1852,6 +1885,15 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password": [
+        "Potvrďte vaše záložné heslo, prosím"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Potvrďte, prosím, vaše záložné heslo pre automatické uzamknutie pomocou vášho hesla."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Potvrďte, prosím, vaše záložné heslo pre zrušenie vášho aktuálneho zámku."
       ],
       "Please confirm your extra password": [
         "Potvrďte vaše dodatočné heslo, prosím"
@@ -1965,7 +2007,7 @@
         "Obnovovanie položiek z koša..."
       ],
       "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Adresa reverzného aliasu skopírovaná do schránky. Odošlite email na túto adresu a ${ Email } ju dostane."
+        "Adresa reverzného aliasu skopírovaná do schránky. Odošlite email na túto adresu a ${ Email } ho prijme."
       ],
       "Save login": [
         "Uložiť prihlásenie"
@@ -2022,7 +2064,7 @@
         "Prihlasujeme vás"
       ],
       "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
-        "Poznámka SimpleLogin je uložená na rovnakom mieste, ako adresa aliasu a hoci je chránená šifrovaním v pokoji, nie je šifrovaná E2E, čo znamená, že ju môže čítať ktokoľvek, kto má prístup k databáze SimpleLogin."
+        "Poznámka SimpleLogin je uložená na rovnakom mieste, ako adresa aliasu a hoci je v nečinnosti chránená šifrovaním, nie je šifrovaná E2E, čo znamená, že ju môže čítať ktokoľvek, kto má prístup k databáze SimpleLogin."
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Keď budete nabudúce potrebovať alias, jednoducho použite ${ emailBold }: pri prvom prijatí emailu sa vytvorí ${ automaticallyBold }. Ak chcete mať detailnejšiu kontrolu, môžete definovať aj ${ rulesHyperLink }."
@@ -2046,7 +2088,7 @@
         "Ďakujeme, problém bol nahlásený"
       ],
       "The display name when sending an email from this alias.": [
-        "Meno zobrazované pri odosielaní emailu z tohto aliasu."
+        "Zobrazované meno pri odosielaní emailu z tohto aliasu."
       ],
       "The export will only contain vaults that you own.": [
         "Export bude obsahovať iba trezory, ktoré vlastníte."
@@ -2079,7 +2121,7 @@
         "Táto operácia je nezvratná."
       ],
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
-        "Táto operácia je nezvratná. Všetky aliasy používajúce doménu ${ domainTextBold } budú vymazané. Upozorňujeme, že po odstránení nie je možné aliasy obnoviť."
+        "Táto operácia je nezvratná. Všetky aliasy používajúce doménu ${ domainTextBold } budú vymazané. Upozorňujeme, že po odstránení nebude možné aliasy obnoviť."
       ],
       "This option is currently not available on your device.": [
         "Táto možnosť nie je vo vašom zariadení momentálne k dispozícii."
@@ -2131,6 +2173,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho záložného hesla"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho dodatočného hesla"
@@ -2209,6 +2254,9 @@
       ],
       "You are about to create:": [
         "Chystáte sa vytvoriť:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Môžete tiež definovať PIN kód na odomknutie ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Teraz môžete použiť svoje ${ BRAND_NAME } heslo na prístup k ${ PASS_SHORT_APP_NAME } offline"
@@ -2314,8 +2362,11 @@
       "${ forwardCount } forward": [
         "${ forwardCount } preposlanie",
         "${ forwardCount } preposlania",
-        "${ forwardCount } preposielaní",
-        "${ forwardCount } preposielaní"
+        "${ forwardCount } preposlaní",
+        "${ forwardCount } preposlaní"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails } za posledných 14 dní."
       ],
       "${ hours } hour": [
         "${ hours } hodiny",
@@ -2463,6 +2514,9 @@
       ],
       "Autosuggest": [
         "Automatické navrhovanie"
+      ],
+      "Backup password": [
+        "Záložné heslo"
       ],
       "Biometrics": [
         "Biometria"
@@ -3046,6 +3100,9 @@
       "Unlock with": [
         "Odomknúť pomocou"
       ],
+      "Unlock with:": [
+        "Odomknúť pomocou:"
+      ],
       "Unnamed Credit Card": [
         "Nepomenovaná platobná karta"
       ],
@@ -3439,7 +3496,7 @@
         "Aliasy"
       ],
       "Auto create/on the fly alias": [
-        "Automatické vytváranie aliasov za pochodu"
+        "Automatické vytváranie aliasov za behu"
       ],
       "Auto-lock update": [
         "Aktualizácia automatického uzamknutia"
@@ -3449,6 +3506,9 @@
       ],
       "Blocked addresses": [
         "Zablokované adresy"
+      ],
+      "Change your lock method": [
+        "Zmeňte spôsob uzamykania"
       ],
       "Confirm extra password": [
         "Potvrďte dodatočné heslo"
@@ -3524,6 +3584,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Páči sa vám ${ PASS_APP_NAME }?"
+      ],
+      "Enter your backup password": [
+        "Zadajte vaše záložné heslo"
       ],
       "Enter your extra password": [
         "Zadajte vaše dodatočné heslo"
@@ -3768,7 +3831,7 @@
     },
     "Validation": {
       "Domain URL is invalid": [
-        "URL domény je neplatná"
+        "URL adresa domény je neplatná"
       ],
       "Duplicated URL": [
         "Duplicitná URL"
@@ -3903,6 +3966,9 @@
       ],
       "Move to trash": [
         "Presunúť do koša"
+      ],
+      "Name is required": [
+        "Názov je povinný"
       ],
       "No items": [
         "Žiadne položky"

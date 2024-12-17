@@ -60,9 +60,6 @@
       "Add group": [
         "Afegeix un grup"
       ],
-      "Add new contact": [
-        "Afegeix un contacte"
-      ],
       "Add new group": [
         "Afegeix un grup"
       ],
@@ -285,8 +282,8 @@
       "Export contact group": [
         "Exporta el grup de contactes"
       ],
-      "Export contacts": [
-        "Exportar contactes"
+      "Export selection as .vcf": [
+        "Exporteu la selecció al format *.vcf"
       ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
@@ -392,6 +389,9 @@
       ],
       "Merge contacts": [
         "Combinar contactes"
+      ],
+      "More actions": [
+        "Més accions"
       ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
@@ -889,7 +889,7 @@
         "Autenticador de doble factor (2FA) integrat"
       ],
       "One-time payment, lifetime deal": [
-        "Un pagament únic, una oferta de per vida"
+        "Pagament únic, oferta per a tota la vida"
       ],
       "Online document editor": [
         "Editor de documents en línia"
@@ -1096,7 +1096,7 @@
     },
     "Button": {
       "Change email address settings": [
-        "Modificar les preferències de l'adreça de correu electrònic"
+        "Modifica les preferències de l'adreça de correu electrònic"
       ],
       "Continue": [
         "Continua"
@@ -3121,7 +3121,7 @@
     },
     "Error notification": {
       "Display name cannot be empty": [
-        "El nom a mostrar no pot estar buit."
+        "El nom visible no pot estar buit"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3238,7 +3238,7 @@
         "Convidat per: ${ inviteEmail }"
       ],
       "Lifetime accounts cannot join a family plan.": [
-        "Els comptes Lifetime no poden unir-se a un pla familiar."
+        "Els comptes de per vida no poden unir-se a un pla familiar."
       ],
       "Manage addresses": [
         "Gestiona les adreces"
@@ -3849,14 +3849,8 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accés al compte està restringit a causa de factures impagades. Contacteu amb el vostre administrador."
       ],
-      "Account size": [
-        "Mida del compte"
-      ],
       "Account successfully updated": [
         "El compte s'ha actualitzat."
-      ],
-      "Additional options": [
-        "Opcions addicionals"
       ],
       "Address copied to clipboard": [
         "S'ha copiat l'adreça al porta-retalls."
@@ -3974,7 +3968,7 @@
         "Crea ${ calendarsToBeCreatedCount } calendaris"
       ],
       "Create a copy to edit": [
-        "Crea una còpia per editar"
+        "Crea una còpia per a editar"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les carpetes que vulgueu importar."
@@ -3984,10 +3978,6 @@
       ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Crea un núvol segur per a ${ n } membre",
-        "Crea un núvol segur per a ${ n } membres"
       ],
       "Create in": [
         "Crear a"
@@ -4009,9 +3999,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crèdit per la part no utilitzada de la vostra subscripció del pla anterior"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "S'admeten fitxers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions així com els formats vCard 3.1 i 4.0 (codificació UTF-8)."
       ],
       "Current plan": [
         "Pla actual"
@@ -4087,9 +4074,6 @@
       ],
       "email": [
         "corrreu electrònic"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "S'inclou gratuïtament l'allotjament de correu electrònic per a 10 noms de domini de correu electrònic personalitzats. Es poden afegir dominis addicionals per ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'allotjament de correu electrònic només està disponible per als dominis que ja teniu. El registre de domini no està disponible actualment a través de ${ BRAND_NAME }. Podeu allotjar correu electrònic per a dominis registrats a qualsevol registrador de dominis."
@@ -4577,7 +4561,7 @@
         "S'ha produït un error."
       ],
       "Start sharing it with contacts and use it for online services.": [
-        "Comenceu a compartir-la amb els vostres contactes i utilitzeu-la per a serveis en línia."
+        "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
@@ -4596,9 +4580,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "És possible que el compte tingui una clau nova o que el següent hagi estat manipulat: ${ items }. Obriu-ho només si hi confieu."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
       ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "No s'ha pogut verificar l'autoria de les modificacions en el document. Voleu marcar aquest document com a verificat? Podeu optar per Ignorar i decidir-ho més tard."
@@ -4827,7 +4808,7 @@
         "Esteu a punt d'obrir una altra pestanya del navegador i visitar:"
       ],
       "You are about to open your default browser and visit:": [
-        "Esteu a punt d'obrir el vostre navegador predeterminat i visitar:"
+        "Esteu a punt d'obrir el navegador per defecte i visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
@@ -4994,11 +4975,6 @@
         "Només lectura"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
-      ]
-    },
     "Item": {
       "file attributes": [
         "atributs del fitxer"
@@ -5098,9 +5074,6 @@
       "Authenticator app": [
         "Aplicació d'autenticació"
       ],
-      "Automatically save contacts": [
-        "Desar contactes automàticament"
-      ],
       "Beta Access": [
         "Accés beta"
       ],
@@ -5127,12 +5100,6 @@
       ],
       "Calendars": [
         "Calendaris"
-      ],
-      "Can edit": [
-        "Edita"
-      ],
-      "Can view": [
-        "Mostra"
       ],
       "Cancel download": [
         "Cancel·lar la descarregada"
@@ -5248,9 +5215,6 @@
       "Expires": [
         "Expira"
       ],
-      "Export contacts": [
-        "Exportar contactes"
-      ],
       "Extended address": [
         "Adreça completa"
       ],
@@ -5280,9 +5244,6 @@
       ],
       "Import all messages": [
         "Importar tots els missatges"
-      ],
-      "Import contacts": [
-        "Importar contactes"
       ],
       "Import interval": [
         "Interval d'importació"
@@ -5499,14 +5460,6 @@
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "Organitzeu, afegiu i editeu fitxers"
-      ],
-      "View and download": [
-        "Mostra i descarrega"
       ]
     },
     "Label for contact group color": {
@@ -6060,11 +6013,11 @@
         "Fins a ${ numberOfUsers } usuaris"
       ],
       "${ options }-day file version history": [
-        "Historial de versions de fitxers d'${ options } dia",
-        "Historial de versions de fitxers d'${ options } dies"
+        "Historial de versions de fitxer de ${ options } dies",
+        "Historial de versions de fitxers de ${ options } dies"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
-        "Accés de tota la vida a les funcions ${ PASS_APP_NAME } i SimpleLogin"
+        "Accés de per vida a ${ PASS_APP_NAME } i SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
@@ -6128,7 +6081,7 @@
         "Protecció avançada dels comptes"
       ],
       "Advanced alias features (powered by SimpleLogin)": [
-        "Funcions d'àlies avançades (impulsades per SimpleLogin)"
+        "Funcions d'àlies avançades (impulsades pel SimpleLogin)"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Tots els productes i funcions de ${ BRAND_NAME }"
@@ -6245,7 +6198,7 @@
         "Acord de processament de dades RGPD"
       ],
       "Generate emails with a prompt": [
-        "Genera correus electrònics amb una demanda"
+        "Genera correus electrònics amb una indicació"
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
@@ -6660,7 +6613,7 @@
         "Compartiu fàcilment els vostres calendaris amb la família, els amics o els col·legues."
       ],
       "Email everyone in a group with a single email address": [
-        "Envieu un correu electrònic a tothom d'un grup amb una única adreça de correu electrònic."
+        "Envieu un correu electrònic a tothom en un grup amb una única adreça de correu electrònic."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Assegura que rebeu tots els correus electrònics enviats al vostre domini, fins i tot si l'adreça de correu electrònic no existeix, ha deixat d'existir o té un error ortogràfic"
@@ -6684,7 +6637,7 @@
         "Podeu afegir etiquetes als missatges per facilitar-ne la cerca o l'aplicació de filtres"
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
-        "Accés de tota la vida a les funcions prèmium de ${ PASS_APP_NAME } + SimpleLogin."
+        "Accés per a tota la vida a les funcions prèmium de ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Com una carpeta, una caixa forta és una manera còmoda d'organitzar els elements"
@@ -6874,11 +6827,17 @@
       "\"${ name }\" created successfully": [
         "S'ha creat \"${ name }\""
       ],
+      "\"${ name }\" deleted": [
+        "S'ha eliminat «${ name }»."
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "S'ha eliminat \"${ name }\" de manera permanent de la paperera"
       ],
       "\"${ name }\" failed to be created": [
         "No s'ha pogut crear \"${ name }\""
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "No s'ha pogut eliminar «${ name }»."
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "No s'ha pogut eliminar ${ name } de manera permanent de la paperera"
@@ -6917,9 +6876,17 @@
         "No s'ha pogut desxifrar ${ count } element.",
         "No s'han pogut desxifrar ${ count } elements."
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } element eliminat",
+        "${ numberOfItems } elements eliminats"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "S'ha eliminat ${ numberOfItems } element permanentment de la paperera",
         "S'han eliminat ${ numberOfItems } elements permanentment de la paperera"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "No s'ha pogut eliminar ${ numberOfItems } element.",
+        "No s'han pogut eliminar ${ numberOfItems } elements."
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "No s'ha pogut eliminar ${ numberOfItems } element permanentment de la paperera",
@@ -7147,7 +7114,7 @@
     },
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
-        "Totes les funcions premium. 6 usuaris. 1 subscripció fàcil."
+        "Totes les característiques prèmium. 6 usuaris. 1 subscripció fàcil."
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
         "Facturació anual a ${ yearlyPrice }. Estalvieu ${ yearlySavedPrice } amb ${ passFamilyPlanName } (en comparació amb 6 subscripcions individuals de ${ passPlusPlanName })."
@@ -7400,28 +7367,9 @@
         "Nom"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } el nostre equip de vendes."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Seleccioneu el nombre d'IP per incloure en el vostre pla. Cada IP addicional té un cost de ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si necessitéssiu més d'${ maxIPs } IP, ",
-        "Si necessitéssiu més de ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contacte"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Seleccioneu el nombre d'usuaris per incloure en el vostre pla. Cada usuari addicional té un cost de ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si necessiteu més d'${ maxUsers } compte d'usuari, ${ contact } amb el nostre equip de vendes.",
-        "Si necessiteu més de ${ maxUsers } comptes d'usuari, ${ contact } amb el nostre equip de vendes."
       ]
     },
     "Price": {
@@ -8915,7 +8863,7 @@
         "Document sense títol ${ date }"
       ],
       "Upgrade complete!": [
-        "S'ha millorat el vostre pla."
+        "S'ha millorat el pla."
       ],
       "Uploading a large file or folder": [
         "Càrrega d'un fitxer o carpeta gran"
@@ -8954,7 +8902,7 @@
         "La vostra informació exposada"
       ],
       "Your shorter address is now ready": [
-        "La vostra adreça més curta ja està preparada."
+        "La vostra adreça més curta ja està a punt."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9037,9 +8985,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Els hem enviat una invitació per accedir a l'element."
-      ],
-      "You do not have any contacts to export": [
-        "No teniu cap contacte per exportar"
       ]
     },
     "tooltip": {

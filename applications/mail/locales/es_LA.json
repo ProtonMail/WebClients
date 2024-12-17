@@ -69,9 +69,6 @@
       "Add group": [
         "Añadir grupo"
       ],
-      "Add new contact": [
-        "Añadir contacto nuevo"
-      ],
       "Add new group": [
         "Añadir grupo nuevo"
       ],
@@ -242,7 +239,7 @@
         "Contraer la barra de navegación"
       ],
       "Collapse URL": [
-        "Contraer URL"
+        "Reducir la URL"
       ],
       "Color": [
         "Color"
@@ -466,7 +463,7 @@
         "Expandir la barra de navegación para ver las etiquetas"
       ],
       "Expand URL": [
-        "Ampliar URL"
+        "Ampliar la URL"
       ],
       "Expand video conferencing widget": [
         "Expandir el widget de videoconferencia"
@@ -480,8 +477,8 @@
       "Export contact group": [
         "Exportar grupo de contactos"
       ],
-      "Export contacts": [
-        "Exportar contactos"
+      "Export selection as .vcf": [
+        "Exportar la selección en formato *.vcf"
       ],
       "External encryption": [
         "Cifrado externo"
@@ -759,6 +756,9 @@
       ],
       "More": [
         "Más"
+      ],
+      "More actions": [
+        "Más acciones"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Más detalles de ${ ariaLabelTitle }"
@@ -1172,7 +1172,7 @@
         "Mostrar la barra de navegación"
       ],
       "Show preview": [
-        "Vista previa"
+        "Mostrar la vista previa"
       ],
       "Show side panel": [
         "Mostrar el panel lateral"
@@ -1199,7 +1199,7 @@
         "Destacar"
       ],
       "Start import": [
-        "Iniciar importación"
+        "Iniciar la importación"
       ],
       "Start setup": [
         "Iniciar la configuración"
@@ -1373,7 +1373,7 @@
         "Ver HTML"
       ],
       "View invoice": [
-        "Ver factura"
+        "Ver la factura"
       ],
       "View keys": [
         "Ver claves"
@@ -2372,7 +2372,7 @@
         "maíz"
       ],
       "mughal green": [
-        "verde mogol"
+        "verde oscuro"
       ],
       "ocean": [
         "océano"
@@ -2381,7 +2381,7 @@
         "aceituna"
       ],
       "outer space": [
-        "espacio exterior"
+        "azul cósmico"
       ],
       "pacific": [
         "pacífico"
@@ -3735,7 +3735,8 @@
       ]
     },
     "Desktop notification body": {
-      "${ notificationsToShow.length } new messages": [
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } nuevo mensaje",
         "${ notificationsToShow.length } nuevos mensajes"
       ],
       "From: ${ sender } - ${ Subject }": [
@@ -4195,7 +4196,7 @@
         "Fecha de expiración inválida"
       ],
       "Invalid IBAN": [
-        "IBAN inválido"
+        "El IBAN no es válido."
       ],
       "Invalid name": [
         "Nombre inválido"
@@ -5292,23 +5293,14 @@
       "Checklist complete": [
         "Lista de verificación completada"
       ],
-      "Close": [
-        "Cerrar"
-      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Complete esta lista de tareas en ${ daysCount } días para duplicar su almacenamiento gratis."
-      ],
-      "Congratulations, you completed all the steps!": [
-        "¡Felicidades, ha terminado todos los pasos!"
       ],
       "Discover how our ${ strongText } protect you": [
         "Descubra cómo nuestras ${ strongText } le protegen"
       ],
       "Discover privacy features": [
         "Descubra las funciones de privacidad"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "Duplique el almacenamiento gratuito a 1 GB cuando complete los siguientes:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Cifrado tan sólido que solo usted y los destinatarios pueden ver los correos electrónicos."
@@ -5337,26 +5329,14 @@
       "Learn more": [
         "Más información"
       ],
-      "Maybe later": [
-        "Quizás más tarde"
-      ],
       "Nice! You've updated all services in this category.": [
         "¡Hecho! Ha actualizado todos los servicios en esta categoría."
-      ],
-      "Open checklist": [
-        "Abrir la lista de verificación"
-      ],
-      "Open checklist and get free storage": [
-        "Abra la lista de comprobación y obtenga almacenamiento gratis"
       ],
       "Popular online services": [
         "Servicios populares en línea"
       ],
       "privacy features": [
         "funciones de privacidad"
-      ],
-      "Protect and simplify your email": [
-        "Proteja y simplifique el correo"
       ],
       "Protection from trackers": [
         "Protección contra rastreadores"
@@ -6021,9 +6001,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acceso restringido a la cuenta por falta de pago. Contacte con la administración."
       ],
-      "Account size": [
-        "Tamaño de la cuenta"
-      ],
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
@@ -6032,9 +6009,6 @@
       ],
       "Add image URL": [
         "Añadir URL de imagen"
-      ],
-      "Additional options": [
-        "Opciones adicionales"
       ],
       "Address copied to clipboard": [
         "Se copió la dirección al portapapeles."
@@ -6204,9 +6178,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Verificando contacto ${ progress } de ${ max }..."
       ],
-      "Clear app data": [
-        "Borrar datos de la aplicación"
-      ],
       "Clear browser data": [
         "Borrar los datos del navegador"
       ],
@@ -6268,18 +6239,11 @@
       "Create a new contact group": [
         "Crear un grupo de contactos nuevo"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Crear una nube segura para ${ n } miembro",
-        "Crear una nube segura para ${ n } miembros"
-      ],
       "Create in": [
         "Crear en"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no usada de la suscripción al plan anterior"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
       "Current plan": [
         "Plan actual"
@@ -6312,7 +6276,7 @@
         "Servidores dedicados"
       ],
       "default email address": [
-        "dirección de correo electrónico por defecto"
+        "dirección de correo por defecto"
       ],
       "Default email application": [
         "Aplicación de correo por defecto"
@@ -6405,9 +6369,6 @@
       "Email copied to clipboard": [
         "Correo electrónico copiado al portapapeles"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se pueden añadir dominios adicionales por ${ price }."
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para los dominios que ya posee. El registro de dominio no está disponible actualmente a través de ${ BRAND_NAME }. Puede alojar correo electrónico para dominios registrados en cualquier registrador de dominios."
       ],
@@ -6459,7 +6420,7 @@
         "Expandir selección"
       ],
       "Expand text": [
-        "Expandir texto"
+        "Ampliar el texto"
       ],
       "Expiration time": [
         "Tiempo de expiración"
@@ -6738,7 +6699,7 @@
         "Los mensajes que hayan estado en la papelera y en spam por más de 30 días serán eliminados automáticamente."
       ],
       "Messages to all your email addresses will go to your inbox.": [
-        "Los mensajes de todas sus direcciones de correo electrónico se enviarán a su bandeja de entrada."
+        "Los mensajes de todas sus direcciones de correo se enviarán a su bandeja de entrada."
       ],
       "MM/YY": [
         "MM/AA"
@@ -7145,9 +7106,6 @@
       "Text to display": [
         "Texto a mostrar"
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "La aplicación necesita descifrar localmente los contactos antes de poder exportarlos. Al final del proceso se generará un archivo VCF y podrá descargarlo."
-      ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Los datos que ha ingresado en el borrador pueden no guardarse si sale de la página."
       ],
@@ -7310,9 +7268,6 @@
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Esta clave pública se usará automáticamente para cifrar el correo electrónico enviado a esta dirección."
       ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Esto borrará todos los datos asociados con esta aplicación incluyendo los mensajes descargados. La aplicación se restablecerá y tendrá que iniciar sesión de nuevo."
-      ],
       "This sender's public key has not been trusted yet.": [
         "La clave pública de este remitente aún no ha sido confiada."
       ],
@@ -7336,6 +7291,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Para recuperar los datos, debe volver a reactivar la clave de la cuenta usada en el momento en que se crearon los datos. Esto requerirá que recuerde la contraseña usada cuando se generó la clave."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Para eliminar restricciones, puede mejorar a un plan de pago."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Para eliminar restricciones, puede visitar ${ mailLink } y mejorar a un plan de pago."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Para darse de baja de esta lista de correo, se enviará un correo desde ${ boldFrom } con los siguientes detalles definidos por el remitente del boletín:"
@@ -7499,8 +7460,8 @@
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Hemos detectado la creación de varias cuentas gratuitas, lo que infringe nuestros ${ termsLink }."
       ],
-      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
-        "Ofrecemos planes diseñados para usuarios como usted, que necesitan más de una dirección de correo electrónico.\nPara eliminar las restricciones, puede mejorar a un plan de pago."
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Tenemos planes diseñados específicamente para usuarios como usted que necesitan varias direcciones de correo electrónico."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Necesitamos autenticar su método de pago con el banco."
@@ -7825,11 +7786,6 @@
         "Solo lectura"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistente con tecnología de IA para ayudarle a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Comprometida"
@@ -7855,10 +7811,10 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "Al hacer clic en \"Confiar clave\" asocia esta clave pública con este remitente y los correos de esta dirección se verificarán cifradamente de forma automática."
+        "Al hacer clic en «Confiar clave» asocia esta clave pública con este remitente y los correos de esta dirección se verificarán cifradamente de forma automática."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
-        "Al hacer clic en \"Confiar clave\" crea un contacto nuevo y asocia esta clave pública con este remitente. Los correos de esta dirección se verificarán cifradamente de forma automática."
+        "Al hacer clic en «Confiar clave» crea un contacto nuevo y asocia esta clave pública con este remitente. Los correos de esta dirección se verificarán cifradamente de forma automática."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "¿Quiere confiar en la clave pública principal con la siguiente huella digital?",
@@ -8138,9 +8094,6 @@
       "Authenticator app": [
         "App autenticadora"
       ],
-      "Automatically save contacts": [
-        "Guardar contactos automáticamente"
-      ],
       "BCC": [
         "CCO"
       ],
@@ -8280,7 +8233,7 @@
         "Dirección de correo"
       ],
       "Email format": [
-        "Formato de correo"
+        "Formato de correo electrónico"
       ],
       "Emails": [
         "Correos"
@@ -8305,9 +8258,6 @@
       ],
       "Expires": [
         "Expira"
-      ],
-      "Export contacts": [
-        "Exportar contactos"
       ],
       "Extended address": [
         "Dirección ampliada"
@@ -8353,9 +8303,6 @@
       ],
       "Import all messages": [
         "Importar todos los mensajes"
-      ],
-      "Import contacts": [
-        "Importar contactos"
       ],
       "Import interval": [
         "Importar intervalo"
@@ -10293,20 +10240,8 @@
       "Auto-delete spam and trash": [
         "Eliminación automática del spam y la papelera"
       ],
-      "Automatically forward emails": [
-        "Reenvíe correos automáticamente"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Bloquee las comunicaciones por correo electrónico de los estafadores de forma permanente. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "Bloquee remitentes no deseados"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Borre los correos electrónicos eliminados y spam después de 30 días."
-      ],
-      "Congratulations on choosing privacy": [
-        "Felicitaciones por elegir la privacidad"
       ],
       "Dark Web Monitoring": [
         "Monitoreo de la Dark Web"
@@ -10317,17 +10252,8 @@
       "Download the desktop app and continue": [
         "Descargue la aplicación de escritorio y continúe"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "Cifrado tan sólido que solo usted y los destinatarios pueden ver los correos electrónicos. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "Fijo y concentrado"
-      ],
-      "For your eyes only": [
-        "Solo para usted"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "Reenvíe los mensajes de Gmail a el buzón."
       ],
       "Get notified if your password is compromised.": [
         "Obtenga notificaciones si su contraseña es comprometida."
@@ -10368,17 +10294,11 @@
       "Replay introduction": [
         "Repetir la introducción"
       ],
-      "Skip": [
-        "Omitir"
-      ],
       "Start using ${ BRAND_NAME }": [
         "Comience a usar ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Empiece a usar la versión más corta y atractiva de su dirección de correo."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "Impedimos que los anunciantes y recopiladores de datos le perfilen. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Le damos la bienvenida a ${ MAIL_APP_NAME }"
@@ -10846,28 +10766,9 @@
         "Nombre"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "contacte ${ contactHref } con nuestro equipo de ventas."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Elija el número de IPs para incluir en el plan. Cada IP adicional cuesta ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si necesita más de ${ maxIPs } IP, ",
-        "Si necesita más de ${ maxIPs } IPs, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contacte"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Elija el número de usuarios para incluir en el plan. Cada usuario adicional cuesta ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si necesita más de ${ maxUsers } cuenta de usuario, ${ contact } con nuestro equipo de ventas.",
-        "Si necesita más de ${ maxUsers } cuentas de usuario, ${ contact } con nuestro equipo de ventas."
       ]
     },
     "Price": {
@@ -13572,9 +13473,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Cargue una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"
-      ],
-      "You do not have any contacts to export": [
-        "No tiene ningún contacto para exportar"
       ]
     },
     "tooltip": {

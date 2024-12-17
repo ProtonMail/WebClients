@@ -80,6 +80,9 @@
       "Color": [
         "Farve"
       ],
+      "Colour": [
+        "Farve"
+      ],
       "Copy link": [
         "Kopiér link"
       ],
@@ -152,8 +155,8 @@
       "Left align": [
         "Juster til venstre"
       ],
-      "Link": [
-        "Link"
+      "More options": [
+        "Flere muligheder"
       ],
       "Numbered List": [
         "Nummereret liste"
@@ -208,9 +211,6 @@
       ],
       "Strike-through": [
         "Gennemstreget"
-      ],
-      "Strikethrough": [
-        "Gennemstregning"
       ],
       "Submit": [
         "Indsend"
@@ -412,9 +412,15 @@
       ],
       "Read or print final document": [
         "Læs eller print det endelige dokument"
+      ],
+      "Use the dropdown above to switch and start making suggestions.": [
+        "Brug rullemenuen ovenfor til at skifte og begynde at komme med forslag."
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
+        "Der opstod en fejl under indlæsning af dokumentet. For at forhindre beskadigelse af dokumentet er editoren låst. Genindlæs siden og prøv igen. Hvis fejlen fortsætter, skal du åbne Versionshistorik i menuen for at forsøge at gendanne dit dokument til en tidligere version."
+      ],
       "Failed to export document.": [
         "Dokumentet kunne ikke eksporteres."
       ],
@@ -660,6 +666,9 @@
       ],
       "Delete thread": [
         "Slet tråd"
+      ],
+      "Explore the New Suggestion Mode": [
+        "Udforsk den nye forslagstilstand"
       ],
       "Language not supported": [
         "Sprog ikke understøttet"

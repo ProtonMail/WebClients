@@ -783,6 +783,9 @@
       "[Error] an item could not be parsed": [
         "[შეცდომა] ელემენტის დამუშავება შეუძლებელია"
       ],
+      "A domain ownership must be verified first.": [
+        "ჯერ დომენის ფლობა უნდა გადაამოწმოთ."
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "ამჟამად ფსევდონიმის განახლება შეუძლებელია. მოგვიანებით სცადეთ"
       ],
@@ -949,6 +952,9 @@
       ],
       "Failed to restore items from trash": [
         "ნაგვის ყუთიდან ელემენტების აღდგენა ჩავარდა"
+      ],
+      "Failed to set default mailbox": [
+        "ნაგულისხმევი ელფოსტის დაყენება ჩავარდა"
       ],
       "Failed to sync aliases": [
         "ფსევდონიმების სინქრონიზაცია ჩავარდა"
@@ -1249,6 +1255,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" განახლება წაიშალა"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } დაბლოკილი",
+        "${ blockedEmailsCount } დაბლოკილი"
+      ],
       "${ count } invite successfully sent": [
         "${ count } მოსაწვევი წარმატებით გაიგზავნა",
         "${ count } მოსაწვევი წარმატებით გაიგზავნა"
@@ -1263,6 +1273,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } ნახვა"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } გადაგზავნილია",
+        "${ forwardedEmailsCount } გადაგზავნილია"
       ],
       "${ memberCount } member": [
         "${ memberCount } წევრი",
@@ -1293,12 +1307,19 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } წარმატებით ჩაირთო"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } გაგზავნილია",
+        "${ repliedEmailsCount } გაგზავნილია"
+      ],
       "${ row.breachCount } breach detected": [
         "აღმოჩენილია ${ row.breachCount } გაჟონვა",
         "აღმოჩენილია ${ row.breachCount } გაჟონვა"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 დღე ფასიანი ფუნქციების უფასოდ მისაღებად, მხოლოდ, ${ BRAND_NAME }-ის ანგარიშის მიღების პირველი კვირის განმავლობაში."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "კონტაქტი შეიქმნება თითოეული ელფოტის მისამართისთვის, რომელიც აგზავნის ელფოსტებს, ან იღებს მათ ${ aliasEmail }-დან."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "ხელმისაწვდომია ${ PASS_APP_NAME }-ის ახალი ვერსია. განაახლეთ ის და მიიღეთ უახლესი ფუნქციები და შეცდომის გამართვები."
@@ -1308,6 +1329,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }-სთან წვდომას ყოველთვის დასჭირდება ${ BRAND_NAME }-ის პაროლი."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "${ PASS_APP_NAME }-სთან წვდომას ყოველთვის დასჭირდება მარქაფი პაროლი."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }-სთან წვდომისთვის თქვენი თითის ანაბეჭდი, ან მოწყობილობის PIN-კოდი დაგჭირდებათ."
@@ -1446,6 +1470,9 @@
       ],
       "Decrypting your data": [
         "თქვენი მონაცემების გაშიფვრა"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "ნაგულისხმევი საჩვენებელი სახელი ფსევდონიმებისთვის, რომლებიც შექმნილია ${ domainDisplay }-ით, თუ ფსევდონიმის საჩვენებელი სახელით არ გადაფარავთ."
       ],
       "Deleted items will be moved here first": [
         "წაშლილი ელემენტები ჯერ აქ იქნება გადმოტანილი"
@@ -1736,6 +1763,9 @@
       "Moving items to trash": [
         "ელემენტების გადატანა ნაგვის ყუთში"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "გჭირდებათ, მისწეროთ ვინმეს, მაგრამ არ გნებავთ, მათ თქვენი ელფოსტის მისამართი დაინახონ? მოირგეთ კონტაქტის ფსევდონიმი."
+      ],
       "Never": [
         "არასოდეს"
       ],
@@ -1811,6 +1841,15 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
+      ],
+      "Please confirm your backup password": [
+        "დაადასტურეთ თქვენი მარქაფი პაროლი"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "დაადასტურეთ თქვენი მარქაფი პაროლი, რომ თქვენი პაროლით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი მარქფი პაროლი."
       ],
       "Please confirm your extra password": [
         "დაადასტურეთ თქვენი დამატებითი პაროლი"
@@ -1913,6 +1952,9 @@
       ],
       "Restoring trashed items...": [
         "ნაგვის ყუთში ჩაყრილი ელემენტების აღდგენა..."
+      ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "უკუფსევდონიმის მისამართი დაკოპირდა ბუფერში. გააგზავნეთ ელფოსტა ამ მისამართზე და მას ${ Email } მიიღებს."
       ],
       "Secure links": [
         "დაცული ბმულები"
@@ -2035,6 +2077,9 @@
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "ელფოსტის მიღების გასაგრძელებლად გადაიტანეთ ეს ფსევდონიმები სხვა საფოსტო ყუთზე:"
       ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "იმისათვის, რომ თქვენი პირადი ელფოსტის მისამართი დამალული დარჩეს, შეგიძლიათ, შექმნათ ფსევდონიმი კონტაქტი, რომელიც თქვენს მისამართს შენიღბავს."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "სხვა პაროლების მმართველიდან მონაცემების შემოსატანად, გადადით პაროლების მმართველში, გამოიტანეთ თქვენი მონაცემები და ატვირთეთ ის ${ PASS_APP_NAME }-ზე. როცა მონაცემების შემოტანა დასრულდება, გამოტანილი ფაილი წაშალეთ."
       ],
@@ -2058,6 +2103,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ${ BRAND_NAME }-ის პაროლით"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი მარქაფი პაროლით"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი დამატებითი პაროლით"
@@ -2129,6 +2177,9 @@
       "You are about to create:": [
         "აპირებთ, შექმნათ:"
       ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "ასევე შეგიძლიათ, დააყენოთ PIN-კოდი ${ PASS_APP_NAME }-ის განბლოკვისთვის"
+      ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "ახლა შეგიძლიათ, თქვენი ${ BRAND_NAME }-ის პაროლი ${ PASS_SHORT_APP_NAME }-ში შესასვლელად ქსელის გარეშეც გამოიყენოთ"
       ],
@@ -2176,6 +2227,9 @@
       "You will no longer be notified of data breaches for this email address.": [
         "ამ ელფოსტის შეტყობინებისთვის მონაცემების გაჟონვისას გაფრთხილება აღარ მოგივათ."
       ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "თქვენ აღარ გექნებათ წვდომა გაზიარებასთან, 2FA-სთან, საკრედიტო ბარათთან და სხვა დამატებით ფუნქციებთან ${ PASS_APP_NAME }-ში"
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "როცა ${ PASS_APP_NAME } არააქტიურობის გამო თვითდაიბლოკება, ეს PIN-კოდი შეგიძლიათ, მის განსაბლოკად გამოიყენოთ."
       ],
@@ -2222,6 +2276,9 @@
       "${ forwardCount } forward": [
         "${ forwardCount } გადაგზავნა",
         "${ forwardCount } გადაგზავნა"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, ბოლო 14 დღეში."
       ],
       "${ hours } hour": [
         "${ hours } საათი",
@@ -2345,6 +2402,9 @@
       ],
       "Auto-lock after": [
         "ავტომატური დაბლოკვის დრო"
+      ],
+      "Backup password": [
+        "მარქაფი პაროლი"
       ],
       "Beta Access": [
         "წვდომა ბეტა ვერსიებზე"
@@ -2534,6 +2594,9 @@
       ],
       "Floor, apartment, building": [
         "სართული, ბინა, შენობა"
+      ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "უსაფრთხოებისთვის, ${ PASS_SHORT_APP_NAME } ავტომატურად დაიბლოკება უქმეობის 10 წუთში."
       ],
       "Forwards to": [
         "გადაგზავნა"
@@ -3531,8 +3594,14 @@
       "Domain": [
         "დომენი"
       ],
+      "Domain ownership verification": [
+        "დომენის ფლობის გადამოწმება"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "მოგწონთ${ PASS_APP_NAME }?"
+      ],
+      "Enter your backup password": [
+        "შეიყვანეთ თქვენი მარქაფის პაროლი"
       ],
       "Enter your extra password": [
         "შეიყვანეთ თქვენი დაამატებითი პაროლი"
@@ -3947,6 +4016,9 @@
       ],
       "Move to trash": [
         "ნაგვის ყუთში გადატანა"
+      ],
+      "Name is required": [
+        "სახელი აუცილებელია"
       ],
       "No items": [
         "ელემენტების გარეშე"

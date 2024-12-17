@@ -1482,6 +1482,9 @@
       "Offline support successfully disabled": [
         "Підтримка автономного доступу успішно відключена"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Пріоритетом наших сповіщень є безпека. Якщо ви не впізнаєте жодної з порушених даних, ви можете сміливо ігнорувати це повідомлення."
+      ],
       "Owner": [
         "Власник"
       ],
@@ -1886,6 +1889,9 @@
       "Auto-lock after": [
         "Автоблокування після"
       ],
+      "Backup password": [
+        "Резервний пароль"
+      ],
       "Beta Access": [
         "Бета-доступ"
       ],
@@ -1967,8 +1973,14 @@
       "Display name": [
         "Ім'я"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Домен"
+      ],
+      "Domain:": [
+        "Домен:"
       ],
       "Domains": [
         "Домени"
@@ -2071,6 +2083,9 @@
       ],
       "Include numbers (0-9)": [
         "Додати цифри (0-9)"
+      ],
+      "Info": [
+        "Інформація"
       ],
       "Instagram handle": [
         "Instagram обробник"
@@ -2354,6 +2369,9 @@
       "Username": [
         "Ім'я користувача"
       ],
+      "Value:": [
+        "Значення:"
+      ],
       "Vault ID": [
         "ID сховища"
       ],
@@ -2571,12 +2589,40 @@
         "Вашу інформацію знайдено принаймні в одному витоці даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
       ]
     },
+    "sso: auth device state": {
+      "Active": [
+        "Активний"
+      ],
+      "Inactive": [
+        "Неактивний"
+      ],
+      "Pending activation": [
+        "Очікується активація"
+      ],
+      "Pending admin activation": [
+        "Очікується активація адміністратора"
+      ],
+      "Rejected": [
+        "Відхилено"
+      ],
+      "Signed out": [
+        "Виконано вихід"
+      ],
+      "Unknown": [
+        "Невідомий"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувача.",
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувачів.",
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувачів.",
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувачів."
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "Темна"
       ]
     },
     "Title": {
@@ -2645,6 +2691,9 @@
       ],
       "Discard changes?": [
         "Відхилити зміни?"
+      ],
+      "Domain": [
+        "Домен"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Вам подобається ${ PASS_APP_NAME }?"
@@ -2955,6 +3004,9 @@
       ],
       "Missing alias suffix": [
         "Відсутній суфікс псевдоніма"
+      ],
+      "Name is required": [
+        "Назва обовʼязкова"
       ],
       "No items": [
         "Немає елементів"

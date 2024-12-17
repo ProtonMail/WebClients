@@ -220,6 +220,9 @@
       "Discard changes": [
         "ცვლილებების გაუქმება"
       ],
+      "Dismiss": [
+        "მოცილება"
+      ],
       "Domain name": [
         "დომენის სახელი"
       ],
@@ -306,6 +309,9 @@
       ],
       "Forgot recovery method?": [
         "დაგავიწყდათ აღდგენის მეთოდი?"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "მიიღეთ ${ MAIL_SHORT_APP_NAME } Plus ფასად ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus }-ის მიღება"
@@ -1128,6 +1134,9 @@
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "განახლდება ${ renewPrice }-ით, ${ renewLength } თვის განმავლობაში",
         "განახლდება ${ renewPrice }-ით, ${ renewLength } თვის განმავლობაში"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "ავტომატური განახლების დრო ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -1233,6 +1242,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "ელფოსტის მისამართის პარამეტრების შეცვლა"
+      ],
+      "Continue": [
+        "გაგრძელება"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
       ],
@@ -2670,6 +2685,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "მომხმარებლების ორგანიზაციაში ჩამატებამდე მრავალმომხმარებლიანი რეჟიმის ჩართვაა საჭირო."
       ],
+      "Please enter a valid entity ID URL": [
+        "შეიყვანეთ სწორი ობიექტის ID-ის ბმული"
+      ],
       "Please generate keys before you try to change your password": [
         "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ],
@@ -3639,9 +3657,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "ანგარიშთან წვდომა აკრძალულია გადაუხდელი ინვოისების გამო. დაუკავშირდით თქვენს ადმინისტრატორს."
       ],
-      "Account size": [
-        "ანგარიშის ზომა"
-      ],
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
       ],
@@ -3675,8 +3690,8 @@
         "რაუტერი სერვერის დამატება: ${ serverNumber } / ${ total }",
         "რაუტერი სერვერის დამატება: ${ serverNumber } / ${ total }"
       ],
-      "Additional options": [
-        "დამატებითი პარამეტრები"
+      "Address copied to clipboard": [
+        "მისამართი დაკოპირდა გაცვლის ბაფერში"
       ],
       "Admin account allocation": [
         "ადმინისტრატორის ანგარიშის გამოყოფა"
@@ -3793,6 +3808,9 @@
       "Change your password": [
         "შეცვალეთ თქვენი პაროლი"
       ],
+      "Choose an Entity ID to continue.": [
+        "გასაგრძელებლად აირჩიეთ ობიექტის ID."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
       ],
@@ -3804,6 +3822,12 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "მიერთების მონაცემები დაახლოებით 1 საათში იქნება ხელმისაწვდომი"
+      ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "გააგრძელეთ, რომ დაუკავშირდით **${ organizationValue.Name }**-ს თქვენი ${ BRAND_NAME }-ის ორგანიზაციიდან."
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "გააგრძელეთ, რომ დაუკავშირდით ამ ობიექტს თქვენი ${ BRAND_NAME }-ის ორგანიზაციიდან."
       ],
       "Continue with ${ freeName }": [
         "გაგრძელება ${ freeName }-ით"
@@ -3822,10 +3846,6 @@
       ],
       "Country code": [
         "ქვეყნის კოდი"
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის",
-        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "შექმენით და მართეთ ქვეანგეარიშები და მიანიჭეთ მათ ელფოსტის მისამართები თქვენი პირადი დომენით."
@@ -3858,14 +3878,17 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }-ის აპლიკაციების გარეგნობის მორგება."
       ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
-      ],
       "dedicated servers": [
         "გამოყოფილი სერვერი"
       ],
+      "Dedicated servers": [
+        "გამოყოფილი სერვერები"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
+      ],
+      "default email address": [
+        "ნაგულისხმევი ელფოსტის მისამართი"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "წაშალეთ ყველა სხვა MX ჩანაწერი ან დარწმუნდით, რომ ${ MAIL_APP_NAME }-ის პრიორიტეტი ყველაზე ნაკლებია."
@@ -3944,14 +3967,11 @@
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
       ],
-      "EduGain configuration saved": [
-        "EduGain-ის კონფიგურაცია შენახულია"
+      "eduGAIN configuration saved": [
+        "eduGAIN-ის კონფიგურაცია შენახულია"
       ],
       "email": [
         "ელფოსტა"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "ელფოსტის ჰოსტინგი 10 ხელით მითითებული დომენის სახელით უფასოა. დამატებითი დომენების შეძენის ფასია ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "ელფოსტის ჰოსტინგი ხელმისაწვდომია, მხოლოდ, იმ დომენებისთვის, რომლებსაც უკვე ფლობთ. დომენის რეგისტრაცია, ამჟამად, არ არის ხელმისაწვდომი ${ BRAND_NAME }-ის საშუალებით. დომენის შეძენა ნებისმიერ რეგისტრატორთან შეგიძლიათ."
@@ -3994,6 +4014,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "შეიყვანეთ კოდი, რომელიც ${ email }-ზე გამოგიგზავნეთ. თუ შეტყობინებას საფოსტო ყუთში ვერ პოულობთ, სპამშიც ჩაიხედეთ."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "შეიყვანეთ ობიექტის ID **eduGAIN** ორგანიზაციისთვის **${ domain.DomainName }**-სთვის."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "ადმინისტრატორის პრივილეგიების აღსადგენად შეიყვანეთ ორგანიზაციის პაროლი. ${ learnMore }"
@@ -4307,6 +4330,9 @@
       "Member": [
         "წევრი"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "შეტყობინებები ყველა თქვენს ელფოსტის მისამართზე საფოსტ ყუთში მოგივათ."
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -4342,9 +4368,6 @@
       ],
       "No Gateways yet": [
         "რაუტერების გარეშე"
-      ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "**eduGAIN** ჩართული ორგანიზები **${ domain.DomainName }**-სთვის აღმოჩენილი არაა."
       ],
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
@@ -4516,6 +4539,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
       ],
+      "Registering your subscription...": [
+        "თქვენი გამოწერის რეგისტრაცია..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "გახსოვდეთ, რომ აუცილებელია, მომხმარებლებს მათი შესვლის დეტალები გაუზიაროთ."
       ],
@@ -4567,9 +4593,6 @@
       "Securing your account": [
         "თქვენი ანგარიშის დაცვა"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "აირჩიეთ ორგანიზაცია, რომელსაც **eduGAIN** აქვს ჩართული **${ domain.DomainName }**-სთვის."
-      ],
       "Select one or multiple user affiliations": [
         "აიჩიეთ ერთი ან მეტი მომხმარებლის წევრობა"
       ],
@@ -4590,6 +4613,9 @@
       ],
       "Session timed out": [
         "სესიის დრო გავიდა"
+      ],
+      "Setting up your new address...": [
+        "თქვენი ახალი მისამართის მორგება..."
       ],
       "Setting up your organization": [
         "ორგანიზაციის მორგება"
@@ -4617,6 +4643,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF განსაზღვრავს, ვის აქვს უფლება, თქვენს დომენზე ელფოსტა გამოაგზავნოს. დარწმუნდით, რომ დაამატეთ შედეგი TXT ჩანაწერ თქვენს DNS კონსოლში (პლატფორმაზე, სადაც დომენი შეიძინეთ)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "დაიწყეთ კონტაქტებთან გაზიარება და გამოიყენეთ ის ინტერნეტ-სერვისებისთვის."
       ],
       "Step ${ step }": [
         "ნაბიჯი ${ step }",
@@ -4721,11 +4750,11 @@
       "This file is too large to preview": [
         "მინიატურისთვის ეს ფაილი მეტისმეტად დიდია"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "ეს ახლა თქვენი ${ defaultEmailAddress }-ია ახალი შეტყობინებების გასაგზავნად."
+      ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "ეს შეტყობინება არ მიაღწევს მხარდაჭერის გუნდამდე. თუ გაქვთ პრობლემა ჩვენს სერვითან, ან ჩვენი მხრიდან დამატებითი ქმედებების საჭირო, დაგვიკავშირდით ბმულზე ${ supportLink }."
-      ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "ეს ორგანიზაცია ჩართულია **eduGAIN**-თან ერთად **${ domain.DomainName }**-სთვის"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "ეს მომხმარებელი, ამჟამად, პასუხისმგებელია თქვენი ორგანიზაციის გადასახადების გადახდაზე. მისი ჩამოქვეითებით, ორგანიზაციის გადახდებზე პასუხისმგებელი თქვენ გახდებით."
@@ -4880,10 +4909,10 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
-      "Username": [
+      "username": [
         "მომხმარებლის სახელი"
       ],
-      "username": [
+      "Username": [
         "მომხმარებლის სახელი"
       ],
       "Users": [
@@ -5245,11 +5274,6 @@
         "მხოლოდ დათვალიერებისათვის"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "არასწორი ელფოსტის მისამართია"
@@ -5553,6 +5577,9 @@
       "Entity ID": [
         "ობიექტის იდენტიფიკატორი"
       ],
+      "Entity ID URL": [
+        "ობიექტის ID-ის ბმული"
+      ],
       "Event": [
         "მოვლენა"
       ],
@@ -5735,6 +5762,9 @@
       ],
       "Recovery phrase": [
         "აღდგენის მდგომარეობა"
+      ],
+      "Remove": [
+        "წაშლა"
       ],
       "Repeat backup password": [
         "გაიმეორეთ მარქაფი პაროლი"
@@ -6238,6 +6268,9 @@
       "From ${ price }": [
         "${ price }-დან"
       ],
+      "Get started for ${ priceCoupon }": [
+        "დაწყება ${ priceCoupon }-დან"
+      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }-დან"
       ],
@@ -6381,6 +6414,9 @@
       ],
       "10 email addresses/aliases": [
         "10 ელ ფოსტა/ფსევდონიმი"
+      ],
+      "10 more premium features": [
+        "და კიდევ 10 ფასიანი ფუნქცია"
       ],
       "10-year file version history": [
         "10-წლიანი ფაილის ვერსიის ისტორია"
@@ -6915,6 +6951,9 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } საცდელი"
       ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "მიიღეთ Mail Plus ფასით ${ priceCoupon }"
+      ],
       "Your account's usage": [
         "თქვენი ანგარიშის გამოყენება"
       ]
@@ -6982,6 +7021,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "შექმენით ${ n }-მდე ელფოსტის მისამართი/ფსევდონიმი, რომლებიც შეგიძლიათ, ოჯახის წევრებს მიანიჭოთ. გამოიყენეთ ისინი, მაგალითად, შოინგისთვის. JemalShpper@${ domain }."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "მომხმარებლის დომენი ფსევდონიმებისთვის, დამატებითი საფოსტო ყუთებისთვის, შესაძლებლობისთვის, რომ ელფოსტების ფსევდონიმებიდან გააგზავნოთ და აშ"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ"
@@ -7265,6 +7307,9 @@
       ],
       "Daily email notifications": [
         "ელფოსტის დღიური გაფრთხილებები"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "ამის გათიშვა მოაცილებ შესაძლებლობას, მიიღოთ გაფრთხილებები ${ BRAND_NAME }-ის აპლიკაციებში"
       ],
       "During your first month": [
         "თქვენი პირველი თვის განმავლობაში"
@@ -7830,6 +7875,9 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ ${ subscriptionLength } თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ renewPrice } ${ subscriptionLengthCopy } თვით. გაუქმება ყოველთვის შეგიძლიათ."
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
+      ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "ტრანზაქცია წარამატებითაა აღმოჩენილი. კრედიტები დაემატება თქვენს ანგარიშს, როცა ტრანზაქცია ბოლომდე დადასტურდება."
       ],
@@ -7991,28 +8039,9 @@
         "წევრები"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } ჩვენს გაყიდვების გუნდს."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "თქვენს სატარიფო გეგმაში ჩასასმელი IP-ების რაოდენობა. თითოეული დამატებითი IP-ის ფასია ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, ",
-        "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "კონტაქტი"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "თქვენს სატარიფო გეგმაში ჩასასმელი მომხმარებლების რაოდენობა. თითოეული დამატებითი მომხმარებლის ფასია ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "თუ დაგჭირდათ ${ maxUsers }-ზე მეტი მომხმარებელი, დაუკავშირდით ჩვენი გაყიდვების გუნდს ${ contact }.",
-        "თუ დაგჭირდათ ${ maxUsers }-ზე მეტი მომხმარებელი, დაუკავშირდით ჩვენი გაყიდვების გუნდს ${ contact }."
       ]
     },
     "Price": {
@@ -8141,6 +8170,9 @@
       ],
       "Details": [
         "დეტალები"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "შეიყვანეთ ელფოსტის მისამართი მომხმარებლისა, რომელიც მოგაწოდათ თქვენმა იდენტიფიკატორის პროვაიდერმა დომენისთვის **${ domainName }**"
       ],
       "Test in progress...": [
         "მიმდინარეობს შემოწმება..."
@@ -8826,6 +8858,10 @@
       "${ n } user detached from SSO": [
         "${ n } მომხმარებელი მოხსნილია SSO-დან",
         "${ n } მომხმარებელი მოხსნილია SSO-დან"
+      ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } მომხმარებელი შეუერთდა თქვენს ორგანიზაციას იდენტიფიკატორის მომწოდებლით. გადახედეთ ანგარიშს ახლა:",
+        "${ n } მომხმარებელი შეუერთდა თქვენს ორგანიზაციას იდენტიფიკატორის მომწოდებლით. გადახედეთ ანგარიშს ახლა:"
       ],
       "${ n } user is inactive. You can safely remove this user from your organization.": [
         "არააქტიურია ${ n } მომხმარებელი. ამ მომხმარებლების წაშლა თქვენი ორგანიზაციიდან უსაფრთხოდ შეგიძლიათ.",
@@ -10051,10 +10087,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -10550,6 +10586,9 @@
       "Unlock your data": [
         "თქვენი მონაცემების განბლოკვა"
       ],
+      "Upgrade complete!": [
+        "განახლება დასრულებულია!"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "ასწიეთ თქვენი ქსელის დაცვის დონე გამოყოფილი სერვერებით"
       ],
@@ -10597,6 +10636,9 @@
       ],
       "Your plan": [
         "თქვენი გეგმა"
+      ],
+      "Your shorter address is now ready": [
+        "თქვენი მოკლე მისამართი ახლა მზადაა"
       ],
       "Your subscriptions": [
         "თქვენი გამოწერები"
@@ -10847,6 +10889,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**ადმინის წვდომის მოთხოვნა რიგშია: ** ჩვენ გავუგზავნეთ მოთხოვნა ამ მომხმარებელს, რომ დაუშვას, რომ მისი ანგარიში ნებისმიერმა ადმინისტრატორმა მართოს."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
       ],

@@ -69,9 +69,6 @@
       "Add group": [
         "Pridať skupinu"
       ],
-      "Add new contact": [
-        "Pridať nový kontakt"
-      ],
       "Add new group": [
         "Pridať novú skupinu"
       ],
@@ -486,9 +483,6 @@
       "Export contact group": [
         "Exportovať skupinu kontaktov"
       ],
-      "Export contacts": [
-        "Exportovať kontakty"
-      ],
       "External encryption": [
         "Externé šifrovanie"
       ],
@@ -518,6 +512,9 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "Získajte ${ BRAND_NAME } Duo"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Získajte ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
       ],
       "Get in touch": [
         "Skontaktovať sa"
@@ -1793,9 +1790,15 @@
       ],
       "forever": [
         "navždy"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Obnoví sa po 1 mesiaci za ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Prístup k zablokovanému obsahu a súkromné prehliadanie. Zahŕňa viac ako 8 500 serverov vo viac ako 110 krajinách, 10 zariadení, vysokorýchlostné streamovanie, blokovanie reklám a ochranu pred malvérom, VPN Accelerator a ďalšie."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+, Prime Video a ďalších odkiaľkoľvek."
       ],
@@ -1825,6 +1828,9 @@
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Špeciálne navrhnutý NetShield chráni vaše zariadenia a zrýchľuje vaše prehliadanie tým, že blokuje reklamy, sledovače a malvér."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
       ]
     },
     "Billing cycle option": {
@@ -1930,6 +1936,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Pokračovať"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
       ],
@@ -5342,23 +5351,14 @@
       "Checklist complete": [
         "Kontrolný zoznam je dokončený"
       ],
-      "Close": [
-        "Zatvoriť"
-      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Vyplňte tento kontrolný zoznam do ${ daysCount } a zdvojnásobte svoje úložisko zadarmo."
-      ],
-      "Congratulations, you completed all the steps!": [
-        "Gratulujeme, dokončili ste všetky kroky!"
       ],
       "Discover how our ${ strongText } protect you": [
         "Zistite, ako vás chráni náš ${ strongText }"
       ],
       "Discover privacy features": [
         "Objavte funkcie ochrany súkromia"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "Zdvojnásobte svoj úložný priestor na 1 GB tým, že dokončíte nasledovné:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Šifrovanie je také silné, že emaily môžete zobraziť iba vy a určení príjemcovia."
@@ -5387,26 +5387,14 @@
       "Learn more": [
         "Dozvedieť sa viac"
       ],
-      "Maybe later": [
-        "Možno neskôr"
-      ],
       "Nice! You've updated all services in this category.": [
         "Pekne! Aktualizovali ste všetky služby v tejto kategórii."
-      ],
-      "Open checklist": [
-        "Otvoriť zoznam"
-      ],
-      "Open checklist and get free storage": [
-        "Otvoriť kontrolný zoznam a získať úložisko zdarma"
       ],
       "Popular online services": [
         "Populárne online služby"
       ],
       "privacy features": [
         "funkcie ochrany súkromia"
-      ],
-      "Protect and simplify your email": [
-        "Ochráňte a zjednodušte svoj email"
       ],
       "Protection from trackers": [
         "Ochrana pred trackermi"
@@ -6175,9 +6163,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z dôvodu nezaplatených faktúr bol prístup k účtu obmedzený. Kontaktujte správcu Vášho účtu."
       ],
-      "Account size": [
-        "Veľkosť účtu"
-      ],
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
       ],
@@ -6187,8 +6172,8 @@
       "Add image URL": [
         "Pridať URL obrázku"
       ],
-      "Additional options": [
-        "Ďalšie možnosti"
+      "Address copied to clipboard": [
+        "Adresa bola skopírovaná do schránky"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Overenie adresy pomocou dôveryhodného kľúča je pre túto adresu povolené. Ak chcete posielať správy na túto adresu, najprv dôverujte verejnému kľúču, ktorý môže byť použitý na odosielanie."
@@ -6367,9 +6352,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Vyhľadávanie kontaktu ${ progress } o ${ max }..."
       ],
-      "Clear app data": [
-        "Vymazať dáta aplikácie"
-      ],
       "Clear browser data": [
         "Vymazať údaje prehliadača"
       ],
@@ -6433,20 +6415,11 @@
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Vytvorte bezpečný cloud pre ${ n } člena",
-        "Vytvorte bezpečný cloud pre ${ n } členov",
-        "Vytvorte bezpečný cloud pre ${ n } členov",
-        "Vytvorte bezpečný cloud pre ${ n } členov"
-      ],
       "Create in": [
         "Vytvoriť v"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Sú podporované CSV súbory z aplikácií Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a iných, ako i formáty vCard 3.1 a 4.0 (UTF-8 kódovanie)."
       ],
       "Current plan": [
         "Aktuálny plán"
@@ -6477,6 +6450,9 @@
       ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "default email address": [
+        "predvolená emailová adresa"
       ],
       "Default email application": [
         "Predvolená emailová aplikácia"
@@ -6570,9 +6546,6 @@
       ],
       "Email copied to clipboard": [
         "Email skopírovaný do schránky"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Emailový hosting pre 10 vlastných emailových domén je zahrnutý zadarmo. Ďalšie domény je možné pridať za cenu ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
@@ -7321,9 +7294,6 @@
       "Text to display": [
         "Zobrazovaný text"
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Pred exportom kontaktov musí aplikácia kontakty lokálne dešifrovať. Na konci procesu bude vygenerovaný súbor VCF, ktorý si budete môcť stiahnuť."
-      ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Údaje, ktoré ste zadali do konceptu, sa nemusia uložiť, ak stránku opustíte."
       ],
@@ -7488,9 +7458,6 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tento verejný kľúč sa automaticky použije na šifrovanie emailov odoslaných na túto adresu."
-      ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Týmto odstránite všetky dáta spojené s touto aplikáciou, vrátane stiahnutých správ. Aplikácia sa reštartuje a na jej používanie sa budete musieť znovu prihlásiť."
       ],
       "This sender's public key has not been trusted yet.": [
         "Verejný kľúč tohto odosielateľa nebol doposiaľ overený."
@@ -7677,9 +7644,6 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Zistili sme vytvorenie viacerých bezplatných účtov, čo porušuje naše ${ termsLink }."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
-        "Máme plány navrhnuté špeciálne pre používateľov, ako ste vy, ktorí potrebujú viac ako jednu emailovú adresu.\nAk chcete odstrániť obmedzenia, môžete prejsť na platený plán."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Potrebujeme overiť spôsob platby vo vašej banke."
@@ -8040,11 +8004,6 @@
         "Iba zobrazenie"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Kompromitovaný"
@@ -8356,9 +8315,6 @@
       "Authenticator app": [
         "Aplikácia 2FA"
       ],
-      "Automatically save contacts": [
-        "Automaticky ukladať kontakty"
-      ],
       "BCC": [
         "Skrytá kópia (BCC)"
       ],
@@ -8524,9 +8480,6 @@
       "Expires": [
         "Exspiruje"
       ],
-      "Export contacts": [
-        "Exportovať kontakty"
-      ],
       "Extended address": [
         "Rozšírená adresa"
       ],
@@ -8571,9 +8524,6 @@
       ],
       "Import all messages": [
         "Importovať všetky správy"
-      ],
-      "Import contacts": [
-        "Importovať kontakty"
       ],
       "Import interval": [
         "Interval pre import"
@@ -9498,6 +9448,9 @@
       "Get ${ planTitle }": [
         "Získajte ${ planTitle }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Začnite teraz za ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
       ],
@@ -10170,6 +10123,11 @@
         "Zmeniť plán?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Získajte Mail Plus za ${ priceCoupon }"
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpečte svoj kalendár pomocou end-to-end šifrovania. Súčasťou je podpora vlastných kalendárov, zdieľanie kalendára a ďalšie funkcie."
@@ -10565,20 +10523,8 @@
       "Auto-delete spam and trash": [
         "Automatické mazanie spamu a koša"
       ],
-      "Automatically forward emails": [
-        "Automaticky preposielajte emaily"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Natrvalo zablokujte emailovú komunikáciu od podvodníkov. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "Zablokujte nepríjemných odosielateľov"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Vymazanie odstránených a nevyžiadaných emailov po 30 dňoch."
-      ],
-      "Congratulations on choosing privacy": [
-        "Gratulujeme k výberu súkromia"
       ],
       "Dark Web Monitoring": [
         "Monitorovanie Dark Webu"
@@ -10589,17 +10535,8 @@
       "Download the desktop app and continue": [
         "Stiahnite si desktopovú aplikáciu a pokračujte"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "Šifrovanie je také silné, že emaily môžete zobraziť iba vy a určení príjemcovia. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "Pevne a sústredene"
-      ],
-      "For your eyes only": [
-        "Len pre vaše oči"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "Preposielajte Gmail správy do vašej doručenej pošty."
       ],
       "Get notified if your password is compromised.": [
         "Dostávajte upozornenia, ak dôjde k úniku vášho hesla."
@@ -10640,17 +10577,11 @@
       "Replay introduction": [
         "Znovu prejsť úvodom"
       ],
-      "Skip": [
-        "Preskočiť"
-      ],
       "Start using ${ BRAND_NAME }": [
         "Začnite používať ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Začnite používať kratšiu a výstižnejšiu verziu svojej emailovej adresy."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "Zabraňujeme inzerentom a zberačom dát v tom, aby vás profilovali. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Vitajte v ${ MAIL_APP_NAME }"
@@ -11124,32 +11055,9 @@
         "Meno"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } náš Predajný tím, prosím."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Vyberte počet IP, ktoré chcete zahrnúť do svojho plánu. Každá ďalšia IP stojí ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Ak potrebujete viac ako ${ maxIPs } IP, ",
-        "Ak potrebujete viac ako ${ maxIPs } IP, ",
-        "Ak potrebujete viac ako ${ maxIPs } IP, ",
-        "Ak potrebujete viac ako ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontaktujte"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Vyberte počet používateľov, ktorých chcete zahrnúť do svojho plánu. Každý ďalší používateľ stojí ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Ak potrebujete viac ako ${ maxUsers } používateľský účet, ${ contact } prosím náš obchodný tím.",
-        "Ak potrebujete viac ako ${ maxUsers } používateľské účty, ${ contact } prosím náš obchodný tím.",
-        "Ak potrebujete viac ako ${ maxUsers } používateľských účtov, ${ contact } prosím náš obchodný tím.",
-        "Ak potrebujete viac ako ${ maxUsers } používateľských účtov, ${ contact } prosím náš obchodný tím."
       ]
     },
     "Price": {
@@ -14006,9 +13914,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pre zasielanie emailov s koncovým šifrovaním na túto emailovú adresu, nahrajte prosím verejný kľúč"
-      ],
-      "You do not have any contacts to export": [
-        "Nemáte žiadne kontakty na export"
       ]
     },
     "tooltip": {
@@ -14203,6 +14108,9 @@
       ],
       "Missing alias suffix": [
         "Chýbajúca prípona aliasu"
+      ],
+      "Name is required": [
+        "Názov je povinný"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Povolené sú len alfanumerické znaky, bodky, pomlčky a podčiarkovníky"

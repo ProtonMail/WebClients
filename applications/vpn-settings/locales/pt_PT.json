@@ -208,6 +208,9 @@
       "Discard changes": [
         "Descartar alterações"
       ],
+      "Dismiss": [
+        "Descartar"
+      ],
       "Domain name": [
         "Nome do domínio"
       ],
@@ -3272,9 +3275,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta restringido devido a faturas por pagar. Contacte o administrador."
       ],
-      "Account size": [
-        "Tamanho da conta"
-      ],
       "Account successfully updated": [
         "Conta atualizada"
       ],
@@ -3304,9 +3304,6 @@
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "A adicionar servidor gateway: ${ serverNumber } / ${ total }",
         "A adicionar servidores gateway: ${ serverNumber } / ${ total }"
-      ],
-      "Additional options": [
-        "Opções adicionais"
       ],
       "Admin account allocation": [
         "Alocação da conta do administrador"
@@ -3411,10 +3408,6 @@
       "Country code": [
         "Código de país"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Criar uma nuvem segura para ${ n } membro",
-        "Criar uma nuvem segura para ${ n } membros"
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crie e gira sub-contas e atribua-lhes endereços de e-mail no seu domínio personalizado."
       ],
@@ -3446,11 +3439,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize o aspeto e a sensação das aplicações ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimine quaisquer outros registos MX ou certifique-se que a prioridade do ${ MAIL_APP_NAME } é o número mais baixo."
@@ -3513,9 +3506,6 @@
       ],
       "email": [
         "e-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "O alojamento de e-mails para 10 nomes de domínio de e-mail personalizado está incluído gratuitamente. Pode adicionar domínios adicionais por ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "O alojamento de e-mail está apenas disponível para domínios que já possui. O registo de domínio não está atualmente disponível através da ${ BRAND_NAME }. No entanto, pode alojar o e-mail para domínios registados em qualquer registador de domínios."
@@ -4267,11 +4257,11 @@
       "User activated": [
         "O utilizador foi ativado."
       ],
-      "Username": [
-        "Nome de utilizador"
-      ],
       "username": [
         "nome de utilizador"
+      ],
+      "Username": [
+        "Nome de utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -5784,7 +5774,7 @@
         "Política rigorosa de não registo"
       ],
       "Support for up to 2 users": [
-        "Suporte para até 2 usuários"
+        "Suporte para até 2 utilizadores"
       ],
       "TOR over VPN": [
         "TOR sobre VPN"
@@ -6671,28 +6661,9 @@
         "Membros"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "por favor, ${ contactHref } a nossa equipa de vendas."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Selecione o número de IP a incluir no seu plano. Cada IP adicional custa ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Se precisar de mais do que ${ maxIPs } IP, ",
-        "Se precisar de mais do que ${ maxIPs } IPs, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contacto"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Selecione o número de utilizadores a incluir no seu plano. Cada utilizador adicional custa ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Se precisar de mais de ${ maxUsers } conta de utilizador, ${ contact } a nossa equipa de vendas.",
-        "Se precisar de mais de ${ maxUsers } contas de utilizador, ${ contact } a nossa equipa de vendas."
       ]
     },
     "Price": {
@@ -8147,11 +8118,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço Catch-All"
-      ],
       "Catch-All address": [
         "Endereço captura-tudo"
+      ],
+      "Catch-all address": [
+        "Endereço Catch-All"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
