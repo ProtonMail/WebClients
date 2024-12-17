@@ -70,10 +70,10 @@
       "Accept": [
         "수락"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -421,6 +421,9 @@
       "Discard changes": [
         "변경사항 취소"
       ],
+      "Dismiss": [
+        "무시"
+      ],
       "Domain name": [
         "도메인 이름"
       ],
@@ -561,6 +564,9 @@
       ],
       "Generate token": [
         "토큰 생성"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "${ priceCoupon }에 ${ MAIL_SHORT_APP_NAME } 받기"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } 사용하기"
@@ -1847,6 +1853,9 @@
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "${ renewLength }개월간 자동으로 ${ renewPrice }에 갱신"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "${ subscriptionManagerName }에 자동으로 갱신합니다."
       ]
     },
     "Billing cycle option": {
@@ -1964,6 +1973,12 @@
     "Button": {
       "Add link to your email footer": [
         "이메일 바닥글에 링크 추가"
+      ],
+      "Change email address settings": [
+        "이메일 주소 설정 변경"
+      ],
+      "Continue": [
+        "기계속"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
@@ -3560,6 +3575,9 @@
       ]
     },
     "Description": {
+      "Also included": [
+        "이것 외에도"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "업그레이드시 스펨 메일함과 휴지통 내 메시지를 자동으로 삭제하며 더 많은 프리미엄 기능이 해제됩니다."
       ],
@@ -3592,6 +3610,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "친구를 ${ BRAND_NAME }에 초대해서 ${ credits } 크레딧을 획득하세요."
@@ -3634,6 +3655,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "업그레이드하여 무제한 폴더, 라벨과 더 많은 프리미엄 기능들을 잠금 해제하세요."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "업그레이드하여 현재 이메일 주소 이외에 더 짧고, 기억하기 쉬운 ${ activatePmUser }을 얻으세요."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "계속 친구들을 초대할 수 있으나, 더 이상 크레딧을 얻을 수 없습니다"
@@ -4653,6 +4677,9 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "조직에 사용자를 추가하기 전에 다중 사용자 지원을 활성화해주세요."
+      ],
+      "Please enter a valid entity ID URL": [
+        "유효한 개체 ID URL을 입력해주세요"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "계속하려면 표시된 충돌을 해결해 주세요."
@@ -6795,9 +6822,6 @@
       "account recovery method": [
         "계정 복구 방법 없음"
       ],
-      "Account size": [
-        "계정 크기"
-      ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
       ],
@@ -6849,8 +6873,8 @@
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "게이트웨이 서버 생성 중: ${ serverNumber } / ${ total }"
       ],
-      "Additional options": [
-        "추가적인 옵션"
+      "Address copied to clipboard": [
+        "주소가 클립보드에 복사됨"
       ],
       "Admin account allocation": [
         "관리자 계정 할당 됨"
@@ -7098,6 +7122,9 @@
       "Choose an app to get started": [
         "시작하려면 앱을 선택해 주세요"
       ],
+      "Choose an Entity ID to continue.": [
+        "계속하려면 Entity ID를 선택하세요."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
@@ -7118,6 +7145,9 @@
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "사용자의 ${ BRAND_NAME } 조직으로 **${ organizationValue.Name }**에 연결을 계속하십시오"
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "이 엔티티를 귀하의 ${ BRAND_NAME } 조직과 연결하려면 계속하세요."
       ],
       "Continue with ${ freeName }": [
         "${ freeName }으로 계속"
@@ -7154,9 +7184,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "가져온 메시지에 대한 라벨, 가져오기의 시간 범위 및 가져오려는 라벨을 만드세요."
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "${ n }명의 구성원을 위한 보안 클라우드 만들기"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "커스텀 도메인에 부계정을 만들거나 관리하고, 계정 주소를 추가하세요."
@@ -7223,6 +7250,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "전용 IP 주소가 있는 전용 서버를 개인 게이트웨이에 추가하여 미세 조정된 접근 제어가 가능합니다."
+      ],
+      "default email address": [
+        "기본 이메일 주소"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "${ MAIL_APP_NAME }이 가장 낮은 숫자인지 확인하거나 아니면 다른 MX 기록을 삭제하세요."
@@ -7329,17 +7359,14 @@
       "Edit link": [
         "링크 편집"
       ],
-      "EduGain configuration saved": [
-        "EduGain 구성 저장됨"
+      "eduGAIN configuration saved": [
+        "eduGAIN 설정 저장됨"
       ],
       "email": [
         "이메일"
       ],
       "Email address": [
         "이메일 주소"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "10개 사용자 지정 이메일 도메인 호스팅이 무료로 포함되어 있습니다. 추가적인 도메인이 ${ price } 으로 추가할 수 있습니다."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "이메일 호스팅은 이미 개인이 소유한 도메인만 가능합니다. 도메인 등록은 현재 ${ BRAND_NAME }에서 사용하실 수 없습니다. 도메인 호스팅 업체에 등록된 도메인에 대한 이메일을 호스트할 수 있습니다."
@@ -7403,6 +7430,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "**${ domain.DomainName }**을 위한 **eduGAIN**의 객체 ID를 입력하세요."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "조직 비밀번호를 입력해 관리자의 특권을 복구하세요. ${ learnMore }"
@@ -7887,6 +7917,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "전송 및 초안 폴더의 메시지가 다른 폴더로 이동하여도 표시됩니다."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "내 모든 이메일 주소로 오는 메시지는 받은 편지함으로 이동됩니다."
+      ],
       "MM/YY": [
         "MM/YY"
       ],
@@ -7961,9 +7994,6 @@
       ],
       "No logs yet.": [
         "아직 로그가 없습니다."
-      ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "**${ domain.DomainName }**에 대한 **eduGAIN**이 활성화된 조직이 없습니다."
       ],
       "No payment is required at this time.": [
         "현재는 결제가 필요없습니다."
@@ -8238,6 +8268,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
       ],
+      "Registering your subscription...": [
+        "구독 등록 중"
+      ],
       "Remember to share the user's sign in details with them.": [
         "사용자의 로그인 세부 사항을 공유하는 것을 잊지 마세요."
       ],
@@ -8304,17 +8337,14 @@
       "Select a service provider to start": [
         "서비스 제공자를 선택해 시작하기"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "**${ domain.DomainName }**의 **eduGAIN**이 활성화된 조직을 선택하십시오"
-      ],
       "Select one or multiple user affiliations": [
         "한 명 또는 여러명 사용자의 소속을 선택하세요"
       ],
       "Select recently used servers": [
         "최근 사용한 서버 선택"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "**${ organizationValue.Name }** (${ organizationValue.EntityId })(에)서 ${ BRAND_NAME } 조직에 허용하려는 사용자 소속을 선택하십시오."
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "${ getFormattedOrganization }에서 ${ BRAND_NAME } 조직에 허용하려는 사용자 제휴를 선택하세요."
       ],
       "Select what you want to import.": [
         "처리할 파일을 선택하세요."
@@ -8342,6 +8372,9 @@
       ],
       "Set recovery phrase": [
         "복구 키 설정"
+      ],
+      "Setting up your new address...": [
+        "새 주소 준비 중"
       ],
       "Setting up your organization": [
         "조직을 설정하세요"
@@ -8396,6 +8429,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF는 누가 사용자의 도메인에 대한 이메일을 보낼 수 있는지 명확히 합니다. DNS 콘솔(사용자 지정 도메인을 구매한 플랫폼에 위치)에 다음 TXT 레코드를 추가해야 합니다."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "연락처에 있는 사람들과 공유하고 온라인 서비스에서 사용하세요."
       ],
       "Stay tuned for future promotions.": [
         "향후 프로모션을 계속 지켜봐 주시기 바랍니다."
@@ -8571,6 +8607,9 @@
       "This is an encryption key you may have previously saved.": [
         "잠정적으로 저장한 암호화 키일 수 있습니다."
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
+      ],
       "This is the password you used before the password reset.": [
         "비밀번호를 재설정하기 전에 사용한 비밀번호입니다."
       ],
@@ -8582,9 +8621,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "이 메시지는 지원 팀으로 전해지지 않으므로, 저희의 서비스에 문제가 있거나 저희가 조치를 해야 한다면 ${ supportLink }."
-      ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "이 조직은 **${ domain.DomainName }**에 대한 **eduGAIN**이 활성화되어 있습니다."
       ],
       "This promotion link has expired.": [
         "이 프로모션 링크는 만료되었습니다."
@@ -9411,11 +9447,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "보기 전용"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
       ]
     },
     "Input Error": {
@@ -10250,6 +10281,9 @@
       "Entity ID": [
         "엔티티 ID"
       ],
+      "Entity ID URL": [
+        "Entity ID 주소"
+      ],
       "Event": [
         "이벤트"
       ],
@@ -10594,6 +10628,9 @@
       ],
       "Recovery phrase": [
         "복구 키"
+      ],
+      "Remove": [
+        "제거"
       ],
       "Remove image metadata": [
         "이미지 메타데이터 삭제"
@@ -11696,6 +11733,9 @@
       "From ${ price }": [
         "시작 가격: ${ price }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }부터 시작"
       ],
@@ -11828,6 +11868,9 @@
       ],
       "10 email addresses/aliases": [
         "10개의 이메일 주소/별칭"
+      ],
+      "10 more premium features": [
+        "10개 더 많은 프리미엄 기능들"
       ],
       "10-year file version history": [
         "10년 파일 버전 기록"
@@ -12407,6 +12450,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } 체험"
+      ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon }에 Mail Plus 얻기"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
       ],
       "Your account's usage": [
         "계정 사용량"
@@ -14152,26 +14201,9 @@
         "구성원"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "이러한 경우 지원 팀에 ${ contactHref }하십시오."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "플랜이 포함되는 IP 수를 선택하세요. 각 추가 IP 가격은 ${ price } 입니다."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "${ maxIPs } IP 이상이여야 합니다, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "연락"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "플랜이 포함되는 사용자의 수를 선택하세요. 각 추가 사용자의 가격은 ${ price } 입니다."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "${ maxUsers } 이상의 사용자 계정이 필요하시다면, ${ contact } 저희 세일즈팀에 문의해 주세요."
       ]
     },
     "Price": {
@@ -15128,7 +15160,7 @@
         "사진 섹션 활성화"
       ],
       "Get updates about comments via email": [
-        "이메일로 댓글에 대한 업데이트를 받아보세요"
+        "이메일로 댓글에 대한 업데이트를 받기"
       ],
       "Include document name in email notifications": [
         "이메일 알림 내에서 문서 이름 포함"
@@ -15267,6 +15299,14 @@
     "signup: Action": {
       "Request trial": [
         "무료 체험 신청"
+      ]
+    },
+    "signup: Feature": {
+      "Encrypted": [
+        "암호화됨"
+      ],
+      "Strict no-logs policy": [
+        "엄격한 노로그 정책"
       ]
     },
     "Signup: Info": {
@@ -16406,7 +16446,7 @@
         "시스템이 더 이상 이 결제 수단으로 자동 결제할 수 없습니다, 다만 고객님의 구독이 청구 주기가 끝날 때까지 갱신될 것입니다. 구독을 다운그레이드하거나 변경하려면, 청구 기간이 끝나기 전에 수동으로 해야합니다. 또한, 수동 결제를 하는 것을 잊어버리고 모든 결제 수단에 자동 결제가 비활성화된 경우, 고객님의 계정이 자동 다운그레이드되어 많은 기능이 손실될 수 있습니다."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 사용자의 구독이 여전히 마지막 결제일이 갱신됩니다. 만일 요금제를 다운그레이드하고 싶으시거나 구독을 변경하려면, 여전히 결제일이 끝나기 전 직전 수행해야 합니다. 만약 사용자가 무료 요금제 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기에 자동으로 다운그레이드할 수 없습니다. 자동 결제 수단을 비활성화 하시려면, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 마세요."
+        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독이 여전히 마지막 결제일에 갱신됩니다. 만일 플랜을 다운그레이드 또는 변경하시려면, 결제일이 끝나기 직전 수행해야 합니다. 만약 무료 플랜 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기에 자동으로 다운그레이드할 수 없습니다. 자동 결제 수단을 비활성화 하시려면, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
       ]
     },
     "Subscription saving": {
@@ -18007,6 +18047,9 @@
       "Unlock your data": [
         "데이터 잠금 해제"
       ],
+      "Upgrade complete!": [
+        "업그레이드 완료!"
+      ],
       "Upgrade plan": [
         "플랜 업그레이드"
       ],
@@ -18093,6 +18136,9 @@
       ],
       "Your recovery status": [
         "내 복구 상태"
+      ],
+      "Your shorter address is now ready": [
+        "짧은 주소가 준비되었습니다"
       ],
       "Your SMTP token": [
         "사용자의 SMTP 토큰"
@@ -18306,6 +18352,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "전송 및 초안 폴더의 메시지가 다른 폴더로 이동하여도 표시됩니다."
+      ],
+      "Remove metadata from images to protect your privacy.": [
+        "프라이버시를 위해 사진에서 메타데이터를 지우세요."
       ],
       "See number of unread messages in the tab icon": [
         "탭 아이콘에서 읽지 않은 메시지 수 보기"

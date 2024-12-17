@@ -70,11 +70,11 @@
       "Accept": [
         "Accetta"
       ],
-      "activate": [
-        "attiva"
-      ],
       "Activate": [
         "Attiva"
+      ],
+      "activate": [
+        "attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -421,6 +421,9 @@
       "Discard changes": [
         "Annulla le modifiche"
       ],
+      "Dismiss": [
+        "Ignora"
+      ],
       "Domain name": [
         "Nome dominio"
       ],
@@ -561,6 +564,9 @@
       ],
       "Generate token": [
         "Genera un token"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Ottieni ${ MAIL_SHORT_APP_NAME } Plus per ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "Ottieni ${ vpnPlus }"
@@ -1855,6 +1861,9 @@
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Si rinnova automaticamente a ${ renewPrice } per ${ renewLength } mese",
         "Si rinnova automaticamente a ${ renewPrice } per ${ renewLength } mesi"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Si rinnova automaticamente il ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -1972,6 +1981,12 @@
     "Button": {
       "Add link to your email footer": [
         "Aggiungi un link al piè di pagina della tua email"
+      ],
+      "Change email address settings": [
+        "Modifica le impostazioni dell'indirizzo email"
+      ],
+      "Continue": [
+        "Continua"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua a usare ${ MAIL_APP_NAME }."
@@ -3575,6 +3590,9 @@
       ]
     },
     "Description": {
+      "Also included": [
+        "Incluso anche"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Elimina automaticamente i messaggi spam e quelli nel cestino e sblocca altre funzionalità premium effettuando l'upgrade."
       ],
@@ -3607,6 +3625,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Ottieni fino a ${ credits } in crediti invitando amici su ${ BRAND_NAME }."
@@ -3649,6 +3670,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Sblocca cartelle illimitate, etichette e altre funzionalità premium quando effettui l'upgrade."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Esegui l'upgrade per ottenere ${ activatePmUser } per un indirizzo email più breve e facile da ricordare oltre a quello attuale."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Puoi continuare a invitare amici, ma non potrai guadagnare più crediti"
@@ -4671,6 +4695,9 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Abilita il supporto multi-utente prima di aggiungere utenti all'organizzazione."
+      ],
+      "Please enter a valid entity ID URL": [
+        "Inserisci un URL ID entità valido"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
@@ -6856,9 +6883,6 @@
       "account recovery method": [
         "metodo di recupero dell'account"
       ],
-      "Account size": [
-        "Dimensione dell'account"
-      ],
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
@@ -6913,8 +6937,8 @@
         "Aggiunta di server gateway: ${ serverNumber }/${ total }",
         "Aggiunta di server gateway: ${ serverNumber }/${ total }"
       ],
-      "Additional options": [
-        "Opzioni aggiuntive"
+      "Address copied to clipboard": [
+        "Indirizzo copiato negli appunti"
       ],
       "Admin account allocation": [
         "Allocazione dell'account amministratore"
@@ -7166,6 +7190,9 @@
       "Choose an app to get started": [
         "Scegli un'app per iniziare"
       ],
+      "Choose an Entity ID to continue.": [
+        "Scegli un ID entità per continuare."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
       ],
@@ -7186,6 +7213,9 @@
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Continua per collegare **${ organizationValue.Name }** con la tua organizzazione ${ BRAND_NAME }."
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Continua per connettere questa entità con la tua organizzazione ${ BRAND_NAME }."
       ],
       "Continue with ${ freeName }": [
         "Continua con ${ freeName }"
@@ -7223,10 +7253,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le etichette che desideri importare."
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Crea un cloud sicuro per ${ n } membro",
-        "Crea un cloud sicuro per ${ n } membri"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea e gestisci account secondari e assegna loro indirizzi email col tuo dominio personalizzato."
@@ -7294,6 +7320,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
+      ],
+      "default email address": [
+        "indirizzo email predefinito"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Cancelli ogni altro record MX oppure si assicuri che la priorità di ${ MAIL_APP_NAME } sia il numero minimo."
@@ -7402,17 +7431,14 @@
       "Edit link": [
         "Modifica link"
       ],
-      "EduGain configuration saved": [
-        "Configurazione EduGain salvata"
+      "eduGAIN configuration saved": [
+        "configurazione eduGAIN salvata"
       ],
       "email": [
         "email"
       ],
       "Email address": [
         "Indirizzo email"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "L'hosting di posta elettronica per 10 nomi di dominio di posta elettronica personalizzati è incluso gratuitamente. È possibile aggiungere ulteriori domini per ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hosting di posta elettronica è disponibile solo per i domini che già possiedi. La registrazione del dominio non è attualmente disponibile tramite ${ BRAND_NAME }. Puoi ospitare email per domini registrati su qualsiasi registrar di domini."
@@ -7476,6 +7502,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Inserisci le credenziali dell'account email da cui vuoi importare."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Inserisci l'ID entità di un'organizzazione **eduGAIN** per **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Inserisci la password dell'organizzazione per ripristinare i privilegi di amministratore. ${ learnMore }"
@@ -7962,6 +7991,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "I messaggi nelle cartelle Inviata e Bozze continueranno a comparire in quelle cartelle, anche se li sposti in un'altra cartella."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "I messaggi a tutti i tuoi indirizzi email verranno inviati alla tua casella di posta."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -8036,9 +8068,6 @@
       ],
       "No logs yet.": [
         "Non ci sono ancora log."
-      ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Nessuna organizzazione abilitata con **eduGAIN** per **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Al momento non è richiesto alcun pagamento."
@@ -8319,6 +8348,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
+      "Registering your subscription...": [
+        "Registrazione dell'abbonamento..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Ricordati di condividere con loro i dettagli di accesso dell'utente."
       ],
@@ -8385,17 +8417,14 @@
       "Select a service provider to start": [
         "Seleziona un fornitore di servizi per iniziare"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Seleziona un'organizzazione abilitata con **eduGAIN** per **${ domain.DomainName }**."
-      ],
       "Select one or multiple user affiliations": [
         "Seleziona una o più affiliazioni utente"
       ],
       "Select recently used servers": [
         "Seleziona i server utilizzati di recente"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "Seleziona le affiliazioni utente da **${ organizationValue.Name }** (${ organizationValue.EntityId }) che desideri consentire nella tua organizzazione ${ BRAND_NAME }:"
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Seleziona le affiliazioni utente da ${ getFormattedOrganization } che desideri consentire nella tua organizzazione ${ BRAND_NAME }:"
       ],
       "Select what you want to import.": [
         "Seleziona cosa vuoi importare."
@@ -8423,6 +8452,9 @@
       ],
       "Set recovery phrase": [
         "Imposta una frase di recupero"
+      ],
+      "Setting up your new address...": [
+        "Configurazione del tuo nuovo indirizzo..."
       ],
       "Setting up your organization": [
         "Configurazione della tua organizzazione in corso..."
@@ -8477,6 +8509,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF chiarisce chi è autorizzato a inviare email per il tuo dominio. Assicurati di aggiungere il seguente record TXT nella tua console DNS (situata sulla piattaforma su cui hai acquistato il dominio personalizzato)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
       ],
       "Stay tuned for future promotions.": [
         "Rimani aggiornato per le prossime promozioni."
@@ -8656,6 +8691,9 @@
       "This is an encryption key you may have previously saved.": [
         "Questa è una chiave di crittografia che potresti aver salvato in precedenza."
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Questo ora è il tuo ${ defaultEmailAddress } per l'invio di nuovi messaggi."
+      ],
       "This is the password you used before the password reset.": [
         "Questa è la password che hai usato prima della reimpostazione della password."
       ],
@@ -8667,9 +8705,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Questo messaggio non verrà inviato al team di supporto, se hai un problema con il nostro servizio o hai bisogno di ulteriori azioni da parte nostra ${ supportLink }."
-      ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Questa organizzazione è abilitata con **eduGAIN** per **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Questo link promozionale è scaduto."
@@ -9510,11 +9545,6 @@
         "Visualizza soltanto"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Assistente basato sull'intelligenza artificiale per aiutarti a creare email migliori, in modo rapido e semplice."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Indirizzo email non valido"
@@ -10351,6 +10381,9 @@
       "Entity ID": [
         "ID Entità"
       ],
+      "Entity ID URL": [
+        "URL dell'entità ID"
+      ],
       "Event": [
         "Evento"
       ],
@@ -10695,6 +10728,9 @@
       ],
       "Recovery phrase": [
         "Frase di recupero"
+      ],
+      "Remove": [
+        "Rimuovi"
       ],
       "Remove image metadata": [
         "Rimuovi meta-dati dell'immagine"
@@ -11809,6 +11845,9 @@
       "From ${ price }": [
         "Da ${ price }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Inizia per ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "A partire da ${ priceMailPlus }"
       ],
@@ -11958,6 +11997,9 @@
       ],
       "10 email addresses/aliases": [
         "10 indirizzi email/alias"
+      ],
+      "10 more premium features": [
+        "Altre 10 funzionalità premium"
       ],
       "10-year file version history": [
         "Cronologia delle versioni dei file per 10 anni"
@@ -12545,6 +12587,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } Prova"
+      ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Ottieni Mail Plus per ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceMailPlus }. Puoi annullare in qualsiasi momento."
       ],
       "VPN Enterprise": [
         "VPN Enterprise"
@@ -14306,28 +14354,9 @@
         "Membri"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } il nostro team di vendita."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Seleziona il numero di IP da includere nel piano. Ogni IP aggiuntivo costa ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Se hai bisogno di più di ${ maxIPs } IP, ",
-        "Se hai bisogno di più di ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contatto"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Seleziona il numero di utenti da includere nel tuo piano. Ogni utente aggiuntivo costa ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Se hai bisogno di più di ${ maxUsers } account, per favore ${ contact } il nostro team di vendita.",
-        "Se hai bisogno di più di ${ maxUsers } account, per favore ${ contact } il nostro team di vendita."
       ]
     },
     "Price": {
@@ -15438,6 +15467,14 @@
     "signup: Action": {
       "Request trial": [
         "Richiedi la prova gratuita"
+      ]
+    },
+    "signup: Feature": {
+      "Encrypted": [
+        "Crittografata"
+      ],
+      "Strict no-logs policy": [
+        "Rigorosa politica di non conservazione dei log"
       ]
     },
     "Signup: Info": {
@@ -18231,6 +18268,9 @@
       "Unlock your data": [
         "Sblocca i tuoi data"
       ],
+      "Upgrade complete!": [
+        "Aggiornamento completato!"
+      ],
       "Upgrade plan": [
         "Effettua l'upgrade"
       ],
@@ -18317,6 +18357,9 @@
       ],
       "Your recovery status": [
         "Il tuo stato di recupero"
+      ],
+      "Your shorter address is now ready": [
+        "Il tuo indirizzo breve ora è pronto"
       ],
       "Your SMTP token": [
         "Il tuo token SMTP"
@@ -18530,6 +18573,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "I messaggi nelle cartelle Inviata e Bozze continueranno a comparire in quelle cartelle, anche se li sposti in un'altra cartella."
+      ],
+      "Remove metadata from images to protect your privacy.": [
+        "Rimuovi i metadati dalle immagini per proteggere la tua privacy."
       ],
       "See number of unread messages in the tab icon": [
         "Visualizza il numero di messaggi non letti nell'icona della scheda"

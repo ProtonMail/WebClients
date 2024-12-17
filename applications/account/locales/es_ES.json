@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -420,6 +420,9 @@
       ],
       "Discard changes": [
         "Descartar los cambios"
+      ],
+      "Dismiss": [
+        "Descartar"
       ],
       "Domain name": [
         "Nombre del dominio"
@@ -1067,7 +1070,7 @@
         "Mostrar más"
       ],
       "Show preview": [
-        "Mostrar vista previa"
+        "Mostrar la vista previa"
       ],
       "Sign in": [
         "Iniciar sesión"
@@ -1109,7 +1112,7 @@
         "Spam"
       ],
       "Start import": [
-        "Iniciar importación"
+        "Iniciar la importación"
       ],
       "Start live chat": [
         "Iniciar un chat en directo"
@@ -1262,7 +1265,7 @@
         "Ver todos los informes"
       ],
       "View invoice": [
-        "Ver factura"
+        "Ver la factura"
       ],
       "View plans details": [
         "Ver detalles de los planes"
@@ -1858,6 +1861,9 @@
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Se renueva automáticamente por ${ renewPrice } durante ${ renewLength } mes.",
         "Se renueva automáticamente por ${ renewPrice } durante ${ renewLength } meses."
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Se renueva automáticamente el ${ subscriptionManagerName }."
       ]
     },
     "Billing cycle option": {
@@ -2365,7 +2371,7 @@
         "maíz"
       ],
       "mughal green": [
-        "verde mogol"
+        "verde oscuro"
       ],
       "ocean": [
         "océano"
@@ -2374,7 +2380,7 @@
         "aceituna"
       ],
       "outer space": [
-        "espacio exterior"
+        "azul cósmico"
       ],
       "pacific": [
         "pacífico"
@@ -4690,6 +4696,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Activa el soporte multiusuario antes de añadir usuarios a tu organización."
       ],
+      "Please enter a valid entity ID URL": [
+        "Introduce una URL de identificación de entidad válida."
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregla el conflicto resaltado para continuar.",
         "Arregla los conflictos resaltados para continuar."
@@ -6877,9 +6886,6 @@
       "account recovery method": [
         "método de recuperación de cuenta"
       ],
-      "Account size": [
-        "Tamaño de la cuenta"
-      ],
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
@@ -6933,9 +6939,6 @@
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Añadiendo servidor de puerta de enlace: ${ serverNumber } / ${ total }",
         "Añadiendo servidores de puerta de enlace: ${ serverNumber } / ${ total }"
-      ],
-      "Additional options": [
-        "Opciones adicionales"
       ],
       "Address copied to clipboard": [
         "Se ha copiado la dirección al portapapeles."
@@ -7190,6 +7193,9 @@
       "Choose an app to get started": [
         "Elige una aplicación para comenzar"
       ],
+      "Choose an Entity ID to continue.": [
+        "Selecciona un ID de entidad para continuar."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
       ],
@@ -7210,6 +7216,9 @@
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Continúa conectando **${ organizationValue.Name }** con tu organización ${ BRAND_NAME }."
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Continúa conectando esta entidad con tu organización de ${ BRAND_NAME }."
       ],
       "Continue with ${ freeName }": [
         "Continuar con ${ freeName }"
@@ -7247,10 +7256,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crea una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las etiquetas que te gustaría importar."
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Crear una nube segura para ${ n } miembro",
-        "Crear una nube segura para ${ n } miembros"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea y administra subcuentas y asígnales direcciones de correo electrónico en tu dominio personalizado."
@@ -7429,7 +7434,7 @@
       "Edit link": [
         "Editar enlace"
       ],
-      "EduGain configuration saved": [
+      "eduGAIN configuration saved": [
         "Se ha guardado la configuración de EduGain."
       ],
       "email": [
@@ -7437,9 +7442,6 @@
       ],
       "Email address": [
         "Dirección de correo electrónico"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se puede añadir dominios adicionales por ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para dominios que posees. El registro de dominios no está disponible a través de ${ BRAND_NAME }. Puedes alojar correos electrónicos para dominios registrados en cualquier registrador de dominios."
@@ -7503,6 +7505,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduce las credenciales de la cuenta de correo electrónico desde la que quieres importar."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Ingresa el ID de entidad de una organización **eduGAIN** para **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Introduce la contraseña de la organización para restablecer los privilegios de administrador. ${ learnMore }"
@@ -8067,9 +8072,6 @@
       "No logs yet.": [
         "Todavía no hay registros."
       ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "No hay organizaciones activadas con **eduGAIN** para **${ domain.DomainName }**."
-      ],
       "No payment is required at this time.": [
         "En este momento no se requiere ningún pago."
       ],
@@ -8415,17 +8417,14 @@
       "Select a service provider to start": [
         "Selecciona un proveedor de servicios para empezar"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Selecciona una organización activada con **eduGAIN** para **${ domain.DomainName }**."
-      ],
       "Select one or multiple user affiliations": [
         "Selecciona una o varias afiliaciones para el usuario"
       ],
       "Select recently used servers": [
         "Seleccionar los servidores usados recientemente"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "Selecciona las afiliaciones del usuario de **${ organizationValue.Name }** (${ organizationValue.EntityId }) que deseas permitir en tu organización ${ BRAND_NAME }:"
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Selecciona las afiliaciones de los usuarios de ${ getFormattedOrganization } que deseas permitir en tu organización ${ BRAND_NAME }:"
       ],
       "Select what you want to import.": [
         "Selecciona lo que quieres importar."
@@ -8706,9 +8705,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Este mensaje no llegará al equipo de soporte. Si tienes algún problema con nuestro servicio o necesitas más asistencia de nuestra parte ${ supportLink }."
-      ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Esta organización está activada con **eduGAIN** para **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "El enlace de esta promoción ha expirado."
@@ -9549,11 +9545,6 @@
         "Solo lectura"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "No es una dirección de correo electrónico válida."
@@ -10102,6 +10093,9 @@
       "Auto-unsubscribe": [
         "Cancelar la subscripción automáticamente"
       ],
+      "Automatically save contacts": [
+        "Guardar contactos automáticamente"
+      ],
       "Awarded": [
         "Galardonado"
       ],
@@ -10389,6 +10383,9 @@
       ],
       "Entity ID": [
         "ID de la entidad"
+      ],
+      "Entity ID URL": [
+        "URL de identificación de la entidad"
       ],
       "Event": [
         "Evento"
@@ -10734,6 +10731,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperación"
+      ],
+      "Remove": [
+        "Borrar"
       ],
       "Remove image metadata": [
         "Eliminar los metadatos de la imagen"
@@ -14330,28 +14330,9 @@
         "Miembros"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "contacta ${ contactHref } con nuestro equipo de ventas."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Elige el número de IP para incluir en tu plan. Cada IP adicional cuesta ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si necesitas más de ${ maxIPs } IP, ",
-        "Si necesitas más de ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contactar"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Elige el número de usuarios para incluir en tu plan. Cada usuario adicional cuesta ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si necesitas más de ${ maxUsers } cuenta de usuario, ${ contact } con nuestro equipo de Ventas.",
-        "Si necesitas más de ${ maxUsers } cuentas de usuario, ${ contact } con nuestro equipo de Ventas."
       ]
     },
     "Price": {
@@ -15465,6 +15446,14 @@
     "signup: Action": {
       "Request trial": [
         "Solicitar una prueba gratuita"
+      ]
+    },
+    "signup: Feature": {
+      "Encrypted": [
+        "Cifrado"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de cero registros"
       ]
     },
     "Signup: Info": {
@@ -18563,6 +18552,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Los mensajes en la carpeta Enviados o Borradores continuarán apareciendo en esa carpeta, incluso si los mueves a otra carpeta."
+      ],
+      "Remove metadata from images to protect your privacy.": [
+        "Elimina los metadatos de las imágenes para proteger tu privacidad."
       ],
       "See number of unread messages in the tab icon": [
         "Ver el número de mensajes sin leer en el ícono de la pestaña"

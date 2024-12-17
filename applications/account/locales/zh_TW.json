@@ -70,10 +70,10 @@
       "Accept": [
         "接受"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -411,6 +411,9 @@
       ],
       "Discard changes": [
         "放棄變更"
+      ],
+      "Dismiss": [
+        "忽略"
       ],
       "Domain name": [
         "網域名稱"
@@ -6480,9 +6483,6 @@
       "account recovery method": [
         "帳號復原方法"
       ],
-      "Account size": [
-        "帳號容量"
-      ],
       "Account successfully updated": [
         "帳號已成功更新"
       ],
@@ -6527,9 +6527,6 @@
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "正在新增閘道伺服器：${ serverNumber } / ${ total }"
-      ],
-      "Additional options": [
-        "額外設定"
       ],
       "Admin account allocation": [
         "管理員帳號指派"
@@ -6792,9 +6789,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "為匯入的郵件創建標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "替成員創建一個安全${ n }"
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "創建並管理子帳號，並為其指派在您的自訂網域下的電郵位址。"
       ],
@@ -6959,9 +6953,6 @@
       ],
       "Email address": [
         "電郵位址"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "免費提供 10 個自訂電郵網域名稱的託管服務。 亦可加入更多網域，現在只需 ${ price }。"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。 ${ BRAND_NAME } 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
@@ -8758,11 +8749,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "僅能檢視"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
       ]
     },
     "Input Error": {
@@ -12967,23 +12953,9 @@
         "成員"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "請聯繫${ contactHref }我們的銷售團隊。"
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "您需要多餘 ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "業務聯繫"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "選擇欲加入您授權方案的使用者人數。每一位加入使用者的費用為 ${ price }。"
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "若您需求超過 ${ maxUsers } 位使用者帳號，請 ${ contact } 我們的客戶成功團隊。"
       ]
     },
     "Price": {
