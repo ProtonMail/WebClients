@@ -125,6 +125,7 @@ export const isChromiumBased = () => 'chrome' in window;
 export const isJSDom = () => navigator.userAgent.includes('jsdom');
 export const isMac = () => ua.os.name === 'Mac OS';
 export const isWindows = () => ua.os.name === 'Windows';
+export const isArm = () => ua.cpu.architecture === 'arm64';
 export const isLinux = () => ua.ua.match(/(L|l)inux/);
 export const hasTouch = typeof document === 'undefined' ? false : 'ontouchstart' in document.documentElement;
 export const hasCookie = () => navigator.cookieEnabled;

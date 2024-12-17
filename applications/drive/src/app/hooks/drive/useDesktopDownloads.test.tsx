@@ -76,7 +76,7 @@ describe('useDesktopDownloads', () => {
 
         await render();
 
-        assertOK(hook.result.current.downloads, [undefined, 'url']);
+        assertOK(hook.result.current.downloads, [undefined, 'url', 'url']);
         expect(mockConsoleWarn).toHaveBeenCalledTimes(1);
     });
 });
