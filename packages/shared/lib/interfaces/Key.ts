@@ -28,6 +28,7 @@ export interface Key {
     RecoverySecret?: string | null; // Only available for user keys
     RecoverySecretSignature?: string | null; // Only available for user keys
     AddressForwardingID?: string | null; // Only available for address keys
+    GroupMemberID?: string | null; // Only available for address keys
 }
 
 export type AddressKey = RequireSome<Key, 'Flags' | 'Signature' | 'AddressForwardingID'>;
