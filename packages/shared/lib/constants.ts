@@ -1070,6 +1070,8 @@ export enum DESKTOP_PLATFORMS {
     LINUX = 'linux',
     MACOS = 'macos',
     WINDOWS = 'windows',
+    WINDOWS_X64 = 'windows/x64',
+    WINDOWS_ARM = 'windows/arm64',
 }
 
 export enum RELEASE_CATEGORIES {
