@@ -63,9 +63,6 @@
       "Add group": [
         "加入群組"
       ],
-      "Add new contact": [
-        "加入聯絡人"
-      ],
       "Add new group": [
         "創建新的群組"
       ],
@@ -356,9 +353,6 @@
       ],
       "Export contact group": [
         "匯出聯絡人群組"
-      ],
-      "Export contacts": [
-        "匯出聯絡人"
       ],
       "Fit to window": [
         "貼齊視窗邊沿"
@@ -4046,14 +4040,8 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由於有帳單仍未繳付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
-      "Account size": [
-        "帳號容量"
-      ],
       "Account successfully updated": [
         "帳號已成功更新"
-      ],
-      "Additional options": [
-        "額外設定"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
@@ -4232,9 +4220,6 @@
       "Create a new contact group": [
         "創建新聯絡人群組"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "替成員創建一個安全${ n }"
-      ],
       "Create in": [
         "創建在"
       ],
@@ -4258,9 +4243,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "您之前訂購授權方案裡未使用部分的餘額"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 或其它軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 ( UTF-8 編碼) 都可以支援。"
       ],
       "Current plan": [
         "當前方案"
@@ -4361,9 +4343,6 @@
       "email": [
         "電子信箱"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "免費提供 10 個自訂電郵網域名稱的託管服務。 亦可加入更多網域，現在只需 ${ price }。"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。 ${ BRAND_NAME } 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
       ],
@@ -4390,9 +4369,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "請輸入您想匯入的電郵帳號所使用的憑證。"
-      ],
-      "Enter the device name to confirm removal.": [
-        "輸入裝置名稱以確認移除。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
@@ -5030,9 +5006,6 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "帳號可能換了新的金鑰，不然下列項目可能已遭竄改：${ items }。除非您信任該檔案，否則切勿開啟。"
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "在可以匯出前，應用程式需要在本機先解密您的聯絡人。過程結束時，將會產生一個 VCF 檔案以供您下載。"
-      ],
       "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
         "此數位簽署以被部分驗證。此資料夾於公開頁面被未知使用者上傳。"
       ],
@@ -5101,9 +5074,6 @@
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "此操作將會刪除連結，並且阻止其他嘗試使用此連結存取檔案或資料夾的人。"
-      ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "這將會從 ${ DRIVE_APP_NAME } 移除裝置 ${ deviceName }，並停止同步您新增到「我的電腦」的資料夾。"
       ],
       "This will replace the existing file with the folder": [
         "這將會使用資料夾取代既有檔案"
@@ -5506,11 +5476,6 @@
         "僅能檢視"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
-      ]
-    },
     "Item": {
       "file attributes": [
         "檔案屬性"
@@ -5620,9 +5585,6 @@
       ],
       "Authenticator app": [
         "驗證 app"
-      ],
-      "Automatically save contacts": [
-        "自動儲存聯絡人"
       ],
       "Beta Access": [
         "測試版體驗"
@@ -5798,9 +5760,6 @@
       "Expires": [
         "有效期限"
       ],
-      "Export contacts": [
-        "匯出聯絡人"
-      ],
       "Extended address": [
         "詳細位址"
       ],
@@ -5839,9 +5798,6 @@
       ],
       "Import all messages": [
         "匯入全部郵件"
-      ],
-      "Import contacts": [
-        "匯入聯絡人"
       ],
       "Import interval": [
         "匯入頻率"
@@ -6429,6 +6385,9 @@
       ],
       "Graphics Interchange Format (GIF)": [
         "圖形交換格式(GIF)"
+      ],
+      "GZip Archive": [
+        "GZip 壓縮封存檔"
       ],
       "HyperText Markup Language (HTML)": [
         "超文件標示語言 (HTML)"
@@ -8078,23 +8037,9 @@
         "名稱"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "請聯繫${ contactHref }我們的銷售團隊。"
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "您需要多餘 ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "業務聯繫"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "選擇欲加入您授權方案的使用者人數。每一位加入使用者的費用為 ${ price }。"
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "若您需求超過 ${ maxUsers } 位使用者帳號，請 ${ contact } 我們的客戶成功團隊。"
       ]
     },
     "Price": {
@@ -9445,6 +9390,9 @@
       "Day theme": [
         "日間布景主題"
       ],
+      "Delete": [
+        "刪除"
+      ],
       "Delete ${ count } contact": [
         "刪除 ${ count } 位聯絡人"
       ],
@@ -9976,9 +9924,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "您已寄送他們存取項目的邀請。"
-      ],
-      "You do not have any contacts to export": [
-        "您沒有任何可匯出的聯絡人"
       ]
     },
     "tooltip": {
