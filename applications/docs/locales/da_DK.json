@@ -60,9 +60,6 @@
       "Add group": [
         "Tilføj gruppe"
       ],
-      "Add new contact": [
-        "Tilføj ny kontakt"
-      ],
       "Add new group": [
         "Tilføj ny gruppe"
       ],
@@ -80,6 +77,9 @@
       ],
       "Apply": [
         "Anvend"
+      ],
+      "Ask me next time": [
+        "Spørg mig næste gang"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Højst ${ maxContacts } kontakt er tilladt pr. kontaktgruppe",
@@ -281,9 +281,6 @@
       ],
       "Export contact group": [
         "Eksporter kontaktgruppe"
-      ],
-      "Export contacts": [
-        "Eksportér kontakter"
       ],
       "Forgot password?": [
         "Glemt adgangskode?"
@@ -525,6 +522,9 @@
       "Restore this version": [
         "Gendan denne version"
       ],
+      "Restore this version?": [
+        "Gendan denne version?"
+      ],
       "Retry": [
         "Prøv igen"
       ],
@@ -533,6 +533,9 @@
       ],
       "Save changes": [
         "Gem ændringer"
+      ],
+      "Save preferences": [
+        "Gem præferencer"
       ],
       "Search": [
         "Søg"
@@ -913,6 +916,9 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Rabatter er baseret på månedlig standardpris."
       ],
@@ -949,6 +955,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af bruger-e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
         "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer ${ addresses } e-mailadresser, understøttelse af bruger-e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af brugerdefinerede e-maildomæner, ubegrænsede hide-my-email-aliasser og mere.",
+        "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Inkluderer ${ addresses } e-mailadresser, understøttelse af brugerdefinerede e-maildomæner, ubegrænsede hide-my-email-aliasser og mere."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer 15 e-mailadresser, understøttelse af bruger-e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
@@ -1069,6 +1079,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Forsæt"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ],
@@ -1084,7 +1097,7 @@
         "${ maxSpaceTB } lagerplads"
       ],
       "${ planMaxSpace } email storage": [
-        "${ planMaxSpace } e-mail lagring"
+        "${ planMaxSpace } e-mail-lagerplads"
       ],
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
@@ -1103,6 +1116,9 @@
       ],
       "Encrypted password manager": [
         "Krypteret adgangskodeadministrator"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Vores grundlæggende, gratis abonnement med end-to-end-krypteret e-mail og lagerplads. Ingen premium-funktioner inkluderet."
       ],
       "Save ${ upsellSavings }": [
         "Gem ${ upsellSavings }"
@@ -2160,6 +2176,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
+      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Få ubegrænsede aliasser og 500 GB lagerplads med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2180,6 +2199,9 @@
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Opnå størst mulig sikkerhed for din konto ved at indstille en gendannelsessætning."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
@@ -3212,6 +3234,9 @@
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kan kun acceptere 3 invitationer i en 6-måneds periode. Kontakt venligst ${ supportLink } hvis du har brug for en undtagelse."
       ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kan ikke acceptere denne invitation med dit nuværende abonnement."
+      ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du er blevet inviteret til at blive medlem af ${ bannerOrganization }. ${ viewInviteButton }"
       ],
@@ -3721,6 +3746,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }. Prisen og datoen for fornyelse af dit ${ planTitle }-abonnement forbliver uændret."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
       ],
@@ -3766,6 +3794,9 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/måned)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus lagerplads"
       ],
@@ -3791,14 +3822,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoadgang begrænset grundet manglende betaling. Kontakt din administrator."
       ],
-      "Account size": [
-        "Kontostørrelse"
-      ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
-      "Additional options": [
-        "Yderligere indstillinger"
+      "Address copied to clipboard": [
+        "Adresse kopieret til udklipsholder"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressebekræftelse med Betroede nøgler er aktiv for denne e-mail. For at kunne sende til denne adresse skal de offentlige nøgler, som kan benyttes hertil, først gøres betroede."
@@ -3823,6 +3851,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Beløb under minimum (${ amount })."
+      ],
+      "an anonymous user": [
+        "en anonym bruger"
       ],
       "and": [
         "og"
@@ -3921,10 +3952,6 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Opret en sikker skypakke til ${ n } medlem",
-        "Opret en sikker skypakke til ${ n } medlemmer"
-      ],
       "Create in": [
         "Opret i"
       ],
@@ -3946,9 +3973,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit for den ubrugte del af dit tidligere abonnement"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
-      ],
       "Current plan": [
         "Nuværende abonnement"
       ],
@@ -3960,6 +3984,9 @@
       ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "default email address": [
+        "standard e-mailadresse"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verificeret. Denne fil blev uploaded sikkert af ${ emailAddress }."
@@ -4020,9 +4047,6 @@
       ],
       "email": [
         "e-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-mail-hosting til 10 brugerdefinerede mail-domænenavne er inkluderet gratis. Yderligere domæner kan tilføjes for ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting er kun tilgængelig for domæner, du allerede ejer. Domæneregistrering er ikke tilgængelig i øjeblikket via ${ BRAND_NAME }. Du kan hoste e-mail for domæner, der er registreret hos en hvilken som helst domæneregistrator."
@@ -4113,6 +4137,12 @@
       ],
       "Free 5GB encrypted storage to get started": [
         "Gratis 5 GB krypteret lagerplads til at starte med"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Få e-mailopdateringer om kommentarer og forslag, der tilføjes til dine dokumenter."
+      ],
+      "Get Notified About Comments": [
+        "Få besked om kommentarer"
       ],
       "here": [
         "her"
@@ -4257,11 +4287,17 @@
       "Merged": [
         "Flettet"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Beskeder til alle dine e-mailadresser ender i din indbakke."
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
       "Monitor accounts": [
         "Overvåg konti"
+      ],
+      "Most recent": [
+        "Aller seneste"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
@@ -4324,6 +4360,15 @@
       "Organization size": [
         "Organisationsstørrelse"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Vores advarsler prioriterer sikkerhed. Hvis du ikke genkender nogen af de kompromitterede oplysninger, kan du roligt ignorere denne rapport."
+      ],
+      "Owned by me": [
+        "Ejet af mig"
+      ],
+      "Owned by others": [
+        "Ejet af andre"
+      ],
       "Owner": [
         "Ejer"
       ],
@@ -4365,6 +4410,10 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Bemærk, at når du klikker på knappen Bekræft, vil din konto have ${ creditsRemaining } kredit tilbage.",
+        "Bemærk, at når du klikker på knappen Bekræft, vil din konto have ${ creditsRemaining } kreditter tilbage."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Angiv et navn og en e-mailadresse for at oprette en gruppe."
@@ -4417,6 +4466,12 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
+      ],
+      "Registering your subscription...": [
+        "Registrerer dit abonnement..."
+      ],
+      "Restored version to": [
+        "Gendannet version til"
       ],
       "Saving": [
         "Gemmer"
@@ -4472,6 +4527,9 @@
       "Something went wrong": [
         "Noget gik galt"
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
       ],
@@ -4490,14 +4548,17 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontoen kan have fået en ny nøgle, eller følgende kan være blevet manipuleret: ${ items }. Åbn kun, hvis du har tillid til den."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Applikationen skal dekryptere dine kontakter lokalt, før de kan eksporteres. Ved afslutningen af processen vil en VCF-fil blive genereret, og du har mulighed for at downloade denne."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Forfatterskabet til ændringer i dokumentet kunne ikke bekræftes. Vil du markere dette dokument som bekræftet? Vælg Ignorer for at afgøre det senere."
       ],
       "The Beginning": [
         "Begyndelsen"
+      ],
+      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
+        "Den digitale signatur er blevet delvist verificeret. Filen blev uploadet fra en offentlig side, der ikke angiver en bestemt brugers oprindelse."
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "Den digitale signatur er blevet delvist verificeret. Mappen blev uploadet fra en offentlig side, der ikke angiver en bestemt brugers oprindelse."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
@@ -4522,6 +4583,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Dette dokument findes måske ikke, eller du har ikke ret til at se det. Du kan prøve at genindlæse siden for at se, om problemet fortsætter."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
       ],
       "This item already exists in your library": [
         "Dette element findes allerede i dit bibliotek"
@@ -4607,6 +4671,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de bliver frigivet til offentligheden. Dette vil genindlæse applikationen"
+      ],
+      "Undo successful": [
+        "Fortryd lykkedes"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Desværre ser det ud til, at filen eller nogle af dens data ikke kan dekrypteres."
@@ -4775,6 +4842,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Der leveres ikke længere e-mails til din indbakke. Dine Drive-links til deling er ikke længere aktive, og du kan ikke uploade nye filer. Hvis du fortsat vil bruge din konto, skal du betale eventuelle forfaldne fakturaer."
       ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Dit ${ PASS_SHORT_APP_NAME } Plus abonnement vil blive erstattet af ${ PASS_SHORT_APP_NAME } Lifetime. Den resterende del af dit abonnement vil blive tilføjet til din konto. ${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
       ],
@@ -4795,6 +4865,9 @@
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Din nuværende browser understøtter ikke hentning af store filer på grund af manglende adgang til såkaldte service workers. Ved hentning af store filer kan browseren fryse eller holde op med at svare. Brug venligst de nyeste versioner af en ${ recommendedBrowser } og prøv igen."
+      ],
+      "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
+        "Dit nuværende dokument vil blive erstattet med denne version. Kommentarer og forslag vil blive fjernet fra dokumentet, men vil fortsat være tilgængelige i kommentarhistorikken."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
@@ -4855,11 +4928,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Kun visning"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI-drevet assistent afhjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ]
     },
     "Item": {
@@ -4934,6 +5002,9 @@
       "Address": [
         "Adresse"
       ],
+      "Anderson": [
+        "Andersen"
+      ],
       "Anyone on the Internet with the link can view": [
         "Enhver på internettet med linket kan se"
       ],
@@ -4957,9 +5028,6 @@
       ],
       "Authenticator app": [
         "Godkendelsesapp"
-      ],
-      "Automatically save contacts": [
-        "Gem automatisk kontakter"
       ],
       "Beta Access": [
         "Beta-adgang"
@@ -5102,9 +5170,6 @@
       "Expires": [
         "Udløber"
       ],
-      "Export contacts": [
-        "Eksportér kontakter"
-      ],
       "Extended address": [
         "Udvidet adresse"
       ],
@@ -5135,9 +5200,6 @@
       "Import all messages": [
         "Importer alle beskeder"
       ],
-      "Import contacts": [
-        "Importér kontakter"
-      ],
       "Import interval": [
         "Importinterval"
       ],
@@ -5146,6 +5208,9 @@
       ],
       "Import to:": [
         "Importer til:"
+      ],
+      "Include document name in notification": [
+        "Inkluder dokumentnavn i notifikation"
       ],
       "Include message and file name in invite email": [
         "Medtag besked og filnavn i invitationsmail"
@@ -5276,6 +5341,9 @@
       "Reveal password": [
         "Vis adgangskode"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
       "Security code (${ codeName })": [
         "Sikkerhedskode (${ codeName })"
       ],
@@ -5314,6 +5382,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Thomas": [
+        "Kim"
       ],
       "Title": [
         "Titel"
@@ -5793,6 +5864,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Fra ${ priceMailPlus }"
       ],
@@ -5930,6 +6004,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-mailadresser/aliasser"
+      ],
+      "10 more premium features": [
+        "10 flere premium-funktioner"
       ],
       "10-year file version history": [
         "10-års fil-versionshistorik"
@@ -6200,6 +6277,9 @@
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
       ],
+      "TOR over VPN": [
+        "Tor over VPN"
+      ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
       ],
@@ -6391,6 +6471,11 @@
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Få Mail Plus for ${ priceCoupon }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -6454,6 +6539,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opret op til ${ n } e-mailadresser/aliasser, som du kan tildele familiemedlemmer. Brug dem til onlineidentiteter, f.eks. JohnShopper@${ domain } til shoppingkonti."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedikerede servere med dedikerede IP adresser kan tilføjes til private gateways for at finjustere adgangen"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere"
@@ -6547,6 +6635,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Nulstil brugeradgangskoder og nulstil to-faktor-godkendelse på brugere"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Send din internettrafik gennem TOR-netværket med ét enkelt tryk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -6823,6 +6914,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Ikke nok plads til at uploade ${ formattedTotal }"
       ],
+      "Public link access updated": [
+        "Adgang til offentligt link opdateret"
+      ],
+      "Public link update access failed ": [
+        "Adgang til opdatering af offentligt link mislykkedes "
+      ],
       "Stopping the sharing of this item has failed": [
         "Det lykkedes ikke at stoppe delingen af dette element"
       ],
@@ -6864,6 +6961,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Calendar."
       ]
     },
     "Option": {
@@ -6916,6 +7018,20 @@
       "${ n } user account": [
         "${ n } brugerkonto",
         "${ n } brugerkonti"
+      ],
+      "Activity log": [
+        "Aktivitetslog"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle premium-tjenester. 6 brugere. 1 nemt abonnement."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Fås til ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Vi præsenterer ${ passFamilyPlanName }"
       ]
     },
     "passwordless": {
@@ -6933,6 +7049,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankoverførsel"
+      ],
       "Credit/debit card": [
         "Kredit/debetkort"
       ],
@@ -6985,6 +7104,18 @@
       ],
       "Select billing country to pay": [
         "Vælg faktureringsland for at betale"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måneder. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ renewPrice } i ${ subscriptionLengthCopy } måneder. Du kan annullere når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måneder. Derefter fornys den automatisk til ${ renewPrice } i ${ subscriptionLengthCopy } måneder. Du kan annullere når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Den særlige rabatpris på ${ priceWithDiscount } gælder forden første måned. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ renewPrice } i ${ subscriptionLength } måned. Du kan annullere når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første måned. Derefter vil den automatisk blive fornyet til ${ renewPrice } hver måned. Du kan annullere når som helst."
       ],
       "Timeout exceeded": [
         "Timeout overskredet"
@@ -7122,28 +7253,9 @@
         "Navn"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "så ${ contactHref } vores salgsteam."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Vælg det antal IP'er, du vil inkludere i dit abonnement. Hver ekstra IP koster ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Hvis du skulle have brug for flere end ${ maxIPs } IP-adresse, ",
-        "Hvis du skulle have brug for flere end ${ maxIPs } IP-adresser, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontakt"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Vælg det antal brugere, du vil inkludere i dit abonnement. Hver ekstra bruger koster ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Hvis du har brug for mere end ${ maxUsers } brugerkonto, bedes du ${ contact } vores salgsteam.",
-        "Hvis du har brug for mere end ${ maxUsers } brugerkonti, bedes du ${ contact } vores salgsteam."
       ]
     },
     "Price": {
@@ -7704,6 +7816,9 @@
     "sso": {
       "Sign in": [
         "Log ind"
+      ],
+      "Sign in to your organization": [
+        "Log ind på din organisation"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du bliver omdirigeret til din tredjeparts SSO-udbyder."
@@ -8745,9 +8860,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitation til at tilgå emnet."
-      ],
-      "You do not have any contacts to export": [
-        "Du har ingen kontakter at eksportere"
       ]
     },
     "tooltip": {
@@ -8817,6 +8929,11 @@
         "Ingen reklamer"
       ]
     },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
+      ]
+    },
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
         "${ n } konto pr. wallet",
@@ -8884,6 +9001,9 @@
       ],
       "Missing alias suffix": [
         "Mangler alias-suffiks"
+      ],
+      "Name is required": [
+        "Navn er påkrævet"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Kun alfanumeriske tegn, prikker, bindestreger og bundstreger er tilladt"

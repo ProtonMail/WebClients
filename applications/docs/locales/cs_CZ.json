@@ -60,9 +60,6 @@
       "Add group": [
         "Přidat skupinu"
       ],
-      "Add new contact": [
-        "Přidat nový kontakt"
-      ],
       "Add new group": [
         "Přidat novou skupinu"
       ],
@@ -291,14 +288,14 @@
       "Export contact group": [
         "Exportovat skupinu kontaktů"
       ],
-      "Export contacts": [
-        "Exportovat kontakty"
-      ],
       "Forgot password?": [
         "Zapomenuté heslo?"
       ],
       "Forward as attachment": [
         "Přeposlat jako přílohu"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Získejte ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
       ],
       "Get in touch": [
         "Kontaktujte nás"
@@ -587,6 +584,9 @@
       ],
       "Show advanced PGP settings": [
         "Zobrazit pokročilé nastavení PGP"
+      ],
+      "Show options": [
+        "Zobrazit možnosti"
       ],
       "Sign out": [
         "Odhlásit se"
@@ -1114,6 +1114,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Změna nastavení e-mailové adresy"
+      ],
+      "Continue": [
+        "Pokračovat"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
       ],
@@ -2200,6 +2206,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA přidává další úroveň zabezpečení a zabraňuje neoprávněnému přístupu."
       ],
+      "Also included": [
+        "Zahrnuje také"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
       ],
@@ -2211,6 +2220,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Získejte neomezený počet aliasů a 500 GB úložiště s ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3942,14 +3954,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce vašeho účtu."
       ],
-      "Account size": [
-        "Velikost účtu"
-      ],
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
       ],
-      "Additional options": [
-        "Další možnosti"
+      "Address copied to clipboard": [
+        "Adresa zkopírována do schránky"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ověření Adresy pomocí Důvěryhodných Klíčů je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejným klíčům, které mohou být použity pro odesílání."
@@ -4083,12 +4092,6 @@
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Vytvořte bezpečný cloud pro ${ n } člena",
-        "Vytvořte bezpečný cloud pro ${ n } členy",
-        "Vytvořte bezpečný cloud pro ${ n } členů",
-        "Vytvořte bezpečný cloud pro ${ n } členů"
-      ],
       "Create in": [
         "Vytvořit v"
       ],
@@ -4110,9 +4113,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Podporovány jsou soubory CSV z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací a také formáty vCard 3.1 a 4.0 (kódování UTF-8)."
-      ],
       "Current plan": [
         "Aktuální tarif"
       ],
@@ -4124,6 +4124,9 @@
       ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "default email address": [
+        "výchozí e-mailová adresa"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitální podpis ověřen. Tento soubor byl bezpečně nahrán uživatelem ${ emailAddress }."
@@ -4184,9 +4187,6 @@
       ],
       "email": [
         "e-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-mailový hosting pro 10 vlastních e-mailových domén je zahrnut zdarma. Další domény lze přidat za ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailový hosting je k dispozici pouze pro domény, které již vlastníte. Registrace domén není v současné době prostřednictvím služby ${ BRAND_NAME } k dispozici. E-mail můžete hostovat pro domény registrované u jakéhokoli registrátora domén."
@@ -4431,6 +4431,9 @@
       "Merged": [
         "Sloučený"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Zprávy na všechny vaše e-mailové adresy budou chodit do vaší doručené pošty."
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -4614,8 +4617,14 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
+      "Registering your subscription...": [
+        "Registrace vašeho předplatného..."
+      ],
       "Restored version to": [
         "Obnovena verze na"
+      ],
+      "Save Document as PDF": [
+        "Uložit dokument jako PDF"
       ],
       "Saving": [
         "Ukládání"
@@ -4644,6 +4653,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavením PGP si můžete posílat koncově šifrované e-maily i s uživateli, kteří nejsou klienti ${ BRAND_NAME } a používají kompatibilní PGP službu."
       ],
+      "Setting up your new address...": [
+        "Nastavování nové adresy..."
+      ],
       "Settings update failed": [
         "Aktualizace nastavení selhala"
       ],
@@ -4671,6 +4683,9 @@
       "Something went wrong": [
         "Něco se pokazilo"
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Začněte ji sdílet s kontakty a používejte ji pro online služby."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Zálohu odešlete na následující adresu nebo naskenujte QR kód. Po potvrzení se vklad promítne na váš účet."
       ],
@@ -4688,9 +4703,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
       ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Autorství úprav v dokumentu nebylo možné ověřit. Chcete tento dokument označit jako ověřený? Můžete zvolit možnost Ignorovat a rozhodnout se později."
@@ -4727,6 +4739,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Tento dokument nemusí existovat nebo k jeho zobrazení nemáte oprávnění. Můžete zkusit znovu načíst stránku a zjistit, zda problém přetrvává."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Toto je nyní vaše ${ defaultEmailAddress } pro odesílání nových zpráv."
       ],
       "This item already exists in your library": [
         "Tato položka již ve vaší knihovně existuje"
@@ -4884,6 +4899,15 @@
       "What do you want to do?": [
         "Co chcete udělat?"
       ],
+      "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
+        "Po otevření dialogového okna změňte \"Cíl\" na \"Uložit jako PDF\" a stiskněte tlačítko Uložit."
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "Po otevření dialogového okna změňte \"Cíl\" na \"Uložit do PDF\" a stiskněte tlačítko Uložit."
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "Po otevření dialogového okna vyberte v levém dolním rohu \"PDF\" a stiskněte tlačítko Uložit."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
       ],
@@ -5004,6 +5028,9 @@
       "Your account will be updated once the payment is cleared.": [
         "Jakmile bude platba zrušena, váš účet bude aktualizován."
       ],
+      "Your browser's Print dialog will now open, where you can export your document to PDF.": [
+        "Nyní se otevře dialogové okno prohlížeče pro Tisk, kde můžete dokument exportovat do PDF."
+      ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Vaše změny se synchronizují na Disk. Nezavírejte prosím webovou stránku."
       ],
@@ -5079,11 +5106,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Pouze zobrazení"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
       ]
     },
     "Item": {
@@ -5187,9 +5209,6 @@
       "Authenticator app": [
         "Ověřovací aplikace"
       ],
-      "Automatically save contacts": [
-        "Automaticky ukládat kontakty"
-      ],
       "Beta Access": [
         "Beta přístup"
       ],
@@ -5216,12 +5235,6 @@
       ],
       "Calendars": [
         "Kalendáře"
-      ],
-      "Can edit": [
-        "Může upravovat"
-      ],
-      "Can view": [
-        "Může zobrazit"
       ],
       "Cancel download": [
         "Zrušit stahování"
@@ -5337,9 +5350,6 @@
       "Expires": [
         "Vyprší"
       ],
-      "Export contacts": [
-        "Exportovat kontakty"
-      ],
       "Extended address": [
         "Rozšířená adresa"
       ],
@@ -5369,9 +5379,6 @@
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
-      ],
-      "Import contacts": [
-        "Importovat kontakty"
       ],
       "Import interval": [
         "Interval pro import"
@@ -5588,14 +5595,6 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "Organizovat, přidávat a upravovat soubory"
-      ],
-      "View and download": [
-        "Zobrazit a stáhnout"
       ]
     },
     "Label for contact group color": {
@@ -6055,6 +6054,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Začněte za ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
       ],
@@ -6229,6 +6231,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-mailových adres/aliasů"
+      ],
+      "10 more premium features": [
+        "10 dalších prémiových funkcí"
       ],
       "10-year file version history": [
         "10letá historie verzí souborů"
@@ -6713,6 +6718,14 @@
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Získejte Mail Plus za ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Zvýhodněná cena ${ priceCoupon } platí první měsíc. Poté dojde k automatickému obnovení za cenu ${ priceMailPlus }. Službu můžete kdykoli zrušit."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -7011,11 +7024,17 @@
       "\"${ name }\" created successfully": [
         "\"${ name }\" úspěšně vytvořen"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" smazáno"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" trvale odstraněno z koše"
       ],
       "\"${ name }\" failed to be created": [
         "\"${ name }\" se nepodařilo vytvořit"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\" se nepodařilo smazat"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" se nepodařilo trvale odstranit z koše"
@@ -7056,11 +7075,23 @@
         "${ count } položek se nepodařilo dešifrovat",
         "${ count } položek se nepodařilo dešifrovat"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } položka smazána",
+        "${ numberOfItems } položky smazány",
+        "${ numberOfItems } položek smazáno",
+        "${ numberOfItems } položek smazáno"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } položka trvale odstraněna z koše",
         "${ numberOfItems } položky trvale odstraněny z koše",
         "${ numberOfItems } položek trvale odstraněno z koše",
         "${ numberOfItems } položek trvale odstraněno z koše"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } položku se nepodařilo smazat",
+        "${ numberOfItems } položky se nepodařilo smazat",
+        "${ numberOfItems } položek se nepodařilo smazat",
+        "${ numberOfItems } položek se nepodařilo smazat"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } položku se nepodařilo trvale odstranit z koše",
@@ -7567,32 +7598,9 @@
         "Jméno"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } prosím náš obchodní tým."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Vyberte počet IP adres, které mají být do tarifu zahrnuty. Každá další IP adresa stojí ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Pokud potřebujete více než ${ maxIPs } IP, ",
-        "Pokud potřebujete více než ${ maxIPs } IP, ",
-        "Pokud potřebujete více než ${ maxIPs } IP, ",
-        "Pokud potřebujete více než ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontaktujte"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Vyberte počet uživatelů, kteří mají být do tarifu zahrnuti. Každý další uživatel stojí ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Pokud potřebujete více než ${ maxUsers } uživatelský účet, prosím ${ contact } náš obchodní tým.",
-        "Pokud potřebujete více než ${ maxUsers } uživatelské účty, prosím ${ contact } náš obchodní tým.",
-        "Pokud potřebujete více než ${ maxUsers } uživatelských účtů, prosím ${ contact } náš obchodní tým.",
-        "Pokud potřebujete více než ${ maxUsers } uživatelských účtů, prosím ${ contact } náš obchodní tým."
       ]
     },
     "Price": {
@@ -9169,6 +9177,9 @@
       "Untitled document ${ date }": [
         "Dokument bez názvu ${ date }"
       ],
+      "Upgrade complete!": [
+        "Navýšení dokončeno!"
+      ],
       "Uploading a large file or folder": [
         "Nahrávání velkého souboru nebo složky"
       ],
@@ -9204,6 +9215,9 @@
       ],
       "Your exposed information": [
         "Vaše uniklé informace"
+      ],
+      "Your shorter address is now ready": [
+        "Vaše kratší adresa je nyní připravena"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9286,9 +9300,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali jsme jim pozvánku k přístupu k položce."
-      ],
-      "You do not have any contacts to export": [
-        "Nemáte žádné kontakty k exportu"
       ]
     },
     "tooltip": {
@@ -9454,6 +9465,9 @@
       ],
       "Missing alias suffix": [
         "Chybějící přípona aliasu"
+      ],
+      "Name is required": [
+        "Název je povinný"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Povoleny jsou pouze alfanumerické znaky, tečky, pomlčky a podtržítka"
