@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
+import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import { useMarkAllAs } from 'proton-mail/hooks/actions/markAs/useMarkAllAs';
 import { useMarkSelectionAs } from 'proton-mail/hooks/actions/markAs/useMarkSelectionAs';
 
@@ -15,13 +16,24 @@ export interface MarkAsParams {
     silent?: boolean;
     selectAll?: boolean;
     onCheckAll?: (check: boolean) => void;
+    sourceAction: SOURCE_ACTION;
+    currentFolder: string;
 }
 export const useMarkAs = () => {
     const markSelectionAs = useMarkSelectionAs();
     const { markAllAs, selectAllMarkModal } = useMarkAllAs();
 
     const markAs = useCallback(
-        async ({ elements, labelID = '', status, silent = true, selectAll, onCheckAll }: MarkAsParams) => {
+        async ({
+            elements,
+            labelID = '',
+            status,
+            silent = true,
+            selectAll,
+            onCheckAll,
+            sourceAction,
+            currentFolder,
+        }: MarkAsParams) => {
             if (!elements.length) {
                 return;
             }
@@ -29,7 +41,7 @@ export const useMarkAs = () => {
             const isMessage = testIsMessage(elements[0]);
 
             if (selectAll) {
-                await markAllAs({ isMessage, labelID, status, onCheckAll });
+                await markAllAs({ isMessage, labelID, status, onCheckAll, sourceAction, currentFolder });
             } else {
                 void markSelectionAs({
                     elements,
@@ -37,6 +49,8 @@ export const useMarkAs = () => {
                     status,
                     silent,
                     isMessage,
+                    sourceAction,
+                    currentFolder,
                 });
             }
         },

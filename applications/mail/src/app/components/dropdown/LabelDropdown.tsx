@@ -18,7 +18,7 @@ import {
     useModalState,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { useLabels } from '@proton/mail';
+import { useFolders, useLabels } from '@proton/mail';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_IDENTIFIERS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
@@ -35,6 +35,7 @@ import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import type { Element } from '../../models/element';
+import { SOURCE_ACTION, folderLocation } from '../list/useListTelemetry';
 
 import './LabelDropdown.scss';
 
@@ -133,6 +134,7 @@ interface Props {
 const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, selectAll, onCheckAll }: Props) => {
     const [uid] = useState(generateUID('label-dropdown'));
     const [labels = []] = useLabels();
+    const [folders = []] = useFolders();
     const [user] = useUser();
     const [loading, withLoading] = useLoading();
     const [search, updateSearch] = useState('');
@@ -257,6 +259,8 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, sel
                     sourceLabelID: labelID,
                     destinationLabelID: MAILBOX_IDENTIFIERS.archive,
                     folderName,
+                    sourceAction: SOURCE_ACTION.LABEL_DROPDOWN,
+                    currentFolder: folderLocation(labelID, labels, folders),
                 })
             );
         }

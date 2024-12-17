@@ -2,13 +2,20 @@ import type { Dispatch, SetStateAction } from 'react';
 import { useCallback } from 'react';
 
 import { useApi, useModalTwo, useNotifications } from '@proton/components';
-import { useFolders, useGetLabels } from '@proton/mail';
+import { useFolders, useGetLabels, useLabels } from '@proton/mail';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 
 import MoveAllModal from 'proton-mail/components/list/select-all/modals/MoveAllModal';
 import SelectAllMoveModal from 'proton-mail/components/list/select-all/modals/SelectAllMoveModal';
+import useListTelemetry, {
+    ACTION_TYPE,
+    SELECTED_RANGE,
+    type SOURCE_ACTION,
+    folderLocation,
+    getActionFromLabel,
+} from 'proton-mail/components/list/useListTelemetry';
 import { isMessage as testIsMessage } from 'proton-mail/helpers/elements';
 import { isCustomLabel } from 'proton-mail/helpers/labels';
 import {
@@ -36,6 +43,8 @@ interface MoveAllParams {
     sourceLabelID: string;
     destinationLabelID: string;
     telemetryEvent: TelemetryMailSelectAllEvents;
+    sourceAction: SOURCE_ACTION;
+    currentFolder: string;
 }
 
 interface SelectAllParams {
@@ -55,12 +64,14 @@ type MoveAllToFolderArgs = MoveAllParams | SelectAllParams;
 export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const api = useApi();
     const [folders = []] = useFolders();
+    const [labels = []] = useLabels();
     const { createNotification } = useNotifications();
     const dispatch = useMailDispatch();
     const store = useMailStore();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const canUseOptimistic = useFlag('SelectAllOptimistic');
     const getLabels = useGetLabels();
+    const { sendSimpleActionReport } = useListTelemetry();
 
     const [selectAllMoveModal, handleShowSelectAllMoveModal] = useModalTwo(SelectAllMoveModal);
     const [moveAllModal, handleMoveAllMoveModal] = useModalTwo(MoveAllModal);
@@ -145,9 +156,22 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
     );
 
     const moveAllCallback = useCallback(
-        async ({ sourceLabelID, destinationLabelID, telemetryEvent }: MoveAllParams) => {
+        async ({ sourceLabelID, destinationLabelID, telemetryEvent, sourceAction, currentFolder }: MoveAllParams) => {
             await handleMoveAllMoveModal({
                 destinationLabelID,
+            });
+
+            const destinationFolder = folderLocation(destinationLabelID, labels, folders);
+
+            sendSimpleActionReport({
+                actionType:
+                    destinationFolder === 'CUSTOM_FOLDER'
+                        ? ACTION_TYPE.MOVE_TO_CUSTOM_FOLDER
+                        : getActionFromLabel(destinationLabelID),
+                actionLocation: sourceAction,
+                numberMessage: SELECTED_RANGE.ALL,
+                destination: destinationFolder,
+                folderLocation: currentFolder,
             });
 
             void handleMoveAllToFolder({

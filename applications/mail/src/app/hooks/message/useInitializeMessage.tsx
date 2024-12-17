@@ -12,6 +12,7 @@ import { isDraft, isPlainText } from '@proton/shared/lib/mail/messages';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 import uniqueBy from '@proton/utils/uniqueBy';
 
+import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -144,6 +145,8 @@ export const useInitializeMessage = () => {
                     elements: [getData()],
                     labelID,
                     status: MARK_AS_STATUS.READ,
+                    sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
+                    currentFolder: 'INIT_MESSAGE',
                 });
                 dataChanges = { ...dataChanges, Unread: 0 };
             }

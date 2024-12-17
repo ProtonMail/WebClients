@@ -9,6 +9,7 @@ import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
+import useListTelemetry, { ACTION_TYPE, numberSelectionElements } from 'proton-mail/components/list/useListTelemetry';
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import { isElementReminded } from 'proton-mail/helpers/snooze';
 import type { MarkAsParams } from 'proton-mail/hooks/actions/markAs/useMarkAs';
@@ -75,8 +76,18 @@ export const useMarkSelectionAs = () => {
     const dispatch = useMailDispatch();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
+    const { sendSimpleActionReport } = useListTelemetry();
+
     const markAs = useCallback(
-        ({ elements, labelID = '', status, silent = true, isMessage }: MarkSelectionAsParams) => {
+        ({
+            elements,
+            labelID = '',
+            status,
+            silent = true,
+            isMessage,
+            sourceAction,
+            currentFolder,
+        }: MarkSelectionAsParams) => {
             const markAsReadAction = isMessage ? markMessageAsRead : markConversationsAsRead;
             const markAsUnreadAction = isMessage ? markMessageAsUnread : markConversationsAsUnread;
             const action = status === MARK_AS_STATUS.READ ? markAsReadAction : markAsUnreadAction;
@@ -143,6 +154,13 @@ export const useMarkSelectionAs = () => {
 
             // No await since we are doing optimistic UI here
             const promise = request();
+
+            sendSimpleActionReport({
+                actionType: status === MARK_AS_STATUS.READ ? ACTION_TYPE.MARK_AS_READ : ACTION_TYPE.MARK_AS_UNREAD,
+                actionLocation: sourceAction,
+                numberMessage: numberSelectionElements(elements.length),
+                folderLocation: currentFolder,
+            });
 
             if (!silent) {
                 const notificationText = getNotificationTextMarked(isMessage, elements.length, status);

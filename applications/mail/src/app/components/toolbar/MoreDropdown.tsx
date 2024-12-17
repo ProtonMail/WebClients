@@ -21,6 +21,7 @@ import SnoozeUpsellModal from '../list/snooze/components/SnoozeUpsellModal';
 import SnoozeToolbarDropdownStepWrapper, {
     SnoozeToolbarDropdownStepWrapperProps,
 } from '../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
+import useListTelemetry, { ACTION_TYPE, SELECTED_RANGE, SOURCE_ACTION } from '../list/useListTelemetry';
 import type { DropdownRender } from '../message/header/HeaderDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 
@@ -68,10 +69,11 @@ interface Props {
     isNarrow: boolean;
     isTiny: boolean;
     isExtraTiny: boolean;
-    onMove: (labelID: string) => void;
-    onDelete: () => void;
+    onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
+    onDelete: (sourceAction: SOURCE_ACTION) => void;
     breakpoints: Breakpoints;
     onCheckAll?: (check: boolean) => void;
+    currentFolder: string;
 }
 
 const MoreDropdown = ({
@@ -85,6 +87,7 @@ const MoreDropdown = ({
     onDelete,
     breakpoints,
     onCheckAll,
+    currentFolder,
 }: Props) => {
     const mailSettings = useMailModel('MailSettings');
     const { selectAll } = useSelectAll({ labelID });
@@ -97,6 +100,8 @@ const MoreDropdown = ({
 
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
     const { moveAllToFolder, moveAllModal } = useMoveAllToFolder();
+
+    const { sendSimpleActionReport } = useListTelemetry();
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
@@ -114,28 +119,42 @@ const MoreDropdown = ({
         return null;
     }
 
-    const handleEmptyLabel = () => emptyLabel(labelID);
+    const handleEmptyLabel = () => {
+        sendSimpleActionReport({
+            actionType: ACTION_TYPE.DELETE_PERMANENTLY,
+            actionLocation: SOURCE_ACTION.TOOLBAR,
+            numberMessage: SELECTED_RANGE.ALL,
+            folderLocation: currentFolder,
+        });
+        emptyLabel(labelID);
+    };
 
-    const handleMoveAllToArchive = () =>
+    const handleMoveAllToArchive = () => {
         moveAllToFolder({
             type: MoveAllType.moveAll,
             sourceLabelID: labelID,
             destinationLabelID: ARCHIVE,
             telemetryEvent: TelemetryMailSelectAllEvents.button_move_to_archive,
+            sourceAction: SOURCE_ACTION.MORE_DROPDOWN,
+            currentFolder,
         });
-    const handleMoveAllToTrash = () =>
+    };
+    const handleMoveAllToTrash = () => {
         moveAllToFolder({
             type: MoveAllType.moveAll,
             sourceLabelID: labelID,
             destinationLabelID: TRASH,
             telemetryEvent: TelemetryMailSelectAllEvents.button_move_to_trash,
+            sourceAction: SOURCE_ACTION.MORE_DROPDOWN,
+            currentFolder,
         });
+    };
 
     const inbox = (
         <DropdownMenuButton
             key="context-menu-inbox"
             className="text-left"
-            onClick={() => onMove(INBOX)}
+            onClick={() => onMove(INBOX, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetoinbox"
         >
             <Icon name="inbox" className="mr-2" />
@@ -147,7 +166,7 @@ const MoreDropdown = ({
         <DropdownMenuButton
             key="context-menu-nospam"
             className="text-left"
-            onClick={() => onMove(INBOX)}
+            onClick={() => onMove(INBOX, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetonospam"
         >
             <Icon name="fire-slash" className="mr-2" />
@@ -159,7 +178,7 @@ const MoreDropdown = ({
         <DropdownMenuButton
             key="context-menu-archive"
             className="text-left"
-            onClick={() => onMove(ARCHIVE)}
+            onClick={() => onMove(ARCHIVE, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetonoarchive"
         >
             <Icon name="archive-box" className="mr-2" />
@@ -171,7 +190,7 @@ const MoreDropdown = ({
         <DropdownMenuButton
             key="context-menu-trash"
             className="text-left"
-            onClick={() => onMove(TRASH)}
+            onClick={() => onMove(TRASH, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetotrash"
         >
             <Icon name="trash" className="mr-2" />
@@ -183,7 +202,7 @@ const MoreDropdown = ({
         <DropdownMenuButton
             key="context-menu-spam"
             className="text-left"
-            onClick={() => onMove(SPAM)}
+            onClick={() => onMove(SPAM, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetospam"
         >
             <Icon name="fire" className="mr-2" />
@@ -195,7 +214,7 @@ const MoreDropdown = ({
         <DropdownMenuButton
             key="context-menu-delete"
             className="text-left"
-            onClick={() => onDelete()}
+            onClick={() => onDelete(SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--delete"
         >
             <Icon name="cross-circle" className="mr-2" />
@@ -249,6 +268,7 @@ const MoreDropdown = ({
                     onLock={onLock}
                     selectedIDs={selectedIDs}
                     displayUpsellModal={() => handleUpsellModalDisplay(true)}
+                    displayedFolder={currentFolder}
                 />
             ),
         });

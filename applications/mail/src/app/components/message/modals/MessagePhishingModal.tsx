@@ -6,6 +6,8 @@ import { ErrorButton, Prompt, useApi, useNotifications } from '@proton/component
 import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+
 import { useMoveToFolder } from '../../../hooks/actions/move/useMoveToFolder';
 import type { Element } from '../../../models/element';
 import type { MessageState } from '../../../store/messages/messagesTypes';
@@ -14,10 +16,11 @@ const { SPAM } = MAILBOX_LABEL_IDS;
 
 interface Props extends ModalProps {
     message: MessageState;
+    currentFolder: string;
     onBack: () => void;
 }
 
-const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
+const MessagePhishingModal = ({ message, currentFolder, onBack, ...rest }: Props) => {
     const api = useApi();
     const { moveToFolder } = useMoveToFolder();
     const { createNotification } = useNotifications();
@@ -43,6 +46,8 @@ const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
             folderName: '',
             silent: true,
             askUnsub: false,
+            sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
+            currentFolder: currentFolder,
         });
         createNotification({ text: c('Success').t`Phishing reported` });
         onBack();
