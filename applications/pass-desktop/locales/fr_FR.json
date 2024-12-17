@@ -741,10 +741,10 @@
         "Si vous utilisez un sous-domaine, par exemple ${ subdomainExample }, vous devez utiliser ${ dmarcExampleSubdomain } comme domaine à la place."
       ],
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
-        "Si vous utilisez un sous-domaine, par exemple sous-domaine.domaine.fr, vous devez utiliser ${ domainKeyExampleSubdomain } comme domaine à la place. Cela signifie que si votre domaine est mail.domaine.fr, vous devez saisir ${ domainKeyExampleMail } comme domaine."
+        "Si vous utilisez un sous-domaine, par exemple sous-domaine.domaine.fr, vous devez utiliser ${ domainKeyExampleSubdomain } comme domaine à la place. Cela signifie que si votre domaine est e-mail.domaine.fr, vous devez saisir ${ domainKeyExampleMail } comme domaine."
       ],
       "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Si vous utilisez CloudFlare, assurez-vous de ne pas sélectionner l'option Proxy."
+        "S vous utilisez CloudFlare, assurez-vous de ne pas sélectionner l'option Proxy."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Renforcez la sécurité et la confidentialité de vos informations avec ces conseils."
@@ -999,7 +999,7 @@
         "La mise à jour des messageries du domaine n'a pas abouti."
       ],
       "Failed to update domain name.": [
-        "La mise à jour du nom du domaine n'a pas abouti."
+        "La mise à jour du nom de domaine n'a pas abouti."
       ],
       "Failed to update monitoring settings": [
         "Les paramètres de surveillance n'ont pas pu être mis à jour."
@@ -1280,8 +1280,8 @@
         "La mise à jour de « ${ payload.item.data.metadata.name } » a été rejetée."
       ],
       "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } blocage",
-        "${ blockedEmailsCount } blocages"
+        "${ blockedEmailsCount } bloqué",
+        "${ blockedEmailsCount } bloqués"
       ],
       "${ count } invite successfully sent": [
         "${ count } invitation a été envoyée.",
@@ -1299,8 +1299,8 @@
         "${ count }/${ maxReads } vues"
       ],
       "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } transfert",
-        "${ forwardedEmailsCount } transferts"
+        "${ forwardedEmailsCount } transféré",
+        "${ forwardedEmailsCount } transférés"
       ],
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -1335,8 +1335,8 @@
         "${ PROTON_SENTINEL_NAME } a été activé."
       ],
       "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } envoi",
-        "${ repliedEmailsCount } envois"
+        "${ repliedEmailsCount } envoyé",
+        "${ repliedEmailsCount } envoyés"
       ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } fuite de données a été détectée.",
@@ -1356,6 +1356,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accès à ${ PASS_APP_NAME } nécessitera toujours votre mot de passe ${ BRAND_NAME }."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "L'accès à ${ PASS_APP_NAME } nécessitera toujours votre mot de passe de secours."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "L'accès à ${ PASS_APP_NAME } nécessitera votre empreinte digitale ou le code PIN de votre appareil."
@@ -1553,7 +1556,7 @@
         "Par exemple, envoyez un e-mail à cette adresse et il semblera être envoyé depuis ${ exampleEmail }."
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
-        "Les e-mails envoyés à vos alias sont transférés vers vos messageries. Un alias peut avoir plusieurs messageries : c'est utile pour partager un alias entre vous et vos amis."
+        "Les emails envoyés à vos alias sont transférés vers vos messageries. Un alias peut avoir plusieurs messageries : c'est utile pour partager un alias entre vous et vos amis."
       ],
       "Emptying trash...": [
         "Suppression des éléments de la corbeille en cours"
@@ -1872,6 +1875,15 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmez votre mot de passe ${ BRAND_NAME } pour exporter vos données ${ PASS_APP_NAME }."
       ],
+      "Please confirm your backup password": [
+        "Veuillez confirmer votre mot de passe de secours."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Veuillez confirmer votre mot de passe de secours afin de verrouiller automatiquement avec votre mot de passe."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Veuillez confirmer votre mot de passe de secours afin d'enlever votre verrouillage actuel."
+      ],
       "Please confirm your extra password": [
         "Veuillez confirmer votre mot de passe supplémentaire."
       ],
@@ -2137,6 +2149,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Débloquez ${ PASS_SHORT_APP_NAME } avec votre mot de passe ${ BRAND_NAME }."
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Débloquez ${ PASS_SHORT_APP_NAME } avec votre mot de passe de secours."
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Débloquez ${ PASS_SHORT_APP_NAME } avec votre mot de passe supplémentaire."
       ],
@@ -2206,6 +2221,9 @@
       ],
       "You are about to create:": [
         "Vous êtes sur le point de créer :"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Vous pouvez également définir un code PIN pour débloquer ${ PASS_APP_NAME }."
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Vous pouvez maintenant utiliser votre mot de passe ${ BRAND_NAME } pour accéder en mode hors ligne à ${ PASS_SHORT_APP_NAME }."
@@ -2308,7 +2326,7 @@
         "${ forwardCount } transférés"
       ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
-        "${ forwardedEmails },${ repliedEmails } et${ blockedEmails } au cours des 14 derniers jours."
+        "${ forwardedEmails }, ${ repliedEmails } et ${ blockedEmails } au cours des 14 derniers jours."
       ],
       "${ hours } hour": [
         "${ hours } heure",
@@ -2435,6 +2453,9 @@
       ],
       "Auto-lock after": [
         "Verrouillage automatique après"
+      ],
+      "Backup password": [
+        "Mot de passe de secours"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "En plus de conserver vos identifiants, ${ PASS_APP_NAME } protège votre identité avec sa fonctionnalité intégrée d'alias d'adresse e-mail. Chaque fois que vous vous inscrivez à un nouveau compte en ligne, ${ PASS_APP_NAME } peut créer automatiquement un alias pour protéger votre véritable adresse e-mail. "
@@ -3644,6 +3665,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vous appréciez ${ PASS_APP_NAME } ?"
+      ],
+      "Enter your backup password": [
+        "Saisissez votre mot de passe de secours."
       ],
       "Enter your extra password": [
         "Saisissez votre mot de passe supplémentaire"
