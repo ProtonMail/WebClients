@@ -15,6 +15,8 @@ import { failedRemoteDirectLoading, loadRemoteProxy } from '../../store/messages
 import type { MessageImage } from '../../store/messages/messagesTypes';
 
 const sizeProps: ['width', 'height'] = ['width', 'height'];
+/** Styles we should not clone on the anchor */
+const forbiddenStyles = ['display', 'border', 'outline', 'background', 'padding'];
 
 const spineToCamelCase = (value: string) => value.replaceAll(/-([a-z])/g, (_, letter) => letter.toUpperCase());
 
@@ -22,6 +24,7 @@ const forEachStyle = (style: CSSStyleDeclaration | undefined, iterator: (propert
     if (!style) {
         return;
     }
+
     for (let i = 0; i < (style.length || 0); i++) {
         const prop = style.item(i);
         iterator(prop, style[prop as any]);
@@ -34,15 +37,10 @@ const extractStyle = (original: HTMLElement | undefined, documentWidth: number |
     }
     const style: CSSProperties = {};
     forEachStyle(original.style, (prop, value) => {
-        if (
-            prop !== 'display' &&
-            !prop.startsWith('border') &&
-            !prop.startsWith('outline') &&
-            !prop.startsWith('background') &&
-            !prop.startsWith('padding')
-        ) {
-            style[spineToCamelCase(prop)] = value;
+        if (prop === 'display' || forbiddenStyles.some((forbidden) => prop.startsWith(forbidden))) {
+            return;
         }
+        style[spineToCamelCase(prop)] = value;
     });
     sizeProps.forEach((prop) => {
         const value = original?.getAttribute(prop)?.trim();
@@ -99,6 +97,9 @@ const MessageBodyImage = ({
         }, {}) || {};
 
     forEachStyle(original?.style, (prop, value) => {
+        if (forbiddenStyles.some((forbidden) => prop.startsWith(forbidden))) {
+            return;
+        }
         anchor.style[prop as any] = value;
     });
 
