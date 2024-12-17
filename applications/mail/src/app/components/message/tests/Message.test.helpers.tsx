@@ -42,6 +42,7 @@ export const defaultProps: MessageViewProps = {
     breakpoints: mockDefaultBreakpoints,
     onFocus: noop,
     isComposerOpened: false,
+    currentFolder: 'INBOX',
 };
 
 export const initMessage = (store: MailStore, message: MessageState) => {
@@ -76,6 +77,7 @@ export const setup = async (
         ref.current = refValue;
     };
 
+    // console.log(props)
     const renderResult = await render(<MessageView ref={refCallback} {...props} />, {
         ...renderOptions,
         onStore: (store) => {

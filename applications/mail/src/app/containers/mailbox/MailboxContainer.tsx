@@ -41,6 +41,8 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import ConversationView from '../../components/conversation/ConversationView';
 import MailHeader from '../../components/header/MailHeader';
 import List from '../../components/list/List';
+import type { SOURCE_ACTION } from '../../components/list/useListTelemetry';
+import { folderLocation } from '../../components/list/useListTelemetry';
 import useScrollToTop from '../../components/list/useScrollToTop';
 import MessageOnlyView from '../../components/message/MessageOnlyView';
 import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';
@@ -262,6 +264,9 @@ const MailboxContainer = ({
 
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
 
+    const currentFolder = folderLocation(labelID, labels, folders);
+    // console.log(currentFolder)
+
     const handleElement = useCallback(
         (elementID: string | undefined, preventComposer = false) => {
             startECRTMetric(labelID, elementID);
@@ -314,7 +319,7 @@ const MailboxContainer = ({
     }, [handleCheckAll]);
 
     const handleMarkAs = useCallback(
-        async (status: MARK_AS_STATUS) => {
+        async (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => {
             const isUnread = status === MARK_AS_STATUS.UNREAD;
             const elements = getElementsFromIDs(selectedIDs);
             if (isUnread) {
@@ -326,14 +331,19 @@ const MailboxContainer = ({
                 status,
                 selectAll,
                 onCheckAll: handleCheckAll,
+                sourceAction,
+                currentFolder,
             });
         },
         [selectedIDs, labelID, handleBack, selectAll]
     );
 
-    const handleDelete = useCallback(async () => {
-        await permanentDelete(selectedIDs, selectAll);
-    }, [selectedIDs, permanentDelete, selectAll]);
+    const handleDelete = useCallback(
+        async (sourceAction: SOURCE_ACTION) => {
+            await permanentDelete(selectedIDs, sourceAction, currentFolder, selectAll);
+        },
+        [selectedIDs, permanentDelete, selectAll]
+    );
 
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
@@ -363,6 +373,7 @@ const MailboxContainer = ({
             columnLayout,
             isMessageOpening,
             location,
+            currentFolder,
         },
         {
             focusLastID,
@@ -382,7 +393,7 @@ const MailboxContainer = ({
     );
 
     const handleMove = useCallback(
-        async (LabelID: string) => {
+        async (LabelID: string, sourceAction: SOURCE_ACTION) => {
             const folderName = getFolderName(LabelID, folders);
             const elements = getElementsFromIDs(selectedIDs);
             await moveToFolder({
@@ -391,6 +402,8 @@ const MailboxContainer = ({
                 destinationLabelID: LabelID,
                 folderName,
                 selectAll,
+                sourceAction: sourceAction,
+                currentFolder: currentFolder,
             });
             if (selectedIDs.includes(elementID || '')) {
                 handleBack();
@@ -602,6 +615,7 @@ const MailboxContainer = ({
                         userSettings={userSettings}
                         toolbar={toolbar()}
                         onCheckAll={handleCheckAll}
+                        currentFolder={currentFolder}
                     />
                     <ErrorBoundary>
                         <section
@@ -637,6 +651,7 @@ const MailboxContainer = ({
                                         elementIDs={elementIDs}
                                         loadingElements={loading}
                                         conversationMode={conversationMode}
+                                        currentFolder={currentFolder}
                                     />
                                 ) : (
                                     <MessageOnlyView
@@ -651,6 +666,7 @@ const MailboxContainer = ({
                                         onMessageReady={onMessageReady}
                                         columnLayout={columnLayout}
                                         isComposerOpened={isComposerOpened}
+                                        currentFolder={currentFolder}
                                     />
                                 ))}
                         </section>

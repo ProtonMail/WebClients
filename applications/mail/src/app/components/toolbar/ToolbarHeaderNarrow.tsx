@@ -9,6 +9,7 @@ import clsx from '@proton/utils/clsx';
 import { getLabelName } from '../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
+import { folderLocation } from '../list/useListTelemetry';
 import LabelName from './LabelName';
 import LabelsAndFolders from './LabelsAndFolders';
 import MoreActions from './MoreActions';
@@ -51,6 +52,8 @@ const ToolbarHeaderNarrow = ({
     const [folders] = useFolders();
     const labelName = useMemo(() => getLabelName(labelID, labels, folders), [labelID, labels, folders]);
 
+    const currentFolder = useMemo(() => folderLocation(labelID, labels, folders), [labelID, labels, folders]);
+
     const viewportBreakpoint = useActiveBreakpoint();
 
     return (
@@ -87,7 +90,14 @@ const ToolbarHeaderNarrow = ({
                         />
                     ) : null}
 
-                    {!localIsTiny ? <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} /> : null}
+                    {!localIsTiny ? (
+                        <SnoozeToolbarDropdown
+                            labelID={labelID}
+                            selectedIDs={selectedIDs}
+                            labels={labels}
+                            folders={folders}
+                        />
+                    ) : null}
 
                     <MoreDropdown
                         labelID={labelID}
@@ -101,6 +111,7 @@ const ToolbarHeaderNarrow = ({
                         onDelete={onDelete}
                         breakpoints={breakpoints}
                         onCheckAll={onCheckAll}
+                        currentFolder={currentFolder}
                     />
 
                     <MoreActions selectedIDs={selectedIDs} />

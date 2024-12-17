@@ -13,6 +13,7 @@ import {
     useItemsDroppable,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
@@ -28,6 +29,7 @@ import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/useApplyLabels';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { SOURCE_ACTION, folderLocation } from '../list/useListTelemetry';
 import LocationAside from './LocationAside';
 
 import './SidebarItem.scss';
@@ -91,6 +93,8 @@ const SidebarItem = ({
     const getElementsFromIDs = useGetElementsFromIDs();
     const { selectAll } = useSelectAll({ labelID });
     const { checkAllRef } = useCheckAllRef();
+    const [labels] = useLabels();
+    const [folders] = useFolders();
 
     const [refreshing, withRefreshing] = useLoading(false);
 
@@ -100,6 +104,7 @@ const SidebarItem = ({
     const link = `/${humanID}`;
 
     const needsTotalDisplay = shouldDisplayTotal(labelID);
+    const currentFolder = folderLocation(currentLabelID, labels, folders);
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
         if (
@@ -135,6 +140,8 @@ const SidebarItem = ({
                         folderName: text,
                         selectAll,
                         onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
+                        sourceAction: SOURCE_ACTION.DRAG_AND_DROP_MENU,
+                        currentFolder: currentFolder,
                     });
                 } else {
                     void applyLabels({

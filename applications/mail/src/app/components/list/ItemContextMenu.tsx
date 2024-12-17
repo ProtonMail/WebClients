@@ -11,6 +11,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../store/elements/elementsSelectors';
+import { SOURCE_ACTION } from './useListTelemetry';
 
 interface Props {
     checkedIDs: string[];
@@ -24,9 +25,9 @@ interface Props {
     };
     open: () => void;
     close: () => void;
-    onMarkAs: (status: MARK_AS_STATUS) => void;
-    onMove: (labelID: string) => void;
-    onDelete: () => void;
+    onMarkAs: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => void;
+    onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
+    onDelete: (sourceAction: SOURCE_ACTION) => void;
     canShowBlockSender: boolean;
     onBlockSender: () => Promise<void>;
     conversationMode: boolean;
@@ -52,18 +53,18 @@ const ItemContextMenu = ({
 
     const [actions] = useLabelActions(labelID);
 
-    const handleMove = (labelID: string) => {
-        onMove(labelID);
+    const handleMove = (labelID: string, sourceAction: SOURCE_ACTION) => {
+        onMove(labelID, sourceAction);
         rest.close();
     };
 
-    const handleDelete = () => {
-        onDelete();
+    const handleDelete = (sourceAction: SOURCE_ACTION) => {
+        onDelete(sourceAction);
         rest.close();
     };
 
-    const handleMarkAs = (status: MARK_AS_STATUS) => {
-        onMarkAs(status);
+    const handleMarkAs = (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => {
+        onMarkAs(status, sourceAction);
         rest.close();
     };
 
@@ -73,7 +74,7 @@ const ItemContextMenu = ({
             testId="context-menu-inbox"
             icon="inbox"
             name={c('Action').t`Move to inbox`}
-            action={() => handleMove(MAILBOX_LABEL_IDS.INBOX)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.CONTEXT_MENU)}
         />
     );
 
@@ -83,7 +84,7 @@ const ItemContextMenu = ({
             testId="context-menu-nospam"
             icon="fire-slash"
             name={c('Action').t`Move to inbox (not spam)`}
-            action={() => handleMove(MAILBOX_LABEL_IDS.INBOX)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.CONTEXT_MENU)}
         />
     );
 
@@ -93,7 +94,7 @@ const ItemContextMenu = ({
             testId="context-menu-archive"
             icon="archive-box"
             name={c('Action').t`Move to archive`}
-            action={() => handleMove(MAILBOX_LABEL_IDS.ARCHIVE)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.ARCHIVE, SOURCE_ACTION.CONTEXT_MENU)}
         />
     );
 
@@ -103,7 +104,7 @@ const ItemContextMenu = ({
             testId="context-menu-trash"
             icon="trash"
             name={c('Action').t`Move to trash`}
-            action={() => handleMove(MAILBOX_LABEL_IDS.TRASH)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.TRASH, SOURCE_ACTION.CONTEXT_MENU)}
         />
     );
 
@@ -113,7 +114,7 @@ const ItemContextMenu = ({
             testId="context-menu-spam"
             icon="fire"
             name={c('Action').t`Move to spam`}
-            action={() => handleMove(MAILBOX_LABEL_IDS.SPAM)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.SPAM, SOURCE_ACTION.CONTEXT_MENU)}
         />
     );
 
@@ -123,7 +124,7 @@ const ItemContextMenu = ({
             testId="context-menu-delete"
             icon="cross-circle"
             name={c('Action').t`Delete`}
-            action={() => handleDelete()}
+            action={() => handleDelete(SOURCE_ACTION.CONTEXT_MENU)}
         />
     );
 
@@ -150,7 +151,7 @@ const ItemContextMenu = ({
                         testId="context-menu-read"
                         icon="envelope-open"
                         name={c('Action').t`Mark as read`}
-                        action={() => handleMarkAs(MARK_AS_STATUS.READ)}
+                        action={() => handleMarkAs(MARK_AS_STATUS.READ, SOURCE_ACTION.CONTEXT_MENU)}
                     />
                 ) : (
                     <ContextMenuButton
@@ -158,7 +159,7 @@ const ItemContextMenu = ({
                         testId="context-menu-unread"
                         icon="envelope-dot"
                         name={c('Action').t`Mark as unread`}
-                        action={() => handleMarkAs(MARK_AS_STATUS.UNREAD)}
+                        action={() => handleMarkAs(MARK_AS_STATUS.UNREAD, SOURCE_ACTION.CONTEXT_MENU)}
                     />
                 )}
             </ContextMenu>

@@ -9,6 +9,12 @@ import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import type {
+    SOURCE_ACTION} from 'proton-mail/components/list/useListTelemetry';
+import useListTelemetry, {
+    ACTION_TYPE,
+    numberSelectionElements,
+} from 'proton-mail/components/list/useListTelemetry';
 import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -145,6 +151,7 @@ export const usePermanentDeleteSelection = (labelID: string) => {
     const getElementsFromIDs = useGetElementsFromIDs();
     const optimisticDelete = useOptimisticDelete();
     const dispatch = useMailDispatch();
+    const { sendSimpleActionReport } = useListTelemetry();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
     const [selectedIDs, setSelectedIDs] = useState<string[]>([]);
@@ -214,8 +221,14 @@ export const usePermanentDeleteSelection = (labelID: string) => {
         </Prompt>
     );
 
-    const handleDeleteSelection = async (selectedIDs: string[]) => {
+    const handleDeleteSelection = async (selectedIDs: string[], sourceAction: SOURCE_ACTION, currentFolder: string) => {
         setSelectedIDs(selectedIDs);
+        sendSimpleActionReport({
+            actionType: ACTION_TYPE.DELETE_PERMANENTLY,
+            actionLocation: sourceAction,
+            numberMessage: numberSelectionElements(selectedIDs.length),
+            folderLocation: currentFolder,
+        });
         setDeleteModalOpen(true);
     };
 

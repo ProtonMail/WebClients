@@ -7,6 +7,11 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useFlag } from '@proton/unleash';
 
 import SelectAllMarkModal from 'proton-mail/components/list/select-all/modals/SelectAllMarkModal';
+import useListTelemetry, {
+    ACTION_TYPE,
+    SELECTED_RANGE,
+    type SOURCE_ACTION,
+} from 'proton-mail/components/list/useListTelemetry';
 import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/helpers/moveToFolder';
 import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
 import { useOptimisticMarkAs } from 'proton-mail/hooks/optimistic/useOptimisticMarkAs';
@@ -20,6 +25,8 @@ interface MarkAllParams {
     labelID?: string;
     status: MARK_AS_STATUS;
     onCheckAll?: (check: boolean) => void;
+    sourceAction: SOURCE_ACTION;
+    currentFolder: string;
 }
 
 /**
@@ -36,8 +43,10 @@ export const useMarkAllAs = () => {
 
     const [selectAllMarkModal, handleShowSelectAllMarkModal] = useModalTwo(SelectAllMarkModal);
 
+    const { sendSimpleActionReport } = useListTelemetry();
+
     const markAllAs = useCallback(
-        async ({ isMessage, labelID = '', status, onCheckAll }: MarkAllParams) => {
+        async ({ isMessage, labelID = '', status, onCheckAll, sourceAction, currentFolder }: MarkAllParams) => {
             await handleShowSelectAllMarkModal({
                 labelID,
                 isMessage: isMessage,
@@ -73,6 +82,13 @@ export const useMarkAllAs = () => {
 
             // Clear elements selection
             onCheckAll?.(false);
+
+            sendSimpleActionReport({
+                actionType: status === MARK_AS_STATUS.READ ? ACTION_TYPE.MARK_AS_READ : ACTION_TYPE.MARK_AS_UNREAD,
+                actionLocation: sourceAction,
+                numberMessage: SELECTED_RANGE.ALL,
+                folderLocation: currentFolder,
+            });
 
             createNotification({
                 text: getSelectAllNotificationText(isMessage),

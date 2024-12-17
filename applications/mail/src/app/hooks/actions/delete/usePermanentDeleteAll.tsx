@@ -2,6 +2,11 @@ import { useApi, useNotifications } from '@proton/components';
 import { useFolders } from '@proton/mail';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 
+import useListTelemetry, {
+    ACTION_TYPE,
+    SELECTED_RANGE,
+    type SOURCE_ACTION,
+} from 'proton-mail/components/list/useListTelemetry';
 import { isMessage as testIsMessage } from 'proton-mail/helpers/elements';
 import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/helpers/moveToFolder';
 import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
@@ -19,9 +24,10 @@ export const usePermanentDeleteAll = (labelID: string) => {
     const getElementsFromIDs = useGetElementsFromIDs();
     const [folders = []] = useFolders();
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
+    const { sendSimpleActionReport } = useListTelemetry();
     const dispatch = useMailDispatch();
 
-    const handleDeleteAll = async (selectedIDs: string[]) => {
+    const handleDeleteAll = async (selectedIDs: string[], sourceAction: SOURCE_ACTION, currentFolder: string) => {
         const elements = getElementsFromIDs(selectedIDs);
         const isMessage = testIsMessage(elements[0]);
         // Send Telemetry
@@ -33,6 +39,13 @@ export const usePermanentDeleteAll = (labelID: string) => {
         });
 
         await emptyLabel(labelID);
+
+        sendSimpleActionReport({
+            actionType: ACTION_TYPE.DELETE_PERMANENTLY,
+            actionLocation: sourceAction,
+            numberMessage: SELECTED_RANGE.ALL,
+            folderLocation: currentFolder,
+        });
 
         createNotification({
             text: getSelectAllNotificationText(isMessage),

@@ -31,6 +31,7 @@ import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
 import ItemExpiration from './item-expiration/ItemExpiration';
+import { SOURCE_ACTION } from './useListTelemetry';
 
 interface Props {
     labelID: string;
@@ -47,6 +48,7 @@ interface Props {
     attachmentsMetadata?: AttachmentsMetadata[];
     userSettings?: UserSettings;
     showAttachmentThumbnails?: boolean;
+    currentFolder: string;
 }
 
 const ItemColumnLayout = ({
@@ -64,6 +66,7 @@ const ItemColumnLayout = ({
     attachmentsMetadata = [],
     userSettings,
     showAttachmentThumbnails,
+    currentFolder,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -209,7 +212,13 @@ const ItemColumnLayout = ({
                                     />
                                 )}
                                 <span className="flex *:flex self-center my-auto empty:hidden">
-                                    {isStarred && !isSnoozeDropdownOpen && <ItemStar element={element} />}
+                                    {isStarred && !isSnoozeDropdownOpen && (
+                                        <ItemStar
+                                            element={element}
+                                            sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
+                                            currentFolder={currentFolder}
+                                        />
+                                    )}
                                 </span>
                             </span>
                         </div>
@@ -228,7 +237,11 @@ const ItemColumnLayout = ({
                                 className="ml-1 self-center"
                             />
                             <span className="ml-1 flex *:flex self-center my-auto empty:hidden">
-                                <ItemStar element={element} />
+                                <ItemStar
+                                    element={element}
+                                    sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
+                                    currentFolder={currentFolder}
+                                />
                             </span>
                         </div>
                     </div>
