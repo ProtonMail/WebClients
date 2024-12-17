@@ -12,8 +12,6 @@ import { UnAuthenticated } from '@proton/components'
 import { PublicCompatProvider } from '@proton/drive-store/lib/usePublicDriveCompat'
 
 const PublicAppRootContainer = () => {
-  void import('../../tailwind.scss')
-
   return (
     <LocationErrorBoundary>
       <PublicDriveStoreProvider>

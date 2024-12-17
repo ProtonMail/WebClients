@@ -143,7 +143,7 @@ describe('LoadDocument', () => {
       const result = await loadDocument.executePrivate(nodeMeta)
 
       expect(result.isFailed()).toBe(true)
-      expect(result.getError()).toBe('Node loading failed')
+      expect(result.getError().message).toBe('Node loading failed')
     })
 
     it('should handle failed keys loading', async () => {
@@ -152,7 +152,7 @@ describe('LoadDocument', () => {
       const result = await loadDocument.executePrivate(nodeMeta)
 
       expect(result.isFailed()).toBe(true)
-      expect(result.getError()).toBe('Keys loading failed')
+      expect(result.getError().message).toBe('Keys loading failed')
     })
 
     it('should handle commit decryption when commit exists', async () => {
@@ -227,7 +227,7 @@ describe('LoadDocument', () => {
     })
 
     it('should handle failed meta loading', async () => {
-      mockLoadMetaAndCommit.execute.mockResolvedValue(Result.fail('Meta loading failed'))
+      mockLoadMetaAndCommit.execute.mockResolvedValue(Result.fail({ message: 'Meta loading failed', code: 0 }))
 
       const result = await loadDocument.executePublic(publicNodeMeta as any, true)
 

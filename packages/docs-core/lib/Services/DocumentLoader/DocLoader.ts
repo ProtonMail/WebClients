@@ -80,7 +80,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     if (loadResult.isFailed()) {
       this.logger.error('Failed to load private document', loadResult.getError())
       this.statusObservers.forEach((observer) => {
-        observer.onError(loadResult.getError())
+        observer.onError(loadResult.getError().message, loadResult.getError().code)
       })
       return
     }

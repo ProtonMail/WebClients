@@ -29,6 +29,9 @@ export type DocumentAction =
           volumeId: string;
       }
     | {
+          mode: 'new';
+      }
+    | {
           mode: 'open-url';
           action?: RedirectAction;
           linkId: string;

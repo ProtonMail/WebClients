@@ -22,7 +22,7 @@ export function CommentsButton({ editorController }: { editorController: EditorC
       icon
       shape="ghost"
       data-testid="comments-button"
-      className="flex items-center justify-center gap-2 text-sm head-max-849:border head-max-849:border-[--border-norm] head-max-849:p-[0.5em]"
+      className="flex items-center justify-center gap-2 head-max-849:!border head-max-849:!border-[--border-norm] head-max-849:!p-[0.5em]"
       onClick={() => editorController.showCommentsPanel()}
     >
       <div

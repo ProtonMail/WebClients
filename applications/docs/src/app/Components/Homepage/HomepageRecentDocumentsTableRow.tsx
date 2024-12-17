@@ -35,26 +35,31 @@ export function HomepageRecentDocumentsTableRow({ recentDocument }: { recentDocu
           <span className="text-pre flex-1 text-ellipsis">{recentDocument.name}</span>
         </span>
       </HomepageRecentDocumentsTableCell>
+
       <HomepageRecentDocumentsTableCell>
         <span className="text-capitalize">{getDisplayDate(recentDocument)}</span>
       </HomepageRecentDocumentsTableCell>
-      <HomepageRecentDocumentsTableCell>
-        {recentDocument.isSharedWithMe && (
-          <Avatar
-            color="weak"
-            className="min-w-custom max-w-custom max-h-custom mr-2"
-            style={{
-              '--min-w-custom': '1.75rem',
-              '--max-w-custom': '1.75rem',
-              '--max-h-custom': '1.75rem',
-            }}
-          >
-            {getInitials(displayName)}
-          </Avatar>
-        )}
-        {displayName}
+
+      <HomepageRecentDocumentsTableCell hideOnSmallDevices>
+        <span className="flex items-center">
+          {recentDocument.isSharedWithMe && (
+            <Avatar
+              color="weak"
+              className="min-w-custom max-w-custom max-h-custom mr-2"
+              style={{
+                '--min-w-custom': '1.75rem',
+                '--max-w-custom': '1.75rem',
+                '--max-h-custom': '1.75rem',
+              }}
+            >
+              {getInitials(displayName)}
+            </Avatar>
+          )}
+          <span className="text-pre flex-1 text-ellipsis">{displayName}</span>
+        </span>
       </HomepageRecentDocumentsTableCell>
-      <HomepageRecentDocumentsTableCell>
+
+      <HomepageRecentDocumentsTableCell hideOnSmallDevices>
         <div className="flex flex-nowrap">
           <Tooltip title={location?.join(' / ')}>
             <Button
@@ -62,7 +67,7 @@ export function HomepageRecentDocumentsTableRow({ recentDocument }: { recentDocu
                 e.stopPropagation()
               }}
               shape="ghost"
-              className="px-2"
+              className="text-pre text-ellipsis px-2"
             >
               {location?.[location.length - 1]}
             </Button>
