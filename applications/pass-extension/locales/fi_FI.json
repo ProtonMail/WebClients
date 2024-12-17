@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Accept": [
+        "Hyväksy"
+      ],
       "Account": [
         "Tili"
       ],
@@ -697,6 +700,15 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Pimeän verkon valvonta sisältyy maksullisiin tilauksiin. Hanki se heti käyttöösi päivitämällä tilauksesi."
       ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Jos käytät aliverkkotunnusta, esimerkiksi ${ subdomainExample }, sinun on käytettävä sen sijaan verkkotunnuksena ${ dmarcExampleSubdomain }."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Jos käytät aliverkkotunnusta, esimerkiksi subdomain.domain.com, sinun on sen sijaan käytettävä verkkotunnuksena ${ domainKeyExampleSubdomain }. Tämä tarkoittaa, että jos verkkotunnuksesi on mail.domain.com, sinun on syötettävä verkkotunnukseksi ${ domainKeyExampleMail }."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Jos käytät CloudFlarea, varmista, ettet valitse Proxy-vaihtoehtoa."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Listaus verkkotunnuksista, joilla joitakin automaattisia ${ PASS_SHORT_APP_NAME }-toimintoja (automaattitäyttö, automaattiehdotus, automaattitallennus) ei suoriteta. ${ infoText }"
       ],
@@ -708,6 +720,11 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Avaa edistyneet suojausominaisuudet ja yksityiskohtaiset lokit verkkonäkyvyytesi suojaamiseksi."
+      ]
+    },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "jotakin@${ domainDisplay }"
       ]
     },
     "Error": {
@@ -887,6 +904,9 @@
       "Failed to restore items from trash": [
         "Kohteiden palautus roskakorista epäonnistui"
       ],
+      "Failed to set default mailbox": [
+        "Postilaatikon asettaminen oletukseksi epäonnistui"
+      ],
       "Failed to sync aliases": [
         "Aliasten synkronointi epäonnistui"
       ],
@@ -910,6 +930,9 @@
       ],
       "Failed to update monitoring settings": [
         "Valvonta-asetusten muutos epäonnistui"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Satunnaisen etuliitteen muodostamisasetusten päivitys epäonnistui."
       ],
       "Failed to verify domain": [
         "Verkkotunnuksen vahvistaminen epäonnistui"
@@ -1184,6 +1207,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } estetty",
+        "${ blockedEmailsCount } estetty"
+      ],
       "${ count } invite successfully sent": [
         "${ count } kutsu lähetettiin",
         "${ count } kutsua lähetettiin"
@@ -1198,6 +1225,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } avausta"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } välitetty",
+        "${ forwardedEmailsCount } välitetty"
       ],
       "${ memberCount } member": [
         "${ memberCount } jäsen",
@@ -1245,6 +1276,10 @@
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } otettiin käyttöön"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } lähetetty",
+        "${ repliedEmailsCount } lähetetty"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } päivä jäljellä",
@@ -1328,6 +1363,9 @@
       "Are you sure you want to remove the link?": [
         "Haluatko varmasti poistaa linkin?"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Automaattisesti luodut aliakset ovat automaattisesti seuraavan postilaatikon omistamia:"
+      ],
       "Auto-lock successfully disabled.": [
         "Automaattilukitus poistettiin käytöstä."
       ],
@@ -1391,6 +1429,9 @@
       "Copied to clipboard": [
         "Kopioitiin leikepöydälle"
       ],
+      "Create contact illustration": [
+        "Kuvitus yhteystiedon luomisesta"
+      ],
       "Created ${ time }.": [
         "Luotu: ${ time }."
       ],
@@ -1403,8 +1444,14 @@
       "Current version": [
         "Nykyinen versio"
       ],
+      "Currently selected": [
+        "Tällä hetkellä valittuna"
+      ],
       "Decrypting your data": [
         "Tietojesi salausta puretaan"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Oletusnäyttönimi aliaksille, jotka on luotu verkkotunnuksella ${ domainDisplay }, ellei aliaksen näyttönimi korvaa sitä."
       ],
       "Deleted items will be moved here first": [
         "Poistetut kohteet siirretään ensin tänne"
@@ -1457,8 +1504,14 @@
       "Email address successfully included in monitoring": [
         "Sähköpostiosoite sisällytettiin valvontaan"
       ],
+      "Email headers illustration": [
+        "Kuvitus sähköpostin otsakkeesta"
+      ],
       "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
         "Lähetä sähköpostia tähän osoitteeseen, ja se näyttää tulevan esimerkiksi osoitteesta ${ exampleEmail }."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Aliaksillesi lähetetyt sähköpostit välitetään postilaatikkoihisi. Aliaksella voi olla useampi kuin yksi postilaatikko: tämä on hyödyllistä, jos haluat jakaa aliaksen ystäviesi kanssa."
       ],
       "Emptying trash...": [
         "Tyhjennetään roskakoria..."
@@ -1558,6 +1611,9 @@
       ],
       "Imported on ${ date }": [
         "Tuotu ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "${ PASS_SHORT_APP_NAME }issa kohteen muistiinpano salataan kohteen muistiinpanon salausavaimella, ja vain kohteen käyttöoikeuden omaavat käyttäjät voivat tarkastella muistiinpanoa. Edes ${ BRAND_NAME } tai SimpleLogin eivät näe sitä."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Sadaksesi parhaan ${ PASS_APP_NAME }in käyttökokemuksen, myönnä laajennuksen tarvitsemat käyttöoikeudet."
@@ -1671,6 +1727,9 @@
       "Moving items to trash": [
         "Kohteita siirretään roskakoriin"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Haluatko lähettää sähköpostia jollekulle, muttet halua heidän näkevän sähköpostiosoitettasi? Määritä yhteystietoalias."
+      ],
       "Never": [
         "Ei koskaan"
       ],
@@ -1682,6 +1741,9 @@
       ],
       "None": [
         "Ei mitään"
+      ],
+      "Not recommended": [
+        "Ei suositeltu"
       ],
       "Offline mode could not be disabled at the moment": [
         "Yhteydetöntä tilaa ei voitu nyt poistaa käytöstä"
@@ -1740,6 +1802,15 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
+      ],
+      "Please confirm your backup password": [
+        "Vahvista varasalasanasi"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Vahvista varasalasanasi käyttääksesi automaattista salasanalukitusta."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Poista nykyinen lukitustapa vahvistamalla varasalasanasi."
       ],
       "Please confirm your extra password": [
         "Vahvista lisäsalasanasi"
@@ -1803,6 +1874,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Päivitä tilauksesi saadaksesi varhaisen pääsyn ${ PASS_APP_NAME } -verkkosovellukseen"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Käytä koko verkkotunnuksen polkua, esimerkiksi my-domain.com, tai my-subdomain.my-domain.com, jos käytät aliverkkotunnusta."
       ],
       "Press Enter to copy": [
         "Kopioi painamalla Enter-näppäintä"
@@ -1906,6 +1980,9 @@
       "Signing you in": [
         "Kirjaudutaan sisään"
       ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "SimpleLogin-muistiinpano tallennetaan samaan paikkaan aliasosoitteen kanssa. Vaikka se on suojattu salauksella levossa, sitä ei ole päästä päähän -salattu, joten kuka tahansa SimpleLogin-tietokantaan pääsevä voi lukea sen."
+      ],
       "Successfully exported all your items": [
         "Kaikki kohteesi vietiin"
       ],
@@ -1973,6 +2050,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tämä hylkää laitteen **${ name }**, joka yritti kirjautua ${ BRAND_NAME }-tilillesi **${ date }**."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Siirrä nämä aliakset toiseen postilaatikkoon jatkaaksesi sähköpostien vastaanottamista:"
+      ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Voit pitää henkilökohtaisen sähköpostiosoitteesi piilossa luomalla aliasyhteystiedon, joka naamioi sen."
       ],
@@ -2005,6 +2085,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Avaa ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }-salasanallasi"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Avaa ${ PASS_SHORT_APP_NAME } varasalasanallasi"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Avaa ${ PASS_SHORT_APP_NAME } lisäsalasanallasi"
@@ -2076,8 +2159,14 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Käyttäjätunnus-kenttä näytetään aina, kun luot/muokkaat kirjautumistietoja ${ PASS_APP_NAME }issa."
       ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Kun lähetät sähköpostin tästä aliaksesta, sen lähettäjänä näkyy ${ emailSender }."
+      ],
       "You are about to create:": [
         "Luot aliasta:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Voit mys määrittää PIN-koodin ${ PASS_APP_NAME }in avausta varten"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Voit nyt käyttää ${ PASS_SHORT_APP_NAME }ia ${ BRAND_NAME }-salasanallasi myös ilman verkkoyhteyttä."
@@ -2110,6 +2199,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Olet saavuttanut ${ maxLength }-merkin enimmäispituuden."
+      ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Voit mukauttaa verkkotunnuksen asetuksia (nappaa kaikki -sähköpostialiakset, aliasten oletusnäyttönimi, jne...) verkkotunnuksesi vahvistamisen jälkeen."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Sinut kirjataan ulos ja joudut kirjautumaan uudelleen sisään kaikilla muilla laitteillasi."
@@ -2166,6 +2258,9 @@
       "${ forwardCount } forward": [
         "${ forwardCount } välitys",
         "${ forwardCount } välitystä"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails },${ repliedEmails },${ blockedEmails }, viimeisten 14 päivän aikana."
       ],
       "${ hours } hour": [
         "${ hours } tunti",
@@ -2303,6 +2398,9 @@
       ],
       "Autosuggest": [
         "Automaattiehdotus"
+      ],
+      "Backup password": [
+        "Varasalasana"
       ],
       "Biometrics": [
         "Biometria"
@@ -2884,6 +2982,9 @@
       "Unlock with": [
         "Lukituksen avaustapa"
       ],
+      "Unlock with:": [
+        "Lukituksen avaustapa:"
+      ],
       "Unnamed Credit Card": [
         "Nimetön maksukortti"
       ],
@@ -3200,8 +3301,14 @@
       "Display name successfully updated": [
         "Näyttönimi muutettiin"
       ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Verkkotunnuksen omistajuus on vahvistettu. Voit nyt määrittää MX-tietueen."
+      ],
       "Domain successfully deleted": [
         "Verkkotunnus poistettiin"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Verkkotunnus on vahvistettu. Verkkotunnuksesi voi aloittaa sähköpostien vastaanottamisen ja aliasten luomisen"
       ],
       "Mailbox successfully deleted": [
         "Postilaatikko poistettiin"
@@ -3244,6 +3351,9 @@
       "Actions": [
         "Toiminnot"
       ],
+      "Activity": [
+        "Toiminta"
+      ],
       "Add custom domain": [
         "Lisää oma verkkotunnus"
       ],
@@ -3267,6 +3377,9 @@
       ],
       "Blocked addresses": [
         "Estetyt osoitteet"
+      ],
+      "Change your lock method": [
+        "Vaihda lukitustapaasi"
       ],
       "Confirm extra password": [
         "Vahvista lisäsalasana"
@@ -3340,6 +3453,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
+      ],
+      "Enter your backup password": [
+        "Syötä varasalasanasi"
       ],
       "Enter your extra password": [
         "Syötä lisäsalasanasi"
@@ -3705,6 +3821,9 @@
       ],
       "Move to trash": [
         "Siirrä roskakoriin"
+      ],
+      "Name is required": [
+        "Nimi vaaditaan"
       ],
       "No items": [
         "Kohteita ei ole"

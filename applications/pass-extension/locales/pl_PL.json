@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Accept": [
+        "Akceptuj"
+      ],
       "Account": [
         "Konto"
       ],
@@ -17,8 +20,14 @@
       "Add current URL": [
         "Dodaj obecny adres URL"
       ],
+      "Add custom domain": [
+        "Dodaj niestandardową domenę"
+      ],
       "Add domain": [
         "Dodaj domenę"
+      ],
+      "Add mailbox": [
+        "Dodaj skrzynkę pocztową"
       ],
       "Add more": [
         "Dodaj więcej"
@@ -44,6 +53,9 @@
       "Back": [
         "Wstecz"
       ],
+      "Block contact": [
+        "Zablokuj kontakt"
+      ],
       "Bulk delete items from trash": [
         "Usuń elementy z Kosza"
       ],
@@ -64,6 +76,12 @@
       ],
       "Change": [
         "Zmień"
+      ],
+      "Check DNS": [
+        "Sprawdź rekordy DNS"
+      ],
+      "Check settings": [
+        "Sprawdź ustawienia"
       ],
       "Choose a file or drag it here": [
         "Wybierz plik lub przeciągnij go tutaj"
@@ -104,6 +122,9 @@
       "Continue without pinning": [
         "Kontynuuj bez przypinania"
       ],
+      "Copy alias address": [
+        "Kopiuj alias"
+      ],
       "Copy and close": [
         "Kopiuj i zamknij"
       ],
@@ -133,6 +154,9 @@
       ],
       "Create card": [
         "Utwórz kartę"
+      ],
+      "Create contact": [
+        "Utwórz kontakt"
       ],
       "Create identity": [
         "Utwórz tożsamość"
@@ -172,6 +196,9 @@
       ],
       "Delete it, I will never need it": [
         "Usuń go. Nigdy nie będę go potrzebować"
+      ],
+      "Delete mailbox": [
+        "Usuń skrzynkę pocztową"
       ],
       "Delete password": [
         "Usuń hasło"
@@ -335,6 +362,9 @@
       "Maximum views": [
         "Maksymalna liczba dostępów"
       ],
+      "More info": [
+        "Więcej informacji"
+      ],
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
       ],
@@ -391,6 +421,9 @@
       ],
       "Please retry": [
         "Spróbuj ponownie"
+      ],
+      "Re-verify": [
+        "Zweryfikuj ponownie"
       ],
       "Reactivate now": [
         "Reaktywuj"
@@ -479,6 +512,9 @@
       "Select": [
         "Wybierz"
       ],
+      "Send email": [
+        "Wyślij wiadomość"
+      ],
       "Send invite": [
         "Wyślij zaproszenie"
       ],
@@ -542,6 +578,15 @@
       "Sync aliases": [
         "Synchronizuj aliasy"
       ],
+      "To mailbox": [
+        "Do skrzynki pocztowej"
+      ],
+      "Transfer aliases": [
+        "Przenieś aliasy"
+      ],
+      "Transfer and delete mailbox": [
+        "Przenieś i usuń skrzynkę pocztową"
+      ],
       "Transfer ownership": [
         "Zmień właściciela"
       ],
@@ -550,6 +595,9 @@
       ],
       "Try again": [
         "Spróbuj ponownie"
+      ],
+      "Unblock contact": [
+        "Odblokuj kontakt"
       ],
       "Understood, I will never need it": [
         "Zrozumiałem. Nigdy nie będę go potrzebować",
@@ -660,6 +708,11 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Odblokuj zaawansowane funkcje bezpieczeństwa i szczegółowe logi, aby chronić się w Internecie."
+      ]
+    },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "cokolwiek@${ domainDisplay }"
       ]
     },
     "Error": {
@@ -792,6 +845,9 @@
       "Failed to delete the contact": [
         "Nie udało się usunąć kontaktu"
       ],
+      "Failed to delete the mailbox": [
+        "Nie udało się usunąć skrzynki pocztowej"
+      ],
       "Failed to edit user's access.": [
         "Nie udało się zmienić uprawień użytkownika."
       ],
@@ -834,6 +890,9 @@
       "Failed to restore items from trash": [
         "Nie udało się przywrócić elementów z Kosza"
       ],
+      "Failed to set default mailbox": [
+        "Nie udało się ustawić domyślnej skrzynki pocztowej"
+      ],
       "Failed to sync aliases": [
         "Nie udało się zsynchronizować aliasów"
       ],
@@ -843,8 +902,17 @@
       "Failed to unpin item": [
         "Nie udało się odpiąć elementu"
       ],
+      "Failed to update catch-all setting.": [
+        "Nie udało się zaktualizować ustawień catch-all."
+      ],
       "Failed to update default domain": [
         "Nie udało się zmienić domyślnej domeny"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Nie udało się zaktualizować skrzynek pocztowych domen."
+      ],
+      "Failed to update domain name.": [
+        "Nie udało się zaktualizować domeny."
       ],
       "Failed to update monitoring settings": [
         "Nie udało się zaktualizować ustawień monitoringu"
@@ -1134,6 +1202,12 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizacja \"${ payload.item.data.metadata.name }\" została odrzucona"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "zablokowano ${ blockedEmailsCount }",
+        "zablokowano ${ blockedEmailsCount }",
+        "zablokowano ${ blockedEmailsCount }",
+        "zablokowano ${ blockedEmailsCount }"
+      ],
       "${ count } invite successfully sent": [
         "Wysłano ${ count } zaproszenie",
         "Wysłano ${ count } zaproszenia",
@@ -1154,6 +1228,12 @@
       ],
       "${ count }/${ maxReads } views": [
         "Otwarto ${ count } / ${ maxReads } razy"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "przekierowano ${ forwardedEmailsCount }",
+        "przekierowano ${ forwardedEmailsCount }",
+        "przekierowano ${ forwardedEmailsCount }",
+        "przekierowano ${ forwardedEmailsCount }"
       ],
       "${ memberCount } member": [
         "${ memberCount } użytkownik",
@@ -1203,6 +1283,12 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "Ochrona ${ PROTON_SENTINEL_NAME } została włączona"
       ],
+      "${ repliedEmailsCount } sent": [
+        "wysłano ${ repliedEmailsCount }",
+        "wysłano ${ repliedEmailsCount }",
+        "wysłano ${ repliedEmailsCount }",
+        "wysłano ${ repliedEmailsCount }"
+      ],
       "${ trialDaysLeft } day left": [
         "Pozostał ${ trialDaysLeft } dzień",
         "Pozostały ${ trialDaysLeft } dni",
@@ -1211,6 +1297,9 @@
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Masz 7 dni na wypróbowanie funkcji premium za darmo. Tylko podczas pierwszego tygodnia z usługą ${ BRAND_NAME }."
+      ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Kontakt jest tworzony dla każdego adresu e-mail, który wysyła lub odbiera wiadomości z adresu ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Dostępna jest nowa wersja rozszerzenia ${ PASS_APP_NAME }. Zaktualizuj je, aby cieszyć się najnowszymi funkcjami i poprawkami błędów."
@@ -1338,6 +1427,12 @@
       "Copied to clipboard": [
         "Skopiowano do schowka"
       ],
+      "Create contact illustration": [
+        "Ilustracja utworzenia kontaktu"
+      ],
+      "Created ${ time }.": [
+        "Utworzono ${ time }."
+      ],
       "Creating alias...": [
         "Tworzenie aliasu..."
       ],
@@ -1371,6 +1466,9 @@
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Zobacz filmy ${ PASS_APP_NAME } na YouTube"
       ],
+      "Domain: ${ domainPath } or @": [
+        "Domena: ${ domainPath } lub @"
+      ],
       "Drop file here to upload": [
         "Upuść, aby przesłać"
       ],
@@ -1394,6 +1492,9 @@
       ],
       "Email address successfully included in monitoring": [
         "Adres e-mail został uwzględniony w monitoringu"
+      ],
+      "Email headers illustration": [
+        "Ilustracja nagłówków wiadomości"
       ],
       "Emptying trash...": [
         "Opróżnianie Kosza..."
@@ -1421,6 +1522,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Włączanie automatycznej blokady za pomocą kodu PIN"
+      ],
+      "Enter the address you want to email.": [
+        "Wpisz adres odbiorcy."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
@@ -1478,6 +1582,9 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Tutaj znajdują się wszystkie informacje niezbędne na początek."
+      ],
+      "Here's how it works:": [
+        "Jak to działa:"
       ],
       "Import in progress:": [
         "Importowanie jest w toku:"
@@ -1626,6 +1733,9 @@
       "None": [
         "Brak"
       ],
+      "Not recommended": [
+        "Niezalecane"
+      ],
       "Offline mode could not be disabled at the moment": [
         "Tryb offline nie może zostać wyłączony"
       ],
@@ -1685,6 +1795,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password": [
+        "Potwierdź hasło zapasowe"
       ],
       "Please confirm your extra password": [
         "Potwierdź dodatkowe hasło"
@@ -1760,6 +1873,15 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Szybkie autouzupełnianie danych logowania."
+      ],
+      "Record: CNAME": [
+        "Rekord: CNAME"
+      ],
+      "Record: MX": [
+        "Rekord: MX"
+      ],
+      "Record: TXT": [
+        "Rekord: TXT"
       ],
       "Registering extra password...": [
         "Dodawanie dodatkowego hasła..."
@@ -1878,6 +2000,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ten eksport będzie niezaszyfrowany i każdy, kto uzyska dostęp do wyeksportowanego pliku, będzie mógł zobaczyć hasła. Ze względów bezpieczeństwa należy go usunąć po zakończeniu korzystania z niego."
       ],
+      "This operation is irreversible.": [
+        "Ta operacja jest nieodwracalna."
+      ],
       "This option is currently not available on your device.": [
         "Funkcja nie jest dostępna na tym urządzeniu."
       ],
@@ -1893,6 +2018,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Odrzuci to urządzenie **${ name }**, które próbowało zalogować się na konto ${ BRAND_NAME } **${ date }**."
       ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Aby ukryć osobisty adres e-mail, możesz utworzyć alias."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Aby przenieść dane z innego menedżera haseł, przejdź do menedżera haseł, wyeksportuj dane, a następnie prześlij je do ${ PASS_APP_NAME }. Po zaimportowaniu danych usuń wyeksportowany plik."
       ],
@@ -1905,6 +2033,9 @@
       "Unable to copy to clipboard": [
         "Nie można skopiować do schowka"
       ],
+      "Unconfigured": [
+        "Nieskonfigurowano"
+      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "Odblokuj ${ PASS_APP_NAME } za pomocą kodu PIN, aby uzyskać dostęp do kluczy dostępu."
       ],
@@ -1916,6 +2047,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą zapasowego hasła"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą dodatkowego hasła"
@@ -1952,6 +2086,9 @@
       ],
       "User's access successfully updated": [
         "Uprawienia użytkownika zostały zaktualizowane"
+      ],
+      "Value:": [
+        "Wartość:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Sejf \"${ payload.content.name }\" został usunięty"
@@ -2060,6 +2197,12 @@
         "${ aliasCount } aliasów",
         "${ aliasCount } aliasów"
       ],
+      "${ blockedCount } block": [
+        "Zablokowano ${ blockedCount }",
+        "Zablokowano ${ blockedCount }",
+        "Zablokowano ${ blockedCount }",
+        "Zablokowano ${ blockedCount }"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } znak",
         "${ config.options.length } znaki",
@@ -2078,6 +2221,15 @@
         "${ days } dni",
         "${ days } dnia"
       ],
+      "${ forwardCount } forward": [
+        "Przekierowano ${ forwardCount }",
+        "Przekierowano ${ forwardCount }",
+        "Przekierowano ${ forwardCount }",
+        "Przekierowano ${ forwardCount }"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "W ciągu ostatnich 14 dni ${ forwardedEmails }, ${ repliedEmails } i ${ blockedEmails }."
+      ],
       "${ hours } hour": [
         "${ hours } godzina",
         "${ hours } godziny",
@@ -2090,11 +2242,29 @@
         "${ minutes } minut",
         "${ minutes } minuty"
       ],
+      "${ months } month": [
+        "${ months } miesiąc",
+        "${ months } miesiące",
+        "${ months } miesięcy",
+        "${ months } miesięca"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Wersja ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ repliedCount } reply": [
+        "Wysłano ${ repliedCount }",
+        "Wysłano ${ repliedCount }",
+        "Wysłano ${ repliedCount }",
+        "Wysłano ${ repliedCount }"
+      ],
+      "${ years } year": [
+        "${ years } rok",
+        "${ years } lata",
+        "${ years } lat",
+        "${ years } roku"
       ],
       "1 hour": [
         "1 godzina"
@@ -2162,6 +2332,9 @@
       "Alias address": [
         "Alias"
       ],
+      "Alias address (disabled)": [
+        "Alias (wyłączony)"
+      ],
       "Alias management": [
         "Zarządzanie aliasami"
       ],
@@ -2201,6 +2374,9 @@
       "Autosuggest": [
         "Automatyczne sugestie"
       ],
+      "Backup password": [
+        "Hasło zapasowe"
+      ],
       "Biometrics": [
         "Biometria"
       ],
@@ -2225,6 +2401,9 @@
       "Cards": [
         "Karty"
       ],
+      "Catch-All": [
+        "Catch-all"
+      ],
       "City": [
         "Miasto"
       ],
@@ -2236,6 +2415,9 @@
       ],
       "Confirm vault name": [
         "Potwierdź nazwę sejfu"
+      ],
+      "Contact created ${ time } ago.": [
+        "Kontakt utworzono ${ time } temu."
       ],
       "Contact details": [
         "Szczegóły kontaktu"
@@ -2297,8 +2479,14 @@
       "Display name": [
         "Nazwa wyświetlana"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Domena"
+      ],
+      "Domain:": [
+        "Domena:"
       ],
       "Domains": [
         "Domeny"
@@ -2423,6 +2611,9 @@
       "Include numbers (0-9)": [
         "Cyfry (0-9)"
       ],
+      "Info": [
+        "Informacja"
+      ],
       "Instagram handle": [
         "Profil Instagram"
       ],
@@ -2480,6 +2671,9 @@
       "Logins": [
         "Dane logowania"
       ],
+      "Mailboxes": [
+        "Skrzynki pocztowe"
+      ],
       "Make all admins": [
         "Ustaw uprawnienie administratora wszystkim"
       ],
@@ -2525,6 +2719,9 @@
       "Newest to oldest": [
         "Od najnowszych"
       ],
+      "No Activity in the last 14 days.": [
+        "Brak aktywności w ciągu ostatnich 14 dni."
+      ],
       "No history": [
         "Brak historii"
       ],
@@ -2533,6 +2730,9 @@
       ],
       "Note": [
         "Notatka"
+      ],
+      "Note • SimpleLogin": [
+        "Notatka • SimpleLogin"
       ],
       "Notes": [
         "Notatki"
@@ -2594,6 +2794,12 @@
       "Prefix": [
         "Przedrostek"
       ],
+      "Premium domain": [
+        "Domena premium"
+      ],
+      "Priority:": [
+        "Priorytet:"
+      ],
       "Prompt for auto-save": [
         "Proponuj automatyczne zapisywanie"
       ],
@@ -2602,6 +2808,9 @@
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Chroń ${ PASS_APP_NAME } za pomocą dodatkowego hasła"
+      ],
+      "Public domain": [
+        "Domena publiczna"
       ],
       "Rate us": [
         "Oceń nas"
@@ -2632,6 +2841,9 @@
       ],
       "Security code": [
         "Kod zabezpieczający"
+      ],
+      "Select a domain": [
+        "Wybierz domenę"
       ],
       "Select an email address": [
         "Wybierz adres e-mail"
@@ -2741,6 +2953,9 @@
       "Unlock with": [
         "Odblokuj za pomocą"
       ],
+      "Unlock with:": [
+        "Odblokuj za pomocą:"
+      ],
       "Unnamed Credit Card": [
         "Karta płatnicza bez nazwy"
       ],
@@ -2767,6 +2982,9 @@
       ],
       "Username/email": [
         "Nazwa użytkownika / adres e-mail"
+      ],
+      "Value:": [
+        "Wartość:"
       ],
       "Vault ID": [
         "Identyfikator sejfu"
@@ -2809,6 +3027,9 @@
       ],
       "Your browser will stop using its built-in password manager.": [
         "Przeglądarka przestanie korzystać ze wbudowanego menedżera haseł."
+      ],
+      "Your domain": [
+        "Twoja domena"
       ],
       "ZIP or Postal code": [
         "Kod pocztowy"
@@ -2878,6 +3099,9 @@
       "Add text": [
         "Dodaj tekst"
       ],
+      "Alias Display Name": [
+        "Nazwa wyświetlana aliasu"
+      ],
       "Email address": [
         "Adres e-mail"
       ],
@@ -2904,6 +3128,12 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "my-domain.com": [
+        "moja-domena.pl"
+      ],
+      "Note from SimpleLogin": [
+        "Notatka z SimpleLogin"
       ],
       "Password": [
         "Hasło"
@@ -3016,6 +3246,51 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synchronizacja aliasów została włączona. Aliasy SimpleLogin mogą chwilę się synchronizować"
       ],
+      "Catch-all setting successfully disabled": [
+        "Ustawienia catch-all zostały wyłączone"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Ustawienia catch-all zostały włączone"
+      ],
+      "Contact successfully blocked": [
+        "Kontakt został zablokowany"
+      ],
+      "Contact successfully created": [
+        "Kontakt został utworzony"
+      ],
+      "Contact successfully deleted": [
+        "Kontakt został usunięty"
+      ],
+      "Contact successfully unblocked": [
+        "Kontakt został odblokowany"
+      ],
+      "Default domain successfully updated": [
+        "Domyślna domena została zaktualizowana"
+      ],
+      "Default mailbox successfully updated": [
+        "Domyślna skrzynka pocztowa została zaktualizowana"
+      ],
+      "Display name successfully updated": [
+        "Nazwa wyświetlana została zaktualizowana"
+      ],
+      "Domain successfully deleted": [
+        "Domena została usunięta"
+      ],
+      "Mailbox successfully deleted": [
+        "Skrzynka pocztowa została usunięta"
+      ],
+      "Mailbox successfully verified": [
+        "Skrzynka pocztowa została zweryfikowana"
+      ],
+      "Mailboxes successfully updated": [
+        "Skrzynka pocztowa została zaktualizowana"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Generowanie losowego przedrostka zostało wyłączone"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Generowanie losowego przedrostka zostało włączone"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkownika.",
         "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników.",
@@ -3041,11 +3316,29 @@
       "Actions": [
         "Akcje"
       ],
+      "Activity": [
+        "Aktywność"
+      ],
+      "Add custom domain": [
+        "Dodaj niestandardową domenę"
+      ],
+      "Add mailbox": [
+        "Dodaj skrzynkę pocztową"
+      ],
+      "Alias contacts": [
+        "Alias kontaktów"
+      ],
+      "Aliases": [
+        "Aliasy"
+      ],
       "Auto-lock update": [
         "Aktualizacja automatycznej blokady"
       ],
       "Autofill": [
         "Uzupełnij"
+      ],
+      "Blocked addresses": [
+        "Zablokowane adresy"
       ],
       "Confirm extra password": [
         "Potwierdź dodatkowe hasło"
@@ -3074,11 +3367,23 @@
       "Current version": [
         "Obecna wersja"
       ],
+      "Custom domains": [
+        "Niestandardowe domeny"
+      ],
+      "Default Display Name": [
+        "Domyślna nazwa wyświetlana"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "Usunąć ${ deletedItemsCount } element?",
         "Usunąć ${ deletedItemsCount } elementy?",
         "Usunąć ${ deletedItemsCount } elementów?",
         "Usunąć ${ deletedItemsCount } elementów?"
+      ],
+      "Delete domain": [
+        "Usunąć domenę"
+      ],
+      "Delete mailbox": [
+        "Usuń skrzynkę pocztową"
       ],
       "Delete this item?": [
         "Usunąć element?"
@@ -3089,11 +3394,23 @@
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
       ],
+      "DKIM (Optional)": [
+        "DKIM (opcjonalnie)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (opcjonalnie)"
+      ],
+      "Domain": [
+        "Domena"
+      ],
       "Email": [
         "E-mail"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Lubisz ${ PASS_APP_NAME }?"
+      ],
+      "Enter your backup password": [
+        "Wpisz hasło zapasowe"
       ],
       "Enter your extra password": [
         "Wpisz dodatkowe hasło"
@@ -3149,6 +3466,9 @@
       "Low disk space": [
         "Mało miejsca na dysku"
       ],
+      "Mailbox": [
+        "Skrzynka pocztowa"
+      ],
       "Member limit": [
         "Limit użytkowników"
       ],
@@ -3175,6 +3495,9 @@
       ],
       "Move item to \"${ vaultName }\"": [
         "Przenieś element do sejfu \"${ vaultName }\""
+      ],
+      "MX record": [
+        "Rekord MX"
       ],
       "No items selected": [
         "Nie zaznaczono elementów"
@@ -3212,6 +3535,9 @@
         "Pamiętaj, że raz usunięte aliasy nie mogą zostać przywrócone.",
         "Pamiętaj, że raz usunięte aliasy nie mogą zostać przywrócone."
       ],
+      "Random Prefix Generation": [
+        "Generowanie losowego przedrostka"
+      ],
       "Reject device?": [
         "Odrzucić urządzenie?"
       ],
@@ -3230,6 +3556,9 @@
       "Secure your data": [
         "Zabezpiecz swoje dane"
       ],
+      "Select the default domain for aliases": [
+        "Wybierz domyślną domenę dla aliasów"
+      ],
       "Set access level": [
         "Ustaw uprawnienia"
       ],
@@ -3241,6 +3570,9 @@
       ],
       "Share with": [
         "Udostępnij"
+      ],
+      "SPF (Optional)": [
+        "SPF (opcjonalnie)"
       ],
       "Status": [
         "Status"
@@ -3274,6 +3606,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Odblokuj ${ brandNameJSX }"
+      ],
+      "Unverified": [
+        "Niezweryfikowano"
       ],
       "Update available": [
         "Dostępna jest aktualizacja"
@@ -3316,6 +3651,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "Adres URL jest nieprawidłowy"
+      ],
       "Duplicated URL": [
         "Adres URL został zduplikowany"
       ],
@@ -3393,8 +3731,14 @@
       "Delete alias": [
         "Usuń alias"
       ],
+      "Domain cannot be empty": [
+        "Domena nie może być pusta"
+      ],
       "Duplicate email addresses.": [
         "Adresy e-mail są zduplikowane."
+      ],
+      "Email cannot be empty": [
+        "Adres e-mail nie może być pusty"
       ],
       "Empty note": [
         "Notatka jest pusta"
@@ -3443,6 +3787,9 @@
       ],
       "Move to trash": [
         "Przenieś do Kosza"
+      ],
+      "Name is required": [
+        "Nazwa jest wymagana"
       ],
       "No items": [
         "Brak elementów"
