@@ -7,6 +7,7 @@ import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import useBlockSender from '../../hooks/useBlockSender';
 import type { Element } from '../../models/element';
 import ItemContextMenu from './ItemContextMenu';
+import type { SOURCE_ACTION } from './useListTelemetry';
 
 interface Props {
     elementID?: string;
@@ -14,9 +15,9 @@ interface Props {
     anchorRef: RefObject<HTMLElement>;
     checkedIDs: string[];
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
-    onMarkAs: (status: MARK_AS_STATUS) => void;
-    onMove: (labelID: string) => void;
-    onDelete: () => void;
+    onMarkAs: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => void;
+    onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
+    onDelete: (sourceAction: SOURCE_ACTION) => void;
     conversationMode: boolean;
 }
 

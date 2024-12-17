@@ -6,6 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import type { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import { useGetElementsFromIDs } from '../../../../hooks/mailbox/useElements';
+import { SOURCE_ACTION } from '../../useListTelemetry';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';
 
@@ -19,9 +20,16 @@ interface Props {
     onLock: (lock: boolean) => void;
     selectedIDs: string[];
     displayUpsellModal: () => void;
+    displayedFolder: string;
 }
 
-const SnoozeToolbarDropdownStepWrapper = ({ onClose, onLock, selectedIDs, displayUpsellModal }: Props) => {
+const SnoozeToolbarDropdownStepWrapper = ({
+    onClose,
+    onLock,
+    selectedIDs,
+    displayUpsellModal,
+    displayedFolder,
+}: Props) => {
     const [{ hasPaidMail }] = useUser();
     const getElementsFromIDs = useGetElementsFromIDs();
     const elements = useMemo(() => getElementsFromIDs(selectedIDs), [selectedIDs]);
@@ -30,7 +38,7 @@ const SnoozeToolbarDropdownStepWrapper = ({ onClose, onLock, selectedIDs, displa
 
     const handleSnooze = (event: MouseEvent, duration: SNOOZE_DURATION, snoozeTime?: Date) => {
         event.stopPropagation();
-        snooze({ elements, duration, snoozeTime });
+        snooze({ elements, duration, snoozeTime }, SOURCE_ACTION.TOOLBAR, displayedFolder);
         onClose();
     };
 
@@ -46,7 +54,7 @@ const SnoozeToolbarDropdownStepWrapper = ({ onClose, onLock, selectedIDs, displa
 
     const handleUnsnoozeClick = (event: MouseEvent) => {
         event.stopPropagation();
-        unsnooze(elements);
+        unsnooze(elements, SOURCE_ACTION.TOOLBAR, displayedFolder);
         onClose();
     };
 

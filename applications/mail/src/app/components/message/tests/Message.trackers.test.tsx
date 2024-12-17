@@ -94,6 +94,7 @@ describe('message trackers', () => {
             breakpoints: mockDefaultBreakpoints,
             onFocus: noop,
             isComposerOpened: false,
+            currentFolder: 'INBOX',
         };
 
         await render(<MessageView {...props} />, {

@@ -30,6 +30,7 @@ const props = {
     onMove: jest.fn(),
     onDelete: jest.fn(),
     breakpoints: BREAKPOINTS,
+    currentFolder: '0',
 };
 
 const isTinyProps = {

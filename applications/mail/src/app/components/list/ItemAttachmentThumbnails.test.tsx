@@ -88,6 +88,7 @@ const setup = async (
             isSelected={false}
             showAttachmentThumbnails={showAttachmentThumbnails}
             attachmentsMetadata={filterAttachmentToPreview(attachmentsMetadata)}
+            currentFolder="INBOX"
         />,
         {
             preloadedState: {

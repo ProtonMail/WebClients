@@ -15,6 +15,8 @@ import {
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+
 import type { MessageState } from '../../../store/messages/messagesTypes';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
@@ -35,6 +37,7 @@ interface Props {
     onExpand: () => void;
     breakpoints: Breakpoints;
     conversationIndex?: number;
+    currentFolder: string;
 }
 
 const HeaderCollapsed = ({
@@ -47,6 +50,7 @@ const HeaderCollapsed = ({
     onExpand,
     breakpoints,
     conversationIndex = 0,
+    currentFolder,
 }: Props) => {
     const handleClick = (event: MouseEvent) => {
         if ((event.target as HTMLElement).closest('.stop-propagation')) {
@@ -122,7 +126,11 @@ const HeaderCollapsed = ({
                 {messageLoaded ? (
                     <>
                         <span className="message-header-star mr-2 flex">
-                            <ItemStar element={message.data} />
+                            <ItemStar
+                                element={message.data}
+                                sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
+                                currentFolder={currentFolder}
+                            />
                         </span>
 
                         <span className="flex">
