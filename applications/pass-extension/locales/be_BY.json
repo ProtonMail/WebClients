@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Accept": [
+        "Прыняць"
+      ],
       "Account": [
         "Уліковы запіс"
       ],
@@ -695,10 +698,10 @@
         "Сцяжок азначае, што функцыя адключана."
       ],
       "Add the following CNAME DNS records to your domain.": [
-        "Дадайце наступны запіс CNAME DNS у свой дамен."
+        "Дадайце наступныя запісы CNAME DNS у свой дамен."
       ],
       "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
-        "Дадайце наступны запіс MX запіс DNS да вашага дамена. Звярніце ўвагу, што ў канцы мэтавых адрасоў ёсць кропка (.). Магчыма, што пры дадаванні запісу DNS спатрэбіцца выдаліць кропку ў канцы, калі ваш рэгістратар не дазваляе яе ставіць."
+        "Дадайце наступны запіс MX DNS да вашага дамена. Звярніце ўвагу, што ў канцы мэтавых адрасоў ёсць кропка (.). Магчыма, што пры дадаванні запісу DNS спатрэбіцца выдаліць кропку ў канцы, калі ваш рэгістратар не дазваляе яе ставіць."
       ],
       "Add the following TXT DNS record to your domain.": [
         "Дадайце наступны запіс TXT DNS у свой дамен."
@@ -710,13 +713,13 @@
         "DKIM ${ WIKIPEDIA_LINK_DKIM } - гэта спосаб аўтэнтыфікацыі электроннай пошты, які распрацаваны для прадухілення падробкі электроннай пошты. Настойліва рэкамендуецца наладзіць DKIM, каб паменшыць верагоднасць траплення вашых лістоў у папку са спамам атрымальніка."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
-        "Палітыка DMARC ${ WIKIPEDIA_LINK_DMARC } распрацавана для абароны дамена ад неаўтарызаванага выкарыстання. Яна таксама вядомы пад назвай падробка электроннай пошты. Яна пабудавана на аснове SPF і DKIM і дае ўказанні паштоваму серверу, што рабіць, калі ні адзін з гэтых метадаў аўтэнтыфікацыі не праходзіць."
+        "Палітыка DMARC ${ WIKIPEDIA_LINK_DMARC } распрацавана для абароны дамена ад неаўтарызаванага выкарыстання. Яна таксама вядома пад назвай падробка электроннай пошты. Яна пабудавана на аснове SPF і DKIM і дае ўказанні паштоваму серверу, што рабіць, калі ні адзін з гэтых метадаў аўтэнтыфікацыі не праходзіць."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Калі вы выкарыстоўваеце паддамен (напрыклад, ${ subdomainExample }), то вам неабходна замест гэтага выкарыстоўваць ${ dmarcExampleSubdomain } як дамен."
       ],
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
-        "Калі вы выкарыстоўваеце паддамен (напрыклад, subdomain.domain.com), вам неабходна выкарыстоўваць ${ domainKeyExampleSubdomain } у якасці дамена. Гэта азначае, што калі ў вас ёсць дамен mail.domain.com, то ў якасці дамена неабходна ўвесці ${ domainKeyExampleMail }."
+        "Калі вы выкарыстоўваеце паддамен (напрыклад, subdomain.domain.com), вам неабходна выкарыстоўваць ${ domainKeyExampleSubdomain } у якасці дамена. Гэта азначае, што калі ў вас ёсць дамен poshta.damen.com, то ў якасці дамена неабходна ўвесці ${ domainKeyExampleMail }."
       ],
       "If you are using CloudFlare, please make sure to not select the Proxy option.": [
         "Пераканайцеся, што не выбраны параметр проксі-сервера, калі вы выкарыстоўваеце CloudFlare."
@@ -731,7 +734,7 @@
         "Некаторыя рэгістратары даменаў (Namecheap, CloudFlare і г.д.) могуць таксама выкарыстоўваць знак @ каранёвага дамена."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
-        "SPF ${ WIKIPEDIA_LINK_SPF } - гэта спосаб аўтэнтыфікацыі электроннай пошты, які распрацаваны для выяўлення падробкі адраса адпраўніка падчас дастаўкі ліста. Настойліва рэкамендуецца наладзіць SPF, каб паменшыць верагоднасць траплення вашых лістоў у папку са спамам атрымальніка."
+        "SPF ${ WIKIPEDIA_LINK_SPF } - гэта спосаб аўтэнтыфікацыі электроннай пошты, які распрацаваны для выяўлення падробкі адраса адпраўніка падчас дастаўкі ліста. Настойліва рэкамендуецца наладзіць SPF, каб паменшыць верагоднасць з'яўлення вашых лістоў у папцы са спамам атрымальніка."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Гэты ўліковы запіс з'яўляецца ўразлівым. Наведайце сэрвіс і змяніце пароль."
@@ -876,7 +879,7 @@
         "Не ўдалося стварыць кантакт"
       ],
       "Failed to delete domain": [
-        "Не ўдалося выдалиць дамен"
+        "Не ўдалося выдаліць дамен"
       ],
       "Failed to delete email address from monitoring": [
         "Не ўдалося выдаліць адрас электроннай пошты з назірання"
@@ -932,6 +935,9 @@
       "Failed to restore items from trash": [
         "Не ўдалося аднавіць элементы са сметніцы"
       ],
+      "Failed to set default mailbox": [
+        "Не ўдалося задаць прадвызначаную паштовую скрыню"
+      ],
       "Failed to sync aliases": [
         "Не ўдалося сінхранізаваць псеўданімы"
       ],
@@ -942,7 +948,7 @@
         "Не ўдалося адмацаваць элемент"
       ],
       "Failed to update catch-all setting.": [
-        "Не ўдалося абнавіць налады для ўсёй пошты дамена"
+        "Не ўдалося абнавіць налады для ўсёй пошты дамена."
       ],
       "Failed to update default domain": [
         "Не ўдалося абнавіць прадвызначаны дамен"
@@ -1244,6 +1250,12 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } заблакіраваны",
+        "${ blockedEmailsCount } заблакіравана",
+        "${ blockedEmailsCount } заблакіравана",
+        "${ blockedEmailsCount } заблакіравана"
+      ],
       "${ count } invite successfully sent": [
         "${ count } запрашэнне паспяхова адпраўлена",
         "${ count } запрашэнні паспяхова адпраўлены",
@@ -1264,6 +1276,12 @@
       ],
       "${ count }/${ maxReads } views": [
         "Праглядаў: ${ count }/${ maxReads }"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } перасланы",
+        "${ forwardedEmailsCount } пераслана",
+        "${ forwardedEmailsCount } пераслана",
+        "${ forwardedEmailsCount } пераслана"
       ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
@@ -1316,6 +1334,12 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } паспяхова ўключана"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } адпраўлены",
+        "${ repliedEmailsCount } адпраўлена",
+        "${ repliedEmailsCount } адпраўлена",
+        "${ repliedEmailsCount } адпраўлена"
+      ],
       "${ trialDaysLeft } day left": [
         "Застаўся ${ trialDaysLeft } дзень",
         "Засталося ${ trialDaysLeft } дні",
@@ -1326,7 +1350,7 @@
         "Паспрабуйце прэміяльныя функцыі праграмы на працягу 7 дзён бясплатна. Толькі на працягу першага тыдня выкарыстання ${ BRAND_NAME }."
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
-        "Кантакт ствараецца для кожнага адраса электроннай пошты, які адпраўляе лісты або атрымлівае іх ад ${ aliasEmail }."
+        "Кантакт створаны для кожнага адраса электроннай пошты, які адпраўляе або атрымлівае лісты ад ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Даступна новая версія ${ PASS_APP_NAME }. Абнавіце праграму да апошняй версіі, каб паспрабаваць новыя функцыі і выпраўленыя памылкі."
@@ -1339,6 +1363,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Для доступу да ${ PASS_APP_NAME } заўсёды будзе патрабавацца ваш пароль ад ${ BRAND_NAME }"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Для доступу да ${ PASS_APP_NAME } заўсёды будзе патрабавацца ваш рэзервовы пароль."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Для доступу да ${ PASS_APP_NAME } спатрэбіцца ваш адбітак пальца або PIN-код прылады."
@@ -1395,13 +1422,13 @@
         "Раней абагулены з вамі элемент быў выдалены"
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
-        "Вы сапраўды хочаце выдаліць ${ emailJSX } са сваёй паштовай скрыні?"
+        "Вы сапраўды хочаце выдаліць ${ emailJSX } са сваіх паштовых скрынь?"
       ],
       "Are you sure you want to remove the link?": [
         "Вы сапраўды хочаце выдаліць спасылку?"
       ],
       "Auto-created aliases are automatically owned by the following mailbox(es):": [
-        "Псеўданімы, якія створаны аўтаматычна будуць належыць наступны паштовым скрыням:"
+        "Псеўданімы, якія створаны аўтаматычна будуць аўтаматычна належыць наступным паштовым скрыням:"
       ],
       "Auto-lock successfully disabled.": [
         "Аўтаблакіроўка паспяхова адключана."
@@ -1484,11 +1511,14 @@
       "Current version": [
         "Бягучая версія"
       ],
+      "Currently selected": [
+        "У цяперашні час выбрана"
+      ],
       "Decrypting your data": [
         "Расшыфроўка вашых даных"
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
-        "Прадвызначанае бачнае імя для псеўданіма, якое створана з дапамогай ${ domainDisplay } пры ўмове, што яно не перазапісана бачным іменем псеўданіма."
+        "Прадвызначанае бачнае імя для псеўданімаў, якое створана з дапамогай ${ domainDisplay } пры ўмове, што яно не перазапісана бачным іменем псеўданіма."
       ],
       "Deleted items will be moved here first": [
         "Выдаленыя элементы першапачаткова трапяць сюды"
@@ -1793,6 +1823,9 @@
       "None": [
         "Няма"
       ],
+      "Not recommended": [
+        "Не рэкамендавана"
+      ],
       "Offline mode could not be disabled at the moment": [
         "Рэжым па-за сеткай не можа быць адключаны ў дадзены момант"
       ],
@@ -1852,6 +1885,15 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Пацвердзіце свой пароль ${ BRAND_NAME }, каб экспартаваць даныя ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password": [
+        "Пацвердзіце свой рэзервовы пароль"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Пацвердзіце свой рэзервовы пароль для аўтаблакіроўкі з дапамогай вашага пароля."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Пацвердзіце свой рэзервовы пароль для скасавання рэгістрацыі бягучай блакіроўкі."
       ],
       "Please confirm your extra password": [
         "Пацвердзіце свой дадатковы пароль"
@@ -2024,6 +2066,9 @@
       "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
         "Нататкі SimpleLogin захоўваюцца ў адным месцы з адрасам псеўданіма, і хоць яны абаронены шыфраваннем у стане спакою, у іх адсутнічае скразное шыфраванне. Такім чынам любы, хто мае доступ да базы даных SimpleLogin, зможа прачытаць іх."
       ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "У наступны раз, калі вам спатрэбіцца псеўданім, проста скарыстайцеся электроннай поштай ${ emailBold }: яна будзе створана ${ automaticallyBold } пасля таго, як вы першы раз атрымаеце ліст. Вы таксама можаце вызначыць ${ rulesHyperLink } для больш дэтальнага кантролю."
+      ],
       "Successfully exported all your items": [
         "Усе вашы элементы паспяхова экспартаваны"
       ],
@@ -2129,6 +2174,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай пароля ${ BRAND_NAME }"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай рэзервовага пароля"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай дадатковага пароля"
       ],
@@ -2206,6 +2254,9 @@
       ],
       "You are about to create:": [
         "Вы збіраецеся стварыць:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Вы таксама можаце прызначыць PIN-код, каб разблакіраваць ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Цяпер вы можаце выкарыстоўваць свой пароль ${ BRAND_NAME } для доступу па-за сеткай ${ PASS_SHORT_APP_NAME }"
@@ -2313,6 +2364,9 @@
         "${ forwardCount } перасылкі",
         "${ forwardCount } перасылак",
         "${ forwardCount } перасылак"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails } за апошнія 14 дзён."
       ],
       "${ hours } hour": [
         "${ hours } гадзіна",
@@ -2460,6 +2514,9 @@
       ],
       "Autosuggest": [
         "Аўтапрапанова"
+      ],
+      "Backup password": [
+        "Рэзервовы пароль"
       ],
       "Biometrics": [
         "Біяметрыя"
@@ -3043,6 +3100,9 @@
       "Unlock with": [
         "Разблакіраваць з дапамогай"
       ],
+      "Unlock with:": [
+        "Разблакіраваць з дапамогай:"
+      ],
       "Unnamed Credit Card": [
         "Крэдытная картка без назвы"
       ],
@@ -3384,13 +3444,13 @@
         "Паштовая скрыня паспяхова праверана"
       ],
       "Mailboxes successfully updated": [
-        "Паштовая скрыня паспяхова абноўлена"
+        "Паштовыя скрыні паспяхова абноўлены"
       ],
       "Random prefix generation successfully disabled": [
-        "Адвольнай генерацыя прэфіксу паспяхова адключана"
+        "Адвольная генерацыя прэфіксу паспяхова адключана"
       ],
       "Random prefix generation successfully enabled": [
-        "Адвольнай генерацыя прэфіксу паспяхова ўключана"
+        "Адвольная генерацыя прэфіксу паспяхова ўключана"
       ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальніка.",
@@ -3436,7 +3496,7 @@
         "Псеўданімы"
       ],
       "Auto create/on the fly alias": [
-        "Аўтаматычнае старэнне імгненных псеўданімаў"
+        "Аўтаматычнае старэнне або імгненных псеўданімы"
       ],
       "Auto-lock update": [
         "Абнаўленне аўтаблакіравання"
@@ -3446,6 +3506,9 @@
       ],
       "Blocked addresses": [
         "Заблакіраваныя адрасы"
+      ],
+      "Change your lock method": [
+        "Змяніць спосаб блакіроўкі"
       ],
       "Confirm extra password": [
         "Пацвярджэнне дадатковага пароля"
@@ -3521,6 +3584,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Падабаецца ${ PASS_APP_NAME }?"
+      ],
+      "Enter your backup password": [
+        "Увядзіце свой рэзервовы пароль"
       ],
       "Enter your extra password": [
         "Увядзіце свой дадатковы пароль"
@@ -3851,7 +3917,7 @@
         "Дубліраваныя адрасы электроннай пошты."
       ],
       "Email cannot be empty": [
-        "Поле электроннай пошты не можа быць пустым."
+        "Поле электроннай пошты не можа быць пустым"
       ],
       "Empty note": [
         "Пустая нататка"
@@ -3900,6 +3966,9 @@
       ],
       "Move to trash": [
         "Перамясціць у сметніцу"
+      ],
+      "Name is required": [
+        "Патрабуецца назва"
       ],
       "No items": [
         "Элементы адсутнічаюць"

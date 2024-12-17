@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Accept": [
+        "Aksepter"
+      ],
       "Account": [
         "Konto"
       ],
@@ -922,6 +925,9 @@
       "Failed to restore items from trash": [
         "Kunne ikke gjenopprette elementer fra papirkurven"
       ],
+      "Failed to set default mailbox": [
+        "Kan ikke angi standard postboks"
+      ],
       "Failed to sync aliases": [
         "Kunne ikke synkronisere aliaser"
       ],
@@ -1022,10 +1028,10 @@
         "PIN-kodene samsvarer ikke"
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Vennligst gi ${ PASS_APP_NAME } de nødvendige utvidelsestillatelsene for å fortsette."
+        "Gi ${ PASS_APP_NAME } de nødvendige utvidelsestillatelsene for å fortsette."
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
-        "Vennligst fest utvidelsen eller velg \"fortsett uten å feste\"."
+        "Fest utvidelsen eller velg \"fortsett uten å feste\"."
       ],
       "Registration failure: ${ message }": [
         "Registreringsfeil: ${ message }"
@@ -1061,7 +1067,7 @@
         "Noe gikk galt"
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "Noe gikk galt. Vennligst last inn ${ PASS_APP_NAME }-utvidelsen på nytt. Problemet er loggført."
+        "Noe gikk galt. Last inn ${ PASS_APP_NAME }-utvidelsen på nytt. Problemet er loggført."
       ],
       "The file you are trying to import is empty": [
         "Filen du prøver å importere er tom"
@@ -1076,7 +1082,7 @@
         "Dette kan oppstå etter en stund hvis du ikke bruker ${ PASS_SHORT_APP_NAME } eller tømmer historikken i Safari."
       ],
       "Too many failed attempts. Please sign in again.": [
-        "For mange mislykkede forsøk. Vennligst logg på igjen."
+        "For mange mislykkede forsøk. Logg på igjen."
       ],
       "Trashing item failed": [
         "Sletting av element til papirkurv mislyktes"
@@ -1222,6 +1228,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" oppdatering ble avvist"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } blokkert",
+        "${ blockedEmailsCount } blokkerte"
+      ],
       "${ count } invite successfully sent": [
         "${ count } invitasjon sendt",
         "${ count } invitasjoner sendt"
@@ -1236,6 +1246,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } visninger"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } videresendt",
+        "${ forwardedEmailsCount } videresendte"
       ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -1284,6 +1298,10 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } aktivert"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } sendt",
+        "${ repliedEmailsCount } sendte"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag igjen",
         "${ trialDaysLeft } dager igjen"
@@ -1305,6 +1323,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Tilgang til ${ PASS_APP_NAME } vil alltid kreve ${ BRAND_NAME }-passordet ditt."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Tilgang til ${ PASS_APP_NAME } vil alltid kreve reservepassordet ditt."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Tilgang til ${ PASS_APP_NAME } krever fingeravtrykk eller PIN-kode for enheten."
@@ -1449,6 +1470,9 @@
       ],
       "Current version": [
         "Gjeldende versjon"
+      ],
+      "Currently selected": [
+        "Valgt nå"
       ],
       "Decrypting your data": [
         "Dekrypterer dataene dine"
@@ -1745,6 +1769,9 @@
       "None": [
         "Ingen"
       ],
+      "Not recommended": [
+        "Ikke anbefalt"
+      ],
       "Offline mode could not be disabled at the moment": [
         "Frakoblet modus kunne ikke deaktiveres for øyeblikket"
       ],
@@ -1803,6 +1830,15 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vennligst bekreft passordet for ${ BRAND_NAME } for å eksportere ${ PASS_APP_NAME }-dataene dine."
       ],
+      "Please confirm your backup password": [
+        "Vennligst bekreft ditt reservepassord"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Bekreft reservepassordet ditt for å låse automatisk med passordet ditt."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Bekreft reservepassordet ditt for å avregistrere din nåværende lås."
+      ],
       "Please confirm your extra password": [
         "Vennligst bekreft ditt ekstra passord"
       ],
@@ -1852,7 +1888,7 @@
         "Vennligst skriv inn din nåværende PIN-kode for å fortsette."
       ],
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
-        "Vennligst skriv inn ditt ekstra passord for å begynne å bruke ${ PASS_SHORT_APP_NAME }."
+        "Skriv inn ditt ekstra passord for å begynne å bruke ${ PASS_SHORT_APP_NAME }."
       ],
       "Please follow the steps below to set up your domain.": [
         "Følg trinnene nedenfor for å sette opp domenet ditt."
@@ -2080,6 +2116,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Lås opp ${ PASS_SHORT_APP_NAME } med ditt ${ BRAND_NAME }-passord"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Lås opp ${ PASS_SHORT_APP_NAME } med reservepassordet ditt"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Lås opp ${ PASS_SHORT_APP_NAME } med ditt ekstra passord"
       ],
@@ -2155,6 +2194,9 @@
       ],
       "You are about to create:": [
         "Du er i ferd med å opprette:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Du kan også definere en PIN-kode for å låse opp ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kan nå bruke ${ BRAND_NAME }-passordet for å få frakoblet tilgang til ${ PASS_SHORT_APP_NAME }."
@@ -2246,6 +2288,9 @@
       "${ forwardCount } forward": [
         "${ forwardCount } videresending",
         "${ forwardCount } videresendinger"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails } i løpet av de siste 14 dagene."
       ],
       "${ hours } hour": [
         "${ hours } time",
@@ -2383,6 +2428,9 @@
       ],
       "Autosuggest": [
         "Foreslå automatisk"
+      ],
+      "Backup password": [
+        "Reservepassord"
       ],
       "Biometrics": [
         "Biometri"
@@ -2964,6 +3012,9 @@
       "Unlock with": [
         "Lås opp med"
       ],
+      "Unlock with:": [
+        "Lås opp med:"
+      ],
       "Unnamed Credit Card": [
         "Ikke navngitt kredittkort"
       ],
@@ -3362,6 +3413,9 @@
       "Blocked addresses": [
         "Blokkerte adresser"
       ],
+      "Change your lock method": [
+        "Endre låsemetoden din"
+      ],
       "Confirm extra password": [
         "Bekreft ekstra passord"
       ],
@@ -3434,6 +3488,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Koser du deg med ${ PASS_APP_NAME }?"
+      ],
+      "Enter your backup password": [
+        "Skriv inn reservepassordet ditt"
       ],
       "Enter your extra password": [
         "Angi det ekstra passordet ditt"
@@ -3799,6 +3856,9 @@
       ],
       "Move to trash": [
         "Flytt til papirkurven"
+      ],
+      "Name is required": [
+        "Navn kreves"
       ],
       "No items": [
         "Ingen elementer"
