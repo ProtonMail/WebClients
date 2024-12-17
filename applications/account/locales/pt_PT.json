@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -408,6 +408,9 @@
       ],
       "Discard changes": [
         "Descartar alterações"
+      ],
+      "Dismiss": [
+        "Descartar"
       ],
       "Domain name": [
         "Nome do domínio"
@@ -6223,9 +6226,6 @@
       "account recovery method": [
         "método de recuperação de conta"
       ],
-      "Account size": [
-        "Tamanho da conta"
-      ],
       "Account successfully updated": [
         "Conta atualizada"
       ],
@@ -6273,9 +6273,6 @@
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "A adicionar servidor gateway: ${ serverNumber } / ${ total }",
         "A adicionar servidores gateway: ${ serverNumber } / ${ total }"
-      ],
-      "Additional options": [
-        "Opções adicionais"
       ],
       "Admin account allocation": [
         "Alocação da conta do administrador"
@@ -6519,10 +6516,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crie uma etiqueta para as mensagens importadas, um intervalo de tempo para esta importação e as etiquetas que deseja importar."
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Criar uma nuvem segura para ${ n } membro",
-        "Criar uma nuvem segura para ${ n } membros"
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crie e gira sub-contas e atribua-lhes endereços de e-mail no seu domínio personalizado."
       ],
@@ -6675,9 +6668,6 @@
       ],
       "Email address": [
         "Endereço de e-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "O alojamento de e-mails para 10 nomes de domínio de e-mail personalizado está incluído gratuitamente. Pode adicionar domínios adicionais por ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "O alojamento de e-mail está apenas disponível para domínios que já possui. O registo de domínio não está atualmente disponível através da ${ BRAND_NAME }. No entanto, pode alojar o e-mail para domínios registados em qualquer registador de domínios."
@@ -10871,7 +10861,7 @@
         "Política rigorosa de não registo"
       ],
       "Support for up to 2 users": [
-        "Suporte para até 2 usuários"
+        "Suporte para até 2 utilizadores"
       ],
       "Tailored to your needs": [
         "Personalizado de acordo com as suas necessidades"
@@ -12344,28 +12334,9 @@
         "Membros"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "por favor, ${ contactHref } a nossa equipa de vendas."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Selecione o número de IP a incluir no seu plano. Cada IP adicional custa ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Se precisar de mais do que ${ maxIPs } IP, ",
-        "Se precisar de mais do que ${ maxIPs } IPs, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contacto"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Selecione o número de utilizadores a incluir no seu plano. Cada utilizador adicional custa ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Se precisar de mais de ${ maxUsers } conta de utilizador, ${ contact } a nossa equipa de vendas.",
-        "Se precisar de mais de ${ maxUsers } contas de utilizador, ${ contact } a nossa equipa de vendas."
       ]
     },
     "Price": {
@@ -14378,7 +14349,7 @@
         "Limpar"
       ],
       "Clear out the junk": [
-        "Limpar a lixeira"
+        "Limpar o lixo"
       ],
       "Click a value in the table to use it as filter": [
         "Clique num valor da tabela para utilizá-lo como filtro"

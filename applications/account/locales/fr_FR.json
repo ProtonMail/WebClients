@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "activer"
-      ],
       "Activate": [
         "Activer"
+      ],
+      "activate": [
+        "activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -420,6 +420,9 @@
       ],
       "Discard changes": [
         "Abandonner les modifications"
+      ],
+      "Dismiss": [
+        "Annuler"
       ],
       "Domain name": [
         "Nom de domaine"
@@ -1858,6 +1861,9 @@
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Renouvellement automatique au prix de ${ renewPrice } pour ${ renewLength } mois",
         "Renouvellement automatique au prix de ${ renewPrice } pour ${ renewLength } mois"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Se renouvelle automatiquement le ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -4690,6 +4696,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Nous vous invitons à activer la prise en charge multi-utilisateur avant d'ajouter des utilisateurs à votre organisation."
       ],
+      "Please enter a valid entity ID URL": [
+        "Veuillez saisis une URL valide pour l'identité."
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrigez le conflit en surbrillance pour continuer.",
         "Corrigez les conflits en surbrillance pour continuer."
@@ -6877,9 +6886,6 @@
       "account recovery method": [
         "une méthode de récupération de compte"
       ],
-      "Account size": [
-        "Taille du compte"
-      ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
@@ -6933,9 +6939,6 @@
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Ajout d'un serveur de Passerelle : ${ serverNumber } sur ${ total }",
         "Ajout de serveurs de Passerelle : ${ serverNumber } sur ${ total }"
-      ],
-      "Additional options": [
-        "Options supplémentaires"
       ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
@@ -7190,6 +7193,9 @@
       "Choose an app to get started": [
         "Choisissez une application pour commencer"
       ],
+      "Choose an Entity ID to continue.": [
+        "Choisissez l'identifiant de l'entité pour continuer."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
       ],
@@ -7210,6 +7216,9 @@
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Continuez à connecter **${ organizationValue.Name }** à votre organisation ${ BRAND_NAME }."
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Poursuivez la connexion entre l'entité et votre organisation ${ BRAND_NAME }."
       ],
       "Continue with ${ freeName }": [
         "Continuer avec ${ freeName }"
@@ -7247,10 +7256,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous voulez importer."
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Créer un cloud sécurisé pour ${ n } membre",
-        "Créer un cloud sécurisé pour ${ n } membres"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Créez et gérez des comptes secondaires et attribuez-leur des adresses e-mail sur votre domaine personnalisé."
@@ -7429,7 +7434,7 @@
       "Edit link": [
         "Modifier le lien"
       ],
-      "EduGain configuration saved": [
+      "eduGAIN configuration saved": [
         "La configuration EduGain a été enregistrée."
       ],
       "email": [
@@ -7437,9 +7442,6 @@
       ],
       "Email address": [
         "Adresse e-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "L'hébergement de messagerie pour 10 noms de domaine personnalisés est inclus gratuitement. Des domaines supplémentaires peuvent être ajoutés pour ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
@@ -7503,6 +7505,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous voulez importer."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Saisissez l'identifiant de l'entité d'une organisation **eduGAIN** pour **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Saisissez le mot de passe de l'organisation pour restaurer les droits administrateur. ${ learnMore }"
@@ -8067,9 +8072,6 @@
       "No logs yet.": [
         "Il n'y a aucun journal pour l'instant."
       ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Aucune organisation n'a été activée avec **eduGAIN** pour **${ domain.DomainName }**."
-      ],
       "No payment is required at this time.": [
         "Aucun paiement n'est nécessaire pour le moment."
       ],
@@ -8347,7 +8349,7 @@
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Registering your subscription...": [
-        "Enregistrement de votre abonnement...."
+        "Enregistrement de votre abonnement…"
       ],
       "Remember to share the user's sign in details with them.": [
         "Pensez à partager les informations de connexion avec l'utilisateur concerné."
@@ -8415,17 +8417,14 @@
       "Select a service provider to start": [
         "Commencez par sélectionner un service"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Sélectionnez une organisation activée avec **eduGAIN** pour **${ domain.DomainName }**."
-      ],
       "Select one or multiple user affiliations": [
         "Sélectionnez une ou plusieurs affiliations pour l'utilisateur."
       ],
       "Select recently used servers": [
         "Sélectionner les serveurs récemment utilisés"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "Sélectionnez les affiliations de l'utilisateur de **${ organizationValue.Name }** (${ organizationValue.EntityId }) que vous souhaitez autoriser dans votre organisation ${ BRAND_NAME } :"
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Sélectionnez les affiliations des utilisateurs de ${ getFormattedOrganization } que vous souhaitez autoriser dans votre organisation ${ BRAND_NAME } :"
       ],
       "Select what you want to import.": [
         "Sélectionnez ce que vous voulez importer."
@@ -8706,9 +8705,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Ce message ne parviendra pas à l'équipe support. Si vous rencontrez un problème avec notre service ou si vous avez besoin de plus d'assistance de notre part ${ supportLink }."
-      ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Cette organisation a été activée avec **eduGAIN** pour **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Ce lien promotionnel a expiré."
@@ -9549,11 +9545,6 @@
         "Lecture seule"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "L'adresse e-mail n'est pas valide."
@@ -10102,6 +10093,9 @@
       "Auto-unsubscribe": [
         "Désinscription automatique"
       ],
+      "Automatically save contacts": [
+        "Enregistrer automatiquement les contacts"
+      ],
       "Awarded": [
         "Attribué"
       ],
@@ -10389,6 +10383,9 @@
       ],
       "Entity ID": [
         "ID de l’entité"
+      ],
+      "Entity ID URL": [
+        "URL de l'ID de l'entité"
       ],
       "Event": [
         "Événement"
@@ -10734,6 +10731,9 @@
       ],
       "Recovery phrase": [
         "Phrase de récupération"
+      ],
+      "Remove": [
+        "Retirer"
       ],
       "Remove image metadata": [
         "Retirer les métadonnées de l'image"
@@ -14330,28 +14330,9 @@
         "Membres"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } notre équipe commerciale."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Sélectionnez le nombre d'IP à inclure dans votre abonnement. Chaque IP supplémentaire coûte ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si vous avez besoin de plus de ${ maxIPs } IP, ",
-        "Si vous avez besoin de plus de ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contactez"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Sélectionnez le nombre d'utilisateurs à inclure dans votre abonnement. Chaque utilisateur supplémentaire coûte ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si vous avez besoin de plus d'${ maxUsers } compte utilisateur, nous vous invitons à ${ contact } notre service client.",
-        "Si vous avez besoin de plus de ${ maxUsers } comptes utilisateur, nous vous invitons à ${ contact } notre service client."
       ]
     },
     "Price": {
@@ -15465,6 +15446,14 @@
     "signup: Action": {
       "Request trial": [
         "Demander une version d'essai"
+      ]
+    },
+    "signup: Feature": {
+      "Encrypted": [
+        "Chiffré"
+      ],
+      "Strict no-logs policy": [
+        "Politique stricte de non-journalisation (no log)"
       ]
     },
     "Signup: Info": {
@@ -18563,6 +18552,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Les messages dans le dossier Envoyés ou Brouillons continueront à apparaître dans ce dossier, même si vous les déplacez vers un autre dossier."
+      ],
+      "Remove metadata from images to protect your privacy.": [
+        "Retirez les métadonnées de vos images pour préserver votre confidentialité."
       ],
       "See number of unread messages in the tab icon": [
         "Affichez le nombre de messages non lus sur l'icône dans l'onglet de navigation"

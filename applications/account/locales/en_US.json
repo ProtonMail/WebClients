@@ -4,7 +4,18 @@
     "language": "en_US"
   },
   "contexts": {
+    "Error": {
+      "Please enter a valid entity ID URL": [
+        "Please enter a valid Entity ID URL"
+      ],
+      "Please upload an xml file": [
+        "Please upload an XML file"
+      ]
+    },
     "Info": {
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**."
+      ],
       "Invite successfully sent": [
         "Invite sent",
         "Invites sent"
@@ -15,6 +26,11 @@
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
         "You have ${ unassignedAvailableCount } recently used server available. To allocate this server to another country, you'll have to wait until deactivation is complete.",
         "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete."
+      ]
+    },
+    "new_plans: feature": {
+      "TOR over VPN": [
+        "Tor over VPN"
       ]
     },
     "new_plans: tooltip": {
