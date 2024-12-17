@@ -39,6 +39,7 @@ export const HeaderPublicOptions = ({
   const { surePublicContext } = useDocsContext()
   const { removeActionFromUrl } = useDocsUrlBar()
   const application = useApplication()
+  const role = documentState.getProperty('userRole')
 
   const { customPassword, token, urlPassword } = surePublicContext.compat
   const { addBookmark, isAlreadyBookmarked, isLoading } = useDocsBookmarks({ token, urlPassword, customPassword })
@@ -117,7 +118,7 @@ export const HeaderPublicOptions = ({
     <div className="flex flex-nowrap items-center gap-2">
       {!user && (
         <ButtonLike
-          className="head-max-849:[display:none]"
+          className="flex head-max-849:![display:none]"
           as="a"
           href={DOCS_SIGNUP_FREE}
           target="_blank"
@@ -144,27 +145,27 @@ export const HeaderPublicOptions = ({
             <Button
               size="small"
               loading={isLoading || isAdding}
-              className="flex items-center gap-2 head-max-849:min-h-7"
+              className="flex items-center gap-2 head-max-849:!min-h-7"
               onClick={handleSaveToDriveClick}
               color="weak"
               data-testid="save-in-drive-button"
             >
               {!isAdding && <Icon name="folder-arrow-in" />}
-              <span className="head-max-849:sr-only">{isAdding ? c('Info').t`Saving...` : saveToDriveButtonText}</span>
+              <span className="head-max-849:!sr-only">{isAdding ? c('Info').t`Saving...` : saveToDriveButtonText}</span>
             </Button>
           </Tooltip>
         </Spotlight>
       )}
 
       <Spotlight
-        show={shouldShowMakeCopyTooltip}
+        show={shouldShowMakeCopyTooltip && role.isPublicViewer()}
         content={c('Spotlight').t`To edit this document, create a copy that you can modify.`}
         originalPlacement="bottom-end"
       >
         <Button
           color={user ? 'weak' : 'norm'}
           size="small"
-          className="flex items-center gap-2 text-sm head-max-849:[display:none]"
+          className="flex items-center gap-2 head-max-849:![display:none]"
           data-testid="make-a-copy-button"
           onClick={handleMakeCopyClick}
         >
@@ -185,10 +186,10 @@ export const HeaderPublicOptions = ({
         onClick={toggleMobileMenu}
         shape="outline"
         size="small"
-        className="[display:none] head-max-849:inline-block"
+        className="[display:none] head-max-849:![display:inline-block]"
       >
         <Icon name="chevron-down-filled" />
-        <span className="sr-only text-ellipsis text-sm">{c('Action').t`Show options`}</span>
+        <span className="sr-only text-ellipsis">{c('Action').t`Show options`}</span>
       </DropdownButton>
       <Dropdown
         isOpen={isMobileMenuOpen}
@@ -199,7 +200,7 @@ export const HeaderPublicOptions = ({
         }}
         originalPlacement="bottom-start"
       >
-        <DropdownMenu className="text-sm">
+        <DropdownMenu>
           <DropdownMenuButton className="flex items-center gap-2 text-left" onClick={handleSaveToDriveClick}>
             <Icon name="folder-arrow-in" />
             <span>{isAdding ? c('Info').t`Saving...` : saveToDriveButtonText}</span>

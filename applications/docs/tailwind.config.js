@@ -20,6 +20,8 @@ export default {
     },
     colors: {
       current: 'currentColor',
+      signalInfoMinor: 'var(--signal-info-minor-2)',
+      gray50: '#F9FAFB',
     },
   },
   plugins: [],

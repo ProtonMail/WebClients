@@ -6,6 +6,18 @@ import type { GetCommitData } from './GetCommitData'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import type { FetchRealtimeToken } from './FetchRealtimeToken'
+import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+
+type ErrorResult = {
+  message: string
+  code?: DocsApiErrorCode
+}
+
+type SuccessResult = {
+  serverBasedMeta: DocumentMetaInterface
+  latestCommit: Commit | undefined
+  realtimeToken: string | undefined
+}
 
 /**
  * Gets the document meta from the server, which contains the latest commit id.
@@ -19,13 +31,7 @@ export class FetchMetaAndRawCommit {
     private fetchRealtimeToken: FetchRealtimeToken,
   ) {}
 
-  async execute(nodeMeta: NodeMeta | PublicNodeMeta): Promise<
-    Result<{
-      serverBasedMeta: DocumentMetaInterface
-      latestCommit: Commit | undefined
-      realtimeToken: string | undefined
-    }>
-  > {
+  async execute(nodeMeta: NodeMeta | PublicNodeMeta): Promise<Result<SuccessResult, ErrorResult>> {
     const metaResult = await this.getDocumentMeta
       .execute(nodeMeta)
       .then((result) => {
@@ -41,9 +47,6 @@ export class FetchMetaAndRawCommit {
     }
 
     const serverBasedMeta: DocumentMetaInterface = metaResult.getValue()
-    if (!serverBasedMeta) {
-      return Result.fail('Document meta not found')
-    }
 
     const latestCommitId = serverBasedMeta.latestCommitId()
     let latestCommit: Commit | undefined
@@ -69,7 +72,7 @@ export class FetchMetaAndRawCommit {
     ]
 
     if (commitDataResult?.isFailed()) {
-      return Result.fail(`Failed to get commit data ${commitDataResult.getError()}`)
+      return Result.fail({ reason: 'unknown', message: `Failed to get commit data ${commitDataResult.getError()}` })
     }
 
     latestCommit = commitDataResult?.getValue()
