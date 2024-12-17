@@ -22,7 +22,7 @@ import {
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { markAsUnsubscribed, oneClickUnsubscribe } from '@proton/shared/lib/api/messages';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { MIME_TYPES, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -73,7 +73,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const isSimpleLoginAlias = hasSimpleLoginSender(message);
     const descriptionText = useMemo(() => {
         if (isSimpleLoginAlias) {
-            return c('Info').t`This message is from a SimpleLogin alias.`;
+            return c('Info').t`This message is from a ${PASS_APP_NAME} alias.`;
         }
         return c('Info').t`This message is from a mailing list.`;
     }, [isSimpleLoginAlias]);
