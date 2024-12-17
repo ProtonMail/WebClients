@@ -17,6 +17,9 @@
       "Continue": [
         "继续"
       ],
+      "Dismiss": [
+        "忽略"
+      ],
       "Edit email address": [
         "更改邮箱地址"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "查看账单"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面应用"
+      ],
+      "Dark Web Monitoring": [
+        "暗网密码泄露监测"
+      ],
+      "Use your own email domain": [
+        "个性化邮箱域名"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "胡萝卜橙"
+      ],
+      "cerise": [
+        "水红色"
+      ],
+      "cobalt": [
+        "钴蓝色"
+      ],
+      "copper": [
+        "紫铜色"
+      ],
+      "enzian": [
+        "浅紫蓝色"
+      ],
+      "fern": [
+        "丝袍绿"
+      ],
+      "forest": [
+        "森林绿"
+      ],
+      "ocean": [
+        "海蓝色"
+      ],
+      "olive": [
+        "橄榄绿"
+      ],
+      "pacific": [
+        "太平洋蓝"
+      ],
+      "pickle": [
+        "橄榄黄"
+      ],
+      "pine": [
+        "松林绿"
+      ],
+      "pink": [
+        "粉色"
+      ],
+      "plum": [
+        "绛紫色"
+      ],
+      "purple": [
+        "紫色"
+      ],
+      "reef": [
+        "珊瑚绿"
+      ],
+      "sahara": [
+        "撒哈拉棕"
+      ],
+      "slateblue": [
+        "石蓝色"
+      ],
+      "soil": [
+        "土地"
+      ],
+      "strawberry": [
+        "紫红色"
       ]
     },
     "Country name": {
@@ -923,6 +999,40 @@
         "安全密钥"
       ]
     },
+    "file size format": {
+      "byte": [
+        "B"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "字节"
+      ],
+      "Gigabyte": [
+        "GB"
+      ],
+      "Kilobyte": [
+        "KB"
+      ],
+      "Megabyte": [
+        "MB"
+      ],
+      "Terabyte": [
+        "TB"
+      ]
+    },
     "Font face option": {
       "System default": [
         "跟随系统"
@@ -1082,9 +1192,286 @@
         "申请注册"
       ]
     },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "使用文件夹整理邮件，让邮箱井然有序"
+      ]
+    },
+    "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } 份日历"
+      ],
+      "${ n } calendar per user": [
+        "每位用户 ${ n } 份日历"
+      ],
+      "${ n } custom email domain": [
+        "${ n } 个自有域名"
+      ],
+      "${ n } email address": [
+        "${ n } 个邮箱地址"
+      ],
+      "${ n } email address per user": [
+        "每位用户 ${ n } 个邮箱地址"
+      ],
+      "${ n } filter": [
+        "${ n } 条筛选规则"
+      ],
+      "${ n } folder": [
+        "${ n } 个文件夹"
+      ],
+      "${ n } folder and label": [
+        "${ n } 个文件夹和标签"
+      ],
+      "${ n } label": [
+        "${ n } 个标签"
+      ],
+      "${ n } message per day": [
+        "每天可发 ${ n } 封邮件"
+      ],
+      "${ size } attachment size": [
+        "附件可达 ${ size }"
+      ],
+      "${ size } storage": [
+        "${ size } 存储空间"
+      ],
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "Auto-delete Spam and Trash": [
+        "自动清理垃圾邮件和废件箱"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "自动删除垃圾邮件和废件箱中邮件"
+      ],
+      "Auto-reply": [
+        "自动回复"
+      ],
+      "Automatic email forwarding": [
+        "自动转发邮件"
+      ],
+      "Calendar sharing": [
+        "共享日历"
+      ],
+      "Catch-all": [
+        "通配邮箱"
+      ],
+      "Contact groups": [
+        "联系人群组"
+      ],
+      "Contact groups management": [
+        "联系人群组管理"
+      ],
+      "Custom email domains": [
+        "自有域名"
+      ],
+      "Custom snooze time": [
+        "自由调整通知延迟时间"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch 导入助手"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "支持 IMAP/SMTP 客户端"
+      ],
+      "Encrypted contact details": [
+        "加密联系人详情"
+      ],
+      "End-to-end encryption": [
+        "端到端加密"
+      ],
+      "HTML signatures": [
+        "HTML 落款"
+      ],
+      "Password-protected Emails": [
+        "邮件密码保护"
+      ],
+      "Save time emailing": [
+        "节省发送邮件的时间"
+      ],
+      "Schedule and snooze emails for any time": [
+        "自由选择邮件收发时间"
+      ],
+      "Schedule messages at any time": [
+        "自由选择发送时间"
+      ],
+      "Search message content": [
+        "搜索邮件全文"
+      ],
+      "See team's availability": [
+        "查看团队成员的繁忙状态"
+      ],
+      "Send & receive invitations": [
+        "发送和接收邀请"
+      ],
+      "SMTP submission": [
+        "SMTP 投递邮件"
+      ],
+      "SMTP submission for select organizations": [
+        "特定机构可通过 SMTP 投递邮件"
+      ],
+      "Unlimited filters": [
+        "筛选规则数量不限"
+      ],
+      "Unlimited folders": [
+        "文件夹数量不限"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "不限量文件夹、标签和筛选规则"
+      ],
+      "Unlimited labels": [
+        "标签数量不限"
+      ],
+      "Unlimited messages per day": [
+        "每日发送邮件不限量"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "最高 ${ totalStorageSize } 存储空间"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@${ domain } 用于注册购物网站，ChenXinwen@${ domain2 } 用于收取时事新闻"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "推迟邮件提醒，自由决定何时接收通知"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }：采用端到端加密技术守护您的邮件安全。支持自有域名、15 个邮箱地址、无限量的 hide-my-email 别名等高级功能。"
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "在桌面上即可便捷使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "每个地址均可独立收发邮件。一位用户可以使用多个地址，但一个地址不能同时分配给多位用户。"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "可对收到的邮件自动予以回复"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "垃圾邮件和废件箱中的邮件超过 30 天自动删除"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "将您的 ${ MAIL_APP_NAME } 账户收到的邮件自动转发至其他邮箱。"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "目前不支持大规模推销或使用自动化程序发送邮件。若有此类需求建议使用其他邮箱服务。"
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "自由选择何时发送邮件以及何时接收新邮件通知"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@${ domain } 用于注册购物网站，ChenXinwen@${ domain } 用于收取时事新闻"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "为全家人创建多达 ${ n } 个邮箱地址/别名，用于不同的网络服务。例如 ChenGouwu@${ domain } 用于网购商品。"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "与同事、亲友轻松分享日程安排"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "为自有域名中所有尚未分配的地址揽收邮件，避免因发件方打错地址错过重要消息"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP 仅支持桌面客户端（如 Outlook、Apple Mail、Thunderbird）配合 ${ MAIL_APP_NAME } Bridge 使用。目前不支持云服务接入 IMAP。"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "为邮件添加标签，方便查询与筛选"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "在邮件落款中加入图标、照片、链接、社交网络标识等个性化元素"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "防止 ${ BRAND_NAME } 以及任何第三方窥探您的邮件。只有通信双方能够得知邮件内容。"
+      ],
+      "Quickly set up out-of-office messages": [
+        "轻松设置出差期间如何回应客户邮件"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "方便快捷地从其他邮箱导入邮件、日程和通讯录"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "在通讯录中安全地存储联系人的电话号码、住址、生日、备注等详细信息，全封闭加密技术保证了 ${ BRAND_NAME } 自身也无法解密其内容。"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "创建任意数量的联系人群组（每个群组最多可容纳 100 位联系人），便于向多人群发邮件"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "设置筛选规则，自动对邮件执行回复、排序、加标签等操作"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "通过安全的网址与他人分享文件或文件夹"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "第三方设备或服务可以通过 SMTP 发送 ${ MAIL_APP_NAME } 邮件。"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 和 ${ PASS_APP_NAME } 共用同一存储空间"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。管理员可为机构内各用户分配不同大小的存储空间。"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "所有用户的 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 和 ${ PASS_APP_NAME } 服务共用同一存储空间。"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "在邮箱地址中使用您自己的域名（如 you@yourname.com）"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "向其他 ${ MAIL_APP_NAME } 用户发送的邮件已经自动加密，向非 ${ MAIL_APP_NAME_TWO } 用户发送邮件则需要在发送前设置密码。"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "15 个邮箱地址和 3 个自有域名供您选择"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "每位用户存储空间可升至 ${ bundleStorage }"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "总存储空间升至 ${ bundleStorage }"
+      ],
+      "Create up to ${ n } calendar": [
+        "最多可创建 ${ n } 份日历"
+      ],
+      "Support for ${ n } custom email domains": [
+        "支持 ${ n } 个自定义域"
+      ]
+    },
     "Placeholder": {
       "Password": [
         "密码"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "登录"
+      ]
+    },
+    "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "最高 ${ totalStorageSize } 网盘容量"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "最高 ${ totalStorageSize } 邮箱容量"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "用于所有 ${ BRAND_NAME } 服务"
       ]
     },
     "Success": {
@@ -1096,6 +1483,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "账户已锁定"
+      ],
       "Enter 2FA code": [
         "输入 2FA 验证码"
       ],

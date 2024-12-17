@@ -17,6 +17,9 @@
       "Continue": [
         "Συνέχεια"
       ],
+      "Dismiss": [
+        "Παράβλεψη"
+      ],
       "Edit email address": [
         "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "Προβολή τιμολογίου"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Use your own email domain": [
+        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "καρότο"
+      ],
+      "cerise": [
+        "κεράσι"
+      ],
+      "cobalt": [
+        "κοβάλτιο"
+      ],
+      "copper": [
+        "χαλκός"
+      ],
+      "enzian": [
+        "βαθύ μπλέ"
+      ],
+      "fern": [
+        "φτέρη"
+      ],
+      "forest": [
+        "δάσος"
+      ],
+      "ocean": [
+        "ωκεανός"
+      ],
+      "olive": [
+        "λαδί"
+      ],
+      "pacific": [
+        "ειρηνικός"
+      ],
+      "pickle": [
+        "τουρσί"
+      ],
+      "pine": [
+        "πεύκο"
+      ],
+      "pink": [
+        "ροζ"
+      ],
+      "plum": [
+        "δαμάσκηνο"
+      ],
+      "purple": [
+        "μωβ"
+      ],
+      "reef": [
+        "ύφαλος"
+      ],
+      "sahara": [
+        "Σαχάρα"
+      ],
+      "slateblue": [
+        "μπλε ροζέ"
+      ],
+      "soil": [
+        "χώμα"
+      ],
+      "strawberry": [
+        "φράουλα"
       ]
     },
     "Country name": {
@@ -923,6 +999,46 @@
         "Κλειδί ασφαλείας"
       ]
     },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Προεπιλογή συστήματος"
@@ -993,6 +1109,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Εάν πιστεύετε ότι κάναμε λάθος, παρακαλούμε ${ contactLink }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
@@ -1016,6 +1135,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Εντοπίσαμε τη δημιουργία πολλών δωρεάν λογαριασμών, η οποία παραβιάζει το ${ termsLink }."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
@@ -1075,11 +1197,384 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "επικοινωνήστε μαζί μας"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
+      ],
+      "terms of service": [
+        "όροι χρήσης"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Διατηρήστε τα εισερχόμενά σας οργανωμένα με φακέλους"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Αποκτήστε ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
+      "${ n } calendar": [
+        "${ n } ημερολόγιο",
+        "${ n } ημερολόγια"
+      ],
+      "${ n } calendar per user": [
+        "${ n } ημερολόγιο ανά χρήστη",
+        "${ n } ημερολόγια ανά χρήστη"
+      ],
+      "${ n } custom email domain": [
+        "${ n } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ n } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ n } email address": [
+        "${ n } διεύθυνση email",
+        "${ n } διεύθυνσεις email/ψευδώνυμα"
+      ],
+      "${ n } email address per user": [
+        "${ n } διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη",
+        "${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+      ],
+      "${ n } filter": [
+        "${ n } φίλτρο",
+        "${ n } φίλτρα"
+      ],
+      "${ n } folder": [
+        "${ n } φάκελος",
+        "${ n } φάκελοι"
+      ],
+      "${ n } folder and label": [
+        "${ n } φάκελος και ετικέτα",
+        "${ n } φάκελοι και ετικέτες"
+      ],
+      "${ n } label": [
+        "${ n } ετικέτα",
+        "${ n } ετικέτες"
+      ],
+      "${ n } message per day": [
+        "${ n } μήνυμα ανά ημέρα",
+        "${ n } μηνύματα ανά ημέρα"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
+      ],
+      "${ size } attachment size": [
+        "${ size } μέγεθος συνημμένων"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } ασφαλούς αποθηκευτικού χώρου ανά χρήστη"
+      ],
+      "${ size } storage": [
+        "${ size } αποθηκευτικός χώρος"
+      ],
+      "1 TB secure storage": [
+        "Ασφαλής χώρος αποθήκευσης 1 TB"
+      ],
+      "10 email addresses/aliases": [
+        "10 διεύθυνσεις email/ψευδώνυμα"
+      ],
+      "10 more premium features": [
+        "10 περισσότερα premium χαρακτηριστικά"
+      ],
+      "10-year file version history": [
+        "Ιστορικό εκδόσεων αρχείων 10 ετών"
+      ],
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "Advanced account protection": [
+        "Προηγμένη προστασία λογαριασμού"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Όλα τα προϊόντα και χαρακτηριστικά ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Όλες οι premium υπηρεσίες ${ BRAND_NAME }. Μια εύκολη συνδρομή"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Αυτόματη διαγραφή Ανεπιθύμητων μηνυμάτων και Κάδου απορριμμάτων"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Αυτόματη διαγραφή διαγραμμένων και απορριφθέντων μηνυμάτων"
+      ],
+      "Auto-reply": [
+        "Αυτόματη απάντηση"
+      ],
+      "Automatic email forwarding": [
+        "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Breach alerts": [
+        "Ειδοποιήσεις Παραβίασης"
+      ],
+      "Calendar sharing": [
+        "Κοινή χρήση ημερολογίου"
+      ],
+      "Catch-all": [
+        "Catch-all"
+      ],
+      "Collaborate and share large files": [
+        "Συνεργασία και κοινή χρήση μεγάλων αρχείων"
+      ],
+      "Contact groups": [
+        "Ομάδες επαφών"
+      ],
+      "Contact groups management": [
+        "Διαχείριση ομάδων επαφών"
+      ],
+      "Custom and secure business email": [
+        "Προσαρμοσμένο και ασφαλές επαγγελματικό ηλεκτρονικό ταχυδρομείο"
+      ],
+      "Custom email domains": [
+        "Προσαρμοσμένοι τομείς"
+      ],
+      "Custom snooze time": [
+        "Προσαρμοσμένος χρόνος αναβολής"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Easy Switch import assistant": [
+        "Βοηθός εισαγωγής Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Υποστήριξη προγράμματος-πελάτη ηλεκτρονικού ταχυδρομείου (μέσω IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Ομάδες ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Encrypted contact details": [
+        "Κρυπτογραφημένα στοιχεία επαφής"
+      ],
+      "End-to-end encryption": [
+        "Διατερματική κρυπτογράφηση"
+      ],
+      "Generate emails with a prompt": [
+        "Δημιουργήστε μηνύματα ηλεκτρονικού ταχυδρομείου με μια προτροπή"
+      ],
+      "HTML signatures": [
+        "Υπογραφές HTML"
+      ],
+      "Online document editor": [
+        "Ηλεκτρονικός επεξεργαστής εγγράφων"
+      ],
+      "Password health": [
+        "Υγεία κωδικού πρόσβασης"
+      ],
+      "Password-protected Emails": [
+        "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
+      ],
+      "Proofread and refine your emails": [
+        "Διορθώστε και βελτιώστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας"
+      ],
+      "Quickly craft replies": [
+        "Δημιουργήστε γρήγορα απαντήσεις"
+      ],
+      "Recover previous file versions": [
+        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
+      ],
+      "Save time emailing": [
+        "Εξοικονομήστε χρόνο στέλνοντας μηνύματα"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Προγραμματίστε και αναβάλλετε μηνύματα ηλεκτρονικού ταχυδρομείου για οποιαδήποτε στιγμή"
+      ],
+      "Schedule messages at any time": [
+        "Προγραμματισμός μηνυμάτων ανά πάσα στιγμή"
+      ],
+      "Search message content": [
+        "Αναζήτηση εντός περιεχομένου μηνυμάτων"
+      ],
+      "See team's availability": [
+        "Δείτε τη διαθεσιμότητα της ομάδας"
+      ],
+      "Send & receive invitations": [
+        "Αποστολή & λήψη προσκλήσεων"
+      ],
+      "Share files with no size limit": [
+        "Κοινή χρήση αρχείων χωρίς όριο μεγέθους"
+      ],
+      "SMTP submission": [
+        "Υποβολή SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Υποβολή SMTP για επιλεγμένους οργανισμούς"
+      ],
+      "Support for up to 2 users": [
+        "Υποστήριξη για έως 2 χρήστες"
+      ],
+      "Sync and backup all your files across devices": [
+        "Συγχρονίστε και δημιουργήστε αντίγραφα ασφαλείας όλων των αρχείων σας σε όλες τις συσκευές"
+      ],
+      "Unlimited filters": [
+        "Απεριόριστα φίλτρα"
+      ],
+      "Unlimited folders": [
+        "Απεριόριστοι φάκελοι"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ],
+      "Unlimited labels": [
+        "Απεριόριστες ετικέτες"
+      ],
+      "Unlimited messages per day": [
+        "Απεριόριστα μηνύματα ανά ημέρα"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain2 } για συνδρομή ειδήσεων"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Αναβολή μηνυμάτων και λήψη υπενθύμισης όποτε θέλετε"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Ασφαλίστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένους τομείς email, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Αποκτήστε πρόσβαση στα ${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME } από την άνεση της επιφάνειας εργασίας σας"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Οι διευθύνσεις έχουν πλήρη δυνατότητα αποστολής και λήψης. Ένας χρήστης μπορεί να έχει πολλές διευθύνσεις. Ωστόσο, δεν είναι δυνατή η αντιστοίχιση μίας διεύθυνσης σε πολλούς χρήστες."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Σας επιτρέπει να ρυθμίσετε αυτόματες απαντήσεις (αυτόματη απάντηση) για τα εισερχόμενα μηνύματά σας"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Αυτόματη εκκαθάριση μηνυμάτων παλαιότερων των 30 ημερών από τον Κάδο απορριμμάτων και τα Ανεπιθύμητα"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Προωθήστε αυτόματα τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στον λογαριασμό σας ${ MAIL_APP_NAME } σε οποιαδήποτε άλλη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Η μαζική διαφημιστική ή προγραμματική αποστολή μηνυμάτων ηλεκτρονικού ταχυδρομείου δεν υποστηρίζεται προς το παρόν. Συνιστούμε να χρησιμοποιήσετε έναν αποκλειστικό παροχό υπηρεσιών ηλεκτρονικού ταχυδρομείου για αυτήν την περίπτωση χρήσης."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Επιλέξτε προσαρμοσμένες ώρες για υπενθύμιση σχετικά με ένα μήνυμα ηλεκτρονικού ταχυδρομείου ή για την άφιξη του μηνύματός σας"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain } για συνδρομή ειδήσεων"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Δημιουργήστε έως και ${ n } ημερολόγιο ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς",
+        "Δημιουργήστε έως και ${ n } ημερολόγια ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Δημιουργήστε έως και ${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου/ψευδώνυμα που μπορείτε να αντιστοιχίσετε σε μέλη της οικογένειας. Χρησιμοποιήστε τα για διαδικτυακές ταυτότητες, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Μοιραστείτε εύκολα τα ημερολόγιά σας με την οικογένεια, τους φίλους ή τους συναδέλφους σας"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Στείλτε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα μέλη μιας ομάδας με μία μόνο διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Διασφαλίζει ότι λαμβάνετε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στον τομέα σας, ακόμα και αν η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν υπάρχει, δεν υπάρχει πλέον ή έχει τυπογραφικό λάθος"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "Η υποστήριξη IMAP περιορίζεται στη χρήση εφαρμογών επιφάνειας εργασίας (π.χ. Outlook, Apple Mail, Thunderbird) μέσω του ${ MAIL_APP_NAME } Bridge. Οι ενσωματώσεις IMAP που βασίζονται στο cloud δεν υποστηρίζονται προς το παρόν."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Διατηρήστε τα σχέδιά σας ιδιωτικά για εσάς και την οικογένειά σας με ένα κρυπτογραφημένο ημερολόγιο"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Οι ετικέτες είναι απλό κείμενο που μπορείτε να προσθέσετε στα μηνύματα για να διευκολύνετε την εύρεση ή την εφαρμογή φίλτρων"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Εξατομικεύστε την υπογραφή email σας με λογότυπα, εικόνες, εικονίδια κοινωνικών μέσων, συνδέσμους προς τα στοιχεία επικοινωνίας σας και πολλά άλλα"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Αποτρέπει την πρόσβαση σε μηνύματα από ${ BRAND_NAME } ή τρίτους. Τα μόνα άτομα που μπορούν να διαβάσουν τα μηνύματα είναι ο αποστολέας και ο παραλήπτης."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Γρήγορος ορισμός μηνυμάτων εκτός γραφείου"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Μεταφέρετε γρήγορα τα μηνύματα ηλεκτρονικού ταχυδρομείου, τα ημερολόγια ή τις επαφές σας από οποιονδήποτε πάροχο"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Αποθηκεύστε με ασφάλεια τα στοιχεία των επαφών σας, όπως τον αριθμό τηλεφώνου, τη διεύθυνση, τα γενέθλια και τις προσωπικές σημειώσεις. Η κρυπτογράφηση μηδενικής πρόσβασης διασφαλίζει ότι ακόμη και η${ BRAND_NAME } δεν μπορεί να έχουν πρόσβαση σε αυτά."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Δείτε τη διαθεσιμότητα των συμμετεχόντων στη σύσκεψη και εξοικονομήστε χρόνο προγραμματίζοντας συναντήσεις"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Στείλτε μηνύματα ηλεκτρονικού ταχυδρομείου σε μεγάλες ομάδες γρήγορα και εύκολα δημιουργώντας όσες ομάδες επαφών χρειάζεστε (έως 100 επαφές ανά ομάδα)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Ρύθμιση φίλτρων για αυτόματη απάντηση, ταξινόμηση ή/και προσθήκη ετικετών στα μηνύματα ηλεκτρονικού ταχυδρομείου σας"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Μοιραστείτε τα αρχεία ή τους φακέλους σας με οποιονδήποτε, χρησιμοποιώντας ασφαλούς συνδέσμους με δυνατότητα κοινής χρήσης"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "Το SMTP επιτρέπει υπηρεσίες τρίτων ή συσκευές να στείλουν μηνύματα ηλεκτρονικού ταχυδρομείου μέσω του ${ MAIL_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Ο αποθηκευτικός χώρος μοιράζεται στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, και ${ PASS_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Ο χώρος αποθήκευσης είναι κοινόχρηστος στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }. Οι διαχειριστές μπορούν να εκχωρήσουν διαφορετικές ποσότητες χώρου αποθήκευσης σε χρήστες στον οργανισμό τους"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των χρηστών στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, και ${ PASS_APP_NAME }"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Χρησιμοποιήστε τις δικές σας προσαρμοσμένες διευθύνσεις τομέα ηλεκτρονικού ταχυδρομείου, π.χ. you@yourname.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Κατά την αποστολή σε άλλους ${ MAIL_APP_NAME } χρήστες, η κρυπτογράφηση είναι αυτόματη. Η αποστολή σε μη ${ MAIL_APP_NAME_TWO } χρήστες απαιτείται ορισμός κωδικού πρόσβασης πριν από την αποστολή."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Προσθέστε περισσότερη εξατομίκευση με 15 διευθύνσεις email και υποστήριξη για 3 προσαρμοσμένους τομείς email"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Μεγαλώστε τον αποθηκευτικό σας χώρο σε ${ bundleStorage } ανά χρήστη"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Μεγαλώστε τον αποθηκευτικό σας χώρο σε συνολικά ${ bundleStorage }"
+      ],
+      "Create up to ${ n } calendar": [
+        "Δημιουργήστε μέχρι και ${ n } ημερολόγιο",
+        "Δημιουργήστε μέχρι και ${ n } ημερολόγια"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Placeholder": {
@@ -1103,6 +1598,22 @@
         "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Ο αποθηκευτικός χώρος δεδομένον παράγεται από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, και ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Έως και ${ totalStorageSize } Drive αποθηκευτικού χώρου"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Έως και ${ totalStorageSize } Mail αποθηκευτικού χώρου"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Για όλες τις υπηρεσίες ${ BRAND_NAME }"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
@@ -1112,6 +1623,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "Ο λογαριασμός κλειδώθηκε"
+      ],
       "Enter 2FA code": [
         "Εισαγωγή κωδικού 2FA"
       ],

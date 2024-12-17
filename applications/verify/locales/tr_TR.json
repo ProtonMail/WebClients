@@ -17,6 +17,9 @@
       "Continue": [
         "İlerle"
       ],
+      "Dismiss": [
+        "Yok say"
+      ],
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "Faturayı görüntüle"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
+      ],
+      "Dark Web Monitoring": [
+        "Karanlık ağ izleme"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "havuç"
+      ],
+      "cerise": [
+        "kiraz"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "bakır"
+      ],
+      "enzian": [
+        "kantaron"
+      ],
+      "fern": [
+        "eğrelti otu"
+      ],
+      "forest": [
+        "orman"
+      ],
+      "ocean": [
+        "okyanus"
+      ],
+      "olive": [
+        "zeytin"
+      ],
+      "pacific": [
+        "pasifik"
+      ],
+      "pickle": [
+        "salatalık"
+      ],
+      "pine": [
+        "çam"
+      ],
+      "pink": [
+        "pembe"
+      ],
+      "plum": [
+        "erik"
+      ],
+      "purple": [
+        "mor"
+      ],
+      "reef": [
+        "resif"
+      ],
+      "sahara": [
+        "çöl"
+      ],
+      "slateblue": [
+        "arduvaz mavisi"
+      ],
+      "soil": [
+        "toprak"
+      ],
+      "strawberry": [
+        "çilek"
       ]
     },
     "Country name": {
@@ -923,6 +999,46 @@
         "Güvenlik anahtarı"
       ]
     },
+    "file size format": {
+      "byte": [
+        "bayt",
+        "bayt"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bayt",
+        "Bayt"
+      ],
+      "Gigabyte": [
+        "Gigabayt",
+        "Gigabayt"
+      ],
+      "Kilobyte": [
+        "Kilobayt",
+        "Kilobayt"
+      ],
+      "Megabyte": [
+        "Megabayt",
+        "Megabayt"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Sistem varsayılanı"
@@ -993,6 +1109,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Bir yanlışlık olduğunu düşünüyorsanız lütfen ${ contactLink }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
@@ -1016,6 +1135,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "${ termsLink } koşullarımıza aykırı olarak birden fazla ücretsiz hesap açıldığını farkettik."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -1075,11 +1197,384 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "bizimle görüşün"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
       "Request an invite": [
         "Davet iste"
+      ],
+      "terms of service": [
+        "hizmet koşulları"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Gelen kutunuzu klasörler ile düzenli tutun"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "${ planTitle } edinin"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
+      "${ n } calendar": [
+        "${ n } takvim",
+        "${ n } takvim"
+      ],
+      "${ n } calendar per user": [
+        "Her kullanıcı için ${ n } takvim",
+        "Her kullanıcı için ${ n } takvim"
+      ],
+      "${ n } custom email domain": [
+        "${ n } özel e-posta etki alanı",
+        "${ n } özel e-posta etki alanı"
+      ],
+      "${ n } email address": [
+        "${ n } e-posta adresi",
+        "${ n } e-posta adresi"
+      ],
+      "${ n } email address per user": [
+        "Her kullanıcı için ${ n } e-posta adresi",
+        "Her kullanıcı için ${ n } e-posta adresi"
+      ],
+      "${ n } filter": [
+        "${ n } süzgeç",
+        "${ n } süzgeç"
+      ],
+      "${ n } folder": [
+        "${ n } klasör",
+        "${ n } klasör"
+      ],
+      "${ n } folder and label": [
+        "${ n } klasör ve etiket",
+        "${ n } klasör ve etiket"
+      ],
+      "${ n } label": [
+        "${ n } etiket",
+        "${ n } etiket"
+      ],
+      "${ n } message per day": [
+        "Her gün ${ n } ileti",
+        "Her gün ${ n } ileti"
+      ],
+      "${ options }-day file version history": [
+        "${ options } günlük dosya sürümü geçmişi",
+        "${ options } günlük dosya sürümü geçmişi"
+      ],
+      "${ size } attachment size": [
+        "${ size } ek dosya boyutu"
+      ],
+      "${ size } of secure storage per user": [
+        "Her kullanıcı için ${ size } güvenli depolama alanı"
+      ],
+      "${ size } storage": [
+        "${ size } depolama alanı"
+      ],
+      "1 TB secure storage": [
+        "1 TB güvenli depolama alanı"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-posta adresi/takma adı"
+      ],
+      "10 more premium features": [
+        "10 ücretli özellik daha"
+      ],
+      "10-year file version history": [
+        "10 yıllık dosya sürümü geçmişi"
+      ],
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Tüm ${ BRAND_NAME } ürünleri ve özellikleri"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik"
+      ],
+      "Auto-delete Spam and Trash": [
+        "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
+      ],
+      "Auto-reply": [
+        "Otomatik yanıtlama"
+      ],
+      "Automatic email forwarding": [
+        "Otomatik e-posta iletme"
+      ],
+      "Breach alerts": [
+        "Verilerin ele geçilrilmesi uyarıları"
+      ],
+      "Calendar sharing": [
+        "Takvim paylaşımı"
+      ],
+      "Catch-all": [
+        "Tümünü toplama"
+      ],
+      "Collaborate and share large files": [
+        "Büyük dosyaları paylaşın ve iş birliği yapın"
+      ],
+      "Contact groups": [
+        "Kişi grupları"
+      ],
+      "Contact groups management": [
+        "Kişi grupları yönetimi"
+      ],
+      "Custom and secure business email": [
+        "Özel ve güvenli kurumsal e-posta hizmeti"
+      ],
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "Custom snooze time": [
+        "Özel erteleme zamanı"
+      ],
+      "Desktop app": [
+        "Masaüstü uygulaması"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısı"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "E-posta istemcisi desteği (IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-posta grupları"
+      ],
+      "Encrypted contact details": [
+        "Şifrelenmiş kişi bilgileri"
+      ],
+      "End-to-end encryption": [
+        "Uçtan uca şifreleme"
+      ],
+      "Generate emails with a prompt": [
+        "Bir istem ile e-posta oluşturun"
+      ],
+      "HTML signatures": [
+        "HTML imzalar"
+      ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
+      "Password health": [
+        "Parola sağlığı"
+      ],
+      "Password-protected Emails": [
+        "Parola korumalı e-postalar"
+      ],
+      "Proofread and refine your emails": [
+        "E-postalarınızı düzeltin ve düzenleyin"
+      ],
+      "Quickly craft replies": [
+        "Yanıtları hızlıca oluşturun"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerine dönün"
+      ],
+      "Save time emailing": [
+        "E-posta yazma süresini azaltın"
+      ],
+      "Schedule and snooze emails for any time": [
+        "İletileri istediğiniz zamana planlayın veya erteleyin"
+      ],
+      "Schedule messages at any time": [
+        "İletileri istediğiniz zamanda gönderin"
+      ],
+      "Search message content": [
+        "İleti içeriğinde arama"
+      ],
+      "See team's availability": [
+        "Ekibin uygunluğuna bakın"
+      ],
+      "Send & receive invitations": [
+        "Davetleri alma ve gönderme"
+      ],
+      "Share files with no size limit": [
+        "Dosyaları boyut sınırı olmadan paylaşın"
+      ],
+      "SMTP submission": [
+        "SMTP gönderimi"
+      ],
+      "SMTP submission for select organizations": [
+        "Seçilmiş kuruluşlar için SMTP gönderimi"
+      ],
+      "Support for up to 2 users": [
+        "2 kullanıcıya kadar destek"
+      ],
+      "Sync and backup all your files across devices": [
+        "Tüm dosyalarınızı aygıtlarınız arasında eşitleyin ve yedekleyin"
+      ],
+      "Unlimited filters": [
+        "Sınırsız sayıda süzgeç"
+      ],
+      "Unlimited folders": [
+        "Sınırsız sayıda klasör"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız sayıda klasör, etiket ve süzgeç"
+      ],
+      "Unlimited labels": [
+        "Sınırsız etiket"
+      ],
+      "Unlimited messages per day": [
+        "Her gün sınırsız sayıda ileti"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "${ totalStorageSize } boyutuna kadar depolama alanı"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 özel e-posta etki alanı"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "İletileri erteleyin ve istediğiniz zaman yeniden görün"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: E-postalarınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adları ve diğer özellikler."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Masaüstünüzün rahatlığında ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } hizmetlerine erişin"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Adreslerin tam gönderme ve alma özelliği vardır. Bir kullanıcının kendisine atanmış birden fazla adresi olabilir. Ancak, tek bir adres birden çok kullanıcıya atanamaz."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Gelen iletileriniz için hazır yanıtlar (otomatik yanıt) ayarlamanızı sağlar"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Çöp ve istenmeyen kutularındaki 30 günden eski iletileri otomatik olarak temizleyin"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "${ MAIL_APP_NAME } hesabınıza gönderilen e-postaları otomatik olarak başka bir e-posta adresine iletin."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler için size ayrılmış bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Bir e-posta hatırlatması ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain } gibi takma adlar oluşturabilirsiniz"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin",
+        "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Aile üyelerine atayabileceğiniz en fazla ${ n } e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrim içi kimlikler için kullanabilirsiniz. Örneğin alışveriş hesapları için AliSiparis@${ domain }."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Takvimlerinizi aileniz, arkadaşlarınız veya iş arkadaşlarınızla kolayca paylaşın"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Gruptaki herkese tek bir e-posta adresinden e-posta gönderin"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Alıcı e-posta adresi hiç var olmasa da, silinmiş olsa da ya da hatalı yazılmış olsa da etki alanınıza gönderilen tüm e-postaları almanızı sağlar"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden masaüstü uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Şifrelenmiş bir takvim kullanarak kendinizin ve ailenizin planlarını gizli tutun"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Ofis dışında iletilerini hızlıca ayarlayın"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Başka bir hizmet sağlayıcı üzerindeki e-postalarınızı, takcimlerinizi ve kişilerinizi hızla aktarın"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişim şifrelemesi, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Görüşme katılımcılarının uygunluk durumunu görün ve toplantı planlarken zaman kazanın"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "E-postalarınızı otomatik olarak yanıtlamak, sıralamak ve/veya etiketlemek için süzgeçler ayarlayın"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Güvenli ve paylaşılabilir bağlantılar ile dosya ve klasörlerinizi paylaşın"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP, 3. taraf hizmetlerin veya aygıtların ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } arasında paylaşılır"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır. Yöneticiler kuruluşlarındaki kullanıcılara farklı depolama alanları atayabilir"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Depolama alanı kullanıcılar ile ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } arasında paylaşılır"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Diğer ${ MAIL_APP_NAME } kullanıcılarına gönderilen e-postalar otomatik olarak şifrelenir. ${ MAIL_APP_NAME_TWO } dışındaki kullanıcılara şifrelenmiş e-posta göndermek için, göndermeden önce bir parola ayarlanması gerekir."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "15 e-posta adresi ve 3 özel e-posta etki alanı ile daha fazla kişiselleştime sağlayın"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Her kullanıcı için depolama alanınızı ${ bundleStorage } boyutuna kadar artırın"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Toplam depolama alanınızı ${ bundleStorage } boyutuna artırın"
+      ],
+      "Create up to ${ n } calendar": [
+        "${ n } taneye kadar takvim oluşturun",
+        "${ n } taneye kadar takvim oluşturun"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } özel e-posta etki alanı desteği"
       ]
     },
     "Placeholder": {
@@ -1103,6 +1598,22 @@
         "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } tarafından oluşturulan verilerin depolama alanı"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "${ totalStorageSize } boyutuna kadar Drive depolama alanı"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "${ totalStorageSize } boyutuna kadar Mail depolama alanı"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Tüm ${ BRAND_NAME } hizmetleri için"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
@@ -1112,6 +1623,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "Hesap kilitlendi"
+      ],
       "Enter 2FA code": [
         "İki adımlı doğrulama kodunu yazın"
       ],

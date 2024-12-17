@@ -17,6 +17,9 @@
       "Continue": [
         "続行"
       ],
+      "Dismiss": [
+        "却下"
+      ],
       "Edit email address": [
         "メールアドレスを編集"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "請求書を確認"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Use your own email domain": [
+        "独自のメールドメインを使用する"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "キャロット"
+      ],
+      "cerise": [
+        "セリース"
+      ],
+      "cobalt": [
+        "コバルト"
+      ],
+      "copper": [
+        "カッパー"
+      ],
+      "enzian": [
+        "リンドウ"
+      ],
+      "fern": [
+        "シダ"
+      ],
+      "forest": [
+        "フォレスト"
+      ],
+      "ocean": [
+        "オーシャン"
+      ],
+      "olive": [
+        "オリーブ"
+      ],
+      "pacific": [
+        "パシフィック"
+      ],
+      "pickle": [
+        "ピクルス"
+      ],
+      "pine": [
+        "パイン"
+      ],
+      "pink": [
+        "ピンク"
+      ],
+      "plum": [
+        "プラム"
+      ],
+      "purple": [
+        "パープル"
+      ],
+      "reef": [
+        "リーフ"
+      ],
+      "sahara": [
+        "サハラ"
+      ],
+      "slateblue": [
+        "スレートブルー"
+      ],
+      "soil": [
+        "ソイル"
+      ],
+      "strawberry": [
+        "ストロベリー"
       ]
     },
     "Country name": {
@@ -146,7 +222,7 @@
         "ベナン"
       ],
       "Bermuda": [
-        "バミューダ"
+        "バミューダ諸島"
       ],
       "Bhutan": [
         "ブータン"
@@ -284,7 +360,7 @@
         "エストニア"
       ],
       "Eswatini": [
-        "スワジランド"
+        "エスワティニ"
       ],
       "Ethiopia": [
         "エチオピア"
@@ -371,7 +447,7 @@
         "ハード島とマクドナルド諸島"
       ],
       "Holy See (Vatican City State)": [
-        "聖座 (バチカン市国)"
+        "バチカン市国"
       ],
       "Honduras": [
         "ホンジュラス"
@@ -530,7 +606,7 @@
         "モザンビーク"
       ],
       "Myanmar": [
-        "ビルマ"
+        "ミャンマー"
       ],
       "Namibia": [
         "ナミビア"
@@ -794,7 +870,7 @@
         "アメリカ"
       ],
       "United States Minor Outlying Islands": [
-        "合衆国領有小離島"
+        "アメリカ合衆国外諸島"
       ],
       "Uruguay": [
         "ウルグアイ"
@@ -879,7 +955,7 @@
         "このフィールドには ${ minimumLength } 文字以上の入力が必要です。"
       ],
       "Try using only letters, numerals, and _.-": [
-        "文字・数字・ _.- のみを使用してみてください"
+        "文字、数字、_.- のみを使用してみてください。"
       ],
       "Unknown error": [
         "原因不明なエラーが発生しました"
@@ -921,6 +997,40 @@
     "fido2: Label": {
       "Security key": [
         "セキュリティキー"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "バイト"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "バイト"
+      ],
+      "Gigabyte": [
+        "ギガバイト"
+      ],
+      "Kilobyte": [
+        "キロバイト"
+      ],
+      "Megabyte": [
+        "メガバイト"
+      ],
+      "Terabyte": [
+        "テラバイト"
       ]
     },
     "Font face option": {
@@ -993,6 +1103,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "間違いだと思われる場合の連絡先\n${ contactLink }"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
@@ -1016,6 +1129,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "${ termsLink } に違反する複数の無料アカウントの作成が検出されました。"
       ],
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
@@ -1075,11 +1191,371 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "私たちに連絡"
+      ],
       "Learn more": [
         "詳細"
       ],
       "Request an invite": [
-        "登録を申請"
+        "招待をリクエスト"
+      ],
+      "terms of service": [
+        "利用規約"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "受信トレイをフォルダーで整理"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "${ planTitle }を獲得"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
+      "${ n } calendar": [
+        "${ n } 個のカレンダー"
+      ],
+      "${ n } calendar per user": [
+        "1 ユーザーあたり ${ n } 件のカレンダー"
+      ],
+      "${ n } custom email domain": [
+        "${ n } 件の独自メールドメイン"
+      ],
+      "${ n } email address": [
+        "${ n } 件のメールアドレス / エイリアス"
+      ],
+      "${ n } email address per user": [
+        "1 ユーザーあたり ${ n } 件のメールアドレス"
+      ],
+      "${ n } filter": [
+        "${ n } 件のフィルター"
+      ],
+      "${ n } folder": [
+        "${ n } 件のフォルダー"
+      ],
+      "${ n } folder and label": [
+        "${ n } 件のフォルダーおよびラベル"
+      ],
+      "${ n } label": [
+        "${ n } 件のラベル"
+      ],
+      "${ n } message per day": [
+        "1日あたり${ n } 件のメッセージ"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-日間のファイルバージョン履歴"
+      ],
+      "${ size } attachment size": [
+        "${ size } の添付ファイル"
+      ],
+      "${ size } of secure storage per user": [
+        "ユーザー毎${ size }の安全なストレージ"
+      ],
+      "${ size } storage": [
+        "${ size } のストレージ"
+      ],
+      "1 TB secure storage": [
+        "1 TBの安全なストレージ"
+      ],
+      "10 email addresses/aliases": [
+        "10 件のメールアドレス / エイリアス"
+      ],
+      "10 more premium features": [
+        "10 以上のプレミアム機能"
+      ],
+      "10-year file version history": [
+        "10 年間のファイルバージョン履歴"
+      ],
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "Advanced account protection": [
+        "高度なアカウント保護"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "${ BRAND_NAME } のすべての製品と機能"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "すべての基本的な${ BRAND_NAME }サービス(${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "すべてのプレミアム${ BRAND_NAME }サービス。一つの簡単なサブスクリプションで。"
+      ],
+      "Auto-delete Spam and Trash": [
+        "迷惑メールとごみ箱を自動削除"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "迷惑メールとごみ箱のメッセージを自動削除"
+      ],
+      "Auto-reply": [
+        "自動返信"
+      ],
+      "Automatic email forwarding": [
+        "自動メール転送"
+      ],
+      "Breach alerts": [
+        "侵害検出"
+      ],
+      "Calendar sharing": [
+        "カレンダー共有"
+      ],
+      "Catch-all": [
+        "Catch-All"
+      ],
+      "Collaborate and share large files": [
+        "大きなファイルの共同作業と共有"
+      ],
+      "Contact groups": [
+        "連絡先グループ"
+      ],
+      "Contact groups management": [
+        "連絡先グループ管理"
+      ],
+      "Custom and secure business email": [
+        "カスタマイズと安全なビジネスメール"
+      ],
+      "Custom email domains": [
+        "独自メールドメイン"
+      ],
+      "Custom snooze time": [
+        "スヌーズ時間をカスタム"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch インポートアシスタント"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "メールクライアント対応 (IMAP/SMTP 経由)"
+      ],
+      "Email groups": [
+        "メールグループ"
+      ],
+      "Encrypted contact details": [
+        "暗号化された連絡先の詳細"
+      ],
+      "End-to-end encryption": [
+        "エンドツーエンド暗号化"
+      ],
+      "Generate emails with a prompt": [
+        "プロンプトを使ってメールを生成"
+      ],
+      "HTML signatures": [
+        "HTML 署名"
+      ],
+      "Online document editor": [
+        "オンライン文書エディタ"
+      ],
+      "Password health": [
+        "パスワードの健全性"
+      ],
+      "Password-protected Emails": [
+        "パスワードで保護されたメール"
+      ],
+      "Proofread and refine your emails": [
+        "メールを校正し、洗練させる"
+      ],
+      "Quickly craft replies": [
+        "素早く返信を作成"
+      ],
+      "Recover previous file versions": [
+        "以前のファイルバージョンを復元"
+      ],
+      "Save time emailing": [
+        "メールの時間を節約"
+      ],
+      "Schedule and snooze emails for any time": [
+        "いつでもメールをスケジュールしてスヌーズする"
+      ],
+      "Schedule messages at any time": [
+        "いつでもメッセージを送信予約できます"
+      ],
+      "Search message content": [
+        "メッセージ内容の検索"
+      ],
+      "See team's availability": [
+        "チームの空き状況を確認"
+      ],
+      "Send & receive invitations": [
+        "招待を送受信"
+      ],
+      "Share files with no size limit": [
+        "サイズ制限のないファイル共有"
+      ],
+      "SMTP submission": [
+        "SMTP送信"
+      ],
+      "SMTP submission for select organizations": [
+        "一部の組織向けのSMTP送信"
+      ],
+      "Support for up to 2 users": [
+        "最大2ユーザーのサポート"
+      ],
+      "Sync and backup all your files across devices": [
+        "デバイス間のすべてのファイルを同期とバックアップ"
+      ],
+      "Unlimited filters": [
+        "フィルター制限なし"
+      ],
+      "Unlimited folders": [
+        "フォルダー制限なし"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "制限なしのフォルダー、ラベル、フィルター"
+      ],
+      "Unlimited labels": [
+        "ラベル制限なし"
+      ],
+      "Unlimited messages per day": [
+        "送信数制限なし"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "最大 ${ totalStorageSize } のストレージ"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 件の独自メールドメイン"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "メッセージをスヌーズし、必要なときに再通知します"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: エンドツーエンドの暗号化でスケジュールを保護します。 カスタム カレンダー、カレンダー共有などのサポートが含まれます。"
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }：暗号化されたクラウドストレージでファイルを保護。自動同期、暗号化ファイル共有などを含みます。"
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: エンドツーエンド暗号化でメールを保護します。 カスタムメール ドメイン、15 個のメール アドレス、無制限の hide-my-email エイリアスなどのサポートが含まれます。"
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "デスクトップから ${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } にアクセスします"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "アドレスには完全な送受信機能があります。 ユーザーには複数のアドレスを割り当てることができます。 ただし、1 つのアドレスを複数のユーザーに割り当てることはできません。"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "受信メッセージへの(自動)返信が可能になります"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "30 日を超えたメッセージをゴミ箱やスパムから自動的に削除します"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "${ MAIL_APP_NAME }アカウントに送信されたメールを自動的に他のメールアドレスに転送します。"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "現在、プロモーション目的やプログラム制御のメールの一括送信はサポートしていません。このような場合は、専用のメールサービスプロバイダーを使用することをおすすめします。"
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "メールについて通知するか、メッセージが到着するカスタム時間を選択します"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "複数のメールアドレスを作成して使用できます。例えば、買い物用に JohnShopper@${ domain } 、ニュース購読用に JohnNews@${ domain } を使用するなどです。"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } 個までのカレンダーを作成または友人/家族/同僚/組織のカレンダーを追加"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "最大 ${ n } 個のメール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します。\n例: ショッピングアカウントのJohnShopper@${ domain }。"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "家族、友人、同僚とカレンダーを簡単に共有できます。"
+      ],
+      "Email everyone in a group with a single email address": [
+        "一つのメールアドレスでグループ全員にメール"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "メールアドレスが存在しない、存在しなくなった、入力ミスがあった場合などでも、あなたのドメイン宛に送信されたすべてのメールを受信できます"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP サポートは ${ MAIL_APP_NAME } Bridge を経由したデスクトップアプリ (Outlook、メール (Apple)、Thunderbird) のみに制限されます。クラウドベースの IMAP 統合は現在サポートされていません。"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "暗号化されたカレンダーで、自分自身や家族の予定を非公開にすることができます。"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "ラベルはメッセージを簡単に探したり、フィルターを適用できるようにするシンプルなタグです"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "ロゴ、画像、ソーシャルメディアアイコン、連絡先詳細へのリンクなどを使用してメールの署名をパーソナライズします"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "${ BRAND_NAME } または第三者によるメッセージへのアクセスを防ぎます。 メッセージを読める方は送信者と対象の受信者しかありません。"
+      ],
+      "Quickly set up out-of-office messages": [
+        "不在時のメッセージをすばやく設定する"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "メール、カレンダー、連絡先を任意のプロバイダーからすばやく転送する"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "電話番号、住所、誕生日、個人的なメモなどの連絡先の詳細を安全に保存します。 ゼロアクセス暗号化により、${ BRAND_NAME } であってもアクセスできなくなります。"
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "会議の参加者の空き状況を確認し、会議のスケジュール設定の時間を節約する"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "必要な数の連絡先グループを作成することで、大規模なグループにメールを迅速かつ簡単に送信できます (グループあたり最大 100 件の連絡先)。"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "フィルタを設定してメールに自動的に返信、並べ替え、ラベルを付ける"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "安全で共有可能なリンクを使用して、ファイルやフォルダを誰とでも共有できます"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTPは第三者のサービスやデバイスが${ MAIL_APP_NAME }を介してメールを送信できるようにします。"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME }、${ PASS_APP_NAME } で共有されます"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "ストレージ スペースは、${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。 管理者は、組織内のユーザーに異なるストレージ容量を割り当てることができます"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "ストレージ容量は、${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME }、${ PASS_APP_NAME } のユーザー間で共有されます。"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "独自ドメインのメールアドレス (例: you@yourname.com) を使う"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "他の ${ MAIL_APP_NAME } ユーザーに送信する場合、暗号化は自動的に行われます。 ${ MAIL_APP_NAME_TWO } 以外のユーザーに送信するには、送信前にパスワードを設定する必要があります。"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "15 件のメールアドレスと 3 件の独自メールドメインを使用可能"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "ストレージ容量をユーザーあたり ${ bundleStorage } に増量します"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "ストレージ容量を合計 ${ bundleStorage } に拡張"
+      ],
+      "Create up to ${ n } calendar": [
+        "最大 ${ n } 個までのカレンダーを作成"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
     "Placeholder": {
@@ -1103,6 +1579,22 @@
         "サードパーティのSSOプロバイダにリダイレクトされます"
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ CONTACTS_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } によって生成されたデータのストレージ"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "最大 ${ totalStorageSize } ドライブ ストレージ"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "最大 ${ totalStorageSize } メール ストレージ"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "すべての ${ BRAND_NAME } サービス向け"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"
@@ -1112,6 +1604,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "アカウントがロックされました"
+      ],
       "Enter 2FA code": [
         "2要素認証コードを入力"
       ],

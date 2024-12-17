@@ -17,6 +17,9 @@
       "Continue": [
         "Продолжить"
       ],
+      "Dismiss": [
+        "Отклонить"
+      ],
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "Посмотреть счет"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
+      ],
+      "Dark Web Monitoring": [
+        "Мониторинг даркнета"
+      ],
+      "Use your own email domain": [
+        "Используйте свой собственный домен электронной почты"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "морковный"
+      ],
+      "cerise": [
+        "вишневый"
+      ],
+      "cobalt": [
+        "кобальтовый"
+      ],
+      "copper": [
+        "медный"
+      ],
+      "enzian": [
+        "горечавка"
+      ],
+      "fern": [
+        "папоротниковый"
+      ],
+      "forest": [
+        "лесной"
+      ],
+      "ocean": [
+        "океанический"
+      ],
+      "olive": [
+        "оливковый"
+      ],
+      "pacific": [
+        "тихоокеанский"
+      ],
+      "pickle": [
+        "огуречный"
+      ],
+      "pine": [
+        "сосновый"
+      ],
+      "pink": [
+        "розовый"
+      ],
+      "plum": [
+        "сливовый"
+      ],
+      "purple": [
+        "фиолетовый"
+      ],
+      "reef": [
+        "коралловый"
+      ],
+      "sahara": [
+        "сахара"
+      ],
+      "slateblue": [
+        "сланцево-синий"
+      ],
+      "soil": [
+        "землистый"
+      ],
+      "strawberry": [
+        "клубничный"
       ]
     },
     "Country name": {
@@ -923,6 +999,58 @@
         "Ключ безопасности"
       ]
     },
+    "file size format": {
+      "byte": [
+        "байт",
+        "байта",
+        "байтов",
+        "байтов"
+      ],
+      "GB": [
+        "ГБ"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "TB": [
+        "ТБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байта",
+        "Байтов",
+        "Байтов"
+      ],
+      "Gigabyte": [
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайтов"
+      ],
+      "Kilobyte": [
+        "Килобайт",
+        "Килобайта",
+        "Килобайтов",
+        "Килобайтов"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайтов",
+        "Мегабайтов",
+        "Мегабайтов"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайта",
+        "Терабайтов",
+        "Терабайтов"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Системный по умолчанию"
@@ -993,6 +1121,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Если вы считаете, что мы ошиблись, пожалуйста, ${ contactLink }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
@@ -1016,6 +1147,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Мы обнаружили создание нескольких бесплатных учетных записей, что нарушает наше ${ termsLink }."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
@@ -1075,11 +1209,407 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "связаться с нами"
+      ],
       "Learn more": [
         "Подробнее"
       ],
       "Request an invite": [
         "Запросить приглашение"
+      ],
+      "terms of service": [
+        "условия использования"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Поддерживайте порядок в почтовом ящике с помощью папок"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Перейти на тариф ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe"
+      ],
+      "${ n } calendar": [
+        "${ n } календарь",
+        "${ n } календаря",
+        "${ n } календарей",
+        "${ n } календарей"
+      ],
+      "${ n } calendar per user": [
+        "${ n } календарь на пользователя",
+        "${ n } календаря на пользователя",
+        "${ n } календаря на пользователя",
+        "${ n } календарей на пользователя"
+      ],
+      "${ n } custom email domain": [
+        "${ n } пользовательский домен электронной почты",
+        "${ n } пользовательских домена электронной почты",
+        "${ n } пользовательских доменов электронной почты",
+        "Пользовательских доменов электронной почты: ${ n }"
+      ],
+      "${ n } email address": [
+        "${ n } адрес электронной почты",
+        "${ n } адреса электронной почты/псевдонима",
+        "${ n } адресов электронной почты/псевдонимов",
+        "${ n } адресов электронной почты/псевдонимов"
+      ],
+      "${ n } email address per user": [
+        "${ n } адрес электронной почты на пользователя",
+        "${ n } адреса электронной почты на пользователя",
+        "${ n } адресов электронной почты на пользователя",
+        "Адресов электронной почты на пользователя: ${ n }"
+      ],
+      "${ n } filter": [
+        "${ n } фильтр",
+        "${ n } фильтра",
+        "${ n } фильтров",
+        "${ n } фильтра"
+      ],
+      "${ n } folder": [
+        "${ n } папка",
+        "${ n } папки",
+        "${ n } папок",
+        "папки: ${ n }"
+      ],
+      "${ n } folder and label": [
+        "${ n } папка и ярлык",
+        "${ n } папки и ярлыка",
+        "${ n } папок и ярлыков",
+        "Папок и ярлыков: ${ n }"
+      ],
+      "${ n } label": [
+        "${ n } ярлык",
+        "${ n } ярлыка",
+        "${ n } ярлыков",
+        "${ n } ярлыка"
+      ],
+      "${ n } message per day": [
+        "${ n } сообщение в день",
+        "${ n } сообщения в день",
+        "${ n } сообщений в день",
+        "Сообщений в день: ${ n }"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-дневный журнал версий файла",
+        "${ options }-дневный журнал версий файла",
+        "${ options }-дневный журнал версий файла",
+        "${ options }-дневный журнал версий файла"
+      ],
+      "${ size } attachment size": [
+        "Размер вложения: ${ size }"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } защищенного хранилища на пользователя"
+      ],
+      "${ size } storage": [
+        "${ size } хранилища"
+      ],
+      "1 TB secure storage": [
+        "1 ТБ защищенного хранения"
+      ],
+      "10 email addresses/aliases": [
+        "10 адресов электронной почты или псевдонимов"
+      ],
+      "10-year file version history": [
+        "10-летняя история версий файла"
+      ],
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Все продукты и функции ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Все основные сервисы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Все платные сервисы ${ BRAND_NAME }. В одной легкой подписке"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Автоудаление спама и сообщений в корзине"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Автоудаление спама и удаленных сообщений"
+      ],
+      "Auto-reply": [
+        "Автоответчик"
+      ],
+      "Automatic email forwarding": [
+        "Автоматическая пересылка электронной почты"
+      ],
+      "Breach alerts": [
+        "Оповещения об утечках"
+      ],
+      "Calendar sharing": [
+        "Совместное использование календаря"
+      ],
+      "Catch-all": [
+        "Прием всей почты домена"
+      ],
+      "Collaborate and share large files": [
+        "Работайте вместе и делитесь большими файлами"
+      ],
+      "Contact groups": [
+        "Группы контактов"
+      ],
+      "Contact groups management": [
+        "Управление группами контактов"
+      ],
+      "Custom and secure business email": [
+        "Настраивамая и защищённая бизнес-почта"
+      ],
+      "Custom email domains": [
+        "Пользовательские домены электронной почты"
+      ],
+      "Custom snooze time": [
+        "Настраиваемое время пробуждения"
+      ],
+      "Desktop app": [
+        "Приложение для настольного компьютера"
+      ],
+      "Easy Switch import assistant": [
+        "Помощник по импорту Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Поддержка почтовых клиентов (через IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Группы адресов электронной почты"
+      ],
+      "Encrypted contact details": [
+        "Зашифрованная контактная информация"
+      ],
+      "End-to-end encryption": [
+        "Сквозное шифрование"
+      ],
+      "Generate emails with a prompt": [
+        "Генерируйте электронные письма с помощью подсказки"
+      ],
+      "HTML signatures": [
+        "Подписи HTML"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Password health": [
+        "Надежность пароля"
+      ],
+      "Password-protected Emails": [
+        "Электронные письма, защищенные паролем"
+      ],
+      "Proofread and refine your emails": [
+        "Проверьте и уточните ваши электронные письма"
+      ],
+      "Quickly craft replies": [
+        "Быстро составляйте ответы"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Save time emailing": [
+        "Экономьте время на переписке по электронной почте"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Планируйте и откладывайте сообщения электронной почты на любое время"
+      ],
+      "Schedule messages at any time": [
+        "Планируйте сообщения в любое время"
+      ],
+      "Search message content": [
+        "Поиск содержимого сообщения"
+      ],
+      "See team's availability": [
+        "Посмотреть доступность команды"
+      ],
+      "Send & receive invitations": [
+        "Отправляйте и получайте приглашения"
+      ],
+      "Share files with no size limit": [
+        "Делитесь файлами без ограничений по размеру"
+      ],
+      "SMTP submission": [
+        "Отправки через SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Отправка по SMTP для отдельных организаций"
+      ],
+      "Support for up to 2 users": [
+        "Поддержка до 2 пользователей"
+      ],
+      "Sync and backup all your files across devices": [
+        "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
+      ],
+      "Unlimited filters": [
+        "Неограниченное количество фильтров"
+      ],
+      "Unlimited folders": [
+        "Неограниченное количество папок"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Unlimited labels": [
+        "Неограниченное количество ярлыков"
+      ],
+      "Unlimited messages per day": [
+        "Неограниченное количество сообщений в день"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "До ${ totalStorageSize } хранилища"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 пользовательский домен электронной почты"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Отложите сообщения и получите напоминание в нужное время"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME } Защитите свое расписание с помощью сквозного шифрования. Включает поддержку пользовательских календарей, совместное использование календарей и многое другое."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает автоматическую синхронизацию, общий доступ к зашифрованным файлам и многое другое."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME } Защитите свою электронную почту с помощью сквозного шифрования. Включает поддержку пользовательских почтовых доменов, 15 адресов электронной почты, неограниченное количество ide-my-email псевдонимов и многое другое."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Получите доступ к ${ MAIL_APP_NAME } и ${ CALENDAR_APP_NAME } с удобного рабочего места."
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "В адресах есть полный функционал для отправки и получения сообщений. Одному пользователю можно назначить несколько адресов, однако один адрес нельзя назначить разным пользователям"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Позволяет настраивать автоматические ответы (автоответчик) для входящих сообщений"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Автоматически удалять сообщения старше 30 дней из Корзины и Спама"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Автоматически пересылайте письма, отправленные на ваш аккаунт ${ MAIL_APP_NAME }, на любой другой адрес электронной почты."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Массовая рекламная или программная рассылка электронной почты в настоящее время не поддерживается. Мы рекомендуем использовать специального поставщика услуг электронной почты для этого случая."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Выберите время, в течение которого вам будут напоминать об электронной почте или о том, что ваше сообщение должно прийти."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, JohnShopper@${ domain } для учетных записей покупок, JohnNews@${ domain } для подписки на новости"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Создайте до ${ n } календаря или добавляйте календари друзей, семьи, коллег и организаций",
+        "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций",
+        "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций",
+        "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Создайте до ${ n } адресов электронной почты или псевдонимов, которые можно назначить членам семьи. Используйте их для идентификации в Интернете, например JohnShopper@${ domain } для аккаунтов для покупок."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Легко делитесь своими календарями с семьей, друзьями или коллегами"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Отправляйте сообщения всем членам группы с помощью одного адреса электронной почты"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Гарантирует, что вы получите все письма, отправленные на ваш домен, даже если адрес электронной почты не существует, его больше нет или в нем допущена ошибка"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "Поддержка IMAP ограничена возможностями приложений для ПК (Outlook, Apple Mail, Thunderbird и др.) через ${ MAIL_APP_NAME } Bridge. Облачные средства интеграции IMAP сейчас не поддерживаются."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Обеспечьте конфиденциальность своих планов и планов вашей семьи с помощью зашифрованного календаря"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Ярлыки - это простые метки, которые можно добавлять к сообщениям, чтобы облегчить их поиск или применить к ним фильтры"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Персонализируйте свою подпись электронной почты с помощью логотипов, изображений, значков социальных сетей, ссылок на контактную информацию и т. д."
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Ограничивает доступ к сообщениям для ${ BRAND_NAME } или третьей стороны. Читать сообщения могут только отправитель и предполагаемый получатель."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Быстро настраивайте сообщения о своем отсутствии"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Быстро переносите электронную почту, календари или контакты из любых служб"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Защищенное хранение данных контактов, таких как номер телефона, адрес, день рождения и личные заметки. Шифрование с нулевым доступом гарантирует, что даже ${ BRAND_NAME } не сможет получить к ним доступ."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Узнайте о наличии участников и сэкономьте время на планировании встреч."
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Быстро и легко отправляйте электронные письма большим группам, создавая необходимое количество групп контактов (до 100 контактов в каждой группе)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Настройте фильтры для автоматического ответа, сортировки и/или присвоения ярлыков вашим письмам"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Делитесь файлами или папками с кем угодно с помощью защищенных ссылок, доступных для совместного использования"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP позволяет сторонним службам или устройствам отправлять электронную почту через ${ MAIL_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Место хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } и ${ PASS_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Объем хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }. Администраторы могут выделять различные объемы хранилища для пользователей своей организации"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Место хранилища распределяется между пользователями ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } и ${ PASS_APP_NAME }."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Используйте собственные пользовательские доменные адреса электронной почты, например, sebe@yourname.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "При отправке сообщений другим пользователям ${ MAIL_APP_NAME }, шифрование происходит автоматически. Отправка сообщений пользователям вне ${ MAIL_APP_NAME_TWO } предполагает предварительную установку пароля."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Добавьте больше индивидуальности с помощью 15 адресов электронной почты и поддержки 3 пользовательских доменов электронной почты"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Увеличьте хранилище до ${ bundleStorage } на пользователя"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Увеличьте объем хранилища в общей сложности до ${ bundleStorage }"
+      ],
+      "Create up to ${ n } calendar": [
+        "Создайте до ${ n } календарей",
+        "Создать до ${ n } календарей",
+        "Создать до ${ n } календарей",
+        "Создать до ${ n } календарей"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Поддержка ${ n } пользовательских доменов электронной почты"
       ]
     },
     "Placeholder": {
@@ -1103,6 +1633,22 @@
         "Вы будете перенаправлены на вашего стороннего провайдера SSO."
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Хранилище для данных, создаваемых ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } и ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Объём хранилища Drive: до ${ totalStorageSize }"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "До ${ totalStorageSize } Хранилище Mail"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Для всех служб ${ BRAND_NAME }"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
@@ -1112,6 +1658,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "Аккаунт заблокирован"
+      ],
       "Enter 2FA code": [
         "Введите код двухфакторной аутентификации"
       ],
