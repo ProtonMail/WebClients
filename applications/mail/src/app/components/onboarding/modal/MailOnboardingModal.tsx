@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { useWelcomeFlags } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -53,10 +53,10 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
     const { isLoading, isB2B, isMailPaidPlan } = useUserInfos();
     const displayPremiumFeaturesSteps = isMailPaidPlan && !isB2B;
 
-    const handleDone = useCallback(() => {
+    const handleDone = () => {
         void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.finish_onboarding_modals, {});
         props.onDone?.();
-    }, [sendMailOnboardingTelemetry]);
+    };
 
     // Specific for Telemetry
     useEffect(() => {
