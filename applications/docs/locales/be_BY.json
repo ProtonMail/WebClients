@@ -60,9 +60,6 @@
       "Add group": [
         "Дадаць групу"
       ],
-      "Add new contact": [
-        "Дадаць новы кантакт"
-      ],
       "Add new group": [
         "Дадаць новую групу"
       ],
@@ -291,14 +288,14 @@
       "Export contact group": [
         "Экспартаваць групу кантактаў"
       ],
-      "Export contacts": [
-        "Экспартаваць кантакты"
-      ],
       "Forgot password?": [
         "Забылі пароль?"
       ],
       "Forward as attachment": [
         "Пераслаць як далучэнне"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Атрымайце ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
       ],
       "Get in touch": [
         "Звязацца з намі"
@@ -590,6 +587,9 @@
       ],
       "Show advanced PGP settings": [
         "Паказаць дадатковыя налады PGP"
+      ],
+      "Show options": [
+        "Паказаць параметры"
       ],
       "Sign out": [
         "Выйсці з уліковага запісу"
@@ -1112,6 +1112,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Змяніць налады адраса электроннай пошты"
+      ],
+      "Continue": [
+        "Працягнуць"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
       ],
@@ -2198,6 +2204,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
       ],
+      "Also included": [
+        "Таксама ўключана"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
       ],
@@ -2209,6 +2218,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Атрымайце неабмежаваную колькасць псеўданімаў і сховішча аб'ёмам у 500 ГБ з тарыфным планам ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3940,14 +3952,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
-      "Account size": [
-        "Памер уліковага запісу"
-      ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
       ],
-      "Additional options": [
-        "Дадатковы параметры"
+      "Address copied to clipboard": [
+        "Адрас скапіяваны ў буфер абмену"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
@@ -4081,12 +4090,6 @@
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Стварыць бяспечнае воблака для ${ n } удзельніка",
-        "Стварыць бяспечнае воблака для ${ n } удзельнікаў",
-        "Стварыць бяспечнае воблака для ${ n } удзельнікаў",
-        "Стварыць бяспечнае воблака для ${ n } удзельнікаў"
-      ],
       "Create in": [
         "Стварыць у"
       ],
@@ -4108,9 +4111,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Крэдыты для нявыкарыстанай часткі вашага папярэдняга плана падпіскі"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Падтрымліваюцца файлы CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і некаторых іншых праграм, а таксама фарматы vCard 3.1 і 4.0 (кадаванне UTF-8)."
-      ],
       "Current plan": [
         "Бягучы тарыфны план"
       ],
@@ -4122,6 +4122,9 @@
       ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "default email address": [
+        "прадвызначаны адрас электроннай пошты"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Лічбавы подпіс правераны. Гэты файл бяспечна запампаваны ${ emailAddress }."
@@ -4182,9 +4185,6 @@
       ],
       "email": [
         "электронная пошта"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Размяшчэнне электроннай пошты для 10 карыстальніцкіх даменных імён электроннай пошты даецца карыстальніку бясплатна. За дадатковыя дамены будзе спаганяцца плата ў памеры ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Служба электроннай пошты даступна толькі для даменаў, якімі вы ўжо валодаеце. Рэгістрацыя даменаў праз ${ BRAND_NAME } зараз недаступна. Вы можаце размясціць электронную пошту для даменаў, якія зарэгістраваны іншымі рэгістратарамі даменаў."
@@ -4429,6 +4429,9 @@
       "Merged": [
         "Аб'яднана"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Паведамленні для ўсіх вашых адрасоў электроннай пошты будуць трапляць у вашу паштовую скрыню."
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -4612,8 +4615,14 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
+      "Registering your subscription...": [
+        "Рэгістрацыя вашай падпіскі..."
+      ],
       "Restored version to": [
         "Версія адноўлена да"
+      ],
+      "Save Document as PDF": [
+        "Захаваць дакумент як PDF"
       ],
       "Saving": [
         "Захаванне"
@@ -4641,6 +4650,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
+      ],
+      "Setting up your new address...": [
+        "Наладжванне вашага новага адраса..."
       ],
       "Settings update failed": [
         "Збой абнаўлення налад"
@@ -4687,9 +4699,6 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Магчыма, што ўліковы запіс мае новы ключ або наступныя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Перад пачаткам экспартавання праграме неабходна выканаць лакальную расшыфроўку вашых кантактаў. Пасля завяршэння працэсу будзе згенерыраваны файл VCF, які вы зможаце спампаваць."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Немагчыма праверыць аўтарства рэдагаванняў у дакуменце. Вы сапраўды хочаце пазначыць гэты дакумент як правераны? Вы можаце выбраць \"Ігнараваць\", каб прыняць рашэнне пазней."
       ],
@@ -4725,6 +4734,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Магчыма, што ў вас недастаткова правоў для прагляду гэтага дакумента або ён проста не існуе. Паспрабуйце перазагрузіць старонку, каб паглядзець ці засталася праблема."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
       ],
       "This item already exists in your library": [
         "Гэты элемент ужо існуе ў вашай бібліятэцы"
@@ -4882,6 +4894,15 @@
       "What do you want to do?": [
         "Што вы хочаце зрабіць?"
       ],
+      "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
+        "У адкрытым дыялогавым акне, змяніце \"Прызначэнне\" на \"Захаваць як PDF\", а потым націсніце \"Захаваць\"."
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "У адкрытым дыялогавым акне, змяніце \"Прызначэнне\" на \"Захаваць у PDF\", а потым націсніце \"Захаваць\"."
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "У адкрытым дыялогавым акне, выберыце \"PDF\" у левым ніжнім куце, а потым націсніце \"Захаваць\"."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
       ],
@@ -5002,6 +5023,9 @@
       "Your account will be updated once the payment is cleared.": [
         "Ваш уліковы запіс будзе абноўлены, калі плацеж будзе правераны."
       ],
+      "Your browser's Print dialog will now open, where you can export your document to PDF.": [
+        "Дыялогавае акно друку вашага браўзера ў цяперашні час адкрыта. Туды вы можаце экспартаваць свае дакументы ў PDF."
+      ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Вашы змяненні будуць сінхранізаваны з Drive. Не закрывайце вэб-старонку."
       ],
@@ -5077,11 +5101,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Толькі прагляд"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Асістэнт ШІ дапаможа вам стварыць лепшыя лісты, хутка і без намаганняў."
       ]
     },
     "Item": {
@@ -5185,9 +5204,6 @@
       "Authenticator app": [
         "Праграма аўтэнтыфікацыі"
       ],
-      "Automatically save contacts": [
-        "Аўтаматычна захоўваць кантакты"
-      ],
       "Beta Access": [
         "Бэта-доступ"
       ],
@@ -5214,12 +5230,6 @@
       ],
       "Calendars": [
         "Календары"
-      ],
-      "Can edit": [
-        "Можа рэдагаваць"
-      ],
-      "Can view": [
-        "Можа праглядаць"
       ],
       "Cancel download": [
         "Скасаваць спампоўванне"
@@ -5335,9 +5345,6 @@
       "Expires": [
         "Дзейнічае да"
       ],
-      "Export contacts": [
-        "Экспартаваць кантакты"
-      ],
       "Extended address": [
         "Пашыраны адрас"
       ],
@@ -5367,9 +5374,6 @@
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
-      ],
-      "Import contacts": [
-        "Імпартаваць кантакты"
       ],
       "Import interval": [
         "Інтэрвал імпартавання"
@@ -5586,14 +5590,6 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "Арганізацыя, дадаванне і рэдагаванне файлаў"
-      ],
-      "View and download": [
-        "Паглядзець і спампаваць"
       ]
     },
     "Label for contact group color": {
@@ -6104,6 +6100,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Пачніце за ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Пачатковы кошт ${ priceMailPlus }"
       ],
@@ -6278,6 +6277,9 @@
       ],
       "10 email addresses/aliases": [
         "10 адрасоў электроннай пошты/псеўданімаў"
+      ],
+      "10 more premium features": [
+        "І больш за 10 прэміяльных функцый"
       ],
       "10-year file version history": [
         "Гісторыя версій файлаў за 10 гадоў"
@@ -6592,7 +6594,7 @@
         "Неабмежаваная колькасць паведамленняў у дзень"
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
-        "Неабмежаванае абагульванне сховішчаў ${ PASS_SHORT_APP_NAME } на карыстальніка"
+        "Неабмежаванае колькасць абагуленых сховішчаў ${ PASS_SHORT_APP_NAME } на карыстальніка"
       ],
       "Unlimited shared vaults with access permissions": [
         "Неабмежаваная колькасць абагуленых сховішчаў з дазволамі доступу"
@@ -6631,10 +6633,10 @@
         "Кіраванне сховішчам карыстальніка"
       ],
       "Vault sharing (up to ${ n } person)": [
-        "Абагульванне сховішча (да ${ n } асобы)",
-        "Абагульванне сховішча (да ${ n } асоб)",
-        "Абагульванне сховішча (да ${ n } асоб)",
-        "Абагульванне сховішча (да ${ n } асоб)"
+        "Абагуленае сховішча (да ${ n } асобы)",
+        "Абагуленае сховішча (да ${ n } асоб)",
+        "Абагуленае сховішча (да ${ n } асоб)",
+        "Абагуленае сховішча (да ${ n } асоб)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Мы сканіруем цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
@@ -6760,6 +6762,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Атрымайце Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
       ]
     },
     "new_plans: title": {
@@ -7060,11 +7070,17 @@
       "\"${ name }\" created successfully": [
         "\"${ name }\" паспяхова створана"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" выдалены"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" незваротна выдалены са сметніцы"
       ],
       "\"${ name }\" failed to be created": [
         "Не ўдалося стварыць \"${ name }\""
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "Не ўдалося выдаліць \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "Не ўдалося незваротна выдаліць са сметніцы \"${ name }\""
@@ -7105,11 +7121,23 @@
         "Не ўдалося расшыфраваць ${ count } элементаў",
         "Не ўдалося расшыфраваць ${ count } элементы"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } элемент выдалены",
+        "${ numberOfItems } элементы выдалены",
+        "${ numberOfItems } элементаў выдалена",
+        "${ numberOfItems } элементаў выдалена"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } элемент незваротна выдалены са сметніцы",
         "${ numberOfItems } элементы незваротна выдалены са сметніцы",
         "${ numberOfItems } элементаў незваротна выдалены са сметніцы",
         "${ numberOfItems } элементы незваротна выдалены са сметніцы"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "Не ўдалося выдаліць ${ numberOfItems } элемент",
+        "Не ўдалося выдаліць ${ numberOfItems } элементы",
+        "Не ўдалося выдаліць ${ numberOfItems } элементаў",
+        "Не ўдалося выдаліць ${ numberOfItems } элементаў"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элемент",
@@ -7616,32 +7644,9 @@
         "Назва"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } з нашай камандай па продажам."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Выберыце колькасць IP для ўключэння ў ваш тарыфны план. Кожны дадатковы IP каштуе ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Калі вам неабходна больш за ${ maxIPs } IP, ",
-        "Калі вам неабходна больш за ${ maxIPs } IP, ",
-        "Калі вам неабходна больш за ${ maxIPs } IP, ",
-        "Калі вам неабходна больш за ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "звяжыцеся"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Выберыце колькасць карыстальнікаў для ўключэння ў ваш тарыфны план. Кожны дадатковы карыстальнік каштуе ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Калі вам патрабуецца больш за ${ maxUsers } уліковы запіс карыстальніка, звяжыцеся па пошце ${ contact } з нашай камандай па продажам.",
-        "Калі вам патрабуецца больш за ${ maxUsers } уліковыя запісы карыстальніка, звяжыцеся па пошце ${ contact } з нашай камандай па продажам.",
-        "Калі вам патрабуецца больш за ${ maxUsers } уліковых запісаў карыстальніка, звяжыцеся па пошце ${ contact } з нашай камандай па продажам.",
-        "Калі вам патрабуецца больш за ${ maxUsers } уліковыя запісы карыстальніка, звяжыцеся па пошце ${ contact } з нашай камандай па продажам."
       ]
     },
     "Price": {
@@ -9218,6 +9223,9 @@
       "Untitled document ${ date }": [
         "Дакумент без назвы ад ${ date }"
       ],
+      "Upgrade complete!": [
+        "Абнаўленне завершана!"
+      ],
       "Uploading a large file or folder": [
         "Запампоўванне вялікага файла або папкі"
       ],
@@ -9253,6 +9261,9 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
+      ],
+      "Your shorter address is now ready": [
+        "Ваш больш кароткі адрас гатовы да выкарыстання"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9335,9 +9346,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Мы адправілі ім запрашэнне на доступ да элемента."
-      ],
-      "You do not have any contacts to export": [
-        "У вас няма кантактаў для экспартавання"
       ]
     },
     "tooltip": {
@@ -9503,6 +9511,9 @@
       ],
       "Missing alias suffix": [
         "Памылковы суфікс псеўданіма"
+      ],
+      "Name is required": [
+        "Патрабуецца назва"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"
