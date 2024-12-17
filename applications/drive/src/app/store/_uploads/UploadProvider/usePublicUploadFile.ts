@@ -284,7 +284,7 @@ export default function usePublicUploadFile() {
             linkId: string,
             clientUid?: string
         ) => {
-            await deleteLinks(abortSignal, { token, parentLinkId, links: [{ linkId }] });
+            await deleteLinks(abortSignal, { token, parentLinkId, linkIds: [linkId] });
             return createFile(abortSignal, filename, mimeType, hash, keys, clientUid);
         };
 
@@ -602,7 +602,7 @@ export default function usePublicUploadFile() {
                                 await deleteLinks(new AbortController().signal, {
                                     token,
                                     parentLinkId,
-                                    links: [{ linkId: createdFileRevision.fileID }],
+                                    linkIds: [createdFileRevision.fileID],
                                 });
                             } else {
                                 log(`Deleting revision`);
