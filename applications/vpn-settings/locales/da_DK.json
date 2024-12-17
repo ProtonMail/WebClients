@@ -85,6 +85,9 @@
       "Back": [
         "Tilbage"
       ],
+      "Back to sign-in": [
+        "Tilbage til login"
+      ],
       "Block": [
         "Blokér"
       ],
@@ -204,6 +207,9 @@
       ],
       "Discard changes": [
         "Kassér ændringer"
+      ],
+      "Dismiss": [
+        "Afvis"
       ],
       "Domain name": [
         "Domænenavn"
@@ -1041,6 +1047,9 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Rabatter er baseret på månedlig standardpris."
       ],
@@ -1078,6 +1087,10 @@
         "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af bruger-e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
         "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer ${ addresses } e-mailadresser, understøttelse af bruger-e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af brugerdefinerede e-maildomæner, ubegrænsede hide-my-email-aliasser og mere.",
+        "Beskyt dine e-mails og din tidsplan med end-to-end-kryptering. Inkluderer ${ addresses } e-mailadresser, understøttelse af brugerdefinerede e-maildomæner, ubegrænsede hide-my-email-aliasser og mere."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer 15 e-mailadresser, understøttelse af bruger-e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere."
       ],
@@ -1092,6 +1105,15 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagerplads er delt mellem alle ${ BRAND_NAME }-tjenester."
+      ]
+    },
+    "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Fornyes automatisk til ${ renewPrice }, for ${ renewLength } måned",
+        "Fornyes automatisk til ${ renewPrice }, for ${ renewLength } måneder"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Fornyes automatisk ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -1197,6 +1219,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Forsæt"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ],
@@ -1212,7 +1237,7 @@
         "${ maxSpaceTB } lagerplads"
       ],
       "${ planMaxSpace } email storage": [
-        "${ planMaxSpace } e-mail lagring"
+        "${ planMaxSpace } e-mail-lagerplads"
       ],
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
@@ -1231,6 +1256,9 @@
       ],
       "Encrypted password manager": [
         "Krypteret adgangskodeadministrator"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Vores grundlæggende, gratis abonnement med end-to-end-krypteret e-mail og lagerplads. Ingen premium-funktioner inkluderet."
       ],
       "Save ${ upsellSavings }": [
         "Gem ${ upsellSavings }"
@@ -2734,6 +2762,11 @@
         "Din konto eller organisation har en forfalden faktura. Betal venligst alle udestående fakturaer."
       ]
     },
+    "error": {
+      "Enter an email address": [
+        "Indtast e-mailadresse"
+      ]
+    },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
         "Der opstod en fejl ved læsning af din fil \"${ formattedFilename }\". Forkert filformat."
@@ -2903,6 +2936,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kan kun acceptere 3 invitationer i en 6-måneds periode. Kontakt venligst ${ supportLink } hvis du har brug for en undtagelse."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kan ikke acceptere denne invitation med dit nuværende abonnement."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du er blevet inviteret til at blive medlem af ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3084,6 +3120,9 @@
     "fido2: Action": {
       "Delete key": [
         "Slet nøgle"
+      ],
+      "New security key": [
+        "Ny sikkerhedsnøgle"
       ]
     },
     "fido2: Error": {
@@ -3164,6 +3203,9 @@
       ],
       "Security key registered": [
         "Sikkerhedsnøgle registreret"
+      ],
+      "Security keys": [
+        "Sikkerhedsnøgler"
       ]
     },
     "file size format": {
@@ -3465,6 +3507,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }. Prisen og datoen for fornyelse af dit ${ planTitle }-abonnement forbliver uændret."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
       ],
@@ -3515,6 +3560,9 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/måned)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Få en ${ BRAND_NAME }-adresse** for at bruge alle ${ BRAND_NAME_TWO }-tjenester, herunder ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -3552,9 +3600,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoadgang begrænset grundet manglende betaling. Kontakt din administrator."
       ],
-      "Account size": [
-        "Kontostørrelse"
-      ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
@@ -3588,8 +3633,8 @@
         "Tilføjer gateway-server: ${ serverNumber } / ${ total }",
         "Tilføjer gateway-servere: ${ serverNumber } / ${ total }"
       ],
-      "Additional options": [
-        "Yderligere indstillinger"
+      "Address copied to clipboard": [
+        "Adresse kopieret til udklipsholder"
       ],
       "Admin account allocation": [
         "Admin-konto tildeling"
@@ -3648,6 +3693,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Er du sikker på, at du vil fjerne domænet ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Bed din organisationsadministrator om at indstille gateways."
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
@@ -3730,10 +3778,6 @@
       "Country code": [
         "Landekode"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Opret en sikker skypakke til ${ n } medlem",
-        "Opret en sikker skypakke til ${ n } medlemmer"
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opret og administrer underkonti og tildel dem e-mailadresser på dit brugerdomæne."
       ],
@@ -3765,11 +3809,17 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
+      "dedicated servers": [
+        "dedikerede servere"
+      ],
       "Dedicated servers": [
         "Dedikerede servere"
       ],
-      "dedicated servers": [
-        "dedikerede servere"
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Dedikerede servere med dedikerede IP adresser kan tilføjes til private gateways for at finjustere adgangen."
+      ],
+      "default email address": [
+        "standard e-mailadresse"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
@@ -3845,11 +3895,11 @@
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
+      "eduGAIN configuration saved": [
+        "eduGAIN-konfiguration gemt"
+      ],
       "email": [
         "e-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-mail-hosting til 10 brugerdefinerede mail-domænenavne er inkluderet gratis. Yderligere domæner kan tilføjes for ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting er kun tilgængelig for domæner, du allerede ejer. Domæneregistrering er ikke tilgængelig i øjeblikket via ${ BRAND_NAME }. Du kan hoste e-mail for domæner, der er registreret hos en hvilken som helst domæneregistrator."
@@ -4130,6 +4180,12 @@
       "Learn more": [
         "Få mere at vide"
       ],
+      "Learn more about Gateways": [
+        "Lær mere om gateways"
+      ],
+      "Learn more about single sign-on": [
+        "Lær mere om single sign-on"
+      ],
       "Let's get started by pressing the New group button above": [
         "Lad os starte med at trykke på knappen Ny gruppe ovenfor."
       ],
@@ -4180,6 +4236,9 @@
       ],
       "Member": [
         "Medlem"
+      ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Beskeder til alle dine e-mailadresser ender i din indbakke."
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -4306,6 +4365,10 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Indtast 12-ords gendannelsessætningen, der er knyttet til din konto."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Bemærk, at når du klikker på knappen Bekræft, vil din konto have ${ creditsRemaining } kredit tilbage.",
+        "Bemærk, at når du klikker på knappen Bekræft, vil din konto have ${ creditsRemaining } kreditter tilbage."
+      ],
       "please open a support ticket": [
         "åbn venligst en support-sag"
       ],
@@ -4371,6 +4434,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
+      ],
+      "Registering your subscription...": [
+        "Registrerer dit abonnement..."
       ],
       "Remember to share the user's sign in details with them.": [
         "Husk at dele brugerens login-oplysninger med vedkommende."
@@ -4461,6 +4527,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF angiver, hvem der har lov til at sende e-mails for dit domæne. Sørg for at tilføje følgende TXT-post i din DNS-konsol (som kan findes på platformen, hvor du købte dit brugerdomæne)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
       ],
       "Step ${ step }": [
         "Trin ${ step }",
@@ -4561,6 +4630,9 @@
       ],
       "This file is too large to preview": [
         "Denne fil er for stor til forhåndsvisning"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Denne besked vil ikke nå supportteamet, hvis du har et problem med vores service eller ønsker yderligere hjælp fra vores side ${ supportLink }."
@@ -4712,11 +4784,11 @@
       "User activated": [
         "Bruger aktiveret"
       ],
-      "Username": [
-        "Brugernavn"
-      ],
       "username": [
         "brugernavn"
+      ],
+      "Username": [
+        "Brugernavn"
       ],
       "Users": [
         "Brugere"
@@ -4970,6 +5042,9 @@
       "Your ${ BRAND_NAME } password": [
         "Din adgangskode til ${ BRAND_NAME }"
       ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Dit ${ PASS_SHORT_APP_NAME } Plus abonnement vil blive erstattet af ${ PASS_SHORT_APP_NAME } Lifetime. Den resterende del af dit abonnement vil blive tilføjet til din konto. ${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Dine ${ VPN_APP_NAME } og ${ MAIL_APP_NAME } konti er forbundet. Hvis du vil slette dem begge, skal du logge ind på ${ loginLink } og slette din konto der."
       ],
@@ -5058,11 +5133,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Kun visning"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI-drevet assistent afhjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ]
     },
     "Input Error": {
@@ -5206,6 +5276,9 @@
       "Amount due": [
         "Forfaldent beløb"
       ],
+      "Anderson": [
+        "Andersen"
+      ],
       "Assertion Consumer Service URL": [
         "URL-adresse til forbrugertjeneste"
       ],
@@ -5214,6 +5287,9 @@
       ],
       "Authenticator app": [
         "Godkendelsesapp"
+      ],
+      "Backup password": [
+        "Adgangskode til sikkerhedskopi"
       ],
       "Billing address": [
         "Faktureringsadresse"
@@ -5355,6 +5431,9 @@
       ],
       "Enter the code displayed on your TV": [
         "Indtast den kode, der vises på dit TV"
+      ],
+      "Entity ID": [
+        "Enheds-ID"
       ],
       "Event": [
         "Begivenhed"
@@ -5539,6 +5618,12 @@
       "Recovery phrase": [
         "Gendannelsessætning"
       ],
+      "Remove": [
+        "Fjern"
+      ],
+      "Repeat backup password": [
+        "Gentag adgangskode til sikkerhedskopi"
+      ],
       "Reply (ACS) URL": [
         "Svar (ACS) URL"
       ],
@@ -5550,6 +5635,9 @@
       ],
       "Reveal password": [
         "Vis adgangskode"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
       ],
       "Search": [
         "Søg"
@@ -5586,6 +5674,9 @@
       ],
       "System information": [
         "Systemoplysninger"
+      ],
+      "Thomas": [
+        "Kim"
       ],
       "Two-password mode": [
         "To-adgangskodetilstand"
@@ -5957,6 +6048,9 @@
       "Australian dollar": [
         "Australske Dollars"
       ],
+      "Brazilian real": [
+        "Brasiliansk real"
+      ],
       "British pound": [
         "Britisk pund"
       ],
@@ -6007,6 +6101,9 @@
       ],
       "From ${ price }": [
         "Fra ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Fra ${ priceMailPlus }"
@@ -6148,6 +6245,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-mailadresser/aliasser"
+      ],
+      "10 more premium features": [
+        "10 flere premium-funktioner"
       ],
       "10-year file version history": [
         "10-års fil-versionshistorik"
@@ -6446,6 +6546,9 @@
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
       ],
+      "TOR over VPN": [
+        "Tor over VPN"
+      ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
       ],
@@ -6673,6 +6776,9 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } Prøveversion"
       ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Få Mail Plus for ${ priceCoupon }"
+      ],
       "Your account's usage": [
         "Din kontos forbrug"
       ]
@@ -6740,6 +6846,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opret op til ${ n } e-mailadresser/aliasser, som du kan tildele familiemedlemmer. Brug dem til onlineidentiteter, f.eks. JohnShopper@${ domain } til shoppingkonti."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedikerede servere med dedikerede IP adresser kan tilføjes til private gateways for at finjustere adgangen"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere"
@@ -6833,6 +6942,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Nulstil brugeradgangskoder og nulstil to-faktor-godkendelse på brugere"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Send din internettrafik gennem TOR-netværket med ét enkelt tryk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -6976,8 +7088,14 @@
       "${ BRAND_NAME } offers and promotions": [
         "${ BRAND_NAME } tilbud og kampagner"
       ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME }-produktannonceringer"
+      ],
       "${ BRAND_NAME } user survey": [
         "${ BRAND_NAME } brugerundersøgelse"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME }-velkomstmails"
       ],
       "1 email per month": [
         "1 e-mail pr. måned"
@@ -7362,6 +7480,20 @@
       "${ n } user account": [
         "${ n } brugerkonto",
         "${ n } brugerkonti"
+      ],
+      "Activity log": [
+        "Aktivitetslog"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle premium-tjenester. 6 brugere. 1 nemt abonnement."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Fås til ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Vi præsenterer ${ passFamilyPlanName }"
       ]
     },
     "password_reset: info": {
@@ -7439,6 +7571,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Brug en datagendannelsesmetode, kontakt en anden administrator, eller nulstil organisationsnøglen for at gendanne administratorrettigheder."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Vi kunne ikke bekræfte ægtheden af denne identitet."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Vi kunne ikke bekræfte sikkerheden af denne afsenderes adressenøgle. Nogle gange er der en forsinkelse i opdateringen af afsenderens oplysninger. Prøv igen senere. Hvis du ikke har tillid til gyldigheden af denne invitation eller afsender, skal du kontakte ${ BRAND_NAME } kundesupport."
       ],
@@ -7459,6 +7594,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankoverførsel"
+      ],
       "Credit/debit card": [
         "Kredit/debetkort"
       ],
@@ -7517,6 +7655,18 @@
       ],
       "Select billing country to pay": [
         "Vælg faktureringsland for at betale"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måneder. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ renewPrice } i ${ subscriptionLengthCopy } måneder. Du kan annullere når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måneder. Derefter fornys den automatisk til ${ renewPrice } i ${ subscriptionLengthCopy } måneder. Du kan annullere når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Den særlige rabatpris på ${ priceWithDiscount } gælder forden første måned. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ renewPrice } i ${ subscriptionLength } måned. Du kan annullere når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første måned. Derefter vil den automatisk blive fornyet til ${ renewPrice } hver måned. Du kan annullere når som helst."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transaktionen er registreret korrekt. Beløbet bliver overført til din konto, når transaktionen er blevet bekræftet."
@@ -7668,28 +7818,9 @@
         "Medlemmer"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "så ${ contactHref } vores salgsteam."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Vælg det antal IP'er, du vil inkludere i dit abonnement. Hver ekstra IP koster ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Hvis du skulle have brug for flere end ${ maxIPs } IP-adresse, ",
-        "Hvis du skulle have brug for flere end ${ maxIPs } IP-adresser, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontakt"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Vælg det antal brugere, du vil inkludere i dit abonnement. Hver ekstra bruger koster ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Hvis du har brug for mere end ${ maxUsers } brugerkonto, bedes du ${ contact } vores salgsteam.",
-        "Hvis du har brug for mere end ${ maxUsers } brugerkonti, bedes du ${ contact } vores salgsteam."
       ]
     },
     "Price": {
@@ -7869,6 +8000,12 @@
       "For security reasons, the token is hidden": [
         "Af hensyn til sikkerheden er tokenet skjult"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Gå til din identitetsudbyder, kopier og indsæt data nedenfor, og afslut konfigurationen af SCIM for ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Gå til din identitetsudbyder, kopier og indsæt tokenet nedenfor, og genaktiver SCIM for ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Hvis du har mistet eller glemt SCIM-tokenet, kan du generere et nyt, men vær opmærksom på, at indstillingerne for din identitetsudbyder skal opdateres."
       ],
@@ -7877,6 +8014,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Så snart SCIM er deaktiveret for din organisation, bliver **alle SCIM-brugere, der tildeles automatisk af din identitetsudbyder, omdannet til SSO-brugere**, og du vil kunne styre dem direkte i ${ BRAND_NAME }-indstillingerne."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Brugeradministration forenkles på tværs af forskellige tjenester. Tilføj, rediger og fjern brugere i din identitetsudbyder, og disse ændringer anvendes automatisk i din ${ appName }-organisation."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM's automatiske provisionering deaktiveres, indtil du indtaster det nye SCIM-token via din identitetsudbyders indstillinger."
@@ -8171,6 +8311,9 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Vi kontakter dig igen, når nulstillingen af adgangskoden er tilgængelig."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Du kan til enhver tid tjekke status for din anmodning ${ accountAndPasswordSectionLink } i indstillingerne."
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8457,11 +8600,26 @@
       ]
     },
     "sso": {
+      "Access denied": [
+        "Adgang nægtet"
+      ],
+      "Ask administrator for help": [
+        "Spørg administrator om hjælp"
+      ],
+      "Backup password": [
+        "Adgangskode til sikkerhedskopi"
+      ],
       "Cancel": [
         "Annuller"
       ],
+      "Confirmation code": [
+        "Bekræftelseskode"
+      ],
       "Deny": [
         "Afslå"
+      ],
+      "Devices available": [
+        "Tilgængelige enheder"
       ],
       "Grant": [
         "Tildel"
@@ -8472,11 +8630,44 @@
       "Invalid confirmation code": [
         "Ugyldig bekræftelseskode"
       ],
+      "New backup password": [
+        "Ny adgangskode til sikkerhedskopi"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Ikke-SSO brugere (oprettet manuelt, ikke leveret af din identitetsudbyder) kan stadig logge ind på din organisation."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Når single sing-on er deaktiveret for din organisation:"
+      ],
       "Remove single sign-on": [
         "Fjern single sign-on"
       ],
+      "Remove single sign-on for your organization?": [
+        "Fjern single sign-on for din organisation?"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Del bekræftelseskoden med din administrator"
+      ],
       "Sign in": [
         "Log ind"
+      ],
+      "Sign in to your organization": [
+        "Log ind på din organisation"
+      ],
+      "Single sign-on removed": [
+        "Single sign-on fjernet"
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "For at sikre, at det virkelig er dig, der forsøger at logge ind på **${ email }**, bedes du gennemgå bekræftelseskoden og godkende anmodningen fra en anden enhed."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "For at sikre, at det virkelig er dig, der forsøger at logge ind, bedes du dele bekræftelseskoden med din administrator **,${ adminEmail }** som dermed kan godkende anmodningen for **${ email }**."
+      ],
+      "Use backup password instead": [
+        "Brug adgangskode til sikkerhedskopi i stedet"
+      ],
+      "User details:": [
+        "Brugerdetaljer:"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du bliver omdirigeret til din tredjeparts SSO-udbyder."
@@ -8801,6 +8992,9 @@
         "${ planNumberOfUsers } bruger",
         "${ planNumberOfUsers } brugere"
       ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } avanceret kontobeskyttelse"
+      ],
       "2 users": [
         "2 brugere"
       ],
@@ -8840,6 +9034,9 @@
       "Comprehensive privacy and security": [
         "Omfattende privatlivs- og sikkerhedsbeskyttelse"
       ],
+      "Dark web monitoring": [
+        "Overvågning af det mørke net"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "Understøtter skrivebordsapp og e-mailklient (via IMAP)"
       ],
@@ -8857,6 +9054,9 @@
       ],
       "Extra storage and users": [
         "Ekstra lagerplads og brugere"
+      ],
+      "Folders, labels and filters": [
+        "Mapper, etiketter og brugerdefinerede filtre"
       ],
       "Folders, labels, and custom filters": [
         "Mapper, etiketter og brugerdefinerede filtre"
@@ -8879,11 +9079,20 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Sådan støttede vi lokale aktivister, da privatliv og ytringsfriheden blev truet i Hong Kong."
       ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Hvis du overskrider grænserne for det gratis abonnement, kan du ikke:"
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Hvis dit forbrug overskrider grænserne for det gratis abonnement, kan du opleve begrænset adgang til produktfunktioner og dine data."
+      ],
       "Invited members will be removed from your organization": [
         "Inviterede medlemmer vil blive fjernet fra din organisation"
       ],
       "Keep ${ config.planName }": [
         "Bevar ${ config.planName }"
+      ],
+      "Keep subscription": [
+        "Bevar abonnement"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Hold dit team sikkert på farten med vores apps til web, iOS, Android, Windows, Mac og Linux."
@@ -8951,6 +9160,9 @@
       "Unlimited privacy for two": [
         "Ubegrænset privatliv for to"
       ],
+      "Upload any new files": [
+        "Uploade nogen nye filer"
+      ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
         "Brugerabonnementer er ${ BRAND_NAME }s eneste indtægt. Din støtte holder os uafhængige, fremmer vores mission for online privatliv og hjælper aktivister og organisationer, der kæmper for frihed."
       ],
@@ -8974,6 +9186,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "Ved opsigelse af ${ planName } bliver du nedgraderet til ${ BRAND_NAME } Free, som kun tilbyder op til 1 GB mail-lagerplads og op til 5 GB drev-lagerplads. Dit team vil opleve afbrydelser i deres arbejde, eftersom yderligere brugere ikke understøttes på det gratis abonnement."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Når dit ${ planName }-abonnement udløber ${ expiryDate }, vil du blive nedgraderet til abonnementet ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Årlige gratis lagerbonusser"
@@ -9383,6 +9598,9 @@
       "Action": [
         "Handling"
       ],
+      "Actions": [
+        "Handlinger"
+      ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"
       ],
@@ -9461,11 +9679,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-all address": [
-        "Catch-all-adresse"
-      ],
       "Catch-All address": [
         "Catch-All-adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -9579,6 +9797,9 @@
       ],
       "Delete user?": [
         "Slet bruger?"
+      ],
+      "Device": [
+        "Enhed"
       ],
       "Device connected!": [
         "Enhed tilsluttet!"
@@ -10134,6 +10355,9 @@
       ],
       "User declined invitation": [
         "Bruger afviste invitation"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Venter på, at brugeren accepterer invitationen"
       ]
     },
     "Tor out of date": {
@@ -10141,7 +10365,21 @@
         "stabil udgave"
       ]
     },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Tilbageførsel"
+      ],
+      "Failed": [
+        "Mislykkedes"
+      ],
+      "Success": [
+        "Lykkedes"
+      ]
+    },
     "Transaction type display as badge": {
+      "Authorization": [
+        "Bemyndigelse"
+      ],
       "Bank transfer": [
         "Bankoverførsel"
       ],
@@ -10150,6 +10388,9 @@
       ],
       "Cash": [
         "Kontant"
+      ],
+      "Chargeback": [
+        "Tilbageførsel"
       ],
       "Credit": [
         "Kredit"
@@ -10162,6 +10403,12 @@
       ],
       "Migration": [
         "Migration"
+      ],
+      "Payment": [
+        "Betaling"
+      ],
+      "Refund": [
+        "Refundering"
       ]
     },
     "unprivatization": {
@@ -10170,6 +10417,9 @@
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Hvis brugeren gøres privat, kan du ikke hjælpe til med at få adgang til deres data eller konto igen."
+      ],
+      "Cancel request": [
+        "Annullér anmodning"
       ],
       "Confirm all": [
         "Bekræft alle"
@@ -10200,6 +10450,9 @@
       ],
       "The user must have an address to request data access": [
         "Brugeren skal have en adresse for at anmode om dataadgang"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Dette vil annuller afventende anmodning om administratoradgang til brugerens data eller nulstilling af adgangskode."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Dette vil tilbagekalde administratorens tilladelse til at håndtere denne brugers konto."
@@ -10292,6 +10545,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Administratorer kan ikke tilgå private brugeres data"
+      ],
+      "Inactive": [
+        "Inaktiv"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invitation sendt, afventer svar fra det inviterede medlem"
@@ -10442,6 +10698,11 @@
       ],
       "Your ${ selected } plan": [
         "Dit ${ selected }-abonnement"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
       ]
     },
     "wallet_signup_2024: Info": {

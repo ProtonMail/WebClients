@@ -220,6 +220,9 @@
       "Discard changes": [
         "Odrzuć zmiany"
       ],
+      "Dismiss": [
+        "Odrzuć"
+      ],
       "Domain name": [
         "Nazwa domeny"
       ],
@@ -306,6 +309,9 @@
       ],
       "Forgot recovery method?": [
         "Nie pamiętasz metody odzyskiwania?"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Wybierz plan ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "Wybierz plan ${ vpnPlus }"
@@ -964,6 +970,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwsze ${ cycle } miesięcy. Odnowienie nastąpi w obniżonej cenie ${ nextPrice } za ${ renewalLength } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Specjalnie obniżona cena wynosząca ${ discountedPrice } obowiązuje przez pierwszy miesiąc. Następnie będzie miało miejsce automatyczne odnowienie i cena wyniesie ${ nextPrice } w każdym miesiącu. Można anulować w dowolnym momencie."
       ]
@@ -1155,6 +1164,9 @@
         "Automatyczne odnowienie co ${ renewLength } miesiące w kwocie ${ renewPrice }",
         "Automatyczne odnowienie co ${ renewLength } miesięcy w kwocie ${ renewPrice }",
         "Automatyczne odnowienie co ${ renewLength } miesięcy w kwocie ${ renewPrice }"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Automatyczne odnowienie w ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -1260,6 +1272,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Zmień ustawienia adresu e-mail"
+      ],
+      "Continue": [
+        "Kontynuuj"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ],
@@ -2701,6 +2719,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
       ],
+      "Please enter a valid entity ID URL": [
+        "Wpisz prawidłowy adres URL identyfikatora jednostki"
+      ],
       "Please generate keys before you try to change your password": [
         "Wygeneruj klucze, zanim spróbujesz zmienić hasło"
       ],
@@ -3724,9 +3745,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Skontaktuj się ze swoim administratorem."
       ],
-      "Account size": [
-        "Rozmiar konta"
-      ],
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
       ],
@@ -3769,8 +3787,8 @@
         "Dodawanie serwerów bramy: ${ serverNumber } / ${ total }",
         "Dodawanie serwerów bramy: ${ serverNumber } / ${ total }"
       ],
-      "Additional options": [
-        "Dodatkowe opcje"
+      "Address copied to clipboard": [
+        "Adres został skopiowany do schowka"
       ],
       "Admin account allocation": [
         "Przestrzeń dyskowa administratora"
@@ -3889,6 +3907,9 @@
       "Change your password": [
         "Zmień hasło"
       ],
+      "Choose an Entity ID to continue.": [
+        "Wybierz Identyfikator jednostki, aby kontynuować."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
@@ -3907,6 +3928,9 @@
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Kontynuuj łączenie organizacji **${ organizationValue.Name }** z organizacją ${ BRAND_NAME }."
       ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Kontynuuj łączenie jednostki z organizacją ${ BRAND_NAME }."
+      ],
       "Continue with ${ freeName }": [
         "Kontynuuj z planem ${ freeName }"
       ],
@@ -3924,12 +3948,6 @@
       ],
       "Country code": [
         "Kod kraju"
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Utwórz bezpieczną chmurę dla ${ n } użytkownika",
-        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
-        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
-        "Utwórz bezpieczną chmurę dla ${ n } użytkowników"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Twórz subkonta i zarządzaj nimi, a także przypisuj im adresy e-mail w niestandardowej domenie."
@@ -3964,14 +3982,17 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
       ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
+      ],
+      "default email address": [
+        "domyślny adres e-mail"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Usuń wszystkie inne rekordy MX lub upewnij się, że priorytet rekordu ${ MAIL_APP_NAME } posiada najniższy numer."
@@ -4054,14 +4075,11 @@
       "Edit email address": [
         "Edytuj adres e-mail"
       ],
-      "EduGain configuration saved": [
+      "eduGAIN configuration saved": [
         "Konfiguracja eduGAIN została zapisana"
       ],
       "email": [
         "adres e-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Poczta e-mail dla 10 niestandardowych domen za darmo. Dodatkowe domeny możesz dodać za ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Poczta e-mail jest dostępna tylko dla Twoich domen. Rejestracja domeny przez ${ BRAND_NAME } nie jest obecnie dostępna. Możesz uzyskać pocztę dla domeny zarejestrowanej u dowolnego dostawcy."
@@ -4104,6 +4122,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Wpisz kod wysłany na ${ email }. Jeśli nie znajdziesz wiadomości w swojej skrzynce odbiorczej, sprawdź folder Spam."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Wpisz identyfikator jednostki organizacji **eduGAIN** dla domeny **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Wpisz hasło organizacji, aby przywrócić uprawnienia administratora. ${ learnMore }"
@@ -4417,6 +4438,9 @@
       "Member": [
         "Użytkownik"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Wiadomości wysyłane na wszystkie adresy e-mail będą kierowane do skrzynki odbiorczej."
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -4452,9 +4476,6 @@
       ],
       "No Gateways yet": [
         "Brak bram"
-      ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Brak organizacji z włączoną funkcją **eduGAIN** dla domeny **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Płatność nie jest wymagana."
@@ -4636,6 +4657,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
+      "Registering your subscription...": [
+        "Rejestrowanie subskrypcji..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Pamiętaj, aby udostępnić użytkownikowi dane logowania."
       ],
@@ -4687,17 +4711,14 @@
       "Securing your account": [
         "Zabezpieczenie konta"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Wybierz organizację z włączoną funkcją **eduGAIN** dla domeny **${ domain.DomainName }**."
-      ],
       "Select one or multiple user affiliations": [
         "Wybierz jednego lub wielu powiązanych użytkowników"
       ],
       "Select recently used servers": [
         "Wybierz ostatnio używane serwery"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "Wybierz powiązanego użytkownika z organizacji **${ organizationValue.Name }** (${ organizationValue.EntityId }), którego chcesz dopuścić do organizacji ${ BRAND_NAME }:"
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Wybierz powiązanych użytkowników ${ getFormattedOrganization }, których chcesz dopuścić do organizacji ${ BRAND_NAME }:"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Wyślij wiadomości, aby zachęcić użytkowników do ochrony swoich kont za pomocą uwierzytelniania dwustopniowego."
@@ -4713,6 +4734,9 @@
       ],
       "Session timed out": [
         "Upłynął limit czasu sesji"
+      ],
+      "Setting up your new address...": [
+        "Konfiguracja nowego adresu..."
       ],
       "Setting up your organization": [
         "Konfiguracja organizacji"
@@ -4740,6 +4764,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "Rekord SPF określa serwery, które mogą wysyłać wiadomości z Twojej domeny. Sprawdź, czy następujący rekord TXT został dodany w panelu sterowania u rejestratora domeny."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
       ],
       "Step ${ step }": [
         "Krok ${ step }",
@@ -4852,11 +4879,11 @@
       "This file is too large to preview": [
         "Plik jest zbyt duży do podglądu"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "To Twój ${ defaultEmailAddress } do wysyłania nowych wiadomości."
+      ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Wiadomość nie zostanie dostarczona do pomocy technicznej. Jeśli masz problem z naszą usługą lub potrzebujesz dalszej pomocy, ${ supportLink }."
-      ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Organizację z włączoną funkcją **eduGAIN** dla domeny **${ domain.DomainName }**."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Ten użytkownik jest obecnie odpowiedzialny za płatności w Twojej organizacji. Obniżając status tego użytkownika, staniesz się jednocześnie odpowiedzialny za płatności."
@@ -5011,11 +5038,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "Username": [
-        "Nazwa użytkownika"
-      ],
       "username": [
         "nazwa użytkownika"
+      ],
+      "Username": [
+        "Nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -5401,11 +5428,6 @@
         "Tylko do odczytu"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asystent sztucznej inteligencji, który pomaga tworzyć lepsze wiadomości, szybko i bez wysiłku."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Adres e-mail nie jest prawidłowy"
@@ -5715,6 +5737,9 @@
       "Entity ID": [
         "Identyfikator jednostki"
       ],
+      "Entity ID URL": [
+        "Adres URL identyfikatora jednostki"
+      ],
       "Event": [
         "Zdarzenie"
       ],
@@ -5897,6 +5922,9 @@
       ],
       "Recovery phrase": [
         "Hasło odzyskiwania"
+      ],
+      "Remove": [
+        "Usuń"
       ],
       "Repeat backup password": [
         "Potwierdź hasło zapasowe"
@@ -6404,6 +6432,9 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Od ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Od ${ priceMailPlus }"
       ],
@@ -6581,6 +6612,9 @@
       ],
       "10 email addresses/aliases": [
         "10 adresów e-mail / aliasów"
+      ],
+      "10 more premium features": [
+        "10 więcej funkcji premium"
       ],
       "10-year file version history": [
         "10-letnia historia wersji plików"
@@ -7130,6 +7164,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Wybierz plan Mail Plus za ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Obniżona cena ${ priceCoupon } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ priceMailPlus }. Możesz anulować w dowolnym momencie."
       ],
       "Your account's usage": [
         "Użycie konta"
@@ -8068,6 +8108,15 @@
       "Select billing country to pay": [
         "Wybierz kraj"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesięcy. Kupon jest ważny na ${ couponRedemptions } odnowień. Odnowienie nastąpi w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesięcy. Odnowienie nastąpi w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Kupon jest ważny na ${ couponRedemptions } odnowień. Odnowienie nastąpi w cenie ${ renewPrice } za ${ subscriptionLength } miesiąc. Możesz anulować w dowolnym momencie."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
@@ -8235,32 +8284,9 @@
         "Członkowie"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } z naszym zespołem sprzedaży."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Wybierz liczbę adresów IP w planie. Każdy dodatkowy adres IP kosztuje ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Jeśli potrzebujesz więcej niż ${ maxIPs } adres IP, ",
-        "Jeśli potrzebujesz więcej niż ${ maxIPs } adresy IP, ",
-        "Jeśli potrzebujesz więcej niż ${ maxIPs } adresów IP, ",
-        "Jeśli potrzebujesz więcej niż ${ maxIPs } adresów IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "skontaktuj się"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Wybierz liczbę użytkowników w planie. Każdy dodatkowy użytkownik kosztuje ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Jeśli potrzebujesz więcej niż ${ maxUsers } użytkownika, ${ contact } z naszym zespołem sprzedaży.",
-        "Jeśli potrzebujesz więcej niż ${ maxUsers } użytkowników, ${ contact } z naszym zespołem sprzedaży.",
-        "Jeśli potrzebujesz więcej niż ${ maxUsers } użytkowników, ${ contact } z naszym zespołem sprzedaży.",
-        "Jeśli potrzebujesz więcej niż ${ maxUsers } użytkowników, ${ contact } z naszym zespołem sprzedaży."
       ]
     },
     "Price": {
@@ -8546,6 +8572,9 @@
       ],
       "Invoice": [
         "Faktura"
+      ],
+      "Transactions": [
+        "Transakcje"
       ]
     },
     "Select search results": {
@@ -10418,10 +10447,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -10925,6 +10954,9 @@
       "Unlock your data": [
         "Odblokuj dane"
       ],
+      "Upgrade complete!": [
+        "Ulepszenie zakończone!"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Ulepsz ochronę sieci za pomocą dedykowanych serwerów"
       ],
@@ -10973,6 +11005,9 @@
       "Your plan": [
         "Twój plan"
       ],
+      "Your shorter address is now ready": [
+        "Krótszy adres jest już gotowy"
+      ],
       "Your subscriptions": [
         "Twoja subskrypcja"
       ]
@@ -10991,6 +11026,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Faktura ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "Transakcja ${ MAIL_APP_NAME }"
       ]
     },
     "Title header for addresses domain table": {
@@ -11154,7 +11192,33 @@
         "Ta wersja przeglądarki Tor nie jest obsługiwana. Zaktualizuj ją do najnowszej ${ stableRelease }"
       ]
     },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Chargeback"
+      ],
+      "Failed": [
+        "Niepowodzenie"
+      ],
+      "Needs attention": [
+        "Wymaga uwagi"
+      ],
+      "Refunded": [
+        "Zwrócono"
+      ],
+      "Success": [
+        "Powodzenie"
+      ],
+      "Timeout": [
+        "Przekroczono limit czasu"
+      ],
+      "Voided": [
+        "Unieważniono"
+      ]
+    },
     "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Korekta środków"
+      ],
       "Authorization": [
         "Autoryzacja"
       ],
@@ -11170,11 +11234,26 @@
       "Chargeback": [
         "Chargeback"
       ],
+      "Credit": [
+        "Środki"
+      ],
+      "Credit transfer": [
+        "Przeniesienie środków"
+      ],
       "Currency conversion": [
         "Przeliczenie walut"
       ],
+      "Gift card": [
+        "Karta podarunkowa"
+      ],
+      "Migration": [
+        "Migracja"
+      ],
       "Payment": [
         "Płatność"
+      ],
+      "Payment reversal": [
+        "Cofnięcie płatności"
       ],
       "Refund": [
         "Zwrot"
