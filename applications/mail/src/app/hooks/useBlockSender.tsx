@@ -85,6 +85,13 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
         // Close dropdown in order to avoid having modal and dropdown opened at same time
         onCloseDropdown?.();
 
+        /*sendSimpleActionReport({
+            actionType: ACTION_TYPE.BLOCK_SENDER,
+            actionLocation: SOURCE_ACTION.CONTEXT_MENU,
+            numberMessage: SELECTED_RANGE.ONE,
+            folderLocation: displayedFolder,
+        });*/
+
         if (mailSettings.BlockSenderConfirmation !== BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK) {
             await handleShowBlockSenderModal({ onConfirm: handleSubmitBlockSender, senders, mailSettings });
         } else {

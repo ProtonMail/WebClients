@@ -6,6 +6,7 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import type { Props as ListSettingsProps } from '../list/ListSettings';
+import type { SOURCE_ACTION } from '../list/useListTelemetry';
 import SelectAll from './SelectAll';
 import ToolbarColumnWide from './ToolbarColumnWide';
 import ToolbarHeaderMessageNarrow from './ToolbarHeaderMessageNarrow';
@@ -35,9 +36,9 @@ export interface Props extends ListSettingsProps {
     onPage: (page: number) => void;
     onBack: () => void;
     onElement: (elementID: string | undefined) => void;
-    onMarkAs: (status: MARK_AS_STATUS) => Promise<void>;
-    onMove: (labelID: string) => Promise<void>;
-    onDelete: () => Promise<void>;
+    onMarkAs: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => Promise<void>;
+    onMove: (labelID: string, sourceAction: SOURCE_ACTION) => Promise<void>;
+    onDelete: (sourceAction: SOURCE_ACTION) => Promise<void>;
     labelDropdownToggleRef: Ref<() => void>;
     moveDropdownToggleRef: Ref<() => void>;
     bordered?: boolean;

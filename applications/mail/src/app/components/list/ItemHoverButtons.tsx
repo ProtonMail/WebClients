@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import { Tooltip } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
+import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
@@ -20,6 +21,7 @@ import { useStar } from '../../hooks/actions/useStar';
 import type { Element } from '../../models/element';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import SnoozeDropdown from './snooze/containers/SnoozeDropdown';
+import { SOURCE_ACTION, folderLocation } from './useListTelemetry';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
 const { ARCHIVE, TRASH } = MAILBOX_LABEL_IDS;
@@ -49,11 +51,14 @@ const ItemHoverButtons = ({
     const star = useStar();
     const snoozedElement = useMailSelector(selectSnoozeElement);
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
+    const [folders = []] = useFolders();
+    const [labels = []] = useLabels();
 
     const [loadingStar, withLoadingStar] = useLoading();
 
     const isUnread = testIsUnread(element, labelID);
     const isStarred = testIsStarred(element || ({} as Element));
+    const displayedFolder = folderLocation(labelID, labels, folders);
 
     const handleMarkAs = (event: MouseEvent) => {
         event.stopPropagation();
@@ -64,6 +69,8 @@ const ItemHoverButtons = ({
             elements: [element],
             labelID,
             status: isUnread ? READ : UNREAD,
+            sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
+            currentFolder: displayedFolder,
         });
     };
 
@@ -74,6 +81,9 @@ const ItemHoverButtons = ({
             sourceLabelID: labelID,
             destinationLabelID: ARCHIVE,
             folderName: c('Title').t`Archive`,
+            sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
+            currentFolder: displayedFolder,
+            percentUnread: 1,
         });
     };
 
@@ -84,13 +94,16 @@ const ItemHoverButtons = ({
             sourceLabelID: labelID,
             destinationLabelID: TRASH,
             folderName: c('Title').t`Trash`,
+            sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
+            currentFolder: displayedFolder,
+            percentUnread: 1,
         });
     };
 
     const handlePermanentDelete = (event: MouseEvent) => {
         event.stopPropagation();
         event.preventDefault();
-        permanentDelete([element.ID]);
+        permanentDelete([element.ID], SOURCE_ACTION.HOVER_BUTTONS, displayedFolder);
         return false;
     };
 
@@ -98,7 +111,7 @@ const ItemHoverButtons = ({
         event.stopPropagation();
 
         if (!loadingStar) {
-            void withLoadingStar(star([element], !isStarred));
+            void withLoadingStar(star([element], !isStarred, SOURCE_ACTION.HOVER_BUTTONS, displayedFolder));
         }
     };
 
@@ -174,7 +187,7 @@ const ItemHoverButtons = ({
                     </Button>
                 </Tooltip>
 
-                <SnoozeDropdown elements={[element]} size={size} labelID={labelID} />
+                <SnoozeDropdown elements={[element]} size={size} labelID={labelID} labels={labels} folders={folders} />
                 {hasStar && (
                     <Tooltip title={starAlt} tooltipClassName="pointer-events-none">
                         <Button
