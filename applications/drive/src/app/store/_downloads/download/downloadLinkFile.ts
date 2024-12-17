@@ -93,7 +93,7 @@ export default function initDownloadLinkFile(
             keysPromise = callbacks.getKeys(abortSignal, link);
         }
         const keys = await keysPromise;
-        const verificationKeys = keys.isAnonymous ? [keys.privateKey] : keys.addressPublicKeys;
+        const verificationKeys = link.isAnonymous ? [keys.privateKey] : keys.addressPublicKeys;
         const { verified } = await CryptoProxy.verifyMessage({
             binaryData: hash,
             verificationKeys: verificationKeys || [],

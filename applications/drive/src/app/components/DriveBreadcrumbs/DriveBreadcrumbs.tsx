@@ -63,7 +63,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                                 <SignatureIcon
                                     isFile={link.isFile}
                                     signatureIssues={link.signatureIssues}
-                                    isAnonymous={!link.activeRevision?.signatureEmail && !link.signatureEmail}
+                                    isAnonymous={link.isAnonymous}
                                     className="mr-1"
                                 />
                                 <span className="text-pre text-ellipsis">{name}</span>
