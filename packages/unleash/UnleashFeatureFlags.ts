@@ -137,6 +137,7 @@ enum MailFeatureFlag {
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     MailMetrics = 'MailMetrics',
     RemoveImageMetadata = 'RemoveImageMetadata',
+    MailWebListTelemetry = 'MailWebListTelemetry',
 }
 
 enum AdminFeatureFlag {

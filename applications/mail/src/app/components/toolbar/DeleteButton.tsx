@@ -7,9 +7,11 @@ import { metaKey } from '@proton/shared/lib/helpers/browser';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
+import { SOURCE_ACTION } from '../list/useListTelemetry';
+
 interface Props {
     selectedIDs: string[];
-    onDelete: () => Promise<void>;
+    onDelete: (sourceAction: SOURCE_ACTION) => Promise<void>;
 }
 
 const DeleteButton = ({ onDelete, selectedIDs = [] }: Props) => {
@@ -29,7 +31,7 @@ const DeleteButton = ({ onDelete, selectedIDs = [] }: Props) => {
     return (
         <ToolbarButton
             title={titleDelete}
-            onClick={() => withLoading(onDelete())}
+            onClick={() => withLoading(onDelete(SOURCE_ACTION.TOOLBAR))}
             disabled={loading || !selectedIDs.length}
             data-testid="toolbar:deletepermanently"
             icon={<Icon name="cross-circle" alt={c('Action').t`Delete permanently`} />}

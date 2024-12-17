@@ -13,6 +13,7 @@ import { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
@@ -42,6 +43,7 @@ export interface MailboxHotkeysContext {
     columnLayout: boolean;
     isMessageOpening: boolean;
     location: Location;
+    currentFolder: string;
 }
 
 export interface MailboxHotkeysHandlers {
@@ -72,6 +74,7 @@ export const useMailboxHotkeys = (
         columnLayout,
         isMessageOpening,
         location,
+        currentFolder,
     }: MailboxHotkeysContext,
     {
         handleBack,
@@ -137,6 +140,8 @@ export const useMailboxHotkeys = (
             folderName,
             selectAll,
             onCheckAll: handleCheckAll,
+            sourceAction: SOURCE_ACTION.SHORTCUTS,
+            currentFolder,
         });
         if (elementIDForList) {
             handleBack();
@@ -315,6 +320,8 @@ export const useMailboxHotkeys = (
                         status: MARK_AS_STATUS.UNREAD,
                         selectAll,
                         onCheckAll: handleCheckAll,
+                        sourceAction: SOURCE_ACTION.SHORTCUTS,
+                        currentFolder: currentFolder,
                     });
                 }
             },
@@ -334,6 +341,8 @@ export const useMailboxHotkeys = (
                         status: MARK_AS_STATUS.READ,
                         selectAll,
                         onCheckAll: handleCheckAll,
+                        sourceAction: SOURCE_ACTION.SHORTCUTS,
+                        currentFolder: currentFolder,
                     });
                 }
             },
@@ -372,7 +381,7 @@ export const useMailboxHotkeys = (
                     }
                     e.stopPropagation();
                     const isAllStarred = elements.filter((element) => isStarred(element)).length === elements.length;
-                    await star(elements, !isAllStarred);
+                    await star(elements, !isAllStarred, SOURCE_ACTION.SHORTCUTS, currentFolder);
                 }
             },
         ],
@@ -392,7 +401,12 @@ export const useMailboxHotkeys = (
                     if (!elements.length) {
                         return;
                     }
-                    await permanentDelete(elements.map((e) => e.ID).filter(isTruthy), selectAll);
+                    await permanentDelete(
+                        elements.map((e) => e.ID).filter(isTruthy),
+                        SOURCE_ACTION.SHORTCUTS,
+                        currentFolder,
+                        selectAll
+                    );
                 }
             },
         ],

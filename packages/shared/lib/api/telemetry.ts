@@ -26,6 +26,7 @@ export enum TelemetryMeasurementGroups {
     mailPostSubscriptionEvents = 'any.web.post_subscription_events',
     mailDesktopDefaultMailto = 'mail.desktop.default_mailto',
     mailDesktopDailyStats = 'mail.desktop.daily_stats',
+    mailActions = 'mail.web.clicks_mail_actions',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     paymentsFlow = 'payments.flow',
@@ -228,6 +229,10 @@ export enum TelemetryProtonTipsEvents {
     tipSnoozed = 'tip_snoozed',
 }
 
+export enum TelemetryMailListEvents {
+    clicksMailListActions = 'clicks_mail_actions',
+}
+
 export enum TelemetrySmartBannerEvents {
     clickAppStoreLink = 'click_app_store_link',
 }
@@ -254,6 +259,7 @@ export type TelemetryEvents =
     | TelemetryAccountCancellationEvents
     | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents
+    | TelemetryMailListEvents
     | TelemetryMailSelectAllEvents
     | TelemetryMailComposerAssistantEvents
     | TelemetryMailOnboardingEvents

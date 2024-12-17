@@ -29,6 +29,7 @@ import { useGetMessage } from '../../hooks/message/useMessage';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import useShouldMoveOut from '../../hooks/useShouldMoveOut';
 import { removeAllQuickReplyFlags } from '../../store/messages/draft/messagesDraftActions';
+import { SOURCE_ACTION } from '../list/useListTelemetry';
 import type { MessageViewRef } from '../message/MessageView';
 import MessageView from '../message/MessageView';
 import ConversationErrorBanner from './ConversationErrorBanner';
@@ -53,6 +54,7 @@ interface Props {
     loadingElements: boolean;
     elementIDs: string[];
     conversationMode: boolean;
+    currentFolder: string;
 }
 
 const DEFAULT_FILTER_VALUE = true;
@@ -72,6 +74,7 @@ const ConversationView = ({
     loadingElements,
     elementIDs,
     conversationMode,
+    currentFolder,
 }: Props) => {
     const dispatch = useMailDispatch();
     const getMessage = useGetMessage();
@@ -178,6 +181,8 @@ const ConversationView = ({
                 elements: [conversation],
                 labelID,
                 status: MARK_AS_STATUS.READ,
+                sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
+                currentFolder: currentFolder,
             });
         }
     }, [conversation]);
@@ -247,6 +252,7 @@ const ConversationView = ({
                             wrapperRef={wrapperRef}
                             onOpenQuickReply={handleOpenQuickReply}
                             onReadMessage={handleReadMessage}
+                            currentFolder={currentFolder}
                         />
                     ))}
                 </div>
