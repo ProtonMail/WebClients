@@ -321,12 +321,22 @@ export const useBitcoinAddresses = ({
                         return;
                     }
 
-                    // Mark all addresses below in range [0, LastUsedIndex[ as used to avoid reusing them
-                    await accountChainData.account.markReceiveAddressesUsedTo(0, account.LastUsedIndex);
+                    const highestIndexInOutput =
+                        (await accountChainData.account.getHighestUsedAddressIndexInOutput()) ?? 0;
+                    const highestIndex = Math.max(highestIndexInOutput + 1, account.LastUsedIndex); // +1 to exclude it from used addresses
+                    if (highestIndex > account.LastUsedIndex) {
+                        try {
+                            // Update last used index to avoid reusing the new address
+                            // LastUsedIndex is actually the next index to use in case of a refresh
+                            await api.wallet.updateWalletAccountLastUsedIndex(wallet.ID, account.ID, highestIndex);
+                        } catch {}
+                    }
+                    // Mark all addresses below in range [0, highestIndex[ as used to avoid reusing them
+                    await accountChainData.account.markReceiveAddressesUsedTo(0, highestIndex);
 
                     await manageBitcoinAddressPool({ wallet, account, accountChainData });
 
-                    const receiveBitcoinAddress = await accountChainData.account.getNextReceiveAddress();
+                    const receiveBitcoinAddress = await accountChainData.account.peekReceiveAddress(highestIndex);
 
                     const generateNewReceiveAddress = async () => {
                         if (isSyncing) {

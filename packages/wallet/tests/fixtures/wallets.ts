@@ -56,6 +56,7 @@ export const getMockedWasmAccount = (mocked?: Partial<WasmAccount>): WasmAccount
         bumpTransactionsFees: vi.fn(),
         getAddress: vi.fn(),
         getAddresses: vi.fn(),
+        getHighestUsedAddressIndexInOutput: vi.fn().mockReturnValue(0),
         ...mocked,
     };
 };

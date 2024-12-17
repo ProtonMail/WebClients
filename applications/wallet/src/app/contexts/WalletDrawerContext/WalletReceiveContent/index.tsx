@@ -37,6 +37,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
         : undefined;
 
     const bitcoinAddress = bitcoinAddressHelper?.receiveBitcoinAddress.address;
+    const bitcoinAddressIndex = bitcoinAddressHelper?.receiveBitcoinAddress.index;
 
     return (
         <div className="block">
@@ -96,7 +97,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                                         />
                                     </h4>
                                     <span className="block text-break-all text-center text-no-decoration">
-                                        {bitcoinAddress}
+                                        {bitcoinAddress} {`(#${bitcoinAddressIndex})`}
                                     </span>
                                 </div>
                             </div>
