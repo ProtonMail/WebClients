@@ -1,63 +1,15 @@
-import { c } from 'ttag'
 import { useAuthentication } from '@proton/components'
 import { useContactEmails } from '@proton/mail/contactEmails/hooks'
 import { DateFormatter } from '@proton/docs-core'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { createContext, type ReactNode, useCallback, useContext, useEffect, useState } from 'react'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import type { RecentDocumentItem } from '@proton/docs-core/lib/Services/RecentDocuments/RecentDocumentItem'
+import { getDisplayName } from './Utils/getDisplayName'
+import { filterItems } from './Utils/filterItems'
 
 const dateFormatter = new DateFormatter()
-
-const filterItem = (item: RecentDocumentItem, filter?: string) => {
-  if (filter === 'owned-by-me') {
-    return !item.isSharedWithMe
-  }
-
-  if (filter === 'owned-by-others') {
-    return item.isSharedWithMe
-  }
-
-  return true
-}
-
-export const filterItems = (items?: RecentDocumentItem[], searchText?: string, filter?: string) => {
-  if (!items || items.length === 0 || !(searchText || filter)) {
-    return items || []
-  }
-
-  let newFilteredItems = items
-
-  if (searchText) {
-    newFilteredItems = newFilteredItems.filter((data) => data.name.toLowerCase().includes(searchText.toLowerCase()))
-  }
-
-  if (filter) {
-    newFilteredItems = newFilteredItems.filter((item) => filterItem(item, filter))
-  }
-
-  return newFilteredItems
-}
-
-export const getDisplayName = (recentDocument: RecentDocumentItem, contactEmails?: ContactEmail[]) => {
-  if (!recentDocument.isSharedWithMe) {
-    return c('Info').t`Me`
-  }
-
-  if (!recentDocument.createdBy) {
-    return undefined
-  }
-
-  const foundContact = contactEmails?.find((contactEmail) => contactEmail.Email === recentDocument.createdBy)
-
-  if (foundContact) {
-    return foundContact.Name ?? foundContact.Email
-  }
-
-  return recentDocument.createdBy
-}
 
 export const useRecentDocumentsValue = ({ searchText, filter }: { searchText?: string; filter?: string }) => {
   const application = useApplication()

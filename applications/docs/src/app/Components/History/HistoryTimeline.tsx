@@ -50,9 +50,9 @@ function HistoryTimeline({
                         onSelectedBatchIndexChange(batchIndex)
                       }}
                     >
-                      <span className="text-xs uppercase">{formattedTime}</span>
+                      <span className="text-sm uppercase">{formattedTime}</span>
                       {versionHistory.isCurrentBatchIndex(batchIndex) && (
-                        <span className="text-xs font-semibold">{c('Info').t`Current version`}</span>
+                        <span className="text-sm font-semibold">{c('Info').t`Current version`}</span>
                       )}
                     </button>
                   </div>

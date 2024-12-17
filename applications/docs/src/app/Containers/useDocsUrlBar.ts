@@ -6,6 +6,7 @@ import { APPS } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { parseOpenAction } from './parseOpenAction'
+import { replaceLastPathSegment } from './UrlReplacer'
 
 export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled?: boolean } = { isDocsEnabled: true }) {
   const { getLocalID } = useAuthentication()
@@ -14,17 +15,21 @@ export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled?: boolean } = {
   const searchParams = new URLSearchParams(search)
   const [openAction, setOpenAction] = useState<DocumentAction | null>(parseOpenAction(searchParams))
 
-  const updateParameters = useCallback((newVolumeId: string, newLinkId: string) => {
+  const updateParameters = useCallback((params: { newVolumeId: string; newLinkId: string; pathname?: 'doc' }) => {
     setOpenAction({
       mode: 'open',
-      volumeId: newVolumeId,
-      linkId: newLinkId,
+      volumeId: params.newVolumeId,
+      linkId: params.newLinkId,
     })
 
     const newUrl = new URL(location.href)
+    if (params.pathname) {
+      const currentPathName = newUrl.pathname
+      newUrl.pathname = replaceLastPathSegment(currentPathName, params.pathname)
+    }
     newUrl.searchParams.set('mode', 'open')
-    newUrl.searchParams.set('volumeId', newVolumeId)
-    newUrl.searchParams.set('linkId', newLinkId)
+    newUrl.searchParams.set('volumeId', params.newVolumeId)
+    newUrl.searchParams.set('linkId', params.newLinkId)
 
     history.replaceState(null, '', newUrl.toString())
   }, [])

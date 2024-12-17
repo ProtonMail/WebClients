@@ -1,3 +1,4 @@
+import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import type { AuthenticatedDocControllerInterface } from '../../AuthenticatedDocController/AuthenticatedDocControllerInterface'
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
@@ -10,5 +11,5 @@ export type DocLoaderStatusObserver<S extends DocumentState | PublicDocumentStat
     docController?: AuthenticatedDocControllerInterface
     editorController: EditorControllerInterface
   }) => void
-  onError: (error: string) => void
+  onError: (error: string, code?: DocsApiErrorCode) => void
 }

@@ -75,7 +75,7 @@ const WordCountOverlay = () => {
           className: 'after:h-0',
         }}
       >
-        <DropdownMenu className="text-sm">
+        <DropdownMenu>
           <DropdownMenuButton
             className="flex items-center gap-1 text-left"
             onClick={() => setActiveCountInfo('word')}

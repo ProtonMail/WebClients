@@ -22,7 +22,7 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators'
 
-import { useDocsUrlPublicToken } from '@proton/drive-store/hooks/drive/useDocsUrlPublicToken'
+import { useDocsUrlPublicToken } from '@proton/drive-store'
 import { Actions, countActionWithTelemetry } from '@proton/drive-store/utils/telemetry'
 import { openNewTabToSignIn } from '../Utils/Redirection'
 import { openNewTabToSignUp } from '../Utils/Redirection'
