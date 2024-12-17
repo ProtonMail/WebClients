@@ -4,21 +4,18 @@ import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import chunk from '@proton/utils/chunk';
 
+import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';
 import { usePublicSession } from '../_api';
 import useLinksState from './useLinksState';
-
-interface LinkIdWithToken {
-    linkId: string;
-    authorizationToken?: string;
-}
 
 /**
  * usePublicLinksActions provides actions for manipulating with links in batches in a public context.
  */
 export function usePublicLinksActions() {
     const { preventLeave } = usePreventLeave();
-    const { request: publicDebouncedRequest } = usePublicSession();
+    const { request: publicDebouncedRequest, user } = usePublicSession();
     const { lockLinks, unlockLinks } = useLinksState();
+    const { getUploadToken } = useAnonymousUploadAuthStore();
 
     /**
      * withLinkLock is helper to lock provided `linkIds` before the action done
@@ -34,54 +31,34 @@ export function usePublicLinksActions() {
         }
     };
 
-    type ResponseType = {
-        Code: number;
-        Responses: {
-            LinkID: string;
-            Response: {
-                Code: number;
-                Error?: string;
-            };
-        }[];
-    };
     /**
      * batchHelper makes easier to do any action with many links in several
      * batches to make sure API can handle it (to not send thousands of links
      * in one request), all run in parallel (up to a reasonable limit).
      */
-    const deleteLinksBatchHelper = async (
+    const batchHelper = async <T>(
         abortSignal: AbortSignal,
         token: string,
-        linkIdsWithToken: LinkIdWithToken[],
-        query: (batchLinkIdsWithToken: LinkIdWithToken[], token: string) => any,
+        linkIds: string[],
+        query: (batchLinkIds: string[], token: string) => any,
         maxParallelRequests = MAX_THREADS_PER_REQUEST
     ) => {
-        const linkIds = linkIdsWithToken.map(({ linkId }) => linkId);
         return withLinkLock(token, linkIds, async () => {
-            const responses: {
-                batchLinkIdsWithToken: LinkIdWithToken[];
-                response: ResponseType;
-            }[] = [];
+            const responses: { batchLinkIds: string[]; response: T }[] = [];
             const successes: string[] = [];
             const failures: { [linkId: string]: any } = {};
 
-            const batches = chunk(linkIdsWithToken, BATCH_REQUEST_SIZE);
+            const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
 
             const queue = batches.map(
-                (batchLinkIdsWithToken) => () =>
-                    publicDebouncedRequest<ResponseType>(query(batchLinkIdsWithToken, token), abortSignal)
+                (batchLinkIds) => () =>
+                    publicDebouncedRequest<T>(query(batchLinkIds, token), abortSignal)
                         .then((response) => {
-                            responses.push({ batchLinkIdsWithToken, response });
-                            response.Responses.forEach(({ LinkID, Response }) => {
-                                if (Response.Code === 1000) {
-                                    successes.push(LinkID);
-                                } else {
-                                    failures[LinkID] = Response.Error;
-                                }
-                            });
+                            responses.push({ batchLinkIds, response });
+                            batchLinkIds.forEach((linkId) => successes.push(linkId));
                         })
                         .catch((error) => {
-                            batchLinkIdsWithToken.forEach(({ linkId }) => (failures[linkId] = error));
+                            batchLinkIds.forEach((linkId) => (failures[linkId] = error));
                         })
             );
             await preventLeave(runInQueue(queue, maxParallelRequests));
@@ -95,15 +72,15 @@ export function usePublicLinksActions() {
 
     const deleteLinks = async (
         abortSignal: AbortSignal,
-        { token, parentLinkId, links }: { token: string; parentLinkId: string; links: LinkIdWithToken[] }
+        { token, parentLinkId, linkIds }: { token: string; parentLinkId: string; linkIds: string[] }
     ) => {
-        return deleteLinksBatchHelper(abortSignal, token, links, (batchLinkIds) =>
+        return batchHelper(abortSignal, token, linkIds, (batchLinkIds) =>
             queryPublicDeleteChildrenLinks(
                 token,
                 parentLinkId,
-                batchLinkIds.map(({ linkId, authorizationToken }) => ({
+                batchLinkIds.map((linkId) => ({
                     LinkID: linkId,
-                    AuthorizationToken: authorizationToken,
+                    AuthorizationToken: !user ? getUploadToken(linkId) : undefined,
                 }))
             )
         );

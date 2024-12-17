@@ -6,6 +6,7 @@ import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth
 import { usePublicLinkActions, usePublicLinksListing } from '../_links';
 import useLinksState from '../_links/useLinksState';
 import { usePublicLinksActions } from '../_links/usePublicLinksActions';
+import { usePublicSessionUser } from '../_user';
 import { useErrorHandler } from '../_utils';
 import useListNotifications from './useListNotifications';
 
@@ -21,6 +22,7 @@ export function usePublicActions() {
     const publicLinksListing = usePublicLinksListing();
     const linksState = useLinksState();
     const { removeUploadTokens } = useAnonymousUploadAuthStore();
+    const { user } = usePublicSessionUser();
 
     const publicLink = usePublicLinkActions();
     const publicLinks = usePublicLinksActions();
@@ -87,7 +89,6 @@ export function usePublicActions() {
         {
             token,
             links,
-            anonymousRemoval = false,
             showConfirmModal,
         }: {
             token: string;
@@ -99,7 +100,6 @@ export function usePublicActions() {
                 isFile: boolean;
             }[];
             showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
-            anonymousRemoval?: boolean;
         }
     ) => {
         const isSingleItem = links.length === 1;
@@ -128,12 +128,12 @@ export function usePublicActions() {
                 publicLinks
                     .deleteLinks(abortSignal, {
                         token,
-                        links,
+                        linkIds: links.map((link) => link.linkId),
                         parentLinkId: links[0].parentLinkId,
                     })
                     .then(({ successes, failures }) => {
                         linksState.removeLinksForPublicPage(token, successes);
-                        if (anonymousRemoval) {
+                        if (!user) {
                             removeUploadTokens(successes);
                         }
                         createDeletedPublicItemsNotifications(
