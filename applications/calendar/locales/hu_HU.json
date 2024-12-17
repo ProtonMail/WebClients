@@ -68,9 +68,6 @@
       "Add group": [
         "Csoport hozzáadása"
       ],
-      "Add new contact": [
-        "Új névjegy"
-      ],
       "Add new group": [
         "Új csoport hozzáadása"
       ],
@@ -295,9 +292,6 @@
       ],
       "Export contact group": [
         "Névjegy csoport exportálása"
-      ],
-      "Export contacts": [
-        "Névjegyek exportálása"
       ],
       "Forgot password?": [
         "Elfelejtette a jelszavát?"
@@ -2453,6 +2447,11 @@
         "Lejárt számla"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "használja az Easy Switch importálási asszisztenst"
+      ]
+    },
     "Description": {
       "Availability unknown": [
         "Elérhetőség ismeretlen"
@@ -2495,11 +2494,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Amelyekből egyiket sem szeretné megtartani, azokat törlésre jelölheti. A törlés az egyesítés gomb megnyomása után fog megtörténni"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "használja az Easy Switch importálási asszisztenst"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4137,9 +4131,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "A fiók hozzáférése rendezetlen számla miatt korlátozva lett. Kérjük lépjen kapcsolatba az adminisztrátorral."
       ],
-      "Account size": [
-        "Fiók mérete"
-      ],
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
       ],
@@ -4148,9 +4139,6 @@
       ],
       "Added and removed participants will be notified.": [
         "A felvett és az eltávolított résztvevők is értesítést kapnak."
-      ],
-      "Additional options": [
-        "További lehetőségek"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Cím hitelesítés a megbízható kulcsokkal engedélyezve van ehhez a címhez. A küldéshez a címzett nyilvános kulcsát megbízhatóként kell megjelölnie."
@@ -4285,18 +4273,11 @@
       "Create a new contact group": [
         "Új névjegy csoport"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Hozzon létre biztonságos felhőárhelyet ${ n } tagnak",
-        "Hozzon létre biztonságos felhőárhelyet ${ n } tagnak"
-      ],
       "Create in": [
         "Létrehozás itt"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit az előző csomag-feliratkozásának fel nem használt részéért"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Támogatottak az Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és más alkalmazások CSV fájljai, illetve a vCard 3.1 és 4.0 formátum (UTF-8 kódolással)."
       ],
       "Current plan": [
         "Jelenlegi csomag"
@@ -4367,9 +4348,6 @@
       ],
       "email": [
         "e-mail cím"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Az e-mail szolgáltatás 10 saját domain névig beletartozik. További domain nevek ${ price } áron adhatók hozzá."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Az e-mail szolgáltatás olyan domain nevekre lehetséges, amelyek már a tulajdonában vannak. A ${ BRAND_NAME } jelenleg nem biztosít domain név regisztrációt. Bármilyen regisztrátornál regisztrált domain nevet használhat."
@@ -4728,9 +4706,6 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Az alkalmazásnak helyben kell visszafejtenie a névjegyeket az exportáláshoz. A folyamat végén egy VCF fájl fog létrejönni, amelyet letölthet."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "A kiszivárgott információ egy harmadik féltől származó szolgáltatás volt. Az ön ${ BRAND_NAME } fiókja biztonságban van. ${ learnMoreLink }"
@@ -5233,9 +5208,6 @@
       "Authenticator app": [
         "Hitelesítő alkalmazás"
       ],
-      "Automatically save contacts": [
-        "Névjegyek automatikus mentése"
-      ],
       "Beta Access": [
         "Béta hozzáférés"
       ],
@@ -5377,9 +5349,6 @@
       "Expires": [
         "Lejárat"
       ],
-      "Export contacts": [
-        "Névjegyek exportálása"
-      ],
       "Extended address": [
         "Bővebb cím"
       ],
@@ -5406,9 +5375,6 @@
       ],
       "Import all messages": [
         "Összes üzenet importálása"
-      ],
-      "Import contacts": [
-        "Névjegyek importálása"
       ],
       "Import interval": [
         "Importálás intervalluma"
@@ -7254,25 +7220,9 @@
         "(Nincs név)"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "kérjük, ${ contactHref } az értékesítési csoporttal."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Amennyiben ${ maxIPs } IP címnél többre lenne szüksége, ",
-        "Amennyiben ${ maxIPs } IP címnél többre lenne szüksége, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "lépjen kapcsolatba"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Válassza ki, hány felhasználót szeretne a csomagjába. Minden további felhasználó ára: ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Ha több mint ${ maxUsers } felhasználói fiókra lenne szüksége, kérjük ${ contact } értékesítési csoportunkkal.",
-        "Ha több mint ${ maxUsers } felhasználói fiókra lenne szüksége, kérjük ${ contact } értékesítési csoportunkkal."
       ]
     },
     "Price": {
@@ -9059,9 +9009,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Töltsön fel egy nyilvános kulcsot, hogy erre a címre lehetővé tegye végpontok közt titkosított üzenetek küldését"
-      ],
-      "You do not have any contacts to export": [
-        "Önnek nincs exportálható névjegye"
       ]
     },
     "Tooltip; share calendar modal ": {
