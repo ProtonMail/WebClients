@@ -1,5 +1,4 @@
 import { type FC } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -9,7 +8,6 @@ import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { useLockSetup } from '@proton/pass/hooks/useLockSetup';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { selectIsSSO } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -18,7 +16,6 @@ type Props = { noTTL?: boolean };
 export const LockSetup: FC<Props> = ({ noTTL = false }) => {
     const online = useConnectivity();
     const { setLockMode, setLockTTL, lock, biometrics, password } = useLockSetup();
-    const isSSO = useSelector(selectIsSSO);
 
     return (
         <>
@@ -58,13 +55,10 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                               {
                                   label: (
                                       <span className="block">
-                                          {isSSO ? c('Label').t`Backup password` : c('Label').t`Password`}
+                                          {c('Label').t`Password`}
                                           <span className="block color-weak text-sm">
-                                              {isSSO
-                                                  ? c('Info')
-                                                        .t`Access to ${PASS_APP_NAME} will always require your backup password.`
-                                                  : c('Info')
-                                                        .t`Access to ${PASS_APP_NAME} will always require your ${BRAND_NAME} password.`}
+                                              {c('Info')
+                                                  .t`Access to ${PASS_APP_NAME} will always require your ${BRAND_NAME} password.`}
                                           </span>
                                       </span>
                                   ),
