@@ -17,6 +17,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Dismiss": [
+        "Descartar"
+      ],
       "Edit email address": [
         "Editar dirección de correo"
       ],
@@ -66,7 +69,80 @@
         "Verificar cuenta"
       ],
       "View invoice": [
-        "Ver factura"
+        "Ver la factura"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicación de escritorio ${ MAIL_APP_NAME }"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoreo de la Dark Web"
+      ],
+      "Use your own email domain": [
+        "Use su propio dominio de correo electrónico"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "zanahoria"
+      ],
+      "cerise": [
+        "cereza"
+      ],
+      "cobalt": [
+        "cobalto"
+      ],
+      "copper": [
+        "cobre"
+      ],
+      "enzian": [
+        "genciana"
+      ],
+      "fern": [
+        "helecho"
+      ],
+      "forest": [
+        "bosque"
+      ],
+      "ocean": [
+        "océano"
+      ],
+      "olive": [
+        "aceituna"
+      ],
+      "pacific": [
+        "pacífico"
+      ],
+      "pickle": [
+        "pepinillo"
+      ],
+      "pine": [
+        "pino"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "ciruela"
+      ],
+      "purple": [
+        "púrpura"
+      ],
+      "reef": [
+        "arrecife"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "azul pizarra"
+      ],
+      "soil": [
+        "suelo"
+      ],
+      "strawberry": [
+        "fresa"
       ]
     },
     "Country name": {
@@ -923,6 +999,46 @@
         "Clave de seguridad"
       ]
     },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Del sistema"
@@ -993,6 +1109,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear la cuenta, solicite una invitación y responderemos dentro de un día hábil."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Si cree que hemos cometido un error, ${ contactLink }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentra el correo electrónico en el buzón, revise en la carpeta de spam."
       ],
@@ -1016,6 +1135,18 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Para eliminar restricciones, puede mejorar a un plan de pago."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Para eliminar restricciones, puede visitar ${ mailLink } y mejorar a un plan de pago."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Hemos detectado la creación de varias cuentas gratuitas, lo que infringe nuestros ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Tenemos planes diseñados específicamente para usuarios como usted que necesitan varias direcciones de correo electrónico."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
@@ -1075,11 +1206,384 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "contáctenos"
+      ],
       "Learn more": [
         "Más información"
       ],
       "Request an invite": [
         "Solicitar una invitación"
+      ],
+      "terms of service": [
+        "términos de servicio"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Mantenga el buzón organizado con carpetas"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Obtenga ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ n } calendar": [
+        "${ n } calendario",
+        "${ n } calendarios"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendario por usuario",
+        "${ n } calendarios por usuario"
+      ],
+      "${ n } custom email domain": [
+        "${ n } dominio de correo electrónico personalizado",
+        "${ n } dominios de correo electrónico personalizados"
+      ],
+      "${ n } email address": [
+        "${ n } dirección de correo",
+        "${ n } direcciones/alias de correo"
+      ],
+      "${ n } email address per user": [
+        "${ n } dirección de correo por usuario",
+        "${ n } direcciones de correo por usuario"
+      ],
+      "${ n } filter": [
+        "${ n } filtro",
+        "${ n } filtros"
+      ],
+      "${ n } folder": [
+        "${ n } carpeta",
+        "${ n } carpetas"
+      ],
+      "${ n } folder and label": [
+        "${ n } carpeta y etiqueta",
+        "${ n } carpetas y etiquetas"
+      ],
+      "${ n } label": [
+        "${ n } etiqueta",
+        "${ n } etiquetas"
+      ],
+      "${ n } message per day": [
+        "${ n } mensaje al día",
+        "${ n } mensajes al día"
+      ],
+      "${ options }-day file version history": [
+        "Historial de ${ options } día de las versiones de los archivos",
+        "Historial de ${ options } días de las versiones de los archivos"
+      ],
+      "${ size } attachment size": [
+        "${ size } en archivos adjuntos"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } de almacenamiento seguro por usuario"
+      ],
+      "${ size } storage": [
+        "${ size } de almacenamiento"
+      ],
+      "1 TB secure storage": [
+        "1 TB de almacenamiento seguro"
+      ],
+      "10 email addresses/aliases": [
+        "10 direcciones/alias de correo electrónico"
+      ],
+      "10 more premium features": [
+        "10 funciones premium más"
+      ],
+      "10-year file version history": [
+        "Historial de 10 años de las versiones de los archivos"
+      ],
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "Advanced account protection": [
+        "Protección de cuentas avanzada"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Todos los productos y funciones de ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Todos los servicios prémium de ${ BRAND_NAME } en una sola y sencilla suscripción"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Eliminación automática de spam y papelera"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Eliminar automáticamente spam y mensajes de la papelera"
+      ],
+      "Auto-reply": [
+        "Respuesta automática"
+      ],
+      "Automatic email forwarding": [
+        "Reenvío de correo automático"
+      ],
+      "Breach alerts": [
+        "Alertas de vulneraciones"
+      ],
+      "Calendar sharing": [
+        "Calendarios compartidos"
+      ],
+      "Catch-all": [
+        "Catch-all"
+      ],
+      "Collaborate and share large files": [
+        "Colaborar y compartir grandes archivos"
+      ],
+      "Contact groups": [
+        "Grupos de contactos"
+      ],
+      "Contact groups management": [
+        "Gestión de grupos de contactos"
+      ],
+      "Custom and secure business email": [
+        "Correo electrónico empresarial personalizado y seguro"
+      ],
+      "Custom email domains": [
+        "Dominios de correo electrónico personalizados"
+      ],
+      "Custom snooze time": [
+        "Tiempo de pausa personalizado"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Easy Switch import assistant": [
+        "Asistente de importación Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Soporte de clientes de correo electrónico (por IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupos de correos electrónicos"
+      ],
+      "Encrypted contact details": [
+        "Datos de contacto cifrados"
+      ],
+      "End-to-end encryption": [
+        "Cifrado de extremo a extremo"
+      ],
+      "Generate emails with a prompt": [
+        "Genere correos electrónicos con un aviso"
+      ],
+      "HTML signatures": [
+        "Firmas HTML"
+      ],
+      "Online document editor": [
+        "Editor de documentos en línea"
+      ],
+      "Password health": [
+        "Estado de la contraseña"
+      ],
+      "Password-protected Emails": [
+        "Correos electrónicos protegidos con contraseña"
+      ],
+      "Proofread and refine your emails": [
+        "Revise y refine sus correos electrónicos"
+      ],
+      "Quickly craft replies": [
+        "Redacte rápidamente respuestas"
+      ],
+      "Recover previous file versions": [
+        "Recuperar versiones previas de archivos"
+      ],
+      "Save time emailing": [
+        "Ahorre tiempo enviando correos electrónicos"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Programar y pausar correos a cualquier hora"
+      ],
+      "Schedule messages at any time": [
+        "Programar mensajes a cualquier hora"
+      ],
+      "Search message content": [
+        "Buscar contenido del mensaje"
+      ],
+      "See team's availability": [
+        "Ver la disponibilidad del equipo"
+      ],
+      "Send & receive invitations": [
+        "Enviar y recibir invitaciones"
+      ],
+      "Share files with no size limit": [
+        "Comparta archivos sin límite de tamaño"
+      ],
+      "SMTP submission": [
+        "Envío SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Envío SMTP para organizaciones seleccionadas"
+      ],
+      "Support for up to 2 users": [
+        "Soporte para hasta 2 usuarios"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sincronice todas las copias de seguridad y todos los archivos en sus distintos dispositivos"
+      ],
+      "Unlimited filters": [
+        "Filtros ilimitados"
+      ],
+      "Unlimited folders": [
+        "Carpetas ilimitadas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Unlimited labels": [
+        "Etiquetas ilimitadas"
+      ],
+      "Unlimited messages per day": [
+        "Mensajes al día ilimitados"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Hasta ${ totalStorageSize } de almacenamiento"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 dominio de correo electrónico personalizado"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Pause los mensajes y reciba un recordatorio cuando quiera."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Proteja el calendario con cifrado de extremo a extremo. Incluye compatibilidad con calendarios personalizados, calendarios compartidos y más."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Proteja sus archivos con almacenamiento cifrado en la nube. Incluye sincronización automática, intercambio de archivos cifrado y más."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Proteja los correos con cifrado de extremo a extremo. Incluye soporte para dominios de correo personalizados, 15 direcciones de correo, alias hide-my-email ilimitados y más."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Acceda a ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME } desde la comodidad de el escritorio"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Las direcciones tienen capacidad completa de envío y recepción. Un usuario puede tener varias direcciones asignadas; sin embargo, no se puede asignar una sola dirección a varios usuarios."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Le permite responder automáticamente (autorrespuestas) a los mensajes que recibe"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Elimina automáticamente los mensajes anteriores a 30 días de la papelera y spam"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Reenvíe correos automáticamente enviados a la cuenta de ${ MAIL_APP_NAME } a cualquier otra dirección de correo."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Por el momento, no se puede programar el envío de correos electrónicos ni promocionales de forma masiva. Le recomendamos que puede usar un proveedor de servicios de correo electrónico dedicado para este caso."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Elija horarios personalizados para recibir recordatorios de un correo o para que llegue el mensaje"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain } para suscripciones de noticias"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Cree ${ n } calendario o añada calendarios de amistades, familiares, colegas y organizaciones.",
+        "Cree hasta ${ n } calendarios o añada calendarios de amistades, familiares, colegas y organizaciones."
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Cree hasta ${ n } direcciones de correo/alias que puede asignar a sus familiares. Úselas para las identidades en línea, p.ej., JuanCompras@${ domain } para cuentas de compras."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Comparta calendarios con familiares, amistades y colegas fácilmente"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envíe correos a todos en un grupo con una sola dirección de correo"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Garantiza que reciba todos los correos enviados al dominio, incluso si la dirección de correo no existe, ya no existe o tiene un error tipográfico"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Mail de Apple o Thunderbird) con ${ MAIL_APP_NAME } Bridge. Por ahora no existe compatibilidad con integraciones IMAP en la nube."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Mantenga privados sus planes y los de su familia con un calendario cifrado"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Las etiquetas son muy fáciles de añadir a los mensajes y le permiten encontrarlos fácilmente o aplicarles filtros"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Personalice la firma del correo electrónico con logotipos, imágenes, íconos de redes sociales, enlaces a los datos de contacto y más"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Evita que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Configure mensajes rápidamente para informar de que no está en la oficina"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Transfiera rápidamente correos, calendarios y contactos desde cualquier proveedor"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Asegure los archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, intercambio de archivos cifrado y más."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Almacene de forma segura los detalles de los contactos, como el número de teléfono, la dirección, la fecha de nacimiento y las notas personales. El cifrado de acceso cero garantiza que incluso ${ BRAND_NAME } no pueda acceder a ellos."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Vea la disponibilidad de los participantes de la reunión y ahorre tiempo programando reuniones"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Envíe correos electrónicos a muchas personas fácil y rápidamente creando todos los grupos de contactos que necesite (hasta 100 contactos por grupo)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Cree filtros para responder automáticamente a los correos, clasificarlos o etiquetarlos"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Comparta archivos y carpetas con todo el mundo con enlaces seguros"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } y${ PASS_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }. Los administradores pueden asignar cantidades distintas a los usuarios de la organización"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "El espacio de almacenamiento es compartido entre usuarios en ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } y ${ PASS_APP_NAME }"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Use sus propias direcciones de dominio de correo personalizadas, por ejemplo, usted@sunombre.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Los correos que envía a usuarios de ${ MAIL_APP_NAME } se cifran automáticamente. Si el destinatario no usa ${ MAIL_APP_NAME_TWO }, tendrá que establecer una contraseña antes de enviar el mensaje."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Añada más personalización con 15 direcciones de correo y soporte para 3 dominios de correo personalizados"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Aumente el espacio de almacenamiento hasta ${ bundleStorage } por usuario"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Aumente el espacio de almacenamiento hasta ${ bundleStorage }"
+      ],
+      "Create up to ${ n } calendar": [
+        "Cree hasta ${ n } calendario",
+        "Cree hasta ${ n } calendarios"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Soporte para ${ n } dominios de correo personalizados"
       ]
     },
     "Placeholder": {
@@ -1103,6 +1607,22 @@
         "Se le redirigirá a su proveedor de SSO de terceros."
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Almacenamiento para datos generados por ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Hasta ${ totalStorageSize } de almacenamiento en Drive"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Hasta ${ totalStorageSize } de almacenamiento en Mail"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Para todos los servicios de ${ BRAND_NAME }"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
@@ -1112,6 +1632,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "Cuenta bloqueada"
+      ],
       "Enter 2FA code": [
         "Ingrese el código 2FA"
       ],

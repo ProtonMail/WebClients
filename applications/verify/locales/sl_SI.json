@@ -17,6 +17,9 @@
       "Continue": [
         "Nadaljuj"
       ],
+      "Dismiss": [
+        "Opusti"
+      ],
       "Edit email address": [
         "Uredi e-poštni naslov"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "Ogled računa"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Program ${ MAIL_APP_NAME } za namizje"
+      ],
+      "Dark Web Monitoring": [
+        "Spremljanje Dark Web"
+      ],
+      "Use your own email domain": [
+        "Uporabite svojo e-poštno domeno"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "korenček"
+      ],
+      "cerise": [
+        "češnja"
+      ],
+      "cobalt": [
+        "kobaltna"
+      ],
+      "copper": [
+        "bakrena"
+      ],
+      "enzian": [
+        "encijan"
+      ],
+      "fern": [
+        "praprot"
+      ],
+      "forest": [
+        "gozd"
+      ],
+      "ocean": [
+        "ocean"
+      ],
+      "olive": [
+        "olivna"
+      ],
+      "pacific": [
+        "pacifična"
+      ],
+      "pickle": [
+        "kislica"
+      ],
+      "pine": [
+        "bor"
+      ],
+      "pink": [
+        "roza"
+      ],
+      "plum": [
+        "sliva"
+      ],
+      "purple": [
+        "vijolična"
+      ],
+      "reef": [
+        "korala"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "sivkasto modra"
+      ],
+      "soil": [
+        "zemlja"
+      ],
+      "strawberry": [
+        "jagoda"
       ]
     },
     "Country name": {
@@ -923,6 +999,58 @@
         "Varnostni ključ"
       ]
     },
+    "file size format": {
+      "byte": [
+        "bajt",
+        "bajta",
+        "bajti",
+        "bajtov"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "kB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajta",
+        "Bajti",
+        "Bajtov"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajta",
+        "Gigabajti",
+        "Gigabajtov"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajta",
+        "Kilobajti",
+        "Kilobajtov"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajta",
+        "Megabajti",
+        "Megabajtov"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajta",
+        "Terabajti",
+        "Terabajtov"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Sistemsko privzeto"
@@ -1082,6 +1210,343 @@
         "Zahtevaj povabilo"
       ]
     },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Imejte urejen poštni predal z mapami."
+      ]
+    },
+    "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } koledar",
+        "${ n } koledarja",
+        "${ n } koledarji",
+        "${ n } koledarjev"
+      ],
+      "${ n } calendar per user": [
+        "${ n } koledar na uporabnika",
+        "${ n } koledarja na uporabnika",
+        "${ n } koledarji na uporabnika",
+        "${ n } koledarjev na uporabnika"
+      ],
+      "${ n } custom email domain": [
+        "${ n } e-poštna domena po meri",
+        "${ n } e-poštni domeni po meri",
+        "${ n } e-poštne domene po meri",
+        "${ n } e-poštnih domen po meri"
+      ],
+      "${ n } email address": [
+        "${ n } e-poštni naslov",
+        "${ n } e-poštna naslova",
+        "${ n } e-poštni naslovi",
+        "${ n } e-poštnih naslovov"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-poštni naslov na uporabnika",
+        "${ n } e-poštna naslova na uporabnika",
+        "${ n } e-poštni naslovi na uporabnika",
+        "${ n } e-poštnih naslovov na uporabnika"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filtra",
+        "${ n } filtri",
+        "${ n } filtrov"
+      ],
+      "${ n } folder": [
+        "${ n } mapa",
+        "${ n } mapi",
+        "${ n } mape",
+        "${ n } map"
+      ],
+      "${ n } folder and label": [
+        "${ n } mapa in oznaka",
+        "${ n } mapi in oznaki",
+        "${ n } mape in oznake",
+        "${ n } map in oznak"
+      ],
+      "${ n } label": [
+        "${ n } oznaka",
+        "${ n } oznaki",
+        "${ n } oznake",
+        "${ n } oznak"
+      ],
+      "${ n } message per day": [
+        "${ n } sporočilo na dan",
+        "${ n } sporočili na dan",
+        "${ n } sporočila na dan",
+        "${ n } sporočil na dan"
+      ],
+      "${ size } attachment size": [
+        "${ size } velikost priponke"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } varne shrambe na uporabnika"
+      ],
+      "${ size } storage": [
+        "${ size } shrambe"
+      ],
+      "1 TB secure storage": [
+        "1 TB varnega prostora za shranjevanje"
+      ],
+      "10-year file version history": [
+        "Zgodovina različic datotek za 10 let"
+      ],
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "Advanced account protection": [
+        "Napredna zaščita računa"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Vse premijske storitve ${ BRAND_NAME }. Ena preprosta naročnina"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Samodejno brisanje neželene pošte in smeti"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Samodejno briši sporočila iz neželene pošte in iz smetnjaka"
+      ],
+      "Auto-reply": [
+        "Samodejni odgovor"
+      ],
+      "Automatic email forwarding": [
+        "Samodejno posredovanje elektronske pošte"
+      ],
+      "Calendar sharing": [
+        "Deljenje koledarja"
+      ],
+      "Catch-all": [
+        "Ujemi vse"
+      ],
+      "Collaborate and share large files": [
+        "Sodelovanje in skupna raba velikih datotek"
+      ],
+      "Contact groups": [
+        "Skupina stikov"
+      ],
+      "Contact groups management": [
+        "Urejanje skupin stikov"
+      ],
+      "Custom email domains": [
+        "E-poštne domene po meri"
+      ],
+      "Custom snooze time": [
+        "Čas dremeža po meri"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Easy Switch import assistant": [
+        "Pomočnik za uvoz Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Podpora za e-poštne odjemalce (prek protokola IMAP/SMTP)"
+      ],
+      "Encrypted contact details": [
+        "Šifrirani podatki o stikih"
+      ],
+      "End-to-end encryption": [
+        "Celovito šifriranje"
+      ],
+      "Generate emails with a prompt": [
+        "Ustvarite e-pošto s pozivom"
+      ],
+      "HTML signatures": [
+        "HTML podpisi"
+      ],
+      "Online document editor": [
+        "Spletni urejevalnik dokumentov"
+      ],
+      "Password health": [
+        "Kakovost gesla"
+      ],
+      "Password-protected Emails": [
+        "E-pošta, zaščitena z geslom"
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Načrtujte pošiljanje ali prestavite dostavo za čas po meri"
+      ],
+      "Schedule messages at any time": [
+        "Načrtujte sporočila kadar koli"
+      ],
+      "Search message content": [
+        "Išči po vsebini sporočila"
+      ],
+      "See team's availability": [
+        "Oglejte si razpoložljivost ekipe"
+      ],
+      "Send & receive invitations": [
+        "Pošljite in prejmite povabila."
+      ],
+      "SMTP submission": [
+        "Pošiljanje SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Oddaja SMTP za izbrane organizacije"
+      ],
+      "Unlimited filters": [
+        "Neomejeno število filtrov"
+      ],
+      "Unlimited folders": [
+        "Neomejeno število map"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ],
+      "Unlimited labels": [
+        "Neomejeno število oznak"
+      ],
+      "Unlimited messages per day": [
+        "Neomejeno število sporočil na dan"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Do ${ totalStorageSize } prostora za shranjevanje"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 e-poštna domena po meri"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Ustvarite več e-poštnih naslovov za vaše spletne identitete, npr. JanezNakupi@${ domain } za nakupovalne račune in JanezNovice@${ domain2 } za naročnine na novice."
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Sporočila pošljite v dremež in prejmite opomnik, ko želite"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Prostor za shranjevanje si delijo ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } in ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Zaščitite vaša dnevna opravila s celovitim šifriranjem. Vključuje podporo za koledarje po meri, delitev koledarjev in drugo."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zavarujte svoje datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano skupno rabo datotek in drugo."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Zavarujte vaša sporočila s celovitim šifriranjem. Vključuje podporo za e-poštne domene po meri, 15 e-poštnih naslovov, neomejeno število vzdevkov hide-my-email in drugo."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Dostopajte do ${ MAIL_APP_NAME } in ${ CALENDAR_APP_NAME } naravnost z vašega namizja."
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Naslovi imajo polno zmogljivost pošiljanja in prejemanja. Uporabniku je lahko dodeljenih več naslovov; vendar enega naslova ni mogoče dodeliti več uporabnikom."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Omogoča vam, da nastavite samodejne odgovore za vaša vhodna sporočila."
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Samodejni izbris sporočil, ki so več kot 30 dni v mapah Smetnjak in Neželena pošta."
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Samodejno posredujte e-pošto, poslano na vaš račun ${ MAIL_APP_NAME }, na kateri koli drug e-poštni naslov."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Množično promocijsko ali programsko pošiljanje e-pošte trenutno ni podprto. Za ta primer uporabe priporočamo uporabo namenskega ponudnika e-poštnih storitev."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Nastavite urnik po meri, ko želite biti opomnjeni na e-poštno sporočilo ali prejeti sporočilo."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Ustvarite več e-poštnih naslovov za vaše spletne identitete, npr. JanezNakupi@${ domain } za nakupovalne račune in JanezNovice@${ domain } za naročnine na novice."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Ustvarite ${ n } koledar ali dodajte koledarje prijateljev, družine, sodelavcev in organizacij.",
+        "Ustvarite do ${ n } koledarja ali dodajte koledarje prijateljev, družine, sodelavcev in organizacij.",
+        "Ustvarite do ${ n } koledarje ali dodajte koledarje prijateljev, družine, sodelavcev in organizacij.",
+        "Ustvarite do ${ n } koledarjev ali dodajte koledarje prijateljev, družine, sodelavcev in organizacij."
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Ustvarite do ${ n } e-poštnih naslovov/vzdevkov, ki jih lahko dodelite družinskim članom. Uporabite jih za spletne identitete, npr. JohnShopper@${ domain } za nakupovalne račune."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Enostavno delite svoje koledarje z družino, prijatelji ali sodelavci."
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Zagotovi, da prejmete vsa sporočila, ki so poslana v vašo domeno, tudi če e-poštni naslov ne obstaja, ne obstaja več ali je napačno napisan."
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "Podpora za IMAP je omejena na uporabo namiznih programov (npr. Outlook, Apple Mail, Thunderbird) s pomočjo ${ MAIL_APP_NAME } Bridge. Trenutno niso podprte integracije IMAP rešitve, ki temeljijo na oblaku."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Ohranite svoje načrte zasebne za vas in vašo družino s šifriranim koledarjem."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Oznake so preproste značke, ki jih lahko dodate sporočilom, da jih lažje najdete ali uporabite filtre."
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Prilagodite svoj podpis v e-pošti z logotipi, slikami, ikonami družbenih medijev, povezavami do vaših kontaktnih podatkov in podobnim."
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Preprečuje, da bi do sporočil dostopali ${ BRAND_NAME } ali tretje osebe. Sporočila lahko berejo le pošiljatelj in predvideni prejemnik."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Hitro nastavite sporočila o odsotnosti."
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Hitro prenesite svoja sporočila, koledarje ali stike od katerega koli ponudnika."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Varno shranite podrobnosti vaših stikov, kot so telefonska številka, naslov, rojstni dan in osebni zapiski. Šifriranje na strani odjemalca zagotavlja, da niti ${ BRAND_NAME } nima dostopa do teh podatkov."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Oglejte si razpoložljivost udeležencev in prihranite čas pri načrtovanju sestankov"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Pošiljajte e-pošto velikim skupinam hitro in enostavno tako, da ustvarite toliko skupin stikov, kot jih potrebujete (do 100 stikov na skupino)."
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Vzpostavite filtre za samodejne odgovore, razporejanje in označevanje vaših sporočil."
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Delite vaše datoteke ali mape s komer koli z uporabo varnih povezav, ki jih lahko delite."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP omogoča zunanjim storitvam ali napravam pošiljati e-pošto prek ${ MAIL_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Aplikacije ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } in ${ PASS_APP_NAME } si delijo prostor za shranjevanje"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Prostor za shranjevanje se deli med ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } in ${ DRIVE_APP_NAME }. Skrbniki lahko uporabnikom v svoji organizaciji dodelijo različne količine prostora."
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Prostor za shranjevanje si uporabniki delijo med aplikacijami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, in ${ PASS_APP_NAME }"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Uporabite lastno domeno za naslov e-pošte, na primer ime@priimek.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Ko pošljete sporočilo drugim uporabnikom ${ MAIL_APP_NAME }, je šifriranje samodejno. Pri pošiljanju sporočil neuporabnikom ${ MAIL_APP_NAME_TWO }, morajo uporabniki pred pošiljanjem določiti geslo."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Dodajte več osebnih prilagoditev s 15 e-poštnimi naslovi in podporo za tri e-poštne domene po meri"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Povečajte svoj prostor za shranjevanje na ${ bundleStorage } na uporabnika."
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Povečajte svoj prostor za shranjevanje na skupno ${ bundleStorage }."
+      ],
+      "Create up to ${ n } calendar": [
+        "Ustvarite ${ n } koledar.",
+        "Ustvarite do ${ n } koledarja.",
+        "Ustvarite do ${ n } koledarje.",
+        "Ustvarite do ${ n } koledarjev."
+      ],
+      "Support for ${ n } custom email domains": [
+        "Podpora za ${ n } e-poštnih domen po meri"
+      ]
+    },
     "Placeholder": {
       "Password": [
         "Geslo"
@@ -1090,6 +1555,22 @@
     "sso": {
       "Sign in": [
         "Prijava"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Shramba za podatke, ki jih ustvarijo ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } in ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Do ${ totalStorageSize } shrambe v storitvi Drive"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Do ${ totalStorageSize } shrambe v storitvi Mail"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Za vse ${ BRAND_NAME } storitve"
       ]
     },
     "Success": {

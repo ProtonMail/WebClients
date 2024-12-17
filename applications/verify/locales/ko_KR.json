@@ -17,6 +17,9 @@
       "Continue": [
         "계속"
       ],
+      "Dismiss": [
+        "무시"
+      ],
       "Edit email address": [
         "이메일 주소 추가"
       ],
@@ -67,6 +70,79 @@
       ],
       "View invoice": [
         "청구서 보기"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 데스크톱 앱"
+      ],
+      "Dark Web Monitoring": [
+        "다크 웹 모니터링"
+      ],
+      "Use your own email domain": [
+        "나만의 이메일 주소 사용"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "캐럿"
+      ],
+      "cerise": [
+        "체리"
+      ],
+      "cobalt": [
+        "코발트"
+      ],
+      "copper": [
+        "코퍼"
+      ],
+      "enzian": [
+        "엔지안"
+      ],
+      "fern": [
+        "펀"
+      ],
+      "forest": [
+        "포레스트"
+      ],
+      "ocean": [
+        "오션"
+      ],
+      "olive": [
+        "올리브"
+      ],
+      "pacific": [
+        "퍼시픽"
+      ],
+      "pickle": [
+        "피클"
+      ],
+      "pine": [
+        "파인"
+      ],
+      "pink": [
+        "핑크"
+      ],
+      "plum": [
+        "프럼"
+      ],
+      "purple": [
+        "퍼플"
+      ],
+      "reef": [
+        "리프"
+      ],
+      "sahara": [
+        "사하라"
+      ],
+      "slateblue": [
+        "슬레이트 블루"
+      ],
+      "soil": [
+        "소일"
+      ],
+      "strawberry": [
+        "스트로베리"
       ]
     },
     "Country name": {
@@ -923,6 +999,40 @@
         "보안 키"
       ]
     },
+    "file size format": {
+      "byte": [
+        "바이트"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "바이트"
+      ],
+      "Gigabyte": [
+        "기가바이트"
+      ],
+      "Kilobyte": [
+        "킬로바이트"
+      ],
+      "Megabyte": [
+        "메가바이트"
+      ],
+      "Terabyte": [
+        "테라바이트"
+      ]
+    },
     "Font face option": {
       "System default": [
         "시스템 기본값"
@@ -993,6 +1103,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "오류라고 생각되신다면, ${ contactLink }해주세요."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
       ],
@@ -1016,6 +1129,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "최근 회원님께서 ${ termsLink } 위반 사유에 해당되는 다중 무료 계정 생성을 감지했습니다."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
@@ -1075,11 +1191,371 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "문의"
+      ],
       "Learn more": [
         "더 알아보기"
       ],
       "Request an invite": [
         "가입 요청하기"
+      ],
+      "terms of service": [
+        "서비스 이용약관"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "폴더로 조직된 받은 편지함 정리"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "${ planTitle }로 계속하기"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
+      "${ n } calendar": [
+        "캘린더 ${ n }개"
+      ],
+      "${ n } calendar per user": [
+        "사용자 당 ${ n }개 캘린더"
+      ],
+      "${ n } custom email domain": [
+        "사용자 지정 이메일 도메인 ${ n }개"
+      ],
+      "${ n } email address": [
+        "이메일 주소 ${ n }개"
+      ],
+      "${ n } email address per user": [
+        "사용자 당 ${ n }개 이메일 주소"
+      ],
+      "${ n } filter": [
+        "${ n } 필터"
+      ],
+      "${ n } folder": [
+        "${ n } 폴더"
+      ],
+      "${ n } folder and label": [
+        "${ n }개 폴더와 라벨"
+      ],
+      "${ n } label": [
+        "${ n } 라벨"
+      ],
+      "${ n } message per day": [
+        "하루 당 ${ n } 메시지"
+      ],
+      "${ options }-day file version history": [
+        "${ options }일 파일 버전 기록"
+      ],
+      "${ size } attachment size": [
+        "첨부 파일 크기: ${ size }"
+      ],
+      "${ size } of secure storage per user": [
+        "사용자 당 ${ size } 보안 스토리지"
+      ],
+      "${ size } storage": [
+        "${ size } 저장공간"
+      ],
+      "1 TB secure storage": [
+        "1 TB 보안 저장공간"
+      ],
+      "10 email addresses/aliases": [
+        "10개의 이메일 주소/별칭"
+      ],
+      "10 more premium features": [
+        "10개 더 많은 프리미엄 기능들"
+      ],
+      "10-year file version history": [
+        "10년 파일 버전 기록"
+      ],
+      "15 GB storage": [
+        "저장 공간 15GB"
+      ],
+      "Advanced account protection": [
+        "향상된 계정 보호"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "모든 ${ BRAND_NAME } 제품 및 기능"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "모든 프리미엄 ${ BRAND_NAME } 서비스. 쉬운 구독"
+      ],
+      "Auto-delete Spam and Trash": [
+        "스팸 및 휴지통 자동 삭제"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "스팸 및 휴지통의 메시지를 자동 삭제"
+      ],
+      "Auto-reply": [
+        "자동 회신"
+      ],
+      "Automatic email forwarding": [
+        "자동 이메일 전달"
+      ],
+      "Breach alerts": [
+        "정보 유출 경고"
+      ],
+      "Calendar sharing": [
+        "일정 공유"
+      ],
+      "Catch-all": [
+        "Catch-all"
+      ],
+      "Collaborate and share large files": [
+        "큰 파일을 공동으로 작업하고 공유하세요"
+      ],
+      "Contact groups": [
+        "연락처 그룹"
+      ],
+      "Contact groups management": [
+        "연락처 그룹 관리"
+      ],
+      "Custom and secure business email": [
+        "커스텀 및 보안 비즈니스 이메일"
+      ],
+      "Custom email domains": [
+        "사용자 지정 이메일 도메인"
+      ],
+      "Custom snooze time": [
+        "사용자 지정 방해 금지 시간"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch import assistant"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "이메일 클라이언트 지원 (IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "이메일 그룹"
+      ],
+      "Encrypted contact details": [
+        "암호화된 연락처 세부정보"
+      ],
+      "End-to-end encryption": [
+        "종단간 암호화"
+      ],
+      "Generate emails with a prompt": [
+        "프롬프트로 이메일 생성하기"
+      ],
+      "HTML signatures": [
+        "HTML 서명"
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Password health": [
+        "비밀번호 건강도"
+      ],
+      "Password-protected Emails": [
+        "비밀번호로 보호된 이메일"
+      ],
+      "Proofread and refine your emails": [
+        "이메일 교정 및 수정하기"
+      ],
+      "Quickly craft replies": [
+        "신속하게 답변 작성하기"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
+      ],
+      "Save time emailing": [
+        "이메일 작성 시간 줄이기"
+      ],
+      "Schedule and snooze emails for any time": [
+        "언제든지 이메일을 예약하거나 다시 알림받기"
+      ],
+      "Schedule messages at any time": [
+        "언제든지 메시지를 예약하세요"
+      ],
+      "Search message content": [
+        "메시지 내용 검색"
+      ],
+      "See team's availability": [
+        "팀의 가용성 확인"
+      ],
+      "Send & receive invitations": [
+        "전송 및 받은 초대"
+      ],
+      "Share files with no size limit": [
+        "크기 제한 없는 파일 공유"
+      ],
+      "SMTP submission": [
+        "SMTP 세부 사항"
+      ],
+      "SMTP submission for select organizations": [
+        "선택한 조직의 SMTP 세부 사항"
+      ],
+      "Support for up to 2 users": [
+        "최대 2명 지원"
+      ],
+      "Sync and backup all your files across devices": [
+        "기기를 넘나들며 파일을 동기화 및 백업하세요"
+      ],
+      "Unlimited filters": [
+        "무제한 필터"
+      ],
+      "Unlimited folders": [
+        "무제한 폴더"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "무제한 폴더, 라벨, 그리고 필터"
+      ],
+      "Unlimited labels": [
+        "무제한 라벨"
+      ],
+      "Unlimited messages per day": [
+        "하루에 무제한 메시지"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "최대 ${ totalStorageSize } 스토리지"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1개 커스텀 이메일 도메인"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: 사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭 등 기능을 포함하는 이메일로 보호하세요."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "데스크탑에서 편리하게 접근하는 ${ MAIL_APP_NAME }과 ${ CALENDAR_APP_NAME }"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "주소가 최대 수발신 허용량을 가지고 있습니다. 사용자가 다중 주소를 할당할 수는 있지만, 단일 주소는 다중 사용자에게 할당이 불가능합니다."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "수신 메시지에 대한 자동 회신을 설정할 수 있습니다."
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "쓰레기통과 스팸메일함의 30일이 지난 메시지를 자동으로 비웁니다."
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "${ MAIL_APP_NAME } 계정으로 전송된 이메일을 다른 이메일 주소로 자동으로 전달하세요."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "대량 홍보나 자동화된 이메일 발송은 현재 지원되지 않습니다. 해당 용도로는 전용 이메일 서비스 제공사업자를 사용하는 것을 권장합니다."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "사용자 지정 시간으로 이메일이나 메시지가 도착했음을 안내받을 수 있습니다."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "최대 ${ n }개 캘린더를 생성하거나 친구, 가족, 동료 및 조직에서 생성하세요."
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "가족 구성원에게 할당할 수 있는 최대 ${ n }개의 이메일 주소/별명을 생성하세요. 이를 온라인 신원으로 사용하세요. 예를 들면, 쇼핑 계정에는 JohnShopper@${ domain }을 사용할 수 있습니다."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "캘린더를 가족, 친구 및 동료들에게 쉽게 공유하세요"
+      ],
+      "Email everyone in a group with a single email address": [
+        "그룹 내의 모두에게 하나의 주소로 이메일을 전송하기"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "이메일 주소가 존재하지 않거나, 더 이상 존재하지 않거나, 오타가 있더라도 도메인으로 전송된 모든 이메일을 받을 수 있습니다."
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP 지원은 ${ MAIL_APP_NAME } Bridge를 통한 데스크톱 앱(예: Outlook, Apple Mail, Thunderbird)의 사용에만 한합니다. 클라우드 기반의 IMAP 통합은 현재 지원되지 않습니다."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "암호화된 캘린더로 당신과 당신의 가족의 사적인 계획을 지키세요"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "라벨은 메시지를 찾기 쉽게하거나 필터를 적용하기 위해 추가 할 수 있는 간단한 태그입니다"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "로고, 이미지, 소셜 미디어 아이콘, 연락처 링크 등으로 이메일 서명을 개인화하세요."
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "${ BRAND_NAME } 또는 제3자가 메시지에 접근하는 것을 방지합니다. 메시지를 읽을 수 있는 유일한 사람은 당신과 이메일을 받은 수신자 뿐이죠."
+      ],
+      "Quickly set up out-of-office messages": [
+        "사무실 밖에서 빠른 메시지 설정"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "이메일, 캘린더 및 연락처를 모든 서비스에서 간편히 가져오세요."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "전화번호, 주소, 생일과 개인 노트와 같은 연락처 상세 정보를 안전하게 저장하세요. 제로 엑세스 암호화는 ${ BRAND_NAME } 또한 접근할 수 없음을 보장합니다."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "회의 참가자의 가용성을 확인하고 회의 일정을 잡는 시간을 절약하세요"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "필요한 만큼 많은 연락처 그룹을 만들어 큰 그룹에 이메일을 빠르고 쉽게 전송하세요. (그룹당 최대 100개의 연락처)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "이메일에 자동으로 회신, 정렬 및/또는 라벨을 부착하도록 필터를 설정"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "안전하고 공유 가능한 링크를 사용하여 파일이나 폴더를 누구와도 공유하세요"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP로 서드 파티 또는 디바이스에서 ${ MAIL_APP_NAME }을 통해 이메일 전송을 할 수 있습니다."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } 및 ${ PASS_APP_NAME }에 스토리지 공간이 공유됩니다."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "스토리지 공간이 ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } 그리고 ${ DRIVE_APP_NAME }에 공유됩니다. 관리자는 조직의 사용자들에게 각각의 다른 스토리지 공간을 할당할 수 있습니다"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } 및 ${ PASS_APP_NAME }에 사용자 간 스토리지 공간이 공유됩니다."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "사용자 지정 이메일 도메인 주소를 사용하세요. 예시, you@yourname.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "다른 ${ MAIL_APP_NAME } 사용자에게 이메일을 보낼 때, 암호화는 자동적으로 진행됩니다.${ MAIL_APP_NAME_TWO } 을 사용하지 않는 사용자에게 보내려면 보내기 전에 비밀번호를 설정해야 합니다."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "15개의 이메일 주소로 더 많은 개인화를 추가하고 3개의 커스텀 이메일 도메인을 지원합니다"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "사용자 당 ${ bundleStorage }으로 저장 공간을 부스트 하세요."
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "최종 ${ bundleStorage }으로 저장 공간을 부스트 하세요"
+      ],
+      "Create up to ${ n } calendar": [
+        "최대 ${ n }개 캘린더 생성"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n }개의 지정 이메일 도메인 지원"
       ]
     },
     "Placeholder": {
@@ -1103,6 +1579,22 @@
         "서드 파티 SSO 제공자로 리다이렉트됩니다."
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }에 의해 생성된 데이터를 위한 스토리지"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "최대 ${ totalStorageSize } Drive 저장 공간"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "최대 ${ totalStorageSize } 메일 저장 공간"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "모든 ${ BRAND_NAME } 서비스에서 사용"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "${ methodTo }(으)로 코드를 전송했습니다."
@@ -1112,6 +1604,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "계정 잠김"
+      ],
       "Enter 2FA code": [
         "2FA 코드 입력"
       ],
