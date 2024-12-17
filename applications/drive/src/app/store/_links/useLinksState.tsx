@@ -539,6 +539,9 @@ function getNewDecryptedLink(original: Link, newLink: Link): DecryptedLink | und
             fileModifyTime: original.decrypted.fileModifyTime,
             duration: original.decrypted.duration,
             corruptedLink: original.decrypted.corruptedLink,
+            isAnonymous: original.decrypted.isAnonymous,
+            sharedOn: original.decrypted.sharedOn,
+            sharedBy: original.decrypted.sharedBy,
             ...getDecryptedLinkComputedData(
                 original.decrypted,
                 newLink.encrypted.activeRevision?.id,

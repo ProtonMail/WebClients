@@ -8,6 +8,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
+import { hasValidAnonymousSignature } from '../../../components/hasValidAnonymousSignature';
 import { useDownloadIsTooBigModal } from '../../../components/modals/DownloadIsTooBigModal';
 import { logError, sendErrorReport } from '../../../utils/errorHandling';
 import { bufferToStream } from '../../../utils/stream';
@@ -149,6 +150,9 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                     link: LinkDownload,
                     signatureIssues: SignatureIssues
                 ) => {
+                    if (link.isAnonymous && hasValidAnonymousSignature(signatureIssues)) {
+                        return;
+                    }
                     log(nextDownload.id, `signature issue: ${JSON.stringify(signatureIssues)}`);
                     await handleSignatureIssue(abortSignal, nextDownload, link, signatureIssues);
                 },
