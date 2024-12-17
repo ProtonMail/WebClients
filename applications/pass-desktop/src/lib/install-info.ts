@@ -1,7 +1,7 @@
 import { ipcMain } from 'electron';
-import logger from 'electron-log/main';
 
 import { store } from '../store';
+import logger from '../utils/logger';
 
 export type StoreInstallProperties = {
     source: string | null;

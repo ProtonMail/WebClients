@@ -1,7 +1,7 @@
 import { type OnHeadersReceivedListenerDetails } from 'electron';
-import logger from 'electron-log/main';
 
 import * as config from '../app/config';
+import logger from '../utils/logger';
 
 // Fix SSO callback URL
 export const fixSSOUrl = ({ responseHeaders, url }: OnHeadersReceivedListenerDetails) => {
