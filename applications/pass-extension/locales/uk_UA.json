@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Accept": [
+        "Схвалити"
+      ],
       "Account": [
         "Обліковий запис"
       ],
@@ -1844,6 +1847,9 @@
       "Autosuggest": [
         "Автопропозиція"
       ],
+      "Backup password": [
+        "Резервний пароль"
+      ],
       "Birthdate": [
         "Дата народження"
       ],
@@ -1922,8 +1928,14 @@
       "Display name": [
         "Ім'я"
       ],
+      "DNS": [
+        "DNS"
+      ],
       "Domain": [
         "Домен"
+      ],
+      "Domain:": [
+        "Домен:"
       ],
       "Domains": [
         "Домени"
@@ -2020,6 +2032,9 @@
       ],
       "Include numbers (0-9)": [
         "Додати цифри (0-9)"
+      ],
+      "Info": [
+        "Інформація"
       ],
       "Instagram handle": [
         "Instagram обробник"
@@ -2315,6 +2330,9 @@
       "Username/email": [
         "Ім'я користувача / пошта"
       ],
+      "Value:": [
+        "Значення:"
+      ],
       "Vault ID": [
         "ID сховища"
       ],
@@ -2477,12 +2495,40 @@
         "Напишіть свою нотатку"
       ]
     },
+    "sso: auth device state": {
+      "Active": [
+        "Активний"
+      ],
+      "Inactive": [
+        "Неактивний"
+      ],
+      "Pending activation": [
+        "Очікується активація"
+      ],
+      "Pending admin activation": [
+        "Очікується активація адміністратора"
+      ],
+      "Rejected": [
+        "Відхилено"
+      ],
+      "Signed out": [
+        "Виконано вихід"
+      ],
+      "Unknown": [
+        "Невідомий"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувача.",
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувачів.",
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувачів.",
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувачів."
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "Темна"
       ]
     },
     "Title": {
@@ -2521,6 +2567,9 @@
       ],
       "Discard changes?": [
         "Відхилити зміни?"
+      ],
+      "Domain": [
+        "Домен"
       ],
       "Email": [
         "Е-пошта"
@@ -2783,6 +2832,9 @@
       ],
       "Missing alias suffix": [
         "Відсутній суфікс псевдоніма"
+      ],
+      "Name is required": [
+        "Назва обовʼязкова"
       ],
       "No items": [
         "Немає елементів"
