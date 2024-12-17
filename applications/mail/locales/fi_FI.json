@@ -69,9 +69,6 @@
       "Add group": [
         "Lisää ryhmä"
       ],
-      "Add new contact": [
-        "Lisää uusi yhteystieto"
-      ],
       "Add new group": [
         "Lisää uusi ryhmä"
       ],
@@ -480,9 +477,6 @@
       "Export contact group": [
         "Vie yhteystietoryhmä"
       ],
-      "Export contacts": [
-        "Vie yhteystiedot"
-      ],
       "External encryption": [
         "Ulkoinen salaus"
       ],
@@ -512,6 +506,9 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "Hanki ${ BRAND_NAME } Duo"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Hanki ${ MAIL_SHORT_APP_NAME } Plus hintaan ${ priceCoupon }"
       ],
       "Get in touch": [
         "Ota yhteyttä"
@@ -1917,6 +1914,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Muuta sähköpostiosoitteen asetuksia"
+      ],
+      "Continue": [
+        "Jatka"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
       ],
@@ -3566,6 +3569,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
+      "Also included": [
+        "Sisältyy myös"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Päivitä tilauksesi poistaaksesi roskapostit ja roskakorissa olevat viestit automaattisesti, ja avataksesi muita premium-ominaisuuksia."
       ],
@@ -3595,6 +3601,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Saadaksesi rajattoman pääsyn kirjoittamisen avustajaan ja muihin, päivitä ${ BRAND_NAME } Duo -palveluun."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut kolmannen osapuolen palvelusta."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Hanki ${ PLAN_NAMES[PLANS.BUNDLE] } ja saat rajattomasti aliaksia ja 500 Gt tallennustilaa."
@@ -3665,6 +3674,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Päivittämällä tilauksesi avaat rajattomasti kansioita, tunnisteita ja muita premium-ominaisuuksia."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Päivitä tilauksesi saadaksesi ${ activatePmUser }, toisen lyhyemmän ja helpommin muistettavan sähköpostiosoitten nykyisen lisäksi."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Päivitä tilisi aktivoidaksesi huippumoderniin tekoälyyn perustuvan ${ PROTON_SENTINEL_NAME } -tietoturvaratkaisumme, johon sisältyy myös 24/7 asiantuntijatuki."
@@ -5271,23 +5283,14 @@
       "Checklist complete": [
         "Tarkistuslista on valmis"
       ],
-      "Close": [
-        "Sulje"
-      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Tuplaa tallennustilasi ilmaiseksi suorittamalla tämä tarkistuslista ${ daysCount } kuluessa."
-      ],
-      "Congratulations, you completed all the steps!": [
-        "Onnittelut, olet suorittanut kaikki vaiheet!"
       ],
       "Discover how our ${ strongText } protect you": [
         "Tutustu, kuinka ${ strongText } suojaa sinua"
       ],
       "Discover privacy features": [
         "Tutustu tietosuojaominaisuuksiin"
-      ],
-      "Double your free storage to 1 GB when you complete the following:": [
-        "Tuplaa ilmainen tallennustilasi 1 gigatavuun seuraavilla:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Niin vahva salaus, että vain sinä ja tarkoitetut vastaanottajat näkevät viestisi."
@@ -5316,26 +5319,14 @@
       "Learn more": [
         "Lue lisää"
       ],
-      "Maybe later": [
-        "Ehkä myöhemmin"
-      ],
       "Nice! You've updated all services in this category.": [
         "Hienoa! Olet päivittänyt kaikki tämän luokan palvelut."
-      ],
-      "Open checklist": [
-        "Avaa tarkistuslista"
-      ],
-      "Open checklist and get free storage": [
-        "Avaa tarkistuslista niin saat ilmaista tallennustilaa"
       ],
       "Popular online services": [
         "Suosittuja verkkopalveluita"
       ],
       "privacy features": [
         "Yksityisyysominaisuudet"
-      ],
-      "Protect and simplify your email": [
-        "Suojaa ja yksinkertaista sähköpostisi"
       ],
       "Protection from trackers": [
         "Seurantasuojaus"
@@ -6000,9 +5991,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ole yhteydessä ylläpitoosi."
       ],
-      "Account size": [
-        "Tilin koko"
-      ],
       "Account successfully updated": [
         "Tili on päivitetty"
       ],
@@ -6012,8 +6000,8 @@
       "Add image URL": [
         "Lisää kuvan URL"
       ],
-      "Additional options": [
-        "Lisävalinnat"
+      "Address copied to clipboard": [
+        "Osoite kopioitiin leikepöydälle"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Osoitteen varmennus luotetuilla avaimilla on käytössä tälle osoitteelle. Jotta voit lähettää tähän osoitteeseen, luota ensin lähetykseen käytettäviin julkisiin avaimiin."
@@ -6180,9 +6168,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Tarkistetaan yhteystietoa ${ progress }/${ max }..."
       ],
-      "Clear app data": [
-        "Tyhjennä sovellustiedot"
-      ],
       "Clear browser data": [
         "Tyhjennä selaimen välimuisti"
       ],
@@ -6244,18 +6229,11 @@
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Luo suojattu pilvi ${ n } jäsenelle",
-        "Luo suojattu pilvi ${ n } jäsenelle"
-      ],
       "Create in": [
         "Luo kalenteriin"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Hyvitys edellisen tilausjaksosi käyttämättömästä osuudesta"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Outlookin, Outlook Expressin, Yahoo! Mailin, Hotmailin, Eudoran ja joidenkin muiden sovellusten CSV-tiedostoja, sekä vCard-tiedostojen 3.1- ja 4.0-versioita (UTF-8-koodauksella) tuetaan."
       ],
       "Current plan": [
         "Nykyinen tilaus"
@@ -6286,6 +6264,9 @@
       ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "default email address": [
+        "oletussähköpostiosoite"
       ],
       "Default email application": [
         "Sähköpostin oletussovellus"
@@ -6377,9 +6358,6 @@
       ],
       "Email copied to clipboard": [
         "Sähköpostiosoite kopioitiin leikepöydälle"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Sisältää sähköpostin isännöinnin 10 omalla verkkotunnuksella veloituksetta. Lisää verkkotunnuksia voidaan lisätä ${ price } kappalehintaan."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Sähköpostin isännöinti on saatavilla vain jo entuudestaan omistamillesi verkkotunnuksille. ${ BRAND_NAME }in kautta ei tällä hetkellä ole mahdollista rekisteröidä verkkotunnuksia. Voit käyttää miltä tahansa verkkotunnustoimittajalta hankkimaasi verkkotunnusta."
@@ -6710,6 +6688,9 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Roskakorissa ja roskapostissa yli 30 päivää olleet viestit poistetaan automaattisesti."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Kaikkiin sähköpostiosoitteisiisi lähetetyt viestit saapuvat postilaatikkoosi."
+      ],
       "MM/YY": [
         "KK/VV"
       ],
@@ -6937,6 +6918,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
       ],
+      "Registering your subscription...": [
+        "Rekisteröidään tilaustasi..."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Muista päivittää nämä tiedot salasanahallintaasi tai missä tahansa säilytätkin tili- ja kirjautumistietojasi."
       ],
@@ -7040,6 +7024,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP:n määritys mahdollistaa päästä päähän -salatut viestit ${ BRAND_NAME }in ulkopuolisen, PGP-yhteensopivaa palvelua käyttävän käyttäjän kanssa."
       ],
+      "Setting up your new address...": [
+        "Määritetään uutta osoitettasi..."
+      ],
       "Shorten selection": [
         "Lyhennä valinta"
       ],
@@ -7066,6 +7053,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Valitettavasti viestiä ei ole olemassa tai se on jo tuhoutunut."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Aloita sen jakaminen yhteystietojen kanssa ja käytä sitä verkkopalveluissa."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Tämä selain ei tue tallennusominaisuuksia, joita tarvitaan viestin sisältöhaun suorittamiseen."
@@ -7105,9 +7095,6 @@
       ],
       "Text to display": [
         "Näytettävä teksti"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Sovelluksen on purettava yhteystietojesi salaus paikallisesti ennen niiden vientiä. Käsittelyn lopuksi luodaan ladattava VCF-tiedosto."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Luonnostasi ei tallenneta, jos poistut sivulta."
@@ -7198,6 +7185,9 @@
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Tämä on tarkoitettu kirjoittamisen helpottamiseksi. Tarkista ehdotetun tekstin tarkkuus. ${ learnMoreResult }"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Tämä on nyt ${ defaultEmailAddress } uusien viestien lähettämistä varten."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojen ja maksukorttien tietojen kaltaisia tietoja. Älä jatka oman turvallisuutesi vuoksi."
       ],
@@ -7267,9 +7257,6 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tätä julkista avainta käytetään automaattisesti tähän osoitteeseen lähetettävien viestien salaukseen."
-      ],
-      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Tämä poistaa kaikki tähän sovellukseen liittyvät tiedot, mukaan lukien ladatut viestit. Sovellus käynnistyy uudelleen, ja sinun on kirjauduttava sisään uudelleen, jotta voit käyttää sitä."
       ],
       "This sender's public key has not been trusted yet.": [
         "Tämän lähettäjän julkiseen avaimeen ei ole vielä luotettu."
@@ -7456,9 +7443,6 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Havaitsimme useamman ilmaisen tilin luomisen, joka rikkoo ${ termsLink }."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
-        "Tarjoamme tilauksia, jotka on suunniteltu juuri kaltaisillesi, useita sähköpostiosoitteita tarvitseville käyttäjille. Päivitä maksulliseen tilaukseen poistaaksesi rajoitukset."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Maksutapa on vahvistettava pankistasi."
@@ -7783,11 +7767,6 @@
         "Vain tarkastelu"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Vaarantunut"
@@ -8093,9 +8072,6 @@
       "Authenticator app": [
         "Todennussovellus"
       ],
-      "Automatically save contacts": [
-        "Tallenna yhteystiedot automaattisesti"
-      ],
       "BCC": [
         "Piilokopio"
       ],
@@ -8261,9 +8237,6 @@
       "Expires": [
         "Erääntyy"
       ],
-      "Export contacts": [
-        "Vie yhteystiedot"
-      ],
       "Extended address": [
         "Laajennettu osoite"
       ],
@@ -8308,9 +8281,6 @@
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
-      ],
-      "Import contacts": [
-        "Tuo yhteystietoja"
       ],
       "Import interval": [
         "Tuontiväli"
@@ -9219,6 +9189,9 @@
       "Get ${ planTitle }": [
         "Hanki ${ planTitle }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Aloita hintaan ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Alkaen ${ priceMailPlus }"
       ],
@@ -9359,6 +9332,9 @@
       ],
       "10 email addresses/aliases": [
         "10 sähköpostiosoitetta/aliasta"
+      ],
+      "10 more premium features": [
+        "10 muuta premium-ominaisuutta"
       ],
       "10-year file version history": [
         "10 vuoden tiedostoversiohistoria"
@@ -9843,6 +9819,14 @@
         "Vaihdetaanko tilaus?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Hanki Mail Plus hintaan ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceMailPlus } kuukausihintaan. Voit perua milloin tahansa."
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Suojaa aikataulusi päästä päähän -salauksella. Sisältää tuen mukautetuille kalentereille, kalenterin jakamiseen ja muuta."
@@ -10234,20 +10218,8 @@
       "Auto-delete spam and trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
       ],
-      "Automatically forward emails": [
-        "Viestien automaattiohjaus"
-      ],
-      "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Estä huijareiden sähköpostiviestintä pysyvästi. ${ kbLinkSender }"
-      ],
-      "Block unsavory senders": [
-        "Estä epämiellyttävät lähettäjät"
-      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Tyhjennä roskaposti ja roskakori automaattisesti 30 päivän kuluttua."
-      ],
-      "Congratulations on choosing privacy": [
-        "Onnittelut yksityisyyden valinnasta"
       ],
       "Dark Web Monitoring": [
         "Pimeän verkon valvonta"
@@ -10258,17 +10230,8 @@
       "Download the desktop app and continue": [
         "Lataa työpöytäsovellus ja jatka"
       ],
-      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "Salaus on niin vahva, että vain sinä ja tarkoitetut vastaanottajat näkevät viestisi. ${ kbLinkEncryption }"
-      ],
       "Fixed and focused": [
         "Kiinteä ja keskittynyt"
-      ],
-      "For your eyes only": [
-        "Vain sinun silmillesi"
-      ],
-      "Forward Gmail messages to your inbox.": [
-        "Ohjaa Gmailin viestit postilaatikkoosi."
       ],
       "Get notified if your password is compromised.": [
         "Saat ilmoituksen, jos salasanasi on vaarantunut."
@@ -10309,17 +10272,11 @@
       "Replay introduction": [
         "Toista esittely uudelleen"
       ],
-      "Skip": [
-        "Ohita"
-      ],
       "Start using ${ BRAND_NAME }": [
         "Aloita ${ BRAND_NAME }in käyttö"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Aloita sähköpostiosoitteesi lyhyemmän ja tarttuvamman version käyttäminen."
-      ],
-      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
-        "Estämme mainostajia ja tiedonkerääjiä profiloimasta sinua. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Tervetuloa ${ MAIL_APP_NAME }iin"
@@ -10787,28 +10744,9 @@
         "Nimi"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } myyntiimme."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Valitse tilauksesi sisältyvien IP-osoitteiden määrä. Jokainen lisäosoite maksaa ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Jos tarvitset enemmän kuin ${ maxIPs } IP-osoitteen, ",
-        "Jos tarvitset enemmän kuin ${ maxIPs } IP-osoitetta, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "ole yhteydessä"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Valitse tilauksesi käyttäjämäärä. Jokainen lisäkäyttäjä maksaa ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Jos tarvitset enemmän kuin ${ maxUsers } käyttäjätilin, ${ contact } myyntiimme.",
-        "Jos tarvitset enemmän kuin ${ maxUsers } käyttäjätiliä, ${ contact } myyntiimme."
       ]
     },
     "Price": {
@@ -11591,6 +11529,9 @@
       "Schedule send": [
         "Ajoita lähetys"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Tämä on nyt oletusosoitteesi. Avaa pudotusvalikko lähettääksesi toisesta osoitteesta. "
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Käytä ${ DARK_WEB_MONITORING_NAME }a saadaksesi ilmoituksen, jos tietojasi on vuotanut muista verkkopalveluista."
       ],
@@ -11602,6 +11543,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Voit nyt ajoittaa viestiesi lähetyksen myöhempään ajankohtaan"
+      ],
+      "Your pm.me email is active": [
+        "Sinun pm.me-osoitteesi on käytössä"
       ]
     },
     "sso": {
@@ -13368,6 +13312,9 @@
       "Unsubscribe request sent": [
         "Tilauksen lopetuspyyntö lähetettiin"
       ],
+      "Upgrade complete!": [
+        "Päivitys valmis!"
+      ],
       "Verification error": [
         "Vahvistusvirhe"
       ],
@@ -13416,6 +13363,9 @@
       ],
       "Your free trial has ended": [
         "Ilmainen kokeilujaksosi on päättynyt"
+      ],
+      "Your shorter address is now ready": [
+        "Lyhyempi osoittesi on nyt valmis"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13501,9 +13451,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
-      ],
-      "You do not have any contacts to export": [
-        "Sinulla ei ole vietäviä yhteystietoja"
       ]
     },
     "tooltip": {
@@ -13676,6 +13623,9 @@
       ],
       "Missing alias suffix": [
         "Aliaksen jälkiliite puuttuu"
+      ],
+      "Name is required": [
+        "Nimi vaaditaan"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Vain aakkosnumeeriset merkit, pisteet, väli- ja alaviivat sallitaan."
