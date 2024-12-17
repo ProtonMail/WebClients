@@ -1,9 +1,19 @@
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 import type { DateTimeModel, EventModel, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 
-const keys = ['title', 'location', 'description', 'isAllDay', 'frequency'];
+const keys = [
+    'title',
+    'location',
+    'description',
+    'isAllDay',
+    'frequency',
+    'conferenceId',
+    'conferencePassword',
+    'conferenceUrl',
+    'conferenceHost',
+];
 
-export const getHasEdited = (keys: string[], model: any, otherModel: any) => {
+const getHasEdited = (keys: string[], model: any, otherModel: any) => {
     return keys.some((key) => {
         return model[key] !== otherModel[key];
     });
