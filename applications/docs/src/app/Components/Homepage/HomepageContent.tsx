@@ -3,9 +3,9 @@ import { CircleLoader } from '@proton/atoms'
 import { HomepageNoItemsContent } from './HomepageNoItemsContent'
 import { HomepageRecentDocumentsTable } from './HomepageRecentDocumentsTable'
 
-import './HomepageContent.scss'
 import { useRecentDocuments } from './useRecentDocuments'
 import { useApplication } from '../../Containers/ApplicationProvider'
+import { InvitesTable } from '../Invites/InvitesTable'
 
 export function HomepageContent() {
   let children: ReactNode
@@ -44,8 +44,11 @@ export function HomepageContent() {
   }
 
   return (
-    <div className="homepage-content-wrapper w-full px-2 pt-2">
-      <div className="homepage-content bg-norm border-weak shadow-raised h-full overflow-auto border">{children}</div>
+    <div className="homepage-content-wrapper flex h-full w-full flex-col px-2 pt-2">
+      <InvitesTable className="mb-5" />
+      <div className="homepage-content bg-norm border-weak shadow-raised flex w-full flex-1 flex-col overflow-auto rounded-t-xl border">
+        {children}
+      </div>
     </div>
   )
 }

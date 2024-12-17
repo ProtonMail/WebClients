@@ -39,7 +39,7 @@ export default function ExportToPDFModal({ onClose, open, ...modalProps }: Props
     >
       <ModalTwoContent className="m-0 p-0">
         <div className="p-6">
-          <h1 className="text-center text-base font-bold">{c('Info').t`Save Document as PDF`}</h1>
+          <h1 className="text-center text-rg font-bold">{c('Info').t`Save Document as PDF`}</h1>
           <div className="mt-4 space-y-4">
             <p>{c('Info').t`Your browser's Print dialog will now open, where you can export your document to PDF.`}</p>
             <p>{saveString()}</p>

@@ -15,9 +15,15 @@ import type { GetNodePermissions } from './GetNodePermissions'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { NodeMeta, PublicNodeMeta, PublicDriveCompat, DriveCompat } from '@proton/drive-store'
 import type { FetchMetaAndRawCommit } from './FetchMetaAndRawCommit'
+import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 
 type LoadDocumentResult<E extends DocumentState | PublicDocumentState> = {
   documentState: E
+}
+
+type ErrorResult = {
+  code?: DocsApiErrorCode
+  message: string
 }
 
 /**
@@ -35,7 +41,7 @@ export class LoadDocument {
     private logger: LoggerInterface,
   ) {}
 
-  async executePrivate(nodeMeta: NodeMeta): Promise<Result<LoadDocumentResult<DocumentState>>> {
+  async executePrivate(nodeMeta: NodeMeta): Promise<Result<LoadDocumentResult<DocumentState>, ErrorResult>> {
     LoadLogger.logEventRelativeToLoadTime('[LoadDocument] Beginning to load document')
     try {
       const [nodeResult, keysResult, metaResult, permissionsResult] = await Promise.all([
@@ -79,14 +85,14 @@ export class LoadDocument {
 
       LoadLogger.logEventRelativeToLoadTime('[LoadDocument] All network requests')
 
-      if (nodeResult.isFailed()) {
-        return Result.fail(nodeResult.getError())
-      }
       if (metaResult.isFailed()) {
-        return Result.fail(metaResult.getError())
+        return Result.fail({ message: metaResult.getError().message, code: metaResult.getError().code })
+      }
+      if (nodeResult.isFailed()) {
+        return Result.fail({ message: nodeResult.getError() })
       }
       if (keysResult.isFailed()) {
-        return Result.fail(keysResult.getError())
+        return Result.fail({ message: keysResult.getError() })
       }
 
       const { keys } = keysResult.getValue()
@@ -105,22 +111,22 @@ export class LoadDocument {
         })
 
         if (decryptResult.isFailed()) {
-          return Result.fail(`Failed to decrypt commit ${decryptResult.getError()}`)
+          return Result.fail({ message: `Failed to decrypt commit ${decryptResult.getError()}` })
         }
 
         decryptedCommit = decryptResult.getValue()
       }
 
       if (!permissionsResult) {
-        return Result.fail('Unable to load permissions')
+        return Result.fail({ message: 'Unable to load permissions' })
       }
 
       if (!keysResult) {
-        return Result.fail('Unable to load all necessary data')
+        return Result.fail({ message: 'Unable to load all necessary data' })
       }
 
       if (permissionsResult.isFailed()) {
-        return Result.fail(permissionsResult.getError())
+        return Result.fail({ message: 'Unable to load all necessary data' })
       }
 
       const { role, fromCache: roleIsFromCache } = permissionsResult.getValue()
@@ -170,7 +176,7 @@ export class LoadDocument {
 
       return Result.ok({ documentState })
     } catch (error) {
-      return Result.fail(getErrorString(error) ?? 'Failed to load document')
+      return Result.fail({ message: getErrorString(error) ?? 'Failed to load document' })
     }
   }
 
@@ -199,7 +205,7 @@ export class LoadDocument {
       ])
 
       if (metaResult.isFailed()) {
-        return Result.fail(metaResult.getError())
+        return Result.fail(metaResult.getError().message)
       }
 
       const { serverBasedMeta, latestCommit, realtimeToken } = metaResult.getValue()

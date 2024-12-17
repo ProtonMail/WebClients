@@ -41,7 +41,7 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
       })
 
       if (documentMetaResult.isFailed()) {
-        return Result.fail(documentMetaResult.getError())
+        return Result.fail(documentMetaResult.getError().message)
       }
 
       const newDocMeta = documentMetaResult.getValue()
