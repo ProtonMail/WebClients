@@ -68,9 +68,6 @@
       "Add group": [
         "加入群組"
       ],
-      "Add new contact": [
-        "加入聯絡人"
-      ],
       "Add new group": [
         "創建新的群組"
       ],
@@ -298,9 +295,6 @@
       ],
       "Export contact group": [
         "匯出聯絡人群組"
-      ],
-      "Export contacts": [
-        "匯出聯絡人"
       ],
       "Forgot password?": [
         "忘記密碼?"
@@ -2560,6 +2554,11 @@
         "逾期帳單"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 匯入小幫手"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "雙重驗證可以增加一層安全保障，防止盜用。"
@@ -2632,11 +2631,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 匯入小幫手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4333,9 +4327,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由於有帳單仍未繳付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
-      "Account size": [
-        "帳號容量"
-      ],
       "Account successfully updated": [
         "帳號已成功更新"
       ],
@@ -4344,9 +4335,6 @@
       ],
       "Added and removed participants will be notified.": [
         "已加入及已移除的參與者將獲通知。"
-      ],
-      "Additional options": [
-        "額外設定"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
@@ -4477,17 +4465,11 @@
       "Create a new contact group": [
         "創建新聯絡人群組"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "替成員創建一個安全${ n }"
-      ],
       "Create in": [
         "創建在"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "您之前訂購授權方案裡未使用部分的餘額"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 或其它軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 ( UTF-8 編碼) 都可以支援。"
       ],
       "Current plan": [
         "當前方案"
@@ -4557,9 +4539,6 @@
       ],
       "email": [
         "電子信箱"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "免費提供 10 個自訂電郵網域名稱的託管服務。 亦可加入更多網域，現在只需 ${ price }。"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。 ${ BRAND_NAME } 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
@@ -4917,9 +4896,6 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "在可以匯出前，應用程式需要在本機先解密您的聯絡人。過程結束時，將會產生一個 VCF 檔案以供您下載。"
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
@@ -5333,11 +5309,6 @@
         "您可以在設定中重新分享您的行事曆。"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
-      ]
-    },
     "Information about why calendar event cannot be saved": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "您最多可以一次邀請 ${ maxAttendees } 位參與者"
@@ -5423,9 +5394,6 @@
       ],
       "Authenticator app": [
         "驗證 app"
-      ],
-      "Automatically save contacts": [
-        "自動儲存聯絡人"
       ],
       "Beta Access": [
         "測試版體驗"
@@ -5574,9 +5542,6 @@
       "Expires": [
         "有效期限"
       ],
-      "Export contacts": [
-        "匯出聯絡人"
-      ],
       "Extended address": [
         "詳細位址"
       ],
@@ -5606,9 +5571,6 @@
       ],
       "Import all messages": [
         "匯入全部郵件"
-      ],
-      "Import contacts": [
-        "匯入聯絡人"
       ],
       "Import interval": [
         "匯入頻率"
@@ -7641,23 +7603,9 @@
         "(未命名)"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "請聯繫${ contactHref }我們的銷售團隊。"
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "您需要多餘 ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "業務聯繫"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "選擇欲加入您授權方案的使用者人數。每一位加入使用者的費用為 ${ price }。"
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "若您需求超過 ${ maxUsers } 位使用者帳號，請 ${ contact } 我們的客戶成功團隊。"
       ]
     },
     "Price": {
@@ -9587,9 +9535,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
-      ],
-      "You do not have any contacts to export": [
-        "您沒有任何可匯出的聯絡人"
       ]
     },
     "tooltip": {
