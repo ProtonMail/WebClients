@@ -115,28 +115,32 @@ const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInf
                                                 }
                                             />
                                         ) : (
-                                            <Button
-                                                color="norm"
-                                                shape="outline"
-                                                className="shrink-0 grow-0"
-                                                onClick={() => {
-                                                    const run = async () => {
-                                                        const result = await dispatch(
-                                                            setupSCIMAction({
-                                                                type: 'setup',
-                                                                api,
-                                                            })
-                                                        );
-                                                        setLocalSCIMConfiguration({ ...result, type: 'setup' });
-                                                        setSetupSCIMModalOpen(true);
-                                                        createNotification({ text: c('Info').t`SCIM token active` });
-                                                    };
-                                                    void withLoadingSCIM(run());
-                                                }}
-                                                loading={loadingSCIM}
-                                            >
-                                                {c('scim: Action').t`Configure SCIM`}
-                                            </Button>
+                                            <div>
+                                                <Button
+                                                    color="norm"
+                                                    shape="outline"
+                                                    className="shrink-0 grow-0"
+                                                    onClick={() => {
+                                                        const run = async () => {
+                                                            const result = await dispatch(
+                                                                setupSCIMAction({
+                                                                    type: 'setup',
+                                                                    api,
+                                                                })
+                                                            );
+                                                            setLocalSCIMConfiguration({ ...result, type: 'setup' });
+                                                            setSetupSCIMModalOpen(true);
+                                                            createNotification({
+                                                                text: c('Info').t`SCIM token active`,
+                                                            });
+                                                        };
+                                                        void withLoadingSCIM(run());
+                                                    }}
+                                                    loading={loadingSCIM}
+                                                >
+                                                    {c('scim: Action').t`Configure SCIM`}
+                                                </Button>
+                                            </div>
                                         )}
                                     </SettingsLayout>
                                 </>
