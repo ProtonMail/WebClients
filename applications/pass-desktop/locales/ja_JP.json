@@ -602,7 +602,7 @@
         "はい、もう要りません"
       ],
       "Unlock": [
-        "ロック解除"
+        "アンロック"
       ],
       "Unlock offline with password": [
         "オフラインでパスワードを使用してアンロック"
@@ -762,7 +762,7 @@
         "SPF${ WIKIPEDIA_LINK_SPF }は、メールの配信中に送信者アドレスの偽装を検出するために設計されたメール認証方法です。SPFの設定は、あなたのメールが受信者の迷惑メールフォルダに入る可能性を減らすために強く推奨されます。"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
-        "電子メール アドレスとhide-my-emailエイリアスを使用して作成されたアカウントに関連するデータ侵害の監視を開始します。"
+        "メール アドレスとhide-my-emailエイリアスを使用して作成されたアカウントに関連するデータ侵害の監視を開始します。"
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "ダークウェブは、アイデンティティなどの盗まれた個人情報が売買されるインターネットの隠れた部分です。"
@@ -937,7 +937,7 @@
         "このアドレスの違反をロードできませんでした"
       ],
       "Failed to load breaches for this email alias": [
-        "この電子メール エイリアスの侵害を読み込めませんでした"
+        "このメール エイリアスの侵害を読み込めませんでした"
       ],
       "Failed to load domain settings.": [
         "ドメイン設定の読み込みに失敗しました。"
@@ -971,6 +971,9 @@
       ],
       "Failed to restore items from trash": [
         "アイテムをごみ箱から復元できませんでした"
+      ],
+      "Failed to set default mailbox": [
+        "既定のメールボックスの設定に失敗しました"
       ],
       "Failed to sync aliases": [
         "エイリアスの同期に失敗しました"
@@ -1265,6 +1268,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "「${ payload.item.data.metadata.name }」更新が却下されました"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount }件のブロック済み"
+      ],
       "${ count } invite successfully sent": [
         "${ count }通の招待の送信に成功しました"
       ],
@@ -1276,6 +1282,9 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } 表示"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount }件の転送済み"
       ],
       "${ memberCount } member": [
         "${ memberCount }人のメンバー"
@@ -1307,6 +1316,9 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } が正常に有効になりました"
       ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount }件の送信済み"
+      ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } 違反が検出されました"
       ],
@@ -1324,6 +1336,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } へのアクセスには常にあなたの ${ BRAND_NAME } パスワードが必要です。"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "${ PASS_APP_NAME }へのアクセスには、常にバックアップパスワードが必要です。"
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME } へのアクセスには指紋または端末のPINが必要です。"
@@ -1356,7 +1371,7 @@
         "エイリアスが同期されていません (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
-        "カスタム ドメインを持つエイリアスは監視されません。監視用のカスタム電子メールとして追加してください。"
+        "カスタム ドメインを持つエイリアスは監視されません。監視用のカスタムメールとして追加してください。"
       ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "メールボックス${ emailJSX }を使用している全てのエイリアスは削除されます。"
@@ -1506,13 +1521,13 @@
         "メール"
       ],
       "Email address successfully deleted from monitoring": [
-        "電子メールアドレスが監視から正常に削除されました"
+        "メールアドレスが監視から正常に削除されました"
       ],
       "Email address successfully excluded from monitoring": [
-        "電子メールアドレスが監視から除外されました"
+        "メールアドレスが監視から除外されました"
       ],
       "Email address successfully included in monitoring": [
-        "電子メールアドレスが監視に正常に含まれました"
+        "メールアドレスが監視に正常に含まれました"
       ],
       "Email headers illustration": [
         "メールヘッダーイラスト"
@@ -1832,6 +1847,15 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } データをエクスポートするには、${ BRAND_NAME } のパスワードを確認してください"
       ],
+      "Please confirm your backup password": [
+        "バックアップパスワードを確認してください"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "パスワードの自動ロックのために、バックアップパスワードを確認してください。"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "現在のロックを解除するには、バックアップパスワードを確認してください。"
+      ],
       "Please confirm your extra password": [
         "追加のパスワードを確認してください"
       ],
@@ -2096,6 +2120,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "${ BRAND_NAME } のパスワードで ${ PASS_SHORT_APP_NAME } のロックを解除する"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "バックアップパスワードで${ PASS_SHORT_APP_NAME }をアンロック"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "追加パスワードで ${ PASS_SHORT_APP_NAME } のロックを解除する"
       ],
@@ -2165,6 +2192,9 @@
       "You are about to create:": [
         "作成されるメールアドレス:"
       ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }をアンロックするためのPINコードを定義することもできます。"
+      ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "${ BRAND_NAME } のパスワードを使用して ${ PASS_SHORT_APP_NAME } にオフラインでアクセスできるようになりました"
       ],
@@ -2202,16 +2232,16 @@
         "ログアウトされ、他のすべてのデバイスで再度ログインする必要があります。"
       ],
       "You will be notified of data breaches for these email addresses.": [
-        "これらの電子メール アドレスのデータ侵害について通知されます。"
+        "これらのメール アドレスのデータ侵害について通知されます。"
       ],
       "You will be notified of data breaches for this email address.": [
-        "この電子メール アドレスのデータ侵害について通知されます。"
+        "このメール アドレスのデータ侵害について通知されます。"
       ],
       "You will no longer be notified of data breaches for these email addresses.": [
-        "これらの電子メール アドレスのデータ侵害については通知されなくなります。"
+        "これらのメール アドレスのデータ侵害については通知されなくなります。"
       ],
       "You will no longer be notified of data breaches for this email address.": [
-        "この電子メール アドレスのデータ侵害については今後通知されません。"
+        "このメール アドレスのデータ侵害については今後通知されません。"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "あなたは、${ PASS_APP_NAME } での共有、2要素認証、クレジットカード、その他の高度な機能へのアクセスができなくなります。"
@@ -2256,6 +2286,9 @@
       ],
       "${ forwardCount } forward": [
         "${ forwardCount }件の転送"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "過去 14 日間で、${ forwardedEmails }、${ repliedEmails }、${ blockedEmails }。"
       ],
       "${ hours } hour": [
         "${ hours } 時間"
@@ -2376,6 +2409,9 @@
       ],
       "Auto-lock after": [
         "自動ロックまで"
+      ],
+      "Backup password": [
+        "バックアップパスワード"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "ログイン情報を保存するだけでなく、${ PASS_APP_NAME } は統合されたメールエイリアス機能であなたの身元を保護します。新しいオンラインアカウントにサインアップするたびに、${ PASS_APP_NAME } は実際のメールアドレスを保護するために自動的にエイリアスを作成できます。 "
@@ -3581,6 +3617,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } をお楽しみですか?"
       ],
+      "Enter your backup password": [
+        "バックアップパスワードを入力してください"
+      ],
       "Enter your extra password": [
         "追加のパスワードを入力"
       ],
@@ -3843,7 +3882,7 @@
         "${ planName }サブスクリプションは${ endDate }に終了します"
       ],
       "Your exposed information": [
-        "あなたの暴露された情報"
+        "あなたの公開情報"
       ],
       "Your vault is empty": [
         "保管庫は空です"
@@ -3964,13 +4003,13 @@
         "無効なコード"
       ],
       "Invalid email": [
-        "無効な電子メール"
+        "無効なメール"
       ],
       "Invalid email addresses.": [
         "無効なメールアドレスです"
       ],
       "Inviting email addresses outside organization is not allowed.": [
-        "組織外の電子メール アドレスを招待することはできません。"
+        "組織外のメール アドレスを招待することはできません。"
       ],
       "item was imported without custom fields": [
         "アイテムはカスタムフィールドなしでインポートされました"
@@ -3986,6 +4025,9 @@
       ],
       "Move to trash": [
         "ごみ箱に移動"
+      ],
+      "Name is required": [
+        "名前は必須です"
       ],
       "No items": [
         "アイテムがありません"
@@ -4054,7 +4096,7 @@
         "このエイリアス \"${ aliasEmail }\" はログイン \"${ relatedLoginName } \" で現在使用されています。"
       ],
       "This email address will no longer be monitored for data breaches.": [
-        "この電子メール アドレスは、データ侵害について監視されなくなります。"
+        "このメール アドレスは、データ侵害について監視されなくなります。"
       ],
       "Title is required": [
         "タイトルは必須です"
