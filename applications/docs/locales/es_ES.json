@@ -60,9 +60,6 @@
       "Add group": [
         "Añadir grupo"
       ],
-      "Add new contact": [
-        "Añadir contacto"
-      ],
       "Add new group": [
         "Añadir grupo"
       ],
@@ -285,8 +282,8 @@
       "Export contact group": [
         "Exportar grupo de contactos"
       ],
-      "Export contacts": [
-        "Exportar contactos"
+      "Export selection as .vcf": [
+        "Exportar la selección en formato *.vcf"
       ],
       "Forgot password?": [
         "¿Contraseña olvidada?"
@@ -392,6 +389,9 @@
       ],
       "Merge contacts": [
         "Combinar contactos"
+      ],
+      "More actions": [
+        "Más acciones"
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
@@ -598,7 +598,7 @@
         "Omitir verificación"
       ],
       "Start import": [
-        "Iniciar importación"
+        "Iniciar la importación"
       ],
       "Starting from ${ priceUnlimited }": [
         "A partir de ${ priceUnlimited }"
@@ -694,7 +694,7 @@
         "Ver todos los informes"
       ],
       "View invoice": [
-        "Ver factura"
+        "Ver la factura"
       ],
       "Web page (.html)": [
         "Página web (.html)"
@@ -3854,14 +3854,8 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
       ],
-      "Account size": [
-        "Tamaño de la cuenta"
-      ],
       "Account successfully updated": [
         "Cuenta actualizada"
-      ],
-      "Additional options": [
-        "Opciones adicionales"
       ],
       "Address copied to clipboard": [
         "Se ha copiado la dirección al portapapeles."
@@ -3990,10 +3984,6 @@
       "Create a new contact group": [
         "Crear un grupo de contactos"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Crear una nube segura para ${ n } miembro",
-        "Crear una nube segura para ${ n } miembros"
-      ],
       "Create in": [
         "Crear en"
       ],
@@ -4014,9 +4004,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu suscripción al plan anterior"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
       "Current plan": [
         "Plan actual"
@@ -4092,9 +4079,6 @@
       ],
       "email": [
         "correo electrónico"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se puede añadir dominios adicionales por ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para dominios que posees. El registro de dominios no está disponible a través de ${ BRAND_NAME }. Puedes alojar correos electrónicos para dominios registrados en cualquier registrador de dominios."
@@ -4602,9 +4586,6 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "La cuenta puede tener una nueva clave o es posible que se haya manipulado los siguientes elementos: ${ items }. Ábrelos solo si son de confianza."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "La aplicación necesita descifrar localmente tus contactos antes de poder exportarlos. Al final del proceso se generará un archivo VCF y podrás descargarlo."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "La autoría de las ediciones en este documento no se ha podido verificar. ¿Deseas marcar este documento como verificado? Puedes ignorar ahora y decidir después."
       ],
@@ -4799,13 +4780,13 @@
         "¿Qué quieres hacer?"
       ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
-        "Cuando la caja de diálogo esté abierta, selecciona «Destino», elige «Guardar como PDF» y haz clic en Guardar."
+        "Cuando la ventana de diálogo esté abierta, selecciona «Destino», elige «Guardar como PDF» y haz clic en Guardar."
       ],
       "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
-        "Cuando la caja de diálogo esté abierta, selecciona «Destino», elige «Guardar como PDF» y haz clic en Guardar."
+        "Cuando la ventana de diálogo esté abierta, selecciona «Destino», elige «Guardar como PDF» y haz clic en Guardar."
       ],
       "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
-        "Cuando se abra el cuadro de diálogo, selecciona «PDF» en la esquina inferior izquierda y luego presiona Guardar."
+        "Cuando se abra la ventana de diálogo, selecciona «PDF» en la esquina inferior izquierda y luego presiona Guardar."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
@@ -4924,7 +4905,7 @@
         "Tu cuenta se actualizará una vez que el pago se haya completado."
       ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
-        "Se abrirá el cuadro de diálogo Imprimir del navegador, donde podrás exportar tu documento a PDF."
+        "Se abrirá la ventana de diálogo Imprimir del navegador, donde podrás exportar tu documento a PDF."
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Tus cambios se están sincronizando en Drive. No cierra la página web."
@@ -4997,11 +4978,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Solo lectura"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
       ]
     },
     "Item": {
@@ -5106,9 +5082,6 @@
       "Authenticator app": [
         "Aplicación de autenticación"
       ],
-      "Automatically save contacts": [
-        "Guardar contactos automáticamente"
-      ],
       "Beta Access": [
         "Acceso beta"
       ],
@@ -5135,12 +5108,6 @@
       ],
       "Calendars": [
         "Calendarios"
-      ],
-      "Can edit": [
-        "Editar"
-      ],
-      "Can view": [
-        "Leer"
       ],
       "Cancel download": [
         "Cancelar descarga"
@@ -5256,9 +5223,6 @@
       "Expires": [
         "Expira"
       ],
-      "Export contacts": [
-        "Exportar contactos"
-      ],
       "Extended address": [
         "Dirección extendida"
       ],
@@ -5288,9 +5252,6 @@
       ],
       "Import all messages": [
         "Importar todos los mensajes"
-      ],
-      "Import contacts": [
-        "Importar contactos"
       ],
       "Import interval": [
         "Intervalo de importación"
@@ -5507,14 +5468,6 @@
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
-      ]
-    },
-    "Label description": {
-      "Organise, add and edit files": [
-        "Organiza, agrega y edita archivos"
-      ],
-      "View and download": [
-        "Ver y descargar"
       ]
     },
     "Label for contact group color": {
@@ -6882,11 +6835,17 @@
       "\"${ name }\" created successfully": [
         "\"Se ha creado ${ name }\"."
       ],
+      "\"${ name }\" deleted": [
+        "«${ name }» está eliminado."
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "Se ha eliminado permanentemente \"${ name }\" de la papelera."
       ],
       "\"${ name }\" failed to be created": [
         "Error al crear \"${ name }\""
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "Error al eliminar «${ name }»"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "Error al eliminar \"${ name }\" permanentemente de la papelera"
@@ -6925,9 +6884,17 @@
         "Error al descifrar ${ count } elemento",
         "Error al descifrar ${ count } elementos"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } elemento eliminado",
+        "${ numberOfItems } elementos eliminados"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elemento eliminado permanentemente de la papelera",
         "${ numberOfItems } elementos eliminados permanentemente de la papelera"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "Error al eliminar ${ numberOfItems } elemento",
+        "Error al eliminar ${ numberOfItems } elementos"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Error al eliminar ${ numberOfItems } elemento permanentemente de la papelera",
@@ -7408,28 +7375,9 @@
         "Nombre"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "contacta ${ contactHref } con nuestro equipo de ventas."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Elige el número de IP para incluir en tu plan. Cada IP adicional cuesta ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si necesitas más de ${ maxIPs } IP, ",
-        "Si necesitas más de ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contactar"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Elige el número de usuarios para incluir en tu plan. Cada usuario adicional cuesta ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si necesitas más de ${ maxUsers } cuenta de usuario, ${ contact } con nuestro equipo de Ventas.",
-        "Si necesitas más de ${ maxUsers } cuentas de usuario, ${ contact } con nuestro equipo de Ventas."
       ]
     },
     "Price": {
@@ -9045,9 +8993,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
-      ],
-      "You do not have any contacts to export": [
-        "No tienes ningún contacto para exportar."
       ]
     },
     "tooltip": {

@@ -17,6 +17,9 @@
       "Continue": [
         "ادامه"
       ],
+      "Dismiss": [
+        "رد کردن"
+      ],
       "Edit email address": [
         "ویرایش رایانشانی"
       ],
@@ -67,6 +70,68 @@
       ],
       "View invoice": [
         "مشاهده صورت‌حساب"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "هویج"
+      ],
+      "cerise": [
+        "شفقی"
+      ],
+      "cobalt": [
+        "کبالت"
+      ],
+      "copper": [
+        "مس"
+      ],
+      "enzian": [
+        "نیلی متالیک"
+      ],
+      "fern": [
+        "خزه ای"
+      ],
+      "forest": [
+        "جنگل"
+      ],
+      "ocean": [
+        "اقیانوس"
+      ],
+      "olive": [
+        "زیتون"
+      ],
+      "pacific": [
+        "آبی آسمانی سیر"
+      ],
+      "pickle": [
+        "خیارشور"
+      ],
+      "pine": [
+        "کاج"
+      ],
+      "pink": [
+        "صورتی"
+      ],
+      "plum": [
+        "آلو"
+      ],
+      "purple": [
+        "بنفش"
+      ],
+      "reef": [
+        "سخره مرجانی"
+      ],
+      "sahara": [
+        "صحرا"
+      ],
+      "slateblue": [
+        "آبی کدر"
+      ],
+      "soil": [
+        "خاک"
+      ],
+      "strawberry": [
+        "توت فرنگی"
       ]
     },
     "Country name": {
@@ -908,6 +973,43 @@
         "کلید امنیتی"
       ]
     },
+    "file size format": {
+      "byte": [
+        "بایت",
+        "بایت"
+      ],
+      "GB": [
+        "گیگابایت"
+      ],
+      "KB": [
+        "کیلوبایت"
+      ],
+      "MB": [
+        "مگابایت"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "بایت",
+        "بایت"
+      ],
+      "Gigabyte": [
+        "گیگابایت",
+        "گیگابایت"
+      ],
+      "Kilobyte": [
+        "کیلوبایت",
+        "کیلوبایت"
+      ],
+      "Megabyte": [
+        "مگابایت",
+        "مگابایت"
+      ],
+      "Terabyte": [
+        "ترابایت",
+        "ترابایت"
+      ]
+    },
     "Font face option": {
       "System default": [
         "پیش‌فرض سیستم"
@@ -1027,6 +1129,182 @@
       ],
       "Request an invite": [
         "درخواست دعوت‌نامه"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "صندوق دریافتی خود را با پوشه ها منظم نگه دارید"
+      ]
+    },
+    "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } تقویم",
+        "${ n } تقویم"
+      ],
+      "${ n } custom email domain": [
+        "${ n } دامنه ایمیل سفارشی",
+        "${ n } دامنه ایمیل سفارشی"
+      ],
+      "${ n } email address": [
+        "${ n } آدرس ایمیل",
+        "${ n } آدرس ایمیل/نام مستعار"
+      ],
+      "${ n } email address per user": [
+        "${ n } آدرس ایمیل برای هر کاربر",
+        "${ n } آدرس ایمیل برای هر کاربر"
+      ],
+      "${ n } filter": [
+        "${ n } فیلتر",
+        "${ n } فیلتر"
+      ],
+      "${ n } folder": [
+        "${ n } پوشه",
+        "${ n } پوشه"
+      ],
+      "${ n } folder and label": [
+        "${ n } پوشه و برچسب",
+        "${ n } پوشه و برچسب"
+      ],
+      "${ n } label": [
+        "${ n } برچسب",
+        "${ n } برچسب"
+      ],
+      "${ n } message per day": [
+        "${ n } پیام در روز",
+        "${ n } پیام در روز"
+      ],
+      "${ size } attachment size": [
+        "${ size } سایز پیوست"
+      ],
+      "${ size } storage": [
+        "${ size } ذخیره سازی"
+      ],
+      "Auto-reply": [
+        "پاسخ خودکار"
+      ],
+      "Calendar sharing": [
+        "اشتراک گذاری تقویم"
+      ],
+      "Catch-all": [
+        "گرفتن همه"
+      ],
+      "Contact groups": [
+        "گروه‌های مخاطب"
+      ],
+      "Contact groups management": [
+        "مدیریت گروه های مخاطب"
+      ],
+      "Custom email domains": [
+        "دامنه های ایمیل سفارشی"
+      ],
+      "Easy Switch import assistant": [
+        "دستیار واردسازی Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "پشتیبانی سرویس دهنده ایمیل (از طریق IMAP/SMTP)"
+      ],
+      "Encrypted contact details": [
+        "جزئیات مخاطب رمزنگاری شده"
+      ],
+      "End-to-end encryption": [
+        "رمزگذاری سرتاسر"
+      ],
+      "HTML signatures": [
+        "امضاهای HTML"
+      ],
+      "Password-protected Emails": [
+        "ایمیل محافظت شده با رمزعبور"
+      ],
+      "Search message content": [
+        "جستجوی محتوای پیام"
+      ],
+      "Unlimited filters": [
+        "بی نهایت فیلتر"
+      ],
+      "Unlimited folders": [
+        "بی نهایت پوشه"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "پوشه‌ها، برچسب‌ها و فیلترهای نامحدود"
+      ],
+      "Unlimited labels": [
+        "بی نهایت برچسب"
+      ],
+      "Unlimited messages per day": [
+        "پیام‌های نامحدود در روز"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "تا ${ totalStorageSize } ذخیره سازی"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "آدرس ها توانایی کامل ارسال و دریافت دارند. یک کاربر میتواند چندین آدرس به خود اختصاص دهد؛ اما یک آدرس واحد را نمیتوان به چندین کاربر اختصاص داد."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "اجازه میدهد تا پاسخ های خودکار را برای پیام های دریافتی تنظیم کنید"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "ارسال ایمیل های تبلیغاتی انبوه یا برنامه ای در خال حاضر پشتیبانی نمیشود. توصیه میکنیم از یک ارائه کننده خدمات ایمیل اختصاصی برا این کار استفاده کنید."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "چندین آدرس ایمیل برای هویت های آنلاین خود، مانند JohnShopper@${ domain } برای حساب های خرید، JohnNews@${ domain } برای اشتراک اخبار ایجاد کنید"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "تضمین میکند تا همه ایمیل های ارسال شده به دامنه خود را دیافت کنید، حتی اگر آدرس ایمیل وجود ندارد، دیگر وجود ندارد یا اشتباهی تایپ شده است"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "پشتیبانی از IMAP برای استفاده برنامه های کامپیوتر (مانند Outlook، Apple Mail, Thunderbird) از طریق ${ MAIL_APP_NAME } محدود است. در حال حاضر یکپارچه سازهای IMAP مبتنی بر ابر پشتیبانی نمیشوند."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "برچسب ها علامت های ساده ای هستند که میتوانید به پیام ها اضافه کنید تا آنها را راحت تر پیدا کنید یا به آنها فیلتر اعمال کنید"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "با استفاده از لوگوها، تصاویر، آیکون های شبکه های اجتماعی، لینک جزئیات مخاطب شما و بیشتر، امضای ایمیل خود را شخصی سازی کنید"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "از دسترسی به پیام ها توسط ${ BRAND_NAME } یا برنامه های مستقل از ما جلوگیری میکند. تنها افرادی که میتوانند پیام ها را بخوانند فرستنده و گیرنده مورد نظر هستند."
+      ],
+      "Quickly set up out-of-office messages": [
+        "پیام ها خارج از دفتر را به سرعت تنظیم کنید"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "ایمیل ها، تقویم ها یا مخاطبین خود را از هر ارائه کننده ای باسرعت انتقال دهید"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "جزئیات مخاطبین خود را مانند شماره تلفن، آدرس، روز تولد و یادداشت های شخصی را بطور امن ذخیره کنید. رمزگذاری دسترسی صفر تضمین میکند که ${ BRAND_NAME } هیچوقت به آنها دسترسی نداشته باشد."
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "ایمیل ها را به گروه های بزرگ بوسیله ایجاد گرو های مخاطب به تعدادمورد نیازتان به آسانی و سرعت ارسال کنید. (تا 100 مخاطب یرای هر گروه)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "فیلتر ها را تنظیم کنید تا بطور خودکار ایمیل های شما را پاسخ داده شده، مرتب سازی شوند و/یا برچسب گذاری شوند"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "فایل ها و پوشه های خود را با هرکسی توسط لینک های امن و قابل اشتراک، به اشتراک بگذارید"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "فضای ذخیره‌سازی مابین ${ MAIL_APP_NAME }، ${ CALENDAR_APP_NAME } و ${ DRIVE_APP_NAME } به اشتراک گذاشته میشود. مدیران میتوانند فضای مختلفی به کاربران سازمان خود اختصاص دهند"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "از آدرس های دامنه ایمیل سفارشی خود استفاده کنید، مانند you@yourname.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "هنگام ارسال به دیگر کاربران ${ MAIL_APP_NAME } رمزگذاری بطور خودکار انجام میشود. ارسال به کاربران غیر ${ MAIL_APP_NAME_TWO } نیازمند رمزعبوری قبل از ارسال است."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "شخصی سازی بیشتری با 15 آدرس ایمیل و پشتیبانی از 3 دامنه ایمیل سفارشی اضافه کنید"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "فضای ذخیره‌سازی خود را به ${ bundleStorage } برای هر کاربر افزایش دهید"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "فضای ذخیره‌سازی خود را به ${ bundleStorage } افزایش دهید"
+      ],
+      "Support for ${ n } custom email domains": [
+        "پشتیبانی از ${ n } دامنه ایمیل سفارشی"
       ]
     },
     "Placeholder": {

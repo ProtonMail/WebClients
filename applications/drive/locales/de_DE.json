@@ -63,9 +63,6 @@
       "Add group": [
         "Gruppe hinzufügen"
       ],
-      "Add new contact": [
-        "Neuen Kontakt hinzufügen"
-      ],
       "Add new group": [
         "Neue Gruppe hinzufügen"
       ],
@@ -359,9 +356,6 @@
       ],
       "Export contact group": [
         "Kontaktgruppe exportieren"
-      ],
-      "Export contacts": [
-        "Kontakte exportieren"
       ],
       "Fit to window": [
         "An das Fenster anpassen"
@@ -1318,6 +1312,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Fortfahren"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
       ],
@@ -2427,6 +2424,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Lass dich benachrichtigen, wenn dein Passwort oder andere Daten von einem Service eines Drittanbieters preisgegeben wurden."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Erhalte unbegrenzte Aliasse und 500 GB Speicherplatz mit ${ PLAN_NAMES[PLANS.BUNDLE] }"
@@ -4154,14 +4154,11 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Der Zugriff auf dein Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
       ],
-      "Account size": [
-        "Größe des Kontos"
-      ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
-      "Additional options": [
-        "Zusätzliche Optionen"
+      "Address copied to clipboard": [
+        "Adresse in die Zwischenablage kopiert"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, musst du zunächst öffentlichen Schlüsseln vertrauen, die für den Versand verwendet werden können."
@@ -4344,10 +4341,6 @@
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Erstelle eine sichere Cloud für ${ n } Benutzer",
-        "Erstelle eine sichere Cloud für ${ n } Benutzer"
-      ],
       "Create in": [
         "Erstellen in"
       ],
@@ -4372,9 +4365,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
-      ],
       "Current plan": [
         "Aktuelles Abonnement"
       ],
@@ -4389,6 +4379,9 @@
       ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "default email address": [
+        "standard E-Mail-Adresse"
       ],
       "Delete locked drive": [
         "Gesperrtes Laufwerk löschen",
@@ -4478,9 +4471,6 @@
       "email": [
         "E-Mail"
       ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-Mail-Hosting für 10 eigene E-Mail-Domainnamen ist kostenlos enthalten. Zusätzliche Domains können für ${ price } hinzugefügt werden."
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über ${ BRAND_NAME } möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
       ],
@@ -4507,9 +4497,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
-      ],
-      "Enter the device name to confirm removal.": [
-        "Gib den Gerätenamen ein, um das Entfernen zu bestätigen."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
@@ -5159,9 +5146,6 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Das Konto hat möglicherweise einen neuen Schlüssel, oder die folgenden Daten wurden manipuliert: ${ items }. Öffne sie nur, wenn du sie für vertrauenswürdig hältst."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Die Anwendung muss deine Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die du anschließend herunterladen kannst."
-      ],
       "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
         "Die digitale Signatur wurde teilweise verifiziert. Die Datei wurde von einer öffentlichen Seite hochgeladen, die keinen spezifischen Benutzerursprung angibt."
       ],
@@ -5192,14 +5176,26 @@
       "There is nothing to see here": [
         "Hier gibt es nichts zu sehen"
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Mit dieser Aktion wird die hochgeladene Datei endgültig gelöscht."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Mit dieser Aktion wird der von dir hochgeladene Ordner endgültig gelöscht. Du kannst einen Ordner, der keine eigene Datei enthält, nicht löschen."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Diese Aktion löscht den Link und der Zugang für alle Benutzer wird widerrufen."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Mit dieser Aktion werden die ausgewählten Einträge endgültig gelöscht."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte lade die Datei herunter."
+      ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "Dies kann NICHT rückgängig gemacht werden. Bitte gib den Gerätenamen ein, um das Entfernen zu bestätigen."
       ],
       "This file is too large to preview": [
         "Die Datei ist zu groß, um in der Vorschau angezeigt zu werden."
@@ -5235,8 +5231,8 @@
         "Dadurch wird der Link gelöscht und der Zugriff auf deine Datei oder deinen Ordner für jeden, der über den Link verfügt, entfernt.",
         "Dadurch werden die Links gelöscht und der Zugriff auf deine Dateien oder deine Ordner für jeden, der über die Links verfügt, entfernt."
       ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Dadurch wird das synchronisierte Gerät ${ deviceName } aus ${ DRIVE_APP_NAME } entfernt und die Synchronisierung von Ordnern, die du zu \"Meine Computer\" hinzugefügt hast, beendet."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "Dadurch wird das synchronisierte Gerät ${ deviceName } von ${ DRIVE_APP_NAME } und alle seine Daten von ${ DRIVE_APP_NAME } entfernt. Ordner, die du zu Meine Computer hinzugefügt hast, werden nicht mehr synchronisiert."
       ],
       "This will replace the existing file with the folder": [
         "Dadurch wird die vorhandene Datei durch den Ordner ersetzt."
@@ -5651,11 +5647,6 @@
         "Nur anzeigen"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
-      ]
-    },
     "Item": {
       "file attributes": [
         "Dateiattribute"
@@ -5765,9 +5756,6 @@
       ],
       "Authenticator app": [
         "Authenticator App"
-      ],
-      "Automatically save contacts": [
-        "Kontakte automatisch speichern"
       ],
       "Beta Access": [
         "Beta-Zugang"
@@ -5944,9 +5932,6 @@
       "Expires": [
         "Gültig bis"
       ],
-      "Export contacts": [
-        "Kontakte exportieren"
-      ],
       "Extended address": [
         "Adresszusatz"
       ],
@@ -5985,9 +5970,6 @@
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
-      ],
-      "Import contacts": [
-        "Kontakte importieren"
       ],
       "Import interval": [
         "Importintervall"
@@ -6937,6 +6919,9 @@
       "10 email addresses/aliases": [
         "10 E-Mail-Adressen/Aliasse"
       ],
+      "10 more premium features": [
+        "10 weitere Premium-Funktionen"
+      ],
       "10-year file version history": [
         "Dateiversionsverlauf für 10 Jahre"
       ],
@@ -6960,6 +6945,9 @@
       ],
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Erweiterte Alias-Funktionen (unterstützt durch SimpleLogin)"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME } Produkte und Funktionen"
@@ -7414,6 +7402,14 @@
         "Abonnement wechseln?"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Hol dir Mail Plus für ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Sichere deinen Kalender mit Ende-zu-Ende-Verschlüsselung. Beinhaltet Unterstützung für benutzerdefinierte Kalender, Kalenderfreigabe und mehr."
@@ -7563,6 +7559,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Leite deinen Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
@@ -7685,11 +7684,17 @@
       "\"${ name }\" created successfully": [
         "„${ name }“ erfolgreich erstellt"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" gelöscht"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "„${ name }“ dauerhaft aus dem Papierkorb gelöscht"
       ],
       "\"${ name }\" failed to be created": [
         "\"${ name }\" konnte nicht erstellt werden"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\" konnte nicht gelöscht werden"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" konnte nicht dauerhaft aus dem Papierkorb gelöscht werden"
@@ -7728,9 +7733,17 @@
         "${ count } Element konnte nicht entschlüsselt werden",
         "${ count } Elemente konnten nicht entschlüsselt werden"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } Eintrag gelöscht",
+        "${ numberOfItems } Einträge gelöscht"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } Element dauerhaft aus dem Papierkorb gelöscht",
         "${ numberOfItems } Elemente dauerhaft aus dem Papierkorb gelöscht"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } Eintrag konnte nicht gelöscht werden",
+        "${ numberOfItems } Einträge konnten nicht gelöscht werden"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } Element konnte nicht dauerhaft aus dem Papierkorb gelöscht werden",
@@ -8270,6 +8283,9 @@
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPrice } verlängert. Du kannst jederzeit kündigen."
+      ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
       ],
@@ -8429,28 +8445,9 @@
         "Name"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } bitte unser Verkaufsteam."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Wähle die Anzahl der IP's aus, die in deinem Abonnement enthalten sein sollen. Jede zusätzliche IP kostet ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Solltest du mehr als ${ maxIPs } IP benötigen, ",
-        "Solltest du mehr als ${ maxIPs } IP's benötigen, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontaktiere"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Wähle die Anzahl der Benutzer aus, die in deinem Abonnement enthalten sein sollen. Jeder zusätzliche Benutzer kostet ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Benötigst du mehr als ${ maxUsers } Benutzerkonto, ${ contact } bitte unser Vertriebsteam.",
-        "Benötigst du mehr als ${ maxUsers } Benutzerkonten, ${ contact } bitte unser Vertriebsteam."
       ]
     },
     "Price": {
@@ -9946,6 +9943,9 @@
       "Day theme": [
         "Helles Design"
       ],
+      "Delete": [
+        "Löschen"
+      ],
       "Delete ${ count } contact": [
         "${ count } Kontakt löschen",
         "${ count } Kontakte löschen"
@@ -9953,6 +9953,12 @@
       "Delete ${ count } contact group": [
         "${ count } Kontaktgruppe löschen",
         "${ count } Kontaktgruppen löschen"
+      ],
+      "Delete ${ item.name }?": [
+        "${ item.name } löschen?"
+      ],
+      "Delete ${ links.length } items?": [
+        "${ links.length } Einträge löschen?"
       ],
       "Delete ${ value }": [
         "${ value } löschen"
@@ -10470,6 +10476,9 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln an einen Benutzer genutzt werden soll. Beachte dabei, dass PGP/Inline das Senden als reine Textnachrichten erzwingt."
       ],
+      "Shared with end-to-end encryption": [
+        "Geteilt mit Ende-zu-Ende-Verschlüsselung"
+      ],
       "Show side panel": [
         "Seitenleiste anzeigen"
       ],
@@ -10493,9 +10502,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wir haben der Person eine Einladung zum Zugreifen auf den Eintrag gesendet."
-      ],
-      "You do not have any contacts to export": [
-        "Es gibt keine Kontakte, die exportiert werden können"
       ]
     },
     "tooltip": {
@@ -10637,6 +10643,9 @@
       ],
       "Missing alias suffix": [
         "Fehlendes Alias-Suffix"
+      ],
+      "Name is required": [
+        "Name ist erforderlich"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Nur alphanumerische Zeichen, Punkte, Bindestriche und Unterstriche sind erlaubt."

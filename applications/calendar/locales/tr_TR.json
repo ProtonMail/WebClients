@@ -68,9 +68,6 @@
       "Add group": [
         "Grup ekle"
       ],
-      "Add new contact": [
-        "Yeni kişi ekle"
-      ],
       "Add new group": [
         "Yeni grup ekle"
       ],
@@ -305,14 +302,14 @@
       "Export contact group": [
         "Kişi grubunu dışa aktar"
       ],
-      "Export contacts": [
-        "Kişileri dışa aktar"
-      ],
       "Forgot password?": [
         "Parolanızı mı unuttunuz?"
       ],
       "Forward as attachment": [
         "Ek dosya olarak ilet"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "${ priceCoupon } ile ${ MAIL_SHORT_APP_NAME } Plus edinin"
       ],
       "Get in touch": [
         "Bizimle görüşün"
@@ -1247,6 +1244,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "E-posta adresi ayarlarını değiştir"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ],
@@ -2598,12 +2601,20 @@
         "Süresi geçmiş fatura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "İki adımlı doğrulama ek bir güvenlik katmanı ekleyerek yetkisiz erişimi önler."
+      ],
+      "Also included": [
+        "Ayrıca şunlar da bulunur"
       ],
       "Availability unknown": [
         "Kullanılabilirlik durumu bilinmiyor"
@@ -2628,6 +2639,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] } ile sınırsız takma ad ve 500 GB depolama alanı edinin."
@@ -2685,11 +2699,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4452,9 +4461,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
-      "Account size": [
-        "Hesap boyutu"
-      ],
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
@@ -4464,8 +4470,8 @@
       "Added and removed participants will be notified.": [
         "Eklenen ve kaldırılan katılımcılara bildirim gönderilecek."
       ],
-      "Additional options": [
-        "Ek seçenekler"
+      "Address copied to clipboard": [
+        "Adres panoya kopyalandı"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
@@ -4600,18 +4606,11 @@
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "${ n } üye için bir güvenli bulut oluştur",
-        "${ n } üye için bir güvenli bulut oluştur"
-      ],
       "Create in": [
         "Şuraya ekle"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimlerindeki (UTF-8) dosyalar desteklenir."
       ],
       "Current plan": [
         "Geçerli tarife"
@@ -4639,6 +4638,9 @@
       ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "default email address": [
+        "varsayılan e-posta adresi"
       ],
       "Deleting event...": [
         "Etkinlik siliniyor...",
@@ -4682,9 +4684,6 @@
       ],
       "email": [
         "e-posta"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
@@ -4862,6 +4861,9 @@
       "Merged": [
         "Birleştirilmiş"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
+      ],
       "MM/YY": [
         "AA/YY"
       ],
@@ -4999,6 +5001,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
+      "Registering your subscription...": [
+        "Abonelik kaydınız oluşturuluyor..."
+      ],
       "Removed participants will be notified.": [
         "Kaldırılan katılımcılara bildirim gönderilecek."
       ],
@@ -5027,11 +5032,17 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
       ],
+      "Setting up your new address...": [
+        "Yeni adresiniz ayarlanıyor..."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Düzenleyici tarafından daha önce güncellenmiş etkinliklere verdiğiniz yanıtlardan bazıları kaybolacak."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
@@ -5047,9 +5058,6 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
@@ -5101,6 +5109,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Bu etkinlik güncellendi. Davet edilen adresten e-posta gönderemeyeceğiniz için bu etkinliğin düzenleyicisine daveti reddettiğiniz bildirilemeyecek. Yine de bu etkinliği silmek ister misiniz?"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
@@ -5470,11 +5481,6 @@
         "Takvimlerinizi ayarlar bölümünden yeniden paylaşabilirsiniz."
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
-      ]
-    },
     "Information about why calendar event cannot be saved": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Bir davette en fazla ${ maxAttendees } katılımcı bulunabilir",
@@ -5562,9 +5568,6 @@
       ],
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
-      ],
-      "Automatically save contacts": [
-        "Kişileri otomatik olarak kaydet"
       ],
       "Beta Access": [
         "Beta erişimi"
@@ -5713,9 +5716,6 @@
       "Expires": [
         "Geçerlilik sonu"
       ],
-      "Export contacts": [
-        "Kişileri dışa aktar"
-      ],
       "Extended address": [
         "Açık adres"
       ],
@@ -5745,9 +5745,6 @@
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
-      ],
-      "Import contacts": [
-        "Kişileri içe aktar"
       ],
       "Import interval": [
         "İçe aktarma aralığı"
@@ -6442,6 +6439,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
       ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus } tutarından başlayan fiyatlarla"
       ],
@@ -6582,6 +6582,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-posta adresi/takma adı"
+      ],
+      "10 more premium features": [
+        "10 ücretli özellik daha"
       ],
       "10-year file version history": [
         "10 yıllık dosya sürümü geçmişi"
@@ -7064,6 +7067,14 @@
       ],
       "Switch plans?": [
         "Tarifeler değiştirilsin mi?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon } ile Mail Plus edinin"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "İndirimli fiyat olan ${ priceCoupon } ilk ay için geçerlidir. Daha sonra aylık ${ priceMailPlus } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
     "new_plans: tooltip": {
@@ -7958,28 +7969,9 @@
         "(Adsız)"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "lütfen ${ contactHref } satış ekibimizle görüşün."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Tarifenizde bulunacak IP adresi sayısını seçin. Her ek IP adresinin maliyeti ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, ",
-        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "görüşün"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Tarifenizde bulunacak kullanıcı sayısını seçin. Her ek kullanıcının maliyeti ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "${ maxUsers } kullanıcı hesabından fazlasına gerek duyuyorsanız, lütfen satış ekibimizle ${ contact }.",
-        "${ maxUsers } kullanıcı hesabından fazlasına gerek duyuyorsanız, lütfen satış ekibimizle ${ contact }."
       ]
     },
     "Price": {
@@ -8923,7 +8915,7 @@
         "Kendi etki alanınızı kullanan profesyonel e-posta adresleriyle güven ve marka bilinirliği sağlayın."
       ],
       "Catch-all email address": [
-        "Tümünü yakalan e-posta adresi"
+        "Tümünü toplama e-posta adresi"
       ],
       "Comprehensive privacy and security": [
         "Kapsamlı gizlilik ve güvenlik"
@@ -9924,6 +9916,9 @@
       "Update recurring event": [
         "Yinelenen etkinliği güncelle"
       ],
+      "Upgrade complete!": [
+        "Yükseltme tamamlandı!"
+      ],
       "Verification failed": [
         "Doğrulanamadı"
       ],
@@ -9965,6 +9960,9 @@
       ],
       "Your exposed information": [
         "Açığa çıkmış bilgileriniz"
+      ],
+      "Your shorter address is now ready": [
+        "Daha kısa adresiniz hazır"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10059,9 +10057,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
-      ],
-      "You do not have any contacts to export": [
-        "Dışa aktarılacak bir kişi kaydınız yok"
       ]
     },
     "tooltip": {
@@ -10210,6 +10205,9 @@
       ],
       "Missing alias suffix": [
         "Takma ad son eki eksik"
+      ],
+      "Name is required": [
+        "Adın yazılması zorunludur"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"

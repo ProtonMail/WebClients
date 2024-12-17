@@ -128,6 +128,9 @@
       "Discard changes": [
         "لغو تغییرات"
       ],
+      "Dismiss": [
+        "رد کردن"
+      ],
       "Domain name": [
         "نام دامنه"
       ],
@@ -2234,9 +2237,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "دسترسی به حساب به دلیل صورت‌حساب‌های پرداخت نشده محدود شده است. لطفا با مدیرتان تماس بگیرید."
       ],
-      "Account size": [
-        "اندازه حساب کاربری"
-      ],
       "Account successfully updated": [
         "حساب کاربری با موفقیت بروز شد"
       ],
@@ -2248,9 +2248,6 @@
       ],
       "Add domain": [
         "افزودن دامنه"
-      ],
-      "Additional options": [
-        "امکانات اضافی"
       ],
       "Admin account allocation": [
         "تخصیص حساب مدیر"
@@ -2360,9 +2357,6 @@
       ],
       "email": [
         "ایمیل"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "میزبانی ایمیل برای 10 نام دامنه ایمیل سفارشی بطور رایگان شامل شده است. افزودن دامنه های اضافی با پرداخت ${ price } ممکن است."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "میزبانی ایمیل فقط برای دامنه هایی که هم اکنون دارید ممکن است. ثبت دامنه فعلا از طریق ${ BRAND_NAME } ممکن نیست. میتوانید از ایمیل برای دامنه های ثبت شده بر روی هر ثبت کننده دامنه میزبانی کنید."
@@ -4174,13 +4168,6 @@
     "plan customizer, users": {
       "contact": [
         "ﺗﻤﺎﺱ"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "تعدادکاربرانی که میخواهید در طرح خود مشمول کنید را انتخاب کنید. هزینه هر کابر اضافی ${ price } است."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "اگر به بیش از ${ maxUsers } حساب کاربری نیاز داشتید، با تیم فروش ما ${ contact } بگیرید.",
-        "اگر به بیش از ${ maxUsers } حساب کاربری نیاز داشتید، با تیم فروش ما ${ contact } بگیرید."
       ]
     },
     "Price": {
@@ -4892,11 +4879,11 @@
       "Card verification": [
         "تایید کارت"
       ],
-      "Catch-all address": [
-        "نشانی دریافت-همه"
-      ],
       "Catch-All address": [
         "نشانی همه‌گیر"
+      ],
+      "Catch-all address": [
+        "نشانی دریافت-همه"
       ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"

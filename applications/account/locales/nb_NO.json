@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "activate": [
-        "aktiver"
-      ],
       "Activate": [
         "Aktiver"
+      ],
+      "activate": [
+        "aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -421,6 +421,9 @@
       "Discard changes": [
         "Forkast endringer"
       ],
+      "Dismiss": [
+        "Avvis"
+      ],
       "Domain name": [
         "Domenenavn"
       ],
@@ -561,6 +564,9 @@
       ],
       "Generate token": [
         "Generer token"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Skaff deg ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "Skaff deg ${ vpnPlus }"
@@ -1855,6 +1861,9 @@
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Fornyes automatisk til ${ renewPrice }, for ${ renewLength } måned",
         "Fornyes automatisk til ${ renewPrice }, for ${ renewLength } måneder"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Fornyes automatisk på ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -1972,6 +1981,12 @@
     "Button": {
       "Add link to your email footer": [
         "Legg til kobling til din e-postbunntekst"
+      ],
+      "Change email address settings": [
+        "Endre innstillinger for e-postadresse"
+      ],
+      "Continue": [
+        "Fortsett"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsett å bruke ${ MAIL_APP_NAME }."
@@ -3575,6 +3590,9 @@
       ]
     },
     "Description": {
+      "Also included": [
+        "Også inkludert"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Slett automatisk søppelpost og meldinger i papirkurven, og lås opp flere premiumfunksjoner når du oppgraderer."
       ],
@@ -3607,6 +3625,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Få opptil ${ credits } i kreditter ved å invitere venner til ${ BRAND_NAME }."
@@ -3649,6 +3670,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Lås opp ubegrensede mapper, etiketter og flere premiumfunksjoner når du oppgraderer."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Oppgrader for å få ${ activatePmUser } som en kortere e-postadresse som er enklere å huske, i tillegg til den nåværende e-postadressen din."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kan fortsette med å invitere venner, men du vil ikke være i stand til å tjene flere kreditter"
@@ -4373,7 +4397,7 @@
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, vennligst gå til Innstillinger > Meldinger og skriving > Kort domene (pm.me)"
+        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Meldinger og skriving > Kort domene (pm.me)"
       ],
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
@@ -4664,13 +4688,16 @@
         "Betalinger er for øyeblikket ikke tilgjengelige. Prøv igjen senere."
       ],
       "Please configure a custom domain before adding addresses.": [
-        "Vennligst konfigurer et egendefinert domene før du legger til adresser."
+        "Konfigurer et egendefinert domene før du legger til adresser."
       ],
       "Please configure a custom domain before adding users to your organization.": [
-        "Vennligst konfigurer et egendefinert domene før du legger til nye brukere til din organisasjon."
+        "Konfigurer et egendefinert domene før du legger til nye brukere til din organisasjon."
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Aktiver støtte for flere brukere før du legger brukere til din organisasjon."
+      ],
+      "Please enter a valid entity ID URL": [
+        "Angi en gyldig enhets-ID-URL"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs den uthevede konflikten for å fortsette.",
@@ -4756,7 +4783,7 @@
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Noe gikk galt, vennligst ${ refresh } siden for å fortsette. Hvis du fortsatt ser denne feilmeldingen kan du kontakte vårt ${ supportTeam }."
+        "Noe gikk galt, ${ refresh } siden for å fortsette. Hvis du fortsatt ser denne feilmeldingen kan du kontakte vårt ${ supportTeam }."
       ],
       "status page": [
         "statusside"
@@ -4870,7 +4897,7 @@
         "Valideringsfeil"
       ],
       "Verification did not succeed, please try again in an hour.": [
-        "Verifisering lyktes ikke, vennligst prøv igjen om en time."
+        "Verifisering lyktes ikke, prøv igjen om en time."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi sluttet å logge på DKIM på grunn av problemer med DNS-konfigurasjonen. Følg instruksjonene nedenfor for å gjenoppta signering."
@@ -4879,7 +4906,7 @@
         "Feil gjenopprettingsfrase. Prøv igjen eller bruk en annen gjenopprettingsmetode."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Feil verifiseringskode. Vennligst sørg for at du kopierte verifiseringskoden riktig og prøv igjen. Det kan ta opptil 24 timer før endringene trer i kraft."
+        "Feil verifiseringskode. Sørg for at du kopierte verifiseringskoden riktig og prøv igjen. Det kan ta opptil 24 timer før endringene trer i kraft."
       ],
       "You already added this holidays calendar": [
         "Du har allerede lagt til denne helligdagskalenderen"
@@ -6856,9 +6883,6 @@
       "account recovery method": [
         "kontogjenopprettingsmetode"
       ],
-      "Account size": [
-        "Kontostørrelse"
-      ],
       "Account successfully updated": [
         "Konto oppdatert"
       ],
@@ -6913,8 +6937,8 @@
         "Legger til porttjener: ${ serverNumber } / ${ total }",
         "Legger til porttjenere: ${ serverNumber } / ${ total }"
       ],
-      "Additional options": [
-        "Ytterligere alternativer"
+      "Address copied to clipboard": [
+        "Adresse kopiert til utklippstavlen"
       ],
       "Admin account allocation": [
         "Adminkonto tildeling"
@@ -7166,6 +7190,9 @@
       "Choose an app to get started": [
         "Velg en app for å komme i gang"
       ],
+      "Choose an Entity ID to continue.": [
+        "Velg en enhets-ID for å fortsette."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
       ],
@@ -7186,6 +7213,9 @@
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Fortsett for å koble **${ organizationValue.Name }** med ${ BRAND_NAME }-organisasjonen din."
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Fortsett for å koble denne enheten til ${ BRAND_NAME }-organisasjonen din."
       ],
       "Continue with ${ freeName }": [
         "Fortsett med ${ freeName }"
@@ -7223,10 +7253,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Opprett en etikett for de importerte meldingene, et tidsintervall for denne importen og etikettene du vil importere."
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Opprett en sikker sky for ${ n }-medlem",
-        "Opprett en sikker sky for ${ n }-medlemmer"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opprette og administrere underkontoer og tilordne dem e-postadresser på ditt egendefinerte domene."
@@ -7294,6 +7320,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
+      ],
+      "default email address": [
+        "standard e-postadresse"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slett andre MX-poster, eller kontroller at ${ MAIL_APP_NAME }s prioritet har det laveste tallet."
@@ -7402,7 +7431,7 @@
       "Edit link": [
         "Rediger kobling"
       ],
-      "EduGain configuration saved": [
+      "eduGAIN configuration saved": [
         "eduGAIN-konfigurasjon lagret"
       ],
       "email": [
@@ -7410,9 +7439,6 @@
       ],
       "Email address": [
         "E-postadresse"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-posthotell for 10 egendefinerte e-postdomenenavn er gratis inkludert. Ytterligere domener kan legges til for ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
@@ -7476,6 +7502,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Angi påloggingsinformasjonen til e-postkontoen du ønskere å importere fra."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Angi enhets-ID-en for en **eduGAIN**-organisasjon for **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Skriv inn organisasjonspassord for å gjenopprette administratorprivilegier. ${ learnMore }"
@@ -7962,6 +7991,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Meldinger i Sendt- eller Utkast-mappe vil fortsette å vises i den mappen, selv om du flytter dem til en annen mappe."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Meldinger til alle e-postadressene dine vil gå til innboksen din."
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -8036,9 +8068,6 @@
       ],
       "No logs yet.": [
         "Ingen logger enda."
-      ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Ingen organisasjoner aktivert med **eduGAIN** for **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "Ingen betaling kreves på dette tidspunktet."
@@ -8319,6 +8348,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Oppdatering av siden eller ${ link } løser automatisk de fleste problemer."
       ],
+      "Registering your subscription...": [
+        "Registrerer abonnementet ditt..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Husk å dele brukerens påloggingsinformasjon med dem."
       ],
@@ -8385,17 +8417,14 @@
       "Select a service provider to start": [
         "Velg en tjenestetilbyder for å starte"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Velg en organisasjon aktivert med **eduGAIN** for **${ domain.DomainName }**."
-      ],
       "Select one or multiple user affiliations": [
         "Velg én eller flere brukertilknytninger"
       ],
       "Select recently used servers": [
         "Velg nylig brukte tjenere"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "Velg brukertilknytningene fra **${ organizationValue.Name }** (${ organizationValue.EntityId }) som du vil tillate inn i ${ BRAND_NAME }-organisasjonen din:"
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Velg brukertilknytningene fra ${ getFormattedOrganization } som du vil tillate inn i ${ BRAND_NAME }-organisasjonen din:"
       ],
       "Select what you want to import.": [
         "Velg hva du ønsker å importere."
@@ -8423,6 +8452,9 @@
       ],
       "Set recovery phrase": [
         "Sett gjenopprettingsfrase"
+      ],
+      "Setting up your new address...": [
+        "Konfigurerer den nye adressen din ..."
       ],
       "Setting up your organization": [
         "Setter opp organisasjonen din"
@@ -8477,6 +8509,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF klargjør hvem som har tillatelse til å sende e-post for domenet ditt. Pass på at du legger til følgende TXT-post i DNS-konsollen (på plattformen der du kjøpte det egendefinerte domenet)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Begynn å dele det med kontakter og bruk det til nettjenester."
       ],
       "Stay tuned for future promotions.": [
         "Følg med for fremtidige kampanjer."
@@ -8656,6 +8691,9 @@
       "This is an encryption key you may have previously saved.": [
         "Dette er en krypteringsnøkkel du kan ha lagret tidligere."
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Dette er nå din ${ defaultEmailAddress } for å sende nye meldinger."
+      ],
       "This is the password you used before the password reset.": [
         "Dette er passordet du brukte før tilbakestillingen av passordet."
       ],
@@ -8667,9 +8705,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Denne meldingen kommer ikke til brukerstøtteteamet, hvis du har et problem med tjenesten vår eller trenger ytterligere tiltak fra vår side ${ supportLink }."
-      ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Denne organisasjonen er aktivert med **eduGAIN** for **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Denne kampanjekoblingen er utløpt."
@@ -9510,11 +9545,6 @@
         "Vis bare"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Ikke en gyldig e-postadresse"
@@ -10063,6 +10093,9 @@
       "Auto-unsubscribe": [
         "Auto-avmelding"
       ],
+      "Automatically save contacts": [
+        "Lagre automatisk kontakter"
+      ],
       "Awarded": [
         "Belønnet"
       ],
@@ -10350,6 +10383,9 @@
       ],
       "Entity ID": [
         "Enhets-ID"
+      ],
+      "Entity ID URL": [
+        "Enhets-ID-URL"
       ],
       "Event": [
         "Hendelse"
@@ -10695,6 +10731,9 @@
       ],
       "Recovery phrase": [
         "Gjenopprettingsfrase"
+      ],
+      "Remove": [
+        "Fjern"
       ],
       "Remove image metadata": [
         "Fjern bildemetadata"
@@ -11809,6 +11848,9 @@
       "From ${ price }": [
         "Fra ${ price }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Starter fra ${ priceMailPlus }"
       ],
@@ -11958,6 +12000,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-postadresser/aliaser"
+      ],
+      "10 more premium features": [
+        "10 flere premiumfunksjoner"
       ],
       "10-year file version history": [
         "10-år filversjonshistorikk"
@@ -12545,6 +12590,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } prøveversjon"
+      ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Skaff deg Mail Plus for ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
       ],
       "Your account's usage": [
         "Kontoens forbruk"
@@ -14303,28 +14354,9 @@
         "Medlemmer"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "vennligst ${ contactHref } vår salgsavdeling."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Velg antall IP-er som skal inkluderes i planen. Hver ekstra IP koster ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Skulle du behøve mer enn ${ maxIPs } IP, ",
-        "Skulle du behøve mer enn ${ maxIPs } IP-er, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontakt"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Velg antall brukere som skal inkluderes i planen. Hver ekstra bruker koster ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Skulle du trenge mer enn ${ maxUsers } brukerkonto, ${ contact } vår salgsavdeling.",
-        "Skulle du trenge flere enn ${ maxUsers } brukerkontoer, ${ contact } vår salgsavdeling."
       ]
     },
     "Price": {
@@ -15435,6 +15467,14 @@
     "signup: Action": {
       "Request trial": [
         "Be om prøveversjon"
+      ]
+    },
+    "signup: Feature": {
+      "Encrypted": [
+        "Kryptert"
+      ],
+      "Strict no-logs policy": [
+        "Streng ingen-loggførings-praksis"
       ]
     },
     "Signup: Info": {
@@ -18225,6 +18265,9 @@
       "Unlock your data": [
         "Lås opp dataene dine"
       ],
+      "Upgrade complete!": [
+        "Oppgradering fullført!"
+      ],
       "Upgrade plan": [
         "Oppgrader plan"
       ],
@@ -18311,6 +18354,9 @@
       ],
       "Your recovery status": [
         "Din gjenopprettingsstatus"
+      ],
+      "Your shorter address is now ready": [
+        "Den kortere adressen din er nå klar"
       ],
       "Your SMTP token": [
         "Ditt SMTP-token"
@@ -18524,6 +18570,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Meldinger i Sendt- eller Utkast-mappe vil fortsette å vises i den mappen, selv om du flytter dem til en annen mappe."
+      ],
+      "Remove metadata from images to protect your privacy.": [
+        "Fjern metadata fra bilder for å beskytte personvernet ditt."
       ],
       "See number of unread messages in the tab icon": [
         "Se antall uleste meldinger i faneikonet"

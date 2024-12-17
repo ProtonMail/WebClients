@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "接受"
+      ],
       "Add": [
         "加入"
       ],
@@ -723,7 +726,7 @@
         "保管庫名稱不符"
       ],
       "Wrong PIN code. Try again.": [
-        "錯誤個人識別數字代碼。請再嘗試。"
+        "錯誤的個人識別數字代碼，請再嘗試。"
       ]
     },
     "Error message": {
@@ -1088,7 +1091,7 @@
         "永久刪除選取項目"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "個人識別數字代碼已成功登記。使用它解鎖${ PASS_APP_NAME }。"
+        "個人識別數字代碼已成功登記。使用代碼以解鎖${ PASS_APP_NAME }。"
       ],
       "Pinning item...": [
         "訂選項目..."

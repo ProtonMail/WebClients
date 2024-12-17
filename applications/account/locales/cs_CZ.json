@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -421,6 +421,9 @@
       "Discard changes": [
         "Zahodit změny"
       ],
+      "Dismiss": [
+        "Skrýt"
+      ],
       "Domain name": [
         "Název domény"
       ],
@@ -561,6 +564,9 @@
       ],
       "Generate token": [
         "Vygenerovat token"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Získejte ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "Získejte ${ vpnPlus }"
@@ -1871,6 +1877,9 @@
         "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíce",
         "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíců",
         "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíců"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Obnoví se automaticky v ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -1988,6 +1997,12 @@
     "Button": {
       "Add link to your email footer": [
         "Přidání odkazu do zápatí e-mailu"
+      ],
+      "Change email address settings": [
+        "Změna nastavení e-mailové adresy"
+      ],
+      "Continue": [
+        "Pokračovat"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
@@ -3605,6 +3620,9 @@
       ]
     },
     "Description": {
+      "Also included": [
+        "Zahrnuje také"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Po navýšení je možné automaticky mazat zprávy ze složky nevyžádaná pošta a koš a odemknout další prémiové funkce."
       ],
@@ -3637,6 +3655,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Pozváním přátel do ${ BRAND_NAME } získáte až ${ credits } kreditů."
@@ -3679,6 +3700,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Navýšením tarifu odemknete neomezený počet složek, štítků a dalších prémiových funkcí."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Navyšte a získejte kratší, snadno zapamatovatelnou adresu ${ activatePmUser } kromě své stávající e-mailové adresy."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Můžete nadále zvát přátele, ale nebudete moci získávat další kredity"
@@ -4707,6 +4731,9 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
+      ],
+      "Please enter a valid entity ID URL": [
+        "Zadejte prosím platnou URL ID subjektu"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
@@ -6978,9 +7005,6 @@
       "account recovery method": [
         "metoda obnovení účtu"
       ],
-      "Account size": [
-        "Velikost účtu"
-      ],
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
       ],
@@ -7041,8 +7065,8 @@
         "Přidávání serverů brány: ${ serverNumber } / ${ total }",
         "Přidávání serverů brány: ${ serverNumber } / ${ total }"
       ],
-      "Additional options": [
-        "Další možnosti"
+      "Address copied to clipboard": [
+        "Adresa zkopírována do schránky"
       ],
       "Admin account allocation": [
         "Přidělení účtu správce"
@@ -7302,6 +7326,9 @@
       "Choose an app to get started": [
         "Vyberte si aplikaci a začněte"
       ],
+      "Choose an Entity ID to continue.": [
+        "Pro pokračování vyberte ID subjektu."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
@@ -7322,6 +7349,9 @@
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Pokračujte v připojení **${ organizationValue.Name }** s vaší organizací ${ BRAND_NAME }."
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Pokračujte v připojení tohoto subjektu s vaší organizací ${ BRAND_NAME }."
       ],
       "Continue with ${ freeName }": [
         "Pokračovat jako ${ freeName }"
@@ -7361,12 +7391,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a štítky, které chcete importovat."
-      ],
-      "Create a secure cloud for ${ n } member": [
-        "Vytvořte bezpečný cloud pro ${ n } člena",
-        "Vytvořte bezpečný cloud pro ${ n } členy",
-        "Vytvořte bezpečný cloud pro ${ n } členů",
-        "Vytvořte bezpečný cloud pro ${ n } členů"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Vytvořte a spravujte podřízené účty a přiřaďte jim e-mailové adresy na vlastní doméně."
@@ -7436,6 +7460,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
+      ],
+      "default email address": [
+        "výchozí e-mailová adresa"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstraňte všechny ostatní MX záznamy, nebo se ujistěte, že ${ MAIL_APP_NAME } záznam má nejnižší prioritu."
@@ -7548,7 +7575,7 @@
       "Edit link": [
         "Upravit odkaz"
       ],
-      "EduGain configuration saved": [
+      "eduGAIN configuration saved": [
         "Nastavení eduGain uloženo"
       ],
       "email": [
@@ -7556,9 +7583,6 @@
       ],
       "Email address": [
         "E-mailová adresa"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-mailový hosting pro 10 vlastních e-mailových domén je zahrnut zdarma. Další domény lze přidat za ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailový hosting je k dispozici pouze pro domény, které již vlastníte. Registrace domén není v současné době prostřednictvím služby ${ BRAND_NAME } k dispozici. E-mail můžete hostovat pro domény registrované u jakéhokoli registrátora domén."
@@ -7622,6 +7646,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Zadejte přihlašovací údaje e-mailového účtu, ze kterého chcete importovat."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Zadejte ID subjektu organizace **eduGAIN** pro **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Zadejte heslo organizace pro obnovení oprávnění správce. ${ learnMore }"
@@ -8112,6 +8139,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Zprávy ve složce Odeslané nebo Koncepty se budou nadále zobrazovat v těchto složkách, i když požádáte o jejich přesun."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Zprávy na všechny vaše e-mailové adresy budou chodit do vaší doručené pošty."
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -8186,9 +8216,6 @@
       ],
       "No logs yet.": [
         "Zatím žádné záznamy."
-      ],
-      "No organizations enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Žádné organizace, které byly povoleny funkcí **eduGAIN** pro **${ domain.DomainName }**."
       ],
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
@@ -8481,6 +8508,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
+      "Registering your subscription...": [
+        "Registrace vašeho předplatného..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Nezapomeňte s nimi sdílet přihlašovací údaje uživatele."
       ],
@@ -8547,17 +8577,14 @@
       "Select a service provider to start": [
         "Vyberte poskytovatele služeb a začněte"
       ],
-      "Select an organization enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Vyberte organizaci, která byla povolena funkcí **eduGAIN** pro **${ domain.DomainName }**."
-      ],
       "Select one or multiple user affiliations": [
         "Vyberte jednu nebo více příslušností uživatele"
       ],
       "Select recently used servers": [
         "Výběr nedávno použitých serverů"
       ],
-      "Select the user affiliations from **${ organizationValue.Name }** (${ organizationValue.EntityId }) that you want to allow into your ${ BRAND_NAME } organization:": [
-        "Vyberte příslušnost uživatelů z **${ organizationValue.Name }** (${ organizationValue.EntityId }), kterým chcete povolit vstup do vaší organizace ${ BRAND_NAME }:"
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Vyberte příslušnost uživatelů z ${ getFormattedOrganization }, kterým chcete povolit vstup do vaší organizace ${ BRAND_NAME }:"
       ],
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
@@ -8585,6 +8612,9 @@
       ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
+      ],
+      "Setting up your new address...": [
+        "Nastavování nové adresy..."
       ],
       "Setting up your organization": [
         "Nastavení vaší organizace"
@@ -8639,6 +8669,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF upřesňuje, kdo smí odesílat e-maily pro vaši doménu. Ujistěte se, že jste do konzole DNS (umístěné na platformě, kde jste zakoupili vlastní doménu) přidali následující záznam TXT."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Začněte ji sdílet s kontakty a používejte ji pro online služby."
       ],
       "Stay tuned for future promotions.": [
         "Vyčkejte na budoucí propagační akce."
@@ -8826,6 +8859,9 @@
       "This is an encryption key you may have previously saved.": [
         "Toto je šifrovací klíč, který jste si možná dříve uložili."
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Toto je nyní vaše ${ defaultEmailAddress } pro odesílání nových zpráv."
+      ],
       "This is the password you used before the password reset.": [
         "Toto heslo jste použili předtím, než jste ho resetovali."
       ],
@@ -8837,9 +8873,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Tato zpráva se nedostane k týmu podpory, pokud máte problém s naší službou nebo potřebujete další kroky z naší strany ${ supportLink }."
-      ],
-      "This organization is enabled with **eduGAIN** for **${ domain.DomainName }**.": [
-        "Tato organizace je povolena pomocí **eduGAIN** pro **${ domain.DomainName }**."
       ],
       "This promotion link has expired.": [
         "Tento odkaz na propagační akci vypršel."
@@ -9704,11 +9737,6 @@
         "Pouze zobrazení"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Nejde o platnou e-mailovou adresu"
@@ -10553,6 +10581,9 @@
       "Entity ID": [
         "ID subjektu"
       ],
+      "Entity ID URL": [
+        "URL ID subjektu"
+      ],
       "Event": [
         "Událost"
       ],
@@ -10897,6 +10928,9 @@
       ],
       "Recovery phrase": [
         "Obnovovací fráze"
+      ],
+      "Remove": [
+        "Odebrat"
       ],
       "Remove image metadata": [
         "Odstranit metadata obrázku"
@@ -12035,6 +12069,9 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Začněte za ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
       ],
@@ -12218,6 +12255,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-mailových adres/aliasů"
+      ],
+      "10 more premium features": [
+        "10 dalších prémiových funkcí"
       ],
       "10-year file version history": [
         "10letá historie verzí souborů"
@@ -12821,6 +12861,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Získejte Mail Plus za ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Zvýhodněná cena ${ priceCoupon } platí první měsíc. Poté dojde k automatickému obnovení za cenu ${ priceMailPlus }. Službu můžete kdykoli zrušit."
       ],
       "Your account's usage": [
         "Využití vašeho účtu"
@@ -14605,32 +14651,9 @@
         "Členové"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } prosím náš obchodní tým."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Vyberte počet IP adres, které mají být do tarifu zahrnuty. Každá další IP adresa stojí ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Pokud potřebujete více než ${ maxIPs } IP, ",
-        "Pokud potřebujete více než ${ maxIPs } IP, ",
-        "Pokud potřebujete více než ${ maxIPs } IP, ",
-        "Pokud potřebujete více než ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontaktujte"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Vyberte počet uživatelů, kteří mají být do tarifu zahrnuti. Každý další uživatel stojí ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Pokud potřebujete více než ${ maxUsers } uživatelský účet, prosím ${ contact } náš obchodní tým.",
-        "Pokud potřebujete více než ${ maxUsers } uživatelské účty, prosím ${ contact } náš obchodní tým.",
-        "Pokud potřebujete více než ${ maxUsers } uživatelských účtů, prosím ${ contact } náš obchodní tým.",
-        "Pokud potřebujete více než ${ maxUsers } uživatelských účtů, prosím ${ contact } náš obchodní tým."
       ]
     },
     "Price": {
@@ -15771,6 +15794,14 @@
     "signup: Action": {
       "Request trial": [
         "Požádat o zkušební verzi"
+      ]
+    },
+    "signup: Feature": {
+      "Encrypted": [
+        "Šifrováno"
+      ],
+      "Strict no-logs policy": [
+        "Přísné zásady neukládání logů"
       ]
     },
     "Signup: Info": {
@@ -18658,6 +18689,9 @@
       "Unlock your data": [
         "Odemknout Vaše data"
       ],
+      "Upgrade complete!": [
+        "Navýšení dokončeno!"
+      ],
       "Upgrade plan": [
         "Navýšit tarif"
       ],
@@ -18744,6 +18778,9 @@
       ],
       "Your recovery status": [
         "Stav obnovy"
+      ],
+      "Your shorter address is now ready": [
+        "Vaše kratší adresa je nyní připravena"
       ],
       "Your SMTP token": [
         "Váš SMTP token"
@@ -18957,6 +18994,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Zprávy ve složce Odeslané nebo Koncepty se budou nadále zobrazovat v těchto složkách, i když požádáte o jejich přesun."
+      ],
+      "Remove metadata from images to protect your privacy.": [
+        "Odebrání metadat z vašich obrázků pro ochranu vašeho soukromí."
       ],
       "See number of unread messages in the tab icon": [
         "Zobrazení počtu nepřečtených zpráv v ikoně záložky"

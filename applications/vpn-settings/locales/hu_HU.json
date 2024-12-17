@@ -202,6 +202,9 @@
       "Discard changes": [
         "Módosítások elvetése"
       ],
+      "Dismiss": [
+        "Elvetés"
+      ],
       "Domain name": [
         "Domain név"
       ],
@@ -3292,9 +3295,6 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "A fiók hozzáférése rendezetlen számla miatt korlátozva lett. Kérjük lépjen kapcsolatba az adminisztrátorral."
       ],
-      "Account size": [
-        "Fiók mérete"
-      ],
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
       ],
@@ -3315,9 +3315,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Állítsa be a szervezet nevét és logóját, hogy személyesebb élményt nyújtson a szervezet számára."
-      ],
-      "Additional options": [
-        "További lehetőségek"
       ],
       "Admin account allocation": [
         "Tárhely admin fiók számára"
@@ -3434,10 +3431,6 @@
       "Country code": [
         "Országkód"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Hozzon létre biztonságos felhőárhelyet ${ n } tagnak",
-        "Hozzon létre biztonságos felhőárhelyet ${ n } tagnak"
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Hozzon létre és kezeljen al-fiókokat és rendeljen hozzájuk e-mail címeket a saját domain nevén."
       ],
@@ -3522,9 +3515,6 @@
       ],
       "email": [
         "e-mail cím"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Az e-mail szolgáltatás 10 saját domain névig beletartozik. További domain nevek ${ price } áron adhatók hozzá."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Az e-mail szolgáltatás olyan domain nevekre lehetséges, amelyek már a tulajdonában vannak. A ${ BRAND_NAME } jelenleg nem biztosít domain név regisztrációt. Bármilyen regisztrátornál regisztrált domain nevet használhat."
@@ -4339,11 +4329,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "Username": [
-        "Felhasználónév"
-      ],
       "username": [
         "felhasználónév"
+      ],
+      "Username": [
+        "Felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -6808,25 +6798,9 @@
         "Tagok"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "kérjük, ${ contactHref } az értékesítési csoporttal."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Amennyiben ${ maxIPs } IP címnél többre lenne szüksége, ",
-        "Amennyiben ${ maxIPs } IP címnél többre lenne szüksége, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "lépjen kapcsolatba"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Válassza ki, hány felhasználót szeretne a csomagjába. Minden további felhasználó ára: ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Ha több mint ${ maxUsers } felhasználói fiókra lenne szüksége, kérjük ${ contact } értékesítési csoportunkkal.",
-        "Ha több mint ${ maxUsers } felhasználói fiókra lenne szüksége, kérjük ${ contact } értékesítési csoportunkkal."
       ]
     },
     "Price": {
@@ -8348,10 +8322,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [

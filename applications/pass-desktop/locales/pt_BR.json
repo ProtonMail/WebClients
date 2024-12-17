@@ -707,6 +707,15 @@
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "A autenticação de dois fatores (2FA) adiciona outra camada de segurança aos seus logins. ${ PASS_APP_NAME } torna o 2FA mais fácil armazenando e preenchendo automaticamente seus códigos 2FA."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Adicione os seguintes registros DNS CNAME ao seu domínio."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Adicione o seguinte registro DNS MX ao seu domínio. Observe que há um ponto (.) no final dos endereços de destino. Se o registrador do seu domínio não permitir esse ponto final, remova-o ao adicionar o registro DNS."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Adicione o seguinte registro DNS TXT ao seu domínio."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Um alias de e-mail funciona como um endereço de e-mail, mas reduz o spam e mantém seu endereço de e-mail e identidade reais ocultos."
       ],
@@ -719,8 +728,23 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "O monitoramento da Dark Web está disponível com um plano pago. Faça upgrade para acesso imediato."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } é um método de autenticação de e-mail criado para evitar falsificação de e-mail. É altamente recomendável configurar o DKIM para reduzir a chance de seus e-mails acabarem na pasta Spam do destinatário."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "O DMARC ${ WIKIPEDIA_LINK_DMARC } foi projetado para proteger o domínio contra o uso não autorizado, comumente conhecido como falsificação de e-mail. Criada com base no SPF e no DKIM, uma política DMARC informa ao servidor de e-mail receptor o que fazer se nenhum desses métodos de autenticação for aprovado."
+      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Seja notificado se seu email, senha ou outros dados pessoais foram vazados."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Se estiver usando um subdomínio, por exemplo, ${ subdomainExample }, será necessário usar ${ dmarcExampleSubdomain } como domínio."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Se estiver usando um subdomínio, por exemplo, subdomain.domain.com, será necessário usar ${ domainKeyExampleSubdomain } como o domínio. Isso significa que, se o seu domínio for mail.domain.com, você deverá inserir ${ domainKeyExampleMail } como o domínio."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Se estiver usando o CloudFlare, certifique-se de não selecionar a opção Proxy."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mantenha suas informações mais seguras e privadas com estes guias e dicas."
@@ -730,6 +754,15 @@
       ],
       "Set up 2FA for more security": [
         "Configure A2F para mais segurança"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Alguns registradores de DNS podem exigir um caminho de registro completo; nesse caso, use ${ domain } como valor do domínio."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Alguns registradores de domínio (Namecheap, CloudFlare, etc.) também podem usar @ para o domínio raiz."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "O SPF ${ WIKIPEDIA_LINK_SPF } é um método de autenticação de e-mail desenvolvido para detectar endereços de remetente falsos durante a entrega do e-mail. A configuração do SPF é altamente recomendada para reduzir a chance de seus e-mails acabarem na pasta de Spam do destinatário."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Comece a monitorar violações de dados relacionadas a contas criadas com seu endereço de e-mail e seus aliases de hide-my-email"
@@ -746,6 +779,9 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Este serviço oferece autenticação de dois fatores (2FA). Ative-a para maior segurança da sua conta."
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "Para verificar a propriedade do domínio, adicione o seguinte registro TXT. Alguns registradores de domínio (Namecheap, CloudFlare, etc.) podem usar @ para o domínio raiz."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloqueie recursos avançados de segurança e registros detalhados para proteger sua presença online."
       ],
@@ -757,6 +793,11 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Suas informações pessoais vazaram em uma violação de dados de um serviço de terceiros."
+      ]
+    },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "qualquer coisa@${ domainDisplay }"
       ]
     },
     "Error": {
@@ -836,6 +877,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "Foi detectada ${ errors.length } linha corrompida no arquivo CSV.",
         "Foram detectadas ${ errors.length } linhas corrompidas no arquivo CSV."
+      ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "O domínio não pôde ser verificado. Certifique-se de ter adicionado os registros DNS corretos"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
@@ -933,6 +977,9 @@
       "Failed to restore items from trash": [
         "Falha ao restaurar itens da lixeira"
       ],
+      "Failed to set default mailbox": [
+        "Falha ao definir a caixa de correio padrão"
+      ],
       "Failed to sync aliases": [
         "Erro ao sincronizar os alíases"
       ],
@@ -941,6 +988,9 @@
       ],
       "Failed to unpin item": [
         "Falha ao desafixar item"
+      ],
+      "Failed to update catch-all setting.": [
+        "Falha ao atualizar a configuração catch-all."
       ],
       "Failed to update default domain": [
         "Não foi possível atualizar o domínio padrão"
@@ -1229,6 +1279,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "A atualização \"${ payload.item.data.metadata.name } foi descartada"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } bloqueado",
+        "${ blockedEmailsCount } bloqueados"
+      ],
       "${ count } invite successfully sent": [
         "${ count } convite enviado com sucesso",
         "${ count } convites enviados com sucesso"
@@ -1243,6 +1297,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } visualizações"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } encaminhado",
+        "${ forwardedEmailsCount } encaminhados"
       ],
       "${ memberCount } member": [
         "${ memberCount } membro",
@@ -1261,6 +1319,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } seguirá o tema do seu sistema."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } gerará um endereço de encaminhamento (também chamado de alias reverso) que você pode copiar para a área de transferência."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } importará somente inícios de sessão, notas, cartões de crédito e identidades."
       ],
@@ -1272,6 +1333,10 @@
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } ativado"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } enviados",
+        "${ repliedEmailsCount } enviados"
       ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } violação detectada",
@@ -1291,6 +1356,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "O acesso do ${ PASS_APP_NAME } sempre exigirá sua senha da ${ BRAND_NAME }"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "O acesso do ${ PASS_APP_NAME } sempre exigirá sua senha de backup"
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "O acesso a ${ PASS_APP_NAME } exigirá sua impressão digital ou o PIN do dispositivo."
@@ -1325,6 +1393,9 @@
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Os e-mails aliases com domínios personalizados não são monitorados, por favor adicione-os como um e-mail personalizado para monitoramento."
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Todos os aliases que usam a caixa de correio ${ emailJSX } também serão excluídos."
+      ],
       "All breaches for this address were resolved": [
         "Todas as violações para este endereço foram resolvidas"
       ],
@@ -1349,11 +1420,20 @@
       "An item previously shared with you was removed": [
         "Um item compartilhado anteriormente com você foi removido"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Tem certeza de que deseja remover ${ emailJSX } de suas caixas de correio?"
+      ],
       "Are you sure you want to remove the link?": [
         "Tem certeza de que deseja remover o link?"
       ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Os aliases criados automaticamente são de propriedade dá(s) seguinte(s) caixa(s) de correio:"
+      ],
       "Auto-lock successfully disabled.": [
         "Bloqueio automático desativado."
+      ],
+      "automatically": [
+        "automaticamente"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Antes de exportar seus dados com esse formato, abra as configurações do Safari -> guia “Geral” -> desative a opção “Abrir arquivos seguros após o download”. Isso evitará que o Safari extraia incorretamente o arquivo exportado."
@@ -1369,6 +1449,9 @@
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Traga suas senhas existentes para ${ BRAND_NAME }."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Traga seu próprio domínio e você não precisará comprar mais uma solução de hospedagem de e-mail."
       ],
       "Built in 2FA authenticator": [
         "Autenticador 2FA integrado"
@@ -1403,6 +1486,9 @@
       "Create contact illustration": [
         "Criar ilustração de contato"
       ],
+      "Created ${ time }.": [
+        "Criado ${ time }."
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "O formato CSV oferece uma maneira conveniente de visualizar seus dados. No entanto, devido à sua simplicidade, alguns dados não serão incluídos (campos personalizados, chaves de acesso...). Para uma exportação completa, recomendamos usar um formato diferente."
       ],
@@ -1411,6 +1497,9 @@
       ],
       "Decrypting your data": [
         "Descriptografando seus dados"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Nome de exibição padrão para aliases criados com ${ domainDisplay }, a menos que seja substituído pelo nome de exibição do alias."
       ],
       "Deleted items will be moved here first": [
         "Os itens excluídos serão movidos para cá primeiro"
@@ -1429,6 +1518,9 @@
       ],
       "Disabling offline mode...": [
         "Desativando modo off-line..."
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "As alterações de DNS podem levar até 24 horas para serem atualizadas."
       ],
       "Domain: ${ domainPath } or @": [
         "Domínio: ${ domainPath } ou @"
@@ -1457,8 +1549,14 @@
       "Email address successfully included in monitoring": [
         "Endereço de e-mail incluído com sucesso no monitoramento"
       ],
+      "Email headers illustration": [
+        "Ilustração de cabeçalhos de e-mail"
+      ],
       "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
         "Envie um e-mail para esse endereço e ele parecerá ter sido enviado de ${ exampleEmail } por exemplo."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Os e-mails enviados para seus aliases são encaminhados para suas caixas de correio. Um alias pode ter mais de uma caixa de correio: útil para compartilhar um alias entre você e seus amigos."
       ],
       "Emptying trash...": [
         "Esvaziando lixeira..."
@@ -1540,6 +1638,9 @@
       "here": [
         "aqui"
       ],
+      "Here's how it works:": [
+        "Veja como funciona:"
+      ],
       "High Priority": [
         "Alta prioridade"
       ],
@@ -1558,6 +1659,9 @@
       ],
       "Imported on ${ date }": [
         "Importado em ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "Em ${ PASS_SHORT_APP_NAME }, uma nota de item é criptografada com a chave de criptografia do item e somente os usuários com acesso ao item podem visualizar a nota. Nem mesmo ${ BRAND_NAME } ou o SimpleLogin podem vê-la."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Para obter a melhor experiência com o ${ PASS_APP_NAME }, conceda as permissões de extensão necessárias"
@@ -1692,6 +1796,9 @@
       "Moving items to trash": [
         "Movendo itens para a lixeira"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Precisa enviar um e-mail para alguém, mas não quer que essa pessoa veja seu endereço de e-mail? Configure um alias de contato."
+      ],
       "Never": [
         "Nunca"
       ],
@@ -1768,6 +1875,15 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
       ],
+      "Please confirm your backup password": [
+        "Confirme sua nova senha de backup"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Confirme sua senha de backup para bloquear automaticamente com a sua senha."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Confirme sua senha de backup para cancelar o registro do seu bloqueio atual."
+      ],
       "Please confirm your extra password": [
         "Confirme sua nova senha adicional"
       ],
@@ -1816,6 +1932,9 @@
       "Please enter your current PIN code to continue": [
         "Insira o seu código PIN atual para continuar"
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Siga as etapas abaixo para configurar seu domínio."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Por favor, note que, uma vez excluído, o alias não pode ser restaurado. Talvez você queira desabilitar o alias em vez disso?"
       ],
@@ -1824,6 +1943,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Faça upgrade para ter acesso antecipado ao aplicativo web do ${ PASS_APP_NAME }"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Use o caminho completo do domínio, por exemplo, my-domain.com ou my-subdomain.my-domain.com se estiver usando um subdomínio."
       ],
       "Press Enter to copy": [
         "Pressione Enter para copiar"
@@ -1867,8 +1989,14 @@
       "Restoring trashed items...": [
         "Restaurando os itens da lixeira..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Endereço de alias reverso copiado para a área de transferência. Envie um e-mail para esse endereço e ${ Email } o receberá."
+      ],
       "Secure links": [
         "Links seguros"
+      ],
+      "See more info": [
+        "Ver mais informações"
       ],
       "Select destination vault": [
         "Selecione o cofre de destino"
@@ -1911,6 +2039,9 @@
       ],
       "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
         "Uma nota no SimpleLogin é armazenada no mesmo local com o endereço alias e, embora seja protegida por criptografia em repouso, não é criptografada de ponta a ponta, o que significa que qualquer pessoa que tenha acesso ao banco de dados do SimpleLogin pode lê-la."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Basta usar ${ emailBold } na próxima vez que precisar de um alias: ele será ${ automaticallyBold } criado na primeira vez que receber um e-mail. Para ter um controle mais refinado, também é possível definir ${ rulesHyperLink }."
       ],
       "Successfully exported all your items": [
         "Todos os seus itens foram exportados"
@@ -1970,6 +2101,9 @@
       "This operation is irreversible.": [
         "Esta operação é irreversível."
       ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Essa operação é irreversível. Todos os aliases que usam o domínio ${ domainTextBold } serão excluídos. Observe que, uma vez excluídos, os aliases não podem ser restaurados."
+      ],
       "This option is currently not available on your device.": [
         "Essa opção não está disponível atualmente no seu dispositivo."
       ],
@@ -1984,6 +2118,12 @@
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Isso rejeitará o dispositivo **${ name }** que tentou entrar na sua conta ${ BRAND_NAME } em **${ date }**."
+      ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Para continuar recebendo e-mails, transfira esses aliases para uma caixa de correio diferente:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Para manter seu endereço de e-mail pessoal oculto, você pode criar um contato alias que oculte seu endereço."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Para migrar dados de outro gerenciador de senhas, acesse o gerenciador de senhas, exporte seus dados e faça o envio deles para ${ PASS_APP_NAME }. Depois que seus dados forem importados, exclua o arquivo exportado."
@@ -2000,11 +2140,17 @@
       "Unconfigured": [
         "Não configurado"
       ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Aliases hide-my-email ilimitados e gerenciamento avançado de aliases"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloqueie o ${ PASS_SHORT_APP_NAME } com biometria"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha da ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Desbloqueie ${ PASS_SHORT_APP_NAME } com sua senha de backup"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha adicional"
@@ -2070,8 +2216,14 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Ao criar/editar um Início de Sessão no ${ PASS_APP_NAME }, a entrada “nome de usuário” estará sempre visível."
       ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Ao enviar um e-mail a partir desse alias, o e-mail exibirá ${ emailSender } como remetente."
+      ],
       "You are about to create:": [
         "Você está prestes a criar:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Você também pode definir um código PIN para desbloquear ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Você agora pode usar a senha da ${ BRAND_NAME } para acessar o ${ PASS_SHORT_APP_NAME } no modo off-line"
@@ -2104,6 +2256,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Você atingiu o comprimento máximo permitido de ${ maxLength } caracteres."
+      ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Você poderá personalizar as configurações do seu domínio (aliases de e-mail, nome de exibição padrão para aliases etc.) após verificar seu domínio."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Você será desconectado e precisará iniciar sessão novamente em todos os seus outros dispositivos."
@@ -2169,6 +2324,9 @@
       "${ forwardCount } forward": [
         "${ forwardCount } encaminhamento",
         "${ forwardCount } encaminhamentos"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, nos últimos 14 dias."
       ],
       "${ hours } hour": [
         "${ hours } hora",
@@ -2251,6 +2409,9 @@
       "Account": [
         "Conta"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Adicione um prefixo aleatório para esse domínio ao criar um novo alias."
+      ],
       "Add section": [
         "Adicionar seção"
       ],
@@ -2292,6 +2453,9 @@
       ],
       "Auto-lock after": [
         "Bloqueio automático após"
+      ],
+      "Backup password": [
+        "Senha de backup"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Além de armazenar suas credenciais de início de sessão, o ${ PASS_APP_NAME } protege sua identidade com um recurso de alias de e-mail integrado.\n\nSempre que você criar uma conta online, o ${ PASS_APP_NAME } poderá criar um alias automaticamente para manter seu endereço real de e-mail protegido. "
@@ -2346,6 +2510,9 @@
       ],
       "Confirm vault name": [
         "Confirmar nome do cofre"
+      ],
+      "Contact created ${ time } ago.": [
+        "Contato criado há ${ time }."
       ],
       "Contact details": [
         "Detalhes do contato"
@@ -3037,6 +3204,9 @@
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "criação automática de regras ››"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -3170,6 +3340,9 @@
       "Name to display when sending an email": [
         "Nome a ser exibido ao enviar um e-mail"
       ],
+      "Note from SimpleLogin": [
+        "Nota do SimpleLogin"
+      ],
       "Password": [
         "Senha"
       ],
@@ -3295,9 +3468,63 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "A sincronização de aliases foi realizada com sucesso. Os aliases do SimpleLogin podem levar algum tempo para serem sincronizados"
       ],
+      "Catch-all setting successfully disabled": [
+        "Configurações catch-all desativadas com sucesso"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Configurações catch-all ativadas com sucesso"
+      ],
+      "Contact successfully blocked": [
+        "Contato bloqueado com sucesso"
+      ],
+      "Contact successfully created": [
+        "Contato criado com sucesso"
+      ],
+      "Contact successfully deleted": [
+        "Contato excluído com sucesso"
+      ],
+      "Contact successfully unblocked": [
+        "Contato desbloqueado com sucesso"
+      ],
+      "Default domain successfully updated": [
+        "Domínio padrão atualizado com sucesso"
+      ],
+      "Default mailbox successfully updated": [
+        "Caixa de correio padrão atualizada com sucesso"
+      ],
+      "Display name successfully updated": [
+        "Nome de exibição atualizado com sucesso"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "A propriedade do domínio foi verificada. Agora você pode configurar o registro MX."
+      ],
+      "Domain successfully deleted": [
+        "Domínio excluído com sucesso"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "O domínio foi verificado. Seu domínio pode começar a receber e-mails e criar aliases."
+      ],
+      "Mailbox successfully deleted": [
+        "Caixa de correio excluída com sucesso"
+      ],
+      "Mailbox successfully verified": [
+        "Caixa de correio verificada com sucesso"
+      ],
+      "Mailboxes successfully updated": [
+        "Caixa de correio atualizadas com sucesso"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Geração de prefixo aleatório desativada com sucesso"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Geração de prefixo aleatório ativada com sucesso"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Cofres não podem conter mais do que ${ vault.targetMaxMembers } usuários.",
         "Cofres não podem conter mais do que ${ vault.targetMaxMembers } usuários."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "O e-mail de verificação foi enviado. Verifique sua caixa de entrada para confirmar sua caixa de correio."
       ]
     },
     "Theme": {
@@ -3338,6 +3565,9 @@
       ],
       "Aliases": [
         "Aliases"
+      ],
+      "Auto create/on the fly alias": [
+        "Criação automática/alias em tempo real"
       ],
       "Auto-lock update": [
         "Atualização de bloqueio automático"
@@ -3438,6 +3668,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Aproveitando o ${ PASS_APP_NAME }?"
+      ],
+      "Enter your backup password": [
+        "Digite sua senha de backup"
       ],
       "Enter your extra password": [
         "Digite sua senha adicional"
@@ -3698,6 +3931,9 @@
       "What is the dark web?": [
         "O que é a dark web?"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Qual é a diferença entre a nota ${ PASS_SHORT_APP_NAME } e a nota do SimpleLogin?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Sua assinatura do ${ planName } terminará em ${ endDate }"
       ],
@@ -3716,6 +3952,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "O URL do domínio não é válido."
+      ],
       "Duplicated URL": [
         "URL duplicado"
       ],
@@ -3846,6 +4085,9 @@
       ],
       "Move to trash": [
         "Mover para a lixeira"
+      ],
+      "Name is required": [
+        "Nome é obrigatório"
       ],
       "No items": [
         "Nenhum item"
