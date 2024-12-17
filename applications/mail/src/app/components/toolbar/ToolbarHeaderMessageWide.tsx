@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
 import { Icon, ToolbarButton, useElementBreakpoints } from '@proton/components';
+import { useFolders, useLabels } from '@proton/mail';
 import clsx from '@proton/utils/clsx';
 
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
@@ -53,6 +54,9 @@ const ToolbarHeaderMessageWide = ({
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
     const { localIsTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
 
+    const [labels] = useLabels();
+    const [folders] = useFolders();
+
     return (
         <div>
             <nav
@@ -88,7 +92,12 @@ const ToolbarHeaderMessageWide = ({
                         onCheckAll={onCheckAll}
                     />
 
-                    <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />
+                    <SnoozeToolbarDropdown
+                        labelID={labelID}
+                        selectedIDs={selectedIDs}
+                        labels={labels}
+                        folders={folders}
+                    />
 
                     {!localIsTiny ? (
                         <>

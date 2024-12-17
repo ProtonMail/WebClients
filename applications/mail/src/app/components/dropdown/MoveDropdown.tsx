@@ -19,7 +19,7 @@ import {
     useModalState,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { useFolders } from '@proton/mail';
+import { useFolders, useLabels } from '@proton/mail';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { buildTreeview, hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
@@ -36,6 +36,7 @@ import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useGetElementsFromIDs, useGetMessagesOrElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { SOURCE_ACTION, folderLocation } from '../list/useListTelemetry';
 
 import './MoveDropdown.scss';
 
@@ -83,6 +84,7 @@ const MoveDropdown = ({
 }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
     const [folders = []] = useFolders();
+    const [labels = []] = useLabels();
     const [user] = useUser();
     const [loading, withLoading] = useLoading();
     const [search, updateSearch] = useState('');
@@ -98,6 +100,7 @@ const MoveDropdown = ({
 
     const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
+    const displayedFolder = folderLocation(labelID, labels, folders);
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
@@ -166,6 +169,8 @@ const MoveDropdown = ({
             createFilters: canApplyAlways ? always : false,
             selectAll,
             onCheckAll,
+            sourceAction: SOURCE_ACTION.TOOLBAR,
+            currentFolder: displayedFolder,
         });
         onClose();
     };

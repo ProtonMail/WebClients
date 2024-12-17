@@ -7,6 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Dropdown, DropdownButton, Icon, Tooltip, useApi, useModalState, usePopperAnchor } from '@proton/components';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { Folder, Label } from '@proton/shared/lib/interfaces';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { selectSnoozeDropdownState, selectSnoozeElement } from 'proton-mail/store/snooze/snoozeSliceSelectors';
@@ -15,6 +16,7 @@ import type { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import type { Element } from '../../../../models/element';
 import { snoozeActions } from '../../../../store/snooze/snoozeSlice';
+import { SOURCE_ACTION, folderLocation } from '../../useListTelemetry';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
@@ -24,9 +26,11 @@ interface Props {
     elements: Element[];
     labelID: string;
     size?: 'small' | 'medium';
+    labels?: Label[];
+    folders?: Folder[];
 }
 
-const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
+const SnoozeDropdown = ({ elements, size, labelID, labels, folders }: Props) => {
     const api = useApi();
     const dispatch = useMailDispatch();
     const [{ hasPaidMail }] = useUser();
@@ -37,6 +41,8 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
 
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
     const snoozeSelectedElement = useMailSelector(selectSnoozeElement);
+
+    const displayedFolder = folderLocation(labelID, labels, folders);
 
     useEffect(() => {
         if (snoozeDropdownState === 'forceOpen' && snoozeSelectedElement?.ID === elements[0].ID) {
@@ -57,13 +63,14 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
 
     const handleSnooze = (event: MouseEvent, duration: SNOOZE_DURATION, snoozeTime?: Date) => {
         event.stopPropagation();
-        void snooze({ elements, duration, snoozeTime });
+        console.log(elements);
+        void snooze({ elements, duration, snoozeTime }, SOURCE_ACTION.HOVER_BUTTONS, displayedFolder);
         onClose();
     };
 
     const handleUnsnooze = (event: MouseEvent) => {
         event.stopPropagation();
-        void unsnooze(elements);
+        void unsnooze(elements, SOURCE_ACTION.HOVER_BUTTONS, displayedFolder);
         onClose();
     };
 

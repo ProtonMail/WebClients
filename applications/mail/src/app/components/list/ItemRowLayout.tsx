@@ -28,6 +28,7 @@ import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
 import ItemExpiration from './item-expiration/ItemExpiration';
+import { SOURCE_ACTION } from './useListTelemetry';
 
 interface Props {
     isCompactView: boolean;
@@ -43,6 +44,7 @@ interface Props {
     onBack?: () => void;
     attachmentsMetadata?: AttachmentsMetadata[];
     showAttachmentThumbnails?: boolean;
+    currentFolder: string;
 }
 
 const ItemRowLayout = ({
@@ -59,6 +61,7 @@ const ItemRowLayout = ({
     onBack = () => {},
     attachmentsMetadata = [],
     showAttachmentThumbnails,
+    currentFolder,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -101,7 +104,11 @@ const ItemRowLayout = ({
         <div className={clsx('flex flex-nowrap flex-column w-full my-auto', showThumbnails && 'mt-1')}>
             <div className="flex items-center justify-start flex-nowrap flex-row item-titlesender w-full gap-3">
                 <div className="my-auto flex shrink-0" data-testid={unread}>
-                    <ItemStar element={element} />
+                    <ItemStar
+                        element={element}
+                        sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
+                        currentFolder={currentFolder}
+                    />
                 </div>
                 <div
                     className={clsx(['item-senders flex flex-nowrap shrink-0 w-custom', unread && 'text-semibold'])}

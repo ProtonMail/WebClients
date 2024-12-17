@@ -86,7 +86,7 @@ describe('Message images', () => {
 
         const { container, rerender, getByTestId } = await setup(
             message,
-            {},
+            { labelID: '0' },
             {
                 preloadedState: {
                     mailSettings: getModelState({ HideRemoteImages: SHOW_IMAGES.HIDE } as MailSettings),
@@ -156,7 +156,7 @@ describe('Message images', () => {
 
         const { container, rerender, getByTestId } = await setup(
             message,
-            {},
+            { labelID: '0' },
             {
                 preloadedState: {
                     mailSettings: getModelState({

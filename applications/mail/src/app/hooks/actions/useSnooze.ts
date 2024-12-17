@@ -4,6 +4,8 @@ import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { snoozeConversations, unsnoozeConversations } from '@proton/shared/lib/api/conversations';
 import { MAILBOX_IDENTIFIERS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import useListTelemetry, { ACTION_TYPE, numberSelectionElements } from 'proton-mail/components/list/useListTelemetry';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { getSnoozeNotificationText, getSnoozeUnixTime } from '../../helpers/snooze';
@@ -38,9 +40,25 @@ const useSnooze = () => {
     const canSnooze = isInbox && conversationMode;
     const canUnsnooze = isSnoozed && conversationMode;
 
-    const proceedSnoozeUnsnooze = async (elements: Element[], snooze: boolean, data?: SnoozeProps) => {
+    const { sendSimpleActionReport } = useListTelemetry();
+
+    const proceedSnoozeUnsnooze = async (
+        elements: Element[],
+        snooze: boolean,
+        sourceAction: SOURCE_ACTION,
+        currentFolder: string,
+        data?: SnoozeProps
+    ) => {
         const conversationIDs = elements.map(({ ID }) => ID);
         const snoozeText = getSnoozeNotificationText(snooze, elements.length);
+
+        sendSimpleActionReport({
+            actionType: snooze ? ACTION_TYPE.SNOOZE : ACTION_TYPE.UNSNOOZE,
+            actionLocation: sourceAction,
+            numberMessage: numberSelectionElements(elements.length),
+            destination: snooze ? 'SNOOZE' : undefined,
+            folderLocation: currentFolder,
+        });
 
         let rollback = () => {};
         try {
@@ -68,12 +86,12 @@ const useSnooze = () => {
         }
     };
 
-    const snooze = async (data: SnoozeProps) => {
-        await proceedSnoozeUnsnooze(data.elements, true, data);
+    const snooze = async (data: SnoozeProps, sourceAction: SOURCE_ACTION, currentFolder: string) => {
+        await proceedSnoozeUnsnooze(data.elements, true, sourceAction, currentFolder, data);
     };
 
-    const unsnooze = async (elements: Element[]) => {
-        await proceedSnoozeUnsnooze(elements, false);
+    const unsnooze = async (elements: Element[], sourceAction: SOURCE_ACTION, currentFolder: string) => {
+        await proceedSnoozeUnsnooze(elements, false, sourceAction, currentFolder);
     };
 
     const handleCustomClick = () => {
