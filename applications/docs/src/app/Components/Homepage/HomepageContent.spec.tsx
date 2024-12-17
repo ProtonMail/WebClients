@@ -12,6 +12,15 @@ import userEvent from '@testing-library/user-event'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 
+jest.mock('@proton/drive-store', () => ({
+  ...jest.requireActual('@proton/drive-store'),
+  useDocInvites: () => ({
+    invitations: [],
+    recentlyAcceptedInvites: [],
+    loading: false,
+  }),
+}))
+
 const MOCK_DATA = [
   new RecentDocumentItem(
     'Document1',
@@ -156,6 +165,7 @@ describe('HomepageContent', () => {
     const mockHandleTrashDocument = jest.fn()
     const mockHandleOpenDocument = jest.fn()
     const mockHandleOpenFolder = jest.fn()
+
     render(
       <ApplicationProvider
         application={{ logger: { debug: jest.fn() } as unknown as LoggerInterface } as unknown as Application}

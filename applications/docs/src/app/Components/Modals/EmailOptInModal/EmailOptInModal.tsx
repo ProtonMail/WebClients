@@ -59,7 +59,7 @@ export default function EmailOptInModal({ onClose, open, ...modalProps }: Props 
           <img src={Hero} alt="Encrypted" className="no-select pointer-events-none left-0 top-0 w-full select-none" />
         </div>
         <div className="p-6">
-          <h1 className="text-center text-base font-bold">{c('Info').t`Get Notified About Comments`}</h1>
+          <h1 className="text-center text-rg font-bold">{c('Info').t`Get Notified About Comments`}</h1>
           <p className="mb-4 mt-2 text-center">{c('Info')
             .t`Get email updates for comments and suggestions added to your documents.`}</p>
 

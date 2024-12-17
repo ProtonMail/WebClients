@@ -4,6 +4,9 @@ import '@proton/polyfill'
 
 import UserApp from './Apps/User/UserProtonApp'
 import PublicApp from './Apps/Public/PublicApp'
+
+// Import this before ./style so that style takes precedence
+import './tailwind.scss'
 import './style'
 
 const isPublicApp = new URL(window.location.href).searchParams.get('mode') === 'open-url'

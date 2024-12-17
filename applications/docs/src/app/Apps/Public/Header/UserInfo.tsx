@@ -3,7 +3,7 @@ import { getInitials } from '@proton/shared/lib/helpers/string'
 import type { UserModel } from '@proton/shared/lib/interfaces'
 
 import './UserInfo.scss'
-import { useDocsUrlPublicToken } from '@proton/drive-store/hooks/drive/useDocsUrlPublicToken'
+import { useDocsUrlPublicToken } from '@proton/drive-store'
 import { redirectToAccountSwitcher } from '../Utils/Redirection'
 
 export interface Props {
@@ -25,10 +25,7 @@ export const UserInfo = ({ user }: Props) => {
       }}
       className="user-info user-info interactive-pseudo-protrude interactive--no-background relative ml-0 flex flex-nowrap items-center rounded border-none p-0"
     >
-      <span
-        className="user-initials relative my-auto inline-block flex shrink-0 rounded border p-1 text-sm"
-        aria-hidden="true"
-      >
+      <span className="user-initials relative my-auto inline-block flex shrink-0 rounded border p-1" aria-hidden="true">
         <span className="m-auto">{initials}</span>
       </span>
     </Button>

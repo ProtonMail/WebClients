@@ -44,7 +44,8 @@ input[type='number'] {
 	justify-content: center;
 }
 
-.user-dropdown-text:not(.homepage-wrapper *) {
+/* Hide the user name and email in the header viewing a document */
+.user-dropdown-text:not(.homepage-header *) {
 	display: none;
 }
 
@@ -81,6 +82,15 @@ input[type='number'] {
 
 		& > svg {
 			display: none;
+		}
+	}
+}
+
+.homepage-header {
+	.topnav-list {
+		// Since we don't show a settings icon, we need to add some margin to the promotion button
+		.button-promotion {
+			margin-right: 0.75em;
 		}
 	}
 }

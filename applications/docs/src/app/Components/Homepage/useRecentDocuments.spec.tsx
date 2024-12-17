@@ -1,4 +1,5 @@
-import { filterItems, getDisplayName } from './useRecentDocuments'
+import { filterItems } from './Utils/filterItems'
+import { getDisplayName } from './Utils/getDisplayName'
 import { RecentDocumentItem } from '@proton/docs-core'
 import { ServerTime } from '@proton/docs-shared'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'

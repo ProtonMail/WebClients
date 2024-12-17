@@ -4,7 +4,7 @@ const Pill = forwardRef<HTMLButtonElement, React.ComponentPropsWithoutRef<'butto
   return (
     <button
       ref={ref}
-      className="bg-weak flex items-center gap-1 rounded-lg px-2 py-1 text-xs text-[--text-weak]"
+      className="bg-weak flex items-center gap-1 rounded-lg px-2 py-1 text-sm text-[--text-weak]"
       {...props}
     />
   )

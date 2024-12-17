@@ -51,7 +51,7 @@ export const useResolveShareId = () => {
     /**
      * Wraps an existing function with a shareId resolver.
      */
-    const withResolve = <T extends unknown[], R>(fn: (nodeId: LegacyNodeMeta, ...args: T) => Promise<R> | R) => {
+    const withResolveShareId = <T extends unknown[], R>(fn: (nodeId: LegacyNodeMeta, ...args: T) => Promise<R> | R) => {
         return async (id: NodeMeta, ...args: T): Promise<R> => {
             const nodeId = await resolveShareId(id);
 
@@ -59,5 +59,5 @@ export const useResolveShareId = () => {
         };
     };
 
-    return { resolveShareId, withResolve };
+    return { resolveShareId, withResolveShareId: withResolveShareId };
 };

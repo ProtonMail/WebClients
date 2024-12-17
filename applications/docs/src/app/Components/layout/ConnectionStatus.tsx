@@ -75,7 +75,7 @@ export const ConnectionStatus = ({ documentState }: { documentState: DocumentSta
           connectionPill = (
             <Pill data-connection-popover>
               <Icon name="arrow-rotate-right" className="animate-spin" data-testid="network-status-connecting" />
-              <span className="head-max-1199:sr-only">{c('Info').t`Opening...`}</span>
+              <span className="head-max-1199:!sr-only">{c('Info').t`Opening...`}</span>
             </Pill>
           )
         }
@@ -104,7 +104,7 @@ export const ConnectionStatus = ({ documentState }: { documentState: DocumentSta
           }
         >
           <CloudSlashIcon className="h-4 w-4 fill-current" />
-          <span className="head-max-1199:sr-only">{c('Info').t`Offline`}</span>
+          <span className="head-max-1199:!sr-only">{c('Info').t`Offline`}</span>
         </PopoverPill>
       )
       break
@@ -131,7 +131,7 @@ export const ConnectionStatus = ({ documentState }: { documentState: DocumentSta
           }
         >
           <ArrowsRotate className="h-3.5 w-3.5 animate-spin fill-current" data-testid="changes-info-saving" />
-          <span className="head-max-1199:sr-only">{c('Info').t`Saving...`}</span>
+          <span className="head-max-1199:!sr-only">{c('Info').t`Saving...`}</span>
         </PopoverPill>
       )}
       {!status.saving && !connectionPill && (
@@ -145,7 +145,7 @@ export const ConnectionStatus = ({ documentState }: { documentState: DocumentSta
           content={c('Info').t`Every change you make is automatically and securely saved to Drive.`}
         >
           <Icon name="lock-check" className="h-4 w-4 fill-current" />
-          <span className="head-max-1199:sr-only">{c('Info').t`End-to-end encrypted`}</span>
+          <span className="head-max-1199:!sr-only">{c('Info').t`End-to-end encrypted`}</span>
         </PopoverPill>
       )}
       {status.hasErroredMessages && (
@@ -161,7 +161,7 @@ export const ConnectionStatus = ({ documentState }: { documentState: DocumentSta
           onToggle={onErrorPillToggle}
         >
           <Icon name="exclamation-circle" className="h-4 w-4 fill-current" />
-          <span className="head-max-1199:sr-only">{c('Info').t`Error Syncing`}</span>
+          <span className="head-max-1199:!sr-only">{c('Info').t`Error Syncing`}</span>
         </PopoverPill>
       )}
       {isUserLimitReached && (
@@ -175,7 +175,7 @@ export const ConnectionStatus = ({ documentState }: { documentState: DocumentSta
           content={c('Info').t`This document has lots of activity. Some features may be temporarily unavailable.`}
         >
           <Icon name="exclamation-circle" className="h-4 w-4 fill-current" />
-          <span className="head-max-1199:sr-only">{c('Info').t`Limited availability`}</span>
+          <span className="head-max-1199:!sr-only">{c('Info').t`Limited availability`}</span>
         </PopoverPill>
       )}
     </div>
