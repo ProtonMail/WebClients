@@ -1,5 +1,6 @@
 import { createHash, createPublicKey } from 'crypto';
-import logger from 'electron-log/main';
+
+import logger from './utils/logger';
 
 enum VerificationResult {
     Accept = 0,
