@@ -101,7 +101,7 @@ const PassPolicies = () => {
                     <>
                         <div className="mb-10">
                             {policies.map(({ setting, label, tooltip }) => (
-                                <SettingsLayout className="pb-4">
+                                <SettingsLayout key={setting} className="pb-4">
                                     <SettingsLayoutLeft>
                                         <label htmlFor={`${setting}-toggle`}>
                                             <span className="text-semibold mr-1">{label}</span>
