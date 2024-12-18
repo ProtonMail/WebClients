@@ -24,6 +24,7 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
   subscribeToAnyProperty(callback: (property: keyof P, value: P[keyof P]) => void): () => void {
     this.anyPropertySubscribers.add(callback)
 
+    // Notify callback immediately of all current values
     Object.entries(this.values).forEach(([property, value]) => {
       try {
         callback(property as keyof P, value as P[keyof P])
